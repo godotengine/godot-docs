@@ -86,8 +86,6 @@ Plays background audio.
 Tutorials
 ---------
 
-- :doc:`../learning/features/audio/index`
-
 - :doc:`../tutorials/audio/audio_streams`
 
 Property Descriptions

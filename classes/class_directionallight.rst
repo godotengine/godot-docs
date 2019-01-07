@@ -165,7 +165,7 @@ Can be used to fix special cases of self shadowing when objects are perpendicula
 | *Getter* | get_param()      |
 +----------+------------------+
 
-The distance from camera to shadow split 1. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used in directional_shadow_mode SHADOW_PARALLEL\_\*_SPLITS.
+The distance from camera to shadow split 1. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used when :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>` is one of the ``SHADOW_PARALLEL_*_SPLITS`` constants.
 
 .. _class_DirectionalLight_property_directional_shadow_split_2:
 
@@ -177,7 +177,7 @@ The distance from camera to shadow split 1. Relative to :ref:`directional_shadow
 | *Getter* | get_param()      |
 +----------+------------------+
 
-The distance from shadow split 1 to split 2. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used in directional_shadow_mode SHADOW_PARALLEL\_\*_SPLITS.
+The distance from shadow split 1 to split 2. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used when :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>` is ``SHADOW_PARALLEL_3_SPLITS`` or ``SHADOW_PARALLEL_4_SPLITS``.
 
 .. _class_DirectionalLight_property_directional_shadow_split_3:
 
@@ -189,5 +189,5 @@ The distance from shadow split 1 to split 2. Relative to :ref:`directional_shado
 | *Getter* | get_param()      |
 +----------+------------------+
 
-The distance from shadow split 2 to split 3. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used in directional_shadow_mode SHADOW_PARALLEL_4_SPLITS.
+The distance from shadow split 2 to split 3. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used when :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>` is ``SHADOW_PARALLEL_4_SPLITS``.
 

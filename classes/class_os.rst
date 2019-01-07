@@ -1193,7 +1193,7 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 
 ``OS.shell_open("C:\\Users\name\Downloads")`` on Windows opens the file explorer at the downloads folders of the user.
 
-``OS.shell_open("http://godotengine.org")`` opens the default web browser on the official Godot website.
+``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
 
 .. _class_OS_method_show_virtual_keyboard:
 

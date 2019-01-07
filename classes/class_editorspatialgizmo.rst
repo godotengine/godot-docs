@@ -52,7 +52,7 @@ Methods
 Description
 -----------
 
-Custom gizmo that is used for providing custom visualization and editing (handles) for 3D Spatial objects. These are created by :ref:`EditorPlugin.create_spatial_gizmo<class_EditorPlugin_method_create_spatial_gizmo>`.
+Custom gizmo that is used for providing custom visualization and editing (handles) for 3D Spatial objects. These are created by :ref:`EditorSpatialGizmoPlugin.create_gizmo<class_EditorSpatialGizmoPlugin_method_create_gizmo>`.
 
 Method Descriptions
 -------------------

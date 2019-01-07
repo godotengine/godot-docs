@@ -82,7 +82,7 @@ enum **CompressionMode**:
 Description
 -----------
 
-A PacketPeer implementation that should be passed to :ref:`SceneTree.set_network_peer<class_SceneTree_method_set_network_peer>` after being initialized as either a client or server. Events can then be handled by connecting to :ref:`SceneTree<class_SceneTree>` signals.
+A PacketPeer implementation that should be passed to :ref:`SceneTree.network_peer<class_SceneTree_property_network_peer>` after being initialized as either a client or server. Events can then be handled by connecting to :ref:`SceneTree<class_SceneTree>` signals.
 
 Tutorials
 ---------

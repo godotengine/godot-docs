@@ -296,7 +296,7 @@ enum **ShapeType**:
 
 - **SHAPE_CAPSULE** = **5** --- This is the constant for creating capsule shapes. A capsule shape is defined by a radius and a length. It can be used for intersections and inside/outside checks.
 
-- **SHAPE_CONVEX_POLYGON** = **6** --- This is the constant for creating convex polygon shapes. A polygon is defined by a list of points. It can be used for intersections and inside/outside checks. Unlike the method :ref:`CollisionPolygon2D.set_polygon<class_CollisionPolygon2D_method_set_polygon>`, polygons modified with :ref:`shape_set_data<class_Physics2DServer_method_shape_set_data>` do not verify that the points supplied form is a convex polygon.
+- **SHAPE_CONVEX_POLYGON** = **6** --- This is the constant for creating convex polygon shapes. A polygon is defined by a list of points. It can be used for intersections and inside/outside checks. Unlike the :ref:`CollisionPolygon2D.polygon<class_CollisionPolygon2D_property_polygon>` property, polygons modified with :ref:`shape_set_data<class_Physics2DServer_method_shape_set_data>` do not verify that the points supplied form is a convex polygon.
 
 - **SHAPE_CONCAVE_POLYGON** = **7** --- This is the constant for creating concave polygon shapes. A polygon is defined by a list of points. It can be used for intersections checks, but not for inside/outside checks.
 

@@ -551,7 +551,7 @@ Constants
 
 - **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_property_theme>` changes, right before Godot redraws the control. Happens when you call one of the ``add_*_override`` methods.
 
-- **NOTIFICATION_MODAL_CLOSE** = **46** --- Sent when an open modal dialog closes. See :ref:`show_modal<class_Control_property_show_modal>`.
+- **NOTIFICATION_MODAL_CLOSE** = **46** --- Sent when an open modal dialog closes. See :ref:`show_modal<class_Control_method_show_modal>`.
 
 - **NOTIFICATION_SCROLL_BEGIN** = **47** --- Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has begun being scrolled.
 

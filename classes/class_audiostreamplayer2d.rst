@@ -71,8 +71,6 @@ Plays audio that dampens with distance from screen center.
 Tutorials
 ---------
 
-- :doc:`../learning/features/audio/index`
-
 - :doc:`../tutorials/audio/audio_streams`
 
 Property Descriptions

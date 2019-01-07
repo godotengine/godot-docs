@@ -212,7 +212,7 @@ Property Descriptions
 | *Getter* | get_tween_process_mode()      |
 +----------+-------------------------------+
 
-The tween's animation process thread. See :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`. Default value: TWEEN_PROCESS_IDLE.
+The tween's animation process thread. See :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`. Default value: :ref:`TWEEN_PROCESS_IDLE<class_Tween_constant_TWEEN_PROCESS_IDLE>`.
 
 .. _class_Tween_property_playback_speed:
 

@@ -247,7 +247,7 @@ Plugins are used by the editor to extend functionality. The most common types of
 Tutorials
 ---------
 
-- :doc:`../development/plugins/index`
+- :doc:`../tutorials/plugins/editor/index`
 
 Method Descriptions
 -------------------

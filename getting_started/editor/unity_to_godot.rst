@@ -232,14 +232,14 @@ Connections: groups and signals
 
 You can control nodes by accessing them using a script and calling functions (built-in or user-defined) on them.
 But there's more: You can also place them in a group and call a function on all nodes contained in this group!
-This is explained in :ref:`this page <doc_scripting_continued>`.
+This is explained in the :ref:`scripting documentation <doc_scripting_continued>`.
 
 But there's more! Certain nodes throw signals when certain actions happen.
 You can connect these signals to call a specific function when they happen.
 Note that you can define your own signals and send them whenever you want.
-This feature is documented `here <../scripting/gdscript/gdscript_basics.html#signals>`_.
+See the :ref:`signals documentation <doc_gdscript_signals>` for details.
 
-Script Serialization
+Script serialization
 ^^^^^^^^^^^^^^^^^^^^
 
 Unity can handle script serialization in two ways:
@@ -248,8 +248,9 @@ Unity can handle script serialization in two ways:
 - Explicit: Non-public fields can be serialized using the ``[SerializeField]`` attribute.
 
 Godot also has a built-in script serialization system, but it works only explicitly.
-You can serialize any serializable type (:ref:`built-in and various engine types <doc_binary_serialization_api>`, including :ref:`class_Array` and :ref:`class_Dictionary`)
-using the ``export`` keyword. This workflow is explained `here <../scripting/gdscript/gdscript_basics.html#exports>`_.
+You can serialize any serializable type (:ref:`built-in and various engine types <doc_binary_serialization_api>`,
+including :ref:`class_Array` and :ref:`class_Dictionary`) using the ``export`` keyword.
+See the :ref:`exports documentation <doc_gdscript_exports>` for details.
 
 Unity also has a data type called ``ScriptableObject`` used to serialize custom asset objects.
 Its equivalent in Godot is the base class for all resources: :ref:`class_Resource`.

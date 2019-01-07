@@ -423,7 +423,7 @@ If ``true``, the given body overlaps the Area. Note that the result of this test
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-Set/clear individual bits on the layer mask. This simplifies editing this ``Area[code]'s layers.
+Set/clear individual bits on the layer mask. This simplifies editing this ``Area``'s layers.
 
 .. _class_Area_method_set_collision_mask_bit:
 

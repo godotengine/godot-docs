@@ -35,7 +35,7 @@ Emitted when the user clicks the OK button.
 Description
 -----------
 
-The ScriptCreateDialog creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling a :ref:`popup<class_ScriptCreateDialog_method_popup>`\ () method.
+The ``ScriptCreateDialog`` creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Popup.popup<class_Popup_method_popup>` methods.
 
 ::
 

@@ -46,10 +46,10 @@ Theme Properties
 Description
 -----------
 
-This is a helper class to generate a flat :ref:`Button<class_Button>` (see :ref:`Button.set_flat<class_Button_method_set_flat>`), creating a ToolButton is equivalent to:
+This is a helper class to generate a flat :ref:`Button<class_Button>` (see :ref:`Button.flat<class_Button_property_flat>`), creating a ``ToolButton`` is equivalent to:
 
 ::
 
     var btn = Button.new()
-    btn.set_flat(true)
+    btn.flat = true
 

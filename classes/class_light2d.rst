@@ -102,17 +102,17 @@ enum **Mode**:
 
 enum **ShadowFilter**:
 
-- **SHADOW_FILTER_NONE** = **0** --- No filter applies to the shadow map. See :ref:`shadow_filter<class_Light2D_method_shadow_filter>`.
+- **SHADOW_FILTER_NONE** = **0** --- No filter applies to the shadow map. See :ref:`shadow_filter<class_Light2D_property_shadow_filter>`.
 
-- **SHADOW_FILTER_PCF3** = **1** --- Percentage closer filtering (3 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_method_shadow_filter>`.
+- **SHADOW_FILTER_PCF3** = **1** --- Percentage closer filtering (3 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_property_shadow_filter>`.
 
-- **SHADOW_FILTER_PCF5** = **2** --- Percentage closer filtering (5 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_method_shadow_filter>`.
+- **SHADOW_FILTER_PCF5** = **2** --- Percentage closer filtering (5 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_property_shadow_filter>`.
 
-- **SHADOW_FILTER_PCF7** = **3** --- Percentage closer filtering (7 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_method_shadow_filter>`.
+- **SHADOW_FILTER_PCF7** = **3** --- Percentage closer filtering (7 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_property_shadow_filter>`.
 
-- **SHADOW_FILTER_PCF9** = **4** --- Percentage closer filtering (9 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_method_shadow_filter>`.
+- **SHADOW_FILTER_PCF9** = **4** --- Percentage closer filtering (9 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_property_shadow_filter>`.
 
-- **SHADOW_FILTER_PCF13** = **5** --- Percentage closer filtering (13 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_method_shadow_filter>`.
+- **SHADOW_FILTER_PCF13** = **5** --- Percentage closer filtering (13 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_property_shadow_filter>`.
 
 Description
 -----------
@@ -312,7 +312,7 @@ If ``true``, the Light2D will cast shadows. Default value: ``false``.
 | *Getter* | get_shadow_filter()      |
 +----------+--------------------------+
 
-Shadow filter type. Use SHADOW_FILTER\_\* constants to set ``shadow_filter``. Default value: ``None``.
+Shadow filter type. Use :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` constants as values. Default value: ``SHADOW_FILTER_NONE``.
 
 .. _class_Light2D_property_shadow_filter_smooth:
 

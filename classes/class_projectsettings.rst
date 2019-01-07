@@ -602,7 +602,7 @@ Path to an image used for boot splash.
 
 This user directory is used for storing persistent data (``user://`` filesystem). By default (no custom name defined), ``user://`` resolves to a project-specific folder in Godot's own configuration folder (see :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`). If a custom directory name is defined, this name will be used instead and appended to the system-specific user data directory (same parent folder as the Godot configuration folder documented in :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`).
 
-The :ref:`use_custom_user_dir<class_ProjectSettings_property_use_custom_user_dir>` setting must be enabled for this to take effect.
+The :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` setting must be enabled for this to take effect.
 
 .. _class_ProjectSettings_property_application/config/icon:
 
@@ -626,7 +626,7 @@ Specifies a file to override project settings. For example: ``user://custom_sett
 
 - :ref:`bool<class_bool>` **application/config/use_custom_user_dir**
 
-Allow the project to save to its own custom user dir (see :ref:`custom_user_dir_name<class_ProjectSettings_property_custom_user_dir_name>`). This setting only works for desktop platforms. A name must be set in the :ref:`custom_user_dir_name<class_ProjectSettings_property_custom_user_dir_name>` setting for this to take effect.
+Allow the project to save to its own custom user dir (see :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>`). This setting only works for desktop platforms. A name must be set in the :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>` setting for this to take effect.
 
 .. _class_ProjectSettings_property_application/run/disable_stderr:
 

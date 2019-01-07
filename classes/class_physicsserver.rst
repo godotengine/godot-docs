@@ -1258,7 +1258,7 @@ Sets the transform matrix for a body shape.
 
 - void **body_set_space** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` space **)**
 
-Assigns a space to the body (see :ref:`create_space<class_PhysicsServer_method_create_space>`).
+Assigns a space to the body (see :ref:`space_create<class_PhysicsServer_method_space_create>`).
 
 .. _class_PhysicsServer_method_body_set_state:
 

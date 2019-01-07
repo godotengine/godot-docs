@@ -100,7 +100,7 @@ Return the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status>
 
 - :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
 
-Returns ``true`` if this peer is currently connected to a host, ``false[code] otherwise.
+Returns ``true`` if this peer is currently connected to a host, ``false`` otherwise.
 
 .. _class_StreamPeerTCP_method_set_no_delay:
 

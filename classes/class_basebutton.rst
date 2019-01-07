@@ -176,7 +176,7 @@ If ``true``, the button is in disabled state and can't be clicked or toggled.
 | *Getter* | get_enabled_focus_mode()      |
 +----------+-------------------------------+
 
-Focus access mode to use when switching between enabled/disabled (see :ref:`Control.set_focus_mode<class_Control_method_set_focus_mode>` and :ref:`disabled<class_BaseButton_property_disabled>`).
+Focus access mode to use when switching between enabled/disabled (see :ref:`Control.focus_mode<class_Control_property_focus_mode>` and :ref:`disabled<class_BaseButton_property_disabled>`).
 
 .. _class_BaseButton_property_group:
 

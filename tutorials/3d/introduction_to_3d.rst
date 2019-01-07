@@ -47,13 +47,15 @@ not as standardized as images).
 DCC-created models
 ------------------
 
+.. FIXME: Needs update to properly description Godot 3.x workflow
+   (used to reference a non existing doc_importing_3d_meshes importer).
+
 There are two pipelines to import 3D models in Godot. The first and most
-common one is through the :ref:`doc_importing_3d_scenes` importer, which allows you to import
+common one is by :ref:`doc_importing_3d_scenes`, which allows you to import
 entire scenes (just as they look in the DCC), including animation,
 skeletal rigs, blend shapes, etc.
 
-The second pipeline is through the :ref:`doc_importing_3d_meshes` importer. This
-second method allows importing simple .OBJ files as mesh resources,
+The second pipeline is by importing simple .OBJ files as mesh resources,
 which can be then put inside a :ref:`MeshInstance <class_MeshInstance>`
 node for display.
 
@@ -61,8 +63,8 @@ Generated geometry
 ------------------
 
 It is possible to create custom geometry by using the
-:ref:`Mesh <class_Mesh>` resource directly. Simply create your arrays
-and use the :ref:`Mesh.add_surface() <class_Mesh_method_add_surface>`
+:ref:`ArrayMesh <class_ArrayMesh>` resource directly. Simply create your arrays
+and use the :ref:`ArrayMesh.add_surface_from_arrays() <class_ArrayMesh_method_add_surface_from_arrays>`
 function. A helper class is also available, :ref:`SurfaceTool <class_SurfaceTool>`,
 which provides a more straightforward API and helpers for indexing,
 generating normals, tangents, etc.

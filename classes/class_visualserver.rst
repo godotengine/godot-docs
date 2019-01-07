@@ -478,7 +478,7 @@ Methods
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`mesh_surface_update_region<class_VisualServer_method_mesh_surface_update_region>` **(** :ref:`RID<class_RID>` mesh, :ref:`int<class_int>` surface, :ref:`int<class_int>` offset, :ref:`PoolByteArray<class_PoolByteArray>` data **)**                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                    | :ref:`multimesh_allocate<class_VisualServer_method_multimesh_allocate>` **(** :ref:`RID<class_RID>` multimesh, :ref:`int<class_int>` instances, :ref:`MultimeshTransformFormat<enum_VisualServer_MultimeshTransformFormat>` transform_format, :ref:`MultimeshColorFormat<enum_VisualServer_MultimeshColorFormat>` color_format, VisualServer.MultimeshCustomDataFormat custom_data_format=0 **)**                                                                                                                                                                                                                                                               |
+| void                                                    | :ref:`multimesh_allocate<class_VisualServer_method_multimesh_allocate>` **(** :ref:`RID<class_RID>` multimesh, :ref:`int<class_int>` instances, :ref:`MultimeshTransformFormat<enum_VisualServer_MultimeshTransformFormat>` transform_format, :ref:`MultimeshColorFormat<enum_VisualServer_MultimeshColorFormat>` color_format, :ref:`MultimeshCustomDataFormat<enum_VisualServer_MultimeshCustomDataFormat>` custom_data_format=0 **)**                                                                                                                                                                                                                        |
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>`                                 | :ref:`multimesh_get_aabb<class_VisualServer_method_multimesh_get_aabb>` **(** :ref:`RID<class_RID>` multimesh **)** const                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1564,6 +1564,22 @@ enum **MultimeshColorFormat**:
 - **MULTIMESH_COLOR_8BIT** = **1**
 
 - **MULTIMESH_COLOR_FLOAT** = **2**
+
+.. _enum_VisualServer_MultimeshCustomDataFormat:
+
+.. _class_VisualServer_constant_MULTIMESH_CUSTOM_DATA_NONE:
+
+.. _class_VisualServer_constant_MULTIMESH_CUSTOM_DATA_8BIT:
+
+.. _class_VisualServer_constant_MULTIMESH_CUSTOM_DATA_FLOAT:
+
+enum **MultimeshCustomDataFormat**:
+
+- **MULTIMESH_CUSTOM_DATA_NONE** = **0**
+
+- **MULTIMESH_CUSTOM_DATA_8BIT** = **1**
+
+- **MULTIMESH_CUSTOM_DATA_FLOAT** = **2**
 
 .. _enum_VisualServer_ReflectionProbeUpdateMode:
 
@@ -2896,7 +2912,7 @@ Sets a mesh's surface's material.
 
 .. _class_VisualServer_method_multimesh_allocate:
 
-- void **multimesh_allocate** **(** :ref:`RID<class_RID>` multimesh, :ref:`int<class_int>` instances, :ref:`MultimeshTransformFormat<enum_VisualServer_MultimeshTransformFormat>` transform_format, :ref:`MultimeshColorFormat<enum_VisualServer_MultimeshColorFormat>` color_format, VisualServer.MultimeshCustomDataFormat custom_data_format=0 **)**
+- void **multimesh_allocate** **(** :ref:`RID<class_RID>` multimesh, :ref:`int<class_int>` instances, :ref:`MultimeshTransformFormat<enum_VisualServer_MultimeshTransformFormat>` transform_format, :ref:`MultimeshColorFormat<enum_VisualServer_MultimeshColorFormat>` color_format, :ref:`MultimeshCustomDataFormat<enum_VisualServer_MultimeshCustomDataFormat>` custom_data_format=0 **)**
 
 .. _class_VisualServer_method_multimesh_get_aabb:
 

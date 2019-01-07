@@ -80,8 +80,6 @@ Tutorials
 
 - :doc:`../tutorials/3d/using_transforms`
 
-- :doc:`../tutorials/math/rotations`
-
 Property Descriptions
 ---------------------
 

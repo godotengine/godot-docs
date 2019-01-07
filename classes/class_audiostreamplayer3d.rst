@@ -136,8 +136,6 @@ Plays a sound effect with directed sound effects, dampens with distance if neede
 Tutorials
 ---------
 
-- :doc:`../learning/features/audio/index`
-
 - :doc:`../tutorials/audio/audio_streams`
 
 Property Descriptions

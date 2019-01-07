@@ -85,7 +85,7 @@ The error message if JSON source was not successfully parsed. See :ref:`@GlobalS
 
 A :ref:`Variant<class_Variant>` containing the parsed JSON. Use typeof() to check if it is what you expect. For example, if JSON source starts with curly braces (``{}``) a :ref:`Dictionary<class_Dictionary>` will be returned, if JSON source starts with braces (``[]``) an :ref:`Array<class_Array>` will be returned.
 
-*Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to float types.
+*Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to float types.*
 
 Note that JSON objects do not preserve key order like Godot dictionaries, thus you should not rely on keys being in a certain order if a dictionary is constructed from JSON. In contrast, JSON arrays retain the order of their elements:*
 

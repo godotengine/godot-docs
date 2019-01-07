@@ -159,7 +159,7 @@ Description
 
 GraphEdit manages the showing of GraphNodes it contains, as well as connections and disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNodes slots is disabled by default.
 
-It is greatly advised to enable low processor usage mode (see :ref:`OS.set_low_processor_usage_mode<class_OS_method_set_low_processor_usage_mode>`) when using GraphEdits.
+It is greatly advised to enable low processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
 
 Property Descriptions
 ---------------------

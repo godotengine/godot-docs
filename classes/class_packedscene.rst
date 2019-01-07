@@ -76,7 +76,7 @@ Example of saving a node with different owners: The following example creates 3 
     node.add_child(rigid)
     
     # change owner of rigid, but not of collision
-    rigid.set_owner(node)
+    rigid.owner = node
     
     var scene = PackedScene.new()
     # only node and rigid are now packed
@@ -120,5 +120,5 @@ Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). 
 
 - :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Node<class_Node>` path **)**
 
-Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.set_owner<class_Node_method_set_owner>`.
+Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.owner<class_Node_property_owner>`.
 

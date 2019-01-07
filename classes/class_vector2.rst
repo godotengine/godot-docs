@@ -251,7 +251,7 @@ Returns the vector's length.
 
 - :ref:`float<class_float>` **length_squared** **(** **)**
 
-Returns the vector's length squared. Prefer this function over :ref:`length<class_Vector2_property_length>` if you need to sort vectors or need the squared length for some formula.
+Returns the vector's length squared. Prefer this method over :ref:`length<class_Vector2_method_length>` if you need to sort vectors or need the squared length for some formula.
 
 .. _class_Vector2_method_linear_interpolate:
 
