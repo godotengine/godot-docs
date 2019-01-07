@@ -56,7 +56,7 @@ will automatically fetch a translation if their text matches a translation key.
 For example, if a label's text is "MAIN_SCREEN_GREETING1" and that key exists
 in the current translation, then the text will be automatically translated.
 
-In code, the :ref:`Object.tr() <class_Object_tr>`
+In code, the :ref:`Object.tr() <class_Object_method_tr>`
 function can be used. This will just look up the text in the
 translations and convert it if found:
 

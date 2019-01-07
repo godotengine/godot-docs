@@ -13,9 +13,9 @@ However, it is still common to need a script to be processed on every
 frame. There are two types of processing: idle processing and physics
 processing.
 
-Idle processing is activated when the method :ref:`Node._process() <class_Node__process>`
+Idle processing is activated when the method :ref:`Node._process() <class_Node_method__process>`
 is found in a script. It can be turned off and on with the
-:ref:`Node.set_process() <class_Node_set_process>` function.
+:ref:`Node.set_process() <class_Node_method_set_process>` function.
 
 This method will be called every time a frame is drawn, so it's fully dependent on
 how many frames per second (FPS) the application is running at:
@@ -109,7 +109,7 @@ which are enemies:
 
 This way, if the player is discovered sneaking into a secret base,
 all enemies can be notified about its alarm sounding by using
-:ref:`SceneTree.call_group() <class_SceneTree_call_group>`:
+:ref:`SceneTree.call_group() <class_SceneTree_method_call_group>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -129,7 +129,7 @@ member of the group ``enemies``.
 
 It is also possible to get the full list of ``enemies`` nodes by
 calling
-:ref:`SceneTree.get_nodes_in_group() <class_SceneTree_get_nodes_in_group>`:
+:ref:`SceneTree.get_nodes_in_group() <class_SceneTree_method_get_nodes_in_group>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -154,7 +154,7 @@ Godot has a system of notifications. These are usually not needed for
 scripting, as it's too low-level and virtual functions are provided for
 most of them. It's just good to know they exist. For example,
 you may add an
-:ref:`Object._notification() <class_Object__notification>`
+:ref:`Object._notification() <class_Object_method__notification>`
 function in your script:
 
 .. tabs::
@@ -320,7 +320,7 @@ function. This will crash the game. Running Godot
 with the debugger will often catch this case and warn you about it.
 
 The safest way to delete a node is by using
-:ref:`Node.queue_free() <class_Node_queue_free>`.
+:ref:`Node.queue_free() <class_Node_method_queue_free>`.
 This erases the node safely during idle.
 
 .. tabs::
@@ -363,7 +363,7 @@ time (GDScript only):
 But ``scene`` is not yet a node. It's packed in a
 special resource called :ref:`PackedScene <class_PackedScene>`.
 To create the actual node, the function
-:ref:`PackedScene.instance() <class_PackedScene_instance>`
+:ref:`PackedScene.instance() <class_PackedScene_method_instance>`
 must be called. This will return the tree of nodes that can be added to
 the active scene:
 

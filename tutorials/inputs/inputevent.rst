@@ -74,30 +74,30 @@ received input, in order:
 
 .. image:: img/input_event_flow.png
 
-1. First of all, the standard :ref:`Node._input() <class_Node__input>` function
-   will be called in any node that overrides it (and hasn't disabled input processing with :ref:`Node.set_process_input() <class_Node_set_process_input>`).
-   If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the event will
+1. First of all, the standard :ref:`Node._input() <class_Node_method__input>` function
+   will be called in any node that overrides it (and hasn't disabled input processing with :ref:`Node.set_process_input() <class_Node_method_set_process_input>`).
+   If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_method_set_input_as_handled>`, and the event will
    not spread any more. This ensures that you can filter all events of interest, even before the GUI.
-   For gameplay input, :ref:`Node._unhandled_input() <class_Node__unhandled_input>` is generally a better fit, because it allows the GUI to intercept the events.
+   For gameplay input, :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>` is generally a better fit, because it allows the GUI to intercept the events.
 2. Second, it will try to feed the input to the GUI, and see if any
    control can receive it. If so, the :ref:`Control <class_Control>` will be called via the
-   virtual function :ref:`Control._gui_input() <class_Control__gui_input>` and the signal
+   virtual function :ref:`Control._gui_input() <class_Control_method__gui_input>` and the signal
    "input_event" will be emitted (this function is re-implementable by
    script by inheriting from it). If the control wants to "consume" the
-   event, it will call :ref:`Control.accept_event() <class_Control_accept_event>` and the event will
-   not spread any more. Use :ref:`Control.mouse_filter <class_Control_mouse_filter>`
+   event, it will call :ref:`Control.accept_event() <class_Control_method_accept_event>` and the event will
+   not spread any more. Use the :ref:`Control.mouse_filter <class_Control_property_mouse_filter>`
    property to control whether a :ref:`Control <class_Control>` is notified
-   of mouse events via :ref:`Control._gui_input() <class_Control__gui_input>`
+   of mouse events via :ref:`Control._gui_input() <class_Control_method__gui_input>`
    callback, and whether these events are propagated further.
 3. If so far no one consumed the event, the unhandled input callback
    will be called if overridden (and not disabled with
-   :ref:`Node.set_process_unhandled_input() <class_Node_set_process_unhandled_input>`).
-   If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the
+   :ref:`Node.set_process_unhandled_input() <class_Node_method_set_process_unhandled_input>`).
+   If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_method_set_input_as_handled>`, and the
    event will not spread any more. The unhandled input callback is ideal for full-screen gameplay events, so they are not received when a GUI is active.
 4. If no one wanted the event so far, and a :ref:`Camera <class_Camera>` is assigned
    to the Viewport, a ray to the physics world (in the ray direction from
    the click) will be cast. If this ray hits an object, it will call the
-   :ref:`CollisionObject._input_event() <class_CollisionObject__input_event>` function in the relevant
+   :ref:`CollisionObject._input_event() <class_CollisionObject_method__input_event>` function in the relevant
    physics object (bodies receive this callback by default, but areas do
    not. This can be configured through :ref:`Area <class_Area>` properties).
 5. Finally, if the event was unhandled, it will be passed to the next
@@ -172,13 +172,13 @@ logic. This allows for:
 Actions can be created from the Project Settings menu in the Actions
 tab.
 
-Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_is_action>`,
-:ref:`InputEvent.is_pressed() <class_InputEvent_is_pressed>` and :ref:`InputEvent <class_InputEvent>`.
+Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_method_is_action>`,
+:ref:`InputEvent.is_pressed() <class_InputEvent_method_is_pressed>` and :ref:`InputEvent <class_InputEvent>`.
 
 Alternatively, it may be desired to supply the game back with an action
 from the game code (a good example of this is detecting gestures).
 The Input singleton has a method for this:
-:ref:`Input.parse_input_event() <class_input_parse_input_event>`. You would normally use it like this:
+:ref:`Input.parse_input_event() <class_input_method_parse_input_event>`. You would normally use it like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -82,7 +82,7 @@ of a body's state variables such as ``position`` or ``linear velocity``
 may not be accurate for the current frame.
 
 In order to avoid this inaccuracy, any code that needs to access a body's properties should
-be run in the :ref:`Node._physics_process() <class_Node__physics_process>`
+be run in the :ref:`Node._physics_process() <class_Node_method__physics_process>`
 callback, which is called before each physics step at a constant frame rate
 (60 times per second by default).
 
@@ -207,7 +207,7 @@ automatically be calculated by the physics engine.
 However, if you do wish to have some control over the body, you should take
 care - altering the ``position``, ``linear_velocity``, or other physics properties
 of a rigid body can result in unexpected behavior. If you need to alter any
-of the physics-related properties, you should use the :ref:`_integrate_forces() <class_RigidBody2D__integrate_forces>`
+of the physics-related properties, you should use the :ref:`_integrate_forces() <class_RigidBody2D_method__integrate_forces>`
 callback instead of ``_physics_process()``. In this callback, you have access
 to the body's :ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`,
 which allows for safely changing properties and synchronizing them with
@@ -265,7 +265,7 @@ the body and letting the physics engine calculate the resulting movement.
 .. note:: When a rigid body goes to sleep, the ``_integrate_forces()``
           function will not be called. To override this behavior, you will
           need to keep the body awake by creating a collision, applying a
-          force to it, or by disabling the :ref:`can_sleep <class_RigidBody2D_can_sleep>`
+          force to it, or by disabling the :ref:`can_sleep <class_RigidBody2D_property_can_sleep>`
           property. Be aware that this can have a negative effect on performance.
 
 Contact reporting
@@ -273,12 +273,12 @@ Contact reporting
 
 By default, rigid bodies do not keep track of contacts, because this can
 require a huge amount of memory if many bodies are in the scene. To enable
-contact reporting, set the :ref:`contacts_reported <class_RigidBody2D_contacts_reported>`
+contact reporting, set the :ref:`contacts_reported <class_RigidBody2D_property_contacts_reported>`
 property to a non-zero value. The contacts can then be obtained via
-:ref:`Physics2DDirectBodyState.get_contact_count() <class_Physics2DDirectBodyState_get_contact_count>`
+:ref:`Physics2DDirectBodyState.get_contact_count() <class_Physics2DDirectBodyState_method_get_contact_count>`
 and related functions.
 
-Contact monitoring via signals can be enabled via the :ref:`contact_monitor <class_RigidBody2D_contact_monitor>`
+Contact monitoring via signals can be enabled via the :ref:`contact_monitor <class_RigidBody2D_property_contact_monitor>`
 property. See :ref:`RigidBody2D <class_RigidBody2D>` for the list of available
 signals.
 
@@ -303,8 +303,8 @@ After a collision, you may want the body to bounce, to slide along a wall,
 or to alter the properties of the object it hit. The way you handle collision
 response depends on which method you used to move the KinematicBody2D.
 
-:ref:`move_and_collide <class_KinematicBody2D_move_and_collide>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`move_and_collide <class_KinematicBody2D_method_move_and_collide>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When using ``move_and_collide()``, the function returns a
 :ref:`KinematicCollision2D <class_KinematicCollision2D>` object, which contains
@@ -370,8 +370,8 @@ Or to bounce off of the colliding object:
         }
     }
 
-:ref:`move_and_slide <class_KinematicBody2D_move_and_slide>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`move_and_slide <class_KinematicBody2D_method_move_and_slide>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sliding is a common collision response; imagine a player moving along walls
 in a top-down game or running up and down slopes in a platformer. While it's

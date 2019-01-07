@@ -82,7 +82,7 @@ process will build that type of file for the chosen platform.
        build of the engine or have access to one (distributed alongside or
        perhaps in the original game's files). The tool can then use the Godot
        executable to export a PCK file from the command line with
-       :ref:`OS.execute <class_OS_execute>`. It makes the most sense for the
+       :ref:`OS.execute() <class_OS_method_execute>`. It makes the most sense for the
        game to not use a tool-build though (for security) and for the modding
        tools to *do* use a tool-enabled engine build.
 

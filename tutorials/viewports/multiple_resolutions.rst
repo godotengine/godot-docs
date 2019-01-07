@@ -188,4 +188,4 @@ From scripts
 
 To configure stretching at runtime from a script, use the
 ``get_tree().set_screen_stretch()`` function (see
-:ref:`SceneTree.set_screen_stretch<class_SceneTree_set_screen_stretch>`).
+:ref:`SceneTree.set_screen_stretch() <class_SceneTree_method_set_screen_stretch>`).

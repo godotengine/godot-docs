@@ -62,7 +62,7 @@ Generated geometry
 
 It is possible to create custom geometry by using the
 :ref:`Mesh <class_Mesh>` resource directly. Simply create your arrays
-and use the :ref:`Mesh.add_surface() <class_Mesh_add_surface>`
+and use the :ref:`Mesh.add_surface() <class_Mesh_method_add_surface>`
 function. A helper class is also available, :ref:`SurfaceTool <class_SurfaceTool>`,
 which provides a more straightforward API and helpers for indexing,
 generating normals, tangents, etc.

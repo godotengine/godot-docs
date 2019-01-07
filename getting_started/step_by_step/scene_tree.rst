@@ -65,7 +65,7 @@ important uses:
 When a node is part of the Scene Tree, the
 :ref:`SceneTree <class_SceneTree>`
 singleton can be obtained by simply calling
-:ref:`Node.get_tree() <class_Node_get_tree>`.
+:ref:`Node.get_tree() <class_Node_method_get_tree>`.
 
 Root viewport
 -------------
@@ -142,7 +142,7 @@ Changing current scene
 
 After a scene is loaded, it is often desired to change this scene for
 another one. The simple way to do this is to use the
-:ref:`SceneTree.change_scene() <class_SceneTree_change_scene>`
+:ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>`
 function:
 
 .. tabs::
@@ -161,7 +161,7 @@ function:
 Rather than using file paths, one can also use ready-made
 :ref:`PackedScene <class_PackedScene>` resources using the equivalent
 function
-:ref:`SceneTree.change_scene_to(PackedScene scene) <class_SceneTree_change_scene_to>`:
+:ref:`SceneTree.change_scene_to(PackedScene scene) <class_SceneTree_method_change_scene_to>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

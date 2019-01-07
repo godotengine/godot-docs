@@ -17,7 +17,7 @@ scenes which one instances and adds to the tree at runtime:
     func _add_a_scene_manually():
         # This is like autoloading the scene, only
         # it happens after already loading the main scene.
-    	get_tree().get_root().add_child(simultaneous_scene)
+        get_tree().get_root().add_child(simultaneous_scene)
 
  .. code-tab:: csharp
 
@@ -30,7 +30,7 @@ scenes which one instances and adds to the tree at runtime:
 
     public void _AddASceneManually()
     {
-        // this is like autoloading the scene, only
+        // This is like autoloading the scene, only
         // it happens after already loading the main scene.
         GetTree().GetRoot().AddChild(simultaneousScene);
     }
@@ -42,10 +42,11 @@ balancing operation speed and memory consumption as well as balancing data
 access and integrity.
 
 1. **We can delete the existing scene.**
-:ref:`SceneTree.change_scene/_to <class_SceneTree_change_scene>` will
-delete the current scene immediately. Developers can also delete the
-main scene though. Assuming the root node's name is "Main", one could do
-`get_node("/root/Main").free()` to delete the whole scene.
+   :ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>` and
+   :ref:`SceneTree.change_scene_to() <class_SceneTree_method_change_scene_to>`
+   will delete the current scene immediately. Developers can also delete the
+   main scene though. Assuming the root node's name is "Main", one could do
+   ``get_node("/root/Main").free()`` to delete the whole scene.
 
     - Unloads memory.
     
@@ -99,7 +100,7 @@ main scene though. Assuming the root node's name is "Main", one could do
 
 3. **We can remove the existing scene from the tree.** Assign a variable
    to the existing scene's root node. Then use
-   :ref:`Node.remove_child(Node) <class_Node_remove_child>` to detach the entire
+   :ref:`Node.remove_child(Node) <class_Node_method_remove_child>` to detach the entire
    scene from the tree.
 
     - Memory still exists (similar pros/cons as with hiding it from view).

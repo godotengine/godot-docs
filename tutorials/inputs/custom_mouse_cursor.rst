@@ -61,7 +61,7 @@ Create a Node and attach the following script.
     }
 
 .. note::
-    Check :ref:`Input.set_custom_mouse_cursor() <class_Input_set_custom_mouse_cursor>`.
+    Check :ref:`Input.set_custom_mouse_cursor() <class_Input_method_set_custom_mouse_cursor>`.
 
 
 Demo project

@@ -25,8 +25,8 @@ Checking control size
 
 Unlike 2D nodes, "size" is important with controls, as it helps to
 organize them in proper layouts. For this, the
-:ref:`Control.rect_size <class_Control_rect_size>`
-member variable is provided. Checking it during _draw() is vital to ensure
+:ref:`Control.rect_size <class_Control_property_rect_size>`
+property is provided. Checking it during ``_draw()`` is vital to ensure
 everything is kept in-bounds.
 
 Checking focus
@@ -35,11 +35,11 @@ Checking focus
 Some controls (such as buttons or text editors) might provide input
 focus for keyboard or joypad input. Examples of this are entering text
 or pressing a button. This is controlled with the
-:ref:`Control.focus_mode <class_Control_focus_mode>`
-member variable. When drawing, and if the control supports input focus, it is
-always desired to show some sort of indicator (highlight, box, etc) to
+:ref:`Control.focus_mode <class_Control_property_focus_mode>`
+property. When drawing, and if the control supports input focus, it is
+always desired to show some sort of indicator (highlight, box, etc.) to
 indicate that this is the currently focused control. To check for this
-status, the :ref:`Control.has_focus() <class_Control_has_focus>` method
+status, the :ref:`Control.has_focus() <class_Control_method_has_focus>` method
 exists. Example
 
 .. tabs::
@@ -77,7 +77,7 @@ the minimum size will make sure your custom control is not squished by
 the other controls in the container.
 
 To provide this callback, just override
-:ref:`Control.get_minimum_size() <class_Control_get_minimum_size>`,
+:ref:`Control.get_minimum_size() <class_Control_method_get_minimum_size>`,
 for example:
 
 .. tabs::
@@ -125,10 +125,10 @@ when:
 -  The button was pressed over this control (control always
    captures input until button is released)
 -  Control provides keyboard/joypad focus via
-   :ref:`Control.focus_mode <class_Control_focus_mode>`.
+   :ref:`Control.focus_mode <class_Control_property_focus_mode>`.
 
 This function is
-:ref:`Control._gui_input() <class_Control__gui_input>`.
+:ref:`Control._gui_input() <class_Control_method__gui_input>`.
 Simply override it in your control. No processing needs to be set.
 
 .. tabs::

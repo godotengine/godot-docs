@@ -13,7 +13,7 @@ AR/VR server
 
 When Godot starts each available interface will make itself known to the AR/VR server. GDNative interfaces are setup as singletons, as long as they are added to the list of GDNative singletons in your project they will make themselves known to the server.
 
-You can use the function :ref:`get_interfaces <class_ARVRServer_get_interfaces>` to return a list of available interfaces but for this tutorial we're going to use the :ref:`native mobile VR interface <class_MobileVRInterface>` in our examples. This interface is a straightforward implementation that uses the 3DOF sensors on your phone for orientation and outputs a stereoscopic image to screen. It is also available in the Godot core and outputs to screen on desktop which makes it ideal for prototyping or a tutorial such as this one.
+You can use the function :ref:`get_interfaces() <class_ARVRServer_method_get_interfaces>` to return a list of available interfaces but for this tutorial we're going to use the :ref:`native mobile VR interface <class_MobileVRInterface>` in our examples. This interface is a straightforward implementation that uses the 3DOF sensors on your phone for orientation and outputs a stereoscopic image to screen. It is also available in the Godot core and outputs to screen on desktop which makes it ideal for prototyping or a tutorial such as this one.
 
 To enable an interface you execute the following code:
 

@@ -63,8 +63,8 @@ inherit from :ref:`class_EditorPlugin`.
 
 It's important to deal with initialization and clean-up of resources.
 A good practice is to use the virtual function
-:ref:`_enter_tree() <class_Node__enter_tree>` to initialize your plugin and
-:ref:`_exit_tree() <class_Node__exit_tree>` to clean it up. You can delete the
+:ref:`_enter_tree() <class_Node_method__enter_tree>` to initialize your plugin and
+:ref:`_exit_tree() <class_Node_method__exit_tree>` to clean it up. You can delete the
 default GDScript template from your file and replace it with the following
 structure:
 
@@ -94,7 +94,7 @@ projects. A good solution to this is to make a plugin that adds a node with a
 custom behavior.
 
 To create a new node type, you can use the function
-:ref:`add_custom_type() <class_EditorPlugin_add_custom_type>` from the
+:ref:`add_custom_type() <class_EditorPlugin_method_add_custom_type>` from the
 :ref:`class_EditorPlugin` class. This function can add new types to the editor
 (nodes or resources). However, before you can create the type, you need a script
 that will act as the logic for the type. While that script doesn't have to use
@@ -188,7 +188,7 @@ Also, don't forget to add some text to your button.
 
 Save this scene as ``my_dock.tscn``. Now, we need to grab the scene we created
 then add it as a dock in the editor. For this, you can rely on the function
-:ref:`add_control_to_dock() <class_EditorPlugin_add_control_to_dock>` from the
+:ref:`add_control_to_dock() <class_EditorPlugin_method_add_control_to_dock>` from the
 :ref:`EditorPlugin <class_EditorPlugin>` class.
 
 You need to select a dock position and define the control to add

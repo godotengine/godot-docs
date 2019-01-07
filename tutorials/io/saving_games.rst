@@ -52,8 +52,8 @@ The next step is to serialize the data. This makes it much easier to
 read and store to disk. In this case, we're assuming each member of
 group Persist is an instanced node and thus has a path. GDScript
 has helper functions for this, such as :ref:`to_json()
-<class_@GDScript_to_json>` and :ref:`parse_json()
-<class_@GDScript_parse_json>`, so we will use a dictionary. Our node needs to
+<class_@GDScript_method_to_json>` and :ref:`parse_json()
+<class_@GDScript_method_parse_json>`, so we will use a dictionary. Our node needs to
 contain a save function that returns this data. The save function will look
 like this:
 
