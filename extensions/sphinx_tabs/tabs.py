@@ -7,6 +7,7 @@ import os
 from docutils.parsers.rst import Directive
 from docutils import nodes
 from pygments.lexers import get_all_lexers
+from sphinx.util import logging
 from sphinx.util.osutil import copyfile
 
 DIR = os.path.dirname(os.path.abspath(__file__))
@@ -26,6 +27,9 @@ LEXER_MAP = {}
 for lexer in get_all_lexers():
     for short_name in lexer[1]:
         LEXER_MAP[short_name] = lexer[0]
+
+
+logger = logging.getLogger(__name__)
 
 
 class TabsDirective(Directive):
@@ -245,7 +249,7 @@ def copy_assets(app, exception):
     if exception:
         app.warn('Not copying tabs assets! Error occurred previously')
         return
-    app.info('Copying tabs assets... ', nonl=True)
+    logger.info('Copying tabs assets... ', nonl=True)
 
     installdir = os.path.join(app.builder.outdir, '_static', 'sphinx_tabs')
 
@@ -258,7 +262,7 @@ def copy_assets(app, exception):
             os.makedirs(destdir)
 
         copyfile(source, dest)
-    app.info('done')
+    logger.info('done')
 
 
 def setup(app):
