@@ -215,7 +215,7 @@ This can be requested via code using (for example):
 
 ::
 
-    #This gets us the  ViewportTexture.
+    # This gives us the ViewportTexture.
     var rtt = viewport.get_texture()
     sprite.texture = rtt
 
