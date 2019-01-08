@@ -81,7 +81,7 @@ as they came.
 
 They can optionally be presented in world space by using the *world_vertex_coords* render mode.
 
-User can disable the built-in modelview transform (projection will still happen later) and do 
+Users can disable the built-in modelview transform (projection will still happen later) and do 
 it manually with the following code:
 
 .. code-block:: glsl
@@ -90,13 +90,16 @@ it manually with the following code:
     render_mode skip_vertex_transform;
 
     void vertex() {
-
         VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
         NORMAL = (MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
         // same as above for binormal and tangent, if normal mapping is used
     }
 
 Other built-ins such as UV, UV2 and COLOR are also passed through to the fragment function if not modified.
+
+Users can override the modelview and projection transforms using the ``POSITION`` built-in. When ``POSITION`` is used
+the value from ``VERTEX`` is ignored and projection does not happen. However, the value passed to the fragment shader 
+still comes from ``VERTEX``.
 
 For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
 is usually:
@@ -142,6 +145,8 @@ shader, this value can be used as desired.
 | out vec4 **COLOR**                 | Color from vertices.                                  |
 +------------------------------------+-------------------------------------------------------+
 | out float **POINT_SIZE**           | Point size for point rendering.                       |
++------------------------------------+-------------------------------------------------------+
+| out vec4  **POSITION**             | If written to, overrides final vertex position.       |
 +------------------------------------+-------------------------------------------------------+
 | in int **INSTANCE_ID**             | Instance ID for instancing.                           |
 +------------------------------------+-------------------------------------------------------+
