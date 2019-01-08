@@ -51,10 +51,10 @@ locale.
 Converting keys to text
 -----------------------
 
-Some controls such as :ref:`Button <class_Button>` and :ref:`Label <class_Label>`
+Some controls, such as :ref:`Button <class_Button>` and :ref:`Label <class_Label>`,
 will automatically fetch a translation if their text matches a translation key.
 For example, if a label's text is "MAIN_SCREEN_GREETING1" and that key exists
-in the current translation, then the text will be automatically translated.
+in the current translation, then the text will automatically be translated.
 
 In code, the :ref:`Object.tr() <class_Object_method_tr>`
 function can be used. This will just look up the text in the
