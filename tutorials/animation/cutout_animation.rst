@@ -360,3 +360,12 @@ transition editor. Now click on one of the curve options most appropriate for
 your animation.
 
 .. image:: img/tuto_cutout24.png
+
+2D Skeletal deform
+~~~~~~~~~~~~~~~
+
+Starting with Godot 3.1, 2D skeletal deform is supported, which can be used to enhance this workflow and add more flexibility 
+(single pieces can deform more organically instead of having to use many separate ones). 
+
+This process is described in a :ref:`separate tutorial <2d_skeletons>`.
+
