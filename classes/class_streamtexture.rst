@@ -19,9 +19,9 @@ A .stex texture.
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`load_path<class_StreamTexture_load_path>` |
-+-----------------------------+-------------------------------------------------+
++-----------------------------+----------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`load_path<class_StreamTexture_property_load_path>` |
++-----------------------------+----------------------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ A texture that is loaded from a .stex file.
 Property Descriptions
 ---------------------
 
-.. _class_StreamTexture_load_path:
+.. _class_StreamTexture_property_load_path:
 
 - :ref:`String<class_String>` **load_path**
 

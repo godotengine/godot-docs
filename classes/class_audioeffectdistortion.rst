@@ -21,22 +21,32 @@ Modify the sound to make it dirty.
 Properties
 ----------
 
-+----------------------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`drive<class_AudioEffectDistortion_drive>`           |
-+----------------------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`keep_hf_hz<class_AudioEffectDistortion_keep_hf_hz>` |
-+----------------------------------------------+-----------------------------------------------------------+
-| :ref:`Mode<enum_AudioEffectDistortion_Mode>` | :ref:`mode<class_AudioEffectDistortion_mode>`             |
-+----------------------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`post_gain<class_AudioEffectDistortion_post_gain>`   |
-+----------------------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`pre_gain<class_AudioEffectDistortion_pre_gain>`     |
-+----------------------------------------------+-----------------------------------------------------------+
++----------------------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`drive<class_AudioEffectDistortion_property_drive>`           |
++----------------------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`keep_hf_hz<class_AudioEffectDistortion_property_keep_hf_hz>` |
++----------------------------------------------+--------------------------------------------------------------------+
+| :ref:`Mode<enum_AudioEffectDistortion_Mode>` | :ref:`mode<class_AudioEffectDistortion_property_mode>`             |
++----------------------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`post_gain<class_AudioEffectDistortion_property_post_gain>`   |
++----------------------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`pre_gain<class_AudioEffectDistortion_property_pre_gain>`     |
++----------------------------------------------+--------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_AudioEffectDistortion_Mode:
+
+.. _class_AudioEffectDistortion_constant_MODE_CLIP:
+
+.. _class_AudioEffectDistortion_constant_MODE_ATAN:
+
+.. _class_AudioEffectDistortion_constant_MODE_LOFI:
+
+.. _class_AudioEffectDistortion_constant_MODE_OVERDRIVE:
+
+.. _class_AudioEffectDistortion_constant_MODE_WAVESHAPE:
 
 enum **Mode**:
 
@@ -60,7 +70,7 @@ By distorting the waveform the frequency content change, which will often make t
 Property Descriptions
 ---------------------
 
-.. _class_AudioEffectDistortion_drive:
+.. _class_AudioEffectDistortion_property_drive:
 
 - :ref:`float<class_float>` **drive**
 
@@ -72,7 +82,7 @@ Property Descriptions
 
 Distortion power. Value can range from 0 to 1. Default value: ``0``.
 
-.. _class_AudioEffectDistortion_keep_hf_hz:
+.. _class_AudioEffectDistortion_property_keep_hf_hz:
 
 - :ref:`float<class_float>` **keep_hf_hz**
 
@@ -84,7 +94,7 @@ Distortion power. Value can range from 0 to 1. Default value: ``0``.
 
 High-pass filter. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000. Default value: ``16000``.
 
-.. _class_AudioEffectDistortion_mode:
+.. _class_AudioEffectDistortion_property_mode:
 
 - :ref:`Mode<enum_AudioEffectDistortion_Mode>` **mode**
 
@@ -96,7 +106,7 @@ High-pass filter. Frequencies higher than this value will not be affected by the
 
 Distortion type. Default value: ``MODE_CLIP``.
 
-.. _class_AudioEffectDistortion_post_gain:
+.. _class_AudioEffectDistortion_property_post_gain:
 
 - :ref:`float<class_float>` **post_gain**
 
@@ -108,7 +118,7 @@ Distortion type. Default value: ``MODE_CLIP``.
 
 Increases or decreases the volume after the effect. Value can range from -80 to 24. Default value: ``0``.
 
-.. _class_AudioEffectDistortion_pre_gain:
+.. _class_AudioEffectDistortion_property_pre_gain:
 
 - :ref:`float<class_float>` **pre_gain**
 

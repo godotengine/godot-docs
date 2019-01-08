@@ -25,10 +25,9 @@ examples why:
 -  Visualizations that are not that compatible with nodes: (example: a
    tetris board). The tetris example uses a custom draw function to draw
    the blocks.
--  Managing drawing logic of a large amount of simple objects (in the
-   hundreds of thousands). Using a thousand nodes is probably not nearly
-   as efficient as drawing, but a thousand draw calls are cheap;
-   take the "Shower of Bullets" demo as an example.
+-  Drawing a large number of simple objects. Custom drawing avoids the
+   overhead of using nodes which makes it less memory intensive and 
+   potentially faster.
 -  Making a custom UI control. There are plenty of controls available,
    but it's easy to run into the need to make a new, custom one.
 
@@ -65,7 +64,7 @@ The ``_draw()`` function is only called once, and then the draw commands
 are cached and remembered, so further calls are unnecessary.
 
 If re-drawing is required because a state or something else changed,
-simply call :ref:`CanvasItem.update() <class_CanvasItem_update>`
+simply call :ref:`CanvasItem.update() <class_CanvasItem_method_update>`
 in that same node and a new ``_draw()`` call will happen.
 
 Here is a little more complex example, a texture variable that will be

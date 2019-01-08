@@ -103,7 +103,7 @@ type:
 
 Currently you can use three types of… types:
 
-1. :ref:`Built-in<gdscript_basics.html#built-in-types>`
+1. :ref:`Built-in <doc_gdscript_builtin_types>`
 2. Core classes and nodes (``Object``, ``Node``, ``Area2D``,
    ``Camera2D``, etc.)
 3. Your own, custom classes. Look at the new :ref:`class_name <doc_scripting_continued_class_name>`

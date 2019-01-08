@@ -19,16 +19,22 @@ Copies a region of the screen (or the whole screen) to a buffer so it can be acc
 Properties
 ----------
 
-+-----------------------------------------------+--------------------------------------------------+
-| :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` | :ref:`copy_mode<class_BackBufferCopy_copy_mode>` |
-+-----------------------------------------------+--------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`                     | :ref:`rect<class_BackBufferCopy_rect>`           |
-+-----------------------------------------------+--------------------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------+
+| :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` | :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` |
++-----------------------------------------------+-----------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`                     | :ref:`rect<class_BackBufferCopy_property_rect>`           |
++-----------------------------------------------+-----------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_BackBufferCopy_CopyMode:
+
+.. _class_BackBufferCopy_constant_COPY_MODE_DISABLED:
+
+.. _class_BackBufferCopy_constant_COPY_MODE_RECT:
+
+.. _class_BackBufferCopy_constant_COPY_MODE_VIEWPORT:
 
 enum **CopyMode**:
 
@@ -46,7 +52,7 @@ Node for back-buffering the currently displayed screen. The region defined in th
 Property Descriptions
 ---------------------
 
-.. _class_BackBufferCopy_copy_mode:
+.. _class_BackBufferCopy_property_copy_mode:
 
 - :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode**
 
@@ -58,7 +64,7 @@ Property Descriptions
 
 Buffer mode. See ``COPY_MODE_*`` constants.
 
-.. _class_BackBufferCopy_rect:
+.. _class_BackBufferCopy_property_rect:
 
 - :ref:`Rect2<class_Rect2>` **rect**
 

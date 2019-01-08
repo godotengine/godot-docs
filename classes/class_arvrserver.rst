@@ -19,63 +19,63 @@ This is our AR/VR Server.
 Properties
 ----------
 
-+-------------------------------------------+--------------------------------------------------------------+
-| :ref:`ARVRInterface<class_ARVRInterface>` | :ref:`primary_interface<class_ARVRServer_primary_interface>` |
-+-------------------------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>`                 | :ref:`world_scale<class_ARVRServer_world_scale>`             |
-+-------------------------------------------+--------------------------------------------------------------+
++-------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`ARVRInterface<class_ARVRInterface>` | :ref:`primary_interface<class_ARVRServer_property_primary_interface>` |
++-------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`float<class_float>`                 | :ref:`world_scale<class_ARVRServer_property_world_scale>`             |
++-------------------------------------------+-----------------------------------------------------------------------+
 
 Methods
 -------
 
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`center_on_hmd<class_ARVRServer_center_on_hmd>` **(** :ref:`RotationMode<enum_ARVRServer_RotationMode>` rotation_mode, :ref:`bool<class_bool>` keep_height **)** |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ARVRInterface<class_ARVRInterface>`                  | :ref:`find_interface<class_ARVRServer_find_interface>` **(** :ref:`String<class_String>` name **)** const                                                             |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>`                          | :ref:`get_hmd_transform<class_ARVRServer_get_hmd_transform>` **(** **)**                                                                                              |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ARVRInterface<class_ARVRInterface>`                  | :ref:`get_interface<class_ARVRServer_get_interface>` **(** :ref:`int<class_int>` idx **)** const                                                                      |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_interface_count<class_ARVRServer_get_interface_count>` **(** **)** const                                                                                    |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                                  | :ref:`get_interfaces<class_ARVRServer_get_interfaces>` **(** **)** const                                                                                              |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_last_commit_usec<class_ARVRServer_get_last_commit_usec>` **(** **)**                                                                                        |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_last_frame_usec<class_ARVRServer_get_last_frame_usec>` **(** **)**                                                                                          |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_last_process_usec<class_ARVRServer_get_last_process_usec>` **(** **)**                                                                                      |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>`                          | :ref:`get_reference_frame<class_ARVRServer_get_reference_frame>` **(** **)** const                                                                                    |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`  | :ref:`get_tracker<class_ARVRServer_get_tracker>` **(** :ref:`int<class_int>` idx **)** const                                                                          |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_tracker_count<class_ARVRServer_get_tracker_count>` **(** **)** const                                                                                        |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`center_on_hmd<class_ARVRServer_method_center_on_hmd>` **(** :ref:`RotationMode<enum_ARVRServer_RotationMode>` rotation_mode, :ref:`bool<class_bool>` keep_height **)** |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ARVRInterface<class_ARVRInterface>`                 | :ref:`find_interface<class_ARVRServer_method_find_interface>` **(** :ref:`String<class_String>` name **)** const                                                             |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>`                         | :ref:`get_hmd_transform<class_ARVRServer_method_get_hmd_transform>` **(** **)**                                                                                              |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ARVRInterface<class_ARVRInterface>`                 | :ref:`get_interface<class_ARVRServer_method_get_interface>` **(** :ref:`int<class_int>` idx **)** const                                                                      |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                     | :ref:`get_interface_count<class_ARVRServer_method_get_interface_count>` **(** **)** const                                                                                    |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                                 | :ref:`get_interfaces<class_ARVRServer_method_get_interfaces>` **(** **)** const                                                                                              |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                     | :ref:`get_last_commit_usec<class_ARVRServer_method_get_last_commit_usec>` **(** **)**                                                                                        |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                     | :ref:`get_last_frame_usec<class_ARVRServer_method_get_last_frame_usec>` **(** **)**                                                                                          |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                     | :ref:`get_last_process_usec<class_ARVRServer_method_get_last_process_usec>` **(** **)**                                                                                      |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>`                         | :ref:`get_reference_frame<class_ARVRServer_method_get_reference_frame>` **(** **)** const                                                                                    |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` | :ref:`get_tracker<class_ARVRServer_method_get_tracker>` **(** :ref:`int<class_int>` idx **)** const                                                                          |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                     | :ref:`get_tracker_count<class_ARVRServer_method_get_tracker_count>` **(** **)** const                                                                                        |
++-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_ARVRServer_interface_added:
+.. _class_ARVRServer_signal_interface_added:
 
 - **interface_added** **(** :ref:`String<class_String>` interface_name **)**
 
 Signal send when a new interface has been added.
 
-.. _class_ARVRServer_interface_removed:
+.. _class_ARVRServer_signal_interface_removed:
 
 - **interface_removed** **(** :ref:`String<class_String>` interface_name **)**
 
 Signal send when an interface is removed.
 
-.. _class_ARVRServer_tracker_added:
+.. _class_ARVRServer_signal_tracker_added:
 
 - **tracker_added** **(** :ref:`String<class_String>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
 
 Signal send when a new tracker has been added. If you don't use a fixed number of controllers or if you're using ARVRAnchors for an AR solution it is important to react to this signal and add the appropriate ARVRController or ARVRAnchor node related to this new tracker.
 
-.. _class_ARVRServer_tracker_removed:
+.. _class_ARVRServer_signal_tracker_removed:
 
 - **tracker_removed** **(** :ref:`String<class_String>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
 
@@ -85,6 +85,18 @@ Enumerations
 ------------
 
 .. _enum_ARVRServer_TrackerType:
+
+.. _class_ARVRServer_constant_TRACKER_CONTROLLER:
+
+.. _class_ARVRServer_constant_TRACKER_BASESTATION:
+
+.. _class_ARVRServer_constant_TRACKER_ANCHOR:
+
+.. _class_ARVRServer_constant_TRACKER_ANY_KNOWN:
+
+.. _class_ARVRServer_constant_TRACKER_UNKNOWN:
+
+.. _class_ARVRServer_constant_TRACKER_ANY:
 
 enum **TrackerType**:
 
@@ -102,6 +114,12 @@ enum **TrackerType**:
 
 .. _enum_ARVRServer_RotationMode:
 
+.. _class_ARVRServer_constant_RESET_FULL_ROTATION:
+
+.. _class_ARVRServer_constant_RESET_BUT_KEEP_TILT:
+
+.. _class_ARVRServer_constant_DONT_RESET_ROTATION:
+
 enum **RotationMode**:
 
 - **RESET_FULL_ROTATION** = **0** --- Fully reset the orientation of the HMD. Regardless of what direction the user is looking to in the real world. The user will look dead ahead in the virtual world.
@@ -118,7 +136,7 @@ The AR/VR Server is the heart of our AR/VR solution and handles all the processi
 Property Descriptions
 ---------------------
 
-.. _class_ARVRServer_primary_interface:
+.. _class_ARVRServer_property_primary_interface:
 
 - :ref:`ARVRInterface<class_ARVRInterface>` **primary_interface**
 
@@ -128,7 +146,7 @@ Property Descriptions
 | *Getter* | get_primary_interface()      |
 +----------+------------------------------+
 
-.. _class_ARVRServer_world_scale:
+.. _class_ARVRServer_property_world_scale:
 
 - :ref:`float<class_float>` **world_scale**
 
@@ -143,7 +161,7 @@ Allows you to adjust the scale to your game's units. Most AR/VR platforms assume
 Method Descriptions
 -------------------
 
-.. _class_ARVRServer_center_on_hmd:
+.. _class_ARVRServer_method_center_on_hmd:
 
 - void **center_on_hmd** **(** :ref:`RotationMode<enum_ARVRServer_RotationMode>` rotation_mode, :ref:`bool<class_bool>` keep_height **)**
 
@@ -159,61 +177,61 @@ For this method to produce usable results tracking information should be availab
 
 You should call this method after a few seconds have passed, when the user requests a realignment of the display holding a designated button on a controller for a short period of time, and when implementing a teleport mechanism.
 
-.. _class_ARVRServer_find_interface:
+.. _class_ARVRServer_method_find_interface:
 
 - :ref:`ARVRInterface<class_ARVRInterface>` **find_interface** **(** :ref:`String<class_String>` name **)** const
 
 Find an interface by its name. Say that you're making a game that uses specific capabilities of an AR/VR platform you can find the interface for that platform by name and initialize it.
 
-.. _class_ARVRServer_get_hmd_transform:
+.. _class_ARVRServer_method_get_hmd_transform:
 
 - :ref:`Transform<class_Transform>` **get_hmd_transform** **(** **)**
 
 Returns the primary interface's transformation.
 
-.. _class_ARVRServer_get_interface:
+.. _class_ARVRServer_method_get_interface:
 
 - :ref:`ARVRInterface<class_ARVRInterface>` **get_interface** **(** :ref:`int<class_int>` idx **)** const
 
 Get the interface registered at a given index in our list of interfaces.
 
-.. _class_ARVRServer_get_interface_count:
+.. _class_ARVRServer_method_get_interface_count:
 
 - :ref:`int<class_int>` **get_interface_count** **(** **)** const
 
 Get the number of interfaces currently registered with the AR/VR server. If you're game supports multiple AR/VR platforms you can look through the available interface and either present the user with a selection or simply try an initialize each interface and use the first one that returns true.
 
-.. _class_ARVRServer_get_interfaces:
+.. _class_ARVRServer_method_get_interfaces:
 
 - :ref:`Array<class_Array>` **get_interfaces** **(** **)** const
 
 Returns a list of available interfaces with both id and name of the interface.
 
-.. _class_ARVRServer_get_last_commit_usec:
+.. _class_ARVRServer_method_get_last_commit_usec:
 
 - :ref:`int<class_int>` **get_last_commit_usec** **(** **)**
 
-.. _class_ARVRServer_get_last_frame_usec:
+.. _class_ARVRServer_method_get_last_frame_usec:
 
 - :ref:`int<class_int>` **get_last_frame_usec** **(** **)**
 
-.. _class_ARVRServer_get_last_process_usec:
+.. _class_ARVRServer_method_get_last_process_usec:
 
 - :ref:`int<class_int>` **get_last_process_usec** **(** **)**
 
-.. _class_ARVRServer_get_reference_frame:
+.. _class_ARVRServer_method_get_reference_frame:
 
 - :ref:`Transform<class_Transform>` **get_reference_frame** **(** **)** const
 
 Gets our reference frame transform, mostly used internally and exposed for GDNative build interfaces.
 
-.. _class_ARVRServer_get_tracker:
+.. _class_ARVRServer_method_get_tracker:
 
 - :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` **get_tracker** **(** :ref:`int<class_int>` idx **)** const
 
 Get the positional tracker at the given ID.
 
-.. _class_ARVRServer_get_tracker_count:
+.. _class_ARVRServer_method_get_tracker_count:
 
 - :ref:`int<class_int>` **get_tracker_count** **(** **)** const
 

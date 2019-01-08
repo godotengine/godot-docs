@@ -19,9 +19,9 @@ Sort all child nodes based on their Y positions.
 Properties
 ----------
 
-+-------------------------+-----------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_sort_enabled>` |
-+-------------------------+-----------------------------------------------+
++-------------------------+--------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_property_sort_enabled>` |
++-------------------------+--------------------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ Sort all child nodes based on their Y positions. The child node must inherit fro
 Property Descriptions
 ---------------------
 
-.. _class_YSort_sort_enabled:
+.. _class_YSort_property_sort_enabled:
 
 - :ref:`bool<class_bool>` **sort_enabled**
 

@@ -19,16 +19,16 @@ Input event type for mouse motion events.
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_relative>` |
-+-------------------------------+-------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventMouseMotion_speed>`       |
-+-------------------------------+-------------------------------------------------------+
++-------------------------------+----------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_property_relative>` |
++-------------------------------+----------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventMouseMotion_property_speed>`       |
++-------------------------------+----------------------------------------------------------------+
 
 Description
 -----------
 
-Contains mouse motion information. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node__input>`.
+Contains mouse motion information. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node_method__input>`.
 
 Tutorials
 ---------
@@ -38,7 +38,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_InputEventMouseMotion_relative:
+.. _class_InputEventMouseMotion_property_relative:
 
 - :ref:`Vector2<class_Vector2>` **relative**
 
@@ -50,7 +50,7 @@ Property Descriptions
 
 Mouse position relative to the previous position (position at the last frame).
 
-.. _class_InputEventMouseMotion_speed:
+.. _class_InputEventMouseMotion_property_speed:
 
 - :ref:`Vector2<class_Vector2>` **speed**
 

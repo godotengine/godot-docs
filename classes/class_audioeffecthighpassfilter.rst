@@ -19,5 +19,5 @@ Adds a high pass filter to the Audio Bus.
 Description
 -----------
 
-Cuts frequencies lower than the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_cutoff_hz>` and allows higher frequencies to pass.
+Cuts frequencies lower than the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` and allows higher frequencies to pass.
 

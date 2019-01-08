@@ -1,7 +1,7 @@
 .. _doc_gdscript:
 
-GDScript
-========
+GDScript basics
+===============
 
 Introduction
 ------------
@@ -338,6 +338,8 @@ therefore, it will not be stripped away when the script is compiled.
         """ Everything on these
         lines is considered
         a comment. """
+
+.. _doc_gdscript_builtin_types:
 
 Built-in types
 --------------
@@ -1195,6 +1197,8 @@ class resource is done by calling the ``new`` function on the class object::
         var a = MyClass.new()
         a.some_function()
 
+.. _doc_gdscript_exports:
+
 Exports
 ~~~~~~~
 
@@ -1454,6 +1458,8 @@ provided for creating weak references.
 Alternatively, when not using references, the
 ``is_instance_valid(instance)`` can be used to check if an object has been
 freed.
+
+.. _doc_gdscript_signals:
 
 Signals
 ~~~~~~~

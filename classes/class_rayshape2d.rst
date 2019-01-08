@@ -19,11 +19,11 @@ Ray shape for 2D collisions.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`length<class_RayShape2D_length>`                 |
-+---------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape2D_slips_on_slope>` |
-+---------------------------+--------------------------------------------------------+
++---------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`length<class_RayShape2D_property_length>`                 |
++---------------------------+-----------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape2D_property_slips_on_slope>` |
++---------------------------+-----------------------------------------------------------------+
 
 Description
 -----------
@@ -33,7 +33,7 @@ Ray shape for 2D collisions. A ray is not really a collision body, instead it tr
 Property Descriptions
 ---------------------
 
-.. _class_RayShape2D_length:
+.. _class_RayShape2D_property_length:
 
 - :ref:`float<class_float>` **length**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The ray's length.
 
-.. _class_RayShape2D_slips_on_slope:
+.. _class_RayShape2D_property_slips_on_slope:
 
 - :ref:`bool<class_bool>` **slips_on_slope**
 

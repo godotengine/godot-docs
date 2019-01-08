@@ -19,14 +19,142 @@ A Visual Script node used to call built-in functions.
 Properties
 ----------
 
-+--------------------------------------------------------------+---------------------------------------------------------+
-| :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_function>` |
-+--------------------------------------------------------------+---------------------------------------------------------+
++--------------------------------------------------------------+------------------------------------------------------------------+
+| :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_property_function>` |
++--------------------------------------------------------------+------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptBuiltinFunc_BuiltinFunc:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SIN:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_COS:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_TAN:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SINH:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_COSH:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_TANH:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ASIN:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ACOS:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ATAN:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ATAN2:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SQRT:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_FMOD:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_FPOSMOD:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_FLOOR:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_CEIL:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ROUND:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ABS:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SIGN:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_POW:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_LOG:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_EXP:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ISNAN:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ISINF:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_EASE:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_DECIMALS:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_STEPIFY:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_LERP:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_INVERSE_LERP:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANGE_LERP:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_DECTIME:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDOMIZE:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RAND:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDF:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDOM:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SEED:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDSEED:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_DEG2RAD:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RAD2DEG:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_LINEAR2DB:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_DB2LINEAR:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_POLAR2CARTESIAN:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_CARTESIAN2POLAR:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_WRAP:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_WRAPF:
+
+.. _class_VisualScriptBuiltinFunc_constant_LOGIC_MAX:
+
+.. _class_VisualScriptBuiltinFunc_constant_LOGIC_MIN:
+
+.. _class_VisualScriptBuiltinFunc_constant_LOGIC_CLAMP:
+
+.. _class_VisualScriptBuiltinFunc_constant_LOGIC_NEAREST_PO2:
+
+.. _class_VisualScriptBuiltinFunc_constant_OBJ_WEAKREF:
+
+.. _class_VisualScriptBuiltinFunc_constant_FUNC_FUNCREF:
+
+.. _class_VisualScriptBuiltinFunc_constant_TYPE_CONVERT:
+
+.. _class_VisualScriptBuiltinFunc_constant_TYPE_OF:
+
+.. _class_VisualScriptBuiltinFunc_constant_TYPE_EXISTS:
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_CHAR:
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_STR:
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINT:
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINTERR:
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINTRAW:
+
+.. _class_VisualScriptBuiltinFunc_constant_VAR_TO_STR:
+
+.. _class_VisualScriptBuiltinFunc_constant_STR_TO_VAR:
+
+.. _class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES:
+
+.. _class_VisualScriptBuiltinFunc_constant_BYTES_TO_VAR:
+
+.. _class_VisualScriptBuiltinFunc_constant_COLORN:
+
+.. _class_VisualScriptBuiltinFunc_constant_FUNC_MAX:
 
 enum **BuiltinFunc**:
 
@@ -148,15 +276,15 @@ enum **BuiltinFunc**:
 
 - **VAR_TO_STR** = **58** --- Serialize a :ref:`Variant<class_Variant>` to a string.
 
-- **STR_TO_VAR** = **59** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using VAR_TO_STR.
+- **STR_TO_VAR** = **59** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using ``VAR_TO_STR``.
 
 - **VAR_TO_BYTES** = **60** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PoolByteArray<class_PoolByteArray>`.
 
-- **BYTES_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using VAR_TO_BYTES.
+- **BYTES_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using ``VAR_TO_BYTES``.
 
 - **COLORN** = **62** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
 
-- **FUNC_MAX** = **63** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_function>` property can have.
+- **FUNC_MAX** = **63** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_property_function>` property can have.
 
 Description
 -----------
@@ -168,7 +296,7 @@ See also :ref:`@GDScript<class_@GDScript>`, for the same functions in the GDScri
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptBuiltinFunc_function:
+.. _class_VisualScriptBuiltinFunc_property_function:
 
 - :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **function**
 

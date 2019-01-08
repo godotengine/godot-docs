@@ -23,11 +23,11 @@ data they have calculated once they draw to the frame buffer.
 .. note:: Particle shaders are only available in the GLES3 renderer. If you need 
           particles in GLES2, use :ref:`CPUParticles <class_CPUParticles>`.
 
-Render Modes
+Render modes
 ^^^^^^^^^^^^
 
 +---------------------------------+----------------------------------------------------------------------+
-| Render Mode                     | Description                                                          |
+| Render mode                     | Description                                                          |
 +=================================+======================================================================+
 | **keep_data**                   | Do not clear previous data on restart.                               |
 +---------------------------------+----------------------------------------------------------------------+
@@ -36,8 +36,9 @@ Render Modes
 | **disable_velocity**            | Ignore **VELOCITY** value.                                           |
 +---------------------------------+----------------------------------------------------------------------+
 
-Vertex Built-Ins
+Vertex built-ins
 ^^^^^^^^^^^^^^^^
+
 Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
 not necessarily contain sensible values. Values marked as "inout" provide a sensible default 
 value, and can optionally be written to. Samplers are not subjects of writing and they are 
@@ -47,7 +48,7 @@ In order to use the ``COLOR`` variable in a SpatialMaterial, set ``use_vertex_as
 to ``true``. In a ShaderMaterial, access it with the ``COLOR`` variable.
 
 +---------------------------------+-------------------------------------------------------------------------------------+
-| Built-In                        | Description                                                                         |
+| Built-in                        | Description                                                                         |
 +=================================+=====================================================================================+
 | inout vec4 **COLOR**            | Particle color, can be written to and accessed in mesh's vertex function.           |
 +---------------------------------+-------------------------------------------------------------------------------------+

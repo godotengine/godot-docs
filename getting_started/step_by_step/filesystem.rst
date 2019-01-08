@@ -105,12 +105,12 @@ dock. Never move assets from outside Godot, or dependencies will have to be
 fixed manually (Godot detects this and helps you fix them anyway, but why
 go the hard route?).
 
-The second is that under Windows and macOS file and path names are case insensitive.
+The second is that, under Windows and macOS, file and path names are case insensitive.
 If a developer working in a case insensitive host file system saves an asset as "myfile.PNG",
 but then references it as "myfile.png", it will work fine on their platform, but not
 on other platforms, such as Linux, Android, etc. This may also apply to exported binaries,
 which use a compressed package to store all files.
 
-It is recommended that your team clearly defines a naming convention for files when
+It is recommended that your team clearly define a naming convention for files when
 working with Godot! One simple fool-proof convention is to only allow lowercase
 file and path names.

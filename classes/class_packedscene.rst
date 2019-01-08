@@ -19,35 +19,41 @@ An abstraction of a serialized scene.
 Properties
 ----------
 
-+-------------------------------------+---------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene__bundled>` |
-+-------------------------------------+---------------------------------------------+
++-------------------------------------+------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` |
++-------------------------------------+------------------------------------------------------+
 
 Methods
 -------
 
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`can_instance<class_PackedScene_can_instance>` **(** **)** const                                                         |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneState<class_SceneState>`    | :ref:`get_state<class_PackedScene_get_state>` **(** **)**                                                                     |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                | :ref:`instance<class_PackedScene_instance>` **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`pack<class_PackedScene_pack>` **(** :ref:`Node<class_Node>` path **)**                                                  |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`can_instance<class_PackedScene_method_can_instance>` **(** **)** const                                                         |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>` **(** **)**                                                                     |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`               | :ref:`instance<class_PackedScene_method_instance>` **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedScene_method_pack>` **(** :ref:`Node<class_Node>` path **)**                                                  |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_PackedScene_GenEditState:
 
+.. _class_PackedScene_constant_GEN_EDIT_STATE_DISABLED:
+
+.. _class_PackedScene_constant_GEN_EDIT_STATE_INSTANCE:
+
+.. _class_PackedScene_constant_GEN_EDIT_STATE_MAIN:
+
 enum **GenEditState**:
 
-- **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`instance<class_PackedScene_instance>`, blocks edits to the scene state.
+- **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, blocks edits to the scene state.
 
-- **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Requires tools compiled.
+- **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Requires tools compiled.
 
-- **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state. Requires tools compiled.
+- **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state. Requires tools compiled.
 
 Description
 -----------
@@ -70,7 +76,7 @@ Example of saving a node with different owners: The following example creates 3 
     node.add_child(rigid)
     
     # change owner of rigid, but not of collision
-    rigid.set_owner(node)
+    rigid.owner = node
     
     var scene = PackedScene.new()
     # only node and rigid are now packed
@@ -81,7 +87,7 @@ Example of saving a node with different owners: The following example creates 3 
 Property Descriptions
 ---------------------
 
-.. _class_PackedScene__bundled:
+.. _class_PackedScene_property__bundled:
 
 - :ref:`Dictionary<class_Dictionary>` **_bundled**
 
@@ -92,27 +98,27 @@ Available keys include "rnames" and "variants" for resources, "node_count", "nod
 Method Descriptions
 -------------------
 
-.. _class_PackedScene_can_instance:
+.. _class_PackedScene_method_can_instance:
 
 - :ref:`bool<class_bool>` **can_instance** **(** **)** const
 
 Returns ``true`` if the scene file has nodes.
 
-.. _class_PackedScene_get_state:
+.. _class_PackedScene_method_get_state:
 
 - :ref:`SceneState<class_SceneState>` **get_state** **(** **)**
 
 Returns the ``SceneState`` representing the scene file contents.
 
-.. _class_PackedScene_instance:
+.. _class_PackedScene_method_instance:
 
 - :ref:`Node<class_Node>` **instance** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const
 
 Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers :ref:`Node<class_Node>`'s ``NOTIFICATION_INSTANCED`` notification on the root node.
 
-.. _class_PackedScene_pack:
+.. _class_PackedScene_method_pack:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Node<class_Node>` path **)**
 
-Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.set_owner<class_Node_set_owner>`.
+Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.owner<class_Node_property_owner>`.
 

@@ -1,18 +1,18 @@
 .. _doc_spatial_shader:
 
 Spatial shaders
-================
+===============
 
 Spatial shaders are used for shading 3D objects. They are the most complex type of shader Godot offers. 
 Spatial shaders are highly configurable with different render modes and different rendering options
 (e.g. Subsurface Scattering, Transmission, Ambient Occlusion, Rim lighting etc). Users can optionally
 write vertex, fragment, and light processor functions to affect how objects are drawn.
 
-Render Modes
+Render modes
 ^^^^^^^^^^^^
 
 +---------------------------------+-----------------------------------------------------------------------+
-| Render Mode                     | Description                                                           |
+| Render mode                     | Description                                                           |
 +=================================+=======================================================================+
 | **blend_mix**                   | Mix blend mode (alpha is transparency), default.                      |
 +---------------------------------+-----------------------------------------------------------------------+
@@ -67,7 +67,7 @@ Render Modes
 | **vertex_lighting**             | Use vertex-based lighting.                                            |
 +---------------------------------+-----------------------------------------------------------------------+
 
-Vertex Built-Ins
+Vertex built-ins
 ^^^^^^^^^^^^^^^^
 
 Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
@@ -81,7 +81,7 @@ as they came.
 
 They can optionally be presented in world space by using the *world_vertex_coords* render mode.
 
-User can disable the built-in modelview transform (projection will still happen later) and do 
+Users can disable the built-in modelview transform (projection will still happen later) and do 
 it manually with the following code:
 
 .. code-block:: glsl
@@ -90,13 +90,16 @@ it manually with the following code:
     render_mode skip_vertex_transform;
 
     void vertex() {
-
         VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
         NORMAL = (MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
         // same as above for binormal and tangent, if normal mapping is used
     }
 
 Other built-ins such as UV, UV2 and COLOR are also passed through to the fragment function if not modified.
+
+Users can override the modelview and projection transforms using the ``POSITION`` built-in. When ``POSITION`` is used
+the value from ``VERTEX`` is ignored and projection does not happen. However, the value passed to the fragment shader 
+still comes from ``VERTEX``.
 
 For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
 is usually:
@@ -109,7 +112,7 @@ This allows you to easily adjust the shader to a particle system using default p
 shader, this value can be used as desired.
 
 +------------------------------------+-------------------------------------------------------+
-| Built-In                           | Description                                           |
+| Built-in                           | Description                                           |
 +====================================+=======================================================+
 | out mat4 **WORLD_MATRIX**          | Model space to world space transform.                 |
 +------------------------------------+-------------------------------------------------------+
@@ -143,6 +146,8 @@ shader, this value can be used as desired.
 +------------------------------------+-------------------------------------------------------+
 | out float **POINT_SIZE**           | Point size for point rendering.                       |
 +------------------------------------+-------------------------------------------------------+
+| out vec4  **POSITION**             | If written to, overrides final vertex position.       |
++------------------------------------+-------------------------------------------------------+
 | in int **INSTANCE_ID**             | Instance ID for instancing.                           |
 +------------------------------------+-------------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**        | Instance custom data (for particles, mostly).         |
@@ -150,7 +155,7 @@ shader, this value can be used as desired.
 | out float **ROUGHNESS**            | Roughness for vertex lighting.                        |
 +------------------------------------+-------------------------------------------------------+
 
-Fragment Built-Ins
+Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 
 The default use of a Godot fragment processor function is to set up the material properties of your object
@@ -158,7 +163,7 @@ and to let the built-in renderer handle the final shading. However, you are not 
 these properties, and if you don't write to them, Godot will optimize away the corresponding functionality. 
 
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| Built-In                          | Description                                                                                      |
+| Built-in                          | Description                                                                                      |
 +===================================+==================================================================================================+
 | in vec4 **FRAGCOORD**             | Fragment coordinate, pixel adjusted. In screen space.                                            |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
@@ -239,7 +244,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 | out float **ALPHA_SCISSOR**       | If written to, values below a certain amount of alpha are discarded.                             |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 
-Light Built-Ins
+Light built-ins
 ^^^^^^^^^^^^^^^
 
 Writing light processor functions is completely optional. You can skip the light function by setting

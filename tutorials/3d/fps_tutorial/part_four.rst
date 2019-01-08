@@ -3,7 +3,7 @@
 Part 4
 ======
 
-Part Overview
+Part overview
 -------------
 
 In this part, we will be adding health pickups, ammo pickups, targets the player can destroy, support for joypads, and add the ability to change weapons with the scroll wheel.

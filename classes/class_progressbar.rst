@@ -19,24 +19,24 @@ General purpose progress bar.
 Properties
 ----------
 
-+-------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`percent_visible<class_ProgressBar_percent_visible>` |
-+-------------------------+-----------------------------------------------------------+
++-------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`percent_visible<class_ProgressBar_property_percent_visible>` |
++-------------------------+--------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ProgressBar_bg>`                               |
-+---------------------------------+---------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`fg<class_ProgressBar_fg>`                               |
-+---------------------------------+---------------------------------------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_ProgressBar_font>`                           |
-+---------------------------------+---------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_ProgressBar_font_color>`               |
-+---------------------------------+---------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_shadow<class_ProgressBar_font_color_shadow>` |
-+---------------------------------+---------------------------------------------------------------+
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | bg                |
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | fg                |
++---------------------------------+-------------------+
+| :ref:`Font<class_Font>`         | font              |
++---------------------------------+-------------------+
+| :ref:`Color<class_Color>`       | font_color        |
++---------------------------------+-------------------+
+| :ref:`Color<class_Color>`       | font_color_shadow |
++---------------------------------+-------------------+
 
 Description
 -----------
@@ -46,7 +46,7 @@ General purpose progress bar. Shows fill percentage from right to left.
 Property Descriptions
 ---------------------
 
-.. _class_ProgressBar_percent_visible:
+.. _class_ProgressBar_property_percent_visible:
 
 - :ref:`bool<class_bool>` **percent_visible**
 

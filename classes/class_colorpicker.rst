@@ -19,68 +19,68 @@ Color picker control.
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_color>`                 |
-+---------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_deferred_mode>` |
-+---------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_edit_alpha>`       |
-+---------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_raw_mode>`           |
-+---------------------------+-------------------------------------------------------+
++---------------------------+----------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_property_color>`                 |
++---------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>` |
++---------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`       |
++---------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_property_raw_mode>`           |
++---------------------------+----------------------------------------------------------------+
 
 Methods
 -------
 
-+----------------------------------------------+-------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`add_preset<class_ColorPicker_add_preset>` **(** :ref:`Color<class_Color>` color **)**     |
-+----------------------------------------------+-------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`erase_preset<class_ColorPicker_erase_preset>` **(** :ref:`Color<class_Color>` color **)** |
-+----------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`PoolColorArray<class_PoolColorArray>`  | :ref:`get_presets<class_ColorPicker_get_presets>` **(** **)** const                             |
-+----------------------------------------------+-------------------------------------------------------------------------------------------------+
++---------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`add_preset<class_ColorPicker_method_add_preset>` **(** :ref:`Color<class_Color>` color **)**     |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`erase_preset<class_ColorPicker_method_erase_preset>` **(** :ref:`Color<class_Color>` color **)** |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`get_presets<class_ColorPicker_method_get_presets>` **(** **)** const                             |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+-------------------------------+-------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`add_preset<class_ColorPicker_add_preset>`       |
-+-------------------------------+-------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`color_hue<class_ColorPicker_color_hue>`         |
-+-------------------------------+-------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`color_sample<class_ColorPicker_color_sample>`   |
-+-------------------------------+-------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`h_width<class_ColorPicker_h_width>`             |
-+-------------------------------+-------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`label_width<class_ColorPicker_label_width>`     |
-+-------------------------------+-------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`margin<class_ColorPicker_margin>`               |
-+-------------------------------+-------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`preset_bg<class_ColorPicker_preset_bg>`         |
-+-------------------------------+-------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`screen_picker<class_ColorPicker_screen_picker>` |
-+-------------------------------+-------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`sv_height<class_ColorPicker_sv_height>`         |
-+-------------------------------+-------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`sv_width<class_ColorPicker_sv_width>`           |
-+-------------------------------+-------------------------------------------------------+
++-------------------------------+---------------+
+| :ref:`Texture<class_Texture>` | add_preset    |
++-------------------------------+---------------+
+| :ref:`Texture<class_Texture>` | color_hue     |
++-------------------------------+---------------+
+| :ref:`Texture<class_Texture>` | color_sample  |
++-------------------------------+---------------+
+| :ref:`int<class_int>`         | h_width       |
++-------------------------------+---------------+
+| :ref:`int<class_int>`         | label_width   |
++-------------------------------+---------------+
+| :ref:`int<class_int>`         | margin        |
++-------------------------------+---------------+
+| :ref:`Texture<class_Texture>` | preset_bg     |
++-------------------------------+---------------+
+| :ref:`Texture<class_Texture>` | screen_picker |
++-------------------------------+---------------+
+| :ref:`int<class_int>`         | sv_height     |
++-------------------------------+---------------+
+| :ref:`int<class_int>`         | sv_width      |
++-------------------------------+---------------+
 
 Signals
 -------
 
-.. _class_ColorPicker_color_changed:
+.. _class_ColorPicker_signal_color_changed:
 
 - **color_changed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when the color is changed.
 
-.. _class_ColorPicker_preset_added:
+.. _class_ColorPicker_signal_preset_added:
 
 - **preset_added** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when a preset is added.
 
-.. _class_ColorPicker_preset_removed:
+.. _class_ColorPicker_signal_preset_removed:
 
 - **preset_removed** **(** :ref:`Color<class_Color>` color **)**
 
@@ -94,7 +94,7 @@ Description
 Property Descriptions
 ---------------------
 
-.. _class_ColorPicker_color:
+.. _class_ColorPicker_property_color:
 
 - :ref:`Color<class_Color>` **color**
 
@@ -106,7 +106,7 @@ Property Descriptions
 
 The currently selected color.
 
-.. _class_ColorPicker_deferred_mode:
+.. _class_ColorPicker_property_deferred_mode:
 
 - :ref:`bool<class_bool>` **deferred_mode**
 
@@ -118,7 +118,7 @@ The currently selected color.
 
 If ``true``, the color will apply only after the user releases the mouse button, otherwise it will apply immediately even in mouse motion event (which can cause performance issues).
 
-.. _class_ColorPicker_edit_alpha:
+.. _class_ColorPicker_property_edit_alpha:
 
 - :ref:`bool<class_bool>` **edit_alpha**
 
@@ -130,7 +130,7 @@ If ``true``, the color will apply only after the user releases the mouse button,
 
 If ``true``, shows an alpha channel slider (transparency).
 
-.. _class_ColorPicker_raw_mode:
+.. _class_ColorPicker_property_raw_mode:
 
 - :ref:`bool<class_bool>` **raw_mode**
 
@@ -145,19 +145,19 @@ If ``true``, allows the color R, G, B component values to go beyond 1.0, which c
 Method Descriptions
 -------------------
 
-.. _class_ColorPicker_add_preset:
+.. _class_ColorPicker_method_add_preset:
 
 - void **add_preset** **(** :ref:`Color<class_Color>` color **)**
 
 Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them. Note: the presets list is only for *this* color picker.
 
-.. _class_ColorPicker_erase_preset:
+.. _class_ColorPicker_method_erase_preset:
 
 - void **erase_preset** **(** :ref:`Color<class_Color>` color **)**
 
 Remove the given color from the list of color presets of this color picker.
 
-.. _class_ColorPicker_get_presets:
+.. _class_ColorPicker_method_get_presets:
 
 - :ref:`PoolColorArray<class_PoolColorArray>` **get_presets** **(** **)** const
 

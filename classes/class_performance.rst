@@ -19,14 +19,72 @@ Exposes performance related data.
 Methods
 -------
 
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_monitor<class_Performance_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_Performance_Monitor:
+
+.. _class_Performance_constant_TIME_FPS:
+
+.. _class_Performance_constant_TIME_PROCESS:
+
+.. _class_Performance_constant_TIME_PHYSICS_PROCESS:
+
+.. _class_Performance_constant_MEMORY_STATIC:
+
+.. _class_Performance_constant_MEMORY_DYNAMIC:
+
+.. _class_Performance_constant_MEMORY_STATIC_MAX:
+
+.. _class_Performance_constant_MEMORY_DYNAMIC_MAX:
+
+.. _class_Performance_constant_MEMORY_MESSAGE_BUFFER_MAX:
+
+.. _class_Performance_constant_OBJECT_COUNT:
+
+.. _class_Performance_constant_OBJECT_RESOURCE_COUNT:
+
+.. _class_Performance_constant_OBJECT_NODE_COUNT:
+
+.. _class_Performance_constant_RENDER_OBJECTS_IN_FRAME:
+
+.. _class_Performance_constant_RENDER_VERTICES_IN_FRAME:
+
+.. _class_Performance_constant_RENDER_MATERIAL_CHANGES_IN_FRAME:
+
+.. _class_Performance_constant_RENDER_SHADER_CHANGES_IN_FRAME:
+
+.. _class_Performance_constant_RENDER_SURFACE_CHANGES_IN_FRAME:
+
+.. _class_Performance_constant_RENDER_DRAW_CALLS_IN_FRAME:
+
+.. _class_Performance_constant_RENDER_VIDEO_MEM_USED:
+
+.. _class_Performance_constant_RENDER_TEXTURE_MEM_USED:
+
+.. _class_Performance_constant_RENDER_VERTEX_MEM_USED:
+
+.. _class_Performance_constant_RENDER_USAGE_VIDEO_MEM_TOTAL:
+
+.. _class_Performance_constant_PHYSICS_2D_ACTIVE_OBJECTS:
+
+.. _class_Performance_constant_PHYSICS_2D_COLLISION_PAIRS:
+
+.. _class_Performance_constant_PHYSICS_2D_ISLAND_COUNT:
+
+.. _class_Performance_constant_PHYSICS_3D_ACTIVE_OBJECTS:
+
+.. _class_Performance_constant_PHYSICS_3D_COLLISION_PAIRS:
+
+.. _class_Performance_constant_PHYSICS_3D_ISLAND_COUNT:
+
+.. _class_Performance_constant_AUDIO_OUTPUT_LATENCY:
+
+.. _class_Performance_constant_MONITOR_MAX:
 
 enum **Monitor**:
 
@@ -91,14 +149,14 @@ enum **Monitor**:
 Description
 -----------
 
-This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same as the values displayed in the *Monitor* tab in the editor's *Debugger* panel. By using the :ref:`get_monitor<class_Performance_get_monitor>` method of this class, you can access this data from your code. Note that a few of these monitors are only available in debug mode and will always return 0 when used in a release build.
+This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same as the values displayed in the *Monitor* tab in the editor's *Debugger* panel. By using the :ref:`get_monitor<class_Performance_method_get_monitor>` method of this class, you can access this data from your code. Note that a few of these monitors are only available in debug mode and will always return 0 when used in a release build.
 
 Many of these monitors are not updated in real-time, so there may be a short delay between changes.
 
 Method Descriptions
 -------------------
 
-.. _class_Performance_get_monitor:
+.. _class_Performance_method_get_monitor:
 
 - :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const
 

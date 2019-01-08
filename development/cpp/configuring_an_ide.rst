@@ -75,7 +75,7 @@ Run configuration:
 
 .. image:: img/qtcreator-run-command.png
 
-Updating Sources after pulling latest commits
+Updating sources after pulling latest commits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As a developer you usually want to frequently pull the latest commits
@@ -178,7 +178,7 @@ That's it! Now you should be good to go :)
 Xcode
 -----
 
-Project Setup
+Project setup
 ^^^^^^^^^^^^^
 
 - Create an Xcode external build project anywhere
@@ -227,7 +227,7 @@ Add Godot Source to the Project:
 - Grab a cup of coffee... Maybe make something to eat, too
 - You should have jump to definition, auto completion, and full syntax highlighting when it is done.
 
-Scheme Setup
+Scheme setup
 ^^^^^^^^^^^^
 
 Edit Build Scheme of External Build Target:
@@ -295,6 +295,4 @@ To create them:
 
 - You can now start Debug process again to test that everything works.
 
-- If build phase fails, check console for hints. On Linux it's most likely that some dependencies are missing. Check :ref:`Compiling for X11 (Linux, \*BSD) <doc_compiling_for_x11>`
-
-
+- If the build phase fails, check console for hints. On Linux it's most likely that some dependencies are missing. Check :ref:`Compiling for X11 (Linux, \*BSD) <doc_compiling_for_x11>`

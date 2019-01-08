@@ -19,14 +19,32 @@ Brief Description
 Properties
 ----------
 
-+--------------------------------------------------------+---------------------------------------------------------+
-| :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` | :ref:`operator<class_VisualShaderNodeColorOp_operator>` |
-+--------------------------------------------------------+---------------------------------------------------------+
++--------------------------------------------------------+------------------------------------------------------------------+
+| :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` | :ref:`operator<class_VisualShaderNodeColorOp_property_operator>` |
++--------------------------------------------------------+------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeColorOp_Operator:
+
+.. _class_VisualShaderNodeColorOp_constant_OP_SCREEN:
+
+.. _class_VisualShaderNodeColorOp_constant_OP_DIFFERENCE:
+
+.. _class_VisualShaderNodeColorOp_constant_OP_DARKEN:
+
+.. _class_VisualShaderNodeColorOp_constant_OP_LIGHTEN:
+
+.. _class_VisualShaderNodeColorOp_constant_OP_OVERLAY:
+
+.. _class_VisualShaderNodeColorOp_constant_OP_DODGE:
+
+.. _class_VisualShaderNodeColorOp_constant_OP_BURN:
+
+.. _class_VisualShaderNodeColorOp_constant_OP_SOFT_LIGHT:
+
+.. _class_VisualShaderNodeColorOp_constant_OP_HARD_LIGHT:
 
 enum **Operator**:
 
@@ -51,7 +69,7 @@ enum **Operator**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeColorOp_operator:
+.. _class_VisualShaderNodeColorOp_property_operator:
 
 - :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` **operator**
 

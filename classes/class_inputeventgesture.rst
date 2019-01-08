@@ -21,14 +21,14 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventGesture_position>` |
-+-------------------------------+---------------------------------------------------+
++-------------------------------+------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventGesture_property_position>` |
++-------------------------------+------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_InputEventGesture_position:
+.. _class_InputEventGesture_property_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
 

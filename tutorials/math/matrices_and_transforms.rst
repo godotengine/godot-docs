@@ -264,7 +264,7 @@ This will always work in global coordinates.
 
 If instead, translation is desired in *local* coordinates of the
 matrix (towards where the *basis* is oriented), there is the
-:ref:`Transform2D.translated() <class_Transform2D_translated>`
+:ref:`Transform2D.translated() <class_Transform2D_method_translated>`
 method:
 
 .. tabs::
@@ -302,8 +302,8 @@ Local to global coordinates and vice versa
 
 There are helper methods for converting between local and global coordinates.
 
-There are :ref:`Node2D.to_local() <class_Node2D_to_local>` and :ref:`Node2D.to_global() <class_Node2D_to_global>` for 2D
-as well as :ref:`Spatial.to_local() <class_Spatial_to_local>` and :ref:`Spatial.to_global() <class_Spatial_to_global>` for 3D.
+There are :ref:`Node2D.to_local() <class_Node2D_method_to_local>` and :ref:`Node2D.to_global() <class_Node2D_method_to_global>` for 2D
+as well as :ref:`Spatial.to_local() <class_Spatial_method_to_local>` and :ref:`Spatial.to_global() <class_Spatial_method_to_global>` for 3D.
 
 Scale
 ~~~~~
@@ -613,7 +613,7 @@ vectors for the rotation matrix, and an extra one for the origin.
 Basis
 ~~~~~
 
-Godot has a special type for a 3x3 matrix, named :ref:`Basis <class_basis>`.
+Godot has a special type for a 3x3 matrix, named :ref:`Basis <class_Basis>`.
 It can be used to represent a 3D rotation and scale. Sub vectors can be
 accessed as:
 

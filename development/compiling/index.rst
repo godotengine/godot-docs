@@ -16,5 +16,5 @@ Compiling
    compiling_for_uwp
    compiling_for_web
    compiling_with_mono
-   packaging_godot
    optimizing_for_size
+   compiling_with_script_encryption_key

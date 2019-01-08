@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+--------------------------------------+
-| :ref:`Plane<class_Plane>` | :ref:`plane<class_PlaneShape_plane>` |
-+---------------------------+--------------------------------------+
++---------------------------+-----------------------------------------------+
+| :ref:`Plane<class_Plane>` | :ref:`plane<class_PlaneShape_property_plane>` |
++---------------------------+-----------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_PlaneShape_plane:
+.. _class_PlaneShape_property_plane:
 
 - :ref:`Plane<class_Plane>` **plane**
 

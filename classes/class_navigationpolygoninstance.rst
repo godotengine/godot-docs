@@ -19,16 +19,16 @@ Brief Description
 Properties
 ----------
 
-+---------------------------------------------------+---------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationPolygonInstance_enabled>` |
-+---------------------------------------------------+---------------------------------------------------------+
-| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_navpoly>` |
-+---------------------------------------------------+---------------------------------------------------------+
++---------------------------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationPolygonInstance_property_enabled>` |
++---------------------------------------------------+------------------------------------------------------------------+
+| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_property_navpoly>` |
++---------------------------------------------------+------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_NavigationPolygonInstance_enabled:
+.. _class_NavigationPolygonInstance_property_enabled:
 
 - :ref:`bool<class_bool>` **enabled**
 
@@ -38,7 +38,7 @@ Property Descriptions
 | *Getter* | is_enabled()       |
 +----------+--------------------+
 
-.. _class_NavigationPolygonInstance_navpoly:
+.. _class_NavigationPolygonInstance_property_navpoly:
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` **navpoly**
 

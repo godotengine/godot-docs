@@ -21,20 +21,28 @@ Adds a filter to the Audio Bus.
 Properties
 ----------
 
-+--------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`cutoff_hz<class_AudioEffectFilter_cutoff_hz>` |
-+--------------------------------------------------+-----------------------------------------------------+
-| :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` | :ref:`db<class_AudioEffectFilter_db>`               |
-+--------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`gain<class_AudioEffectFilter_gain>`           |
-+--------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`resonance<class_AudioEffectFilter_resonance>` |
-+--------------------------------------------------+-----------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` | :ref:`db<class_AudioEffectFilter_property_db>`               |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`gain<class_AudioEffectFilter_property_gain>`           |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`resonance<class_AudioEffectFilter_property_resonance>` |
++--------------------------------------------------+--------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_AudioEffectFilter_FilterDB:
+
+.. _class_AudioEffectFilter_constant_FILTER_6DB:
+
+.. _class_AudioEffectFilter_constant_FILTER_12DB:
+
+.. _class_AudioEffectFilter_constant_FILTER_18DB:
+
+.. _class_AudioEffectFilter_constant_FILTER_24DB:
 
 enum **FilterDB**:
 
@@ -49,12 +57,12 @@ enum **FilterDB**:
 Description
 -----------
 
-Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_cutoff_hz>` to pass.
+Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` to pass.
 
 Property Descriptions
 ---------------------
 
-.. _class_AudioEffectFilter_cutoff_hz:
+.. _class_AudioEffectFilter_property_cutoff_hz:
 
 - :ref:`float<class_float>` **cutoff_hz**
 
@@ -66,7 +74,7 @@ Property Descriptions
 
 Threshold frequency for the filter.
 
-.. _class_AudioEffectFilter_db:
+.. _class_AudioEffectFilter_property_db:
 
 - :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db**
 
@@ -76,7 +84,7 @@ Threshold frequency for the filter.
 | *Getter* | get_db()      |
 +----------+---------------+
 
-.. _class_AudioEffectFilter_gain:
+.. _class_AudioEffectFilter_property_gain:
 
 - :ref:`float<class_float>` **gain**
 
@@ -88,7 +96,7 @@ Threshold frequency for the filter.
 
 Gain amount of the frequencies after the filter.
 
-.. _class_AudioEffectFilter_resonance:
+.. _class_AudioEffectFilter_property_resonance:
 
 - :ref:`float<class_float>` **resonance**
 

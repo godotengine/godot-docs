@@ -21,27 +21,33 @@ A custom shader program.
 Properties
 ----------
 
-+-----------------------------+--------------------------------+
-| :ref:`String<class_String>` | :ref:`code<class_Shader_code>` |
-+-----------------------------+--------------------------------+
++-----------------------------+-----------------------------------------+
+| :ref:`String<class_String>` | :ref:`code<class_Shader_property_code>` |
++-----------------------------+-----------------------------------------+
 
 Methods
 -------
 
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`  | :ref:`get_default_texture_param<class_Shader_get_default_texture_param>` **(** :ref:`String<class_String>` param **)** const                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mode<enum_Shader_Mode>`  | :ref:`get_mode<class_Shader_get_mode>` **(** **)** const                                                                                                      |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_param<class_Shader_has_param>` **(** :ref:`String<class_String>` name **)** const                                                                   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_default_texture_param<class_Shader_set_default_texture_param>` **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`get_default_texture_param<class_Shader_method_get_default_texture_param>` **(** :ref:`String<class_String>` param **)** const                                  |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mode<enum_Shader_Mode>` | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** const                                                                                                      |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`has_param<class_Shader_method_has_param>` **(** :ref:`String<class_String>` name **)** const                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_default_texture_param<class_Shader_method_set_default_texture_param>` **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)** |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_Shader_Mode:
+
+.. _class_Shader_constant_MODE_SPATIAL:
+
+.. _class_Shader_constant_MODE_CANVAS_ITEM:
+
+.. _class_Shader_constant_MODE_PARTICLES:
 
 enum **Mode**:
 
@@ -64,7 +70,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_Shader_code:
+.. _class_Shader_property_code:
 
 - :ref:`String<class_String>` **code**
 
@@ -77,21 +83,21 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_Shader_get_default_texture_param:
+.. _class_Shader_method_get_default_texture_param:
 
 - :ref:`Texture<class_Texture>` **get_default_texture_param** **(** :ref:`String<class_String>` param **)** const
 
-.. _class_Shader_get_mode:
+.. _class_Shader_method_get_mode:
 
 - :ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** const
 
 Returns the shader mode for the shader, either ``MODE_CANVAS_ITEM``, ``MODE_SPATIAL`` or ``MODE_PARTICLES``
 
-.. _class_Shader_has_param:
+.. _class_Shader_method_has_param:
 
 - :ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_String>` name **)** const
 
-.. _class_Shader_set_default_texture_param:
+.. _class_Shader_method_set_default_texture_param:
 
 - void **set_default_texture_param** **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)**
 

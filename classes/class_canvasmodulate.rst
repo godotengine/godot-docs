@@ -19,9 +19,9 @@ Tint the entire canvas.
 Properties
 ----------
 
-+---------------------------+------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_CanvasModulate_color>` |
-+---------------------------+------------------------------------------+
++---------------------------+---------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_CanvasModulate_property_color>` |
++---------------------------+---------------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ Description
 Property Descriptions
 ---------------------
 
-.. _class_CanvasModulate_color:
+.. _class_CanvasModulate_property_color:
 
 - :ref:`Color<class_Color>` **color**
 

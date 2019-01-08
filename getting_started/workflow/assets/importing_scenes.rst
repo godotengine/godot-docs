@@ -3,7 +3,7 @@
 Importing 3D scenes
 ===================
 
-Godot Scene Importer
+Godot scene importer
 --------------------
 
 When dealing with 3D assets, Godot has a flexible and configurable importer.
@@ -70,7 +70,7 @@ import a scene with:
 * External meshes: Where each mesh is saved to a different file. Many users prefer to deal with meshes directly.
 * External animations: Allowing saved animations to be modified and merged when sources change.
 * External scenes: Save each of the root nodes of the imported scenes as a separate scene.
-* Single Scene: A single scene file with everything built in.
+* Single scene: A single scene file with everything built in.
 
 .. image:: img/scene_import1.png
 
@@ -147,7 +147,7 @@ most 3D DCCs don't have the same material options as those present in Godot.
 When materials are built-in, they will be lost each time the source scene
 is modified and re-imported.
 
-Keep on Reimport
+Keep On Reimport
 ^^^^^^^^^^^^^^^^
 
 Once materials are edited to use Godot features, the importer will keep the
@@ -207,7 +207,7 @@ External Files
 Generated meshes and materials can be optionally stored in a subdirectory with the
 name of the scene.
 
-Animation Options
+Animation options
 -----------------
 
 Godot provides many options regarding how animation data is dealt with. Some exporters
@@ -237,7 +237,6 @@ Storage
 
 By default, animations are saved as built-in. It is possible to save them to a file instead. This
 allows adding custom tracks to the animations and keeping them after a reimport.
-
 
 Optimizer
 ~~~~~~~~~

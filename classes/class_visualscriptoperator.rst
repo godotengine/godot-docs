@@ -19,11 +19,11 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------------------------------+------------------------------------------------------+
-| :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` | :ref:`operator<class_VisualScriptOperator_operator>` |
-+-------------------------------------------------------------+------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`         | :ref:`type<class_VisualScriptOperator_type>`         |
-+-------------------------------------------------------------+------------------------------------------------------+
++-------------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` | :ref:`operator<class_VisualScriptOperator_property_operator>` |
++-------------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`         | :ref:`type<class_VisualScriptOperator_property_type>`         |
++-------------------------------------------------------------+---------------------------------------------------------------+
 
 Description
 -----------
@@ -41,7 +41,7 @@ Description
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptOperator_operator:
+.. _class_VisualScriptOperator_property_operator:
 
 - :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **operator**
 
@@ -51,7 +51,7 @@ Property Descriptions
 | *Getter* | get_operator()      |
 +----------+---------------------+
 
-.. _class_VisualScriptOperator_type:
+.. _class_VisualScriptOperator_property_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 

@@ -19,38 +19,38 @@ Registers a custom resource importer in the editor. Use the class to parse any f
 Methods
 -------
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`    | :ref:`get_import_options<class_EditorImportPlugin_get_import_options>` **(** :ref:`int<class_int>` preset **)** virtual                                                                                                                                                          |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_import_order<class_EditorImportPlugin_get_import_order>` **(** **)** virtual                                                                                                                                                                                           |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`  | :ref:`get_importer_name<class_EditorImportPlugin_get_importer_name>` **(** **)** virtual                                                                                                                                                                                         |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`get_option_visibility<class_EditorImportPlugin_get_option_visibility>` **(** :ref:`String<class_String>` option, :ref:`Dictionary<class_Dictionary>` options **)** virtual                                                                                                 |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_preset_count<class_EditorImportPlugin_get_preset_count>` **(** **)** virtual                                                                                                                                                                                           |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`  | :ref:`get_preset_name<class_EditorImportPlugin_get_preset_name>` **(** :ref:`int<class_int>` preset **)** virtual                                                                                                                                                                |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_priority<class_EditorImportPlugin_get_priority>` **(** **)** virtual                                                                                                                                                                                                   |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`    | :ref:`get_recognized_extensions<class_EditorImportPlugin_get_recognized_extensions>` **(** **)** virtual                                                                                                                                                                         |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`  | :ref:`get_resource_type<class_EditorImportPlugin_get_resource_type>` **(** **)** virtual                                                                                                                                                                                         |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`  | :ref:`get_save_extension<class_EditorImportPlugin_get_save_extension>` **(** **)** virtual                                                                                                                                                                                       |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`  | :ref:`get_visible_name<class_EditorImportPlugin_get_visible_name>` **(** **)** virtual                                                                                                                                                                                           |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`import<class_EditorImportPlugin_import>` **(** :ref:`String<class_String>` source_file, :ref:`String<class_String>` save_path, :ref:`Dictionary<class_Dictionary>` options, :ref:`Array<class_Array>` platform_variants, :ref:`Array<class_Array>` gen_files **)** virtual |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`   | :ref:`get_import_options<class_EditorImportPlugin_method_get_import_options>` **(** :ref:`int<class_int>` preset **)** virtual                                                                                                                                                          |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`get_import_order<class_EditorImportPlugin_method_get_import_order>` **(** **)** virtual                                                                                                                                                                                           |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_importer_name<class_EditorImportPlugin_method_get_importer_name>` **(** **)** virtual                                                                                                                                                                                         |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`get_option_visibility<class_EditorImportPlugin_method_get_option_visibility>` **(** :ref:`String<class_String>` option, :ref:`Dictionary<class_Dictionary>` options **)** virtual                                                                                                 |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`get_preset_count<class_EditorImportPlugin_method_get_preset_count>` **(** **)** virtual                                                                                                                                                                                           |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_preset_name<class_EditorImportPlugin_method_get_preset_name>` **(** :ref:`int<class_int>` preset **)** virtual                                                                                                                                                                |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`get_priority<class_EditorImportPlugin_method_get_priority>` **(** **)** virtual                                                                                                                                                                                                   |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`   | :ref:`get_recognized_extensions<class_EditorImportPlugin_method_get_recognized_extensions>` **(** **)** virtual                                                                                                                                                                         |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_resource_type<class_EditorImportPlugin_method_get_resource_type>` **(** **)** virtual                                                                                                                                                                                         |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_save_extension<class_EditorImportPlugin_method_get_save_extension>` **(** **)** virtual                                                                                                                                                                                       |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_visible_name<class_EditorImportPlugin_method_get_visible_name>` **(** **)** virtual                                                                                                                                                                                           |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`import<class_EditorImportPlugin_method_import>` **(** :ref:`String<class_String>` source_file, :ref:`String<class_String>` save_path, :ref:`Dictionary<class_Dictionary>` options, :ref:`Array<class_Array>` platform_variants, :ref:`Array<class_Array>` gen_files **)** virtual |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-EditorImportPlugins provide a way to extend the editor's resource import functionality. Use them to import resources from custom files or to provide alternatives to the editor's existing importers. Register your :ref:`EditorPlugin<class_EditorPlugin>` with :ref:`EditorPlugin.add_import_plugin<class_EditorPlugin_add_import_plugin>`.
+EditorImportPlugins provide a way to extend the editor's resource import functionality. Use them to import resources from custom files or to provide alternatives to the editor's existing importers. Register your :ref:`EditorPlugin<class_EditorPlugin>` with :ref:`EditorPlugin.add_import_plugin<class_EditorPlugin_method_add_import_plugin>`.
 
-EditorImportPlugins work by associating with specific file extensions and a resource type. See :ref:`get_recognized_extension<class_EditorImportPlugin_get_recognized_extension>` and :ref:`get_resource_type<class_EditorImportPlugin_get_resource_type>`). They may optionally specify some import presets that affect the import process. EditorImportPlugins are responsible for creating the resources and saving them in the ``.import`` directory.
+EditorImportPlugins work by associating with specific file extensions and a resource type. See :ref:`get_recognized_extensions<class_EditorImportPlugin_method_get_recognized_extensions>` and :ref:`get_resource_type<class_EditorImportPlugin_method_get_resource_type>`). They may optionally specify some import presets that affect the import process. EditorImportPlugins are responsible for creating the resources and saving them in the ``.import`` directory.
 
 Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` from a file with the extension ".special" or ".spec":
 
@@ -103,71 +103,71 @@ Tutorials
 Method Descriptions
 -------------------
 
-.. _class_EditorImportPlugin_get_import_options:
+.. _class_EditorImportPlugin_method_get_import_options:
 
 - :ref:`Array<class_Array>` **get_import_options** **(** :ref:`int<class_int>` preset **)** virtual
 
-Get the options and default values for the preset at this index. Returns an Array of Dictionaries with the following keys: "name", "default_value", "property_hint" (optional), "hint_string" (optional), "usage" (optional).
+Get the options and default values for the preset at this index. Returns an Array of Dictionaries with the following keys: ``name``, ``default_value``, ``property_hint`` (optional), ``hint_string`` (optional), ``usage`` (optional).
 
-.. _class_EditorImportPlugin_get_import_order:
+.. _class_EditorImportPlugin_method_get_import_order:
 
 - :ref:`int<class_int>` **get_import_order** **(** **)** virtual
 
 Get the order of this importer to be run when importing resources. Higher values will be called later. Use this to ensure the importer runs after the dependencies are already imported.
 
-.. _class_EditorImportPlugin_get_importer_name:
+.. _class_EditorImportPlugin_method_get_importer_name:
 
 - :ref:`String<class_String>` **get_importer_name** **(** **)** virtual
 
 Get the unique name of the importer.
 
-.. _class_EditorImportPlugin_get_option_visibility:
+.. _class_EditorImportPlugin_method_get_option_visibility:
 
 - :ref:`bool<class_bool>` **get_option_visibility** **(** :ref:`String<class_String>` option, :ref:`Dictionary<class_Dictionary>` options **)** virtual
 
-.. _class_EditorImportPlugin_get_preset_count:
+.. _class_EditorImportPlugin_method_get_preset_count:
 
 - :ref:`int<class_int>` **get_preset_count** **(** **)** virtual
 
-Get the number of initial presets defined by the plugin. Use :ref:`get_import_options<class_EditorImportPlugin_get_import_options>` to get the default options for the preset and :ref:`get_preset_name<class_EditorImportPlugin_get_preset_name>` to get the name of the preset.
+Get the number of initial presets defined by the plugin. Use :ref:`get_import_options<class_EditorImportPlugin_method_get_import_options>` to get the default options for the preset and :ref:`get_preset_name<class_EditorImportPlugin_method_get_preset_name>` to get the name of the preset.
 
-.. _class_EditorImportPlugin_get_preset_name:
+.. _class_EditorImportPlugin_method_get_preset_name:
 
 - :ref:`String<class_String>` **get_preset_name** **(** :ref:`int<class_int>` preset **)** virtual
 
 Get the name of the options preset at this index.
 
-.. _class_EditorImportPlugin_get_priority:
+.. _class_EditorImportPlugin_method_get_priority:
 
 - :ref:`float<class_float>` **get_priority** **(** **)** virtual
 
 Get the priority of this plugin for the recognized extension. Higher priority plugins will be preferred. Default value is 1.0.
 
-.. _class_EditorImportPlugin_get_recognized_extensions:
+.. _class_EditorImportPlugin_method_get_recognized_extensions:
 
 - :ref:`Array<class_Array>` **get_recognized_extensions** **(** **)** virtual
 
-Get the list of file extensions to associate with this loader (case insensitive). e.g. "obj".
+Get the list of file extensions to associate with this loader (case insensitive). e.g. ``["obj"]``.
 
-.. _class_EditorImportPlugin_get_resource_type:
+.. _class_EditorImportPlugin_method_get_resource_type:
 
 - :ref:`String<class_String>` **get_resource_type** **(** **)** virtual
 
-Get the Godot resource type associated with this loader. e.g. "Mesh" or "Animation".
+Get the Godot resource type associated with this loader. e.g. ``"Mesh"`` or ``"Animation"``.
 
-.. _class_EditorImportPlugin_get_save_extension:
+.. _class_EditorImportPlugin_method_get_save_extension:
 
 - :ref:`String<class_String>` **get_save_extension** **(** **)** virtual
 
 Get the extension used to save this resource in the ``.import`` directory.
 
-.. _class_EditorImportPlugin_get_visible_name:
+.. _class_EditorImportPlugin_method_get_visible_name:
 
 - :ref:`String<class_String>` **get_visible_name** **(** **)** virtual
 
 Get the name to display in the import window.
 
-.. _class_EditorImportPlugin_import:
+.. _class_EditorImportPlugin_method_import:
 
 - :ref:`int<class_int>` **import** **(** :ref:`String<class_String>` source_file, :ref:`String<class_String>` save_path, :ref:`Dictionary<class_Dictionary>` options, :ref:`Array<class_Array>` platform_variants, :ref:`Array<class_Array>` gen_files **)** virtual
 

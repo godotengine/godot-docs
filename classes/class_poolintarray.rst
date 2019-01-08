@@ -12,96 +12,96 @@ PoolIntArray
 Brief Description
 -----------------
 
-Integer Array.
+A pooled :ref:`Array<class_Array>` of integers (:ref:`int<class_int>`).
 
 Methods
 -------
 
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`  | :ref:`PoolIntArray<class_PoolIntArray_PoolIntArray>` **(** :ref:`Array<class_Array>` from **)**                |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`append<class_PoolIntArray_append>` **(** :ref:`int<class_int>` integer **)**                             |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`append_array<class_PoolIntArray_append_array>` **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)** |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`insert<class_PoolIntArray_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**  |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`invert<class_PoolIntArray_invert>` **(** **)**                                                           |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`push_back<class_PoolIntArray_push_back>` **(** :ref:`int<class_int>` integer **)**                       |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`remove<class_PoolIntArray_remove>` **(** :ref:`int<class_int>` idx **)**                                 |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`resize<class_PoolIntArray_resize>` **(** :ref:`int<class_int>` idx **)**                                 |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set<class_PoolIntArray_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**        |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`size<class_PoolIntArray_size>` **(** **)**                                                               |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------+
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`PoolIntArray<class_PoolIntArray_method_PoolIntArray>` **(** :ref:`Array<class_Array>` from **)**                |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`append<class_PoolIntArray_method_append>` **(** :ref:`int<class_int>` integer **)**                             |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`append_array<class_PoolIntArray_method_append_array>` **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)** |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                   | :ref:`insert<class_PoolIntArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**  |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`invert<class_PoolIntArray_method_invert>` **(** **)**                                                           |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`push_back<class_PoolIntArray_method_push_back>` **(** :ref:`int<class_int>` integer **)**                       |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`remove<class_PoolIntArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                 |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`resize<class_PoolIntArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                 |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`set<class_PoolIntArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**        |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                   | :ref:`size<class_PoolIntArray_method_size>` **(** **)**                                                               |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Integer Array. Contains integers. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold integer values (:ref:`int<class_int>`). Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
 
-.. _class_PoolIntArray_PoolIntArray:
+.. _class_PoolIntArray_method_PoolIntArray:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **PoolIntArray** **(** :ref:`Array<class_Array>` from **)**
 
-Create from a generic array.
+Construct a new ``PoolIntArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
-.. _class_PoolIntArray_append:
+.. _class_PoolIntArray_method_append:
 
 - void **append** **(** :ref:`int<class_int>` integer **)**
 
-Append an element at the end of the array (alias of :ref:`push_back<class_PoolIntArray_push_back>`).
+Append an element at the end of the array (alias of :ref:`push_back<class_PoolIntArray_method_push_back>`).
 
-.. _class_PoolIntArray_append_array:
+.. _class_PoolIntArray_method_append_array:
 
 - void **append_array** **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)**
 
-Append an ``PoolIntArray`` at the end of this array.
+Append a ``PoolIntArray`` at the end of this array.
 
-.. _class_PoolIntArray_insert:
+.. _class_PoolIntArray_method_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**
 
-Insert a new int at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+Insert a new int at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
-.. _class_PoolIntArray_invert:
+.. _class_PoolIntArray_method_invert:
 
 - void **invert** **(** **)**
 
 Reverse the order of the elements in the array.
 
-.. _class_PoolIntArray_push_back:
+.. _class_PoolIntArray_method_push_back:
 
 - void **push_back** **(** :ref:`int<class_int>` integer **)**
 
 Append a value to the array.
 
-.. _class_PoolIntArray_remove:
+.. _class_PoolIntArray_method_remove:
 
 - void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Remove an element from the array by index.
 
-.. _class_PoolIntArray_resize:
+.. _class_PoolIntArray_method_resize:
 
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Set the size of the array. If the array is grown reserve elements at the end of the array. If the array is shrunk truncate the array to the new size.
 
-.. _class_PoolIntArray_set:
+.. _class_PoolIntArray_method_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**
 
 Change the int at the given index.
 
-.. _class_PoolIntArray_size:
+.. _class_PoolIntArray_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 

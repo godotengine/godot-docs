@@ -19,16 +19,16 @@ Input event type for actions.
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_action>`   |
-+-----------------------------+------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_pressed>` |
-+-----------------------------+------------------------------------------------+
++-----------------------------+---------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_property_action>`   |
++-----------------------------+---------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_property_pressed>` |
++-----------------------------+---------------------------------------------------------+
 
 Description
 -----------
 
-Contains a generic action which can be targeted from several type of inputs. Actions can be created from the project settings menu ``Project > Project Settings > Input Map``. See :ref:`Node._input<class_Node__input>`.
+Contains a generic action which can be targeted from several type of inputs. Actions can be created from the project settings menu ``Project > Project Settings > Input Map``. See :ref:`Node._input<class_Node_method__input>`.
 
 Tutorials
 ---------
@@ -38,7 +38,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_InputEventAction_action:
+.. _class_InputEventAction_property_action:
 
 - :ref:`String<class_String>` **action**
 
@@ -50,7 +50,7 @@ Property Descriptions
 
 The action's name. Actions are accessed via this :ref:`String<class_String>`.
 
-.. _class_InputEventAction_pressed:
+.. _class_InputEventAction_property_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
 

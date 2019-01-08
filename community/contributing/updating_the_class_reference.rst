@@ -223,33 +223,33 @@ Improve formatting with BBcode style tags
 
 Godot's class reference supports BBcode-like tags. They add nice formatting to the text. Here's the list of available tags:
 
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| Tag                       | Effect                         | Usage                             | Result                                     |
-+===========================+================================+===================================+============================================+
-| [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.              |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [method methodname]       | Link to a method in this class | Call [method hide].               | See :ref:`hide <class_spatial_hide>`.      |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [method Class.methodname] | Link to another class's method | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_hide>`.      |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_node2d_scale>`.     |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_scale>`.     |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_renamed>`.  |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_renamed>`.  |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                        |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [i] [/i]                  | Italic                         | Some [i]italic[/i] text.          | Some *italic* text.                        |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [code] [/code]            | Monospace                      | Some [code]monospace[/code] text. | Some ``monospace`` text.                   |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                      | *See below.*                               |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| Tag                       | Effect                         | Usage                             | Result                                            |
++===========================+================================+===================================+===================================================+
+| [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.                     |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [method methodname]       | Link to a method in this class | Call [method hide].               | See :ref:`hide <class_spatial_method_hide>`.      |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [method Class.methodname] | Link to another class's method | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_method_hide>`.      |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_node2d_property_scale>`.   |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_property_scale>`.   |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                               |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [i] [/i]                  | Italic                         | Some [i]italic[/i] text.          | Some *italic* text.                               |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [code] [/code]            | Monospace                      | Some [code]monospace[/code] text. | Some ``monospace`` text.                          |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                      | *See below.*                                      |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 
-Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use spaces for indentation (the parser will delete tabs). Example:
+Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use **four spaces** for indentation (the parser will delete tabs). Example:
 
 .. code:: xml
 
@@ -277,6 +277,16 @@ You can still have a look at the methods' implementation in Godot's source code 
 
 
 Localization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
-Before we translate the documentation, we need to complete and proof-read it in English. We'll work on localization when we get past 90% completion.
+The documentation can be translated in any language on `Hosted Weblate
+<https://hosted.weblate.org/projects/godot-engine/godot-docs/>`__.
+
+Translated strings are synced manually by documentation maintainers in
+the `godot-docs-l10n <https://github.com/godotengine/godot-docs-l10n>`__
+repository.
+
+Languages with a good level of completion have their own localized
+instances of ReadTheDocs. Open an issue on the ``godot-docs-l10n``
+repository if you think that a new language is complete enough to get
+its own instance.

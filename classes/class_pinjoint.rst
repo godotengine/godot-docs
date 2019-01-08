@@ -19,18 +19,24 @@ Pin Joint for 3D Shapes.
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`params/bias<class_PinJoint_params/bias>`                   |
-+---------------------------+------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`params/damping<class_PinJoint_params/damping>`             |
-+---------------------------+------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`params/impulse_clamp<class_PinJoint_params/impulse_clamp>` |
-+---------------------------+------------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`params/bias<class_PinJoint_property_params/bias>`                   |
++---------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`params/damping<class_PinJoint_property_params/damping>`             |
++---------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`params/impulse_clamp<class_PinJoint_property_params/impulse_clamp>` |
++---------------------------+---------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_PinJoint_Param:
+
+.. _class_PinJoint_constant_PARAM_BIAS:
+
+.. _class_PinJoint_constant_PARAM_DAMPING:
+
+.. _class_PinJoint_constant_PARAM_IMPULSE_CLAMP:
 
 enum **Param**:
 
@@ -52,7 +58,7 @@ Pin Joint for 3D Rigid Bodies. It pins 2 bodies (rigid or static) together.
 Property Descriptions
 ---------------------
 
-.. _class_PinJoint_params/bias:
+.. _class_PinJoint_property_params/bias:
 
 - :ref:`float<class_float>` **params/bias**
 
@@ -66,7 +72,7 @@ The force with which the pinned objects stay in positional relation to each othe
 
 The higher, the stronger.
 
-.. _class_PinJoint_params/damping:
+.. _class_PinJoint_property_params/damping:
 
 - :ref:`float<class_float>` **params/damping**
 
@@ -80,7 +86,7 @@ The force with which the pinned objects stay in velocity relation to each other.
 
 The higher, the stronger.
 
-.. _class_PinJoint_params/impulse_clamp:
+.. _class_PinJoint_property_params/impulse_clamp:
 
 - :ref:`float<class_float>` **params/impulse_clamp**
 

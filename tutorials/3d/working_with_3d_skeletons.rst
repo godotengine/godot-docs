@@ -19,7 +19,7 @@ Naturally, Skeleton is intended to deform meshes and consists of
 structures called "bones". Each "bone" is represented as a Transform, which is
 applied to a group of vertices within a mesh. You can directly control a group
 of vertices from Godot. For that please reference the :ref:`class_MeshDataTool`
-class and its method :ref:`set_vertex_bones <class_MeshDataTool_set_vertex_bones>`.
+class and its method :ref:`set_vertex_bones() <class_MeshDataTool_method_set_vertex_bones>`.
 
 The "bones" are organized hierarchically. Every bone, except for the root
 bone(s), has a parent. Every bone also has an associated name you can use to
@@ -343,7 +343,7 @@ Or you can browse it using the web-interface:
 
 https://github.com/slapin/godot-skel3d
 
-Using 3D "bones" to implement Inverse Kinematics
+Using 3D "bones" to implement inverse kinematics
 ------------------------------------------------
 
 See :ref:`doc_inverse_kinematics`.

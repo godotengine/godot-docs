@@ -19,20 +19,26 @@ A unit of execution in a process.
 Methods
 -------
 
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`            | :ref:`get_id<class_Thread_get_id>` **(** **)** const                                                                                                                                                 |
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_active<class_Thread_is_active>` **(** **)** const                                                                                                                                           |
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`start<class_Thread_start>` **(** :ref:`Object<class_Object>` instance, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null, :ref:`int<class_int>` priority=1 **)** |
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`          | :ref:`wait_to_finish<class_Thread_wait_to_finish>` **(** **)**                                                                                                                                       |
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** const                                                                                                                                                 |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_active<class_Thread_method_is_active>` **(** **)** const                                                                                                                                           |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start<class_Thread_method_start>` **(** :ref:`Object<class_Object>` instance, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null, :ref:`int<class_int>` priority=1 **)** |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` **(** **)**                                                                                                                                       |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_Thread_Priority:
+
+.. _class_Thread_constant_PRIORITY_LOW:
+
+.. _class_Thread_constant_PRIORITY_NORMAL:
+
+.. _class_Thread_constant_PRIORITY_HIGH:
 
 enum **Priority**:
 
@@ -50,19 +56,19 @@ A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`
 Method Descriptions
 -------------------
 
-.. _class_Thread_get_id:
+.. _class_Thread_method_get_id:
 
 - :ref:`String<class_String>` **get_id** **(** **)** const
 
 Returns the current ``Thread``\ s id, uniquely identifying it among all threads.
 
-.. _class_Thread_is_active:
+.. _class_Thread_method_is_active:
 
 - :ref:`bool<class_bool>` **is_active** **(** **)** const
 
-Returns true if this ``Thread`` is currently active. An active ``Thread`` cannot start work on a new method but can be joined with :ref:`wait_to_finish<class_Thread_wait_to_finish>`.
+Returns true if this ``Thread`` is currently active. An active ``Thread`` cannot start work on a new method but can be joined with :ref:`wait_to_finish<class_Thread_method_wait_to_finish>`.
 
-.. _class_Thread_start:
+.. _class_Thread_method_start:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Object<class_Object>` instance, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null, :ref:`int<class_int>` priority=1 **)**
 
@@ -70,7 +76,7 @@ Starts a new ``Thread`` that runs "method" on object "instance" with "userdata" 
 
 Returns OK on success, or ERR_CANT_CREATE on failure.
 
-.. _class_Thread_wait_to_finish:
+.. _class_Thread_method_wait_to_finish:
 
 - :ref:`Variant<class_Variant>` **wait_to_finish** **(** **)**
 

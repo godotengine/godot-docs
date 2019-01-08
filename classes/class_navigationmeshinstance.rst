@@ -19,16 +19,16 @@ Brief Description
 Properties
 ----------
 
-+---------------------------------------------+------------------------------------------------------+
-| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_enabled>` |
-+---------------------------------------------+------------------------------------------------------+
-| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_navmesh>` |
-+---------------------------------------------+------------------------------------------------------+
++---------------------------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>` |
++---------------------------------------------+---------------------------------------------------------------+
+| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>` |
++---------------------------------------------+---------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_NavigationMeshInstance_enabled:
+.. _class_NavigationMeshInstance_property_enabled:
 
 - :ref:`bool<class_bool>` **enabled**
 
@@ -38,7 +38,7 @@ Property Descriptions
 | *Getter* | is_enabled()       |
 +----------+--------------------+
 
-.. _class_NavigationMeshInstance_navmesh:
+.. _class_NavigationMeshInstance_property_navmesh:
 
 - :ref:`NavigationMesh<class_NavigationMesh>` **navmesh**
 

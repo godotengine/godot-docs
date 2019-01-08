@@ -12,104 +12,104 @@ PoolStringArray
 Brief Description
 -----------------
 
-String Array.
+A pooled :ref:`Array<class_Array>` of :ref:`String<class_String>`.
 
 Methods
 -------
 
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`PoolStringArray<class_PoolStringArray_PoolStringArray>` **(** :ref:`Array<class_Array>` from **)**                |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`append<class_PoolStringArray_append>` **(** :ref:`String<class_String>` string **)**                              |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`append_array<class_PoolStringArray_append_array>` **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)** |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`insert<class_PoolStringArray_insert>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**   |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`invert<class_PoolStringArray_invert>` **(** **)**                                                                 |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                    | :ref:`join<class_PoolStringArray_join>` **(** :ref:`String<class_String>` delimiter **)**                               |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`push_back<class_PoolStringArray_push_back>` **(** :ref:`String<class_String>` string **)**                        |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`remove<class_PoolStringArray_remove>` **(** :ref:`int<class_int>` idx **)**                                       |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`resize<class_PoolStringArray_resize>` **(** :ref:`int<class_int>` idx **)**                                       |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set<class_PoolStringArray_set>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**         |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`size<class_PoolStringArray_size>` **(** **)**                                                                     |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`PoolStringArray<class_PoolStringArray_method_PoolStringArray>` **(** :ref:`Array<class_Array>` from **)**                |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`append<class_PoolStringArray_method_append>` **(** :ref:`String<class_String>` string **)**                              |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`append_array<class_PoolStringArray_method_append_array>` **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)** |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`insert<class_PoolStringArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**   |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`invert<class_PoolStringArray_method_invert>` **(** **)**                                                                 |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`join<class_PoolStringArray_method_join>` **(** :ref:`String<class_String>` delimiter **)**                               |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`push_back<class_PoolStringArray_method_push_back>` **(** :ref:`String<class_String>` string **)**                        |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`remove<class_PoolStringArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                       |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`resize<class_PoolStringArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                       |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set<class_PoolStringArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**         |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`size<class_PoolStringArray_method_size>` **(** **)**                                                                     |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-String Array. Array of strings. Can only contain strings. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold :ref:`String<class_String>`. Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
 
-.. _class_PoolStringArray_PoolStringArray:
+.. _class_PoolStringArray_method_PoolStringArray:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **PoolStringArray** **(** :ref:`Array<class_Array>` from **)**
 
-Create from a generic array.
+Construct a new ``PoolStringArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
-.. _class_PoolStringArray_append:
+.. _class_PoolStringArray_method_append:
 
 - void **append** **(** :ref:`String<class_String>` string **)**
 
-Append an element at the end of the array (alias of :ref:`push_back<class_PoolStringArray_push_back>`).
+Append an element at the end of the array (alias of :ref:`push_back<class_PoolStringArray_method_push_back>`).
 
-.. _class_PoolStringArray_append_array:
+.. _class_PoolStringArray_method_append_array:
 
 - void **append_array** **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)**
 
-Append an StringArray at the end of this array.
+Append a ``PoolStringArray`` at the end of this array.
 
-.. _class_PoolStringArray_insert:
+.. _class_PoolStringArray_method_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**
 
-Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
-.. _class_PoolStringArray_invert:
+.. _class_PoolStringArray_method_invert:
 
 - void **invert** **(** **)**
 
 Reverse the order of the elements in the array.
 
-.. _class_PoolStringArray_join:
+.. _class_PoolStringArray_method_join:
 
 - :ref:`String<class_String>` **join** **(** :ref:`String<class_String>` delimiter **)**
 
-Returns a :ref:`String<class_String>` with each element of the array joined with the delimiter.
+Returns a :ref:`String<class_String>` with each element of the array joined with the given ``delimiter``.
 
-.. _class_PoolStringArray_push_back:
+.. _class_PoolStringArray_method_push_back:
 
 - void **push_back** **(** :ref:`String<class_String>` string **)**
 
 Append a string element at end of the array.
 
-.. _class_PoolStringArray_remove:
+.. _class_PoolStringArray_method_remove:
 
 - void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Remove an element from the array by index.
 
-.. _class_PoolStringArray_resize:
+.. _class_PoolStringArray_method_resize:
 
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Set the size of the array. If the array is grown reserve elements at the end of the array. If the array is shrunk truncate the array to the new size.
 
-.. _class_PoolStringArray_set:
+.. _class_PoolStringArray_method_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**
 
 Change the :ref:`String<class_String>` at the given index.
 
-.. _class_PoolStringArray_size:
+.. _class_PoolStringArray_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 

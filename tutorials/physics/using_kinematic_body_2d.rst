@@ -29,7 +29,7 @@ precise control over how they move and react.
         but you must calculate the movement in code. The physics engine will
         not move a `KinematicBody2D`.
 
-Movement and Collision
+Movement and collision
 ----------------------
 
 When moving a ``KinematicBody2D``, you should not set its ``position`` property

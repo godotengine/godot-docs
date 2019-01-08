@@ -19,15 +19,15 @@ Horizontal split container.
 Theme Properties
 ----------------
 
-+---------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`autohide<class_HSplitContainer_autohide>`     |
-+---------------------------------+-----------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_HSplitContainer_bg>`                 |
-+---------------------------------+-----------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`grabber<class_HSplitContainer_grabber>`       |
-+---------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`separation<class_HSplitContainer_separation>` |
-+---------------------------------+-----------------------------------------------------+
++---------------------------------+------------+
+| :ref:`int<class_int>`           | autohide   |
++---------------------------------+------------+
+| :ref:`StyleBox<class_StyleBox>` | bg         |
++---------------------------------+------------+
+| :ref:`Texture<class_Texture>`   | grabber    |
++---------------------------------+------------+
+| :ref:`int<class_int>`           | separation |
++---------------------------------+------------+
 
 Description
 -----------

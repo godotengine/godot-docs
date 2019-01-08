@@ -21,9 +21,9 @@ Dialog for confirmation of actions.
 Methods
 -------
 
-+------------------------------+--------------------------------------------------------------------+
-| :ref:`Button<class_Button>`  | :ref:`get_cancel<class_ConfirmationDialog_get_cancel>` **(** **)** |
-+------------------------------+--------------------------------------------------------------------+
++-----------------------------+---------------------------------------------------------------------------+
+| :ref:`Button<class_Button>` | :ref:`get_cancel<class_ConfirmationDialog_method_get_cancel>` **(** **)** |
++-----------------------------+---------------------------------------------------------------------------+
 
 Description
 -----------
@@ -33,7 +33,7 @@ Dialog for confirmation of actions. This dialog inherits from :ref:`AcceptDialog
 Method Descriptions
 -------------------
 
-.. _class_ConfirmationDialog_get_cancel:
+.. _class_ConfirmationDialog_method_get_cancel:
 
 - :ref:`Button<class_Button>` **get_cancel** **(** **)**
 

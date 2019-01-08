@@ -19,9 +19,9 @@ Optimized translation.
 Methods
 -------
 
-+-------+---------------------------------------------------------------------------------------------------------+
-| void  | :ref:`generate<class_PHashTranslation_generate>` **(** :ref:`Translation<class_Translation>` from **)** |
-+-------+---------------------------------------------------------------------------------------------------------+
++------+----------------------------------------------------------------------------------------------------------------+
+| void | :ref:`generate<class_PHashTranslation_method_generate>` **(** :ref:`Translation<class_Translation>` from **)** |
++------+----------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ Optimized translation. Uses real-time compressed translations, which results in 
 Method Descriptions
 -------------------
 
-.. _class_PHashTranslation_generate:
+.. _class_PHashTranslation_method_generate:
 
 - void **generate** **(** :ref:`Translation<class_Translation>` from **)**
 

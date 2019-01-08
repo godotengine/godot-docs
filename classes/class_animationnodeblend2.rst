@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+-------------------------+---------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeBlend2_sync>` |
-+-------------------------+---------------------------------------------+
++-------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeBlend2_property_sync>` |
++-------------------------+------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_AnimationNodeBlend2_sync:
+.. _class_AnimationNodeBlend2_property_sync:
 
 - :ref:`bool<class_bool>` **sync**
 

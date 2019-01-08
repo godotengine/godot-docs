@@ -19,9 +19,9 @@ A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@Global
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptEngineSingleton_constant>` |
-+-----------------------------+-------------------------------------------------------------+
++-----------------------------+----------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptEngineSingleton_property_constant>` |
++-----------------------------+----------------------------------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@Global
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptEngineSingleton_constant:
+.. _class_VisualScriptEngineSingleton_property_constant:
 
 - :ref:`String<class_String>` **constant**
 

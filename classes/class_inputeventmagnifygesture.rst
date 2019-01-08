@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`factor<class_InputEventMagnifyGesture_factor>` |
-+---------------------------+------------------------------------------------------+
++---------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`factor<class_InputEventMagnifyGesture_property_factor>` |
++---------------------------+---------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_InputEventMagnifyGesture_factor:
+.. _class_InputEventMagnifyGesture_property_factor:
 
 - :ref:`float<class_float>` **factor**
 

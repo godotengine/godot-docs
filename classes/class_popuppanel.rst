@@ -19,9 +19,9 @@ Class for displaying popups with a panel background.
 Theme Properties
 ----------------
 
-+---------------------------------+--------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PopupPanel_panel>` |
-+---------------------------------+--------------------------------------+
++---------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>` | panel |
++---------------------------------+-------+
 
 Description
 -----------

@@ -19,50 +19,50 @@ Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`switch_on_hover<class_MenuButton_switch_on_hover>` |
-+-------------------------+----------------------------------------------------------+
++-------------------------+-------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` |
++-------------------------+-------------------------------------------------------------------+
 
 Methods
 -------
 
-+------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`PopupMenu<class_PopupMenu>`  | :ref:`get_popup<class_MenuButton_get_popup>` **(** **)** const                                                    |
-+------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_disable_shortcuts<class_MenuButton_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
-+------------------------------------+-------------------------------------------------------------------------------------------------------------------+
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_MenuButton_method_get_popup>` **(** **)** const                                                    |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_disable_shortcuts<class_MenuButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_MenuButton_disabled>`                       |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_MenuButton_focus>`                             |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_MenuButton_font>`                               |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_MenuButton_font_color>`                   |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_MenuButton_font_color_disabled>` |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_MenuButton_font_color_hover>`       |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_MenuButton_font_color_pressed>`   |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_MenuButton_hover>`                             |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`hseparation<class_MenuButton_hseparation>`                 |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_MenuButton_normal>`                           |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_MenuButton_pressed>`                         |
-+---------------------------------+------------------------------------------------------------------+
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | disabled            |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus               |
++---------------------------------+---------------------+
+| :ref:`Font<class_Font>`         | font                |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color          |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_disabled |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_hover    |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_pressed  |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | hover               |
++---------------------------------+---------------------+
+| :ref:`int<class_int>`           | hseparation         |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | normal              |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | pressed             |
++---------------------------------+---------------------+
 
 Signals
 -------
 
-.. _class_MenuButton_about_to_show:
+.. _class_MenuButton_signal_about_to_show:
 
 - **about_to_show** **(** **)**
 
@@ -76,7 +76,7 @@ Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. 
 Property Descriptions
 ---------------------
 
-.. _class_MenuButton_switch_on_hover:
+.. _class_MenuButton_property_switch_on_hover:
 
 - :ref:`bool<class_bool>` **switch_on_hover**
 
@@ -91,13 +91,13 @@ If ``true``, when the cursor hovers above another MenuButton within the same par
 Method Descriptions
 -------------------
 
-.. _class_MenuButton_get_popup:
+.. _class_MenuButton_method_get_popup:
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
 
 Return the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
-.. _class_MenuButton_set_disable_shortcuts:
+.. _class_MenuButton_method_set_disable_shortcuts:
 
 - void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
 

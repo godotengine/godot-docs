@@ -19,25 +19,25 @@ Helper class to handle INI-style files.
 Methods
 -------
 
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`erase_section<class_ConfigFile_erase_section>` **(** :ref:`String<class_String>` section **)**                                                                            |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_section_keys<class_ConfigFile_get_section_keys>` **(** :ref:`String<class_String>` section **)** const                                                                |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_sections<class_ConfigFile_get_sections>` **(** **)** const                                                                                                            |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                  | :ref:`get_value<class_ConfigFile_get_value>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`has_section<class_ConfigFile_has_section>` **(** :ref:`String<class_String>` section **)** const                                                                          |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`has_section_key<class_ConfigFile_has_section_key>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)** const                                 |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`          | :ref:`load<class_ConfigFile_load>` **(** :ref:`String<class_String>` path **)**                                                                                                 |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`          | :ref:`save<class_ConfigFile_save>` **(** :ref:`String<class_String>` path **)**                                                                                                 |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_value<class_ConfigFile_set_value>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` value **)**              |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`erase_section<class_ConfigFile_method_erase_section>` **(** :ref:`String<class_String>` section **)**                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_section_keys<class_ConfigFile_method_get_section_keys>` **(** :ref:`String<class_String>` section **)** const                                                                |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_sections<class_ConfigFile_method_get_sections>` **(** **)** const                                                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                 | :ref:`get_value<class_ConfigFile_method_get_value>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`has_section<class_ConfigFile_method_has_section>` **(** :ref:`String<class_String>` section **)** const                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`has_section_key<class_ConfigFile_method_has_section_key>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)** const                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load<class_ConfigFile_method_load>` **(** :ref:`String<class_String>` path **)**                                                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save<class_ConfigFile_method_save>` **(** :ref:`String<class_String>` path **)**                                                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_value<class_ConfigFile_method_set_value>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` value **)**              |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -73,55 +73,55 @@ Keep in mind that section and property names can't contain spaces. Anything afte
 Method Descriptions
 -------------------
 
-.. _class_ConfigFile_erase_section:
+.. _class_ConfigFile_method_erase_section:
 
 - void **erase_section** **(** :ref:`String<class_String>` section **)**
 
 Deletes the specified section along with all the key-value pairs inside.
 
-.. _class_ConfigFile_get_section_keys:
+.. _class_ConfigFile_method_get_section_keys:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_section_keys** **(** :ref:`String<class_String>` section **)** const
 
 Returns an array of all defined key identifiers in the specified section.
 
-.. _class_ConfigFile_get_sections:
+.. _class_ConfigFile_method_get_sections:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_sections** **(** **)** const
 
 Returns an array of all defined section identifiers.
 
-.. _class_ConfigFile_get_value:
+.. _class_ConfigFile_method_get_value:
 
 - :ref:`Variant<class_Variant>` **get_value** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const
 
 Returns the current value for the specified section and key. If the section and/or the key do not exist, the method returns the value of the optional ``default`` argument, or ``null`` if it is omitted.
 
-.. _class_ConfigFile_has_section:
+.. _class_ConfigFile_method_has_section:
 
 - :ref:`bool<class_bool>` **has_section** **(** :ref:`String<class_String>` section **)** const
 
 Returns ``true`` if the specified section exists.
 
-.. _class_ConfigFile_has_section_key:
+.. _class_ConfigFile_method_has_section_key:
 
 - :ref:`bool<class_bool>` **has_section_key** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)** const
 
 Returns ``true`` if the specified section-key pair exists.
 
-.. _class_ConfigFile_load:
+.. _class_ConfigFile_method_load:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
 Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is ``OK``.
 
-.. _class_ConfigFile_save:
+.. _class_ConfigFile_method_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**
 
 Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is ``OK``.
 
-.. _class_ConfigFile_set_value:
+.. _class_ConfigFile_method_set_value:
 
 - void **set_value** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` value **)**
 

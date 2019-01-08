@@ -63,7 +63,7 @@ Feel free to use these assets however you want! All original assets belong to th
 
 .. tip:: You can find the finished project for each part at the bottom of each part's page
 
-Part Overview
+Part overview
 -------------
 
 In this part we will be making a first person player that can move around
@@ -76,6 +76,7 @@ sprint, look around with a mouse based first person camera, jump into the air, a
 
 Getting everything ready
 ------------------------
+
 Launch Godot and open up the project included in the starter assets.
 
 .. note:: While these assets are not necessarily required to use the scripts provided in this tutorial,

@@ -19,9 +19,9 @@ Box shape resource.
 Properties
 ----------
 
-+-------------------------------+----------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`extents<class_BoxShape_extents>` |
-+-------------------------------+----------------------------------------+
++-------------------------------+-------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`extents<class_BoxShape_property_extents>` |
++-------------------------------+-------------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ Description
 Property Descriptions
 ---------------------
 
-.. _class_BoxShape_extents:
+.. _class_BoxShape_property_extents:
 
 - :ref:`Vector3<class_Vector3>` **extents**
 

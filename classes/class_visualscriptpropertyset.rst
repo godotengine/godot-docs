@@ -19,28 +19,36 @@ Brief Description
 Properties
 ----------
 
-+--------------------------------------------------------+---------------------------------------------------------------+
-| :ref:`AssignOp<enum_VisualScriptPropertySet_AssignOp>` | :ref:`assign_op<class_VisualScriptPropertySet_assign_op>`     |
-+--------------------------------------------------------+---------------------------------------------------------------+
-| :ref:`String<class_String>`                            | :ref:`base_script<class_VisualScriptPropertySet_base_script>` |
-+--------------------------------------------------------+---------------------------------------------------------------+
-| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptPropertySet_base_type>`     |
-+--------------------------------------------------------+---------------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`    | :ref:`basic_type<class_VisualScriptPropertySet_basic_type>`   |
-+--------------------------------------------------------+---------------------------------------------------------------+
-| :ref:`String<class_String>`                            | :ref:`index<class_VisualScriptPropertySet_index>`             |
-+--------------------------------------------------------+---------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptPropertySet_node_path>`     |
-+--------------------------------------------------------+---------------------------------------------------------------+
-| :ref:`String<class_String>`                            | :ref:`property<class_VisualScriptPropertySet_property>`       |
-+--------------------------------------------------------+---------------------------------------------------------------+
-| :ref:`CallMode<enum_VisualScriptPropertySet_CallMode>` | :ref:`set_mode<class_VisualScriptPropertySet_set_mode>`       |
-+--------------------------------------------------------+---------------------------------------------------------------+
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`AssignOp<enum_VisualScriptPropertySet_AssignOp>` | :ref:`assign_op<class_VisualScriptPropertySet_property_assign_op>`     |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`base_script<class_VisualScriptPropertySet_property_base_script>` |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptPropertySet_property_base_type>`     |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`    | :ref:`basic_type<class_VisualScriptPropertySet_property_basic_type>`   |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`index<class_VisualScriptPropertySet_property_index>`             |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptPropertySet_property_node_path>`     |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`property<class_VisualScriptPropertySet_property_property>`       |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`CallMode<enum_VisualScriptPropertySet_CallMode>` | :ref:`set_mode<class_VisualScriptPropertySet_property_set_mode>`       |
++--------------------------------------------------------+------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptPropertySet_CallMode:
+
+.. _class_VisualScriptPropertySet_constant_CALL_MODE_SELF:
+
+.. _class_VisualScriptPropertySet_constant_CALL_MODE_NODE_PATH:
+
+.. _class_VisualScriptPropertySet_constant_CALL_MODE_INSTANCE:
+
+.. _class_VisualScriptPropertySet_constant_CALL_MODE_BASIC_TYPE:
 
 enum **CallMode**:
 
@@ -53,6 +61,28 @@ enum **CallMode**:
 - **CALL_MODE_BASIC_TYPE** = **3**
 
 .. _enum_VisualScriptPropertySet_AssignOp:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_NONE:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_ADD:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_SUB:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_MUL:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_DIV:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_MOD:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_SHIFT_LEFT:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_SHIFT_RIGHT:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_BIT_AND:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_BIT_OR:
+
+.. _class_VisualScriptPropertySet_constant_ASSIGN_OP_BIT_XOR:
 
 enum **AssignOp**:
 
@@ -81,7 +111,7 @@ enum **AssignOp**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptPropertySet_assign_op:
+.. _class_VisualScriptPropertySet_property_assign_op:
 
 - :ref:`AssignOp<enum_VisualScriptPropertySet_AssignOp>` **assign_op**
 
@@ -91,7 +121,7 @@ Property Descriptions
 | *Getter* | get_assign_op()      |
 +----------+----------------------+
 
-.. _class_VisualScriptPropertySet_base_script:
+.. _class_VisualScriptPropertySet_property_base_script:
 
 - :ref:`String<class_String>` **base_script**
 
@@ -101,7 +131,7 @@ Property Descriptions
 | *Getter* | get_base_script()      |
 +----------+------------------------+
 
-.. _class_VisualScriptPropertySet_base_type:
+.. _class_VisualScriptPropertySet_property_base_type:
 
 - :ref:`String<class_String>` **base_type**
 
@@ -111,7 +141,7 @@ Property Descriptions
 | *Getter* | get_base_type()      |
 +----------+----------------------+
 
-.. _class_VisualScriptPropertySet_basic_type:
+.. _class_VisualScriptPropertySet_property_basic_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
 
@@ -121,7 +151,7 @@ Property Descriptions
 | *Getter* | get_basic_type()      |
 +----------+-----------------------+
 
-.. _class_VisualScriptPropertySet_index:
+.. _class_VisualScriptPropertySet_property_index:
 
 - :ref:`String<class_String>` **index**
 
@@ -131,7 +161,7 @@ Property Descriptions
 | *Getter* | get_index()      |
 +----------+------------------+
 
-.. _class_VisualScriptPropertySet_node_path:
+.. _class_VisualScriptPropertySet_property_node_path:
 
 - :ref:`NodePath<class_NodePath>` **node_path**
 
@@ -141,7 +171,7 @@ Property Descriptions
 | *Getter* | get_base_path()      |
 +----------+----------------------+
 
-.. _class_VisualScriptPropertySet_property:
+.. _class_VisualScriptPropertySet_property_property:
 
 - :ref:`String<class_String>` **property**
 
@@ -151,7 +181,7 @@ Property Descriptions
 | *Getter* | get_property()      |
 +----------+---------------------+
 
-.. _class_VisualScriptPropertySet_set_mode:
+.. _class_VisualScriptPropertySet_property_set_mode:
 
 - :ref:`CallMode<enum_VisualScriptPropertySet_CallMode>` **set_mode**
 

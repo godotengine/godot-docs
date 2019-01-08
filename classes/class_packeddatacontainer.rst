@@ -19,34 +19,34 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`__data__<class_PackedDataContainer___data__>` |
-+-------------------------------------------+-----------------------------------------------------+
++-------------------------------------------+--------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`__data__<class_PackedDataContainer_property___data__>` |
++-------------------------------------------+--------------------------------------------------------------+
 
 Methods
 -------
 
-+----------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`pack<class_PackedDataContainer_pack>` **(** :ref:`Variant<class_Variant>` value **)** |
-+----------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`size<class_PackedDataContainer_size>` **(** **)** const                               |
-+----------------------------------------+---------------------------------------------------------------------------------------------+
++---------------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedDataContainer_method_pack>` **(** :ref:`Variant<class_Variant>` value **)** |
++---------------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`size<class_PackedDataContainer_method_size>` **(** **)** const                               |
++---------------------------------------+----------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_PackedDataContainer___data__:
+.. _class_PackedDataContainer_property___data__:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **__data__**
 
 Method Descriptions
 -------------------
 
-.. _class_PackedDataContainer_pack:
+.. _class_PackedDataContainer_method_pack:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Variant<class_Variant>` value **)**
 
-.. _class_PackedDataContainer_size:
+.. _class_PackedDataContainer_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)** const
 

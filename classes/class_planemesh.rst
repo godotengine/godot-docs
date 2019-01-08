@@ -19,13 +19,13 @@ Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_size>`                       |
-+-------------------------------+---------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_subdivide_depth>` |
-+-------------------------------+---------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_subdivide_width>` |
-+-------------------------------+---------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_property_size>`                       |
++-------------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` |
++-------------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` |
++-------------------------------+------------------------------------------------------------------+
 
 Description
 -----------
@@ -35,7 +35,7 @@ Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat
 Property Descriptions
 ---------------------
 
-.. _class_PlaneMesh_size:
+.. _class_PlaneMesh_property_size:
 
 - :ref:`Vector2<class_Vector2>` **size**
 
@@ -47,7 +47,7 @@ Property Descriptions
 
 Size of the generated plane. Defaults to (2.0, 2.0).
 
-.. _class_PlaneMesh_subdivide_depth:
+.. _class_PlaneMesh_property_subdivide_depth:
 
 - :ref:`int<class_int>` **subdivide_depth**
 
@@ -59,7 +59,7 @@ Size of the generated plane. Defaults to (2.0, 2.0).
 
 Number of subdivision along the z-axis. Defaults to 0.
 
-.. _class_PlaneMesh_subdivide_width:
+.. _class_PlaneMesh_property_subdivide_width:
 
 - :ref:`int<class_int>` **subdivide_width**
 

@@ -19,16 +19,22 @@ Brief Description
 Properties
 ----------
 
-+----------------------------------------------------+-----------------------------------------------------+
-| :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` | :ref:`mode<class_VisualScriptYield_mode>`           |
-+----------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`                          | :ref:`wait_time<class_VisualScriptYield_wait_time>` |
-+----------------------------------------------------+-----------------------------------------------------+
++----------------------------------------------------+--------------------------------------------------------------+
+| :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` | :ref:`mode<class_VisualScriptYield_property_mode>`           |
++----------------------------------------------------+--------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`wait_time<class_VisualScriptYield_property_wait_time>` |
++----------------------------------------------------+--------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptYield_YieldMode:
+
+.. _class_VisualScriptYield_constant_YIELD_FRAME:
+
+.. _class_VisualScriptYield_constant_YIELD_PHYSICS_FRAME:
+
+.. _class_VisualScriptYield_constant_YIELD_WAIT:
 
 enum **YieldMode**:
 
@@ -41,7 +47,7 @@ enum **YieldMode**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptYield_mode:
+.. _class_VisualScriptYield_property_mode:
 
 - :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` **mode**
 
@@ -51,7 +57,7 @@ Property Descriptions
 | *Getter* | get_yield_mode()      |
 +----------+-----------------------+
 
-.. _class_VisualScriptYield_wait_time:
+.. _class_VisualScriptYield_property_wait_time:
 
 - :ref:`float<class_float>` **wait_time**
 

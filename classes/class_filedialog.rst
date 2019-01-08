@@ -19,70 +19,70 @@ Dialog for selecting files or directories in the filesystem.
 Properties
 ----------
 
-+-----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`Access<enum_FileDialog_Access>`         | :ref:`access<class_FileDialog_access>`                             |
-+-----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`current_dir<class_FileDialog_current_dir>`                   |
-+-----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`current_file<class_FileDialog_current_file>`                 |
-+-----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`current_path<class_FileDialog_current_path>`                 |
-+-----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`filters<class_FileDialog_filters>`                           |
-+-----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`Mode<enum_FileDialog_Mode>`             | :ref:`mode<class_FileDialog_mode>`                                 |
-+-----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`mode_overrides_title<class_FileDialog_mode_overrides_title>` |
-+-----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`show_hidden_files<class_FileDialog_show_hidden_files>`       |
-+-----------------------------------------------+--------------------------------------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`Access<enum_FileDialog_Access>`         | :ref:`access<class_FileDialog_property_access>`                             |
++-----------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`current_dir<class_FileDialog_property_current_dir>`                   |
++-----------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`current_file<class_FileDialog_property_current_file>`                 |
++-----------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`current_path<class_FileDialog_property_current_path>`                 |
++-----------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`filters<class_FileDialog_property_filters>`                           |
++-----------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`Mode<enum_FileDialog_Mode>`             | :ref:`mode<class_FileDialog_property_mode>`                                 |
++-----------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` |
++-----------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       |
++-----------------------------------------------+-----------------------------------------------------------------------------+
 
 Methods
 -------
 
-+--------------------------------------------+-----------------------------------------------------------------------------------------------+
-| void                                       | :ref:`add_filter<class_FileDialog_add_filter>` **(** :ref:`String<class_String>` filter **)** |
-+--------------------------------------------+-----------------------------------------------------------------------------------------------+
-| void                                       | :ref:`clear_filters<class_FileDialog_clear_filters>` **(** **)**                              |
-+--------------------------------------------+-----------------------------------------------------------------------------------------------+
-| void                                       | :ref:`deselect_items<class_FileDialog_deselect_items>` **(** **)**                            |
-+--------------------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`LineEdit<class_LineEdit>`            | :ref:`get_line_edit<class_FileDialog_get_line_edit>` **(** **)**                              |
-+--------------------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`VBoxContainer<class_VBoxContainer>`  | :ref:`get_vbox<class_FileDialog_get_vbox>` **(** **)**                                        |
-+--------------------------------------------+-----------------------------------------------------------------------------------------------+
-| void                                       | :ref:`invalidate<class_FileDialog_invalidate>` **(** **)**                                    |
-+--------------------------------------------+-----------------------------------------------------------------------------------------------+
++-------------------------------------------+------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`add_filter<class_FileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter **)** |
++-------------------------------------------+------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`clear_filters<class_FileDialog_method_clear_filters>` **(** **)**                              |
++-------------------------------------------+------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`deselect_items<class_FileDialog_method_deselect_items>` **(** **)**                            |
++-------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_FileDialog_method_get_line_edit>` **(** **)**                              |
++-------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_FileDialog_method_get_vbox>` **(** **)**                                        |
++-------------------------------------------+------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`invalidate<class_FileDialog_method_invalidate>` **(** **)**                                    |
++-------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+-------------------------------+--------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`files_disabled<class_FileDialog_files_disabled>` |
-+-------------------------------+--------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`folder<class_FileDialog_folder>`                 |
-+-------------------------------+--------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`parent_folder<class_FileDialog_parent_folder>`   |
-+-------------------------------+--------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`reload<class_FileDialog_reload>`                 |
-+-------------------------------+--------------------------------------------------------+
++-------------------------------+----------------+
+| :ref:`Color<class_Color>`     | files_disabled |
++-------------------------------+----------------+
+| :ref:`Texture<class_Texture>` | folder         |
++-------------------------------+----------------+
+| :ref:`Texture<class_Texture>` | parent_folder  |
++-------------------------------+----------------+
+| :ref:`Texture<class_Texture>` | reload         |
++-------------------------------+----------------+
 
 Signals
 -------
 
-.. _class_FileDialog_dir_selected:
+.. _class_FileDialog_signal_dir_selected:
 
 - **dir_selected** **(** :ref:`String<class_String>` dir **)**
 
 Event emitted when the user selects a directory.
 
-.. _class_FileDialog_file_selected:
+.. _class_FileDialog_signal_file_selected:
 
 - **file_selected** **(** :ref:`String<class_String>` path **)**
 
 Event emitted when the user selects a file (double clicks it or presses the OK button).
 
-.. _class_FileDialog_files_selected:
+.. _class_FileDialog_signal_files_selected:
 
 - **files_selected** **(** :ref:`PoolStringArray<class_PoolStringArray>` paths **)**
 
@@ -92,6 +92,16 @@ Enumerations
 ------------
 
 .. _enum_FileDialog_Mode:
+
+.. _class_FileDialog_constant_MODE_OPEN_FILE:
+
+.. _class_FileDialog_constant_MODE_OPEN_FILES:
+
+.. _class_FileDialog_constant_MODE_OPEN_DIR:
+
+.. _class_FileDialog_constant_MODE_OPEN_ANY:
+
+.. _class_FileDialog_constant_MODE_SAVE_FILE:
 
 enum **Mode**:
 
@@ -106,6 +116,12 @@ enum **Mode**:
 - **MODE_SAVE_FILE** = **4** --- The dialog will warn when a file exists.
 
 .. _enum_FileDialog_Access:
+
+.. _class_FileDialog_constant_ACCESS_RESOURCES:
+
+.. _class_FileDialog_constant_ACCESS_USERDATA:
+
+.. _class_FileDialog_constant_ACCESS_FILESYSTEM:
 
 enum **Access**:
 
@@ -123,7 +139,7 @@ FileDialog is a preset dialog used to choose files and directories in the filesy
 Property Descriptions
 ---------------------
 
-.. _class_FileDialog_access:
+.. _class_FileDialog_property_access:
 
 - :ref:`Access<enum_FileDialog_Access>` **access**
 
@@ -135,7 +151,7 @@ Property Descriptions
 
 The file system access scope. See enum ``Access`` constants.
 
-.. _class_FileDialog_current_dir:
+.. _class_FileDialog_property_current_dir:
 
 - :ref:`String<class_String>` **current_dir**
 
@@ -147,7 +163,7 @@ The file system access scope. See enum ``Access`` constants.
 
 The current working directory of the file dialog.
 
-.. _class_FileDialog_current_file:
+.. _class_FileDialog_property_current_file:
 
 - :ref:`String<class_String>` **current_file**
 
@@ -159,7 +175,7 @@ The current working directory of the file dialog.
 
 The currently selected file of the file dialog.
 
-.. _class_FileDialog_current_path:
+.. _class_FileDialog_property_current_path:
 
 - :ref:`String<class_String>` **current_path**
 
@@ -171,7 +187,7 @@ The currently selected file of the file dialog.
 
 The currently selected file path of the file dialog.
 
-.. _class_FileDialog_filters:
+.. _class_FileDialog_property_filters:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **filters**
 
@@ -183,7 +199,7 @@ The currently selected file path of the file dialog.
 
 Set file type filters. This example shows only .png and .gd files ``set_filters(PoolStringArray(["*.png ; PNG Images","*.gd ; GD Script"]))``.
 
-.. _class_FileDialog_mode:
+.. _class_FileDialog_property_mode:
 
 - :ref:`Mode<enum_FileDialog_Mode>` **mode**
 
@@ -195,7 +211,7 @@ Set file type filters. This example shows only .png and .gd files ``set_filters(
 
 Set dialog to open or save mode, changes selection behavior. See enum ``Mode`` constants.
 
-.. _class_FileDialog_mode_overrides_title:
+.. _class_FileDialog_property_mode_overrides_title:
 
 - :ref:`bool<class_bool>` **mode_overrides_title**
 
@@ -205,9 +221,9 @@ Set dialog to open or save mode, changes selection behavior. See enum ``Mode`` c
 | *Getter* | is_mode_overriding_title()      |
 +----------+---------------------------------+
 
-If ``true``, changing the ``Mode`` property will set the window title accordingly (e. g. setting mode to ``MODE_OPEN_FILE`` will change the window title to "Open a File").
+If ``true``, changing the ``Mode`` property will set the window title accordingly (e.g. setting mode to ``MODE_OPEN_FILE`` will change the window title to "Open a File").
 
-.. _class_FileDialog_show_hidden_files:
+.. _class_FileDialog_property_show_hidden_files:
 
 - :ref:`bool<class_bool>` **show_hidden_files**
 
@@ -222,37 +238,37 @@ If ``true``, the dialog will show hidden files.
 Method Descriptions
 -------------------
 
-.. _class_FileDialog_add_filter:
+.. _class_FileDialog_method_add_filter:
 
 - void **add_filter** **(** :ref:`String<class_String>` filter **)**
 
 Add a custom filter. Example: ``add_filter("*.png ; PNG Images")``
 
-.. _class_FileDialog_clear_filters:
+.. _class_FileDialog_method_clear_filters:
 
 - void **clear_filters** **(** **)**
 
 Clear all the added filters in the dialog.
 
-.. _class_FileDialog_deselect_items:
+.. _class_FileDialog_method_deselect_items:
 
 - void **deselect_items** **(** **)**
 
 Clear currently selected items in the dialog.
 
-.. _class_FileDialog_get_line_edit:
+.. _class_FileDialog_method_get_line_edit:
 
 - :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
 
 Returns the LineEdit for the selected file.
 
-.. _class_FileDialog_get_vbox:
+.. _class_FileDialog_method_get_vbox:
 
 - :ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
 
 Return the vertical box container of the dialog, custom controls can be added to it.
 
-.. _class_FileDialog_invalidate:
+.. _class_FileDialog_method_invalidate:
 
 - void **invalidate** **(** **)**
 

@@ -19,17 +19,17 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------------------+------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_as_normalmap>` |
-+-------------------------------------------------+------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_height>`             |
-+-------------------------------------------------+------------------------------------------------------+
-| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_noise>`               |
-+-------------------------------------------------+------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_seamless>`         |
-+-------------------------------------------------+------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_width>`               |
-+-------------------------------------------------+------------------------------------------------------+
++-------------------------------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>` |
++-------------------------------------------------+---------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`             |
++-------------------------------------------------+---------------------------------------------------------------+
+| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`               |
++-------------------------------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`         |
++-------------------------------------------------+---------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`               |
++-------------------------------------------------+---------------------------------------------------------------+
 
 Description
 -----------
@@ -41,7 +41,7 @@ NoiseTexture can also generate normalmap textures.
 Property Descriptions
 ---------------------
 
-.. _class_NoiseTexture_as_normalmap:
+.. _class_NoiseTexture_property_as_normalmap:
 
 - :ref:`bool<class_bool>` **as_normalmap**
 
@@ -53,7 +53,7 @@ Property Descriptions
 
 If true, the resulting texture contains a normal map created from the original noise interpreted as a bump map.
 
-.. _class_NoiseTexture_height:
+.. _class_NoiseTexture_property_height:
 
 - :ref:`int<class_int>` **height**
 
@@ -65,7 +65,7 @@ If true, the resulting texture contains a normal map created from the original n
 
 Height of the generated texture.
 
-.. _class_NoiseTexture_noise:
+.. _class_NoiseTexture_property_noise:
 
 - :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` **noise**
 
@@ -77,7 +77,7 @@ Height of the generated texture.
 
 The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate the noise.
 
-.. _class_NoiseTexture_seamless:
+.. _class_NoiseTexture_property_seamless:
 
 - :ref:`bool<class_bool>` **seamless**
 
@@ -89,7 +89,7 @@ The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate th
 
 Whether the texture can be tiled without visible seams or not. Seamless textures take longer to generate.
 
-.. _class_NoiseTexture_width:
+.. _class_NoiseTexture_property_width:
 
 - :ref:`int<class_int>` **width**
 

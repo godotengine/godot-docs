@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`path<class_VisualScriptResourcePath_path>` |
-+-----------------------------+--------------------------------------------------+
++-----------------------------+-----------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`path<class_VisualScriptResourcePath_property_path>` |
++-----------------------------+-----------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptResourcePath_path:
+.. _class_VisualScriptResourcePath_property_path:
 
 - :ref:`String<class_String>` **path**
 

@@ -21,39 +21,39 @@ Detects when the node is visible on screen.
 Properties
 ----------
 
-+---------------------------+----------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibilityNotifier2D_rect>` |
-+---------------------------+----------------------------------------------+
++---------------------------+-------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibilityNotifier2D_property_rect>` |
++---------------------------+-------------------------------------------------------+
 
 Methods
 -------
 
-+--------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_on_screen<class_VisibilityNotifier2D_is_on_screen>` **(** **)** const |
-+--------------------------+--------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibilityNotifier2D_method_is_on_screen>` **(** **)** const |
++-------------------------+---------------------------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_VisibilityNotifier2D_screen_entered:
+.. _class_VisibilityNotifier2D_signal_screen_entered:
 
 - **screen_entered** **(** **)**
 
 Emitted when the VisibilityNotifier2D enters the screen.
 
-.. _class_VisibilityNotifier2D_screen_exited:
+.. _class_VisibilityNotifier2D_signal_screen_exited:
 
 - **screen_exited** **(** **)**
 
 Emitted when the VisibilityNotifier2D exits the screen.
 
-.. _class_VisibilityNotifier2D_viewport_entered:
+.. _class_VisibilityNotifier2D_signal_viewport_entered:
 
 - **viewport_entered** **(** :ref:`Viewport<class_Viewport>` viewport **)**
 
 Emitted when the VisibilityNotifier2D enters a :ref:`Viewport<class_Viewport>`'s view.
 
-.. _class_VisibilityNotifier2D_viewport_exited:
+.. _class_VisibilityNotifier2D_signal_viewport_exited:
 
 - **viewport_exited** **(** :ref:`Viewport<class_Viewport>` viewport **)**
 
@@ -67,7 +67,7 @@ The VisibilityNotifier2D detects when it is visible on the screen. It also notif
 Property Descriptions
 ---------------------
 
-.. _class_VisibilityNotifier2D_rect:
+.. _class_VisibilityNotifier2D_property_rect:
 
 - :ref:`Rect2<class_Rect2>` **rect**
 
@@ -82,7 +82,7 @@ The VisibilityNotifier2D's bounding rectangle.
 Method Descriptions
 -------------------
 
-.. _class_VisibilityNotifier2D_is_on_screen:
+.. _class_VisibilityNotifier2D_method_is_on_screen:
 
 - :ref:`bool<class_bool>` **is_on_screen** **(** **)** const
 

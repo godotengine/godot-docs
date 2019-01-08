@@ -19,11 +19,11 @@ Gets a local variable's value.
 Properties
 ----------
 
-+-----------------------------------------------------+------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVar_type>`         |
-+-----------------------------------------------------+------------------------------------------------------+
-| :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVar_var_name>` |
-+-----------------------------------------------------+------------------------------------------------------+
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVar_property_type>`         |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVar_property_var_name>` |
++-----------------------------------------------------+---------------------------------------------------------------+
 
 Description
 -----------
@@ -41,7 +41,7 @@ none
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptLocalVar_type:
+.. _class_VisualScriptLocalVar_property_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
@@ -53,7 +53,7 @@ Property Descriptions
 
 The local variable's type.
 
-.. _class_VisualScriptLocalVar_var_name:
+.. _class_VisualScriptLocalVar_property_var_name:
 
 - :ref:`String<class_String>` **var_name**
 

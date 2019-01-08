@@ -19,24 +19,24 @@ Brief Description
 Properties
 ----------
 
-+------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                            | :ref:`advance_condition<class_AnimationNodeStateMachineTransition_advance_condition>` |
-+------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                | :ref:`auto_advance<class_AnimationNodeStateMachineTransition_auto_advance>`           |
-+------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                | :ref:`disabled<class_AnimationNodeStateMachineTransition_disabled>`                   |
-+------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                  | :ref:`priority<class_AnimationNodeStateMachineTransition_priority>`                   |
-+------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`SwitchMode<enum_AnimationNodeStateMachineTransition_SwitchMode>` | :ref:`switch_mode<class_AnimationNodeStateMachineTransition_switch_mode>`             |
-+------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                              | :ref:`xfade_time<class_AnimationNodeStateMachineTransition_xfade_time>`               |
-+------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
++------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                            | :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` |
++------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                | :ref:`auto_advance<class_AnimationNodeStateMachineTransition_property_auto_advance>`           |
++------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                | :ref:`disabled<class_AnimationNodeStateMachineTransition_property_disabled>`                   |
++------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                                  | :ref:`priority<class_AnimationNodeStateMachineTransition_property_priority>`                   |
++------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`SwitchMode<enum_AnimationNodeStateMachineTransition_SwitchMode>` | :ref:`switch_mode<class_AnimationNodeStateMachineTransition_property_switch_mode>`             |
++------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                              | :ref:`xfade_time<class_AnimationNodeStateMachineTransition_property_xfade_time>`               |
++------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_AnimationNodeStateMachineTransition_advance_condition_changed:
+.. _class_AnimationNodeStateMachineTransition_signal_advance_condition_changed:
 
 - **advance_condition_changed** **(** **)**
 
@@ -44,6 +44,12 @@ Enumerations
 ------------
 
 .. _enum_AnimationNodeStateMachineTransition_SwitchMode:
+
+.. _class_AnimationNodeStateMachineTransition_constant_SWITCH_MODE_IMMEDIATE:
+
+.. _class_AnimationNodeStateMachineTransition_constant_SWITCH_MODE_SYNC:
+
+.. _class_AnimationNodeStateMachineTransition_constant_SWITCH_MODE_AT_END:
 
 enum **SwitchMode**:
 
@@ -56,7 +62,7 @@ enum **SwitchMode**:
 Property Descriptions
 ---------------------
 
-.. _class_AnimationNodeStateMachineTransition_advance_condition:
+.. _class_AnimationNodeStateMachineTransition_property_advance_condition:
 
 - :ref:`String<class_String>` **advance_condition**
 
@@ -66,7 +72,7 @@ Property Descriptions
 | *Getter* | get_advance_condition()      |
 +----------+------------------------------+
 
-.. _class_AnimationNodeStateMachineTransition_auto_advance:
+.. _class_AnimationNodeStateMachineTransition_property_auto_advance:
 
 - :ref:`bool<class_bool>` **auto_advance**
 
@@ -76,7 +82,7 @@ Property Descriptions
 | *Getter* | has_auto_advance()      |
 +----------+-------------------------+
 
-.. _class_AnimationNodeStateMachineTransition_disabled:
+.. _class_AnimationNodeStateMachineTransition_property_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
 
@@ -86,7 +92,7 @@ Property Descriptions
 | *Getter* | is_disabled()       |
 +----------+---------------------+
 
-.. _class_AnimationNodeStateMachineTransition_priority:
+.. _class_AnimationNodeStateMachineTransition_property_priority:
 
 - :ref:`int<class_int>` **priority**
 
@@ -96,7 +102,7 @@ Property Descriptions
 | *Getter* | get_priority()      |
 +----------+---------------------+
 
-.. _class_AnimationNodeStateMachineTransition_switch_mode:
+.. _class_AnimationNodeStateMachineTransition_property_switch_mode:
 
 - :ref:`SwitchMode<enum_AnimationNodeStateMachineTransition_SwitchMode>` **switch_mode**
 
@@ -106,7 +112,7 @@ Property Descriptions
 | *Getter* | get_switch_mode()      |
 +----------+------------------------+
 
-.. _class_AnimationNodeStateMachineTransition_xfade_time:
+.. _class_AnimationNodeStateMachineTransition_property_xfade_time:
 
 - :ref:`float<class_float>` **xfade_time**
 

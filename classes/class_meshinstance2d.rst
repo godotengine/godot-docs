@@ -19,18 +19,18 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------+----------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshInstance2D_mesh>`             |
-+-------------------------------+----------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_MeshInstance2D_normal_map>` |
-+-------------------------------+----------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture<class_MeshInstance2D_texture>`       |
-+-------------------------------+----------------------------------------------------+
++-------------------------------+-------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshInstance2D_property_mesh>`             |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_MeshInstance2D_property_normal_map>` |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`texture<class_MeshInstance2D_property_texture>`       |
++-------------------------------+-------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_MeshInstance2D_mesh:
+.. _class_MeshInstance2D_property_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
@@ -40,7 +40,7 @@ Property Descriptions
 | *Getter* | get_mesh()      |
 +----------+-----------------+
 
-.. _class_MeshInstance2D_normal_map:
+.. _class_MeshInstance2D_property_normal_map:
 
 - :ref:`Texture<class_Texture>` **normal_map**
 
@@ -50,7 +50,7 @@ Property Descriptions
 | *Getter* | get_normal_map()      |
 +----------+-----------------------+
 
-.. _class_MeshInstance2D_texture:
+.. _class_MeshInstance2D_property_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 

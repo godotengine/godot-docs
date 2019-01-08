@@ -20,8 +20,7 @@ How pausing works
 -----------------
 
 To set pause mode, the pause state must be set. This is done by assigning
-"true" to the :ref:`SceneTree.paused <class_SceneTree_paused>` member
-variable:
+``true`` to the :ref:`SceneTree.paused <class_SceneTree_property_paused>` property:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -35,8 +34,8 @@ variable:
 Doing so will have the following behavior:
 
 -  2D and 3D physics will be stopped.
--  _process and _physics_process will not be called anymore in nodes.
--  _input and _input_event will not be called anymore either.
+-  ``_process and ``_physics_process`` will not be called anymore in nodes.
+-  ``_input`` and ``_input_event`` will not be called anymore either.
 
 This effectively stops the whole game. Calling this function from a
 script, by default, will result in an unrecoverable state (nothing will

@@ -19,20 +19,26 @@ Brief Description
 Properties
 ----------
 
-+--------------------------------------------------------+-----------------------------------------------------------+
-| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptYieldSignal_base_type>` |
-+--------------------------------------------------------+-----------------------------------------------------------+
-| :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` | :ref:`call_mode<class_VisualScriptYieldSignal_call_mode>` |
-+--------------------------------------------------------+-----------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptYieldSignal_node_path>` |
-+--------------------------------------------------------+-----------------------------------------------------------+
-| :ref:`String<class_String>`                            | :ref:`signal<class_VisualScriptYieldSignal_signal>`       |
-+--------------------------------------------------------+-----------------------------------------------------------+
++--------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptYieldSignal_property_base_type>` |
++--------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` | :ref:`call_mode<class_VisualScriptYieldSignal_property_call_mode>` |
++--------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptYieldSignal_property_node_path>` |
++--------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`signal<class_VisualScriptYieldSignal_property_signal>`       |
++--------------------------------------------------------+--------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptYieldSignal_CallMode:
+
+.. _class_VisualScriptYieldSignal_constant_CALL_MODE_SELF:
+
+.. _class_VisualScriptYieldSignal_constant_CALL_MODE_NODE_PATH:
+
+.. _class_VisualScriptYieldSignal_constant_CALL_MODE_INSTANCE:
 
 enum **CallMode**:
 
@@ -45,7 +51,7 @@ enum **CallMode**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptYieldSignal_base_type:
+.. _class_VisualScriptYieldSignal_property_base_type:
 
 - :ref:`String<class_String>` **base_type**
 
@@ -55,7 +61,7 @@ Property Descriptions
 | *Getter* | get_base_type()      |
 +----------+----------------------+
 
-.. _class_VisualScriptYieldSignal_call_mode:
+.. _class_VisualScriptYieldSignal_property_call_mode:
 
 - :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **call_mode**
 
@@ -65,7 +71,7 @@ Property Descriptions
 | *Getter* | get_call_mode()      |
 +----------+----------------------+
 
-.. _class_VisualScriptYieldSignal_node_path:
+.. _class_VisualScriptYieldSignal_property_node_path:
 
 - :ref:`NodePath<class_NodePath>` **node_path**
 
@@ -75,7 +81,7 @@ Property Descriptions
 | *Getter* | get_base_path()      |
 +----------+----------------------+
 
-.. _class_VisualScriptYieldSignal_signal:
+.. _class_VisualScriptYieldSignal_property_signal:
 
 - :ref:`String<class_String>` **signal**
 

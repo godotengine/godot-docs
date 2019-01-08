@@ -19,5 +19,5 @@ Adds a notch filter to the Audio Bus.
 Description
 -----------
 
-Attenuates frequencies in a narrow band around the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_cutoff_hz>` and cuts frequencies outside of this range.
+Attenuates frequencies in a narrow band around the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` and cuts frequencies outside of this range.
 

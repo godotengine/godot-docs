@@ -19,9 +19,9 @@ Chooses between two input values.
 Properties
 ----------
 
-+-----------------------------------------------------+--------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptSelect_type>` |
-+-----------------------------------------------------+--------------------------------------------+
++-----------------------------------------------------+-----------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptSelect_property_type>` |
++-----------------------------------------------------+-----------------------------------------------------+
 
 Description
 -----------
@@ -43,7 +43,7 @@ Chooses between two input values based on a Boolean condition.
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptSelect_type:
+.. _class_VisualScriptSelect_property_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 

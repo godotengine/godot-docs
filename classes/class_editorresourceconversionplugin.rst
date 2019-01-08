@@ -19,20 +19,20 @@ Brief Description
 Methods
 -------
 
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>`  | :ref:`_convert<class_EditorResourceConversionPlugin__convert>` **(** :ref:`Resource<class_Resource>` resource **)** virtual |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`      | :ref:`_converts_to<class_EditorResourceConversionPlugin__converts_to>` **(** **)** virtual                                  |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>` | :ref:`_convert<class_EditorResourceConversionPlugin_method__convert>` **(** :ref:`Resource<class_Resource>` resource **)** virtual |
++---------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`     | :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>` **(** **)** virtual                                  |
++---------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_EditorResourceConversionPlugin__convert:
+.. _class_EditorResourceConversionPlugin_method__convert:
 
 - :ref:`Resource<class_Resource>` **_convert** **(** :ref:`Resource<class_Resource>` resource **)** virtual
 
-.. _class_EditorResourceConversionPlugin__converts_to:
+.. _class_EditorResourceConversionPlugin_method__converts_to:
 
 - :ref:`String<class_String>` **_converts_to** **(** **)** virtual
 

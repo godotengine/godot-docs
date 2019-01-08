@@ -19,32 +19,32 @@ Brief Description
 Methods
 -------
 
-+------------------------------------+----------------------------------------------------------------------------------------+
-| void                               | :ref:`clear_current<class_Listener_clear_current>` **(** **)**                         |
-+------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>`  | :ref:`get_listener_transform<class_Listener_get_listener_transform>` **(** **)** const |
-+------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`is_current<class_Listener_is_current>` **(** **)** const                         |
-+------------------------------------+----------------------------------------------------------------------------------------+
-| void                               | :ref:`make_current<class_Listener_make_current>` **(** **)**                           |
-+------------------------------------+----------------------------------------------------------------------------------------+
++-----------------------------------+-----------------------------------------------------------------------------------------------+
+| void                              | :ref:`clear_current<class_Listener_method_clear_current>` **(** **)**                         |
++-----------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>` | :ref:`get_listener_transform<class_Listener_method_get_listener_transform>` **(** **)** const |
++-----------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`is_current<class_Listener_method_is_current>` **(** **)** const                         |
++-----------------------------------+-----------------------------------------------------------------------------------------------+
+| void                              | :ref:`make_current<class_Listener_method_make_current>` **(** **)**                           |
++-----------------------------------+-----------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_Listener_clear_current:
+.. _class_Listener_method_clear_current:
 
 - void **clear_current** **(** **)**
 
-.. _class_Listener_get_listener_transform:
+.. _class_Listener_method_get_listener_transform:
 
 - :ref:`Transform<class_Transform>` **get_listener_transform** **(** **)** const
 
-.. _class_Listener_is_current:
+.. _class_Listener_method_is_current:
 
 - :ref:`bool<class_bool>` **is_current** **(** **)** const
 
-.. _class_Listener_make_current:
+.. _class_Listener_method_make_current:
 
 - void **make_current** **(** **)**
 

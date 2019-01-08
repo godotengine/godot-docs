@@ -19,9 +19,9 @@ Adds a Panner audio effect to an Audio bus. Pans sound left or right.
 Properties
 ----------
 
-+---------------------------+-----------------------------------------+
-| :ref:`float<class_float>` | :ref:`pan<class_AudioEffectPanner_pan>` |
-+---------------------------+-----------------------------------------+
++---------------------------+--------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`pan<class_AudioEffectPanner_property_pan>` |
++---------------------------+--------------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ Determines how much of an audio signal is sent to the left and right buses.
 Property Descriptions
 ---------------------
 
-.. _class_AudioEffectPanner_pan:
+.. _class_AudioEffectPanner_property_pan:
 
 - :ref:`float<class_float>` **pan**
 

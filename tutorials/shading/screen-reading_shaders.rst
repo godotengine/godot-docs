@@ -17,8 +17,8 @@ The workaround is to make a copy of the screen, or a part of the screen,
 to a back-buffer and then read from it while drawing. Godot provides a
 few tools that makes this process easy!
 
-SCREEN_TEXTURE built-in texture.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SCREEN_TEXTURE built-in texture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot :ref:`doc_shading_language` has a special texture, "SCREEN_TEXTURE" (and "DEPTH_TEXTURE" for depth, in case of 3D).
 It takes as parameter the UV of the screen and returns a vec3 RGB with the color. A

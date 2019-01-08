@@ -19,19 +19,19 @@ Resource Preloader Node.
 Methods
 -------
 
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`add_resource<class_ResourcePreloader_add_resource>` **(** :ref:`String<class_String>` name, :ref:`Resource<class_Resource>` resource **)**  |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>`                | :ref:`get_resource<class_ResourcePreloader_get_resource>` **(** :ref:`String<class_String>` name **)** const                                      |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_resource_list<class_ResourcePreloader_get_resource_list>` **(** **)** const                                                             |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`has_resource<class_ResourcePreloader_has_resource>` **(** :ref:`String<class_String>` name **)** const                                      |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`remove_resource<class_ResourcePreloader_remove_resource>` **(** :ref:`String<class_String>` name **)**                                      |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`rename_resource<class_ResourcePreloader_rename_resource>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)** |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`add_resource<class_ResourcePreloader_method_add_resource>` **(** :ref:`String<class_String>` name, :ref:`Resource<class_Resource>` resource **)**  |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>`               | :ref:`get_resource<class_ResourcePreloader_method_get_resource>` **(** :ref:`String<class_String>` name **)** const                                      |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_resource_list<class_ResourcePreloader_method_get_resource_list>` **(** **)** const                                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`has_resource<class_ResourcePreloader_method_has_resource>` **(** :ref:`String<class_String>` name **)** const                                      |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`remove_resource<class_ResourcePreloader_method_remove_resource>` **(** :ref:`String<class_String>` name **)**                                      |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`rename_resource<class_ResourcePreloader_method_rename_resource>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)** |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -41,35 +41,35 @@ Resource Preloader Node. This node is used to preload sub-resources inside a sce
 Method Descriptions
 -------------------
 
-.. _class_ResourcePreloader_add_resource:
+.. _class_ResourcePreloader_method_add_resource:
 
 - void **add_resource** **(** :ref:`String<class_String>` name, :ref:`Resource<class_Resource>` resource **)**
 
-.. _class_ResourcePreloader_get_resource:
+.. _class_ResourcePreloader_method_get_resource:
 
 - :ref:`Resource<class_Resource>` **get_resource** **(** :ref:`String<class_String>` name **)** const
 
 Return the resource given a text-id.
 
-.. _class_ResourcePreloader_get_resource_list:
+.. _class_ResourcePreloader_method_get_resource_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_resource_list** **(** **)** const
 
 Return the list of resources inside the preloader.
 
-.. _class_ResourcePreloader_has_resource:
+.. _class_ResourcePreloader_method_has_resource:
 
 - :ref:`bool<class_bool>` **has_resource** **(** :ref:`String<class_String>` name **)** const
 
 Return true if the preloader has a given resource.
 
-.. _class_ResourcePreloader_remove_resource:
+.. _class_ResourcePreloader_method_remove_resource:
 
 - void **remove_resource** **(** :ref:`String<class_String>` name **)**
 
 Remove a resource from the preloader by text id.
 
-.. _class_ResourcePreloader_rename_resource:
+.. _class_ResourcePreloader_method_rename_resource:
 
 - void **rename_resource** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)**
 

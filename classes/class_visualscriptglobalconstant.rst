@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+-----------------------+------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`constant<class_VisualScriptGlobalConstant_constant>` |
-+-----------------------+------------------------------------------------------------+
++-----------------------+---------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`constant<class_VisualScriptGlobalConstant_property_constant>` |
++-----------------------+---------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptGlobalConstant_constant:
+.. _class_VisualScriptGlobalConstant_property_constant:
 
 - :ref:`int<class_int>` **constant**
 

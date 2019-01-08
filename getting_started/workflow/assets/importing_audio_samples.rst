@@ -34,7 +34,7 @@ Here is a comparative chart.
 
 In general, what is recommended, is to use WAV for most sound effects, especially those that are short and repetitive, and OGG for music, voice and long sound effects.
 
-Best Practices
+Best practices
 --------------
 
 Godot 3+ has an amazing bus system with built-in effects. This saves
@@ -60,12 +60,10 @@ this.
 Looping
 ~~~~~~~
 
-Godot supports looping in the samples (Tools such as Sound Forge or
+Godot supports looping in the samples (tools such as Sound Forge or
 Audition can add loop points to wav files). This is useful for sound
 effects, such as engines, machine guns etc. Ping-pong looping is also
 supported.
 
 As an alternative, the import screen has a "loop" option that enables
 looping for the entire sample when importing.
-
-

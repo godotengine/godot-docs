@@ -19,13 +19,13 @@ Editor-only class for defining a collision polygon in 3D space.
 Properties
 ----------
 
-+-------------------------------------------------+--------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`depth<class_CollisionPolygon_depth>`       |
-+-------------------------------------------------+--------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_disabled>` |
-+-------------------------------------------------+--------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_polygon>`   |
-+-------------------------------------------------+--------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`depth<class_CollisionPolygon_property_depth>`       |
++-------------------------------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_property_disabled>` |
++-------------------------------------------------+-----------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_property_polygon>`   |
++-------------------------------------------------+-----------------------------------------------------------+
 
 Description
 -----------
@@ -35,7 +35,7 @@ Allows editing a collision polygon's vertices on a selected plane. Can also set 
 Property Descriptions
 ---------------------
 
-.. _class_CollisionPolygon_depth:
+.. _class_CollisionPolygon_property_depth:
 
 - :ref:`float<class_float>` **depth**
 
@@ -47,7 +47,7 @@ Property Descriptions
 
 Length that the resulting collision extends in either direction perpendicular to its polygon.
 
-.. _class_CollisionPolygon_disabled:
+.. _class_CollisionPolygon_property_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
 
@@ -59,7 +59,7 @@ Length that the resulting collision extends in either direction perpendicular to
 
 If true, no collision will be produced.
 
-.. _class_CollisionPolygon_polygon:
+.. _class_CollisionPolygon_property_polygon:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 

@@ -19,15 +19,15 @@ Packs multiple small textures in a single, bigger one. Helps to optimize video m
 Properties
 ----------
 
-+-------------------------------+----------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`atlas<class_AtlasTexture_atlas>`             |
-+-------------------------------+----------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`filter_clip<class_AtlasTexture_filter_clip>` |
-+-------------------------------+----------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`margin<class_AtlasTexture_margin>`           |
-+-------------------------------+----------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`region<class_AtlasTexture_region>`           |
-+-------------------------------+----------------------------------------------------+
++-------------------------------+-------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`atlas<class_AtlasTexture_property_atlas>`             |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`filter_clip<class_AtlasTexture_property_filter_clip>` |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`     | :ref:`margin<class_AtlasTexture_property_margin>`           |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`     | :ref:`region<class_AtlasTexture_property_region>`           |
++-------------------------------+-------------------------------------------------------------+
 
 Description
 -----------
@@ -39,7 +39,7 @@ and a region that defines the actual area of the AtlasTexture.
 Property Descriptions
 ---------------------
 
-.. _class_AtlasTexture_atlas:
+.. _class_AtlasTexture_property_atlas:
 
 - :ref:`Texture<class_Texture>` **atlas**
 
@@ -51,7 +51,7 @@ Property Descriptions
 
 The texture that contains the atlas. Can be any :ref:`Texture<class_Texture>` subtype.
 
-.. _class_AtlasTexture_filter_clip:
+.. _class_AtlasTexture_property_filter_clip:
 
 - :ref:`bool<class_bool>` **filter_clip**
 
@@ -63,7 +63,7 @@ The texture that contains the atlas. Can be any :ref:`Texture<class_Texture>` su
 
 If ``true``, clips the area outside of the region to avoid bleeding of the surrounding texture pixels.
 
-.. _class_AtlasTexture_margin:
+.. _class_AtlasTexture_property_margin:
 
 - :ref:`Rect2<class_Rect2>` **margin**
 
@@ -75,7 +75,7 @@ If ``true``, clips the area outside of the region to avoid bleeding of the surro
 
 The margin around the region. The :ref:`Rect2<class_Rect2>`'s 'size' parameter ('w' and 'h' in the editor) resizes the texture so it fits within the margin.
 
-.. _class_AtlasTexture_region:
+.. _class_AtlasTexture_property_region:
 
 - :ref:`Rect2<class_Rect2>` **region**
 

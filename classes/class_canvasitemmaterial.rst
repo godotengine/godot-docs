@@ -19,24 +19,34 @@ A material for :ref:`CanvasItem<class_CanvasItem>`\ s.
 Properties
 ----------
 
-+-----------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` | :ref:`blend_mode<class_CanvasItemMaterial_blend_mode>`                           |
-+-----------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` | :ref:`light_mode<class_CanvasItemMaterial_light_mode>`                           |
-+-----------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`particles_anim_h_frames<class_CanvasItemMaterial_particles_anim_h_frames>` |
-+-----------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`particles_anim_loop<class_CanvasItemMaterial_particles_anim_loop>`         |
-+-----------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`particles_anim_v_frames<class_CanvasItemMaterial_particles_anim_v_frames>` |
-+-----------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`particles_animation<class_CanvasItemMaterial_particles_animation>`         |
-+-----------------------------------------------------+----------------------------------------------------------------------------------+
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` | :ref:`blend_mode<class_CanvasItemMaterial_property_blend_mode>`                           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` | :ref:`light_mode<class_CanvasItemMaterial_property_light_mode>`                           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`particles_anim_h_frames<class_CanvasItemMaterial_property_particles_anim_h_frames>` |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`particles_anim_loop<class_CanvasItemMaterial_property_particles_anim_loop>`         |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`particles_anim_v_frames<class_CanvasItemMaterial_property_particles_anim_v_frames>` |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>`         |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_CanvasItemMaterial_BlendMode:
+
+.. _class_CanvasItemMaterial_constant_BLEND_MODE_MIX:
+
+.. _class_CanvasItemMaterial_constant_BLEND_MODE_ADD:
+
+.. _class_CanvasItemMaterial_constant_BLEND_MODE_SUB:
+
+.. _class_CanvasItemMaterial_constant_BLEND_MODE_MUL:
+
+.. _class_CanvasItemMaterial_constant_BLEND_MODE_PREMULT_ALPHA:
 
 enum **BlendMode**:
 
@@ -51,6 +61,12 @@ enum **BlendMode**:
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
 
 .. _enum_CanvasItemMaterial_LightMode:
+
+.. _class_CanvasItemMaterial_constant_LIGHT_MODE_NORMAL:
+
+.. _class_CanvasItemMaterial_constant_LIGHT_MODE_UNSHADED:
+
+.. _class_CanvasItemMaterial_constant_LIGHT_MODE_LIGHT_ONLY:
 
 enum **LightMode**:
 
@@ -68,7 +84,7 @@ Description
 Property Descriptions
 ---------------------
 
-.. _class_CanvasItemMaterial_blend_mode:
+.. _class_CanvasItemMaterial_property_blend_mode:
 
 - :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` **blend_mode**
 
@@ -80,7 +96,7 @@ Property Descriptions
 
 The manner in which a material's rendering is applied to underlying textures.
 
-.. _class_CanvasItemMaterial_light_mode:
+.. _class_CanvasItemMaterial_property_light_mode:
 
 - :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **light_mode**
 
@@ -92,7 +108,7 @@ The manner in which a material's rendering is applied to underlying textures.
 
 The manner in which material reacts to lighting.
 
-.. _class_CanvasItemMaterial_particles_anim_h_frames:
+.. _class_CanvasItemMaterial_property_particles_anim_h_frames:
 
 - :ref:`int<class_int>` **particles_anim_h_frames**
 
@@ -102,7 +118,7 @@ The manner in which material reacts to lighting.
 | *Getter* | get_particles_anim_h_frames()      |
 +----------+------------------------------------+
 
-.. _class_CanvasItemMaterial_particles_anim_loop:
+.. _class_CanvasItemMaterial_property_particles_anim_loop:
 
 - :ref:`bool<class_bool>` **particles_anim_loop**
 
@@ -112,7 +128,7 @@ The manner in which material reacts to lighting.
 | *Getter* | get_particles_anim_loop()      |
 +----------+--------------------------------+
 
-.. _class_CanvasItemMaterial_particles_anim_v_frames:
+.. _class_CanvasItemMaterial_property_particles_anim_v_frames:
 
 - :ref:`int<class_int>` **particles_anim_v_frames**
 
@@ -122,7 +138,7 @@ The manner in which material reacts to lighting.
 | *Getter* | get_particles_anim_v_frames()      |
 +----------+------------------------------------+
 
-.. _class_CanvasItemMaterial_particles_animation:
+.. _class_CanvasItemMaterial_property_particles_animation:
 
 - :ref:`bool<class_bool>` **particles_animation**
 

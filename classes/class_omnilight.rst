@@ -19,20 +19,24 @@ Omnidirectional light, such as a light bulb or a candle.
 Properties
 ----------
 
-+--------------------------------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`omni_attenuation<class_OmniLight_omni_attenuation>`     |
-+--------------------------------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`omni_range<class_OmniLight_omni_range>`                 |
-+--------------------------------------------------+---------------------------------------------------------------+
-| :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` | :ref:`omni_shadow_detail<class_OmniLight_omni_shadow_detail>` |
-+--------------------------------------------------+---------------------------------------------------------------+
-| :ref:`ShadowMode<enum_OmniLight_ShadowMode>`     | :ref:`omni_shadow_mode<class_OmniLight_omni_shadow_mode>`     |
-+--------------------------------------------------+---------------------------------------------------------------+
++--------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>`     |
++--------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`omni_range<class_OmniLight_property_omni_range>`                 |
++--------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` | :ref:`omni_shadow_detail<class_OmniLight_property_omni_shadow_detail>` |
++--------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`ShadowMode<enum_OmniLight_ShadowMode>`     | :ref:`omni_shadow_mode<class_OmniLight_property_omni_shadow_mode>`     |
++--------------------------------------------------+------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_OmniLight_ShadowMode:
+
+.. _class_OmniLight_constant_SHADOW_DUAL_PARABOLOID:
+
+.. _class_OmniLight_constant_SHADOW_CUBE:
 
 enum **ShadowMode**:
 
@@ -41,6 +45,10 @@ enum **ShadowMode**:
 - **SHADOW_CUBE** = **1**
 
 .. _enum_OmniLight_ShadowDetail:
+
+.. _class_OmniLight_constant_SHADOW_DETAIL_VERTICAL:
+
+.. _class_OmniLight_constant_SHADOW_DETAIL_HORIZONTAL:
 
 enum **ShadowDetail**:
 
@@ -61,7 +69,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_OmniLight_omni_attenuation:
+.. _class_OmniLight_property_omni_attenuation:
 
 - :ref:`float<class_float>` **omni_attenuation**
 
@@ -73,7 +81,7 @@ Property Descriptions
 
 The light's attenuation (drop-off) curve. A number of presets are available in the Inspector.
 
-.. _class_OmniLight_omni_range:
+.. _class_OmniLight_property_omni_range:
 
 - :ref:`float<class_float>` **omni_range**
 
@@ -85,7 +93,7 @@ The light's attenuation (drop-off) curve. A number of presets are available in t
 
 Maximum distance the light affects.
 
-.. _class_OmniLight_omni_shadow_detail:
+.. _class_OmniLight_property_omni_shadow_detail:
 
 - :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **omni_shadow_detail**
 
@@ -95,9 +103,9 @@ Maximum distance the light affects.
 | *Getter* | get_shadow_detail()      |
 +----------+--------------------------+
 
-See :ref:`ShadowDetail<enum_@GlobalScope_ShadowDetail>`.
+See :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>`.
 
-.. _class_OmniLight_omni_shadow_mode:
+.. _class_OmniLight_property_omni_shadow_mode:
 
 - :ref:`ShadowMode<enum_OmniLight_ShadowMode>` **omni_shadow_mode**
 
@@ -107,5 +115,5 @@ See :ref:`ShadowDetail<enum_@GlobalScope_ShadowDetail>`.
 | *Getter* | get_shadow_mode()      |
 +----------+------------------------+
 
-See :ref:`ShadowMode<enum_@GlobalScope_ShadowMode>`.
+See :ref:`ShadowMode<enum_OmniLight_ShadowMode>`.
 

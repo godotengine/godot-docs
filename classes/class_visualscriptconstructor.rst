@@ -19,15 +19,15 @@ A Visual Script node which calls a base type constructor.
 Methods
 -------
 
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`                  | :ref:`get_constructor<class_VisualScriptConstructor_get_constructor>` **(** **)** const                                                              |
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`  | :ref:`get_constructor_type<class_VisualScriptConstructor_get_constructor_type>` **(** **)** const                                                    |
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`set_constructor<class_VisualScriptConstructor_set_constructor>` **(** :ref:`Dictionary<class_Dictionary>` constructor **)**                    |
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`set_constructor_type<class_VisualScriptConstructor_set_constructor_type>` **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)** |
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`                 | :ref:`get_constructor<class_VisualScriptConstructor_method_get_constructor>` **(** **)** const                                                              |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`get_constructor_type<class_VisualScriptConstructor_method_get_constructor_type>` **(** **)** const                                                    |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_constructor<class_VisualScriptConstructor_method_set_constructor>` **(** :ref:`Dictionary<class_Dictionary>` constructor **)**                    |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_constructor_type<class_VisualScriptConstructor_method_set_constructor_type>` **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)** |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -37,19 +37,19 @@ A Visual Script node which calls a base type constructor. It can be used for typ
 Method Descriptions
 -------------------
 
-.. _class_VisualScriptConstructor_get_constructor:
+.. _class_VisualScriptConstructor_method_get_constructor:
 
 - :ref:`Dictionary<class_Dictionary>` **get_constructor** **(** **)** const
 
-.. _class_VisualScriptConstructor_get_constructor_type:
+.. _class_VisualScriptConstructor_method_get_constructor_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_constructor_type** **(** **)** const
 
-.. _class_VisualScriptConstructor_set_constructor:
+.. _class_VisualScriptConstructor_method_set_constructor:
 
 - void **set_constructor** **(** :ref:`Dictionary<class_Dictionary>` constructor **)**
 
-.. _class_VisualScriptConstructor_set_constructor_type:
+.. _class_VisualScriptConstructor_method_set_constructor_type:
 
 - void **set_constructor_type** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**
 

@@ -21,15 +21,15 @@ Base node for all joint constraints in 2D physics.
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`bias<class_Joint2D_bias>`                           |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`disable_collision<class_Joint2D_disable_collision>` |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`node_a<class_Joint2D_node_a>`                       |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_node_b>`                       |
-+---------------------------------+-----------------------------------------------------------+
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`bias<class_Joint2D_property_bias>`                           |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`disable_collision<class_Joint2D_property_disable_collision>` |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_a<class_Joint2D_property_node_a>`                       |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_property_node_b>`                       |
++---------------------------------+--------------------------------------------------------------------+
 
 Description
 -----------
@@ -39,7 +39,7 @@ Base node for all joint constraints in 2D physics. Joints take 2 bodies and appl
 Property Descriptions
 ---------------------
 
-.. _class_Joint2D_bias:
+.. _class_Joint2D_property_bias:
 
 - :ref:`float<class_float>` **bias**
 
@@ -49,9 +49,9 @@ Property Descriptions
 | *Getter* | get_bias()      |
 +----------+-----------------+
 
-When :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint. Default value: ``0``
+When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint. Default value: ``0``
 
-.. _class_Joint2D_disable_collision:
+.. _class_Joint2D_property_disable_collision:
 
 - :ref:`bool<class_bool>` **disable_collision**
 
@@ -61,9 +61,9 @@ When :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>`
 | *Getter* | get_exclude_nodes_from_collision()      |
 +----------+-----------------------------------------+
 
-If ``true``, :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>` can collide. Default value: ``false``.
+If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` can collide. Default value: ``false``.
 
-.. _class_Joint2D_node_a:
+.. _class_Joint2D_property_node_a:
 
 - :ref:`NodePath<class_NodePath>` **node_a**
 
@@ -75,7 +75,7 @@ If ``true``, :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_
 
 The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
-.. _class_Joint2D_node_b:
+.. _class_Joint2D_property_node_b:
 
 - :ref:`NodePath<class_NodePath>` **node_b**
 

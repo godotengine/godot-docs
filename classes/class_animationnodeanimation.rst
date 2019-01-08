@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_animation>` |
-+-----------------------------+----------------------------------------------------------+
++-----------------------------+-------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` |
++-----------------------------+-------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_AnimationNodeAnimation_animation:
+.. _class_AnimationNodeAnimation_property_animation:
 
 - :ref:`String<class_String>` **animation**
 

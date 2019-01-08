@@ -19,9 +19,9 @@ A type of :ref:`Sky<class_Sky>` used to draw a background texture.
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`panorama<class_PanoramaSky_panorama>` |
-+-------------------------------+---------------------------------------------+
++-------------------------------+------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`panorama<class_PanoramaSky_property_panorama>` |
++-------------------------------+------------------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ A resource referenced in an :ref:`Environment<class_Environment>` that is used t
 Property Descriptions
 ---------------------
 
-.. _class_PanoramaSky_panorama:
+.. _class_PanoramaSky_property_panorama:
 
 - :ref:`Texture<class_Texture>` **panorama**
 

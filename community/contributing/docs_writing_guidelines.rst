@@ -1,7 +1,7 @@
 .. _doc_docs_writing_guidelines:
 
 Docs writing guidelines
-=============================
+=======================
 
 The Godot community is rich and international. Users come from all
 around the world. Some of them are young, and many aren't native English
@@ -34,7 +34,6 @@ There are 3 rules to describe classes:
 
 7 rules for a clear english
 ---------------------------
-
 
 Use the direct voice
 ~~~~~~~~~~~~~~~~~~~~
@@ -229,7 +228,7 @@ If you need to repeat the same variable name 3 or 4 times, you probably
 need to rephrase your description.
 
 Use 's to show possession
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Avoid "The milk **of** the cow". It feels unnatural in English. Write "The cow's
 milk" instead.
@@ -336,7 +335,7 @@ For boolean member variables, always use ``if true`` and/or
 ``if false``, to stay explicit. ``Controls whether or not`` may be
 ambiguous and won't work for every member variable.
 
-Also surround boolean values, variable names and methods with [code][/code].
+Also surround boolean values, variable names and methods with ``[code][/code]``.
 
 **Do** start with "if true":
 
@@ -346,10 +345,10 @@ Also surround boolean values, variable names and methods with [code][/code].
     If [code]true[/code] the timer will automatically start when it enters the scene tree. Default value: [code]false[/code].
 
 
-Use [code] around arguments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use ``[code]`` around arguments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the class reference, always surround arguments with [code][/code]. In the documentation and in Godot, it will display like ``this``. When you edit XML files in the Godot repository, replace existing arguments written like 'this' or \`this\` with [code]this[/code].
+In the class reference, always surround arguments with ``[code][/code]``. In the documentation and in Godot, it will display like ``this``. When you edit XML files in the Godot repository, replace existing arguments written like 'this' or \`this\` with ``[code]this[/code]``.
 
 
 Common vocabulary to use in godot's docs
@@ -386,7 +385,7 @@ class names, which you can't fold, are ``Classes`` e.g. the
 ``properties``. E.g. ``position`` or ``modulate color`` are both
 ``properties``.
 
-Image Contribution guidelines
+Image contribution guidelines
 -----------------------------
 
 A significant part of the documentation is images, and there are several important

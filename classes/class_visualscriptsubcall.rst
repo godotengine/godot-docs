@@ -19,14 +19,14 @@ Brief Description
 Methods
 -------
 
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`  | :ref:`_subcall<class_VisualScriptSubCall__subcall>` **(** :ref:`Variant<class_Variant>` arguments **)** virtual |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`_subcall<class_VisualScriptSubCall_method__subcall>` **(** :ref:`Variant<class_Variant>` arguments **)** virtual |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_VisualScriptSubCall__subcall:
+.. _class_VisualScriptSubCall_method__subcall:
 
 - :ref:`Variant<class_Variant>` **_subcall** **(** :ref:`Variant<class_Variant>` arguments **)** virtual
 

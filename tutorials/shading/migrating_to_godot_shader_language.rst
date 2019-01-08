@@ -1,7 +1,7 @@
 .. _doc_migrating_to_godot_shader_language:
 
-Migrating to Godot shading language
-===================================
+Migrating to Godot's shading language
+=====================================
 
 Introduction
 ------------
@@ -19,7 +19,7 @@ GLSL
 Godot uses a shading language based on GLSL with the addition of a few quality-of-life features.
 Accordingly, most features available in GLSL are available in Godot's shading language.
 
-Shader Programs
+Shader programs
 ^^^^^^^^^^^^^^^
 
 In GLSL each shader uses a separate program. You have one program for the vertex shader and one
@@ -138,6 +138,7 @@ has the regular types, including `Constants`_ and macros.
 
 mainImage
 ^^^^^^^^^
+
 The main point of entry to a Shadertoy shader is the ``mainImage`` function. ``mainImage`` has two
 parameters, ``fragColor`` and ``fragCoord`` which correspond to ``COLOR`` and ``FRAGCOORD`` in Godot
 respectively. These parameters are handled automatically in Godot, so you do not need to include them
@@ -146,6 +147,7 @@ function when porting to Godot.
 
 Variables
 ^^^^^^^^^
+
 In order to make writing fragment shaders straightforward and easy, Shadertoy handles passing a lot
 of helpful information from the main program into the fragment shader for you. A few of these
 have no equivalents in Godot because Godot has chosen not to make them available by default.
@@ -181,8 +183,8 @@ uniform themself. The description gives the reader a hint about what they can pa
 
 Coordinates
 ^^^^^^^^^^^
-``fragCoord`` behaves the same as ``gl_FragCoord`` in :ref:`GLSL <glsl_coordinates>` and ``FRAGCOORD`` in Godot.
 
+``fragCoord`` behaves the same as ``gl_FragCoord`` in :ref:`GLSL <glsl_coordinates>` and ``FRAGCOORD`` in Godot.
 
 
 The Book of Shaders
@@ -231,4 +233,3 @@ Coordinates
 ^^^^^^^^^^^
 
 The Book of Shaders uses the same coordinate system as :ref:`GLSL <glsl_coordinates>`.
-

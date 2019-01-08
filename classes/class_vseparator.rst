@@ -19,11 +19,11 @@ Vertical version of :ref:`Separator<class_Separator>`.
 Theme Properties
 ----------------
 
-+---------------------------------+------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`separation<class_VSeparator_separation>` |
-+---------------------------------+------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_VSeparator_separator>`   |
-+---------------------------------+------------------------------------------------+
++---------------------------------+------------+
+| :ref:`int<class_int>`           | separation |
++---------------------------------+------------+
+| :ref:`StyleBox<class_StyleBox>` | separator  |
++---------------------------------+------------+
 
 Description
 -----------

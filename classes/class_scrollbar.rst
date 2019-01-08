@@ -21,14 +21,14 @@ Base class for scroll bars.
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`custom_step<class_ScrollBar_custom_step>` |
-+---------------------------+-------------------------------------------------+
++---------------------------+----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`custom_step<class_ScrollBar_property_custom_step>` |
++---------------------------+----------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_ScrollBar_scrolling:
+.. _class_ScrollBar_signal_scrolling:
 
 - **scrolling** **(** **)**
 
@@ -42,7 +42,7 @@ Scrollbars are a :ref:`Range<class_Range>` based :ref:`Control<class_Control>`, 
 Property Descriptions
 ---------------------
 
-.. _class_ScrollBar_custom_step:
+.. _class_ScrollBar_property_custom_step:
 
 - :ref:`float<class_float>` **custom_step**
 

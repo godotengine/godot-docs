@@ -175,8 +175,8 @@ Keep in mind that some architectures (mainly mobile) benefit a lot from this, bu
 to find out more. In all honesty though, mobile drivers are buggy so to stay out of trouble make simple 
 shaders without specifying precision unless you *really* need to.
 
-Operators:
-----------
+Operators
+---------
 
 Godot shading language supports the same set of operators as GLSL ES 3.0. Below is the list of them in precedence order:
 
@@ -208,7 +208,7 @@ Godot shading language supports the same set of operators as GLSL ES 3.0. Below 
 | 12 (lowest) | logical inclusive or  | **||**             |
 +-------------+-----------------------+--------------------+
 
-Flow Control
+Flow control
 ------------
 
 Godot Shading language supports the most common types of flow control:
@@ -237,7 +237,7 @@ Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze you
 Godot can't protect you from this, so be careful to not make this mistake!
 
 Discarding
------------
+----------
 
 Fragment and light functions can use the **discard** keyword. If used, the fragment is discarded and nothing is written.
 
@@ -421,7 +421,7 @@ Uniforms can also be assigned default values:
     uniform vec4 some_vector = vec4(0.0);
     uniform vec4 some_color : hint_color = vec4(1.0);
 
-Built-in Functions
+Built-in functions
 ------------------
 
 A large number of built-in functions are supported, conforming mostly to GLSL ES 3.0.
@@ -606,4 +606,3 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
 | vec_type **fwidth** ( vec_type )                                                              | Sum of absolute derivative in x and y          |
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
-

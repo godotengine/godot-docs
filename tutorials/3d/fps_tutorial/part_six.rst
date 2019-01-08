@@ -3,7 +3,7 @@
 Part 6
 ======
 
-Part Overview
+Part overview
 -------------
 
 In this part, we're going to add a main menu and pause menu,

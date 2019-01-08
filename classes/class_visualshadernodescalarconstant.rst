@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`constant<class_VisualShaderNodeScalarConstant_constant>` |
-+---------------------------+----------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`constant<class_VisualShaderNodeScalarConstant_property_constant>` |
++---------------------------+-------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeScalarConstant_constant:
+.. _class_VisualShaderNodeScalarConstant_property_constant:
 
 - :ref:`float<class_float>` **constant**
 

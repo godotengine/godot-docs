@@ -67,7 +67,7 @@ uppercase, to differentiate from other strings). Here's an example:
 | BYE     | Good Bye         | Adiós          | さようなら   |
 +---------+------------------+----------------+--------------+
 
-CSV Importer
+CSV importer
 ------------
 
 Godot will treat CSV files as translations by default. It will import them

@@ -44,11 +44,11 @@ The provided starter assets contain some 3D models, sounds, and a few scenes alr
 
 Feel free to use these assets however you want! All original assets belong to the Godot community, with the other assets belonging to those listed below:
 
-.. note:: The sky panorama was created by **CGTuts** and can be found `here <https://cgi.tutsplus.com/articles/freebie-8-awesome-ocean-hdris--cg-5684>`_.
+.. note:: The sky panorama was created by **CGTuts** (`original source <https://cgi.tutsplus.com/articles/freebie-8-awesome-ocean-hdris--cg-5684>`_).
 
           The font used is **Titillium-Regular**, and is licensed under the SIL Open Font License, Version 1.1.
 
-          The audio used are from several different sources, all downloaded from the **Sonnis #GameAudioGDC Bundle**. The license for the sound effects is included as a PDF `here <https://sonniss.com/gdc-bundle-license/>`_.
+          The audio used are from several different sources, all downloaded from the **Sonnis #GameAudioGDC Bundle** (`license in PDF format <https://sonniss.com/gdc-bundle-license/>`_).
           The folders where the audio files are stored have the same name as folders in the bundle.
 
           The **OpenVR addon** was created by Bastiaan Olij and is released under the MIT license. It can be found both `on the Asset Library <https://godotengine.org/asset-library/asset/150>`_ and `on GitHub <https://github.com/GodotVR/godot-openvr-asset>`_.
@@ -495,7 +495,7 @@ will move the player left.
 
 Next we account for dead zones on both the trackpad and the joystick. The code for doing this is adapted from the link below, and I would highly recommend looking at it.
 
-.. tip:: You can find a great article explaining joystick dead zones `here <http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html>`_.
+.. tip:: You can find a great article explaining joystick dead zones `on Third Helix <http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html>`_.
 
 One thing to note is how large we are making the dead zones. The reason we are using such large dead zones is so the player cannot move themselves accidentally by placing their
 finger on the center of the touchpad/joystick, which can make players experience motion sickness if they are not expecting it.

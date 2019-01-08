@@ -19,13 +19,13 @@ Input event for gamepad buttons.
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventJoypadButton_button_index>` |
-+---------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventJoypadButton_pressed>`           |
-+---------------------------+----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`pressure<class_InputEventJoypadButton_pressure>`         |
-+---------------------------+----------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventJoypadButton_property_button_index>` |
++---------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventJoypadButton_property_pressed>`           |
++---------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`pressure<class_InputEventJoypadButton_property_pressure>`         |
++---------------------------+-------------------------------------------------------------------------+
 
 Description
 -----------
@@ -40,7 +40,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_InputEventJoypadButton_button_index:
+.. _class_InputEventJoypadButton_property_button_index:
 
 - :ref:`int<class_int>` **button_index**
 
@@ -52,7 +52,7 @@ Property Descriptions
 
 Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope<class_@GlobalScope>`.
 
-.. _class_InputEventJoypadButton_pressed:
+.. _class_InputEventJoypadButton_property_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
 
@@ -64,7 +64,7 @@ Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope
 
 If ``true``, the button's state is pressed. If ``false``, the button's state is released.
 
-.. _class_InputEventJoypadButton_pressure:
+.. _class_InputEventJoypadButton_property_pressure:
 
 - :ref:`float<class_float>` **pressure**
 

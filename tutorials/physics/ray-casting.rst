@@ -27,8 +27,8 @@ Space
 In the physics world, Godot stores all the low level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
 can be obtained by accessing
-:ref:`CanvasItem.get_world_2d().space <class_CanvasItem_get_world_2d>`.
-For 3D, it's :ref:`Spatial.get_world().space <class_Spatial_get_world>`.
+:ref:`CanvasItem.get_world_2d().space <class_CanvasItem_method_get_world_2d>`.
+For 3D, it's :ref:`Spatial.get_world().space <class_Spatial_method_get_world>`.
 
 The resulting space :ref:`RID <class_RID>` can be used in
 :ref:`PhysicsServer <class_PhysicsServer>` and
@@ -40,7 +40,7 @@ Accessing space
 Godot physics runs by default in the same thread as game logic, but may
 be set to run on a separate thread to work more efficiently. Due to
 this, the only time accessing space is safe is during the
-:ref:`Node._physics_process() <class_Node__physics_process>`
+:ref:`Node._physics_process() <class_Node_method__physics_process>`
 callback. Accessing it from outside this function may result in an error
 due to space being *locked*.
 
@@ -100,7 +100,7 @@ Raycast query
 -------------
 
 For performing a 2D raycast query, the method
-:ref:`Physics2DDirectSpaceState.intersect_ray() <class_Physics2DDirectSpaceState_intersect_ray>`
+:ref:`Physics2DDirectSpaceState.intersect_ray() <class_Physics2DDirectSpaceState_method_intersect_ray>`
 may be used. For example:
 
 .. tabs::

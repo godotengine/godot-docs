@@ -21,19 +21,19 @@ Loads a specific resource type from a file.
 Methods
 -------
 
-+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`get_dependencies<class_ResourceFormatLoader_get_dependencies>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` add_types **)** virtual     |
-+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_recognized_extensions<class_ResourceFormatLoader_get_recognized_extensions>` **(** **)** virtual                                                           |
-+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                    | :ref:`get_resource_type<class_ResourceFormatLoader_get_resource_type>` **(** :ref:`String<class_String>` path **)** virtual                                          |
-+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`handles_type<class_ResourceFormatLoader_handles_type>` **(** :ref:`String<class_String>` typename **)** virtual                                                |
-+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                  | :ref:`load<class_ResourceFormatLoader_load>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` original_path **)** virtual                         |
-+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`rename_dependencies<class_ResourceFormatLoader_rename_dependencies>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` renames **)** virtual |
-+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`get_dependencies<class_ResourceFormatLoader_method_get_dependencies>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` add_types **)** virtual     |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recognized_extensions<class_ResourceFormatLoader_method_get_recognized_extensions>` **(** **)** virtual                                                           |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_resource_type<class_ResourceFormatLoader_method_get_resource_type>` **(** :ref:`String<class_String>` path **)** virtual                                          |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`handles_type<class_ResourceFormatLoader_method_handles_type>` **(** :ref:`String<class_String>` typename **)** virtual                                                |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                 | :ref:`load<class_ResourceFormatLoader_method_load>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` original_path **)** virtual                         |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rename_dependencies<class_ResourceFormatLoader_method_rename_dependencies>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` renames **)** virtual |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -47,37 +47,37 @@ Note: You can also extend :ref:`EditorImportPlugin<class_EditorImportPlugin>` if
 Method Descriptions
 -------------------
 
-.. _class_ResourceFormatLoader_get_dependencies:
+.. _class_ResourceFormatLoader_method_get_dependencies:
 
 - void **get_dependencies** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` add_types **)** virtual
 
 If implemented, gets the dependencies of a given resource. If ``add_types`` is ``true``, paths should be appended ``::TypeName``, where ``TypeName`` is the class name of the dependency. Note that custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``Resource`` for them.
 
-.. _class_ResourceFormatLoader_get_recognized_extensions:
+.. _class_ResourceFormatLoader_method_get_recognized_extensions:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** **)** virtual
 
 Gets the list of extensions for files this loader is able to read.
 
-.. _class_ResourceFormatLoader_get_resource_type:
+.. _class_ResourceFormatLoader_method_get_resource_type:
 
 - :ref:`String<class_String>` **get_resource_type** **(** :ref:`String<class_String>` path **)** virtual
 
 Gets the class name of the resource associated with the given path. If the loader cannot handle it, it should return ``""``. Note that custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``"Resource"`` for them.
 
-.. _class_ResourceFormatLoader_handles_type:
+.. _class_ResourceFormatLoader_method_handles_type:
 
 - :ref:`bool<class_bool>` **handles_type** **(** :ref:`String<class_String>` typename **)** virtual
 
 Tells which resource class this loader can load. Note that custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just handle ``"Resource"`` for them.
 
-.. _class_ResourceFormatLoader_load:
+.. _class_ResourceFormatLoader_method_load:
 
 - :ref:`Variant<class_Variant>` **load** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` original_path **)** virtual
 
 Loads a resource when the engine finds this loader to be compatible. If the loaded resource is the result of an import, ``original_path`` will target the source file. Returns a resource object if succeeded, or an ``ERR_*`` constant listed in :ref:`@GlobalScope<class_@GlobalScope>` if it failed.
 
-.. _class_ResourceFormatLoader_rename_dependencies:
+.. _class_ResourceFormatLoader_method_rename_dependencies:
 
 - :ref:`int<class_int>` **rename_dependencies** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` renames **)** virtual
 

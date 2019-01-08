@@ -19,33 +19,39 @@ Plays audio.
 Properties
 ----------
 
-+--------------------------------------------------+-------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>`        | :ref:`data<class_AudioStreamSample_data>`             |
-+--------------------------------------------------+-------------------------------------------------------+
-| :ref:`Format<enum_AudioStreamSample_Format>`     | :ref:`format<class_AudioStreamSample_format>`         |
-+--------------------------------------------------+-------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`loop_begin<class_AudioStreamSample_loop_begin>` |
-+--------------------------------------------------+-------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`loop_end<class_AudioStreamSample_loop_end>`     |
-+--------------------------------------------------+-------------------------------------------------------+
-| :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` | :ref:`loop_mode<class_AudioStreamSample_loop_mode>`   |
-+--------------------------------------------------+-------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`mix_rate<class_AudioStreamSample_mix_rate>`     |
-+--------------------------------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`stereo<class_AudioStreamSample_stereo>`         |
-+--------------------------------------------------+-------------------------------------------------------+
++--------------------------------------------------+----------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>`        | :ref:`data<class_AudioStreamSample_property_data>`             |
++--------------------------------------------------+----------------------------------------------------------------+
+| :ref:`Format<enum_AudioStreamSample_Format>`     | :ref:`format<class_AudioStreamSample_property_format>`         |
++--------------------------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` |
++--------------------------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`loop_end<class_AudioStreamSample_property_loop_end>`     |
++--------------------------------------------------+----------------------------------------------------------------+
+| :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` | :ref:`loop_mode<class_AudioStreamSample_property_loop_mode>`   |
++--------------------------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`mix_rate<class_AudioStreamSample_property_mix_rate>`     |
++--------------------------------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`stereo<class_AudioStreamSample_property_stereo>`         |
++--------------------------------------------------+----------------------------------------------------------------+
 
 Methods
 -------
 
-+-------+------------------------------------------------------------------------------------------------------+
-| void  | :ref:`save_to_wav<class_AudioStreamSample_save_to_wav>` **(** :ref:`String<class_String>` path **)** |
-+-------+------------------------------------------------------------------------------------------------------+
++------+-------------------------------------------------------------------------------------------------------------+
+| void | :ref:`save_to_wav<class_AudioStreamSample_method_save_to_wav>` **(** :ref:`String<class_String>` path **)** |
++------+-------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_AudioStreamSample_Format:
+
+.. _class_AudioStreamSample_constant_FORMAT_8_BITS:
+
+.. _class_AudioStreamSample_constant_FORMAT_16_BITS:
+
+.. _class_AudioStreamSample_constant_FORMAT_IMA_ADPCM:
 
 enum **Format**:
 
@@ -56,6 +62,14 @@ enum **Format**:
 - **FORMAT_IMA_ADPCM** = **2** --- Audio codec IMA ADPCM.
 
 .. _enum_AudioStreamSample_LoopMode:
+
+.. _class_AudioStreamSample_constant_LOOP_DISABLED:
+
+.. _class_AudioStreamSample_constant_LOOP_FORWARD:
+
+.. _class_AudioStreamSample_constant_LOOP_PING_PONG:
+
+.. _class_AudioStreamSample_constant_LOOP_BACKWARD:
 
 enum **LoopMode**:
 
@@ -75,7 +89,7 @@ Plays audio, can loop.
 Property Descriptions
 ---------------------
 
-.. _class_AudioStreamSample_data:
+.. _class_AudioStreamSample_property_data:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **data**
 
@@ -87,7 +101,7 @@ Property Descriptions
 
 Contains the audio data in bytes.
 
-.. _class_AudioStreamSample_format:
+.. _class_AudioStreamSample_property_format:
 
 - :ref:`Format<enum_AudioStreamSample_Format>` **format**
 
@@ -99,7 +113,7 @@ Contains the audio data in bytes.
 
 Audio format. See FORMAT\_\* constants for values.
 
-.. _class_AudioStreamSample_loop_begin:
+.. _class_AudioStreamSample_property_loop_begin:
 
 - :ref:`int<class_int>` **loop_begin**
 
@@ -111,7 +125,7 @@ Audio format. See FORMAT\_\* constants for values.
 
 Loop start in bytes.
 
-.. _class_AudioStreamSample_loop_end:
+.. _class_AudioStreamSample_property_loop_end:
 
 - :ref:`int<class_int>` **loop_end**
 
@@ -123,7 +137,7 @@ Loop start in bytes.
 
 Loop end in bytes.
 
-.. _class_AudioStreamSample_loop_mode:
+.. _class_AudioStreamSample_property_loop_mode:
 
 - :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` **loop_mode**
 
@@ -135,7 +149,7 @@ Loop end in bytes.
 
 Loop mode. See LOOP\_\* constants for values.
 
-.. _class_AudioStreamSample_mix_rate:
+.. _class_AudioStreamSample_property_mix_rate:
 
 - :ref:`int<class_int>` **mix_rate**
 
@@ -147,7 +161,7 @@ Loop mode. See LOOP\_\* constants for values.
 
 The sample rate for mixing this audio.
 
-.. _class_AudioStreamSample_stereo:
+.. _class_AudioStreamSample_property_stereo:
 
 - :ref:`bool<class_bool>` **stereo**
 
@@ -162,7 +176,7 @@ If ``true``, audio is stereo. Default value: ``false``.
 Method Descriptions
 -------------------
 
-.. _class_AudioStreamSample_save_to_wav:
+.. _class_AudioStreamSample_method_save_to_wav:
 
 - void **save_to_wav** **(** :ref:`String<class_String>` path **)**
 

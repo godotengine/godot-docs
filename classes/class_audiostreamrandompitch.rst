@@ -19,11 +19,11 @@ Plays audio with random pitch tweaking.
 Properties
 ----------
 
-+---------------------------------------+----------------------------------------------------------------+
-| :ref:`AudioStream<class_AudioStream>` | :ref:`audio_stream<class_AudioStreamRandomPitch_audio_stream>` |
-+---------------------------------------+----------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`random_pitch<class_AudioStreamRandomPitch_random_pitch>` |
-+---------------------------------------+----------------------------------------------------------------+
++---------------------------------------+-------------------------------------------------------------------------+
+| :ref:`AudioStream<class_AudioStream>` | :ref:`audio_stream<class_AudioStreamRandomPitch_property_audio_stream>` |
++---------------------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`random_pitch<class_AudioStreamRandomPitch_property_random_pitch>` |
++---------------------------------------+-------------------------------------------------------------------------+
 
 Description
 -----------
@@ -33,7 +33,7 @@ Randomly varies pitch on each start.
 Property Descriptions
 ---------------------
 
-.. _class_AudioStreamRandomPitch_audio_stream:
+.. _class_AudioStreamRandomPitch_property_audio_stream:
 
 - :ref:`AudioStream<class_AudioStream>` **audio_stream**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The current :ref:`AudioStream<class_AudioStream>`.
 
-.. _class_AudioStreamRandomPitch_random_pitch:
+.. _class_AudioStreamRandomPitch_property_random_pitch:
 
 - :ref:`float<class_float>` **random_pitch**
 

@@ -21,25 +21,25 @@ Base class for all 3D joints
 Properties
 ----------
 
-+---------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`collision/exclude_nodes<class_Joint_collision/exclude_nodes>` |
-+---------------------------------+---------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_a<class_Joint_nodes/node_a>`                       |
-+---------------------------------+---------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_b<class_Joint_nodes/node_b>`                       |
-+---------------------------------+---------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`solver/priority<class_Joint_solver/priority>`                 |
-+---------------------------------+---------------------------------------------------------------------+
++---------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`collision/exclude_nodes<class_Joint_property_collision/exclude_nodes>` |
++---------------------------------+------------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_a<class_Joint_property_nodes/node_a>`                       |
++---------------------------------+------------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_b<class_Joint_property_nodes/node_b>`                       |
++---------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`solver/priority<class_Joint_property_solver/priority>`                 |
++---------------------------------+------------------------------------------------------------------------------+
 
 Description
 -----------
 
-All 3D joints link two nodes, has a priority, and can decide if the two bodies of the nodes should be able to collide with each other
+Joints are used to bind together two physics bodies. They have a solver priority and can define if the bodies of the two attached nodes should be able to collide with each other.
 
 Property Descriptions
 ---------------------
 
-.. _class_Joint_collision/exclude_nodes:
+.. _class_Joint_property_collision/exclude_nodes:
 
 - :ref:`bool<class_bool>` **collision/exclude_nodes**
 
@@ -51,7 +51,7 @@ Property Descriptions
 
 If ``true``, the two bodies of the nodes are not able to collide with each other.
 
-.. _class_Joint_nodes/node_a:
+.. _class_Joint_property_nodes/node_a:
 
 - :ref:`NodePath<class_NodePath>` **nodes/node_a**
 
@@ -61,9 +61,9 @@ If ``true``, the two bodies of the nodes are not able to collide with each other
 | *Getter* | get_node_a()      |
 +----------+-------------------+
 
-The :ref:`Node<class_Node>`, the first side of the Joint attaches to.
+The node attached to the first side (A) of the joint.
 
-.. _class_Joint_nodes/node_b:
+.. _class_Joint_property_nodes/node_b:
 
 - :ref:`NodePath<class_NodePath>` **nodes/node_b**
 
@@ -73,9 +73,9 @@ The :ref:`Node<class_Node>`, the first side of the Joint attaches to.
 | *Getter* | get_node_b()      |
 +----------+-------------------+
 
-The :ref:`Node<class_Node>`, the second side of the Joint attaches to.
+The node attached to the second side (B) of the joint.
 
-.. _class_Joint_solver/priority:
+.. _class_Joint_property_solver/priority:
 
 - :ref:`int<class_int>` **solver/priority**
 
@@ -85,5 +85,5 @@ The :ref:`Node<class_Node>`, the second side of the Joint attaches to.
 | *Getter* | get_solver_priority()      |
 +----------+----------------------------+
 
-The order in which the solver is executed compared to the other Joints, the lower, the earlier.
+The priority used to define which solver is executed first for multiple joints. The lower the value, the higher the priority.
 

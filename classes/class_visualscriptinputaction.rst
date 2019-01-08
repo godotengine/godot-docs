@@ -19,16 +19,24 @@ Brief Description
 Properties
 ----------
 
-+------------------------------------------------+-----------------------------------------------------+
-| :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_action>` |
-+------------------------------------------------+-----------------------------------------------------+
-| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_mode>`     |
-+------------------------------------------------+-----------------------------------------------------+
++------------------------------------------------+--------------------------------------------------------------+
+| :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_property_action>` |
++------------------------------------------------+--------------------------------------------------------------+
+| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_property_mode>`     |
++------------------------------------------------+--------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptInputAction_Mode:
+
+.. _class_VisualScriptInputAction_constant_MODE_PRESSED:
+
+.. _class_VisualScriptInputAction_constant_MODE_RELEASED:
+
+.. _class_VisualScriptInputAction_constant_MODE_JUST_PRESSED:
+
+.. _class_VisualScriptInputAction_constant_MODE_JUST_RELEASED:
 
 enum **Mode**:
 
@@ -43,7 +51,7 @@ enum **Mode**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptInputAction_action:
+.. _class_VisualScriptInputAction_property_action:
 
 - :ref:`String<class_String>` **action**
 
@@ -53,7 +61,7 @@ Property Descriptions
 | *Getter* | get_action_name()      |
 +----------+------------------------+
 
-.. _class_VisualScriptInputAction_mode:
+.. _class_VisualScriptInputAction_property_mode:
 
 - :ref:`Mode<enum_VisualScriptInputAction_Mode>` **mode**
 

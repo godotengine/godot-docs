@@ -19,14 +19,26 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------------------------------+------------------------------------------------------------+
-| :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` | :ref:`function<class_VisualShaderNodeVectorFunc_function>` |
-+-----------------------------------------------------------+------------------------------------------------------------+
++-----------------------------------------------------------+---------------------------------------------------------------------+
+| :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` | :ref:`function<class_VisualShaderNodeVectorFunc_property_function>` |
++-----------------------------------------------------------+---------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeVectorFunc_Function:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_NORMALIZE:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SATURATE:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_NEGATE:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_RECIPROCAL:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_RGB2HSV:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_HSV2RGB:
 
 enum **Function**:
 
@@ -45,7 +57,7 @@ enum **Function**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeVectorFunc_function:
+.. _class_VisualShaderNodeVectorFunc_property_function:
 
 - :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **function**
 

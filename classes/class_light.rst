@@ -21,38 +21,70 @@ Provides a base class for different kinds of light nodes.
 Properties
 ----------
 
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`editor_only<class_Light_editor_only>`                           |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`BakeMode<enum_Light_BakeMode>` | :ref:`light_bake_mode<class_Light_light_bake_mode>`                   |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`Color<class_Color>`            | :ref:`light_color<class_Light_light_color>`                           |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`light_cull_mask<class_Light_light_cull_mask>`                   |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>`            | :ref:`light_energy<class_Light_light_energy>`                         |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>`            | :ref:`light_indirect_energy<class_Light_light_indirect_energy>`       |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`light_negative<class_Light_light_negative>`                     |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>`            | :ref:`light_specular<class_Light_light_specular>`                     |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>`            | :ref:`shadow_bias<class_Light_shadow_bias>`                           |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`Color<class_Color>`            | :ref:`shadow_color<class_Light_shadow_color>`                         |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>`            | :ref:`shadow_contact<class_Light_shadow_contact>`                     |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`shadow_enabled<class_Light_shadow_enabled>`                     |
-+--------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`shadow_reverse_cull_face<class_Light_shadow_reverse_cull_face>` |
-+--------------------------------------+-----------------------------------------------------------------------+
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`editor_only<class_Light_property_editor_only>`                           |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`BakeMode<enum_Light_BakeMode>` | :ref:`light_bake_mode<class_Light_property_light_bake_mode>`                   |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`            | :ref:`light_color<class_Light_property_light_color>`                           |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`light_cull_mask<class_Light_property_light_cull_mask>`                   |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`light_energy<class_Light_property_light_energy>`                         |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`light_indirect_energy<class_Light_property_light_indirect_energy>`       |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`light_negative<class_Light_property_light_negative>`                     |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`light_specular<class_Light_property_light_specular>`                     |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`shadow_bias<class_Light_property_shadow_bias>`                           |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`            | :ref:`shadow_color<class_Light_property_shadow_color>`                         |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`shadow_contact<class_Light_property_shadow_contact>`                     |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`shadow_enabled<class_Light_property_shadow_enabled>`                     |
++--------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`shadow_reverse_cull_face<class_Light_property_shadow_reverse_cull_face>` |
++--------------------------------------+--------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_Light_Param:
+
+.. _class_Light_constant_PARAM_ENERGY:
+
+.. _class_Light_constant_PARAM_INDIRECT_ENERGY:
+
+.. _class_Light_constant_PARAM_SPECULAR:
+
+.. _class_Light_constant_PARAM_RANGE:
+
+.. _class_Light_constant_PARAM_ATTENUATION:
+
+.. _class_Light_constant_PARAM_SPOT_ANGLE:
+
+.. _class_Light_constant_PARAM_SPOT_ATTENUATION:
+
+.. _class_Light_constant_PARAM_CONTACT_SHADOW_SIZE:
+
+.. _class_Light_constant_PARAM_SHADOW_MAX_DISTANCE:
+
+.. _class_Light_constant_PARAM_SHADOW_SPLIT_1_OFFSET:
+
+.. _class_Light_constant_PARAM_SHADOW_SPLIT_2_OFFSET:
+
+.. _class_Light_constant_PARAM_SHADOW_SPLIT_3_OFFSET:
+
+.. _class_Light_constant_PARAM_SHADOW_NORMAL_BIAS:
+
+.. _class_Light_constant_PARAM_SHADOW_BIAS:
+
+.. _class_Light_constant_PARAM_SHADOW_BIAS_SPLIT_SCALE:
+
+.. _class_Light_constant_PARAM_MAX:
 
 enum **Param**:
 
@@ -90,6 +122,12 @@ enum **Param**:
 
 .. _enum_Light_BakeMode:
 
+.. _class_Light_constant_BAKE_DISABLED:
+
+.. _class_Light_constant_BAKE_INDIRECT:
+
+.. _class_Light_constant_BAKE_ALL:
+
 enum **BakeMode**:
 
 - **BAKE_DISABLED** = **0** --- Light is ignored when baking. Note: hiding a light does *not* affect baking.
@@ -111,7 +149,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_Light_editor_only:
+.. _class_Light_property_editor_only:
 
 - :ref:`bool<class_bool>` **editor_only**
 
@@ -123,7 +161,7 @@ Property Descriptions
 
 If ``true``, the light only appears in the editor and will not be visible at runtime. Default value:``false``.
 
-.. _class_Light_light_bake_mode:
+.. _class_Light_property_light_bake_mode:
 
 - :ref:`BakeMode<enum_Light_BakeMode>` **light_bake_mode**
 
@@ -133,9 +171,9 @@ If ``true``, the light only appears in the editor and will not be visible at run
 | *Getter* | get_bake_mode()      |
 +----------+----------------------+
 
-The light's bake mode. See :ref:`BakeMode<enum_@GlobalScope_BakeMode>`.
+The light's bake mode. See :ref:`BakeMode<enum_Light_BakeMode>`.
 
-.. _class_Light_light_color:
+.. _class_Light_property_light_color:
 
 - :ref:`Color<class_Color>` **light_color**
 
@@ -147,7 +185,7 @@ The light's bake mode. See :ref:`BakeMode<enum_@GlobalScope_BakeMode>`.
 
 The light's color.
 
-.. _class_Light_light_cull_mask:
+.. _class_Light_property_light_cull_mask:
 
 - :ref:`int<class_int>` **light_cull_mask**
 
@@ -159,7 +197,7 @@ The light's color.
 
 The light will affect objects in the selected layers.
 
-.. _class_Light_light_energy:
+.. _class_Light_property_light_energy:
 
 - :ref:`float<class_float>` **light_energy**
 
@@ -171,7 +209,7 @@ The light will affect objects in the selected layers.
 
 The light's strength multiplier.
 
-.. _class_Light_light_indirect_energy:
+.. _class_Light_property_light_indirect_energy:
 
 - :ref:`float<class_float>` **light_indirect_energy**
 
@@ -183,7 +221,7 @@ The light's strength multiplier.
 
 Secondary multiplier used with indirect light (light bounces). This works in baked light or GIProbe.
 
-.. _class_Light_light_negative:
+.. _class_Light_property_light_negative:
 
 - :ref:`bool<class_bool>` **light_negative**
 
@@ -195,7 +233,7 @@ Secondary multiplier used with indirect light (light bounces). This works in bak
 
 If ``true``, the light's effect is reversed, darkening areas and casting bright shadows. Default value: ``false``.
 
-.. _class_Light_light_specular:
+.. _class_Light_property_light_specular:
 
 - :ref:`float<class_float>` **light_specular**
 
@@ -207,7 +245,7 @@ If ``true``, the light's effect is reversed, darkening areas and casting bright 
 
 The intensity of the specular blob in objects affected by the light. At ``0`` the light becomes a pure diffuse light.
 
-.. _class_Light_shadow_bias:
+.. _class_Light_property_shadow_bias:
 
 - :ref:`float<class_float>` **shadow_bias**
 
@@ -219,7 +257,7 @@ The intensity of the specular blob in objects affected by the light. At ``0`` th
 
 Used to adjust shadow appearance. Too small a value results in self shadowing, while too large a value causes shadows to separate from casters. Adjust as needed.
 
-.. _class_Light_shadow_color:
+.. _class_Light_property_shadow_color:
 
 - :ref:`Color<class_Color>` **shadow_color**
 
@@ -231,7 +269,7 @@ Used to adjust shadow appearance. Too small a value results in self shadowing, w
 
 The color of shadows cast by this light.
 
-.. _class_Light_shadow_contact:
+.. _class_Light_property_shadow_contact:
 
 - :ref:`float<class_float>` **shadow_contact**
 
@@ -241,9 +279,9 @@ The color of shadows cast by this light.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Attempts to reduce :ref:`shadow_bias<class_Light_shadow_bias>` gap.
+Attempts to reduce :ref:`shadow_bias<class_Light_property_shadow_bias>` gap.
 
-.. _class_Light_shadow_enabled:
+.. _class_Light_property_shadow_enabled:
 
 - :ref:`bool<class_bool>` **shadow_enabled**
 
@@ -255,7 +293,7 @@ Attempts to reduce :ref:`shadow_bias<class_Light_shadow_bias>` gap.
 
 If ``true``, the light will cast shadows. Default value: ``false``.
 
-.. _class_Light_shadow_reverse_cull_face:
+.. _class_Light_property_shadow_reverse_cull_face:
 
 - :ref:`bool<class_bool>` **shadow_reverse_cull_face**
 

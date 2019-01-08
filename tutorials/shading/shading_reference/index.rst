@@ -1,4 +1,4 @@
-Shading Reference
+Shading reference
 =================
 
 .. toctree::

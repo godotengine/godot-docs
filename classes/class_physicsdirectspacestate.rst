@@ -19,17 +19,17 @@ Direct access object to a space in the :ref:`PhysicsServer<class_PhysicsServer>`
 Methods
 -------
 
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`            | :ref:`cast_motion<class_PhysicsDirectSpaceState_cast_motion>` **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`Vector3<class_Vector3>` motion **)**                                                                                                                                                     |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`            | :ref:`collide_shape<class_PhysicsDirectSpaceState_collide_shape>` **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**                                                                                                                                                 |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`  | :ref:`get_rest_info<class_PhysicsDirectSpaceState_get_rest_info>` **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape **)**                                                                                                                                                                                       |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`  | :ref:`intersect_ray<class_PhysicsDirectSpaceState_intersect_ray>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Array<class_Array>` exclude=[  ], :ref:`int<class_int>` collision_mask=2147483647, :ref:`bool<class_bool>` collide_with_bodies=true, :ref:`bool<class_bool>` collide_with_areas=false **)** |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`            | :ref:`intersect_shape<class_PhysicsDirectSpaceState_intersect_shape>` **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**                                                                                                                                             |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`cast_motion<class_PhysicsDirectSpaceState_method_cast_motion>` **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`Vector3<class_Vector3>` motion **)**                                                                                                                                                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`collide_shape<class_PhysicsDirectSpaceState_method_collide_shape>` **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**                                                                                                                                                 |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_rest_info<class_PhysicsDirectSpaceState_method_get_rest_info>` **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape **)**                                                                                                                                                                                       |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`intersect_ray<class_PhysicsDirectSpaceState_method_intersect_ray>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Array<class_Array>` exclude=[  ], :ref:`int<class_int>` collision_mask=2147483647, :ref:`bool<class_bool>` collide_with_bodies=true, :ref:`bool<class_bool>` collide_with_areas=false **)** |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`intersect_shape<class_PhysicsDirectSpaceState_method_intersect_shape>` **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**                                                                                                                                             |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -44,21 +44,21 @@ Tutorials
 Method Descriptions
 -------------------
 
-.. _class_PhysicsDirectSpaceState_cast_motion:
+.. _class_PhysicsDirectSpaceState_method_cast_motion:
 
 - :ref:`Array<class_Array>` **cast_motion** **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`Vector3<class_Vector3>` motion **)**
 
-Checks whether the shape can travel to a point. The method will return an array with two floats between 0 and 1, both representing a fraction of ``motion``. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be 1, 1.
+Checks whether the shape can travel to a point. The method will return an array with two floats between 0 and 1, both representing a fraction of ``motion``. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be ``[1, 1]``.
 
-If the shape can not move, the returned array will be 0, 0.
+If the shape can not move, the returned array will be ``[0, 0]``.
 
-.. _class_PhysicsDirectSpaceState_collide_shape:
+.. _class_PhysicsDirectSpaceState_method_collide_shape:
 
 - :ref:`Array<class_Array>` **collide_shape** **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**
 
-Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` object, against the space. The resulting array contains a list of points where the shape intersects another. Like with :ref:`intersect_shape<class_PhysicsDirectSpaceState_intersect_shape>`, the number of returned results can be limited to save processing time.
+Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` object, against the space. The resulting array contains a list of points where the shape intersects another. Like with :ref:`intersect_shape<class_PhysicsDirectSpaceState_method_intersect_shape>`, the number of returned results can be limited to save processing time.
 
-.. _class_PhysicsDirectSpaceState_get_rest_info:
+.. _class_PhysicsDirectSpaceState_method_get_rest_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_rest_info** **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape **)**
 
@@ -78,7 +78,7 @@ Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryPara
 
 If the shape did not intersect anything, then an empty dictionary is returned instead.
 
-.. _class_PhysicsDirectSpaceState_intersect_ray:
+.. _class_PhysicsDirectSpaceState_method_intersect_ray:
 
 - :ref:`Dictionary<class_Dictionary>` **intersect_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Array<class_Array>` exclude=[  ], :ref:`int<class_int>` collision_mask=2147483647, :ref:`bool<class_bool>` collide_with_bodies=true, :ref:`bool<class_bool>` collide_with_areas=false **)**
 
@@ -100,7 +100,7 @@ If the ray did not intersect anything, then an empty dictionary is returned inst
 
 Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<class_RID>`\ s that are to be excluded from collisions, a ``collision_mask`` bitmask representing the physics layers to check in, or booleans to determine if the ray should collide with :ref:`PhysicsBody<class_PhysicsBody>`\ s or :ref:`Area<class_Area>`\ s, respectively.
 
-.. _class_PhysicsDirectSpaceState_intersect_shape:
+.. _class_PhysicsDirectSpaceState_method_intersect_shape:
 
 - :ref:`Array<class_Array>` **intersect_shape** **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**
 

@@ -94,7 +94,7 @@ Custom scene switcher
 
 This tutorial will demonstrate building a scene switcher using autoload. For
 basic scene switching, you can use the
-:ref:`SceneTree.change_scene() <class_SceneTree_change_scene>`
+:ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>`
 method (see :ref:`doc_scene_tree` for details). However, if you need more
 complex behavior when changing scenes, this method provides more functionality.
 
@@ -226,7 +226,7 @@ current scene and replace it with the requested one.
 
 As mentioned in the comments above, we need to avoid the situation of deleting
 the current scene while it is still being used (i.e. its code is still running),
-so using :ref:`Object.call_deferred() <class_Object_call_deferred>`
+so using :ref:`Object.call_deferred() <class_Object_method_call_deferred>`
 is required at this point. The result is that the second function will run
 at a later time when any code from the current scene has completed.
 
