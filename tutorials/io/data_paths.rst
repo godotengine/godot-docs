@@ -8,7 +8,7 @@ Path separators
 
 For the sake of supporting as many platforms as possible, Godot only
 accepts UNIX-style path separators (``/``). These work on all
-platforms including Windows.
+platforms, including Windows.
 
 A path like ``C:\Projects`` will become ``C:/Projects``.
 
