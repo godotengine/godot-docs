@@ -7,7 +7,7 @@ Introduction
 ------------
 
 This tutorial will introduce you to using the :ref:`Viewport <class_Viewport>` as a
-texture that can be applied to 3D objects. In order to do so it will walk you through the process
+texture that can be applied to 3D objects. In order to do so, it will walk you through the process
 of making a procedural planet like the one below:
 
 .. image:: img/planet_example.png
@@ -20,7 +20,7 @@ a :ref:`Camera <class_Camera>`, a :ref:`light source <class_OmniLight>`, a
 and applying a :ref:`Spatial Material <class_SpatialMaterial>` to the mesh. The focus will be on using
 the :ref:`Viewport <class_Viewport>` to dynamically create textures that can be applied to the mesh.
 
-During the course of this tutorial will cover the following topics:
+During the course of this tutorial, we'll cover the following topics:
 
 - How to use a :ref:`Viewport <class_Viewport>` as a render texture
 - Mapping a texture to a sphere with equirectangular mapping
@@ -35,12 +35,12 @@ First, add a :ref:`Viewport <class_Viewport>` to the scene.
 Next, set the size of the :ref:`Viewport <class_Viewport>` to ``(1024, 512)``. The
 :ref:`Viewport <class_Viewport>` can actually be any size so long as the width is double the height.
 The width needs to be double the height so that the image will accurately map onto the
-sphere as we will be using equirectangular projection, but more on that later.
+sphere, as we will be using equirectangular projection, but more on that later.
 
 .. image:: img/planet_new_viewport.png
 
-Next, disable HDR and disable 3D. We don't need HDR because our planets surface will not be especially
-bright so values between ``0`` and ``1`` will be fine. And we will be using a :ref:`ColorRect <class_ColorRect>`
+Next, disable HDR and disable 3D. We don't need HDR because our planet's surface will not be especially
+bright, so values between ``0`` and ``1`` will be fine. And we will be using a :ref:`ColorRect <class_ColorRect>`
 to render the surface, so we don't need 3D either.
 
 Select the Viewport and add a :ref:`ColorRect <class_ColorRect>` as a child.
@@ -50,14 +50,16 @@ will ensure that the :ref:`ColorRect <class_ColorRect>` takes up the entire :ref
 
 .. image:: img/planet_new_colorrect.png
 
-Next, we add a :ref:`Shader Material <class_ShaderMaterial>` to the :ref:`ColorRect <class_ColorRect>`.
+Next, we add a :ref:`Shader Material <class_ShaderMaterial>` to the :ref:`ColorRect <class_ColorRect>` (ColorRect > CanvasItem > Material > Material > ``New ShaderMaterial``).
 
 .. note:: Basic familiarity with shading is recommended for this tutorial. However, even if you are new
-          to shaders, all the code will be provided so you should have no problem following along.
+          to shaders, all the code will be provided, so you should have no problem following along.
+
+ColorRect > CanvasItem > Material > Material > click / Edit > ShaderMaterial > Shader > ``New Shader`` > click / Edit:
 
 .. code-block:: glsl
 
-    shader_type canvas_item
+    shader_type canvas_item;
 
     void fragment() {
         COLOR = vec4(UV.x, UV.y, 0.5, 1.0);
@@ -73,9 +75,13 @@ apply to the sphere.
 Applying the texture
 --------------------
 
+MeshInstance > GeometryInstance > Geometry > Material Override > ``New SpatialMaterial``:
+
 Now we go into the :ref:`Mesh Instance <class_MeshInstance>` and add a :ref:`Spatial Material <class_SpatialMaterial>`
 to it. No need for a special :ref:`Shader Material <class_ShaderMaterial>` (although that would be a good idea
 for more advanced effects, like the atmosphere in the example above).
+
+MeshInstance > GeometryInstance > Geometry > Material Override > ``click`` / ``Edit``:
 
 Open the newly created :ref:`Spatial Material <class_SpatialMaterial>` and scroll down to the "Albedo" section
 and click beside the "Texture" property to add an Albedo Texture. Here we will apply the texture we made.
@@ -83,27 +89,27 @@ Choose "New ViewportTexture"
 
 .. image:: img/planet_new_viewport_texture.png
 
-Then from the menu that pops up select the Viewport that we rendered to earlier.
+Then, from the menu that pops up, select the Viewport that we rendered to earlier.
 
 .. image:: img/planet_pick_viewport_texture.png
 
-Your sphere should now be colored in with the colors we rendered to the Viewport
+Your sphere should now be colored in with the colors we rendered to the Viewport.
 
 .. image:: img/planet_seam.png
 
 Notice the ugly seam that forms where the texture wraps around? This is because we are picking
 a color based on UV coordinates and UV coordinates do not wrap around the texture. This is a classic
 problem in 2D map projection. Game developers often have a 2-dimensional map they want to project
-onto a sphere but when it wraps around it has large seams. There is an elegant work around for this
+onto a sphere, but when it wraps around, it has large seams. There is an elegant workaround for this
 problem that we will illustrate in the next section.
 
 Making the planet texture
 -------------------------
 
-So now when we render to our :ref:`Viewport <class_Viewport>` it appears magically on the sphere. But there is an ugly
+So now, when we render to our :ref:`Viewport <class_Viewport>`, it appears magically on the sphere. But there is an ugly
 seam created by our texture coordinates. So how do we get a range of coordinates that wrap around
 the sphere in a nice way? One solution is to use a function that repeats on the domain of our texture.
-``sin`` and ``cos`` are two such functions. Lets apply them to the texture and see what happens
+``sin`` and ``cos`` are two such functions. Let's apply them to the texture and see what happens.
 
 .. code-block:: glsl
 
@@ -111,22 +117,22 @@ the sphere in a nice way? One solution is to use a function that repeats on the 
 
 .. image:: img/planet_sincos.png
 
-Not too bad. If you look around you can see that the seam has now disappeared, but in its place we
+Not too bad. If you look around, you can see that the seam has now disappeared, but in its place, we
 have pinching at the poles. This pinching is due to the way Godot maps textures to spheres in its
 :ref:`Spatial Material <class_SpatialMaterial>`. It uses a projection technique called equirectangular
-projection. Which translates a spherical map onto a 2D plane.
+projection, which translates a spherical map onto a 2D plane.
 
 .. note:: If you are interested in a little extra information on the technique, we will be converting from
           spherical coordinates into Cartesian coordinates. Spherical coordinates map the longitude and
-          latitude of the sphere, while Cartesian coordinates are for all intents and purposes a
+          latitude of the sphere, while Cartesian coordinates are, for all intents and purposes, a
           vector from the center of the sphere to the point.
 
-For each pixel we will calculate its 3D position on the sphere. From that we will use
-3D noise to determine a color value. By calculating the noise in 3D we solve the problem
+For each pixel, we will calculate its 3D position on the sphere. From that, we will use
+3D noise to determine a color value. By calculating the noise in 3D, we solve the problem
 of the pinching at the poles. To understand why, picture the noise being calculated across the
 surface of the sphere instead of across the 2D plane. When you calculate across the
-surface of the sphere you never hit an edge, and hence you never create a seam or
-a pinch point on the pole. The following code converts the ``UVs`` into Cartesion
+surface of the sphere, you never hit an edge, and hence you never create a seam or
+a pinch point on the pole. The following code converts the ``UVs`` into Cartesian
 coordinates.
 
 .. code-block:: glsl
@@ -140,11 +146,11 @@ coordinates.
     unit.z = cos(phi) * sin(theta);
     unit = normalize(unit);
 
-And if we use ``unit`` as an output ``COLOR`` value we get.
+And if we use ``unit`` as an output ``COLOR`` value, we get:
 
 .. image:: img/planet_normals.png
 
-Now that we can calculate the 3D position of the surface of the sphere we can use 3D noise
+Now that we can calculate the 3D position of the surface of the sphere, we can use 3D noise
 to make the planet. We will be using this noise function directly from a `Shadertoy <https://www.shadertoy.com/view/Xsl3Dl>`_:
 
 .. code-block:: glsl
@@ -172,7 +178,7 @@ to make the planet. We will be using this noise function directly from a `Shader
                          dot(hash(i + vec3(1.0, 1.0, 1.0)), f - vec3(1.0, 1.0, 1.0)), u.x), u.y), u.z );
     }
 
-.. note:: All credit goes to the author, Inigo Quilez. It is published with the ``MIT`` licence.
+.. note:: All credit goes to the author, Inigo Quilez. It is published under the ``MIT`` licence.
 
 Now to use ``noise``, add the following to the    ``fragment`` function:
 
@@ -186,47 +192,47 @@ Now to use ``noise``, add the following to the    ``fragment`` function:
 .. note:: In order to highlight the texture, we set the material to unshaded.
 
 You can see now that the noise indeed wraps seamlessly around the sphere. Although this
-looks nothing like the planet you were promised. So lets move onto something more colorful.
+looks nothing like the planet you were promised. So let's move onto something more colorful.
 
 Coloring the planet
 -------------------
 
-Now to make the planet colors. While, there are many ways to do this, for now we will stick 
+Now to make the planet colors. While there are many ways to do this, for now, we will stick 
 with a gradient between water and land.
 
-To make a gradient in GLSL we use the ``mix`` function. ``mix`` takes two values to interpolate
-between and a third parameter to choose how much to interpolate between them, in essence
-it *mixes* the two values together. In other APIs this function is often called ``lerp``.
-Although, ``lerp`` is typically reserved for mixing two floats together, ``mix`` can take any
+To make a gradient in GLSL, we use the ``mix`` function. ``mix`` takes two values to interpolate
+between and a third argument to choose how much to interpolate between them; in essence,
+it *mixes* the two values together. In other APIs, this function is often called ``lerp``.
+However, ``lerp`` is typically reserved for mixing two floats together; ``mix`` can take any
 values whether it be floats or vector types.
 
 .. code-block:: glsl
 
-    COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), n.x * 0.5 + 0.5);
+    COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), unit.x * 0.5 + 0.5);
 
 The first color is blue for the ocean. The second color is a kind of reddish color (because
-all alien planets need red terrain). And finally they are mixed together by ``n.x * 0.5 + 0.5``.
-``n.x`` smoothly varies between ``-1`` and ``1``. So we map it into the ``0-1`` range that ``mix`` expects.
+all alien planets need red terrain). And finally, they are mixed together by ``unit.x * 0.5 + 0.5``.
+``unit.x`` smoothly varies between ``-1`` and ``1``. So we map it into the ``0-1`` range that ``mix`` expects.
 Now you can see that the colors change between blue and red.
 
 .. image:: img/planet_noise_color.png
 
 That is a little more blurry than we want. Planets typically have a relatively clear separation between
-land and sea. In order to do that we will change the last term to ``smoothstep(-0.1, 0.0, n.x)``.
+land and sea. In order to do that, we will change the last term to ``smoothstep(-0.1, 0.0, unit.x)``.
 And thus the whole line becomes:
 
 .. code-block:: glsl
 
-    COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), smoothstep(-0.1, 0.0, n.x));
+    COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), smoothstep(-0.1, 0.0, unit.x));
 
-What ``smoothstep`` does is return ``0`` if the third parameter is below the first and return 1 if the
-third parameter is larger than the second and smoothly blends between ``0`` and ``1`` if the third number
-is between the first and the second. So in this line ``smoothstep`` returns ``0`` whenever ``n.x`` is less than ``-0.1``
-and it returns ``1`` whenever ``n.x`` is above ``0``.
+What ``smoothstep`` does is return ``0`` if the third argument is below the first and ``1`` if the
+third argument is larger than the second and smoothly blends between ``0`` and ``1`` if the third number
+is between the first and the second. So in this line, ``smoothstep`` returns ``0`` whenever ``unit.x`` is less than ``-0.1``
+and it returns ``1`` whenever ``unit.x`` is above ``0``.
 
 .. image:: img/planet_noise_smooth.png
 
-One more thing to make this a little more planet-y. The land shouldn't be so blobby lets make the edges
+One more thing to make this a little more planet-y. The land shouldn't be so blobby; let's make the edges
 a little rougher. A trick that is often used in shaders to make rough looking terrain with noise is
 to layer levels of noise over one another at various frequencies. We use one layer to make the
 overall blobby structure of the continents. Then another layer breaks up the edges a bit, and then
@@ -244,7 +250,7 @@ And now the planet looks like:
 
 .. image:: img/planet_noise_fbm.png
 
-And with shading turned back on it looks like:
+And with shading turned back on, it looks like:
 
 .. image:: img/planet_noise_fbm_shaded.png
 
@@ -260,33 +266,33 @@ into the ``alpha`` channel of our output ``COLOR`` and using it as a Roughness m
     COLOR.a = 0.3 + 0.7 * smoothstep(-0.1, 0.0, n);
 
 This line returns ``0.3`` for water and ``1.0`` for land. This means that the land is going to be quite
-rough while the water will be quite smooth.
+rough, while the water will be quite smooth.
 
-And then in the material under the "Metallic" section make sure ``Metallic`` is set to ``0`` and
+And then, in the material, under the "Metallic" section, make sure ``Metallic`` is set to ``0`` and
 ``Specular`` is set to ``1``. The reason for this is the water reflects light really well, but
 isn't metallic. These values are not physically accurate, but they are good enough for this demo.
 
-Next under the "Roughness" section set ``Roughness`` to ``1`` and set the roughness texture to a
+Next, under the "Roughness" section, set ``Roughness`` to ``1`` and set the roughness texture to a
 :ref:`Viewport Texture <class_ViewportTexture>` pointing to our planet texture :ref:`Viewport <class_Viewport>`.
-Finally set the ``Texture Channel`` to ``Alpha``. This instructs the renderer to use the ``alpha``
+Finally, set the ``Texture Channel`` to ``Alpha``. This instructs the renderer to use the ``alpha``
 channel of our output ``COLOR`` as the ``Roughness`` value.
 
 .. image:: img/planet_ocean.png
 
 You'll notice that very little changes except that the planet is no longer reflecting the sky.
-This is happening because by default when something is rendered with an
-alpha value it gets drawn as a transparent object over the background. And since the default background
+This is happening because, by default, when something is rendered with an
+alpha value, it gets drawn as a transparent object over the background. And since the default background
 of the :ref:`Viewport <class_Viewport>` is opaque, the ``alpha`` channel of the
-:ref:`Viewport Texture <class_ViewportTexture>` is ``1`` resulting in the planet texture being
-drawn with slightly fainter colors and a ``Roughness`` value of ``1`` everywhere. To correct this we
+:ref:`Viewport Texture <class_ViewportTexture>` is ``1``, resulting in the planet texture being
+drawn with slightly fainter colors and a ``Roughness`` value of ``1`` everywhere. To correct this, we
 go into the :ref:`Viewport <class_Viewport>` and set "Transparent Bg" to on. Since we are now
-rendering one transparent object on top of another we want to enable ``blend_premul_alpha``:
+rendering one transparent object on top of another, we want to enable ``blend_premul_alpha``:
 
 .. code-block:: glsl
 
     render_mode blend_premul_alpha;
 
-This pre-multiplies the colors by the ``alpha`` value and then blends them correctly together. Typically
+This pre-multiplies the colors by the ``alpha`` value and then blends them correctly together. Typically,
 when blending one transparent color on top of another, even if the background has an ``alpha`` of ``0`` (as it
 does in this case), you end up with weird color bleed issues. Setting ``blend_premul_alpha`` fixes that.
 
