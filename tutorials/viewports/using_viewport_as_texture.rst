@@ -208,27 +208,27 @@ values whether it be floats or vector types.
 
 .. code-block:: glsl
 
-    COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), unit.x * 0.5 + 0.5);
+    COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), n * 0.5 + 0.5);
 
 The first color is blue for the ocean. The second color is a kind of reddish color (because
-all alien planets need red terrain). And finally, they are mixed together by ``unit.x * 0.5 + 0.5``.
-``unit.x`` smoothly varies between ``-1`` and ``1``. So we map it into the ``0-1`` range that ``mix`` expects.
+all alien planets need red terrain). And finally, they are mixed together by ``n * 0.5 + 0.5``.
+``n`` smoothly varies between ``-1`` and ``1``. So we map it into the ``0-1`` range that ``mix`` expects.
 Now you can see that the colors change between blue and red.
 
 .. image:: img/planet_noise_color.png
 
 That is a little more blurry than we want. Planets typically have a relatively clear separation between
-land and sea. In order to do that, we will change the last term to ``smoothstep(-0.1, 0.0, unit.x)``.
+land and sea. In order to do that, we will change the last term to ``smoothstep(-0.1, 0.0, n)``.
 And thus the whole line becomes:
 
 .. code-block:: glsl
 
-    COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), smoothstep(-0.1, 0.0, unit.x));
+    COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), smoothstep(-0.1, 0.0, n));
 
 What ``smoothstep`` does is return ``0`` if the third argument is below the first and ``1`` if the
 third argument is larger than the second and smoothly blends between ``0`` and ``1`` if the third number
-is between the first and the second. So in this line, ``smoothstep`` returns ``0`` whenever ``unit.x`` is less than ``-0.1``
-and it returns ``1`` whenever ``unit.x`` is above ``0``.
+is between the first and the second. So in this line, ``smoothstep`` returns ``0`` whenever ``n`` is less than ``-0.1``
+and it returns ``1`` whenever ``n`` is above ``0``.
 
 .. image:: img/planet_noise_smooth.png
 
