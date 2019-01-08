@@ -6,16 +6,16 @@ BBCode in RichTextLabel
 Introduction
 ------------
 
-:ref:`class_RichTextLabel` allows to display complex text markup in a control.
+:ref:`class_RichTextLabel` allows the display of complex text markup in a control.
 It has a built-in API for generating the markup, but can also parse a BBCode.
 
-Note that the BBCode tags can also be used to some extent in the
+Note that the BBCode tags can also be used, to some extent, in the
 :ref:`XML source of the class reference <doc_updating_the_class_reference>`.
 
 Setting up
 ----------
 
-For RichTextLabel to work properly, it must be set up. This means loading
+For a ``RichTextLabel`` to work properly, it must be set up. That means loading
 the intended fonts in the relevant properties:
 
 .. image:: img/rtl_setup.png
@@ -52,7 +52,7 @@ Reference
 +-------------------+--------------------------------------------+--------------------------------------------------------------+
 | **font**          | ``[font=<path>]{text}[/font]``             | Use custom font at <path> for {text}.                        |
 +-------------------+--------------------------------------------+--------------------------------------------------------------+
-| **color**         | ``[color=<code/name>]{text}[/color]``      | Change {text} color, use # format such as #ff00ff or name.   |
+| **color**         | ``[color=<code/name>]{text}[/color]``      | Change {text} color; use name or # format, such as #ff00ff.  |
 +-------------------+--------------------------------------------+--------------------------------------------------------------+
 
 Built-in color names
