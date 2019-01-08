@@ -8,6 +8,9 @@
 
 .sphinx-tabs .sphinx-menu {
     border-bottom-color: #a0b3bf !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .sphinx-tabs .sphinx-menu a.active.item {
@@ -37,11 +40,4 @@ article ul:last-child {
 
 .code-tab.tab div[class^='highlight'] {
     border: none;
-}
-
-/* Semantic UI tabs don't shrink, make font smaller when viewing in mobile devices */
-@media screen and (max-width: 768px) {
-    .sphinx-tabs .sphinx-menu a.item {
-        font-size: 0.9em !important;
-    }
 }

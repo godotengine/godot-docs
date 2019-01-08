@@ -4,12 +4,12 @@ import base64
 import json
 import posixpath
 import os
-from docutils.parsers.rst import Directive
 from docutils import nodes
+from docutils.parsers.rst import Directive, directives
+from pkg_resources import resource_filename
 from pygments.lexers import get_all_lexers
 from sphinx.util.osutil import copyfile
-
-DIR = os.path.dirname(os.path.abspath(__file__))
+from sphinx.util import logging
 
 
 FILES = [
@@ -28,6 +28,15 @@ for lexer in get_all_lexers():
         LEXER_MAP[short_name] = lexer[0]
 
 
+def get_compatible_builders(app):
+    builders = ['html', 'singlehtml', 'dirhtml',
+                'readthedocs', 'readthedocsdirhtml',
+                'readthedocssinglehtml', 'readthedocssinglehtmllocalmedia',
+                'spelling']
+    builders.extend(app.config['sphinx_tabs_valid_builders'])
+    return builders
+
+
 class TabsDirective(Directive):
     """ Top-level tabs directive """
 
@@ -41,27 +50,42 @@ class TabsDirective(Directive):
         node = nodes.container()
         node['classes'] = ['sphinx-tabs']
 
-        tabs_node = nodes.container()
-        tabs_node.tagname = 'div'
+        if 'next_tabs_id' not in env.temp_data:
+            env.temp_data['next_tabs_id'] = 0
+        if 'tabs_stack' not in env.temp_data:
+            env.temp_data['tabs_stack'] = []
 
-        classes = 'ui top attached tabular menu sphinx-menu'
-        tabs_node['classes'] = classes.split(' ')
+        tabs_id = env.temp_data['next_tabs_id']
+        tabs_key = 'tabs_%d' % tabs_id
+        env.temp_data['next_tabs_id'] += 1
+        env.temp_data['tabs_stack'].append(tabs_id)
 
-        env.temp_data['tab_titles'] = []
-        env.temp_data['is_first_tab'] = True
+        env.temp_data[tabs_key] = {}
+        env.temp_data[tabs_key]['tab_ids'] = []
+        env.temp_data[tabs_key]['tab_titles'] = []
+        env.temp_data[tabs_key]['is_first_tab'] = True
+
         self.state.nested_parse(self.content, self.content_offset, node)
 
-        tab_titles = env.temp_data['tab_titles']
-        for idx, [data_tab, tab_name] in enumerate(tab_titles):
-            tab = nodes.container()
-            tab.tagname = 'a'
-            tab['classes'] = ['item'] if idx > 0 else ['active', 'item']
-            tab['classes'].append(data_tab)
-            tab += tab_name
-            tabs_node += tab
+        if env.app.builder.name in get_compatible_builders(env.app):
+            tabs_node = nodes.container()
+            tabs_node.tagname = 'div'
 
-        node.children.insert(0, tabs_node)
+            classes = 'ui top attached tabular menu sphinx-menu'
+            tabs_node['classes'] = classes.split(' ')
 
+            tab_titles = env.temp_data[tabs_key]['tab_titles']
+            for idx, [data_tab, tab_name] in enumerate(tab_titles):
+                tab = nodes.container()
+                tab.tagname = 'a'
+                tab['classes'] = ['item'] if idx > 0 else ['active', 'item']
+                tab['classes'].append(data_tab)
+                tab += tab_name
+                tabs_node += tab
+
+            node.children.insert(0, tabs_node)
+
+        env.temp_data['tabs_stack'].pop()
         return [node]
 
 
@@ -75,11 +99,17 @@ class TabDirective(Directive):
         self.assert_has_content()
         env = self.state.document.settings.env
 
+        tabs_id = env.temp_data['tabs_stack'][-1]
+        tabs_key = 'tabs_%d' % tabs_id
+
         args = self.content[0].strip()
-        try:
-            args = json.loads(args)
-            self.content.trim_start(1)
-        except ValueError:
+        if args.startswith('{'):
+            try:
+                args = json.loads(args)
+                self.content.trim_start(1)
+            except ValueError:
+                args = {}
+        else:
             args = {}
 
         tab_name = nodes.container()
@@ -87,12 +117,23 @@ class TabDirective(Directive):
             self.content[:1], self.content_offset, tab_name)
         args['tab_name'] = tab_name
 
+        include_tabs_id_in_data_tab = False
         if 'tab_id' not in args:
-            args['tab_id'] = env.new_serialno('tab_id')
+            args['tab_id'] = env.new_serialno(tabs_key)
+            include_tabs_id_in_data_tab = True
+        i = 1
+        while args['tab_id'] in env.temp_data[tabs_key]['tab_ids']:
+            args['tab_id'] = '%s-%d' % (args['tab_id'], i)
+            i += 1
+        env.temp_data[tabs_key]['tab_ids'].append(args['tab_id'])
 
-        data_tab = "sphinx-data-tab-{}".format(args['tab_id'])
+        data_tab = str(args['tab_id'])
+        if include_tabs_id_in_data_tab:
+            data_tab = '%d-%s' % (tabs_id, data_tab)
+        data_tab = "sphinx-data-tab-{}".format(data_tab)
 
-        env.temp_data['tab_titles'].append((data_tab, args['tab_name']))
+        env.temp_data[tabs_key]['tab_titles'].append(
+            (data_tab, args['tab_name']))
 
         text = '\n'.join(self.content)
         node = nodes.container(text)
@@ -102,11 +143,23 @@ class TabDirective(Directive):
         node['classes'].extend(args.get('classes', []))
         node['classes'].append(data_tab)
 
-        if env.temp_data['is_first_tab']:
+        if env.temp_data[tabs_key]['is_first_tab']:
             node['classes'].append('active')
-            env.temp_data['is_first_tab'] = False
+            env.temp_data[tabs_key]['is_first_tab'] = False
 
         self.state.nested_parse(self.content[2:], self.content_offset, node)
+
+        if env.app.builder.name not in get_compatible_builders(env.app):
+            outer_node = nodes.container()
+            tab = nodes.container()
+            tab.tagname = 'a'
+            tab['classes'] = ['item']
+            tab += tab_name
+
+            outer_node.append(tab)
+            outer_node.append(node)
+            return [outer_node]
+
         return [node]
 
 
@@ -127,7 +180,8 @@ class GroupTabDirective(Directive):
 
         tab_args = {
             'tab_id': base64.b64encode(
-                group_name.encode('utf-8')).decode('utf-8')
+                group_name.encode('utf-8')).decode('utf-8'),
+            'group_tab': True
         }
 
         new_content = [
@@ -149,6 +203,9 @@ class CodeTabDirective(Directive):
     """ Tab directive with a codeblock as its content"""
 
     has_content = True
+    option_spec = {
+        'linenos': directives.flag
+    }
 
     def run(self):
         """ Parse a tab directive """
@@ -164,7 +221,8 @@ class CodeTabDirective(Directive):
             self.content.data[idx] = '      ' + line
 
         tab_args = {
-            'tab_id': '-'.join(tab_name.lower().split()),
+            'tab_id': base64.b64encode(
+                tab_name.encode('utf-8')).decode('utf-8'),
             'classes': ['code-tab'],
         }
 
@@ -173,8 +231,12 @@ class CodeTabDirective(Directive):
             '   {}'.format(tab_name),
             '',
             '   .. code-block:: {}'.format(lang),
-            '',
         ]
+
+        if 'linenos' in self.options:
+            new_content.append('      :linenos:')
+
+        new_content.append('')
 
         for idx, line in enumerate(new_content):
             self.content.data.insert(idx, line)
@@ -204,53 +266,49 @@ class _FindTabsDirectiveVisitor(nodes.NodeVisitor):
 
 
 # pylint: disable=unused-argument
-def add_assets(app, pagename, templatename, context, doctree):
-    """ Add CSS and JS asset files """
+def update_context(app, pagename, templatename, context, doctree):
+    """ Remove sphinx-tabs CSS and JS asset files if not used in a page """
     if doctree is None:
         return
     visitor = _FindTabsDirectiveVisitor(doctree)
     doctree.walk(visitor)
-    assets = ['sphinx_tabs/' + f for f in FILES]
-    css_files = [posixpath.join('_static', path)
-                 for path in assets if path.endswith('css')]
-    script_files = [posixpath.join('_static', path)
-                    for path in assets if path.endswith('js')]
-    if visitor.found_tabs_directive:
-        if 'css_files' not in context:
-            context['css_files'] = css_files
-        else:
-            context['css_files'].extend(css_files)
-        if 'script_files' not in context:
-            context['script_files'] = script_files
-        else:
-            context['script_files'].extend(script_files)
-    else:
-        for path in css_files:
-            if 'css_files' in context and path in context['css_files']:
-                context['css_files'].remove(path)
-        for path in script_files:
-            if 'script_files' in context and path in context['script_files']:
-                context['script_files'].remove(path)
+    if not visitor.found_tabs_directive:
+        paths = [posixpath.join('_static', 'sphinx_tabs/' + f) for f in FILES]
+        if 'css_files' in context:
+            context['css_files'] = context['css_files'][:]
+            for path in paths:
+                if path.endswith('.css'):
+                    context['css_files'].remove(path)
+        if 'script_files' in context:
+            context['script_files'] = context['script_files'][:]
+            for path in paths:
+                if path.endswith('.js'):
+                    context['script_files'].remove(path)
 # pylint: enable=unused-argument
 
 
 def copy_assets(app, exception):
     """ Copy asset files to the output """
-    builders = ('html', 'readthedocs', 'readthedocssinglehtmllocalmedia',
-                'singlehtml')
-    if app.builder.name not in builders:
-        app.warn('Not copying tabs assets! Not compatible with %s builder' %
-                 app.builder.name)
-        return
+    if 'getLogger' in dir(logging):
+        log = logging.getLogger(__name__).info  # pylint: disable=no-member
+    else:
+        log = app.info
+    builders = get_compatible_builders(app)
     if exception:
-        app.warn('Not copying tabs assets! Error occurred previously')
         return
-    app.info('Copying tabs assets... ', nonl=True)
+    if app.builder.name not in builders:
+        if not app.config['sphinx_tabs_nowarn']:
+            app.warn(
+                'Not copying tabs assets! Not compatible with %s builder' %
+                app.builder.name)
+        return
+
+    log('Copying tabs assets')
 
     installdir = os.path.join(app.builder.outdir, '_static', 'sphinx_tabs')
 
     for path in FILES:
-        source = os.path.join(DIR, path)
+        source = resource_filename('sphinx_tabs', path)
         dest = os.path.join(installdir, path)
 
         destdir = os.path.dirname(dest)
@@ -258,14 +316,26 @@ def copy_assets(app, exception):
             os.makedirs(destdir)
 
         copyfile(source, dest)
-    app.info('done')
 
 
 def setup(app):
     """ Set up the plugin """
+    app.add_config_value('sphinx_tabs_nowarn', False, '')
+    app.add_config_value('sphinx_tabs_valid_builders', [], '')
     app.add_directive('tabs', TabsDirective)
     app.add_directive('tab', TabDirective)
     app.add_directive('group-tab', GroupTabDirective)
     app.add_directive('code-tab', CodeTabDirective)
-    app.connect('html-page-context', add_assets)
+    for path in ['sphinx_tabs/' + f for f in FILES]:
+        if path.endswith('.css'):
+            if 'add_css_file' in dir(app):
+                app.add_css_file(path)
+            else:
+                app.add_stylesheet(path)
+        if path.endswith('.js'):
+            if 'add_script_file' in dir(app):
+                app.add_script_file(path)
+            else:
+                app.add_javascript(path)
+    app.connect('html-page-context', update_context)
     app.connect('build-finished', copy_assets)
