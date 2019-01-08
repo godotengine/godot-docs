@@ -613,7 +613,8 @@ to the top edge of the game window. Then resize the GUI to make it as
 small as possible vertically. Now you can see how the interface looks in
 the context of the game.
 
-Congratulations for getting to the end of this long tutorial!
+Congratulations for getting to the end of this long tutorial. You can
+find the final project here: :download:`ui_gui_design.zip <files/ui_gui_design.zip>`.
 
 .. figure:: ./img/ui_gui_design_final_result.png
 

@@ -269,8 +269,9 @@ press enter, the ``Separation`` property becomes active and Godot adds
 Without a single line of code, we have a precise and responsive main
 menu.
 
-Congratulations for getting there! You can download the `final
-menu <#>`__ to compare with your own. In the next tutorial, you'll
+Congratulations for getting there! You can download the final
+menu :download:`ui_main_menu_design.zip <files/ui_main_menu_design.zip>`
+to compare with your own. In the next tutorial, you'll
 create a Game User Interface with bars and item counters.
 
 Break down the UI mockup

@@ -386,8 +386,8 @@ takes seven arguments:
 6. The type of the transition
 7. The easing to use in combination with the equation.
 
-The last two arguments combined correspond to an `easing
-equation <#>`__. This controls how the value evolves from the start to
+The last two arguments combined correspond to an easing
+equation. This controls how the value evolves from the start to
 the end point.
 
 Click the script icon next to the ``GUI`` node to open it again. The
