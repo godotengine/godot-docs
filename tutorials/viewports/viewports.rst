@@ -92,7 +92,7 @@ different from the one specified in size, by calling:
 
 ::
 
-    viewport.set_size_override(w, h) # Custom size for 2D
+    viewport.set_size_override(true, Vector2(width, height)) # Custom size for 2D
     viewport.set_size_override_stretch(true) # Enable stretch for custom size.
 
 The root :ref:`Viewport <class_Viewport>` uses this for the stretch options in the project
