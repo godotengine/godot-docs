@@ -11,3 +11,4 @@ Physics
    ray-casting
    ragdoll_system
    kinematic_character_2d
+   softbody
