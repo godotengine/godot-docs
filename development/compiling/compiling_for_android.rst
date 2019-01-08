@@ -56,9 +56,9 @@ with ``y``:
 
 Set the environment variable ``ANDROID_NDK_ROOT`` to point to the
 Android NDK. You also might need to set the variable ``ANDROID_NDK_HOME``
-to the same path, in particular if you are using custom Android modules,
+to the same path, especially if you are using custom Android modules,
 since some Gradle plugins rely on the NDK and use this variable to
-determine the location.
+determine its location.
 
 To set those environment variables on Windows, press **Windows + R**, type
 "control system", then click on **Advanced system settings** in the left
