@@ -3,8 +3,8 @@
 GUI skinning
 ============
 
-Oh beautiful GUI!
------------------
+Oh, beautiful GUI!
+------------------
 
 This tutorial is about advanced skinning of an user interface. Most
 games generally don't need this, as they end up just relying on
@@ -13,11 +13,11 @@ games generally don't need this, as they end up just relying on
 :ref:`TextureProgress <class_TextureProgress>`.
 
 However, many types of games often need complex user interfaces, like
-MMOs, traditional RPGs, Simulators, Strategy, etc. These kind of
-interfaces are also common in some games that include editors to create
+MMOs, traditional RPGs, Simulators, Strategy, etc. These kinds of
+interface are also common in some games that include editors to create
 content, or interfaces for network connectivity.
 
-Godot user interface uses these kind of controls with the default theme,
+Godot's user interface uses these kinds of control with the default theme,
 but they can be skinned to resemble pretty much any kind of user
 interface.
 
@@ -30,16 +30,16 @@ entire visual styling of all controls. Theme options are named, so it's
 not obvious which name changes what (especially from code), but several
 tools are provided. The ultimate place to look at what each theme option
 is for each control, which will always be more up to date than any
-documentation is the file `scene/resources/default_theme/default_theme.cpp
+documentation, is the file `scene/resources/default_theme/default_theme.cpp
 <https://github.com/godotengine/godot/blob/master/scene/resources/default_theme/default_theme.cpp>`__.
 The rest of this document will explain the different tools used to
 customize the theme.
 
 A Theme can be applied to any control in the scene. As a result, all
-children and grand-children controls will use that same theme too
+children and grand-children controls will use that same theme, too
 (unless another theme is specified further down the tree). If a value is
 not found in a theme, it will be searched in themes higher up in the
-hierarchy towards the root. If nothing was found, the default theme is
+hierarchy, towards the root. If nothing was found, the default theme is
 used. This system allows for flexible overriding of themes in complex
 user interfaces.
 
@@ -53,14 +53,14 @@ Each kind of option in a theme can be:
 -  **A Color**: A single color, with or without transparency. Colors are
    usually applied to fonts and icons.
 -  **A Texture**: A single image. Textures are not often used, but when
-   they are they represent handles to pick or icons in a complex control
-   (such as file dialog).
+   they are, they represent handles to pick or icons in a complex control
+   (such as a file dialog).
 -  **A Font**: Every control that uses text can be assigned the fonts
    used to draw strings.
 -  **A StyleBox**: Stylebox is a resource that defines how to draw a
    panel in varying sizes (more information on them later).
 
-Every option is associated to:
+Every option is associated with:
 
 -  A name (the name of the option)
 -  A Control (the name of the control)
@@ -86,10 +86,10 @@ An example usage:
 
 In the example above, a new theme is created. The "font_color" option
 is changed and then applied to a label. As a result, the label (and all
-children and grand children labels) will use that color.
+children and grandchildren labels) will use that color.
 
 It is possible to override those options without using the theme
-directly and only for a specific control by using the override API in
+directly, and only for a specific control, by using the override API in
 :ref:`Control.add_color_override() <class_Control_method_add_color_override>`:
 
 .. tabs::
@@ -115,7 +115,7 @@ of properties. If checked, overriding will take place:
 
 .. image:: img/themecheck.png
 
-As can be see in the image above, theme options have little check-boxes.
+As can be seen in the image above, theme options have little check boxes.
 If checked, they can be used to override the value of the theme just for
 that control.
 
@@ -123,10 +123,10 @@ Creating a theme
 ----------------
 
 The simplest way to create a theme is to edit a theme resource. Create a
-Theme from the resource menu, the editor will appear immediately.
-Following to this, save it (to, as example, mytheme.thm):
+Theme from the resource menu; the editor will appear immediately.
+After that, save it (for example, with the name mytheme.theme):
 
-.. image:: img/themecheck.png
+.. image:: img/sb2.png
 
 This will create an empty theme that can later be loaded and assigned to
 controls.
@@ -149,7 +149,8 @@ editor, where they can be edited:
 
 .. image:: img/themeci3.png
 
-Select the "normal" stylebox and create a new "StyleBoxTexture", then
+From ``Styles``, open the "Normal" drop-down menu next to where it probably
+says "null" and create a "New StyleBoxTexture", then
 edit it. A texture stylebox basically contains a texture and the size of
 the margins that will not stretch when the texture is stretched. This is
 called "3x3" stretching:
@@ -163,13 +164,13 @@ Soon, your button will look different and retro:
 
 .. image:: img/sb2.png
 
-Save this theme to the .thm file. Go to the 2D editor and create a few
+Save this theme to the .theme file. Go to the 2D editor and create a few
 buttons:
 
 .. image:: img/skinbuttons1.png
 
 Now, go to the root node of the scene and locate the "theme" property,
-replace it by the theme that was just created. It should look like this:
+replace it with the theme that was just created. It should look like this:
 
 .. image:: img/skinbuttons2.png
 
