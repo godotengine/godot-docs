@@ -19,7 +19,7 @@ palette from where you can drag and drop all sorts of information to the script 
 .. image:: img/visual_script2.png
 
 
-Creating a Script
+Creating a script
 -----------------
 
 Creating scripts works the same as with other scripting languages: Select any node in the scene
@@ -39,7 +39,7 @@ Finally, the Script Editor will open, allowing you to start editing the visual s
 .. image:: img/visual_script5.png
 
 
-Adding a Function
+Adding a function
 -----------------
 
 Unlike other visual scripting implementations, Visual Scripting in Godot is heavily based on functions.
@@ -52,7 +52,7 @@ A single script can contain many functions, each of which will have a canvas of 
 
 There are three main ways to add functions in a script:
 
-Overriding a Virtual Function
+Overriding a virtual function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Most types of nodes and other types of objects in Godot contain virtual functions. These are functions that
@@ -79,7 +79,7 @@ provided:
 .. image:: img/visual_script9.png
 
 
-Connecting a Signal to a Function
+Connecting a signal to a function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Nodes in a tree emit signals when something happens. Godot uses signals for all sorts of things.
@@ -103,7 +103,7 @@ connected to it:
 .. image:: img/visual_script12.png
 
 
-Creating a Function Manually
+Creating a function manually
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The last way to create functions is to do it manually. In general, this is not as common unless you

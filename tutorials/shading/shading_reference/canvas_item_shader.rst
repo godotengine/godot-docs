@@ -1,7 +1,7 @@
 .. _doc_canvas_item_shader:
 
 CanvasItem shaders
-===================
+==================
 
 CanvasItem shaders are used to draw all 2D elements in Godot. These include
 all nodes that inherit from CanvasItems, and all GUI elements.
@@ -10,11 +10,11 @@ CanvasItem shaders contain less built-in variables and functionality than Spatia
 shaders, but they maintain the same basic structure with vertex, fragment, and 
 light processor functions.
 
-Render Modes
+Render modes
 ^^^^^^^^^^^^
 
 +---------------------------------+----------------------------------------------------------------------+
-| Render Mode                     | Description                                                          |
+| Render mode                     | Description                                                          |
 +=================================+======================================================================+
 | **blend_mix**                   | Mix blend mode (alpha is transparency), default.                     |
 +---------------------------------+----------------------------------------------------------------------+
@@ -33,8 +33,9 @@ Render Modes
 | **skip_vertex_transform**       | VERTEX/NORMAL/etc need to be transformed manually in vertex function.|
 +---------------------------------+----------------------------------------------------------------------+
 
-Vertex Built-Ins
+Vertex built-ins
 ^^^^^^^^^^^^^^^^
+
 Values marked as "in" are read-only. Values marked as "out" are for optional writing and will 
 not necessarily contain sensible values. Values marked as "inout" provide a sensible default 
 value, and can optionally be written to. Samplers are not subjects of writing and they are 
@@ -66,7 +67,7 @@ is usually:
 * **z**: Animation frame.
 
 +--------------------------------+----------------------------------------------------------------+
-| Built-In                       | Description                                                    |
+| Built-in                       | Description                                                    |
 +================================+================================================================+
 | in mat4 **WORLD_MATRIX**       | Image to World transform.                                      |
 +--------------------------------+----------------------------------------------------------------+
@@ -89,7 +90,7 @@ is usually:
 | inout float **POINT_SIZE**     | Point size for point drawing.                                  |
 +--------------------------------+----------------------------------------------------------------+
 
-Fragment Built-Ins
+Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 
 Certain Nodes (for example, :ref:`Sprites <class_Sprite>`) display a texture by default. However, 
@@ -111,7 +112,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
   NORMALMAP = texture(NORMAL_TEXTURE, UV).rgb;
 
 +----------------------------------+----------------------------------------------------------------+
-| Built-In                         | Description                                                    |
+| Built-in                         | Description                                                    |
 +==================================+================================================================+
 | in vec4 **FRAGCOORD**            | Fragment coordinate, pixel adjusted.                           |
 +----------------------------------+----------------------------------------------------------------+
@@ -148,8 +149,8 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 | in sampler2D **SCREEN_TEXTURE**  | Screen texture, mipmaps contain gaussian blurred versions.     |
 +----------------------------------+----------------------------------------------------------------+
 
-Light Built-Ins
-^^^^^^^^^^^^^^^^
+Light built-ins
+^^^^^^^^^^^^^^^
 
 Light processor functions work differently in 2D than they do in 3D. In CanvasItem shaders, the 
 shader is called once for the object being drawn, and then once for each light touching that 
@@ -160,7 +161,7 @@ that object, this can be useful when you only want the object visible where it i
 When the shader is on a light pass the ``AT_LIGHT_PASS`` variable will be ``true``.
 
 +-------------------------------------+-------------------------------------------------------------------------------+
-| Built-In                            | Description                                                                   |
+| Built-in                            | Description                                                                   |
 +=====================================+===============================================================================+
 | in vec4 **FRAGCOORD**               | Fragment coordinate of pixel center. Origin at lower left.                    |
 +-------------------------------------+-------------------------------------------------------------------------------+

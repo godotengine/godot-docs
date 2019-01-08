@@ -23,7 +23,7 @@ In this guide, you will learn:
           and collision shape has a direct equivalent in 3D and in most cases
           they work in much the same way.
 
-Collision Objects
+Collision objects
 -----------------
 
 Godot offers four kinds of physics bodies, extending :ref:`CollisionObject2D <class_CollisionObject2D>`:
@@ -51,7 +51,7 @@ The other three bodies extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
     A body that provides collision detection, but no physics. All movement and
     collision response must be implemented in code.
 
-Collision Shapes
+Collision shapes
 ~~~~~~~~~~~~~~~~
 
 A physics body can hold any number of :ref:`Shape2D <class_Shape2D>` objects
@@ -86,7 +86,7 @@ be run in the :ref:`Node._physics_process() <class_Node_method__physics_process>
 callback, which is called before each physics step at a constant frame rate
 (60 times per second by default).
 
-Collision Layers and Masks
+Collision layers and masks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One of the most powerful, but frequently misunderstood, collision features

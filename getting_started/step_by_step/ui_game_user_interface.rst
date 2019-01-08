@@ -369,7 +369,7 @@ create the life bar. It's the same for the ``Counter``.
 
    With no extra changes, our Bar is ready to use
 
-Use Scene Inheritance to create the remaining elements
+Use scene inheritance to create the remaining elements
 ------------------------------------------------------
 
 We need two bars that work the same way: they should feature a label on

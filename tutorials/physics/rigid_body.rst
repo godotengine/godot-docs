@@ -1,7 +1,7 @@
 .. _doc_rigid_body:
 
-Rigid Body
-==========
+RigidBody
+=========
 
 What is a rigid body?
 ---------------------
@@ -21,7 +21,7 @@ As an example, consider a rigid body that you want to rotate so that it points t
 
 The fact that you can't use ``set_global_transform()`` or ``look_at()`` methods doesn't mean that you can't have full control of a rigid body. Instead, you can control it by using the ``_integrate_forces()`` callback. In this method, you can add *forces*, apply *impulses*, or set the *velocity* in order to achieve any movement you desire.
 
-The "Look at" method
+The "look at" method
 --------------------
 
 As described above, using the Spatial node's ``look_at()`` method can't be used each frame to follow a target.

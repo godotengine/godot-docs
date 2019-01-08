@@ -54,35 +54,43 @@ Below are descriptions of the options.
 
 Target Surface
 ++++++++++++++
+
 The mesh used as the target surface on which to place copies of your
 source mesh.
 
 Source Mesh
 +++++++++++
+
 The mesh you want duplicated on the target surface.
 
 Mesh Up Axis
 ++++++++++++
+
 The axis used as the up axis of the source mesh.
 
 Random Rotation
 +++++++++++++++
+
 Randomizing the rotation around the up axis of the source mesh.
 
 Random Tilt
 +++++++++++
+
 Randomizing the overall rotation of the source mesh.
 
 Random Scale
 ++++++++++++
+
 Randomizing the scale of the source mesh.
 
 Scale
 +++++
+
 The scale of the source mesh that will be placed over the target surface.
 
 Amount
 ++++++
+
 The amount of mesh instances placed over the target surface.
 
 Select the target surface. In the tree case, this should be the landscape node.

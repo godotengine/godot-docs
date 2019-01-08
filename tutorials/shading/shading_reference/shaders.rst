@@ -23,7 +23,7 @@ For more advanced shaders you can turn this functionality off using a render_mod
 This document provides you with some information about shaders, specific to Godot. For a detailed
 reference of the shading language in Godot see the :ref:`Godot shading language doc<doc_shading_language>`.
 
-Shader Types
+Shader types
 ------------
 
 Instead of supplying a general purpose configuration for all uses (2D, 3D, particles), 
@@ -44,7 +44,7 @@ Valid types are:
 
 For detailed information on each shading type see the corresponding reference document.
 
-Render Modes
+Render modes
 ------------
 
 Different shader types support different render modes. They are optional and, if specified, must
@@ -62,14 +62,14 @@ Render modes are specified underneath the shader type:
 Each shader type has a different list of render modes available. See the document for each shader
 type for a complete list of render modes. 
 
-Processor Functions
+Processor functions
 -------------------
 
 Depending on the shader type, different processor functions may be optionally overridden.
 For "spatial" and "canvas_item", it is possible to override ``vertex``, ``fragment``, and ``light``.
 For "particles", only ``vertex`` can be overridden.
 
-Vertex Processor
+Vertex processor
 ^^^^^^^^^^^^^^^^
 
 The ``vertex`` processing function is called once for every vertex in "spatial" and "canvas_item" shaders. 
@@ -83,7 +83,7 @@ By default Godot will take your vertex information and transform it accordingly 
 undesirable, you can use render modes to to transform the data yourself, see the 
 :ref:`Spatial shader doc <doc_spatial_shader>` for an example of this.
 
-Fragment Processor
+Fragment processor
 ^^^^^^^^^^^^^^^^^^
 
 The ``fragment`` processing function is used to set up the Godot material parameters per pixel. This code
@@ -99,7 +99,7 @@ if you do not write a value to ``RIM``, Godot will not calculate rim lighting. D
 to see if ``RIM`` is used, if not it cuts all the corresponding code out. Therefore, you will not 
 waste calculations on effects that you do not use. 
 
-Light Processor
+Light processor
 ^^^^^^^^^^^^^^^
 
 The ``light`` processor runs per pixel too, but also runs for every light that affects the object 

@@ -155,8 +155,8 @@ that is incompatible with the `open license <https://opensource.org/licenses/MIT
 provided by Godot. That being said, FBX support could still be provided by third parties
 as a plugin. (See Plugins question above.)
 
-Will [Insert closed SDK such as PhysX, GameWorks, etc.] be supported in Godot?
-------------------------------------------------------------------------------
+Will [insert closed SDK such as FMOD, GameWorks, etc.] be supported in Godot?
+-----------------------------------------------------------------------------
 
 The aim of Godot is to create a free and open-source MIT-licensed engine that
 is modular and extendable. There are no plans for the core engine development

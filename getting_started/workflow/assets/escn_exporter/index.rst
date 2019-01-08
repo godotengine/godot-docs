@@ -1,8 +1,12 @@
-Godot-Blender-Exporter
-======================
+Blender ESCN exporter
+=====================
 
-.. note:: This chapter relates to the blender plugin called "Godot-Blender-Exporter",
+.. note:: This chapter relates to the Blender plugin called "Godot Blender Exporter",
           which can be downloaded here: https://github.com/godotengine/godot-blender-exporter
+
+This plugin can be used to export Blender scenes in a Godot-specific scene format
+called ESCN, which is similar to TSCN (text format) but will be imported as binary
+SCN for performance.
 
 Details on exporting
 --------------------
@@ -22,7 +26,7 @@ Details on exporting
 Disabling specific objects
 --------------------------
 
-Sometimes you don't want some objects exported (eg high-res models used for
+Sometimes you don't want some objects exported (e.g. high-res models used for
 baking). An object will not be exported if it is not rendered in the scene.
 This can be set in the outliner:
 

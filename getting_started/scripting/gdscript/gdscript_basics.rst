@@ -1,7 +1,7 @@
 .. _doc_gdscript:
 
-GDScript
-========
+GDScript basics
+===============
 
 Introduction
 ------------

@@ -15,7 +15,7 @@ NativeScript GDNative API and provide a nicer way to "extend" nodes
 in Godot using C++. This is equivalent to writing scripts in GDScript,
 but in C++ instead.
 
-Godot 3.1 saw the introduction of the NativeScript 1.1 additions that 
+Godot 3.1 saw the introduction of the NativeScript 1.1 additions that
 enabled the GDNative team to build a nicer C++ bindings library.
 These changes have now been merged into the master branch and will
 be the way we go forward. If you want to write a C++ GDNative plugin
@@ -41,10 +41,10 @@ to the ones you need to compile Godot from source.
 
 You can download these repositories from GitHub or let Git
 do the work for you.
-Note that these repositories now have different branches for different 
-versions of Godot. GDNative modules written for an earlier version of 
-Godot will work in newer versions (with the exception of one breaking 
-change in ARVR interfaces between 3.0 and 3.1) but not vise versa so 
+Note that these repositories now have different branches for different
+versions of Godot. GDNative modules written for an earlier version of
+Godot will work in newer versions (with the exception of one breaking
+change in ARVR interfaces between 3.0 and 3.1) but not vise versa so
 make sure you download the correct branch.
 Also note that the version of Godot you use to generate the ``api.json``
 with becomes your minimum version.
@@ -246,7 +246,7 @@ The second is our ``_process`` function,
 which will work exactly the same as the ``_process`` function
 you're used to in GDScript.
 The third is our ``_init`` function which is called after Godot has properly
-set up our object. It has to exist even if you don't place any code in it. 
+set up our object. It has to exist even if you don't place any code in it.
 
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 
@@ -258,7 +258,7 @@ Let's implement our functions by creating our ``gdexample.cpp`` file:
     using namespace godot;
 
     void GDExample::_register_methods() {
-        register_method("_process", &GDExample::_process);  
+        register_method("_process", &GDExample::_process);
     }
 
     GDExample::GDExample() {
@@ -370,7 +370,10 @@ use for building. For the purpose of this example, just use
 we've prepared. We'll cover a more customizable, detailed example on
 how to use these build files in a subsequent tutorial.
 
-.. note:: This ``SConstruct`` file was written to be used with the latest godot-cpp master, you may need to make small changes using it with older versions or refer to the ``SConstruct`` file in the Godot 3.0 documentation.
+.. note:: This ``SConstruct`` file was written to be used with the latest
+          ``godot-cpp`` master, you may need to make small changes using it with
+          older versions or refer to the ``SConstruct`` file in the Godot 3.0
+          documentation.
 
 Once you've downloaded the ``SConstruct`` file, place it in your
 GDNative module folder besides ``godot-cpp``, ``godot_headers``
@@ -507,7 +510,7 @@ In our ``gdexample.h`` file we simply need to add a member variable like so:
         float amplitude;
     ...
 
-In our ``gdexample.cpp`` file we need to make a number of changes, we will only show 
+In our ``gdexample.cpp`` file we need to make a number of changes, we will only show
 the methods we end up changing, don't remove the lines we're omitting:
 
 .. tabs::
@@ -559,9 +562,9 @@ the methods we end up changing, don't remove the lines we're omitting:
         owner->set_position(new_position);
     }
 
-Once you compile the module with these changes in place you will see that 
+Once you compile the module with these changes in place you will see that
 a property has been added to our interface.
-You can now change this property and when you run your project, you will 
+You can now change this property and when you run your project, you will
 see that our Godot icon travels along a larger figure.
 
 Lets do the same but for the speed of our animation and use a setter and getter function.
@@ -578,7 +581,7 @@ Our ``gdexample.h`` header file again only needs a few more lines of code:
         float get_speed();
     ...
 
-This requires a few more changes to our ``gdexample.cpp`` file, again we're only showing the 
+This requires a few more changes to our ``gdexample.cpp`` file, again we're only showing the
 methods that have changed so don't remove anything we're omitting:
 
 .. tabs::
@@ -654,7 +657,7 @@ Now when the project is compiled we'll see another property called speed.
 Changing its value will make the animation go faster or slower.
 
 For this example there is no obvious advantage of using a setter and getter.
-It is just more code to write. For a simple example as this there may be a 
+It is just more code to write. For a simple example as this there may be a
 good reason for a setter if you want to react on the variable being changed
 but in many cases just binding the variable will be enough.
 
@@ -663,14 +666,14 @@ where you need to make additional choices based on the state of your
 object.
 
 .. note::
-    
+
     For simplicity we've left out the optional parameters in the
     register_property<class, type> method call. These parameters are
     ``rpc_mode``, ``usage``, ``hint`` and ``hint_string``. These can
     be used to further configure how properties are displayed and set
     on the Godot side.
 
-    Modern C++ compilers are able to infer the class and variable type 
+    Modern C++ compilers are able to infer the class and variable type
     and allow you to omit the ``<GDExample, float>`` part of our
     ``register_property`` method. we've had mixed experiences with this
     however.
@@ -682,7 +685,7 @@ Last but not least, signals fully work in GDNative as well.
 Having your module react to a signal given out by another object requires
 you to call ``connect`` on that object. We can't think of a good example for
 our wobbling Godot icon, we would need to showcase a far more complete
-example. 
+example.
 
 This however is the required syntax:
 
@@ -700,7 +703,7 @@ it in your ``_register_methods`` method.
 
 Having your object sending out signals is far more common. For our wobbling
 Godot icon we'll do something silly just to show how it works. We're going
-to emit a signal every time a second has passed and pass the new location 
+to emit a signal every time a second has passed and pass the new location
 along.
 
 In our ``gdexample.h`` header file we just need to define a new member ``time_emit``:
@@ -718,7 +721,7 @@ First you'll need to set ``time_emit = 0.0;`` in either our ``_init`` method or
 in our constructor. But the other two needed changes we'll look at one by one.
 
 In our ``_register_methods`` method we need to declare our signal and we do this
-as follows: 
+as follows:
 
 .. tabs::
  .. code-tab:: C++ NativeScript 1.1
@@ -744,12 +747,12 @@ as follows:
         register_signal<GDExample>((char *)"position_changed", args);
     }
 
-Here we see a nice improvement in the latest version of godot-cpp where our 
-``register_signal`` method can be a single call first taking the signals name, 
-then having pairs of values specificying the parameter name and type of each 
+Here we see a nice improvement in the latest version of godot-cpp where our
+``register_signal`` method can be a single call first taking the signals name,
+then having pairs of values specificying the parameter name and type of each
 parameter we'll send along with this signal.
 
-For NativeScript 1.0 we first build a dictionary in which we tell Godot about 
+For NativeScript 1.0 we first build a dictionary in which we tell Godot about
 the types of arguments we will pass to our signal, and then register it.
 
 Next we'll need to change our ``_process`` method:
@@ -801,7 +804,7 @@ Next we'll need to change our ``_process`` method:
 After a second has passed we emit our signal and reset our counter.
 Again in the new version of godot-cpp we can add our parameter values
 directly to ``emit_signal``.
-In NativeScript 1.0 We first build an array of values and then 
+In NativeScript 1.0 We first build an array of values and then
 call ``emit_signal``.
 
 Once compiled we can go into Godot and select our sprite node.
@@ -818,8 +821,8 @@ We've added a script on our main node and implemented our signal like this:
 Every second we simply output our position to the console.
 
 
-NativeScript 1.1 v.s. NativeScript 1.0
---------------------------------------
+NativeScript 1.1 vs NativeScript 1.0
+------------------------------------
 
 So far in our example above there doesn't seem to be a lot of difference
 between the old and new syntax. The class is defined slightly differently
@@ -829,7 +832,7 @@ side of our object. A lot of the improvements are hidden under the hood.
 This example only deals with simple variables and simple methods.
 Especially once you start passing references to other objects or when you
 start calling methods that require more complex parameters, NativeScript 1.1
-does start to show its benefits. 
+does start to show its benefits.
 
 Next steps
 ----------

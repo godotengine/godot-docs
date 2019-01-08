@@ -3,7 +3,7 @@
 Part 2
 ======
 
-Part Overview
+Part overview
 -------------
 
 In this part we will be giving our player weapons to play with.

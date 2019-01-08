@@ -197,11 +197,11 @@ Using multiple threads
 ResourceInteractiveLoader can be used from multiple threads. A couple of
 things to keep in mind if you attempt it:
 
-Use a Semaphore
+Use a semaphore
 ~~~~~~~~~~~~~~~
 
 While your thread waits for the main thread to request a new resource,
-use a Semaphore to sleep (instead of a busy loop or anything similar).
+use a ``Semaphore`` to sleep (instead of a busy loop or anything similar).
 
 Not blocking main thread during the polling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

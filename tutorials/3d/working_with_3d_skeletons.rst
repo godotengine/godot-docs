@@ -343,7 +343,7 @@ Or you can browse it using the web-interface:
 
 https://github.com/slapin/godot-skel3d
 
-Using 3D "bones" to implement Inverse Kinematics
+Using 3D "bones" to implement inverse kinematics
 ------------------------------------------------
 
 See :ref:`doc_inverse_kinematics`.

@@ -3,7 +3,7 @@
 Part 3
 ======
 
-Part Overview
+Part overview
 -------------
 
 In this part, we will be limiting the player's weapons by giving them ammo. We will also

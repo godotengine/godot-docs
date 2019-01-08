@@ -1,6 +1,6 @@
 .. _doc_kinematic_character_2d:
 
-Kinematic Character (2D)
+Kinematic character (2D)
 ========================
 
 Introduction
@@ -18,7 +18,7 @@ physics engines (or a lot of patience with trial and error).
 
 Some physics engines, such as Havok seem to swear by dynamic character
 controllers as the best option, while others (PhysX) would rather
-promote the Kinematic one.
+promote the kinematic one.
 
 So, what is the difference?:
 
@@ -107,7 +107,7 @@ map scene the main one, so it runs when pressing play.
 
 .. image:: img/kbinstance.png
 
-Moving the Kinematic character
+Moving the kinematic character
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go back to the character scene, and open the script, the magic begins
