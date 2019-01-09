@@ -1,7 +1,7 @@
-.. _doc_softbody:
+.. _doc_soft_body:
 
-Soft body
-=========
+SoftBody
+========
 
 Soft bodies (or *soft-body dynamics*) simulate movement, changing shape and other physical properties of deformable objects.
 This can for example be used to simulate cloth or to create more realistic characters.
