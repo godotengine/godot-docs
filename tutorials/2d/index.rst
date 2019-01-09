@@ -12,4 +12,5 @@
    2d_movement
    2d_lights_and_shadows
    2d_skeletons
+   2d_meshes
    custom_drawing_in_2d
