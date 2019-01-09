@@ -131,9 +131,9 @@ Again, open the UV editor for the polygon and go to the *Bones* section.
 
 .. image:: img/skel2d17.png
 
-You will not be able to paint weights yet. For this you need to synchronize the list of bones from the skeleton with the polygon.
-This step is done manually and only once (unless you modify the skeleton). It ensures that your rigging information is kept in the polygon,
-even if a skeleton node is accidentally lost or the skeleton modified. Push the "Sync Bones to Polygon" button to sync the list.
+You will not be able to paint weights yet. For this you need to synchronize the list of bones from the skeleton with the polygon. 
+This step is done only once and manually (unless you modify the skeleton by adding/removing/renaming bones). 
+It ensures that your rigging information is kept in the polygon, even if a skeleton node is accidentally lost or the skeleton modified. Push the "Sync Bones to Polygon" button to sync the list.
 
 .. image:: img/skel2d18.png
 
