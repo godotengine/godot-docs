@@ -18,6 +18,4 @@
    using_gridmaps
    using_multi_mesh_instance
    csg_tools
-   working_with_3d_skeletons
-   inverse_kinematics
    fps_tutorial/index
