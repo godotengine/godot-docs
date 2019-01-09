@@ -1,35 +1,39 @@
-.. _doc_2d_meshes:
+. _doc_2d_meshes:
 
 2D meshes
-============
+=========
 
 Introduction
 ------------
 
-For 3D meshes are the key type of data used to display the world. In 2D this is rare as mostly images are used.
-Godot 2D engine is a pure two dimensional engine, so it can't really directly display 3D meshes (this is usually done best via
-``Viewport`` and ``ViewportTexture``).
+In 3D, meshes are the key type of data used to display the world. In 2D, they are rarer as mostly images are used.
+Godot's 2D engine is a pure two dimensional engine, so it can't really display 3D meshes directly (this is usually done
+via ``Viewport`` and ``ViewportTexture``).
 
-.. seealso:: If you are interested in displaying 3D on a 2D viewport, see the :ref:`doc_viewport_as_texture` tutorial
+.. seealso:: If you are interested in displaying 3D meshes on a 2D viewport, see the :ref:`doc_viewport_as_texture` tutorial.
 
 
-From Godot 3.1 onward, support is added for 2D meshes. These are meshes that contain two dimensional geometry (z can be omitted or ignored) instead of 3D. You can experiment creating them yourself using ``SurfaceTool`` from code and setting them in a ``Mesh2D`` node.
+From Godot 3.1 onward, support is added for 2D meshes. These are meshes that contain two dimensional geometry (Z can be omitted or ignored) instead of 3D.
+You can experiment creating them yourself using ``SurfaceTool`` from code and setting them in a ``Mesh2D`` node.
 
 Currently, the only way to generate a 2D mesh within the editor is by either importing an OBJ file as a mesh, or converting it from a Sprite.
 
-Optimizing Pixels Drawn
+Optimizing pixels drawn
 -----------------------
 
-This workflow is useful for optimizing 2D drawing in some situations. When drawing large images with transparency, Godot will draw the whole quad to the screen. If the image contains large transparent areas, they will still be drawn. 
+This workflow is useful for optimizing 2D drawing in some situations. When drawing large images with transparency, Godot will draw the whole quad to the screen.
+If the image contains large transparent areas, they will still be drawn. 
 
-This can affect performance, specially on mobile devices, when drawing very large images (generally screen sized), or layering multiple images on top of each other with large transparent areas (usually ``ParallaxBackground``).
+This can affect performance, specially on mobile devices, when drawing very large images (generally screen sized), or layering multiple images on top of each other
+with large transparent areas (usually ``ParallaxBackground``).
 
 Converting to a mesh will ensure that only the opaque parts will be drawn and the rest will be ignored.
 
 Converting Sprites to 2D meshes
---------------------------------
+-------------------------------
 
-The easiest workflow for this optimization is by converting a ``Sprite`` to a ``Mesh2D``. Begin with an image that conatains large amounts of transparency on the edges, like this tree:
+The easiest workflow for this optimization is by converting a ``Sprite`` to a ``Mesh2D``.
+Start with an image that conatains large amounts of transparency on the edges, like this tree:
 
 .. image:: img/mesh2d1.png
 
@@ -45,8 +49,6 @@ The default values are good enough for most cases, but you can change growth and
 
 .. image:: img/mesh2d4.png
 
-Finally, push the ``Convert 2D Mesh`` button and your place will be replaced:
+Finally, push the ``Convert 2D Mesh`` button and your Sprite will be replaced:
 
 .. image:: img/mesh2d5.png
-
-
