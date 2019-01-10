@@ -10,4 +10,4 @@ General
 
 - `awesome-godot: A curated list of resources by Calinou <https://github.com/Calinou/awesome-godot>`_
 - `Zeef Godot Engine: A curated directory of resources by Andre Schmitz <https://godot-engine.zeef.com/andre.antonio.schmitz>`_
-- `Kids Can Code: An ongoing tutorial series <http://kidscancode.org/blog/tags/godot/>`_
+- `KidsCanCode: An ongoing tutorial series <http://kidscancode.org/blog/tags/godot/>`_
