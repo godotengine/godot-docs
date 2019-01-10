@@ -24,35 +24,35 @@ Most GLSL ES 3.0 datatypes are supported:
 +-----------------+---------------------------------------------------------------------------+
 | **bool**        | Boolean datatype, can only contain "true" or "false"                      |
 +-----------------+---------------------------------------------------------------------------+
-| **bvec2**       | Two component vector of booleans.                                         |
+| **bvec2**       | Two-component vector of booleans.                                         |
 +-----------------+---------------------------------------------------------------------------+
-| **bvec3**       | Three component vector of booleans.                                       |
+| **bvec3**       | Three-component vector of booleans.                                       |
 +-----------------+---------------------------------------------------------------------------+
-| **bvec4**       | Four component vector of booleans.                                        |
+| **bvec4**       | Four-component vector of booleans.                                        |
 +-----------------+---------------------------------------------------------------------------+
 | **int**         | Signed scalar integer.                                                    |
 +-----------------+---------------------------------------------------------------------------+
-| **ivec2**       | Two component vector of signed integers.                                  |
+| **ivec2**       | Two-component vector of signed integers.                                  |
 +-----------------+---------------------------------------------------------------------------+
-| **ivec3**       | Three component vector of signed integers.                                |
+| **ivec3**       | Three-component vector of signed integers.                                |
 +-----------------+---------------------------------------------------------------------------+
-| **ivec4**       | Four component vector of signed integers.                                 |
+| **ivec4**       | Four-component vector of signed integers.                                 |
 +-----------------+---------------------------------------------------------------------------+
-| **uint**        | Unsigned scalar integer, can't contain negative numbers.                  |
+| **uint**        | Unsigned scalar integer; can't contain negative numbers.                  |
 +-----------------+---------------------------------------------------------------------------+
-| **uvec2**       | Two component vector of unsigned integers.                                |
+| **uvec2**       | Two-component vector of unsigned integers.                                |
 +-----------------+---------------------------------------------------------------------------+
-| **uvec3**       | Three component vector of unsigned integers.                              |
+| **uvec3**       | Three-component vector of unsigned integers.                              |
 +-----------------+---------------------------------------------------------------------------+
-| **uvec4**       | Four component vector of unsigned integers.                               |
+| **uvec4**       | Four-component vector of unsigned integers.                               |
 +-----------------+---------------------------------------------------------------------------+
 | **float**       | Floating point scalar.                                                    |
 +-----------------+---------------------------------------------------------------------------+
-| **vec2**        | Two component vector of floating point values.                            |
+| **vec2**        | Two-component vector of floating point values.                            |
 +-----------------+---------------------------------------------------------------------------+
-| **vec3**        | Three component vector of floating point values.                          |
+| **vec3**        | Three-component vector of floating point values.                          |
 +-----------------+---------------------------------------------------------------------------+
-| **vec4**        | Four component vector of floating point values.                           |
+| **vec4**        | Four-component vector of floating point values.                           |
 +-----------------+---------------------------------------------------------------------------+
 | **mat2**        | 2x2 matrix, in column major order.                                        |
 +-----------------+---------------------------------------------------------------------------+
@@ -60,7 +60,7 @@ Most GLSL ES 3.0 datatypes are supported:
 +-----------------+---------------------------------------------------------------------------+
 | **mat4**        | 4x4 matrix, in column major order.                                        |
 +-----------------+---------------------------------------------------------------------------+
-| **sampler2D**   | Sampler type, for binding 2D textures, which are read as float.           |
+| **sampler2D**   | Sampler type for binding 2D textures, which are read as float.            |
 +-----------------+---------------------------------------------------------------------------+
 | **isampler2D**  | Sampler type for binding 2D textures, which are read as signed integer.   |
 +-----------------+---------------------------------------------------------------------------+
@@ -98,7 +98,7 @@ Individual scalar members of vector types are accessed via the "x", "y", "z" and
 Alternatively, using "r", "g", "b" and "a" also works and is equivalent. Use whatever fits 
 best for your needs.
 
-For matrices, use ``m[row][column]`` indexing syntax to access each scalar, or ``m[idx]`` for access 
+For matrices, use the ``m[row][column]`` indexing syntax to access each scalar, or ``m[idx]`` to access 
 a vector by row index. For example, for accessing the y position of an object in a mat4 you  use 
 ``m[3][1]``.  
 
@@ -127,7 +127,7 @@ an identity matrix.
     mat3 m3 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
     mat4 identity = mat4(1.0);
 
-Matrices can also been built from a matrix of another dimension.
+Matrices can also be built from a matrix of another dimension.
 There are two rules :
 If a larger matrix is constructed from a smaller matrix, the additional rows and columns are 
 set to the values they would have in an identity matrix. If a smaller matrix is constructed 
@@ -148,16 +148,16 @@ is another vector type (or scalar). This is easier shown than explained:
 .. code-block:: glsl
 
     vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
-    vec3 b = a.rgb; // Creates a vec3 with vec4 components
-    vec3 b = a.aaa; // Also valid, creates a vec3 and fills it with "a".
-    vec3 b = a.bgr; // Order does not matter
-    vec3 b = a.xyz; // Also rgba, xyzw are equivalent
-    float c = b.w; // Invalid, because "w" is not present in vec3 b
+    vec3 b = a.rgb; // Creates a vec3 with vec4 components.
+    vec3 b = a.aaa; // Also valid; creates a vec3 and fills it with the "a" (alpha/w/4th) component of the vec4 "a".
+    vec3 b = a.bgr; // Order does not matter.
+    vec3 b = a.xyz; // Also rgba, xyzw are equivalent.
+    float c = b.w; // Invalid, because "w" is not present in vec3 b.
 
 Precision
 ~~~~~~~~~
 
-It is possible to add precision modifiers to datatypes, use them for uniforms, variables, arguments and varyings:
+It is possible to add precision modifiers to datatypes; use them for uniforms, variables, arguments and varyings:
 
 .. code-block:: glsl
 
@@ -172,7 +172,7 @@ but is often useful in the fragment processor.
 
 Keep in mind that some architectures (mainly mobile) benefit a lot from this, but are also restricted 
 (conversion between precisions has a cost). Please read the relevant documentation on the target architecture 
-to find out more. In all honesty though, mobile drivers are buggy so to stay out of trouble make simple 
+to find out more. In all honesty though, mobile drivers are buggy, so, to stay out of trouble, make simple 
 shaders without specifying precision unless you *really* need to.
 
 Operators
@@ -234,7 +234,7 @@ Godot Shading language supports the most common types of flow control:
 
 
 Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze your application (including editor).
-Godot can't protect you from this, so be careful to not make this mistake!
+Godot can't protect you from this, so be careful not to make this mistake!
 
 Discarding
 ----------
@@ -259,10 +259,10 @@ It is possible to define functions in a Godot shader. They use the following syn
     }
 
 
-You can only use functions that are defined above the function you are calling 
-them from.
+You can only use functions that have been defined above (higher in the editor) the function from which you are calling 
+them.
 
-Function argument can have special qualifiers:
+The function argument can have special qualifiers:
 
 * **in**: Means the argument is only for reading (default).
 * **out**: Means the argument is only for writing.
@@ -279,7 +279,7 @@ Example below:
 Varyings
 ~~~~~~~~
 
-To send data from the vertex to fragment processor function, *varyings* are used. They are set 
+To send data from the vertex to the fragment processor function, *varyings* are used. They are set 
 for every primitive vertex in the *vertex processor*, and the value is interpolated for every 
 pixel in the fragment processor.
 
@@ -289,7 +289,7 @@ pixel in the fragment processor.
 
     varying vec3 some_color;
     void vertex() {
-        some_color = NORMAL; // make the normal the color
+        some_color = NORMAL; // Make the normal the color.
     }
 
     void fragment() {
@@ -321,9 +321,9 @@ There are two possible interpolation qualifiers:
 +-------------------+---------------------------------------------------------------------------------+
 | Qualifier         | Description                                                                     |
 +===================+=================================================================================+
-| **flat**          | The value is not interpolated                                                   |
+| **flat**          | The value is not interpolated.                                                  |
 +-------------------+---------------------------------------------------------------------------------+
-| **smooth**        | The value is interpolated in a perspective-correct fashion. This is the default |
+| **smooth**        | The value is interpolated in a perspective-correct fashion. This is the default.|
 +-------------------+---------------------------------------------------------------------------------+
 
 
@@ -350,7 +350,7 @@ You can set uniforms in the editor in the material. Or you can set them through 
           must match *exactly* to the name of the uniform in the shader or else it will not be recognized.
 
 Any GLSL type except for *void* can be a uniform. Additionally, Godot provides optional shader hints
-to make the compiler understand what the uniform is used for.
+to make the compiler understand for what the uniform is used.
 
 .. code-block:: glsl
 
@@ -409,7 +409,7 @@ to shaders, Godot converts the type automatically. Below is a table of the corre
           type does not match. Your shader will just exhibit undefined behaviour.
 
 As Godot's 3D engine renders in linear color space, it's important to understand that textures
-that are supplied as color (i.e. albedo) need to be specified as such for proper SRGB->linear
+that are supplied as color (i.e. albedo) need to be specified as such for proper sRGB->linear
 conversion.
 
 Uniforms can also be assigned default values:
@@ -514,9 +514,9 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
 | vec_type **mix** ( vec_type a, vec_type b, vec_bool_type c )                                  | Linear Interpolate (Bool-Vector Selection)     |
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
-| vec_type **step** ( vec_type a, vec_type b )                                                  | \` b[i] < a[i] ? 0.0 : 1.0 \`                  |
+| vec_type **step** ( vec_type a, vec_type b )                                                  | \`\`b[i] < a[i] ? 0.0 : 1.0\`\`            |
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
-| vec_type **step** ( float a, vec_type b )                                                     | \` b[i] < a ? 0.0 : 1.0 \`                     |
+| vec_type **step** ( float a, vec_type b )                                                     | \`\`b[i] < a ? 0.0 : 1.0\`\`                   |
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
 | vec_type **smoothstep** ( vec_type a, vec_type b, vec_type c )                                | Hermite Interpolate                            |
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
@@ -548,7 +548,7 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
 | vec3 **refract** ( vec3 I, vec3 N, float eta )                                                | Refract                                        |
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
-| vec_type **faceforward** ( vec_type N, vec_type I, vec_type Nref )                            | If dot(Nref, I) < 0 return N, otherwise –N     |
+| vec_type **faceforward** ( vec_type N, vec_type I, vec_type Nref )                            | If dot(Nref, I) < 0, return N, otherwise –N    |
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
 | mat_type **matrixCompMult** ( mat_type, mat_type )                                            | Matrix Component Multiplication                |
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
