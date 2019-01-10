@@ -38,7 +38,7 @@ another :ref:`Control <class_Control>` node.
     ``ViewportContainer`` to render 3D objects in a 2D scene.
 
 For this demo, we will use a :ref:`Node2D <class_Node2D>` with a ``ViewportContainer`` and finally a
-``Viewport``. Your ``Scene`` tab should look like this:
+``Viewport``. Your  **Scene**  tab should look like this:
 
 .. image:: img/post_hierarchy1.png
 
