@@ -51,8 +51,8 @@ unlike other tools meant for this, Godot has the following advantages:
 
 And much more!
 
-Making of GBot!
-~~~~~~~~~~~~~~~
+Making of GBot
+~~~~~~~~~~~~~~
 
 For this tutorial, we will use as demo content the pieces of the
 `GBot <https://www.youtube.com/watch?v=S13FrWuBMx4&list=UUckpus81gNin1aV8WSffRKw>`__
@@ -339,8 +339,8 @@ add keyframes. Selecting the endpoint of the chain and inserting a
 keyframe will automatically insert keyframes until the chain base too.
 This makes the task of animating extremities much simpler.
 
-Moving sprites above and behind others.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Moving sprites above and behind others
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 RemoteTransform2D works in most cases, but sometimes it is
 necessary to have a node above and below others during an animation. To
@@ -362,10 +362,10 @@ your animation.
 .. image:: img/tuto_cutout24.png
 
 2D Skeletal deform
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Starting with Godot 3.1, 2D skeletal deform is supported, which can be used to enhance this workflow and add more flexibility 
 (single pieces can deform more organically instead of having to use many separate ones). 
 
-This process is described in a :ref:`separate tutorial <2d_skeletons>`.
+This process is described in a :ref:`separate tutorial <doc_2d_skeletons>`.
 
