@@ -149,7 +149,7 @@ is another vector type (or scalar). This is easier shown than explained:
 
     vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
     vec3 b = a.rgb; // Creates a vec3 with vec4 components.
-    vec3 b = a.aaa; // Also valid; creates a vec3 and fills it with the "a" (alpha/w/4th) component of the vec4 "a".
+    vec3 b = a.ggg; // Also valid; creates a vec3 and fills it with a single vec4 component.
     vec3 b = a.bgr; // Order does not matter.
     vec3 b = a.xyz; // Also rgba, xyzw are equivalent.
     float c = b.w; // Invalid, because "w" is not present in vec3 b.
