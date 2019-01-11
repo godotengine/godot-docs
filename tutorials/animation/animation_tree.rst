@@ -77,7 +77,7 @@ Blend2 / Blend3
 
 These nodes will blend between two or three inputs by a user-specified blend value:
 
-.. image:: img/animtree5.gif
+.. image:: img/animtree5.png
 
 For more complex blending, it is advised to use blend spaces instead.
 
@@ -91,7 +91,7 @@ OneShot
 
 This node will execute a sub-animation and return once it finishes. Blend times for fading in and out can be customized, as well as filters.
 
-.. image:: img/animtree6b.png
+.. image:: img/animtree6b.gif
 
 Seek
 ^^^^

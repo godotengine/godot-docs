@@ -24,7 +24,7 @@ The following tutorial will, then, explain 2D skeletal deformations.
 Setup
 -----
 
-.. seealso:: Before starting, it is advised to go through the :ref:`doc_cutout_animations` tutorial
+.. seealso:: Before starting, it is advised to go through the :ref:`doc_cutout_animation` tutorial
              to gain a general understanding of animating within Godot.
 
 For this tutorial, we will be using a single image to construct our character. Download it from :download:`gBot_pieces.png <img/gBot_pieces.png>`
