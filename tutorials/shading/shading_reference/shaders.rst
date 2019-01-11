@@ -96,7 +96,7 @@ tell the light function how the lights respond to that fragment. This makes it p
 shading pipeline without the user having to write much code. If you don't need this built-in functionality,
 you can ignore it and write your own light processing function and Godot will optimize it away. For example, 
 if you do not write a value to ``RIM``, Godot will not calculate rim lighting. During compilation, Godot checks
-to see if ``RIM`` is used; if not. it cuts all the corresponding code out. Therefore, you will not 
+to see if ``RIM`` is used; if not, it cuts all the corresponding code out. Therefore, you will not 
 waste calculations on effects that you do not use. 
 
 Light processor
