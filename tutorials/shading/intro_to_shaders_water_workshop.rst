@@ -34,7 +34,7 @@ You can watch the `full playlist on YouTube <https://www.youtube.com/watch?v=xoy
 Download the source code
 ------------------------
 
-Download the to the shader project here to follow along:
+Download the intro to shaders project here to follow along:
 :download:`2d_water_shader.zip <files/2d_water_shader.zip>`.
 
 It comes with a `start` folder to follow along with the 2D tutorials, and an `end`
@@ -42,4 +42,4 @@ folder that contains the final code.
 
 You will find the 3D water project on `this GitHub repository
 <https://github.com/BastiaanOlij/shader_tutorial>`_. We didn't include
-it here as it is a little heavy.
+it here, as it is a little heavy.
