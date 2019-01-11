@@ -7,3 +7,5 @@ Animation
 
    introduction_2d
    cutout_animation
+   2d_skeletons
+   animation_tree
