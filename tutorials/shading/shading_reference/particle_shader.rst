@@ -9,9 +9,9 @@ color, position, and rotation. They are drawn with any regular material for
 CanvasItem or Spatial, depending on whether they are 2D or 3D.
 
 Particle shaders are unique because they are not used to draw the object 
-themself they are used to calculate particle properties, which are then used 
+itself; they are used to calculate particle properties, which are then used 
 by the CanvasItem of Spatial shader. They contain only a vertex processor 
-functions that outputs multiple properties (see built-ins below).
+function that outputs multiple properties (see built-ins below).
 
 Particle shaders use a transform feedback shader, which is a special type of
 vertex shader that runs on its own. It takes in data in a buffer like a regular
