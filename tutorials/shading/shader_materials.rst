@@ -16,14 +16,14 @@ Examples of this are:
 
 -  Create procedural textures.
 -  Create complex texture blendings.
--  Create animated materials, or materials that change with time.
+-  Create animated materials, or materials that change over time.
 -  Create refractive effects or other advanced effects.
 -  Create special lighting shaders for more exotic materials.
 -  Animate vertices, like tree leaves or grass.
 -  Create custom particle code, that responds to baked animations or force fields.
 -  And much more!
 
-Traditionally, most engines will ask you to learn GLSL, HLSL or CG,
+Traditionally, most engines will ask you to learn GLSL, HLSL or Cg,
 which are pretty complex for the skillset of most artists. Godot uses a
 simplified version of a shader language that will detect errors as you
 type, so you can see your edited shaders in real-time. Additionally, it
@@ -45,7 +45,7 @@ Converting to ShaderMaterial
 ----------------------------
 
 It is possible to convert from SpatialMaterial, CanvasItemMaterial and
-ParticlesMaterial to ShaderMaterial. To do this go to the material properties
+ParticlesMaterial to ShaderMaterial. To do so, go to the material properties
 and enable the convert option.
 
 .. image:: img/shader_material_convert.png
