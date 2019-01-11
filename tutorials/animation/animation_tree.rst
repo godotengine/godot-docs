@@ -216,7 +216,7 @@ allowing the realisation of very complex animation logic.
 
 To modify these values from code, the property path must be obtained. This is done easily by hovering the mouse over any of the parameters:
 
-.. image:: img/animtree16.png
+.. image:: img/animtree17.png
 
 Which allows setting them or reading them:
 
