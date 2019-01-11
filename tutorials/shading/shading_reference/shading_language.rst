@@ -262,7 +262,7 @@ It is possible to define functions in a Godot shader. They use the following syn
 You can only use functions that have been defined above (higher in the editor) the function from which you are calling 
 them.
 
-The function argument can have special qualifiers:
+Function arguments can have special qualifiers:
 
 * **in**: Means the argument is only for reading (default).
 * **out**: Means the argument is only for writing.
