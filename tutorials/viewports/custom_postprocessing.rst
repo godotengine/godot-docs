@@ -6,7 +6,7 @@ Custom post-processing
 Introduction
 ------------
 
-Godot provides many post-processing effects out of the box including, Bloom, DOF, and SSAO. Sometimes you
+Godot provides many post-processing effects out of the box, including Bloom, DOF, and SSAO. Sometimes you
 want to write your own custom effect. Here's how you can do so.
 
 Post-processing effects are shaders applied to a frame after Godot rendered it. You first want to render
@@ -19,7 +19,7 @@ Tutorial <doc_screen-reading_shaders>` first.
 
 .. note::
 
-    At the time of writing Godot does not support rendering to multiple buffers at the same time. Your
+    As of the time of writing, Godot does not support rendering to multiple buffers at the same time. Your
     post-processing shader will not have access to normals or other render passes. You only have
     access to the rendered frame.
 
@@ -33,26 +33,26 @@ another :ref:`Control <class_Control>` node.
 
 .. note::
 
-    Rendering using a ``Viewport`` gives you control over the
+    Rendering using a ``Viewport`` gives you control over
     how the scene render, including the framerate, and you can use the
     ``ViewportContainer`` to render 3D objects in a 2D scene.
 
-For this demo we will use a :ref:`Node2D <class_Node2D>` with a ``ViewportContainer`` and finally a
-``Viewport``. Your Node tab should look like this:
+For this demo, we will use a :ref:`Node2D <class_Node2D>` with a ``ViewportContainer`` and finally a
+``Viewport``. Your **Scene** tab should look like this:
 
 .. image:: img/post_hierarchy1.png
 
-Inside the ``Viewport`` you can have whatever you want. This will contain
-your main scene. For this tutorial we will use a field of random boxes:
+Inside the ``Viewport``, you can have whatever you want. This will contain
+your main scene. For this tutorial, we will use a field of random boxes:
 
 .. image:: img/post_boxes.png
 
-Add a new a :ref:`ShaderMaterial <class_ShaderMaterial>` to the ``ViewportContainer``, and assign a new
+Add a new :ref:`ShaderMaterial <class_ShaderMaterial>` to the ``ViewportContainer``, and assign a new
 shader resource to it. You can access your rendered ``Viewport`` with the built-in ``TEXTURE`` uniform.
 
 .. note::
 
-    You can choose not to use a ``ViewportContainer``, but if you do so you will
+    You can choose not to use a ``ViewportContainer``, but if you do so, you will
     need to create your own uniform in the shader and pass the ``Viewport`` texture in
     manually, like so:
 
@@ -83,7 +83,7 @@ Copy the following code to your shader. The above code is a single pass edge det
       col += texture(TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE.x, 0.0)).xyz;
       col += texture(TEXTURE, SCREEN_UV + vec2(-SCREEN_PIXEL_SIZE.x, 0.0)).xyz;
       col += texture(TEXTURE, SCREEN_UV + SCREEN_PIXEL_SIZE.xy).xyz;
-      col += texture(TEXTURE, SCREEN_UV + SCREEN_PIXEL_SIZE.xy).xyz;
+      col += texture(TEXTURE, SCREEN_UV - SCREEN_PIXEL_SIZE.xy).xyz;
       col += texture(TEXTURE, SCREEN_UV + vec2(-SCREEN_PIXEL_SIZE.x, SCREEN_PIXEL_SIZE.y)).xyz;
       col += texture(TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE.x, -SCREEN_PIXEL_SIZE.y)).xyz;
       COLOR.xyz = col;
@@ -105,7 +105,7 @@ Some post-processing effects like blur are resource intensive. If you break them
 however, you can make them run a lot faster. In a multipass material, each pass takes the result from the
 previous pass as an input and processes it.
 
-To make a multi-pass post-processing shader, you stack ``Viewport`` nodes. In the example above you
+To make a multi-pass post-processing shader, you stack ``Viewport`` nodes. In the example above, you
 rendered the content of one ``Viewport`` object into the root ``Viewport``, through a ``ViewportContainer``
 node. You can do the same thing for a multi-pass shader by rendering the content of one ``Viewport`` into
 another and then rendering the last ``Viewport`` into the root ``Viewport``.
@@ -123,7 +123,7 @@ the tree.
     You can also render your Viewports separately without nesting them like this. You just
     need to use two Viewports and to render them one after the other.
 
-Besides the node structure, the steps are the same as with the single-pass post-processing shader.
+Apart from the node structure, the steps are the same as with the single-pass post-processing shader.
 
 As an example, you could write a full screen Gaussian blur effect by attaching the following pieces of code
 to each of the :ref:`ViewportContainers <class_ViewportContainer>`. The order in which you apply the shaders
@@ -133,7 +133,7 @@ does not matter:
 
   shader_type canvas_item;
 
-  //Blurs the screen in the X-direction
+  //Blurs the screen in the X-direction.
   void fragment() {
       vec3 col = texture(TEXTURE, SCREEN_UV).xyz * 0.16;
       col += texture(TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.15;
@@ -151,7 +151,7 @@ does not matter:
 
   shader_type canvas_item;
 
-  //Blurs the screen in the Y-direction
+  //Blurs the screen in the Y-direction.
   void fragment() {
       vec3 col = texture(TEXTURE, SCREEN_UV).xyz * 0.16;
       col += texture(TEXTURE, SCREEN_UV + vec2(0.0, SCREEN_PIXEL_SIZE.y)).xyz * 0.15;
@@ -165,8 +165,8 @@ does not matter:
       COLOR.xyz = col;
   }
 
-Using the above code you should end up with a full screen blur effect like below.
+Using the above code, you should end up with a full screen blur effect like below.
 
 .. image:: img/post_blur.png
 
-For more information on how ``Viewport`` nodes work see the :ref:`Viewports Tutorial <doc_viewports>`.
+For more information on how ``Viewport`` nodes work, see the :ref:`Viewports Tutorial <doc_viewports>`.
