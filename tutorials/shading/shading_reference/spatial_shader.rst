@@ -95,9 +95,9 @@ it manually with the following code:
         // same as above for binormal and tangent, if normal mapping is used
     }
 
-Other built-ins such as UV, UV2 and COLOR are also passed through to the fragment function if not modified.
+Other built-ins, such as UV, UV2 and COLOR, are also passed through to the fragment function if not modified.
 
-Users can override the modelview and projection transforms using the ``POSITION`` built-in. When ``POSITION`` is used
+Users can override the modelview and projection transforms using the ``POSITION`` built-in. When ``POSITION`` is used,
 the value from ``VERTEX`` is ignored and projection does not happen. However, the value passed to the fragment shader 
 still comes from ``VERTEX``.
 
@@ -201,11 +201,11 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **ALBEDO**               | Albedo (default white).                                                                          |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ALPHA**               | Alpha (0..1), if written to the material will go to transparent pipeline.                        |
+| out float **ALPHA**               | Alpha (0..1); if written to, the material will go to the transparent pipeline.                   |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **METALLIC**            | Metallic (0..1).                                                                                 |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **SPECULAR**            | Specular. Defaults to 0.5, best to not modify unless you want to change IOR.                     |
+| out float **SPECULAR**            | Specular. Defaults to 0.5, best not to modify unless you want to change IOR.                     |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ROUGHNESS**           | Roughness (0..1).                                                                                |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
@@ -227,7 +227,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **AO**                  | Strength of Ambient Occlusion. For use with pre-baked AO.                                        |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **AO_LIGHT_AFFECT**     | How much AO affects lights (0..1. default 0).                                                    |
+| out float **AO_LIGHT_AFFECT**     | How much AO affects lights (0..1; default 0).                                                    |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **EMISSION**             | Emission color (can go over 1,1,1 for HDR).                                                      |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
