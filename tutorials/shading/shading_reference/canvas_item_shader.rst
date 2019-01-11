@@ -44,7 +44,7 @@ not marked.
 Vertex data (``VERTEX``) is presented in local space (pixel coordinates, relative to the camera).
 If not written to, these values will not be modified and be passed through as they came.
 
-User can disable the built-in modelview transform (projection will still happen later) and do 
+The user can disable the built-in modelview transform (projection will still happen later) and do 
 it manually with the following code:
 
 .. code-block:: glsl
@@ -57,7 +57,7 @@ it manually with the following code:
         VERTEX = (EXTRA_MATRIX * (WORLD_MATRIX * vec4(VERTEX, 0.0, 1.0))).xy;
     }
 
-Other built-ins such as UV and COLOR are also passed through to the fragment function if not modified.
+Other built-ins, such as UV and COLOR, are also passed through to the fragment function if not modified.
 
 For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
 is usually:
@@ -94,9 +94,9 @@ Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 
 Certain Nodes (for example, :ref:`Sprites <class_Sprite>`) display a texture by default. However, 
-when a custom fragment function is attached to these nodes the texture lookup needs to be done 
-manually. Godot does not provide the texture color in the ``COLOR`` built-in variable, to read 
-the texture color for such nodes use:
+when a custom fragment function is attached to these nodes, the texture lookup needs to be done 
+manually. Godot does not provide the texture color in the ``COLOR`` built-in variable; to read 
+the texture color for such nodes, use:
 
 .. code-block:: glsl
 
@@ -104,7 +104,7 @@ the texture color for such nodes use:
 
 This differs from the behaviour of the built-in normal map. If a normal map is attached, Godot uses
 it by default and assigns its value to the built-in ``NORMAL`` variable. If you are using a normal
-map meant for use in 3D, it will appear inverted. In order to use it in your shader you must assign
+map meant for use in 3D, it will appear inverted. In order to use it in your shader, you must assign
 it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D and overwriting ``NORMAL``.
 
 .. code-block:: glsl
@@ -156,9 +156,9 @@ Light processor functions work differently in 2D than they do in 3D. In CanvasIt
 shader is called once for the object being drawn, and then once for each light touching that 
 object in the scene. Use render_mode ``unshaded`` if you do not want any light passes to occur
 for that object. Use render_mode ``light_only`` if you only want light passes to occur for
-that object, this can be useful when you only want the object visible where it is covered by light. 
+that object; this can be useful when you only want the object visible where it is covered by light. 
 
-When the shader is on a light pass the ``AT_LIGHT_PASS`` variable will be ``true``.
+When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``true``.
 
 +-------------------------------------+-------------------------------------------------------------------------------+
 | Built-in                            | Description                                                                   |
