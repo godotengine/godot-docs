@@ -9,8 +9,7 @@ Recap
 Instancing has many handy uses. At a glance, with instancing you have:
 
 -  The ability to subdivide scenes and make them easier to manage.
--  A more flexible alternative to prefabs you might know from Unity (and much more powerful given that
-   instances can be nested).
+-  A tool to manage and edit multiple node instances at once.
 -  A way to organize and embed complex game flows or even UIs (in Godot, UI
    Elements are nodes, too).
 
