@@ -26,6 +26,8 @@ Properties
 +-------------------------------------------------+------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`                       | :ref:`color<class_Polygon2D_property_color>`                                       |
 +-------------------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`internal_vertex_count<class_Polygon2D_property_internal_vertex_count>`       |
++-------------------------------------------------+------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`invert_border<class_Polygon2D_property_invert_border>`                       |
 +-------------------------------------------------+------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`invert_enable<class_Polygon2D_property_invert_enable>`                       |
@@ -34,9 +36,9 @@ Properties
 +-------------------------------------------------+------------------------------------------------------------------------------------+
 | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_Polygon2D_property_polygon>`                                   |
 +-------------------------------------------------+------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`                 | :ref:`skeleton<class_Polygon2D_property_skeleton>`                                 |
+| :ref:`Array<class_Array>`                       | :ref:`polygons<class_Polygon2D_property_polygons>`                                 |
 +-------------------------------------------------+------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`splits<class_Polygon2D_property_splits>`                                     |
+| :ref:`NodePath<class_NodePath>`                 | :ref:`skeleton<class_Polygon2D_property_skeleton>`                                 |
 +-------------------------------------------------+------------------------------------------------------------------------------------+
 | :ref:`Texture<class_Texture>`                   | :ref:`texture<class_Polygon2D_property_texture>`                                   |
 +-------------------------------------------------+------------------------------------------------------------------------------------+
@@ -110,6 +112,16 @@ If ``true``, polygon edges will be anti-aliased. Default value: ``false``.
 
 The polygon's fill color. If ``texture`` is defined, it will be multiplied by this color. It will also be the default color for vertices not set in ``vertex_colors``.
 
+.. _class_Polygon2D_property_internal_vertex_count:
+
+- :ref:`int<class_int>` **internal_vertex_count**
+
++----------+----------------------------------+
+| *Setter* | set_internal_vertex_count(value) |
++----------+----------------------------------+
+| *Getter* | get_internal_vertex_count()      |
++----------+----------------------------------+
+
 .. _class_Polygon2D_property_invert_border:
 
 - :ref:`float<class_float>` **invert_border**
@@ -158,6 +170,16 @@ The offset applied to each vertex.
 
 The polygon's list of vertices. The final point will be connected to the first.
 
+.. _class_Polygon2D_property_polygons:
+
+- :ref:`Array<class_Array>` **polygons**
+
++----------+---------------------+
+| *Setter* | set_polygons(value) |
++----------+---------------------+
+| *Getter* | get_polygons()      |
++----------+---------------------+
+
 .. _class_Polygon2D_property_skeleton:
 
 - :ref:`NodePath<class_NodePath>` **skeleton**
@@ -167,16 +189,6 @@ The polygon's list of vertices. The final point will be connected to the first.
 +----------+---------------------+
 | *Getter* | get_skeleton()      |
 +----------+---------------------+
-
-.. _class_Polygon2D_property_splits:
-
-- :ref:`PoolIntArray<class_PoolIntArray>` **splits**
-
-+----------+-------------------+
-| *Setter* | set_splits(value) |
-+----------+-------------------+
-| *Getter* | get_splits()      |
-+----------+-------------------+
 
 .. _class_Polygon2D_property_texture:
 

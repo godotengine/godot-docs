@@ -79,7 +79,7 @@ This signal is emitted every time the button is toggled or pressed (i.e. activat
 
 - **toggled** **(** :ref:`bool<class_bool>` button_pressed **)**
 
-This signal is emitted when the button was just toggled between pressed and normal states (only if toggle_mode is active). The new state is contained in the *pressed* argument.
+This signal is emitted when the button was just toggled between pressed and normal states (only if toggle_mode is active). The new state is contained in the *button_pressed* argument.
 
 Enumerations
 ------------

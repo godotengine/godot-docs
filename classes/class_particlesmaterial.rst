@@ -222,9 +222,9 @@ enum **EmissionShape**:
 
 - **EMISSION_SHAPE_BOX** = **2** --- Particles will be emitted in the volume of a box.
 
-- **EMISSION_SHAPE_POINTS** = **3**
+- **EMISSION_SHAPE_POINTS** = **3** --- Particles will be emitted at a position determined by sampling a random point on the :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`. Particle color will be modulated by :ref:`emission_color_texture<class_ParticlesMaterial_property_emission_color_texture>`.
 
-- **EMISSION_SHAPE_DIRECTED_POINTS** = **4**
+- **EMISSION_SHAPE_DIRECTED_POINTS** = **4** --- Particles will be emitted at a position determined by sampling a random point on the :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`. Particle velocity and rotation will be set based on :ref:`emission_normal_texture<class_ParticlesMaterial_property_emission_normal_texture>`. Particle color will be modulated by :ref:`emission_color_texture<class_ParticlesMaterial_property_emission_color_texture>`.
 
 Description
 -----------
@@ -232,6 +232,8 @@ Description
 ParticlesMaterial defines particle properties and behavior. It is used in the ``process_material`` of :ref:`Particles<class_Particles>` and :ref:`Particles2D<class_Particles2D>` emitter nodes.
 
 Some of this material's properties are applied to each particle when emitted, while others can have a :ref:`CurveTexture<class_CurveTexture>` applied to vary values over the lifetime of the particle.
+
+When a randomness ratio is applied to a property it is used to scale that property by a random amount. The random ratio is used to interpolate between ``1.0`` and a random number less than one, the result is multiplied by the property to obtain the randomized property. For example a random ratio of ``0.4`` would scale the original property between ``0.4-1.0`` of its original value.
 
 Property Descriptions
 ---------------------
@@ -246,7 +248,9 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Initial rotation applied to each particle.
+Initial rotation applied to each particle, in degrees.
+
+Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using ``BillboardMode.BILLBOARD_PARTICLES``.
 
 .. _class_ParticlesMaterial_property_angle_curve:
 
@@ -282,7 +286,9 @@ Rotation randomness ratio. Default value: ``0``.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Initial angular velocity applied to each particle.
+Initial angular velocity applied to each particle. Sets the speed of rotation of the particle.
+
+Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using ``BillboardMode.BILLBOARD_PARTICLES``.
 
 .. _class_ParticlesMaterial_property_angular_velocity_curve:
 
@@ -390,7 +396,7 @@ Animation speed randomness ratio. Default value: ``0``.
 | *Getter* | get_color()      |
 +----------+------------------+
 
-Each particle's initial color. If the :ref:`Particles2D<class_Particles2D>`'s ``texture`` is defined, it will be multiplied by this color.
+Each particle's initial color. If the :ref:`Particles2D<class_Particles2D>`'s ``texture`` is defined, it will be multiplied by this color. To have particle display color in a :ref:`SpatialMaterial<class_SpatialMaterial>` make sure to set :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` to ``true``.
 
 .. _class_ParticlesMaterial_property_color_ramp:
 
@@ -462,6 +468,8 @@ The box's extents if ``emission_shape`` is set to ``EMISSION_SHAPE_BOX``.
 | *Getter* | get_emission_color_texture()      |
 +----------+-----------------------------------+
 
+Particle color will be modulated by color determined by sampling this texture at the same point as the :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`.
+
 .. _class_ParticlesMaterial_property_emission_normal_texture:
 
 - :ref:`Texture<class_Texture>` **emission_normal_texture**
@@ -471,6 +479,8 @@ The box's extents if ``emission_shape`` is set to ``EMISSION_SHAPE_BOX``.
 +----------+------------------------------------+
 | *Getter* | get_emission_normal_texture()      |
 +----------+------------------------------------+
+
+Particle velocity and rotation will be set by sampling this texture at the same point as the :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`. Used only in ``EMISSION_SHAPE_DIRECTED``. Can be created automatically from mesh or node by selecting "Create Emission Points from Mesh/Node" under the "Particles" tool in the toolbar.
 
 .. _class_ParticlesMaterial_property_emission_point_count:
 
@@ -493,6 +503,8 @@ The number of emission points if ``emission_shape`` is set to ``EMISSION_SHAPE_P
 +----------+-----------------------------------+
 | *Getter* | get_emission_point_texture()      |
 +----------+-----------------------------------+
+
+Particles will be emitted at positions determined by sampling this texture at a random position. Used with ``EMISSION_SHAPE_POINTS`` and ``EMISSION_SHAPE_DIRECTED_POINTS``. Can be created automatically from mesh or node by selecting "Create Emission Points from Mesh/Node" under the "Particles" tool in the toolbar.
 
 .. _class_ParticlesMaterial_property_emission_shape:
 
@@ -528,6 +540,8 @@ The sphere's radius if ``emission_shape`` is set to ``EMISSION_SHAPE_SPHERE``.
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
+Align y-axis of particle with the direction of its velocity.
+
 .. _class_ParticlesMaterial_property_flag_disable_z:
 
 - :ref:`bool<class_bool>` **flag_disable_z**
@@ -550,6 +564,8 @@ If ``true``, particles will not move on the z axis. Default value: ``true`` for 
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
+If ``true``, particles rotate around y-axis by :ref:`angle<class_ParticlesMaterial_property_angle>`.
+
 .. _class_ParticlesMaterial_property_flatness:
 
 - :ref:`float<class_float>` **flatness**
@@ -559,6 +575,8 @@ If ``true``, particles will not move on the z axis. Default value: ``true`` for 
 +----------+---------------------+
 | *Getter* | get_flatness()      |
 +----------+---------------------+
+
+Amount of :ref:`spread<class_ParticlesMaterial_property_spread>` in Y/Z plane. A value of ``1`` restricts particles to X/Z plane. Default ``0``.
 
 .. _class_ParticlesMaterial_property_gravity:
 
@@ -618,7 +636,7 @@ Hue variation randomness ratio. Default value: ``0``.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Initial velocity for each particle.
+Initial velocity magnitude for each particle. Direction comes from :ref:`spread<class_ParticlesMaterial_property_spread>`.
 
 .. _class_ParticlesMaterial_property_initial_velocity_random:
 
@@ -642,7 +660,7 @@ Initial velocity randomness ratio. Default value: ``0``.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Linear acceleration applied to each particle.
+Linear acceleration applied to each particle. Acceleration increases velocity magnitude each frame without affecting direction.
 
 .. _class_ParticlesMaterial_property_linear_accel_curve:
 
@@ -678,7 +696,9 @@ Linear acceleration randomness ratio. Default value: ``0``.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Orbital velocity applied to each particle.
+Orbital velocity applied to each particle. Makes the particles circle around origin. Specified in number of full rotations around origin per second.
+
+Only available when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` is ``true``.
 
 .. _class_ParticlesMaterial_property_orbit_velocity_curve:
 
@@ -714,7 +734,7 @@ Orbital velocity randomness ratio. Default value: ``0``.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Radial acceleration applied to each particle.
+Radial acceleration applied to each particle. Makes particle accelerate away from origin.
 
 .. _class_ParticlesMaterial_property_radial_accel_curve:
 
@@ -786,7 +806,7 @@ Scale randomness ratio. Default value: ``0``.
 | *Getter* | get_spread()      |
 +----------+-------------------+
 
-Each particle's initial direction range from ``+spread`` to ``-spread`` degrees. Default value: ``45``.
+Each particle's initial direction range from ``+spread`` to ``-spread`` degrees. Default value: ``45``. Applied to X/Z plane and Y/Z planes.
 
 .. _class_ParticlesMaterial_property_tangential_accel:
 
@@ -798,7 +818,7 @@ Each particle's initial direction range from ``+spread`` to ``-spread`` degrees.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Tangential acceleration applied to each particle. Tangential acceleration is perpendicular to the particle's velocity.
+Tangential acceleration applied to each particle. Tangential acceleration is perpendicular to the particle's velocity giving the particles a swirling motion.
 
 .. _class_ParticlesMaterial_property_tangential_accel_curve:
 

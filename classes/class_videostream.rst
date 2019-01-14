@@ -9,7 +9,7 @@ VideoStream
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VideoStreamTheora<class_VideoStreamTheora>`, :ref:`VideoStreamWebm<class_VideoStreamWebm>`
+**Inherited By:** :ref:`VideoStreamGDNative<class_VideoStreamGDNative>`, :ref:`VideoStreamTheora<class_VideoStreamTheora>`, :ref:`VideoStreamWebm<class_VideoStreamWebm>`
 
 **Category:** Core
 
