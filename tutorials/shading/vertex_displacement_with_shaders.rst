@@ -11,11 +11,11 @@ a :ref:`Plane Mesh<class_PlaneMesh>` inside a shader. Vertex displacement can be
 for a wide variety of effects, but most commonly it is used
 as a quick way to turn a flat plane into a simple terrain. Typically
 this is done using a heightmap, but in order to keep everything self
-contained, in this tutorial we will use noise in a shader. At the end
-of this tutorial we will have a deformed plane that looks like a
+contained, in this tutorial, we will use noise in a shader. At the end
+of this tutorial, we will have a deformed plane that looks like a
 miniature terrain complete with dynamic lighting.
 
-By reading this tutorial you should gain a basic understanding of:
+By reading this tutorial, you should gain a basic understanding of:
 
 * How to create and subdivide a :ref:`Plane Mesh<class_PlaneMesh>`
 * How to create and assign a material to a :ref:`Mesh<class_MeshInstance>`
@@ -55,7 +55,7 @@ Now set the ``Subdivide Width`` and ``Subdivide Height`` to ``32``.
 
 .. image:: img/vertex_displacement_subdivided_mesh.png
 
-You can see that there are now way more triangles in the :ref:`Mesh<class_MeshInstance>`. This will give
+You can see that there are now many more triangles in the :ref:`Mesh<class_MeshInstance>`. This will give
 us more vertices to work with and thus allow us to add more detail.
 
 .. image:: img/vertex_displacement_wireframe2.png
@@ -64,7 +64,7 @@ us more vertices to work with and thus allow us to add more detail.
 Shader magic
 ------------
 
-Now that we have a :ref:`Plane Mesh<class_MeshInstance>` to draw lets setup the material that will deform the :ref:`Mesh<class_MeshInstance>`.
+Now that we have a :ref:`Plane Mesh<class_MeshInstance>` to draw, let's set up the material that will deform the :ref:`Mesh<class_MeshInstance>`.
 
 Click beside material in the :ref:`Plane Mesh<class_MeshInstance>` Menu and create a new :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
@@ -92,7 +92,7 @@ Godot won't run the light shader on this object.
   render_mode unshaded;
 
 This should remove the errors and your :ref:`Mesh<class_MeshInstance>` should turn white. If you were to comment out
-the ``render_mode`` the plane would appear blue because it would pick up the sky colors.
+the ``render_mode``, the plane would appear blue because it would pick up the sky colors.
 
 Next we will define a vertex shader. The vertex shader determines where the vertices of your
 :ref:`Mesh<class_MeshInstance>` appear in the final scene. We will be using it to offset the height of each vertex and
@@ -106,7 +106,7 @@ We define the vertex shader like so:
 
   }
 
-With nothing in the ``vertex`` function Godot will use its default vertex shader. We can easily
+With nothing in the ``vertex`` function, Godot will use its default vertex shader. We can easily
 start to make changes by adding a single line:
 
 ::
@@ -115,15 +115,15 @@ start to make changes by adding a single line:
     VERTEX.y += cos(VERTEX.x) * sin(VERTEX.z);
   }
 
-Adding this line you should get an image like the one below.
+Adding this line, you should get an image like the one below.
 
 .. image:: img/vertex_displacement_cos.png
 
-Okay, lets unpack this. The ``y`` value of the ``VERTEX`` is being increased. And we are passing
-the ``x`` and ``z`` components of the ``VERTEX`` as arguments to ``cos`` and ``sin`` this gives us
-a wave like appearance across the ``x`` and ``z`` axis.
+Okay, let's unpack this. The ``y`` value of the ``VERTEX`` is being increased. And we are passing
+the ``x`` and ``z`` components of the ``VERTEX`` as arguments to ``cos`` and ``sin``; that gives us
+a wave-like appearance across the ``x`` and ``z`` axes.
 
-What we want to achieve is the look of little hills, after all ``cos`` and ``sin`` already look kind of like
+What we want to achieve is the look of little hills; after all. ``cos`` and ``sin`` already look kind of like
 hills. We do so by scaling the inputs to the ``cos`` and ``sin`` functions.
 
 ::
@@ -145,13 +145,13 @@ so the range of the output is much too high. We correct this by multiplying the 
 
 .. image:: img/vertex_displacement_cos_amplitude.png
 
-Looks much more hilly now. But ``cos`` and ``sin`` are boring. Lets move onto something more interesting.
+Looks much more hilly now. But ``cos`` and ``sin`` are boring. Let's move onto something more interesting.
 
 Noise
 -----
 
 Noise is a very popular tool for procedural generation. Think of it as similar to the cosine function
-where you have repeating hills except with noise each hill has a different height. Understanding
+where you have repeating hills except, with noise, each hill has a different height. Understanding
 noise is not necessary for this tutorial. There is nothing wrong with simply copying and pasting
 the code below.
 
@@ -166,10 +166,10 @@ for each of the hill tops.
 
 You will find similar functions to this all over the internet. It is lovingly referred to as the
 'one-liner hash function'. It works well for simple noise, but there are many better alternatives
-floating around as well. For this tutorial it will work fine.
+floating around as well. For this tutorial, it will work fine.
 
 Next we define the ``noise`` function. It smoothly interpolates between the random heights.
-Again, if this code seems daunting, do not worry, just copy paste and move on with the tutorial.
+Again, if this code seems daunting, do not worry; just copy, paste and move on with the tutorial.
 
 ::
 
@@ -182,9 +182,9 @@ Again, if this code seems daunting, do not worry, just copy paste and move on wi
            mix(hash(p + a.yx), hash(p + a.xx), f.x), f.y);
   }
 
-Lastly, to add detail we combine successive layers of noise using something called fractal
-brownian motion or FBM. Scary name aside FBM noise just adds together layers of noise with
-increase frequency and decreasing amplitude. To implement it we run over a for loop where
+Lastly, to add detail, we combine successive layers of noise using something called fractal
+brownian motion or FBM. Scary name aside, FBM noise just adds together layers of noise with
+increasing frequency and decreasing amplitude. To implement it, we run over a for loop where
 we increase the frequency each level, decrease the amplitude, and calculate a new layer of noise.
 
 ::
@@ -210,7 +210,7 @@ We can now use this noise function in place of ``cos`` and ``sin`` in the previo
 
 .. image:: img/vertex_displacement_noise1.png
 
-With the noise function in place we already have something that looks kind of cool.
+With the noise function in place, we already have something that looks kind of cool.
 There is a lot of detail, it kind of looks hilly or mountainous.
 
 Fragment shader
@@ -220,13 +220,13 @@ The difference between a vertex shader and a fragment shader is that the vertex 
 runs per vertex and sets properties such as ``VERTEX`` (position) and ``NORMAL``, while
 the fragment shader runs per pixel and, most importantly, sets the ``ALBEDO`` color of the :ref:`Mesh<class_MeshInstance>`.
 
-Now lets look at the :ref:`Mesh<class_MeshInstance>` with a regular shader instead of the wireframe. Set the
+Now let's look at the :ref:`Mesh<class_MeshInstance>` with a regular shader instead of the wireframe. Set the
 viewport back to 'Display Normal'.
 
 .. image:: img/vertex_displacement_noise2.png
 
-The :ref:`Mesh<class_MeshInstance>` appears completely white because the fragment shader is coloring each pixel white,
-but if every pixel is white we lose detail on the :ref:`Mesh<class_MeshInstance>`. So lets color each pixel based
+The :ref:`Mesh<class_MeshInstance>` appears completely white because the fragment shader is coloring each pixel white;
+but if every pixel is white, we lose detail on the :ref:`Mesh<class_MeshInstance>`. So let's color each pixel based
 on the height calculated in the vertex shader. We do so by setting the ``COLOR`` variable
 in the vertex shader. And by setting the ``ALBEDO`` in the fragment shader to the calculated
 ``COLOR`` variable.
@@ -242,7 +242,7 @@ in the vertex shader. And by setting the ``ALBEDO`` in the fragment shader to th
     ALBEDO = COLOR.xyz;
   }
 
-With this change we can see the detail of the :ref:`Mesh<class_MeshInstance>`, even without displaying the :ref:`Mesh<class_MeshInstance>`'s wireframe.
+With this change, we can see the detail of the :ref:`Mesh<class_MeshInstance>`, even without displaying the :ref:`Mesh<class_MeshInstance>`'s wireframe.
 
 .. image:: img/vertex_displacement_noise3.png
 
@@ -251,19 +251,19 @@ Uniforms
 
 Uniform variables allow you to pass data from the game into the shader. They can
 be very useful for controlling shader effects. Uniforms can be almost any
-datatype that can be used in the shader. To use a uniform you declare it in
+datatype that can be used in the shader. To use a uniform, you declare it in
 your :ref:`Shader<class_Shader>` using the keyword ``uniform``.
 
-Lets make a uniform that changes the height of the terrain.
+Let's make a uniform that changes the height of the terrain.
 
 ::
 
   uniform float height_scale = 0.5;
 
 
-Godot lets you initialize a uniform with a value, here ``height_scale`` is set to
-``0.5``. You can set uniforms from gdscript by calling the function ``set_shader_param``
-on the material corresponding to the shader. The value passed from gdscript takes
+Godot lets you initialize a uniform with a value; here, ``height_scale`` is set to
+``0.5``. You can set uniforms from GDScript by calling the function ``set_shader_param``
+on the material corresponding to the shader. The value passed from GDScript takes
 precedence over the value used to initialize it in the shader.
 
 ::
@@ -288,20 +288,20 @@ And here it is with ``height_scale`` set to ``0.2``:
 
 .. image:: img/vertex_displacement_uniform2.png
 
-Using uniforms we can even change the value every frame to animate the height of the terrain.
-Combined with :ref:`Tweens<class_Tween>` this can be especially useful for simple animations.
+Using uniforms, we can even change the value every frame to animate the height of the terrain.
+Combined with :ref:`Tweens<class_Tween>`, this can be especially useful for simple animations.
 
 Interacting with light
 ----------------------
 
-As a final part of this tutorial lets try to set up the terrain to interact with light.
+As a final part of this tutorial, let's try to set up the terrain to interact with light.
 First, we will add an :ref:`OmniLight<class_OmniLight>` to the scene.
 
 
 .. image:: img/vertex_displacement_light1.png
 
-You should notice that nothing changes, this is because we set the ``render_mode`` to ``unshaded``
-at the beginning of this tutorial, lets remove that.
+You should notice that nothing changes. That is because we set the ``render_mode`` to ``unshaded``
+at the beginning of this tutorial; let's remove that.
 
 ::
 
@@ -310,19 +310,19 @@ at the beginning of this tutorial, lets remove that.
 
 .. image:: img/vertex_displacement_light2.png
 
-It looks slightly better now, you can see the light affecting the terrain, and it has
+It looks slightly better now; you can see the light affecting the terrain, and it has
 turned blue as a result of the sky. The problem is the light is affecting the terrain
 as if it were a flat plane. This is because the light shader uses the normals of the
 :ref:`Mesh<class_MeshInstance>` to calculate light. The normals are stored in the :ref:`Mesh<class_MeshInstance>`, but we are changing
-the shape of the :ref:`Mesh<class_MeshInstance>` in the shader so the normals are no longer correct. To fix this
-we need to recalculate the normals in the shader. Godot makes this easy for us, all we
+the shape of the :ref:`Mesh<class_MeshInstance>` in the shader, so the normals are no longer correct. To fix this,
+we need to recalculate the normals in the shader. Godot makes this easy for us; all we
 have to do is calculate the new normal and set ``NORMAL`` to that value in the vertex shader.
-With ``NORMAL`` set Godot will do all the difficult lighting calculations for us.
+With ``NORMAL`` set, Godot will do all the difficult lighting calculations for us.
 
-To calculate the normal from noise we are going to use a technique called 'central differences'.
-This is used a lot, especially in places like shadertoy, to calculate normals in shaders.
+To calculate the normal from noise, we are going to use a technique called 'central differences'.
+This is used a lot, especially in places like Shadertoy, to calculate normals in shaders.
 What we will do is calculate the noise at four points surrounding the vertex in the ``x`` and ``z`` directions and then calculate
-the slope at the vertex from that. After all a normal is just an indicator of the slope of the
+the slope at the vertex from that. After all, a normal is just an indicator of the slope of the
 noise.
 
 We calculate the normal with one line in the vertex shader.
@@ -336,33 +336,33 @@ We calculate the normal with one line in the vertex shader.
 The variable ``e`` just makes it easier to add and subtract the right value from the ``VERTEX``.
 Setting ``e`` to a lower number will increase the level of detail of the normal.
 
-With ``NORMAL`` calculated the terrain now looks like:
+With ``NORMAL`` calculated, the terrain now looks like:
 
 .. image:: img/vertex_displacement_normal.png
 
 This still does not look how we want it to. The issue here is that the noise changes
 faster than the vertices do. So when we calculate the normal at the point of the
-``VERTEX`` it does not align with what we see in the final :ref:`Mesh<class_MeshInstance>`. In order to fix
-this we add more vertices. The below image is made with a :ref:`Mesh<class_MeshInstance>` with ``subdivision`` set
+``VERTEX``, it does not align with what we see in the final :ref:`Mesh<class_MeshInstance>`. In order to fix
+this, we add more vertices. The below image is made with a :ref:`Mesh<class_MeshInstance>` with ``subdivision`` set
 to ``100``.
 
 .. image:: img/vertex_displacement_normal_detailed1.png
 
-Now we can drag the light around and the lighting will update automatically.
+Now, we can drag the light around and the lighting will update automatically.
 
 .. image:: img/vertex_displacement_normal_detailed2.png
 
 .. image:: img/vertex_displacement_normal_detailed3.png
 
-If you zoom the camera out you can see that the :ref:`Mesh<class_MeshInstance>` now looks like a small terrain.
+If you zoom the camera out, you can see that the :ref:`Mesh<class_MeshInstance>` now looks like a small terrain.
 
 .. image:: img/vertex_displacement_terrain.png
 
-That is everything for this tutorial. Hopefully you understand the basics of vertex
-shaders in Godot. As a further exercise try changing the ``height_scale`` from gdscript,
+That is everything for this tutorial. Hopefully, you now understand the basics of vertex
+shaders in Godot. As a further exercise, try changing the ``height_scale`` from gdscript,
 try using different :ref:`Primitive Meshes<class_PrimitiveMesh>`, and try making your
 own functions to calculate ``height``.
 
-For further information on how to use shaders in Godot
+For further information on how to use shaders in Godot,
 you should check out the :ref:`doc_shading_language` page.
 
