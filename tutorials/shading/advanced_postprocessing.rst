@@ -11,7 +11,7 @@ In particular, it will explain how to write a post-processing shader that
 uses the depth buffer. You should already be familiar with post-processing 
 generally and, in particular, with the methods outlined in the :ref:`custom post-processing tutorial <doc_custom_postprocessing>`.
 
-In the previous post-processing tutorial we rendered the scene to a :ref:`Viewport <class_Viewport>` 
+In the previous post-processing tutorial, we rendered the scene to a :ref:`Viewport <class_Viewport>` 
 and then rendered the Viewport in a :ref:`ViewportContainer <class_ViewportContainer>` 
 to the main scene. One limitation of this method is that we could not access the 
 depth buffer because the depth buffer is only available in spatial shaders and 
@@ -20,7 +20,7 @@ Viewports do not maintain depth information.
 Full screen quad
 ----------------
 
-In the :ref:`custom post-processing tutorial <doc_custom_postprocessing>` we 
+In the :ref:`custom post-processing tutorial <doc_custom_postprocessing>`, we 
 covered how to use a Viewport to make custom post-processing effects. There are 
 two main drawbacks of using a Viewport:
 
@@ -35,8 +35,8 @@ effect will be applied at all times, including in the editor.
 
 First, create a new MeshInstance and set its mesh to a QuadMesh. This creates a quad 
 centered at position ``(0, 0, 0)`` with a width and height of ``1``. Set the width
-and height to ``2``. Right now the quad occupies a position in world space at the 
-origin, however, we want it to move with the camera so that it always covers the 
+and height to ``2``. Right now, the quad occupies a position in world space at the 
+origin; however, we want it to move with the camera so that it always covers the 
 entire screen. To do this, we will bypass the coordinate transforms that translate 
 the vertex positions through the difference coordinate spaces and treat the vertices 
 as if they were already in clip space. 
@@ -51,7 +51,7 @@ First, set ``render_mode`` to ``skip_vertex_transform``, which removes the trans
 from model space to view space. Godot handles the transformation from view space to clip space
 behind the scenes with the ``PROJECTION_MATRIX`` even when ``skip_vertex_transform`` is set. 
 Nullify the projection matrix by setting it to the `identity matrix <https://en.wikipedia.org/wiki/Identity_matrix>`_.
-In Godot this is done by passing a `1` to a ``mat4``.
+In Godot, this is done by passing a `1` to a ``mat4``.
 
 .. code-block:: glsl
 
@@ -62,18 +62,18 @@ In Godot this is done by passing a `1` to a ``mat4``.
     PROJECTION_MATRIX = mat4(1.0);
   }
 
-Even with this vertex shader the quad keeps disappearing. This is due to frustum 
-culling which is done on the CPU. Frustum culling uses the camera matrix and the
+Even with this vertex shader, the quad keeps disappearing. This is due to frustum 
+culling, which is done on the CPU. Frustum culling uses the camera matrix and the
 AABBs of Meshes to determine if the Mesh will be visible *before* passing it to the GPU.
-The CPU has no knowledge of what we are doing with the vertices so it assumes the 
+The CPU has no knowledge of what we are doing with the vertices, so it assumes the 
 coordinates specified refer to world positions, not clip space positions, which results
 in Godot culling the quad when we turn away from the center of the scene. In 
-order to keep the quad from being culled there are a few options:
+order to keep the quad from being culled, there are a few options:
 
 1. Add the QuadMesh as a child to the camera, so the camera is always pointed at it
 2. Make the AABB as large as possible so it can always be seen
 
-The second option ensures that the quad is visible in the editor. While the first
+The second option ensures that the quad is visible in the editor, while the first
 option guarantees that it will still be visible even if the camera moves outside the AABB.
 You can also use both options.
 
@@ -89,19 +89,19 @@ the uniform variable ``DEPTH_TEXTURE``.
 
 .. note:: Similar to accessing the screen texture, accessing the depth texture is only
           possible when reading from the current viewport. The depth texture cannot be 
-          accessed from another viewport you have rendered to.
+          accessed from another viewport to which you have rendered.
 
 The values returned by ``DEPTH_TEXTURE`` are between ``0`` and ``1`` and are nonlinear. 
-When displaying depth directly from the ``DEPTH_TEXTURE`` everything will look almost 
+When displaying depth directly from the ``DEPTH_TEXTURE``, everything will look almost 
 white unless it is very close. This is because the depth buffer stores objects closer
 to the camera using more bits than those further, so most of the detail in depth
 buffer is found close to the camera. In order to make the depth value align with world or 
-model coordinates we need to linearise the value. When we apply the projection matrix to the 
-vertex position the z value is made nonlinear, so to linearise it we multiply it by the 
-inverse of the projection matrix which in Godot is accessible with the variable 
-``INV_PROJECTION_MATRIX``
+model coordinates, we need to linearise the value. When we apply the projection matrix to the 
+vertex position, the z value is made nonlinear, so to linearise it, we multiply it by the 
+inverse of the projection matrix, which in Godot, is accessible with the variable 
+``INV_PROJECTION_MATRIX``.
 
-First take the screen space coordinates and transform them into normalized device 
+Firstly, take the screen space coordinates and transform them into normalized device 
 coordinates (NDC). NDC run from ``-1`` to ``1``, similar to clip space coordinates. 
 Reconstruct the NDC using ``SCREEN_UV`` for the ``x`` and ``y`` axis, and 
 the depth value for ``z``.
@@ -114,7 +114,7 @@ the depth value for ``z``.
   }
 
 Convert NDC to view space by multiplying the NDC by ``INV_PROJECTION_MATRIX``.
-Recall that view space gives positions relative to the camera so the ``z`` value will give us
+Recall that view space gives positions relative to the camera, so the ``z`` value will give us
 the distance to the point.
 
 .. code-block:: glsl
@@ -126,11 +126,11 @@ the distance to the point.
     float linear_depth = -view.z;
   }
 
-Because the camera is facing the negative ``z`` direction the position will have a negative ``z`` value.
-In order to get a usable depth value we have to negate ``view.z``.
+Because the camera is facing the negative ``z`` direction, the position will have a negative ``z`` value.
+In order to get a usable depth value, we have to negate ``view.z``.
 
 The world position can be constructed from the depth buffer using the following code. Note
-that the ``CAMERA_MATRIX`` is needed to transform the position from view space into world space so 
+that the ``CAMERA_MATRIX`` is needed to transform the position from view space into world space, so 
 it needs to be passed to the fragment shader with a varying.
 
 .. code-block:: glsl
@@ -166,19 +166,19 @@ Now, attach a script to the MeshInstance and use the following code:
   extends MeshInstance
 
   func _ready():
-    # Create a single triangle out of vertices
+    # Create a single triangle out of vertices:
     var verts = PoolVector3Array()
     verts.append(Vector3(-1.0, -1.0, 0.0))
     verts.append(Vector3(-1.0, 3.0, 0.0))
     verts.append(Vector3(3.0, -1.0, 0.0))
     
-    # Create an array of arrays
-    # This could contain normals, colors, uvs, etc.
+    # Create an array of arrays.
+    # This could contain normals, colors, UVs, etc.
     var mesh_array = []
     mesh_array.resize(Mesh.ARRAY_MAX) #required size for ArrayMesh Array
     mesh_array[Mesh.ARRAY_VERTEX] = verts #position of vertex array in ArrayMesh Array
     
-    # Create mesh from mesh_array
+    # Create mesh from mesh_array:
     mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, mesh_array)
 
 .. note:: The triangle is specified in normalized device coordinates. Recall, NDC run 
