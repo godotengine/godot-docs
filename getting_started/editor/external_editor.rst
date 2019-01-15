@@ -31,9 +31,11 @@ Some example Exec Flags for various editors include:
 +---------------------+-----------------------------------------------------+
 | Editor              | Exec Flags                                          |
 +=====================+=====================================================+
-| geany/kate          | {file} --line {line} --column {col}                 |
+| Geany/Kate          | {file} --line {line} --column {col}                 |
 +---------------------+-----------------------------------------------------+
-| atom/sublime text   | {file}:{line}                                       |
+| Atom/Sublime Text   | {file}:{line}                                       |
 +---------------------+-----------------------------------------------------+
-| jetbrains rider     | --line {line} {file}                                |
+| JetBrains Rider     | --line {line} {file}                                |
++---------------------+-----------------------------------------------------+
+| Visual Studio Code  | {project} --goto {file}:{line}:{col}                |
 +---------------------+-----------------------------------------------------+
