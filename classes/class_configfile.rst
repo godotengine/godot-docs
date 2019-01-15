@@ -61,7 +61,7 @@ The following example shows how to parse an INI-style file from the system, read
     var err = config.load("user://settings.cfg")
     if err == OK: # if not, something went wrong with the file loading
         # Look for the display/width pair, and default to 1024 if missing
-        var screen_width = get_value("display", "width", 1024)
+        var screen_width = config.get_value("display", "width", 1024)
         # Store a variable if and only if it hasn't been defined yet
         if not config.has_section_key("audio", "mute"):
             config.set_value("audio", "mute", false)
