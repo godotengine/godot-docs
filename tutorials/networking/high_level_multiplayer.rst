@@ -9,21 +9,21 @@ High level vs low level API
 The following explains the differences of high- and low-level networking in Godot as well as some fundamentals. If you want to jump in head-first and add networking to your first nodes, skip to `Initializing the network`_ below. But make sure to read the rest later on!
 
 Godot always supported standard low-level networking via UDP, TCP and some higher level protocols such as SSL and HTTP.
-These protocols are flexible and can be used for almost anything. However using them to synchronize game state manually can be a large amount of work. Sometimes that work can't be avoided or is worth it, for example when working with a custom server implementation on the backend. But in most cases it's worthwhile to consider Godot's high-level networking API, which sacrifices some of the fine-grained control of low-level networking for greater ease of use.
+These protocols are flexible and can be used for almost anything. However, using them to synchronize game state manually can be a large amount of work. Sometimes that work can't be avoided or is worth it, for example when working with a custom server implementation on the backend. But in most cases, it's worthwhile to consider Godot's high-level networking API, which sacrifices some of the fine-grained control of low-level networking for greater ease of use.
 
 This is due to the inherent limitations of the low-level protocols:
 
 - TCP ensures packets will always arrive reliably and in order, but latency is generally higher due to error correction.
   It's also quite a complex protocol because it understands what a "connection" is, and optimizes for goals that often don't suit applications like multiplayer games. Packets are buffered to be sent in larger batches, trading less per-packet overhead for higher latency. This can be useful for things like HTTP, but generally not for games. Some of this can be configured and disabled (e.g. by disabling "Nagle's algorithm" for the TCP connection).
-- UDP is a simpler protocol which only sends packets (and has no concept of a "connection"). No error correction
+- UDP is a simpler protocol, which only sends packets (and has no concept of a "connection"). No error correction
   makes it pretty quick (low latency), but packets may be lost along the way or received in the wrong order.
   Added to that, the MTU (maximum packet size) for UDP is generally low (only a few hundred bytes), so transmitting
   larger packets means splitting them, reorganizing them and retrying if a part fails.
 
 In general, TCP can be thought of as reliable, ordered, and slow; UDP as unreliable, unordered and fast.
-Because of the large difference in performance it often makes sense to re-build the parts of TCP wanted for games (optional reliability and packet order) while avoiding the unwanted parts (congestion/traffic control features, Nagle's algorithm, etc). Due to this most game engines come with such an implementation, and Godot is no exception.
+Because of the large difference in performance, it often makes sense to re-build the parts of TCP wanted for games (optional reliability and packet order), while avoiding the unwanted parts (congestion/traffic control features, Nagle's algorithm, etc). Due to this, most game engines come with such an implementation, and Godot is no exception.
 
-In summary you can use the low-level networking API for maximum control and implement everything on top of bare network protocols or use the high-level API based on :ref:`SceneTree <class_SceneTree>` that does most of the heavy lifting behind the scenes in a generally optimized way.
+In summary, you can use the low-level networking API for maximum control and implement everything on top of bare network protocols or use the high-level API based on :ref:`SceneTree <class_SceneTree>` that does most of the heavy lifting behind the scenes in a generally optimized way.
 
 .. note:: Most of Godot's supported platforms offer all or most of the mentioned high- and low-level networking
           features. As networking is always largely hardware and operating system dependent, however,
@@ -63,7 +63,7 @@ This object is not meant to be created directly, but is designed so that several
 
 This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it inherits all the useful methods for serializing, sending and receiving data. On top of that, it adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know when peers connect or disconnect.
 
-This class interface can abstract most types of network layers, topologies and libraries. By default Godot
+This class interface can abstract most types of network layers, topologies and libraries. By default, Godot
 provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <class_NetworkedMultiplayerENet>`), but this could be used to implement mobile APIs (for adhoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
 
 For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities.
@@ -76,7 +76,7 @@ The object that controls networking in Godot is the same one that controls every
 
 To initialize high level networking, the SceneTree must be provided a NetworkedMultiplayerPeer object.
 
-To create that object it first has to be initialized as a server or client.
+To create that object, it first has to be initialized as a server or client.
 
 Initializing as a server, listening on the given port, with a given maximum number of peers:
 
@@ -130,7 +130,7 @@ The above signals are called on every peer connected to the server (including on
 Clients will connect with a unique ID greater than 1, while network peer ID 1 is always the server.
 Anything below 1 should be handled as invalid.
 You can retrieve the ID for the local system via :ref:`SceneTree.get_network_unique_id() <class_SceneTree_method_get_network_unique_id>`.
-These IDs will be useful mostly for lobby management and should generally be stored as they identify connected peers and thus players. You can also use IDs to send messages only to certain peers.
+These IDs will be useful mostly for lobby management and should generally be stored, as they identify connected peers and thus players. You can also use IDs to send messages only to certain peers.
 
 Clients:
 
@@ -139,7 +139,7 @@ Clients:
 - `server_disconnected`
 
 Again, all these functions are mainly useful for lobby management or for adding/removing players on the fly.
-For these tasks the server clearly has to work as a server and you have do tasks manually such as sending a newly connected
+For these tasks, the server clearly has to work as a server and you have to perform tasks manually such as sending a newly connected
 player information about other already connected players (e.g. their names, stats, etc).
 
 Lobbies can be implemented any way you want, but the most common way is to use a node with the same name across scenes in all peers.
@@ -166,12 +166,12 @@ Synchronizing member variables is also possible:
 Functions can be called in two fashions:
 
 - Reliable: the function call will arrive no matter what, but may take longer because it will be re-transmitted in case of failure.
-- Unreliable: if the function call does not arrive, it will not be re-transmitted, but if it arrives it will do it quickly.
+- Unreliable: if the function call does not arrive, it will not be re-transmitted; but if it arrives, it will do it quickly.
 
 In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly,
 and if a packet is lost, it's not that bad because a new one will eventually arrive and it would likely be outdated because the object moved further in the meantime, even if it was resent reliably).
 
-There is also the `get_rpc_sender_id` function in `SceneTree` which can be used to check which peer (or peer ID) sent a RPC call.
+There is also the `get_rpc_sender_id` function in `SceneTree`, which can be used to check which peer (or peer ID) sent an RPC.
 
 Back to lobby
 -------------
@@ -180,7 +180,7 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
 
 ::
 
-    # Typical lobby implementation, imagine this being in /root/lobby
+    # Typical lobby implementation; imagine this being in /root/lobby.
 
     extends Node
 
@@ -199,25 +199,25 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
     var my_info = { name = "Johnson Magenta", favorite_color = Color8(255, 0, 255) }
 
     func _player_connected(id):
-        pass # Will go unused, not useful here
+        pass # Will go unused; not useful here.
 
     func _player_disconnected(id):
-        player_info.erase(id) # Erase player from info
+        player_info.erase(id) # Erase player from info.
 
     func _connected_ok():
-        # Only called on clients, not server. Send my ID and info to all the other peers
+        # Only called on clients, not server. Send my ID and info to all the other peers.
         rpc("register_player", get_tree().get_network_unique_id(), my_info)
 
     func _server_disconnected():
-        pass # Server kicked us, show error and abort
+        pass # Server kicked us; show error and abort.
 
     func _connected_fail():
-        pass # Could not even connect to server, abort
+        pass # Could not even connect to server; abort.
 
     remote func register_player(id, info):
         # Store the info
         player_info[id] = info
-        # If I'm the server, let the new guy know about existing players
+        # If I'm the server, let the new guy know about existing players.
         if get_tree().is_network_server():
             # Send my info to new player
             rpc_id(id, "register_player", 1, my_info)
@@ -227,13 +227,13 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
 
         # Call function to update lobby UI here
 
-You might have noticed already something different, which is the usage of the `remote` keyword on the `register_player` function:
+You might have already noticed something different, which is the usage of the `remote` keyword on the `register_player` function:
 
 ::
 
     remote func register_player(id, info):
 
-This keyword has two main uses. The first is to let Godot know that this function can be called from RPC. If no keywords are added
+This keyword has two main uses. The first is to let Godot know that this function can be called from RPC. If no keywords are added,
 Godot will block any attempts to call functions for security. This makes security work a lot easier (so a client can't call a function
 to delete a file on another client's system).
 
@@ -251,7 +251,7 @@ The `remotesync` keyword means that the `rpc()` call will go via network and exe
 The others will be explained further down.
 Note that you could also use the `get_rpc_sender_id` function on `SceneTree` to check which peer actually made the RPC call to `register_player`.
 
-With this, lobby management should be more or less explained. Once you have your game going you will most likely want to add some
+With this, lobby management should be more or less explained. Once you have your game going, you will most likely want to add some
 extra security to make sure clients don't do anything funny (just validate the info they send from time to time, or before
 game start). For the sake of simplicity and because each game will share different information, this is not shown here.
 
@@ -267,8 +267,8 @@ Player scenes
 In most games, each player will likely have its own scene. Remember that this is a multiplayer game, so in every peer
 you need to instance **one scene for each player connected to it**. For a 4 player game, each peer needs to instance 4 player nodes.
 
-So, how to name such nodes? In Godot nodes need to have an unique name. It must also be relatively easy for a player to tell which
-nodes represent each player ID.
+So, how to name such nodes? In Godot, nodes need to have a unique name. It must also be relatively easy for a player to tell which
+node represents each player ID.
 
 The solution is to simply name the *root nodes of the instanced player scenes as their network ID*. This way, they will be the same in
 every peer and RPC will work great! Here is an example:
@@ -294,17 +294,17 @@ every peer and RPC will work great! Here is an example:
             player.set_name(str(p))
             get_node("/root/world/players").add_child(player)
 
-        # Tell server (remember, server is always ID=1) that this peer is done pre-configuring
+        # Tell server (remember, server is always ID=1) that this peer is done pre-configuring.
         rpc_id(1, "done_preconfiguring", selfPeerID)
 
 
-.. note:: Depending on when you execute pre_configure_game() you may need to change any calls to ``add_child()``
-          to be deferred via ``call_deferred()`` as the SceneTree is locked while the scene is being created (e.g. when ``_ready()`` is being called).
+.. note:: Depending on when you execute pre_configure_game(), you may need to change any calls to ``add_child()``
+          to be deferred via ``call_deferred()``, as the SceneTree is locked while the scene is being created (e.g. when ``_ready()`` is being called).
 
 Synchronizing game start
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Setting up players might take different amount of time on every peer due to lag, different hardware, or other reasons.
+Setting up players might take different amounts of time for every peer due to lag, different hardware, or other reasons.
 To make sure the game will actually start when everyone is ready, pausing the game until all players are ready can be useful:
 
 ::
@@ -319,7 +319,7 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 
     var players_done = []
     remote func done_preconfiguring(who):
-        # Here is some checks you can do, as example
+        # Here are some checks you can do, for example
         assert(get_tree().is_network_server())
         assert(who in player_info) # Exists
         assert(not who in players_done) # Was not added yet
@@ -336,15 +336,15 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 Synchronizing the game
 ----------------------
 
-In most games the goal of multiplayer networking is that the game runs synchronized on all the peers playing it.
-Besides supplying an RPC and remote member variable set implementation, Godot adds the concept network masters.
+In most games, the goal of multiplayer networking is that the game runs synchronized on all the peers playing it.
+Besides supplying an RPC and remote member variable set implementation, Godot adds the concept of network masters.
 
 Network master
 ^^^^^^^^^^^^^^^^^^^^^^
 
 The network master of a node is the peer that has the ultimate authority over it.
 
-When not explicitly set the network master is inherited from the parent node, which if not changed is always going to be the server (ID 1). Thus the server has authority over all nodes by default.
+When not explicitly set, the network master is inherited from the parent node, which if not changed, is always going to be the server (ID 1). Thus the server has authority over all nodes by default.
 
 The network master can be set
 with the function :ref:`Node.set_network_master(id, recursive) <class_Node_method_set_network_master>` (recursive is true by default and means the network master is recursively set on all child nodes of the node as well).
@@ -359,7 +359,7 @@ If you have paid attention to the previous example, it's possible you noticed th
         # Load my player
         var my_player = preload("res://player.tscn").instance()
         my_player.set_name(str(selfPeerID))
-        my_player.set_network_master(selfPeerID) # The player belongs to this peer, it has the authority
+        my_player.set_network_master(selfPeerID) # The player belongs to this peer; it has the authority.
         get_node("/root/world/players").add_child(my_player)
 
         # Load other players
@@ -414,11 +414,11 @@ and checks that they contain an `exploded` function.
 If they do, the bomb calls `exploded` on it. However, the `exploded` method in the player has a `master` keyword. This means that only the player
 who is master for that instance will actually get the function.
 
-This instance, then, calls the `stun` function in the same instances of that same player (but in different peers), and only those which are set as puppet,
+This instance, then, calls the `stun` method in the same instances of that same player (but in different peers), and only those which are set as puppet,
 making the player look stunned in all the peers (as well as the current, master one).
 
 Note that you could also send the stun() message only to a specific player by using rpc_id(<id>, "exploded", bomb_owner).
-This may not make much sense for an area-of-effect case like the bomb but in other cases, like single target damage.
+This may not make much sense for an area-of-effect case like the bomb, but in other cases, like single target damage.
 
 ::
 
