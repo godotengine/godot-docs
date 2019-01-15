@@ -37,7 +37,7 @@ using to make the game. Unzip these files to your project folder.
 
 This game will use portrait mode, so we need to adjust the size of the
 game window. Click on Project -> Project Settings -> Display -> Window and
-set "Width" to 480 and "Height" to 720.
+set "Width" to ``480`` and "Height" to ``720``.
 
 Organizing the project
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -46,9 +46,9 @@ In this project, we will make 3 independent scenes: ``Player``,
 ``Mob``, and ``HUD``, which we will combine into the game's ``Main``
 scene. In a larger project, it might be useful to make folders to hold
 the various scenes and their scripts, but for this relatively small
-game, you can save your scenes and scripts in the root folder,
+game, you can save your scenes and scripts in the project's root folder,
 referred to as ``res://``.  You can see your project folders in the FileSystem
-Dock in the upper left corner:
+Dock in the lower left corner:
 
 .. image:: img/filesystem_dock.png
 
@@ -69,7 +69,8 @@ node to the scene.
 
 With ``Area2D`` we can detect objects that overlap or run into the player.
 Change its name to ``Player`` by clicking on the node's name.
-This is the scene's root node. We can add additional nodes to the player to add functionality.
+This is the scene's root node. We can add additional nodes to the player to add
+functionality.
 
 Before we add any children to the ``Player`` node, we want to make sure we don't
 accidentally move or resize them by clicking on them. Select the node and
@@ -82,7 +83,7 @@ Save the scene. Click Scene -> Save, or press ``Ctrl+S`` on Windows/Linux or ``C
 
 .. note:: For this project, we will be following the Godot naming conventions.
 
-          - **GDScript**: Classes (nodes) use PascalCase, variables and 
+          - **GDScript**: Classes (nodes) use PascalCase, variables and
             functions use snake_case, and constants use ALL_CAPS (See
             :ref:`doc_gdscript_styleguide`).
 
@@ -102,7 +103,7 @@ An ``AnimatedSprite`` requires a :ref:`SpriteFrames <class_SpriteFrames>` resour
 list of the animations it can display. To create one, find the
 ``Frames`` property in the Inspector and click "<null>" ->
 "New SpriteFrames". Next, in the same location, click
-``<SpriteFrames>`` to open the "SpriteFrames" panel:
+``<SpriteFrames>``, then click "Open Editor" to open the "SpriteFrames" panel:
 
 .. image:: img/spriteframes_panel.png
 
@@ -125,12 +126,10 @@ Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child
 of ``Player``. This will determine the player's "hitbox", or the
 bounds of its collision area. For this character, a ``CapsuleShape2D``
 node gives the best fit, so next to "Shape" in the Inspector, click
-"<null>"" -> "New CapsuleShape2D".  Resize the shape to cover the sprite:
+"<null>"" -> "New CapsuleShape2D".  Using the two size handles, resize the
+shape to cover the sprite:
 
 .. image:: img/player_coll_shape.png
-
-.. warning:: Don't scale the shape's outline! Only use the
-             size handles (circled in red) to adjust the shape!
 
 When you're finished, your ``Player`` scene should look like this:
 
@@ -163,7 +162,7 @@ Start by declaring the member variables this object will need:
 
     extends Area2D
 
-    export (int) var speed  # How fast the player will move (pixels/sec).
+    export var speed = 400  # How fast the player will move (pixels/sec).
     var screensize  # Size of the game window.
 
  .. code-tab:: csharp
@@ -171,7 +170,7 @@ Start by declaring the member variables this object will need:
     public class Player : Area2D
     {
         [Export]
-        public int Speed; // How fast the player will move (pixels/sec).
+        public int Speed = 400; // How fast the player will move (pixels/sec).
 
         private Vector2 _screenSize; // Size of the game window.
     }
@@ -180,7 +179,9 @@ Start by declaring the member variables this object will need:
 Using the ``export`` keyword on the first variable ``speed`` allows us to
 set its value in the Inspector. This can be handy for values that you
 want to be able to adjust just like a node's built-in properties. Click on
-the ``Player`` node and set the speed property to ``400``.
+the ``Player`` node and you'll see the property now appears in the "Script
+Variables" section of the Inspector. Remember, if you change the value here, it
+will override the value written in the script.
 
 .. warning:: If you're using C#, you need to (re)build the project assemblies
              whenever you want to see new export variables or signals. This
@@ -208,7 +209,8 @@ which is a good time to find the size of the game window:
 
 Now we can use the ``_process()`` function to define what the player will do.
 ``_process()`` is called every frame, so we'll use it to update
-elements of our game, which we expect will change often. Here we'll make it:
+elements of our game, which we expect will change often. For the player, we
+need to do the following:
 
 - Check for input.
 - Move in the given direction.
@@ -216,7 +218,7 @@ elements of our game, which we expect will change often. Here we'll make it:
 
 First, we need to check for input - is the player pressing a key? For
 this game, we have 4 direction inputs to check. Input actions are defined
-in the Project Settings under "Input Map". You can define custom events and
+in the Project Settings under "Input Map". Here, you can define custom events and
 assign different keys, mouse events, or other inputs to them. For this demo,
 we will use the default events that are assigned to the arrow keys on the
 keyboard.
@@ -229,7 +231,7 @@ or ``false`` if it isn't.
  .. code-tab:: gdscript GDScript
 
     func _process(delta):
-        var velocity = Vector2() # The player's movement vector.
+        var velocity = Vector2()  # The player's movement vector.
         if Input.is_action_pressed("ui_right"):
             velocity.x += 1
         if Input.is_action_pressed("ui_left"):
@@ -283,11 +285,12 @@ or ``false`` if it isn't.
         }
     }
 
-We check each input and add/subtract from the ``velocity`` to obtain a
-total direction. For example, if you hold ``right`` and ``down`` at
-the same time, the resulting ``velocity`` vector will be ``(1, 1)``. In
-this case, since we're adding a horizontal and a vertical movement, the
-player would move *faster* than if it just moved horizontally.
+We start by setting the ``velocity`` to ``(0, 0)`` - by default the player
+should not be moving. Then we check each input and add/subtract from the
+``velocity`` to obtain a total direction. For example, if you hold ``right``
+and ``down`` at the same time, the resulting ``velocity`` vector will be
+``(1, 1)``. In this case, since we're adding a horizontal and a vertical
+movement, the player would move *faster* than if it just moved horizontally.
 
 We can prevent that if we *normalize* the velocity, which means we set
 its *length* to ``1``, and multiply by the desired speed. This means no
@@ -300,13 +303,13 @@ more fast diagonal movement.
 We also check whether the player is moving so we can start or stop the
 AnimatedSprite animation.
 
-.. tip:: ``$`` returns the node at the relative path from this node, or returns ``null`` if the node is not found.
+.. tip:: In GDScript, ``$`` returns the node at the relative path from the current node, or returns ``null`` if the node is not found.
          Since AnimatedSprite is a child of the current node, we can use ``$AnimatedSprite``.
 
          ``$`` is shorthand for ``get_node()``.
          So in the code above, ``$AnimatedSprite.play()`` is the same as ``get_node("AnimatedSprite").play()``.
 
-Now that we have a movement direction, we can update ``Player``'s position
+Now that we have a movement direction, we can update the player's position
 and use ``clamp()`` to prevent it from leaving the screen by adding the following
 to the bottom of the ``_process`` function:
 
@@ -329,8 +332,9 @@ to the bottom of the ``_process`` function:
 .. tip:: *Clamping* a value means restricting it to a given range.
 
 Click "Play Scene" (``F6``) and confirm you can move the player
-around the screen in all directions. The console output that opens upon playing the scene can be closed
-by clicking ``Output`` (which should be highlighted in blue) in the lower left of the Bottom Panel.
+around the screen in all directions. The console output that opens upon playing
+the scene can be closed by clicking ``Output`` (which should be highlighted in
+blue) in the lower left of the Bottom Panel.
 
 .. warning:: If you get an error in the "Debugger" panel that refers to a "null instance",
              this likely means you spelled the node name wrong. Node names are case-sensitive
@@ -423,7 +427,7 @@ Add the following at the top of the script, after ``extends Area2d``:
  .. code-tab:: csharp
 
     // Don't forget to rebuild the project so the editor knows about the new signal.
-    
+
     [Signal]
     public delegate void Hit();
 
@@ -439,8 +443,9 @@ going to be ``RigidBody2D`` nodes, we want the
 ``body_entered( Object body )`` signal; this will be emitted when a
 body contacts the player. Click "Connect.." and then "Connect" again on
 the "Connecting Signal" window. We don't need to change any of these
-settings - Godot will automatically create a function called
-``_on_Player_body_entered`` in your player's script.
+settings - Godot will automatically create a function in your player's script.
+This function will be called whenever the signal is emitted - it *handles* the
+signal.
 
 .. tip:: When connecting a signal, instead of having Godot create a
          function for you, you can also give the name of an existing
@@ -452,9 +457,9 @@ Add this code to the function:
  .. code-tab:: gdscript GDScript
 
     func _on_Player_body_entered(body):
-        hide() # Player disappears after being hit.
+        hide()  # Player disappears after being hit.
         emit_signal("hit")
-        $CollisionShape2D.disabled = true
+        $CollisionShape2D.call_deferred("set_disabled", true)
 
  .. code-tab:: csharp
 
@@ -465,9 +470,14 @@ Add this code to the function:
         GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
     }
 
-.. Note:: Disabling the area's collision shape means
-          it won't detect collisions. By turning it off, we make
-          sure we don't trigger the ``hit`` signal more than once.
+Each time an enemy hits the player, the signal is going to be emitted. We need
+to disable the player's collision so that we don't trigger the ``hit`` signal
+more than once.
+
+.. Note:: Disabling the area's collision shape can cause an error if it happens
+          in the middle of the engine's collision processing. Using ``call_deferred()``
+          allows us to have Godot wait to disable the shape until it's safe to
+          do so.
 
 The last piece for our player is to add a function we can call to reset
 the player when starting a new game.
@@ -549,8 +559,8 @@ Add a script to the ``Mob`` and add the following member variables:
 
     extends RigidBody2D
 
-    export (int) var min_speed # Minimum speed range.
-    export (int) var max_speed # Maximum speed range.
+    export var min_speed = 150  # Minimum speed range.
+    export var max_speed = 250  # Maximum speed range.
     var mob_types = ["walk", "swim", "fly"]
 
  .. code-tab:: csharp
@@ -560,19 +570,19 @@ Add a script to the ``Mob`` and add the following member variables:
         // Don't forget to rebuild the project so the editor knows about the new export variables.
 
         [Export]
-        public int MinSpeed; // Minimum speed range.
+        public int MinSpeed = 150; // Minimum speed range.
 
         [Export]
-        public int MaxSpeed; // Maximum speed range.
+        public int MaxSpeed = 250; // Maximum speed range.
 
         private String[] _mobTypes = {"walk", "swim", "fly"};
     }
 
-We'll pick a random value between ``min_speed`` and ``max_speed`` for
-how fast each mob will move (it would be boring if they were all moving
-at the same speed). Set them to ``150`` and ``250`` in the Inspector. We
-also have an array containing the names of the three animations, which
-we'll use to select a random one.
+When we spawn a mob, we'll pick a random value between ``min_speed`` and
+``max_speed`` for how fast each mob will move (it would be boring if they
+were all moving at the same speed). We also have an array containing the names
+of the three animations, which we'll use to select a random one. Make sure
+you've spelled these the same in the script and in the SpriteFrames resource.
 
 Now let's look at the rest of the script. In ``_ready()`` we randomly
 choose one of the three animation types:
@@ -699,7 +709,7 @@ instance.
     public class Main : Node
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
-    
+
         [Export]
         public PackedScene Mob;
 
@@ -759,9 +769,9 @@ function to set everything up for a new game:
         GetNode<Timer>("StartTimer").Start();
     }
 
-Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``, ``ScoreTimer`` ,and ``MobTimer``).
-``StartTimer`` will start the other two timers. ``ScoreTimer`` will
-increment the score by 1.
+Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
+``ScoreTimer`` ,and ``MobTimer``) to the main script. ``StartTimer`` will start
+the other two timers. ``ScoreTimer`` will increment the score by 1.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -816,8 +826,9 @@ Add the following code:
         # Add some randomness to the direction.
         direction += rand_range(-PI / 4, PI / 4)
         mob.rotation = direction
-        # Choose the velocity.
-        mob.set_linear_velocity(Vector2(rand_range(mob.min_speed, mob.max_speed), 0).rotated(direction))
+        # Set the velocity (speed & direction).
+        mob.linear_velocity = Vector2(rand_range(mob.min_speed, mob.max_speed), 0)
+        mob.linear_velocity = mob.linear_velocity.rotated(direction)
 
  .. code-tab:: csharp
 
@@ -880,6 +891,22 @@ Create the following as children of the ``HUD`` node:
 -  :ref:`Button <class_Button>` named ``StartButton``.
 -  :ref:`Timer <class_Timer>` named ``MessageTimer``.
 
+Click on the ``ScoreLabel`` and type a number into the _Text_ field in the
+Inspector. The default font for ``Control`` nodes is small and doesn't scale
+well. There is a font file included in the game assets called
+"Xolonium-Regular.ttf". To use this font, do the following for each of
+the three ``Control`` nodes:
+
+1. Under "Custom Fonts", choose "New DynamicFont"
+
+.. image:: img/custom_font1.png
+
+2. Click on the "DynamicFont" you added, and under "Font/Font Data",
+   choose "Load" and select the "Xolonium-Regular.ttf" file. You must
+   also set the font's ``Size``. A setting of ``64`` works well.
+
+.. image:: img/custom_font2.png
+
 .. note:: **Anchors and Margins:** ``Control`` nodes have a position and size,
           but they also have anchors and margins. Anchors define the
           origin - the reference point for the edges of the node. Margins
@@ -898,59 +925,26 @@ placement, use the following settings:
 ScoreLabel
 ~~~~~~~~~~
 
--  ``Layout``: "Center Top"
--  ``Margin``:
-
-   -  Left: ``-25``
-   -  Top: ``0``
-   -  Right: ``25``
-   -  Bottom: ``100``
-
--  Text: ``0``
+-  *Text* : ``0``
+-  *Layout* : "Top Wide"
+-  *Align* : "Center"
 
 MessageLabel
 ~~~~~~~~~~~~
 
--  ``Layout``: "Center"
--  ``Margin``:
-
-   -  Left: ``-200``
-   -  Top: ``-150``
-   -  Right: ``200``
-   -  Bottom: ``0``
-
--  Text: ``Dodge the Creeps!``
+-  *Text* : ``Dodge the Creeps!``
+-  *Layout* : "HCenter Wide"
+-  *Align* : "Center"
 
 StartButton
 ~~~~~~~~~~~
 
--  ``Layout``: "Center Bottom"
--  ``Margin``:
+-  *Text* : ``Start``
+-  *Layout* : "Center Bottom"
+-  *Margin* :
 
-   -  Left: ``-100``
    -  Top: ``-200``
-   -  Right: ``100``
    -  Bottom: ``-100``
-
--  Text: ``Start``
-
-To make the text of the ``MessageLabel`` fit the game's window click
-the small icon next to your text property. This will open up a new
-window where you can add a new line between the words.
-The default font for ``Control`` nodes is small and doesn't scale
-well. There is a font file included in the game assets called
-"Xolonium-Regular.ttf". To use this font, do the following for each of
-the three ``Control`` nodes:
-
-1. Under "Custom Fonts", choose "New DynamicFont"
-
-.. image:: img/custom_font1.png
-
-2. Click on the "DynamicFont" you added, and under "Font Data",
-   choose "Load" and select the "Xolonium-Regular.ttf" file. You must
-   also set the font's ``Size``. A setting of ``64`` works well.
-
-.. image:: img/custom_font2.png
 
 Now add this script to ``HUD``:
 
@@ -1003,9 +997,10 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
     func show_game_over():
         show_message("Game Over")
         yield($MessageTimer, "timeout")
-        $StartButton.show()
         $MessageLabel.text = "Dodge the\nCreeps!"
         $MessageLabel.show()
+        yield(get_tree().create_timer(1), 'timeout')
+        $StartButton.show()
 
  .. code-tab:: csharp
 
@@ -1024,8 +1019,13 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
     }
 
 This function is called when the player loses. It will show "Game
-Over" for 2 seconds, then return to the title screen and show the
-"Start" button.
+Over" for 2 seconds, then return to the title screen and, after a brief pause,
+show the "Start" button.
+
+.. note:: When you need to pause for a brief time, an alternative to using a
+          Timer node is to use the SceneTree's ``create_timer()`` function. This
+          can be very useful to delay, such as in the above code, where we want
+          to wait a little bit of time before showing the "Start" button.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -1072,8 +1072,8 @@ Connecting HUD to Main
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Now that we're done creating the ``HUD`` scene, save it and go back to ``Main``.
-Instance the ``HUD`` scene in ``Main`` like you did the ``Player`` scene, and place it at the
-bottom of the tree. The full tree should look like this,
+Instance the ``HUD`` scene in ``Main`` like you did the ``Player`` scene, and
+place it at the bottom of the tree. The full tree should look like this,
 so make sure you didn't miss anything:
 
 .. image:: img/completed_main_scene.png
@@ -1136,13 +1136,13 @@ Background
 ~~~~~~~~~~
 
 The default gray background is not very appealing, so let's change its
-color. One way to do this is to use a :ref:`ColorRect <class_ColorRect>` node. Make it the
-first node under ``Main`` so that it will be drawn behind the other
+color. One way to do this is to use a :ref:`ColorRect <class_ColorRect>` node.
+Make it the first node under ``Main`` so that it will be drawn behind the other
 nodes. ``ColorRect`` only has one property: ``Color``. Choose a color
 you like and drag the size of the ``ColorRect`` so that it covers the
 screen.
 
-You can also add a background image, if you have one, by using a
+You could also add a background image, if you have one, by using a
 ``Sprite`` node.
 
 Sound effects
@@ -1163,40 +1163,23 @@ and ``$Music.stop()`` in the ``game_over()`` function.
 
 Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
 
-Particles
-~~~~~~~~~
+Keyboard Shortcut
+~~~~~~~~~~~~~~~~~
 
-For one last bit of visual appeal, let's add a trail effect to the
-player's movement. Choose your ``Player`` scene and add a
-:ref:`Particles2D <class_Particles2D>` node named ``Trail``.
+Since the game is played with keyboard controls, it would be convenient if we
+could also start the game by pressing a key on the keyboard. One way to do this
+is using the "Shortcut" property of the ``Button`` node.
 
-There are a large number of properties to choose from when
-configuring particles. Feel free to experiment and create different
-effects. For the effect in this example, use the following settings:
+In the ``HUD`` scene, select the ``StartButton`` and find its _Shortcut_ property
+in the Inspector. Select "New Shortcut" and click on the "Shortcut" item. A
+second _Shortcut_ property will appear. Select "New InputEventAction" and click
+the new "InputEvent". Finally, in the _Action_ property, type the name "ui_select".
+This is the default input event associated with the spacebar.
 
-.. image:: img/particle_trail_settings.png
+.. image:: img/start_button_shortcut.png
 
-You also need to create a ``Material`` by clicking on ``<null>`` and
-then "New ParticlesMaterial". The settings for that are below:
-
-.. image:: img/particle_trail_settings2.png
-
-To make the gradient for the "Color Ramp" setting, we want a gradient taking
-the alpha (transparency) of the sprite from 0.5 (semi-transparent) to
-0.0 (fully transparent).
-
-Click "New GradientTexture", then under "Gradient", click "New Gradient". You'll
-see a window like this:
-
-.. image:: img/color_gradient_ui.png
-
-The left and right boxes represent the start and end colors. Click on each
-and then click the large square on the right to choose the color. For the first
-color, set the ``A`` (alpha) value to around halfway. For the second, set it
-all the way to ``0``.
-
-.. seealso:: See :ref:`Particles2D <class_Particles2D>` for more details on using
-             particle effects.
+Now when the start button appears, you can either click it or press the spacebar
+to start the game.
 
 Project files
 -------------
