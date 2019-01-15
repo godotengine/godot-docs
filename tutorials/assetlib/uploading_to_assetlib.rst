@@ -6,7 +6,7 @@ Submitting to the Asset Library
 Introduction
 ------------
 
-This tutorial aims to serve as both a guide on how you can submit your own assets
+This tutorial aims to serve as a guide on how you can submit your own assets
 to the Godot Asset Library and share them with the Godot community.
 
 As mentioned in the :ref:`doc_using_assetlib` document, in order to be able to
@@ -36,7 +36,7 @@ is required in the submission form here as well.
     Addon type will only be visible from inside a project.
 * **Godot version**:
     The version of the engine that the asset works with.
-    Currently it's not possible to have a single asset entry contain downloads for
+    Currently, it's not possible to have a single asset entry contain downloads for
     multiple engine versions, so you may need to re-submit the asset multiple times,
     with an entry for each Godot version it supports. This is particularly important
     when dealing with major versions of the engine, such as Godot 2.x and Godot 3.x.
@@ -49,7 +49,7 @@ is required in the submission form here as well.
     changed or updated.
 * **Repository host**:
     Assets uploaded to the AssetLib are not hosted on it
-    directly. Instead, they point to repositories hosted on third-party Git providers
+    directly. Instead, they point to repositories hosted on third-party Git providers,
     such as GitHub, GitLab or Bitbucket. This is where you choose which provider
     your asset uses, so the site can compute the final download link.
 * **Repository URL**:
@@ -88,7 +88,7 @@ submission boxes to enable them.
 * **Image/YouTube URL**:
     Either a link to the image, or to a video, hosted on YouTube.
 * **Thumbnail URL**:
-    An URL to a image that will be used as a thumbnail for the
+    A URL to an image that will be used as a thumbnail for the
     preview. This option will be removed eventually, and thumbnails will be automatically
     computed instead.
 
