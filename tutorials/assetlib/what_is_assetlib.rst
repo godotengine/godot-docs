@@ -8,7 +8,7 @@ user-submitted Godot addons, scripts, tools and other resources, collectively re
 to as assets. They're available to all Godot users for download directly from within the
 engine, but it can also be accessed at Godot's `official website <https://godotengine.org/asset-library/asset>`_.
 
-On the surface the Asset Library might look and function similar to asset
+On the surface, the Asset Library might look and function similar to asset
 stores available for other engines, such as Unity's Asset Store, or Unreal
 Engine's Marketplace, where you can submit both freely-available assets, as well
 as paid, commercial ones. In addition, often times such assets are distributed
@@ -31,7 +31,7 @@ Frequently asked questions
 Can paid assets be uploaded to the asset library?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Not to the official one, though in the future there might be other asset
+Not to the official one, though in the future, there might be other asset
 libraries which allow it.
 That said, you are allowed to monetize and sell Godot assets outside the
 Asset Library.
