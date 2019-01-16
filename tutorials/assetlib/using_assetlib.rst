@@ -15,8 +15,8 @@ is what it looks like when you first visit it:
 
 |image0|
 
-At the top you see the **header** which takes you to various other parts of the
-AssetLib - at the moment it's empty as we are not logged in.
+At the top, you see the **header**, which takes you to various other parts of the
+AssetLib - at the moment, it's empty, as we are not logged in.
 
 Searching
 ~~~~~~~~~
@@ -91,7 +91,7 @@ Then, you can use your username and password to log in.
 
 |image5|
 
-This will change the look of the AssetLib header. Now you get access to a handful
+This will change the look of the AssetLib header. Now you get access to a handful of
 new functions:
 
 - The feed, which shows a list of status updates on your submitted assets (and possibly more in the future).
@@ -101,7 +101,7 @@ new functions:
 |image6|
 
 You can learn how to submit assets to the Library, and what the asset submission
-guidelines are, in the next part of this tutorial, ::ref:`doc_uploading_to_assetlib`.
+guidelines are, in the next part of this tutorial, :ref:`doc_uploading_to_assetlib`.
 
 In the editor
 -------------
@@ -111,6 +111,7 @@ places - in the Project Manager's Templates tab, and inside of a project, from
 the workspaces list.
 
 |image7|
+
 |image14|
 
 Click on it, and Godot will fetch info about the assets from the AssetLib. Once
