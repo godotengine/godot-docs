@@ -11,7 +11,7 @@ For the sake of this example, we will create a simple UI with a button, that whe
 Preparing scene
 ---------------
 
-Create a new empty scene, add a CanvasLayer as the root node and add an script to it. Then add two child nodes to it: a Button and an HTTPRequest node. You will need to connect the following signals to the CanvasLayer script:
+Create a new empty scene, add a CanvasLayer as the root node and add a script to it. Then add two child nodes to it: a Button and an HTTPRequest node. You will need to connect the following signals to the CanvasLayer script:
 
 - Button.pressed: When the button is pressed, we will start the request.
 - HTTPRequest.request_completed: When the request is completed, we will get the requested data as an argument.
@@ -50,7 +50,7 @@ For example, to set a custom user agent (the HTTP ``user-agent`` header) you cou
 
     $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed", ["user-agent: YourCustomUserAgent"])
 
-Please note that for SSL/TLS encryption and thus HTTPS URLs to work you may need to take some steps as described :ref:`here <doc_ssl_certificates>`.
+Please note that, for SSL/TLS encryption and thus HTTPS URLs to work, you may need to take some steps as described :ref:`here <doc_ssl_certificates>`.
 
 Also, when calling APIs using authorization, be aware that someone might analyse and decompile your released application and thus may gain access to any embedded authorization information like tokens, usernames or passwords.
 That means it is usually not a good idea to embed things such as database access credentials inside your game. Avoid providing information useful to an attacker whenever possible.
@@ -58,7 +58,7 @@ That means it is usually not a good idea to embed things such as database access
 Sending data to server
 ----------------------
 
-Until now we have limited ourselves to requesting data from a server. But what if you need to send data to the server? Here is a common way of doing it:
+Until now, we have limited ourselves to requesting data from a server. But what if you need to send data to the server? Here is a common way of doing it:
 
 ::
 
