@@ -51,7 +51,7 @@ represented.
 
 Unless you are working with large companies or corporations, or need
 to connect to someone else's servers (i.e., connecting to Google or some
-other REST API provider via HTTPS) this method is not as useful.
+other REST API provider via HTTPS), this method is not as useful.
 
 Also, when using a CA issued cert, **you must enable domain
 validation**, to ensure the domain you are connecting to is the one
