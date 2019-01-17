@@ -9,7 +9,7 @@ About plugins
 A plugin is a great way to extend the editor with useful tools. It can be made
 entirely with GDScript and standard scenes, without even reloading the editor.
 Unlike modules, you don't need to create C++ code nor recompile the engine.
-While this makes plugins less powerful, there's still a lot of things you can
+While this makes plugins less powerful, there are still many things you can
 do with them. Note that a plugin is similar to any scene you can already
 make, except it is created using a script to add functionality.
 
@@ -22,7 +22,7 @@ Creating a plugin
 ~~~~~~~~~~~~~~~~~
 
 Before starting, create a new empty project wherever you want. This will serve
-as base to develop and test the plugins.
+as a base to develop and test the plugins.
 
 The first thing you need to do is to create a new plugin the editor can
 understand as such. You need two files for that: ``plugin.cfg`` for the
@@ -145,7 +145,7 @@ Then try it out by adding your new node:
 
 .. image:: img/making_plugins-custom_node_create.png
 
-When you add the node, you can see that it already have the script you created
+When you add the node, you can see that it already has the script you created
 attached to it. Set a text to the button, save and run the scene. When you
 click the button, you can see some text in the console:
 
@@ -218,7 +218,7 @@ The script could look like this::
          # Erase the control from the memory
         dock.free()
 
-Note that while the dock will initially appear at its specified position,
+Note that, while the dock will initially appear at its specified position,
 the user can freely change its position and save the resulting layout.
 
 Checking the results
