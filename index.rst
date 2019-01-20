@@ -1,14 +1,30 @@
-.. Godot Engine documentation master file, created by
-   sphinx-quickstart on Sat Dec 12 16:57:47 2015.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Godot Docs – *master* branch
 ============================
 
-.. attention:: This is the documentation for the unstable (master) branch.
-               Looking for the documentation of the current **stable** branch?
-               `Have a look here <https://docs.godotengine.org/en/stable>`_.
+.. only:: not i18n
+
+  .. info:: Godot's documentation is available in various languages and versions.
+            Expand the "Read the Docs" panel at the bottom of the sidebar to see
+            the list.
+
+  .. attention:: This is the documentation for the development (master) branch.
+                 Looking for the documentation of the current **stable** branch?
+                 `Have a look here <https://docs.godotengine.org/en/stable>`_.
+
+.. only:: i18n
+
+  .. info:: This documentation is translated from the `original English one
+            <https://docs.godotengine.org/en/latest>`_ by community members
+            on `Weblate <https://hosted.weblate.org/projects/godot-engine/godot-docs>`_.
+
+            Depending on the translation effort's completion level, you may
+            find paragraphs or whole pages which are still in English. You can
+            help the community by providing new translations or reviewing existing
+            ones on Weblate.
+
+            For the time being, localized translations are only available for
+            the "latest" (development) branch, but should be suitable to learn
+            how to use stable Godot releases nevertheless.
 
 Welcome to the official documentation of Godot Engine, the free and open source
 community-driven 2D and 3D game engine! If you are new to this documentation,
