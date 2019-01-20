@@ -3,7 +3,7 @@ Godot Docs – *master* branch
 
 .. only:: not i18n
 
-  .. info:: Godot's documentation is available in various languages and versions.
+  .. note:: Godot's documentation is available in various languages and versions.
             Expand the "Read the Docs" panel at the bottom of the sidebar to see
             the list.
 
@@ -13,7 +13,7 @@ Godot Docs – *master* branch
 
 .. only:: i18n
 
-  .. info:: This documentation is translated from the `original English one
+  .. note:: This documentation is translated from the `original English one
             <https://docs.godotengine.org/en/latest>`_ by community members
             on `Weblate <https://hosted.weblate.org/projects/godot-engine/godot-docs>`_.
 
