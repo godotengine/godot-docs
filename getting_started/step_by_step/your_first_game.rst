@@ -163,7 +163,7 @@ Start by declaring the member variables this object will need:
     extends Area2D
 
     export var speed = 400  # How fast the player will move (pixels/sec).
-    var screensize  # Size of the game window.
+    var screen_size  # Size of the game window.
 
  .. code-tab:: csharp
 
@@ -198,7 +198,7 @@ which is a good time to find the size of the game window:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        screensize = get_viewport_rect().size
+        screen_size = get_viewport_rect().size
 
  .. code-tab:: csharp
 
@@ -317,8 +317,8 @@ to the bottom of the ``_process`` function:
  .. code-tab:: gdscript GDScript
 
         position += velocity * delta
-        position.x = clamp(position.x, 0, screensize.x)
-        position.y = clamp(position.y, 0, screensize.y)
+        position.x = clamp(position.x, 0, screen_size.x)
+        position.y = clamp(position.y, 0, screen_size.y)
 
  .. code-tab:: csharp
 
