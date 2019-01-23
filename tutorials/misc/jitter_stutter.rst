@@ -43,7 +43,7 @@ frame timer.
 Stutter
 -------
 
-Stutter may happen due to two different reason. The first, and most obvious one, is the game not being able to keep full
+Stutter may happen due to two different reasons. The first, and most obvious one, is the game not being able to keep full
 framerate performance. Solving this is game specific and will require optimization.
 
 The second is more complicated, because it is often not associated to the engine or game but the underlying operating system.
