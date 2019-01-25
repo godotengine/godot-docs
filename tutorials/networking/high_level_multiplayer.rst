@@ -292,6 +292,7 @@ every peer and RPC will work great! Here is an example:
         for p in player_info:
             var player = preload("res://player.tscn").instance()
             player.set_name(str(p))
+            player.set_network_master(p) # Will be explained later
             get_node("/root/world/players").add_child(player)
 
         # Tell server (remember, server is always ID=1) that this peer is done pre-configuring.
@@ -351,7 +352,7 @@ with the function :ref:`Node.set_network_master(id, recursive) <class_Node_metho
 
 Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling :ref:`Node.is_network_master() <class_Node_method_is_network_master>`. This will return true when executed on the server and false on all client peers.
 
-If you have paid attention to the previous example, it's possible you noticed that the local peer is set to have network master authority for their own player instead of the server:
+If you have paid attention to the previous example, it's possible you noticed that each peer was set to have network master authority for their own player (Node) instead of the server:
 
 ::
 
@@ -366,6 +367,7 @@ If you have paid attention to the previous example, it's possible you noticed th
         for p in player_info:
             var player = preload("res://player.tscn").instance()
             player.set_name(str(p))
+            player.set_network_master(p) # Each other connected peer has authority over their own player.
             get_node("/root/world/players").add_child(player)
         [...]
 
