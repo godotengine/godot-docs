@@ -624,7 +624,8 @@ Select the middle one ("Add Point") and draw the path by clicking to add
 the points at the corners shown. To have the points snap to the grid, make sure "Snap to
 Grid" is checked. This option can be found under the "Snapping options"
 button to the left of the "Lock" button, appearing as a series of three
-vertical dots.
+vertical dots. Make sure that the "Use Snap" button is also enabled, which is to the left
+of "Snapping options".
 
 .. image:: img/draw_path2d.gif
 
