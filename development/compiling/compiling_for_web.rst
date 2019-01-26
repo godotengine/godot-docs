@@ -29,10 +29,9 @@ written by the Emscripten SDK, e.g. when invoking ``emsdk activate latest``,
 or by your package manager. It's also created when starting Emscripten's
 ``emcc`` program if the file doesn't exist.
 
-.. Attention::
- On Windows, make sure to escape backslashes of paths within the Emscripten
- configuration file as double backslashes ``\\`` or use Unix-style paths with a
- single forward slash ``/``.
+.. attention:: On Windows, make sure to escape backslashes of paths within the Emscripten
+               configuration file as double backslashes ``\\`` or use Unix-style paths with a
+               single forward slash ``/``.
 
 Open a terminal and navigate to the root directory of the engine source code.
 Then instruct SCons to build the JavaScript platform. Specify ``target`` as

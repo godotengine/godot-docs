@@ -8,19 +8,18 @@ This requires support for `WebAssembly
 <https://webassembly.org/>`__ and `WebGL <https://www.khronos.org/webgl/>`__
 in the user's browser.
 
-.. Important::
- Use the browser-integrated developer console, usually opened with :kbd:`F12`,
- to view **debug information** like JavaScript, engine, and WebGL errors.
+.. important:: Use the browser-integrated developer console, usually opened
+               with :kbd:`F12`, to view **debug information** like JavaScript,
+               engine, and WebGL errors.
 
-.. Attention::
- Many browsers, Chromium-based browsers specifically, will not load exported
- projects when **opened locally** per ``file://`` protocol. To get around this,
- use a local server.
+.. attention:: Many browsers, Chromium-based browsers specifically, will not
+               load exported projects when **opened locally** per ``file://``
+               protocol. To get around this, use a local server.
 
- .. Tip::
-  Python offers an easy method to start a local server. Use
-  ``python -m SimpleHTTPServer`` with Python 2 or ``python -m http.server`` with
-  Python 3 to serve the current working directory at ``http://localhost:8000``.
+.. tip:: Python offers an easy method to start a local server. Use
+         ``python -m SimpleHTTPServer`` with Python 2 or
+		 ``python -m http.server`` with Python 3 to serve the current working
+		 directory at ``http://localhost:8000``.
 
 WebGL 2
 -------
@@ -28,9 +27,8 @@ WebGL 2
 Until the *OpenGL ES 3* renderer is removed from Godot in favor of *Vulkan*,
 HTML5 export uses *WebGL 2* when the *GLES3* option selected.
 
-.. Warning::
- Usage of WebGL 2 is not recommended due to its expected removal from Godot
- without replacement.
+.. warning:: Usage of WebGL 2 is not recommended due to its expected removal
+             from Godot without replacement.
 
 WebGL 2 is not supported in all browsers. **Firefox** and
 **Chromium** (Chrome, Opera) are the most popular supported browsers,
@@ -78,8 +76,8 @@ Audio autoplay
 Chrome restricts how websites may play audio. It may be necessary for the
 player to click or tap or press a key to enable audio.
 
-.. seealso::
- Google offers additional information about their `Web Audio autoplay policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
+.. seealso:: Google offers additional information about their `Web Audio autoplay
+             policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
 
 :ref:`class_HTTPClient` and :ref:`class_HTTPRequest`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,10 +116,10 @@ The following functionality is currently unavailable on the HTML5 platform:
  -  Clipboard synchronisation between engine and operating system
  -  Networking other than :ref:`class_HTTPClient` and :ref:`class_WebSocketClient`
 
-.. Tip::
- Check the `list of open HTML5 issues on Github <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`__
- to see if functionality you're interested in has an issue yet. If not, open
- one to communicate your interest.
+.. tip:: Check the `list of open HTML5 issues on Github
+         <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`__
+         to see if the functionality you're interested in has an issue yet. If
+         not, open one to communicate your interest.
 
 Serving the files
 -----------------
@@ -150,9 +148,9 @@ The ``.pck`` file is binary, usually delivered with the MIME-type
 :mimetype:`application/octet-stream`. The ``.wasm`` file is delivered as
 :mimetype:`application/wasm`.
 
-.. Caution::
- Delivering the WebAssembly module (``.wasm``) with a MIME-type other than
- :mimetype:`application/wasm` can prevent some start-up optimizations.
+.. caution:: Delivering the WebAssembly module (``.wasm``) with a MIME-type
+             other than :mimetype:`application/wasm` can prevent some start-up
+             optimizations.
 
 Delivering the files with server-side compression is recommended especially for
 the ``.pck`` and ``.wasm`` files, which are usually large in size.
@@ -219,9 +217,8 @@ also return ``null``.  The availability of the singleton can be checked with the
         else:
             print("The JavaScript singleton is NOT available")
 
-.. Tip::
- GDScript's multi-line strings, surrounded by 3 quotes ``"""`` as in
- ``my_func3()`` above, are useful to keep JavaScript code readable.
+.. tip:: GDScript's multi-line strings, surrounded by 3 quotes ``"""`` as in
+         ``my_func3()`` above, are useful to keep JavaScript code readable.
 
 The ``eval`` method also accepts a second, optional Boolean argument, which
 specifies whether to execute the code in the global execution context,

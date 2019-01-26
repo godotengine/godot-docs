@@ -32,7 +32,7 @@ When exporting the game, several placeholders in the HTML page are replaced
 with values depending on the export:
 
 +------------------------------+-----------------------------------------------+
-| Placeholder                  | substituted by                                |
+| Placeholder                  | Substituted by                                |
 +==============================+===============================================+
 | ``$GODOT_BASENAME``          | Basename of exported files without suffixes,  |
 |                              | e.g. ``game`` when exporting ``game.html``    |
