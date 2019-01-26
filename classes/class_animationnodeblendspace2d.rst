@@ -62,6 +62,13 @@ Methods
 | void                                              | :ref:`set_blend_point_position<class_AnimationNodeBlendSpace2D_method_set_blend_point_position>` **(** :ref:`int<class_int>` point, :ref:`Vector2<class_Vector2>` pos **)**                                             |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_AnimationNodeBlendSpace2D_signal_triangles_updated:
+
+- **triangles_updated** **(** **)**
+
 Enumerations
 ------------
 

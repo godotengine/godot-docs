@@ -19,13 +19,15 @@ Node that represents collision shape data in 2D space.
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                   |
-+-------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_property_one_way_collision>` |
-+-------------------------------+-----------------------------------------------------------------------------+
-| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                         |
-+-------------------------------+-----------------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                                 |
++-------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_property_one_way_collision>`               |
++-------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`one_way_collision_margin<class_CollisionShape2D_property_one_way_collision_margin>` |
++-------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                                       |
++-------------------------------+-------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -63,6 +65,16 @@ A disabled collision shape has no effect in the world.
 +----------+--------------------------------+
 
 Sets whether this collision shape should only detect collision on one side (top or bottom).
+
+.. _class_CollisionShape2D_property_one_way_collision_margin:
+
+- :ref:`float<class_float>` **one_way_collision_margin**
+
++----------+-------------------------------------+
+| *Setter* | set_one_way_collision_margin(value) |
++----------+-------------------------------------+
+| *Getter* | get_one_way_collision_margin()      |
++----------+-------------------------------------+
 
 .. _class_CollisionShape2D_property_shape:
 

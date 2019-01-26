@@ -102,6 +102,8 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`tile_get_shape_one_way<class_TileSet_method_tile_get_shape_one_way>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const                                                                                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`tile_get_shape_one_way_margin<class_TileSet_method_tile_get_shape_one_way_margin>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const                                                                                                                              |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>`             | :ref:`tile_get_shape_transform<class_TileSet_method_tile_get_shape_transform>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                         | :ref:`tile_get_shapes<class_TileSet_method_tile_get_shapes>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                          |
@@ -137,6 +139,8 @@ Methods
 | void                                              | :ref:`tile_set_shape_offset<class_TileSet_method_tile_set_shape_offset>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`Vector2<class_Vector2>` shape_offset **)**                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`tile_set_shape_one_way<class_TileSet_method_tile_set_shape_one_way>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`bool<class_bool>` one_way **)**                                                                                                                 |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`tile_set_shape_one_way_margin<class_TileSet_method_tile_set_shape_one_way_margin>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`float<class_float>` one_way **)**                                                                                                 |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`tile_set_shape_transform<class_TileSet_method_tile_set_shape_transform>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`Transform2D<class_Transform2D>` shape_transform **)**                                                                                       |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -486,6 +490,10 @@ Returns the offset of a tile's shape.
 
 Returns the one-way collision value of a tile's shape.
 
+.. _class_TileSet_method_tile_get_shape_one_way_margin:
+
+- :ref:`float<class_float>` **tile_get_shape_one_way_margin** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
+
 .. _class_TileSet_method_tile_get_shape_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **tile_get_shape_transform** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
@@ -593,6 +601,10 @@ Sets the offset of a tile's shape.
 - void **tile_set_shape_one_way** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`bool<class_bool>` one_way **)**
 
 Enables one-way collision on a tile's shape.
+
+.. _class_TileSet_method_tile_set_shape_one_way_margin:
+
+- void **tile_set_shape_one_way_margin** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`float<class_float>` one_way **)**
 
 .. _class_TileSet_method_tile_set_shape_transform:
 

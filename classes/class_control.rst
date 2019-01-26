@@ -484,11 +484,11 @@ enum **SizeFlags**:
 
 enum **MouseFilter**:
 
-- **MOUSE_FILTER_STOP** = **0** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` if clicked on. These events are automatically marked as handled and they will not propagate further to other controls.
+- **MOUSE_FILTER_STOP** = **0** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` if clicked on. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. These events are automatically marked as handled and they will not propagate further to other controls. This also results in blocking signals in other controls.
 
-- **MOUSE_FILTER_PASS** = **1** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` if clicked on. If this control does not handle the event, the parent control (if any) will be considered for a mouse click, and so on until there is no more parent control to potentially handle it. Even if no control handled it at all, the event will still be handled automatically, so unhandled input will not be fired.
+- **MOUSE_FILTER_PASS** = **1** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` if clicked on. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. If this control does not handle the event, the parent control (if any) will be considered, and so on until there is no more parent control to potentially handle it. This also allows signals to fire in other controls. Even if no control handled it at all, the event will still be handled automatically, so unhandled input will not be fired.
 
-- **MOUSE_FILTER_IGNORE** = **2** --- The control will not receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` and will not block other controls from receiving these events. These events will also not be handled automatically.
+- **MOUSE_FILTER_IGNORE** = **2** --- The control will not receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>`. Also the control will not receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` nor :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. This will not block other controls from receiving these events or firing the signals. Ignored events will not be handled automatically.
 
 .. _enum_Control_GrowDirection:
 
@@ -826,7 +826,7 @@ The default cursor shape for this control. Useful for Godot plugins and applicat
 | *Getter* | get_mouse_filter()      |
 +----------+-------------------------+
 
-Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` and how these events should be handled. See the constants to learn what each does.
+Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` and how these events should be handled. Also controls whether the control can receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>`, and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. See the constants to learn what each does.
 
 .. _class_Control_property_rect_clip_content:
 

@@ -108,7 +108,7 @@ The distance in meters between two adjacent cached points. Changing it forces th
 | *Getter* | is_up_vector_enabled()       |
 +----------+------------------------------+
 
-If ``true``, the curve will bake up vectors used for orientation. See :ref:`OrientedPathFollow<class_OrientedPathFollow>`. Changing it forces the cache to be recomputed.
+If ``true``, the curve will bake up vectors used for orientation. This is used when a :ref:`PathFollow.rotation_mode<class_PathFollow_property_rotation_mode>` is set to ``ROTATION_ORIENTED``, see :ref:`PathFollow<class_PathFollow>` for details. Changing it forces the cache to be recomputed.
 
 Method Descriptions
 -------------------
@@ -263,7 +263,7 @@ Sets the position for the vertex ``idx``. If the index is out of bounds, the fun
 
 Sets the tilt angle in radians for the point ``idx``. If the index is out of bounds, the function sends an error to the console.
 
-The tilt controls the rotation along the look-at axis an object traveling the path would have. In the case of a curve controlling a :ref:`PathFollow<class_PathFollow>` or :ref:`OrientedPathFollow<class_OrientedPathFollow>`, this tilt is an offset over the natural tilt the :ref:`PathFollow<class_PathFollow>` or :ref:`OrientedPathFollow<class_OrientedPathFollow>` calculates.
+The tilt controls the rotation along the look-at axis an object traveling the path would have. In the case of a curve controlling a :ref:`PathFollow<class_PathFollow>`, this tilt is an offset over the natural tilt the :ref:`PathFollow<class_PathFollow>` calculates.
 
 .. _class_Curve3D_method_tessellate:
 

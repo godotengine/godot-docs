@@ -137,7 +137,7 @@ Moves the body along the vector ``rel_vec``. The body will stop if it collides. 
 
 Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``KinematicBody2D`` or :ref:`RigidBody2D<class_RigidBody2D>`, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.
 
-``linear_velocity`` is a value in pixels per second. Unlike in for example :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>`, you should *not* multiply it by ``delta`` — this is done by the method.
+``linear_velocity`` is the velocity vector in pixels per second. Unlike in :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>`, you should *not* multiply it by ``delta`` — the physics engine handles applying the velocity.
 
 ``floor_normal`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector2(0, 0)``, everything is considered a wall. This is useful for topdown games.
 
@@ -147,7 +147,7 @@ If the body collides, it will change direction a maximum of ``max_slides`` times
 
 ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 
-Returns the movement that remained when the body stopped. To get more detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody2D_method_get_slide_collision>`.
+Returns the ``linear_velocity`` vector, rotated and/or scaled if a slide collision occurred. To get more detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody2D_method_get_slide_collision>`.
 
 .. _class_KinematicBody2D_method_move_and_slide_with_snap:
 

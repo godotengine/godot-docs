@@ -145,6 +145,8 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 | *Getter* | get_fixed_fps()      |
 +----------+----------------------+
 
+The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the particle system itself.
+
 .. _class_Particles2D_property_fract_delta:
 
 - :ref:`bool<class_bool>` **fract_delta**
@@ -154,6 +156,8 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 +----------+-----------------------------+
 | *Getter* | get_fractional_delta()      |
 +----------+-----------------------------+
+
+If ``true``, results in fractional delta calculation which has a smoother particles display effect. Default value: ``true``
 
 .. _class_Particles2D_property_lifetime:
 
@@ -188,6 +192,8 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 +----------+-----------------------+
 | *Getter* | get_normal_map()      |
 +----------+-----------------------+
+
+Normal map to be used for the ``texture`` property.
 
 .. _class_Particles2D_property_one_shot:
 
@@ -280,7 +286,11 @@ Method Descriptions
 
 - :ref:`Rect2<class_Rect2>` **capture_rect** **(** **)** const
 
+Returns a rectangle containing the positions of all existing particles.
+
 .. _class_Particles2D_method_restart:
 
 - void **restart** **(** **)**
+
+Restarts all the existing particles.
 

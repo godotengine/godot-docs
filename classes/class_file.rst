@@ -224,6 +224,8 @@ Returns ``true`` if the file cursor has reached the end of the file.
 
 Returns ``true`` if the file exists in the given path.
 
+Note that many resources types are imported (e.g. textures or sound files), and that their source asset will not be included in the exported game, as only the imported version is used (in the ``res://.import`` folder). To check for the existence of such resources while taking into account the remapping to their imported location, use :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>`. Typically, using ``File.file_exists`` on an imported resource would work while you are developing in the editor (the source asset is present in ``res://``, but fail when exported).
+
 .. _class_File_method_get_16:
 
 - :ref:`int<class_int>` **get_16** **(** **)** const

@@ -454,6 +454,8 @@ Properties
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`rendering/limits/time/time_rollover_secs<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`                                             |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround<class_ProjectSettings_property_rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround>`   |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`rendering/quality/2d/use_pixel_snap<class_ProjectSettings_property_rendering/quality/2d/use_pixel_snap>`                                                       |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`rendering/quality/depth_prepass/disable_for_vendors<class_ProjectSettings_property_rendering/quality/depth_prepass/disable_for_vendors>`                       |
@@ -1593,6 +1595,14 @@ Max amount of elements renderable in a frame. If more than this are visible per 
 - :ref:`float<class_float>` **rendering/limits/time/time_rollover_secs**
 
 Shaders have a time variable that constantly increases. At some point it needs to be rolled back to zero to avoid numerical errors on shader animations. This setting specifies when.
+
+.. _class_ProjectSettings_property_rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround:
+
+- :ref:`bool<class_bool>` **rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround**
+
+Some Nvidia GPU drivers have a bug, which produces flickering issues for the ``draw_rect`` method, especially as used in :ref:`TileMap<class_TileMap>`. Refer to https://github.com/godotengine/godot/issues/9913 for details.
+
+If ``true``, this option enables a "safe" code path for such Nvidia GPUs, at the cost of performance. This option only impacts the GLES2 rendering backend (so the bug stays if you use GLES3), and only desktop platforms. Default value: ``false``.
 
 .. _class_ProjectSettings_property_rendering/quality/2d/use_pixel_snap:
 

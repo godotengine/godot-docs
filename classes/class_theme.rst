@@ -41,6 +41,8 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`copy_default_theme<class_Theme_method_copy_default_theme>` **(** **)**                                                                                                 |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`copy_theme<class_Theme_method_copy_theme>` **(** :ref:`Theme<class_Theme>` other **)**                                                                                 |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`                     | :ref:`get_color<class_Theme_method_get_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const                                          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_color_list<class_Theme_method_get_color_list>` **(** :ref:`String<class_String>` type **)** const                                                                  |
@@ -150,6 +152,10 @@ Clears :ref:`StyleBox<class_StyleBox>` at ``name`` if Theme has ``type``.
 - void **copy_default_theme** **(** **)**
 
 Sets theme values to a copy of the default theme values.
+
+.. _class_Theme_method_copy_theme:
+
+- void **copy_theme** **(** :ref:`Theme<class_Theme>` other **)**
 
 .. _class_Theme_method_get_color:
 

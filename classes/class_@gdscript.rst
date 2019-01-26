@@ -90,7 +90,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                     | :ref:`len<class_@GDScript_method_len>` **(** :ref:`Variant<class_Variant>` var **)**                                                                                                                                                   |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                 | :ref:`lerp<class_@GDScript_method_lerp>` **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` weight **)**                                                                            |
+| :ref:`Variant<class_Variant>`                             | :ref:`lerp<class_@GDScript_method_lerp>` **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` weight **)**                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`linear2db<class_@GDScript_method_linear2db>` **(** :ref:`float<class_float>` nrg **)**                                                                                                                                           |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -650,13 +650,18 @@ Returns length of Variant ``var``. Length is the character count of String, elem
 
 .. _class_@GDScript_method_lerp:
 
-- :ref:`float<class_float>` **lerp** **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` weight **)**
+- :ref:`Variant<class_Variant>` **lerp** **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` weight **)**
 
 Linearly interpolates between two values by a normalized value.
 
+If the ``from`` and ``to`` arguments are of type :ref:`int<class_int>` or :ref:`float<class_float>`, the return value is a :ref:`float<class_float>`.
+
+If both are of the same vector type (:ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>` or :ref:`Color<class_Color>`), the return value will be of the same type (``lerp`` then calls the vector type's ``linear_interpolate`` method).
+
 ::
 
-    lerp(1, 3, 0.5) # returns 2
+    lerp(0, 4, 0.75) # returns 3.0
+    lerp(Vector2(1, 5), Vector2(3, 2), 0.5) # returns Vector2(2, 3.5)
 
 .. _class_@GDScript_method_linear2db:
 

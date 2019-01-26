@@ -48,6 +48,8 @@ Enumerations
 
 .. _class_PathFollow_constant_ROTATION_XYZ:
 
+.. _class_PathFollow_constant_ROTATION_ORIENTED:
+
 enum **RotationMode**:
 
 - **ROTATION_NONE** = **0** --- Forbids the PathFollow to rotate.
@@ -57,6 +59,8 @@ enum **RotationMode**:
 - **ROTATION_XY** = **2** --- Allows the PathFollow to rotate in both the X, and Y axes.
 
 - **ROTATION_XYZ** = **3** --- Allows the PathFollow to rotate in any axis.
+
+- **ROTATION_ORIENTED** = **4** --- Uses the up vector information in a :ref:`Curve3D<class_Curve3D>` to enforce orientation. This rotation mode requires the :ref:`Path<class_Path>`'s :ref:`Curve3D.up_vector_enabled<class_Curve3D_property_up_vector_enabled>` property to be set to ``true``.
 
 Description
 -----------
