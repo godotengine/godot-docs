@@ -59,6 +59,29 @@ it manually with the following code:
         VERTEX = (EXTRA_MATRIX * (WORLD_MATRIX * vec4(VERTEX, 0.0, 1.0))).xy;
     }
 
+.. note:: ``WORLD_MATRIX`` is actually a modelview matrix. It takes input in local space and transforms it
+          into view space.
+
+In order to get the world space coordinates of a vertex, you have to pass in a custom uniform like so:
+
+::
+  
+    material.set_shader_param("global_transform", get_global_transform())
+
+
+Then, in your vertex shader:
+
+.. code-block:: glsl 
+  
+    uniform mat4 global_transform;
+    varying vec2 world_position;
+  
+    void vertex(){
+        world_position = (global_transform * vec4(VERTEX, 0.0, 1.0)).xy;
+    }
+
+``world_position`` can then be used in either the vertex or fragment functions. 
+
 Other built-ins, such as UV and COLOR, are also passed through to the fragment function if not modified.
 
 For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
@@ -71,11 +94,11 @@ is usually:
 +--------------------------------+----------------------------------------------------------------+
 | Built-in                       | Description                                                    |
 +================================+================================================================+
-| in mat4 **WORLD_MATRIX**       | Image to World transform.                                      |
+| in mat4 **WORLD_MATRIX**       | Image space to view space transform.                           |
 +--------------------------------+----------------------------------------------------------------+
 | in mat4 **EXTRA_MATRIX**       | Extra transform.                                               |
 +--------------------------------+----------------------------------------------------------------+
-| in mat4 **PROJECTION_MATRIX**  | World to view transform.                                       |
+| in mat4 **PROJECTION_MATRIX**  | View space to clip space transform.                            |
 +--------------------------------+----------------------------------------------------------------+
 | in float **TIME**              | Global time, in seconds.                                       |
 +--------------------------------+----------------------------------------------------------------+
