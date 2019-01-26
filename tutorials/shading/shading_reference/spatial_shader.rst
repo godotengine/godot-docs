@@ -64,7 +64,13 @@ Render modes
 +---------------------------------+-----------------------------------------------------------------------+
 | **world_vertex_coords**         | VERTEX/NORMAL/etc. are modified in world coordinates instead of local.|
 +---------------------------------+-----------------------------------------------------------------------+
+| **ensure_correct_normals**      | Use when non-uniform scale is applied to mesh.                        |
++---------------------------------+-----------------------------------------------------------------------+
 | **vertex_lighting**             | Use vertex-based lighting.                                            |
++---------------------------------+-----------------------------------------------------------------------+
+| **shadows_disabled**            | Disable computing shaders in shader.                                  |
++---------------------------------+-----------------------------------------------------------------------+
+| **ambient_light_disabled**      | Disable contribution from ambient light and radiance map.             |
 +---------------------------------+-----------------------------------------------------------------------+
 
 Vertex built-ins
@@ -154,6 +160,9 @@ shader, this value can be used as desired.
 +------------------------------------+-------------------------------------------------------+
 | out float **ROUGHNESS**            | Roughness for vertex lighting.                        |
 +------------------------------------+-------------------------------------------------------+
+| in float **OUTPUT_IS_SRGB**        | True when calculations happen in sRGB color space     |
+|                                    | (true in GLES2, false in GLES3).                      |
++------------------------------------+-------------------------------------------------------+
 
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
@@ -171,6 +180,8 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **INV_CAMERA_MATRIX**     | World space to view space transform.                                                             |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
+| in mat4 **CAMERA_MATRIX**         | View space to world space transform.                                                             |
++-----------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **PROJECTION_MATRIX**     | View space to clip space transform.                                                              |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **INV_PROJECTION_MATRIX** | Clip space to view space transform.                                                              |
@@ -180,6 +191,8 @@ these properties, and if you don't write to them, Godot will optimize away the c
 | in vec2 **VIEWPORT_SIZE**         | Size of viewport (in pixels).                                                                    |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VERTEX**                | Vertex that comes from vertex function (default, in view space).                                 |
++-----------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec3 **VIEW**                  | Vector from camera to fragment position (in view space).                                         |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | in bool **FRONT_FACING**          | True if current face is front face.                                                              |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
@@ -243,6 +256,9 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ALPHA_SCISSOR**       | If written to, values below a certain amount of alpha are discarded.                             |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
+| in float **OUTPUT_IS_SRGB**       | True when calculations happen in sRGB color space (true in GLES2, false in GLES3).               |
++-----------------------------------+--------------------------------------------------------------------------------------------------+
+
 
 Light built-ins
 ^^^^^^^^^^^^^^^
@@ -258,40 +274,45 @@ means no light is processed.
 The light function is called for every light in every pixel. It is called within a loop for
 each light type. 
 
-+-----------------------------------+------------------------------------------+
-| Built-in                          | Description                              |
-+===================================+==========================================+
-| in vec4 **FRAGCOORD**             | Fragment coordinate, pixel adjusted.     |
-+-----------------------------------+------------------------------------------+
-| in mat4 **WORLD_MATRIX**          | Model space to world space transform.    |
-+-----------------------------------+------------------------------------------+
-| in mat4 **INV_CAMERA_MATRIX**     | World space to view space transform.     |
-+-----------------------------------+------------------------------------------+
-| in mat4 **PROJECTION_MATRIX**     | View space to clip space transform.      |
-+-----------------------------------+------------------------------------------+
-| in mat4 **INV_PROJECTION_MATRIX** | Clip space to view space transform.      |
-+-----------------------------------+------------------------------------------+
-| in float **TIME**                 | Elapsed total time in seconds.           |
-+-----------------------------------+------------------------------------------+
-| in vec2 **VIEWPORT_SIZE**         | Size of viewport (in pixels).            |
-+-----------------------------------+------------------------------------------+
-| in vec3 **NORMAL**                | Normal vector, in view space.            |
-+-----------------------------------+------------------------------------------+
-| in vec3 **VIEW**                  | View vector, in view space.              |
-+-----------------------------------+------------------------------------------+
-| in vec3 **LIGHT**                 | Light Vector, in view space.             |
-+-----------------------------------+------------------------------------------+
-| in vec3 **LIGHT_COLOR**           | Color of light multiplied by energy.     |
-+-----------------------------------+------------------------------------------+
-| in vec3 **ATTENUATION**           | Attenuation based on distance or shadow. |
-+-----------------------------------+------------------------------------------+
-| in vec3 **ALBEDO**                | Base albedo.                             |
-+-----------------------------------+------------------------------------------+
-| in vec3 **TRANSMISSION**          | Transmission mask.                       |
-+-----------------------------------+------------------------------------------+
-| in float **ROUGHNESS**            | Roughness.                               |
-+-----------------------------------+------------------------------------------+
-| out vec3 **DIFFUSE_LIGHT**        | Diffuse light result.                    |
-+-----------------------------------+------------------------------------------+
-| out vec3 **SPECULAR_LIGHT**       | Specular light result.                   |
-+-----------------------------------+------------------------------------------+
++-----------------------------------+---------------------------------------------+
+| Built-in                          | Description                                 |
++===================================+=============================================+
+| in vec4 **FRAGCOORD**             | Fragment coordinate, pixel adjusted.        |
++-----------------------------------+---------------------------------------------+
+| in mat4 **WORLD_MATRIX**          | Model space to world space transform.       |
++-----------------------------------+---------------------------------------------+
+| in mat4 **INV_CAMERA_MATRIX**     | World space to view space transform.        |
++-----------------------------------+---------------------------------------------+
+| in mat4 **CAMERA_MATRIX**         | View space to world space transform.        |
++-----------------------------------+---------------------------------------------+
+| in mat4 **PROJECTION_MATRIX**     | View space to clip space transform.         |
++-----------------------------------+---------------------------------------------+
+| in mat4 **INV_PROJECTION_MATRIX** | Clip space to view space transform.         |
++-----------------------------------+---------------------------------------------+
+| in float **TIME**                 | Elapsed total time in seconds.              |
++-----------------------------------+---------------------------------------------+
+| in vec2 **VIEWPORT_SIZE**         | Size of viewport (in pixels).               |
++-----------------------------------+---------------------------------------------+
+| in vec3 **NORMAL**                | Normal vector, in view space.               |
++-----------------------------------+---------------------------------------------+
+| in vec3 **VIEW**                  | View vector, in view space.                 |
++-----------------------------------+---------------------------------------------+
+| in vec3 **LIGHT**                 | Light Vector, in view space.                |
++-----------------------------------+---------------------------------------------+
+| in vec3 **LIGHT_COLOR**           | Color of light multiplied by energy.        |
++-----------------------------------+---------------------------------------------+
+| in vec3 **ATTENUATION**           | Attenuation based on distance or shadow.    |
++-----------------------------------+---------------------------------------------+
+| in vec3 **ALBEDO**                | Base albedo.                                |
++-----------------------------------+---------------------------------------------+
+| in vec3 **TRANSMISSION**          | Transmission mask.                          |
++-----------------------------------+---------------------------------------------+
+| in float **ROUGHNESS**            | Roughness.                                  |
++-----------------------------------+---------------------------------------------+
+| out vec3 **DIFFUSE_LIGHT**        | Diffuse light result.                       |
++-----------------------------------+---------------------------------------------+
+| out vec3 **SPECULAR_LIGHT**       | Specular light result.                      |
++-----------------------------------+---------------------------------------------+
+| in float **OUTPUT_IS_SRGB**       | True when calculations happen in sRGB       |
+|                                   | color space (true in GLES2, false in GLES3).|
++-----------------------------------+---------------------------------------------+
