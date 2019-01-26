@@ -51,7 +51,12 @@ It will connect and fetch a website.
             # Keep polling for as long as the request is being processed.
             http.poll()
             print("Requesting...")
-            OS.delay_msec(500)
+            if not OS.has_feature("web"):
+                OS.delay_msec(500)
+            else:
+                # Synchronous HTTP requests are not supported on the web,
+                # so wait for the next main loop iteration.
+                yield(Engine.get_main_loop(), "idle_frame")
 
         assert(http.get_status() == HTTPClient.STATUS_BODY or http.get_status() == HTTPClient.STATUS_CONNECTED) # Make sure request finished well.
 

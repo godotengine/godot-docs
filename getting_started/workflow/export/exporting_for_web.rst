@@ -4,12 +4,40 @@ Exporting for the Web
 =====================
 
 HTML5 export allows publishing games made in Godot Engine to the browser.
-This requires support for the recent technologies `WebAssembly
-<https://webassembly.org/>`__ and `WebGL 2.0 <https://www.khronos.org/webgl/>`__
-in the user's browser. **Firefox** and **Chromium** (Chrome, Opera) are
-the most popular supported browsers, **Safari** and **Edge** do not work yet.
-On **iOS**, all browsers must be based on WebKit (i.e. Safari), so they will also
-not work.
+This requires support for `WebAssembly
+<https://webassembly.org/>`__ and `WebGL <https://www.khronos.org/webgl/>`__
+in the user's browser.
+
+.. Important::
+ Use the browser-integrated developer console, usually opened with :kbd:`F12`,
+ to view **debug information** like JavaScript, engine, and WebGL errors.
+
+.. Attention::
+ Many browsers, Chromium-based browsers specifically, will not load exported
+ projects when **opened locally** per ``file://`` protocol. To get around this,
+ use a local server.
+
+ .. Tip::
+  Python offers an easy method to start a local server. Use
+  ``python -m SimpleHTTPServer`` with Python 2 or ``python -m http.server`` with
+  Python 3 to serve the current working directory at ``http://localhost:8000``.
+
+WebGL 2
+-------
+
+Until the *OpenGL ES 3* renderer is removed from Godot in favor of *Vulkan*,
+HTML5 export uses *WebGL 2* when the *GLES3* option selected.
+
+.. Warning::
+ Usage of WebGL 2 is not recommended due to its expected removal from Godot
+ without replacement.
+
+WebGL 2 is not supported in all browsers. **Firefox** and
+**Chromium** (Chrome, Opera) are the most popular supported browsers,
+**Safari** and **Edge** do not work. On **iOS**, all browsers are based on
+WebKit (i.e. Safari), so they will also not work.
+
+Godot's WebGL 2 renderer has issues with 3D and is no longer maintained.
 
 Limitations
 -----------
@@ -17,13 +45,6 @@ Limitations
 For security and privacy reasons, many features that work effortlessly on
 native platforms are more complicated on the web platform. Following is a list
 of limitations you should be aware of when porting a Godot game to the web.
-
-Exported ``.html`` file must not be reused
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-On export, several text placeholders are replaced in the **generated HTML
-file** specifically for the given export options. It must not be reused in
-further exports.
 
 Using cookies for data persistence
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,26 +61,51 @@ cases.
 Full screen and mouse capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Browsers do not allow arbitrarily **entering full screen** at any time. The same
-goes for **capturing the cursor**. Instead, these actions have to occur as a
-response to a JavaScript input event. In Godot, this is most easily done by
-entering full screen from within an input callback such as ``_input`` or
-``_unhandled_input``.
+Browsers do not allow arbitrarily **entering full screen**. The same goes for
+**capturing the cursor**. Instead, these actions have to occur as a response to
+a JavaScript input event. In Godot, this means entering full screen from within
+a pressed input event callback such as ``_input`` or ``_unhandled_input``.
+Querying the :ref:`class_Input` singleton is not sufficient, the relevant
+input event must currently be active.
 
-For the same reason, the full screen project setting is ignored.
+For the same reason, the full screen project setting doesn't work unless the
+engine is started from within a valid input event handler. This requires
+:ref:`customization of the HTML page <doc_customizing_html5_shell>`.
 
-HTTPClient
-~~~~~~~~~~
+Audio autoplay
+~~~~~~~~~~~~~~
 
-The ``HTTPClient`` implementation for the HTML5 platform has several
-restrictions:
+Chrome restricts how websites may play audio. It may be necessary for the
+player to click or tap or press a key to enable audio.
+
+.. seealso::
+ Google offers additional information about their `Web Audio autoplay policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
+
+:ref:`class_HTTPClient` and :ref:`class_HTTPRequest`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The HTTP classes have several restrictions on the HTML5 platform:
 
  -  Accessing or changing the ``StreamPeer`` is not possible
- -  Blocking mode is not available
+ -  Threaded/Blocking mode is not available
  -  Cannot progress more than once per frame, so polling in a loop will freeze
  -  No chunked responses
  -  Host verification cannot be disabled
- -  Subject to `same-origin policy <https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy>`_
+ -  Subject to `same-origin policy <https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy>`__
+
+Exported ``.html`` file must not be reused
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On export, several text placeholders are replaced in the **generated HTML
+file** specifically for the given export options. It must not be reused in
+further exports.
+
+Boot splash is not displayed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The default HTML page does not display the boot splash while loading. However,
+the image is exported as a PNG file, so :ref:`custom HTML pages <doc_customizing_html5_shell>`
+can display it.
 
 Unimplemented functionality
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,23 +114,14 @@ The following functionality is currently unavailable on the HTML5 platform:
 
  -  Threads
  -  GDNative
+ -  C#
  -  Clipboard synchronisation between engine and operating system
- -  Networking other than ``HTTPClient``
+ -  Networking other than :ref:`class_HTTPClient` and :ref:`class_WebSocketClient`
 
-Check the `list of open HTML5 issues on Github <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`_
-to see if functionality you're interested in has an issue yet. If not, open one
-to communicate your interest.
-
-Starting exported games from the local file system
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Many browsers, Chromium-based browsers specifically, will not load exported
-projects when **opened locally** per ``file://`` protocol. To get around this,
-use a local server.
-
-Python offers an easy method for this; using ``python -m SimpleHTTPServer``
-with Python 2 or ``python -m http.server`` with Python 3 will serve the current
-working directory on ``http://localhost:8000``.
+.. Tip::
+ Check the `list of open HTML5 issues on Github <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`__
+ to see if functionality you're interested in has an issue yet. If not, open
+ one to communicate your interest.
 
 Serving the files
 -----------------
@@ -97,8 +134,7 @@ The generated ``.html`` file can be used as ``DirectoryIndex`` in Apache
 servers and can be renamed to e.g. ``index.html`` at any time, its name is
 never depended on by default.
 
-The HTML page is designed to fit the game perfectly without cutting off
-parts of the canvas when the browser window is scaled to the game's dimensions.
+The HTML page draws the game at maximum size within the browser window.
 This way it can be inserted into an ``<iframe>`` with the game's size, as is
 common on most web game hosting sites.
 
@@ -111,8 +147,12 @@ the default HTML page, but is included for
 :ref:`custom HTML pages <doc_customizing_html5_shell>`.
 
 The ``.pck`` file is binary, usually delivered with the MIME-type
-``application/octet-stream``. The ``.wasm`` file is delivered as
-``application/wasm``.
+:mimetype:`application/octet-stream`. The ``.wasm`` file is delivered as
+:mimetype:`application/wasm`.
+
+.. Caution::
+ Delivering the WebAssembly module (``.wasm``) with a MIME-type other than
+ :mimetype:`application/wasm` can prevent some start-up optimizations.
 
 Delivering the files with server-side compression is recommended especially for
 the ``.pck`` and ``.wasm`` files, which are usually large in size.
@@ -133,18 +173,12 @@ the default HTML page. See :ref:`doc_customizing_html5_shell`.
 HTML page. This allows to, for example, load webfonts and third-party
 JavaScript APIs, include CSS, or run JavaScript code.
 
-Turning on **Export with Debug** when exporting will, in addition to enabling
-various debug features of the engine, display a debug output below the canvas
-when using the default HTML page, displaying JavaScript and engine errors.
-You can also use the browser-integrated developer console, usually opened with
-the F12 key, which often shows more information, including WebGL errors.
-
 .. _doc_javascript_eval:
 
 Calling JavaScript from script
 ------------------------------
 
-In web builds, the ``JavaScript`` singleton is implemented. If offers a single
+In web builds, the ``JavaScript`` singleton is implemented. It offers a single
 method called ``eval`` that works similarly to the JavaScript function of the
 same name. It takes a string as an argument and executes it as JavaScript code.
 This allows interacting with the browser in ways not possible with script
@@ -179,9 +213,15 @@ also return ``null``.  The availability of the singleton can be checked with the
 
     func my_func3():
         if OS.has_feature('JavaScript'):
-            JavaScript.eval("console.log('The JavaScript singleton is available')")
+            JavaScript.eval("""
+                console.log('The JavaScript singleton is available')
+            """)
         else:
             print("The JavaScript singleton is NOT available")
+
+.. Tip::
+ GDScript's multi-line strings, surrounded by 3 quotes ``"""`` as in
+ ``my_func3()`` above, are useful to keep JavaScript code readable.
 
 The ``eval`` method also accepts a second, optional Boolean argument, which
 specifies whether to execute the code in the global execution context,
