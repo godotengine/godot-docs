@@ -251,7 +251,7 @@ With only five ``Control`` nodes, our first bar is ready to use.
    it? That's thanks to our robust container setup.
 
 Design the bomb and emerald counters
-----------------------------------
+------------------------------------
 
 The bomb and emerald counters are like the bar's ``Count`` node. So we'll
 duplicate it and use it as a template.
@@ -517,7 +517,7 @@ as well.
     hundred pixels wide, so both gauges will align perfectly.
 
 Prepare the bomb and emerald counters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let us now take care of the counters. Go to
 ``Scene -> New Inherited Scene`` and select the ``Counter.tscn`` as a
