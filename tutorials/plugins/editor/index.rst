@@ -7,3 +7,4 @@ Editor plugins
 
    making_plugins
    import_plugins
+   spatial_gizmos
