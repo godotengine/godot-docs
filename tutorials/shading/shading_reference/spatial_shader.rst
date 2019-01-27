@@ -160,7 +160,7 @@ shader, this value can be used as desired.
 +------------------------------------+-------------------------------------------------------+
 | out float **ROUGHNESS**            | Roughness for vertex lighting.                        |
 +------------------------------------+-------------------------------------------------------+
-| in float **OUTPUT_IS_SRGB**        | True when calculations happen in sRGB color space     |
+| in bool **OUTPUT_IS_SRGB**         | True when calculations happen in sRGB color space     |
 |                                    | (true in GLES2, false in GLES3).                      |
 +------------------------------------+-------------------------------------------------------+
 
@@ -256,7 +256,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ALPHA_SCISSOR**       | If written to, values below a certain amount of alpha are discarded.                             |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| in float **OUTPUT_IS_SRGB**       | True when calculations happen in sRGB color space (true in GLES2, false in GLES3).               |
+| in bool **OUTPUT_IS_SRGB**        | True when calculations happen in sRGB color space (true in GLES2, false in GLES3).               |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 
 
@@ -313,6 +313,6 @@ each light type.
 +-----------------------------------+---------------------------------------------+
 | out vec3 **SPECULAR_LIGHT**       | Specular light result.                      |
 +-----------------------------------+---------------------------------------------+
-| in float **OUTPUT_IS_SRGB**       | True when calculations happen in sRGB       |
+| in bool **OUTPUT_IS_SRGB**        | True when calculations happen in sRGB       |
 |                                   | color space (true in GLES2, false in GLES3).|
 +-----------------------------------+---------------------------------------------+
