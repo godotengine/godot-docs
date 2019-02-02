@@ -195,7 +195,7 @@ load function:
             # Firstly, we need to create the object and add it to the tree and set its position.
             var new_object = load(current_line["filename"]).instance()
             get_node(current_line["parent"]).add_child(new_object)
-            new_object.position = Vector2(current_line["pos_x"], current_line["pos_y"]))
+            new_object.position = Vector2(current_line["pos_x"], current_line["pos_y"])
             # Now we set the remaining variables.
             for i in current_line.keys():
                 if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
