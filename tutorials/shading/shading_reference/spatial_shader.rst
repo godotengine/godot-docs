@@ -117,52 +117,52 @@ is usually:
 This allows you to easily adjust the shader to a particle system using default particles material. When writing a custom particles
 shader, this value can be used as desired.
 
-+------------------------------------+-------------------------------------------------------+
-| Built-in                           | Description                                           |
-+====================================+=======================================================+
-| out mat4 **WORLD_MATRIX**          | Model space to world space transform.                 |
-+------------------------------------+-------------------------------------------------------+
-| in mat4 **INV_CAMERA_MATRIX**      | World space to view space transform.                  |
-+------------------------------------+-------------------------------------------------------+
-| out mat4 **PROJECTION_MATRIX**     | View space to clip space transform.                   |
-+------------------------------------+-------------------------------------------------------+
-| in mat4 **CAMERA_MATRIX**          | View space to world space transform.                  |
-+------------------------------------+-------------------------------------------------------+
-| out mat4 **MODELVIEW_MATRIX**      | Model space to view space transform (use if possible).|
-+------------------------------------+-------------------------------------------------------+
-| out mat4 **INV_PROJECTION_MATRIX** | Clip space to view space transform.                   |
-+------------------------------------+-------------------------------------------------------+
-| in float **TIME**                  | Elapsed total time in seconds.                        |
-+------------------------------------+-------------------------------------------------------+
-| in vec2 **VIEWPORT_SIZE**          | Size of viewport (in pixels).                         |
-+------------------------------------+-------------------------------------------------------+
-| out vec3 **VERTEX**                | Vertex in local coordinates.                          |
-+------------------------------------+-------------------------------------------------------+
-| out vec3 **NORMAL**                | Normal in local coordinates.                          |
-+------------------------------------+-------------------------------------------------------+
-| out vec3 **TANGENT**               | Tangent in local coordinates.                         |
-+------------------------------------+-------------------------------------------------------+
-| out vec3 **BINORMAL**              | Binormal in local coordinates.                        |
-+------------------------------------+-------------------------------------------------------+
-| out vec2 **UV**                    | UV main channel.                                      |
-+------------------------------------+-------------------------------------------------------+
-| out vec2 **UV2**                   | UV secondary channel.                                 |
-+------------------------------------+-------------------------------------------------------+
-| out vec4 **COLOR**                 | Color from vertices.                                  |
-+------------------------------------+-------------------------------------------------------+
-| out float **POINT_SIZE**           | Point size for point rendering.                       |
-+------------------------------------+-------------------------------------------------------+
-| out vec4  **POSITION**             | If written to, overrides final vertex position.       |
-+------------------------------------+-------------------------------------------------------+
-| in int **INSTANCE_ID**             | Instance ID for instancing.                           |
-+------------------------------------+-------------------------------------------------------+
-| in vec4 **INSTANCE_CUSTOM**        | Instance custom data (for particles, mostly).         |
-+------------------------------------+-------------------------------------------------------+
-| out float **ROUGHNESS**            | Roughness for vertex lighting.                        |
-+------------------------------------+-------------------------------------------------------+
-| in bool **OUTPUT_IS_SRGB**         | True when calculations happen in sRGB color space     |
-|                                    | (true in GLES2, false in GLES3).                      |
-+------------------------------------+-------------------------------------------------------+
++--------------------------------------+-------------------------------------------------------+
+| Built-in                             | Description                                           |
++======================================+=======================================================+
+| inout mat4 **WORLD_MATRIX**          | Model space to world space transform.                 |
++--------------------------------------+-------------------------------------------------------+
+| in mat4 **INV_CAMERA_MATRIX**        | World space to view space transform.                  |
++--------------------------------------+-------------------------------------------------------+
+| inout mat4 **PROJECTION_MATRIX**     | View space to clip space transform.                   |
++--------------------------------------+-------------------------------------------------------+
+| in mat4 **CAMERA_MATRIX**            | View space to world space transform.                  |
++--------------------------------------+-------------------------------------------------------+
+| inout mat4 **MODELVIEW_MATRIX**      | Model space to view space transform (use if possible).|
++--------------------------------------+-------------------------------------------------------+
+| inout mat4 **INV_PROJECTION_MATRIX** | Clip space to view space transform.                   |
++--------------------------------------+-------------------------------------------------------+
+| in float **TIME**                    | Elapsed total time in seconds.                        |
++--------------------------------------+-------------------------------------------------------+
+| in vec2 **VIEWPORT_SIZE**            | Size of viewport (in pixels).                         |
++--------------------------------------+-------------------------------------------------------+
+| inout vec3 **VERTEX**                | Vertex in local coordinates.                          |
++--------------------------------------+-------------------------------------------------------+
+| inout vec3 **NORMAL**                | Normal in local coordinates.                          |
++--------------------------------------+-------------------------------------------------------+
+| inout vec3 **TANGENT**               | Tangent in local coordinates.                         |
++--------------------------------------+-------------------------------------------------------+
+| inout vec3 **BINORMAL**              | Binormal in local coordinates.                        |
++--------------------------------------+-------------------------------------------------------+
+| inout vec2 **UV**                    | UV main channel.                                      |
++--------------------------------------+-------------------------------------------------------+
+| inout vec2 **UV2**                   | UV secondary channel.                                 |
++--------------------------------------+-------------------------------------------------------+
+| inout vec4 **COLOR**                 | Color from vertices.                                  |
++--------------------------------------+-------------------------------------------------------+
+| inout float **POINT_SIZE**           | Point size for point rendering.                       |
++--------------------------------------+-------------------------------------------------------+
+| out vec4  **POSITION**               | If written to, overrides final vertex position.       |
++--------------------------------------+-------------------------------------------------------+
+| in int **INSTANCE_ID**               | Instance ID for instancing.                           |
++--------------------------------------+-------------------------------------------------------+
+| in vec4 **INSTANCE_CUSTOM**          | Instance custom data (for particles, mostly).         |
++--------------------------------------+-------------------------------------------------------+
+| out float **ROUGHNESS**              | Roughness for vertex lighting.                        |
++--------------------------------------+-------------------------------------------------------+
+| in bool **OUTPUT_IS_SRGB**           | True when calculations happen in sRGB color space     |
+|                                      | (true in GLES2, false in GLES3).                      |
++--------------------------------------+-------------------------------------------------------+
 
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
@@ -196,11 +196,11 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | in bool **FRONT_FACING**          | True if current face is front face.                                                              |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec3 **NORMAL**               | Normal that comes from vertex function (default, in view space).                                 |
+| inout vec3 **NORMAL**             | Normal that comes from vertex function (default, in view space).                                 |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec3 **TANGENT**              | Tangent that comes from vertex function.                                                         |
+| inout vec3 **TANGENT**            | Tangent that comes from vertex function.                                                         |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec3 **BINORMAL**             | Binormal that comes from vertex function.                                                        |
+| inout vec3 **BINORMAL**           | Binormal that comes from vertex function.                                                        |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **NORMALMAP**            | Set normal here if reading normal from a texture instead of NORMAL.                              |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
