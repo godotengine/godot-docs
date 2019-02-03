@@ -68,7 +68,7 @@ Emitted when the server requests a clean close. You should keep polling until yo
 Description
 -----------
 
-This class implements a WebSocket client compatible with any RFC 6455 complaint WebSocket server.
+This class implements a WebSocket client compatible with any RFC 6455 compliant WebSocket server.
 
 This client can be optionally used as a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
