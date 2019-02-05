@@ -238,7 +238,7 @@ the following underneath the ``_ready()`` function:
 
     public override void _Ready()
     {
-        GetNode("Button")
+        GetNode("Button");
     }
 
 Next, write a function which will be called when the button is pressed:
