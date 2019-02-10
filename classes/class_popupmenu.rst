@@ -445,7 +445,7 @@ Remember this is just cosmetic and you have to add the logic for checking/unchec
 
 - void **set_item_as_separator** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**
 
-Mark the item at index "idx" as a separator, which means that it would be displayed as a mere line.
+Mark the item at index "idx" as a separator, which means that it would be displayed as a line.
 
 .. _class_PopupMenu_method_set_item_checked:
 

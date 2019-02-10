@@ -525,7 +525,7 @@ Returns the image's raw data.
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
-Returns the image’s format. See ``FORMAT_*`` constants.
+Returns the image's format. See ``FORMAT_*`` constants.
 
 .. _class_Image_method_get_height:
 
