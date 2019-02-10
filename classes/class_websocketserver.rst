@@ -112,7 +112,9 @@ Start listening on the given port.
 
 You can specify the desired subprotocols via the "protocols" array. If the list empty (default), "binary" will be used.
 
-You can use this server as a network peer for :ref:`MultiplayerAPI<class_MultiplayerAPI>` by passing ``true`` as ``gd_mp_api``. Note: :ref:`data_received<class_WebSocketServer_signal_data_received>` will not be fired and clients other than Godot will not work in this case.
+If ``true`` is passed as ``gd_mp_api``, the server will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections from non Godot clients will not work, and :ref:`data_received<class_WebSocketServer_signal_data_received>` will not be emitted.
+
+If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.), on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(ID)`` to communicate with the peer with given ``ID`` (e.g. ``get_peer(ID).get_available_packet_count``).
 
 .. _class_WebSocketServer_method_stop:
 

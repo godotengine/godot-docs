@@ -61,9 +61,9 @@ Enumerations
 
 enum **TransformFormat**:
 
-- **TRANSFORM_2D** = **0**
+- **TRANSFORM_2D** = **0** --- Use this when using 2D transforms.
 
-- **TRANSFORM_3D** = **1**
+- **TRANSFORM_3D** = **1** --- Use this when using 3D transforms.
 
 .. _enum_MultiMesh_ColorFormat:
 
@@ -75,11 +75,11 @@ enum **TransformFormat**:
 
 enum **ColorFormat**:
 
-- **COLOR_NONE** = **0**
+- **COLOR_NONE** = **0** --- Use when you are not using per-instance :ref:`Color<class_Color>`\ s.
 
-- **COLOR_8BIT** = **1**
+- **COLOR_8BIT** = **1** --- Compress :ref:`Color<class_Color>` data into 8 bits when passing to shader. This uses less memory and can be faster, but the :ref:`Color<class_Color>` loses precision.
 
-- **COLOR_FLOAT** = **2**
+- **COLOR_FLOAT** = **2** --- The :ref:`Color<class_Color>` passed into :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>` will use 4 floats. Use this for highest precision :ref:`Color<class_Color>`.
 
 .. _enum_MultiMesh_CustomDataFormat:
 
@@ -91,18 +91,18 @@ enum **ColorFormat**:
 
 enum **CustomDataFormat**:
 
-- **CUSTOM_DATA_NONE** = **0**
+- **CUSTOM_DATA_NONE** = **0** --- Use when you are not using per-instance custom data.
 
-- **CUSTOM_DATA_8BIT** = **1**
+- **CUSTOM_DATA_8BIT** = **1** --- Compress custom_data into 8 bits when passing to shader. This uses less memory and can be faster, but loses precision.
 
-- **CUSTOM_DATA_FLOAT** = **2**
+- **CUSTOM_DATA_FLOAT** = **2** --- The :ref:`Color<class_Color>` passed into :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>` will use 4 floats. Use this for highest precision.
 
 Description
 -----------
 
-MultiMesh provides low level mesh instancing. If the amount of :ref:`Mesh<class_Mesh>` instances needed goes from hundreds to thousands (and most need to be visible at close proximity) creating such a large amount of :ref:`MeshInstance<class_MeshInstance>` nodes may affect performance by using too much CPU or video memory.
+MultiMesh provides low level mesh instancing. Drawing thousands of :ref:`MeshInstance<class_MeshInstance>` nodes can be slow because each object is submitted to the GPU to be drawn individually.
 
-For this case a MultiMesh becomes very useful, as it can draw thousands of instances with little API overhead.
+MultiMesh is much faster because it can draw thousands of instances with a single draw call, resulting in less API overhead.
 
 As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object).
 
@@ -121,6 +121,8 @@ Property Descriptions
 | *Getter* | get_color_format()      |
 +----------+-------------------------+
 
+Format of colors in color array that gets passed to shader.
+
 .. _class_MultiMesh_property_custom_data_format:
 
 - :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` **custom_data_format**
@@ -130,6 +132,8 @@ Property Descriptions
 +----------+-------------------------------+
 | *Getter* | get_custom_data_format()      |
 +----------+-------------------------------+
+
+Format of custom data in custom data array that gets passed to shader.
 
 .. _class_MultiMesh_property_instance_count:
 
@@ -141,6 +145,8 @@ Property Descriptions
 | *Getter* | get_instance_count()      |
 +----------+---------------------------+
 
+Number of instances that will get drawn.
+
 .. _class_MultiMesh_property_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**
@@ -151,6 +157,8 @@ Property Descriptions
 | *Getter* | get_mesh()      |
 +----------+-----------------+
 
+Mesh to be drawn.
+
 .. _class_MultiMesh_property_transform_format:
 
 - :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **transform_format**
@@ -160,6 +168,8 @@ Property Descriptions
 +----------+-----------------------------+
 | *Getter* | get_transform_format()      |
 +----------+-----------------------------+
+
+Format of transform used to transform mesh, either 2D or 3D.
 
 Method Descriptions
 -------------------
@@ -180,6 +190,8 @@ Get the color of a specific instance.
 
 - :ref:`Color<class_Color>` **get_instance_custom_data** **(** :ref:`int<class_int>` instance **)** const
 
+Return the custom data that has been set for a specific instance.
+
 .. _class_MultiMesh_method_get_instance_transform:
 
 - :ref:`Transform<class_Transform>` **get_instance_transform** **(** :ref:`int<class_int>` instance **)** const
@@ -195,6 +207,8 @@ Set the color of a specific instance.
 .. _class_MultiMesh_method_set_instance_custom_data:
 
 - void **set_instance_custom_data** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**
+
+Set custom data for a specific instance. Although :ref:`Color<class_Color>` is used, it is just a container for 4 numbers.
 
 .. _class_MultiMesh_method_set_instance_transform:
 

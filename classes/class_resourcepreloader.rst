@@ -36,7 +36,7 @@ Methods
 Description
 -----------
 
-Resource Preloader Node. This node is used to preload sub-resources inside a scene, so when the scene is loaded all the resources are ready to use and be retrieved from here.
+This node is used to preload sub-resources inside a scene, so when the scene is loaded, all the resources are ready to use and can be retrieved from the preloader.
 
 Method Descriptions
 -------------------
@@ -45,33 +45,35 @@ Method Descriptions
 
 - void **add_resource** **(** :ref:`String<class_String>` name, :ref:`Resource<class_Resource>` resource **)**
 
+Adds a resource to the preloader with the given ``name``. If a resource with the given ``name`` already exists, the new resource will be renamed to "``name`` N" where N is an incrementing number starting from 2.
+
 .. _class_ResourcePreloader_method_get_resource:
 
 - :ref:`Resource<class_Resource>` **get_resource** **(** :ref:`String<class_String>` name **)** const
 
-Return the resource given a text-id.
+Returns the resource associated to ``name``.
 
 .. _class_ResourcePreloader_method_get_resource_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_resource_list** **(** **)** const
 
-Return the list of resources inside the preloader.
+Returns the list of resources inside the preloader.
 
 .. _class_ResourcePreloader_method_has_resource:
 
 - :ref:`bool<class_bool>` **has_resource** **(** :ref:`String<class_String>` name **)** const
 
-Return true if the preloader has a given resource.
+Returns true if the preloader contains a resource associated to ``name``.
 
 .. _class_ResourcePreloader_method_remove_resource:
 
 - void **remove_resource** **(** :ref:`String<class_String>` name **)**
 
-Remove a resource from the preloader by text id.
+Removes the resource associated to ``name`` from the preloader.
 
 .. _class_ResourcePreloader_method_rename_resource:
 
 - void **rename_resource** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)**
 
-Rename a resource inside the preloader, from a text-id to a new text-id.
+Renames a resource inside the preloader from ``name`` to ``newname``.
 

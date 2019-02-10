@@ -369,10 +369,21 @@ enum **CompressSource**:
 
 - **COMPRESS_SOURCE_NORMAL** = **2**
 
+Constants
+---------
+
+.. _class_Image_constant_MAX_WIDTH:
+
+.. _class_Image_constant_MAX_HEIGHT:
+
+- **MAX_WIDTH** = **16384** --- The maximal width allowed for ``Image`` resources.
+
+- **MAX_HEIGHT** = **16384** --- The maximal height allowed for ``Image`` resources.
+
 Description
 -----------
 
-Native image datatype. Contains image data, which can be converted to a :ref:`Texture<class_Texture>`, and several functions to interact with it. The maximum width and height for an ``Image`` is 16384 pixels.
+Native image datatype. Contains image data, which can be converted to a :ref:`Texture<class_Texture>`, and several functions to interact with it. The maximum width and height for an ``Image`` are :ref:`MAX_WIDTH<class_Image_constant_MAX_WIDTH>` and :ref:`MAX_HEIGHT<class_Image_constant_MAX_HEIGHT>`.
 
 Property Descriptions
 ---------------------

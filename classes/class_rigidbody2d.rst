@@ -449,7 +449,7 @@ Applies a directional impulse without affecting rotation.
 
 - void **apply_impulse** **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` impulse **)**
 
-Applies a positioned impulse to the body (which will be affected by the body mass and shape). This is the equivalent of hitting a billiard ball with a cue: a force that is applied instantaneously. Both the impulse and the offset from the body origin are in global coordinates.
+Applies a positioned impulse to the body. An impulse is time independent! Applying an impulse every frame would result in a framerate dependent force. For this reason it should only be used when simulating one-time impacts (use the "_force" functions otherwise). The position uses the rotation of the global coordinate system, but is centered at the object's origin.
 
 .. _class_RigidBody2D_method_apply_torque_impulse:
 

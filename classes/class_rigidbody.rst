@@ -488,7 +488,7 @@ This is equivalent to ``apply_impulse(Vector3(0,0,0), impulse)``.
 
 - void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)**
 
-Applies a positioned impulse which will be affected by the body mass and shape. This is the equivalent of hitting a billiard ball with a cue: a force that is applied once, and only once. Both the impulse and the position are in global coordinates, and the position is relative to the object's origin.
+Applies a positioned impulse to the body. An impulse is time independent! Applying an impulse every frame would result in a framerate dependent force. For this reason it should only be used when simulating one-time impacts. The position uses the rotation of the global coordinate system, but is centered at the object's origin.
 
 .. _class_RigidBody_method_apply_torque_impulse:
 

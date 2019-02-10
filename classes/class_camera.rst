@@ -57,6 +57,8 @@ Methods
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`           | :ref:`get_cull_mask_bit<class_Camera_method_get_cull_mask_bit>` **(** :ref:`int<class_int>` layer **)** const                                                            |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`         | :ref:`get_frustum<class_Camera_method_get_frustum>` **(** **)** const                                                                                                    |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`           | :ref:`is_position_behind<class_Camera_method_is_position_behind>` **(** :ref:`Vector3<class_Vector3>` world_point **)** const                                            |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`make_current<class_Camera_method_make_current>` **(** **)**                                                                                                        |
@@ -291,6 +293,10 @@ Gets the camera transform. Subclassed cameras (such as CharacterCamera) may prov
 .. _class_Camera_method_get_cull_mask_bit:
 
 - :ref:`bool<class_bool>` **get_cull_mask_bit** **(** :ref:`int<class_int>` layer **)** const
+
+.. _class_Camera_method_get_frustum:
+
+- :ref:`Array<class_Array>` **get_frustum** **(** **)** const
 
 .. _class_Camera_method_is_position_behind:
 

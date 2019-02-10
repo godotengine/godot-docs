@@ -48,7 +48,7 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
     func _on_text_entered(command):
         var error = expression.parse(command, [])
         if error != OK:
-            print(get_error_text())
+            print(expression.get_error_text())
             return
         var result = expression.execute([], null, true)
         if not expression.has_execute_failed():
@@ -62,6 +62,8 @@ Method Descriptions
 - :ref:`Variant<class_Variant>` **execute** **(** :ref:`Array<class_Array>` inputs=[  ], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true **)**
 
 Executes the expression that was previously parsed by :ref:`parse<class_Expression_method_parse>` and returns the result. Before you use the returned object, you should check if the method failed by calling :ref:`has_execute_failed<class_Expression_method_has_execute_failed>`.
+
+If you defined input variables in :ref:`parse<class_Expression_method_parse>`, you can specify their values in the inputs array, in the same order.
 
 .. _class_Expression_method_get_error_text:
 
@@ -80,4 +82,6 @@ Returns ``true`` if :ref:`execute<class_Expression_method_execute>` has failed.
 - :ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` expression, :ref:`PoolStringArray<class_PoolStringArray>` input_names=PoolStringArray(  ) **)**
 
 Parses the expression and returns a :ref:`Error<enum_@GlobalScope_Error>`.
+
+You can optionally specify names of variables that may appear in the expression with ``input_names``, so that you can bind them when it gets executed.
 

@@ -87,6 +87,8 @@ Methods
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`         | :ref:`get_node_and_resource<class_Node_method_get_node_and_resource>` **(** :ref:`NodePath<class_NodePath>` path **)**                                                                              |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`           | :ref:`get_node_or_null<class_Node_method_get_node_or_null>` **(** :ref:`NodePath<class_NodePath>` path **)** const                                                                                  |
++-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`           | :ref:`get_parent<class_Node_method_get_parent>` **(** **)** const                                                                                                                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NodePath<class_NodePath>`   | :ref:`get_path<class_Node_method_get_path>` **(** **)** const                                                                                                                                       |
@@ -660,6 +662,12 @@ Possible paths are:
 .. _class_Node_method_get_node_and_resource:
 
 - :ref:`Array<class_Array>` **get_node_and_resource** **(** :ref:`NodePath<class_NodePath>` path **)**
+
+.. _class_Node_method_get_node_or_null:
+
+- :ref:`Node<class_Node>` **get_node_or_null** **(** :ref:`NodePath<class_NodePath>` path **)** const
+
+Similar to :ref:`get_node<class_Node_method_get_node>`, but does not raise an error when ``path`` does not point to a valid ``Node``.
 
 .. _class_Node_method_get_parent:
 

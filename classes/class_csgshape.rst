@@ -38,17 +38,19 @@ Properties
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_collision_layer_bit<class_CSGShape_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_collision_mask_bit<class_CSGShape_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_root_shape<class_CSGShape_method_is_root_shape>` **(** **)** const                                                                        |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_collision_layer_bit<class_CSGShape_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_collision_mask_bit<class_CSGShape_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_CSGShape_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_CSGShape_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_meshes<class_CSGShape_method_get_meshes>` **(** **)** const                                                                              |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`is_root_shape<class_CSGShape_method_is_root_shape>` **(** **)** const                                                                        |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_collision_layer_bit<class_CSGShape_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_collision_mask_bit<class_CSGShape_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -165,6 +167,10 @@ Returns an individual bit on the collision mask.
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns an individual bit on the collision mask.
+
+.. _class_CSGShape_method_get_meshes:
+
+- :ref:`Array<class_Array>` **get_meshes** **(** **)** const
 
 .. _class_CSGShape_method_is_root_shape:
 
