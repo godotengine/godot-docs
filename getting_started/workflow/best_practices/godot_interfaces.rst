@@ -15,7 +15,7 @@ The rest of this tutorial outlines the various ways of doing all this.
 Acquiring object references
 ---------------------------
 
-For all :ref:`Object <class_Object>`s, the most basic way of referencing them 
+For all :ref:`Object <class_Object>`\s, the most basic way of referencing them
 is to get a reference to an existing object from another acquired instance.
 
 .. tabs::
@@ -47,20 +47,20 @@ access.
     const MyScene : = preload("my_scene.tscn") as PackedScene # Static load
     const MyScript : = preload("my_script.gd") as Script
 
-    # This type's value varies, i.e. it is a variable, so it uses snake_case
+    # This type's value varies, i.e. it is a variable, so it uses snake_case.
     export(Script) var script_type: Script
 
-    # If need an "export const var" (which doesn't exist), use a conditional 
+    # If need an "export const var" (which doesn't exist), use a conditional
     # setter for a tool script that checks if it's executing in the editor.
-    tool # must place at top of file
+    tool # Must place at top of file.
 
-    # Must configure from the editor, defaults to null
+    # Must configure from the editor, defaults to null.
     export(Script) var const_script setget set_const_script
     func set_const_script(value):
         if Engine.is_editor_hint():
             const_script = value
 
-    # Warn users if the value hasn't been set
+    # Warn users if the value hasn't been set.
     func _get_configuration_warning():
         if not const_script:
             return "Must initialize property 'const_script'."
@@ -68,7 +68,7 @@ access.
 
   .. code-tab:: csharp
 
-    // Tool script added for the sake of the "const [Export]" example
+    // Tool script added for the sake of the "const [Export]" example.
     [Tool]
     public MyType : extends Object
     {
@@ -85,14 +85,14 @@ access.
         // But, value can be set during constructor, i.e. MyType().
         public Script Library { get; } = GD.Load("res://addons/plugin/library.gd") as Script;
 
-        // If need a "const [Export]" (which doesn't exist), use a 
+        // If need a "const [Export]" (which doesn't exist), use a
         // conditional setter for a tool script that checks if it's executing
         // in the editor.
         [Export]
         public PackedScene EnemyScn
         {
             get;
-            
+
             set
             {
                 if (Engine.IsEditorHint())
@@ -102,7 +102,7 @@ access.
             }
         };
 
-        // Warn users if the value hasn't been set
+        // Warn users if the value hasn't been set.
         public String _GetConfigurationWarning()
         {
             if (EnemyScn == null)
@@ -120,7 +120,7 @@ Note the following:
 
 3. Keep in mind that loading a resource fetches the cached resource
    instance maintained by the engine. To get a new object, one must
-   :ref:`duplicate <class_Resource_method_duplicate>` an existing reference or 
+   :ref:`duplicate <class_Resource_method_duplicate>` an existing reference or
    instantiate one from scratch with ``new()``.
 
 Nodes likewise have an alternative access point: the SceneTree.
@@ -130,11 +130,11 @@ Nodes likewise have an alternative access point: the SceneTree.
 
     extends Node
 
-    # Slow
+    # Slow.
     func dynamic_lookup_with_dynamic_nodepath():
         print(get_node("Child"))
 
-    # Faster. GDScript only
+    # Faster. GDScript only.
     func dynamic_lookup_with_cached_nodepath():
         print($Child)
 
@@ -147,27 +147,27 @@ Nodes likewise have an alternative access point: the SceneTree.
     onready var child = $Child
     func lookup_and_cache_for_future_access():
         print(child)
-    
+
     # Delegate reference assignment to an external source
     # Con: need to perform a validation check
     # Pro: node makes no requirements of its external structure.
     #      'prop' can come from anywhere.
     var prop
     func call_me_after_prop_is_initialized_by_parent():
-        # validate prop in one of three ways
+        # Validate prop in one of three ways.
 
-        # fail with no notification
+        # Fail with no notification.
         if not prop:
             return
-        
-        # fail with an error message
+
+        # Fail with an error message.
         if not prop:
             printerr("'prop' wasn't initialized")
             return
-        
-        # fail and terminate
+
+        # Fail and terminate.
         # Compiled scripts in final binary do not include assert statements
-        assert prop
+        assert prop.
 
     # Use an autoload.
     # Dangerous for typical nodes, but useful for true singleton nodes
@@ -212,14 +212,14 @@ Nodes likewise have an alternative access point: the SceneTree.
             {
                 return;
             }
-            
+
             // Fail with an error message
             if (prop == null)
             {
                 GD.PrintErr("'Prop' wasn't initialized");
                 return;
             }
-            
+
             // Fail and terminate
             Debug.Assert(Prop, "'Prop' wasn't initialized");
         }
@@ -285,7 +285,7 @@ accesses:
 
   .. tabs::
     .. code-tab:: gdscript GDScript
-    
+
       # All Objects have duck-typed get, set, and call wrapper methods
       get_parent().set("visible", false)
 
@@ -302,13 +302,13 @@ accesses:
 
     .. code-tab:: csharp
 
-      // All Objects have duck-typed Get, Set, and Call wrapper methods
+      // All Objects have duck-typed Get, Set, and Call wrapper methods.
       GetParent().Set("visible", false);
 
       // C# is a static language, so it has no dynamic symbol access, e.g.
-      // `GetParent().Visible = false` won't work
+      // `GetParent().Visible = false` won't work.
 
-- A method check. In the case of 
+- A method check. In the case of
   :ref:`CanvasItem.visible <class_CanvasItem_property_visible>`, one can
   access the methods, ``set_visible`` and ``is_visible`` like any other method.
 
@@ -316,18 +316,18 @@ accesses:
     .. code-tab:: gdscript GDScript
 
       var child = GetChild(0)
-    
-      # Dynamic lookup
+
+      # Dynamic lookup.
       child.call("set_visible", false)
 
-      # Symbol-based dynamic lookup
+      # Symbol-based dynamic lookup.
       # GDScript aliases this into a 'call' method behind the scenes.
       child.set_visible(false)
 
-      # Dynamic lookup, checks for method existence first
+      # Dynamic lookup, checks for method existence first.
       if child.has("set_visible"):
           child.set_visible(false)
-  
+
       # Cast check, followed by dynamic lookup
       # Useful when you make multiple "safe" calls knowing that the class
       # implements them all. No need for repeated checks.
@@ -336,7 +336,7 @@ accesses:
       if child is CanvasItem:
           child.set_visible(false)
           child.show_on_top = true
-        
+
       # If one does not wish to fail these checks without notifying users, one
       # can use an assert instead. These will trigger runtime errors
       # immediately if not true.
@@ -363,7 +363,7 @@ accesses:
               print(quest.text)
               quest.complete() # or quest.fail()
               print(quest.text) # implied new text content
-    
+
       # Note that these interfaces are project-specific conventions the team
       # defines (which means documentation! But maybe worth it?).
       # Any script that conforms to the documented "interface" of the name/group can fill in for it.
@@ -373,7 +373,7 @@ accesses:
       Node child = GetChild(0);
 
       // Dynamic lookup
-      child.Call("SetVisible", false); 
+      child.Call("SetVisible", false);
 
       // Dynamic lookup, checks for method existence first
       if (child.HasMethod("SetVisible"))
@@ -420,8 +420,8 @@ accesses:
       // 1. Use a name
       Node quest = GetNode("Quest");
       GD.Print(quest.Get("Text"));
-      quest.Call("Complete"); // or "Fail"
-      GD.Print(quest.Get("Text")); // implied new text content
+      quest.Call("Complete"); // or "Fail".
+      GD.Print(quest.Get("Text")); // Implied new text content.
 
       // 2. Use a group
       foreach (Node AChild in GetChildren())
@@ -429,11 +429,11 @@ accesses:
           if (AChild.IsInGroup("quest"))
           {
             GD.Print(quest.Get("Text"));
-            quest.Call("Complete"); // or "Fail"
-            GD.Print(quest.Get("Text")); // implied new text content
+            quest.Call("Complete"); // or "Fail".
+            GD.Print(quest.Get("Text")); // Implied new text content.
           }
       }
-    
+
       // Note that these interfaces are project-specific conventions the team
       // defines (which means documentation! But maybe worth it?)..
       // Any script that conforms to the documented "interface" of the
@@ -444,9 +444,9 @@ accesses:
   in cases where one needs the max level of freedom from dependencies. In
   this case, one relies on an external context to setup the method.
 
-..tabs::
-  ..code-tab:: gdscript GDScript
-    
+.. tabs::
+  .. code-tab:: gdscript GDScript
+
     # child.gd
     extends Node
     var fn = null
@@ -454,7 +454,7 @@ accesses:
     func my_method():
         if fn:
             fn.call_func()
-  
+
     # parent.gd
     extends Node
 
@@ -467,8 +467,8 @@ accesses:
     func print_me():
         print(name)
 
-  ..code-tab:: csharp
-    
+  .. code-tab:: csharp
+
     // Child.cs
     public class Child extends Node
     {
@@ -485,7 +485,7 @@ accesses:
     public class Parent extends Node
     {
         public Node Child;
-        
+
         public void _Ready()
         {
             Child = GetNode("Child");
