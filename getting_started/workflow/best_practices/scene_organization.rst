@@ -41,7 +41,7 @@ That is, one should create scenes that keep everything they need within
 themselves.
 
 If a scene must interact with an external context, experienced developers
-recommend the use of 
+recommend the use of
 `Dependency Injection <https://en.wikipedia.org/wiki/Dependency_injection>`_.
 This technique involves having a high-level API provide the dependencies of the
 low-level API. Why do this? Because classes which rely on their external
@@ -54,99 +54,99 @@ initialize it:
    behavior, not start it. Note that signal names are usually past-tense verbs
    like "entered", "skill_activated", or "item_collected".
 
-   ..tabs::
-     ..code-tab:: gdscript GDScript
-     
+   .. tabs::
+     .. code-tab:: gdscript GDScript
+
        # Parent
        $Child.connect("signal_name", object_with_method, "method_on_the_object")
 
        # Child
-       emit_signal("signal_name") # Triggers parent-defined behavior
+       emit_signal("signal_name") # Triggers parent-defined behavior.
 
-     ..code-tab:: csharp
+     .. code-tab:: csharp
 
        // Parent
        GetNode("Child").Connect("SignalName", ObjectWithMethod, "MethodOnTheObject");
 
        // Child
-       EmitSignal("SignalName"); // Triggers parent-defined behavior
+       EmitSignal("SignalName"); // Triggers parent-defined behavior.
 
 2. Call a method. Used to start behavior.
-       
-   ..tabs::
-     ..code-tab:: gdscript GDScript
-     
+
+   .. tabs::
+     .. code-tab:: gdscript GDScript
+
        # Parent
        $Child.method_name = "do"
 
-       # Child, assuming it has String property 'method_name' and method 'do'
-       call(method_name) # Call parent-defined method (which child must own)
+       # Child, assuming it has String property 'method_name' and method 'do'.
+       call(method_name) # Call parent-defined method (which child must own).
 
-     ..code-tab:: csharp
+     .. code-tab:: csharp
 
        // Parent
        GetNode("Child").Set("MethodName", "Do");
 
        // Child
-       Call(MethodName); // Call parent-defined method (which child must own)
+       Call(MethodName); // Call parent-defined method (which child must own).
 
 3. Initialize a :ref:`FuncRef <class_FuncRef>` property. Safer than a method
    as ownership of the method is unnecessary. Used to start behavior.
-       
-   ..tabs::
-     ..code-tab:: gdscript GDScript
-     
+
+   .. tabs::
+     .. code-tab:: gdscript GDScript
+
        # Parent
        $Child.func_property = funcref(object_with_method, "method_on_the_object")
 
        # Child
-       func_property.call_func() # Call parent-defined method (can come from anywhere)
+       func_property.call_func() # Call parent-defined method (can come from anywhere).
 
-     ..code-tab:: csharp
+     .. code-tab:: csharp
 
        // Parent
        GetNode("Child").Set("FuncProperty", GD.FuncRef(ObjectWithMethod, "MethodOnTheObject"));
 
        // Child
-       FuncProperty.CallFunc(); // Call parent-defined method (can come from anywhere)
+       FuncProperty.CallFunc(); // Call parent-defined method (can come from anywhere).
 
 4. Initialize a Node or other Object reference.
-       
-   ..tabs::
-     ..code-tab:: gdscript GDScript
-     
+
+   .. tabs::
+     .. code-tab:: gdscript GDScript
+
        # Parent
        $Child.target = self
 
        # Child
-       print(target) # Use parent-defined node
+       print(target) # Use parent-defined node.
 
-     ..code-tab:: csharp
+     .. code-tab:: csharp
 
        // Parent
        GetNode("Child").Set("Target", this);
 
        // Child
-       GD.Print(Target); // Use parent-defined node
+       GD.Print(Target); // Use parent-defined node.
 
 5. Initialize a NodePath.
-       
-   ..tabs::
-     ..code-tab:: gdscript GDScript
-     
+
+   .. tabs::
+     .. code-tab:: gdscript GDScript
+
        # Parent
        $Child.target_path = ".."
 
        # Child
-       get_node(target_path) # Use parent-defined NodePath
+       get_node(target_path) # Use parent-defined NodePath.
 
-     ..code-tab:: csharp
+     .. code-tab:: csharp
 
        // Parent
        GetNode("Child").Set("TargetPath", NodePath(".."));
 
        // Child
-       GetNode(TargetPath); // Use parent-defined NodePath
+       GetNode(TargetPath); // Use parent-defined NodePath.
 
 These options hide the source of accesses from the child node. This in turn
 keeps the child **loosely coupled** to its environment. One can re-use it
@@ -159,23 +159,23 @@ in another context without any extra changes to its API.
   are siblings should only be aware of their hierarchies while an ancestor
   mediates their communications and references.
 
-  ..tabs::
-    ..code-tab:: gdscript GDScript
-    
+  .. tabs::
+    .. code-tab:: gdscript GDScript
+
       # Parent
       $Left.target = $Right.get_node("Receiver")
 
       # Left
       var target: Node
       func execute():
-          # Do something with 'target'
+          # Do something with 'target'.
 
       # Right
       func _init():
           var receiver = Receiver.new()
           add_child(receiver)
-          
-    ..code-tab:: csharp
+
+    .. code-tab:: csharp
 
       // Parent
       GetNode("Left").Target = GetNode("Right/Receiver");
@@ -185,7 +185,7 @@ in another context without any extra changes to its API.
 
       public void Execute()
       {
-          // Do something with 'Target'
+          // Do something with 'Target'.
       }
 
       // Right
@@ -196,7 +196,7 @@ in another context without any extra changes to its API.
           Receiver = ResourceLoader.load("Receiver.cs").new();
           AddChild(Receiver);
       }
-    
+
   The same principles also apply to non-Node objects that maintain dependencies
   on other objects. Whichever object actually owns the objects should manage
   the relationships between them.
@@ -211,7 +211,7 @@ in another context without any extra changes to its API.
   documentation to keep track of object relations on a microscopic scale; this
   is otherwise known as development hell. Writing code that relies on external
   documentation for one to use it safely is error-prone by default.
-  
+
   To avoid creating and maintaining such documentation, one converts the
   dependent node ("child" above) into a tool script that implements
   :ref:`_get_configuration_warning() <class_Node_method__get_configuration_warning>`.
@@ -222,7 +222,7 @@ in another context without any extra changes to its API.
   :ref:`CollisionShape2D <class_CollisionShape2D>` nodes defined. The editor
   then self-documents the scene through the script code. No content duplication
   via documentation is necessary.
-  
+
   A GUI like this can better inform project users of critical information about
   a Node. Does it have external dependencies? Have those dependencies been
   satisfied? Other programmers, and especially designers and writers, will need
@@ -290,13 +290,13 @@ If one has a system that...
 :ref:`autoload 'singleton' node <doc_singletons_autoload>`.
 
 .. note::
-  
+
   For smaller games, a simpler alternative with less control would be to have
   a "Game" singleton that simply calls the
   :ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>` method
   to swap out the main scene's content. This structure more or less keeps
   the "World" as the main game node.
-  
+
   Any GUI would need to also be a
   singleton, be transitory parts of the "World", or be manually added as a
   direct child of the root. Otherwise, the GUI nodes would also delete
@@ -318,7 +318,7 @@ own place in the hierachy as a sibling or some other relation.
 
   In some cases, one needs these separated nodes to *also* position themselves
   relative to each other. One can use the
-  :ref:`RemoteTransform <class_RemoteTransform>` / 
+  :ref:`RemoteTransform <class_RemoteTransform>` /
   :ref:`RemoteTransform2D <class_RemoteTransform2D>` nodes for this purpose.
   They will allow a target node to conditionally inherit selected transform
   elements from the Remote\* node. To assign the ``target``
@@ -335,15 +335,19 @@ own place in the hierachy as a sibling or some other relation.
   - Add a "player" node to a "room".
   - Need to change rooms, so one must delete the current room.
   - Before the room can be deleted, one must preserve and/or move the player.
+
     Is memory a concern?
+
     - If not, one can just create the two rooms, move the player
       and delete the old one. No problem.
-    - If so, one will need to...
-      - Move the player somewhere else in the tree.
-      - Delete the room.
-      - Instantiate and add the new room.
-      - Re-add the player.
-  
+
+    If so, one will need to...
+
+    - Move the player somewhere else in the tree.
+    - Delete the room.
+    - Instantiate and add the new room.
+    - Re-add the player.
+
   The issue is that the player here is a "special case", one where the
   developers must *know* that they need to handle the player this way for the
   project. As such, the only way to reliably share this information as a team
@@ -353,15 +357,15 @@ own place in the hierachy as a sibling or some other relation.
 
   In a more complex game with larger assets, it can be a better idea to simply
   keep the player somewhere else in the SceneTree entirely. This involves...
-  
+
   1. More consistency.
   2. No "special cases" that must be documented and maintained somewhere.
   3. No opportunity for errors to occur because these details are not accounted
      for.
-  
+
   In contrast, if one ever needs to have a child node that does *not* inherit
   the transform of their parent, one has the following options:
-  
+
   1. The **declarative** solution: place a :ref:`Node <class_Node>` in between
      them. As nodes with no transform, Nodes will not pass along such
      information to their children.

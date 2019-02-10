@@ -38,7 +38,7 @@ than Node alone:
 - :ref:`Object::NOTIFICATION_PREDELETE <class_Object_constant_NOTIFICATION_PREDELETE>`:
   a callback that triggers before the engine deletes an Object, i.e. a
   'destructor'.
-  
+
 - :ref:`MainLoop::NOTIFICATION_WM_MOUSE_ENTER <class_MainLoop_constant_NOTIFICATION_WM_MOUSE_ENTER>`:
   a callback that triggers when the mouse enters the window in the operating
   system that displays the game content.
@@ -59,12 +59,12 @@ methods, but are still quite useful.
   *before* its appearance.
 
 One can access all these custom notifications from the universal
-``_notification`` method. 
+``_notification`` method.
 
-..note::
+.. note::
   Methods in the documentation labeled as "virtual" are also intended to be
   overridden by scripts.
-  
+
   A classic example is the
   :ref:`_init <class_Object_method__init>` method in Object. While it has no
   NOTIFICATION_* equivalent, the engine still calls the method. Most languages
@@ -73,8 +73,8 @@ One can access all these custom notifications from the universal
 So, in which situation should one use each of these notifications or
 virtual functions?
 
-_process vs. _physics_process vs. *_input
------------------------------------------
+_process vs. _physics_process vs. \*_input
+------------------------------------------
 
 Use ``_process`` when one needs a framerate-dependent deltatime between
 frames. If code that updates object data needs to update as often as
@@ -84,8 +84,8 @@ the evaluations to update. If they don't need to execute every frame, then
 implementing a Timer-yield-timeout loop is another option.
 
 .. tabs::
- .. code-tab::
-    
+ .. code-tab:: gdscript GDScript
+
     # Infinitely loop, but only execute whenever the Timer fires.
     # Allows for recurring operations that don't trigger script logic
     # every frame (or even every fixed frame).
@@ -97,7 +97,7 @@ implementing a Timer-yield-timeout loop is another option.
 Use ``_physics_process`` when one needs a framerate-independent deltatime
 between frames. If code needs consistent updates over time, regardless
 of how fast or slow time advances, this is the right place.
-Recurring kinematic and object transform operations should execute here. 
+Recurring kinematic and object transform operations should execute here.
 
 While it is possible, to achieve the best performance, one should avoid
 making input checks during these callbacks. ``_process`` and
@@ -112,12 +112,12 @@ If one wants to use delta time, one can fetch it from the
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # Called every frame, even when the engine detects no input
+    # Called every frame, even when the engine detects no input.
     func _process(delta):
         if Input.action_just_pressed("ui_select"):
             print(delta)
 
-    # Called during every input event
+    # Called during every input event.
     func _unhandled_input(event):
         match event.get_class():
             "InputEventKey":
@@ -128,7 +128,7 @@ If one wants to use delta time, one can fetch it from the
 
     public class MyNode : public Node {
 
-        // Called every frame, even when the engine detects no input
+        // Called every frame, even when the engine detects no input.
         public void _Process(float delta) {
             if (GD.Input.ActionJustPressed("UiSelect")) {
                 GD.Print(string(delta));
@@ -161,7 +161,7 @@ instantiation:
 
 .. tabs::
   .. code-tab:: gdscript GDScript
-  
+
     # "one" is an "initialized value". These DO NOT trigger the setter.
     # If someone set the value as "two" from the Inspector, this would be an
     # "exported value". These DO trigger the setter.
@@ -173,7 +173,7 @@ instantiation:
         test = "three"
         # These DO trigger the setter. Note the `self` prefix.
         self.test = "three"
-  
+
     func set_test(value):
         test = value
         print("Setting: ", test)
@@ -213,7 +213,7 @@ following sequence:
 
 As a result, instantiating a script versus a scene will affect both the
 initialization *and* the number of times the engine calls the setter.
-  
+
 _ready vs. _enter_tree vs. NOTIFICATION_PARENTED
 ------------------------------------------------
 
@@ -235,8 +235,8 @@ For example, here is a snippet that connects a node's method to
 a custom signal on the parent node without failing. Useful on data-centric
 nodes that one might create at runtime.
 
-..tabs::
-  ..code-tab:: gdscript GDScript
+.. tabs::
+  .. code-tab:: gdscript GDScript
 
     extends Node
 
@@ -244,7 +244,7 @@ nodes that one might create at runtime.
 
     func connection_check():
         return parent.has_user_signal("interacted_with")
-        
+
     func _notification(what):
         match what:
             NOTIFICATION_PARENTED:
@@ -254,11 +254,11 @@ nodes that one might create at runtime.
             NOTIFICATION_UNPARENTED:
                 if connection_check():
                     parent_cache.disconnect("interacted_with", self, "_on_parent_interacted_with")
-  
+
     func _on_parent_interacted_with():
         print("I'm reacting to my parent's interaction!")
 
-  ..code-tab:: csharp
+  .. code-tab:: csharp
 
     public class MyNode extends Node {
 
@@ -281,7 +281,7 @@ nodes that one might create at runtime.
                     break;
             }
         }
-         
+
         public void OnParentInteractedWith() {
             GD.Print("I'm reacting to my parent's interaction!");
         }
