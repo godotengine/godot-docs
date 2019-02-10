@@ -18,9 +18,9 @@ Y or Z? This article covers a variety of topics related to these dilemmas.
   "As the size of a problem domain increases, the runtime length of the
   algorithm..."
   
-  - Constant-time, O(1): "...does not increase."
-  - Logarithmic-time, O(log n): "...increases at a slow rate."
-  - Linear-time, O(n): "...increases at the same rate."
+  - Constant-time, ``O(1)``: "...does not increase."
+  - Logarithmic-time, ``O(log n)``: "...increases at a slow rate."
+  - Linear-time, ``O(n)``: "...increases at the same rate."
   - Etc.
 
   Imagine if one had to process 3 million data points within a single frame. It
@@ -45,7 +45,7 @@ class. Variants can store Variant-compatible data structures such as
 :ref:`Array <class_Array>` and :ref:`Dictionary <class_Dictionary>` as well as
 :ref:`Object <class_Object>` s.
 
-Godot implements Array as a Vector<Variant>. The engine stores the Array
+Godot implements Array as a ``Vector<Variant>``. The engine stores the Array
 contents in a contiguous section of memory, i.e. they are in a row adjacent
 to each other.
 
@@ -55,7 +55,7 @@ to each other.
   type, meaning that its records can only contain a particular type (denoted
   by angled brackets). So, for example, a
   :ref:`PoolStringArray <class_PoolStringArray>` would be something like
-  a Vector<String>.
+  a ``Vector<String>``.
 
 Contiguous memory stores imply the following operation performance:
 
@@ -102,7 +102,7 @@ Contiguous memory stores imply the following operation performance:
       though. Done by re-sorting the Array after every edit and writing an
       ordered-aware search algorithm.
 
-Godot implements Dictionary as an OrderedHashMap<Variant, Variant>. The engine
+Godot implements Dictionary as an ``OrderedHashMap<Variant, Variant>``. The engine
 stores a giant array (initialized to 1000 records) of key-value pairs. When
 one attempts to access a value, they provide it a key. It then *hashes* the
 key, i.e. converts it into a number. The "hash" becomes the index into the
@@ -167,7 +167,7 @@ Objects query data sources when posed questions. For example, to answer
 the question, "do you have a property called, 'position'?", it might ask
 its :ref:`script <class_Script>` or the :ref:`ClassDB <class_ClassDB>`.
 One can find more information about what objects are and how they work in
-the :ref:`what are godot classes <doc_what_are_godot_classes>` documentation.
+the :ref:`doc_what_are_godot_classes` article.
 
 The important detail here is the complexity of the Object's task. Every time
 it performs one of these multi-source queries, it runs through *several*

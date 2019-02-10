@@ -216,4 +216,4 @@ This way all the gizmo logic and drawing methods can be implemented in a new cla
 
 Note that we just added some handles in the redraw method, but we still need to implement
 the rest of handle-related callbacks in :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>`
- to get properly working handles.
+to get properly working handles.

@@ -1,6 +1,6 @@
 .. _doc_godot_interfaces:
 
-Godot Interfaces
+Godot interfaces
 ================
 
 Often one needs scripts that rely on other objects for features. There

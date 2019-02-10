@@ -19,6 +19,6 @@ of each option, and then highlights the best course of action depending on the
 circumstances.
 
 While the articles in this series are largely topic-directed, it is
-recommended that users begin with the "What are godot classes" article.
+recommended that users begin with the :ref:`doc_what_are_godot_classes` article.
 It is from there that the "best practices" for the rest of the engine
 become more clear, based on established OOP practices.

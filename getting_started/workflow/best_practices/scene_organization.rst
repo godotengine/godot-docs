@@ -239,11 +239,8 @@ Scripts and scenes, as extensions of engine classes should abide
 by *all* OOP principles. Examples include...
 
 - `SOLID <https://en.wikipedia.org/wiki/SOLID>`_
-
 - `DRY <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
-
 - `KISS <https://en.wikipedia.org/wiki/KISS_principle>`_
-
 - `YAGNI <https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it>`_
 
 Choosing a node tree structure
@@ -286,8 +283,7 @@ If one has a system that...
 2. should be globally accessible
 3. should exist in isolation
 
-...then one should create an
-:ref:`autoload 'singleton' node <doc_singletons_autoload>`.
+... then one should create an :ref:`autoload 'singleton' node <doc_singletons_autoload>`.
 
 .. note::
 

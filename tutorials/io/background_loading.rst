@@ -181,7 +181,7 @@ loader.
         # Update your progress bar?
         get_node("progress").set_progress(progress)
 
-        # ...or update a progress animation?
+        # ... or update a progress animation?
         var length = get_node("animation").get_current_animation_length()
 
         # Call this on a paused animation. Use "true" as the second argument to force the animation to update.

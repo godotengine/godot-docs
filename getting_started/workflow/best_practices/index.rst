@@ -1,5 +1,5 @@
-Scene workflow
-===============
+Best practices
+==============
 
 .. toctree::
    :maxdepth: 1
