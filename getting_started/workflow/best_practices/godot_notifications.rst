@@ -106,8 +106,8 @@ default). In contrast, ``*_input`` callbacks will trigger only on frames in
 which the engine has actually detected the input.
 
 One can check for input actions within the input callbacks just the same.
-If one wants to use delta time, one can fetch it from the
-:ref:`Performance <class_Performance>` singleton as needed.
+If one wants to use delta time, one can fetch it from the related
+deltatime methods as needed.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
@@ -122,7 +122,7 @@ If one wants to use delta time, one can fetch it from the
         match event.get_class():
             "InputEventKey":
                 if Input.is_action_just_pressed("ui_accept"):
-                    print(Performance.get_monitor(Performance.TIME_PROCESS))
+                    print(get_process_delta_time())
 
   .. code-tab:: csharp
 
@@ -139,7 +139,7 @@ If one wants to use delta time, one can fetch it from the
         public void _UnhandledInput(InputEvent event) {
             switch (event.GetClass()) {
                 case "InputEventAction":
-                    GD.Print(string(GD.Performance.GetMonitor(GD.Performance.TIME_PROCESS)));
+                    GD.Print(string(GetProcessDeltaTime());
                     break;
                 default:
                     break;
