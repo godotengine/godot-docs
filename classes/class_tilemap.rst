@@ -377,7 +377,7 @@ Clears cells that do not exist in the tileset.
 
 - :ref:`int<class_int>` **get_cell** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
-Returns the tile index of the given cell.
+Returns the tile index of the given cell. If no tile exists in the cell, returns INVALID_CELL.
 
 .. _class_TileMap_method_get_cell_autotile_coord:
 
@@ -387,7 +387,7 @@ Returns the tile index of the given cell.
 
 - :ref:`int<class_int>` **get_cellv** **(** :ref:`Vector2<class_Vector2>` position **)** const
 
-Returns the tile index of the cell given by a Vector2.
+Returns the tile index of the cell given by a Vector2. If no tile exists in the cell, returns INVALID_CELL.
 
 .. _class_TileMap_method_get_collision_layer_bit:
 
