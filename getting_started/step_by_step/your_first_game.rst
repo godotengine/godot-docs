@@ -101,7 +101,7 @@ child. The ``AnimatedSprite`` will handle the appearance and animations
 for our player. Notice that there is a warning symbol next to the node.
 An ``AnimatedSprite`` requires a :ref:`SpriteFrames <class_SpriteFrames>` resource, which is a
 list of the animations it can display. To create one, find the
-``Frames`` property in the Inspector and click "<null>" ->
+``Frames`` property in the Inspector and click "[empty]" ->
 "New SpriteFrames". Next, in the same location, click
 ``<SpriteFrames>``, then click "Open Editor" to open the "SpriteFrames" panel:
 
@@ -126,7 +126,7 @@ Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child
 of ``Player``. This will determine the player's "hitbox", or the
 bounds of its collision area. For this character, a ``CapsuleShape2D``
 node gives the best fit, so next to "Shape" in the Inspector, click
-"<null>"" -> "New CapsuleShape2D".  Using the two size handles, resize the
+"[empty]"" -> "New CapsuleShape2D".  Using the two size handles, resize the
 shape to cover the sprite:
 
 .. image:: img/player_coll_shape.png
