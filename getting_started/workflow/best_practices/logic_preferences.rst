@@ -70,17 +70,17 @@ either? Let's see an example:
     using System;
     using Godot;
 
+    // C# and other languages have no concept of "preloading".
     public class MyBuildings : Node {
-
-        public PackedScene Building { get; set; }
+    
+        //This is a read-only field, it can only be assigned when it's declared or during a constructor
+        public readonly PackedScene Building = ResourceLoader.Load<PackedScene>("res://building.tscn");
         
-        public PackedScene ABuilding = GD.Load<PackedScene>("res://office.tscn");
+        public PackedScene ABuilding;
 
         public override void _Ready() {
-            // Can assign the value during initialization or during a constructor.
-            Building = ResourceLoader.Load<PackedScene>("res://building.tscn");
-
-            // C# and other languages have no concept of "preloading".
+            // Can assign the value during initialization
+            ABuilding = GD.Load<PackedScene>("res://office.tscn");
         }
     }
 
