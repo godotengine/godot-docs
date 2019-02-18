@@ -68,17 +68,17 @@ either? Let's see an example:
   .. code-tab:: csharp
 
     using System;
-    using GD;
+    using Godot;
 
-    public class MyBuildings : public Node {
+    public class MyBuildings : Node {
 
-        public const PackedScene Building { get; set; }
+        public PackedScene Building { get; set; }
         
-        public PackedScene ABuilding = GD.load("office.tscn") as PackedScene;
+        public PackedScene ABuilding = GD.Load<PackedScene>("res://office.tscn");
 
-        public void MyBuildings() {
+        public override void _Ready() {
             // Can assign the value during initialization or during a constructor.
-            Building = ResourceLoader.load("building.tscn") as PackedScene;
+            Building = ResourceLoader.Load<PackedScene>("building.tscn");
 
             // C# and other languages have no concept of "preloading".
         }
