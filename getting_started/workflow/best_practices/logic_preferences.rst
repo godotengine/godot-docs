@@ -36,7 +36,7 @@ either? Let's see an example:
     # This value is a constant, so it spawns when the Script object loads.
     # The script is preloading the value. The advantage here is that the editor
     # can offer autocompletion since it must be a static path.
-    const BuildingScn = preload("building.tscn")
+    const BuildingScn = preload("res://building.tscn")
 
     # 1. The script preloads the value, so it will load as a dependency
     #    of the 'my_buildings.gd' script file. But, because this is a
@@ -60,10 +60,10 @@ either? Let's see an example:
     # One must assign constant values to constants. Because `load` performs a
     # runtime lookup by its very nature, one cannot use it to initialize a
     # constant.
-    const OfficeScn = load("office.tscn")
+    const OfficeScn = load("res://office.tscn")
 
     # Successfully loads and only when one instantiates the script! Yay!
-    var office_scn = load("office.tscn")
+    var office_scn = load("res://office.tscn")
 
   .. code-tab:: csharp
 
@@ -78,7 +78,7 @@ either? Let's see an example:
 
         public override void _Ready() {
             // Can assign the value during initialization or during a constructor.
-            Building = ResourceLoader.Load<PackedScene>("building.tscn");
+            Building = ResourceLoader.Load<PackedScene>("res://building.tscn");
 
             // C# and other languages have no concept of "preloading".
         }
