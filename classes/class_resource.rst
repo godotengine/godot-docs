@@ -56,7 +56,12 @@ Signals
 Description
 -----------
 
-Resource is the base class for all resource types. Resources are primarily data containers. They are reference counted and freed when no longer in use. They are also loaded only once from disk, and further attempts to load the resource will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
+Resource is the base class for all resource types, serving primarily as data containers. They are reference counted and freed when no longer in use. They are also loaded only once from disk, and further attempts to load the resource will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/resources`
 
 Property Descriptions
 ---------------------
@@ -81,6 +86,8 @@ Property Descriptions
 | *Getter* | get_name()      |
 +----------+-----------------+
 
+The name of the resource. This is an optional identifier.
+
 .. _class_Resource_property_resource_path:
 
 - :ref:`String<class_String>` **resource_path**
@@ -90,6 +97,8 @@ Property Descriptions
 +----------+-----------------+
 | *Getter* | get_path()      |
 +----------+-----------------+
+
+The path to the resource. In case it has its own file, it will return its filepath. If it's tied to the scene, it will return the scene's path, followed by the resource's index.
 
 Method Descriptions
 -------------------
@@ -102,6 +111,8 @@ Method Descriptions
 
 - :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** const
 
+Duplicates the resource, returning a new resource. By default, sub-resources are shared between resource copies for efficiency, this can be changed by passing ``true`` to the ``subresources`` argument.
+
 .. _class_Resource_method_get_local_scene:
 
 - :ref:`Node<class_Node>` **get_local_scene** **(** **)** const
@@ -110,7 +121,7 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **get_rid** **(** **)** const
 
-Return the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture<class_Texture>`, :ref:`Mesh<class_Mesh>`, etc) are high level abstractions of resources stored in a server, so this function will return the original RID.
+Returns the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture<class_Texture>`, :ref:`Mesh<class_Mesh>`, etc) are high level abstractions of resources stored in a server, so this function will return the original RID.
 
 .. _class_Resource_method_setup_local_to_scene:
 
@@ -120,5 +131,5 @@ Return the RID of the resource (or an empty RID). Many resources (such as :ref:`
 
 - void **take_over_path** **(** :ref:`String<class_String>` path **)**
 
-Set the path of the resource. Differs from set_path(), if another ``Resource`` exists with "path" it over-takes it, instead of failing.
+Sets the path of the resource. Differs from ``set_path()``, if another ``Resource`` exists with "path" it over-takes it, instead of failing.
 

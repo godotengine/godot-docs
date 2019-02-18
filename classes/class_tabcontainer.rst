@@ -98,6 +98,8 @@ Theme Properties
 +---------------------------------+---------------------+
 | :ref:`StyleBox<class_StyleBox>` | tab_bg              |
 +---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | tab_disabled        |
++---------------------------------+---------------------+
 | :ref:`StyleBox<class_StyleBox>` | tab_fg              |
 +---------------------------------+---------------------+
 | :ref:`int<class_int>`           | top_margin          |

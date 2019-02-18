@@ -174,7 +174,7 @@ Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at `
 
 - :ref:`AudioBusLayout<class_AudioBusLayout>` **generate_bus_layout** **(** **)** const
 
-Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available busses and effects.
+Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available buses and effects.
 
 .. _class_AudioServer_method_get_bus_channels:
 
@@ -186,7 +186,7 @@ Returns the amount of channels of the bus at index ``bus_idx``.
 
 - :ref:`int<class_int>` **get_bus_count** **(** **)** const
 
-Returns the number of available busses.
+Returns the number of available buses.
 
 .. _class_AudioServer_method_get_bus_effect:
 
@@ -314,7 +314,7 @@ If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
 - void **set_bus_count** **(** :ref:`int<class_int>` amount **)**
 
-Adds and removes busses to make the number of busses match ``amount``.
+Adds and removes buses to make the number of buses match ``amount``.
 
 .. _class_AudioServer_method_set_bus_effect_enabled:
 

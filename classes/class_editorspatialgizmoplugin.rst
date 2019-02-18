@@ -130,7 +130,7 @@ Get material from the internal list of materials. If an :ref:`EditorSpatialGizmo
 
 - :ref:`String<class_String>` **get_name** **(** **)** virtual
 
-Override this method to provide the name that will appear in teh gizmo visibility menu.
+Override this method to provide the name that will appear in the gizmo visibility menu.
 
 .. _class_EditorSpatialGizmoPlugin_method_has_gizmo:
 

@@ -34,21 +34,25 @@ Properties
 Methods
 -------
 
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`           | :ref:`get_aabb<class_MultiMesh_method_get_aabb>` **(** **)** const                                                                                                   |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`get_instance_color<class_MultiMesh_method_get_instance_color>` **(** :ref:`int<class_int>` instance **)** const                                                |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`get_instance_custom_data<class_MultiMesh_method_get_instance_custom_data>` **(** :ref:`int<class_int>` instance **)** const                                    |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`get_instance_transform<class_MultiMesh_method_get_instance_transform>` **(** :ref:`int<class_int>` instance **)** const                                        |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>` **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**                     |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>` **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**   |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>` **(** :ref:`int<class_int>` instance, :ref:`Transform<class_Transform>` transform **)** |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_AABB>`               | :ref:`get_aabb<class_MultiMesh_method_get_aabb>` **(** **)** const                                                                                                             |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`             | :ref:`get_instance_color<class_MultiMesh_method_get_instance_color>` **(** :ref:`int<class_int>` instance **)** const                                                          |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`             | :ref:`get_instance_custom_data<class_MultiMesh_method_get_instance_custom_data>` **(** :ref:`int<class_int>` instance **)** const                                              |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>`     | :ref:`get_instance_transform<class_MultiMesh_method_get_instance_transform>` **(** :ref:`int<class_int>` instance **)** const                                                  |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`get_instance_transform_2d<class_MultiMesh_method_get_instance_transform_2d>` **(** :ref:`int<class_int>` instance **)** const                                            |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>` **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**                               |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>` **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**             |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>` **(** :ref:`int<class_int>` instance, :ref:`Transform<class_Transform>` transform **)**           |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_instance_transform_2d<class_MultiMesh_method_set_instance_transform_2d>` **(** :ref:`int<class_int>` instance, :ref:`Transform2D<class_Transform2D>` transform **)** |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -198,6 +202,10 @@ Return the custom data that has been set for a specific instance.
 
 Return the transform of a specific instance.
 
+.. _class_MultiMesh_method_get_instance_transform_2d:
+
+- :ref:`Transform2D<class_Transform2D>` **get_instance_transform_2d** **(** :ref:`int<class_int>` instance **)** const
+
 .. _class_MultiMesh_method_set_instance_color:
 
 - void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
@@ -215,4 +223,8 @@ Set custom data for a specific instance. Although :ref:`Color<class_Color>` is u
 - void **set_instance_transform** **(** :ref:`int<class_int>` instance, :ref:`Transform<class_Transform>` transform **)**
 
 Set the transform for a specific instance.
+
+.. _class_MultiMesh_method_set_instance_transform_2d:
+
+- void **set_instance_transform_2d** **(** :ref:`int<class_int>` instance, :ref:`Transform2D<class_Transform2D>` transform **)**
 

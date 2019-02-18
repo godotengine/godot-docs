@@ -41,6 +41,8 @@ Methods
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_item_id<class_OptionButton_method_get_item_id>` **(** :ref:`int<class_int>` idx **)** const                                                                           |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`get_item_index<class_OptionButton_method_get_item_index>` **(** :ref:`int<class_int>` id **)** const                                                                      |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`     | :ref:`get_item_metadata<class_OptionButton_method_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** const                                                               |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`       | :ref:`get_item_text<class_OptionButton_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** const                                                                       |
@@ -106,13 +108,13 @@ Signals
 
 - **item_focused** **(** :ref:`int<class_int>` ID **)**
 
-This signal is emitted when user navigated to an item using ``ui_up`` or ``ui_down`` action. ID of the item selected is passed as argument (if no IDs were added, ID will be just the item index).
+This signal is emitted when user navigated to an item using ``ui_up`` or ``ui_down`` action. ID of the item selected is passed as argument.
 
 .. _class_OptionButton_signal_item_selected:
 
 - **item_selected** **(** :ref:`int<class_int>` ID **)**
 
-This signal is emitted when the current item was changed by the user. ID of the item selected is passed as argument (if no IDs were added, ID will be just the item index).
+This signal is emitted when the current item was changed by the user. Index of the item selected is passed as argument.
 
 Description
 -----------
@@ -173,7 +175,13 @@ Return the icon of the item at index "idx".
 
 - :ref:`int<class_int>` **get_item_id** **(** :ref:`int<class_int>` idx **)** const
 
-Return the ID of the item at index "idx".
+Return the ID of the item at index ``idx``.
+
+.. _class_OptionButton_method_get_item_index:
+
+- :ref:`int<class_int>` **get_item_index** **(** :ref:`int<class_int>` id **)** const
+
+Return the index of the item with the given ``id``.
 
 .. _class_OptionButton_method_get_item_metadata:
 

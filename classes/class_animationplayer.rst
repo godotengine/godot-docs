@@ -356,11 +356,15 @@ Returns ``true`` if playing an animation.
 
 Play the animation with key ``name``. Custom speed and blend times can be set. If custom speed is negative (-1), 'from_end' being true can play the animation backwards.
 
+If the animation has been paused by ``stop(true)`` it will be resumed. Calling ``play()`` without arguments will also resume the animation.
+
 .. _class_AnimationPlayer_method_play_backwards:
 
 - void **play_backwards** **(** :ref:`String<class_String>` name="", :ref:`float<class_float>` custom_blend=-1 **)**
 
 Play the animation with key ``name`` in reverse.
+
+If the animation has been paused by ``stop(true)`` it will be resumed backwards. Calling ``play_backwards()`` without arguments will also resume the animation backwards.
 
 .. _class_AnimationPlayer_method_queue:
 
@@ -396,5 +400,7 @@ Specify a blend time (in seconds) between two animations, referenced by their na
 
 - void **stop** **(** :ref:`bool<class_bool>` reset=true **)**
 
-Stop the currently playing animation. If ``reset`` is ``true``, the anim position is reset to ``0``.
+Stop the currently playing animation. If ``reset`` is ``true``, the animation position is reset to ``0`` and the playback speed is reset to ``1.0``.
+
+If ``reset`` is ``false``, then calling ``play()`` without arguments or ``play("same_as_before")`` will resume the animation. Works the same for the ``play_backwards()`` method.
 

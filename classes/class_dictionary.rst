@@ -46,6 +46,8 @@ Description
 
 Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are always passed by reference.
 
+Erasing elements while iterating over them **is not supported**.
+
 Method Descriptions
 -------------------
 
@@ -71,7 +73,7 @@ Return true if the dictionary is empty.
 
 - :ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
 
-Erase a dictionary key/value pair by key.
+Erase a dictionary key/value pair by key. Do not erase elements while iterating over the dictionary.
 
 .. _class_Dictionary_method_get:
 

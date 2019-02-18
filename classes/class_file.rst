@@ -216,7 +216,7 @@ Closes the currently opened file.
 
 - :ref:`bool<class_bool>` **eof_reached** **(** **)** const
 
-Returns ``true`` if the file cursor has reached the end of the file.
+Returns ``true`` if the file cursor has read past the end of the file. Note that this function will still return ``false`` while at the end of the file and only activates when reading past it. This can be confusing but it conforms to how low level file access works in all operating systems. There is always :ref:`get_len<class_File_method_get_len>` and :ref:`get_position<class_File_method_get_position>` to implement a custom logic.
 
 .. _class_File_method_file_exists:
 

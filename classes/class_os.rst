@@ -85,6 +85,8 @@ Methods
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>` **(** **)**                                                                                                                                         |
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`VideoDriver<enum_OS_VideoDriver>`       | :ref:`get_current_video_driver<class_OS_method_get_current_video_driver>` **(** **)** const                                                                                                                                     |
++-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`           | :ref:`get_date<class_OS_method_get_date>` **(** :ref:`bool<class_bool>` utc=false **)** const                                                                                                                                   |
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`           | :ref:`get_datetime<class_OS_method_get_datetime>` **(** :ref:`bool<class_bool>` utc=false **)** const                                                                                                                           |
@@ -161,7 +163,7 @@ Methods
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_video_driver_count<class_OS_method_get_video_driver_count>` **(** **)** const                                                                                                                                         |
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_video_driver_name<class_OS_method_get_video_driver_name>` **(** :ref:`int<class_int>` driver **)** const                                                                                                              |
+| :ref:`String<class_String>`                   | :ref:`get_video_driver_name<class_OS_method_get_video_driver_name>` **(** :ref:`VideoDriver<enum_OS_VideoDriver>` driver **)** const                                                                                            |
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_virtual_keyboard_height<class_OS_method_get_virtual_keyboard_height>` **(** **)**                                                                                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -236,6 +238,18 @@ Methods
 
 Enumerations
 ------------
+
+.. _enum_OS_VideoDriver:
+
+.. _class_OS_constant_VIDEO_DRIVER_GLES2:
+
+.. _class_OS_constant_VIDEO_DRIVER_GLES3:
+
+enum **VideoDriver**:
+
+- **VIDEO_DRIVER_GLES2** = **1** --- The GLES2 rendering backend. It uses OpenGL ES 2.0 on mobile devices, OpenGL 2.1 on desktop platforms and WebGL 1.0 on the web.
+
+- **VIDEO_DRIVER_GLES3** = **0** --- The GLES3 rendering backend. It uses OpenGL ES 3.0 on mobile devices, OpenGL 3.3 on desktop platforms and WebGL 2.0 on the web.
 
 .. _enum_OS_Weekday:
 
@@ -723,6 +737,12 @@ Returns the command line arguments passed to the engine.
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_connected_midi_inputs** **(** **)**
 
+.. _class_OS_method_get_current_video_driver:
+
+- :ref:`VideoDriver<enum_OS_VideoDriver>` **get_current_video_driver** **(** **)** const
+
+Returns the currently used video driver, using one of the values from :ref:`VideoDriver<enum_OS_VideoDriver>`.
+
 .. _class_OS_method_get_date:
 
 - :ref:`Dictionary<class_Dictionary>` **get_date** **(** :ref:`bool<class_bool>` utc=false **)** const
@@ -979,9 +999,13 @@ If the project name is empty, ``user://`` falls back to ``res://``.
 
 - :ref:`int<class_int>` **get_video_driver_count** **(** **)** const
 
+Returns the number of video drivers supported on the current platform.
+
 .. _class_OS_method_get_video_driver_name:
 
-- :ref:`String<class_String>` **get_video_driver_name** **(** :ref:`int<class_int>` driver **)** const
+- :ref:`String<class_String>` **get_video_driver_name** **(** :ref:`VideoDriver<enum_OS_VideoDriver>` driver **)** const
+
+Returns the name of the video driver matching the given ``driver`` index. This index is a value from :ref:`VideoDriver<enum_OS_VideoDriver>`, and you can use :ref:`get_current_video_driver<class_OS_method_get_current_video_driver>` to get the current backend's index.
 
 .. _class_OS_method_get_virtual_keyboard_height:
 

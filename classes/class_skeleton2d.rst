@@ -27,6 +27,13 @@ Methods
 | :ref:`RID<class_RID>`       | :ref:`get_skeleton<class_Skeleton2D_method_get_skeleton>` **(** **)** const             |
 +-----------------------------+-----------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_Skeleton2D_signal_bone_setup_changed:
+
+- **bone_setup_changed** **(** **)**
+
 Method Descriptions
 -------------------
 

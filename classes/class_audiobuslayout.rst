@@ -19,5 +19,5 @@ Stores information about the audiobusses.
 Description
 -----------
 
-Stores position, muting, solo, bypass, effects, effect position, volume, and the connections between busses. See :ref:`AudioServer<class_AudioServer>` for usage.
+Stores position, muting, solo, bypass, effects, effect position, volume, and the connections between buses. See :ref:`AudioServer<class_AudioServer>` for usage.
 

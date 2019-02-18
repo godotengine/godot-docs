@@ -246,6 +246,8 @@ Enumerations
 
 .. _class_Physics2DServer_constant_SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS:
 
+.. _class_Physics2DServer_constant_SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH:
+
 enum **SpaceParameter**:
 
 - **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
@@ -261,6 +263,8 @@ enum **SpaceParameter**:
 - **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
 
 - **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **6** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
+
+- **SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH** = **7**
 
 .. _enum_Physics2DServer_ShapeType:
 

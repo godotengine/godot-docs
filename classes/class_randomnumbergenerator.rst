@@ -51,6 +51,8 @@ Property Descriptions
 | *Getter* | get_seed()      |
 +----------+-----------------+
 
+The seed used by the random number generator. A given seed will give a reproducible sequence of pseudo-random numbers.
+
 Method Descriptions
 -------------------
 
@@ -76,7 +78,7 @@ Generates pseudo-random 32-bit unsigned integer between '0' and '4294967295'.
 
 - :ref:`int<class_int>` **randi_range** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
 
-Generates pseudo-random 32-bit signed integer between ``from`` and ``to``\ (inclusive).
+Generates pseudo-random 32-bit signed integer between ``from`` and ``to`` (inclusive).
 
 .. _class_RandomNumberGenerator_method_randomize:
 

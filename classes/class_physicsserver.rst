@@ -784,6 +784,8 @@ enum **ProcessInfo**:
 
 .. _class_PhysicsServer_constant_SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS:
 
+.. _class_PhysicsServer_constant_SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH:
+
 enum **SpaceParameter**:
 
 - **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
@@ -801,6 +803,8 @@ enum **SpaceParameter**:
 - **SPACE_PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO** = **6**
 
 - **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **7** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
+
+- **SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH** = **8**
 
 .. _enum_PhysicsServer_BodyAxis:
 

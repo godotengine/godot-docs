@@ -502,9 +502,9 @@ enum **GrowDirection**:
 
 - **GROW_DIRECTION_BEGIN** = **0** --- The control will grow to the left or top to make up if its minimum size is changed to be greater than its current size on the respective axis.
 
-- **GROW_DIRECTION_END** = **1** --- The control wil grow to the right or bottom to make up if its minimum size is changed to be greater than its current size on the respective axis.
+- **GROW_DIRECTION_END** = **1** --- The control will grow to the right or bottom to make up if its minimum size is changed to be greater than its current size on the respective axis.
 
-- **GROW_DIRECTION_BOTH** = **2** --- The control wil grow in both directions equally to make up if its minimum size is changed to be greater than its current size.
+- **GROW_DIRECTION_BOTH** = **2** --- The control will grow in both directions equally to make up if its minimum size is changed to be greater than its current size.
 
 .. _enum_Control_Anchor:
 

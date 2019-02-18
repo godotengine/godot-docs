@@ -896,7 +896,7 @@ Random from seed: pass a ``seed``, and an array with both number and new seed is
 
 - :ref:`float<class_float>` **randf** **(** **)**
 
-Returns a random floating point value between 0 and 1.
+Returns a random floating point value on the interval ``[0, 1]``.
 
 ::
 
@@ -906,7 +906,7 @@ Returns a random floating point value between 0 and 1.
 
 - :ref:`int<class_int>` **randi** **(** **)**
 
-Returns a random 32 bit integer. Use remainder to obtain a random value between 0 and N (where N is smaller than 2^32 -1).
+Returns a random 32 bit integer. Use remainder to obtain a random value in the interval ``[0, N]`` (where N is smaller than 2^32 -1).
 
 ::
 
