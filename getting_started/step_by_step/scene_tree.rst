@@ -175,7 +175,7 @@ function
 
     public void _MyLevelWasCompleted()
     {
-        PackedScene nextScene = ResourceLoader.load("res://levels/level2.tscn") as PackedScene;
+        var nextScene = (PackedScene)ResourceLoader.Load("res://levels/level2.tscn");
         GetTree().ChangeSceneTo(nextScene);
     }
 

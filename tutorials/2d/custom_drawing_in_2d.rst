@@ -26,7 +26,7 @@ examples why:
    tetris board). The tetris example uses a custom draw function to draw
    the blocks.
 -  Drawing a large number of simple objects. Custom drawing avoids the
-   overhead of using nodes which makes it less memory intensive and 
+   overhead of using nodes which makes it less memory intensive and
    potentially faster.
 -  Making a custom UI control. There are plenty of controls available,
    but it's easy to run into the need to make a new, custom one.
@@ -130,12 +130,12 @@ call ``update()`` from the ``_process()`` callback, like this:
 
     public class CustomNode2D : Node2D
     {
-        public override _Draw()
+        public override void _Draw()
         {
             // Your draw commands here
         }
 
-        public override _Process(delta)
+        public override void _Process(float delta)
         {
             Update();
         }

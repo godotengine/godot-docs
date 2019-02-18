@@ -274,9 +274,12 @@ Here is the code for the player using signals to emit the bullet:
 
         public override void _Input(InputEvent event)
         {
-            if (input is InputEventMouseButton && Input.IsMouseButtonPressed((int)ButtonList.Left))
+            if (input is InputEventMouseButton mouseButton)
             {
-                EmitSignal(nameof(Shoot), _bullet, Rotation, Position);
+                if (mouseButton.ButtonIndex == (int)ButtonList.Left && mouseButton.Pressed)
+                {
+                    EmitSignal(nameof(Shoot), _bullet, Rotation, Position);
+                }
             }
         }
 

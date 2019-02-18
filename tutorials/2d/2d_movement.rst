@@ -75,22 +75,19 @@ Add a script to the kinematic body and add the following code:
         public void GetInput()
         {
             velocity = new Vector2();
+
             if (Input.IsActionPressed("right"))
-            {
                 velocity.x += 1;
-            }
+
             if (Input.IsActionPressed("left"))
-            {
                 velocity.x -= 1;
-            }
+
             if (Input.IsActionPressed("down"))
-            {
                 velocity.y += 1;
-            }
+
             if (Input.IsActionPressed("up"))
-            {
                 velocity.y -= 1;
-            }
+
             velocity = velocity.Normalized() * Speed;
         }
 
@@ -166,22 +163,19 @@ while up/down moves it forward or backward in whatever direction it's facing.
         {
             rotationDir = 0;
             velocity = new Vector2();
+
             if (Input.IsActionPressed("right"))
-            {
                 rotationDir += 1;
-            }
+
             if (Input.IsActionPressed("left"))
-            {
                 rotationDir -= 1;
-            }
+
             if (Input.IsActionPressed("down"))
-            {
                 velocity = new Vector2(-Speed, 0).Rotated(Rotation);
-            }
+
             if (Input.IsActionPressed("up"))
-            {
                 velocity = new Vector2(Speed, 0).Rotated(Rotation);
-            }
+
             velocity = velocity.Normalized() * Speed;
         }
 
@@ -247,14 +241,13 @@ is set by the mouse position instead of the keyboard. The character will always
         {
             LookAt(GetGlobalMousePosition());
             velocity = new Vector2();
+
             if (Input.IsActionPressed("down"))
-            {
                 velocity = new Vector2(-Speed, 0).Rotated(Rotation);
-            }
+
             if (Input.IsActionPressed("up"))
-            {
                 velocity = new Vector2(Speed, 0).Rotated(Rotation);
-            }
+
             velocity = velocity.Normalized() * Speed;
         }
 

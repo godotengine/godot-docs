@@ -17,7 +17,7 @@ Y or Z? This article covers a variety of topics related to these dilemmas.
 
   "As the size of a problem domain increases, the runtime length of the
   algorithm..."
-  
+
   - Constant-time, ``O(1)``: "...does not increase."
   - Logarithmic-time, ``O(log n)``: "...increases at a slow rate."
   - Linear-time, ``O(n)``: "...increases at the same rate."
@@ -25,7 +25,7 @@ Y or Z? This article covers a variety of topics related to these dilemmas.
 
   Imagine if one had to process 3 million data points within a single frame. It
   would be impossible to craft the feature with a linear-time algorithm since
-  the sheer size of the data would increase the runtime far beyond the time alotted. 
+  the sheer size of the data would increase the runtime far beyond the time alotted.
   In comparison, using a constant-time algorithm could handle the operation without
   issue.
 
@@ -183,18 +183,18 @@ looking up data.
 
   When developers mention how slow the scripting API is, it is this chain
   of queries they refer to. Compared to compiled C++ code where the
-  application knows exactly where to go to find anything, it is inevitable 
+  application knows exactly where to go to find anything, it is inevitable
   that scripting API operations will take much longer. They must locate the
   source of any relevant data before they can attempt to access it.
 
   The reason GDScript is slow is because every operation it performs passes
   through this system.
-  
+
   C# can process some content at higher speeds via more optimized bytecode.
   But, if the C# script calls into an engine class'
   content or if the script tries to access something external to it, it will
   go through this pipeline.
-  
+
   NativeScript C++ goes even further and keeps everything internal by default.
   Calls into external structures will go through the scripting API. In
   NativeScript C++, registering methods to expose them to the scripting API is
@@ -247,18 +247,21 @@ tree structures.
   .. code-tab:: csharp
 
     // Can decide whether to expose getters/setters for properties later
-    public class TreeNode : public Object {
-
+    public class TreeNode : Object
+    {
         private TreeNode _parent = null;
 
         private object[] _children = new object[0];
 
-        // Not sure if this should be a destructor or a notification
-        public void ~TreeNode() {
-            foreach (object child in _children) {
-                TreeNode node = child as TreeNode;
-                if (node != null) {
-                    node.Free();
+        public override void Notification(int what)
+        {
+            if (what == NotificationPredelete)
+            {
+                foreach (object child in _children)
+                {
+                    TreeNode node = child as TreeNode;
+                    if (node != null)
+                        node.Free();
                 }
             }
         }

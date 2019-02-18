@@ -76,28 +76,29 @@ access.
         // No "preload" loads during scene load exists in C#.
 
         // Initialize with a value. Editable at runtime.
-        public Script MyScript = GD.Load("MyScript.cs");
+        public Script MyScript = GD.Load<Script>("MyScript.cs");
 
-        // Initialize with same value. Value locked.
-        public const Script MyConstScript = GD.Load("MyScript.cs");
+        // Initialize with same value. Value cannot be changed.
+        public readonly Script MyConstScript = GD.Load<Script>("MyScript.cs");
 
-        // Like 'const' due to inaccessible setter.
+        // Like 'readonly' due to inaccessible setter.
         // But, value can be set during constructor, i.e. MyType().
-        public Script Library { get; } = GD.Load("res://addons/plugin/library.gd") as Script;
+        public Script Library { get; } = GD.Load<Script>("res://addons/plugin/library.gd");
 
         // If need a "const [Export]" (which doesn't exist), use a
         // conditional setter for a tool script that checks if it's executing
         // in the editor.
+        private PackedScene _enemyScn;
+
         [Export]
         public PackedScene EnemyScn
         {
-            get;
-
+            get { return _enemyScn; }
             set
             {
                 if (Engine.IsEditorHint())
                 {
-                    EnemyScn = value;
+                    _enemyScn = value;
                 }
             }
         };
@@ -106,7 +107,7 @@ access.
         public String _GetConfigurationWarning()
         {
             if (EnemyScn == null)
-                return "Must initialize property 'const_script'.";
+                return "Must initialize property 'EnemyScn'.";
             return "";
         }
     }
@@ -204,7 +205,8 @@ Nodes likewise have an alternative access point: the SceneTree.
         // Pro: node makes no requirements of its external structure.
         //      'prop' can come from anywhere.
         public object Prop;
-        public void CallMeAfterPropIsInitializedByParent() {
+        public void CallMeAfterPropIsInitializedByParent()
+        {
             // Validate prop in one of three ways
 
             // Fail with no notification
@@ -245,7 +247,7 @@ It instead checks that the object **implements** the individual method.
 
 For example, the :ref:`CanvasItem <class_CanvasItem>` class has a ``visible``
 property. All properties exposed to the scripting API are in fact a setter and
-getter pair bound to a name. If one tried to access 
+getter pair bound to a name. If one tried to access
 :ref:`CanvasItem.visible <class_CanvasItem_property_visible>`, then Godot would do the
 following checks, in order:
 

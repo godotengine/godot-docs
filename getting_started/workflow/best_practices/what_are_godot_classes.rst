@@ -59,10 +59,10 @@ let's see a simple example of creating a single Node as a child.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
-    
+
     # main.gd
     extends Node
-    
+
     var child # define a variable to store a reference to the child
 
     func _init():
@@ -78,7 +78,8 @@ let's see a simple example of creating a single Node as a child.
     using System;
     using Godot;
 
-    namespace ExampleProject {
+    namespace ExampleProject
+    {
         public class Main : Resource
         {
             public Node Child { get; set; }
@@ -87,7 +88,7 @@ let's see a simple example of creating a single Node as a child.
             {
                 Child = new Node(); // Construct the child.
                 Child.Name = "Child"; // Change its name.
-                Child.Script = ResourceLoader.load("child.gd") as Script; // Give it custom features.
+                Child.Script = (Script)ResourceLoader.Load("child.gd"); // Give it custom features.
                 Child.Owner = this; // Serialize this node if this is saved.
                 AddChild(Child); // Add "Child" as a child of this.
             }

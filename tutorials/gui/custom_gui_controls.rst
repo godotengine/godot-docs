@@ -55,7 +55,7 @@ exists. Example
 
     public override void _Draw()
     {
-        if(HasFocus())
+        if (HasFocus())
         {
             DrawSelected()
         }
@@ -144,23 +144,9 @@ Simply override it in your control. No processing needs to be set.
 
     public override void _GuiInput(InputEvent @event)
     {
-        var mouseButtonEvent = @event as InputEventMouseButton;
-        if (mouseButtonEvent != null)
-        {
-            if (mouseButtonEvent.ButtonIndex == (int)ButtonList.Left && mouseButtonEvent.Pressed)
-            {
-                GD.Print("Left mouse button was pressed!");
-            }
-        }
-    }
-
-    // or alternatively when using C# 7 or greater we can use pattern matching
-    public override void _GuiInput(InputEvent @event)
-    {
         if (@event is InputEventMouseButton mbe && mbe.ButtonIndex == (int)ButtonList.Left && mbe.Pressed)
-            {
-                GD.Print("Left mouse button was pressed!");
-            }
+        {
+            GD.Print("Left mouse button was pressed!");
         }
     }
 
@@ -203,7 +189,7 @@ exists, but which can be checked with the _notification callback:
 
     public override void _Notification(int what)
     {
-        switch(what)
+        switch (what)
         {
             case NotificationMouseEnter:
                 // Mouse entered the area of this control.
