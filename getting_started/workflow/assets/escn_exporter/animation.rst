@@ -16,29 +16,35 @@ a single AnimationPlayer and makes it easy to switch actions.
 This workflow makes use of blender nla_tracks. Here is a brief guide on how
 to use this feature:
 
-**1. Switch workspace to 'Dope Sheet'**
+**1. Stash active action**
 
-.. image:: img/dope_sheet.jpg
-
-**2. Stash the active action**
-
-The stashed action, while not active, will still be exported.
-
-.. image:: img/stash_action.jpg
-
-**3. Check stashed actions in 'NLA Editor' [optional]**
-
-Switch workspace to 'NLA Editor'.
+New created action is always an active action binded to object. There are 
+several ways to place an active action into NLA track, 
+one is of course doing it in ``NLA Editor``
 
 .. image:: img/nla_editor.jpg
+.. image:: img/nla_pushdown.jpg
 
-Make sure all stashed actions are muted.
+Or it can be done stashing the action in ``Dope Sheet``
+
+.. image:: img/dope_sheet.jpg
+.. image:: img/stash_action.jpg
+
+**2. Check mute status of NLA tracks**
+
+An NLA track can be ``mute`` or ``unmute``, the exporter will export all
+the ``mute`` NLA track as a separate action, while blends all the ``unmute``
+NLA tracks into every action (including the action action) being exported.
 
 .. image:: img/nla_strip.jpg
 
-**4. Export the scene**
+**3. Export the scene**
 
-All the stashed actions, as well as the active action, are exported
+Make sure the ``Export Stashed Actions`` option has been turned on.
+
+.. image:: img/stash_action_option.jpg
+
+Then all the stashed actions, as well as the active action, are exported
 to an AnimationPlayer.
 
 .. image:: img/in_godot.jpg
@@ -49,7 +55,7 @@ Constraints
 Sometimes complicated animation is built with object constraint; a usual
 example is inverse kinematics. The add-on would automatically check if an
 object has some constraint; if it does, all the constraints are baked into
-every action the object has and then exported.
+actions and then exported along with the object.
 
 
 Animation Mode

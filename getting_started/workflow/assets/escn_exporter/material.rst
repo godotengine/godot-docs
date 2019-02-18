@@ -32,18 +32,35 @@ This can take the value of:
  - None - Do not search for materials. Export them from the Blender file.
 
 
-Export of Blender materials
+Export of CYCLES/EEVEE materials
 ---------------------------
 
-The other way materials are handled is for the exporter to export them from
-Blender. Currently only the diffuse color and a few flags (e.g. unshaded) are
-exported.
+The exporter has a primitive support for converting CYCLES/EEVEE material node tree
+to Godot Shader Material. Note that some of the Shader Node are not supported yet due to 
+difficulties in implementation, which are:
+
+- all the ``noisy textures``
+- ``generated texture coordinates``
+- ``group node``
+- shader nodes except ``PrincipledBSDF``, ``Diffuse``, ``Glossy``, ``Glass``, ``add shader`` and ``mix shader``
 
 .. warning::
-    Export of Blender materials is currently very primitive. However, it is the
-    focus of a current GSoC project
+  If possible try to use PrincipledBSDF node with GGX distribution as the output shader
+  node, it is the only one guarantee to be exactly correctly. Others are just based on approximation.
 
-.. warning::
-    Materials are currently exported using their "Blender Render" settings.
-    When Blender 2.8 is released, this will be removed and this part of the
-    exporter will change.
+Sometimes materials may not be valid for exporting (e.g. has some unsupported node) or it
+is using Blender Internal Engine, only the diffuse color and a few flags (e.g. unshaded) are
+exported and form a Spatial Material.
+
+
+Generate external materials
+---------------------------
+The default configuration of material exporting would keep all the materials internal to
+the ``escn`` file. There is an option which could enable generating external ``.material``
+file when the ``escn`` file opens in Godot. 
+
+.. image:: img/external_mat_option.jpg
+
+``.material`` file can be assigned to any material slot to be a external resource.
+
+.. image:: img/gd_dot_material.jpg
