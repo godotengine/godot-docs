@@ -410,7 +410,7 @@ clear its content. Let's animate the ``animated_health`` value. Call the
  .. code-tab:: csharp
 
     // Add this to the top of your class.
-    private int _animatedHealth = 0;
+    private float _animatedHealth = 0;
 
     public void UpdateHealth(int health)
     {
