@@ -36,7 +36,7 @@ either? Let's see an example:
     # This value is a constant, so it spawns when the Script object loads.
     # The script is preloading the value. The advantage here is that the editor
     # can offer autocompletion since it must be a static path.
-    const BuildingScn = preload("building.tscn")
+    const BuildingScn = preload("res://building.tscn")
 
     # 1. The script preloads the value, so it will load as a dependency
     #    of the 'my_buildings.gd' script file. But, because this is a
@@ -60,27 +60,27 @@ either? Let's see an example:
     # One must assign constant values to constants. Because `load` performs a
     # runtime lookup by its very nature, one cannot use it to initialize a
     # constant.
-    const OfficeScn = load("office.tscn")
+    const OfficeScn = load("res://office.tscn")
 
     # Successfully loads and only when one instantiates the script! Yay!
-    var office_scn = load("office.tscn")
+    var office_scn = load("res://office.tscn")
 
   .. code-tab:: csharp
 
     using System;
-    using GD;
+    using Godot;
 
-    public class MyBuildings : public Node {
-
-        public const PackedScene Building { get; set; }
+    // C# and other languages have no concept of "preloading".
+    public class MyBuildings : Node {
+    
+        //This is a read-only field, it can only be assigned when it's declared or during a constructor
+        public readonly PackedScene Building = ResourceLoader.Load<PackedScene>("res://building.tscn");
         
-        public PackedScene ABuilding = GD.load("office.tscn") as PackedScene;
+        public PackedScene ABuilding;
 
-        public void MyBuildings() {
-            // Can assign the value during initialization or during a constructor.
-            Building = ResourceLoader.load("building.tscn") as PackedScene;
-
-            // C# and other languages have no concept of "preloading".
+        public override void _Ready() {
+            // Can assign the value during initialization
+            ABuilding = GD.Load<PackedScene>("res://office.tscn");
         }
     }
 
