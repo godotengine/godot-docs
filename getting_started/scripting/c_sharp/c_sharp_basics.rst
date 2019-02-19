@@ -45,6 +45,7 @@ C# in Godot. If you don't plan on using the Visual Studio IDE,
 you can download just the
 `Visual Studio Build Tools <https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15>`_
 instead.
+Make sure you at least have the .NET Framework 4.5 targetting pack installed, you can get it using any of the installers mentioned above inside the "Individial components" tab.
 
 macOS and Linux
 ~~~~~~~~~~~~~~~
