@@ -109,7 +109,7 @@ file in the directory of the games executable. The PCK file contains a
     {
         ProjectSettings.LoadResourcePack("res://mod.pck");
         // Now one can use the assets as if they had them in the project from the start
-        var importedScene = ResourceLoader.Load("res://mod_scene.tscn") as PackedScene;
+        var importedScene = (PackedScene)ResourceLoader.Load("res://mod_scene.tscn");
     }
 
 .. warning::

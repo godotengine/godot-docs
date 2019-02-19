@@ -25,7 +25,7 @@ scenes which one instances and adds to the tree at runtime:
 
     public MyClass()
     {
-        simultaneousScene = ResourceLoader.load("res://levels/level2.tscn") as PackedScene;
+        simultaneousScene = (PackedScene)ResourceLoader.Load("res://levels/level2.tscn");
     }
 
     public void _AddASceneManually()
@@ -49,7 +49,7 @@ access and integrity.
    ``get_node("/root/Main").free()`` to delete the whole scene.
 
     - Unloads memory.
-    
+
         - Pro: RAM is no longer dragging the dead weight.
 
         - Con: Returning to that scene is now more expensive since it must be
@@ -90,11 +90,11 @@ access and integrity.
           keep updated any data within it that relies on delta time or frame
           data.
 
-        - Pro: Nodes are still members of groups (since groups belong to the 
+        - Pro: Nodes are still members of groups (since groups belong to the
           :ref:`SceneTree <class_SceneTree>`).
 
         - Con: The CPU's attention is now divided between both scenes. Too much
-          load could result in low frame rates. One should be sure to test 
+          load could result in low frame rates. One should be sure to test
           performance as they go to ensure the target platform can support the
           load they are giving it.
 
@@ -107,7 +107,7 @@ access and integrity.
 
     - Processing stops (similar pros/cons as with deleting it completely).
 
-    - Pro: This variation of "hiding" it is much easier to show/hide. Rather 
+    - Pro: This variation of "hiding" it is much easier to show/hide. Rather
       than potentially keeping track of multiple changes to the scene, one
       must only call the one method add/remove_child pair of methods. It is
       similar to disabling game objects in other engines.
@@ -136,5 +136,5 @@ cases where the intent is to render different content in different parts of the
 screen. Minimaps and split-screen multiplayer are good examples.
 
 Each option will have cases where it is best appropriate, so one must
-examine the effects of each and determine what path best fits 
+examine the effects of each and determine what path best fits
 their unique situation.

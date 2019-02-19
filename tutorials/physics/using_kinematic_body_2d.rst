@@ -194,31 +194,27 @@ Attach a script to the KinematicBody2D and add the following code:
         public int Speed = 250;
         private Vector2 _velocity = new Vector2();
 
-        public void getInput()
+        public void GetInput()
         {
             // Detect up/down/left/right keystate and only move when pressed
             _velocity = new Vector2();
+
             if (Input.IsActionPressed("ui_right"))
-            {
                 _velocity.x += 1;
-            }
+
             if (Input.IsActionPressed("ui_left"))
-            {
                 _velocity.x -= 1;
-            }
+
             if (Input.IsActionPressed("ui_down"))
-            {
                 _velocity.y += 1;
-            }
+
             if (Input.IsActionPressed("ui_up"))
-            {
                 _velocity.y -= 1;
-            }
         }
 
         public override void _PhysicsProcess(float delta)
         {
-            getInput();
+            GetInput();
             MoveAndCollide(velocity * delta);
         }
     }
@@ -302,7 +298,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
         public int Speed = 200;
         private Vector2 _velocity = new Vector2();
 
-        public void getInput()
+        public void GetInput()
         {
             // add these actions in Project Settings -> Input Map
             _velocity = new Vector2();
@@ -324,13 +320,13 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
         {
             // "Muzzle" is a Position2D placed at the barrel of the gun
             var b = (Bullet)_bullet.Instance();
-            b.Start(((Node2D)GetNode("Muzzle")).GlobalPosition, Rotation);
+            b.Start(GetNode<Node2D>("Muzzle").GlobalPosition, Rotation);
             GetParent().AddChild(b);
         }
 
         public override void _PhysicsProcess(float delta)
         {
-            getInput();
+            GetInput();
             var dir = GetGlobalMousePosition() - GlobalPosition;
             // Don't move if too close to the mouse pointer
             if (dir.Length() > 5)
@@ -478,7 +474,7 @@ Here's the code for the player body:
         Vector2 velocity = new Vector2();
         bool jumping = false;
 
-        public void getInput()
+        public void GetInput()
         {
             velocity.x = 0;
             bool right = Input.IsActionPressed("ui_right");
@@ -490,24 +486,19 @@ Here's the code for the player body:
                 jumping = true;
                 velocity.y = JumpSpeed;
             }
+
             if (right)
-            {
                 velocity.x += RunSpeed;
-            }
             if (left)
-            {
                 velocity.x -= RunSpeed;
-            }
         }
 
         public override void _PhysicsProcess(float delta)
         {
-            getInput();
+            GetInput();
             velocity.y += Gravity * delta;
             if (jumping && IsOnFloor())
-            {
                 jumping = false;
-            }
             velocity = MoveAndSlide(velocity, new Vector2(0, -1));
         }
     }

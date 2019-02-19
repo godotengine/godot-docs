@@ -291,8 +291,8 @@ Let's see some examples.
 
                 public override void _Ready()
                 {
-                    if (Stats != null && Stats is BotStats) {
-                        GD.print((Stats as BotStats).Health); // Prints '10'.
+                    if (Stats != null && Stats is BotStats botStats) {
+                        GD.Print(botStats.Health); // Prints '10'.
                     }
                 }
             }
@@ -338,7 +338,7 @@ Let's see some examples.
             {
                 _stats["GodotBot"] = new BotStats(10); // Creates instance with 10 health.
                 _stats["DifferentBot"] = new BotStats(20); // A different one with 20 health.
-                Godot.print(_stats);
+                GD.Print(_stats);
             }
         }
 
@@ -384,7 +384,6 @@ Let's see some examples.
 
         public class MyNode : Node
         {
-
             public class MyResource : Resource
             {
                 [Export]
@@ -393,9 +392,9 @@ Let's see some examples.
 
             public override void _Ready()
             {
-                MyResource res = new MyResource();
+                var res = new MyResource();
 
                 // This will NOT serialize the 'Value' property.
-                ResourceSaver.save("res://MyRes.tres", res);
+                ResourceSaver.Save("res://MyRes.tres", res);
             }
         }

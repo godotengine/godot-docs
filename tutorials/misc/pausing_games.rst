@@ -94,7 +94,7 @@ enable the pause and show the pause screen.
     public void _on_pause_button_pressed()
     {
         GetTree().Paused = true;
-        ((Control)GetNode("pause_popup")).Show();
+        GetNode<Control>("pause_popup").Show();
     }
 
 To remove the pause, do the opposite when the pause screen is
@@ -111,7 +111,7 @@ closed:
 
     public void _on_pause_popup_close_pressed()
     {
-        ((Control)GetNode("pause_popup")).Hide();
+        GetNode<Control>("pause_popup").Hide();
         GetTree().Paused = false;
     }
 

@@ -249,7 +249,7 @@ object from the ``AnimationTree`` node (it is exported as a property).
 
  .. code-tab:: csharp
 
-    AnimationNodeStateMachinePlayback stateMachine = animTree.Get("parameters/StateMachine/playback") as AnimationNodeStateMachinePlayback;
+    AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)animTree.Get("parameters/StateMachine/playback");
 
 Once retrieved, it can be used by calling one of the many functions it offers:
 

@@ -32,7 +32,7 @@ either? Let's see an example:
 
     # (note how constant scripts/scenes have a diferent naming scheme than
     # their property variants).
-  
+
     # This value is a constant, so it spawns when the Script object loads.
     # The script is preloading the value. The advantage here is that the editor
     # can offer autocompletion since it must be a static path.
@@ -43,15 +43,15 @@ either? Let's see an example:
     #    property rather than a constant, the object won't copy the preloaded
     #    PackedScene resource into the property until the script instantiates
     #    with .new().
-    # 
+    #
     # 2. The preloaded value is inaccessible from the Script object alone. As
     #    such, preloading the value here actually does not benefit anyone.
-    # 
-    # 3. Because the user exports the value, if this script stored on 
+    #
+    # 3. Because the user exports the value, if this script stored on
     #    a node in a scene file, the scene instantation code will overwrite the
     #    preloaded initial value anyway (wasting it). It's usually better to
     #    provide null, empty, or otherwise invalid default values for exports.
-    # 
+    #
     # 4. It is when one instantiates this script on its own with .new() that
     #    one will load "office.tscn" rather than the exported value.
     export(PackedScene) var a_building = preload("office.tscn")
@@ -71,14 +71,15 @@ either? Let's see an example:
     using Godot;
 
     // C# and other languages have no concept of "preloading".
-    public class MyBuildings : Node {
-    
+    public class MyBuildings : Node
+    {
         //This is a read-only field, it can only be assigned when it's declared or during a constructor
         public readonly PackedScene Building = ResourceLoader.Load<PackedScene>("res://building.tscn");
-        
+
         public PackedScene ABuilding;
 
-        public override void _Ready() {
+        public override void _Ready()
+        {
             // Can assign the value during initialization
             ABuilding = GD.Load<PackedScene>("res://office.tscn");
         }

@@ -114,7 +114,7 @@ deltatime methods as needed.
 
     # Called every frame, even when the engine detects no input.
     func _process(delta):
-        if Input.action_just_pressed("ui_select"):
+        if Input.is_action_just_pressed("ui_select"):
             print(delta)
 
     # Called during every input event.
@@ -126,20 +126,24 @@ deltatime methods as needed.
 
   .. code-tab:: csharp
 
-    public class MyNode : public Node {
+    public class MyNode : Node
+    {
 
         // Called every frame, even when the engine detects no input.
-        public void _Process(float delta) {
-            if (GD.Input.ActionJustPressed("UiSelect")) {
-                GD.Print(string(delta));
-            }
+        public void _Process(float delta)
+        {
+            if (Input.IsActionJustPressed("ui_select"))
+                GD.Print(delta);
         }
 
         // Called during every input event. Equally true for _input().
-        public void _UnhandledInput(InputEvent event) {
-            switch (event.GetClass()) {
-                case "InputEventAction":
-                    GD.Print(string(GetProcessDeltaTime());
+        public void _UnhandledInput(InputEvent event)
+        {
+            switch (event)
+            {
+                case InputEventKey keyEvent:
+                    if (Input.IsActionJustPressed("ui_accept"))
+                        GD.Print(GetProcessDeltaTime());
                     break;
                 default:
                     break;
@@ -180,24 +184,27 @@ instantiation:
 
   .. code-tab:: csharp
 
-    // "one" is an "initialized value". These DO NOT trigger the setter.
-    // If one set the value as "two" from the Inspector, this would be an
-    // "exported value". These DO trigger the setter.
-    [Export]
-    public string Test = "one"
+    public class MyNode : Node
     {
-        get;
-        set
-        {
-            Test = value;
-            GD.Print("Setting: " + Test);
-        }
-    }
+        private string _test = "one";
 
-    public void _Init() {
-        // "three" is an "init assignment value".
-        // These DO (NOT?) trigger the setter.
-        Test = "three";
+        // Changing the value from the inspector does trigger the setter in C#.
+        [Export]
+        public string Test
+        {
+            get { return _test; }
+            set
+            {
+                _test = value;
+                GD.Print("Setting: " + _test);
+            }
+        }
+
+        public MyNode()
+        {
+            // Triggers the setter as well
+            Test = "three";
+        }
     }
 
 When instantiating a scene, property values will set up according to the
@@ -260,16 +267,19 @@ nodes that one might create at runtime.
 
   .. code-tab:: csharp
 
-    public class MyNode extends Node {
-
+    public class MyNode : Node
+    {
         public Node ParentCache = null;
 
-        public void ConnectionCheck() {
+        public void ConnectionCheck()
+        {
             return ParentCache.HasUserSignal("InteractedWith");
         }
 
-        public void _Notification(int What) {
-            switch (What) {
+        public void _Notification(int what)
+        {
+            switch (what)
+            {
                 case NOTIFICATION_PARENTED:
                     ParentCache = GetParent();
                     if (ConnectionCheck())
@@ -282,7 +292,8 @@ nodes that one might create at runtime.
             }
         }
 
-        public void OnParentInteractedWith() {
+        public void OnParentInteractedWith()
+        {
             GD.Print("I'm reacting to my parent's interaction!");
         }
     }

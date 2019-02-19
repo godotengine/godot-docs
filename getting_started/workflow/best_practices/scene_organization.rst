@@ -178,23 +178,27 @@ in another context without any extra changes to its API.
     .. code-tab:: csharp
 
       // Parent
-      GetNode("Left").Target = GetNode("Right/Receiver");
+      GetNode<Left>("Left").Target = GetNode("Right/Receiver");
 
-      // Left
-      public Node Target = null;
-
-      public void Execute()
+      public class Left : Node
       {
-          // Do something with 'Target'.
+          public Node Target = null;
+
+          public void Execute()
+          {
+              // Do something with 'Target'.
+          }
       }
 
-      // Right
-      public Node Receiver = null;
-
-      public Right()
+      public class Right : Node
       {
-          Receiver = ResourceLoader.load("Receiver.cs").new();
-          AddChild(Receiver);
+          public Node Receiver = null;
+
+          public Right()
+          {
+              Receiver = ResourceLoader.Load<Script>("Receiver.cs").New();
+              AddChild(Receiver);
+          }
       }
 
   The same principles also apply to non-Node objects that maintain dependencies
@@ -322,7 +326,7 @@ own place in the hierachy as a sibling or some other relation.
 
   1. A reliable third party, likely a parent node, to mediate the assignment.
   2. A group, to easily pull a reference to the desired node (assuming there
-     will only ever be one of the targets). 
+     will only ever be one of the targets).
 
   When should one do this? Well, it's up to them to decide. The dilemma
   arises when one must micro-manage when a node must move around the SceneTree

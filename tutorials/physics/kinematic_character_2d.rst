@@ -69,7 +69,6 @@ or lose precision if the frame rate is too high or too low.
 
     public class PhysicsScript : KinematicBody2D
     {
-
         public override void _PhysicsProcess(float delta)
         {
         }
@@ -135,11 +134,10 @@ So, let's move our sprite downwards until it hits the floor:
 
     public class PhysicsScript : KinematicBody2D
     {
-
         public override void _PhysicsProcess(float delta)
         {
             // Move down 1 pixel per physics frame
-            MoveAndCollide(new Vector2 (0,1));
+            MoveAndCollide(new Vector2(0, 1));
         }
     }
 
@@ -222,7 +220,7 @@ This adds simple walking support by pressing left and right:
     public class PhysicsScript : KinematicBody2D
     {
         const float gravity = 200.0f;
-        const int walk_speed = 200;
+        const int walkSpeed = 200;
 
         Vector2 velocity;
 
@@ -232,11 +230,11 @@ This adds simple walking support by pressing left and right:
 
             if (Input.IsActionPressed("ui_left"))
             {
-                velocity.x = -walk_speed;
+                velocity.x = -walkSpeed;
             }
             else if (Input.IsActionPressed("ui_right"))
             {
-                velocity.x = walk_speed;
+                velocity.x = walkSpeed;
             }
             else
             {

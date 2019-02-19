@@ -13,8 +13,8 @@ C# is a statically typed language. Therefore, you can't do the following:
 
 .. code-block:: csharp
 
-    var mySprite = GetNode("MySprite")
-    mySprite.SetFrame(0)
+    var mySprite = GetNode("MySprite");
+    mySprite.SetFrame(0);
 
 The method ``GetNode()`` returns a ``Node`` instance.
 You must explicitly convert it to the desired derived type, ``Sprite`` in this case.

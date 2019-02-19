@@ -17,7 +17,7 @@ Anonymous types
 
 It *is* possible to completely define a scenes' contents using a script alone.
 This is, in essence, what the Godot Editor does, only in the C++ constructor
-of its objects. 
+of its objects.
 
 But, choosing which one to use can be a dilemma. Creating script instances
 is identical to creating in-engine classes whereas handling scenes requires
@@ -40,8 +40,8 @@ a change in API:
 
         public class Game : Node
         {
-            public const Script MyNodeScr = ResourceLoader.load("MyNode.cs") as Script;
-            public const PackedScene MySceneScn= ResourceLoader.load("MyScene.tscn") as PackedScene;
+            public readonly Script MyNodeScr = (Script)ResourceLoader.Load("MyNode.cs");
+            public readonly PackedScene MySceneScn = (PackedScene)ResourceLoader.load("MyScene.tscn");
             public Node ANode;
             public Node MyNode;
             public Node MyScene;
@@ -51,8 +51,8 @@ a change in API:
             {
                 ANode = new Node();
                 MyNode = new MyNode(); // Same syntax
-                MyScene = MySceneScn.instance(); // different syntax
-                MyInheritedScene = MySceneScn.instance(PackedScene.GEN_EDIT_STATE_MAIN); // Create scene inheriting from MyScene
+                MyScene = MySceneScn.Instance(); // Different. Instantiated from a PackedScene
+                MyInheritedScene = MySceneScn.Instance(PackedScene.GenEditState.Main); // Create scene inheriting from MyScene
             }
         }
 
@@ -105,7 +105,7 @@ There are two systems for registering types...
 
    - Editor has no type-awareness of the script or its relationship
      to other engine types or scripts.
-     
+
    - Allows users to define an icon.
 
    - Works for all scripting languages because it deals with Script resources in abstract.

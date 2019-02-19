@@ -48,7 +48,7 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
 
     class Body : RigidBody
     {
-        private void lookFollow(PhysicsDirectBodyState state, Transform currentTransform, Vector3 targetPosition)
+        private void LookFollow(PhysicsDirectBodyState state, Transform currentTransform, Vector3 targetPosition)
         {
             var upDir = new Vector3(0, 1, 0);
             var curDir = currentTransform.basis.Xform(new Vector3(0, 0, 1));
@@ -60,8 +60,8 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
 
         public override void _IntegrateForces(PhysicsDirectBodyState state)
         {
-            var targetPosition = (GetNode("my_target_spatial_node") as Spatial).GetGlobalTransform().origin;
-            lookFollow(state, GetGlobalTransform(), targetPosition);
+            var targetPosition = GetNode<Spatial>("my_target_spatial_node").GetGlobalTransform().origin;
+            LookFollow(state, GetGlobalTransform(), targetPosition);
         }
     }
 

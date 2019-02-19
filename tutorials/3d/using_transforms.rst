@@ -295,9 +295,8 @@ Jump:
 
     // Keep in mind Y is up-axis
     if (Input.IsActionJustPressed("jump"))
-    {
         velocity.y = JumpSpeed;
-    }
+
     velocity = MoveAndSlide(velocity);
 
 All common behaviors and logic can be done with just vectors.
@@ -335,8 +334,7 @@ Example of looking around, FPS style:
 
     public override void _Input(InputEvent @event)
     {
-        var mouseMotion = @event as InputEventMouseMotion;
-        if (mouseMotion != null)
+        if (mouseMotion is InputEventMouseMotion mouseMotion)
         {
             // modify accumulated mouse rotation
             _rotationX += mouseMotion.Relative.x * LookAroundSpeed;
