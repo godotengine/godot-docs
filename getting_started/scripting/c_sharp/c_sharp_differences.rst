@@ -9,41 +9,99 @@ General differences
 -------------------
 
 As explained in the :ref:`doc_c_sharp`, C# generally uses ``PascalCase`` instead
-of the ``snake_case`` in GDScript and C++.
+of the ``snake_case`` used in GDScript and C++.
 
 Global scope
 ------------
 
-Available under ``Godot.GD``.
-Some things were moved to their own classes, like Math and Random. See below.
+Global functions and some constants had to be moved to classes, since C#
+does not allow declaring them in namespaces.
+Most global constants were moved their own enums.
 
-Global functions like ``print``, ``var2str`` and ``weakref`` are located under
-``GD`` in C#.
+Constants
+^^^^^^^^^
 
-``ERR_*`` constants were moved to ``Godot.Error``.
+Global constants were moved to their own enums.
+For example, ``ERR_*`` constants were moved to the ``Error`` enum.
 
-Math
-----
+Special cases:
 
-Math functions, like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2``, are
-located under ``Mathf`` as ``Abs``, ``Acos``, ``Asin``, ``Atan`` and ``Atan2``, instead of in global scope.
-``PI`` is ``Mathf.Pi``
+=======================  ===========================================================
+GDScript                 C#
+=======================  ===========================================================
+``SPKEY``                ``GD.SpKey``
+``TYPE_*``               ``Variant.Type`` enum
+``OP_*``                 ``Variant.Operator`` enum
+=======================  ===========================================================
 
-Random
-------
+Math functions
+^^^^^^^^^^^^^^
 
-Random functions, like ``rand_range`` and ``rand_seed``, are located under ``Random``,
-so use ``Random.RandRange`` instead of ``rand_range``.
+Math global functions, like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2``, are
+located under ``Mathf`` as ``Abs``, ``Acos``, ``Asin``, ``Atan`` and ``Atan2``.
+The ``PI`` constant can be found as ``Mathf.Pi``.
+
+Random functions
+^^^^^^^^^^^^^^^^
+
+Random global functions, like ``rand_range`` and ``rand_seed``, are located under ``GD``.
+
+Other functions
+^^^^^^^^^^^^^^^
+
+Many other global functions like ``print`` and ``var2str`` are located under ``GD``.
+Example: ``GD.Print`` and ``GD.Var2Str``.
+
+Exceptions:
+
+===========================  =======================================================
+GDScript                     C#
+===========================  =======================================================
+``weakref(obj)``             ``Object.WeakRef(obj)``
+``is_instance_valid(obj)``   ``Object.IsInstanceValid(obj)``
+===========================  =======================================================
+
+Tips
+^^^^
+
+Sometimes it can be useful to use the ``using static`` directive. This directive allows
+to access the members and nested types of a class without specifying the class name.
+
+Example:
+
+.. code-block:: csharp
+
+    using static Godot.GD;
+
+    public class Test
+    {
+        static Test()
+        {
+            Print("Hello"); // Instead of GD.Print("Hello");
+        }
+    }
 
 Export keyword
 --------------
 
 Use the ``[Export]`` attribute instead of the GDScript ``export`` keyword.
 
+Example:
+
+.. code-block:: csharp
+
+    using Godot;
+
+    public class MyNode : Node
+    {
+        [Export]
+        NodePath _nodePath;
+    }
+
 Signal keyword
 --------------
 
-Use the ``[Signal]`` attribute instead of the GDScript ``signal`` keyword.
+Use the ``[Signal]`` attribute for declaring a signal instead of the GDScript ``signal`` keyword.
 This attribute should be used on a `delegate`, whose name signature will be used to define the signal.
 
 .. code-block:: csharp
@@ -56,25 +114,40 @@ See also: :ref:`c_sharp_signals`
 Singletons
 ----------
 
-Singletons provide static methods rather than using the singleton pattern in C#.
-This is to make code less verbose and similar to GDScript. Example:
+Singletons are available as static classes rather than using the singleton pattern.
+This is to make code less verbose than it would be with an ``Instance`` property.
+
+Example:
 
 .. code-block:: csharp
 
     Input.IsActionPressed("ui_down")
 
+However, in some very rare cases this is not enough. For example, you may want
+to access a member from the base class ``Godot.Object``, like ``Connect``.
+For such use cases we provide a static property named ``Singleton`` that returns
+the singleton instance. The type of this instance is ``Godot.Object``.
+
+Example:
+
+.. code-block:: csharp
+
+    Input.Singleton.Connect("joy_connection_changed", this, nameof(Input_JoyConnectionChanged));
+
 String
 ------
 
-Use ``System.String`` (``string``). All the Godot String methods are provided
-by the ``StringExtensions`` class as extension methods. Example:
+Use ``System.String`` (``string``). Most of Godot's String methods are
+provided by the ``StringExtensions`` class as extension methods.
+
+Example:
 
 .. code-block:: csharp
 
     string upper = "I LIKE SALAD FORKS";
     string lower = upper.ToLower();
 
-There are a few differences, though:
+There are a few differences though:
 
 * ``erase``: Strings are immutable in C#, so we cannot modify the string
   passed to the extension method. For this reason, ``Erase`` was added as an
@@ -110,11 +183,11 @@ for the equivalent of ``Basis()`` in GDScript and C++.
 
 The following method was converted to a property with a different name:
 
-================  ==================================================================
-GDScript          C#
-================  ==================================================================
-get_scale()       Scale
-================  ==================================================================
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``get_scale()``       ``Scale``
+====================  ==============================================================
 
 Transform2D
 -----------
@@ -125,13 +198,12 @@ Please use ``Transform2D.Identity`` for the equivalent of ``Transform2D()`` in G
 
 The following methods were converted to properties with their respective names changed:
 
-================  ==================================================================
-GDScript          C#
-================  ==================================================================
-get_origin()      Origin
-get_rotation()    Rotation
-get_scale()       Scale
-================  ==================================================================
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``get_rotation()``    ``Rotation``
+``get_scale()``       ``Scale``
+====================  ==============================================================
 
 Plane
 -----
@@ -141,7 +213,7 @@ The following method was converted to a property with a *slightly* different nam
 ================  ==================================================================
 GDScript          C#
 ================  ==================================================================
-center()          Center
+``center()``      ``Center``
 ================  ==================================================================
 
 Rect2
@@ -152,7 +224,7 @@ The following field was converted to a property with a *slightly* different name
 ================  ==================================================================
 GDScript          C#
 ================  ==================================================================
-end               End
+``end``           ``End``
 ================  ==================================================================
 
 The following method was converted to a property with a different name:
@@ -160,7 +232,7 @@ The following method was converted to a property with a different name:
 ================  ==================================================================
 GDScript          C#
 ================  ==================================================================
-get_area()        Area
+``get_area()``    ``Area``
 ================  ==================================================================
 
 Quat
@@ -170,33 +242,43 @@ Structs cannot have parameterless constructors in C#. Therefore, ``new Quat()``
 initializes all primitive members to their default value.
 Please use ``Quat.Identity`` for the equivalent of ``Quat()`` in GDScript and C++.
 
+The following method was converted to a property with a different name:
+
+=====================  =============================================================
+GDScript               C#
+=====================  =============================================================
+``length()``           ``Length``
+``length_squared()``   ``LengthSquared``
+=====================  =============================================================
+
 Array
 -----
 
-*This is temporary. Array is ref-counted, so it will need its own type that wraps the native side.
-PoolArrays will also need their own type to be used the way they are meant to.*
+*This is temporary. PoolArrays will need their own types to be used the way they are meant to.*
 
-================  ==================================================================
-GDScript          C#
-================  ==================================================================
-Array             object[]
-PoolIntArray      int[]
-PoolByteArray     byte[]
-PoolFloatArray    float[]
-PoolStringArray   String[]
-PoolColorArray    Color[]
-PoolVector2Array  Vector2[]
-PoolVector3Array  Vector3[]
-================  ==================================================================
+=====================  ==============================================================
+GDScript               C#
+=====================  ==============================================================
+``Array``              ``Godot.Array``
+``PoolIntArray``       ``int[]``
+``PoolByteArray``      ``byte[]``
+``PoolFloatArray``     ``float[]``
+``PoolStringArray``    ``String[]``
+``PoolColorArray``     ``Color[]``
+``PoolVector2Array``   ``Vector2[]``
+``PoolVector3Array``   ``Vector3[]``
+=====================  ==============================================================
 
-In some exceptional cases, a raw array (``type[]``) may be required instead of a ``List``.
+``Godot.Array<T>`` is a type safe wrapper around ``Godot.Array``.
+Use the ``Godot.Array<T>(Godot.Array)`` constructor to create one.
 
 Dictionary
 ----------
 
-*This is temporary. Array is ref-counted, so it will need its own type that wraps the native side.*
+Use ``Godot.Dictionary``.
 
-Use ``Dictionary<object, object>``.
+``Godot.Dictionary<T>`` is a type safe wrapper around ``Godot.Dictionary``.
+Use the ``Godot.Dictionary<T>(Godot.Dictionary)`` constructor to create one.
 
 Variant
 -------
@@ -206,26 +288,40 @@ Variant
 Communicating with other scripting languages
 --------------------------------------------
 
-The methods ``object Object.call(string method, params object[] args)``,
-``object Object.get(string field)`` and ``object Object.set(string field, object value)``
+The methods ``object Object.Call(string method, params object[] args)``,
+``object Object.Get(string field)`` and ``object Object.Set(string field, object value)``
 are provided to communicate with instances of other
 scripting languages via the Variant API.
+
+Yield
+-----
+
+Something similar to GDScript's yield with a single parameter can be achieved with
+C#'s `yield keyword <https://docs.microsoft.com/en-US/dotnet/csharp/language-reference/keywords/yield>`_.
+
+The equivalent of yield on signal can be achieved with async/await and ``Godot.Object.ToSignal``.
+
+Example:
+
+.. code-block:: csharp
+
+  await ToSignal(timer, "timeout");
+  GD.Print("After timeout");
 
 Other differences
 -----------------
 
-``preload``, ``assert`` and ``yield``, as they work in GDScript, are currently
-not available in C#.
+``preload``, as it works in GDScript, is not available in C#.
+Use ``GD.Load`` or ``ResourceLoader.Load`` instead.
 
 Other differences:
 
 ================  ==================================================================
 GDScript          C#
 ================  ==================================================================
-Color8            Color.Color8
-is_inf            float.IsInfinity
-is_nan            float.IsNaN
-dict2inst         ? TODO
-inst2dict         ? TODO
-load              GD.load, which is the same as ResourceLoader.load
+``Color8``        ``Color.Color8``
+``is_inf``        ``float.IsInfinity``
+``is_nan``        ``float.IsNaN``
+``dict2inst``     TODO
+``inst2dict``     TODO
 ================  ==================================================================
