@@ -197,7 +197,7 @@ is fast.
 References:
 ~~~~~~~~~~~
 
--  `core/string_db.h <https://github.com/godotengine/godot/blob/master/core/string_db.h>`__
+-  `core/string_name.h <https://github.com/godotengine/godot/blob/master/core/string_name.h>`__
 
 Math types
 ----------
