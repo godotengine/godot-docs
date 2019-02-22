@@ -126,8 +126,8 @@ First, let's get the VR up and going! While ``Game.tscn`` is open, select the ``
     {
         public override void _Ready()
         {
-            var VR = ARVRServer.FindInterface("OpenVR");
-            if (VR != null && VR.Initialize())
+            var vr = ARVRServer.FindInterface("OpenVR");
+            if (vr != null && vr.Initialize())
             {
                 GetViewport().Arvr = true;
                 GetViewport().Hdr = false;
