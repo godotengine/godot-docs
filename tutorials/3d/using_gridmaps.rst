@@ -56,6 +56,12 @@ be used.
 .. image:: img/gridmap_mesh_scene.png
 
 
+Materials
+---------
+
+Only the materials from within the meshes are used when generating the mesh
+library. Materials set on the node will be ignored.
+
 Exporting the MeshLibrary
 -------------------------
 
