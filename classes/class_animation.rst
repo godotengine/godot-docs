@@ -144,7 +144,7 @@ Description
 
 An Animation resource contains data used to animate everything in the engine. Animations are divided into tracks, and each track must be linked to a node. The state of that node can be changed through time, by adding timed keys (events) to the track.
 
-Animations are just data containers, and must be added to odes such as an :ref:`AnimationPlayer<class_animationplayer>` or :ref:`AnimationTreePlayer<class_animationtreeplayer>` to be played back.
+Animations are just data containers, and must be added to nodes such as an :ref:`AnimationPlayer<class_animationplayer>` or :ref:`AnimationTreePlayer<class_animationtreeplayer>` to be played back.
 
 Member Function Description
 ---------------------------
