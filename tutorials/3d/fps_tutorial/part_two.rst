@@ -89,7 +89,7 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
             return true
 
 
-        if has_animation(animation_name) == true:
+        if has_animation(animation_name):
             if current_state != null:
                 var possible_animations = states[current_state]
                 if animation_name in possible_animations:
