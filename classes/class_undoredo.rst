@@ -60,11 +60,11 @@ Enumerations
 
 enum **MergeMode**:
 
-- **MERGE_DISABLE** = **0**
+- **MERGE_DISABLE** = **0** --- Makes ``do``/``undo`` operations stay in separate actions.
 
-- **MERGE_ENDS** = **1**
+- **MERGE_ENDS** = **1** --- Makes so that the action's ``do`` operation is from the first action created and the ``undo`` operation is from the last subsequent action with the same name.
 
-- **MERGE_ALL** = **2**
+- **MERGE_ALL** = **2** --- Makes subsequent actions with the same name be merged into one.
 
 Description
 -----------
@@ -77,22 +77,22 @@ Here's an example on how to add an action to Godot editor's own 'undoredo':
 
 ::
 
-    var undoredo = get_undo_redo() # method of EditorPlugin
+    var undo_redo = get_undo_redo() # Method of EditorPlugin.
     
     func do_something():
-        pass # put your code here
+        pass # Put your code here.
     
     func undo_something():
-        pass # put here the code that reverts what's done by "do_something()"
+        pass # Put here the code that reverts what's done by "do_something()".
     
     func _on_MyButton_pressed():
         var node = get_node("MyNode2D")
-        undoredo.create_action("Move the node")
-        undoredo.add_do_method(self, "do_something")
-        undoredo.add_undo_method(self, "undo_something")
-        undoredo.add_do_property(node, "position", Vector2(100,100))
-        undoredo.add_undo_property(node, "position", node.position)
-        undoredo.commit_action()
+        undo_redo.create_action("Move the node")
+        undo_redo.add_do_method(self, "do_something")
+        undo_redo.add_undo_method(self, "undo_something")
+        undo_redo.add_do_property(node, "position", Vector2(100,100))
+        undo_redo.add_undo_property(node, "position", node.position)
+        undo_redo.commit_action()
 
 :ref:`create_action<class_UndoRedo_method_create_action>`, :ref:`add_do_method<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_method_add_do_property>`, :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>`, and :ref:`commit_action<class_UndoRedo_method_commit_action>` should be called one after the other, like in the example. Not doing so could lead to crashes.
 
@@ -156,6 +156,8 @@ Commit the action. All 'do' methods/properties are called/set when this function
 - void **create_action** **(** :ref:`String<class_String>` name, :ref:`MergeMode<enum_UndoRedo_MergeMode>` merge_mode=0 **)**
 
 Create a new action. After this is called, do all your calls to :ref:`add_do_method<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_method_add_do_property>`, and :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>`, then commit the action with :ref:`commit_action<class_UndoRedo_method_commit_action>`.
+
+The way actions are merged is dictated by the ``merge_mode`` argument. See :ref:`MergeMode<enum_UndoRedo_MergeMode>` for details.
 
 .. _class_UndoRedo_method_get_current_action_name:
 

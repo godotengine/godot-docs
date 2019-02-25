@@ -14,7 +14,7 @@ SceneTreeTimer
 Brief Description
 -----------------
 
-
+One-shot timer.
 
 Properties
 ----------
@@ -30,6 +30,22 @@ Signals
 
 - **timeout** **(** **)**
 
+Emitted when the timer reaches 0.
+
+Description
+-----------
+
+A one-shot timer managed by the scene tree, which emits :ref:`timeout<class_SceneTreeTimer_signal_timeout>` on completion. See also :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`.
+
+As opposed to :ref:`Timer<class_Timer>`, it does not require the instantiation of a node. Commonly used to create a one-shot delay timer as in the following example:
+
+::
+
+    func some_function():
+    print("start")
+    yield(get_tree().create_timer(1.0), "timeout")
+    print("end")
+
 Property Descriptions
 ---------------------
 
@@ -42,4 +58,6 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_time_left()      |
 +----------+----------------------+
+
+The time remaining.
 

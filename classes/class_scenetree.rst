@@ -428,6 +428,15 @@ Changes to the given :ref:`PackedScene<class_PackedScene>`.
 
 Returns a :ref:`SceneTreeTimer<class_SceneTreeTimer>` which will :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_signal_timeout>` after the given time in seconds elapsed in this SceneTree. If ``pause_mode_process`` is set to false, pausing the SceneTree will also pause the timer.
 
+Commonly used to create a one-shot delay timer as in the following example:
+
+::
+
+    func some_function():
+        print("start")
+        yield(get_tree().create_timer(1.0), "timeout")
+        print("end")
+
 .. _class_SceneTree_method_get_frame:
 
 - :ref:`int<class_int>` **get_frame** **(** **)** const

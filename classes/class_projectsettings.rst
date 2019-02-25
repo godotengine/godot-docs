@@ -146,17 +146,17 @@ Properties
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`       | :ref:`display/mouse_cursor/custom_image_hotspot<class_ProjectSettings_property_display/mouse_cursor/custom_image_hotspot>`                                           |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/allow_per_pixel_transparency<class_ProjectSettings_property_display/window/allow_per_pixel_transparency>`                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`display/window/dpi/allow_hidpi<class_ProjectSettings_property_display/window/dpi/allow_hidpi>`                                                                 |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`                                       |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`display/window/handheld/orientation<class_ProjectSettings_property_display/window/handheld/orientation>`                                                       |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/per_pixel_transparency<class_ProjectSettings_property_display/window/per_pixel_transparency>`                                                   |
+| :ref:`bool<class_bool>`             | :ref:`display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`                                   |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/per_pixel_transparency_splash<class_ProjectSettings_property_display/window/per_pixel_transparency_splash>`                                     |
+| :ref:`bool<class_bool>`             | :ref:`display/window/per_pixel_transparency/enabled<class_ProjectSettings_property_display/window/per_pixel_transparency/enabled>`                                   |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`display/window/per_pixel_transparency/splash<class_ProjectSettings_property_display/window/per_pixel_transparency/splash>`                                     |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`display/window/size/always_on_top<class_ProjectSettings_property_display/window/size/always_on_top>`                                                           |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -894,12 +894,6 @@ Custom image for the mouse cursor.
 
 Hotspot for the custom mouse cursor image.
 
-.. _class_ProjectSettings_property_display/window/allow_per_pixel_transparency:
-
-- :ref:`bool<class_bool>` **display/window/allow_per_pixel_transparency**
-
-Allow per pixel transparency in a Desktop window. This affects performance if not needed, so leave it off.
-
 .. _class_ProjectSettings_property_display/window/dpi/allow_hidpi:
 
 - :ref:`bool<class_bool>` **display/window/dpi/allow_hidpi**
@@ -918,13 +912,19 @@ Force keep the screen on, so the screensaver does not take over. Works on Deskto
 
 Default orientation for cell phone or tablet.
 
-.. _class_ProjectSettings_property_display/window/per_pixel_transparency:
+.. _class_ProjectSettings_property_display/window/per_pixel_transparency/allowed:
 
-- :ref:`bool<class_bool>` **display/window/per_pixel_transparency**
+- :ref:`bool<class_bool>` **display/window/per_pixel_transparency/allowed**
 
-.. _class_ProjectSettings_property_display/window/per_pixel_transparency_splash:
+Allow per pixel transparency in a Desktop window. This affects performance if not needed, so leave it off.
 
-- :ref:`bool<class_bool>` **display/window/per_pixel_transparency_splash**
+.. _class_ProjectSettings_property_display/window/per_pixel_transparency/enabled:
+
+- :ref:`bool<class_bool>` **display/window/per_pixel_transparency/enabled**
+
+.. _class_ProjectSettings_property_display/window/per_pixel_transparency/splash:
+
+- :ref:`bool<class_bool>` **display/window/per_pixel_transparency/splash**
 
 .. _class_ProjectSettings_property_display/window/size/always_on_top:
 

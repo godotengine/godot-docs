@@ -207,11 +207,22 @@ Returns the current engine version information in a Dictionary.
 
 "patch"    - Holds the patch version number as an int
 
+"hex"      - Holds the full version number encoded as an hexadecimal int with one byte (2 places) per number (see example below)
+
 "status"   - Holds the status (e.g. "beta", "rc1", "rc2", ... "stable") as a String
 
 "build"    - Holds the build name (e.g. "custom-build") as a String
 
 "string"   - major + minor + patch + status + build in a single String
+
+The "hex" value is encoded as follows, from left to right: one byte for the major, one byte for the minor, one byte for the patch version. For example, "3.1.12" would be ``0x03010C``. Note that it's still an int internally, and printing it will give you its decimal representation, which is not particularly meaningful. Use hexadecimal literals for easy version comparisons from code:
+
+::
+
+    if Engine.get_version_info().hex >= 0x030200:
+        # do things specific to version 3.2 or later
+    else:
+        # do things specific to versions before 3.2
 
 .. _class_Engine_method_has_singleton:
 

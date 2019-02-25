@@ -88,5 +88,5 @@ Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default v
 | *Getter* | get_polygon()      |
 +----------+--------------------+
 
-A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
+A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions. Note that the returned value is a copy of the underlying array, rather than a reference.
 

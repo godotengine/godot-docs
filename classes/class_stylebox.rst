@@ -68,6 +68,14 @@ Property Descriptions
 | *Getter* | get_default_margin()      |
 +----------+---------------------------+
 
+The bottom margin for the contents of this style box. Increasing this value reduces the space available to the contents from the bottom.
+
+If this value is negative, it is ignored and a child-specific margin is used instead. For example for :ref:`StyleBoxFlat<class_StyleBoxFlat>` the border thickness (if any) is used instead.
+
+It is up to the code using this style box to decide what these contents are: for example, a :ref:`Button<class_Button>` respects this content margin for the textual contents of the button.
+
+:ref:`get_margin<class_StyleBox_method_get_margin>` should be used to fetch this value as consumer instead of reading these properties directly. This is because it correctly respects negative values and the fallback mentioned above.
+
 .. _class_StyleBox_property_content_margin_left:
 
 - :ref:`float<class_float>` **content_margin_left**
@@ -77,6 +85,10 @@ Property Descriptions
 +----------+---------------------------+
 | *Getter* | get_default_margin()      |
 +----------+---------------------------+
+
+The left margin for the contents of this style box.	Increasing this value reduces the space available to the contents from the left.
+
+Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` for extra considerations.
 
 .. _class_StyleBox_property_content_margin_right:
 
@@ -88,6 +100,10 @@ Property Descriptions
 | *Getter* | get_default_margin()      |
 +----------+---------------------------+
 
+The right margin for the contents of this style box. Increasing this value reduces the space available to the contents from the right.
+
+Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` for extra considerations.
+
 .. _class_StyleBox_property_content_margin_top:
 
 - :ref:`float<class_float>` **content_margin_top**
@@ -97,6 +113,10 @@ Property Descriptions
 +----------+---------------------------+
 | *Getter* | get_default_margin()      |
 +----------+---------------------------+
+
+The top margin for the contents of this style box. Increasing this value reduces the space available to the contents from the top.
+
+Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` for extra considerations.
 
 Method Descriptions
 -------------------
@@ -117,7 +137,9 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
-Return the offset of margin "margin" (see MARGIN\_\* enum).
+Return the content margin offset for the specified margin
+
+Positive values reduce size inwards, unlike :ref:`Control<class_Control>`'s margin values.
 
 .. _class_StyleBox_method_get_minimum_size:
 

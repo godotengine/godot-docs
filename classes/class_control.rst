@@ -570,7 +570,7 @@ Godot sends input events to the scene's root node first, by calling :ref:`Node._
 
 Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`grab_focus<class_Control_method_grab_focus>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
 
-Set :ref:`mouse_filter<class_Control_property_mouse_filter>` to MOUSE_FILTER_IGNORE to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
+Set :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
 
 :ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_*_override`` methods, like :ref:`add_font_override<class_Control_method_add_font_override>`. You can override the theme with the inspector.
 
@@ -744,7 +744,7 @@ Controls the direction on the vertical axis in which the control should grow if 
 | *Setter* | set_tooltip(value) |
 +----------+--------------------+
 
-Changes the tooltip text. The tooltip appears when the user's mouse cursor stays idle over this control for a few moments.
+Changes the tooltip text. The tooltip appears when the user's mouse cursor stays idle over this control for a few moments, provided that the :ref:`mouse_filter<class_Control_property_mouse_filter>` property is not :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>`.
 
 .. _class_Control_property_margin_bottom:
 

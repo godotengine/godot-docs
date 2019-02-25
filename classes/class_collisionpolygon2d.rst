@@ -110,5 +110,5 @@ If ``true``, only edges that face up, relative to CollisionPolygon2D's rotation,
 | *Getter* | get_polygon()      |
 +----------+--------------------+
 
-The polygon's list of vertices. The final point will be connected to the first.
+The polygon's list of vertices. The final point will be connected to the first. The returned value is a clone of the PoolVector2Array, not a reference.
 

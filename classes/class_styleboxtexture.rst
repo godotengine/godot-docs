@@ -134,6 +134,8 @@ Property Descriptions
 | *Getter* | get_expand_margin_size()      |
 +----------+-------------------------------+
 
+Expands the bottom margin of this style box when drawing, causing it be drawn larger than requested.
+
 .. _class_StyleBoxTexture_property_expand_margin_left:
 
 - :ref:`float<class_float>` **expand_margin_left**
@@ -143,6 +145,8 @@ Property Descriptions
 +----------+-------------------------------+
 | *Getter* | get_expand_margin_size()      |
 +----------+-------------------------------+
+
+Expands the left margin of this style box when drawing, causing it be drawn larger than requested.
 
 .. _class_StyleBoxTexture_property_expand_margin_right:
 
@@ -154,6 +158,8 @@ Property Descriptions
 | *Getter* | get_expand_margin_size()      |
 +----------+-------------------------------+
 
+Expands the right margin of this style box when drawing, causing it be drawn larger than requested.
+
 .. _class_StyleBoxTexture_property_expand_margin_top:
 
 - :ref:`float<class_float>` **expand_margin_top**
@@ -163,6 +169,8 @@ Property Descriptions
 +----------+-------------------------------+
 | *Getter* | get_expand_margin_size()      |
 +----------+-------------------------------+
+
+Expands the top margin of this style box when drawing, causing it be drawn larger than requested.
 
 .. _class_StyleBoxTexture_property_margin_bottom:
 
@@ -174,6 +182,12 @@ Property Descriptions
 | *Getter* | get_margin_size()      |
 +----------+------------------------+
 
+Increases the bottom margin of the 3x3 texture box.
+
+A higher value means more of the source texture is considered to be part of the bottom border of the 3x3 box.
+
+This is also the value used as fallback for :ref:`StyleBox.content_margin_bottom<class_StyleBox_property_content_margin_bottom>` if it is negative.
+
 .. _class_StyleBoxTexture_property_margin_left:
 
 - :ref:`float<class_float>` **margin_left**
@@ -183,6 +197,12 @@ Property Descriptions
 +----------+------------------------+
 | *Getter* | get_margin_size()      |
 +----------+------------------------+
+
+Increases the left margin of the 3x3 texture box.
+
+A higher value means more of the source texture is considered to be part of the left border of the 3x3 box.
+
+This is also the value used as fallback for :ref:`StyleBox.content_margin_left<class_StyleBox_property_content_margin_left>` if it is negative.
 
 .. _class_StyleBoxTexture_property_margin_right:
 
@@ -194,6 +214,12 @@ Property Descriptions
 | *Getter* | get_margin_size()      |
 +----------+------------------------+
 
+Increases the right margin of the 3x3 texture box.
+
+A higher value means more of the source texture is considered to be part of the right border of the 3x3 box.
+
+This is also the value used as fallback for :ref:`StyleBox.content_margin_right<class_StyleBox_property_content_margin_right>` if it is negative.
+
 .. _class_StyleBoxTexture_property_margin_top:
 
 - :ref:`float<class_float>` **margin_top**
@@ -203,6 +229,12 @@ Property Descriptions
 +----------+------------------------+
 | *Getter* | get_margin_size()      |
 +----------+------------------------+
+
+Increases the top margin of the 3x3 texture box.
+
+A higher value means more of the source texture is considered to be part of the top border of the 3x3 box.
+
+This is also the value used as fallback for :ref:`StyleBox.content_margin_top<class_StyleBox_property_content_margin_top>` if it is negative.
 
 .. _class_StyleBoxTexture_property_modulate_color:
 
@@ -214,6 +246,8 @@ Property Descriptions
 | *Getter* | get_modulate()      |
 +----------+---------------------+
 
+Modulates the color of the texture when this style box is drawn.
+
 .. _class_StyleBoxTexture_property_normal_map:
 
 - :ref:`Texture<class_Texture>` **normal_map**
@@ -223,6 +257,8 @@ Property Descriptions
 +----------+-----------------------+
 | *Getter* | get_normal_map()      |
 +----------+-----------------------+
+
+The normal map to use when drawing this style box.
 
 .. _class_StyleBoxTexture_property_region_rect:
 
@@ -234,6 +270,10 @@ Property Descriptions
 | *Getter* | get_region_rect()      |
 +----------+------------------------+
 
+Species a sub region of the texture to use.
+
+This is equivalent to first wrapping the texture in an :ref:`AtlasTexture<class_AtlasTexture>` with the same region.
+
 .. _class_StyleBoxTexture_property_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
@@ -243,6 +283,8 @@ Property Descriptions
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+The texture to use when drawing this style box.
 
 Method Descriptions
 -------------------

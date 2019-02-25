@@ -412,6 +412,8 @@ Property Descriptions
 | *Getter* | get_color_ramp()      |
 +----------+-----------------------+
 
+Each particle's vertex color will vary along this :ref:`GradientTexture<class_GradientTexture>`.
+
 .. _class_CPUParticles_property_damping:
 
 - :ref:`float<class_float>` **damping**

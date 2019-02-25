@@ -94,7 +94,7 @@ Methods
 Description
 -----------
 
-Generic array, contains several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 the second to last, etc.). Example:
+Generic array which can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 the second to last, etc.). Example:
 
 ::
 
@@ -114,43 +114,43 @@ Method Descriptions
 
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolColorArray<class_PoolColorArray>` from **)**
 
-Construct an array from a :ref:`PoolColorArray<class_PoolColorArray>`.
+Constructs an array from a :ref:`PoolColorArray<class_PoolColorArray>`.
 
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` from **)**
 
-Construct an array from a :ref:`PoolVector3Array<class_PoolVector3Array>`.
+Constructs an array from a :ref:`PoolVector3Array<class_PoolVector3Array>`.
 
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` from **)**
 
-Construct an array from a :ref:`PoolVector2Array<class_PoolVector2Array>`.
+Constructs an array from a :ref:`PoolVector2Array<class_PoolVector2Array>`.
 
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolStringArray<class_PoolStringArray>` from **)**
 
-Construct an array from a :ref:`PoolStringArray<class_PoolStringArray>`.
+Constructs an array from a :ref:`PoolStringArray<class_PoolStringArray>`.
 
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolRealArray<class_PoolRealArray>` from **)**
 
-Construct an array from a :ref:`PoolRealArray<class_PoolRealArray>`.
+Constructs an array from a :ref:`PoolRealArray<class_PoolRealArray>`.
 
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolIntArray<class_PoolIntArray>` from **)**
 
-Construct an array from a :ref:`PoolIntArray<class_PoolIntArray>`.
+Constructs an array from a :ref:`PoolIntArray<class_PoolIntArray>`.
 
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolByteArray<class_PoolByteArray>` from **)**
 
-Construct an array from a :ref:`PoolByteArray<class_PoolByteArray>`.
+Constructs an array from a :ref:`PoolByteArray<class_PoolByteArray>`.
 
 .. _class_Array_method_append:
 
 - void **append** **(** :ref:`Variant<class_Variant>` value **)**
 
-Append an element at the end of the array (alias of :ref:`push_back<class_Array_method_push_back>`).
+Appends an element at the end of the array (alias of :ref:`push_back<class_Array_method_push_back>`).
 
 .. _class_Array_method_back:
 
 - :ref:`Variant<class_Variant>` **back** **(** **)**
 
-Returns the last element of the array if the array is not empty (size>0).
+Returns the last element of the array if the array is not empty.
 
 .. _class_Array_method_bsearch:
 
@@ -168,13 +168,13 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 - void **clear** **(** **)**
 
-Clear the array (resize to 0).
+Clears the array (resizes to 0).
 
 .. _class_Array_method_count:
 
 - :ref:`int<class_int>` **count** **(** :ref:`Variant<class_Variant>` value **)**
 
-Return the amount of times an element is in the array.
+Returns the number of times an element is in the array.
 
 .. _class_Array_method_duplicate:
 
@@ -182,19 +182,19 @@ Return the amount of times an element is in the array.
 
 Returns a copy of the array.
 
-If ``deep`` is ``true``, a deep copy is be performed: all nested arrays and dictionaries are duplicated and will not be shared with the original array. If ``false``, a shallow copy is made and references to the original nested arrays and dictionaries are kept, so that modifying a sub-array or dictionary in the copy will also impact those referenced in the source array.
+If ``deep`` is ``true``, a deep copy is performed: all nested arrays and dictionaries are duplicated and will not be shared with the original array. If ``false``, a shallow copy is made and references to the original nested arrays and dictionaries are kept, so that modifying a sub-array or dictionary in the copy will also impact those referenced in the source array.
 
 .. _class_Array_method_empty:
 
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
-Return true if the array is empty (size==0).
+Returns ``true`` if the array is empty.
 
 .. _class_Array_method_erase:
 
 - void **erase** **(** :ref:`Variant<class_Variant>` value **)**
 
-Remove the first occurrence of a value from the array.
+Removes the first occurrence of a value from the array.
 
 .. _class_Array_method_find:
 
@@ -212,13 +212,13 @@ Searches the array in reverse order for a value and returns its index or -1 if n
 
 - :ref:`Variant<class_Variant>` **front** **(** **)**
 
-Returns the first element of the array if the array is not empty (size>0).
+Returns the first element of the array if the array is not empty.
 
 .. _class_Array_method_has:
 
 - :ref:`bool<class_bool>` **has** **(** :ref:`Variant<class_Variant>` value **)**
 
-Return true if the array contains given value.
+Returns ``true`` if the array contains the given value.
 
 ::
 
@@ -231,67 +231,67 @@ Return true if the array contains given value.
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
-Return a hashed integer value representing the array contents.
+Returns a hashed integer value representing the array contents.
 
 .. _class_Array_method_insert:
 
 - void **insert** **(** :ref:`int<class_int>` position, :ref:`Variant<class_Variant>` value **)**
 
-Insert a new element at a given position in the array. The position must be valid, or at the end of the array (``pos == size()``).
+Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``pos == size()``).
 
 .. _class_Array_method_invert:
 
 - void **invert** **(** **)**
 
-Reverse the order of the elements in the array.
+Reverses the order of the elements in the array.
 
 .. _class_Array_method_max:
 
 - :ref:`Variant<class_Variant>` **max** **(** **)**
 
-Return maximum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
+Returns the maximum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
 
 .. _class_Array_method_min:
 
 - :ref:`Variant<class_Variant>` **min** **(** **)**
 
-Return minimum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
+Returns the minimum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
 
 .. _class_Array_method_pop_back:
 
 - :ref:`Variant<class_Variant>` **pop_back** **(** **)**
 
-Remove the last element of the array.
+Removes the last element of the array.
 
 .. _class_Array_method_pop_front:
 
 - :ref:`Variant<class_Variant>` **pop_front** **(** **)**
 
-Remove the first element of the array.
+Removes the first element of the array.
 
 .. _class_Array_method_push_back:
 
 - void **push_back** **(** :ref:`Variant<class_Variant>` value **)**
 
-Append an element at the end of the array.
+Appends an element at the end of the array.
 
 .. _class_Array_method_push_front:
 
 - void **push_front** **(** :ref:`Variant<class_Variant>` value **)**
 
-Add an element at the beginning of the array.
+Adds an element at the beginning of the array.
 
 .. _class_Array_method_remove:
 
 - void **remove** **(** :ref:`int<class_int>` position **)**
 
-Remove an element from the array by index.
+Removes an element from the array by index.
 
 .. _class_Array_method_resize:
 
 - void **resize** **(** :ref:`int<class_int>` size **)**
 
-Resize the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are Null.
+Resizes the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are Null.
 
 .. _class_Array_method_rfind:
 
@@ -303,25 +303,25 @@ Searches the array in reverse order. Optionally, a start search index can be pas
 
 - void **shuffle** **(** **)**
 
-Shuffle the array such that the items will have a random order.
+Shuffles the array such that the items will have a random order.
 
 .. _class_Array_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Return the amount of elements in the array.
+Returns the number of elements in the array.
 
 .. _class_Array_method_sort:
 
 - void **sort** **(** **)**
 
-Sort the array using natural order.
+Sorts the array. Note: strings are sorted in alphabetical, not natural order.
 
 .. _class_Array_method_sort_custom:
 
 - void **sort_custom** **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func **)**
 
-Sort the array using a custom method. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return true if the first argument is less than the second, and return false otherwise.
+Sorts the array using a custom method. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return true if the first argument is less than the second, and return false otherwise.
 
 **Note:** you cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
 

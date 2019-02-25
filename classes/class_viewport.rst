@@ -726,7 +726,12 @@ Returns the size override set with :ref:`set_size_override<class_Viewport_method
 
 - :ref:`ViewportTexture<class_ViewportTexture>` **get_texture** **(** **)** const
 
-Returns the viewport's texture.
+Returns the viewport's texture. Note that due to the way OpenGL works, the resulting :ref:`ViewportTexture<class_ViewportTexture>` is flipped vertically. You can use :ref:`Image.flip_y<class_Image_method_flip_y>` on the result of :ref:`Texture.get_data<class_Texture_method_get_data>` to flip it back, for example:
+
+::
+
+    var img = get_viewport().get_texture().get_data()
+    img.flip_y()
 
 .. _class_Viewport_method_get_viewport_rid:
 

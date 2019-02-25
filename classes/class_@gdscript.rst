@@ -884,7 +884,7 @@ Random range, any floating point value between ``from`` and ``to``.
 
 ::
 
-    prints(rand_range(0, 1), rand_range(0, 1)) # prints 0.135591 0.405263
+    prints(rand_range(0, 1), rand_range(0, 1)) # prints e.g. 0.135591 0.405263
 
 .. _class_@GDScript_method_rand_seed:
 
@@ -900,19 +900,20 @@ Returns a random floating point value on the interval ``[0, 1]``.
 
 ::
 
-    randf() # returns 0.375671
+    randf() # returns e.g. 0.375671
 
 .. _class_@GDScript_method_randi:
 
 - :ref:`int<class_int>` **randi** **(** **)**
 
-Returns a random 32 bit integer. Use remainder to obtain a random value in the interval ``[0, N]`` (where N is smaller than 2^32 -1).
+Returns a random unsigned 32 bit integer. Use remainder to obtain a random value in the interval ``[0, N]`` (where N is smaller than 2^32 -1).
 
 ::
 
-    randi() % 20      # returns random number between 0 and 19
-    randi() % 100     # returns random number between 0 and 99
-    randi() % 100 + 1 # returns random number between 1 and 100
+    randi()           # returns random integer between 0 and 2^32 - 1
+    randi() % 20      # returns random integer between 0 and 19
+    randi() % 100     # returns random integer between 0 and 99
+    randi() % 100 + 1 # returns random integer between 1 and 100
 
 .. _class_@GDScript_method_randomize:
 
