@@ -132,7 +132,7 @@ References:
 ~~~~~~~~~~~
 
 -  `core/os/memory.h <https://github.com/godotengine/godot/blob/master/core/os/memory.h>`__
--  `core/dvector.h <https://github.com/godotengine/godot/blob/master/core/dvector.h>`__
+-  `core/pool_vector.h <https://github.com/godotengine/godot/blob/master/core/pool_vector.cpp>`__
 
 Containers
 ----------
@@ -197,7 +197,7 @@ is fast.
 References:
 ~~~~~~~~~~~
 
--  `core/string_db.h <https://github.com/godotengine/godot/blob/master/core/string_db.h>`__
+-  `core/string_name.h <https://github.com/godotengine/godot/blob/master/core/string_name.h>`__
 
 Math types
 ----------
