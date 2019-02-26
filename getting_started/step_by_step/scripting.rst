@@ -172,6 +172,9 @@ inherits the functions provided by that node.
 
 .. image:: /img/brainslug.jpg
 
+
+.. _doc_scripting_handling_a_signal:
+
 Handling a signal
 ~~~~~~~~~~~~~~~~~
 
