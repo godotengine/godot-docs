@@ -210,7 +210,9 @@ Return the transform of a specific instance.
 
 - void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
 
-Set the color of a specific instance.
+Set the color of a specific instance. For the color to take effect, ensure that
+:ref:`color_format<class_MultiMesh_property_color_format>` is set on the MultiMesh and
+:ref:`vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` is set on the material.
 
 .. _class_MultiMesh_method_set_instance_custom_data:
 
