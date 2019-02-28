@@ -92,7 +92,7 @@ up to maximize Godot's potential in the least amount of code, affording both nov
 and expert developers alike to capitalize on Godot's strengths as fast as possible.
 If you've ever written anything in a language like Python before then you'll feel
 right at home. For examples, history, and a complete overview of the power GDScript
-offers you, check out the `GDScript scripting guide <gdscript_basics>`_.
+offers you, check out the :ref:`GDScript scripting guide <doc_gdscript>`.
 
 There are several reasons to use GDScript--especially when you are prototyping, in
 alpha/beta stages of your project, or are not creating the next AAA title--but the
