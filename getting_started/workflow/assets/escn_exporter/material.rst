@@ -2,7 +2,8 @@ Materials
 =========
 
 Using existing Godot materials
---------------------------------
+------------------------------
+
 One way in which the exporter can handle materials is to attempt to match
 the Blender material with an existing Godot material. This has the advantage of
 being able to use all of the features of Godot's material system, but it means
@@ -32,10 +33,10 @@ This can take the value of:
  - None - Do not search for materials. Export them from the Blender file.
 
 
-Export of CYCLES/EEVEE materials
----------------------------
+Export of Cycles/EEVEE materials
+--------------------------------
 
-The exporter has a primitive support for converting CYCLES/EEVEE material node tree
+The exporter has a primitive support for converting Cycles/EEVEE material node tree
 to Godot Shader Material. Note that some of the Shader Node are not supported yet due to 
 difficulties in implementation, which are:
 
@@ -55,6 +56,7 @@ exported and form a Spatial Material.
 
 Generate external materials
 ---------------------------
+
 The default configuration of material exporting would keep all the materials internal to
 the ``escn`` file. There is an option which could enable generating external ``.material``
 file when the ``escn`` file opens in Godot. 
