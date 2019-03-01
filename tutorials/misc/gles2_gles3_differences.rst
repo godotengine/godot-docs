@@ -6,7 +6,7 @@ Differences between GLES2 and GLES3
 This page documents the differences between GLES2 and GLES3 that are by design and are not the result
 of bugs. There may be differences that are unintentional, but they should be reported as bugs.
 
-.. note:: "GLES2" and "GLES3" are the named used in Godot for the two rendering backends.
+.. note:: "GLES2" and "GLES3" are the names used in Godot for the two OpenGL-based rendering backends.
           In terms of graphics APIs, the GLES2 backend maps to OpenGL 2.1 on desktop, OpenGL ES 2.0 on
           mobile and WebGL 1.0 on the web. The GLES3 backend maps to OpenGL 3.3 on desktop, OpenGL ES
           3.0 on mobile and WebGL 2.0 on the web.
