@@ -16,7 +16,7 @@ Global scope
 
 Global functions and some constants had to be moved to classes, since C#
 does not allow declaring them in namespaces.
-Most global constants were moved their own enums.
+Most global constants were moved to their own enums.
 
 Constants
 ^^^^^^^^^
@@ -45,6 +45,7 @@ Random functions
 ^^^^^^^^^^^^^^^^
 
 Random global functions, like ``rand_range`` and ``rand_seed``, are located under ``GD``.
+Example: ``GD.RandRange`` and ``GD.RandSeed``.
 
 Other functions
 ^^^^^^^^^^^^^^^
@@ -101,7 +102,7 @@ Example:
 Signal keyword
 --------------
 
-Use the ``[Signal]`` attribute for declaring a signal instead of the GDScript ``signal`` keyword.
+Use the ``[Signal]`` attribute to declare a signal instead of the GDScript ``signal`` keyword.
 This attribute should be used on a `delegate`, whose name signature will be used to define the signal.
 
 .. code-block:: csharp
@@ -147,7 +148,7 @@ Example:
     string upper = "I LIKE SALAD FORKS";
     string lower = upper.ToLower();
 
-There are a few differences though:
+There are a few differences, though:
 
 * ``erase``: Strings are immutable in C#, so we cannot modify the string
   passed to the extension method. For this reason, ``Erase`` was added as an
@@ -242,7 +243,7 @@ Structs cannot have parameterless constructors in C#. Therefore, ``new Quat()``
 initializes all primitive members to their default value.
 Please use ``Quat.Identity`` for the equivalent of ``Quat()`` in GDScript and C++.
 
-The following method was converted to a property with a different name:
+The following methods were converted to a property with a different name:
 
 =====================  =============================================================
 GDScript               C#
@@ -269,7 +270,7 @@ GDScript               C#
 ``PoolVector3Array``   ``Vector3[]``
 =====================  ==============================================================
 
-``Godot.Array<T>`` is a type safe wrapper around ``Godot.Array``.
+``Godot.Array<T>`` is a type-safe wrapper around ``Godot.Array``.
 Use the ``Godot.Array<T>(Godot.Array)`` constructor to create one.
 
 Dictionary
@@ -277,7 +278,7 @@ Dictionary
 
 Use ``Godot.Dictionary``.
 
-``Godot.Dictionary<T>`` is a type safe wrapper around ``Godot.Dictionary``.
+``Godot.Dictionary<T>`` is a type-safe wrapper around ``Godot.Dictionary``.
 Use the ``Godot.Dictionary<T>(Godot.Dictionary)`` constructor to create one.
 
 Variant
@@ -296,7 +297,7 @@ scripting languages via the Variant API.
 Yield
 -----
 
-Something similar to GDScript's yield with a single parameter can be achieved with
+Something similar to GDScript's ``yield`` with a single parameter can be achieved with
 C#'s `yield keyword <https://docs.microsoft.com/en-US/dotnet/csharp/language-reference/keywords/yield>`_.
 
 The equivalent of yield on signal can be achieved with async/await and ``Godot.Object.ToSignal``.
