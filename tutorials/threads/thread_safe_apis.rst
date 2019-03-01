@@ -39,6 +39,18 @@ However, creating scene chunks (nodes in tree arrangement) outside the active tr
     enemy.add_child(weapon) # Set a weapon.
     world.call_deferred("add_child", enemy)
 
+Still, this is only really useful if you have **one** thread loading data.
+Attempting to load or create scene chunks from multiple threads may work, but you risk
+resources (which are only loaded once in Godot) tweaked by the multiple
+threads, resulting in unexpected behaviors or crashes.
+
+Only use more than one thread to generate scene data if you *really* know what 
+you are doing and you are sure that a single resource is not being used or
+set in multiple ones. Otherwise, you are safer just using the servers API
+(which is fully thread-safe) directly and not touching scene or resources.
+
+
+
 GDScript arrays, dictionaries
 -----------------------------
 
