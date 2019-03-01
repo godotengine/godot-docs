@@ -37,27 +37,30 @@ Alternatively, you can run
 
 ::
 
-    $ scons p=iphone arch=x86 target=debug
+    $ scons p=iphone arch=x86_64 target=debug
 
 for a Simulator executable.
 
-Additionally since some time Apple requires 64 bit version of application binary when you are uploading to iStore.
-The best way to provide these is to create a bundle in which there are both 32bit and 64 binaries, so every device will be able to run the game.
-It can be done in three steps, first compile 32 bit version, then compile 64 bit version and then use ``lipo`` to bundle them into one fat binary, all those steps can be performed with following commands:
+For recent devices, Apple requires 64-bit versions of application binaries when you are uploading to the Apple Store.
+The best way to provide these is to create a bundle in which there are both 32-bit and 64-bit binaries, so every device will be able to run the game.
+
+It can be done in three steps: first compile the 32-bit version, then compile the 64-bit version and then use ``lipo`` to bundle them into one "universal" binary.
+All those steps can be performed with following commands:
 
 ::
 
-    $ scons p=iphone tools=no target=release arch=arm32
+    $ scons p=iphone tools=no target=release arch=arm
     $ scons p=iphone tools=no target=release arch=arm64
-    $ lipo bin/libgodot.iphone.opt.arm32.a bin/libgodot.iphone.opt.arm64.a -output bin/godot.iphone.opt.universal.a
+    $ lipo bin/libgodot.iphone.opt.arm.a bin/libgodot.iphone.opt.arm64.a -output bin/godot.iphone.opt.universal.a
 
 If you also want to provide a simulator build (reduces the chance of any linker errors with dependencies), you'll need to build and lipo the ``x86_64`` architecture as well.
-:: 
-    $ scons p=iphone tools=no target=release arch=arm32
+
+::
+
+    $ scons p=iphone tools=no target=release arch=arm
     $ scons p=iphone tools=no target=release arch=arm64
     $ scons p=iphone tools=no target=release arch=x86_64
-    $ lipo -create bin/libgodot.iphone.opt.arm32.a bin/libgodot.iphone.opt.arm64.a bin/libgodot.iphone.opt.x86_64.a -output bin/godot.iphone.opt.universal.simulator.a
-
+    $ lipo -create bin/libgodot.iphone.opt.arm.a bin/libgodot.iphone.opt.arm64.a bin/libgodot.iphone.opt.x86_64.a -output bin/godot.iphone.opt.universal.simulator.a
 
 Run
 ---
