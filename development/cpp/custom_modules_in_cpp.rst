@@ -255,7 +255,7 @@ of our new module as part of the Godot binary.
 This static approach is fine when we want to build a release version of our
 game given we want all the modules in a single binary.
 
-However the trade-of is every single change means a full recompilation of the
+However the trade-off is every single change means a full recompilation of the
 game. Even if SCons is able to detect and recompile only the file that have
 changed, finding such files and eventually linking the final binary is a
 long and costly part.
