@@ -12,12 +12,8 @@ create new UIs in the central part of the editor, similarly to the basic 2D, 3D,
 Script and AssetLib views. Such editor plugins are refered as "Main screen
 plugins".
 
-This tutorial leads you through the creation of a basic main screen plugin whose
-purpose is to edit a resource that consists in a graph (displayed as a
-GraphEdit with GraphNodes). Each GraphNode will hold some data that we want to
-display in another side-tab of the editor (similar to the Inspector).
-
-With this plugin example, we want to demonstrate:
+This tutorial leads you through the creation of a basic main screen plugin. With 
+this plugin example, we want to demonstrate:
 
 - Creating a main screen plugin
 - Linking the main screen to another plugin GUI element (such as a Tab panel,
