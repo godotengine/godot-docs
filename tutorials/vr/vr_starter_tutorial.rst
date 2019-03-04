@@ -8,14 +8,13 @@ Introduction
 
 .. image:: img/starter_vr_tutorial_sword.png
 
-This tutorial series will show you how to make a simple VR game/project. The intent of this tutorial is to give you an idea
-on how to make VR games in Godot.
+This tutorial will show you how to make a beginner VR game project in Godot.
 
 Keep in mind, **one of the most important things when making VR content is getting the scale of your assets correct**!
 It can take lots of practice and iterations to get this right, but there are a few things you can do to make it easier:
 
-- In VR, 1 unit is often considered 1 meter. If you design your assets around that standard, you can save yourself a lot of headache.
-- In your 3D model program, see if there is a way to measure and use real world distances. In Blender, you can use the MeasureIt add-on; in Maya, you can use the Measure Tool.
+- In VR, 1 unit is typically considered 1 meter. If you design your assets around that standard, you can save yourself a lot of headache.
+- In your 3D modeling program, see if there is a way to measure and use real world distances. In Blender, you can use the MeasureIt add-on; in Maya, you can use the Measure Tool.
 - You can make rough models using a tool like `Google Blocks <https://vr.google.com/blocks/>`_, and then refine in another 3D modelling program.
 - Test often, as the assets can look dramatically different in VR than on a flat screen!
 
@@ -32,11 +31,11 @@ Throughout the course of this tutorial, we will cover:
           if you are new to Godot and/or game development and have some experience with making 3D games
           **before** going through this tutorial series.
 
-          This tutorial assumes you know how to and have experience working with the Godot editor,
+          This tutorial assumes you have experience working with the Godot editor,
           have basic programming experience in GDScript, and have basic 3D game development experience.
 
           Also, it is assumed you have both an OpenVR-ready headset and two OpenVR-ready controllers! This tutorial was written using a Windows Mixed Reality headset on Windows 10,
-          so the tutorial is written to work on that headset. You may need to adjust the code to work with other VR headsets, such as the Oculus Rift or HTC Vive.
+          so the tutorial is written to work on that headset. It has also been tested on the HTC Vive. You may need to adjust the code to work with other VR headsets, such as the Oculus Rift.
 
 You can find the start assets for this tutorial here: :download:`VR_Starter_Tutorial_Start.zip <files/VR_Starter_Tutorial_Start.zip>`
 
@@ -69,7 +68,7 @@ Launch Godot and open up the project included in the starter assets.
 First, you may notice there is already quite a bit set up. This includes a pre-built level, several instanced scenes placed around,
 some background music, and several GUI-related :ref:`MeshInstances <class_MeshInstance>` nodes.
 
-You may notice that the GUI-related meshes already have a script attached to them, and this is simply used to show whatever is inside the :ref:`Viewport <class_Viewport>`
+You may also notice that the GUI-related meshes already have a script attached to them. This is used to show whatever is inside the :ref:`Viewport <class_Viewport>`
 on the mesh. Feel free to take a look if you want, but this tutorial will not be going over how to use the :ref:`Viewport <class_Viewport>` nodes for making 3D GUI
 :ref:`MeshInstance <class_MeshInstance>` nodes.
 
@@ -79,7 +78,7 @@ The :ref:`ARVROrigin <class_ARVROrigin>` node is the center point of the room. I
 be directly below the player, but if there is room-scale tracking, then the :ref:`ARVROrigin <class_ARVROrigin>` will be the center of the tracked room.
 
 .. note:: This is a bit of a simplification, and honestly, I do not know enough about the various different VR headsets and how they work to give a more detailed
-          and complete explanation. The simple way is to look at it like this: The :ref:`ARVROrigin <class_ARVROrigin>` is the center of the VR world. If there is
+          and complete explanation. Consider it like this: The :ref:`ARVROrigin <class_ARVROrigin>` is the center of the VR world. If there is
           room tracking, the player can move away from the center point, the :ref:`ARVROrigin <class_ARVROrigin>` node, but only as far as the room scaling tracks.
 
 If you select the :ref:`ARVROrigin <class_ARVROrigin>` node, you may notice that the world scale is set to ``1.4``. This is because I originally made the world too big,
@@ -99,7 +98,7 @@ An :ref:`ARVRController <class_ARVRController>` with an ID of 1 is the left hand
 Starting VR
 -----------
 
-Firstly, let's get the VR up and going! While ``Game.tscn`` is open, select the ``Game`` node and make a new script called ``Game.gd``. Add the following code:
+First, let's get the VR up and going! While ``Game.tscn`` is open, select the ``Game`` node and make a new script called ``Game.gd``. Add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -146,7 +145,7 @@ version.
 
 With that done, let's quickly go over what this script does.
 
-Firstly, we find a VR interface from the ARVR server. We do this because by default Godot does not include any VR interfaces, but rather exposes an API so anyone can make
+First, we find a VR interface from the ARVR server. We do this because by default Godot does not include any VR interfaces, but rather exposes an API so anyone can make
 AR/VR interfaces with GDNative/C++. Next, we check to see if an OpenVR interface was found, and then we initialize it.
 
 Assuming nothing went wrong with initializing, we then turn the main :ref:`Viewport <class_Viewport>` into an AR/VR viewport, by setting ``arvr`` to ``true``.
@@ -174,13 +173,13 @@ around the world and allow the player to grab and release :ref:`RigidBody <class
 
 Open either ``Left_Controller.tscn`` or ``Right_Controller.tscn``. Feel free to look at how the scene is set up; there are only a couple things of note to point out.
 
-Firstly, notice how there are a couple :ref:`Raycast <class_Raycast>` nodes. We will be using one :ref:`Raycast <class_Raycast>` to teleport around the game world (``Raycast``) and
+First, notice how there are a couple :ref:`Raycast <class_Raycast>` nodes. We will be using one :ref:`Raycast <class_Raycast>` to teleport around the game world (``Raycast``) and
 we will use the other for picking up objects (``GrabCast``) if the player is using :ref:`Raycast <class_Raycast>` nodes to pick up objects.
 
-The other thing to note is how there is an :ref:`Area <class_Area>` simply called ``Area``, that is a small sphere in the palm of the hand. This will be used to detect
+The other thing to note is how there is an :ref:`Area <class_Area>` called ``Area``, that is a small sphere in the palm of the hand. This will be used to detect
 objects the player can pick up with that hand if the player is using :ref:`Area <class_Area>` nodes to pick up objects.
 
-We also have a larger :ref:`Area <class_Area>` called ``Sleep_Area``, which will simply be used to wake :ref:`RigidBody <class_RigidBody>` nodes when the hands get close.
+We also have a larger :ref:`Area <class_Area>` called ``Sleep_Area``, which will be used to wake :ref:`RigidBody <class_RigidBody>` nodes when the hands get close.
 
 Select the root node, either ``Left_Controller`` or ``Right_Controller`` depending on which scene you chose, and create a new script called ``VR_Controller.gd``.
 Add the following to ``VR_Controller.gd``:
@@ -190,6 +189,12 @@ Add the following to ``VR_Controller.gd``:
 
     extends ARVRController
 
+    onready var grab_area = $Area
+    onready var grab_raycast = $GrabCast
+    onready var grab_pos_node = $Grab_Pos
+    onready var hand_mesh = $Hand
+    onready var teleport_raycast = $RayCast
+
     var controller_velocity = Vector3(0, 0, 0)
     var prior_controller_position = Vector3(0, 0, 0)
     var prior_controller_velocities = []
@@ -197,17 +202,10 @@ Add the following to ``VR_Controller.gd``:
     var held_object = null
     var held_object_data = {"mode":RigidBody.MODE_RIGID, "layer":1, "mask":1}
 
-    var grab_area
-    var grab_raycast
     var grab_mode = "AREA"
-    var grab_pos_node
-
-    var hand_mesh
-
     var teleport_pos
     var teleport_mesh
     var teleport_button_down
-    var teleport_raycast
 
     const CONTROLLER_DEADZONE = 0.65
 
@@ -216,19 +214,12 @@ Add the following to ``VR_Controller.gd``:
     var directional_movement = false
 
     func _ready():
-        teleport_raycast = get_node("RayCast")
         teleport_mesh = get_tree().root.get_node("Game/Teleport_Mesh")
         teleport_button_down = false
 
-        grab_area = get_node("Area")
-        grab_raycast = get_node("GrabCast")
-        grab_pos_node = get_node("Grab_Pos")
         grab_mode = "AREA"
-
         get_node("Sleep_Area").connect("body_entered", self, "sleep_area_entered")
         get_node("Sleep_Area").connect("body_exited", self, "sleep_area_exited")
-
-        hand_mesh = get_node("Hand")
 
         connect("button_pressed", self, "button_pressed")
         connect("button_release", self, "button_released")
@@ -236,7 +227,7 @@ Add the following to ``VR_Controller.gd``:
 
     func _physics_process(delta):
 
-        if teleport_button_down == true:
+        if teleport_button_down:
             teleport_raycast.force_raycast_update()
             if teleport_raycast.is_colliding():
                 if teleport_raycast.get_collider() is StaticBody:
@@ -247,8 +238,7 @@ Add the following to ``VR_Controller.gd``:
 
         # Controller velocity
         # --------------------
-        if get_is_active() == true:
-
+        if get_is_active():
             controller_velocity = Vector3(0, 0, 0)
 
             if prior_controller_velocities.size() > 0:
@@ -268,7 +258,7 @@ Add the following to ``VR_Controller.gd``:
 
         # --------------------
 
-        if held_object != null:
+        if held_object:
             var held_scale = held_object.scale
             held_object.global_transform = grab_pos_node.global_transform
             held_object.scale = held_scale
@@ -302,7 +292,7 @@ Add the following to ``VR_Controller.gd``:
         movement_forward.y = 0
         movement_right.y = 0
 
-        if (movement_right.length() > 0 or movement_forward.length() > 0):
+        if movement_right.length() > 0 or movement_forward.length() > 0:
             get_parent().translate(movement_right + movement_forward)
             directional_movement = true
         else:
@@ -314,12 +304,12 @@ Add the following to ``VR_Controller.gd``:
 
         # If the trigger is pressed...
         if button_index == 15:
-            if held_object != null:
+            if held_object:
                 if held_object.has_method("interact"):
                     held_object.interact()
 
             else:
-                if teleport_mesh.visible == false and held_object == null:
+                if not teleport_mesh.visible and not held_object:
                     teleport_button_down = true
                     teleport_mesh.visible = true
                     teleport_raycast.visible = true
@@ -327,32 +317,30 @@ Add the following to ``VR_Controller.gd``:
 
         # If the grab button is pressed...
         if button_index == 2:
-
-            if (teleport_button_down == true):
+            if teleport_button_down:
                 return
 
-            if held_object == null:
+            if not held_object:
 
                 var rigid_body = null
 
-                if (grab_mode == "AREA"):
+                if grab_mode == "AREA":
                     var bodies = grab_area.get_overlapping_bodies()
                     if len(bodies) > 0:
-
                         for body in bodies:
                             if body is RigidBody:
-                                if !("NO_PICKUP" in body):
+                                if not "NO_PICKUP" in body:
                                     rigid_body = body
                                     break
 
-                elif (grab_mode == "RAYCAST"):
+                elif grab_mode == "RAYCAST":
                     grab_raycast.force_raycast_update()
-                    if (grab_raycast.is_colliding()):
-                        if grab_raycast.get_collider() is RigidBody and !("NO_PICKUP" in grab_raycast.get_collider()):
+                    if grab_raycast.is_colliding():
+                        if grab_raycast.get_collider() is RigidBody and not "NO_PICKUP" in grab_raycast.get_collider():
                             rigid_body = grab_raycast.get_collider()
 
 
-                if rigid_body != null:
+                if rigid_body:
 
                     held_object = rigid_body
 
@@ -367,9 +355,9 @@ Add the following to ``VR_Controller.gd``:
                     hand_mesh.visible = false
                     grab_raycast.visible = false
 
-                    if (held_object.has_method("picked_up")):
+                    if held_object.has_method("picked_up"):
                         held_object.picked_up()
-                    if ("controller" in held_object):
+                    if "controller" in held_object:
                         held_object.controller = self
 
 
@@ -390,7 +378,7 @@ Add the following to ``VR_Controller.gd``:
                 held_object = null
                 hand_mesh.visible = true
 
-                if (grab_mode == "RAYCAST"):
+                if grab_mode == "RAYCAST":
                     grab_raycast.visible = true
 
 
@@ -402,7 +390,7 @@ Add the following to ``VR_Controller.gd``:
             if grab_mode == "AREA":
                 grab_mode = "RAYCAST"
 
-                if held_object == null:
+                if not held_object:
                     grab_raycast.visible = true
             elif grab_mode == "RAYCAST":
                 grab_mode = "AREA"
@@ -414,9 +402,9 @@ Add the following to ``VR_Controller.gd``:
         # If the trigger button is released...
         if button_index == 15:
 
-            if (teleport_button_down == true):
+            if teleport_button_down:
 
-                if teleport_pos != null and teleport_mesh.visible == true:
+                if teleport_pos and teleport_mesh.visible:
                     var camera_offset = get_parent().get_node("Player_Camera").global_transform.origin - get_parent().global_transform.origin
                     camera_offset.y = 0
 
@@ -532,7 +520,7 @@ Then, we calculate how much the player will be moving by adding both the trackpa
 
 Next, we calculate how far the player will go forwards/backwards and right/left by multiplying the VR camera's directional vectors by the combined trackpad/joystick vector.
 
-We then remove movement on the Y axis so the player cannot fly/fall simply by moving using the trackpad/joystick.
+We then remove movement on the Y axis so the player cannot fly/fall by moving using the trackpad/joystick.
 
 And finally, we move the player if there is any movement forwards/backwards or right/left. If we are moving the player, we set ``directional_movement`` accordingly.
 
@@ -611,7 +599,7 @@ Let's look at ``button_released`` next.
 If the button released is button 15, the trigger, then we potentially want to teleport.
 
 Firstly, we check to see whether ``teleport_button_down`` is ``true``. If it is, that means the player is intending to teleport, while if it is ``false``, the player
-has simply released the trigger while holding an object.
+has released the trigger while holding an object.
 
 We then check to see if this controller has a teleport position, and we check to make sure the teleport mesh is visible.
 
@@ -663,7 +651,7 @@ With ``Movement_Vignette`` selected, make a new script called ``Movement_Vignett
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Control
+    extends ColorRect
 
     var controller_one
     var controller_two
@@ -687,15 +675,15 @@ With ``Movement_Vignette`` selected, make a new script called ``Movement_Vignett
 
     func _process(delta):
 
-        if (controller_one == null or controller_two == null):
+        if not controller_one or not controller_two:
             return
 
-        if (controller_one.directional_movement == true or controller_two.directional_movement == true):
+        if controller_one.directional_movement or controller_two.directional_movement:
             visible = true
         else:
             visible = false
 
-Because this script is fairly simple, let's quickly go over what it does.
+Because this script is fairly brief, let's quickly go over what it does.
 
 In ``_ready``, we wait for four frames. We do this to ensure the VR interface is ready and going.
 
@@ -728,7 +716,7 @@ to ``Sphere_Target.gd``:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Spatial
+    extends StaticBody
 
     var destroyed = false
     var destroyed_timer = 0
@@ -749,15 +737,15 @@ to ``Sphere_Target.gd``:
 
     func damage(bullet_global_transform, damage):
 
-        if destroyed == true:
+        if destroyed:
             return
 
         health -= damage
 
         if health <= 0:
 
-            get_node("CollisionShape").disabled = true
-            get_node("Sphere_Target").visible = false
+            $CollisionShape.disabled = true
+            $Sphere_Target.visible = false
 
             var clone = RIGID_BODY_TARGET.instance()
             add_child(clone)
@@ -766,7 +754,7 @@ to ``Sphere_Target.gd``:
             destroyed = true
             set_physics_process(true)
 
-            get_node("AudioStreamPlayer").play()
+            $AudioStreamPlayer.play()
             get_tree().root.get_node("Game").remove_sphere()
 
 Let's go over how this script works, starting with the class variables.
@@ -830,7 +818,7 @@ Next, we need to add the ``remove_sphere`` function. Add the following to ``Game
     func remove_sphere():
         spheres_left -= 1
 
-        if sphere_ui != null:
+        if sphere_ui:
             sphere_ui.update_ui(spheres_left)
 
 What this function does is it subtracts one from ``spheres_left``.
@@ -843,7 +831,7 @@ Now that we have destroyable targets, we need a way to destroy them!
 Adding a pistol
 ---------------
 
-Okay, let's add a simple pistol. Open up ``Pistol.tscn``, which you will find in the ``Scenes`` folder.
+Okay, let's add a pistol. Open up ``Pistol.tscn``, which you will find in the ``Scenes`` folder.
 
 There are a few things to note here. The first thing to note is how everything is rotated. This is to make the pistol rotate correctly when the player grabs it. The other thing to notice is
 how there is a laser sight mesh, and a flash mesh; both of these do what you'd expect: act as a laser pointer and muzzle flash, respectively.
@@ -858,25 +846,18 @@ script called ``Pistol.gd``. Add the following code to ``Pistol.gd``:
 
     extends RigidBody
 
-    var flash_mesh
+    onready var flash_mesh = $Pistol_Flash
+    onready var laser_sight_mesh = $LaserSight
+    onready var raycast = $RayCast
+
     const FLASH_TIME = 0.25
     var flash_timer = 0
 
-    var laser_sight_mesh
-
-    var raycast
     var BULLET_DAMAGE = 20
 
     func _ready():
-
-        flash_mesh = get_node("Pistol_Flash")
         flash_mesh.visible = false
-
-        laser_sight_mesh = get_node("LaserSight")
         laser_sight_mesh.visible = false
-
-        raycast = get_node("RayCast")
-
 
     func _physics_process(delta):
         if flash_timer > 0:
@@ -905,7 +886,7 @@ script called ``Pistol.gd``. Add the following code to ``Pistol.gd``:
                     var direction_vector = raycast.global_transform.basis.z.normalized()
                     body.apply_impulse((raycast.global_transform.origin - body.global_transform.origin).normalized(), direction_vector * 1.2)
 
-            get_node("AudioStreamPlayer3D").play()
+            $AudioStreamPlayer3D.play()
 
 
     # Called when the object is picked up.
@@ -977,7 +958,7 @@ With that done, go ahead and give the game a try! If you climb up the stairs and
 Adding a shotgun
 ----------------
 
-Let's add a different type of shooting :ref:`RigidBody <class_RigidBody>`: A shotgun. This is fairly simple to do, and almost everything is the same as the pistol.
+Let's add a different type of weapon :ref:`RigidBody <class_RigidBody>`: a shotgun. This is fairly straightforward, as almost everything is the same as the pistol.
 
 Open up ``Shotgun.tscn``, which you can find in ``Scenes``. Notice how everything is more or less the same, but instead of a single :ref:`Raycast <class_Raycast>`,
 there are five, and there is no laser pointer.
@@ -991,18 +972,16 @@ Alright, select the ``Shotgun`` root node, the :ref:`RigidBody <class_RigidBody>
 
     extends RigidBody
 
-    var flash_mesh
+    onready var flash_mesh = $Shotgun_Flash
+    onready var raycasts = $Raycasts
+
     const FLASH_TIME = 0.25
     var flash_timer = 0
 
-    var raycasts
     var BULLET_DAMAGE = 30
 
     func _ready():
-        flash_mesh = get_node("Shotgun_Flash")
         flash_mesh.visible = false
-
-        raycasts = get_node("Raycasts")
 
     func _physics_process(delta):
         if flash_timer > 0:
@@ -1035,7 +1014,7 @@ Alright, select the ``Shotgun`` root node, the :ref:`RigidBody <class_RigidBody>
                         var direction_vector = raycast.global_transform.basis.z.normalized()
                         body.apply_impulse((raycast.global_transform.origin - body.global_transform.origin).normalized(), direction_vector * 4)
 
-            get_node("AudioStreamPlayer3D").play()
+            $AudioStreamPlayer3D.play()
 
 
     func picked_up():
@@ -1085,29 +1064,21 @@ Alright, now let's write the code for the bomb. Select the ``Bomb`` :ref:`RigidB
 
     extends RigidBody
 
-    var bomb_mesh
+    onready var bomb_mesh = $Bomb
+    onready var explosion_area = $Area
+    onready var fuse_particles = $Fuse_Particles
+    onready var explosion_particles = $Explosion_Particles
 
     const FUSE_TIME = 4
     var fuse_timer = 0
 
-    var explosion_area
     var EXPLOSION_DAMAGE = 100
     var EXPLOSION_TIME = 0.75
     var explosion_timer = 0
     var explode = false
-
-    var fuse_particles
-    var explosion_particles
-
     var controller = null
 
     func _ready():
-
-        bomb_mesh = get_node("Bomb")
-        explosion_area = get_node("Area")
-        fuse_particles = get_node("Fuse_Particles")
-        explosion_particles = get_node("Explosion_Particles")
-
         set_physics_process(false)
 
     func _physics_process(delta):
@@ -1138,7 +1109,7 @@ Alright, now let's write the code for the bomb. Select the ``Bomb`` :ref:`RigidB
                             body.apply_impulse(direction_vector.normalized(), direction_vector.normalized() * 1.8)
 
                 explode = true
-                get_node("AudioStreamPlayer3D").play()
+                $AudioStreamPlayer3D.play()
 
 
         if explode:
@@ -1148,7 +1119,7 @@ Alright, now let's write the code for the bomb. Select the ``Bomb`` :ref:`RigidB
 
                 explosion_area.monitoring = false
 
-                if controller != null:
+                if controller:
                     controller.held_object = null
                     controller.hand_mesh.visible = true
 
@@ -1257,10 +1228,10 @@ Other than that, there really is not much of note, so let's write the code. Sele
     var controller
 
     func _ready():
-        get_node("Damage_Area_01").connect("body_entered", self, "body_entered_sword", ["01"])
-        get_node("Damage_Area_02").connect("body_entered", self, "body_entered_sword", ["02"])
-        get_node("Damage_Area_03").connect("body_entered", self, "body_entered_sword", ["03"])
-        get_node("Damage_Area_04").connect("body_entered", self, "body_entered_sword", ["04"])
+        $Damage_Area_01.connect("body_entered", self, "body_entered_sword", ["01"])
+        $Damage_Area_02.connect("body_entered", self, "body_entered_sword", ["02"])
+        $Damage_Area_03.connect("body_entered", self, "body_entered_sword", ["03"])
+        $Damage_Area_04.connect("body_entered", self, "body_entered_sword", ["04"])
 
 
     # Called when the interact button is pressed while the object is held.
@@ -1302,12 +1273,12 @@ Other than that, there really is not much of note, so let's write the code. Sele
 
                 var direction_vector = sword_part.global_transform.origin - body.global_transform.origin
 
-                if controller == null:
+                if not controller:
                     body.apply_impulse(direction_vector.normalized(), direction_vector.normalized() * self.linear_velocity)
                 else:
                     body.apply_impulse(direction_vector.normalized(), direction_vector.normalized() * controller.controller_velocity)
 
-                get_node("AudioStreamPlayer3D").play()
+                $AudioStreamPlayer3D.play()
 
 Let's go over what this script does, starting with the two class variables:
 
@@ -1358,11 +1329,9 @@ and then select the ``Base_Control`` node. Add a new script called ``Base_Contro
 
     extends Control
 
-    var sphere_count_label
+    var sphere_count_label = $Label_Sphere_Count
 
     func _ready():
-        sphere_count_label = get_node("Label_Sphere_Count")
-
         get_tree().root.get_node("Game").sphere_ui = self
 
     func update_ui(sphere_count):
@@ -1371,9 +1340,9 @@ and then select the ``Base_Control`` node. Add a new script called ``Base_Contro
         else:
             sphere_count_label.text = "No spheres remaining! Good job!"
 
-Let's go over what this script does quickly, as it is fairly simple.
+Let's go over what this script does.
 
-Firstly, in ``_ready``, we get the :ref:`Label <class_Label>` that shows how many spheres are left and assign it to the ``sphere_count_label`` class variable.
+First, in ``_ready``, we get the :ref:`Label <class_Label>` that shows how many spheres are left and assign it to the ``sphere_count_label`` class variable.
 Next, we get ``Game.gd`` by using ``get_tree().root`` and assign ``sphere_ui`` to this script.
 
 In ``update_ui``, we change the sphere :ref:`Label <class_Label>`'s text. If there is at least one sphere remaining, we change the text to show how many spheres are still
@@ -1424,9 +1393,9 @@ Add the following code to ``Reset_Box.gd``:
         global_transform = start_transform
         reset_timer = 0
 
-Let's go over what this does quickly, as it is also fairly simple.
+Let's go over what this does.
 
-Firstly, we get the starting global :ref:`Transform <class_Transform>` in ``_ready``, and assign it to ``start_transform``. We will use this to reset the position of the reset box every so often.
+First, we get the starting global :ref:`Transform <class_Transform>` in ``_ready``, and assign it to ``start_transform``. We will use this to reset the position of the reset box every so often.
 
 In ``_physics_process``, we check to see if enough time has passed to reset. If it has, we reset the box's :ref:`Transform <class_Transform>` and then reset the timer.
 
@@ -1444,7 +1413,7 @@ Final notes
 
 .. image:: img/starter_vr_tutorial_sword.png
 
-Whew! That was a lot of work. Now you have a fairly simple VR project!
+Whew! That was a lot of work. Now you have a VR project!
 
 .. warning:: If you ever get lost, be sure to read over the code again!
 
