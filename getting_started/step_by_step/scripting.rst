@@ -7,7 +7,7 @@ Introduction
 ------------
 
 Before Godot 3.0, the only choice for scripting a game was to use
-:ref:`doc_gdscript`. Nowadays, Godot has four (yes, four!) official languages
+:ref:`GDScript<doc_gdscript>`. Nowadays, Godot has four (yes, four!) official languages
 and the ability to add extra scripting languages dynamically!
 
 This is great, mostly due to the large amount of flexibility provided, but
@@ -21,7 +21,7 @@ C# and C++ need to be edited in a separate IDE. If you are a big fan of statical
 GDScript
 ~~~~~~~~
 
-:ref:`doc_gdscript` is, as mentioned above, the main language used in Godot.
+:ref:`GDScript<doc_gdscript>` is, as mentioned above, the main language used in Godot.
 Using it has some positive points compared to other languages due
 to its high integration with Godot:
 
@@ -97,7 +97,7 @@ demonstrate:
 - Hooking up UI elements via signals.
 - Writing a script that can access other nodes in the scene.
 
-Before continuing, please make sure to read the :ref:`doc_gdscript` reference.
+Before continuing, please make sure to read the :ref:`GDScript<doc_gdscript>` reference.
 It's a language designed to be simple, and the reference is short, so it will not take more
 than a few minutes to get an overview of the concepts.
 
