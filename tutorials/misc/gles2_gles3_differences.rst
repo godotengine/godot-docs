@@ -22,14 +22,14 @@ as they require advanced GPU features. Instead, use :ref:`CPUParticles <class_CP
 .. tip:: Particles and Particles2D can be converted to their CPU equivalent node with the "Convert to
          CPUParticles" option in the editor.
 
-SCREEN_TEXTURE mip-maps
------------------------
+``SCREEN_TEXTURE`` mip-maps
+---------------------------
 
 In GLES2, ``SCREEN_TEXTURE`` (accessed via a :ref:`ShaderMaterial <class_ShaderMaterial>`) does not have
 computed mip-maps. So when accessing at a different LOD, the texture will not appear blurry. 
 
-DEPTH_TEXTURE
--------------
+``DEPTH_TEXTURE``
+-----------------
 
 While GLES2 supports ``DEPTH_TEXTURE`` in shaders, it may not work on some old hardware (especially mobile).
 
@@ -97,21 +97,21 @@ Contact shadows
 
 The ``shadow_contact`` property of :ref:`Lights <class_Light>` is not supported in GLES2 and so does nothing.
 
-Light Performance
+Light performance
 -----------------
 
 In GLES2, performance scales poorly with several lights, as each light is processed in a separate render 
 pass (in opposition to GLES3 which is all done in a single pass). Try to limit scenes to as few lights as 
 possible in order to achieve greatest performance. 
 
-Texture Compression
+Texture compression
 -------------------
 
 On mobile, GLES2 requires ETC texture compression, while GLES3 requires ETC2. ETC2 is enabled by default, 
 so if exporting to mobile using GLES2 make sure to set the project setting 
 ``rendering/vram_compression/import_etc`` and then reimport textures.
 
-Blend Shapes
+Blend shapes
 ------------
 
 Blend shapes are not supported in GLES2.
