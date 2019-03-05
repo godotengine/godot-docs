@@ -7,27 +7,26 @@ Introduction
 ------------
 
 For the most common cases, Godot provides ready to use materials for
-most types of shaders, such as SpatialMaterial, CanvasItemMaterial and
-ParticlesMaterial (@TODO link to tutorials/classes). They are flexible implementations that cover most
-use cases.
+most types of shaders, such as :ref:`SpatialMaterial <class_SpatialMaterial>`, 
+:ref:`CanvasItemMaterial <class_CanvasItemMaterial>` and :ref:`ParticlesMaterial <class_ParticlesMaterial>`. 
+They are flexible implementations that cover most use cases.
 
 Shader materials allow writing a custom shader directly, for maximum flexibility.
 Examples of this are:
 
 -  Create procedural textures.
--  Create complex texture blendings.
+-  Create complex texture blending effects.
 -  Create animated materials, or materials that change over time.
 -  Create refractive effects or other advanced effects.
 -  Create special lighting shaders for more exotic materials.
 -  Animate vertices, like tree leaves or grass.
--  Create custom particle code, that responds to baked animations or force fields.
+-  Create custom particle code.
 -  And much more!
 
-Traditionally, most engines will ask you to learn GLSL, HLSL or Cg,
-which are pretty complex for the skillset of most artists. Godot uses a
-simplified version of a shader language that will detect errors as you
-type, so you can see your edited shaders in real-time. Additionally, it
-is possible to edit shaders using a visual, node-based graph editor.
+Godot provides built in functionality to make frequent operations 
+easier. Additionally, Godot's shader editor will detect errors as you
+type, so you can see your edited shaders in real-time. It is also
+possible to edit shaders using a visual, node-based graph editor.
 
 Creating a ShaderMaterial
 -------------------------
@@ -46,10 +45,6 @@ Converting to ShaderMaterial
 
 It is possible to convert from SpatialMaterial, CanvasItemMaterial and
 ParticlesMaterial to ShaderMaterial. To do so, go to the material properties
-and enable the convert option.
+and select the convert option.
 
 .. image:: img/shader_material_convert.png
-
-
-
-
