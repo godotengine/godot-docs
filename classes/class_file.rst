@@ -254,7 +254,7 @@ Returns the next 8 bits from the file as an integer.
 
 - :ref:`String<class_String>` **get_as_text** **(** **)** const
 
-Returns the whole file as a :ref:`String<class_String>`.
+Returns the whole file as a :ref:`String<class_String>`. Text is decoded using the UTF-8 encoding.
 
 .. _class_File_method_get_buffer:
 
@@ -266,7 +266,7 @@ Returns next ``len`` bytes of the file as a :ref:`PoolByteArray<class_PoolByteAr
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_csv_line** **(** :ref:`String<class_String>` delim="," **)** const
 
-Returns the next value of the file in CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma), it should be one character long.
+Returns the next value of the file in CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma), it should be one character long. Text is decoded using the UTF-8 encoding.
 
 .. _class_File_method_get_double:
 
@@ -296,7 +296,7 @@ Returns the size of the file in bytes.
 
 - :ref:`String<class_String>` **get_line** **(** **)** const
 
-Returns the next line of the file as a :ref:`String<class_String>`.
+Returns the next line of the file as a :ref:`String<class_String>`. Text is decoded using the UTF-8 encoding.
 
 .. _class_File_method_get_md5:
 
@@ -314,7 +314,7 @@ Returns the last time the ``file`` was modified in unix timestamp format or retu
 
 - :ref:`String<class_String>` **get_pascal_string** **(** **)**
 
-Returns a :ref:`String<class_String>` saved in Pascal format from the file.
+Returns a :ref:`String<class_String>` saved in Pascal format from the file. Text is decoded using the UTF-8 encoding.
 
 .. _class_File_method_get_path:
 
@@ -429,6 +429,7 @@ Stores the given array of bytes in the file.
 - void **store_csv_line** **(** :ref:`PoolStringArray<class_PoolStringArray>` values, :ref:`String<class_String>` delim="," **)**
 
 Store the given :ref:`PoolStringArray<class_PoolStringArray>` in the file as a line formatted in the CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma), it should be one character long.
+Text is encoded using the UTF-8 encoding.
 
 .. _class_File_method_store_double:
 
@@ -447,12 +448,14 @@ Stores a floating point number as 32 bits in the file.
 - void **store_line** **(** :ref:`String<class_String>` line **)**
 
 Stores the given :ref:`String<class_String>` as a line in the file.
+Text is encoded using the UTF-8 encoding.
 
 .. _class_File_method_store_pascal_string:
 
 - void **store_pascal_string** **(** :ref:`String<class_String>` string **)**
 
 Stores the given :ref:`String<class_String>` as a line in the file in Pascal format (i.e. also store the length of the string).
+Text is encoded using the UTF-8 encoding.
 
 .. _class_File_method_store_real:
 
@@ -465,6 +468,7 @@ Stores a floating point number in the file.
 - void **store_string** **(** :ref:`String<class_String>` string **)**
 
 Stores the given :ref:`String<class_String>` in the file.
+Text is encoded using the UTF-8 encoding.
 
 .. _class_File_method_store_var:
 
