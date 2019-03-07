@@ -317,7 +317,7 @@ More than one singleton module can be enabled by separating with commas:
 
     [android]
 
-    modules="org/godotengine/godot/MySingleton,corg/godotengine/godot/MyOtherSingleton"
+    modules="org/godotengine/godot/MySingleton,org/godotengine/godot/MyOtherSingleton"
 
 Then request the singleton Java object from Globals like this:
 
