@@ -207,8 +207,8 @@ Here is the full ``main.gd``:
        make_visible(false)
 
     func _exit_tree():
-       queue_free(main_panel_instance)
-       queue_free(side_panel_instance)
+       main_panel_instance.queue_free()
+       side_panel_instance.queue_free()
 
     func _ready():
        main_panel_instance.connect("main_button_pressed", side_panel_instance, "_on_main_button_pressed")
