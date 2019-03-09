@@ -8,7 +8,7 @@ Introduction
     func _ready():
         $Label.text = "Hello world!"
 
-Welcome to the official documentation of Godot Engine, the free and open source
+Welcome to the official documentation of Godot, the free and open source
 community-driven 2D and 3D game engine! Behind this mouthful, you will find a
 powerful yet user-friendly tool that you can use to develop any kind of game,
 for any platform and with no usage restriction whatsoever.
@@ -17,15 +17,15 @@ This page gives a broad presentation of the engine and of the contents
 of this documentation, so that you know where to start if you are a beginner or
 where to look if you need info on a specific feature.
 
-About Godot Engine
+About the Godot Engine
 ------------------
 
 A game engine is a complex tool, and it is therefore difficult to present Godot
 in a few words. Here's a quick synopsis, which you are free to reuse
-if you need a quick writeup about Godot Engine.
+if you need a quick writeup about the Godot Engine.
 
-    Godot Engine is a feature-packed, cross-platform game engine to create 2D
-    and 3D games from a unified interface. It provides a comprehensive set of
+    The Godot Engine is a feature-packed, cross-platform game engine to create
+    2D and 3D games from a unified interface. It provides a comprehensive set of
     common tools, so users can focus on making games without having to
     reinvent the wheel. Games can be exported in one click to a number of
     platforms, including the major desktop platforms (Linux, macOS, Windows)
