@@ -424,8 +424,11 @@ Uniforms can also be assigned default values:
 Built-in functions
 ------------------
 
-A large number of built-in functions are supported, conforming mostly to GLSL ES 3.0.
+A large number of built-in functions are supported, conforming to GLSL ES 3.0.
 When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature is used, it can be scalar or vector.
+
+.. note:: For a list of the functions that are not available in the GLES2 backend, please see the 
+          :ref:`Differences between GLES2 and GLES3 doc <doc_gles2_gles3_differences>`. 
 
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
 | Function                                                                                      | Description                                    |
