@@ -116,13 +116,13 @@ Blend shapes
 
 Blend shapes are not supported in GLES2.
 
-Shading Language
+Shading language
 ----------------
 
-GLES3 provides many built in functions that GLES2 does not. Below is a list of functions 
+GLES3 provides many built-in functions that GLES2 does not. Below is a list of functions 
 that are not available or are have limited support in GLES2.
 
-For a complete list of built in GLSL functions see the :ref:`Shading Language Doc <doc_shading_language>`.
+For a complete list of built-in GLSL functions see the :ref:`Shading Language doc <doc_shading_language>`.
 
 +------------------------------------------------------------------------+--------------------------------------------------+
 | Function                                                               | Note                                             |
