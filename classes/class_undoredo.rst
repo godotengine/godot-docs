@@ -20,13 +20,13 @@ Methods
 -------
 
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`add_do_method<class_UndoRedo_method_add_do_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method **)** vararg                                         |
+| :ref:`Variant<class_Variant>` | :ref:`add_do_method<class_UndoRedo_method_add_do_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg                                    |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`add_do_property<class_UndoRedo_method_add_do_property>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**     |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`add_do_reference<class_UndoRedo_method_add_do_reference>` **(** :ref:`Object<class_Object>` object **)**                                                                              |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method **)** vararg                                     |
+| :ref:`Variant<class_Variant>` | :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg                                |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)** |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -41,6 +41,8 @@ Methods
 | :ref:`String<class_String>`   | :ref:`get_current_action_name<class_UndoRedo_method_get_current_action_name>` **(** **)** const                                                                                             |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_version<class_UndoRedo_method_get_version>` **(** **)** const                                                                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_commiting_action<class_UndoRedo_method_is_commiting_action>` **(** **)** const                                                                                                     |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`redo<class_UndoRedo_method_redo>` **(** **)**                                                                                                                                         |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -103,7 +105,7 @@ Method Descriptions
 
 .. _class_UndoRedo_method_add_do_method:
 
-- :ref:`Variant<class_Variant>` **add_do_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method **)** vararg
+- :ref:`Variant<class_Variant>` **add_do_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg
 
 Register a method that will be called when the action is committed.
 
@@ -121,7 +123,7 @@ Register a reference for 'do' that will be erased if the 'do' history is lost. T
 
 .. _class_UndoRedo_method_add_undo_method:
 
-- :ref:`Variant<class_Variant>` **add_undo_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method **)** vararg
+- :ref:`Variant<class_Variant>` **add_undo_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg
 
 Register a method that will be called when the action is undone.
 
@@ -172,6 +174,10 @@ Get the name of the current action.
 Get the version, each time a new action is committed, the version number of the UndoRedo is increased automatically.
 
 This is useful mostly to check if something changed from a saved version.
+
+.. _class_UndoRedo_method_is_commiting_action:
+
+- :ref:`bool<class_bool>` **is_commiting_action** **(** **)** const
 
 .. _class_UndoRedo_method_redo:
 

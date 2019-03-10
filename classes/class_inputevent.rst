@@ -29,6 +29,8 @@ Methods
 -------
 
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`accumulate<class_InputEvent_method_accumulate>` **(** :ref:`InputEvent<class_InputEvent>` with_event **)**                                                             |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`as_text<class_InputEvent_method_as_text>` **(** **)** const                                                                                                            |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`get_action_strength<class_InputEvent_method_get_action_strength>` **(** :ref:`String<class_String>` action **)** const                                                 |
@@ -79,6 +81,10 @@ The event's device ID.
 
 Method Descriptions
 -------------------
+
+.. _class_InputEvent_method_accumulate:
+
+- :ref:`bool<class_bool>` **accumulate** **(** :ref:`InputEvent<class_InputEvent>` with_event **)**
 
 .. _class_InputEvent_method_as_text:
 

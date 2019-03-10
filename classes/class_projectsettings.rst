@@ -20,6 +20,8 @@ Properties
 ----------
 
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`android/modules<class_ProjectSettings_property_android/modules>`                                                                                               |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`           | :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>`                                                             |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`application/boot_splash/fullsize<class_ProjectSettings_property_application/boot_splash/fullsize>`                                                             |
@@ -466,9 +468,9 @@ Properties
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`rendering/quality/directional_shadow/size.mobile<class_ProjectSettings_property_rendering/quality/directional_shadow/size.mobile>`                             |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`rendering/quality/driver/driver_fallback<class_ProjectSettings_property_rendering/quality/driver/driver_fallback>`                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`rendering/quality/driver/driver_name<class_ProjectSettings_property_rendering/quality/driver/driver_name>`                                                     |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>`                                         |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`rendering/quality/filters/anisotropic_filter_level<class_ProjectSettings_property_rendering/quality/filters/anisotropic_filter_level>`                         |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -582,9 +584,17 @@ Contains global variables accessible from everywhere. Use "ProjectSettings.get_s
 Property Descriptions
 ---------------------
 
+.. _class_ProjectSettings_property_android/modules:
+
+- :ref:`String<class_String>` **android/modules**
+
+Comma-separated list of custom Android modules (which must have been built in the Android export templates) using their Java package path, e.g. ``org/godotengine/org/GodotPaymentV3,org/godotengine/godot/MyCustomSingleton"``.
+
 .. _class_ProjectSettings_property_application/boot_splash/bg_color:
 
 - :ref:`Color<class_Color>` **application/boot_splash/bg_color**
+
+Background color for the boot splash.
 
 .. _class_ProjectSettings_property_application/boot_splash/fullsize:
 
@@ -1632,15 +1642,21 @@ Size in pixels of the directional shadow.
 
 - :ref:`int<class_int>` **rendering/quality/directional_shadow/size.mobile**
 
-.. _class_ProjectSettings_property_rendering/quality/driver/driver_fallback:
-
-- :ref:`String<class_String>` **rendering/quality/driver/driver_fallback**
-
-Whether to allow falling back to other graphics drivers if the preferred driver is not available. Best means use the best working driver (this is the default). Never means never fall back to another driver even if it does not work. This means the project will not run if the preferred driver does not function.
-
 .. _class_ProjectSettings_property_rendering/quality/driver/driver_name:
 
 - :ref:`String<class_String>` **rendering/quality/driver/driver_name**
+
+Name of the configured video driver ("GLES2" or "GLES3").
+
+Note that the backend in use can be overridden at runtime via the ``--video-driver`` command line argument, or by the :ref:`rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>` option if the target system does not support GLES3 and falls back to GLES2. In such cases, this property is not updated, so use :ref:`OS.get_current_video_driver<class_OS_method_get_current_video_driver>` to query it at runtime.
+
+.. _class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2:
+
+- :ref:`bool<class_bool>` **rendering/quality/driver/fallback_to_gles2**
+
+Whether to allow falling back to the GLES2 driver if the GLES3 driver is not supported. Default value: ``false``.
+
+Note that the two video drivers are not drop-in replacements for each other, so a game designed for GLES3 might not work properly when falling back to GLES2. In particular, some features of the GLES3 backend are not available in GLES2. Enabling this setting also means that both ETC and ETC2 VRAM-compressed textures will be exported on Android and iOS, increasing the size of the game data pack.
 
 .. _class_ProjectSettings_property_rendering/quality/filters/anisotropic_filter_level:
 

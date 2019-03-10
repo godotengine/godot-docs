@@ -41,7 +41,7 @@ Methods
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`get_signal_documentation<class_NativeScript_method_get_signal_documentation>` **(** :ref:`String<class_String>` signal_name **)** const |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>` | :ref:`new<class_NativeScript_method_new>` **(** **)** vararg                                                                                  |
+| :ref:`Object<class_Object>` | :ref:`new<class_NativeScript_method_new>` **(** ... **)** vararg                                                                              |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
@@ -116,7 +116,7 @@ Returns the documentation string that was previously set with ``godot_nativescri
 
 .. _class_NativeScript_method_new:
 
-- :ref:`Object<class_Object>` **new** **(** **)** vararg
+- :ref:`Object<class_Object>` **new** **(** ... **)** vararg
 
 Constructs a new object of the base type with a script of this type already attached.
 

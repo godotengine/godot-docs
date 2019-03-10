@@ -282,7 +282,7 @@ Adds a ``type`` node to the graph with name ``id``.
 
 - void **advance** **(** :ref:`float<class_float>` delta **)**
 
-Shifts position in the animation timeline. Delta is the time in seconds to shift.
+Shifts position in the animation timeline. Delta is the time in seconds to shift. Events between the current frame and ``delta`` are handled.
 
 .. _class_AnimationTreePlayer_method_animation_node_get_animation:
 

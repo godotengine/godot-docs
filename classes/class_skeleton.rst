@@ -16,6 +16,13 @@ Brief Description
 
 Skeleton for characters and animated objects.
 
+Properties
+----------
+
++-------------------------+-----------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`bones_in_world_transform<class_Skeleton_property_bones_in_world_transform>` |
++-------------------------+-----------------------------------------------------------------------------------+
+
 Methods
 -------
 
@@ -90,6 +97,19 @@ Skeleton provides a hierarchical interface for managing bones, including pose, r
 The overall transform of a bone with respect to the skeleton is determined by the following hierarchical order: rest pose, custom pose and pose.
 
 Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it not the actual global/world transform of the bone.
+
+Property Descriptions
+---------------------
+
+.. _class_Skeleton_property_bones_in_world_transform:
+
+- :ref:`bool<class_bool>` **bones_in_world_transform**
+
++----------+-----------------------------------------+
+| *Setter* | set_use_bones_in_world_transform(value) |
++----------+-----------------------------------------+
+| *Getter* | is_using_bones_in_world_transform()     |
++----------+-----------------------------------------+
 
 Method Descriptions
 -------------------

@@ -112,19 +112,19 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Resource<class_Resource>`                           | :ref:`preload<class_@GDScript_method_preload>` **(** :ref:`String<class_String>` path **)**                                                                                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`print<class_@GDScript_method_print>` **(** **)** vararg                                                                                                                                                                          |
+| void                                                      | :ref:`print<class_@GDScript_method_print>` **(** ... **)** vararg                                                                                                                                                                      |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`print_debug<class_@GDScript_method_print_debug>` **(** **)** vararg                                                                                                                                                              |
+| void                                                      | :ref:`print_debug<class_@GDScript_method_print_debug>` **(** ... **)** vararg                                                                                                                                                          |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`print_stack<class_@GDScript_method_print_stack>` **(** **)**                                                                                                                                                                     |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`printerr<class_@GDScript_method_printerr>` **(** **)** vararg                                                                                                                                                                    |
+| void                                                      | :ref:`printerr<class_@GDScript_method_printerr>` **(** ... **)** vararg                                                                                                                                                                |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`printraw<class_@GDScript_method_printraw>` **(** **)** vararg                                                                                                                                                                    |
+| void                                                      | :ref:`printraw<class_@GDScript_method_printraw>` **(** ... **)** vararg                                                                                                                                                                |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`prints<class_@GDScript_method_prints>` **(** **)** vararg                                                                                                                                                                        |
+| void                                                      | :ref:`prints<class_@GDScript_method_prints>` **(** ... **)** vararg                                                                                                                                                                    |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`printt<class_@GDScript_method_printt>` **(** **)** vararg                                                                                                                                                                        |
+| void                                                      | :ref:`printt<class_@GDScript_method_printt>` **(** ... **)** vararg                                                                                                                                                                    |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`push_error<class_@GDScript_method_push_error>` **(** :ref:`String<class_String>` message **)**                                                                                                                                   |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -142,7 +142,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`randomize<class_@GDScript_method_randomize>` **(** **)**                                                                                                                                                                         |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                                 | :ref:`range<class_@GDScript_method_range>` **(** **)** vararg                                                                                                                                                                          |
+| :ref:`Array<class_Array>`                                 | :ref:`range<class_@GDScript_method_range>` **(** ... **)** vararg                                                                                                                                                                      |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`range_lerp<class_@GDScript_method_range_lerp>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` istart, :ref:`float<class_float>` istop, :ref:`float<class_float>` ostart, :ref:`float<class_float>` ostop **)** |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -160,7 +160,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`stepify<class_@GDScript_method_stepify>` **(** :ref:`float<class_float>` s, :ref:`float<class_float>` step **)**                                                                                                                 |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                               | :ref:`str<class_@GDScript_method_str>` **(** **)** vararg                                                                                                                                                                              |
+| :ref:`String<class_String>`                               | :ref:`str<class_@GDScript_method_str>` **(** ... **)** vararg                                                                                                                                                                          |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                             | :ref:`str2var<class_@GDScript_method_str2var>` **(** :ref:`String<class_String>` string **)**                                                                                                                                          |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -777,7 +777,7 @@ Returns a resource from the filesystem that is loaded during script parsing.
 
 .. _class_@GDScript_method_print:
 
-- void **print** **(** **)** vararg
+- void **print** **(** ... **)** vararg
 
 Converts one or more arguments to strings in the best way possible and prints them to the console.
 
@@ -788,7 +788,7 @@ Converts one or more arguments to strings in the best way possible and prints th
 
 .. _class_@GDScript_method_print_debug:
 
-- void **print_debug** **(** **)** vararg
+- void **print_debug** **(** ... **)** vararg
 
 Like :ref:`print<class_@GDScript_method_print>`, but prints only when used in debug mode.
 
@@ -806,7 +806,7 @@ Output in the console would look something like this:
 
 .. _class_@GDScript_method_printerr:
 
-- void **printerr** **(** **)** vararg
+- void **printerr** **(** ... **)** vararg
 
 Prints one or more arguments to strings in the best way possible to standard error line.
 
@@ -816,7 +816,7 @@ Prints one or more arguments to strings in the best way possible to standard err
 
 .. _class_@GDScript_method_printraw:
 
-- void **printraw** **(** **)** vararg
+- void **printraw** **(** ... **)** vararg
 
 Prints one or more arguments to strings in the best way possible to console. No newline is added at the end.
 
@@ -828,7 +828,7 @@ Prints one or more arguments to strings in the best way possible to console. No 
 
 .. _class_@GDScript_method_prints:
 
-- void **prints** **(** **)** vararg
+- void **prints** **(** ... **)** vararg
 
 Prints one or more arguments to the console with a space between each argument.
 
@@ -838,7 +838,7 @@ Prints one or more arguments to the console with a space between each argument.
 
 .. _class_@GDScript_method_printt:
 
-- void **printt** **(** **)** vararg
+- void **printt** **(** ... **)** vararg
 
 Prints one or more arguments to the console with a tab between each argument.
 
@@ -928,7 +928,7 @@ Randomizes the seed (or the internal state) of the random number generator. Curr
 
 .. _class_@GDScript_method_range:
 
-- :ref:`Array<class_Array>` **range** **(** **)** vararg
+- :ref:`Array<class_Array>` **range** **(** ... **)** vararg
 
 Returns an array with the given range. Range can be 1 argument N (0 to N-1), two arguments (initial, final-1) or three arguments (initial, final-1, increment).
 
@@ -1040,7 +1040,7 @@ Snaps float value ``s`` to a given ``step``.
 
 .. _class_@GDScript_method_str:
 
-- :ref:`String<class_String>` **str** **(** **)** vararg
+- :ref:`String<class_String>` **str** **(** ... **)** vararg
 
 Converts one or more arguments to string in the best way possible.
 

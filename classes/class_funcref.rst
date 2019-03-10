@@ -20,7 +20,7 @@ Methods
 -------
 
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`call_func<class_FuncRef_method_call_func>` **(** **)** vararg                                     |
+| :ref:`Variant<class_Variant>` | :ref:`call_func<class_FuncRef_method_call_func>` **(** ... **)** vararg                                 |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_function<class_FuncRef_method_set_function>` **(** :ref:`String<class_String>` name **)**     |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
@@ -39,7 +39,7 @@ Method Descriptions
 
 .. _class_FuncRef_method_call_func:
 
-- :ref:`Variant<class_Variant>` **call_func** **(** **)** vararg
+- :ref:`Variant<class_Variant>` **call_func** **(** ... **)** vararg
 
 Calls the referenced function previously set by :ref:`set_function<class_FuncRef_method_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`.
 

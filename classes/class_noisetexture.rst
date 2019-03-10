@@ -19,17 +19,19 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------------------+---------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>` |
-+-------------------------------------------------+---------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`             |
-+-------------------------------------------------+---------------------------------------------------------------+
-| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`               |
-+-------------------------------------------------+---------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`         |
-+-------------------------------------------------+---------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`               |
-+-------------------------------------------------+---------------------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>`   |
++-------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`bump_strength<class_NoiseTexture_property_bump_strength>` |
++-------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`               |
++-------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 |
++-------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           |
++-------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 |
++-------------------------------------------------+-----------------------------------------------------------------+
 
 Description
 -----------
@@ -52,6 +54,16 @@ Property Descriptions
 +----------+-------------------------+
 
 If true, the resulting texture contains a normal map created from the original noise interpreted as a bump map.
+
+.. _class_NoiseTexture_property_bump_strength:
+
+- :ref:`float<class_float>` **bump_strength**
+
++----------+--------------------------+
+| *Setter* | set_bump_strength(value) |
++----------+--------------------------+
+| *Getter* | get_bump_strength()      |
++----------+--------------------------+
 
 .. _class_NoiseTexture_property_height:
 

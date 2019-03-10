@@ -217,6 +217,8 @@ Methods
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`request_attention<class_OS_method_request_attention>` **(** **)**                                                                                                                                                         |
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`request_permission<class_OS_method_request_permission>` **(** :ref:`String<class_String>` name **)**                                                                                                                      |
++-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_icon<class_OS_method_set_icon>` **(** :ref:`Image<class_Image>` icon **)**                                                                                                                                            |
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_ime_active<class_OS_method_set_ime_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                                |
@@ -1166,6 +1168,12 @@ Shows all resources currently used by the game.
 - void **request_attention** **(** **)**
 
 Request the user attention to the window. It'll flash the taskbar button on Windows or bounce the dock icon on OSX.
+
+.. _class_OS_method_request_permission:
+
+- :ref:`bool<class_bool>` **request_permission** **(** :ref:`String<class_String>` name **)**
+
+At the moment this function is only used by ``AudioDriverOpenSL`` to request permission for ``RECORD_AUDIO`` on Android.
 
 .. _class_OS_method_set_icon:
 

@@ -47,9 +47,9 @@ Methods
 -------
 
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`               | :ref:`call_group<class_SceneTree_method_call_group>` **(** :ref:`String<class_String>` group, :ref:`String<class_String>` method **)** vararg                                                                                                                              |
+| :ref:`Variant<class_Variant>`               | :ref:`call_group<class_SceneTree_method_call_group>` **(** :ref:`String<class_String>` group, :ref:`String<class_String>` method, ... **)** vararg                                                                                                                         |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`               | :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` **(** :ref:`int<class_int>` flags, :ref:`String<class_String>` group, :ref:`String<class_String>` method **)** vararg                                                                                     |
+| :ref:`Variant<class_Variant>`               | :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` **(** :ref:`int<class_int>` flags, :ref:`String<class_String>` group, :ref:`String<class_String>` method, ... **)** vararg                                                                                |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`change_scene<class_SceneTree_method_change_scene>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                                      |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -400,13 +400,13 @@ Method Descriptions
 
 .. _class_SceneTree_method_call_group:
 
-- :ref:`Variant<class_Variant>` **call_group** **(** :ref:`String<class_String>` group, :ref:`String<class_String>` method **)** vararg
+- :ref:`Variant<class_Variant>` **call_group** **(** :ref:`String<class_String>` group, :ref:`String<class_String>` method, ... **)** vararg
 
 Calls ``method`` on each member of the given group.
 
 .. _class_SceneTree_method_call_group_flags:
 
-- :ref:`Variant<class_Variant>` **call_group_flags** **(** :ref:`int<class_int>` flags, :ref:`String<class_String>` group, :ref:`String<class_String>` method **)** vararg
+- :ref:`Variant<class_Variant>` **call_group_flags** **(** :ref:`int<class_int>` flags, :ref:`String<class_String>` group, :ref:`String<class_String>` method, ... **)** vararg
 
 Calls ``method`` on each member of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`.
 

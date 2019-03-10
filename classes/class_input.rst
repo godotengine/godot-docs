@@ -90,6 +90,8 @@ Methods
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_mouse_mode<class_Input_method_set_mouse_mode>` **(** :ref:`MouseMode<enum_Input_MouseMode>` mode **)**                                                                                                                        |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_use_accumulated_input<class_Input_method_set_use_accumulated_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                               |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`start_joy_vibration<class_Input_method_start_joy_vibration>` **(** :ref:`int<class_int>` device, :ref:`float<class_float>` weak_magnitude, :ref:`float<class_float>` strong_magnitude, :ref:`float<class_float>` duration=0 **)** |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`stop_joy_vibration<class_Input_method_stop_joy_vibration>` **(** :ref:`int<class_int>` device **)**                                                                                                                               |
@@ -427,6 +429,12 @@ Note that if you want to change the default cursor shape for :ref:`Control<class
 - void **set_mouse_mode** **(** :ref:`MouseMode<enum_Input_MouseMode>` mode **)**
 
 Set the mouse mode. See the constants for more information.
+
+.. _class_Input_method_set_use_accumulated_input:
+
+- void **set_use_accumulated_input** **(** :ref:`bool<class_bool>` enable **)**
+
+Whether to accumulate similar input events sent by the operating system. Defaults to ``true``.
 
 .. _class_Input_method_start_joy_vibration:
 

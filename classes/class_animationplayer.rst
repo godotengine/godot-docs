@@ -278,7 +278,7 @@ Adds ``animation`` to the player accessible with the key ``name``.
 
 - void **advance** **(** :ref:`float<class_float>` delta **)**
 
-Shifts position in the animation timeline. Delta is the time in seconds to shift.
+Shifts position in the animation timeline. Delta is the time in seconds to shift. Events between the current frame and ``delta`` are handled.
 
 .. _class_AnimationPlayer_method_animation_get_next:
 
@@ -388,7 +388,7 @@ Rename an existing animation with key ``name`` to ``newname``.
 
 - void **seek** **(** :ref:`float<class_float>` seconds, :ref:`bool<class_bool>` update=false **)**
 
-Seek the animation to the ``seconds`` point in time (in seconds). If ``update`` is ``true``, the animation updates too, otherwise it updates at process time.
+Seek the animation to the ``seconds`` point in time (in seconds). If ``update`` is ``true``, the animation updates too, otherwise it updates at process time. Events between the current frame and ``seconds`` are skipped.
 
 .. _class_AnimationPlayer_method_set_blend_time:
 

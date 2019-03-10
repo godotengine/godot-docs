@@ -84,7 +84,7 @@ If the body is at least this close to another body, this body will consider them
 | *Getter* | is_sync_to_physics_enabled() |
 +----------+------------------------------+
 
-If ``true``, the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms.
+If ``true``, the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms. Do **not** use together with :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` or :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` functions.
 
 Method Descriptions
 -------------------
@@ -141,7 +141,7 @@ Moves the body along a vector. If the body collides with another, it will slide 
 
 ``floor_normal`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector2(0, 0)``, everything is considered a wall. This is useful for topdown games.
 
-*TODO: Update for stop_on_slope argument.* If the body is standing on a slope and the horizontal speed (relative to the floor's speed) goes below ``slope_stop_min_velocity``, the body will stop completely. This prevents the body from sliding down slopes when you include gravity in ``linear_velocity``. When set to lower values, the body will not be able to stand still on steep slopes.
+If the body is standing on a slope and the horizontal speed (relative to the floor's speed) goes below ``slope_stop_min_velocity``, the body will stop completely. This prevents the body from sliding down slopes when you include gravity in ``linear_velocity``. When set to lower values, the body will not be able to stand still on steep slopes.
 
 If the body collides, it will change direction a maximum of ``max_slides`` times before it stops.
 

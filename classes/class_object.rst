@@ -32,9 +32,9 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`add_user_signal<class_Object_method_add_user_signal>` **(** :ref:`String<class_String>` signal, :ref:`Array<class_Array>` arguments=[  ] **)**                                                                                    |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`call<class_Object_method_call>` **(** :ref:`String<class_String>` method **)** vararg                                                                                                                                             |
+| :ref:`Variant<class_Variant>`                 | :ref:`call<class_Object_method_call>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                                                                        |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`call_deferred<class_Object_method_call_deferred>` **(** :ref:`String<class_String>` method **)** vararg                                                                                                                           |
+| :ref:`Variant<class_Variant>`                 | :ref:`call_deferred<class_Object_method_call_deferred>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                                                      |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                 | :ref:`callv<class_Object_method_callv>` **(** :ref:`String<class_String>` method, :ref:`Array<class_Array>` arg_array **)**                                                                                                             |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -44,7 +44,7 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`disconnect<class_Object_method_disconnect>` **(** :ref:`String<class_String>` signal, :ref:`Object<class_Object>` target, :ref:`String<class_String>` method **)**                                                                |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`emit_signal<class_Object_method_emit_signal>` **(** :ref:`String<class_String>` signal **)** vararg                                                                                                                               |
+| :ref:`Variant<class_Variant>`                 | :ref:`emit_signal<class_Object_method_emit_signal>` **(** :ref:`String<class_String>` signal, ... **)** vararg                                                                                                                          |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`free<class_Object_method_free>` **(** **)**                                                                                                                                                                                       |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -206,13 +206,13 @@ Adds a user-defined ``signal``. Arguments are optional, but can be added as an :
 
 .. _class_Object_method_call:
 
-- :ref:`Variant<class_Variant>` **call** **(** :ref:`String<class_String>` method **)** vararg
+- :ref:`Variant<class_Variant>` **call** **(** :ref:`String<class_String>` method, ... **)** vararg
 
 Calls the ``method`` on the object and returns a result. Pass parameters as a comma separated list.
 
 .. _class_Object_method_call_deferred:
 
-- :ref:`Variant<class_Variant>` **call_deferred** **(** :ref:`String<class_String>` method **)** vararg
+- :ref:`Variant<class_Variant>` **call_deferred** **(** :ref:`String<class_String>` method, ... **)** vararg
 
 Calls the ``method`` on the object during idle time and returns a result. Pass parameters as a comma separated list.
 
@@ -242,7 +242,7 @@ Disconnects a ``signal`` from a ``method`` on the given ``target``.
 
 .. _class_Object_method_emit_signal:
 
-- :ref:`Variant<class_Variant>` **emit_signal** **(** :ref:`String<class_String>` signal **)** vararg
+- :ref:`Variant<class_Variant>` **emit_signal** **(** :ref:`String<class_String>` signal, ... **)** vararg
 
 Emits the given ``signal``.
 

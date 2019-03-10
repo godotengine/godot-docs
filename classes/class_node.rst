@@ -163,15 +163,15 @@ Methods
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`request_ready<class_Node_method_request_ready>` **(** **)**                                                                                                                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`rpc<class_Node_method_rpc>` **(** :ref:`String<class_String>` method **)** vararg                                                                                                             |
+| :ref:`Variant<class_Variant>`     | :ref:`rpc<class_Node_method_rpc>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                                        |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`rpc_config<class_Node_method_rpc_config>` **(** :ref:`String<class_String>` method, :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` mode **)**                                                    |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`rpc_id<class_Node_method_rpc_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method **)** vararg                                                                        |
+| :ref:`Variant<class_Variant>`     | :ref:`rpc_id<class_Node_method_rpc_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** vararg                                                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`rpc_unreliable<class_Node_method_rpc_unreliable>` **(** :ref:`String<class_String>` method **)** vararg                                                                                       |
+| :ref:`Variant<class_Variant>`     | :ref:`rpc_unreliable<class_Node_method_rpc_unreliable>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                  |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`     | :ref:`rpc_unreliable_id<class_Node_method_rpc_unreliable_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method **)** vararg                                                  |
+| :ref:`Variant<class_Variant>`     | :ref:`rpc_unreliable_id<class_Node_method_rpc_unreliable_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** vararg                                             |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`rset<class_Node_method_rset>` **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**                                                                           |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -909,7 +909,7 @@ Requests that ``_ready`` be called again.
 
 .. _class_Node_method_rpc:
 
-- :ref:`Variant<class_Variant>` **rpc** **(** :ref:`String<class_String>` method **)** vararg
+- :ref:`Variant<class_Variant>` **rpc** **(** :ref:`String<class_String>` method, ... **)** vararg
 
 Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. Also see :ref:`rset<class_Node_method_rset>` and :ref:`rset_config<class_Node_method_rset_config>` for properties. Returns an empty :ref:`Variant<class_Variant>`. Note that you can only safely use RPCs on clients after you received the ``connected_to_server`` signal from the :ref:`SceneTree<class_SceneTree>`. You also need to keep track of the connection state, either by the :ref:`SceneTree<class_SceneTree>` signals like ``server_disconnected`` or by checking ``SceneTree.network_peer.get_connection_status() == CONNECTION_CONNECTED``.
 
@@ -921,19 +921,19 @@ Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`R
 
 .. _class_Node_method_rpc_id:
 
-- :ref:`Variant<class_Variant>` **rpc_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method **)** vararg
+- :ref:`Variant<class_Variant>` **rpc_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** vararg
 
 Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Returns an empty :ref:`Variant<class_Variant>`.
 
 .. _class_Node_method_rpc_unreliable:
 
-- :ref:`Variant<class_Variant>` **rpc_unreliable** **(** :ref:`String<class_String>` method **)** vararg
+- :ref:`Variant<class_Variant>` **rpc_unreliable** **(** :ref:`String<class_String>` method, ... **)** vararg
 
 Sends a :ref:`rpc<class_Node_method_rpc>` using an unreliable protocol. Returns an empty :ref:`Variant<class_Variant>`.
 
 .. _class_Node_method_rpc_unreliable_id:
 
-- :ref:`Variant<class_Variant>` **rpc_unreliable_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method **)** vararg
+- :ref:`Variant<class_Variant>` **rpc_unreliable_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** vararg
 
 Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` using an unreliable protocol (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Returns an empty :ref:`Variant<class_Variant>`.
 
