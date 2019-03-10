@@ -567,6 +567,13 @@ a property has been added to our interface.
 You can now change this property and when you run your project, you will
 see that our Godot icon travels along a larger figure.
 
+.. note::
+    The ``reloadable`` property in the ``gdexample.gdnlib`` file must be set to ``true`` for the Godot editor
+    to automatically pick up the newly added property.
+    
+    However, this setting should be used with care especially when tool classes are used, 
+    as the editor might hold objects then that have script instances attached to them that are managed by a GDNative library.
+
 Lets do the same but for the speed of our animation and use a setter and getter function.
 Our ``gdexample.h`` header file again only needs a few more lines of code:
 
