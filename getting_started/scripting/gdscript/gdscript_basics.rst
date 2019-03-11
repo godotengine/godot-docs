@@ -809,7 +809,7 @@ There are 6 pattern types:
 - array pattern
     matches an array. Every single element of the array pattern is a pattern itself so you can nest them.
 
-    The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
+    The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern doesn't match.
 
     **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``
 
@@ -828,7 +828,7 @@ There are 6 pattern types:
 - dictionary pattern
     Works in the same way as the array pattern. Every key has to be a constant pattern.
 
-    The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
+    The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern doesn't match.
 
     **Open-ended dictionary**: A dictionary can be bigger than the pattern by making the last subpattern ``..``
 
