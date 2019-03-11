@@ -1,7 +1,7 @@
 .. _doc_community_channels:
 
-Channels
-========
+Community channels
+==================
 
 So, where is the Godot community and where can you ask questions and get help?
 
@@ -9,8 +9,8 @@ Note that some of these channels are run and moderated by members of the Godot c
 
 A brief overview over these channels is also available on the `website <https://godotengine.org/community>`_.
 
-Q & A
------
+Q&A
+---
 
 - `Official Godot Questions & Answers <https://godotengine.org/qa/>`_
 

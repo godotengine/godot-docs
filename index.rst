@@ -103,6 +103,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/misc/index
    tutorials/debug/index
 
+
 .. toctree::
    :maxdepth: 1
    :caption: Development
@@ -111,6 +112,7 @@ The main documentation for the site is organized into the following sections:
    development/compiling/index
    development/cpp/index
    development/file_formats/index
+
 
 .. toctree::
    :maxdepth: 1
@@ -125,7 +127,10 @@ The main documentation for the site is organized into the following sections:
    :caption: Community
    :name: sec-community
 
-   community/index
+   community/contributing/index
+   community/channels
+   community/tutorials
+   community/resources
 
 
 .. toctree::
