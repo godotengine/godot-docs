@@ -123,7 +123,6 @@ The main documentation for the site is organized into the following sections:
    community/contributing/index
    community/channels
    community/tutorials
-   community/resources
 
 
 .. toctree::
