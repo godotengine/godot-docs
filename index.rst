@@ -1,5 +1,5 @@
-Godot Docs – *master* branch
-============================
+Godot Docs – *3.1* branch
+=========================
 
 .. only:: not i18n
 
@@ -7,9 +7,12 @@ Godot Docs – *master* branch
             Expand the "Read the Docs" panel at the bottom of the sidebar to see
             the list.
 
-  .. attention:: This is the documentation for the development (master) branch.
-                 Looking for the documentation of the current **stable** branch?
-                 `Have a look here <https://docs.godotengine.org/en/stable>`_.
+  .. tip:: This is the documentation for the stable 3.1 branch.
+         Looking for the documentation of the current **development** branch?
+         `Have a look here <https://docs.godotengine.org/en/latest>`_.
+         You can also browse the documentation for the the stable
+         `2.1 <https://docs.godotengine.org/en/2.1>`_ and
+         `3.0 <https://docs.godotengine.org/en/3.0>`_ branches.
 
 .. only:: i18n
 
