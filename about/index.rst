@@ -7,6 +7,7 @@ About
 
    introduction
    faq
+   docs_changelog
 
 .. history
 .. authors
