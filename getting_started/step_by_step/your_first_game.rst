@@ -1037,7 +1037,7 @@ show the "Start" button.
 
     public void UpdateScore(int score)
     {
-        GetNode<Label>("ScoreLabel").Text = _score.ToString();
+        GetNode<Label>("ScoreLabel").Text = score.ToString();
     }
 
 This function is called by ``Main`` whenever the score changes.
@@ -1120,7 +1120,7 @@ sync with the changing score:
 
  .. code-tab:: csharp
 
-        GetNode<HUD>.UpdateScore(_score);
+        GetNode<HUD>("HUD").UpdateScore(_score);
 
 Now you're ready to play! Click the "Play the Project" button. You will
 be asked to select a main scene, so choose ``Main.tscn``.
