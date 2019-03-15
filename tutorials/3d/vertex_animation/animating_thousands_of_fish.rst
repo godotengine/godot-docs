@@ -1,7 +1,7 @@
 .. _doc_animating_thousands_of_fish:
 
-Animating thousands of fish with MeshInstance
-=============================================
+Animating thousands of fish with MultiMeshInstance
+==================================================
 
 This tutorial explores a technique used in the game `ABZU <https://www.gdcvault.com/play/1024409/Creating-the-Art-of-ABZ>`_ 
 for rendering and animating thousands of fish using vertex animation and 
