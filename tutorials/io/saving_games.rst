@@ -263,9 +263,8 @@ to start loading data can be complicated. This step will need to be
 heavily customized based on the needs of an individual project.
 
 This implementation assumes no Persist objects are children of other
-Persist objects. Doing so would create invalid paths. If this is one of
-the needs of a project, this needs to be considered. Saving objects in
-stages (parent objects first), so they are available when child objects
-are loaded, will make sure they're available for the add_child() call.
-There will also need to be some way to link children to parents, as the
-NodePath will likely be invalid.
+Persist objects. Otherwise, invalid paths would be created. To 
+accommodate nested Persist objects, consider saving objects in stages. 
+Load parent objects first so they are available for the add_child() 
+call when child objects are loaded. You will also need a way to link 
+children to parents as the NodePath will likely be invalid.
