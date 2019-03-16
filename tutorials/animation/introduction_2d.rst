@@ -16,11 +16,10 @@ In this guide you learn to:
 -  Create a simple animation
 -  Call functions with the powerful Call Function Tracks
 
-In Godot you can animate anything you find in the Inspector. Animations
-are changes to properties over time. This means you can animate anything
-visual in nature: sprites, UI elements, particles, the visibility, and
-color of textures. But not only. You can also control gameplay related
-values and call any function.
+In Godot, you can animate anything available in the Inspector, such as
+Node transforms, sprites, UI elements, particles, visibility and colour 
+of materials, and so on. You can also modify values of script variables 
+and call any function.
 
 Create an AnimationPlayer node
 ------------------------------
