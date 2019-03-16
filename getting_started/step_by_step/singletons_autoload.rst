@@ -226,8 +226,8 @@ current scene and replace it with the requested one.
 
 Using :ref:`Object.call_deferred() <class_Object_method_call_deferred>`,
 the second function will only run once all code from the current scene has
-completed. Do not delete the current scene while it is still being used
-(i.e. its code is still running).
+completed. Thus, the current scene will not be removed while it is
+still being used (i.e. its code is still running).
 
 Finally, we need to fill the empty callback functions in the two scenes:
 
