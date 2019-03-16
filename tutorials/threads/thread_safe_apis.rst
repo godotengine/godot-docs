@@ -6,10 +6,10 @@ Thread safe APIs
 Threads
 -------
 
-Using threads is a common way to balance processing scatter it across CPUs and cores.
-Godot supports multi threading, but not in the whole engine.
+Threads are used to balance processing power across CPUs and cores.
+Godot supports multithreading, but not in the whole engine.
 
-Below is a list of the areas in Godot and how they can be used with threads.
+Below is a list of ways multithreading can be used in different areas of Godot.
 
 Global scope
 ------------
