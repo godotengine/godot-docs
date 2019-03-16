@@ -182,11 +182,11 @@ and :ref:`Resource <class_Resource>` features:
 
 .. warning::
 
-    Resources and Dictionaries are also different in that both are passed by reference,
-    but only Resources are reference-counted. This means that if a Dictionary is passed
-    between objects, and the first object is deleted, it will invalidate the second
-    object's variable. This is not so for Resources which won't free their memory until
-    *all* instances are gone.
+    Resources and Dictionaries are both passed by reference, but only Resources are
+    reference-counted. This means that if a Dictionary is passed between objects and
+    the first object is deleted, all other objects' references to the Dictinoary will
+    be invalidated. Conversely, Resources will not be freed from memory until *all* the 
+    objects are deleted.
 
     .. tabs::
       .. code-tab:: gdscript GDScript
