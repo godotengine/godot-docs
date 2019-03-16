@@ -224,11 +224,10 @@ current scene and replace it with the requested one.
         GetTree().SetCurrentScene(CurrentScene);
     }
 
-As mentioned in the comments above, we need to avoid the situation of deleting
-the current scene while it is still being used (i.e. its code is still running),
-so using :ref:`Object.call_deferred() <class_Object_method_call_deferred>`
-is required at this point. The result is that the second function will run
-at a later time when any code from the current scene has completed.
+Using :ref:`Object.call_deferred() <class_Object_method_call_deferred>`,
+the second function will only run once all code from the current scene has
+completed. Do not delete the current scene while it is still being used
+(i.e. its code is still running).
 
 Finally, we need to fill the empty callback functions in the two scenes:
 
