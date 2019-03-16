@@ -259,7 +259,8 @@ Creating a script that inherits :ref:`class_Resource` will allow you to create c
 Using Godot in C++
 ------------------
 
-For your information, Godot also allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. As an example, you can consider Godot Engine's editor as a "game" written in C++ using Godot API.
+Godot allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. 
+As an example, you can consider Godot Engine's editor as a "game" written in C++ using the Godot API.
 
 If you are interested in using Godot in C++, you may want to start reading the :ref:`Developing in
 C++ <doc_introduction_to_godot_development>` page.
