@@ -5,16 +5,10 @@ Project organization
 
 Introduction
 ------------
-
-This tutorial aims to propose a simple workflow on how to organize
-projects. Since Godot allows the programmer to use the filesystem as
-they please, figuring out a way to organize projects when starting
-to use the engine can be a little challenging. Because of this, the
-tutorial describes a simple workflow, which should work as a starting
-point, regardless of whether it is used.
-
-Additionally, using version control can be challenging, so this
-proposition will include that too.
+Since Godot has no restrictions on project structure or filesystem usage,
+organizing files when learning the engine can seem challenging. This
+tutorial suggests a workflow which should be a good starting point. 
+We will also cover using version control with Godot.
 
 Organization
 ------------
