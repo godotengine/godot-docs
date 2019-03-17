@@ -32,7 +32,8 @@ Here is a comparative chart.
 | OGG Vorbis 96kbps, Stereo     | 12kb                |
 +-------------------------------+---------------------+
 
-In general, what is recommended, is to use WAV for most sound effects, especially those that are short and repetitive, and OGG for music, voice and long sound effects.
+Consider using WAV for short and repetitive sound effects, and OGG
+for music, speech, and long sound effects.
 
 Best practices
 --------------
