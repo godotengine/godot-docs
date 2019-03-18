@@ -268,21 +268,21 @@ render_mode to ``unshaded``. If no light function is written, Godot will use the
 properties written to in the fragment function to calculate the lighting for you (subject to
 the render_mode).
 
-To write a light function, assign something to DIFFUSE_LIGHT or SPECULAR_LIGHT. Assigning nothing 
+To write a light function, assign something to ``DIFFUSE_LIGHT`` or ``SPECULAR_LIGHT``. Assigning nothing 
 means no light is processed.
 
 The light function is called for every light in every pixel. It is called within a loop for
 each light type.
 
-Light shader example:
+Below is an example of a custom light function using a Lambertian lighting model:
 
 .. code-block:: glsl
 
     void light() {
-        DIFFUSE_LIGHT += vec3( dot(NORMAL,LIGHT) * ALBEDO * ATTENUATION );
+        DIFFUSE_LIGHT += dot(NORMAL,LIGHT) * ATTENUATION * ALBEDO;
     }
 
-Keep in mind DIFFUSE_LIGHT must be added to rather than set, if you don't want one light to overwrite the work of others.
+If you want the lights to add together, add the light contribution to ``DIFFUSE_LIGHT`` using ``+=``, rather than overwriting it.
 
 +-----------------------------------+---------------------------------------------+
 | Built-in                          | Description                                 |
