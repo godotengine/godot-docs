@@ -201,7 +201,7 @@ Controlling from code
 
 After building the tree and previewing it, the only question remaining is "How is all this controlled from code?".
 
-Keep in mind that the animaton nodes are just resources and, as such, they are shared between all the instances.
+Keep in mind that the animation nodes are just resources and, as such, they are shared between all the instances.
 Setting values in the nodes directly will affect all instances of the scene that uses this ``AnimationTree``.
 This has some cool use cases, though, e.g. you can copy and paste parts of your animation tree, or reuse nodes with a complex layout
 (such as a state machine or blend space) in different animation trees.

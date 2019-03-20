@@ -126,7 +126,7 @@ The reason behind this is so we can rotate ``Player`` on the ``Y`` axis, and ``R
 the ``X`` axis.
 
 .. note:: Had we not used ``Rotation_helper``, we would've likely had cases of rotating on
-          both the ``X`` and ``Y`` axes simultaneously, potentially futher degenerating into a state of
+          both the ``X`` and ``Y`` axes simultaneously, potentially further degenerating into a state of
           rotation on all three axes in some cases.
 
           See :ref:`using transforms <doc_using_transforms>` for more information

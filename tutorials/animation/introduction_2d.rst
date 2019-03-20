@@ -458,9 +458,9 @@ Timeline zoom level control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: img/animation_reference_timeline_zoom_level.png
-   :alt: Timeline zoom level contro
+   :alt: Timeline zoom level control
 
-   Timeline zoom level contro
+   Timeline zoom level control
 
 Timeline control
 ^^^^^^^^^^^^^^^^

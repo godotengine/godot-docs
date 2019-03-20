@@ -30,7 +30,7 @@ either? Let's see an example:
     # my_buildings.gd
     extends Node
 
-    # (note how constant scripts/scenes have a diferent naming scheme than
+    # (note how constant scripts/scenes have a different naming scheme than
     # their property variants).
 
     # This value is a constant, so it spawns when the Script object loads.
