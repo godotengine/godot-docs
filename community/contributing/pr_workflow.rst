@@ -241,7 +241,7 @@ before staging it, while it is staged, and after it has been committed.
 - ``git show`` will show you the changes of the last commit. You can also
   specify a commit hash to see the changes for that commit.
 
-That's a lot to memorise! Don't worry, just check this cheat sheet when you
+That's a lot to memorize! Don't worry, just check this cheat sheet when you
 need to make changes, and learn by doing.
 
 Here's how the shell history could look like on our example:

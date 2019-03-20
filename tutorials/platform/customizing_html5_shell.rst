@@ -20,7 +20,7 @@ Some simple use-cases where customizing the default page is useful include:
    the file system later
  - Passing custom "command line" arguments, e.g. ``-s`` to start a MainLoop script
 
-Another sample HTML page is avilable at `/misc/dist/html/fixed-size.html <https://github.com/godotengine/godot/blob/master/misc/dist/html/fixed-size.html>`__.
+Another sample HTML page is available at `/misc/dist/html/fixed-size.html <https://github.com/godotengine/godot/blob/master/misc/dist/html/fixed-size.html>`__.
 This page uses a fixed size canvas with an output widget below. However, the
 F12 browser console should be preferred as it can display additional
 information, such as WebGL errors.

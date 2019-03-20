@@ -9,7 +9,7 @@ What this tutorial covers
 As seen in the :ref:`doc_making_plugins` page, making a basic plugin that
 extends the editor is fairly easy. This plugin mechanism also allows you to
 create new UIs in the central part of the editor, similarly to the basic 2D, 3D,
-Script and AssetLib views. Such editor plugins are refered as "Main screen
+Script and AssetLib views. Such editor plugins are referred as "Main screen
 plugins".
 
 This tutorial leads you through the creation of a basic main screen plugin. With 
@@ -75,7 +75,7 @@ Scenes
 ------
 
 The ``main_screen_plugin.gd`` file will be responsible for each of our plugin's
-UI element instanciation, and it will also manage the communication between them.
+UI element instantiation, and it will also manage the communication between them.
 
 As a matter of fact, we wish to design each UI element in their own scene.
 Different scenes are not aware of each other unless they are both children of a
@@ -91,13 +91,13 @@ and scene #2 will be connected to that signal. Since all of our UI scenes will
 be instanced by ``main_screen_plugin.gd`` script, this one script will also
 connect each of them to the required signals.
 
-.. note:: If the ``main_screen_plugin.gd`` instanciates the UI scenes, won't
+.. note:: If the ``main_screen_plugin.gd`` instantiates the UI scenes, won't
           they be brothers nodes then?
 
 Not necessarily: this script may add all UI scenes as children of the same node
 of the editor's scene tree - but maybe it won't. And the ``main_screen_plugin.gd``
-script will *not* be the parent node of any instanciated scene because it is a
-script, not a node! This script will only hold references to instanciated
+script will *not* be the parent node of any instantiated scene because it is a
+script, not a node! This script will only hold references to instantiated
 scenes.
 
 Main screen scene

@@ -45,7 +45,7 @@ recommend the use of
 `Dependency Injection <https://en.wikipedia.org/wiki/Dependency_injection>`_.
 This technique involves having a high-level API provide the dependencies of the
 low-level API. Why do this? Because classes which rely on their external
-environment can inadvertantly trigger bugs and unexpected behavior.
+environment can inadvertently trigger bugs and unexpected behavior.
 
 To do this, one must expose data and then rely on a parent context to
 initialize it:
@@ -312,7 +312,7 @@ Each subsystem within one's game should have its own section within the
 SceneTree. One should use parent-child relationships only in cases where nodes
 are effectively elements of their parents. Does removing the parent reasonably
 mean that one should also remove the children? If not, then it should have its
-own place in the hierachy as a sibling or some other relation.
+own place in the hierarchy as a sibling or some other relation.
 
 .. note::
 

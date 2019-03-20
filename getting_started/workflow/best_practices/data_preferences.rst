@@ -25,7 +25,7 @@ Y or Z? This article covers a variety of topics related to these dilemmas.
 
   Imagine if one had to process 3 million data points within a single frame. It
   would be impossible to craft the feature with a linear-time algorithm since
-  the sheer size of the data would increase the runtime far beyond the time alotted.
+  the sheer size of the data would increase the runtime far beyond the time allotted.
   In comparison, using a constant-time algorithm could handle the operation without
   issue.
 
