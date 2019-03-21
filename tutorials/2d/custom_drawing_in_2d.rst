@@ -345,8 +345,6 @@ is 361°, then it is actually 1°. If you don't wrap these values, the script wi
 work correctly, but the angle values will grow bigger and bigger over time until
 they reach the maximum integer value Godot can manage (``2^31 - 1``).
 When this happens, Godot may crash or produce unexpected behavior.
-Since Godot doesn't provide a ``wrap()`` function, we'll create it here, as
-it is relatively simple.
 
 Finally, we must not forget to call the ``update()`` function, which automatically
 calls ``_draw()``. This way, you can control when you want to refresh the frame.
@@ -354,19 +352,14 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func wrap(value, min_val, max_val):
-        var f1 = value - min_val
-        var f2 = max_val - min_val
-        return fmod(f1, f2) + min_val
-
     func _process(delta):
         angle_from += rotation_angle
         angle_to += rotation_angle
 
         # We only wrap angles when both of them are bigger than 360.
         if angle_from > 360 and angle_to > 360:
-            angle_from = wrap(angle_from, 0, 360)
-            angle_to = wrap(angle_to, 0, 360)
+            angle_from = wrapf(angle_from, 0, 360)
+            angle_to = wrapf(angle_to, 0, 360)
         update()
 
  .. code-tab:: csharp
