@@ -475,6 +475,8 @@ Corresponds to the NOTIFICATION_EXIT_TREE notification in :ref:`Object._notifica
 
 - :ref:`String<class_String>` **_get_configuration_warning** **(** **)** virtual
 
+The return value of this method is displayed as a warning in the `Scene Dock` if the script that overrides it is a `tool` script.
+
 .. _class_Node_method__input:
 
 - void **_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
