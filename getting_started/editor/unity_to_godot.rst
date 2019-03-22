@@ -230,14 +230,14 @@ and consider splitting a complicated scene into multiple, smaller branches.
 Connections: groups and signals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can control nodes by accessing them using a script and calling functions (built-in or user-defined) on them.
-But there's more: You can also place them in a group and call a function on all nodes contained in this group!
-This is explained in the :ref:`scripting documentation <doc_scripting_continued>`.
+You can control nodes by accessing them via script and calling built-in
+or user-defined functions on them. You can also place nodes in a group
+and call functions on all nodes in this group. See more in the 
+:ref:`scripting documentation <doc_scripting_continued>`.
 
-But there's more! Certain nodes throw signals when certain actions happen.
-You can connect these signals to call a specific function when they happen.
-Note that you can define your own signals and send them whenever you want.
-See the :ref:`signals documentation <doc_gdscript_signals>` for details.
+Nodes can send a signal when a specified action occurs. A signal can
+be set to call any function. You can define custom signals and specify
+when they are triggered. See more in the :ref:`signals documentation <doc_gdscript_signals>`.
 
 Script serialization
 ^^^^^^^^^^^^^^^^^^^^
@@ -259,7 +259,8 @@ Creating a script that inherits :ref:`class_Resource` will allow you to create c
 Using Godot in C++
 ------------------
 
-For your information, Godot also allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. As an example, you can consider Godot Engine's editor as a "game" written in C++ using Godot API.
+Godot allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. 
+As an example, you can consider Godot Engine's editor as a "game" written in C++ using the Godot API.
 
 If you are interested in using Godot in C++, you may want to start reading the :ref:`Developing in
 C++ <doc_introduction_to_godot_development>` page.
