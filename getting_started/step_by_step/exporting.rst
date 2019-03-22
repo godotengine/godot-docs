@@ -94,10 +94,8 @@ changed:
         if velocity.length() > 0:
             velocity = velocity.normalized() * speed
             $AnimatedSprite.play()
-            $Trail.emitting = true
         else:
             $AnimatedSprite.stop()
-            $Trail.emitting = false
 
         position += velocity * delta
         # We don't need to clamp the player's position
