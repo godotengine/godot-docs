@@ -211,7 +211,7 @@ Define the return type of a function with the arrow ->
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To define the return type of a function, write a dash and a right angle
-bracket ``->`` after it’s declaration, followed by the return type:
+bracket ``->`` after its declaration, followed by the return type:
 
 ::
 
