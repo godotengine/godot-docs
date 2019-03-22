@@ -76,14 +76,13 @@ on your operating system) **and** the Mono-enabled version of Godot.
 Configuring an external editor
 ------------------------------
 
-While Godot has its own script editor, its support for C# is kept
-minimal; it's recommended that you use an external IDE or editor
-instead, such as `Visual Studio Code <https://code.visualstudio.com/>`_
-or MonoDevelop. These provide auto-completion, debugging and other features
-useful when working with C#. To set it up in Godot, click on
-**Editor → Editor Settings** and scroll down to the bottom to the
-**Mono** settings. Under **Mono**, click on **Editor** then choose
-your external editor of choice.
+C# support in Godot's script editor is minimal. Consider using an
+external IDE or editor, such as  `Visual Studio Code <https://code.visualstudio.com/>`_
+or MonoDevelop. These provide autocompletion, debugging, and other
+useful features for C#. To select an external editor in Godot, 
+click on **Editor → Editor Settings** and scroll down to
+**Mono**. Under **Mono**, click on **Editor**, and select your 
+external editor of choice.
 
 .. note:: If you are using Visual Studio Code, ensure you download and install
           the `C# extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp>`_
