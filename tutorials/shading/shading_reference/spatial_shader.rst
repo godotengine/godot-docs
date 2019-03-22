@@ -279,7 +279,7 @@ Below is an example of a custom light function using a Lambertian lighting model
 .. code-block:: glsl
 
     void light() {
-        DIFFUSE_LIGHT += dot(NORMAL,LIGHT) * ATTENUATION * ALBEDO;
+        DIFFUSE_LIGHT += dot(NORMAL, LIGHT) * ATTENUATION * ALBEDO;
     }
 
 If you want the lights to add together, add the light contribution to ``DIFFUSE_LIGHT`` using ``+=``, rather than overwriting it.
