@@ -28,7 +28,8 @@ or tablet, you need to support touchscreen input. Because a click event can
 be treated the same as a touch event, we'll convert the game to a click-and-move
 input style.
 
-The first step is to open "Project Settings" and find the *Handheld* section.
+The first step is to open "Project Settings" and find the *Handheld* section
+(Navigate to Display->Window->Handheld or type 'Handheld' into the search field).
 Enable the *Emulate Touchscreen* option. This lets you treat mouse click
 events the same as touch events, so you can test the game on a computer without
 a touchscreen. Also, make sure to select "portrait" under *Orientation*.
