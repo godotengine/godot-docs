@@ -28,15 +28,18 @@ or tablet, you need to support touchscreen input. Because a click event can
 be treated the same as a touch event, we'll convert the game to a click-and-move
 input style.
 
-The first step is to open "Project Settings" and find the *Handheld* section.
-Enable the *Emulate Touchscreen* option. This lets you treat mouse click
-events the same as touch events, so you can test the game on a computer without
-a touchscreen. Also, make sure to select "portrait" under *Orientation*.
-
-In the *Stretch* section, set *Mode* to "2d" and *Aspect* to "keep". This
-ensures that the game scales consistently on different sized screens.
+By default Godot emulates mouse input from touch input. That means if anything
+is coded to happen on a mouse event, touch will trigger it as well. If you wish to
+disable that for whatever reason, or emulate touch from mouse input, you can do that
+in the "Project Settings" under *Input Devices* and *Pointing*
 
 .. image:: img/export_touchsettings.png
+
+Before we change the input method, in the project settings go to *Display*,
+then click on *Window*. In the *Stretch* options, set *Mode* to "2d" and *Aspect* to 
+"keep". This ensures that the game scales consistently on different sized screens.
+
+.. image:: img/export_stretchsettings
 
 Next, we need to modify the ``Player.gd`` script to change the input method.
 We'll remove the key inputs and make the player move towards a "target" that's
