@@ -196,10 +196,12 @@ A rigid body can be set to one of four modes:
 -   **Kinematic** - The body behaves like a :ref:`KinematicBody2D <class_KinematicBody2D>` and must be moved by code.
 
 .. note:: To move a :ref:`RigidBody2D <class_RigidBody2D>` in MODE_KINEMATIC, 
-          the position will need to be altered  in order to have the
-          :ref:`_integrate_forces() <class_RigidBody2D_method__integrate_forces>` be called. 
-          The :ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`'s transform property 
-          must then be updated with the desired transform changes.
+          the node's transform will need to be altered, in order to have the
+          :ref:`_integrate_forces() <class_RigidBody2D_method__integrate_forces>` be called.
+          To keep the visual node transform in sync with the physics world representation,
+          the :ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`'s transform property
+          must be kept in sync during the 
+          :ref:`_integrate_forces() <class_RigidBody2D_method__integrate_forces>` call.
 
 Using RigidBody2D
 ~~~~~~~~~~~~~~~~~
