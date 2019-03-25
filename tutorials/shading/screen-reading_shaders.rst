@@ -125,7 +125,9 @@ DEPTH_TEXTURE
 
 For 3D Shaders, it's also possible to access the screen depth buffer. For this,
 the DEPTH_TEXTURE built-in is used. This texture is not linear; it must be
-converted via the inverse projection matrix.
+converted via the inverse projection matrix. As of now, a bug in the GLES3
+renderer requires a light in the scene with shadows disabled and the contact
+setting set to 1.
 
 The following code retrieves the 3D position below the pixel being drawn:
 
