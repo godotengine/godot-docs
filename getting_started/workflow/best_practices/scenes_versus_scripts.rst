@@ -95,7 +95,7 @@ name.
 
 There are two systems for registering types...
 
-- `Custom Types <doc_making_plugins>`
+- :ref:`Custom Types <doc_making_plugins>`
 
    - Editor-only. Typenames are not accessible at runtime.
 
@@ -112,7 +112,7 @@ There are two systems for registering types...
 
    - Set up using :ref:`EditorPlugin.add_custom_type <class_EditorPlugin_method_add_custom_type>`.
 
-- `Script Classes <https://godot.readthedocs.io/en/latest/getting_started/step_by_step/scripting_continued.html#register-scripts-as-classes>`_
+- :ref:`Script Classes <doc_scripting_continued_class_name>`
 
    - Editor and runtime accessible.
 
