@@ -30,8 +30,10 @@ The animation editor panel stays visible until manually hidden.
 Creating the animation
 ----------------------
 
-It's time to create a new animation! Press the new animation button and name
-the animation "intro" when the dialog appears.
+It's time to create a new animation! Press the Animation button then select
+new from the menu. Name the animation "intro" when the dialog appears.
+
+.. image:: img/robisplash_anim_button.png
 
 .. image:: img/robisplash_anim_new.png
 
