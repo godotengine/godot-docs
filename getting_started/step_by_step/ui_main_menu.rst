@@ -156,7 +156,9 @@ Start to type ``TextureRect`` to find the corresponding node and press
 enter. With the new node selected, press ``Meta+D`` five times to
 create five extra ``TextureRect`` instances.
 
-Click each of the nodes to select it. In the inspector, find the Texture property and click "[empty]" -> ``Load``. A file browser opens and lets you pick a sprite to load into the texture slot.
+Click each of the nodes to select it. In the inspector, find the Texture
+property and click "[empty]" -> ``Load``. A file browser opens and lets
+you pick a sprite to load into the texture slot.
 
 .. figure:: img/ui_texturerect_load_texture.png
 
