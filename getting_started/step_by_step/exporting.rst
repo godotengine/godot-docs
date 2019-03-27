@@ -55,15 +55,15 @@ changed:
 
     signal hit
 
-    export (int) var speed
+    export var speed = 400
     var velocity = Vector2()
-    var screensize
+    var screen_size
     # Add this variable to hold the clicked position.
     var target = Vector2()
 
     func _ready():
         hide()
-        screensize = get_viewport_rect().size
+        screen_size = get_viewport_rect().size
 
     func start(pos):
         position = pos
@@ -115,9 +115,9 @@ changed:
             $AnimatedSprite.flip_v = velocity.y > 0
 
     func _on_Player_body_entered( body ):
-        $Collision.disabled = true
         hide()
         emit_signal("hit")
+        $CollisionShape2D.call_deferred("set_disabled", true)
 
 Export templates
 ----------------
