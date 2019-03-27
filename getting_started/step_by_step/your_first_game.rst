@@ -1130,7 +1130,7 @@ Removing old creeps
 
 If you play until "Game Over" and then start a new game the creeps from the previous game are still on screen. It would be better if they all disappeared at the start of a new game.
 
-We'll use the start_game signal that's already being emitted by the HUD node to remove the remaining creeps. We can't use the editor to connect the signal to the Mobs in the way we need because there are no Mob nodes in the Main scene tree until we run the game. Instead we'll use code.
+We'll use the ``start_game`` signal that's already being emitted by the ``HUD`` node to remove the remaining creeps. We can't use the editor to connect the signal to the Mobs in the way we need because there are no ``Mob`` nodes in the ``Main`` scene tree until we run the game. Instead we'll use code.
 
 Start by adding a new function to Mob.gd. queue_free will delete the current node at the end of the current frame.
 
@@ -1139,13 +1139,13 @@ Start by adding a new function to Mob.gd. queue_free will delete the current nod
           func _on_start_game():
                     queue_free()
           
-Then in Main.gd add a new line inside the _on_MobTimer_timeout function, at the end.
+Then in Main.gd add a new line inside the ``_on_MobTimer_timeout()`` function, at the end.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
           $HUD.connect("start_game",mob,"_on_start_game")
 
-This line tells the new Mob node (referenced by the mob variable) to respond to any start_game signal emitted by the HUD node by running its _on_start_game function.  
+This line tells the new Mob node (referenced by the mob variable) to respond to any start_game signal emitted by the ``HUD`` node by running its ``_on_start_game()`` function.  
 
 Finishing up
 ------------
