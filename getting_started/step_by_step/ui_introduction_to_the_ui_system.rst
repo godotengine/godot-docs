@@ -7,10 +7,7 @@ Computer displays, mobile phones, and TV screen come in all shapes and
 sizes. To ship a game, you'll need to support different screen ratios
 and resolutions. It can be hard to build responsive interfaces that
 adapt to all platforms. Thankfully, Godot comes with robust tools to
-design and manage a responsive User Interface. To design your UI, you'll
-use the Control nodes. These are the nodes with green icons in the
-editor. There are dozens of them, to create anything from life bars to
-complex applications. Godot's entire editor and plugins use these nodes.
+design and manage a responsive User Interface.
 
 .. figure:: img/godot_editor_ui.png
 
@@ -18,7 +15,7 @@ complex applications. Godot's entire editor and plugins use these nodes.
 
 This guide will get you started with UI design. You will learn:
 
--  The five most useful control nodes to build your games’ interface
+-  The five most useful control nodes to build your games' interface
 -  How to work with the anchor of UI elements
 -  How to efficiently place and arrange your user interface using
    containers
@@ -28,12 +25,13 @@ This guide will get you started with UI design. You will learn:
 To learn how to control the interface and connect it to other scripts,
 read :ref:`Build your first game UI in Godot <doc_ui_game_user_interface>`.
 
-Only use Control nodes when you design your interfaces. They have unique
-properties that allow them to work with one another. Other nodes, like
-Node2D, Sprite, etc. will not work. You can still use some nodes that
-work with others, like the AnimationPlayer, Tween or the StreamPlayer.
-Control nodes are CanvasItems like Node2D, so you can apply shaders to
-them.
+To design your UI, you'll use the Control nodes. These are the nodes with green icons in the
+editor. There are dozens of them, for creating anything from life bars to
+complex applications. Godot's editor itself is built using Control nodes.
+
+Control nodes have unique properties that allow them to work well with one another.
+Other visual nodes, like Node2D and Sprite don't have these capabilities. So to
+make your life easier use Control nodes wherever possible when building your UIs.
 
 All control nodes share the same main properties:
 
@@ -76,14 +74,18 @@ TextureRect
 It seems similar to the Sprite node, but it offers multiple scaling modes.
 Set the Stretch Mode property to change its behavior:
 
-- ``Scale On Expand (compat)`` scales the texture to fit the node’s bounding rectangle, only if ``expand`` property is ``true``; otherwise, it behaves like ``Keep`` mode. Default mode for backwards compatibility.
-- ``Scale`` scales the texture to fit the node’s bounding rectangle
-- ``Tile`` makes the texture repeat, but it won't scale
+- ``Scale On Expand (compat)`` scales the texture to fit the node's bounding rectangle,
+  only if ``expand`` property is ``true``; otherwise, it behaves like ``Keep`` mode.
+  Default mode for backwards compatibility.
+- ``Scale`` scales the texture to fit the node's bounding rectangle.
+- ``Tile`` makes the texture repeat, but it won't scale.
 -  ``Keep`` and ``Keep Centered`` force the texture to remain at its
    original size, in the top left corner or the center of the frame
-   respectively
-- ``Keep Aspect`` and ``Keep Aspect Centered`` scales the texture but force it to remain its original aspect ratio, in the top left corner or the center of the frame respectively
-- ``Keep Aspect Covered`` works just like ``Keep Aspect Centered`` but the shorter side fits the bounding rectangle and the other one clips to the node’s limits
+   respectively.
+- ``Keep Aspect`` and ``Keep Aspect Centered`` scales the texture but force it to remain
+  its original aspect ratio, in the top left corner or the center of the frame respectively.
+- ``Keep Aspect Covered`` works just like ``Keep Aspect Centered`` but the shorter side
+  fits the bounding rectangle and the other one clips to the node's limits.
 
 As with Sprite nodes, you can modulate the TextureRect's color. Click
 the ``Modulate`` property and use the color picker.
@@ -196,7 +198,7 @@ Like any properties, you can edit the 4 anchor points in the Inspector,
 but this is not the most convenient way. When you select a control node,
 the layout menu appears above the viewport, in the toolbar. It gives you
 a list of icons to set all 4 anchors with a single click, instead of
-using the inspector’s 4 properties. The layout menu will only show up
+using the inspector's 4 properties. The layout menu will only show up
 when you select a control node.
 
 .. figure:: img/layout_menu.png
