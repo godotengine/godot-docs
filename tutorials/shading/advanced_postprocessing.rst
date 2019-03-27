@@ -45,21 +45,16 @@ The vertex shader expects coordinates to be output in clip space, which are coor
 ranging from ``-1`` at the left and bottom of the screen to ``1`` at the top and right 
 of the screen. This is why the QuadMesh needs to have height and width of ``2``. 
 Godot handles the transform from model to view space to clip space behind the scenes, 
-so we need to nullify the effects of Godot's transformations.
-
-First, set ``render_mode`` to ``skip_vertex_transform``, which removes the transformation
-from model space to view space. Godot handles the transformation from view space to clip space
-behind the scenes with the ``PROJECTION_MATRIX`` even when ``skip_vertex_transform`` is set. 
-Nullify the projection matrix by setting it to the `identity matrix <https://en.wikipedia.org/wiki/Identity_matrix>`_.
-In Godot, this is done by passing a `1` to a ``mat4``.
+so we need to nullify the effects of Godot's transformations. We do this by setting the
+``POSITION`` built-in to our desired position. ``POSITION`` bypasses the built-in transformations
+and sets the vertex position directly.
 
 .. code-block:: glsl
 
   shader_type spatial;
-  render_mode skip_vertex_transform, unshaded;
 
   void vertex() {
-    PROJECTION_MATRIX = mat4(1.0);
+    POSITION = vec4(VERTEX, 1.0);
   }
 
 Even with this vertex shader, the quad keeps disappearing. This is due to frustum 
@@ -71,10 +66,10 @@ in Godot culling the quad when we turn away from the center of the scene. In
 order to keep the quad from being culled, there are a few options:
 
 1. Add the QuadMesh as a child to the camera, so the camera is always pointed at it
-2. Make the AABB as large as possible so it can always be seen
+2. Set the Geometry property ``extra_cull_margin`` as large as possible in the QuadMesh
 
 The second option ensures that the quad is visible in the editor, while the first
-option guarantees that it will still be visible even if the camera moves outside the AABB.
+option guarantees that it will still be visible even if the camera moves outside the cull margin.
 You can also use both options.
 
 Depth texture
