@@ -39,7 +39,7 @@ Before we change the input method, in the project settings go to *Display*,
 then click on *Window*. In the *Stretch* options, set *Mode* to "2d" and *Aspect* to 
 "keep". This ensures that the game scales consistently on different sized screens.
 
-.. image:: img/export_stretchsettings
+.. image:: img/export_stretchsettings.png
 
 Next, we need to modify the ``Player.gd`` script to change the input method.
 We'll remove the key inputs and make the player move towards a "target" that's
