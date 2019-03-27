@@ -77,7 +77,7 @@ Blend2 / Blend3
 
 These nodes will blend between two or three inputs by a user-specified blend value:
 
-.. image:: img/animtree5.png
+.. image:: img/animtree5.gif
 
 For more complex blending, it is advised to use blend spaces instead.
 
