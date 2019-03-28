@@ -16,7 +16,7 @@ PhysicsDirectBodyState
 Brief Description
 -----------------
 
-
+Direct access object to a physics body in the :ref:`PhysicsServer<class_PhysicsServer>`.
 
 Properties
 ----------
@@ -90,6 +90,11 @@ Methods
 | void                                                          | :ref:`integrate_forces<class_PhysicsDirectBodyState_method_integrate_forces>` **(** **)**                                                                                           |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+Provides direct access to a physics body in the :ref:`PhysicsServer<class_PhysicsServer>`, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid/character bodies, and is intended for changing the direct state of that body. See :ref:`RigidBody._integrate_forces<class_RigidBody_method__integrate_forces>`.
+
 Property Descriptions
 ---------------------
 
@@ -103,7 +108,7 @@ Property Descriptions
 | *Getter* | get_angular_velocity()      |
 +----------+-----------------------------+
 
-The angular velocity of the body.
+The body's rotational velocity.
 
 .. _class_PhysicsDirectBodyState_property_center_of_mass:
 
@@ -143,7 +148,7 @@ The inverse of the mass of the body.
 | *Getter* | get_linear_velocity()      |
 +----------+----------------------------+
 
-The linear velocity of the body.
+The body's linear velocity.
 
 .. _class_PhysicsDirectBodyState_property_principal_inertia_axes:
 
@@ -163,7 +168,7 @@ The linear velocity of the body.
 | *Getter* | is_sleeping()          |
 +----------+------------------------+
 
-``true`` if this body is currently sleeping (not active).
+If ``true``, this body is currently sleeping (not active).
 
 .. _class_PhysicsDirectBodyState_property_step:
 
@@ -215,7 +220,7 @@ The rate at which the body stops moving, if there are not any other forces movin
 | *Getter* | get_transform()      |
 +----------+----------------------+
 
-The transformation matrix of the body.
+The body's transformation matrix.
 
 Method Descriptions
 -------------------
@@ -232,13 +237,13 @@ This is equivalent to ``add_force(force, Vector3(0,0,0))``.
 
 - void **add_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)**
 
-Adds a constant force (i.e. acceleration).
+Adds a positioned force to the body. Both the force and the offset from the body origin are in global coordinates.
 
 .. _class_PhysicsDirectBodyState_method_add_torque:
 
 - void **add_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
 
-Adds a constant rotational force (i.e. a motor) without affecting position.
+Adds a constant rotational force without affecting position.
 
 .. _class_PhysicsDirectBodyState_method_apply_central_impulse:
 
@@ -264,29 +269,43 @@ Apply a torque impulse (which will be affected by the body mass and shape). This
 
 - :ref:`RID<class_RID>` **get_contact_collider** **(** :ref:`int<class_int>` contact_idx **)** const
 
+Returns the collider's :ref:`RID<class_RID>`.
+
 .. _class_PhysicsDirectBodyState_method_get_contact_collider_id:
 
 - :ref:`int<class_int>` **get_contact_collider_id** **(** :ref:`int<class_int>` contact_idx **)** const
+
+Returns the collider's object id.
 
 .. _class_PhysicsDirectBodyState_method_get_contact_collider_object:
 
 - :ref:`Object<class_Object>` **get_contact_collider_object** **(** :ref:`int<class_int>` contact_idx **)** const
 
+Returns the collider object.
+
 .. _class_PhysicsDirectBodyState_method_get_contact_collider_position:
 
 - :ref:`Vector3<class_Vector3>` **get_contact_collider_position** **(** :ref:`int<class_int>` contact_idx **)** const
+
+Returns the contact position in the collider.
 
 .. _class_PhysicsDirectBodyState_method_get_contact_collider_shape:
 
 - :ref:`int<class_int>` **get_contact_collider_shape** **(** :ref:`int<class_int>` contact_idx **)** const
 
+Returns the collider's shape index.
+
 .. _class_PhysicsDirectBodyState_method_get_contact_collider_velocity_at_position:
 
 - :ref:`Vector3<class_Vector3>` **get_contact_collider_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** const
 
+Returns the linear velocity vector at the collider's contact point.
+
 .. _class_PhysicsDirectBodyState_method_get_contact_count:
 
 - :ref:`int<class_int>` **get_contact_count** **(** **)** const
+
+Returns the number of contacts this body has with other bodies. Note that by default this returns 0 unless bodies are configured to log contacts. See :ref:`RigidBody.contact_monitor<class_RigidBody_property_contact_monitor>`.
 
 .. _class_PhysicsDirectBodyState_method_get_contact_impulse:
 
@@ -298,19 +317,29 @@ Impulse created by the contact. Only implemented for Bullet physics.
 
 - :ref:`Vector3<class_Vector3>` **get_contact_local_normal** **(** :ref:`int<class_int>` contact_idx **)** const
 
+Returns the local normal at the contact point.
+
 .. _class_PhysicsDirectBodyState_method_get_contact_local_position:
 
 - :ref:`Vector3<class_Vector3>` **get_contact_local_position** **(** :ref:`int<class_int>` contact_idx **)** const
+
+Returns the local position of the contact point.
 
 .. _class_PhysicsDirectBodyState_method_get_contact_local_shape:
 
 - :ref:`int<class_int>` **get_contact_local_shape** **(** :ref:`int<class_int>` contact_idx **)** const
 
+Returns the local shape index of the collision.
+
 .. _class_PhysicsDirectBodyState_method_get_space_state:
 
 - :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` **get_space_state** **(** **)**
 
+Returns the current state of the space, useful for queries.
+
 .. _class_PhysicsDirectBodyState_method_integrate_forces:
 
 - void **integrate_forces** **(** **)**
+
+Calls the built-in force integration code.
 
