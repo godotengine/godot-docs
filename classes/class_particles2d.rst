@@ -84,6 +84,11 @@ Description
 
 Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/particle_systems_2d`
+
 Property Descriptions
 ---------------------
 

@@ -148,6 +148,8 @@ Properties
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`       | :ref:`display/mouse_cursor/custom_image_hotspot<class_ProjectSettings_property_display/mouse_cursor/custom_image_hotspot>`                                           |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`       | :ref:`display/mouse_cursor/tooltip_position_offset<class_ProjectSettings_property_display/mouse_cursor/tooltip_position_offset>`                                     |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`display/window/dpi/allow_hidpi<class_ProjectSettings_property_display/window/dpi/allow_hidpi>`                                                                 |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`                                       |
@@ -903,6 +905,12 @@ Custom image for the mouse cursor.
 - :ref:`Vector2<class_Vector2>` **display/mouse_cursor/custom_image_hotspot**
 
 Hotspot for the custom mouse cursor image.
+
+.. _class_ProjectSettings_property_display/mouse_cursor/tooltip_position_offset:
+
+- :ref:`Vector2<class_Vector2>` **display/mouse_cursor/tooltip_position_offset**
+
+Position offset for tooltips, relative to the hotspot of the mouse cursor.
 
 .. _class_ProjectSettings_property_display/window/dpi/allow_hidpi:
 

@@ -38,9 +38,9 @@ Properties
 Methods
 -------
 
-+------+-------------------------------------------------------------------------------------------------------------+
-| void | :ref:`save_to_wav<class_AudioStreamSample_method_save_to_wav>` **(** :ref:`String<class_String>` path **)** |
-+------+-------------------------------------------------------------------------------------------------------------+
++---------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_to_wav<class_AudioStreamSample_method_save_to_wav>` **(** :ref:`String<class_String>` path **)** |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -178,5 +178,9 @@ Method Descriptions
 
 .. _class_AudioStreamSample_method_save_to_wav:
 
-- void **save_to_wav** **(** :ref:`String<class_String>` path **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **save_to_wav** **(** :ref:`String<class_String>` path **)**
+
+Saves the AudioStreamSample as a WAV file to ``path``. Samples with IMA ADPCM format can't be saved.
+
+Note that a ``.wav`` extension is automatically appended to ``path`` if it is missing.
 

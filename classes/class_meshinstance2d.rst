@@ -27,6 +27,11 @@ Properties
 | :ref:`Texture<class_Texture>` | :ref:`texture<class_MeshInstance2D_property_texture>`       |
 +-------------------------------+-------------------------------------------------------------+
 
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_meshes`
+
 Property Descriptions
 ---------------------
 

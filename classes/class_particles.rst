@@ -101,6 +101,11 @@ Description
 
 Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/vertex_animation/controlling_thousands_of_fish`
+
 Property Descriptions
 ---------------------
 

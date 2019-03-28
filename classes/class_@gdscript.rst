@@ -317,7 +317,7 @@ Returns the arc tangent of ``y/x`` in radians. Use to get the angle of tangent `
 
 ::
 
-    a = atan(0, -1) # a is 3.141593
+    a = atan2(0, -1) # a is 3.141593
 
 .. _class_@GDScript_method_bytes2var:
 

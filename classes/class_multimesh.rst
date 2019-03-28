@@ -112,6 +112,11 @@ As a drawback, if the instances are too far away of each other, performance may 
 
 Since instances may have any behavior, the AABB used for visibility must be provided by the user.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/vertex_animation/animating_thousands_of_fish`
+
 Property Descriptions
 ---------------------
 

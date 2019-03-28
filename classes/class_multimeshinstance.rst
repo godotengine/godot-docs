@@ -30,6 +30,13 @@ Description
 
 This is useful to optimize the rendering of a high amount of instances of a given mesh (for example tree in a forest or grass strands).
 
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/vertex_animation/animating_thousands_of_fish`
+
+- :doc:`../tutorials/3d/using_multi_mesh_instance`
+
 Property Descriptions
 ---------------------
 

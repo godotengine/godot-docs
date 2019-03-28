@@ -48,7 +48,7 @@ Constants
 Description
 -----------
 
-``AnimatedTexture`` is a resource format for simple frame-based animations, where multiple frames textures can be chained automatically with a predefined delay for each frame. It's not a :ref:`Node<class_Node>`, contrarily to :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite<class_AnimatedSprite>`, but has the advantage of being usable at any place where a :ref:`Texture<class_Texture>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
+``AnimatedTexture`` is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite<class_AnimatedSprite>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture<class_Texture>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
 
 The playback of the animation is controlled by the :ref:`fps<class_AnimatedTexture_property_fps>` property as well as each frame's optional delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
 
@@ -67,9 +67,9 @@ Property Descriptions
 | *Getter* | get_fps()      |
 +----------+----------------+
 
-Number of frames per second. This value defines the default time interval between two frames of the animation, and thus the overall duration of the animation loop based on the :ref:`frames<class_AnimatedTexture_property_frames>` property. A value of 0 means no predefined number of frames per second, the animation will play according to each frame's frame delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). Default value: 4.
+Animation speed in frames per second. This value defines the default time interval between two frames of the animation, and thus the overall duration of the animation loop based on the :ref:`frames<class_AnimatedTexture_property_frames>` property. A value of 0 means no predefined number of frames per second, the animation will play according to each frame's frame delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). Default value: 4.
 
-For example, an animation with 8 frames, no frame delay and a ``fps`` value of 2 will run over 4 seconds, with one frame each 0.5 seconds.
+For example, an animation with 8 frames, no frame delay and a ``fps`` value of 2 will run for 4 seconds, with each frame lasting 0.5 seconds.
 
 .. _class_AnimatedTexture_property_frames:
 
@@ -90,19 +90,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_frame_delay** **(** :ref:`int<class_int>` frame **)** const
 
-Retrieves the delayed assigned to the given ``frame`` ID.
+Returns the given frame's delay value.
 
 .. _class_AnimatedTexture_method_get_frame_texture:
 
 - :ref:`Texture<class_Texture>` **get_frame_texture** **(** :ref:`int<class_int>` frame **)** const
 
-Retrieves the :ref:`Texture<class_Texture>` assigned to the given ``frame`` ID.
+Returns the given frame's :ref:`Texture<class_Texture>`.
 
 .. _class_AnimatedTexture_method_set_frame_delay:
 
 - void **set_frame_delay** **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` delay **)**
 
-Defines an additional delay (in seconds) between this frame and the next one, that will be added to the time interval defined by :ref:`fps<class_AnimatedTexture_property_fps>`. By default, frames have no delay defined. If a delay value is defined, the final time interval between this frame and the next will be ``1.0 / fps + delay``.
+Sets an additional delay (in seconds) between this frame and the next one, that will be added to the time interval defined by :ref:`fps<class_AnimatedTexture_property_fps>`. By default, frames have no delay defined. If a delay value is defined, the final time interval between this frame and the next will be ``1.0 / fps + delay``.
 
 For example, for an animation with 3 frames, 2 FPS and a frame delay on the second frame of 1.2, the resulting playback will be:
 
@@ -117,7 +117,7 @@ For example, for an animation with 3 frames, 2 FPS and a frame delay on the seco
 
 - void **set_frame_texture** **(** :ref:`int<class_int>` frame, :ref:`Texture<class_Texture>` texture **)**
 
-Assigns a :ref:`Texture<class_Texture>` to the given ``frame`` ID. IDs start at 0 (so the first frame has ID 0, and the last frame of the animation has ID :ref:`frames<class_AnimatedTexture_property_frames>` - 1).
+Assigns a :ref:`Texture<class_Texture>` to the given frame. Frame IDs start at 0, so the first frame has ID 0, and the last frame of the animation has ID :ref:`frames<class_AnimatedTexture_property_frames>` - 1.
 
-You can define any frame texture up to :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`, but keep in mind that only frames from 0 to :ref:`frames<class_AnimatedTexture_property_frames>` - 1 will be part of the animation.
+You can define any number of textures up to :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`, but keep in mind that only frames from 0 to :ref:`frames<class_AnimatedTexture_property_frames>` - 1 will be part of the animation.
 
