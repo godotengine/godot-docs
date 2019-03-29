@@ -1540,14 +1540,14 @@ Extending a previous example to use all the features of GDScript signals:
 
    func _process(delta):
       if delta == your_data:
-         emit_signal("data_found", data)
+         emit_signal("data_found", your_data)
 
 ::
 
    # your_handler.gd
 
    func your_handler(data, obj):
-      print("Your handler was called from: ", obj.get_name(), with data: ", data)
+      print("Your handler was called from: ", obj.get_name(), " with data: ", data)
 
 ::
 
