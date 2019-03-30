@@ -32,7 +32,7 @@ Plugins have a standard path like ``addons/plugin_name`` inside the project
 folder. For this example, create a folder ``my_custom_node`` inside ``addons``.
 You should end up with a directory structure like this:
 
-.. image:: img/making_plugins-my_custom_mode_folder.png
+.. image:: img/making_plugins-my_custom_node_folder.png
 
 Now, open the script editor, click the **File** menu, choose **New TextFile**,
 then navigate to the plugin folder and name the file ``plugin.cfg``.
