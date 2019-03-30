@@ -117,11 +117,16 @@ Distortion
 Adds classical effects to modify the sound and make it dirty. Godot supports effects like overdrive, tan, or bit crushing.
 For games, it can simulate sound coming from some saturated device or speaker efficiently.
 
-EQ6, EQ10, EQ21
-~~~~~~~~~~~~~~~
+EQ, EQ6, EQ10, EQ21
+~~~~~~~~~~~~~~~~~~~
 
-Godot provides three models of equalizers with different band counts. Equalizers are useful on the Master Bus to completely master a mix and give it character. They are
+Godot provides four models of equalizers with different band counts. Equalizers are useful on the Master Bus to completely master a mix and give it character. They are
 also useful when a game is run on a mobile device, to adjust the mix to that kind of speakers (it can be added but disabled when headphones are plugged).
+
+Filter
+~~~~~~
+
+Filter is what all other filters inherit from and should not be used.
 
 HighPassFilter, HighShelfFilter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -161,6 +166,11 @@ PitchShift
 ~~~~~~~~~~
 
 This effect allows for modulating pitch independently of tempo. All frequencies can be increased/decreased with minimal effect on transients. Can be used for effects such as voice modulation.
+
+Record
+~~~~~~
+
+This effect is used to record the bus it is on to a file.
 
 Reverb
 ~~~~~~
