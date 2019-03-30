@@ -475,7 +475,7 @@ to disable the player's collision so that we don't trigger the ``hit`` signal
 more than once.
 
 .. Note:: Disabling the area's collision shape can cause an error if it happens
-          in the middle of the engine's collision processing. Using ``call_deferred()``
+          in the middle of the engine's collision processing. Using ``set_deferred()``
           allows us to have Godot wait to disable the shape until it's safe to
           do so.
 
