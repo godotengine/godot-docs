@@ -770,7 +770,7 @@ function to set everything up for a new game:
     }
 
 Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
-``ScoreTimer`` ,and ``MobTimer``) to the main script. ``StartTimer`` will start
+``ScoreTimer``, and ``MobTimer``) to the main script. ``StartTimer`` will start
 the other two timers. ``ScoreTimer`` will increment the score by 1.
 
 .. tabs::
