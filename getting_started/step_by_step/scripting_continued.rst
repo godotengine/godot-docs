@@ -143,7 +143,7 @@ like interacting with scenes, their node hierarchy and groups of nodes.
 It allows you to easily switch scenes or reload them,
 to quit the game or pause and unpause it.
 It even comes with interesting signals.
-So check it out if you got some time!
+So check it out if you have some time!
 
 Notifications
 -------------
