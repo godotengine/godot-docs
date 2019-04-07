@@ -84,8 +84,8 @@ Which will show a counter increasing each frame.
 Groups
 ------
 
-Nodes can be added to groups, as many as desired per node, and is a useful feature for organizing large scenes.
-There are two ways to do this. The first is from the UI, from the Groups button under the Node panel:
+A node can be added to as many groups as desired. This is a useful feature for organizing large scenes.
+There are two ways to do this. The first is from the UI, using the Groups button under the Node panel:
 
 .. image:: img/groups_in_nodes.png
 
