@@ -17,8 +17,7 @@ Idle processing is activated when the method :ref:`Node._process() <class_Node_m
 is found in a script. It can be turned off and on with the
 :ref:`Node.set_process() <class_Node_method_set_process>` function.
 
-This method will be called every time a frame is drawn, so it's fully dependent on
-how many frames per second (FPS) the application is running at:
+This method will be called every time a frame is drawn. It's important to bear in mind that the frequecy with which ``_process()`` will be called depends on how many frames per second (FPS) your application is running at. This rate can vary over time:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
