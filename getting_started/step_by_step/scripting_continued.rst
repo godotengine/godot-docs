@@ -52,7 +52,7 @@ Physics -> Common -> Physics Fps.
 The function ``_process()``, however, is not synced with physics. Its frame rate is not constant and is dependent
 on hardware and game optimization. Its execution is done after the physics step on single-threaded games.
 
-A simple way to test this is to create a scene with a single Label node,
+A simple way to see the ``_process()`` function at work is to create a scene with a single Label node,
 with the following script:
 
 .. tabs::
