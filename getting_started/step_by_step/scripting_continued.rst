@@ -84,13 +84,11 @@ Which will show a counter increasing each frame.
 Groups
 ------
 
-A node can be added to as many groups as desired. This is a useful feature for organizing large scenes.
-There are two ways to do this. The first is from the UI, using the Groups button under the Node panel:
+Groups in Godot work like tags you might have come across in other software. A node can be added to as many groups as desired. This is a useful feature for organizing large scenes. There are two ways to do add nodes to groups. The first is from the UI, using the Groups button under the Node panel:
 
 .. image:: img/groups_in_nodes.png
 
-And the second way is from code. One example would be to tag nodes
-which are enemies:
+And the second way is from code. The following script would add the current node to the ``enemies`` group as soon as it appeared in the scene tree.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
