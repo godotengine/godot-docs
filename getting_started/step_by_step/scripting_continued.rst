@@ -17,7 +17,7 @@ Idle processing is activated when the method :ref:`Node._process() <class_Node_m
 is found in a script. It can be turned off and on with the
 :ref:`Node.set_process() <class_Node_method_set_process>` function.
 
-This method will be called every time a frame is drawn. It's important to bear in mind that the frequecy with which ``_process()`` will be called depends on how many frames per second (FPS) your application is running at. This rate can vary over time:
+This method will be called every time a frame is drawn:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -33,7 +33,9 @@ This method will be called every time a frame is drawn. It's important to bear i
         // Do something...
     }
 
-The delta parameter contains the time elapsed in seconds, as a
+It's important to bear in mind that the frequecy with which ``_process()`` will be called depends on how many frames per second (FPS) your application is running at. This rate can vary over time.
+
+To help manage this variability the delta parameter contains the time elapsed in seconds, as a
 floating point, since the previous call to ``_process()``.
 
 This parameter can be used to make sure things always take the same
@@ -307,7 +309,7 @@ used:
         _sprite.Free(); // Immediately removes the node from the scene and frees it.
     }
 
-When a node is freed, it also frees all its children nodes. Because of
+When a node is freed, it also frees all its child nodes. Because of
 this, manually deleting nodes is much simpler than it appears. Free
 the base node and everything else in the subtree goes away with it.
 
