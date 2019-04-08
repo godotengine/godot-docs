@@ -7,10 +7,7 @@ Computer displays, mobile phones, and TV screen come in all shapes and
 sizes. To ship a game, you'll need to support different screen ratios
 and resolutions. It can be hard to build responsive interfaces that
 adapt to all platforms. Thankfully, Godot comes with robust tools to
-design and manage a responsive User Interface. To design your UI, you'll
-use the Control nodes. These are the nodes with green icons in the
-editor. There are dozens of them, to create anything from life bars to
-complex applications. Godot's entire editor and plugins use these nodes.
+design and manage a responsive User Interface.
 
 .. figure:: img/godot_editor_ui.png
 
@@ -27,12 +24,12 @@ This guide will get you started with UI design. You will learn:
 To learn how to control the interface and connect it to other scripts,
 read :ref:`Build your first game UI in Godot <doc_ui_game_user_interface>`.
 
-Only use Control nodes when you design your interfaces. They have unique
-properties that allow them to work with one another. Other nodes, like
-Node2D, Sprite, etc. will not work. You can still use some nodes that
-work with others, like the AnimationPlayer, Tween or the StreamPlayer.
-Control nodes are CanvasItems like Node2D, so you can apply shaders to
-them.
+To design your UI, you'll use the Control nodes. These are the nodes with green icons in the
+editor. There are dozens of them, for creating anything from life bars to
+complex applications. Godot's editor itself is built using Control nodes.
+
+Control nodes have unique properties that allow them to work well with one another. Other visual nodes, like
+Node2D and Sprite don't have these capabilities. So to make your life easier use Control nodes wherever possible when building your UIs.
 
 All control nodes share the same main properties:
 
