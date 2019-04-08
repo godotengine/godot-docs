@@ -6,16 +6,10 @@ File system
 Introduction
 ------------
 
-File systems are yet another hot topic in engine development. The
-file system manages how the assets are stored and how they are accessed.
+A file system manages how assets are stored and how they are accessed.
 A well-designed file system also allows multiple developers to edit the
-same source files and assets while collaborating.
-
-Initial versions of the Godot engine (and previous iterations before it was
-named Godot) used a database. Assets were stored in it and assigned an
-ID. Other approaches were tried as well, such as local databases, files with
-metadata, etc. In the end, the simple approach won and now Godot stores
-all assets as files in the file system.
+same source files and assets while collaborating. Godot stores
+all assets as files in its file system.
 
 Implementation
 --------------
@@ -27,12 +21,11 @@ included. If a resource has sub-resources that are built-in, the resource is
 saved in a single file together with all the bundled sub-resources. For
 example, a font resource is often bundled together with the font textures.
 
-In general, the Godot file system avoids using metadata files. The reason for
-this is simple, existing asset managers and VCSs are simply much better than
+The Godot file system avoids using metadata files. Existing asset managers and VCSs are better than
 anything we can implement, so Godot tries its best to play along with SVN,
 Git, Mercurial, Perforce, etc.
 
-Example of a file system contents:
+Example of file system contents:
 
 ::
 
@@ -69,7 +62,7 @@ cumbersome and non-portable. To solve this problem, the special path
 ``res://`` was created.
 
 The path ``res://`` will always point at the project root (where
-project.godot is located, so in fact ``res://project.godot`` is always
+project.godot is located, so ``res://project.godot`` is always
 valid).
 
 This file system is read-write only when running the project locally from
@@ -80,7 +73,7 @@ read-only and writing will no longer be permitted.
 User path
 ---------
 
-Writing to disk is often still needed for various tasks such as saving game
+Writing to disk is still needed for tasks such as saving game
 state or downloading content packs. To this end, the engine ensures that there is a
 special path ``user://`` that is always writable.
 
@@ -90,7 +83,7 @@ Host file system
 Alternatively host file system paths can also be used, but this is not recommended
 for a released product as these paths are not guaranteed to work on all platforms.
 However, using host file system paths can be useful when writing development
-tools in Godot!
+tools in Godot.
 
 Drawbacks
 ---------
@@ -112,5 +105,5 @@ on other platforms, such as Linux, Android, etc. This may also apply to exported
 which use a compressed package to store all files.
 
 It is recommended that your team clearly define a naming convention for files when
-working with Godot! One simple fool-proof convention is to only allow lowercase
+working with Godot. One simple fool-proof convention is to only allow lowercase
 file and path names.
