@@ -18,6 +18,8 @@ It is recommended that your Godot binary be in your PATH environment
 variable, so it can be executed easily from any place by typing
 ``godot``. You can do so on Linux by placing the Godot binary in
 ``/usr/local/bin`` and making sure it is called ``godot``.
+On Mac OSX, you can create a symlink with
+``ln -s /Applications/Godot.app/Contents/MacOS/Godot /usr/local/bin/godot``.
 
 Setting the project path
 ------------------------
