@@ -17,7 +17,7 @@ Design language
 ---------------
 
 But the greatest strength that comes with instancing scenes is that it works
-as an excellent design language. This is pretty much what distinguishes Godot
+as an excellent design language. This distinguishes Godot
 from all the other engines out there. Godot was designed from the ground up
 around this concept.
 
