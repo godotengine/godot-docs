@@ -59,7 +59,7 @@ Add a script to the kinematic body and add the following code:
 
     func _physics_process(delta):
         get_input()
-        move_and_slide(velocity)
+        velocity = move_and_slide(velocity)
 
  .. code-tab:: csharp
 
@@ -94,7 +94,7 @@ Add a script to the kinematic body and add the following code:
         public override void _PhysicsProcess(float delta)
         {
             GetInput();
-            MoveAndSlide(velocity);
+            velocity = MoveAndSlide(velocity);
         }
     }
 
@@ -144,7 +144,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
     func _physics_process(delta):
         get_input()
         rotation += rotation_dir * rotation_speed * delta
-        move_and_slide(velocity)
+        velocity = move_and_slide(velocity)
 
  .. code-tab:: csharp
 
@@ -183,7 +183,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
         {
             GetInput();
             Rotation += rotationDir * RotationSpeed * delta;
-            MoveAndSlide(velocity);
+            velocity = MoveAndSlide(velocity);
         }
     }
 
@@ -224,7 +224,7 @@ is set by the mouse position instead of the keyboard. The character will always
 
     func _physics_process(delta):
         get_input()
-        move_and_slide(velocity)
+        velocity = move_and_slide(velocity)
 
  .. code-tab:: csharp
 
@@ -254,7 +254,7 @@ is set by the mouse position instead of the keyboard. The character will always
         public override void _PhysicsProcess(float delta)
         {
             GetInput();
-            MoveAndSlide(velocity);
+            velocity = MoveAndSlide(velocity);
         }
     }
 
@@ -298,7 +298,7 @@ on the screen will cause the player to move to the target location.
         velocity = (target - position).normalized() * speed
         # rotation = velocity.angle()
         if (target - position).length() > 5:
-            move_and_slide(velocity)
+            velocity = move_and_slide(velocity)
 
  .. code-tab:: csharp
 
@@ -326,7 +326,7 @@ on the screen will cause the player to move to the target location.
             // Rotation = velocity.Angle();
             if ((target - Position).Length() > 5)
             {
-                MoveAndSlide(velocity);
+                velocity = MoveAndSlide(velocity);
             }
         }
     }
