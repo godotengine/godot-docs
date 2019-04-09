@@ -41,7 +41,7 @@ The 'Edit on Github' link
 
 If you're reading documentation on ``docs.godotengine.org`` you'll see an 'Edit on GitHub' hyperlink at the top right of the page. Once you've created a GitHub account you can propose changes to a page you're reading as follows:
 
-1. Copy the URL that the GitHub link points to. Part of the URL refers to a version such as '3.1' or 'latest'. Swap this part for the word 'master' so that the result looks something like this: ``https://github.com/godotengine/godot-docs/blob/master/community/contributing/docs_writing_guidelines.rst``
+1. Copy the URL that the GitHub link points to. Part of the URL refers to a version name such as '3.1' or 'latest'. Swap this part for the word 'master' so that the result looks something like this: ``https://github.com/godotengine/godot-docs/blob/master/community/contributing/docs_writing_guidelines.rst``
 2. Load that URL in your browser.
 3. On the GitHub page you're taken to, click the pencil icon. It has the tooltip "Edit the file in a fork of this project".
 4. Complete all the edits you want to make for that page.
