@@ -1,6 +1,6 @@
 .. _doc_2d_sprite_animation:
 
-2D Sprite Animation
+2D Sprite animation
 ===================
 
 Introduction
@@ -87,7 +87,7 @@ released.
 
 
 Sprite sheet with AnimationPlayer
-----------------------------------
+---------------------------------
 
 In the event you have a sprite sheet containing all of your animation frames,
 you can't easily use ``AnimatedSprite``. Instead, you can use a standard

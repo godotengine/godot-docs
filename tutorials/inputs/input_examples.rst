@@ -1,6 +1,6 @@
 .. _doc_input_examples:
 
-Input Examples
+Input examples
 ==============
 
 Introduction
