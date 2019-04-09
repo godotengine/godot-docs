@@ -467,7 +467,7 @@ Add this code to the function:
     {
         Hide(); // Player disappears after being hit.
         EmitSignal("Hit");
-        GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
+        GetNode<CollisionShape2D>("CollisionShape2D").CallDeferred("SetDisabled", true);
     }
 
 Each time an enemy hits the player, the signal is going to be emitted. We need
