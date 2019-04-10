@@ -39,3 +39,5 @@ Some example Exec Flags for various editors include:
 +---------------------+-----------------------------------------------------+
 | Visual Studio Code  | {project} --goto {file}:{line}:{col}                |
 +---------------------+-----------------------------------------------------+
+
+Note: For Visual Studio Code you will have to point to the "code.cmd" file. 
