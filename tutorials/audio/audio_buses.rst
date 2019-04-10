@@ -6,31 +6,20 @@ Audio buses
 Introduction
 ------------
 
-Beginning with Godot 3.0, the audio engine has been rewritten from scratch.
-The aim now is to present an interface much friendlier to sound design
-professionals. To achieve this, the audio engine contains a virtual rack
-where unlimited audio buses can be created and, on each of it, unlimited
-amount of effect processors can be added (or more like, as long as your
-CPU holds up!)
+Godot's audio engine allows any number of audio buses to be created and any number of effect processors can be added to each bus. The processsor power of the device running your game will limit the number of buses and effects that can be used before performance starts to suffer.
 
-The implementation in Godot is pretty efficient and has been written
-entirely from the ground up, without relying on any existing audio libraries.
-
-Even the effect processors were written exclusively for Godot (save for
-the pitch shifting library), with games in mind. This allows
-an efficient tradeoff between performance and sound quality.
+Godot's audio processing code has been written with games in mind, with the aim of achieving an optimal balance between performance and sound quality.
 
 Decibel scale
 -------------
 
-The new audio engine works primarily using the decibel scale. We have
-chosen this over linear representation of amplitude because it's
-more intuitive for audio professionals.
+Godot's sound interface is designed to meet the expectations of sound design
+professionals. To this end it primarily uses the decibel scale.
 
 For those unfamiliar with it, it can be explained with a few facts:
 
 * The decibel (dB) scale is a relative scale. It represents the ratio of sound power by using 10 times the base 10 logarithm of the ratio (10×log\ :sub:`10`\ (P/P\ :sub:`0`\ )).
-* For every 3dB, sound doubles or halves. 6dB represents a factor 4, 9dB a factor 8, 10dB a factor 10, 20dB a factor 100, etc.
+* For every 3dB, sound amplitude doubles or halves. 6dB represents a factor of 4, 9dB a factor of 8, 10dB a factor of 10, 20dB a factor of 100, etc.
 * Since the scale is logarithmic, true zero (no audio) can't be represented.
 * 0dB is considered the maximum audible volume without *clipping*. This limit is not the human limit, but a limit from the sound hardware. Your sound output simply can't output any sound louder than 0dB without distorting it (clipping it).
 * Because of the above, your sound mix should work in a way where the sound output of the *Master Bus* (more on that later), should never be above 0dB.
@@ -46,20 +35,20 @@ Audio buses can be found in the bottom panel of the Godot Editor:
 
 .. image:: img/audio_buses1.png
 
-An *Audio Bus* bus (often called *Audio Channel* too) is a device where audio is channeled. Audio data passes through it and can be *modified* and *re-routed*. A VU meter (the bars that go up and down when sound is played) can measure the loudness of the sound in Decibel scale.
+An *Audio Bus* (also called an *Audio Channel*) can be considered a place that audio is channeled through on the way to playback through a device's speakers. Audio data can be *modified* and *re-routed* by an *Audio Bus*. An *Audio Bus* has a VU meter (the bars that light up when sound is played) which indicates the amplitude of the signal passing through.
 
-The leftmost bus is the *Master Bus*. This bus outputs the mix to your speakers so, as mentioned in the item above (Decibel Scale), make sure that your mix rarely or never goes above 0dB in this bus.
-The rest of the audio buses are used for *routing*. This means that, after modifying the sound, they must send it to another bus to the left. Routing is always from right to left without exception as this
-avoids creating infinite routing loops!
+The leftmost bus is the *Master Bus*. This bus outputs the mix to your speakers so, as mentioned in the item above (Decibel Scale), make sure that your mix level doesn't reach 0dB in this bus.
+The rest of the audio buses can be flexibly routed. After modifying the sound, they send it to another bus to the left. The destination bus can be specified for each of the non-master audio buses. Routing always passes audio from buses on the right to buses further to the left. This
+avoids infinite routing loops.
 
 .. image:: img/audio_buses2.png
 
-In the above image, *Bus 2* is routing its output to the *Master* bus.
+In the above image, the output of *Bus 2* has been routed to the *Master* bus.
 
-Playback of audio to a bus
+Playback of audio through a bus
 --------------------------
 
-To test playback to a bus, create an AudioStreamPlayer node, load an AudioStream and select a target bus for playback:
+To test passing audio to a bus, create an AudioStreamPlayer node, load an AudioStream and select a target bus for playback:
 
 .. image:: img/audio_buses3.png
 
@@ -74,37 +63,40 @@ Audio buses can contain all sorts of effects. These effects modify the sound in 
 
 .. image:: img/audio_buses4.png
 
-Following is a short description of available effects:
+Try them all out to get a sense of how they alter sound. Here follows a short description of available effects:
 
 Amplify
 ~~~~~~~
 
-It's the most basic effect. It changes the sound volume. Amplifying too much can make the sound clip, so be wary of that.
+Amplify changes the amplitude of the signal. Some care needs to be taken. Setting the level too high can make the sound clip, which is usually undesirable.
 
 BandLimit and BandPass
 ~~~~~~~~~~~~~~~~~~~~~~
 
-These are resonant filters which block frequencies around the *Cutoff* point. BandPass is resonant, while BandLimit stretches to the sides.
+These are resonant filters which block frequencies around the *Cutoff* point. BandPass can be used to simulate sound passing through an old telephone line or megaphone. Modulating the BandPass frequency can simulate the sound of a wah-wah guitar pedal, think of the guitar in Jimi Hendrix's *Voodoo Child (Slight Return)*.
 
 Chorus
 ~~~~~~
 
-This effect adds extra voices, detuned by LFO and with a small delay, to add more richness to the sound harmonics and stereo width.
+The Chorus effect duplicates the incoming audio, delays the duplicate slightly and uses an LFO to continuously modulate the pitch of the duplicated signal before mixing the duplicatated signal(s) and the original together again. This creates a shimmering effect and adds stereo width to the sound.
 
 Compressor
 ~~~~~~~~~~
 
-The aim of a dynamic range compressor is to reduce the level of the sound when the amplitude goes over a certain threshold in Decibels.
-One of the main uses of a compressor is to increase the dynamic range while clipping the least possible (when sound goes over 0dB).
+A dynamic range compressor automatically attenuates the level of the incoming signal when its amplitude exceeds a certain threshold. The level of attenuation applied is proportional to how far the incoming audio exceeds the threshold. The compressor's Ratio parameter controls the degree of attenuation.
+One of the main uses of a compressor is to reduce the dynamic range of signals with very loud and quiet parts. Reducing the dynamic range of a signal can make it easier to mix.
 
-The compressor has many uses in the mix, for example:
+The compressor has many uses. For example:
 
-* It can be used in the Master bus to compress the whole output (Although a Limiter would probably be better)
+* It can be used in the Master bus to compress the whole output.
 * It can be used in voice channels to ensure they sound as even as possible.
-* It can be *Sidechained*. This means it can reduce the sound level using another audio bus for threshold detection. This technique is very common in video game mixing to download the level of Music/SFX while voices are being heard.
-* It can accentuate transients by using a bit wider attack, meaning it can make sound effects sound more punchy.
+* It can be *Sidechained*. This means it can reduce the sound level of one signal using the level of another audio bus for threshold detection. This technique is very common in video game mixing to 'duck' the level of music or sound effects when voices need to be heard.
+* It can accentuate transients by using a slower attack. This can make sound effects more punchy.
 
-There is a lot of bibliography written about compressors, and the Godot implementation is rather standard.
+.. note::
+
+    If your goal is to prevent a signal from exceeding a given amplitude altogether, rather that to reduce the dynamic range       of the signal, a limiter is likely a better choice than a compressor. See below.
+
 
 Delay
 ~~~~~
@@ -114,63 +106,58 @@ Adds an "Echo" effect with a feedback loop. It can be used, together with Reverb
 Distortion
 ~~~~~~~~~~
 
-Adds classical effects to modify the sound and make it dirty. Godot supports effects like overdrive, tan, or bit crushing.
-For games, it can simulate sound coming from some saturated device or speaker efficiently.
+Distortion effects make the sound 'dirty'. Godot offers several types of distortion: Overdrive, tan and bit crushing.
+Distortion can be used simulate sound coming through a low-quality speaker or device.
 
 EQ, EQ6, EQ10, EQ21
 ~~~~~~~~~~~~~~~~~~~
 
-Godot provides four models of equalizers with different band counts. Equalizers are useful on the Master Bus to completely master a mix and give it character. They are
-also useful when a game is run on a mobile device, to adjust the mix to that kind of speakers (it can be added but disabled when headphones are plugged).
+Godot provides four equalizers with different numbers of bands. An equalizer on the master bus can be useful to cut frequencies that the device's speakers can't reproduce well (e.g. a mobile phone's speakers won't reproduce bass content well). The equalizer effect can be disabled when headphones are plugged in.
 
 Filter
 ~~~~~~
 
-Filter is what all other filters inherit from and should not be used.
+Filter is what all other effects processors inherit from and should not be used directly.
 
 HighPassFilter, HighShelfFilter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These are filters that cut frequencies below a specific *Cutoff*. A common use of high pass filters is to add it to effects (or voice) that were recorded too close to a mic and need
-to sound more realistic. It is commonly used for some types of environment, like space.
+These are filters that cut frequencies below a specific *Cutoff* frequency. HighPassFilter and HighShelfFilter are used to reduce the bass content of a signal.
 
 Limiter
 ~~~~~~~
 
-A limiter is similar to a compressor, but it's less flexible and designed to disallow sound going over a given dB threshold. Adding one in the *Master Bus* is always recommended
-to reduce the effects of clipping.
+A limiter is similar to a compressor, but it's less flexible and designed to prevent a signal's amplitude exceeding a given dB threshold. Adding a limiter to the *Master Bus* is a safeguard against clipping.
 
 LowPassFilter, LowShelfFilter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These are the most common filters, they cut frequencies above a specific *Cutoff* and can also resonate. They can be used for a wide amount of effects, from underwater sound to simulating
-a sound coming from far away.
+These are the most common filters, they cut frequencies above a specific *Cutoff* frequency and can also resonate (boost frequencies close to the *Cutoff* frequency). Low pass filters can be used to simulate 'muffled' sound. For instance underwater sound, sound blocked by walls, or distant sound.
 
 NotchFilter
 ~~~~~~~~~~~
 
-The opposite to the BandPassFilter, it removes a band of sound from the frequency spectrum at a given *Cutoff*.
+The opposite to the BandPassFilter, it removes a band of sound from the frequency spectrum at a given *Cutoff* frequency.
 
 Panner
 ~~~~~~
 
-This is a simple helper to pan sound left or right.
+The Panner allows the stereo balance of a signal to be adjusted between left and right channels (wear headphones to audition this effect).
 
 Phaser
 ~~~~~~
 
-It probably does not make much sense to explain that this effect is formed by two signals being dephased and cancelling each other out.
-It will be sufficient to note that you can make a Darth Vader voice with it, or jet-like sounds.
+It probably does not make much sense to explain that this effect is formed by two signals being dephased and cancelling each other out. You can make a Darth Vader voice with it, or jet-like sounds.
 
 PitchShift
 ~~~~~~~~~~
 
-This effect allows for modulating pitch independently of tempo. All frequencies can be increased/decreased with minimal effect on transients. Can be used for effects such as voice modulation.
+This effect allows the adjustment of the signal's pitch independently of its speed. All frequencies can be increased/decreased with minimal effect on transients. PitchShift can be useful to create unusually high or deep voices.
 
 Record
 ~~~~~~
 
-This effect is used to record the bus it is on to a file.
+The Record effect allows audio passing through the bus to be written to a file.
 
 Reverb
 ~~~~~~
@@ -181,7 +168,7 @@ to apply chamber feel to all sounds.
 StereoEnhance
 ~~~~~~~~~~~~~
 
-This effect has a few algorithms available to enhance the stereo spectrum, in case this is needed.
+This effect has a few algorithms for enhancing a signal's stereo spectrum.
 
 Automatic bus disabling
 -----------------------
@@ -201,5 +188,4 @@ If a bus is renamed, however, the reference will be lost and the Stream Player w
 Default bus layout
 ------------------
 
-The default bus layout is automatically saved to the ``res://default_bus_layout.tres`` file. Other bus layouts can be saved to/retrieved from files in case of having
-to change snapshots, but in most cases, this is not necessary.
+The default bus layout is automatically saved to the ``res://default_bus_layout.tres`` file. Custom bus arrangements can saved and loaded from disk.
