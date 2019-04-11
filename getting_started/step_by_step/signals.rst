@@ -15,8 +15,8 @@ button can emit a signal when it's pressed.
 
 Signals are a way to *decouple* your game objects, which leads to better organized
 and more manageable code. Instead of forcing game objects to expect other objects
-to always be present, they can instead emit signals that any interested objects can
-subscribe to and respond.
+to always be present, they can instead emit signals that all interested objects can
+subscribe to and respond to.
 
 Below you can see some examples of how you can use signals in your own projects.
 
@@ -25,8 +25,11 @@ Timer example
 
 To see how signals work, let's try using a :ref:`Timer <class_Timer>` node. Create
 a new scene with a Node and two children: a Timer and a :ref:`Sprite <class_Sprite>`.
-You can use the Godot icon for the Sprite's texture, or any other image you
-like. Attach a script to the root node, but don't add any code to it yet.
+In the Scene dock, rename Node to TimerExample.
+
+For the Sprite's texture, you can use the Godot icon, or any other image you
+like. Do so by selecting ``Load`` in the Sprite's Texture attribute drop-down menu.
+Attach a script to the root node, but don't add any code to it yet.
 
 Your scene tree should look like this:
 
