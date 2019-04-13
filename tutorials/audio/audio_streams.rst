@@ -6,10 +6,10 @@ Audio streams
 Introduction
 ------------
 
-As you might have already read in the :ref:`Audio Buses Tutorial<doc_audio-buses>` ,
+As you might have already read in the :ref:`Audio Buses Tutorial<doc_audio-buses>`,
 sound is sent to each bus via an AudioStreamPlayer.
 
-There are several types of AudioStreamPlayer described below. Each one loads
+There are different kinds of AudioStreamPlayer. Each one loads
 an AudioStream and plays it back.
 
 AudioStream
