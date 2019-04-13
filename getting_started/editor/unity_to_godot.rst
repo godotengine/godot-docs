@@ -213,7 +213,7 @@ depending on your scene and on what you want to achieve:
 - either add a new node between your target node and its current parent, then add a script to this new node.
 - or, you can split your target node into multiple children and attach one script to each of them.
 
-As you can see, it can be easy to turn a scene tree to a mess. Sonsider splitting any complicated scene into multiple, smaller branches.
+As you can see, it can be easy to turn a scene tree to a mess. Consider splitting any complicated scene into multiple, smaller branches.
 
 Connections: groups and signals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
