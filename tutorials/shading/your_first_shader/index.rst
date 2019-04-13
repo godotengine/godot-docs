@@ -4,13 +4,13 @@ Your first shader
 This tutorial series will walk you through writing your first shader. It is intended
 for people who have very little prior experience with shaders and want to get started
 with the basics. This tutorial will not cover advanced topics and it is not
-comprehensive. For a comprehensive and detailed overview of shaders in godot see the
+comprehensive. For a comprehensive and detailed overview of shaders in Godot see the
 :ref:`Shading Reference Page <toc-shading-reference>`.
 
-"What are shaders" gives a high-level overview of what shaders are and how they fit
+"What are shaders" gives you a high-level overview of what shaders are and how they fit
 into the rendering pipeline.
 
-The "your first shader" tutorials walks you through the process of writing a shader
+The "your first shader" tutorials walk you through the process of writing a shader
 step-by-step. 
 
 For a more general introduction into shaders and the OpenGL Shading Language, use
@@ -23,5 +23,4 @@ For a more general introduction into shaders and the OpenGL Shading Language, us
    what_are_shaders
    your_first_canvasitem_shader
    your_first_spatial_shader
-   your_first_particles_shader
-   your_first_visual_shader
+   your_second_spatial_shader
