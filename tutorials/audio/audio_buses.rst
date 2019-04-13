@@ -6,9 +6,9 @@ Audio buses
 Introduction
 ------------
 
-Godot's audio engine allows any number of audio buses to be created and any number of effect processors can be added to each bus. The processsor power of the device running your game will limit the number of buses and effects that can be used before performance starts to suffer.
-
 Godot's audio processing code has been written with games in mind, with the aim of achieving an optimal balance between performance and sound quality.
+
+Godot's audio engine allows any number of audio buses to be created and any number of effect processors can be added to each bus. Only the hardware of the device running your game will limit the number of buses and effects that can be used before performance starts to suffer.
 
 Decibel scale
 -------------
@@ -21,8 +21,8 @@ For those unfamiliar with it, it can be explained with a few facts:
 * The decibel (dB) scale is a relative scale. It represents the ratio of sound power by using 10 times the base 10 logarithm of the ratio (10×log\ :sub:`10`\ (P/P\ :sub:`0`\ )).
 * For every 3dB, sound amplitude doubles or halves. 6dB represents a factor of 4, 9dB a factor of 8, 10dB a factor of 10, 20dB a factor of 100, etc.
 * Since the scale is logarithmic, true zero (no audio) can't be represented.
-* 0dB is considered the maximum audible volume without *clipping*. This limit is not the human limit, but a limit from the sound hardware. Your sound output simply can't output any sound louder than 0dB without distorting it (clipping it).
-* Because of the above, your sound mix should work in a way where the sound output of the *Master Bus* (more on that later), should never be above 0dB.
+* 0dB is the maximum amplitude possible in a digital audio system. This limit is not the human limit, but a limit from the sound hardware. Audio with amplitudes that are too high to be represented properly below 0dB create a kind of distortion called clipping.
+* To avoid clipping, your sound mix be arranged so that the output of the *Master Bus* (more on that later) never exceeds 0dB.
 * Every 3dB below the 0dB limit, sound energy is *halved*. It means the sound volume at -3dB is half as loud as 0dB. -6dB is half as loud as -3dB and so on.
 * When working with decibels, sound is considered no longer audible between -60dB and -80dB. This makes your working range generally between -60dB and 0dB.
 
