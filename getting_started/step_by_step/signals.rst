@@ -174,7 +174,7 @@ You can also declare your own custom signals in Godot:
 Once declared, your custom signals will appear in the Inspector and can be connected
 in the same way as a node's built-in signals.
 
-To emit a signal via code, use the ``emit`` function:
+To emit a signal via code, use the ``emit_signal`` function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
