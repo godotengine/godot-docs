@@ -103,7 +103,7 @@ structure:
     using System;
 
     [Tool]
-    public class NoHeroTools : EditorPlugin
+    public class CustomNode : EditorPlugin
     {
         public override void _EnterTree()
         {
