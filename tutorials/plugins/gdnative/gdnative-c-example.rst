@@ -225,7 +225,7 @@ The variant we return is destroyed automatically by Godot.
 
 And that is the whole source code of our module.
 
-If you add a blank .gdignore file to the src folder, Godot will not try to import the compiler-generated temporary files.
+If you add a blank ``.gdignore`` file to the src folder, Godot will not try to import the compiler-generated temporary files.
 
 Compiling
 ---------
