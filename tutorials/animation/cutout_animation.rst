@@ -6,16 +6,10 @@ Cutout animation
 What is it?
 ~~~~~~~~~~~
 
-Cut-out is a technique of animating in 2D where pieces of paper (or
-similar material) are cut in special shapes and laid one over the other.
-The papers are animated and photographed, frame by frame using a stop
-motion technique (more info
-`here <https://en.wikipedia.org/wiki/Cutout_animation>`__).
+Traditionally, `cutout animation <https://en.wikipedia.org/wiki/Cutout_animation>`__ is a type of `stop motion animation <https://en.wikipedia.org/wiki/Stop_motion>`__ in which pieces of paper (or other thin material) are cut into special shapes and arranged in two-dimensional representations of characters and objects. Characters' bodies are usually made out of several pieces. The cut-out arrangements are photographed once for each frame of the film. The animator moves and rotates the parts in small increments between each shot to create the illusion of movement.
 
-With the advent of the digital age, this technique became possible using
-computers, which resulted in an increased amount of animation TV shows
-using digital Cut-out. Notable examples are `South
-Park <https://en.wikipedia.org/wiki/South_Park>`__ or `Jake and the Never
+Simulations of cutout animation can now be created using software as seen in `South
+Park <https://en.wikipedia.org/wiki/South_Park>`__ and `Jake and the Never
 Land
 Pirates <https://en.wikipedia.org/wiki/Jake_and_the_Never_Land_Pirates>`__
 .
@@ -28,25 +22,19 @@ Origins <https://en.wikipedia.org/wiki/Rayman_Origins>`__ .
 Cutout in Godot
 ~~~~~~~~~~~~~~~
 
-Godot provides a few tools for working with these kind of assets, but
-its overall design makes it ideal for the workflow. The reason is that,
-unlike other tools meant for this, Godot has the following advantages:
+Godot provides tools for working with cutout kind of assets, and is ideal for the workflow:
 
 -  **The animation system is fully integrated with the engine**: This
-   means, animations can control much more than just motion of objects,
-   such as textures, sprite sizes, pivots, opacity, color modulation,
-   etc. Everything can be animated and blended.
--  **Mix with Traditional**: AnimatedSprite allows traditional animation
-   to be mixed, useful for complex objects, such as shape of hands
-   and foot, changing facial expression, etc.
--  **Custom Shaped Elements**: Can be created with
+   means animations can control much more than just motion of objects. Textures, sprite sizes, pivots, opacity, color modulation, and more, can all be animated and blended.
+-  **Combine animation styles**: AnimatedSprite allows traditional cel animation 
+   to be used alongside cutout animation. In cel animation different animation frames use entirely different drawings rather than the same pieces positioned differently. In an otherwise cutout-based animation, cel animation can be used selectively for complex parts such as hands, feet, changing facial expressions, etc.
+-  **Custom Shaped Elements**: Custom shapes can be created with
    :ref:`Polygon2D <class_Polygon2D>`
-   allowing the mixing of UV animation, deformations, etc.
--  **Particle Systems**: Can also be mixed with the traditional
-   animation hierarchy, useful for magic effects, jetpacks, etc.
+   allowing UV animation, deformations, etc.
+-  **Particle Systems**: A cutout animation rig can be combined with particle systems. This can useful for magic effects, jetpacks, etc.
 -  **Custom Colliders**: Set colliders and influence areas in different
-   parts of the skeletons, great for bosses, fighting games, etc.
--  **Animation Tree**: Allows complex combinations and blendings of
+   parts of the skeletons, great for bosses and fighting games.
+-  **Animation Tree**: Allows complex combinations and blending between
    several animations, the same way it works in 3D.
 
 And much more!
@@ -69,14 +57,14 @@ Create an empty Node2D as root of the scene, we will work under it:
 
 .. image:: img/tuto_cutout1.png
 
-OK, the first node of the model that we will create will be the hip.
+The first node of the model is the hip.
 Generally, both in 2D and 3D, the hip is the root of the skeleton. This
 makes it easier to animate:
 
 .. image:: img/tuto_cutout2.png
 
 Next will be the torso. The torso needs to be a child of the hip, so
-create a child sprite and load the torso, later accommodate it properly:
+create a child sprite and load the torso texture, later accommodate it properly:
 
 .. image:: img/tuto_cutout3.png
 
@@ -86,10 +74,9 @@ and dragging with the left mouse button. To exit rotate mode hit ``ESC``.
 
 .. image:: img/tutovec_torso1.gif
 
-Ouch, that doesn't look good! The rotation pivot is wrong, this means
-it needs to be adjusted.
+The rotation pivot is wrong and needs to be adjusted.
 
-This small little cross in the middle of the
+This small cross in the middle of the
 :ref:`Sprite <class_Sprite>` is
 the rotation pivot:
 
@@ -103,52 +90,46 @@ Sprite:
 
 .. image:: img/tuto_cutout5.png
 
-However, there is a way to do it more *visually*. While hovering over the
-desired pivot point, simply press the "v" key to move the pivot there for the
-selected Sprite. Alternately, there is a tool in the tool bar that has a
+The pivot can also be adjusted *visually*. While hovering over the
+desired pivot point,  press the "v" key to move the pivot there for the
+selected Sprite. There is also tool in the tool bar that has a
 similar function.
 
 .. image:: img/tutovec_torso2.gif
 
-Now it looks good! Let's continue adding body pieces, starting by the
-right arm. Make sure to put the sprites in hierarchy, so their rotations
-and translations are relative to the parent:
+Continue adding body pieces, starting with the
+right arm. Make sure to put the sprites in their correct places in the hierarchy, so their rotations
+and translations are relative to their parent:
 
 .. image:: img/tuto_cutout6.png
 
-This seems easy, so continue with the left arm. The rest should be
-simple! Or maybe not:
+With the left arm there's a problem, In 2D, parent nodes appear below children nodes:
 
 .. image:: img/tuto_cutout7.png
 
-Right. In 2D, parent nodes appear below children nodes. Well, this sucks.
-But how can this problem be solved? We want the left arm to appear behind
-the hip and the torso. For this, we can move the nodes behind the hip
+We want the left arm to appear behind
+the hip and the torso. We could move the left arm nodes behind the hip (above the hip node in the scene heirarchy)
 (note that you can bypass this by setting the Node2D Z property, but then you
 won't learn about all this!):
 
 .. image:: img/tuto_cutout8.png
 
-But then, we lose the hierarchy layout, which allows to control the
-skeleton like.. a skeleton. Is there any hope?.. Of Course!
+But then the left arm is no longer in its proper place in the heirarchy, which means it will not be affected the movement of the torso. We'll fix this problem with RemoteTransform2D nodes.
 
 RemoteTransform2D node
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Godot provides a special node, :ref:`RemoteTransform2D <class_RemoteTransform2D>`.
-This node will transform nodes that are sitting somewhere else in the
-hierarchy, by applying the transform to the remote nodes.
+The :ref:`RemoteTransform2D <class_RemoteTransform2D>` node transforms nodes somewhere else in the
+hierarchy. This node applies its own transform (including any transformation it inherits from its parents) to the remote node it targets.
 
-This enables to have a visibility order independent from the
-hierarchy.
+This allows us to correct the visibility order of our elements independent from the
+locations of those parts in the cutout hierarchy.
 
-Simply create two more nodes as children from torso, remote_arm_l and
-remote_hand_l and link them to the actual sprites:
+Create a RemoteTransform2D node as a child of the torso. Call it remote_arm_l. Create another RemoteTransform2D node inside the first and call it remote_hand_l. Use the Remote Path property of th two new nodes to target the arm_l and hand_l sprites respectively:
 
 .. image:: img/tuto_cutout9.png
 
-Moving the remote transform nodes will move the sprites, allowing you to
-easily animate and pose the character:
+Moving the remote transform nodes now moves the sprites. We'll use these when animating:
 
 .. image:: img/tutovec_torso4.gif
 
@@ -163,15 +144,13 @@ parts. The resulting scene should look similar to this:
 The resulting rig will be easy to animate. By selecting the nodes and
 rotating them you can animate forward kinematics (FK) efficiently.
 
-For simple objects and rigs this is fine, however the following problems
-are common:
+For simple objects and rigs this is fine, but there are limitations:
 
--  Selecting sprites can become difficult for complex rigs, and the
-   scene tree ends being used due to the difficulty of clicking over the
-   proper sprite.
--  Inverse Kinematics is often desired for extremities.
+-  Selecting sprites in the main viewport can become difficult in complex rigs. The
+   scene tree ends being used to select parts instead, which can be slower.
+-  Inverse Kinematics is often desired for extremities like hands and feet.
 
-To solve these problems, Godot supports a simple method of skeletons.
+To solve these problems, Godot offers skeletons.
 
 Skeletons
 ~~~~~~~~~
@@ -179,8 +158,6 @@ Skeletons
 Godot doesn't actually support *true* Skeletons, but it does feature a
 helper to create "bones" between nodes. This is enough for most cases,
 but the way it works is not completely obvious.
-
-
 
 As an example, let's turn the right arm into a skeleton. To create
 skeletons, a chain of nodes must be selected from top to bottom:
@@ -191,25 +168,12 @@ Then, click on the Skeleton menu and select ``Make Bones``.
 
 .. image:: img/tuto_cutout12.png
 
-This will add bones covering the arm, but the result is not quite what
-is expected.
+This will add bones covering the arm, but the result may be surprising.
 
 .. image:: img/tuto_cutout13.png
 
-It looks like the bones are shifted up in the hierarchy. The hand
-connects to the arm, and the arm to the body. So the question is:
-
--  Why does the hand lack a bone?
--  Why does the arm connect to the body?
-
-This might seem strange at first, but will make sense later on. In
-traditional skeleton systems, bones have a position, an orientation and
-a length. In Godot, bones are mostly helpers so they connect the current
-node with the parent. Because of this, **toggling a node as a bone will
-just connect it to the parent**.
-
-So, with this knowledge. Let's do the same again so we have an actual,
-useful skeleton.
+Why does the hand lack a bone? In Godot, bones are helpers that connect the current
+node with its parent. With this knowledge let's try again.
 
 The first step is creating an endpoint node. Any kind of node will do,
 but :ref:`Position2D <class_Position2D>` is preferred because it's
@@ -226,24 +190,21 @@ bones:
 The result resembles a skeleton a lot more, and now the arm and forearm
 can be selected and animated.
 
-Finally, create endpoints in all meaningful extremities and connect the
-whole skeleton with bones up to the hip.
+Create endpoints for all important extremities. Generate bones for all articulable parts of the cutout, with the hip as the ultimate connection between all of them.
 
-You may notice when connecting the hip and torso, that an extra bone is created.
+You may notice that an extra bone is created when connecting the hip and torso.
 To fix this, select the root and hip node, open the Skeleton menu, click ``clear bones``.
 
 .. image:: img/tuto_cutout15_2.png
-
 
 After fixing that your final skeleton should look something like this:
 
 .. image:: img/tuto_cutout16.png
 
-Finally! the whole skeleton is rigged! On close look, it is noticeable
-that there is a second set of endpoints in the hands. This will make
+The whole skeleton is rigged. You might have noticed a second set of endpoints in the hands. This will make
 sense soon.
 
-Now that a whole skeleton is rigged, the next step is setting up the IK
+Now that the whole figure is rigged, the next step is setting up the IK
 chains. IK chains allow for more natural control of extremities.
 
 IK chains
