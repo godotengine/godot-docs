@@ -98,8 +98,8 @@ similar function.
 .. image:: img/tutovec_torso2.gif
 
 Continue adding body pieces, starting with the
-right arm. Make sure to put the sprites in their correct places in the hierarchy, so their rotations
-and translations are relative to their parent:
+right arm. Make sure to put each sprite in its correct place in the hierarchy, so its rotations
+and translations are relative to its parent:
 
 .. image:: img/tuto_cutout6.png
 
