@@ -307,7 +307,7 @@ transition editor.
 2D Skeletal deform
 ~~~~~~~~~~~~~~~~~~
 
-Skeletal deform can be used to augment a cutout rig, allowing single pieces to deform organically (e.g. antennae that wobble as the insect character walks). 
+Skeletal deform can be used to augment a cutout rig, allowing single pieces to deform organically (e.g. antennae that wobble as an insect character walks). 
 
 This process is described in a :ref:`separate tutorial <doc_2d_skeletons>`.
 
