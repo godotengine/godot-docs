@@ -239,7 +239,7 @@ Special contextual elements appear in the top toolbar when the animation editor 
 
 .. image:: img/tuto_cutout20.png
 
-The key button inserts location, rotation and scale keyframes for the
+The key button inserts location, rotation, and scale keyframes for the
 selected objects or bones at the current playhead position.
 
 The "loc", "rot", and "scl" toggle buttons to the left of the key button modify its function, allowing you to specify which of the three properties keyframes will be created for.
