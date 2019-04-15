@@ -20,3 +20,4 @@
    csg_tools
    fps_tutorial/index
    vertex_animation/index
+   procedural_geomerty/index
