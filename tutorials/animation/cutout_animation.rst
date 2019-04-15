@@ -170,8 +170,8 @@ This will add bones covering the arm, but the result may be surprising.
 
 .. image:: img/tuto_cutout13.png
 
-Why does the hand lack a bone? In Godot, bones connect a
-node with its parent. And there's currently no child node of the hand node to connect back to the hand with a bone. With this knowledge let's try again.
+Why does the hand lack a bone? In Godot, a bone connects a
+node with its parent. And there's currently no child of the hand node. With this knowledge let's try again.
 
 The first step is creating an endpoint node. Any kind of node will do,
 but :ref:`Position2D <class_Position2D>` is preferred because it's
