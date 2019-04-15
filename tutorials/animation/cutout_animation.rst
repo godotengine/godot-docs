@@ -6,7 +6,7 @@ Cutout animation
 What is it?
 ~~~~~~~~~~~
 
-Traditionally, `cutout animation <https://en.wikipedia.org/wiki/Cutout_animation>`__ is a type of `stop motion animation <https://en.wikipedia.org/wiki/Stop_motion>`__ in which pieces of paper (or other thin material) are cut into special shapes and arranged in two-dimensional representations of characters and objects. Characters' bodies are usually made out of several pieces. The cut-out arrangements are photographed once for each frame of the film. The animator moves and rotates the parts in small increments between each shot to create the illusion of movement.
+Traditionally, `cutout animation <https://en.wikipedia.org/wiki/Cutout_animation>`__ is a type of `stop motion animation <https://en.wikipedia.org/wiki/Stop_motion>`__ in which pieces of paper (or other thin material) are cut into special shapes and arranged in two-dimensional representations of characters and objects. Characters' bodies are usually made out of several pieces. The pieces are arranged and photographed once for each frame of the film. The animator moves and rotates the parts in small increments between each shot to create the illusion of movement when the images are played back quickly in sequence.
 
 Simulations of cutout animation can now be created using software as seen in `South
 Park <https://en.wikipedia.org/wiki/South_Park>`__ and `Jake and the Never
