@@ -92,7 +92,7 @@ Sprite:
 
 The pivot can also be adjusted *visually*. While hovering over the
 desired pivot point,  press the "v" key to move the pivot there for the
-selected Sprite. There is also tool in the tool bar that has a
+selected Sprite. There is also a tool in the tool bar that has a
 similar function.
 
 .. image:: img/tutovec_torso2.gif
