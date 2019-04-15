@@ -110,7 +110,7 @@ With the left arm there's a problem. In 2D, child nodes appear in front of their
 We want the left arm to appear *behind*
 the hip and the torso. We could move the left arm nodes behind the hip (above the hip node in the scene heirarchy), but then the left arm is no longer in its proper place in the heirarchy. This means it wouldn't be affected the movement of the torso. We'll fix this problem with RemoteTransform2D nodes.
 
-.. note:: You can also fix depth ordering problems by adjusting the Z property of any node inheriting from Node2D, but this article describes an alternative approach.
+.. note:: You can also fix depth ordering problems by adjusting the Z property of any node inheriting from Node2D.
 
 RemoteTransform2D node
 ~~~~~~~~~~~~~~~~~~~~~~
