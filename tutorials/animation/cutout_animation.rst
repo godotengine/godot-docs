@@ -108,7 +108,7 @@ With the left arm there's a problem. In 2D, child nodes appear in front of their
 .. image:: img/tuto_cutout7.png
 
 We want the left arm to appear *behind*
-the hip and the torso. We could move the left arm nodes behind the hip (above the hip node in the scene heirarchy), but then the left arm is no longer in its proper place in the heirarchy. This means it wouldn't be affected the movement of the torso. We'll fix this problem with RemoteTransform2D nodes.
+the hip and the torso. We could move the left arm nodes behind the hip (above the hip node in the scene heirarchy), but then the left arm is no longer in its proper place in the heirarchy. This means it wouldn't be affected the movement of the torso. We'll fix this problem with `RemoteTransform2D` nodes.
 
 .. note:: You can also fix depth ordering problems by adjusting the Z property of any node inheriting from Node2D.
 
@@ -121,11 +121,11 @@ hierarchy. This node applies its own transform (including any transformation it 
 This allows us to correct the visibility order of our elements independent from the
 locations of those parts in the cutout hierarchy.
 
-Create a RemoteTransform2D node as a child of the torso. Call it remote_arm_l. Create another RemoteTransform2D node inside the first and call it remote_hand_l. Use the Remote Path property of the two new nodes to target the arm_l and hand_l sprites respectively:
+Create a `RemoteTransform2D` node as a child of the torso. Call it remote_arm_l. Create another RemoteTransform2D node inside the first and call it remote_hand_l. Use the Remote Path property of the two new nodes to target the arm_l and hand_l sprites respectively:
 
 .. image:: img/tuto_cutout9.png
 
-Moving the remote transform nodes now moves the sprites. We'll use these when animating:
+Moving the `RemoteTransform2D` nodes now moves the sprites. So we can create animations by adjusting the `RemoteTransform2D` transforms:
 
 .. image:: img/tutovec_torso4.gif
 
