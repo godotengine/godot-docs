@@ -205,7 +205,7 @@ IK chains
 
 IK stands for inverse kinematics. It's a convenient technique for animating the position of hands, feet and other extremeties of rigs like the one we've made. Imagine you want to pose a character's foot in a specific position on the ground. Without IK chains, each motion of the foot would require rotating and positioning several other bones (the shin and the thigh at least). This would be quite complex and lead to imprecise results.
 
-IK allows us to move directly the foot while the shin and thight self-adjust.
+IK allows us to move directly the foot while the shin and thigh self-adjust.
 
 To create an IK chain, select a chain of bones from endpoint to
 the base for the chain. For example, to create an IK chain for the right
