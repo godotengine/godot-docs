@@ -121,7 +121,7 @@ hierarchy. This node applies its own transform (including any transformation it 
 This allows us to correct the visibility order of our elements independent from the
 locations of those parts in the cutout hierarchy.
 
-Create a RemoteTransform2D node as a child of the torso. Call it remote_arm_l. Create another RemoteTransform2D node inside the first and call it remote_hand_l. Use the Remote Path property of th two new nodes to target the arm_l and hand_l sprites respectively:
+Create a RemoteTransform2D node as a child of the torso. Call it remote_arm_l. Create another RemoteTransform2D node inside the first and call it remote_hand_l. Use the Remote Path property of the two new nodes to target the arm_l and hand_l sprites respectively:
 
 .. image:: img/tuto_cutout9.png
 
