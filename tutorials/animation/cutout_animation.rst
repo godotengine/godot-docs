@@ -143,10 +143,10 @@ rotating them you can animate forward kinematics (FK) efficiently.
 For simple objects and rigs this is fine, but there are limitations:
 
 -  Selecting sprites in the main viewport can become difficult in complex rigs. The
-   scene tree ends being used to select parts instead, which can be slower.
--  Inverse Kinematics is often desired for extremities like hands and feet.
+   scene tree ends up being used to select parts instead, which can be slower.
+-  Inverse Kinematics (IK) is useful for animating extremities like hands and feet, and can't be used with our rig in its current state.
 
-To solve these problems, Godot offers skeletons.
+To solve these problems we'll use Godot's skeletons.
 
 Skeletons
 ~~~~~~~~~
@@ -154,7 +154,7 @@ Skeletons
 In Godot there is a helper to create "bones" between nodes. The bone-linked nodes are called skeletons.
 
 As an example, let's turn the right arm into a skeleton. To create
-skeletons, a chain of nodes must be selected from top to bottom:
+a skeleton, a chain of nodes must be selected from top to bottom:
 
 .. image:: img/tuto_cutout11.png
 
