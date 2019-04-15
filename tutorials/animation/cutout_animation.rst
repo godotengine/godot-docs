@@ -288,7 +288,7 @@ Visually move a sprite behind its parent
 
 Sometimes it is necessary to have a node change its visual depth relative to its parent node during an animation. Think of a character facing the camera, who pulls something out from behind his back and holds it out in front of him. During this animation the whole arm and the object in his hand would need to change their visual depth relative to the body of the character.
 
-To help with this there's a keyframable "Behind Parent" property on all Node2D inheriting nodes. When planning your rig think about the movements it will need to carry out and give some thought to how you'll use "Behind Parent" and/or RemoteTransform2D nodes. They provide overlapping functionality.
+To help with this there's a keyframable "Behind Parent" property on all Node2D-inheriting nodes. When planning your rig, think about the movements it will need to perform and give some thought to how you'll use "Behind Parent" and/or RemoteTransform2D nodes. They provide overlapping functionality.
 
 .. image:: img/tuto_cutout23.png
 
