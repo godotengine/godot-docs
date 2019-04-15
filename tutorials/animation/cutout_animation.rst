@@ -155,9 +155,7 @@ To solve these problems, Godot offers skeletons.
 Skeletons
 ~~~~~~~~~
 
-Godot doesn't actually support *true* Skeletons, but it does feature a
-helper to create "bones" between nodes. This is enough for most cases,
-but the way it works is not completely obvious.
+In Godot there is a helper to create "bones" between nodes. The bone-linked nodes are called skeletons.
 
 As an example, let's turn the right arm into a skeleton. To create
 skeletons, a chain of nodes must be selected from top to bottom:
@@ -172,8 +170,8 @@ This will add bones covering the arm, but the result may be surprising.
 
 .. image:: img/tuto_cutout13.png
 
-Why does the hand lack a bone? In Godot, bones are helpers that connect the current
-node with its parent. With this knowledge let's try again.
+Why does the hand lack a bone? In Godot, bones connect a
+node with its parent. And there's currently no child node of the hand node to connect back to the hand with a bone. With this knowledge let's try again.
 
 The first step is creating an endpoint node. Any kind of node will do,
 but :ref:`Position2D <class_Position2D>` is preferred because it's
@@ -192,16 +190,15 @@ can be selected and animated.
 
 Create endpoints for all important extremities. Generate bones for all articulable parts of the cutout, with the hip as the ultimate connection between all of them.
 
-You may notice that an extra bone is created when connecting the hip and torso.
-To fix this, select the root and hip node, open the Skeleton menu, click ``clear bones``.
+You may notice that an extra bone is created when connecting the hip and torso. Godot has connected the hip node to the scene root with a bone, and we don't want that. To fix this, select the root and hip node, open the Skeleton menu, click ``clear bones``.
 
 .. image:: img/tuto_cutout15_2.png
 
-After fixing that your final skeleton should look something like this:
+Your final skeleton should look something like this:
 
 .. image:: img/tuto_cutout16.png
 
-The whole skeleton is rigged. You might have noticed a second set of endpoints in the hands. This will make
+You might have noticed a second set of endpoints in the hands. This will make
 sense soon.
 
 Now that the whole figure is rigged, the next step is setting up the IK
@@ -210,13 +207,11 @@ chains. IK chains allow for more natural control of extremities.
 IK chains
 ~~~~~~~~~
 
-IK chains are a powerful animation tool. Imagine you want to pose a character's foot in a specific position on the ground. Without IK chains, each motion of the foot would require rotating and positioning several other bones. This would be quite complex and lead to imprecise results.
+IK stands for inverske kinematics. It's a convenient technique for animating the position of hands, feet and other extremeties of rigs like the one we've made. Imagine you want to pose a character's foot in a specific position on the ground. Without IK chains, each motion of the foot would require rotating and positioning several other bones (the shin and the thigh at least). This would be quite complex and lead to imprecise results.
 
-What if we could move the foot and let the rest of the leg self-adjust?
+What if we could move the foot and let the shin and thight self-adjust? This type of posing is called IK (Inverse Kinematic).
 
-This type of posing is called IK (Inverse Kinematic).
-
-To create an IK chain, simply select a chain of bones from endpoint to
+To create an IK chain, select a chain of bones from endpoint to
 the base for the chain. For example, to create an IK chain for the right
 leg, select the following:
 
@@ -230,9 +225,7 @@ As a result, the base of the chain will turn *Yellow*.
 
 .. image:: img/tuto_cutout19.png
 
-Once the IK chain is set-up, simply grab any of the bones in the
-extremity, any child or grand-child of the base of the chain and try to
-grab it and move it. Result will be pleasant, satisfaction warranted!
+Once the IK chain is set-up grab any child or grand-child of the base of the chain (e.g. a foot) and move it. You'll see the rest of the chain adjust as you adjust its position.
 
 .. image:: img/tutovec_torso5.gif
 
@@ -240,21 +233,18 @@ Animation
 ~~~~~~~~~
 
 The following section will be a collection of tips for creating
-animation for your rigs. If unsure about how the animation system in
-Godot works, refresh it by checking again the :ref:`doc_animations`.
+animation for your rigs. For more information on how the animation system in
+Godot works, see :ref:`doc_animations`.
 
 2D animation
 ------------
 
-When doing animation in 2D, a helper will be present in the top menu.
-This helper only appears when the animation editor window is opened:
+Special contextual elements appear in the top toolbar when the animation editor window is opened:
 
 .. image:: img/tuto_cutout20.png
 
-The key button will insert location/rotation/scale keyframes to the
-selected objects or bones. This depends on the mask enabled. Green items
-will insert keys while red ones will not, so modify the key insertion
-mask to your preference.
+The key button inserts location, rotation and scale keyframes for the
+selected objects or bones at the current playhead position. The 'loc' 'rot' 'scl' toggle buttons to the left of the key button modify its function, allowing you to specify which of the three properties keyframes will be created for.
 
 Rest pose
 ~~~~~~~~~
