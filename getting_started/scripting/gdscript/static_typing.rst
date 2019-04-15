@@ -288,7 +288,7 @@ And the same callback, with type hints:
     func _on_area_entered(area: CollisionObject2D) -> void:
         pass
 
-You’re free to replace, e.g. the ``PhysicsBody2D``, with your own type,
+You’re free to replace, e.g. the ``CollisionObject2D``, with your own type,
 to cast parameters automatically:
 
 ::
