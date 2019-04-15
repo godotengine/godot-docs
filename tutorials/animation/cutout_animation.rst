@@ -19,10 +19,10 @@ this are `Paper
 Mario <https://en.wikipedia.org/wiki/Super_Paper_Mario>`__ or `Rayman
 Origins <https://en.wikipedia.org/wiki/Rayman_Origins>`__ .
 
-Cutout in Godot
-~~~~~~~~~~~~~~~
+Cutout animation in Godot
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Godot provides tools for working with cutout kind of assets, and is ideal for the workflow:
+Godot provides tools for working with cutout rigs, and is ideal for the workflow:
 
 -  **The animation system is fully integrated with the engine**: This
    means animations can control much more than just motion of objects. Textures, sprite sizes, pivots, opacity, color modulation, and more, can all be animated and blended.
