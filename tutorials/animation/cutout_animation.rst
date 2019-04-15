@@ -229,94 +229,89 @@ Once the IK chain is set-up grab any child or grand-child of the base of the cha
 
 .. image:: img/tutovec_torso5.gif
 
-Animation
-~~~~~~~~~
+Animation tips
+~~~~~~~~~~~~~~
 
 The following section will be a collection of tips for creating
-animation for your rigs. For more information on how the animation system in
+animation for your cutout rigs. For more information on how the animation system in
 Godot works, see :ref:`doc_animations`.
 
-2D animation
-------------
+Setting keyframes and excluding properties
+------------------------------------------
 
-Special contextual elements appear in the top toolbar when the animation editor window is opened:
+Special contextual elements appear in the top toolbar when the animation editor window is open:
 
 .. image:: img/tuto_cutout20.png
 
 The key button inserts location, rotation and scale keyframes for the
-selected objects or bones at the current playhead position. The 'loc' 'rot' 'scl' toggle buttons to the left of the key button modify its function, allowing you to specify which of the three properties keyframes will be created for.
+selected objects or bones at the current playhead position.
 
-Rest pose
-~~~~~~~~~
+The "loc", "rot", and "scl" toggle buttons to the left of the key button modify its function, allowing you to specify which of the three properties keyframes will be created for.
 
-These kind of rigs do not have a "rest" pose, so it's recommended to
-create a reference rest pose in one of the animations.
+Here's an illustration of how this can be useful: Imagine you have a node which already has two keyframes animating its scale only. You want to add an overlapping rotation movement to the same node. The rotation movement should begin and end at different times from the scale change that's already set up. You can use the toggle buttons to have only rotation information added when you add a new keyframes. This way, you can avoid adding unwanted scale keyframes which would disrupt the existing scale animation.
 
-Simply do the following steps:
+Creating a rest pose
+~~~~~~~~~~~~~~~~~~~~
 
-1. Make sure the rig is in "rest" (not doing any specific pose).
+Think of a rest pose as a default pose that your cutout rig should be set to when no other pose is active in your game. Create a rest pose as follows:
 
-2. Create a new animation, rename it to "rest".
+1. Make sure the rig parts are positioned in what looks like a "resting" arrangement.
 
-3. Select all nodes (box selection should work fine).
+2. Create a new animation, rename it "rest".
 
-4. Select "loc" and "rot" on the top menu.
+3. Select all nodes in your rig (box selection should work fine).
 
-5. Push the key button. Keys will be inserted for everything, creating
-   a default pose.
+4. Make sure the "loc", "rot" and "scl" toggles are all active in the toolbar.
+
+5. Press the key button. Keys will be inserted for all selected parts storing their current arrangement. This pose can now be recalled when necessary in your game by playing the "rest" animation you've created.
 
 .. image:: img/tuto_cutout21.png
 
-Rotation
-~~~~~~~~
+Modifying rotation only
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Animating these models means only modifying the rotation of the nodes.
-Location and scale are rarely used, with the only exception of moving
-the entire rig from the hip (which is the root node).
+When animating a cutout rig, often it's only the rotation of the nodes that needs to change.
+Location and scale are rarely used.
 
-As a result, when inserting keys, only the "rot" button needs to be
-pressed most of the time:
+So when inserting keys, you might find it convenient to have only the "rot" toggle active most of the time:
 
 .. image:: img/tuto_cutout22.png
 
-This will avoid the creation of extra animation tracks for the position
-that will remain unused.
+This will avoid the creation of unwanted animation tracks for position
+and scale.
 
-Keyframing IK
-~~~~~~~~~~~~~
+Keyframing IK chains
+~~~~~~~~~~~~~~~~~~~~
 
-When editing IK chains, it is not necessary to select the whole chain to
+When editing IK chains, it's not necessary to select the whole chain to
 add keyframes. Selecting the endpoint of the chain and inserting a
-keyframe will automatically insert keyframes until the chain base too.
-This makes the task of animating extremities much simpler.
+keyframe will automatically insert keyframes for all other parts of the chain too.
 
-Moving sprites above and behind others
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Visually move a sprite behind its parent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-RemoteTransform2D works in most cases, but sometimes it is
-necessary to have a node above and below others during an animation. To
-aid on this the "Behind Parent" property exists on any Node2D:
+Sometimes it is necessary to have a node change its visual depth relative to its parent node during an animation. Think of a character facing the camera, who pulls something out from behind his back and holds it out in front of him. During this animation the whole arm and the object in his hand would need to change their visual depth relative to the body of the character.
+
+To help with this there's a keyframable "Behind Parent" property on all Node2D inheriting nodes. When planning your rig think about the movements it will need to carry out and give some thought to how you'll use "Behind Parent" and/or RemoteTransform2D nodes. They provide overlapping functionality.
 
 .. image:: img/tuto_cutout23.png
 
-Batch setting transition curves
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setting easing curves for multiple keys
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When creating complex animations and inserting many keyframes,
-editing the individual keyframe curves for each can become an endless
-task. For this, the Animation Editor has a small menu where changing
-animation curves is easy. First select the appropriate keys. Next click on the
-pencil icon in the bottom right of the animation panel, this will open the
-transition editor. Now click on one of the curve options most appropriate for
-your animation.
+To apply the same the easing curve to multiple keyframes at once:
+
+1. Select the relevant keys.
+2. Click on the pencil icon in the bottom right of the animation panel, this will open the
+transition editor.
+3. In the transition editor click on the desired curve to apply it.
 
 .. image:: img/tuto_cutout24.png
 
 2D Skeletal deform
 ~~~~~~~~~~~~~~~~~~
 
-Starting with Godot 3.1, 2D skeletal deform is supported, which can be used to enhance this workflow and add more flexibility 
-(single pieces can deform more organically instead of having to use many separate ones). 
+Skeletal deform can be used to augment a cutout rig, allowing single pieces to deform organically (e.g. antennae that wobble as the insect character walks). 
 
 This process is described in a :ref:`separate tutorial <doc_2d_skeletons>`.
 
