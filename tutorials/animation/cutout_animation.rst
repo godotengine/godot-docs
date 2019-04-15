@@ -244,7 +244,7 @@ selected objects or bones at the current playhead position.
 
 The "loc", "rot", and "scl" toggle buttons to the left of the key button modify its function, allowing you to specify which of the three properties keyframes will be created for.
 
-Here's an illustration of how this can be useful: Imagine you have a node which already has two keyframes animating its scale only. You want to add an overlapping rotation movement to the same node. The rotation movement should begin and end at different times from the scale change that's already set up. You can use the toggle buttons to have only rotation information added when you add a new keyframes. This way, you can avoid adding unwanted scale keyframes which would disrupt the existing scale animation.
+Here's an illustration of how this can be useful: Imagine you have a node which already has two keyframes animating its scale only. You want to add an overlapping rotation movement to the same node. The rotation movement should begin and end at different times from the scale change that's already set up. You can use the toggle buttons to have only rotation information added when you add a new keyframe. This way, you can avoid adding unwanted scale keyframes which would disrupt the existing scale animation.
 
 Creating a rest pose
 ~~~~~~~~~~~~~~~~~~~~
