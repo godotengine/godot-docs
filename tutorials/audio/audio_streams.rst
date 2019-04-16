@@ -40,8 +40,7 @@ AudioStreamPlayer2D
 
 This is a variant of AudioStreamPlayer, but emits sound in a 2D positional environment. When close to the left of the screen, the panning will go left. When close to the right side, it will go right.
 
-.. note:: Area2Ds can be used to divert sound from any AudioStreamPlayer2Ds they contain to specific buses. This makes it possible to create buses with different
-reverb or sound qualities to handle action happening in a particular parts of your game world.
+.. note:: Area2Ds can be used to divert sound from any AudioStreamPlayer2Ds they contain to specific buses. This makes it possible to create buses with different reverb or sound qualities to handle action happening in a particular parts of your game world.
 
 .. image:: img/audio_stream_2d_area.png
 
