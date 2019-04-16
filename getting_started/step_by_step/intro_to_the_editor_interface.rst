@@ -79,8 +79,8 @@ your project files and assets.
 
 |image11|
 
-On the right side, you’ll find the **Scene dock**, which lists the active
-scene’s content and the **Inspector** in the bottom right corner.
+On the right side, you’ll find the **Scene dock**. This dock contains the **Scene panel** which lists the active
+scene’s content and the **Inspector panel** which allows the properties of the currently selected node to be edited.
 
 |image12|
 
