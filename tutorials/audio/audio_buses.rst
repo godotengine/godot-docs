@@ -46,7 +46,7 @@ avoids infinite routing loops.
 In the above image, the output of *Bus 2* has been routed to the *Master* bus.
 
 Playback of audio through a bus
---------------------------
+-------------------------------
 
 To test passing audio to a bus, create an AudioStreamPlayer node, load an AudioStream and select a target bus for playback:
 
