@@ -180,9 +180,9 @@ has 6 methods:
 
 -  ``Error post_score(Variant p_score);``
 -  ``Erroraward_achievement(Variant p_params);``
--  ``Error reset_achievements();``
--  ``Error request_achievements();``
--  ``Error request_achievement_descriptions();``
+-  ``Void reset_achievements();``
+-  ``Void request_achievements();``
+-  ``Void request_achievement_descriptions();``
 -  ``Error show_game_center(Variant p_params);``
 
 plus the standard pending event interface.
