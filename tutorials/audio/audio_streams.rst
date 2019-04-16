@@ -6,43 +6,42 @@ Audio streams
 Introduction
 ------------
 
-As you might have already read in the :ref:`Audio Buses Tutorial<doc_audio-buses>` ,
+As you might have already read in the :ref:`Audio Buses Tutorial<doc_audio-buses>`,
 sound is sent to each bus via an AudioStreamPlayer.
 
-There are many types of AudioStreamPlayer, which will be explained in detail. Each one loads
+There are different kinds of AudioStreamPlayer. Each one loads
 an AudioStream and plays it back.
 
 AudioStream
 -----------
 
-An audio stream is an abstract object that emits sound. It can come from many places, but most commonly
+An audio stream is an abstract object that emits sound. The sound can come from many places, but most commonly
 from the filesystem. Audio files, such as .wav or .ogg, can be loaded as AudioStreams and placed
 inside an AudioStreamPlayer.
 
-Here is a comparison of the two, to help you choose which one fits your specific use case best:
+Here is a comparison of the two types of file to help you choose the one that fits your use case best:
 
-* Audio files of type *.wav* are quite large, but use little CPU power to play back. Hundreds of them can be played simultaneously with little impact to performance. This format is usually best for short sound effects, as the importer will trim and convert them to IMA-ADPCM.
-* Audio files of type *.ogg* are much smaller, but use considerably more CPU power to play back, so only a few can be played back (especially on mobile!). This format is usually best for music or long sound effect sequences. It also works well for voice at relatively low bitrates.
+* Audio files of type *.wav* are quite large, but use little CPU power to play back. Hundreds of them can be played simultaneously with little impact to performance. This format is usually best for short sound effects.
+* Audio files of type *.ogg* are much smaller, but use considerably more CPU power to play back, so only a few can be played back (especially on mobile!). This format works well for music, long sound effect sequences, and voice at relatively low bitrates.
 
-Keep in mind neither .wav nor .ogg usually contains looping information, so this information must be set on the import options of each:
+Keep in mind neither .wav nor .ogg usually contains looping information. If looping is desired it must be set up using the import options of each file type:
 
 .. image:: img/audio_stream_import.png
 
-There are other types of AudioStream, such as AudioStreamRandomPitch, which takes an existing AudioStream and modulates the pitch every time it's played back randomly (great for some sound effects),
-and more will keep appearing in the future.
+There are other types of AudioStreamPlayer, such as AudioStreamRandomPitch. This one makes a random adjustment to the sound's pitch every time it's played back. This can be helpful for adding interest to sounds that are played back often.
 
 AudioStreamPlayer
 -----------------
 
-This is the standard stream player; it can play to any given bus. In 5.1 sound, it can send to stereo mix or front speakers.
+This is the standard stream player; it can play to any bus. In 5.1 sound, it can send to stereo mix or front speakers.
 
 AudioStreamPlayer2D
 -------------------
 
 This is a variant of AudioStreamPlayer, but emits sound in a 2D positional environment. When close to the left of the screen, the panning will go left. When close to the right side, it will go right.
 
-While it's possible to send these effects to specific audio buses, one of the best strategies is to use an Area2D to divert sound to a specific bus. This allows you to create buses with different
-reverb or sound qualities and make it so the emitter will automatically send to them when entering the Area2D shapes.
+.. note:: Area2Ds can be used to divert sound from any AudioStreamPlayer2Ds they contain to specific buses. This makes it possible to create buses with different
+reverb or sound qualities to handle action happening in a particular parts of your game world.
 
 .. image:: img/audio_stream_2d_area.png
 
@@ -66,19 +65,19 @@ This is done by enabling this type of reverb in the *Reverb Bus* section of *Are
 
 .. image:: img/audio_stream_reverb_bus.png
 
-At the same time, a special bus layout is created where each area receives the reverb info from each area. Of course, an actual Reverb effect must be created in that bus for anything to happen:
+At the same time, a special bus layout is created where each area receives the reverb info from each area. A Reverb effect needs to be created and configured in each reverb bus to complete the setup for the desired effect:
 
 .. image:: img/audio_stream_reverb_bus2.png
 
-The Area Reverb Bus section also has a specific parameter named "Uniformity". Some types of rooms bounce sounds more than others (like for example, a typical warehouse), so reverberation can be heard
-almost uniformly across the room even though the source is far away. Playing around with this parameter can simulate that effect.
+The Area Reverb Bus section also has a parameter named "Uniformity". Some types of rooms bounce sounds more than others (like a warehouse), so reverberation can be heard
+almost uniformly across the room even though the source may be far away. Playing around with this parameter can simulate that effect.
 
 Doppler
 ~~~~~~~
 
-When the relative velocity between an emitter and listener changes, this is perceived as an increase or decrease of the pitch shift. Godot can track changes in velocities of *AudioStreamPlayer3D* or *Camera*.
+When the relative velocity between an emitter and listener changes, this is perceived as an increase or decrease in the pitch of the emitted sound. Godot can track changes in velocities of *AudioStreamPlayer3D* or *Camera*.
 Both have this property, which must be enabled manually:
 
 .. image:: img/audio_stream_doppler.png
 
-Simply enable it by setting it depending on how objects will be moved (whether on regular *process* or *physics_process* step) and the tracking will happen automatically!
+Enable it by setting it depending on how objects will be moved (whether on regular *process* or *physics_process* step) and the tracking will happen automatically.
