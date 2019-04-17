@@ -103,6 +103,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/content/index
    tutorials/misc/index
    tutorials/debug/index
+   tutorials/legal/index
 
 
 .. toctree::
