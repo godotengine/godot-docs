@@ -198,8 +198,8 @@ Here is a brief usage example that causes a 2D node to move smoothly between two
     
  .. code-tab:: csharp
  
-    var tween = GetNode("Tween") as Tween;
-    tween.InterpolateProperty($Node2D, "position",
+    var tween = (Tween)GetNode("Tween");
+    tween.InterpolateProperty((Node2D)GetNode("Node2D"), "position",
             new Vector2(0, 0), new Vector2(100, 100), 1,
             Tween.TransitionType.Linear, Tween.EaseType.Out);
     tween.Start();
