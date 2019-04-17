@@ -93,7 +93,7 @@ If the project being creater is a multiplayer game using the `ENet <http://enet.
 MBedTLS
 ^^^^^^^
 
-If the game utilizes SSL (usually through HTTP requests), the `MBedTLS <https://tls.mbed.org>`_ Apache license needs to be complied by including the following text:
+If the is done with Godot 3.1 or above and it utilizes SSL (usually through HTTP requests), the `MBedTLS <https://tls.mbed.org>`_ Apache license needs to be complied by including the following text:
 
 ::
 	MBedTLS is Copyright (C) 2013-2019 ARM
@@ -104,6 +104,6 @@ If the game utilizes SSL (usually through HTTP requests), the `MBedTLS <https://
 
 	Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-
+Keep in mind that Godot 2.x and 3.0 use `OpenSSL <https://www.openssl.org>`_ instead.
 
 
