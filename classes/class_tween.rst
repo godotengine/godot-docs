@@ -187,13 +187,22 @@ Tweens are useful for animations requiring a numerical property to be interpolat
 
 Here is a brief usage example that causes a 2D node to move smoothly between two positions:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var tween = get_node("Tween")
     tween.interpolate_property($Node2D, "position",
             Vector2(0, 0), Vector2(100, 100), 1,
             Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
     tween.start()
+    
+ .. code-tab:: csharp
+ 
+    var tween = GetNode("Tween") as Tween;
+    tween.InterpolateProperty($Node2D, "position",
+            new Vector2(0, 0), new Vector2(100, 100), 1,
+            Tween.TransitionType.Linear, Tween.EaseType.Out);
+    tween.Start();
 
 Many methods require a property name, such as "position" above. You can find the correct property name by hovering over the property in the Inspector. You can also provide the components of a property directly by using "property:component" (eg. ``position:x``), where it would only apply to that particular component.
 
