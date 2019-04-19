@@ -262,25 +262,18 @@ Add the following code to ``Player.gd``:
         public float MaxSlopeAngle = 40.0f;
         [Export]
         public float MouseSensitivity = 0.05f;
-        [Export]
-        public float MaxSprintSpeed = 30.0f;
-        [Export]
-        public float SprintAccel = 18.0f;
 
-        private Vector3 vel = new Vector3();
-        private Vector3 dir = new Vector3();
-        private bool isSprinting = false;
+        private Vector3 _vel = new Vector3();
+        private Vector3 _dir = new Vector3();
 
-        private Camera camera;
-        private Spatial rotationHelper;
-        private SpotLight flashlight;
+        private Camera _camera;
+        private Spatial _rotationHelper;
 
         // Called when the node enters the scene tree for the first time.
         public override void _Ready()
         {
-            camera = GetNode<Camera>("Rotation_Helper/Camera");
-            rotationHelper = GetNode<Spatial>("Rotation_Helper");
-            flashlight = GetNode<SpotLight>("Rotation_Helper/Flashlight");
+            _camera = GetNode<Camera>("Rotation_Helper/Camera");
+            _rotationHelper = GetNode<Spatial>("Rotation_Helper");
 
             Input.SetMouseMode(Input.MouseMode.Captured);
         }
@@ -295,8 +288,8 @@ Add the following code to ``Player.gd``:
         {
             //  -------------------------------------------------------------------
             //  Walking
-            dir = new Vector3();
-            Transform camXform = camera.GetGlobalTransform();
+            _dir = new Vector3();
+            Transform camXform = _camera.GetGlobalTransform();
 
             Vector2 inputMovementVector = new Vector2();
 
@@ -311,8 +304,8 @@ Add the following code to ``Player.gd``:
 
             inputMovementVector = inputMovementVector.Normalized();
 
-            dir += -camXform.basis.z.Normalized() * inputMovementVector.y;
-            dir += camXform.basis.x.Normalized() * inputMovementVector.x;
+            _dir += -camXform.basis.z.Normalized() * inputMovementVector.y;
+            _dir += camXform.basis.x.Normalized() * inputMovementVector.x;
             //  -------------------------------------------------------------------
 
             //  -------------------------------------------------------------------
@@ -320,7 +313,7 @@ Add the following code to ``Player.gd``:
             if (IsOnFloor())
             {
                 if (Input.IsActionJustPressed("movement_jump"))
-                    vel.y = JumpSpeed;
+                    _vel.y = JumpSpeed;
             }
             //  -------------------------------------------------------------------
 
@@ -334,58 +327,32 @@ Add the following code to ``Player.gd``:
                     Input.SetMouseMode(Input.MouseMode.Visible);
             }
             //  -------------------------------------------------------------------
-
-            //  -------------------------------------------------------------------
-            //  Sprinting
-            if (Input.IsActionPressed("movement_sprint"))
-                isSprinting = true;
-            else
-                isSprinting = false;
-            //  -------------------------------------------------------------------
-
-            //  -------------------------------------------------------------------
-            //  Turning the flashlight on/off
-            if (Input.IsActionJustPressed("flashlight"))
-            {
-                if (flashlight.IsVisibleInTree())
-                    flashlight.Hide();
-                else
-                    flashlight.Show();
-            }
         }
 
         private void ProcessMovement(float delta)
         {
-            dir.y = 0;
-            dir = dir.Normalized();
+            _dir.y = 0;
+            _dir = _dir.Normalized();
 
-            vel.y += delta * Gravity;
+            _vel.y += delta * Gravity;
 
-            Vector3 hvel = vel;
+            Vector3 hvel = _vel;
             hvel.y = 0;
 
-            Vector3 target = dir;
+            Vector3 target = _dir;
 
-            if (isSprinting)
-                target *= MaxSprintSpeed;    
-            else
-                target *= MaxSpeed;
+            target *= MaxSpeed;
 
             float accel;
-            if (dir.Dot(hvel) > 0)
-            {
-                if (isSprinting)
-                    accel = SprintAccel;
-                else
-                    accel = Accel;
-            }
+            if (_dir.Dot(hvel) > 0)
+                accel = Accel;
             else
                 accel = Deaccel;
 
             hvel = hvel.LinearInterpolate(target, accel * delta);
-            vel.x = hvel.x;
-            vel.z = hvel.z;
-            vel = MoveAndSlide(vel, new Vector3(0, 1, 0), false, 4, Mathf.Deg2Rad(MaxSlopeAngle));
+            _vel.x = hvel.x;
+            _vel.z = hvel.z;
+            _vel = MoveAndSlide(_vel, new Vector3(0, 1, 0), false, 4, Mathf.Deg2Rad(MaxSlopeAngle));
         }
 
         public override void _Input(InputEvent @event)
@@ -393,12 +360,12 @@ Add the following code to ``Player.gd``:
             if (@event is InputEventMouseMotion && Input.GetMouseMode() == Input.MouseMode.Captured)
             {
                 InputEventMouseMotion mouseEvent = @event as InputEventMouseMotion;
-                rotationHelper.RotateX(Mathf.Deg2Rad(mouseEvent.Relative.y * MouseSensitivity));
+                _rotationHelper.RotateX(Mathf.Deg2Rad(mouseEvent.Relative.y * MouseSensitivity));
                 RotateY(Mathf.Deg2Rad(-mouseEvent.Relative.x * MouseSensitivity));
 
-                Vector3 cameraRot = rotationHelper.RotationDegrees;
+                Vector3 cameraRot = _rotationHelper.RotationDegrees;
                 cameraRot.x = Mathf.Clamp(cameraRot.x, -70, 70);
-                rotationHelper.RotationDegrees = cameraRot;
+                _rotationHelper.RotationDegrees = cameraRot;
             }
         }
     }
@@ -741,9 +708,9 @@ First we need a few more class variables in our player script:
     public float MaxSprintSpeed = 30.0f;
     [Export]
     public float SprintAccel = 18.0f;
-    private bool isSprinting = false;
+    private bool _isSprinting = false;
     
-    private SpotLight flashlight;
+    private SpotLight _flashlight;
 
 All the sprinting variables work exactly the same as the non sprinting variables with
 similar names.
@@ -760,7 +727,7 @@ Now we need to add a few lines of code, starting in ``_ready``. Add the followin
 
  .. code-tab:: csharp
  
-    flashlight = GetNode<SpotLight>("Rotation_Helper/Flashlight");
+    _flashlight = GetNode<SpotLight>("Rotation_Helper/Flashlight");
 
 This gets the ``Flashlight`` node and assigns it to the ``flashlight`` variable.
 
@@ -793,19 +760,19 @@ Now we need to change some of the code in ``process_input``. Add the following s
     //  -------------------------------------------------------------------
     //  Sprinting
     if (Input.IsActionPressed("movement_sprint"))
-        isSprinting = true;
+        _isSprinting = true;
     else
-        isSprinting = false;
+        _isSprinting = false;
     //  -------------------------------------------------------------------
 
     //  -------------------------------------------------------------------
     //  Turning the flashlight on/off
     if (Input.IsActionJustPressed("flashlight"))
     {
-        if (flashlight.IsVisibleInTree())
-            flashlight.Hide();
+        if (_flashlight.IsVisibleInTree())
+            _flashlight.Hide();
         else
-            flashlight.Show();
+            _flashlight.Show();
     }
 
 Let's go over the additions:
@@ -831,7 +798,7 @@ Now we need to change a couple things in ``process_movement``. First, replace ``
 
  .. code-tab:: csharp
  
-    if (isSprinting)
+    if (_isSprinting)
         target *= MaxSprintSpeed;    
     else
         target *= MaxSpeed;
@@ -851,7 +818,7 @@ Now all that's left is to change the acceleration when sprinting. Change ``accel
 
  .. code-tab:: csharp
  
-    if (isSprinting)
+    if (_isSprinting)
         accel = SprintAccel;
     else
         accel = Accel;
