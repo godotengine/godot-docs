@@ -37,5 +37,7 @@ Some example Exec Flags for various editors include:
 +---------------------+-----------------------------------------------------+
 | Visual Studio Code  | {project} -\-goto {file}:{line}:{col}               |
 +---------------------+-----------------------------------------------------+
+| Vim (gVim)          | "+call cursor({line}, {col})" {file}                |
++---------------------+-----------------------------------------------------+
 
 .. note:: For Visual Studio Code you will have to point to the "code.cmd" file.
