@@ -101,6 +101,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/platform/index
    tutorials/threads/index
    tutorials/content/index
+   tutorials/optimization/index
    tutorials/misc/index
    tutorials/debug/index
    tutorials/legal/index
