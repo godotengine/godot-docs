@@ -3,7 +3,7 @@
 Optimization Using Servers
 ============
 
-Engines like Godot provide increased ease of use thanks to it's high level constructs and features. Most of them are accessed and used via the :ref:`Scene System<doc_scene_tree>`. Using nodes and resources simplify project organization and asset management
+Engines like Godot provide increased ease of use thanks to it's high level constructs and features. Most of them are accessed and used via the :ref:`Scene System<doc_scene_tree>`. Using nodes and resources simplifies project organization and asset management
 in complex games.
 
 There are, of course always drawbacks
@@ -15,9 +15,9 @@ There are, of course always drawbacks
 
 In far most cases, this is not really a problem (Godot is very optimized, and most operations are handled with signals, so no polling is required). Still, sometimes it may be. As an example, dealing with dozens of thousands of instances for something that needs to be processed every frame can pose a bottleneck. 
 
-This type of situation makes some programmers regret they are using a game engine and wish they could go back to a more handcrafted, low level implementation of game code. 
+This type of situation makes programmers regret they are using a game engine and wish they could go back to a more handcrafted, low level implementation of game code. 
 
-Still, Godot is designed to work around this problem too.
+Still, Godot is designed to work around this problem.
 
 Servers
 -------
@@ -31,23 +31,23 @@ At the core, Godot uses the concept of Servers. They are very low level APIs to 
 * :ref:`Physics2DServer<class_Physics2DServer>` handles everything related to 2D physics.
 * :ref:`AudioServer<class_AudioServer>` handles everything related to audio.
 
-Just explore their API and you will realize that the all functions provided are low level implementations of everything Godot allows to do.
+Just explore their APIs and you will realize that the all functions provided are low level implementations of everything Godot allows to do.
 
 RIDs
 ----
 
 The key to using servers is understanding RID objects (RID means Resource ID). These are opaque handles to the sever implementation. They are allocated and freed manually. Almost every function in the servers requires RIDs to access the actual resource.
 
-Most Godot nodes and resources contain internally these RIDs from the servers, and they can be obtained with different functions. In fact, anything that inherits `Resource<class_Resource>` can be directly casted to an RID (not all resources contain an RID, though, in such cases the RID will be empty). In fact, resources can be passed to server APIs as RIDs. Just make sure to keep references to the resources ouside the server, because if the resource is erased, the internal RID is erased too.
+Most Godot nodes and resources contain internally these RIDs from the servers, and they can be obtained with different functions. In fact, anything that inherits :ref:`Resource<class_Resource>` can be directly casted to an RID (not all resources contain an RID, though, in such cases the RID will be empty). In fact, resources can be passed to server APIs as RIDs. Just make sure to keep references to the resources ouside the server, because if the resource is erased, the internal RID is erased too.
 
 For nodes, there are many functions available:
 
-* For CanvasItem, the `CanvasItem.get_canvas_item()<class_CanvasItem_method_get_canvas_item>` method will return the canvas item RID in the server. 
-* For CanvasLayer, the `CanvasLayer.get_canvas()<class_CanvasLayer_method_get_canvas>` method will return the canvas RID in the server. 
-* For Viewport, the `Viewport.get_viewport_rid()<class_Viewport_method_get_viewport_rid>` method will return the viewport RID in the server. 
-* For 3D, the `World<class_World>` resource (obtainable in the *Viewport* and *Spatial* nodes, contains function to get the *VisualServer Scenario*, and the *PhysicsServer Space*. This allows creating 3D objects directly with the server API and using them.
-* For 2D, the `World2D<class_World2D>` resource (obtainable in the *Viewport* and *CanvasItem* nodes, contains function to get the *VisualServer Canvas*, and the *Physics2DServer Space*. This allows creating 2D objects directly with the server API and using them.
-* The`VisualInstance<class_VisualInstance` class, allows getting the scenario *instance* and *instance base* via the `VisualInstance.get_instance()<class_VisualInstance_method_get_instance>` and `VisualInstance.get_base()<class_VisualInstance_method_get_base>` respectively.
+* For CanvasItem, the :ref:`CanvasItem.get_canvas_item()<class_CanvasItem_method_get_canvas_item>` method will return the canvas item RID in the server. 
+* For CanvasLayer, the :ref:`CanvasLayer.get_canvas()<class_CanvasLayer_method_get_canvas>` method will return the canvas RID in the server. 
+* For Viewport, the :ref:`Viewport.get_viewport_rid()<class_Viewport_method_get_viewport_rid>` method will return the viewport RID in the server. 
+* For 3D, the :ref:`World<class_World>` resource (obtainable in the *Viewport* and *Spatial* nodes, contains function to get the *VisualServer Scenario*, and the *PhysicsServer Space*. This allows creating 3D objects directly with the server API and using them.
+* For 2D, the :ref:`World2D<class_World2D>` resource (obtainable in the *Viewport* and *CanvasItem* nodes, contains function to get the *VisualServer Canvas*, and the *Physics2DServer Space*. This allows creating 2D objects directly with the server API and using them.
+* The :ref:`VisualInstance<class_VisualInstance` class, allows getting the scenario *instance* and *instance base* via the :ref:`VisualInstance.get_instance()<class_VisualInstance_method_get_instance>` and :ref:`VisualInstance.get_base()<class_VisualInstance_method_get_base>` respectively.
 
 Just explore the nodes and resources you are familiar with and find the functions to obtain the server *RIDs*. 
 
@@ -58,10 +58,11 @@ Creating a sprite
 
 This is a simple example of how to create a sprite from code and move it using the low level Canvas Item API.
 
-extends Node2D
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
+    extends Node2D
 
     func _ready():
 	
