@@ -1,5 +1,5 @@
-VR
-==
+Legal
+=====
 
 .. toctree::
    :maxdepth: 1
