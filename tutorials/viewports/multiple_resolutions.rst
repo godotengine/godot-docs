@@ -11,18 +11,18 @@ There are often misunderstandings by developers on how to best support
 multiple resolutions. For Desktop and Console games this is more or less straightforward,
 as most screen aspect ratios are 16:9 and resolutions are standard (720,1080,2k,4k,etc).
 
-For mobile games at first it was easy. For many years, the iPhone remained using the same
-resolution. When *Retina* was implemented, it just doubled the amount of pixel density 
-(so most developers had assets in both resolutions).
+For mobile games at first it was easy. For many years, the iPhone (and iPad) used the same
+resolution. When *Retina* was implemented, they just doubled the amount of pixel density 
+(so most developers had assets in default and double resolutions).
 
 Nowadays this is no longer the case, as there are plenty of different screen sizes, densities
 and aspects for mobile, and non conventional sizes are becoming trendy for Desktop,
 such as ultra-wide.
 
 For 3D games there is not much of a need to support multiple resolutions (from the aesthetical
-point of view). Conventionally, the 3D geometyr will just fill whathever is available from
-the screen. The main reason one may want to support them is for *performance* reasons (running
-in lower resolution to increase performance).
+point of view). The 3D geometry will just fill the screen based on the field-of-view, disregarding
+the aspect. The main reason one may want to support this, in this case, is for *performance* reasons (running
+in lower resolution to increase frames per second).
 
 For 2D and game UIs, this is a different matter, as art needs to be created using specific pixel sizes
 in software such as Photoshop, Gimp, Krita, etc.
@@ -34,13 +34,12 @@ One size fits all
 -----------------
 
 The most common approach nowadays is to just use a single *base* resolution and then fit it to everything else. This resolution is how
-one expects most players to play the game (given their hardware). For mobile, Google has useful `stats <https://developer.android.com/about/dashboards>`_ online,
+most players are expected to play the game (given their hardware). For mobile, Google has useful `stats <https://developer.android.com/about/dashboards>`_ online,
 and for desktop, Steam `also does<https://store.steampowered.com/hwsurvey/Steam-Hardware-Software-Survey-Welcome-to-Steam>`_.
 
-As an example, Steam shows that the most common *primary display resolution* is 1920x1080, so a sensible approach would be
-to develop a game for this resolution, then handle scaling for different sizes and aspect ratios.
+As an example, Steam shows that the most common *primary display resolution* is 1920x1080, so a sensible approach is to develop a game for this resolution, then handle scaling for different sizes and aspect ratios.
 
-Godot provides a battery of very powerful tools to do this easily.
+Godot provides a several useful tools to do this easily.
 
 
 Base size

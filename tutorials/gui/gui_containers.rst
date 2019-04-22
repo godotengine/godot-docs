@@ -20,7 +20,7 @@ Containers provide a huge amount layout power (as an example, the Godot editor u
    .. image:: img/godot_containers.png
 
 When a :ref:`Container <class_Container>`-derived node is used, all children :ref:`Control <class_Control>` nodes give up their
-positioning ability to it. This means the *Container* will control their positioning and any attempt to manually alter these
+own positioning ability. This means the *Container* will control their positioning and any attempt to manually alter these
 nodes will be either ignored or invalidated the next time their parent is resized.
 
 Likewise, when a *Container* derived node is resized, all it's children will be re-positioned according to it, with a behavior based on the type of container used:
@@ -120,7 +120,7 @@ This container is useful as top-level, or just to add custom backgrounds to sect
 ScrollContainer
 ^^^^^^^^^^^^^^
 
-Accepts a single child node. If this node is bigger than the container, scrollbars will be added to allow paning the node around (via :ref:`ScrollContainer <class_ScrollContainer>`). Both vertical and horizontal size flags are respected, and the behavior can be turned on or off per axis in the properties.
+Accepts a single child node. If this node is bigger than the container, scrollbars will be added to allow panning the node around (via :ref:`ScrollContainer <class_ScrollContainer>`). Both vertical and horizontal size flags are respected, and the behavior can be turned on or off per axis in the properties.
 
    .. image:: img/containers_scroll.png
 
