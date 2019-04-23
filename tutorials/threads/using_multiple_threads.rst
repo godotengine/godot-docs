@@ -1,14 +1,14 @@
 .. _doc_using_multiple_threads:
 
-Using Multiple Threads
+Using multiple threads
 ======================
 
 Threads
 -------
 
-Threads allow simultaneous execution of code. It allows off-loading work.
+Threads allow simultaneous execution of code. It allows off-loading work from the main thread.
 
-Godot supports threads and provides many handy functions for GDScript to use them. 
+Godot supports threads and provides many handy functions to use them. 
 
 .. note:: If using other languages (C#, C++), it may be easier to use the threading classes they support.
 
@@ -38,19 +38,17 @@ Creating a thread is very simple, just use the following code:
         thread.wait_to_finish()
 
 
-Your function will, then, run in a separate thread, then will exit. 
-Even if the function exits, the thread must collect it, so call :ref:`Thread.wait_to_finish()<class_Thread_method_wait_to_finish>', which will wait until the thread is done (if not done yet), then collect it.
+Your function will, then, run in a separate thread until it returns.
+Even if the function has returned already, the thread must collect it, so call :ref:`Thread.wait_to_finish()<class_Thread_method_wait_to_finish>`, which will wait until the thread is done (if not done yet), then properly dispose of it.
 
 Mutexes
 -------
 
 Accessing objects or data from multiple threads is not always supported (if you do it, it will cause unexpected behaviors or crashes). Read the :ref:`Thread Safe APIs<doc_thread_safe_apis>` to understand which engine APIs support multiple thread access.
 
-When processing your own data or calling your own functions, as a rule, try to avoid accessing the same data from different threads.
+When processing your own data or calling your own functions, as a rule, try to avoid accessing the same data directly from different threads. You may run into synchronization problems, as the data is not allways updated between CPU cores when modified. Always use a :ref:`Mutex<class_Mutex>` when accessing a piece of data from different threads.
 
-Even if your data supports this, you may run into synchronization problems, as the data is not allways updated between CPU cores when modified. Always use a :ref`Mutex<class_Mutex>` when accessing a piece of data from different threads.
-
-Here is an example of using a mutex to access data:
+Here is an example of using a mutex:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -63,7 +61,7 @@ Here is an example of using a mutex to access data:
     func _ready():
         mutex = Mutex.new()
         thread = Thread.new()
-        thread.start(self,"_thread_function","Wafflecopter")
+        thread.start(self,"_thread_function")
         
         #increase value, protect it with mutex
         mutex.lock()
@@ -84,10 +82,10 @@ Here is an example of using a mutex to access data:
 Semaphores
 -----------
 
-Sometimes you want your thread to work *"On Demand"*. In other words, tell it when to work and let it suspend when it doesn't.
-For this *:ref`Semaphores<class_Semaphore>`* are used. The function *wait()* is used in the thread to suspend it until some data arrives.
+Sometimes you want your thread to work *"On Demand"*. In other words, tell it when to work and let it suspend when it isn't doing anything.
+For this *:ref:`Semaphores<class_Semaphore>`* are used. The function :ref:`Semaphore.wait()<class_Semaphore_method_wait>` is used in the thread to suspend it until some data arrives.
 
-The main thread, instead, uses *post()* to signal that data is ready:
+The main thread, instead, uses :ref:`Semaphore.post()<class_Semaphore_method_post>` to signal that data is ready to be processed:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -105,7 +103,7 @@ The main thread, instead, uses *post()* to signal that data is ready:
         exit_thread=false
 
         thread = Thread.new()
-        thread.start(self,"_thread_function","Wafflecopter")
+        thread.start(self,"_thread_function")
         
 
     func _thread_function(userdata):
