@@ -16,12 +16,14 @@ Between two real (floating point) numbers, a simple interpolation is usually des
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     interpolation = A * (t-1) + B * t
 
 And often simplified to:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     interpolation = A  + (B - A) * t
 
 which is exactly the same.
@@ -38,7 +40,7 @@ Vector types (Vector2 and Vector3) can also be interpolated, they come with hand
 
 For cubic interpolation, there are also :ref:`Vector2.cubic_interpolate()<class_Vector2_method_linear_interpolate>` and :ref:`Vector3.cubic_interpolate()<class_Vector3_method_linear_interpolate>`, which do a :ref:`Bezier <doc_beziers_and_curves>` style interpolation.
 
-Here is simple pseudo-code in going from point A to B using interpolation:
+Here is simple pseudo-code for going from point A to B using interpolation:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

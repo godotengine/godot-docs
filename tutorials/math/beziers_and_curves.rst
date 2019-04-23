@@ -14,6 +14,9 @@ widely popular in the graphics software industry.
 
 The way they work is very simple, but to understand it, let's start from the most minimal example.
 
+If you are not fresh on interpolation, please read the :ref:`relevant page<doc_interpolation>`
+before proceeding.
+
 
 Quadratic Bezier
 ----------------
@@ -86,7 +89,7 @@ And to one:
 
 The result will be a smooth curve interpolating between all four points:
 
-.. image:: img/bezier_quadratic_points2.gif
+.. image:: img/bezier_cubic_points.gif
 
 *(Image credit: Wikipedia)*
 
@@ -108,10 +111,10 @@ This way, we have two points and two control points (which are relative vectors 
 
 This is actually how graphics software presents Bezier curves to the users, and how Godot supports them.
 
-Curve, Curve2D, Path and Path2D
+Curve2D, Curve3D, Path and Path2D
 -------------------------------
 
-There are two objects that contain curves: :ref:`Curve <class_Curve>` and :ref:`Curve <class_Curve2D>` (for 3D and 2D respectively).
+There are two objects that contain curves: :ref:`Curve3D <class_Curve3D>` and :ref:`Curve2D <class_Curve2D>` (for 3D and 2D respectively).
 
 They can contain several points, allowing for longer paths. It is also possible to set them to nodes: :ref:`Path <class_Path>` and :ref:`Path2D <class_Path2D>` (also for 3D and 2D respectively):
 
@@ -144,7 +147,7 @@ Drawing
 
 Drawing beziers (or objects based on the curve) is a very common use case, but it's also not easy. For pretty much any case, Bezier curves need to be converted to some sort of segments. This is normally difficult, however, without creating a very high amount of them.
 
-The reason is that some sections of a curve (specifically, corners) may requiere considerably points, while other sections may not:
+The reason is that some sections of a curve (specifically, corners) may requiere considerable amounts of points, while other sections may not:
 
 .. image:: img/bezier_point_amount.png
 
@@ -152,14 +155,16 @@ Additionally, if both control points were 0,0 (remember they are relative vector
 
 Before drawing Bezier curves, *tesselation* is required. This is often done with a recursive or divide and conquer function that splits the curve until the curvature amount becomes less than a certain threshold.
 
-The *Curve* classes provide this via the :ref:`Curve.tesselate()<class_Curve_method_tesselete>` function (which receives optional *stages* of recursion and angle *tolerance* arguments). This way, drawing something based on a curve is easier.
+The *Curve* classes provide this via the
+:ref:`Curve2D.tesselate()<class_Curve2D_method_tesselete>` function (which receives optional *stages* of recursion and angle *tolerance* arguments). This way, drawing something based on a curve is easier.
 
 Traversal
 ---------
 
 The last common use case for the curves is to traverse them. Because of what was mentioned before regarding constant speed, this is also difficult. 
 
-To make this easier, the curves need to be *baked* into equidistant points. This way, they can be approximated with regular  interpolation (which can be improved further with a cubic option). To do this, just use the :ref:`Curve.interpolate_baked()<class_Curve_method_interpolate_baked>` method together with :ref:`Curve.get_baked_length()<class_Curve_method_get_baked_length>`. The first call to either of them will bake the curve internally.
+To make this easier, the curves need to be *baked* into equidistant points. This way, they can be approximated with regular  interpolation (which can be improved further with a cubic option). To do this, just use the :ref:`Curve.interpolate_baked()<class_Curve_method_interpolate_baked>` method together with
+:ref:`Curve2D.get_baked_length()<class_Curve2D_method_get_baked_length>`. The first call to either of them will bake the curve internally.
 
 Traversal at constant speed, then, can be done with the following pseudo-code:
 
