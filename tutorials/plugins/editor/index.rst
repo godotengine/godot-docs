@@ -9,3 +9,4 @@ Editor plugins
    making_main_screen_plugins
    import_plugins
    spatial_gizmos
+   inspector_plugins
