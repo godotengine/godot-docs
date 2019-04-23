@@ -9,4 +9,4 @@ Math
    vectors_advanced
    matrices_and_transforms
    interpolation
-   beziers
+   beziers_and_curves
