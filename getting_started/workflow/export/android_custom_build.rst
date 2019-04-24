@@ -14,7 +14,7 @@ There are some reasons why you may want to do this:
 
 Configuring custom build is a more or less straightforward process, but it may take a while to get used to how the Android SDK works.
 
-Instructions will try to be provided as detailed as possible to do this process.
+Instructions will be provided as detailed as possible to do this process.
 
 Set up the Custom Build environment
 ------------------------------------
@@ -25,12 +25,12 @@ Go to the Project menu, and install the *Custom Build* template:
 
 Make sure export templates are downloaded. If not, this menu will aid you to do it.
 
-This will create an Gradle-based Android project in *"res://android/build"*, and place a .gdignore file in *"res://android"* so Godot filesystem ignores this folder. Editing these files is not needed unless you want to create your own add-ons, or you really need to modify the project.
+This will create an Gradle-based Android project in *"res://android/build"*, and place a .gdignore file in *"res://android"* so Godot filesystem ignores this folder. Editing these files is not needed unless you want to :ref:`create your own add-ons<doc_android_plugin>`, or you really need to modify the project.
 
 Install the Android SDK (Command Line Version)
 ----------------------------------------------
 
-These are the steps for installing the Android SDK using command line. The advantage of this approach is the simplicity and small download/install size. It can be a bit more challenging, though. The Android Studio approach is easier but it requires downloading and installing Android Studio (which is more than 1gb).
+These are the steps for installing the Android SDK using command line. The advantage of this approach is the simplicity and small download/install size. It can be a bit more challenging, though. The Android Studio approach is easier but it requires downloading and installing Android Studio (which may require more than 1gb of storage).
 
 Install Java
 ^^^^^^^^^^^^^
@@ -53,8 +53,13 @@ Download the zip file for your platform, inside there will be a single *tools* f
 
 This may appear a little confusing, but be sure to follow these instructions carefully:
 
-* Create a new folder anywhere you want named *android-sdk* (it **must** be an empty directory). On Windows, *"C:\users\<yourusername>\Documents\android-sdk"* is often good.
-* Unzip the *sdk zip file* you just downloaded there. The only thing in the directory you created in the previous step should be the *tools* folder with it's contents inside, like this:
+* Create a new folder anywhere you want named *android-sdk* (it **must** be an empty directory). On Windows,
+
+::
+
+  C:\users\<yourusername>\Documents\android-sdk
+
+ is often good enough. Unzip the *sdk zip file* you just downloaded there. The only thing in the directory you created in the previous step should be the *tools* folder with it's contents inside, like this:
 
 ::
 
@@ -109,7 +114,9 @@ On Windows, the full path to Java should be provided (and & needs to be added at
 
 To make it clearer, here is an capture of a line that works on PowerShell (by adding & and the full Java Path to keytool.exe). Again, keep in mind that you need Java installed:
 
-. image:: img/custom_build_command_line.png
+.. image:: img/custom_build_command_line.png
+
+(right-click, then open the image in a new tab if this appears too small)
 
 
 Setting up Godot
@@ -118,6 +125,9 @@ Setting up Godot
 Go to the *Editor Settings* and set up a few fields in *Export -> Android*. Make sure they look like the following:
 
 .. image:: img/custom_build_editor_settings.png
+
+(again, right-click, then open the image in a new tab if this appears too small)
+
 
 As it can be seen, most paths are inside either *android-sdk* you originally created, or inside the Java install. For Unix users, *jarsigner* is often in "/usr/bin".
 
@@ -134,7 +144,7 @@ Download and Install Android Studio
 
 Download the latest version of Android Studio. When installing, pay attention to where the *android-sdk* directory is created.
 
-.. image:: img/custom_build_editor_settings.png
+.. image:: img/custom_build_install_android_studio1.png
 
 .. note:: This is funny, the path it proposes by default contains whitespace (and complains about it). It must be changed.
 
@@ -171,7 +181,10 @@ On Windows, the full path to Java should be provided (and & needs to be added at
 
 To make it clearer, here is a screen capture of a line that works on PowerShell (by adding & and the full Java Path to keytool.exe, remove & if you use regular console). It uses a path to the Java version that comes with Android Studio:
 
-. image:: img/custom_build_command_line2.png
+.. image:: img/custom_build_command_line2.png
+
+(right-click, then open the image in a new tab if this appears too small)
+
 
 Setting up Godot
 ^^^^^^^^^^^^^^^^
@@ -179,6 +192,9 @@ Setting up Godot
 Go to the *Editor Settings* and set up a few fields in *Export -> Android*. Make sure they look like the following:
 
 .. image:: img/custom_build_editor_settings2.png
+
+(again, right-click, then open the image in a new tab if this appears too small)
+
 
 As it can be seen, most paths are inside either *android-sdk* you originally created, or inside the Java install. For Unix users, *jarsigner* is often in "/usr/bin".
 

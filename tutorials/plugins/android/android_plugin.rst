@@ -47,12 +47,12 @@ complex authenthication, this may be a better idea than writing a specific Andro
 Godot has great support for HTTP, HTTPS and JSON, so an API implemented this way
 will work on every platform, too. 
 
-Of course, in most of the cases, it's easier to just write an Android plugins, so keep reading.
+Of course, in most of the cases, it's easier to just write an Android plugin, so keep reading.
 
 Android plugin
 --------------
 
-Writing an Android plugin is now possible begining Godot 3.2. It's also pretty easy!
+Writing an Android plugin is now possible begining Godot 3.2. It's also pretty easy! Re-compiling the engine is no longer needed.
 
 Before anything, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
 
