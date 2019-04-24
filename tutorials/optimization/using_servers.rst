@@ -30,7 +30,8 @@ One of the most interesting design decisions for Godot, is the fact that the who
 *optional*. While it is not currently possible to compile it out, it can be completely bypassed.
 
 At the core, Godot uses the concept of Servers. They are very low level APIs to control
-rendering, physics, sound, etc. The scene system is built on top of them and uses them directly. The most common servers are:
+rendering, physics, sound, etc. The scene system is built on top of them and uses them directly.
+The most common servers are:
 
 * :ref:`VisualServer <class_VisualServer>`: handles everything related to graphics.
 * :ref:`PhysicsServer <class_PhysicsServer>`: handles everything related to 3D physics.
@@ -68,7 +69,7 @@ For nodes, there are many functions available:
   allows creating 3D objects directly with the server API and using them.
 * For 2D, the :ref:`World2D <class_World2D>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
   and :ref:`CanvasItem <class_CanvasItem>` nodes)
-  nodes) contains functions to get the *VisualServer Canvas*, and the *Physics2DServer Space*. This
+  contains functions to get the *VisualServer Canvas*, and the *Physics2DServer Space*. This
   allows creating 2D objects directly with the server API and using them.
 * The :ref:`VisualInstance<class_VisualInstance>` class, allows getting the scenario *instance* and
   *instance base* via the :ref:`VisualInstance.get_instance() <class_VisualInstance_method_get_instance>`
@@ -136,10 +137,10 @@ The 3D APIs are different than the 2D ones, so the instantiation API must be use
         # Add a mesh to it.
         # Remember, keep the reference.
         var mesh = load("res://mymesh.obj")
-        VisualServer.instance_set_base(instance,mesh)
+        VisualServer.instance_set_base(instance, mesh)
         # Move the mesh around.
         var xform = Transform(Basis(), Vector3(20, 100, 0))
-        VisualServer.instance_set_transform(instance,xform)
+        VisualServer.instance_set_transform(instance, xform)
 
 Creating a 2D RigidBody and moving a sprite with it
 ----------------------------------------------------

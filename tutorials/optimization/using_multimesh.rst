@@ -7,7 +7,7 @@ For large amount of instances (in the thousands), that need to be constantly pro
 (and certain amount of control needs to be retained),
 :ref:`using servers directly <doc_using_servers>` is the recommended optimization.
 
-When the amount of objects reach the  hundreds of thousands or millions,
+When the amount of objects reach the hundreds of thousands or millions,
 none of these approaches are efficient anymore. Still, depending on the requirements, there
 is one more optimization possible.
 
@@ -16,7 +16,7 @@ MultiMeshes
 
 A :ref:`MultiMesh<class_MultiMesh>` is a single draw primitive that can draw up to millions
 of objects in one go. It's extremely efficient because it uses the GPU hardware to do this
-(In OpenGL ES 2.0, it's less efficient because there is no hardware support for it, though).
+(in OpenGL ES 2.0, it's less efficient because there is no hardware support for it, though).
 
 The only drawback is that there is no *screen* or *frustum* culling possible for individual instances.
 This means, that millions of objects will be *always* or *never* drawn, depending on the visibility
@@ -27,8 +27,8 @@ If the objects are simple enough (just a couple of vertices), this is generally 
 as most modern GPUs are optimized for this use case. A workaround is to create several MultiMeshes
 for different areas of the world.
 
-It is also possible to execute some logic inside the vertex shader (using the INSTANCE_ID or
-INSTANCE_CUSTOM built-in constants). For an example of animating thousands of objects in a MultiMesh,
+It is also possible to execute some logic inside the vertex shader (using the ``INSTANCE_ID`` or
+``INSTANCE_CUSTOM`` built-in constants). For an example of animating thousands of objects in a MultiMesh,
 see the :ref:`Animating thousands of fish <doc_animating_thousands_of_fish>` tutorial. Information
 to the shader can be provided via textures (there are floating point :ref:`Image<class_Image>` formats
 which are ideal for this).
@@ -40,11 +40,11 @@ function). This way, the array can be created with multiple threads, then set in
 high cache efficiency.
 
 Finally, it's not required to have all MultiMesh instances visible. The amount of visible ones can be
-controlled with the *MultiMesh.visible_instance_count* property. The typical workflow is to allocate
-the maximum amount of instances that will be used,
+controlled with the :ref:`MultiMesh.visible_instance_count <class_MultiMesh_property_visible_instance_count>`
+property. The typical workflow is to allocate the maximum amount of instances that will be used,
 then change the amount visible depending on how many are currently needed.
 
-Multimesh Example
+Multimesh example
 -----------------
 
 Here is an example of using a MultiMesh from code (using GDScript). Other languages may be more
