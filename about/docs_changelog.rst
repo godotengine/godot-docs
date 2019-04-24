@@ -22,6 +22,8 @@ Step-by-step
 Project workflow
 ^^^^^^^^^^^^^^^^
 
+- :ref:`Custom builds for Android <doc_android_custom_build>`
+
 Best Practices:
   - :ref:`Introduction <doc_introduction_best_practices>`
   - :ref:`What are Godot classes <doc_what_are_godot_classes>`
@@ -150,3 +152,4 @@ Plugins
 
 - :ref:`Making main screen plugins <doc_making_main_screen_plugins>`
 - :ref:`Spatial gizmo plugins <doc_spatial_gizmo_plugins>`
+- :ref:`Creating Android plugins <doc_android_plugin>`
