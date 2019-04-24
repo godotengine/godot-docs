@@ -143,9 +143,9 @@ The 3D APIs are different than the 2D ones, so the instantiation API must be use
         VisualServer.instance_set_transform(instance, xform)
 
 Creating a 2D RigidBody and moving a sprite with it
-----------------------------------------------------
+---------------------------------------------------
 
-This creates a :ref:`RigidBody2D <class_RigidBody2D>` using the :ref:`Physics2DServer <Physics2DServer>` API,
+This creates a :ref:`RigidBody2D <class_RigidBody2D>` using the :ref:`Physics2DServer <class_Physics2DServer>` API,
 and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
 
 .. tabs::
@@ -174,7 +174,7 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
         Physics2DServer.body_set_force_integration_callback(body, self, "_body_moved", 0)
 
 The 3D version should be very similar, as 2D and 3D physics servers are identical (using
-:ref:`RigidBody <RigidBody>` and :ref:`PhysicsServer <PhysicsServer>` respectively).
+:ref:`RigidBody <class_RigidBody>` and :ref:`PhysicsServer <class_PhysicsServer>` respectively).
 
 Getting data from the servers
 -----------------------------

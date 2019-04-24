@@ -20,17 +20,15 @@ Creating a thread is very simple, just use the following code:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var thread = null
+    var thread
 
     # The thread will start here.
     func _ready():
-
         thread = Thread.new()
         thread.start(self, "_thread_function", "Wafflecopter")
 
     # Run here and exit.
     func _thread_function(userdata):
-
         print("I'm a thread! Userdata is: ", userdata)
 
     # Thread must be disposed (or "joined"), for portability.
@@ -60,8 +58,8 @@ Here is an example of using a Mutex:
  .. code-tab:: gdscript GDScript
 
     var counter = 0
-    var mutex = null
-    var thread = null
+    var mutex
+    var thread
 
     # The thread will start here.
     func _ready():
@@ -69,7 +67,7 @@ Here is an example of using a Mutex:
         thread = Thread.new()
         thread.start(self, "_thread_function")
         
-        # Increase value, protect it with a Mutex.
+        # Increase value, protect it with Mutex.
         mutex.lock()
         counter += 1
         mutex.unlock()
@@ -99,9 +97,9 @@ The main thread, instead, uses :ref:`Semaphore.post()<class_Semaphore_method_pos
  .. code-tab:: gdscript GDScript
 
     var counter = 0
-    var mutex = null
-    var semaphore = null
-    var thread = null
+    var mutex
+    var semaphore
+    var thread
     var exit_thread = false
 
     # The thread will start here.
@@ -114,14 +112,14 @@ The main thread, instead, uses :ref:`Semaphore.post()<class_Semaphore_method_pos
         thread.start(self, "_thread_function")
 
     func _thread_function(userdata):
-        while (true):
+        while true:
             semaphore.wait() # Wait until posted.
 
             mutex.lock()
             var should_exit = exit_thread # Protect with Mutex.
             mutex.unlock()
 
-            if (should_exit):
+            if should_exit:
                 break
 
             mutex.lock()
@@ -133,7 +131,7 @@ The main thread, instead, uses :ref:`Semaphore.post()<class_Semaphore_method_pos
 
     func get_counter():
         mutex.lock()
-        # copy counter, protect with mutex.
+        # Copy counter, protect with Mutex.
         var counter_value = counter
         mutex.unlock()
         return counter_value
