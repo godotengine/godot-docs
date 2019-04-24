@@ -57,6 +57,8 @@ the same data directly from different threads. You may run into synchronization 
 data is not always updated between CPU cores when modified.
 Always use a :ref:`Mutex<class_Mutex>` when accessing a piece of data from different threads.
 
+When calling :ref:`Mutex.lock()<class_Mutex_method_lock>`, a thread ensures that all other threads will be blocked (put on suspended state) if they try to *lock* the same mutex. When the mutex us unlocked by calling :ref:`Mutex.unlock()<class_Mutex_method_unlock>`, the other threads will be allowed to proceed with the lock (but only one at a time).  
+
 Here is an example of using a Mutex:
 
 .. tabs::
