@@ -34,6 +34,8 @@ Properties
 +-----------------------------------------------------+-----------------------------------------------------------------+
 | :ref:`float<class_float>`                           | :ref:`fov<class_Camera_property_fov>`                           |
 +-----------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`frustum_offset<class_Camera_property_frustum_offset>`     |
++-----------------------------------------------------+-----------------------------------------------------------------+
 | :ref:`float<class_float>`                           | :ref:`h_offset<class_Camera_property_h_offset>`                 |
 +-----------------------------------------------------+-----------------------------------------------------------------+
 | :ref:`KeepAspect<enum_Camera_KeepAspect>`           | :ref:`keep_aspect<class_Camera_property_keep_aspect>`           |
@@ -50,35 +52,37 @@ Properties
 Methods
 -------
 
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`clear_current<class_Camera_method_clear_current>` **(** :ref:`bool<class_bool>` enable_next=true **)**                                                             |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`get_camera_transform<class_Camera_method_get_camera_transform>` **(** **)** const                                                                                  |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`get_cull_mask_bit<class_Camera_method_get_cull_mask_bit>` **(** :ref:`int<class_int>` layer **)** const                                                            |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`         | :ref:`get_frustum<class_Camera_method_get_frustum>` **(** **)** const                                                                                                    |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_position_behind<class_Camera_method_is_position_behind>` **(** :ref:`Vector3<class_Vector3>` world_point **)** const                                            |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`make_current<class_Camera_method_make_current>` **(** **)**                                                                                                        |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`     | :ref:`project_local_ray_normal<class_Camera_method_project_local_ray_normal>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                               |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`     | :ref:`project_position<class_Camera_method_project_position>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                               |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`     | :ref:`project_ray_normal<class_Camera_method_project_ray_normal>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                           |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`     | :ref:`project_ray_origin<class_Camera_method_project_ray_origin>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                           |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_cull_mask_bit<class_Camera_method_set_cull_mask_bit>` **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enable **)**                                  |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_orthogonal<class_Camera_method_set_orthogonal>` **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**  |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_perspective<class_Camera_method_set_perspective>` **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)** |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`     | :ref:`unproject_position<class_Camera_method_unproject_position>` **(** :ref:`Vector3<class_Vector3>` world_point **)** const                                            |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`clear_current<class_Camera_method_clear_current>` **(** :ref:`bool<class_bool>` enable_next=true **)**                                                                                            |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>` | :ref:`get_camera_transform<class_Camera_method_get_camera_transform>` **(** **)** const                                                                                                                 |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`get_cull_mask_bit<class_Camera_method_get_cull_mask_bit>` **(** :ref:`int<class_int>` layer **)** const                                                                                           |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`         | :ref:`get_frustum<class_Camera_method_get_frustum>` **(** **)** const                                                                                                                                   |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`is_position_behind<class_Camera_method_is_position_behind>` **(** :ref:`Vector3<class_Vector3>` world_point **)** const                                                                           |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`make_current<class_Camera_method_make_current>` **(** **)**                                                                                                                                       |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`     | :ref:`project_local_ray_normal<class_Camera_method_project_local_ray_normal>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                                              |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`     | :ref:`project_position<class_Camera_method_project_position>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                                                              |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`     | :ref:`project_ray_normal<class_Camera_method_project_ray_normal>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                                                          |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`     | :ref:`project_ray_origin<class_Camera_method_project_ray_origin>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                                                          |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_cull_mask_bit<class_Camera_method_set_cull_mask_bit>` **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enable **)**                                                                 |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_frustum<class_Camera_method_set_frustum>` **(** :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)** |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_orthogonal<class_Camera_method_set_orthogonal>` **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**                                 |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_perspective<class_Camera_method_set_perspective>` **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**                                |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`     | :ref:`unproject_position<class_Camera_method_unproject_position>` **(** :ref:`Vector3<class_Vector3>` world_point **)** const                                                                           |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -89,11 +93,15 @@ Enumerations
 
 .. _class_Camera_constant_PROJECTION_ORTHOGONAL:
 
+.. _class_Camera_constant_PROJECTION_FRUSTUM:
+
 enum **Projection**:
 
 - **PROJECTION_PERSPECTIVE** = **0** --- Perspective Projection (object's size on the screen becomes smaller when far away).
 
 - **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are).
+
+- **PROJECTION_FRUSTUM** = **2**
 
 .. _enum_Camera_KeepAspect:
 
@@ -203,6 +211,16 @@ The distance to the far culling boundary for this Camera relative to its local z
 
 The camera's field of view angle (in degrees). Only applicable in perspective mode. Since :ref:`keep_aspect<class_Camera_property_keep_aspect>` locks one axis, ``fov`` sets the other axis' field of view angle.
 
+.. _class_Camera_property_frustum_offset:
+
+- :ref:`Vector2<class_Vector2>` **frustum_offset**
+
++----------+---------------------------+
+| *Setter* | set_frustum_offset(value) |
++----------+---------------------------+
+| *Getter* | get_frustum_offset()      |
++----------+---------------------------+
+
 .. _class_Camera_property_h_offset:
 
 - :ref:`float<class_float>` **h_offset**
@@ -282,7 +300,7 @@ Method Descriptions
 
 - void **clear_current** **(** :ref:`bool<class_bool>` enable_next=true **)**
 
-If this is the current Camera, remove it from being current. If ``enable_next`` is true, request to make the next Camera current, if any.
+If this is the current Camera, remove it from being current. If ``enable_next`` is ``true``, request to make the next Camera current, if any.
 
 .. _class_Camera_method_get_camera_transform:
 
@@ -337,6 +355,10 @@ Returns a 3D position in worldspace, that is the result of projecting a point on
 .. _class_Camera_method_set_cull_mask_bit:
 
 - void **set_cull_mask_bit** **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enable **)**
+
+.. _class_Camera_method_set_frustum:
+
+- void **set_frustum** **(** :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
 .. _class_Camera_method_set_orthogonal:
 

@@ -472,7 +472,7 @@ Sets the given column's custom color.
 
 Sets the given column's custom draw callback to ``callback`` method on ``object``.
 
-The ``callback`` should accept two arguments: the :ref:`TreeItem<class_TreeItem>` that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
+The ``callback`` should accept two arguments: the ``TreeItem`` that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
 
 .. _class_TreeItem_method_set_editable:
 

@@ -32,5 +32,5 @@ Theme Properties
 Description
 -----------
 
-Vertical split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from left to right.
+Vertical split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from top to bottom.
 

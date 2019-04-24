@@ -311,7 +311,7 @@ enum **ResponseCode**:
 
 - **RESPONSE_SEE_OTHER** = **303** --- HTTP status code ``303 See Other``. The server is redirecting the user agent to a different resource, as indicated by a URI in the Location header field, which is intended to provide an indirect response to the original request.
 
-- **RESPONSE_NOT_MODIFIED** = **304** --- HTTP status code ``304 Not Modified``. A conditional GET or HEAD request has been received and would have resulted in a 200 OK response if it were not for the fact that the condition evaluated to false.
+- **RESPONSE_NOT_MODIFIED** = **304** --- HTTP status code ``304 Not Modified``. A conditional GET or HEAD request has been received and would have resulted in a 200 OK response if it were not for the fact that the condition evaluated to ``false``.
 
 - **RESPONSE_USE_PROXY** = **305** --- HTTP status code ``305 Use Proxy``. Deprecated. Do not use.
 
@@ -345,7 +345,7 @@ enum **ResponseCode**:
 
 - **RESPONSE_LENGTH_REQUIRED** = **411** --- HTTP status code ``411 Length Required``. The server refuses to accept the request without a defined Content-Length header.
 
-- **RESPONSE_PRECONDITION_FAILED** = **412** --- HTTP status code ``412 Precondition Failed``. One or more conditions given in the request header fields evaluated to false when tested on the server.
+- **RESPONSE_PRECONDITION_FAILED** = **412** --- HTTP status code ``412 Precondition Failed``. One or more conditions given in the request header fields evaluated to ``false`` when tested on the server.
 
 - **RESPONSE_REQUEST_ENTITY_TOO_LARGE** = **413** --- HTTP status code ``413 Entity Too Large``. The server is refusing to process a request because the request payload is larger than the server is willing or able to process.
 

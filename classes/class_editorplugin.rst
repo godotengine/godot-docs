@@ -442,13 +442,13 @@ Get the GUI layout of the plugin. This is used to save the project's editor layo
 
 - :ref:`bool<class_bool>` **handles** **(** :ref:`Object<class_Object>` object **)** virtual
 
-Implement this function if your plugin edits a specific type of object (Resource or Node). If you return true, then you will get the functions :ref:`edit<class_EditorPlugin_method_edit>` and :ref:`make_visible<class_EditorPlugin_method_make_visible>` called when the editor requests them. If you have declared the methods :ref:`forward_canvas_gui_input<class_EditorPlugin_method_forward_canvas_gui_input>` and :ref:`forward_spatial_gui_input<class_EditorPlugin_method_forward_spatial_gui_input>` these will be called too.
+Implement this function if your plugin edits a specific type of object (Resource or Node). If you return ``true``, then you will get the functions :ref:`edit<class_EditorPlugin_method_edit>` and :ref:`make_visible<class_EditorPlugin_method_make_visible>` called when the editor requests them. If you have declared the methods :ref:`forward_canvas_gui_input<class_EditorPlugin_method_forward_canvas_gui_input>` and :ref:`forward_spatial_gui_input<class_EditorPlugin_method_forward_spatial_gui_input>` these will be called too.
 
 .. _class_EditorPlugin_method_has_main_screen:
 
 - :ref:`bool<class_bool>` **has_main_screen** **(** **)** virtual
 
-Return true if this is a main screen editor plugin (it goes in the workspaces selector together with '2D', '3D', and 'Script').
+Return ``true`` if this is a main screen editor plugin (it goes in the workspaces selector together with '2D', '3D', and 'Script').
 
 .. _class_EditorPlugin_method_hide_bottom_panel:
 

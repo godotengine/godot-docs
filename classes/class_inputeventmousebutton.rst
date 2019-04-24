@@ -52,7 +52,7 @@ Property Descriptions
 | *Getter* | get_button_index()      |
 +----------+-------------------------+
 
-Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@GlobalScope<class_@GlobalScope>`.
+Mouse button identifier, one of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button or button wheel constants.
 
 .. _class_InputEventMouseButton_property_doubleclick:
 

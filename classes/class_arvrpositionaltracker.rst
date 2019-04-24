@@ -31,6 +31,8 @@ Methods
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`get_joy_id<class_ARVRPositionalTracker_method_get_joy_id>` **(** **)** const                                                         |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                                    | :ref:`get_mesh<class_ARVRPositionalTracker_method_get_mesh>` **(** **)** const                                                             |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                | :ref:`get_name<class_ARVRPositionalTracker_method_get_name>` **(** **)** const                                                             |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`                                  | :ref:`get_orientation<class_ARVRPositionalTracker_method_get_orientation>` **(** **)** const                                               |
@@ -103,6 +105,12 @@ Returns the hand holding this tracker, if known. See TRACKER\_\* constants.
 - :ref:`int<class_int>` **get_joy_id** **(** **)** const
 
 If this is a controller that is being tracked the controller will also be represented by a joystick entry with this id.
+
+.. _class_ARVRPositionalTracker_method_get_mesh:
+
+- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** const
+
+Returns the mesh related to a controller or anchor point if one is available.
 
 .. _class_ARVRPositionalTracker_method_get_name:
 

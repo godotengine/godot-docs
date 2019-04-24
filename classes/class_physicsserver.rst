@@ -598,7 +598,7 @@ enum **ShapeType**:
 
 - **SHAPE_CONCAVE_POLYGON** = **7** --- The :ref:`Shape<class_Shape>` is a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>`.
 
-- **SHAPE_HEIGHTMAP** = **8** --- The :ref:`Shape<class_Shape>` is a HeightMapShape.
+- **SHAPE_HEIGHTMAP** = **8** --- The :ref:`Shape<class_Shape>` is a :ref:`HeightMapShape<class_HeightMapShape>`.
 
 - **SHAPE_CUSTOM** = **9** --- This constant is used internally by the engine. Any attempt to create this kind of shape results in an error.
 

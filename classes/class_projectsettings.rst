@@ -54,6 +54,8 @@ Properties
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`audio/channel_disable_time<class_ProjectSettings_property_audio/channel_disable_time>`                                                                         |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`audio/default_bus_layout<class_ProjectSettings_property_audio/default_bus_layout>`                                                                             |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`audio/driver<class_ProjectSettings_property_audio/driver>`                                                                                                     |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`audio/enable_audio_input<class_ProjectSettings_property_audio/enable_audio_input>`                                                                             |
@@ -99,6 +101,8 @@ Properties
 | :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/property_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`                           |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/return_value_discarded<class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded>`                                 |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/shadowed_variable<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`                                           |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/standalone_expression<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`                                   |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -690,6 +694,10 @@ Audio buses will disable automatically when sound goes below a given DB threshol
 
 Audio buses will disable automatically when sound goes below a given DB threshold for a given time. This saves CPU as effects assigned to that bus will no longer do any processing.
 
+.. _class_ProjectSettings_property_audio/default_bus_layout:
+
+- :ref:`String<class_String>` **audio/default_bus_layout**
+
 .. _class_ProjectSettings_property_audio/driver:
 
 - :ref:`String<class_String>` **audio/driver**
@@ -795,6 +803,10 @@ Enable long distance matching in zstd.
 .. _class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/return_value_discarded**
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable:
+
+- :ref:`bool<class_bool>` **debug/gdscript/warnings/shadowed_variable**
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression:
 
@@ -1894,13 +1906,13 @@ Convert a localized path (res://) to a full native OS path.
 
 - :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** const
 
-Return true if a configuration value is present.
+Return ``true`` if a configuration value is present.
 
 .. _class_ProjectSettings_method_load_resource_pack:
 
 - :ref:`bool<class_bool>` **load_resource_pack** **(** :ref:`String<class_String>` pack **)**
 
-Loads the contents of the .pck or .zip file specified by ``pack`` into the resource filesystem (res://). Returns true on success.
+Loads the contents of the .pck or .zip file specified by ``pack`` into the resource filesystem (res://). Returns ``true`` on success.
 
 Note: If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack``.
 
@@ -1914,7 +1926,7 @@ Convert a path to a localized path (res:// path).
 
 - :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
-Returns true if the specified property exists and its initial value differs from the current value.
+Returns ``true`` if the specified property exists and its initial value differs from the current value.
 
 .. _class_ProjectSettings_method_property_get_revert:
 

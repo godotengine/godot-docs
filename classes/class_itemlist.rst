@@ -372,7 +372,7 @@ Adds an item to the item list with no text, only an icon.
 
 Adds an item to the item list with specified text. Specify an icon of null for a list item with no icon.
 
-If selectable is true the list item will be selectable.
+If selectable is ``true`` the list item will be selectable.
 
 .. _class_ItemList_method_clear:
 

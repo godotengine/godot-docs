@@ -112,7 +112,7 @@ Emitted when the text changes.
 
 - **text_entered** **(** :ref:`String<class_String>` new_text **)**
 
-Emitted when the user presses ``KEY_ENTER`` on the ``LineEdit``.
+Emitted when the user presses :ref:`@GlobalScope.KEY_ENTER<class_@GlobalScope_constant_KEY_ENTER>` on the ``LineEdit``.
 
 Enumerations
 ------------
@@ -287,7 +287,7 @@ If ``true``, the ``LineEdit`` width will increase to stay longer than the :ref:`
 | *Getter* | get_focus_mode()      |
 +----------+-----------------------+
 
-Defines how the ``LineEdit`` can grab focus (Keyboard and mouse, only keyboard, or none). See ``enum FocusMode`` in :ref:`Control<class_Control>` for details.
+Defines how the ``LineEdit`` can grab focus (Keyboard and mouse, only keyboard, or none). See :ref:`FocusMode<enum_Control_FocusMode>` in :ref:`Control<class_Control>` for details.
 
 .. _class_LineEdit_property_max_length:
 

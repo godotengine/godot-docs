@@ -55,6 +55,8 @@ Methods
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`           | :ref:`is_bone_rest_disabled<class_Skeleton_method_is_bone_rest_disabled>` **(** :ref:`int<class_int>` bone_idx **)** const                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`localize_rests<class_Skeleton_method_localize_rests>` **(** **)**                                                                                           |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`physical_bones_add_collision_exception<class_Skeleton_method_physical_bones_add_collision_exception>` **(** :ref:`RID<class_RID>` exception **)**           |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`physical_bones_remove_collision_exception<class_Skeleton_method_physical_bones_remove_collision_exception>` **(** :ref:`RID<class_RID>` exception **)**     |
@@ -195,6 +197,10 @@ Deprecated soon.
 .. _class_Skeleton_method_is_bone_rest_disabled:
 
 - :ref:`bool<class_bool>` **is_bone_rest_disabled** **(** :ref:`int<class_int>` bone_idx **)** const
+
+.. _class_Skeleton_method_localize_rests:
+
+- void **localize_rests** **(** **)**
 
 .. _class_Skeleton_method_physical_bones_add_collision_exception:
 

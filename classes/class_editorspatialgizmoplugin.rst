@@ -58,7 +58,7 @@ Methods
 Description
 -----------
 
-EditorSpatialGizmoPlugin allows you to define a new type of Gizmo. There are two main ways to do so: extending :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` for the simpler gizmos, or creating a new :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` type. See the tutorial in the documentation for more info.
+EditorSpatialGizmoPlugin allows you to define a new type of Gizmo. There are two main ways to do so: extending ``EditorSpatialGizmoPlugin`` for the simpler gizmos, or creating a new :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` type. See the tutorial in the documentation for more info.
 
 Tutorials
 ---------
@@ -78,7 +78,7 @@ Adds a new material to the internal material list for the plugin. It can then be
 
 - :ref:`bool<class_bool>` **can_be_hidden** **(** **)** virtual
 
-Override this method to define whether the gizmo can be hidden or not. Defaults to true.
+Override this method to define whether the gizmo can be hidden or not. Defaults to ``true``.
 
 .. _class_EditorSpatialGizmoPlugin_method_commit_handle:
 

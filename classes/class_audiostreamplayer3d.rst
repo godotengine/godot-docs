@@ -62,15 +62,17 @@ Properties
 Methods
 -------
 
-+---------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_playback_position<class_AudioStreamPlayer3D_method_get_playback_position>` **(** **)**           |
-+---------------------------+------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`play<class_AudioStreamPlayer3D_method_play>` **(** :ref:`float<class_float>` from_position=0.0 **)** |
-+---------------------------+------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`seek<class_AudioStreamPlayer3D_method_seek>` **(** :ref:`float<class_float>` to_position **)**       |
-+---------------------------+------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`stop<class_AudioStreamPlayer3D_method_stop>` **(** **)**                                             |
-+---------------------------+------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                             | :ref:`get_playback_position<class_AudioStreamPlayer3D_method_get_playback_position>` **(** **)**           |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`get_stream_playback<class_AudioStreamPlayer3D_method_get_stream_playback>` **(** **)**               |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`play<class_AudioStreamPlayer3D_method_play>` **(** :ref:`float<class_float>` from_position=0.0 **)** |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`seek<class_AudioStreamPlayer3D_method_seek>` **(** :ref:`float<class_float>` to_position **)**       |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`stop<class_AudioStreamPlayer3D_method_stop>` **(** **)**                                             |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -92,6 +94,8 @@ Enumerations
 
 .. _class_AudioStreamPlayer3D_constant_ATTENUATION_LOGARITHMIC:
 
+.. _class_AudioStreamPlayer3D_constant_ATTENUATION_DISABLED:
+
 enum **AttenuationModel**:
 
 - **ATTENUATION_INVERSE_DISTANCE** = **0** --- Linear dampening of loudness according to distance.
@@ -99,6 +103,8 @@ enum **AttenuationModel**:
 - **ATTENUATION_INVERSE_SQUARE_DISTANCE** = **1** --- Squared dampening of loudness according to distance.
 
 - **ATTENUATION_LOGARITHMIC** = **2** --- Logarithmic dampening of loudness according to distance.
+
+- **ATTENUATION_DISABLED** = **3** --- No dampening of loudness according to distance.
 
 .. _enum_AudioStreamPlayer3D_OutOfRangeMode:
 
@@ -187,7 +193,7 @@ Amount how much the filter affects the loudness, in dB.
 | *Getter* | get_attenuation_model()      |
 +----------+------------------------------+
 
-Decides if audio should get quieter with distance linearly, quadratically or logarithmically.
+Decides if audio should get quieter with distance linearly, quadratically, logarithmically, or not be affected by distance, effectively disabling attenuation.
 
 .. _class_AudioStreamPlayer3D_property_autoplay:
 
@@ -373,6 +379,10 @@ Method Descriptions
 - :ref:`float<class_float>` **get_playback_position** **(** **)**
 
 Returns the position in the :ref:`AudioStream<class_AudioStream>`.
+
+.. _class_AudioStreamPlayer3D_method_get_stream_playback:
+
+- :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback** **(** **)**
 
 .. _class_AudioStreamPlayer3D_method_play:
 

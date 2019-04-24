@@ -31,10 +31,21 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`get_is_active<class_ARVRAnchor_method_get_is_active>` **(** **)** const     |
 +-------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`       | :ref:`get_mesh<class_ARVRAnchor_method_get_mesh>` **(** **)** const               |
++-------------------------------+-----------------------------------------------------------------------------------+
 | :ref:`Plane<class_Plane>`     | :ref:`get_plane<class_ARVRAnchor_method_get_plane>` **(** **)** const             |
 +-------------------------------+-----------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`get_size<class_ARVRAnchor_method_get_size>` **(** **)** const               |
 +-------------------------------+-----------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_ARVRAnchor_signal_mesh_updated:
+
+- **mesh_updated** **(** :ref:`Mesh<class_Mesh>` mesh **)**
+
+Emitted when the mesh associated with the anchor changes or when one becomes available. This is especially important for topology that is constantly being mesh_updated.
 
 Description
 -----------
@@ -73,7 +84,13 @@ Returns the name given to this anchor.
 
 - :ref:`bool<class_bool>` **get_is_active** **(** **)** const
 
-Returns true if the anchor is being tracked and false if no anchor with this id is currently known.
+Returns ``true`` if the anchor is being tracked and ``false`` if no anchor with this id is currently known.
+
+.. _class_ARVRAnchor_method_get_mesh:
+
+- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** const
+
+If provided by the ARVR Interface this returns a mesh object for the anchor. For an anchor this can be a shape related to the object being tracked or it can be a mesh that provides topology related to the anchor and can be used to create shadows/reflections on surfaces or for generating collision shapes.
 
 .. _class_ARVRAnchor_method_get_plane:
 

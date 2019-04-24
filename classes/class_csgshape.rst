@@ -7,7 +7,7 @@
 CSGShape
 ========
 
-**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`CSGCombiner<class_CSGCombiner>`, :ref:`CSGPrimitive<class_CSGPrimitive>`
 
@@ -176,7 +176,7 @@ Returns an individual bit on the collision mask.
 
 - :ref:`bool<class_bool>` **is_root_shape** **(** **)** const
 
-Returns true if this is a root shape and is thus the object that is rendered.
+Returns ``true`` if this is a root shape and is thus the object that is rendered.
 
 .. _class_CSGShape_method_set_collision_layer_bit:
 

@@ -57,7 +57,7 @@ Length that the resulting collision extends in either direction perpendicular to
 | *Getter* | is_disabled()       |
 +----------+---------------------+
 
-If true, no collision will be produced.
+If ``true``, no collision will be produced.
 
 .. _class_CollisionPolygon_property_polygon:
 

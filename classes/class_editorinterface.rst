@@ -30,6 +30,8 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_Control>`                             | :ref:`get_editor_viewport<class_EditorInterface_method_get_editor_viewport>` **(** **)**                                                                       |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`EditorInspector<class_EditorInspector>`             | :ref:`get_inspector<class_EditorInterface_method_get_inspector>` **(** **)** const                                                                             |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                                 | :ref:`get_open_scenes<class_EditorInterface_method_get_open_scenes>` **(** **)** const                                                                         |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorFileSystem<class_EditorFileSystem>`           | :ref:`get_resource_filesystem<class_EditorInterface_method_get_resource_filesystem>` **(** **)**                                                               |
@@ -98,6 +100,10 @@ Returns the :ref:`EditorSettings<class_EditorSettings>`.
 - :ref:`Control<class_Control>` **get_editor_viewport** **(** **)**
 
 Returns the editor :ref:`Viewport<class_Viewport>`.
+
+.. _class_EditorInterface_method_get_inspector:
+
+- :ref:`EditorInspector<class_EditorInspector>` **get_inspector** **(** **)** const
 
 .. _class_EditorInterface_method_get_open_scenes:
 

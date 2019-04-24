@@ -143,7 +143,7 @@ Blend an animation by "blend" amount (name must be valid in the linked :ref:`Ani
 
 - :ref:`float<class_float>` **blend_input** **(** :ref:`int<class_int>` input_index, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` optimize=true **)**
 
-Blend an input. This is only useful for nodes created for an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Time is a delta, unless "seek" is true, in which case it is absolute. A filter mode may be optionally passed.
+Blend an input. This is only useful for nodes created for an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Time is a delta, unless "seek" is ``true``, in which case it is absolute. A filter mode may be optionally passed.
 
 .. _class_AnimationNode_method_blend_node:
 
@@ -203,19 +203,19 @@ Get the property information for parameter. Parameters are custom local memory u
 
 - :ref:`String<class_String>` **has_filter** **(** **)** virtual
 
-Return true whether you want the blend tree editor to display filter editing on this node.
+Return ``true`` whether you want the blend tree editor to display filter editing on this node.
 
 .. _class_AnimationNode_method_is_path_filtered:
 
 - :ref:`bool<class_bool>` **is_path_filtered** **(** :ref:`NodePath<class_NodePath>` path **)** const
 
-Return true wether a given path is filtered.
+Return ``true`` wether a given path is filtered.
 
 .. _class_AnimationNode_method_process:
 
 - void **process** **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek **)** virtual
 
-Called when a custom node is processed. The argument "time" is relative, unless "seek" is true (in which case it is absolute).
+Called when a custom node is processed. The argument "time" is relative, unless "seek" is ``true`` (in which case it is absolute).
 
 Here, call the :ref:`blend_input<class_AnimationNode_method_blend_input>`, :ref:`blend_node<class_AnimationNode_method_blend_node>` or :ref:`blend_animation<class_AnimationNode_method_blend_animation>` functions.
 

@@ -230,6 +230,10 @@ Emitted when a breakpoint is placed via the breakpoint gutter.
 
 Emitted when the cursor changes.
 
+.. _class_TextEdit_signal_info_clicked:
+
+- **info_clicked** **(** :ref:`int<class_int>` row, :ref:`String<class_String>` info **)**
+
 .. _class_TextEdit_signal_request_completion:
 
 - **request_completion** **(** **)**
@@ -289,9 +293,9 @@ enum **MenuItems**:
 
 - **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
 
-- **MENU_CLEAR** = **3** --- Erases the whole :ref:`TextEdit<class_TextEdit>` text.
+- **MENU_CLEAR** = **3** --- Erases the whole ``TextEdit`` text.
 
-- **MENU_SELECT_ALL** = **4** --- Selects the whole :ref:`TextEdit<class_TextEdit>` text.
+- **MENU_SELECT_ALL** = **4** --- Selects the whole ``TextEdit`` text.
 
 - **MENU_UNDO** = **5** --- Undoes the previous action.
 
@@ -479,7 +483,7 @@ If ``true``, line numbers are displayed to the left of the text.
 | *Getter* | get_text()      |
 +----------+-----------------+
 
-String value of the :ref:`TextEdit<class_TextEdit>`.
+String value of the ``TextEdit``.
 
 .. _class_TextEdit_property_v_scroll_speed:
 
@@ -491,7 +495,7 @@ String value of the :ref:`TextEdit<class_TextEdit>`.
 | *Getter* | get_v_scroll_speed()      |
 +----------+---------------------------+
 
-If ``true``, enables text wrapping when it goes beyond he edge of what is visible.
+Vertical scroll sensitivity.
 
 .. _class_TextEdit_property_wrap_enabled:
 
@@ -502,6 +506,8 @@ If ``true``, enables text wrapping when it goes beyond he edge of what is visibl
 +----------+-------------------------+
 | *Getter* | is_wrap_enabled()       |
 +----------+-------------------------+
+
+If ``true``, enables text wrapping when it goes beyond the edge of what is visible.
 
 Method Descriptions
 -------------------
@@ -662,7 +668,7 @@ Insert a given text at the cursor position.
 
 - :ref:`bool<class_bool>` **is_selection_active** **(** **)** const
 
-Return true if the selection is active.
+Return ``true`` if the selection is active.
 
 .. _class_TextEdit_method_menu_option:
 

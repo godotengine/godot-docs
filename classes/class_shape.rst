@@ -9,7 +9,7 @@ Shape
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`BoxShape<class_BoxShape>`, :ref:`CapsuleShape<class_CapsuleShape>`, :ref:`ConcavePolygonShape<class_ConcavePolygonShape>`, :ref:`ConvexPolygonShape<class_ConvexPolygonShape>`, :ref:`CylinderShape<class_CylinderShape>`, :ref:`PlaneShape<class_PlaneShape>`, :ref:`RayShape<class_RayShape>`, :ref:`SphereShape<class_SphereShape>`
+**Inherited By:** :ref:`BoxShape<class_BoxShape>`, :ref:`CapsuleShape<class_CapsuleShape>`, :ref:`ConcavePolygonShape<class_ConcavePolygonShape>`, :ref:`ConvexPolygonShape<class_ConvexPolygonShape>`, :ref:`CylinderShape<class_CylinderShape>`, :ref:`HeightMapShape<class_HeightMapShape>`, :ref:`PlaneShape<class_PlaneShape>`, :ref:`RayShape<class_RayShape>`, :ref:`SphereShape<class_SphereShape>`
 
 **Category:** Core
 

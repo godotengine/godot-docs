@@ -53,7 +53,7 @@ Property Descriptions
 | *Getter* | is_normalmap()          |
 +----------+-------------------------+
 
-If true, the resulting texture contains a normal map created from the original noise interpreted as a bump map.
+If ``true``, the resulting texture contains a normal map created from the original noise interpreted as a bump map.
 
 .. _class_NoiseTexture_property_bump_strength:
 

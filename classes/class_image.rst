@@ -453,13 +453,13 @@ Copies ``src`` image to this image.
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format **)**
 
-Creates an empty image of given size and format. See ``FORMAT_*`` constants. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
+Creates an empty image of given size and format. See ``FORMAT_*`` constants. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the ``generate_mipmaps`` method.
 
 .. _class_Image_method_create_from_data:
 
 - void **create_from_data** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format, :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
-Creates a new image of given size and format. See ``FORMAT_*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
+Creates a new image of given size and format. See ``FORMAT_*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the ``generate_mipmaps`` method.
 
 .. _class_Image_method_crop:
 

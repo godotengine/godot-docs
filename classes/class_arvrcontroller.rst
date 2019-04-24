@@ -39,6 +39,8 @@ Methods
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`get_joystick_id<class_ARVRController_method_get_joystick_id>` **(** **)** const                                  |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                                    | :ref:`get_mesh<class_ARVRController_method_get_mesh>` **(** **)** const                                                |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`is_button_pressed<class_ARVRController_method_is_button_pressed>` **(** :ref:`int<class_int>` button **)** const |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
@@ -56,6 +58,12 @@ Emitted when a button on this controller is pressed.
 - **button_release** **(** :ref:`int<class_int>` button **)**
 
 Emitted when a button on this controller is released.
+
+.. _class_ARVRController_signal_mesh_updated:
+
+- **mesh_updated** **(** :ref:`Mesh<class_Mesh>` mesh **)**
+
+Emitted when the mesh associated with the controller changes or when one becomes available. Generally speaking this will be a static mesh after becoming available.
 
 Description
 -----------
@@ -131,6 +139,12 @@ Returns the value of the given axis for things like triggers, touchpads, etc. th
 - :ref:`int<class_int>` **get_joystick_id** **(** **)** const
 
 Returns the ID of the joystick object bound to this. Every controller tracked by the ARVR Server that has buttons and axis will also be registered as a joystick within Godot. This means that all the normal joystick tracking and input mapping will work for buttons and axis found on the AR/VR controllers. This ID is purely offered as information so you can link up the controller with its joystick entry.
+
+.. _class_ARVRController_method_get_mesh:
+
+- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** const
+
+If provided by the ARVR Interface this returns a mesh associated with the controller. This can be used to visualise the controller.
 
 .. _class_ARVRController_method_is_button_pressed:
 

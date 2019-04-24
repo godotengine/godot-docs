@@ -147,7 +147,7 @@ Returns a point on the plane.
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=0.00001 **)**
 
-Returns true if "point" is inside the plane (by a very minimum threshold).
+Returns ``true`` if "point" is inside the plane (by a very minimum threshold).
 
 .. _class_Plane_method_intersect_3:
 
@@ -171,7 +171,7 @@ Returns the intersection point of a segment from position "begin" to position "e
 
 - :ref:`bool<class_bool>` **is_point_over** **(** :ref:`Vector3<class_Vector3>` point **)**
 
-Returns true if "point" is located above the plane.
+Returns ``true`` if "point" is located above the plane.
 
 .. _class_Plane_method_normalized:
 

@@ -154,6 +154,8 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_COLORN:
 
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SMOOTHSTEP:
+
 .. _class_VisualScriptBuiltinFunc_constant_FUNC_MAX:
 
 enum **BuiltinFunc**:
@@ -284,7 +286,14 @@ enum **BuiltinFunc**:
 
 - **COLORN** = **62** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
 
-- **FUNC_MAX** = **63** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_property_function>` property can have.
+- **MATH_SMOOTHSTEP** = **63** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to ``MATH_LERP``, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
+
+::
+
+    var t = clamp((weight - from) / (to - from), 0.0, 1.0)
+    return t * t * (3.0 - 2.0 * t)
+
+- **FUNC_MAX** = **64** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_property_function>` property can have.
 
 Description
 -----------

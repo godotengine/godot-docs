@@ -52,7 +52,7 @@ Property Descriptions
 | *Getter* | get_button_mask()      |
 +----------+------------------------+
 
-Mouse button mask identifier, one of or a bitwise combination of the BUTTON_MASK\_\* constants in :ref:`@GlobalScope<class_@GlobalScope>`.
+Mouse button mask identifier, one of or a bitwise combination of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button masks.
 
 .. _class_InputEventMouse_property_global_position:
 

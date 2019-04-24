@@ -385,7 +385,7 @@ Global contrast value of the rendered scene (default value is 1).
 | *Getter* | is_adjustment_enabled()      |
 +----------+------------------------------+
 
-Enables the adjustment\_\* options provided by this resource. If false, adjustments modifications will have no effect on the rendered scene.
+Enables the adjustment\_\* options provided by this resource. If ``false``, adjustments modifications will have no effect on the rendered scene.
 
 .. _class_Environment_property_adjustment_saturation:
 

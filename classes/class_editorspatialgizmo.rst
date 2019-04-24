@@ -107,7 +107,7 @@ Add an unscaled billboard for visualization. Call this function during :ref:`red
 
 Commit a handle being edited (handles must have been previously added by :ref:`add_handles<class_EditorSpatialGizmo_method_add_handles>`).
 
-If the cancel parameter is true, an option to restore the edited value to the original is provided.
+If the cancel parameter is ``true``, an option to restore the edited value to the original is provided.
 
 .. _class_EditorSpatialGizmo_method_get_handle_name:
 

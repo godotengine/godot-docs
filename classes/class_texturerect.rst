@@ -22,6 +22,10 @@ Properties
 +--------------------------------------------------+--------------------------------------------------------------+
 | :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             |
 +--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             |
++--------------------------------------------------+--------------------------------------------------------------+
 | :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` |
 +--------------------------------------------------+--------------------------------------------------------------+
 | :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_property_texture>`           |
@@ -85,6 +89,30 @@ Property Descriptions
 +----------+-------------------+
 
 If ``true``, the texture scales to fit its bounding rectangle. Default value: ``false``.
+
+.. _class_TextureRect_property_flip_h:
+
+- :ref:`bool<class_bool>` **flip_h**
+
++----------+-------------------+
+| *Setter* | set_flip_h(value) |
++----------+-------------------+
+| *Getter* | is_flipped_h()    |
++----------+-------------------+
+
+If ``true``, texture is flipped horizontally. Default value: ``false``.
+
+.. _class_TextureRect_property_flip_v:
+
+- :ref:`bool<class_bool>` **flip_v**
+
++----------+-------------------+
+| *Setter* | set_flip_v(value) |
++----------+-------------------+
+| *Getter* | is_flipped_v()    |
++----------+-------------------+
+
+If ``true``, texture is flipped vertically. Default value: ``false``.
 
 .. _class_TextureRect_property_stretch_mode:
 

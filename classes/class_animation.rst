@@ -478,7 +478,7 @@ Returns ``true`` if the track at index ``idx`` is enabled.
 
 - :ref:`bool<class_bool>` **track_is_imported** **(** :ref:`int<class_int>` idx **)** const
 
-Return true if the given track is imported. Else, return false.
+Return ``true`` if the given track is imported. Else, return ``false``.
 
 .. _class_Animation_method_track_move_down:
 

@@ -48,7 +48,7 @@ Property Descriptions
 | *Getter* | get_axis()      |
 +----------+-----------------+
 
-Axis identifier. Use one of the ``JOY_AXIS_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
+Axis identifier. Use one of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>` axis constants.
 
 .. _class_InputEventJoypadMotion_property_axis_value:
 

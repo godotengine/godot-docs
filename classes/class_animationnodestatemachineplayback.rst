@@ -60,3 +60,5 @@ Method Descriptions
 
 - void **travel** **(** :ref:`String<class_String>` to_node **)**
 
+Transition from the current state to another one, while visiting all the intermediate ones. This is done via the A\* algorithm.
+

@@ -24,6 +24,8 @@ Properties
 +---------------------------+--------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`display_width<class_MobileVRInterface_property_display_width>`     |
 +---------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`eye_height<class_MobileVRInterface_property_eye_height>`           |
++---------------------------+--------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`iod<class_MobileVRInterface_property_iod>`                         |
 +---------------------------+--------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`k1<class_MobileVRInterface_property_k1>`                           |
@@ -38,7 +40,15 @@ Description
 
 This is a generic mobile VR implementation where you need to provide details about the phone and HMD used. It does not rely on any existing framework. This is the most basic interface we have. For the best effect you do need a mobile phone with a gyroscope and accelerometer.
 
-Note that even though there is no positional tracking the camera will assume the headset is at a height of 1.85 meters.
+Note that even though there is no positional tracking the camera will assume the headset is at a height of 1.85 meters, you can change this by setting :ref:`eye_height<class_MobileVRInterface_property_eye_height>`.
+
+You can initialise this interface as follows:
+
+::
+
+    var interface = ARVRServer.find_interface("Native mobile")
+    if interface and interface.initialize():
+        get_viewport().arvr = true
 
 Property Descriptions
 ---------------------
@@ -66,6 +76,18 @@ The distance between the display and the lenses inside of the device in centimet
 +----------+--------------------------+
 
 The width of the display in centimeters.
+
+.. _class_MobileVRInterface_property_eye_height:
+
+- :ref:`float<class_float>` **eye_height**
+
++----------+-----------------------+
+| *Setter* | set_eye_height(value) |
++----------+-----------------------+
+| *Getter* | get_eye_height()      |
++----------+-----------------------+
+
+The height at which the camera is placed in relation to the ground (i.e. :ref:`ARVROrigin<class_ARVROrigin>` node).
 
 .. _class_MobileVRInterface_property_iod:
 

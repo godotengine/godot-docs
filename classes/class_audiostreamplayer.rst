@@ -40,15 +40,17 @@ Properties
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_playback_position<class_AudioStreamPlayer_method_get_playback_position>` **(** **)**           |
-+---------------------------+----------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`play<class_AudioStreamPlayer_method_play>` **(** :ref:`float<class_float>` from_position=0.0 **)** |
-+---------------------------+----------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`seek<class_AudioStreamPlayer_method_seek>` **(** :ref:`float<class_float>` to_position **)**       |
-+---------------------------+----------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`stop<class_AudioStreamPlayer_method_stop>` **(** **)**                                             |
-+---------------------------+----------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                             | :ref:`get_playback_position<class_AudioStreamPlayer_method_get_playback_position>` **(** **)**           |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`get_stream_playback<class_AudioStreamPlayer_method_get_stream_playback>` **(** **)**               |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`play<class_AudioStreamPlayer_method_play>` **(** :ref:`float<class_float>` from_position=0.0 **)** |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`seek<class_AudioStreamPlayer_method_seek>` **(** :ref:`float<class_float>` to_position **)**       |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`stop<class_AudioStreamPlayer_method_stop>` **(** **)**                                             |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -191,6 +193,10 @@ Method Descriptions
 - :ref:`float<class_float>` **get_playback_position** **(** **)**
 
 Returns the position in the :ref:`AudioStream<class_AudioStream>` in seconds.
+
+.. _class_AudioStreamPlayer_method_get_stream_playback:
+
+- :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback** **(** **)**
 
 .. _class_AudioStreamPlayer_method_play:
 

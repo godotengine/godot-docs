@@ -396,7 +396,7 @@ Set property into the object.
 
 - void **set_block_signals** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to true, signal emission is blocked.
+If set to ``true``, signal emission is blocked.
 
 .. _class_Object_method_set_deferred:
 
@@ -410,7 +410,7 @@ If set to true, signal emission is blocked.
 
 - void **set_message_translation** **(** :ref:`bool<class_bool>` enable **)**
 
-Define whether the object can translate strings (with calls to :ref:`tr<class_Object_method_tr>`). Default is true.
+Define whether the object can translate strings (with calls to :ref:`tr<class_Object_method_tr>`). Default is ``true``.
 
 .. _class_Object_method_set_meta:
 

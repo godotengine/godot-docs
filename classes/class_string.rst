@@ -116,6 +116,8 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_subsequence_ofi<class_String_method_is_subsequence_ofi>` **(** :ref:`String<class_String>` text **)**                                                        |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`is_valid_filename<class_String_method_is_valid_filename>` **(** **)**                                                                                           |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_valid_float<class_String_method_is_valid_float>` **(** **)**                                                                                                 |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_valid_hex_number<class_String_method_is_valid_hex_number>` **(** :ref:`bool<class_bool>` with_prefix=False **)**                                             |
@@ -462,6 +464,14 @@ Returns ``true`` if this string is a subsequence of the given string.
 - :ref:`bool<class_bool>` **is_subsequence_ofi** **(** :ref:`String<class_String>` text **)**
 
 Returns ``true`` if this string is a subsequence of the given string, without considering case.
+
+.. _class_String_method_is_valid_filename:
+
+- :ref:`bool<class_bool>` **is_valid_filename** **(** **)**
+
+Returns ``true`` if this string is free from characters that aren't allowed in file names, those being:
+
+``: / \ ? * " | % < >``
 
 .. _class_String_method_is_valid_float:
 

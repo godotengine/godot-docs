@@ -100,7 +100,7 @@ Return the scan progress for 0 to 1 if the FS is being scanned.
 
 - :ref:`bool<class_bool>` **is_scanning** **(** **)** const
 
-Return true of the filesystem is being scanned.
+Return ``true`` of the filesystem is being scanned.
 
 .. _class_EditorFileSystem_method_scan:
 

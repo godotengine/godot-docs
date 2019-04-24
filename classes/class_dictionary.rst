@@ -85,7 +85,7 @@ Creates a copy of the dictionary, and returns it.
 
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
-Return true if the dictionary is empty.
+Return ``true`` if the dictionary is empty.
 
 .. _class_Dictionary_method_erase:
 
@@ -103,13 +103,13 @@ Returns the current value for the specified key in the ``Dictionary``. If the ke
 
 - :ref:`bool<class_bool>` **has** **(** :ref:`Variant<class_Variant>` key **)**
 
-Return true if the dictionary has a given key.
+Return ``true`` if the dictionary has a given key.
 
 .. _class_Dictionary_method_has_all:
 
 - :ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_Array>` keys **)**
 
-Return true if the dictionary has all of the keys in the given array.
+Return ``true`` if the dictionary has all of the keys in the given array.
 
 .. _class_Dictionary_method_hash:
 

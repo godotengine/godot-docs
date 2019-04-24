@@ -63,7 +63,7 @@ Returns the list of resources inside the preloader.
 
 - :ref:`bool<class_bool>` **has_resource** **(** :ref:`String<class_String>` name **)** const
 
-Returns true if the preloader contains a resource associated to ``name``.
+Returns ``true`` if the preloader contains a resource associated to ``name``.
 
 .. _class_ResourcePreloader_method_remove_resource:
 

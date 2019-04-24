@@ -167,7 +167,7 @@ Create server that listens to connections via ``port``. The port needs to be an 
 
 - void **disconnect_peer** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` now=false **)**
 
-Disconnect the given peer. If "now" is set to true, the connection will be closed immediately without flushing queued messages.
+Disconnect the given peer. If "now" is set to ``true``, the connection will be closed immediately without flushing queued messages.
 
 .. _class_NetworkedMultiplayerENet_method_get_last_packet_channel:
 

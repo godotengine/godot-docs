@@ -426,7 +426,7 @@ Changes to the given :ref:`PackedScene<class_PackedScene>`.
 
 - :ref:`SceneTreeTimer<class_SceneTreeTimer>` **create_timer** **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true **)**
 
-Returns a :ref:`SceneTreeTimer<class_SceneTreeTimer>` which will :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_signal_timeout>` after the given time in seconds elapsed in this SceneTree. If ``pause_mode_process`` is set to false, pausing the SceneTree will also pause the timer.
+Returns a :ref:`SceneTreeTimer<class_SceneTreeTimer>` which will :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_signal_timeout>` after the given time in seconds elapsed in this SceneTree. If ``pause_mode_process`` is set to ``false``, pausing the SceneTree will also pause the timer.
 
 Commonly used to create a one-shot delay timer as in the following example:
 
@@ -440,6 +440,8 @@ Commonly used to create a one-shot delay timer as in the following example:
 .. _class_SceneTree_method_get_frame:
 
 - :ref:`int<class_int>` **get_frame** **(** **)** const
+
+Returns the current frame, i.e. number of frames since the application started.
 
 .. _class_SceneTree_method_get_network_connected_peers:
 

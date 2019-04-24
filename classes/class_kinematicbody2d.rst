@@ -149,13 +149,13 @@ Moves the body along a vector. If the body collides with another, it will slide 
 
 ``floor_normal`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector2(0, 0)``, everything is considered a wall. This is useful for topdown games.
 
-If ``stop_on_slope`` is true, body will not slide on slopes when you include gravity in ``linear_velocity`` and the body is standing still.
+If ``stop_on_slope`` is ``true``, body will not slide on slopes when you include gravity in ``linear_velocity`` and the body is standing still.
 
 If the body collides, it will change direction a maximum of ``max_slides`` times before it stops.
 
 ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 
-If ``infinite_inertia`` is true, body will be able to push :ref:`RigidBody2D<class_RigidBody2D>` nodes, but it won't also detect any collisions with them. When false, it will interact with :ref:`RigidBody2D<class_RigidBody2D>` nodes like with :ref:`StaticBody2D<class_StaticBody2D>`.
+If ``infinite_inertia`` is ``true``, body will be able to push :ref:`RigidBody2D<class_RigidBody2D>` nodes, but it won't also detect any collisions with them. If ``false`` it will interact with :ref:`RigidBody2D<class_RigidBody2D>` nodes like with :ref:`StaticBody2D<class_StaticBody2D>`.
 
 Returns the ``linear_velocity`` vector, rotated and/or scaled if a slide collision occurred. To get detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody2D_method_get_slide_collision>`.
 

@@ -84,9 +84,9 @@ enum **BlendMode**:
 
 - **BLEND_MODE_INTERPOLATED** = **0**
 
-- **BLEND_MODE_DISCRETE** = **1**
+- **BLEND_MODE_DISCRETE** = **1** --- Useful for frame-by-frame 2D animations.
 
-- **BLEND_MODE_DISCRETE_CARRY** = **2**
+- **BLEND_MODE_DISCRETE_CARRY** = **2** --- Keep the current play position when switching between discrete animations.
 
 Property Descriptions
 ---------------------

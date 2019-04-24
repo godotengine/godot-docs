@@ -43,6 +43,8 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`cubic_interpolate<class_Vector3_method_cubic_interpolate>` **(** :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` pre_a, :ref:`Vector3<class_Vector3>` post_b, :ref:`float<class_float>` t **)** |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`direction_to<class_Vector3_method_direction_to>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`distance_squared_to<class_Vector3_method_distance_squared_to>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                     |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`distance_to<class_Vector3_method_distance_to>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                     |
@@ -212,6 +214,12 @@ Returns the cross product with ``b``.
 - :ref:`Vector3<class_Vector3>` **cubic_interpolate** **(** :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` pre_a, :ref:`Vector3<class_Vector3>` post_b, :ref:`float<class_float>` t **)**
 
 Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+
+.. _class_Vector3_method_direction_to:
+
+- :ref:`Vector3<class_Vector3>` **direction_to** **(** :ref:`Vector3<class_Vector3>` b **)**
+
+Returns the normalized vector pointing from this vector to ``b``.
 
 .. _class_Vector3_method_distance_squared_to:
 

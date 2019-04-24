@@ -54,7 +54,11 @@ Methods
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`has_point<class_AStar_method_has_point>` **(** :ref:`int<class_int>` id **)** const                                                                               |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_point_disabled<class_AStar_method_is_point_disabled>` **(** :ref:`int<class_int>` id **)** const                                                               |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`remove_point<class_AStar_method_remove_point>` **(** :ref:`int<class_int>` id **)**                                                                               |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_point_disabled<class_AStar_method_set_point_disabled>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` disabled=true **)**                            |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_point_position<class_AStar_method_set_point_position>` **(** :ref:`int<class_int>` id, :ref:`Vector3<class_Vector3>` position **)**                           |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -228,11 +232,23 @@ Returns an array of all points.
 
 Returns whether a point associated with the given id exists.
 
+.. _class_AStar_method_is_point_disabled:
+
+- :ref:`bool<class_bool>` **is_point_disabled** **(** :ref:`int<class_int>` id **)** const
+
+Returns whether a point is disabled or not for pathfinding. By default, all points are enabled.
+
 .. _class_AStar_method_remove_point:
 
 - void **remove_point** **(** :ref:`int<class_int>` id **)**
 
 Removes the point associated with the given id from the points pool.
+
+.. _class_AStar_method_set_point_disabled:
+
+- void **set_point_disabled** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` disabled=true **)**
+
+Disables or enables the specified point for pathfinding. Useful for making a temporary obstacle.
 
 .. _class_AStar_method_set_point_position:
 

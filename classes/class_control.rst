@@ -838,7 +838,7 @@ Controls whether the control will be able to receive mouse button input events t
 | *Getter* | is_clipping_contents()   |
 +----------+--------------------------+
 
-Enables whether rendering of children should be clipped to this control's rectangle. If true, parts of a child which would be visibly outside of this control's rectangle will not be rendered.
+Enables whether rendering of children should be clipped to this control's rectangle. If ``true``, parts of a child which would be visibly outside of this control's rectangle will not be rendered.
 
 .. _class_Control_property_rect_global_position:
 

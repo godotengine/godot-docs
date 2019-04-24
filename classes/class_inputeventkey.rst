@@ -83,7 +83,7 @@ If ``true``, the key's state is pressed. If ``false``, the key's state is releas
 | *Getter* | get_scancode()      |
 +----------+---------------------+
 
-Key scancode, one of the ``KEY_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
+Key scancode, one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
 
 .. _class_InputEventKey_property_unicode:
 

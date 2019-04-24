@@ -46,6 +46,12 @@ Enumerations
 
 .. _class_VisualShaderNodeVectorOp_constant_OP_CROSS:
 
+.. _class_VisualShaderNodeVectorOp_constant_OP_ATAN2:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_REFLECT:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_STEP:
+
 enum **Operator**:
 
 - **OP_ADD** = **0**
@@ -65,6 +71,12 @@ enum **Operator**:
 - **OP_MIN** = **7**
 
 - **OP_CROSS** = **8**
+
+- **OP_ATAN2** = **9**
+
+- **OP_REFLECT** = **10**
+
+- **OP_STEP** = **11**
 
 Property Descriptions
 ---------------------

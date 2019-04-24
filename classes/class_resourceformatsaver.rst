@@ -49,7 +49,7 @@ Gets the list of extensions for files this saver is able to write.
 
 - :ref:`bool<class_bool>` **recognize** **(** :ref:`Resource<class_Resource>` resource **)** virtual
 
-Returns true if the given resource object can be saved by this saver.
+Returns ``true`` if the given resource object can be saved by this saver.
 
 .. _class_ResourceFormatSaver_method_save:
 

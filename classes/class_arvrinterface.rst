@@ -206,7 +206,7 @@ While currently not used you can activate additional interfaces, you may wish to
 
 - :ref:`bool<class_bool>` **is_stereo** **(** **)**
 
-Returns true if the current output of this interface is in stereo.
+Returns ``true`` if the current output of this interface is in stereo.
 
 .. _class_ARVRInterface_method_uninitialize:
 

@@ -73,7 +73,7 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **can_instance** **(** :ref:`String<class_String>` class **)** const
 
-Returns true if you can instance objects from the specified 'class', false in other case.
+Returns ``true`` if you can instance objects from the specified 'class', ``false`` in other case.
 
 .. _class_ClassDB_method_class_exists:
 
@@ -103,7 +103,7 @@ Returns an array with the names all the integer constants of 'class' or its ance
 
 - :ref:`Array<class_Array>` **class_get_method_list** **(** :ref:`String<class_String>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
-Returns an array with all the methods of 'class' or its ancestry if 'no_inheritance' is false. Every element of the array is a :ref:`Dictionary<class_Dictionary>` with the following keys: args, default_args, flags, id, name, return: (class_name, hint, hint_string, name, type, usage).
+Returns an array with all the methods of 'class' or its ancestry if 'no_inheritance' is ``false``. Every element of the array is a :ref:`Dictionary<class_Dictionary>` with the following keys: args, default_args, flags, id, name, return: (class_name, hint, hint_string, name, type, usage).
 
 .. _class_ClassDB_method_class_get_property:
 
@@ -115,7 +115,7 @@ Returns the value of 'property' of 'class' or its ancestry.
 
 - :ref:`Array<class_Array>` **class_get_property_list** **(** :ref:`String<class_String>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
-Returns an array with all the properties of 'class' or its ancestry if 'no_inheritance' is false.
+Returns an array with all the properties of 'class' or its ancestry if 'no_inheritance' is ``false``.
 
 .. _class_ClassDB_method_class_get_signal:
 
@@ -127,7 +127,7 @@ Returns the 'signal' data of 'class' or its ancestry. The returned value is a :r
 
 - :ref:`Array<class_Array>` **class_get_signal_list** **(** :ref:`String<class_String>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
-Returns an array with all the signals of 'class' or its ancestry if 'no_inheritance' is false. Every element of the array is a :ref:`Dictionary<class_Dictionary>` as described in :ref:`class_get_signal<class_ClassDB_method_class_get_signal>`.
+Returns an array with all the signals of 'class' or its ancestry if 'no_inheritance' is ``false``. Every element of the array is a :ref:`Dictionary<class_Dictionary>` as described in :ref:`class_get_signal<class_ClassDB_method_class_get_signal>`.
 
 .. _class_ClassDB_method_class_has_integer_constant:
 

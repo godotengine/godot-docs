@@ -136,6 +136,10 @@ enum **Mode**:
 
 .. _class_TileMap_constant_HALF_OFFSET_DISABLED:
 
+.. _class_TileMap_constant_HALF_OFFSET_NEGATIVE_X:
+
+.. _class_TileMap_constant_HALF_OFFSET_NEGATIVE_Y:
+
 enum **HalfOffset**:
 
 - **HALF_OFFSET_X** = **0** --- Half offset on the X coordinate.
@@ -143,6 +147,10 @@ enum **HalfOffset**:
 - **HALF_OFFSET_Y** = **1** --- Half offset on the Y coordinate.
 
 - **HALF_OFFSET_DISABLED** = **2** --- Half offset disabled.
+
+- **HALF_OFFSET_NEGATIVE_X** = **3** --- Half offset on the X coordinate (negative).
+
+- **HALF_OFFSET_NEGATIVE_Y** = **4** --- Half offset on the Y coordinate (negative).
 
 .. _enum_TileMap_TileOrigin:
 
@@ -458,6 +466,15 @@ Optionally, the tile can also be flipped, transposed, or given autotile coordina
 Note that data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
 
 If you need these to be immediately updated, you can call :ref:`update_dirty_quadrants<class_TileMap_method_update_dirty_quadrants>`.
+
+Overriding this method also overrides it internally, allowing custom logic to be implemented when tiles are placed/removed:
+
+::
+
+    func set_cell(x, y, tile, flip_x, flip_y, transpose, autotile_coord)
+        # Write your custom logic here.
+        # To call the default method:
+        .set_cell(x, y, tile, flip_x, flip_y, transpose, autotile_coord)
 
 .. _class_TileMap_method_set_cellv:
 

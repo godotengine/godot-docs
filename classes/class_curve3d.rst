@@ -213,7 +213,7 @@ If ``idx`` is out of bounds it is truncated to the first or last vertex, and ``t
 
 Returns a point within the curve at position ``offset``, where ``offset`` is measured as a pixel distance along the curve.
 
-To do that, it finds the two cached points where the ``offset`` lies between, then interpolates the values. This interpolation is cubic if ``cubic`` is set to true, or linear if set to false.
+To do that, it finds the two cached points where the ``offset`` lies between, then interpolates the values. This interpolation is cubic if ``cubic`` is set to ``true``, or linear if set to ``false``.
 
 Cubic interpolation tends to follow the curves better, but linear is faster (and often, precise enough).
 

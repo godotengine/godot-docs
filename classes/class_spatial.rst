@@ -130,7 +130,7 @@ Constants
 
 .. _class_Spatial_constant_NOTIFICATION_VISIBILITY_CHANGED:
 
-- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Spatial nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.
+- **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- Spatial nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
 In order for ``NOTIFICATION_TRANSFORM_CHANGED`` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Spatial_method_set_notify_transform>`.
 

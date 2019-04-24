@@ -336,13 +336,13 @@ Return the (integer) type of right (output) 'idx' slot.
 
 - :ref:`bool<class_bool>` **is_slot_enabled_left** **(** :ref:`int<class_int>` idx **)** const
 
-Return true if left (input) slot 'idx' is enabled. False otherwise.
+Return ``true`` if left (input) slot 'idx' is enabled, ``false`` otherwise.
 
 .. _class_GraphNode_method_is_slot_enabled_right:
 
 - :ref:`bool<class_bool>` **is_slot_enabled_right** **(** :ref:`int<class_int>` idx **)** const
 
-Return true if right (output) slot 'idx' is enabled. False otherwise.
+Return ``true`` if right (output) slot 'idx' is enabled, ``false`` otherwise.
 
 .. _class_GraphNode_method_set_slot:
 

@@ -9,6 +9,8 @@ EditorSceneImporter
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`EditorSceneImporterAssimp<class_EditorSceneImporterAssimp>`
+
 **Category:** Core
 
 Brief Description

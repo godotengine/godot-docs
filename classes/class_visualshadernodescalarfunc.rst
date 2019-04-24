@@ -68,6 +68,28 @@ Enumerations
 
 .. _class_VisualShaderNodeScalarFunc_constant_FUNC_NEGATE:
 
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ACOSH:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ASINH:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ATANH:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_DEGREES:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_EXP2:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_INVERSE_SQRT:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_LOG2:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_RADIANS:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_RECIPROCAL:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ROUNDEVEN:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_TRUNC:
+
 enum **Function**:
 
 - **FUNC_SIN** = **0**
@@ -109,6 +131,28 @@ enum **Function**:
 - **FUNC_SATURATE** = **18**
 
 - **FUNC_NEGATE** = **19**
+
+- **FUNC_ACOSH** = **20**
+
+- **FUNC_ASINH** = **21**
+
+- **FUNC_ATANH** = **22**
+
+- **FUNC_DEGREES** = **23**
+
+- **FUNC_EXP2** = **24**
+
+- **FUNC_INVERSE_SQRT** = **25**
+
+- **FUNC_LOG2** = **26**
+
+- **FUNC_RADIANS** = **27**
+
+- **FUNC_RECIPROCAL** = **28**
+
+- **FUNC_ROUNDEVEN** = **29**
+
+- **FUNC_TRUNC** = **30**
 
 Property Descriptions
 ---------------------

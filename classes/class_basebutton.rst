@@ -152,7 +152,7 @@ Determines when the button is considered clicked, one of the ACTION_MODE\_\* con
 
 Binary mask to choose which mouse buttons this button will respond to.
 
-To allow both left-click and right-click, set this to 3, because it's BUTTON_MASK_LEFT | BUTTON_MASK_RIGHT.
+To allow both left-click and right-click, use ``BUTTON_MASK_LEFT | BUTTON_MASK_RIGHT``.
 
 .. _class_BaseButton_property_disabled:
 
@@ -263,5 +263,5 @@ Return the visual state used to draw the button. This is useful mainly when impl
 
 - :ref:`bool<class_bool>` **is_hovered** **(** **)** const
 
-Return true if the mouse has entered the button and has not left it yet.
+Return ``true`` if the mouse has entered the button and has not left it yet.
 

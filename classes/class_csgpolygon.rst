@@ -7,7 +7,7 @@
 CSGPolygon
 ==========
 
-**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -136,7 +136,7 @@ Extrusion mode.
 | *Getter* | is_path_continuous_u()       |
 +----------+------------------------------+
 
-If true the u component of our uv will continuously increase in unison with the distance traveled along our path when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
+If ``true`` the u component of our uv will continuously increase in unison with the distance traveled along our path when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
 
 .. _class_CSGPolygon_property_path_interval:
 
@@ -160,7 +160,7 @@ Interval at which a new extrusion slice is added along the path when :ref:`mode<
 | *Getter* | is_path_joined()       |
 +----------+------------------------+
 
-If true the start and end of our path are joined together ensuring there is no seam when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
+If ``true`` the start and end of our path are joined together ensuring there is no seam when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
 
 .. _class_CSGPolygon_property_path_local:
 
@@ -172,7 +172,7 @@ If true the start and end of our path are joined together ensuring there is no s
 | *Getter* | is_path_local()       |
 +----------+-----------------------+
 
-If false we extrude centered on our path, if true we extrude in relation to the position of our CSGPolygon when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
+If ``false`` we extrude centered on our path, if ``true`` we extrude in relation to the position of our CSGPolygon when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
 
 .. _class_CSGPolygon_property_path_node:
 
