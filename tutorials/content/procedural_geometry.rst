@@ -3,8 +3,8 @@
 Procedural geometry generation
 ==============================
 
-Users often ask how to generate geometry from easily code. This is not very complicated, but it's not obvious.
-Godot provides a few classes entirely dedicated to make it this easy. Still, the best tool for the job depends
+Users often ask how to generate geometry easily from code. This is not very complicated, but it's not obvious.
+Godot provides few classes entirely dedicated to make it this easy. Still, the best tool for the job depends
 entirely on the use case.
 
 SurfaceTool
@@ -14,7 +14,7 @@ This is the most common helper. :ref:`SurfaceTool<class_SurfaceTool>` is a class
 
 It has a similar API to OpenGL 1.x, and it's meant for static content. This means, the mesh is generated once and then used.
 
-Here is a simple example of how to use it to add a single triangle.
+Here is a simple example on how to use it to add a single triangle.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
