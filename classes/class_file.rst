@@ -308,7 +308,7 @@ Returns an MD5 String representing the file at the given path or an empty :ref:`
 
 - :ref:`int<class_int>` **get_modified_time** **(** :ref:`String<class_String>` file **)** const
 
-Returns the last time the ``file`` was modified in unix timestamp format or returns a :ref:`String<class_String>` "ERROR IN ``file``". This unix timestamp can be converted to datetime by using :ref:`OS.get_datetime_from_unix_time<class_OS_method_get_datetime_from_unix_time>`.
+Returns the last time the ``file`` was modified in unix timestamp format or 0 if the file does not exist. This unix timestamp can be converted to datetime by using :ref:`OS.get_datetime_from_unix_time<class_OS_method_get_datetime_from_unix_time>`.
 
 .. _class_File_method_get_pascal_string:
 
