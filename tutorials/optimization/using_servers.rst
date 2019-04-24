@@ -1,9 +1,9 @@
 .. _doc_using_servers:
 
-Optimization Using Servers
+Optimization using Servers
 ==========================
 
-Engines like Godot provide increased ease of use thanks to it's high level constructs and features.
+Engines like Godot provide increased ease of use thanks to their high level constructs and features.
 Most of them are accessed and used via the :ref:`Scene System<doc_scene_tree>`. Using nodes and
 resources simplifies project organization and asset management in complex games.
 
@@ -32,10 +32,10 @@ One of the most interesting design decisions for Godot, is the fact that the who
 At the core, Godot uses the concept of Servers. They are very low level APIs to control
 rendering, physics, sound, etc. The scene system is built on top of them and uses them directly. The most common servers are:
 
-* :ref:`Visual Server<class_VisualServer>`: handles everything related to graphics.
-* :ref:`PhysicsServer<class_PhysicsServer>`: handles everything related to 3D physics.
-* :ref:`Physics2DServer<class_Physics2DServer>`: handles everything related to 2D physics.
-* :ref:`AudioServer<class_AudioServer>`: handles everything related to audio.
+* :ref:`VisualServer <class_VisualServer>`: handles everything related to graphics.
+* :ref:`PhysicsServer <class_PhysicsServer>`: handles everything related to 3D physics.
+* :ref:`Physics2DServer <class_Physics2DServer>`: handles everything related to 2D physics.
+* :ref:`AudioServer <class_AudioServer>`: handles everything related to audio.
 
 Just explore their APIs and you will realize that the all functions provided are low-level
 implementations of everything Godot allows you to do.
@@ -43,7 +43,7 @@ implementations of everything Godot allows you to do.
 RIDs
 ----
 
-The key to using servers is understanding Resource ID (RID) objects. These are opaque
+The key to using servers is understanding Resource ID (:ref:`RID <class_RID>`) objects. These are opaque
 handles to the sever implementation. They are allocated and freed manually. Almost every
 function in the servers requires RIDs to access the actual resource.
 
@@ -56,31 +56,34 @@ the internal RID is erased too.
 
 For nodes, there are many functions available:
 
-* For CanvasItem, the :ref:`CanvasItem.get_canvas_item()<class_CanvasItem_method_get_canvas_item>`
+* For CanvasItem, the :ref:`CanvasItem.get_canvas_item() <class_CanvasItem_method_get_canvas_item>`
   method will return the canvas item RID in the server.
-* For CanvasLayer, the :ref:`CanvasLayer.get_canvas()<class_CanvasLayer_method_get_canvas>`
+* For CanvasLayer, the :ref:`CanvasLayer.get_canvas() <class_CanvasLayer_method_get_canvas>`
   method will return the canvas RID in the server.
-* For Viewport, the :ref:`Viewport.get_viewport_rid()<class_Viewport_method_get_viewport_rid>`
+* For Viewport, the :ref:`Viewport.get_viewport_rid() <class_Viewport_method_get_viewport_rid>`
   method will return the viewport RID in the server.
-* For 3D, the :ref:`World<class_World>` resource (obtainable in the *Viewport* and *Spatial* nodes)
+* For 3D, the :ref:`World <class_World>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
+  and :ref:`Spatial <class_Spatial>` nodes)
   contains functions to get the *VisualServer Scenario*, and the *PhysicsServer Space*. This
   allows creating 3D objects directly with the server API and using them.
-* For 2D, the :ref:`World2D<class_World2D>` resource (obtainable in the *Viewport* and *CanvasItem*
+* For 2D, the :ref:`World2D <class_World2D>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
+  and :ref:`CanvasItem <class_CanvasItem>` nodes)
   nodes) contains functions to get the *VisualServer Canvas*, and the *Physics2DServer Space*. This
   allows creating 2D objects directly with the server API and using them.
 * The :ref:`VisualInstance<class_VisualInstance>` class, allows getting the scenario *instance* and
-  *instance base* via the :ref:`VisualInstance.get_instance()<class_VisualInstance_method_get_instance>`
-  and :ref:`VisualInstance.get_base()<class_VisualInstance_method_get_base>` respectively.
+  *instance base* via the :ref:`VisualInstance.get_instance() <class_VisualInstance_method_get_instance>`
+  and :ref:`VisualInstance.get_base() <class_VisualInstance_method_get_base>` respectively.
 
 Just explore the nodes and resources you are familiar with and find the functions to obtain the server *RIDs*.
 
 It is not advised to control RIDs from objects that already have a node associated. Instead, server
 functions should always be used for creating and controlling new ones and interacting with the existing ones.
 
-Creating a Sprite
+Creating a sprite
 -----------------
 
-This is a simple example of how to create a sprite from code and move it using the low-level Canvas Item API.
+This is a simple example of how to create a sprite from code and move it using the low-level
+:ref:`CanvasItem <class_CanvasItem>` API.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -138,10 +141,11 @@ The 3D APIs are different than the 2D ones, so the instantiation API must be use
         var xform = Transform(Basis(), Vector3(20, 100, 0))
         VisualServer.instance_set_transform(instance,xform)
 
-Creating a 2D RigidBody and moving a Sprite with it
+Creating a 2D RigidBody and moving a sprite with it
 ----------------------------------------------------
 
-This creates a *RigidBody* using the *Physics2DServer* API, and moves a *Canvas Item*  when the body moves.
+This creates a :ref:`RigidBody2D <class_RigidBody2D>` using the :ref:`Physics2DServer <Physics2DServer>` API,
+and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -168,12 +172,13 @@ This creates a *RigidBody* using the *Physics2DServer* API, and moves a *Canvas 
         # if you have many bodies and a single callback.
         Physics2DServer.body_set_force_integration_callback(body, self, "_body_moved", 0)
 
-The 3D version should be very similar, as 2D and 3D physics servers are identical.
+The 3D version should be very similar, as 2D and 3D physics servers are identical (using
+:ref:`RigidBody <RigidBody>` and :ref:`PhysicsServer <PhysicsServer>` respectively).
 
 Getting data from the servers
 -----------------------------
 
-Try to **never** request any information from *VisualServer*, *PhysicsServer* or *Physics2DServer*
+Try to **never** request any information from ``VisualServer``, ``PhysicsServer`` or ``Physics2DServer``
 by calling functions unless you know what you are doing. These servers will often run asynchronously
 for performance and calling any function that returns a value will stall them and force them to process
 anything pending until the function is actually called. This will severely decrease performance if you
