@@ -80,13 +80,13 @@ We construct a rotation matrix like so:
   //angle is scaled by 0.1 so that the fish only pivots and doesn't rotate all the way around
   //pivot is a uniform float
   float pivot_angle = cos(time) * 0.1 * pivot;
-	mat2 rotation_matrix = mat2(vec2(cos(pivot_angle), -sin(pivot_angle)), vec2(sin(pivot_angle), cos(pivot_angle)));
+  mat2 rotation_matrix = mat2(vec2(cos(pivot_angle), -sin(pivot_angle)), vec2(sin(pivot_angle), cos(pivot_angle)));
 
 And then we apply it in the ``x`` and ``z`` axes by multiplying it by ``VERTEX.xz``.
 
 .. code-block:: glsl
 
-	VERTEX.xz = rotation_matrix * VERTEX.xz;
+  VERTEX.xz = rotation_matrix * VERTEX.xz;
 
 With only the pivot applied you should see something like this:
 
@@ -121,14 +121,14 @@ we first  construct a rotation matrix.
 
   //twist is a uniform float
   float twist_angle = cos(time + body) * 0.3 * twist;
-	mat2 twist_matrix = mat2(vec2(cos(twist_angle), -sin(twist_angle)), vec2(sin(twist_angle), cos(twist_angle)));
+  mat2 twist_matrix = mat2(vec2(cos(twist_angle), -sin(twist_angle)), vec2(sin(twist_angle), cos(twist_angle)));
 
 We apply the rotation in the ``xy`` axes so that the fish appears to roll around its spine. For 
 this to work, the fishes spine needs to be centered on the ``z`` axis.
 
 .. code-block:: glsl
 
-	VERTEX.xy = twist_matrix * VERTEX.xy;
+  VERTEX.xy = twist_matrix * VERTEX.xy;
 
 Here is the fish with twist applied:
 
@@ -219,10 +219,10 @@ to loop over all the instances and set their transform to a random position.
 
 ::
   
-	for i in range($School.multimesh.instance_count):
-		var position = Transform()
-		position = position.translated(Vector3(randf() * 100 - 50, randf() * 50 - 25, randf() * 50 - 25))
-		$School.multimesh.set_instance_transform(i, position)
+  for i in range($School.multimesh.instance_count):
+    var position = Transform()
+    position = position.translated(Vector3(randf() * 100 - 50, randf() * 50 - 25, randf() * 50 - 25))
+    $School.multimesh.set_instance_transform(i, position)
 
 Running this script will place the fish in random positions in a box around the position of the
 MultiMeshInstance.
@@ -244,7 +244,7 @@ We do that by adding the per-instance custom value ``INSTANCE_CUSTOM`` to ``time
 
 .. code-block:: glsl
 
- 	float time = (TIME * time_scale) + (6.28318 * INSTANCE_CUSTOM.x);
+  float time = (TIME * time_scale) + (6.28318 * INSTANCE_CUSTOM.x);
 
 Next, we need to pass a value into ``INSTANCE_CUSTOM``. We do that by adding one line into 
 the ``for`` loop from above. In the ``for`` loop we assign each instance a set of four 
