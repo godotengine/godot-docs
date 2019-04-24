@@ -1,10 +1,10 @@
 .. _doc_using_servers:
 
-Optimization Using Servers
+Optimization using Servers
 ==========================
 
-Engines like Godot provide increased ease of use thanks to its high level constructs and features. 
-Most of them are accessed and used via the :ref:`Scene System<doc_scene_tree>`. Using nodes and 
+Engines like Godot provide increased ease of use thanks to their high level constructs and features.
+Most of them are accessed and used via the :ref:`Scene System<doc_scene_tree>`. Using nodes and
 resources simplifies project organization and asset management in complex games.
 
 There are, of course, always drawbacks:
@@ -14,28 +14,28 @@ There are, of course, always drawbacks:
 * It is not possible to use multiple threads to control them
 * More memory is needed.
 
-In many cases, this is not really a problem (Godot is very optimized, and most operations are handled 
-with signals, so no polling is required). Still, sometimes it can be. For example, dealing with 
-tens of thousands of instances for something that needs to be processed every frame can be a bottleneck. 
+In many cases, this is not really a problem (Godot is very optimized, and most operations are handled
+with signals, so no polling is required). Still, sometimes it can be. For example, dealing with
+tens of thousands of instances for something that needs to be processed every frame can be a bottleneck.
 
-This type of situation makes programmers regret they are using a game engine and wish they could go 
-back to a more handcrafted, low level implementation of game code. 
+This type of situation makes programmers regret they are using a game engine and wish they could go
+back to a more handcrafted, low level implementation of game code.
 
 Still, Godot is designed to work around this problem.
 
 Servers
 -------
 
-One of the most interesting design decisions for Godot, is the fact that the whole scene system is 
+One of the most interesting design decisions for Godot, is the fact that the whole scene system is
 *optional*. While it is not currently possible to compile it out, it can be completely bypassed.
 
-At the core, Godot uses the concept of Servers. They are very low level APIs to control 
+At the core, Godot uses the concept of Servers. They are very low level APIs to control
 rendering, physics, sound, etc. The scene system is built on top of them and uses them directly. The most common servers are:
 
-* :ref:`Visual Server<class_VisualServer>`: handles everything related to graphics.
-* :ref:`PhysicsServer<class_PhysicsServer>`: handles everything related to 3D physics.
-* :ref:`Physics2DServer<class_Physics2DServer>`: handles everything related to 2D physics.
-* :ref:`AudioServer<class_AudioServer>`: handles everything related to audio.
+* :ref:`VisualServer <class_VisualServer>`: handles everything related to graphics.
+* :ref:`PhysicsServer <class_PhysicsServer>`: handles everything related to 3D physics.
+* :ref:`Physics2DServer <class_Physics2DServer>`: handles everything related to 2D physics.
+* :ref:`AudioServer <class_AudioServer>`: handles everything related to audio.
 
 Just explore their APIs and you will realize that the all functions provided are low-level
 implementations of everything Godot allows you to do.
@@ -43,44 +43,47 @@ implementations of everything Godot allows you to do.
 RIDs
 ----
 
-The key to using servers is understanding Resource ID (RID) objects. These are opaque 
-handles to the sever implementation. They are allocated and freed manually. Almost every 
+The key to using servers is understanding Resource ID (:ref:`RID <class_RID>`) objects. These are opaque
+handles to the sever implementation. They are allocated and freed manually. Almost every
 function in the servers requires RIDs to access the actual resource.
 
-Most Godot nodes and resources contain these RIDs from the servers internally, and they can 
-be obtained with different functions. In fact, anything that inherits :ref:`Resource <class_Resource>` 
-can be directly casted to an RID (not all resources contain an RID, though, in such cases 
-the RID will be empty). In fact, resources can be passed to server APIs as RIDs. Just make 
-sure to keep references to the resources ouside the server, because if the resource is erased, 
+Most Godot nodes and resources contain these RIDs from the servers internally, and they can
+be obtained with different functions. In fact, anything that inherits :ref:`Resource <class_Resource>`
+can be directly casted to an RID (not all resources contain an RID, though, in such cases
+the RID will be empty). In fact, resources can be passed to server APIs as RIDs. Just make
+sure to keep references to the resources ouside the server, because if the resource is erased,
 the internal RID is erased too.
 
 For nodes, there are many functions available:
 
-* For CanvasItem, the :ref:`CanvasItem.get_canvas_item()<class_CanvasItem_method_get_canvas_item>` 
-  method will return the canvas item RID in the server. 
-* For CanvasLayer, the :ref:`CanvasLayer.get_canvas()<class_CanvasLayer_method_get_canvas>` 
-  method will return the canvas RID in the server. 
-* For Viewport, the :ref:`Viewport.get_viewport_rid()<class_Viewport_method_get_viewport_rid>` 
-  method will return the viewport RID in the server. 
-* For 3D, the :ref:`World<class_World>` resource (obtainable in the *Viewport* and *Spatial* nodes, 
-  contains function to get the *VisualServer Scenario*, and the *PhysicsServer Space*. This 
+* For CanvasItem, the :ref:`CanvasItem.get_canvas_item() <class_CanvasItem_method_get_canvas_item>`
+  method will return the canvas item RID in the server.
+* For CanvasLayer, the :ref:`CanvasLayer.get_canvas() <class_CanvasLayer_method_get_canvas>`
+  method will return the canvas RID in the server.
+* For Viewport, the :ref:`Viewport.get_viewport_rid() <class_Viewport_method_get_viewport_rid>`
+  method will return the viewport RID in the server.
+* For 3D, the :ref:`World <class_World>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
+  and :ref:`Spatial <class_Spatial>` nodes)
+  contains functions to get the *VisualServer Scenario*, and the *PhysicsServer Space*. This
   allows creating 3D objects directly with the server API and using them.
-* For 2D, the :ref:`World2D<class_World2D>` resource (obtainable in the *Viewport* and *CanvasItem* 
-  nodes, contains function to get the *VisualServer Canvas*, and the *Physics2DServer Space*. This 
+* For 2D, the :ref:`World2D <class_World2D>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
+  and :ref:`CanvasItem <class_CanvasItem>` nodes)
+  nodes) contains functions to get the *VisualServer Canvas*, and the *Physics2DServer Space*. This
   allows creating 2D objects directly with the server API and using them.
-* The :ref:`VisualInstance<class_VisualInstance>` class, allows getting the scenario *instance* and 
-  *instance base* via the :ref:`VisualInstance.get_instance()<class_VisualInstance_method_get_instance>` 
-  and :ref:`VisualInstance.get_base()<class_VisualInstance_method_get_base>` respectively.
+* The :ref:`VisualInstance<class_VisualInstance>` class, allows getting the scenario *instance* and
+  *instance base* via the :ref:`VisualInstance.get_instance() <class_VisualInstance_method_get_instance>`
+  and :ref:`VisualInstance.get_base() <class_VisualInstance_method_get_base>` respectively.
 
-Just explore the nodes and resources you are familiar with and find the functions to obtain the server *RIDs*. 
+Just explore the nodes and resources you are familiar with and find the functions to obtain the server *RIDs*.
 
-It is not advised to control RIDs from objects that already have a node associated. Instead, server 
+It is not advised to control RIDs from objects that already have a node associated. Instead, server
 functions should always be used for creating and controlling new ones and interacting with the existing ones.
 
-Creating a Sprite
+Creating a sprite
 -----------------
 
-This is a simple example of how to create a sprite from code and move it using the low-level Canvas Item API.
+This is a simple example of how to create a sprite from code and move it using the low-level
+:ref:`CanvasItem <class_CanvasItem>` API.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -88,22 +91,21 @@ This is a simple example of how to create a sprite from code and move it using t
     extends Node2D
 
     func _ready():
-	
-        # Create a canvas item, child of this node
+        # Create a canvas item, child of this node.
         var ci_rid = VisualServer.canvas_item_create()
-        # Make this node the parent
-        VisualServer.canvas_item_set_parent( ci_rid, get_canvas_item() )
-        # Draw a sprite on it
-        # Remember, keep this reference
+        # Make this node the parent.
+        VisualServer.canvas_item_set_parent(ci_rid, get_canvas_item())
+        # Draw a sprite on it.
+        # Remember, keep this reference.
         var sprite = load("res://mysprite.png")
-        # Add it, centered
-        VisualServer.canvas_item_add_texture_rect(ci_rid, Rect2( sprite.get_size() / 2, sprite.get_size() ), sprite )
-        # Add the item, rotated 45 degrees and translated
-        var xform = Transform2D().rotated( deg2rad(45) ).translated( Vector2( 20, 30 ) )	
-        VisualServer.canvas_item_set_transform( ci_rid, xform )
+        # Add it, centered.
+        VisualServer.canvas_item_add_texture_rect(ci_rid, Rect2(sprite.get_size() / 2, sprite.get_size()), sprite)
+        # Add the item, rotated 45 degrees and translated.
+        var xform = Transform2D().rotated(deg2rad(45)).translated(Vector2(20, 30))
+        VisualServer.canvas_item_set_transform(ci_rid, xform)
 
-The Canvas Item API in the server allows you to add draw primitives to it. Once added, they can't be modified. 
-The Item needs to be cleared and the primitives re-added (this is not the case for setting the transform, 
+The Canvas Item API in the server allows you to add draw primitives to it. Once added, they can't be modified.
+The Item needs to be cleared and the primitives re-added (this is not the case for setting the transform,
 which can be done as many times as desired).
 
 Primitives are cleared this way:
@@ -111,8 +113,8 @@ Primitives are cleared this way:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    VisualServer.canvas_item_clear( ci_rid )
-	
+    VisualServer.canvas_item_clear(ci_rid)
+
 
 Instantiating a Mesh into 3D space
 ----------------------------------
@@ -123,64 +125,64 @@ The 3D APIs are different than the 2D ones, so the instantiation API must be use
  .. code-tab:: gdscript GDScript
 
     extends Spatial
-    
-    func _ready():
 
-        # Create a visual instance (for 3D)
-        var instance = VisualServer.instance_create()	
+    func _ready():
+        # Create a visual instance (for 3D).
+        var instance = VisualServer.instance_create()
         # Set the scenario from the world, this ensures it
-        # appears with the same objects as the scene
+        # appears with the same objects as the scene.
         var scenario = get_world().scenario
-        VisualServer.instance_set_scenario(instance,scenario)
-        # add a mesh to it
-        # remember, keep the reference
+        VisualServer.instance_set_scenario(instance, scenario)
+        # Add a mesh to it.
+        # Remember, keep the reference.
         var mesh = load("res://mymesh.obj")
         VisualServer.instance_set_base(instance,mesh)
-        # move the mesh around
-        var xform = Transform( Basis(), Vector3(20,100,0) )
+        # Move the mesh around.
+        var xform = Transform(Basis(), Vector3(20, 100, 0))
         VisualServer.instance_set_transform(instance,xform)
-	
-Creating a 2D RigidBody and moving a Sprite with it
+
+Creating a 2D RigidBody and moving a sprite with it
 ----------------------------------------------------
 
-This creates a *RigidBody* using the *Physics2DServer* API, and moves a *Canvas Item*  when the body moves.
+This creates a :ref:`RigidBody2D <class_RigidBody2D>` using the :ref:`Physics2DServer <Physics2DServer>` API,
+and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func  _body_moved(state : Physics2DDirectBodyState, index):
-        # Created your own canvas item, use it here
-        VisualServer.canvas_item_set_transform( canvas_item, state.transform )
+    func _body_moved(state, index):
+        # Created your own canvas item, use it here.
+        VisualServer.canvas_item_set_transform(canvas_item, state.transform)
 
     func _ready():
-    
-        # Create the body
+        # Create the body.
         var body = Physics2DServer.body_create()
-        Physics2DServer.body_set_mode( body, Physics2DServer.BODY_MODE_RIGID )
-        # Add a shape
-        var shape = RectangleShape2D.new() 
-        shape.extents = Vector2(10,10)
-        # make sure to keep the shape reference!
-        Physics2DServer.body_add_shape( body, shape ) #
-        # Set space, so it collides in the same space as current scene
-        Physics2DServer.body_set_space( body, get_world_2d().space )
-        # Move initial position
-        Physics2DServer.body_set_state( body, Physics2DServer.BODY_STATE_TRANSFORM, Transform2D(0, Vector2(10,20) ) )
+        Physics2DServer.body_set_mode(body, Physics2DServer.BODY_MODE_RIGID)
+        # Add a shape.
+        var shape = RectangleShape2D.new()
+        shape.extents = Vector2(10, 10)
+        # Make sure to keep the shape reference!
+        Physics2DServer.body_add_shape(body, shape)
+        # Set space, so it collides in the same space as current scene.
+        Physics2DServer.body_set_space(body, get_world_2d().space)
+        # Move initial position.
+        Physics2DServer.body_set_state(body, Physics2DServer.BODY_STATE_TRANSFORM, Transform2D(0, Vector2(10, 20)))
         # Add the transform callback, when body moves
-        # The last parameter is optional, can be used as index if you have many bodies
-        # And a single callback.
-        Physics2DServer.body_set_force_integration_callback( body, self, "_body_moved", 0)
-	
-The 3D version should be very similar, as 2D and 3D physics servers are identical.
+        # The last parameter is optional, can be used as index
+        # if you have many bodies and a single callback.
+        Physics2DServer.body_set_force_integration_callback(body, self, "_body_moved", 0)
+
+The 3D version should be very similar, as 2D and 3D physics servers are identical (using
+:ref:`RigidBody <RigidBody>` and :ref:`PhysicsServer <PhysicsServer>` respectively).
 
 Getting data from the servers
 -----------------------------
 
-Try to **never** request any information from *VisualServer*, *PhysicsServer* or *Physics2DServer* 
-by calling functions unless you know what you are doing. These servers will often run asynchronously 
-for performance and calling any function that returns a value will stall them and force them to process 
-anything pending until the function is actually called. This will severely decrease performance if you 
+Try to **never** request any information from ``VisualServer``, ``PhysicsServer`` or ``Physics2DServer``
+by calling functions unless you know what you are doing. These servers will often run asynchronously
+for performance and calling any function that returns a value will stall them and force them to process
+anything pending until the function is actually called. This will severely decrease performance if you
 call them every frame (and it won't be obvious why).
 
-Because of this, most APIs in such servers are designed so it's not even possible to request information 
+Because of this, most APIs in such servers are designed so it's not even possible to request information
 back, until it's actual data that can be saved.
