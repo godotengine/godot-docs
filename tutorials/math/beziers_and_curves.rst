@@ -1,7 +1,7 @@
 .. _doc_beziers_and_curves:
 
 Beziers, Curves and Paths
-==========================
+=========================
 
 Introduction
 ~~~~~~~~~~~~
@@ -30,16 +30,16 @@ To draw the curve between them, just interpolate the two segments that form betw
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _quadratic_bezier(p0 : Vector2,p1 : Vector2,p2 : Vector2 ,t : float):
-        var q0 = p0.linear_interpolate(p1,t)
-        var q1 = p1.linear_interpolate(p2,t)
+    func _quadratic_bezier(p0, p1, p2, t):
+        var q0 = p0.linear_interpolate(p1, t)
+        var q1 = p1.linear_interpolate(p2, t)
 
 This will reduce the points from 3 to 2. Do the same process with *q0* and *q1* to obtain a single point *r*.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        var r = q0.linear_interpolate(q1,t)
+        var r = q0.linear_interpolate(q1, t)
         return r
 
 Finally, this point fill follow the curve when t goes from 0 to 1. This type of curve is called *Quadratic Bezier*.
@@ -49,9 +49,9 @@ Finally, this point fill follow the curve when t goes from 0 to 1. This type of 
 *(Image credit: Wikipedia)*
 
 Cubic Bezier
-----------------
+------------
 
-Let's add one more point and make it four. 
+Let's add one more point and make it four.
 
 .. image:: img/bezier_cubic_points.png
 
@@ -67,24 +67,24 @@ Interpolate then into three points:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        var q0 = p0.linear_interpolate(p1,t)
-        var q1 = p1.linear_interpolate(p2,t)
-        var q2 = p2.linear_interpolate(p3,t)
+        var q0 = p0.linear_interpolate(p1, t)
+        var q1 = p1.linear_interpolate(p2, t)
+        var q2 = p2.linear_interpolate(p3, t)
 
 From there to two points:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        var r0 = q0.linear_interpolate(q1,t)
-        var r1 = q1.linear_interpolate(q2,t)
+        var r0 = q0.linear_interpolate(q1, t)
+        var r1 = q1.linear_interpolate(q2, t)
 
 And to one:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        var s = r0.linear_interpolate(r1,t)
+        var s = r0.linear_interpolate(r1, t)
         return s
 
 The result will be a smooth curve interpolating between all four points:
@@ -96,7 +96,7 @@ The result will be a smooth curve interpolating between all four points:
 .. note:: For 3D, it's exactly the same, just change Vector2 into Vector3.
 
 Control point form
--------------------
+------------------
 
 Now, let's take these points and change the way we understand them. Instead of having p0, p1, p2 and p3, we will store them as:
 
@@ -112,7 +112,7 @@ This way, we have two points and two control points (which are relative vectors 
 This is actually how graphics software presents Bezier curves to the users, and how Godot supports them.
 
 Curve2D, Curve3D, Path and Path2D
--------------------------------
+---------------------------------
 
 There are two objects that contain curves: :ref:`Curve3D <class_Curve3D>` and :ref:`Curve2D <class_Curve2D>` (for 3D and 2D respectively).
 
@@ -123,7 +123,7 @@ They can contain several points, allowing for longer paths. It is also possible 
 Using them, however, may not be completely obvious, so following is a description of the most common use cases for Bezier curves.
 
 Evaluating
------------
+----------
 
 Just evaluating them may be an option, but in most cases it's not very useful. The big drawback with Bezier curves is that if you traverse them at constant speed, from *t=0* to *t=1*, the actual interpolation will *not* move at constant speed. The speed is also an interpolation between the distances between points p0, p1, p2 and p3 and there is not a mathematically simple way to traverse the curve at constant speed.
 
@@ -133,9 +133,10 @@ Let's do a simple example with the following pseudocode:
  .. code-tab:: gdscript GDScript
 
     var t = 0.0
-    _process(delta):
-        t+=delta
-        position = _cubic_bezier(p0,p1,p2,p3,t)
+
+    func _process(delta):
+        t += delta
+        position = _cubic_bezier(p0, p1, p2, p3, t)
 
 
 .. image:: img/bezier_interpolation_speed.gif
@@ -156,12 +157,12 @@ Additionally, if both control points were 0,0 (remember they are relative vector
 Before drawing Bezier curves, *tesselation* is required. This is often done with a recursive or divide and conquer function that splits the curve until the curvature amount becomes less than a certain threshold.
 
 The *Curve* classes provide this via the
-:ref:`Curve2D.tesselate()<class_Curve2D_method_tesselete>` function (which receives optional *stages* of recursion and angle *tolerance* arguments). This way, drawing something based on a curve is easier.
+:ref:`Curve2D.tessellate()<class_Curve2D_method_tessellate>` function (which receives optional *stages* of recursion and angle *tolerance* arguments). This way, drawing something based on a curve is easier.
 
 Traversal
 ---------
 
-The last common use case for the curves is to traverse them. Because of what was mentioned before regarding constant speed, this is also difficult. 
+The last common use case for the curves is to traverse them. Because of what was mentioned before regarding constant speed, this is also difficult.
 
 To make this easier, the curves need to be *baked* into equidistant points. This way, they can be approximated with regular  interpolation (which can be improved further with a cubic option). To do this, just use the :ref:`Curve.interpolate_baked()<class_Curve_method_interpolate_baked>` method together with
 :ref:`Curve2D.get_baked_length()<class_Curve2D_method_get_baked_length>`. The first call to either of them will bake the curve internally.
@@ -172,12 +173,11 @@ Traversal at constant speed, then, can be done with the following pseudo-code:
  .. code-tab:: gdscript GDScript
 
     var t = 0.0
-    _process(delta):
-        t+=delta	
-        position = curve.interpolate_baked( t * curve.get_baked_length(), true)
+
+    func _process(delta):
+        t += delta
+        position = curve.interpolate_baked(t * curve.get_baked_length(), true)
 
 And the output will, then, move at constant speed:
 
 .. image:: img/bezier_interpolation_baked.gif
-
-

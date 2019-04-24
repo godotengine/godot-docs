@@ -8,7 +8,7 @@ Introduction
 
 Interpolation is a very basic operation in graphics programming. It's good to become familiar with it in order to expand your horizons as a graphics developer.
 
-The basic idea is that you want to transition from A to B. A value *t*, represents the states in-between. 
+The basic idea is that you want to transition from A to B. A value *t*, represents the states in-between.
 
 As an example if *t* is 0, then the state is A. If *t* is 1, then the state is B. Anything in-between is an *interpolation*.
 
@@ -24,7 +24,7 @@ And often simplified to:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    interpolation = A  + (B - A) * t
+    interpolation = A + (B - A) * t
 
 which is exactly the same.
 
@@ -46,16 +46,16 @@ Here is simple pseudo-code for going from point A to B using interpolation:
  .. code-tab:: gdscript GDScript
 
     func _physics_process(delta):
-	
-        t+=delta*0.4	
-        $Sprite.position = $A.position.linear_interpolate( $B.position,t )
-	
+        t += delta * 0.4
+
+        $Sprite.position = $A.position.linear_interpolate($B.position, t)
+
 It will produce the following motion:
 
 .. image:: img/interpolation_vector.gif
 
 Transform interpolation
---------------------
+-----------------------
 
 It is also possible to interpolate whole transforms (make sure they have either uniform scale or, at least, the same non-uniform scale).
 For this, the function :ref:`Transform.interpolate_with()<class_Transform_method_interpolate_with>` can be used.
@@ -72,11 +72,10 @@ Using the following pseudocode:
     var t = 0.0
 
     func _process(delta):
+        t += delta
 
-        t+=delta
-			
-        $Monkey.transform = $Position1.transform.interpolate_with( $Position2.transform, t )
-		
+        $Monkey.transform = $Position1.transform.interpolate_with($Position2.transform, t)
+
 And again, it will produce the following motion:
 
 .. image:: img/interpolation_monkey.gif
@@ -91,17 +90,14 @@ Interpolation can be used to smooth movement, rotation, etc. Here is an example 
  .. code-tab:: gdscript GDScript
 
     const FOLLOW_SPEED = 4.0
-    
+
     func _physics_process(delta):
-	
         var mouse_pos = get_local_mouse_position()
-        
-        $Sprite.position = $Sprite.position.linear_interpolate( mouse_pos, delta * FOLLOW_SPEED )
+
+        $Sprite.position = $Sprite.position.linear_interpolate(mouse_pos, delta * FOLLOW_SPEED)
 
 Here is how it looks:
 
 .. image:: img/interpolation_follow.gif
 
 This useful for smoothing camera movement, allies following you (ensuring they stay within a certain range), and many other common game patterns.
-
-
