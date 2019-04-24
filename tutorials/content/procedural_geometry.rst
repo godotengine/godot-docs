@@ -21,7 +21,7 @@ Here is a simple example of how to use it to add a single triangle.
 
     var st = SurfaceTool.new()
     
-    st.begin(Mesh::PRIMITIVE_TRIANGLE)
+    st.begin(Mesh.PRIMITIVE_TRIANGLE)
 
     # Prepares attributes for add_vertex
     st.add_normal( Vector3(0,0,1) )
@@ -52,7 +52,7 @@ ImmediateGeometry
 Unlike *SurfaceTool*, :ref:`ImmediateGeometry<class_ImmediateGeometry>` is an actual node. It's similar in the "OpenGL 1.x" style API,
 but it's actually designed to create content on the fly and modify it every frame efficiently.
 
-Generating complex geometry (several thousand vertices) with this node is inefficient, even if it's done only once. Instead, *ImmediateGeometry* is designed to generate simple geometry every frame.
+Generating complex geometry (several thousand vertices) with this node is inefficient, even if it's done only once. Instead, *ImmediateGeometry* is designed to generate simple geometry that changes every frame.
 
 It's used similar to *SurfaceTool*.
 
@@ -69,7 +69,7 @@ It's used similar to *SurfaceTool*.
         clear()
 
         # Begin draw
-        begin(Mesh::PRIMITIVE_TRIANGLE)
+        begin(Mesh.PRIMITIVE_TRIANGLE)
     
         # Prepares attributes for add_vertex
         set_normal( Vector3(0,0,1) )
@@ -100,8 +100,8 @@ Similar code as before, but draw a square using indices:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var array = []
-    array.resize(Mesh::ARRAY_MAX)
+    var arrays = []
+    arrays.resize(Mesh::ARRAY_MAX)
 
     var normal_array = []
     var uv_array = []
@@ -138,13 +138,13 @@ Similar code as before, but draw a square using indices:
     index_array[4]=3
     index_array[5]=0
 
-    arrays[Mesh::ARRAY_VERTEX]=vertex_array
-    arrays[Mesh::ARRAY_NORMAL]=normal_array
-    arrays[Mesh::ARRAY_TEX_UV]=uv_array
-    arrays[Mesh::ARRAY_INDEX]=index_array
+    arrays[Mesh.ARRAY_VERTEX]=vertex_array
+    arrays[Mesh.ARRAY_NORMAL]=normal_array
+    arrays[Mesh.ARRAY_TEX_UV]=uv_array
+    arrays[Mesh.ARRAY_INDEX]=index_array
 
     var mesh = ArrayMesh.new()
 
-    mesh.add_surface_from_arrays(Mesh::PRIMITIVE_TRIANGLES,arrays)
+    mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
 
 
