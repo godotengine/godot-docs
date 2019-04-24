@@ -25,18 +25,18 @@ Creating a thread is very simple, just use the following code:
     # The thread will start here.
     func _ready():
         thread = Thread.new()
-        # third argument is optional userdata, it can be any variable
-        thread.start(self,"_thread_function","Wafflecopter")
+        # Third argument is optional userdata, it can be any variable.
+        thread.start(self, "_thread_function", "Wafflecopter")
 
-    # Run here and exit
-    # The argument is the userdata passed from start()
+    # Run here and exit.
+    # The argument is the userdata passed from start().
     # If no argument was passed, this one still needs to
-    # Be here and it will be null.
+    # be here and it will be null.
     func _thread_function(userdata):
         # Print the userdata ("Wafflecopter")
-        print("I'm a thread! Userdata is: ",userdata)
+        print("I'm a thread! Userdata is: ", userdata)
 
-    # Thread must be disposed (or "Joined"), for portability
+    # Thread must be disposed (or "joined"), for portability.
     func _exit_tree():
         thread.wait_to_finish()
 
