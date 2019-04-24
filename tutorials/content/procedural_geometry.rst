@@ -3,7 +3,7 @@
 Procedural geometry generation
 ==============================
 
-Users often ask how to generate geometry easily from code. This is not very complicated, but it's not obvious.
+Users often ask how to generate geometry from code. This is not very complicated, but it's not obvious.
 Godot provides a few classes entirely dedicated to make it this easy. Still, the best tool for the job depends
 entirely on the use case.
 
