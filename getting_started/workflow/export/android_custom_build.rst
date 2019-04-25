@@ -1,7 +1,7 @@
 .. _doc_android_custom_build:
 
 Custom builds for Android
-=====================
+=========================
 
 Godot provides the option to use custom build Android templates. Instead of using the already pre-built template that ships
 with Godot, an actual Android Java project gets installed into your project folder. Godot will then build it and use it as
@@ -17,7 +17,7 @@ Configuring custom build is a more or less straightforward process, but it may t
 Instructions will be provided as detailed as possible to do this process.
 
 Set up the Custom Build environment
-------------------------------------
+-----------------------------------
 
 Go to the Project menu, and install the *Custom Build* template:
 
@@ -38,7 +38,7 @@ Install Java
 Android SDK does not come with Java, so it needs to be installed manually. Instal Java SDK (**not** runtime or JRE). OpenSDK 8 is recommended, otherwise Oracle's Java SDK for version 8 will work. Later versions may not work for Android development.
 
 Download the command line tools
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Go to Google's website for downloading the Android SDK. A search will take you to the *Android Studio* download page.
 You don't want it, so don't download (if you do want it, read further down for instructions for doing the same using Android Studio).
@@ -59,13 +59,13 @@ This may appear a little confusing, but be sure to follow these instructions car
 
   C:\users\<yourusername>\Documents\android-sdk
 
- is often good enough. Unzip the *sdk zip file* you just downloaded there. The only thing in the directory you created in the previous step should be the *tools* folder with it's contents inside, like this:
+is often good enough. Unzip the *sdk zip file* you just downloaded there. The only thing in the directory you created in the previous step should be the *tools* folder with it's contents inside, like this:
 
 ::
 
-   android-sdk/
-   android-sdk/tools/
-   android-sdk/tools/allthefiles
+  android-sdk/
+  android-sdk/tools/
+  android-sdk/tools/allthefiles
 
 
 Accepting the Licenses
@@ -93,7 +93,7 @@ Afterwards, install the platform tools (this is needed to install *adb*):
 
 
 Generating the Keystore
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Once *platform tools* are installed, the last step is to generate a debug keystore (this is needed to build). Go up two folders by
 writing:
@@ -135,7 +135,7 @@ With this, you should be all set.
 
 
 Install the Android SDK (Android Studio)
-----------------------------------------------
+----------------------------------------
 
 If you just finished installing the SDK via command line tools, feel free to skip this section entirely. The Android Studio path is easier, but it takes up more disk space. It's also useful if you plan to develop Godot for Android (modify the Java source code) or if you plan to develop Add-Ons.
 
@@ -152,7 +152,7 @@ In any case, it's better to select a different path inside your user folders. Th
 
 ::
 
-   C:\Users\<yourusername>\Documents\android-sdk
+  C:\Users\<yourusername>\Documents\android-sdk
 
 Replace *yourusername* by your actual user name. Once it's correct, select from the list above in the same screen:
 
@@ -163,7 +163,7 @@ The rest are not needed, because the build system will fetch them itself. After 
 
 
 Generating the Keystore
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 You thought that by going the Android Studio way you could escape the Keystore generation, but no. It's back to haunt you.
 
@@ -202,7 +202,7 @@ With this, you should be all set.
 
 
 Enabling Custom Build and Exporting
-------------------------------------
+-----------------------------------
 
 When setting up the Android project in the *Project -> Export* dialog, *custom build* needs to be enabled:
 
@@ -212,11 +212,5 @@ From now on, attempting to export the project or one-click deploy will call the 
 
 .. image:: img/custom_build_gradle.png
 
-The templates built will be used automatically afterwards, so no further configuration is needed.
-
-
-
-
-
-
-
+The templates built will be used automatically afterwards, so no further 
+configuration is needed.

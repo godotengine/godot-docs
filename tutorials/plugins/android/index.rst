@@ -1,5 +1,5 @@
-Android Plugins
-================
+Android plugins
+===============
 
 .. toctree::
    :maxdepth: 1

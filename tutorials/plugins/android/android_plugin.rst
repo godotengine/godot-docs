@@ -1,6 +1,6 @@
 .. _doc_android_plugin:
 
-Creating Android Plugins
+Creating Android plugins
 ========================
 
 Introduction
@@ -39,7 +39,7 @@ It is also possible that you just want to do modifications to the Android export
 can remain compatible with newer Godot versions (as the android source template will get updated on each release).
 
 Maybe REST
------------
+----------
 
 Most of these APIs allow communication via REST/JSON APIs. If the API is relatively simple and does not require
 complex authenthication, this may be a better idea than writing a specific Android plugin.
@@ -184,7 +184,7 @@ A singleton object template follows:
         private int instanceId = 0;
 
         public int myFunction(String p_str) {
-            // a function to bind
+            // A function to bind.
             return 1;
         }
 
@@ -198,7 +198,7 @@ A singleton object template follows:
         }
 
         public MySingleton(Activity p_activity) {
-            //register class name and functions to bind
+            // Register class name and functions to bind.
             registerClass("MySingleton", new String[]
                 {
                     "myFunction",
@@ -206,19 +206,19 @@ A singleton object template follows:
                 });
             this.appActivity = p_activity;
             this.appContext = appActivity.getApplicationContext();
-            // you might want to try initializing your singleton here, but android
-            // threads are weird and this runs in another thread, so to interact with Godot you usually have to do
+            // You might want to try initializing your singleton here, but android
+            // threads are weird and this runs in another thread, so to interact with Godot you usually have to do.
             activity.runOnUiThread(new Runnable() {
                     public void run() {
-                        //useful way to get config info from project.godot
+                        // Useful way to get config info from "project.godot".
                         String key = GodotLib.getGlobal("plugin/api_key");
-                        //SDK.initializeHere();
+                        // SDK.initializeHere();
                     }
             });
 
         }
 
-        // forwarded callbacks you can reimplement, as SDKs often need them
+        // Forwarded callbacks you can reimplement, as SDKs often need them.
 
         protected void onMainActivityResult(int requestCode, int resultCode, Intent data) {}
         protected void onMainRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {}
@@ -228,12 +228,12 @@ A singleton object template follows:
         protected void onMainDestroy() {}
 
         protected void onGLDrawFrame(GL10 gl) {}
-        protected void onGLSurfaceChanged(GL10 gl, int width, int height) {} // singletons will always miss first onGLSurfaceChanged call
+        protected void onGLSurfaceChanged(GL10 gl, int width, int height) {} // Singletons will always miss first 'onGLSurfaceChanged' call.
 
     }
 
 Calling back to Godot
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 Calling back to Godot from Java is a little more difficult. The instance
 ID of the script must be known first, this is obtained by calling
@@ -245,7 +245,7 @@ Java will most likely run in a separate thread, so calls are deferred:
 
 .. code:: java
 
-    GodotLib.calldeferred(<instanceid>, "<function>", new Object[]{param1,param2,etc});
+    GodotLib.calldeferred(<instanceid>, "<function>", new Object[]{param1, param2, etc});
 
 
 Godot will detect this singleton and initialize it at the proper time.
@@ -255,7 +255,7 @@ Troubleshooting
 ---------------
 
 Godot crashes upon load
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Check ``adb logcat`` for possible problems, then:
 
@@ -277,4 +277,3 @@ It's simple to use and it's used like this:
 
 This is most likely not functional yet, if you want to test it and help
 us make it work, contact us on irc.freenode.org:#godotengine-devel.
-
