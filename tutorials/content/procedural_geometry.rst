@@ -21,7 +21,7 @@ Here is a simple example of how to use it to add a single triangle.
 
     var st = SurfaceTool.new()
 
-    st.begin(Mesh.PRIMITIVE_TRIANGLE)
+    st.begin(Mesh.PRIMITIVE_TRIANGLES)
 
     # Prepare attributes for add_vertex.
     st.add_normal(Vector3(0, 0, 1))
@@ -65,7 +65,7 @@ It's used similar to *SurfaceTool*.
         clear()
 
         # Begin draw.
-        begin(Mesh.PRIMITIVE_TRIANGLE)
+        begin(Mesh.PRIMITIVE_TRIANGLES)
 
         # Prepare attributes for add_vertex.
         set_normal( Vector3(0, 0, 1))
