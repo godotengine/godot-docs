@@ -254,7 +254,7 @@ Here is the code for the player using signals to emit the bullet:
 
     extends Sprite
 
-    signal shoot(bullet, direction, location)
+    signal shoot(Bullet, direction, location)
 
     var Bullet = preload("res://Bullet.tscn")
 
