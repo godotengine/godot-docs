@@ -229,6 +229,21 @@ To configure stretching at runtime from a script, use the
 ``get_tree().set_screen_stretch()`` function (see
 :ref:`SceneTree.set_screen_stretch() <class_SceneTree_method_set_screen_stretch>`).
 
+Reducing aliasing on downsampling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the game has a very high base resolution (say 4k), aliasing might appear
+when downsampling to something considerably lower like 720. This can be
+detected and reduced by forcing to shrink all images by 2 upon load (this is
+very fast). This can be achieved by calling
+
+::
+
+    VisualServer.texture_set_shrink_all_x2_on_set_data(true) 
+
+
+Before most game data is loaded.
+
 Handling aspect ratios
 ^^^^^^^^^^^^^^^^^^^^^^
 
