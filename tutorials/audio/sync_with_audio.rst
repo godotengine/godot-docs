@@ -8,7 +8,7 @@ Introduction
 
 In any application or game, sound and music playback will have a slight delay. For games, this delay is often so small that is negligible. Sound effects will come out a few milliseconds after any play() function is called. For music this does not matter as in most games it does not interact with the gameplay.
 
-Still, for some games (mainly, rythm games), it may be required to synchronize player actions with something happening in a song (usually in sync with the BPM). For this, having more precise timing information for an exact playback position is very welcome.
+Still, for some games (mainly, rhythm games), it may be required to synchronize player actions with something happening in a song (usually in sync with the BPM). For this, having more precise timing information for an exact playback position is very welcome.
 
 Achieving very low playback timing precision is very difficult. This because many factors are at play during audio playback:
 
@@ -66,7 +66,7 @@ This way, obtaining the actual playback position during *_process()* is possible
 
 In the long run, though, as the sound hardware clock is never exactly in sync with the system clock, they timing information will slowly drift away. 
 
-For a rythm game where a song begins and ends after a few minutes, this approach is fine (and it's the recommended approach). For a game where playback can last a much longer time, the game will eventually go out of sync and a different approach is needed.
+For a rhythm game where a song begins and ends after a few minutes, this approach is fine (and it's the recommended approach). For a game where playback can last a much longer time, the game will eventually go out of sync and a different approach is needed.
 
 Using the sound hardware clock to sync
 -------------------------------
