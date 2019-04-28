@@ -18,20 +18,20 @@ Achieving very low playback timing precision is very difficult. This because man
 * Graphics APIs display two or three frames late.
 * When playing on TVs, some delay may be added due to image processing.
 
-The most common way to reducing latency is to shrink the audio buffers (again, by editing the latency setting in the project settings). The problem is that when latency is too small, it will require considerably higher amount of CPU for sound mixing. this increases the risk of skpping (a crack in sound because a mix callback was lost). 
+The most common way to reducing latency is to shrink the audio buffers (again, by editing the latency setting in the project settings). The problem is that when latency is too small, it will require considerably higher amount of CPU for sound mixing. this increases the risk of skpping (a crack in sound because a mix callback was lost).
 
-This is common a tradeoff, so Godot ships with sensible defaults that should not need to be commonly altered. 
+This is common a tradeoff, so Godot ships with sensible defaults that should not need to be commonly altered.
 
 The problem, in the end, is dealing with synchronization for games tha require it, and not so much this slight delay. Beginning Godot 3.2, some helpers were added to obtain more precise playback timing.
 
 Using the system clock to sync
--------------------------------
+------------------------------
 
-As mentioned before, If you call :ref:`AudioStreamPlayer.play()<class_AudioStreamPlayer_method_play>`, sound will not begin immediately, but when the audio thread processes the next block. 
+As mentioned before, If you call :ref:`AudioStreamPlayer.play()<class_AudioStreamPlayer_method_play>`, sound will not begin immediately, but when the audio thread processes the next block.
 
 This delay can't be avoided but it can be estimated by calling :ref:`AudioServer.get_time_to_next_mix()<class_AudioServer_method_get_time_to_next_mix>`.
 
-The output latency (what happens after the mix) can also be estimated by calling :ref:`AudioServer.get_output_latency()<class_AudioServer_get_output_latency>`. 
+The output latency (what happens after the mix) can also be estimated by calling :ref:`AudioServer.get_output_latency()<class_AudioServer_get_output_latency>`.
 
 Add these two and it's possible to guess almost exactly when sound or music will begin playing in the speakers:
 
@@ -46,30 +46,30 @@ This way, obtaining the actual playback position during *_process()* is possible
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var time_begin 
+    var time_begin
     var time_delay
-     
+
     func _ready()
         time_begin = OS.get_ticks_usec()
         time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
         $Player.play()
-    
+
     func _process(delta):
-        # obtain from ticks
+        # Obtain from ticks.
         var time = (OS.get_ticks_usec() - time_begin) / 1000000.0
-        # compensate for latency
-        time -= time_delay		
-        # may be below 0 (did not being yet)
+        # Compensate for latency.
+        time -= time_delay
+        # May be below 0 (did not being yet).
         time = max(0, time)
-        print("Time is: ",time)
+        print("Time is: ", time)
 
 
-In the long run, though, as the sound hardware clock is never exactly in sync with the system clock, they timing information will slowly drift away. 
+In the long run, though, as the sound hardware clock is never exactly in sync with the system clock, they timing information will slowly drift away.
 
 For a rhythm game where a song begins and ends after a few minutes, this approach is fine (and it's the recommended approach). For a game where playback can last a much longer time, the game will eventually go out of sync and a different approach is needed.
 
 Using the sound hardware clock to sync
--------------------------------
+--------------------------------------
 
 Using :ref:`AudioStreamPlayer.get_playback_position()<class_AudioStreamPlayer_method_get_playback_position>` to obtain the current position for the song sounds ideal, but it's not that useful as-is. This value will increment in chunks (every time the audio callback mixed a block of sound), so many calls can return the same value. Added to this, the value will be out of sync with the speakers too because of the previously mentioned reasons.
 
@@ -97,15 +97,12 @@ Here is the same code as before using this approach:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-     
+
     func _ready()
         $Player.play()
-    
+
     func _process(delta):
         var time = $Player.get_playback_position() + AudioServer.get_time_since_last_mix()
-        # Compensate for output latency
+        # Compensate for output latency.
         time -= AudioServer.get_output_latency()
-        print("Time is: ",time)
-
-
-
+        print("Time is: ", time)
