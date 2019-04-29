@@ -160,6 +160,8 @@ Edit the file for your chosen class in ``doc/classes/`` to update the class refe
 
 Edit it using your favourite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBcode-style blocks. More on that below.
 
+If you need to check that the modifications you've made are correct in the generated documentation, build Godot as described :ref:`here <toc-devel-compiling>`, run the editor and open the help for the page you modified.
+
 How to write the class reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
