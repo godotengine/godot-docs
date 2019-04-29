@@ -3,9 +3,11 @@
 Contribute to the Class Reference
 =================================
 
-Godot ships with many nodes and singletons to help you develop your games in GDscript. Each is a class, documented in the :ref:`class reference <toc-class-ref>`. This reference is essential for anyone learning the engine: it is available both online and in the engine.
+Godot ships with many nodes and singletons to help you develop your games. Each is a class, documented in the :ref:`class reference <toc-class-ref>`.
+This reference is essential for anyone learning the engine: it is available both online and in the engine.
 
-But it's incomplete. Some methods, variables and signals lack descriptions. Others changed with recent releases and need updates. The developers can't write the entire reference on their own. Godot needs you, and all of us, to contribute.
+But it's incomplete. Some methods, variables and signals lack descriptions. Others changed with recent releases and need updates.
+The developers can't write the entire reference on their own. Godot needs you, and all of us, to contribute.
 
 **Important:** If you are planning to make larger changes or a more substantial contribution, it is usually a good idea
 to create an issue (or a comment in an existing one) to let others know so they don't start working on the same thing too.
