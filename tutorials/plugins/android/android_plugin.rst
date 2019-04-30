@@ -56,7 +56,7 @@ Writing an Android plugin is now possible begining Godot 3.2. It's also pretty e
 
 Before anything, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
 
-You plugin needs to be a folder other than *"build/"* inside the *"res://android"* directory (which was created by following the link above). Any name is fine, so name it according to the SDK you will implement (or just your plugin name).
+Your plugin needs to be in a folder other than *"build/"* inside the *"res://android"* directory (which was created by following the link above). Any name is fine, so name it according to the SDK you will implement (or just your plugin name).
 
 Once created, there are certain rules to follow, but they are simple.
 
@@ -79,7 +79,7 @@ Gradle will treat them as part of the project automatically when building, same 
 "Chunk" files
 ^^^^^^^^^^^^^
 
-it is possible to modify *"AndroidManifest.xml"* and *build.gradle* in *"res://android/build"* directly and Godot will keep your
+It is now possible to modify *"AndroidManifest.xml"* and *build.gradle* in *"res://android/build"* directly and Godot will keep your
 changes when building. The problem, however, is that if you update Godot, you will also need to update the *build/* folder and your
 changes will be lost.
 
