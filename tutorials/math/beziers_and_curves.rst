@@ -3,35 +3,39 @@
 Beziers, curves and paths
 =========================
 
-Bezier curves are a mathematical approximation to natural shapes. Their goal is to represent a curve with
-as little information as possible, and with a high level of flexibility.
+Bezier curves are a mathematical approximation of natural geometric shapes. We
+use them to represent a curve with as little information as possible and with a
+high level of flexibility.
 
-Unlike other more abstract mathematical concepts, Bezier curves were created for industrial design and are
-widely popular in the graphics software industry.
+Unlike more abstract mathematical concepts, Bezier curves were created for
+industrial design. They are a popular tool in the graphics software industry.
 
-The way they work is very simple, but to understand it, let's start from the most minimal example.
-
-If you are not fresh on interpolation, please read the :ref:`relevant page<doc_interpolation>`
-before proceeding.
-
+They rely on :ref:`interpolation<doc_interpolation>`, which we saw in the
+previous article, combining multiple steps to create smooth curves. To better
+understand how Bezier curves work, let's start from its simplest form: Quadratic
+Bezier.
 
 Quadratic Bezier
 ----------------
 
-Take three points (the minimum required):
+Take three points, the minimum required for Quadratic Bezier to work:
 
 .. image:: img/bezier_quadratic_points.png
 
-To draw the curve between them, just interpolate the two segments that form between the three points, individually (using values 0 to 1). This will result in two points.
+To draw a curve between them, we first interpolate gradually over the two
+vertices of each of the two segments formed by the three points, using values
+ranging from 0 to 1. This gives us two points that move along the segments as we
+change the value of ``t`` from 0 to 1.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _quadratic_bezier(p0, p1, p2, t):
+    func _quadratic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float): 
         var q0 = p0.linear_interpolate(p1, t)
         var q1 = p1.linear_interpolate(p2, t)
 
-This will reduce the points from 3 to 2. Do the same process with ``q0`` and ``q1`` to obtain a single point ``r``.
+We then interpolate ``q0`` and ``q1`` to obtain a single point ``r`` that moves
+along a curve.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -39,7 +43,7 @@ This will reduce the points from 3 to 2. Do the same process with ``q0`` and ``q
         var r = q0.linear_interpolate(q1, t)
         return r
 
-Finally, this point fill follow the curve when ``t`` goes from 0 to 1. This type of curve is called *Quadratic Bezier*.
+This type of is called a *Quadratic Bezier* curve.
 
 .. image:: img/bezier_quadratic_points2.gif
 
@@ -48,18 +52,21 @@ Finally, this point fill follow the curve when ``t`` goes from 0 to 1. This type
 Cubic Bezier
 ------------
 
-Let's add one more point and make it four.
+Building upon the previous example, we can get more control by interpolating
+between four points.
 
 .. image:: img/bezier_cubic_points.png
 
-Then let's modify the function to take four points as an input, ``p0``, ``p1``, ``p2`` and ``p3``:
+We first use a function with four parameters to take four points as an input,
+``p0``, ``p1``, ``p2`` and ``p3``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _cubic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2, t: float):
 
-Interpolate then into three points:
+We apply a linear interpolation to each couple of points to reduce them to
+three:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -68,7 +75,7 @@ Interpolate then into three points:
         var q1 = p1.linear_interpolate(p2, t)
         var q2 = p2.linear_interpolate(p3, t)
 
-From there to two points:
+We then take our three points and reduce them to two:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -84,29 +91,51 @@ And to one:
         var s = r0.linear_interpolate(r1, t)
         return s
 
+Here is the full function:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _cubic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2, t: float):
+        var q0 = p0.linear_interpolate(p1, t)
+        var q1 = p1.linear_interpolate(p2, t)
+        var q2 = p2.linear_interpolate(p3, t)
+
+        var r0 = q0.linear_interpolate(q1, t)
+        var r1 = q1.linear_interpolate(q2, t)
+
+        var s = r0.linear_interpolate(r1, t)
+        return s
+
 The result will be a smooth curve interpolating between all four points:
 
 .. image:: img/bezier_cubic_points.gif
 
 *(Image credit: Wikipedia)*
 
-.. note:: For 3D, it's exactly the same, just change ``Vector2`` to ``Vector3``.
+.. note:: Cubic Bezier interpolation works the same in 3D, just use ``Vector3``
+          instead of ``Vector2``.
 
-Control point form
-------------------
+Adding control points
+---------------------
 
-Now, let's take these points and change the way we understand them. Instead of having ``p0``, ``p1``, ``p2`` and ``p3``, we will store them as:
+Building upon Cubic Bezier, we can change the way two of the points work to
+control the shape of our curve freely. Instead of having ``p0``, ``p1``, ``p2``
+and ``p3``, we will store them as:
 
-* ``POINT0 = P0``: Is the first point, the source
-* ``CONTROL0 = P1 - P0``: Is a relative vector for the first control point
-* ``CONTROL1 = P3 - P2``: Is a relative vector for the second control point
-* ``POINT1 = P3``: Is the second point, the destination
+* ``point0 = p0``: Is the first point, the source
+* ``control0 = p1 - p0``: Is a vector relative to the first control point
+* ``control1 = p3 - p2``: Is a vector relative to the second control point
+* ``point1 = p3``: Is the second point, the destination
 
-This way, we have two points and two control points (which are relative vectors to the respective points). If visualized, they will look a lot more familiar:
+This way, we have two points and two control points which are relative vectors
+to the respective points. If you've used graphics or animation software before,
+this might look familiar:
 
 .. image:: img/bezier_cubic_handles.png
 
-This is actually how graphics software presents Bezier curves to the users, and how Godot supports them.
+This is how graphics software presents Bezier curves to the users, and how they
+work and look in Godot.
 
 Curve2D, Curve3D, Path and Path2D
 ---------------------------------
