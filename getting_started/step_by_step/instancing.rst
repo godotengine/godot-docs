@@ -104,8 +104,7 @@ Press "Play" and notice that all of the instanced balls are now
 much more bouncy. Because the instanced balls are based on the saved scene,
 changes to that scene will affect all instances.
 
-You can also adjust individual instances. Set the bounce value back to ``0.5``
-and then in the ``Main`` scene, select one of the instanced balls. Set its
+You can also adjust individual instances. Set the bounce value back to ``0.5``. Open the ``Ball`` scene and select the Physics material. Set your physics material's Resource/Local To Scene value on. Then in the ``Main`` scene, select one of the instanced balls. Set its
 ``Bounce`` to ``1`` and press "Play".
 
 .. image:: img/instancing_property.png
