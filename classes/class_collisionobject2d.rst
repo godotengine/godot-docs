@@ -79,19 +79,19 @@ Signals
 
 - **input_event** **(** :ref:`Node<class_Node>` viewport, :ref:`InputEvent<class_InputEvent>` event, :ref:`int<class_int>` shape_idx **)**
 
-Emitted when an input event occurs and ``input_pickable`` is ``true``. See :ref:`_input_event<class_CollisionObject2D_method__input_event>` for details.
+Emitted when an input event occurs. Requires ``input_pickable`` to be ``true`` and at least one ``collision_layer`` bit to be set. See :ref:`_input_event<class_CollisionObject2D_method__input_event>` for details.
 
 .. _class_CollisionObject2D_signal_mouse_entered:
 
 - **mouse_entered** **(** **)**
 
-Emitted when the mouse pointer enters any of this object's shapes.
+Emitted when the mouse pointer enters any of this object's shapes. Requires ``input_pickable`` to be ``true`` and at least one ``collision_layer`` bit to be set.
 
 .. _class_CollisionObject2D_signal_mouse_exited:
 
 - **mouse_exited** **(** **)**
 
-Emitted when the mouse pointer exits all this object's shapes.
+Emitted when the mouse pointer exits all this object's shapes. Requires ``input_pickable`` to be ``true`` and at least one ``collision_layer`` bit to be set.
 
 Description
 -----------
@@ -111,7 +111,7 @@ Property Descriptions
 | *Getter* | is_pickable()       |
 +----------+---------------------+
 
-If ``true``, this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events.
+If ``true``, this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events. This requires at least one ``collision_layer`` bit to be set.
 
 Method Descriptions
 -------------------
