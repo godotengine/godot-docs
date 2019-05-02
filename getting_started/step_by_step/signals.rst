@@ -103,6 +103,8 @@ the signal is received. Let's make the Sprite blink:
         }
     }
 
+The $ is shorthand for get_node("NodePath").
+
 Run the scene and you'll see the Sprite blinking on and off every second. You can
 change the Timer's *Wait Time* property to alter this.
 
