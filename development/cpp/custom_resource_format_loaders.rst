@@ -127,7 +127,7 @@ Here is an example of how to create a custom datatype
 	#include "core/variant_parser.h"
 
 	class MyJson : public Resource {
-		GDCLASS(MyJson, Resource);
+		GODOT_CLASS(MyJson, Resource);
 
 	protected:
 		static void _bind_methods() {
