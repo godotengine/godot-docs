@@ -435,7 +435,7 @@ functions in your script. An example implementation of a forward iterator follow
             self.increment = inc
 
         func is_done():
-            return (curr < end)
+            return (curr >= end)
 
         func do_step():
             curr += increment
