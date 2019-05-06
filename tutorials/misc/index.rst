@@ -12,3 +12,4 @@ Miscellaneous
    running_code_in_the_editor
    change_scenes_manually
    gles2_gles3_differences
+   instancing_with_signals
