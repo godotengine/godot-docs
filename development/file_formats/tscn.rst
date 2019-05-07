@@ -12,7 +12,7 @@ indicate to Godot that the file has been exported from another program and
 should not be edited by the user from within Godot.
 
 For those looking for a complete description, the parsing is handled in the
-file `scene_format_text.cpp <https://github.com/godotengine/godot/blob/master/scene/resources/scene_format_text.cpp>`_
+file `resource_format_text.cpp <https://github.com/godotengine/godot/blob/master/scene/resources/resource_format_text.cpp>`_
 in the class :code:`ResourceFormatLoaderText`
 
 File structure
