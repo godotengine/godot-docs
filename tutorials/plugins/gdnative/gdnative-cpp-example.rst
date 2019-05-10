@@ -60,7 +60,7 @@ it is a good idea to add them as Git submodules:
     git init
     git submodule add https://github.com/GodotNativeTools/godot-cpp
     cd godot-cpp
-    git submodule update -- init
+    git submodule update --init
 
  .. code-tab:: none Godot 3.0
 
@@ -69,7 +69,7 @@ it is a good idea to add them as Git submodules:
     git init
     git submodule add -b 3.0 https://github.com/GodotNativeTools/godot-cpp
     cd godot-cpp
-    git submodule update -- init
+    git submodule update --init
 
 If you decide to just download the repositories or clone them
 into your project folder, make sure to keep the folder layout identical
