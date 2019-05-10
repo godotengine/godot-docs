@@ -58,7 +58,7 @@ unique and represent a string universally (they are usually in
 uppercase, to differentiate from other strings). Here's an example:
 
 +---------+------------------+----------------+--------------+
-| id      | en               | es             | ja           |
+|         | en               | es             | ja           |
 +=========+==================+================+==============+
 | GREET   | Hello, friend!   | Hola, Amigo!   | こんにちは   |
 +---------+------------------+----------------+--------------+
