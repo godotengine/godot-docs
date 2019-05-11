@@ -289,6 +289,16 @@ Here is the code for the player using signals to emit the bullet:
         }
     }
 
+Under the bullet scene, attach a script with this code used
+.. tabs::
+  .. code-tab:: gdscript GDScript
+  
+     extends Sprite
+
+     var velocity = Vector2(400, 0)
+
+     func _process(delta):
+	      position = position + delta * velocity
 
 In the main scene, we then connect the player's signal (it will appear in the
 "Node" tab).
