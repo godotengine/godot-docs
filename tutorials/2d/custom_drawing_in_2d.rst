@@ -434,8 +434,8 @@ smaller value, which directly depends on the rendering speed.
 
         # We only wrap angles when both of them are bigger than 360.
         if angle_from > 360 and angle_to > 360:
-            angle_from = wrap(angle_from, 0, 360)
-            angle_to = wrap(angle_to, 0, 360)
+            angle_from = wrapf(angle_from, 0, 360)
+            angle_to = wrapf(angle_to, 0, 360)
         update()
 
  .. code-tab:: csharp
@@ -448,8 +448,8 @@ smaller value, which directly depends on the rendering speed.
         // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)
         {
-            _angleFrom = Wrap(_angleFrom, 0, 360);
-            _angleTo = Wrap(_angleTo, 0, 360);
+            _angleFrom = Wrapf(_angleFrom, 0, 360);
+            _angleTo = Wrapf(_angleTo, 0, 360);
         }
         Update();
     }
