@@ -448,8 +448,8 @@ smaller value, which directly depends on the rendering speed.
         // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)
         {
-            _angleFrom = Wrap(_angleFrom, 0, 360);
-            _angleTo = Wrap(_angleTo, 0, 360);
+            _angleFrom = Wrapf(_angleFrom, 0, 360);
+            _angleTo = Wrapf(_angleTo, 0, 360);
         }
         Update();
     }
