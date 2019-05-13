@@ -291,7 +291,7 @@ on the screen will cause the player to move to the target location.
     var velocity = Vector2()
 
     func _input(event):
-        if event.is_action_pressed('click'):
+        if event.is_mouse_button_pressed(BUTTON_LEFT):
             target = get_global_mouse_position()
 
     func _physics_process(delta):
