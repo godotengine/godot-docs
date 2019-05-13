@@ -353,7 +353,7 @@ Mastering the PR workflow: the rebase
 -------------------------------------
 
 On the situation outlined above, your fellow contributors who are particularly
-pedantic regarding the Git history might ask your to *rebase* your branch to
+pedantic regarding the Git history might ask you to *rebase* your branch to
 *squash* or *meld* the last two commits together (i.e. the two related to the
 project manager), as the second commit basically fixes an issue in the first one.
 
