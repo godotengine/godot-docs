@@ -91,7 +91,7 @@ Return ``true`` if the dictionary is empty.
 
 - :ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
 
-Erase a dictionary key/value pair by key. Do not erase elements while iterating over the dictionary.
+Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise. Do not erase elements while iterating over the dictionary.
 
 .. _class_Dictionary_method_get:
 

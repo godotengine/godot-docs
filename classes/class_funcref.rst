@@ -22,6 +22,8 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>` | :ref:`call_func<class_FuncRef_method_call_func>` **(** ... **)** vararg                                 |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_valid<class_FuncRef_method_is_valid>` **(** **)** const                                        |
++-------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_function<class_FuncRef_method_set_function>` **(** :ref:`String<class_String>` name **)**     |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_instance<class_FuncRef_method_set_instance>` **(** :ref:`Object<class_Object>` instance **)** |
@@ -42,6 +44,10 @@ Method Descriptions
 - :ref:`Variant<class_Variant>` **call_func** **(** ... **)** vararg
 
 Calls the referenced function previously set by :ref:`set_function<class_FuncRef_method_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`.
+
+.. _class_FuncRef_method_is_valid:
+
+- :ref:`bool<class_bool>` **is_valid** **(** **)** const
 
 .. _class_FuncRef_method_set_function:
 

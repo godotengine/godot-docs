@@ -289,7 +289,7 @@ Returns the vector reflected from a plane defined by the given normal.
 
 - :ref:`Vector2<class_Vector2>` **rotated** **(** :ref:`float<class_float>` phi **)**
 
-Returns the vector rotated by ``phi`` radians.
+Returns the vector rotated by ``phi`` radians. See also :ref:`@GDScript.deg2rad<class_@GDScript_method_deg2rad>`.
 
 .. _class_Vector2_method_round:
 

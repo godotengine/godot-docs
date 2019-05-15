@@ -68,7 +68,12 @@ Methods
 Description
 -----------
 
+Contains multiple root nodes as children in a graph. Each node is used as a state, and provides multiple functions to alternate between states. Retrieve the AnimationNodeStateMachinePlayback object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programatically.
 
+::
+
+    var state_machine = anim_tree["parameters/StateMachine/playback"]
+    state_machine.travel("SomeState")
 
 Method Descriptions
 -------------------

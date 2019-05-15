@@ -173,6 +173,8 @@ If ``true``, the :ref:`animation<class_AnimatedSprite_property_animation>` is cu
 | *Getter* | get_speed_scale()      |
 +----------+------------------------+
 
+The animation speed is multiplied by this value.
+
 Method Descriptions
 -------------------
 

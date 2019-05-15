@@ -91,23 +91,23 @@ Enumerations
 
 enum **ArrayType**:
 
-- **ARRAY_VERTEX** = **0** --- Vertex array (array of :ref:`Vector3<class_Vector3>` vertices).
+- **ARRAY_VERTEX** = **0** --- :ref:`PoolVector3Array<class_PoolVector3Array>`, :ref:`PoolVector2Array<class_PoolVector2Array>`, or :ref:`Array<class_Array>` of vertex positions.
 
-- **ARRAY_NORMAL** = **1** --- Normal array (array of :ref:`Vector3<class_Vector3>` normals).
+- **ARRAY_NORMAL** = **1** --- :ref:`PoolVector3Array<class_PoolVector3Array>` of vertex normals.
 
-- **ARRAY_TANGENT** = **2** --- Tangent array, array of groups of 4 floats. first 3 floats determine the tangent, and the last the binormal direction as -1 or 1.
+- **ARRAY_TANGENT** = **2** --- :ref:`PoolRealArray<class_PoolRealArray>` of vertex tangents. Each element in groups of 4 floats, first 3 floats determine the tangent, and the last the binormal direction as -1 or 1.
 
-- **ARRAY_COLOR** = **3** --- Vertex array (array of :ref:`Color<class_Color>` colors).
+- **ARRAY_COLOR** = **3** --- :ref:`PoolColorArray<class_PoolColorArray>` of vertex colors.
 
-- **ARRAY_TEX_UV** = **4** --- UV array (array of :ref:`Vector3<class_Vector3>` UVs or float array of groups of 2 floats (u,v)).
+- **ARRAY_TEX_UV** = **4** --- :ref:`PoolVector2Array<class_PoolVector2Array>` for UV coordinates.
 
-- **ARRAY_TEX_UV2** = **5** --- Second UV array (array of :ref:`Vector3<class_Vector3>` UVs or float array of groups of 2 floats (u,v)).
+- **ARRAY_TEX_UV2** = **5** --- :ref:`PoolVector2Array<class_PoolVector2Array>` for second UV coordinates.
 
-- **ARRAY_BONES** = **6** --- Array of bone indices, as a float array. Each element in groups of 4 floats.
+- **ARRAY_BONES** = **6** --- :ref:`PoolRealArray<class_PoolRealArray>` or :ref:`PoolIntArray<class_PoolIntArray>` of bone indices. Each element in groups of 4 floats.
 
-- **ARRAY_WEIGHTS** = **7** --- Array of bone weights, as a float array. Each element in groups of 4 floats.
+- **ARRAY_WEIGHTS** = **7** --- :ref:`PoolRealArray<class_PoolRealArray>` of bone weights. Each element in groups of 4 floats.
 
-- **ARRAY_INDEX** = **8** --- :ref:`Array<class_Array>` of integers used as indices referencing vertices, colors, normals, tangents, and textures. All of those arrays must have the same number of elements as the vertex array. No index can be beyond the vertex array size. When this index array is present, it puts the function into "index mode," where the index selects the \*i\*'th vertex, normal, tangent, color, UV, etc. This means if you want to have different normals or colors along an edge, you have to duplicate the vertices.
+- **ARRAY_INDEX** = **8** --- :ref:`PoolIntArray<class_PoolIntArray>` of integers used as indices referencing vertices, colors, normals, tangents, and textures. All of those arrays must have the same number of elements as the vertex array. No index can be beyond the vertex array size. When this index array is present, it puts the function into "index mode," where the index selects the \*i\*'th vertex, normal, tangent, color, UV, etc. This means if you want to have different normals or colors along an edge, you have to duplicate the vertices.
 
 For triangles, the index array is interpreted as triples, referring to the vertices of each triangle. For lines, the index array is in pairs indicating the start and end of each line.
 

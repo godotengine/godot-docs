@@ -59,6 +59,13 @@ Simulated Motion: When these bodies are moved manually, either from code or from
 
 Kinematic Characters: KinematicBody2D also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/kinematic_character_2d`
+
+- :doc:`../tutorials/physics/using_kinematic_body_2d`
+
 Property Descriptions
 ---------------------
 

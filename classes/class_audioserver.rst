@@ -60,7 +60,13 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                             | :ref:`get_mix_rate<class_AudioServer_method_get_mix_rate>` **(** **)** const                                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                             | :ref:`get_output_latency<class_AudioServer_method_get_output_latency>` **(** **)** const                                                                                                      |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>`      | :ref:`get_speaker_mode<class_AudioServer_method_get_speaker_mode>` **(** **)** const                                                                                                          |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                             | :ref:`get_time_since_last_mix<class_AudioServer_method_get_time_since_last_mix>` **(** **)** const                                                                                            |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                             | :ref:`get_time_to_next_mix<class_AudioServer_method_get_time_to_next_mix>` **(** **)** const                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                               | :ref:`is_bus_bypassing_effects<class_AudioServer_method_is_bus_bypassing_effects>` **(** :ref:`int<class_int>` bus_idx **)** const                                                            |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -256,11 +262,23 @@ Returns the volume of the bus at index ``bus_idx`` in dB.
 
 Returns the sample rate at the output of the audioserver.
 
+.. _class_AudioServer_method_get_output_latency:
+
+- :ref:`float<class_float>` **get_output_latency** **(** **)** const
+
 .. _class_AudioServer_method_get_speaker_mode:
 
 - :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **get_speaker_mode** **(** **)** const
 
 Returns the speaker configuration.
+
+.. _class_AudioServer_method_get_time_since_last_mix:
+
+- :ref:`float<class_float>` **get_time_since_last_mix** **(** **)** const
+
+.. _class_AudioServer_method_get_time_to_next_mix:
+
+- :ref:`float<class_float>` **get_time_to_next_mix** **(** **)** const
 
 .. _class_AudioServer_method_is_bus_bypassing_effects:
 

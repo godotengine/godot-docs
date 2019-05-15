@@ -99,7 +99,7 @@ enum **Projection**:
 
 - **PROJECTION_PERSPECTIVE** = **0** --- Perspective Projection (object's size on the screen becomes smaller when far away).
 
-- **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are).
+- **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are; also known as orthographic projection).
 
 - **PROJECTION_FRUSTUM** = **2**
 

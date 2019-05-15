@@ -32,6 +32,10 @@ Properties
 +-----------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`context_menu_enabled<class_TextEdit_property_context_menu_enabled>`                 |
 +-----------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`draw_tabs<class_TextEdit_property_draw_tabs>`                                       |
++-----------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`fold_gutter<class_TextEdit_property_fold_gutter>`                                   |
++-----------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`       | :ref:`hiding_enabled<class_TextEdit_property_hiding_enabled>`                             |
 +-----------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`highlight_all_occurrences<class_TextEdit_property_highlight_all_occurrences>`       |
@@ -180,7 +184,13 @@ Theme Properties
 +---------------------------------+-----------------------------+
 | :ref:`Color<class_Color>`       | current_line_color          |
 +---------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | executing_line_color        |
++---------------------------------+-----------------------------+
 | :ref:`StyleBox<class_StyleBox>` | focus                       |
++---------------------------------+-----------------------------+
+| :ref:`Texture<class_Texture>`   | fold                        |
++---------------------------------+-----------------------------+
+| :ref:`Texture<class_Texture>`   | folded                      |
 +---------------------------------+-----------------------------+
 | :ref:`Font<class_Font>`         | font                        |
 +---------------------------------+-----------------------------+
@@ -387,6 +397,30 @@ If ``false``, the context menu disregards mouse location.
 
 If ``true``, a right click displays the context menu.
 
+.. _class_TextEdit_property_draw_tabs:
+
+- :ref:`bool<class_bool>` **draw_tabs**
+
++----------+----------------------+
+| *Setter* | set_draw_tabs(value) |
++----------+----------------------+
+| *Getter* | is_drawing_tabs()    |
++----------+----------------------+
+
+If ``true``, the "tab" character will have a visible representation.
+
+.. _class_TextEdit_property_fold_gutter:
+
+- :ref:`bool<class_bool>` **fold_gutter**
+
++----------+--------------------------------+
+| *Setter* | set_fold_gutter_enabled(value) |
++----------+--------------------------------+
+| *Getter* | is_fold_gutter_enabled()       |
++----------+--------------------------------+
+
+If ``true``, the fold gutter is visible. This enables folding groups of indented lines.
+
 .. _class_TextEdit_property_hiding_enabled:
 
 - :ref:`int<class_int>` **hiding_enabled**
@@ -528,6 +562,8 @@ Add a keyword and its color.
 
 - :ref:`bool<class_bool>` **can_fold** **(** :ref:`int<class_int>` line **)** const
 
+Returns if the given line is foldable, that is, it has indented lines right below it.
+
 .. _class_TextEdit_method_clear_colors:
 
 - void **clear_colors** **(** **)**
@@ -582,9 +618,13 @@ Clears the current selection.
 
 - void **fold_all_lines** **(** **)**
 
+Folds all lines that are possible to be folded (see :ref:`can_fold<class_TextEdit_method_can_fold>`).
+
 .. _class_TextEdit_method_fold_line:
 
 - void **fold_line** **(** :ref:`int<class_int>` line **)**
+
+Folds the given line, if possible (see :ref:`can_fold<class_TextEdit_method_can_fold>`).
 
 .. _class_TextEdit_method_get_breakpoints:
 
@@ -611,6 +651,8 @@ Return the amount of total lines in the text.
 .. _class_TextEdit_method_get_menu:
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_menu** **(** **)** const
+
+Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``TextEdit``. By default, this menu is displayed when right-clicking on the ``TextEdit``.
 
 .. _class_TextEdit_method_get_selection_from_column:
 
@@ -659,6 +701,8 @@ Insert a given text at the cursor position.
 .. _class_TextEdit_method_is_folded:
 
 - :ref:`bool<class_bool>` **is_folded** **(** :ref:`int<class_int>` line **)** const
+
+Returns if the given line is folded.
 
 .. _class_TextEdit_method_is_line_hidden:
 
@@ -729,6 +773,8 @@ Perform undo operation.
 .. _class_TextEdit_method_unfold_line:
 
 - void **unfold_line** **(** :ref:`int<class_int>` line **)**
+
+Unfolds the given line, if folded.
 
 .. _class_TextEdit_method_unhide_all_lines:
 

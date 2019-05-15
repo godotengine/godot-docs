@@ -30,6 +30,8 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`     | :ref:`get_open_scripts<class_ScriptEditor_method_get_open_scripts>` **(** **)** const                                                                                                             |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`goto_line<class_ScriptEditor_method_goto_line>` **(** :ref:`int<class_int>` line_number **)**                                                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`open_script_create_dialog<class_ScriptEditor_method_open_script_create_dialog>` **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**                    |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -74,6 +76,12 @@ Returns a :ref:`Script<class_Script>` that is currently active in editor.
 - :ref:`Array<class_Array>` **get_open_scripts** **(** **)** const
 
 Returns an array with all :ref:`Script<class_Script>` objects which are currently open in editor.
+
+.. _class_ScriptEditor_method_goto_line:
+
+- void **goto_line** **(** :ref:`int<class_int>` line_number **)**
+
+Goes to the specified line in the current script.
 
 .. _class_ScriptEditor_method_open_script_create_dialog:
 

@@ -14,7 +14,7 @@ HeightMapShape
 Brief Description
 -----------------
 
-Height map shape for 3D physics (bullet only)
+Height map shape for 3D physics (Bullet only).
 
 Properties
 ----------

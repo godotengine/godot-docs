@@ -178,13 +178,13 @@ Signals
 
 .. _class_PopupMenu_signal_id_focused:
 
-- **id_focused** **(** :ref:`int<class_int>` ID **)**
+- **id_focused** **(** :ref:`int<class_int>` id **)**
 
 This event is emitted when user navigated to an item of some id using ``ui_up`` or ``ui_down`` action.
 
 .. _class_PopupMenu_signal_id_pressed:
 
-- **id_pressed** **(** :ref:`int<class_int>` ID **)**
+- **id_pressed** **(** :ref:`int<class_int>` id **)**
 
 This event is emitted when an item of some id is pressed or its accelerator is activated.
 

@@ -24,6 +24,8 @@ Methods
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`clear<class_TranslationServer_method_clear>` **(** **)**                                                                             |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`   | :ref:`get_loaded_locales<class_TranslationServer_method_get_loaded_locales>` **(** **)** const                                             |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`get_locale<class_TranslationServer_method_get_locale>` **(** **)** const                                                             |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`get_locale_name<class_TranslationServer_method_get_locale_name>` **(** :ref:`String<class_String>` locale **)** const                |
@@ -61,6 +63,10 @@ Adds a :ref:`Translation<class_Translation>` resource.
 - void **clear** **(** **)**
 
 Clears the server from all translations.
+
+.. _class_TranslationServer_method_get_loaded_locales:
+
+- :ref:`Array<class_Array>` **get_loaded_locales** **(** **)** const
 
 .. _class_TranslationServer_method_get_locale:
 
