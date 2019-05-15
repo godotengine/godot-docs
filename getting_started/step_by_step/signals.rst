@@ -93,6 +93,8 @@ the signal is received. Let's make the Sprite blink:
     extends Node
 
     func _on_Timer_timeout():
+        # Note: the `$` operator is a shorthand for `get_node()`,
+        # so `$Sprite` is equivalent to `get_node("Sprite")`.
         $Sprite.visible = !$Sprite.visible
 
  .. code-tab:: csharp
