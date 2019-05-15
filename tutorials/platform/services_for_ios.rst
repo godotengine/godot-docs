@@ -61,7 +61,7 @@ The pending event interface consists of two methods:
 Store Kit
 ---------
 
-Implemented in platform/iphone/in_app_store.mm
+Implemented in ``platform/iphone/in_app_store.mm``.
 
 The Store Kit API is accessible through the "InAppStore" singleton (will
 always be available from gdscript). It is initialized automatically. It
@@ -173,17 +173,19 @@ The response events will be dictionaries with the following fields:
 Game Center
 -----------
 
-Implemented in platform/iphone/game_center.mm
+Implemented in ``platform/iphone/game_center.mm``.
 
 The Game Center API is available through the "GameCenter" singleton. It
-has 6 methods:
+has 8 methods:
 
+-  ``bool is_authenticated();``
 -  ``Error post_score(Variant p_score);``
--  ``Erroraward_achievement(Variant p_params);``
--  ``Error reset_achievements();``
--  ``Error request_achievements();``
--  ``Error request_achievement_descriptions();``
+-  ``Error award_achievement(Variant p_params);``
+-  ``void reset_achievements();``
+-  ``void request_achievements();``
+-  ``void request_achievement_descriptions();``
 -  ``Error show_game_center(Variant p_params);``
+-  ``Error request_identity_verification_signature();``
 
 plus the standard pending event interface.
 
