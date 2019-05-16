@@ -125,7 +125,7 @@ proper place in the hierarchy. This means it wouldn't be affected the movement
 of the torso. We'll fix this problem with ``RemoteTransform2D`` nodes.
 
 .. note:: You can also fix depth ordering problems by adjusting the Z property
-of any node inheriting from Node2D.
+   of any node inheriting from Node2D.
 
 RemoteTransform2D node
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -357,7 +357,7 @@ To apply the same the easing curve to multiple keyframes at once:
 
 1. Select the relevant keys.
 2. Click on the pencil icon in the bottom right of the animation panel, this
-will open the transition editor.
+   will open the transition editor.
 3. In the transition editor click on the desired curve to apply it.
 
 .. image:: img/tuto_cutout24.png
