@@ -21,13 +21,13 @@ is to get a reference to an existing object from another acquired instance.
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    var obj = node.object # Property access
-    var obj = node.get_object() # Method access
+    var obj = node.object # Property access.
+    var obj = node.get_object() # Method access.
 
   .. code-tab:: csharp
 
-    Object obj = node.Object; // Property access
-    Object obj = node.GetObject(); // Method access
+    Object obj = node.Object; // Property access.
+    Object obj = node.GetObject(); // Method access.
 
 The same principle applies for :ref:`Reference <class_Reference>` objects.
 While users often access :ref:`Node <class_Node>` and
@@ -207,22 +207,22 @@ Nodes likewise have an alternative access point: the SceneTree.
         public object Prop;
         public void CallMeAfterPropIsInitializedByParent()
         {
-            // Validate prop in one of three ways
+            // Validate prop in one of three ways.
 
-            // Fail with no notification
+            // Fail with no notification.
             if (prop == null)
             {
                 return;
             }
 
-            // Fail with an error message
+            // Fail with an error message.
             if (prop == null)
             {
                 GD.PrintErr("'Prop' wasn't initialized");
                 return;
             }
 
-            // Fail and terminate
+            // Fail and terminate.
             Debug.Assert(Prop, "'Prop' wasn't initialized");
         }
 
@@ -288,7 +288,7 @@ accesses:
   .. tabs::
     .. code-tab:: gdscript GDScript
 
-      # All Objects have duck-typed get, set, and call wrapper methods
+      # All Objects have duck-typed get, set, and call wrapper methods.
       get_parent().set("visible", false)
 
       # Using a symbol accessor, rather than a string in the method call,
@@ -317,7 +317,7 @@ accesses:
   .. tabs::
     .. code-tab:: gdscript GDScript
 
-      var child = GetChild(0)
+      var child = get_child(0)
 
       # Dynamic lookup.
       child.call("set_visible", false)
@@ -353,13 +353,13 @@ accesses:
       # A "Quest" object exists and 1) that it can "complete" or "fail" and
       # that it will have text available before and after each state...
 
-      # 1. Use a name
+      # 1. Use a name.
       var quest = $Quest
       print(quest.text)
       quest.complete() # or quest.fail()
       print(quest.text) # implied new text content
 
-      # 2. Use a group
+      # 2. Use a group.
       for a_child in get_children():
           if a_child.is_in_group("quest"):
               print(quest.text)
@@ -374,10 +374,10 @@ accesses:
 
       Node child = GetChild(0);
 
-      // Dynamic lookup
+      // Dynamic lookup.
       child.Call("SetVisible", false);
 
-      // Dynamic lookup, checks for method existence first
+      // Dynamic lookup, checks for method existence first.
       if (child.HasMethod("SetVisible"))
       {
           child.Call("SetVisible", false);
@@ -395,7 +395,7 @@ accesses:
           child.Call("Reject");
       }
 
-      // Cast check, followed by static lookup
+      // Cast check, followed by static lookup.
       CanvasItem ci = GetParent() as CanvasItem;
       if (ci != null)
       {
@@ -419,13 +419,13 @@ accesses:
       // A "Quest" object exists and 1) that it can "Complete" or "Fail" and
       // that it will have Text available before and after each state...
 
-      // 1. Use a name
+      // 1. Use a name.
       Node quest = GetNode("Quest");
       GD.Print(quest.Get("Text"));
       quest.Call("Complete"); // or "Fail".
       GD.Print(quest.Get("Text")); // Implied new text content.
 
-      // 2. Use a group
+      // 2. Use a group.
       foreach (Node AChild in GetChildren())
       {
           if (AChild.IsInGroup("quest"))
