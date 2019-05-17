@@ -10,6 +10,7 @@ it is best to understand each one and how it can be useful in a given situation.
    :name: toc-procedural_geometry
 
    arraymesh
+   immediategeometry
 
 What is geometry?
 -----------------
@@ -108,4 +109,4 @@ ImmediateGeometry is useful for prototyping because of the straightforward API, 
 is rebuilt every frame. It is most useful for quickly adding simple geometry to debug visually (e.g. by drawing lines to 
 visualize physics raycasts etc.).
 
-For more information about ImmediateGeometry, please see the `SurfaceTool and ImmediateGeometry tutorial` (coming soon).
+For more information about ImmediateGeometry, please see the :ref:`ImmediateGeometry tutorial <doc_immediategeometry>`.

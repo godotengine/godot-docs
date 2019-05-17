@@ -6,20 +6,20 @@ Using the ArrayMesh
 This tutorial will present the basics of using an :ref:`ArrayMesh <class_arraymesh>`
 
 To do so, we will use the function :ref:`add_surface_from_arrays <class_ArrayMesh_method_add_surface_from_arrays>`,
-which takes up to four parameters. The first two are required, while the second two are optional. 
+which takes up to four parameters. The first two are required, while the second two are optional.
 
-The first is the ``PrimitiveType``, this is an opengl concept that instructs the GPU 
-how to arrange the primitive based on the vertices given whether it is triangles, 
+The first is the ``PrimitiveType``, this is an OpenGL concept that instructs the GPU
+how to arrange the primitive based on the vertices given whether it is triangles,
 lines, points, etc. A complete list can be found under the :ref:`Mesh <class_mesh>` 
-class reference page. 
+class reference page.
 
 The second is the actual Array that stores the mesh information. The array is a normal Godot array that
-is constructed with empty brackets ``[]``. It stores a ``Pool**Array`` (e.g. PoolVector3Array, 
+is constructed with empty brackets ``[]``. It stores a ``Pool**Array`` (e.g. PoolVector3Array,
 PoolIntArray, etc.) for each type of information.
 
 - ``ARRAY_VERTEX`` = 0 | PoolVector3Array or PoolVector2Array
 - ``ARRAY_NORMAL`` = 1 | PoolVector3Array
-- ``ARRAY_TANGENT`` = 2 | PoolRealArray of groups of 4 floats. first 3 floats determine the tangent, and 
+- ``ARRAY_TANGENT`` = 2 | PoolRealArray of groups of 4 floats. first 3 floats determine the tangent, and
   the last the binormal direction as -1 or 1.
 - ``ARRAY_COLOR`` = 3 | PoolColorArray
 - ``ARRAY_TEX_UV`` = 4 | PoolVector2Array or PoolVector3Array
@@ -30,7 +30,7 @@ PoolIntArray, etc.) for each type of information.
 
 The Array of vertices is always required. All the others are optional and will only be used if included.
 
-Each array needs to have the same number of elements as the vertex array except for the index array. 
+Each array needs to have the same number of elements as the vertex array except for the index array.
 For arrays like tangents, an element is a group of 4 floats. So the array size will be four times
 the size of the vertex array size, but they will have the same number of elements
 
@@ -48,7 +48,7 @@ ArrayMesh
 ---------
 
 Add an :ref:`ArrayMesh <class_arraymesh>` to a MeshInstance. Normally, adding an ArrayMesh in
-the editor is not useful, but in this case it allows as to access the ArrayMesh from code 
+the editor is not useful, but in this case it allows as to access the ArrayMesh from code
 without creating one.
 
 Next, add a script to the MeshInstance.
@@ -94,7 +94,7 @@ by adding each array to ``surface_array`` and then committing to the mesh.
 	    mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr) # No blendshapes or compression used
 
 .. note:: In this example, we used ``Mesh.PRIMITIVE_TRIANGLES``, but you can use any primitive type
-          available from mesh. 
+          available from mesh.
 
 Put together the full code looks like:
 
@@ -128,7 +128,7 @@ Put together the full code looks like:
 
 
 The code that goes in the middle can be whatever you want. Below we will present some example code that
-could go in the middle. 
+could go in the middle.
 
 Generating Geometry
 -------------------
@@ -198,7 +198,7 @@ that you find online.
 
       ##Commit to the ArrayMesh
 
-Combined with the code above, this code will generate a sphere. 
+Combined with the code above, this code will generate a sphere.
 
 When it comes to generating geometry with the ArrayMesh you need to understand what goes 
 in each array and then you can follow tutorials for any language/engine and convert it into Godot.
