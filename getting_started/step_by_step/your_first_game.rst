@@ -592,6 +592,7 @@ choose one of the three animation types:
 
     func _ready():
         $AnimatedSprite.animation = mob_types[randi() % mob_types.size()]
+        $AnimatedSprite.play()
 
  .. code-tab:: csharp
 
