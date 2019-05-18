@@ -316,9 +316,9 @@ to the bottom of the ``_process`` function:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        position += velocity * delta
-        position.x = clamp(position.x, 0, screen_size.x)
-        position.y = clamp(position.y, 0, screen_size.y)
+        self.position += velocity * delta
+        self.position.x = clamp(position.x, 0, screen_size.x)
+        self.position.y = clamp(position.y, 0, screen_size.y)
 
  .. code-tab:: csharp
 
@@ -486,7 +486,7 @@ the player when starting a new game.
  .. code-tab:: gdscript GDScript
 
     func start(pos):
-        position = pos
+        self.position = pos
         show()
         $CollisionShape2D.disabled = false
 
