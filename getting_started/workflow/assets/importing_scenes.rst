@@ -323,6 +323,16 @@ Create navigation (-navmesh)
 A mesh node with this suffix will be converted to a navigation mesh. Original Mesh node will be
 removed.
 
+Create a VehicleBody (-vehicle)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A mesh node with this suffix will be imported as a child to a :ref:`VehicleBody <class_VehicleBody>` node.
+
+Create a VehicleWheel (-wheel)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A mesh node with this suffix will be imported as a child to a :ref:`VehicleWheel <class_VehicleWheel>` node.
+
 Rigid Body (-rigid)
 ~~~~~~~~~~~~~~~~~~~
 
