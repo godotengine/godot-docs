@@ -255,7 +255,7 @@ check for every possible animation state. If we need to, we will transition into
 
 _________
 
-Finally, there is ``animation_callback``. This function will be called by a function track in our animations.
+Finally, there is ``animation_callback``. This function will be called by a call method track in our animations.
 If we have a :ref:`FuncRef <class_FuncRef>` assigned to ``callback_function``, then we call that passed in function. If we do not
 have a :ref:`FuncRef <class_FuncRef>` assigned to ``callback_function``, we print out a warning to the console.
 
@@ -271,17 +271,16 @@ Before that, though, we need to set some animation callback tracks in our firing
 Open up ``Player.tscn`` if you don't have it open and navigate to the :ref:`AnimationPlayer <class_AnimationPlayer>` node
 (``Player`` -> ``Rotation_Helper`` -> ``Model`` -> ``Animation_Player``).
 
-We need to attach a function track to three of our animations: The firing animation for the pistol, rifle, and knife.
+We need to attach a call method track to three of our animations: The firing animation for the pistol, rifle, and knife.
 Let's start with the pistol. Click the animation drop down list and select "Pistol_fire".
 
 Now scroll down to the bottom of the list of animation tracks. The final item in the list should read
-``Armature/Skeleton:Left_UpperPointer``. Now at the bottom of the list, click the plus icon on the bottom
-bar of animation window, right next to the loop button and the up arrow.
+``Armature/Skeleton:Left_UpperPointer``. Now above the list, click the "Add track" button, to the left of the time line
 
 .. image:: img/AnimationPlayerAddTrack.png
 
-This will bring up a window with three choices. We want to add a function callback track, so click the
-option that reads "Add Call Func Track". This will open a window showing the entire node tree. Navigate to the
+This will bring up a window with a few choices. We want to add a call method track, so click the
+option that reads "Call Method Track". This will open a window showing the entire node tree. Navigate to the
 :ref:`AnimationPlayer <class_AnimationPlayer>` node, select it, and press OK.
 
 .. image:: img/AnimationPlayerCallFuncTrack.png
@@ -306,25 +305,13 @@ reach the point where the muzzle starts to flash.
 
          You can also change how the timeline scrubbing snaps by changing the value in ``Step (s)`` to a lower/higher value.
 
-Once you get to a point you like, press the little green plus symbol on the far right side of the
-``AnimationPlayer`` track. This will place a little green point at the position you are currently
-at in the animation on your ``AnimationPlayer`` track.
+Once you get to a point you like, right click on the row for "Animation Player" and press insert key.
+In the empty name field, enter ``animation_callback`` and press ``enter``.
 
-.. image:: img/AnimationPlayerAddPoint.png
+.. image:: img/AnimationPlayerInsertKey.png
 
-Now we have one more step before we are done with the pistol. Select the "enable editing of individual keys"
-button on the far right corner of the animation window. It looks like a pencil with a little point beside it.
 
-.. image:: img/AnimationPlayerEditPoints.png
-
-Once you've clicked that, a new window will open on the right side. Now click the green point on the ``AnimationPlayer``
-track. This will bring up the information associated with that point in the timeline. In the empty name field, enter
-``animation_callback`` and press ``enter``.
-
-Now when we are playing this animation the callback function will be triggered at that specific point of the animation.
-
-.. warning:: Be sure to press the "enable editing of individual keys" button again to turn off the ability to edit individual keys
-              so you cannot change one of the transform tracks by accident!
+Now when we are playing this animation the call method track will be triggered at that specific point of the animation.
 
 _________
 
@@ -333,28 +320,21 @@ Let's repeat the process for the rifle and knife firing animations!
 .. note:: Because the process is exactly the same as the pistol, the process is going to explained in a little less depth.
           Follow the steps from above if you get lost! It is exactly the same, just on a different animation.
 
-Go to the "Rifle_fire" animation from the animation drop down. Add the function callback track once you reach the bottom of the
-animation track list by clicking the little plus icon at the bottom of the screen. Find the point where the muzzle starts
-to flash and click the little green plus symbol to add a function callback point at that position on the track.
+Go to the "Rifle_fire" animation from the animation drop down. Add the call method track once you reach the bottom of the
+animation track list by clicking the "Add Track" button above the list. Find the point where the muzzle starts
+to flash and right click and press ``Insert Key`` to add a call method track point at that position on the track.
 
-Next, click the "enable editing of individual keys" button.
-Select the newly created function callback point, put "animation_callback" into the name field and press ``enter``.
-Click the "enable editing of individual keys" button again to turn off individual key editing.
-so we cannot change one of the transform tracks by accident.
+Type "animation_callback" into the name field of the pop up which opened and press ``enter``.
 
-Now we need to apply the callback function track to the knife animation. Select the "Knife_fire" animation and scroll to the bottom of the
-animation tracks. Click the plus symbol at the bottom of the animation window and add a function callback track.
-Next find a point around the first third of the animation to place the animation callback function point at.
+Now we need to apply the callback method track to the knife animation. Select the "Knife_fire" animation and scroll to the bottom of the
+animation tracks. Click the "Add Track" button above the list and add a method track.
+Next find a point around the first third of the animation to place the animation callback method point at.
 
 .. note:: We will not actually be firing the knife, and the animation is a stabbing animation rather than a firing one.
          For this tutorial we are reusing the gun firing logic for our knife, so the animation has been named in a style that
          is consistent with the other animations.
 
-From there click the little green plus to add a function callback point at the current position. Then click the "enable editing of individual keys"
-button, the button with a plus at the bottom right side of the animation window.
-Select the newly created function callback point, put "animation_callback" into the name field and press ``enter``.
-Click the "enable editing of individual keys" button again to turn off individual key editing,
-so we cannot change one of the transform tracks by accident.
+From there right click on the timeline and click "Insert Key". Put "animation_callback" into the name field and press ``enter``.
 
 .. tip:: Be sure to save your work!
 
