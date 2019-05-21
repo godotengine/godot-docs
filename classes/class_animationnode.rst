@@ -209,7 +209,7 @@ Return ``true`` whether you want the blend tree editor to display filter editing
 
 - :ref:`bool<class_bool>` **is_path_filtered** **(** :ref:`NodePath<class_NodePath>` path **)** const
 
-Return ``true`` wether a given path is filtered.
+Return ``true`` whether a given path is filtered.
 
 .. _class_AnimationNode_method_process:
 

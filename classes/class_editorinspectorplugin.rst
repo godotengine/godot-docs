@@ -61,7 +61,7 @@ Method Descriptions
 
 - void **add_custom_control** **(** :ref:`Control<class_Control>` control **)**
 
-Add a custom control, not necesarily a property editor.
+Add a custom control, not necessarily a property editor.
 
 .. _class_EditorInspectorPlugin_method_add_property_editor:
 

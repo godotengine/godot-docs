@@ -32,6 +32,8 @@ Properties
 +-----------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`context_menu_enabled<class_TextEdit_property_context_menu_enabled>`                 |
 +-----------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`draw_spaces<class_TextEdit_property_draw_spaces>`                                   |
++-----------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`draw_tabs<class_TextEdit_property_draw_tabs>`                                       |
 +-----------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`fold_gutter<class_TextEdit_property_fold_gutter>`                                   |
@@ -154,6 +156,8 @@ Theme Properties
 +---------------------------------+-----------------------------+
 | :ref:`Color<class_Color>`       | background_color            |
 +---------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | bookmark_color              |
++---------------------------------+-----------------------------+
 | :ref:`Color<class_Color>`       | brace_mismatch_color        |
 +---------------------------------+-----------------------------+
 | :ref:`Color<class_Color>`       | breakpoint_color            |
@@ -217,6 +221,8 @@ Theme Properties
 | :ref:`Color<class_Color>`       | safe_line_number_color      |
 +---------------------------------+-----------------------------+
 | :ref:`Color<class_Color>`       | selection_color             |
++---------------------------------+-----------------------------+
+| :ref:`Texture<class_Texture>`   | space                       |
 +---------------------------------+-----------------------------+
 | :ref:`Color<class_Color>`       | symbol_color                |
 +---------------------------------+-----------------------------+
@@ -396,6 +402,18 @@ If ``false``, the context menu disregards mouse location.
 +----------+---------------------------------+
 
 If ``true``, a right click displays the context menu.
+
+.. _class_TextEdit_property_draw_spaces:
+
+- :ref:`bool<class_bool>` **draw_spaces**
+
++----------+------------------------+
+| *Setter* | set_draw_spaces(value) |
++----------+------------------------+
+| *Getter* | is_drawing_spaces()    |
++----------+------------------------+
+
+If ``true``, the "space" character will have a visible representation.
 
 .. _class_TextEdit_property_draw_tabs:
 

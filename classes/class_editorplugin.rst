@@ -560,3 +560,5 @@ Restore the plugin GUI layout saved by :ref:`get_window_layout<class_EditorPlugi
 
 - :ref:`int<class_int>` **update_overlays** **(** **)** const
 
+Updates the overlays of the editor (2D/3D) viewport.
+

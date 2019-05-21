@@ -214,6 +214,11 @@ Description
 
 This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference counted and use a copy-on-write approach, so passing them around is cheap in resources.
 
+Tutorials
+---------
+
+- :doc:`../getting_started/scripting/gdscript/gdscript_format_string`
+
 Method Descriptions
 -------------------
 

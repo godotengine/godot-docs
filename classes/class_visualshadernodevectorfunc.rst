@@ -96,6 +96,8 @@ Enumerations
 
 .. _class_VisualShaderNodeVectorFunc_constant_FUNC_TRUNC:
 
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ONEMINUS:
+
 enum **Function**:
 
 - **FUNC_NORMALIZE** = **0**
@@ -165,6 +167,8 @@ enum **Function**:
 - **FUNC_TANH** = **32**
 
 - **FUNC_TRUNC** = **33**
+
+- **FUNC_ONEMINUS** = **34**
 
 Property Descriptions
 ---------------------

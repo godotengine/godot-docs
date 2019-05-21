@@ -90,6 +90,8 @@ Enumerations
 
 .. _class_VisualShaderNodeScalarFunc_constant_FUNC_TRUNC:
 
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ONEMINUS:
+
 enum **Function**:
 
 - **FUNC_SIN** = **0**
@@ -153,6 +155,8 @@ enum **Function**:
 - **FUNC_ROUNDEVEN** = **29**
 
 - **FUNC_TRUNC** = **30**
+
+- **FUNC_ONEMINUS** = **31**
 
 Property Descriptions
 ---------------------

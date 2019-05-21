@@ -72,7 +72,11 @@ Property Descriptions
 | *Getter* | get_advance_condition()      |
 +----------+------------------------------+
 
-Turn on auto advance when this condition is set. This is a custom text field that can be filled with a variable name. The variable can be modified from code.
+Turn on auto advance when this condition is set. The provided name will become a boolean parameter on the :ref:`AnimationTree<class_AnimationTree>` that can be controlled from code (see :ref:`https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html#controlling-from-code<https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html#controlling-from-code>`). For example, if :ref:`AnimationTree.tree_root<class_AnimationTree_property_tree_root>` is an :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>` and :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` is set to "idle":
+
+::
+
+    $animation_tree["parameters/conditions/idle"] = is_on_floor and linear_velocity.x == 0
 
 .. _class_AnimationNodeStateMachineTransition_property_auto_advance:
 

@@ -297,6 +297,8 @@ enum **Format**:
 
 .. _class_Image_constant_INTERPOLATE_TRILINEAR:
 
+.. _class_Image_constant_INTERPOLATE_LANCZOS:
+
 enum **Interpolation**:
 
 - **INTERPOLATE_NEAREST** = **0**
@@ -312,6 +314,8 @@ It's slower than ``INTERPOLATE_BILINEAR``, but produces higher quality results, 
 If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image. (Note that if you intend to scale multiple copies of the original image, it's better to call ``generate_mipmaps`` on it in advance, to avoid wasting processing power in generating them again and again.)
 
 On the other hand, if the image already has mipmaps, they will be used, and a new set will be generated for the resulting image.
+
+- **INTERPOLATE_LANCZOS** = **4**
 
 .. _enum_Image_AlphaMode:
 

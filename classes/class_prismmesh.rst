@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter* | get_left_to_right()      |
 +----------+--------------------------+
 
-Displacement of the upper edge along the x-axis. 0.0 positions edge straight above the bottome left edge. Defaults to 0.5 (positioned on the midpoint).
+Displacement of the upper edge along the x-axis. 0.0 positions edge straight above the bottom left edge. Defaults to 0.5 (positioned on the midpoint).
 
 .. _class_PrismMesh_property_size:
 

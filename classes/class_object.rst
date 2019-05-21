@@ -30,6 +30,8 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`_set<class_Object_method__set>` **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)** virtual                                                                                                     |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`_to_string<class_Object_method__to_string>` **(** **)** virtual                                                                                                                                                                   |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`add_user_signal<class_Object_method_add_user_signal>` **(** :ref:`String<class_String>` signal, :ref:`Array<class_Array>` arguments=[  ] **)**                                                                                    |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                 | :ref:`call<class_Object_method_call>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                                                                        |
@@ -105,6 +107,8 @@ Methods
 | void                                          | :ref:`set_meta<class_Object_method_set_meta>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                                                                         |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_script<class_Object_method_set_script>` **(** :ref:`Reference<class_Reference>` script **)**                                                                                                                                  |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`to_string<class_Object_method_to_string>` **(** **)**                                                                                                                                                                             |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`tr<class_Object_method_tr>` **(** :ref:`String<class_String>` message **)** const                                                                                                                                                 |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -199,6 +203,14 @@ Notify the object internally using an ID.
 - :ref:`bool<class_bool>` **_set** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)** virtual
 
 Sets a property. Returns ``true`` if the ``property`` exists.
+
+.. _class_Object_method__to_string:
+
+- :ref:`String<class_String>` **_to_string** **(** **)** virtual
+
+Returns a :ref:`String<class_String>` representing the object. Default is ``"[ClassName:RID]"``.
+
+Override this method to customize the :ref:`String<class_String>` representation of the object when it's being converted to a string, for example: ``print(obj)``.
 
 .. _class_Object_method_add_user_signal:
 
@@ -429,6 +441,14 @@ Set a metadata into the object. Metadata is serialized. Metadata can be *anythin
 - void **set_script** **(** :ref:`Reference<class_Reference>` script **)**
 
 Set a script into the object, scripts extend the object functionality.
+
+.. _class_Object_method_to_string:
+
+- :ref:`String<class_String>` **to_string** **(** **)**
+
+Returns a :ref:`String<class_String>` representing the object. Default is ``"[ClassName:RID]"``.
+
+Override the method :ref:`_to_string<class_Object_method__to_string>` to customize the :ref:`String<class_String>` representation.
 
 .. _class_Object_method_tr:
 

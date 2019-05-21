@@ -116,7 +116,7 @@ Always use ``TRANSFER_MODE_ORDERED`` in place of ``TRANSFER_MODE_UNRELIABLE``. T
 | *Getter* | get_channel_count()      |
 +----------+--------------------------+
 
-The number of channels to be used by ENet. Default: ``3``. Channels are used to separate different kinds of data. In realiable or ordered mode, for example, the packet delivery order is ensured on a per channel basis.
+The number of channels to be used by ENet. Default: ``3``. Channels are used to separate different kinds of data. In reliable or ordered mode, for example, the packet delivery order is ensured on a per channel basis.
 
 .. _class_NetworkedMultiplayerENet_property_compression_mode:
 
