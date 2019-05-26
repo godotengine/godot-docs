@@ -162,6 +162,13 @@ demo should finally execute:
 
 Success!
 
+.. note::
+
+    If this doesn't immediately work and you have a hiDPI display on
+    at least one of your monitors, go to
+    **Project → Project Settings → Display → Window** then enable
+    **Allow Hidpi** under **Dpi**.
+
 .. _doc_scenes_and_nodes-configuring_the_project:
 
 Configuring the project
