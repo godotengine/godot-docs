@@ -55,6 +55,8 @@ Methods
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`clear_current<class_Camera_method_clear_current>` **(** :ref:`bool<class_bool>` enable_next=true **)**                                                                                            |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`             | :ref:`get_camera_rid<class_Camera_method_get_camera_rid>` **(** **)** const                                                                                                                             |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>` | :ref:`get_camera_transform<class_Camera_method_get_camera_transform>` **(** **)** const                                                                                                                 |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`           | :ref:`get_cull_mask_bit<class_Camera_method_get_cull_mask_bit>` **(** :ref:`int<class_int>` layer **)** const                                                                                           |
@@ -301,6 +303,12 @@ Method Descriptions
 - void **clear_current** **(** :ref:`bool<class_bool>` enable_next=true **)**
 
 If this is the current Camera, remove it from being current. If ``enable_next`` is ``true``, request to make the next Camera current, if any.
+
+.. _class_Camera_method_get_camera_rid:
+
+- :ref:`RID<class_RID>` **get_camera_rid** **(** **)** const
+
+Returns the camera's RID from the :ref:`VisualServer<class_VisualServer>`.
 
 .. _class_Camera_method_get_camera_transform:
 

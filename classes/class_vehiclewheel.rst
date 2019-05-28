@@ -47,6 +47,8 @@ Methods
 -------
 
 +---------------------------+---------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_rpm<class_VehicleWheel_method_get_rpm>` **(** **)** const             |
++---------------------------+---------------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`get_skidinfo<class_VehicleWheel_method_get_skidinfo>` **(** **)** const   |
 +---------------------------+---------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`is_in_contact<class_VehicleWheel_method_is_in_contact>` **(** **)** const |
@@ -196,6 +198,10 @@ This value effects the roll of your vehicle. If set to 0.0 for all wheels your v
 
 Method Descriptions
 -------------------
+
+.. _class_VehicleWheel_method_get_rpm:
+
+- :ref:`float<class_float>` **get_rpm** **(** **)** const
 
 .. _class_VehicleWheel_method_get_skidinfo:
 

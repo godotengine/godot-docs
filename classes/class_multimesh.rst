@@ -203,7 +203,7 @@ Method Descriptions
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
 
-Return the visibility AABB.
+Returns the visibility AABB.
 
 .. _class_MultiMesh_method_get_instance_color:
 
@@ -215,19 +215,19 @@ Get the color of a specific instance.
 
 - :ref:`Color<class_Color>` **get_instance_custom_data** **(** :ref:`int<class_int>` instance **)** const
 
-Return the custom data that has been set for a specific instance.
+Returns the custom data that has been set for a specific instance.
 
 .. _class_MultiMesh_method_get_instance_transform:
 
 - :ref:`Transform<class_Transform>` **get_instance_transform** **(** :ref:`int<class_int>` instance **)** const
 
-Return the :ref:`Transform<class_Transform>` of a specific instance.
+Returns the :ref:`Transform<class_Transform>` of a specific instance.
 
 .. _class_MultiMesh_method_get_instance_transform_2d:
 
 - :ref:`Transform2D<class_Transform2D>` **get_instance_transform_2d** **(** :ref:`int<class_int>` instance **)** const
 
-Return the :ref:`Transform2D<class_Transform2D>` of a specific instance.
+Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
 
 .. _class_MultiMesh_method_set_as_bulk_array:
 

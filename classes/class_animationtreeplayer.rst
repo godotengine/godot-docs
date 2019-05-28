@@ -432,13 +432,13 @@ Check if a node exists (by name).
 
 - :ref:`int<class_int>` **node_get_input_count** **(** :ref:`String<class_String>` id **)** const
 
-Return the input count for a given node. Different types of nodes have different amount of inputs.
+Returns the input count for a given node. Different types of nodes have different amount of inputs.
 
 .. _class_AnimationTreePlayer_method_node_get_input_source:
 
 - :ref:`String<class_String>` **node_get_input_source** **(** :ref:`String<class_String>` id, :ref:`int<class_int>` idx **)** const
 
-Return the input source for a given node input.
+Returns the input source for a given node input.
 
 .. _class_AnimationTreePlayer_method_node_get_position:
 

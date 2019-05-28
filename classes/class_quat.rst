@@ -151,7 +151,7 @@ Returns the dot product of two quaternions.
 
 - :ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
 
-Return Euler angles (in the YXZ convention: first Z, then X, and Y last) corresponding to the rotation represented by the unit quaternion. Returned vector contains the rotation angles in the format (X-angle, Y-angle, Z-angle).
+Returns Euler angles (in the YXZ convention: first Z, then X, and Y last) corresponding to the rotation represented by the unit quaternion. Returned vector contains the rotation angles in the format (X-angle, Y-angle, Z-angle).
 
 .. _class_Quat_method_inverse:
 

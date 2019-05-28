@@ -404,7 +404,7 @@ This is for editors that edit script based objects. You can return a list of bre
 
 - :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
 
-Return the :ref:`EditorInterface<class_EditorInterface>` object that gives you control over Godot editor's window and its functionalities.
+Returns the :ref:`EditorInterface<class_EditorInterface>` object that gives you control over Godot editor's window and its functionalities.
 
 .. _class_EditorPlugin_method_get_plugin_icon:
 
@@ -448,7 +448,7 @@ Implement this function if your plugin edits a specific type of object (Resource
 
 - :ref:`bool<class_bool>` **has_main_screen** **(** **)** virtual
 
-Return ``true`` if this is a main screen editor plugin (it goes in the workspaces selector together with '2D', '3D', and 'Script').
+Returns ``true`` if this is a main screen editor plugin (it goes in the workspaces selector together with '2D', '3D', and 'Script').
 
 .. _class_EditorPlugin_method_hide_bottom_panel:
 

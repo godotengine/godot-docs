@@ -111,7 +111,7 @@ Disconnect from host.
 
 - :ref:`Status<enum_StreamPeerSSL_Status>` **get_status** **(** **)** const
 
-Return the status of the connection, one of STATUS\_\* enum.
+Returns the status of the connection, one of STATUS\_\* enum.
 
 .. _class_StreamPeerSSL_method_poll:
 

@@ -37,5 +37,5 @@ Method Descriptions
 
 - :ref:`Button<class_Button>` **get_cancel** **(** **)**
 
-Return the cancel button.
+Returns the cancel button.
 

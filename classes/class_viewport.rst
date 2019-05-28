@@ -50,6 +50,8 @@ Properties
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                   | :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>`           |
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                   | :ref:`render_direct_to_screen<class_Viewport_property_render_direct_to_screen>`         |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`ClearMode<enum_Viewport_ClearMode>`                                 | :ref:`render_target_clear_mode<class_Viewport_property_render_target_clear_mode>`       |
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`UpdateMode<enum_Viewport_UpdateMode>`                               | :ref:`render_target_update_mode<class_Viewport_property_render_target_update_mode>`     |
@@ -514,6 +516,18 @@ If ``true``, the viewport will use :ref:`World<class_World>` defined in ``world`
 +----------+-----------------------------------+
 
 If ``true``, the objects rendered by viewport become subjects of mouse picking process. Default value: ``false``.
+
+.. _class_Viewport_property_render_direct_to_screen:
+
+- :ref:`bool<class_bool>` **render_direct_to_screen**
+
++----------+----------------------------------------+
+| *Setter* | set_use_render_direct_to_screen(value) |
++----------+----------------------------------------+
+| *Getter* | is_using_render_direct_to_screen()     |
++----------+----------------------------------------+
+
+If ``true``, renders the Viewport directly to the screen instead of to the root viewport. Only available in GLES2. This is a low-level optimization and should not be used in most cases. If used, reading from the Viewport or from ``SCREEN_TEXTURE`` becomes unavailable. For more information see :ref:`VisualServer.viewport_set_render_direct_to_screen<class_VisualServer_method_viewport_set_render_direct_to_screen>`.  Default value: ``false``.
 
 .. _class_Viewport_property_render_target_clear_mode:
 

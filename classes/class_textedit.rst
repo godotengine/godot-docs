@@ -604,13 +604,13 @@ Copy the current selection.
 
 - :ref:`int<class_int>` **cursor_get_column** **(** **)** const
 
-Return the column the editing cursor is at.
+Returns the column the editing cursor is at.
 
 .. _class_TextEdit_method_cursor_get_line:
 
 - :ref:`int<class_int>` **cursor_get_line** **(** **)** const
 
-Return the line the editing cursor is at.
+Returns the line the editing cursor is at.
 
 .. _class_TextEdit_method_cursor_set_column:
 
@@ -648,7 +648,7 @@ Folds the given line, if possible (see :ref:`can_fold<class_TextEdit_method_can_
 
 - :ref:`Array<class_Array>` **get_breakpoints** **(** **)** const
 
-Return an array containing the line number of each breakpoint.
+Returns an array containing the line number of each breakpoint.
 
 .. _class_TextEdit_method_get_keyword_color:
 
@@ -658,13 +658,13 @@ Return an array containing the line number of each breakpoint.
 
 - :ref:`String<class_String>` **get_line** **(** :ref:`int<class_int>` line **)** const
 
-Return the text of a specific line.
+Returns the text of a specific line.
 
 .. _class_TextEdit_method_get_line_count:
 
 - :ref:`int<class_int>` **get_line_count** **(** **)** const
 
-Return the amount of total lines in the text.
+Returns the amount of total lines in the text.
 
 .. _class_TextEdit_method_get_menu:
 
@@ -676,31 +676,31 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``TextEdit``. By default, 
 
 - :ref:`int<class_int>` **get_selection_from_column** **(** **)** const
 
-Return the selection begin column.
+Returns the selection begin column.
 
 .. _class_TextEdit_method_get_selection_from_line:
 
 - :ref:`int<class_int>` **get_selection_from_line** **(** **)** const
 
-Return the selection begin line.
+Returns the selection begin line.
 
 .. _class_TextEdit_method_get_selection_text:
 
 - :ref:`String<class_String>` **get_selection_text** **(** **)** const
 
-Return the text inside the selection.
+Returns the text inside the selection.
 
 .. _class_TextEdit_method_get_selection_to_column:
 
 - :ref:`int<class_int>` **get_selection_to_column** **(** **)** const
 
-Return the selection end column.
+Returns the selection end column.
 
 .. _class_TextEdit_method_get_selection_to_line:
 
 - :ref:`int<class_int>` **get_selection_to_line** **(** **)** const
 
-Return the selection end line.
+Returns the selection end line.
 
 .. _class_TextEdit_method_get_word_under_cursor:
 
@@ -730,7 +730,7 @@ Returns if the given line is folded.
 
 - :ref:`bool<class_bool>` **is_selection_active** **(** **)** const
 
-Return ``true`` if the selection is active.
+Returns ``true`` if the selection is active.
 
 .. _class_TextEdit_method_menu_option:
 

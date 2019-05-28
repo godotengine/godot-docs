@@ -157,6 +157,10 @@ Emitted when a node's configuration changed. Only emitted in tool mode.
 
 Emitted whenever a node is removed from the SceneTree.
 
+.. _class_SceneTree_signal_node_renamed:
+
+- **node_renamed** **(** :ref:`Node<class_Node>` node **)**
+
 .. _class_SceneTree_signal_physics_frame:
 
 - **physics_frame** **(** **)**

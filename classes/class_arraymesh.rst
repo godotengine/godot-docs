@@ -267,25 +267,25 @@ Will regenerate normal maps for the ``ArrayMesh``.
 
 - :ref:`int<class_int>` **surface_find_by_name** **(** :ref:`String<class_String>` name **)** const
 
-Return the index of the first surface with this name held within this ``ArrayMesh``. If none are found -1 is returned.
+Returns the index of the first surface with this name held within this ``ArrayMesh``. If none are found -1 is returned.
 
 .. _class_ArrayMesh_method_surface_get_array_index_len:
 
 - :ref:`int<class_int>` **surface_get_array_index_len** **(** :ref:`int<class_int>` surf_idx **)** const
 
-Return the length in indices of the index array in the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
+Returns the length in indices of the index array in the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
 
 .. _class_ArrayMesh_method_surface_get_array_len:
 
 - :ref:`int<class_int>` **surface_get_array_len** **(** :ref:`int<class_int>` surf_idx **)** const
 
-Return the length in vertices of the vertex array in the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
+Returns the length in vertices of the vertex array in the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
 
 .. _class_ArrayMesh_method_surface_get_format:
 
 - :ref:`int<class_int>` **surface_get_format** **(** :ref:`int<class_int>` surf_idx **)** const
 
-Return the format mask of the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
+Returns the format mask of the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
 
 .. _class_ArrayMesh_method_surface_get_name:
 
@@ -297,7 +297,7 @@ Get the name assigned to this surface.
 
 - :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **surface_get_primitive_type** **(** :ref:`int<class_int>` surf_idx **)** const
 
-Return the primitive type of the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
+Returns the primitive type of the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
 
 .. _class_ArrayMesh_method_surface_remove:
 

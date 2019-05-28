@@ -95,7 +95,7 @@ Method Descriptions
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
 
-Return the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
+Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 .. _class_MenuButton_method_set_disable_shortcuts:
 

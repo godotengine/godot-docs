@@ -106,7 +106,7 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
-Return ``true`` if an animation if currently being played.
+Returns ``true`` if an animation if currently being played.
 
 .. _class_AnimatedSprite3D_method_play:
 

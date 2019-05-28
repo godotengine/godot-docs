@@ -183,7 +183,7 @@ Updates the collision information for the ray. Use this method to update the col
 
 - :ref:`Object<class_Object>` **get_collider** **(** **)** const
 
-Return the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast2D_method_is_colliding>` returns ``false``).
+Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast2D_method_is_colliding>` returns ``false``).
 
 .. _class_RayCast2D_method_get_collider_shape:
 
@@ -195,7 +195,7 @@ Returns the shape ID of the first object that the ray intersects, or ``0`` if no
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
-Return an individual bit on the collision mask.
+Returns an individual bit on the collision mask.
 
 .. _class_RayCast2D_method_get_collision_normal:
 
@@ -213,7 +213,7 @@ Returns the collision point at which the ray intersects the closest object. Note
 
 - :ref:`bool<class_bool>` **is_colliding** **(** **)** const
 
-Return whether any object is intersecting with the ray's vector (considering the vector length).
+Returns whether any object is intersecting with the ray's vector (considering the vector length).
 
 .. _class_RayCast2D_method_remove_exception:
 

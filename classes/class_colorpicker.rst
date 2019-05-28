@@ -185,5 +185,5 @@ Remove the given color from the list of color presets of this color picker.
 
 - :ref:`PoolColorArray<class_PoolColorArray>` **get_presets** **(** **)** const
 
-Return the list of colors in the presets of the color picker.
+Returns the list of colors in the presets of the color picker.
 

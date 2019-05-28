@@ -112,6 +112,8 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`flags_use_point_size<class_SpatialMaterial_property_flags_use_point_size>`                     |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_use_shadow_to_opacity<class_SpatialMaterial_property_flags_use_shadow_to_opacity>`       |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`flags_vertex_lighting<class_SpatialMaterial_property_flags_vertex_lighting>`                   |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`flags_world_triplanar<class_SpatialMaterial_property_flags_world_triplanar>`                   |
@@ -458,6 +460,8 @@ enum **CullMode**:
 
 .. _class_SpatialMaterial_constant_FLAG_ENSURE_CORRECT_NORMALS:
 
+.. _class_SpatialMaterial_constant_FLAG_USE_SHADOW_TO_OPACITY:
+
 .. _class_SpatialMaterial_constant_FLAG_MAX:
 
 enum **Flags**:
@@ -498,7 +502,9 @@ enum **Flags**:
 
 - **FLAG_ENSURE_CORRECT_NORMALS** = **16**
 
-- **FLAG_MAX** = **18**
+- **FLAG_USE_SHADOW_TO_OPACITY** = **18**
+
+- **FLAG_MAX** = **19**
 
 .. _enum_SpatialMaterial_DiffuseMode:
 
@@ -1128,6 +1134,16 @@ If ``true``, the object is unaffected by lighting. Default value: ``false``.
 +----------+-----------------+
 
 If ``true``, render point size can be changed. Note: this is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`params_point_size<class_SpatialMaterial_property_params_point_size>`.
+
+.. _class_SpatialMaterial_property_flags_use_shadow_to_opacity:
+
+- :ref:`bool<class_bool>` **flags_use_shadow_to_opacity**
+
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
 
 .. _class_SpatialMaterial_property_flags_vertex_lighting:
 

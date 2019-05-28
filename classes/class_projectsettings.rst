@@ -32,11 +32,15 @@ Properties
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`application/config/icon<class_ProjectSettings_property_application/config/icon>`                                                                               |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`application/config/macos_native_icon<class_ProjectSettings_property_application/config/macos_native_icon>`                                                     |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`application/config/name<class_ProjectSettings_property_application/config/name>`                                                                               |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`application/config/project_settings_override<class_ProjectSettings_property_application/config/project_settings_override>`                                     |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>`                                                 |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`application/config/windows_native_icon<class_ProjectSettings_property_application/config/windows_native_icon>`                                                 |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>`                                                                 |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -628,6 +632,10 @@ The :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_
 
 Icon used for the project, set when project loads. Exporters will also use this icon when possible.
 
+.. _class_ProjectSettings_property_application/config/macos_native_icon:
+
+- :ref:`String<class_String>` **application/config/macos_native_icon**
+
 .. _class_ProjectSettings_property_application/config/name:
 
 - :ref:`String<class_String>` **application/config/name**
@@ -645,6 +653,10 @@ Specifies a file to override project settings. For example: ``user://custom_sett
 - :ref:`bool<class_bool>` **application/config/use_custom_user_dir**
 
 If ``true``, the project will save user data to its own user directory (see :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>`). This setting is only effective on desktop platforms. A name must be set in the :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>` setting for this to take effect. If ``false``, the project will save user data to ``(OS user data directory)/Godot/app_userdata/(project name)``.
+
+.. _class_ProjectSettings_property_application/config/windows_native_icon:
+
+- :ref:`String<class_String>` **application/config/windows_native_icon**
 
 .. _class_ProjectSettings_property_application/run/disable_stderr:
 

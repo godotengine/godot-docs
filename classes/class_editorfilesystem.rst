@@ -94,13 +94,13 @@ Returns a view into the filesystem at ``path``.
 
 - :ref:`float<class_float>` **get_scanning_progress** **(** **)** const
 
-Return the scan progress for 0 to 1 if the FS is being scanned.
+Returns the scan progress for 0 to 1 if the FS is being scanned.
 
 .. _class_EditorFileSystem_method_is_scanning:
 
 - :ref:`bool<class_bool>` **is_scanning** **(** **)** const
 
-Return ``true`` of the filesystem is being scanned.
+Returns ``true`` of the filesystem is being scanned.
 
 .. _class_EditorFileSystem_method_scan:
 

@@ -112,13 +112,13 @@ Adds a button with label *name* and a cancel action to the dialog and returns th
 
 - :ref:`Label<class_Label>` **get_label** **(** **)**
 
-Return the label used for built-in text.
+Returns the label used for built-in text.
 
 .. _class_AcceptDialog_method_get_ok:
 
 - :ref:`Button<class_Button>` **get_ok** **(** **)**
 
-Return the OK Button.
+Returns the OK Button.
 
 .. _class_AcceptDialog_method_register_text_enter:
 

@@ -271,11 +271,11 @@ Called when the button is toggled (only if toggle_mode is active).
 
 - :ref:`DrawMode<enum_BaseButton_DrawMode>` **get_draw_mode** **(** **)** const
 
-Return the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DRAW\_\* enum.
+Returns the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DRAW\_\* enum.
 
 .. _class_BaseButton_method_is_hovered:
 
 - :ref:`bool<class_bool>` **is_hovered** **(** **)** const
 
-Return ``true`` if the mouse has entered the button and has not left it yet.
+Returns ``true`` if the mouse has entered the button and has not left it yet.
 

@@ -185,7 +185,7 @@ Use this method to update the collision information immediately instead of waiti
 
 - :ref:`Object<class_Object>` **get_collider** **(** **)** const
 
-Return the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast_method_is_colliding>` returns ``false``).
+Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast_method_is_colliding>` returns ``false``).
 
 .. _class_RayCast_method_get_collider_shape:
 
@@ -215,7 +215,7 @@ Returns the collision point at which the ray intersects the closest object. Note
 
 - :ref:`bool<class_bool>` **is_colliding** **(** **)** const
 
-Return whether any object is intersecting with the ray's vector (considering the vector length).
+Returns whether any object is intersecting with the ray's vector (considering the vector length).
 
 .. _class_RayCast_method_remove_exception:
 

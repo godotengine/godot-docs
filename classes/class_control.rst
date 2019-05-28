@@ -1114,7 +1114,7 @@ Returns the mouse cursor shape the control displays on mouse hover. See :ref:`Cu
 
 - :ref:`Object<class_Object>` **get_drag_data** **(** :ref:`Vector2<class_Vector2>` position **)** virtual
 
-Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Return null if there is no data to drag. Controls that want to receive drop data should implement :ref:`can_drop_data<class_Control_method_can_drop_data>` and :ref:`drop_data<class_Control_method_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
+Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns null if there is no data to drag. Controls that want to receive drop data should implement :ref:`can_drop_data<class_Control_method_can_drop_data>` and :ref:`drop_data<class_Control_method_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
 
 A preview that will follow the mouse that should represent the data can be set with :ref:`set_drag_preview<class_Control_method_set_drag_preview>`. A good time to set the preview is in this method.
 

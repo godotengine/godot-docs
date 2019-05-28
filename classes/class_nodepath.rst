@@ -91,11 +91,11 @@ Get the number of resource names in the path.
 
 - :ref:`bool<class_bool>` **is_absolute** **(** **)**
 
-Return ``true`` if the node path is absolute (not relative).
+Returns ``true`` if the node path is absolute (not relative).
 
 .. _class_NodePath_method_is_empty:
 
 - :ref:`bool<class_bool>` **is_empty** **(** **)**
 
-Return ``true`` if the node path is empty.
+Returns ``true`` if the node path is empty.
 

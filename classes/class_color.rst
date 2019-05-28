@@ -355,6 +355,8 @@ Constants
 
 .. _class_Color_constant_tomato:
 
+.. _class_Color_constant_transparent:
+
 .. _class_Color_constant_turquoise:
 
 .. _class_Color_constant_violet:
@@ -644,6 +646,8 @@ Constants
 - **thistle** = **Color( 0.85, 0.75, 0.85, 1 )**
 
 - **tomato** = **Color( 1, 0.39, 0.28, 1 )**
+
+- **transparent** = **Color( 1, 1, 1, 0 )**
 
 - **turquoise** = **Color( 0.25, 0.88, 0.82, 1 )**
 

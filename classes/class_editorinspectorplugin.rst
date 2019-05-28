@@ -79,7 +79,7 @@ Add am editor that allows modifying multiple properties, this must inherit :ref:
 
 - :ref:`bool<class_bool>` **can_handle** **(** :ref:`Object<class_Object>` object **)** virtual
 
-Return true if this object can be handled by this plugin.
+Returns true if this object can be handled by this plugin.
 
 .. _class_EditorInspectorPlugin_method_parse_begin:
 

@@ -127,7 +127,7 @@ Get actual value of a handle. This value can be anything and used for eventually
 
 - :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` **get_plugin** **(** **)** const
 
-Return the :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` that owns this gizmo. It's useful to retrieve materials using :ref:`EditorSpatialGizmoPlugin.get_material<class_EditorSpatialGizmoPlugin_method_get_material>`.
+Returns the :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` that owns this gizmo. It's useful to retrieve materials using :ref:`EditorSpatialGizmoPlugin.get_material<class_EditorSpatialGizmoPlugin_method_get_material>`.
 
 .. _class_EditorSpatialGizmo_method_get_spatial_node:
 

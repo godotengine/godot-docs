@@ -85,19 +85,19 @@ Create a new item in the library, supplied an id.
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_item_list** **(** **)** const
 
-Return the list of items.
+Returns the list of items.
 
 .. _class_MeshLibrary_method_get_item_mesh:
 
 - :ref:`Mesh<class_Mesh>` **get_item_mesh** **(** :ref:`int<class_int>` id **)** const
 
-Return the mesh of the item.
+Returns the mesh of the item.
 
 .. _class_MeshLibrary_method_get_item_name:
 
 - :ref:`String<class_String>` **get_item_name** **(** :ref:`int<class_int>` id **)** const
 
-Return the name of the item.
+Returns the name of the item.
 
 .. _class_MeshLibrary_method_get_item_navmesh:
 

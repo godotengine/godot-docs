@@ -461,13 +461,13 @@ Draws a textured rectangle region at a given position, optionally modulated by a
 
 - :ref:`RID<class_RID>` **get_canvas** **(** **)** const
 
-Return the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this item is in.
+Returns the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this item is in.
 
 .. _class_CanvasItem_method_get_canvas_item:
 
 - :ref:`RID<class_RID>` **get_canvas_item** **(** **)** const
 
-Return the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for this item.
+Returns the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for this item.
 
 .. _class_CanvasItem_method_get_canvas_transform:
 

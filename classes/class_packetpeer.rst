@@ -9,7 +9,7 @@ PacketPeer
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebRTCPeer<class_WebRTCPeer>`, :ref:`WebSocketPeer<class_WebSocketPeer>`
+**Inherited By:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`, :ref:`WebSocketPeer<class_WebSocketPeer>`
 
 **Category:** Core
 
@@ -73,7 +73,7 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_available_packet_count** **(** **)** const
 
-Return the number of packets currently available in the ring-buffer.
+Returns the number of packets currently available in the ring-buffer.
 
 .. _class_PacketPeer_method_get_packet:
 
@@ -85,7 +85,7 @@ Get a raw packet.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **get_packet_error** **(** **)** const
 
-Return the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_method_get_packet>` and :ref:`get_var<class_PacketPeer_method_get_var>`).
+Returns the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_method_get_packet>` and :ref:`get_var<class_PacketPeer_method_get_var>`).
 
 .. _class_PacketPeer_method_get_var:
 

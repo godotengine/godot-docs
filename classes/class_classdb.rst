@@ -133,19 +133,19 @@ Returns an array with all the signals of 'class' or its ancestry if 'no_inherita
 
 - :ref:`bool<class_bool>` **class_has_integer_constant** **(** :ref:`String<class_String>` class, :ref:`String<class_String>` name **)** const
 
-Return whether 'class' or its ancestry has an integer constant called 'name' or not.
+Returns whether 'class' or its ancestry has an integer constant called 'name' or not.
 
 .. _class_ClassDB_method_class_has_method:
 
 - :ref:`bool<class_bool>` **class_has_method** **(** :ref:`String<class_String>` class, :ref:`String<class_String>` method, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
-Return whether 'class' (or its ancestry if 'no_inheritance' is false) has a method called 'method' or not.
+Returns whether 'class' (or its ancestry if 'no_inheritance' is false) has a method called 'method' or not.
 
 .. _class_ClassDB_method_class_has_signal:
 
 - :ref:`bool<class_bool>` **class_has_signal** **(** :ref:`String<class_String>` class, :ref:`String<class_String>` signal **)** const
 
-Return whether 'class' or its ancestry has a signal called 'signal' or not.
+Returns whether 'class' or its ancestry has a signal called 'signal' or not.
 
 .. _class_ClassDB_method_class_set_property:
 

@@ -350,7 +350,7 @@ Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the
 
 - :ref:`MouseMode<enum_Input_MouseMode>` **get_mouse_mode** **(** **)** const
 
-Return the mouse mode. See the constants for more information.
+Returns the mouse mode. See the constants for more information.
 
 .. _class_Input_method_is_action_just_pressed:
 

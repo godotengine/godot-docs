@@ -500,7 +500,7 @@ Applies a torque impulse which will be affected by the body mass and shape. This
 
 - :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
 
-Return a list of the bodies colliding with this one. By default, number of max contacts reported is at 0, see the :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` property to increase it. Note that the result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
+Returns a list of the bodies colliding with this one. By default, number of max contacts reported is at 0, see the :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` property to increase it. Note that the result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_RigidBody_method_set_axis_velocity:
 

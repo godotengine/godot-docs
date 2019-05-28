@@ -41,7 +41,7 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_connection_available** **(** **)** const
 
-Return ``true`` if a connection is available for taking.
+Returns ``true`` if a connection is available for taking.
 
 .. _class_TCP_Server_method_listen:
 

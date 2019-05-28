@@ -171,7 +171,7 @@ The texture's drawing offset.
 | *Getter* | is_region()       |
 +----------+-------------------+
 
-If ``true``, texture is cut from a larger atlas texture. See ``region_rect``. Default value: ``false``.
+If ``true``, texture is cut from a larger atlas texture. See :ref:`region_rect<class_Sprite_property_region_rect>`. Default value: ``false``.
 
 .. _class_Sprite_property_region_filter_clip:
 
@@ -228,7 +228,14 @@ Method Descriptions
 
 - :ref:`Rect2<class_Rect2>` **get_rect** **(** **)** const
 
-Returns a Rect2 representing the Sprite's boundary relative to its local coordinates.
+Returns a :ref:`Rect2<class_Rect2>` representing the Sprite's boundary in local coordinates. Can be used to detect if the Sprite was clicked. Example:
+
+::
+
+    func _input(event):
+        if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+            if get_rect().has_point(to_local(event.position)):
+                print("A click!")
 
 .. _class_Sprite_method_is_pixel_opaque:
 

@@ -122,7 +122,7 @@ Property Descriptions
 | *Getter* | is_filter_enabled()       |
 +----------+---------------------------+
 
-Return whether filtering is enabled.
+Returns whether filtering is enabled.
 
 Method Descriptions
 -------------------
@@ -203,13 +203,13 @@ Get the property information for parameter. Parameters are custom local memory u
 
 - :ref:`String<class_String>` **has_filter** **(** **)** virtual
 
-Return ``true`` whether you want the blend tree editor to display filter editing on this node.
+Returns ``true`` whether you want the blend tree editor to display filter editing on this node.
 
 .. _class_AnimationNode_method_is_path_filtered:
 
 - :ref:`bool<class_bool>` **is_path_filtered** **(** :ref:`NodePath<class_NodePath>` path **)** const
 
-Return ``true`` whether a given path is filtered.
+Returns ``true`` whether a given path is filtered.
 
 .. _class_AnimationNode_method_process:
 

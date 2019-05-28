@@ -132,19 +132,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
 
-Return the texture height.
+Returns the texture height.
 
 .. _class_Texture_method_get_size:
 
 - :ref:`Vector2<class_Vector2>` **get_size** **(** **)** const
 
-Return the texture size.
+Returns the texture size.
 
 .. _class_Texture_method_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
-Return the texture width.
+Returns the texture width.
 
 .. _class_Texture_method_has_alpha:
 

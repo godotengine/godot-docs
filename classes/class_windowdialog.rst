@@ -96,5 +96,5 @@ Method Descriptions
 
 - :ref:`TextureButton<class_TextureButton>` **get_close_button** **(** **)**
 
-Return the close :ref:`TextureButton<class_TextureButton>`.
+Returns the close :ref:`TextureButton<class_TextureButton>`.
 

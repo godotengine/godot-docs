@@ -141,13 +141,13 @@ Change the byte at the given index.
 
 - :ref:`String<class_String>` **sha256_string** **(** **)**
 
-Return SHA256 string of the PoolByteArray.
+Returns SHA256 string of the PoolByteArray.
 
 .. _class_PoolByteArray_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Return the size of the array.
+Returns the size of the array.
 
 .. _class_PoolByteArray_method_subarray:
 
