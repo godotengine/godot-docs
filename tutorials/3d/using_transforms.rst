@@ -334,7 +334,7 @@ Example of looking around, FPS style:
 
     public override void _Input(InputEvent @event)
     {
-        if (mouseMotion is InputEventMouseMotion mouseMotion)
+        if (@event is InputEventMouseMotion mouseMotion)
         {
             // modify accumulated mouse rotation
             _rotationX += mouseMotion.Relative.x * LookAroundSpeed;
