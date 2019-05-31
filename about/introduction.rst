@@ -17,6 +17,17 @@ This page gives a broad presentation of the engine and of the contents
 of this documentation, so that you know where to start if you are a beginner or
 where to look if you need info on a specific feature.
 
+Before you start
+----------------
+
+The :ref:`Tutorials and resources <doc_community_tutorials>` page lists
+video tutorials contributed by the community. If you prefer video to text,
+those may be worth a look.
+
+In case you have trouble with one of the tutorials or your project,
+you can find help on the various :ref:`Community channels <doc_community_channels>`,
+especially the Godot Discord community, Q&A, and IRC.
+
 About Godot Engine
 ------------------
 
