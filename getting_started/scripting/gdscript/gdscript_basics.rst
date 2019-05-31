@@ -1231,6 +1231,9 @@ special export syntax is provided.
 
     export(Texture) var character_face
     export(PackedScene) var scene_file
+    # There are many resource types that can be used this way, try e.g.
+    # the following to list them:
+    export(Resource) var resource
 
     # Integers and strings hint enumerated values.
 
