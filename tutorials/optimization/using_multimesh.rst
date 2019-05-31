@@ -44,6 +44,9 @@ controlled with the :ref:`MultiMesh.visible_instance_count <class_MultiMesh_prop
 property. The typical workflow is to allocate the maximum amount of instances that will be used,
 then change the amount visible depending on how many are currently needed.
 
+.. note:: The :ref:`MultiMesh.visible_instance_count <class_MultiMesh_property_visible_instance_count>`
+          property was first added in Godot 3.1.1-stable.
+
 Multimesh example
 -----------------
 
@@ -65,6 +68,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
         # Then resize (otherwise, changing the format is not allowed).
         multimesh.instance_count = 10000
         # Maybe not all of them should be visible at first.
+        # Note: Property only available in Godot 3.1.1 or later.
         multimesh.visible_instance_count = 1000
         # Set the transform of the instances.
         for i in multimesh.visible_instance_count:

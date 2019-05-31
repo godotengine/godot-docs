@@ -75,6 +75,10 @@ For nodes, there are many functions available:
   *instance base* via the :ref:`VisualInstance.get_instance() <class_VisualInstance_method_get_instance>`
   and :ref:`VisualInstance.get_base() <class_VisualInstance_method_get_base>` respectively.
 
+.. note:: The :ref:`VisualInstance.get_instance() <class_VisualInstance_method_get_instance>`
+          and :ref:`VisualInstance.get_base() <class_VisualInstance_method_get_base>` methods were first
+          exposed to the scripting API in Godot 3.1.1-stable.
+
 Just explore the nodes and resources you are familiar with and find the functions to obtain the server *RIDs*.
 
 It is not advised to control RIDs from objects that already have a node associated. Instead, server
