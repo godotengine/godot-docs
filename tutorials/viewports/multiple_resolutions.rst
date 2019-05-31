@@ -3,6 +3,45 @@
 Multiple resolutions
 ====================
 
+
+The problem of multiple resolutions
+-----------------------------------
+
+Developers often have trouble understanding  how to best support multiple resolutions
+in their games. For Desktop and Console games this is more or less straightforward,
+as most screen aspect ratios are 16:9 and resolutions are standard (720,1080,2k,4k,etc).
+
+For mobile games at first it was easy. For many years, the iPhone (and iPad) used the same
+resolution. When *Retina* was implemented, they just doubled the amount of pixel density 
+(so most developers had assets in default and double resolutions).
+
+Nowadays this is no longer the case, as there are plenty of different screen sizes, densities
+and aspect ratios for mobile, and non conventional sizes are becoming trendy for Desktop,
+such as ultra-wide.
+
+For 3D games there is not much of a need to support multiple resolutions (from the aesthetic
+point of view). The 3D geometry will just fill the screen based on the field-of-view, disregarding
+the aspect ratio. The main reason one may want to support this, in this case, is for *performance* reasons (running
+in lower resolution to increase frames per second).
+
+For 2D and game UIs, this is a different matter, as art needs to be created using specific pixel sizes
+in software such as Photoshop, Gimp, Krita, etc.
+
+Given layouts, aspect ratios, resolutions and pixel densities can change so much, it is no longer possible
+to design UIs for every specific screen. Another method must be used.
+
+One size fits all
+-----------------
+
+The most common approach nowadays is to just use a single *base* resolution and then fit it to everything else.
+This resolution is how most players are expected to play the game (given their hardware). For mobile, Google 
+has useful `stats <https://developer.android.com/about/dashboards>`_ online, and for desktop, 
+Steam `also does <https://store.steampowered.com/hwsurvey/Steam-Hardware-Software-Survey-Welcome-to-Steam>`_.
+
+As an example, Steam shows that the most common *primary display resolution* is 1920x1080, so a sensible approach is to develop a game for this resolution, then handle scaling for different sizes and aspect ratios.
+
+Godot provides a several useful tools to do this easily.
+
 Base size
 ---------
 
@@ -189,3 +228,25 @@ From scripts
 To configure stretching at runtime from a script, use the
 ``get_tree().set_screen_stretch()`` function (see
 :ref:`SceneTree.set_screen_stretch() <class_SceneTree_method_set_screen_stretch>`).
+
+Reducing aliasing on downsampling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the game has a very high base resolution (say 4k), aliasing might appear
+when downsampling to something considerably lower like 720. This can be
+detected and reduced by forcing to shrink all images by 2 upon load (this is
+very fast). This can be achieved by calling
+
+::
+
+    VisualServer.texture_set_shrink_all_x2_on_set_data(true) 
+
+
+Before most game data is loaded.
+
+Handling aspect ratios
+^^^^^^^^^^^^^^^^^^^^^^
+
+Once scaling for different resolutions is accounted for, just make sure that your *user interface*
+also scales for different aspect ratios. This can be easily done using :ref:`anchors <doc_size_and_anchors>` 
+and/or :ref:`containers <doc_gui_containers>`.

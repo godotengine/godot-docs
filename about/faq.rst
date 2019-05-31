@@ -10,7 +10,7 @@ Godot is `Free and Open-Source Software <https://en.wikipedia.org/wiki/Free_and_
 
 In short:
 
-* You are free to download and use Godot for any purpose, personal, non-profit, commercial, or otherwise;
+* You are free to download and use Godot for any purpose, personal, non-profit, commercial, or otherwise.
 * You are free to modify, distribute, redistribute, and remix Godot to your heart's content, for any reason, both non-commercially and commercially.
 
 All the contents of this accompanying documentation are published under
@@ -153,7 +153,7 @@ As of Godot 3.0, glTF is supported.
 FBX SDK has a `restrictive license <https://www.blender.org/bf/Autodesk_FBX_License.rtf>`_,
 that is incompatible with the `open license <https://opensource.org/licenses/MIT>`_
 provided by Godot. That being said, FBX support could still be provided by third parties
-as a plugin. (See Plugins question above.)
+as a plugin. (See Plugins question below.)
 
 Will [insert closed SDK such as FMOD, GameWorks, etc.] be supported in Godot?
 -----------------------------------------------------------------------------
@@ -168,7 +168,7 @@ anyone else interested in adding those libraries as a module and shipping your
 game with them--as either open- or closed-source.
 
 To see how support for your SDK of choice could still be provided, look at the
-Plugins question above.
+Plugins question below.
 
 If you know of a third-party SDK that is not supported by Godot but that offers
 free and open-source integration, consider starting the integration work yourself.
@@ -198,14 +198,14 @@ This is mostly needed for 2D, as in 3D it's just a matter of Camera XFov or YFov
    resolution, the larger your assets, the more memory they will take
    and the longer the time it will take for loading.
 
-2. Use the stretch options in Godot, 2D stretching with keeping aspect
-   works best. Check the :ref:`doc_multiple_resolutions` tutorial
+2. Use the stretch options in Godot; 2D stretching while keeping aspect
+   ratios works best. Check the :ref:`doc_multiple_resolutions` tutorial
    on how to achieve this.
 
 3. Determine a minimum resolution and then decide if you want your game
    to stretch vertically or horizontally for different aspect ratios, or
-   whether there is a minimum one and you want black bars to appear
-   instead. This is also explained in the previous step.
+   if there is one aspect ratio and you want black bars to appear
+   instead. This is also explained in :ref:`doc_multiple_resolutions`.
 
 4. For user interfaces, use the :ref:`anchoring <doc_size_and_anchors>`
    to determine where controls should stay and move. If UIs are more

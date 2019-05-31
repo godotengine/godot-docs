@@ -15,8 +15,8 @@ button can emit a signal when it's pressed.
 
 Signals are a way to *decouple* your game objects, which leads to better organized
 and more manageable code. Instead of forcing game objects to expect other objects
-to always be present, they can instead emit signals that any interested objects can
-subscribe to and respond.
+to always be present, they can instead emit signals that all interested objects can
+subscribe to and respond to.
 
 Below you can see some examples of how you can use signals in your own projects.
 
@@ -25,8 +25,11 @@ Timer example
 
 To see how signals work, let's try using a :ref:`Timer <class_Timer>` node. Create
 a new scene with a Node and two children: a Timer and a :ref:`Sprite <class_Sprite>`.
-You can use the Godot icon for the Sprite's texture, or any other image you
-like. Attach a script to the root node, but don't add any code to it yet.
+In the Scene dock, rename Node to TimerExample.
+
+For the Sprite's texture, you can use the Godot icon, or any other image you
+like. Do so by selecting ``Load`` in the Sprite's Texture attribute drop-down menu.
+Attach a script to the root node, but don't add any code to it yet.
 
 Your scene tree should look like this:
 
@@ -90,6 +93,8 @@ the signal is received. Let's make the Sprite blink:
     extends Node
 
     func _on_Timer_timeout():
+        # Note: the `$` operator is a shorthand for `get_node()`,
+        # so `$Sprite` is equivalent to `get_node("Sprite")`.
         $Sprite.visible = !$Sprite.visible
 
  .. code-tab:: csharp
@@ -174,7 +179,7 @@ You can also declare your own custom signals in Godot:
 Once declared, your custom signals will appear in the Inspector and can be connected
 in the same way as a node's built-in signals.
 
-To emit a signal via code, use the ``emit`` function:
+To emit a signal via code, use the ``emit_signal`` function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -198,126 +203,6 @@ To emit a signal via code, use the ``emit`` function:
             EmitSignal(nameof(MySignal));
         }
     }
-
-Shooting example
-----------------
-
-As another example of signal usage, let's consider a player character that can
-rotate and shoot towards the mouse. Every time the mouse button is clicked,
-we create an instance of the bullet at the player's location. See :ref:`doc_instancing`
-for details.
-
-However, if the bullets are added as children of the player, then they will
-remain "attached" to the player as it rotates:
-
-.. image:: img/signals_shoot1.gif
-
-Instead, we need the bullets to be independent of the player's movement - once
-fired, they should continue traveling in a straight line and the player can no
-longer affect them. Instead of being added to the scene tree as a child of the
-player, it makes more sense to add the bullet as a child of the "main" game
-scene, which may be the player's parent or even further up the tree.
-
-You could do this by adding the bullet directly:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    var bullet_instance = Bullet.instance()
-    get_parent().add_child(bullet_instance)
-
- .. code-tab:: csharp
-
-    Node bulletInstance = Bullet.Instance();
-    GetParent().AddChild(bulletInstance);
-
-However, this will lead to a different problem. Now if you try and test your
-"Player" scene independently, it will crash on shooting, because there is no
-parent node to access. This makes it a lot harder to test your player code
-independently and also means that if you decide to change your main scene's
-node structure, the player's parent may no longer be the appropriate node to
-receive the bullets.
-
-The solution to this is to use a signal to "emit" the bullets from the player.
-The player then has no need to "know" what happens to the bullets after that -
-whatever node is connected to the signal can "receive" the bullets and take the
-appropriate action to spawn them.
-
-
-Here is the code for the player using signals to emit the bullet:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    extends Sprite
-
-    signal shoot(bullet, direction, location)
-
-    var Bullet = preload("res://Bullet.tscn")
-
-    func _input(event):
-        if event is InputEventMouseButton:
-            if event.button_index == BUTTON_LEFT and event.pressed:
-                emit_signal("shoot", Bullet, rotation, position)
-
-    func _process(delta):
-        look_at(get_global_mouse_position())
-
- .. code-tab:: csharp
-
-    public class Player : Sprite
-    {
-        [Signal]
-        delegate void Shoot(PackedScene bullet, Vector2 direction, Vector2 location);
-
-        private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
-
-        public override void _Input(InputEvent event)
-        {
-            if (input is InputEventMouseButton mouseButton)
-            {
-                if (mouseButton.ButtonIndex == (int)ButtonList.Left && mouseButton.Pressed)
-                {
-                    EmitSignal(nameof(Shoot), _bullet, Rotation, Position);
-                }
-            }
-        }
-
-        public override _Process(float delta)
-        {
-            LookAt(GetGlobalMousePosition());
-        }
-    }
-
-
-In the main scene, we then connect the player's signal (it will appear in the
-"Node" tab).
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    func _on_Player_shoot(Bullet, direction, location):
-        var b = Bullet.instance()
-        add_child(b)
-        b.rotation = direction
-        b.position = location
-        b.velocity = b.velocity.rotated(direction)
-
- .. code-tab:: csharp
-
-    public void _on_Player_Shoot(PackedScene bullet, Vector2 direction, Vector2 location)
-    {
-        var bulletInstance = (Bullet)bullet.Instance();
-        AddChild(bulletInstance);
-        bulletInstance.Rotation = direction;
-        bulletInstance.Position = location;
-        bulletInstance.Velocity = bulletInstance.Velocity.Rotated(direction);
-    }
-
-Now the bullets will maintain their own movement independent of the player's
-rotation:
-
-.. image:: img/signals_shoot2.gif
 
 Conclusion
 ----------

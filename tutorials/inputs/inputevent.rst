@@ -185,7 +185,8 @@ The Input singleton has a method for this:
 
     var ev = InputEventAction.new()
     # set as move_left, pressed
-    ev.set_as_action("move_left", true)
+    ev.action = "move_left"
+    ev.pressed = true
     # feedback
     Input.parse_input_event(ev)
 

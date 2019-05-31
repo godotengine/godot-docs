@@ -3,9 +3,7 @@
 Using an external text editor
 ==============================
 
-While Godot has an inbuilt text editor, some developers have a tendency to
-want to use a text editor they are familiar with. Godot provides this
-option via the options under
+Godot can be used with an external text editor, such as Sublime Text or Visual Studio Code. To select an external text editor via the Godot editor menu:
 ``Editor -> Editor Settings -> Text Editor -> External``
 
 .. image:: img/editor_settings.png
@@ -31,11 +29,15 @@ Some example Exec Flags for various editors include:
 +---------------------+-----------------------------------------------------+
 | Editor              | Exec Flags                                          |
 +=====================+=====================================================+
-| Geany/Kate          | {file} --line {line} --column {col}                 |
+| Geany/Kate          | {file} -\-line {line} -\-column {col}               |
 +---------------------+-----------------------------------------------------+
 | Atom/Sublime Text   | {file}:{line}                                       |
 +---------------------+-----------------------------------------------------+
-| JetBrains Rider     | --line {line} {file}                                |
+| JetBrains Rider     | -\-line {line} {file}                               |
 +---------------------+-----------------------------------------------------+
-| Visual Studio Code  | {project} --goto {file}:{line}:{col}                |
+| Visual Studio Code  | {project} -\-goto {file}:{line}:{col}               |
 +---------------------+-----------------------------------------------------+
+| Vim (gVim)          | "+call cursor({line}, {col})" {file}                |
++---------------------+-----------------------------------------------------+
+
+.. note:: For Visual Studio Code you will have to point to the "code.cmd" file.

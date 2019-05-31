@@ -30,8 +30,8 @@ either? Let's see an example:
     # my_buildings.gd
     extends Node
 
-    # (note how constant scripts/scenes have a different naming scheme than
-    # their property variants).
+    # Note how constant scripts/scenes have a different naming scheme than
+    # their property variants.
 
     # This value is a constant, so it spawns when the Script object loads.
     # The script is preloading the value. The advantage here is that the editor
@@ -73,14 +73,14 @@ either? Let's see an example:
     // C# and other languages have no concept of "preloading".
     public class MyBuildings : Node
     {
-        //This is a read-only field, it can only be assigned when it's declared or during a constructor
+        //This is a read-only field, it can only be assigned when it's declared or during a constructor.
         public readonly PackedScene Building = ResourceLoader.Load<PackedScene>("res://building.tscn");
 
         public PackedScene ABuilding;
 
         public override void _Ready()
         {
-            // Can assign the value during initialization
+            // Can assign the value during initialization.
             ABuilding = GD.Load<PackedScene>("res://office.tscn");
         }
     }

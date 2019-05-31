@@ -7,7 +7,7 @@ So, where is the Godot community and where can you ask questions and get help?
 
 Note that some of these channels are run and moderated by members of the Godot community or third parties.
 
-A brief overview over these channels is also available on the `website <https://godotengine.org/community>`_.
+A brief overview over these and other channels is also available on the `Godot website <https://godotengine.org/community>`_.
 
 Q&A
 ---
@@ -20,8 +20,9 @@ IRC on Freenode
 - `General: #godotengine <http://webchat.freenode.net/?channels=#godotengine>`_
 - `Engine development: #godotengine-devel <http://webchat.freenode.net/?channels=#godotengine-devel>`_
 - `Documentation: #godotengine-doc <http://webchat.freenode.net/?channels=#godotengine-doc>`_
+- `Pull request meetings: #godotengine-meeting <http://webchat.freenode.net/?channels=#godotengine-meeting>`_
 - `GDNative: #godotengine-gdnative <http://webchat.freenode.net/?channels=#godotengine-gdnative>`_
-- `Webseite/PR: #godotengine-atelier <http://webchat.freenode.net/?channels=#godotengine-atelier>`_
+- `Website and public relations: #godotengine-atelier <http://webchat.freenode.net/?channels=#godotengine-atelier>`_
 - `IRC logs <https://godot.eska.me/irc-logs/>`_
 
 Other chats
@@ -43,4 +44,4 @@ Social networks
 Forum
 -----
 
-- `Forum (godotdevelopers.org) <https://godotdevelopers.org/forum>`_
+- `Forum (godotforums.org) <https://godotforums.org/>`_
