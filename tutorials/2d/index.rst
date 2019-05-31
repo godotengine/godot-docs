@@ -13,3 +13,4 @@
    2d_lights_and_shadows
    2d_meshes
    custom_drawing_in_2d
+   2d_sprite_animation

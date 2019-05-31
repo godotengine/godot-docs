@@ -17,8 +17,7 @@ Idle processing is activated when the method :ref:`Node._process() <class_Node_m
 is found in a script. It can be turned off and on with the
 :ref:`Node.set_process() <class_Node_method_set_process>` function.
 
-This method will be called every time a frame is drawn, so it's fully dependent on
-how many frames per second (FPS) the application is running at:
+This method will be called every time a frame is drawn:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -34,8 +33,12 @@ how many frames per second (FPS) the application is running at:
         // Do something...
     }
 
-The delta parameter contains the time elapsed in seconds, as a
-floating point, since the previous call to ``_process()``.
+It's important to bear in mind that the frequecy with which ``_process()``
+will be called depends on how many frames per second (FPS) your application
+is running at. This rate can vary over time and devices.
+
+To help manage this variability the ``delta`` parameter contains the time
+elapsed in seconds, as a floating point, since the previous call to ``_process()``.
 
 This parameter can be used to make sure things always take the same
 amount of time, regardless of the game's FPS.
@@ -52,7 +55,7 @@ Physics -> Common -> Physics Fps.
 The function ``_process()``, however, is not synced with physics. Its frame rate is not constant and is dependent
 on hardware and game optimization. Its execution is done after the physics step on single-threaded games.
 
-A simple way to test this is to create a scene with a single Label node,
+A simple way to see the ``_process()`` function at work is to create a scene with a single Label node,
 with the following script:
 
 .. tabs::
@@ -84,13 +87,15 @@ Which will show a counter increasing each frame.
 Groups
 ------
 
-Nodes can be added to groups, as many as desired per node, and is a useful feature for organizing large scenes.
-There are two ways to do this. The first is from the UI, from the Groups button under the Node panel:
+Groups in Godot work like tags you might have come across in other software.
+A node can be added to as many groups as desired. This is a useful feature for
+organizing large scenes. There are two ways to do add nodes to groups. The
+first is from the UI, using the Groups button under the Node panel:
 
 .. image:: img/groups_in_nodes.png
 
-And the second way is from code. One example would be to tag nodes
-which are enemies:
+And the second way is from code. The following script would add the current
+node to the ``enemies`` group as soon as it appeared in the scene tree.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -145,7 +150,7 @@ like interacting with scenes, their node hierarchy and groups of nodes.
 It allows you to easily switch scenes or reload them,
 to quit the game or pause and unpause it.
 It even comes with interesting signals.
-So check it out if you got some time!
+So check it out if you have some time!
 
 Notifications
 -------------
@@ -310,7 +315,7 @@ used:
         _sprite.Free(); // Immediately removes the node from the scene and frees it.
     }
 
-When a node is freed, it also frees all its children nodes. Because of
+When a node is freed, it also frees all its child nodes. Because of
 this, manually deleting nodes is much simpler than it appears. Free
 the base node and everything else in the subtree goes away with it.
 

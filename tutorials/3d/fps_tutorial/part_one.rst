@@ -138,7 +138,8 @@ Attach a new script to the ``Player`` node and call it ``Player.gd``.
 Let's program our player by adding the ability to move around, look around with the mouse, and jump.
 Add the following code to ``Player.gd``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends KinematicBody
 
@@ -240,6 +241,135 @@ Add the following code to ``Player.gd``:
             camera_rot.x = clamp(camera_rot.x, -70, 70)
             rotation_helper.rotation_degrees = camera_rot
 
+ .. code-tab:: csharp
+
+    using Godot;
+    using System;
+
+    public class Player : KinematicBody
+    {
+        [Export]
+        public float Gravity = -24.8f;
+        [Export]
+        public float MaxSpeed = 20.0f;
+        [Export]
+        public float JumpSpeed = 18.0f;
+        [Export]
+        public float Accel = 4.5f;
+        [Export]
+        public float Deaccel = 16.0f;
+        [Export]
+        public float MaxSlopeAngle = 40.0f;
+        [Export]
+        public float MouseSensitivity = 0.05f;
+
+        private Vector3 _vel = new Vector3();
+        private Vector3 _dir = new Vector3();
+
+        private Camera _camera;
+        private Spatial _rotationHelper;
+
+        // Called when the node enters the scene tree for the first time.
+        public override void _Ready()
+        {
+            _camera = GetNode<Camera>("Rotation_Helper/Camera");
+            _rotationHelper = GetNode<Spatial>("Rotation_Helper");
+
+            Input.SetMouseMode(Input.MouseMode.Captured);
+        }
+
+        public override void _PhysicsProcess(float delta)
+        {
+            ProcessInput(delta);
+            ProcessMovement(delta);
+        }
+
+        private void ProcessInput(float delta)
+        {
+            //  -------------------------------------------------------------------
+            //  Walking
+            _dir = new Vector3();
+            Transform camXform = _camera.GetGlobalTransform();
+
+            Vector2 inputMovementVector = new Vector2();
+
+            if (Input.IsActionPressed("movement_forward"))
+                inputMovementVector.y += 1;
+            if (Input.IsActionPressed("movement_backward"))
+                inputMovementVector.y -= 1;
+            if (Input.IsActionPressed("movement_left"))
+                inputMovementVector.x -= 1;
+            if (Input.IsActionPressed("movement_right"))
+                inputMovementVector.x += 1;
+
+            inputMovementVector = inputMovementVector.Normalized();
+
+            _dir += -camXform.basis.z.Normalized() * inputMovementVector.y;
+            _dir += camXform.basis.x.Normalized() * inputMovementVector.x;
+            //  -------------------------------------------------------------------
+
+            //  -------------------------------------------------------------------
+            //  Jumping
+            if (IsOnFloor())
+            {
+                if (Input.IsActionJustPressed("movement_jump"))
+                    _vel.y = JumpSpeed;
+            }
+            //  -------------------------------------------------------------------
+
+            //  -------------------------------------------------------------------
+            //  Capturing/Freeing the cursor
+            if (Input.IsActionJustPressed("ui_cancel"))
+            {
+                if (Input.GetMouseMode() == Input.MouseMode.Visible)
+                    Input.SetMouseMode(Input.MouseMode.Captured);
+                else
+                    Input.SetMouseMode(Input.MouseMode.Visible);
+            }
+            //  -------------------------------------------------------------------
+        }
+
+        private void ProcessMovement(float delta)
+        {
+            _dir.y = 0;
+            _dir = _dir.Normalized();
+
+            _vel.y += delta * Gravity;
+
+            Vector3 hvel = _vel;
+            hvel.y = 0;
+
+            Vector3 target = _dir;
+
+            target *= MaxSpeed;
+
+            float accel;
+            if (_dir.Dot(hvel) > 0)
+                accel = Accel;
+            else
+                accel = Deaccel;
+
+            hvel = hvel.LinearInterpolate(target, accel * delta);
+            _vel.x = hvel.x;
+            _vel.z = hvel.z;
+            _vel = MoveAndSlide(_vel, new Vector3(0, 1, 0), false, 4, Mathf.Deg2Rad(MaxSlopeAngle));
+        }
+
+        public override void _Input(InputEvent @event)
+        {
+            if (@event is InputEventMouseMotion && Input.GetMouseMode() == Input.MouseMode.Captured)
+            {
+                InputEventMouseMotion mouseEvent = @event as InputEventMouseMotion;
+                _rotationHelper.RotateX(Mathf.Deg2Rad(mouseEvent.Relative.y * MouseSensitivity));
+                RotateY(Mathf.Deg2Rad(-mouseEvent.Relative.x * MouseSensitivity));
+
+                Vector3 cameraRot = _rotationHelper.RotationDegrees;
+                cameraRot.x = Mathf.Clamp(cameraRot.x, -70, 70);
+                _rotationHelper.RotationDegrees = cameraRot;
+            }
+        }
+    }
+
 This is a lot of code, so let's break it down function by function:
 
 .. tip:: While copy and pasting code is ill advised, as you can learn a lot from manually typing the code in, you can
@@ -339,7 +469,8 @@ In Godot, the origin is at position ``(0, 0, 0)`` with a rotation of ``(0, 0, 0)
 
 If you want to move using the world space directional vectors, you'd do something like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     if Input.is_action_pressed("movement_forward"):
         node.translate(Vector3(0, 0, 1))
@@ -349,6 +480,17 @@ If you want to move using the world space directional vectors, you'd do somethin
         node.translate(Vector3(1, 0, 0))
     if Input.is_action_pressed("movement_right"):
         node.translate(Vector3(-1, 0, 0))
+        
+ .. code-tab:: csharp
+ 
+    if (Input.IsActionPressed("movement_forward"))
+        node.Translate(new Vector3(0, 0, 1));
+    if (Input.IsActionPressed("movement_backward"))
+        node.Translate(new Vector3(0, 0, -1));
+    if (Input.IsActionPressed("movement_left"))
+        node.Translate(new Vector3(1, 0, 0));
+    if (Input.IsActionPressed("movement_right"))
+        node.Translate(new Vector3(-1, 0, 0));
 
 .. note:: Notice how we do not need to do any calculations to get world space directional vectors.
           We can define a few :ref:`Vector3 <class_Vector3>` variables and input the values pointing in each direction.
@@ -387,7 +529,8 @@ Each of those vectors point towards each of the local space vectors coming from 
 
 To use the :ref:`Spatial <class_Spatial>` node's local directional vectors, we use this code:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     if Input.is_action_pressed("movement_forward"):
         node.translate(node.global_transform.basis.z.normalized())
@@ -397,6 +540,17 @@ To use the :ref:`Spatial <class_Spatial>` node's local directional vectors, we u
         node.translate(node.global_transform.basis.x.normalized())
     if Input.is_action_pressed("movement_right"):
         node.translate(-node.global_transform.basis.x.normalized())
+        
+ .. code-tab:: csharp
+        
+    if (Input.IsActionPressed("movement_forward"))
+        node.Translate(node.GlobalTransform.basis.z.Normalized());
+    if (Input.IsActionPressed("movement_backward"))
+        node.Translate(-node.GlobalTransform.basis.z.Normalized());
+    if (Input.IsActionPressed("movement_left"))
+        node.Translate(node.GlobalTransform.basis.x.Normalized());
+    if (Input.IsActionPressed("movement_right"))
+        node.Translate(-node.GlobalTransform.basis.x.Normalized());
 
 Here is what local space looks like in 2D:
 
@@ -539,13 +693,24 @@ so let's do that!
 
 First we need a few more class variables in our player script:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     const MAX_SPRINT_SPEED = 30
     const SPRINT_ACCEL = 18
     var is_sprinting = false
 
     var flashlight
+
+ .. code-tab:: csharp
+
+    [Export]
+    public float MaxSprintSpeed = 30.0f;
+    [Export]
+    public float SprintAccel = 18.0f;
+    private bool _isSprinting = false;
+    
+    private SpotLight _flashlight;
 
 All the sprinting variables work exactly the same as the non sprinting variables with
 similar names.
@@ -555,9 +720,14 @@ we will be using to hold the player's flash light node.
 
 Now we need to add a few lines of code, starting in ``_ready``. Add the following to ``_ready``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     flashlight = $Rotation_Helper/Flashlight
+
+ .. code-tab:: csharp
+ 
+    _flashlight = GetNode<SpotLight>("Rotation_Helper/Flashlight");
 
 This gets the ``Flashlight`` node and assigns it to the ``flashlight`` variable.
 
@@ -565,7 +735,8 @@ _________
 
 Now we need to change some of the code in ``process_input``. Add the following somewhere in ``process_input``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # ----------------------------------
     # Sprinting
@@ -584,6 +755,26 @@ Now we need to change some of the code in ``process_input``. Add the following s
             flashlight.show()
     # ----------------------------------
 
+ .. code-tab:: csharp
+ 
+    //  -------------------------------------------------------------------
+    //  Sprinting
+    if (Input.IsActionPressed("movement_sprint"))
+        _isSprinting = true;
+    else
+        _isSprinting = false;
+    //  -------------------------------------------------------------------
+
+    //  -------------------------------------------------------------------
+    //  Turning the flashlight on/off
+    if (Input.IsActionJustPressed("flashlight"))
+    {
+        if (_flashlight.IsVisibleInTree())
+            _flashlight.Hide();
+        else
+            _flashlight.Show();
+    }
+
 Let's go over the additions:
 
 We set ``is_sprinting`` to true when the player is holding down the ``movement_sprint`` action, and false
@@ -597,25 +788,40 @@ _________
 
 Now we need to change a couple things in ``process_movement``. First, replace ``target *= MAX_SPEED`` with the following:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     if is_sprinting:
         target *= MAX_SPRINT_SPEED
     else:
         target *= MAX_SPEED
 
+ .. code-tab:: csharp
+ 
+    if (_isSprinting)
+        target *= MaxSprintSpeed;    
+    else
+        target *= MaxSpeed;
+            
 Now instead of always multiplying ``target`` by ``MAX_SPEED``, we first check to see if the player is sprinting or not.
 If the player is sprinting, we instead multiply ``target`` by ``MAX_SPRINT_SPEED``.
 
 Now all that's left is to change the acceleration when sprinting. Change ``accel = ACCEL`` to the following:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     if is_sprinting:
         accel = SPRINT_ACCEL
     else:
         accel = ACCEL
 
+ .. code-tab:: csharp
+ 
+    if (_isSprinting)
+        accel = SprintAccel;
+    else
+        accel = Accel;
 
 Now, when the player is sprinting, we'll use ``SPRINT_ACCEL`` instead of ``ACCEL``, which will accelerate the player faster.
 

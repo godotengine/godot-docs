@@ -195,3 +195,23 @@ For a complete list of built-in GLSL functions see the :ref:`Shading Language do
 +------------------------------------------------------------------------+--------------------------------------------------+
 | vec_type **fwidth** ( vec_type )                                       |                                                  |
 +------------------------------------------------------------------------+--------------------------------------------------+
+
+Godot also provides many built-in variables and render modes. Some cannot be supported in GLES2. Below is a list of
+built-in variables and render modes that, when written to, will have no effect or could even cause issues when using 
+the GLES2 backend.
+
++----------------------------+
+| Variable / Render Mode     |
++============================+
+| ``ensure_correct_normals`` |
++----------------------------+
+| ``INSTANCE_ID``            |
++----------------------------+
+| ``DEPTH``                  |
++----------------------------+
+| ``ANISOTROPY``             |
++----------------------------+
+| ``ANISOTROPY_FLOW``        |
++----------------------------+
+| ``SSS_STRENGTH``           |
++----------------------------+

@@ -92,16 +92,16 @@ Then, use those seeds to generate random numbers using ``rand_from_seed``:
 .. code-block:: glsl
 
   CUSTOM.x = rand_from_seed(alt_seed1);
-  vec3 position = vec3(rand_from_seed(alt_seed2)*2.0-1.0, 
-                       rand_from_seed(alt_seed3)*2.0-1.0, 
-                       rand_from_seed(alt_seed4)*2.0-1.0);
+  vec3 position = vec3(rand_from_seed(alt_seed2) * 2.0 - 1.0, 
+                       rand_from_seed(alt_seed3) * 2.0 - 1.0, 
+                       rand_from_seed(alt_seed4) * 2.0 - 1.0);
 
 Finally, assign ``position`` to ``TRANSFORM[3].xyz``, which is the part of the transform that holds
 the position information.
 
 .. code-block:: glsl
 
-  TRANSFORM[3].xyz = CUSTOM.xyz*20.0;
+  TRANSFORM[3].xyz = position * 20.0;
 
 Remember, all this code so far goes inside the ``RESTART`` block.
 

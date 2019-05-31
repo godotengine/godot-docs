@@ -117,7 +117,7 @@ changed:
     func _on_Player_body_entered( body ):
         hide()
         emit_signal("hit")
-        $CollisionShape2D.call_deferred("set_disabled", true)
+        $CollisionShape2D.set_deferred("disabled", true)
 
 Export templates
 ----------------

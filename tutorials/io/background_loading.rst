@@ -7,8 +7,8 @@ When switching the main scene of your game (e.g. going to a new
 level), you might want to show a loading screen with some indication
 that progress is being made. The main load method
 (``ResourceLoader::load`` or just ``load`` from GDScript) blocks your
-thread while the resource is being loaded, so it's not good. This
-document discusses the ``ResourceInteractiveLoader`` class for smoother
+thread, making your game appear frozen and unresponsive while the resource is being loaded. This
+document discusses the alternative of using the ``ResourceInteractiveLoader`` class for smoother
 load screens.
 
 ResourceInteractiveLoader
@@ -89,7 +89,7 @@ Example
 This example demonstrates how to load a new scene. Consider it in the
 context of the :ref:`doc_singletons_autoload` example.
 
-Firstly, we set up some variables and initialize the ``current_scene``
+First, we set up some variables and initialize the ``current_scene``
 with the main scene of the game:
 
 ::
@@ -106,8 +106,8 @@ with the main scene of the game:
 The function ``goto_scene`` is called from the game when the scene
 needs to be switched. It requests an interactive loader, and calls
 ``set_process(true)`` to start polling the loader in the ``_process``
-callback. It also starts a "loading" animation, which can show a
-progress bar or loading screen, etc.
+callback. It also starts a "loading" animation, which could show a
+progress bar or loading screen.
 
 ::
 
@@ -127,7 +127,7 @@ progress bar or loading screen, etc.
 
 ``_process`` is where the loader is polled. ``poll`` is called, and then
 we deal with the return value from that call. ``OK`` means keep polling,
-``ERR_FILE_EOF`` means load is done, anything else means there was an
+``ERR_FILE_EOF`` means loading is done, anything else means there was an
 error. Also note we skip one frame (via ``wait_frames``, set on the
 ``goto_scene`` function) to allow the loading screen to show up.
 
@@ -150,7 +150,7 @@ precise control over the timings.
             return
 
         var t = OS.get_ticks_msec()
-        while OS.get_ticks_msec() < t + time_max: # use "time_max" to control how much time we block this thread
+        while OS.get_ticks_msec() < t + time_max: # use "time_max" to control for how long we block this thread
 
             # poll your loader
             var err = loader.poll()
@@ -207,7 +207,7 @@ Not blocking main thread during the polling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have a mutex to allow calls from the main thread to your loader
-class, don't lock the former while you call ``poll`` on the latter. When a
+class, don't lock the main thread while you call ``poll`` on your loader class. When a
 resource is done loading, it might require some resources from the
 low-level APIs (VisualServer, etc), which might need to lock the main
 thread to acquire them. This might cause a deadlock if the main thread
@@ -243,14 +243,14 @@ Remove a resource from the queue, discarding any loading done.
 
     func is_ready(path)
 
-Returns true if a resource is done loading and ready to be retrieved.
+Returns true if a resource is fully loaded and ready to be retrieved.
 
 ::
 
     func get_progress(path)
 
-Get the progress of a resource. Returns -1 on error (for example if the
-resource is not on the queue), or a number between 0.0 and 1.0 with the
+Get the progress of a resource. Returns -1 if there was an error (for example if the
+resource is not in the queue), or a number between 0.0 and 1.0 with the
 progress of the load. Use mostly for cosmetic purposes (updating
 progress bars, etc), use ``is_ready`` to find out if a resource is
 actually ready.
@@ -260,7 +260,7 @@ actually ready.
     func get_resource(path)
 
 Returns the fully loaded resource, or null on error. If the resource is
-not done loading (``is_ready`` returns false), it will block your thread
+not fully loaded (``is_ready`` returns false), it will block your thread
 and finish the load. If the resource is not on the queue, it will call
 ``ResourceLoader::load`` to load it normally and return it.
 

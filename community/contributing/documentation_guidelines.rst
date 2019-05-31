@@ -35,6 +35,19 @@ reference documentation about the reStructuredText markup language.
              main repository. These files are then later used to generate the
              in-editor documentation as well as the API reference of the
              online docs. Read more here: :ref:`doc_updating_the_class_reference`.
+             
+The 'Edit on Github' link
+-------------------------
+
+If you're reading documentation on ``docs.godotengine.org`` you'll see an 'Edit on GitHub' hyperlink at the top right of the page. Once you've created a GitHub account you can propose changes to a page you're reading as follows:
+
+1. Copy the URL that the GitHub link points to. Part of the URL refers to a version name such as '3.1' or 'latest'. Swap this part for the word 'master' so that the result looks something like this: ``https://github.com/godotengine/godot-docs/blob/master/community/contributing/docs_writing_guidelines.rst``
+2. Load that URL in your browser.
+3. On the GitHub page you're taken to, click the pencil icon. It has the tooltip "Edit the file in a fork of this project".
+4. Complete all the edits you want to make for that page.
+5. Summarise the changes you made in the form at the bottom of the page and click the button labelled 'Propose file change' when done.
+6. On the following screens, click the 'Create pull request' buttons until you see a message like ``Open. yourGitHubUsername wants to merge 1 commit into godotengine:master from yourGitHubUsername:patch-6``
+7. A reviewer will evaluate your changes and incorporate them into the docs if they're judged to improve them. You might also be asked to make modifications to your changes before they're included.
 
 What makes good documentation?
 ------------------------------

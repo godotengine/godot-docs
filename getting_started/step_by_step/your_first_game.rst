@@ -459,7 +459,7 @@ Add this code to the function:
     func _on_Player_body_entered(body):
         hide()  # Player disappears after being hit.
         emit_signal("hit")
-        $CollisionShape2D.call_deferred("set_disabled", true)
+        $CollisionShape2D.set_deferred("disabled", true)
 
  .. code-tab:: csharp
 
@@ -475,7 +475,7 @@ to disable the player's collision so that we don't trigger the ``hit`` signal
 more than once.
 
 .. Note:: Disabling the area's collision shape can cause an error if it happens
-          in the middle of the engine's collision processing. Using ``call_deferred()``
+          in the middle of the engine's collision processing. Using ``set_deferred()``
           allows us to have Godot wait to disable the shape until it's safe to
           do so.
 
@@ -1124,6 +1124,39 @@ sync with the changing score:
 
 Now you're ready to play! Click the "Play the Project" button. You will
 be asked to select a main scene, so choose ``Main.tscn``.
+
+Removing old creeps
+~~~~~~~~~~~~~~~~~~~
+
+If you play until "Game Over" and then start a new game the creeps from the
+previous game are still on screen. It would be better if they all disappeared
+at the start of a new game.
+
+We'll use the ``start_game`` signal that's already being emitted by the ``HUD``
+node to remove the remaining creeps. We can't use the editor to connect the
+signal to the mobs in the way we need because there are no ``Mob`` nodes in the
+``Main`` scene tree until we run the game. Instead we'll use code.
+
+Start by adding a new function to ``Mob.gd``. ``queue_free()`` will delete the
+current node at the end of the current frame.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _on_start_game():
+        queue_free()
+          
+Then in ``Main.gd`` add a new line inside the ``_on_MobTimer_timeout()`` function,
+at the end.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    $HUD.connect("start_game", mob, "_on_start_game")
+
+This line tells the new Mob node (referenced by the ``mob`` variable) to respond
+to any ``start_game`` signal emitted by the ``HUD`` node by running its
+``_on_start_game()`` function.
 
 Finishing up
 ------------

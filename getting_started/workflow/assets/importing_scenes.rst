@@ -19,6 +19,9 @@ Godot supports the following 3D *scene file fomats*:
 
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
 
+It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose 
+or default rest pose before exporting with your favorite 3D editor.
+
 Why not FBX?
 ~~~~~~~~~~~~
 

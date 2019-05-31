@@ -60,7 +60,7 @@ it is a good idea to add them as Git submodules:
     git init
     git submodule add https://github.com/GodotNativeTools/godot-cpp
     cd godot-cpp
-    git submodule update -- init
+    git submodule update --init
 
  .. code-tab:: none Godot 3.0
 
@@ -69,7 +69,7 @@ it is a good idea to add them as Git submodules:
     git init
     git submodule add -b 3.0 https://github.com/GodotNativeTools/godot-cpp
     cd godot-cpp
-    git submodule update -- init
+    git submodule update --init
 
 If you decide to just download the repositories or clone them
 into your project folder, make sure to keep the folder layout identical
@@ -137,7 +137,7 @@ libraries that can be compiled into your project stored in ``godot-cpp/bin/``.
 At some point in the future, compiled binaries will be available,
 making this step optional.
 
-.. note:: You may need to add ``bits=64`` to the command on Windows. We're still working on better auto detection.
+.. note:: You may need to add ``bits=64`` to the command on Windows or Linux. We're still working on better auto detection.
 
 Creating a simple plugin
 ------------------------

@@ -425,37 +425,37 @@ functions in your script. An example implementation of a forward iterator follow
 
 ::
 
-    class FwdIterator:
-        var start, curr, end, increment
+    class ForwardIterator:
+        var start
+        var current
+        var end
+        var increment
 
-        func _init(start, stop, inc):
+        func _init(start, stop, increment):
             self.start = start
-            self.curr = start
+            self.current = start
             self.end = stop
-            self.increment = inc
+            self.increment = increment
 
-        func is_done():
-            return (curr < end)
-
-        func do_step():
-            curr += increment
-            return is_done()
+        func should_continue():
+            return (current < end)
 
         func _iter_init(arg):
-            curr = start
-            return is_done()
+            current = start
+            return should_continue()
 
         func _iter_next(arg):
-            return do_step()
+            current += increment
+            return should_continue()
 
         func _iter_get(arg):
-            return curr
+            return current
 
 And it can be used like any other iterator:
 
 ::
 
-    var itr = FwdIterator.new(0, 6, 2)
+    var itr = ForwardIterator.new(0, 6, 2)
     for i in itr:
         print(i) # Will print 0, 2, and 4
 

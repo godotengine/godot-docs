@@ -135,7 +135,7 @@ returns the root node of the scene. You can then add it as a child of any other
 node.
 
 The approach has several advantages. As the :ref:`PackedScene.instance()
-<class_PackedScene_method_instance>` function is pretty fast, you can create new
+<class_PackedScene_method_instance>` function is fast, you can create new
 enemies, bullets, effects, etc. without having to load them again from disk each
 time. Remember that, as always, images, meshes, etc. are all shared between the
 scene instances.

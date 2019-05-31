@@ -12,7 +12,9 @@ Though arguably less convenient to edit than a wiki, this git repository is mean
 
 ### Editing existing pages
 
-To edit an existing page, locate its .rst source file and open it in your favorite text editor. You can then commit the changes, push them to your fork and make a pull request. **Note that the pages in `classes/` should not be edited here, they are automatically generated from Godot's [XML class references](https://github.com/godotengine/godot/tree/master/doc/classes).**
+To edit an existing page, locate its .rst source file and open it in your favorite text editor. You can then commit the changes, push them to your fork and make a pull request.
+**Note that the pages in `classes/` should not be edited here, they are automatically generated from Godot's [XML class references](https://github.com/godotengine/godot/tree/master/doc/classes).**
+See [Contribute to the Class Reference](https://docs.godotengine.org/en/latest/community/contributing/updating_the_class_reference.html) for details.
 
 ### Adding new pages
 
