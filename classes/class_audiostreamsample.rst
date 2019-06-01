@@ -14,7 +14,7 @@ AudioStreamSample
 Brief Description
 -----------------
 
-Plays audio.
+Stores audio data loaded from ``.wav`` files.
 
 Properties
 ----------
@@ -84,7 +84,9 @@ enum **LoopMode**:
 Description
 -----------
 
-Plays audio, can loop.
+AudioStreamSample stores sound samples loaded from ``.wav`` files. To play the stored sound use an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` (for background music) or :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`/:ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` (for positional audio). The sound can be looped.
+
+This class can also be used to store dynamically generated PCM audio data.
 
 Property Descriptions
 ---------------------

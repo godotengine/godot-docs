@@ -26,7 +26,7 @@ Properties
 Description
 -----------
 
-Class representing a square mesh with size (2,2,0). Consider using a :ref:`PlaneMesh<class_PlaneMesh>` if you require a differently sized plane.
+Class representing a square :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Y axes; this default rotation is more suited for use with billboarded materials. Unlike :ref:`PlaneMesh<class_PlaneMesh>`, this mesh doesn't provide subdivision options.
 
 Property Descriptions
 ---------------------

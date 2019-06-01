@@ -39,6 +39,13 @@ Properties
 | :ref:`bool<class_bool>`                                                 | :ref:`use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
+Methods
+-------
+
++------+----------------------------------------------------------------------------------------------------------------+
+| void | :ref:`set_custom_aabb<class_GeometryInstance_method_set_custom_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)** |
++------+----------------------------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
@@ -187,4 +194,13 @@ If there is a material in material_override, it will be used instead of any mate
 +----------+-----------------+
 
 If ``true``, this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
+
+Method Descriptions
+-------------------
+
+.. _class_GeometryInstance_method_set_custom_aabb:
+
+- void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` aabb **)**
+
+Overrides the bounding box of this node with a custom one. To remove it, set an AABB with all fields set to zero.
 

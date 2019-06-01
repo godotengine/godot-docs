@@ -163,6 +163,8 @@ enum **MenuItems**:
 
 - **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
 
+Non-printable escape characters are automatically stripped from the OS clipboard via :ref:`String.strip_escapes<class_String_method_strip_escapes>`.
+
 - **MENU_CLEAR** = **3** --- Erases the whole ``LineEdit`` text.
 
 - **MENU_SELECT_ALL** = **4** --- Selects the whole ``LineEdit`` text.

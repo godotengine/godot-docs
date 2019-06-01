@@ -20,6 +20,8 @@ Methods
 -------
 
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                     | :ref:`_forward_atlas_subtile_selection<class_TileSet_method__forward_atlas_subtile_selection>` **(** :ref:`int<class_int>` atlastile_id, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** virtual                                                          |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                     | :ref:`_forward_subtile_selection<class_TileSet_method__forward_subtile_selection>` **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** virtual                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`_is_tile_bound<class_TileSet_method__is_tile_bound>` **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual                                                                                                                                                 |
@@ -235,6 +237,10 @@ Tiles are referenced by a unique integer ID.
 
 Method Descriptions
 -------------------
+
+.. _class_TileSet_method__forward_atlas_subtile_selection:
+
+- :ref:`Vector2<class_Vector2>` **_forward_atlas_subtile_selection** **(** :ref:`int<class_int>` atlastile_id, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** virtual
 
 .. _class_TileSet_method__forward_subtile_selection:
 

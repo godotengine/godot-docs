@@ -186,6 +186,8 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`strip_edges<class_String_method_strip_edges>` **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**                                 |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`strip_escapes<class_String_method_strip_escapes>` **(** **)**                                                                                                   |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`substr<class_String_method_substr>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len **)**                                                           |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`to_ascii<class_String_method_to_ascii>` **(** **)**                                                                                                             |
@@ -690,7 +692,13 @@ Splits the string in floats by using a divisor string and returns an array of th
 
 - :ref:`String<class_String>` **strip_edges** **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**
 
-Returns a copy of the string stripped of any non-printable character at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.
+Returns a copy of the string stripped of any non-printable character (including tabulations, spaces and line breaks) at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.
+
+.. _class_String_method_strip_escapes:
+
+- :ref:`String<class_String>` **strip_escapes** **(** **)**
+
+Returns a copy of the string stripped of any escape character. These include all non-printable control characters of the first page of the ASCII table (< 32), such as tabulation (``\t`` in C) and newline (``\n`` and ``\r``) characters, but not spaces.
 
 .. _class_String_method_substr:
 

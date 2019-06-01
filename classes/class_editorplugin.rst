@@ -177,6 +177,10 @@ Enumerations
 
 .. _class_EditorPlugin_constant_CONTAINER_PROPERTY_EDITOR_BOTTOM:
 
+.. _class_EditorPlugin_constant_CONTAINER_PROJECT_SETTING_TAB_LEFT:
+
+.. _class_EditorPlugin_constant_CONTAINER_PROJECT_SETTING_TAB_RIGHT:
+
 enum **CustomControlContainer**:
 
 - **CONTAINER_TOOLBAR** = **0**
@@ -198,6 +202,10 @@ enum **CustomControlContainer**:
 - **CONTAINER_CANVAS_EDITOR_BOTTOM** = **8**
 
 - **CONTAINER_PROPERTY_EDITOR_BOTTOM** = **9**
+
+- **CONTAINER_PROJECT_SETTING_TAB_LEFT** = **10**
+
+- **CONTAINER_PROJECT_SETTING_TAB_RIGHT** = **11**
 
 .. _enum_EditorPlugin_DockSlot:
 

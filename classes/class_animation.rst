@@ -127,6 +127,8 @@ Methods
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`track_set_interpolation_type<class_Animation_method_track_set_interpolation_type>` **(** :ref:`int<class_int>` idx, :ref:`InterpolationType<enum_Animation_InterpolationType>` interpolation **)**                                                                                                   |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`track_set_key_time<class_Animation_method_track_set_key_time>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` time **)**                                                                                                                                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`track_set_key_transition<class_Animation_method_track_set_key_transition>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` transition **)**                                                                                                                |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`track_set_key_value<class_Animation_method_track_set_key_value>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key, :ref:`Variant<class_Variant>` value **)**                                                                                                                               |
@@ -535,6 +537,12 @@ If ``true``, the track at ``idx`` wraps the interpolation loop.
 - void **track_set_interpolation_type** **(** :ref:`int<class_int>` idx, :ref:`InterpolationType<enum_Animation_InterpolationType>` interpolation **)**
 
 Set the interpolation type of a given track, from the INTERPOLATION\_\* enum.
+
+.. _class_Animation_method_track_set_key_time:
+
+- void **track_set_key_time** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` time **)**
+
+Set the time of an existing key.
 
 .. _class_Animation_method_track_set_key_transition:
 

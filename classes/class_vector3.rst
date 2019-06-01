@@ -67,6 +67,8 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`min_axis<class_Vector3_method_min_axis>` **(** **)**                                                                                                                                                           |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`move_toward<class_Vector3_method_move_toward>` **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` delta **)**                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`normalized<class_Vector3_method_normalized>` **(** **)**                                                                                                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`outer<class_Vector3_method_outer>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                                 |
@@ -286,6 +288,12 @@ Returns the axis of the vector's largest value. See ``AXIS_*`` constants.
 - :ref:`int<class_int>` **min_axis** **(** **)**
 
 Returns the axis of the vector's smallest value. See ``AXIS_*`` constants.
+
+.. _class_Vector3_method_move_toward:
+
+- :ref:`Vector3<class_Vector3>` **move_toward** **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` delta **)**
+
+Moves the vector toward ``to`` by the fixed ``delta`` amount.
 
 .. _class_Vector3_method_normalized:
 

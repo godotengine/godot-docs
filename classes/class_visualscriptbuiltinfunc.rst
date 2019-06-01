@@ -86,6 +86,8 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_RANGE_LERP:
 
+.. _class_VisualScriptBuiltinFunc_constant_MATH_MOVE_TOWARD:
+
 .. _class_VisualScriptBuiltinFunc_constant_MATH_DECTIME:
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_RANDOMIZE:
@@ -218,82 +220,84 @@ enum **BuiltinFunc**:
 
 - **MATH_RANGE_LERP** = **28**
 
-- **MATH_DECTIME** = **29** --- Return the result of 'value' decreased by 'step' \* 'amount'.
+- **MATH_MOVE_TOWARD** = **29** --- Moves the number toward a value, based on the third input.
 
-- **MATH_RANDOMIZE** = **30** --- Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
+- **MATH_DECTIME** = **30** --- Return the result of 'value' decreased by 'step' \* 'amount'.
 
-- **MATH_RAND** = **31** --- Return a random 32 bits integer value. To obtain a random value between 0 to N (where N is smaller than 2^32 - 1), you can use it with the remainder function.
+- **MATH_RANDOMIZE** = **31** --- Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
 
-- **MATH_RANDF** = **32** --- Return a random floating-point value between 0 and 1. To obtain a random value between 0 to N, you can use it with multiplication.
+- **MATH_RAND** = **32** --- Return a random 32 bits integer value. To obtain a random value between 0 to N (where N is smaller than 2^32 - 1), you can use it with the remainder function.
 
-- **MATH_RANDOM** = **33** --- Return a random floating-point value between the two inputs.
+- **MATH_RANDF** = **33** --- Return a random floating-point value between 0 and 1. To obtain a random value between 0 to N, you can use it with multiplication.
 
-- **MATH_SEED** = **34** --- Set the seed for the random number generator.
+- **MATH_RANDOM** = **34** --- Return a random floating-point value between the two inputs.
 
-- **MATH_RANDSEED** = **35** --- Return a random value from the given seed, along with the new seed.
+- **MATH_SEED** = **35** --- Set the seed for the random number generator.
 
-- **MATH_DEG2RAD** = **36** --- Convert the input from degrees to radians.
+- **MATH_RANDSEED** = **36** --- Return a random value from the given seed, along with the new seed.
 
-- **MATH_RAD2DEG** = **37** --- Convert the input from radians to degrees.
+- **MATH_DEG2RAD** = **37** --- Convert the input from degrees to radians.
 
-- **MATH_LINEAR2DB** = **38** --- Convert the input from linear volume to decibel volume.
+- **MATH_RAD2DEG** = **38** --- Convert the input from radians to degrees.
 
-- **MATH_DB2LINEAR** = **39** --- Convert the input from decibel volume to linear volume.
+- **MATH_LINEAR2DB** = **39** --- Convert the input from linear volume to decibel volume.
 
-- **MATH_POLAR2CARTESIAN** = **40** --- Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (x and y axis).
+- **MATH_DB2LINEAR** = **40** --- Convert the input from decibel volume to linear volume.
 
-- **MATH_CARTESIAN2POLAR** = **41** --- Converts a 2D point expressed in the cartesian coordinate system (x and y axis) to the polar coordinate system (a distance from the origin and an angle).
+- **MATH_POLAR2CARTESIAN** = **41** --- Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (x and y axis).
 
-- **MATH_WRAP** = **42**
+- **MATH_CARTESIAN2POLAR** = **42** --- Converts a 2D point expressed in the cartesian coordinate system (x and y axis) to the polar coordinate system (a distance from the origin and an angle).
 
-- **MATH_WRAPF** = **43**
+- **MATH_WRAP** = **43**
 
-- **LOGIC_MAX** = **44** --- Return the greater of the two numbers, also known as their maximum.
+- **MATH_WRAPF** = **44**
 
-- **LOGIC_MIN** = **45** --- Return the lesser of the two numbers, also known as their minimum.
+- **LOGIC_MAX** = **45** --- Return the greater of the two numbers, also known as their maximum.
 
-- **LOGIC_CLAMP** = **46** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
+- **LOGIC_MIN** = **46** --- Return the lesser of the two numbers, also known as their minimum.
 
-- **LOGIC_NEAREST_PO2** = **47** --- Return the nearest power of 2 to the input.
+- **LOGIC_CLAMP** = **47** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
 
-- **OBJ_WEAKREF** = **48** --- Create a :ref:`WeakRef<class_WeakRef>` from the input.
+- **LOGIC_NEAREST_PO2** = **48** --- Return the nearest power of 2 to the input.
 
-- **FUNC_FUNCREF** = **49** --- Create a :ref:`FuncRef<class_FuncRef>` from the input.
+- **OBJ_WEAKREF** = **49** --- Create a :ref:`WeakRef<class_WeakRef>` from the input.
 
-- **TYPE_CONVERT** = **50** --- Convert between types.
+- **FUNC_FUNCREF** = **50** --- Create a :ref:`FuncRef<class_FuncRef>` from the input.
 
-- **TYPE_OF** = **51** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
+- **TYPE_CONVERT** = **51** --- Convert between types.
 
-- **TYPE_EXISTS** = **52** --- Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
+- **TYPE_OF** = **52** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
 
-- **TEXT_CHAR** = **53** --- Return a character with the given ascii value.
+- **TYPE_EXISTS** = **53** --- Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
 
-- **TEXT_STR** = **54** --- Convert the input to a string.
+- **TEXT_CHAR** = **54** --- Return a character with the given ascii value.
 
-- **TEXT_PRINT** = **55** --- Print the given string to the output window.
+- **TEXT_STR** = **55** --- Convert the input to a string.
 
-- **TEXT_PRINTERR** = **56** --- Print the given string to the standard error output.
+- **TEXT_PRINT** = **56** --- Print the given string to the output window.
 
-- **TEXT_PRINTRAW** = **57** --- Print the given string to the standard output, without adding a newline.
+- **TEXT_PRINTERR** = **57** --- Print the given string to the standard error output.
 
-- **VAR_TO_STR** = **58** --- Serialize a :ref:`Variant<class_Variant>` to a string.
+- **TEXT_PRINTRAW** = **58** --- Print the given string to the standard output, without adding a newline.
 
-- **STR_TO_VAR** = **59** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using ``VAR_TO_STR``.
+- **VAR_TO_STR** = **59** --- Serialize a :ref:`Variant<class_Variant>` to a string.
 
-- **VAR_TO_BYTES** = **60** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PoolByteArray<class_PoolByteArray>`.
+- **STR_TO_VAR** = **60** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using ``VAR_TO_STR``.
 
-- **BYTES_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using ``VAR_TO_BYTES``.
+- **VAR_TO_BYTES** = **61** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PoolByteArray<class_PoolByteArray>`.
 
-- **COLORN** = **62** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
+- **BYTES_TO_VAR** = **62** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using ``VAR_TO_BYTES``.
 
-- **MATH_SMOOTHSTEP** = **63** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to ``MATH_LERP``, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
+- **COLORN** = **63** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
+
+- **MATH_SMOOTHSTEP** = **64** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to ``MATH_LERP``, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
 
 ::
 
     var t = clamp((weight - from) / (to - from), 0.0, 1.0)
     return t * t * (3.0 - 2.0 * t)
 
-- **FUNC_MAX** = **64** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_property_function>` property can have.
+- **FUNC_MAX** = **65** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_property_function>` property can have.
 
 Description
 -----------

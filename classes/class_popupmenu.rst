@@ -20,6 +20,8 @@ Properties
 ----------
 
 +---------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         |
++---------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` |
 +---------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     |
@@ -201,6 +203,18 @@ PopupMenu is the typical Control that displays a list of options. They are popul
 
 Property Descriptions
 ---------------------
+
+.. _class_PopupMenu_property_allow_search:
+
+- :ref:`bool<class_bool>` **allow_search**
+
++----------+-------------------------+
+| *Setter* | set_allow_search(value) |
++----------+-------------------------+
+| *Getter* | get_allow_search()      |
++----------+-------------------------+
+
+If ``true``, allows to navigate ``PopupMenu`` with letter keys. Default value: ``false``.
 
 .. _class_PopupMenu_property_hide_on_checkable_item_selection:
 

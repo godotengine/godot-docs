@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter* | get_left_to_right()      |
 +----------+--------------------------+
 
-Displacement of the upper edge along the x-axis. 0.0 positions edge straight above the bottom left edge. Defaults to 0.5 (positioned on the midpoint).
+Displacement of the upper edge along the X axis. 0.0 positions edge straight above the bottom-left edge. Defaults to 0.5 (positioned on the midpoint).
 
 .. _class_PrismMesh_property_size:
 
@@ -73,7 +73,7 @@ Size of the prism. Defaults to (2.0, 2.0, 2.0).
 | *Getter* | get_subdivide_depth()      |
 +----------+----------------------------+
 
-Number of added edge loops along the z-axis. Defaults to 0.
+Number of added edge loops along the Z axis. Defaults to 0.
 
 .. _class_PrismMesh_property_subdivide_height:
 
@@ -85,7 +85,7 @@ Number of added edge loops along the z-axis. Defaults to 0.
 | *Getter* | get_subdivide_height()      |
 +----------+-----------------------------+
 
-Number of added edge loops along the y-axis. Defaults to 0.
+Number of added edge loops along the Y axis. Defaults to 0.
 
 .. _class_PrismMesh_property_subdivide_width:
 
@@ -97,5 +97,5 @@ Number of added edge loops along the y-axis. Defaults to 0.
 | *Getter* | get_subdivide_width()      |
 +----------+----------------------------+
 
-Number of added edge loops along the x-axis. Defaults to 0.
+Number of added edge loops along the X axis. Defaults to 0.
 

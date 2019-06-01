@@ -106,6 +106,8 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`min<class_@GDScript_method_min>` **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**                                                                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                 | :ref:`move_toward<class_@GDScript_method_move_toward>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` delta **)**                                                                       |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                     | :ref:`nearest_po2<class_@GDScript_method_nearest_po2>` **(** :ref:`int<class_int>` value **)**                                                                                                                                         |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                             | :ref:`parse_json<class_@GDScript_method_parse_json>` **(** :ref:`String<class_String>` json **)**                                                                                                                                      |
@@ -732,6 +734,18 @@ Returns the minimum of two values.
 
     min(1, 2) # returns 1
     min(-3.99, -4) # returns -4
+
+.. _class_@GDScript_method_move_toward:
+
+- :ref:`float<class_float>` **move_toward** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` delta **)**
+
+Moves ``from`` toward ``to`` by the ``delta`` value.
+
+Use a negative ``delta`` value to move away.
+
+::
+
+    move_toward(10, 5, 4) # returns 6
 
 .. _class_@GDScript_method_nearest_po2:
 

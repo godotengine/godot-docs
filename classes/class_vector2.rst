@@ -67,6 +67,8 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`linear_interpolate<class_Vector2_method_linear_interpolate>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**                                                                          |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`move_toward<class_Vector2_method_move_toward>` **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` delta **)**                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`normalized<class_Vector2_method_normalized>` **(** **)**                                                                                                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`project<class_Vector2_method_project>` **(** :ref:`Vector2<class_Vector2>` b **)**                                                                                                                             |
@@ -266,6 +268,12 @@ Returns the vector's length squared. Prefer this method over :ref:`length<class_
 - :ref:`Vector2<class_Vector2>` **linear_interpolate** **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**
 
 Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+
+.. _class_Vector2_method_move_toward:
+
+- :ref:`Vector2<class_Vector2>` **move_toward** **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` delta **)**
+
+Moves the vector toward ``to`` by the fixed ``delta`` amount.
 
 .. _class_Vector2_method_normalized:
 

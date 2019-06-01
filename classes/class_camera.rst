@@ -69,7 +69,7 @@ Methods
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`     | :ref:`project_local_ray_normal<class_Camera_method_project_local_ray_normal>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                                              |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`     | :ref:`project_position<class_Camera_method_project_position>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                                                              |
+| :ref:`Vector3<class_Vector3>`     | :ref:`project_position<class_Camera_method_project_position>` **(** :ref:`Vector2<class_Vector2>` screen_point, :ref:`float<class_float>` z_depth=0 **)** const                                         |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`     | :ref:`project_ray_normal<class_Camera_method_project_ray_normal>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                                                          |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -344,9 +344,9 @@ Returns a normal vector from the screen point location directed along the camera
 
 .. _class_Camera_method_project_position:
 
-- :ref:`Vector3<class_Vector3>` **project_position** **(** :ref:`Vector2<class_Vector2>` screen_point **)** const
+- :ref:`Vector3<class_Vector3>` **project_position** **(** :ref:`Vector2<class_Vector2>` screen_point, :ref:`float<class_float>` z_depth=0 **)** const
 
-Returns the 3D point in worldspace that maps to the given 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle.
+Returns the 3D point in worldspace that maps to the given 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle on a plane that is the given distance into the scene away from the camera.
 
 .. _class_Camera_method_project_ray_normal:
 

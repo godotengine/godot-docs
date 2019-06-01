@@ -253,7 +253,7 @@ Lock the body's movement in the x-axis.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-Lock the body's movement in the x-axis.
+Lock the body's movement in the y-axis.
 
 .. _class_RigidBody_property_axis_lock_linear_z:
 
@@ -265,7 +265,7 @@ Lock the body's movement in the x-axis.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-Lock the body's movement in the x-axis.
+Lock the body's movement in the z-axis.
 
 .. _class_RigidBody_property_bounce:
 
