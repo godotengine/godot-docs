@@ -48,7 +48,7 @@ Distro-specific oneliners
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **FreeBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     sudo pkg install scons pkg-config xorg-libraries libXcursor libXrandr libXi xineramaproto libglapi \   |
+|               |     sudo pkg install scons pkgconf xorg-libraries libXcursor libXrandr libXi xineramaproto libglapi \      |
 |               |         libGLU freetype2 openssl yasm                                                                      |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Gentoo**    | ::                                                                                                         |
