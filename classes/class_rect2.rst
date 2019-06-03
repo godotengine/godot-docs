@@ -172,5 +172,5 @@ Returns ``true`` if the ``Rect2`` overlaps with another.
 
 - :ref:`Rect2<class_Rect2>` **merge** **(** :ref:`Rect2<class_Rect2>` b **)**
 
-Returns a larger Rect2 that contains this Rect2 and ``with``.
+Returns a larger Rect2 that contains this Rect2 and ``b``.
 

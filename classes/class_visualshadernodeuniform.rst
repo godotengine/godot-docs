@@ -9,7 +9,7 @@ VisualShaderNodeUniform
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VisualShaderNodeColorUniform<class_VisualShaderNodeColorUniform>`, :ref:`VisualShaderNodeScalarUniform<class_VisualShaderNodeScalarUniform>`, :ref:`VisualShaderNodeTextureUniform<class_VisualShaderNodeTextureUniform>`, :ref:`VisualShaderNodeTransformUniform<class_VisualShaderNodeTransformUniform>`, :ref:`VisualShaderNodeVec3Uniform<class_VisualShaderNodeVec3Uniform>`
+**Inherited By:** :ref:`VisualShaderNodeBooleanUniform<class_VisualShaderNodeBooleanUniform>`, :ref:`VisualShaderNodeColorUniform<class_VisualShaderNodeColorUniform>`, :ref:`VisualShaderNodeScalarUniform<class_VisualShaderNodeScalarUniform>`, :ref:`VisualShaderNodeTextureUniform<class_VisualShaderNodeTextureUniform>`, :ref:`VisualShaderNodeTransformUniform<class_VisualShaderNodeTransformUniform>`, :ref:`VisualShaderNodeVec3Uniform<class_VisualShaderNodeVec3Uniform>`
 
 **Category:** Core
 

@@ -46,6 +46,10 @@ Properties
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`filter/low_hanging_obstacles<class_NavigationMesh_property_filter/low_hanging_obstacles>`                               |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`geometry/collision_mask<class_NavigationMesh_property_geometry/collision_mask>`                                         |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`geometry/parsed_geometry_type<class_NavigationMesh_property_geometry/parsed_geometry_type>`                             |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`polygon/verts_per_poly<class_NavigationMesh_property_polygon/verts_per_poly>`                                           |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`region/merge_size<class_NavigationMesh_property_region/merge_size>`                                                     |
@@ -58,21 +62,25 @@ Properties
 Methods
 -------
 
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`add_polygon<class_NavigationMesh_method_add_polygon>` **(** :ref:`PoolIntArray<class_PoolIntArray>` polygon **)**            |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`clear_polygons<class_NavigationMesh_method_clear_polygons>` **(** **)**                                                      |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`create_from_mesh<class_NavigationMesh_method_create_from_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh **)**                     |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_polygon<class_NavigationMesh_method_get_polygon>` **(** :ref:`int<class_int>` idx **)**                                  |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_polygon_count<class_NavigationMesh_method_get_polygon_count>` **(** **)** const                                          |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_vertices<class_NavigationMesh_method_get_vertices>` **(** **)** const                                                    |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_vertices<class_NavigationMesh_method_set_vertices>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertices **)** |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`add_polygon<class_NavigationMesh_method_add_polygon>` **(** :ref:`PoolIntArray<class_PoolIntArray>` polygon **)**                                |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear_polygons<class_NavigationMesh_method_clear_polygons>` **(** **)**                                                                          |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`create_from_mesh<class_NavigationMesh_method_create_from_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh **)**                                         |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`get_collision_mask_bit<class_NavigationMesh_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_polygon<class_NavigationMesh_method_get_polygon>` **(** :ref:`int<class_int>` idx **)**                                                      |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_polygon_count<class_NavigationMesh_method_get_polygon_count>` **(** **)** const                                                              |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_vertices<class_NavigationMesh_method_get_vertices>` **(** **)** const                                                                        |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_collision_mask_bit<class_NavigationMesh_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_vertices<class_NavigationMesh_method_set_vertices>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertices **)**                     |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
@@ -83,11 +91,23 @@ Constants
 
 .. _class_NavigationMesh_constant_SAMPLE_PARTITION_LAYERS:
 
+.. _class_NavigationMesh_constant_PARSED_GEOMETRY_MESH_INSTANCES:
+
+.. _class_NavigationMesh_constant_PARSED_GEOMETRY_STATIC_COLLIDERS:
+
+.. _class_NavigationMesh_constant_PARSED_GEOMETRY_BOTH:
+
 - **SAMPLE_PARTITION_WATERSHED** = **0**
 
 - **SAMPLE_PARTITION_MONOTONE** = **1**
 
 - **SAMPLE_PARTITION_LAYERS** = **2**
+
+- **PARSED_GEOMETRY_MESH_INSTANCES** = **0**
+
+- **PARSED_GEOMETRY_STATIC_COLLIDERS** = **1**
+
+- **PARSED_GEOMETRY_BOTH** = **2**
 
 Property Descriptions
 ---------------------
@@ -222,6 +242,26 @@ Property Descriptions
 | *Getter* | get_filter_low_hanging_obstacles()      |
 +----------+-----------------------------------------+
 
+.. _class_NavigationMesh_property_geometry/collision_mask:
+
+- :ref:`int<class_int>` **geometry/collision_mask**
+
++----------+---------------------------+
+| *Setter* | set_collision_mask(value) |
++----------+---------------------------+
+| *Getter* | get_collision_mask()      |
++----------+---------------------------+
+
+.. _class_NavigationMesh_property_geometry/parsed_geometry_type:
+
+- :ref:`int<class_int>` **geometry/parsed_geometry_type**
+
++----------+---------------------------------+
+| *Setter* | set_parsed_geometry_type(value) |
++----------+---------------------------------+
+| *Getter* | get_parsed_geometry_type()      |
++----------+---------------------------------+
+
 .. _class_NavigationMesh_property_polygon/verts_per_poly:
 
 - :ref:`float<class_float>` **polygon/verts_per_poly**
@@ -277,6 +317,10 @@ Method Descriptions
 
 - void **create_from_mesh** **(** :ref:`Mesh<class_Mesh>` mesh **)**
 
+.. _class_NavigationMesh_method_get_collision_mask_bit:
+
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+
 .. _class_NavigationMesh_method_get_polygon:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_polygon** **(** :ref:`int<class_int>` idx **)**
@@ -288,6 +332,10 @@ Method Descriptions
 .. _class_NavigationMesh_method_get_vertices:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_vertices** **(** **)** const
+
+.. _class_NavigationMesh_method_set_collision_mask_bit:
+
+- void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 .. _class_NavigationMesh_method_set_vertices:
 

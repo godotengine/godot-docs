@@ -94,12 +94,11 @@ Initializing as a client, connecting to a given IP and port:
     peer.create_client(SERVER_IP, SERVER_PORT)
     get_tree().set_network_peer(peer)
 
-Note that it may make sense to store the local network peer instance on the SceneTree to be able to access it later,
-as there currently is no `get_tree().get_network_peer()`. This can be done via SceneTree's metadata feature:
+Get the previously set network peer:
 
 ::
 
-    get_tree().set_meta("network_peer", peer)
+    get_tree().get_network_peer()
 
 Checking whether the tree is initialized as a server or client:
 

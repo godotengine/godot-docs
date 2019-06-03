@@ -105,5 +105,5 @@ Change the :ref:`Vector2<class_Vector2>` at the given index.
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Return the size of the array.
+Returns the size of the array.
 

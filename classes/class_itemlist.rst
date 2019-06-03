@@ -372,7 +372,7 @@ Adds an item to the item list with no text, only an icon.
 
 Adds an item to the item list with specified text. Specify an icon of null for a list item with no icon.
 
-If selectable is true the list item will be selectable.
+If selectable is ``true`` the list item will be selectable.
 
 .. _class_ItemList_method_clear:
 
@@ -396,7 +396,7 @@ Given a position within the control return the item (if any) at that point.
 
 - :ref:`int<class_int>` **get_item_count** **(** **)** const
 
-Return count of items currently in the item list.
+Returns count of items currently in the item list.
 
 .. _class_ItemList_method_get_item_custom_bg_color:
 
@@ -428,13 +428,13 @@ Returns a :ref:`Color<class_Color>` modulating item's icon at the specified inde
 
 - :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
 
-Return the text for specified item index.
+Returns the text for specified item index.
 
 .. _class_ItemList_method_get_item_tooltip:
 
 - :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** const
 
-Return tooltip hint for specified item index.
+Returns tooltip hint for specified item index.
 
 .. _class_ItemList_method_get_selected_items:
 

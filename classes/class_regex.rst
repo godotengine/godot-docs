@@ -139,5 +139,5 @@ Searches the text for the compiled pattern. Returns an array of :ref:`RegExMatch
 
 - :ref:`String<class_String>` **sub** **(** :ref:`String<class_String>` subject, :ref:`String<class_String>` replacement, :ref:`bool<class_bool>` all=false, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** const
 
-Searches the text for the compiled pattern and replaces it with the specified string. Escapes and backreferences such as ``\1`` and ``\g<name>`` expanded and resolved. By default only the first instance is replaced but it can be changed for all instances (global replacement). The region to search within can be specified without modifying where the start and end anchor would be.
+Searches the text for the compiled pattern and replaces it with the specified string. Escapes and backreferences such as ``$1`` and ``$name`` are expanded and resolved. By default only the first instance is replaced but it can be changed for all instances (global replacement). The region to search within can be specified without modifying where the start and end anchor would be.
 

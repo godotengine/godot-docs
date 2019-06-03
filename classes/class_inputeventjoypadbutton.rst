@@ -50,7 +50,7 @@ Property Descriptions
 | *Getter* | get_button_index()      |
 +----------+-------------------------+
 
-Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope<class_@GlobalScope>`.
+Button identifier. One of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>` button constants.
 
 .. _class_InputEventJoypadButton_property_pressed:
 

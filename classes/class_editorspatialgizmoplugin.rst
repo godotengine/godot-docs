@@ -42,6 +42,8 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`get_name<class_EditorSpatialGizmoPlugin_method_get_name>` **(** **)** virtual                                                                                                                                                                                                        |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`get_priority<class_EditorSpatialGizmoPlugin_method_get_priority>` **(** **)** virtual                                                                                                                                                                                                |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`has_gizmo<class_EditorSpatialGizmoPlugin_method_has_gizmo>` **(** :ref:`Spatial<class_Spatial>` spatial **)** virtual                                                                                                                                                                |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_handle_highlighted<class_EditorSpatialGizmoPlugin_method_is_handle_highlighted>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual                                                                                       |
@@ -56,7 +58,7 @@ Methods
 Description
 -----------
 
-EditorSpatialGizmoPlugin allows you to define a new type of Gizmo. There are two main ways to do so: extending :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` for the simpler gizmos, or creating a new :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` type. See the tutorial in the documentation for more info.
+EditorSpatialGizmoPlugin allows you to define a new type of Gizmo. There are two main ways to do so: extending ``EditorSpatialGizmoPlugin`` for the simpler gizmos, or creating a new :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` type. See the tutorial in the documentation for more info.
 
 Tutorials
 ---------
@@ -76,7 +78,7 @@ Adds a new material to the internal material list for the plugin. It can then be
 
 - :ref:`bool<class_bool>` **can_be_hidden** **(** **)** virtual
 
-Override this method to define whether the gizmo can be hidden or not. Defaults to true.
+Override this method to define whether the gizmo can be hidden or not. Defaults to ``true``.
 
 .. _class_EditorSpatialGizmoPlugin_method_commit_handle:
 
@@ -131,6 +133,10 @@ Get material from the internal list of materials. If an :ref:`EditorSpatialGizmo
 - :ref:`String<class_String>` **get_name** **(** **)** virtual
 
 Override this method to provide the name that will appear in the gizmo visibility menu.
+
+.. _class_EditorSpatialGizmoPlugin_method_get_priority:
+
+- :ref:`String<class_String>` **get_priority** **(** **)** virtual
 
 .. _class_EditorSpatialGizmoPlugin_method_has_gizmo:
 

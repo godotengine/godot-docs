@@ -196,6 +196,10 @@ Emitted when a column's title is pressed.
 
 Emitted when a cell with the ``CELL_MODE_CUSTOM`` is clicked to be edited.
 
+.. _class_Tree_signal_empty_rmb:
+
+- **empty_rmb** **(** :ref:`Vector2<class_Vector2>` position **)**
+
 .. _class_Tree_signal_empty_tree_rmb_selected:
 
 - **empty_tree_rmb_selected** **(** :ref:`Vector2<class_Vector2>` position **)**

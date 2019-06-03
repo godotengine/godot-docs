@@ -37,6 +37,8 @@ Methods
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_Image>` | :ref:`get_image<class_OpenSimplexNoise_method_get_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**                                                                |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_noise_1d<class_OpenSimplexNoise_method_get_noise_1d>` **(** :ref:`float<class_float>` x **)**                                                                                        |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`get_noise_2d<class_OpenSimplexNoise_method_get_noise_2d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                           |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`get_noise_2dv<class_OpenSimplexNoise_method_get_noise_2dv>` **(** :ref:`Vector2<class_Vector2>` pos **)**                                                                                |
@@ -142,6 +144,10 @@ Method Descriptions
 - :ref:`Image<class_Image>` **get_image** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**
 
 Generate a noise image with the requested ``width`` and ``height``, based on the current noise parameters.
+
+.. _class_OpenSimplexNoise_method_get_noise_1d:
+
+- :ref:`float<class_float>` **get_noise_1d** **(** :ref:`float<class_float>` x **)**
 
 .. _class_OpenSimplexNoise_method_get_noise_2d:
 

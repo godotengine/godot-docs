@@ -6,17 +6,9 @@ SceneTree
 Introduction
 ------------
 
-This is where things start getting abstract, but don't panic. There's
-not much more depth than this.
-
 In previous tutorials, everything revolved around the concept of
-nodes. Scenes are simply a collection of nodes. They become active once
+nodes. Scenes are collections of nodes. They become active once
 they enter the *scene tree*.
-
-This concept deserves going into a little more detail. In fact, the
-scene system is not even a core component of Godot as it is possible to
-skip it and write a script (or C++ code) that talks directly to the
-servers, but making a game that way would be a lot of work.
 
 MainLoop
 --------
@@ -46,7 +38,7 @@ game engine over a low level middleware.
 The scene system is the game engine, while the :ref:`OS <class_OS>`
 and servers are the low level API.
 
-In any case, the scene system provides its own main loop to OS,
+The scene system provides its own main loop to OS,
 :ref:`SceneTree <class_SceneTree>`.
 This is automatically instanced and set when running a scene, no need
 to do any extra work.
@@ -64,7 +56,7 @@ important uses:
 
 When a node is part of the Scene Tree, the
 :ref:`SceneTree <class_SceneTree>`
-singleton can be obtained by simply calling
+singleton can be obtained by calling
 :ref:`Node.get_tree() <class_Node_method_get_tree>`.
 
 Root viewport
@@ -85,10 +77,10 @@ two different ways:
         GetTree().GetRoot(); // Access via scene main loop.
         GetNode("/root"); // Access via absolute path.
 
-This node contains the main viewport, anything that is a child of a
+This node contains the main viewport. Anything that is a child of a
 :ref:`Viewport <class_Viewport>`
 is drawn inside of it by default, so it makes sense that the top of all
-nodes is always a node of this type otherwise nothing would be seen!
+nodes is always a node of this type otherwise nothing would be seen.
 
 While other viewports can be created in the scene (for split-screen
 effects and such), this one is the only one that is never created by the
@@ -106,16 +98,16 @@ _enter_tree() and _ready() callbacks (as well as _exit_tree()).
 .. image:: img/activescene.png
 
 When nodes enter the *Scene Tree*, they become active. They get access
-to everything they need to process, get input, display 2D and 3D,
-notifications, play sound, groups, etc. When they are removed from the
-*scene tree*, they lose access.
+to everything they need to process, get input, display 2D and 3D visuals,
+receive and send notifications, play sounds, etc. When they are removed from the
+*scene tree*, they lose these abilities.
 
 Tree order
 ----------
 
 Most node operations in Godot, such as drawing 2D, processing, or getting
 notifications are done in tree order. This means that parents and
-siblings with a smaller rank in the tree order will get notified before
+siblings with a lower rank in the tree order will get notified before
 the current node.
 
 .. image:: img/toptobottom.png
@@ -181,7 +173,7 @@ function
 
 These are quick and useful ways to switch scenes but have the drawback
 that the game will stall until the new scene is loaded and running. At
-some point in your game, it may be desired to create proper loading
+some point in the development of your game, it may be preferable to create proper loading
 screens with progress bar, animated indicators or thread (background)
-loading. This must be done manually using autoloads (see next chapter!)
+loading. This must be done manually using autoloads (see next chapter)
 and :ref:`doc_background_loading`.

@@ -95,6 +95,11 @@ Theme for skinning controls. Controls can be skinned individually, but for compl
 
 Theme resources can be alternatively loaded by writing them in a .theme file, see docs for more info.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/gui/gui_skinning`
+
 Property Descriptions
 ---------------------
 

@@ -7,7 +7,7 @@
 CSGSphere
 =========
 
-**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -97,5 +97,5 @@ Number of horizontal slices for the sphere.
 | *Getter* | get_smooth_faces()      |
 +----------+-------------------------+
 
-If true the normals of the sphere are set to give a smooth effect making the sphere seem rounded. When false the sphere will have a flat shaded look.
+If ``true`` the normals of the sphere are set to give a smooth effect making the sphere seem rounded. If ``false`` the sphere will have a flat shaded look.
 

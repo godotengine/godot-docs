@@ -19,19 +19,19 @@ Data transformation (marshalling) and encoding helpers.
 Methods
 -------
 
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`base64_to_raw<class_Marshalls_method_base64_to_raw>` **(** :ref:`String<class_String>` base64_str **)**          |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`base64_to_utf8<class_Marshalls_method_base64_to_utf8>` **(** :ref:`String<class_String>` base64_str **)**        |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`base64_to_variant<class_Marshalls_method_base64_to_variant>` **(** :ref:`String<class_String>` base64_str **)**  |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`raw_to_base64<class_Marshalls_method_raw_to_base64>` **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)** |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`utf8_to_base64<class_Marshalls_method_utf8_to_base64>` **(** :ref:`String<class_String>` utf8_str **)**          |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`variant_to_base64<class_Marshalls_method_variant_to_base64>` **(** :ref:`Variant<class_Variant>` variant **)**   |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`base64_to_raw<class_Marshalls_method_base64_to_raw>` **(** :ref:`String<class_String>` base64_str **)**                                                      |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`               | :ref:`base64_to_utf8<class_Marshalls_method_base64_to_utf8>` **(** :ref:`String<class_String>` base64_str **)**                                                    |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`             | :ref:`base64_to_variant<class_Marshalls_method_base64_to_variant>` **(** :ref:`String<class_String>` base64_str, :ref:`bool<class_bool>` allow_objects=false **)** |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`               | :ref:`raw_to_base64<class_Marshalls_method_raw_to_base64>` **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**                                             |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`               | :ref:`utf8_to_base64<class_Marshalls_method_utf8_to_base64>` **(** :ref:`String<class_String>` utf8_str **)**                                                      |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`               | :ref:`variant_to_base64<class_Marshalls_method_variant_to_base64>` **(** :ref:`Variant<class_Variant>` variant, :ref:`bool<class_bool>` full_objects=false **)**   |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -45,35 +45,37 @@ Method Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **base64_to_raw** **(** :ref:`String<class_String>` base64_str **)**
 
-Return :ref:`PoolByteArray<class_PoolByteArray>` of a given base64 encoded String.
+Returns :ref:`PoolByteArray<class_PoolByteArray>` of a given base64 encoded String.
 
 .. _class_Marshalls_method_base64_to_utf8:
 
 - :ref:`String<class_String>` **base64_to_utf8** **(** :ref:`String<class_String>` base64_str **)**
 
-Return utf8 String of a given base64 encoded String.
+Returns utf8 String of a given base64 encoded String.
 
 .. _class_Marshalls_method_base64_to_variant:
 
-- :ref:`Variant<class_Variant>` **base64_to_variant** **(** :ref:`String<class_String>` base64_str **)**
+- :ref:`Variant<class_Variant>` **base64_to_variant** **(** :ref:`String<class_String>` base64_str, :ref:`bool<class_bool>` allow_objects=false **)**
 
-Return :ref:`Variant<class_Variant>` of a given base64 encoded String.
+Returns :ref:`Variant<class_Variant>` of a given base64 encoded String. When ``allow_objects`` is ``true`` decoding objects is allowed.
+
+**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
 
 .. _class_Marshalls_method_raw_to_base64:
 
 - :ref:`String<class_String>` **raw_to_base64** **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**
 
-Return base64 encoded String of a given :ref:`PoolByteArray<class_PoolByteArray>`.
+Returns base64 encoded String of a given :ref:`PoolByteArray<class_PoolByteArray>`.
 
 .. _class_Marshalls_method_utf8_to_base64:
 
 - :ref:`String<class_String>` **utf8_to_base64** **(** :ref:`String<class_String>` utf8_str **)**
 
-Return base64 encoded String of a given utf8 String.
+Returns base64 encoded String of a given utf8 String.
 
 .. _class_Marshalls_method_variant_to_base64:
 
-- :ref:`String<class_String>` **variant_to_base64** **(** :ref:`Variant<class_Variant>` variant **)**
+- :ref:`String<class_String>` **variant_to_base64** **(** :ref:`Variant<class_Variant>` variant, :ref:`bool<class_bool>` full_objects=false **)**
 
-Return base64 encoded String of a given :ref:`Variant<class_Variant>`.
+Returns base64 encoded String of a given :ref:`Variant<class_Variant>`. When ``full_objects`` is ``true`` encoding objects is allowed (and can potentially include code).
 

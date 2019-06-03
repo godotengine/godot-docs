@@ -177,6 +177,10 @@ Enumerations
 
 .. _class_EditorPlugin_constant_CONTAINER_PROPERTY_EDITOR_BOTTOM:
 
+.. _class_EditorPlugin_constant_CONTAINER_PROJECT_SETTING_TAB_LEFT:
+
+.. _class_EditorPlugin_constant_CONTAINER_PROJECT_SETTING_TAB_RIGHT:
+
 enum **CustomControlContainer**:
 
 - **CONTAINER_TOOLBAR** = **0**
@@ -198,6 +202,10 @@ enum **CustomControlContainer**:
 - **CONTAINER_CANVAS_EDITOR_BOTTOM** = **8**
 
 - **CONTAINER_PROPERTY_EDITOR_BOTTOM** = **9**
+
+- **CONTAINER_PROJECT_SETTING_TAB_LEFT** = **10**
+
+- **CONTAINER_PROJECT_SETTING_TAB_RIGHT** = **11**
 
 .. _enum_EditorPlugin_DockSlot:
 
@@ -404,7 +412,7 @@ This is for editors that edit script based objects. You can return a list of bre
 
 - :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
 
-Return the :ref:`EditorInterface<class_EditorInterface>` object that gives you control over Godot editor's window and its functionalities.
+Returns the :ref:`EditorInterface<class_EditorInterface>` object that gives you control over Godot editor's window and its functionalities.
 
 .. _class_EditorPlugin_method_get_plugin_icon:
 
@@ -442,13 +450,13 @@ Get the GUI layout of the plugin. This is used to save the project's editor layo
 
 - :ref:`bool<class_bool>` **handles** **(** :ref:`Object<class_Object>` object **)** virtual
 
-Implement this function if your plugin edits a specific type of object (Resource or Node). If you return true, then you will get the functions :ref:`edit<class_EditorPlugin_method_edit>` and :ref:`make_visible<class_EditorPlugin_method_make_visible>` called when the editor requests them. If you have declared the methods :ref:`forward_canvas_gui_input<class_EditorPlugin_method_forward_canvas_gui_input>` and :ref:`forward_spatial_gui_input<class_EditorPlugin_method_forward_spatial_gui_input>` these will be called too.
+Implement this function if your plugin edits a specific type of object (Resource or Node). If you return ``true``, then you will get the functions :ref:`edit<class_EditorPlugin_method_edit>` and :ref:`make_visible<class_EditorPlugin_method_make_visible>` called when the editor requests them. If you have declared the methods :ref:`forward_canvas_gui_input<class_EditorPlugin_method_forward_canvas_gui_input>` and :ref:`forward_spatial_gui_input<class_EditorPlugin_method_forward_spatial_gui_input>` these will be called too.
 
 .. _class_EditorPlugin_method_has_main_screen:
 
 - :ref:`bool<class_bool>` **has_main_screen** **(** **)** virtual
 
-Return true if this is a main screen editor plugin (it goes in the workspaces selector together with '2D', '3D', and 'Script').
+Returns ``true`` if this is a main screen editor plugin (it goes in the workspaces selector together with '2D', '3D', and 'Script').
 
 .. _class_EditorPlugin_method_hide_bottom_panel:
 
@@ -559,4 +567,6 @@ Restore the plugin GUI layout saved by :ref:`get_window_layout<class_EditorPlugi
 .. _class_EditorPlugin_method_update_overlays:
 
 - :ref:`int<class_int>` **update_overlays** **(** **)** const
+
+Updates the overlays of the editor (2D/3D) viewport.
 

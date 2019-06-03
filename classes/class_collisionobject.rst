@@ -117,7 +117,7 @@ If ``true``, the ``CollisionObject`` will continue to receive input events as th
 | *Getter* | is_ray_pickable()       |
 +----------+-------------------------+
 
-If ``true``, the :ref:`CollisionObject<class_CollisionObject>`'s shapes will respond to :ref:`RayCast<class_RayCast>`\ s. Default value: ``true``.
+If ``true``, the ``CollisionObject``'s shapes will respond to :ref:`RayCast<class_RayCast>`\ s. Default value: ``true``.
 
 Method Descriptions
 -------------------

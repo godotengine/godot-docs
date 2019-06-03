@@ -43,6 +43,8 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`cubic_interpolate<class_Vector3_method_cubic_interpolate>` **(** :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` pre_a, :ref:`Vector3<class_Vector3>` post_b, :ref:`float<class_float>` t **)** |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`direction_to<class_Vector3_method_direction_to>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`distance_squared_to<class_Vector3_method_distance_squared_to>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                     |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`distance_to<class_Vector3_method_distance_to>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                     |
@@ -64,6 +66,8 @@ Methods
 | :ref:`int<class_int>`         | :ref:`max_axis<class_Vector3_method_max_axis>` **(** **)**                                                                                                                                                           |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`min_axis<class_Vector3_method_min_axis>` **(** **)**                                                                                                                                                           |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`move_toward<class_Vector3_method_move_toward>` **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` delta **)**                                                                                   |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`normalized<class_Vector3_method_normalized>` **(** **)**                                                                                                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -213,6 +217,12 @@ Returns the cross product with ``b``.
 
 Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
+.. _class_Vector3_method_direction_to:
+
+- :ref:`Vector3<class_Vector3>` **direction_to** **(** :ref:`Vector3<class_Vector3>` b **)**
+
+Returns the normalized vector pointing from this vector to ``b``.
+
 .. _class_Vector3_method_distance_squared_to:
 
 - :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector3<class_Vector3>` b **)**
@@ -278,6 +288,12 @@ Returns the axis of the vector's largest value. See ``AXIS_*`` constants.
 - :ref:`int<class_int>` **min_axis** **(** **)**
 
 Returns the axis of the vector's smallest value. See ``AXIS_*`` constants.
+
+.. _class_Vector3_method_move_toward:
+
+- :ref:`Vector3<class_Vector3>` **move_toward** **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` delta **)**
+
+Moves the vector toward ``to`` by the fixed ``delta`` amount.
 
 .. _class_Vector3_method_normalized:
 

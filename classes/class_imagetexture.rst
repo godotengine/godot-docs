@@ -114,7 +114,7 @@ Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with ``flags`` f
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
-Return the format of the ``ImageTexture``, one of :ref:`Format<enum_Image_Format>`.
+Returns the format of the ``ImageTexture``, one of :ref:`Format<enum_Image_Format>`.
 
 .. _class_ImageTexture_method_load:
 

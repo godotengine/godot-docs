@@ -49,6 +49,8 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`cubic_interpolate<class_Vector2_method_cubic_interpolate>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` pre_a, :ref:`Vector2<class_Vector2>` post_b, :ref:`float<class_float>` t **)** |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`direction_to<class_Vector2_method_direction_to>` **(** :ref:`Vector2<class_Vector2>` b **)**                                                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`distance_squared_to<class_Vector2_method_distance_squared_to>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                    |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`distance_to<class_Vector2_method_distance_to>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                                    |
@@ -64,6 +66,8 @@ Methods
 | :ref:`float<class_float>`     | :ref:`length_squared<class_Vector2_method_length_squared>` **(** **)**                                                                                                                                               |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`linear_interpolate<class_Vector2_method_linear_interpolate>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**                                                                          |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`move_toward<class_Vector2_method_move_toward>` **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` delta **)**                                                                                   |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`normalized<class_Vector2_method_normalized>` **(** **)**                                                                                                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -211,6 +215,12 @@ Returns the 2 dimensional analog of the cross product with the given vector.
 
 Cubicly interpolates between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
+.. _class_Vector2_method_direction_to:
+
+- :ref:`Vector2<class_Vector2>` **direction_to** **(** :ref:`Vector2<class_Vector2>` b **)**
+
+Returns the normalized vector pointing from this vector to ``b``.
+
 .. _class_Vector2_method_distance_squared_to:
 
 - :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector2<class_Vector2>` to **)**
@@ -259,6 +269,12 @@ Returns the vector's length squared. Prefer this method over :ref:`length<class_
 
 Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
+.. _class_Vector2_method_move_toward:
+
+- :ref:`Vector2<class_Vector2>` **move_toward** **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` delta **)**
+
+Moves the vector toward ``to`` by the fixed ``delta`` amount.
+
 .. _class_Vector2_method_normalized:
 
 - :ref:`Vector2<class_Vector2>` **normalized** **(** **)**
@@ -281,7 +297,7 @@ Returns the vector reflected from a plane defined by the given normal.
 
 - :ref:`Vector2<class_Vector2>` **rotated** **(** :ref:`float<class_float>` phi **)**
 
-Returns the vector rotated by ``phi`` radians.
+Returns the vector rotated by ``phi`` radians. See also :ref:`@GDScript.deg2rad<class_@GDScript_method_deg2rad>`.
 
 .. _class_Vector2_method_round:
 

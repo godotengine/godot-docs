@@ -116,7 +116,7 @@ Always use ``TRANSFER_MODE_ORDERED`` in place of ``TRANSFER_MODE_UNRELIABLE``. T
 | *Getter* | get_channel_count()      |
 +----------+--------------------------+
 
-The number of channels to be used by ENet. Default: ``3``. Channels are used to separate different kinds of data. In realiable or ordered mode, for example, the packet delivery order is ensured on a per channel basis.
+The number of channels to be used by ENet. Default: ``3``. Channels are used to separate different kinds of data. In reliable or ordered mode, for example, the packet delivery order is ensured on a per channel basis.
 
 .. _class_NetworkedMultiplayerENet_property_compression_mode:
 
@@ -167,7 +167,7 @@ Create server that listens to connections via ``port``. The port needs to be an 
 
 - void **disconnect_peer** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` now=false **)**
 
-Disconnect the given peer. If "now" is set to true, the connection will be closed immediately without flushing queued messages.
+Disconnect the given peer. If "now" is set to ``true``, the connection will be closed immediately without flushing queued messages.
 
 .. _class_NetworkedMultiplayerENet_method_get_last_packet_channel:
 

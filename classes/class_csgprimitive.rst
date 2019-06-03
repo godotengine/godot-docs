@@ -7,7 +7,7 @@
 CSGPrimitive
 ============
 
-**Inherits:** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`CSGBox<class_CSGBox>`, :ref:`CSGCylinder<class_CSGCylinder>`, :ref:`CSGMesh<class_CSGMesh>`, :ref:`CSGPolygon<class_CSGPolygon>`, :ref:`CSGSphere<class_CSGSphere>`, :ref:`CSGTorus<class_CSGTorus>`
 

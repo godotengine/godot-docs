@@ -303,7 +303,7 @@ during runtime with the ``LD_LIBRARY_PATH`` environ variable:
     user@host:~/godot$ ./bin/godot*
 
 **note**: Pay attention you have to ``export`` the environ variable otherwise
-you won't be able to play you project from within the editor.
+you won't be able to play your project from within the editor.
 
 On top of that, it would be nice to be able to select whether to compile our
 module as shared library (for development) or as a part of the Godot binary

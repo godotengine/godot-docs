@@ -55,6 +55,8 @@ Methods
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`           | :ref:`is_bone_rest_disabled<class_Skeleton_method_is_bone_rest_disabled>` **(** :ref:`int<class_int>` bone_idx **)** const                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`localize_rests<class_Skeleton_method_localize_rests>` **(** **)**                                                                                           |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`physical_bones_add_collision_exception<class_Skeleton_method_physical_bones_add_collision_exception>` **(** :ref:`RID<class_RID>` exception **)**           |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`physical_bones_remove_collision_exception<class_Skeleton_method_physical_bones_remove_collision_exception>` **(** :ref:`RID<class_RID>` exception **)**     |
@@ -136,55 +138,55 @@ Clear all the bones in this skeleton.
 
 - :ref:`int<class_int>` **find_bone** **(** :ref:`String<class_String>` name **)** const
 
-Return the bone index that matches "name" as its name.
+Returns the bone index that matches "name" as its name.
 
 .. _class_Skeleton_method_get_bone_count:
 
 - :ref:`int<class_int>` **get_bone_count** **(** **)** const
 
-Return the amount of bones in the skeleton.
+Returns the amount of bones in the skeleton.
 
 .. _class_Skeleton_method_get_bone_custom_pose:
 
 - :ref:`Transform<class_Transform>` **get_bone_custom_pose** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Return the custom pose of the specified bone. Custom pose is applied on top of the rest pose.
+Returns the custom pose of the specified bone. Custom pose is applied on top of the rest pose.
 
 .. _class_Skeleton_method_get_bone_global_pose:
 
 - :ref:`Transform<class_Transform>` **get_bone_global_pose** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Return the overall transform of the specified bone, with respect to the skeleton. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.
+Returns the overall transform of the specified bone, with respect to the skeleton. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.
 
 .. _class_Skeleton_method_get_bone_name:
 
 - :ref:`String<class_String>` **get_bone_name** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Return the name of the bone at index "index".
+Returns the name of the bone at index "index".
 
 .. _class_Skeleton_method_get_bone_parent:
 
 - :ref:`int<class_int>` **get_bone_parent** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Return the bone index which is the parent of the bone at "bone_idx". If -1, then bone has no parent. Note that the parent bone returned will always be less than "bone_idx".
+Returns the bone index which is the parent of the bone at "bone_idx". If -1, then bone has no parent. Note that the parent bone returned will always be less than "bone_idx".
 
 .. _class_Skeleton_method_get_bone_pose:
 
 - :ref:`Transform<class_Transform>` **get_bone_pose** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Return the pose transform of the specified bone. Pose is applied on top of the custom pose, which is applied on top the rest pose.
+Returns the pose transform of the specified bone. Pose is applied on top of the custom pose, which is applied on top the rest pose.
 
 .. _class_Skeleton_method_get_bone_rest:
 
 - :ref:`Transform<class_Transform>` **get_bone_rest** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Return the rest transform for a bone "bone_idx".
+Returns the rest transform for a bone "bone_idx".
 
 .. _class_Skeleton_method_get_bone_transform:
 
 - :ref:`Transform<class_Transform>` **get_bone_transform** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Return the combination of custom pose and pose. The returned transform is in skeleton's reference frame.
+Returns the combination of custom pose and pose. The returned transform is in skeleton's reference frame.
 
 .. _class_Skeleton_method_get_bound_child_nodes_to_bone:
 
@@ -195,6 +197,10 @@ Deprecated soon.
 .. _class_Skeleton_method_is_bone_rest_disabled:
 
 - :ref:`bool<class_bool>` **is_bone_rest_disabled** **(** :ref:`int<class_int>` bone_idx **)** const
+
+.. _class_Skeleton_method_localize_rests:
+
+- void **localize_rests** **(** **)**
 
 .. _class_Skeleton_method_physical_bones_add_collision_exception:
 
@@ -238,7 +244,7 @@ Set the bone index "parent_idx" as the parent of the bone at "bone_idx". If -1, 
 
 - void **set_bone_pose** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` pose **)**
 
-Return the pose transform for bone "bone_idx".
+Returns the pose transform for bone "bone_idx".
 
 .. _class_Skeleton_method_set_bone_rest:
 

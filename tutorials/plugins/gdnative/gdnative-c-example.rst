@@ -78,9 +78,9 @@ Let's start by writing our main code. Ideally, we want to end up with a file str
       main.tscn
       project.godot
 
-Open up Godot and create a new project called simple. This will create the simple folder and project.godot file. Then manually create a bin and src subfolder in this folder.
+Open up Godot and create a new project called simple. This will create the ``simple`` folder and ``project.godot`` file. Then manually create a ``bin`` and ``src`` subfolder in this folder.
 
-We're going to start by having a look at what our simple.c file contains. Now, for our example here we're making a single C source file without a header to keep things simple. Once you start writing bigger projects it is advisable you break your project up into multiple files. That however falls outside of the scope of this tutorial.
+We're going to start by having a look at what our ``simple.c`` file contains. Now, for our example here we're making a single C source file without a header to keep things simple. Once you start writing bigger projects it is advisable you break your project up into multiple files. That however falls outside of the scope of this tutorial.
 
 We'll be looking at the source code bit by bit so all the parts below should all be put together into one big file. I'll explain each section as we add it.
 
@@ -225,7 +225,7 @@ The variant we return is destroyed automatically by Godot.
 
 And that is the whole source code of our module.
 
-If you add a blank .gdignore file to the src folder, Godot will not try to import the compiler-generated temporary files.
+If you add a blank ``.gdignore`` file to the src folder, Godot will not try to import the compiler-generated temporary files.
 
 Compiling
 ---------

@@ -44,6 +44,8 @@ Methods
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set<class_PoolByteArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                                     |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`               | :ref:`sha256_string<class_PoolByteArray_method_sha256_string>` **(** **)**                                                                       |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`size<class_PoolByteArray_method_size>` **(** **)**                                                                                         |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`subarray<class_PoolByteArray_method_subarray>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                            |
@@ -135,11 +137,17 @@ Set the size of the array. If the array is grown reserve elements at the end of 
 
 Change the byte at the given index.
 
+.. _class_PoolByteArray_method_sha256_string:
+
+- :ref:`String<class_String>` **sha256_string** **(** **)**
+
+Returns SHA256 string of the PoolByteArray.
+
 .. _class_PoolByteArray_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Return the size of the array.
+Returns the size of the array.
 
 .. _class_PoolByteArray_method_subarray:
 

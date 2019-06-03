@@ -89,7 +89,7 @@ This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref
 
 - void **create_debug_tangents** **(** **)**
 
-This helper creates a :ref:`MeshInstance<class_MeshInstance>` child node with gizmos at every vertex calculated from the mesh geometry. It's mainly used for testing.
+This helper creates a ``MeshInstance`` child node with gizmos at every vertex calculated from the mesh geometry. It's mainly used for testing.
 
 .. _class_MeshInstance_method_create_trimesh_collision:
 

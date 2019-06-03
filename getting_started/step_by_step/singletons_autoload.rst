@@ -33,7 +33,7 @@ Using this concept, you can create objects that:
 -  Can handle switching scenes and between-scene transitions
 -  Act like a singleton, since GDScript does not support global variables by design
 
-Autoloading nodes and scripts caters to this need.
+Autoloading nodes and scripts can give us these characteristics.
 
 AutoLoad
 --------
@@ -270,7 +270,7 @@ and
     }
 
 Run the project and test that you can switch between scenes by pressing
-the button!
+the button.
 
 Note: When scenes are small, the transition is instantaneous. However, if your
 scenes are more complex, they may take a noticeable amount of time to appear. To

@@ -331,13 +331,13 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
-Return an individual bit on the layer mask. Describes whether other areas will collide with this one on the given layer.
+Returns an individual bit on the layer mask. Describes whether other areas will collide with this one on the given layer.
 
 .. _class_Area2D_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
-Return an individual bit on the collision mask. Describes whether this area will collide with others on the given layer.
+Returns an individual bit on the collision mask. Describes whether this area will collide with others on the given layer.
 
 .. _class_Area2D_method_get_overlapping_areas:
 

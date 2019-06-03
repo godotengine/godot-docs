@@ -19,15 +19,19 @@ Color picker control.
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_property_color>`                 |
-+---------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>` |
-+---------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`       |
-+---------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_property_raw_mode>`           |
-+---------------------------+----------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_property_color>`                     |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>`     |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`           |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`presets_enabled<class_ColorPicker_property_presets_enabled>` |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`presets_visible<class_ColorPicker_property_presets_visible>` |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_property_raw_mode>`               |
++---------------------------+--------------------------------------------------------------------+
 
 Methods
 -------
@@ -130,6 +134,26 @@ If ``true``, the color will apply only after the user releases the mouse button,
 
 If ``true``, shows an alpha channel slider (transparency).
 
+.. _class_ColorPicker_property_presets_enabled:
+
+- :ref:`bool<class_bool>` **presets_enabled**
+
++----------+----------------------------+
+| *Setter* | set_presets_enabled(value) |
++----------+----------------------------+
+| *Getter* | are_presets_enabled()      |
++----------+----------------------------+
+
+.. _class_ColorPicker_property_presets_visible:
+
+- :ref:`bool<class_bool>` **presets_visible**
+
++----------+----------------------------+
+| *Setter* | set_presets_visible(value) |
++----------+----------------------------+
+| *Getter* | are_presets_visible()      |
++----------+----------------------------+
+
 .. _class_ColorPicker_property_raw_mode:
 
 - :ref:`bool<class_bool>` **raw_mode**
@@ -161,5 +185,5 @@ Remove the given color from the list of color presets of this color picker.
 
 - :ref:`PoolColorArray<class_PoolColorArray>` **get_presets** **(** **)** const
 
-Return the list of colors in the presets of the color picker.
+Returns the list of colors in the presets of the color picker.
 

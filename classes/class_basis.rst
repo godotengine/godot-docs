@@ -43,9 +43,13 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_orthogonal_index<class_Basis_method_get_orthogonal_index>` **(** **)**                                                                                    |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Quat<class_Quat>`       | :ref:`get_rotation_quat<class_Basis_method_get_rotation_quat>` **(** **)**                                                                                          |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`get_scale<class_Basis_method_get_scale>` **(** **)**                                                                                                          |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`inverse<class_Basis_method_inverse>` **(** **)**                                                                                                              |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=0.00001 **)**                       |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`orthonormalized<class_Basis_method_orthonormalized>` **(** **)**                                                                                              |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -126,7 +130,7 @@ Create a matrix from 3 axis vectors.
 
 - :ref:`float<class_float>` **determinant** **(** **)**
 
-Return the determinant of the matrix.
+Returns the determinant of the matrix.
 
 .. _class_Basis_method_get_euler:
 
@@ -140,6 +144,10 @@ Assuming that the matrix is a proper rotation matrix (orthonormal matrix with de
 
 This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1,0 or 1, and returns the index of the point best representing the orientation of the object. It is mainly used by the grid map editor. For further details, refer to Godot source code.
 
+.. _class_Basis_method_get_rotation_quat:
+
+- :ref:`Quat<class_Quat>` **get_rotation_quat** **(** **)**
+
 .. _class_Basis_method_get_scale:
 
 - :ref:`Vector3<class_Vector3>` **get_scale** **(** **)**
@@ -150,13 +158,17 @@ Assuming that the matrix is the combination of a rotation and scaling, return th
 
 - :ref:`Basis<class_Basis>` **inverse** **(** **)**
 
-Return the inverse of the matrix.
+Returns the inverse of the matrix.
+
+.. _class_Basis_method_is_equal_approx:
+
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=0.00001 **)**
 
 .. _class_Basis_method_orthonormalized:
 
 - :ref:`Basis<class_Basis>` **orthonormalized** **(** **)**
 
-Return the orthonormalized version of the matrix (useful to call from time to time to avoid rounding error for orthogonal matrices). This performs a Gram-Schmidt orthonormalization on the basis of the matrix.
+Returns the orthonormalized version of the matrix (useful to call from time to time to avoid rounding error for orthogonal matrices). This performs a Gram-Schmidt orthonormalization on the basis of the matrix.
 
 .. _class_Basis_method_rotated:
 
@@ -198,17 +210,17 @@ Transposed dot product with the z axis of the matrix.
 
 - :ref:`Basis<class_Basis>` **transposed** **(** **)**
 
-Return the transposed version of the matrix.
+Returns the transposed version of the matrix.
 
 .. _class_Basis_method_xform:
 
 - :ref:`Vector3<class_Vector3>` **xform** **(** :ref:`Vector3<class_Vector3>` v **)**
 
-Return a vector transformed (multiplied) by the matrix.
+Returns a vector transformed (multiplied) by the matrix.
 
 .. _class_Basis_method_xform_inv:
 
 - :ref:`Vector3<class_Vector3>` **xform_inv** **(** :ref:`Vector3<class_Vector3>` v **)**
 
-Return a vector transformed (multiplied) by the transposed matrix. Note that this results in a multiplication by the inverse of the matrix only if it represents a rotation-reflection.
+Returns a vector transformed (multiplied) by the transposed matrix. Note that this results in a multiplication by the inverse of the matrix only if it represents a rotation-reflection.
 

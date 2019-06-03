@@ -34,6 +34,11 @@ Signals
 
 - **bone_setup_changed** **(** **)**
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/2d_skeletons`
+
 Method Descriptions
 -------------------
 

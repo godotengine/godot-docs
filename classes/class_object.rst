@@ -7,7 +7,7 @@
 Object
 ======
 
-**Inherited By:** :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`, :ref:`ARVRServer<class_ARVRServer>`, :ref:`AudioServer<class_AudioServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`Engine<class_Engine>`, :ref:`Geometry<class_Geometry>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`IP<class_IP>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`JSON<class_JSON>`, :ref:`JavaScript<class_JavaScript>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`, :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>`, :ref:`Physics2DServer<class_Physics2DServer>`, :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>`, :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>`, :ref:`PhysicsServer<class_PhysicsServer>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`Reference<class_Reference>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`VisualScriptEditor<class_VisualScriptEditor>`, :ref:`VisualServer<class_VisualServer>`
+**Inherited By:** :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`, :ref:`ARVRServer<class_ARVRServer>`, :ref:`AudioServer<class_AudioServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`Engine<class_Engine>`, :ref:`Geometry<class_Geometry>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`IP<class_IP>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`JSON<class_JSON>`, :ref:`JavaScript<class_JavaScript>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`, :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>`, :ref:`Physics2DServer<class_Physics2DServer>`, :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>`, :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>`, :ref:`PhysicsServer<class_PhysicsServer>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`Reference<class_Reference>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`VisualScriptEditor<class_VisualScriptEditor>`, :ref:`VisualServer<class_VisualServer>`
 
 **Category:** Core
 
@@ -29,6 +29,8 @@ Methods
 | void                                          | :ref:`_notification<class_Object_method__notification>` **(** :ref:`int<class_int>` what **)** virtual                                                                                                                                  |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`_set<class_Object_method__set>` **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)** virtual                                                                                                     |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`_to_string<class_Object_method__to_string>` **(** **)** virtual                                                                                                                                                                   |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`add_user_signal<class_Object_method_add_user_signal>` **(** :ref:`String<class_String>` signal, :ref:`Array<class_Array>` arguments=[  ] **)**                                                                                    |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,6 +92,8 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`property_list_changed_notify<class_Object_method_property_list_changed_notify>` **(** **)**                                                                                                                                       |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`remove_meta<class_Object_method_remove_meta>` **(** :ref:`String<class_String>` name **)**                                                                                                                                        |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set<class_Object_method_set>` **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**                                                                                                               |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_block_signals<class_Object_method_set_block_signals>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                              |
@@ -103,6 +107,8 @@ Methods
 | void                                          | :ref:`set_meta<class_Object_method_set_meta>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                                                                         |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_script<class_Object_method_set_script>` **(** :ref:`Reference<class_Reference>` script **)**                                                                                                                                  |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`to_string<class_Object_method_to_string>` **(** **)**                                                                                                                                                                             |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`tr<class_Object_method_tr>` **(** :ref:`String<class_String>` message **)** const                                                                                                                                                 |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -197,6 +203,14 @@ Notify the object internally using an ID.
 - :ref:`bool<class_bool>` **_set** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)** virtual
 
 Sets a property. Returns ``true`` if the ``property`` exists.
+
+.. _class_Object_method__to_string:
+
+- :ref:`String<class_String>` **_to_string** **(** **)** virtual
+
+Returns a :ref:`String<class_String>` representing the object. Default is ``"[ClassName:RID]"``.
+
+Override this method to customize the :ref:`String<class_String>` representation of the object when it's being converted to a string, for example: ``print(obj)``.
 
 .. _class_Object_method_add_user_signal:
 
@@ -386,6 +400,10 @@ Notify the object of something.
 
 - void **property_list_changed_notify** **(** **)**
 
+.. _class_Object_method_remove_meta:
+
+- void **remove_meta** **(** :ref:`String<class_String>` name **)**
+
 .. _class_Object_method_set:
 
 - void **set** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
@@ -396,7 +414,7 @@ Set property into the object.
 
 - void **set_block_signals** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to true, signal emission is blocked.
+If set to ``true``, signal emission is blocked.
 
 .. _class_Object_method_set_deferred:
 
@@ -410,7 +428,7 @@ If set to true, signal emission is blocked.
 
 - void **set_message_translation** **(** :ref:`bool<class_bool>` enable **)**
 
-Define whether the object can translate strings (with calls to :ref:`tr<class_Object_method_tr>`). Default is true.
+Define whether the object can translate strings (with calls to :ref:`tr<class_Object_method_tr>`). Default is ``true``.
 
 .. _class_Object_method_set_meta:
 
@@ -423,6 +441,14 @@ Set a metadata into the object. Metadata is serialized. Metadata can be *anythin
 - void **set_script** **(** :ref:`Reference<class_Reference>` script **)**
 
 Set a script into the object, scripts extend the object functionality.
+
+.. _class_Object_method_to_string:
+
+- :ref:`String<class_String>` **to_string** **(** **)**
+
+Returns a :ref:`String<class_String>` representing the object. Default is ``"[ClassName:RID]"``.
+
+Override the method :ref:`_to_string<class_Object_method__to_string>` to customize the :ref:`String<class_String>` representation.
 
 .. _class_Object_method_tr:
 

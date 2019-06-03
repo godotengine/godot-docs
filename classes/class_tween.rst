@@ -79,6 +79,12 @@ Methods
 Signals
 -------
 
+.. _class_Tween_signal_tween_all_completed:
+
+- **tween_all_completed** **(** **)**
+
+Emitted when all processes in a tween end.
+
 .. _class_Tween_signal_tween_completed:
 
 - **tween_completed** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` key **)**

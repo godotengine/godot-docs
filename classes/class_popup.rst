@@ -28,15 +28,17 @@ Properties
 Methods
 -------
 
-+------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`popup<class_Popup_method_popup>` **(** :ref:`Rect2<class_Rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**                                    |
-+------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`popup_centered<class_Popup_method_popup_centered>` **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**                    |
-+------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`popup_centered_minsize<class_Popup_method_popup_centered_minsize>` **(** :ref:`Vector2<class_Vector2>` minsize=Vector2( 0, 0 ) **)** |
-+------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`popup_centered_ratio<class_Popup_method_popup_centered_ratio>` **(** :ref:`float<class_float>` ratio=0.75 **)**                      |
-+------+--------------------------------------------------------------------------------------------------------------------------------------------+
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`popup<class_Popup_method_popup>` **(** :ref:`Rect2<class_Rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**                                                                                |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`popup_centered<class_Popup_method_popup_centered>` **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**                                                                |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`popup_centered_clamped<class_Popup_method_popup_centered_clamped>` **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ), :ref:`float<class_float>` fallback_ratio=0.75 **)** |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`popup_centered_minsize<class_Popup_method_popup_centered_minsize>` **(** :ref:`Vector2<class_Vector2>` minsize=Vector2( 0, 0 ) **)**                                             |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`popup_centered_ratio<class_Popup_method_popup_centered_ratio>` **(** :ref:`float<class_float>` ratio=0.75 **)**                                                                  |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -98,6 +100,12 @@ Popup (show the control in modal form).
 - void **popup_centered** **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**
 
 Popup (show the control in modal form) in the center of the screen relative to its current canvas transform, at the current size, or at a size determined by "size".
+
+.. _class_Popup_method_popup_centered_clamped:
+
+- void **popup_centered_clamped** **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ), :ref:`float<class_float>` fallback_ratio=0.75 **)**
+
+Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, clamping the size to ``size``, then ensuring the popup is no larger than the viewport size multiplied by ``fallback_ratio``.
 
 .. _class_Popup_method_popup_centered_minsize:
 

@@ -268,13 +268,13 @@ Rotates the node so it points towards the 'point'.
 
 - void **move_local_x** **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**
 
-Applies a local translation on the node's X axis based on the :ref:`Node._process<class_Node_method__process>`'s ``delta``. If ``scaled`` is false, normalizes the movement.
+Applies a local translation on the node's X axis based on the :ref:`Node._process<class_Node_method__process>`'s ``delta``. If ``scaled`` is ``false``, normalizes the movement.
 
 .. _class_Node2D_method_move_local_y:
 
 - void **move_local_y** **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**
 
-Applies a local translation on the node's Y axis based on the :ref:`Node._process<class_Node_method__process>`'s ``delta``. If ``scaled`` is false, normalizes the movement.
+Applies a local translation on the node's Y axis based on the :ref:`Node._process<class_Node_method__process>`'s ``delta``. If ``scaled`` is ``false``, normalizes the movement.
 
 .. _class_Node2D_method_rotate:
 

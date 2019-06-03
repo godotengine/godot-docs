@@ -9,7 +9,7 @@ PacketPeer
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebSocketPeer<class_WebSocketPeer>`
+**Inherited By:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`, :ref:`WebSocketPeer<class_WebSocketPeer>`
 
 **Category:** Core
 
@@ -28,19 +28,19 @@ Properties
 Methods
 -------
 
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_available_packet_count<class_PacketPeer_method_get_available_packet_count>` **(** **)** const            |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_packet<class_PacketPeer_method_get_packet>` **(** **)**                                                  |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`get_packet_error<class_PacketPeer_method_get_packet_error>` **(** **)** const                                |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`get_var<class_PacketPeer_method_get_var>` **(** **)**                                                        |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`put_packet<class_PacketPeer_method_put_packet>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)** |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`put_var<class_PacketPeer_method_put_var>` **(** :ref:`Variant<class_Variant>` var **)**                      |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                     | :ref:`get_available_packet_count<class_PacketPeer_method_get_available_packet_count>` **(** **)** const                                   |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_packet<class_PacketPeer_method_get_packet>` **(** **)**                                                                         |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`get_packet_error<class_PacketPeer_method_get_packet_error>` **(** **)** const                                                       |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`             | :ref:`get_var<class_PacketPeer_method_get_var>` **(** :ref:`bool<class_bool>` allow_objects=false **)**                                   |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`put_packet<class_PacketPeer_method_put_packet>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                        |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`put_var<class_PacketPeer_method_put_var>` **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)** |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -60,6 +60,12 @@ Property Descriptions
 | *Getter* | is_object_decoding_allowed()     |
 +----------+----------------------------------+
 
+Deprecated. Use ``get_var`` and ``put_var`` parameters instead.
+
+If ``true`` the PacketPeer will allow encoding and decoding of object via :ref:`get_var<class_PacketPeer_method_get_var>` and :ref:`put_var<class_PacketPeer_method_put_var>`.
+
+**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
+
 Method Descriptions
 -------------------
 
@@ -67,7 +73,7 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_available_packet_count** **(** **)** const
 
-Return the number of packets currently available in the ring-buffer.
+Returns the number of packets currently available in the ring-buffer.
 
 .. _class_PacketPeer_method_get_packet:
 
@@ -79,13 +85,15 @@ Get a raw packet.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **get_packet_error** **(** **)** const
 
-Return the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_method_get_packet>` and :ref:`get_var<class_PacketPeer_method_get_var>`).
+Returns the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_method_get_packet>` and :ref:`get_var<class_PacketPeer_method_get_var>`).
 
 .. _class_PacketPeer_method_get_var:
 
-- :ref:`Variant<class_Variant>` **get_var** **(** **)**
+- :ref:`Variant<class_Variant>` **get_var** **(** :ref:`bool<class_bool>` allow_objects=false **)**
 
-Get a Variant.
+Get a Variant. When ``allow_objects`` (or :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`) is ``true`` decoding objects is allowed.
+
+**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
 
 .. _class_PacketPeer_method_put_packet:
 
@@ -95,7 +103,7 @@ Send a raw packet.
 
 .. _class_PacketPeer_method_put_var:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **put_var** **(** :ref:`Variant<class_Variant>` var **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **put_var** **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)**
 
-Send a Variant as a packet.
+Send a Variant as a packet. When ``full_objects`` (or :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`) is ``true`` encoding objects is allowed (and can potentially include code).
 

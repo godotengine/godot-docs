@@ -108,25 +108,25 @@ Returns one of the error code constants defined in :ref:`@GlobalScope<class_@Glo
 
 - :ref:`bool<class_bool>` **current_is_dir** **(** **)** const
 
-Return whether the current item processed with the last :ref:`get_next<class_Directory_method_get_next>` call is a directory (``.`` and ``..`` are considered directories).
+Returns whether the current item processed with the last :ref:`get_next<class_Directory_method_get_next>` call is a directory (``.`` and ``..`` are considered directories).
 
 .. _class_Directory_method_dir_exists:
 
 - :ref:`bool<class_bool>` **dir_exists** **(** :ref:`String<class_String>` path **)**
 
-Return whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
+Returns whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
 
 .. _class_Directory_method_file_exists:
 
 - :ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path **)**
 
-Return whether the target file exists. The argument can be relative to the current directory, or an absolute path.
+Returns whether the target file exists. The argument can be relative to the current directory, or an absolute path.
 
 .. _class_Directory_method_get_current_dir:
 
 - :ref:`String<class_String>` **get_current_dir** **(** **)**
 
-Return the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
+Returns the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
 
 .. _class_Directory_method_get_current_drive:
 
@@ -150,7 +150,7 @@ On Windows, return the number of drives (partitions) mounted on the current file
 
 - :ref:`String<class_String>` **get_next** **(** **)**
 
-Return the next element (file or directory) in the current directory (including ``.`` and ``..``, unless ``skip_navigational`` was given to :ref:`list_dir_begin<class_Directory_method_list_dir_begin>`).
+Returns the next element (file or directory) in the current directory (including ``.`` and ``..``, unless ``skip_navigational`` was given to :ref:`list_dir_begin<class_Directory_method_list_dir_begin>`).
 
 The name of the file or directory is returned (and not its full path). Once the stream has been fully processed, the method returns an empty String and closes the stream automatically (i.e. :ref:`list_dir_end<class_Directory_method_list_dir_end>` would not be mandatory in such a case).
 
@@ -190,7 +190,7 @@ The method returns one of the error code constants defined in :ref:`@GlobalScope
 
 Create a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_Directory_method_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
-Return one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK, FAILED or ERR\_\*).
+Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK, FAILED or ERR\_\*).
 
 .. _class_Directory_method_open:
 
@@ -206,7 +206,7 @@ The method returns one of the error code constants defined in :ref:`@GlobalScope
 
 Delete the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
 
-Return one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or FAILED).
+Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or FAILED).
 
 .. _class_Directory_method_rename:
 
@@ -214,5 +214,5 @@ Return one of the error code constants defined in :ref:`@GlobalScope<class_@Glob
 
 Rename (move) the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
-Return one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or FAILED).
+Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or FAILED).
 

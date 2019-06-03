@@ -297,6 +297,8 @@ enum **Format**:
 
 .. _class_Image_constant_INTERPOLATE_TRILINEAR:
 
+.. _class_Image_constant_INTERPOLATE_LANCZOS:
+
 enum **Interpolation**:
 
 - **INTERPOLATE_NEAREST** = **0**
@@ -312,6 +314,8 @@ It's slower than ``INTERPOLATE_BILINEAR``, but produces higher quality results, 
 If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image. (Note that if you intend to scale multiple copies of the original image, it's better to call ``generate_mipmaps`` on it in advance, to avoid wasting processing power in generating them again and again.)
 
 On the other hand, if the image already has mipmaps, they will be used, and a new set will be generated for the resulting image.
+
+- **INTERPOLATE_LANCZOS** = **4**
 
 .. _enum_Image_AlphaMode:
 
@@ -453,13 +457,13 @@ Copies ``src`` image to this image.
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format **)**
 
-Creates an empty image of given size and format. See ``FORMAT_*`` constants. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
+Creates an empty image of given size and format. See ``FORMAT_*`` constants. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the ``generate_mipmaps`` method.
 
 .. _class_Image_method_create_from_data:
 
 - void **create_from_data** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format, :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
-Creates a new image of given size and format. See ``FORMAT_*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
+Creates a new image of given size and format. See ``FORMAT_*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the ``generate_mipmaps`` method.
 
 .. _class_Image_method_crop:
 

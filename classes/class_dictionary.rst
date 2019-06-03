@@ -48,6 +48,24 @@ Dictionary type. Associative container which contains values referenced by uniqu
 
 Erasing elements while iterating over them **is not supported**.
 
+Creating a dictionary:
+
+::
+
+    var d = {4: 5, "A key": "A value", 28: [1, 2, 3]}
+
+To add a key to an existing dictionary, access it like an existing key and assign to it:
+
+::
+
+    d[4] = "hello"  # Add integer 4 as a key and assign the String "hello" as its value.
+    d["Godot"] = 3.01  # Add String "Godot" as a key and assign the value 3.01 to it.
+
+Tutorials
+---------
+
+- `#dictionary <../getting_started/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../getting_started/scripting/gdscript/gdscript_basics`
+
 Method Descriptions
 -------------------
 
@@ -67,13 +85,13 @@ Creates a copy of the dictionary, and returns it.
 
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
-Return true if the dictionary is empty.
+Returns ``true`` if the dictionary is empty.
 
 .. _class_Dictionary_method_erase:
 
 - :ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
 
-Erase a dictionary key/value pair by key. Do not erase elements while iterating over the dictionary.
+Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise. Do not erase elements while iterating over the dictionary.
 
 .. _class_Dictionary_method_get:
 
@@ -85,35 +103,35 @@ Returns the current value for the specified key in the ``Dictionary``. If the ke
 
 - :ref:`bool<class_bool>` **has** **(** :ref:`Variant<class_Variant>` key **)**
 
-Return true if the dictionary has a given key.
+Returns ``true`` if the dictionary has a given key.
 
 .. _class_Dictionary_method_has_all:
 
 - :ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_Array>` keys **)**
 
-Return true if the dictionary has all of the keys in the given array.
+Returns ``true`` if the dictionary has all of the keys in the given array.
 
 .. _class_Dictionary_method_hash:
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
-Return a hashed integer value representing the dictionary contents.
+Returns a hashed integer value representing the dictionary contents.
 
 .. _class_Dictionary_method_keys:
 
 - :ref:`Array<class_Array>` **keys** **(** **)**
 
-Return the list of keys in the ``Dictionary``.
+Returns the list of keys in the ``Dictionary``.
 
 .. _class_Dictionary_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Return the size of the dictionary (in pairs).
+Returns the size of the dictionary (in pairs).
 
 .. _class_Dictionary_method_values:
 
 - :ref:`Array<class_Array>` **values** **(** **)**
 
-Return the list of values in the ``Dictionary``.
+Returns the list of values in the ``Dictionary``.
 

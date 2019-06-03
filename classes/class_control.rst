@@ -195,7 +195,7 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_anchors_and_margins_preset<class_Control_method_set_anchors_and_margins_preset>` **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` resize_mode=0, :ref:`int<class_int>` margin=0 **)** |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_anchors_preset<class_Control_method_set_anchors_preset>` **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`bool<class_bool>` keep_margin=false **)**                                                                                    |
+| void                                         | :ref:`set_anchors_preset<class_Control_method_set_anchors_preset>` **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`bool<class_bool>` keep_margins=false **)**                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_begin<class_Control_method_set_begin>` **(** :ref:`Vector2<class_Vector2>` position **)**                                                                                                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -205,9 +205,15 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_end<class_Control_method_set_end>` **(** :ref:`Vector2<class_Vector2>` position **)**                                                                                                                                                                    |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`set_global_position<class_Control_method_set_global_position>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` keep_margins=false **)**                                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_margins_preset<class_Control_method_set_margins_preset>` **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` resize_mode=0, :ref:`int<class_int>` margin=0 **)**                         |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`set_position<class_Control_method_set_position>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` keep_margins=false **)**                                                                                                              |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_rotation<class_Control_method_set_rotation>` **(** :ref:`float<class_float>` radians **)**                                                                                                                                                               |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`set_size<class_Control_method_set_size>` **(** :ref:`Vector2<class_Vector2>` size, :ref:`bool<class_bool>` keep_margins=false **)**                                                                                                                          |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`show_modal<class_Control_method_show_modal>` **(** :ref:`bool<class_bool>` exclusive=false **)**                                                                                                                                                             |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -560,7 +566,7 @@ Constants
 Description
 -----------
 
-Base class for all User Interface or *UI* related nodes. ``Control`` features a bounding rectangle that defines its extents, an anchor position relative to its parent and margins that represent an offset to the anchor. The margins update automatically when the node, any of its parents, or the screen size change.
+Base class for all User Interface or *UI* related nodes. ``Control`` features a bounding rectangle that defines its extents, an anchor position relative to its parent control or the current viewport, and margins that represent an offset to the anchor. The margins update automatically when the node, any of its parents, or the screen size change.
 
 For more information on Godot's UI system, anchors, margins, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from ``Control`` and :ref:`Container<class_Container>` nodes.
 
@@ -838,7 +844,7 @@ Controls whether the control will be able to receive mouse button input events t
 | *Getter* | is_clipping_contents()   |
 +----------+--------------------------+
 
-Enables whether rendering of children should be clipped to this control's rectangle. If true, parts of a child which would be visibly outside of this control's rectangle will not be rendered.
+Enables whether rendering of children should be clipped to this control's rectangle. If ``true``, parts of a child which would be visibly outside of this control's rectangle will not be rendered.
 
 .. _class_Control_property_rect_global_position:
 
@@ -1108,7 +1114,7 @@ Returns the mouse cursor shape the control displays on mouse hover. See :ref:`Cu
 
 - :ref:`Object<class_Object>` **get_drag_data** **(** :ref:`Vector2<class_Vector2>` position **)** virtual
 
-Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Return null if there is no data to drag. Controls that want to receive drop data should implement :ref:`can_drop_data<class_Control_method_can_drop_data>` and :ref:`drop_data<class_Control_method_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
+Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns null if there is no data to drag. Controls that want to receive drop data should implement :ref:`can_drop_data<class_Control_method_can_drop_data>` and :ref:`drop_data<class_Control_method_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
 
 A preview that will follow the mouse that should represent the data can be set with :ref:`set_drag_preview<class_Control_method_set_drag_preview>`. A good time to set the preview is in this method.
 
@@ -1275,7 +1281,7 @@ Give up the focus. No other control will be able to receive keyboard input.
 
 .. _class_Control_method_set_anchors_preset:
 
-- void **set_anchors_preset** **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`bool<class_bool>` keep_margin=false **)**
+- void **set_anchors_preset** **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`bool<class_bool>` keep_margins=false **)**
 
 .. _class_Control_method_set_begin:
 
@@ -1326,15 +1332,27 @@ Shows the given control at the mouse pointer. A good time to call this method is
 
 Sets :ref:`margin_right<class_Control_property_margin_right>` and :ref:`margin_bottom<class_Control_property_margin_bottom>` at the same time.
 
+.. _class_Control_method_set_global_position:
+
+- void **set_global_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` keep_margins=false **)**
+
 .. _class_Control_method_set_margins_preset:
 
 - void **set_margins_preset** **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` resize_mode=0, :ref:`int<class_int>` margin=0 **)**
+
+.. _class_Control_method_set_position:
+
+- void **set_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` keep_margins=false **)**
 
 .. _class_Control_method_set_rotation:
 
 - void **set_rotation** **(** :ref:`float<class_float>` radians **)**
 
 Sets the rotation (in radians).
+
+.. _class_Control_method_set_size:
+
+- void **set_size** **(** :ref:`Vector2<class_Vector2>` size, :ref:`bool<class_bool>` keep_margins=false **)**
 
 .. _class_Control_method_show_modal:
 

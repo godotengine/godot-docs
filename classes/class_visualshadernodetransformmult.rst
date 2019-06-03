@@ -32,11 +32,19 @@ Enumerations
 
 .. _class_VisualShaderNodeTransformMult_constant_OP_BxA:
 
+.. _class_VisualShaderNodeTransformMult_constant_OP_AxB_COMP:
+
+.. _class_VisualShaderNodeTransformMult_constant_OP_BxA_COMP:
+
 enum **Operator**:
 
 - **OP_AxB** = **0**
 
 - **OP_BxA** = **1**
+
+- **OP_AxB_COMP** = **2**
+
+- **OP_BxA_COMP** = **3**
 
 Property Descriptions
 ---------------------

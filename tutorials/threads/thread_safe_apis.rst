@@ -49,8 +49,6 @@ you are doing and you are sure that a single resource is not being used or
 set in multiple ones. Otherwise, you are safer just using the servers API
 (which is fully thread-safe) directly and not touching scene or resources.
 
-
-
 GDScript arrays, dictionaries
 -----------------------------
 
@@ -60,5 +58,3 @@ Resources
 ---------
 
 Modifying a unique resource from multiple threads is not supported, but loading them on threads or handling a reference is perfectly supported. Scenes, textures, meshes, etc. Can be loaded and manipulated on threads, then added to the active scene in the main thread.
-
-

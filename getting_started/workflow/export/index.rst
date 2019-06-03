@@ -15,4 +15,5 @@ Export
    exporting_for_android
    exporting_for_web
    one-click_deploy
+   android_custom_build
    changing_application_icon_for_windows

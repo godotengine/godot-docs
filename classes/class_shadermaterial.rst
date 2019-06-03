@@ -41,6 +41,11 @@ Description
 
 A material that uses a custom :ref:`Shader<class_Shader>` program to render either items to screen or process particles. You can create multiple materials for the same shader but configure different values for the uniforms defined in the shader.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/shading/index`
+
 Property Descriptions
 ---------------------
 

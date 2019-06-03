@@ -19,53 +19,138 @@ Brief Description
 Methods
 -------
 
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                       | :ref:`build_box_planes<class_Geometry_method_build_box_planes>` **(** :ref:`Vector3<class_Vector3>` extents **)**                                                                                                                                                          |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                       | :ref:`build_capsule_planes<class_Geometry_method_build_capsule_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, Vector3.Axis axis=2 **)**                                       |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                       | :ref:`build_cylinder_planes<class_Geometry_method_build_cylinder_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, Vector3.Axis axis=2 **)**                                                                 |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`clip_polygon<class_Geometry_method_clip_polygon>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` points, :ref:`Plane<class_Plane>` plane **)**                                                                                                                |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`convex_hull_2d<class_Geometry_method_convex_hull_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**                                                                                                                                             |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point_to_segment<class_Geometry_method_get_closest_point_to_segment>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**                                                                |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`get_closest_point_to_segment_2d<class_Geometry_method_get_closest_point_to_segment_2d>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**                                                          |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point_to_segment_uncapped<class_Geometry_method_get_closest_point_to_segment_uncapped>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**                                              |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`get_closest_point_to_segment_uncapped_2d<class_Geometry_method_get_closest_point_to_segment_uncapped_2d>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**                                        |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_closest_points_between_segments<class_Geometry_method_get_closest_points_between_segments>` **(** :ref:`Vector3<class_Vector3>` p1, :ref:`Vector3<class_Vector3>` p2, :ref:`Vector3<class_Vector3>` q1, :ref:`Vector3<class_Vector3>` q2 **)**                   |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`get_closest_points_between_segments_2d<class_Geometry_method_get_closest_points_between_segments_2d>` **(** :ref:`Vector2<class_Vector2>` p1, :ref:`Vector2<class_Vector2>` q1, :ref:`Vector2<class_Vector2>` p2, :ref:`Vector2<class_Vector2>` q2 **)**             |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_uv84_normal_bit<class_Geometry_method_get_uv84_normal_bit>` **(** :ref:`Vector3<class_Vector3>` normal **)**                                                                                                                                                     |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                   | :ref:`line_intersects_line_2d<class_Geometry_method_line_intersects_line_2d>` **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` dir_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` dir_b **)**                             |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`             | :ref:`make_atlas<class_Geometry_method_make_atlas>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` sizes **)**                                                                                                                                                      |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`point_is_inside_triangle<class_Geometry_method_point_is_inside_triangle>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` a, :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` c **)** const                                   |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                   | :ref:`ray_intersects_triangle<class_Geometry_method_ray_intersects_triangle>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**         |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`segment_intersects_circle<class_Geometry_method_segment_intersects_circle>` **(** :ref:`Vector2<class_Vector2>` segment_from, :ref:`Vector2<class_Vector2>` segment_to, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)** |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`segment_intersects_convex<class_Geometry_method_segment_intersects_convex>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Array<class_Array>` planes **)**                                                                       |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`segment_intersects_cylinder<class_Geometry_method_segment_intersects_cylinder>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` height, :ref:`float<class_float>` radius **)**                                 |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                   | :ref:`segment_intersects_segment_2d<class_Geometry_method_segment_intersects_segment_2d>` **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` to_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` to_b **)**                   |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`segment_intersects_sphere<class_Geometry_method_segment_intersects_sphere>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` sphere_position, :ref:`float<class_float>` sphere_radius **)**                 |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                   | :ref:`segment_intersects_triangle<class_Geometry_method_segment_intersects_triangle>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**  |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`triangulate_polygon<class_Geometry_method_triangulate_polygon>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                                                                                  |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`build_box_planes<class_Geometry_method_build_box_planes>` **(** :ref:`Vector3<class_Vector3>` extents **)**                                                                                                                                                                                |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`build_capsule_planes<class_Geometry_method_build_capsule_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, Vector3.Axis axis=2 **)**                                                             |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`build_cylinder_planes<class_Geometry_method_build_cylinder_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, Vector3.Axis axis=2 **)**                                                                                       |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`clip_polygon<class_Geometry_method_clip_polygon>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` points, :ref:`Plane<class_Plane>` plane **)**                                                                                                                                      |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`clip_polygons_2d<class_Geometry_method_clip_polygons_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**                                                                                                 |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`clip_polyline_with_polygon_2d<class_Geometry_method_clip_polyline_with_polygon_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                          |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`convex_hull_2d<class_Geometry_method_convex_hull_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**                                                                                                                                                                   |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`exclude_polygons_2d<class_Geometry_method_exclude_polygons_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**                                                                                           |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point_to_segment<class_Geometry_method_get_closest_point_to_segment>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**                                                                                      |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                   | :ref:`get_closest_point_to_segment_2d<class_Geometry_method_get_closest_point_to_segment_2d>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**                                                                                |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point_to_segment_uncapped<class_Geometry_method_get_closest_point_to_segment_uncapped>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**                                                                    |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                   | :ref:`get_closest_point_to_segment_uncapped_2d<class_Geometry_method_get_closest_point_to_segment_uncapped_2d>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**                                                              |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_closest_points_between_segments<class_Geometry_method_get_closest_points_between_segments>` **(** :ref:`Vector3<class_Vector3>` p1, :ref:`Vector3<class_Vector3>` p2, :ref:`Vector3<class_Vector3>` q1, :ref:`Vector3<class_Vector3>` q2 **)**                                         |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`get_closest_points_between_segments_2d<class_Geometry_method_get_closest_points_between_segments_2d>` **(** :ref:`Vector2<class_Vector2>` p1, :ref:`Vector2<class_Vector2>` q1, :ref:`Vector2<class_Vector2>` p2, :ref:`Vector2<class_Vector2>` q2 **)**                                   |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_uv84_normal_bit<class_Geometry_method_get_uv84_normal_bit>` **(** :ref:`Vector3<class_Vector3>` normal **)**                                                                                                                                                                           |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`intersect_polygons_2d<class_Geometry_method_intersect_polygons_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**                                                                                       |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`intersect_polyline_with_polygon_2d<class_Geometry_method_intersect_polyline_with_polygon_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                                                                                                      |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                   | :ref:`line_intersects_line_2d<class_Geometry_method_line_intersects_line_2d>` **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` dir_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` dir_b **)**                                                   |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`             | :ref:`make_atlas<class_Geometry_method_make_atlas>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` sizes **)**                                                                                                                                                                            |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`merge_polygons_2d<class_Geometry_method_merge_polygons_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**                                                                                               |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`offset_polygon_2d<class_Geometry_method_offset_polygon_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon, :ref:`float<class_float>` delta, :ref:`PolyJoinType<enum_Geometry_PolyJoinType>` join_type=0 **)**                                                              |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`offset_polyline_2d<class_Geometry_method_offset_polyline_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`float<class_float>` delta, :ref:`PolyJoinType<enum_Geometry_PolyJoinType>` join_type=0, :ref:`PolyEndType<enum_Geometry_PolyEndType>` end_type=3 **)** |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`point_is_inside_triangle<class_Geometry_method_point_is_inside_triangle>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` a, :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` c **)** const                                                         |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                   | :ref:`ray_intersects_triangle<class_Geometry_method_ray_intersects_triangle>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**                               |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`segment_intersects_circle<class_Geometry_method_segment_intersects_circle>` **(** :ref:`Vector2<class_Vector2>` segment_from, :ref:`Vector2<class_Vector2>` segment_to, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**                       |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`segment_intersects_convex<class_Geometry_method_segment_intersects_convex>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Array<class_Array>` planes **)**                                                                                             |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`segment_intersects_cylinder<class_Geometry_method_segment_intersects_cylinder>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` height, :ref:`float<class_float>` radius **)**                                                       |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                   | :ref:`segment_intersects_segment_2d<class_Geometry_method_segment_intersects_segment_2d>` **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` to_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` to_b **)**                                         |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`segment_intersects_sphere<class_Geometry_method_segment_intersects_sphere>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` sphere_position, :ref:`float<class_float>` sphere_radius **)**                                       |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                   | :ref:`segment_intersects_triangle<class_Geometry_method_segment_intersects_triangle>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**                        |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`transform_points_2d<class_Geometry_method_transform_points_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                        |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`triangulate_delaunay_2d<class_Geometry_method_triangulate_delaunay_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**                                                                                                                                                 |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`triangulate_polygon<class_Geometry_method_triangulate_polygon>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                                                                                                        |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enumerations
+------------
+
+.. _enum_Geometry_PolyBooleanOperation:
+
+.. _class_Geometry_constant_OPERATION_UNION:
+
+.. _class_Geometry_constant_OPERATION_DIFFERENCE:
+
+.. _class_Geometry_constant_OPERATION_INTERSECTION:
+
+.. _class_Geometry_constant_OPERATION_XOR:
+
+enum **PolyBooleanOperation**:
+
+- **OPERATION_UNION** = **0** --- Create regions where either subject or clip polygons (or both) are filled.
+
+- **OPERATION_DIFFERENCE** = **1** --- Create regions where subject polygons are filled except where clip polygons are filled.
+
+- **OPERATION_INTERSECTION** = **2** --- Create regions where both subject and clip polygons are filled.
+
+- **OPERATION_XOR** = **3** --- Create regions where either subject or clip polygons are filled but not where both are filled.
+
+.. _enum_Geometry_PolyJoinType:
+
+.. _class_Geometry_constant_JOIN_SQUARE:
+
+.. _class_Geometry_constant_JOIN_ROUND:
+
+.. _class_Geometry_constant_JOIN_MITER:
+
+enum **PolyJoinType**:
+
+- **JOIN_SQUARE** = **0** --- Squaring is applied uniformally at all convex edge joins at ``1 * delta``.
+
+- **JOIN_ROUND** = **1** --- While flattened paths can never perfectly trace an arc, they are approximated by a series of arc chords.
+
+- **JOIN_MITER** = **2** --- There's a necessary limit to mitered joins since offsetting edges that join at very acute angles will produce excessively long and narrow 'spikes'. For any given edge join, when miter offsetting would exceed that maximum distance, 'square' joining is applied.
+
+.. _enum_Geometry_PolyEndType:
+
+.. _class_Geometry_constant_END_POLYGON:
+
+.. _class_Geometry_constant_END_JOINED:
+
+.. _class_Geometry_constant_END_BUTT:
+
+.. _class_Geometry_constant_END_SQUARE:
+
+.. _class_Geometry_constant_END_ROUND:
+
+enum **PolyEndType**:
+
+- **END_POLYGON** = **0** --- Endpoints are joined using the :ref:`PolyJoinType<enum_Geometry_PolyJoinType>` value and the path filled as a polygon.
+
+- **END_JOINED** = **1** --- Endpoints are joined using the :ref:`PolyJoinType<enum_Geometry_PolyJoinType>` value and the path filled as a polyline.
+
+- **END_BUTT** = **2** --- Endpoints are squared off with no extension.
+
+- **END_SQUARE** = **3** --- Endpoints are squared off and extended by ``delta`` units.
+
+- **END_ROUND** = **4** --- Endpoints are rounded off and extended by ``delta`` units.
 
 Method Descriptions
 -------------------
@@ -94,11 +179,33 @@ Returns an array of :ref:`Plane<class_Plane>`\ s closely bounding a faceted cyli
 
 Clips the polygon defined by the points in ``points`` against the ``plane`` and returns the points of the clipped polygon.
 
+.. _class_Geometry_method_clip_polygons_2d:
+
+- :ref:`Array<class_Array>` **clip_polygons_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**
+
+Clips ``polygon_a`` against ``polygon_b`` and returns an array of clipped polygons. This performs ``OPERATION_DIFFERENCE`` between polygons. Returns an empty array if ``polygon_b`` completely overlaps ``polygon_a``. 
+
+If ``polygon_b`` is enclosed by ``polygon_a``, returns an outer polygon (boundary) and inner polygon (hole) which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+
+.. _class_Geometry_method_clip_polyline_with_polygon_2d:
+
+- :ref:`Array<class_Array>` **clip_polyline_with_polygon_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
+
+Clips ``polyline`` against ``polygon`` and returns an array of clipped polylines. This performs ``OPERATION_DIFFERENCE`` between the polyline and the polygon. This operation can be thought of as cutting a line with a closed shape.
+
 .. _class_Geometry_method_convex_hull_2d:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **convex_hull_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**
 
 Given an array of :ref:`Vector2<class_Vector2>`\ s, returns the convex hull as a list of points in counter-clockwise order. The last point is the same as the first one.
+
+.. _class_Geometry_method_exclude_polygons_2d:
+
+- :ref:`Array<class_Array>` **exclude_polygons_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**
+
+Mutually excludes common area defined by intersection of ``polygon_a`` and ``polygon_b`` (see :ref:`intersect_polygons_2d<class_Geometry_method_intersect_polygons_2d>`) and returns an array of excluded polygons. This performs ``OPERATION_XOR`` between polygons. In other words, returns all but common area between polygons. 
+
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
 .. _class_Geometry_method_get_closest_point_to_segment:
 
@@ -140,6 +247,26 @@ Given the two 2d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two
 
 - :ref:`int<class_int>` **get_uv84_normal_bit** **(** :ref:`Vector3<class_Vector3>` normal **)**
 
+.. _class_Geometry_method_intersect_polygons_2d:
+
+- :ref:`Array<class_Array>` **intersect_polygons_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**
+
+Intersects ``polygon_a`` with ``polygon_b`` and returns an array of intersected polygons. This performs ``OPERATION_INTERSECTION`` between polygons. In other words, returns common area shared by polygons. Returns an empty array if no intersection occurs.
+
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+
+.. _class_Geometry_method_intersect_polyline_with_polygon_2d:
+
+- :ref:`Array<class_Array>` **intersect_polyline_with_polygon_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
+
+Intersects ``polyline`` with ``polygon`` and returns an array of intersected polylines. This performs ``OPERATION_INTERSECTION`` between the polyline and the polygon. This operation can be thought of as chopping a line with a closed shape.
+
+.. _class_Geometry_method_is_polygon_clockwise:
+
+- :ref:`bool<class_bool>` **is_polygon_clockwise** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
+
+Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, otherwise returns ``false``.
+
 .. _class_Geometry_method_line_intersects_line_2d:
 
 - :ref:`Variant<class_Variant>` **line_intersects_line_2d** **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` dir_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` dir_b **)**
@@ -151,6 +278,36 @@ Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) inte
 - :ref:`Dictionary<class_Dictionary>` **make_atlas** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` sizes **)**
 
 Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an atlas. The returned dictionary has two keys: ``points`` is a vector of :ref:`Vector2<class_Vector2>` that specifies the positions of each tile, ``size`` contains the overall size of the whole atlas as :ref:`Vector2<class_Vector2>`.
+
+.. _class_Geometry_method_merge_polygons_2d:
+
+- :ref:`Array<class_Array>` **merge_polygons_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**
+
+Merges (combines) ``polygon_a`` and ``polygon_b`` and returns an array of merged polygons. This performs ``OPERATION_UNION`` between polygons.
+
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+
+.. _class_Geometry_method_offset_polygon_2d:
+
+- :ref:`Array<class_Array>` **offset_polygon_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon, :ref:`float<class_float>` delta, :ref:`PolyJoinType<enum_Geometry_PolyJoinType>` join_type=0 **)**
+
+Inflates or deflates ``polygon`` by ``delta`` units (pixels). If ``delta`` is positive, makes the polygon grow outward. If ``delta`` is negative, shrinks the polygon inward. Returns an array of polygons because inflating/deflating may result in multiple discrete polygons. Returns an empty array if ``delta`` is negative and the absolute value of it approximately exceeds the minimum bounding rectangle dimensions of the polygon.
+
+Each polygon's vertices will be rounded as determined by ``join_type``, see :ref:`PolyJoinType<enum_Geometry_PolyJoinType>`.
+
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+
+.. _class_Geometry_method_offset_polyline_2d:
+
+- :ref:`Array<class_Array>` **offset_polyline_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`float<class_float>` delta, :ref:`PolyJoinType<enum_Geometry_PolyJoinType>` join_type=0, :ref:`PolyEndType<enum_Geometry_PolyEndType>` end_type=3 **)**
+
+Inflates or deflates ``polyline`` by ``delta`` units (pixels), producing polygons. If ``delta`` is positive, makes the polyline grow outward. Returns an array of polygons because inflating/deflating may result in multiple discrete polygons. If ``delta`` is negative, returns an empty array.
+
+Each polygon's vertices will be rounded as determined by ``join_type``, see :ref:`PolyJoinType<enum_Geometry_PolyJoinType>`.
+
+Each polygon's endpoints will be rounded as determined by ``end_type``, see :ref:`PolyEndType<enum_Geometry_PolyEndType>`.
+
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
 .. _class_Geometry_method_point_is_inside_triangle:
 
@@ -199,6 +356,20 @@ Checks if the segment (``from``, ``to``) intersects the sphere that is located a
 - :ref:`Variant<class_Variant>` **segment_intersects_triangle** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**
 
 Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, an empty :ref:`Variant<class_Variant>` is returned.
+
+.. _class_Geometry_method_transform_points_2d:
+
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **transform_points_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Transform2D<class_Transform2D>` transform **)**
+
+Transforms an array of points by ``transform`` and returns the result. 
+
+Can be useful in conjuction with performing polygon boolean operations in CSG manner, see :ref:`merge_polygons_2d<class_Geometry_method_merge_polygons_2d>`, :ref:`clip_polygons_2d<class_Geometry_method_clip_polygons_2d>`, :ref:`intersect_polygons_2d<class_Geometry_method_intersect_polygons_2d>`, :ref:`exclude_polygons_2d<class_Geometry_method_exclude_polygons_2d>`.
+
+.. _class_Geometry_method_triangulate_delaunay_2d:
+
+- :ref:`PoolIntArray<class_PoolIntArray>` **triangulate_delaunay_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**
+
+Triangulates the area specified by discrete set of ``points`` such that no point is inside the circumcircle of any resulting triangle. Returns a :ref:`PoolIntArray<class_PoolIntArray>` where each triangle consists of three consecutive point indices into ``points`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). If the triangulation did not succeed, an empty :ref:`PoolIntArray<class_PoolIntArray>` is returned.
 
 .. _class_Geometry_method_triangulate_polygon:
 

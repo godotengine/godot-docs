@@ -3,9 +3,11 @@
 Contribute to the Class Reference
 =================================
 
-Godot ships with many nodes and singletons to help you develop your games in GDscript. Each is a class, documented in the :ref:`class reference <toc-class-ref>`. This reference is essential for anyone learning the engine: it is available both online and in the engine.
+Godot ships with many nodes and singletons to help you develop your games. Each is a class, documented in the :ref:`class reference <toc-class-ref>`.
+This reference is essential for anyone learning the engine: it is available both online and in the engine.
 
-But it's incomplete. Some methods, variables and signals lack descriptions. Others changed with recent releases and need updates. The developers can't write the entire reference on their own. Godot needs you, and all of us, to contribute.
+But it's incomplete. Some methods, variables and signals lack descriptions. Others changed with recent releases and need updates.
+The developers can't write the entire reference on their own. Godot needs you, and all of us, to contribute.
 
 **Important:** If you are planning to make larger changes or a more substantial contribution, it is usually a good idea
 to create an issue (or a comment in an existing one) to let others know so they don't start working on the same thing too.
@@ -159,6 +161,8 @@ How to edit class XML
 Edit the file for your chosen class in ``doc/classes/`` to update the class reference. The folder contains an XML file for each class. The XML lists the constants and methods you'll find in the class reference. Godot generates and updates the XML automatically.
 
 Edit it using your favourite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBcode-style blocks. More on that below.
+
+If you need to check that the modifications you've made are correct in the generated documentation, build Godot as described :ref:`here <toc-devel-compiling>`, run the editor and open the help for the page you modified.
 
 How to write the class reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

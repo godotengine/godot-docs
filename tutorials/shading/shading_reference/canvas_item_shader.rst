@@ -222,7 +222,7 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec2 **LIGHT_UV**                | UV for Light texture.                                                         |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| out vec4 **SHADOW_COLOR**           | Shadow Color of Light. **(not yet implemented)**                              |
+| out vec4 **SHADOW_COLOR**           | Shadow Color of Light.                                                        |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | inout vec4 **LIGHT**                | Value from the Light texture and output color. Can be modified. If not used,  |
 |                                     | the light function is ignored.                                                |

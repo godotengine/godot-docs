@@ -7,7 +7,7 @@
 CSGMesh
 =======
 
-**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -19,9 +19,11 @@ A CSG Mesh shape that uses a mesh resource.
 Properties
 ----------
 
-+-------------------------+------------------------------------------+
-| :ref:`Mesh<class_Mesh>` | :ref:`mesh<class_CSGMesh_property_mesh>` |
-+-------------------------+------------------------------------------+
++---------------------------------+--------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGMesh_property_material>` |
++---------------------------------+--------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_CSGMesh_property_mesh>`         |
++---------------------------------+--------------------------------------------------+
 
 Description
 -----------
@@ -30,6 +32,16 @@ This CSG node allows you to use any mesh resource as a CSG shape, provided it is
 
 Property Descriptions
 ---------------------
+
+.. _class_CSGMesh_property_material:
+
+- :ref:`Material<class_Material>` **material**
+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
 
 .. _class_CSGMesh_property_mesh:
 

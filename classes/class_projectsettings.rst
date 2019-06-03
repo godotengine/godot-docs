@@ -19,527 +19,539 @@ Contains global variables accessible from everywhere.
 Properties
 ----------
 
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`android/modules<class_ProjectSettings_property_android/modules>`                                                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`           | :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>`                                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`application/boot_splash/fullsize<class_ProjectSettings_property_application/boot_splash/fullsize>`                                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>`                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`application/config/icon<class_ProjectSettings_property_application/config/icon>`                                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`application/config/name<class_ProjectSettings_property_application/config/name>`                                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`application/config/project_settings_override<class_ProjectSettings_property_application/config/project_settings_override>`                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>`                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`application/run/frame_delay_msec<class_ProjectSettings_property_application/run/frame_delay_msec>`                                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`application/run/low_processor_mode<class_ProjectSettings_property_application/run/low_processor_mode>`                                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`application/run/low_processor_mode_sleep_usec<class_ProjectSettings_property_application/run/low_processor_mode_sleep_usec>`                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`application/run/main_scene<class_ProjectSettings_property_application/run/main_scene>`                                                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`audio/channel_disable_threshold_db<class_ProjectSettings_property_audio/channel_disable_threshold_db>`                                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`audio/channel_disable_time<class_ProjectSettings_property_audio/channel_disable_time>`                                                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`audio/driver<class_ProjectSettings_property_audio/driver>`                                                                                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`audio/enable_audio_input<class_ProjectSettings_property_audio/enable_audio_input>`                                                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`audio/mix_rate<class_ProjectSettings_property_audio/mix_rate>`                                                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`audio/output_latency<class_ProjectSettings_property_audio/output_latency>`                                                                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`audio/video_delay_compensation_ms<class_ProjectSettings_property_audio/video_delay_compensation_ms>`                                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`compression/formats/gzip/compression_level<class_ProjectSettings_property_compression/formats/gzip/compression_level>`                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`compression/formats/zlib/compression_level<class_ProjectSettings_property_compression/formats/zlib/compression_level>`                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`compression/formats/zstd/compression_level<class_ProjectSettings_property_compression/formats/zstd/compression_level>`                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`compression/formats/zstd/long_distance_matching<class_ProjectSettings_property_compression/formats/zstd/long_distance_matching>`                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`compression/formats/zstd/window_log_size<class_ProjectSettings_property_compression/formats/zstd/window_log_size>`                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/completion/autocomplete_setters_and_getters<class_ProjectSettings_property_debug/gdscript/completion/autocomplete_setters_and_getters>`         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/constant_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function>`                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/enable<class_ProjectSettings_property_debug/gdscript/warnings/enable>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/function_conflicts_constant<class_ProjectSettings_property_debug/gdscript/warnings/function_conflicts_constant>`                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/function_conflicts_variable<class_ProjectSettings_property_debug/gdscript/warnings/function_conflicts_variable>`                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/function_may_yield<class_ProjectSettings_property_debug/gdscript/warnings/function_may_yield>`                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/function_used_as_property<class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property>`                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/incompatible_ternary<class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary>`                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/integer_division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/narrowing_conversion<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/property_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/return_value_discarded<class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded>`                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/standalone_expression<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/treat_warnings_as_errors<class_ProjectSettings_property_debug/gdscript/warnings/treat_warnings_as_errors>`                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unassigned_variable<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable>`                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unassigned_variable_op_assign<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign>`                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unreachable_code<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_code>`                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unsafe_call_argument<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_call_argument>`                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unsafe_cast<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_cast>`                                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unsafe_method_access<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_method_access>`                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unsafe_property_access<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_property_access>`                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unused_argument<class_ProjectSettings_property_debug/gdscript/warnings/unused_argument>`                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unused_class_variable<class_ProjectSettings_property_debug/gdscript/warnings/unused_class_variable>`                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unused_signal<class_ProjectSettings_property_debug/gdscript/warnings/unused_signal>`                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/unused_variable<class_ProjectSettings_property_debug/gdscript/warnings/unused_variable>`                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/variable_conflicts_function<class_ProjectSettings_property_debug/gdscript/warnings/variable_conflicts_function>`                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/void_assignment<class_ProjectSettings_property_debug/gdscript/warnings/void_assignment>`                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`debug/settings/crash_handler/message<class_ProjectSettings_property_debug/settings/crash_handler/message>`                                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`debug/settings/fps/force_fps<class_ProjectSettings_property_debug/settings/fps/force_fps>`                                                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`debug/settings/gdscript/max_call_stack<class_ProjectSettings_property_debug/settings/gdscript/max_call_stack>`                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`debug/settings/profiler/max_functions<class_ProjectSettings_property_debug/settings/profiler/max_functions>`                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/settings/stdout/print_fps<class_ProjectSettings_property_debug/settings/stdout/print_fps>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`debug/settings/stdout/verbose_stdout<class_ProjectSettings_property_debug/settings/stdout/verbose_stdout>`                                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`debug/settings/visual_script/max_call_stack<class_ProjectSettings_property_debug/settings/visual_script/max_call_stack>`                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`display/mouse_cursor/custom_image<class_ProjectSettings_property_display/mouse_cursor/custom_image>`                                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`display/mouse_cursor/custom_image_hotspot<class_ProjectSettings_property_display/mouse_cursor/custom_image_hotspot>`                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/dpi/allow_hidpi<class_ProjectSettings_property_display/window/dpi/allow_hidpi>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`display/window/handheld/orientation<class_ProjectSettings_property_display/window/handheld/orientation>`                                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/per_pixel_transparency/enabled<class_ProjectSettings_property_display/window/per_pixel_transparency/enabled>`                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/per_pixel_transparency/splash<class_ProjectSettings_property_display/window/per_pixel_transparency/splash>`                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/size/always_on_top<class_ProjectSettings_property_display/window/size/always_on_top>`                                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/size/borderless<class_ProjectSettings_property_display/window/size/borderless>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/size/fullscreen<class_ProjectSettings_property_display/window/size/fullscreen>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`display/window/size/height<class_ProjectSettings_property_display/window/size/height>`                                                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/size/resizable<class_ProjectSettings_property_display/window/size/resizable>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`display/window/size/test_height<class_ProjectSettings_property_display/window/size/test_height>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`display/window/size/test_width<class_ProjectSettings_property_display/window/size/test_width>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`display/window/size/width<class_ProjectSettings_property_display/window/size/width>`                                                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`display/window/vsync/use_vsync<class_ProjectSettings_property_display/window/vsync/use_vsync>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`editor/active<class_ProjectSettings_property_editor/active>`                                                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`gui/common/default_scroll_deadzone<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`                                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`gui/common/swap_ok_cancel<class_ProjectSettings_property_gui/common/swap_ok_cancel>`                                                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`                                                                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`gui/theme/custom_font<class_ProjectSettings_property_gui/theme/custom_font>`                                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`gui/theme/use_hidpi<class_ProjectSettings_property_gui/theme/use_hidpi>`                                                                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`gui/timers/incremental_search_max_interval_msec<class_ProjectSettings_property_gui/timers/incremental_search_max_interval_msec>`                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`gui/timers/text_edit_idle_detect_sec<class_ProjectSettings_property_gui/timers/text_edit_idle_detect_sec>`                                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_accept<class_ProjectSettings_property_input/ui_accept>`                                                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_cancel<class_ProjectSettings_property_input/ui_cancel>`                                                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_down<class_ProjectSettings_property_input/ui_down>`                                                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_end<class_ProjectSettings_property_input/ui_end>`                                                                                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_focus_next<class_ProjectSettings_property_input/ui_focus_next>`                                                                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_focus_prev<class_ProjectSettings_property_input/ui_focus_prev>`                                                                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_home<class_ProjectSettings_property_input/ui_home>`                                                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_left<class_ProjectSettings_property_input/ui_left>`                                                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_page_down<class_ProjectSettings_property_input/ui_page_down>`                                                                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_page_up<class_ProjectSettings_property_input/ui_page_up>`                                                                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_right<class_ProjectSettings_property_input/ui_right>`                                                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_select<class_ProjectSettings_property_input/ui_select>`                                                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_up<class_ProjectSettings_property_input/ui_up>`                                                                                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`input_devices/pointing/emulate_mouse_from_touch<class_ProjectSettings_property_input_devices/pointing/emulate_mouse_from_touch>`                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_1<class_ProjectSettings_property_layer_names/2d_physics/layer_1>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_10<class_ProjectSettings_property_layer_names/2d_physics/layer_10>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_11<class_ProjectSettings_property_layer_names/2d_physics/layer_11>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_12<class_ProjectSettings_property_layer_names/2d_physics/layer_12>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_13<class_ProjectSettings_property_layer_names/2d_physics/layer_13>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_14<class_ProjectSettings_property_layer_names/2d_physics/layer_14>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_15<class_ProjectSettings_property_layer_names/2d_physics/layer_15>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_16<class_ProjectSettings_property_layer_names/2d_physics/layer_16>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_17<class_ProjectSettings_property_layer_names/2d_physics/layer_17>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_18<class_ProjectSettings_property_layer_names/2d_physics/layer_18>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_19<class_ProjectSettings_property_layer_names/2d_physics/layer_19>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_2<class_ProjectSettings_property_layer_names/2d_physics/layer_2>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_20<class_ProjectSettings_property_layer_names/2d_physics/layer_20>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_3<class_ProjectSettings_property_layer_names/2d_physics/layer_3>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_4<class_ProjectSettings_property_layer_names/2d_physics/layer_4>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_5<class_ProjectSettings_property_layer_names/2d_physics/layer_5>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_6<class_ProjectSettings_property_layer_names/2d_physics/layer_6>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_7<class_ProjectSettings_property_layer_names/2d_physics/layer_7>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_8<class_ProjectSettings_property_layer_names/2d_physics/layer_8>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_physics/layer_9<class_ProjectSettings_property_layer_names/2d_physics/layer_9>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_1<class_ProjectSettings_property_layer_names/2d_render/layer_1>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_10<class_ProjectSettings_property_layer_names/2d_render/layer_10>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_11<class_ProjectSettings_property_layer_names/2d_render/layer_11>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_12<class_ProjectSettings_property_layer_names/2d_render/layer_12>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_13<class_ProjectSettings_property_layer_names/2d_render/layer_13>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_14<class_ProjectSettings_property_layer_names/2d_render/layer_14>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_15<class_ProjectSettings_property_layer_names/2d_render/layer_15>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_16<class_ProjectSettings_property_layer_names/2d_render/layer_16>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_17<class_ProjectSettings_property_layer_names/2d_render/layer_17>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_18<class_ProjectSettings_property_layer_names/2d_render/layer_18>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_19<class_ProjectSettings_property_layer_names/2d_render/layer_19>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_2<class_ProjectSettings_property_layer_names/2d_render/layer_2>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_20<class_ProjectSettings_property_layer_names/2d_render/layer_20>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_3<class_ProjectSettings_property_layer_names/2d_render/layer_3>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_4<class_ProjectSettings_property_layer_names/2d_render/layer_4>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_5<class_ProjectSettings_property_layer_names/2d_render/layer_5>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_6<class_ProjectSettings_property_layer_names/2d_render/layer_6>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_7<class_ProjectSettings_property_layer_names/2d_render/layer_7>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_8<class_ProjectSettings_property_layer_names/2d_render/layer_8>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/2d_render/layer_9<class_ProjectSettings_property_layer_names/2d_render/layer_9>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_1<class_ProjectSettings_property_layer_names/3d_physics/layer_1>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_10<class_ProjectSettings_property_layer_names/3d_physics/layer_10>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_11<class_ProjectSettings_property_layer_names/3d_physics/layer_11>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_12<class_ProjectSettings_property_layer_names/3d_physics/layer_12>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_13<class_ProjectSettings_property_layer_names/3d_physics/layer_13>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_14<class_ProjectSettings_property_layer_names/3d_physics/layer_14>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_15<class_ProjectSettings_property_layer_names/3d_physics/layer_15>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_16<class_ProjectSettings_property_layer_names/3d_physics/layer_16>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_17<class_ProjectSettings_property_layer_names/3d_physics/layer_17>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_18<class_ProjectSettings_property_layer_names/3d_physics/layer_18>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_19<class_ProjectSettings_property_layer_names/3d_physics/layer_19>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_2<class_ProjectSettings_property_layer_names/3d_physics/layer_2>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_20<class_ProjectSettings_property_layer_names/3d_physics/layer_20>`                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_3<class_ProjectSettings_property_layer_names/3d_physics/layer_3>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_4<class_ProjectSettings_property_layer_names/3d_physics/layer_4>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_5<class_ProjectSettings_property_layer_names/3d_physics/layer_5>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_6<class_ProjectSettings_property_layer_names/3d_physics/layer_6>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_7<class_ProjectSettings_property_layer_names/3d_physics/layer_7>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_8<class_ProjectSettings_property_layer_names/3d_physics/layer_8>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_physics/layer_9<class_ProjectSettings_property_layer_names/3d_physics/layer_9>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_1<class_ProjectSettings_property_layer_names/3d_render/layer_1>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_10<class_ProjectSettings_property_layer_names/3d_render/layer_10>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_11<class_ProjectSettings_property_layer_names/3d_render/layer_11>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_12<class_ProjectSettings_property_layer_names/3d_render/layer_12>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_13<class_ProjectSettings_property_layer_names/3d_render/layer_13>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_14<class_ProjectSettings_property_layer_names/3d_render/layer_14>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_15<class_ProjectSettings_property_layer_names/3d_render/layer_15>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_16<class_ProjectSettings_property_layer_names/3d_render/layer_16>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_17<class_ProjectSettings_property_layer_names/3d_render/layer_17>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_18<class_ProjectSettings_property_layer_names/3d_render/layer_18>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_19<class_ProjectSettings_property_layer_names/3d_render/layer_19>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_2<class_ProjectSettings_property_layer_names/3d_render/layer_2>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_20<class_ProjectSettings_property_layer_names/3d_render/layer_20>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_3<class_ProjectSettings_property_layer_names/3d_render/layer_3>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_4<class_ProjectSettings_property_layer_names/3d_render/layer_4>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_5<class_ProjectSettings_property_layer_names/3d_render/layer_5>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_6<class_ProjectSettings_property_layer_names/3d_render/layer_6>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_7<class_ProjectSettings_property_layer_names/3d_render/layer_7>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_8<class_ProjectSettings_property_layer_names/3d_render/layer_8>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`layer_names/3d_render/layer_9<class_ProjectSettings_property_layer_names/3d_render/layer_9>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`locale/fallback<class_ProjectSettings_property_locale/fallback>`                                                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`locale/test<class_ProjectSettings_property_locale/test>`                                                                                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`logging/file_logging/enable_file_logging<class_ProjectSettings_property_logging/file_logging/enable_file_logging>`                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`logging/file_logging/log_path<class_ProjectSettings_property_logging/file_logging/log_path>`                                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`logging/file_logging/max_log_files<class_ProjectSettings_property_logging/file_logging/max_log_files>`                                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`memory/limits/message_queue/max_size_kb<class_ProjectSettings_property_memory/limits/message_queue/max_size_kb>`                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`memory/limits/multithreaded_server/rid_pool_prealloc<class_ProjectSettings_property_memory/limits/multithreaded_server/rid_pool_prealloc>`                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/debugger_stdout/max_chars_per_second<class_ProjectSettings_property_network/limits/debugger_stdout/max_chars_per_second>`                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/debugger_stdout/max_errors_per_frame<class_ProjectSettings_property_network/limits/debugger_stdout/max_errors_per_frame>`                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/debugger_stdout/max_messages_per_frame<class_ProjectSettings_property_network/limits/debugger_stdout/max_messages_per_frame>`                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/packet_peer_stream/max_buffer_po2<class_ProjectSettings_property_network/limits/packet_peer_stream/max_buffer_po2>`                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/websocket_client/max_in_buffer_kb<class_ProjectSettings_property_network/limits/websocket_client/max_in_buffer_kb>`                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/websocket_client/max_in_packets<class_ProjectSettings_property_network/limits/websocket_client/max_in_packets>`                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/websocket_client/max_out_buffer_kb<class_ProjectSettings_property_network/limits/websocket_client/max_out_buffer_kb>`                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/websocket_client/max_out_packets<class_ProjectSettings_property_network/limits/websocket_client/max_out_packets>`                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/websocket_server/max_in_buffer_kb<class_ProjectSettings_property_network/limits/websocket_server/max_in_buffer_kb>`                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/websocket_server/max_in_packets<class_ProjectSettings_property_network/limits/websocket_server/max_in_packets>`                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/websocket_server/max_out_buffer_kb<class_ProjectSettings_property_network/limits/websocket_server/max_out_buffer_kb>`                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/limits/websocket_server/max_out_packets<class_ProjectSettings_property_network/limits/websocket_server/max_out_packets>`                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/remote_fs/page_read_ahead<class_ProjectSettings_property_network/remote_fs/page_read_ahead>`                                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/remote_fs/page_size<class_ProjectSettings_property_network/remote_fs/page_size>`                                                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`node/name_casing<class_ProjectSettings_property_node/name_casing>`                                                                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`node/name_num_separator<class_ProjectSettings_property_node/name_num_separator>`                                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`physics/2d/physics_engine<class_ProjectSettings_property_physics/2d/physics_engine>`                                                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`physics/2d/thread_model<class_ProjectSettings_property_physics/2d/thread_model>`                                                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`physics/3d/active_soft_world<class_ProjectSettings_property_physics/3d/active_soft_world>`                                                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`physics/3d/physics_engine<class_ProjectSettings_property_physics/3d/physics_engine>`                                                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`                                                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>`                                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`           | :ref:`rendering/environment/default_clear_color<class_ProjectSettings_property_rendering/environment/default_clear_color>`                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/limits/buffers/blend_shape_max_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/blend_shape_max_buffer_size_kb>`               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/limits/buffers/canvas_polygon_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_buffer_size_kb>`                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/limits/buffers/canvas_polygon_index_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_index_buffer_size_kb>`     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/limits/buffers/immediate_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/immediate_buffer_size_kb>`                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/limits/rendering/max_renderable_elements<class_ProjectSettings_property_rendering/limits/rendering/max_renderable_elements>`                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`rendering/limits/time/time_rollover_secs<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`                                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround<class_ProjectSettings_property_rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround>`   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/2d/use_pixel_snap<class_ProjectSettings_property_rendering/quality/2d/use_pixel_snap>`                                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`rendering/quality/depth_prepass/disable_for_vendors<class_ProjectSettings_property_rendering/quality/depth_prepass/disable_for_vendors>`                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/depth_prepass/enable<class_ProjectSettings_property_rendering/quality/depth_prepass/enable>`                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/directional_shadow/size<class_ProjectSettings_property_rendering/quality/directional_shadow/size>`                                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/directional_shadow/size.mobile<class_ProjectSettings_property_rendering/quality/directional_shadow/size.mobile>`                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`rendering/quality/driver/driver_name<class_ProjectSettings_property_rendering/quality/driver/driver_name>`                                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>`                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/filters/anisotropic_filter_level<class_ProjectSettings_property_rendering/quality/filters/anisotropic_filter_level>`                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/quality/filters/use_nearest_mipmap_filter>`                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>`               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/intended_usage/framebuffer_allocation.mobile<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation.mobile>` |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/reflections/high_quality_ggx<class_ProjectSettings_property_rendering/quality/reflections/high_quality_ggx>`                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/reflections/high_quality_ggx.mobile<class_ProjectSettings_property_rendering/quality/reflections/high_quality_ggx.mobile>`                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/reflections/texture_array_reflections<class_ProjectSettings_property_rendering/quality/reflections/texture_array_reflections>`               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/reflections/texture_array_reflections.mobile<class_ProjectSettings_property_rendering/quality/reflections/texture_array_reflections.mobile>` |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_blinn_over_ggx<class_ProjectSettings_property_rendering/quality/shading/force_blinn_over_ggx>`                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_blinn_over_ggx.mobile<class_ProjectSettings_property_rendering/quality/shading/force_blinn_over_ggx.mobile>`                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_lambert_over_burley<class_ProjectSettings_property_rendering/quality/shading/force_lambert_over_burley>`                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_lambert_over_burley.mobile<class_ProjectSettings_property_rendering/quality/shading/force_lambert_over_burley.mobile>`         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>`                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_vertex_shading.mobile<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading.mobile>`                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/shadow_atlas/quadrant_0_subdiv<class_ProjectSettings_property_rendering/quality/shadow_atlas/quadrant_0_subdiv>`                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/shadow_atlas/quadrant_1_subdiv<class_ProjectSettings_property_rendering/quality/shadow_atlas/quadrant_1_subdiv>`                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/shadow_atlas/quadrant_2_subdiv<class_ProjectSettings_property_rendering/quality/shadow_atlas/quadrant_2_subdiv>`                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/shadow_atlas/quadrant_3_subdiv<class_ProjectSettings_property_rendering/quality/shadow_atlas/quadrant_3_subdiv>`                             |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/shadow_atlas/size<class_ProjectSettings_property_rendering/quality/shadow_atlas/size>`                                                       |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/shadow_atlas/size.mobile<class_ProjectSettings_property_rendering/quality/shadow_atlas/size.mobile>`                                         |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/shadows/filter_mode<class_ProjectSettings_property_rendering/quality/shadows/filter_mode>`                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/shadows/filter_mode.mobile<class_ProjectSettings_property_rendering/quality/shadows/filter_mode.mobile>`                                     |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/subsurface_scattering/follow_surface<class_ProjectSettings_property_rendering/quality/subsurface_scattering/follow_surface>`                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/subsurface_scattering/quality<class_ProjectSettings_property_rendering/quality/subsurface_scattering/quality>`                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/quality/subsurface_scattering/scale<class_ProjectSettings_property_rendering/quality/subsurface_scattering/scale>`                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/subsurface_scattering/weight_samples<class_ProjectSettings_property_rendering/quality/subsurface_scattering/weight_samples>`                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/quality/voxel_cone_tracing/high_quality<class_ProjectSettings_property_rendering/quality/voxel_cone_tracing/high_quality>`                           |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/threads/thread_model<class_ProjectSettings_property_rendering/threads/thread_model>`                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/vram_compression/import_bptc<class_ProjectSettings_property_rendering/vram_compression/import_bptc>`                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/vram_compression/import_etc<class_ProjectSettings_property_rendering/vram_compression/import_etc>`                                                   |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/vram_compression/import_etc2<class_ProjectSettings_property_rendering/vram_compression/import_etc2>`                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/vram_compression/import_pvrtc<class_ProjectSettings_property_rendering/vram_compression/import_pvrtc>`                                               |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`rendering/vram_compression/import_s3tc<class_ProjectSettings_property_rendering/vram_compression/import_s3tc>`                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Script<class_Script>`         | :ref:`script<class_ProjectSettings_property_script>`                                                                                                                 |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`android/modules<class_ProjectSettings_property_android/modules>`                                                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                     | :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>`                                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`application/boot_splash/fullsize<class_ProjectSettings_property_application/boot_splash/fullsize>`                                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>`                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`application/config/icon<class_ProjectSettings_property_application/config/icon>`                                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`application/config/macos_native_icon<class_ProjectSettings_property_application/config/macos_native_icon>`                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`application/config/name<class_ProjectSettings_property_application/config/name>`                                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`application/config/project_settings_override<class_ProjectSettings_property_application/config/project_settings_override>`                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>`                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`application/config/windows_native_icon<class_ProjectSettings_property_application/config/windows_native_icon>`                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`application/run/frame_delay_msec<class_ProjectSettings_property_application/run/frame_delay_msec>`                                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`application/run/low_processor_mode<class_ProjectSettings_property_application/run/low_processor_mode>`                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`application/run/low_processor_mode_sleep_usec<class_ProjectSettings_property_application/run/low_processor_mode_sleep_usec>`                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`application/run/main_scene<class_ProjectSettings_property_application/run/main_scene>`                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`audio/channel_disable_threshold_db<class_ProjectSettings_property_audio/channel_disable_threshold_db>`                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`audio/channel_disable_time<class_ProjectSettings_property_audio/channel_disable_time>`                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`audio/default_bus_layout<class_ProjectSettings_property_audio/default_bus_layout>`                                                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`audio/driver<class_ProjectSettings_property_audio/driver>`                                                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`audio/enable_audio_input<class_ProjectSettings_property_audio/enable_audio_input>`                                                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`audio/mix_rate<class_ProjectSettings_property_audio/mix_rate>`                                                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`audio/output_latency<class_ProjectSettings_property_audio/output_latency>`                                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`audio/video_delay_compensation_ms<class_ProjectSettings_property_audio/video_delay_compensation_ms>`                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`compression/formats/gzip/compression_level<class_ProjectSettings_property_compression/formats/gzip/compression_level>`                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`compression/formats/zlib/compression_level<class_ProjectSettings_property_compression/formats/zlib/compression_level>`                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`compression/formats/zstd/compression_level<class_ProjectSettings_property_compression/formats/zstd/compression_level>`                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`compression/formats/zstd/long_distance_matching<class_ProjectSettings_property_compression/formats/zstd/long_distance_matching>`                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`compression/formats/zstd/window_log_size<class_ProjectSettings_property_compression/formats/zstd/window_log_size>`                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/completion/autocomplete_setters_and_getters<class_ProjectSettings_property_debug/gdscript/completion/autocomplete_setters_and_getters>`         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/constant_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function>`                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/enable<class_ProjectSettings_property_debug/gdscript/warnings/enable>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/function_conflicts_constant<class_ProjectSettings_property_debug/gdscript/warnings/function_conflicts_constant>`                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/function_conflicts_variable<class_ProjectSettings_property_debug/gdscript/warnings/function_conflicts_variable>`                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/function_may_yield<class_ProjectSettings_property_debug/gdscript/warnings/function_may_yield>`                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/function_used_as_property<class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property>`                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/incompatible_ternary<class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary>`                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/integer_division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/narrowing_conversion<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/property_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/return_value_discarded<class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded>`                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/shadowed_variable<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/standalone_expression<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/treat_warnings_as_errors<class_ProjectSettings_property_debug/gdscript/warnings/treat_warnings_as_errors>`                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unassigned_variable<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable>`                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unassigned_variable_op_assign<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign>`                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unreachable_code<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_code>`                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unsafe_call_argument<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_call_argument>`                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unsafe_cast<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_cast>`                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unsafe_method_access<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_method_access>`                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unsafe_property_access<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_property_access>`                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unused_argument<class_ProjectSettings_property_debug/gdscript/warnings/unused_argument>`                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unused_class_variable<class_ProjectSettings_property_debug/gdscript/warnings/unused_class_variable>`                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unused_signal<class_ProjectSettings_property_debug/gdscript/warnings/unused_signal>`                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/unused_variable<class_ProjectSettings_property_debug/gdscript/warnings/unused_variable>`                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/variable_conflicts_function<class_ProjectSettings_property_debug/gdscript/warnings/variable_conflicts_function>`                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/void_assignment<class_ProjectSettings_property_debug/gdscript/warnings/void_assignment>`                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`debug/settings/crash_handler/message<class_ProjectSettings_property_debug/settings/crash_handler/message>`                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`debug/settings/fps/force_fps<class_ProjectSettings_property_debug/settings/fps/force_fps>`                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`debug/settings/gdscript/max_call_stack<class_ProjectSettings_property_debug/settings/gdscript/max_call_stack>`                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`debug/settings/profiler/max_functions<class_ProjectSettings_property_debug/settings/profiler/max_functions>`                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/settings/stdout/print_fps<class_ProjectSettings_property_debug/settings/stdout/print_fps>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/settings/stdout/verbose_stdout<class_ProjectSettings_property_debug/settings/stdout/verbose_stdout>`                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`debug/settings/visual_script/max_call_stack<class_ProjectSettings_property_debug/settings/visual_script/max_call_stack>`                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`display/mouse_cursor/custom_image<class_ProjectSettings_property_display/mouse_cursor/custom_image>`                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                 | :ref:`display/mouse_cursor/custom_image_hotspot<class_ProjectSettings_property_display/mouse_cursor/custom_image_hotspot>`                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                 | :ref:`display/mouse_cursor/tooltip_position_offset<class_ProjectSettings_property_display/mouse_cursor/tooltip_position_offset>`                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`display/window/dpi/allow_hidpi<class_ProjectSettings_property_display/window/dpi/allow_hidpi>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`display/window/handheld/orientation<class_ProjectSettings_property_display/window/handheld/orientation>`                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`display/window/per_pixel_transparency/enabled<class_ProjectSettings_property_display/window/per_pixel_transparency/enabled>`                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`display/window/per_pixel_transparency/splash<class_ProjectSettings_property_display/window/per_pixel_transparency/splash>`                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`display/window/size/always_on_top<class_ProjectSettings_property_display/window/size/always_on_top>`                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`display/window/size/borderless<class_ProjectSettings_property_display/window/size/borderless>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`display/window/size/fullscreen<class_ProjectSettings_property_display/window/size/fullscreen>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`display/window/size/height<class_ProjectSettings_property_display/window/size/height>`                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`display/window/size/resizable<class_ProjectSettings_property_display/window/size/resizable>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`display/window/size/test_height<class_ProjectSettings_property_display/window/size/test_height>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`display/window/size/test_width<class_ProjectSettings_property_display/window/size/test_width>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`display/window/size/width<class_ProjectSettings_property_display/window/size/width>`                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`display/window/vsync/use_vsync<class_ProjectSettings_property_display/window/vsync/use_vsync>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`editor/active<class_ProjectSettings_property_editor/active>`                                                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`editor/search_in_file_extensions<class_ProjectSettings_property_editor/search_in_file_extensions>`                                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`gui/common/default_scroll_deadzone<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`gui/common/swap_ok_cancel<class_ProjectSettings_property_gui/common/swap_ok_cancel>`                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`                                                                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`gui/theme/custom_font<class_ProjectSettings_property_gui/theme/custom_font>`                                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`gui/theme/use_hidpi<class_ProjectSettings_property_gui/theme/use_hidpi>`                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`gui/timers/incremental_search_max_interval_msec<class_ProjectSettings_property_gui/timers/incremental_search_max_interval_msec>`                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`gui/timers/text_edit_idle_detect_sec<class_ProjectSettings_property_gui/timers/text_edit_idle_detect_sec>`                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_accept<class_ProjectSettings_property_input/ui_accept>`                                                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_cancel<class_ProjectSettings_property_input/ui_cancel>`                                                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_down<class_ProjectSettings_property_input/ui_down>`                                                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_end<class_ProjectSettings_property_input/ui_end>`                                                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_focus_next<class_ProjectSettings_property_input/ui_focus_next>`                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_focus_prev<class_ProjectSettings_property_input/ui_focus_prev>`                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_home<class_ProjectSettings_property_input/ui_home>`                                                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_left<class_ProjectSettings_property_input/ui_left>`                                                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_page_down<class_ProjectSettings_property_input/ui_page_down>`                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_page_up<class_ProjectSettings_property_input/ui_page_up>`                                                                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_right<class_ProjectSettings_property_input/ui_right>`                                                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_select<class_ProjectSettings_property_input/ui_select>`                                                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`input/ui_up<class_ProjectSettings_property_input/ui_up>`                                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`input_devices/pointing/emulate_mouse_from_touch<class_ProjectSettings_property_input_devices/pointing/emulate_mouse_from_touch>`                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_1<class_ProjectSettings_property_layer_names/2d_physics/layer_1>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_10<class_ProjectSettings_property_layer_names/2d_physics/layer_10>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_11<class_ProjectSettings_property_layer_names/2d_physics/layer_11>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_12<class_ProjectSettings_property_layer_names/2d_physics/layer_12>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_13<class_ProjectSettings_property_layer_names/2d_physics/layer_13>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_14<class_ProjectSettings_property_layer_names/2d_physics/layer_14>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_15<class_ProjectSettings_property_layer_names/2d_physics/layer_15>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_16<class_ProjectSettings_property_layer_names/2d_physics/layer_16>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_17<class_ProjectSettings_property_layer_names/2d_physics/layer_17>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_18<class_ProjectSettings_property_layer_names/2d_physics/layer_18>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_19<class_ProjectSettings_property_layer_names/2d_physics/layer_19>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_2<class_ProjectSettings_property_layer_names/2d_physics/layer_2>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_20<class_ProjectSettings_property_layer_names/2d_physics/layer_20>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_3<class_ProjectSettings_property_layer_names/2d_physics/layer_3>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_4<class_ProjectSettings_property_layer_names/2d_physics/layer_4>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_5<class_ProjectSettings_property_layer_names/2d_physics/layer_5>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_6<class_ProjectSettings_property_layer_names/2d_physics/layer_6>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_7<class_ProjectSettings_property_layer_names/2d_physics/layer_7>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_8<class_ProjectSettings_property_layer_names/2d_physics/layer_8>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_physics/layer_9<class_ProjectSettings_property_layer_names/2d_physics/layer_9>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_1<class_ProjectSettings_property_layer_names/2d_render/layer_1>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_10<class_ProjectSettings_property_layer_names/2d_render/layer_10>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_11<class_ProjectSettings_property_layer_names/2d_render/layer_11>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_12<class_ProjectSettings_property_layer_names/2d_render/layer_12>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_13<class_ProjectSettings_property_layer_names/2d_render/layer_13>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_14<class_ProjectSettings_property_layer_names/2d_render/layer_14>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_15<class_ProjectSettings_property_layer_names/2d_render/layer_15>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_16<class_ProjectSettings_property_layer_names/2d_render/layer_16>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_17<class_ProjectSettings_property_layer_names/2d_render/layer_17>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_18<class_ProjectSettings_property_layer_names/2d_render/layer_18>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_19<class_ProjectSettings_property_layer_names/2d_render/layer_19>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_2<class_ProjectSettings_property_layer_names/2d_render/layer_2>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_20<class_ProjectSettings_property_layer_names/2d_render/layer_20>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_3<class_ProjectSettings_property_layer_names/2d_render/layer_3>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_4<class_ProjectSettings_property_layer_names/2d_render/layer_4>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_5<class_ProjectSettings_property_layer_names/2d_render/layer_5>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_6<class_ProjectSettings_property_layer_names/2d_render/layer_6>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_7<class_ProjectSettings_property_layer_names/2d_render/layer_7>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_8<class_ProjectSettings_property_layer_names/2d_render/layer_8>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/2d_render/layer_9<class_ProjectSettings_property_layer_names/2d_render/layer_9>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_1<class_ProjectSettings_property_layer_names/3d_physics/layer_1>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_10<class_ProjectSettings_property_layer_names/3d_physics/layer_10>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_11<class_ProjectSettings_property_layer_names/3d_physics/layer_11>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_12<class_ProjectSettings_property_layer_names/3d_physics/layer_12>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_13<class_ProjectSettings_property_layer_names/3d_physics/layer_13>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_14<class_ProjectSettings_property_layer_names/3d_physics/layer_14>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_15<class_ProjectSettings_property_layer_names/3d_physics/layer_15>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_16<class_ProjectSettings_property_layer_names/3d_physics/layer_16>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_17<class_ProjectSettings_property_layer_names/3d_physics/layer_17>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_18<class_ProjectSettings_property_layer_names/3d_physics/layer_18>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_19<class_ProjectSettings_property_layer_names/3d_physics/layer_19>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_2<class_ProjectSettings_property_layer_names/3d_physics/layer_2>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_20<class_ProjectSettings_property_layer_names/3d_physics/layer_20>`                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_3<class_ProjectSettings_property_layer_names/3d_physics/layer_3>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_4<class_ProjectSettings_property_layer_names/3d_physics/layer_4>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_5<class_ProjectSettings_property_layer_names/3d_physics/layer_5>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_6<class_ProjectSettings_property_layer_names/3d_physics/layer_6>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_7<class_ProjectSettings_property_layer_names/3d_physics/layer_7>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_8<class_ProjectSettings_property_layer_names/3d_physics/layer_8>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_physics/layer_9<class_ProjectSettings_property_layer_names/3d_physics/layer_9>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_1<class_ProjectSettings_property_layer_names/3d_render/layer_1>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_10<class_ProjectSettings_property_layer_names/3d_render/layer_10>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_11<class_ProjectSettings_property_layer_names/3d_render/layer_11>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_12<class_ProjectSettings_property_layer_names/3d_render/layer_12>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_13<class_ProjectSettings_property_layer_names/3d_render/layer_13>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_14<class_ProjectSettings_property_layer_names/3d_render/layer_14>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_15<class_ProjectSettings_property_layer_names/3d_render/layer_15>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_16<class_ProjectSettings_property_layer_names/3d_render/layer_16>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_17<class_ProjectSettings_property_layer_names/3d_render/layer_17>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_18<class_ProjectSettings_property_layer_names/3d_render/layer_18>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_19<class_ProjectSettings_property_layer_names/3d_render/layer_19>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_2<class_ProjectSettings_property_layer_names/3d_render/layer_2>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_20<class_ProjectSettings_property_layer_names/3d_render/layer_20>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_3<class_ProjectSettings_property_layer_names/3d_render/layer_3>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_4<class_ProjectSettings_property_layer_names/3d_render/layer_4>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_5<class_ProjectSettings_property_layer_names/3d_render/layer_5>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_6<class_ProjectSettings_property_layer_names/3d_render/layer_6>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_7<class_ProjectSettings_property_layer_names/3d_render/layer_7>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_8<class_ProjectSettings_property_layer_names/3d_render/layer_8>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`layer_names/3d_render/layer_9<class_ProjectSettings_property_layer_names/3d_render/layer_9>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`locale/fallback<class_ProjectSettings_property_locale/fallback>`                                                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`locale/test<class_ProjectSettings_property_locale/test>`                                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`logging/file_logging/enable_file_logging<class_ProjectSettings_property_logging/file_logging/enable_file_logging>`                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`logging/file_logging/log_path<class_ProjectSettings_property_logging/file_logging/log_path>`                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`logging/file_logging/max_log_files<class_ProjectSettings_property_logging/file_logging/max_log_files>`                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`memory/limits/message_queue/max_size_kb<class_ProjectSettings_property_memory/limits/message_queue/max_size_kb>`                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`memory/limits/multithreaded_server/rid_pool_prealloc<class_ProjectSettings_property_memory/limits/multithreaded_server/rid_pool_prealloc>`                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/debugger_stdout/max_chars_per_second<class_ProjectSettings_property_network/limits/debugger_stdout/max_chars_per_second>`                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/debugger_stdout/max_errors_per_frame<class_ProjectSettings_property_network/limits/debugger_stdout/max_errors_per_frame>`                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/debugger_stdout/max_messages_per_frame<class_ProjectSettings_property_network/limits/debugger_stdout/max_messages_per_frame>`                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/packet_peer_stream/max_buffer_po2<class_ProjectSettings_property_network/limits/packet_peer_stream/max_buffer_po2>`                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/websocket_client/max_in_buffer_kb<class_ProjectSettings_property_network/limits/websocket_client/max_in_buffer_kb>`                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/websocket_client/max_in_packets<class_ProjectSettings_property_network/limits/websocket_client/max_in_packets>`                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/websocket_client/max_out_buffer_kb<class_ProjectSettings_property_network/limits/websocket_client/max_out_buffer_kb>`                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/websocket_client/max_out_packets<class_ProjectSettings_property_network/limits/websocket_client/max_out_packets>`                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/websocket_server/max_in_buffer_kb<class_ProjectSettings_property_network/limits/websocket_server/max_in_buffer_kb>`                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/websocket_server/max_in_packets<class_ProjectSettings_property_network/limits/websocket_server/max_in_packets>`                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/websocket_server/max_out_buffer_kb<class_ProjectSettings_property_network/limits/websocket_server/max_out_buffer_kb>`                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/limits/websocket_server/max_out_packets<class_ProjectSettings_property_network/limits/websocket_server/max_out_packets>`                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/remote_fs/page_read_ahead<class_ProjectSettings_property_network/remote_fs/page_read_ahead>`                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`network/remote_fs/page_size<class_ProjectSettings_property_network/remote_fs/page_size>`                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`node/name_casing<class_ProjectSettings_property_node/name_casing>`                                                                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`node/name_num_separator<class_ProjectSettings_property_node/name_num_separator>`                                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`physics/2d/physics_engine<class_ProjectSettings_property_physics/2d/physics_engine>`                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`physics/2d/thread_model<class_ProjectSettings_property_physics/2d/thread_model>`                                                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`physics/3d/active_soft_world<class_ProjectSettings_property_physics/3d/active_soft_world>`                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`physics/3d/physics_engine<class_ProjectSettings_property_physics/3d/physics_engine>`                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>`                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                     | :ref:`rendering/environment/default_clear_color<class_ProjectSettings_property_rendering/environment/default_clear_color>`                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/blend_shape_max_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/blend_shape_max_buffer_size_kb>`               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/canvas_polygon_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_buffer_size_kb>`                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/canvas_polygon_index_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_index_buffer_size_kb>`     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/immediate_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/immediate_buffer_size_kb>`                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/limits/rendering/max_renderable_elements<class_ProjectSettings_property_rendering/limits/rendering/max_renderable_elements>`                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`rendering/limits/time/time_rollover_secs<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`                                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround<class_ProjectSettings_property_rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround>`   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/2d/use_pixel_snap<class_ProjectSettings_property_rendering/quality/2d/use_pixel_snap>`                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`rendering/quality/depth_prepass/disable_for_vendors<class_ProjectSettings_property_rendering/quality/depth_prepass/disable_for_vendors>`                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/depth_prepass/enable<class_ProjectSettings_property_rendering/quality/depth_prepass/enable>`                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/directional_shadow/size<class_ProjectSettings_property_rendering/quality/directional_shadow/size>`                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/directional_shadow/size.mobile<class_ProjectSettings_property_rendering/quality/directional_shadow/size.mobile>`                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`rendering/quality/driver/driver_name<class_ProjectSettings_property_rendering/quality/driver/driver_name>`                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>`                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/filters/anisotropic_filter_level<class_ProjectSettings_property_rendering/quality/filters/anisotropic_filter_level>`                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/quality/filters/use_nearest_mipmap_filter>`                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>`               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/intended_usage/framebuffer_allocation.mobile<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation.mobile>` |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/reflections/high_quality_ggx<class_ProjectSettings_property_rendering/quality/reflections/high_quality_ggx>`                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/reflections/high_quality_ggx.mobile<class_ProjectSettings_property_rendering/quality/reflections/high_quality_ggx.mobile>`                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/reflections/texture_array_reflections<class_ProjectSettings_property_rendering/quality/reflections/texture_array_reflections>`               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/reflections/texture_array_reflections.mobile<class_ProjectSettings_property_rendering/quality/reflections/texture_array_reflections.mobile>` |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/shading/force_blinn_over_ggx<class_ProjectSettings_property_rendering/quality/shading/force_blinn_over_ggx>`                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/shading/force_blinn_over_ggx.mobile<class_ProjectSettings_property_rendering/quality/shading/force_blinn_over_ggx.mobile>`                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/shading/force_lambert_over_burley<class_ProjectSettings_property_rendering/quality/shading/force_lambert_over_burley>`                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/shading/force_lambert_over_burley.mobile<class_ProjectSettings_property_rendering/quality/shading/force_lambert_over_burley.mobile>`         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>`                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/shading/force_vertex_shading.mobile<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading.mobile>`                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/shadow_atlas/quadrant_0_subdiv<class_ProjectSettings_property_rendering/quality/shadow_atlas/quadrant_0_subdiv>`                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/shadow_atlas/quadrant_1_subdiv<class_ProjectSettings_property_rendering/quality/shadow_atlas/quadrant_1_subdiv>`                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/shadow_atlas/quadrant_2_subdiv<class_ProjectSettings_property_rendering/quality/shadow_atlas/quadrant_2_subdiv>`                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/shadow_atlas/quadrant_3_subdiv<class_ProjectSettings_property_rendering/quality/shadow_atlas/quadrant_3_subdiv>`                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/shadow_atlas/size<class_ProjectSettings_property_rendering/quality/shadow_atlas/size>`                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/shadow_atlas/size.mobile<class_ProjectSettings_property_rendering/quality/shadow_atlas/size.mobile>`                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/shadows/filter_mode<class_ProjectSettings_property_rendering/quality/shadows/filter_mode>`                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/shadows/filter_mode.mobile<class_ProjectSettings_property_rendering/quality/shadows/filter_mode.mobile>`                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/subsurface_scattering/follow_surface<class_ProjectSettings_property_rendering/quality/subsurface_scattering/follow_surface>`                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/subsurface_scattering/quality<class_ProjectSettings_property_rendering/quality/subsurface_scattering/quality>`                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/subsurface_scattering/scale<class_ProjectSettings_property_rendering/quality/subsurface_scattering/scale>`                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/subsurface_scattering/weight_samples<class_ProjectSettings_property_rendering/quality/subsurface_scattering/weight_samples>`                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/voxel_cone_tracing/high_quality<class_ProjectSettings_property_rendering/quality/voxel_cone_tracing/high_quality>`                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/threads/thread_model<class_ProjectSettings_property_rendering/threads/thread_model>`                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/vram_compression/import_bptc<class_ProjectSettings_property_rendering/vram_compression/import_bptc>`                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/vram_compression/import_etc<class_ProjectSettings_property_rendering/vram_compression/import_etc>`                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/vram_compression/import_etc2<class_ProjectSettings_property_rendering/vram_compression/import_etc2>`                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/vram_compression/import_pvrtc<class_ProjectSettings_property_rendering/vram_compression/import_pvrtc>`                                               |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/vram_compression/import_s3tc<class_ProjectSettings_property_rendering/vram_compression/import_s3tc>`                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Script<class_Script>`                   | :ref:`script<class_ProjectSettings_property_script>`                                                                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -579,7 +591,7 @@ Methods
 Description
 -----------
 
-Contains global variables accessible from everywhere. Use "ProjectSettings.get_setting(variable)", "ProjectSettings.set_setting(variable,value)" or "ProjectSettings.has_setting(variable)" to access them. Variables stored in project.godot are also loaded into ProjectSettings, making this object very useful for reading custom game configuration options.
+Contains global variables accessible from everywhere. Use :ref:`get_setting<class_ProjectSettings_method_get_setting>`, :ref:`set_setting<class_ProjectSettings_method_set_setting>` or :ref:`has_setting<class_ProjectSettings_method_has_setting>` to access them. Variables stored in ``project.godot`` are also loaded into ProjectSettings, making this object very useful for reading custom game configuration options.
 
 Property Descriptions
 ---------------------
@@ -600,19 +612,19 @@ Background color for the boot splash.
 
 - :ref:`bool<class_bool>` **application/boot_splash/fullsize**
 
-Scale the boot splash image to the full window length when engine starts (will leave it as default pixel size otherwise).
+If ``true``, scale the boot splash image to the full window length when engine starts. If ``false``, the engine will leave it at the default pixel size.
 
 .. _class_ProjectSettings_property_application/boot_splash/image:
 
 - :ref:`String<class_String>` **application/boot_splash/image**
 
-Path to an image used for boot splash.
+Path to an image used as the boot splash.
 
 .. _class_ProjectSettings_property_application/config/custom_user_dir_name:
 
 - :ref:`String<class_String>` **application/config/custom_user_dir_name**
 
-This user directory is used for storing persistent data (``user://`` filesystem). By default (no custom name defined), ``user://`` resolves to a project-specific folder in Godot's own configuration folder (see :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`). If a custom directory name is defined, this name will be used instead and appended to the system-specific user data directory (same parent folder as the Godot configuration folder documented in :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`).
+This user directory is used for storing persistent data (``user://`` filesystem). If left empty, ``user://`` resolves to a project-specific folder in Godot's own configuration folder (see :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`). If a custom directory name is defined, this name will be used instead and appended to the system-specific user data directory (same parent folder as the Godot configuration folder documented in :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`).
 
 The :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` setting must be enabled for this to take effect.
 
@@ -620,13 +632,17 @@ The :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_
 
 - :ref:`String<class_String>` **application/config/icon**
 
-Icon used for the project, set when project loads. Exporters will use this icon when possible to.
+Icon used for the project, set when project loads. Exporters will also use this icon when possible.
+
+.. _class_ProjectSettings_property_application/config/macos_native_icon:
+
+- :ref:`String<class_String>` **application/config/macos_native_icon**
 
 .. _class_ProjectSettings_property_application/config/name:
 
 - :ref:`String<class_String>` **application/config/name**
 
-Name of the project. It is used from both project manager and by the exporters. Overriding this as name.locale allows setting it in multiple languages.
+The project's name. It is used both by the Project Manager and by exporters. The project name can be translated by translating its value in localization files.
 
 .. _class_ProjectSettings_property_application/config/project_settings_override:
 
@@ -638,37 +654,41 @@ Specifies a file to override project settings. For example: ``user://custom_sett
 
 - :ref:`bool<class_bool>` **application/config/use_custom_user_dir**
 
-Allow the project to save to its own custom user dir (see :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>`). This setting only works for desktop platforms. A name must be set in the :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>` setting for this to take effect.
+If ``true``, the project will save user data to its own user directory (see :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>`). This setting is only effective on desktop platforms. A name must be set in the :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>` setting for this to take effect. If ``false``, the project will save user data to ``(OS user data directory)/Godot/app_userdata/(project name)``.
+
+.. _class_ProjectSettings_property_application/config/windows_native_icon:
+
+- :ref:`String<class_String>` **application/config/windows_native_icon**
 
 .. _class_ProjectSettings_property_application/run/disable_stderr:
 
 - :ref:`bool<class_bool>` **application/run/disable_stderr**
 
-Disable printing to stderr on exported build.
+If ``true``, disables printing to standard error in an exported build.
 
 .. _class_ProjectSettings_property_application/run/disable_stdout:
 
 - :ref:`bool<class_bool>` **application/run/disable_stdout**
 
-Disable printing to stdout on exported build.
+If ``true``, disables printing to standard output in an exported build.
 
 .. _class_ProjectSettings_property_application/run/frame_delay_msec:
 
 - :ref:`int<class_int>` **application/run/frame_delay_msec**
 
-Force a delay between frames in the main loop. This may be useful if you plan to disable vsync.
+Forces a delay between frames in the main loop (in milliseconds). This may be useful if you plan to disable vertical synchronization.
 
 .. _class_ProjectSettings_property_application/run/low_processor_mode:
 
 - :ref:`bool<class_bool>` **application/run/low_processor_mode**
 
-Turn on low processor mode. This setting only works on desktops. The screen is not redrawn if nothing changes visually. This is meant for writing applications and editors, but is pretty useless (and can hurt performance) on games.
+If ``true``, enables low-processor usage mode. This setting only works on desktop platforms. The screen is not redrawn if nothing changes visually. This is meant for writing applications and editors, but is pretty useless (and can hurt performance) in most games.
 
 .. _class_ProjectSettings_property_application/run/low_processor_mode_sleep_usec:
 
 - :ref:`int<class_int>` **application/run/low_processor_mode_sleep_usec**
 
-Amount of sleeping between frames when the low_processor_mode is enabled. This effectively reduces CPU usage when this mode is enabled.
+Amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU usage.
 
 .. _class_ProjectSettings_property_application/run/main_scene:
 
@@ -680,33 +700,41 @@ Path to the main scene file that will be loaded when the project runs.
 
 - :ref:`float<class_float>` **audio/channel_disable_threshold_db**
 
-Audio buses will disable automatically when sound goes below a given DB threshold for a given time. This saves CPU as effects assigned to that bus will no longer do any processing.
+Audio buses will disable automatically when sound goes below a given dB threshold for a given time. This saves CPU as effects assigned to that bus will no longer do any processing.
 
 .. _class_ProjectSettings_property_audio/channel_disable_time:
 
 - :ref:`float<class_float>` **audio/channel_disable_time**
 
-Audio buses will disable automatically when sound goes below a given DB threshold for a given time. This saves CPU as effects assigned to that bus will no longer do any processing.
+Audio buses will disable automatically when sound goes below a given dB threshold for a given time. This saves CPU as effects assigned to that bus will no longer do any processing.
+
+.. _class_ProjectSettings_property_audio/default_bus_layout:
+
+- :ref:`String<class_String>` **audio/default_bus_layout**
 
 .. _class_ProjectSettings_property_audio/driver:
 
 - :ref:`String<class_String>` **audio/driver**
 
+Specifies the audio driver to use. This setting is platform-dependent as each platform supports different audio drivers. If left empty, the default audio driver will be used.
+
 .. _class_ProjectSettings_property_audio/enable_audio_input:
 
 - :ref:`bool<class_bool>` **audio/enable_audio_input**
 
-This option should be enabled if project works with microphone.
+If ``true``, microphone input will be allowed. This requires appropriate permissions to be set when exporting to Android or iOS.
 
 .. _class_ProjectSettings_property_audio/mix_rate:
 
 - :ref:`int<class_int>` **audio/mix_rate**
 
-Mix rate used for audio. In general, it's better to not touch this and leave it to the host operating system.
+Mixing rate used for audio. In general, it's better to not touch this and leave it to the host operating system.
 
 .. _class_ProjectSettings_property_audio/output_latency:
 
 - :ref:`int<class_int>` **audio/output_latency**
+
+Output latency in milliseconds for audio. Lower values will result in lower audio latency at the cost of increased CPU usage. Low values may result in audible cracking on slower hardware.
 
 .. _class_ProjectSettings_property_audio/video_delay_compensation_ms:
 
@@ -724,19 +752,19 @@ Default compression level for gzip. Affects compressed scenes and resources.
 
 - :ref:`int<class_int>` **compression/formats/zlib/compression_level**
 
-Default compression level for zlib. Affects compressed scenes and resources.
+Default compression level for Zlib. Affects compressed scenes and resources.
 
 .. _class_ProjectSettings_property_compression/formats/zstd/compression_level:
 
 - :ref:`int<class_int>` **compression/formats/zstd/compression_level**
 
-Default compression level for zstd. Affects compressed scenes and resources.
+Default compression level for Zstandard. Affects compressed scenes and resources.
 
 .. _class_ProjectSettings_property_compression/formats/zstd/long_distance_matching:
 
 - :ref:`bool<class_bool>` **compression/formats/zstd/long_distance_matching**
 
-Enable long distance matching in zstd.
+Enables long-distance matching in Zstandard.
 
 .. _class_ProjectSettings_property_compression/formats/zstd/window_log_size:
 
@@ -746,117 +774,181 @@ Enable long distance matching in zstd.
 
 - :ref:`bool<class_bool>` **debug/gdscript/completion/autocomplete_setters_and_getters**
 
+If ``true``, displays getters and setters in autocompletion results in the script editor. This setting is meant to be used when porting old projects (Godot 2), as using member variables is the preferred style from Godot 3 onwards.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/constant_used_as_function**
+
+If ``true``, enables warnings when a constant is used as a function.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/deprecated_keyword**
 
+If ``true``, enables warnings when deprecated keywords such as ``slave`` are used.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/enable:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/enable**
+
+If ``true``, enables specific GDScript warnings (see ``debug/gdscript/warnings/*`` settings). If ``false``, disables all GDScript warnings.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/function_conflicts_constant:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/function_conflicts_constant**
 
+If ``true``, enables warnings when a function is declared with the same name as a constant.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/function_conflicts_variable:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/function_conflicts_variable**
+
+If ``true``, enables warnings when a function is declared with the same name as a variable. This will turn into an error in a future version when first-class functions become supported in GDScript.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/function_may_yield:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/function_may_yield**
 
+If ``true``, enables warnings when a function assigned to a variable may yield and return a function state instead of a value.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/function_used_as_property**
+
+If ``true``, enables warnings when using a function as if it was a property.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/incompatible_ternary**
 
+If ``true``, enables warnings when a ternary operator may emit values with incompatible types.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/integer_division:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/integer_division**
+
+If ``true``, enables warnings when dividing an integer by another integer (the decimal part will be discarded).
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/narrowing_conversion**
 
+If ``true``, enables warnings when passing a floating-point value to a function that expects an integer (it will be converted and lose precision).
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/property_used_as_function**
+
+If ``true``, enables warnings when using a property as if it was a function.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/return_value_discarded**
 
+If ``true``, enables warnings when calling a function without using its return value (by assigning it to a variable or using it as a function argument). Such return values are sometimes used to denote possible errors using the :ref:`Error<enum_@GlobalScope_Error>` enum.
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable:
+
+- :ref:`bool<class_bool>` **debug/gdscript/warnings/shadowed_variable**
+
+If ``true``, enables warnings when defining a local or subclass member variable that would shadow a variable at an upper level (such as a member variable).
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/standalone_expression**
+
+If ``true``, enables warnings when calling an expression that has no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/treat_warnings_as_errors:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/treat_warnings_as_errors**
 
+If ``true``, all warnings will be reported as if they were errors.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unassigned_variable**
+
+If ``true``, enables warnings when using a variable that wasn't previously assigned.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unassigned_variable_op_assign**
 
+If ``true``, enables warnings when assigning a variable using an assignment operator like ``+=`` if the variable wasn't previously assigned.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unreachable_code:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unreachable_code**
+
+If ``true``, enables warnings when unreachable code is detected (such as after a ``return`` statement that will always be executed).
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unsafe_call_argument:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unsafe_call_argument**
 
+If ``true``, enables warnings when using an expression whose type may not be compatible with the function parameter expected.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unsafe_cast:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unsafe_cast**
+
+If ``true``, enables warnings when performing an unsafe cast.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unsafe_method_access:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unsafe_method_access**
 
+If ``true``, enables warnings when calling a method whose presence is not guaranteed at compile-time in the class.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unsafe_property_access:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unsafe_property_access**
+
+If ``true``, enables warnings when accessing a property whose presence is not guaranteed at compile-time in the class.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unused_argument:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unused_argument**
 
+If ``true``, enables warnings when a function parameter is unused.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unused_class_variable:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unused_class_variable**
+
+If ``true``, enables warnings when a member variable is unused.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unused_signal:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unused_signal**
 
+If ``true``, enables warnings when a signal is unused.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unused_variable:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/unused_variable**
+
+If ``true``, enables warnings when a local variable is unused.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/variable_conflicts_function:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/variable_conflicts_function**
 
+If ``true``, enables warnings when a variable is declared with the same name as a function. This will turn into an error in a future version when first-class functions become supported in GDScript.
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/void_assignment:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/void_assignment**
 
+If ``true``, enables warnings when assigning the result of a function that returns ``void`` to a variable.
+
 .. _class_ProjectSettings_property_debug/settings/crash_handler/message:
 
 - :ref:`String<class_String>` **debug/settings/crash_handler/message**
+
+Message to be displayed before the backtrace when the engine crashes.
 
 .. _class_ProjectSettings_property_debug/settings/fps/force_fps:
 
@@ -878,13 +970,13 @@ Maximum amount of functions per frame allowed when profiling.
 
 - :ref:`bool<class_bool>` **debug/settings/stdout/print_fps**
 
-Print frames per second to stdout. Not very useful in general.
+Print frames per second to standard output every second.
 
 .. _class_ProjectSettings_property_debug/settings/stdout/verbose_stdout:
 
 - :ref:`bool<class_bool>` **debug/settings/stdout/verbose_stdout**
 
-Print more information to stdout when running. It shows info such as memory leaks, which scenes and resources are being loaded, etc.
+Print more information to standard output when running. It displays information such as memory leaks, which scenes and resources are being loaded, etc.
 
 .. _class_ProjectSettings_property_debug/settings/visual_script/max_call_stack:
 
@@ -896,7 +988,7 @@ Maximum call stack in visual scripting, to avoid infinite recursion.
 
 - :ref:`String<class_String>` **display/mouse_cursor/custom_image**
 
-Custom image for the mouse cursor.
+Custom image for the mouse cursor (limited to 256x256).
 
 .. _class_ProjectSettings_property_display/mouse_cursor/custom_image_hotspot:
 
@@ -904,29 +996,35 @@ Custom image for the mouse cursor.
 
 Hotspot for the custom mouse cursor image.
 
+.. _class_ProjectSettings_property_display/mouse_cursor/tooltip_position_offset:
+
+- :ref:`Vector2<class_Vector2>` **display/mouse_cursor/tooltip_position_offset**
+
+Position offset for tooltips, relative to the mouse cursor's hotspot.
+
 .. _class_ProjectSettings_property_display/window/dpi/allow_hidpi:
 
 - :ref:`bool<class_bool>` **display/window/dpi/allow_hidpi**
 
-Allow HiDPI display on Windows and OSX. On Desktop Linux, this can't be enabled or disabled.
+If ``true``, allows HiDPI display on Windows and macOS. This setting has no effect on desktop Linux, as DPI-awareness fallbacks are not supported there.
 
 .. _class_ProjectSettings_property_display/window/energy_saving/keep_screen_on:
 
 - :ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on**
 
-Force keep the screen on, so the screensaver does not take over. Works on Desktop and Mobile.
+If ``true``, keeps the screen on (even in case of inactivity), so the screensaver does not take over. Works on desktop and mobile platforms.
 
 .. _class_ProjectSettings_property_display/window/handheld/orientation:
 
 - :ref:`String<class_String>` **display/window/handheld/orientation**
 
-Default orientation for cell phone or tablet.
+Default orientation on mobile devices.
 
 .. _class_ProjectSettings_property_display/window/per_pixel_transparency/allowed:
 
 - :ref:`bool<class_bool>` **display/window/per_pixel_transparency/allowed**
 
-Allow per pixel transparency in a Desktop window. This affects performance if not needed, so leave it off.
+If ``true``, allows per-pixel transparency in a desktop window. This affects performance if not needed, so leave it on ``false`` unless you need it.
 
 .. _class_ProjectSettings_property_display/window/per_pixel_transparency/enabled:
 
@@ -964,37 +1062,41 @@ Set the main window height. On desktop, this is the default window size. Stretch
 
 - :ref:`bool<class_bool>` **display/window/size/resizable**
 
-Allow the window to be resizable by default.
+Allows the window to be resizable by default.
 
 .. _class_ProjectSettings_property_display/window/size/test_height:
 
 - :ref:`int<class_int>` **display/window/size/test_height**
 
-Test a different height for the window. The main use for this is to test with stretch modes.
+If greater than zero, uses a different height for the window when running from the editor. The main use for this is to test with stretch modes.
 
 .. _class_ProjectSettings_property_display/window/size/test_width:
 
 - :ref:`int<class_int>` **display/window/size/test_width**
 
-Test a different width for the window. The main use for this is to test with stretch modes.
+If greater than zero, uses a different width for the window when running from the editor. The main use for this is to test with stretch modes.
 
 .. _class_ProjectSettings_property_display/window/size/width:
 
 - :ref:`int<class_int>` **display/window/size/width**
 
-Set the main window width. On desktop, this is the default window size. Stretch mode settings use this also as a reference when enabled.
+Sets the main window width. On desktop platforms, this is the default window size. Stretch mode settings use this also as a reference when enabled.
 
 .. _class_ProjectSettings_property_display/window/vsync/use_vsync:
 
 - :ref:`bool<class_bool>` **display/window/vsync/use_vsync**
 
-Use VSync. Don't be stupid, don't turn this off.
+If ``true``, enables vertical synchronization. This eliminates tearing that may appear in moving scenes, at the cost of higher input latency and stuttering at lower framerates. If ``false``, vertical synchronization will be disabled, however, many platforms will enforce it regardless (such as mobile platforms and HTML5).
 
 .. _class_ProjectSettings_property_editor/active:
 
 - :ref:`bool<class_bool>` **editor/active**
 
 Internal editor setting, don't touch.
+
+.. _class_ProjectSettings_property_editor/search_in_file_extensions:
+
+- :ref:`PoolStringArray<class_PoolStringArray>` **editor/search_in_file_extensions**
 
 .. _class_ProjectSettings_property_gui/common/default_scroll_deadzone:
 
@@ -1004,7 +1106,7 @@ Internal editor setting, don't touch.
 
 - :ref:`bool<class_bool>` **gui/common/swap_ok_cancel**
 
-Enable swap OK and Cancel buttons on dialogs. This is because Windows/MacOS/Desktop Linux may use them in different order, so the GUI swaps them depending on the host OS. Disable this behavior by turning this setting off.
+If ``true``, swaps OK and Cancel buttons in dialogs on Windows and UWP to follow interface conventions.
 
 .. _class_ProjectSettings_property_gui/theme/custom:
 
@@ -1016,25 +1118,25 @@ Use a custom theme resource, set a path to it here.
 
 - :ref:`String<class_String>` **gui/theme/custom_font**
 
-USe a custom default font resource, set a path to it here.
+Use a custom default font resource, set a path to it here.
 
 .. _class_ProjectSettings_property_gui/theme/use_hidpi:
 
 - :ref:`bool<class_bool>` **gui/theme/use_hidpi**
 
-Make sure the theme used works with hidpi.
+If ``true``, makes sure the theme used works with HiDPI.
 
 .. _class_ProjectSettings_property_gui/timers/incremental_search_max_interval_msec:
 
 - :ref:`int<class_int>` **gui/timers/incremental_search_max_interval_msec**
 
-Timer setting for incremental search in Tree, IntemList, etc. controls.
+Timer setting for incremental search in Tree, IntemList, etc. controls (in milliseconds).
 
 .. _class_ProjectSettings_property_gui/timers/text_edit_idle_detect_sec:
 
 - :ref:`float<class_float>` **gui/timers/text_edit_idle_detect_sec**
 
-Timer for detecting idle in the editor.
+Timer for detecting idle in the editor (in seconds).
 
 .. _class_ProjectSettings_property_input/ui_accept:
 
@@ -1092,9 +1194,13 @@ Timer for detecting idle in the editor.
 
 - :ref:`bool<class_bool>` **input_devices/pointing/emulate_mouse_from_touch**
 
+If ``true``, sends mouse input events when tapping or swiping on the touchscreen.
+
 .. _class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse:
 
 - :ref:`bool<class_bool>` **input_devices/pointing/emulate_touch_from_mouse**
+
+If ``true``, sends touch input events when clicking or dragging the mouse.
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_1:
 
@@ -1420,27 +1526,31 @@ Timer for detecting idle in the editor.
 
 - :ref:`String<class_String>` **locale/fallback**
 
+The locale to fall back to if a translation isn't available in a given language. If left empty, ``en`` (English) will be used.
+
 .. _class_ProjectSettings_property_locale/test:
 
 - :ref:`String<class_String>` **locale/test**
+
+If non-empty, this locale will be used when running the project from the editor.
 
 .. _class_ProjectSettings_property_logging/file_logging/enable_file_logging:
 
 - :ref:`bool<class_bool>` **logging/file_logging/enable_file_logging**
 
-Log all output to a file.
+If ``true``, logs all output to files.
 
 .. _class_ProjectSettings_property_logging/file_logging/log_path:
 
 - :ref:`String<class_String>` **logging/file_logging/log_path**
 
-Path to logs withint he project. Using an ``user://`` based path is recommended.
+Path to logs within the project. Using an ``user://`` path is recommended.
 
 .. _class_ProjectSettings_property_logging/file_logging/max_log_files:
 
 - :ref:`int<class_int>` **logging/file_logging/max_log_files**
 
-Amount of log files (used for rotation).
+Specifies the maximum amount of log files allowed (used for rotation).
 
 .. _class_ProjectSettings_property_memory/limits/message_queue/max_size_kb:
 
@@ -1452,7 +1562,7 @@ Godot uses a message queue to defer some function calls. If you run out of space
 
 - :ref:`int<class_int>` **memory/limits/multithreaded_server/rid_pool_prealloc**
 
-This is used by servers when used in multi threading mode (servers and visual). RIDs are preallocated to avoid stalling the server requesting them on threads. If servers get stalled too often when loading resources in a thread, increase this number.
+This is used by servers when used in multi-threading mode (servers and visual). RIDs are preallocated to avoid stalling the server requesting them on threads. If servers get stalled too often when loading resources in a thread, increase this number.
 
 .. _class_ProjectSettings_property_network/limits/debugger_stdout/max_chars_per_second:
 
@@ -1476,7 +1586,7 @@ Maximum amount of messages allowed to send as output from the debugger. Over thi
 
 - :ref:`int<class_int>` **network/limits/packet_peer_stream/max_buffer_po2**
 
-Default size of packet peer stream for deserializing godot data. Over this size, data is dropped.
+Default size of packet peer stream for deserializing Godot data. Over this size, data is dropped.
 
 .. _class_ProjectSettings_property_network/limits/websocket_client/max_in_buffer_kb:
 
@@ -1514,19 +1624,19 @@ Default size of packet peer stream for deserializing godot data. Over this size,
 
 - :ref:`int<class_int>` **network/remote_fs/page_read_ahead**
 
-Amount of read ahead used by remote filesystem. Improves latency.
+Amount of read ahead used by remote filesystem. Higher values decrease the effects of latency at the cost of higher bandwidth usage.
 
 .. _class_ProjectSettings_property_network/remote_fs/page_size:
 
 - :ref:`int<class_int>` **network/remote_fs/page_size**
 
-Page size used by remote filesystem.
+Page size used by remote filesystem (in bytes).
 
 .. _class_ProjectSettings_property_node/name_casing:
 
 - :ref:`int<class_int>` **node/name_casing**
 
-When creating nodes names automatically, set the type of casing in this project. This is mostly an editor setting.
+When creating node names automatically, set the type of casing in this project. This is mostly an editor setting.
 
 .. _class_ProjectSettings_property_node/name_num_separator:
 
@@ -1542,7 +1652,7 @@ What to use to separate node name from number. This is mostly an editor setting.
 
 - :ref:`int<class_int>` **physics/2d/thread_model**
 
-Set whether physics is run on the main thread or a separate one. Running the server on a thread increases performance, but restricts API Access to only physics process.
+Sets whether physics is run on the main thread or a separate one. Running the server on a thread increases performance, but restricts API access to only physics process.
 
 .. _class_ProjectSettings_property_physics/3d/active_soft_world:
 
@@ -1551,6 +1661,8 @@ Set whether physics is run on the main thread or a separate one. Running the ser
 .. _class_ProjectSettings_property_physics/3d/physics_engine:
 
 - :ref:`String<class_String>` **physics/3d/physics_engine**
+
+Sets which physics engine to use.
 
 .. _class_ProjectSettings_property_physics/common/physics_fps:
 
@@ -1562,13 +1674,13 @@ Frames per second used in the physics. Physics always needs a fixed amount of fr
 
 - :ref:`float<class_float>` **physics/common/physics_jitter_fix**
 
-Fix to improve physics jitter, specially on monitors where refresh rate is different than physics FPS.
+Fix to improve physics jitter, specially on monitors where refresh rate is different than the physics FPS.
 
 .. _class_ProjectSettings_property_rendering/environment/default_clear_color:
 
 - :ref:`Color<class_Color>` **rendering/environment/default_clear_color**
 
-Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` using its :ref:`Environment<class_Environment>`. See :ref:`Environment.background_mode<class_Environment_property_background_mode>` and :ref:`Environment.background_color<class_Environment_property_background_color>` in particular. To change this default color programmatically, use :ref:`VisualServer.set_default_clear_color<class_VisualServer_method_set_default_clear_color>`.
+Default background clear color. Overriddable per :ref:`Viewport<class_Viewport>` using its :ref:`Environment<class_Environment>`. See :ref:`Environment.background_mode<class_Environment_property_background_mode>` and :ref:`Environment.background_color<class_Environment_property_background_color>` in particular. To change this default color programmatically, use :ref:`VisualServer.set_default_clear_color<class_VisualServer_method_set_default_clear_color>`.
 
 .. _class_ProjectSettings_property_rendering/limits/buffers/blend_shape_max_buffer_size_kb:
 
@@ -1598,27 +1710,27 @@ Max buffer size for drawing immediate objects (ImmediateGeometry nodes). Nodes u
 
 - :ref:`int<class_int>` **rendering/limits/rendering/max_renderable_elements**
 
-Max amount of elements renderable in a frame. If more than this are visible per frame, they will be dropped. Keep in mind elements refer to mesh surfaces and not mesh themselves.
+Max amount of elements renderable in a frame. If more than this are visible per frame, they will be dropped. Keep in mind elements refer to mesh surfaces and not meshes themselves.
 
 .. _class_ProjectSettings_property_rendering/limits/time/time_rollover_secs:
 
 - :ref:`float<class_float>` **rendering/limits/time/time_rollover_secs**
 
-Shaders have a time variable that constantly increases. At some point it needs to be rolled back to zero to avoid numerical errors on shader animations. This setting specifies when.
+Shaders have a time variable that constantly increases. At some point, it needs to be rolled back to zero to avoid precision errors on shader animations. This setting specifies when (in seconds).
 
 .. _class_ProjectSettings_property_rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround:
 
 - :ref:`bool<class_bool>` **rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround**
 
-Some Nvidia GPU drivers have a bug, which produces flickering issues for the ``draw_rect`` method, especially as used in :ref:`TileMap<class_TileMap>`. Refer to https://github.com/godotengine/godot/issues/9913 for details.
+Some NVIDIA GPU drivers have a bug which produces flickering issues for the ``draw_rect`` method, especially as used in :ref:`TileMap<class_TileMap>`. Refer to :ref:`https://github.com/godotengine/godot/issues/9913<https://github.com/godotengine/godot/issues/9913>` for details.
 
-If ``true``, this option enables a "safe" code path for such Nvidia GPUs, at the cost of performance. This option only impacts the GLES2 rendering backend (so the bug stays if you use GLES3), and only desktop platforms. Default value: ``false``.
+If ``true``, this option enables a "safe" code path for such NVIDIA GPUs at the cost of performance. This option only impacts the GLES2 rendering backend (so the bug stays if you use GLES3), and only desktop platforms.
 
 .. _class_ProjectSettings_property_rendering/quality/2d/use_pixel_snap:
 
 - :ref:`bool<class_bool>` **rendering/quality/2d/use_pixel_snap**
 
-Force snapping of polygons to pixels in 2D rendering. May help in some pixel art styles.
+If ``true``, forces snapping of polygons to pixels in 2D rendering. May help in some pixel art styles.
 
 .. _class_ProjectSettings_property_rendering/quality/depth_prepass/disable_for_vendors:
 
@@ -1630,13 +1742,13 @@ Disable depth pre-pass for some GPU vendors (usually mobile), as their architect
 
 - :ref:`bool<class_bool>` **rendering/quality/depth_prepass/enable**
 
-Do a previous depth pass before rendering materials. This increases performance in scenes with high overdraw, when complex materials and lighting are used.
+If ``true``, performs a previous depth pass before rendering materials. This increases performance in scenes with high overdraw, when complex materials and lighting are used.
 
 .. _class_ProjectSettings_property_rendering/quality/directional_shadow/size:
 
 - :ref:`int<class_int>` **rendering/quality/directional_shadow/size**
 
-Size in pixels of the directional shadow.
+The directional shadow's size in pixels. Higher values will result in sharper shadows, at the cost of performance.
 
 .. _class_ProjectSettings_property_rendering/quality/directional_shadow/size.mobile:
 
@@ -1646,35 +1758,35 @@ Size in pixels of the directional shadow.
 
 - :ref:`String<class_String>` **rendering/quality/driver/driver_name**
 
-Name of the configured video driver ("GLES2" or "GLES3").
+The video driver to use ("GLES2" or "GLES3").
 
-Note that the backend in use can be overridden at runtime via the ``--video-driver`` command line argument, or by the :ref:`rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>` option if the target system does not support GLES3 and falls back to GLES2. In such cases, this property is not updated, so use :ref:`OS.get_current_video_driver<class_OS_method_get_current_video_driver>` to query it at runtime.
+Note that the backend in use can be overridden at runtime via the ``--video-driver`` command line argument, or by the :ref:`rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>` option if the target system does not support GLES3 and falls back to GLES2. In such cases, this property is not updated, so use :ref:`OS.get_current_video_driver<class_OS_method_get_current_video_driver>` to query it at run-time.
 
 .. _class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2:
 
 - :ref:`bool<class_bool>` **rendering/quality/driver/fallback_to_gles2**
 
-Whether to allow falling back to the GLES2 driver if the GLES3 driver is not supported. Default value: ``false``.
+If ``true``, allows falling back to the GLES2 driver if the GLES3 driver is not supported.
 
-Note that the two video drivers are not drop-in replacements for each other, so a game designed for GLES3 might not work properly when falling back to GLES2. In particular, some features of the GLES3 backend are not available in GLES2. Enabling this setting also means that both ETC and ETC2 VRAM-compressed textures will be exported on Android and iOS, increasing the size of the game data pack.
+Note that the two video drivers are not drop-in replacements for each other, so a game designed for GLES3 might not work properly when falling back to GLES2. In particular, some features of the GLES3 backend are not available in GLES2. Enabling this setting also means that both ETC and ETC2 VRAM-compressed textures will be exported on Android and iOS, increasing the data pack's size.
 
 .. _class_ProjectSettings_property_rendering/quality/filters/anisotropic_filter_level:
 
 - :ref:`int<class_int>` **rendering/quality/filters/anisotropic_filter_level**
 
-Maximum Anisotropic filter level used for textures when anisotropy enabled.
+Maximum anisotropic filter level used for textures with anisotropy enabled. Higher values will result in sharper textures when viewed from oblique angles, at the cost of performance. Only power-of-two values are valid (2, 4, 8, 16).
 
 .. _class_ProjectSettings_property_rendering/quality/filters/use_nearest_mipmap_filter:
 
 - :ref:`bool<class_bool>` **rendering/quality/filters/use_nearest_mipmap_filter**
 
-Force to use nearest mipmap filtering when using mipmaps. This may increase performance in mobile as less memory bandwidth is used.
+If ``true``, uses nearest-neighbor mipmap filtering when using mipmaps (also called "bilinear filtering"), which will result in visible seams appearing between mipmap stages. This may increase performance in mobile as less memory bandwidth is used. If ``false``, linear mipmap filtering (also called "trilinear filtering") is used.
 
 .. _class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation:
 
 - :ref:`int<class_int>` **rendering/quality/intended_usage/framebuffer_allocation**
 
-Strategy used for framebuffer allocation. The simpler it is, the less memory it uses (but the least features it supports).
+Strategy used for framebuffer allocation. The simpler it is, the less resources it uses (but the less features it supports).
 
 .. _class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation.mobile:
 
@@ -1684,7 +1796,7 @@ Strategy used for framebuffer allocation. The simpler it is, the less memory it 
 
 - :ref:`bool<class_bool>` **rendering/quality/reflections/high_quality_ggx**
 
-For reflection probes and panorama backgrounds (sky), use a high amount of samples to create ggx blurred versions (used for roughness).
+If ``true``, uses a high amount of samples to create blurred variants of reflection probes and panorama backgrounds (sky). Those blurred variants are used by rough materials.
 
 .. _class_ProjectSettings_property_rendering/quality/reflections/high_quality_ggx.mobile:
 
@@ -1694,7 +1806,7 @@ For reflection probes and panorama backgrounds (sky), use a high amount of sampl
 
 - :ref:`bool<class_bool>` **rendering/quality/reflections/texture_array_reflections**
 
-For reflection probes and panorama backgrounds (sky), use a texture array instead of mipmaps. This reduces jitter noise on reflections, but costs more performance and memory.
+If ``true``, uses texture arrays instead of mipmaps for reflection probes and panorama backgrounds (sky). This reduces jitter noise on reflections, but costs more performance and memory.
 
 .. _class_ProjectSettings_property_rendering/quality/reflections/texture_array_reflections.mobile:
 
@@ -1704,6 +1816,8 @@ For reflection probes and panorama backgrounds (sky), use a texture array instea
 
 - :ref:`bool<class_bool>` **rendering/quality/shading/force_blinn_over_ggx**
 
+If ``true``, uses faster but lower-quality Blinn model to generate blurred reflections instead of the GGX model.
+
 .. _class_ProjectSettings_property_rendering/quality/shading/force_blinn_over_ggx.mobile:
 
 - :ref:`bool<class_bool>` **rendering/quality/shading/force_blinn_over_ggx.mobile**
@@ -1711,6 +1825,8 @@ For reflection probes and panorama backgrounds (sky), use a texture array instea
 .. _class_ProjectSettings_property_rendering/quality/shading/force_lambert_over_burley:
 
 - :ref:`bool<class_bool>` **rendering/quality/shading/force_lambert_over_burley**
+
+If ``true``, uses faster but lower-quality Lambert material lighting model instead of Burley.
 
 .. _class_ProjectSettings_property_rendering/quality/shading/force_lambert_over_burley.mobile:
 
@@ -1720,7 +1836,7 @@ For reflection probes and panorama backgrounds (sky), use a texture array instea
 
 - :ref:`bool<class_bool>` **rendering/quality/shading/force_vertex_shading**
 
-Force vertex shading for all rendering. This can increase performance a lot, but also reduces quality immensely. Can work to optimize on very low end mobile.
+If ``true``, forces vertex shading for all rendering. This can increase performance a lot, but also reduces quality immensely. Can be used to optimize performance on low-end mobile devices.
 
 .. _class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading.mobile:
 
@@ -1754,7 +1870,7 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 - :ref:`int<class_int>` **rendering/quality/shadow_atlas/size**
 
-Size for shadow atlas (used for point and omni lights). See documentation.
+Size for shadow atlas (used for OmniLights and SpotLights). See documentation.
 
 .. _class_ProjectSettings_property_rendering/quality/shadow_atlas/size.mobile:
 
@@ -1764,7 +1880,7 @@ Size for shadow atlas (used for point and omni lights). See documentation.
 
 - :ref:`int<class_int>` **rendering/quality/shadows/filter_mode**
 
-Shadow filter mode. The more complex the filter, the more memory bandwidth required.
+Shadow filter mode. Higher-quality settings result in smoother shadows that flicker less when moving. "Disabled" is the fastest option, but also has the lowest quality. "PCF5" is smoother but is also slower. "PCF13" is the smoothest option, but is also the slowest.
 
 .. _class_ProjectSettings_property_rendering/quality/shadows/filter_mode.mobile:
 
@@ -1796,41 +1912,43 @@ Weight subsurface scattering samples. Helps to avoid reading samples from unrela
 
 - :ref:`bool<class_bool>` **rendering/quality/voxel_cone_tracing/high_quality**
 
-Use high quality voxel cone tracing (looks better, but requires a higher end GPU).
+Use high-quality voxel cone tracing. This results in better-looking reflections, but is much more expensive on the GPU.
 
 .. _class_ProjectSettings_property_rendering/threads/thread_model:
 
 - :ref:`int<class_int>` **rendering/threads/thread_model**
 
-Thread model for rendering. Rendering on a thread can vastly improve performance, but syncinc to the main thread can cause a bit more jitter.
+Thread model for rendering. Rendering on a thread can vastly improve performance, but synchronizing to the main thread can cause a bit more jitter.
 
 .. _class_ProjectSettings_property_rendering/vram_compression/import_bptc:
 
 - :ref:`bool<class_bool>` **rendering/vram_compression/import_bptc**
 
+If ``true``, the texture importer will import VRAM-compressed textures using the BPTC algorithm. This texture compression algorithm is only supported on desktop platforms, and only when using the GLES3 renderer.
+
 .. _class_ProjectSettings_property_rendering/vram_compression/import_etc:
 
 - :ref:`bool<class_bool>` **rendering/vram_compression/import_etc**
 
-If the project uses this compression (usually low end mobile), texture importer will import these.
+If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression algorithm. This algorithm doesn't support alpha channels in textures.
 
 .. _class_ProjectSettings_property_rendering/vram_compression/import_etc2:
 
 - :ref:`bool<class_bool>` **rendering/vram_compression/import_etc2**
 
-If the project uses this compression (usually high end mobile), texture importer will import these.
+If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm. This texture compression algorithm is only supported when using the GLES3 renderer.
 
 .. _class_ProjectSettings_property_rendering/vram_compression/import_pvrtc:
 
 - :ref:`bool<class_bool>` **rendering/vram_compression/import_pvrtc**
 
-If the project uses this compression (usually iOS), texture importer will import these.
+If ``true``, the texture importer will import VRAM-compressed textures using the PowerVR Texture Compression algorithm. This texture compression algorithm is only supported on iOS.
 
 .. _class_ProjectSettings_property_rendering/vram_compression/import_s3tc:
 
 - :ref:`bool<class_bool>` **rendering/vram_compression/import_s3tc**
 
-If the project uses this compression (usually Desktop and Consoles), texture importer will import these.
+If ``true``, the texture importer will import VRAM-compressed textures using the S3 Texture Compression algorithm. This algorithm is only supported on desktop platforms and consoles.
 
 .. _class_ProjectSettings_property_script:
 
@@ -1843,7 +1961,7 @@ Method Descriptions
 
 - void **add_property_info** **(** :ref:`Dictionary<class_Dictionary>` hint **)**
 
-Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`\ (the name of the property) and type::ref:`int<class_int>`\ (see TYPE\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`\ (see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
+Adds a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`\ (the property's name) and type::ref:`int<class_int>`\ (see TYPE\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`\ (see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
 
 Example:
 
@@ -1864,13 +1982,13 @@ Example:
 
 - void **clear** **(** :ref:`String<class_String>` name **)**
 
-Clear the whole configuration (not recommended, may break things).
+Clears the whole configuration (not recommended, may break things).
 
 .. _class_ProjectSettings_method_get_order:
 
 - :ref:`int<class_int>` **get_order** **(** :ref:`String<class_String>` name **)** const
 
-Return the order of a configuration value (influences when saved to the config file).
+Returns the order of a configuration value (influences when saved to the config file).
 
 .. _class_ProjectSettings_method_get_setting:
 
@@ -1880,19 +1998,19 @@ Return the order of a configuration value (influences when saved to the config f
 
 - :ref:`String<class_String>` **globalize_path** **(** :ref:`String<class_String>` path **)** const
 
-Convert a localized path (res://) to a full native OS path.
+Converts a localized path (``res://``) to a full native OS path.
 
 .. _class_ProjectSettings_method_has_setting:
 
 - :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** const
 
-Return true if a configuration value is present.
+Returns ``true`` if a configuration value is present.
 
 .. _class_ProjectSettings_method_load_resource_pack:
 
 - :ref:`bool<class_bool>` **load_resource_pack** **(** :ref:`String<class_String>` pack **)**
 
-Loads the contents of the .pck or .zip file specified by ``pack`` into the resource filesystem (res://). Returns true on success.
+Loads the contents of the .pck or .zip file specified by ``pack`` into the resource filesystem (``res://``). Returns ``true`` on success.
 
 Note: If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack``.
 
@@ -1900,25 +2018,25 @@ Note: If a file from ``pack`` shares the same path as a file already in the reso
 
 - :ref:`String<class_String>` **localize_path** **(** :ref:`String<class_String>` path **)** const
 
-Convert a path to a localized path (res:// path).
+Convert a path to a localized path (``res://`` path).
 
 .. _class_ProjectSettings_method_property_can_revert:
 
 - :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
-Returns true if the specified property exists and its initial value differs from the current value.
+Returns ``true`` if the specified property exists and its initial value differs from the current value.
 
 .. _class_ProjectSettings_method_property_get_revert:
 
 - :ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
 
-Returns the initial value of the specified property. Returns null if the property does not exist.
+Returns the specified property's initial value. Returns ``null`` if the property does not exist.
 
 .. _class_ProjectSettings_method_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** **)**
 
-Saves the configuration to the project.godot file.
+Saves the configuration to the ``project.godot`` file.
 
 .. _class_ProjectSettings_method_save_custom:
 
@@ -1934,7 +2052,7 @@ Saves the configuration to a custom file.
 
 - void **set_order** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` position **)**
 
-Set the order of a configuration value (influences when saved to the config file).
+Sets the order of a configuration value (influences when saved to the config file).
 
 .. _class_ProjectSettings_method_set_setting:
 

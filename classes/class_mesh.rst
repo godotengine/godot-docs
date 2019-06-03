@@ -286,7 +286,7 @@ Returns all the vertices that make up the faces of the mesh. Each three vertices
 
 - :ref:`int<class_int>` **get_surface_count** **(** **)** const
 
-Return the amount of surfaces that the ``Mesh`` holds.
+Returns the amount of surfaces that the ``Mesh`` holds.
 
 .. _class_Mesh_method_surface_get_arrays:
 
@@ -304,5 +304,5 @@ Returns the blend shape arrays for the requested surface.
 
 - :ref:`Material<class_Material>` **surface_get_material** **(** :ref:`int<class_int>` surf_idx **)** const
 
-Return a :ref:`Material<class_Material>` in a given surface. Surface is rendered using this material.
+Returns a :ref:`Material<class_Material>` in a given surface. Surface is rendered using this material.
 

@@ -19,6 +19,9 @@ Godot supports the following 3D *scene file fomats*:
 
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
 
+It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose 
+or default rest pose before exporting with your favorite 3D editor.
+
 Why not FBX?
 ~~~~~~~~~~~~
 
@@ -322,6 +325,16 @@ Create navigation (-navmesh)
 
 A mesh node with this suffix will be converted to a navigation mesh. Original Mesh node will be
 removed.
+
+Create a VehicleBody (-vehicle)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A mesh node with this suffix will be imported as a child to a :ref:`VehicleBody <class_VehicleBody>` node.
+
+Create a VehicleWheel (-wheel)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A mesh node with this suffix will be imported as a child to a :ref:`VehicleWheel <class_VehicleWheel>` node.
 
 Rigid Body (-rigid)
 ~~~~~~~~~~~~~~~~~~~

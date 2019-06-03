@@ -14,7 +14,7 @@ LineEdit
 Brief Description
 -----------------
 
-Control that provides single line string editing.
+Control that provides single-line string editing.
 
 Properties
 ----------
@@ -112,7 +112,7 @@ Emitted when the text changes.
 
 - **text_entered** **(** :ref:`String<class_String>` new_text **)**
 
-Emitted when the user presses ``KEY_ENTER`` on the ``LineEdit``.
+Emitted when the user presses :ref:`@GlobalScope.KEY_ENTER<class_@GlobalScope_constant_KEY_ENTER>` on the ``LineEdit``.
 
 Enumerations
 ------------
@@ -163,6 +163,8 @@ enum **MenuItems**:
 
 - **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
 
+Non-printable escape characters are automatically stripped from the OS clipboard via :ref:`String.strip_escapes<class_String_method_strip_escapes>`.
+
 - **MENU_CLEAR** = **3** --- Erases the whole ``LineEdit`` text.
 
 - **MENU_SELECT_ALL** = **4** --- Selects the whole ``LineEdit`` text.
@@ -176,7 +178,25 @@ enum **MenuItems**:
 Description
 -----------
 
-LineEdit provides a single line string editor, used for text fields.
+LineEdit provides a single-line string editor, used for text fields. It features many built-in shortcuts which will always be available:
+
+- Ctrl + C: Copy
+
+- Ctrl + X: Cut
+
+- Ctrl + V or Ctrl + Y: Paste/"yank"
+
+- Ctrl + Z: Undo
+
+- Ctrl + Shift + Z: Redo
+
+- Ctrl + U: Delete text from the cursor position to the beginning of the line
+
+- Ctrl + K: Delete text from the cursor position to the end of the line
+
+- Ctrl + A: Select all text
+
+- Up/Down arrow: Move the cursor to the beginning/end of the line
 
 Property Descriptions
 ---------------------
@@ -287,7 +307,7 @@ If ``true``, the ``LineEdit`` width will increase to stay longer than the :ref:`
 | *Getter* | get_focus_mode()      |
 +----------+-----------------------+
 
-Defines how the ``LineEdit`` can grab focus (Keyboard and mouse, only keyboard, or none). See ``enum FocusMode`` in :ref:`Control<class_Control>` for details.
+Defines how the ``LineEdit`` can grab focus (Keyboard and mouse, only keyboard, or none). See :ref:`FocusMode<enum_Control_FocusMode>` in :ref:`Control<class_Control>` for details.
 
 .. _class_LineEdit_property_max_length:
 

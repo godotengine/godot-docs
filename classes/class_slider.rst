@@ -51,6 +51,8 @@ Property Descriptions
 | *Getter* | is_editable()       |
 +----------+---------------------+
 
+If ``true``, the slider can be interacted with. If ``false``, the value can be changed only by code.
+
 .. _class_Slider_property_focus_mode:
 
 - :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
@@ -71,6 +73,8 @@ Property Descriptions
 | *Getter* | is_scrollable()       |
 +----------+-----------------------+
 
+If ``true``, the value can be changed using the mouse wheel.
+
 .. _class_Slider_property_tick_count:
 
 - :ref:`int<class_int>` **tick_count**
@@ -81,6 +85,8 @@ Property Descriptions
 | *Getter* | get_ticks()      |
 +----------+------------------+
 
+Number of ticks displayed on the slider, including border ticks. Ticks are uniformly-distributed value markers.
+
 .. _class_Slider_property_ticks_on_borders:
 
 - :ref:`bool<class_bool>` **ticks_on_borders**
@@ -90,4 +96,6 @@ Property Descriptions
 +----------+-----------------------------+
 | *Getter* | get_ticks_on_borders()      |
 +----------+-----------------------------+
+
+If ``true``, the slider will display ticks for minimum and maximum values.
 

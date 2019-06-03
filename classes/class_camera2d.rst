@@ -448,7 +448,7 @@ Force the camera to update scroll immediately.
 
 - :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** const
 
-Return the camera position.
+Returns the camera position.
 
 .. _class_Camera2D_method_get_camera_screen_center:
 

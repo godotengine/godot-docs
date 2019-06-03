@@ -57,7 +57,7 @@ Method Descriptions
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions_for_type** **(** :ref:`String<class_String>` type **)**
 
-Return the list of recognized extensions for a resource type.
+Returns the list of recognized extensions for a resource type.
 
 .. _class_ResourceLoader_method_has:
 

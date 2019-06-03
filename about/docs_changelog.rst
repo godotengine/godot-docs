@@ -21,6 +21,9 @@ Step-by-step
 
 Project workflow
 ^^^^^^^^^^^^^^^^
+
+- :ref:`Custom builds for Android <doc_android_custom_build>`
+
 Best Practices:
   - :ref:`Introduction <doc_introduction_best_practices>`
   - :ref:`What are Godot classes <doc_what_are_godot_classes>`
@@ -63,6 +66,11 @@ Animation
 - :ref:`2D skeletons <doc_2d_skeletons>`
 - :ref:`AnimationTree <doc_animation_tree>`
 
+GUI
+^^^
+
+- :ref:`Containers <doc_gui_containers>`
+
 Viewports
 ^^^^^^^^^
 
@@ -74,8 +82,13 @@ Shading
 
 - :ref:`Intro to shaders: 2D and 3D water (7 video tutorials) <doc_intro_to_shaders_water_workshop>`
 - :ref:`Migrating to Godot’s shading language <doc_migrating_to_godot_shader_language>`
-- :ref:`Vertex displacement with shaders <doc_vertex_displacement_with_shaders>`
 - :ref:`Advanced post-processing <doc_advanced_postprocessing>`
+
+Your First Shader Series:
+  - :ref:`What are shaders? <doc_what_are_shaders>`
+  - :ref:`Your first CanvasItem shader <doc_your_first_canvasitem_shader>`
+  - :ref:`Your first Spatial shader <doc_your_first_spatial_shader>`
+  - :ref:`Your first Spatial shader: Part 2 <doc_your_second_spatial_shader>`
 
 Shading Reference:
   - :ref:`Shaders <doc_shaders>`
@@ -99,6 +112,12 @@ Multi-threading
 
 - :ref:`Thread safe APIs <doc_thread_safe_apis>`
 
+Optimization
+^^^^^^^^^^^^
+
+- :ref:`Using MultiMesh <doc_using_multimesh>`
+- :ref:`Using servers <doc_using_servers>`
+
 Miscellaneous
 ^^^^^^^^^^^^^
 
@@ -106,6 +125,11 @@ Miscellaneous
 - :ref:`Running code in the editor <doc_running_code_in_the_editor>`
 - :ref:`Change scenes manually <doc_change_scenes_manually>`
 - :ref:`Differences between GLES2 and GLES3 <doc_gles2_gles3_differences>`
+
+Legal
+^^^^^
+
+- :ref:`Complying with Licenses <doc_complying_with_licenses>`
 
 Compiling
 ^^^^^^^^^
@@ -128,3 +152,4 @@ Plugins
 
 - :ref:`Making main screen plugins <doc_making_main_screen_plugins>`
 - :ref:`Spatial gizmo plugins <doc_spatial_gizmo_plugins>`
+- :ref:`Creating Android plugins <doc_android_plugin>`

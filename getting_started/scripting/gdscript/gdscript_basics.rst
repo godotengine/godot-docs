@@ -531,7 +531,7 @@ To add a key to an existing dictionary, access it like an existing key and
 assign to it::
 
     var d = {} # Create an empty Dictionary.
-    d.waiting = 14 # Add String "Waiting" as a key and assign the value 14 to it.
+    d.waiting = 14 # Add String "waiting" as a key and assign the value 14 to it.
     d[4] = "hello" # Add integer 4 as a key and assign the String "hello" as its value.
     d["Godot"] = 3.01 # Add String "Godot" as a key and assign the value 3.01 to it.
 
@@ -1231,6 +1231,9 @@ special export syntax is provided.
 
     export(Texture) var character_face
     export(PackedScene) var scene_file
+    # There are many resource types that can be used this way, try e.g.
+    # the following to list them:
+    export(Resource) var resource
 
     # Integers and strings hint enumerated values.
 
@@ -1540,14 +1543,14 @@ Extending a previous example to use all the features of GDScript signals:
 
    func _process(delta):
       if delta == your_data:
-         emit_signal("data_found", data)
+         emit_signal("data_found", your_data)
 
 ::
 
    # your_handler.gd
 
    func your_handler(data, obj):
-      print("Your handler was called from: ", obj.get_name(), with data: ", data)
+      print("Your handler was called from: ", obj.get_name(), " with data: ", data)
 
 ::
 

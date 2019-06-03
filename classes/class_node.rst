@@ -309,11 +309,33 @@ Constants
 
 .. _class_Node_constant_NOTIFICATION_PATH_CHANGED:
 
-.. _class_Node_constant_NOTIFICATION_TRANSLATION_CHANGED:
-
 .. _class_Node_constant_NOTIFICATION_INTERNAL_PROCESS:
 
 .. _class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS:
+
+.. _class_Node_constant_NOTIFICATION_WM_MOUSE_ENTER:
+
+.. _class_Node_constant_NOTIFICATION_WM_MOUSE_EXIT:
+
+.. _class_Node_constant_NOTIFICATION_WM_FOCUS_IN:
+
+.. _class_Node_constant_NOTIFICATION_WM_FOCUS_OUT:
+
+.. _class_Node_constant_NOTIFICATION_WM_QUIT_REQUEST:
+
+.. _class_Node_constant_NOTIFICATION_WM_GO_BACK_REQUEST:
+
+.. _class_Node_constant_NOTIFICATION_WM_UNFOCUS_REQUEST:
+
+.. _class_Node_constant_NOTIFICATION_OS_MEMORY_WARNING:
+
+.. _class_Node_constant_NOTIFICATION_TRANSLATION_CHANGED:
+
+.. _class_Node_constant_NOTIFICATION_WM_ABOUT:
+
+.. _class_Node_constant_NOTIFICATION_CRASH:
+
+.. _class_Node_constant_NOTIFICATION_OS_IME_UPDATE:
 
 - **NOTIFICATION_ENTER_TREE** = **10** --- Notification received when the node enters a :ref:`SceneTree<class_SceneTree>`.
 
@@ -343,11 +365,33 @@ Constants
 
 - **NOTIFICATION_PATH_CHANGED** = **23** --- Notification received when the node's :ref:`NodePath<class_NodePath>` changed.
 
-- **NOTIFICATION_TRANSLATION_CHANGED** = **24** --- Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr<class_Object_method_tr>`.
-
 - **NOTIFICATION_INTERNAL_PROCESS** = **25** --- Notification received every frame when the internal process flag is set (see :ref:`set_process_internal<class_Node_method_set_process_internal>`).
 
 - **NOTIFICATION_INTERNAL_PHYSICS_PROCESS** = **26** --- Notification received every frame when the internal physics process flag is set (see :ref:`set_physics_process_internal<class_Node_method_set_physics_process_internal>`).
+
+- **NOTIFICATION_WM_MOUSE_ENTER** = **1002**
+
+- **NOTIFICATION_WM_MOUSE_EXIT** = **1003**
+
+- **NOTIFICATION_WM_FOCUS_IN** = **1004**
+
+- **NOTIFICATION_WM_FOCUS_OUT** = **1005**
+
+- **NOTIFICATION_WM_QUIT_REQUEST** = **1006**
+
+- **NOTIFICATION_WM_GO_BACK_REQUEST** = **1007**
+
+- **NOTIFICATION_WM_UNFOCUS_REQUEST** = **1008**
+
+- **NOTIFICATION_OS_MEMORY_WARNING** = **1009**
+
+- **NOTIFICATION_TRANSLATION_CHANGED** = **1010** --- Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr<class_Object_method_tr>`.
+
+- **NOTIFICATION_WM_ABOUT** = **1011**
+
+- **NOTIFICATION_CRASH** = **1012**
+
+- **NOTIFICATION_OS_IME_UPDATE** = **1013**
 
 Description
 -----------
@@ -475,6 +519,10 @@ Corresponds to the NOTIFICATION_EXIT_TREE notification in :ref:`Object._notifica
 
 - :ref:`String<class_String>` **_get_configuration_warning** **(** **)** virtual
 
+The string returned from this method is displayed as a warning in the "Scene Dock" if the script that overrides it is a ``tool`` script.
+
+Returning an empty string produces no warning.
+
 .. _class_Node_method__input:
 
 - void **_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
@@ -562,6 +610,8 @@ Setting "legible_unique_name" ``true`` creates child nodes with human-readable n
 - void **add_to_group** **(** :ref:`String<class_String>` group, :ref:`bool<class_bool>` persistent=false **)**
 
 Adds the node to a group. Groups are helpers to name and organize a subset of nodes, for example "enemies" or "collectables". A node can be in any number of groups. Nodes can be assigned a group at any time, but will not be added until they are inside the scene tree (see :ref:`is_inside_tree<class_Node_method_is_inside_tree>`). See notes in the description, and the group methods in :ref:`SceneTree<class_SceneTree>`.
+
+``persistent`` option is used when packing node to :ref:`PackedScene<class_PackedScene>` and saving to file. Non-persistent groups aren't stored.
 
 .. _class_Node_method_can_process:
 

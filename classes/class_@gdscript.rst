@@ -34,7 +34,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`atan2<class_@GDScript_method_atan2>` **(** :ref:`float<class_float>` y, :ref:`float<class_float>` x **)**                                                                                                                        |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                             | :ref:`bytes2var<class_@GDScript_method_bytes2var>` **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes **)**                                                                                                                         |
+| :ref:`Variant<class_Variant>`                             | :ref:`bytes2var<class_@GDScript_method_bytes2var>` **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`bool<class_bool>` allow_objects=false **)**                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                             | :ref:`cartesian2polar<class_@GDScript_method_cartesian2polar>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                                                                    |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -52,7 +52,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`db2linear<class_@GDScript_method_db2linear>` **(** :ref:`float<class_float>` db **)**                                                                                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                 | :ref:`decimals<class_@GDScript_method_decimals>` **(** :ref:`float<class_float>` step **)**                                                                                                                                            |
+| :ref:`int<class_int>`                                     | :ref:`decimals<class_@GDScript_method_decimals>` **(** :ref:`float<class_float>` step **)**                                                                                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`dectime<class_@GDScript_method_dectime>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` amount, :ref:`float<class_float>` step **)**                                                                           |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -82,11 +82,15 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`inverse_lerp<class_@GDScript_method_inverse_lerp>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**                                                                    |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                   | :ref:`is_equal_approx<class_@GDScript_method_is_equal_approx>` **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**                                                                                                    |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                   | :ref:`is_inf<class_@GDScript_method_is_inf>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                   |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                   | :ref:`is_instance_valid<class_@GDScript_method_is_instance_valid>` **(** :ref:`Object<class_Object>` instance **)**                                                                                                                    |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                   | :ref:`is_nan<class_@GDScript_method_is_nan>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                   |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                   | :ref:`is_zero_approx<class_@GDScript_method_is_zero_approx>` **(** :ref:`float<class_float>` s **)**                                                                                                                                   |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                     | :ref:`len<class_@GDScript_method_len>` **(** :ref:`Variant<class_Variant>` var **)**                                                                                                                                                   |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -101,6 +105,8 @@ Methods
 | :ref:`float<class_float>`                                 | :ref:`max<class_@GDScript_method_max>` **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**                                                                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`min<class_@GDScript_method_min>` **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**                                                                                                                            |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                 | :ref:`move_toward<class_@GDScript_method_move_toward>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` delta **)**                                                                       |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                     | :ref:`nearest_po2<class_@GDScript_method_nearest_po2>` **(** :ref:`int<class_int>` value **)**                                                                                                                                         |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -156,7 +162,11 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`sinh<class_@GDScript_method_sinh>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                       |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                 | :ref:`smoothstep<class_@GDScript_method_smoothstep>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**                                                                        |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`sqrt<class_@GDScript_method_sqrt>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                       |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                     | :ref:`step_decimals<class_@GDScript_method_step_decimals>` **(** :ref:`float<class_float>` step **)**                                                                                                                                  |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`stepify<class_@GDScript_method_stepify>` **(** :ref:`float<class_float>` s, :ref:`float<class_float>` step **)**                                                                                                                 |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -176,7 +186,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                               | :ref:`validate_json<class_@GDScript_method_validate_json>` **(** :ref:`String<class_String>` json **)**                                                                                                                                |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>`                 | :ref:`var2bytes<class_@GDScript_method_var2bytes>` **(** :ref:`Variant<class_Variant>` var **)**                                                                                                                                       |
+| :ref:`PoolByteArray<class_PoolByteArray>`                 | :ref:`var2bytes<class_@GDScript_method_var2bytes>` **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)**                                                                                           |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                               | :ref:`var2str<class_@GDScript_method_var2str>` **(** :ref:`Variant<class_Variant>` var **)**                                                                                                                                           |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -287,7 +297,7 @@ Returns the arc sine of ``s`` in radians. Use to get the angle of sine ``s``.
 
 - void **assert** **(** :ref:`bool<class_bool>` condition **)**
 
-Assert that the ``condition`` is true. If the ``condition`` is false a fatal error is generated and the program is halted. Useful for debugging to make sure a value is always true.
+Assert that the ``condition`` is ``true`` . If the ``condition`` is ``false`` a fatal error is generated and the program is halted. Useful for debugging to make sure a value is always ``true``.
 
 ::
 
@@ -317,13 +327,15 @@ Returns the arc tangent of ``y/x`` in radians. Use to get the angle of tangent `
 
 ::
 
-    a = atan(0, -1) # a is 3.141593
+    a = atan2(0, -1) # a is 3.141593
 
 .. _class_@GDScript_method_bytes2var:
 
-- :ref:`Variant<class_Variant>` **bytes2var** **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes **)**
+- :ref:`Variant<class_Variant>` **bytes2var** **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`bool<class_bool>` allow_objects=false **)**
 
-Decodes a byte array back to a value.
+Decodes a byte array back to a value. When ``allow_objects`` is ``true`` decoding objects is allowed.
+
+**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
 
 .. _class_@GDScript_method_cartesian2polar:
 
@@ -418,14 +430,9 @@ Converts from decibels to linear energy (audio).
 
 .. _class_@GDScript_method_decimals:
 
-- :ref:`float<class_float>` **decimals** **(** :ref:`float<class_float>` step **)**
+- :ref:`int<class_int>` **decimals** **(** :ref:`float<class_float>` step **)**
 
-Returns the position of the first non-zero digit, after the decimal point.
-
-::
-
-    # n is 2
-    n = decimals(0.035)
+Deprecated alias for ":ref:`step_decimals<class_@GDScript_method_step_decimals>`".
 
 .. _class_@GDScript_method_dectime:
 
@@ -617,6 +624,12 @@ Returns a normalized value considering the given range.
 
     inverse_lerp(3, 5, 4) # returns 0.5
 
+.. _class_@GDScript_method_is_equal_approx:
+
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**
+
+Returns True/False whether ``a`` and ``b`` are approximately equal to each other.
+
 .. _class_@GDScript_method_is_inf:
 
 - :ref:`bool<class_bool>` **is_inf** **(** :ref:`float<class_float>` s **)**
@@ -634,6 +647,12 @@ Returns whether ``instance`` is a valid object (e.g. has not been deleted from m
 - :ref:`bool<class_bool>` **is_nan** **(** :ref:`float<class_float>` s **)**
 
 Returns whether ``s`` is a NaN (Not-A-Number) value.
+
+.. _class_@GDScript_method_is_zero_approx:
+
+- :ref:`bool<class_bool>` **is_zero_approx** **(** :ref:`float<class_float>` s **)**
+
+Returns True/False whether ``s`` is zero or almost zero.
 
 .. _class_@GDScript_method_len:
 
@@ -715,6 +734,18 @@ Returns the minimum of two values.
 
     min(1, 2) # returns 1
     min(-3.99, -4) # returns -4
+
+.. _class_@GDScript_method_move_toward:
+
+- :ref:`float<class_float>` **move_toward** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` delta **)**
+
+Moves ``from`` toward ``to`` by the ``delta`` value.
+
+Use a negative ``delta`` value to move away.
+
+::
+
+    move_toward(10, 5, 4) # returns 6
 
 .. _class_@GDScript_method_nearest_po2:
 
@@ -1022,6 +1053,18 @@ Returns the hyperbolic sine of ``s``.
     a = log(2.0) # returns 0.693147
     sinh(a) # returns 0.75
 
+.. _class_@GDScript_method_smoothstep:
+
+- :ref:`float<class_float>` **smoothstep** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
+
+Returns a number smoothly interpolated between the ``from`` and ``to``, based on the ``weight``. Similar to :ref:`lerp<class_@GDScript_method_lerp>`, but interpolates faster at the beginning and slower at the end.
+
+::
+
+    smoothstep(0, 2, 0.5) # returns 0.15
+    smoothstep(0, 2, 1.0) # returns 0.5
+    smoothstep(0, 2, 2.0) # returns 1.0
+
 .. _class_@GDScript_method_sqrt:
 
 - :ref:`float<class_float>` **sqrt** **(** :ref:`float<class_float>` s **)**
@@ -1031,6 +1074,21 @@ Returns the square root of ``s``.
 ::
 
     sqrt(9) # returns 3
+
+.. _class_@GDScript_method_step_decimals:
+
+- :ref:`int<class_int>` **step_decimals** **(** :ref:`float<class_float>` step **)**
+
+Returns the position of the first non-zero digit, after the decimal point.
+
+::
+
+    # n is 0
+    n = step_decimals(5)
+    # n is 4
+    n = step_decimals(1.0005)
+    # n is 9
+    n = step_decimals(0.000000005)
 
 .. _class_@GDScript_method_stepify:
 
@@ -1138,9 +1196,9 @@ Checks that ``json`` is valid JSON data. Returns empty string if valid. Returns 
 
 .. _class_@GDScript_method_var2bytes:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **var2bytes** **(** :ref:`Variant<class_Variant>` var **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **var2bytes** **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)**
 
-Encodes a variable value to a byte array.
+Encodes a variable value to a byte array. When ``full_objects`` is ``true`` encoding objects is allowed (and can potentially include code).
 
 .. _class_@GDScript_method_var2str:
 

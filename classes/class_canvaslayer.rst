@@ -21,21 +21,25 @@ Canvas drawing layer.
 Properties
 ----------
 
-+---------------------------------------+----------------------------------------------------------------------+
-| :ref:`Node<class_Node>`               | :ref:`custom_viewport<class_CanvasLayer_property_custom_viewport>`   |
-+---------------------------------------+----------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`layer<class_CanvasLayer_property_layer>`                       |
-+---------------------------------------+----------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`offset<class_CanvasLayer_property_offset>`                     |
-+---------------------------------------+----------------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`rotation<class_CanvasLayer_property_rotation>`                 |
-+---------------------------------------+----------------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`rotation_degrees<class_CanvasLayer_property_rotation_degrees>` |
-+---------------------------------------+----------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_CanvasLayer_property_scale>`                       |
-+---------------------------------------+----------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_CanvasLayer_property_transform>`               |
-+---------------------------------------+----------------------------------------------------------------------+
++---------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`               | :ref:`custom_viewport<class_CanvasLayer_property_custom_viewport>`               |
++---------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`follow_viewport_enable<class_CanvasLayer_property_follow_viewport_enable>` |
++---------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`follow_viewport_scale<class_CanvasLayer_property_follow_viewport_scale>`   |
++---------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`layer<class_CanvasLayer_property_layer>`                                   |
++---------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`offset<class_CanvasLayer_property_offset>`                                 |
++---------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`rotation<class_CanvasLayer_property_rotation>`                             |
++---------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`rotation_degrees<class_CanvasLayer_property_rotation_degrees>`             |
++---------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_CanvasLayer_property_scale>`                                   |
++---------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_CanvasLayer_property_transform>`                           |
++---------------------------------------+----------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -70,6 +74,26 @@ Property Descriptions
 +----------+----------------------------+
 
 The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``. If null, uses the default viewport instead.
+
+.. _class_CanvasLayer_property_follow_viewport_enable:
+
+- :ref:`bool<class_bool>` **follow_viewport_enable**
+
++----------+----------------------------+
+| *Setter* | set_follow_viewport(value) |
++----------+----------------------------+
+| *Getter* | is_following_viewport()    |
++----------+----------------------------+
+
+.. _class_CanvasLayer_property_follow_viewport_scale:
+
+- :ref:`float<class_float>` **follow_viewport_scale**
+
++----------+----------------------------------+
+| *Setter* | set_follow_viewport_scale(value) |
++----------+----------------------------------+
+| *Getter* | get_follow_viewport_scale()      |
++----------+----------------------------------+
 
 .. _class_CanvasLayer_property_layer:
 

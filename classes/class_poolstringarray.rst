@@ -113,5 +113,5 @@ Change the :ref:`String<class_String>` at the given index.
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Return the size of the array.
+Returns the size of the array.
 

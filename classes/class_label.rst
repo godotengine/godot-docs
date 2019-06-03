@@ -152,7 +152,7 @@ Controls the text's horizontal align. Supports left, center, right, and fill, or
 | *Getter* | has_autowrap()      |
 +----------+---------------------+
 
-If ``true``, wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. Default: false.
+If ``true``, wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. Default: ``false``.
 
 .. _class_Label_property_clip_text:
 

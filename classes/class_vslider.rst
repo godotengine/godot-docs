@@ -42,5 +42,5 @@ Theme Properties
 Description
 -----------
 
-Vertical slider. See :ref:`Slider<class_Slider>`. This one goes from left (min) to right (max).
+Vertical slider. See :ref:`Slider<class_Slider>`. This one goes from bottom (min) to top (max).
 

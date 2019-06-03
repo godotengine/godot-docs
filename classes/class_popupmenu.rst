@@ -20,6 +20,8 @@ Properties
 ----------
 
 +---------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         |
++---------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` |
 +---------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     |
@@ -178,13 +180,13 @@ Signals
 
 .. _class_PopupMenu_signal_id_focused:
 
-- **id_focused** **(** :ref:`int<class_int>` ID **)**
+- **id_focused** **(** :ref:`int<class_int>` id **)**
 
 This event is emitted when user navigated to an item of some id using ``ui_up`` or ``ui_down`` action.
 
 .. _class_PopupMenu_signal_id_pressed:
 
-- **id_pressed** **(** :ref:`int<class_int>` ID **)**
+- **id_pressed** **(** :ref:`int<class_int>` id **)**
 
 This event is emitted when an item of some id is pressed or its accelerator is activated.
 
@@ -201,6 +203,18 @@ PopupMenu is the typical Control that displays a list of options. They are popul
 
 Property Descriptions
 ---------------------
+
+.. _class_PopupMenu_property_allow_search:
+
+- :ref:`bool<class_bool>` **allow_search**
+
++----------+-------------------------+
+| *Setter* | set_allow_search(value) |
++----------+-------------------------+
+| *Getter* | get_allow_search()      |
++----------+-------------------------+
+
+If ``true``, allows to navigate ``PopupMenu`` with letter keys. Default value: ``false``.
 
 .. _class_PopupMenu_property_hide_on_checkable_item_selection:
 
@@ -321,25 +335,25 @@ Clear the popup menu, in effect removing all items.
 
 - :ref:`int<class_int>` **get_item_accelerator** **(** :ref:`int<class_int>` idx **)** const
 
-Return the accelerator of the item at index "idx". Accelerators are special combinations of keys that activate the item, no matter which control is focused.
+Returns the accelerator of the item at index "idx". Accelerators are special combinations of keys that activate the item, no matter which control is focused.
 
 .. _class_PopupMenu_method_get_item_count:
 
 - :ref:`int<class_int>` **get_item_count** **(** **)** const
 
-Return the amount of items.
+Returns the amount of items.
 
 .. _class_PopupMenu_method_get_item_icon:
 
 - :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
-Return the icon of the item at index "idx".
+Returns the icon of the item at index "idx".
 
 .. _class_PopupMenu_method_get_item_id:
 
 - :ref:`int<class_int>` **get_item_id** **(** :ref:`int<class_int>` idx **)** const
 
-Return the id of the item at index "idx".
+Returns the id of the item at index "idx".
 
 .. _class_PopupMenu_method_get_item_index:
 
@@ -351,7 +365,7 @@ Find and return the index of the item containing a given id.
 
 - :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
 
-Return the metadata of an item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`, which provides a simple way of assigning context data to items.
+Returns the metadata of an item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`, which provides a simple way of assigning context data to items.
 
 .. _class_PopupMenu_method_get_item_shortcut:
 
@@ -361,13 +375,13 @@ Return the metadata of an item, which might be of any type. You can set it with 
 
 - :ref:`String<class_String>` **get_item_submenu** **(** :ref:`int<class_int>` idx **)** const
 
-Return the submenu name of the item at index "idx".
+Returns the submenu name of the item at index "idx".
 
 .. _class_PopupMenu_method_get_item_text:
 
 - :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
 
-Return the text of the item at index "idx".
+Returns the text of the item at index "idx".
 
 .. _class_PopupMenu_method_get_item_tooltip:
 
@@ -381,31 +395,31 @@ Return the text of the item at index "idx".
 
 - :ref:`bool<class_bool>` **is_item_checkable** **(** :ref:`int<class_int>` idx **)** const
 
-Return whether the item at index "idx" is checkable in some way, i.e., whether has a checkbox or radio button. Note that checkable items just display a checkmark or radio button, but don't have any built-in checking behavior and must be checked/unchecked manually.
+Returns whether the item at index "idx" is checkable in some way, i.e., whether has a checkbox or radio button. Note that checkable items just display a checkmark or radio button, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 .. _class_PopupMenu_method_is_item_checked:
 
 - :ref:`bool<class_bool>` **is_item_checked** **(** :ref:`int<class_int>` idx **)** const
 
-Return whether the item at index "idx" is checked.
+Returns whether the item at index "idx" is checked.
 
 .. _class_PopupMenu_method_is_item_disabled:
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
 
-Return whether the item at index "idx" is disabled. When it is disabled it can't be selected, or its action invoked.
+Returns whether the item at index "idx" is disabled. When it is disabled it can't be selected, or its action invoked.
 
 .. _class_PopupMenu_method_is_item_radio_checkable:
 
 - :ref:`bool<class_bool>` **is_item_radio_checkable** **(** :ref:`int<class_int>` idx **)** const
 
-Return whether the item at index "idx" has radio-button-style checkability. Remember this is just cosmetic and you have to add the logic for checking/unchecking items in radio groups.
+Returns whether the item at index "idx" has radio-button-style checkability. Remember this is just cosmetic and you have to add the logic for checking/unchecking items in radio groups.
 
 .. _class_PopupMenu_method_is_item_separator:
 
 - :ref:`bool<class_bool>` **is_item_separator** **(** :ref:`int<class_int>` idx **)** const
 
-Return whether the item is a separator. If it is, it would be displayed as a line.
+Returns whether the item is a separator. If it is, it would be displayed as a line.
 
 .. _class_PopupMenu_method_is_item_shortcut_disabled:
 

@@ -63,13 +63,13 @@ Methods
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeItem<class_TreeItem>`                 | :ref:`get_next<class_TreeItem_method_get_next>` **(** **)**                                                                                                                                                                                             |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TreeItem<class_TreeItem>`                 | :ref:`get_next_visible<class_TreeItem_method_get_next_visible>` **(** **)**                                                                                                                                                                             |
+| :ref:`TreeItem<class_TreeItem>`                 | :ref:`get_next_visible<class_TreeItem_method_get_next_visible>` **(** :ref:`bool<class_bool>` wrap=false **)**                                                                                                                                          |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeItem<class_TreeItem>`                 | :ref:`get_parent<class_TreeItem_method_get_parent>` **(** **)**                                                                                                                                                                                         |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeItem<class_TreeItem>`                 | :ref:`get_prev<class_TreeItem_method_get_prev>` **(** **)**                                                                                                                                                                                             |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TreeItem<class_TreeItem>`                 | :ref:`get_prev_visible<class_TreeItem_method_get_prev_visible>` **(** **)**                                                                                                                                                                             |
+| :ref:`TreeItem<class_TreeItem>`                 | :ref:`get_prev_visible<class_TreeItem_method_get_prev_visible>` **(** :ref:`bool<class_bool>` wrap=false **)**                                                                                                                                          |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`get_range<class_TreeItem_method_get_range>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                                        |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -326,9 +326,11 @@ Returns the next TreeItem in the tree.
 
 .. _class_TreeItem_method_get_next_visible:
 
-- :ref:`TreeItem<class_TreeItem>` **get_next_visible** **(** **)**
+- :ref:`TreeItem<class_TreeItem>` **get_next_visible** **(** :ref:`bool<class_bool>` wrap=false **)**
 
 Returns the next visible TreeItem in the tree.
+
+If ``wrap`` is enabled, the method will wrap around to the first visible element in the tree when called on the last visible element, otherwise it returns ``null``.
 
 .. _class_TreeItem_method_get_parent:
 
@@ -344,9 +346,11 @@ Returns the previous TreeItem in the tree.
 
 .. _class_TreeItem_method_get_prev_visible:
 
-- :ref:`TreeItem<class_TreeItem>` **get_prev_visible** **(** **)**
+- :ref:`TreeItem<class_TreeItem>` **get_prev_visible** **(** :ref:`bool<class_bool>` wrap=false **)**
 
 Returns the previous visible TreeItem in the tree.
+
+If ``wrap`` is enabled, the method will wrap around to the last visible element in the tree when called on the first visible element, otherwise it returns ``null``.
 
 .. _class_TreeItem_method_get_range:
 
@@ -472,7 +476,7 @@ Sets the given column's custom color.
 
 Sets the given column's custom draw callback to ``callback`` method on ``object``.
 
-The ``callback`` should accept two arguments: the :ref:`TreeItem<class_TreeItem>` that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
+The ``callback`` should accept two arguments: the ``TreeItem`` that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
 
 .. _class_TreeItem_method_set_editable:
 

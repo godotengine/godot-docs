@@ -19,13 +19,9 @@ Provides an opaque background for :ref:`Control<class_Control>` children.
 Theme Properties
 ----------------
 
-+---------------------------------+---------+
-| :ref:`StyleBox<class_StyleBox>` | panel   |
-+---------------------------------+---------+
-| :ref:`StyleBox<class_StyleBox>` | panelf  |
-+---------------------------------+---------+
-| :ref:`StyleBox<class_StyleBox>` | panelnc |
-+---------------------------------+---------+
++---------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>` | panel |
++---------------------------------+-------+
 
 Description
 -----------

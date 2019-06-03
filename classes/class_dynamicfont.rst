@@ -84,6 +84,13 @@ Description
 
 DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_BitmapFont>`. This trades the faster loading time of :ref:`BitmapFont<class_BitmapFont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_DynamicFontData>` is used for referencing the font file paths.
 
+::
+
+    var dynamic_font = DynamicFont.new()
+    dynamic_font.font_data = load("res://BarlowCondensed-Bold.ttf")
+    dynamic_font.size = 64
+    $"Label".set("custom_fonts/font", dynamic_font)
+
 Property Descriptions
 ---------------------
 

@@ -17,49 +17,51 @@ Global scope constants and variables.
 Properties
 ----------
 
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`ARVRServer<class_ARVRServer>`                 | :ref:`ARVRServer<class_@GlobalScope_property_ARVRServer>`                 |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`AudioServer<class_AudioServer>`               | :ref:`AudioServer<class_@GlobalScope_property_AudioServer>`               |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`ClassDB<class_ClassDB>`                       | :ref:`ClassDB<class_@GlobalScope_property_ClassDB>`                       |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`Engine<class_Engine>`                         | :ref:`Engine<class_@GlobalScope_property_Engine>`                         |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`Geometry<class_Geometry>`                     | :ref:`Geometry<class_@GlobalScope_property_Geometry>`                     |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`IP<class_IP>`                                 | :ref:`IP<class_@GlobalScope_property_IP>`                                 |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`Input<class_Input>`                           | :ref:`Input<class_@GlobalScope_property_Input>`                           |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`InputMap<class_InputMap>`                     | :ref:`InputMap<class_@GlobalScope_property_InputMap>`                     |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`JSON<class_JSON>`                             | :ref:`JSON<class_@GlobalScope_property_JSON>`                             |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`JavaScript<class_JavaScript>`                 | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                 |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`Reference<class_Reference>`                   | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                   |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`OS<class_OS>`                                 | :ref:`OS<class_@GlobalScope_property_OS>`                                 |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`Performance<class_Performance>`               | :ref:`Performance<class_@GlobalScope_property_Performance>`               |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`Physics2DServer<class_Physics2DServer>`       | :ref:`Physics2DServer<class_@GlobalScope_property_Physics2DServer>`       |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`PhysicsServer<class_PhysicsServer>`           | :ref:`PhysicsServer<class_@GlobalScope_property_PhysicsServer>`           |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`ProjectSettings<class_ProjectSettings>`       | :ref:`ProjectSettings<class_@GlobalScope_property_ProjectSettings>`       |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`ResourceLoader<class_ResourceLoader>`         | :ref:`ResourceLoader<class_@GlobalScope_property_ResourceLoader>`         |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`ResourceSaver<class_ResourceSaver>`           | :ref:`ResourceSaver<class_@GlobalScope_property_ResourceSaver>`           |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`TranslationServer<class_TranslationServer>`   | :ref:`TranslationServer<class_@GlobalScope_property_TranslationServer>`   |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`VisualScriptEditor<class_VisualScriptEditor>` | :ref:`VisualScriptEditor<class_@GlobalScope_property_VisualScriptEditor>` |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`VisualServer<class_VisualServer>`             | :ref:`VisualServer<class_@GlobalScope_property_VisualServer>`             |
-+-----------------------------------------------------+---------------------------------------------------------------------------+
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`ARVRServer<class_ARVRServer>`                                       | :ref:`ARVRServer<class_@GlobalScope_property_ARVRServer>`                           |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`AudioServer<class_AudioServer>`                                     | :ref:`AudioServer<class_@GlobalScope_property_AudioServer>`                         |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`ClassDB<class_ClassDB>`                                             | :ref:`ClassDB<class_@GlobalScope_property_ClassDB>`                                 |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Engine<class_Engine>`                                               | :ref:`Engine<class_@GlobalScope_property_Engine>`                                   |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Geometry<class_Geometry>`                                           | :ref:`Geometry<class_@GlobalScope_property_Geometry>`                               |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`IP<class_IP>`                                                       | :ref:`IP<class_@GlobalScope_property_IP>`                                           |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Input<class_Input>`                                                 | :ref:`Input<class_@GlobalScope_property_Input>`                                     |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`InputMap<class_InputMap>`                                           | :ref:`InputMap<class_@GlobalScope_property_InputMap>`                               |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`JSON<class_JSON>`                                                   | :ref:`JSON<class_@GlobalScope_property_JSON>`                                       |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`JavaScript<class_JavaScript>`                                       | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                           |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Reference<class_Reference>`                                         | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>` | :ref:`NavigationMeshGenerator<class_@GlobalScope_property_NavigationMeshGenerator>` |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`OS<class_OS>`                                                       | :ref:`OS<class_@GlobalScope_property_OS>`                                           |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Performance<class_Performance>`                                     | :ref:`Performance<class_@GlobalScope_property_Performance>`                         |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Physics2DServer<class_Physics2DServer>`                             | :ref:`Physics2DServer<class_@GlobalScope_property_Physics2DServer>`                 |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`PhysicsServer<class_PhysicsServer>`                                 | :ref:`PhysicsServer<class_@GlobalScope_property_PhysicsServer>`                     |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`ProjectSettings<class_ProjectSettings>`                             | :ref:`ProjectSettings<class_@GlobalScope_property_ProjectSettings>`                 |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`ResourceLoader<class_ResourceLoader>`                               | :ref:`ResourceLoader<class_@GlobalScope_property_ResourceLoader>`                   |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`ResourceSaver<class_ResourceSaver>`                                 | :ref:`ResourceSaver<class_@GlobalScope_property_ResourceSaver>`                     |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`TranslationServer<class_TranslationServer>`                         | :ref:`TranslationServer<class_@GlobalScope_property_TranslationServer>`             |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`VisualScriptEditor<class_VisualScriptEditor>`                       | :ref:`VisualScriptEditor<class_@GlobalScope_property_VisualScriptEditor>`           |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`VisualServer<class_VisualServer>`                                   | :ref:`VisualServer<class_@GlobalScope_property_VisualServer>`                       |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -2154,6 +2156,10 @@ Property Descriptions
 - :ref:`Reference<class_Reference>` **Marshalls**
 
 :ref:`Marshalls<class_Marshalls>` singleton
+
+.. _class_@GlobalScope_property_NavigationMeshGenerator:
+
+- :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>` **NavigationMeshGenerator**
 
 .. _class_@GlobalScope_property_OS:
 

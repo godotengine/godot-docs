@@ -52,7 +52,7 @@ Using clang-format locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First of all, you will need to install clang-format. As of now, you need to use
-**clang-format 6.x** to be compatible with Godot's format. Later versions might
+**clang-format 8.x** to be compatible with Godot's format. Later versions might
 be suitable, but previous versions had bugs that will cause formatting changes
 to the current code base.
 

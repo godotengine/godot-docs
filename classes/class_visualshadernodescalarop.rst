@@ -46,6 +46,8 @@ Enumerations
 
 .. _class_VisualShaderNodeScalarOp_constant_OP_ATAN2:
 
+.. _class_VisualShaderNodeScalarOp_constant_OP_STEP:
+
 enum **Operator**:
 
 - **OP_ADD** = **0**
@@ -65,6 +67,8 @@ enum **Operator**:
 - **OP_MIN** = **7**
 
 - **OP_ATAN2** = **8**
+
+- **OP_STEP** = **9**
 
 Property Descriptions
 ---------------------

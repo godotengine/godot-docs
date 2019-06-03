@@ -40,6 +40,64 @@ Enumerations
 
 .. _class_VisualShaderNodeVectorFunc_constant_FUNC_HSV2RGB:
 
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ABS:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ACOS:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ACOSH:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ASIN:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ASINH:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ATAN:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ATANH:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_CEIL:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_COS:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_COSH:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_DEGREES:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_EXP:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_EXP2:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_FLOOR:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_FRAC:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_INVERSE_SQRT:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_LOG:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_LOG2:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_RADIANS:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ROUND:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ROUNDEVEN:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SIGN:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SIN:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SINH:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SQRT:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_TAN:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_TANH:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_TRUNC:
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ONEMINUS:
+
 enum **Function**:
 
 - **FUNC_NORMALIZE** = **0**
@@ -53,6 +111,64 @@ enum **Function**:
 - **FUNC_RGB2HSV** = **4**
 
 - **FUNC_HSV2RGB** = **5**
+
+- **FUNC_ABS** = **6**
+
+- **FUNC_ACOS** = **7**
+
+- **FUNC_ACOSH** = **8**
+
+- **FUNC_ASIN** = **9**
+
+- **FUNC_ASINH** = **10**
+
+- **FUNC_ATAN** = **11**
+
+- **FUNC_ATANH** = **12**
+
+- **FUNC_CEIL** = **13**
+
+- **FUNC_COS** = **14**
+
+- **FUNC_COSH** = **15**
+
+- **FUNC_DEGREES** = **16**
+
+- **FUNC_EXP** = **17**
+
+- **FUNC_EXP2** = **18**
+
+- **FUNC_FLOOR** = **19**
+
+- **FUNC_FRAC** = **20**
+
+- **FUNC_INVERSE_SQRT** = **21**
+
+- **FUNC_LOG** = **22**
+
+- **FUNC_LOG2** = **23**
+
+- **FUNC_RADIANS** = **24**
+
+- **FUNC_ROUND** = **25**
+
+- **FUNC_ROUNDEVEN** = **26**
+
+- **FUNC_SIGN** = **27**
+
+- **FUNC_SIN** = **28**
+
+- **FUNC_SINH** = **29**
+
+- **FUNC_SQRT** = **30**
+
+- **FUNC_TAN** = **31**
+
+- **FUNC_TANH** = **32**
+
+- **FUNC_TRUNC** = **33**
+
+- **FUNC_ONEMINUS** = **34**
 
 Property Descriptions
 ---------------------

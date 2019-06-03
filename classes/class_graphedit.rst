@@ -267,7 +267,7 @@ Remove the connection between 'from_port' slot of 'from' GraphNode and 'to_port'
 
 - :ref:`Array<class_Array>` **get_connection_list** **(** **)** const
 
-Return an Array containing the list of connections. A connection consists in a structure of the form {from_port: 0, from: "GraphNode name 0", to_port: 1, to: "GraphNode name 1" }
+Returns an Array containing the list of connections. A connection consists in a structure of the form {from_port: 0, from: "GraphNode name 0", to_port: 1, to: "GraphNode name 1" }
 
 .. _class_GraphEdit_method_get_zoom_hbox:
 
@@ -277,7 +277,7 @@ Return an Array containing the list of connections. A connection consists in a s
 
 - :ref:`bool<class_bool>` **is_node_connected** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
-Return true if the 'from_port' slot of 'from' GraphNode is connected to the 'to_port' slot of 'to' GraphNode.
+Returns ``true`` if the 'from_port' slot of 'from' GraphNode is connected to the 'to_port' slot of 'to' GraphNode.
 
 .. _class_GraphEdit_method_is_valid_connection_type:
 

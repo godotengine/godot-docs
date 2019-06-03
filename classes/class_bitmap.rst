@@ -51,13 +51,13 @@ Method Descriptions
 
 - void **create** **(** :ref:`Vector2<class_Vector2>` size **)**
 
-Creates a bitmap with the specified size, filled with false.
+Creates a bitmap with the specified size, filled with ``false``.
 
 .. _class_BitMap_method_create_from_image_alpha:
 
 - void **create_from_image_alpha** **(** :ref:`Image<class_Image>` image, :ref:`float<class_float>` threshold=0.1 **)**
 
-Creates a bitmap that matches the given image dimensions, every element of the bitmap is set to false if the alpha value of the image at that position is equal to ``threshold`` or less, and true in other case.
+Creates a bitmap that matches the given image dimensions, every element of the bitmap is set to ``false`` if the alpha value of the image at that position is equal to ``threshold`` or less, and ``true`` in other case.
 
 .. _class_BitMap_method_get_bit:
 
@@ -75,7 +75,7 @@ Returns bitmap's dimensions.
 
 - :ref:`int<class_int>` **get_true_bit_count** **(** **)** const
 
-Returns the amount of bitmap elements that are set to true.
+Returns the amount of bitmap elements that are set to ``true``.
 
 .. _class_BitMap_method_grow_mask:
 

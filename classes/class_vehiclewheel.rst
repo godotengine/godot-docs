@@ -47,6 +47,8 @@ Methods
 -------
 
 +---------------------------+---------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_rpm<class_VehicleWheel_method_get_rpm>` **(** **)** const             |
++---------------------------+---------------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`get_skidinfo<class_VehicleWheel_method_get_skidinfo>` **(** **)** const   |
 +---------------------------+---------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`is_in_contact<class_VehicleWheel_method_is_in_contact>` **(** **)** const |
@@ -130,7 +132,7 @@ This is the distance the suspension can travel. As Godot measures are in meters 
 | *Getter* | is_used_as_steering()      |
 +----------+----------------------------+
 
-If true this wheel will be turned when the car steers.
+If ``true`` this wheel will be turned when the car steers.
 
 .. _class_VehicleWheel_property_use_as_traction:
 
@@ -142,7 +144,7 @@ If true this wheel will be turned when the car steers.
 | *Getter* | is_used_as_traction()      |
 +----------+----------------------------+
 
-If true this wheel transfers engine force to the ground to propel the vehicle forward.
+If ``true`` this wheel transfers engine force to the ground to propel the vehicle forward.
 
 .. _class_VehicleWheel_property_wheel_friction_slip:
 
@@ -197,6 +199,10 @@ This value effects the roll of your vehicle. If set to 0.0 for all wheels your v
 Method Descriptions
 -------------------
 
+.. _class_VehicleWheel_method_get_rpm:
+
+- :ref:`float<class_float>` **get_rpm** **(** **)** const
+
 .. _class_VehicleWheel_method_get_skidinfo:
 
 - :ref:`float<class_float>` **get_skidinfo** **(** **)** const
@@ -207,5 +213,5 @@ Returns a value between 0.0 and 1.0 that indicates whether this wheel is skiddin
 
 - :ref:`bool<class_bool>` **is_in_contact** **(** **)** const
 
-Returns true if this wheel is in contact with a surface.
+Returns ``true`` if this wheel is in contact with a surface.
 

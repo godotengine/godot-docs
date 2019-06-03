@@ -22,6 +22,8 @@ Methods
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`_export_begin<class_EditorExportPlugin_method__export_begin>` **(** :ref:`PoolStringArray<class_PoolStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** virtual |
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`_export_end<class_EditorExportPlugin_method__export_end>` **(** **)** virtual                                                                                                                                                             |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`_export_file<class_EditorExportPlugin_method__export_file>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type, :ref:`PoolStringArray<class_PoolStringArray>` features **)** virtual                                |
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`add_file<class_EditorExportPlugin_method_add_file>` **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` file, :ref:`bool<class_bool>` remap **)**                                                           |
@@ -47,6 +49,10 @@ Method Descriptions
 .. _class_EditorExportPlugin_method__export_begin:
 
 - void **_export_begin** **(** :ref:`PoolStringArray<class_PoolStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** virtual
+
+.. _class_EditorExportPlugin_method__export_end:
+
+- void **_export_end** **(** **)** virtual
 
 .. _class_EditorExportPlugin_method__export_file:
 

@@ -89,7 +89,12 @@ Methods
 Description
 -----------
 
-Direct access object to a physics body in the :ref:`Physics2DServer<class_Physics2DServer>`. This object is passed via the direct state callback of rigid/character bodies, and is intended for changing the direct state of that body.
+Provides direct access to a physics body in the :ref:`Physics2DServer<class_Physics2DServer>`, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid/character bodies, and is intended for changing the direct state of that body. See :ref:`RigidBody2D._integrate_forces<class_RigidBody2D_method__integrate_forces>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/ray-casting`
 
 Property Descriptions
 ---------------------
@@ -104,7 +109,7 @@ Property Descriptions
 | *Getter* | get_angular_velocity()      |
 +----------+-----------------------------+
 
-The angular velocity of the body.
+The body's rotational velocity.
 
 .. _class_Physics2DDirectBodyState_property_inverse_inertia:
 
@@ -136,7 +141,7 @@ The inverse of the mass of the body.
 | *Getter* | get_linear_velocity()      |
 +----------+----------------------------+
 
-The linear velocity of the body.
+The body's linear velocity.
 
 .. _class_Physics2DDirectBodyState_property_sleeping:
 
@@ -148,7 +153,7 @@ The linear velocity of the body.
 | *Getter* | is_sleeping()          |
 +----------+------------------------+
 
-``true`` if this body is currently sleeping (not active).
+If ``true``, this body is currently sleeping (not active).
 
 .. _class_Physics2DDirectBodyState_property_step:
 
@@ -200,7 +205,7 @@ The rate at which the body stops moving, if there are not any other forces movin
 | *Getter* | get_transform()      |
 +----------+----------------------+
 
-The transformation matrix of the body.
+The body's transformation matrix.
 
 Method Descriptions
 -------------------
@@ -209,101 +214,113 @@ Method Descriptions
 
 - void **add_central_force** **(** :ref:`Vector2<class_Vector2>` force **)**
 
+Adds a constant directional force without affecting rotation.
+
 .. _class_Physics2DDirectBodyState_method_add_force:
 
 - void **add_force** **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` force **)**
+
+Adds a positioned force to the body. Both the force and the offset from the body origin are in global coordinates.
 
 .. _class_Physics2DDirectBodyState_method_add_torque:
 
 - void **add_torque** **(** :ref:`float<class_float>` torque **)**
 
+Adds a constant rotational force.
+
 .. _class_Physics2DDirectBodyState_method_apply_central_impulse:
 
 - void **apply_central_impulse** **(** :ref:`Vector2<class_Vector2>` impulse **)**
+
+Applies a directional impulse without affecting rotation.
 
 .. _class_Physics2DDirectBodyState_method_apply_impulse:
 
 - void **apply_impulse** **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` impulse **)**
 
+Applies a positioned impulse to the body. An impulse is time independent! Applying an impulse every frame would result in a framerate dependent force. For this reason it should only be used when simulating one-time impacts (use the "_force" functions otherwise). The offset uses the rotation of the global coordinate system, but is centered at the object's origin.
+
 .. _class_Physics2DDirectBodyState_method_apply_torque_impulse:
 
 - void **apply_torque_impulse** **(** :ref:`float<class_float>` impulse **)**
+
+Applies a rotational impulse to the body.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider:
 
 - :ref:`RID<class_RID>` **get_contact_collider** **(** :ref:`int<class_int>` contact_idx **)** const
 
-Return the :ref:`RID<class_RID>` of the collider.
+Returns the collider's :ref:`RID<class_RID>`.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_id:
 
 - :ref:`int<class_int>` **get_contact_collider_id** **(** :ref:`int<class_int>` contact_idx **)** const
 
-Return the object id of the collider.
+Returns the collider's object id.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_object:
 
 - :ref:`Object<class_Object>` **get_contact_collider_object** **(** :ref:`int<class_int>` contact_idx **)** const
 
-Return the collider object, this depends on how it was created (will return a scene node if such was used to create it).
+Returns the collider object. This depends on how it was created (will return a scene node if such was used to create it).
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_position:
 
 - :ref:`Vector2<class_Vector2>` **get_contact_collider_position** **(** :ref:`int<class_int>` contact_idx **)** const
 
-Return the contact position in the collider.
+Returns the contact position in the collider.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_shape:
 
 - :ref:`int<class_int>` **get_contact_collider_shape** **(** :ref:`int<class_int>` contact_idx **)** const
 
-Return the collider shape index.
+Returns the collider's shape index.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_shape_metadata:
 
 - :ref:`Variant<class_Variant>` **get_contact_collider_shape_metadata** **(** :ref:`int<class_int>` contact_idx **)** const
 
-Return the metadata of the collided shape. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
+Returns the collided shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_collider_velocity_at_position:
 
 - :ref:`Vector2<class_Vector2>` **get_contact_collider_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** const
 
-Return the linear velocity vector at contact point of the collider.
+Returns the linear velocity vector at the collider's contact point.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_count:
 
 - :ref:`int<class_int>` **get_contact_count** **(** **)** const
 
-Return the amount of contacts this body has with other bodies. Note that by default this returns 0 unless bodies are configured to log contacts.
+Returns the number of contacts this body has with other bodies. Note that by default this returns 0 unless bodies are configured to log contacts. See :ref:`RigidBody2D.contact_monitor<class_RigidBody2D_property_contact_monitor>`.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_local_normal:
 
 - :ref:`Vector2<class_Vector2>` **get_contact_local_normal** **(** :ref:`int<class_int>` contact_idx **)** const
 
-Return the local normal (of this body) of the contact point.
+Returns the local normal at the contact point.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_local_position:
 
 - :ref:`Vector2<class_Vector2>` **get_contact_local_position** **(** :ref:`int<class_int>` contact_idx **)** const
 
-Return the local position (of this body) of the contact point.
+Returns the local position of the contact point.
 
 .. _class_Physics2DDirectBodyState_method_get_contact_local_shape:
 
 - :ref:`int<class_int>` **get_contact_local_shape** **(** :ref:`int<class_int>` contact_idx **)** const
 
-Return the local shape index of the collision.
+Returns the local shape index of the collision.
 
 .. _class_Physics2DDirectBodyState_method_get_space_state:
 
 - :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **get_space_state** **(** **)**
 
-Return the current state of space, useful for queries.
+Returns the current state of the space, useful for queries.
 
 .. _class_Physics2DDirectBodyState_method_integrate_forces:
 
 - void **integrate_forces** **(** **)**
 
-Call the built-in force integration code.
+Calls the built-in force integration code.
 

@@ -334,7 +334,7 @@ Example of looking around, FPS style:
 
     public override void _Input(InputEvent @event)
     {
-        if (mouseMotion is InputEventMouseMotion mouseMotion)
+        if (@event is InputEventMouseMotion mouseMotion)
         {
             // modify accumulated mouse rotation
             _rotationX += mouseMotion.Relative.x * LookAroundSpeed;
@@ -374,7 +374,7 @@ Converting a rotation to quaternion is straightforward.
 
     // Convert basis to quaternion, keep in mind scale is lost
     var a = transform.basis.Quat();
-    var b = transform.basis.Quat();
+    var b = transform2.basis.Quat();
     // Interpolate using spherical-linear interpolation (SLERP).
     var c = a.Slerp(b, 0.5f); // find halfway point between a and b
     // Apply back

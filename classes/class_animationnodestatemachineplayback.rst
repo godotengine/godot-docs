@@ -14,7 +14,7 @@ AnimationNodeStateMachinePlayback
 Brief Description
 -----------------
 
-
+Playback control for AnimationNodeStateMachine.
 
 Methods
 -------
@@ -33,12 +33,24 @@ Methods
 | void                                          | :ref:`travel<class_AnimationNodeStateMachinePlayback_method_travel>` **(** :ref:`String<class_String>` to_node **)** |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines created with :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`. Retrieve with ``$AnimationTree.get("parameters/playback")``. Example:
+
+::
+
+    var state_machine = $AnimationTree.get("parameters/playback")
+    state_machine.travel("some_state")
+
 Method Descriptions
 -------------------
 
 .. _class_AnimationNodeStateMachinePlayback_method_get_current_node:
 
 - :ref:`String<class_String>` **get_current_node** **(** **)** const
+
+Returns the currently playing animation state.
 
 .. _class_AnimationNodeStateMachinePlayback_method_get_travel_path:
 
@@ -48,15 +60,23 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
+Returns ``true`` if an animation is playing.
+
 .. _class_AnimationNodeStateMachinePlayback_method_start:
 
 - void **start** **(** :ref:`String<class_String>` node **)**
+
+Starts playing the given animation.
 
 .. _class_AnimationNodeStateMachinePlayback_method_stop:
 
 - void **stop** **(** **)**
 
+Stops the currently playing animation.
+
 .. _class_AnimationNodeStateMachinePlayback_method_travel:
 
 - void **travel** **(** :ref:`String<class_String>` to_node **)**
+
+Transitions from the current state to another one, following the shortest path.
 

@@ -53,7 +53,7 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_line<class_CanvasItem_method_draw_line>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                            |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`draw_mesh<class_CanvasItem_method_draw_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**                                                                                                                                                                                                               |
+| void                                  | :ref:`draw_mesh<class_CanvasItem_method_draw_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null, :ref:`Transform2D<class_Transform2D>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ), :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**                                                                      |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -190,7 +190,7 @@ enum **BlendMode**:
 
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
 
-- **BLEND_MODE_DISABLED** = **5** --- Disable blending mode. Colors including alpha are written as is. Only applicable for render targets with a transparent background. No lighting will be applied.
+- **BLEND_MODE_DISABLED** = **5** --- Disable blending mode. Colors including alpha are written as-is. Only applicable for render targets with a transparent background. No lighting will be applied.
 
 Constants
 ---------
@@ -205,26 +205,26 @@ Constants
 
 .. _class_CanvasItem_constant_NOTIFICATION_EXIT_CANVAS:
 
-- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Canvas item transform has changed. Notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>` or :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
+- **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- The CanvasItem's transform has changed. This notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>` or :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
 
-- **NOTIFICATION_DRAW** = **30** --- CanvasItem is requested to draw.
+- **NOTIFICATION_DRAW** = **30** --- The CanvasItem is requested to draw.
 
-- **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- Canvas item visibility has changed.
+- **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- The CanvasItem's visibility has changed.
 
-- **NOTIFICATION_ENTER_CANVAS** = **32** --- Canvas item has entered the canvas.
+- **NOTIFICATION_ENTER_CANVAS** = **32** --- The CanvasItem has entered the canvas.
 
-- **NOTIFICATION_EXIT_CANVAS** = **33** --- Canvas item has exited the canvas.
+- **NOTIFICATION_EXIT_CANVAS** = **33** --- The CanvasItem has exited the canvas.
 
 Description
 -----------
 
-Base class of anything 2D. Canvas items are laid out in a tree and children inherit and extend the transform of their parent. CanvasItem is extended by :ref:`Control<class_Control>`, for anything GUI related, and by :ref:`Node2D<class_Node2D>` for anything 2D engine related.
+Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. CanvasItem is extended by :ref:`Control<class_Control>` for anything GUI-related, and by :ref:`Node2D<class_Node2D>` for anything related to the 2D engine.
 
-Any CanvasItem can draw. For this, the "update" function must be called, then NOTIFICATION_DRAW will be received on idle time to request redraw. Because of this, canvas items don't need to be redraw on every frame, improving the performance significantly. Several functions for drawing on the CanvasItem are provided (see draw\_\* functions). They can only be used inside the notification, signal or _draw() overrides function, though.
+Any CanvasItem can draw. For this, :ref:`update<class_CanvasItem_method_update>` must be called, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the CanvasItem are provided (see ``draw_*`` functions). However, they can only be used inside the :ref:`Object._notification<class_Object_method__notification>`, signal or :ref:`_draw<class_CanvasItem_method__draw>` virtual functions.
 
-Canvas items are draw in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything (this can be changed per item though).
+Canvas items are drawn in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything. This behavior can be changed on a per-item basis.
 
-Canvas items can also be hidden (hiding also their subtree). They provide many means for changing standard parameters such as opacity (for it and the subtree) and self opacity, blend mode.
+A CanvasItem can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode.
 
 Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
 
@@ -326,7 +326,7 @@ If ``true``, the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_propert
 | *Getter* | is_visible()       |
 +----------+--------------------+
 
-If ``true``, this ``CanvasItem`` is drawn. Default value: ``true``. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple popup\*() functions instead.
+If ``true``, this ``CanvasItem`` is drawn. Default value: ``true``. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
 Method Descriptions
 -------------------
@@ -341,7 +341,7 @@ Called (if exists) to draw the canvas item.
 
 - :ref:`float<class_float>` **draw_char** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` char, :ref:`String<class_String>` next, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**
 
-Draws a string character using a custom font. Returns the advance, depending on the char width and kerning with an optional next char.
+Draws a string character using a custom font. Returns the advance, depending on the character width and kerning with an optional next character.
 
 .. _class_CanvasItem_method_draw_circle:
 
@@ -363,13 +363,13 @@ Draws a line from a 2D point to another, with a given color and width. It can be
 
 .. _class_CanvasItem_method_draw_mesh:
 
-- void **draw_mesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**
+- void **draw_mesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null, :ref:`Transform2D<class_Transform2D>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ), :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**
 
 .. _class_CanvasItem_method_draw_multiline:
 
 - void **draw_multiline** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws multiple, parallel lines with a uniform ``color`` and ``width`` and optional antialiasing.
+Draws multiple, parallel lines with a uniform ``color``. ``width`` and ``antialiased`` are currently not implemented and have no effect.
 
 .. _class_CanvasItem_method_draw_multiline_colors:
 
@@ -403,7 +403,7 @@ Draws interconnected line segments with a uniform ``width``, segment-by-segment 
 
 - void **draw_primitive** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs, :ref:`Texture<class_Texture>` texture=null, :ref:`float<class_float>` width=1.0, :ref:`Texture<class_Texture>` normal_map=null **)**
 
-Draws a custom primitive, 1 point for a point, 2 points for a line, 3 points for a triangle and 4 points for a quad.
+Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle and 4 points for a quad.
 
 .. _class_CanvasItem_method_draw_rect:
 
@@ -445,13 +445,13 @@ Draws a texture at a given position.
 
 - void **draw_texture_rect** **(** :ref:`Texture<class_Texture>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)**
 
-Draws a textured rectangle at a given position, optionally modulated by a color. Transpose swaps the x and y coordinates when reading the texture.
+Draws a textured rectangle at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped.
 
 .. _class_CanvasItem_method_draw_texture_rect_region:
 
 - void **draw_texture_rect_region** **(** :ref:`Texture<class_Texture>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)**
 
-Draws a textured rectangle region at a given position, optionally modulated by a color. Transpose swaps the x and y coordinates when reading the texture.
+Draws a textured rectangle region at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped.
 
 .. _class_CanvasItem_method_force_update_transform:
 
@@ -461,13 +461,13 @@ Draws a textured rectangle region at a given position, optionally modulated by a
 
 - :ref:`RID<class_RID>` **get_canvas** **(** **)** const
 
-Return the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this item is in.
+Returns the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this item is in.
 
 .. _class_CanvasItem_method_get_canvas_item:
 
 - :ref:`RID<class_RID>` **get_canvas_item** **(** **)** const
 
-Return the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for this item.
+Returns the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for this item.
 
 .. _class_CanvasItem_method_get_canvas_transform:
 
@@ -527,7 +527,7 @@ Get the :ref:`World2D<class_World2D>` where this item is in.
 
 - void **hide** **(** **)**
 
-Hide the CanvasItem currently visible.
+Hide the CanvasItem if it's currently visible.
 
 .. _class_CanvasItem_method_is_local_transform_notification_enabled:
 
@@ -539,7 +539,7 @@ Returns ``true`` if local transform notifications are communicated to children.
 
 - :ref:`bool<class_bool>` **is_set_as_toplevel** **(** **)** const
 
-Return if set as toplevel. See :ref:`set_as_toplevel<class_CanvasItem_method_set_as_toplevel>`.
+Returns ``true`` if the node is set as top-level. See :ref:`set_as_toplevel<class_CanvasItem_method_set_as_toplevel>`.
 
 .. _class_CanvasItem_method_is_transform_notification_enabled:
 
@@ -569,7 +569,7 @@ Transformations issued by ``event``'s inputs are applied in local space instead 
 
 - void **set_as_toplevel** **(** :ref:`bool<class_bool>` enable **)**
 
-Sets as top level. This means that it will not inherit transform from parent canvas items.
+If ``enable`` is ``true``, the node won't inherit its transform from parent canvas items.
 
 .. _class_CanvasItem_method_set_notify_local_transform:
 
@@ -587,11 +587,11 @@ If ``enable`` is ``true``, children will be updated with global transform data.
 
 - void **show** **(** **)**
 
-Show the CanvasItem currently hidden. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple popup\*() functions instead.
+Show the CanvasItem if it's currently hidden. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
 .. _class_CanvasItem_method_update:
 
 - void **update** **(** **)**
 
-Queue the CanvasItem for update. ``NOTIFICATION_DRAW`` will be called on idle time to request redraw.
+Queue the CanvasItem for update. :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be called on idle time to request redraw.
 

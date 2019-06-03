@@ -135,7 +135,7 @@ IDG control URL.
 | *Getter* | get_igd_our_addr()      |
 +----------+-------------------------+
 
-Address of the local machine in the network connecting it to this :ref:`UPNPDevice<class_UPNPDevice>`.
+Address of the local machine in the network connecting it to this ``UPNPDevice``.
 
 .. _class_UPNPDevice_property_igd_service_type:
 
@@ -180,7 +180,7 @@ Method Descriptions
 
 - :ref:`int<class_int>` **add_port_mapping** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const
 
-Adds a port mapping to forward the given external port on this :ref:`UPNPDevice<class_UPNPDevice>` for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_method_add_port_mapping>`.
+Adds a port mapping to forward the given external port on this ``UPNPDevice`` for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_method_add_port_mapping>`.
 
 .. _class_UPNPDevice_method_delete_port_mapping:
 
@@ -198,5 +198,5 @@ Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentiall
 
 - :ref:`String<class_String>` **query_external_address** **(** **)** const
 
-Returns the external IP address of this :ref:`UPNPDevice<class_UPNPDevice>` or an empty string.
+Returns the external IP address of this ``UPNPDevice`` or an empty string.
 

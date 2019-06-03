@@ -105,5 +105,5 @@ Change the int at the given index.
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Return the array size.
+Returns the array size.
 

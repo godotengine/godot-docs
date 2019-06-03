@@ -274,7 +274,7 @@ If set on a :ref:`Popup<class_Popup>` node instance, a popup menu icon appears i
 
 - void **set_tab_disabled** **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**
 
-If ``disabled`` is false, hides the tab at index ``tab_idx``. Note that its title text will remain, unless also removed with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
+If ``disabled`` is ``false``, hides the tab at index ``tab_idx``. Note that its title text will remain, unless also removed with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
 
 .. _class_TabContainer_method_set_tab_icon:
 

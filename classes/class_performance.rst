@@ -50,6 +50,8 @@ Enumerations
 
 .. _class_Performance_constant_OBJECT_NODE_COUNT:
 
+.. _class_Performance_constant_OBJECT_ORPHAN_NODE_COUNT:
+
 .. _class_Performance_constant_RENDER_OBJECTS_IN_FRAME:
 
 .. _class_Performance_constant_RENDER_VERTICES_IN_FRAME:
@@ -108,43 +110,45 @@ enum **Monitor**:
 
 - **OBJECT_RESOURCE_COUNT** = **9** --- Number of resources currently used.
 
-- **OBJECT_NODE_COUNT** = **10** --- Number of nodes currently instanced. This also includes the root node, as well as any nodes not in the scene tree.
+- **OBJECT_NODE_COUNT** = **10** --- Number of nodes currently instanced in the scene tree. This also includes the root node.
 
-- **RENDER_OBJECTS_IN_FRAME** = **11** --- 3D objects drawn per frame.
+- **OBJECT_ORPHAN_NODE_COUNT** = **11**
 
-- **RENDER_VERTICES_IN_FRAME** = **12** --- Vertices drawn per frame. 3D only.
+- **RENDER_OBJECTS_IN_FRAME** = **12** --- 3D objects drawn per frame.
 
-- **RENDER_MATERIAL_CHANGES_IN_FRAME** = **13** --- Material changes per frame. 3D only
+- **RENDER_VERTICES_IN_FRAME** = **13** --- Vertices drawn per frame. 3D only.
 
-- **RENDER_SHADER_CHANGES_IN_FRAME** = **14** --- Shader changes per frame. 3D only.
+- **RENDER_MATERIAL_CHANGES_IN_FRAME** = **14** --- Material changes per frame. 3D only
 
-- **RENDER_SURFACE_CHANGES_IN_FRAME** = **15** --- Render surface changes per frame. 3D only.
+- **RENDER_SHADER_CHANGES_IN_FRAME** = **15** --- Shader changes per frame. 3D only.
 
-- **RENDER_DRAW_CALLS_IN_FRAME** = **16** --- Draw calls per frame. 3D only.
+- **RENDER_SURFACE_CHANGES_IN_FRAME** = **16** --- Render surface changes per frame. 3D only.
 
-- **RENDER_VIDEO_MEM_USED** = **17** --- Video memory used. Includes both texture and vertex memory.
+- **RENDER_DRAW_CALLS_IN_FRAME** = **17** --- Draw calls per frame. 3D only.
 
-- **RENDER_TEXTURE_MEM_USED** = **18** --- Texture memory used.
+- **RENDER_VIDEO_MEM_USED** = **18** --- Video memory used. Includes both texture and vertex memory.
 
-- **RENDER_VERTEX_MEM_USED** = **19** --- Vertex memory used.
+- **RENDER_TEXTURE_MEM_USED** = **19** --- Texture memory used.
 
-- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **20**
+- **RENDER_VERTEX_MEM_USED** = **20** --- Vertex memory used.
 
-- **PHYSICS_2D_ACTIVE_OBJECTS** = **21** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
+- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **21**
 
-- **PHYSICS_2D_COLLISION_PAIRS** = **22** --- Number of collision pairs in the 2D physics engine.
+- **PHYSICS_2D_ACTIVE_OBJECTS** = **22** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
 
-- **PHYSICS_2D_ISLAND_COUNT** = **23** --- Number of islands in the 2D physics engine.
+- **PHYSICS_2D_COLLISION_PAIRS** = **23** --- Number of collision pairs in the 2D physics engine.
 
-- **PHYSICS_3D_ACTIVE_OBJECTS** = **24** --- Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
+- **PHYSICS_2D_ISLAND_COUNT** = **24** --- Number of islands in the 2D physics engine.
 
-- **PHYSICS_3D_COLLISION_PAIRS** = **25** --- Number of collision pairs in the 3D physics engine.
+- **PHYSICS_3D_ACTIVE_OBJECTS** = **25** --- Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
 
-- **PHYSICS_3D_ISLAND_COUNT** = **26** --- Number of islands in the 3D physics engine.
+- **PHYSICS_3D_COLLISION_PAIRS** = **26** --- Number of collision pairs in the 3D physics engine.
 
-- **AUDIO_OUTPUT_LATENCY** = **27**
+- **PHYSICS_3D_ISLAND_COUNT** = **27** --- Number of islands in the 3D physics engine.
 
-- **MONITOR_MAX** = **28**
+- **AUDIO_OUTPUT_LATENCY** = **28**
+
+- **MONITOR_MAX** = **29**
 
 Description
 -----------

@@ -7,7 +7,7 @@
 CSGCylinder
 ===========
 
-**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -51,7 +51,7 @@ Property Descriptions
 | *Getter* | is_cone()       |
 +----------+-----------------+
 
-If true a cone is created, the :ref:`radius<class_CSGCylinder_property_radius>` will only apply to one side.
+If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder_property_radius>` will only apply to one side.
 
 .. _class_CSGCylinder_property_height:
 
@@ -111,5 +111,5 @@ The number of sides of the cylinder, the higher this number the more detail ther
 | *Getter* | get_smooth_faces()      |
 +----------+-------------------------+
 
-If true the normals of the cylinder are set to give a smooth effect making the cylinder seem rounded. When false the cylinder will have a flat shaded look.
+If ``true`` the normals of the cylinder are set to give a smooth effect making the cylinder seem rounded. If ``false`` the cylinder will have a flat shaded look.
 

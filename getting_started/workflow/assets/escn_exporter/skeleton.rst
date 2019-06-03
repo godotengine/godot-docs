@@ -15,6 +15,9 @@ rest position (transform in Godot) of bones.
     armature in Blender, so that the exported bone transform be
     consistent between Blender and Godot
 
+It is important that the mesh is not deformed by bones when exporting in Blender. Make sure
+that the skeleton is reset to its T-pose or default rest pose.
+
 Bone Weights
 ------------
 

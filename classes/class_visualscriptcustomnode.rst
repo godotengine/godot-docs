@@ -83,7 +83,7 @@ Constants
 
 - **STEP_PUSH_STACK_BIT** = **16777216** --- Hint used by :ref:`_step<class_VisualScriptCustomNode_method__step>` to tell that control should return to it when there is no other node left to execute.
 
-This is used by :ref:`VisualScriptCondition<class_VisualScriptCondition>` to redirect the sequence to the "Done" port after the true/false branch has finished execution.
+This is used by :ref:`VisualScriptCondition<class_VisualScriptCondition>` to redirect the sequence to the "Done" port after the ``true``/``false`` branch has finished execution.
 
 - **STEP_GO_BACK_BIT** = **33554432** --- Hint used by :ref:`_step<class_VisualScriptCustomNode_method__step>` to tell that control should return back, either hitting a previous STEP_PUSH_STACK_BIT or exiting the function.
 

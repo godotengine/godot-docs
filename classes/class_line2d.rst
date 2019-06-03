@@ -47,7 +47,9 @@ Methods
 -------
 
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_point<class_Line2D_method_add_point>` **(** :ref:`Vector2<class_Vector2>` position **)**                                            |
+| void                          | :ref:`add_point<class_Line2D_method_add_point>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` at_position=-1 **)**      |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`clear_points<class_Line2D_method_clear_points>` **(** **)**                                                                             |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_point_count<class_Line2D_method_get_point_count>` **(** **)** const                                                                 |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -254,9 +256,17 @@ Method Descriptions
 
 .. _class_Line2D_method_add_point:
 
-- void **add_point** **(** :ref:`Vector2<class_Vector2>` position **)**
+- void **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` at_position=-1 **)**
 
 Add a point at the ``position``. Appends the point at the end of the line.
+
+If ``at_position`` is given, the point is inserted before the point number ``at_position``, moving that point (and every point after) after the inserted point. If ``at_position`` is not given, or is an illegal value (``at_position < 0`` or ``at_position >= [method get_point_count]``), the point will be appended at the end of the point list.
+
+.. _class_Line2D_method_clear_points:
+
+- void **clear_points** **(** **)**
+
+Removes all points from the line.
 
 .. _class_Line2D_method_get_point_count:
 

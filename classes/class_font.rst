@@ -34,6 +34,8 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`get_string_size<class_Font_method_get_string_size>` **(** :ref:`String<class_String>` string **)** const                                                                                                                                                                                                               |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_wordwrap_string_size<class_Font_method_get_wordwrap_string_size>` **(** :ref:`String<class_String>` string, :ref:`float<class_float>` p_width **)** const                                                                                                                                                          |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`has_outline<class_Font_method_has_outline>` **(** **)** const                                                                                                                                                                                                                                                          |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_distance_field_hint<class_Font_method_is_distance_field_hint>` **(** **)** const                                                                                                                                                                                                                                    |
@@ -65,25 +67,29 @@ Draw character "char" into a canvas item using the font at a given position, wit
 
 - :ref:`float<class_float>` **get_ascent** **(** **)** const
 
-Return the font ascent (number of pixels above the baseline).
+Returns the font ascent (number of pixels above the baseline).
 
 .. _class_Font_method_get_descent:
 
 - :ref:`float<class_float>` **get_descent** **(** **)** const
 
-Return the font descent (number of pixels below the baseline).
+Returns the font descent (number of pixels below the baseline).
 
 .. _class_Font_method_get_height:
 
 - :ref:`float<class_float>` **get_height** **(** **)** const
 
-Return the total font height (ascent plus descent) in pixels.
+Returns the total font height (ascent plus descent) in pixels.
 
 .. _class_Font_method_get_string_size:
 
 - :ref:`Vector2<class_Vector2>` **get_string_size** **(** :ref:`String<class_String>` string **)** const
 
-Return the size of a string, taking kerning and advance into account.
+Returns the size of a string, taking kerning and advance into account.
+
+.. _class_Font_method_get_wordwrap_string_size:
+
+- :ref:`Vector2<class_Vector2>` **get_wordwrap_string_size** **(** :ref:`String<class_String>` string, :ref:`float<class_float>` p_width **)** const
 
 .. _class_Font_method_has_outline:
 

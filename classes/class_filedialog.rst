@@ -266,7 +266,7 @@ Returns the LineEdit for the selected file.
 
 - :ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
 
-Return the vertical box container of the dialog, custom controls can be added to it.
+Returns the vertical box container of the dialog, custom controls can be added to it.
 
 .. _class_FileDialog_method_invalidate:
 

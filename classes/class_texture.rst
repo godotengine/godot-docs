@@ -9,7 +9,7 @@ Texture
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`CurveTexture<class_CurveTexture>`, :ref:`GradientTexture<class_GradientTexture>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`LargeTexture<class_LargeTexture>`, :ref:`NoiseTexture<class_NoiseTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`StreamTexture<class_StreamTexture>`, :ref:`ViewportTexture<class_ViewportTexture>`
+**Inherited By:** :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`CurveTexture<class_CurveTexture>`, :ref:`GradientTexture<class_GradientTexture>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`LargeTexture<class_LargeTexture>`, :ref:`MeshTexture<class_MeshTexture>`, :ref:`NoiseTexture<class_NoiseTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`StreamTexture<class_StreamTexture>`, :ref:`ViewportTexture<class_ViewportTexture>`
 
 **Category:** Core
 
@@ -132,19 +132,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
 
-Return the texture height.
+Returns the texture height.
 
 .. _class_Texture_method_get_size:
 
 - :ref:`Vector2<class_Vector2>` **get_size** **(** **)** const
 
-Return the texture size.
+Returns the texture size.
 
 .. _class_Texture_method_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
-Return the texture width.
+Returns the texture width.
 
 .. _class_Texture_method_has_alpha:
 

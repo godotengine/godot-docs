@@ -30,6 +30,11 @@ Description
 
 Occludes light cast by a Light2D, casting shadows. The LightOccluder2D must be provided with an :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` in order for the shadow to be computed.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_lights_and_shadows`
+
 Property Descriptions
 ---------------------
 

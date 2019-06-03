@@ -82,19 +82,19 @@ Disconnect from host.
 
 - :ref:`String<class_String>` **get_connected_host** **(** **)** const
 
-Return the IP of this peer.
+Returns the IP of this peer.
 
 .. _class_StreamPeerTCP_method_get_connected_port:
 
 - :ref:`int<class_int>` **get_connected_port** **(** **)** const
 
-Return the port of this peer.
+Returns the port of this peer.
 
 .. _class_StreamPeerTCP_method_get_status:
 
 - :ref:`Status<enum_StreamPeerTCP_Status>` **get_status** **(** **)**
 
-Return the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status>`.
+Returns the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status>`.
 
 .. _class_StreamPeerTCP_method_is_connected_to_host:
 

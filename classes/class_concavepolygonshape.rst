@@ -37,7 +37,7 @@ Method Descriptions
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** const
 
-Return the faces (an array of triangles).
+Returns the faces (an array of triangles).
 
 .. _class_ConcavePolygonShape_method_set_faces:
 

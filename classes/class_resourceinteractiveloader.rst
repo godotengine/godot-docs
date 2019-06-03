@@ -43,19 +43,19 @@ Method Descriptions
 
 - :ref:`Resource<class_Resource>` **get_resource** **(** **)**
 
-Return the loaded resource (only if loaded). Otherwise, returns null.
+Returns the loaded resource (only if loaded). Otherwise, returns null.
 
 .. _class_ResourceInteractiveLoader_method_get_stage:
 
 - :ref:`int<class_int>` **get_stage** **(** **)** const
 
-Return the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>`
+Returns the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>`
 
 .. _class_ResourceInteractiveLoader_method_get_stage_count:
 
 - :ref:`int<class_int>` **get_stage_count** **(** **)** const
 
-Return the total amount of stages (calls to :ref:`poll<class_ResourceInteractiveLoader_method_poll>`) needed to completely load this resource.
+Returns the total amount of stages (calls to :ref:`poll<class_ResourceInteractiveLoader_method_poll>`) needed to completely load this resource.
 
 .. _class_ResourceInteractiveLoader_method_poll:
 

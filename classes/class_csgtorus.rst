@@ -7,7 +7,7 @@
 CSGTorus
 ========
 
-**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -111,5 +111,5 @@ The number of slices the torus is constructed of.
 | *Getter* | get_smooth_faces()      |
 +----------+-------------------------+
 
-If true the normals of the torus are set to give a smooth effect making the torus seem rounded. When false the torus will have a flat shaded look.
+If ``true`` the normals of the torus are set to give a smooth effect making the torus seem rounded. If ``false`` the torus will have a flat shaded look.
 

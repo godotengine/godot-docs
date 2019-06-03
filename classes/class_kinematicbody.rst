@@ -176,13 +176,15 @@ Moves the body along a vector. If the body collides with another, it will slide 
 
 ``floor_normal`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector3(0, 0, 0)``, everything is considered a wall. This is useful for topdown games.
 
-If the body is standing on a slope and the horizontal speed (relative to the floor's speed) goes below ``slope_stop_min_velocity``, the body will stop completely. This prevents the body from sliding down slopes when you include gravity in ``linear_velocity``. When set to lower values, the body will not be able to stand still on steep slopes.
+If ``stop_on_slope`` is ``true``, body will not slide on slopes if you include gravity in ``linear_velocity``.
 
 If the body collides, it will change direction a maximum of ``max_slides`` times before it stops.
 
 ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 
-Returns the movement that remained when the body stopped. To get more detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody_method_get_slide_collision>`.
+If ``infinite_inertia`` is ``true``, body will be able to push :ref:`RigidBody<class_RigidBody>` nodes, but it won't also detect any collisions with them. If ``false`` it will interact with :ref:`RigidBody<class_RigidBody>` nodes like with :ref:`StaticBody<class_StaticBody>`.
+
+Returns the ``linear_velocity`` vector, rotated and/or scaled if a slide collision occurred. To get detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody_method_get_slide_collision>`.
 
 .. _class_KinematicBody_method_move_and_slide_with_snap:
 

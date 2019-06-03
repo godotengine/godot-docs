@@ -90,12 +90,21 @@ Run the scene again and all of the balls will fall.
 Editing instances
 -----------------
 
-Open the ``Ball`` scene and change the ``Bounce`` property in the Inspector
-to `1`. Press "Play" and notice that all of the instanced balls are now
+Open the ``Ball`` scene and add a ``PhysicsMaterial`` by clicking on the down
+arrow and selecting "New PhysicsMaterial".
+
+.. image:: img/instancing_physicsmat1.png
+
+Then, expand the material by clicking on it, and set the ``Bounce`` property
+to ``1``.
+
+.. image:: img/instancing_physicsmat2.png
+
+Press "Play" and notice that all of the instanced balls are now
 much more bouncy. Because the instanced balls are based on the saved scene,
 changes to that scene will affect all instances.
 
-You can also adjust individual instances. Set the bounce value back to ``0.5``
+You can also adjust individual instances. Set the bounce value back to ``0``
 and then in the ``Main`` scene, select one of the instanced balls. Set its
 ``Bounce`` to ``1`` and press "Play".
 

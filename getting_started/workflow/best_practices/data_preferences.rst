@@ -240,7 +240,7 @@ tree structures.
     func _notification(p_what):
         match p_what:
             NOTIFICATION_PREDELETE:
-                # destructor
+                # Destructor.
                 for a_child in _children:
                     a_child.free()
 

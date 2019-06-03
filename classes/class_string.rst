@@ -116,6 +116,8 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_subsequence_ofi<class_String_method_is_subsequence_ofi>` **(** :ref:`String<class_String>` text **)**                                                        |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`is_valid_filename<class_String_method_is_valid_filename>` **(** **)**                                                                                           |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_valid_float<class_String_method_is_valid_float>` **(** **)**                                                                                                 |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_valid_hex_number<class_String_method_is_valid_hex_number>` **(** :ref:`bool<class_bool>` with_prefix=False **)**                                             |
@@ -184,6 +186,8 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`strip_edges<class_String_method_strip_edges>` **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**                                 |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`strip_escapes<class_String_method_strip_escapes>` **(** **)**                                                                                                   |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`substr<class_String_method_substr>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len **)**                                                           |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`to_ascii<class_String_method_to_ascii>` **(** **)**                                                                                                             |
@@ -211,6 +215,11 @@ Description
 -----------
 
 This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference counted and use a copy-on-write approach, so passing them around is cheap in resources.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/scripting/gdscript/gdscript_format_string`
 
 Method Descriptions
 -------------------
@@ -463,6 +472,14 @@ Returns ``true`` if this string is a subsequence of the given string.
 
 Returns ``true`` if this string is a subsequence of the given string, without considering case.
 
+.. _class_String_method_is_valid_filename:
+
+- :ref:`bool<class_bool>` **is_valid_filename** **(** **)**
+
+Returns ``true`` if this string is free from characters that aren't allowed in file names, those being:
+
+``: / \ ? * " | % < >``
+
 .. _class_String_method_is_valid_float:
 
 - :ref:`bool<class_bool>` **is_valid_float** **(** **)**
@@ -675,7 +692,13 @@ Splits the string in floats by using a divisor string and returns an array of th
 
 - :ref:`String<class_String>` **strip_edges** **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**
 
-Returns a copy of the string stripped of any non-printable character at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.
+Returns a copy of the string stripped of any non-printable character (including tabulations, spaces and line breaks) at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.
+
+.. _class_String_method_strip_escapes:
+
+- :ref:`String<class_String>` **strip_escapes** **(** **)**
+
+Returns a copy of the string stripped of any escape character. These include all non-printable control characters of the first page of the ASCII table (< 32), such as tabulation (``\t`` in C) and newline (``\n`` and ``\r``) characters, but not spaces.
 
 .. _class_String_method_substr:
 

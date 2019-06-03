@@ -264,85 +264,85 @@ Disable input and output slot whose index is 'idx'.
 
 - :ref:`Color<class_Color>` **get_connection_input_color** **(** :ref:`int<class_int>` idx **)**
 
-Return the color of the input connection 'idx'.
+Returns the color of the input connection 'idx'.
 
 .. _class_GraphNode_method_get_connection_input_count:
 
 - :ref:`int<class_int>` **get_connection_input_count** **(** **)**
 
-Return the number of enabled input slots (connections) to the GraphNode.
+Returns the number of enabled input slots (connections) to the GraphNode.
 
 .. _class_GraphNode_method_get_connection_input_position:
 
 - :ref:`Vector2<class_Vector2>` **get_connection_input_position** **(** :ref:`int<class_int>` idx **)**
 
-Return the position of the input connection 'idx'.
+Returns the position of the input connection 'idx'.
 
 .. _class_GraphNode_method_get_connection_input_type:
 
 - :ref:`int<class_int>` **get_connection_input_type** **(** :ref:`int<class_int>` idx **)**
 
-Return the type of the input connection 'idx'.
+Returns the type of the input connection 'idx'.
 
 .. _class_GraphNode_method_get_connection_output_color:
 
 - :ref:`Color<class_Color>` **get_connection_output_color** **(** :ref:`int<class_int>` idx **)**
 
-Return the color of the output connection 'idx'.
+Returns the color of the output connection 'idx'.
 
 .. _class_GraphNode_method_get_connection_output_count:
 
 - :ref:`int<class_int>` **get_connection_output_count** **(** **)**
 
-Return the number of enabled output slots (connections) of the GraphNode.
+Returns the number of enabled output slots (connections) of the GraphNode.
 
 .. _class_GraphNode_method_get_connection_output_position:
 
 - :ref:`Vector2<class_Vector2>` **get_connection_output_position** **(** :ref:`int<class_int>` idx **)**
 
-Return the position of the output connection 'idx'.
+Returns the position of the output connection 'idx'.
 
 .. _class_GraphNode_method_get_connection_output_type:
 
 - :ref:`int<class_int>` **get_connection_output_type** **(** :ref:`int<class_int>` idx **)**
 
-Return the type of the output connection 'idx'.
+Returns the type of the output connection 'idx'.
 
 .. _class_GraphNode_method_get_slot_color_left:
 
 - :ref:`Color<class_Color>` **get_slot_color_left** **(** :ref:`int<class_int>` idx **)** const
 
-Return the color set to 'idx' left (input) slot.
+Returns the color set to 'idx' left (input) slot.
 
 .. _class_GraphNode_method_get_slot_color_right:
 
 - :ref:`Color<class_Color>` **get_slot_color_right** **(** :ref:`int<class_int>` idx **)** const
 
-Return the color set to 'idx' right (output) slot.
+Returns the color set to 'idx' right (output) slot.
 
 .. _class_GraphNode_method_get_slot_type_left:
 
 - :ref:`int<class_int>` **get_slot_type_left** **(** :ref:`int<class_int>` idx **)** const
 
-Return the (integer) type of left (input) 'idx' slot.
+Returns the (integer) type of left (input) 'idx' slot.
 
 .. _class_GraphNode_method_get_slot_type_right:
 
 - :ref:`int<class_int>` **get_slot_type_right** **(** :ref:`int<class_int>` idx **)** const
 
-Return the (integer) type of right (output) 'idx' slot.
+Returns the (integer) type of right (output) 'idx' slot.
 
 .. _class_GraphNode_method_is_slot_enabled_left:
 
 - :ref:`bool<class_bool>` **is_slot_enabled_left** **(** :ref:`int<class_int>` idx **)** const
 
-Return true if left (input) slot 'idx' is enabled. False otherwise.
+Returns ``true`` if left (input) slot 'idx' is enabled, ``false`` otherwise.
 
 .. _class_GraphNode_method_is_slot_enabled_right:
 
 - :ref:`bool<class_bool>` **is_slot_enabled_right** **(** :ref:`int<class_int>` idx **)** const
 
-Return true if right (output) slot 'idx' is enabled. False otherwise.
+Returns ``true`` if right (output) slot 'idx' is enabled, ``false`` otherwise.
 
 .. _class_GraphNode_method_set_slot:
 
