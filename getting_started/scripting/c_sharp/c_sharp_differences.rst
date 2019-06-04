@@ -260,7 +260,7 @@ Array
 =====================  ==============================================================
 GDScript               C#
 =====================  ==============================================================
-``Array``              ``Godot.Array``
+``Array``              ``Godot.Collections.Array``
 ``PoolIntArray``       ``int[]``
 ``PoolByteArray``      ``byte[]``
 ``PoolFloatArray``     ``float[]``
@@ -270,16 +270,16 @@ GDScript               C#
 ``PoolVector3Array``   ``Vector3[]``
 =====================  ==============================================================
 
-``Godot.Array<T>`` is a type-safe wrapper around ``Godot.Array``.
-Use the ``Godot.Array<T>(Godot.Array)`` constructor to create one.
+``Godot.Collections.Array<T>`` is a type-safe wrapper around ``Godot.Collections.Array``.
+Use the ``Godot.Collections.Array<T>(Godot.Collections.Array)`` constructor to create one.
 
 Dictionary
 ----------
 
-Use ``Godot.Dictionary``.
+Use ``Godot.Collections.Dictionary``.
 
-``Godot.Dictionary<T>`` is a type-safe wrapper around ``Godot.Dictionary``.
-Use the ``Godot.Dictionary<T>(Godot.Dictionary)`` constructor to create one.
+``Godot.Collections.Dictionary<T>`` is a type-safe wrapper around ``Godot.Collections.Dictionary``.
+Use the ``Godot.Collections.Dictionary<T>(Godot.Collections.Dictionary)`` constructor to create one.
 
 Variant
 -------
