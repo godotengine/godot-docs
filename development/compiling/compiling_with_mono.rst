@@ -249,7 +249,7 @@ those are automatically added to the gradle project.
 Before building Godot you do need to cross compile the Mono runtime for the target architectures. The easiest
 way to do this is to use the sdk Makefiles from the Mono repository. The following is an example bash script:
 
-*Note: This process can be confusing. We plan to add a separate and more detailed page about compiling the Mono runtime for all platforms in the future.*
+*Note: We plan to distribute prebuilt packages of the Mono runtime in the future so you don't have to build it yourself.*
 
 .. code:: bash
 
@@ -292,6 +292,16 @@ way to do this is to use the sdk Makefiles from the Mono repository. The followi
     export ANDROID_TOOLCHAIN_DIR ANDROID_TOOLCHAIN_CACHE_DIR ANDROID_TOOLCHAIN_PREFIX
 
     MAKE_NUM_JOBS=${MAKE_NUM_JOBS:-2}
+
+    echo "
+    DISABLE_IOS = 1
+    DISABLE_MAC = 1
+    DISABLE_WASM = 1
+    DISABLE_WASM_CROSS = 1
+    DISABLE_BCL = 1
+    DISABLE_DESKTOP = 1
+    DISABLE_LLVM = 1
+    " > ${MONO_SOURCE_ROOT}/sdks/Make.config
 
     make -C sdks/builds provision-mxe
     make -C sdks/builds archive-android NINJA= IGNORE_PROVISION_ANDROID=1 IGNORE_PROVISION_MXE=1 -j ${MAKE_NUM_JOBS}
