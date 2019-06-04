@@ -84,6 +84,7 @@ Insert a blank line:
 
 * After *using* statement list.
 * Between method, properties, and inner type declarations.
+* At the end of each file.
 
 Field and constant declarations can be grouped together according to relevance. In that case, consider
 inserting a blank line between the groups for easier reading.
@@ -130,9 +131,9 @@ Avoid inserting a blank line:
         }
     }
 
-Consider breaking a line when it's longer than 100 characters. And it's also a good practice to
-insert a line feed (LF) character at the end of a file because some utilities have trouble
-recognizing the last line without it (e.g. the *cat* command on Linux).
+Consider breaking a line when it's longer than 100 characters.
+
+Ensure that all lines use the Unix LF format, not CRLF.
 
 Using spaces
 ------------
