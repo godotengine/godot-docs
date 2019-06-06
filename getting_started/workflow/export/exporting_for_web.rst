@@ -157,6 +157,31 @@ the ``.pck`` and ``.wasm`` files, which are usually large in size.
 The WebAssembly module compresses particularly well, down to around a quarter
 of its original size with gzip compression.
 
+Trying to access files which aren't compiled with the project but are used by the
+application needs to be loaded with a custom HTML page. The reason for that is 
+that the WebAssembly does not have the permission to access files that aren't
+compiled.
+
+Here is an example of the part of the HTML page that needs to be modified.
+Use the deafult HTML page `/misc/dist/html/full-size.html <https://github.com/godotengine/godot/blob/master/misc/dist/html/full-size.html>`__. as a refrence 
+and replace the lines 250 - 255.
+
+::
+		Engine.load(MAIN_PACK)
+		engine.preloadFile('$GODOT_BASENAME.js')
+		engine.preloadFile('$GODOT_BASENAME.pck')
+		engine.preloadFile('$GODOT_BASENAME.png')
+		engine.preloadFile('$GODOT_BASENAME.wasm')
+		engine.preloadFile('my_text.txt')
+		engine.init()
+		setStatusMode('indeterminate');
+		engine.setCanvas(canvas);
+		engine.start().then(() => {
+			setStatusMode('hidden');
+			initializing = true;
+		}, displayFailureNotice);
+
+
 Export options
 --------------
 
