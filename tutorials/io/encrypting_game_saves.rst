@@ -1,6 +1,6 @@
-.. _doc_encrypting_save_games:
+.. _doc_encrypting_game_saves:
 
-Encrypting save games
+Encrypting game saves
 =====================
 
 Why?
