@@ -91,7 +91,7 @@ It inherits from the following classes:
         with events so you can check the event type's available properties and
         methods.
 
-You can encounter errors if you try and access a property on an input type that
+You can encounter errors if you try to access a property on an input type that
 doesn't contain it - calling ``position`` on ``InputEventKey`` for example. To
 avoid this, make sure to test the event type first:
 
