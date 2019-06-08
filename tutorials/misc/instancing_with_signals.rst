@@ -68,7 +68,7 @@ You could do this by adding the bullet to the main scene directly:
     Node bulletInstance = Bullet.Instance();
     GetParent().AddChild(bulletInstance);
 
-However, this will lead to a different problem. Now if you try and test your
+However, this will lead to a different problem. Now if you try to test your
 "Player" scene independently, it will crash on shooting, because there is no
 parent node to access. This makes it a lot harder to test your player code
 independently and also means that if you decide to change your main scene's
