@@ -30,7 +30,9 @@ each string. This allows you to revise the text while it is being
 translated to other languages. The unique ID can be a number, a string,
 or a string with a number (it's just a unique string anyway).
 
-Translators also usually prefer to work with spreadsheets.
+.. note:: If you need a more powerful file format, Godot also supports
+          loading translations written in the gettext ``.po`` format. See
+          :ref:`doc_localization_using_gettext` for details.
 
 Translation format
 ------------------
@@ -77,5 +79,3 @@ Importing will also add the translation to the list of
 translations to load when the game runs, specified in project.godot (or the
 project settings). Godot allows loading and removing translations at
 runtime as well.
-
-
