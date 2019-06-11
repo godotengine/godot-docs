@@ -1722,7 +1722,7 @@ Shaders have a time variable that constantly increases. At some point, it needs 
 
 - :ref:`bool<class_bool>` **rendering/quality/2d/gles2_use_nvidia_rect_flicker_workaround**
 
-Some NVIDIA GPU drivers have a bug which produces flickering issues for the ``draw_rect`` method, especially as used in :ref:`TileMap<class_TileMap>`. Refer to :ref:`https://github.com/godotengine/godot/issues/9913<https://github.com/godotengine/godot/issues/9913>` for details.
+Some NVIDIA GPU drivers have a bug which produces flickering issues for the ``draw_rect`` method, especially as used in :ref:`TileMap<class_TileMap>`. Refer to `GitHub issue 9913 <https://github.com/godotengine/godot/issues/9913>`_ for details.
 
 If ``true``, this option enables a "safe" code path for such NVIDIA GPUs at the cost of performance. This option only impacts the GLES2 rendering backend (so the bug stays if you use GLES3), and only desktop platforms.
 

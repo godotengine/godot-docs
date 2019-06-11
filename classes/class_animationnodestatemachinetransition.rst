@@ -72,7 +72,7 @@ Property Descriptions
 | *Getter* | get_advance_condition()      |
 +----------+------------------------------+
 
-Turn on auto advance when this condition is set. The provided name will become a boolean parameter on the :ref:`AnimationTree<class_AnimationTree>` that can be controlled from code (see :ref:`https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html#controlling-from-code<https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html#controlling-from-code>`). For example, if :ref:`AnimationTree.tree_root<class_AnimationTree_property_tree_root>` is an :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>` and :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` is set to "idle":
+Turn on auto advance when this condition is set. The provided name will become a boolean parameter on the :ref:`AnimationTree<class_AnimationTree>` that can be controlled from code (see `https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html#controlling-from-code <https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html#controlling-from-code>`_). For example, if :ref:`AnimationTree.tree_root<class_AnimationTree_property_tree_root>` is an :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>` and :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` is set to "idle":
 
 ::
 
