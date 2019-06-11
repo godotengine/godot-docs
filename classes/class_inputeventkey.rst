@@ -95,7 +95,7 @@ Key scancode, one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
 | *Getter* | get_unicode()      |
 +----------+--------------------+
 
-Key unicode identifier when relevant.
+Key unicode identifier when relevant. Unicode identifiers for the composite characters and complex scripts may not be available unless IME input mode is active. See :ref:`OS.set_ime_active<class_OS_method_set_ime_active>` for more information.
 
 Method Descriptions
 -------------------

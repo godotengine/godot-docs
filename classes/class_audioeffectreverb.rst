@@ -87,11 +87,11 @@ High-pass filter passes signals with a frequency higher than a certain cutoff fr
 
 - :ref:`float<class_float>` **predelay_feedback**
 
-+----------+--------------------------+
-| *Setter* | set_predelay_msec(value) |
-+----------+--------------------------+
-| *Getter* | get_predelay_msec()      |
-+----------+--------------------------+
++----------+------------------------------+
+| *Setter* | set_predelay_feedback(value) |
++----------+------------------------------+
+| *Getter* | get_predelay_feedback()      |
++----------+------------------------------+
 
 Output percent of predelay. Value can range from 0 to 1. Default value: ``1``.
 

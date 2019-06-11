@@ -297,15 +297,15 @@ Returns the arc sine of ``s`` in radians. Use to get the angle of sine ``s``.
 
 - void **assert** **(** :ref:`bool<class_bool>` condition **)**
 
-Assert that the ``condition`` is ``true`` . If the ``condition`` is ``false`` a fatal error is generated and the program is halted. Useful for debugging to make sure a value is always ``true``.
+Asserts that the ``condition`` is ``true`` . If the ``condition`` is ``false``, an error is generated and the program is halted until you resume it. Only executes in debug builds, or when running the game from the editor. Use it for debugging purposes, to make sure a statement is ``true`` during development.
 
 ::
 
-    # Speed should always be between 0 and 20
+    # Imagine we always want speed to be between 0 and 20
     speed = -10
-    assert(speed < 20) # Is true and program continues
-    assert(speed >= 0) # Is false and program stops
-    assert(speed >= 0 && speed < 20) # Or combined
+    assert(speed < 20) # True, the program will continue
+    assert(speed >= 0) # False, the program will stop
+    assert(speed >= 0 && speed < 20) # You can also combine the two conditional statements in one check
 
 .. _class_@GDScript_method_atan:
 

@@ -431,11 +431,11 @@ If ``true``, the "tab" character will have a visible representation.
 
 - :ref:`bool<class_bool>` **fold_gutter**
 
-+----------+--------------------------------+
-| *Setter* | set_fold_gutter_enabled(value) |
-+----------+--------------------------------+
-| *Getter* | is_fold_gutter_enabled()       |
-+----------+--------------------------------+
++----------+-----------------------------+
+| *Setter* | set_draw_fold_gutter(value) |
++----------+-----------------------------+
+| *Getter* | is_drawing_fold_gutter()    |
++----------+-----------------------------+
 
 If ``true``, the fold gutter is visible. This enables folding groups of indented lines.
 

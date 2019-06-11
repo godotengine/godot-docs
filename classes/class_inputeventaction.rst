@@ -19,11 +19,13 @@ Input event type for actions.
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_property_action>`   |
-+-----------------------------+---------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_property_pressed>` |
-+-----------------------------+---------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_property_action>`     |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_property_pressed>`   |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`strength<class_InputEventAction_property_strength>` |
++-----------------------------+-----------------------------------------------------------+
 
 Description
 -----------
@@ -61,4 +63,16 @@ The action's name. Actions are accessed via this :ref:`String<class_String>`.
 +----------+--------------------+
 
 If ``true``, the action's state is pressed. If ``false``, the action's state is released.
+
+.. _class_InputEventAction_property_strength:
+
+- :ref:`float<class_float>` **strength**
+
++----------+---------------------+
+| *Setter* | set_strength(value) |
++----------+---------------------+
+| *Getter* | get_strength()      |
++----------+---------------------+
+
+The action's strength between 0 and 1. This value is consired as equal to 0 if pressed is ``false``. The event strength allows faking analog joypad motion events, by precising how strongly is the joypad axis bent or pressed.
 

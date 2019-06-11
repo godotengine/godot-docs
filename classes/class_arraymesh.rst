@@ -57,8 +57,6 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`surface_remove<class_ArrayMesh_method_surface_remove>` **(** :ref:`int<class_int>` surf_idx **)**                                                                                                                                                                       |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`surface_set_material<class_ArrayMesh_method_surface_set_material>` **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)**                                                                                                                 |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`surface_set_name<class_ArrayMesh_method_surface_set_name>` **(** :ref:`int<class_int>` surf_idx, :ref:`String<class_String>` name **)**                                                                                                                                 |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`surface_update_region<class_ArrayMesh_method_surface_update_region>` **(** :ref:`int<class_int>` surf_idx, :ref:`int<class_int>` offset, :ref:`PoolByteArray<class_PoolByteArray>` data **)**                                                                           |
@@ -304,12 +302,6 @@ Returns the primitive type of the requested surface (see :ref:`add_surface_from_
 - void **surface_remove** **(** :ref:`int<class_int>` surf_idx **)**
 
 Remove a surface at position surf_idx, shifting greater surfaces one surf_idx slot down.
-
-.. _class_ArrayMesh_method_surface_set_material:
-
-- void **surface_set_material** **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)**
-
-Set a :ref:`Material<class_Material>` for a given surface. Surface will be rendered using this material.
 
 .. _class_ArrayMesh_method_surface_set_name:
 

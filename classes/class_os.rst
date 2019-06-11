@@ -789,13 +789,17 @@ Returns the path to the current engine executable.
 
 - :ref:`Vector2<class_Vector2>` **get_ime_selection** **(** **)** const
 
-Returns IME selection range.
+Returns IME cursor position (currently edited portion of the string) relative to the characters in the composition string.
+
+``NOTIFICATION_OS_IME_UPDATE`` is sent to the application to notify it of changes to the IME cursor position.
 
 .. _class_OS_method_get_ime_text:
 
 - :ref:`String<class_String>` **get_ime_text** **(** **)** const
 
-Returns IME intermediate text.
+Returns IME intermediate composition string.
+
+``NOTIFICATION_OS_IME_UPDATE`` is sent to the application to notify it of changes to the IME composition string.
 
 .. _class_OS_method_get_latin_keyboard_variant:
 
@@ -1190,6 +1194,12 @@ The same image is used for window caption, taskbar/dock and window selection dia
 - void **set_ime_active** **(** :ref:`bool<class_bool>` active **)**
 
 Sets whether IME input mode should be enabled.
+
+If active IME handles key events before the application and creates an composition string and suggestion list.
+
+Application can retrieve the composition status by using :ref:`get_ime_selection<class_OS_method_get_ime_selection>` and :ref:`get_ime_text<class_OS_method_get_ime_text>` functions.
+
+Completed composition string is committed when input is finished.
 
 .. _class_OS_method_set_ime_position:
 

@@ -19,5 +19,5 @@ Generic 2D Position hint for editing.
 Description
 -----------
 
-Generic 2D Position hint for editing. It's just like a plain :ref:`Node2D<class_Node2D>` but displays as a cross in the 2D-Editor at all times.
+Generic 2D Position hint for editing. It's just like a plain :ref:`Node2D<class_Node2D>` but displays as a cross in the 2D-Editor at all times. You can set visual size of the cross by changing Gizmo Extents in the inspector.
 

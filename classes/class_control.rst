@@ -850,11 +850,9 @@ Enables whether rendering of children should be clipped to this control's rectan
 
 - :ref:`Vector2<class_Vector2>` **rect_global_position**
 
-+----------+----------------------------+
-| *Setter* | set_global_position(value) |
-+----------+----------------------------+
-| *Getter* | get_global_position()      |
-+----------+----------------------------+
++----------+-----------------------+
+| *Getter* | get_global_position() |
++----------+-----------------------+
 
 The node's global position, relative to the world (usually to the top-left corner of the window).
 
@@ -886,11 +884,9 @@ By default, the node's pivot is its top-left corner. When you change its :ref:`r
 
 - :ref:`Vector2<class_Vector2>` **rect_position**
 
-+----------+---------------------+
-| *Setter* | set_position(value) |
-+----------+---------------------+
-| *Getter* | get_position()      |
-+----------+---------------------+
++----------+----------------+
+| *Getter* | get_position() |
++----------+----------------+
 
 The node's position, relative to its parent. It corresponds to the rectangle's top-left corner. The property is not affected by :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`.
 
@@ -922,11 +918,9 @@ The node's scale, relative to its :ref:`rect_size<class_Control_property_rect_si
 
 - :ref:`Vector2<class_Vector2>` **rect_size**
 
-+----------+-----------------+
-| *Setter* | set_size(value) |
-+----------+-----------------+
-| *Getter* | get_size()      |
-+----------+-----------------+
++----------+------------+
+| *Getter* | get_size() |
++----------+------------+
 
 The size of the node's bounding rectangle, in pixels. :ref:`Container<class_Container>` nodes update this property automatically.
 

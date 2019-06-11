@@ -218,11 +218,11 @@ Amount to offset the polygon's ``texture``. If ``(0, 0)`` the texture's origin (
 
 - :ref:`float<class_float>` **texture_rotation**
 
-+----------+-------------------------------------+
-| *Setter* | set_texture_rotation_degrees(value) |
-+----------+-------------------------------------+
-| *Getter* | get_texture_rotation_degrees()      |
-+----------+-------------------------------------+
++----------+-----------------------------+
+| *Setter* | set_texture_rotation(value) |
++----------+-----------------------------+
+| *Getter* | get_texture_rotation()      |
++----------+-----------------------------+
 
 The texture's rotation in radians.
 

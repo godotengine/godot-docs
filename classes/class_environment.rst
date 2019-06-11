@@ -1161,11 +1161,11 @@ Glow strength.
 
 - :ref:`SSAOBlur<enum_Environment_SSAOBlur>` **ssao_blur**
 
-+----------+------------------------+
-| *Setter* | set_ssao_blur(value)   |
-+----------+------------------------+
-| *Getter* | is_ssao_blur_enabled() |
-+----------+------------------------+
++----------+----------------------+
+| *Setter* | set_ssao_blur(value) |
++----------+----------------------+
+| *Getter* | get_ssao_blur()      |
++----------+----------------------+
 
 .. _class_Environment_property_ssao_color:
 

@@ -340,9 +340,11 @@ Method Descriptions
 
 - :ref:`AABB<class_AABB>` **capture_aabb** **(** **)** const
 
+Returns the bounding box that contains all the particles that are active in the current frame.
+
 .. _class_Particles_method_restart:
 
 - void **restart** **(** **)**
 
-Restarts the particle emmission, clearing existing particles.
+Restarts the particle emission, clearing existing particles.
 

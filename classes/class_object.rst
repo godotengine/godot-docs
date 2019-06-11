@@ -159,17 +159,17 @@ Constants
 Description
 -----------
 
-Base class for all non built-in types. Everything which is not a built-in type starts the inheritance chain from this class.
+Every class which is not a built-in type inherits from this class.
 
-Objects can be constructed from scripting languages, using ``Object.new()`` in GDScript, ``new Object`` in C#, or the "Construct Object" node in VisualScript.
+You can construct Objects from scripting languages, using ``Object.new()`` in GDScript, ``new Object`` in C#, or the "Construct Object" node in VisualScript.
 
-Objects do not manage memory, if inheriting from one the object will most likely have to be deleted manually (call the :ref:`free<class_Object_method_free>` function from the script or delete from C++).
+Objects do not manage memory. If a class inherits from Object, you will have to delete instances of it manually. To do so, call the :ref:`free<class_Object_method_free>` method from your script or delete the instance from C++.
 
-Some derivatives add memory management, such as :ref:`Reference<class_Reference>` (which keeps a reference count and deletes itself automatically when no longer referenced) and :ref:`Node<class_Node>`, which deletes the children tree when deleted.
+Some classes that extend Object add memory management. This is the case of :ref:`Reference<class_Reference>`, which counts references and deletes itself automatically when no longer referenced. :ref:`Node<class_Node>`, another fundamental type, deletes all its children when freed from memory.
 
 Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<class_Object_method__get_property_list>` and handled in :ref:`_get<class_Object_method__get>` and :ref:`_set<class_Object_method__set>`. However, scripting languages and C++ have simpler means to export them.
 
-Objects also receive notifications (:ref:`_notification<class_Object_method__notification>`). Notifications are a simple way to notify the object about simple events, so they can all be handled together.
+Objects also receive notifications. Notifications are a simple way to notify the object about simple events, so they can all be handled together. See :ref:`_notification<class_Object_method__notification>`.
 
 Method Descriptions
 -------------------
@@ -246,13 +246,19 @@ Returns ``true`` if the object can translate strings.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect** **(** :ref:`String<class_String>` signal, :ref:`Object<class_Object>` target, :ref:`String<class_String>` method, :ref:`Array<class_Array>` binds=[  ], :ref:`int<class_int>` flags=0 **)**
 
-Connects a ``signal`` to a ``method`` on a ``target`` object. Pass optional ``binds`` to the call. Use ``flags`` to set deferred or one shot connections. See ``CONNECT_*`` constants. A ``signal`` can only be connected once to a ``method``. It will throw an error if already connected. To avoid this, first use :ref:`is_connected<class_Object_method_is_connected>` to check for existing connections.
+Connects a ``signal`` to a ``method`` on a ``target`` object. Pass optional ``binds`` to the call. Use ``flags`` to set deferred or one shot connections. See ``CONNECT_*`` constants.
+
+A ``signal`` can only be connected once to a ``method``. It will throw an error if already connected. To avoid this, first, use :ref:`is_connected<class_Object_method_is_connected>` to check for existing connections.
+
+If the ``target`` is destroyed in the game's lifecycle, the connection will be lost.
 
 .. _class_Object_method_disconnect:
 
 - void **disconnect** **(** :ref:`String<class_String>` signal, :ref:`Object<class_Object>` target, :ref:`String<class_String>` method **)**
 
 Disconnects a ``signal`` from a ``method`` on the given ``target``.
+
+If you try to disconnect a connection that does not exist, the method will throw an error. Use :ref:`is_connected<class_Object_method_is_connected>` to ensure that the connection exists.
 
 .. _class_Object_method_emit_signal:
 
