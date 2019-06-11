@@ -50,6 +50,15 @@ property in a node:
 
 .. image:: img/pausemode.png
 
+You can achieve the same result in code:
+
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _ready():
+        pause_mode = Node.PAUSE_MODE_PROCESS
+
 By default all nodes have this property in the "Inherit" state. This
 means, that they will only process (or not) depending on what this same
 property is set on the parent node. If the parent is set to "Inherit" ,
