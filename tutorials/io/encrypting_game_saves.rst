@@ -8,12 +8,11 @@ Why?
 
 Most users that care whether a game save is encrypted will prefer no
 encryption at all. But there may be reasons to implement this feature
-anyway. Encrypting saves will curb cheating; this may not be fun for users
-but may be necessary in multiplayer games, games with microtransactions, or
-games that hide secrets to surprise the player. This method of save
-encryption is still able to be bypassed by a sufficiently savvy user
-because, since the encryption key is stored inside the game, the player can
-still decrypt and edit the file themselves.
+anyway. Encrypting can curb cheating and may be necessary in multiplayer
+games, games with microtransactions, or games that hide secrets to surprise
+the player. This method of save encryption is still able to be bypassed by
+a sufficiently savvy user because, since the encryption key is stored
+inside the game, the player can still decrypt and edit the file themselves.
 
 The only way to prevent this from being possible is to store the save data
 on a remote server, where players can only make authorized changes to their
