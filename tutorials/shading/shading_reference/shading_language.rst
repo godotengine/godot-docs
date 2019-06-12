@@ -421,6 +421,24 @@ Uniforms can also be assigned default values:
     uniform vec4 some_vector = vec4(0.0);
     uniform vec4 some_color : hint_color = vec4(1.0);
 
+Global constants
+~~~~~~~~~~~~~~~~
+
+Like uniforms, global constants are shared between all shader stages. However, they are not accessible outside of the shader and must be initialized at declaration.
+Use the **const** keyword to declare a variable as a constant. All basic types, except samplers can be declared as constants. Constants are useful when you want to have access to a value throughout your shader that does not need to be modified. Accessing and using a constant value is slightly faster than using a uniform.
+
+.. code-block:: glsl
+
+   shader_type spatial;
+
+   const float PI = 3.14159265358979323846;
+
+Constants cannot be modified and additionally cannot have hints, but multiple of them (if they have the same type) can be declared in a single expression e.g
+
+.. code-block:: glsl
+
+    const vec2 V1 = vec2(1, 1), V2 = vec2(2, 2);
+
 Built-in functions
 ------------------
 
