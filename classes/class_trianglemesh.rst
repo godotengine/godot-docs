@@ -14,5 +14,10 @@ TriangleMesh
 Brief Description
 -----------------
 
+Internal mesh type.
 
+Description
+-----------
+
+Mesh type used internally for collision calculations.
 

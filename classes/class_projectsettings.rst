@@ -168,8 +168,6 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`display/window/per_pixel_transparency/enabled<class_ProjectSettings_property_display/window/per_pixel_transparency/enabled>`                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`display/window/per_pixel_transparency/splash<class_ProjectSettings_property_display/window/per_pixel_transparency/splash>`                                     |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`display/window/size/always_on_top<class_ProjectSettings_property_display/window/size/always_on_top>`                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`display/window/size/borderless<class_ProjectSettings_property_display/window/size/borderless>`                                                                 |
@@ -1024,15 +1022,13 @@ Default orientation on mobile devices.
 
 - :ref:`bool<class_bool>` **display/window/per_pixel_transparency/allowed**
 
-If ``true``, allows per-pixel transparency in a desktop window. This affects performance if not needed, so leave it on ``false`` unless you need it.
+If ``true``, allows per-pixel transparency in a desktop window. This affects performance, so leave it on ``false`` unless you need it.
 
 .. _class_ProjectSettings_property_display/window/per_pixel_transparency/enabled:
 
 - :ref:`bool<class_bool>` **display/window/per_pixel_transparency/enabled**
 
-.. _class_ProjectSettings_property_display/window/per_pixel_transparency/splash:
-
-- :ref:`bool<class_bool>` **display/window/per_pixel_transparency/splash**
+Set the window background to transparent when it starts.
 
 .. _class_ProjectSettings_property_display/window/size/always_on_top:
 

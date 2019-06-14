@@ -535,6 +535,8 @@ If ``true``, vertical synchronization (Vsync) is enabled.
 
 If ``true``, removes the window frame.
 
+Note: Setting ``window_borderless`` to ``false`` disables per-pixel transparency.
+
 .. _class_OS_property_window_fullscreen:
 
 - :ref:`bool<class_bool>` **window_fullscreen**
@@ -580,6 +582,12 @@ If ``true``, the window is minimized.
 +----------+--------------------------------------------------+
 | *Getter* | get_window_per_pixel_transparency_enabled()      |
 +----------+--------------------------------------------------+
+
+If ``true``, the window background is transparent and window frame is removed.
+
+Use ``get_tree().get_root().set_transparent_background(true)`` to disable main viewport background rendering.
+
+Note: This property has no effect if "Project > Project Settings > Display > Window > Per-pixel transparency > Allowed" setting is disabled.
 
 .. _class_OS_property_window_position:
 
@@ -1035,7 +1043,9 @@ Returns ``true`` if an environment variable exists.
 
 - :ref:`bool<class_bool>` **has_feature** **(** :ref:`String<class_String>` tag_name **)** const
 
-Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. See feature tags documentation.
+Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the `Feature Tags <https://docs.godotengine.org/en/latest/getting_started/workflow/export/feature_tags.html>`_ documentation for more details.
+
+Note that tag names are case-sensitive.
 
 .. _class_OS_method_has_touchscreen_ui_hint:
 

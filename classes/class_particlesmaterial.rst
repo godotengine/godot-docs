@@ -164,7 +164,7 @@ enum **Parameter**:
 
 - **PARAM_ANGULAR_VELOCITY** = **1** --- Use with :ref:`set_param<class_ParticlesMaterial_method_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_method_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_method_set_param_texture>` to set angular velocity properties.
 
-- **PARAM_ORBIT_VELOCITY** = **2** --- Use with :ref:`set_param<class_ParticlesMaterial_method_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_method_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_method_set_param_texture>` to set orbital_velocity properties.
+- **PARAM_ORBIT_VELOCITY** = **2** --- Use with :ref:`set_param<class_ParticlesMaterial_method_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_method_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_method_set_param_texture>` to set orbital velocity properties.
 
 - **PARAM_LINEAR_ACCEL** = **3** --- Use with :ref:`set_param<class_ParticlesMaterial_method_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_method_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_method_set_param_texture>` to set linear acceleration properties.
 
@@ -178,7 +178,7 @@ enum **Parameter**:
 
 - **PARAM_SCALE** = **8** --- Use with :ref:`set_param<class_ParticlesMaterial_method_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_method_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_method_set_param_texture>` to set scale properties.
 
-- **PARAM_HUE_VARIATION** = **9** --- Use with :ref:`set_param<class_ParticlesMaterial_method_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_method_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_method_set_param_texture>` to set hue_variation properties.
+- **PARAM_HUE_VARIATION** = **9** --- Use with :ref:`set_param<class_ParticlesMaterial_method_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_method_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_method_set_param_texture>` to set hue variation properties.
 
 - **PARAM_ANIM_SPEED** = **10** --- Use with :ref:`set_param<class_ParticlesMaterial_method_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_method_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_method_set_param_texture>` to set animation speed properties.
 
@@ -592,7 +592,7 @@ Amount of :ref:`spread<class_ParticlesMaterial_property_spread>` in Y/Z plane. A
 | *Getter* | get_gravity()      |
 +----------+--------------------+
 
-Gravity applied to every particle. Default value: ``(0, 98, 0)``.
+Gravity applied to every particle. Default value: ``(0, -9.8, 0)``.
 
 .. _class_ParticlesMaterial_property_hue_variation:
 
@@ -640,7 +640,7 @@ Hue variation randomness ratio. Default value: ``0``.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Initial velocity magnitude for each particle. Direction comes from :ref:`spread<class_ParticlesMaterial_property_spread>`.
+Initial velocity magnitude for each particle. Direction comes from :ref:`spread<class_ParticlesMaterial_property_spread>` and the node's orientation.
 
 .. _class_ParticlesMaterial_property_initial_velocity_random:
 
@@ -664,7 +664,7 @@ Initial velocity randomness ratio. Default value: ``0``.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Linear acceleration applied to each particle. Acceleration increases velocity magnitude each frame without affecting direction.
+Linear acceleration applied to each particle in the direction of motion.
 
 .. _class_ParticlesMaterial_property_linear_accel_curve:
 

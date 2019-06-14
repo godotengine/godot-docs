@@ -95,7 +95,7 @@ Returns the navigation point closest to the given line segment. When enabling ``
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_simple_path** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)**
 
-Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the agent properties associated with each :ref:`NavigationMesh<class_NavigationMesh>` (raidus, height, etc.) are considered in the path calculation, otherwise they are ignored.
+Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the agent properties associated with each :ref:`NavigationMesh<class_NavigationMesh>` (radius, height, etc.) are considered in the path calculation, otherwise they are ignored.
 
 .. _class_Navigation_method_navmesh_add:
 

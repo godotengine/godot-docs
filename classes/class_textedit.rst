@@ -38,7 +38,7 @@ Properties
 +-----------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`fold_gutter<class_TextEdit_property_fold_gutter>`                                   |
 +-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`hiding_enabled<class_TextEdit_property_hiding_enabled>`                             |
+| :ref:`bool<class_bool>`     | :ref:`hiding_enabled<class_TextEdit_property_hiding_enabled>`                             |
 +-----------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`highlight_all_occurrences<class_TextEdit_property_highlight_all_occurrences>`       |
 +-----------------------------+-------------------------------------------------------------------------------------------+
@@ -441,7 +441,7 @@ If ``true``, the fold gutter is visible. This enables folding groups of indented
 
 .. _class_TextEdit_property_hiding_enabled:
 
-- :ref:`int<class_int>` **hiding_enabled**
+- :ref:`bool<class_bool>` **hiding_enabled**
 
 +----------+---------------------------+
 | *Setter* | set_hiding_enabled(value) |

@@ -9,7 +9,7 @@ NetworkedMultiplayerPeer
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`MultiplayerPeerGDNative<class_MultiplayerPeerGDNative>`, :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`, :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>`
+**Inherited By:** :ref:`MultiplayerPeerGDNative<class_MultiplayerPeerGDNative>`, :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`, :ref:`WebRTCMultiplayer<class_WebRTCMultiplayer>`, :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>`
 
 **Category:** Core
 

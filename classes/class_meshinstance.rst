@@ -107,6 +107,8 @@ Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<clas
 
 - :ref:`int<class_int>` **get_surface_material_count** **(** **)** const
 
+Returns the number of surface materials.
+
 .. _class_MeshInstance_method_set_surface_material:
 
 - void **set_surface_material** **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**

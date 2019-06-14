@@ -63,9 +63,9 @@ Enumerations
 
 enum **WriteMode**:
 
-- **WRITE_MODE_TEXT** = **0**
+- **WRITE_MODE_TEXT** = **0** --- Tells the channel to send data over this channel as text. An external peer (non-Godot) would receive this as a string.
 
-- **WRITE_MODE_BINARY** = **1**
+- **WRITE_MODE_BINARY** = **1** --- Tells the channel to send data over this channel as binary. An external peer (non-Godot) would receive this as array buffer or blob.
 
 .. _enum_WebRTCDataChannel_ChannelState:
 
@@ -79,13 +79,13 @@ enum **WriteMode**:
 
 enum **ChannelState**:
 
-- **STATE_CONNECTING** = **0**
+- **STATE_CONNECTING** = **0** --- The channel was created, but it's still trying to connect.
 
-- **STATE_OPEN** = **1**
+- **STATE_OPEN** = **1** --- The channel is currently open, and data can flow over it.
 
-- **STATE_CLOSING** = **2**
+- **STATE_CLOSING** = **2** --- The channel is being closed, no new messages will be accepted, but those already in queue will be flushed.
 
-- **STATE_CLOSED** = **3**
+- **STATE_CLOSED** = **3** --- The channel was closed, or connection failed.
 
 Property Descriptions
 ---------------------
@@ -100,6 +100,8 @@ Property Descriptions
 | *Getter* | get_write_mode()      |
 +----------+-----------------------+
 
+The transfer mode to use when sending outgoing packet. Either text or binary.
+
 Method Descriptions
 -------------------
 
@@ -107,43 +109,71 @@ Method Descriptions
 
 - void **close** **(** **)**
 
+Closes this data channel, notifying the other peer.
+
 .. _class_WebRTCDataChannel_method_get_id:
 
 - :ref:`int<class_int>` **get_id** **(** **)** const
+
+Returns the id assigned to this channel during creation (or auto-assigned during negotiation).
+
+If the channel is not negotiated out-of-band the id will only be available after the connection is established (will return ``65535`` until then).
 
 .. _class_WebRTCDataChannel_method_get_label:
 
 - :ref:`String<class_String>` **get_label** **(** **)** const
 
+Returns the label assigned to this channel during creation.
+
 .. _class_WebRTCDataChannel_method_get_max_packet_life_time:
 
 - :ref:`int<class_int>` **get_max_packet_life_time** **(** **)** const
+
+Returns the ``maxPacketLifeTime`` value assigned to this channel during creation.
+
+Will be ``65535`` if not specified.
 
 .. _class_WebRTCDataChannel_method_get_max_retransmits:
 
 - :ref:`int<class_int>` **get_max_retransmits** **(** **)** const
 
+Returns the ``maxRetransmits`` value assigned to this channel during creation.
+
+Will be ``65535`` if not specified.
+
 .. _class_WebRTCDataChannel_method_get_protocol:
 
 - :ref:`String<class_String>` **get_protocol** **(** **)** const
+
+Returns the sub-protocol assigned to this channel during creation. An empty string if not specified.
 
 .. _class_WebRTCDataChannel_method_get_ready_state:
 
 - :ref:`ChannelState<enum_WebRTCDataChannel_ChannelState>` **get_ready_state** **(** **)** const
 
+Returns the current state of this channel, see :ref:`ChannelState<enum_WebRTCDataChannel_ChannelState>`.
+
 .. _class_WebRTCDataChannel_method_is_negotiated:
 
 - :ref:`bool<class_bool>` **is_negotiated** **(** **)** const
+
+Returns ``true`` if this channel was created with out-of-band configuration.
 
 .. _class_WebRTCDataChannel_method_is_ordered:
 
 - :ref:`bool<class_bool>` **is_ordered** **(** **)** const
 
+Returns ``true`` if this channel was created with ordering enabled (default).
+
 .. _class_WebRTCDataChannel_method_poll:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
+Reserved, but not used for now.
+
 .. _class_WebRTCDataChannel_method_was_string_packet:
 
 - :ref:`bool<class_bool>` **was_string_packet** **(** **)** const
+
+Returns ``true`` if the last received packet was transferred as text. See :ref:`write_mode<class_WebRTCDataChannel_property_write_mode>`.
 

@@ -66,6 +66,8 @@ Theme Properties
 +-------------------------------+----------------+
 | :ref:`Texture<class_Texture>` | reload         |
 +-------------------------------+----------------+
+| :ref:`Texture<class_Texture>` | toggle_hidden  |
++-------------------------------+----------------+
 
 Signals
 -------

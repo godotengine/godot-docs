@@ -27,6 +27,13 @@ Properties
 | :ref:`Texture<class_Texture>`     | :ref:`texture<class_MultiMeshInstance2D_property_texture>`       |
 +-----------------------------------+------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_MultiMeshInstance2D_signal_texture_changed:
+
+- **texture_changed** **(** **)**
+
 Description
 -----------
 

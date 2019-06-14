@@ -849,7 +849,7 @@ The gray value is calculated as ``(r + g + b) / 3``.
 
 - :ref:`Color<class_Color>` **inverted** **(** **)**
 
-Returns the inverted color ``(1 - r, 1 - g, 1 - b, 1 - a)``.
+Returns the inverted color ``(1 - r, 1 - g, 1 - b, a)``.
 
 ::
 

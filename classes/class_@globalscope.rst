@@ -1282,6 +1282,20 @@ enum **ButtonList**:
 
 .. _class_@GlobalScope_constant_JOY_DS_Y:
 
+.. _class_@GlobalScope_constant_JOY_VR_GRIP:
+
+.. _class_@GlobalScope_constant_JOY_VR_PAD:
+
+.. _class_@GlobalScope_constant_JOY_VR_TRIGGER:
+
+.. _class_@GlobalScope_constant_JOY_OCULUS_AX:
+
+.. _class_@GlobalScope_constant_JOY_OCULUS_BY:
+
+.. _class_@GlobalScope_constant_JOY_OCULUS_MENU:
+
+.. _class_@GlobalScope_constant_JOY_OPENVR_MENU:
+
 .. _class_@GlobalScope_constant_JOY_SELECT:
 
 .. _class_@GlobalScope_constant_JOY_START:
@@ -1339,6 +1353,14 @@ enum **ButtonList**:
 .. _class_@GlobalScope_constant_JOY_ANALOG_L2:
 
 .. _class_@GlobalScope_constant_JOY_ANALOG_R2:
+
+.. _class_@GlobalScope_constant_JOY_VR_ANALOG_TRIGGER:
+
+.. _class_@GlobalScope_constant_JOY_VR_ANALOG_GRIP:
+
+.. _class_@GlobalScope_constant_JOY_OPENVR_TOUCHPADX:
+
+.. _class_@GlobalScope_constant_JOY_OPENVR_TOUCHPADY:
 
 enum **JoystickList**:
 
@@ -1400,6 +1422,20 @@ enum **JoystickList**:
 
 - **JOY_DS_Y** = **2** --- DualShock controller Y button
 
+- **JOY_VR_GRIP** = **2** --- Grip (side) buttons on a VR controller
+
+- **JOY_VR_PAD** = **14** --- Push down on the touchpad or main joystick on a VR controller
+
+- **JOY_VR_TRIGGER** = **15** --- Trigger on a VR controller
+
+- **JOY_OCULUS_AX** = **7** --- A button on the right Oculus Touch controller, X button on the left controller (also when used in OpenVR)
+
+- **JOY_OCULUS_BY** = **1** --- B button on the right Oculus Touch controller, Y button on the left controller (also when used in OpenVR)
+
+- **JOY_OCULUS_MENU** = **3** --- Menu button on either Oculus Touch controller.
+
+- **JOY_OPENVR_MENU** = **1** --- Menu button in OpenVR (Except when Oculus Touch controllers are used)
+
 - **JOY_SELECT** = **10** --- Joypad Button Select
 
 - **JOY_START** = **11** --- Joypad Button Start
@@ -1457,6 +1493,14 @@ enum **JoystickList**:
 - **JOY_ANALOG_L2** = **6** --- Joypad Left Analog Trigger
 
 - **JOY_ANALOG_R2** = **7** --- Joypad Right Analog Trigger
+
+- **JOY_VR_ANALOG_TRIGGER** = **2** --- VR Controller Analog Trigger
+
+- **JOY_VR_ANALOG_GRIP** = **4** --- VR Controller Analog Grip (side buttons)
+
+- **JOY_OPENVR_TOUCHPADX** = **0** --- OpenVR touchpad X axis (Joystick axis on Oculus Touch and Windows MR controllers)
+
+- **JOY_OPENVR_TOUCHPADY** = **1** --- OpenVR touchpad Y axis (Joystick axis on Oculus Touch and Windows MR controllers)
 
 .. _enum_@GlobalScope_MidiMessageList:
 

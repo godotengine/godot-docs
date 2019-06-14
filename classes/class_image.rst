@@ -629,7 +629,7 @@ Loads an image from the binary contents of a WebP file.
 
 - void **lock** **(** **)**
 
-Locks the data for writing access.
+Locks the data for reading and writing access. Sends an error to the console if the image is not locked when reading or writing a pixel.
 
 .. _class_Image_method_normalmap_to_xy:
 

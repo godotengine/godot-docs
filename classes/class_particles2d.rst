@@ -150,7 +150,7 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 | *Getter* | get_fixed_fps()      |
 +----------+----------------------+
 
-The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the particle system itself.
+The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
 
 .. _class_Particles2D_property_fract_delta:
 
@@ -198,7 +198,7 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 | *Getter* | get_normal_map()      |
 +----------+-----------------------+
 
-Normal map to be used for the ``texture`` property.
+Normal map to be used for the :ref:`texture<class_Particles2D_property_texture>` property.
 
 .. _class_Particles2D_property_one_shot:
 

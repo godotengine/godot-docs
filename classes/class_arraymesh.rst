@@ -14,7 +14,7 @@ ArrayMesh
 Brief Description
 -----------------
 
-
+:ref:`Mesh<class_Mesh>` type that provides utility for constructing a surface from arrays.
 
 Properties
 ----------
@@ -208,7 +208,7 @@ Property Descriptions
 | *Getter* | get_custom_aabb()      |
 +----------+------------------------+
 
-An overriding bounding box for this mesh.
+Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unnexpected culling when using a shader to offset vertices.
 
 Method Descriptions
 -------------------
@@ -216,6 +216,8 @@ Method Descriptions
 .. _class_ArrayMesh_method_add_blend_shape:
 
 - void **add_blend_shape** **(** :ref:`String<class_String>` name **)**
+
+Add name for a blend shape that will be added with :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`. Must be called before surface is added.
 
 .. _class_ArrayMesh_method_add_surface_from_arrays:
 
@@ -312,4 +314,6 @@ Set a name for a given surface.
 .. _class_ArrayMesh_method_surface_update_region:
 
 - void **surface_update_region** **(** :ref:`int<class_int>` surf_idx, :ref:`int<class_int>` offset, :ref:`PoolByteArray<class_PoolByteArray>` data **)**
+
+Updates a specified region of mesh arrays on GPU. Warning: only use if you know what you are doing. You can easily cause crashes by calling this function with improper arguments.
 

@@ -41,3 +41,5 @@ Property Descriptions
 | *Getter* | get_size()      |
 +----------+-----------------+
 
+Size in the X and Y axes. Default is ``Vector2(1, 1)``.
+

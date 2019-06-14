@@ -39,7 +39,7 @@ Methods
 Description
 -----------
 
-Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh.
+Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh. Examples include :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, and :ref:`SphereMesh<class_SphereMesh>`.
 
 Property Descriptions
 ---------------------
@@ -54,6 +54,8 @@ Property Descriptions
 | *Getter* | get_custom_aabb()      |
 +----------+------------------------+
 
+Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unnexpected culling when  using a shader to offset vertices.
+
 .. _class_PrimitiveMesh_property_flip_faces:
 
 - :ref:`bool<class_bool>` **flip_faces**
@@ -63,6 +65,8 @@ Property Descriptions
 +----------+-----------------------+
 | *Getter* | get_flip_faces()      |
 +----------+-----------------------+
+
+If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn. Result is the same as using \*CULL_BACK\* in :ref:`SpatialMaterial<class_SpatialMaterial>`. Default is false.
 
 .. _class_PrimitiveMesh_property_material:
 
@@ -82,4 +86,6 @@ Method Descriptions
 .. _class_PrimitiveMesh_method_get_mesh_arrays:
 
 - :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** const
+
+Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. Mesh array can be used with :ref:`ArrayMesh<class_ArrayMesh>` to create new surface.
 

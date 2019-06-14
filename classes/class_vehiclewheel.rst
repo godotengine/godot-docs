@@ -207,7 +207,7 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_skidinfo** **(** **)** const
 
-Returns a value between 0.0 and 1.0 that indicates whether this wheel is skidding. 0.0 is not skidding, 1.0 means the wheel has lost grip.
+Returns a value between 0.0 and 1.0 that indicates whether this wheel is skidding. 0.0 is skidding (the wheel has lost grip, e.g. icy terrain), 1.0 means not skidding (the wheel has full grip, e.g. dry asphalt road).
 
 .. _class_VehicleWheel_method_is_in_contact:
 
