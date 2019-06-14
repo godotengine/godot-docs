@@ -68,7 +68,7 @@ html_theme_options = {
 
 # VCS options: https://docs.readthedocs.io/en/latest/vcs.html#github
 html_context = {
-    "display_github": True, # Integrate GitHub
+    "display_github": !tags.has("i18n"), # Integrate GitHub
     "github_user": "godotengine", # Username
     "github_repo": "godot-docs", # Repo name
     "github_version": "master", # Version
