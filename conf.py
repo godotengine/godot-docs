@@ -33,6 +33,7 @@ version = 'latest'
 release = 'latest'
 
 language = 'en'
+is_i18n = tags.has('i18n')
 
 exclude_patterns = ['_build']
 
@@ -68,7 +69,7 @@ html_theme_options = {
 
 # VCS options: https://docs.readthedocs.io/en/latest/vcs.html#github
 html_context = {
-    "display_github": !tags.has("i18n"), # Integrate GitHub
+    "display_github": not is_i18n, # Integrate GitHub
     "github_user": "godotengine", # Username
     "github_repo": "godot-docs", # Repo name
     "github_version": "master", # Version
@@ -107,5 +108,5 @@ linkcheck_timeout = 10
 locale_dirs = ['../sphinx/po/']
 gettext_compact = False
 # Exclude class reference when marked with tag i18n.
-if tags.has('i18n'):
+if is_i18n:
     exclude_patterns = ['classes']
