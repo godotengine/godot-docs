@@ -3,44 +3,45 @@
 WebRTC
 ======
 
-HTML5, WebSockets, WebRTC
--------------------------
+HTML5, WebSocket, WebRTC
+------------------------
 
-One of the great feature of Godot is its ability to the export to HTML5/WebAssembly platform, allowing your game to run directly in the browser when a user visit your webpage.
+One of Godot's great features is its ability to export to the HTML5/WebAssembly platform, allowing your game to run directly in the browser when a user visit your webpage.
 
-This is a great oppourtunity for both demos and full games, but used to come with some limitations. In the area of networking, browsers used to support only HTTPRequests until few years ago, first WebSocket, then WebRTC, where proposed as a standard.
+This is a great opportunity for both demos and full games, but used to come with some limitations. In the area of networking, browsers used to support only HTTPRequests until recently, when first WebSocket and then WebRTC were proposed as standards.
 
-Websocket
+WebSocket
 ^^^^^^^^^
 
-When in December 2011, the WebSocket protocol was standardized, it allowed browsers to create stable and bidirectional connections to a WebSocket server. The protocol is pretty simple, but a very powerful tool to send push notifications to browsers, and has been used to implement chats, turn-based games, etc.
+When the WebSocket protocol was standardized in December 2011, it allowed browsers to create stable and bidirectional connections to a WebSocket server. The protocol is quite simple, but a very powerful tool to send push notifications to browsers, and has been used to implement chats, turn-based games, etc.
 
-WebSockets though, still uses a TCP connection, which is good for reliability but not for latency, so not good for real-time applications like VoIP, and fast-paced games.
+WebSockets, though, still use a TCP connection, which is good for reliability but not for latency, so not good for real-time applications like VoIP and fast-paced games.
 
 WebRTC
 ^^^^^^
 
-For this reason, since 2010, Google started working on a new technology called WebRTC, which later on, in 2017, became a W3C candidate recommendation. WebRTC is a much more complex set of specifications, and uses a lot of other technology underneath (ICE, DTLS, SDP), to provide fast, real-time, and secure communication between two peers.
+For this reason, since 2010, Google started working on a new technology called WebRTC, which later on, in 2017, became a W3C candidate recommendation. WebRTC is a much more complex set of specifications, and relies on many other technologies behind the scenes (ICE, DTLS, SDP) to provide fast, real-time, and secure communication between two peers.
 
-The idea, is to find the fastest route between the two peers and establish whenever possible a direct communication (as in try to avoid a relaying server).
+The idea is to find the fastest route between the two peers and establish whenever possible a direct communication (i.e. try to avoid a relaying server).
 
-This comes at a price though, and the price is that some media information must be exchanged between the two peers before the communication can start (in the form of Session Description Protocol - SDP strings). This usually takes the form of a so-called WebRTC Signaling Server.
+However, this comes at a price, which is that some media information must be exchanged between the two peers before the communication can start (in the form of Session Description Protocol - SDP strings). This usually takes the form of a so-called WebRTC Signaling Server.
 
 .. image:: img/webrtc_signaling.png
 
-Peers connects to a signaling server (for example a WebSocket server) and send their media information. The server then relays those information to other peers, allowing them to establish the desired direct communication. Once this step is done, peers can disconnect from the signaling server and keep the direct p2p connection open.
+Peers connect to a signaling server (for example a WebSocket server) and send their media information. The server then relays this information to other peers, allowing them to establish the desired direct communication. Once this step is done, peers can disconnect from the signaling server and keep the direct Peer-to-Peer (P2P) connection open.
 
 Using WebRTC in Godot
------------------------
+---------------------
 
 WebRTC is implemented in Godot via two main classes :ref:`WebRTCPeerConnection <class_WebRTCPeerConnection>` and :ref:`WebRTCDataChannel <class_WebRTCDataChannel>`, plus the multiplayer API implementation :ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>`. See section on :ref:`high-level multiplayer <doc_high_level_multiplayer>` for more details.
 
-.. note:: These classes are available automatically in HTML5, but **requires an external GDNative plugin on native plaftorms**. Check out `the plugin repository <https://github.com/godotengine/webrtc-native>`__ for instructions and to get the latest `release <https://github.com/godotengine/webrtc-native/releases>`__.
+.. note:: These classes are available automatically in HTML5, but **require an external GDNative plugin on native (non-HTML5) plaftorms**. Check out the `webrtc-native plugin repository <https://github.com/godotengine/webrtc-native>`__ for instructions and to get the latest `release <https://github.com/godotengine/webrtc-native/releases>`__.
 
 Minimal connection example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This example will show you how to create a WebRTC connection between two peers in the same application, this is not very useful in real life, but will give you a possibly easy overview of how a WebRTC connection is set up.
+This example will show you how to create a WebRTC connection between two peers in the same application.
+This is not very useful in real life, but will give you a good overview of how a WebRTC connection is set up.
 
 ::
 
@@ -76,7 +77,7 @@ This example will show you how to create a WebRTC connection between two peers i
         yield(get_tree().create_timer(1), "timeout")
         ch2.put_packet("Hi from P2".to_utf8())
 
-    func _process(delta):
+    func _process(_delta):
         # Poll connections
         p1.poll()
         p2.poll()
@@ -87,7 +88,7 @@ This example will show you how to create a WebRTC connection between two peers i
         if ch2.get_ready_state() == ch2.STATE_OPEN and ch2.get_available_packet_count() > 0:
             print("P2 received: ", ch2.get_packet().get_string_from_utf8())
 
-This will print
+This will print:
 
 ::
 
@@ -101,7 +102,7 @@ This example expands on the previous one, separating the peers in two different 
 
 ::
 
-    # An example p2p chat client (chat.gd)
+    # An example P2P chat client (chat.gd)
     extends Node
 
     var peer = WebRTCPeerConnection.new()
@@ -173,7 +174,7 @@ And now for the local signaling server:
         assert(other != "")
         get_node(other).peer.add_ice_candidate(mid, index, sdp)
 
-Then you can use it like:
+Then you can use it like this:
 
 ::
 
@@ -194,7 +195,7 @@ Then you can use it like:
         yield(get_tree().create_timer(1), "timeout")
         p2.send_message("Hi from %s" % p2.path())
 
-This will print something like
+This will print something similar to this:
 
 ::
 
@@ -204,4 +205,4 @@ This will print something like
 Remote signaling with WebSocket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A more advanced demo using WebSocket for signaling peers and :ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>` is avaiable in the `godot demo projects <https://github.com/godotengine/godot-demo-projects>`_ under `networking/webrtc_signaling`.
+A more advanced demo using WebSocket for signaling peers and :ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>` is available in the `godot demo projects <https://github.com/godotengine/godot-demo-projects>`_ under `networking/webrtc_signaling`.
