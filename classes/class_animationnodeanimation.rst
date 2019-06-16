@@ -14,7 +14,7 @@ AnimationNodeAnimation
 Brief Description
 -----------------
 
-
+Input animation to use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
 Properties
 ----------
@@ -22,6 +22,11 @@ Properties
 +-----------------------------+-------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` |
 +-----------------------------+-------------------------------------------------------------------+
+
+Description
+-----------
+
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Only features one output set using the :ref:`animation<class_AnimationNodeAnimation_property_animation>` property. Use it as an input for :ref:`AnimationNode<class_AnimationNode>` that blend animations together.
 
 Property Descriptions
 ---------------------
@@ -35,4 +40,6 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_animation()      |
 +----------+----------------------+
+
+Animation to use as an output. It is one of the animations provided by :ref:`AnimationTree.anim_player<class_AnimationTree_property_anim_player>`.
 

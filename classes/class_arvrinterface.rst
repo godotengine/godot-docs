@@ -33,6 +33,8 @@ Methods
 -------
 
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`get_camera_feed_id<class_ARVRInterface_method_get_camera_feed_id>` **(** **)**         |
++------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`get_capabilities<class_ARVRInterface_method_get_capabilities>` **(** **)** const       |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                | :ref:`get_name<class_ARVRInterface_method_get_name>` **(** **)** const                       |
@@ -163,6 +165,12 @@ Is this our primary interface?
 
 Method Descriptions
 -------------------
+
+.. _class_ARVRInterface_method_get_camera_feed_id:
+
+- :ref:`int<class_int>` **get_camera_feed_id** **(** **)**
+
+If this is an AR interface that requires displaying a camera feed as the background, this method returns the feed id in the :ref:`CameraServer<class_CameraServer>` for this interface.
 
 .. _class_ARVRInterface_method_get_capabilities:
 

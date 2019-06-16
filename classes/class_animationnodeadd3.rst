@@ -14,7 +14,7 @@ AnimationNodeAdd3
 Brief Description
 -----------------
 
-
+Blends two of three animations additively inside of an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
 Properties
 ----------
@@ -22,6 +22,19 @@ Properties
 +-------------------------+----------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeAdd3_property_sync>` |
 +-------------------------+----------------------------------------------------+
+
+Description
+-----------
+
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations together additively out of three based on a value in the ``[-1.0, 1.0]`` range.
+
+This node has three inputs:
+
+- The base animation to add to
+
+- A -add animation to blend with when the blend amount is in the ``[-1.0, 0.0]`` range.
+
+- A +add animation to blend with when the blend amount is in the ``[0.0, 1.0]`` range
 
 Property Descriptions
 ---------------------
@@ -35,4 +48,6 @@ Property Descriptions
 +----------+---------------------+
 | *Getter* | is_using_sync()     |
 +----------+---------------------+
+
+If ``true``, sets the ``optimization`` to ``false`` when calling :ref:`AnimationNode.blend_input<class_AnimationNode_method_blend_input>`, forcing the blended animations to update every frame.
 

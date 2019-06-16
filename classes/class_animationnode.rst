@@ -79,6 +79,8 @@ Called when the node was removed from the graph.
 
 - **tree_changed** **(** **)**
 
+Emitted by nodes that inherit from this class and that have an internal tree when one of their nodes changes. The nodes that emit this signal are :ref:`AnimationNodeBlendSpace1D<class_AnimationNodeBlendSpace1D>`, :ref:`AnimationNodeBlendSpace2D<class_AnimationNodeBlendSpace2D>`, :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`, and :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
 Enumerations
 ------------
 

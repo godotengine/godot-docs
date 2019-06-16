@@ -28,6 +28,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`                                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`application/boot_splash/use_filter<class_ProjectSettings_property_application/boot_splash/use_filter>`                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>`                                               |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`application/config/icon<class_ProjectSettings_property_application/config/icon>`                                                                               |
@@ -617,6 +619,12 @@ If ``true``, scale the boot splash image to the full window length when engine s
 - :ref:`String<class_String>` **application/boot_splash/image**
 
 Path to an image used as the boot splash.
+
+.. _class_ProjectSettings_property_application/boot_splash/use_filter:
+
+- :ref:`bool<class_bool>` **application/boot_splash/use_filter**
+
+If ``true``, applies linear filtering when scaling the image (recommended for high resolution artwork). If ``false``, uses nearest-neighbor interpolation (recommended for pixel art).
 
 .. _class_ProjectSettings_property_application/config/custom_user_dir_name:
 

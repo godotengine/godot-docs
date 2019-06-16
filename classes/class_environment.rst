@@ -46,6 +46,8 @@ Properties
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`auto_exposure_speed<class_Environment_property_auto_exposure_speed>`                         |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                  | :ref:`background_camera_feed_id<class_Environment_property_background_camera_feed_id>`             |
++--------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                  | :ref:`background_canvas_max_layer<class_Environment_property_background_canvas_max_layer>`         |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`                              | :ref:`background_color<class_Environment_property_background_color>`                               |
@@ -204,6 +206,8 @@ Enumerations
 
 .. _class_Environment_constant_BG_CANVAS:
 
+.. _class_Environment_constant_BG_CAMERA_FEED:
+
 .. _class_Environment_constant_BG_MAX:
 
 enum **BGMode**:
@@ -220,7 +224,9 @@ enum **BGMode**:
 
 - **BG_CANVAS** = **4** --- Display a :ref:`CanvasLayer<class_CanvasLayer>` in the background.
 
-- **BG_MAX** = **6** --- Helper constant keeping track of the enum's size, has no direct usage in API calls.
+- **BG_CAMERA_FEED** = **6** --- Display a camera feed in the background.
+
+- **BG_MAX** = **7** --- Helper constant keeping track of the enum's size, has no direct usage in API calls.
 
 .. _enum_Environment_GlowBlendMode:
 
@@ -494,6 +500,18 @@ Scale of the auto exposure effect. Affects the intensity of auto exposure.
 +----------+----------------------------------------+
 
 Speed of the auto exposure effect. Affects the time needed for the camera to perform auto exposure.
+
+.. _class_Environment_property_background_camera_feed_id:
+
+- :ref:`int<class_int>` **background_camera_feed_id**
+
++----------+---------------------------+
+| *Setter* | set_camera_feed_id(value) |
++----------+---------------------------+
+| *Getter* | get_camera_feed_id()      |
++----------+---------------------------+
+
+The id of the camera feed to show in the background.
 
 .. _class_Environment_property_background_canvas_max_layer:
 

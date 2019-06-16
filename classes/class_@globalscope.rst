@@ -22,6 +22,8 @@ Properties
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`AudioServer<class_AudioServer>`                                     | :ref:`AudioServer<class_@GlobalScope_property_AudioServer>`                         |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`CameraServer<class_CameraServer>`                                   | :ref:`CameraServer<class_@GlobalScope_property_CameraServer>`                       |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`ClassDB<class_ClassDB>`                                             | :ref:`ClassDB<class_@GlobalScope_property_ClassDB>`                                 |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`Engine<class_Engine>`                                               | :ref:`Engine<class_@GlobalScope_property_Engine>`                                   |
@@ -2146,6 +2148,12 @@ Property Descriptions
 - :ref:`AudioServer<class_AudioServer>` **AudioServer**
 
 :ref:`AudioServer<class_AudioServer>` singleton
+
+.. _class_@GlobalScope_property_CameraServer:
+
+- :ref:`CameraServer<class_CameraServer>` **CameraServer**
+
+:ref:`CameraServer<class_CameraServer>` singleton
 
 .. _class_@GlobalScope_property_ClassDB:
 
