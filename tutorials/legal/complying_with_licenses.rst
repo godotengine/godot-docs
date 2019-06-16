@@ -78,7 +78,7 @@ Godot uses `FreeType <https://www.freetype.org/>`_ to render fonts. It's license
 ENet
 ^^^^
 
-If the project being creater is a multiplayer game using the `ENet <http://enet.bespin.org/>`_ driver, ENet has similar licensing terms as Godot
+If the project being created is a multiplayer game using the `ENet <http://enet.bespin.org/>`_ driver, ENet has similar licensing terms as Godot
 
 
 	Copyright (c) 2002-2016 Lee Salzman
