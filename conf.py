@@ -110,3 +110,11 @@ gettext_compact = False
 # Exclude class reference when marked with tag i18n.
 if is_i18n:
     exclude_patterns = ['classes']
+    # Couldn't find a way to retrieve variables nor do advanced string
+    # concat from reST, so had to hardcode this in the "epilog" added to
+    # all pages. This is used in index.rst to display the Weblate badge.
+    rst_epilog = """
+.. |weblate_widget| image:: https://hosted.weblate.org/widgets/godot-engine/{weblate_locale}/godot-docs/287x66-white.png
+    :alt: Translation status
+    :target: https://hosted.weblate.org/engage/godot-engine/{weblate_locale}/?utm_source=widget
+""".format(weblate_locale = language)
