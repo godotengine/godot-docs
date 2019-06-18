@@ -68,6 +68,8 @@ Clears the server from all translations.
 
 - :ref:`Array<class_Array>` **get_loaded_locales** **(** **)** const
 
+Returns an Array of all loaded locales of the game.
+
 .. _class_TranslationServer_method_get_locale:
 
 - :ref:`String<class_String>` **get_locale** **(** **)** const

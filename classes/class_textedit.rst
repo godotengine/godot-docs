@@ -250,6 +250,8 @@ Emitted when the cursor changes.
 
 - **info_clicked** **(** :ref:`int<class_int>` row, :ref:`String<class_String>` info **)**
 
+Emitted when the info icon is clicked.
+
 .. _class_TextEdit_signal_request_completion:
 
 - **request_completion** **(** **)**
@@ -315,9 +317,9 @@ enum **MenuItems**:
 
 - **MENU_UNDO** = **5** --- Undoes the previous action.
 
-- **MENU_REDO** = **6**
+- **MENU_REDO** = **6** --- Redoes the previous action.
 
-- **MENU_MAX** = **7**
+- **MENU_MAX** = **7** --- Represents the size of the :ref:`MenuItems<enum_TextEdit_MenuItems>` enum.
 
 Description
 -----------
@@ -449,6 +451,8 @@ If ``true``, the fold gutter is visible. This enables folding groups of indented
 | *Getter* | is_hiding_enabled()       |
 +----------+---------------------------+
 
+If ``true``, all lines that have been set to hidden by :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`, will not be visible.
+
 .. _class_TextEdit_property_highlight_all_occurrences:
 
 - :ref:`bool<class_bool>` **highlight_all_occurrences**
@@ -458,6 +462,8 @@ If ``true``, the fold gutter is visible. This enables folding groups of indented
 +----------+----------------------------------------+
 | *Getter* | is_highlight_all_occurrences_enabled() |
 +----------+----------------------------------------+
+
+If ``true``, all occurrences of the selected text will be highlighted.
 
 .. _class_TextEdit_property_highlight_current_line:
 
@@ -515,6 +521,8 @@ If ``true``, line numbers are displayed to the left of the text.
 | *Getter* | is_smooth_scroll_enabled()      |
 +----------+---------------------------------+
 
+If ``true``, sets the ``step`` of the scrollbars to ``0.25`` which results in smoother scrolling.
+
 .. _class_TextEdit_property_syntax_highlighting:
 
 - :ref:`bool<class_bool>` **syntax_highlighting**
@@ -524,6 +532,8 @@ If ``true``, line numbers are displayed to the left of the text.
 +----------+------------------------------+
 | *Getter* | is_syntax_coloring_enabled() |
 +----------+------------------------------+
+
+If ``true``, any custom color properties that have been set for this ``TextEdit`` will be visible.
 
 .. _class_TextEdit_property_text:
 
@@ -574,7 +584,7 @@ Add color region (given the delimiters) and its colors.
 
 - void **add_keyword_color** **(** :ref:`String<class_String>` keyword, :ref:`Color<class_Color>` color **)**
 
-Add a keyword and its color.
+Add a ``keyword`` and its :ref:`Color<class_Color>`.
 
 .. _class_TextEdit_method_can_fold:
 
@@ -586,19 +596,19 @@ Returns if the given line is foldable, that is, it has indented lines right belo
 
 - void **clear_colors** **(** **)**
 
-Clear all the syntax coloring information.
+Clears all the syntax coloring information.
 
 .. _class_TextEdit_method_clear_undo_history:
 
 - void **clear_undo_history** **(** **)**
 
-Clear the undo history.
+Clears the undo history.
 
 .. _class_TextEdit_method_copy:
 
 - void **copy** **(** **)**
 
-Copy the current selection.
+Copy's the current text selection.
 
 .. _class_TextEdit_method_cursor_get_column:
 
@@ -616,21 +626,31 @@ Returns the line the editing cursor is at.
 
 - void **cursor_set_column** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=true **)**
 
+Moves the cursor at the specified ``column`` index.
+
+If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs. Default value is ``true``.
+
 .. _class_TextEdit_method_cursor_set_line:
 
 - void **cursor_set_line** **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` adjust_viewport=true, :ref:`bool<class_bool>` can_be_hidden=true, :ref:`int<class_int>` wrap_index=0 **)**
+
+Moves the cursor at the specified ``line`` index.
+
+If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs. Default value is ``true``.
+
+If ``can_be_hidden`` is set to true, the specified ``line`` can be hidden using :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`. Default value is ``true``.
 
 .. _class_TextEdit_method_cut:
 
 - void **cut** **(** **)**
 
-Cut the current selection.
+Cut's the current selection.
 
 .. _class_TextEdit_method_deselect:
 
 - void **deselect** **(** **)**
 
-Clears the current selection.
+Deselects the current selection.
 
 .. _class_TextEdit_method_fold_all_lines:
 
@@ -653,6 +673,8 @@ Returns an array containing the line number of each breakpoint.
 .. _class_TextEdit_method_get_keyword_color:
 
 - :ref:`Color<class_Color>` **get_keyword_color** **(** :ref:`String<class_String>` keyword **)** const
+
+Returns the :ref:`Color<class_Color>` of the specified ``keyword``.
 
 .. _class_TextEdit_method_get_line:
 
@@ -706,25 +728,31 @@ Returns the selection end line.
 
 - :ref:`String<class_String>` **get_word_under_cursor** **(** **)** const
 
+Returns a :ref:`String<class_String>` text with the word under the mouse cursor location.
+
 .. _class_TextEdit_method_has_keyword_color:
 
 - :ref:`bool<class_bool>` **has_keyword_color** **(** :ref:`String<class_String>` keyword **)** const
+
+Returns whether the specified ``keyword`` has a color set to it or not.
 
 .. _class_TextEdit_method_insert_text_at_cursor:
 
 - void **insert_text_at_cursor** **(** :ref:`String<class_String>` text **)**
 
-Insert a given text at the cursor position.
+Insert the specified text at the cursor position.
 
 .. _class_TextEdit_method_is_folded:
 
 - :ref:`bool<class_bool>` **is_folded** **(** :ref:`int<class_int>` line **)** const
 
-Returns if the given line is folded.
+Returns whether the line at the specified index is folded or not.
 
 .. _class_TextEdit_method_is_line_hidden:
 
 - :ref:`bool<class_bool>` **is_line_hidden** **(** :ref:`int<class_int>` line **)** const
+
+Returns whether the line at the specified index is hidden or not.
 
 .. _class_TextEdit_method_is_selection_active:
 
@@ -735,6 +763,8 @@ Returns ``true`` if the selection is active.
 .. _class_TextEdit_method_menu_option:
 
 - void **menu_option** **(** :ref:`int<class_int>` option **)**
+
+Triggers a right click menu action by the specified index. See :ref:`MenuItems<enum_TextEdit_MenuItems>` for a list of available indexes.
 
 .. _class_TextEdit_method_paste:
 
@@ -776,6 +806,8 @@ Select all the text.
 
 - void **set_line_as_hidden** **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` enable **)**
 
+If ``true``, hides the line of the specified index.
+
 .. _class_TextEdit_method_toggle_fold_line:
 
 - void **toggle_fold_line** **(** :ref:`int<class_int>` line **)**
@@ -797,4 +829,6 @@ Unfolds the given line, if folded.
 .. _class_TextEdit_method_unhide_all_lines:
 
 - void **unhide_all_lines** **(** **)**
+
+Unhide all lines that were previously set to hidden by :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`.
 

@@ -30,6 +30,10 @@ Properties
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`                           |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`max_window_size<class_OS_property_max_window_size>`                                             |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`min_window_size<class_OS_property_min_window_size>`                                             |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`ScreenOrientation<enum_OS_ScreenOrientation>` | :ref:`screen_orientation<class_OS_property_screen_orientation>`                                       |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`vsync_enabled<class_OS_property_vsync_enabled>`                                                 |
@@ -498,6 +502,30 @@ If ``true``, the engine tries to keep the screen on while the game is running. U
 +----------+-------------------------------------+
 
 If ``true``, the engine optimizes for low processor usage by only refreshing the screen if needed. Can improve battery consumption on mobile.
+
+.. _class_OS_property_max_window_size:
+
+- :ref:`Vector2<class_Vector2>` **max_window_size**
+
++----------+----------------------------+
+| *Setter* | set_max_window_size(value) |
++----------+----------------------------+
+| *Getter* | get_max_window_size()      |
++----------+----------------------------+
+
+The maximum size of the window (without counting window manager decorations). Does not affect fullscreen mode. Set to ``(0, 0)`` to reset to the system default value.
+
+.. _class_OS_property_min_window_size:
+
+- :ref:`Vector2<class_Vector2>` **min_window_size**
+
++----------+----------------------------+
+| *Setter* | set_min_window_size(value) |
++----------+----------------------------+
+| *Getter* | get_min_window_size()      |
++----------+----------------------------+
+
+The minimum size of the window (without counting window manager decorations). Does not affect fullscreen mode. Set to ``(0, 0)`` to reset to the system default value.
 
 .. _class_OS_property_screen_orientation:
 

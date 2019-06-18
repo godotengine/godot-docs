@@ -247,7 +247,7 @@ enum **Flags**:
 
 .. _class_CPUParticles2D_constant_EMISSION_SHAPE_POINT:
 
-.. _class_CPUParticles2D_constant_EMISSION_SHAPE_CIRCLE:
+.. _class_CPUParticles2D_constant_EMISSION_SHAPE_SPHERE:
 
 .. _class_CPUParticles2D_constant_EMISSION_SHAPE_RECTANGLE:
 
@@ -259,7 +259,7 @@ enum **EmissionShape**:
 
 - **EMISSION_SHAPE_POINT** = **0** --- All particles will be emitted from a single point.
 
-- **EMISSION_SHAPE_CIRCLE** = **1** --- Particles will be emitted on the perimeter of a circle.
+- **EMISSION_SHAPE_SPHERE** = **1** --- Particles will be emitted on the surface of a sphere flattened to two dimensions.
 
 - **EMISSION_SHAPE_RECTANGLE** = **2** --- Particles will be emitted in the area of a rectangle.
 
@@ -574,7 +574,7 @@ Particles will be emitted inside this region. Use :ref:`EmissionShape<enum_CPUPa
 | *Getter* | get_emission_sphere_radius()      |
 +----------+-----------------------------------+
 
-The circle's radius if :ref:`emission_shape<class_CPUParticles2D_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_CIRCLE<class_CPUParticles2D_constant_EMISSION_SHAPE_CIRCLE>`.
+The sphere's radius if :ref:`emission_shape<class_CPUParticles2D_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_SPHERE<class_CPUParticles2D_constant_EMISSION_SHAPE_SPHERE>`.
 
 .. _class_CPUParticles2D_property_emitting:
 
