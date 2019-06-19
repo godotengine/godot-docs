@@ -354,12 +354,16 @@ intermediate values generally works best.
 Clearcoat
 ~~~~~~~~~
 
+*This feature is only available when using the GLES3 backend.*
+
 The *Clearcoat* parameter is used to add a secondary pass of transparent coat
 to the material. This is common in car paint and toys. In practice, it's a
 smaller specular blob added on top of the existing material.
 
 Anisotropy
 ~~~~~~~~~~
+
+*This feature is only available when using the GLES3 backend.*
 
 This changes the shape of the specular blob and aligns it to tangent space.
 Anisotropy is commonly used with hair, or to make materials such as brushed
@@ -381,6 +385,8 @@ AO map. It is recommended to bake ambient occlusion whenever possible.
 Depth
 ~~~~~
 
+*This feature is only available when using the GLES3 backend.*
+
 Setting a depth map on a material produces a ray-marched search to emulate the
 proper displacement of cavities along the view direction. This is not real
 added geometry, but an illusion of depth. It may not work for complex objects,
@@ -391,6 +397,8 @@ but it produces a realistic depth effect for textures. For best results,
 
 Subsurface Scattering
 ~~~~~~~~~~~~~~~~~~~~~
+
+*This feature is only available when using the GLES3 backend.*
 
 This effect emulates light that penetrates an object's surface, is scattered,
 and then comes out. It is useful to create realistic skin, marble, colored
@@ -409,6 +417,8 @@ such as plant leaves, grass, human ears, etc.
 
 Refraction
 ~~~~~~~~~~~
+
+*This feature is only available when using the GLES3 backend.*
 
 When refraction is enabled, it supersedes alpha blending, and Godot attempts to
 fetch information from behind the object being rendered instead. This allows

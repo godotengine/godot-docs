@@ -6,6 +6,10 @@ GI Probes
 Introduction
 ------------
 
+.. note:: This feature is only available when using the GLES3 backend.
+          :ref:`doc_baked_lightmaps` can be used as an alternative
+          when using the GLES2 renderer.
+
 Just like with :ref:`doc_reflection_probes`, and as stated in
 the :ref:`doc_spatial_material`, objects can show reflected or diffuse light.
 GI Probes are similar to Reflection Probes, but they use a different and more
