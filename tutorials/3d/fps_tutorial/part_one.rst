@@ -15,24 +15,24 @@ Throughout the course of this tutorial series, we will cover how:
 - To make a first person character that can move, sprint, and jump.
 - To make a simple animation state machine for handling animation transitions.
 - To add three weapons to the first person character, each using a different way to handle bullet collisions:
-- - A knife (using an :ref:`Area <class_Area>`)
-- - A pistol (Bullet scenes)
-- - A rifle (using a :ref:`Raycast <class_Raycast>`)
+          - A knife (using an :ref:`Area <class_Area>`)
+          - A pistol (Bullet scenes)
+          - A rifle (using a :ref:`Raycast <class_Raycast>`)
 - To add two different types of grenades to the first person character:
-- - A normal grenade
-- - A sticky grenade
+          - A normal grenade
+          - A sticky grenade
 - To add the ability to grab and throw :ref:`RigidBody <class_RigidBody>` nodes
 - To add joypad input for the player
 - To add ammo and reloading for all weapons that consume ammo.
 - To add ammo and health pick ups
-- - In two sizes: big and small
+          - In two sizes: big and small
 - To add an automatic turret
-- - That can fire using bullet objects or a :ref:`Raycast <class_Raycast>`
+          - That can fire using bullet objects or a :ref:`Raycast <class_Raycast>`
 - To add targets that break when they've taken enough damage
 - To add sounds that play when the guns fire.
 - To add a simple main menu:
-- - With an options menu for changing how the game runs
-- - With a level select screen
+          - With an options menu for changing how the game runs
+          - With a level select screen
 - To add a universal pause menu we can access anywhere
 
 .. note:: While this tutorial can be completed by beginners, it is highly
