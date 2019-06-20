@@ -20,7 +20,7 @@ to the fragment shader for pixel-processing. Because of this, transform feedback
 shaders can build on themselves each run, unlike other shaders that discard the
 data they have calculated once they draw to the frame buffer.
 
-.. note:: Particle shaders are only available in the GLES3 renderer. If you need 
+.. note:: Particle shaders are only available in the GLES3 backend. If you need
           particles in GLES2, use :ref:`CPUParticles <class_CPUParticles>`.
 
 Render modes

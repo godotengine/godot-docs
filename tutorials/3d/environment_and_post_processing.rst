@@ -136,6 +136,8 @@ In practice, it makes light stand out more across the fog.
 Tonemap
 ^^^^^^^
 
+*This feature is only available when using the GLES3 backend.*
+
 Selects the tone-mapping curve that will be applied to the scene, from a short
 list of standard curves used in the film and game industry. Tone mapping can make
 light and dark areas more homogeneous, even though the result is not that strong.
@@ -147,6 +149,8 @@ Tone mapping options are:
 
 Auto Exposure (HDR)
 ^^^^^^^^^^^^^^^^^^^
+
+*This feature is only available when using the GLES3 backend.*
 
 Even though, in most cases, lighting and texturing are heavily artist controlled,
 Godot supports a simple high dynamic range implementation with the auto exposure
@@ -188,6 +192,8 @@ in the Environment.
 Screen-Space Reflections (SSR)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+*This feature is only available when using the GLES3 backend.*
+
 While Godot supports three sources of reflection data (Sky, ReflectionProbe, and
 GIProbe), they may not provide enough detail for all situations. Scenarios
 where Screen Space Reflections make the most sense are when objects are in
@@ -211,6 +217,8 @@ Keep in mind that screen-space-reflections only work for reflecting opaque geome
 
 Screen-Space Ambient Occlusion (SSAO)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*This feature is only available when using the GLES3 backend.*
 
 As mentioned in the **Ambient** section, areas where light from light nodes
 does not reach (either because it's outside the radius or shadowed) are lit
@@ -255,6 +263,8 @@ Tweaking SSAO is possible with several parameters:
 Depth of Field / Far Blur
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+*This feature is only available when using the GLES3 backend.*
+
 This effect simulates focal distance on high end cameras. It blurs objects behind
 a given range. It has an initial **Distance** with a **Transition** region
 (in world units):
@@ -266,6 +276,8 @@ the **Quality** may be needed in order to avoid artifacts.
 
 Depth of Field / Near Blur
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*This feature is only available when using the GLES3 backend.*
 
 This effect simulates focal distance on high end cameras. It blurs objects close
 to the camera (acts in the opposite direction as far blur).
@@ -283,6 +295,8 @@ given object:
 
 Glow
 ^^^^
+
+*This feature is only available when using the GLES3 backend.*
 
 In photography and film, when light amount exceeds the maximum supported by the
 media (be it analog or digital), it generally bleeds outwards to darker regions
@@ -334,6 +348,8 @@ gets rids of it, at a minimal performance cost.
 
 Adjustments
 ^^^^^^^^^^^
+
+*This feature is only available when using the GLES3 backend.*
 
 At the end of processing, Godot offers the possibility to do some standard
 image adjustments.
