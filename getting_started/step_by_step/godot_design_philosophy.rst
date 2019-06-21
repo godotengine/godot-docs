@@ -113,8 +113,8 @@ This means all the technologies that ship with it have to be Free
 For the most part, they’re developed from the ground up by contributors.
 
 Anyone can plug in proprietary tools for the needs of their projects —
-they just won’t ship with the engine. This may include NVIDIA PhysX,
-Google AdMob, or an FBX model importer. Any of these can come as
+they just won’t ship with the engine. This may include Google AdMob,
+or an FBX model importer. Any of these can come as
 third-party plugins instead.
 
 On the other hand, an open codebase means you can **learn from and extend
