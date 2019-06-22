@@ -438,7 +438,7 @@ enum **PowerState**:
 Description
 -----------
 
-Operating System functions. OS Wraps the most common functionality to communicate with the host Operating System, such as: mouse grabbing, mouse cursors, clipboard, video mode, date and time, timers, environment variables, execution of binaries, command line, etc.
+Operating System functions. OS Wraps the most common functionality to communicate with the host Operating System, such as: clipboard, video mode, date and time, timers, environment variables, execution of binaries, command line, etc.
 
 Property Descriptions
 ---------------------
