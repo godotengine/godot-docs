@@ -592,6 +592,7 @@ choose one of the three animation types:
 
     func _ready():
         $AnimatedSprite.animation = mob_types[randi() % mob_types.size()]
+        $AnimatedSprite.play()
 
  .. code-tab:: csharp
 
@@ -600,7 +601,9 @@ choose one of the three animation types:
 
     public override void _Ready()
     {
-        GetNode<AnimatedSprite>("AnimatedSprite").Animation = _mobTypes[_random.Next(0, _mobTypes.Length)];
+        var animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+        animatedSprite.Animation = _mobTypes[_random.Next(0, _mobTypes.Length)];
+        animatedSprite.Play();
     }
 
 .. note:: You must use ``randomize()`` if you want
