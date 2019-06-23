@@ -12,15 +12,13 @@ For compiling under Linux or other Unix variants, the following is
 required:
 
 -  GCC or Clang
--  Python 2.7+ (Python 3 only supported as of SCons 3.0)
--  SCons build system
+-  Python 3 or 2.7+
+-  SCons build system (3.0 or later for Python 3)
 -  pkg-config (used to detect the dependencies below)
 -  X11, Xcursor, Xinerama, Xi and XRandR development libraries
 -  MesaGL development libraries
 -  ALSA development libraries
--  PulseAudio development libraries (for sound support)
--  Freetype (for the editor)
--  OpenSSL (for HTTPS and TLS)
+-  PulseAudio development libraries
 -  *Optional* - libudev (build with ``udev=yes``)
 -  *Optional* - yasm (for WebM SIMD optimizations)
 
@@ -32,51 +30,48 @@ Distro-specific oneliners
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Arch**      | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     pacman -S scons libxcursor libxinerama libxi libxrandr mesa glu alsa-lib pulseaudio freetype2 yasm     |
+|               |     pacman -S scons libxcursor libxinerama libxi libxrandr mesa glu alsa-lib pulseaudio yasm               |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Debian** /  | ::                                                                                                         |
 | **Ubuntu**    |                                                                                                            |
 |               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
-|               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev \   |
-|               |         libxi-dev libxrandr-dev yasm                                                                       |
+|               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libudev-dev libxi-dev libxrandr-dev yasm    |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Fedora**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \     |
-|               |         libXi-devel mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel \   |
-|               |         libudev-devel mesa-libGLU-devel yasm                                                               |
+|               |         libXi-devel mesa-libGL-devel mesa-libGLU-devel alsa-lib-devel pulseaudio-libs-devel \              |
+|               |         libudev-devel yasm                                                                                 |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **FreeBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo pkg install scons pkgconf xorg-libraries libXcursor libXrandr libXi xineramaproto libglapi \      |
-|               |         libGLU freetype2 openssl yasm                                                                      |
+|               |         libGLU yasm                                                                                        |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Gentoo**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     emerge -an dev-util/scons x11-libs/libX11 x11-libs/libXcursor x11-libs/libXinerama x11-libs/libXi \    |
-|               |         media-libs/mesa media-libs/glu media-libs/alsa-lib media-sound/pulseaudio media-libs/freetype \    |
-|               |         dev-lang/yasm                                                                                      |
+|               |         media-libs/mesa media-libs/glu media-libs/alsa-lib media-sound/pulseaudio dev-lang/yasm            |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Mageia**    | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     urpmi scons task-c++-devel pkgconfig "pkgconfig(alsa)" "pkgconfig(freetype2)" "pkgconfig(glu)" \       |
-|               |         "pkgconfig(libpulse)" "pkgconfig(openssl)" "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)"\|
-|               |         "pkgconfig(xinerama)" "pkgconfig(xi)" "pkgconfig(xrandr)" "pkgconfig(zlib)" yasm                   |
+|               |     urpmi scons task-c++-devel pkgconfig "pkgconfig(alsa)" "pkgconfig(glu)" "pkgconfig(libpulse)" \        |
+|               |         "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)" "pkgconfig(xinerama)" "pkgconfig(xi)" \    |
+|               |         "pkgconfig(xrandr)" yasm                                                                           |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **OpenBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     pkg_add python scons png llvm yasm                                                                     |
+|               |     pkg_add python scons llvm yasm                                                                         |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **openSUSE**  | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo zypper install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \  |
-|               |             libXi-devel Mesa-libGL-devel alsa-devel libpulse-devel freetype2-devel openssl-devel \         |
-|               |             libudev-devel libGLU1 libpng-devel yasm                                                        |
+|               |             libXi-devel Mesa-libGL-devel alsa-devel libpulse-devel libudev-devel libGLU1 yasm              |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Solus**     | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo eopkg install -c system.devel scons libxcursor-devel libxinerama-devel libxi-devel \              |
-|               |         libxrandr-devel mesalib-devel libglu alsa-lib pulseaudio freetype2-devel pulseaudio-devel yasm     |
+|               |         libxrandr-devel mesalib-devel libglu alsa-lib pulseaudio pulseaudio-devel yasm                     |
 +---------------+------------------------------------------------------------------------------------------------------------+
 
 Compiling
