@@ -19,27 +19,29 @@ Container and player of :ref:`Animation<class_Animation>` resources.
 Properties
 ----------
 
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                            | :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`                   |
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                            | :ref:`autoplay<class_AnimationPlayer_property_autoplay>`                                       |
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                            | :ref:`current_animation<class_AnimationPlayer_property_current_animation>`                     |
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                              | :ref:`current_animation_length<class_AnimationPlayer_property_current_animation_length>`       |
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                              | :ref:`current_animation_position<class_AnimationPlayer_property_current_animation_position>`   |
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                | :ref:`playback_active<class_AnimationPlayer_property_playback_active>`                         |
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                              | :ref:`playback_default_blend_time<class_AnimationPlayer_property_playback_default_blend_time>` |
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`AnimationProcessMode<enum_AnimationPlayer_AnimationProcessMode>` | :ref:`playback_process_mode<class_AnimationPlayer_property_playback_process_mode>`             |
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                              | :ref:`playback_speed<class_AnimationPlayer_property_playback_speed>`                           |
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`                                        | :ref:`root_node<class_AnimationPlayer_property_root_node>`                                     |
-+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                                  | :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`                   |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                                  | :ref:`autoplay<class_AnimationPlayer_property_autoplay>`                                       |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                                  | :ref:`current_animation<class_AnimationPlayer_property_current_animation>`                     |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                                    | :ref:`current_animation_length<class_AnimationPlayer_property_current_animation_length>`       |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                                    | :ref:`current_animation_position<class_AnimationPlayer_property_current_animation_position>`   |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`AnimationMethodCallMode<enum_AnimationPlayer_AnimationMethodCallMode>` | :ref:`method_call_mode<class_AnimationPlayer_property_method_call_mode>`                       |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                      | :ref:`playback_active<class_AnimationPlayer_property_playback_active>`                         |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                                    | :ref:`playback_default_blend_time<class_AnimationPlayer_property_playback_default_blend_time>` |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`AnimationProcessMode<enum_AnimationPlayer_AnimationProcessMode>`       | :ref:`playback_process_mode<class_AnimationPlayer_property_playback_process_mode>`             |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                                    | :ref:`playback_speed<class_AnimationPlayer_property_playback_speed>`                           |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`                                              | :ref:`root_node<class_AnimationPlayer_property_root_node>`                                     |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -134,6 +136,18 @@ enum **AnimationProcessMode**:
 
 - **ANIMATION_PROCESS_MANUAL** = **2** --- Do not process animation. Use the 'advance' method to process the animation manually.
 
+.. _enum_AnimationPlayer_AnimationMethodCallMode:
+
+.. _class_AnimationPlayer_constant_ANIMATION_METHOD_CALL_DEFERRED:
+
+.. _class_AnimationPlayer_constant_ANIMATION_METHOD_CALL_IMMEDIATE:
+
+enum **AnimationMethodCallMode**:
+
+- **ANIMATION_METHOD_CALL_DEFERRED** = **0** --- Batch method calls during the animation process, then do the calls after events are processed. This avoids bugs involving deleting nodes or modifying the AnimationPlayer while playing.
+
+- **ANIMATION_METHOD_CALL_IMMEDIATE** = **1** --- Make method calls immediately when reached in the animation.
+
 Description
 -----------
 
@@ -204,6 +218,18 @@ The length (in seconds) of the currently being played animation.
 +----------+----------------------------------+
 
 The position (in seconds) of the currently playing animation.
+
+.. _class_AnimationPlayer_property_method_call_mode:
+
+- :ref:`AnimationMethodCallMode<enum_AnimationPlayer_AnimationMethodCallMode>` **method_call_mode**
+
++----------+-----------------------------+
+| *Setter* | set_method_call_mode(value) |
++----------+-----------------------------+
+| *Getter* | get_method_call_mode()      |
++----------+-----------------------------+
+
+The call mode to use for Call Method tracks. Default value: ``ANIMATION_METHOD_CALL_DEFERRED``.
 
 .. _class_AnimationPlayer_property_playback_active:
 

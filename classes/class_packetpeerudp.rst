@@ -19,21 +19,25 @@ UDP packet peer.
 Methods
 -------
 
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`close<class_PacketPeerUDP_method_close>` **(** **)**                                                                                                                       |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_packet_ip<class_PacketPeerUDP_method_get_packet_ip>` **(** **)** const                                                                                                 |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_packet_port<class_PacketPeerUDP_method_get_packet_port>` **(** **)** const                                                                                             |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_listening<class_PacketPeerUDP_method_is_listening>` **(** **)** const                                                                                                   |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_PacketPeerUDP_method_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`int<class_int>` recv_buf_size=65536 **)** |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`set_dest_address<class_PacketPeerUDP_method_set_dest_address>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                    |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_PacketPeerUDP_method_wait>` **(** **)**                                                                                                                         |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`close<class_PacketPeerUDP_method_close>` **(** **)**                                                                                                                           |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_packet_ip<class_PacketPeerUDP_method_get_packet_ip>` **(** **)** const                                                                                                     |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_packet_port<class_PacketPeerUDP_method_get_packet_port>` **(** **)** const                                                                                                 |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_listening<class_PacketPeerUDP_method_is_listening>` **(** **)** const                                                                                                       |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`join_multicast_group<class_PacketPeerUDP_method_join_multicast_group>` **(** :ref:`String<class_String>` multicast_address, :ref:`String<class_String>` interface_name **)**   |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`leave_multicast_group<class_PacketPeerUDP_method_leave_multicast_group>` **(** :ref:`String<class_String>` multicast_address, :ref:`String<class_String>` interface_name **)** |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_PacketPeerUDP_method_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`int<class_int>` recv_buf_size=65536 **)**     |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`set_dest_address<class_PacketPeerUDP_method_set_dest_address>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                        |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_PacketPeerUDP_method_wait>` **(** **)**                                                                                                                             |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -66,6 +70,20 @@ Returns the port of the remote peer that sent the last packet(that was received 
 - :ref:`bool<class_bool>` **is_listening** **(** **)** const
 
 Returns whether this ``PacketPeerUDP`` is listening.
+
+.. _class_PacketPeerUDP_method_join_multicast_group:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **join_multicast_group** **(** :ref:`String<class_String>` multicast_address, :ref:`String<class_String>` interface_name **)**
+
+Join the multicast group specified by ``multicast_address`` using the interface identified by ``interface_name``.
+
+You can join the same multicast group with multiple interfaces. Use :ref:`IP.get_local_interfaces<class_IP_method_get_local_interfaces>` to know which are available.
+
+.. _class_PacketPeerUDP_method_leave_multicast_group:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **leave_multicast_group** **(** :ref:`String<class_String>` multicast_address, :ref:`String<class_String>` interface_name **)**
+
+Remove the interface identified by ``interface_name`` from the multicast group specified by ``multicast_address``.
 
 .. _class_PacketPeerUDP_method_listen:
 

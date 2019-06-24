@@ -14,7 +14,7 @@ AStar
 Brief Description
 -----------------
 
-AStar class representation that uses vectors as edges.
+AStar class representation that uses 3d-vectors as edges.
 
 Methods
 -------

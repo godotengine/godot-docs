@@ -22,6 +22,8 @@ Properties
 ----------
 
 +-----------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     |
++-----------------------------+-------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` |
 +-----------------------------+-------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             |
@@ -65,6 +67,18 @@ This dialog is useful for small notifications to the user about an event. It can
 Property Descriptions
 ---------------------
 
+.. _class_AcceptDialog_property_dialog_autowrap:
+
+- :ref:`bool<class_bool>` **dialog_autowrap**
+
++----------+---------------------+
+| *Setter* | set_autowrap(value) |
++----------+---------------------+
+| *Getter* | has_autowrap()      |
++----------+---------------------+
+
+Sets autowrapping for the text in the dialog.
+
 .. _class_AcceptDialog_property_dialog_hide_on_ok:
 
 - :ref:`bool<class_bool>` **dialog_hide_on_ok**
@@ -89,7 +103,7 @@ Note: Some nodes derived from this class can have a different default value, and
 | *Getter* | get_text()      |
 +----------+-----------------+
 
-The text displayed by this dialog.
+The text displayed by the dialog.
 
 Method Descriptions
 -------------------

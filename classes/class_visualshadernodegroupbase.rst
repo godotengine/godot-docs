@@ -50,6 +50,8 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`has_output_port<class_VisualShaderNodeGroupBase_method_has_output_port>` **(** :ref:`int<class_int>` id **)** const                                                         |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_valid_port_name<class_VisualShaderNodeGroupBase_method_is_valid_port_name>` **(** :ref:`String<class_String>` name **)** const                                           |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`remove_input_port<class_VisualShaderNodeGroupBase_method_remove_input_port>` **(** :ref:`int<class_int>` id **)**                                                           |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`remove_output_port<class_VisualShaderNodeGroupBase_method_remove_output_port>` **(** :ref:`int<class_int>` id **)**                                                         |
@@ -129,6 +131,10 @@ Method Descriptions
 .. _class_VisualShaderNodeGroupBase_method_has_output_port:
 
 - :ref:`bool<class_bool>` **has_output_port** **(** :ref:`int<class_int>` id **)** const
+
+.. _class_VisualShaderNodeGroupBase_method_is_valid_port_name:
+
+- :ref:`bool<class_bool>` **is_valid_port_name** **(** :ref:`String<class_String>` name **)** const
 
 .. _class_VisualShaderNodeGroupBase_method_remove_input_port:
 

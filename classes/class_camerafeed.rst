@@ -45,9 +45,9 @@ Enumerations
 
 .. _class_CameraFeed_constant_FEED_RGB:
 
-.. _class_CameraFeed_constant_FEED_YCbCr:
+.. _class_CameraFeed_constant_FEED_YCBCR:
 
-.. _class_CameraFeed_constant_FEED_YCbCr_Sep:
+.. _class_CameraFeed_constant_FEED_YCBCR_SEP:
 
 enum **FeedDataType**:
 
@@ -55,9 +55,9 @@ enum **FeedDataType**:
 
 - **FEED_RGB** = **1** --- Feed supplies RGB images.
 
-- **FEED_YCbCr** = **2** --- Feed supplies YCbCr images that need to be converted to RGB.
+- **FEED_YCBCR** = **2** --- Feed supplies YCbCr images that need to be converted to RGB.
 
-- **FEED_YCbCr_Sep** = **3** --- Feed supplies separate Y and CbCr images that need to be combined and converted to RGB.
+- **FEED_YCBCR_SEP** = **3** --- Feed supplies separate Y and CbCr images that need to be combined and converted to RGB.
 
 .. _enum_CameraFeed_FeedPosition:
 

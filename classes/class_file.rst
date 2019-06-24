@@ -282,7 +282,7 @@ Returns the next 64 bits from the file as a floating point number.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **get_error** **(** **)** const
 
-Returns the last error that happened when trying to perform operations. Compare with the ``ERR_FILE_*`` constants from :ref:`@GlobalScope<class_@GlobalScope>`.
+Returns the last error that happened when trying to perform operations. Compare with the ``ERR_FILE_*`` constants from :ref:`Error<enum_@GlobalScope_Error>`.
 
 .. _class_File_method_get_float:
 
@@ -378,7 +378,7 @@ Opens the file for writing or reading, depending on the flags.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open_compressed** **(** :ref:`String<class_String>` path, :ref:`ModeFlags<enum_File_ModeFlags>` mode_flags, :ref:`CompressionMode<enum_File_CompressionMode>` compression_mode=0 **)**
 
-Opens a compressed file for reading or writing. Use COMPRESSION\_\* constants to set ``compression_mode``.
+Opens a compressed file for reading or writing. Use :ref:`CompressionMode<enum_File_CompressionMode>` constants to set ``compression_mode``.
 
 .. _class_File_method_open_encrypted:
 

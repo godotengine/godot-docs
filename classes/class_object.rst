@@ -426,6 +426,8 @@ If set to ``true``, signal emission is blocked.
 
 - void **set_deferred** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
+Set property into the object, after the current frame's physics step. This is equivalent to calling :ref:`set<class_Object_method_set>` via :ref:`call_deferred<class_Object_method_call_deferred>`, i.e. ``call_deferred("set", [property, value])``.
+
 .. _class_Object_method_set_indexed:
 
 - void **set_indexed** **(** :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` value **)**

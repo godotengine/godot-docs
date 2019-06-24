@@ -21,9 +21,44 @@ Raises or lowers the pitch of original sound.
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>` |
-+---------------------------+----------------------------------------------------------------------+
++------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` | :ref:`fft_size<class_AudioEffectPitchShift_property_fft_size>`         |
++------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                | :ref:`oversampling<class_AudioEffectPitchShift_property_oversampling>` |
++------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`float<class_float>`                            | :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>`   |
++------------------------------------------------------+------------------------------------------------------------------------+
+
+Enumerations
+------------
+
+.. _enum_AudioEffectPitchShift_FFT_Size:
+
+.. _class_AudioEffectPitchShift_constant_FFT_SIZE_256:
+
+.. _class_AudioEffectPitchShift_constant_FFT_SIZE_512:
+
+.. _class_AudioEffectPitchShift_constant_FFT_SIZE_1024:
+
+.. _class_AudioEffectPitchShift_constant_FFT_SIZE_2048:
+
+.. _class_AudioEffectPitchShift_constant_FFT_SIZE_4096:
+
+.. _class_AudioEffectPitchShift_constant_FFT_SIZE_MAX:
+
+enum **FFT_Size**:
+
+- **FFT_SIZE_256** = **0**
+
+- **FFT_SIZE_512** = **1**
+
+- **FFT_SIZE_1024** = **2**
+
+- **FFT_SIZE_2048** = **3**
+
+- **FFT_SIZE_4096** = **4**
+
+- **FFT_SIZE_MAX** = **5**
 
 Description
 -----------
@@ -32,6 +67,26 @@ Allows modulation of pitch independently of tempo. All frequencies can be increa
 
 Property Descriptions
 ---------------------
+
+.. _class_AudioEffectPitchShift_property_fft_size:
+
+- :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` **fft_size**
+
++----------+---------------------+
+| *Setter* | set_fft_size(value) |
++----------+---------------------+
+| *Getter* | get_fft_size()      |
++----------+---------------------+
+
+.. _class_AudioEffectPitchShift_property_oversampling:
+
+- :ref:`int<class_int>` **oversampling**
+
++----------+-------------------------+
+| *Setter* | set_oversampling(value) |
++----------+-------------------------+
+| *Getter* | get_oversampling()      |
++----------+-------------------------+
 
 .. _class_AudioEffectPitchShift_property_pitch_scale:
 

@@ -109,25 +109,33 @@ Emitted when another area exits, reporting which areas were overlapping.
 
 - **body_entered** **(** :ref:`Node<class_Node>` body **)**
 
-Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` object enters.
+Emitted when a physics body enters.
+
+The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
 .. _class_Area_signal_body_exited:
 
 - **body_exited** **(** :ref:`Node<class_Node>` body **)**
 
-Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` object exits.
+Emitted when a physics body exits.
+
+The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
 .. _class_Area_signal_body_shape_entered:
 
 - **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
 
-Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` object enters, reporting which shapes overlapped.
+Emitted when a physics body enters, reporting which shapes overlapped.
+
+The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
 .. _class_Area_signal_body_shape_exited:
 
 - **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
 
-Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` object exits, reporting which shapes were overlapping.
+Emitted when a physics body exits, reporting which shapes were overlapping.
+
+The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
 Enumerations
 ------------
@@ -417,7 +425,9 @@ If ``true``, the given area overlaps the Area. Note that the result of this test
 
 - :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** const
 
-If ``true``, the given body overlaps the Area. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+If ``true``, the given physics body overlaps the Area. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+
+The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
 .. _class_Area_method_set_collision_layer_bit:
 

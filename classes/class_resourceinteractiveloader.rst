@@ -14,7 +14,7 @@ ResourceInteractiveLoader
 Brief Description
 -----------------
 
-Interactive Resource Loader.
+Interactive :ref:`Resource<class_Resource>` loader.
 
 Methods
 -------
@@ -34,7 +34,7 @@ Methods
 Description
 -----------
 
-Interactive Resource Loader. This object is returned by ResourceLoader when performing an interactive load. It allows to load with high granularity, so this is mainly useful for displaying load bars/percentages.
+Interactive :ref:`Resource<class_Resource>` loader. This object is returned by :ref:`ResourceLoader<class_ResourceLoader>` when performing an interactive load. It allows to load with high granularity, so this is mainly useful for displaying loading bars/percentages.
 
 Method Descriptions
 -------------------
@@ -43,13 +43,13 @@ Method Descriptions
 
 - :ref:`Resource<class_Resource>` **get_resource** **(** **)**
 
-Returns the loaded resource (only if loaded). Otherwise, returns null.
+Returns the loaded resource if the load operation completed successfully, ``null`` otherwise.
 
 .. _class_ResourceInteractiveLoader_method_get_stage:
 
 - :ref:`int<class_int>` **get_stage** **(** **)** const
 
-Returns the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>`
+Returns the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>`.
 
 .. _class_ResourceInteractiveLoader_method_get_stage_count:
 
@@ -61,9 +61,21 @@ Returns the total amount of stages (calls to :ref:`poll<class_ResourceInteractiv
 
 - :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
-Poll the load. If OK is returned, this means poll will have to be called again. If ERR_FILE_EOF is returned, them the load has finished and the resource can be obtained by calling :ref:`get_resource<class_ResourceInteractiveLoader_method_get_resource>`.
+Polls the loading operation, i.e. loads a data chunk up to the next stage.
+
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the poll is successful but the load operation has not finished yet (intermediate stage). This means :ref:`poll<class_ResourceInteractiveLoader_method_poll>` will have to be called again until the last stage is completed.
+
+Returns :ref:`@GlobalScope.ERR_FILE_EOF<class_@GlobalScope_constant_ERR_FILE_EOF>` if the load operation has completed successfully. The loaded resource can be obtained by calling :ref:`get_resource<class_ResourceInteractiveLoader_method_get_resource>`.
+
+Returns another :ref:`Error<enum_@GlobalScope_Error>` code if the poll has failed.
 
 .. _class_ResourceInteractiveLoader_method_wait:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
+
+Polls the loading operation successively until the resource is completely loaded or a :ref:`poll<class_ResourceInteractiveLoader_method_poll>` fails.
+
+Returns :ref:`@GlobalScope.ERR_FILE_EOF<class_@GlobalScope_constant_ERR_FILE_EOF>` if the load operation has completed successfully. The loaded resource can be obtained by calling :ref:`get_resource<class_ResourceInteractiveLoader_method_get_resource>`.
+
+Returns another :ref:`Error<enum_@GlobalScope_Error>` code if a poll has failed, aborting the operation.
 

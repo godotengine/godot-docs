@@ -26,7 +26,7 @@ Properties
 Description
 -----------
 
-Reference frame for GUI. It's just like an empty control, except a red box is displayed while editing around its size at all times.
+Reference frame for GUI. It's just like an empty control, except an outline border :ref:`border_color<class_ReferenceRect_property_border_color>` is displayed while editing around its size at all times.
 
 Property Descriptions
 ---------------------
@@ -40,4 +40,6 @@ Property Descriptions
 +----------+-------------------------+
 | *Getter* | get_border_color()      |
 +----------+-------------------------+
+
+Determines the border :ref:`Color<class_Color>` of the ``ReferenceRect``.
 

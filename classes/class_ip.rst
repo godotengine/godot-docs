@@ -28,6 +28,8 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                     | :ref:`get_local_addresses<class_IP_method_get_local_addresses>` **(** **)** const                                                                                 |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                     | :ref:`get_local_interfaces<class_IP_method_get_local_interfaces>` **(** **)** const                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_resolve_item_address<class_IP_method_get_resolve_item_address>` **(** :ref:`int<class_int>` id **)** const                                              |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ResolverStatus<enum_IP_ResolverStatus>` | :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>` **(** :ref:`int<class_int>` id **)** const                                                |
@@ -116,6 +118,23 @@ Removes a given item "id" from the queue. This should be used to free a queue af
 - :ref:`Array<class_Array>` **get_local_addresses** **(** **)** const
 
 Returns all of the user's current IPv4 and IPv6 addresses as an array.
+
+.. _class_IP_method_get_local_interfaces:
+
+- :ref:`Array<class_Array>` **get_local_interfaces** **(** **)** const
+
+Returns all network adapters as an array.
+
+Each adapter is a dictionary of the form:
+
+::
+
+    {
+        "index": "1", # Interface index.
+        "name": "eth0", # Interface name.
+        "friendly": "Ethernet One", # A friendly name (might be empty).
+        "addresses": ["192.168.1.101"], # An array of IP addresses associated to this interface.
+    }
 
 .. _class_IP_method_get_resolve_item_address:
 

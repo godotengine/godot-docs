@@ -9,8 +9,6 @@ ResourceFormatLoader
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`GDNativeLibraryResourceLoader<class_GDNativeLibraryResourceLoader>`, :ref:`ResourceFormatDDS<class_ResourceFormatDDS>`, :ref:`ResourceFormatImporter<class_ResourceFormatImporter>`, :ref:`ResourceFormatLoaderBMFont<class_ResourceFormatLoaderBMFont>`, :ref:`ResourceFormatLoaderBinary<class_ResourceFormatLoaderBinary>`, :ref:`ResourceFormatLoaderDynamicFont<class_ResourceFormatLoaderDynamicFont>`, :ref:`ResourceFormatLoaderGDScript<class_ResourceFormatLoaderGDScript>`, :ref:`ResourceFormatLoaderImage<class_ResourceFormatLoaderImage>`, :ref:`ResourceFormatLoaderNativeScript<class_ResourceFormatLoaderNativeScript>`, :ref:`ResourceFormatLoaderShader<class_ResourceFormatLoaderShader>`, :ref:`ResourceFormatLoaderStreamTexture<class_ResourceFormatLoaderStreamTexture>`, :ref:`ResourceFormatLoaderText<class_ResourceFormatLoaderText>`, :ref:`ResourceFormatLoaderTextureLayered<class_ResourceFormatLoaderTextureLayered>`, :ref:`ResourceFormatLoaderTheora<class_ResourceFormatLoaderTheora>`, :ref:`ResourceFormatLoaderVideoStreamGDNative<class_ResourceFormatLoaderVideoStreamGDNative>`, :ref:`ResourceFormatLoaderWebm<class_ResourceFormatLoaderWebm>`, :ref:`ResourceFormatPKM<class_ResourceFormatPKM>`, :ref:`ResourceFormatPVR<class_ResourceFormatPVR>`, :ref:`TranslationLoaderPO<class_TranslationLoaderPO>`
-
 **Category:** Core
 
 Brief Description
@@ -38,11 +36,11 @@ Methods
 Description
 -----------
 
-Godot loads resources in the editor or in exported games using ResourceFormatLoaders. They get queried when you call ``load``, or when a resource with internal dependencies is loaded. Each file type may load as a different resource type, so multiple ResourceFormatLoader are registered in the engine.
+Godot loads resources in the editor or in exported games using ResourceFormatLoaders. They are queried automatically via the :ref:`ResourceLoader<class_ResourceLoader>` singleton, or when a resource with internal dependencies is loaded. Each file type may load as a different resource type, so multiple ResourceFormatLoaders are registered in the engine.
 
-Extending this class allows you to define your own. You should give it a global class name with ``class_name`` for it to be registered. You may as well implement a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
+Extending this class allows you to define your own loader. Be sure to respect the documented return types and values. You should give it a global class name with ``class_name`` for it to be registered. Like built-in ResourceFormatLoaders, it will be called automatically when loading resources of its handled type(s). You may also implement a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
 
-Note: You can also extend :ref:`EditorImportPlugin<class_EditorImportPlugin>` if the resource type you need exists but Godot is unable to load its format. Choosing one way over another depends if the format is suitable or not for the final exported game. Example: it's better to import .PNG textures as .STEX first, so they can be loaded with better efficiency on the graphics card.
+Note: You can also extend :ref:`EditorImportPlugin<class_EditorImportPlugin>` if the resource type you need exists but Godot is unable to load its format. Choosing one way over another depends if the format is suitable or not for the final exported game. For example, it's better to import ``.png`` textures as ``.stex`` (:ref:`StreamTexture<class_StreamTexture>`) first, so they can be loaded with better efficiency on the graphics card.
 
 Method Descriptions
 -------------------
@@ -51,7 +49,7 @@ Method Descriptions
 
 - void **get_dependencies** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` add_types **)** virtual
 
-If implemented, gets the dependencies of a given resource. If ``add_types`` is ``true``, paths should be appended ``::TypeName``, where ``TypeName`` is the class name of the dependency. Note that custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``Resource`` for them.
+If implemented, gets the dependencies of a given resource. If ``add_types`` is ``true``, paths should be appended ``::TypeName``, where ``TypeName`` is the class name of the dependency. Note that custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``"Resource"`` for them.
 
 .. _class_ResourceFormatLoader_method_get_recognized_extensions:
 
@@ -75,11 +73,13 @@ Tells which resource class this loader can load. Note that custom resource types
 
 - :ref:`Variant<class_Variant>` **load** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` original_path **)** virtual
 
-Loads a resource when the engine finds this loader to be compatible. If the loaded resource is the result of an import, ``original_path`` will target the source file. Returns a resource object if succeeded, or an ``ERR_*`` constant listed in :ref:`@GlobalScope<class_@GlobalScope>` if it failed.
+Loads a resource when the engine finds this loader to be compatible. If the loaded resource is the result of an import, ``original_path`` will target the source file. Returns a :ref:`Resource<class_Resource>` object on success, or an :ref:`Error<enum_@GlobalScope_Error>` constant in case of failure.
 
 .. _class_ResourceFormatLoader_method_rename_dependencies:
 
 - :ref:`int<class_int>` **rename_dependencies** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` renames **)** virtual
 
-If implemented, renames dependencies within the given resource and saves it. ``renames`` is a dictionary ``{ String => String }`` mapping old dependency paths to new paths. Returns ``OK`` on success, or an ``ERR_*`` constant listed in :ref:`@GlobalScope<class_@GlobalScope>` in case of failure.
+If implemented, renames dependencies within the given resource and saves it. ``renames`` is a dictionary ``{ String => String }`` mapping old dependency paths to new paths.
+
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or an :ref:`Error<enum_@GlobalScope_Error>` constant in case of failure.
 

@@ -106,6 +106,10 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`hex_to_int<class_String_method_hex_to_int>` **(** **)**                                                                                                           |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`http_escape<class_String_method_http_escape>` **(** **)**                                                                                                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`http_unescape<class_String_method_http_unescape>` **(** **)**                                                                                                     |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`insert<class_String_method_insert>` **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)**                                                  |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_abs_path<class_String_method_is_abs_path>` **(** **)**                                                                                                         |
@@ -188,7 +192,7 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`strip_escapes<class_String_method_strip_escapes>` **(** **)**                                                                                                     |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`substr<class_String_method_substr>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len **)**                                                             |
+| :ref:`String<class_String>`                   | :ref:`substr<class_String_method_substr>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len=-1 **)**                                                          |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`to_ascii<class_String_method_to_ascii>` **(** **)**                                                                                                               |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -441,6 +445,14 @@ Hashes the string and returns a 32-bit integer.
 - :ref:`int<class_int>` **hex_to_int** **(** **)**
 
 Converts a string containing a hexadecimal number into an integer.
+
+.. _class_String_method_http_escape:
+
+- :ref:`String<class_String>` **http_escape** **(** **)**
+
+.. _class_String_method_http_unescape:
+
+- :ref:`String<class_String>` **http_unescape** **(** **)**
 
 .. _class_String_method_insert:
 
@@ -704,9 +716,9 @@ Returns a copy of the string stripped of any escape character. These include all
 
 .. _class_String_method_substr:
 
-- :ref:`String<class_String>` **substr** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len **)**
+- :ref:`String<class_String>` **substr** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len=-1 **)**
 
-Returns part of the string from the position ``from`` with length ``len``.
+Returns part of the string from the position ``from`` with length ``len``. Argument ``len`` is optional and using -1 will return remaining characters from given position.
 
 .. _class_String_method_to_ascii:
 

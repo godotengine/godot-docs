@@ -9,8 +9,6 @@ ResourceFormatSaver
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`GDNativeLibraryResourceSaver<class_GDNativeLibraryResourceSaver>`, :ref:`ResourceFormatSaverBinary<class_ResourceFormatSaverBinary>`, :ref:`ResourceFormatSaverGDScript<class_ResourceFormatSaverGDScript>`, :ref:`ResourceFormatSaverNativeScript<class_ResourceFormatSaverNativeScript>`, :ref:`ResourceFormatSaverShader<class_ResourceFormatSaverShader>`, :ref:`ResourceFormatSaverText<class_ResourceFormatSaverText>`, :ref:`ResourceSaverPNG<class_ResourceSaverPNG>`
-
 **Category:** Core
 
 Brief Description
@@ -32,9 +30,9 @@ Methods
 Description
 -----------
 
-The engine can save resources when you do it from the editor, or when you call :ref:`ResourceSaver.save<class_ResourceSaver_method_save>`. This is accomplished with multiple ``ResourceFormatSaver``\ s, each handling its own format.
+The engine can save resources when you do it from the editor, or when you use the :ref:`ResourceSaver<class_ResourceSaver>` singleton. This is accomplished thanks to multiple ``ResourceFormatSaver``\ s, each handling its own format and called automatically by the engine.
 
-By default, Godot saves resources as ``.tres``, ``.res`` or another built-in format, but you can choose to create your own format by extending this class. You should give it a global class name with ``class_name`` for it to be registered. You may as well implement a :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
+By default, Godot saves resources as ``.tres`` (text-based), ``.res`` (binary) or another built-in format, but you can choose to create your own format by extending this class. Be sure to respect the documented return types and values. You should give it a global class name with ``class_name`` for it to be registered. Like built-in ResourceFormatSavers, it will be called automatically when saving resources of its recognized type(s). You may also implement a :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
 
 Method Descriptions
 -------------------
@@ -43,17 +41,19 @@ Method Descriptions
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` resource **)** virtual
 
-Gets the list of extensions for files this saver is able to write.
+Returns the list of extensions available for saving the resource object, provided it is recognized (see :ref:`recognize<class_ResourceFormatSaver_method_recognize>`).
 
 .. _class_ResourceFormatSaver_method_recognize:
 
 - :ref:`bool<class_bool>` **recognize** **(** :ref:`Resource<class_Resource>` resource **)** virtual
 
-Returns ``true`` if the given resource object can be saved by this saver.
+Returns whether the given resource object can be saved by this saver.
 
 .. _class_ResourceFormatSaver_method_save:
 
 - :ref:`int<class_int>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** virtual
 
-Saves the given resource object to a file. ``flags`` is a bitmask composed with ``FLAG_*`` constants defined in :ref:`ResourceSaver<class_ResourceSaver>`. Returns ``OK`` on success, or an ``ERR_*`` constant listed in :ref:`@GlobalScope<class_@GlobalScope>` if it failed.
+Saves the given resource object to a file at the target ``path``. ``flags`` is a bitmask composed with :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` constants.
+
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or an :ref:`Error<enum_@GlobalScope_Error>` constant in case of failure.
 

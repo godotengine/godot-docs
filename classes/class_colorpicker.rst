@@ -26,6 +26,8 @@ Properties
 +---------------------------+--------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`           |
 +---------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`hsv_mode<class_ColorPicker_property_hsv_mode>`               |
++---------------------------+--------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`presets_enabled<class_ColorPicker_property_presets_enabled>` |
 +---------------------------+--------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`presets_visible<class_ColorPicker_property_presets_visible>` |
@@ -134,6 +136,20 @@ If ``true``, the color will apply only after the user releases the mouse button,
 
 If ``true``, shows an alpha channel slider (transparency).
 
+.. _class_ColorPicker_property_hsv_mode:
+
+- :ref:`bool<class_bool>` **hsv_mode**
+
++----------+---------------------+
+| *Setter* | set_hsv_mode(value) |
++----------+---------------------+
+| *Getter* | is_hsv_mode()       |
++----------+---------------------+
+
+If ``true``, allows to edit color with Hue/Saturation/Value sliders.
+
+**Note:** Cannot be enabled if raw mode is on.
+
 .. _class_ColorPicker_property_presets_enabled:
 
 - :ref:`bool<class_bool>` **presets_enabled**
@@ -165,6 +181,8 @@ If ``true``, shows an alpha channel slider (transparency).
 +----------+---------------------+
 
 If ``true``, allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
+
+**Note:** Cannot be enabled if hsv mode is on.
 
 Method Descriptions
 -------------------

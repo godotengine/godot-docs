@@ -53,21 +53,21 @@ Enumerations
 
 .. _class_CameraServer_constant_FEED_RGBA_IMAGE:
 
-.. _class_CameraServer_constant_FEED_YCbCr_IMAGE:
+.. _class_CameraServer_constant_FEED_YCBCR_IMAGE:
 
 .. _class_CameraServer_constant_FEED_Y_IMAGE:
 
-.. _class_CameraServer_constant_FEED_CbCr_IMAGE:
+.. _class_CameraServer_constant_FEED_CBCR_IMAGE:
 
 enum **FeedImage**:
 
 - **FEED_RGBA_IMAGE** = **0** --- The RGBA camera image.
 
-- **FEED_YCbCr_IMAGE** = **0** --- The YCbCr camera image.
+- **FEED_YCBCR_IMAGE** = **0** --- The YCbCr camera image.
 
 - **FEED_Y_IMAGE** = **0** --- The Y component camera image.
 
-- **FEED_CbCr_IMAGE** = **1** --- The CbCr component camera image.
+- **FEED_CBCR_IMAGE** = **1** --- The CbCr component camera image.
 
 Method Descriptions
 -------------------
