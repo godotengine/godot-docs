@@ -110,6 +110,14 @@ manager.
 Building export templates
 -------------------------
 
+.. warning:: Linux binaries usually won't run on distributions that are
+             older than the distribution they were built on. If you wish to
+             distribute binaries that work on most distributions,
+             you should build them on an old distribution such as Ubuntu 16.04.
+             You can use a virtual machine or a container to set up a suitable
+             build environment.
+
+
 To build X11 (Linux, \*BSD) export templates, run the build system with the
 following parameters:
 
@@ -127,14 +135,14 @@ following parameters:
     user@host:~/godot$ scons platform=x11 tools=no target=release bits=64
     user@host:~/godot$ scons platform=x11 tools=no target=release_debug bits=64
 
-Note that cross compiling for the opposite bits (64/32) as your host
+Note that cross-compiling for the opposite bits (64/32) as your host
 platform is not always straight-forward and might need a chroot environment.
 
 To create standard export templates, the resulting files must be copied to:
 
 ::
 
-    /home/[username]/.local/share/godot/templates/[gd-version]/
+    $HOME/.local/share/godot/templates/[gd-version]/
 
 and named like this (even for \*BSD which is seen as "Linux X11" by Godot):
 
@@ -152,5 +160,5 @@ here:
 .. image:: img/lintemplates.png
 
 You don't even need to copy them, you can just reference the resulting
-files in the bin/ directory of your Godot source folder, so the next
-time you build you automatically have the custom templates referenced.
+files in the ``bin/`` directory of your Godot source folder, so the next
+time you build, you automatically have the custom templates referenced.
