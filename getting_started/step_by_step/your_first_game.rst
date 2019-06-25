@@ -534,8 +534,8 @@ uncheck the first box. This will ensure the mobs do not collide with each other.
 .. image:: img/set_collision_mask.png
 
 Set up the :ref:`AnimatedSprite <class_AnimatedSprite>` like you did for the player.
-This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. Set the ``Playing``
-property in the Inspector to "On" and adjust the "Speed (FPS)" setting as shown below.
+This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. Remember to set the ``Playing``
+property in the Inspector to "On" and adjust the "Speed (FPS)" setting in the Animation panel as shown below.
 We'll select one of these animations randomly so that the mobs will have some variety.
 
 .. image:: img/mob_animations.gif
