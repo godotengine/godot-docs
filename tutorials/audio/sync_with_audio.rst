@@ -6,28 +6,27 @@ Sync the gameplay with audio and music
 Introduction
 ------------
 
-In any application or game, sound and music playback will have a slight delay. For games, this delay is often so small that is negligible. Sound effects will come out a few milliseconds after any play() function is called. For music this does not matter as in most games it does not interact with the gameplay.
+In any application or game, sound and music playback will have a slight delay. For games, this delay is often so small that it is negligible. Sound effects will come out a few milliseconds after any play() function is called. For music this does not matter as in most games it does not interact with the gameplay.
 
-Still, for some games (mainly, rhythm games), it may be required to synchronize player actions with something happening in a song (usually in sync with the BPM). For this, having more precise timing information for an exact playback position is very welcome.
+Still, for some games (mainly, rhythm games), it may be required to synchronize player actions with something happening in a song (usually in sync with the BPM). For this, having more precise timing information for an exact playback position is useful.
 
-Achieving very low playback timing precision is very difficult. This because many factors are at play during audio playback:
-
+Achieving very low playback timing precision is difficult. This is because many factors are at play during audio playback:
 
 * Audio is mixed in chunks (not continuously), depending on the size of audio buffers used (check latency in project settings).
-* Audio has latency after mixed, it doesn't immediately play after mixed.
+* Mixed chunks of audio are not played immediately.
 * Graphics APIs display two or three frames late.
 * When playing on TVs, some delay may be added due to image processing.
 
-The most common way to reducing latency is to shrink the audio buffers (again, by editing the latency setting in the project settings). The problem is that when latency is too small, it will require considerably higher amount of CPU for sound mixing. this increases the risk of skpping (a crack in sound because a mix callback was lost).
+The most common way to reduce latency is to shrink the audio buffers (again, by editing the latency setting in the project settings). The problem is that when latency is too small, sound mixing will require considerably more CPU. This increases the risk of skipping (a crack in sound because a mix callback was lost).
 
-This is common a tradeoff, so Godot ships with sensible defaults that should not need to be commonly altered.
+This is a common tradeoff, so Godot ships with sensible defaults that should not need to be altered.
 
-The problem, in the end, is dealing with synchronization for games tha require it, and not so much this slight delay. Beginning Godot 3.2, some helpers were added to obtain more precise playback timing.
+The problem, in the end, is not this slight delay but synchronizing graphics and audio for games that require it. Beginning with Godot 3.2, some helpers were added to obtain more precise playback timing.
 
 Using the system clock to sync
 ------------------------------
 
-As mentioned before, If you call :ref:`AudioStreamPlayer.play()<class_AudioStreamPlayer_method_play>`, sound will not begin immediately, but when the audio thread processes the next block.
+As mentioned before, If you call :ref:`AudioStreamPlayer.play()<class_AudioStreamPlayer_method_play>`, sound will not begin immediately, but when the audio thread processes the next chunk.
 
 This delay can't be avoided but it can be estimated by calling :ref:`AudioServer.get_time_to_next_mix()<class_AudioServer_method_get_time_to_next_mix>`.
 
