@@ -102,7 +102,7 @@ You will need to execute the following commands:
 .. code-block:: none
 
     cd gdnative_cpp_example
-    git submodule --init update --recursive
+    git submodule update --init --recursive
 
 This will clone these two repositories into your project folder.
 
