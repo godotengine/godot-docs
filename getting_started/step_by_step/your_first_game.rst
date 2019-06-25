@@ -608,6 +608,21 @@ choose one of the three animation types:
           the scene. We're going to use ``randomize()`` in our ``Main`` scene,
           so we won't need it here. ``randi() % n`` is the standard way to get
           a random integer between ``0`` and ``n-1``.
+          
+Also we will add a ``_process(delta)`` function below to animate our mob.          
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _process(delta):
+	$AnimatedSprite.play()
+
+ .. code-tab:: csharp
+
+    public override void _Process(float delta)
+    {
+          var animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+          animatedSprite.Play();
+    }
 
 The last piece is to make the mobs delete themselves when they leave the
 screen. Connect the ``screen_exited()`` signal of the ``Visibility``
