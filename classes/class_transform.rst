@@ -12,7 +12,7 @@ Transform
 Brief Description
 -----------------
 
-3D Transformation. 3x4 matrix.
+3D transformation (3×4 matrix).
 
 Properties
 ----------
@@ -80,7 +80,7 @@ Constants
 Description
 -----------
 
-Represents one or many transformations in 3D space such as translation, rotation, or scaling. It consists of a :ref:`Basis<class_Basis>` "basis" and an :ref:`Vector3<class_Vector3>` "origin". It is similar to a 3x4 matrix.
+Represents one or many transformations in 3D space such as translation, rotation, or scaling. It consists of a :ref:`basis<class_Transform_property_basis>` and an :ref:`origin<class_Transform_property_origin>`. It is similar to a 3×4 matrix.
 
 Tutorials
 ---------

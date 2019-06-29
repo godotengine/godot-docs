@@ -93,7 +93,7 @@ enum **Method**:
 
 - **METHOD_POST** = **2** --- HTTP POST method. The POST method is used to submit an entity to the specified resource, often causing a change in state or side effects on the server. This is often used for forms and submitting data or uploading files.
 
-- **METHOD_PUT** = **3** --- HTTP PUT method. The PUT method asks to replace all current representations of the target resource with the request payload. (You can think of ``POST`` as "create or update" and ``PUT`` as "update", although many services tend to not make a clear distinction or change their meaning).
+- **METHOD_PUT** = **3** --- HTTP PUT method. The PUT method asks to replace all current representations of the target resource with the request payload. (You can think of POST as "create or update" and PUT as "update", although many services tend to not make a clear distinction or change their meaning).
 
 - **METHOD_DELETE** = **4** --- HTTP DELETE method. The DELETE method requests to delete the specified resource.
 
@@ -105,7 +105,7 @@ enum **Method**:
 
 - **METHOD_PATCH** = **8** --- HTTP PATCH method. The PATCH method is used to apply partial modifications to a resource.
 
-- **METHOD_MAX** = **9** --- Marker for end of ``METHOD_*`` enum. Not used.
+- **METHOD_MAX** = **9** --- Represents the size of the :ref:`Method<enum_HTTPClient_Method>` enum.
 
 .. _enum_HTTPClient_Status:
 
@@ -313,9 +313,9 @@ enum **ResponseCode**:
 
 - **RESPONSE_NOT_MODIFIED** = **304** --- HTTP status code ``304 Not Modified``. A conditional GET or HEAD request has been received and would have resulted in a 200 OK response if it were not for the fact that the condition evaluated to ``false``.
 
-- **RESPONSE_USE_PROXY** = **305** --- HTTP status code ``305 Use Proxy``. Deprecated. Do not use.
+- **RESPONSE_USE_PROXY** = **305** --- HTTP status code ``305 Use Proxy``. *Deprecated. Do not use.*
 
-- **RESPONSE_SWITCH_PROXY** = **306** --- HTTP status code ``306 Switch Proxy``. Deprecated. Do not use.
+- **RESPONSE_SWITCH_PROXY** = **306** --- HTTP status code ``306 Switch Proxy``. *Deprecated. Do not use.*
 
 - **RESPONSE_TEMPORARY_REDIRECT** = **307** --- HTTP status code ``307 Temporary Redirect``. The target resource resides temporarily under a different URI and the user agent MUST NOT change the request method if it performs an automatic redirection to that URI.
 
@@ -402,9 +402,9 @@ enum **ResponseCode**:
 Description
 -----------
 
-Hyper-text transfer protocol client (sometimes called "User Agent"). Used to make HTTP requests to download web content, upload files and other data or to communicate with various services, among other use cases.
+Hyper-text transfer protocol client (sometimes called "User Agent"). Used to make HTTP requests to download web content, upload files and other data or to communicate with various services, among other use cases. See :ref:`HTTPRequest<class_HTTPRequest>` for an higher-level alternative.
 
-Note that this client only needs to connect to a host once (see :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>`) to send multiple requests. Because of this, methods that take URLs usually take just the part after the host instead of the full URL, as the client is already connected to a host. See :ref:`request<class_HTTPClient_method_request>` for a full example and to get started.
+**Note:** This client only needs to connect to a host once (see :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>`) to send multiple requests. Because of this, methods that take URLs usually take just the part after the host instead of the full URL, as the client is already connected to a host. See :ref:`request<class_HTTPClient_method_request>` for a full example and to get started.
 
 A ``HTTPClient`` should be reused between multiple requests or to connect to different hosts instead of creating one client per request. Supports SSL and SSL server certificate verification. HTTP status codes in the 2xx range indicate success, 3xx redirection (i.e. "try again, but over here"), 4xx something was wrong with the request, and 5xx something went wrong on the server's side.
 
@@ -457,7 +457,7 @@ Closes the current connection, allowing reuse of this ``HTTPClient``.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**
 
-Connect to a host. This needs to be done before any requests are sent.
+Connects to a host. This needs to be done before any requests are sent.
 
 The host should not have http:// prepended but will strip the protocol identifier if provided.
 
@@ -487,17 +487,22 @@ Returns the response headers.
 
 - :ref:`Dictionary<class_Dictionary>` **get_response_headers_as_dictionary** **(** **)**
 
-Returns all response headers as dictionary where the case-sensitivity of the keys and values is kept like the server delivers it. A value is a simple String, this string can have more than one value where "; " is used as separator.
+Returns all response headers as a Dictionary of structure ``{ "key": "value1; value2" }`` where the case-sensitivity of the keys and values is kept like the server delivers it. A value is a simple String, this string can have more than one value where "; " is used as separator.
 
-Structure: ("key":"value1; value2")
+**Example:**
 
-Example: (content-length:12), (Content-Type:application/json; charset=UTF-8)
+::
+
+    {
+        "content-length": 12,
+        "Content-Type": "application/json; charset=UTF-8",
+    }
 
 .. _class_HTTPClient_method_get_status:
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_status** **(** **)** const
 
-Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_method_poll>` in order to get status updates.
+Returns a ``STATUS_*`` enum constant. Need to call :ref:`poll<class_HTTPClient_method_poll>` in order to get status updates.
 
 .. _class_HTTPClient_method_has_response:
 
@@ -527,15 +532,15 @@ Generates a GET/POST application/x-www-form-urlencoded style query string from a
 
     var fields = {"username": "user", "password": "pass"}
     String query_string = http_client.query_string_from_dict(fields)
-    # returns: "username=user&password=pass"
+    # Returns "username=user&password=pass"
 
-Furthermore, if a key has a null value, only the key itself is added, without equal sign and value. If the value is an array, for each value in it a pair with the same key is added.
+Furthermore, if a key has a ``null`` value, only the key itself is added, without equal sign and value. If the value is an array, for each value in it a pair with the same key is added.
 
 ::
 
     var fields = {"single": 123, "not_valued": null, "multiple": [22, 33, 44]}
     String query_string = http_client.query_string_from_dict(fields)
-    # returns: "single=123&not_valued&multiple=22&multiple=33&multiple=44"
+    # Returns "single=123&not_valued&multiple=22&multiple=33&multiple=44"
 
 .. _class_HTTPClient_method_read_response_body_chunk:
 

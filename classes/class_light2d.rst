@@ -78,7 +78,7 @@ Enumerations
 
 enum **Mode**:
 
-- **MODE_ADD** = **0** --- Adds the value of pixels corresponding to the Light2D to the values of pixels under it. This is the common behaviour of a light.
+- **MODE_ADD** = **0** --- Adds the value of pixels corresponding to the Light2D to the values of pixels under it. This is the common behavior of a light.
 
 - **MODE_SUB** = **1** --- Subtracts the value of pixels corresponding to the Light2D to the values of pixels under it, resulting in inversed light effect.
 
@@ -117,7 +117,9 @@ enum **ShadowFilter**:
 Description
 -----------
 
-Casts light in a 2D environment. Light is defined by a (usually grayscale) texture, a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related). Note that Light2D can be used as a mask.
+Casts light in a 2D environment. Light is defined by a (usually grayscale) texture, a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related).
+
+**Note:** Light2D can also be used as a mask.
 
 Tutorials
 ---------
@@ -185,7 +187,7 @@ The Light2D's energy value. The larger the value, the stronger the light.
 | *Getter* | get_mode()      |
 +----------+-----------------+
 
-The Light2D's mode. See MODE\_\* constants for values.
+The Light2D's mode. See ``MODE_*`` constants for values.
 
 .. _class_Light2D_property_offset:
 
@@ -257,7 +259,7 @@ Minimum layer value of objects that are affected by the Light2D. Default value: 
 | *Getter* | get_z_range_max()      |
 +----------+------------------------+
 
-Maximum ``Z`` value of objects that are affected by the Light2D. Default value: ``1024``.
+Maximum ``z`` value of objects that are affected by the Light2D. Default value: ``1024``.
 
 .. _class_Light2D_property_range_z_min:
 
@@ -317,7 +319,7 @@ If ``true``, the Light2D will cast shadows. Default value: ``false``.
 | *Getter* | get_shadow_filter()      |
 +----------+--------------------------+
 
-Shadow filter type. Use :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` constants as values. Default value: ``SHADOW_FILTER_NONE``.
+Shadow filter type. See :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` for possible values. Default value: :ref:`SHADOW_FILTER_NONE<class_Light2D_constant_SHADOW_FILTER_NONE>`.
 
 .. _class_Light2D_property_shadow_filter_smooth:
 

@@ -14,7 +14,7 @@ SceneTree
 Brief Description
 -----------------
 
-SceneTree manages a hierarchy of nodes.
+Manages the game loop via a hierarchy of nodes.
 
 Properties
 ----------
@@ -107,83 +107,85 @@ Signals
 
 - **connected_to_server** **(** **)**
 
-Emitted whenever this SceneTree's :ref:`network_peer<class_SceneTree_property_network_peer>` successfully connected to a server. Only emitted on clients.
+Emitted whenever this ``SceneTree``'s :ref:`network_peer<class_SceneTree_property_network_peer>` successfully connected to a server. Only emitted on clients.
 
 .. _class_SceneTree_signal_connection_failed:
 
 - **connection_failed** **(** **)**
 
-Emitted whenever this SceneTree's :ref:`network_peer<class_SceneTree_property_network_peer>` fails to establish a connection to a server. Only emitted on clients.
+Emitted whenever this ``SceneTree``'s :ref:`network_peer<class_SceneTree_property_network_peer>` fails to establish a connection to a server. Only emitted on clients.
 
 .. _class_SceneTree_signal_files_dropped:
 
 - **files_dropped** **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` screen **)**
 
-Emitted whenever files are drag-and-dropped onto the window.
+Emitted when files are dragged from the OS file manager and dropped in the game window. The arguments are a list of file paths and the identifier of the screen where the drag originated.
 
 .. _class_SceneTree_signal_idle_frame:
 
 - **idle_frame** **(** **)**
 
-Emitted immediately before :ref:`Node._process<class_Node_method__process>` is called on every node in the SceneTree.
+Emitted immediately before :ref:`Node._process<class_Node_method__process>` is called on every node in the ``SceneTree``.
 
 .. _class_SceneTree_signal_network_peer_connected:
 
 - **network_peer_connected** **(** :ref:`int<class_int>` id **)**
 
-Emitted whenever this SceneTree's :ref:`network_peer<class_SceneTree_property_network_peer>` connects with a new peer. ID is the peer ID of the new peer. Clients get notified when other clients connect to the same server. Upon connecting to a server, a client also receives this signal for the server (with ID being 1).
+Emitted whenever this ``SceneTree``'s :ref:`network_peer<class_SceneTree_property_network_peer>` connects with a new peer. ID is the peer ID of the new peer. Clients get notified when other clients connect to the same server. Upon connecting to a server, a client also receives this signal for the server (with ID being 1).
 
 .. _class_SceneTree_signal_network_peer_disconnected:
 
 - **network_peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
-Emitted whenever this SceneTree's :ref:`network_peer<class_SceneTree_property_network_peer>` disconnects from a peer. Clients get notified when other clients disconnect from the same server.
+Emitted whenever this ``SceneTree``'s :ref:`network_peer<class_SceneTree_property_network_peer>` disconnects from a peer. Clients get notified when other clients disconnect from the same server.
 
 .. _class_SceneTree_signal_node_added:
 
 - **node_added** **(** :ref:`Node<class_Node>` node **)**
 
-Emitted whenever a node is added to the SceneTree.
+Emitted whenever a node is added to the ``SceneTree``.
 
 .. _class_SceneTree_signal_node_configuration_warning_changed:
 
 - **node_configuration_warning_changed** **(** :ref:`Node<class_Node>` node **)**
 
-Emitted when a node's configuration changed. Only emitted in tool mode.
+Emitted when a node's configuration changed. Only emitted in ``tool`` mode.
 
 .. _class_SceneTree_signal_node_removed:
 
 - **node_removed** **(** :ref:`Node<class_Node>` node **)**
 
-Emitted whenever a node is removed from the SceneTree.
+Emitted whenever a node is removed from the ``SceneTree``.
 
 .. _class_SceneTree_signal_node_renamed:
 
 - **node_renamed** **(** :ref:`Node<class_Node>` node **)**
 
+Emitted whenever a node is renamed.
+
 .. _class_SceneTree_signal_physics_frame:
 
 - **physics_frame** **(** **)**
 
-Emitted immediately before :ref:`Node._physics_process<class_Node_method__physics_process>` is called on every node in the SceneTree.
+Emitted immediately before :ref:`Node._physics_process<class_Node_method__physics_process>` is called on every node in the ``SceneTree``.
 
 .. _class_SceneTree_signal_screen_resized:
 
 - **screen_resized** **(** **)**
 
-Emitted whenever the screen resolution (fullscreen) or window size (windowed) changes.
+Emitted when the screen resolution (fullscreen) or window size (windowed) changes.
 
 .. _class_SceneTree_signal_server_disconnected:
 
 - **server_disconnected** **(** **)**
 
-Emitted whenever this SceneTree's :ref:`network_peer<class_SceneTree_property_network_peer>` disconnected from server. Only emitted on clients.
+Emitted whenever this ``SceneTree``'s :ref:`network_peer<class_SceneTree_property_network_peer>` disconnected from server. Only emitted on clients.
 
 .. _class_SceneTree_signal_tree_changed:
 
 - **tree_changed** **(** **)**
 
-Emitted whenever the SceneTree hierarchy changed (children being moved or renamed, etc.).
+Emitted whenever the ``SceneTree`` hierarchy changed (children being moved or renamed, etc.).
 
 Enumerations
 ------------
@@ -238,20 +240,24 @@ enum **StretchMode**:
 
 enum **StretchAspect**:
 
-- **STRETCH_ASPECT_IGNORE** = **0** --- Fill the window with the content stretched to cover excessive space. Content may appear elongated.
+- **STRETCH_ASPECT_IGNORE** = **0** --- Fill the window with the content stretched to cover excessive space. Content may appear stretched.
 
-- **STRETCH_ASPECT_KEEP** = **1** --- Retain the same aspect ratio by padding with black bars in either axes. No expansion of content.
+- **STRETCH_ASPECT_KEEP** = **1** --- Retain the same aspect ratio by padding with black bars on either axis. This prevents distortion.
 
 - **STRETCH_ASPECT_KEEP_WIDTH** = **2** --- Expand vertically. Left/right black bars may appear if the window is too wide.
 
 - **STRETCH_ASPECT_KEEP_HEIGHT** = **3** --- Expand horizontally. Top/bottom black bars may appear if the window is too tall.
 
-- **STRETCH_ASPECT_EXPAND** = **4** --- Expand in both directions, retaining the same aspect ratio. No black bars.
+- **STRETCH_ASPECT_EXPAND** = **4** --- Expand in both directions, retaining the same aspect ratio. This prevents distortion while avoiding black bars.
 
 Description
 -----------
 
-As one of the most important classes, the ``SceneTree`` manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded. You can also use the SceneTree to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. a "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
+As one of the most important classes, the ``SceneTree`` manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded.
+
+You can also use the ``SceneTree`` to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. a "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
+
+``SceneTree`` is the default :ref:`MainLoop<class_MainLoop>` implementation used by scenes, and is thus in charge of the game loop.
 
 Tutorials
 ---------
@@ -285,6 +291,8 @@ The current scene.
 | *Getter* | is_debugging_collisions_hint()   |
 +----------+----------------------------------+
 
+If ``true``, collision shapes will be visible when running the game from the editor for debugging purposes.
+
 .. _class_SceneTree_property_debug_navigation_hint:
 
 - :ref:`bool<class_bool>` **debug_navigation_hint**
@@ -294,6 +302,8 @@ The current scene.
 +----------+----------------------------------+
 | *Getter* | is_debugging_navigation_hint()   |
 +----------+----------------------------------+
+
+If ``true``, navigation polygons will be visible when running the game from the editor for debugging purposes.
 
 .. _class_SceneTree_property_edited_scene_root:
 
@@ -317,7 +327,7 @@ The root of the edited scene.
 | *Getter* | get_multiplayer()      |
 +----------+------------------------+
 
-The default :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance for this SceneTree.
+The default :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance for this ``SceneTree``.
 
 .. _class_SceneTree_property_multiplayer_poll:
 
@@ -329,9 +339,9 @@ The default :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance for this SceneT
 | *Getter* | is_multiplayer_poll_enabled()       |
 +----------+-------------------------------------+
 
-If ``true``, (default) enable the automatic polling of the :ref:`MultiplayerAPI<class_MultiplayerAPI>` for this SceneTree during :ref:`idle_frame<class_SceneTree_signal_idle_frame>`.
+If ``true`` (default value), enables automatic polling of the :ref:`MultiplayerAPI<class_MultiplayerAPI>` for this SceneTree during :ref:`idle_frame<class_SceneTree_signal_idle_frame>`.
 
-When ``false`` you need to manually call :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_method_poll>` for processing network packets and delivering RPCs/RSETs. This allows to run RPCs/RSETs in a different loop (e.g. physics, thread, specific time step) and for manual :ref:`Mutex<class_Mutex>` protection when accessing the :ref:`MultiplayerAPI<class_MultiplayerAPI>` from threads.
+If ``false``, you need to manually call :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_method_poll>` to process network packets and deliver RPCs/RSETs. This allows running RPCs/RSETs in a different loop (e.g. physics, thread, specific time step) and for manual :ref:`Mutex<class_Mutex>` protection when accessing the :ref:`MultiplayerAPI<class_MultiplayerAPI>` from threads.
 
 .. _class_SceneTree_property_network_peer:
 
@@ -343,7 +353,7 @@ When ``false`` you need to manually call :ref:`MultiplayerAPI.poll<class_Multipl
 | *Getter* | get_network_peer()      |
 +----------+-------------------------+
 
-The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the SceneTree will become a network server (check with :ref:`is_network_server<class_SceneTree_method_is_network_server>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_Node>`), or it will become a regular peer with root node set to puppet. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to SceneTree's signals.
+The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the ``SceneTree`` will become a network server (check with :ref:`is_network_server<class_SceneTree_method_is_network_server>`) and will set the root node's network mode to master (see ``NETWORK_MODE_*`` constants in :ref:`Node<class_Node>`), or it will become a regular peer with the root node set to puppet. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to ``SceneTree``'s signals.
 
 .. _class_SceneTree_property_paused:
 
@@ -355,15 +365,11 @@ The peer object to handle the RPC system (effectively enabling networking when s
 | *Getter* | is_paused()      |
 +----------+------------------+
 
-If ``true``, the SceneTree is paused.
+If ``true``, the ``SceneTree`` is paused. Doing so will have the following behavior:
 
-Doing so will have the following behavior:
+- 2D and 3D physics will be stopped.
 
-\* 2D and 3D physics will be stopped.
-
-\* _process and _physics_process will not be called anymore in nodes.
-
-\* _input and _input_event will not be called anymore either.
+- :ref:`Node._process<class_Node_method__process>`, :ref:`Node._physics_process<class_Node_method__physics_process>` and :ref:`Node._input<class_Node_method__input>` will not be called anymore in nodes.
 
 .. _class_SceneTree_property_refuse_new_network_connections:
 
@@ -375,7 +381,7 @@ Doing so will have the following behavior:
 | *Getter* | is_refusing_new_network_connections()     |
 +----------+-------------------------------------------+
 
-If ``true``, the SceneTree's :ref:`network_peer<class_SceneTree_property_network_peer>` refuses new incoming connections.
+If ``true``, the ``SceneTree``'s :ref:`network_peer<class_SceneTree_property_network_peer>` refuses new incoming connections.
 
 .. _class_SceneTree_property_root:
 
@@ -385,7 +391,7 @@ If ``true``, the SceneTree's :ref:`network_peer<class_SceneTree_property_network
 | *Getter* | get_root() |
 +----------+------------+
 
-The SceneTree's :ref:`Viewport<class_Viewport>`.
+The ``SceneTree``'s root :ref:`Viewport<class_Viewport>`.
 
 .. _class_SceneTree_property_use_font_oversampling:
 
@@ -418,19 +424,23 @@ Calls ``method`` on each member of the given group, respecting the given :ref:`G
 
 - :ref:`Error<enum_@GlobalScope_Error>` **change_scene** **(** :ref:`String<class_String>` path **)**
 
-Changes to the scene at the given ``path``.
+Changes the running scene to the one at the given ``path``, after loading it into a :ref:`PackedScene<class_PackedScene>` and creating a new instance.
+
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_CANT_OPEN<class_@GlobalScope_constant_ERR_CANT_OPEN>` if the ``path`` cannot be loaded into a :ref:`PackedScene<class_PackedScene>`, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if that scene cannot be instantiated.
 
 .. _class_SceneTree_method_change_scene_to:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **change_scene_to** **(** :ref:`PackedScene<class_PackedScene>` packed_scene **)**
 
-Changes to the given :ref:`PackedScene<class_PackedScene>`.
+Changes the running scene to a new instance of the given :ref:`PackedScene<class_PackedScene>`.
+
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the scene cannot be instantiated.
 
 .. _class_SceneTree_method_create_timer:
 
 - :ref:`SceneTreeTimer<class_SceneTreeTimer>` **create_timer** **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true **)**
 
-Returns a :ref:`SceneTreeTimer<class_SceneTreeTimer>` which will :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_signal_timeout>` after the given time in seconds elapsed in this SceneTree. If ``pause_mode_process`` is set to ``false``, pausing the SceneTree will also pause the timer.
+Returns a :ref:`SceneTreeTimer<class_SceneTreeTimer>` which will :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_signal_timeout>` after the given time in seconds elapsed in this ``SceneTree``. If ``pause_mode_process`` is set to ``false``, pausing the ``SceneTree`` will also pause the timer.
 
 Commonly used to create a one-shot delay timer as in the following example:
 
@@ -445,31 +455,31 @@ Commonly used to create a one-shot delay timer as in the following example:
 
 - :ref:`int<class_int>` **get_frame** **(** **)** const
 
-Returns the current frame, i.e. number of frames since the application started.
+Returns the current frame number, i.e. the total frame count since the application started.
 
 .. _class_SceneTree_method_get_network_connected_peers:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_network_connected_peers** **(** **)** const
 
-Returns the peer IDs of all connected peers of this SceneTree's :ref:`network_peer<class_SceneTree_property_network_peer>`.
+Returns the peer IDs of all connected peers of this ``SceneTree``'s :ref:`network_peer<class_SceneTree_property_network_peer>`.
 
 .. _class_SceneTree_method_get_network_unique_id:
 
 - :ref:`int<class_int>` **get_network_unique_id** **(** **)** const
 
-Returns the unique peer ID of this SceneTree's :ref:`network_peer<class_SceneTree_property_network_peer>`.
+Returns the unique peer ID of this ``SceneTree``'s :ref:`network_peer<class_SceneTree_property_network_peer>`.
 
 .. _class_SceneTree_method_get_node_count:
 
 - :ref:`int<class_int>` **get_node_count** **(** **)** const
 
-Returns the number of nodes in this SceneTree.
+Returns the number of nodes in this ``SceneTree``.
 
 .. _class_SceneTree_method_get_nodes_in_group:
 
 - :ref:`Array<class_Array>` **get_nodes_in_group** **(** :ref:`String<class_String>` group **)**
 
-Returns all nodes assigned to the given group.
+Returns a list of all nodes assigned to the given group.
 
 .. _class_SceneTree_method_get_rpc_sender_id:
 
@@ -493,13 +503,13 @@ Returns ``true`` if there is a :ref:`network_peer<class_SceneTree_property_netwo
 
 - :ref:`bool<class_bool>` **is_input_handled** **(** **)**
 
-Returns ``true`` if the most recent InputEvent was marked as handled with :ref:`set_input_as_handled<class_SceneTree_method_set_input_as_handled>`.
+Returns ``true`` if the most recent :ref:`InputEvent<class_InputEvent>` was marked as handled with :ref:`set_input_as_handled<class_SceneTree_method_set_input_as_handled>`.
 
 .. _class_SceneTree_method_is_network_server:
 
 - :ref:`bool<class_bool>` **is_network_server** **(** **)** const
 
-Returns ``true`` if this SceneTree's :ref:`network_peer<class_SceneTree_property_network_peer>` is in server mode (listening for connections).
+Returns ``true`` if this ``SceneTree``'s :ref:`network_peer<class_SceneTree_property_network_peer>` is in server mode (listening for connections).
 
 .. _class_SceneTree_method_notify_group:
 
@@ -531,11 +541,13 @@ Quits the application.
 
 Reloads the currently active scene.
 
+Returns an :ref:`Error<enum_@GlobalScope_Error>` code as described in :ref:`change_scene<class_SceneTree_method_change_scene>`, with the addition of :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if no :ref:`current_scene<class_SceneTree_property_current_scene>` was defined yet.
+
 .. _class_SceneTree_method_set_auto_accept_quit:
 
 - void **set_auto_accept_quit** **(** :ref:`bool<class_bool>` enabled **)**
 
-If ``true``, the application automatically accepts quitting.
+If ``true``, the application automatically accepts quitting. Defaults to ``true``.
 
 .. _class_SceneTree_method_set_group:
 
@@ -553,17 +565,17 @@ Sets the given ``property`` to ``value`` on all members of the given group, resp
 
 - void **set_input_as_handled** **(** **)**
 
-Marks the most recent input event as handled.
+Marks the most recent :ref:`InputEvent<class_InputEvent>` as handled.
 
 .. _class_SceneTree_method_set_quit_on_go_back:
 
 - void **set_quit_on_go_back** **(** :ref:`bool<class_bool>` enabled **)**
 
-If ``true``, the application quits automatically on going back (e.g. on Android).
+If ``true``, the application quits automatically on going back (e.g. on Android). Defaults to ``true``.
 
 .. _class_SceneTree_method_set_screen_stretch:
 
 - void **set_screen_stretch** **(** :ref:`StretchMode<enum_SceneTree_StretchMode>` mode, :ref:`StretchAspect<enum_SceneTree_StretchAspect>` aspect, :ref:`Vector2<class_Vector2>` minsize, :ref:`float<class_float>` shrink=1 **)**
 
-Configures screen stretching to the given :ref:`StretchMode<enum_SceneTree_StretchMode>`, :ref:`StretchAspect<enum_SceneTree_StretchAspect>`, minimum size and ``shrink``.
+Configures screen stretching to the given :ref:`StretchMode<enum_SceneTree_StretchMode>`, :ref:`StretchAspect<enum_SceneTree_StretchAspect>`, minimum size and ``shrink`` ratio.
 

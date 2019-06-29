@@ -40,8 +40,8 @@ The ``ScriptCreateDialog`` creates script files according to a given template fo
 ::
 
     func _ready():
-        dialog.config("Node", "res://new_node.gd") # for in-engine types
-        dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # for script types
+        dialog.config("Node", "res://new_node.gd") # For in-engine types
+        dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # For script types
         dialog.popup_centered()
 
 Method Descriptions

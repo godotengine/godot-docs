@@ -255,7 +255,7 @@ Returns whether a variable is exported.
 
 - :ref:`Dictionary<class_Dictionary>` **get_variable_info** **(** :ref:`String<class_String>` name **)** const
 
-Returns the info for a given variable as a dictionary. The information includes its name, type, hint and usage.
+Returns the information for a given variable as a dictionary. The information includes its name, type, hint and usage.
 
 .. _class_VisualScript_method_has_custom_signal:
 

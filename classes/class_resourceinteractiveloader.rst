@@ -34,7 +34,7 @@ Methods
 Description
 -----------
 
-Interactive :ref:`Resource<class_Resource>` loader. This object is returned by :ref:`ResourceLoader<class_ResourceLoader>` when performing an interactive load. It allows to load with high granularity, so this is mainly useful for displaying loading bars/percentages.
+Interactive :ref:`Resource<class_Resource>` loader. This object is returned by :ref:`ResourceLoader<class_ResourceLoader>` when performing an interactive load. It allows loading resources with high granularity, which makes it mainly useful for displaying loading bars or percentages.
 
 Method Descriptions
 -------------------

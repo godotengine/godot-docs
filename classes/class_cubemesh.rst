@@ -61,7 +61,7 @@ Size of the cuboid mesh. Defaults to (2, 2, 2).
 | *Getter* | get_subdivide_depth()      |
 +----------+----------------------------+
 
-Number of extra edge loops inserted along the z-axis. Defaults to 0.
+Number of extra edge loops inserted along the Z axis. Defaults to 0.
 
 .. _class_CubeMesh_property_subdivide_height:
 
@@ -73,7 +73,7 @@ Number of extra edge loops inserted along the z-axis. Defaults to 0.
 | *Getter* | get_subdivide_height()      |
 +----------+-----------------------------+
 
-Number of extra edge loops inserted along the y-axis. Defaults to 0.
+Number of extra edge loops inserted along the Y axis. Defaults to 0.
 
 .. _class_CubeMesh_property_subdivide_width:
 
@@ -85,5 +85,5 @@ Number of extra edge loops inserted along the y-axis. Defaults to 0.
 | *Getter* | get_subdivide_width()      |
 +----------+----------------------------+
 
-Number of extra edge loops inserted along the x-axis. Defaults to 0.
+Number of extra edge loops inserted along the X axis. Defaults to 0.
 

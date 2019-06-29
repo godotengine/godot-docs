@@ -64,7 +64,7 @@ Property Descriptions
 | *Getter* | get_build_mode()      |
 +----------+-----------------------+
 
-Collision build mode. Use one of the ``BUILD_*`` constants. Default value: ``BUILD_SOLIDS``.
+Collision build mode. Use one of the ``BUILD_*`` constants. Default value: :ref:`BUILD_SOLIDS<class_CollisionPolygon2D_constant_BUILD_SOLIDS>`.
 
 .. _class_CollisionPolygon2D_property_disabled:
 

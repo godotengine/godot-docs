@@ -341,7 +341,7 @@ Decodes a byte array back to a value. When ``allow_objects`` is ``true`` decodin
 
 - :ref:`Vector2<class_Vector2>` **cartesian2polar** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
-Converts a 2D point expressed in the cartesian coordinate system (x and y axis) to the polar coordinate system (a distance from the origin and an angle).
+Converts a 2D point expressed in the cartesian coordinate system (X and Y axis) to the polar coordinate system (a distance from the origin and an angle).
 
 .. _class_@GDScript_method_ceil:
 
@@ -362,10 +362,8 @@ Returns a character as a String of the given ASCII code.
 
 ::
 
-    # a is 'A'
-    a = char(65)
-    # a is 'a'
-    a = char(65 + 32)
+    a = char(65)      # a is "A"
+    a = char(65 + 32) # a is "a"
 
 .. _class_@GDScript_method_clamp:
 
@@ -387,16 +385,15 @@ Clamps ``value`` and returns a value not less than ``min`` and not more than ``m
 
 - :ref:`Variant<class_Variant>` **convert** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` type **)**
 
-Converts from a type to another in the best way possible. The ``type`` parameter uses the enum TYPE\_\* in :ref:`@GlobalScope<class_@GlobalScope>`.
+Converts from a type to another in the best way possible. The ``type`` parameter uses the enum ``TYPE_*`` in :ref:`@GlobalScope<class_@GlobalScope>`.
 
 ::
 
     a = Vector2(1, 0)
-    # prints 1
+    # Prints 1
     print(a.length())
     a = convert(a, TYPE_STRING)
-    # prints 6
-    # (1, 0) is 6 characters
+    # Prints 6 as "(1, 0)" is 6 characters
     print(a.length())
 
 .. _class_@GDScript_method_cos:
@@ -407,7 +404,7 @@ Returns the cosine of angle ``s`` in radians.
 
 ::
 
-    # prints 1 and -1
+    # Prints 1 then -1
     print(cos(PI * 2))
     print(cos(PI))
 
@@ -419,7 +416,7 @@ Returns the hyperbolic cosine of ``s`` in radians.
 
 ::
 
-    # prints 1.543081
+    # Prints 1.543081
     print(cosh(1))
 
 .. _class_@GDScript_method_db2linear:
@@ -432,7 +429,7 @@ Converts from decibels to linear energy (audio).
 
 - :ref:`int<class_int>` **decimals** **(** :ref:`float<class_float>` step **)**
 
-Deprecated alias for ":ref:`step_decimals<class_@GDScript_method_step_decimals>`".
+Deprecated alias for :ref:`step_decimals<class_@GDScript_method_step_decimals>`.
 
 .. _class_@GDScript_method_dectime:
 
@@ -478,7 +475,7 @@ The natural exponential function. It raises the mathematical constant **e** to t
 
 ::
 
-    a = exp(2) # approximately 7.39
+    a = exp(2) # Approximately 7.39
 
 .. _class_@GDScript_method_floor:
 
@@ -501,7 +498,7 @@ Returns the floating-point remainder of ``x/y``.
 
 ::
 
-    # remainder is 1.5
+    # Remainder is 1.5
     var remainder = fmod(7, 5.5)
 
 .. _class_@GDScript_method_fposmod:
@@ -544,7 +541,7 @@ Returns a reference to the specified function ``funcname`` in the ``instance`` n
         return("bar")
     
     a = funcref(self, "foo")
-    print(a.call_func()) # prints bar
+    print(a.call_func()) # Prints bar
 
 .. _class_@GDScript_method_get_stack:
 
@@ -577,7 +574,7 @@ Returns the integer hash of the variable passed.
 
 ::
 
-    print(hash("a")) # prints 177670
+    print(hash("a")) # Prints 177670
 
 .. _class_@GDScript_method_inst2dict:
 
@@ -612,7 +609,7 @@ Returns the Object that corresponds to ``instance_id``. All Objects have a uniqu
     func _ready():
         var id = get_instance_id()
         var inst = instance_from_id(id)
-        print(inst.foo) # prints bar
+        print(inst.foo) # Prints bar
 
 .. _class_@GDScript_method_inverse_lerp:
 
@@ -622,7 +619,7 @@ Returns a normalized value considering the given range.
 
 ::
 
-    inverse_lerp(3, 5, 4) # returns 0.5
+    inverse_lerp(3, 5, 4) # Returns 0.5
 
 .. _class_@GDScript_method_is_equal_approx:
 
@@ -665,7 +662,7 @@ Returns length of Variant ``var``. Length is the character count of String, elem
 ::
 
     a = [1, 2, 3, 4]
-    len(a) # returns 4
+    len(a) # Returns 4
 
 .. _class_@GDScript_method_lerp:
 
@@ -679,8 +676,8 @@ If both are of the same vector type (:ref:`Vector2<class_Vector2>`, :ref:`Vector
 
 ::
 
-    lerp(0, 4, 0.75) # returns 3.0
-    lerp(Vector2(1, 5), Vector2(3, 2), 0.5) # returns Vector2(2, 3.5)
+    lerp(0, 4, 0.75) # Returns 3.0
+    lerp(Vector2(1, 5), Vector2(3, 2), 0.5) # Returns Vector2(2, 3.5)
 
 .. _class_@GDScript_method_linear2db:
 
@@ -694,11 +691,11 @@ Converts from linear energy to decibels (audio).
 
 Loads a resource from the filesystem located at ``path``.
 
-**Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path".
+**Note:** Resource paths can be obtained by right-clicking on a resource in the FileSystem dock and choosing **Copy Path**.
 
 ::
 
-    # load a scene called main located in the root of the project directory
+    # Load a scene called main located in the root of the project directory
     var main = load("res://main.tscn")
 
 .. _class_@GDScript_method_log:
@@ -707,11 +704,11 @@ Loads a resource from the filesystem located at ``path``.
 
 Natural logarithm. The amount of time needed to reach a certain level of continuous growth.
 
-**Note:** This is not the same as the log function on your calculator which is a base 10 logarithm.
+**Note:** This is not the same as the "log" function on most calculators, which uses a base 10 logarithm.
 
 ::
 
-    log(10) # returns 2.302585
+    log(10) # Returns 2.302585
 
 .. _class_@GDScript_method_max:
 
@@ -721,8 +718,8 @@ Returns the maximum of two values.
 
 ::
 
-    max(1, 2) # returns 2
-    max(-3.99, -4) # returns -3.99
+    max(1, 2) # Returns 2
+    max(-3.99, -4) # Returns -3.99
 
 .. _class_@GDScript_method_min:
 
@@ -732,8 +729,8 @@ Returns the minimum of two values.
 
 ::
 
-    min(1, 2) # returns 1
-    min(-3.99, -4) # returns -4
+    min(1, 2) # Returns 1
+    min(-3.99, -4) # Returns -4
 
 .. _class_@GDScript_method_move_toward:
 
@@ -745,7 +742,7 @@ Use a negative ``delta`` value to move away.
 
 ::
 
-    move_toward(10, 5, 4) # returns 6
+    move_toward(10, 5, 4) # Returns 6
 
 .. _class_@GDScript_method_nearest_po2:
 
@@ -755,9 +752,9 @@ Returns the nearest larger power of 2 for integer ``value``.
 
 ::
 
-    nearest_po2(3) # returns 4
-    nearest_po2(4) # returns 4
-    nearest_po2(5) # returns 8
+    nearest_po2(3) # Returns 4
+    nearest_po2(4) # Returns 4
+    nearest_po2(5) # Returns 8
 
 .. _class_@GDScript_method_parse_json:
 
@@ -773,7 +770,7 @@ Note that JSON objects do not preserve key order like Godot dictionaries, thus y
 
     p = parse_json('["a", "b", "c"]')
     if typeof(p) == TYPE_ARRAY:
-        print(p[0]) # prints a
+        print(p[0]) # Prints a
     else:
         print("unexpected results")
 
@@ -781,7 +778,7 @@ Note that JSON objects do not preserve key order like Godot dictionaries, thus y
 
 - :ref:`Vector2<class_Vector2>` **polar2cartesian** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` th **)**
 
-Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (x and y axis).
+Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (X and Y axis).
 
 .. _class_@GDScript_method_pow:
 
@@ -791,7 +788,7 @@ Returns the result of ``x`` raised to the power of ``y``.
 
 ::
 
-    pow(2, 5) # returns 32
+    pow(2, 5) # Returns 32
 
 .. _class_@GDScript_method_preload:
 
@@ -803,7 +800,7 @@ Returns a resource from the filesystem that is loaded during script parsing.
 
 ::
 
-    # load a scene called main located in the root of the project directory
+    # Load a scene called main located in the root of the project directory
     var main = preload("res://main.tscn")
 
 .. _class_@GDScript_method_print:
@@ -815,7 +812,7 @@ Converts one or more arguments to strings in the best way possible and prints th
 ::
 
     a = [1, 2, 3]
-    print("a", "b", a) # prints ab[1, 2, 3]
+    print("a", "b", a) # Prints ab[1, 2, 3]
 
 .. _class_@GDScript_method_print_debug:
 
@@ -855,7 +852,7 @@ Prints one or more arguments to strings in the best way possible to console. No 
 
     printraw("A")
     printraw("B")
-    # prints AB
+    # Prints AB
 
 .. _class_@GDScript_method_prints:
 
@@ -865,7 +862,7 @@ Prints one or more arguments to the console with a space between each argument.
 
 ::
 
-    prints("A", "B", "C") # prints A B C
+    prints("A", "B", "C") # Prints A B C
 
 .. _class_@GDScript_method_printt:
 
@@ -875,7 +872,7 @@ Prints one or more arguments to the console with a tab between each argument.
 
 ::
 
-    printt("A", "B", "C") # prints A       B       C
+    printt("A", "B", "C") # Prints A       B       C
 
 .. _class_@GDScript_method_push_error:
 
@@ -885,7 +882,7 @@ Pushes an error message to Godot's built-in debugger and to the OS terminal.
 
 ::
 
-    push_error("test error") # prints "test error" to debugger and terminal as error call
+    push_error("test error") # Prints "test error" to debugger and terminal as error call
 
 .. _class_@GDScript_method_push_warning:
 
@@ -895,7 +892,7 @@ Pushes a warning message to Godot's built-in debugger and to the OS terminal.
 
 ::
 
-    push_warning("test warning") # prints "test warning" to debugger and terminal as warning call
+    push_warning("test warning") # Prints "test warning" to debugger and terminal as warning call
 
 .. _class_@GDScript_method_rad2deg:
 
@@ -905,7 +902,7 @@ Converts from radians to degrees.
 
 ::
 
-    rad2deg(0.523599) # returns 30
+    rad2deg(0.523599) # Returns 30
 
 .. _class_@GDScript_method_rand_range:
 
@@ -915,7 +912,7 @@ Random range, any floating point value between ``from`` and ``to``.
 
 ::
 
-    prints(rand_range(0, 1), rand_range(0, 1)) # prints e.g. 0.135591 0.405263
+    prints(rand_range(0, 1), rand_range(0, 1)) # Prints e.g. 0.135591 0.405263
 
 .. _class_@GDScript_method_rand_seed:
 
@@ -931,7 +928,7 @@ Returns a random floating point value on the interval ``[0, 1]``.
 
 ::
 
-    randf() # returns e.g. 0.375671
+    randf() # Returns e.g. 0.375671
 
 .. _class_@GDScript_method_randi:
 
@@ -941,10 +938,10 @@ Returns a random unsigned 32 bit integer. Use remainder to obtain a random value
 
 ::
 
-    randi()           # returns random integer between 0 and 2^32 - 1
-    randi() % 20      # returns random integer between 0 and 19
-    randi() % 100     # returns random integer between 0 and 99
-    randi() % 100 + 1 # returns random integer between 1 and 100
+    randi()           # Returns random integer between 0 and 2^32 - 1
+    randi() % 20      # Returns random integer between 0 and 19
+    randi() % 100     # Returns random integer between 0 and 99
+    randi() % 100 + 1 # Returns random integer between 1 and 100
 
 .. _class_@GDScript_method_randomize:
 
@@ -997,7 +994,7 @@ Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``.
 
 ::
 
-    range_lerp(75, 0, 100, -1, 1) # returns 0.5
+    range_lerp(75, 0, 100, -1, 1) # Returns 0.5
 
 .. _class_@GDScript_method_round:
 
@@ -1007,7 +1004,7 @@ Returns the integral value that is nearest to ``s``, with halfway cases rounded 
 
 ::
 
-    round(2.6) # returns 3
+    round(2.6) # Returns 3
 
 .. _class_@GDScript_method_seed:
 
@@ -1028,9 +1025,9 @@ Returns the sign of ``s``: -1 or 1. Returns 0 if ``s`` is 0.
 
 ::
 
-    sign(-6) # returns -1
-    sign(0)  # returns 0
-    sign(6)  # returns 1
+    sign(-6) # Returns -1
+    sign(0)  # Returns 0
+    sign(6)  # Returns 1
 
 .. _class_@GDScript_method_sin:
 
@@ -1040,7 +1037,7 @@ Returns the sine of angle ``s`` in radians.
 
 ::
 
-    sin(0.523599) # returns 0.5
+    sin(0.523599) # Returns 0.5
 
 .. _class_@GDScript_method_sinh:
 
@@ -1050,8 +1047,8 @@ Returns the hyperbolic sine of ``s``.
 
 ::
 
-    a = log(2.0) # returns 0.693147
-    sinh(a) # returns 0.75
+    a = log(2.0) # Returns 0.693147
+    sinh(a) # Returns 0.75
 
 .. _class_@GDScript_method_smoothstep:
 
@@ -1061,9 +1058,9 @@ Returns a number smoothly interpolated between the ``from`` and ``to``, based on
 
 ::
 
-    smoothstep(0, 2, 0.5) # returns 0.15
-    smoothstep(0, 2, 1.0) # returns 0.5
-    smoothstep(0, 2, 2.0) # returns 1.0
+    smoothstep(0, 2, 0.5) # Returns 0.15
+    smoothstep(0, 2, 1.0) # Returns 0.5
+    smoothstep(0, 2, 2.0) # Returns 1.0
 
 .. _class_@GDScript_method_sqrt:
 
@@ -1073,7 +1070,7 @@ Returns the square root of ``s``.
 
 ::
 
-    sqrt(9) # returns 3
+    sqrt(9) # Returns 3
 
 .. _class_@GDScript_method_step_decimals:
 
@@ -1106,8 +1103,8 @@ Converts one or more arguments to string in the best way possible.
 
     var a = [10, 20, 30]
     var b = str(a);
-    len(a) # returns 3
-    len(b) # returns 12
+    len(a) # Returns 3
+    len(b) # Returns 12
 
 .. _class_@GDScript_method_str2var:
 
@@ -1119,7 +1116,7 @@ Converts a formatted string that was returned by :ref:`var2str<class_@GDScript_m
 
     a = '{ "a": 1, "b": 2 }'
     b = str2var(a)
-    print(b['a']) # prints 1
+    print(b["a"]) # Prints 1
 
 .. _class_@GDScript_method_tan:
 
@@ -1129,7 +1126,7 @@ Returns the tangent of angle ``s`` in radians.
 
 ::
 
-    tan(deg2rad(45)) # returns 1
+    tan(deg2rad(45)) # Returns 1
 
 .. _class_@GDScript_method_tanh:
 
@@ -1139,8 +1136,8 @@ Returns the hyperbolic tangent of ``s``.
 
 ::
 
-    a = log(2.0) # returns 0.693147
-    tanh(a)      # returns 0.6
+    a = log(2.0) # Returns 0.693147
+    tanh(a)      # Returns 0.6
 
 .. _class_@GDScript_method_to_json:
 
@@ -1150,7 +1147,7 @@ Converts a Variant ``var`` to JSON text and return the result. Useful for serial
 
 ::
 
-    a = { 'a': 1, 'b': 2 }
+    a = { "a": 1, "b": 2 }
     b = to_json(a)
     print(b) # {"a":1, "b":2}
 
@@ -1162,20 +1159,20 @@ Returns whether the given class exists in :ref:`ClassDB<class_ClassDB>`.
 
 ::
 
-    type_exists("Sprite") # returns true
-    type_exists("Variant") # returns false
+    type_exists("Sprite") # Returns true
+    type_exists("Variant") # Returns false
 
 .. _class_@GDScript_method_typeof:
 
 - :ref:`int<class_int>` **typeof** **(** :ref:`Variant<class_Variant>` what **)**
 
-Returns the internal type of the given Variant object, using the TYPE\_\* enum in :ref:`@GlobalScope<class_@GlobalScope>`.
+Returns the internal type of the given Variant object, using the ``TYPE_*`` enum in :ref:`@GlobalScope<class_@GlobalScope>`.
 
 ::
 
     p = parse_json('["a", "b", "c"]')
     if typeof(p) == TYPE_ARRAY:
-        print(p[0]) # prints a
+        print(p[0]) # Prints a
     else:
         print("unexpected results")
 
@@ -1208,7 +1205,7 @@ Converts a Variant ``var`` to a formatted string that can later be parsed using 
 
 ::
 
-    a = { 'a': 1, 'b': 2 }
+    a = { "a": 1, "b": 2 }
     print(var2str(a))
 
 prints
@@ -1248,8 +1245,22 @@ Usable for creating loop-alike behavior or infinite surfaces.
 
 ::
 
-    # infinite loop between 0.0 and 0.99
+    # Infinite loop between 0.0 and 0.99
     f = wrapf(f + 0.1, 0.0, 1.0)
+
+::
+
+    # Infinite rotation (in radians)
+    angle = wrapf(angle + 0.1, 0.0, TAU)
+
+**Note:** If you just want to wrap between 0.0 and ``n`` (where ``n`` is a positive floating-point value), it is better for performance to use the :ref:`fmod<class_@GDScript_method_fmod>` method like ``fmod(number, n)``.
+
+``wrapf`` is more flexible than using the :ref:`fmod<class_@GDScript_method_fmod>` approach by giving the user a simple control over the minimum value. It also fully supports negative numbers, e.g.
+
+::
+
+    # Infinite rotation (in radians)
+    angle = wrapf(angle + 0.1, -PI, PI)
 
 .. _class_@GDScript_method_wrapi:
 
@@ -1271,8 +1282,17 @@ Usable for creating loop-alike behavior or infinite surfaces.
 
 ::
 
-    # infinite loop between 0 and 9
+    # Infinite loop between 0 and 9
     frame = wrapi(frame + 1, 0, 10)
+
+**Note:** If you just want to wrap between 0 and ``n`` (where ``n`` is a positive integer value), it is better for performance to use the modulo operator like ``number % n``.
+
+``wrapi`` is more flexible than using the modulo approach by giving the user a simple control over the minimum value. It also fully supports negative numbers, e.g.
+
+::
+
+    # result is -2
+    var result = wrapi(-6, -5, -1)
 
 .. _class_@GDScript_method_yield:
 

@@ -70,7 +70,7 @@ Emitted when :ref:`value<class_Range_property_value>` changes.
 Description
 -----------
 
-Range is a base class for :ref:`Control<class_Control>` nodes that change a floating point *value* between a *minimum* and a *maximum*, using *step* and *page*, for example a :ref:`ScrollBar<class_ScrollBar>`.
+Range is a base class for :ref:`Control<class_Control>` nodes that change a floating-point *value* between a *minimum* and a *maximum*, using *step* and *page*, for example a :ref:`ScrollBar<class_ScrollBar>`.
 
 Property Descriptions
 ---------------------
@@ -208,5 +208,5 @@ Binds two ranges together along with any ranges previously grouped with either o
 
 - void **unshare** **(** **)**
 
-Stop range from sharing its member variables with any other.
+Stops range from sharing its member variables with any other.
 

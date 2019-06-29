@@ -48,7 +48,7 @@ Property Descriptions
 | *Getter* | get_relative()      |
 +----------+---------------------+
 
-Mouse position relative to the previous position (position at the last frame).
+The mouse position relative to the previous position (position at the last frame).
 
 .. _class_InputEventMouseMotion_property_speed:
 
@@ -60,5 +60,5 @@ Mouse position relative to the previous position (position at the last frame).
 | *Getter* | get_speed()      |
 +----------+------------------+
 
-Mouse speed.
+The mouse speed in pixels per second.
 

@@ -215,77 +215,97 @@ enum **Format**:
 
 - **FORMAT_LA8** = **1**
 
-- **FORMAT_R8** = **2** --- OpenGL texture format RED with a single component and a bitdepth of 8.
+- **FORMAT_R8** = **2** --- OpenGL texture format ``RED`` with a single component and a bitdepth of 8.
 
-- **FORMAT_RG8** = **3** --- OpenGL texture format RG with two components and a bitdepth of 8 for each.
+- **FORMAT_RG8** = **3** --- OpenGL texture format ``RG`` with two components and a bitdepth of 8 for each.
 
-- **FORMAT_RGB8** = **4** --- OpenGL texture format RGB with three components, each with a bitdepth of 8. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_RGB8** = **4** --- OpenGL texture format ``RGB`` with three components, each with a bitdepth of 8.
 
-- **FORMAT_RGBA8** = **5** --- OpenGL texture format RGBA with four components, each with a bitdepth of 8. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
-- **FORMAT_RGBA4444** = **6** --- OpenGL texture format RGBA with four components, each with a bitdepth of 4.
+- **FORMAT_RGBA8** = **5** --- OpenGL texture format ``RGBA`` with four components, each with a bitdepth of 8.
 
-- **FORMAT_RGBA5551** = **7** --- OpenGL texture format GL_RGB5_A1 where 5 bits of depth for each component of RGB and one bit for alpha.
+**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
-- **FORMAT_RF** = **8** --- OpenGL texture format GL_R32F where there's one component, a 32-bit floating-point value.
+- **FORMAT_RGBA4444** = **6** --- OpenGL texture format ``RGBA`` with four components, each with a bitdepth of 4.
 
-- **FORMAT_RGF** = **9** --- OpenGL texture format GL_RG32F where there are two components, each a 32-bit floating-point values.
+- **FORMAT_RGBA5551** = **7** --- OpenGL texture format ``GL_RGB5_A1`` where 5 bits of depth for each component of RGB and one bit for alpha.
 
-- **FORMAT_RGBF** = **10** --- OpenGL texture format GL_RGB32F where there are three components, each a 32-bit floating-point values.
+- **FORMAT_RF** = **8** --- OpenGL texture format ``GL_R32F`` where there's one component, a 32-bit floating-point value.
 
-- **FORMAT_RGBAF** = **11** --- OpenGL texture format GL_RGBA32F where there are four components, each a 32-bit floating-point values.
+- **FORMAT_RGF** = **9** --- OpenGL texture format ``GL_RG32F`` where there are two components, each a 32-bit floating-point values.
 
-- **FORMAT_RH** = **12** --- OpenGL texture format GL_R32F where there's one component, a 16-bit "half-precision" floating-point value.
+- **FORMAT_RGBF** = **10** --- OpenGL texture format ``GL_RGB32F`` where there are three components, each a 32-bit floating-point values.
 
-- **FORMAT_RGH** = **13** --- OpenGL texture format GL_RG32F where there's two components, each a 16-bit "half-precision" floating-point value.
+- **FORMAT_RGBAF** = **11** --- OpenGL texture format ``GL_RGBA32F`` where there are four components, each a 32-bit floating-point values.
 
-- **FORMAT_RGBH** = **14** --- OpenGL texture format GL_RGB32F where there's three components, each a 16-bit "half-precision" floating-point value.
+- **FORMAT_RH** = **12** --- OpenGL texture format ``GL_R32F`` where there's one component, a 16-bit "half-precision" floating-point value.
 
-- **FORMAT_RGBAH** = **15** --- OpenGL texture format GL_RGBA32F where there's four components, each a 16-bit "half-precision" floating-point value.
+- **FORMAT_RGH** = **13** --- OpenGL texture format ``GL_RG32F`` where there are two components, each a 16-bit "half-precision" floating-point value.
 
-- **FORMAT_RGBE9995** = **16** --- A special OpenGL texture format where the three color components have 9 bits of precision and all three share a single exponent.
+- **FORMAT_RGBH** = **14** --- OpenGL texture format ``GL_RGB32F`` where there are three components, each a 16-bit "half-precision" floating-point value.
 
-- **FORMAT_DXT1** = **17** --- The S3TC texture format that uses Block Compression 1, and is the smallest variation of S3TC, only providing 1 bit of alpha and color data being premultiplied with alpha. More information can be found at https://www.khronos.org/opengl/wiki/S3_Texture_Compression. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_RGBAH** = **15** --- OpenGL texture format ``GL_RGBA32F`` where there are four components, each a 16-bit "half-precision" floating-point value.
 
-- **FORMAT_DXT3** = **18** --- The S3TC texture format that uses Block Compression 2, and color data is interpreted as not having been premultiplied by alpha. Well suited for images with sharp alpha transitions between translucent and opaque areas. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_RGBE9995** = **16** --- A special OpenGL texture format where the three color components have 9 bits of precision and all three share a single 5-bit exponent.
 
-- **FORMAT_DXT5** = **19** --- The S3TC texture format also known as Block Compression 3 or BC3 that contains 64 bits of alpha channel data followed by 64 bits of DXT1-encoded color data. Color data is not premultiplied by alpha, same as DXT3. DXT5 generally produces superior results for transparency gradients than DXT3. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_DXT1** = **17** --- The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`_ texture format that uses Block Compression 1, and is the smallest variation of S3TC, only providing 1 bit of alpha and color data being premultiplied with alpha.
 
-- **FORMAT_RGTC_R** = **20** --- Texture format that uses Red Green Texture Compression, normalizing the red channel data using the same compression algorithm that DXT5 uses for the alpha channel. More information can be found here https://www.khronos.org/opengl/wiki/Red_Green_Texture_Compression.
+**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
-- **FORMAT_RGTC_RG** = **21** --- Texture format that uses Red Green Texture Compression, normalizing the red and green channel data using the same compression algorithm that DXT5 uses for the alpha channel.
+- **FORMAT_DXT3** = **18** --- The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`_ texture format that uses Block Compression 2, and color data is interpreted as not having been premultiplied by alpha. Well suited for images with sharp alpha transitions between translucent and opaque areas.
 
-- **FORMAT_BPTC_RGBA** = **22** --- Texture format that uses BPTC compression with unsigned normalized RGBA components. More information can be found at https://www.khronos.org/opengl/wiki/BPTC_Texture_Compression. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
-- **FORMAT_BPTC_RGBF** = **23** --- Texture format that uses BPTC compression with signed floating-point RGB components.
+- **FORMAT_DXT5** = **19** --- The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`_ texture format also known as Block Compression 3 or BC3 that contains 64 bits of alpha channel data followed by 64 bits of DXT1-encoded color data. Color data is not premultiplied by alpha, same as DXT3. DXT5 generally produces superior results for transparent gradients compared to DXT3.
 
-- **FORMAT_BPTC_RGBFU** = **24** --- Texture format that uses BPTC compression with unsigned floating-point RGB components.
+**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
-- **FORMAT_PVRTC2** = **25** --- Texture format used on PowerVR-supported mobile platforms, uses 2 bit color depth with no alpha. More information on PVRTC can be found here https://en.wikipedia.org/wiki/PVRTC. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_RGTC_R** = **20** --- Texture format that uses `Red Green Texture Compression <https://www.khronos.org/opengl/wiki/Red_Green_Texture_Compression>`_, normalizing the red channel data using the same compression algorithm that DXT5 uses for the alpha channel.
 
-- **FORMAT_PVRTC2A** = **26** --- Same as PVRTC2, but with an alpha component.
+- **FORMAT_RGTC_RG** = **21** --- Texture format that uses `Red Green Texture Compression <https://www.khronos.org/opengl/wiki/Red_Green_Texture_Compression>`_, normalizing the red and green channel data using the same compression algorithm that DXT5 uses for the alpha channel.
 
-- **FORMAT_PVRTC4** = **27** --- Similar to PVRTC2, but with 4 bit color depth and no alpha.
+- **FORMAT_BPTC_RGBA** = **22** --- Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture_Compression>`_ compression with unsigned normalized RGBA components.
 
-- **FORMAT_PVRTC4A** = **28** --- Same as PVRTC4, but with an alpha component.
+**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
-- **FORMAT_ETC** = **29** --- Ericsson Texture Compression format, also referred to as 'ETC1', and is part of the OpenGL ES graphics standard. An overview of the format is given at https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC1.
+- **FORMAT_BPTC_RGBF** = **23** --- Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture_Compression>`_ compression with signed floating-point RGB components.
 
-- **FORMAT_ETC2_R11** = **30** --- Ericsson Texture Compression format 2 variant R11_EAC, which provides one channel of unsigned data.
+- **FORMAT_BPTC_RGBFU** = **24** --- Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture_Compression>`_ compression with unsigned floating-point RGB components.
 
-- **FORMAT_ETC2_R11S** = **31** --- Ericsson Texture Compression format 2 variant SIGNED_R11_EAC, which provides one channel of signed data.
+- **FORMAT_PVRTC2** = **25** --- Texture format used on PowerVR-supported mobile platforms, uses 2-bit color depth with no alpha. More information can be found `here <https://en.wikipedia.org/wiki/PVRTC>`_.
 
-- **FORMAT_ETC2_RG11** = **32** --- Ericsson Texture Compression format 2 variant RG11_EAC, which provides two channels of unsigned data.
+**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
-- **FORMAT_ETC2_RG11S** = **33** --- Ericsson Texture Compression format 2 variant SIGNED_RG11_EAC, which provides two channels of signed data.
+- **FORMAT_PVRTC2A** = **26** --- Same as `PVRTC2 <https://en.wikipedia.org/wiki/PVRTC>`_, but with an alpha component.
 
-- **FORMAT_ETC2_RGB8** = **34** --- Ericsson Texture Compression format 2 variant RGB8, which is a followup of ETC1 and compresses RGB888 data. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_PVRTC4** = **27** --- Similar to `PVRTC2 <https://en.wikipedia.org/wiki/PVRTC>`_, but with 4-bit color depth and no alpha.
 
-- **FORMAT_ETC2_RGBA8** = **35** --- Ericsson Texture Compression format 2 variant RGBA8, which compresses RGBA8888 data with full alpha support. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_PVRTC4A** = **28** --- Same as `PVRTC4 <https://en.wikipedia.org/wiki/PVRTC>`_, but with an alpha component.
 
-- **FORMAT_ETC2_RGB8A1** = **36** --- Ericsson Texture Compression format 2 variant RGB8_PUNCHTHROUGH_ALPHA1, which compresses RGBA data to make alpha either fully transparent or fully opaque. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_ETC** = **29** --- `Ericsson Texture Compression format 1 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC1>`_, also referred to as "ETC1", and is part of the OpenGL ES graphics standard. This format cannot store an alpha channel.
 
-- **FORMAT_MAX** = **37**
+- **FORMAT_ETC2_R11** = **30** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`_ (``R11_EAC`` variant), which provides one channel of unsigned data.
+
+- **FORMAT_ETC2_R11S** = **31** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`_ (``SIGNED_R11_EAC`` variant), which provides one channel of signed data.
+
+- **FORMAT_ETC2_RG11** = **32** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`_ (``RG11_EAC`` variant), which provides two channels of unsigned data.
+
+- **FORMAT_ETC2_RG11S** = **33** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`_ (``SIGNED_RG11_EAC`` variant), which provides two channels of signed data.
+
+- **FORMAT_ETC2_RGB8** = **34** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`_ (``RGB8`` variant), which is a follow-up of ETC1 and compresses RGB888 data.
+
+**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+
+- **FORMAT_ETC2_RGBA8** = **35** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`_ (``RGBA8``\ variant), which compresses RGBA8888 data with full alpha support.
+
+**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+
+- **FORMAT_ETC2_RGB8A1** = **36** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`_ (``RGB8_PUNCHTHROUGH_ALPHA1`` variant), which compresses RGBA data to make alpha either fully transparent or fully opaque.
+
+**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+
+- **FORMAT_MAX** = **37** --- Represents the size of the :ref:`Format<enum_Image_Format>` enum.
 
 .. _enum_Image_Interpolation:
 
@@ -301,21 +321,23 @@ enum **Format**:
 
 enum **Interpolation**:
 
-- **INTERPOLATE_NEAREST** = **0**
+- **INTERPOLATE_NEAREST** = **0** --- Performs nearest-neighbor interpolation. If the image is resized, it will be pixelated.
 
-- **INTERPOLATE_BILINEAR** = **1**
+- **INTERPOLATE_BILINEAR** = **1** --- Performs bilinear interpolation. If the image is resized, it will be blurry. This mode is faster than :ref:`INTERPOLATE_CUBIC<class_Image_constant_INTERPOLATE_CUBIC>`, but it results in lower quality.
 
-- **INTERPOLATE_CUBIC** = **2**
+- **INTERPOLATE_CUBIC** = **2** --- Performs cubic interpolation. If the image is resized, it will be blurry. This mode often gives better results compared to :ref:`INTERPOLATE_BILINEAR<class_Image_constant_INTERPOLATE_BILINEAR>`, at the cost of being slower.
 
-- **INTERPOLATE_TRILINEAR** = **3** --- Performs bilinear separately on the two most suited mipmap levels, then linearly interpolates between them.
+- **INTERPOLATE_TRILINEAR** = **3** --- Performs bilinear separately on the two most-suited mipmap levels, then linearly interpolates between them.
 
-It's slower than ``INTERPOLATE_BILINEAR``, but produces higher quality results, with much less aliasing artifacts.
+It's slower than :ref:`INTERPOLATE_BILINEAR<class_Image_constant_INTERPOLATE_BILINEAR>`, but produces higher-quality results with much less aliasing artifacts.
 
-If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image. (Note that if you intend to scale multiple copies of the original image, it's better to call ``generate_mipmaps`` on it in advance, to avoid wasting processing power in generating them again and again.)
+If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image.
+
+**Note:** If you intend to scale multiple copies of the original image, it's better to call :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`] on it in advance, to avoid wasting processing power in generating them again and again.
 
 On the other hand, if the image already has mipmaps, they will be used, and a new set will be generated for the resulting image.
 
-- **INTERPOLATE_LANCZOS** = **4**
+- **INTERPOLATE_LANCZOS** = **4** --- Performs Lanczos interpolation. This is the slowest image resizing mode, but it typically gives the best results, especially when downscalng images.
 
 .. _enum_Image_AlphaMode:
 
@@ -457,13 +479,13 @@ Copies ``src`` image to this image.
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format **)**
 
-Creates an empty image of given size and format. See ``FORMAT_*`` constants. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the ``generate_mipmaps`` method.
+Creates an empty image of given size and format. See ``FORMAT_*`` constants. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
 
 .. _class_Image_method_create_from_data:
 
 - void **create_from_data** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format, :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
-Creates a new image of given size and format. See ``FORMAT_*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the ``generate_mipmaps`` method.
+Creates a new image of given size and format. See ``FORMAT_*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
 
 .. _class_Image_method_crop:
 

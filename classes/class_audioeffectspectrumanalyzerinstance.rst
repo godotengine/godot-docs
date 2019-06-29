@@ -34,9 +34,9 @@ Enumerations
 
 enum **MagnitudeMode**:
 
-- **MAGNITUDE_AVERAGE** = **0**
+- **MAGNITUDE_AVERAGE** = **0** --- Use the average value as magnitude.
 
-- **MAGNITUDE_MAX** = **1**
+- **MAGNITUDE_MAX** = **1** --- Use the maximum value as magnitude.
 
 Method Descriptions
 -------------------

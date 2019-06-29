@@ -28,7 +28,7 @@ Description
 
 ``MultiMeshInstance`` is a specialized node to instance :ref:`GeometryInstance<class_GeometryInstance>`\ s based on a :ref:`MultiMesh<class_MultiMesh>` resource.
 
-This is useful to optimize the rendering of a high amount of instances of a given mesh (for example tree in a forest or grass strands).
+This is useful to optimize the rendering of a high amount of instances of a given mesh (for example trees in a forest or grass strands).
 
 Tutorials
 ---------

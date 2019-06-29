@@ -14,7 +14,7 @@ StreamPeerSSL
 Brief Description
 -----------------
 
-SSL Stream peer.
+SSL stream peer.
 
 Properties
 ----------
@@ -68,7 +68,7 @@ enum **Status**:
 Description
 -----------
 
-SSL Stream peer. This object can be used to connect to SSL servers.
+SSL stream peer. This object can be used to connect to SSL servers.
 
 Tutorials
 ---------
@@ -99,23 +99,23 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="" **)**
 
-Connect to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` "stream", when "validate_certs" is ``true``, ``StreamPeerSSL`` will validate that the certificate presented by the peer matches the "for_hostname".
+Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``stream``. If ``validate_certs`` is ``true``, ``StreamPeerSSL`` will validate that the certificate presented by the peer matches the ``for_hostname``.
 
 .. _class_StreamPeerSSL_method_disconnect_from_stream:
 
 - void **disconnect_from_stream** **(** **)**
 
-Disconnect from host.
+Disconnects from host.
 
 .. _class_StreamPeerSSL_method_get_status:
 
 - :ref:`Status<enum_StreamPeerSSL_Status>` **get_status** **(** **)** const
 
-Returns the status of the connection, one of STATUS\_\* enum.
+Returns the status of the connection. See :ref:`Status<enum_StreamPeerSSL_Status>` for values.
 
 .. _class_StreamPeerSSL_method_poll:
 
 - void **poll** **(** **)**
 
-Poll the connection to check for incoming bytes. Call this right before "get_available_bytes()" for it to work properly.
+Poll the connection to check for incoming bytes. Call this right before :ref:`StreamPeer.get_available_bytes<class_StreamPeer_method_get_available_bytes>` for it to work properly.
 

@@ -34,9 +34,9 @@ Properties
 Description
 -----------
 
-Static body for 3D physics. A static body is a simple body that is not intended to move. They don't consume any CPU resources in contrast to a :ref:`RigidBody<class_RigidBody>` so they are great for scenario collision.
+Static body for 3D physics. A static body is a simple body that is not intended to move. In contrast to :ref:`RigidBody<class_RigidBody>`, they don't consume any CPU resources as long as they don't move.
 
-A static body can also be animated by using simulated motion mode. This is useful for implementing functionalities such as moving platforms. When this mode is active the body can be animated and automatically computes linear and angular velocity to apply in that frame and to influence other bodies.
+A static body can also be animated by using simulated motion mode. This is useful for implementing functionalities such as moving platforms. When this mode is active, the body can be animated and automatically computes linear and angular velocity to apply in that frame and to influence other bodies.
 
 Alternatively, a constant linear or angular velocity can be set for the static body, so even if it doesn't move, it affects other bodies as if it was moving (this is useful for simulating conveyor belts or conveyor wheels).
 
@@ -53,7 +53,7 @@ Property Descriptions
 | *Getter* | get_bounce()      |
 +----------+-------------------+
 
-The body bounciness.
+The body's bounciness.
 
 .. _class_StaticBody_property_constant_angular_velocity:
 
@@ -65,7 +65,7 @@ The body bounciness.
 | *Getter* | get_constant_angular_velocity()      |
 +----------+--------------------------------------+
 
-The constant angular velocity for the body. This does not rotate the body, but affects other bodies that touch it, as if it was in a state of rotation.
+The body's constant angular velocity. This does not rotate the body, but affects other bodies that touch it, as if it was in a state of rotation.
 
 .. _class_StaticBody_property_constant_linear_velocity:
 
@@ -77,7 +77,7 @@ The constant angular velocity for the body. This does not rotate the body, but a
 | *Getter* | get_constant_linear_velocity()      |
 +----------+-------------------------------------+
 
-The constant linear velocity for the body. This does not move the body, but affects other bodies that touch it, as if it was in a state of movement.
+The body's constant linear velocity. This does not move the body, but affects other bodies that touch it, as if it was in a state of movement.
 
 .. _class_StaticBody_property_friction:
 
@@ -89,7 +89,7 @@ The constant linear velocity for the body. This does not move the body, but affe
 | *Getter* | get_friction()      |
 +----------+---------------------+
 
-The body friction, from 0 (frictionless) to 1 (full friction).
+The body's friction, from 0 (frictionless) to 1 (full friction).
 
 .. _class_StaticBody_property_physics_material_override:
 

@@ -14,7 +14,7 @@ AudioEffectLimiter
 Brief Description
 -----------------
 
-Adds a soft clip Limiter audio effect to an Audio bus.
+Adds a soft-clip limiter audio effect to an Audio bus.
 
 Properties
 ----------
@@ -32,7 +32,7 @@ Properties
 Description
 -----------
 
-A limiter is similar to a compressor, but it's less flexible and designed to disallow sound going over a given dB threshold. Adding one in the Master Bus is always recommended to reduce the effects of clipping.
+A limiter is similar to a compressor, but it's less flexible and designed to disallow sound going over a given dB threshold. Adding one in the Master bus is always recommended to reduce the effects of clipping.
 
 Soft clipping starts to reduce the peaks a little below the threshold level and progressively increases its effect as the input level increases such that the threshold is never exceeded.
 
@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter* | get_ceiling_db()      |
 +----------+-----------------------+
 
-The waveform's maximum allowed value. Value can range from -20 to -0.1. Default value: ``-0.1dB``.
+The waveform's maximum allowed value, in decibels. Value can range from -20 to -0.1. Default value: ``-0.1dB``.
 
 .. _class_AudioEffectLimiter_property_soft_clip_db:
 
@@ -61,7 +61,7 @@ The waveform's maximum allowed value. Value can range from -20 to -0.1. Default 
 | *Getter* | get_soft_clip_db()      |
 +----------+-------------------------+
 
-Applies a gain to the limited waves. Value can range from 0 to 6. Default value: ``2dB``.
+Applies a gain to the limited waves, in decibels. Value can range from 0 to 6. Default value: ``2dB``.
 
 .. _class_AudioEffectLimiter_property_soft_clip_ratio:
 
@@ -83,5 +83,5 @@ Applies a gain to the limited waves. Value can range from 0 to 6. Default value:
 | *Getter* | get_threshold_db()      |
 +----------+-------------------------+
 
-Threshold from which the limiter begins to be active. Value can range from -30 to 0. Default value: ``0dB``.
+Threshold from which the limiter begins to be active, in decibels. Value can range from -30 to 0. Default value: ``0dB``.
 

@@ -55,7 +55,7 @@ Enumerations
 
 enum **UnderlineMode**:
 
-- **UNDERLINE_MODE_ALWAYS** = **0** --- The LinkButton will always show an underline at the bottom of its text
+- **UNDERLINE_MODE_ALWAYS** = **0** --- The LinkButton will always show an underline at the bottom of its text.
 
 - **UNDERLINE_MODE_ON_HOVER** = **1** --- The LinkButton will show an underline at the bottom of its text when the mouse cursor is over it.
 
@@ -64,7 +64,7 @@ enum **UnderlineMode**:
 Description
 -----------
 
-This kind of buttons are primarily used when the interaction with the button causes a context change (like linking to a web page).
+This kind of button is primarily used when the interaction with the button causes a context change (like linking to a web page).
 
 Property Descriptions
 ---------------------

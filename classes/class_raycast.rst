@@ -179,7 +179,9 @@ Removes all collision exceptions for this ray.
 
 Updates the collision information for the ray.
 
-Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state. Note: ``enabled == true`` is not required for this to work.
+Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state.
+
+**Note:** ``enabled == true`` is not required for this to work.
 
 .. _class_RayCast_method_get_collider:
 
@@ -197,7 +199,9 @@ Returns the shape ID of the first object that the ray intersects, or ``0`` if no
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
-Returns ``true`` if the bit index passed is turned on. Note that bit indexes range from 0-19.
+Returns ``true`` if the bit index passed is turned on.
+
+**Note:** Bit indices range from 0-19.
 
 .. _class_RayCast_method_get_collision_normal:
 
@@ -209,7 +213,9 @@ Returns the normal of the intersecting object's shape at the collision point.
 
 - :ref:`Vector3<class_Vector3>` **get_collision_point** **(** **)** const
 
-Returns the collision point at which the ray intersects the closest object. Note: this point is in the **global** coordinate system.
+Returns the collision point at which the ray intersects the closest object.
+
+**Note:** This point is in the **global** coordinate system.
 
 .. _class_RayCast_method_is_colliding:
 
@@ -233,5 +239,7 @@ Removes a collision exception so the ray does report collisions with the specifi
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-Sets the bit index passed to the ``value`` passed. Note that bit indexes range from 0-19.
+Sets the bit index passed to the ``value`` passed.
+
+**Note:** Bit indexes range from 0-19.
 

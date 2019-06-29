@@ -53,7 +53,7 @@ Method Descriptions
 
 - void **add_sphere** **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=true **)**
 
-Simple helper to draw a uvsphere, with given latitudes, longitude and radius.
+Simple helper to draw an UV sphere with given latitude, longitude and radius.
 
 .. _class_ImmediateGeometry_method_add_vertex:
 
@@ -67,7 +67,7 @@ Adds a vertex with the currently set color/uv/etc.
 
 Begin drawing (And optionally pass a texture override). When done call end(). For more information on how this works, search for glBegin() glEnd() references.
 
-For the type of primitive, use the :ref:`Mesh<class_Mesh>`.PRIMITIVE\_\* enumerations.
+For the type of primitive, use the :ref:`Mesh<class_Mesh>`.``PRIMITIVE_*`` enumerations.
 
 .. _class_ImmediateGeometry_method_clear:
 

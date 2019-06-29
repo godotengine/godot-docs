@@ -14,7 +14,7 @@ ProgressBar
 Brief Description
 -----------------
 
-General purpose progress bar.
+General-purpose progress bar.
 
 Properties
 ----------
@@ -41,7 +41,7 @@ Theme Properties
 Description
 -----------
 
-General purpose progress bar. Shows fill percentage from right to left.
+General-purpose progress bar. Shows fill percentage from right to left.
 
 Property Descriptions
 ---------------------

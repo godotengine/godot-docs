@@ -14,7 +14,7 @@ VisibilityEnabler2D
 Brief Description
 -----------------
 
-Enable certain nodes only when visible.
+Enables certain nodes only when visible.
 
 Properties
 ----------
@@ -66,7 +66,7 @@ enum **Enabler**:
 
 - **ENABLER_PAUSE_ANIMATED_SPRITES** = **5**
 
-- **ENABLER_MAX** = **6**
+- **ENABLER_MAX** = **6** --- Represents the size of the :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` enum.
 
 Description
 -----------

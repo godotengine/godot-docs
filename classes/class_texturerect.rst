@@ -54,7 +54,7 @@ Enumerations
 
 enum **StretchMode**:
 
-- **STRETCH_SCALE_ON_EXPAND** = **0** --- Scale to fit the node's bounding rectangle, only if ``expand`` is ``true``. Default ``stretch_mode``, for backwards compatibility. Until you set ``expand`` to ``true``, the texture will behave like ``STRETCH_KEEP``.
+- **STRETCH_SCALE_ON_EXPAND** = **0** --- Scale to fit the node's bounding rectangle, only if ``expand`` is ``true``. Default ``stretch_mode``, for backwards compatibility. Until you set ``expand`` to ``true``, the texture will behave like :ref:`STRETCH_KEEP<class_TextureRect_constant_STRETCH_KEEP>`.
 
 - **STRETCH_SCALE** = **1** --- Scale to fit the node's bounding rectangle.
 

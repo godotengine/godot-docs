@@ -267,13 +267,13 @@ The orientation of the cell at the grid-based X, Y and Z coordinates. -1 is retu
 
 - :ref:`Array<class_Array>` **get_meshes** **(** **)**
 
-Array of :ref:`Transform<class_Transform>` and :ref:`Mesh<class_Mesh>` references corresponding to the non empty cells in the grid. The transforms are specified in world space.
+Array of :ref:`Transform<class_Transform>` and :ref:`Mesh<class_Mesh>` references corresponding to the non-empty cells in the grid. The transforms are specified in world space.
 
 .. _class_GridMap_method_get_used_cells:
 
 - :ref:`Array<class_Array>` **get_used_cells** **(** **)** const
 
-Array of :ref:`Vector3<class_Vector3>` with the non empty cell coordinates in the grid map.
+Array of :ref:`Vector3<class_Vector3>` with the non-empty cell coordinates in the grid map.
 
 .. _class_GridMap_method_make_baked_meshes:
 

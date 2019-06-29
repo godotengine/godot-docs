@@ -75,9 +75,9 @@ enum **StretchMode**:
 Description
 -----------
 
-``TextureButton`` has the same functionality as :ref:`Button<class_Button>`, except it uses sprites instead of Godot's :ref:`Theme<class_Theme>` resource. It is faster to create, but it doesn't support localization like more complex Controls.
+``TextureButton`` has the same functionality as :ref:`Button<class_Button>`, except it uses sprites instead of Godot's :ref:`Theme<class_Theme>` resource. It is faster to create, but it doesn't support localization like more complex :ref:`Control<class_Control>`\ s.
 
-The Normal state's texture is required. Others are optional.
+The "normal" state must contain a texture (:ref:`texture_normal<class_TextureButton_property_texture_normal>`); other textures are optional.
 
 Property Descriptions
 ---------------------
@@ -176,5 +176,5 @@ Texture to display by default, when the node is **not** in the disabled, focused
 | *Getter* | get_pressed_texture()      |
 +----------+----------------------------+
 
-Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_property_shortcut>` key.
+Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the Enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_property_shortcut>` key.
 

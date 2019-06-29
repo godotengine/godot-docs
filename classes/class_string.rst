@@ -354,7 +354,7 @@ Returns a copy of the string with escaped characters replaced by their meanings 
 
 - :ref:`String<class_String>` **capitalize** **(** **)**
 
-Changes the case of some letters. Replaces underscores with spaces, converts all letters to lowercase, then capitalizes first and every letter following the space character. For ``capitalize camelCase mixed_with_underscores`` it will return ``Capitalize Camelcase Mixed With Underscores``.
+Changes the case of some letters. Replaces underscores with spaces, converts all letters to lowercase, then capitalizes first and every letter following the space character. For ``capitalize camelCase mixed_with_underscores``, it will return ``Capitalize Camelcase Mixed With Underscores``.
 
 .. _class_String_method_casecmp_to:
 
@@ -366,7 +366,7 @@ Performs a case-sensitive comparison to another string. Returns ``-1`` if less t
 
 - :ref:`String<class_String>` **dedent** **(** **)**
 
-Removes indentation from string.
+Returns a copy of the string with indentation (leading tabs and spaces) removed.
 
 .. _class_String_method_empty:
 
@@ -508,7 +508,7 @@ Returns ``true`` if this string contains a valid hexadecimal number. If ``with_p
 
 - :ref:`bool<class_bool>` **is_valid_html_color** **(** **)**
 
-Returns ``true`` if this string contains a valid color in HTML notation.
+Returns ``true`` if this string contains a valid color in hexadecimal HTML notation. Other HTML notations such as named colors or ``hsl()`` colors aren't considered valid by this method and will return ``false``.
 
 .. _class_String_method_is_valid_identifier:
 
@@ -556,13 +556,13 @@ Returns a copy of the string with characters removed from the left.
 
 - :ref:`bool<class_bool>` **match** **(** :ref:`String<class_String>` expr **)**
 
-Does a simple expression match, where ``*`` matches zero or more arbitrary characters and ``?`` matches any single character except '.'.
+Does a simple case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
 
 .. _class_String_method_matchn:
 
 - :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_String>` expr **)**
 
-Does a simple case insensitive expression match, using ``?`` and ``*`` wildcards (see :ref:`match<class_String_method_match>`).
+Does a simple case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
 
 .. _class_String_method_md5_buffer:
 
@@ -622,25 +622,25 @@ If the string is a path, this concatenates ``file`` at the end of the string as 
 
 - :ref:`String<class_String>` **replace** **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**
 
-Replaces occurrences of a substring with the given one inside the string.
+Replaces occurrences of a case-sensitive substring with the given one inside the string.
 
 .. _class_String_method_replacen:
 
 - :ref:`String<class_String>` **replacen** **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**
 
-Replaces occurrences of a substring with the given one inside the string. Ignores case.
+Replaces occurrences of a case-insensitive substring with the given one inside the string.
 
 .. _class_String_method_rfind:
 
 - :ref:`int<class_int>` **rfind** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)**
 
-Performs a search for a substring, but starts from the end of the string instead of the beginning.
+Performs a case-sensitive search for a substring, but starts from the end of the string instead of the beginning.
 
 .. _class_String_method_rfindn:
 
 - :ref:`int<class_int>` **rfindn** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)**
 
-Performs a search for a substring, but starts from the end of the string instead of the beginning. Ignores case.
+Performs a case-insensitive search for a substring, but starts from the end of the string instead of the beginning.
 
 .. _class_String_method_right:
 
@@ -658,7 +658,7 @@ The splits in the returned array are sorted in the same order as the original st
 
 If ``maxsplit`` is specified, it defines the number of splits to do from the right up to ``maxsplit``. The default value of 0 means that all items are split, thus giving the same result as :ref:`split<class_String_method_split>`.
 
-**Example:** ``"One,Two,Three,Four"`` will return ``["Three","Four"]`` if split by ``","`` with ``maxsplit`` of 2.
+For example, ``"One,Two,Three,Four"`` will return ``["Three","Four"]`` if split by ``","`` with a ``maxsplit`` value of 2.
 
 .. _class_String_method_rstrip:
 
@@ -692,7 +692,7 @@ Splits the string by a ``delimiter`` string and returns an array of the substrin
 
 If ``maxsplit`` is specified, it defines the number of splits to do from the left up to ``maxsplit``. The default value of 0 means that all items are split.
 
-**Example:** ``"One,Two,Three"`` will return ``["One","Two"]`` if split by ``","`` with ``maxsplit`` of 2.
+For example, ``"One,Two,Three"`` will return ``["One","Two"]`` if split by ``","`` with a ``maxsplit`` value of 2.
 
 .. _class_String_method_split_floats:
 
@@ -700,7 +700,7 @@ If ``maxsplit`` is specified, it defines the number of splits to do from the lef
 
 Splits the string in floats by using a delimiter string and returns an array of the substrings.
 
-**Example:** ``"1,2.5,3"`` will return ``[1,2.5,3]`` if split by ``","``.
+For example, ``"1,2.5,3"`` will return ``[1,2.5,3]`` if split by ``","``.
 
 .. _class_String_method_strip_edges:
 
@@ -724,7 +724,7 @@ Returns part of the string from the position ``from`` with length ``len``. Argum
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **to_ascii** **(** **)**
 
-Converts the String (which is a character array) to :ref:`PoolByteArray<class_PoolByteArray>` (which is an array of bytes). The conversion is sped up in comparison to :ref:`to_utf8<class_String_method_to_utf8>` with the assumption that all the characters the String contains are only ASCII characters.
+Converts the String (which is a character array) to :ref:`PoolByteArray<class_PoolByteArray>` (which is an array of bytes). The conversion is faster compared to :ref:`to_utf8<class_String_method_to_utf8>`, as this method assumes that all the characters in the String are ASCII characters.
 
 .. _class_String_method_to_float:
 

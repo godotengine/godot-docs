@@ -16,7 +16,7 @@ SpriteBase3D
 Brief Description
 -----------------
 
-2D Sprite node in 3D environment.
+2D sprite node in 3D environment.
 
 Properties
 ----------
@@ -71,13 +71,13 @@ Enumerations
 
 enum **DrawFlags**:
 
-- **FLAG_TRANSPARENT** = **0** --- If set, the texture's transparency and the opacity are used to make those parts of the Sprite invisible.
+- **FLAG_TRANSPARENT** = **0** --- If set, the texture's transparency and the opacity are used to make those parts of the sprite invisible.
 
-- **FLAG_SHADED** = **1** --- If set, the Light in the Environment has effects on the Sprite.
+- **FLAG_SHADED** = **1** --- If set, lights in the environment affect the sprite.
 
 - **FLAG_DOUBLE_SIDED** = **2** --- If set, texture can be seen from the back as well, if not, it is invisible when looking at it from behind.
 
-- **FLAG_MAX** = **3** --- Used internally to mark the end of the Flags section.
+- **FLAG_MAX** = **3** --- Represents the size of the :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` enum.
 
 .. _enum_SpriteBase3D_AlphaCutMode:
 
@@ -219,7 +219,7 @@ The objects visibility on a scale from ``0`` fully invisible to ``1`` fully visi
 | *Getter* | get_pixel_size()      |
 +----------+-----------------------+
 
-The size of one pixel's width on the Sprite to scale it in 3D.
+The size of one pixel's width on the sprite to scale it in 3D.
 
 .. _class_SpriteBase3D_property_shaded:
 
@@ -231,7 +231,7 @@ The size of one pixel's width on the Sprite to scale it in 3D.
 | *Getter* | get_draw_flag()      |
 +----------+----------------------+
 
-If ``true``, the :ref:`Light<class_Light>` in the :ref:`Environment<class_Environment>` has effects on the Sprite. Default value: ``false``.
+If ``true``, the :ref:`Light<class_Light>` in the :ref:`Environment<class_Environment>` has effects on the sprite. Default value: ``false``.
 
 .. _class_SpriteBase3D_property_transparent:
 
@@ -243,7 +243,7 @@ If ``true``, the :ref:`Light<class_Light>` in the :ref:`Environment<class_Enviro
 | *Getter* | get_draw_flag()      |
 +----------+----------------------+
 
-If ``true``, the texture's transparency and the opacity are used to make those parts of the Sprite invisible. Default value: ``true``.
+If ``true``, the texture's transparency and the opacity are used to make those parts of the sprite invisible. Default value: ``true``.
 
 Method Descriptions
 -------------------

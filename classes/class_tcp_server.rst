@@ -14,7 +14,7 @@ TCP_Server
 Brief Description
 -----------------
 
-TCP Server.
+A TCP server.
 
 Methods
 -------
@@ -32,7 +32,7 @@ Methods
 Description
 -----------
 
-TCP Server class. Listens to connections on a port and returns a :ref:`StreamPeerTCP<class_StreamPeerTCP>` when got a connection.
+A TCP server. Listens to connections on a port and returns a :ref:`StreamPeerTCP<class_StreamPeerTCP>` when it gets an incoming connection.
 
 Method Descriptions
 -------------------
@@ -47,23 +47,23 @@ Returns ``true`` if a connection is available for taking.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)**
 
-Listen on the "port" binding to "bind_address".
+Listen on the ``port`` binding to ``bind_address``.
 
-If "bind_address" is set as "\*" (default), the server will listen on all available addresses (both IPv4 and IPv6).
+If ``bind_address`` is set as ``"*"`` (default), the server will listen on all available addresses (both IPv4 and IPv6).
 
-If "bind_address" is set as "0.0.0.0" (for IPv4) or "::" (for IPv6), the server will listen on all available addresses matching that IP type.
+If ``bind_address`` is set as ``"0.0.0.0"`` (for IPv4) or ``"::"`` (for IPv6), the server will listen on all available addresses matching that IP type.
 
-If "bind_address" is set to any valid address (e.g. "192.168.1.101", "::1", etc), the server will only listen on the interface with that addresses (or fail if no interface with the given address exists).
+If ``bind_address`` is set to any valid address (e.g. ``"192.168.1.101"``, ``"::1"``, etc), the server will only listen on the interface with that addresses (or fail if no interface with the given address exists).
 
 .. _class_TCP_Server_method_stop:
 
 - void **stop** **(** **)**
 
-Stop listening.
+Stops listening.
 
 .. _class_TCP_Server_method_take_connection:
 
 - :ref:`StreamPeerTCP<class_StreamPeerTCP>` **take_connection** **(** **)**
 
-If a connection is available, return a StreamPeerTCP with the connection/
+If a connection is available, returns a StreamPeerTCP with the connection.
 

@@ -14,7 +14,7 @@ AudioEffectDistortion
 Brief Description
 -----------------
 
-Adds a Distortion audio effect to an Audio bus.
+Adds a distortion audio effect to an Audio bus.
 
 Modify the sound to make it dirty.
 
@@ -63,7 +63,7 @@ enum **Mode**:
 Description
 -----------
 
-Modify the sound and make it dirty. Different types are available : clip, tan, lofi (bit crushing), overdrive, or waveshape.
+Modify the sound and make it dirty. Different types are available: clip, tan, lo-fi (bit crushing), overdrive, or waveshape.
 
 By distorting the waveform the frequency content change, which will often make the sound "crunchy" or "abrasive". For games, it can simulate sound coming from some saturated device or speaker very efficiently.
 
@@ -92,7 +92,7 @@ Distortion power. Value can range from 0 to 1. Default value: ``0``.
 | *Getter* | get_keep_hf_hz()      |
 +----------+-----------------------+
 
-High-pass filter. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000. Default value: ``16000``.
+High-pass filter, in Hz. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000. Default value: ``16000``.
 
 .. _class_AudioEffectDistortion_property_mode:
 
@@ -104,7 +104,7 @@ High-pass filter. Frequencies higher than this value will not be affected by the
 | *Getter* | get_mode()      |
 +----------+-----------------+
 
-Distortion type. Default value: ``MODE_CLIP``.
+Distortion type. Default value: :ref:`MODE_CLIP<class_AudioEffectDistortion_constant_MODE_CLIP>`.
 
 .. _class_AudioEffectDistortion_property_post_gain:
 

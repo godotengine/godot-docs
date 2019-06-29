@@ -12,7 +12,7 @@ Rect2
 Brief Description
 -----------------
 
-2D Axis-aligned bounding box.
+2D axis-aligned bounding box.
 
 Properties
 ----------

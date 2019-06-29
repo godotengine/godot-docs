@@ -60,7 +60,7 @@ Methods
 Description
 -----------
 
-Library of meshes. Contains a list of :ref:`Mesh<class_Mesh>` resources, each with name and ID. Useful for GridMap or painting Terrain.
+Library of meshes. Contains a list of :ref:`Mesh<class_Mesh>` resources, each with name and ID. This resource is used in :ref:`GridMap<class_GridMap>`.
 
 Method Descriptions
 -------------------
@@ -119,25 +119,25 @@ Returns the name of the item.
 
 - :ref:`int<class_int>` **get_last_unused_item_id** **(** **)** const
 
-Get an unused id for a new item.
+Gets an unused id for a new item.
 
 .. _class_MeshLibrary_method_remove_item:
 
 - void **remove_item** **(** :ref:`int<class_int>` id **)**
 
-Remove the item.
+Removes the item.
 
 .. _class_MeshLibrary_method_set_item_mesh:
 
 - void **set_item_mesh** **(** :ref:`int<class_int>` id, :ref:`Mesh<class_Mesh>` mesh **)**
 
-Set the mesh of the item.
+Sets the mesh of the item.
 
 .. _class_MeshLibrary_method_set_item_name:
 
 - void **set_item_name** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**
 
-Set the name of the item.
+Sets the name of the item.
 
 .. _class_MeshLibrary_method_set_item_navmesh:
 

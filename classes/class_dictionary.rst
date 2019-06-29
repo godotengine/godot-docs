@@ -91,13 +91,13 @@ Returns ``true`` if the dictionary is empty.
 
 - :ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
 
-Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise. Do not erase elements while iterating over the dictionary.
+Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise. Does not erase elements while iterating over the dictionary.
 
 .. _class_Dictionary_method_get:
 
 - :ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=Null **)**
 
-Returns the current value for the specified key in the ``Dictionary``. If the key does not exist, the method returns the value of the optional default argument, or Null if it is omitted.
+Returns the current value for the specified key in the ``Dictionary``. If the key does not exist, the method returns the value of the optional default argument, or ``null`` if it is omitted.
 
 .. _class_Dictionary_method_has:
 

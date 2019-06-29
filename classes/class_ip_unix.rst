@@ -14,10 +14,10 @@ IP_Unix
 Brief Description
 -----------------
 
-Unix IP support. See :ref:`IP<class_IP>`.
+UNIX IP support. See :ref:`IP<class_IP>`.
 
 Description
 -----------
 
-Unix-specific implementation of IP support functions. See :ref:`IP<class_IP>`.
+UNIX-specific implementation of IP support functions. See :ref:`IP<class_IP>`.
 

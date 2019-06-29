@@ -16,7 +16,7 @@ Spatial
 Brief Description
 -----------------
 
-Most basic 3D game object, parent of all 3D related nodes.
+Most basic 3D game object, parent of all 3D-related nodes.
 
 Properties
 ----------
@@ -132,7 +132,7 @@ Constants
 
 - **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- Spatial nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
-In order for ``NOTIFICATION_TRANSFORM_CHANGED`` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Spatial_method_set_notify_transform>`.
+In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Spatial_constant_NOTIFICATION_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Spatial_method_set_notify_transform>`.
 
 - **NOTIFICATION_ENTER_WORLD** = **41** --- Spatial nodes receives this notification when they are registered to new :ref:`World<class_World>` resource.
 
@@ -145,7 +145,7 @@ Description
 
 Most basic 3D game object, with a 3D :ref:`Transform<class_Transform>` and visibility settings. All other 3D game objects inherit from Spatial. Use ``Spatial`` as a parent node to move, scale, rotate and show/hide children in a 3D project.
 
-Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the ``Spatial`` object is set as top level. Affine operations in this coordinate system correspond to direct affine operations on the ``Spatial``'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the ``Spatial`` object itself is referred to as object-local coordinate system.
+Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the ``Spatial`` object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the ``Spatial``'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the ``Spatial`` object itself is referred to as object-local coordinate system.
 
 Tutorials
 ---------
@@ -189,9 +189,9 @@ World space (global) :ref:`Transform<class_Transform>` of this node.
 | *Getter* | get_rotation()      |
 +----------+---------------------+
 
-Rotation part of the local transformation in radians, specified in terms of YXZ-Euler angles in the format (X-angle, Y-angle, Z-angle).
+Rotation part of the local transformation in radians, specified in terms of YXZ-Euler angles in the format (X angle, Y angle, Z angle).
 
-Note that in the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
+**Note:** In the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating-point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
 
 .. _class_Spatial_property_rotation_degrees:
 
@@ -203,7 +203,7 @@ Note that in the mathematical sense, rotation is a matrix and not a vector. The 
 | *Getter* | get_rotation_degrees()      |
 +----------+-----------------------------+
 
-Rotation part of the local transformation in degrees, specified in terms of YXZ-Euler angles in the format (X-angle, Y-angle, Z-angle).
+Rotation part of the local transformation in degrees, specified in terms of YXZ-Euler angles in the format (X angle, Y angle, Z angle).
 
 .. _class_Spatial_property_scale:
 
@@ -360,7 +360,7 @@ Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3
 
 - void **rotate_x** **(** :ref:`float<class_float>` angle **)**
 
-Rotates the local transformation around the X axis by angle in radians
+Rotates the local transformation around the X axis by angle in radians.
 
 .. _class_Spatial_method_rotate_y:
 
@@ -394,25 +394,25 @@ Makes the node ignore its parents transformations. Node transformations are only
 
 - void **set_identity** **(** **)**
 
-Reset all transformations for this node. Set its :ref:`Transform<class_Transform>` to identity matrix.
+Reset all transformations for this node (sets its :ref:`Transform<class_Transform>` to the identity matrix).
 
 .. _class_Spatial_method_set_ignore_transform_notification:
 
 - void **set_ignore_transform_notification** **(** :ref:`bool<class_bool>` enabled **)**
 
-Set whether the node ignores notification that its transformation (global or local) changed.
+Sets whether the node ignores notification that its transformation (global or local) changed.
 
 .. _class_Spatial_method_set_notify_local_transform:
 
 - void **set_notify_local_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-Set whether the node notifies about its local transformation changes. ``Spatial`` will not propagate this by default.
+Sets whether the node notifies about its local transformation changes. ``Spatial`` will not propagate this by default.
 
 .. _class_Spatial_method_set_notify_transform:
 
 - void **set_notify_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-Set whether the node notifies about its global and local transformation changes. ``Spatial`` will not propagate this by default.
+Sets whether the node notifies about its global and local transformation changes. ``Spatial`` will not propagate this by default.
 
 .. _class_Spatial_method_show:
 
@@ -424,13 +424,13 @@ Enables rendering of this node. Changes :ref:`visible<class_Spatial_property_vis
 
 - :ref:`Vector3<class_Vector3>` **to_global** **(** :ref:`Vector3<class_Vector3>` local_point **)** const
 
-Transforms :ref:`Vector3<class_Vector3>` "local_point" from this node's local space to world space.
+Transforms ``local_point`` from this node's local space to world space.
 
 .. _class_Spatial_method_to_local:
 
 - :ref:`Vector3<class_Vector3>` **to_local** **(** :ref:`Vector3<class_Vector3>` global_point **)** const
 
-Transforms :ref:`Vector3<class_Vector3>` "global_point" from world space to this node's local space.
+Transforms ``global_point`` from world space to this node's local space.
 
 .. _class_Spatial_method_translate:
 

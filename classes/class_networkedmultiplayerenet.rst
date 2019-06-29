@@ -14,7 +14,7 @@ NetworkedMultiplayerENet
 Brief Description
 -----------------
 
-PacketPeer implementation using the ENet library.
+PacketPeer implementation using the `ENet <http://enet.bespin.org/index.html>`_ library.
 
 Properties
 ----------
@@ -69,15 +69,15 @@ Enumerations
 
 enum **CompressionMode**:
 
-- **COMPRESS_NONE** = **0** --- No compression.
+- **COMPRESS_NONE** = **0** --- No compression. This uses the most bandwidth, but has the upside of requiring the fewest CPU resources.
 
-- **COMPRESS_RANGE_CODER** = **1** --- ENet's buildin range encoding.
+- **COMPRESS_RANGE_CODER** = **1** --- ENet's built-in range encoding.
 
-- **COMPRESS_FASTLZ** = **2** --- FastLZ compression.
+- **COMPRESS_FASTLZ** = **2** --- `FastLZ <http://fastlz.org/>`_ compression. This option uses less CPU resources compared to :ref:`COMPRESS_ZLIB<class_NetworkedMultiplayerENet_constant_COMPRESS_ZLIB>`, at the expense of using more bandwidth.
 
-- **COMPRESS_ZLIB** = **3** --- zlib compression.
+- **COMPRESS_ZLIB** = **3** --- `Zlib <https://www.zlib.net/>`_ compression. This option uses less bandwidth compared to :ref:`COMPRESS_FASTLZ<class_NetworkedMultiplayerENet_constant_COMPRESS_FASTLZ>`, at the expense of using more CPU resources.
 
-- **COMPRESS_ZSTD** = **4** --- ZStandard compression.
+- **COMPRESS_ZSTD** = **4** --- `Zstandard <https://facebook.github.io/zstd/>`_ compression.
 
 Description
 -----------
@@ -104,7 +104,7 @@ Property Descriptions
 | *Getter* | is_always_ordered()       |
 +----------+---------------------------+
 
-Always use ``TRANSFER_MODE_ORDERED`` in place of ``TRANSFER_MODE_UNRELIABLE``. This is the only way to use ordering with the RPC system.
+Enforce ordered packets when using :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_UNRELIABLE<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE>` (thus behaving similarly to :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_UNRELIABLE_ORDERED<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED>`). This is the only way to use ordering with the RPC system.
 
 .. _class_NetworkedMultiplayerENet_property_channel_count:
 
@@ -128,7 +128,7 @@ The number of channels to be used by ENet. Default: ``3``. Channels are used to 
 | *Getter* | get_compression_mode()      |
 +----------+-----------------------------+
 
-The compression method used for network packets. Default is no compression. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.
+The compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all. Default value: :ref:`COMPRESS_NONE<class_NetworkedMultiplayerENet_constant_COMPRESS_NONE>`.
 
 .. _class_NetworkedMultiplayerENet_property_transfer_channel:
 
@@ -140,7 +140,7 @@ The compression method used for network packets. Default is no compression. Thes
 | *Getter* | get_transfer_channel()      |
 +----------+-----------------------------+
 
-Set the default channel to be used to transfer data. By default this value is ``-1`` which means that ENet will only use 2 channels, one for reliable and one for unreliable packets. Channel ``0`` is reserved, and cannot be used. Setting this member to any value between ``0`` and :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>` (excluded) will force ENet to use that channel for sending data.
+Set the default channel to be used to transfer data. By default, this value is ``-1`` which means that ENet will only use 2 channels, one for reliable and one for unreliable packets. Channel ``0`` is reserved, and cannot be used. Setting this member to any value between ``0`` and :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>` (excluded) will force ENet to use that channel for sending data.
 
 Method Descriptions
 -------------------
@@ -155,13 +155,13 @@ Closes the connection. Ignored if no connection is currently established. If thi
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0, :ref:`int<class_int>` client_port=0 **)**
 
-Create client that connects to a server at ``address`` using specified ``port``. The given address needs to be either a fully qualified domain name (e.g. ``www.example.com``) or an IP address in IPv4 or IPv6 format (e.g. ``192.168.1.1``). The ``port`` is the port the server is listening on. The ``in_bandwidth`` and ``out_bandwidth`` parameters can be used to limit the incoming and outgoing bandwidth to the given number of bytes per second. The default of 0 means unlimited bandwidth. Note that ENet will strategically drop packets on specific sides of a connection between peers to ensure the peer's bandwidth is not overwhelmed. The bandwidth parameters also determine the window size of a connection which limits the amount of reliable packets that may be in transit at any given time. Returns ``OK`` if a client was created, ``ERR_ALREADY_IN_USE`` if this NetworkedMultiplayerEnet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or ``ERR_CANT_CREATE`` if the client could not be created. If ``client_port`` is specified, the client will also listen to the given port, this is useful in some NAT traversal technique.
+Create client that connects to a server at ``address`` using specified ``port``. The given address needs to be either a fully qualified domain name (e.g. ``"www.example.com"``) or an IP address in IPv4 or IPv6 format (e.g. ``"192.168.1.1"``). The ``port`` is the port the server is listening on. The ``in_bandwidth`` and ``out_bandwidth`` parameters can be used to limit the incoming and outgoing bandwidth to the given number of bytes per second. The default of 0 means unlimited bandwidth. Note that ENet will strategically drop packets on specific sides of a connection between peers to ensure the peer's bandwidth is not overwhelmed. The bandwidth parameters also determine the window size of a connection which limits the amount of reliable packets that may be in transit at any given time. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a client was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the client could not be created. If ``client_port`` is specified, the client will also listen to the given port; this is useful for some NAT traversal techniques.
 
 .. _class_NetworkedMultiplayerENet_method_create_server:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**
 
-Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>`. The default IP is the wildcard ``*``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4096 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>`. Returns ``OK`` if a server was created, ``ERR_ALREADY_IN_USE`` if this NetworkedMultiplayerEnet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or ``ERR_CANT_CREATE`` if the server could not be created.
+Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>`. The default IP is the wildcard ``"*"``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4096 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>`. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a server was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the server could not be created.
 
 .. _class_NetworkedMultiplayerENet_method_disconnect_peer:
 
@@ -197,5 +197,5 @@ Returns the remote port of the given peer.
 
 - void **set_bind_ip** **(** :ref:`String<class_String>` ip **)**
 
-The IP used when creating a server. This is set to the wildcard ``*`` by default, which binds to all available interfaces. The given IP needs to be in IPv4 or IPv6 address format, for example: ``192.168.1.1``.
+The IP used when creating a server. This is set to the wildcard ``"*"`` by default, which binds to all available interfaces. The given IP needs to be in IPv4 or IPv6 address format, for example: ``"192.168.1.1"``.
 

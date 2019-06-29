@@ -14,7 +14,7 @@ StreamTexture
 Brief Description
 -----------------
 
-A .stex texture.
+A ``.stex`` texture.
 
 Properties
 ----------
@@ -26,7 +26,7 @@ Properties
 Description
 -----------
 
-A texture that is loaded from a .stex file.
+A texture that is loaded from a ``.stex`` file.
 
 Property Descriptions
 ---------------------
@@ -41,5 +41,5 @@ Property Descriptions
 | *Getter* | get_load_path() |
 +----------+-----------------+
 
-The StreamTexture's filepath to a .stex file.
+The StreamTexture's file path to a ``.stex`` file.
 

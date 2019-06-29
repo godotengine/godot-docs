@@ -563,7 +563,7 @@ The rectangle's extents if :ref:`emission_shape<class_CPUParticles_property_emis
 | *Getter* | get_emission_shape()      |
 +----------+---------------------------+
 
-Particles will be emitted inside this region. Use :ref:`EmissionShape<enum_CPUParticles_EmissionShape>` for values. Default value: :ref:`EMISSION_SHAPE_POINT<class_CPUParticles_constant_EMISSION_SHAPE_POINT>`.
+Particles will be emitted inside this region. See :ref:`EmissionShape<enum_CPUParticles_EmissionShape>` for possible values. Default value: :ref:`EMISSION_SHAPE_POINT<class_CPUParticles_constant_EMISSION_SHAPE_POINT>`.
 
 .. _class_CPUParticles_property_emission_sphere_radius:
 
@@ -623,7 +623,7 @@ The particle system's frame rate is fixed to a value. For instance, changing the
 | *Getter* | get_particle_flag()      |
 +----------+--------------------------+
 
-Align y-axis of particle with the direction of its velocity.
+Align Y axis of particle with the direction of its velocity.
 
 .. _class_CPUParticles_property_flag_disable_z:
 
@@ -647,7 +647,7 @@ If ``true``, particles will not move on the z axis. Default value: ``false``.
 | *Getter* | get_particle_flag()      |
 +----------+--------------------------+
 
-If ``true``, particles rotate around y-axis by :ref:`angle<class_CPUParticles_property_angle>`.
+If ``true``, particles rotate around Y axis by :ref:`angle<class_CPUParticles_property_angle>`.
 
 .. _class_CPUParticles_property_flatness:
 
@@ -671,7 +671,7 @@ Amount of :ref:`spread<class_CPUParticles_property_spread>` in Y/Z plane. A valu
 | *Getter* | get_fractional_delta()      |
 +----------+-----------------------------+
 
-If ``true``, results in fractional delta calculation which has a smoother particles display effect. Default value: ``true``
+If ``true``, results in fractional delta calculation which has a smoother particles display effect. Default value: ``true``.
 
 .. _class_CPUParticles_property_gravity:
 

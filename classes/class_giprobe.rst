@@ -75,7 +75,7 @@ enum **Subdiv**:
 
 - **SUBDIV_512** = **3**
 
-- **SUBDIV_MAX** = **4**
+- **SUBDIV_MAX** = **4** --- Represents the size of the :ref:`Subdiv<enum_GIProbe_Subdiv>` enum.
 
 Tutorials
 ---------

@@ -220,7 +220,7 @@ The custom :ref:`Transform2D<class_Transform2D>` to be applied to the TileMap's 
 | *Getter* | get_half_offset()      |
 +----------+------------------------+
 
-Amount to offset alternating tiles. Uses HALF_OFFSET\_\* constants. Default value: HALF_OFFSET_DISABLED.
+Amount to offset alternating tiles. See :ref:`HalfOffset<enum_TileMap_HalfOffset>` for possible values. Default value: ``HALF_OFFSET_DISABLED``.
 
 .. _class_TileMap_property_cell_quadrant_size:
 
@@ -256,7 +256,7 @@ The TileMap's cell size.
 | *Getter* | get_tile_origin()      |
 +----------+------------------------+
 
-Position for tile origin. Uses TILE_ORIGIN\_\* constants. Default value: TILE_ORIGIN_TOP_LEFT.
+Position for tile origin. See :ref:`TileOrigin<enum_TileMap_TileOrigin>` for possible values. Default value: ``TILE_ORIGIN_TOP_LEFT``.
 
 .. _class_TileMap_property_cell_y_sort:
 
@@ -340,7 +340,7 @@ If ``true``, TileMap collisions will be handled as a kinematic body. If ``false`
 | *Getter* | get_mode()      |
 +----------+-----------------+
 
-The TileMap orientation mode. Uses MODE\_\* constants. Default value: MODE_SQUARE.
+The TileMap orientation mode. See :ref:`Mode<enum_TileMap_Mode>` for possible values. Default value: ``MODE_SQUARE``.
 
 .. _class_TileMap_property_occluder_light_mask:
 
@@ -419,7 +419,7 @@ Returns a :ref:`Vector2<class_Vector2>` array with the positions of all cells co
 
 - :ref:`Array<class_Array>` **get_used_cells_by_id** **(** :ref:`int<class_int>` id **)** const
 
-Returns an array of all cells with the given tile id.
+Returns an array of all cells with the given tile ``id``.
 
 .. _class_TileMap_method_get_used_rect:
 
@@ -431,19 +431,19 @@ Returns a rectangle enclosing the used (non-empty) tiles of the map.
 
 - :ref:`bool<class_bool>` **is_cell_transposed** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
-Returns ``true`` if the given cell is transposed, i.e. the x and y axes are swapped.
+Returns ``true`` if the given cell is transposed, i.e. the X and Y axes are swapped.
 
 .. _class_TileMap_method_is_cell_x_flipped:
 
 - :ref:`bool<class_bool>` **is_cell_x_flipped** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
-Returns ``true`` if the given cell is flipped in the x axis.
+Returns ``true`` if the given cell is flipped in the X axis.
 
 .. _class_TileMap_method_is_cell_y_flipped:
 
 - :ref:`bool<class_bool>` **is_cell_y_flipped** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
-Returns ``true`` if the given cell is flipped in the y axis.
+Returns ``true`` if the given cell is flipped in the Y axis.
 
 .. _class_TileMap_method_map_to_world:
 
@@ -463,7 +463,7 @@ An index of ``-1`` clears the cell.
 
 Optionally, the tile can also be flipped, transposed, or given autotile coordinates.
 
-Note that data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
+**Note:** Data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
 
 If you need these to be immediately updated, you can call :ref:`update_dirty_quadrants<class_TileMap_method_update_dirty_quadrants>`.
 
@@ -486,7 +486,7 @@ An index of ``-1`` clears the cell.
 
 Optionally, the tile can also be flipped or transposed.
 
-Note that data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
+**Note:** Data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
 
 If you need these to be immediately updated, you can call :ref:`update_dirty_quadrants<class_TileMap_method_update_dirty_quadrants>`.
 
@@ -506,13 +506,13 @@ Sets the given collision mask bit.
 
 - void **update_bitmask_area** **(** :ref:`Vector2<class_Vector2>` position **)**
 
-Applies autotiling rules to the cell (and its adjacent cells) referenced by its grid-based x and y coordinates.
+Applies autotiling rules to the cell (and its adjacent cells) referenced by its grid-based X and Y coordinates.
 
 .. _class_TileMap_method_update_bitmask_region:
 
 - void **update_bitmask_region** **(** :ref:`Vector2<class_Vector2>` start=Vector2( 0, 0 ), :ref:`Vector2<class_Vector2>` end=Vector2( 0, 0 ) **)**
 
-Applies autotiling rules to the cells in the given region (specified by grid-based x and y coordinates).
+Applies autotiling rules to the cells in the given region (specified by grid-based X and Y coordinates).
 
 Calling with invalid (or missing) parameters applies autotiling rules for the entire tilemap.
 

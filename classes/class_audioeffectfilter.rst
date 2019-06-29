@@ -16,7 +16,7 @@ AudioEffectFilter
 Brief Description
 -----------------
 
-Adds a filter to the Audio Bus.
+Adds a filter to the audio bus.
 
 Properties
 ----------
@@ -72,7 +72,7 @@ Property Descriptions
 | *Getter* | get_cutoff()      |
 +----------+-------------------+
 
-Threshold frequency for the filter.
+Threshold frequency for the filter, in Hz.
 
 .. _class_AudioEffectFilter_property_db:
 

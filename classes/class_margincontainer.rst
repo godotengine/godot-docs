@@ -32,5 +32,15 @@ Theme Properties
 Description
 -----------
 
-Simple margin container. Adds a left margin to anything contained.
+Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` nodes that are direct children of the container. To control the ``MarginContainer``'s margin, use the ``margin_*`` theme properties listed below.
+
+**Note:** Be careful, :ref:`Control<class_Control>` margin values are different than the constant margin values. If you want to change the custom margin values of the ``MarginContainer`` by code, you should use the following examples:
+
+::
+
+    var margin_value = 100
+    set("custom_constants/margin_top", margin_value)
+    set("custom_constants/margin_left", margin_value)
+    set("custom_constants/margin_bottom", margin_value)
+    set("custom_constants/margin_right", margin_value)
 

@@ -14,7 +14,7 @@ AudioEffectNotchFilter
 Brief Description
 -----------------
 
-Adds a notch filter to the Audio Bus.
+Adds a notch filter to the Audio bus.
 
 Description
 -----------

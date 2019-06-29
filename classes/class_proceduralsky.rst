@@ -82,14 +82,14 @@ enum **TextureSize**:
 
 - **TEXTURE_SIZE_4096** = **4**
 
-- **TEXTURE_SIZE_MAX** = **5**
+- **TEXTURE_SIZE_MAX** = **5** --- Represents the size of the :ref:`TextureSize<enum_ProceduralSky_TextureSize>` enum.
 
 Description
 -----------
 
-ProceduralSky provides a way to create an effective background quickly by defining procedural parameters for the sun, the sky and the ground. The sky and ground are very similar, they are defined by a color at the horizon, another color, and finally an easing curve to interpolate between these two colors. Similarly the sun is described by a position in the sky, a color, and an easing curve. However, the sun also defines a minimum and maximum angle, these two values define at what distance the easing curve begins and ends from the sun, and thus end up defining the size of the sun in the sky.
+ProceduralSky provides a way to create an effective background quickly by defining procedural parameters for the sun, the sky and the ground. The sky and ground are very similar, they are defined by a color at the horizon, another color, and finally an easing curve to interpolate between these two colors. Similarly, the sun is described by a position in the sky, a color, and an easing curve. However, the sun also defines a minimum and maximum angle, these two values define at what distance the easing curve begins and ends from the sun, and thus end up defining the size of the sun in the sky.
 
-The ProceduralSky is updated on the CPU after the parameters change and stored in a texture and then displayed as a background in the scene. This makes it relatively unsuitable for realtime updates during gameplay. But with a small texture size it is still feasible to update relatively frequently because it is updated on a background thread when multi-threading is available.
+The ProceduralSky is updated on the CPU after the parameters change. It is stored in a texture and then displayed as a background in the scene. This makes it relatively unsuitable for real-time updates during gameplay. However, with a small enough texture size, it can still be updated relatively frequently, as it is updated on a background thread when multi-threading is available.
 
 Property Descriptions
 ---------------------
@@ -224,7 +224,7 @@ Distance from sun where it goes from solid to starting to fade.
 | *Getter* | get_sun_color()      |
 +----------+----------------------+
 
-Color of the sun.
+The sun's color.
 
 .. _class_ProceduralSky_property_sun_curve:
 
@@ -236,7 +236,7 @@ Color of the sun.
 | *Getter* | get_sun_curve()      |
 +----------+----------------------+
 
-How quickly the sun fades away between :ref:`sun_angle_min<class_ProceduralSky_property_sun_angle_min>` and :ref:`sun_angle_max<class_ProceduralSky_property_sun_angle_max>`
+How quickly the sun fades away between :ref:`sun_angle_min<class_ProceduralSky_property_sun_angle_min>` and :ref:`sun_angle_max<class_ProceduralSky_property_sun_angle_max>`.
 
 .. _class_ProceduralSky_property_sun_energy:
 
@@ -260,7 +260,7 @@ Amount of energy contribution from the sun.
 | *Getter* | get_sun_latitude()      |
 +----------+-------------------------+
 
-The suns height using polar coordinates.
+The sun's height using polar coordinates.
 
 .. _class_ProceduralSky_property_sun_longitude:
 
@@ -284,5 +284,5 @@ The direction of the sun using polar coordinates.
 | *Getter* | get_texture_size()      |
 +----------+-------------------------+
 
-Size of :ref:`Texture<class_Texture>` that the ProceduralSky will generate.
+Size of :ref:`Texture<class_Texture>` that the ProceduralSky will generate. The size is set using :ref:`TextureSize<enum_ProceduralSky_TextureSize>`.
 

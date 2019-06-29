@@ -56,7 +56,7 @@ enum **FFT_Size**:
 
 - **FFT_SIZE_4096** = **4**
 
-- **FFT_SIZE_MAX** = **5**
+- **FFT_SIZE_MAX** = **5** --- Represents the size of the :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` enum.
 
 Property Descriptions
 ---------------------

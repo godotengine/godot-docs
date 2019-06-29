@@ -47,7 +47,7 @@ Property Descriptions
 | *Getter* | get_damping()      |
 +----------+--------------------+
 
-The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high ``damping`` value forces the attached bodies to align faster. Default value: ``1``
+The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high ``damping`` value forces the attached bodies to align faster. Default value: ``1``.
 
 .. _class_DampedSpringJoint2D_property_length:
 
@@ -59,7 +59,7 @@ The spring joint's damping ratio. A value between ``0`` and ``1``. When the two 
 | *Getter* | get_length()      |
 +----------+-------------------+
 
-The spring joint's maximum length. The two attached bodies cannot stretch it past this value. Default value: ``50``
+The spring joint's maximum length. The two attached bodies cannot stretch it past this value. Default value: ``50``.
 
 .. _class_DampedSpringJoint2D_property_rest_length:
 
@@ -71,7 +71,7 @@ The spring joint's maximum length. The two attached bodies cannot stretch it pas
 | *Getter* | get_rest_length()      |
 +----------+------------------------+
 
-When the bodies attached to the spring joint move they stretch or squash it. The joint always tries to resize towards this length. Default value: ``0``
+When the bodies attached to the spring joint move they stretch or squash it. The joint always tries to resize towards this length. Default value: ``0``.
 
 .. _class_DampedSpringJoint2D_property_stiffness:
 
@@ -83,5 +83,5 @@ When the bodies attached to the spring joint move they stretch or squash it. The
 | *Getter* | get_stiffness()      |
 +----------+----------------------+
 
-The higher the value, the less the bodies attached to the joint will deform it. The joint applies an opposing force to the bodies, the product of the stiffness multiplied by the size difference from its resting length. Default value: ``20``
+The higher the value, the less the bodies attached to the joint will deform it. The joint applies an opposing force to the bodies, the product of the stiffness multiplied by the size difference from its resting length. Default value: ``20``.
 

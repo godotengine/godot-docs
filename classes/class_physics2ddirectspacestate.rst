@@ -52,9 +52,9 @@ Method Descriptions
 
 - :ref:`Array<class_Array>` **cast_motion** **(** :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` shape **)**
 
-Checks how far the shape can travel toward a point. Note that both the shape and the motion are supplied through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object. The method will return an array with two floats between 0 and 1, both representing a fraction of ``motion``. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be ``[1, 1]``.
+Checks how far the shape can travel toward a point. If the shape can not move, the array will be empty.
 
-If the shape can not move, the array will be empty.
+**Note:** Both the shape and the motion are supplied through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object. The method will return an array with two floats between 0 and 1, both representing a fraction of ``motion``. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be ``[1, 1]``.
 
 .. _class_Physics2DDirectSpaceState_method_collide_shape:
 
@@ -66,7 +66,9 @@ Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryPa
 
 - :ref:`Dictionary<class_Dictionary>` **get_rest_info** **(** :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` shape **)**
 
-Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object, against the space. If it collides with more than one shape, the nearest one is selected. Note that this method does not take into account the ``motion`` property of the object. The returned object is a dictionary containing the following fields:
+Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object, against the space. If it collides with more than one shape, the nearest one is selected. If the shape did not intersect anything, then an empty dictionary is returned instead.
+
+**Note:** This method does not take into account the ``motion`` property of the object. The returned object is a dictionary containing the following fields:
 
 ``collider_id``: The colliding object's ID.
 
@@ -81,8 +83,6 @@ Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryPa
 ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
 ``shape``: The shape index of the colliding shape.
-
-If the shape did not intersect anything, then an empty dictionary is returned instead.
 
 .. _class_Physics2DDirectSpaceState_method_intersect_point:
 
@@ -134,7 +134,9 @@ Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<c
 
 - :ref:`Array<class_Array>` **intersect_shape** **(** :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**
 
-Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object, against the space. Note that this method does not take into account the ``motion`` property of the object. The intersected shapes are returned in an array containing dictionaries with the following fields:
+Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object, against the space.
+
+**Note:** This method does not take into account the ``motion`` property of the object. The intersected shapes are returned in an array containing dictionaries with the following fields:
 
 ``collider``: The colliding object.
 

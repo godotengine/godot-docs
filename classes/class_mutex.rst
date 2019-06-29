@@ -14,7 +14,7 @@ Mutex
 Brief Description
 -----------------
 
-A synchronization Mutex.
+A synchronization mutex (mutual exclusion).
 
 Methods
 -------
@@ -30,7 +30,7 @@ Methods
 Description
 -----------
 
-A synchronization Mutex. Element used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Basically a binary :ref:`Semaphore<class_Semaphore>`. Guarantees that only one thread can ever acquire this lock at a time. Can be used to protect a critical section. Be careful to avoid deadlocks.
+A synchronization mutex (mutual exclusion). This is used to synchronize multiple :ref:`Thread<class_Thread>`\ s, and is equivalent to a binary :ref:`Semaphore<class_Semaphore>`. It guarantees that only one thread can ever acquire the lock at a time. A mutex can be used to protect a critical section; however, be careful to avoid deadlocks.
 
 Method Descriptions
 -------------------
@@ -39,17 +39,17 @@ Method Descriptions
 
 - void **lock** **(** **)**
 
-Lock this ``Mutex``, blocks until it is unlocked by the current owner.
+Locks this ``Mutex``, blocks until it is unlocked by the current owner.
 
 .. _class_Mutex_method_try_lock:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **try_lock** **(** **)**
 
-Try locking this ``Mutex``, does not block. Returns ``OK`` on success, ``ERR_BUSY`` otherwise.
+Tries locking this ``Mutex``, but does not block. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
 
 .. _class_Mutex_method_unlock:
 
 - void **unlock** **(** **)**
 
-Unlock this ``Mutex``, leaving it to other threads.
+Unlocks this ``Mutex``, leaving it to other threads.
 

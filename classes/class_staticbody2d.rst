@@ -14,7 +14,7 @@ StaticBody2D
 Brief Description
 -----------------
 
-Static body for 2D Physics.
+Static body for 2D physics.
 
 Properties
 ----------
@@ -34,7 +34,7 @@ Properties
 Description
 -----------
 
-Static body for 2D Physics. A StaticBody2D is a body that is not intended to move. It is ideal for implementing objects in the environment, such as walls or platforms.
+Static body for 2D physics. A StaticBody2D is a body that is not intended to move. It is ideal for implementing objects in the environment, such as walls or platforms.
 
 Additionally, a constant linear or angular velocity can be set for the static body, which will affect colliding bodies as if it were moving (for example, a conveyor belt).
 
@@ -63,7 +63,7 @@ The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounci
 | *Getter* | get_constant_angular_velocity()      |
 +----------+--------------------------------------+
 
-Constant angular velocity for the body. This does not rotate the body, but affects colliding bodies, as if it were rotating.
+The body's constant angular velocity. This does not rotate the body, but affects colliding bodies, as if it were rotating.
 
 .. _class_StaticBody2D_property_constant_linear_velocity:
 
@@ -75,7 +75,7 @@ Constant angular velocity for the body. This does not rotate the body, but affec
 | *Getter* | get_constant_linear_velocity()      |
 +----------+-------------------------------------+
 
-Constant linear velocity for the body. This does not move the body, but affects colliding bodies, as if it were moving.
+The body's constant linear velocity. This does not move the body, but affects colliding bodies, as if it were moving.
 
 .. _class_StaticBody2D_property_friction:
 

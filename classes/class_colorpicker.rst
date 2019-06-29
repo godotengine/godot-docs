@@ -146,7 +146,7 @@ If ``true``, shows an alpha channel slider (transparency).
 | *Getter* | is_hsv_mode()       |
 +----------+---------------------+
 
-If ``true``, allows to edit color with Hue/Saturation/Value sliders.
+If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 
 **Note:** Cannot be enabled if raw mode is on.
 
@@ -182,7 +182,7 @@ If ``true``, allows to edit color with Hue/Saturation/Value sliders.
 
 If ``true``, allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
 
-**Note:** Cannot be enabled if hsv mode is on.
+**Note:** Cannot be enabled if HSV mode is on.
 
 Method Descriptions
 -------------------
@@ -191,13 +191,15 @@ Method Descriptions
 
 - void **add_preset** **(** :ref:`Color<class_Color>` color **)**
 
-Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them. Note: the presets list is only for *this* color picker.
+Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them.
+
+**Note:** the presets list is only for *this* color picker.
 
 .. _class_ColorPicker_method_erase_preset:
 
 - void **erase_preset** **(** :ref:`Color<class_Color>` color **)**
 
-Remove the given color from the list of color presets of this color picker.
+Removes the given color from the list of color presets of this color picker.
 
 .. _class_ColorPicker_method_get_presets:
 

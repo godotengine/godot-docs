@@ -107,7 +107,7 @@ enum **FilterAction**:
 Description
 -----------
 
-Base resource for :ref:`AnimationTree<class_AnimationTree>` nodes. In general it's not used directly but you can create custom ones with custom blending formulas.
+Base resource for :ref:`AnimationTree<class_AnimationTree>` nodes. In general, it's not used directly, but you can create custom ones with custom blending formulas.
 
 Inherit this when creating nodes mainly for use in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`, otherwise :ref:`AnimationRootNode<class_AnimationRootNode>` should be used instead.
 
@@ -133,7 +133,7 @@ Method Descriptions
 
 - void **add_input** **(** :ref:`String<class_String>` name **)**
 
-Add an input to the node. This is only useful for nodes created for use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`
+Adds an input to the node. This is only useful for nodes created for use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`
 
 .. _class_AnimationNode_method_blend_animation:
 
@@ -157,19 +157,19 @@ Blend another animaiton node (in case this node contains children animation node
 
 - :ref:`String<class_String>` **get_caption** **(** **)** virtual
 
-Get the text caption for this node (used by some editors)
+Gets the text caption for this node (used by some editors).
 
 .. _class_AnimationNode_method_get_child_by_name:
 
 - :ref:`Object<class_Object>` **get_child_by_name** **(** :ref:`String<class_String>` name **)** virtual
 
-Get the a child node by index (used by editors inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`).
+Gets a child node by index (used by editors inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`).
 
 .. _class_AnimationNode_method_get_child_nodes:
 
 - :ref:`Dictionary<class_Dictionary>` **get_child_nodes** **(** **)** virtual
 
-Get all children nodes, in order as a name:node dictionary. Only useful when inheriting :ref:`AnimationRootNode<class_AnimationRootNode>`.
+Gets all children nodes in order as a ``name: node`` dictionary. Only useful when inheriting :ref:`AnimationRootNode<class_AnimationRootNode>`.
 
 .. _class_AnimationNode_method_get_input_count:
 
@@ -181,25 +181,25 @@ Amount of inputs in this node, only useful for nodes that go into :ref:`Animatio
 
 - :ref:`String<class_String>` **get_input_name** **(** :ref:`int<class_int>` input **)**
 
-Get the name of an input by index.
+Gets the name of an input by index.
 
 .. _class_AnimationNode_method_get_parameter:
 
 - :ref:`Variant<class_Variant>` **get_parameter** **(** :ref:`String<class_String>` name **)** const
 
-Get the value of a parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
+Gets the value of a parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
 
 .. _class_AnimationNode_method_get_parameter_default_value:
 
 - :ref:`Variant<class_Variant>` **get_parameter_default_value** **(** :ref:`String<class_String>` name **)** virtual
 
-Get the default value of a parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
+Gets the default value of a parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
 
 .. _class_AnimationNode_method_get_parameter_list:
 
 - :ref:`Array<class_Array>` **get_parameter_list** **(** **)** virtual
 
-Get the property information for parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
+Gets the property information for parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
 
 .. _class_AnimationNode_method_has_filter:
 
@@ -229,17 +229,17 @@ This function returns the time left for the current animation to finish (if unsu
 
 - void **remove_input** **(** :ref:`int<class_int>` index **)**
 
-Remove an input, call this only when inactive.
+Removes an input, call this only when inactive.
 
 .. _class_AnimationNode_method_set_filter_path:
 
 - void **set_filter_path** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**
 
-Add/Remove a path for the filter.
+Adds or removes a path for the filter.
 
 .. _class_AnimationNode_method_set_parameter:
 
 - void **set_parameter** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
 
-Set a custom parameter. These are used as local storage, because resources can be reused across the tree or scenes.
+Sets a custom parameter. These are used as local storage, because resources can be reused across the tree or scenes.
 

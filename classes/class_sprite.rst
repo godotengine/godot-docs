@@ -14,7 +14,7 @@ Sprite
 Brief Description
 -----------------
 
-General purpose Sprite node.
+General-purpose sprite node.
 
 Properties
 ----------
@@ -243,5 +243,5 @@ Returns a :ref:`Rect2<class_Rect2>` representing the Sprite's boundary in local 
 
 Returns ``true``, if the pixel at the given position is opaque and ``false`` in other case.
 
-Note: It also returns ``false``, if the sprite's texture is null or if the given position is invalid.
+**Note:** It also returns ``false``, if the sprite's texture is ``null`` or if the given position is invalid.
 

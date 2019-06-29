@@ -54,6 +54,8 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                       | :ref:`intersect_polyline_with_polygon_2d<class_Geometry_method_intersect_polyline_with_polygon_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_point_in_polygon<class_Geometry_method_is_point_in_polygon>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                                                                   |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                                                                                                      |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                   | :ref:`line_intersects_line_2d<class_Geometry_method_line_intersects_line_2d>` **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` dir_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` dir_b **)**                                                   |
@@ -126,7 +128,7 @@ enum **PolyJoinType**:
 
 - **JOIN_ROUND** = **1** --- While flattened paths can never perfectly trace an arc, they are approximated by a series of arc chords.
 
-- **JOIN_MITER** = **2** --- There's a necessary limit to mitered joins since offsetting edges that join at very acute angles will produce excessively long and narrow 'spikes'. For any given edge join, when miter offsetting would exceed that maximum distance, 'square' joining is applied.
+- **JOIN_MITER** = **2** --- There's a necessary limit to mitered joins since offsetting edges that join at very acute angles will produce excessively long and narrow "spikes". For any given edge join, when miter offsetting would exceed that maximum distance, "square" joining is applied.
 
 .. _enum_Geometry_PolyEndType:
 
@@ -183,7 +185,7 @@ Clips the polygon defined by the points in ``points`` against the ``plane`` and 
 
 - :ref:`Array<class_Array>` **clip_polygons_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**
 
-Clips ``polygon_a`` against ``polygon_b`` and returns an array of clipped polygons. This performs ``OPERATION_DIFFERENCE`` between polygons. Returns an empty array if ``polygon_b`` completely overlaps ``polygon_a``. 
+Clips ``polygon_a`` against ``polygon_b`` and returns an array of clipped polygons. This performs :ref:`OPERATION_DIFFERENCE<class_Geometry_constant_OPERATION_DIFFERENCE>` between polygons. Returns an empty array if ``polygon_b`` completely overlaps ``polygon_a``.
 
 If ``polygon_b`` is enclosed by ``polygon_a``, returns an outer polygon (boundary) and inner polygon (hole) which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
@@ -191,19 +193,19 @@ If ``polygon_b`` is enclosed by ``polygon_a``, returns an outer polygon (boundar
 
 - :ref:`Array<class_Array>` **clip_polyline_with_polygon_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
 
-Clips ``polyline`` against ``polygon`` and returns an array of clipped polylines. This performs ``OPERATION_DIFFERENCE`` between the polyline and the polygon. This operation can be thought of as cutting a line with a closed shape.
+Clips ``polyline`` against ``polygon`` and returns an array of clipped polylines. This performs :ref:`OPERATION_DIFFERENCE<class_Geometry_constant_OPERATION_DIFFERENCE>` between the polyline and the polygon. This operation can be thought of as cutting a line with a closed shape.
 
 .. _class_Geometry_method_convex_hull_2d:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **convex_hull_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**
 
-Given an array of :ref:`Vector2<class_Vector2>`\ s, returns the convex hull as a list of points in counter-clockwise order. The last point is the same as the first one.
+Given an array of :ref:`Vector2<class_Vector2>`\ s, returns the convex hull as a list of points in counterclockwise order. The last point is the same as the first one.
 
 .. _class_Geometry_method_exclude_polygons_2d:
 
 - :ref:`Array<class_Array>` **exclude_polygons_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**
 
-Mutually excludes common area defined by intersection of ``polygon_a`` and ``polygon_b`` (see :ref:`intersect_polygons_2d<class_Geometry_method_intersect_polygons_2d>`) and returns an array of excluded polygons. This performs ``OPERATION_XOR`` between polygons. In other words, returns all but common area between polygons. 
+Mutually excludes common area defined by intersection of ``polygon_a`` and ``polygon_b`` (see :ref:`intersect_polygons_2d<class_Geometry_method_intersect_polygons_2d>`) and returns an array of excluded polygons. This performs :ref:`OPERATION_XOR<class_Geometry_constant_OPERATION_XOR>` between polygons. In other words, returns all but common area between polygons.
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
@@ -251,15 +253,21 @@ Given the two 2d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two
 
 - :ref:`Array<class_Array>` **intersect_polygons_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**
 
-Intersects ``polygon_a`` with ``polygon_b`` and returns an array of intersected polygons. This performs ``OPERATION_INTERSECTION`` between polygons. In other words, returns common area shared by polygons. Returns an empty array if no intersection occurs.
+Intersects ``polygon_a`` with ``polygon_b`` and returns an array of intersected polygons. This performs :ref:`OPERATION_INTERSECTION<class_Geometry_constant_OPERATION_INTERSECTION>` between polygons. In other words, returns common area shared by polygons. Returns an empty array if no intersection occurs.
 
-The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
 .. _class_Geometry_method_intersect_polyline_with_polygon_2d:
 
 - :ref:`Array<class_Array>` **intersect_polyline_with_polygon_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
 
-Intersects ``polyline`` with ``polygon`` and returns an array of intersected polylines. This performs ``OPERATION_INTERSECTION`` between the polyline and the polygon. This operation can be thought of as chopping a line with a closed shape.
+Intersects ``polyline`` with ``polygon`` and returns an array of intersected polylines. This performs :ref:`OPERATION_INTERSECTION<class_Geometry_constant_OPERATION_INTERSECTION>` between the polyline and the polygon. This operation can be thought of as chopping a line with a closed shape.
+
+.. _class_Geometry_method_is_point_in_polygon:
+
+- :ref:`bool<class_bool>` **is_point_in_polygon** **(** :ref:`Vector2<class_Vector2>` point, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
+
+Returns ``true`` if ``point`` is inside ``polygon`` or if it's located exactly *on* polygon's boundary, otherwise returns ``false``.
 
 .. _class_Geometry_method_is_polygon_clockwise:
 
@@ -271,7 +279,9 @@ Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, other
 
 - :ref:`Variant<class_Variant>` **line_intersects_line_2d** **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` dir_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` dir_b **)**
 
-Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_Variant>`. Note that the lines are specified using direction vectors, not end points.
+Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_Variant>`.
+
+**Note:** The lines are specified using direction vectors, not end points.
 
 .. _class_Geometry_method_make_atlas:
 
@@ -283,9 +293,9 @@ Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an
 
 - :ref:`Array<class_Array>` **merge_polygons_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_a, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon_b **)**
 
-Merges (combines) ``polygon_a`` and ``polygon_b`` and returns an array of merged polygons. This performs ``OPERATION_UNION`` between polygons.
+Merges (combines) ``polygon_a`` and ``polygon_b`` and returns an array of merged polygons. This performs :ref:`OPERATION_UNION<class_Geometry_constant_OPERATION_UNION>` between polygons.
 
-The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
 .. _class_Geometry_method_offset_polygon_2d:
 
@@ -295,7 +305,7 @@ Inflates or deflates ``polygon`` by ``delta`` units (pixels). If ``delta`` is po
 
 Each polygon's vertices will be rounded as determined by ``join_type``, see :ref:`PolyJoinType<enum_Geometry_PolyJoinType>`.
 
-The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
 .. _class_Geometry_method_offset_polyline_2d:
 
@@ -307,7 +317,7 @@ Each polygon's vertices will be rounded as determined by ``join_type``, see :ref
 
 Each polygon's endpoints will be rounded as determined by ``end_type``, see :ref:`PolyEndType<enum_Geometry_PolyEndType>`.
 
-The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
 .. _class_Geometry_method_point_is_inside_triangle:
 
@@ -361,9 +371,9 @@ Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **transform_points_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Transform2D<class_Transform2D>` transform **)**
 
-Transforms an array of points by ``transform`` and returns the result. 
+Transforms an array of points by ``transform`` and returns the result.
 
-Can be useful in conjuction with performing polygon boolean operations in CSG manner, see :ref:`merge_polygons_2d<class_Geometry_method_merge_polygons_2d>`, :ref:`clip_polygons_2d<class_Geometry_method_clip_polygons_2d>`, :ref:`intersect_polygons_2d<class_Geometry_method_intersect_polygons_2d>`, :ref:`exclude_polygons_2d<class_Geometry_method_exclude_polygons_2d>`.
+Can be useful in conjunction with performing polygon boolean operations in a CSG-like manner, see :ref:`merge_polygons_2d<class_Geometry_method_merge_polygons_2d>`, :ref:`clip_polygons_2d<class_Geometry_method_clip_polygons_2d>`, :ref:`intersect_polygons_2d<class_Geometry_method_intersect_polygons_2d>`, :ref:`exclude_polygons_2d<class_Geometry_method_exclude_polygons_2d>`.
 
 .. _class_Geometry_method_triangulate_delaunay_2d:
 

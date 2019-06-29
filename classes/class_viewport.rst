@@ -160,7 +160,7 @@ enum **UpdateMode**:
 
 - **UPDATE_DISABLED** = **0** --- Do not update the render target.
 
-- **UPDATE_ONCE** = **1** --- Update the render target once, then switch to ``UPDATE_DISABLED``.
+- **UPDATE_ONCE** = **1** --- Update the render target once, then switch to :ref:`UPDATE_DISABLED<class_Viewport_constant_UPDATE_DISABLED>`.
 
 - **UPDATE_WHEN_VISIBLE** = **2** --- Update the render target only when it is visible. This is the default value.
 
@@ -200,7 +200,7 @@ enum **ShadowAtlasQuadrantSubdiv**:
 
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_1024** = **6**
 
-- **SHADOW_ATLAS_QUADRANT_SUBDIV_MAX** = **7** --- Enum limiter. Do not use it directly.
+- **SHADOW_ATLAS_QUADRANT_SUBDIV_MAX** = **7** --- Represents the size of the :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` enum.
 
 .. _enum_Viewport_RenderInfo:
 
@@ -232,7 +232,7 @@ enum **RenderInfo**:
 
 - **RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5** --- Amount of draw calls in frame.
 
-- **RENDER_INFO_MAX** = **6** --- Enum limiter. Do not use it directly.
+- **RENDER_INFO_MAX** = **6** --- Represents the size of the :ref:`RenderInfo<enum_Viewport_RenderInfo>` enum.
 
 .. _enum_Viewport_DebugDraw:
 
@@ -312,7 +312,7 @@ enum **ClearMode**:
 
 - **CLEAR_MODE_NEVER** = **1** --- Never clear the render target.
 
-- **CLEAR_MODE_ONLY_NEXT_FRAME** = **2** --- Clear the render target next frame, then switch to ``CLEAR_MODE_NEVER``.
+- **CLEAR_MODE_ONLY_NEXT_FRAME** = **2** --- Clear the render target next frame, then switch to :ref:`CLEAR_MODE_NEVER<class_Viewport_constant_CLEAR_MODE_NEVER>`.
 
 Description
 -----------
@@ -397,7 +397,7 @@ The canvas transform of the viewport, useful for changing the on-screen position
 | *Getter* | get_debug_draw()      |
 +----------+-----------------------+
 
-The overlay mode for test rendered geometry in debug purposes. Default value: ``DEBUG_DRAW_DISABLED``.
+The overlay mode for test rendered geometry in debug purposes. Default value: :ref:`DEBUG_DRAW_DISABLED<class_Viewport_constant_DEBUG_DRAW_DISABLED>`.
 
 .. _class_Viewport_property_disable_3d:
 
@@ -491,7 +491,7 @@ If ``true``, the result after 3D rendering will not have a linear to sRGB color 
 | *Getter* | get_msaa()      |
 +----------+-----------------+
 
-The multisample anti-aliasing mode. Default value: ``MSAA_DISABLED``.
+The multisample anti-aliasing mode. Default value: :ref:`MSAA_DISABLED<class_Viewport_constant_MSAA_DISABLED>`.
 
 .. _class_Viewport_property_own_world:
 
@@ -539,7 +539,7 @@ If ``true``, renders the Viewport directly to the screen instead of to the root 
 | *Getter* | get_clear_mode()      |
 +----------+-----------------------+
 
-The clear mode when viewport used as a render target. Default value: ``CLEAR_MODE_ALWAYS``.
+The clear mode when viewport used as a render target. Default value: :ref:`CLEAR_MODE_ALWAYS<class_Viewport_constant_CLEAR_MODE_ALWAYS>`.
 
 .. _class_Viewport_property_render_target_update_mode:
 
@@ -551,7 +551,7 @@ The clear mode when viewport used as a render target. Default value: ``CLEAR_MOD
 | *Getter* | get_update_mode()      |
 +----------+------------------------+
 
-The update mode when viewport used as a render target. Default value: ``UPDATE_WHEN_VISIBLE``.
+The update mode when viewport used as a render target. Default value: :ref:`UPDATE_WHEN_VISIBLE<class_Viewport_constant_UPDATE_WHEN_VISIBLE>`.
 
 .. _class_Viewport_property_render_target_v_flip:
 
@@ -740,7 +740,9 @@ Returns the size override set with :ref:`set_size_override<class_Viewport_method
 
 - :ref:`ViewportTexture<class_ViewportTexture>` **get_texture** **(** **)** const
 
-Returns the viewport's texture. Note that due to the way OpenGL works, the resulting :ref:`ViewportTexture<class_ViewportTexture>` is flipped vertically. You can use :ref:`Image.flip_y<class_Image_method_flip_y>` on the result of :ref:`Texture.get_data<class_Texture_method_get_data>` to flip it back, for example:
+Returns the viewport's texture.
+
+**Note:** Due to the way OpenGL works, the resulting :ref:`ViewportTexture<class_ViewportTexture>` is flipped vertically. You can use :ref:`Image.flip_y<class_Image_method_flip_y>` on the result of :ref:`Texture.get_data<class_Texture_method_get_data>` to flip it back, for example:
 
 ::
 

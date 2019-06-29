@@ -52,7 +52,7 @@ Property Descriptions
 | *Getter* | get_index()      |
 +----------+------------------+
 
-Touch index in the case of a multi-touch event. One index = one finger.
+The touch index in the case of a multi-touch event. One index = one finger.
 
 .. _class_InputEventScreenTouch_property_position:
 
@@ -64,7 +64,7 @@ Touch index in the case of a multi-touch event. One index = one finger.
 | *Getter* | get_position()      |
 +----------+---------------------+
 
-Touch position.
+The touch position.
 
 .. _class_InputEventScreenTouch_property_pressed:
 

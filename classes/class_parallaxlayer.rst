@@ -34,7 +34,7 @@ A ParallaxLayer must be the child of a :ref:`ParallaxBackground<class_ParallaxBa
 
 This node's children will be affected by its scroll offset.
 
-Note that any changes to this node's position and scale made after it enters the scene will be ignored.
+**Note:** Any changes to this node's position and scale made after it enters the scene will be ignored.
 
 Property Descriptions
 ---------------------
@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter* | get_mirroring()      |
 +----------+----------------------+
 
-The ParallaxLayer's :ref:`Texture<class_Texture>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0`` the :ref:`Texture<class_Texture>` will not be mirrored. Default value: ``(0, 0)``.
+The ParallaxLayer's :ref:`Texture<class_Texture>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0``, the :ref:`Texture<class_Texture>` will not be mirrored. Default value: ``(0, 0)``.
 
 .. _class_ParallaxLayer_property_motion_offset:
 
@@ -73,5 +73,5 @@ The ParallaxLayer's offset relative to the parent ParallaxBackground's :ref:`Par
 | *Getter* | get_motion_scale()      |
 +----------+-------------------------+
 
-Multiplies the ParallaxLayer's motion. If an axis is set to ``0`` it will not scroll.
+Multiplies the ParallaxLayer's motion. If an axis is set to ``0``, it will not scroll.
 

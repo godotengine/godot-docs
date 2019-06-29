@@ -14,7 +14,7 @@ MultiplayerAPI
 Brief Description
 -----------------
 
-High Level Multiplayer API.
+High-level multiplayer API.
 
 Properties
 ----------
@@ -57,37 +57,37 @@ Signals
 
 - **connected_to_server** **(** **)**
 
-Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` successfully connected to a server. Only emitted on clients.
+Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` successfully connected to a server. Only emitted on clients.
 
 .. _class_MultiplayerAPI_signal_connection_failed:
 
 - **connection_failed** **(** **)**
 
-Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` fails to establish a connection to a server. Only emitted on clients.
+Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` fails to establish a connection to a server. Only emitted on clients.
 
 .. _class_MultiplayerAPI_signal_network_peer_connected:
 
 - **network_peer_connected** **(** :ref:`int<class_int>` id **)**
 
-Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` connects with a new peer. ID is the peer ID of the new peer. Clients get notified when other clients connect to the same server. Upon connecting to a server, a client also receives this signal for the server (with ID being 1).
+Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` connects with a new peer. ID is the peer ID of the new peer. Clients get notified when other clients connect to the same server. Upon connecting to a server, a client also receives this signal for the server (with ID being 1).
 
 .. _class_MultiplayerAPI_signal_network_peer_disconnected:
 
 - **network_peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
-Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` disconnects from a peer. Clients get notified when other clients disconnect from the same server.
+Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` disconnects from a peer. Clients get notified when other clients disconnect from the same server.
 
 .. _class_MultiplayerAPI_signal_network_peer_packet:
 
 - **network_peer_packet** **(** :ref:`int<class_int>` id, :ref:`PoolByteArray<class_PoolByteArray>` packet **)**
 
-Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` receive a ``packet`` with custom data (see :ref:`send_bytes<class_MultiplayerAPI_method_send_bytes>`). ID is the peer ID of the peer that sent the packet.
+Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` receive a ``packet`` with custom data (see :ref:`send_bytes<class_MultiplayerAPI_method_send_bytes>`). ID is the peer ID of the peer that sent the packet.
 
 .. _class_MultiplayerAPI_signal_server_disconnected:
 
 - **server_disconnected** **(** **)**
 
-Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` disconnects from server. Only emitted on clients.
+Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` disconnects from server. Only emitted on clients.
 
 Enumerations
 ------------
@@ -122,20 +122,20 @@ enum **RPCMode**:
 
 - **RPC_MODE_PUPPET** = **3** --- Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` or :ref:`Node.rset_config<class_Node_method_rset_config>` to set a method to be called or a property to be changed only on puppets for this node. Analogous to the ``puppet`` keyword. Only accepts calls or property changes from the node's network master, see :ref:`Node.set_network_master<class_Node_method_set_network_master>`.
 
-- **RPC_MODE_SLAVE** = **3** --- Deprecated. Use ``RPC_MODE_PUPPET`` instead. Analogous to the ``slave`` keyword.
+- **RPC_MODE_SLAVE** = **3** --- *Deprecated.* Use :ref:`RPC_MODE_PUPPET<class_MultiplayerAPI_constant_RPC_MODE_PUPPET>` instead. Analogous to the ``slave`` keyword.
 
-- **RPC_MODE_REMOTESYNC** = **4** --- Behave like ``RPC_MODE_REMOTE`` but also make the call or property change locally. Analogous to the ``remotesync`` keyword.
+- **RPC_MODE_REMOTESYNC** = **4** --- Behave like :ref:`RPC_MODE_REMOTE<class_MultiplayerAPI_constant_RPC_MODE_REMOTE>` but also make the call or property change locally. Analogous to the ``remotesync`` keyword.
 
-- **RPC_MODE_SYNC** = **4** --- Deprecated. Use ``RPC_MODE_REMOTESYNC`` instead. Analogous to the ``sync`` keyword.
+- **RPC_MODE_SYNC** = **4** --- *Deprecated.* Use :ref:`RPC_MODE_REMOTESYNC<class_MultiplayerAPI_constant_RPC_MODE_REMOTESYNC>` instead. Analogous to the ``sync`` keyword.
 
-- **RPC_MODE_MASTERSYNC** = **5** --- Behave like ``RPC_MODE_MASTER`` but also make the call or property change locally. Analogous to the ``mastersync`` keyword.
+- **RPC_MODE_MASTERSYNC** = **5** --- Behave like :ref:`RPC_MODE_MASTER<class_MultiplayerAPI_constant_RPC_MODE_MASTER>` but also make the call or property change locally. Analogous to the ``mastersync`` keyword.
 
-- **RPC_MODE_PUPPETSYNC** = **6** --- Behave like ``RPC_MODE_PUPPET`` but also make the call or property change locally. Analogous to the ``puppetsync`` keyword.
+- **RPC_MODE_PUPPETSYNC** = **6** --- Behave like :ref:`RPC_MODE_PUPPET<class_MultiplayerAPI_constant_RPC_MODE_PUPPET>` but also make the call or property change locally. Analogous to the ``puppetsync`` keyword.
 
 Description
 -----------
 
-This class implements most of the logic behind the high level multiplayer API.
+This class implements most of the logic behind the high-level multiplayer API.
 
 By default, :ref:`SceneTree<class_SceneTree>` has a reference to this class that is used to provide multiplayer capabilities (i.e. RPC/RSET) across the whole scene.
 
@@ -154,9 +154,9 @@ Property Descriptions
 | *Getter* | is_object_decoding_allowed()     |
 +----------+----------------------------------+
 
-If ``true`` (or if the :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` :ref:`PacketPeer.allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` the MultiplayerAPI will allow encoding and decoding of object during RPCs/RSETs.
+If ``true`` (or if the :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` has :ref:`PacketPeer.allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` set to ``true``), the MultiplayerAPI will allow encoding and decoding of object during RPCs/RSETs.
 
-**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
+**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 .. _class_MultiplayerAPI_property_network_peer:
 
@@ -168,7 +168,7 @@ If ``true`` (or if the :ref:`network_peer<class_MultiplayerAPI_property_network_
 | *Getter* | get_network_peer()      |
 +----------+-------------------------+
 
-The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_Node>`), or it will become a regular peer with root node set to puppet. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
+The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>`) and will set root node's network mode to master (see ``NETWORK_MODE_*`` constants in :ref:`Node<class_Node>`), or it will become a regular peer with root node set to puppet. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
 
 .. _class_MultiplayerAPI_property_refuse_new_network_connections:
 
@@ -209,7 +209,7 @@ Returns the unique peer ID of this MultiplayerAPI's :ref:`network_peer<class_Mul
 
 Returns the sender's peer ID for the RPC currently being executed.
 
-NOTE: If not inside an RPC this method will return 0.
+**Note:** If not inside an RPC this method will return 0.
 
 .. _class_MultiplayerAPI_method_has_network_peer:
 
@@ -227,9 +227,9 @@ Returns ``true`` if this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAP
 
 - void **poll** **(** **)**
 
-Method used for polling the MultiplayerAPI. You only need to worry about this if you are using :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` override or you set :ref:`SceneTree.multiplayer_poll<class_SceneTree_property_multiplayer_poll>` to ``false``. By default :ref:`SceneTree<class_SceneTree>` will poll its MultiplayerAPI for you.
+Method used for polling the MultiplayerAPI. You only need to worry about this if you are using :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` override or you set :ref:`SceneTree.multiplayer_poll<class_SceneTree_property_multiplayer_poll>` to ``false``. By default, :ref:`SceneTree<class_SceneTree>` will poll its MultiplayerAPI for you.
 
-NOTE: This method results in RPCs and RSETs being called, so they will be executed in the same context of this function (e.g. ``_process``, ``physics``, :ref:`Thread<class_Thread>`).
+**Note:** This method results in RPCs and RSETs being called, so they will be executed in the same context of this function (e.g. ``_process``, ``physics``, :ref:`Thread<class_Thread>`).
 
 .. _class_MultiplayerAPI_method_send_bytes:
 

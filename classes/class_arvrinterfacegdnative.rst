@@ -14,10 +14,10 @@ ARVRInterfaceGDNative
 Brief Description
 -----------------
 
-GDNative wrapper for an ARVR interface
+GDNative wrapper for an ARVR interface.
 
 Description
 -----------
 
-This is a wrapper class for GDNative implementations of the ARVR interface. To use a GDNative ARVR interface simply instantiate this object and set your GDNative library containing the ARVR interface implementation.
+This is a wrapper class for GDNative implementations of the ARVR interface. To use a GDNative ARVR interface, simply instantiate this object and set your GDNative library containing the ARVR interface implementation.
 

@@ -85,7 +85,7 @@ enum **ConnectionState**:
 
 - **STATE_NEW** = **0** --- The connection is new, data channels and an offer can be created in this state.
 
-- **STATE_CONNECTING** = **1** --- The peer is connecting, ICE is in progress, non of the transports has failed.
+- **STATE_CONNECTING** = **1** --- The peer is connecting, ICE is in progress, none of the transports has failed.
 
 - **STATE_CONNECTED** = **2** --- The peer is connected, all ICE transports are connected.
 
@@ -104,7 +104,7 @@ Setting up a WebRTC connection between two peers from now on) may not seem a tri
 
 - The peer that wants to initiate the connection (``A`` from now on) creates an offer and send it to the other peer (``B`` from now on).
 
-- ``B`` receives the offer, generate and answer, and sends it to ``B``).
+- ``B`` receives the offer, generate and answer, and sends it to ``A``).
 
 - ``A`` and ``B`` then generates and exchange ICE candidates with each other.
 
@@ -149,7 +149,7 @@ Valid ``options`` are:
         "protocol": "my-custom-protocol", # A custom sub-protocol string for this channel.
     }
 
-NOTE: You must keep a reference to channels created this way, or it will be closed.
+**Note:** You must keep a reference to channels created this way, or it will be closed.
 
 .. _class_WebRTCPeerConnection_method_create_offer:
 
@@ -157,7 +157,7 @@ NOTE: You must keep a reference to channels created this way, or it will be clos
 
 Creates a new SDP offer to start a WebRTC connection with a remote peer. At least one :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` must have been created before calling this method.
 
-If this functions returns ``OK``, :ref:`session_description_created<class_WebRTCPeerConnection_signal_session_description_created>` will be called when the session is ready to be sent.
+If this functions returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, :ref:`session_description_created<class_WebRTCPeerConnection_signal_session_description_created>` will be called when the session is ready to be sent.
 
 .. _class_WebRTCPeerConnection_method_get_connection_state:
 

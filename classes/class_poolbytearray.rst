@@ -54,7 +54,9 @@ Methods
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold bytes. Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold bytes. Optimized for memory usage, does not fragment the memory.
+
+**Note:** This type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
@@ -63,19 +65,19 @@ Method Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **PoolByteArray** **(** :ref:`Array<class_Array>` from **)**
 
-Construct a new ``PoolByteArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+Constructs a new ``PoolByteArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
 .. _class_PoolByteArray_method_append:
 
 - void **append** **(** :ref:`int<class_int>` byte **)**
 
-Append an element at the end of the array (alias of :ref:`push_back<class_PoolByteArray_method_push_back>`).
+Appends an element at the end of the array (alias of :ref:`push_back<class_PoolByteArray_method_push_back>`).
 
 .. _class_PoolByteArray_method_append_array:
 
 - void **append_array** **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**
 
-Append a ``PoolByteArray`` at the end of this array.
+Appends a ``PoolByteArray`` at the end of this array.
 
 .. _class_PoolByteArray_method_compress:
 
@@ -105,43 +107,43 @@ Returns a copy of the array's contents as :ref:`String<class_String>`. Slower th
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**
 
-Insert a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
 .. _class_PoolByteArray_method_invert:
 
 - void **invert** **(** **)**
 
-Reverse the order of the elements in the array.
+Reverses the order of the elements in the array.
 
 .. _class_PoolByteArray_method_push_back:
 
 - void **push_back** **(** :ref:`int<class_int>` byte **)**
 
-Append an element at the end of the array.
+Appends an element at the end of the array.
 
 .. _class_PoolByteArray_method_remove:
 
 - void **remove** **(** :ref:`int<class_int>` idx **)**
 
-Remove an element from the array by index.
+Removes an element from the array by index.
 
 .. _class_PoolByteArray_method_resize:
 
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
-Set the size of the array. If the array is grown reserve elements at the end of the array. If the array is shrunk truncate the array to the new size.
+Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
 .. _class_PoolByteArray_method_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**
 
-Change the byte at the given index.
+Changes the byte at the given index.
 
 .. _class_PoolByteArray_method_sha256_string:
 
 - :ref:`String<class_String>` **sha256_string** **(** **)**
 
-Returns SHA256 string of the PoolByteArray.
+Returns SHA-256 string of the PoolByteArray.
 
 .. _class_PoolByteArray_method_size:
 

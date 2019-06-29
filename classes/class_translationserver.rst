@@ -80,7 +80,7 @@ Returns the current locale of the game.
 
 - :ref:`String<class_String>` **get_locale_name** **(** :ref:`String<class_String>` locale **)** const
 
-Returns a locale's language and its variant (e.g. "en_US" would return "English (United States)").
+Returns a locale's language and its variant (e.g. ``"en_US"`` would return ``"English (United States)"``).
 
 .. _class_TranslationServer_method_remove_translation:
 

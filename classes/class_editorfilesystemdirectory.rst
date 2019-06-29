@@ -117,7 +117,7 @@ Returns the name of this directory.
 
 - :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_parent** **(** **)**
 
-Returns the parent directory for this directory or null if called on a directory at ``res://`` or ``user://``.
+Returns the parent directory for this directory or ``null`` if called on a directory at ``res://`` or ``user://``.
 
 .. _class_EditorFileSystemDirectory_method_get_path:
 

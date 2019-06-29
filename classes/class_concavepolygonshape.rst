@@ -43,5 +43,5 @@ Returns the faces (an array of triangles).
 
 - void **set_faces** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)**
 
-Set the faces (an array of triangles).
+Sets the faces (an array of triangles).
 

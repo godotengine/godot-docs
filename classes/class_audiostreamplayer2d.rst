@@ -211,7 +211,7 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 
 - void **play** **(** :ref:`float<class_float>` from_position=0.0 **)**
 
-Plays the audio from the given position 'from_position', in seconds.
+Plays the audio from the given position ``from_position``, in seconds.
 
 .. _class_AudioStreamPlayer2D_method_seek:
 

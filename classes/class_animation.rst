@@ -176,7 +176,7 @@ enum **TrackType**:
 
 - **TYPE_VALUE** = **0** --- Value tracks set values in node properties, but only those which can be Interpolated.
 
-- **TYPE_TRANSFORM** = **1** --- Transform tracks are used to change node local transforms or skeleton pose bones. Transitions are Interpolated.
+- **TYPE_TRANSFORM** = **1** --- Transform tracks are used to change node local transforms or skeleton pose bones. Transitions are interpolated.
 
 - **TYPE_METHOD** = **2** --- Method tracks call functions with given arguments per key.
 
@@ -257,7 +257,9 @@ Property Descriptions
 | *Getter* | get_length()      |
 +----------+-------------------+
 
-The total length of the animation (in seconds). Note that length is not delimited by the last key, as this one may be before or after the end to ensure correct interpolation and looping.
+The total length of the animation (in seconds).
+
+**Note:** Length is not delimited by the last key, as this one may be before or after the end to ensure correct interpolation and looping.
 
 .. _class_Animation_property_loop:
 
@@ -290,7 +292,7 @@ Method Descriptions
 
 - :ref:`int<class_int>` **add_track** **(** :ref:`TrackType<enum_Animation_TrackType>` type, :ref:`int<class_int>` at_position=-1 **)**
 
-Add a track to the Animation. The track type must be specified as any of the values in the TYPE\_\* enumeration.
+Adds a track to the Animation.
 
 .. _class_Animation_method_animation_track_get_key_animation:
 
@@ -410,13 +412,13 @@ Returns the arguments values to be called on a method track for a given key in a
 
 - void **remove_track** **(** :ref:`int<class_int>` idx **)**
 
-Remove a track by specifying the track index.
+Removes a track by specifying the track index.
 
 .. _class_Animation_method_track_find_key:
 
 - :ref:`int<class_int>` **track_find_key** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time, :ref:`bool<class_bool>` exact=false **)** const
 
-Find the key index by time in a given track. Optionally, only find it if the exact time is given.
+Finds the key index by time in a given track. Optionally, only find it if the exact time is given.
 
 .. _class_Animation_method_track_get_interpolation_loop_wrap:
 
@@ -428,7 +430,7 @@ Returns ``true`` if the track at ``idx`` wraps the interpolation loop. Default v
 
 - :ref:`InterpolationType<enum_Animation_InterpolationType>` **track_get_interpolation_type** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the interpolation type of a given track, from the INTERPOLATION\_\* enum.
+Returns the interpolation type of a given track.
 
 .. _class_Animation_method_track_get_key_count:
 
@@ -446,7 +448,7 @@ Returns the time at which the key is located.
 
 - :ref:`float<class_float>` **track_get_key_transition** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
-Returns the transition curve (easing) for a specific key (see built-in math function "ease").
+Returns the transition curve (easing) for a specific key (see the built-in math function :ref:`@GDScript.ease<class_@GDScript_method_ease>`).
 
 .. _class_Animation_method_track_get_key_value:
 
@@ -458,13 +460,13 @@ Returns the value of a given key in a given track.
 
 - :ref:`NodePath<class_NodePath>` **track_get_path** **(** :ref:`int<class_int>` idx **)** const
 
-Get the path of a track. for more information on the path format, see :ref:`track_set_path<class_Animation_method_track_set_path>`
+Gets the path of a track. For more information on the path format, see :ref:`track_set_path<class_Animation_method_track_set_path>`.
 
 .. _class_Animation_method_track_get_type:
 
 - :ref:`TrackType<enum_Animation_TrackType>` **track_get_type** **(** :ref:`int<class_int>` idx **)** const
 
-Get the type of a track.
+Gets the type of a track.
 
 .. _class_Animation_method_track_insert_key:
 
@@ -488,7 +490,7 @@ Returns ``true`` if the given track is imported. Else, return ``false``.
 
 - void **track_move_down** **(** :ref:`int<class_int>` idx **)**
 
-Move a track down.
+Moves a track down.
 
 .. _class_Animation_method_track_move_to:
 
@@ -500,19 +502,19 @@ Changes the index position of track ``idx`` to the one defined in ``to_idx``.
 
 - void **track_move_up** **(** :ref:`int<class_int>` idx **)**
 
-Move a track up.
+Moves a track up.
 
 .. _class_Animation_method_track_remove_key:
 
 - void **track_remove_key** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)**
 
-Remove a key by index in a given track.
+Removes a key by index in a given track.
 
 .. _class_Animation_method_track_remove_key_at_position:
 
 - void **track_remove_key_at_position** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` position **)**
 
-Remove a key by position (seconds) in a given track.
+Removes a key by position (seconds) in a given track.
 
 .. _class_Animation_method_track_set_enabled:
 
@@ -524,7 +526,7 @@ Enables/disables the given track. Tracks are enabled by default.
 
 - void **track_set_imported** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` imported **)**
 
-Set the given track as imported or not.
+Sets the given track as imported or not.
 
 .. _class_Animation_method_track_set_interpolation_loop_wrap:
 
@@ -536,33 +538,33 @@ If ``true``, the track at ``idx`` wraps the interpolation loop.
 
 - void **track_set_interpolation_type** **(** :ref:`int<class_int>` idx, :ref:`InterpolationType<enum_Animation_InterpolationType>` interpolation **)**
 
-Set the interpolation type of a given track, from the INTERPOLATION\_\* enum.
+Sets the interpolation type of a given track.
 
 .. _class_Animation_method_track_set_key_time:
 
 - void **track_set_key_time** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` time **)**
 
-Set the time of an existing key.
+Sets the time of an existing key.
 
 .. _class_Animation_method_track_set_key_transition:
 
 - void **track_set_key_transition** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` transition **)**
 
-Set the transition curve (easing) for a specific key (see built-in math function "ease").
+Sets the transition curve (easing) for a specific key (see the built-in math function :ref:`@GDScript.ease<class_@GDScript_method_ease>`).
 
 .. _class_Animation_method_track_set_key_value:
 
 - void **track_set_key_value** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key, :ref:`Variant<class_Variant>` value **)**
 
-Set the value of an existing key.
+Sets the value of an existing key.
 
 .. _class_Animation_method_track_set_path:
 
 - void **track_set_path** **(** :ref:`int<class_int>` idx, :ref:`NodePath<class_NodePath>` path **)**
 
-Set the path of a track. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation. Tracks that control properties or bones must append their name after the path, separated by ":".
+Sets the path of a track. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation. Tracks that control properties or bones must append their name after the path, separated by ``":"``.
 
-**Example:** "character/skeleton:ankle" or "character/mesh:transform/local".
+For example, ``"character/skeleton:ankle"`` or ``"character/mesh:transform/local"``.
 
 .. _class_Animation_method_track_swap:
 
@@ -598,5 +600,5 @@ Returns the update mode of a value track.
 
 - void **value_track_set_update_mode** **(** :ref:`int<class_int>` idx, :ref:`UpdateMode<enum_Animation_UpdateMode>` mode **)**
 
-Set the update mode (UPDATE\_\*) of a value track.
+Sets the update mode (``UPDATE_*``) of a value track.
 

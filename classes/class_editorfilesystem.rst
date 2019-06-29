@@ -76,13 +76,13 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_file_type** **(** :ref:`String<class_String>` path **)** const
 
-Get the type of the file, given the full path.
+Gets the type of the file, given the full path.
 
 .. _class_EditorFileSystem_method_get_filesystem:
 
 - :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_filesystem** **(** **)**
 
-Get the root directory object.
+Gets the root directory object.
 
 .. _class_EditorFileSystem_method_get_filesystem_path:
 

@@ -26,7 +26,7 @@ Properties
 Description
 -----------
 
-``CanvasModulate`` tints the canvas elements using its assigned ``color``.
+``CanvasModulate`` tints the canvas elements using its assigned :ref:`color<class_CanvasModulate_property_color>`.
 
 Property Descriptions
 ---------------------

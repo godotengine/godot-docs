@@ -14,7 +14,7 @@ ARVRServer
 Brief Description
 -----------------
 
-This is our AR/VR Server.
+The AR/VR server.
 
 Properties
 ----------
@@ -61,25 +61,25 @@ Signals
 
 - **interface_added** **(** :ref:`String<class_String>` interface_name **)**
 
-Signal send when a new interface has been added.
+Emitted when a new interface has been added.
 
 .. _class_ARVRServer_signal_interface_removed:
 
 - **interface_removed** **(** :ref:`String<class_String>` interface_name **)**
 
-Signal send when an interface is removed.
+Emitted when an interface is removed.
 
 .. _class_ARVRServer_signal_tracker_added:
 
 - **tracker_added** **(** :ref:`String<class_String>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
 
-Signal send when a new tracker has been added. If you don't use a fixed number of controllers or if you're using ARVRAnchors for an AR solution it is important to react to this signal and add the appropriate ARVRController or ARVRAnchor node related to this new tracker.
+Emitted when a new tracker has been added. If you don't use a fixed number of controllers or if you're using :ref:`ARVRAnchor<class_ARVRAnchor>`\ s for an AR solution, it is important to react to this signal to add the appropriate :ref:`ARVRController<class_ARVRController>` or :ref:`ARVRAnchor<class_ARVRAnchor>` nodes related to this new tracker.
 
 .. _class_ARVRServer_signal_tracker_removed:
 
 - **tracker_removed** **(** :ref:`String<class_String>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
 
-Signal send when a tracker is removed, you should remove any ARVRController or ARVRAnchor points if applicable. This is not mandatory, the nodes simply become inactive and will be made active again when a new tracker becomes available (i.e. a new controller is switched on that takes the place of the previous one).
+Emitted when a tracker is removed. You should remove any :ref:`ARVRController<class_ARVRController>` or :ref:`ARVRAnchor<class_ARVRAnchor>` points if applicable. This is not mandatory, the nodes simply become inactive and will be made active again when a new tracker becomes available (i.e. a new controller is switched on that takes the place of the previous one).
 
 Enumerations
 ------------
@@ -100,11 +100,11 @@ Enumerations
 
 enum **TrackerType**:
 
-- **TRACKER_CONTROLLER** = **1** --- Our tracker tracks the location of a controller.
+- **TRACKER_CONTROLLER** = **1** --- The tracker tracks the location of a controller.
 
-- **TRACKER_BASESTATION** = **2** --- Our tracker tracks the location of a base station.
+- **TRACKER_BASESTATION** = **2** --- The tracker tracks the location of a base station.
 
-- **TRACKER_ANCHOR** = **4** --- Our tracker tracks the location and size of an AR anchor.
+- **TRACKER_ANCHOR** = **4** --- The tracker tracks the location and size of an AR anchor.
 
 - **TRACKER_ANY_KNOWN** = **127** --- Used internally to filter trackers of any known type.
 
@@ -131,7 +131,7 @@ enum **RotationMode**:
 Description
 -----------
 
-The AR/VR Server is the heart of our AR/VR solution and handles all the processing.
+The AR/VR server is the heart of our AR/VR solution and handles all the processing.
 
 Property Descriptions
 ---------------------
@@ -156,7 +156,7 @@ Property Descriptions
 | *Getter* | get_world_scale()      |
 +----------+------------------------+
 
-Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 meter in the real world.
+Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 real world meter.
 
 Method Descriptions
 -------------------
@@ -165,23 +165,23 @@ Method Descriptions
 
 - void **center_on_hmd** **(** :ref:`RotationMode<enum_ARVRServer_RotationMode>` rotation_mode, :ref:`bool<class_bool>` keep_height **)**
 
-This is a really important function to understand correctly. AR and VR platforms all handle positioning slightly differently.
+This is an important function to understand correctly. AR and VR platforms all handle positioning slightly differently.
 
-For platforms that do not offer spatial tracking our origin point (0,0,0) is the location of our HMD but you have little control over the direction the player is facing in the real world.
+For platforms that do not offer spatial tracking, our origin point (0,0,0) is the location of our HMD, but you have little control over the direction the player is facing in the real world.
 
-For platforms that do offer spatial tracking our origin point depends very much on the system. For OpenVR our origin point is usually the center of the tracking space, on the ground. For other platforms its often the location of the tracking camera.
+For platforms that do offer spatial tracking, our origin point depends very much on the system. For OpenVR, our origin point is usually the center of the tracking space, on the ground. For other platforms, it's often the location of the tracking camera.
 
-This method allows you to center our tracker on the location of the HMD, it will take the current location of the HMD and use that to adjust all our tracking data in essence realigning the real world to your players current position in your game world.
+This method allows you to center your tracker on the location of the HMD. It will take the current location of the HMD and use that to adjust all your tracking data; in essence, realigning the real world to your player's current position in the game world.
 
-For this method to produce usable results tracking information should be available and this often takes a few frames after starting your game.
+For this method to produce usable results, tracking information must be available. This often takes a few frames after starting your game.
 
-You should call this method after a few seconds have passed, when the user requests a realignment of the display holding a designated button on a controller for a short period of time, and when implementing a teleport mechanism.
+You should call this method after a few seconds have passed. For instance, when the user requests a realignment of the display holding a designated button on a controller for a short period of time, or when implementing a teleport mechanism.
 
 .. _class_ARVRServer_method_find_interface:
 
 - :ref:`ARVRInterface<class_ARVRInterface>` **find_interface** **(** :ref:`String<class_String>` name **)** const
 
-Find an interface by its name. Say that you're making a game that uses specific capabilities of an AR/VR platform you can find the interface for that platform by name and initialize it.
+Finds an interface by its name. For instance, if your project uses capabilities of an AR/VR platform, you can find the interface for that platform by name and initialize it.
 
 .. _class_ARVRServer_method_get_hmd_transform:
 
@@ -193,19 +193,19 @@ Returns the primary interface's transformation.
 
 - :ref:`ARVRInterface<class_ARVRInterface>` **get_interface** **(** :ref:`int<class_int>` idx **)** const
 
-Get the interface registered at a given index in our list of interfaces.
+Gets the interface registered at a given index in our list of interfaces.
 
 .. _class_ARVRServer_method_get_interface_count:
 
 - :ref:`int<class_int>` **get_interface_count** **(** **)** const
 
-Get the number of interfaces currently registered with the AR/VR server. If your game supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try an initialize each interface and use the first one that returns ``true``.
+Gets the number of interfaces currently registered with the AR/VR server. If your project supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try to initialize each interface and use the first one that returns ``true``.
 
 .. _class_ARVRServer_method_get_interfaces:
 
 - :ref:`Array<class_Array>` **get_interfaces** **(** **)** const
 
-Returns a list of available interfaces with both id and name of the interface.
+Returns a list of available interfaces the ID and name of each interface.
 
 .. _class_ARVRServer_method_get_last_commit_usec:
 
@@ -223,17 +223,17 @@ Returns a list of available interfaces with both id and name of the interface.
 
 - :ref:`Transform<class_Transform>` **get_reference_frame** **(** **)** const
 
-Gets our reference frame transform, mostly used internally and exposed for GDNative build interfaces.
+Gets the reference frame transform. Mostly used internally and exposed for GDNative build interfaces.
 
 .. _class_ARVRServer_method_get_tracker:
 
 - :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` **get_tracker** **(** :ref:`int<class_int>` idx **)** const
 
-Get the positional tracker at the given ID.
+Gets the positional tracker at the given ID.
 
 .. _class_ARVRServer_method_get_tracker_count:
 
 - :ref:`int<class_int>` **get_tracker_count** **(** **)** const
 
-Get the number of trackers currently registered.
+Gets the number of trackers currently registered.
 

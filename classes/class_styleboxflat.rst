@@ -95,7 +95,7 @@ This stylebox can be used to achieve all kinds of looks without the need of a te
 
 - Shadow
 
-Setting corner radius to high values is allowed. As soon as corners would overlap the stylebox will switch to a relative system. Example:
+Setting corner radius to high values is allowed. As soon as corners would overlap, the stylebox will switch to a relative system. Example:
 
 ::
 
@@ -123,7 +123,7 @@ Property Descriptions
 | *Getter* | is_anti_aliased()       |
 +----------+-------------------------+
 
-Anti Aliasing draws a small ring around edges. This ring fades to transparent. As a result edges look much smoother. This is only noticeable when using rounded corners.
+Antialiasing draws a small ring around the edges, which fades to transparency. As a result, edges look much smoother. This is only noticeable when using rounded corners.
 
 .. _class_StyleBoxFlat_property_anti_aliasing_size:
 
@@ -159,7 +159,7 @@ The background color of the stylebox.
 | *Getter* | get_border_blend()      |
 +----------+-------------------------+
 
-When set to ``true``, the border will fade into the background color.
+If ``true``, the border will fade into the background color.
 
 .. _class_StyleBoxFlat_property_border_color:
 
@@ -231,11 +231,9 @@ Border width for the top border.
 | *Getter* | get_corner_detail()      |
 +----------+--------------------------+
 
-This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value you should take the corner radius (:ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>`) into account.
+This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value, you should take the corner radius (:ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>`) into account.
 
-For corner radius smaller than 10, 4-5 should be enough.
-
-For corner radius smaller than 30, 8-12 should be enough.
+For corner radii smaller than 10, 4-5 should be enough. For corner radii smaller than 30, 8-12 should be enough.
 
 .. _class_StyleBoxFlat_property_corner_radius_bottom_left:
 
@@ -247,7 +245,7 @@ For corner radius smaller than 30, 8-12 should be enough.
 | *Getter* | get_corner_radius()      |
 +----------+--------------------------+
 
-The corner radius of the bottom left corner. When set to 0 the corner is not rounded.
+The bottom-left corner's radius. If ``0``, the corner is not rounded.
 
 .. _class_StyleBoxFlat_property_corner_radius_bottom_right:
 
@@ -259,7 +257,7 @@ The corner radius of the bottom left corner. When set to 0 the corner is not rou
 | *Getter* | get_corner_radius()      |
 +----------+--------------------------+
 
-The corner radius of the bottom right corner. When set to 0 the corner is not rounded.
+The bottom-right corner's radius. If ``0``, the corner is not rounded.
 
 .. _class_StyleBoxFlat_property_corner_radius_top_left:
 
@@ -271,7 +269,7 @@ The corner radius of the bottom right corner. When set to 0 the corner is not ro
 | *Getter* | get_corner_radius()      |
 +----------+--------------------------+
 
-The corner radius of the top left corner. When set to 0 the corner is not rounded.
+The top-left corner's radius. If ``0``, the corner is not rounded.
 
 .. _class_StyleBoxFlat_property_corner_radius_top_right:
 
@@ -283,7 +281,7 @@ The corner radius of the top left corner. When set to 0 the corner is not rounde
 | *Getter* | get_corner_radius()      |
 +----------+--------------------------+
 
-The corner radius of the top right corner. When set to 0 the corner is not rounded.
+The top-right corner's radius. If ``0``, the corner is not rounded.
 
 .. _class_StyleBoxFlat_property_draw_center:
 
@@ -295,7 +293,7 @@ The corner radius of the top right corner. When set to 0 the corner is not round
 | *Getter* | is_draw_center_enabled() |
 +----------+--------------------------+
 
-Toggels drawing of the inner part of the stylebox.
+Toggles drawing of the inner part of the stylebox.
 
 .. _class_StyleBoxFlat_property_expand_margin_bottom:
 
@@ -307,7 +305,7 @@ Toggels drawing of the inner part of the stylebox.
 | *Getter* | get_expand_margin()      |
 +----------+--------------------------+
 
-Expands the stylebox outside of the control rect on the bottom edge. Useful in combination with border_width_bottom. To draw a border outside the control rect.
+Expands the stylebox outside of the control rect on the bottom edge. Useful in combination with :ref:`border_width_bottom<class_StyleBoxFlat_property_border_width_bottom>` to draw a border outside the control rect.
 
 .. _class_StyleBoxFlat_property_expand_margin_left:
 
@@ -319,7 +317,7 @@ Expands the stylebox outside of the control rect on the bottom edge. Useful in c
 | *Getter* | get_expand_margin()      |
 +----------+--------------------------+
 
-Expands the stylebox outside of the control rect on the left edge. Useful in combination with border_width_left. To draw a border outside the control rect.
+Expands the stylebox outside of the control rect on the left edge. Useful in combination with :ref:`border_width_left<class_StyleBoxFlat_property_border_width_left>` to draw a border outside the control rect.
 
 .. _class_StyleBoxFlat_property_expand_margin_right:
 
@@ -331,7 +329,7 @@ Expands the stylebox outside of the control rect on the left edge. Useful in com
 | *Getter* | get_expand_margin()      |
 +----------+--------------------------+
 
-Expands the stylebox outside of the control rect on the right edge. Useful in combination with border_width_right. To draw a border outside the control rect.
+Expands the stylebox outside of the control rect on the right edge. Useful in combination with :ref:`border_width_right<class_StyleBoxFlat_property_border_width_right>` to draw a border outside the control rect.
 
 .. _class_StyleBoxFlat_property_expand_margin_top:
 
@@ -343,7 +341,7 @@ Expands the stylebox outside of the control rect on the right edge. Useful in co
 | *Getter* | get_expand_margin()      |
 +----------+--------------------------+
 
-Expands the stylebox outside of the control rect on the top edge. Useful in combination with border_width_top. To draw a border outside the control rect.
+Expands the stylebox outside of the control rect on the top edge. Useful in combination with :ref:`border_width_top<class_StyleBoxFlat_property_border_width_top>` to draw a border outside the control rect.
 
 .. _class_StyleBoxFlat_property_shadow_color:
 
@@ -355,7 +353,7 @@ Expands the stylebox outside of the control rect on the top edge. Useful in comb
 | *Getter* | get_shadow_color()      |
 +----------+-------------------------+
 
-The color of the shadow. (This has no effect when shadow_size < 1)
+The color of the shadow. This has no effect if :ref:`shadow_size<class_StyleBoxFlat_property_shadow_size>` is lower than 1.
 
 .. _class_StyleBoxFlat_property_shadow_offset:
 

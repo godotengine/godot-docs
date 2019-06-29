@@ -63,11 +63,11 @@ Enumerations
 
 enum **BakeQuality**:
 
-- **BAKE_QUALITY_LOW** = **0** --- Lowest bake quality mode. Fastest to calculate.
+- **BAKE_QUALITY_LOW** = **0** --- The lowest bake quality mode. Fastest to calculate.
 
-- **BAKE_QUALITY_MEDIUM** = **1** --- Default bake quality mode.
+- **BAKE_QUALITY_MEDIUM** = **1** --- The default bake quality mode.
 
-- **BAKE_QUALITY_HIGH** = **2** --- Highest bake quality mode. Takes longer to calculate.
+- **BAKE_QUALITY_HIGH** = **2** --- The highest bake quality mode. Takes longer to calculate.
 
 .. _enum_BakedLightmap_BakeMode:
 
@@ -150,7 +150,7 @@ Grid subdivision size for lightmapper calculation. Default value of ``0.25`` wil
 | *Getter* | get_extents()      |
 +----------+--------------------+
 
-Size of affected area.
+The size of the affected area.
 
 .. _class_BakedLightmap_property_bake_hdr:
 
@@ -162,7 +162,7 @@ Size of affected area.
 | *Getter* | is_hdr()       |
 +----------+----------------+
 
-If ``true``, lightmap can capture light values greater than ``1.0``. Turning this off will result in a smaller lightmap. Default value:``false``.
+If ``true``, the lightmap can capture light values greater than ``1.0``. Turning this off will result in a smaller file size. Default value: ``false``.
 
 .. _class_BakedLightmap_property_bake_mode:
 
@@ -220,7 +220,7 @@ Grid size used for real-time capture information on dynamic objects. Cannot be l
 | *Getter* | get_image_path()      |
 +----------+-----------------------+
 
-Location where lightmaps will be saved.
+The location where lightmaps will be saved.
 
 .. _class_BakedLightmap_property_light_data:
 

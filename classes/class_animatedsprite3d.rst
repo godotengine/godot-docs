@@ -106,17 +106,17 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
-Returns ``true`` if an animation if currently being played.
+Returns ``true`` if an animation is currently being played.
 
 .. _class_AnimatedSprite3D_method_play:
 
 - void **play** **(** :ref:`String<class_String>` anim="" **)**
 
-Play the animation set in parameter. If no parameter is provided, the current animation is played.
+Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played.
 
 .. _class_AnimatedSprite3D_method_stop:
 
 - void **stop** **(** **)**
 
-Stop the current animation (does not reset the frame counter).
+Stops the current animation (does not reset the frame counter).
 

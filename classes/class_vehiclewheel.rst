@@ -14,7 +14,7 @@ VehicleWheel
 Brief Description
 -----------------
 
-Physics object that simulates the behaviour of a wheel.
+Physics object that simulates the behavior of a wheel.
 
 Properties
 ----------
@@ -57,7 +57,7 @@ Methods
 Description
 -----------
 
-This node needs to be used as a child node of :ref:`VehicleBody<class_VehicleBody>` and simulates the behaviour of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.
+This node needs to be used as a child node of :ref:`VehicleBody<class_VehicleBody>` and simulates the behavior of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.
 
 Property Descriptions
 ---------------------
@@ -84,7 +84,7 @@ The damping applied to the spring when the spring is being compressed. This valu
 | *Getter* | get_damping_relaxation()      |
 +----------+-------------------------------+
 
-The damping applied to the spring when relaxing. This value should be between 0.0 (no damping) and 1.0. This value should always be slightly higher than the :ref:`damping_compression<class_VehicleWheel_property_damping_compression>` property. For a :ref:`damping_compression<class_VehicleWheel_property_damping_compression>` value of 0.3, try a relaxation value of 0.5
+The damping applied to the spring when relaxing. This value should be between 0.0 (no damping) and 1.0. This value should always be slightly higher than the :ref:`damping_compression<class_VehicleWheel_property_damping_compression>` property. For a :ref:`damping_compression<class_VehicleWheel_property_damping_compression>` value of 0.3, try a relaxation value of 0.5.
 
 .. _class_VehicleWheel_property_suspension_max_force:
 
@@ -96,7 +96,7 @@ The damping applied to the spring when relaxing. This value should be between 0.
 | *Getter* | get_suspension_max_force()      |
 +----------+---------------------------------+
 
-The maximum force the spring can resist. This value should be higher than a quarter of the :ref:`RigidBody.mass<class_RigidBody_property_mass>` of the :ref:`VehicleBody<class_VehicleBody>` or the spring will not carry the weight of the vehicle. Good results are often obtained by a value that is about 3x to 4x this number.
+The maximum force the spring can resist. This value should be higher than a quarter of the :ref:`RigidBody.mass<class_RigidBody_property_mass>` of the :ref:`VehicleBody<class_VehicleBody>` or the spring will not carry the weight of the vehicle. Good results are often obtained by a value that is about 3× to 4× this number.
 
 .. _class_VehicleWheel_property_suspension_stiffness:
 
@@ -120,7 +120,7 @@ This value defines the stiffness of the suspension. Use a value lower than 50 fo
 | *Getter* | get_suspension_travel()      |
 +----------+------------------------------+
 
-This is the distance the suspension can travel. As Godot measures are in meters keep this setting relatively low. Try a value between 0.1 and 0.3 depending on the type of car .
+This is the distance the suspension can travel. As Godot units are equivalent to meters, keep this setting relatively low. Try a value between 0.1 and 0.3 depending on the type of car.
 
 .. _class_VehicleWheel_property_use_as_steering:
 
@@ -132,7 +132,7 @@ This is the distance the suspension can travel. As Godot measures are in meters 
 | *Getter* | is_used_as_steering()      |
 +----------+----------------------------+
 
-If ``true`` this wheel will be turned when the car steers.
+If ``true``, this wheel will be turned when the car steers.
 
 .. _class_VehicleWheel_property_use_as_traction:
 
@@ -144,7 +144,7 @@ If ``true`` this wheel will be turned when the car steers.
 | *Getter* | is_used_as_traction()      |
 +----------+----------------------------+
 
-If ``true`` this wheel transfers engine force to the ground to propel the vehicle forward.
+If ``true``, this wheel transfers engine force to the ground to propel the vehicle forward.
 
 .. _class_VehicleWheel_property_wheel_friction_slip:
 
@@ -194,7 +194,7 @@ This is the distance in meters the wheel is lowered from its origin point. Don't
 | *Getter* | get_roll_influence()      |
 +----------+---------------------------+
 
-This value effects the roll of your vehicle. If set to 0.0 for all wheels your vehicle will be prone to rolling over while a value of 1.0 will resist body roll.
+This value affects the roll of your vehicle. If set to 0.0 for all wheels, your vehicle will be prone to rolling over, while a value of 1.0 will resist body roll.
 
 Method Descriptions
 -------------------

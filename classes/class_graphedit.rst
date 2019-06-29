@@ -110,15 +110,23 @@ Signal sent at the beginning of a GraphNode movement.
 
 Signal sent at the end of a GraphNode movement.
 
+.. _class_GraphEdit_signal_connection_from_empty:
+
+- **connection_from_empty** **(** :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot, :ref:`Vector2<class_Vector2>` release_position **)**
+
+Signal sent when user dragging connection from input port into empty space of the graph.
+
 .. _class_GraphEdit_signal_connection_request:
 
 - **connection_request** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot **)**
 
-Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be created.
+Signal sent to the GraphEdit when the connection between the ``from_slot`` slot of the ``from`` GraphNode and the ``to_slot`` slot of the ``to`` GraphNode is attempted to be created.
 
 .. _class_GraphEdit_signal_connection_to_empty:
 
 - **connection_to_empty** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`Vector2<class_Vector2>` release_position **)**
+
+Signal sent when user dragging connection from output port into empty space of the graph.
 
 .. _class_GraphEdit_signal_delete_nodes_request:
 
@@ -130,13 +138,13 @@ Signal sent when a GraphNode is attempted to be removed from the GraphEdit.
 
 - **disconnection_request** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot **)**
 
-Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be removed.
+Emitted to the GraphEdit when the connection between ``from_slot`` slot of ``from`` GraphNode and ``to_slot`` slot of ``to`` GraphNode is attempted to be removed.
 
 .. _class_GraphEdit_signal_duplicate_nodes_request:
 
 - **duplicate_nodes_request** **(** **)**
 
-Signal sent when a GraphNode is attempted to be duplicated in the GraphEdit.
+Emitted when a GraphNode is attempted to be duplicated in the GraphEdit.
 
 .. _class_GraphEdit_signal_node_selected:
 
@@ -148,7 +156,7 @@ Emitted when a GraphNode is selected.
 
 - **popup_request** **(** :ref:`Vector2<class_Vector2>` position **)**
 
-Signal sent when a popup is requested. Happens on right-clicking in the GraphEdit. 'p_position' is the position of the mouse pointer when the signal is sent.
+Emitted when a popup is requested. Happens on right-clicking in the GraphEdit. ``position`` is the position of the mouse pointer when the signal is sent.
 
 .. _class_GraphEdit_signal_scroll_offset_changed:
 
@@ -157,9 +165,9 @@ Signal sent when a popup is requested. Happens on right-clicking in the GraphEdi
 Description
 -----------
 
-GraphEdit manages the showing of GraphNodes it contains, as well as connections and disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNodes slots is disabled by default.
+GraphEdit manages the showing of GraphNodes it contains, as well as connections and disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNode slots is disabled by default.
 
-It is greatly advised to enable low processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
+It is greatly advised to enable low-processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
 
 Property Descriptions
 ---------------------
@@ -249,25 +257,25 @@ Makes possible to disconnect nodes when dragging from the slot at the right if i
 
 - void **clear_connections** **(** **)**
 
-Remove all connections between nodes.
+Removes all connections between nodes.
 
 .. _class_GraphEdit_method_connect_node:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_node** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
-Create a connection between 'from_port' slot of 'from' GraphNode and 'to_port' slot of 'to' GraphNode. If the connection already exists, no connection is created.
+Create a connection between the ``from_port`` slot of the ``from`` GraphNode and the ``to_port`` slot of the ``to`` GraphNode. If the connection already exists, no connection is created.
 
 .. _class_GraphEdit_method_disconnect_node:
 
 - void **disconnect_node** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
-Remove the connection between 'from_port' slot of 'from' GraphNode and 'to_port' slot of 'to' GraphNode, if connection exists.
+Removes the connection between the ``from_port`` slot of the ``from`` GraphNode and the ``to_port`` slot of the ``to`` GraphNode. If the connection does not exist, no connection is removed.
 
 .. _class_GraphEdit_method_get_connection_list:
 
 - :ref:`Array<class_Array>` **get_connection_list** **(** **)** const
 
-Returns an Array containing the list of connections. A connection consists in a structure of the form {from_port: 0, from: "GraphNode name 0", to_port: 1, to: "GraphNode name 1" }
+Returns an Array containing the list of connections. A connection consists in a structure of the form ``{ from_port: 0, from: "GraphNode name 0", to_port: 1, to: "GraphNode name 1" }``.
 
 .. _class_GraphEdit_method_get_zoom_hbox:
 
@@ -277,7 +285,7 @@ Returns an Array containing the list of connections. A connection consists in a 
 
 - :ref:`bool<class_bool>` **is_node_connected** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
-Returns ``true`` if the 'from_port' slot of 'from' GraphNode is connected to the 'to_port' slot of 'to' GraphNode.
+Returns ``true`` if the ``from_port`` slot of the ``from`` GraphNode is connected to the ``to_port`` slot of the ``to`` GraphNode.
 
 .. _class_GraphEdit_method_is_valid_connection_type:
 

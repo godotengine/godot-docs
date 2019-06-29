@@ -823,23 +823,23 @@ enum **TextureType**:
 
 enum **TextureFlags**:
 
-- **TEXTURE_FLAG_MIPMAPS** = **1** --- Generate mipmaps, which are smaller versions of the same texture to use when zoomed out, keeping the aspect ratio.
+- **TEXTURE_FLAG_MIPMAPS** = **1** --- Generates mipmaps, which are smaller versions of the same texture to use when zoomed out, keeping the aspect ratio.
 
-- **TEXTURE_FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge).
+- **TEXTURE_FLAG_REPEAT** = **2** --- Repeats the texture (instead of clamp to edge).
 
-- **TEXTURE_FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth zooming in of the texture.
+- **TEXTURE_FLAG_FILTER** = **4** --- Uses a magnifying filter, to enable smooth zooming in of the texture.
 
-- **TEXTURE_FLAG_ANISOTROPIC_FILTER** = **8** --- Anisotropic mipmap filtering. Generates smaller versions of the same texture with different aspect ratios.
+- **TEXTURE_FLAG_ANISOTROPIC_FILTER** = **8** --- Uses anisotropic mipmap filtering. Generates smaller versions of the same texture with different aspect ratios.
 
-More effective on planes often shown going to the horrizon as those textures (Walls or Ground for example) get squashed in the viewport to different aspect ratios and regular mipmaps keep the aspect ratio so they don't optimize storage that well in those cases.
+This results in better-looking textures when viewed from oblique angles.
 
-- **TEXTURE_FLAG_CONVERT_TO_LINEAR** = **16** --- Converts texture to SRGB color space.
+- **TEXTURE_FLAG_CONVERT_TO_LINEAR** = **16** --- Converts the texture to the sRGB color space.
 
-- **TEXTURE_FLAG_MIRRORED_REPEAT** = **32** --- Repeat texture with alternate sections mirrored.
+- **TEXTURE_FLAG_MIRRORED_REPEAT** = **32** --- Repeats the texture with alternate sections mirrored.
 
 - **TEXTURE_FLAG_USED_FOR_STREAMING** = **2048** --- Texture is a video surface.
 
-- **TEXTURE_FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
+- **TEXTURE_FLAGS_DEFAULT** = **7** --- Default flags. :ref:`TEXTURE_FLAG_MIPMAPS<class_VisualServer_constant_TEXTURE_FLAG_MIPMAPS>`, :ref:`TEXTURE_FLAG_REPEAT<class_VisualServer_constant_TEXTURE_FLAG_REPEAT>` and :ref:`TEXTURE_FLAG_FILTER<class_VisualServer_constant_TEXTURE_FLAG_FILTER>` are are enabled.
 
 .. _enum_VisualServer_ShaderMode:
 
@@ -859,7 +859,7 @@ enum **ShaderMode**:
 
 - **SHADER_PARTICLES** = **2** --- Shader is a particle shader.
 
-- **SHADER_MAX** = **3** --- Marks maximum of the shader types array. used internally.
+- **SHADER_MAX** = **3** --- Represents the size of the :ref:`ShaderMode<enum_VisualServer_ShaderMode>` enum.
 
 .. _enum_VisualServer_ArrayType:
 
@@ -893,9 +893,9 @@ enum **ArrayType**:
 
 - **ARRAY_COLOR** = **3** --- Array is a color array.
 
-- **ARRAY_TEX_UV** = **4** --- Array is a uv coordinates array.
+- **ARRAY_TEX_UV** = **4** --- Array is an UV coordinates array.
 
-- **ARRAY_TEX_UV2** = **5** --- Array is a uv coordinates array for the second uv coordinates.
+- **ARRAY_TEX_UV2** = **5** --- Array is an UV coordinates array for the second UV coordinates.
 
 - **ARRAY_BONES** = **6** --- Array contains bone information.
 
@@ -903,7 +903,7 @@ enum **ArrayType**:
 
 - **ARRAY_INDEX** = **8** --- Array is index array.
 
-- **ARRAY_MAX** = **9** --- Marks the maximum of the array types. Used internally.
+- **ARRAY_MAX** = **9** --- Represents the size of the :ref:`ArrayType<enum_VisualServer_ArrayType>` enum.
 
 .. _enum_VisualServer_ArrayFormat:
 
@@ -959,15 +959,15 @@ enum **ArrayFormat**:
 
 - **ARRAY_FORMAT_COLOR** = **8** --- Flag used to mark a color array.
 
-- **ARRAY_FORMAT_TEX_UV** = **16** --- Flag used to mark a uv coordinates array.
+- **ARRAY_FORMAT_TEX_UV** = **16** --- Flag used to mark an UV coordinates array.
 
-- **ARRAY_FORMAT_TEX_UV2** = **32** --- Flag used to mark a uv coordinates array for the second uv coordinates.
+- **ARRAY_FORMAT_TEX_UV2** = **32** --- Flag used to mark an UV coordinates array for the second UV coordinates.
 
 - **ARRAY_FORMAT_BONES** = **64** --- Flag used to mark a bone information array.
 
 - **ARRAY_FORMAT_WEIGHTS** = **128** --- Flag used to mark a weights array.
 
-- **ARRAY_FORMAT_INDEX** = **256** --- Flag used to mark a index array.
+- **ARRAY_FORMAT_INDEX** = **256** --- Flag used to mark an index array.
 
 - **ARRAY_COMPRESS_VERTEX** = **512** --- Flag used to mark a compressed (half float) vertex array.
 
@@ -977,9 +977,9 @@ enum **ArrayFormat**:
 
 - **ARRAY_COMPRESS_COLOR** = **4096** --- Flag used to mark a compressed (half float) color array.
 
-- **ARRAY_COMPRESS_TEX_UV** = **8192** --- Flag used to mark a compressed (half float) uv coordinates array.
+- **ARRAY_COMPRESS_TEX_UV** = **8192** --- Flag used to mark a compressed (half float) UV coordinates array.
 
-- **ARRAY_COMPRESS_TEX_UV2** = **16384** --- Flag used to mark a compressed (half float) uv coordinates array for the second uv coordinates.
+- **ARRAY_COMPRESS_TEX_UV2** = **16384** --- Flag used to mark a compressed (half float) UV coordinates array for the second UV coordinates.
 
 - **ARRAY_COMPRESS_BONES** = **32768**
 
@@ -989,9 +989,9 @@ enum **ArrayFormat**:
 
 - **ARRAY_FLAG_USE_2D_VERTICES** = **262144** --- Flag used to mark that the array contains 2D vertices.
 
-- **ARRAY_FLAG_USE_16_BIT_BONES** = **524288** --- Flag used to mark that the array uses 16 bit bones instead of 8 bit.
+- **ARRAY_FLAG_USE_16_BIT_BONES** = **524288** --- Flag used to mark that the array uses 16-bit bones instead of 8-bit.
 
-- **ARRAY_COMPRESS_DEFAULT** = **97280** --- Used to set flags ARRAY_COMPRESS_VERTEX, ARRAY_COMPRESS_NORMAL, ARRAY_COMPRESS_TANGENT, ARRAY_COMPRESS_COLOR, ARRAY_COMPRESS_TEX_UV, ARRAY_COMPRESS_TEX_UV2 and ARRAY_COMPRESS_WEIGHTS quickly.
+- **ARRAY_COMPRESS_DEFAULT** = **97280** --- Used to set flags :ref:`ARRAY_COMPRESS_VERTEX<class_VisualServer_constant_ARRAY_COMPRESS_VERTEX>`, :ref:`ARRAY_COMPRESS_NORMAL<class_VisualServer_constant_ARRAY_COMPRESS_NORMAL>`, :ref:`ARRAY_COMPRESS_TANGENT<class_VisualServer_constant_ARRAY_COMPRESS_TANGENT>`, :ref:`ARRAY_COMPRESS_COLOR<class_VisualServer_constant_ARRAY_COMPRESS_COLOR>`, :ref:`ARRAY_COMPRESS_TEX_UV<class_VisualServer_constant_ARRAY_COMPRESS_TEX_UV>`, :ref:`ARRAY_COMPRESS_TEX_UV2<class_VisualServer_constant_ARRAY_COMPRESS_TEX_UV2>` and :ref:`ARRAY_COMPRESS_WEIGHTS<class_VisualServer_constant_ARRAY_COMPRESS_WEIGHTS>` quickly.
 
 .. _enum_VisualServer_PrimitiveType:
 
@@ -1027,7 +1027,7 @@ enum **PrimitiveType**:
 
 - **PRIMITIVE_TRIANGLE_FAN** = **6** --- Primitive to draw consists of a triangle strip (the last 2 vertices are always combined with the first to make a triangle).
 
-- **PRIMITIVE_MAX** = **7** --- Marks the primitive types endpoint. used internally.
+- **PRIMITIVE_MAX** = **7** --- Represents the size of the :ref:`PrimitiveType<enum_VisualServer_PrimitiveType>` enum.
 
 .. _enum_VisualServer_BlendShapeMode:
 
@@ -1053,9 +1053,9 @@ enum **LightType**:
 
 - **LIGHT_DIRECTIONAL** = **0** --- Is a directional (sun) light.
 
-- **LIGHT_OMNI** = **1** --- is an omni light.
+- **LIGHT_OMNI** = **1** --- Is an omni light.
 
-- **LIGHT_SPOT** = **2** --- is an spot light.
+- **LIGHT_SPOT** = **2** --- Is a spot light.
 
 .. _enum_VisualServer_LightParam:
 
@@ -1119,7 +1119,7 @@ enum **LightParam**:
 
 - **LIGHT_PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14**
 
-- **LIGHT_PARAM_MAX** = **15** --- The light parameters endpoint. Used internally.
+- **LIGHT_PARAM_MAX** = **15** --- Represents the size of the :ref:`LightParam<enum_VisualServer_LightParam>` enum.
 
 .. _enum_VisualServer_LightOmniShadowMode:
 
@@ -1207,7 +1207,7 @@ enum **ViewportClearMode**:
 
 - **VIEWPORT_CLEAR_NEVER** = **1** --- The viewport is never cleared before drawing.
 
-- **VIEWPORT_CLEAR_ONLY_NEXT_FRAME** = **2** --- The viewport is cleared once, then the clear mode is set to ``VIEWPORT_CLEAR_NEVER``.
+- **VIEWPORT_CLEAR_ONLY_NEXT_FRAME** = **2** --- The viewport is cleared once, then the clear mode is set to :ref:`VIEWPORT_CLEAR_NEVER<class_VisualServer_constant_VIEWPORT_CLEAR_NEVER>`.
 
 .. _enum_VisualServer_ViewportMSAA:
 
@@ -1225,13 +1225,13 @@ enum **ViewportMSAA**:
 
 - **VIEWPORT_MSAA_DISABLED** = **0** --- Multisample antialiasing is disabled.
 
-- **VIEWPORT_MSAA_2X** = **1** --- Multisample antialiasing is set to 2X.
+- **VIEWPORT_MSAA_2X** = **1** --- Multisample antialiasing is set to 2×.
 
-- **VIEWPORT_MSAA_4X** = **2** --- Multisample antialiasing is set to 4X.
+- **VIEWPORT_MSAA_4X** = **2** --- Multisample antialiasing is set to 4×.
 
-- **VIEWPORT_MSAA_8X** = **3** --- Multisample antialiasing is set to 8X.
+- **VIEWPORT_MSAA_8X** = **3** --- Multisample antialiasing is set to 8×.
 
-- **VIEWPORT_MSAA_16X** = **4** --- Multisample antialiasing is set to 16X.
+- **VIEWPORT_MSAA_16X** = **4** --- Multisample antialiasing is set to 16×.
 
 .. _enum_VisualServer_ViewportUsage:
 
@@ -1283,7 +1283,7 @@ enum **ViewportRenderInfo**:
 
 - **VIEWPORT_RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5**
 
-- **VIEWPORT_RENDER_INFO_MAX** = **6** --- Marks end of VIEWPORT_RENDER_INFO\* constants. Used internally.
+- **VIEWPORT_RENDER_INFO_MAX** = **6** --- Represents the size of the :ref:`ViewportRenderInfo<enum_VisualServer_ViewportRenderInfo>` enum.
 
 .. _enum_VisualServer_ViewportDebugDraw:
 
@@ -1369,7 +1369,7 @@ enum **InstanceType**:
 
 - **INSTANCE_LIGHTMAP_CAPTURE** = **8**
 
-- **INSTANCE_MAX** = **9** --- The max value for INSTANCE\_\* constants, used internally.
+- **INSTANCE_MAX** = **9** --- Represents the size of the :ref:`InstanceType<enum_VisualServer_InstanceType>` enum.
 
 - **INSTANCE_GEOMETRY_MASK** = **30** --- A combination of the flags of geometry instances (mesh, multimesh, immediate and particles).
 
@@ -1387,7 +1387,7 @@ enum **InstanceFlags**:
 
 - **INSTANCE_FLAG_DRAW_NEXT_FRAME_IF_VISIBLE** = **1**
 
-- **INSTANCE_FLAG_MAX** = **2**
+- **INSTANCE_FLAG_MAX** = **2** --- Represents the size of the :ref:`InstanceFlags<enum_VisualServer_InstanceFlags>` enum.
 
 .. _enum_VisualServer_ShadowCastingSetting:
 
@@ -1525,9 +1525,9 @@ enum **RenderInfo**:
 
 - **INFO_DRAW_CALLS_IN_FRAME** = **5** --- The amount of draw calls in frame.
 
-- **INFO_USAGE_VIDEO_MEM_TOTAL** = **6**
+- **INFO_USAGE_VIDEO_MEM_TOTAL** = **6** --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
 
-- **INFO_VIDEO_MEM_USED** = **7** --- The amount of vertex memory and texture memory used.
+- **INFO_VIDEO_MEM_USED** = **7** --- The amount of video memory used, i.e. texture and vertex memory combined.
 
 - **INFO_TEXTURE_MEM_USED** = **8** --- The amount of texture memory used.
 
@@ -1647,7 +1647,7 @@ enum **EnvironmentBG**:
 
 - **ENV_BG_KEEP** = **5**
 
-- **ENV_BG_MAX** = **7**
+- **ENV_BG_MAX** = **7** --- Represents the size of the :ref:`EnvironmentBG<enum_VisualServer_EnvironmentBG>` enum.
 
 .. _enum_VisualServer_EnvironmentDOFBlurQuality:
 
@@ -1876,7 +1876,7 @@ See :ref:`NinePatchRect<class_NinePatchRect>` for more explanation.
 
 - void **canvas_item_add_particles** **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` particles, :ref:`RID<class_RID>` texture, :ref:`RID<class_RID>` normal_map **)**
 
-Adds a particles system to the :ref:`CanvasItem<class_CanvasItem>`'s draw commands.
+Adds a particle system to the :ref:`CanvasItem<class_CanvasItem>`'s draw commands.
 
 .. _class_VisualServer_method_canvas_item_add_polygon:
 
@@ -2030,13 +2030,13 @@ Sets if the canvas item (including its children) is visible.
 
 - void **canvas_item_set_z_as_relative_to_parent** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**
 
-If this is enabled, the z-index of the parent will be added to the children's z-index.
+If this is enabled, the Z index of the parent will be added to the children's Z index.
 
 .. _class_VisualServer_method_canvas_item_set_z_index:
 
 - void **canvas_item_set_z_index** **(** :ref:`RID<class_RID>` item, :ref:`int<class_int>` z_index **)**
 
-Sets the :ref:`CanvasItem<class_CanvasItem>`'s z-index, i.e. its draw order (lower indexes are drawn first).
+Sets the :ref:`CanvasItem<class_CanvasItem>`'s Z index, i.e. its draw order (lower indexes are drawn first).
 
 .. _class_VisualServer_method_canvas_light_attach_to_canvas:
 
@@ -2072,7 +2072,7 @@ Enables or disables light occluder.
 
 - void **canvas_light_occluder_set_light_mask** **(** :ref:`RID<class_RID>` occluder, :ref:`int<class_int>` mask **)**
 
-The light mask. See :ref:`LightOccluder2D<class_LightOccluder2D>` for more information on light masks
+The light mask. See :ref:`LightOccluder2D<class_LightOccluder2D>` for more information on light masks.
 
 .. _class_VisualServer_method_canvas_light_occluder_set_polygon:
 
@@ -2114,13 +2114,13 @@ Sets a canvas light's height.
 
 - void **canvas_light_set_item_cull_mask** **(** :ref:`RID<class_RID>` light, :ref:`int<class_int>` mask **)**
 
-The light mask. See :ref:`LightOccluder2D<class_LightOccluder2D>` for more information on light masks
+The light mask. See :ref:`LightOccluder2D<class_LightOccluder2D>` for more information on light masks.
 
 .. _class_VisualServer_method_canvas_light_set_item_shadow_cull_mask:
 
 - void **canvas_light_set_item_shadow_cull_mask** **(** :ref:`RID<class_RID>` light, :ref:`int<class_int>` mask **)**
 
-The shadow mask. binary about which layers this canvas light affects which canvas item's shadows. See :ref:`LightOccluder2D<class_LightOccluder2D>` for more information on light masks.
+The binary mask used to determine which layers this canvas light's shadows affects. See :ref:`LightOccluder2D<class_LightOccluder2D>` for more information on light masks.
 
 .. _class_VisualServer_method_canvas_light_set_layer_range:
 
@@ -2132,7 +2132,7 @@ The layer range that gets rendered with this light.
 
 - void **canvas_light_set_mode** **(** :ref:`RID<class_RID>` light, :ref:`CanvasLightMode<enum_VisualServer_CanvasLightMode>` mode **)**
 
-The mode of the light, see CANVAS_LIGHT_MODE\_\* constants.
+The mode of the light, see ``CANVAS_LIGHT_MODE_*`` constants.
 
 .. _class_VisualServer_method_canvas_light_set_scale:
 
@@ -2160,7 +2160,7 @@ Enables or disables the canvas light's shadow.
 
 - void **canvas_light_set_shadow_filter** **(** :ref:`RID<class_RID>` light, :ref:`CanvasLightShadowFilter<enum_VisualServer_CanvasLightShadowFilter>` filter **)**
 
-Sets the canvas light's shadow's filter, see CANVAS_LIGHT_SHADOW_FILTER\_\* constants.
+Sets the canvas light's shadow's filter, see ``CANVAS_LIGHT_SHADOW_FILTER_*`` constants.
 
 .. _class_VisualServer_method_canvas_light_set_shadow_gradient_length:
 
@@ -2172,7 +2172,7 @@ Sets the length of the shadow's gradient.
 
 - void **canvas_light_set_shadow_smooth** **(** :ref:`RID<class_RID>` light, :ref:`float<class_float>` smooth **)**
 
-Smoothens the shadow. The lower, the more smooth.
+Smoothens the shadow. The lower, the smoother.
 
 .. _class_VisualServer_method_canvas_light_set_texture:
 
@@ -2202,7 +2202,7 @@ Creates a new light occluder polygon.
 
 - void **canvas_occluder_polygon_set_cull_mode** **(** :ref:`RID<class_RID>` occluder_polygon, :ref:`CanvasOccluderPolygonCullMode<enum_VisualServer_CanvasOccluderPolygonCullMode>` mode **)**
 
-Sets an occluder polygons cull mode. See CANVAS_OCCLUDER_POLYGON_CULL_MODE\_\* constants.
+Sets an occluder polygons cull mode. See ``CANVAS_OCCLUDER_POLYGON_CULL_MODE_*`` constants.
 
 .. _class_VisualServer_method_canvas_occluder_polygon_set_shape:
 
@@ -2338,7 +2338,7 @@ Tries to free an object in the VisualServer.
 
 - :ref:`int<class_int>` **get_render_info** **(** :ref:`RenderInfo<enum_VisualServer_RenderInfo>` info **)**
 
-Returns a certain information, see RENDER_INFO\_\* for options.
+Returns a certain information, see ``RENDER_INFO_*`` for options.
 
 .. _class_VisualServer_method_get_test_cube:
 
@@ -2616,6 +2616,10 @@ Initializes the visual server.
 
 - :ref:`Array<class_Array>` **instances_cull_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`RID<class_RID>` scenario **)** const
 
+Returns an array of object IDs intersecting with the provided 3D ray. Only visual 3D nodes are considered, such as :ref:`MeshInstance<class_MeshInstance>` or :ref:`DirectionalLight<class_DirectionalLight>`. Use :ref:`@GDScript.instance_from_id<class_@GDScript_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World<class_World>` you want to query.
+
+**Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
+
 .. _class_VisualServer_method_light_directional_set_blend_splits:
 
 - void **light_directional_set_blend_splits** **(** :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` enable **)**
@@ -2750,19 +2754,19 @@ Returns the shader of a certain material's shader. Returns an empty RID if the m
 
 - void **material_set_line_width** **(** :ref:`RID<class_RID>` material, :ref:`float<class_float>` width **)**
 
-Sets a materials line width.
+Sets a material's line width.
 
 .. _class_VisualServer_method_material_set_next_pass:
 
 - void **material_set_next_pass** **(** :ref:`RID<class_RID>` material, :ref:`RID<class_RID>` next_material **)**
 
-Sets an objects next material.
+Sets an object's next material.
 
 .. _class_VisualServer_method_material_set_param:
 
 - void **material_set_param** **(** :ref:`RID<class_RID>` material, :ref:`String<class_String>` parameter, :ref:`Variant<class_Variant>` value **)**
 
-Sets a materials parameter.
+Sets a material's parameter.
 
 .. _class_VisualServer_method_material_set_render_priority:
 
@@ -2780,7 +2784,7 @@ Sets a shader material's shader.
 
 - void **mesh_add_surface_from_arrays** **(** :ref:`RID<class_RID>` mesh, :ref:`PrimitiveType<enum_VisualServer_PrimitiveType>` primtive, :ref:`Array<class_Array>` arrays, :ref:`Array<class_Array>` blend_shapes=[  ], :ref:`int<class_int>` compress_format=97280 **)**
 
-Adds a surface generated from the Arrays to a mesh. See PRIMITIVE_TYPE\_\* constants for types.
+Adds a surface generated from the Arrays to a mesh. See ``PRIMITIVE_TYPE_*`` constants for types.
 
 .. _class_VisualServer_method_mesh_clear:
 
@@ -2876,7 +2880,7 @@ Returns a mesh's surface's buffer arrays.
 
 - :ref:`Array<class_Array>` **mesh_surface_get_blend_shape_arrays** **(** :ref:`RID<class_RID>` mesh, :ref:`int<class_int>` surface **)** const
 
-Returns a mesh's surface's arrays for blend shapes
+Returns a mesh's surface's arrays for blend shapes.
 
 .. _class_VisualServer_method_mesh_surface_get_format:
 
@@ -3134,9 +3138,9 @@ Sets a mesh's surface's material.
 
 - void **request_frame_drawn_callback** **(** :ref:`Object<class_Object>` where, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata **)**
 
-Schedules a callback to the corresponding named 'method' on 'where' after a frame has been drawn.
+Schedules a callback to the corresponding named ``method`` on ``where`` after a frame has been drawn.
 
-The callback method must use only 1 argument which will be called with 'userdata'.
+The callback method must use only 1 argument which will be called with ``userdata``.
 
 .. _class_VisualServer_method_scenario_create:
 
@@ -3348,7 +3352,7 @@ Sets the texture's image data. If it's a CubeMap, it sets the image data at a cu
 
 - void **texture_set_flags** **(** :ref:`RID<class_RID>` texture, :ref:`int<class_int>` flags **)**
 
-Sets the texture's flags. See :ref:`TextureFlags<enum_VisualServer_TextureFlags>` for options
+Sets the texture's flags. See :ref:`TextureFlags<enum_VisualServer_TextureFlags>` for options.
 
 .. _class_VisualServer_method_texture_set_path:
 
@@ -3416,7 +3420,7 @@ Detaches the viewport from the screen.
 
 - :ref:`int<class_int>` **viewport_get_render_info** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportRenderInfo<enum_VisualServer_ViewportRenderInfo>` info **)**
 
-Returns a viewport's render info. for options see VIEWPORT_RENDER_INFO\* constants.
+Returns a viewport's render information. For options, see the ``VIEWPORT_RENDER_INFO*`` constants.
 
 .. _class_VisualServer_method_viewport_get_texture:
 
@@ -3500,7 +3504,7 @@ If ``true``, the viewport's canvas is not rendered.
 
 - void **viewport_set_msaa** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportMSAA<enum_VisualServer_ViewportMSAA>` msaa **)**
 
-Sets the anti-aliasing mode. see :ref:`ViewportMSAA<enum_VisualServer_ViewportMSAA>` for options.
+Sets the anti-aliasing mode. See :ref:`ViewportMSAA<enum_VisualServer_ViewportMSAA>` for options.
 
 .. _class_VisualServer_method_viewport_set_parent_viewport:
 

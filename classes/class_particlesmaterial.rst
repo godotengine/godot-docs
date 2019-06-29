@@ -254,7 +254,7 @@ Property Descriptions
 
 Initial rotation applied to each particle, in degrees.
 
-Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using ``BillboardMode.BILLBOARD_PARTICLES``.
+Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using :ref:`SpatialMaterial.BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`.
 
 .. _class_ParticlesMaterial_property_angle_curve:
 
@@ -292,7 +292,7 @@ Rotation randomness ratio. Default value: ``0``.
 
 Initial angular velocity applied to each particle. Sets the speed of rotation of the particle.
 
-Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using ``BillboardMode.BILLBOARD_PARTICLES``.
+Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using :ref:`SpatialMaterial.BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`.
 
 .. _class_ParticlesMaterial_property_angular_velocity_curve:
 
@@ -460,7 +460,7 @@ Damping randomness ratio. Default value: ``0``.
 | *Getter* | get_emission_box_extents()      |
 +----------+---------------------------------+
 
-The box's extents if ``emission_shape`` is set to ``EMISSION_SHAPE_BOX``.
+The box's extents if ``emission_shape`` is set to :ref:`EMISSION_SHAPE_BOX<class_ParticlesMaterial_constant_EMISSION_SHAPE_BOX>`.
 
 .. _class_ParticlesMaterial_property_emission_color_texture:
 
@@ -484,7 +484,7 @@ Particle color will be modulated by color determined by sampling this texture at
 | *Getter* | get_emission_normal_texture()      |
 +----------+------------------------------------+
 
-Particle velocity and rotation will be set by sampling this texture at the same point as the :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`. Used only in ``EMISSION_SHAPE_DIRECTED``. Can be created automatically from mesh or node by selecting "Create Emission Points from Mesh/Node" under the "Particles" tool in the toolbar.
+Particle velocity and rotation will be set by sampling this texture at the same point as the :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`. Used only in :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_ParticlesMaterial_constant_EMISSION_SHAPE_DIRECTED_POINTS>`. Can be created automatically from mesh or node by selecting "Create Emission Points from Mesh/Node" under the "Particles" tool in the toolbar.
 
 .. _class_ParticlesMaterial_property_emission_point_count:
 
@@ -496,7 +496,7 @@ Particle velocity and rotation will be set by sampling this texture at the same 
 | *Getter* | get_emission_point_count()      |
 +----------+---------------------------------+
 
-The number of emission points if ``emission_shape`` is set to ``EMISSION_SHAPE_POINTS`` or ``EMISSION_SHAPE_DIRECTED_POINTS``.
+The number of emission points if ``emission_shape`` is set to :ref:`EMISSION_SHAPE_POINTS<class_ParticlesMaterial_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_ParticlesMaterial_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
 
 .. _class_ParticlesMaterial_property_emission_point_texture:
 
@@ -508,7 +508,7 @@ The number of emission points if ``emission_shape`` is set to ``EMISSION_SHAPE_P
 | *Getter* | get_emission_point_texture()      |
 +----------+-----------------------------------+
 
-Particles will be emitted at positions determined by sampling this texture at a random position. Used with ``EMISSION_SHAPE_POINTS`` and ``EMISSION_SHAPE_DIRECTED_POINTS``. Can be created automatically from mesh or node by selecting "Create Emission Points from Mesh/Node" under the "Particles" tool in the toolbar.
+Particles will be emitted at positions determined by sampling this texture at a random position. Used with :ref:`EMISSION_SHAPE_POINTS<class_ParticlesMaterial_constant_EMISSION_SHAPE_POINTS>` and :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_ParticlesMaterial_constant_EMISSION_SHAPE_DIRECTED_POINTS>`. Can be created automatically from mesh or node by selecting "Create Emission Points from Mesh/Node" under the "Particles" tool in the toolbar.
 
 .. _class_ParticlesMaterial_property_emission_shape:
 
@@ -520,7 +520,7 @@ Particles will be emitted at positions determined by sampling this texture at a 
 | *Getter* | get_emission_shape()      |
 +----------+---------------------------+
 
-Particles will be emitted inside this region. Use ``EMISSION_SHAPE_*`` constants for values. Default value: ``EMISSION_SHAPE_POINT``.
+Particles will be emitted inside this region. Use ``EMISSION_SHAPE_*`` constants for values. Default value: :ref:`EMISSION_SHAPE_POINT<class_ParticlesMaterial_constant_EMISSION_SHAPE_POINT>`.
 
 .. _class_ParticlesMaterial_property_emission_sphere_radius:
 
@@ -532,7 +532,7 @@ Particles will be emitted inside this region. Use ``EMISSION_SHAPE_*`` constants
 | *Getter* | get_emission_sphere_radius()      |
 +----------+-----------------------------------+
 
-The sphere's radius if ``emission_shape`` is set to ``EMISSION_SHAPE_SPHERE``.
+The sphere's radius if ``emission_shape`` is set to :ref:`EMISSION_SHAPE_SPHERE<class_ParticlesMaterial_constant_EMISSION_SHAPE_SPHERE>`.
 
 .. _class_ParticlesMaterial_property_flag_align_y:
 
@@ -544,7 +544,7 @@ The sphere's radius if ``emission_shape`` is set to ``EMISSION_SHAPE_SPHERE``.
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-Align y-axis of particle with the direction of its velocity.
+Align Y axis of particle with the direction of its velocity.
 
 .. _class_ParticlesMaterial_property_flag_disable_z:
 
@@ -568,7 +568,7 @@ If ``true``, particles will not move on the z axis. Default value: ``true`` for 
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true``, particles rotate around y-axis by :ref:`angle<class_ParticlesMaterial_property_angle>`.
+If ``true``, particles rotate around Y axis by :ref:`angle<class_ParticlesMaterial_property_angle>`.
 
 .. _class_ParticlesMaterial_property_flatness:
 

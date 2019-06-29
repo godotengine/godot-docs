@@ -211,7 +211,7 @@ The view format in which the ``EditorFileDialog`` displays resources to the user
 | *Getter* | get_mode()      |
 +----------+-----------------+
 
-The purpose of the ``EditorFileDialog``. Changes allowed behaviors.
+The purpose of the ``EditorFileDialog``, which defines the allowed behaviors.
 
 .. _class_EditorFileDialog_property_show_hidden_files:
 
@@ -234,7 +234,7 @@ Method Descriptions
 
 Adds a comma-delimited file extension filter option to the ``EditorFileDialog`` with an optional semi-colon-delimited label.
 
-Example: "\*.tscn, \*.scn; Scenes", results in filter text "Scenes (\*.tscn, \*.scn)".
+For example, ``"*.tscn, *.scn; Scenes"`` results in filter text "Scenes (\*.tscn, \*.scn)".
 
 .. _class_EditorFileDialog_method_clear_filters:
 

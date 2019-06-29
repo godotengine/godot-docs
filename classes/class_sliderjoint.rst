@@ -118,9 +118,9 @@ Enumerations
 
 enum **Param**:
 
-- **PARAM_LINEAR_LIMIT_UPPER** = **0** --- The maximum difference between the pivot points on their x-axis before damping happens.
+- **PARAM_LINEAR_LIMIT_UPPER** = **0** --- The maximum difference between the pivot points on their X axis before damping happens.
 
-- **PARAM_LINEAR_LIMIT_LOWER** = **1** --- The minimum difference between the pivot points on their x-axis before damping happens.
+- **PARAM_LINEAR_LIMIT_LOWER** = **1** --- The minimum difference between the pivot points on their X axis before damping happens.
 
 - **PARAM_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement across the slider axis once the limits get surpassed. The lower, the slower the movement.
 
@@ -162,12 +162,12 @@ enum **Param**:
 
 - **PARAM_ANGULAR_ORTHOGONAL_DAMPING** = **21** --- The amount of damping of the rotation across axes orthogonal to the slider.
 
-- **PARAM_MAX** = **22** --- End flag of PARAM\_\* constants, used internally.
+- **PARAM_MAX** = **22** --- Represents the size of the :ref:`Param<enum_SliderJoint_Param>` enum.
 
 Description
 -----------
 
-Slides across the x-axis of the pivot object.
+Slides across the X axis of the pivot object.
 
 Property Descriptions
 ---------------------
@@ -320,7 +320,7 @@ The amount of damping that happens once the limit defined by :ref:`linear_limit/
 | *Getter* | get_param()      |
 +----------+------------------+
 
-The minimum difference between the pivot points on their x-axis before damping happens.
+The minimum difference between the pivot points on their X axis before damping happens.
 
 .. _class_SliderJoint_property_linear_limit/restitution:
 
@@ -356,7 +356,7 @@ A factor applied to the movement across the slider axis once the limits get surp
 | *Getter* | get_param()      |
 +----------+------------------+
 
-The maximum difference between the pivot points on their x-axis before damping happens.
+The maximum difference between the pivot points on their X axis before damping happens.
 
 .. _class_SliderJoint_property_linear_motion/damping:
 

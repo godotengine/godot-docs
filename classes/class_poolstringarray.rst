@@ -44,7 +44,9 @@ Methods
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold :ref:`String<class_String>`. Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold :ref:`String<class_String>`\ s. Optimized for memory usage, does not fragment the memory.
+
+**Note:** This type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
@@ -53,31 +55,31 @@ Method Descriptions
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **PoolStringArray** **(** :ref:`Array<class_Array>` from **)**
 
-Construct a new ``PoolStringArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+Constructs a new ``PoolStringArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
 .. _class_PoolStringArray_method_append:
 
 - void **append** **(** :ref:`String<class_String>` string **)**
 
-Append an element at the end of the array (alias of :ref:`push_back<class_PoolStringArray_method_push_back>`).
+Appends an element at the end of the array (alias of :ref:`push_back<class_PoolStringArray_method_push_back>`).
 
 .. _class_PoolStringArray_method_append_array:
 
 - void **append_array** **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)**
 
-Append a ``PoolStringArray`` at the end of this array.
+Appends a ``PoolStringArray`` at the end of this array.
 
 .. _class_PoolStringArray_method_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**
 
-Insert a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
 .. _class_PoolStringArray_method_invert:
 
 - void **invert** **(** **)**
 
-Reverse the order of the elements in the array.
+Reverses the order of the elements in the array.
 
 .. _class_PoolStringArray_method_join:
 
@@ -89,25 +91,25 @@ Returns a :ref:`String<class_String>` with each element of the array joined with
 
 - void **push_back** **(** :ref:`String<class_String>` string **)**
 
-Append a string element at end of the array.
+Appends a string element at end of the array.
 
 .. _class_PoolStringArray_method_remove:
 
 - void **remove** **(** :ref:`int<class_int>` idx **)**
 
-Remove an element from the array by index.
+Removes an element from the array by index.
 
 .. _class_PoolStringArray_method_resize:
 
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
-Set the size of the array. If the array is grown reserve elements at the end of the array. If the array is shrunk truncate the array to the new size.
+Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
 .. _class_PoolStringArray_method_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**
 
-Change the :ref:`String<class_String>` at the given index.
+Changes the :ref:`String<class_String>` at the given index.
 
 .. _class_PoolStringArray_method_size:
 

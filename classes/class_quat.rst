@@ -78,7 +78,7 @@ Description
 
 A unit quaternion used for representing 3D rotations.
 
-It is similar to :ref:`Basis<class_Basis>`, which implements matrix representation of rotations, and can be parametrized using both an axis-angle pair or Euler angles. But due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating point errors.
+It is similar to :ref:`Basis<class_Basis>`, which implements matrix representation of rotations, and can be parametrized using both an axis-angle pair or Euler angles. But due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating-point errors.
 
 Quaternions need to be (re)normalized.
 
@@ -94,25 +94,25 @@ Property Descriptions
 
 - :ref:`float<class_float>` **w**
 
-W component of the quaternion. Default value: ``1``
+W component of the quaternion. Default value: ``1``.
 
 .. _class_Quat_property_x:
 
 - :ref:`float<class_float>` **x**
 
-X component of the quaternion. Default value: ``0``
+X component of the quaternion. Default value: ``0``.
 
 .. _class_Quat_property_y:
 
 - :ref:`float<class_float>` **y**
 
-Y component of the quaternion. Default value: ``0``
+Y component of the quaternion. Default value: ``0``.
 
 .. _class_Quat_property_z:
 
 - :ref:`float<class_float>` **z**
 
-Z component of the quaternion. Default value: ``0``
+Z component of the quaternion. Default value: ``0``.
 
 Method Descriptions
 -------------------
@@ -125,7 +125,7 @@ Returns the rotation matrix corresponding to the given quaternion.
 
 - :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Vector3<class_Vector3>` euler **)**
 
-Returns a quaternion that will perform a rotation specified by Euler angles (in the YXZ convention: first Z, then X, and Y last), given in the vector format as (X-angle, Y-angle, Z-angle).
+Returns a quaternion that will perform a rotation specified by Euler angles (in the YXZ convention: first Z, then X, and Y last), given in the vector format as (X angle, Y angle, Z angle).
 
 - :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
@@ -151,7 +151,7 @@ Returns the dot product of two quaternions.
 
 - :ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
 
-Returns Euler angles (in the YXZ convention: first Z, then X, and Y last) corresponding to the rotation represented by the unit quaternion. Returned vector contains the rotation angles in the format (X-angle, Y-angle, Z-angle).
+Returns Euler angles (in the YXZ convention: first Z, then X, and Y last) corresponding to the rotation represented by the unit quaternion. Returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
 
 .. _class_Quat_method_inverse:
 
@@ -187,13 +187,13 @@ Returns a copy of the quaternion, normalized to unit length.
 
 - void **set_axis_angle** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Set the quaternion to a rotation which rotates around axis by the specified angle, in radians. The axis must be a normalized vector.
+Sets the quaternion to a rotation which rotates around axis by the specified angle, in radians. The axis must be a normalized vector.
 
 .. _class_Quat_method_set_euler:
 
 - void **set_euler** **(** :ref:`Vector3<class_Vector3>` euler **)**
 
-Set the quaternion to a rotation specified by Euler angles (in the YXZ convention: first Z, then X, and Y last), given in the vector format as (X-angle, Y-angle, Z-angle).
+Sets the quaternion to a rotation specified by Euler angles (in the YXZ convention: first Z, then X, and Y last), given in the vector format as (X angle, Y angle, Z angle).
 
 .. _class_Quat_method_slerp:
 

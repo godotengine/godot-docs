@@ -96,7 +96,7 @@ Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, ro
 
 Sets the base of the VisualInstance, which changes how the engine handles the VisualInstance under the hood.
 
-It is recommended to only use set_base if you know what you're doing.
+It is recommended to only use :ref:`set_base<class_VisualInstance_method_set_base>` if you know what you're doing.
 
 .. _class_VisualInstance_method_set_layer_mask_bit:
 

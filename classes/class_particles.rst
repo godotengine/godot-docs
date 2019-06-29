@@ -131,7 +131,7 @@ Number of particles to emit.
 | *Getter* | get_draw_order()      |
 +----------+-----------------------+
 
-Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_INDEX``.
+Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: :ref:`DRAW_ORDER_INDEX<class_Particles_constant_DRAW_ORDER_INDEX>`.
 
 .. _class_Particles_property_draw_pass_1:
 
@@ -215,7 +215,7 @@ If ``true``, particles are being emitted. Default value: ``true``.
 | *Getter* | get_explosiveness_ratio()      |
 +----------+--------------------------------+
 
-Time ratio between each emission. If ``0`` particles are emitted continuously. If ``1`` all particles are emitted simultaneously. Default value: ``0``.
+Time ratio between each emission. If ``0``, particles are emitted continuously. If ``1``, all particles are emitted simultaneously. Default value: ``0``.
 
 .. _class_Particles_property_fixed_fps:
 
@@ -344,7 +344,7 @@ Method Descriptions
 
 - :ref:`AABB<class_AABB>` **capture_aabb** **(** **)** const
 
-Returns the bounding box that contains all the particles that are active in the current frame.
+Returns the axis-aligned bounding box that contains all the particles that are active in the current frame.
 
 .. _class_Particles_method_restart:
 

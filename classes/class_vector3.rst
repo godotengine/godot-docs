@@ -158,19 +158,19 @@ Property Descriptions
 
 - :ref:`float<class_float>` **x**
 
-The vector's x component. Also accessible by using the index position ``[0]``.
+The vector's X component. Also accessible by using the index position ``[0]``.
 
 .. _class_Vector3_property_y:
 
 - :ref:`float<class_float>` **y**
 
-The vector's y component. Also accessible by using the index position ``[1]``.
+The vector's Y component. Also accessible by using the index position ``[1]``.
 
 .. _class_Vector3_property_z:
 
 - :ref:`float<class_float>` **z**
 
-The vector's z component. Also accessible by using the index position ``[2]``.
+The vector's Z component. Also accessible by using the index position ``[2]``.
 
 Method Descriptions
 -------------------
@@ -335,9 +335,9 @@ Returns the vector with all components rounded to the nearest integer, with half
 
 - :ref:`Vector3<class_Vector3>` **slerp** **(** :ref:`Vector3<class_Vector3>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of SLERP between this vector and ``b``, by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+Returns the result of spherical linear interpolation between this vector and ``b``, by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
-Both vectors need to be normalized.
+**Note:** Both vectors must be normalized.
 
 .. _class_Vector3_method_slide:
 
@@ -349,7 +349,7 @@ Returns the component of the vector along a plane defined by the given normal.
 
 - :ref:`Vector3<class_Vector3>` **snapped** **(** :ref:`Vector3<class_Vector3>` by **)**
 
-Returns a copy of the vector, snapped to the lowest neared multiple.
+Returns a copy of the vector snapped to the lowest neared multiple.
 
 .. _class_Vector3_method_to_diagonal_matrix:
 

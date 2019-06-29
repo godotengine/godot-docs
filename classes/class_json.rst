@@ -43,5 +43,5 @@ Parses a JSON encoded string and returns a :ref:`JSONParseResult<class_JSONParse
 
 - :ref:`String<class_String>` **print** **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)**
 
-Converts a Variant var to JSON text and returns the result. Useful for serializing data to store or send over the network.
+Converts a :ref:`Variant<class_Variant>` var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 

@@ -438,7 +438,7 @@ enum **PowerState**:
 Description
 -----------
 
-Operating System functions. OS Wraps the most common functionality to communicate with the host Operating System, such as: mouse grabbing, mouse cursors, clipboard, video mode, date and time, timers, environment variables, execution of binaries, command line, etc.
+Operating System functions. OS wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, date and time, timers, environment variables, execution of binaries, command line, etc.
 
 Property Descriptions
 ---------------------
@@ -563,7 +563,7 @@ If ``true``, vertical synchronization (Vsync) is enabled.
 
 If ``true``, removes the window frame.
 
-Note: Setting ``window_borderless`` to ``false`` disables per-pixel transparency.
+**Note:** Setting ``window_borderless`` to ``false`` disables per-pixel transparency.
 
 .. _class_OS_property_window_fullscreen:
 
@@ -615,7 +615,7 @@ If ``true``, the window background is transparent and window frame is removed.
 
 Use ``get_tree().get_root().set_transparent_background(true)`` to disable main viewport background rendering.
 
-Note: This property has no effect if "Project > Project Settings > Display > Window > Per-pixel transparency > Allowed" setting is disabled.
+**Note:** This property has no effect if **Project > Project Settings > Display > Window > Per-pixel transparency > Allowed** setting is disabled.
 
 .. _class_OS_property_window_position:
 
@@ -660,7 +660,7 @@ Method Descriptions
 
 - void **alert** **(** :ref:`String<class_String>` text, :ref:`String<class_String>` title="Alert!" **)**
 
-Displays a modal dialog box utilizing the host OS.
+Displays a modal dialog box using the host OS' facilities. Execution is blocked until the dialog is closed.
 
 .. _class_OS_method_can_draw:
 
@@ -688,13 +688,13 @@ Centers the window on the screen if in windowed mode.
 
 - void **delay_msec** **(** :ref:`int<class_int>` msec **)** const
 
-Delay execution of the current thread by given milliseconds.
+Delay execution of the current thread by ``msec`` milliseconds.
 
 .. _class_OS_method_delay_usec:
 
 - void **delay_usec** **(** :ref:`int<class_int>` usec **)** const
 
-Delay execution of the current thread by given microseconds.
+Delay execution of the current thread by ``usec`` microseconds.
 
 .. _class_OS_method_dump_memory_to_file:
 
@@ -720,22 +720,22 @@ At the end of the file is a statistic of all used Resource Types.
 
 Execute the file at the given path with the arguments passed as an array of strings. Platform path resolution will take place. The resolved file must exist and be executable.
 
-The arguments are used in the given order and separated by a space, so ``OS.execute('ping', ['-w', '3', 'godotengine.org'], false)`` will resolve to ``ping -w 3 godotengine.org`` in the system's shell.
+The arguments are used in the given order and separated by a space, so ``OS.execute("ping", ["-w", "3", "godotengine.org"], false)`` will resolve to ``ping -w 3 godotengine.org`` in the system's shell.
 
-This method has slightly different behaviour based on whether the ``blocking`` mode is enabled.
+This method has slightly different behavior based on whether the ``blocking`` mode is enabled.
 
-When ``blocking`` is enabled, the Godot thread will pause its execution while waiting for the process to terminate. The shell output of the process will be written to the ``output`` array as a single string. When the process terminates, the Godot thread will resume execution.
+If ``blocking`` is ``true``, the Godot thread will pause its execution while waiting for the process to terminate. The shell output of the process will be written to the ``output`` array as a single string. When the process terminates, the Godot thread will resume execution.
 
-When ``blocking`` is disabled, the Godot thread will continue while the new process runs. It is not possible to retrieve the shell output in non-blocking mode, so ``output`` will be empty.
+If ``blocking`` is ``false``, the Godot thread will continue while the new process runs. It is not possible to retrieve the shell output in non-blocking mode, so ``output`` will be empty.
 
-The return value also depends on the blocking mode. When blocking, the method will return -2 (no process ID information is available in blocking mode). When non-blocking, the method returns a process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). If the process forking (non-blocking) or opening (blocking) fails, the method will return -1.
+The return value also depends on the blocking mode. When blocking, the method will return -2 (no process ID information is available in blocking mode). When non-blocking, the method returns a process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). If the process forking (non-blocking) or opening (blocking) fails, the method will return ``-1``.
 
 Example of blocking mode and retrieving the shell output:
 
 ::
 
     var output = []
-    OS.execute('ls', ['-l', '/tmp'], true, output)
+    OS.execute("ls", ["-l", "/tmp"], true, output)
 
 Example of non-blocking mode, running another instance of the project and storing its process ID:
 
@@ -747,13 +747,13 @@ If you wish to access a shell built-in or perform a composite command, a platfor
 
 ::
 
-    OS.execute('CMD.exe', ['/C', 'cd %TEMP% && dir'], true, output)
+    OS.execute("CMD.exe", ["/C", "cd %TEMP% && dir"], true, output)
 
 .. _class_OS_method_find_scancode_from_string:
 
 - :ref:`int<class_int>` **find_scancode_from_string** **(** :ref:`String<class_String>` string **)** const
 
-Returns the scancode of the given string (e.g. "Escape")
+Returns the scancode of the given string (e.g. "Escape").
 
 .. _class_OS_method_get_audio_driver_count:
 
@@ -787,21 +787,21 @@ Returns the currently used video driver, using one of the values from :ref:`Vide
 
 - :ref:`Dictionary<class_Dictionary>` **get_date** **(** :ref:`bool<class_bool>` utc=false **)** const
 
-Returns current date as a dictionary of keys: year, month, day, weekday, dst (daylight savings time).
+Returns current date as a dictionary of keys: ``year``, ``month``, ``day``, ``weekday``, ``dst`` (Daylight Savings Time).
 
 .. _class_OS_method_get_datetime:
 
 - :ref:`Dictionary<class_Dictionary>` **get_datetime** **(** :ref:`bool<class_bool>` utc=false **)** const
 
-Returns current datetime as a dictionary of keys: year, month, day, weekday, dst (daylight savings time), hour, minute, second.
+Returns current datetime as a dictionary of keys: ``year``, ``month``, ``day``, ``weekday``, ``dst`` (Daylight Savings Time), ``hour``, ``minute``, ``second``.
 
 .. _class_OS_method_get_datetime_from_unix_time:
 
 - :ref:`Dictionary<class_Dictionary>` **get_datetime_from_unix_time** **(** :ref:`int<class_int>` unix_time_val **)** const
 
-Get a dictionary of time values when given epoch time.
+Gets a dictionary of time values corresponding to the given UNIX epoch time (in seconds).
 
-Dictionary Time values will be a union of values from :ref:`get_time<class_OS_method_get_time>` and :ref:`get_date<class_OS_method_get_date>` dictionaries (with the exception of dst = day light standard time, as it cannot be determined from epoch).
+The returned Dictionary's values will be the same as :ref:`get_datetime<class_OS_method_get_datetime>`, with the exception of Daylight Savings Time as it cannot be determined from the epoch.
 
 .. _class_OS_method_get_dynamic_memory_usage:
 
@@ -825,17 +825,17 @@ Returns the path to the current engine executable.
 
 - :ref:`Vector2<class_Vector2>` **get_ime_selection** **(** **)** const
 
-Returns IME cursor position (currently edited portion of the string) relative to the characters in the composition string.
+Returns the IME cursor position (the currently-edited portion of the string) relative to the characters in the composition string.
 
-``NOTIFICATION_OS_IME_UPDATE`` is sent to the application to notify it of changes to the IME cursor position.
+:ref:`MainLoop.NOTIFICATION_OS_IME_UPDATE<class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE>` is sent to the application to notify it of changes to the IME cursor position.
 
 .. _class_OS_method_get_ime_text:
 
 - :ref:`String<class_String>` **get_ime_text** **(** **)** const
 
-Returns IME intermediate composition string.
+Returns the IME intermediate composition string.
 
-``NOTIFICATION_OS_IME_UPDATE`` is sent to the application to notify it of changes to the IME composition string.
+:ref:`MainLoop.NOTIFICATION_OS_IME_UPDATE<class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE>` is sent to the application to notify it of changes to the IME composition string.
 
 .. _class_OS_method_get_latin_keyboard_variant:
 
@@ -843,7 +843,7 @@ Returns IME intermediate composition string.
 
 Returns the current latin keyboard variant as a String.
 
-Possible return values are: "QWERTY", "AZERTY", "QZERTY", "DVORAK", "NEO", "COLEMAK" or "ERROR".
+Possible return values are: ``"QWERTY"``, ``"AZERTY"``, ``"QZERTY"``, ``"DVORAK"``, ``"NEO"``, ``"COLEMAK"`` or ``"ERROR"``.
 
 .. _class_OS_method_get_locale:
 
@@ -861,7 +861,7 @@ Returns the model name of the current device.
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
-Returns the name of the host OS. Possible values are: "Android", "Haiku", "iOS", "HTML5", "OSX", "Server", "Windows", "UWP", "X11".
+Returns the name of the host OS. Possible values are: ``"Android"``, ``"Haiku"``, ``"iOS"``, ``"HTML5"``, ``"OSX"``, ``"Server"``, ``"Windows"``, ``"UWP"``, ``"X11"``.
 
 .. _class_OS_method_get_power_percent_left:
 
@@ -873,25 +873,25 @@ Returns the amount of battery left in the device as a percentage.
 
 - :ref:`int<class_int>` **get_power_seconds_left** **(** **)**
 
-Returns the time in seconds before the device runs out of battery.
+Returns an estimate of the time left in seconds before the device runs out of battery.
 
 .. _class_OS_method_get_power_state:
 
 - :ref:`PowerState<enum_OS_PowerState>` **get_power_state** **(** **)**
 
-Returns the current state of the device regarding battery and power. See ``POWERSTATE_*`` constants.
+Returns the current state of the device regarding battery and power. See :ref:`PowerState<enum_OS_PowerState>` constants.
 
 .. _class_OS_method_get_process_id:
 
 - :ref:`int<class_int>` **get_process_id** **(** **)** const
 
-Returns the game process ID
+Returns the project's process ID.
 
 .. _class_OS_method_get_processor_count:
 
 - :ref:`int<class_int>` **get_processor_count** **(** **)** const
 
-Returns the number of cores available in the host machine.
+Returns the number of threads available on the host machine.
 
 .. _class_OS_method_get_real_window_size:
 
@@ -903,7 +903,7 @@ Returns the window size including decorations like window borders.
 
 - :ref:`String<class_String>` **get_scancode_string** **(** :ref:`int<class_int>` code **)** const
 
-Returns the given scancode as a string (e.g. Return values: "Escape", "Shift+Escape").
+Returns the given scancode as a string (e.g. Return values: ``"Escape"``, ``"Shift+Escape"``).
 
 .. _class_OS_method_get_screen_count:
 
@@ -917,19 +917,16 @@ Returns the number of displays attached to the host machine.
 
 Returns the dots per inch density of the specified screen.
 
-On Android Devices, the actual screen densities are grouped into six generalized densities:
+On Android devices, the actual screen densities are grouped into six generalized densities:
 
-ldpi    - 120 dpi
+::
 
-mdpi    - 160 dpi
-
-hdpi    - 240 dpi
-
-xhdpi   - 320 dpi
-
-xxhdpi  - 480 dpi
-
-xxxhdpi - 640 dpi
+       ldpi - 120 dpi
+       mdpi - 160 dpi
+       hdpi - 240 dpi
+      xhdpi - 320 dpi
+     xxhdpi - 480 dpi
+    xxxhdpi - 640 dpi
 
 .. _class_OS_method_get_screen_position:
 
@@ -951,7 +948,7 @@ Returns the dimensions in pixels of the specified screen.
 
 - :ref:`int<class_int>` **get_static_memory_peak_usage** **(** **)** const
 
-Returns the max amount of static memory used (only works in debug).
+Returns the maximum amount of static memory used (only works in debug).
 
 .. _class_OS_method_get_static_memory_usage:
 
@@ -1007,23 +1004,23 @@ Returns the current time zone as a dictionary with the keys: bias and name.
 
 Returns a string that is unique to the device.
 
-Returns empty string on HTML5 and UWP which are not supported yet.
+**Note:** Returns an empty string on HTML5 and UWP, as this method isn't implemented on those platforms yet.
 
 .. _class_OS_method_get_unix_time:
 
 - :ref:`int<class_int>` **get_unix_time** **(** **)** const
 
-Returns the current unix epoch timestamp.
+Returns the current UNIX epoch timestamp.
 
 .. _class_OS_method_get_unix_time_from_datetime:
 
 - :ref:`int<class_int>` **get_unix_time_from_datetime** **(** :ref:`Dictionary<class_Dictionary>` datetime **)** const
 
-Get an epoch time value from a dictionary of time values.
+Gets an epoch time value from a dictionary of time values.
 
-``datetime`` must be populated with the following keys: year, month, day, hour, minute, second.
+``datetime`` must be populated with the following keys: ``year``, ``month``, ``day``, ``hour``, ``minute``, ``second``.
 
-You can pass the output from :ref:`get_datetime_from_unix_time<class_OS_method_get_datetime_from_unix_time>` directly into this function. Daylight savings time (dst), if present, is ignored.
+You can pass the output from :ref:`get_datetime_from_unix_time<class_OS_method_get_datetime_from_unix_time>` directly into this function. Daylight Savings Time (``dst``), if present, is ignored.
 
 .. _class_OS_method_get_user_data_dir:
 
@@ -1055,7 +1052,7 @@ Returns the name of the video driver matching the given ``driver`` index. This i
 
 - :ref:`int<class_int>` **get_virtual_keyboard_height** **(** **)**
 
-Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyboard or it is currently hidden.
+Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyboard or if it is currently hidden.
 
 .. _class_OS_method_get_window_safe_area:
 
@@ -1073,7 +1070,7 @@ Returns ``true`` if an environment variable exists.
 
 Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the `Feature Tags <https://docs.godotengine.org/en/latest/getting_started/workflow/export/feature_tags.html>`_ documentation for more details.
 
-Note that tag names are case-sensitive.
+**Note:** Tag names are case-sensitive.
 
 .. _class_OS_method_has_touchscreen_ui_hint:
 
@@ -1107,19 +1104,19 @@ Returns ``false`` if the build is a release build.
 
 - :ref:`bool<class_bool>` **is_ok_left_and_cancel_right** **(** **)** const
 
-Returns ``true`` if the "Okay" button should appear on the left and "Cancel" on the right.
+Returns ``true`` if the **OK** button should appear on the left and **Cancel** on the right.
 
 .. _class_OS_method_is_scancode_unicode:
 
 - :ref:`bool<class_bool>` **is_scancode_unicode** **(** :ref:`int<class_int>` code **)** const
 
-Returns ``true`` if the input code has a unicode character.
+Returns ``true`` if the input scancode corresponds to a Unicode character.
 
 .. _class_OS_method_is_stdout_verbose:
 
 - :ref:`bool<class_bool>` **is_stdout_verbose** **(** **)** const
 
-Returns ``true`` if the engine was executed with -v (verbose stdout).
+Returns ``true`` if the engine was executed with ``-v`` (verbose stdout).
 
 .. _class_OS_method_is_userfs_persistent:
 
@@ -1139,7 +1136,7 @@ Returns ``true`` if the window should always be on top of other windows.
 
 Kill (terminate) the process identified by the given process ID (``pid``), e.g. the one returned by :ref:`execute<class_OS_method_execute>` in non-blocking mode.
 
-Note that this method can also be used to kill processes that were not spawned by the game.
+**Note:** This method can also be used to kill processes that were not spawned by the game.
 
 .. _class_OS_method_move_window_to_foreground:
 
@@ -1165,7 +1162,7 @@ Pauses native video playback.
 
 Plays native video from the specified path, at the given volume and with audio and subtitle tracks.
 
-Note: This method is only implemented on Android and iOS, and the current Android implementation does not support the ``volume``, ``audio_track`` and ``subtitle_track`` options.
+**Note:** This method is only implemented on Android and iOS, and the current Android implementation does not support the ``volume``, ``audio_track`` and ``subtitle_track`` options.
 
 .. _class_OS_method_native_video_stop:
 
@@ -1187,7 +1184,7 @@ Resumes native video playback.
 
 - void **print_all_resources** **(** :ref:`String<class_String>` tofile="" **)**
 
-Shows all resources in the game. Optionally the list can be written to a file.
+Shows all resources in the game. Optionally, the list can be written to a file by specifying a file path in ``tofile``.
 
 .. _class_OS_method_print_all_textures_by_size:
 
@@ -1253,7 +1250,7 @@ Sets the game's icon using a multi-size platform-specific icon file (``*.ico`` o
 
 Appropriate size sub-icons are used for window caption, taskbar/dock and window selection dialog.
 
-Note: This method is only implemented on macOS and Windows.
+**Note:** This method is only implemented on macOS and Windows.
 
 .. _class_OS_method_set_thread_name:
 
@@ -1293,5 +1290,5 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 
 - void **show_virtual_keyboard** **(** :ref:`String<class_String>` existing_text="" **)**
 
-Shows the virtual keyboard if the platform has one. The *existing_text* parameter is useful for implementing your own LineEdit, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
+Shows the virtual keyboard if the platform has one. The ``existing_text`` parameter is useful for implementing your own LineEdit, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
 

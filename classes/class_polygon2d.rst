@@ -168,7 +168,9 @@ The offset applied to each vertex.
 | *Getter* | get_polygon()      |
 +----------+--------------------+
 
-The polygon's list of vertices. The final point will be connected to the first. Note that this returns a copy of the :ref:`PoolVector2Array<class_PoolVector2Array>` rather than a reference.
+The polygon's list of vertices. The final point will be connected to the first.
+
+**Note:** This returns a copy of the :ref:`PoolVector2Array<class_PoolVector2Array>` rather than a reference.
 
 .. _class_Polygon2D_property_polygons:
 

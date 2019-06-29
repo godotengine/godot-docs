@@ -129,7 +129,7 @@ enum **MouseMode**:
 
 - **MOUSE_MODE_HIDDEN** = **1** --- Makes the mouse cursor hidden if it is visible.
 
-- **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window. But it will still register movement and mouse button presses.
+- **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window, but it will still register movement and mouse button presses.
 
 - **MOUSE_MODE_CONFINED** = **3** --- Makes the mouse cursor visible but confines it to the game window.
 
@@ -179,9 +179,9 @@ enum **CursorShape**:
 
 - **CURSOR_CROSS** = **3** --- Cross cursor. Typically appears over regions in which a drawing operation can be performed or for selections.
 
-- **CURSOR_WAIT** = **4** --- Wait cursor. Indicates that the application is busy performing an operation.
+- **CURSOR_WAIT** = **4** --- Wait cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application is still usable during the operation.
 
-- **CURSOR_BUSY** = **5** --- Busy cursor. See ``CURSOR_WAIT``.
+- **CURSOR_BUSY** = **5** --- Busy cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application isn't usable during the operation (e.g. something is blocking its main thread).
 
 - **CURSOR_DRAG** = **6** --- Drag cursor. Usually displayed when dragging something.
 
@@ -189,26 +189,26 @@ enum **CursorShape**:
 
 - **CURSOR_FORBIDDEN** = **8** --- Forbidden cursor. Indicates that the current action is forbidden (for example, when dragging something) or that the control at a position is disabled.
 
-- **CURSOR_VSIZE** = **9** --- Vertical resize mouse cursor. A double headed vertical arrow. It tells the user they can resize the window or the panel vertically.
+- **CURSOR_VSIZE** = **9** --- Vertical resize mouse cursor. A double-headed vertical arrow. It tells the user they can resize the window or the panel vertically.
 
-- **CURSOR_HSIZE** = **10** --- Horizontal resize mouse cursor. A double headed horizontal arrow. It tells the user they can resize the window or the panel horizontally.
+- **CURSOR_HSIZE** = **10** --- Horizontal resize mouse cursor. A double-headed horizontal arrow. It tells the user they can resize the window or the panel horizontally.
 
-- **CURSOR_BDIAGSIZE** = **11** --- Window resize mouse cursor. The cursor is a double headed arrow that goes from the bottom left to the top right. It tells the user they can resize the window or the panel both horizontally and vertically.
+- **CURSOR_BDIAGSIZE** = **11** --- Window resize mouse cursor. The cursor is a double-headed arrow that goes from the bottom left to the top right. It tells the user they can resize the window or the panel both horizontally and vertically.
 
-- **CURSOR_FDIAGSIZE** = **12** --- Window resize mouse cursor. The cursor is a double headed arrow that goes from the top left to the bottom right, the opposite of ``CURSOR_BDIAGSIZE``. It tells the user they can resize the window or the panel both horizontally and vertically.
+- **CURSOR_FDIAGSIZE** = **12** --- Window resize mouse cursor. The cursor is a double-headed arrow that goes from the top left to the bottom right, the opposite of :ref:`CURSOR_BDIAGSIZE<class_Input_constant_CURSOR_BDIAGSIZE>`. It tells the user they can resize the window or the panel both horizontally and vertically.
 
 - **CURSOR_MOVE** = **13** --- Move cursor. Indicates that something can be moved.
 
-- **CURSOR_VSPLIT** = **14** --- Vertical split mouse cursor. On Windows, it's the same as ``CURSOR_VSIZE``.
+- **CURSOR_VSPLIT** = **14** --- Vertical split mouse cursor. On Windows, it's the same as :ref:`CURSOR_VSIZE<class_Input_constant_CURSOR_VSIZE>`.
 
-- **CURSOR_HSPLIT** = **15** --- Horizontal split mouse cursor. On Windows, it's the same as ``CURSOR_HSIZE``.
+- **CURSOR_HSPLIT** = **15** --- Horizontal split mouse cursor. On Windows, it's the same as :ref:`CURSOR_HSIZE<class_Input_constant_CURSOR_HSIZE>`.
 
 - **CURSOR_HELP** = **16** --- Help cursor. Usually a question mark.
 
 Description
 -----------
 
-A Singleton that deals with inputs. This includes key presses, mouse buttons and movement, joypads, and input actions. Actions and their events can be set in the Project Settings / Input Map tab. Or be set with :ref:`InputMap<class_InputMap>`.
+A Singleton that deals with inputs. This includes key presses, mouse buttons and movement, joypads, and input actions. Actions and their events can be set in the **Input Map** tab in the **Project > Project Settings**, or with the :ref:`InputMap<class_InputMap>` class.
 
 Tutorials
 ---------
@@ -236,7 +236,7 @@ If the specified action is already pressed, this will release it.
 
 - void **add_joy_mapping** **(** :ref:`String<class_String>` mapping, :ref:`bool<class_bool>` update_existing=false **)**
 
-Add a new mapping entry (in SDL2 format) to the mapping database. Optionally update already connected devices.
+Adds a new mapping entry (in SDL2 format) to the mapping database. Optionally update already connected devices.
 
 .. _class_Input_method_get_accelerometer:
 
@@ -272,7 +272,7 @@ If the device has an accelerometer, this will return the gravity. Otherwise, it 
 
 - :ref:`Vector3<class_Vector3>` **get_gyroscope** **(** **)** const
 
-If the device has a gyroscope, this will return the rate of rotation in rad/s around a device's x, y, and z axis. Otherwise, it returns an empty :ref:`Vector3<class_Vector3>`.
+If the device has a gyroscope, this will return the rate of rotation in rad/s around a device's X, Y, and Z axes. Otherwise, it returns an empty :ref:`Vector3<class_Vector3>`.
 
 .. _class_Input_method_get_joy_axis:
 
@@ -302,19 +302,19 @@ Returns the index of the provided button name.
 
 - :ref:`String<class_String>` **get_joy_button_string** **(** :ref:`int<class_int>` button_index **)**
 
-Receives a joy button from :ref:`JoystickList<enum_@GlobalScope_JoystickList>` and returns its equivalent name as a string.
+Receives a gamepad button from :ref:`JoystickList<enum_@GlobalScope_JoystickList>` and returns its equivalent name as a string.
 
 .. _class_Input_method_get_joy_guid:
 
 - :ref:`String<class_String>` **get_joy_guid** **(** :ref:`int<class_int>` device **)** const
 
-Returns a SDL2 compatible device guid on platforms that use gamepad remapping. Returns "Default Gamepad" otherwise.
+Returns a SDL2-compatible device GUID on platforms that use gamepad remapping. Returns ``"Default Gamepad"`` otherwise.
 
 .. _class_Input_method_get_joy_name:
 
 - :ref:`String<class_String>` **get_joy_name** **(** :ref:`int<class_int>` device **)**
 
-Returns the name of the joypad at the specified device index
+Returns the name of the joypad at the specified device index.
 
 .. _class_Input_method_get_joy_vibration_duration:
 
@@ -344,7 +344,7 @@ If the device has a magnetometer, this will return the magnetic field strength i
 
 - :ref:`int<class_int>` **get_mouse_button_mask** **(** **)** const
 
-Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the same time the bits are added together.
+Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the same time, the bits are added together.
 
 .. _class_Input_method_get_mouse_mode:
 
@@ -410,7 +410,7 @@ Feeds an :ref:`InputEvent<class_InputEvent>` to the game. Can be used to artific
 
 - void **remove_joy_mapping** **(** :ref:`String<class_String>` guid **)**
 
-Removes all mappings from the internal db that match the given uid.
+Removes all mappings from the internal database that match the given GUID.
 
 .. _class_Input_method_set_custom_mouse_cursor:
 
@@ -418,7 +418,7 @@ Removes all mappings from the internal db that match the given uid.
 
 Sets a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor. See enum ``CURSOR_*`` for the list of shapes.
 
-``image``'s size must be lower than 256x256.
+``image``'s size must be lower than 256×256.
 
 ``hotspot`` must be within ``image``'s size.
 
@@ -426,15 +426,15 @@ Sets a custom mouse cursor image, which is only visible inside the game window. 
 
 - void **set_default_cursor_shape** **(** :ref:`CursorShape<enum_Input_CursorShape>` shape=0 **)**
 
-Sets the default cursor shape to be used in the viewport instead of ``CURSOR_ARROW``.
+Sets the default cursor shape to be used in the viewport instead of :ref:`CURSOR_ARROW<class_Input_constant_CURSOR_ARROW>`.
 
-Note that if you want to change the default cursor shape for :ref:`Control<class_Control>`'s nodes, use :ref:`Control.mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>` instead.
+**Note:** If you want to change the default cursor shape for :ref:`Control<class_Control>`'s nodes, use :ref:`Control.mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>` instead.
 
 .. _class_Input_method_set_mouse_mode:
 
 - void **set_mouse_mode** **(** :ref:`MouseMode<enum_Input_MouseMode>` mode **)**
 
-Set the mouse mode. See the constants for more information.
+Sets the mouse mode. See the constants for more information.
 
 .. _class_Input_method_set_use_accumulated_input:
 
@@ -446,9 +446,9 @@ Whether to accumulate similar input events sent by the operating system. Default
 
 - void **start_joy_vibration** **(** :ref:`int<class_int>` device, :ref:`float<class_float>` weak_magnitude, :ref:`float<class_float>` strong_magnitude, :ref:`float<class_float>` duration=0 **)**
 
-Starts to vibrate the joypad. Joypads usually come with two rumble motors, a strong and a weak one. weak_magnitude is the strength of the weak motor (between 0 and 1) and strong_magnitude is the strength of the strong motor (between 0 and 1). duration is the duration of the effect in seconds (a duration of 0 will try to play the vibration indefinitely).
+Starts to vibrate the joypad. Joypads usually come with two rumble motors, a strong and a weak one. ``weak_magnitude`` is the strength of the weak motor (between 0 and 1) and ``strong_magnitude`` is the strength of the strong motor (between 0 and 1). ``duration`` is the duration of the effect in seconds (a duration of 0 will try to play the vibration indefinitely).
 
-Note that not every hardware is compatible with long effect durations, it is recommended to restart an effect if in need to play it for more than a few seconds.
+**Note:** Not every hardware is compatible with long effect durations; it is recommended to restart an effect if it has to be played for more than a few seconds.
 
 .. _class_Input_method_stop_joy_vibration:
 

@@ -16,7 +16,7 @@ PhysicsServer
 Brief Description
 -----------------
 
-Server interface for low level physics access.
+Server interface for low-level physics access.
 
 Methods
 -------
@@ -394,9 +394,9 @@ enum **HingeJointFlag**:
 
 enum **SliderJointParam**:
 
-- **SLIDER_JOINT_LINEAR_LIMIT_UPPER** = **0** --- The maximum difference between the pivot points on their x-axis before damping happens.
+- **SLIDER_JOINT_LINEAR_LIMIT_UPPER** = **0** --- The maximum difference between the pivot points on their X axis before damping happens.
 
-- **SLIDER_JOINT_LINEAR_LIMIT_LOWER** = **1** --- The minimum difference between the pivot points on their x-axis before damping happens.
+- **SLIDER_JOINT_LINEAR_LIMIT_LOWER** = **1** --- The minimum difference between the pivot points on their X axis before damping happens.
 
 - **SLIDER_JOINT_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement across the slider axis once the limits get surpassed. The lower, the slower the movement.
 
@@ -438,7 +438,7 @@ enum **SliderJointParam**:
 
 - **SLIDER_JOINT_ANGULAR_ORTHOGONAL_DAMPING** = **21** --- The amount of damping of the rotation across axes orthogonal to the slider.
 
-- **SLIDER_JOINT_MAX** = **22** --- End flag of SLIDER_JOINT\_\* constants, used internally.
+- **SLIDER_JOINT_MAX** = **22** --- Represents the size of the :ref:`SliderJointParam<enum_PhysicsServer_SliderJointParam>` enum.
 
 .. _enum_PhysicsServer_ConeTwistJointParam:
 
@@ -460,7 +460,7 @@ The swing span defines, how much rotation will not get corrected allong the swin
 
 Could be defined as looseness in the :ref:`ConeTwistJoint<class_ConeTwistJoint>`.
 
-If below 0.05, this behaviour is locked. Default value: ``PI/4``.
+If below 0.05, this behavior is locked. Default value: ``PI/4``.
 
 - **CONE_TWIST_JOINT_TWIST_SPAN** = **1** --- Twist is the rotation around the twist axis, this value defined how far the joint can twist.
 
@@ -716,7 +716,7 @@ enum **BodyParameter**:
 
 - **BODY_PARAM_ANGULAR_DAMP** = **5** --- Constant to set/get a body's angular dampening factor.
 
-- **BODY_PARAM_MAX** = **6** --- This is the last ID for body parameters. Any attempt to set this property is ignored. Any attempt to get it returns 0.
+- **BODY_PARAM_MAX** = **6** --- Represents the size of the :ref:`BodyParameter<enum_PhysicsServer_BodyParameter>` enum.
 
 .. _enum_PhysicsServer_BodyState:
 
@@ -841,7 +841,7 @@ enum **BodyAxis**:
 Description
 -----------
 
-Everything related to physics in 3D.
+PhysicsServer is the server responsible for all 3D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
 
 Method Descriptions
 -------------------
@@ -880,7 +880,7 @@ Gets the instance ID of the object the area is assigned to.
 
 - :ref:`Variant<class_Variant>` **area_get_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_PhysicsServer_AreaParameter>` param **)** const
 
-Returns an area parameter value. A list of available parameters is on the AREA_PARAM\_\* constants.
+Returns an area parameter value. A list of available parameters is on the ``AREA_PARAM_*`` constants.
 
 .. _class_PhysicsServer_method_area_get_shape:
 
@@ -970,7 +970,7 @@ Sets the function to call when any body/area enters or exits the area. This call
 
 - void **area_set_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_PhysicsServer_AreaParameter>` param, :ref:`Variant<class_Variant>` value **)**
 
-Sets the value for an area parameter. A list of available parameters is on the AREA_PARAM\_\* constants.
+Sets the value for an area parameter. A list of available parameters is on the ``AREA_PARAM_*`` constants.
 
 .. _class_PhysicsServer_method_area_set_ray_pickable:
 
@@ -1004,7 +1004,7 @@ Assigns a space to the area.
 
 - void **area_set_space_override_mode** **(** :ref:`RID<class_RID>` area, :ref:`AreaSpaceOverrideMode<enum_PhysicsServer_AreaSpaceOverrideMode>` mode **)**
 
-Sets the space override mode for the area. The modes are described in the constants AREA_SPACE_OVERRIDE\_\*.
+Sets the space override mode for the area. The modes are described in the constants ``AREA_SPACE_OVERRIDE_*``.
 
 .. _class_PhysicsServer_method_area_set_transform:
 
@@ -1116,7 +1116,7 @@ Gets the instance ID of the object the area is assigned to.
 
 - :ref:`float<class_float>` **body_get_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_PhysicsServer_BodyParameter>` param **)** const
 
-Returns the value of a body parameter. A list of available parameters is on the BODY_PARAM\_\* constants.
+Returns the value of a body parameter. A list of available parameters is on the ``BODY_PARAM_*`` constants.
 
 .. _class_PhysicsServer_method_body_get_shape:
 
@@ -1168,7 +1168,7 @@ Returns whether a body uses a callback function to calculate its own physics (se
 
 - :ref:`bool<class_bool>` **body_is_ray_pickable** **(** :ref:`RID<class_RID>` body **)** const
 
-If ``true``, the body can be detected by rays
+If ``true``, the body can be detected by rays.
 
 .. _class_PhysicsServer_method_body_remove_collision_exception:
 
@@ -1246,7 +1246,7 @@ Sets whether a body uses a callback function to calculate its own physics (see :
 
 - void **body_set_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_PhysicsServer_BodyParameter>` param, :ref:`float<class_float>` value **)**
 
-Sets a body parameter. A list of available parameters is on the BODY_PARAM\_\* constants.
+Sets a body parameter. A list of available parameters is on the ``BODY_PARAM_*`` constants.
 
 .. _class_PhysicsServer_method_body_set_ray_pickable:
 
@@ -1448,7 +1448,7 @@ Activates or deactivates the 3D physics engine.
 
 - :ref:`RID<class_RID>` **shape_create** **(** :ref:`ShapeType<enum_PhysicsServer_ShapeType>` type **)**
 
-Creates a shape of type SHAPE\_\*. Does not assign it to a body or an area. To do so, you must use :ref:`area_set_shape<class_PhysicsServer_method_area_set_shape>` or :ref:`body_set_shape<class_PhysicsServer_method_body_set_shape>`.
+Creates a shape of type ``SHAPE_*``. Does not assign it to a body or an area. To do so, you must use :ref:`area_set_shape<class_PhysicsServer_method_area_set_shape>` or :ref:`body_set_shape<class_PhysicsServer_method_body_set_shape>`.
 
 .. _class_PhysicsServer_method_shape_get_data:
 
@@ -1460,7 +1460,7 @@ Returns the shape data.
 
 - :ref:`ShapeType<enum_PhysicsServer_ShapeType>` **shape_get_type** **(** :ref:`RID<class_RID>` shape **)** const
 
-Returns the type of shape (see SHAPE\_\* constants).
+Returns the type of shape (see ``SHAPE_*`` constants).
 
 .. _class_PhysicsServer_method_shape_set_data:
 
@@ -1514,5 +1514,5 @@ Marks a space as active. It will not have an effect, unless it is assigned to an
 
 - void **space_set_param** **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_PhysicsServer_SpaceParameter>` param, :ref:`float<class_float>` value **)**
 
-Sets the value for a space parameter. A list of available parameters is on the SPACE_PARAM\_\* constants.
+Sets the value for a space parameter. A list of available parameters is on the ``SPACE_PARAM_*`` constants.
 

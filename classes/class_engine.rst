@@ -63,7 +63,7 @@ Methods
 Description
 -----------
 
-The ``Engine`` class allows you to query and modify the game's run-time parameters, such as frames per second, time scale, and others.
+The ``Engine`` class allows you to query and modify the project's run-time parameters, such as frames per second, time scale, and others.
 
 Property Descriptions
 ---------------------
@@ -135,13 +135,13 @@ Method Descriptions
 
 Returns engine author information in a Dictionary.
 
-"lead_developers" - Array of Strings, lead developer names
+``lead_developers``    - Array of Strings, lead developer names
 
-"founders" - Array of Strings, founder names
+``founders``           - Array of Strings, founder names
 
-"project_managers" - Array of Strings, project manager names
+``project_managers``   - Array of Strings, project manager names
 
-"developers" - Array of Strings, developer names
+``developers``         - Array of Strings, developer names
 
 .. _class_Engine_method_get_copyright_info:
 
@@ -149,9 +149,9 @@ Returns engine author information in a Dictionary.
 
 Returns an Array of copyright information Dictionaries.
 
-"name" - String, component name
+``name``    - String, component name
 
-"parts" - Array of Dictionaries {"files", "copyright", "license"} describing subsections of the component
+``parts``   - Array of Dictionaries {``files``, ``copyright``, ``license``} describing subsections of the component
 
 .. _class_Engine_method_get_donor_info:
 
@@ -159,7 +159,7 @@ Returns an Array of copyright information Dictionaries.
 
 Returns a Dictionary of Arrays of donor names.
 
-{"platinum_sponsors", "gold_sponsors", "mini_sponsors", "gold_donors", "silver_donors", "bronze_donors"}
+{``platinum_sponsors``, ``gold_sponsors``, ``mini_sponsors``, ``gold_donors``, ``silver_donors``, ``bronze_donors``}
 
 .. _class_Engine_method_get_frames_drawn:
 
@@ -207,7 +207,7 @@ Returns the current engine version information in a Dictionary.
 
 ``patch``    - Holds the patch version number as an int
 
-``hex``      - Holds the full version number encoded as an hexadecimal int with one byte (2 places) per number (see example below)
+``hex``      - Holds the full version number encoded as a hexadecimal int with one byte (2 places) per number (see example below)
 
 ``status``   - Holds the status (e.g. "beta", "rc1", "rc2", ... "stable") as a String
 
@@ -219,14 +219,14 @@ Returns the current engine version information in a Dictionary.
 
 ``string``   - ``major`` + ``minor`` + ``patch`` + ``status`` + ``build`` in a single String
 
-The ``hex`` value is encoded as follows, from left to right: one byte for the major, one byte for the minor, one byte for the patch version. For example, "3.1.12" would be ``0x03010C``. Note that it's still an int internally, and printing it will give you its decimal representation, which is not particularly meaningful. Use hexadecimal literals for easy version comparisons from code:
+The ``hex`` value is encoded as follows, from left to right: one byte for the major, one byte for the minor, one byte for the patch version. For example, "3.1.12" would be ``0x03010C``. **Note:** It's still an int internally, and printing it will give you its decimal representation, which is not particularly meaningful. Use hexadecimal literals for easy version comparisons from code:
 
 ::
 
     if Engine.get_version_info().hex >= 0x030200:
-        # do things specific to version 3.2 or later
+        # Do things specific to version 3.2 or later
     else:
-        # do things specific to versions before 3.2
+        # Do things specific to versions before 3.2
 
 .. _class_Engine_method_has_singleton:
 

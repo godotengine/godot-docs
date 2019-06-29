@@ -14,7 +14,7 @@ GradientTexture
 Brief Description
 -----------------
 
-Gradient filled texture.
+Gradient-filled texture.
 
 Properties
 ----------
@@ -28,7 +28,7 @@ Properties
 Description
 -----------
 
-Uses a :ref:`Gradient<class_Gradient>` to fill the texture data, the gradient will be filled from left to right using colors obtained from the gradient, this means that the texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`width<class_GradientTexture_property_width>`).
+GradientTexture uses a :ref:`Gradient<class_Gradient>` to fill the texture data. The gradient will be filled from left to right using colors obtained from the gradient. This means the texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`width<class_GradientTexture_property_width>`).
 
 Property Descriptions
 ---------------------

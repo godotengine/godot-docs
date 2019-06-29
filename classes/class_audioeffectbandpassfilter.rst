@@ -14,7 +14,7 @@ AudioEffectBandPassFilter
 Brief Description
 -----------------
 
-Adds a band pass filter to the Audio Bus.
+Adds a band pass filter to the audio bus.
 
 Description
 -----------

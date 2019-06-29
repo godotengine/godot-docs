@@ -252,9 +252,9 @@ Enumerations
 
 enum **PauseMode**:
 
-- **PAUSE_MODE_INHERIT** = **0** --- Inherits pause mode from the node's parent. For the root node, it is equivalent to PAUSE_MODE_STOP. Default.
+- **PAUSE_MODE_INHERIT** = **0** --- Inherits pause mode from the node's parent. For the root node, it is equivalent to :ref:`PAUSE_MODE_STOP<class_Node_constant_PAUSE_MODE_STOP>`. Default.
 
-- **PAUSE_MODE_STOP** = **1** --- Stop processing when the :ref:`SceneTree<class_SceneTree>` is paused.
+- **PAUSE_MODE_STOP** = **1** --- Stops processing when the :ref:`SceneTree<class_SceneTree>` is paused.
 
 - **PAUSE_MODE_PROCESS** = **2** --- Continue to process regardless of the :ref:`SceneTree<class_SceneTree>` pause state.
 
@@ -353,7 +353,9 @@ Constants
 
 - **NOTIFICATION_PROCESS** = **17** --- Notification received every frame when the process flag is set (see :ref:`set_process<class_Node_method_set_process>`).
 
-- **NOTIFICATION_PARENTED** = **18** --- Notification received when a node is set as a child of another node. Note that this doesn't mean that a node entered the Scene Tree.
+- **NOTIFICATION_PARENTED** = **18** --- Notification received when a node is set as a child of another node.
+
+**Note:** This doesn't mean that a node entered the :ref:`SceneTree<class_SceneTree>`.
 
 - **NOTIFICATION_UNPARENTED** = **19** --- Notification received when a node is unparented (parent removed it from the list of children).
 
@@ -369,29 +371,51 @@ Constants
 
 - **NOTIFICATION_INTERNAL_PHYSICS_PROCESS** = **26** --- Notification received every frame when the internal physics process flag is set (see :ref:`set_physics_process_internal<class_Node_method_set_physics_process_internal>`).
 
-- **NOTIFICATION_WM_MOUSE_ENTER** = **1002**
+- **NOTIFICATION_WM_MOUSE_ENTER** = **1002** --- Notification received from the OS when the mouse enters the game window.
 
-- **NOTIFICATION_WM_MOUSE_EXIT** = **1003**
+Implemented on desktop and web platforms.
 
-- **NOTIFICATION_WM_FOCUS_IN** = **1004**
+- **NOTIFICATION_WM_MOUSE_EXIT** = **1003** --- Notification received from the OS when the mouse leaves the game window.
 
-- **NOTIFICATION_WM_FOCUS_OUT** = **1005**
+Implemented on desktop and web platforms.
 
-- **NOTIFICATION_WM_QUIT_REQUEST** = **1006**
+- **NOTIFICATION_WM_FOCUS_IN** = **1004** --- Notification received from the OS when the game window is focused.
 
-- **NOTIFICATION_WM_GO_BACK_REQUEST** = **1007**
+Implemented on all platforms.
 
-- **NOTIFICATION_WM_UNFOCUS_REQUEST** = **1008**
+- **NOTIFICATION_WM_FOCUS_OUT** = **1005** --- Notification received from the OS when the game window is unfocused.
 
-- **NOTIFICATION_OS_MEMORY_WARNING** = **1009**
+Implemented on all platforms.
+
+- **NOTIFICATION_WM_QUIT_REQUEST** = **1006** --- Notification received from the OS when a quit request is sent (e.g. closing the window with a "Close" button or Alt+F4).
+
+Implemented on desktop platforms.
+
+- **NOTIFICATION_WM_GO_BACK_REQUEST** = **1007** --- Notification received from the OS when a go back request is sent (e.g. pressing the "Back" button on Android).
+
+Specific to the Android platform.
+
+- **NOTIFICATION_WM_UNFOCUS_REQUEST** = **1008** --- Notification received from the OS when an unfocus request is sent (e.g. another OS window wants to take the focus).
+
+No supported platforms currently send this notification.
+
+- **NOTIFICATION_OS_MEMORY_WARNING** = **1009** --- Notification received from the OS when the application is exceeding its allocated memory.
+
+Specific to the iOS platform.
 
 - **NOTIFICATION_TRANSLATION_CHANGED** = **1010** --- Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr<class_Object_method_tr>`.
 
-- **NOTIFICATION_WM_ABOUT** = **1011**
+- **NOTIFICATION_WM_ABOUT** = **1011** --- Notification received from the OS when a request for "About" information is sent.
 
-- **NOTIFICATION_CRASH** = **1012**
+Specific to the macOS platform.
 
-- **NOTIFICATION_OS_IME_UPDATE** = **1013**
+- **NOTIFICATION_CRASH** = **1012** --- Notification received from Godot's crash handler when the engine is about to crash.
+
+Implemented on desktop platforms if the crash handler is enabled.
+
+- **NOTIFICATION_OS_IME_UPDATE** = **1013** --- Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
+
+Specific to the macOS platform.
 
 Description
 -----------
@@ -400,9 +424,9 @@ Nodes are Godot's building blocks. They can be assigned as the child of another 
 
 A tree of nodes is called a *scene*. Scenes can be saved to the disk and then instanced into other scenes. This allows for very high flexibility in the architecture and data model of Godot projects.
 
-**Scene tree:** The :ref:`SceneTree<class_SceneTree>` contains the active tree of nodes. When a node is added to the scene tree, it receives the NOTIFICATION_ENTER_TREE notification and its :ref:`_enter_tree<class_Node_method__enter_tree>` callback is triggered. Child nodes are always added *after* their parent node, i.e. the :ref:`_enter_tree<class_Node_method__enter_tree>` callback of a parent node will be triggered before its child's.
+**Scene tree:** The :ref:`SceneTree<class_SceneTree>` contains the active tree of nodes. When a node is added to the scene tree, it receives the :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>` notification and its :ref:`_enter_tree<class_Node_method__enter_tree>` callback is triggered. Child nodes are always added *after* their parent node, i.e. the :ref:`_enter_tree<class_Node_method__enter_tree>` callback of a parent node will be triggered before its child's.
 
-Once all nodes have been added in the scene tree, they receive the NOTIFICATION_READY notification and their respective :ref:`_ready<class_Node_method__ready>` callbacks are triggered. For groups of nodes, the :ref:`_ready<class_Node_method__ready>` callback is called in reverse order, starting with the children and moving up to the parent nodes.
+Once all nodes have been added in the scene tree, they receive the :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_READY>` notification and their respective :ref:`_ready<class_Node_method__ready>` callbacks are triggered. For groups of nodes, the :ref:`_ready<class_Node_method__ready>` callback is called in reverse order, starting with the children and moving up to the parent nodes.
 
 This means that when adding a node to the scene tree, the following order will be used for the callbacks: :ref:`_enter_tree<class_Node_method__enter_tree>` of the parent, :ref:`_enter_tree<class_Node_method__enter_tree>` of the children, :ref:`_ready<class_Node_method__ready>` of the children and finally :ref:`_ready<class_Node_method__ready>` of the parent (recursively for the entire scene tree).
 
@@ -416,7 +440,7 @@ Finally, when a node is freed with :ref:`Object.free<class_Object_method_free>` 
 
 **Groups:** Nodes can be added to as many groups as you want to be easy to manage, you could create groups like "enemies" or "collectables" for example, depending on your game. See :ref:`add_to_group<class_Node_method_add_to_group>`, :ref:`is_in_group<class_Node_method_is_in_group>` and :ref:`remove_from_group<class_Node_method_remove_from_group>`. You can then retrieve all nodes in these groups, iterate them and even call methods on groups via the methods on :ref:`SceneTree<class_SceneTree>`.
 
-**Networking with nodes:** After connecting to a server (or making one, see :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`) it is possible to use the built-in RPC (remote procedure call) system to communicate over the network. By calling :ref:`rpc<class_Node_method_rpc>` with a method name, it will be called locally and in all connected peers (peers = clients and the server that accepts connections). To identify which node receives the RPC call Godot will use its :ref:`NodePath<class_NodePath>` (make sure node names are the same on all peers). Also take a look at the high-level networking tutorial and corresponding demos.
+**Networking with nodes:** After connecting to a server (or making one, see :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`), it is possible to use the built-in RPC (remote procedure call) system to communicate over the network. By calling :ref:`rpc<class_Node_method_rpc>` with a method name, it will be called locally and in all connected peers (peers = clients and the server that accepts connections). To identify which node receives the RPC call, Godot will use its :ref:`NodePath<class_NodePath>` (make sure node names are the same on all peers). Also, take a look at the high-level networking tutorial and corresponding demos.
 
 Tutorials
 ---------
@@ -436,7 +460,7 @@ Property Descriptions
 | *Getter* | get_custom_multiplayer()      |
 +----------+-------------------------------+
 
-The override to the default :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Set to null to use the default SceneTree one.
+The override to the default :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Set to ``null`` to use the default :ref:`SceneTree<class_SceneTree>` one.
 
 .. _class_Node_property_filename:
 
@@ -470,7 +494,7 @@ The :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance associated with this no
 | *Getter* | get_name()      |
 +----------+-----------------+
 
-The name of the node. This name is unique among the siblings (other child nodes from the same parent). When set to an existing name, the node will be automatically renamed
+The name of the node. This name is unique among the siblings (other child nodes from the same parent). When set to an existing name, the node will be automatically renamed.
 
 .. _class_Node_property_owner:
 
@@ -482,7 +506,7 @@ The name of the node. This name is unique among the siblings (other child nodes 
 | *Getter* | get_owner()      |
 +----------+------------------+
 
-The node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc. ascending in the tree). When saving a node (using :ref:`PackedScene<class_PackedScene>`) all the nodes it owns will be saved with it. This allows for the creation of complex :ref:`SceneTree<class_SceneTree>`\ s, with instancing and subinstancing.
+The node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc. ascending in the tree). When saving a node (using :ref:`PackedScene<class_PackedScene>`), all the nodes it owns will be saved with it. This allows for the creation of complex :ref:`SceneTree<class_SceneTree>`\ s, with instancing and subinstancing.
 
 .. _class_Node_property_pause_mode:
 
@@ -505,7 +529,7 @@ Method Descriptions
 
 Called when the node enters the :ref:`SceneTree<class_SceneTree>` (e.g. upon instancing, scene changing, or after calling :ref:`add_child<class_Node_method_add_child>` in a script). If the node has children, its :ref:`_enter_tree<class_Node_method__enter_tree>` callback will be called first, and then that of the children.
 
-Corresponds to the NOTIFICATION_ENTER_TREE notification in :ref:`Object._notification<class_Object_method__notification>`.
+Corresponds to the :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
 .. _class_Node_method__exit_tree:
 
@@ -513,7 +537,7 @@ Corresponds to the NOTIFICATION_ENTER_TREE notification in :ref:`Object._notific
 
 Called when the node is about to leave the :ref:`SceneTree<class_SceneTree>` (e.g. upon freeing, scene changing, or after calling :ref:`remove_child<class_Node_method_remove_child>` in a script). If the node has children, its :ref:`_exit_tree<class_Node_method__exit_tree>` callback will be called last, after all its children have left the tree.
 
-Corresponds to the NOTIFICATION_EXIT_TREE notification in :ref:`Object._notification<class_Object_method__notification>` and signal :ref:`tree_exiting<class_Node_signal_tree_exiting>`. To get notified when the node has already left the active tree, connect to the :ref:`tree_exited<class_Node_signal_tree_exited>`
+Corresponds to the :ref:`NOTIFICATION_EXIT_TREE<class_Node_constant_NOTIFICATION_EXIT_TREE>` notification in :ref:`Object._notification<class_Object_method__notification>` and signal :ref:`tree_exiting<class_Node_signal_tree_exiting>`. To get notified when the node has already left the active tree, connect to the :ref:`tree_exited<class_Node_signal_tree_exited>`
 
 .. _class_Node_method__get_configuration_warning:
 
@@ -543,7 +567,7 @@ Called during the physics processing step of the main loop. Physics processing m
 
 It is only called if physics processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_physics_process<class_Node_method_set_physics_process>`.
 
-Corresponds to the NOTIFICATION_PHYSICS_PROCESS notification in :ref:`Object._notification<class_Object_method__notification>`.
+Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
 .. _class_Node_method__process:
 
@@ -553,7 +577,7 @@ Called during the processing step of the main loop. Processing happens at every 
 
 It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process<class_Node_method_set_process>`.
 
-Corresponds to the NOTIFICATION_PROCESS notification in :ref:`Object._notification<class_Object_method__notification>`.
+Corresponds to the :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
 .. _class_Node_method__ready:
 
@@ -561,9 +585,11 @@ Corresponds to the NOTIFICATION_PROCESS notification in :ref:`Object._notificati
 
 Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their :ref:`_ready<class_Node_method__ready>` callbacks get triggered first, and the parent node will receive the ready notification afterwards.
 
-Corresponds to the NOTIFICATION_READY notification in :ref:`Object._notification<class_Object_method__notification>`. See also the ``onready`` keyword for variables.
+Corresponds to the :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_READY>` notification in :ref:`Object._notification<class_Object_method__notification>`. See also the ``onready`` keyword for variables.
 
-Usually used for initialization. For even earlier initialization, :ref:`Object._init<class_Object_method__init>` may be used. Also see :ref:`_enter_tree<class_Node_method__enter_tree>`.
+Usually used for initialization. For even earlier initialization, :ref:`Object._init<class_Object_method__init>` may be used. See also :ref:`_enter_tree<class_Node_method__enter_tree>`.
+
+**Note:** :ref:`_ready<class_Node_method__ready>` may be called only once for each node. After removing a node from the scene tree and adding again, ``_ready`` will not be called for the second time. This can be bypassed with requesting another call with :ref:`request_ready<class_Node_method_request_ready>`, which may be called anywhere before adding the node again.
 
 .. _class_Node_method__unhandled_input:
 
@@ -595,7 +621,7 @@ For gameplay input, this and :ref:`_unhandled_input<class_Node_method__unhandled
 
 Adds a child node. Nodes can have any number of children, but every child must have a unique name. Child nodes are automatically deleted when the parent node is deleted, so an entire scene can be removed by deleting its topmost node.
 
-Setting "legible_unique_name" ``true`` creates child nodes with human-readable names, based on the name of the node being instanced instead of its type.
+If ``legible_unique_name`` is ``true``, the child node will have an human-readable name based on the name of the node being instanced instead of its type.
 
 .. _class_Node_method_add_child_below_node:
 
@@ -603,7 +629,7 @@ Setting "legible_unique_name" ``true`` creates child nodes with human-readable n
 
 Adds a child node. The child is placed below the given node in the list of children.
 
-Setting "legible_unique_name" ``true`` creates child nodes with human-readable names, based on the name of the node being instanced instead of its type.
+If ``legible_unique_name`` is ``true``, the child node will have an human-readable name based on the name of the node being instanced instead of its type.
 
 .. _class_Node_method_add_to_group:
 
@@ -611,7 +637,7 @@ Setting "legible_unique_name" ``true`` creates child nodes with human-readable n
 
 Adds the node to a group. Groups are helpers to name and organize a subset of nodes, for example "enemies" or "collectables". A node can be in any number of groups. Nodes can be assigned a group at any time, but will not be added until they are inside the scene tree (see :ref:`is_inside_tree<class_Node_method_is_inside_tree>`). See notes in the description, and the group methods in :ref:`SceneTree<class_SceneTree>`.
 
-``persistent`` option is used when packing node to :ref:`PackedScene<class_PackedScene>` and saving to file. Non-persistent groups aren't stored.
+The ``persistent`` option is used when packing node to :ref:`PackedScene<class_PackedScene>` and saving to file. Non-persistent groups aren't stored.
 
 .. _class_Node_method_can_process:
 
@@ -631,15 +657,19 @@ You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enu
 
 - :ref:`Node<class_Node>` **find_node** **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** const
 
-Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case sensitive, but '\*' matches zero or more characters and '?' matches any single character except '.'). Note that it does not match against the full path, just against individual node names.
+Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``).
 
-If ``owned`` is ``true``, this method only finds nodes whose owner is this node. This is especially important for scenes instantiated through script, because those scenes don't have an owner.
+**Note:** It does not match against the full path, just against individual node names.
+
+If ``owned`` is ``true``, this method only finds nodes whose owner is this node. This is especially important for scenes instantiated through a script, because those scenes don't have an owner.
 
 .. _class_Node_method_find_parent:
 
 - :ref:`Node<class_Node>` **find_parent** **(** :ref:`String<class_String>` mask **)** const
 
-Finds the first parent of the current node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case sensitive, but '\*' matches zero or more characters and '?' matches any single character except '.'). Note that it does not match against the full path, just against individual node names.
+Finds the first parent of the current node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``).
+
+**Note:** It does not match against the full path, just against individual node names.
 
 .. _class_Node_method_get_child:
 
@@ -713,11 +743,23 @@ Possible paths are:
 
 - :ref:`Array<class_Array>` **get_node_and_resource** **(** :ref:`NodePath<class_NodePath>` path **)**
 
+Fetches a node and one of its resources as specified by the :ref:`NodePath<class_NodePath>`'s subname (e.g. ``Area2D/CollisionShape2D:shape``). If several nested resources are specified in the :ref:`NodePath<class_NodePath>`, the last one will be fetched.
+
+The return value is an array of size 3: the first index points to the ``Node`` (or ``null`` if not found), the second index points to the :ref:`Resource<class_Resource>` (or ``null`` if not found), and the third index is the remaining :ref:`NodePath<class_NodePath>`, if any.
+
+For example, assuming that ``Area2D/CollisionShape2D`` is a valid node and that its ``shape`` property has been assigned a :ref:`RectangleShape2D<class_RectangleShape2D>` resource, one could have this kind of output:
+
+::
+
+    print(get_node_and_resource("Area2D/CollisionShape2D")) # [[CollisionShape2D:1161], Null, ]
+    print(get_node_and_resource("Area2D/CollisionShape2D:shape")) # [[CollisionShape2D:1161], [RectangleShape2D:1156], ]
+    print(get_node_and_resource("Area2D/CollisionShape2D:shape:extents")) # [[CollisionShape2D:1161], [RectangleShape2D:1156], :extents]
+
 .. _class_Node_method_get_node_or_null:
 
 - :ref:`Node<class_Node>` **get_node_or_null** **(** :ref:`NodePath<class_NodePath>` path **)** const
 
-Similar to :ref:`get_node<class_Node_method_get_node>`, but does not raise an error when ``path`` does not point to a valid ``Node``.
+Similar to :ref:`get_node<class_Node_method_get_node>`, but does not raise an error if ``path`` does not point to a valid ``Node``.
 
 .. _class_Node_method_get_parent:
 
@@ -741,7 +783,7 @@ Returns the relative :ref:`NodePath<class_NodePath>` from this node to the speci
 
 - :ref:`float<class_float>` **get_physics_process_delta_time** **(** **)** const
 
-Returns the time elapsed since the last physics-bound frame (see :ref:`_physics_process<class_Node_method__physics_process>`). This is always a constant value in physics processing unless the frames per second is changed in :ref:`OS<class_OS>`.
+Returns the time elapsed since the last physics-bound frame (see :ref:`_physics_process<class_Node_method__physics_process>`). This is always a constant value in physics processing unless the frames per second is changed via :ref:`Engine.target_fps<class_Engine_property_target_fps>`.
 
 .. _class_Node_method_get_position_in_parent:
 
@@ -782,6 +824,8 @@ Returns ``true`` if the node that the :ref:`NodePath<class_NodePath>` points to 
 .. _class_Node_method_has_node_and_resource:
 
 - :ref:`bool<class_bool>` **has_node_and_resource** **(** :ref:`NodePath<class_NodePath>` path **)** const
+
+Returns ``true`` if the :ref:`NodePath<class_NodePath>` points to a valid node and its subname points to a valid resource, e.g. ``Area2D/CollisionShape2D:shape``. Properties with a non-:ref:`Resource<class_Resource>` type (e.g. nodes or primitive math types) are not considered resources.
 
 .. _class_Node_method_is_a_parent_of:
 
@@ -865,7 +909,7 @@ Returns ``true`` if the node is processing unhandled key input (see :ref:`set_pr
 
 - void **move_child** **(** :ref:`Node<class_Node>` child_node, :ref:`int<class_int>` to_position **)**
 
-Moves a child node to a different position (order) amongst the other children. Since calls, signals, etc are performed by tree order, changing the order of children nodes may be useful.
+Moves a child node to a different position (order) among the other children. Since calls, signals, etc are performed by tree order, changing the order of children nodes may be useful.
 
 .. _class_Node_method_print_stray_nodes:
 
@@ -877,7 +921,9 @@ Prints all stray nodes (nodes outside the :ref:`SceneTree<class_SceneTree>`). Us
 
 - void **print_tree** **(** **)**
 
-Prints the tree to stdout. Used mainly for debugging purposes. This version displays the path relative to the current node, and is good for copy/pasting into the :ref:`get_node<class_Node_method_get_node>` function. Example output:
+Prints the tree to stdout. Used mainly for debugging purposes. This version displays the path relative to the current node, and is good for copy/pasting into the :ref:`get_node<class_Node_method_get_node>` function.
+
+**Example output:**
 
 ::
 
@@ -892,7 +938,9 @@ Prints the tree to stdout. Used mainly for debugging purposes. This version disp
 
 - void **print_tree_pretty** **(** **)**
 
-Similar to :ref:`print_tree<class_Node_method_print_tree>`, this prints the tree to stdout. This version displays a more graphical representation similar to what is displayed in the scene inspector. It is useful for inspecting larger trees. Example output:
+Similar to :ref:`print_tree<class_Node_method_print_tree>`, this prints the tree to stdout. This version displays a more graphical representation similar to what is displayed in the scene inspector. It is useful for inspecting larger trees.
+
+**Example output:**
 
 ::
 
@@ -907,13 +955,13 @@ Similar to :ref:`print_tree<class_Node_method_print_tree>`, this prints the tree
 
 - void **propagate_call** **(** :ref:`String<class_String>` method, :ref:`Array<class_Array>` args=[  ], :ref:`bool<class_bool>` parent_first=false **)**
 
-Calls the given method (if present) with the arguments given in ``args`` on this node and recursively on all its children. If the parent_first argument is ``true`` then the method will be called on the current node first, then on all children. If it is ``false`` then the children will be called first.
+Calls the given method (if present) with the arguments given in ``args`` on this node and recursively on all its children. If the ``parent_first`` argument is ``true``, the method will be called on the current node first, then on all its children. If ``parent_first`` is ``false``, the children will be called first.
 
 .. _class_Node_method_propagate_notification:
 
 - void **propagate_notification** **(** :ref:`int<class_int>` what **)**
 
-Notifies the current node and all its children recursively by calling notification() on all of them.
+Notifies the current node and all its children recursively by calling :ref:`Object.notification<class_Object_method_notification>` on all of them.
 
 .. _class_Node_method_queue_free:
 
@@ -955,19 +1003,21 @@ Replaces a node in a scene by the given one. Subscriptions that pass through thi
 
 - void **request_ready** **(** **)**
 
-Requests that ``_ready`` be called again.
+Requests that ``_ready`` be called again. Note that the method won't be called immediately, but is scheduled for when the node is added to the scene tree again (see :ref:`_ready<class_Node_method__ready>`). ``_ready`` is called only for the node which requested it, which means that you need to request ready for each child if you want them to call ``_ready`` too (in which case, ``_ready`` will be called in the same order as it would normally).
 
 .. _class_Node_method_rpc:
 
 - :ref:`Variant<class_Variant>` **rpc** **(** :ref:`String<class_String>` method, ... **)** vararg
 
-Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. Also see :ref:`rset<class_Node_method_rset>` and :ref:`rset_config<class_Node_method_rset_config>` for properties. Returns an empty :ref:`Variant<class_Variant>`. Note that you can only safely use RPCs on clients after you received the ``connected_to_server`` signal from the :ref:`SceneTree<class_SceneTree>`. You also need to keep track of the connection state, either by the :ref:`SceneTree<class_SceneTree>` signals like ``server_disconnected`` or by checking ``SceneTree.network_peer.get_connection_status() == CONNECTION_CONNECTED``.
+Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. See also :ref:`rset<class_Node_method_rset>` and :ref:`rset_config<class_Node_method_rset_config>` for properties. Returns an empty :ref:`Variant<class_Variant>`.
+
+**Note:** You can only safely use RPCs on clients after you received the ``connected_to_server`` signal from the :ref:`SceneTree<class_SceneTree>`. You also need to keep track of the connection state, either by the :ref:`SceneTree<class_SceneTree>` signals like ``server_disconnected`` or by checking ``SceneTree.network_peer.get_connection_status() == CONNECTION_CONNECTED``.
 
 .. _class_Node_method_rpc_config:
 
 - void **rpc_config** **(** :ref:`String<class_String>` method, :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` mode **)**
 
-Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``master``, ``puppet``, ``remotesync``, ``mastersync``, ``puppetsync``). By default, methods are not exposed to networking (and RPCs). Also see :ref:`rset<class_Node_method_rset>` and :ref:`rset_config<class_Node_method_rset_config>` for properties.
+Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``master``, ``puppet``, ``remotesync``, ``mastersync``, ``puppetsync``). By default, methods are not exposed to networking (and RPCs). See also :ref:`rset<class_Node_method_rset>` and :ref:`rset_config<class_Node_method_rset_config>` for properties.
 
 .. _class_Node_method_rpc_id:
 
@@ -991,13 +1041,13 @@ Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``pee
 
 - void **rset** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
-Remotely changes a property's value on other peers (and locally). Behaviour depends on the RPC configuration for the given property, see :ref:`rset_config<class_Node_method_rset_config>`. Also see :ref:`rpc<class_Node_method_rpc>` for RPCs for methods, most information applies to this method as well.
+Remotely changes a property's value on other peers (and locally). Behaviour depends on the RPC configuration for the given property, see :ref:`rset_config<class_Node_method_rset_config>`. See also :ref:`rpc<class_Node_method_rpc>` for RPCs for methods, most information applies to this method as well.
 
 .. _class_Node_method_rset_config:
 
 - void **rset_config** **(** :ref:`String<class_String>` property, :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` mode **)**
 
-Changes the RPC mode for the given ``property`` to the given ``mode``. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``master``, ``puppet``, ``remotesync``, ``mastersync``, ``puppetsync``). By default, properties are not exposed to networking (and RPCs). Also see :ref:`rpc<class_Node_method_rpc>` and :ref:`rpc_config<class_Node_method_rpc_config>` for methods.
+Changes the RPC mode for the given ``property`` to the given ``mode``. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``master``, ``puppet``, ``remotesync``, ``mastersync``, ``puppetsync``). By default, properties are not exposed to networking (and RPCs). See also :ref:`rpc<class_Node_method_rpc>` and :ref:`rpc_config<class_Node_method_rpc_config>` for methods.
 
 .. _class_Node_method_rset_id:
 
@@ -1033,19 +1083,19 @@ Sets the node's network master to the peer with the given peer ID. The network m
 
 - void **set_physics_process** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables or disables physics (i.e. fixed framerate) processing. When a node is being processed, it will receive a NOTIFICATION_PHYSICS_PROCESS at a fixed (usually 60 fps, see :ref:`OS<class_OS>` to change) interval (and the :ref:`_physics_process<class_Node_method__physics_process>` callback will be called if exists). Enabled automatically if :ref:`_physics_process<class_Node_method__physics_process>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
+Enables or disables physics (i.e. fixed framerate) processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` at a fixed (usually 60 FPS, see :ref:`Engine.target_fps<class_Engine_property_target_fps>` to change) interval (and the :ref:`_physics_process<class_Node_method__physics_process>` callback will be called if exists). Enabled automatically if :ref:`_physics_process<class_Node_method__physics_process>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
 
 .. _class_Node_method_set_physics_process_internal:
 
 - void **set_physics_process_internal** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables or disables internal physics for this node. Internal physics processing happens in isolation from the normal :ref:`_physics_process<class_Node_method__physics_process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or physics processing is disabled for scripting (:ref:`set_physics_process<class_Node_method_set_physics_process>`). Only useful for advanced uses to manipulate built-in nodes behaviour.
+Enables or disables internal physics for this node. Internal physics processing happens in isolation from the normal :ref:`_physics_process<class_Node_method__physics_process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or physics processing is disabled for scripting (:ref:`set_physics_process<class_Node_method_set_physics_process>`). Only useful for advanced uses to manipulate built-in nodes' behaviour.
 
 .. _class_Node_method_set_process:
 
 - void **set_process** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables or disables processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS on every drawn frame (and the :ref:`_process<class_Node_method__process>` callback will be called if exists). Enabled automatically if :ref:`_process<class_Node_method__process>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
+Enables or disables processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` on every drawn frame (and the :ref:`_process<class_Node_method__process>` callback will be called if exists). Enabled automatically if :ref:`_process<class_Node_method__process>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
 
 .. _class_Node_method_set_process_input:
 
@@ -1057,11 +1107,13 @@ Enables or disables input processing. This is not required for GUI controls! Ena
 
 - void **set_process_internal** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables or disabled internal processing for this node. Internal processing happens in isolation from the normal :ref:`_process<class_Node_method__process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (:ref:`set_process<class_Node_method_set_process>`). Only useful for advanced uses to manipulate built-in nodes behaviour.
+Enables or disabled internal processing for this node. Internal processing happens in isolation from the normal :ref:`_process<class_Node_method__process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (:ref:`set_process<class_Node_method_set_process>`). Only useful for advanced uses to manipulate built-in nodes' behaviour.
 
 .. _class_Node_method_set_process_priority:
 
 - void **set_process_priority** **(** :ref:`int<class_int>` priority **)**
+
+Sets the node's priority in the execution order of the enabled processing callbacks (i.e. :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` and their internal counterparts). Nodes with a higher process priority will have their processing callbacks executed first.
 
 .. _class_Node_method_set_process_unhandled_input:
 

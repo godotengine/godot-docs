@@ -94,7 +94,9 @@ Methods
 Description
 -----------
 
-Generic array which can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 the second to last, etc.). Example:
+Generic array which can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 the second to last, etc.).
+
+**Example:**
 
 ::
 
@@ -156,19 +158,23 @@ Returns the last element of the array if the array is not empty.
 
 - :ref:`int<class_int>` **bsearch** **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=True **)**
 
-Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. Note that calling bsearch on an unsorted array results in unexpected behavior.
+Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
+
+**Note:** Calling :ref:`bsearch<class_Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
 .. _class_Array_method_bsearch_custom:
 
 - :ref:`int<class_int>` **bsearch_custom** **(** :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func, :ref:`bool<class_bool>` before=True **)**
 
-Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a before specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise. Note that calling bsearch on an unsorted array results in unexpected behavior.
+Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise.
+
+**Note:** Calling :ref:`bsearch<class_Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
 .. _class_Array_method_clear:
 
 - void **clear** **(** **)**
 
-Clears the array (resizes to 0).
+Clears the array. This is equivalent to using :ref:`resize<class_Array_method_resize>` with a size of ``0``.
 
 .. _class_Array_method_count:
 
@@ -291,7 +297,7 @@ Removes an element from the array by index.
 
 - void **resize** **(** :ref:`int<class_int>` size **)**
 
-Resizes the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are Null.
+Resizes the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are ``null``.
 
 .. _class_Array_method_rfind:
 
@@ -315,7 +321,9 @@ Returns the number of elements in the array.
 
 - void **sort** **(** **)**
 
-Sorts the array. Note: strings are sorted in alphabetical, not natural order.
+Sorts the array.
+
+**Note:** strings are sorted in alphabetical, not natural order.
 
 .. _class_Array_method_sort_custom:
 

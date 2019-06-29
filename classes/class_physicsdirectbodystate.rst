@@ -257,13 +257,13 @@ This is equivalent to ``apply_impulse(Vector3(0, 0, 0), impulse)``.
 
 - void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` j **)**
 
-Applies a positioned impulse to the body. An impulse is time independent! Applying an impulse every frame would result in a framerate dependent force. For this reason it should only be used when simulating one-time impacts. The position uses the rotation of the global coordinate system, but is centered at the object's origin.
+Applies a positioned impulse to the body. An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason it should only be used when simulating one-time impacts. The position uses the rotation of the global coordinate system, but is centered at the object's origin.
 
 .. _class_PhysicsDirectBodyState_method_apply_torque_impulse:
 
 - void **apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` j **)**
 
-Apply a torque impulse (which will be affected by the body mass and shape). This will rotate the body around the passed in vector.
+Apply a torque impulse (which will be affected by the body mass and shape). This will rotate the body around the vector ``j`` passed as parameter.
 
 .. _class_PhysicsDirectBodyState_method_get_contact_collider:
 
@@ -305,7 +305,9 @@ Returns the linear velocity vector at the collider's contact point.
 
 - :ref:`int<class_int>` **get_contact_count** **(** **)** const
 
-Returns the number of contacts this body has with other bodies. Note that by default this returns 0 unless bodies are configured to log contacts. See :ref:`RigidBody.contact_monitor<class_RigidBody_property_contact_monitor>`.
+Returns the number of contacts this body has with other bodies.
+
+**Note:** By default, this returns 0 unless bodies are configured to monitor contacts. See :ref:`RigidBody.contact_monitor<class_RigidBody_property_contact_monitor>`.
 
 .. _class_PhysicsDirectBodyState_method_get_contact_impulse:
 

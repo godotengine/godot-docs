@@ -177,7 +177,9 @@ Removes all collision exceptions for this ray.
 
 - void **force_raycast_update** **(** **)**
 
-Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state. Note: ``enabled == true`` is not required for this to work.
+Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state.
+
+**Note:** ``enabled == true`` is not required for this to work.
 
 .. _class_RayCast2D_method_get_collider:
 
@@ -207,7 +209,9 @@ Returns the normal of the intersecting object's shape at the collision point.
 
 - :ref:`Vector2<class_Vector2>` **get_collision_point** **(** **)** const
 
-Returns the collision point at which the ray intersects the closest object. Note: this point is in the **global** coordinate system.
+Returns the collision point at which the ray intersects the closest object.
+
+**Note:** this point is in the **global** coordinate system.
 
 .. _class_RayCast2D_method_is_colliding:
 
@@ -231,5 +235,5 @@ Removes a collision exception so the ray does report collisions with the specifi
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-Set/clear individual bits on the collision mask. This makes selecting the areas scanned easier.
+Sets or clears individual bits on the collision mask. This makes selecting the areas scanned easier.
 

@@ -189,7 +189,7 @@ enum **EaseType**:
 Description
 -----------
 
-Tweens are useful for animations requiring a numerical property to be interpolated over a range of values. The name \*tween\* comes from \*in-betweening\*, an animation technique where you specify \*keyframes\* and the computer interpolates the frames that appear between them.
+Tweens are useful for animations requiring a numerical property to be interpolated over a range of values. The name *tween* comes from *in-betweening*, an animation technique where you specify *keyframes* and the computer interpolates the frames that appear between them.
 
 Here is a brief usage example that causes a 2D node to move smoothly between two positions:
 
@@ -201,9 +201,9 @@ Here is a brief usage example that causes a 2D node to move smoothly between two
             Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
     tween.start()
 
-Many methods require a property name, such as "position" above. You can find the correct property name by hovering over the property in the Inspector. You can also provide the components of a property directly by using "property:component" (eg. ``position:x``), where it would only apply to that particular component.
+Many methods require a property name, such as ``"position"`` above. You can find the correct property name by hovering over the property in the Inspector. You can also provide the components of a property directly by using ``"property:component"`` (eg. ``position:x``), where it would only apply to that particular component.
 
-Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts an :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see ``http://easings.net/`` for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls the where ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with ``EASE_IN_OUT``, and use the one that looks best.
+Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts an :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see ``http://easings.net/`` for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls the where ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 
 Property Descriptions
 ---------------------
@@ -253,7 +253,7 @@ Method Descriptions
 
 Follows ``method`` of ``object`` and applies the returned value on ``target_method`` of ``target``, beginning from ``initial_val`` for ``duration`` seconds, ``delay`` later. Methods are called with consecutive values.
 
-Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information.
 
 .. _class_Tween_method_follow_property:
 
@@ -261,7 +261,7 @@ Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref
 
 Follows ``property`` of ``object`` and applies it on ``target_property`` of ``target``, beginning from ``initial_val`` for ``duration`` seconds, ``delay`` seconds later.
 
-Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information.
 
 .. _class_Tween_method_get_runtime:
 
@@ -287,7 +287,7 @@ Calls ``callback`` of ``object`` after ``duration`` on the main thread (similar 
 
 Animates ``method`` of ``object`` from ``initial_val`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Methods are called with consecutive values.
 
-Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information.
 
 .. _class_Tween_method_interpolate_property:
 
@@ -295,13 +295,15 @@ Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref
 
 Animates ``property`` of ``object`` from ``initial_val`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Setting the initial value to ``null`` uses the current value of the property.
 
-Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information.
 
 .. _class_Tween_method_is_active:
 
 - :ref:`bool<class_bool>` **is_active** **(** **)** const
 
-Returns ``true`` if any tweens are currently running. Note that this method doesn't consider tweens that have ended.
+Returns ``true`` if any tweens are currently running.
+
+**Note:** This method doesn't consider tweens that have ended.
 
 .. _class_Tween_method_remove:
 
@@ -375,7 +377,7 @@ Stops animating all tweens.
 
 Animates ``method`` of ``object`` from the value returned by ``initial_method`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Methods are animated by calling them with consecutive values.
 
-Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information.
 
 .. _class_Tween_method_targeting_property:
 
@@ -383,7 +385,7 @@ Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref
 
 Animates ``property`` of ``object`` from the current value of the ``initial_val`` property of ``initial`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later.
 
-Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information.
 
 .. _class_Tween_method_tell:
 

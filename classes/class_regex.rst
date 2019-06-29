@@ -42,7 +42,7 @@ Methods
 Description
 -----------
 
-Regular Expression (or regex) is a compact programming language that can be used to recognise strings that follow a specific pattern, such as URLs, email addresses, complete sentences, etc. For instance, a regex of ``ab[0-9]`` would find any string that is ``ab`` followed by any number from ``0`` to ``9``. For a more in-depth look, you can easily find various tutorials and detailed explanations on the Internet.
+A regular expression (or regex) is a compact language that can be used to recognise strings that follow a specific pattern, such as URLs, email addresses, complete sentences, etc. For instance, a regex of ``ab[0-9]`` would find any string that is ``ab`` followed by any number from ``0`` to ``9``. For a more in-depth look, you can easily find various tutorials and detailed explanations on the Internet.
 
 To begin, the RegEx object needs to be compiled with the search pattern using :ref:`compile<class_RegEx_method_compile>` before it can be used.
 
@@ -63,7 +63,7 @@ Using :ref:`search<class_RegEx_method_search>` you can find the pattern within t
     if result:
         print(result.get_string()) # Would print n-0123
 
-The results of capturing groups ``()`` can be retrieved by passing the group number to the various functions in :ref:`RegExMatch<class_RegExMatch>`. Group 0 is the default and would always refer to the entire pattern. In the above example, calling ``result.get_string(1)`` would give you ``0123``.
+The results of capturing groups ``()`` can be retrieved by passing the group number to the various functions in :ref:`RegExMatch<class_RegExMatch>`. Group 0 is the default and will always refer to the entire pattern. In the above example, calling ``result.get_string(1)`` would give you ``0123``.
 
 This version of RegEx also supports named capturing groups, and the names can be used to retrieve the results. If two or more groups have the same name, the name would only refer to the first one with a match.
 
@@ -75,7 +75,7 @@ This version of RegEx also supports named capturing groups, and the names can be
     if result:
         print(result.get_string("digit")) # Would print 2f
 
-If you need to process multiple results, :ref:`search_all<class_RegEx_method_search_all>` generates a list of all non-overlapping results. This can be combined with a for-loop for convenience.
+If you need to process multiple results, :ref:`search_all<class_RegEx_method_search_all>` generates a list of all non-overlapping results. This can be combined with a ``for`` loop for convenience.
 
 ::
 
@@ -91,13 +91,13 @@ Method Descriptions
 
 - void **clear** **(** **)**
 
-This method resets the state of the object, as it was freshly created. Namely, it unassigns the regular expression of this object.
+This method resets the state of the object, as if it was freshly created. Namely, it unassigns the regular expression of this object.
 
 .. _class_RegEx_method_compile:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **compile** **(** :ref:`String<class_String>` pattern **)**
 
-Compiles and assign the search pattern to use. Returns OK if the compilation is successful. If an error is encountered the details are printed to STDOUT and FAILED is returned.
+Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the compilation is successful. If an error is encountered, details are printed to standard output and an error is returned.
 
 .. _class_RegEx_method_get_group_count:
 
@@ -127,17 +127,17 @@ Returns whether this object has a valid search pattern assigned.
 
 - :ref:`RegExMatch<class_RegExMatch>` **search** **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** const
 
-Searches the text for the compiled pattern. Returns a :ref:`RegExMatch<class_RegExMatch>` container of the first matching result if found, otherwise null. The region to search within can be specified without modifying where the start and end anchor would be.
+Searches the text for the compiled pattern. Returns a :ref:`RegExMatch<class_RegExMatch>` container of the first matching result if found, otherwise ``null``. The region to search within can be specified without modifying where the start and end anchor would be.
 
 .. _class_RegEx_method_search_all:
 
 - :ref:`Array<class_Array>` **search_all** **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** const
 
-Searches the text for the compiled pattern. Returns an array of :ref:`RegExMatch<class_RegExMatch>` containers for each non-overlapping result. If no results were found an empty array is returned instead. The region to search within can be specified without modifying where the start and end anchor would be.
+Searches the text for the compiled pattern. Returns an array of :ref:`RegExMatch<class_RegExMatch>` containers for each non-overlapping result. If no results were found, an empty array is returned instead. The region to search within can be specified without modifying where the start and end anchor would be.
 
 .. _class_RegEx_method_sub:
 
 - :ref:`String<class_String>` **sub** **(** :ref:`String<class_String>` subject, :ref:`String<class_String>` replacement, :ref:`bool<class_bool>` all=false, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** const
 
-Searches the text for the compiled pattern and replaces it with the specified string. Escapes and backreferences such as ``$1`` and ``$name`` are expanded and resolved. By default only the first instance is replaced but it can be changed for all instances (global replacement). The region to search within can be specified without modifying where the start and end anchor would be.
+Searches the text for the compiled pattern and replaces it with the specified string. Escapes and backreferences such as ``$1`` and ``$name`` are expanded and resolved. By default, only the first instance is replaced, but it can be changed for all instances (global replacement). The region to search within can be specified without modifying where the start and end anchor would be.
 

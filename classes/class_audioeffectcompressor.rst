@@ -14,7 +14,7 @@ AudioEffectCompressor
 Brief Description
 -----------------
 
-Adds a Compressor audio effect to an Audio bus.
+Adds a compressor audio effect to an audio bus.
 
 Reduces sounds that exceed a certain threshold level, smooths out the dynamics and increases the overall volume.
 
@@ -44,11 +44,11 @@ Dynamic range compressor reduces the level of the sound when the amplitude goes 
 
 Compressor has many uses in the mix:
 
-- In the Master bus to compress the whole output (Although a :ref:`AudioEffectLimiter<class_AudioEffectLimiter>` is probably better)
+- In the Master bus to compress the whole output (although an :ref:`AudioEffectLimiter<class_AudioEffectLimiter>` is probably better).
 
 - In voice channels to ensure they sound as balanced as possible.
 
-- Sidechained. Sidechained, which can reduce the sound level sidechained with another audio bus for threshold detection.. This technique is very common in video game mixing to download the level of Music/SFX while voices are being heard.
+- Sidechained. This can reduce the sound level sidechained with another audio bus for threshold detection. This technique is common in video game mixing to the level of music and SFX while voices are being heard.
 
 - Accentuates transients by using a wider attack, making effects sound more punchy.
 
@@ -65,7 +65,7 @@ Property Descriptions
 | *Getter* | get_attack_us()      |
 +----------+----------------------+
 
-Compressor's reaction time when the signal exceeds the threshold. Value can range from 20 to 2000. Default value: ``20ms``.
+Compressor's reaction time when the signal exceeds the threshold, in microseconds. Value can range from 20 to 2000. Default value: ``20us``.
 
 .. _class_AudioEffectCompressor_property_gain:
 
@@ -101,7 +101,7 @@ Balance between original signal and effect signal. Value can range from 0 (total
 | *Getter* | get_ratio()      |
 +----------+------------------+
 
-Amount of compression applied to the audio once it passes the threshold level. The higher the ratio the more the loud parts of the audio will be compressed. Value can range from 1 to 48. Default value: ``4``.
+Amount of compression applied to the audio once it passes the threshold level. The higher the ratio, the more the loud parts of the audio will be compressed. Value can range from 1 to 48. Default value: ``4``.
 
 .. _class_AudioEffectCompressor_property_release_ms:
 
@@ -113,7 +113,7 @@ Amount of compression applied to the audio once it passes the threshold level. T
 | *Getter* | get_release_ms()      |
 +----------+-----------------------+
 
-Compressor's delay time to stop reducing the signal after the signal level falls below the threshold. Value can range from 20 to 2000. Default value: ``250ms``.
+Compressor's delay time to stop reducing the signal after the signal level falls below the threshold, in milliseconds. Value can range from 20 to 2000. Default value: ``250ms``.
 
 .. _class_AudioEffectCompressor_property_sidechain:
 

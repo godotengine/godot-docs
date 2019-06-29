@@ -12,7 +12,7 @@ Basis
 Brief Description
 -----------------
 
-3x3 matrix datatype.
+3×3 matrix datatype.
 
 Properties
 ----------
@@ -75,7 +75,7 @@ Methods
 Description
 -----------
 
-3x3 matrix used for 3D rotation and scale. Contains 3 vector fields x,y and z as its columns, which can be interpreted as the local basis vectors of a transformation. Can also be accessed as array of 3D vectors. These vectors are orthogonal to each other, but are not necessarily normalized (due to scaling). Almost always used as orthogonal basis for a :ref:`Transform<class_Transform>`.
+3×3 matrix used for 3D rotation and scale. Contains 3 vector fields X, Y and Z as its columns, which can be interpreted as the local basis vectors of a transformation. Can also be accessed as array of 3D vectors. These vectors are orthogonal to each other, but are not necessarily normalized (due to scaling). Almost always used as an orthogonal basis for a :ref:`Transform<class_Transform>`.
 
 For such use, it is composed of a scaling and a rotation matrix, in that order (M = R.S).
 
@@ -91,19 +91,19 @@ Property Descriptions
 
 - :ref:`Vector3<class_Vector3>` **x**
 
-The basis matrix's x vector.
+The basis matrix's X vector.
 
 .. _class_Basis_property_y:
 
 - :ref:`Vector3<class_Vector3>` **y**
 
-The basis matrix's y vector.
+The basis matrix's Y vector.
 
 .. _class_Basis_property_z:
 
 - :ref:`Vector3<class_Vector3>` **z**
 
-The basis matrix's z vector.
+The basis matrix's Z vector.
 
 Method Descriptions
 -------------------
@@ -116,7 +116,7 @@ Create a rotation matrix from the given quaternion.
 
 - :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` from **)**
 
-Create a rotation matrix (in the YXZ convention: first Z, then X, and Y last) from the specified Euler angles, given in the vector format as (X-angle, Y-angle, Z-angle).
+Create a rotation matrix (in the YXZ convention: first Z, then X, and Y last) from the specified Euler angles, given in the vector format as (X angle, Y angle, Z angle).
 
 - :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
 
@@ -136,7 +136,7 @@ Returns the determinant of the matrix.
 
 - :ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
 
-Assuming that the matrix is a proper rotation matrix (orthonormal matrix with determinant +1), return Euler angles (in the YXZ convention: first Z, then X, and Y last). Returned vector contains the rotation angles in the format (X-angle, Y-angle, Z-angle).
+Assuming that the matrix is a proper rotation matrix (orthonormal matrix with determinant +1), return Euler angles (in the YXZ convention: first Z, then X, and Y last). Returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
 
 .. _class_Basis_method_get_orthogonal_index:
 
@@ -192,19 +192,19 @@ Assuming that the matrix is a proper rotation matrix, slerp performs a spherical
 
 - :ref:`float<class_float>` **tdotx** **(** :ref:`Vector3<class_Vector3>` with **)**
 
-Transposed dot product with the x axis of the matrix.
+Transposed dot product with the X axis of the matrix.
 
 .. _class_Basis_method_tdoty:
 
 - :ref:`float<class_float>` **tdoty** **(** :ref:`Vector3<class_Vector3>` with **)**
 
-Transposed dot product with the y axis of the matrix.
+Transposed dot product with the Y axis of the matrix.
 
 .. _class_Basis_method_tdotz:
 
 - :ref:`float<class_float>` **tdotz** **(** :ref:`Vector3<class_Vector3>` with **)**
 
-Transposed dot product with the z axis of the matrix.
+Transposed dot product with the Z axis of the matrix.
 
 .. _class_Basis_method_transposed:
 
@@ -222,5 +222,7 @@ Returns a vector transformed (multiplied) by the matrix.
 
 - :ref:`Vector3<class_Vector3>` **xform_inv** **(** :ref:`Vector3<class_Vector3>` v **)**
 
-Returns a vector transformed (multiplied) by the transposed matrix. Note that this results in a multiplication by the inverse of the matrix only if it represents a rotation-reflection.
+Returns a vector transformed (multiplied) by the transposed matrix.
+
+**Note:** This results in a multiplication by the inverse of the matrix only if it represents a rotation-reflection.
 

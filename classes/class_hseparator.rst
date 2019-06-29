@@ -28,5 +28,5 @@ Theme Properties
 Description
 -----------
 
-Horizontal separator. See :ref:`Separator<class_Separator>`. It is used to separate objects vertically, though (but it looks horizontal!).
+Horizontal separator. See :ref:`Separator<class_Separator>`. Even though it looks horizontal, it is used to separate objects vertically.
 

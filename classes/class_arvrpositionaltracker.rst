@@ -14,7 +14,7 @@ ARVRPositionalTracker
 Brief Description
 -----------------
 
-A tracked object
+A tracked object.
 
 Properties
 ----------
@@ -70,11 +70,11 @@ enum **TrackerHand**:
 Description
 -----------
 
-An instance of this object represents a device that is tracked such as a controller or anchor point. HMDs aren't represented here as they are fully handled internally.
+An instance of this object represents a device that is tracked, such as a controller or anchor point. HMDs aren't represented here as they are handled internally.
 
-As controllers are turned on and the AR/VR interface detects them instances of this object are automatically added to this list of active tracking objects accessible through the ARVRServer
+As controllers are turned on and the AR/VR interface detects them, instances of this object are automatically added to this list of active tracking objects accessible through the :ref:`ARVRServer<class_ARVRServer>`.
 
-The ARVRController and ARVRAnchor both consume objects of this type and should be the objects you use in game. The positional trackers are just the under the hood objects that make this all work and are mostly exposed so GDNative based interfaces can interact with them.
+The :ref:`ARVRController<class_ARVRController>` and :ref:`ARVRAnchor<class_ARVRAnchor>` both consume objects of this type and should be used in your project. The positional trackers are just under-the-hood objects that make this all work. These are mostly exposed so that GDNative-based interfaces can interact with them.
 
 Property Descriptions
 ---------------------
@@ -98,13 +98,13 @@ Method Descriptions
 
 - :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** const
 
-Returns the hand holding this tracker, if known. See TRACKER\_\* constants.
+Returns the hand holding this tracker, if known. See ``TRACKER_*`` constants.
 
 .. _class_ARVRPositionalTracker_method_get_joy_id:
 
 - :ref:`int<class_int>` **get_joy_id** **(** **)** const
 
-If this is a controller that is being tracked the controller will also be represented by a joystick entry with this id.
+If this is a controller that is being tracked, the controller will also be represented by a joystick entry with this ID.
 
 .. _class_ARVRPositionalTracker_method_get_mesh:
 

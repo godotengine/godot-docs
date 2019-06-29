@@ -202,6 +202,8 @@ Theme Properties
 +---------------------------------+-----------------------------+
 | :ref:`Color<class_Color>`       | font_color                  |
 +---------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | font_color_readonly         |
++---------------------------------+-----------------------------+
 | :ref:`Color<class_Color>`       | font_color_selected         |
 +---------------------------------+-----------------------------+
 | :ref:`Color<class_Color>`       | function_color              |
@@ -391,7 +393,7 @@ If ``false``, the caret displays as a bar.
 | *Getter* | is_right_click_moving_caret()      |
 +----------+------------------------------------+
 
-If ``true``, a right click moves the cursor at the mouse position before displaying the context menu.
+If ``true``, a right-click moves the cursor at the mouse position before displaying the context menu.
 
 If ``false``, the context menu disregards mouse location.
 
@@ -405,7 +407,7 @@ If ``false``, the context menu disregards mouse location.
 | *Getter* | is_context_menu_enabled()       |
 +----------+---------------------------------+
 
-If ``true``, a right click displays the context menu.
+If ``true``, a right-click displays the context menu.
 
 .. _class_TextEdit_property_draw_spaces:
 
@@ -580,13 +582,13 @@ Method Descriptions
 
 - void **add_color_region** **(** :ref:`String<class_String>` begin_key, :ref:`String<class_String>` end_key, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` line_only=false **)**
 
-Add color region (given the delimiters) and its colors.
+Adds color region (given the delimiters) and its colors.
 
 .. _class_TextEdit_method_add_keyword_color:
 
 - void **add_keyword_color** **(** :ref:`String<class_String>` keyword, :ref:`Color<class_Color>` color **)**
 
-Add a ``keyword`` and its :ref:`Color<class_Color>`.
+Adds a ``keyword`` and its :ref:`Color<class_Color>`.
 
 .. _class_TextEdit_method_can_fold:
 
@@ -770,7 +772,7 @@ Returns ``true`` if the selection is active.
 
 - void **menu_option** **(** :ref:`int<class_int>` option **)**
 
-Triggers a right click menu action by the specified index. See :ref:`MenuItems<enum_TextEdit_MenuItems>` for a list of available indexes.
+Triggers a right-click menu action by the specified index. See :ref:`MenuItems<enum_TextEdit_MenuItems>` for a list of available indexes.
 
 .. _class_TextEdit_method_paste:
 
@@ -788,13 +790,13 @@ Perform redo operation.
 
 - void **remove_breakpoints** **(** **)**
 
-Removes all the breakpoints (without firing "breakpoint_toggled" signal).
+Removes all the breakpoints. This will not fire the :ref:`breakpoint_toggled<class_TextEdit_signal_breakpoint_toggled>` signal.
 
 .. _class_TextEdit_method_search:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **search** **(** :ref:`String<class_String>` key, :ref:`int<class_int>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column **)** const
 
-Perform a search inside the text. Search flags can be specified in the SEARCH\_\* enum.
+Perform a search inside the text. Search flags can be specified in the``SEARCH_*`` enum.
 
 .. _class_TextEdit_method_select:
 

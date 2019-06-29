@@ -34,7 +34,9 @@ Signals
 
 - **peer_packet** **(** :ref:`int<class_int>` peer_source **)**
 
-Emitted when a packet is received from a peer. Note: this signal is only emitted when the client or server is configured to use Godot multiplayer API.
+Emitted when a packet is received from a peer.
+
+**Note:** This signal is only emitted when the client or server is configured to use Godot multiplayer API.
 
 Description
 -----------
@@ -54,11 +56,11 @@ Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``
 
 - :ref:`Error<enum_@GlobalScope_Error>` **set_buffers** **(** :ref:`int<class_int>` input_buffer_size_kb, :ref:`int<class_int>` input_max_packets, :ref:`int<class_int>` output_buffer_size_kb, :ref:`int<class_int>` output_max_packets **)**
 
-Configure the buffers sizes for this WebSocket peer. Default values can be specified in project settings under ``network/limits``. For server, values are meant per connected peer.
+Configures the buffer sizes for this WebSocket peer. Default values can be specified in the Project Settings under ``network/limits``. For server, values are meant per connected peer.
 
 The first two parameters define the size and queued packets limits of the input buffer, the last two of the output buffer.
 
 Buffer sizes are expressed in KiB, so ``4 = 2^12 = 4096 bytes``. All parameters will be rounded up to the nearest power of two.
 
-NOTE: HTML5 exports only use the input buffer since the output one is managed by browsers.
+**Note:** HTML5 exports only use the input buffer since the output one is managed by browsers.
 

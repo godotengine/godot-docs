@@ -14,7 +14,7 @@ ARVRController
 Brief Description
 -----------------
 
-A spatial node representing a spatially tracked controller.
+A spatial node representing a spatially-tracked controller.
 
 Properties
 ----------
@@ -70,9 +70,9 @@ Description
 
 This is a helper spatial node that is linked to the tracking of controllers. It also offers several handy passthroughs to the state of buttons and such on the controllers.
 
-Controllers are linked by their id. You can create controller nodes before the controllers are available. Say your game always uses two controllers (one for each hand) you can predefine the controllers with id 1 and 2 and they will become active as soon as the controllers are identified. If you expect additional controllers to be used, you should react to the signals and add ARVRController nodes to your scene.
+Controllers are linked by their ID. You can create controller nodes before the controllers are available. If your game always uses two controllers (one for each hand), you can predefine the controllers with ID 1 and 2; they will become active as soon as the controllers are identified. If you expect additional controllers to be used, you should react to the signals and add ARVRController nodes to your scene.
 
-The position of the controller node is automatically updated by the ARVR Server. This makes this node ideal to add child nodes to visualise the controller.
+The position of the controller node is automatically updated by the :ref:`ARVRServer<class_ARVRServer>`. This makes this node ideal to add child nodes to visualize the controller.
 
 Property Descriptions
 ---------------------
@@ -87,13 +87,13 @@ Property Descriptions
 | *Getter* | get_controller_id()      |
 +----------+--------------------------+
 
-The controller's id.
+The controller's ID.
 
-A controller id of 0 is unbound and will always result in an inactive node. Controller id 1 is reserved for the first controller that identifies itself as the left hand controller and id 2 is reserved for the first controller that identifies itself as the right hand controller.
+A controller ID of 0 is unbound and will always result in an inactive node. Controller ID 1 is reserved for the first controller that identifies itself as the left-hand controller and ID 2 is reserved for the first controller that identifies itself as the right-hand controller.
 
-For any other controller that the :ref:`ARVRServer<class_ARVRServer>` detects, we continue with controller id 3.
+For any other controller that the :ref:`ARVRServer<class_ARVRServer>` detects, we continue with controller ID 3.
 
-When a controller is turned off, its slot is freed. This ensures controllers will keep the same id even when controllers with lower ids are turned off.
+When a controller is turned off, its slot is freed. This ensures controllers will keep the same ID even when controllers with lower IDs are turned off.
 
 .. _class_ARVRController_property_rumble:
 
@@ -120,7 +120,7 @@ If active, returns the name of the associated controller if provided by the AR/V
 
 - :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** const
 
-Returns the hand holding this controller, if known. See TRACKER\_\* constants in :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`.
+Returns the hand holding this controller, if known. See ``TRACKER_*`` constants in :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`.
 
 .. _class_ARVRController_method_get_is_active:
 
@@ -138,13 +138,13 @@ Returns the value of the given axis for things like triggers, touchpads, etc. th
 
 - :ref:`int<class_int>` **get_joystick_id** **(** **)** const
 
-Returns the ID of the joystick object bound to this. Every controller tracked by the ARVR Server that has buttons and axis will also be registered as a joystick within Godot. This means that all the normal joystick tracking and input mapping will work for buttons and axis found on the AR/VR controllers. This ID is purely offered as information so you can link up the controller with its joystick entry.
+Returns the ID of the joystick object bound to this. Every controller tracked by the :ref:`ARVRServer<class_ARVRServer>` that has buttons and axis will also be registered as a joystick within Godot. This means that all the normal joystick tracking and input mapping will work for buttons and axis found on the AR/VR controllers. This ID is purely offered as information so you can link up the controller with its joystick entry.
 
 .. _class_ARVRController_method_get_mesh:
 
 - :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** const
 
-If provided by the ARVR Interface this returns a mesh associated with the controller. This can be used to visualise the controller.
+If provided by the :ref:`ARVRInterface<class_ARVRInterface>`, this returns a mesh associated with the controller. This can be used to visualize the controller.
 
 .. _class_ARVRController_method_is_button_pressed:
 

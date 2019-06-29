@@ -14,7 +14,7 @@ Path
 Brief Description
 -----------------
 
-Container for a :ref:`Curve3D<class_Curve3D>`.
+Contains a :ref:`Curve3D<class_Curve3D>` path for :ref:`PathFollow<class_PathFollow>` nodes to follow.
 
 Properties
 ----------
@@ -30,10 +30,14 @@ Signals
 
 - **curve_changed** **(** **)**
 
+Emitted when the :ref:`curve<class_Path_property_curve>` changes.
+
 Description
 -----------
 
-This class is a container/Node-ification of a :ref:`Curve3D<class_Curve3D>`, so it can have :ref:`Spatial<class_Spatial>` properties and :ref:`Node<class_Node>` info.
+Can have :ref:`PathFollow<class_PathFollow>` child nodes moving along the :ref:`Curve3D<class_Curve3D>`. See :ref:`PathFollow<class_PathFollow>` for more information on the usage.
+
+Note that the path is considered as relative to the moved nodes (children of :ref:`PathFollow<class_PathFollow>`). As such, the curve should usually start with a zero vector ``(0, 0, 0)``.
 
 Property Descriptions
 ---------------------
@@ -47,4 +51,6 @@ Property Descriptions
 +----------+------------------+
 | *Getter* | get_curve()      |
 +----------+------------------+
+
+A :ref:`Curve3D<class_Curve3D>` describing the path.
 

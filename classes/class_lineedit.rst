@@ -90,6 +90,8 @@ Theme Properties
 +---------------------------------+----------------------------+
 | :ref:`Color<class_Color>`       | font_color_selected        |
 +---------------------------------+----------------------------+
+| :ref:`Color<class_Color>`       | font_color_uneditable      |
++---------------------------------+----------------------------+
 | :ref:`int<class_int>`           | minimum_spaces             |
 +---------------------------------+----------------------------+
 | :ref:`StyleBox<class_StyleBox>` | normal                     |
@@ -129,11 +131,11 @@ Enumerations
 
 enum **Align**:
 
-- **ALIGN_LEFT** = **0** --- Aligns the text on the left hand side of the ``LineEdit``.
+- **ALIGN_LEFT** = **0** --- Aligns the text on the left-hand side of the ``LineEdit``.
 
 - **ALIGN_CENTER** = **1** --- Centers the text in the middle of the ``LineEdit``.
 
-- **ALIGN_RIGHT** = **2** --- Aligns the text on the right hand side of the ``LineEdit``.
+- **ALIGN_RIGHT** = **2** --- Aligns the text on the right-hand side of the ``LineEdit``.
 
 - **ALIGN_FILL** = **3** --- Stretches whitespaces to fit the ``LineEdit``'s width.
 
@@ -173,7 +175,7 @@ Non-printable escape characters are automatically stripped from the OS clipboard
 
 - **MENU_REDO** = **6** --- Reverse the last undo action.
 
-- **MENU_MAX** = **7**
+- **MENU_MAX** = **7** --- Represents the size of the :ref:`MenuItems<enum_LineEdit_MenuItems>` enum.
 
 Description
 -----------
@@ -211,7 +213,7 @@ Property Descriptions
 | *Getter* | get_align()      |
 +----------+------------------+
 
-Text alignment as defined in the ALIGN\_\* enum.
+Text alignment as defined in the ``ALIGN_*`` enum.
 
 .. _class_LineEdit_property_caret_blink:
 
@@ -271,7 +273,7 @@ If ``true``, the ``LineEdit`` will show a clear button if ``text`` is not empty.
 | *Getter* | is_context_menu_enabled()       |
 +----------+---------------------------------+
 
-If ``true``, the context menu will appear when right clicked.
+If ``true``, the context menu will appear when right-clicked.
 
 .. _class_LineEdit_property_editable:
 
@@ -307,7 +309,7 @@ If ``true``, the ``LineEdit`` width will increase to stay longer than the :ref:`
 | *Getter* | get_focus_mode()      |
 +----------+-----------------------+
 
-Defines how the ``LineEdit`` can grab focus (Keyboard and mouse, only keyboard, or none). See :ref:`FocusMode<enum_Control_FocusMode>` in :ref:`Control<class_Control>` for details.
+Defines how the ``LineEdit`` can grab focus (Keyboard and mouse, only keyboard, or none). See :ref:`FocusMode<enum_Control_FocusMode>` for details.
 
 .. _class_LineEdit_property_max_length:
 
@@ -412,20 +414,20 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``LineEdit``. By default, 
 
 - void **menu_option** **(** :ref:`int<class_int>` option **)**
 
-Executes a given action as defined in the MENU\_\* enum.
+Executes a given action as defined in the``MENU_*`` enum.
 
 .. _class_LineEdit_method_select:
 
 - void **select** **(** :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=-1 **)**
 
-Selects characters inside ``LineEdit`` between ``from`` and ``to``. By default ``from`` is at the beginning and ``to`` at the end.
+Selects characters inside ``LineEdit`` between ``from`` and ``to``. By default, ``from`` is at the beginning and ``to`` at the end.
 
 ::
 
     text = "Welcome"
-    select()     # Welcome
-    select(4)    # ome
-    select(2, 5) # lco
+    select()     # Will select "Welcome"
+    select(4)    # Will select "ome"
+    select(2, 5) # Will select "lco"
 
 .. _class_LineEdit_method_select_all:
 

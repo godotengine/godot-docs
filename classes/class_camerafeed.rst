@@ -73,14 +73,14 @@ enum **FeedPosition**:
 
 - **FEED_FRONT** = **1** --- Camera is mounted at the front of the device.
 
-- **FEED_BACK** = **2** --- Camera is moutned at the back of the device.
+- **FEED_BACK** = **2** --- Camera is mounted at the back of the device.
 
 Description
 -----------
 
-A camera feed gives you access to a single physical camera attached to your device.
+A camera feed gives you access to a single physical camera attached to your device. When enabled, Godot will start capturing frames from the camera which can then be used.
 
-When enabled Godot will start capturing frames from the camera which can then be used. Do note that many cameras will return YCbCr images which are split into two textures and need to be combined in a shader. Godot does this automatically for you if you set the environment to show the camera image in the background.
+**Note:** Many cameras will return YCbCr images which are split into two textures and need to be combined in a shader. Godot does this automatically for you if you set the environment to show the camera image in the background.
 
 Property Descriptions
 ---------------------
@@ -112,13 +112,13 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_id** **(** **)** const
 
-Get unique id for this feed
+Gets the unique ID for this feed.
 
 .. _class_CameraFeed_method_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
-Get name of the camera
+Gets the camera's name.
 
 .. _class_CameraFeed_method_get_position:
 

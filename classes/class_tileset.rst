@@ -254,7 +254,7 @@ Method Descriptions
 
 - void **autotile_clear_bitmask_map** **(** :ref:`int<class_int>` id **)**
 
-Clears all bitmask info of the autotile.
+Clears all bitmask information of the autotile.
 
 .. _class_TileSet_method_autotile_get_bitmask:
 
@@ -276,7 +276,7 @@ Returns the :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` of the autotile.
 
 Returns the subtile that's being used as an icon in an atlas/autotile given its coordinates.
 
-The subtile defined as the icon will be used as a fallback when the atlas/autotile's bitmask info is incomplete. It will also be used to represent it in the TileSet editor.
+The subtile defined as the icon will be used as a fallback when the atlas/autotile's bitmask information is incomplete. It will also be used to represent it in the TileSet editor.
 
 .. _class_TileSet_method_autotile_get_light_occluder:
 
@@ -336,7 +336,7 @@ Sets the :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` of the autotile.
 
 Sets the subtile that will be used as an icon in an atlas/autotile given its coordinates.
 
-The subtile defined as the icon will be used as a fallback when the atlas/autotile's bitmask info is incomplete. It will also be used to represent it in the TileSet editor.
+The subtile defined as the icon will be used as a fallback when the atlas/autotile's bitmask information is incomplete. It will also be used to represent it in the TileSet editor.
 
 .. _class_TileSet_method_autotile_set_light_occluder:
 
@@ -534,7 +534,7 @@ Returns the tile's :ref:`TileMode<enum_TileSet_TileMode>`.
 
 - :ref:`int<class_int>` **tile_get_z_index** **(** :ref:`int<class_int>` id **)** const
 
-Returns the tile's z-index (drawing layer).
+Returns the tile's Z index (drawing layer).
 
 .. _class_TileSet_method_tile_set_light_occluder:
 

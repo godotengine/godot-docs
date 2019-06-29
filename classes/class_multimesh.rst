@@ -14,7 +14,7 @@ MultiMesh
 Brief Description
 -----------------
 
-Provides high performance mesh instancing.
+Provides high-performance mesh instancing.
 
 Properties
 ----------
@@ -108,9 +108,9 @@ enum **CustomDataFormat**:
 Description
 -----------
 
-MultiMesh provides low level mesh instancing. Drawing thousands of :ref:`MeshInstance<class_MeshInstance>` nodes can be slow because each object is submitted to the GPU to be drawn individually.
+MultiMesh provides low-level mesh instancing. Drawing thousands of :ref:`MeshInstance<class_MeshInstance>` nodes can be slow, since each object is submitted to the GPU then drawn individually.
 
-MultiMesh is much faster because it can draw thousands of instances with a single draw call, resulting in less API overhead.
+MultiMesh is much faster as it can draw thousands of instances with a single draw call, resulting in less API overhead.
 
 As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object).
 
@@ -158,7 +158,7 @@ Format of custom data in custom data array that gets passed to shader.
 | *Getter* | get_instance_count()      |
 +----------+---------------------------+
 
-Number of instances that will get drawn. This clears and (re)sizes the buffers. By default all instances are drawn but you can limit this with :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>`.
+Number of instances that will get drawn. This clears and (re)sizes the buffers. By default, all instances are drawn but you can limit this with :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>`.
 
 .. _class_MultiMesh_property_mesh:
 
@@ -203,13 +203,13 @@ Method Descriptions
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
 
-Returns the visibility AABB.
+Returns the visibility axis-aligned bounding box.
 
 .. _class_MultiMesh_method_get_instance_color:
 
 - :ref:`Color<class_Color>` **get_instance_color** **(** :ref:`int<class_int>` instance **)** const
 
-Get the color of a specific instance.
+Gets a specific instance's color.
 
 .. _class_MultiMesh_method_get_instance_custom_data:
 
@@ -233,17 +233,17 @@ Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
 
 - void **set_as_bulk_array** **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)**
 
-Set all data related to the instances in one go. This is especially useful when loading the data from disk or preparing the data from GDNative.
+Sets all data related to the instances in one go. This is especially useful when loading the data from disk or preparing the data from GDNative.
 
 All data is packed in one large float array. An array may look like this: Transform for instance 1, color data for instance 1, custom data for instance 1, transform for instance 2, color data for instance 2, etc...
 
-:ref:`Transform<class_Transform>` is stored as 12 floats, :ref:`Transform2D<class_Transform2D>` is stored as 8 floats, COLOR_8BIT / CUSTOM_DATA_8BIT is stored as 1 float (4 bytes as is) and COLOR_FLOAT / CUSTOM_DATA_FLOAT is stored as 4 floats.
+:ref:`Transform<class_Transform>` is stored as 12 floats, :ref:`Transform2D<class_Transform2D>` is stored as 8 floats, ``COLOR_8BIT`` / ``CUSTOM_DATA_8BIT`` is stored as 1 float (4 bytes as is) and ``COLOR_FLOAT`` / ``CUSTOM_DATA_FLOAT`` is stored as 4 floats.
 
 .. _class_MultiMesh_method_set_instance_color:
 
 - void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
 
-Set the color of a specific instance.
+Sets the color of a specific instance.
 
 For the color to take effect, ensure that :ref:`color_format<class_MultiMesh_property_color_format>` is non-``null`` on the ``MultiMesh`` and :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` is ``true`` on the material.
 
@@ -251,17 +251,17 @@ For the color to take effect, ensure that :ref:`color_format<class_MultiMesh_pro
 
 - void **set_instance_custom_data** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**
 
-Set custom data for a specific instance. Although :ref:`Color<class_Color>` is used, it is just a container for 4 numbers.
+Sets custom data for a specific instance. Although :ref:`Color<class_Color>` is used, it is just a container for 4 numbers.
 
 .. _class_MultiMesh_method_set_instance_transform:
 
 - void **set_instance_transform** **(** :ref:`int<class_int>` instance, :ref:`Transform<class_Transform>` transform **)**
 
-Set the :ref:`Transform<class_Transform>` for a specific instance.
+Sets the :ref:`Transform<class_Transform>` for a specific instance.
 
 .. _class_MultiMesh_method_set_instance_transform_2d:
 
 - void **set_instance_transform_2d** **(** :ref:`int<class_int>` instance, :ref:`Transform2D<class_Transform2D>` transform **)**
 
-Set the :ref:`Transform2D<class_Transform2D>` for a specific instance.
+Sets the :ref:`Transform2D<class_Transform2D>` for a specific instance.
 

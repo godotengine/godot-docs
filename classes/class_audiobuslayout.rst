@@ -14,7 +14,7 @@ AudioBusLayout
 Brief Description
 -----------------
 
-Stores information about the audiobusses.
+Stores information about the audio buses.
 
 Description
 -----------

@@ -151,13 +151,13 @@ enum **ModeFlags**:
 
 enum **CompressionMode**:
 
-- **COMPRESSION_FASTLZ** = **0** --- Uses the FastLZ compression method.
+- **COMPRESSION_FASTLZ** = **0** --- Uses the `FastLZ <http://fastlz.org/>`_ compression method.
 
-- **COMPRESSION_DEFLATE** = **1** --- Uses the Deflate compression method.
+- **COMPRESSION_DEFLATE** = **1** --- Uses the `DEFLATE <https://en.wikipedia.org/wiki/DEFLATE>`_ compression method.
 
-- **COMPRESSION_ZSTD** = **2** --- Uses the Zstd compression method.
+- **COMPRESSION_ZSTD** = **2** --- Uses the `Zstandard <https://facebook.github.io/zstd/>`_ compression method.
 
-- **COMPRESSION_GZIP** = **3** --- Uses the gzip compression method.
+- **COMPRESSION_GZIP** = **3** --- Uses the `gzip <https://www.gzip.org/>`_ compression method.
 
 Description
 -----------
@@ -199,9 +199,9 @@ Property Descriptions
 | *Getter* | get_endian_swap()      |
 +----------+------------------------+
 
-If ``true``, the file's endianness is swapped. Use this if you're dealing with files written in big endian machines.
+If ``true``, the file's endianness is swapped. Use this if you're dealing with files written on big-endian machines.
 
-Note that this is about the file format, not CPU type. This is always reset to ``false`` whenever you open the file.
+**Note:** This is about the file format, not CPU type. This is always reset to ``false`` whenever you open the file.
 
 Method Descriptions
 -------------------
@@ -216,7 +216,9 @@ Closes the currently opened file.
 
 - :ref:`bool<class_bool>` **eof_reached** **(** **)** const
 
-Returns ``true`` if the file cursor has read past the end of the file. Note that this function will still return ``false`` while at the end of the file and only activates when reading past it. This can be confusing but it conforms to how low level file access works in all operating systems. There is always :ref:`get_len<class_File_method_get_len>` and :ref:`get_position<class_File_method_get_position>` to implement a custom logic.
+Returns ``true`` if the file cursor has read past the end of the file.
+
+**Note:** This function will still return ``false`` while at the end of the file and only activates when reading past it. This can be confusing but it conforms to how low-level file access works in all operating systems. There is always :ref:`get_len<class_File_method_get_len>` and :ref:`get_position<class_File_method_get_position>` to implement a custom logic.
 
 .. _class_File_method_file_exists:
 
@@ -224,7 +226,7 @@ Returns ``true`` if the file cursor has read past the end of the file. Note that
 
 Returns ``true`` if the file exists in the given path.
 
-Note that many resources types are imported (e.g. textures or sound files), and that their source asset will not be included in the exported game, as only the imported version is used (in the ``res://.import`` folder). To check for the existence of such resources while taking into account the remapping to their imported location, use :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>`. Typically, using ``File.file_exists`` on an imported resource would work while you are developing in the editor (the source asset is present in ``res://``, but fail when exported).
+**Note:** Many resources types are imported (e.g. textures or sound files), and that their source asset will not be included in the exported game, as only the imported version is used (in the ``res://.import`` folder). To check for the existence of such resources while taking into account the remapping to their imported location, use :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>`. Typically, using ``File.file_exists`` on an imported resource would work while you are developing in the editor (the source asset is present in ``res://``, but fail when exported).
 
 .. _class_File_method_get_16:
 
@@ -268,7 +270,7 @@ Returns next ``len`` bytes of the file as a :ref:`PoolByteArray<class_PoolByteAr
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_csv_line** **(** :ref:`String<class_String>` delim="," **)** const
 
-Returns the next value of the file in CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma), it should be one character long.
+Returns the next value of the file in CSV (Comma-Separated Values) format. You can pass a different delimiter ``delim`` to use other than the default ``","`` (comma). This delimiter must be one-character long.
 
 Text is interpreted as being UTF-8 encoded.
 
@@ -276,7 +278,7 @@ Text is interpreted as being UTF-8 encoded.
 
 - :ref:`float<class_float>` **get_double** **(** **)** const
 
-Returns the next 64 bits from the file as a floating point number.
+Returns the next 64 bits from the file as a floating-point number.
 
 .. _class_File_method_get_error:
 
@@ -288,7 +290,7 @@ Returns the last error that happened when trying to perform operations. Compare 
 
 - :ref:`float<class_float>` **get_float** **(** **)** const
 
-Returns the next 32 bits from the file as a floating point number.
+Returns the next 32 bits from the file as a floating-point number.
 
 .. _class_File_method_get_len:
 
@@ -346,7 +348,7 @@ Returns the file cursor's position.
 
 - :ref:`float<class_float>` **get_real** **(** **)** const
 
-Returns the next bits from the file as a floating point number.
+Returns the next bits from the file as a floating-point number.
 
 .. _class_File_method_get_sha256:
 
@@ -358,9 +360,9 @@ Returns a SHA-256 :ref:`String<class_String>` representing the file at the given
 
 - :ref:`Variant<class_Variant>` **get_var** **(** :ref:`bool<class_bool>` allow_objects=false **)** const
 
-Returns the next :ref:`Variant<class_Variant>` value from the file. When ``allow_objects`` is ``true`` decoding objects is allowed.
+Returns the next :ref:`Variant<class_Variant>` value from the file. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
-**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
+**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 .. _class_File_method_is_open:
 
@@ -378,7 +380,7 @@ Opens the file for writing or reading, depending on the flags.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open_compressed** **(** :ref:`String<class_String>` path, :ref:`ModeFlags<enum_File_ModeFlags>` mode_flags, :ref:`CompressionMode<enum_File_CompressionMode>` compression_mode=0 **)**
 
-Opens a compressed file for reading or writing. Use :ref:`CompressionMode<enum_File_CompressionMode>` constants to set ``compression_mode``.
+Opens a compressed file for reading or writing.
 
 .. _class_File_method_open_encrypted:
 
@@ -396,13 +398,15 @@ Opens an encrypted file in write or read mode. You need to pass a password to en
 
 - void **seek** **(** :ref:`int<class_int>` position **)**
 
-Change the file reading/writing cursor to the specified position (in bytes from the beginning of the file).
+Changes the file reading/writing cursor to the specified position (in bytes from the beginning of the file).
 
 .. _class_File_method_seek_end:
 
 - void **seek_end** **(** :ref:`int<class_int>` position=0 **)**
 
-Changes the file reading/writing cursor to the specified position (in bytes from the end of the file). Note that this is an offset, so you should use negative numbers or the cursor will be at the end of the file.
+Changes the file reading/writing cursor to the specified position (in bytes from the end of the file).
+
+**Note:** This is an offset, so you should use negative numbers or the cursor will be at the end of the file.
 
 .. _class_File_method_store_16:
 
@@ -438,7 +442,7 @@ Stores the given array of bytes in the file.
 
 - void **store_csv_line** **(** :ref:`PoolStringArray<class_PoolStringArray>` values, :ref:`String<class_String>` delim="," **)**
 
-Store the given :ref:`PoolStringArray<class_PoolStringArray>` in the file as a line formatted in the CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma), it should be one character long.
+Store the given :ref:`PoolStringArray<class_PoolStringArray>` in the file as a line formatted in the CSV (Comma-Separated Values) format. You can pass a different delimiter ``delim`` to use other than the default ``","`` (comma). This delimiter must be one-character long.
 
 Text will be encoded as UTF-8.
 
@@ -446,13 +450,13 @@ Text will be encoded as UTF-8.
 
 - void **store_double** **(** :ref:`float<class_float>` value **)**
 
-Stores a floating point number as 64 bits in the file.
+Stores a floating-point number as 64 bits in the file.
 
 .. _class_File_method_store_float:
 
 - void **store_float** **(** :ref:`float<class_float>` value **)**
 
-Stores a floating point number as 32 bits in the file.
+Stores a floating-point number as 32 bits in the file.
 
 .. _class_File_method_store_line:
 
@@ -474,7 +478,7 @@ Text will be encoded as UTF-8.
 
 - void **store_real** **(** :ref:`float<class_float>` value **)**
 
-Stores a floating point number in the file.
+Stores a floating-point number in the file.
 
 .. _class_File_method_store_string:
 
@@ -488,5 +492,5 @@ Text will be encoded as UTF-8.
 
 - void **store_var** **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` full_objects=false **)**
 
-Stores any Variant value in the file. When ``full_objects`` is ``true`` encoding objects is allowed (and can potentially include code).
+Stores any Variant value in the file. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 

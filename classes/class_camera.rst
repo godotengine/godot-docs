@@ -99,11 +99,11 @@ Enumerations
 
 enum **Projection**:
 
-- **PROJECTION_PERSPECTIVE** = **0** --- Perspective Projection (object's size on the screen becomes smaller when far away).
+- **PROJECTION_PERSPECTIVE** = **0** --- Perspective projection. Objects on the screen becomes smaller when they are far away.
 
-- **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are; also known as orthographic projection).
+- **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal projection, also known as orthographic projection. Objects remain the same size on the screen no matter how far away they are.
 
-- **PROJECTION_FRUSTUM** = **2**
+- **PROJECTION_FRUSTUM** = **2** --- Frustum projection. This mode allows adjusting :ref:`frustum_offset<class_Camera_property_frustum_offset>` to create "tilted frustum" effects.
 
 .. _enum_Camera_KeepAspect:
 
@@ -113,9 +113,9 @@ enum **Projection**:
 
 enum **KeepAspect**:
 
-- **KEEP_WIDTH** = **0** --- Preserves the horizontal aspect ratio.
+- **KEEP_WIDTH** = **0** --- Preserves the horizontal aspect ratio; also known as Vert- scaling. This is usually the best option for projects running in portrait mode, as taller aspect ratios will benefit from a wider vertical FOV.
 
-- **KEEP_HEIGHT** = **1** --- Preserves the vertical aspect ratio.
+- **KEEP_HEIGHT** = **1** --- Preserves the vertical aspect ratio; also known as Hor+ scaling. This is usually the best option for projects running in landscape mode, as wider aspect ratios will automatically benefit from a wider horizontal FOV.
 
 .. _enum_Camera_DopplerTracking:
 
@@ -127,16 +127,16 @@ enum **KeepAspect**:
 
 enum **DopplerTracking**:
 
-- **DOPPLER_TRACKING_DISABLED** = **0** --- Disable Doppler effect simulation (default).
+- **DOPPLER_TRACKING_DISABLED** = **0** --- Disables Doppler effect simulation (default).
 
-- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this Camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
 
-- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this Camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
 
 Description
 -----------
 
-Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the Camera will register in the global viewport. In other words, a Camera just provides *3D* display capabilities to a :ref:`Viewport<class_Viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_Viewport>` (or higher viewports) can't be displayed.
+Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a :ref:`Viewport<class_Viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_Viewport>` (or higher viewports) can't be displayed.
 
 Property Descriptions
 ---------------------
@@ -163,7 +163,7 @@ The culling mask that describes which 3D render layers are rendered by this came
 | *Getter* | is_current()       |
 +----------+--------------------+
 
-If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using this Camera. Default value: ``false``.
+If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using this camera. Default value: ``false``.
 
 .. _class_Camera_property_doppler_tracking:
 
@@ -175,7 +175,7 @@ If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using thi
 | *Getter* | get_doppler_tracking()      |
 +----------+-----------------------------+
 
-If not ``DOPPLER_TRACKING_DISABLED`` this Camera will simulate the Doppler effect for objects changed in particular ``_process`` methods. Default value: ``DOPPLER_TRACKING_DISABLED``.
+If not :ref:`DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>`, this camera will simulate the Doppler effect for objects changed in particular ``_process`` methods. See :ref:`DopplerTracking<enum_Camera_DopplerTracking>` for possible values. Default value: :ref:`DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>`.
 
 .. _class_Camera_property_environment:
 
@@ -187,7 +187,7 @@ If not ``DOPPLER_TRACKING_DISABLED`` this Camera will simulate the Doppler effec
 | *Getter* | get_environment()      |
 +----------+------------------------+
 
-The :ref:`Environment<class_Environment>` to use for this Camera.
+The :ref:`Environment<class_Environment>` to use for this camera.
 
 .. _class_Camera_property_far:
 
@@ -199,7 +199,7 @@ The :ref:`Environment<class_Environment>` to use for this Camera.
 | *Getter* | get_zfar()      |
 +----------+-----------------+
 
-The distance to the far culling boundary for this Camera relative to its local z-axis.
+The distance to the far culling boundary for this camera relative to its local Z axis.
 
 .. _class_Camera_property_fov:
 
@@ -233,7 +233,7 @@ The camera's field of view angle (in degrees). Only applicable in perspective mo
 | *Getter* | get_h_offset()      |
 +----------+---------------------+
 
-The horizontal (X) offset of the Camera viewport.
+The horizontal (X) offset of the camera viewport.
 
 .. _class_Camera_property_keep_aspect:
 
@@ -245,7 +245,7 @@ The horizontal (X) offset of the Camera viewport.
 | *Getter* | get_keep_aspect_mode()      |
 +----------+-----------------------------+
 
-The axis to lock during :ref:`fov<class_Camera_property_fov>`/:ref:`size<class_Camera_property_size>` adjustments. Can be either ``KEEP_WIDTH`` or ``KEEP_HEIGHT``.
+The axis to lock during :ref:`fov<class_Camera_property_fov>`/:ref:`size<class_Camera_property_size>` adjustments. Can be either :ref:`KEEP_WIDTH<class_Camera_constant_KEEP_WIDTH>` or :ref:`KEEP_HEIGHT<class_Camera_constant_KEEP_HEIGHT>`.
 
 .. _class_Camera_property_near:
 
@@ -257,7 +257,7 @@ The axis to lock during :ref:`fov<class_Camera_property_fov>`/:ref:`size<class_C
 | *Getter* | get_znear()      |
 +----------+------------------+
 
-The distance to the near culling boundary for this Camera relative to its local z-axis.
+The distance to the near culling boundary for this camera relative to its local Z axis.
 
 .. _class_Camera_property_projection:
 
@@ -269,7 +269,7 @@ The distance to the near culling boundary for this Camera relative to its local 
 | *Getter* | get_projection()      |
 +----------+-----------------------+
 
-The camera's projection mode. In ``PROJECTION_PERSPECTIVE`` mode, objects' z-distance from the camera's local space scales their perceived size.
+The camera's projection mode. In :ref:`PROJECTION_PERSPECTIVE<class_Camera_constant_PROJECTION_PERSPECTIVE>` mode, objects' Z distance from the camera's local space scales their perceived size.
 
 .. _class_Camera_property_size:
 
@@ -293,7 +293,7 @@ The camera's size measured as 1/2 the width or height. Only applicable in orthog
 | *Getter* | get_v_offset()      |
 +----------+---------------------+
 
-The vertical (Y) offset of the Camera viewport.
+The vertical (Y) offset of the camera viewport.
 
 Method Descriptions
 -------------------
@@ -302,7 +302,7 @@ Method Descriptions
 
 - void **clear_current** **(** :ref:`bool<class_bool>` enable_next=true **)**
 
-If this is the current Camera, remove it from being current. If ``enable_next`` is ``true``, request to make the next Camera current, if any.
+If this is the current camera, remove it from being current. If ``enable_next`` is ``true``, request to make the next camera current, if any.
 
 .. _class_Camera_method_get_camera_rid:
 
@@ -314,7 +314,7 @@ Returns the camera's RID from the :ref:`VisualServer<class_VisualServer>`.
 
 - :ref:`Transform<class_Transform>` **get_camera_transform** **(** **)** const
 
-Gets the camera transform. Subclassed cameras (such as CharacterCamera) may provide different transforms than the :ref:`Node<class_Node>` transform.
+Gets the camera transform. Subclassed cameras such as :ref:`InterpolatedCamera<class_InterpolatedCamera>` may provide different transforms than the :ref:`Node<class_Node>` transform.
 
 .. _class_Camera_method_get_cull_mask_bit:
 
@@ -328,13 +328,15 @@ Gets the camera transform. Subclassed cameras (such as CharacterCamera) may prov
 
 - :ref:`bool<class_bool>` **is_position_behind** **(** :ref:`Vector3<class_Vector3>` world_point **)** const
 
-Returns ``true`` if the given position is behind the Camera. Note that a position which returns ``false`` may still be outside the Camera's field of view.
+Returns ``true`` if the given position is behind the camera.
+
+**Note:** A position which returns ``false`` may still be outside the camera's field of view.
 
 .. _class_Camera_method_make_current:
 
 - void **make_current** **(** **)**
 
-Makes this camera the current Camera for the :ref:`Viewport<class_Viewport>` (see class description). If the Camera Node is outside the scene tree, it will attempt to become current once it's added.
+Makes this camera the current camera for the :ref:`Viewport<class_Viewport>` (see class description). If the camera node is outside the scene tree, it will attempt to become current once it's added.
 
 .. _class_Camera_method_project_local_ray_normal:
 
@@ -372,13 +374,13 @@ Returns a 3D position in worldspace, that is the result of projecting a point on
 
 - void **set_orthogonal** **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Sets the camera projection to orthogonal mode, by specifying a width and the *near* and *far* clip planes in worldspace units. (As a hint, 2D games often use this projection, with values specified in pixels)
+Sets the camera projection to orthogonal mode, by specifying a width and the ``near`` and ``far`` clip planes in worldspace units. (As a hint, 2D games often use this projection, with values specified in pixels)
 
 .. _class_Camera_method_set_perspective:
 
 - void **set_perspective** **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Sets the camera projection to perspective mode, by specifying a *FOV* Y angle in degrees (FOV means Field of View), and the *near* and *far* clip planes in worldspace units.
+Sets the camera projection to perspective mode, by specifying a ``fov`` angle in degrees (FOV means Field of View), and the ``near`` and ``far`` clip planes in world-space units.
 
 .. _class_Camera_method_unproject_position:
 

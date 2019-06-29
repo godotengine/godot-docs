@@ -41,5 +41,5 @@ Property Descriptions
 | *Getter* | get_extents()      |
 +----------+--------------------+
 
-The shape's half extents.
+The box's half extents. The width, height and depth of this shape is twice the half extents.
 

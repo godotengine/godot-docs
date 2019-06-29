@@ -67,7 +67,7 @@ Description
 
 This node takes its parent :ref:`Path<class_Path>`, and returns the coordinates of a point within it, given a distance from the first vertex.
 
-It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be descendants of this node. Then, when setting an offset in this node, the descendant nodes will move accordingly.
+It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting an offset in this node.
 
 Property Descriptions
 ---------------------
@@ -86,7 +86,7 @@ If ``true``, the position between two cached points is interpolated cubically, a
 
 The points along the :ref:`Curve3D<class_Curve3D>` of the :ref:`Path<class_Path>` are precomputed before use, for faster calculations. The point at the requested offset is then calculated interpolating between two adjacent cached points. This may present a problem if the curve makes sharp turns, as the cached points may not follow the curve closely enough.
 
-There are two answers to this problem: Either increase the number of cached points and increase memory consumption, or make a cubic interpolation between two points at the cost of (slightly) slower calculations.
+There are two answers to this problem: either increase the number of cached points and increase memory consumption, or make a cubic interpolation between two points at the cost of (slightly) slower calculations.
 
 .. _class_PathFollow_property_h_offset:
 
@@ -134,7 +134,7 @@ The distance from the first vertex, measured in 3D units along the path. This se
 | *Getter* | get_rotation_mode()      |
 +----------+--------------------------+
 
-Allows or forbids rotation on one or more axes, depending on the constants being used.
+Allows or forbids rotation on one or more axes, depending on the :ref:`RotationMode<enum_PathFollow_RotationMode>` constants being used.
 
 .. _class_PathFollow_property_unit_offset:
 

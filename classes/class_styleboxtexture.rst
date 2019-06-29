@@ -14,7 +14,7 @@ StyleBoxTexture
 Brief Description
 -----------------
 
-Texture Based 3x3 scale style.
+Texture-based nine-patch :ref:`StyleBox<class_StyleBox>`.
 
 Properties
 ----------
@@ -89,7 +89,7 @@ enum **AxisStretchMode**:
 Description
 -----------
 
-Texture Based 3x3 scale style. This stylebox performs a 3x3 scaling of a texture, where only the center cell is fully stretched. This allows for the easy creation of bordered styles.
+Texture-based nine-patch :ref:`StyleBox<class_StyleBox>`, in a way similar to :ref:`NinePatchRect<class_NinePatchRect>`. This stylebox performs a 3×3 scaling of a texture, where only the center cell is fully stretched. This makes it possible to design bordered styles regardless of the stylebox's size.
 
 Property Descriptions
 ---------------------
@@ -134,7 +134,7 @@ Property Descriptions
 | *Getter* | get_expand_margin_size()      |
 +----------+-------------------------------+
 
-Expands the bottom margin of this style box when drawing, causing it be drawn larger than requested.
+Expands the bottom margin of this style box when drawing, causing it to be drawn larger than requested.
 
 .. _class_StyleBoxTexture_property_expand_margin_left:
 
@@ -146,7 +146,7 @@ Expands the bottom margin of this style box when drawing, causing it be drawn la
 | *Getter* | get_expand_margin_size()      |
 +----------+-------------------------------+
 
-Expands the left margin of this style box when drawing, causing it be drawn larger than requested.
+Expands the left margin of this style box when drawing, causing it to be drawn larger than requested.
 
 .. _class_StyleBoxTexture_property_expand_margin_right:
 
@@ -158,7 +158,7 @@ Expands the left margin of this style box when drawing, causing it be drawn larg
 | *Getter* | get_expand_margin_size()      |
 +----------+-------------------------------+
 
-Expands the right margin of this style box when drawing, causing it be drawn larger than requested.
+Expands the right margin of this style box when drawing, causing it to be drawn larger than requested.
 
 .. _class_StyleBoxTexture_property_expand_margin_top:
 
@@ -170,7 +170,7 @@ Expands the right margin of this style box when drawing, causing it be drawn lar
 | *Getter* | get_expand_margin_size()      |
 +----------+-------------------------------+
 
-Expands the top margin of this style box when drawing, causing it be drawn larger than requested.
+Expands the top margin of this style box when drawing, causing it to be drawn larger than requested.
 
 .. _class_StyleBoxTexture_property_margin_bottom:
 
@@ -182,9 +182,9 @@ Expands the top margin of this style box when drawing, causing it be drawn large
 | *Getter* | get_margin_size()      |
 +----------+------------------------+
 
-Increases the bottom margin of the 3x3 texture box.
+Increases the bottom margin of the 3×3 texture box.
 
-A higher value means more of the source texture is considered to be part of the bottom border of the 3x3 box.
+A higher value means more of the source texture is considered to be part of the bottom border of the 3×3 box.
 
 This is also the value used as fallback for :ref:`StyleBox.content_margin_bottom<class_StyleBox_property_content_margin_bottom>` if it is negative.
 
@@ -198,9 +198,9 @@ This is also the value used as fallback for :ref:`StyleBox.content_margin_bottom
 | *Getter* | get_margin_size()      |
 +----------+------------------------+
 
-Increases the left margin of the 3x3 texture box.
+Increases the left margin of the 3×3 texture box.
 
-A higher value means more of the source texture is considered to be part of the left border of the 3x3 box.
+A higher value means more of the source texture is considered to be part of the left border of the 3×3 box.
 
 This is also the value used as fallback for :ref:`StyleBox.content_margin_left<class_StyleBox_property_content_margin_left>` if it is negative.
 
@@ -214,9 +214,9 @@ This is also the value used as fallback for :ref:`StyleBox.content_margin_left<c
 | *Getter* | get_margin_size()      |
 +----------+------------------------+
 
-Increases the right margin of the 3x3 texture box.
+Increases the right margin of the 3×3 texture box.
 
-A higher value means more of the source texture is considered to be part of the right border of the 3x3 box.
+A higher value means more of the source texture is considered to be part of the right border of the 3×3 box.
 
 This is also the value used as fallback for :ref:`StyleBox.content_margin_right<class_StyleBox_property_content_margin_right>` if it is negative.
 
@@ -230,9 +230,9 @@ This is also the value used as fallback for :ref:`StyleBox.content_margin_right<
 | *Getter* | get_margin_size()      |
 +----------+------------------------+
 
-Increases the top margin of the 3x3 texture box.
+Increases the top margin of the 3×3 texture box.
 
-A higher value means more of the source texture is considered to be part of the top border of the 3x3 box.
+A higher value means more of the source texture is considered to be part of the top border of the 3×3 box.
 
 This is also the value used as fallback for :ref:`StyleBox.content_margin_top<class_StyleBox_property_content_margin_top>` if it is negative.
 

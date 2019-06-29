@@ -51,7 +51,7 @@ enum **Priority**:
 Description
 -----------
 
-A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>`, :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
+A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>` or :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
 
 Method Descriptions
 -------------------
@@ -60,7 +60,7 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_id** **(** **)** const
 
-Returns the current ``Thread``\ s id, uniquely identifying it among all threads.
+Returns the current ``Thread``'s ID, uniquely identifying it among all threads.
 
 .. _class_Thread_method_is_active:
 
@@ -72,9 +72,9 @@ Returns ``true`` if this ``Thread`` is currently active. An active ``Thread`` ca
 
 - :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Object<class_Object>` instance, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null, :ref:`Priority<enum_Thread_Priority>` priority=1 **)**
 
-Starts a new ``Thread`` that runs "method" on object "instance" with "userdata" passed as an argument. The "priority" of the ``Thread`` can be changed by passing a PRIORITY\_\* enum.
+Starts a new ``Thread`` that runs ``method`` on object ``instance`` with ``userdata`` passed as an argument. The ``priority`` of the ``Thread`` can be changed by passing a value from the :ref:`Priority<enum_Thread_Priority>` enum.
 
-Returns OK on success, or ERR_CANT_CREATE on failure.
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` on failure.
 
 .. _class_Thread_method_wait_to_finish:
 

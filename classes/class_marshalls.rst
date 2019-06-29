@@ -45,37 +45,37 @@ Method Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **base64_to_raw** **(** :ref:`String<class_String>` base64_str **)**
 
-Returns :ref:`PoolByteArray<class_PoolByteArray>` of a given base64 encoded String.
+Returns a decoded :ref:`PoolByteArray<class_PoolByteArray>` corresponding to the Base64-encoded string ``base64_str``.
 
 .. _class_Marshalls_method_base64_to_utf8:
 
 - :ref:`String<class_String>` **base64_to_utf8** **(** :ref:`String<class_String>` base64_str **)**
 
-Returns utf8 String of a given base64 encoded String.
+Returns a decoded string corresponding to the Base64-encoded string ``base64_str``.
 
 .. _class_Marshalls_method_base64_to_variant:
 
 - :ref:`Variant<class_Variant>` **base64_to_variant** **(** :ref:`String<class_String>` base64_str, :ref:`bool<class_bool>` allow_objects=false **)**
 
-Returns :ref:`Variant<class_Variant>` of a given base64 encoded String. When ``allow_objects`` is ``true`` decoding objects is allowed.
+Returns a decoded :ref:`Variant<class_Variant>` corresponding to the Base64-encoded string ``base64_str``. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
-**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
+**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 .. _class_Marshalls_method_raw_to_base64:
 
 - :ref:`String<class_String>` **raw_to_base64** **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**
 
-Returns base64 encoded String of a given :ref:`PoolByteArray<class_PoolByteArray>`.
+Returns a Base64-encoded string of a given :ref:`PoolByteArray<class_PoolByteArray>`.
 
 .. _class_Marshalls_method_utf8_to_base64:
 
 - :ref:`String<class_String>` **utf8_to_base64** **(** :ref:`String<class_String>` utf8_str **)**
 
-Returns base64 encoded String of a given utf8 String.
+Returns a Base64-encoded string of the UTF-8 string ``utf8_str``.
 
 .. _class_Marshalls_method_variant_to_base64:
 
 - :ref:`String<class_String>` **variant_to_base64** **(** :ref:`Variant<class_Variant>` variant, :ref:`bool<class_bool>` full_objects=false **)**
 
-Returns base64 encoded String of a given :ref:`Variant<class_Variant>`. When ``full_objects`` is ``true`` encoding objects is allowed (and can potentially include code).
+Returns a Base64-encoded string of the :ref:`Variant<class_Variant>` ``variant``. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 

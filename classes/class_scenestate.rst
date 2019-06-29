@@ -76,14 +76,20 @@ enum **GenEditState**:
 
 - **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`PackedScene.instance<class_PackedScene_method_instance>`, blocks edits to the scene state.
 
-- **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`PackedScene.instance<class_PackedScene_method_instance>`, provides inherited scene resources to the local scene. Requires tools compiled.
+- **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`PackedScene.instance<class_PackedScene_method_instance>`, provides inherited scene resources to the local scene.
 
-- **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`PackedScene.instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state. Requires tools compiled.
+**Note:** Only available in editor builds.
+
+- **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`PackedScene.instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
+
+**Note:** Only available in editor builds.
 
 Description
 -----------
 
 Maintains a list of resources, nodes, exported, and overridden properties, and built-in scripts associated with a scene.
+
+This class cannot be instantiated directly, it is retrieved for a given scene as the result of :ref:`PackedScene.get_state<class_PackedScene_method_get_state>`.
 
 Method Descriptions
 -------------------
@@ -100,11 +106,13 @@ Returns the list of bound parameters for the signal at ``idx``.
 
 Returns the number of signal connections in the scene.
 
+The ``idx`` argument used to query connection metadata in other ``get_connection_*`` methods in the interval ``[0, get_connection_count() - 1]``.
+
 .. _class_SceneState_method_get_connection_flags:
 
 - :ref:`int<class_int>` **get_connection_flags** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the flags for the signal at ``idx``. See :ref:`Object<class_Object>`'s ``CONNECT_*`` flags.
+Returns the connection flags for the signal at ``idx``. See :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants.
 
 .. _class_SceneState_method_get_connection_method:
 
@@ -136,6 +144,8 @@ Returns the path to the node that owns the method connected to the signal at ``i
 
 Returns the number of nodes in the scene.
 
+The ``idx`` argument used to query node data in other ``get_node_*`` methods in the interval ``[0, get_node_count() - 1]``.
+
 .. _class_SceneState_method_get_node_groups:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_node_groups** **(** :ref:`int<class_int>` idx **)** const
@@ -146,11 +156,13 @@ Returns the list of group names associated with the node at ``idx``.
 
 - :ref:`int<class_int>` **get_node_index** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the node's index, which is its position relative to its siblings. This is only relevant and saved in scenes for cases where new nodes are added to an instanced or inherited scene among siblings from the base scene. Despite the name, this index is not related to the ``idx`` argument used here and in other methods.
+
 .. _class_SceneState_method_get_node_instance:
 
 - :ref:`PackedScene<class_PackedScene>` **get_node_instance** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the scene for the node at ``idx`` or ``null`` if the node is not an instance.
+Returns a :ref:`PackedScene<class_PackedScene>` for the node at ``idx`` (i.e. the whole branch starting at this node, with its child nodes and resources), or ``null`` if the node is not an instance.
 
 .. _class_SceneState_method_get_node_instance_placeholder:
 
@@ -176,11 +188,15 @@ Returns the path to the owner of the node at ``idx``, relative to the root node.
 
 Returns the path to the node at ``idx``.
 
+If ``for_parent`` is ``true``, returns the path of the ``idx`` node's parent instead.
+
 .. _class_SceneState_method_get_node_property_count:
 
 - :ref:`int<class_int>` **get_node_property_count** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the number of exported or overridden properties for the node at ``idx``.
+
+The ``prop_idx`` argument used to query node property data in other ``get_node_property_*`` methods in the interval ``[0, get_node_property_count() - 1]``.
 
 .. _class_SceneState_method_get_node_property_name:
 

@@ -34,7 +34,15 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load<class_ConfigFile_method_load>` **(** :ref:`String<class_String>` path **)**                                                                                                 |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_encrypted<class_ConfigFile_method_load_encrypted>` **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` key **)**                              |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_encrypted_pass<class_ConfigFile_method_load_encrypted_pass>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` pass **)**                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save<class_ConfigFile_method_save>` **(** :ref:`String<class_String>` path **)**                                                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_encrypted<class_ConfigFile_method_save_encrypted>` **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` key **)**                              |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_encrypted_pass<class_ConfigFile_method_save_encrypted_pass>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` pass **)**                                 |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_value<class_ConfigFile_method_set_value>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` value **)**              |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -59,7 +67,7 @@ The following example shows how to parse an INI-style file from the system, read
 
     var config = ConfigFile.new()
     var err = config.load("user://settings.cfg")
-    if err == OK: # if not, something went wrong with the file loading
+    if err == OK: # If not, something went wrong with the file loading
         # Look for the display/width pair, and default to 1024 if missing
         var screen_width = config.get_value("display", "width", 1024)
         # Store a variable if and only if it hasn't been defined yet
@@ -113,13 +121,29 @@ Returns ``true`` if the specified section-key pair exists.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
-Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is ``OK``.
+Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on. Returns one of the :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
+
+.. _class_ConfigFile_method_load_encrypted:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **load_encrypted** **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` key **)**
+
+.. _class_ConfigFile_method_load_encrypted_pass:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **load_encrypted_pass** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` pass **)**
 
 .. _class_ConfigFile_method_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**
 
-Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is ``OK``.
+Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure. Returns one of the :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
+
+.. _class_ConfigFile_method_save_encrypted:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **save_encrypted** **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` key **)**
+
+.. _class_ConfigFile_method_save_encrypted_pass:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **save_encrypted_pass** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` pass **)**
 
 .. _class_ConfigFile_method_set_value:
 

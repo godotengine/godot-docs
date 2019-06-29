@@ -80,7 +80,7 @@ enum **Feature**:
 
 - **FEATURE_FILESYSTEM_DOCK** = **6**
 
-- **FEATURE_MAX** = **7**
+- **FEATURE_MAX** = **7** --- Represents the size of the :ref:`Feature<enum_EditorFeatureProfile_Feature>` enum.
 
 Method Descriptions
 -------------------

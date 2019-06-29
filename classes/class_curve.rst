@@ -101,7 +101,7 @@ enum **TangentMode**:
 Description
 -----------
 
-A curve that can be saved and re-used for other objects. By default it ranges between ``0`` and ``1`` on the y-axis and positions points relative to the ``0.5`` y-position.
+A curve that can be saved and re-used for other objects. By default, it ranges between ``0`` and ``1`` on the Y axis and positions points relative to the ``0.5`` Y position.
 
 Property Descriptions
 ---------------------
@@ -149,7 +149,7 @@ Method Descriptions
 
 - :ref:`int<class_int>` **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` left_tangent=0, :ref:`float<class_float>` right_tangent=0, :ref:`TangentMode<enum_Curve_TangentMode>` left_mode=0, :ref:`TangentMode<enum_Curve_TangentMode>` right_mode=0 **)**
 
-Adds a point to the curve. For each side, if the ``*_mode`` is ``TANGENT_LINEAR``, the ``*_tangent`` angle (in degrees) uses the slope of the curve halfway to the adjacent point. Allows custom assignments to the ``*_tangent`` angle if ``*_mode`` is set to ``TANGENT_FREE``.
+Adds a point to the curve. For each side, if the ``*_mode`` is :ref:`TANGENT_LINEAR<class_Curve_constant_TANGENT_LINEAR>`, the ``*_tangent`` angle (in degrees) uses the slope of the curve halfway to the adjacent point. Allows custom assignments to the ``*_tangent`` angle if ``*_mode`` is set to :ref:`TANGENT_FREE<class_Curve_constant_TANGENT_FREE>`.
 
 .. _class_Curve_method_bake:
 
@@ -179,7 +179,7 @@ Returns the number of points describing the curve.
 
 - :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_left_mode** **(** :ref:`int<class_int>` index **)** const
 
-Returns the left ``TangentMode`` for the point at ``index``.
+Returns the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index``.
 
 .. _class_Curve_method_get_point_left_tangent:
 
@@ -197,7 +197,7 @@ Returns the curve coordinates for the point at ``index``.
 
 - :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_right_mode** **(** :ref:`int<class_int>` index **)** const
 
-Returns the right ``TangentMode`` for the point at ``index``.
+Returns the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index``.
 
 .. _class_Curve_method_get_point_right_tangent:
 
@@ -209,13 +209,13 @@ Returns the right tangent angle (in degrees) for the point at ``index``.
 
 - :ref:`float<class_float>` **interpolate** **(** :ref:`float<class_float>` offset **)** const
 
-Returns the y value for the point that would exist at x-position ``offset`` along the curve.
+Returns the Y value for the point that would exist at the X position ``offset`` along the curve.
 
 .. _class_Curve_method_interpolate_baked:
 
 - :ref:`float<class_float>` **interpolate_baked** **(** :ref:`float<class_float>` offset **)**
 
-Returns the y value for the point that would exist at x-position ``offset`` along the curve using the baked cache. Bakes the curve's points if not already baked.
+Returns the Y value for the point that would exist at the X position ``offset`` along the curve using the baked cache. Bakes the curve's points if not already baked.
 
 .. _class_Curve_method_remove_point:
 
@@ -227,7 +227,7 @@ Removes the point at ``index`` from the curve.
 
 - void **set_point_left_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**
 
-Sets the left ``TangentMode`` for the point at ``index`` to ``mode``.
+Sets the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index`` to ``mode``.
 
 .. _class_Curve_method_set_point_left_tangent:
 
@@ -239,13 +239,13 @@ Sets the left tangent angle for the point at ``index`` to ``tangent``.
 
 - :ref:`int<class_int>` **set_point_offset** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` offset **)**
 
-Sets the offset from ``0.5``
+Sets the offset from ``0.5``.
 
 .. _class_Curve_method_set_point_right_mode:
 
 - void **set_point_right_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**
 
-Sets the right ``TangentMode`` for the point at ``index`` to ``mode``.
+Sets the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index`` to ``mode``.
 
 .. _class_Curve_method_set_point_right_tangent:
 

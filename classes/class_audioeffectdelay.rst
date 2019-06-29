@@ -14,7 +14,7 @@ AudioEffectDelay
 Brief Description
 -----------------
 
-Adds a Delay audio effect to an Audio bus. Plays input signal back after a period of time.
+Adds a delay audio effect to an audio bus. Plays input signal back after a period of time.
 
 Two tap delay and feedback options.
 
@@ -115,7 +115,7 @@ Sound level for ``tap1``. Default value: ``-6 dB``.
 | *Getter* | get_feedback_lowpass()      |
 +----------+-----------------------------+
 
-Low-pass filter for feedback. Frequencies below the Low Cut value are filtered out of the source signal. Default value: ``16000``.
+Low-pass filter for feedback, in Hz. Frequencies below this value are filtered out of the source signal. Default value: ``16000``.
 
 .. _class_AudioEffectDelay_property_tap1/active:
 
@@ -139,7 +139,7 @@ If ``true``, ``tap1`` will be enabled. Default value: ``true``.
 | *Getter* | get_tap1_delay_ms()      |
 +----------+--------------------------+
 
-**Tap1** delay time in milliseconds. Default value: ``250ms``.
+``tap1`` delay time in milliseconds. Default value: ``250ms``.
 
 .. _class_AudioEffectDelay_property_tap1/level_db:
 

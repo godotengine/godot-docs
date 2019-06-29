@@ -14,7 +14,7 @@ AudioEffectPhaser
 Brief Description
 -----------------
 
-Adds a Phaser audio effect to an Audio bus.
+Adds a phaser audio effect to an Audio bus.
 
 Combines the original signal with a copy that is slightly out of phase with the original.
 
@@ -36,7 +36,7 @@ Properties
 Description
 -----------
 
-Combines phase-shifted signals with the original signal. The movement of the phase-shifted signals is controlled using a Low Frequency Oscillator.
+Combines phase-shifted signals with the original signal. The movement of the phase-shifted signals is controlled using a low-frequency oscillator.
 
 Property Descriptions
 ---------------------
@@ -75,7 +75,7 @@ Output percent of modified sound. Value can range from 0.1 to 0.9. Default value
 | *Getter* | get_range_max_hz()      |
 +----------+-------------------------+
 
-Determines the maximum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: ``1600hz``.
+Determines the maximum frequency affected by the LFO modulations, in Hz. Value can range from 10 to 10000. Default value: ``1600hz``.
 
 .. _class_AudioEffectPhaser_property_range_min_hz:
 
@@ -87,7 +87,7 @@ Determines the maximum frequency affected by the LFO modulations. Value can rang
 | *Getter* | get_range_min_hz()      |
 +----------+-------------------------+
 
-Determines the minimum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: ``440hz``.
+Determines the minimum frequency affected by the LFO modulations, in Hz. Value can range from 10 to 10000. Default value: ``440hz``.
 
 .. _class_AudioEffectPhaser_property_rate_hz:
 
@@ -99,5 +99,5 @@ Determines the minimum frequency affected by the LFO modulations. Value can rang
 | *Getter* | get_rate_hz()      |
 +----------+--------------------+
 
-Adjusts the rate at which the effect sweeps up and down across the frequency range.
+Adjusts the rate in Hz at which the effect sweeps up and down across the frequency range.
 

@@ -130,7 +130,7 @@ The motion of the shape being queried for.
 | *Getter* | get_shape_rid()      |
 +----------+----------------------+
 
-The :ref:`RID<class_RID>` of the queried shape. See :ref:`set_shape<class_Physics2DShapeQueryParameters_method_set_shape>` also.
+The :ref:`RID<class_RID>` of the queried shape. See also :ref:`set_shape<class_Physics2DShapeQueryParameters_method_set_shape>`.
 
 .. _class_Physics2DShapeQueryParameters_property_transform:
 
@@ -151,5 +151,5 @@ Method Descriptions
 
 - void **set_shape** **(** :ref:`Resource<class_Resource>` shape **)**
 
-Set the :ref:`Shape2D<class_Shape2D>` that will be used for collision/intersection queries.
+Sets the :ref:`Shape2D<class_Shape2D>` that will be used for collision/intersection queries.
 

@@ -14,7 +14,7 @@ PinJoint
 Brief Description
 -----------------
 
-Pin Joint for 3D Shapes.
+Pin joint for 3D shapes.
 
 Properties
 ----------
@@ -40,20 +40,16 @@ Enumerations
 
 enum **Param**:
 
-- **PARAM_BIAS** = **0** --- The force with which the pinned objects stay in positional relation to each other.
+- **PARAM_BIAS** = **0** --- The force with which the pinned objects stay in positional relation to each other. The higher, the stronger.
 
-The higher, the stronger.
-
-- **PARAM_DAMPING** = **1** --- The force with which the pinned objects stay in velocity relation to each other.
-
-The higher, the stronger.
+- **PARAM_DAMPING** = **1** --- The force with which the pinned objects stay in velocity relation to each other. The higher, the stronger.
 
 - **PARAM_IMPULSE_CLAMP** = **2** --- If above 0, this value is the maximum value for an impulse that this Joint produces.
 
 Description
 -----------
 
-Pin Joint for 3D Rigid Bodies. It pins 2 bodies (rigid or static) together.
+Pin joint for 3D rigid bodies. It pins 2 bodies (rigid or static) together.
 
 Property Descriptions
 ---------------------
@@ -68,9 +64,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-The force with which the pinned objects stay in positional relation to each other.
-
-The higher, the stronger.
+The force with which the pinned objects stay in positional relation to each other. The higher, the stronger.
 
 .. _class_PinJoint_property_params/damping:
 
@@ -82,9 +76,7 @@ The higher, the stronger.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-The force with which the pinned objects stay in velocity relation to each other.
-
-The higher, the stronger.
+The force with which the pinned objects stay in velocity relation to each other. The higher, the stronger.
 
 .. _class_PinJoint_property_params/impulse_clamp:
 

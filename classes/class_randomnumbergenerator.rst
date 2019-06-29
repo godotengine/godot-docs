@@ -43,7 +43,9 @@ Methods
 Description
 -----------
 
-RandomNumberGenerator is a class for generating pseudo-random numbers. It currently uses PCG32. The underlying algorithm is an implementation detail. As a result, it should not be depended upon for reproducible random streams across Godot versions.
+RandomNumberGenerator is a class for generating pseudo-random numbers. It currently uses `PCG32 <http://www.pcg-random.org/>`_.
+
+**Note:** The underlying algorithm is an implementation detail. As a result, it should not be depended upon for reproducible random streams across Godot versions.
 
 Property Descriptions
 ---------------------
@@ -69,31 +71,31 @@ Method Descriptions
 
 - :ref:`float<class_float>` **randf** **(** **)**
 
-Generates pseudo-random float between '0.0' and '1.0', inclusive.
+Generates a pseudo-random float between ``0.0`` and ``1.0`` (inclusive).
 
 .. _class_RandomNumberGenerator_method_randf_range:
 
 - :ref:`float<class_float>` **randf_range** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
 
-Generates pseudo-random float between ``from`` and ``to``, inclusive.
+Generates a pseudo-random float between ``from`` and ``to`` (inclusive).
 
 .. _class_RandomNumberGenerator_method_randfn:
 
 - :ref:`float<class_float>` **randfn** **(** :ref:`float<class_float>` mean=0.0, :ref:`float<class_float>` deviation=1.0 **)**
 
-Generates normally(gaussian) distributed pseudo-random number, using Box-Muller transform with the specified ``mean`` and a standard ``deviation``.
+Generates a `normally-distributed <https://en.wikipedia.org/wiki/Normal_distribution>`_ pseudo-random number, using Box-Muller transform with the specified ``mean`` and a standard ``deviation``. This is also called Gaussian distribution.
 
 .. _class_RandomNumberGenerator_method_randi:
 
 - :ref:`int<class_int>` **randi** **(** **)**
 
-Generates pseudo-random 32-bit unsigned integer between '0' and '4294967295', inclusive.
+Generates a pseudo-random 32-bit unsigned integer between ``0`` and ``4294967295`` (inclusive).
 
 .. _class_RandomNumberGenerator_method_randi_range:
 
 - :ref:`int<class_int>` **randi_range** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
 
-Generates pseudo-random 32-bit signed integer between ``from`` and ``to`` (inclusive).
+Generates a pseudo-random 32-bit signed integer between ``from`` and ``to`` (inclusive).
 
 .. _class_RandomNumberGenerator_method_randomize:
 

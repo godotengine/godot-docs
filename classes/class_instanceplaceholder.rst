@@ -47,7 +47,7 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_instance_path** **(** **)** const
 
-Retrieve the path to the :ref:`PackedScene<class_PackedScene>` resource file that is loaded by default when calling :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>`.
+Gets the path to the :ref:`PackedScene<class_PackedScene>` resource file that is loaded by default when calling :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>`.
 
 .. _class_InstancePlaceholder_method_get_stored_values:
 
@@ -57,5 +57,5 @@ Retrieve the path to the :ref:`PackedScene<class_PackedScene>` resource file tha
 
 - void **replace_by_instance** **(** :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**
 
-Replace this placeholder by the scene handed as an argument, or the original scene if no argument is given. As for all resources, the scene is loaded only if it's not loaded already. By manually loading the scene beforehand, delays caused by this function can be avoided.
+Replaces this placeholder by the scene handed as an argument, or the original scene if no argument is given. As for all resources, the scene is loaded only if it's not loaded already. By manually loading the scene beforehand, delays caused by this function can be avoided.
 

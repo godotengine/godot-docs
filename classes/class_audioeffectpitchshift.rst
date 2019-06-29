@@ -14,7 +14,7 @@ AudioEffectPitchShift
 Brief Description
 -----------------
 
-Adds a Pitch shift audio effect to an Audio bus.
+Adds a pitch-shifting audio effect to an Audio bus.
 
 Raises or lowers the pitch of original sound.
 
@@ -58,7 +58,7 @@ enum **FFT_Size**:
 
 - **FFT_SIZE_4096** = **4**
 
-- **FFT_SIZE_MAX** = **5**
+- **FFT_SIZE_MAX** = **5** --- Represents the size of the :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` enum.
 
 Description
 -----------

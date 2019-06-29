@@ -14,7 +14,7 @@ Tabs
 Brief Description
 -----------------
 
-Tabs Control.
+Tabs control.
 
 Properties
 ----------
@@ -163,7 +163,7 @@ enum **TabAlign**:
 
 - **ALIGN_RIGHT** = **2** --- Align the tabs to the right.
 
-- **ALIGN_MAX** = **3**
+- **ALIGN_MAX** = **3** --- Represents the size of the :ref:`TabAlign<enum_Tabs_TabAlign>` enum.
 
 .. _enum_Tabs_CloseButtonDisplayPolicy:
 
@@ -183,7 +183,7 @@ enum **CloseButtonDisplayPolicy**:
 
 - **CLOSE_BUTTON_SHOW_ALWAYS** = **2**
 
-- **CLOSE_BUTTON_MAX** = **3**
+- **CLOSE_BUTTON_MAX** = **3** --- Represents the size of the :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` enum.
 
 Description
 -----------
@@ -262,7 +262,7 @@ Adds a new tab.
 
 - void **ensure_tab_visible** **(** :ref:`int<class_int>` idx **)**
 
-Moves the Scroll view to make the tab visible.
+Moves the scroll view to make the tab visible.
 
 .. _class_Tabs_method_get_offset_buttons_visible:
 
@@ -290,7 +290,7 @@ Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
 - :ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** const
 
-Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or null if the tab has no :ref:`Texture<class_Texture>`.
+Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or ``null`` if the tab has no :ref:`Texture<class_Texture>`.
 
 .. _class_Tabs_method_get_tab_offset:
 
@@ -312,47 +312,49 @@ Returns the title of the tab at index ``tab_idx``. Tab titles default to the nam
 
 - :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** const
 
-Returns the ``Tabs`` rearrange group id.
+Returns the ``Tabs``' rearrange group ID.
 
 .. _class_Tabs_method_move_tab:
 
 - void **move_tab** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
 
-Rearrange tab.
+Moves a tab from ``from`` to ``to``.
 
 .. _class_Tabs_method_remove_tab:
 
 - void **remove_tab** **(** :ref:`int<class_int>` tab_idx **)**
 
-Removes tab at index ``tab_idx``
+Removes the tab at index ``tab_idx``.
 
 .. _class_Tabs_method_set_select_with_rmb:
 
 - void **set_select_with_rmb** **(** :ref:`bool<class_bool>` enabled **)**
 
-If ``true``, enables selecting a tab with right mouse button.
+If ``true``, enables selecting a tab with the right mouse button.
 
 .. _class_Tabs_method_set_tab_disabled:
 
 - void **set_tab_disabled** **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**
 
-If ``disabled`` is ``false``, hides the tab at index ``tab_idx``. Note that its title text will remain, unless also removed with :ref:`set_tab_title<class_Tabs_method_set_tab_title>`.
+If ``disabled`` is ``false``, hides the tab at index ``tab_idx``.
+
+**Note:** Its title text will remain unless it is also removed with :ref:`set_tab_title<class_Tabs_method_set_tab_title>`.
 
 .. _class_Tabs_method_set_tab_icon:
 
 - void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**
 
-Sets an icon for the tab at index ``tab_idx``.
+Sets an ``icon`` for the tab at index ``tab_idx``.
 
 .. _class_Tabs_method_set_tab_title:
 
 - void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**
 
-Sets a title for the tab at index ``tab_idx``.
+Sets a ``title`` for the tab at index ``tab_idx``.
 
 .. _class_Tabs_method_set_tabs_rearrange_group:
 
 - void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
 
-Defines rearrange group id, choose for each ``Tabs`` the same value to enable tab drag between ``Tabs``. Enable drag with ``set_drag_to_rearrange_enabled(true)``.
+Defines the rearrange group ID. Choose for each ``Tabs`` the same value to dragging tabs between ``Tabs``. Enable drag with ``set_drag_to_rearrange_enabled(true)``.
 

@@ -14,7 +14,7 @@ CubeMap
 Brief Description
 -----------------
 
-A CubeMap is a 6 sided 3D texture.
+A CubeMap is a 6-sided 3D texture.
 
 Properties
 ----------

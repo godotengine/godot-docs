@@ -14,7 +14,7 @@ PopupDialog
 Brief Description
 -----------------
 
-Base class for Popup Dialogs.
+Base class for popup dialogs.
 
 Description
 -----------

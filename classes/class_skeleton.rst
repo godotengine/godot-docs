@@ -120,13 +120,13 @@ Method Descriptions
 
 - void **add_bone** **(** :ref:`String<class_String>` name **)**
 
-Add a bone, with name "name". :ref:`get_bone_count<class_Skeleton_method_get_bone_count>` will become the bone index.
+Adds a bone, with name ``name``. :ref:`get_bone_count<class_Skeleton_method_get_bone_count>` will become the bone index.
 
 .. _class_Skeleton_method_bind_child_node_to_bone:
 
 - void **bind_child_node_to_bone** **(** :ref:`int<class_int>` bone_idx, :ref:`Node<class_Node>` node **)**
 
-Deprecated soon.
+*Deprecated soon.*
 
 .. _class_Skeleton_method_clear_bones:
 
@@ -138,7 +138,7 @@ Clear all the bones in this skeleton.
 
 - :ref:`int<class_int>` **find_bone** **(** :ref:`String<class_String>` name **)** const
 
-Returns the bone index that matches "name" as its name.
+Returns the bone index that matches ``name`` as its name.
 
 .. _class_Skeleton_method_get_bone_count:
 
@@ -162,13 +162,15 @@ Returns the overall transform of the specified bone, with respect to the skeleto
 
 - :ref:`String<class_String>` **get_bone_name** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Returns the name of the bone at index "index".
+Returns the name of the bone at index ``index``.
 
 .. _class_Skeleton_method_get_bone_parent:
 
 - :ref:`int<class_int>` **get_bone_parent** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Returns the bone index which is the parent of the bone at "bone_idx". If -1, then bone has no parent. Note that the parent bone returned will always be less than "bone_idx".
+Returns the bone index which is the parent of the bone at ``bone_idx``. If -1, then bone has no parent.
+
+**Note:** The parent bone returned will always be less than ``bone_idx``.
 
 .. _class_Skeleton_method_get_bone_pose:
 
@@ -180,7 +182,7 @@ Returns the pose transform of the specified bone. Pose is applied on top of the 
 
 - :ref:`Transform<class_Transform>` **get_bone_rest** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Returns the rest transform for a bone "bone_idx".
+Returns the rest transform for a bone ``bone_idx``.
 
 .. _class_Skeleton_method_get_bone_transform:
 
@@ -192,7 +194,7 @@ Returns the combination of custom pose and pose. The returned transform is in sk
 
 - :ref:`Array<class_Array>` **get_bound_child_nodes_to_bone** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Deprecated soon.
+*Deprecated soon.*
 
 .. _class_Skeleton_method_is_bone_rest_disabled:
 
@@ -238,25 +240,27 @@ Deprecated soon.
 
 - void **set_bone_parent** **(** :ref:`int<class_int>` bone_idx, :ref:`int<class_int>` parent_idx **)**
 
-Set the bone index "parent_idx" as the parent of the bone at "bone_idx". If -1, then bone has no parent. Note: "parent_idx" must be less than "bone_idx".
+Sets the bone index ``parent_idx`` as the parent of the bone at ``bone_idx``. If -1, then bone has no parent.
+
+**Note:** ``parent_idx`` must be less than ``bone_idx``.
 
 .. _class_Skeleton_method_set_bone_pose:
 
 - void **set_bone_pose** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` pose **)**
 
-Returns the pose transform for bone "bone_idx".
+Returns the pose transform for bone ``bone_idx``.
 
 .. _class_Skeleton_method_set_bone_rest:
 
 - void **set_bone_rest** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` rest **)**
 
-Set the rest transform for bone "bone_idx"
+Sets the rest transform for bone ``bone_idx``.
 
 .. _class_Skeleton_method_unbind_child_node_from_bone:
 
 - void **unbind_child_node_from_bone** **(** :ref:`int<class_int>` bone_idx, :ref:`Node<class_Node>` node **)**
 
-Deprecated soon.
+*Deprecated soon.*
 
 .. _class_Skeleton_method_unparent_bone_and_rest:
 

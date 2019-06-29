@@ -9,14 +9,14 @@ Reference
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ARVRInterface<class_ARVRInterface>`, :ref:`AStar<class_AStar>`, :ref:`AStar2D<class_AStar2D>`, :ref:`AnimationTrackEditPlugin<class_AnimationTrackEditPlugin>`, :ref:`AudioEffectInstance<class_AudioEffectInstance>`, :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`, :ref:`CameraFeed<class_CameraFeed>`, :ref:`ConfigFile<class_ConfigFile>`, :ref:`Directory<class_Directory>`, :ref:`EditorExportPlugin<class_EditorExportPlugin>`, :ref:`EditorFeatureProfile<class_EditorFeatureProfile>`, :ref:`EditorImportPlugin<class_EditorImportPlugin>`, :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`, :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>`, :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>`, :ref:`EditorSceneImporter<class_EditorSceneImporter>`, :ref:`EditorScenePostImport<class_EditorScenePostImport>`, :ref:`EditorScript<class_EditorScript>`, :ref:`EncodedObjectAsID<class_EncodedObjectAsID>`, :ref:`Expression<class_Expression>`, :ref:`File<class_File>`, :ref:`FuncRef<class_FuncRef>`, :ref:`GDNative<class_GDNative>`, :ref:`GDScriptFunctionState<class_GDScriptFunctionState>`, :ref:`GDScriptNativeClass<class_GDScriptNativeClass>`, :ref:`HTTPClient<class_HTTPClient>`, :ref:`JSONParseResult<class_JSONParseResult>`, :ref:`KinematicCollision<class_KinematicCollision>`, :ref:`KinematicCollision2D<class_KinematicCollision2D>`, :ref:`Marshalls<class_Marshalls>`, :ref:`MeshDataTool<class_MeshDataTool>`, :ref:`MultiplayerAPI<class_MultiplayerAPI>`, :ref:`Mutex<class_Mutex>`, :ref:`PCKPacker<class_PCKPacker>`, :ref:`PackedDataContainerRef<class_PackedDataContainerRef>`, :ref:`PacketPeer<class_PacketPeer>`, :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>`, :ref:`Physics2DShapeQueryResult<class_Physics2DShapeQueryResult>`, :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>`, :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>`, :ref:`PhysicsShapeQueryResult<class_PhysicsShapeQueryResult>`, :ref:`RandomNumberGenerator<class_RandomNumberGenerator>`, :ref:`RegEx<class_RegEx>`, :ref:`RegExMatch<class_RegExMatch>`, :ref:`Resource<class_Resource>`, :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`, :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`, :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>`, :ref:`SceneState<class_SceneState>`, :ref:`SceneTreeTimer<class_SceneTreeTimer>`, :ref:`Semaphore<class_Semaphore>`, :ref:`SpatialGizmo<class_SpatialGizmo>`, :ref:`SpatialVelocityTracker<class_SpatialVelocityTracker>`, :ref:`StreamPeer<class_StreamPeer>`, :ref:`SurfaceTool<class_SurfaceTool>`, :ref:`TCP_Server<class_TCP_Server>`, :ref:`Thread<class_Thread>`, :ref:`TriangleMesh<class_TriangleMesh>`, :ref:`UPNP<class_UPNP>`, :ref:`UPNPDevice<class_UPNPDevice>`, :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`, :ref:`WeakRef<class_WeakRef>`, :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>`, :ref:`XMLParser<class_XMLParser>`
+**Inherited By:** :ref:`ARVRInterface<class_ARVRInterface>`, :ref:`AStar<class_AStar>`, :ref:`AStar2D<class_AStar2D>`, :ref:`AnimationTrackEditPlugin<class_AnimationTrackEditPlugin>`, :ref:`AudioEffectInstance<class_AudioEffectInstance>`, :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`, :ref:`CameraFeed<class_CameraFeed>`, :ref:`ConfigFile<class_ConfigFile>`, :ref:`Directory<class_Directory>`, :ref:`EditorExportPlugin<class_EditorExportPlugin>`, :ref:`EditorFeatureProfile<class_EditorFeatureProfile>`, :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`, :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>`, :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>`, :ref:`EditorSceneImporter<class_EditorSceneImporter>`, :ref:`EditorScenePostImport<class_EditorScenePostImport>`, :ref:`EditorScript<class_EditorScript>`, :ref:`EncodedObjectAsID<class_EncodedObjectAsID>`, :ref:`Expression<class_Expression>`, :ref:`File<class_File>`, :ref:`FuncRef<class_FuncRef>`, :ref:`GDNative<class_GDNative>`, :ref:`GDScriptFunctionState<class_GDScriptFunctionState>`, :ref:`GDScriptNativeClass<class_GDScriptNativeClass>`, :ref:`HTTPClient<class_HTTPClient>`, :ref:`JSONParseResult<class_JSONParseResult>`, :ref:`KinematicCollision<class_KinematicCollision>`, :ref:`KinematicCollision2D<class_KinematicCollision2D>`, :ref:`Marshalls<class_Marshalls>`, :ref:`MeshDataTool<class_MeshDataTool>`, :ref:`MultiplayerAPI<class_MultiplayerAPI>`, :ref:`Mutex<class_Mutex>`, :ref:`PCKPacker<class_PCKPacker>`, :ref:`PackedDataContainerRef<class_PackedDataContainerRef>`, :ref:`PacketPeer<class_PacketPeer>`, :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>`, :ref:`Physics2DShapeQueryResult<class_Physics2DShapeQueryResult>`, :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>`, :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>`, :ref:`PhysicsShapeQueryResult<class_PhysicsShapeQueryResult>`, :ref:`RandomNumberGenerator<class_RandomNumberGenerator>`, :ref:`RegEx<class_RegEx>`, :ref:`RegExMatch<class_RegExMatch>`, :ref:`Resource<class_Resource>`, :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`, :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`, :ref:`ResourceImporter<class_ResourceImporter>`, :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>`, :ref:`SceneState<class_SceneState>`, :ref:`SceneTreeTimer<class_SceneTreeTimer>`, :ref:`Semaphore<class_Semaphore>`, :ref:`SpatialGizmo<class_SpatialGizmo>`, :ref:`SpatialVelocityTracker<class_SpatialVelocityTracker>`, :ref:`StreamPeer<class_StreamPeer>`, :ref:`SurfaceTool<class_SurfaceTool>`, :ref:`TCP_Server<class_TCP_Server>`, :ref:`Thread<class_Thread>`, :ref:`TriangleMesh<class_TriangleMesh>`, :ref:`UPNP<class_UPNP>`, :ref:`UPNPDevice<class_UPNPDevice>`, :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`, :ref:`WeakRef<class_WeakRef>`, :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>`, :ref:`XMLParser<class_XMLParser>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Base class for anything that keeps a reference count.
+Base class for reference-counted objects.
 
 Methods
 -------
@@ -32,7 +32,11 @@ Methods
 Description
 -----------
 
-Base class for anything that keeps a reference count. Resource and many other helper objects inherit this. References keep an internal reference counter so they are only released when no longer in use.
+Base class for any object that keeps a reference count. :ref:`Resource<class_Resource>` and many other helper objects inherit this class.
+
+References keep an internal reference counter so that they are automatically released when no longer in use, and only then. References therefore do not need to be freed manually with :ref:`Object.free<class_Object_method_free>`.
+
+In the vast majority of use cases, instantiating and using ``Reference``-derived types is all you need to do. The methods provided in this class are only for advanced users, and can cause issues if misused.
 
 Method Descriptions
 -------------------
@@ -41,15 +45,23 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **init_ref** **(** **)**
 
+Initializes the internal reference counter. Use this only if you really know what you are doing.
+
+Returns whether the initialization was successful.
+
 .. _class_Reference_method_reference:
 
 - :ref:`bool<class_bool>` **reference** **(** **)**
 
-Increase the internal reference counter. Use this only if you really know what you are doing.
+Increments the internal reference counter. Use this only if you really know what you are doing.
+
+Returns ``true`` if the increment was successful, ``false`` otherwise.
 
 .. _class_Reference_method_unreference:
 
 - :ref:`bool<class_bool>` **unreference** **(** **)**
 
-Decrease the internal reference counter. Use this only if you really know what you are doing.
+Decrements the internal reference counter. Use this only if you really know what you are doing.
+
+Returns ``true`` if the decrement was successful, ``false`` otherwise.
 

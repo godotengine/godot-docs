@@ -60,5 +60,5 @@ Theme Properties
 Description
 -----------
 
-A checkbox allows the user to make a binary choice (choosing only one of two possible options), for example Answer 'yes' or 'no'.
+A checkbox allows the user to make a binary choice (choosing only one of two possible options).
 

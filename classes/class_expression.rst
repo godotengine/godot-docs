@@ -81,7 +81,7 @@ Returns ``true`` if :ref:`execute<class_Expression_method_execute>` has failed.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` expression, :ref:`PoolStringArray<class_PoolStringArray>` input_names=PoolStringArray(  ) **)**
 
-Parses the expression and returns a :ref:`Error<enum_@GlobalScope_Error>`.
+Parses the expression and returns an :ref:`Error<enum_@GlobalScope_Error>` code.
 
 You can optionally specify names of variables that may appear in the expression with ``input_names``, so that you can bind them when it gets executed.
 

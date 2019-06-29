@@ -80,7 +80,7 @@ Adds a new point at the given position with the given identifier. The algorithm 
     var as = AStar2D.new()
     as.add_point(1, Vector2(1, 0), 4) # Adds the point (1, 0) with weight_scale 4 and id 1
 
-If there already exists a point for the given id, its position and weight scale are updated to the given values.
+If there already exists a point for the given ``id``, its position and weight scale are updated to the given values.
 
 .. _class_AStar2D_method_are_points_connected:
 
@@ -117,13 +117,13 @@ Deletes the segment between the given points.
 
 - :ref:`int<class_int>` **get_available_point_id** **(** **)** const
 
-Returns the next available point id with no point associated to it.
+Returns the next available point ID with no point associated to it.
 
 .. _class_AStar2D_method_get_closest_point:
 
 - :ref:`int<class_int>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` to_position **)** const
 
-Returns the id of the closest point to ``to_position``. Returns -1 if there are no points in the points pool.
+Returns the ID of the closest point to ``to_position``. Returns -1 if there are no points in the points pool.
 
 .. _class_AStar2D_method_get_closest_position_in_segment:
 
@@ -137,7 +137,7 @@ Returns the closest position to ``to_position`` that resides inside a segment be
     as.add_point(1, Vector2(0, 0))
     as.add_point(2, Vector2(0, 5))
     as.connect_points(1, 2)
-    var res = as.get_closest_position_in_segment(Vector2(3, 3)) # returns (0, 3)
+    var res = as.get_closest_position_in_segment(Vector2(3, 3)) # Returns (0, 3)
 
 The result is in the segment that goes from ``y = 0`` to ``y = 5``. It's the closest position in the segment to the given point.
 
@@ -145,13 +145,13 @@ The result is in the segment that goes from ``y = 0`` to ``y = 5``. It's the clo
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_id_path** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**
 
-Returns an array with the ids of the points that form the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
+Returns an array with the IDs of the points that form the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
 
 ::
 
     var as = AStar2D.new()
     as.add_point(1, Vector2(0, 0))
-    as.add_point(2, Vector2(0, 1), 1) # default weight is 1
+    as.add_point(2, Vector2(0, 1), 1) # Default weight is 1
     as.add_point(3, Vector2(1, 1))
     as.add_point(4, Vector2(2, 0))
     
@@ -161,7 +161,7 @@ Returns an array with the ids of the points that form the path found by AStar2D 
     as.connect_points(1, 4, false)
     as.connect_points(5, 4, false)
     
-    var res = as.get_id_path(1, 3) # returns [1, 2, 3]
+    var res = as.get_id_path(1, 3) # Returns [1, 2, 3]
 
 If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]`` instead, because now even though the distance is longer, it's "easier" to get through point 4 than through point 2.
 
@@ -169,7 +169,7 @@ If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]``
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_point_connections** **(** :ref:`int<class_int>` id **)**
 
-Returns an array with the ids of the points that form the connect with the given point.
+Returns an array with the IDs of the points that form the connection with the given point.
 
 ::
 
@@ -182,7 +182,7 @@ Returns an array with the ids of the points that form the connect with the given
     as.connect_points(1, 2, true)
     as.connect_points(1, 3, true)
     
-    var neighbors = as.get_point_connections(1) # returns [2, 3]
+    var neighbors = as.get_point_connections(1) # Returns [2, 3]
 
 .. _class_AStar2D_method_get_point_path:
 
@@ -194,13 +194,13 @@ Returns an array with the points that are in the path found by AStar2D between t
 
 - :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` id **)** const
 
-Returns the position of the point associated with the given id.
+Returns the position of the point associated with the given ``id``.
 
 .. _class_AStar2D_method_get_point_weight_scale:
 
 - :ref:`float<class_float>` **get_point_weight_scale** **(** :ref:`int<class_int>` id **)** const
 
-Returns the weight scale of the point associated with the given id.
+Returns the weight scale of the point associated with the given ``id``.
 
 .. _class_AStar2D_method_get_points:
 
@@ -212,7 +212,7 @@ Returns an array of all points.
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`int<class_int>` id **)** const
 
-Returns whether a point associated with the given id exists.
+Returns whether a point associated with the given ``id`` exists.
 
 .. _class_AStar2D_method_is_point_disabled:
 
@@ -224,7 +224,7 @@ Returns whether a point is disabled or not for pathfinding. By default, all poin
 
 - void **remove_point** **(** :ref:`int<class_int>` id **)**
 
-Removes the point associated with the given id from the points pool.
+Removes the point associated with the given ``id`` from the points pool.
 
 .. _class_AStar2D_method_set_point_disabled:
 
@@ -236,11 +236,11 @@ Disables or enables the specified point for pathfinding. Useful for making a tem
 
 - void **set_point_position** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` position **)**
 
-Sets the position for the point with the given id.
+Sets the ``position`` for the point with the given ``id``.
 
 .. _class_AStar2D_method_set_point_weight_scale:
 
 - void **set_point_weight_scale** **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**
 
-Sets the ``weight_scale`` for the point with the given id.
+Sets the ``weight_scale`` for the point with the given ``id``.
 

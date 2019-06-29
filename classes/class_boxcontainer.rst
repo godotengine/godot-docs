@@ -69,7 +69,7 @@ Property Descriptions
 | *Getter* | get_alignment()      |
 +----------+----------------------+
 
-The alignment of the container's children (must be one of ALIGN_BEGIN, ALIGN_CENTER, or ALIGN_END).
+The alignment of the container's children (must be one of :ref:`ALIGN_BEGIN<class_BoxContainer_constant_ALIGN_BEGIN>`, :ref:`ALIGN_CENTER<class_BoxContainer_constant_ALIGN_CENTER>` or :ref:`ALIGN_END<class_BoxContainer_constant_ALIGN_END>`).
 
 Method Descriptions
 -------------------
@@ -78,5 +78,5 @@ Method Descriptions
 
 - void **add_spacer** **(** :ref:`bool<class_bool>` begin **)**
 
-Adds a control to the box as a spacer. If ``true``, *begin* will insert the spacer control in front of other children.
+Adds a control to the box as a spacer. If ``true``, ``begin`` will insert the spacer control in front of other children.
 

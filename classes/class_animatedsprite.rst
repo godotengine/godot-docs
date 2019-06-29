@@ -182,17 +182,17 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
-Returns ``true`` if an animation if currently being played.
+Returns ``true`` if an animation is currently being played.
 
 .. _class_AnimatedSprite_method_play:
 
 - void **play** **(** :ref:`String<class_String>` anim="", :ref:`bool<class_bool>` backwards=false **)**
 
-Play the animation set in parameter. If no parameter is provided, the current animation is played. Property ``backwards`` plays the animation in reverse if set to ``true``.
+Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played. If ``backwards`` is ``true``, the animation will be played in reverse.
 
 .. _class_AnimatedSprite_method_stop:
 
 - void **stop** **(** **)**
 
-Stop the current animation (does not reset the frame counter).
+Stops the current animation (does not reset the frame counter).
 

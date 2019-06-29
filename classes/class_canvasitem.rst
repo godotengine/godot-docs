@@ -190,7 +190,7 @@ enum **BlendMode**:
 
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
 
-- **BLEND_MODE_DISABLED** = **5** --- Disable blending mode. Colors including alpha are written as-is. Only applicable for render targets with a transparent background. No lighting will be applied.
+- **BLEND_MODE_DISABLED** = **5** --- Disables blending mode. Colors including alpha are written as-is. Only applicable for render targets with a transparent background. No lighting will be applied.
 
 Constants
 ---------
@@ -473,55 +473,55 @@ Returns the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for 
 
 - :ref:`Transform2D<class_Transform2D>` **get_canvas_transform** **(** **)** const
 
-Get the transform matrix of this item's canvas.
+Gets the transform matrix of this item's canvas.
 
 .. _class_CanvasItem_method_get_global_mouse_position:
 
 - :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** const
 
-Get the global position of the mouse.
+Gets the global position of the mouse.
 
 .. _class_CanvasItem_method_get_global_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_global_transform** **(** **)** const
 
-Get the global transform matrix of this item.
+Gets the global transform matrix of this item.
 
 .. _class_CanvasItem_method_get_global_transform_with_canvas:
 
 - :ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas** **(** **)** const
 
-Get the global transform matrix of this item in relation to the canvas.
+Gets the global transform matrix of this item in relation to the canvas.
 
 .. _class_CanvasItem_method_get_local_mouse_position:
 
 - :ref:`Vector2<class_Vector2>` **get_local_mouse_position** **(** **)** const
 
-Get the mouse position relative to this item's position.
+Gets the mouse position relative to this item's position.
 
 .. _class_CanvasItem_method_get_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)** const
 
-Get the transform matrix of this item.
+Gets the transform matrix of this item.
 
 .. _class_CanvasItem_method_get_viewport_rect:
 
 - :ref:`Rect2<class_Rect2>` **get_viewport_rect** **(** **)** const
 
-Get the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
+Gets the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
 .. _class_CanvasItem_method_get_viewport_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_viewport_transform** **(** **)** const
 
-Get this item's transform in relation to the viewport.
+Gets this item's transform in relation to the viewport.
 
 .. _class_CanvasItem_method_get_world_2d:
 
 - :ref:`World2D<class_World2D>` **get_world_2d** **(** **)** const
 
-Get the :ref:`World2D<class_World2D>` where this item is in.
+Gets the :ref:`World2D<class_World2D>` where this item is in.
 
 .. _class_CanvasItem_method_hide:
 

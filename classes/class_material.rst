@@ -34,9 +34,9 @@ Constants
 
 .. _class_Material_constant_RENDER_PRIORITY_MIN:
 
-- **RENDER_PRIORITY_MAX** = **127**
+- **RENDER_PRIORITY_MAX** = **127** --- Maximum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
 
-- **RENDER_PRIORITY_MIN** = **-128**
+- **RENDER_PRIORITY_MIN** = **-128** --- Minimum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
 
 Description
 -----------

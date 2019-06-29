@@ -131,7 +131,7 @@ Return the specified input port's name.
 
 - :ref:`int<class_int>` **_get_input_value_port_type** **(** :ref:`int<class_int>` idx **)** virtual
 
-Return the specified input port's type. See the TYPE\_\* enum in :ref:`@GlobalScope<class_@GlobalScope>`.
+Return the specified input port's type. See the ``TYPE_*`` enum in :ref:`@GlobalScope<class_@GlobalScope>`.
 
 .. _class_VisualScriptCustomNode_method__get_output_sequence_port_count:
 
@@ -161,7 +161,7 @@ Return the specified output's name.
 
 - :ref:`int<class_int>` **_get_output_value_port_type** **(** :ref:`int<class_int>` idx **)** virtual
 
-Return the specified output's type. See the TYPE\_\* enum in :ref:`@GlobalScope<class_@GlobalScope>`.
+Return the specified output's type. See the ``TYPE_*`` enum in :ref:`@GlobalScope<class_@GlobalScope>`.
 
 .. _class_VisualScriptCustomNode_method__get_text:
 
@@ -191,9 +191,9 @@ The ``inputs`` array contains the values of the input ports.
 
 ``outputs`` is an array whose indices should be set to the respective outputs.
 
-The ``start_mode`` is usually ``START_MODE_BEGIN_SEQUENCE``, unless you have used the STEP\_\* constants.
+The ``start_mode`` is usually :ref:`START_MODE_BEGIN_SEQUENCE<class_VisualScriptCustomNode_constant_START_MODE_BEGIN_SEQUENCE>`, unless you have used the ``STEP_*`` constants.
 
 ``working_mem`` is an array which can be used to persist information between runs of the custom node.
 
-When returning, you can mask the returned value with one of the STEP\_\* constants.
+When returning, you can mask the returned value with one of the ``STEP_*`` constants.
 

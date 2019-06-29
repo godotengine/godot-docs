@@ -14,7 +14,7 @@ KinematicCollision2D
 Brief Description
 -----------------
 
-Collision data for KinematicBody2D collisions.
+Collision data for :ref:`KinematicBody2D<class_KinematicBody2D>` collisions.
 
 Properties
 ----------
@@ -46,7 +46,7 @@ Properties
 Description
 -----------
 
-Contains collision data for KinematicBody2D collisions. When a :ref:`KinematicBody2D<class_KinematicBody2D>` is moved using :ref:`KinematicBody2D.move_and_collide<class_KinematicBody2D_method_move_and_collide>`, it stops if it detects a collision with another body. If a collision is detected, a KinematicCollision2D object is returned.
+Contains collision data for :ref:`KinematicBody2D<class_KinematicBody2D>` collisions. When a :ref:`KinematicBody2D<class_KinematicBody2D>` is moved using :ref:`KinematicBody2D.move_and_collide<class_KinematicBody2D_method_move_and_collide>`, it stops if it detects a collision with another body. If a collision is detected, a KinematicCollision2D object is returned.
 
 This object contains information about the collision, including the colliding object, the remaining motion, and the collision position. This information can be used to calculate a collision response.
 

@@ -120,13 +120,13 @@ Override this method to provide gizmo's handle names. Called for this plugin's a
 
 - :ref:`Variant<class_Variant>` **get_handle_value** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual
 
-Get actual value of a handle from gizmo. Called for this plugin's active gizmos.
+Gets actual value of a handle from gizmo. Called for this plugin's active gizmos.
 
 .. _class_EditorSpatialGizmoPlugin_method_get_material:
 
 - :ref:`SpatialMaterial<class_SpatialMaterial>` **get_material** **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**
 
-Get material from the internal list of materials. If an :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` is provided it will try to get the corresponding variant (selected and/or editable).
+Gets material from the internal list of materials. If an :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` is provided, it will try to get the corresponding variant (selected and/or editable).
 
 .. _class_EditorSpatialGizmoPlugin_method_get_name:
 
@@ -148,7 +148,7 @@ Override this method to define which Spatial nodes have a gizmo from this plugin
 
 - :ref:`bool<class_bool>` **is_handle_highlighted** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual
 
-Get whether a handle is highlighted or not. Called for this plugin's active gizmos.
+Gets whether a handle is highlighted or not. Called for this plugin's active gizmos.
 
 .. _class_EditorSpatialGizmoPlugin_method_is_selectable_when_hidden:
 

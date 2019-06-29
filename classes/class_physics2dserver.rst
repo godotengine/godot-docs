@@ -16,7 +16,7 @@ Physics2DServer
 Brief Description
 -----------------
 
-Physics 2D Server.
+Server interface for low-level 2D physics access.
 
 Methods
 -------
@@ -420,7 +420,7 @@ enum **BodyParameter**:
 
 - **BODY_PARAM_ANGULAR_DAMP** = **6** --- Constant to set/get a body's angular dampening factor.
 
-- **BODY_PARAM_MAX** = **7** --- This is the last ID for body parameters. Any attempt to set this property is ignored. Any attempt to get it returns 0.
+- **BODY_PARAM_MAX** = **7** --- Represents the size of the :ref:`BodyParameter<enum_Physics2DServer_BodyParameter>` enum.
 
 .. _enum_Physics2DServer_BodyState:
 
@@ -488,11 +488,11 @@ enum **JointParam**:
 
 enum **DampedStringParam**:
 
-- **DAMPED_STRING_REST_LENGTH** = **0** --- Set the resting length of the spring joint. The joint will always try to go to back this length when pulled apart.
+- **DAMPED_STRING_REST_LENGTH** = **0** --- Sets the resting length of the spring joint. The joint will always try to go to back this length when pulled apart.
 
-- **DAMPED_STRING_STIFFNESS** = **1** --- Set the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
+- **DAMPED_STRING_STIFFNESS** = **1** --- Sets the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
 
-- **DAMPED_STRING_DAMPING** = **2** --- Set the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
+- **DAMPED_STRING_DAMPING** = **2** --- Sets the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
 
 .. _enum_Physics2DServer_CCDMode:
 
@@ -541,7 +541,7 @@ enum **ProcessInfo**:
 Description
 -----------
 
-Physics 2D Server is the server responsible for all 2D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
+Physics2DServer is the server responsible for all 2D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
 
 Method Descriptions
 -------------------
@@ -588,7 +588,7 @@ Gets the instance ID of the object the area is assigned to.
 
 - :ref:`Variant<class_Variant>` **area_get_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_Physics2DServer_AreaParameter>` param **)** const
 
-Returns an area parameter value. A list of available parameters is on the AREA_PARAM\_\* constants.
+Returns an area parameter value. See :ref:`AreaParameter<enum_Physics2DServer_AreaParameter>` for a list of available parameters.
 
 .. _class_Physics2DServer_method_area_get_shape:
 
@@ -672,7 +672,7 @@ Sets the function to call when any body/area enters or exits the area. This call
 
 - void **area_set_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_Physics2DServer_AreaParameter>` param, :ref:`Variant<class_Variant>` value **)**
 
-Sets the value for an area parameter. A list of available parameters is on the AREA_PARAM\_\* constants.
+Sets the value for an area parameter. See :ref:`AreaParameter<enum_Physics2DServer_AreaParameter>` for a list of available parameters.
 
 .. _class_Physics2DServer_method_area_set_shape:
 
@@ -702,7 +702,7 @@ Assigns a space to the area.
 
 - void **area_set_space_override_mode** **(** :ref:`RID<class_RID>` area, :ref:`AreaSpaceOverrideMode<enum_Physics2DServer_AreaSpaceOverrideMode>` mode **)**
 
-Sets the space override mode for the area. The modes are described in the constants AREA_SPACE_OVERRIDE\_\*.
+Sets the space override mode for the area. See :ref:`AreaSpaceOverrideMode<enum_Physics2DServer_AreaSpaceOverrideMode>` for a list of available modes.
 
 .. _class_Physics2DServer_method_area_set_transform:
 
@@ -770,7 +770,7 @@ Removes all shapes from a body.
 
 - :ref:`RID<class_RID>` **body_create** **(** **)**
 
-Creates a physics body. The first parameter can be any value from constants BODY_MODE\*, for the type of body created. Additionally, the body can be created in sleeping state to save processing time.
+Creates a physics body.
 
 .. _class_Physics2DServer_method_body_get_canvas_instance_id:
 
@@ -822,7 +822,7 @@ Gets the instance ID of the object the area is assigned to.
 
 - :ref:`float<class_float>` **body_get_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_Physics2DServer_BodyParameter>` param **)** const
 
-Returns the value of a body parameter. A list of available parameters is on the BODY_PARAM\_\* constants.
+Returns the value of a body parameter. See :ref:`BodyParameter<enum_Physics2DServer_BodyParameter>` for a list of available parameters.
 
 .. _class_Physics2DServer_method_body_get_shape:
 
@@ -900,7 +900,7 @@ Sets the physics layer or layers a body can collide with.
 
 - void **body_set_continuous_collision_detection_mode** **(** :ref:`RID<class_RID>` body, :ref:`CCDMode<enum_Physics2DServer_CCDMode>` mode **)**
 
-Sets the continuous collision detection mode from any of the CCD_MODE\_\* constants.
+Sets the continuous collision detection mode using one of the :ref:`CCDMode<enum_Physics2DServer_CCDMode>` constants.
 
 Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided.
 
@@ -920,7 +920,7 @@ Sets the maximum contacts to report. Bodies can keep a log of the contacts with 
 
 - void **body_set_mode** **(** :ref:`RID<class_RID>` body, :ref:`BodyMode<enum_Physics2DServer_BodyMode>` mode **)**
 
-Sets the body mode, from one of the constants BODY_MODE\*.
+Sets the body mode using one of the :ref:`BodyMode<enum_Physics2DServer_BodyMode>` constants.
 
 .. _class_Physics2DServer_method_body_set_omit_force_integration:
 
@@ -932,7 +932,7 @@ Sets whether a body uses a callback function to calculate its own physics (see :
 
 - void **body_set_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_Physics2DServer_BodyParameter>` param, :ref:`float<class_float>` value **)**
 
-Sets a body parameter. A list of available parameters is on the BODY_PARAM\_\* constants.
+Sets a body parameter. See :ref:`BodyParameter<enum_Physics2DServer_BodyParameter>` for a list of available parameters.
 
 .. _class_Physics2DServer_method_body_set_shape:
 
@@ -974,7 +974,7 @@ Assigns a space to the body (see :ref:`space_create<class_Physics2DServer_method
 
 - void **body_set_state** **(** :ref:`RID<class_RID>` body, :ref:`BodyState<enum_Physics2DServer_BodyState>` state, :ref:`Variant<class_Variant>` value **)**
 
-Sets a body state (see BODY_STATE\* constants).
+Sets a body state using one of the :ref:`BodyState<enum_Physics2DServer_BodyState>` constants.
 
 .. _class_Physics2DServer_method_body_test_motion:
 
@@ -1014,7 +1014,7 @@ Returns the value of a damped spring joint parameter.
 
 - void **damped_string_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`DampedStringParam<enum_Physics2DServer_DampedStringParam>` param, :ref:`float<class_float>` value **)**
 
-Sets a damped spring joint parameter. Parameters are explained in the DAMPED_STRING\* constants.
+Sets a damped spring joint parameter. See :ref:`DampedStringParam<enum_Physics2DServer_DampedStringParam>` for a list of available parameters.
 
 .. _class_Physics2DServer_method_free_rid:
 
@@ -1026,13 +1026,13 @@ Destroys any of the objects created by Physics2DServer. If the :ref:`RID<class_R
 
 - :ref:`int<class_int>` **get_process_info** **(** :ref:`ProcessInfo<enum_Physics2DServer_ProcessInfo>` process_info **)**
 
-Returns information about the current state of the 2D physics engine. The states are listed under the INFO\_\* constants.
+Returns information about the current state of the 2D physics engine. See :ref:`ProcessInfo<enum_Physics2DServer_ProcessInfo>` for a list of available states.
 
 .. _class_Physics2DServer_method_groove_joint_create:
 
 - :ref:`RID<class_RID>` **groove_joint_create** **(** :ref:`Vector2<class_Vector2>` groove1_a, :ref:`Vector2<class_Vector2>` groove2_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**
 
-Creates a groove joint between two bodies. If not specified, the bodyies are assumed to be the joint itself.
+Creates a groove joint between two bodies. If not specified, the bodies are assumed to be the joint itself.
 
 .. _class_Physics2DServer_method_joint_get_param:
 
@@ -1044,13 +1044,13 @@ Returns the value of a joint parameter.
 
 - :ref:`JointType<enum_Physics2DServer_JointType>` **joint_get_type** **(** :ref:`RID<class_RID>` joint **)** const
 
-Returns the type of a joint (see JOINT\_\* constants).
+Returns a joint's type (see :ref:`JointType<enum_Physics2DServer_JointType>`).
 
 .. _class_Physics2DServer_method_joint_set_param:
 
 - void **joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_Physics2DServer_JointParam>` param, :ref:`float<class_float>` value **)**
 
-Sets a joint parameter. Parameters are explained in the JOINT_PARAM\* constants.
+Sets a joint parameter. See :ref:`JointParam<enum_Physics2DServer_JointParam>` for a list of available parameters.
 
 .. _class_Physics2DServer_method_line_shape_create:
 
@@ -1090,7 +1090,7 @@ Returns the shape data.
 
 - :ref:`ShapeType<enum_Physics2DServer_ShapeType>` **shape_get_type** **(** :ref:`RID<class_RID>` shape **)** const
 
-Returns the type of shape (see SHAPE\_\* constants).
+Returns a shape's type (see :ref:`ShapeType<enum_Physics2DServer_ShapeType>`).
 
 .. _class_Physics2DServer_method_shape_set_data:
 
@@ -1132,5 +1132,5 @@ Marks a space as active. It will not have an effect, unless it is assigned to an
 
 - void **space_set_param** **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_Physics2DServer_SpaceParameter>` param, :ref:`float<class_float>` value **)**
 
-Sets the value for a space parameter. A list of available parameters is on the SPACE_PARAM\_\* constants.
+Sets the value for a space parameter. See :ref:`SpaceParameter<enum_Physics2DServer_SpaceParameter>` for a list of available parameters.
 

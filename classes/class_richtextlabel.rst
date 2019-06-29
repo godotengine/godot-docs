@@ -258,7 +258,7 @@ Description
 
 Rich text can contain custom text, fonts, images and some basic formatting. The label manages these as an internal tag stack. It also adapts itself to given width/heights.
 
-Note that assignments to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` methods.
+**Note:** Assignments to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` methods.
 
 Tutorials
 ---------
@@ -374,7 +374,7 @@ If ``true``, the label allows text selection.
 | *Getter* | get_tab_size()      |
 +----------+---------------------+
 
-The number of spaces associated with a single tab length. Does not affect "\\t" in text tags, only indent tags.
+The number of spaces associated with a single tab length. Does not affect ``\t`` in text tags, only indent tags.
 
 .. _class_RichTextLabel_property_text:
 
@@ -388,7 +388,7 @@ The number of spaces associated with a single tab length. Does not affect "\\t" 
 
 The raw text of the label.
 
-When set, clears the tag stack and adds a raw text tag to the top of it. Does not parse bbcodes. Does not modify :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`.
+When set, clears the tag stack and adds a raw text tag to the top of it. Does not parse BBCodes. Does not modify :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`.
 
 .. _class_RichTextLabel_property_visible_characters:
 
@@ -400,7 +400,7 @@ When set, clears the tag stack and adds a raw text tag to the top of it. Does no
 | *Getter* | get_visible_characters()      |
 +----------+-------------------------------+
 
-The restricted number of characters to display in the label.
+The restricted number of characters to display in the label. If ``-1``, all characters will be displayed.
 
 Method Descriptions
 -------------------
@@ -415,13 +415,13 @@ Adds an image's opening and closing tags to the tag stack.
 
 - void **add_text** **(** :ref:`String<class_String>` text **)**
 
-Adds raw non-bbcode-parsed text to the tag stack.
+Adds raw non-BBCode-parsed text to the tag stack.
 
 .. _class_RichTextLabel_method_append_bbcode:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **append_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
-Parses ``bbcode`` and adds tags to the tag stack as needed. Returns the result of the parsing, ``OK`` if successful.
+Parses ``bbcode`` and adds tags to the tag stack as needed. Returns the result of the parsing, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if successful.
 
 .. _class_RichTextLabel_method_clear:
 
@@ -445,7 +445,7 @@ Returns the total number of newlines in the tag stack's text tags. Considers wra
 
 - :ref:`int<class_int>` **get_total_character_count** **(** **)** const
 
-Returns the total number of characters from text tags. Does not include bbcodes.
+Returns the total number of characters from text tags. Does not include BBCodes.
 
 .. _class_RichTextLabel_method_get_v_scroll:
 
@@ -469,19 +469,19 @@ Adds a newline tag to the tag stack.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **parse_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
-The assignment version of :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>`. Clears the tag stack and inserts the new content. Returns ``OK`` if parses ``bbcode`` successfully.
+The assignment version of :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>`. Clears the tag stack and inserts the new content. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if parses ``bbcode`` successfully.
 
 .. _class_RichTextLabel_method_pop:
 
 - void **pop** **(** **)**
 
-Terminates the current tag. Use after ``push_*`` methods to close bbcodes manually. Does not need to follow ``add_*`` methods.
+Terminates the current tag. Use after ``push_*`` methods to close BBCodes manually. Does not need to follow ``add_*`` methods.
 
 .. _class_RichTextLabel_method_push_align:
 
 - void **push_align** **(** :ref:`Align<enum_RichTextLabel_Align>` align **)**
 
-Adds an alignment tag based on the given ``align`` value. See :ref:`Align<enum_RichTextLabel_Align>` for possible values.
+Adds an ``[align]`` tag based on the given ``align`` value. See :ref:`Align<enum_RichTextLabel_Align>` for possible values.
 
 .. _class_RichTextLabel_method_push_cell:
 
@@ -511,13 +511,13 @@ Adds an ``[indent]`` tag to the tag stack. Multiplies "level" by current tab_siz
 
 - void **push_list** **(** :ref:`ListType<enum_RichTextLabel_ListType>` type **)**
 
-Adds a list tag to the tag stack. Similar to the bbcodes ``[ol]`` or ``[ul]``, but supports more list types. Not fully implemented!
+Adds a ``[list]`` tag to the tag stack. Similar to the BBCodes ``[ol]`` or ``[ul]``, but supports more list types. Not fully implemented!
 
 .. _class_RichTextLabel_method_push_meta:
 
 - void **push_meta** **(** :ref:`Variant<class_Variant>` data **)**
 
-Adds a meta tag to the tag stack. Similar to the bbcode ``[url=something]{text}[/url]``, but supports non-:ref:`String<class_String>` metadata types.
+Adds a ``[meta]`` tag to the tag stack. Similar to the BBCode ``[url=something]{text}[/url]``, but supports non-:ref:`String<class_String>` metadata types.
 
 .. _class_RichTextLabel_method_push_strikethrough:
 
@@ -553,9 +553,9 @@ Scrolls the window's top line to match ``line``.
 
 - void **set_table_column_expand** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand, :ref:`int<class_int>` ratio **)**
 
-Edits the selected columns expansion options. If ``expand`` is ``true``, the column expands in proportion to its expansion ratio versus the other columns' ratios.
+Edits the selected column's expansion options. If ``expand`` is ``true``, the column expands in proportion to its expansion ratio versus the other columns' ratios.
 
 For example, 2 columns with ratios 3 and 4 plus 70 pixels in available width would expand 30 and 40 pixels, respectively.
 
-Columns with a ``false`` expand will not contribute to the total ratio.
+If ``expand`` is ``false``, the column will not contribute to the total ratio.
 

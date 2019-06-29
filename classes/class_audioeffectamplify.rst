@@ -14,7 +14,7 @@ AudioEffectAmplify
 Brief Description
 -----------------
 
-Adds a Amplify audio effect to an Audio bus.
+Adds an amplifying audio effect to an audio bus.
 
 Increases or decreases the volume of the selected audio bus.
 
@@ -43,5 +43,5 @@ Property Descriptions
 | *Getter* | get_volume_db()      |
 +----------+----------------------+
 
-Amount of amplification. Positive values make the sound louder, negative values make it quieter. Value can range from -80 to 24. Default value: ``0``.
+Amount of amplification in decibels. Positive values make the sound louder, negative values make it quieter. Value can range from -80 to 24. Default value: ``0``.
 

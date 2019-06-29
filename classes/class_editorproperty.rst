@@ -14,7 +14,7 @@ EditorProperty
 Brief Description
 -----------------
 
-Custom control to edit properties for adding into the inspector
+Custom control to edit properties for adding into the inspector.
 
 Properties
 ----------
@@ -59,13 +59,13 @@ Signals
 
 - **multiple_properties_changed** **(** :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Array<class_Array>` value **)**
 
-Emit yourself if you want multiple properties modified at the same time. Do not use if added via :ref:`EditorInspectorPlugin.parse_property<class_EditorInspectorPlugin_method_parse_property>`
+Emit it if you want multiple properties modified at the same time. Do not use if added via :ref:`EditorInspectorPlugin.parse_property<class_EditorInspectorPlugin_method_parse_property>`.
 
 .. _class_EditorProperty_signal_object_id_selected:
 
 - **object_id_selected** **(** :ref:`String<class_String>` property, :ref:`int<class_int>` id **)**
 
-Used by sub-inspectors. Emit if what was selected was an Object ID.
+Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
 .. _class_EditorProperty_signal_property_changed:
 
@@ -77,19 +77,19 @@ Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_metho
 
 - **property_checked** **(** :ref:`String<class_String>` property, :ref:`String<class_String>` bool **)**
 
-Used internally, when a property was checked.
+Emitted when a property was checked. Used internally.
 
 .. _class_EditorProperty_signal_property_keyed:
 
 - **property_keyed** **(** :ref:`String<class_String>` property **)**
 
-Emit if you want to add this value as an animation key (check keying being enabled first).
+Emit it if you want to add this value as an animation key (check for keying being enabled first).
 
 .. _class_EditorProperty_signal_property_keyed_with_value:
 
 - **property_keyed_with_value** **(** :ref:`String<class_String>` property, :ref:`Nil<class_Nil>` value **)**
 
-Emit if you want to key a property with a single value.
+Emit it if you want to key a property with a single value.
 
 .. _class_EditorProperty_signal_resource_selected:
 
@@ -101,7 +101,7 @@ If you want a sub-resource to be edited, emit this signal with the resource.
 
 - **selected** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` focusable_idx **)**
 
-Internal, used when selected.
+Emitted when selected. Used internally.
 
 Description
 -----------
@@ -157,7 +157,7 @@ Used by the inspector, when the property must draw with error color.
 | *Getter* | is_keying()       |
 +----------+-------------------+
 
-Used by the inspector, when the property can add keys for animation/
+Used by the inspector, when the property can add keys for animation.
 
 .. _class_EditorProperty_property_label:
 
@@ -169,7 +169,7 @@ Used by the inspector, when the property can add keys for animation/
 | *Getter* | get_label()      |
 +----------+------------------+
 
-Set this property to change the label (if you want to show one)
+Sets this property to change the label (if you want to show one).
 
 .. _class_EditorProperty_property_read_only:
 
@@ -196,19 +196,19 @@ If any of the controls added can gain keyboard focus, add it here. This ensures 
 
 - void **emit_changed** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` field="", :ref:`bool<class_bool>` changing=false **)**
 
-If one (or many properties) changed, this must be called. "Field" is used in case your editor can modify fields separately (as an example, Vector3.x). The "changing" argument avoids the editor requesting this property to be refreshed (leave as false if unsure).
+If one or several properties have changed, this must be called. ``field`` is used in case your editor can modify fields separately (as an example, Vector3.x). The ``changing`` argument avoids the editor requesting this property to be refreshed (leave as ``false`` if unsure).
 
 .. _class_EditorProperty_method_get_edited_object:
 
 - :ref:`Object<class_Object>` **get_edited_object** **(** **)**
 
-Get the edited object.
+Gets the edited object.
 
 .. _class_EditorProperty_method_get_edited_property:
 
 - :ref:`String<class_String>` **get_edited_property** **(** **)**
 
-Get the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin.parse_property<class_EditorInspectorPlugin_method_parse_property>`), then this will return it..
+Gets the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin.parse_property<class_EditorInspectorPlugin_method_parse_property>`), then this will return the property.
 
 .. _class_EditorProperty_method_get_tooltip_text:
 
@@ -220,7 +220,7 @@ Override if you want to allow a custom tooltip over your property.
 
 - void **set_bottom_editor** **(** :ref:`Control<class_Control>` editor **)**
 
-Add controls with this function if you want them on the bottom (below the label).
+Adds controls with this function if you want them on the bottom (below the label).
 
 .. _class_EditorProperty_method_update_property:
 

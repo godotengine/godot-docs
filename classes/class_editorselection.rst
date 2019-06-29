@@ -52,7 +52,7 @@ Method Descriptions
 
 - void **add_node** **(** :ref:`Node<class_Node>` node **)**
 
-Add a node to the selection.
+Adds a node to the selection.
 
 .. _class_EditorSelection_method_clear:
 
@@ -64,17 +64,17 @@ Clear the selection.
 
 - :ref:`Array<class_Array>` **get_selected_nodes** **(** **)**
 
-Get the list of selected nodes.
+Gets the list of selected nodes.
 
 .. _class_EditorSelection_method_get_transformable_selected_nodes:
 
 - :ref:`Array<class_Array>` **get_transformable_selected_nodes** **(** **)**
 
-Get the list of selected nodes, optimized for transform operations (ie, moving them, rotating, etc). This list avoids situations where a node is selected and also chid/grandchild.
+Gets the list of selected nodes, optimized for transform operations (i.e. moving them, rotating, etc). This list avoids situations where a node is selected and also child/grandchild.
 
 .. _class_EditorSelection_method_remove_node:
 
 - void **remove_node** **(** :ref:`Node<class_Node>` node **)**
 
-Remove a node from the selection.
+Removes a node from the selection.
 

@@ -14,7 +14,7 @@ WebSocketClient
 Brief Description
 -----------------
 
-A WebSocket client implementation
+A WebSocket client implementation.
 
 Properties
 ----------
@@ -57,7 +57,9 @@ Emitted when a connection with the server is established, ``protocol`` will cont
 
 - **data_received** **(** **)**
 
-Emitted when a WebSocket message is received. Note: This signal is NOT emitted when used as high level multiplayer peer.
+Emitted when a WebSocket message is received.
+
+**Note:** This signal is *not* emitted when used as high-level multiplayer peer.
 
 .. _class_WebSocketClient_signal_server_close_request:
 
@@ -68,13 +70,13 @@ Emitted when the server requests a clean close. You should keep polling until yo
 Description
 -----------
 
-This class implements a WebSocket client compatible with any RFC 6455 complaint WebSocket server.
+This class implements a WebSocket client compatible with any RFC 6455-compliant WebSocket server.
 
 This client can be optionally used as a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
 After starting the client (:ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`).
 
-You will received appropriate signals when connecting, disconnecting, or when new data is available.
+You will receive appropriate signals when connecting, disconnecting, or when new data is available.
 
 Property Descriptions
 ---------------------
@@ -89,7 +91,9 @@ Property Descriptions
 | *Getter* | is_verify_ssl_enabled()       |
 +----------+-------------------------------+
 
-Enable or disable SSL certificate verification. Note: You must specify the certificates to be used in the project settings for it to work when exported.
+If ``true``, SSL certificate verification is enabled.
+
+**Note:** You must specify the certificates to be used in the Project Settings for it to work when exported.
 
 Method Descriptions
 -------------------
@@ -98,9 +102,9 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_url** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
 
-Connect to the given URL requesting one of the given ``protocols`` as sub-protocol.
+Connects to the given URL requesting one of the given ``protocols`` as sub-protocol.
 
-If ``true`` is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections to non Godot servers will not work, and :ref:`data_received<class_WebSocketClient_signal_data_received>` will not be emitted.
+If ``true`` is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections to non-Godot servers will not work, and :ref:`data_received<class_WebSocketClient_signal_data_received>` will not be emitted.
 
 If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.) on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(1)`` and not on this object directly (e.g. ``get_peer(1).put_packet(data)``).
 
@@ -108,5 +112,5 @@ If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_P
 
 - void **disconnect_from_host** **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
-Disconnect this client from the connected host. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more info.
+Disconnects this client from the connected host. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more information.
 

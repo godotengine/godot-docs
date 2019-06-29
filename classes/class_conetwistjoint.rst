@@ -52,11 +52,11 @@ enum **Param**:
 
 - **PARAM_SWING_SPAN** = **0** --- Swing is rotation from side to side, around the axis perpendicular to the twist axis.
 
-The swing span defines, how much rotation will not get corrected allong the swing axis.
+The swing span defines, how much rotation will not get corrected along the swing axis.
 
 Could be defined as looseness in the ``ConeTwistJoint``.
 
-If below 0.05, this behaviour is locked. Default value: ``PI/4``.
+If below 0.05, this behavior is locked. Default value: ``PI/4``.
 
 - **PARAM_TWIST_SPAN** = **1** --- Twist is the rotation around the twist axis, this value defined how far the joint can twist.
 
@@ -70,14 +70,14 @@ The higher, the faster.
 
 - **PARAM_RELAXATION** = **4** --- Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
 
-- **PARAM_MAX** = **5** --- End flag of PARAM\_\* constants, used internally.
+- **PARAM_MAX** = **5** --- Represents the size of the :ref:`Param<enum_ConeTwistJoint_Param>` enum.
 
 Description
 -----------
 
 The joint can rotate the bodies across an axis defined by the local x-axes of the :ref:`Joint<class_Joint>`.
 
-The twist axis is initiated as the x-axis of the :ref:`Joint<class_Joint>`.
+The twist axis is initiated as the X axis of the :ref:`Joint<class_Joint>`.
 
 Once the Bodies swing, the twist axis is calculated as the middle of the x-axes of the Joint in the local space of the two Bodies.
 
@@ -128,11 +128,11 @@ The ease with which the joint starts to twist. If it's too low, it takes more fo
 
 Swing is rotation from side to side, around the axis perpendicular to the twist axis.
 
-The swing span defines, how much rotation will not get corrected allong the swing axis.
+The swing span defines, how much rotation will not get corrected along the swing axis.
 
 Could be defined as looseness in the ``ConeTwistJoint``.
 
-If below 0.05, this behaviour is locked. Default value: ``PI/4``.
+If below 0.05, this behavior is locked. Default value: ``PI/4``.
 
 .. _class_ConeTwistJoint_property_twist_span:
 

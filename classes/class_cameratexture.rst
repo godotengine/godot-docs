@@ -14,7 +14,9 @@ CameraTexture
 Brief Description
 -----------------
 
-This texture gives access to the camera texture provided by a :ref:`CameraFeed<class_CameraFeed>`. Note that many cameras supply YCbCr images which need to be converted in a shader.
+This texture gives access to the camera texture provided by a :ref:`CameraFeed<class_CameraFeed>`.
+
+**Note:** Many cameras supply YCbCr images which need to be converted in a shader.
 
 Properties
 ----------
@@ -40,7 +42,7 @@ Property Descriptions
 | *Getter* | get_camera_feed_id()      |
 +----------+---------------------------+
 
-Id of the :ref:`CameraFeed<class_CameraFeed>` for which we want to display the image.
+The ID of the :ref:`CameraFeed<class_CameraFeed>` for which we want to display the image.
 
 .. _class_CameraTexture_property_camera_is_active:
 

@@ -130,7 +130,7 @@ The button's texture for the normal state.
 | *Getter* | is_passby_press_enabled() |
 +----------+---------------------------+
 
-If ``true``, passby presses are enabled.
+If ``true``, pass-by presses are enabled.
 
 .. _class_TouchScreenButton_property_pressed:
 
@@ -190,7 +190,7 @@ If ``true``, the button's shape is visible.
 | *Getter* | get_visibility_mode()      |
 +----------+----------------------------+
 
-The button's visibility mode. See ``VISIBILITY_*`` constants.
+The button's visibility mode. See :ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` for possible values.
 
 Method Descriptions
 -------------------

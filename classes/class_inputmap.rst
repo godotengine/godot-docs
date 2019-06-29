@@ -48,7 +48,7 @@ Methods
 Description
 -----------
 
-Manages all :ref:`InputEventAction<class_InputEventAction>` which can be created/modified from the project settings menu ``Project > Project Settings > Input Map`` or in code with :ref:`add_action<class_InputMap_method_add_action>` and :ref:`action_add_event<class_InputMap_method_action_add_event>`. See :ref:`Node._input<class_Node_method__input>`.
+Manages all :ref:`InputEventAction<class_InputEventAction>` which can be created/modified from the project settings menu **Project > Project Settings > Input Map** or in code with :ref:`add_action<class_InputMap_method_add_action>` and :ref:`action_add_event<class_InputMap_method_action_add_event>`. See :ref:`Node._input<class_Node_method__input>`.
 
 Tutorials
 ---------

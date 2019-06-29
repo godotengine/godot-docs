@@ -21,27 +21,27 @@ Each frequency can be modulated between -60/+24 dB.
 Description
 -----------
 
-Frequency bands :
+Frequency bands:
 
-Band 1 : 31 Hz
+Band 1: 31 Hz
 
-Band 2 : 62 Hz
+Band 2: 62 Hz
 
-Band 3 : 125 Hz
+Band 3: 125 Hz
 
-Band 4 : 250 Hz
+Band 4: 250 Hz
 
-Band 5 : 500 Hz
+Band 5: 500 Hz
 
-Band 6 : 1000 Hz
+Band 6: 1000 Hz
 
-Band 7 : 2000 Hz
+Band 7: 2000 Hz
 
-Band 8 : 4000 Hz
+Band 8: 4000 Hz
 
-Band 9 : 8000 Hz
+Band 9: 8000 Hz
 
-Band 10 : 16000 Hz
+Band 10: 16000 Hz
 
 See also :ref:`AudioEffectEQ<class_AudioEffectEQ>`, :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`, :ref:`AudioEffectEQ21<class_AudioEffectEQ21>`.
 

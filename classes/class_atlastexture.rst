@@ -73,7 +73,7 @@ If ``true``, clips the area outside of the region to avoid bleeding of the surro
 | *Getter* | get_margin()      |
 +----------+-------------------+
 
-The margin around the region. The :ref:`Rect2<class_Rect2>`'s 'size' parameter ('w' and 'h' in the editor) resizes the texture so it fits within the margin.
+The margin around the region. The :ref:`Rect2<class_Rect2>`'s :ref:`Rect2.size<class_Rect2_property_size>` parameter ("w" and "h" in the editor) resizes the texture so it fits within the margin.
 
 .. _class_AtlasTexture_property_region:
 

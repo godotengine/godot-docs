@@ -75,13 +75,13 @@ Emitted when the button stops being held down.
 
 - **pressed** **(** **)**
 
-This signal is emitted every time the button is toggled or pressed (i.e. activated, so on ``button_down`` if "Click on press" is active and on ``button_up`` otherwise).
+Emitted when the button is toggled or pressed. This is on :ref:`button_down<class_BaseButton_signal_button_down>` if :ref:`action_mode<class_BaseButton_property_action_mode>` is :ref:`ACTION_MODE_BUTTON_PRESS<class_BaseButton_constant_ACTION_MODE_BUTTON_PRESS>` and on :ref:`button_up<class_BaseButton_signal_button_up>` otherwise.
 
 .. _class_BaseButton_signal_toggled:
 
 - **toggled** **(** :ref:`bool<class_bool>` button_pressed **)**
 
-This signal is emitted when the button was just toggled between pressed and normal states (only if toggle_mode is active). The new state is contained in the *button_pressed* argument.
+Emitted when the button was just toggled between pressed and normal states (only if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active). The new state is contained in the ``button_pressed`` argument.
 
 Enumerations
 ------------
@@ -140,7 +140,7 @@ Property Descriptions
 | *Getter* | get_action_mode()      |
 +----------+------------------------+
 
-Determines when the button is considered clicked, one of the ACTION_MODE\_\* constants.
+Determines when the button is considered clicked, one of the ``ACTION_MODE_*`` constants.
 
 .. _class_BaseButton_property_button_mask:
 
@@ -271,7 +271,7 @@ Called when the button is toggled (only if toggle_mode is active).
 
 - :ref:`DrawMode<enum_BaseButton_DrawMode>` **get_draw_mode** **(** **)** const
 
-Returns the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DRAW\_\* enum.
+Returns the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the ``DRAW_*`` enum.
 
 .. _class_BaseButton_method_is_hovered:
 

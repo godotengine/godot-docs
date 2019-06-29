@@ -14,9 +14,7 @@ InputEventScreenDrag
 Brief Description
 -----------------
 
-Input event type for screen drag events.
-
-(only available on mobile devices)
+Input event type for screen drag events. Only available on mobile devices.
 
 Properties
 ----------
@@ -54,7 +52,7 @@ Property Descriptions
 | *Getter* | get_index()      |
 +----------+------------------+
 
-Drag event index in the case of a multi-drag event.
+The drag event index in the case of a multi-drag event.
 
 .. _class_InputEventScreenDrag_property_position:
 
@@ -66,7 +64,7 @@ Drag event index in the case of a multi-drag event.
 | *Getter* | get_position()      |
 +----------+---------------------+
 
-Drag position.
+The drag position.
 
 .. _class_InputEventScreenDrag_property_relative:
 
@@ -78,7 +76,7 @@ Drag position.
 | *Getter* | get_relative()      |
 +----------+---------------------+
 
-Drag position relative to its start position.
+The drag position relative to its start position.
 
 .. _class_InputEventScreenDrag_property_speed:
 
@@ -90,5 +88,5 @@ Drag position relative to its start position.
 | *Getter* | get_speed()      |
 +----------+------------------+
 
-Drag speed.
+The drag speed.
 

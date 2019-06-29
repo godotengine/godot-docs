@@ -70,7 +70,7 @@ enum **AxisStretchMode**:
 Description
 -----------
 
-Better known as 9-slice panels, NinePatchRect produces clean panels of any size, based on a small texture. To do so, it splits the texture in a 3 by 3 grid. When you scale the node, it tiles the texture's sides horizontally or vertically, the center on both axes but it doesn't scale or tile the corners.
+Also known as 9-slice panels, NinePatchRect produces clean panels of any size, based on a small texture. To do so, it splits the texture in a 3×3 grid. When you scale the node, it tiles the texture's sides horizontally or vertically, the center on both axes but it doesn't scale or tile the corners.
 
 Property Descriptions
 ---------------------
@@ -109,7 +109,7 @@ Doesn't do anything at the time of writing.
 | *Getter* | is_draw_center_enabled() |
 +----------+--------------------------+
 
-If ``true``, draw the panel's center. Else, only draw the 9-slice's borders. Default value: ``true``
+If ``true``, draw the panel's center. Else, only draw the 9-slice's borders. Default value: ``true``.
 
 .. _class_NinePatchRect_property_patch_margin_bottom:
 

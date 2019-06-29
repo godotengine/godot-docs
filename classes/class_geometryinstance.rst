@@ -16,7 +16,7 @@ GeometryInstance
 Brief Description
 -----------------
 
-Base node for geometry based visual instances.
+Base node for geometry-based visual instances.
 
 Properties
 ----------
@@ -79,20 +79,22 @@ In other words: The actual mesh will not be visible, only the shadows casted fro
 
 .. _class_GeometryInstance_constant_FLAG_USE_BAKED_LIGHT:
 
+.. _class_GeometryInstance_constant_FLAG_DRAW_NEXT_FRAME_IF_VISIBLE:
+
 .. _class_GeometryInstance_constant_FLAG_MAX:
 
 enum **Flags**:
 
 - **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
 
-Added documentation for GeometryInstance and VisualInstance
+- **FLAG_DRAW_NEXT_FRAME_IF_VISIBLE** = **1** --- Unused in this class, exposed for consistency with :ref:`InstanceFlags<enum_VisualServer_InstanceFlags>`.
 
-- **FLAG_MAX** = **2**
+- **FLAG_MAX** = **2** --- Represents the size of the :ref:`Flags<enum_GeometryInstance_Flags>` enum.
 
 Description
 -----------
 
-Base node for geometry based visual instances. Shares some common functionality like visibility and custom materials.
+Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.
 
 Property Descriptions
 ---------------------
@@ -107,7 +109,7 @@ Property Descriptions
 | *Getter* | get_cast_shadows_setting()      |
 +----------+---------------------------------+
 
-The selected shadow casting flag. See SHADOW_CASTING_SETTING\_\* constants for values.
+The selected shadow casting flag. See :ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` for possible values.
 
 .. _class_GeometryInstance_property_extra_cull_margin:
 
@@ -181,7 +183,7 @@ The GeometryInstance's min LOD margin.
 
 The material override for the whole geometry.
 
-If there is a material in material_override, it will be used instead of any material set in any material slot of the mesh.
+If there is a material in ``material_override``, it will be used instead of any material set in any material slot of the mesh.
 
 .. _class_GeometryInstance_property_use_in_baked_light:
 
@@ -202,5 +204,5 @@ Method Descriptions
 
 - void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` aabb **)**
 
-Overrides the bounding box of this node with a custom one. To remove it, set an AABB with all fields set to zero.
+Overrides the bounding box of this node with a custom one. To remove it, set an :ref:`AABB<class_AABB>` with all fields set to zero.
 

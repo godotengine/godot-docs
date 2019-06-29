@@ -86,18 +86,18 @@ enum **FillMode**:
 
 - **FILL_CLOCKWISE** = **4** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills clockwise. See :ref:`radial_center_offset<class_TextureProgress_property_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_property_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>` to control the way the bar fills up.
 
-- **FILL_COUNTER_CLOCKWISE** = **5** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills counter-clockwise. See :ref:`radial_center_offset<class_TextureProgress_property_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_property_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>` to control the way the bar fills up.
+- **FILL_COUNTER_CLOCKWISE** = **5** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills counterclockwise. See :ref:`radial_center_offset<class_TextureProgress_property_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_property_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>` to control the way the bar fills up.
 
 - **FILL_BILINEAR_LEFT_AND_RIGHT** = **6** --- The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills from the center, expanding both towards the left and the right.
 
 - **FILL_BILINEAR_TOP_AND_BOTTOM** = **7** --- The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills from the center, expanding both towards the top and the bottom.
 
-- **FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE** = **8** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills radially from the center, expanding both clockwise and counter-clockwise. See :ref:`radial_center_offset<class_TextureProgress_property_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_property_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>` to control the way the bar fills up.
+- **FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE** = **8** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills radially from the center, expanding both clockwise and counterclockwise. See :ref:`radial_center_offset<class_TextureProgress_property_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_property_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>` to control the way the bar fills up.
 
 Description
 -----------
 
-TextureProgress works like :ref:`ProgressBar<class_ProgressBar>` but it uses up to 3 textures instead of Godot's :ref:`Theme<class_Theme>` resource. Works horizontally, vertically, and radially.
+TextureProgress works like :ref:`ProgressBar<class_ProgressBar>`, but uses up to 3 textures instead of Godot's :ref:`Theme<class_Theme>` resource. It can be used to create horizontal, vertical and radial progress bars.
 
 Property Descriptions
 ---------------------
@@ -112,7 +112,7 @@ Property Descriptions
 | *Getter* | get_fill_mode()      |
 +----------+----------------------+
 
-The fill direction. Uses FILL\_\* constants.
+The fill direction. See :ref:`FillMode<enum_TextureProgress_FillMode>` for possible values.
 
 .. _class_TextureProgress_property_nine_patch_stretch:
 
@@ -124,7 +124,7 @@ The fill direction. Uses FILL\_\* constants.
 | *Getter* | get_nine_patch_stretch()      |
 +----------+-------------------------------+
 
-If ``true``, Godot treats the bar's textures like :ref:`NinePatchRect<class_NinePatchRect>`. Use ``stretch_margin_*``, like :ref:`stretch_margin_bottom<class_TextureProgress_property_stretch_margin_bottom>`, to set up the nine patch's 3x3 grid. Default value: ``false``.
+If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_NinePatchRect>`. Use the ``stretch_margin_*`` properties like :ref:`stretch_margin_bottom<class_TextureProgress_property_stretch_margin_bottom>` to set up the nine patch's 3×3 grid. Default value: ``false``.
 
 .. _class_TextureProgress_property_radial_center_offset:
 
@@ -136,7 +136,7 @@ If ``true``, Godot treats the bar's textures like :ref:`NinePatchRect<class_Nine
 | *Getter* | get_radial_center_offset()      |
 +----------+---------------------------------+
 
-Offsets :ref:`texture_progress<class_TextureProgress_property_texture_progress>` if :ref:`fill_mode<class_TextureProgress_property_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``.
+Offsets :ref:`texture_progress<class_TextureProgress_property_texture_progress>` if :ref:`fill_mode<class_TextureProgress_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgress_constant_FILL_CLOCKWISE>` or :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgress_constant_FILL_COUNTER_CLOCKWISE>`.
 
 .. _class_TextureProgress_property_radial_fill_degrees:
 
@@ -148,7 +148,7 @@ Offsets :ref:`texture_progress<class_TextureProgress_property_texture_progress>`
 | *Getter* | get_fill_degrees()      |
 +----------+-------------------------+
 
-Upper limit for the fill of :ref:`texture_progress<class_TextureProgress_property_texture_progress>` if :ref:`fill_mode<class_TextureProgress_property_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``. When the node's ``value`` is equal to its ``max_value``, the texture fills up to this angle.
+Upper limit for the fill of :ref:`texture_progress<class_TextureProgress_property_texture_progress>` if :ref:`fill_mode<class_TextureProgress_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgress_constant_FILL_CLOCKWISE>` or :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgress_constant_FILL_COUNTER_CLOCKWISE>`. When the node's ``value`` is equal to its ``max_value``, the texture fills up to this angle.
 
 See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_Range_property_max_value>`.
 
@@ -162,7 +162,7 @@ See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_
 | *Getter* | get_radial_initial_angle()      |
 +----------+---------------------------------+
 
-Starting angle for the fill of :ref:`texture_progress<class_TextureProgress_property_texture_progress>` if :ref:`fill_mode<class_TextureProgress_property_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``. When the node's ``value`` is equal to its ``min_value``, the texture doesn't show up at all. When the ``value`` increases, the texture fills and tends towards :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>`.
+Starting angle for the fill of :ref:`texture_progress<class_TextureProgress_property_texture_progress>` if :ref:`fill_mode<class_TextureProgress_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgress_constant_FILL_CLOCKWISE>` or :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgress_constant_FILL_COUNTER_CLOCKWISE>`. When the node's ``value`` is equal to its ``min_value``, the texture doesn't show up at all. When the ``value`` increases, the texture fills and tends towards :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>`.
 
 .. _class_TextureProgress_property_stretch_margin_bottom:
 

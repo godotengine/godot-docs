@@ -79,7 +79,7 @@ Property Descriptions
 | *Getter* | get_lossy_storage_quality()      |
 +----------+----------------------------------+
 
-The storage quality for ``STORAGE_COMPRESS_LOSSY``.
+The storage quality for :ref:`STORAGE_COMPRESS_LOSSY<class_ImageTexture_constant_STORAGE_COMPRESS_LOSSY>`.
 
 .. _class_ImageTexture_property_storage:
 
@@ -126,7 +126,7 @@ Load an ``ImageTexture`` from a file path.
 
 - void **set_data** **(** :ref:`Image<class_Image>` image **)**
 
-Set the :ref:`Image<class_Image>` of this ``ImageTexture``.
+Sets the :ref:`Image<class_Image>` of this ``ImageTexture``.
 
 .. _class_ImageTexture_method_set_size_override:
 

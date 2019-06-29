@@ -14,7 +14,7 @@ Sprite3D
 Brief Description
 -----------------
 
-2D Sprite node in 3D world.
+2D sprite node in a 3D world.
 
 Properties
 ----------

@@ -51,7 +51,7 @@ Signals
 
 - **request_completed** **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)**
 
-This signal is emitted upon request completion.
+Emitted when a request is completed.
 
 Enumerations
 ------------
@@ -204,5 +204,5 @@ Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`
 
 Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
 
-Returns ``OK`` if request is successfully created. (Does not imply that the server has responded), ``ERR_UNCONFIGURED`` if not in the tree, ``ERR_BUSY`` if still processing previous request, ``ERR_INVALID_PARAMETER`` if given string is not a valid URL format, or ``ERR_CANT_CONNECT`` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is successfully created. (Does not imply that the server has responded), :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if not in the tree, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` if still processing previous request, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if given string is not a valid URL format, or :ref:`@GlobalScope.ERR_CANT_CONNECT<class_@GlobalScope_constant_ERR_CANT_CONNECT>` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
 

@@ -32,9 +32,11 @@ Methods
 Description
 -----------
 
-Scripts extending this class and implementing its ``_run()`` method can be executed from the Script Editor's ``File -> Run`` menu option (or by pressing ``CTRL+Shift+X``) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead. Note that extending scripts need to have ``tool mode`` enabled.
+Scripts extending this class and implementing its :ref:`_run<class_EditorScript_method__run>` method can be executed from the Script Editor's **File > Run** menu option (or by pressing ``Ctrl+Shift+X``) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead.
 
-Example script:
+**Note:** Extending scripts need to have ``tool mode`` enabled.
+
+**Example script:**
 
 ::
 
@@ -44,7 +46,7 @@ Example script:
     func _run():
         print("Hello from the Godot Editor!")
 
-Note that the script is run in the Editor context, which means the output is visible in the console window started with the Editor (STDOUT) instead of the usual Godot *Output* dock.
+**Note:** The script is run in the Editor context, which means the output is visible in the console window started with the Editor (stdout) instead of the usual Godot **Output** dock.
 
 Method Descriptions
 -------------------
@@ -53,7 +55,7 @@ Method Descriptions
 
 - void **_run** **(** **)** virtual
 
-This method is executed by the Editor when ``File -> Run`` is used.
+This method is executed by the Editor when **File > Run** is used.
 
 .. _class_EditorScript_method_add_root_node:
 
@@ -61,7 +63,7 @@ This method is executed by the Editor when ``File -> Run`` is used.
 
 Adds ``node`` as a child of the root node in the editor context.
 
-WARNING: The implementation of this method is currently disabled.
+**Warning:** The implementation of this method is currently disabled.
 
 .. _class_EditorScript_method_get_editor_interface:
 

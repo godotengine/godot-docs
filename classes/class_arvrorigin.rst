@@ -14,7 +14,7 @@ ARVROrigin
 Brief Description
 -----------------
 
-Our origin point in AR/VR.
+The origin point in AR/VR.
 
 Properties
 ----------
@@ -32,7 +32,7 @@ There should be only one of these nodes in your scene and you must have one. All
 
 It is the position of this node that you update when your character needs to move through your game world while we're not moving in the real world. Movement in the real world is always in relation to this origin point.
 
-So say that your character is driving a car, the ARVROrigin node should be a child node of this car. If you implement a teleport system to move your character, you change the position of this node. Etc.
+For example, if your character is driving a car, the ARVROrigin node should be a child node of this car. Or, if you're implementing a teleport system to move your character, you should change the position of this node.
 
 Property Descriptions
 ---------------------
@@ -47,7 +47,7 @@ Property Descriptions
 | *Getter* | get_world_scale()      |
 +----------+------------------------+
 
-Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 meter in the real world.
+Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 real world meter.
 
-Note that this method is a passthrough to the :ref:`ARVRServer<class_ARVRServer>` itself.
+**Note:** This method is a passthrough to the :ref:`ARVRServer<class_ARVRServer>` itself.
 

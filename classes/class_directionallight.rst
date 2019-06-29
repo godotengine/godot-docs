@@ -73,7 +73,7 @@ enum **ShadowDepthRange**:
 Description
 -----------
 
-A directional light is a type of :ref:`Light<class_Light>` node that models an infinite number of parallel rays covering the entire scene. It is used for lights with strong intensity that are located far away from the scene to model sunlight or moonlight. The worldspace location of the DirectionalLight transform (origin) is ignored. Only the basis is used do determine light direction.
+A directional light is a type of :ref:`Light<class_Light>` node that models an infinite number of parallel rays covering the entire scene. It is used for lights with strong intensity that are located far away from the scene to model sunlight or moonlight. The worldspace location of the DirectionalLight transform (origin) is ignored. Only the basis is used to determine light direction.
 
 Tutorials
 ---------
@@ -93,7 +93,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Amount of extra bias for shadow splits that are far away. If self shadowing occurs only on the splits far away, this value can fix them.
+Amount of extra bias for shadow splits that are far away. If self-shadowing occurs only on the splits far away, increasing this value can fix them.
 
 .. _class_DirectionalLight_property_directional_shadow_blend_splits:
 
@@ -105,7 +105,7 @@ Amount of extra bias for shadow splits that are far away. If self shadowing occu
 | *Getter* | is_blend_splits_enabled() |
 +----------+---------------------------+
 
-If ``true``, shadow detail is sacrificed in exchange for smoother transitions between splits. Default value:``false``.
+If ``true``, shadow detail is sacrificed in exchange for smoother transitions between splits. Default value: ``false``.
 
 .. _class_DirectionalLight_property_directional_shadow_depth_range:
 
@@ -165,7 +165,7 @@ Can be used to fix special cases of self shadowing when objects are perpendicula
 | *Getter* | get_param()      |
 +----------+------------------+
 
-The distance from camera to shadow split 1. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used when :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>` is one of the ``SHADOW_PARALLEL_*_SPLITS`` constants.
+The distance from camera to shadow split 1. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used when :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>` is ``SHADOW_PARALLEL_2_SPLITS`` or ``SHADOW_PARALLEL_4_SPLITS``.
 
 .. _class_DirectionalLight_property_directional_shadow_split_2:
 
@@ -177,7 +177,7 @@ The distance from camera to shadow split 1. Relative to :ref:`directional_shadow
 | *Getter* | get_param()      |
 +----------+------------------+
 
-The distance from shadow split 1 to split 2. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used when :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>` is ``SHADOW_PARALLEL_3_SPLITS`` or ``SHADOW_PARALLEL_4_SPLITS``.
+The distance from shadow split 1 to split 2. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used when :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>` is ``SHADOW_PARALLEL_2_SPLITS`` or ``SHADOW_PARALLEL_4_SPLITS``.
 
 .. _class_DirectionalLight_property_directional_shadow_split_3:
 

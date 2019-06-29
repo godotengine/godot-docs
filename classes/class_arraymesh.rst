@@ -109,7 +109,7 @@ enum **ArrayType**:
 
 For triangles, the index array is interpreted as triples, referring to the vertices of each triangle. For lines, the index array is in pairs indicating the start and end of each line.
 
-- **ARRAY_MAX** = **9**
+- **ARRAY_MAX** = **9** --- Represents the size of the :ref:`ArrayType<enum_ArrayMesh_ArrayType>` enum.
 
 .. _enum_ArrayMesh_ArrayFormat:
 
@@ -217,7 +217,7 @@ Method Descriptions
 
 - void **add_blend_shape** **(** :ref:`String<class_String>` name **)**
 
-Add name for a blend shape that will be added with :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`. Must be called before surface is added.
+Adds name for a blend shape that will be added with :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`. Must be called before surface is added.
 
 .. _class_ArrayMesh_method_add_surface_from_arrays:
 
@@ -227,7 +227,7 @@ Creates a new surface.
 
 Surfaces are created to be rendered using a "primitive", which may be PRIMITIVE_POINTS, PRIMITIVE_LINES, PRIMITIVE_LINE_STRIP, PRIMITIVE_LINE_LOOP, PRIMITIVE_TRIANGLES, PRIMITIVE_TRIANGLE_STRIP, PRIMITIVE_TRIANGLE_FAN. See :ref:`Mesh<class_Mesh>` for details. (As a note, when using indices, it is recommended to only use points, lines or triangles). :ref:`Mesh.get_surface_count<class_Mesh_method_get_surface_count>` will become the ``surf_idx`` for this new surface.
 
-The ``arrays`` argument is an array of arrays. See :ref:`ArrayType<enum_ArrayMesh_ArrayType>` for the values used in this array. For example, ``arrays[0]`` is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array or be empty, except for ``ARRAY_INDEX`` if it is used.
+The ``arrays`` argument is an array of arrays. See :ref:`ArrayType<enum_ArrayMesh_ArrayType>` for the values used in this array. For example, ``arrays[0]`` is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array or be empty, except for :ref:`ARRAY_INDEX<class_ArrayMesh_constant_ARRAY_INDEX>` if it is used.
 
 Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data, and the index array defines the order of the vertices.
 
@@ -237,7 +237,7 @@ Godot uses clockwise winding order for front faces of triangle primitive modes.
 
 - void **clear_blend_shapes** **(** **)**
 
-Remove all blend shapes from this ``ArrayMesh``.
+Removes all blend shapes from this ``ArrayMesh``.
 
 .. _class_ArrayMesh_method_get_blend_shape_count:
 
@@ -267,7 +267,7 @@ Will regenerate normal maps for the ``ArrayMesh``.
 
 - :ref:`int<class_int>` **surface_find_by_name** **(** :ref:`String<class_String>` name **)** const
 
-Returns the index of the first surface with this name held within this ``ArrayMesh``. If none are found -1 is returned.
+Returns the index of the first surface with this name held within this ``ArrayMesh``. If none are found, -1 is returned.
 
 .. _class_ArrayMesh_method_surface_get_array_index_len:
 
@@ -291,7 +291,7 @@ Returns the format mask of the requested surface (see :ref:`add_surface_from_arr
 
 - :ref:`String<class_String>` **surface_get_name** **(** :ref:`int<class_int>` surf_idx **)** const
 
-Get the name assigned to this surface.
+Gets the name assigned to this surface.
 
 .. _class_ArrayMesh_method_surface_get_primitive_type:
 
@@ -303,17 +303,19 @@ Returns the primitive type of the requested surface (see :ref:`add_surface_from_
 
 - void **surface_remove** **(** :ref:`int<class_int>` surf_idx **)**
 
-Remove a surface at position surf_idx, shifting greater surfaces one surf_idx slot down.
+Removes a surface at position ``surf_idx``, shifting greater surfaces one ``surf_idx`` slot down.
 
 .. _class_ArrayMesh_method_surface_set_name:
 
 - void **surface_set_name** **(** :ref:`int<class_int>` surf_idx, :ref:`String<class_String>` name **)**
 
-Set a name for a given surface.
+Sets a name for a given surface.
 
 .. _class_ArrayMesh_method_surface_update_region:
 
 - void **surface_update_region** **(** :ref:`int<class_int>` surf_idx, :ref:`int<class_int>` offset, :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
-Updates a specified region of mesh arrays on GPU. Warning: only use if you know what you are doing. You can easily cause crashes by calling this function with improper arguments.
+Updates a specified region of mesh arrays on the GPU.
+
+**Warning:** Only use if you know what you are doing. You can easily cause crashes by calling this function with improper arguments.
 

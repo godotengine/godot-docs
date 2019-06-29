@@ -276,7 +276,7 @@ Returns the number of buttons in column ``column``. May be used to get the most 
 
 - :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **get_cell_mode** **(** :ref:`int<class_int>` column **)** const
 
-Returns the column's cell mode. See ``CELL_MODE_*`` constants.
+Returns the column's cell mode.
 
 .. _class_TreeItem_method_get_children:
 
@@ -534,7 +534,7 @@ If ``true``, the given column is selectable.
 
 - void **set_text_align** **(** :ref:`int<class_int>` column, :ref:`TextAlign<enum_TreeItem_TextAlign>` text_align **)**
 
-Sets the given column's text alignment. See ``ALIGN_*`` constants.
+Sets the given column's text alignment. See :ref:`TextAlign<enum_TreeItem_TextAlign>` for possible values.
 
 .. _class_TreeItem_method_set_tooltip:
 

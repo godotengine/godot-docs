@@ -88,7 +88,7 @@ Turn on auto advance when this condition is set. The provided name will become a
 | *Getter* | has_auto_advance()      |
 +----------+-------------------------+
 
-Turn on the transition automatically when this state is reached. This works best with ``SWITCH_MODE_AT_END``.
+Turn on the transition automatically when this state is reached. This works best with :ref:`SWITCH_MODE_AT_END<class_AnimationNodeStateMachineTransition_constant_SWITCH_MODE_AT_END>`.
 
 .. _class_AnimationNodeStateMachineTransition_property_disabled:
 

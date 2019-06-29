@@ -14,7 +14,7 @@ AudioStreamPlayer
 Brief Description
 -----------------
 
-Plays back audio.
+Plays back audio non-positionally.
 
 Properties
 ----------
@@ -83,7 +83,7 @@ enum **MixTarget**:
 Description
 -----------
 
-Plays background audio.
+Plays an audio stream non-positionally.
 
 Tutorials
 ---------
@@ -202,7 +202,7 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>` in seconds.
 
 - void **play** **(** :ref:`float<class_float>` from_position=0.0 **)**
 
-Plays the audio from the given position 'from_position', in seconds.
+Plays the audio from the given ``from_position``, in seconds.
 
 .. _class_AudioStreamPlayer_method_seek:
 

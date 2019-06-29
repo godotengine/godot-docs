@@ -68,7 +68,7 @@ Emitted when playback is finished.
 Description
 -----------
 
-Control node for playing video streams. Supported formats are WebM and OGV Theora.
+Control node for playing video streams. Supported formats are `WebM <https://www.webmproject.org/>`_ and `Ogg Theora <https://www.theora.org/>`_.
 
 Property Descriptions
 ---------------------

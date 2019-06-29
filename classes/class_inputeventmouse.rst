@@ -52,7 +52,7 @@ Property Descriptions
 | *Getter* | get_button_mask()      |
 +----------+------------------------+
 
-Mouse button mask identifier, one of or a bitwise combination of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button masks.
+The mouse button mask identifier, one of or a bitwise combination of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button masks.
 
 .. _class_InputEventMouse_property_global_position:
 
@@ -64,7 +64,7 @@ Mouse button mask identifier, one of or a bitwise combination of the :ref:`Butto
 | *Getter* | get_global_position()      |
 +----------+----------------------------+
 
-Mouse position relative to the current :ref:`Viewport<class_Viewport>` when used in :ref:`Control._gui_input<class_Control_method__gui_input>`, otherwise is at 0,0.
+The global mouse position relative to the current :ref:`Viewport<class_Viewport>` when used in :ref:`Control._gui_input<class_Control_method__gui_input>`, otherwise is at 0,0.
 
 .. _class_InputEventMouse_property_position:
 
@@ -76,5 +76,5 @@ Mouse position relative to the current :ref:`Viewport<class_Viewport>` when used
 | *Getter* | get_position()      |
 +----------+---------------------+
 
-Mouse local position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>` the position is relative to the current :ref:`Control<class_Control>` which is under the mouse.
+The local mouse position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` which is under the mouse.
 

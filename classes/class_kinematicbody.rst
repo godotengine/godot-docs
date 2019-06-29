@@ -57,11 +57,11 @@ Methods
 Description
 -----------
 
-Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all (to other types of bodies, such a character or a rigid body, these are the same as a static body). They have however, two main uses:
+Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a character or a rigid body, these are the same as a static body. However, they have two main uses:
 
-Simulated Motion: When these bodies are moved manually, either from code or from an AnimationPlayer (with process mode set to fixed), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
+**Simulated motion:** When these bodies are moved manually, either from code or from an AnimationPlayer (with process mode set to fixed), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
 
-Kinematic Characters: KinematicBody also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
+**Kinematic characters:** KinematicBody also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
 
 Tutorials
 ---------
@@ -93,7 +93,7 @@ If the body is at least this close to another body, this body will consider them
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-Lock the body's movement in the x-axis.
+Lock the body's X axis movement.
 
 .. _class_KinematicBody_property_move_lock_y:
 
@@ -105,7 +105,7 @@ Lock the body's movement in the x-axis.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-Lock the body's movement in the y-axis.
+Lock the body's Y axis movement.
 
 .. _class_KinematicBody_property_move_lock_z:
 
@@ -117,7 +117,7 @@ Lock the body's movement in the y-axis.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-Lock the body's movement in the z-axis.
+Lock the body's Z axis movement.
 
 Method Descriptions
 -------------------
@@ -182,7 +182,7 @@ If the body collides, it will change direction a maximum of ``max_slides`` times
 
 ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 
-If ``infinite_inertia`` is ``true``, body will be able to push :ref:`RigidBody<class_RigidBody>` nodes, but it won't also detect any collisions with them. If ``false`` it will interact with :ref:`RigidBody<class_RigidBody>` nodes like with :ref:`StaticBody<class_StaticBody>`.
+If ``infinite_inertia`` is ``true``, body will be able to push :ref:`RigidBody<class_RigidBody>` nodes, but it won't also detect any collisions with them. If ``false``, it will interact with :ref:`RigidBody<class_RigidBody>` nodes like with :ref:`StaticBody<class_StaticBody>`.
 
 Returns the ``linear_velocity`` vector, rotated and/or scaled if a slide collision occurred. To get detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody_method_get_slide_collision>`.
 

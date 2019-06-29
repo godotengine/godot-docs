@@ -222,7 +222,7 @@ enum **BuiltinFunc**:
 
 - **MATH_MOVE_TOWARD** = **29** --- Moves the number toward a value, based on the third input.
 
-- **MATH_DECTIME** = **30** --- Return the result of 'value' decreased by 'step' \* 'amount'.
+- **MATH_DECTIME** = **30** --- Return the result of ``value`` decreased by ``step`` \* ``amount``.
 
 - **MATH_RANDOMIZE** = **31** --- Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
 
@@ -244,9 +244,9 @@ enum **BuiltinFunc**:
 
 - **MATH_DB2LINEAR** = **40** --- Convert the input from decibel volume to linear volume.
 
-- **MATH_POLAR2CARTESIAN** = **41** --- Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (x and y axis).
+- **MATH_POLAR2CARTESIAN** = **41** --- Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (X and Y axis).
 
-- **MATH_CARTESIAN2POLAR** = **42** --- Converts a 2D point expressed in the cartesian coordinate system (x and y axis) to the polar coordinate system (a distance from the origin and an angle).
+- **MATH_CARTESIAN2POLAR** = **42** --- Converts a 2D point expressed in the cartesian coordinate system (X and Y axis) to the polar coordinate system (a distance from the origin and an angle).
 
 - **MATH_WRAP** = **43**
 
@@ -282,22 +282,24 @@ enum **BuiltinFunc**:
 
 - **VAR_TO_STR** = **59** --- Serialize a :ref:`Variant<class_Variant>` to a string.
 
-- **STR_TO_VAR** = **60** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using ``VAR_TO_STR``.
+- **STR_TO_VAR** = **60** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using :ref:`VAR_TO_STR<class_VisualScriptBuiltinFunc_constant_VAR_TO_STR>`.
 
 - **VAR_TO_BYTES** = **61** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PoolByteArray<class_PoolByteArray>`.
 
-- **BYTES_TO_VAR** = **62** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using ``VAR_TO_BYTES``.
+- **BYTES_TO_VAR** = **62** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
 
-- **COLORN** = **63** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
+- **COLORN** = **63** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1
 
-- **MATH_SMOOTHSTEP** = **64** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to ``MATH_LERP``, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
+**Note:** Names are defined in ``color_names.inc``.
+
+- **MATH_SMOOTHSTEP** = **64** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to :ref:`MATH_LERP<class_VisualScriptBuiltinFunc_constant_MATH_LERP>`, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
 
 ::
 
     var t = clamp((weight - from) / (to - from), 0.0, 1.0)
     return t * t * (3.0 - 2.0 * t)
 
-- **FUNC_MAX** = **65** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_property_function>` property can have.
+- **FUNC_MAX** = **65** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
 
 Description
 -----------

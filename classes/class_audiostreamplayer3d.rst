@@ -81,7 +81,7 @@ Signals
 
 - **finished** **(** **)**
 
-Fires when the audio stops playing.
+Emitted when the audio stops playing.
 
 Enumerations
 ------------
@@ -265,7 +265,7 @@ If ``true``, the audio should be dampened according to the direction of the soun
 | *Getter* | get_emission_angle_filter_attenuation_db()      |
 +----------+-------------------------------------------------+
 
-dampens audio if camera is outside of 'emission_angle_degrees' and 'emission_angle_enabled' is set by this factor, in dB.
+Dampens audio if camera is outside of :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>` and :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>` is set by this factor, in dB.
 
 .. _class_AudioStreamPlayer3D_property_max_db:
 
@@ -289,7 +289,7 @@ Sets the absolute maximum of the soundlevel, in dB.
 | *Getter* | get_max_distance()      |
 +----------+-------------------------+
 
-Sets the distance from which the 'out_of_range_mode' takes effect. Has no effect if set to 0.
+Sets the distance from which the :ref:`out_of_range_mode<class_AudioStreamPlayer3D_property_out_of_range_mode>` takes effect. Has no effect if set to 0.
 
 .. _class_AudioStreamPlayer3D_property_out_of_range_mode:
 
@@ -301,7 +301,7 @@ Sets the distance from which the 'out_of_range_mode' takes effect. Has no effect
 | *Getter* | get_out_of_range_mode()      |
 +----------+------------------------------+
 
-Decides if audio should pause when source is outside of 'max_distance' range.
+Decides if audio should pause when source is outside of :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` range.
 
 .. _class_AudioStreamPlayer3D_property_pitch_scale:
 
@@ -388,7 +388,7 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 
 - void **play** **(** :ref:`float<class_float>` from_position=0.0 **)**
 
-Plays the audio from the given position 'from_position', in seconds.
+Plays the audio from the given position ``from_position``, in seconds.
 
 .. _class_AudioStreamPlayer3D_method_seek:
 

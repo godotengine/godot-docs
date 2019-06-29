@@ -43,7 +43,7 @@ Methods
 Description
 -----------
 
-Translations are resources that can be loaded/unloaded on demand. They map a string to another string.
+Translations are resources that can be loaded and unloaded on demand. They map a string to another string.
 
 Tutorials
 ---------

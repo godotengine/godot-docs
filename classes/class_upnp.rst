@@ -143,7 +143,7 @@ enum **UPNPResult**:
 
 - **UPNP_RESULT_NO_PORT_MAPS_AVAILABLE** = **11** --- No port maps are available. May also be returned if port mapping functionality is not available.
 
-- **UPNP_RESULT_CONFLICT_WITH_OTHER_MECHANISM** = **12** --- Conflict with other mechanism. May be returned instead of ``UPNP_RESULT_CONFLICT_WITH_OTHER_MAPPING`` if a port mapping conflicts with an existing one.
+- **UPNP_RESULT_CONFLICT_WITH_OTHER_MECHANISM** = **12** --- Conflict with other mechanism. May be returned instead of :ref:`UPNP_RESULT_CONFLICT_WITH_OTHER_MAPPING<class_UPNP_constant_UPNP_RESULT_CONFLICT_WITH_OTHER_MAPPING>` if a port mapping conflicts with an existing one.
 
 - **UPNP_RESULT_CONFLICT_WITH_OTHER_MAPPING** = **13** --- Conflict with an existing port mapping.
 
@@ -181,6 +181,21 @@ Description
 -----------
 
 Provides UPNP functionality to discover :ref:`UPNPDevice<class_UPNPDevice>`\ s on the local network and execute commands on them, like managing port mappings (port forwarding) and querying the local and remote network IP address. Note that methods on this class are synchronous and block the calling thread.
+
+To forward a specific port:
+
+::
+
+    const PORT = 7777
+    var upnp = UPNP.new()
+    upnp.discover(2000, 2, "InternetGatewayDevice")
+    upnp.add_port_mapping(port)
+
+To close a specific port (e.g. after you have finished using it):
+
+::
+
+    upnp.delete_port_mapping(port)
 
 Property Descriptions
 ---------------------

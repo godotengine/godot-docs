@@ -14,7 +14,7 @@ AudioStreamSample
 Brief Description
 -----------------
 
-Stores audio data loaded from ``.wav`` files.
+Stores audio data loaded from WAV files.
 
 Properties
 ----------
@@ -55,11 +55,11 @@ Enumerations
 
 enum **Format**:
 
-- **FORMAT_8_BITS** = **0** --- Audio codec 8 bit.
+- **FORMAT_8_BITS** = **0** --- 8-bit audio codec.
 
-- **FORMAT_16_BITS** = **1** --- Audio codec 16 bit.
+- **FORMAT_16_BITS** = **1** --- 16-bit audio codec.
 
-- **FORMAT_IMA_ADPCM** = **2** --- Audio codec IMA ADPCM.
+- **FORMAT_IMA_ADPCM** = **2** --- Audio is compressed using IMA ADPCM.
 
 .. _enum_AudioStreamSample_LoopMode:
 
@@ -75,18 +75,18 @@ enum **LoopMode**:
 
 - **LOOP_DISABLED** = **0** --- Audio does not loop.
 
-- **LOOP_FORWARD** = **1** --- Audio loops the data between loop_begin and loop_end playing forward only.
+- **LOOP_FORWARD** = **1** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing forward only.
 
-- **LOOP_PING_PONG** = **2** --- Audio loops the data between loop_begin and loop_end playing back and forth.
+- **LOOP_PING_PONG** = **2** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing back and forth.
 
-- **LOOP_BACKWARD** = **3** --- Audio loops the data between loop_begin and loop_end playing backward only.
+- **LOOP_BACKWARD** = **3** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing backward only.
 
 Description
 -----------
 
-AudioStreamSample stores sound samples loaded from ``.wav`` files. To play the stored sound use an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` (for background music) or :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`/:ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` (for positional audio). The sound can be looped.
+AudioStreamSample stores sound samples loaded from WAV files. To play the stored sound, use an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` (for non-positional audio) or :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`/:ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` (for positional audio). The sound can be looped.
 
-This class can also be used to store dynamically generated PCM audio data.
+This class can also be used to store dynamically-generated PCM audio data.
 
 Property Descriptions
 ---------------------
@@ -113,7 +113,7 @@ Contains the audio data in bytes.
 | *Getter* | get_format()      |
 +----------+-------------------+
 
-Audio format. See FORMAT\_\* constants for values.
+Audio format. See ``FORMAT_*`` constants for values.
 
 .. _class_AudioStreamSample_property_loop_begin:
 
@@ -149,7 +149,7 @@ Loop end in bytes.
 | *Getter* | get_loop_mode()      |
 +----------+----------------------+
 
-Loop mode. See LOOP\_\* constants for values.
+Loop mode. See ``LOOP_*`` constants for values.
 
 .. _class_AudioStreamSample_property_mix_rate:
 
@@ -184,5 +184,5 @@ Method Descriptions
 
 Saves the AudioStreamSample as a WAV file to ``path``. Samples with IMA ADPCM format can't be saved.
 
-Note that a ``.wav`` extension is automatically appended to ``path`` if it is missing.
+**Note:** A ``.wav`` extension is automatically appended to ``path`` if it is missing.
 

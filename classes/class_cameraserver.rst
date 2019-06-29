@@ -14,7 +14,7 @@ CameraServer
 Brief Description
 -----------------
 
-Our camera server keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone.
+The CameraServer keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone.
 
 Methods
 -------

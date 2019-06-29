@@ -352,19 +352,19 @@ enum **CursorShape**:
 
 - **CURSOR_FORBIDDEN** = **8** --- Show the system's forbidden mouse cursor when the user hovers the node. Often a crossed circle.
 
-- **CURSOR_VSIZE** = **9** --- Show the system's vertical resize mouse cursor when the user hovers the node. A double headed vertical arrow. It tells the user they can resize the window or the panel vertically.
+- **CURSOR_VSIZE** = **9** --- Show the system's vertical resize mouse cursor when the user hovers the node. A double-headed vertical arrow. It tells the user they can resize the window or the panel vertically.
 
-- **CURSOR_HSIZE** = **10** --- Show the system's horizontal resize mouse cursor when the user hovers the node. A double headed horizontal arrow. It tells the user they can resize the window or the panel horizontally.
+- **CURSOR_HSIZE** = **10** --- Show the system's horizontal resize mouse cursor when the user hovers the node. A double-headed horizontal arrow. It tells the user they can resize the window or the panel horizontally.
 
-- **CURSOR_BDIAGSIZE** = **11** --- Show the system's window resize mouse cursor when the user hovers the node. The cursor is a double headed arrow that goes from the bottom left to the top right. It tells the user they can resize the window or the panel both horizontally and vertically.
+- **CURSOR_BDIAGSIZE** = **11** --- Show the system's window resize mouse cursor when the user hovers the node. The cursor is a double-headed arrow that goes from the bottom left to the top right. It tells the user they can resize the window or the panel both horizontally and vertically.
 
-- **CURSOR_FDIAGSIZE** = **12** --- Show the system's window resize mouse cursor when the user hovers the node. The cursor is a double headed arrow that goes from the top left to the bottom right, the opposite of ``CURSOR_BDIAGSIZE``. It tells the user they can resize the window or the panel both horizontally and vertically.
+- **CURSOR_FDIAGSIZE** = **12** --- Show the system's window resize mouse cursor when the user hovers the node. The cursor is a double-headed arrow that goes from the top left to the bottom right, the opposite of :ref:`CURSOR_BDIAGSIZE<class_Control_constant_CURSOR_BDIAGSIZE>`. It tells the user they can resize the window or the panel both horizontally and vertically.
 
 - **CURSOR_MOVE** = **13** --- Show the system's move mouse cursor when the user hovers the node. It shows 2 double-headed arrows at a 90 degree angle. It tells the user they can move a UI element freely.
 
-- **CURSOR_VSPLIT** = **14** --- Show the system's vertical split mouse cursor when the user hovers the node. On Windows, it's the same as ``CURSOR_VSIZE``.
+- **CURSOR_VSPLIT** = **14** --- Show the system's vertical split mouse cursor when the user hovers the node. On Windows, it's the same as :ref:`CURSOR_VSIZE<class_Control_constant_CURSOR_VSIZE>`.
 
-- **CURSOR_HSPLIT** = **15** --- Show the system's horizontal split mouse cursor when the user hovers the node. On Windows, it's the same as ``CURSOR_HSIZE``.
+- **CURSOR_HSPLIT** = **15** --- Show the system's horizontal split mouse cursor when the user hovers the node. On Windows, it's the same as :ref:`CURSOR_HSIZE<class_Control_constant_CURSOR_HSIZE>`.
 
 - **CURSOR_HELP** = **16** --- Show the system's help mouse cursor when the user hovers the node, a question mark.
 
@@ -434,7 +434,7 @@ enum **LayoutPreset**:
 
 - **PRESET_HCENTER_WIDE** = **14** --- Snap all 4 anchors to a horizontal line that cuts the parent control in half. Use with :ref:`set_anchors_preset<class_Control_method_set_anchors_preset>`.
 
-- **PRESET_WIDE** = **15** --- Snap all 4 anchors to the respective corners of the parent control. Set all 4 margins to 0 after you applied this preset and the ``Control`` will fit its parent control. This is equivalent to to the "Full Rect" layout option in the editor. Use with :ref:`set_anchors_preset<class_Control_method_set_anchors_preset>`.
+- **PRESET_WIDE** = **15** --- Snap all 4 anchors to the respective corners of the parent control. Set all 4 margins to 0 after you applied this preset and the ``Control`` will fit its parent control. This is equivalent to the "Full Rect" layout option in the editor. Use with :ref:`set_anchors_preset<class_Control_method_set_anchors_preset>`.
 
 .. _enum_Control_LayoutPresetMode:
 
@@ -490,11 +490,11 @@ enum **SizeFlags**:
 
 enum **MouseFilter**:
 
-- **MOUSE_FILTER_STOP** = **0** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` if clicked on. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. These events are automatically marked as handled and they will not propagate further to other controls. This also results in blocking signals in other controls.
+- **MOUSE_FILTER_STOP** = **0** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` if clicked on. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. These events are automatically marked as handled, and they will not propagate further to other controls. This also results in blocking signals in other controls.
 
 - **MOUSE_FILTER_PASS** = **1** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` if clicked on. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. If this control does not handle the event, the parent control (if any) will be considered, and so on until there is no more parent control to potentially handle it. This also allows signals to fire in other controls. Even if no control handled it at all, the event will still be handled automatically, so unhandled input will not be fired.
 
-- **MOUSE_FILTER_IGNORE** = **2** --- The control will not receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>`. Also the control will not receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` nor :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. This will not block other controls from receiving these events or firing the signals. Ignored events will not be handled automatically.
+- **MOUSE_FILTER_IGNORE** = **2** --- The control will not receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>`. The control will also not receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` nor :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. This will not block other controls from receiving these events or firing the signals. Ignored events will not be handled automatically.
 
 .. _enum_Control_GrowDirection:
 
@@ -566,7 +566,7 @@ Constants
 Description
 -----------
 
-Base class for all User Interface or *UI* related nodes. ``Control`` features a bounding rectangle that defines its extents, an anchor position relative to its parent control or the current viewport, and margins that represent an offset to the anchor. The margins update automatically when the node, any of its parents, or the screen size change.
+Base class for all UI-related nodes. ``Control`` features a bounding rectangle that defines its extents, an anchor position relative to its parent control or the current viewport, and margins that represent an offset to the anchor. The margins update automatically when the node, any of its parents, or the screen size change.
 
 For more information on Godot's UI system, anchors, margins, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from ``Control`` and :ref:`Container<class_Container>` nodes.
 
@@ -576,7 +576,7 @@ Godot sends input events to the scene's root node first, by calling :ref:`Node._
 
 Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`grab_focus<class_Control_method_grab_focus>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
 
-Set :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
+Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
 
 :ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_*_override`` methods, like :ref:`add_font_override<class_Control_method_add_font_override>`. You can override the theme with the inspector.
 
@@ -598,7 +598,7 @@ Property Descriptions
 | *Getter* | get_anchor() |
 +----------+--------------+
 
-Anchors the bottom edge of the node to the origin, the center, or the end of its parent control. It changes how the bottom margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience. Default value: ``ANCHOR_BEGIN``.
+Anchors the bottom edge of the node to the origin, the center, or the end of its parent control. It changes how the bottom margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience. Default value: :ref:`ANCHOR_BEGIN<class_Control_constant_ANCHOR_BEGIN>`.
 
 .. _class_Control_property_anchor_left:
 
@@ -608,7 +608,7 @@ Anchors the bottom edge of the node to the origin, the center, or the end of its
 | *Getter* | get_anchor() |
 +----------+--------------+
 
-Anchors the left edge of the node to the origin, the center or the end of its parent control. It changes how the left margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience.Default value: ``ANCHOR_BEGIN``.
+Anchors the left edge of the node to the origin, the center or the end of its parent control. It changes how the left margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience.Default value: :ref:`ANCHOR_BEGIN<class_Control_constant_ANCHOR_BEGIN>`.
 
 .. _class_Control_property_anchor_right:
 
@@ -618,7 +618,7 @@ Anchors the left edge of the node to the origin, the center or the end of its pa
 | *Getter* | get_anchor() |
 +----------+--------------+
 
-Anchors the right edge of the node to the origin, the center or the end of its parent control. It changes how the right margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience. Default value: ``ANCHOR_BEGIN``.
+Anchors the right edge of the node to the origin, the center or the end of its parent control. It changes how the right margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience. Default value: :ref:`ANCHOR_BEGIN<class_Control_constant_ANCHOR_BEGIN>`.
 
 .. _class_Control_property_anchor_top:
 
@@ -628,7 +628,7 @@ Anchors the right edge of the node to the origin, the center or the end of its p
 | *Getter* | get_anchor() |
 +----------+--------------+
 
-Anchors the top edge of the node to the origin, the center or the end of its parent control. It changes how the top margin updates when the node moves or changes size. You can use  one of the ``ANCHOR_*`` constants for convenience. Default value: ``ANCHOR_BEGIN``.
+Anchors the top edge of the node to the origin, the center or the end of its parent control. It changes how the top margin updates when the node moves or changes size. You can use  one of the ``ANCHOR_*`` constants for convenience. Default value: :ref:`ANCHOR_BEGIN<class_Control_constant_ANCHOR_BEGIN>`.
 
 .. _class_Control_property_focus_mode:
 
@@ -946,7 +946,7 @@ Tells the parent :ref:`Container<class_Container>` nodes how they should resize 
 | *Getter* | get_stretch_ratio()      |
 +----------+--------------------------+
 
-If the node and at least one of its neighbours uses the ``SIZE_EXPAND`` size flag, the parent :ref:`Container<class_Container>` will let it take more or less space depending on this property. If this node has a stretch ratio of 2 and its neighbour a ratio of 1, this node will take two thirds of the available space.
+If the node and at least one of its neighbours uses the :ref:`SIZE_EXPAND<class_Control_constant_SIZE_EXPAND>` size flag, the parent :ref:`Container<class_Container>` will let it take more or less space depending on this property. If this node has a stretch ratio of 2 and its neighbour a ratio of 1, this node will take two thirds of the available space.
 
 .. _class_Control_property_size_flags_vertical:
 
@@ -1052,9 +1052,9 @@ This method should only be used to test the data. Process the data in :ref:`drop
     extends Control
     
     func can_drop_data(position, data):
-        # check position if it is relevant to you
-        # otherwise just check data
-        return typeof(data) == TYPE_DICTIONARY and data.has('expected')
+        # Check position if it is relevant to you
+        # Otherwise, just check data
+        return typeof(data) == TYPE_DICTIONARY and data.has("expected")
 
 .. _class_Control_method_drop_data:
 
@@ -1067,10 +1067,10 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`get_drag
     extends ColorRect
     
     func can_drop_data(position, data):
-        return typeof(data) == TYPE_DICTIONARY and data.has('color')
+        return typeof(data) == TYPE_DICTIONARY and data.has("color")
     
     func drop_data(position, data):
-        color = data['color']
+        color = data["color"]
 
 .. _class_Control_method_force_drag:
 
@@ -1108,7 +1108,7 @@ Returns the mouse cursor shape the control displays on mouse hover. See :ref:`Cu
 
 - :ref:`Object<class_Object>` **get_drag_data** **(** :ref:`Vector2<class_Vector2>` position **)** virtual
 
-Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns null if there is no data to drag. Controls that want to receive drop data should implement :ref:`can_drop_data<class_Control_method_can_drop_data>` and :ref:`drop_data<class_Control_method_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
+Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns ``null`` if there is no data to drag. Controls that want to receive drop data should implement :ref:`can_drop_data<class_Control_method_can_drop_data>` and :ref:`drop_data<class_Control_method_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
 
 A preview that will follow the mouse that should represent the data can be set with :ref:`set_drag_preview<class_Control_method_set_drag_preview>`. A good time to set the preview is in this method.
 

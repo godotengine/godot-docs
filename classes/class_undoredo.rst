@@ -14,7 +14,7 @@ UndoRedo
 Brief Description
 -----------------
 
-Helper to manage UndoRedo in the editor or custom tools.
+Helper to manage undo/redo operations in the editor or custom tools.
 
 Methods
 -------
@@ -42,12 +42,25 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_version<class_UndoRedo_method_get_version>` **(** **)** const                                                                                                                     |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`has_redo<class_UndoRedo_method_has_redo>` **(** **)**                                                                                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`has_undo<class_UndoRedo_method_has_undo>` **(** **)**                                                                                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_commiting_action<class_UndoRedo_method_is_commiting_action>` **(** **)** const                                                                                                     |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`redo<class_UndoRedo_method_redo>` **(** **)**                                                                                                                                         |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`undo<class_UndoRedo_method_undo>` **(** **)**                                                                                                                                         |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_UndoRedo_signal_version_changed:
+
+- **version_changed** **(** **)**
+
+Called when :ref:`undo<class_UndoRedo_method_undo>` or :ref:`redo<class_UndoRedo_method_redo>` was called.
 
 Enumerations
 ------------
@@ -62,20 +75,20 @@ Enumerations
 
 enum **MergeMode**:
 
-- **MERGE_DISABLE** = **0** --- Makes ``do``/``undo`` operations stay in separate actions.
+- **MERGE_DISABLE** = **0** --- Makes "do"/"undo" operations stay in separate actions.
 
-- **MERGE_ENDS** = **1** --- Makes so that the action's ``do`` operation is from the first action created and the ``undo`` operation is from the last subsequent action with the same name.
+- **MERGE_ENDS** = **1** --- Makes so that the action's "do" operation is from the first action created and the "undo" operation is from the last subsequent action with the same name.
 
 - **MERGE_ALL** = **2** --- Makes subsequent actions with the same name be merged into one.
 
 Description
 -----------
 
-Helper to manage UndoRedo in the editor or custom tools. It works by registering methods and property changes inside 'actions'.
+Helper to manage undo/redo operations in the editor or custom tools. It works by registering methods and property changes inside "actions".
 
 Common behavior is to create an action, then add do/undo calls to functions or property changes, then committing the action.
 
-Here's an example on how to add an action to Godot editor's own 'undoredo':
+Here's an example on how to add an action to the Godot editor's own ``UndoRedo``, from a plugin:
 
 ::
 
@@ -98,7 +111,7 @@ Here's an example on how to add an action to Godot editor's own 'undoredo':
 
 :ref:`create_action<class_UndoRedo_method_create_action>`, :ref:`add_do_method<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_method_add_do_property>`, :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>`, and :ref:`commit_action<class_UndoRedo_method_commit_action>` should be called one after the other, like in the example. Not doing so could lead to crashes.
 
-If you don't need to register a method you can leave :ref:`add_do_method<class_UndoRedo_method_add_do_method>` and :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` out, and so it goes for properties. You can register more than one method/property.
+If you don't need to register a method, you can leave :ref:`add_do_method<class_UndoRedo_method_add_do_method>` and :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` out; the same goes for properties. You can also register more than one method/property.
 
 Method Descriptions
 -------------------
@@ -113,13 +126,13 @@ Register a method that will be called when the action is committed.
 
 - void **add_do_property** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
-Register a property value change for 'do'.
+Register a property value change for "do".
 
 .. _class_UndoRedo_method_add_do_reference:
 
 - void **add_do_reference** **(** :ref:`Object<class_Object>` object **)**
 
-Register a reference for 'do' that will be erased if the 'do' history is lost. This is useful mostly for new nodes created for the 'do' call. Do not use for resources.
+Register a reference for "do" that will be erased if the "do" history is lost. This is useful mostly for new nodes created for the "do" call. Do not use for resources.
 
 .. _class_UndoRedo_method_add_undo_method:
 
@@ -131,13 +144,13 @@ Register a method that will be called when the action is undone.
 
 - void **add_undo_property** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
-Register a property value change for 'undo'.
+Register a property value change for "undo".
 
 .. _class_UndoRedo_method_add_undo_reference:
 
 - void **add_undo_reference** **(** :ref:`Object<class_Object>` object **)**
 
-Register a reference for 'undo' that will be erased if the 'undo' history is lost. This is useful mostly for nodes removed with the 'do' call (not the 'undo' call!).
+Register a reference for "undo" that will be erased if the "undo" history is lost. This is useful mostly for nodes removed with the "do" call (not the "undo" call!).
 
 .. _class_UndoRedo_method_clear_history:
 
@@ -151,7 +164,7 @@ Passing ``false`` to ``increase_version`` will prevent the version number to be 
 
 - void **commit_action** **(** **)**
 
-Commit the action. All 'do' methods/properties are called/set when this function is called.
+Commit the action. All "do" methods/properties are called/set when this function is called.
 
 .. _class_UndoRedo_method_create_action:
 
@@ -165,29 +178,43 @@ The way actions are merged is dictated by the ``merge_mode`` argument. See :ref:
 
 - :ref:`String<class_String>` **get_current_action_name** **(** **)** const
 
-Get the name of the current action.
+Gets the name of the current action.
 
 .. _class_UndoRedo_method_get_version:
 
 - :ref:`int<class_int>` **get_version** **(** **)** const
 
-Get the version, each time a new action is committed, the version number of the UndoRedo is increased automatically.
+Gets the version. Every time a new action is committed, the ``UndoRedo``'s version number is increased automatically.
 
 This is useful mostly to check if something changed from a saved version.
+
+.. _class_UndoRedo_method_has_redo:
+
+- :ref:`bool<class_bool>` **has_redo** **(** **)**
+
+Returns ``true`` if a "redo" action is available.
+
+.. _class_UndoRedo_method_has_undo:
+
+- :ref:`bool<class_bool>` **has_undo** **(** **)**
+
+Returns ``true`` if an "undo" action is available.
 
 .. _class_UndoRedo_method_is_commiting_action:
 
 - :ref:`bool<class_bool>` **is_commiting_action** **(** **)** const
 
+Returns ``true`` if the ``UndoRedo`` is currently committing the action, i.e. running its "do" method or property change (see :ref:`commit_action<class_UndoRedo_method_commit_action>`).
+
 .. _class_UndoRedo_method_redo:
 
 - :ref:`bool<class_bool>` **redo** **(** **)**
 
-Redo last action.
+Redo the last action.
 
 .. _class_UndoRedo_method_undo:
 
 - :ref:`bool<class_bool>` **undo** **(** **)**
 
-Undo last action.
+Undo the last action.
 

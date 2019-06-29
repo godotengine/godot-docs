@@ -14,7 +14,7 @@ ProximityGroup
 Brief Description
 -----------------
 
-General purpose proximity-detection node.
+General-purpose proximity detection node.
 
 Properties
 ----------
@@ -59,7 +59,7 @@ enum **DispatchMode**:
 Description
 -----------
 
-General purpose proximity-detection node.
+General-purpose proximity detection node.
 
 Property Descriptions
 ---------------------

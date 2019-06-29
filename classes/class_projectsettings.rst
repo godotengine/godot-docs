@@ -994,7 +994,7 @@ Maximum call stack in visual scripting, to avoid infinite recursion.
 
 - :ref:`String<class_String>` **display/mouse_cursor/custom_image**
 
-Custom image for the mouse cursor (limited to 256x256).
+Custom image for the mouse cursor (limited to 256×256).
 
 .. _class_ProjectSettings_property_display/mouse_cursor/custom_image_hotspot:
 
@@ -1036,7 +1036,7 @@ If ``true``, allows per-pixel transparency in a desktop window. This affects per
 
 - :ref:`bool<class_bool>` **display/window/per_pixel_transparency/enabled**
 
-Set the window background to transparent when it starts.
+Sets the window background to transparent when it starts.
 
 .. _class_ProjectSettings_property_display/window/size/always_on_top:
 
@@ -1054,13 +1054,13 @@ Force the window to be borderless.
 
 - :ref:`bool<class_bool>` **display/window/size/fullscreen**
 
-Set the window to full screen when it starts.
+Sets the window to full screen when it starts.
 
 .. _class_ProjectSettings_property_display/window/size/height:
 
 - :ref:`int<class_int>` **display/window/size/height**
 
-Set the main window height. On desktop, this is the default window size. Stretch mode settings use this also as a reference when enabled.
+Sets the main window height. On desktop, this is the default window size. Stretch mode settings use this also as a reference when enabled.
 
 .. _class_ProjectSettings_property_display/window/size/resizable:
 
@@ -1740,7 +1740,7 @@ If ``true``, forces snapping of polygons to pixels in 2D rendering. May help in 
 
 - :ref:`String<class_String>` **rendering/quality/depth_prepass/disable_for_vendors**
 
-Disable depth pre-pass for some GPU vendors (usually mobile), as their architecture already does this.
+Disables depth pre-pass for some GPU vendors (usually mobile), as their architecture already does this.
 
 .. _class_ProjectSettings_property_rendering/quality/depth_prepass/enable:
 
@@ -1764,7 +1764,7 @@ The directional shadow's size in pixels. Higher values will result in sharper sh
 
 The video driver to use ("GLES2" or "GLES3").
 
-Note that the backend in use can be overridden at runtime via the ``--video-driver`` command line argument, or by the :ref:`rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>` option if the target system does not support GLES3 and falls back to GLES2. In such cases, this property is not updated, so use :ref:`OS.get_current_video_driver<class_OS_method_get_current_video_driver>` to query it at run-time.
+**Note:** The backend in use can be overridden at runtime via the ``--video-driver`` command line argument, or by the :ref:`rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>` option if the target system does not support GLES3 and falls back to GLES2. In such cases, this property is not updated, so use :ref:`OS.get_current_video_driver<class_OS_method_get_current_video_driver>` to query it at run-time.
 
 .. _class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2:
 
@@ -1772,7 +1772,7 @@ Note that the backend in use can be overridden at runtime via the ``--video-driv
 
 If ``true``, allows falling back to the GLES2 driver if the GLES3 driver is not supported.
 
-Note that the two video drivers are not drop-in replacements for each other, so a game designed for GLES3 might not work properly when falling back to GLES2. In particular, some features of the GLES3 backend are not available in GLES2. Enabling this setting also means that both ETC and ETC2 VRAM-compressed textures will be exported on Android and iOS, increasing the data pack's size.
+**Note:** The two video drivers are not drop-in replacements for each other, so a game designed for GLES3 might not work properly when falling back to GLES2. In particular, some features of the GLES3 backend are not available in GLES2. Enabling this setting also means that both ETC and ETC2 VRAM-compressed textures will be exported on Android and iOS, increasing the data pack's size.
 
 .. _class_ProjectSettings_property_rendering/quality/filters/anisotropic_filter_level:
 
@@ -1965,9 +1965,9 @@ Method Descriptions
 
 - void **add_property_info** **(** :ref:`Dictionary<class_Dictionary>` hint **)**
 
-Adds a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`\ (the property's name) and type::ref:`int<class_int>`\ (see TYPE\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`\ (see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
+Adds a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`\ (the property's name) and type::ref:`int<class_int>`\ (see ``TYPE_*`` in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`\ (see ``PROPERTY_HINT_*`` in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
 
-Example:
+**Example:**
 
 ::
 
@@ -2016,7 +2016,7 @@ Returns ``true`` if a configuration value is present.
 
 Loads the contents of the .pck or .zip file specified by ``pack`` into the resource filesystem (``res://``). Returns ``true`` on success.
 
-Note: If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack``.
+**Note:** If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack``.
 
 .. _class_ProjectSettings_method_localize_path:
 

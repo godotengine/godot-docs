@@ -182,24 +182,24 @@ Signals
 
 - **id_focused** **(** :ref:`int<class_int>` id **)**
 
-This event is emitted when user navigated to an item of some id using ``ui_up`` or ``ui_down`` action.
+Emitted when user navigated to an item of some ``id`` using ``ui_up`` or ``ui_down`` action.
 
 .. _class_PopupMenu_signal_id_pressed:
 
 - **id_pressed** **(** :ref:`int<class_int>` id **)**
 
-This event is emitted when an item of some id is pressed or its accelerator is activated.
+Emitted when an item of some ``id`` is pressed or its accelerator is activated.
 
 .. _class_PopupMenu_signal_index_pressed:
 
 - **index_pressed** **(** :ref:`int<class_int>` index **)**
 
-This event is emitted when an item of some index is pressed or its accelerator is activated.
+Emitted when an item of some ``index`` is pressed or its accelerator is activated.
 
 Description
 -----------
 
-PopupMenu is the typical Control that displays a list of options. They are popular in toolbars or context menus.
+``PopupMenu`` is a :ref:`Control<class_Control>` that displays a list of options. They are popular in toolbars or context menus.
 
 Property Descriptions
 ---------------------
@@ -226,6 +226,8 @@ If ``true``, allows to navigate ``PopupMenu`` with letter keys. Default value: `
 | *Getter* | is_hide_on_checkable_item_selection()       |
 +----------+---------------------------------------------+
 
+If ``true``, hides the ``PopupMenu`` when a checkbox or radio button is selected.
+
 .. _class_PopupMenu_property_hide_on_item_selection:
 
 - :ref:`bool<class_bool>` **hide_on_item_selection**
@@ -236,6 +238,8 @@ If ``true``, allows to navigate ``PopupMenu`` with letter keys. Default value: `
 | *Getter* | is_hide_on_item_selection()       |
 +----------+-----------------------------------+
 
+If ``true``, hides the ``PopupMenu`` when an item is selected.
+
 .. _class_PopupMenu_property_hide_on_state_item_selection:
 
 - :ref:`bool<class_bool>` **hide_on_state_item_selection**
@@ -245,6 +249,8 @@ If ``true``, allows to navigate ``PopupMenu`` with letter keys. Default value: `
 +----------+-----------------------------------------+
 | *Getter* | is_hide_on_state_item_selection()       |
 +----------+-----------------------------------------+
+
+If ``true``, hides the ``PopupMenu`` when a state item is selected.
 
 .. _class_PopupMenu_property_submenu_popup_delay:
 
@@ -265,229 +271,291 @@ Method Descriptions
 
 - void **add_check_item** **(** :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0 **)**
 
-Add a new checkable item with text "label". An id can optionally be provided, as well as an accelerator. If no id is provided, one will be created from the index. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
+Adds a new checkable item with text ``label``.
+
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+
+**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 .. _class_PopupMenu_method_add_check_shortcut:
 
 - void **add_check_shortcut** **(** :ref:`ShortCut<class_ShortCut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**
 
+Adds a new checkable item and assigns the specified :ref:`ShortCut<class_ShortCut>` to it. Sets the label of the checkbox to the :ref:`ShortCut<class_ShortCut>`'s name.
+
+An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
+
+**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+
 .. _class_PopupMenu_method_add_icon_check_item:
 
 - void **add_icon_check_item** **(** :ref:`Texture<class_Texture>` texture, :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0 **)**
 
-Add a new checkable item with text "label" and icon "texture". An id can optionally be provided, as well as an accelerator. If no id is provided, one will be
+Adds a new checkable item with text ``label`` and icon ``texture``.
 
-created from the index. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+
+**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 .. _class_PopupMenu_method_add_icon_check_shortcut:
 
 - void **add_icon_check_shortcut** **(** :ref:`Texture<class_Texture>` texture, :ref:`ShortCut<class_ShortCut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**
 
+Adds a new checkable item and assigns the specified :ref:`ShortCut<class_ShortCut>` and icon ``texture`` to it. Sets the label of the checkbox to the :ref:`ShortCut<class_ShortCut>`'s name.
+
+An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
+
+**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+
 .. _class_PopupMenu_method_add_icon_item:
 
 - void **add_icon_item** **(** :ref:`Texture<class_Texture>` texture, :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0 **)**
 
-Add a new item with text "label" and icon "texture". An id can optionally be provided, as well as an accelerator keybinding. If no id is provided, one will be created from the index.
+Adds a new item with text ``label`` and icon ``texture``.
+
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 .. _class_PopupMenu_method_add_icon_shortcut:
 
 - void **add_icon_shortcut** **(** :ref:`Texture<class_Texture>` texture, :ref:`ShortCut<class_ShortCut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**
 
+Adds a new item and assigns the specified :ref:`ShortCut<class_ShortCut>` and icon ``texture`` to it. Sets the label of the checkbox to the :ref:`ShortCut<class_ShortCut>`'s name.
+
+An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
+
 .. _class_PopupMenu_method_add_item:
 
 - void **add_item** **(** :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0 **)**
 
-Add a new item with text "label". An id can optionally be provided, as well as an accelerator keybinding. If no id is provided, one will be created from the index.
+Adds a new item with text ``label``.
+
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 .. _class_PopupMenu_method_add_radio_check_item:
 
 - void **add_radio_check_item** **(** :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0 **)**
 
-The same as :ref:`add_check_item<class_PopupMenu_method_add_check_item>` but the inserted item will look as a radio button. Remember this is just cosmetic and you have to add the logic for checking/unchecking items in radio groups.
+Adds a new radio button with text ``label``.
+
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+
+**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 .. _class_PopupMenu_method_add_radio_check_shortcut:
 
 - void **add_radio_check_shortcut** **(** :ref:`ShortCut<class_ShortCut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**
 
+Adds a new radio check button and assigns a :ref:`ShortCut<class_ShortCut>` to it. Sets the label of the checkbox to the :ref:`ShortCut<class_ShortCut>`'s name.
+
+An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
+
+**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+
 .. _class_PopupMenu_method_add_separator:
 
 - void **add_separator** **(** :ref:`String<class_String>` label="" **)**
 
-Add a separator between items. Separators also occupy an index.
+Adds a separator between items. Separators also occupy an index.
 
 .. _class_PopupMenu_method_add_shortcut:
 
 - void **add_shortcut** **(** :ref:`ShortCut<class_ShortCut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**
 
+Adds a :ref:`ShortCut<class_ShortCut>`.
+
+An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
+
 .. _class_PopupMenu_method_add_submenu_item:
 
 - void **add_submenu_item** **(** :ref:`String<class_String>` label, :ref:`String<class_String>` submenu, :ref:`int<class_int>` id=-1 **)**
 
-Adds an item with a submenu. The submenu is the name of a child PopupMenu node that would be shown when the item is clicked. An id can optionally be provided, but if is isn't provided, one will be created from the index.
+Adds an item that will act as a submenu of the parent ``PopupMenu`` node when clicked. The ``submenu`` argument is the name of the child ``PopupMenu`` node that will be shown when the item is clicked.
+
+An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
 
 .. _class_PopupMenu_method_clear:
 
 - void **clear** **(** **)**
 
-Clear the popup menu, in effect removing all items.
+Removes all items from the ``PopupMenu``.
 
 .. _class_PopupMenu_method_get_item_accelerator:
 
 - :ref:`int<class_int>` **get_item_accelerator** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the accelerator of the item at index "idx". Accelerators are special combinations of keys that activate the item, no matter which control is focused.
+Returns the accelerator of the item at index ``idx``. Accelerators are special combinations of keys that activate the item, no matter which control is focused.
 
 .. _class_PopupMenu_method_get_item_count:
 
 - :ref:`int<class_int>` **get_item_count** **(** **)** const
 
-Returns the amount of items.
+Returns the number of items in the ``PopupMenu``.
 
 .. _class_PopupMenu_method_get_item_icon:
 
 - :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the icon of the item at index "idx".
+Returns the icon of the item at index ``idx``.
 
 .. _class_PopupMenu_method_get_item_id:
 
 - :ref:`int<class_int>` **get_item_id** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the id of the item at index "idx".
+Returns the id of the item at index ``idx``. ``id`` can be manually assigned, while index can not.
 
 .. _class_PopupMenu_method_get_item_index:
 
 - :ref:`int<class_int>` **get_item_index** **(** :ref:`int<class_int>` id **)** const
 
-Find and return the index of the item containing a given id.
+Returns the index of the item containing the specified ``id``. Index is automatically assigned to each item by the engine. Index can not be set manualy.
 
 .. _class_PopupMenu_method_get_item_metadata:
 
 - :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the metadata of an item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`, which provides a simple way of assigning context data to items.
+Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`, which provides a simple way of assigning context data to items.
 
 .. _class_PopupMenu_method_get_item_shortcut:
 
 - :ref:`ShortCut<class_ShortCut>` **get_item_shortcut** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the :ref:`ShortCut<class_ShortCut>` associated with the specified ``idx`` item.
+
 .. _class_PopupMenu_method_get_item_submenu:
 
 - :ref:`String<class_String>` **get_item_submenu** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the submenu name of the item at index "idx".
+Returns the submenu name of the item at index ``idx``. See :ref:`add_submenu_item<class_PopupMenu_method_add_submenu_item>` for more info on how to add a submenu.
 
 .. _class_PopupMenu_method_get_item_text:
 
 - :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the text of the item at index "idx".
+Returns the text of the item at index ``idx``.
 
 .. _class_PopupMenu_method_get_item_tooltip:
 
 - :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the tooltip associated with the specified index index ``idx``.
+
 .. _class_PopupMenu_method_is_hide_on_window_lose_focus:
 
 - :ref:`bool<class_bool>` **is_hide_on_window_lose_focus** **(** **)** const
+
+Returns whether the popup will be hidden when the window loses focus or not.
 
 .. _class_PopupMenu_method_is_item_checkable:
 
 - :ref:`bool<class_bool>` **is_item_checkable** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether the item at index "idx" is checkable in some way, i.e., whether has a checkbox or radio button. Note that checkable items just display a checkmark or radio button, but don't have any built-in checking behavior and must be checked/unchecked manually.
+Returns ``true`` if the item at index ``idx`` is checkable in some way, i.e. if it has a checkbox or radio button.
+
+**Note:** Checkable items just display a checkmark or radio button, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 .. _class_PopupMenu_method_is_item_checked:
 
 - :ref:`bool<class_bool>` **is_item_checked** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether the item at index "idx" is checked.
+Returns ``true`` if the item at index ``idx`` is checked.
 
 .. _class_PopupMenu_method_is_item_disabled:
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether the item at index "idx" is disabled. When it is disabled it can't be selected, or its action invoked.
+Returns ``true`` if the item at index ``idx`` is disabled. When it is disabled it can't be selected, or its action invoked.
+
+See :ref:`set_item_disabled<class_PopupMenu_method_set_item_disabled>` for more info on how to disable an item.
 
 .. _class_PopupMenu_method_is_item_radio_checkable:
 
 - :ref:`bool<class_bool>` **is_item_radio_checkable** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether the item at index "idx" has radio-button-style checkability. Remember this is just cosmetic and you have to add the logic for checking/unchecking items in radio groups.
+Returns ``true`` if the item at index ``idx`` has radio button-style checkability.
+
+**Note:** This is purely cosmetic; you must add the logic for checking/unchecking items in radio groups.
 
 .. _class_PopupMenu_method_is_item_separator:
 
 - :ref:`bool<class_bool>` **is_item_separator** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether the item is a separator. If it is, it would be displayed as a line.
+Returns ``true`` if the item is a separator. If it is, it will be displayed as a line. See :ref:`add_separator<class_PopupMenu_method_add_separator>` for more info on how to add a separator.
 
 .. _class_PopupMenu_method_is_item_shortcut_disabled:
 
 - :ref:`bool<class_bool>` **is_item_shortcut_disabled** **(** :ref:`int<class_int>` idx **)** const
 
+Returns whether the shortcut of the specified item ``idx`` is disabled or not.
+
 .. _class_PopupMenu_method_remove_item:
 
 - void **remove_item** **(** :ref:`int<class_int>` idx **)**
 
-Removes the item at index "idx" from the menu. Note that the indexes of items after the removed item are going to be shifted by one.
+Removes the item at index ``idx`` from the menu.
+
+**Note:** The indices of items after the removed item will be shifted by one.
 
 .. _class_PopupMenu_method_set_hide_on_window_lose_focus:
 
 - void **set_hide_on_window_lose_focus** **(** :ref:`bool<class_bool>` enable **)**
 
+Hides the ``PopupMenu`` when the window loses focus.
+
 .. _class_PopupMenu_method_set_item_accelerator:
 
 - void **set_item_accelerator** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` accel **)**
 
-Set the accelerator of the item at index "idx". Accelerators are special combinations of keys that activate the item, no matter which control is focused.
+Sets the accelerator of the item at index ``idx``. Accelerators are special combinations of keys that activate the item, no matter which control is focused.
 
 .. _class_PopupMenu_method_set_item_as_checkable:
 
 - void **set_item_as_checkable** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**
 
-Set whether the item at index "idx" has a checkbox. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
+Sets whether the item at index ``idx`` has a checkbox. If ``false``, sets the type of the item to plain text.
+
+**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 .. _class_PopupMenu_method_set_item_as_radio_checkable:
 
 - void **set_item_as_radio_checkable** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**
 
-The same as :ref:`set_item_as_checkable<class_PopupMenu_method_set_item_as_checkable>` but placing a radio button in case of enabling. If used for disabling, it's the same.
-
-Remember this is just cosmetic and you have to add the logic for checking/unchecking items in radio groups.
+Sets the type of the item at the specified index ``idx`` to radio button. If false, sets the type of the item to plain text.
 
 .. _class_PopupMenu_method_set_item_as_separator:
 
 - void **set_item_as_separator** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**
 
-Mark the item at index "idx" as a separator, which means that it would be displayed as a line.
+Mark the item at index ``idx`` as a separator, which means that it would be displayed as a line. If ``false``, sets the type of the item to plain text.
 
 .. _class_PopupMenu_method_set_item_checked:
 
 - void **set_item_checked** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` checked **)**
 
-Set the checkstate status of the item at index "idx".
+Sets the checkstate status of the item at index ``idx``.
 
 .. _class_PopupMenu_method_set_item_disabled:
 
 - void **set_item_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
 
-Sets whether the item at index "idx" is disabled or not. When it is disabled it can't be selected, or its action invoked.
+Sets whether the item at index ``idx`` is disabled or not. When it is disabled, it can't be selected and its action can't be invoked.
 
 .. _class_PopupMenu_method_set_item_icon:
 
 - void **set_item_icon** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` icon **)**
 
+Replaces the :ref:`Texture<class_Texture>` icon of the specified ``idx``.
+
 .. _class_PopupMenu_method_set_item_id:
 
 - void **set_item_id** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` id **)**
 
-Set the id of the item at index "idx".
+Sets the ``id`` of the item at index ``idx``.
 
 .. _class_PopupMenu_method_set_item_metadata:
 
 - void **set_item_metadata** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**
 
-Sets the metadata of an item, which might be of any type. You can later get it with :ref:`get_item_metadata<class_PopupMenu_method_get_item_metadata>`, which provides a simple way of assigning context data to items.
+Sets the metadata of an item, which may be of any type. You can later get it with :ref:`get_item_metadata<class_PopupMenu_method_get_item_metadata>`, which provides a simple way of assigning context data to items.
 
 .. _class_PopupMenu_method_set_item_multistate:
 
@@ -497,29 +565,37 @@ Sets the metadata of an item, which might be of any type. You can later get it w
 
 - void **set_item_shortcut** **(** :ref:`int<class_int>` idx, :ref:`ShortCut<class_ShortCut>` shortcut, :ref:`bool<class_bool>` global=false **)**
 
+Sets a :ref:`ShortCut<class_ShortCut>` for the specified item ``idx``.
+
 .. _class_PopupMenu_method_set_item_shortcut_disabled:
 
 - void **set_item_shortcut_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
+
+Disables the :ref:`ShortCut<class_ShortCut>` of the specified index ``idx``.
 
 .. _class_PopupMenu_method_set_item_submenu:
 
 - void **set_item_submenu** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` submenu **)**
 
-Sets the submenu of the item at index "idx". The submenu is the name of a child PopupMenu node that would be shown when the item is clicked.
+Sets the submenu of the item at index ``idx``. The submenu is the name of a child ``PopupMenu`` node that would be shown when the item is clicked.
 
 .. _class_PopupMenu_method_set_item_text:
 
 - void **set_item_text** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**
 
-Set the text of the item at index "idx".
+Sets the text of the item at index ``idx``.
 
 .. _class_PopupMenu_method_set_item_tooltip:
 
 - void **set_item_tooltip** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**
 
+Sets the :ref:`String<class_String>` tooltip of the item at the specified index ``idx``.
+
 .. _class_PopupMenu_method_toggle_item_checked:
 
 - void **toggle_item_checked** **(** :ref:`int<class_int>` idx **)**
+
+Toggles the check state of the item of the specified index ``idx``.
 
 .. _class_PopupMenu_method_toggle_item_multistate:
 

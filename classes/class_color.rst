@@ -674,7 +674,7 @@ Constants
 Description
 -----------
 
-A color is represented by red, green, and blue ``(r, g, b)`` components. Additionally, ``a`` represents the alpha component, often used for transparency. Values are in floating point and usually range from 0 to 1. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may accept values > 1.
+A color is represented by red, green, and blue ``(r, g, b)`` components. Additionally, ``a`` represents the alpha component, often used for transparency. Values are in floating-point and usually range from 0 to 1. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may accept values greater than 1.
 
 You can also create a color from standardized color names by using :ref:`@GDScript.ColorN<class_@GDScript_method_ColorN>`.
 
@@ -759,9 +759,9 @@ Constructs a color from an HTML hexadecimal color string in ARGB or RGB format. 
 ::
 
     # Each of the following creates the same color RGBA(178, 217, 10, 255)
-    var c1 = Color("#ffb2d90a") # ARGB format with '#'
+    var c1 = Color("#ffb2d90a") # ARGB format with "#"
     var c2 = Color("ffb2d90a")  # ARGB format
-    var c3 = Color("#b2d90a")   # RGB format with '#'
+    var c3 = Color("#b2d90a")   # RGB format with "#"
     var c4 = Color("b2d90a")    # RGB format
 
 - :ref:`Color<class_Color>` **Color** **(** :ref:`int<class_int>` from **)**
@@ -843,7 +843,7 @@ The gray value is calculated as ``(r + g + b) / 3``.
 ::
 
     var c = Color(0.2, 0.45, 0.82)
-    var gray = c.gray() # a value of 0.466667
+    var gray = c.gray() # A value of 0.466667
 
 .. _class_Color_method_inverted:
 
@@ -854,7 +854,7 @@ Returns the inverted color ``(1 - r, 1 - g, 1 - b, a)``.
 ::
 
     var c = Color(0.3, 0.4, 0.9)
-    var inverted_color = c.inverted() # a color of an RGBA(178, 153, 26, 255)
+    var inverted_color = c.inverted() # A color of an RGBA(178, 153, 26, 255)
 
 .. _class_Color_method_lightened:
 
@@ -877,7 +877,7 @@ Returns the linear interpolation with another color. The interpolation factor ``
 
     var c1 = Color(1.0, 0.0, 0.0)
     var c2 = Color(0.0, 1.0, 0.0)
-    var li_c = c1.linear_interpolate(c2, 0.5) # a color of an RGBA(128, 128, 0, 255)
+    var li_c = c1.linear_interpolate(c2, 0.5) # A color of an RGBA(128, 128, 0, 255)
 
 .. _class_Color_method_to_abgr32:
 
@@ -934,8 +934,8 @@ Setting ``with_alpha`` to ``false`` excludes alpha from the hexadecimal string.
 ::
 
     var c = Color(1, 1, 1, 0.5)
-    var s1 = c.to_html() # Results "7fffffff"
-    var s2 = c.to_html(false) # Results 'ffffff'
+    var s1 = c.to_html() # Returns "7fffffff"
+    var s2 = c.to_html(false) # Returns "ffffff"
 
 .. _class_Color_method_to_rgba32:
 

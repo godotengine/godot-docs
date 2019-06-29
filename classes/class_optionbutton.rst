@@ -108,13 +108,13 @@ Signals
 
 - **item_focused** **(** :ref:`int<class_int>` id **)**
 
-This signal is emitted when user navigated to an item using ``ui_up`` or ``ui_down`` action. ID of the item selected is passed as argument.
+Emitted the when user navigates to an item using the ``ui_up`` or ``ui_down`` actions. The index of the item selected is passed as argument.
 
 .. _class_OptionButton_signal_item_selected:
 
 - **item_selected** **(** :ref:`int<class_int>` id **)**
 
-This signal is emitted when the current item was changed by the user. Index of the item selected is passed as argument.
+Emitted when the current item has been changed by the user. The index of the item selected is passed as argument.
 
 Description
 -----------
@@ -139,19 +139,19 @@ Method Descriptions
 
 - void **add_icon_item** **(** :ref:`Texture<class_Texture>` texture, :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1 **)**
 
-Add an item, with a "texture" icon, text "label" and (optionally) id. If no "id" is passed, "id" becomes the item index. New items are appended at the end.
+Adds an item, with a ``texture`` icon, text ``label`` and (optionally) ``id``. If no ``id`` is passed, ``id`` becomes the item index. New items are appended at the end.
 
 .. _class_OptionButton_method_add_item:
 
 - void **add_item** **(** :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1 **)**
 
-Add an item, with text "label" and (optionally) id. If no "id" is passed, "id" becomes the item index. New items are appended at the end.
+Adds an item, with text ``label`` and (optionally) ``id``. If no ``id`` is passed, ``id`` becomes the item index. New items are appended at the end.
 
 .. _class_OptionButton_method_add_separator:
 
 - void **add_separator** **(** **)**
 
-Add a separator to the list of items. Separators help to group items. Separator also takes up an index and is appended at the end.
+Adds a separator to the list of items. Separators help to group items. Separator also takes up an index and is appended at the end.
 
 .. _class_OptionButton_method_clear:
 
@@ -169,7 +169,7 @@ Returns the amount of items in the OptionButton.
 
 - :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the icon of the item at index "idx".
+Returns the icon of the item at index ``idx``.
 
 .. _class_OptionButton_method_get_item_id:
 
@@ -191,7 +191,7 @@ Returns the index of the item with the given ``id``.
 
 - :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the text of the item at index "idx".
+Returns the text of the item at index ``idx``.
 
 .. _class_OptionButton_method_get_popup:
 
@@ -229,13 +229,13 @@ Select an item by index and make it the current item.
 
 - void **set_item_icon** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` texture **)**
 
-Set the icon of an item at index "idx".
+Sets the icon of an item at index ``idx``.
 
 .. _class_OptionButton_method_set_item_id:
 
 - void **set_item_id** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` id **)**
 
-Set the ID of an item at index "idx".
+Sets the ID of an item at index ``idx``.
 
 .. _class_OptionButton_method_set_item_metadata:
 
@@ -245,5 +245,5 @@ Set the ID of an item at index "idx".
 
 - void **set_item_text** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**
 
-Set the text of an item at index "idx".
+Sets the text of an item at index ``idx``.
 

@@ -45,7 +45,7 @@ Property Descriptions
 | *Getter* | get_base_texture()      |
 +----------+-------------------------+
 
-Set the base texture that the Mesh will use to draw.
+Sets the base texture that the Mesh will use to draw.
 
 .. _class_MeshTexture_property_image_size:
 
@@ -57,7 +57,7 @@ Set the base texture that the Mesh will use to draw.
 | *Getter* | get_image_size()      |
 +----------+-----------------------+
 
-Set the size of the image, needed for reference.
+Sets the size of the image, needed for reference.
 
 .. _class_MeshTexture_property_mesh:
 
@@ -69,5 +69,5 @@ Set the size of the image, needed for reference.
 | *Getter* | get_mesh()      |
 +----------+-----------------+
 
-Set the mesh used to draw. It must be a mesh using 2D vertices.
+Sets the mesh used to draw. It must be a mesh using 2D vertices.
 

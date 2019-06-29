@@ -63,7 +63,7 @@ Signals
 Description
 -----------
 
-Object that holds the project-independent editor settings. These settings are generally visible in the Editor Settings menu.
+Object that holds the project-independent editor settings. These settings are generally visible in the **Editor > Editor Settings** menu.
 
 Accessing the settings is done by using the regular :ref:`Object<class_Object>` API, such as:
 
@@ -80,9 +80,9 @@ Method Descriptions
 
 - void **add_property_info** **(** :ref:`Dictionary<class_Dictionary>` info **)**
 
-Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`\ (the name of the property) and type::ref:`int<class_int>`\ (see TYPE\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`\ (see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
+Adds a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`\ (the name of the property) and type::ref:`int<class_int>`\ (see ``TYPE_*`` in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`\ (see ``PROPERTY_HINT_*`` in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
 
-Example:
+**Example:**
 
 ::
 
@@ -107,7 +107,7 @@ Erase a given setting (pass full property path).
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_favorites** **(** **)** const
 
-Get the list of favorite files and directories for this project.
+Gets the list of favorite files and directories for this project.
 
 .. _class_EditorSettings_method_get_project_metadata:
 
@@ -117,13 +117,13 @@ Get the list of favorite files and directories for this project.
 
 - :ref:`String<class_String>` **get_project_settings_dir** **(** **)** const
 
-Get the specific project settings path. Projects all have a unique sub-directory inside the settings path where project specific settings are saved.
+Gets the specific project settings path. Projects all have a unique sub-directory inside the settings path where project specific settings are saved.
 
 .. _class_EditorSettings_method_get_recent_dirs:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_recent_dirs** **(** **)** const
 
-Get the list of recently visited folders in the file dialog for this project.
+Gets the list of recently visited folders in the file dialog for this project.
 
 .. _class_EditorSettings_method_get_setting:
 
@@ -133,11 +133,11 @@ Get the list of recently visited folders in the file dialog for this project.
 
 - :ref:`String<class_String>` **get_settings_dir** **(** **)** const
 
-Get the global settings path for the engine. Inside this path you can find some standard paths such as:
+Gets the global settings path for the engine. Inside this path, you can find some standard paths such as:
 
-settings/tmp - used for temporary storage of files
+``settings/tmp`` - Used for temporary storage of files
 
-settings/templates - where export templates are located
+``settings/templates`` - Where export templates are located
 
 .. _class_EditorSettings_method_has_setting:
 
@@ -155,7 +155,7 @@ settings/templates - where export templates are located
 
 - void **set_favorites** **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**
 
-Set the list of favorite files and directories for this project.
+Sets the list of favorite files and directories for this project.
 
 .. _class_EditorSettings_method_set_initial_value:
 
@@ -169,7 +169,7 @@ Set the list of favorite files and directories for this project.
 
 - void **set_recent_dirs** **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**
 
-Set the list of recently visited folders in the file dialog for this project.
+Sets the list of recently visited folders in the file dialog for this project.
 
 .. _class_EditorSettings_method_set_setting:
 

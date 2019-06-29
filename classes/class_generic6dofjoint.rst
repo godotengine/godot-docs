@@ -14,7 +14,7 @@ Generic6DOFJoint
 Brief Description
 -----------------
 
-The generic 6 degrees of freedom joint can implement a variety of joint-types by locking certain axes' rotation or translation.
+The generic 6-degrees-of-freedom joint can implement a variety of joint types by locking certain axes' rotation or translation.
 
 Properties
 ----------
@@ -236,9 +236,9 @@ enum **Param**:
 
 - **PARAM_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference between the pivot points' axes.
 
-- **PARAM_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement across the axes The lower, the slower the movement.
+- **PARAM_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement across the axes. The lower, the slower the movement.
 
-- **PARAM_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the axes movement The lower, the more momentum gets lost.
+- **PARAM_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the axes' movement. The lower, the more momentum gets lost.
 
 - **PARAM_LINEAR_DAMPING** = **4** --- The amount of damping that happens at the linear motion across the axes.
 
@@ -264,7 +264,7 @@ enum **Param**:
 
 - **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **18** --- Maximum acceleration for the motor at the axes.
 
-- **PARAM_MAX** = **22** --- End flag of PARAM\_\* constants, used internally.
+- **PARAM_MAX** = **22** --- Represents the size of the :ref:`Param<enum_Generic6DOFJoint_Param>` enum.
 
 .. _enum_Generic6DOFJoint_Flag:
 
@@ -284,19 +284,19 @@ enum **Param**:
 
 enum **Flag**:
 
-- **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
+- **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If enabled, linear motion is possible within the given limits.
 
-- **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
+- **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If enabled, rotational motion is possible within the given limits.
 
 - **FLAG_ENABLE_LINEAR_SPRING** = **3**
 
 - **FLAG_ENABLE_ANGULAR_SPRING** = **2**
 
-- **FLAG_ENABLE_MOTOR** = **4** --- If ``set`` there is a rotational motor across these axes.
+- **FLAG_ENABLE_MOTOR** = **4** --- If enabled, there is a rotational motor across these axes.
 
-- **FLAG_ENABLE_LINEAR_MOTOR** = **5**
+- **FLAG_ENABLE_LINEAR_MOTOR** = **5** --- If enabled, there is a linear motor across these axes.
 
-- **FLAG_MAX** = **6** --- End flag of FLAG\_\* constants, used internally.
+- **FLAG_MAX** = **6** --- Represents the size of the :ref:`Flag<enum_Generic6DOFJoint_Flag>` enum.
 
 Description
 -----------
@@ -316,7 +316,7 @@ Property Descriptions
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-The amount of rotational damping across the x-axis.
+The amount of rotational damping across the X axis.
 
 The lower, the longer an impulse from one side takes to travel to the other side.
 
@@ -330,7 +330,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 | *Getter* | get_flag_x()      |
 +----------+-------------------+
 
-If ``true``, rotation across the x-axis is limited.
+If ``true``, rotation across the X axis is limited.
 
 .. _class_Generic6DOFJoint_property_angular_limit_x/erp:
 
@@ -342,7 +342,7 @@ If ``true``, rotation across the x-axis is limited.
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-When rotating across x-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+When rotating across the X axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
 .. _class_Generic6DOFJoint_property_angular_limit_x/force_limit:
 
@@ -354,13 +354,13 @@ When rotating across x-axis, this error tolerance factor defines how much the co
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-The maximum amount of force that can occur, when rotating around x-axis.
+The maximum amount of force that can occur, when rotating around the X axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_x/lower_angle:
 
 - :ref:`float<class_float>` **angular_limit_x/lower_angle**
 
-The minimum rotation in negative direction to break loose and rotate around the x-axis.
+The minimum rotation in negative direction to break loose and rotate around the X axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_x/restitution:
 
@@ -372,7 +372,7 @@ The minimum rotation in negative direction to break loose and rotate around the 
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-The amount of rotational restitution across the x-axis. The lower, the more restitution occurs.
+The amount of rotational restitution across the X axis. The lower, the more restitution occurs.
 
 .. _class_Generic6DOFJoint_property_angular_limit_x/softness:
 
@@ -384,13 +384,13 @@ The amount of rotational restitution across the x-axis. The lower, the more rest
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-The speed of all rotations across the x-axis.
+The speed of all rotations across the X axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_x/upper_angle:
 
 - :ref:`float<class_float>` **angular_limit_x/upper_angle**
 
-The minimum rotation in positive direction to break loose and rotate around the x-axis.
+The minimum rotation in positive direction to break loose and rotate around the X axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/damping:
 
@@ -402,7 +402,7 @@ The minimum rotation in positive direction to break loose and rotate around the 
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-The amount of rotational damping across the y-axis. The lower, the more dampening occurs.
+The amount of rotational damping across the Y axis. The lower, the more dampening occurs.
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/enabled:
 
@@ -414,7 +414,7 @@ The amount of rotational damping across the y-axis. The lower, the more dampenin
 | *Getter* | get_flag_y()      |
 +----------+-------------------+
 
-If ``true``, rotation across the y-axis is limited.
+If ``true``, rotation across the Y axis is limited.
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/erp:
 
@@ -426,7 +426,7 @@ If ``true``, rotation across the y-axis is limited.
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-When rotating across y-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+When rotating across the Y axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/force_limit:
 
@@ -438,13 +438,13 @@ When rotating across y-axis, this error tolerance factor defines how much the co
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-The maximum amount of force that can occur, when rotating around y-axis.
+The maximum amount of force that can occur, when rotating around the Y axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/lower_angle:
 
 - :ref:`float<class_float>` **angular_limit_y/lower_angle**
 
-The minimum rotation in negative direction to break loose and rotate around the y-axis.
+The minimum rotation in negative direction to break loose and rotate around the Y axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/restitution:
 
@@ -456,7 +456,7 @@ The minimum rotation in negative direction to break loose and rotate around the 
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-The amount of rotational restitution across the y-axis. The lower, the more restitution occurs.
+The amount of rotational restitution across the Y axis. The lower, the more restitution occurs.
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/softness:
 
@@ -468,13 +468,13 @@ The amount of rotational restitution across the y-axis. The lower, the more rest
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-The speed of all rotations across the y-axis.
+The speed of all rotations across the Y axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/upper_angle:
 
 - :ref:`float<class_float>` **angular_limit_y/upper_angle**
 
-The minimum rotation in positive direction to break loose and rotate around the y-axis.
+The minimum rotation in positive direction to break loose and rotate around the Y axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/damping:
 
@@ -486,7 +486,7 @@ The minimum rotation in positive direction to break loose and rotate around the 
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-The amount of rotational damping across the z-axis. The lower, the more dampening occurs.
+The amount of rotational damping across the Z axis. The lower, the more dampening occurs.
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/enabled:
 
@@ -498,7 +498,7 @@ The amount of rotational damping across the z-axis. The lower, the more dampenin
 | *Getter* | get_flag_z()      |
 +----------+-------------------+
 
-If ``true``, rotation across the z-axis is limited.
+If ``true``, rotation across the Z axis is limited.
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/erp:
 
@@ -510,7 +510,7 @@ If ``true``, rotation across the z-axis is limited.
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-When rotating across z-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+When rotating across the Z axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/force_limit:
 
@@ -522,13 +522,13 @@ When rotating across z-axis, this error tolerance factor defines how much the co
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-The maximum amount of force that can occur, when rotating around z-axis.
+The maximum amount of force that can occur, when rotating around the Z axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/lower_angle:
 
 - :ref:`float<class_float>` **angular_limit_z/lower_angle**
 
-The minimum rotation in negative direction to break loose and rotate around the z-axis.
+The minimum rotation in negative direction to break loose and rotate around the Z axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/restitution:
 
@@ -540,7 +540,7 @@ The minimum rotation in negative direction to break loose and rotate around the 
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-The amount of rotational restitution across the z-axis. The lower, the more restitution occurs.
+The amount of rotational restitution across the Z axis. The lower, the more restitution occurs.
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/softness:
 
@@ -552,13 +552,13 @@ The amount of rotational restitution across the z-axis. The lower, the more rest
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-The speed of all rotations across the z-axis.
+The speed of all rotations across the Z axis.
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/upper_angle:
 
 - :ref:`float<class_float>` **angular_limit_z/upper_angle**
 
-The minimum rotation in positive direction to break loose and rotate around the z-axis.
+The minimum rotation in positive direction to break loose and rotate around the Z axis.
 
 .. _class_Generic6DOFJoint_property_angular_motor_x/enabled:
 
@@ -570,7 +570,7 @@ The minimum rotation in positive direction to break loose and rotate around the 
 | *Getter* | get_flag_x()      |
 +----------+-------------------+
 
-If ``true``, a rotating motor at the x-axis is enabled.
+If ``true``, a rotating motor at the X axis is enabled.
 
 .. _class_Generic6DOFJoint_property_angular_motor_x/force_limit:
 
@@ -582,7 +582,7 @@ If ``true``, a rotating motor at the x-axis is enabled.
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-Maximum acceleration for the motor at the x-axis.
+Maximum acceleration for the motor at the X axis.
 
 .. _class_Generic6DOFJoint_property_angular_motor_x/target_velocity:
 
@@ -594,7 +594,7 @@ Maximum acceleration for the motor at the x-axis.
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-Target speed for the motor at the x-axis.
+Target speed for the motor at the X axis.
 
 .. _class_Generic6DOFJoint_property_angular_motor_y/enabled:
 
@@ -606,7 +606,7 @@ Target speed for the motor at the x-axis.
 | *Getter* | get_flag_y()      |
 +----------+-------------------+
 
-If ``true``, a rotating motor at the y-axis is enabled.
+If ``true``, a rotating motor at the Y axis is enabled.
 
 .. _class_Generic6DOFJoint_property_angular_motor_y/force_limit:
 
@@ -618,7 +618,7 @@ If ``true``, a rotating motor at the y-axis is enabled.
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-Maximum acceleration for the motor at the y-axis.
+Maximum acceleration for the motor at the Y axis.
 
 .. _class_Generic6DOFJoint_property_angular_motor_y/target_velocity:
 
@@ -630,7 +630,7 @@ Maximum acceleration for the motor at the y-axis.
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-Target speed for the motor at the y-axis.
+Target speed for the motor at the Y axis.
 
 .. _class_Generic6DOFJoint_property_angular_motor_z/enabled:
 
@@ -642,7 +642,7 @@ Target speed for the motor at the y-axis.
 | *Getter* | get_flag_z()      |
 +----------+-------------------+
 
-If ``true``, a rotating motor at the z-axis is enabled.
+If ``true``, a rotating motor at the Z axis is enabled.
 
 .. _class_Generic6DOFJoint_property_angular_motor_z/force_limit:
 
@@ -654,7 +654,7 @@ If ``true``, a rotating motor at the z-axis is enabled.
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-Maximum acceleration for the motor at the z-axis.
+Maximum acceleration for the motor at the Z axis.
 
 .. _class_Generic6DOFJoint_property_angular_motor_z/target_velocity:
 
@@ -666,7 +666,7 @@ Maximum acceleration for the motor at the z-axis.
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-Target speed for the motor at the z-axis.
+Target speed for the motor at the Z axis.
 
 .. _class_Generic6DOFJoint_property_angular_spring_x/damping:
 
@@ -798,7 +798,7 @@ Target speed for the motor at the z-axis.
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-The amount of damping that happens at the x-motion.
+The amount of damping that happens at the X motion.
 
 .. _class_Generic6DOFJoint_property_linear_limit_x/enabled:
 
@@ -810,7 +810,7 @@ The amount of damping that happens at the x-motion.
 | *Getter* | get_flag_x()      |
 +----------+-------------------+
 
-If ``true``, the linear motion across the x-axis is limited.
+If ``true``, the linear motion across the X axis is limited.
 
 .. _class_Generic6DOFJoint_property_linear_limit_x/lower_distance:
 
@@ -822,7 +822,7 @@ If ``true``, the linear motion across the x-axis is limited.
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-The minimum difference between the pivot points' x-axis.
+The minimum difference between the pivot points' X axis.
 
 .. _class_Generic6DOFJoint_property_linear_limit_x/restitution:
 
@@ -834,7 +834,7 @@ The minimum difference between the pivot points' x-axis.
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-The amount of restitution on the x-axis movement The lower, the more momentum gets lost.
+The amount of restitution on the X axis movement. The lower, the more momentum gets lost.
 
 .. _class_Generic6DOFJoint_property_linear_limit_x/softness:
 
@@ -846,7 +846,7 @@ The amount of restitution on the x-axis movement The lower, the more momentum ge
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-A factor applied to the movement across the x-axis The lower, the slower the movement.
+A factor applied to the movement across the X axis. The lower, the slower the movement.
 
 .. _class_Generic6DOFJoint_property_linear_limit_x/upper_distance:
 
@@ -858,7 +858,7 @@ A factor applied to the movement across the x-axis The lower, the slower the mov
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-The maximum difference between the pivot points' x-axis.
+The maximum difference between the pivot points' X axis.
 
 .. _class_Generic6DOFJoint_property_linear_limit_y/damping:
 
@@ -870,7 +870,7 @@ The maximum difference between the pivot points' x-axis.
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-The amount of damping that happens at the y-motion.
+The amount of damping that happens at the Y motion.
 
 .. _class_Generic6DOFJoint_property_linear_limit_y/enabled:
 
@@ -882,7 +882,7 @@ The amount of damping that happens at the y-motion.
 | *Getter* | get_flag_y()      |
 +----------+-------------------+
 
-If ``true``, the linear motion across the y-axis is limited.
+If ``true``, the linear motion across the Y axis is limited.
 
 .. _class_Generic6DOFJoint_property_linear_limit_y/lower_distance:
 
@@ -894,7 +894,7 @@ If ``true``, the linear motion across the y-axis is limited.
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-The minimum difference between the pivot points' y-axis.
+The minimum difference between the pivot points' Y axis.
 
 .. _class_Generic6DOFJoint_property_linear_limit_y/restitution:
 
@@ -906,7 +906,7 @@ The minimum difference between the pivot points' y-axis.
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-The amount of restitution on the y-axis movement The lower, the more momentum gets lost.
+The amount of restitution on the Y axis movement. The lower, the more momentum gets lost.
 
 .. _class_Generic6DOFJoint_property_linear_limit_y/softness:
 
@@ -918,7 +918,7 @@ The amount of restitution on the y-axis movement The lower, the more momentum ge
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-A factor applied to the movement across the y-axis The lower, the slower the movement.
+A factor applied to the movement across the Y axis. The lower, the slower the movement.
 
 .. _class_Generic6DOFJoint_property_linear_limit_y/upper_distance:
 
@@ -930,7 +930,7 @@ A factor applied to the movement across the y-axis The lower, the slower the mov
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-The maximum difference between the pivot points' y-axis.
+The maximum difference between the pivot points' Y axis.
 
 .. _class_Generic6DOFJoint_property_linear_limit_z/damping:
 
@@ -942,7 +942,7 @@ The maximum difference between the pivot points' y-axis.
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-The amount of damping that happens at the z-motion.
+The amount of damping that happens at the Z motion.
 
 .. _class_Generic6DOFJoint_property_linear_limit_z/enabled:
 
@@ -954,7 +954,7 @@ The amount of damping that happens at the z-motion.
 | *Getter* | get_flag_z()      |
 +----------+-------------------+
 
-If ``true``, the linear motion across the z-axis is limited.
+If ``true``, the linear motion across the Z axis is limited.
 
 .. _class_Generic6DOFJoint_property_linear_limit_z/lower_distance:
 
@@ -966,7 +966,7 @@ If ``true``, the linear motion across the z-axis is limited.
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-The minimum difference between the pivot points' z-axis.
+The minimum difference between the pivot points' Z axis.
 
 .. _class_Generic6DOFJoint_property_linear_limit_z/restitution:
 
@@ -978,7 +978,7 @@ The minimum difference between the pivot points' z-axis.
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-The amount of restitution on the z-axis movement The lower, the more momentum gets lost.
+The amount of restitution on the Z axis movement. The lower, the more momentum gets lost.
 
 .. _class_Generic6DOFJoint_property_linear_limit_z/softness:
 
@@ -990,7 +990,7 @@ The amount of restitution on the z-axis movement The lower, the more momentum ge
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-A factor applied to the movement across the z-axis The lower, the slower the movement.
+A factor applied to the movement across the Z axis. The lower, the slower the movement.
 
 .. _class_Generic6DOFJoint_property_linear_limit_z/upper_distance:
 
@@ -1002,7 +1002,7 @@ A factor applied to the movement across the z-axis The lower, the slower the mov
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-The maximum difference between the pivot points' z-axis.
+The maximum difference between the pivot points' Z axis.
 
 .. _class_Generic6DOFJoint_property_linear_motor_x/enabled:
 
@@ -1014,7 +1014,7 @@ The maximum difference between the pivot points' z-axis.
 | *Getter* | get_flag_x()      |
 +----------+-------------------+
 
-If ``true``, then there is a linear motor on the x-axis. It will attempt to reach the target velocity while staying within the force limits.
+If ``true``, then there is a linear motor on the X axis. It will attempt to reach the target velocity while staying within the force limits.
 
 .. _class_Generic6DOFJoint_property_linear_motor_x/force_limit:
 
@@ -1026,7 +1026,7 @@ If ``true``, then there is a linear motor on the x-axis. It will attempt to reac
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-The maximum force the linear motor can apply on the x-axis while trying to reach the target velocity.
+The maximum force the linear motor can apply on the X axis while trying to reach the target velocity.
 
 .. _class_Generic6DOFJoint_property_linear_motor_x/target_velocity:
 
@@ -1038,7 +1038,7 @@ The maximum force the linear motor can apply on the x-axis while trying to reach
 | *Getter* | get_param_x()      |
 +----------+--------------------+
 
-The speed that the linear motor will attempt to reach on the x-axis.
+The speed that the linear motor will attempt to reach on the X axis.
 
 .. _class_Generic6DOFJoint_property_linear_motor_y/enabled:
 
@@ -1050,7 +1050,7 @@ The speed that the linear motor will attempt to reach on the x-axis.
 | *Getter* | get_flag_y()      |
 +----------+-------------------+
 
-If ``true``, then there is a linear motor on the y-axis. It will attempt to reach the target velocity while staying within the force limits.
+If ``true``, then there is a linear motor on the Y axis. It will attempt to reach the target velocity while staying within the force limits.
 
 .. _class_Generic6DOFJoint_property_linear_motor_y/force_limit:
 
@@ -1062,7 +1062,7 @@ If ``true``, then there is a linear motor on the y-axis. It will attempt to reac
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-The maximum force the linear motor can apply on the y-axis while trying to reach the target velocity.
+The maximum force the linear motor can apply on the Y axis while trying to reach the target velocity.
 
 .. _class_Generic6DOFJoint_property_linear_motor_y/target_velocity:
 
@@ -1074,7 +1074,7 @@ The maximum force the linear motor can apply on the y-axis while trying to reach
 | *Getter* | get_param_y()      |
 +----------+--------------------+
 
-The speed that the linear motor will attempt to reach on the y-axis.
+The speed that the linear motor will attempt to reach on the Y axis.
 
 .. _class_Generic6DOFJoint_property_linear_motor_z/enabled:
 
@@ -1086,7 +1086,7 @@ The speed that the linear motor will attempt to reach on the y-axis.
 | *Getter* | get_flag_z()      |
 +----------+-------------------+
 
-If ``true``, then there is a linear motor on the z-axis. It will attempt to reach the target velocity while staying within the force limits.
+If ``true``, then there is a linear motor on the Z axis. It will attempt to reach the target velocity while staying within the force limits.
 
 .. _class_Generic6DOFJoint_property_linear_motor_z/force_limit:
 
@@ -1098,7 +1098,7 @@ If ``true``, then there is a linear motor on the z-axis. It will attempt to reac
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-The maximum force the linear motor can apply on the z-axis while trying to reach the target velocity.
+The maximum force the linear motor can apply on the Z axis while trying to reach the target velocity.
 
 .. _class_Generic6DOFJoint_property_linear_motor_z/target_velocity:
 
@@ -1110,7 +1110,7 @@ The maximum force the linear motor can apply on the z-axis while trying to reach
 | *Getter* | get_param_z()      |
 +----------+--------------------+
 
-The speed that the linear motor will attempt to reach on the z-axis.
+The speed that the linear motor will attempt to reach on the Z axis.
 
 .. _class_Generic6DOFJoint_property_linear_spring_x/damping:
 

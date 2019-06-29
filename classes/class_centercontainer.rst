@@ -26,7 +26,7 @@ Properties
 Description
 -----------
 
-CenterContainer Keeps children controls centered. This container keeps all children to their minimum size, in the center.
+CenterContainer keeps children controls centered. This container keeps all children to their minimum size, in the center.
 
 Property Descriptions
 ---------------------

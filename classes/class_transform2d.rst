@@ -12,7 +12,7 @@ Transform2D
 Brief Description
 -----------------
 
-2D Transformation. 3x2 matrix.
+2D transformation (3×2 matrix).
 
 Properties
 ----------
@@ -82,7 +82,7 @@ Constants
 Description
 -----------
 
-Represents one or many transformations in 2D space such as translation, rotation, or scaling. It consists of a two :ref:`Vector2<class_Vector2>` x, y and :ref:`Vector2<class_Vector2>` "origin". It is similar to a 3x2 matrix.
+Represents one or many transformations in 2D space such as translation, rotation, or scaling. It consists of two :ref:`x<class_Transform2D_property_x>` and :ref:`y<class_Transform2D_property_y>` :ref:`Vector2<class_Vector2>`\ s and an :ref:`origin<class_Transform2D_property_origin>`. It is similar to a 3×2 matrix.
 
 Property Descriptions
 ---------------------
@@ -97,13 +97,13 @@ The transform's translation offset.
 
 - :ref:`Vector2<class_Vector2>` **x**
 
-The X axis of 2x2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
+The X axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 
 .. _class_Transform2D_property_y:
 
 - :ref:`Vector2<class_Vector2>` **y**
 
-The Y axis of 2x2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
+The Y axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 
 Method Descriptions
 -------------------

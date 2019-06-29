@@ -14,7 +14,7 @@ AudioEffectReverb
 Brief Description
 -----------------
 
-Adds a Reverb audio effect to an Audio bus.
+Adds a reverberation audio effect to an Audio bus.
 
 Simulates the sound of acoustic environments such as rooms, concert halls, caverns, or an open spaces.
 
@@ -105,7 +105,7 @@ Output percent of predelay. Value can range from 0 to 1. Default value: ``1``.
 | *Getter* | get_predelay_msec()      |
 +----------+--------------------------+
 
-Time between the original signal and the early reflections of the reverb signal. Default value: ``150ms``.
+Time between the original signal and the early reflections of the reverb signal, in milliseconds. Default value: ``150ms``.
 
 .. _class_AudioEffectReverb_property_room_size:
 

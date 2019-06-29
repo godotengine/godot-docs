@@ -138,7 +138,7 @@ enum **Mode**:
 
 - **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody2D<class_StaticBody2D>` and does not move.
 
-- **MODE_CHARACTER** = **2** --- Character mode. Similar to ``MODE_RIGID``, but the body can not rotate.
+- **MODE_CHARACTER** = **2** --- Character mode. Similar to :ref:`MODE_RIGID<class_RigidBody2D_constant_MODE_RIGID>`, but the body can not rotate.
 
 - **MODE_KINEMATIC** = **3** --- Kinematic mode. The body behaves like a :ref:`KinematicBody2D<class_KinematicBody2D>`, and must be moved by code.
 
@@ -184,7 +184,7 @@ Property Descriptions
 | *Getter* | get_angular_damp()      |
 +----------+-------------------------+
 
-Damps the body's :ref:`angular_velocity<class_RigidBody2D_property_angular_velocity>`. If ``-1`` the body will use the "Default Angular Damp" in "Project > Project Settings > Physics > 2d". Default value: ``-1``.
+Damps the body's :ref:`angular_velocity<class_RigidBody2D_property_angular_velocity>`. If ``-1``, the body will use the **Default Angular Damp** defined in **Project > Project Settings > Physics > 2d**. Default value: ``-1``.
 
 .. _class_RigidBody2D_property_angular_velocity:
 
@@ -280,9 +280,9 @@ The maximum number of contacts to report. Default value: ``0``.
 | *Getter* | get_continuous_collision_detection_mode()      |
 +----------+------------------------------------------------+
 
-Continuous collision detection mode. Default value: ``CCD_MODE_DISABLED``.
+Continuous collision detection mode. Default value: :ref:`CCD_MODE_DISABLED<class_RigidBody2D_constant_CCD_MODE_DISABLED>`.
 
-Continuous collision detection tries to predict where a moving body will collide instead of moving it and correcting its movement after collision. Continuous collision detection is slower, but more precise and misses fewer collisions with small, fast-moving objects. Raycasting and shapecasting methods are available. See ``CCD_MODE_`` constants for details.
+Continuous collision detection tries to predict where a moving body will collide instead of moving it and correcting its movement after collision. Continuous collision detection is slower, but more precise and misses fewer collisions with small, fast-moving objects. Raycasting and shapecasting methods are available. See :ref:`CCDMode<enum_RigidBody2D_CCDMode>` for details.
 
 .. _class_RigidBody2D_property_custom_integrator:
 
@@ -318,7 +318,7 @@ The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum fr
 | *Getter* | get_gravity_scale()      |
 +----------+--------------------------+
 
-Multiplies the gravity applied to the body. The body's gravity is calculated from the "Default Gravity" value in "Project > Project Settings > Physics > 2d" and/or any additional gravity vector applied by :ref:`Area2D<class_Area2D>`\ s. Default value: ``1``.
+Multiplies the gravity applied to the body. The body's gravity is calculated from the **Default Gravity** value in **Project > Project Settings > Physics > 2d** and/or any additional gravity vector applied by :ref:`Area2D<class_Area2D>`\ s. Default value: ``1``.
 
 .. _class_RigidBody2D_property_inertia:
 
@@ -342,7 +342,7 @@ The body's moment of inertia. This is like mass, but for rotation: it determines
 | *Getter* | get_linear_damp()      |
 +----------+------------------------+
 
-Damps the body's :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>`. If ``-1`` the body will use the "Default Linear Damp" in "Project > Project Settings > Physics > 2d". Default value: ``-1``.
+Damps the body's :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>`. If ``-1``, the body will use the **Default Linear Damp** in **Project > Project Settings > Physics > 2d**. Default value: ``-1``.
 
 .. _class_RigidBody2D_property_linear_velocity:
 
@@ -378,7 +378,7 @@ The body's mass. Default value: ``1``.
 | *Getter* | get_mode()      |
 +----------+-----------------+
 
-The body's mode. See ``MODE_*`` constants. Default value: ``MODE_RIGID``.
+The body's mode. See :ref:`Mode<enum_RigidBody2D_Mode>` for possible values. Default value: :ref:`MODE_RIGID<class_RigidBody2D_constant_MODE_RIGID>`.
 
 .. _class_RigidBody2D_property_physics_material_override:
 
@@ -412,7 +412,7 @@ If ``true``, the body is sleeping and will not calculate forces until woken up b
 | *Getter* | get_weight()      |
 +----------+-------------------+
 
-The body's weight based on its mass and the "Default Gravity" value in "Project > Project Settings > Physics > 2d".
+The body's weight based on its mass and the **Default Gravity** value in **Project > Project Settings > Physics > 2d**.
 
 Method Descriptions
 -------------------
@@ -451,7 +451,7 @@ Applies a directional impulse without affecting rotation.
 
 - void **apply_impulse** **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` impulse **)**
 
-Applies a positioned impulse to the body. An impulse is time independent! Applying an impulse every frame would result in a framerate dependent force. For this reason it should only be used when simulating one-time impacts (use the "_force" functions otherwise). The position uses the rotation of the global coordinate system, but is centered at the object's origin.
+Applies a positioned impulse to the body. An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason it should only be used when simulating one-time impacts (use the "_force" functions otherwise). The position uses the rotation of the global coordinate system, but is centered at the object's origin.
 
 .. _class_RigidBody2D_method_apply_torque_impulse:
 
@@ -463,7 +463,9 @@ Applies a rotational impulse to the body.
 
 - :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
 
-Returns a list of the bodies colliding with this one. Use :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to set the maximum number reported. You must also set :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to ``true``. Note that the result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
+Returns a list of the bodies colliding with this one. Use :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to set the maximum number reported. You must also set :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to ``true``.
+
+**Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_RigidBody2D_method_set_axis_velocity:
 

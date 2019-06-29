@@ -14,7 +14,7 @@ WebSocketServer
 Brief Description
 -----------------
 
-A WebSocket server implementation
+A WebSocket server implementation.
 
 Methods
 -------
@@ -60,16 +60,18 @@ Emitted when a client disconnects. ``was_clean_close`` will be ``true`` if the c
 
 - **data_received** **(** :ref:`int<class_int>` id **)**
 
-Emitted when a new message is received. Note: This signal is NOT emitted when used as high level multiplayer peer.
+Emitted when a new message is received.
+
+**Note:** This signal is *not* emitted when used as high-level multiplayer peer.
 
 Description
 -----------
 
-This class implements a WebSocket server that can also support the high level multiplayer API.
+This class implements a WebSocket server that can also support the high-level multiplayer API.
 
 After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`). When clients connect, disconnect, or send data, you will receive the appropriate signal.
 
-Note: This class will not work in HTML5 exports due to browser restrictions.
+**Note:** This class will not work in HTML5 exports due to browser restrictions.
 
 Method Descriptions
 -------------------
@@ -78,7 +80,7 @@ Method Descriptions
 
 - void **disconnect_peer** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
-Disconnects the peer identified by ``id`` from the server. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more info.
+Disconnects the peer identified by ``id`` from the server. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more information.
 
 .. _class_WebSocketServer_method_get_peer_address:
 
@@ -108,17 +110,17 @@ Returns ``true`` if the server is actively listening on a port.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
 
-Start listening on the given port.
+Starts listening on the given port.
 
 You can specify the desired subprotocols via the "protocols" array. If the list empty (default), "binary" will be used.
 
-If ``true`` is passed as ``gd_mp_api``, the server will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections from non Godot clients will not work, and :ref:`data_received<class_WebSocketServer_signal_data_received>` will not be emitted.
+If ``true`` is passed as ``gd_mp_api``, the server will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections from non-Godot clients will not work, and :ref:`data_received<class_WebSocketServer_signal_data_received>` will not be emitted.
 
-If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.), on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(ID)`` to communicate with the peer with given ``ID`` (e.g. ``get_peer(ID).get_available_packet_count``).
+If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.), on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(id)`` to communicate with the peer with given ``id`` (e.g. ``get_peer(id).get_available_packet_count``).
 
 .. _class_WebSocketServer_method_stop:
 
 - void **stop** **(** **)**
 
-Stop the server and clear its state.
+Stops the server and clear its state.
 

@@ -14,7 +14,7 @@ RegExMatch
 Brief Description
 -----------------
 
-Contains the results of a regex search.
+Contains the results of a :ref:`RegEx<class_RegEx>` search.
 
 Properties
 ----------
@@ -43,7 +43,7 @@ Methods
 Description
 -----------
 
-Contains the results of a single regex match returned by :ref:`RegEx.search<class_RegEx_method_search>` and :ref:`RegEx.search_all<class_RegEx_method_search_all>`. It can be used to find the position and range of the match and its capturing groups, and it can extract its sub-string for you.
+Contains the results of a single :ref:`RegEx<class_RegEx>` match returned by :ref:`RegEx.search<class_RegEx_method_search>` and :ref:`RegEx.search_all<class_RegEx_method_search_all>`. It can be used to find the position and range of the match and its capturing groups, and it can extract its substring for you.
 
 Property Descriptions
 ---------------------

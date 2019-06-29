@@ -267,7 +267,7 @@ Once set, Animation nodes can be added to the AnimationTreePlayer.
 | *Getter* | get_animation_process_mode()      |
 +----------+-----------------------------------+
 
-The thread in which to update animations. Default value: ``ANIMATION_PROCESS_IDLE``.
+The thread in which to update animations. Default value: :ref:`ANIMATION_PROCESS_IDLE<class_AnimationTreePlayer_constant_ANIMATION_PROCESS_IDLE>`.
 
 Method Descriptions
 -------------------
@@ -420,7 +420,7 @@ Returns mix amount of a Mix node given its name.
 
 Sets mix amount of a Mix node given its name and value.
 
-A Mix node adds input b to input a by a the amount given by ratio.
+A Mix node adds input b to input a by the amount given by ratio.
 
 .. _class_AnimationTreePlayer_method_node_exists:
 
@@ -450,7 +450,7 @@ Returns position of a node in the graph given its name.
 
 - :ref:`NodeType<enum_AnimationTreePlayer_NodeType>` **node_get_type** **(** :ref:`String<class_String>` id **)** const
 
-Get the node type, will return from NODE\_\* enum.
+Gets the node type, will return from ``NODE_*`` enum.
 
 .. _class_AnimationTreePlayer_method_node_rename:
 
@@ -586,7 +586,7 @@ If applied after a blend or mix, affects all input animations to that blend or m
 
 - void **timeseek_node_seek** **(** :ref:`String<class_String>` id, :ref:`float<class_float>` seconds **)**
 
-Sets the time seek value of the TimeSeek node with name ``id`` to ``seconds``
+Sets the time seek value of the TimeSeek node with name ``id`` to ``seconds``.
 
 This functions as a seek in the :ref:`Animation<class_Animation>` or the blend or mix of :ref:`Animation<class_Animation>`\ s input in it.
 

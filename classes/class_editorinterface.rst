@@ -173,7 +173,7 @@ Reloads the scene at the given path.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_scene** **(** **)**
 
-Saves the scene. Returns either OK or ERR_CANT_CREATE. See :ref:`@GlobalScope<class_@GlobalScope>` constants.
+Saves the scene. Returns either ``OK`` or ``ERR_CANT_CREATE`` (see :ref:`@GlobalScope<class_@GlobalScope>` constants).
 
 .. _class_EditorInterface_method_save_scene_as:
 

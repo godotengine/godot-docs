@@ -40,7 +40,7 @@ Enumerations
 
 enum **Hinting**:
 
-- **HINTING_NONE** = **0** --- Disable font hinting (smoother but less crisp).
+- **HINTING_NONE** = **0** --- Disables font hinting (smoother but less crisp).
 
 - **HINTING_LIGHT** = **1** --- Use the light font hinting mode.
 

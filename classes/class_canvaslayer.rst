@@ -73,7 +73,7 @@ Property Descriptions
 | *Getter* | get_custom_viewport()      |
 +----------+----------------------------+
 
-The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``. If null, uses the default viewport instead.
+The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``. If ``null``, uses the default viewport instead.
 
 .. _class_CanvasLayer_property_follow_viewport_enable:
 

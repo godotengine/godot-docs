@@ -26,7 +26,7 @@ Properties
 Description
 -----------
 
-A resource referenced in an :ref:`Environment<class_Environment>` that is used to draw a background. The Panorama sky functions similar to skyboxes in other engines except it uses a equirectangular sky map instead of a cube map.
+A resource referenced in an :ref:`Environment<class_Environment>` that is used to draw a background. The Panorama sky functions similar to skyboxes in other engines, except it uses an equirectangular sky map instead of a cube map.
 
 Property Descriptions
 ---------------------

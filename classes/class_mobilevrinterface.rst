@@ -14,7 +14,7 @@ MobileVRInterface
 Brief Description
 -----------------
 
-Generic mobile VR implementation
+Generic mobile VR implementation.
 
 Properties
 ----------
@@ -38,9 +38,9 @@ Properties
 Description
 -----------
 
-This is a generic mobile VR implementation where you need to provide details about the phone and HMD used. It does not rely on any existing framework. This is the most basic interface we have. For the best effect you do need a mobile phone with a gyroscope and accelerometer.
+This is a generic mobile VR implementation where you need to provide details about the phone and HMD used. It does not rely on any existing framework. This is the most basic interface we have. For the best effect, you need a mobile phone with a gyroscope and accelerometer.
 
-Note that even though there is no positional tracking the camera will assume the headset is at a height of 1.85 meters, you can change this by setting :ref:`eye_height<class_MobileVRInterface_property_eye_height>`.
+Note that even though there is no positional tracking, the camera will assume the headset is at a height of 1.85 meters. You can change this by setting :ref:`eye_height<class_MobileVRInterface_property_eye_height>`.
 
 You can initialise this interface as follows:
 

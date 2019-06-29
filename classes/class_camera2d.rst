@@ -120,9 +120,9 @@ enum **Camera2DProcessMode**:
 Description
 -----------
 
-Camera node for 2D scenes. It forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of :ref:`CanvasItem<class_CanvasItem>` based nodes.
+Camera node for 2D scenes. It forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of :ref:`CanvasItem<class_CanvasItem>`-based nodes.
 
-This node is intended to be a simple helper to get things going quickly and it may happen often that more functionality is desired to change how the camera works. To make your own custom camera node, simply inherit from :ref:`Node2D<class_Node2D>` and change the transform of the canvas by calling get_viewport().set_canvas_transform(m) in :ref:`Viewport<class_Viewport>`.
+This node is intended to be a simple helper to get things going quickly and it may happen that more functionality is desired to change how the camera works. To make your own custom camera node, simply inherit from :ref:`Node2D<class_Node2D>` and change the transform of the canvas by calling get_viewport().set_canvas_transform(m) in :ref:`Viewport<class_Viewport>`.
 
 Property Descriptions
 ---------------------
@@ -159,7 +159,7 @@ If ``true``, the camera is the active camera for the current scene. Only one cam
 | *Getter* | get_custom_viewport()      |
 +----------+----------------------------+
 
-The custom :ref:`Viewport<class_Viewport>` node attached to the ``Camera2D``. If null or not a :ref:`Viewport<class_Viewport>`, uses the default viewport instead.
+The custom :ref:`Viewport<class_Viewport>` node attached to the ``Camera2D``. If ``null`` or not a :ref:`Viewport<class_Viewport>`, uses the default viewport instead.
 
 .. _class_Camera2D_property_drag_margin_bottom:
 
@@ -243,7 +243,7 @@ If ``true``, the camera only moves when reaching the vertical drag margins. If `
 | *Getter* | is_margin_drawing_enabled()       |
 +----------+-----------------------------------+
 
-If ``true``, draws the camera's drag margin rectangle in the editor. Default value: ``false``
+If ``true``, draws the camera's drag margin rectangle in the editor. Default value: ``false``.
 
 .. _class_Camera2D_property_editor_draw_limits:
 
@@ -255,7 +255,7 @@ If ``true``, draws the camera's drag margin rectangle in the editor. Default val
 | *Getter* | is_limit_drawing_enabled()       |
 +----------+----------------------------------+
 
-If ``true``, draws the camera's limits rectangle in the editor. Default value: ``true``
+If ``true``, draws the camera's limits rectangle in the editor. Default value: ``true``.
 
 .. _class_Camera2D_property_editor_draw_screen:
 
@@ -267,7 +267,7 @@ If ``true``, draws the camera's limits rectangle in the editor. Default value: `
 | *Getter* | is_screen_drawing_enabled()       |
 +----------+-----------------------------------+
 
-If ``true``, draws the camera's screen rectangle in the editor. Default value: ``false``
+If ``true``, draws the camera's screen rectangle in the editor. Default value: ``false``.
 
 .. _class_Camera2D_property_limit_bottom:
 
@@ -315,7 +315,7 @@ Right scroll limit in pixels. The camera stops moving when reaching this value.
 | *Getter* | is_limit_smoothing_enabled()       |
 +----------+------------------------------------+
 
-If ``true``, the camera smoothly stops when reaches its limits. Default value: ``false``
+If ``true``, the camera smoothly stops when reaches its limits. Default value: ``false``.
 
 .. _class_Camera2D_property_limit_top:
 
@@ -351,7 +351,7 @@ The camera's offset, useful for looking around or camera shake animations.
 | *Getter* | get_h_offset()      |
 +----------+---------------------+
 
-The horizontal offset of the camera, relative to the drag margins. Default value: ``0``
+The horizontal offset of the camera, relative to the drag margins. Default value: ``0``.
 
 .. _class_Camera2D_property_offset_v:
 
@@ -363,7 +363,7 @@ The horizontal offset of the camera, relative to the drag margins. Default value
 | *Getter* | get_v_offset()      |
 +----------+---------------------+
 
-The vertical offset of the camera, relative to the drag margins. Default value: ``0``
+The vertical offset of the camera, relative to the drag margins. Default value: ``0``.
 
 .. _class_Camera2D_property_process_mode:
 
@@ -385,7 +385,7 @@ The vertical offset of the camera, relative to the drag margins. Default value: 
 | *Getter* | is_rotating()       |
 +----------+---------------------+
 
-If ``true``, the camera rotates with the target. Default value: ``false``
+If ``true``, the camera rotates with the target. Default value: ``false``.
 
 .. _class_Camera2D_property_smoothing_enabled:
 
@@ -397,7 +397,7 @@ If ``true``, the camera rotates with the target. Default value: ``false``
 | *Getter* | is_follow_smoothing_enabled()      |
 +----------+------------------------------------+
 
-If ``true``, the camera smoothly moves towards the target at :ref:`smoothing_speed<class_Camera2D_property_smoothing_speed>`. Default value: ``false``
+If ``true``, the camera smoothly moves towards the target at :ref:`smoothing_speed<class_Camera2D_property_smoothing_speed>`. Default value: ``false``.
 
 .. _class_Camera2D_property_smoothing_speed:
 
@@ -409,7 +409,7 @@ If ``true``, the camera smoothly moves towards the target at :ref:`smoothing_spe
 | *Getter* | get_follow_smoothing()      |
 +----------+-----------------------------+
 
-Speed in pixels per second of the camera's smoothing effect when :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``true``
+Speed in pixels per second of the camera's smoothing effect when :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``true``.
 
 .. _class_Camera2D_property_zoom:
 
@@ -421,7 +421,7 @@ Speed in pixels per second of the camera's smoothing effect when :ref:`smoothing
 | *Getter* | get_zoom()      |
 +----------+-----------------+
 
-The camera's zoom relative to the viewport. Values larger than ``Vector2(1, 1)`` zoom out and smaller values zoom in. For an example, use ``Vector2(0.5, 0.5)`` for a 2x zoom in, and ``Vector2(4, 4)`` for a 4x zoom out.
+The camera's zoom relative to the viewport. Values larger than ``Vector2(1, 1)`` zoom out and smaller values zoom in. For an example, use ``Vector2(0.5, 0.5)`` for a 2× zoom-in, and ``Vector2(4, 4)`` for a 4× zoom-out.
 
 Method Descriptions
 -------------------
@@ -430,7 +430,7 @@ Method Descriptions
 
 - void **align** **(** **)**
 
-Align the camera to the tracked node
+Aligns the camera to the tracked node.
 
 .. _class_Camera2D_method_clear_current:
 
@@ -442,7 +442,7 @@ Removes any ``Camera2D`` from the ancestor :ref:`Viewport<class_Viewport>`'s int
 
 - void **force_update_scroll** **(** **)**
 
-Force the camera to update scroll immediately.
+Forces the camera to update scroll immediately.
 
 .. _class_Camera2D_method_get_camera_position:
 
@@ -460,13 +460,13 @@ Returns the location of the ``Camera2D``'s screen-center, relative to the origin
 
 - void **make_current** **(** **)**
 
-Make this the current 2D camera for the scene (viewport and layer), in case there's many cameras in the scene.
+Make this the current 2D camera for the scene (viewport and layer), in case there are many cameras in the scene.
 
 .. _class_Camera2D_method_reset_smoothing:
 
 - void **reset_smoothing** **(** **)**
 
-Set the camera's position immediately to its current smoothing destination.
+Sets the camera's position immediately to its current smoothing destination.
 
 This has no effect if smoothing is disabled.
 

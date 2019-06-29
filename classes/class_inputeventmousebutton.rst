@@ -52,7 +52,7 @@ Property Descriptions
 | *Getter* | get_button_index()      |
 +----------+-------------------------+
 
-Mouse button identifier, one of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button or button wheel constants.
+The mouse button identifier, one of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button or button wheel constants.
 
 .. _class_InputEventMouseButton_property_doubleclick:
 
@@ -76,7 +76,7 @@ If ``true``, the mouse button's state is a double-click.
 | *Getter* | get_factor()      |
 +----------+-------------------+
 
-Magnitude. Amount (or delta) of the event. Used for scroll events, indicates scroll amount (vertically or horizontally). Only supported on some platforms, sensitivity varies by platform. May be 0 if not supported.
+The amount (or delta) of the event. When used for high-precision scroll events, this indicates the scroll amount (vertical or horizontal). This is only supported on some platforms; the reported sensitivity varies depending on the platform. May be ``0`` if not supported.
 
 .. _class_InputEventMouseButton_property_pressed:
 

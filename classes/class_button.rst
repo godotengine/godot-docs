@@ -97,7 +97,7 @@ Property Descriptions
 | *Getter* | get_text_align()      |
 +----------+-----------------------+
 
-Text alignment policy for the button's text, use one of the ALIGN\_\* constants.
+Text alignment policy for the button's text, use one of the ``ALIGN_*`` constants.
 
 .. _class_Button_property_clip_text:
 

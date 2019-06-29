@@ -14,7 +14,7 @@ AudioStreamRandomPitch
 Brief Description
 -----------------
 
-Plays audio with random pitch tweaking.
+Plays audio with random pitch shifting.
 
 Properties
 ----------

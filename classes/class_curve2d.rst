@@ -14,7 +14,7 @@ Curve2D
 Brief Description
 -----------------
 
-Describes a Bezier curve in 2D space.
+Describes a Bézier curve in 2D space.
 
 Properties
 ----------
@@ -67,9 +67,9 @@ Methods
 Description
 -----------
 
-This class describes a Bezier curve in 2D space. It is mainly used to give a shape to a :ref:`Path2D<class_Path2D>`, but can be manually sampled for other purposes.
+This class describes a Bézier curve in 2D space. It is mainly used to give a shape to a :ref:`Path2D<class_Path2D>`, but can be manually sampled for other purposes.
 
-It keeps a cache of precalculated points along the curve, to speed further calculations up.
+It keeps a cache of precalculated points along the curve, to speed up further calculations.
 
 Property Descriptions
 ---------------------
@@ -93,7 +93,7 @@ Method Descriptions
 
 - void **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` in=Vector2( 0, 0 ), :ref:`Vector2<class_Vector2>` out=Vector2( 0, 0 ), :ref:`int<class_int>` at_position=-1 **)**
 
-Adds a point to a curve, at ``position``, with control points ``in`` and ``out``.
+Adds a point to a curve at ``position``, with control points ``in`` and ``out``.
 
 If ``at_position`` is given, the point is inserted before the point number ``at_position``, moving that point (and every point after) after the inserted point. If ``at_position`` is not given, or is an illegal value (``at_position <0`` or ``at_position >= [method get_point_count]``), the point will be appended at the end of the point list.
 

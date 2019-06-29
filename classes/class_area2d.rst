@@ -258,7 +258,7 @@ The falloff factor for point gravity. The greater the value, the faster gravity 
 | *Getter* | is_gravity_a_point()        |
 +----------+-----------------------------+
 
-If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area2D_property_gravity_vec>`). Also see :ref:`space_override<class_Area2D_property_space_override>`. Default value: ``false``.
+If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area2D_property_gravity_vec>`). See also :ref:`space_override<class_Area2D_property_space_override>`. Default value: ``false``.
 
 .. _class_Area2D_property_gravity_vec:
 
@@ -363,13 +363,17 @@ Returns a list of intersecting :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s. For
 
 - :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** const
 
-If ``true``, the given area overlaps the Area2D. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+If ``true``, the given area overlaps the Area2D.
+
+**Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_Area2D_method_overlaps_body:
 
 - :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** const
 
-If ``true``, the given physics body overlaps the Area2D. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+If ``true``, the given physics body overlaps the Area2D.
+
+**Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance (while TileMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 

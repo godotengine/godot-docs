@@ -14,7 +14,7 @@ PinJoint2D
 Brief Description
 -----------------
 
-Pin Joint for 2D Shapes.
+Pin Joint for 2D shapes.
 
 Properties
 ----------
@@ -26,7 +26,7 @@ Properties
 Description
 -----------
 
-Pin Joint for 2D Rigid Bodies. It pins two bodies (rigid or static) together.
+Pin Joint for 2D rigid bodies. It pins two bodies (rigid or static) together.
 
 Property Descriptions
 ---------------------

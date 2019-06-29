@@ -36,7 +36,7 @@ Properties
 Description
 -----------
 
-Contains keys events information with modifiers support like ``SHIFT`` or ``ALT``. See :ref:`Node._input<class_Node_method__input>`.
+Contains keys events information with modifiers support like ``Shift`` or ``Alt``. See :ref:`Node._input<class_Node_method__input>`.
 
 Tutorials
 ---------
@@ -56,7 +56,7 @@ Property Descriptions
 | *Getter* | get_alt()      |
 +----------+----------------+
 
-State of the Alt modifier.
+State of the ``Alt`` modifier.
 
 .. _class_InputEventWithModifiers_property_command:
 
@@ -68,7 +68,7 @@ State of the Alt modifier.
 | *Getter* | get_command()      |
 +----------+--------------------+
 
-State of the Command modifier.
+State of the ``Command`` modifier.
 
 .. _class_InputEventWithModifiers_property_control:
 
@@ -80,7 +80,7 @@ State of the Command modifier.
 | *Getter* | get_control()      |
 +----------+--------------------+
 
-State of the Ctrl modifier.
+State of the ``Ctrl`` modifier.
 
 .. _class_InputEventWithModifiers_property_meta:
 
@@ -92,7 +92,7 @@ State of the Ctrl modifier.
 | *Getter* | get_metakey()      |
 +----------+--------------------+
 
-State of the Meta modifier.
+State of the ``Meta`` modifier.
 
 .. _class_InputEventWithModifiers_property_shift:
 
@@ -104,5 +104,5 @@ State of the Meta modifier.
 | *Getter* | get_shift()      |
 +----------+------------------+
 
-State of the Shift modifier.
+State of the ``Shift`` modifier.
 

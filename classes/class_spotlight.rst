@@ -14,7 +14,7 @@ SpotLight
 Brief Description
 -----------------
 
-Spotlight :ref:`Light<class_Light>`, such as a reflector spotlight or a lantern.
+A spotlight, such as a reflector spotlight or a lantern.
 
 Properties
 ----------
@@ -32,7 +32,7 @@ Properties
 Description
 -----------
 
-A SpotLight light is a type of :ref:`Light<class_Light>` node that emits lights in a specific direction, in the shape of a cone. The light is attenuated through the distance and this attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light<class_Light>`.
+A Spotlight is a type of :ref:`Light<class_Light>` node that emits lights in a specific direction, in the shape of a cone. The light is attenuated through the distance. This attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light<class_Light>`.
 
 Tutorials
 ---------
@@ -52,6 +52,8 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
+The spotlight's angle in degrees.
+
 .. _class_SpotLight_property_spot_angle_attenuation:
 
 - :ref:`float<class_float>` **spot_angle_attenuation**
@@ -61,6 +63,8 @@ Property Descriptions
 +----------+------------------+
 | *Getter* | get_param()      |
 +----------+------------------+
+
+The spotlight's angular attenuation curve.
 
 .. _class_SpotLight_property_spot_attenuation:
 
@@ -72,6 +76,8 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
+The spotlight's light energy attenuation curve.
+
 .. _class_SpotLight_property_spot_range:
 
 - :ref:`float<class_float>` **spot_range**
@@ -81,4 +87,6 @@ Property Descriptions
 +----------+------------------+
 | *Getter* | get_param()      |
 +----------+------------------+
+
+The maximal range that can be reached by the spotlight.
 

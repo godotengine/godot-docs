@@ -73,7 +73,7 @@ Returns the list of recognized extensions for a resource type.
 
 - :ref:`bool<class_bool>` **has** **(** :ref:`String<class_String>` path **)**
 
-Deprecated method. Use :ref:`has_cached<class_ResourceLoader_method_has_cached>` or :ref:`exists<class_ResourceLoader_method_exists>` instead.
+*Deprecated method.* Use :ref:`has_cached<class_ResourceLoader_method_has_cached>` or :ref:`exists<class_ResourceLoader_method_exists>` instead.
 
 .. _class_ResourceLoader_method_has_cached:
 
@@ -109,5 +109,5 @@ An optional ``type_hint`` can be used to further specify the :ref:`Resource<clas
 
 - void **set_abort_on_missing_resources** **(** :ref:`bool<class_bool>` abort **)**
 
-Change the behavior on missing sub-resources. Default is to abort load.
+Changes the behavior on missing sub-resources. The default behavior is to abort loading.
 

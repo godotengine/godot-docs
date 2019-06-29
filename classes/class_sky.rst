@@ -48,21 +48,21 @@ Enumerations
 
 enum **RadianceSize**:
 
-- **RADIANCE_SIZE_32** = **0** --- Radiance texture size is 32x32 pixels.
+- **RADIANCE_SIZE_32** = **0** --- Radiance texture size is 32×32 pixels.
 
-- **RADIANCE_SIZE_64** = **1** --- Radiance texture size is 64x64 pixels.
+- **RADIANCE_SIZE_64** = **1** --- Radiance texture size is 64×64 pixels.
 
-- **RADIANCE_SIZE_128** = **2** --- Radiance texture size is 128x128 pixels.
+- **RADIANCE_SIZE_128** = **2** --- Radiance texture size is 128×128 pixels.
 
-- **RADIANCE_SIZE_256** = **3** --- Radiance texture size is 256x256 pixels.
+- **RADIANCE_SIZE_256** = **3** --- Radiance texture size is 256×256 pixels.
 
-- **RADIANCE_SIZE_512** = **4** --- Radiance texture size is 512x512 pixels.
+- **RADIANCE_SIZE_512** = **4** --- Radiance texture size is 512×512 pixels.
 
-- **RADIANCE_SIZE_1024** = **5** --- Radiance texture size is 1024x1024 pixels.
+- **RADIANCE_SIZE_1024** = **5** --- Radiance texture size is 1024×1024 pixels.
 
-- **RADIANCE_SIZE_2048** = **6** --- Radiance texture size is 2048x2048 pixels.
+- **RADIANCE_SIZE_2048** = **6** --- Radiance texture size is 2048×2048 pixels.
 
-- **RADIANCE_SIZE_MAX** = **7** --- Radiance texture size is the largest size it can be.
+- **RADIANCE_SIZE_MAX** = **7** --- Represents the size of the :ref:`RadianceSize<enum_Sky_RadianceSize>` enum.
 
 Description
 -----------
@@ -82,9 +82,7 @@ Property Descriptions
 | *Getter* | get_radiance_size()      |
 +----------+--------------------------+
 
-The Sky's radiance map size.
+The ``Sky``'s radiance map size. The higher the radiance map size, the more detailed the lighting from the ``Sky`` will be.
 
-The higher the radiance map size, the more detailed the lighting from the Sky will be.
-
-See RADIANCE_SIZE\_\* constants for values. Default size is RADIANCE_SIZE_512.
+See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values. Default size is :ref:`RADIANCE_SIZE_512<class_Sky_constant_RADIANCE_SIZE_512>`.
 

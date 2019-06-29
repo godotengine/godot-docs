@@ -16,7 +16,7 @@ Slider
 Brief Description
 -----------------
 
-Base class for GUI Sliders.
+Base class for GUI sliders.
 
 Properties
 ----------
@@ -36,7 +36,7 @@ Properties
 Description
 -----------
 
-Base class for GUI Sliders.
+Base class for GUI sliders.
 
 Property Descriptions
 ---------------------

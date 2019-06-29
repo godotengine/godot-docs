@@ -79,7 +79,7 @@ enum **Type**:
 
 - **TYPE_LIGHT** = **2**
 
-- **TYPE_MAX** = **3**
+- **TYPE_MAX** = **3** --- Represents the size of the :ref:`Type<enum_VisualShader_Type>` enum.
 
 Constants
 ---------

@@ -14,7 +14,7 @@ AudioServer
 Brief Description
 -----------------
 
-Server interface for low level audio access.
+Server interface for low-level audio access.
 
 Methods
 -------
@@ -144,7 +144,7 @@ enum **SpeakerMode**:
 Description
 -----------
 
-AudioServer is a low level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
+AudioServer is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
 
 Tutorials
 ---------
@@ -396,5 +396,5 @@ Swaps the position of two effects in bus ``bus_idx``.
 
 - void **unlock** **(** **)**
 
-Unlocks the audiodriver's main loop. After locking it always unlock it.
+Unlocks the audio driver's main loop. (After locking it, you should always unlock it.)
 

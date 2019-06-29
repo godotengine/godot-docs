@@ -168,7 +168,7 @@ Signals
 
 - **item_activated** **(** :ref:`int<class_int>` index **)**
 
-Triggered when specified list item is activated via double click or Enter.
+Triggered when specified list item is activated via double-clicking or by pressing Enter.
 
 .. _class_ItemList_signal_item_rmb_selected:
 
@@ -176,9 +176,7 @@ Triggered when specified list item is activated via double click or Enter.
 
 Triggered when specified list item has been selected via right mouse clicking.
 
-The click position is also provided to allow appropriate popup of context menus
-
-at the correct location.
+The click position is also provided to allow appropriate popup of context menus at the correct location.
 
 :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>` must be enabled.
 
@@ -233,16 +231,16 @@ enum **IconMode**:
 
 enum **SelectMode**:
 
-- **SELECT_SINGLE** = **0**
+- **SELECT_SINGLE** = **0** --- Only allow selecting a single item.
 
-- **SELECT_MULTI** = **1**
+- **SELECT_MULTI** = **1** --- Allows selecting multiple items by holding Ctrl or Shift.
 
 Description
 -----------
 
 This control provides a selectable list of items that may be in a single (or multiple columns) with option of text, icons, or both text and icon. Tooltips are supported and may be different for every item in the list.
 
-Selectable items in the list may be selected or deselected and multiple selection may be enabled. Selection with right mouse button may also be enabled to allow use of popup context menus. Items may also be 'activated' with a double click (or Enter key).
+Selectable items in the list may be selected or deselected and multiple selection may be enabled. Selection with right mouse button may also be enabled to allow use of popup context menus. Items may also be "activated" by double-clicking them or by pressing Enter.
 
 Property Descriptions
 ---------------------
@@ -293,9 +291,7 @@ If ``true``, the control will automatically resize the height to fit its content
 | *Getter* | get_fixed_column_width()      |
 +----------+-------------------------------+
 
-Sets the default column width in pixels.
-
-If left to default value, each item will have a width equal to the width of its content and the columns will have an uneven width.
+Sets the default column width in pixels. If left to default value, each item will have a width equal to the width of its content and the columns will have an uneven width.
 
 .. _class_ItemList_property_fixed_icon_size:
 
@@ -343,9 +339,7 @@ Sets the icon size to its initial size multiplied by the specified scale. Defaul
 | *Getter* | get_max_columns()      |
 +----------+------------------------+
 
-Sets the maximum columns the list will have.
-
-If set to anything other than the default, the content will be split among the specified columns.
+Sets the maximum columns the list will have. If set to anything other than the default, the content will be split among the specified columns.
 
 .. _class_ItemList_property_max_text_lines:
 
@@ -379,7 +373,7 @@ If set to ``true``, all columns will have the same width specified by :ref:`fixe
 | *Getter* | get_select_mode()      |
 +----------+------------------------+
 
-Allow single or multiple item selection. See the :ref:`SelectMode<enum_ItemList_SelectMode>` constants.
+Allows single or multiple item selection. See the :ref:`SelectMode<enum_ItemList_SelectMode>` constants.
 
 Method Descriptions
 -------------------
@@ -394,15 +388,15 @@ Adds an item to the item list with no text, only an icon.
 
 - void **add_item** **(** :ref:`String<class_String>` text, :ref:`Texture<class_Texture>` icon=null, :ref:`bool<class_bool>` selectable=true **)**
 
-Adds an item to the item list with specified text. Specify an icon of null for a list item with no icon.
+Adds an item to the item list with specified text. Specify an ``icon``, or use ``null`` as the ``icon`` for a list item with no icon.
 
-If selectable is ``true`` the list item will be selectable.
+If selectable is ``true``, the list item will be selectable.
 
 .. _class_ItemList_method_clear:
 
 - void **clear** **(** **)**
 
-Remove all items from the list.
+Removes all items from the list.
 
 .. _class_ItemList_method_ensure_current_is_visible:
 
@@ -438,7 +432,7 @@ Returns the custom foreground color of the item specified by ``idx`` index. Defa
 
 - :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the icon associated with the specified index. Default value is ``null``
+Returns the icon associated with the specified index. Default value is ``null``.
 
 .. _class_ItemList_method_get_item_icon_modulate:
 
@@ -490,7 +484,7 @@ Returns ``true`` if one or more items are selected.
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether or not the item at the specified index is disabled.
+Returns ``true`` if the item at the specified index is disabled.
 
 .. _class_ItemList_method_is_item_icon_transposed:
 
@@ -500,19 +494,19 @@ Returns whether or not the item at the specified index is disabled.
 
 - :ref:`bool<class_bool>` **is_item_selectable** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether or not the item at the specified index is selectable.
+Returns ``true`` if the item at the specified index is selectable.
 
 .. _class_ItemList_method_is_item_tooltip_enabled:
 
 - :ref:`bool<class_bool>` **is_item_tooltip_enabled** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether the tooltip is enabled for specified item index.
+Returns ``true`` if the tooltip is enabled for specified item index.
 
 .. _class_ItemList_method_is_selected:
 
 - :ref:`bool<class_bool>` **is_selected** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether or not item at the specified index is currently selected.
+Returns ``true`` if the item at the specified index is currently selected.
 
 .. _class_ItemList_method_move_item:
 
@@ -532,7 +526,7 @@ Removes the item specified by ``idx`` index from the list.
 
 Select the item at the specified index.
 
-Note: This method does not trigger the item selection signal.
+**Note:** This method does not trigger the item selection signal.
 
 .. _class_ItemList_method_set_item_custom_bg_color:
 
@@ -560,15 +554,15 @@ Sets the foreground color of the item specified by ``idx`` index to the specifie
 
 - void **set_item_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
 
-Disable (or enable) item at the specified index.
+Disables (or enables) the item at the specified index.
 
-Disabled items are not be selectable and do not trigger activation (Enter or double-click) signals.
+Disabled items cannot be selected and do not trigger activation signals (when double-clicking or pressing Enter).
 
 .. _class_ItemList_method_set_item_icon:
 
 - void **set_item_icon** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` icon **)**
 
-Set (or replace) the icon's :ref:`Texture<class_Texture>` associated with the specified index.
+Sets (or replaces) the icon's :ref:`Texture<class_Texture>` associated with the specified index.
 
 .. _class_ItemList_method_set_item_icon_modulate:
 
@@ -594,7 +588,7 @@ Sets a value (of any type) to be stored with the item associated with the specif
 
 - void **set_item_selectable** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` selectable **)**
 
-Allow or disallow selection of the item associated with the specified index.
+Allows or disallows selection of the item associated with the specified index.
 
 .. _class_ItemList_method_set_item_text:
 
@@ -606,7 +600,7 @@ Sets text of the item associated with the specified index.
 
 - void **set_item_tooltip** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**
 
-Sets tooltip hint for the item associated with the specified index.
+Sets the tooltip hint for the item associated with the specified index.
 
 .. _class_ItemList_method_set_item_tooltip_enabled:
 
@@ -624,11 +618,11 @@ Sorts items in the list by their text.
 
 - void **unselect** **(** :ref:`int<class_int>` idx **)**
 
-Ensure the item associated with the specified index is not selected.
+Ensures the item associated with the specified index is not selected.
 
 .. _class_ItemList_method_unselect_all:
 
 - void **unselect_all** **(** **)**
 
-Ensure there are no items selected.
+Ensures there are no items selected.
 

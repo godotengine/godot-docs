@@ -14,7 +14,7 @@ AudioEffectLowPassFilter
 Brief Description
 -----------------
 
-Adds a low pass filter to the Audio Bus.
+Adds a low-pass filter to the Audio bus.
 
 Description
 -----------

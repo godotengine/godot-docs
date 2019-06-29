@@ -38,7 +38,7 @@ Signals
 
 - **preview_invalidated** **(** :ref:`String<class_String>` path **)**
 
-If a preview was invalidated (changed) this signal will emit (using the path of the preview)
+Emitted if a preview was invalidated (changed). ``path`` corresponds to the path of the preview.
 
 Description
 -----------
@@ -58,7 +58,7 @@ Create an own, custom preview generator.
 
 - void **check_for_invalidation** **(** :ref:`String<class_String>` path **)**
 
-Check if the resource changed, if so it will be invalidated and the corresponding signal emitted.
+Check if the resource changed, if so, it will be invalidated and the corresponding signal emitted.
 
 .. _class_EditorResourcePreview_method_queue_edited_resource_preview:
 
@@ -76,5 +76,5 @@ Queue a resource file for preview (using a path). Once the preview is ready, you
 
 - void **remove_preview_generator** **(** :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>` generator **)**
 
-Remove a custom preview generator.
+Removes a custom preview generator.
 

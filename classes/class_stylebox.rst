@@ -137,7 +137,7 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
-Returns the content margin offset for the specified margin
+Returns the content margin offset for the specified margin.
 
 Positive values reduce size inwards, unlike :ref:`Control<class_Control>`'s margin values.
 
@@ -151,7 +151,7 @@ Returns the minimum size that this stylebox can be shrunk to.
 
 - :ref:`Vector2<class_Vector2>` **get_offset** **(** **)** const
 
-Returns the "offset" of a stylebox, this is a helper function, like writing ``Vector2(style.get_margin(MARGIN_LEFT), style.get_margin(MARGIN_TOP))``.
+Returns the "offset" of a stylebox. This helper function returns a value equivalent to ``Vector2(style.get_margin(MARGIN_LEFT), style.get_margin(MARGIN_TOP))``.
 
 .. _class_StyleBox_method_test_mask:
 

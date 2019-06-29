@@ -52,7 +52,7 @@ Methods
 Description
 -----------
 
-There are two ways to create polygons. Either by using the :ref:`add_outline<class_NavigationPolygon_method_add_outline>` method or using the :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` method.
+There are two ways to create polygons. Either by using the :ref:`add_outline<class_NavigationPolygon_method_add_outline>` method, or using the :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` method.
 
 Using :ref:`add_outline<class_NavigationPolygon_method_add_outline>`:
 

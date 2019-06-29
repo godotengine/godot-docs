@@ -14,7 +14,7 @@ EditorScenePostImport
 Brief Description
 -----------------
 
-Post process scenes after import
+Post-processes scenes after import.
 
 Methods
 -------
@@ -30,22 +30,22 @@ Methods
 Description
 -----------
 
-Imported scenes can be automatically modified right after import by setting their *Custom Script* Import property to a ``tool`` script that inherits from this class.
+Imported scenes can be automatically modified right after import by setting their **Custom Script** Import property to a ``tool`` script that inherits from this class.
 
 The :ref:`post_import<class_EditorScenePostImport_method_post_import>` callback receives the imported scene's root node and returns the modified version of the scene. Usage example:
 
 ::
 
-    tool # needed so it runs in editor
+    tool # Needed so it runs in editor
     extends EditorScenePostImport
     
     # This sample changes all node names
     
     # Called right after the scene is imported and gets the root node
     func post_import(scene):
-        # change all node names to "modified_[oldnodename]"
+        # Change all node names to "modified_[oldnodename]"
         iterate(scene)
-        return scene # remember to return the imported scene
+        return scene # Remember to return the imported scene
     
     func iterate(node):
         if node != null:
@@ -77,5 +77,5 @@ Returns the resource folder the imported scene file is located in.
 
 - :ref:`Object<class_Object>` **post_import** **(** :ref:`Object<class_Object>` scene **)** virtual
 
-Gets called after the scene got imported and has to return the modified version of the scene.
+Called after the scene was imported. This method must return the modified version of the scene.
 

@@ -14,7 +14,7 @@ StreamPeerTCP
 Brief Description
 -----------------
 
-TCP Stream peer.
+TCP stream peer.
 
 Methods
 -------
@@ -50,7 +50,7 @@ Enumerations
 
 enum **Status**:
 
-- **STATUS_NONE** = **0** --- The initial status of the ``StreamPeerTCP``, also the status after a disconnect.
+- **STATUS_NONE** = **0** --- The initial status of the ``StreamPeerTCP``. This is also the status after disconnecting.
 
 - **STATUS_CONNECTING** = **1** --- A status representing a ``StreamPeerTCP`` that is connecting to a host.
 
@@ -61,7 +61,7 @@ enum **Status**:
 Description
 -----------
 
-TCP Stream peer. This object can be used to connect to TCP servers, or also is returned by a TCP server.
+TCP stream peer. This object can be used to connect to TCP servers, or also is returned by a TCP server.
 
 Method Descriptions
 -------------------
@@ -70,13 +70,13 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
 
-Connect to the specified host:port pair. A hostname will be resolved if valid. Returns ``OK`` on success or ``FAILED`` on failure.
+Connects to the specified ``host:port`` pair. A hostname will be resolved if valid. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success or :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` on failure.
 
 .. _class_StreamPeerTCP_method_disconnect_from_host:
 
 - void **disconnect_from_host** **(** **)**
 
-Disconnect from host.
+Disconnects from host.
 
 .. _class_StreamPeerTCP_method_get_connected_host:
 
@@ -106,7 +106,7 @@ Returns ``true`` if this peer is currently connected to a host, ``false`` otherw
 
 - void **set_no_delay** **(** :ref:`bool<class_bool>` enabled **)**
 
-Disable Nagle algorithm to improve latency for small packets.
+Disables Nagle's algorithm to improve latency for small packets.
 
-Note that for applications that send large packets, or need to transfer a lot of data, this can reduce total bandwidth.
+**Note:** For applications that send large packets or need to transfer a lot of data, this can decrease the total available bandwidth.
 

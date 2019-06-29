@@ -70,7 +70,7 @@ Methods
 Description
 -----------
 
-The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_Mesh>` from script. All properties except index need to be added before a call to :ref:`add_vertex<class_SurfaceTool_method_add_vertex>`. For example adding vertex colors and UVs looks like
+The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_Mesh>` from a script. All properties except indices need to be added before calling :ref:`add_vertex<class_SurfaceTool_method_add_vertex>`. For example, to add vertex colors and UVs:
 
 ::
 
@@ -80,11 +80,11 @@ The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying
     st.add_uv(Vector2(0, 0))
     st.add_vertex(Vector3(0, 0, 0))
 
-The ``SurfaceTool`` now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_Color>`. If another vertex were added without calls to :ref:`add_uv<class_SurfaceTool_method_add_uv>` or :ref:`add_color<class_SurfaceTool_method_add_color>` then the last values would be used.
+The above ``SurfaceTool`` now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_Color>`. If another vertex were added without calling :ref:`add_uv<class_SurfaceTool_method_add_uv>` or :ref:`add_color<class_SurfaceTool_method_add_color>`, then the last values would be used.
 
-It is very important that vertex attributes are passed **before** the call to :ref:`add_vertex<class_SurfaceTool_method_add_vertex>`, failure to do this will result in an error when committing the vertex information to a mesh.
+Vertex attributes must be passed **before** calling :ref:`add_vertex<class_SurfaceTool_method_add_vertex>`. Failure to do so will result in an error when committing the vertex information to a mesh.
 
-Additionally, the attributes used before the first vertex is added determine the format of the mesh. For example if you only add UVs to the first vertex, you cannot add color to any of the subsequent vertices.
+Additionally, the attributes used before the first vertex is added determine the format of the mesh. For example, if you only add UVs to the first vertex, you cannot add color to any of the subsequent vertices.
 
 Method Descriptions
 -------------------
@@ -93,69 +93,69 @@ Method Descriptions
 
 - void **add_bones** **(** :ref:`PoolIntArray<class_PoolIntArray>` bones **)**
 
-Add an array of bones for the next Vertex to use. Array must contain 4 integers.
+Adds an array of bones for the next vertex to use. ``bones`` must contain 4 integers.
 
 .. _class_SurfaceTool_method_add_color:
 
 - void **add_color** **(** :ref:`Color<class_Color>` color **)**
 
-Specify a :ref:`Color<class_Color>` for the next Vertex to use.
+Specifies a :ref:`Color<class_Color>` for the next vertex to use.
 
 .. _class_SurfaceTool_method_add_index:
 
 - void **add_index** **(** :ref:`int<class_int>` index **)**
 
-Adds an index to index array if you are using indexed Vertices. Does not need to be called before adding Vertex.
+Adds an index to index array if you are using indexed vertices. Does not need to be called before adding vertices.
 
 .. _class_SurfaceTool_method_add_normal:
 
 - void **add_normal** **(** :ref:`Vector3<class_Vector3>` normal **)**
 
-Specify a normal for the next Vertex to use.
+Specifies a normal for the next vertex to use.
 
 .. _class_SurfaceTool_method_add_smooth_group:
 
 - void **add_smooth_group** **(** :ref:`bool<class_bool>` smooth **)**
 
-Specify whether current Vertex (if using only Vertex arrays) or current index (if also using index arrays) should utilize smooth normals for normal calculation.
+Specifies whether the current vertex (if using only vertex arrays) or current index (if also using index arrays) should use smooth normals for normal calculation.
 
 .. _class_SurfaceTool_method_add_tangent:
 
 - void **add_tangent** **(** :ref:`Plane<class_Plane>` tangent **)**
 
-Specify a Tangent for the next Vertex to use.
+Specifies a tangent for the next vertex to use.
 
 .. _class_SurfaceTool_method_add_triangle_fan:
 
 - void **add_triangle_fan** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertices, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`PoolColorArray<class_PoolColorArray>` colors=PoolColorArray(  ), :ref:`PoolVector2Array<class_PoolVector2Array>` uv2s=PoolVector2Array(  ), :ref:`PoolVector3Array<class_PoolVector3Array>` normals=PoolVector3Array(  ), :ref:`Array<class_Array>` tangents=[  ] **)**
 
-Insert a triangle fan made of array data into :ref:`Mesh<class_Mesh>` being constructed.
+Inserts a triangle fan made of array data into :ref:`Mesh<class_Mesh>` being constructed.
 
-Requires primitive type be set to ``PRIMITIVE_TRIANGLES``.
+Requires the primitive type be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 .. _class_SurfaceTool_method_add_uv:
 
 - void **add_uv** **(** :ref:`Vector2<class_Vector2>` uv **)**
 
-Specify UV Coordinate for next Vertex to use.
+Specifies a set of UV coordinates to use for the next vertex.
 
 .. _class_SurfaceTool_method_add_uv2:
 
 - void **add_uv2** **(** :ref:`Vector2<class_Vector2>` uv2 **)**
 
-Specify an optional second set of UV coordinates for next Vertex to use.
+Specifies an optional second set of UV coordinates to use for the next vertex.
 
 .. _class_SurfaceTool_method_add_vertex:
 
 - void **add_vertex** **(** :ref:`Vector3<class_Vector3>` vertex **)**
 
-Specify position of current Vertex. Should be called after specifying other vertex properties (e.g. Color, UV).
+Specifies the position of current vertex. Should be called after specifying other vertex properties (e.g. Color, UV).
 
 .. _class_SurfaceTool_method_add_weights:
 
 - void **add_weights** **(** :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
 
-Specify weight values for next Vertex to use. Array must contain 4 values.
+Specifies weight values for next vertex to use. ``weights`` must contain 4 values.
 
 .. _class_SurfaceTool_method_append_from:
 
@@ -167,7 +167,7 @@ Append vertices from a given :ref:`Mesh<class_Mesh>` surface onto the current ve
 
 - void **begin** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive **)**
 
-Called before adding any Vertices. Takes the primitive type as an argument (e.g. Mesh.PRIMITIVE_TRIANGLES).
+Called before adding any vertices. Takes the primitive type as an argument (e.g. :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`).
 
 .. _class_SurfaceTool_method_clear:
 
@@ -199,31 +199,27 @@ Creates a vertex array from an existing :ref:`Mesh<class_Mesh>`.
 
 - void **deindex** **(** **)**
 
-Removes index array by expanding Vertex array.
+Removes the index array by expanding the vertex array.
 
 .. _class_SurfaceTool_method_generate_normals:
 
 - void **generate_normals** **(** :ref:`bool<class_bool>` flip=false **)**
 
-Generates normals from Vertices so you do not have to do it manually.
+Generates normals from vertices so you do not have to do it manually. If ``flip`` is ``true``, the resulting normals will be inverted.
 
-Setting "flip" ``true`` inverts resulting normals.
-
-Requires primitive type to be set to ``PRIMITIVE_TRIANGLES``.
+Requires the primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 .. _class_SurfaceTool_method_generate_tangents:
 
 - void **generate_tangents** **(** **)**
 
-Generates a tangent vector for each vertex.
-
-Requires that each vertex have UVs and normals set already.
+Generates a tangent vector for each vertex. Requires that each vertex have UVs and normals set already.
 
 .. _class_SurfaceTool_method_index:
 
 - void **index** **(** **)**
 
-Shrinks Vertex array by creating an index array. Avoids reusing Vertices.
+Shrinks the vertex array by creating an index array (avoids reusing vertices).
 
 .. _class_SurfaceTool_method_set_material:
 

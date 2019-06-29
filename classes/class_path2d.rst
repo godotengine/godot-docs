@@ -26,9 +26,9 @@ Properties
 Description
 -----------
 
-Can have :ref:`PathFollow2D<class_PathFollow2D>` child-nodes moving along the :ref:`Curve2D<class_Curve2D>`. See :ref:`PathFollow2D<class_PathFollow2D>` for more information on this usage.
+Can have :ref:`PathFollow2D<class_PathFollow2D>` child nodes moving along the :ref:`Curve2D<class_Curve2D>`. See :ref:`PathFollow2D<class_PathFollow2D>` for more information on usage.
 
-Note that the path is considered as relative to the moved nodes (children of :ref:`PathFollow2D<class_PathFollow2D>`) - usually the curve should start with a zero vector (0, 0).
+**Note:** The path is considered as relative to the moved nodes (children of :ref:`PathFollow2D<class_PathFollow2D>`). As such, the curve should usually start with a zero vector (``(0, 0)``).
 
 Property Descriptions
 ---------------------

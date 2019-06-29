@@ -68,9 +68,9 @@ enum **Param**:
 
 - **PARAM_BIAS** = **0** --- The speed with which the two bodies get pulled together when they move in different directions.
 
-- **PARAM_LIMIT_UPPER** = **1** --- The maximum rotation. only active if :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>` is ``true``.
+- **PARAM_LIMIT_UPPER** = **1** --- The maximum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>` is ``true``.
 
-- **PARAM_LIMIT_LOWER** = **2** --- The minimum rotation. only active if :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>` is ``true``.
+- **PARAM_LIMIT_LOWER** = **2** --- The minimum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>` is ``true``.
 
 - **PARAM_LIMIT_BIAS** = **3** --- The speed with which the rotation across the axis perpendicular to the hinge gets corrected.
 
@@ -82,7 +82,7 @@ enum **Param**:
 
 - **PARAM_MOTOR_MAX_IMPULSE** = **7** --- Maximum acceleration for the motor.
 
-- **PARAM_MAX** = **8** --- End flag of PARAM\_\* constants, used internally.
+- **PARAM_MAX** = **8** --- Represents the size of the :ref:`Param<enum_HingeJoint_Param>` enum.
 
 .. _enum_HingeJoint_Flag:
 
@@ -98,12 +98,12 @@ enum **Flag**:
 
 - **FLAG_ENABLE_MOTOR** = **1** --- When activated, a motor turns the hinge.
 
-- **FLAG_MAX** = **2** --- End flag of FLAG\_\* constants, used internally.
+- **FLAG_MAX** = **2** --- Represents the size of the :ref:`Flag<enum_HingeJoint_Flag>` enum.
 
 Description
 -----------
 
-Normally uses the z-axis of body A as the hinge axis, another axis can be specified when adding it manually though.
+A HingeJoint normally uses the Z axis of body A as the hinge axis, another axis can be specified when adding it manually though.
 
 Property Descriptions
 ---------------------
@@ -136,7 +136,7 @@ If ``true``, the hinges maximum and minimum rotation, defined by :ref:`angular_l
 
 - :ref:`float<class_float>` **angular_limit/lower**
 
-The minimum rotation. only active if :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>` is ``true``.
+The minimum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>` is ``true``.
 
 .. _class_HingeJoint_property_angular_limit/relaxation:
 
@@ -164,7 +164,7 @@ The lower this value, the more the rotation gets slowed down.
 
 - :ref:`float<class_float>` **angular_limit/upper**
 
-The maximum rotation. only active if :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>` is ``true``.
+The maximum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>` is ``true``.
 
 .. _class_HingeJoint_property_motor/enable:
 

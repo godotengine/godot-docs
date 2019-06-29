@@ -61,19 +61,19 @@ Method Descriptions
 
 - void **add_custom_control** **(** :ref:`Control<class_Control>` control **)**
 
-Add a custom control, not necessarily a property editor.
+Adds a custom control, not necessarily a property editor.
 
 .. _class_EditorInspectorPlugin_method_add_property_editor:
 
 - void **add_property_editor** **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor **)**
 
-Add a property editor, this must inherit :ref:`EditorProperty<class_EditorProperty>`.
+Adds a property editor, this must inherit :ref:`EditorProperty<class_EditorProperty>`.
 
 .. _class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties:
 
 - void **add_property_editor_for_multiple_properties** **(** :ref:`String<class_String>` label, :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Control<class_Control>` editor **)**
 
-Add am editor that allows modifying multiple properties, this must inherit :ref:`EditorProperty<class_EditorProperty>`.
+Adds an editor that allows modifying multiple properties, this must inherit :ref:`EditorProperty<class_EditorProperty>`.
 
 .. _class_EditorInspectorPlugin_method_can_handle:
 

@@ -71,13 +71,13 @@ Method Descriptions
 
 - void **add_collision_triangles** **(** :ref:`TriangleMesh<class_TriangleMesh>` triangles **)**
 
-Add collision triangles to the gizmo for picking. A :ref:`TriangleMesh<class_TriangleMesh>` can be generated from a regular :ref:`Mesh<class_Mesh>` too. Call this function during :ref:`redraw<class_EditorSpatialGizmo_method_redraw>`.
+Adds collision triangles to the gizmo for picking. A :ref:`TriangleMesh<class_TriangleMesh>` can be generated from a regular :ref:`Mesh<class_Mesh>` too. Call this function during :ref:`redraw<class_EditorSpatialGizmo_method_redraw>`.
 
 .. _class_EditorSpatialGizmo_method_add_handles:
 
 - void **add_handles** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` handles, :ref:`Material<class_Material>` material, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` secondary=false **)**
 
-Add a list of handles (points) which can be used to deform the object being edited.
+Adds a list of handles (points) which can be used to deform the object being edited.
 
 There are virtual functions which will be called upon editing of these handles. Call this function during :ref:`redraw<class_EditorSpatialGizmo_method_redraw>`.
 
@@ -85,7 +85,7 @@ There are virtual functions which will be called upon editing of these handles. 
 
 - void **add_lines** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` lines, :ref:`Material<class_Material>` material, :ref:`bool<class_bool>` billboard=false **)**
 
-Add lines to the gizmo (as sets of 2 points), with a given material. The lines are used for visualizing the gizmo. Call this function during :ref:`redraw<class_EditorSpatialGizmo_method_redraw>`.
+Adds lines to the gizmo (as sets of 2 points), with a given material. The lines are used for visualizing the gizmo. Call this function during :ref:`redraw<class_EditorSpatialGizmo_method_redraw>`.
 
 .. _class_EditorSpatialGizmo_method_add_mesh:
 
@@ -95,7 +95,7 @@ Add lines to the gizmo (as sets of 2 points), with a given material. The lines a
 
 - void **add_unscaled_billboard** **(** :ref:`Material<class_Material>` material, :ref:`float<class_float>` default_scale=1 **)**
 
-Add an unscaled billboard for visualization. Call this function during :ref:`redraw<class_EditorSpatialGizmo_method_redraw>`.
+Adds an unscaled billboard for visualization. Call this function during :ref:`redraw<class_EditorSpatialGizmo_method_redraw>`.
 
 .. _class_EditorSpatialGizmo_method_clear:
 
@@ -107,13 +107,13 @@ Add an unscaled billboard for visualization. Call this function during :ref:`red
 
 Commit a handle being edited (handles must have been previously added by :ref:`add_handles<class_EditorSpatialGizmo_method_add_handles>`).
 
-If the cancel parameter is ``true``, an option to restore the edited value to the original is provided.
+If the ``cancel`` parameter is ``true``, an option to restore the edited value to the original is provided.
 
 .. _class_EditorSpatialGizmo_method_get_handle_name:
 
 - :ref:`String<class_String>` **get_handle_name** **(** :ref:`int<class_int>` index **)** virtual
 
-Get the name of an edited handle (handles must have been previously added by :ref:`add_handles<class_EditorSpatialGizmo_method_add_handles>`).
+Gets the name of an edited handle (handles must have been previously added by :ref:`add_handles<class_EditorSpatialGizmo_method_add_handles>`).
 
 Handles can be named for reference to the user when editing.
 
@@ -121,7 +121,7 @@ Handles can be named for reference to the user when editing.
 
 - :ref:`Variant<class_Variant>` **get_handle_value** **(** :ref:`int<class_int>` index **)** virtual
 
-Get actual value of a handle. This value can be anything and used for eventually undoing the motion when calling :ref:`commit_handle<class_EditorSpatialGizmo_method_commit_handle>`.
+Gets actual value of a handle. This value can be anything and used for eventually undoing the motion when calling :ref:`commit_handle<class_EditorSpatialGizmo_method_commit_handle>`.
 
 .. _class_EditorSpatialGizmo_method_get_plugin:
 
@@ -139,7 +139,7 @@ Returns the Spatial node associated with this gizmo.
 
 - :ref:`bool<class_bool>` **is_handle_highlighted** **(** :ref:`int<class_int>` index **)** virtual
 
-Get whether a handle is highlighted or not.
+Gets whether a handle is highlighted or not.
 
 .. _class_EditorSpatialGizmo_method_redraw:
 

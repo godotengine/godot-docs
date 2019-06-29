@@ -51,7 +51,7 @@ Property Descriptions
 | *Getter* | get_scroll_base_offset()      |
 +----------+-------------------------------+
 
-Base position offset of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
+The base position offset for all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 
 .. _class_ParallaxBackground_property_scroll_base_scale:
 
@@ -63,7 +63,7 @@ Base position offset of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 | *Getter* | get_scroll_base_scale()      |
 +----------+------------------------------+
 
-Base motion scale of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
+The base motion scale for all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 
 .. _class_ParallaxBackground_property_scroll_ignore_camera_zoom:
 
@@ -87,7 +87,7 @@ If ``true``, elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't 
 | *Getter* | get_limit_begin()      |
 +----------+------------------------+
 
-Top left limits for scrolling to begin. If the camera is outside of this limit the background will stop scrolling. Must be lower than :ref:`scroll_limit_end<class_ParallaxBackground_property_scroll_limit_end>` to work.
+Top-left limits for scrolling to begin. If the camera is outside of this limit, the background will stop scrolling. Must be lower than :ref:`scroll_limit_end<class_ParallaxBackground_property_scroll_limit_end>` to work.
 
 .. _class_ParallaxBackground_property_scroll_limit_end:
 
@@ -99,7 +99,7 @@ Top left limits for scrolling to begin. If the camera is outside of this limit t
 | *Getter* | get_limit_end()      |
 +----------+----------------------+
 
-Right bottom limits for scrolling to end. If the camera is outside of this limit the background will stop scrolling. Must be higher than :ref:`scroll_limit_begin<class_ParallaxBackground_property_scroll_limit_begin>` to work.
+Bottom-right limits for scrolling to end. If the camera is outside of this limit, the background will stop scrolling. Must be higher than :ref:`scroll_limit_begin<class_ParallaxBackground_property_scroll_limit_begin>` to work.
 
 .. _class_ParallaxBackground_property_scroll_offset:
 

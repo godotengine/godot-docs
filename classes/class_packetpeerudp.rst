@@ -51,7 +51,7 @@ Method Descriptions
 
 - void **close** **(** **)**
 
-Close the UDP socket the ``PacketPeerUDP`` is currently listening on.
+Closes the UDP socket the ``PacketPeerUDP`` is currently listening on.
 
 .. _class_PacketPeerUDP_method_get_packet_ip:
 
@@ -75,7 +75,7 @@ Returns whether this ``PacketPeerUDP`` is listening.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **join_multicast_group** **(** :ref:`String<class_String>` multicast_address, :ref:`String<class_String>` interface_name **)**
 
-Join the multicast group specified by ``multicast_address`` using the interface identified by ``interface_name``.
+Joins the multicast group specified by ``multicast_address`` using the interface identified by ``interface_name``.
 
 You can join the same multicast group with multiple interfaces. Use :ref:`IP.get_local_interfaces<class_IP_method_get_local_interfaces>` to know which are available.
 
@@ -83,29 +83,29 @@ You can join the same multicast group with multiple interfaces. Use :ref:`IP.get
 
 - :ref:`Error<enum_@GlobalScope_Error>` **leave_multicast_group** **(** :ref:`String<class_String>` multicast_address, :ref:`String<class_String>` interface_name **)**
 
-Remove the interface identified by ``interface_name`` from the multicast group specified by ``multicast_address``.
+Removes the interface identified by ``interface_name`` from the multicast group specified by ``multicast_address``.
 
 .. _class_PacketPeerUDP_method_listen:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`int<class_int>` recv_buf_size=65536 **)**
 
-Make this ``PacketPeerUDP`` listen on the "port" binding to "bind_address" with a buffer size "recv_buf_size".
+Makes this ``PacketPeerUDP`` listen on the ``port`` binding to ``bind_address`` with a buffer size ``recv_buf_size``.
 
-If "bind_address" is set as "\*" (default), the peer will listen on all available addresses (both IPv4 and IPv6).
+If ``bind_address`` is set to ``"*"`` (default), the peer will listen on all available addresses (both IPv4 and IPv6).
 
-If "bind_address" is set as "0.0.0.0" (for IPv4) or "::" (for IPv6), the peer will listen on all available addresses matching that IP type.
+If ``bind_address`` is set to ``"0.0.0.0"`` (for IPv4) or ``"::"`` (for IPv6), the peer will listen on all available addresses matching that IP type.
 
-If "bind_address" is set to any valid address (e.g. "192.168.1.101", "::1", etc), the peer will only listen on the interface with that addresses (or fail if no interface with the given address exists).
+If ``bind_address`` is set to any valid address (e.g. ``"192.168.1.101"``, ``"::1"``, etc), the peer will only listen on the interface with that addresses (or fail if no interface with the given address exists).
 
 .. _class_PacketPeerUDP_method_set_dest_address:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **set_dest_address** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
 
-Set the destination address and port for sending packets and variables, a hostname will be resolved using if valid.
+Sets the destination address and port for sending packets and variables. A hostname will be resolved using DNS if needed.
 
 .. _class_PacketPeerUDP_method_wait:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
 
-Wait for a packet to arrive on the listening port, see :ref:`listen<class_PacketPeerUDP_method_listen>`.
+Waits for a packet to arrive on the listening port. See :ref:`listen<class_PacketPeerUDP_method_listen>`.
 

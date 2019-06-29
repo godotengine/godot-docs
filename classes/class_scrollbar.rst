@@ -32,12 +32,12 @@ Signals
 
 - **scrolling** **(** **)**
 
-Emitted whenever the scrollbar is being scrolled.
+Emitted when the scrollbar is being scrolled.
 
 Description
 -----------
 
-Scrollbars are a :ref:`Range<class_Range>` based :ref:`Control<class_Control>`, that display a draggable area (the size of the page). Horizontal (:ref:`HScrollBar<class_HScrollBar>`) and Vertical (:ref:`VScrollBar<class_VScrollBar>`) versions are available.
+Scrollbars are a :ref:`Range<class_Range>`-based :ref:`Control<class_Control>`, that display a draggable area (the size of the page). Horizontal (:ref:`HScrollBar<class_HScrollBar>`) and Vertical (:ref:`VScrollBar<class_VScrollBar>`) versions are available.
 
 Property Descriptions
 ---------------------

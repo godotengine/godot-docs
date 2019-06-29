@@ -16,7 +16,7 @@ AudioEffect
 Brief Description
 -----------------
 
-Audio Effect For Audio.
+Audio effect for audio.
 
 Description
 -----------

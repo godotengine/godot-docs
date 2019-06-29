@@ -14,7 +14,7 @@ Area
 Brief Description
 -----------------
 
-General purpose area node for detection and 3D physics influence.
+General-purpose area node for detection and 3D physics influence.
 
 Properties
 ----------
@@ -266,7 +266,7 @@ The falloff factor for point gravity. The greater the value, the faster gravity 
 | *Getter* | is_gravity_a_point()        |
 +----------+-----------------------------+
 
-If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area_property_gravity_vec>`). Also see :ref:`space_override<class_Area_property_space_override>`. Default value: ``false``.
+If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area_property_gravity_vec>`). See also :ref:`space_override<class_Area_property_space_override>`. Default value: ``false``.
 
 .. _class_Area_property_gravity_vec:
 
@@ -419,13 +419,17 @@ Returns a list of intersecting :ref:`PhysicsBody<class_PhysicsBody>`\ s. For per
 
 - :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** const
 
-If ``true``, the given area overlaps the Area. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+If ``true``, the given area overlaps the Area.
+
+**Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_Area_method_overlaps_body:
 
 - :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** const
 
-If ``true``, the given physics body overlaps the Area. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+If ``true``, the given physics body overlaps the Area.
+
+**Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 

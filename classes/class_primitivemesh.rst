@@ -87,5 +87,5 @@ Method Descriptions
 
 - :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** const
 
-Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. Mesh array can be used with :ref:`ArrayMesh<class_ArrayMesh>` to create new surface.
+Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. Mesh arrays can be used with :ref:`ArrayMesh<class_ArrayMesh>` to create new surfaces.
 

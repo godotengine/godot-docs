@@ -14,7 +14,7 @@ AudioEffectPanner
 Brief Description
 -----------------
 
-Adds a Panner audio effect to an Audio bus. Pans sound left or right.
+Adds a panner audio effect to an Audio bus. Pans sound left or right.
 
 Properties
 ----------

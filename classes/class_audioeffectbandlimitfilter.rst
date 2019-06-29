@@ -14,7 +14,7 @@ AudioEffectBandLimitFilter
 Brief Description
 -----------------
 
-Adds a band limit filter to the Audio Bus.
+Adds a band limit filter to the audio bus.
 
 Description
 -----------

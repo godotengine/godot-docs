@@ -47,13 +47,13 @@ Signals
 
 - **about_to_show** **(** **)**
 
-This signal is emitted when a popup is about to be shown. (often used in :ref:`PopupMenu<class_PopupMenu>` for clearing the list of options and creating a new one according to the current context).
+Emitted when a popup is about to be shown. This is often used in :ref:`PopupMenu<class_PopupMenu>` to clear the list of options then create a new one according to the current context.
 
 .. _class_Popup_signal_popup_hide:
 
 - **popup_hide** **(** **)**
 
-This signal is emitted when a popup is hidden.
+Emitted when a popup is hidden.
 
 Constants
 ---------
@@ -99,7 +99,7 @@ Popup (show the control in modal form).
 
 - void **popup_centered** **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**
 
-Popup (show the control in modal form) in the center of the screen relative to its current canvas transform, at the current size, or at a size determined by "size".
+Popup (show the control in modal form) in the center of the screen relative to its current canvas transform, at the current size, or at a size determined by ``size``.
 
 .. _class_Popup_method_popup_centered_clamped:
 

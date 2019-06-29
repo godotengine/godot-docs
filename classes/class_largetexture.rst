@@ -14,7 +14,7 @@ LargeTexture
 Brief Description
 -----------------
 
-A Texture capable of storing many smaller Textures with offsets.
+A :ref:`Texture<class_Texture>` capable of storing many smaller textures with offsets.
 
 Methods
 -------
@@ -40,9 +40,9 @@ Methods
 Description
 -----------
 
-A Texture capable of storing many smaller Textures with offsets.
+A :ref:`Texture<class_Texture>` capable of storing many smaller textures with offsets.
 
-You can dynamically add pieces(:ref:`Texture<class_Texture>`) to this ``LargeTexture`` using different offsets.
+You can dynamically add pieces (:ref:`Texture<class_Texture>`\ s) to this ``LargeTexture`` using different offsets.
 
 Method Descriptions
 -------------------
@@ -51,7 +51,7 @@ Method Descriptions
 
 - :ref:`int<class_int>` **add_piece** **(** :ref:`Vector2<class_Vector2>` ofs, :ref:`Texture<class_Texture>` texture **)**
 
-Add another :ref:`Texture<class_Texture>` to this ``LargeTexture``, starting on offset "ofs".
+Adds ``texture`` to this ``LargeTexture``, starting on offset ``ofs``.
 
 .. _class_LargeTexture_method_clear:
 
@@ -69,25 +69,25 @@ Returns the number of pieces currently in this ``LargeTexture``.
 
 - :ref:`Vector2<class_Vector2>` **get_piece_offset** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the offset of the piece with index "idx".
+Returns the offset of the piece with the index ``idx``.
 
 .. _class_LargeTexture_method_get_piece_texture:
 
 - :ref:`Texture<class_Texture>` **get_piece_texture** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the :ref:`Texture<class_Texture>` of the piece with index "idx".
+Returns the :ref:`Texture<class_Texture>` of the piece with the index ``idx``.
 
 .. _class_LargeTexture_method_set_piece_offset:
 
 - void **set_piece_offset** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` ofs **)**
 
-Sets the offset of the piece with index "idx" to "ofs".
+Sets the offset of the piece with the index ``idx`` to ``ofs``.
 
 .. _class_LargeTexture_method_set_piece_texture:
 
 - void **set_piece_texture** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` texture **)**
 
-Sets the :ref:`Texture<class_Texture>` of the piece with index "idx" to "texture".
+Sets the :ref:`Texture<class_Texture>` of the piece with index ``idx`` to ``texture``.
 
 .. _class_LargeTexture_method_set_size:
 

@@ -71,7 +71,7 @@ enum **TimerProcessMode**:
 Description
 -----------
 
-Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one shot" mode.
+Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.
 
 Property Descriptions
 ---------------------
@@ -134,7 +134,7 @@ Processing mode. See :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>`.
 
 The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 
-Note: You cannot set this value. To change the timer's remaining time, use :ref:`wait_time<class_Timer_property_wait_time>`.
+**Note:** You cannot set this value. To change the timer's remaining time, use :ref:`wait_time<class_Timer_property_wait_time>`.
 
 .. _class_Timer_property_wait_time:
 
@@ -163,7 +163,7 @@ Returns ``true`` if the timer is stopped.
 
 Starts the timer. Sets ``wait_time`` to ``time_sec`` if ``time_sec > 0``. This also resets the remaining time to ``wait_time``.
 
-Note: this method will not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
+**Note:** this method will not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
 
 .. _class_Timer_method_stop:
 

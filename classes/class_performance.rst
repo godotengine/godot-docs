@@ -14,7 +14,7 @@ Performance
 Brief Description
 -----------------
 
-Exposes performance related data.
+Exposes performance-related data.
 
 Methods
 -------
@@ -90,11 +90,11 @@ Enumerations
 
 enum **Monitor**:
 
-- **TIME_FPS** = **0** --- Frames per second.
+- **TIME_FPS** = **0** --- Number of frames per second.
 
-- **TIME_PROCESS** = **1** --- Time it took to complete one frame.
+- **TIME_PROCESS** = **1** --- Time it took to complete one frame, in seconds.
 
-- **TIME_PHYSICS_PROCESS** = **2** --- Time it took to complete one physics frame.
+- **TIME_PHYSICS_PROCESS** = **2** --- Time it took to complete one physics frame, in seconds.
 
 - **MEMORY_STATIC** = **3** --- Static memory currently used, in bytes. Not available in release builds.
 
@@ -112,13 +112,13 @@ enum **Monitor**:
 
 - **OBJECT_NODE_COUNT** = **10** --- Number of nodes currently instanced in the scene tree. This also includes the root node.
 
-- **OBJECT_ORPHAN_NODE_COUNT** = **11**
+- **OBJECT_ORPHAN_NODE_COUNT** = **11** --- Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree.
 
 - **RENDER_OBJECTS_IN_FRAME** = **12** --- 3D objects drawn per frame.
 
 - **RENDER_VERTICES_IN_FRAME** = **13** --- Vertices drawn per frame. 3D only.
 
-- **RENDER_MATERIAL_CHANGES_IN_FRAME** = **14** --- Material changes per frame. 3D only
+- **RENDER_MATERIAL_CHANGES_IN_FRAME** = **14** --- Material changes per frame. 3D only.
 
 - **RENDER_SHADER_CHANGES_IN_FRAME** = **15** --- Shader changes per frame. 3D only.
 
@@ -126,13 +126,13 @@ enum **Monitor**:
 
 - **RENDER_DRAW_CALLS_IN_FRAME** = **17** --- Draw calls per frame. 3D only.
 
-- **RENDER_VIDEO_MEM_USED** = **18** --- Video memory used. Includes both texture and vertex memory.
+- **RENDER_VIDEO_MEM_USED** = **18** --- The amount of video memory used, i.e. texture and vertex memory combined.
 
-- **RENDER_TEXTURE_MEM_USED** = **19** --- Texture memory used.
+- **RENDER_TEXTURE_MEM_USED** = **19** --- The amount of texture memory used.
 
-- **RENDER_VERTEX_MEM_USED** = **20** --- Vertex memory used.
+- **RENDER_VERTEX_MEM_USED** = **20** --- The amount of vertex memory used.
 
-- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **21**
+- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **21** --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
 
 - **PHYSICS_2D_ACTIVE_OBJECTS** = **22** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
 
@@ -146,16 +146,18 @@ enum **Monitor**:
 
 - **PHYSICS_3D_ISLAND_COUNT** = **27** --- Number of islands in the 3D physics engine.
 
-- **AUDIO_OUTPUT_LATENCY** = **28**
+- **AUDIO_OUTPUT_LATENCY** = **28** --- Output latency of the :ref:`AudioServer<class_AudioServer>`.
 
-- **MONITOR_MAX** = **29**
+- **MONITOR_MAX** = **29** --- Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
 
 Description
 -----------
 
-This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same as the values displayed in the *Monitor* tab in the editor's *Debugger* panel. By using the :ref:`get_monitor<class_Performance_method_get_monitor>` method of this class, you can access this data from your code. Note that a few of these monitors are only available in debug mode and will always return 0 when used in a release build.
+This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same as the values displayed in the **Monitor** tab in the editor's **Debugger** panel. By using the :ref:`get_monitor<class_Performance_method_get_monitor>` method of this class, you can access this data from your code.
 
-Many of these monitors are not updated in real-time, so there may be a short delay between changes.
+**Note:** A few of these monitors are only available in debug mode and will always return 0 when used in a release build.
+
+**Note:** Many of these monitors are not updated in real-time, so there may be a short delay between changes.
 
 Method Descriptions
 -------------------
@@ -164,7 +166,7 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const
 
-Returns the value of one of the available monitors. You should provide one of this class's constants as the argument, like this:
+Returns the value of one of the available monitors. You should provide one of the :ref:`Monitor<enum_Performance_Monitor>` constants as the argument, like this:
 
 ::
 

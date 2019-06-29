@@ -16,7 +16,7 @@ Shape2D
 Brief Description
 -----------------
 
-Base class for all 2D Shapes.
+Base class for all 2D shapes.
 
 Properties
 ----------
@@ -41,7 +41,7 @@ Methods
 Description
 -----------
 
-Base class for all 2D Shapes. All 2D shape types inherit from this.
+Base class for all 2D shapes. All 2D shape types inherit from this.
 
 Tutorials
 ---------

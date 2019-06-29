@@ -40,11 +40,11 @@ Enumerations
 
 enum **CullMode**:
 
-- **CULL_DISABLED** = **0** --- Culling mode for the occlusion. Disabled means no culling. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+- **CULL_DISABLED** = **0** --- Culling is disabled. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
 
-- **CULL_CLOCKWISE** = **1** --- Culling mode for the occlusion. Sets the culling to be in clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+- **CULL_CLOCKWISE** = **1** --- Culling is performed in the clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
 
-- **CULL_COUNTER_CLOCKWISE** = **2** --- Culling mode for the occlusion. Sets the culling to be in counter clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+- **CULL_COUNTER_CLOCKWISE** = **2** --- Culling is performed in the counterclockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
 
 Description
 -----------
@@ -64,7 +64,7 @@ Property Descriptions
 | *Getter* | is_closed()       |
 +----------+-------------------+
 
-If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value ``true``.
+If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value: ``true``.
 
 .. _class_OccluderPolygon2D_property_cull_mode:
 
@@ -76,7 +76,7 @@ If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light c
 | *Getter* | get_cull_mode()      |
 +----------+----------------------+
 
-Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default value ``DISABLED``.
+The culling mode to use. Default value: :ref:`CULL_DISABLED<class_OccluderPolygon2D_constant_CULL_DISABLED>`.
 
 .. _class_OccluderPolygon2D_property_polygon:
 
@@ -88,5 +88,7 @@ Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default v
 | *Getter* | get_polygon()      |
 +----------+--------------------+
 
-A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions. Note that the returned value is a copy of the underlying array, rather than a reference.
+A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
+
+**Note:** The returned value is a copy of the underlying array, rather than a reference.
 

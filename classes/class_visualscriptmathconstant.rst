@@ -64,7 +64,7 @@ enum **MathConstant**:
 
 - **MATH_CONSTANT_NAN** = **7** --- Not a number: ``nan``
 
-- **MATH_CONSTANT_MAX** = **8**
+- **MATH_CONSTANT_MAX** = **8** --- Represents the size of the :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` enum.
 
 Description
 -----------

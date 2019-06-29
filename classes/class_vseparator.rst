@@ -28,5 +28,5 @@ Theme Properties
 Description
 -----------
 
-Vertical version of :ref:`Separator<class_Separator>`. It is used to separate objects horizontally, though (but it looks vertical!).
+Vertical version of :ref:`Separator<class_Separator>`. Even though it looks vertical, it is used to separate objects horizontally.
 

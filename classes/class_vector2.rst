@@ -136,13 +136,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **x**
 
-The vector's x component. Also accessible by using the index position ``[0]``.
+The vector's X component. Also accessible by using the index position ``[0]``.
 
 .. _class_Vector2_property_y:
 
 - :ref:`float<class_float>` **y**
 
-The vector's y component. Also accessible by using the index position ``[1]``.
+The vector's Y component. Also accessible by using the index position ``[1]``.
 
 Method Descriptions
 -------------------
@@ -151,7 +151,7 @@ Method Descriptions
 
 - :ref:`Vector2<class_Vector2>` **Vector2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
-Constructs a new Vector2 from the given x and y.
+Constructs a new Vector2 from the given ``x`` and ``y``.
 
 .. _class_Vector2_method_abs:
 
@@ -163,9 +163,9 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 - :ref:`float<class_float>` **angle** **(** **)**
 
-Returns the vector's angle in radians with respect to the x-axis, or ``(1, 0)`` vector.
+Returns the vector's angle in radians with respect to the X axis, or ``(1, 0)`` vector.
 
-Equivalent to the result of atan2 when called with the vector's x and y as parameters: ``atan2(x, y)``.
+Equivalent to the result of :ref:`@GDScript.atan2<class_@GDScript_method_atan2>` when called with the vector's :ref:`x<class_Vector2_property_x>` and :ref:`y<class_Vector2_property_y>` as parameters: ``atan2(x, y)``.
 
 .. _class_Vector2_method_angle_to:
 
@@ -177,13 +177,13 @@ Returns the angle in radians between the two vectors.
 
 - :ref:`float<class_float>` **angle_to_point** **(** :ref:`Vector2<class_Vector2>` to **)**
 
-Returns the angle in radians between the line connecting the two points and the x coordinate.
+Returns the angle in radians between the line connecting the two points and the X coordinate.
 
 .. _class_Vector2_method_aspect:
 
 - :ref:`float<class_float>` **aspect** **(** **)**
 
-Returns the ratio of x to y.
+Returns the ratio of :ref:`x<class_Vector2_property_x>` to :ref:`y<class_Vector2_property_y>`.
 
 .. _class_Vector2_method_bounce:
 
@@ -207,13 +207,13 @@ Returns the vector with a maximum length.
 
 - :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_Vector2>` with **)**
 
-Returns the 2 dimensional analog of the cross product with the given vector.
+Returns the 2-dimensional analog of the cross product with the given vector.
 
 .. _class_Vector2_method_cubic_interpolate:
 
 - :ref:`Vector2<class_Vector2>` **cubic_interpolate** **(** :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` pre_a, :ref:`Vector2<class_Vector2>` post_b, :ref:`float<class_float>` t **)**
 
-Cubicly interpolates between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+Cubically interpolates between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
 .. _class_Vector2_method_direction_to:
 
@@ -309,9 +309,9 @@ Returns the vector with all components rounded to the nearest integer, with half
 
 - :ref:`Vector2<class_Vector2>` **slerp** **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of SLERP between this vector and ``b``, by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+Returns the result of spherical linear interpolation between this vector and ``b``, by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
-Both vectors need to be normalized.
+**Note:** Both vectors must be normalized.
 
 .. _class_Vector2_method_slide:
 

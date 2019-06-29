@@ -14,7 +14,7 @@ TabContainer
 Brief Description
 -----------------
 
-Tabbed Container.
+Tabbed container.
 
 Properties
 ----------
@@ -250,7 +250,7 @@ Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
 - :ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** const
 
-Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or null if the tab has no :ref:`Texture<class_Texture>`.
+Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or ``null`` if the tab has no :ref:`Texture<class_Texture>`.
 
 .. _class_TabContainer_method_get_tab_title:
 
@@ -274,7 +274,9 @@ If set on a :ref:`Popup<class_Popup>` node instance, a popup menu icon appears i
 
 - void **set_tab_disabled** **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**
 
-If ``disabled`` is ``false``, hides the tab at index ``tab_idx``. Note that its title text will remain, unless also removed with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
+If ``disabled`` is ``false``, hides the tab at index ``tab_idx``.
+
+**Note:** Its title text will remain, unless also removed with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
 
 .. _class_TabContainer_method_set_tab_icon:
 

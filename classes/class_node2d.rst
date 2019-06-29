@@ -16,7 +16,7 @@ Node2D
 Brief Description
 -----------------
 
-A 2D game object, parent of all 2D related nodes. Has a position, rotation, scale and Z-index.
+A 2D game object, parent of all 2D-related nodes. Has a position, rotation, scale and Z index.
 
 Properties
 ----------
@@ -193,7 +193,7 @@ Rotation in degrees, relative to the node's parent.
 | *Getter* | get_scale()      |
 +----------+------------------+
 
-The node's scale. Unscaled value: ``(1, 1)``
+The node's scale. Unscaled value: ``(1, 1)``.
 
 .. _class_Node2D_property_transform:
 
@@ -217,7 +217,7 @@ Local :ref:`Transform2D<class_Transform2D>`.
 | *Getter* | is_z_relative()          |
 +----------+--------------------------+
 
-If ``true``, the node's Z-index is relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
+If ``true``, the node's Z index is relative to its parent's Z index. If this node's Z index is 2 and its parent's effective Z index is 3, then this node's effective Z index will be 2 + 3 = 5.
 
 .. _class_Node2D_property_z_index:
 
@@ -229,7 +229,7 @@ If ``true``, the node's Z-index is relative to its parent's Z-index. If this nod
 | *Getter* | get_z_index()      |
 +----------+--------------------+
 
-Z-index. Controls the order in which the nodes render. A node with a higher Z-index will display in front of others.
+Z index. Controls the order in which the nodes render. A node with a higher Z index will display in front of others.
 
 Method Descriptions
 -------------------
@@ -238,13 +238,13 @@ Method Descriptions
 
 - void **apply_scale** **(** :ref:`Vector2<class_Vector2>` ratio **)**
 
-Multiplies the current scale by the 'ratio' vector.
+Multiplies the current scale by the ``ratio`` vector.
 
 .. _class_Node2D_method_get_angle_to:
 
 - :ref:`float<class_float>` **get_angle_to** **(** :ref:`Vector2<class_Vector2>` point **)** const
 
-Returns the angle between the node and the 'point' in radians.
+Returns the angle between the node and the ``point`` in radians.
 
 .. _class_Node2D_method_get_relative_transform_to_parent:
 
@@ -256,13 +256,13 @@ Returns the :ref:`Transform2D<class_Transform2D>` relative to this node's parent
 
 - void **global_translate** **(** :ref:`Vector2<class_Vector2>` offset **)**
 
-Adds the 'offset' vector to the node's global position.
+Adds the ``offset`` vector to the node's global position.
 
 .. _class_Node2D_method_look_at:
 
 - void **look_at** **(** :ref:`Vector2<class_Vector2>` point **)**
 
-Rotates the node so it points towards the 'point'.
+Rotates the node so it points towards the ``point``.
 
 .. _class_Node2D_method_move_local_x:
 

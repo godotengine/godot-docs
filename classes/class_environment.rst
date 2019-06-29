@@ -226,7 +226,7 @@ enum **BGMode**:
 
 - **BG_CAMERA_FEED** = **6** --- Display a camera feed in the background.
 
-- **BG_MAX** = **7** --- Helper constant keeping track of the enum's size, has no direct usage in API calls.
+- **BG_MAX** = **7** --- Represents the size of the :ref:`BGMode<enum_Environment_BGMode>` enum.
 
 .. _enum_Environment_GlowBlendMode:
 
@@ -244,7 +244,7 @@ enum **GlowBlendMode**:
 
 - **GLOW_BLEND_MODE_SCREEN** = **1** --- Screen glow blending mode. Increases brightness, used frequently with bloom.
 
-- **GLOW_BLEND_MODE_SOFTLIGHT** = **2** --- Softlight glow blending mode. Modifies contrast, exposes shadows and highlights, vivid bloom.
+- **GLOW_BLEND_MODE_SOFTLIGHT** = **2** --- Soft light glow blending mode. Modifies contrast, exposes shadows and highlights, vivid bloom.
 
 - **GLOW_BLEND_MODE_REPLACE** = **3** --- Replace glow blending mode. Replaces all pixels' color by the glow value.
 
@@ -262,7 +262,7 @@ enum **ToneMapper**:
 
 - **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and performs an exposure adjustment.
 
-- **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: color = color / (1 + color).
+- **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``.
 
 - **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator.
 
@@ -325,13 +325,11 @@ Description
 
 Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironment>`) that define multiple environment operations (such as background :ref:`Sky<class_Sky>` or :ref:`Color<class_Color>`, ambient light, fog, depth-of-field...). These parameters affect the final render of the scene. The order of these operations is:
 
-- DOF Blur
+- Depth of Field Blur
 
-- Motion Blur
+- Glow
 
-- Bloom
-
-- Tonemap (auto exposure)
+- Tonemap (Auto Exposure)
 
 - Adjustments
 

@@ -45,7 +45,7 @@ Methods
 Description
 -----------
 
-PacketPeer is an abstraction and base class for packet-based protocols (such as UDP). It provides an API for sending and receiving packets both as raw data or variables. This makes it easy to transfer data over a protocol, without having to encode data as low level bytes or having to worry about network ordering.
+PacketPeer is an abstraction and base class for packet-based protocols (such as UDP). It provides an API for sending and receiving packets both as raw data or variables. This makes it easy to transfer data over a protocol, without having to encode data as low-level bytes or having to worry about network ordering.
 
 Property Descriptions
 ---------------------
@@ -60,11 +60,11 @@ Property Descriptions
 | *Getter* | is_object_decoding_allowed()     |
 +----------+----------------------------------+
 
-Deprecated. Use ``get_var`` and ``put_var`` parameters instead.
+*Deprecated.* Use ``get_var`` and ``put_var`` parameters instead.
 
-If ``true`` the PacketPeer will allow encoding and decoding of object via :ref:`get_var<class_PacketPeer_method_get_var>` and :ref:`put_var<class_PacketPeer_method_put_var>`.
+If ``true``, the PacketPeer will allow encoding and decoding of object via :ref:`get_var<class_PacketPeer_method_get_var>` and :ref:`put_var<class_PacketPeer_method_put_var>`.
 
-**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
+**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 Method Descriptions
 -------------------
@@ -79,7 +79,7 @@ Returns the number of packets currently available in the ring-buffer.
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **get_packet** **(** **)**
 
-Get a raw packet.
+Gets a raw packet.
 
 .. _class_PacketPeer_method_get_packet_error:
 
@@ -91,19 +91,19 @@ Returns the error state of the last packet received (via :ref:`get_packet<class_
 
 - :ref:`Variant<class_Variant>` **get_var** **(** :ref:`bool<class_bool>` allow_objects=false **)**
 
-Get a Variant. When ``allow_objects`` (or :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`) is ``true`` decoding objects is allowed.
+Gets a Variant. If ``allow_objects`` (or :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`) is ``true``, decoding objects is allowed.
 
-**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
+**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 .. _class_PacketPeer_method_put_packet:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **put_packet** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
-Send a raw packet.
+Sends a raw packet.
 
 .. _class_PacketPeer_method_put_var:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **put_var** **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)**
 
-Send a Variant as a packet. When ``full_objects`` (or :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`) is ``true`` encoding objects is allowed (and can potentially include code).
+Sends a :ref:`Variant<class_Variant>` as a packet. If ``full_objects`` (or :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`) is ``true``, encoding objects is allowed (and can potentially include code).
 

@@ -16,7 +16,7 @@ Mesh
 Brief Description
 -----------------
 
-A :ref:`Resource<class_Resource>` that contains vertex-array based geometry.
+A :ref:`Resource<class_Resource>` that contains vertex array-based geometry.
 
 Properties
 ----------
@@ -231,12 +231,12 @@ enum **ArrayType**:
 
 - **ARRAY_INDEX** = **8** --- Array of indices.
 
-- **ARRAY_MAX** = **9**
+- **ARRAY_MAX** = **9** --- Represents the size of the :ref:`ArrayType<enum_Mesh_ArrayType>` enum.
 
 Description
 -----------
 
-Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex-array based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
+Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
 
 Property Descriptions
 ---------------------
@@ -264,7 +264,9 @@ Calculate a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` from the mesh.
 
 - :ref:`Mesh<class_Mesh>` **create_outline** **(** :ref:`float<class_float>` margin **)** const
 
-Calculate an outline mesh at a defined offset (margin) from the original mesh. Note: Typically returns the vertices in reverse order (e.g. clockwise to anti-clockwise).
+Calculate an outline mesh at a defined offset (margin) from the original mesh.
+
+**Note:** This method typically returns the vertices in reverse order (e.g. clockwise to counterclockwise).
 
 .. _class_Mesh_method_create_trimesh_shape:
 
@@ -312,5 +314,5 @@ Returns a :ref:`Material<class_Material>` in a given surface. Surface is rendere
 
 - void **surface_set_material** **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)**
 
-Set a :ref:`Material<class_Material>` for a given surface. Surface will be rendered using this material.
+Sets a :ref:`Material<class_Material>` for a given surface. Surface will be rendered using this material.
 

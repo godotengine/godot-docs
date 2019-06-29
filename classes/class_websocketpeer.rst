@@ -46,9 +46,9 @@ Enumerations
 
 enum **WriteMode**:
 
-- **WRITE_MODE_TEXT** = **0** --- Specify that WebSockets messages should be transferred as text payload (only valid UTF-8 is allowed).
+- **WRITE_MODE_TEXT** = **0** --- Specifies that WebSockets messages should be transferred as text payload (only valid UTF-8 is allowed).
 
-- **WRITE_MODE_BINARY** = **1** --- Specify that WebSockets messages should be transferred as binary payload (any byte combination is allowed).
+- **WRITE_MODE_BINARY** = **1** --- Specifies that WebSockets messages should be transferred as binary payload (any byte combination is allowed).
 
 Description
 -----------
@@ -64,29 +64,33 @@ Method Descriptions
 
 - void **close** **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
-Close this WebSocket connection. ``code`` is the status code for the closure (see RFC6455 section 7.4 for a list of valid status codes). ``reason`` is the human readable reason for closing the connection (can be any UTF8 string, must be less than 123 bytes).
+Closes this WebSocket connection. ``code`` is the status code for the closure (see RFC 6455 section 7.4 for a list of valid status codes). ``reason`` is the human readable reason for closing the connection (can be any UTF-8 string that's smaller than 123 bytes).
 
-Note: To achieve a clean close, you will need to keep polling until either :ref:`WebSocketClient.connection_closed<class_WebSocketClient_signal_connection_closed>` or :ref:`WebSocketServer.client_disconnected<class_WebSocketServer_signal_client_disconnected>` is received.
+**Note:** To achieve a clean close, you will need to keep polling until either :ref:`WebSocketClient.connection_closed<class_WebSocketClient_signal_connection_closed>` or :ref:`WebSocketServer.client_disconnected<class_WebSocketServer_signal_client_disconnected>` is received.
 
-Note: HTML5 export might not support all status codes. Please refer to browsers-specific documentation for more details.
+**Note:** The HTML5 export might not support all status codes. Please refer to browser-specific documentation for more details.
 
 .. _class_WebSocketPeer_method_get_connected_host:
 
 - :ref:`String<class_String>` **get_connected_host** **(** **)** const
 
-Returns the IP Address of the connected peer. (Not available in HTML5 export)
+Returns the IP address of the connected peer.
+
+**Note:** Not available in the HTML5 export.
 
 .. _class_WebSocketPeer_method_get_connected_port:
 
 - :ref:`int<class_int>` **get_connected_port** **(** **)** const
 
-Returns the remote port of the connected peer. (Not available in HTML5 export)
+Returns the remote port of the connected peer.
+
+**Note:** Not available in the HTML5 export.
 
 .. _class_WebSocketPeer_method_get_write_mode:
 
 - :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` **get_write_mode** **(** **)** const
 
-Get the current selected write mode. See :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
+Gets the current selected write mode. See :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
 
 .. _class_WebSocketPeer_method_is_connected_to_host:
 

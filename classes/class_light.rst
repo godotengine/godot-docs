@@ -118,7 +118,7 @@ enum **Param**:
 
 - **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14**
 
-- **PARAM_MAX** = **15**
+- **PARAM_MAX** = **15** --- Represents the size of the :ref:`Param<enum_Light_Param>` enum.
 
 .. _enum_Light_BakeMode:
 
@@ -130,16 +130,20 @@ enum **Param**:
 
 enum **BakeMode**:
 
-- **BAKE_DISABLED** = **0** --- Light is ignored when baking. Note: hiding a light does *not* affect baking.
+- **BAKE_DISABLED** = **0** --- Light is ignored when baking.
 
-- **BAKE_INDIRECT** = **1** --- Only indirect lighting will be baked. Default value.
+**Note:** Hiding a light does *not* affect baking.
 
-- **BAKE_ALL** = **2** --- Both direct and indirect light will be baked. Note: you should hide the light if you don't want it to appear twice (dynamic and baked).
+- **BAKE_INDIRECT** = **1** --- Only indirect lighting will be baked (default).
+
+- **BAKE_ALL** = **2** --- Both direct and indirect light will be baked.
+
+**Note:** You should hide the light if you don't want it to appear twice (dynamic and baked).
 
 Description
 -----------
 
-Light is the abstract base class for light nodes, so it shouldn't be used directly (It can't be instanced). Other types of light nodes inherit from it. Light contains the common variables and parameters used for lighting.
+Light is the abstract base class for light nodes, so it shouldn't be used directly (it can't be instanced). Other types of light nodes inherit from it. Light contains the common variables and parameters used for lighting.
 
 Tutorials
 ---------
@@ -159,7 +163,7 @@ Property Descriptions
 | *Getter* | is_editor_only()       |
 +----------+------------------------+
 
-If ``true``, the light only appears in the editor and will not be visible at runtime. Default value:``false``.
+If ``true``, the light only appears in the editor and will not be visible at runtime. Default value: ``false``.
 
 .. _class_Light_property_light_bake_mode:
 
@@ -219,7 +223,7 @@ The light's strength multiplier.
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Secondary multiplier used with indirect light (light bounces). This works in baked light or GIProbe.
+Secondary multiplier used with indirect light (light bounces). This works on both :ref:`BakedLightmap<class_BakedLightmap>` and :ref:`GIProbe<class_GIProbe>`.
 
 .. _class_Light_property_light_negative:
 
@@ -255,7 +259,7 @@ The intensity of the specular blob in objects affected by the light. At ``0`` th
 | *Getter* | get_param()      |
 +----------+------------------+
 
-Used to adjust shadow appearance. Too small a value results in self shadowing, while too large a value causes shadows to separate from casters. Adjust as needed.
+Used to adjust shadow appearance. Too small a value results in self-shadowing, while too large a value causes shadows to separate from casters. Adjust as needed.
 
 .. _class_Light_property_shadow_color:
 

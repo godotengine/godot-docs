@@ -47,7 +47,7 @@ enum **CopyMode**:
 Description
 -----------
 
-Node for back-buffering the currently displayed screen. The region defined in the BackBufferCopy node is bufferized with the content of the screen it covers, or the entire screen according to the copy mode set. Use ``SCREEN_TEXTURE`` in the ``texture()`` function to access the buffer.
+Node for back-buffering the currently-displayed screen. The region defined in the BackBufferCopy node is bufferized with the content of the screen it covers, or the entire screen according to the copy mode set. Use ``SCREEN_TEXTURE`` in the ``texture()`` function to access the buffer.
 
 Property Descriptions
 ---------------------
@@ -62,7 +62,7 @@ Property Descriptions
 | *Getter* | get_copy_mode()      |
 +----------+----------------------+
 
-Buffer mode. See ``COPY_MODE_*`` constants.
+Buffer mode. See :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` constants.
 
 .. _class_BackBufferCopy_property_rect:
 
@@ -74,5 +74,5 @@ Buffer mode. See ``COPY_MODE_*`` constants.
 | *Getter* | get_rect()      |
 +----------+-----------------+
 
-The area covered by the BackBufferCopy. Only used if ``copy_mode`` is ``COPY_MODE_RECT``.
+The area covered by the BackBufferCopy. Only used if :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` is :ref:`COPY_MODE_RECT<class_BackBufferCopy_constant_COPY_MODE_RECT>`.
 

@@ -16,7 +16,7 @@ IP
 Brief Description
 -----------------
 
-Internet protocol (IP) support functions like DNS resolution.
+Internet protocol (IP) support functions such as DNS resolution.
 
 Methods
 -------
@@ -89,9 +89,9 @@ Constants
 
 .. _class_IP_constant_RESOLVER_INVALID_ID:
 
-- **RESOLVER_MAX_QUERIES** = **32** --- Maximum number of concurrent DNS resolver queries allowed, ``RESOLVER_INVALID_ID`` is returned if exceeded.
+- **RESOLVER_MAX_QUERIES** = **32** --- Maximum number of concurrent DNS resolver queries allowed, :ref:`RESOLVER_INVALID_ID<class_IP_constant_RESOLVER_INVALID_ID>` is returned if exceeded.
 
-- **RESOLVER_INVALID_ID** = **-1** --- Invalid ID constant. Returned if ``RESOLVER_MAX_QUERIES`` is exceeded.
+- **RESOLVER_INVALID_ID** = **-1** --- Invalid ID constant. Returned if :ref:`RESOLVER_MAX_QUERIES<class_IP_constant_RESOLVER_MAX_QUERIES>` is exceeded.
 
 Description
 -----------
@@ -105,13 +105,13 @@ Method Descriptions
 
 - void **clear_cache** **(** :ref:`String<class_String>` hostname="" **)**
 
-Removes all of a "hostname"'s cached references. If no "hostname" is given then all cached IP addresses are removed.
+Removes all of a ``hostname``'s cached references. If no ``hostname`` is given, all cached IP addresses are removed.
 
 .. _class_IP_method_erase_resolve_item:
 
 - void **erase_resolve_item** **(** :ref:`int<class_int>` id **)**
 
-Removes a given item "id" from the queue. This should be used to free a queue after it has completed to enable more queries to happen.
+Removes a given item ``id`` from the queue. This should be used to free a queue after it has completed to enable more queries to happen.
 
 .. _class_IP_method_get_local_addresses:
 
@@ -140,23 +140,23 @@ Each adapter is a dictionary of the form:
 
 - :ref:`String<class_String>` **get_resolve_item_address** **(** :ref:`int<class_int>` id **)** const
 
-Returns a queued hostname's IP address, given its queue "id". Returns an empty string on error or if resolution hasn't happened yet (see :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>`).
+Returns a queued hostname's IP address, given its queue ``id``. Returns an empty string on error or if resolution hasn't happened yet (see :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>`).
 
 .. _class_IP_method_get_resolve_item_status:
 
 - :ref:`ResolverStatus<enum_IP_ResolverStatus>` **get_resolve_item_status** **(** :ref:`int<class_int>` id **)** const
 
-Returns a queued hostname's status as a RESOLVER_STATUS\_\* constant, given its queue "id".
+Returns a queued hostname's status as a ``RESOLVER_STATUS_*`` constant, given its queue ``id``.
 
 .. _class_IP_method_resolve_hostname:
 
 - :ref:`String<class_String>` **resolve_hostname** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 
-Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type method). The address type returned depends on the TYPE\_\* constant given as "ip_type".
+Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type method). The address type returned depends on the ``TYPE_*`` constant given as ``ip_type``.
 
 .. _class_IP_method_resolve_hostname_queue_item:
 
 - :ref:`int<class_int>` **resolve_hostname_queue_item** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 
-Creates a queue item to resolve a hostname to an IPv4 or IPv6 address depending on the TYPE\_\* constant given as "ip_type". Returns the queue ID if successful, or RESOLVER_INVALID_ID on error.
+Creates a queue item to resolve a hostname to an IPv4 or IPv6 address depending on the ``TYPE_*`` constant given as ``ip_type``. Returns the queue ID if successful, or :ref:`RESOLVER_INVALID_ID<class_IP_constant_RESOLVER_INVALID_ID>` on error.
 

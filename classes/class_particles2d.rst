@@ -114,7 +114,7 @@ Number of particles emitted in one emission cycle.
 | *Getter* | get_draw_order()      |
 +----------+-----------------------+
 
-Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_INDEX``.
+Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: :ref:`DRAW_ORDER_INDEX<class_Particles2D_constant_DRAW_ORDER_INDEX>`.
 
 .. _class_Particles2D_property_emitting:
 
@@ -162,7 +162,7 @@ The particle system's frame rate is fixed to a value. For instance, changing the
 | *Getter* | get_fractional_delta()      |
 +----------+-----------------------------+
 
-If ``true``, results in fractional delta calculation which has a smoother particles display effect. Default value: ``true``
+If ``true``, results in fractional delta calculation which has a smoother particles display effect. Default value: ``true``.
 
 .. _class_Particles2D_property_lifetime:
 
@@ -270,7 +270,7 @@ Particle system's running speed scaling ratio. Default value: ``1``. A value of 
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-Particle texture. If ``null`` particles will be squares.
+Particle texture. If ``null``, particles will be squares.
 
 .. _class_Particles2D_property_visibility_rect:
 

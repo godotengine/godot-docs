@@ -106,31 +106,31 @@ Returns ``true`` if this input event matches a pre-defined action of any type.
 
 - :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`String<class_String>` action **)** const
 
-Returns ``true`` if the given action is being pressed (and is not an echo event for KEY events). Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
+Returns ``true`` if the given action is being pressed (and is not an echo event for :ref:`InputEventKey<class_InputEventKey>` events). Not relevant for events of type :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` or :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`.
 
 .. _class_InputEvent_method_is_action_released:
 
 - :ref:`bool<class_bool>` **is_action_released** **(** :ref:`String<class_String>` action **)** const
 
-Returns ``true`` if the given action is released (i.e. not pressed). Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
+Returns ``true`` if the given action is released (i.e. not pressed). Not relevant for events of type :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` or :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`.
 
 .. _class_InputEvent_method_is_action_type:
 
 - :ref:`bool<class_bool>` **is_action_type** **(** **)** const
 
-Returns ``true`` if this input event's type is one of the ``InputEvent`` constants.
+Returns ``true`` if this input event's type is one that can be assigned to an input action.
 
 .. _class_InputEvent_method_is_echo:
 
 - :ref:`bool<class_bool>` **is_echo** **(** **)** const
 
-Returns ``true`` if this input event is an echo event (only for events of type KEY).
+Returns ``true`` if this input event is an echo event (only for events of type :ref:`InputEventKey<class_InputEventKey>`).
 
 .. _class_InputEvent_method_is_pressed:
 
 - :ref:`bool<class_bool>` **is_pressed** **(** **)** const
 
-Returns ``true`` if this input event is pressed. Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
+Returns ``true`` if this input event is pressed. Not relevant for events of type :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` or :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`.
 
 .. _class_InputEvent_method_shortcut_match:
 

@@ -53,11 +53,11 @@ Methods
 Description
 -----------
 
-Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all (to other types of bodies, such a character or a rigid body, these are the same as a static body). They have however, two main uses:
+Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a character or a rigid body, these are the same as a static body. However, they have two main uses:
 
-Simulated Motion: When these bodies are moved manually, either from code or from an AnimationPlayer (with process mode set to fixed), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
+**Simulated motion:** When these bodies are moved manually, either from code or from an AnimationPlayer (with process mode set to fixed), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
 
-Kinematic Characters: KinematicBody2D also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
+**Kinematic characters:** KinematicBody2D also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
 
 Tutorials
 ---------
@@ -108,7 +108,7 @@ Returns the velocity of the floor. Only updates when calling :ref:`move_and_slid
 
 Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about a collision that occurred during the last :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` call. Since the body can collide several times in a single call to :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_count<class_KinematicBody2D_method_get_slide_count>` - 1).
 
-Example usage:
+**Example usage:**
 
 ::
 
@@ -162,7 +162,7 @@ If the body collides, it will change direction a maximum of ``max_slides`` times
 
 ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 
-If ``infinite_inertia`` is ``true``, body will be able to push :ref:`RigidBody2D<class_RigidBody2D>` nodes, but it won't also detect any collisions with them. If ``false`` it will interact with :ref:`RigidBody2D<class_RigidBody2D>` nodes like with :ref:`StaticBody2D<class_StaticBody2D>`.
+If ``infinite_inertia`` is ``true``, body will be able to push :ref:`RigidBody2D<class_RigidBody2D>` nodes, but it won't also detect any collisions with them. If ``false``, it will interact with :ref:`RigidBody2D<class_RigidBody2D>` nodes like with :ref:`StaticBody2D<class_StaticBody2D>`.
 
 Returns the ``linear_velocity`` vector, rotated and/or scaled if a slide collision occurred. To get detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody2D_method_get_slide_collision>`.
 

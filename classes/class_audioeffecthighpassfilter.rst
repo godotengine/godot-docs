@@ -14,7 +14,7 @@ AudioEffectHighPassFilter
 Brief Description
 -----------------
 
-Adds a high pass filter to the Audio Bus.
+Adds a high-pass filter to the Audio Bus.
 
 Description
 -----------

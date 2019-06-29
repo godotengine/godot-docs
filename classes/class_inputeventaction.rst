@@ -30,7 +30,7 @@ Properties
 Description
 -----------
 
-Contains a generic action which can be targeted from several type of inputs. Actions can be created from the project settings menu ``Project > Project Settings > Input Map``. See :ref:`Node._input<class_Node_method__input>`.
+Contains a generic action which can be targeted from several types of inputs. Actions can be created from the **Input Map** tab in the **Project > Project Settings** menu. See :ref:`Node._input<class_Node_method__input>`.
 
 Tutorials
 ---------
@@ -74,5 +74,5 @@ If ``true``, the action's state is pressed. If ``false``, the action's state is 
 | *Getter* | get_strength()      |
 +----------+---------------------+
 
-The action's strength between 0 and 1. This value is consired as equal to 0 if pressed is ``false``. The event strength allows faking analog joypad motion events, by precising how strongly is the joypad axis bent or pressed.
+The action's strength between 0 and 1. This value is considered as equal to 0 if pressed is ``false``. The event strength allows faking analog joypad motion events, by precising how strongly is the joypad axis bent or pressed.
 

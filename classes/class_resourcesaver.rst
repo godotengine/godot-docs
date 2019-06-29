@@ -50,7 +50,7 @@ enum **SaverFlags**:
 
 - **FLAG_BUNDLE_RESOURCES** = **2** --- Bundles external resources.
 
-- **FLAG_CHANGE_PATH** = **4** --- Change the :ref:`Resource.resource_path<class_Resource_property_resource_path>` of the saved resource to match its new location.
+- **FLAG_CHANGE_PATH** = **4** --- Changes the :ref:`Resource.resource_path<class_Resource_property_resource_path>` of the saved resource to match its new location.
 
 - **FLAG_OMIT_EDITOR_PROPERTIES** = **8** --- Do not save editor-specific metadata (identified by their ``__editor`` prefix).
 

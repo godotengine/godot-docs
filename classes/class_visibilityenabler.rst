@@ -14,7 +14,7 @@ VisibilityEnabler
 Brief Description
 -----------------
 
-Enable certain nodes only when visible.
+Enables certain nodes only when visible.
 
 Properties
 ----------
@@ -42,7 +42,7 @@ enum **Enabler**:
 
 - **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_RigidBody>` nodes.
 
-- **ENABLER_MAX** = **2**
+- **ENABLER_MAX** = **2** --- Represents the size of the :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enum.
 
 Description
 -----------

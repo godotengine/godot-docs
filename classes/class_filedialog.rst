@@ -76,19 +76,19 @@ Signals
 
 - **dir_selected** **(** :ref:`String<class_String>` dir **)**
 
-Event emitted when the user selects a directory.
+Emitted when the user selects a directory.
 
 .. _class_FileDialog_signal_file_selected:
 
 - **file_selected** **(** :ref:`String<class_String>` path **)**
 
-Event emitted when the user selects a file (double clicks it or presses the OK button).
+Emitted when the user selects a file by double-clicking it or pressing the **OK** button.
 
 .. _class_FileDialog_signal_files_selected:
 
 - **files_selected** **(** :ref:`PoolStringArray<class_PoolStringArray>` paths **)**
 
-Event emitted when the user selects multiple files.
+Emitted when the user selects multiple files.
 
 Enumerations
 ------------
@@ -107,13 +107,13 @@ Enumerations
 
 enum **Mode**:
 
-- **MODE_OPEN_FILE** = **0** --- The dialog allows the selection of one, and only one file.
+- **MODE_OPEN_FILE** = **0** --- The dialog allows selecting one, and only one file.
 
-- **MODE_OPEN_FILES** = **1** --- The dialog allows the selection of multiple files.
+- **MODE_OPEN_FILES** = **1** --- The dialog allows selecting multiple files.
 
-- **MODE_OPEN_DIR** = **2** --- The dialog functions as a folder selector, disallowing the selection of any file.
+- **MODE_OPEN_DIR** = **2** --- The dialog only allows selecting a directory, disallowing the selection of any file.
 
-- **MODE_OPEN_ANY** = **3** --- The dialog allows the selection of a file or a directory.
+- **MODE_OPEN_ANY** = **3** --- The dialog allows selecting one file or directory.
 
 - **MODE_SAVE_FILE** = **4** --- The dialog will warn when a file exists.
 
@@ -127,11 +127,11 @@ enum **Mode**:
 
 enum **Access**:
 
-- **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
+- **ACCESS_RESOURCES** = **0** --- The dialog only allows accessing files under the :ref:`Resource<class_Resource>` path (``res://``).
 
-- **ACCESS_USERDATA** = **1** --- The dialog allows access files under :ref:`Resource<class_Resource>` path(res://) .
+- **ACCESS_USERDATA** = **1** --- The dialog only allows accessing files under user data path (``user://``).
 
-- **ACCESS_FILESYSTEM** = **2** --- The dialog allows access files in whole file system.
+- **ACCESS_FILESYSTEM** = **2** --- The dialog allows accessing files on the whole file system.
 
 Description
 -----------
@@ -199,7 +199,7 @@ The currently selected file path of the file dialog.
 | *Getter* | get_filters()      |
 +----------+--------------------+
 
-Set file type filters. This example shows only .png and .gd files ``set_filters(PoolStringArray(["*.png ; PNG Images","*.gd ; GD Script"]))``.
+The available file type filters. For example, this shows only ``.png`` and ``.gd`` files: ``set_filters(PoolStringArray(["*.png ; PNG Images","*.gd ; GDScript Files"]))``.
 
 .. _class_FileDialog_property_mode:
 
@@ -211,7 +211,7 @@ Set file type filters. This example shows only .png and .gd files ``set_filters(
 | *Getter* | get_mode()      |
 +----------+-----------------+
 
-Set dialog to open or save mode, changes selection behavior. See enum ``Mode`` constants.
+The dialog's open or save mode, which affects the selection behavior. See enum ``Mode`` constants.
 
 .. _class_FileDialog_property_mode_overrides_title:
 
@@ -223,7 +223,7 @@ Set dialog to open or save mode, changes selection behavior. See enum ``Mode`` c
 | *Getter* | is_mode_overriding_title()      |
 +----------+---------------------------------+
 
-If ``true``, changing the ``Mode`` property will set the window title accordingly (e.g. setting mode to ``MODE_OPEN_FILE`` will change the window title to "Open a File").
+If ``true``, changing the ``Mode`` property will set the window title accordingly (e.g. setting mode to :ref:`MODE_OPEN_FILE<class_FileDialog_constant_MODE_OPEN_FILE>` will change the window title to "Open a File").
 
 .. _class_FileDialog_property_show_hidden_files:
 
@@ -244,7 +244,7 @@ Method Descriptions
 
 - void **add_filter** **(** :ref:`String<class_String>` filter **)**
 
-Add a custom filter. Example: ``add_filter("*.png ; PNG Images")``
+Adds ``filter`` as a custom filter; ``filter`` should be of the form ``"filename.extension ; Description"``. For example, ``"*.png ; PNG Images"``.
 
 .. _class_FileDialog_method_clear_filters:
 

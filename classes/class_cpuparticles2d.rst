@@ -562,7 +562,7 @@ The rectangle's extents if :ref:`emission_shape<class_CPUParticles2D_property_em
 | *Getter* | get_emission_shape()      |
 +----------+---------------------------+
 
-Particles will be emitted inside this region. Use :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` for values. Default value: :ref:`EMISSION_SHAPE_POINT<class_CPUParticles2D_constant_EMISSION_SHAPE_POINT>`.
+Particles will be emitted inside this region. See :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` for possible values. Default value: :ref:`EMISSION_SHAPE_POINT<class_CPUParticles2D_constant_EMISSION_SHAPE_POINT>`.
 
 .. _class_CPUParticles2D_property_emission_sphere_radius:
 
@@ -622,7 +622,7 @@ The particle system's frame rate is fixed to a value. For instance, changing the
 | *Getter* | get_particle_flag()      |
 +----------+--------------------------+
 
-Align y-axis of particle with the direction of its velocity.
+Align Y axis of particle with the direction of its velocity.
 
 .. _class_CPUParticles2D_property_flatness:
 
@@ -644,7 +644,7 @@ Align y-axis of particle with the direction of its velocity.
 | *Getter* | get_fractional_delta()      |
 +----------+-----------------------------+
 
-If ``true``, results in fractional delta calculation which has a smoother particles display effect. Default value: ``true``
+If ``true``, results in fractional delta calculation which has a smoother particles display effect. Default value: ``true``.
 
 .. _class_CPUParticles2D_property_gravity:
 
@@ -1004,7 +1004,7 @@ Tangential acceleration randomness ratio. Default value: ``0``.
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-Particle texture. If ``null`` particles will be squares.
+Particle texture. If ``null``, particles will be squares.
 
 Method Descriptions
 -------------------

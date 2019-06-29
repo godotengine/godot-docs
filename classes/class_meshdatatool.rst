@@ -100,11 +100,11 @@ Methods
 Description
 -----------
 
-The MeshDataTool provides access to individual vertices in a :ref:`Mesh<class_Mesh>`. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges.
+MeshDataTool provides access to individual vertices in a :ref:`Mesh<class_Mesh>`. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges.
 
-To use the MeshDataTool, load a mesh with :ref:`create_from_surface<class_MeshDataTool_method_create_from_surface>`. When you are finished editing the data commit the data to a mesh with :ref:`commit_to_surface<class_MeshDataTool_method_commit_to_surface>`.
+To use MeshDataTool, load a mesh with :ref:`create_from_surface<class_MeshDataTool_method_create_from_surface>`. When you are finished editing the data commit the data to a mesh with :ref:`commit_to_surface<class_MeshDataTool_method_commit_to_surface>`.
 
-Below is an example of how the MeshDataTool may be used.
+Below is an example of how MeshDataTool may be used.
 
 ::
 
@@ -138,7 +138,7 @@ Adds a new surface to specified :ref:`Mesh<class_Mesh>` with edited data.
 
 Uses specified surface of given :ref:`Mesh<class_Mesh>` to populate data for MeshDataTool.
 
-Requires :ref:`Mesh<class_Mesh>` with primitive type ``PRIMITIVE_TRIANGLES``.
+Requires :ref:`Mesh<class_Mesh>` with primitive type :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 .. _class_MeshDataTool_method_get_edge_count:
 
@@ -184,19 +184,19 @@ Edge argument must 2 or less because a face only has three edges.
 
 - :ref:`Variant<class_Variant>` **get_face_meta** **(** :ref:`int<class_int>` idx **)** const
 
-Returns meta data associated with given face.
+Returns the metadata associated with the given face.
 
 .. _class_MeshDataTool_method_get_face_normal:
 
 - :ref:`Vector3<class_Vector3>` **get_face_normal** **(** :ref:`int<class_int>` idx **)** const
 
-Calculates and returns face normal of given face.
+Calculates and returns the face normal of the given face.
 
 .. _class_MeshDataTool_method_get_face_vertex:
 
 - :ref:`int<class_int>` **get_face_vertex** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` vertex **)** const
 
-Returns specified vertex of given face.
+Returns the specified vertex of the given face.
 
 Vertex argument must be 2 or less because faces contain three vertices.
 
@@ -204,15 +204,15 @@ Vertex argument must be 2 or less because faces contain three vertices.
 
 - :ref:`int<class_int>` **get_format** **(** **)** const
 
-Returns format of :ref:`Mesh<class_Mesh>`. Format is an integer made up of :ref:`Mesh<class_Mesh>` format flags combined together. For example, a mesh containing both vertices and normals would return a format of ``3`` because ``ARRAY_FORMAT_VERTEX`` is ``1`` and ``ARRAY_FORMAT_NORMAL`` is ``2``.
+Returns the :ref:`Mesh<class_Mesh>`'s format. Format is an integer made up of :ref:`Mesh<class_Mesh>` format flags combined together. For example, a mesh containing both vertices and normals would return a format of ``3`` because :ref:`ArrayMesh.ARRAY_FORMAT_VERTEX<class_ArrayMesh_constant_ARRAY_FORMAT_VERTEX>` is ``1`` and :ref:`ArrayMesh.ARRAY_FORMAT_NORMAL<class_ArrayMesh_constant_ARRAY_FORMAT_NORMAL>` is ``2``.
 
-For list of format flags see :ref:`ArrayMesh<class_ArrayMesh>`.
+See :ref:`ArrayFormat<enum_ArrayMesh_ArrayFormat>` for a list of format flags.
 
 .. _class_MeshDataTool_method_get_material:
 
 - :ref:`Material<class_Material>` **get_material** **(** **)** const
 
-Returns material assigned to the :ref:`Mesh<class_Mesh>`.
+Returns the material assigned to the :ref:`Mesh<class_Mesh>`.
 
 .. _class_MeshDataTool_method_get_vertex:
 
@@ -242,119 +242,119 @@ Returns the total number of vertices in :ref:`Mesh<class_Mesh>`.
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_vertex_edges** **(** :ref:`int<class_int>` idx **)** const
 
-Returns array of edges that share given vertex.
+Returns an array of edges that share the given vertex.
 
 .. _class_MeshDataTool_method_get_vertex_faces:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_vertex_faces** **(** :ref:`int<class_int>` idx **)** const
 
-Returns array of faces that share given vertex.
+Returns an array of faces that share the given vertex.
 
 .. _class_MeshDataTool_method_get_vertex_meta:
 
 - :ref:`Variant<class_Variant>` **get_vertex_meta** **(** :ref:`int<class_int>` idx **)** const
 
-Returns meta data associated with given vertex.
+Returns the metadata associated with the given vertex.
 
 .. _class_MeshDataTool_method_get_vertex_normal:
 
 - :ref:`Vector3<class_Vector3>` **get_vertex_normal** **(** :ref:`int<class_int>` idx **)** const
 
-Returns normal of given vertex.
+Returns the normal of the given vertex.
 
 .. _class_MeshDataTool_method_get_vertex_tangent:
 
 - :ref:`Plane<class_Plane>` **get_vertex_tangent** **(** :ref:`int<class_int>` idx **)** const
 
-Returns tangent of given vertex.
+Returns the tangent of the given vertex.
 
 .. _class_MeshDataTool_method_get_vertex_uv:
 
 - :ref:`Vector2<class_Vector2>` **get_vertex_uv** **(** :ref:`int<class_int>` idx **)** const
 
-Returns UV of given vertex.
+Returns the UV of the given vertex.
 
 .. _class_MeshDataTool_method_get_vertex_uv2:
 
 - :ref:`Vector2<class_Vector2>` **get_vertex_uv2** **(** :ref:`int<class_int>` idx **)** const
 
-Returns UV2 of given vertex.
+Returns the UV2 of the given vertex.
 
 .. _class_MeshDataTool_method_get_vertex_weights:
 
 - :ref:`PoolRealArray<class_PoolRealArray>` **get_vertex_weights** **(** :ref:`int<class_int>` idx **)** const
 
-Returns bone weights of given vertex.
+Returns bone weights of the given vertex.
 
 .. _class_MeshDataTool_method_set_edge_meta:
 
 - void **set_edge_meta** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` meta **)**
 
-Sets the meta data of given edge.
+Sets the metadata of the given edge.
 
 .. _class_MeshDataTool_method_set_face_meta:
 
 - void **set_face_meta** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` meta **)**
 
-Sets the meta data of given face.
+Sets the metadata of the given face.
 
 .. _class_MeshDataTool_method_set_material:
 
 - void **set_material** **(** :ref:`Material<class_Material>` material **)**
 
-Sets the material to be used by newly constructed :ref:`Mesh<class_Mesh>`.
+Sets the material to be used by newly-constructed :ref:`Mesh<class_Mesh>`.
 
 .. _class_MeshDataTool_method_set_vertex:
 
 - void **set_vertex** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` vertex **)**
 
-Sets the position of given vertex.
+Sets the position of the given vertex.
 
 .. _class_MeshDataTool_method_set_vertex_bones:
 
 - void **set_vertex_bones** **(** :ref:`int<class_int>` idx, :ref:`PoolIntArray<class_PoolIntArray>` bones **)**
 
-Sets the bones of given vertex.
+Sets the bones of the given vertex.
 
 .. _class_MeshDataTool_method_set_vertex_color:
 
 - void **set_vertex_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**
 
-Sets the color of given vertex.
+Sets the color of the given vertex.
 
 .. _class_MeshDataTool_method_set_vertex_meta:
 
 - void **set_vertex_meta** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` meta **)**
 
-Sets the meta data associated with given vertex.
+Sets the metadata associated with the given vertex.
 
 .. _class_MeshDataTool_method_set_vertex_normal:
 
 - void **set_vertex_normal** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` normal **)**
 
-Sets the normal of given vertex.
+Sets the normal of the given vertex.
 
 .. _class_MeshDataTool_method_set_vertex_tangent:
 
 - void **set_vertex_tangent** **(** :ref:`int<class_int>` idx, :ref:`Plane<class_Plane>` tangent **)**
 
-Sets the tangent of given vertex.
+Sets the tangent of the given vertex.
 
 .. _class_MeshDataTool_method_set_vertex_uv:
 
 - void **set_vertex_uv** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` uv **)**
 
-Sets the UV of given vertex.
+Sets the UV of the given vertex.
 
 .. _class_MeshDataTool_method_set_vertex_uv2:
 
 - void **set_vertex_uv2** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` uv2 **)**
 
-Sets the UV2 of given vertex.
+Sets the UV2 of the given vertex.
 
 .. _class_MeshDataTool_method_set_vertex_weights:
 
 - void **set_vertex_weights** **(** :ref:`int<class_int>` idx, :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
 
-Sets the bone weights of given vertex.
+Sets the bone weights of the given vertex.
 

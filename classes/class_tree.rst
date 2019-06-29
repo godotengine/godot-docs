@@ -194,7 +194,7 @@ Emitted when a column's title is pressed.
 
 - **custom_popup_edited** **(** :ref:`bool<class_bool>` arrow_clicked **)**
 
-Emitted when a cell with the ``CELL_MODE_CUSTOM`` is clicked to be edited.
+Emitted when a cell with the :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` is clicked to be edited.
 
 .. _class_Tree_signal_empty_rmb:
 
@@ -204,7 +204,7 @@ Emitted when a cell with the ``CELL_MODE_CUSTOM`` is clicked to be edited.
 
 - **empty_tree_rmb_selected** **(** :ref:`Vector2<class_Vector2>` position **)**
 
-Emitted when the right mouse button is pressed if RMB selection is active and the tree is empty.
+Emitted when the right mouse button is pressed if right mouse button selection is active and the tree is empty.
 
 .. _class_Tree_signal_item_activated:
 
@@ -256,7 +256,7 @@ Emitted when an item is selected.
 
 - **multi_selected** **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`int<class_int>` column, :ref:`bool<class_bool>` selected **)**
 
-Emitted instead of ``item_selected`` when ``select_mode`` is ``SELECT_MULTI``.
+Emitted instead of ``item_selected`` if ``select_mode`` is :ref:`SELECT_MULTI<class_Tree_constant_SELECT_MULTI>`.
 
 .. _class_Tree_signal_nothing_selected:
 
@@ -275,11 +275,11 @@ Enumerations
 
 enum **SelectMode**:
 
-- **SELECT_SINGLE** = **0** --- Allow selection of a single item at a time.
+- **SELECT_SINGLE** = **0** --- Allows selection of a single item at a time.
 
 - **SELECT_ROW** = **1**
 
-- **SELECT_MULTI** = **2** --- Allow selection of multiple items at the same time.
+- **SELECT_MULTI** = **2** --- Allows selection of multiple items at the same time.
 
 .. _enum_Tree_DropModeFlags:
 
@@ -352,7 +352,7 @@ If ``true``, a right mouse button click can select items.
 | *Getter* | get_columns()      |
 +----------+--------------------+
 
-The amount of columns.
+The number of columns.
 
 .. _class_Tree_property_drop_mode_flags:
 
@@ -364,7 +364,7 @@ The amount of columns.
 | *Getter* | get_drop_mode_flags()      |
 +----------+----------------------------+
 
-The drop mode as an OR combination of flags. See ``DROP_MODE_*`` constants. Once dropping is done, reverts to ``DROP_MODE_DISABLED``. Setting this during :ref:`Control.can_drop_data<class_Control_method_can_drop_data>` is recommended.
+The drop mode as an OR combination of flags. See ``DROP_MODE_*`` constants. Once dropping is done, reverts to :ref:`DROP_MODE_DISABLED<class_Tree_constant_DROP_MODE_DISABLED>`. Setting this during :ref:`Control.can_drop_data<class_Control_method_can_drop_data>` is recommended.
 
 .. _class_Tree_property_hide_folding:
 
@@ -400,7 +400,7 @@ If ``true``, the tree's root is hidden.
 | *Getter* | get_select_mode()      |
 +----------+------------------------+
 
-Allow single or multiple selection. See the ``SELECT_*`` constants.
+Allows single or multiple selection. See the ``SELECT_*`` constants.
 
 Method Descriptions
 -------------------
@@ -421,7 +421,7 @@ Clears the tree. This removes all items.
 
 - :ref:`TreeItem<class_TreeItem>` **create_item** **(** :ref:`Object<class_Object>` parent=null, :ref:`int<class_int>` idx=-1 **)**
 
-Create an item in the tree and add it as the last child of ``parent``. If parent is not given, it will be added as the root's last child, or it'll the be the root itself if the tree is empty.
+Create an item in the tree and add it as the last child of ``parent``. If ``parent`` is ``null``, it will be added as the root's last child, or it'll be the the root itself if the tree is empty.
 
 .. _class_Tree_method_ensure_cursor_is_visible:
 
@@ -457,9 +457,9 @@ Returns the rectangle for custom popups. Helper to create custom cell controls t
 
 - :ref:`int<class_int>` **get_drop_section_at_position** **(** :ref:`Vector2<class_Vector2>` position **)** const
 
-If :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>` includes ``DROP_MODE_INBETWEEN``, returns -1 if ``position`` is the upper part of a tree item at that position, 1 for the lower part, and additionally 0 for the middle part if :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>` includes ``DROP_MODE_ON_ITEM``.
+If :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>` includes :ref:`DROP_MODE_INBETWEEN<class_Tree_constant_DROP_MODE_INBETWEEN>`, returns -1 if ``position`` is the upper part of a tree item at that position, 1 for the lower part, and additionally 0 for the middle part if :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>` includes :ref:`DROP_MODE_ON_ITEM<class_Tree_constant_DROP_MODE_ON_ITEM>`.
 
-Otherwise, returns 0. If there are no tree item at ``position``, returns -100.
+Otherwise, returns 0. If there are no tree items at ``position``, returns -100.
 
 .. _class_Tree_method_get_edited:
 
@@ -531,13 +531,13 @@ If ``true``, the column will have the "Expand" flag of :ref:`Control<class_Contr
 
 - void **set_column_min_width** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` min_width **)**
 
-Set the minimum width of a column.
+Sets the minimum width of a column.
 
 .. _class_Tree_method_set_column_title:
 
 - void **set_column_title** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` title **)**
 
-Set the title of a column.
+Sets the title of a column.
 
 .. _class_Tree_method_set_column_titles_visible:
 

@@ -30,7 +30,7 @@ Properties
 Description
 -----------
 
-Input event type for gamepad buttons. For joysticks see :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
+Input event type for gamepad buttons. For gamepad analog sticks and joysticks, see :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
 
 Tutorials
 ---------

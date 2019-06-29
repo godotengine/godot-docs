@@ -89,7 +89,7 @@ enum **LineJointMode**:
 
 enum **LineCapMode**:
 
-- **LINE_CAP_NONE** = **0** --- Don't have a line cap.
+- **LINE_CAP_NONE** = **0** --- Don't draw a line cap.
 
 - **LINE_CAP_BOX** = **1** --- Draws the line cap as a box.
 
@@ -107,9 +107,9 @@ enum **LineTextureMode**:
 
 - **LINE_TEXTURE_NONE** = **0** --- Takes the left pixels of the texture and renders it over the whole line.
 
-- **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture need to be imported with Repeat Enabled for it to work properly.
+- **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture must be imported with **Repeat** enabled for it to work properly.
 
-- **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. Import the texture with Repeat Disabled for best results.
+- **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. Import the texture with **Repeat** disabled for best results.
 
 Description
 -----------
@@ -129,7 +129,7 @@ Property Descriptions
 | *Getter* | get_begin_cap_mode()      |
 +----------+---------------------------+
 
-Controls the style of the line's first point. Use ``LINE_CAP_*`` constants. Default value: ``LINE_CAP_NONE``.
+Controls the style of the line's first point. Use ``LINE_CAP_*`` constants. Default value: :ref:`LINE_CAP_NONE<class_Line2D_constant_LINE_CAP_NONE>`.
 
 .. _class_Line2D_property_default_color:
 
@@ -153,7 +153,7 @@ The line's color. Will not be used if a gradient is set.
 | *Getter* | get_end_cap_mode()      |
 +----------+-------------------------+
 
-Controls the style of the line's last point. Use ``LINE_CAP_*`` constants. Default value: ``LINE_CAP_NONE``.
+Controls the style of the line's last point. Use ``LINE_CAP_*`` constants. Default value: :ref:`LINE_CAP_NONE<class_Line2D_constant_LINE_CAP_NONE>`.
 
 .. _class_Line2D_property_gradient:
 
@@ -213,7 +213,7 @@ The smoothness of the rounded joints and caps. This is only used if a cap or joi
 | *Getter* | get_sharp_limit()      |
 +----------+------------------------+
 
-The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to ``LINE_JOINT_SHARP``.
+The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`.
 
 .. _class_Line2D_property_texture:
 
@@ -237,7 +237,7 @@ The texture used for the line's texture. Uses ``texture_mode`` for drawing style
 | *Getter* | get_texture_mode()      |
 +----------+-------------------------+
 
-The style to render the ``texture`` on the line. Use ``LINE_TEXTURE_*`` constants. Default value: ``LINE_TEXTURE_NONE``.
+The style to render the ``texture`` on the line. Use ``LINE_TEXTURE_*`` constants. Default value: :ref:`LINE_TEXTURE_NONE<class_Line2D_constant_LINE_TEXTURE_NONE>`.
 
 .. _class_Line2D_property_width:
 
@@ -258,7 +258,7 @@ Method Descriptions
 
 - void **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` at_position=-1 **)**
 
-Add a point at the ``position``. Appends the point at the end of the line.
+Adds a point at the ``position``. Appends the point at the end of the line.
 
 If ``at_position`` is given, the point is inserted before the point number ``at_position``, moving that point (and every point after) after the inserted point. If ``at_position`` is not given, or is an illegal value (``at_position < 0`` or ``at_position >= [method get_point_count]``), the point will be appended at the end of the point list.
 
@@ -284,7 +284,7 @@ Returns point ``i``'s position.
 
 - void **remove_point** **(** :ref:`int<class_int>` i **)**
 
-Remove the point at index ``i`` from the line.
+Removes the point at index ``i`` from the line.
 
 .. _class_Line2D_method_set_point_position:
 

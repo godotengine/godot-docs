@@ -296,7 +296,7 @@ enum **TextureParam**:
 
 - **TEXTURE_DETAIL_NORMAL** = **15**
 
-- **TEXTURE_MAX** = **16**
+- **TEXTURE_MAX** = **16** --- Represents the size of the :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` enum.
 
 .. _enum_SpatialMaterial_DetailUV:
 
@@ -364,7 +364,7 @@ enum **Feature**:
 
 - **FEATURE_DETAIL** = **11**
 
-- **FEATURE_MAX** = **12**
+- **FEATURE_MAX** = **12** --- Represents the size of the :ref:`Feature<enum_SpatialMaterial_Feature>` enum.
 
 .. _enum_SpatialMaterial_BlendMode:
 
@@ -504,7 +504,7 @@ enum **Flags**:
 
 - **FLAG_USE_SHADOW_TO_OPACITY** = **18**
 
-- **FLAG_MAX** = **19**
+- **FLAG_MAX** = **19** --- Represents the size of the :ref:`Flags<enum_SpatialMaterial_Flags>` enum.
 
 .. _enum_SpatialMaterial_DiffuseMode:
 
@@ -568,9 +568,9 @@ enum **BillboardMode**:
 
 - **BILLBOARD_DISABLED** = **0** --- Default value.
 
-- **BILLBOARD_ENABLED** = **1** --- The object's z-axis will always face the camera.
+- **BILLBOARD_ENABLED** = **1** --- The object's Z axis will always face the camera.
 
-- **BILLBOARD_FIXED_Y** = **2** --- The object's x-axis will always face the camera.
+- **BILLBOARD_FIXED_Y** = **2** --- The object's X axis will always face the camera.
 
 - **BILLBOARD_PARTICLES** = **3** --- Used for particle systems. Enables particle animation options.
 
@@ -813,7 +813,7 @@ If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass t
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true``, Depth mapping is enabled. See also :ref:`normal_enabled<class_SpatialMaterial_property_normal_enabled>`.
+If ``true``, depth mapping is enabled (also called "parallax mapping" or "height mapping"). See also :ref:`normal_enabled<class_SpatialMaterial_property_normal_enabled>`.
 
 .. _class_SpatialMaterial_property_depth_flip_binormal:
 
@@ -1133,7 +1133,9 @@ If ``true``, the object is unaffected by lighting. Default value: ``false``.
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true``, render point size can be changed. Note: this is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`params_point_size<class_SpatialMaterial_property_params_point_size>`.
+If ``true``, render point size can be changed.
+
+**Note:** this is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`params_point_size<class_SpatialMaterial_property_params_point_size>`.
 
 .. _class_SpatialMaterial_property_flags_use_shadow_to_opacity:
 
@@ -1179,7 +1181,7 @@ If ``true``, triplanar mapping is calculated in world space rather than object l
 | *Getter* | get_metallic()      |
 +----------+---------------------+
 
-The reflectivity of the object's surface. The higher the value the more light is reflected.
+The reflectivity of the object's surface. The higher the value, the more light is reflected.
 
 .. _class_SpatialMaterial_property_metallic_specular:
 
@@ -1191,7 +1193,9 @@ The reflectivity of the object's surface. The higher the value the more light is
 | *Getter* | get_specular()      |
 +----------+---------------------+
 
-General reflectivity amount. Note: unlike :ref:`metallic<class_SpatialMaterial_property_metallic>`, this is not energy-conserving, so it should be left at ``0.5`` in most cases.  See also :ref:`roughness<class_SpatialMaterial_property_roughness>`.
+General reflectivity amount.
+
+**Note:** unlike :ref:`metallic<class_SpatialMaterial_property_metallic>`, this is not energy-conserving, so it should be left at ``0.5`` in most cases. See also :ref:`roughness<class_SpatialMaterial_property_roughness>`.
 
 .. _class_SpatialMaterial_property_metallic_texture:
 
@@ -1289,7 +1293,9 @@ Controls how the object faces the camera. See :ref:`BillboardMode<enum_SpatialMa
 | *Getter* | get_blend_mode()      |
 +----------+-----------------------+
 
-The material's blend mode. Note that values other than ``Mix`` force the object into the transparent pipeline. See :ref:`BlendMode<enum_SpatialMaterial_BlendMode>`.
+The material's blend mode.
+
+**Note:** Values other than ``Mix`` force the object into the transparent pipeline. See :ref:`BlendMode<enum_SpatialMaterial_BlendMode>`.
 
 .. _class_SpatialMaterial_property_params_cull_mode:
 
@@ -1405,7 +1411,7 @@ The method for rendering the specular blob. See :ref:`SpecularMode<enum_SpatialM
 | *Getter* | get_particles_anim_h_frames()      |
 +----------+------------------------------------+
 
-The number of horizontal frames in the particle spritesheet. Only enabled when using ``BillboardMode.BILLBOARD_PARTICLES``. See :ref:`params_billboard_mode<class_SpatialMaterial_property_params_billboard_mode>`.
+The number of horizontal frames in the particle sprite sheet. Only enabled when using :ref:`BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`. See :ref:`params_billboard_mode<class_SpatialMaterial_property_params_billboard_mode>`.
 
 .. _class_SpatialMaterial_property_particles_anim_loop:
 
@@ -1417,7 +1423,7 @@ The number of horizontal frames in the particle spritesheet. Only enabled when u
 | *Getter* | get_particles_anim_loop()      |
 +----------+--------------------------------+
 
-If ``true``, particle animations are looped. Only enabled when using ``BillboardMode.BILLBOARD_PARTICLES``. See :ref:`params_billboard_mode<class_SpatialMaterial_property_params_billboard_mode>`.
+If ``true``, particle animations are looped. Only enabled when using :ref:`BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`. See :ref:`params_billboard_mode<class_SpatialMaterial_property_params_billboard_mode>`.
 
 .. _class_SpatialMaterial_property_particles_anim_v_frames:
 
@@ -1429,7 +1435,7 @@ If ``true``, particle animations are looped. Only enabled when using ``Billboard
 | *Getter* | get_particles_anim_v_frames()      |
 +----------+------------------------------------+
 
-The number of vertical frames in the particle spritesheet. Only enabled when using ``BillboardMode.BILLBOARD_PARTICLES``. See :ref:`params_billboard_mode<class_SpatialMaterial_property_params_billboard_mode>`.
+The number of vertical frames in the particle sprite sheet. Only enabled when using :ref:`BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`. See :ref:`params_billboard_mode<class_SpatialMaterial_property_params_billboard_mode>`.
 
 .. _class_SpatialMaterial_property_proximity_fade_distance:
 

@@ -16,7 +16,7 @@ Joint
 Brief Description
 -----------------
 
-Base class for all 3D joints
+Base class for all 3D joints.
 
 Properties
 ----------
