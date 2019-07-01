@@ -1429,6 +1429,10 @@ illustration of this:
 Tool mode
 ~~~~~~~~~
 
+.. warning::
+    Freeing tool nodes with methods like `queue_free()` or `free()` can
+    cause undefined behavior, such as the Godot editor crashing!
+
 Scripts, by default, don't run inside the editor and only the exported
 properties can be changed. In some cases, it is desired that they do run
 inside the editor (as long as they don't execute game code or manually
@@ -1442,6 +1446,7 @@ placed at the top of the file:
 
     func _ready():
         print("Hello")
+ 
 
 Memory management
 ~~~~~~~~~~~~~~~~~
