@@ -1443,6 +1443,11 @@ placed at the top of the file:
     func _ready():
         print("Hello")
 
+.. warning:: Be cautious when freeing nodes with `queue_free()` or `free()`
+             in a tool script (especially the script's owner itself). As tool
+             scripts run their code in the editor, misusing them may lead to
+             crashing the editor.
+
 Memory management
 ~~~~~~~~~~~~~~~~~
 
