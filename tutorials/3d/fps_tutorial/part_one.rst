@@ -189,8 +189,9 @@ Add the following code to ``Player.gd``:
 
         input_movement_vector = input_movement_vector.normalized()
 
-        dir += -cam_xform.basis.z.normalized() * input_movement_vector.y
-        dir += cam_xform.basis.x.normalized() * input_movement_vector.x
+        # Basis vectors are already normalized.
+        dir += -cam_xform.basis.z * input_movement_vector.y
+        dir += cam_xform.basis.x * input_movement_vector.x
         # ----------------------------------
 
         # ----------------------------------
@@ -304,8 +305,9 @@ Add the following code to ``Player.gd``:
 
             inputMovementVector = inputMovementVector.Normalized();
 
-            _dir += -camXform.basis.z.Normalized() * inputMovementVector.y;
-            _dir += camXform.basis.x.Normalized() * inputMovementVector.x;
+            // Basis vectors are already normalized.
+            _dir += -camXform.basis.z * inputMovementVector.y;
+            _dir += camXform.basis.x * inputMovementVector.x;
             //  -------------------------------------------------------------------
 
             //  -------------------------------------------------------------------
