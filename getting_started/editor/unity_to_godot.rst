@@ -10,6 +10,10 @@ From Unity to Godot Engine
 This guide provides an overview of Godot Engine from the viewpoint of a Unity user,
 and aims to help you migrate your existing Unity experience into the world of Godot.
 
+.. note::
+
+   This article talks about older versions of Unity. Nestable prefabs ('Nested prefabs') were added to Unity 2018.3. Nestable prefabs are analogous to Godot's scenes, and allow a more Godot-like approach to scene organisation.
+
 Differences
 -----------
 
@@ -33,7 +37,7 @@ Differences
 | Third-party tools | Visual Studio or VS Code                                                           | * :ref:`External editors are possible <doc_external_editor>`                                                   |
 |                   |                                                                                    | * :ref:`Android SDK for Android export <doc_exporting_for_android>`                                            |
 +-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Killer features   | * Huge community                                                                   | * Scene System                                                                                                 |
+| Notable advantages| * Huge community                                                                   | * Scene System                                                                                                 |
 |                   | * Large assets store                                                               | * :ref:`Animation Pipeline <doc_animations>`                                                                   |
 |                   |                                                                                    | * :ref:`Easy to write Shaders <doc_shading_language>`                                                          |
 |                   |                                                                                    | * Debug on Device                                                                                              |
@@ -46,33 +50,30 @@ The editor
 ----------
 
 Godot Engine provides a rich-featured editor that allows you to build your games.
-The pictures below display both editors with colored blocks to indicate common functionalities.
+The pictures below display the default layouts of both editors with colored blocks to indicate common functionalities.
 
 .. image:: img/unity-gui-overlay.png
 .. image:: img/godot-gui-overlay.png
 
-
-Note that Godot editor allows you to dock each panel at the side of the scene editor you wish.
-
 While both editors may seem similar, there are many differences below the surface.
 Both let you organize the project using the filesystem,
 but Godot's approach is simpler with a single configuration file, minimalist text format,
-and no metadata. All this contributes to Godot being much friendlier to VCS systems, such as Git, Subversion, or Mercurial.
+and no metadata. This makes Godot more friendly to VCS systems, such as Git, Subversion, or Mercurial.
 
 Godot's Scene panel is similar to Unity's Hierarchy panel but, as each node has a specific function,
-the approach used by Godot is more visually descriptive. In other words, it's easier to understand
-what a specific scene does at a glance.
+the approach used by Godot is more visually descriptive. It's easier to understand
+what a scene does at a glance.
 
-The Inspector in Godot is more minimalist and designed to only show properties.
-Thanks to this, objects can export a much larger amount of useful parameters to the user
-without having to hide functionality in language APIs. As a plus, Godot allows animating any of those properties visually,
-so changing colors, textures, enumerations, or even links to resources in real-time is possible without involving code.
+The Inspector in Godot is more minimal, it shows only properties.
+Thanks to this, objects can expose more useful parameters to the user
+without having to hide functionality in language APIs. As a plus, Godot allows animating any of those properties visually.
+Changing colors, textures, enumerations, or even links to resources in real-time is possible without needing to write code.
 
-Finally, the Toolbar at the top of the screen is similar in the sense that it allows controlling the project playback,
-but projects in Godot run in a separate window, as they don't execute inside the editor
+The Toolbar at the top of the screen is similar in both editors, offering control over project playback.
+Projects in Godot run in a separate window, rather than inside the editor
 (but the tree and objects can still be explored in the debugger window).
 
-This approach has the disadvantage that the running game can't be explored from different angles
+This approach has the disadvantage that in Godot the running game can't be explored from different angles
 (though this may be supported in the future and displaying collision gizmos in the running game is already possible),
 but in exchange has several advantages:
 
@@ -80,21 +81,19 @@ but in exchange has several advantages:
 - Live editing is a lot more useful because changes done to the editor take effect immediately in the game and are not lost (nor have to be synced) when the game is closed. This allows fantastic workflows, like creating levels while you play them.
 - The editor is more stable because the game runs in a separate process.
 
-Finally, the top toolbar includes a menu for remote debugging.
-These options make it simple to deploy to a device (connected phone, tablet, or browser via HTML5),
-and debug/live edit on it after the game was exported.
+Finally, Godot's top toolbar includes a menu for remote debugging.
+These options allow deployment to a device (connected phone, tablet, or browser via HTML5),
+and debugging/live editing on it after the game is exported.
 
 The scene system
 ----------------
 
-This is the most important difference between Unity and Godot and, actually, the favourite feature of most Godot users.
+This is the most important difference between Unity and Godot and the favourite feature of most Godot users.
 
-Unity's scene system consists of embedding all the required assets in a scene
-and linking them together by setting components and scripts to them.
+Working on a 'level' in Unity usually means embedding all the required assets in a scene
+and linking them together with components and scripts.
 
-Godot's scene system is different: it actually consists of a tree made of nodes.
-Each node serves a purpose: Sprite, Mesh, Light, etc. Basically, this is similar to the Unity scene system.
-However, each node can have multiple children, which makes each a subscene of the main scene.
+Godot's scene system is superficially similar to Unity. A 'level' consists of a collection of nodes, each with its own purpose: Sprite, Mesh, Light, etc. However, in Godot the nodes are arranged in a tree. Each node can have multiple children, which makes each a subscene of the main scene.
 This means you can compose a whole scene with different scenes stored in different files.
 
 For example, think of a platformer level. You would compose it with multiple elements:
@@ -104,90 +103,80 @@ For example, think of a platformer level. You would compose it with multiple ele
 - The player
 - The enemies
 
-
 In Unity, you would put all the GameObjects in the scene: the player, multiple instances of enemies,
 bricks everywhere to form the ground of the level and then multiple instances of coins all over the level.
 You would then add various components to each element to link them and add logic in the level: For example,
 you'd add a BoxCollider2D to all the elements of the scene so that they can collide. This principle is different in Godot.
 
-In Godot, you would split your whole scene into 3 separate, smaller scenes, which you would then instance in the main scene.
+In Godot, you would split your whole scene into three separate, smaller scenes, and instance them in the main scene.
 
-1. **First, a scene for the Player alone.**
+1. **A scene for the Player alone.**
 
-Consider the player as a reusable element in other levels. It is composed of one node in particular:
-an AnimatedSprite node, which contains the sprite textures to form various animations (for example, walking animation)
+Consider the player as an element we'd like to use in different parent scenes (for instance 'level' scenes). In our case, the player element needs at least an AnimatedSprite node. This node contains the sprite textures necessary for various animations (for example, a walking animation).
 
-2. **Second, a scene for the Enemy.**
+2. **A scene for the Enemy.**
 
-There again, an enemy is a reusable element in other levels. It is almost the same
-as the Player node - the only differences are the script (that manages AI, mostly)
-and sprite textures used by the AnimatedSprite.
+An enemy is also an element we'd like to use in several scenes. It's almost the same
+as the Player node. The only differences are the script (it needs 'AI' routines to generate the enemy's behaviour)
+and the sprite textures used by the AnimatedSprite node.
 
-3. **Lastly, the Level scene.**
+3. **A Level scene.**
 
-It is composed of Bricks (for platforms), Coins (for the player to grab) and a
-certain number of instances of the previous Enemy scene. These will be different, separate enemies,
-whose behaviour and appearance will be the same as defined in the Enemy scene.
-Each instance is then considered as a node in the Level scene tree.
-Of course, you can set different properties for each Enemy node (to change its color, for example).
+A Level scene is composed of Bricks (for platforms), Coins (for the player to collect) and a
+number of instances of the Enemy scene. Each instance is a node in the Level scene tree. These instances are separate enemies,
+which initially have shared behaviour and appearance as defined in the Enemy scene. You can set different properties for each Enemy node (to change its color, for example).
 
-Finally, the main scene would then be composed of one root node with 2 children: a Player instance node, and a Level instance node.
+4. **A Main scene.**
+The Main scene would be composed of one root node with 2 children: a Player instance node, and a Level instance node.
 The root node can be anything, generally a "root" type such as "Node" which is the most global type,
 or "Node2D" (root type of all 2D-related nodes), "Spatial" (root type of all 3D-related nodes) or
 "Control" (root type of all GUI-related nodes).
-
 
 As you can see, every scene is organized as a tree. The same goes for nodes' properties: you don't *add* a
 collision component to a node to make it collidable like Unity does. Instead, you make this node a *child* of a
 new specific node that has collision properties. Godot features various collision types nodes, depending on the usage
 (see the :ref:`Physics introduction <doc_physics_introduction>`).
 
-- Question: What are the advantages of this system? Wouldn't this system potentially increase the depth of the scene tree? Besides, Unity allows organizing GameObjects by putting them in empty GameObjects.
+- What are the advantages of this system? Wouldn't this system potentially increase the depth of the scene tree? And doesn't Unity already allow you to organize GameObjects by putting them inside empty GameObjects?
 
-    - First, this system is closer to the well-known object-oriented paradigm: Godot provides a number of nodes which are not clearly "Game Objects", but they provide their children with their own capabilities: this is inheritance.
-    - Second, it allows the extraction of a subtree of the scene to make it a scene of its own, which answers the second and third questions: even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
-
-
-These are the most important concepts you need to remember: "node", "parent node", and "child node".
-
+    - Godot's system is closer to the well-known object-oriented paradigm: Godot provides a number of nodes which are not clearly "Game Objects", but they provide their children with their own capabilities: this is inheritance.
+    - Godot allows the extraction of a subtree of a scene to make it a scene of its own. So if a scene tree gets too deep, it can be split into smaller subtrees. This is better for reusability, as you can include any subtree as a child of any node. Putting multiple GameObjects in an empty GameObject in Unity does not provide the same functionality.
 
 Project organization
 --------------------
 
 .. image:: img/unity-project-organization-example.png
 
-We previously observed that there is no perfect solution to set a project architecture.
-Any solution will work for Unity and Godot, so this point has a lesser importance.
+There is no perfect project architecture.
+Any architecture can be made to work in either Unity and Godot.
 
-However, we often observe a common architecture for Unity projects, which consists of having one Assets folder in the root directory
-that contains various folders, one per type of asset: Audio, Graphics, Models, Materials, Scripts, Scenes, etc.
+However, a common architecture for Unity projects is to have one Assets folder in the root directory
+that contains various folders, one per type of asset: Audio, Graphics, Models, Materials, Scripts, Scenes, and so on.
 
-As described before, the Godot scene system allows splitting scenes into smaller scenes.
-Since each scene and subscene is actually one scene file in the project, we recommend organizing your project a bit differently.
+Since Godot allows splitting scenes into smaller scenes, each scene and subscene existing as a file in the project, we recommend organizing your project a bit differently.
 This wiki provides a page for this: :ref:`doc_project_organization`.
 
 
 Where are my prefabs?
 ---------------------
 
-The concept of prefabs as provided by Unity is a 'template' element of the scene.
+A prefab as provided by Unity is a 'template' element of the scene.
 It is reusable, and each instance of the prefab that exists in the scene has an existence of its own,
 but all of them have the same properties as defined by the prefab.
 
-Godot does not provide prefabs as such, but this functionality is here, again, filled thanks to its scene system:
-As we saw, the scene system is organized as a tree. Godot allows you to save a subtree of a scene as its own scene,
-thus saved into its own file. This new scene can then be instanced as many times as you want.
+Godot does not provide prefabs as such, but the same functionality is provided by its scene system:
+The scene system is organized as a tree. Godot allows you to save any subtree of a scene as a scene file. This new scene can then be instanced as many times as you want, as a child of any node.
 Any change you make to this new, separate scene will be applied to its instances.
 However, any change you make to the instance will not have any impact on the 'template' scene.
 
 .. image:: img/save-branch-as-scene.png
 
-To be precise, you can modify the parameters of the instance in the Inspector panel.
-However, the nodes that compose this instance are locked although you can unlock them if you need to by
+To be precise, you can modify the parameters of an instance in the Inspector panel.
+The nodes that compose this instance are initially locked. You can unlock them if you need to by
 right-clicking the instance in the Scene tree and selecting "Editable children" in the menu.
-You don't need to do this to add new children nodes to this node, but it is possible.
-Remember that these new children will belong to the instance, not the 'template' scene.
-If you want to add new children to all the instances of your 'template' scene, then you need to add them in the 'template' scene.
+You don't need to do this to add *new* child nodes to this node.
+Remember that any new children will belong to the instance, not to the 'template' scene on disk.
+If you want to add new children to every instance of your 'template' scene, then you should add them in the 'template' scene.
 
 .. image:: img/editable-children.png
 
@@ -196,7 +185,7 @@ Glossary correspondence
 
 - GameObject -> Node
 - Add a component -> Inheriting
-- Prefab -> Externalized branch
+- Prefab -> Reusable Scene file
 
 
 Scripting: GDScript, C# and Visual Script
@@ -205,13 +194,13 @@ Scripting: GDScript, C# and Visual Script
 Design
 ^^^^^^
 
-As you may know already, Unity supports C#. C# benefits from its integration with Visual Studio and other features, such as static typing.
+Unity supports C#. C# benefits from its integration with Visual Studio and has desirable features such as static typing.
 
 Godot provides its own scripting language, :ref:`GDScript <doc_scripting>` as well as support
 for :ref:`Visual Script <toc-learn-scripting-visual_script>` and :ref:`C# <doc_c_sharp>`.
 GDScript borrows its syntax from Python, but is not related to it. If you wonder about the reasoning for a custom scripting language,
 please read the :ref:`doc_gdscript` and :ref:`doc_faq` pages. GDScript is strongly attached to the Godot API
-and is really easy to learn: Between one evening for an experienced programmer and a week for a complete beginner.
+and doesn't take long to learn: Between one evening for an experienced programmer and a week for a complete beginner.
 
 Unity allows you to attach as many scripts as you want to a GameObject.
 Each script adds a behaviour to the GameObject: For example, you can attach a script so that it reacts to the player's controls,
@@ -224,8 +213,7 @@ depending on your scene and on what you want to achieve:
 - either add a new node between your target node and its current parent, then add a script to this new node.
 - or, you can split your target node into multiple children and attach one script to each of them.
 
-As you can see, it can be easy to turn a scene tree to a mess. This is why it is important to have a real reflection
-and consider splitting a complicated scene into multiple, smaller branches.
+As you can see, it can be easy to turn a scene tree to a mess. Consider splitting any complicated scene into multiple, smaller branches.
 
 Connections: groups and signals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
