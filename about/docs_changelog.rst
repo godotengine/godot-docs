@@ -13,24 +13,94 @@ to the class reference. Below is a list of new tutorials added since version 3.0
 New tutorials since version 3.1
 -------------------------------
 
+Project workflow
+^^^^^^^^^^^^^^^^
+
+- :ref:`doc_android_custom_build`
+
+2D
+^^
+
+- :ref:`doc_2d_sprite_animation`
+
+Audio
+^^^^^
+
+- :ref:`doc_sync_with_audio`
+
+Math
+^^^^
+
+- :ref:`doc_beziers_and_curves`
+- :ref:`doc_interpolation`
+
+Inputs
+^^^^^^
+
+- :ref:`doc_input_examples`
+
 Internationalization
 ^^^^^^^^^^^^^^^^^^^^
 
 - :ref:`doc_localization_using_gettext`
 
+Shading
+^^^^^^^
+
+Your First Shader Series:
+  - :ref:`doc_what_are_shaders`
+  - :ref:`doc_your_first_canvasitem_shader`
+  - :ref:`doc_your_first_spatial_shader`
+  - :ref:`doc_your_second_spatial_shader`
+
+Networking
+^^^^^^^^^^
+
+- :ref:`doc_webrtc`
+
+Plugins
+^^^^^^^
+
+- :ref:`doc_android_plugin`
+- :ref:`doc_inspector_plugins`
+
+Multi-threading
+^^^^^^^^^^^^^^^
+
+- :ref:`doc_using_multiple_threads`
+
+Creating content
+^^^^^^^^^^^^^^^^
+
+- :ref:`doc_procedural_geometry`
+
+Optimization
+^^^^^^^^^^^^
+
+- :ref:`doc_using_multimesh`
+- :ref:`doc_using_servers`
+
+Legal
+^^^^^
+
+- :ref:`doc_complying_with_licenses`
+
 New tutorials since version 3.0
 -------------------------------
 
-Step-by-step
+Step by step
 ^^^^^^^^^^^^
 
 - :ref:`doc_signals`
 - :ref:`doc_exporting`
 
+Scripting
+^^^^^^^^^
+
+- :ref:`doc_gdscript_static_typing`
+
 Project workflow
 ^^^^^^^^^^^^^^^^
-
-- :ref:`doc_android_custom_build`
 
 Best Practices:
   - :ref:`doc_introduction_best_practices`
@@ -43,11 +113,6 @@ Best Practices:
   - :ref:`doc_godot_notifications`
   - :ref:`doc_data_preferences`
   - :ref:`doc_logic_preferences`
-
-Scripting
-^^^^^^^^^
-
-- :ref:`doc_gdscript_static_typing`
 
 2D
 ^^
@@ -92,12 +157,6 @@ Shading
 - :ref:`doc_migrating_to_godot_shader_language`
 - :ref:`doc_advanced_postprocessing`
 
-Your First Shader Series:
-  - :ref:`doc_what_are_shaders`
-  - :ref:`doc_your_first_canvasitem_shader`
-  - :ref:`doc_your_first_spatial_shader`
-  - :ref:`doc_your_second_spatial_shader`
-
 Shading Reference:
   - :ref:`doc_shaders`
   - :ref:`doc_shading_language`
@@ -110,6 +169,12 @@ VR
 
 - :ref:`doc_vr_starter_tutorial`
 
+Plugins
+^^^^^^^
+
+- :ref:`doc_making_main_screen_plugins`
+- :ref:`doc_spatial_gizmo_plugins`
+
 Platform-specific
 ^^^^^^^^^^^^^^^^^
 
@@ -120,11 +185,10 @@ Multi-threading
 
 - :ref:`doc_thread_safe_apis`
 
-Optimization
-^^^^^^^^^^^^
+Creating content
+^^^^^^^^^^^^^^^^
 
-- :ref:`doc_using_multimesh`
-- :ref:`doc_using_servers`
+- :ref:`doc_making_trees`
 
 Miscellaneous
 ^^^^^^^^^^^^^
@@ -133,11 +197,6 @@ Miscellaneous
 - :ref:`doc_running_code_in_the_editor`
 - :ref:`doc_change_scenes_manually`
 - :ref:`doc_gles2_gles3_differences`
-
-Legal
-^^^^^
-
-- :ref:`doc_complying_with_licenses`
 
 Compiling
 ^^^^^^^^^
@@ -149,15 +208,3 @@ Engine development
 ^^^^^^^^^^^^^^^^^^
 
 - :ref:`doc_binding_to_external_libraries`
-
-Creating content
-^^^^^^^^^^^^^^^^
-
-- :ref:`doc_making_trees`
-
-Plugins
-^^^^^^^
-
-- :ref:`doc_making_main_screen_plugins`
-- :ref:`doc_spatial_gizmo_plugins`
-- :ref:`doc_android_plugin`
