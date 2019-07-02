@@ -19,13 +19,13 @@ Brief Description
 Properties
 ----------
 
-+--------------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`Source<enum_VisualShaderNodeTexture_Source>`           | :ref:`source<class_VisualShaderNodeTexture_property_source>`             |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                                | :ref:`texture<class_VisualShaderNodeTexture_property_texture>`           |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` | :ref:`texture_type<class_VisualShaderNodeTexture_property_texture_type>` |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+
++--------------------------------------------------------------+--------------------------------------------------------------------------+------+
+| :ref:`Source<enum_VisualShaderNodeTexture_Source>`           | :ref:`source<class_VisualShaderNodeTexture_property_source>`             | 0    |
++--------------------------------------------------------------+--------------------------------------------------------------------------+------+
+| :ref:`Texture<class_Texture>`                                | :ref:`texture<class_VisualShaderNodeTexture_property_texture>`           | null |
++--------------------------------------------------------------+--------------------------------------------------------------------------+------+
+| :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` | :ref:`texture_type<class_VisualShaderNodeTexture_property_texture_type>` | 0    |
++--------------------------------------------------------------+--------------------------------------------------------------------------+------+
 
 Enumerations
 ------------
@@ -73,29 +73,35 @@ Property Descriptions
 
 - :ref:`Source<enum_VisualShaderNodeTexture_Source>` **source**
 
-+----------+-------------------+
-| *Setter* | set_source(value) |
-+----------+-------------------+
-| *Getter* | get_source()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0                 |
++-----------+-------------------+
+| *Setter*  | set_source(value) |
++-----------+-------------------+
+| *Getter*  | get_source()      |
++-----------+-------------------+
 
 .. _class_VisualShaderNodeTexture_property_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | null               |
++-----------+--------------------+
+| *Setter*  | set_texture(value) |
++-----------+--------------------+
+| *Getter*  | get_texture()      |
++-----------+--------------------+
 
 .. _class_VisualShaderNodeTexture_property_texture_type:
 
 - :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **texture_type**
 
-+----------+-------------------------+
-| *Setter* | set_texture_type(value) |
-+----------+-------------------------+
-| *Getter* | get_texture_type()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_texture_type(value) |
++-----------+-------------------------+
+| *Getter*  | get_texture_type()      |
++-----------+-------------------------+
 

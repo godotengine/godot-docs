@@ -19,11 +19,11 @@ Joint used with :ref:`Skeleton2D<class_Skeleton2D>` to control and animate other
 Properties
 ----------
 
-+---------------------------------------+-------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`default_length<class_Bone2D_property_default_length>` |
-+---------------------------------------+-------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`rest<class_Bone2D_property_rest>`                     |
-+---------------------------------------+-------------------------------------------------------------+
++---------------------------------------+-------------------------------------------------------------+---------------------------------+
+| :ref:`float<class_float>`             | :ref:`default_length<class_Bone2D_property_default_length>` | 16.0                            |
++---------------------------------------+-------------------------------------------------------------+---------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`rest<class_Bone2D_property_rest>`                     | Transform2D( 0, 0, 0, 0, 0, 0 ) |
++---------------------------------------+-------------------------------------------------------------+---------------------------------+
 
 Methods
 -------
@@ -54,11 +54,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **default_length**
 
-+----------+---------------------------+
-| *Setter* | set_default_length(value) |
-+----------+---------------------------+
-| *Getter* | get_default_length()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 16.0                      |
++-----------+---------------------------+
+| *Setter*  | set_default_length(value) |
++-----------+---------------------------+
+| *Getter*  | get_default_length()      |
++-----------+---------------------------+
 
 Length of the bone's representation drawn in the editor's viewport in pixels.
 
@@ -66,11 +68,13 @@ Length of the bone's representation drawn in the editor's viewport in pixels.
 
 - :ref:`Transform2D<class_Transform2D>` **rest**
 
-+----------+-----------------+
-| *Setter* | set_rest(value) |
-+----------+-----------------+
-| *Getter* | get_rest()      |
-+----------+-----------------+
++-----------+---------------------------------+
+| *Default* | Transform2D( 0, 0, 0, 0, 0, 0 ) |
++-----------+---------------------------------+
+| *Setter*  | set_rest(value)                 |
++-----------+---------------------------------+
+| *Getter*  | get_rest()                      |
++-----------+---------------------------------+
 
 Rest transform of the bone. You can reset the node's transforms to this value using :ref:`apply_rest<class_Bone2D_method_apply_rest>`.
 

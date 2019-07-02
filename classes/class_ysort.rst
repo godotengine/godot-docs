@@ -19,9 +19,9 @@ Sort all child nodes based on their Y positions.
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_property_sort_enabled>` |
-+-------------------------+--------------------------------------------------------+
++-------------------------+--------------------------------------------------------+------+
+| :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_property_sort_enabled>` | true |
++-------------------------+--------------------------------------------------------+------+
 
 Description
 -----------
@@ -37,11 +37,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **sort_enabled**
 
-+----------+-------------------------+
-| *Setter* | set_sort_enabled(value) |
-+----------+-------------------------+
-| *Getter* | is_sort_enabled()       |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | true                    |
++-----------+-------------------------+
+| *Setter*  | set_sort_enabled(value) |
++-----------+-------------------------+
+| *Getter*  | is_sort_enabled()       |
++-----------+-------------------------+
 
-If ``true``, child nodes are sorted, otherwise sorting is disabled. Default: ``true``.
+If ``true``, child nodes are sorted, otherwise sorting is disabled.
 

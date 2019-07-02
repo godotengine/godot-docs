@@ -19,15 +19,15 @@ Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_CubeMesh_property_size>`                         |
-+-------------------------------+-------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_CubeMesh_property_subdivide_depth>`   |
-+-------------------------------+-------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_height<class_CubeMesh_property_subdivide_height>` |
-+-------------------------------+-------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_CubeMesh_property_subdivide_width>`   |
-+-------------------------------+-------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------+--------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`size<class_CubeMesh_property_size>`                         | Vector3( 2, 2, 2 ) |
++-------------------------------+-------------------------------------------------------------------+--------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_CubeMesh_property_subdivide_depth>`   | 0                  |
++-------------------------------+-------------------------------------------------------------------+--------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_height<class_CubeMesh_property_subdivide_height>` | 0                  |
++-------------------------------+-------------------------------------------------------------------+--------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_width<class_CubeMesh_property_subdivide_width>`   | 0                  |
++-------------------------------+-------------------------------------------------------------------+--------------------+
 
 Description
 -----------
@@ -43,47 +43,55 @@ Property Descriptions
 
 - :ref:`Vector3<class_Vector3>` **size**
 
-+----------+-----------------+
-| *Setter* | set_size(value) |
-+----------+-----------------+
-| *Getter* | get_size()      |
-+----------+-----------------+
++-----------+--------------------+
+| *Default* | Vector3( 2, 2, 2 ) |
++-----------+--------------------+
+| *Setter*  | set_size(value)    |
++-----------+--------------------+
+| *Getter*  | get_size()         |
++-----------+--------------------+
 
-Size of the cuboid mesh. Defaults to (2, 2, 2).
+Size of the cuboid mesh.
 
 .. _class_CubeMesh_property_subdivide_depth:
 
 - :ref:`int<class_int>` **subdivide_depth**
 
-+----------+----------------------------+
-| *Setter* | set_subdivide_depth(value) |
-+----------+----------------------------+
-| *Getter* | get_subdivide_depth()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 0                          |
++-----------+----------------------------+
+| *Setter*  | set_subdivide_depth(value) |
++-----------+----------------------------+
+| *Getter*  | get_subdivide_depth()      |
++-----------+----------------------------+
 
-Number of extra edge loops inserted along the Z axis. Defaults to 0.
+Number of extra edge loops inserted along the Z axis.
 
 .. _class_CubeMesh_property_subdivide_height:
 
 - :ref:`int<class_int>` **subdivide_height**
 
-+----------+-----------------------------+
-| *Setter* | set_subdivide_height(value) |
-+----------+-----------------------------+
-| *Getter* | get_subdivide_height()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0                           |
++-----------+-----------------------------+
+| *Setter*  | set_subdivide_height(value) |
++-----------+-----------------------------+
+| *Getter*  | get_subdivide_height()      |
++-----------+-----------------------------+
 
-Number of extra edge loops inserted along the Y axis. Defaults to 0.
+Number of extra edge loops inserted along the Y axis.
 
 .. _class_CubeMesh_property_subdivide_width:
 
 - :ref:`int<class_int>` **subdivide_width**
 
-+----------+----------------------------+
-| *Setter* | set_subdivide_width(value) |
-+----------+----------------------------+
-| *Getter* | get_subdivide_width()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 0                          |
++-----------+----------------------------+
+| *Setter*  | set_subdivide_width(value) |
++-----------+----------------------------+
+| *Getter*  | get_subdivide_width()      |
++-----------+----------------------------+
 
-Number of extra edge loops inserted along the X axis. Defaults to 0.
+Number of extra edge loops inserted along the X axis.
 

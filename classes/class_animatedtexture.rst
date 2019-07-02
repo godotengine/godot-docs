@@ -19,11 +19,11 @@ Proxy texture for simple frame-based animations.
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`       |
-+---------------------------+------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>` |
-+---------------------------+------------------------------------------------------+
++---------------------------+------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`       | 4.0 |
++---------------------------+------------------------------------------------------+-----+
+| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>` | 1   |
++---------------------------+------------------------------------------------------+-----+
 
 Methods
 -------
@@ -61,13 +61,15 @@ Property Descriptions
 
 - :ref:`float<class_float>` **fps**
 
-+----------+----------------+
-| *Setter* | set_fps(value) |
-+----------+----------------+
-| *Getter* | get_fps()      |
-+----------+----------------+
++-----------+----------------+
+| *Default* | 4.0            |
++-----------+----------------+
+| *Setter*  | set_fps(value) |
++-----------+----------------+
+| *Getter*  | get_fps()      |
++-----------+----------------+
 
-Animation speed in frames per second. This value defines the default time interval between two frames of the animation, and thus the overall duration of the animation loop based on the :ref:`frames<class_AnimatedTexture_property_frames>` property. A value of 0 means no predefined number of frames per second, the animation will play according to each frame's frame delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). Default value: 4.
+Animation speed in frames per second. This value defines the default time interval between two frames of the animation, and thus the overall duration of the animation loop based on the :ref:`frames<class_AnimatedTexture_property_frames>` property. A value of 0 means no predefined number of frames per second, the animation will play according to each frame's frame delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`).
 
 For example, an animation with 8 frames, no frame delay and a ``fps`` value of 2 will run for 4 seconds, with each frame lasting 0.5 seconds.
 
@@ -75,13 +77,15 @@ For example, an animation with 8 frames, no frame delay and a ``fps`` value of 2
 
 - :ref:`int<class_int>` **frames**
 
-+----------+-------------------+
-| *Setter* | set_frames(value) |
-+----------+-------------------+
-| *Getter* | get_frames()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1                 |
++-----------+-------------------+
+| *Setter*  | set_frames(value) |
++-----------+-------------------+
+| *Getter*  | get_frames()      |
++-----------+-------------------+
 
-Number of frames to use in the animation. While you can create the frames independently with :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>`, you need to set this value for the animation to take new frames into account. The maximum number of frames is :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`. Default value: 1.
+Number of frames to use in the animation. While you can create the frames independently with :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>`, you need to set this value for the animation to take new frames into account. The maximum number of frames is :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`.
 
 Method Descriptions
 -------------------

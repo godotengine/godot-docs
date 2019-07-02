@@ -19,9 +19,9 @@ A tracked object.
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`rumble<class_ARVRPositionalTracker_property_rumble>` |
-+---------------------------+------------------------------------------------------------+
++---------------------------+------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`rumble<class_ARVRPositionalTracker_property_rumble>` | 0.0 |
++---------------------------+------------------------------------------------------------+-----+
 
 Methods
 -------
@@ -83,11 +83,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **rumble**
 
-+----------+-------------------+
-| *Setter* | set_rumble(value) |
-+----------+-------------------+
-| *Getter* | get_rumble()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0.0               |
++-----------+-------------------+
+| *Setter*  | set_rumble(value) |
++-----------+-------------------+
+| *Getter*  | get_rumble()      |
++-----------+-------------------+
 
 The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``.
 

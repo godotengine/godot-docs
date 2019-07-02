@@ -19,9 +19,9 @@ Adds a panner audio effect to an Audio bus. Pans sound left or right.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`pan<class_AudioEffectPanner_property_pan>` |
-+---------------------------+--------------------------------------------------+
++---------------------------+--------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`pan<class_AudioEffectPanner_property_pan>` | 0.0 |
++---------------------------+--------------------------------------------------+-----+
 
 Description
 -----------
@@ -35,11 +35,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **pan**
 
-+----------+----------------+
-| *Setter* | set_pan(value) |
-+----------+----------------+
-| *Getter* | get_pan()      |
-+----------+----------------+
++-----------+----------------+
+| *Default* | 0.0            |
++-----------+----------------+
+| *Setter*  | set_pan(value) |
++-----------+----------------+
+| *Getter*  | get_pan()      |
++-----------+----------------+
 
 Pan position. Value can range from -1 (fully left) to 1 (fully right).
 

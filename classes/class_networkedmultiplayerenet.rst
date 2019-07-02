@@ -19,15 +19,15 @@ PacketPeer implementation using the `ENet <http://enet.bespin.org/index.html>`_ 
 Properties
 ----------
 
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                               | :ref:`always_ordered<class_NetworkedMultiplayerENet_property_always_ordered>`     |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                 | :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>`       |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                                               | :ref:`always_ordered<class_NetworkedMultiplayerENet_property_always_ordered>`     | false |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                                                 | :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>`       | 3     |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+| :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` | 0     |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | -1    |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -98,11 +98,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **always_ordered**
 
-+----------+---------------------------+
-| *Setter* | set_always_ordered(value) |
-+----------+---------------------------+
-| *Getter* | is_always_ordered()       |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | false                     |
++-----------+---------------------------+
+| *Setter*  | set_always_ordered(value) |
++-----------+---------------------------+
+| *Getter*  | is_always_ordered()       |
++-----------+---------------------------+
 
 Enforce ordered packets when using :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_UNRELIABLE<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE>` (thus behaving similarly to :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_UNRELIABLE_ORDERED<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED>`). This is the only way to use ordering with the RPC system.
 
@@ -110,35 +112,41 @@ Enforce ordered packets when using :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_
 
 - :ref:`int<class_int>` **channel_count**
 
-+----------+--------------------------+
-| *Setter* | set_channel_count(value) |
-+----------+--------------------------+
-| *Getter* | get_channel_count()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 3                        |
++-----------+--------------------------+
+| *Setter*  | set_channel_count(value) |
++-----------+--------------------------+
+| *Getter*  | get_channel_count()      |
++-----------+--------------------------+
 
-The number of channels to be used by ENet. Default: ``3``. Channels are used to separate different kinds of data. In reliable or ordered mode, for example, the packet delivery order is ensured on a per channel basis.
+The number of channels to be used by ENet. Channels are used to separate different kinds of data. In reliable or ordered mode, for example, the packet delivery order is ensured on a per channel basis.
 
 .. _class_NetworkedMultiplayerENet_property_compression_mode:
 
 - :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **compression_mode**
 
-+----------+-----------------------------+
-| *Setter* | set_compression_mode(value) |
-+----------+-----------------------------+
-| *Getter* | get_compression_mode()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0                           |
++-----------+-----------------------------+
+| *Setter*  | set_compression_mode(value) |
++-----------+-----------------------------+
+| *Getter*  | get_compression_mode()      |
++-----------+-----------------------------+
 
-The compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all. Default value: :ref:`COMPRESS_NONE<class_NetworkedMultiplayerENet_constant_COMPRESS_NONE>`.
+The compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.
 
 .. _class_NetworkedMultiplayerENet_property_transfer_channel:
 
 - :ref:`int<class_int>` **transfer_channel**
 
-+----------+-----------------------------+
-| *Setter* | set_transfer_channel(value) |
-+----------+-----------------------------+
-| *Getter* | get_transfer_channel()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | -1                          |
++-----------+-----------------------------+
+| *Setter*  | set_transfer_channel(value) |
++-----------+-----------------------------+
+| *Getter*  | get_transfer_channel()      |
++-----------+-----------------------------+
 
 Set the default channel to be used to transfer data. By default, this value is ``-1`` which means that ENet will only use 2 channels, one for reliable and one for unreliable packets. Channel ``0`` is reserved, and cannot be used. Setting this member to any value between ``0`` and :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>` (excluded) will force ENet to use that channel for sending data.
 

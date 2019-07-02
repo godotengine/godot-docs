@@ -19,11 +19,11 @@ Ray shape for 2D collisions.
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`length<class_RayShape2D_property_length>`                 |
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape2D_property_slips_on_slope>` |
-+---------------------------+-----------------------------------------------------------------+
++---------------------------+-----------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`length<class_RayShape2D_property_length>`                 | 20.0  |
++---------------------------+-----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape2D_property_slips_on_slope>` | false |
++---------------------------+-----------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -37,11 +37,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **length**
 
-+----------+-------------------+
-| *Setter* | set_length(value) |
-+----------+-------------------+
-| *Getter* | get_length()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 20.0              |
++-----------+-------------------+
+| *Setter*  | set_length(value) |
++-----------+-------------------+
+| *Getter*  | get_length()      |
++-----------+-------------------+
 
 The ray's length.
 
@@ -49,11 +51,13 @@ The ray's length.
 
 - :ref:`bool<class_bool>` **slips_on_slope**
 
-+----------+---------------------------+
-| *Setter* | set_slips_on_slope(value) |
-+----------+---------------------------+
-| *Getter* | get_slips_on_slope()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | false                     |
++-----------+---------------------------+
+| *Setter*  | set_slips_on_slope(value) |
++-----------+---------------------------+
+| *Getter*  | get_slips_on_slope()      |
++-----------+---------------------------+
 
-If ``true``, allow the shape to return the correct normal. Default value: ``false``.
+If ``true``, allow the shape to return the correct normal.
 

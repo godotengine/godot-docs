@@ -440,7 +440,7 @@ Sets the mouse mode. See the constants for more information.
 
 - void **set_use_accumulated_input** **(** :ref:`bool<class_bool>` enable **)**
 
-Whether to accumulate similar input events sent by the operating system. Defaults to ``true``.
+Whether to accumulate similar input events sent by the operating system. Enabled by default.
 
 .. _class_Input_method_start_joy_vibration:
 

@@ -19,11 +19,11 @@ A spatial node representing a spatially-tracked controller.
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`controller_id<class_ARVRController_property_controller_id>` |
-+---------------------------+-------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`rumble<class_ARVRController_property_rumble>`               |
-+---------------------------+-------------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------+-----+
+| :ref:`int<class_int>`     | :ref:`controller_id<class_ARVRController_property_controller_id>` | 1   |
++---------------------------+-------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`rumble<class_ARVRController_property_rumble>`               | 0.0 |
++---------------------------+-------------------------------------------------------------------+-----+
 
 Methods
 -------
@@ -81,11 +81,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **controller_id**
 
-+----------+--------------------------+
-| *Setter* | set_controller_id(value) |
-+----------+--------------------------+
-| *Getter* | get_controller_id()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 1                        |
++-----------+--------------------------+
+| *Setter*  | set_controller_id(value) |
++-----------+--------------------------+
+| *Getter*  | get_controller_id()      |
++-----------+--------------------------+
 
 The controller's ID.
 
@@ -99,11 +101,13 @@ When a controller is turned off, its slot is freed. This ensures controllers wil
 
 - :ref:`float<class_float>` **rumble**
 
-+----------+-------------------+
-| *Setter* | set_rumble(value) |
-+----------+-------------------+
-| *Getter* | get_rumble()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0.0               |
++-----------+-------------------+
+| *Setter*  | set_rumble(value) |
++-----------+-------------------+
+| *Getter*  | get_rumble()      |
++-----------+-------------------+
 
 The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``. If changed, updates :ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_property_rumble>` accordingly.
 

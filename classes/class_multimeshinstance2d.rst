@@ -19,13 +19,13 @@ Node that instances a :ref:`MultiMesh<class_MultiMesh>` in 2D.
 Properties
 ----------
 
-+-----------------------------------+------------------------------------------------------------------+
-| :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance2D_property_multimesh>`   |
-+-----------------------------------+------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`     | :ref:`normal_map<class_MultiMeshInstance2D_property_normal_map>` |
-+-----------------------------------+------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`     | :ref:`texture<class_MultiMeshInstance2D_property_texture>`       |
-+-----------------------------------+------------------------------------------------------------------+
++-----------------------------------+------------------------------------------------------------------+------+
+| :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance2D_property_multimesh>`   | null |
++-----------------------------------+------------------------------------------------------------------+------+
+| :ref:`Texture<class_Texture>`     | :ref:`normal_map<class_MultiMeshInstance2D_property_normal_map>` | null |
++-----------------------------------+------------------------------------------------------------------+------+
+| :ref:`Texture<class_Texture>`     | :ref:`texture<class_MultiMeshInstance2D_property_texture>`       | null |
++-----------------------------------+------------------------------------------------------------------+------+
 
 Signals
 -------
@@ -48,11 +48,13 @@ Property Descriptions
 
 - :ref:`MultiMesh<class_MultiMesh>` **multimesh**
 
-+----------+----------------------+
-| *Setter* | set_multimesh(value) |
-+----------+----------------------+
-| *Getter* | get_multimesh()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | null                 |
++-----------+----------------------+
+| *Setter*  | set_multimesh(value) |
++-----------+----------------------+
+| *Getter*  | get_multimesh()      |
++-----------+----------------------+
 
 The :ref:`MultiMesh<class_MultiMesh>` that will be drawn by the ``MultiMeshInstance2D``.
 
@@ -60,11 +62,13 @@ The :ref:`MultiMesh<class_MultiMesh>` that will be drawn by the ``MultiMeshInsta
 
 - :ref:`Texture<class_Texture>` **normal_map**
 
-+----------+-----------------------+
-| *Setter* | set_normal_map(value) |
-+----------+-----------------------+
-| *Getter* | get_normal_map()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | null                  |
++-----------+-----------------------+
+| *Setter*  | set_normal_map(value) |
++-----------+-----------------------+
+| *Getter*  | get_normal_map()      |
++-----------+-----------------------+
 
 The normal map that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`.
 
@@ -72,11 +76,13 @@ The normal map that will be used if using the default :ref:`CanvasItemMaterial<c
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | null               |
++-----------+--------------------+
+| *Setter*  | set_texture(value) |
++-----------+--------------------+
+| *Getter*  | get_texture()      |
++-----------+--------------------+
 
 The :ref:`Texture<class_Texture>` that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`. Can be accessed as ``TEXTURE`` in CanvasItem shader.
 

@@ -19,23 +19,23 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Access<enum_EditorFileDialog_Access>`           | :ref:`access<class_EditorFileDialog_property_access>`                                       |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`current_dir<class_EditorFileDialog_property_current_dir>`                             |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`current_file<class_EditorFileDialog_property_current_file>`                           |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`current_path<class_EditorFileDialog_property_current_path>`                           |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`disable_overwrite_warning<class_EditorFileDialog_property_disable_overwrite_warning>` |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` | :ref:`display_mode<class_EditorFileDialog_property_display_mode>`                           |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Mode<enum_EditorFileDialog_Mode>`               | :ref:`mode<class_EditorFileDialog_property_mode>`                                           |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`show_hidden_files<class_EditorFileDialog_property_show_hidden_files>`                 |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------+
++-------------------------------------------------------+---------------------------------------------------------------------------------------------+----------+
+| :ref:`Access<enum_EditorFileDialog_Access>`           | :ref:`access<class_EditorFileDialog_property_access>`                                       | 0        |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                           | :ref:`current_dir<class_EditorFileDialog_property_current_dir>`                             | "res://" |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                           | :ref:`current_file<class_EditorFileDialog_property_current_file>`                           | ""       |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                           | :ref:`current_path<class_EditorFileDialog_property_current_path>`                           | "res://" |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                               | :ref:`disable_overwrite_warning<class_EditorFileDialog_property_disable_overwrite_warning>` | false    |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------+----------+
+| :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` | :ref:`display_mode<class_EditorFileDialog_property_display_mode>`                           | 0        |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------+----------+
+| :ref:`Mode<enum_EditorFileDialog_Mode>`               | :ref:`mode<class_EditorFileDialog_property_mode>`                                           | 4        |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                               | :ref:`show_hidden_files<class_EditorFileDialog_property_show_hidden_files>`                 | false    |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -133,11 +133,13 @@ Property Descriptions
 
 - :ref:`Access<enum_EditorFileDialog_Access>` **access**
 
-+----------+-------------------+
-| *Setter* | set_access(value) |
-+----------+-------------------+
-| *Getter* | get_access()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0                 |
++-----------+-------------------+
+| *Setter*  | set_access(value) |
++-----------+-------------------+
+| *Getter*  | get_access()      |
++-----------+-------------------+
 
 The location from which the user may select a file, including ``res://``, ``user://``, and the local file system.
 
@@ -145,11 +147,13 @@ The location from which the user may select a file, including ``res://``, ``user
 
 - :ref:`String<class_String>` **current_dir**
 
-+----------+------------------------+
-| *Setter* | set_current_dir(value) |
-+----------+------------------------+
-| *Getter* | get_current_dir()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | "res://"               |
++-----------+------------------------+
+| *Setter*  | set_current_dir(value) |
++-----------+------------------------+
+| *Getter*  | get_current_dir()      |
++-----------+------------------------+
 
 The currently occupied directory.
 
@@ -157,11 +161,13 @@ The currently occupied directory.
 
 - :ref:`String<class_String>` **current_file**
 
-+----------+-------------------------+
-| *Setter* | set_current_file(value) |
-+----------+-------------------------+
-| *Getter* | get_current_file()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | ""                      |
++-----------+-------------------------+
+| *Setter*  | set_current_file(value) |
++-----------+-------------------------+
+| *Getter*  | get_current_file()      |
++-----------+-------------------------+
 
 The currently selected file.
 
@@ -169,11 +175,13 @@ The currently selected file.
 
 - :ref:`String<class_String>` **current_path**
 
-+----------+-------------------------+
-| *Setter* | set_current_path(value) |
-+----------+-------------------------+
-| *Getter* | get_current_path()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | "res://"                |
++-----------+-------------------------+
+| *Setter*  | set_current_path(value) |
++-----------+-------------------------+
+| *Getter*  | get_current_path()      |
++-----------+-------------------------+
 
 The file system path in the address bar.
 
@@ -181,11 +189,13 @@ The file system path in the address bar.
 
 - :ref:`bool<class_bool>` **disable_overwrite_warning**
 
-+----------+--------------------------------------+
-| *Setter* | set_disable_overwrite_warning(value) |
-+----------+--------------------------------------+
-| *Getter* | is_overwrite_warning_disabled()      |
-+----------+--------------------------------------+
++-----------+--------------------------------------+
+| *Default* | false                                |
++-----------+--------------------------------------+
+| *Setter*  | set_disable_overwrite_warning(value) |
++-----------+--------------------------------------+
+| *Getter*  | is_overwrite_warning_disabled()      |
++-----------+--------------------------------------+
 
 If ``true``, the ``EditorFileDialog`` will not warn the user before overwriting files.
 
@@ -193,11 +203,13 @@ If ``true``, the ``EditorFileDialog`` will not warn the user before overwriting 
 
 - :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **display_mode**
 
-+----------+-------------------------+
-| *Setter* | set_display_mode(value) |
-+----------+-------------------------+
-| *Getter* | get_display_mode()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_display_mode(value) |
++-----------+-------------------------+
+| *Getter*  | get_display_mode()      |
++-----------+-------------------------+
 
 The view format in which the ``EditorFileDialog`` displays resources to the user.
 
@@ -205,11 +217,13 @@ The view format in which the ``EditorFileDialog`` displays resources to the user
 
 - :ref:`Mode<enum_EditorFileDialog_Mode>` **mode**
 
-+----------+-----------------+
-| *Setter* | set_mode(value) |
-+----------+-----------------+
-| *Getter* | get_mode()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 4               |
++-----------+-----------------+
+| *Setter*  | set_mode(value) |
++-----------+-----------------+
+| *Getter*  | get_mode()      |
++-----------+-----------------+
 
 The purpose of the ``EditorFileDialog``, which defines the allowed behaviors.
 
@@ -217,11 +231,13 @@ The purpose of the ``EditorFileDialog``, which defines the allowed behaviors.
 
 - :ref:`bool<class_bool>` **show_hidden_files**
 
-+----------+------------------------------+
-| *Setter* | set_show_hidden_files(value) |
-+----------+------------------------------+
-| *Getter* | is_showing_hidden_files()    |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | false                        |
++-----------+------------------------------+
+| *Setter*  | set_show_hidden_files(value) |
++-----------+------------------------------+
+| *Getter*  | is_showing_hidden_files()    |
++-----------+------------------------------+
 
 If ``true``, hidden files and directories will be visible in the ``EditorFileDialog``.
 

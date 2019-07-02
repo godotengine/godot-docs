@@ -21,17 +21,17 @@ Base class for GUI sliders.
 Properties
 ----------
 
-+------------------------------------------+-----------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_property_editable>`                 |
-+------------------------------------------+-----------------------------------------------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | :ref:`focus_mode<class_Slider_property_focus_mode>`             |
-+------------------------------------------+-----------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_property_scrollable>`             |
-+------------------------------------------+-----------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_property_tick_count>`             |
-+------------------------------------------+-----------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` |
-+------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_property_editable>`                 | true  |
++------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | :ref:`focus_mode<class_Slider_property_focus_mode>`             | 2     |
++------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_property_scrollable>`             | true  |
++------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_property_tick_count>`             | 0     |
++------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | false |
++------------------------------------------+-----------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -45,11 +45,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **editable**
 
-+----------+---------------------+
-| *Setter* | set_editable(value) |
-+----------+---------------------+
-| *Getter* | is_editable()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | true                |
++-----------+---------------------+
+| *Setter*  | set_editable(value) |
++-----------+---------------------+
+| *Getter*  | is_editable()       |
++-----------+---------------------+
 
 If ``true``, the slider can be interacted with. If ``false``, the value can be changed only by code.
 
@@ -57,21 +59,25 @@ If ``true``, the slider can be interacted with. If ``false``, the value can be c
 
 - :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
 
-+----------+-----------------------+
-| *Setter* | set_focus_mode(value) |
-+----------+-----------------------+
-| *Getter* | get_focus_mode()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 2                     |
++-----------+-----------------------+
+| *Setter*  | set_focus_mode(value) |
++-----------+-----------------------+
+| *Getter*  | get_focus_mode()      |
++-----------+-----------------------+
 
 .. _class_Slider_property_scrollable:
 
 - :ref:`bool<class_bool>` **scrollable**
 
-+----------+-----------------------+
-| *Setter* | set_scrollable(value) |
-+----------+-----------------------+
-| *Getter* | is_scrollable()       |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | true                  |
++-----------+-----------------------+
+| *Setter*  | set_scrollable(value) |
++-----------+-----------------------+
+| *Getter*  | is_scrollable()       |
++-----------+-----------------------+
 
 If ``true``, the value can be changed using the mouse wheel.
 
@@ -79,11 +85,13 @@ If ``true``, the value can be changed using the mouse wheel.
 
 - :ref:`int<class_int>` **tick_count**
 
-+----------+------------------+
-| *Setter* | set_ticks(value) |
-+----------+------------------+
-| *Getter* | get_ticks()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0                |
++-----------+------------------+
+| *Setter*  | set_ticks(value) |
++-----------+------------------+
+| *Getter*  | get_ticks()      |
++-----------+------------------+
 
 Number of ticks displayed on the slider, including border ticks. Ticks are uniformly-distributed value markers.
 
@@ -91,11 +99,13 @@ Number of ticks displayed on the slider, including border ticks. Ticks are unifo
 
 - :ref:`bool<class_bool>` **ticks_on_borders**
 
-+----------+-----------------------------+
-| *Setter* | set_ticks_on_borders(value) |
-+----------+-----------------------------+
-| *Getter* | get_ticks_on_borders()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | false                       |
++-----------+-----------------------------+
+| *Setter*  | set_ticks_on_borders(value) |
++-----------+-----------------------------+
+| *Getter*  | get_ticks_on_borders()      |
++-----------+-----------------------------+
 
 If ``true``, the slider will display ticks for minimum and maximum values.
 

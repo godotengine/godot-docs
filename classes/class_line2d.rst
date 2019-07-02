@@ -19,29 +19,31 @@ A 2D line.
 Properties
 ----------
 
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`begin_cap_mode<class_Line2D_property_begin_cap_mode>`   |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`Color<class_Color>`                           | :ref:`default_color<class_Line2D_property_default_color>`     |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`end_cap_mode<class_Line2D_property_end_cap_mode>`       |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`Gradient<class_Gradient>`                     | :ref:`gradient<class_Line2D_property_gradient>`               |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`LineJointMode<enum_Line2D_LineJointMode>`     | :ref:`joint_mode<class_Line2D_property_joint_mode>`           |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`points<class_Line2D_property_points>`                   |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`round_precision<class_Line2D_property_round_precision>` |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>`                           | :ref:`sharp_limit<class_Line2D_property_sharp_limit>`         |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                       | :ref:`texture<class_Line2D_property_texture>`                 |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` | :ref:`texture_mode<class_Line2D_property_texture_mode>`       |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>`                           | :ref:`width<class_Line2D_property_width>`                     |
-+-----------------------------------------------------+---------------------------------------------------------------+
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`begin_cap_mode<class_Line2D_property_begin_cap_mode>`   | 0                       |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`                           | :ref:`default_color<class_Line2D_property_default_color>`     | Color( 0.4, 0.5, 1, 1 ) |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`end_cap_mode<class_Line2D_property_end_cap_mode>`       | 0                       |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Gradient<class_Gradient>`                     | :ref:`gradient<class_Line2D_property_gradient>`               | null                    |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`LineJointMode<enum_Line2D_LineJointMode>`     | :ref:`joint_mode<class_Line2D_property_joint_mode>`           | 0                       |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`points<class_Line2D_property_points>`                   | PoolVector2Array(  )    |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                               | :ref:`round_precision<class_Line2D_property_round_precision>` | 8                       |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                           | :ref:`sharp_limit<class_Line2D_property_sharp_limit>`         | 2.0                     |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Texture<class_Texture>`                       | :ref:`texture<class_Line2D_property_texture>`                 | null                    |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` | :ref:`texture_mode<class_Line2D_property_texture_mode>`       | 0                       |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                           | :ref:`width<class_Line2D_property_width>`                     | 10.0                    |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Curve<class_Curve>`                           | :ref:`width_curve<class_Line2D_property_width_curve>`         | null                    |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -123,23 +125,27 @@ Property Descriptions
 
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **begin_cap_mode**
 
-+----------+---------------------------+
-| *Setter* | set_begin_cap_mode(value) |
-+----------+---------------------------+
-| *Getter* | get_begin_cap_mode()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 0                         |
++-----------+---------------------------+
+| *Setter*  | set_begin_cap_mode(value) |
++-----------+---------------------------+
+| *Getter*  | get_begin_cap_mode()      |
++-----------+---------------------------+
 
-Controls the style of the line's first point. Use ``LINE_CAP_*`` constants. Default value: :ref:`LINE_CAP_NONE<class_Line2D_constant_LINE_CAP_NONE>`.
+Controls the style of the line's first point. Use ``LINE_CAP_*`` constants.
 
 .. _class_Line2D_property_default_color:
 
 - :ref:`Color<class_Color>` **default_color**
 
-+----------+--------------------------+
-| *Setter* | set_default_color(value) |
-+----------+--------------------------+
-| *Getter* | get_default_color()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | Color( 0.4, 0.5, 1, 1 )  |
++-----------+--------------------------+
+| *Setter*  | set_default_color(value) |
++-----------+--------------------------+
+| *Getter*  | get_default_color()      |
++-----------+--------------------------+
 
 The line's color. Will not be used if a gradient is set.
 
@@ -147,23 +153,27 @@ The line's color. Will not be used if a gradient is set.
 
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **end_cap_mode**
 
-+----------+-------------------------+
-| *Setter* | set_end_cap_mode(value) |
-+----------+-------------------------+
-| *Getter* | get_end_cap_mode()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_end_cap_mode(value) |
++-----------+-------------------------+
+| *Getter*  | get_end_cap_mode()      |
++-----------+-------------------------+
 
-Controls the style of the line's last point. Use ``LINE_CAP_*`` constants. Default value: :ref:`LINE_CAP_NONE<class_Line2D_constant_LINE_CAP_NONE>`.
+Controls the style of the line's last point. Use ``LINE_CAP_*`` constants.
 
 .. _class_Line2D_property_gradient:
 
 - :ref:`Gradient<class_Gradient>` **gradient**
 
-+----------+---------------------+
-| *Setter* | set_gradient(value) |
-+----------+---------------------+
-| *Getter* | get_gradient()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_gradient(value) |
++-----------+---------------------+
+| *Getter*  | get_gradient()      |
++-----------+---------------------+
 
 The gradient is drawn through the whole line from start to finish. The default color will not be used if a gradient is set.
 
@@ -171,11 +181,13 @@ The gradient is drawn through the whole line from start to finish. The default c
 
 - :ref:`LineJointMode<enum_Line2D_LineJointMode>` **joint_mode**
 
-+----------+-----------------------+
-| *Setter* | set_joint_mode(value) |
-+----------+-----------------------+
-| *Getter* | get_joint_mode()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 0                     |
++-----------+-----------------------+
+| *Setter*  | set_joint_mode(value) |
++-----------+-----------------------+
+| *Getter*  | get_joint_mode()      |
++-----------+-----------------------+
 
 The style for the points between the start and the end.
 
@@ -183,11 +195,13 @@ The style for the points between the start and the end.
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
 
-+----------+-------------------+
-| *Setter* | set_points(value) |
-+----------+-------------------+
-| *Getter* | get_points()      |
-+----------+-------------------+
++-----------+----------------------+
+| *Default* | PoolVector2Array(  ) |
++-----------+----------------------+
+| *Setter*  | set_points(value)    |
++-----------+----------------------+
+| *Getter*  | get_points()         |
++-----------+----------------------+
 
 The points that form the lines. The line is drawn between every point set in this array.
 
@@ -195,11 +209,13 @@ The points that form the lines. The line is drawn between every point set in thi
 
 - :ref:`int<class_int>` **round_precision**
 
-+----------+----------------------------+
-| *Setter* | set_round_precision(value) |
-+----------+----------------------------+
-| *Getter* | get_round_precision()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 8                          |
++-----------+----------------------------+
+| *Setter*  | set_round_precision(value) |
++-----------+----------------------------+
+| *Getter*  | get_round_precision()      |
++-----------+----------------------------+
 
 The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.
 
@@ -207,11 +223,13 @@ The smoothness of the rounded joints and caps. This is only used if a cap or joi
 
 - :ref:`float<class_float>` **sharp_limit**
 
-+----------+------------------------+
-| *Setter* | set_sharp_limit(value) |
-+----------+------------------------+
-| *Getter* | get_sharp_limit()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 2.0                    |
++-----------+------------------------+
+| *Setter*  | set_sharp_limit(value) |
++-----------+------------------------+
+| *Getter*  | get_sharp_limit()      |
++-----------+------------------------+
 
 The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`.
 
@@ -219,11 +237,13 @@ The direction difference in radians between vector points. This value is only us
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | null               |
++-----------+--------------------+
+| *Setter*  | set_texture(value) |
++-----------+--------------------+
+| *Getter*  | get_texture()      |
++-----------+--------------------+
 
 The texture used for the line's texture. Uses ``texture_mode`` for drawing style.
 
@@ -231,25 +251,43 @@ The texture used for the line's texture. Uses ``texture_mode`` for drawing style
 
 - :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **texture_mode**
 
-+----------+-------------------------+
-| *Setter* | set_texture_mode(value) |
-+----------+-------------------------+
-| *Getter* | get_texture_mode()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_texture_mode(value) |
++-----------+-------------------------+
+| *Getter*  | get_texture_mode()      |
++-----------+-------------------------+
 
-The style to render the ``texture`` on the line. Use ``LINE_TEXTURE_*`` constants. Default value: :ref:`LINE_TEXTURE_NONE<class_Line2D_constant_LINE_TEXTURE_NONE>`.
+The style to render the ``texture`` on the line. Use ``LINE_TEXTURE_*`` constants.
 
 .. _class_Line2D_property_width:
 
 - :ref:`float<class_float>` **width**
 
-+----------+------------------+
-| *Setter* | set_width(value) |
-+----------+------------------+
-| *Getter* | get_width()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 10.0             |
++-----------+------------------+
+| *Setter*  | set_width(value) |
++-----------+------------------+
+| *Getter*  | get_width()      |
++-----------+------------------+
 
 The line's width.
+
+.. _class_Line2D_property_width_curve:
+
+- :ref:`Curve<class_Curve>` **width_curve**
+
++-----------+------------------+
+| *Default* | null             |
++-----------+------------------+
+| *Setter*  | set_curve(value) |
++-----------+------------------+
+| *Getter*  | get_curve()      |
++-----------+------------------+
+
+The line's width varies with the curve. The original width is simply multiply by the value of the Curve.
 
 Method Descriptions
 -------------------

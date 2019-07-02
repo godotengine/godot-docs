@@ -19,9 +19,9 @@ Commonly used mathematical constants.
 Properties
 ----------
 
-+-----------------------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` |
-+-----------------------------------------------------------------+-------------------------------------------------------------------+
++-----------------------------------------------------------------+-------------------------------------------------------------------+---+
+| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` | 0 |
++-----------------------------------------------------------------+-------------------------------------------------------------------+---+
 
 Enumerations
 ------------
@@ -86,11 +86,13 @@ Property Descriptions
 
 - :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant**
 
-+----------+--------------------------+
-| *Setter* | set_math_constant(value) |
-+----------+--------------------------+
-| *Getter* | get_math_constant()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 0                        |
++-----------+--------------------------+
+| *Setter*  | set_math_constant(value) |
++-----------+--------------------------+
+| *Getter*  | get_math_constant()      |
++-----------+--------------------------+
 
 The math constant.
 

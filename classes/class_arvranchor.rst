@@ -19,9 +19,9 @@ An anchor point in AR space.
 Properties
 ----------
 
-+-----------------------+-------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`anchor_id<class_ARVRAnchor_property_anchor_id>` |
-+-----------------------+-------------------------------------------------------+
++-----------------------+-------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`anchor_id<class_ARVRAnchor_property_anchor_id>` | 1 |
++-----------------------+-------------------------------------------------------+---+
 
 Methods
 -------
@@ -63,11 +63,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **anchor_id**
 
-+----------+----------------------+
-| *Setter* | set_anchor_id(value) |
-+----------+----------------------+
-| *Getter* | get_anchor_id()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 1                    |
++-----------+----------------------+
+| *Setter*  | set_anchor_id(value) |
++-----------+----------------------+
+| *Getter*  | get_anchor_id()      |
++-----------+----------------------+
 
 The anchor's ID. You can set this before the anchor itself exists. The first anchor gets an ID of ``1``, the second an ID of ``2``, etc. When anchors get removed, the engine can then assign the corresponding ID to new anchors. The most common situation where anchors "disappear" is when the AR server identifies that two anchors represent different parts of the same plane and merges them.
 

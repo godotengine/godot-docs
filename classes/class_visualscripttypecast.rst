@@ -19,11 +19,11 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`base_script<class_VisualScriptTypeCast_property_base_script>` |
-+-----------------------------+---------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptTypeCast_property_base_type>`     |
-+-----------------------------+---------------------------------------------------------------------+
++-----------------------------+---------------------------------------------------------------------+----------+
+| :ref:`String<class_String>` | :ref:`base_script<class_VisualScriptTypeCast_property_base_script>` | ""       |
++-----------------------------+---------------------------------------------------------------------+----------+
+| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptTypeCast_property_base_type>`     | "Object" |
++-----------------------------+---------------------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -32,19 +32,23 @@ Property Descriptions
 
 - :ref:`String<class_String>` **base_script**
 
-+----------+------------------------+
-| *Setter* | set_base_script(value) |
-+----------+------------------------+
-| *Getter* | get_base_script()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | ""                     |
++-----------+------------------------+
+| *Setter*  | set_base_script(value) |
++-----------+------------------------+
+| *Getter*  | get_base_script()      |
++-----------+------------------------+
 
 .. _class_VisualScriptTypeCast_property_base_type:
 
 - :ref:`String<class_String>` **base_type**
 
-+----------+----------------------+
-| *Setter* | set_base_type(value) |
-+----------+----------------------+
-| *Getter* | get_base_type()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | "Object"             |
++-----------+----------------------+
+| *Setter*  | set_base_type(value) |
++-----------+----------------------+
+| *Getter*  | get_base_type()      |
++-----------+----------------------+
 

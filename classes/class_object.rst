@@ -218,7 +218,7 @@ Sets a property. Returns ``true`` if the ``property`` exists.
 
 Virtual method which can be overridden to customize the return value of :ref:`to_string<class_Object_method_to_string>`, and thus the object's representation where it is converted to a string, e.g. with ``print(obj)``.
 
-Returns a :ref:`String<class_String>` representing the object. Default is ``"[ClassName:RID]"``.
+Returns a :ref:`String<class_String>` representing the object. If not overridden, defaults to ``"[ClassName:RID]"``.
 
 .. _class_Object_method_add_user_signal:
 
@@ -485,7 +485,7 @@ Assigns a new value to the property identified by the :ref:`NodePath<class_NodeP
 
 - void **set_message_translation** **(** :ref:`bool<class_bool>` enable **)**
 
-Defines whether the object can translate strings (with calls to :ref:`tr<class_Object_method_tr>`). Default is ``true``.
+Defines whether the object can translate strings (with calls to :ref:`tr<class_Object_method_tr>`). Enabled by default.
 
 .. _class_Object_method_set_meta:
 
@@ -503,7 +503,7 @@ Assigns a script to the object. Each object can have a single script assigned to
 
 - :ref:`String<class_String>` **to_string** **(** **)**
 
-Returns a :ref:`String<class_String>` representing the object. Default is ``"[ClassName:RID]"``.
+Returns a :ref:`String<class_String>` representing the object. If not overridden, defaults to ``"[ClassName:RID]"``.
 
 Override the method :ref:`_to_string<class_Object_method__to_string>` to customize the :ref:`String<class_String>` representation.
 

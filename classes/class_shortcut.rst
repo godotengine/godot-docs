@@ -19,9 +19,9 @@ A shortcut for binding input.
 Properties
 ----------
 
-+-------------------------------------+---------------------------------------------------+
-| :ref:`InputEvent<class_InputEvent>` | :ref:`shortcut<class_ShortCut_property_shortcut>` |
-+-------------------------------------+---------------------------------------------------+
++-------------------------------------+---------------------------------------------------+------+
+| :ref:`InputEvent<class_InputEvent>` | :ref:`shortcut<class_ShortCut_property_shortcut>` | null |
++-------------------------------------+---------------------------------------------------+------+
 
 Methods
 -------
@@ -48,11 +48,13 @@ Property Descriptions
 
 - :ref:`InputEvent<class_InputEvent>` **shortcut**
 
-+----------+---------------------+
-| *Setter* | set_shortcut(value) |
-+----------+---------------------+
-| *Getter* | get_shortcut()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_shortcut(value) |
++-----------+---------------------+
+| *Getter*  | get_shortcut()      |
++-----------+---------------------+
 
 The shortcut's :ref:`InputEvent<class_InputEvent>`.
 

@@ -19,13 +19,13 @@ Contains the results of a :ref:`RegEx<class_RegEx>` search.
 Properties
 ----------
 
-+-------------------------------------+---------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     |
-+-------------------------------------+---------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_property_strings>` |
-+-------------------------------------+---------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`subject<class_RegExMatch_property_subject>` |
-+-------------------------------------+---------------------------------------------------+
++-------------------------------------+---------------------------------------------------+------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     | {  } |
++-------------------------------------+---------------------------------------------------+------+
+| :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_property_strings>` | [  ] |
++-------------------------------------+---------------------------------------------------+------+
+| :ref:`String<class_String>`         | :ref:`subject<class_RegExMatch_property_subject>` | ""   |
++-------------------------------------+---------------------------------------------------+------+
 
 Methods
 -------
@@ -52,9 +52,11 @@ Property Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **names**
 
-+----------+-------------+
-| *Getter* | get_names() |
-+----------+-------------+
++-----------+-------------+
+| *Default* | {  }        |
++-----------+-------------+
+| *Getter*  | get_names() |
++-----------+-------------+
 
 A dictionary of named groups and its corresponding group number. Only groups with that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
 
@@ -62,9 +64,11 @@ A dictionary of named groups and its corresponding group number. Only groups wit
 
 - :ref:`Array<class_Array>` **strings**
 
-+----------+---------------+
-| *Getter* | get_strings() |
-+----------+---------------+
++-----------+---------------+
+| *Default* | [  ]          |
++-----------+---------------+
+| *Getter*  | get_strings() |
++-----------+---------------+
 
 An :ref:`Array<class_Array>` of the match and its capturing groups.
 
@@ -72,9 +76,11 @@ An :ref:`Array<class_Array>` of the match and its capturing groups.
 
 - :ref:`String<class_String>` **subject**
 
-+----------+---------------+
-| *Getter* | get_subject() |
-+----------+---------------+
++-----------+---------------+
+| *Default* | ""            |
++-----------+---------------+
+| *Getter*  | get_subject() |
++-----------+---------------+
 
 The source string used with the search pattern to find this matching result.
 

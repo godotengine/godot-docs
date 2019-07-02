@@ -19,23 +19,23 @@ Point sampler for a :ref:`Path2D<class_Path2D>`.
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`cubic_interp<class_PathFollow2D_property_cubic_interp>` |
-+---------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`h_offset<class_PathFollow2D_property_h_offset>`         |
-+---------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`lookahead<class_PathFollow2D_property_lookahead>`       |
-+---------------------------+---------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`loop<class_PathFollow2D_property_loop>`                 |
-+---------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`offset<class_PathFollow2D_property_offset>`             |
-+---------------------------+---------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`rotate<class_PathFollow2D_property_rotate>`             |
-+---------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`unit_offset<class_PathFollow2D_property_unit_offset>`   |
-+---------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`v_offset<class_PathFollow2D_property_v_offset>`         |
-+---------------------------+---------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------+------+
+| :ref:`bool<class_bool>`   | :ref:`cubic_interp<class_PathFollow2D_property_cubic_interp>` | true |
++---------------------------+---------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`h_offset<class_PathFollow2D_property_h_offset>`         | 0.0  |
++---------------------------+---------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`lookahead<class_PathFollow2D_property_lookahead>`       | 4.0  |
++---------------------------+---------------------------------------------------------------+------+
+| :ref:`bool<class_bool>`   | :ref:`loop<class_PathFollow2D_property_loop>`                 | true |
++---------------------------+---------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`offset<class_PathFollow2D_property_offset>`             | 0.0  |
++---------------------------+---------------------------------------------------------------+------+
+| :ref:`bool<class_bool>`   | :ref:`rotate<class_PathFollow2D_property_rotate>`             | true |
++---------------------------+---------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`unit_offset<class_PathFollow2D_property_unit_offset>`   | 0.0  |
++---------------------------+---------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`v_offset<class_PathFollow2D_property_v_offset>`         | 0.0  |
++---------------------------+---------------------------------------------------------------+------+
 
 Description
 -----------
@@ -51,11 +51,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **cubic_interp**
 
-+----------+--------------------------------+
-| *Setter* | set_cubic_interpolation(value) |
-+----------+--------------------------------+
-| *Getter* | get_cubic_interpolation()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | true                           |
++-----------+--------------------------------+
+| *Setter*  | set_cubic_interpolation(value) |
++-----------+--------------------------------+
+| *Getter*  | get_cubic_interpolation()      |
++-----------+--------------------------------+
 
 If ``true``, the position between two cached points is interpolated cubically, and linearly otherwise.
 
@@ -67,11 +69,13 @@ There are two answers to this problem: either increase the number of cached poin
 
 - :ref:`float<class_float>` **h_offset**
 
-+----------+---------------------+
-| *Setter* | set_h_offset(value) |
-+----------+---------------------+
-| *Getter* | get_h_offset()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_h_offset(value) |
++-----------+---------------------+
+| *Getter*  | get_h_offset()      |
++-----------+---------------------+
 
 The node's offset along the curve.
 
@@ -79,23 +83,27 @@ The node's offset along the curve.
 
 - :ref:`float<class_float>` **lookahead**
 
-+----------+----------------------+
-| *Setter* | set_lookahead(value) |
-+----------+----------------------+
-| *Getter* | get_lookahead()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 4.0                  |
++-----------+----------------------+
+| *Setter*  | set_lookahead(value) |
++-----------+----------------------+
+| *Getter*  | get_lookahead()      |
++-----------+----------------------+
 
-How far to look ahead of the curve to calculate the tangent if the node is rotating. E.g. shorter lookaheads will lead to faster rotations. Default value: ``4``.
+How far to look ahead of the curve to calculate the tangent if the node is rotating. E.g. shorter lookaheads will lead to faster rotations.
 
 .. _class_PathFollow2D_property_loop:
 
 - :ref:`bool<class_bool>` **loop**
 
-+----------+-----------------+
-| *Setter* | set_loop(value) |
-+----------+-----------------+
-| *Getter* | has_loop()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | true            |
++-----------+-----------------+
+| *Setter*  | set_loop(value) |
++-----------+-----------------+
+| *Getter*  | has_loop()      |
++-----------+-----------------+
 
 If ``true``, any offset outside the path's length will wrap around, instead of stopping at the ends. Use it for cyclic paths.
 
@@ -103,11 +111,13 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 
 - :ref:`float<class_float>` **offset**
 
-+----------+-------------------+
-| *Setter* | set_offset(value) |
-+----------+-------------------+
-| *Getter* | get_offset()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0.0               |
++-----------+-------------------+
+| *Setter*  | set_offset(value) |
++-----------+-------------------+
+| *Getter*  | get_offset()      |
++-----------+-------------------+
 
 The distance along the path in pixels.
 
@@ -115,11 +125,13 @@ The distance along the path in pixels.
 
 - :ref:`bool<class_bool>` **rotate**
 
-+----------+-------------------+
-| *Setter* | set_rotate(value) |
-+----------+-------------------+
-| *Getter* | is_rotating()     |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | true              |
++-----------+-------------------+
+| *Setter*  | set_rotate(value) |
++-----------+-------------------+
+| *Getter*  | is_rotating()     |
++-----------+-------------------+
 
 If ``true``, this node rotates to follow the path, making its descendants rotate.
 
@@ -127,11 +139,13 @@ If ``true``, this node rotates to follow the path, making its descendants rotate
 
 - :ref:`float<class_float>` **unit_offset**
 
-+----------+------------------------+
-| *Setter* | set_unit_offset(value) |
-+----------+------------------------+
-| *Getter* | get_unit_offset()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0.0                    |
++-----------+------------------------+
+| *Setter*  | set_unit_offset(value) |
++-----------+------------------------+
+| *Getter*  | get_unit_offset()      |
++-----------+------------------------+
 
 The distance along the path as a number in the range 0.0 (for the first vertex) to 1.0 (for the last). This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
 
@@ -139,11 +153,13 @@ The distance along the path as a number in the range 0.0 (for the first vertex) 
 
 - :ref:`float<class_float>` **v_offset**
 
-+----------+---------------------+
-| *Setter* | set_v_offset(value) |
-+----------+---------------------+
-| *Getter* | get_v_offset()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_v_offset(value) |
++-----------+---------------------+
+| *Getter*  | get_v_offset()      |
++-----------+---------------------+
 
 The node's offset perpendicular to the curve.
 

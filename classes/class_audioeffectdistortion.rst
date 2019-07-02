@@ -21,17 +21,17 @@ Modify the sound to make it dirty.
 Properties
 ----------
 
-+----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`drive<class_AudioEffectDistortion_property_drive>`           |
-+----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`keep_hf_hz<class_AudioEffectDistortion_property_keep_hf_hz>` |
-+----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`Mode<enum_AudioEffectDistortion_Mode>` | :ref:`mode<class_AudioEffectDistortion_property_mode>`             |
-+----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`post_gain<class_AudioEffectDistortion_property_post_gain>`   |
-+----------------------------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`pre_gain<class_AudioEffectDistortion_property_pre_gain>`     |
-+----------------------------------------------+--------------------------------------------------------------------+
++----------------------------------------------+--------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                    | :ref:`drive<class_AudioEffectDistortion_property_drive>`           | 0.0     |
++----------------------------------------------+--------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                    | :ref:`keep_hf_hz<class_AudioEffectDistortion_property_keep_hf_hz>` | 16000.0 |
++----------------------------------------------+--------------------------------------------------------------------+---------+
+| :ref:`Mode<enum_AudioEffectDistortion_Mode>` | :ref:`mode<class_AudioEffectDistortion_property_mode>`             | 0       |
++----------------------------------------------+--------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                    | :ref:`post_gain<class_AudioEffectDistortion_property_post_gain>`   | 0.0     |
++----------------------------------------------+--------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                    | :ref:`pre_gain<class_AudioEffectDistortion_property_pre_gain>`     | 0.0     |
++----------------------------------------------+--------------------------------------------------------------------+---------+
 
 Enumerations
 ------------
@@ -74,59 +74,69 @@ Property Descriptions
 
 - :ref:`float<class_float>` **drive**
 
-+----------+------------------+
-| *Setter* | set_drive(value) |
-+----------+------------------+
-| *Getter* | get_drive()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_drive(value) |
++-----------+------------------+
+| *Getter*  | get_drive()      |
++-----------+------------------+
 
-Distortion power. Value can range from 0 to 1. Default value: ``0``.
+Distortion power. Value can range from 0 to 1.
 
 .. _class_AudioEffectDistortion_property_keep_hf_hz:
 
 - :ref:`float<class_float>` **keep_hf_hz**
 
-+----------+-----------------------+
-| *Setter* | set_keep_hf_hz(value) |
-+----------+-----------------------+
-| *Getter* | get_keep_hf_hz()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 16000.0               |
++-----------+-----------------------+
+| *Setter*  | set_keep_hf_hz(value) |
++-----------+-----------------------+
+| *Getter*  | get_keep_hf_hz()      |
++-----------+-----------------------+
 
-High-pass filter, in Hz. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000. Default value: ``16000``.
+High-pass filter, in Hz. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000.
 
 .. _class_AudioEffectDistortion_property_mode:
 
 - :ref:`Mode<enum_AudioEffectDistortion_Mode>` **mode**
 
-+----------+-----------------+
-| *Setter* | set_mode(value) |
-+----------+-----------------+
-| *Getter* | get_mode()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 0               |
++-----------+-----------------+
+| *Setter*  | set_mode(value) |
++-----------+-----------------+
+| *Getter*  | get_mode()      |
++-----------+-----------------+
 
-Distortion type. Default value: :ref:`MODE_CLIP<class_AudioEffectDistortion_constant_MODE_CLIP>`.
+Distortion type.
 
 .. _class_AudioEffectDistortion_property_post_gain:
 
 - :ref:`float<class_float>` **post_gain**
 
-+----------+----------------------+
-| *Setter* | set_post_gain(value) |
-+----------+----------------------+
-| *Getter* | get_post_gain()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0.0                  |
++-----------+----------------------+
+| *Setter*  | set_post_gain(value) |
++-----------+----------------------+
+| *Getter*  | get_post_gain()      |
++-----------+----------------------+
 
-Increases or decreases the volume after the effect. Value can range from -80 to 24. Default value: ``0``.
+Increases or decreases the volume after the effect. Value can range from -80 to 24.
 
 .. _class_AudioEffectDistortion_property_pre_gain:
 
 - :ref:`float<class_float>` **pre_gain**
 
-+----------+---------------------+
-| *Setter* | set_pre_gain(value) |
-+----------+---------------------+
-| *Getter* | get_pre_gain()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_pre_gain(value) |
++-----------+---------------------+
+| *Getter*  | get_pre_gain()      |
++-----------+---------------------+
 
-Increases or decreases the volume before the effect. Value can range from -60 to 60. Default value: ``0``.
+Increases or decreases the volume before the effect. Value can range from -60 to 60.
 

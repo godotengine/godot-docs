@@ -19,17 +19,17 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------+--------------------------------------------------------------------+
-| :ref:`ConfigFile<class_ConfigFile>` | :ref:`config_file<class_GDNativeLibrary_property_config_file>`     |
-+-------------------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`load_once<class_GDNativeLibrary_property_load_once>`         |
-+-------------------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`       |
-+-------------------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`singleton<class_GDNativeLibrary_property_singleton>`         |
-+-------------------------------------+--------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>` |
-+-------------------------------------+--------------------------------------------------------------------+
++-------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`ConfigFile<class_ConfigFile>` | :ref:`config_file<class_GDNativeLibrary_property_config_file>`     |          |
++-------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`             | :ref:`load_once<class_GDNativeLibrary_property_load_once>`         | true     |
++-------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`             | :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`       | true     |
++-------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`             | :ref:`singleton<class_GDNativeLibrary_property_singleton>`         | false    |
++-------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`         | :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>` | "godot_" |
++-------------------------------------+--------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -57,41 +57,49 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **load_once**
 
-+----------+----------------------+
-| *Setter* | set_load_once(value) |
-+----------+----------------------+
-| *Getter* | should_load_once()   |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | true                 |
++-----------+----------------------+
+| *Setter*  | set_load_once(value) |
++-----------+----------------------+
+| *Getter*  | should_load_once()   |
++-----------+----------------------+
 
 .. _class_GDNativeLibrary_property_reloadable:
 
 - :ref:`bool<class_bool>` **reloadable**
 
-+----------+-----------------------+
-| *Setter* | set_reloadable(value) |
-+----------+-----------------------+
-| *Getter* | is_reloadable()       |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | true                  |
++-----------+-----------------------+
+| *Setter*  | set_reloadable(value) |
++-----------+-----------------------+
+| *Getter*  | is_reloadable()       |
++-----------+-----------------------+
 
 .. _class_GDNativeLibrary_property_singleton:
 
 - :ref:`bool<class_bool>` **singleton**
 
-+----------+----------------------+
-| *Setter* | set_singleton(value) |
-+----------+----------------------+
-| *Getter* | is_singleton()       |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_singleton(value) |
++-----------+----------------------+
+| *Getter*  | is_singleton()       |
++-----------+----------------------+
 
 .. _class_GDNativeLibrary_property_symbol_prefix:
 
 - :ref:`String<class_String>` **symbol_prefix**
 
-+----------+--------------------------+
-| *Setter* | set_symbol_prefix(value) |
-+----------+--------------------------+
-| *Getter* | get_symbol_prefix()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | "godot_"                 |
++-----------+--------------------------+
+| *Setter*  | set_symbol_prefix(value) |
++-----------+--------------------------+
+| *Getter*  | get_symbol_prefix()      |
++-----------+--------------------------+
 
 Method Descriptions
 -------------------

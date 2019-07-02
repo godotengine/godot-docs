@@ -21,9 +21,9 @@ Abstraction and base class for stream-based protocols.
 Properties
 ----------
 
-+-------------------------+---------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`big_endian<class_StreamPeer_property_big_endian>` |
-+-------------------------+---------------------------------------------------------+
++-------------------------+---------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`big_endian<class_StreamPeer_property_big_endian>` | false |
++-------------------------+---------------------------------------------------------+-------+
 
 Methods
 -------
@@ -104,11 +104,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **big_endian**
 
-+----------+-------------------------+
-| *Setter* | set_big_endian(value)   |
-+----------+-------------------------+
-| *Getter* | is_big_endian_enabled() |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | false                   |
++-----------+-------------------------+
+| *Setter*  | set_big_endian(value)   |
++-----------+-------------------------+
+| *Getter*  | is_big_endian_enabled() |
++-----------+-------------------------+
 
 If ``true``, this ``StreamPeer`` will using big-endian format for encoding and decoding.
 

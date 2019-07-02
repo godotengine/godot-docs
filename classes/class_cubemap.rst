@@ -19,13 +19,13 @@ A CubeMap is a 6-sided 3D texture.
 Properties
 ----------
 
-+--------------------------------------+----------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`flags<class_CubeMap_property_flags>`                                 |
-+--------------------------------------+----------------------------------------------------------------------------+
-| :ref:`float<class_float>`            | :ref:`lossy_storage_quality<class_CubeMap_property_lossy_storage_quality>` |
-+--------------------------------------+----------------------------------------------------------------------------+
-| :ref:`Storage<enum_CubeMap_Storage>` | :ref:`storage_mode<class_CubeMap_property_storage_mode>`                   |
-+--------------------------------------+----------------------------------------------------------------------------+
++--------------------------------------+----------------------------------------------------------------------------+-----+
+| :ref:`int<class_int>`                | :ref:`flags<class_CubeMap_property_flags>`                                 | 7   |
++--------------------------------------+----------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>`            | :ref:`lossy_storage_quality<class_CubeMap_property_lossy_storage_quality>` | 0.7 |
++--------------------------------------+----------------------------------------------------------------------------+-----+
+| :ref:`Storage<enum_CubeMap_Storage>` | :ref:`storage_mode<class_CubeMap_property_storage_mode>`                   | 0   |
++--------------------------------------+----------------------------------------------------------------------------+-----+
 
 Methods
 -------
@@ -119,11 +119,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **flags**
 
-+----------+------------------+
-| *Setter* | set_flags(value) |
-+----------+------------------+
-| *Getter* | get_flags()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 7                |
++-----------+------------------+
+| *Setter*  | set_flags(value) |
++-----------+------------------+
+| *Getter*  | get_flags()      |
++-----------+------------------+
 
 The render flags for the ``CubeMap``. See the ``FLAG_*`` constants for details.
 
@@ -131,11 +133,13 @@ The render flags for the ``CubeMap``. See the ``FLAG_*`` constants for details.
 
 - :ref:`float<class_float>` **lossy_storage_quality**
 
-+----------+----------------------------------+
-| *Setter* | set_lossy_storage_quality(value) |
-+----------+----------------------------------+
-| *Getter* | get_lossy_storage_quality()      |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | 0.7                              |
++-----------+----------------------------------+
+| *Setter*  | set_lossy_storage_quality(value) |
++-----------+----------------------------------+
+| *Getter*  | get_lossy_storage_quality()      |
++-----------+----------------------------------+
 
 The lossy storage quality of the ``CubeMap`` if the storage mode is set to STORAGE_COMPRESS_LOSSY.
 
@@ -143,11 +147,13 @@ The lossy storage quality of the ``CubeMap`` if the storage mode is set to STORA
 
 - :ref:`Storage<enum_CubeMap_Storage>` **storage_mode**
 
-+----------+--------------------+
-| *Setter* | set_storage(value) |
-+----------+--------------------+
-| *Getter* | get_storage()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 0                  |
++-----------+--------------------+
+| *Setter*  | set_storage(value) |
++-----------+--------------------+
+| *Getter*  | get_storage()      |
++-----------+--------------------+
 
 The ``CubeMap``'s storage mode. See ``STORAGE_*`` constants.
 

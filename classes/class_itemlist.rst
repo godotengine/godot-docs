@@ -19,29 +19,29 @@ Control that provides a list of selectable items (and/or icons) in a single colu
 Properties
 ----------
 
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                     | :ref:`allow_reselect<class_ItemList_property_allow_reselect>`         |
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                     | :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>`     |
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                     | :ref:`auto_height<class_ItemList_property_auto_height>`               |
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` |
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`               | :ref:`fixed_icon_size<class_ItemList_property_fixed_icon_size>`       |
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`IconMode<enum_ItemList_IconMode>`     | :ref:`icon_mode<class_ItemList_property_icon_mode>`                   |
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>`                   | :ref:`icon_scale<class_ItemList_property_icon_scale>`                 |
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`max_columns<class_ItemList_property_max_columns>`               |
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`max_text_lines<class_ItemList_property_max_text_lines>`         |
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                     | :ref:`same_column_width<class_ItemList_property_same_column_width>`   |
-+---------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`SelectMode<enum_ItemList_SelectMode>` | :ref:`select_mode<class_ItemList_property_select_mode>`               |
-+---------------------------------------------+-----------------------------------------------------------------------+
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                     | :ref:`allow_reselect<class_ItemList_property_allow_reselect>`         | false           |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                     | :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>`     | false           |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                     | :ref:`auto_height<class_ItemList_property_auto_height>`               | false           |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                       | :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` | 0               |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>`               | :ref:`fixed_icon_size<class_ItemList_property_fixed_icon_size>`       | Vector2( 0, 0 ) |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`IconMode<enum_ItemList_IconMode>`     | :ref:`icon_mode<class_ItemList_property_icon_mode>`                   | 1               |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                   | :ref:`icon_scale<class_ItemList_property_icon_scale>`                 | 1.0             |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                       | :ref:`max_columns<class_ItemList_property_max_columns>`               | 1               |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                       | :ref:`max_text_lines<class_ItemList_property_max_text_lines>`         | 1               |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                     | :ref:`same_column_width<class_ItemList_property_same_column_width>`   | false           |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
+| :ref:`SelectMode<enum_ItemList_SelectMode>` | :ref:`select_mode<class_ItemList_property_select_mode>`               | 0               |
++---------------------------------------------+-----------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -131,35 +131,35 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | bg                  |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | bg_focus            |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | cursor              |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | cursor_unfocused    |
-+---------------------------------+---------------------+
-| :ref:`Font<class_Font>`         | font                |
-+---------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | font_color          |
-+---------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | font_color_selected |
-+---------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | guide_color         |
-+---------------------------------+---------------------+
-| :ref:`int<class_int>`           | hseparation         |
-+---------------------------------+---------------------+
-| :ref:`int<class_int>`           | icon_margin         |
-+---------------------------------+---------------------+
-| :ref:`int<class_int>`           | line_separation     |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | selected            |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | selected_focus      |
-+---------------------------------+---------------------+
-| :ref:`int<class_int>`           | vseparation         |
-+---------------------------------+---------------------+
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | bg                  |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | bg_focus            |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | cursor              |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | cursor_unfocused    |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Font<class_Font>`         | font                |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color          | Color( 0.627451, 0.627451, 0.627451, 1 ) |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color_selected | Color( 1, 1, 1, 1 )                      |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | guide_color         | Color( 0, 0, 0, 0.1 )                    |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`int<class_int>`           | hseparation         | 4                                        |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`int<class_int>`           | icon_margin         | 4                                        |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`int<class_int>`           | line_separation     | 2                                        |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | selected            |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | selected_focus      |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`int<class_int>`           | vseparation         | 2                                        |
++---------------------------------+---------------------+------------------------------------------+
 
 Signals
 -------
@@ -249,11 +249,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **allow_reselect**
 
-+----------+---------------------------+
-| *Setter* | set_allow_reselect(value) |
-+----------+---------------------------+
-| *Getter* | get_allow_reselect()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | false                     |
++-----------+---------------------------+
+| *Setter*  | set_allow_reselect(value) |
++-----------+---------------------------+
+| *Getter*  | get_allow_reselect()      |
++-----------+---------------------------+
 
 If ``true``, the currently selected item can be selected again.
 
@@ -261,11 +263,13 @@ If ``true``, the currently selected item can be selected again.
 
 - :ref:`bool<class_bool>` **allow_rmb_select**
 
-+----------+-----------------------------+
-| *Setter* | set_allow_rmb_select(value) |
-+----------+-----------------------------+
-| *Getter* | get_allow_rmb_select()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | false                       |
++-----------+-----------------------------+
+| *Setter*  | set_allow_rmb_select(value) |
++-----------+-----------------------------+
+| *Getter*  | get_allow_rmb_select()      |
++-----------+-----------------------------+
 
 If ``true``, right mouse button click can select items.
 
@@ -273,11 +277,13 @@ If ``true``, right mouse button click can select items.
 
 - :ref:`bool<class_bool>` **auto_height**
 
-+----------+------------------------+
-| *Setter* | set_auto_height(value) |
-+----------+------------------------+
-| *Getter* | has_auto_height()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | false                  |
++-----------+------------------------+
+| *Setter*  | set_auto_height(value) |
++-----------+------------------------+
+| *Getter*  | has_auto_height()      |
++-----------+------------------------+
 
 If ``true``, the control will automatically resize the height to fit its content.
 
@@ -285,11 +291,13 @@ If ``true``, the control will automatically resize the height to fit its content
 
 - :ref:`int<class_int>` **fixed_column_width**
 
-+----------+-------------------------------+
-| *Setter* | set_fixed_column_width(value) |
-+----------+-------------------------------+
-| *Getter* | get_fixed_column_width()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | 0                             |
++-----------+-------------------------------+
+| *Setter*  | set_fixed_column_width(value) |
++-----------+-------------------------------+
+| *Getter*  | get_fixed_column_width()      |
++-----------+-------------------------------+
 
 Sets the default column width in pixels. If left to default value, each item will have a width equal to the width of its content and the columns will have an uneven width.
 
@@ -297,11 +305,13 @@ Sets the default column width in pixels. If left to default value, each item wil
 
 - :ref:`Vector2<class_Vector2>` **fixed_icon_size**
 
-+----------+----------------------------+
-| *Setter* | set_fixed_icon_size(value) |
-+----------+----------------------------+
-| *Getter* | get_fixed_icon_size()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | Vector2( 0, 0 )            |
++-----------+----------------------------+
+| *Setter*  | set_fixed_icon_size(value) |
++-----------+----------------------------+
+| *Getter*  | get_fixed_icon_size()      |
++-----------+----------------------------+
 
 Sets the default icon size in pixels.
 
@@ -309,11 +319,13 @@ Sets the default icon size in pixels.
 
 - :ref:`IconMode<enum_ItemList_IconMode>` **icon_mode**
 
-+----------+----------------------+
-| *Setter* | set_icon_mode(value) |
-+----------+----------------------+
-| *Getter* | get_icon_mode()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 1                    |
++-----------+----------------------+
+| *Setter*  | set_icon_mode(value) |
++-----------+----------------------+
+| *Getter*  | get_icon_mode()      |
++-----------+----------------------+
 
 Sets the default position of the icon to either :ref:`ICON_MODE_LEFT<class_ItemList_constant_ICON_MODE_LEFT>` or :ref:`ICON_MODE_TOP<class_ItemList_constant_ICON_MODE_TOP>`.
 
@@ -321,23 +333,27 @@ Sets the default position of the icon to either :ref:`ICON_MODE_LEFT<class_ItemL
 
 - :ref:`float<class_float>` **icon_scale**
 
-+----------+-----------------------+
-| *Setter* | set_icon_scale(value) |
-+----------+-----------------------+
-| *Getter* | get_icon_scale()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 1.0                   |
++-----------+-----------------------+
+| *Setter*  | set_icon_scale(value) |
++-----------+-----------------------+
+| *Getter*  | get_icon_scale()      |
++-----------+-----------------------+
 
-Sets the icon size to its initial size multiplied by the specified scale. Default value is 1.0.
+Sets the icon size to its initial size multiplied by the specified scale.
 
 .. _class_ItemList_property_max_columns:
 
 - :ref:`int<class_int>` **max_columns**
 
-+----------+------------------------+
-| *Setter* | set_max_columns(value) |
-+----------+------------------------+
-| *Getter* | get_max_columns()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 1                      |
++-----------+------------------------+
+| *Setter*  | set_max_columns(value) |
++-----------+------------------------+
+| *Getter*  | get_max_columns()      |
++-----------+------------------------+
 
 Sets the maximum columns the list will have. If set to anything other than the default, the content will be split among the specified columns.
 
@@ -345,21 +361,25 @@ Sets the maximum columns the list will have. If set to anything other than the d
 
 - :ref:`int<class_int>` **max_text_lines**
 
-+----------+---------------------------+
-| *Setter* | set_max_text_lines(value) |
-+----------+---------------------------+
-| *Getter* | get_max_text_lines()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 1                         |
++-----------+---------------------------+
+| *Setter*  | set_max_text_lines(value) |
++-----------+---------------------------+
+| *Getter*  | get_max_text_lines()      |
++-----------+---------------------------+
 
 .. _class_ItemList_property_same_column_width:
 
 - :ref:`bool<class_bool>` **same_column_width**
 
-+----------+------------------------------+
-| *Setter* | set_same_column_width(value) |
-+----------+------------------------------+
-| *Getter* | is_same_column_width()       |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | false                        |
++-----------+------------------------------+
+| *Setter*  | set_same_column_width(value) |
++-----------+------------------------------+
+| *Getter*  | is_same_column_width()       |
++-----------+------------------------------+
 
 If set to ``true``, all columns will have the same width specified by :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>`.
 
@@ -367,11 +387,13 @@ If set to ``true``, all columns will have the same width specified by :ref:`fixe
 
 - :ref:`SelectMode<enum_ItemList_SelectMode>` **select_mode**
 
-+----------+------------------------+
-| *Setter* | set_select_mode(value) |
-+----------+------------------------+
-| *Getter* | get_select_mode()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0                      |
++-----------+------------------------+
+| *Setter*  | set_select_mode(value) |
++-----------+------------------------+
+| *Getter*  | get_select_mode()      |
++-----------+------------------------+
 
 Allows single or multiple item selection. See the :ref:`SelectMode<enum_ItemList_SelectMode>` constants.
 
@@ -420,19 +442,19 @@ Returns the number of items currently in the list.
 
 - :ref:`Color<class_Color>` **get_item_custom_bg_color** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the custom background color of the item specified by ``idx`` index. Default value is ``Color(0, 0, 0, 0)``.
+Returns the custom background color of the item specified by ``idx`` index.
 
 .. _class_ItemList_method_get_item_custom_fg_color:
 
 - :ref:`Color<class_Color>` **get_item_custom_fg_color** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the custom foreground color of the item specified by ``idx`` index. Default value is ``Color(0, 0, 0, 0)``.
+Returns the custom foreground color of the item specified by ``idx`` index.
 
 .. _class_ItemList_method_get_item_icon:
 
 - :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the icon associated with the specified index. Default value is ``null``.
+Returns the icon associated with the specified index.
 
 .. _class_ItemList_method_get_item_icon_modulate:
 

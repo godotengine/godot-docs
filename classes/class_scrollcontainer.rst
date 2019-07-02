@@ -21,17 +21,17 @@ A helper node for displaying scrollable elements such as lists.
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     |
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 |
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` |
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     |
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     |
-+-------------------------+--------------------------------------------------------------------------------------------+
++-------------------------+--------------------------------------------------------------------------------------------+------+
+| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | 0    |
++-------------------------+--------------------------------------------------------------------------------------------+------+
+| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | 0    |
++-------------------------+--------------------------------------------------------------------------------------------+------+
+| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | true |
++-------------------------+--------------------------------------------------------------------------------------------+------+
+| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | 0    |
++-------------------------+--------------------------------------------------------------------------------------------+------+
+| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | true |
++-------------------------+--------------------------------------------------------------------------------------------+------+
 
 Methods
 -------
@@ -76,21 +76,25 @@ Property Descriptions
 
 - :ref:`int<class_int>` **scroll_deadzone**
 
-+----------+---------------------+
-| *Setter* | set_deadzone(value) |
-+----------+---------------------+
-| *Getter* | get_deadzone()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0                   |
++-----------+---------------------+
+| *Setter*  | set_deadzone(value) |
++-----------+---------------------+
+| *Getter*  | get_deadzone()      |
++-----------+---------------------+
 
 .. _class_ScrollContainer_property_scroll_horizontal:
 
 - :ref:`int<class_int>` **scroll_horizontal**
 
-+----------+---------------------+
-| *Setter* | set_h_scroll(value) |
-+----------+---------------------+
-| *Getter* | get_h_scroll()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0                   |
++-----------+---------------------+
+| *Setter*  | set_h_scroll(value) |
++-----------+---------------------+
+| *Getter*  | get_h_scroll()      |
++-----------+---------------------+
 
 The current horizontal scroll value.
 
@@ -98,11 +102,13 @@ The current horizontal scroll value.
 
 - :ref:`bool<class_bool>` **scroll_horizontal_enabled**
 
-+----------+----------------------------+
-| *Setter* | set_enable_h_scroll(value) |
-+----------+----------------------------+
-| *Getter* | is_h_scroll_enabled()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | true                       |
++-----------+----------------------------+
+| *Setter*  | set_enable_h_scroll(value) |
++-----------+----------------------------+
+| *Getter*  | is_h_scroll_enabled()      |
++-----------+----------------------------+
 
 If ``true``, enables horizontal scrolling.
 
@@ -110,11 +116,13 @@ If ``true``, enables horizontal scrolling.
 
 - :ref:`int<class_int>` **scroll_vertical**
 
-+----------+---------------------+
-| *Setter* | set_v_scroll(value) |
-+----------+---------------------+
-| *Getter* | get_v_scroll()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0                   |
++-----------+---------------------+
+| *Setter*  | set_v_scroll(value) |
++-----------+---------------------+
+| *Getter*  | get_v_scroll()      |
++-----------+---------------------+
 
 The current vertical scroll value.
 
@@ -122,11 +130,13 @@ The current vertical scroll value.
 
 - :ref:`bool<class_bool>` **scroll_vertical_enabled**
 
-+----------+----------------------------+
-| *Setter* | set_enable_v_scroll(value) |
-+----------+----------------------------+
-| *Getter* | is_v_scroll_enabled()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | true                       |
++-----------+----------------------------+
+| *Setter*  | set_enable_v_scroll(value) |
++-----------+----------------------------+
+| *Getter*  | is_v_scroll_enabled()      |
++-----------+----------------------------+
 
 If ``true``, enables vertical scrolling.
 

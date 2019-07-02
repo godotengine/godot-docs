@@ -19,15 +19,15 @@ A node with the ability to send HTTP requests.
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>` |
-+-----------------------------+--------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_property_download_file>`     |
-+-----------------------------+--------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`     |
-+-----------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`         |
-+-----------------------------+--------------------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>` | -1    |
++-----------------------------+--------------------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_property_download_file>`     | ""    |
++-----------------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`     | 8     |
++-----------------------------+--------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`         | false |
++-----------------------------+--------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -127,11 +127,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **body_size_limit**
 
-+----------+----------------------------+
-| *Setter* | set_body_size_limit(value) |
-+----------+----------------------------+
-| *Getter* | get_body_size_limit()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | -1                         |
++-----------+----------------------------+
+| *Setter*  | set_body_size_limit(value) |
++-----------+----------------------------+
+| *Getter*  | get_body_size_limit()      |
++-----------+----------------------------+
 
 Maximum allowed size for response bodies.
 
@@ -139,11 +141,13 @@ Maximum allowed size for response bodies.
 
 - :ref:`String<class_String>` **download_file**
 
-+----------+--------------------------+
-| *Setter* | set_download_file(value) |
-+----------+--------------------------+
-| *Getter* | get_download_file()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | ""                       |
++-----------+--------------------------+
+| *Setter*  | set_download_file(value) |
++-----------+--------------------------+
+| *Getter*  | get_download_file()      |
++-----------+--------------------------+
 
 The file to download into. Will output any received file into it.
 
@@ -151,11 +155,13 @@ The file to download into. Will output any received file into it.
 
 - :ref:`int<class_int>` **max_redirects**
 
-+----------+--------------------------+
-| *Setter* | set_max_redirects(value) |
-+----------+--------------------------+
-| *Getter* | get_max_redirects()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 8                        |
++-----------+--------------------------+
+| *Setter*  | set_max_redirects(value) |
++-----------+--------------------------+
+| *Getter*  | get_max_redirects()      |
++-----------+--------------------------+
 
 Maximum number of allowed redirects.
 
@@ -163,11 +169,13 @@ Maximum number of allowed redirects.
 
 - :ref:`bool<class_bool>` **use_threads**
 
-+----------+------------------------+
-| *Setter* | set_use_threads(value) |
-+----------+------------------------+
-| *Getter* | is_using_threads()     |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | false                  |
++-----------+------------------------+
+| *Setter*  | set_use_threads(value) |
++-----------+------------------------+
+| *Getter*  | is_using_threads()     |
++-----------+------------------------+
 
 If ``true``, multithreading is used to improve performance.
 

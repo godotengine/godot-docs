@@ -21,9 +21,9 @@ Base container control for popups and dialogs.
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`popup_exclusive<class_Popup_property_popup_exclusive>` |
-+-------------------------+--------------------------------------------------------------+
++-------------------------+--------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`popup_exclusive<class_Popup_property_popup_exclusive>` | false |
++-------------------------+--------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -78,11 +78,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **popup_exclusive**
 
-+----------+----------------------+
-| *Setter* | set_exclusive(value) |
-+----------+----------------------+
-| *Getter* | is_exclusive()       |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_exclusive(value) |
++-----------+----------------------+
+| *Getter*  | is_exclusive()       |
++-----------+----------------------+
 
 If ``true``, the popup will not be hidden when a click event occurs outside of it, or when it receives the ``ui_cancel`` action event.
 

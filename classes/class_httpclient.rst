@@ -19,11 +19,11 @@ Hyper-text transfer protocol client.
 Properties
 ----------
 
-+-------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`blocking_mode_enabled<class_HTTPClient_property_blocking_mode_enabled>` |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`StreamPeer<class_StreamPeer>` | :ref:`connection<class_HTTPClient_property_connection>`                       |
-+-------------------------------------+-------------------------------------------------------------------------------+
++-------------------------------------+-------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`             | :ref:`blocking_mode_enabled<class_HTTPClient_property_blocking_mode_enabled>` | false |
++-------------------------------------+-------------------------------------------------------------------------------+-------+
+| :ref:`StreamPeer<class_StreamPeer>` | :ref:`connection<class_HTTPClient_property_connection>`                       |       |
++-------------------------------------+-------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -424,11 +424,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **blocking_mode_enabled**
 
-+----------+----------------------------+
-| *Setter* | set_blocking_mode(value)   |
-+----------+----------------------------+
-| *Getter* | is_blocking_mode_enabled() |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | false                      |
++-----------+----------------------------+
+| *Setter*  | set_blocking_mode(value)   |
++-----------+----------------------------+
+| *Getter*  | is_blocking_mode_enabled() |
++-----------+----------------------------+
 
 If ``true``, execution will block until all data is read from the response.
 

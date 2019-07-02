@@ -17,13 +17,13 @@ Axis-Aligned Bounding Box.
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`end<class_AABB_property_end>`           |
-+-------------------------------+-----------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`position<class_AABB_property_position>` |
-+-------------------------------+-----------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_AABB_property_size>`         |
-+-------------------------------+-----------------------------------------------+
++-------------------------------+-----------------------------------------------+--------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`end<class_AABB_property_end>`           | Vector3( 0, 0, 0 ) |
++-------------------------------+-----------------------------------------------+--------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`position<class_AABB_property_position>` | Vector3( 0, 0, 0 ) |
++-------------------------------+-----------------------------------------------+--------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`size<class_AABB_property_size>`         | Vector3( 0, 0, 0 ) |
++-------------------------------+-----------------------------------------------+--------------------+
 
 Methods
 -------
@@ -89,17 +89,29 @@ Property Descriptions
 
 - :ref:`Vector3<class_Vector3>` **end**
 
++-----------+--------------------+
+| *Default* | Vector3( 0, 0, 0 ) |
++-----------+--------------------+
+
 Ending corner.
 
 .. _class_AABB_property_position:
 
 - :ref:`Vector3<class_Vector3>` **position**
 
++-----------+--------------------+
+| *Default* | Vector3( 0, 0, 0 ) |
++-----------+--------------------+
+
 Beginning corner.
 
 .. _class_AABB_property_size:
 
 - :ref:`Vector3<class_Vector3>` **size**
+
++-----------+--------------------+
+| *Default* | Vector3( 0, 0, 0 ) |
++-----------+--------------------+
 
 Size from position to end.
 

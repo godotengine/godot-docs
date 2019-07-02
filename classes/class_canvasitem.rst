@@ -21,23 +21,23 @@ Base class of anything 2D.
 Properties
 ----------
 
-+---------------------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`light_mask<class_CanvasItem_property_light_mask>`                   |
-+---------------------------------+---------------------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CanvasItem_property_material>`                       |
-+---------------------------------+---------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`modulate<class_CanvasItem_property_modulate>`                       |
-+---------------------------------+---------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`self_modulate<class_CanvasItem_property_self_modulate>`             |
-+---------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`show_behind_parent<class_CanvasItem_property_show_behind_parent>`   |
-+---------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`show_on_top<class_CanvasItem_property_show_on_top>`                 |
-+---------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`use_parent_material<class_CanvasItem_property_use_parent_material>` |
-+---------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`visible<class_CanvasItem_property_visible>`                         |
-+---------------------------------+---------------------------------------------------------------------------+
++---------------------------------+---------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`           | :ref:`light_mask<class_CanvasItem_property_light_mask>`                   | 1                   |
++---------------------------------+---------------------------------------------------------------------------+---------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CanvasItem_property_material>`                       | null                |
++---------------------------------+---------------------------------------------------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | :ref:`modulate<class_CanvasItem_property_modulate>`                       | Color( 1, 1, 1, 1 ) |
++---------------------------------+---------------------------------------------------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | :ref:`self_modulate<class_CanvasItem_property_self_modulate>`             | Color( 1, 1, 1, 1 ) |
++---------------------------------+---------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`         | :ref:`show_behind_parent<class_CanvasItem_property_show_behind_parent>`   | false               |
++---------------------------------+---------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`         | :ref:`show_on_top<class_CanvasItem_property_show_on_top>`                 |                     |
++---------------------------------+---------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`         | :ref:`use_parent_material<class_CanvasItem_property_use_parent_material>` | false               |
++---------------------------------+---------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`         | :ref:`visible<class_CanvasItem_property_visible>`                         | true                |
++---------------------------------+---------------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -242,91 +242,105 @@ Property Descriptions
 
 - :ref:`int<class_int>` **light_mask**
 
-+----------+-----------------------+
-| *Setter* | set_light_mask(value) |
-+----------+-----------------------+
-| *Getter* | get_light_mask()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 1                     |
++-----------+-----------------------+
+| *Setter*  | set_light_mask(value) |
++-----------+-----------------------+
+| *Getter*  | get_light_mask()      |
++-----------+-----------------------+
 
-The rendering layers in which this ``CanvasItem`` responds to :ref:`Light2D<class_Light2D>` nodes. Default value: ``1``.
+The rendering layers in which this ``CanvasItem`` responds to :ref:`Light2D<class_Light2D>` nodes.
 
 .. _class_CanvasItem_property_material:
 
 - :ref:`Material<class_Material>` **material**
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_material(value) |
++-----------+---------------------+
+| *Getter*  | get_material()      |
++-----------+---------------------+
 
-The material applied to textures on this ``CanvasItem``. Default value: ``null``.
+The material applied to textures on this ``CanvasItem``.
 
 .. _class_CanvasItem_property_modulate:
 
 - :ref:`Color<class_Color>` **modulate**
 
-+----------+---------------------+
-| *Setter* | set_modulate(value) |
-+----------+---------------------+
-| *Getter* | get_modulate()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | Color( 1, 1, 1, 1 ) |
++-----------+---------------------+
+| *Setter*  | set_modulate(value) |
++-----------+---------------------+
+| *Getter*  | get_modulate()      |
++-----------+---------------------+
 
-The color applied to textures on this ``CanvasItem``. Default value: ``Color(1, 1, 1, 1)`` (opaque "white").
+The color applied to textures on this ``CanvasItem``.
 
 .. _class_CanvasItem_property_self_modulate:
 
 - :ref:`Color<class_Color>` **self_modulate**
 
-+----------+--------------------------+
-| *Setter* | set_self_modulate(value) |
-+----------+--------------------------+
-| *Getter* | get_self_modulate()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | Color( 1, 1, 1, 1 )      |
++-----------+--------------------------+
+| *Setter*  | set_self_modulate(value) |
++-----------+--------------------------+
+| *Getter*  | get_self_modulate()      |
++-----------+--------------------------+
 
-The color applied to textures on this ``CanvasItem``. This is not inherited by children ``CanvasItem``\ s. Default value: ``Color(1, 1, 1, 1)`` (opaque "white")..
+The color applied to textures on this ``CanvasItem``. This is not inherited by children ``CanvasItem``\ s.
 
 .. _class_CanvasItem_property_show_behind_parent:
 
 - :ref:`bool<class_bool>` **show_behind_parent**
 
-+----------+---------------------------------+
-| *Setter* | set_draw_behind_parent(value)   |
-+----------+---------------------------------+
-| *Getter* | is_draw_behind_parent_enabled() |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | false                           |
++-----------+---------------------------------+
+| *Setter*  | set_draw_behind_parent(value)   |
++-----------+---------------------------------+
+| *Getter*  | is_draw_behind_parent_enabled() |
++-----------+---------------------------------+
 
-If ``true``, the object draws behind its parent. Default value: ``false``.
+If ``true``, the object draws behind its parent.
 
 .. _class_CanvasItem_property_show_on_top:
 
 - :ref:`bool<class_bool>` **show_on_top**
 
-If ``true``, the object draws on top of its parent. Default value: ``true``.
+If ``true``, the object draws on top of its parent.
 
 .. _class_CanvasItem_property_use_parent_material:
 
 - :ref:`bool<class_bool>` **use_parent_material**
 
-+----------+--------------------------------+
-| *Setter* | set_use_parent_material(value) |
-+----------+--------------------------------+
-| *Getter* | get_use_parent_material()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | false                          |
++-----------+--------------------------------+
+| *Setter*  | set_use_parent_material(value) |
++-----------+--------------------------------+
+| *Getter*  | get_use_parent_material()      |
++-----------+--------------------------------+
 
-If ``true``, the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_property_material>` property is used as this one's material. Default value: ``false``.
+If ``true``, the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_property_material>` property is used as this one's material.
 
 .. _class_CanvasItem_property_visible:
 
 - :ref:`bool<class_bool>` **visible**
 
-+----------+--------------------+
-| *Setter* | set_visible(value) |
-+----------+--------------------+
-| *Getter* | is_visible()       |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | true               |
++-----------+--------------------+
+| *Setter*  | set_visible(value) |
++-----------+--------------------+
+| *Getter*  | is_visible()       |
++-----------+--------------------+
 
-If ``true``, this ``CanvasItem`` is drawn. Default value: ``true``. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
+If ``true``, this ``CanvasItem`` is drawn. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
 Method Descriptions
 -------------------

@@ -19,35 +19,35 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`angular_damp<class_Area2D_property_angular_damp>`                     |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`String<class_String>`                     | :ref:`audio_bus_name<class_Area2D_property_audio_bus_name>`                 |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`audio_bus_override<class_Area2D_property_audio_bus_override>`         |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`collision_layer<class_Area2D_property_collision_layer>`               |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`collision_mask<class_Area2D_property_collision_mask>`                 |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`gravity<class_Area2D_property_gravity>`                               |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`gravity_distance_scale<class_Area2D_property_gravity_distance_scale>` |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`gravity_point<class_Area2D_property_gravity_point>`                   |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`gravity_vec<class_Area2D_property_gravity_vec>`                       |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`linear_damp<class_Area2D_property_linear_damp>`                       |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`monitorable<class_Area2D_property_monitorable>`                       |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area2D_property_monitoring>`                         |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`priority<class_Area2D_property_priority>`                             |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` | :ref:`space_override<class_Area2D_property_space_override>`                 |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                       | :ref:`angular_damp<class_Area2D_property_angular_damp>`                     | 1.0             |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`String<class_String>`                     | :ref:`audio_bus_name<class_Area2D_property_audio_bus_name>`                 | "Master"        |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                         | :ref:`audio_bus_override<class_Area2D_property_audio_bus_override>`         | false           |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                           | :ref:`collision_layer<class_Area2D_property_collision_layer>`               | 1               |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                           | :ref:`collision_mask<class_Area2D_property_collision_mask>`                 | 1               |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                       | :ref:`gravity<class_Area2D_property_gravity>`                               | 98.0            |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                       | :ref:`gravity_distance_scale<class_Area2D_property_gravity_distance_scale>` | 0.0             |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                         | :ref:`gravity_point<class_Area2D_property_gravity_point>`                   | false           |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>`                   | :ref:`gravity_vec<class_Area2D_property_gravity_vec>`                       | Vector2( 0, 1 ) |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                       | :ref:`linear_damp<class_Area2D_property_linear_damp>`                       | 0.1             |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                         | :ref:`monitorable<class_Area2D_property_monitorable>`                       | true            |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area2D_property_monitoring>`                         | true            |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                       | :ref:`priority<class_Area2D_property_priority>`                             | 0.0             |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
+| :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` | :ref:`space_override<class_Area2D_property_space_override>`                 | 0               |
++-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -168,11 +168,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **angular_damp**
 
-+----------+-------------------------+
-| *Setter* | set_angular_damp(value) |
-+----------+-------------------------+
-| *Getter* | get_angular_damp()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 1.0                     |
++-----------+-------------------------+
+| *Setter*  | set_angular_damp(value) |
++-----------+-------------------------+
+| *Getter*  | get_angular_damp()      |
++-----------+-------------------------+
 
 The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
 
@@ -180,11 +182,13 @@ The rate at which objects stop spinning in this area. Represents the angular vel
 
 - :ref:`String<class_String>` **audio_bus_name**
 
-+----------+---------------------------+
-| *Setter* | set_audio_bus_name(value) |
-+----------+---------------------------+
-| *Getter* | get_audio_bus_name()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | "Master"                  |
++-----------+---------------------------+
+| *Setter*  | set_audio_bus_name(value) |
++-----------+---------------------------+
+| *Getter*  | get_audio_bus_name()      |
++-----------+---------------------------+
 
 The name of the area's audio bus.
 
@@ -192,23 +196,27 @@ The name of the area's audio bus.
 
 - :ref:`bool<class_bool>` **audio_bus_override**
 
-+----------+-------------------------------+
-| *Setter* | set_audio_bus_override(value) |
-+----------+-------------------------------+
-| *Getter* | is_overriding_audio_bus()     |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | false                         |
++-----------+-------------------------------+
+| *Setter*  | set_audio_bus_override(value) |
++-----------+-------------------------------+
+| *Getter*  | is_overriding_audio_bus()     |
++-----------+-------------------------------+
 
-If ``true``, the area's audio bus overrides the default audio bus. Default value: ``false``.
+If ``true``, the area's audio bus overrides the default audio bus.
 
 .. _class_Area2D_property_collision_layer:
 
 - :ref:`int<class_int>` **collision_layer**
 
-+----------+----------------------------+
-| *Setter* | set_collision_layer(value) |
-+----------+----------------------------+
-| *Getter* | get_collision_layer()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 1                          |
++-----------+----------------------------+
+| *Setter*  | set_collision_layer(value) |
++-----------+----------------------------+
+| *Getter*  | get_collision_layer()      |
++-----------+----------------------------+
 
 The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also :ref:`collision_mask<class_Area2D_property_collision_mask>`.
 
@@ -216,11 +224,13 @@ The area's physics layer(s). Collidable objects can exist in any of 32 different
 
 - :ref:`int<class_int>` **collision_mask**
 
-+----------+---------------------------+
-| *Setter* | set_collision_mask(value) |
-+----------+---------------------------+
-| *Getter* | get_collision_mask()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 1                         |
++-----------+---------------------------+
+| *Setter*  | set_collision_mask(value) |
++-----------+---------------------------+
+| *Getter*  | get_collision_mask()      |
++-----------+---------------------------+
 
 The physics layers this area scans to determine collision detection.
 
@@ -228,11 +238,13 @@ The physics layers this area scans to determine collision detection.
 
 - :ref:`float<class_float>` **gravity**
 
-+----------+--------------------+
-| *Setter* | set_gravity(value) |
-+----------+--------------------+
-| *Getter* | get_gravity()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 98.0               |
++-----------+--------------------+
+| *Setter*  | set_gravity(value) |
++-----------+--------------------+
+| *Getter*  | get_gravity()      |
++-----------+--------------------+
 
 The area's gravity intensity (ranges from -1024 to 1024). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
 
@@ -240,11 +252,13 @@ The area's gravity intensity (ranges from -1024 to 1024). This value multiplies 
 
 - :ref:`float<class_float>` **gravity_distance_scale**
 
-+----------+-----------------------------------+
-| *Setter* | set_gravity_distance_scale(value) |
-+----------+-----------------------------------+
-| *Getter* | get_gravity_distance_scale()      |
-+----------+-----------------------------------+
++-----------+-----------------------------------+
+| *Default* | 0.0                               |
++-----------+-----------------------------------+
+| *Setter*  | set_gravity_distance_scale(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_gravity_distance_scale()      |
++-----------+-----------------------------------+
 
 The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
 
@@ -252,23 +266,27 @@ The falloff factor for point gravity. The greater the value, the faster gravity 
 
 - :ref:`bool<class_bool>` **gravity_point**
 
-+----------+-----------------------------+
-| *Setter* | set_gravity_is_point(value) |
-+----------+-----------------------------+
-| *Getter* | is_gravity_a_point()        |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | false                       |
++-----------+-----------------------------+
+| *Setter*  | set_gravity_is_point(value) |
++-----------+-----------------------------+
+| *Getter*  | is_gravity_a_point()        |
++-----------+-----------------------------+
 
-If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area2D_property_gravity_vec>`). See also :ref:`space_override<class_Area2D_property_space_override>`. Default value: ``false``.
+If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area2D_property_gravity_vec>`). See also :ref:`space_override<class_Area2D_property_space_override>`.
 
 .. _class_Area2D_property_gravity_vec:
 
 - :ref:`Vector2<class_Vector2>` **gravity_vec**
 
-+----------+---------------------------+
-| *Setter* | set_gravity_vector(value) |
-+----------+---------------------------+
-| *Getter* | get_gravity_vector()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | Vector2( 0, 1 )           |
++-----------+---------------------------+
+| *Setter*  | set_gravity_vector(value) |
++-----------+---------------------------+
+| *Getter*  | get_gravity_vector()      |
++-----------+---------------------------+
 
 The area's gravity vector (not normalized). If gravity is a point (see :ref:`gravity_point<class_Area2D_property_gravity_point>`), this will be the point of attraction.
 
@@ -276,11 +294,13 @@ The area's gravity vector (not normalized). If gravity is a point (see :ref:`gra
 
 - :ref:`float<class_float>` **linear_damp**
 
-+----------+------------------------+
-| *Setter* | set_linear_damp(value) |
-+----------+------------------------+
-| *Getter* | get_linear_damp()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0.1                    |
++-----------+------------------------+
+| *Setter*  | set_linear_damp(value) |
++-----------+------------------------+
+| *Getter*  | get_linear_damp()      |
++-----------+------------------------+
 
 The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
 
@@ -288,47 +308,55 @@ The rate at which objects stop moving in this area. Represents the linear veloci
 
 - :ref:`bool<class_bool>` **monitorable**
 
-+----------+------------------------+
-| *Setter* | set_monitorable(value) |
-+----------+------------------------+
-| *Getter* | is_monitorable()       |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | true                   |
++-----------+------------------------+
+| *Setter*  | set_monitorable(value) |
++-----------+------------------------+
+| *Getter*  | is_monitorable()       |
++-----------+------------------------+
 
-If ``true``, other monitoring areas can detect this area. Default value: ``true``.
+If ``true``, other monitoring areas can detect this area.
 
 .. _class_Area2D_property_monitoring:
 
 - :ref:`bool<class_bool>` **monitoring**
 
-+----------+-----------------------+
-| *Setter* | set_monitoring(value) |
-+----------+-----------------------+
-| *Getter* | is_monitoring()       |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | true                  |
++-----------+-----------------------+
+| *Setter*  | set_monitoring(value) |
++-----------+-----------------------+
+| *Getter*  | is_monitoring()       |
++-----------+-----------------------+
 
-If ``true``, the area detects bodies or areas entering and exiting it. Default value: ``true``.
+If ``true``, the area detects bodies or areas entering and exiting it.
 
 .. _class_Area2D_property_priority:
 
 - :ref:`float<class_float>` **priority**
 
-+----------+---------------------+
-| *Setter* | set_priority(value) |
-+----------+---------------------+
-| *Getter* | get_priority()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_priority(value) |
++-----------+---------------------+
+| *Getter*  | get_priority()      |
++-----------+---------------------+
 
-The area's priority. Higher priority areas are processed first. Default value: 0.
+The area's priority. Higher priority areas are processed first.
 
 .. _class_Area2D_property_space_override:
 
 - :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` **space_override**
 
-+----------+--------------------------------+
-| *Setter* | set_space_override_mode(value) |
-+----------+--------------------------------+
-| *Getter* | get_space_override_mode()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | 0                              |
++-----------+--------------------------------+
+| *Setter*  | set_space_override_mode(value) |
++-----------+--------------------------------+
+| *Getter*  | get_space_override_mode()      |
++-----------+--------------------------------+
 
 Override mode for gravity and damping calculations within this area. See :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` for possible values.
 

@@ -19,19 +19,19 @@ UPNP device.
 Properties
 ----------
 
-+---------------------------------------------+---------------------------------------------------------------------+
-| :ref:`String<class_String>`                 | :ref:`description_url<class_UPNPDevice_property_description_url>`   |
-+---------------------------------------------+---------------------------------------------------------------------+
-| :ref:`String<class_String>`                 | :ref:`igd_control_url<class_UPNPDevice_property_igd_control_url>`   |
-+---------------------------------------------+---------------------------------------------------------------------+
-| :ref:`String<class_String>`                 | :ref:`igd_our_addr<class_UPNPDevice_property_igd_our_addr>`         |
-+---------------------------------------------+---------------------------------------------------------------------+
-| :ref:`String<class_String>`                 | :ref:`igd_service_type<class_UPNPDevice_property_igd_service_type>` |
-+---------------------------------------------+---------------------------------------------------------------------+
-| :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` | :ref:`igd_status<class_UPNPDevice_property_igd_status>`             |
-+---------------------------------------------+---------------------------------------------------------------------+
-| :ref:`String<class_String>`                 | :ref:`service_type<class_UPNPDevice_property_service_type>`         |
-+---------------------------------------------+---------------------------------------------------------------------+
++---------------------------------------------+---------------------------------------------------------------------+----+
+| :ref:`String<class_String>`                 | :ref:`description_url<class_UPNPDevice_property_description_url>`   | "" |
++---------------------------------------------+---------------------------------------------------------------------+----+
+| :ref:`String<class_String>`                 | :ref:`igd_control_url<class_UPNPDevice_property_igd_control_url>`   | "" |
++---------------------------------------------+---------------------------------------------------------------------+----+
+| :ref:`String<class_String>`                 | :ref:`igd_our_addr<class_UPNPDevice_property_igd_our_addr>`         | "" |
++---------------------------------------------+---------------------------------------------------------------------+----+
+| :ref:`String<class_String>`                 | :ref:`igd_service_type<class_UPNPDevice_property_igd_service_type>` | "" |
++---------------------------------------------+---------------------------------------------------------------------+----+
+| :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` | :ref:`igd_status<class_UPNPDevice_property_igd_status>`             | 9  |
++---------------------------------------------+---------------------------------------------------------------------+----+
+| :ref:`String<class_String>`                 | :ref:`service_type<class_UPNPDevice_property_service_type>`         | "" |
++---------------------------------------------+---------------------------------------------------------------------+----+
 
 Methods
 -------
@@ -105,11 +105,13 @@ Property Descriptions
 
 - :ref:`String<class_String>` **description_url**
 
-+----------+----------------------------+
-| *Setter* | set_description_url(value) |
-+----------+----------------------------+
-| *Getter* | get_description_url()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | ""                         |
++-----------+----------------------------+
+| *Setter*  | set_description_url(value) |
++-----------+----------------------------+
+| *Getter*  | get_description_url()      |
++-----------+----------------------------+
 
 URL to the device description.
 
@@ -117,11 +119,13 @@ URL to the device description.
 
 - :ref:`String<class_String>` **igd_control_url**
 
-+----------+----------------------------+
-| *Setter* | set_igd_control_url(value) |
-+----------+----------------------------+
-| *Getter* | get_igd_control_url()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | ""                         |
++-----------+----------------------------+
+| *Setter*  | set_igd_control_url(value) |
++-----------+----------------------------+
+| *Getter*  | get_igd_control_url()      |
++-----------+----------------------------+
 
 IDG control URL.
 
@@ -129,11 +133,13 @@ IDG control URL.
 
 - :ref:`String<class_String>` **igd_our_addr**
 
-+----------+-------------------------+
-| *Setter* | set_igd_our_addr(value) |
-+----------+-------------------------+
-| *Getter* | get_igd_our_addr()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | ""                      |
++-----------+-------------------------+
+| *Setter*  | set_igd_our_addr(value) |
++-----------+-------------------------+
+| *Getter*  | get_igd_our_addr()      |
++-----------+-------------------------+
 
 Address of the local machine in the network connecting it to this ``UPNPDevice``.
 
@@ -141,11 +147,13 @@ Address of the local machine in the network connecting it to this ``UPNPDevice``
 
 - :ref:`String<class_String>` **igd_service_type**
 
-+----------+-----------------------------+
-| *Setter* | set_igd_service_type(value) |
-+----------+-----------------------------+
-| *Getter* | get_igd_service_type()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | ""                          |
++-----------+-----------------------------+
+| *Setter*  | set_igd_service_type(value) |
++-----------+-----------------------------+
+| *Getter*  | get_igd_service_type()      |
++-----------+-----------------------------+
 
 IGD service type.
 
@@ -153,11 +161,13 @@ IGD service type.
 
 - :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **igd_status**
 
-+----------+-----------------------+
-| *Setter* | set_igd_status(value) |
-+----------+-----------------------+
-| *Getter* | get_igd_status()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 9                     |
++-----------+-----------------------+
+| *Setter*  | set_igd_status(value) |
++-----------+-----------------------+
+| *Getter*  | get_igd_status()      |
++-----------+-----------------------+
 
 IGD status. See :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>`.
 
@@ -165,11 +175,13 @@ IGD status. See :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>`.
 
 - :ref:`String<class_String>` **service_type**
 
-+----------+-------------------------+
-| *Setter* | set_service_type(value) |
-+----------+-------------------------+
-| *Getter* | get_service_type()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | ""                      |
++-----------+-------------------------+
+| *Setter*  | set_service_type(value) |
++-----------+-------------------------+
+| *Getter*  | get_service_type()      |
++-----------+-------------------------+
 
 Service type.
 

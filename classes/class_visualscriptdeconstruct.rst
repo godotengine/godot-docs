@@ -19,9 +19,9 @@ A Visual Script node which deconstructs a base type instance into its parts.
 Properties
 ----------
 
-+-----------------------------------------------------+----------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptDeconstruct_property_type>` |
-+-----------------------------------------------------+----------------------------------------------------------+
++-----------------------------------------------------+----------------------------------------------------------+---+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptDeconstruct_property_type>` | 0 |
++-----------------------------------------------------+----------------------------------------------------------+---+
 
 Description
 -----------
@@ -35,11 +35,13 @@ Property Descriptions
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
-+----------+-----------------------------+
-| *Setter* | set_deconstruct_type(value) |
-+----------+-----------------------------+
-| *Getter* | get_deconstruct_type()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0                           |
++-----------+-----------------------------+
+| *Setter*  | set_deconstruct_type(value) |
++-----------+-----------------------------+
+| *Getter*  | get_deconstruct_type()      |
++-----------+-----------------------------+
 
 The type to deconstruct.
 

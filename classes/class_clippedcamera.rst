@@ -19,17 +19,17 @@ Brief Description
 Properties
 ----------
 
-+----------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`clip_to_areas<class_ClippedCamera_property_clip_to_areas>`   |
-+----------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`clip_to_bodies<class_ClippedCamera_property_clip_to_bodies>` |
-+----------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`int<class_int>`                              | :ref:`collision_mask<class_ClippedCamera_property_collision_mask>` |
-+----------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>`                          | :ref:`margin<class_ClippedCamera_property_margin>`                 |
-+----------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` | :ref:`process_mode<class_ClippedCamera_property_process_mode>`     |
-+----------------------------------------------------+--------------------------------------------------------------------+
++----------------------------------------------------+--------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                            | :ref:`clip_to_areas<class_ClippedCamera_property_clip_to_areas>`   | false |
++----------------------------------------------------+--------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                            | :ref:`clip_to_bodies<class_ClippedCamera_property_clip_to_bodies>` | true  |
++----------------------------------------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                              | :ref:`collision_mask<class_ClippedCamera_property_collision_mask>` | 1     |
++----------------------------------------------------+--------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`                          | :ref:`margin<class_ClippedCamera_property_margin>`                 | 0.0   |
++----------------------------------------------------+--------------------------------------------------------------------+-------+
+| :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` | :ref:`process_mode<class_ClippedCamera_property_process_mode>`     | 0     |
++----------------------------------------------------+--------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -74,51 +74,61 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **clip_to_areas**
 
-+----------+----------------------------+
-| *Setter* | set_clip_to_areas(value)   |
-+----------+----------------------------+
-| *Getter* | is_clip_to_areas_enabled() |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | false                      |
++-----------+----------------------------+
+| *Setter*  | set_clip_to_areas(value)   |
++-----------+----------------------------+
+| *Getter*  | is_clip_to_areas_enabled() |
++-----------+----------------------------+
 
 .. _class_ClippedCamera_property_clip_to_bodies:
 
 - :ref:`bool<class_bool>` **clip_to_bodies**
 
-+----------+-----------------------------+
-| *Setter* | set_clip_to_bodies(value)   |
-+----------+-----------------------------+
-| *Getter* | is_clip_to_bodies_enabled() |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | true                        |
++-----------+-----------------------------+
+| *Setter*  | set_clip_to_bodies(value)   |
++-----------+-----------------------------+
+| *Getter*  | is_clip_to_bodies_enabled() |
++-----------+-----------------------------+
 
 .. _class_ClippedCamera_property_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
 
-+----------+---------------------------+
-| *Setter* | set_collision_mask(value) |
-+----------+---------------------------+
-| *Getter* | get_collision_mask()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 1                         |
++-----------+---------------------------+
+| *Setter*  | set_collision_mask(value) |
++-----------+---------------------------+
+| *Getter*  | get_collision_mask()      |
++-----------+---------------------------+
 
 .. _class_ClippedCamera_property_margin:
 
 - :ref:`float<class_float>` **margin**
 
-+----------+-------------------+
-| *Setter* | set_margin(value) |
-+----------+-------------------+
-| *Getter* | get_margin()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0.0               |
++-----------+-------------------+
+| *Setter*  | set_margin(value) |
++-----------+-------------------+
+| *Getter*  | get_margin()      |
++-----------+-------------------+
 
 .. _class_ClippedCamera_property_process_mode:
 
 - :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` **process_mode**
 
-+----------+-------------------------+
-| *Setter* | set_process_mode(value) |
-+----------+-------------------------+
-| *Getter* | get_process_mode()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_process_mode(value) |
++-----------+-------------------------+
+| *Getter*  | get_process_mode()      |
++-----------+-------------------------+
 
 Method Descriptions
 -------------------

@@ -19,23 +19,23 @@ Plays back audio non-positionally.
 Properties
 ----------
 
-+----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`autoplay<class_AudioStreamPlayer_property_autoplay>`           |
-+----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`String<class_String>`                        | :ref:`bus<class_AudioStreamPlayer_property_bus>`                     |
-+----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` | :ref:`mix_target<class_AudioStreamPlayer_property_mix_target>`       |
-+----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`float<class_float>`                          | :ref:`pitch_scale<class_AudioStreamPlayer_property_pitch_scale>`     |
-+----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`playing<class_AudioStreamPlayer_property_playing>`             |
-+----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`AudioStream<class_AudioStream>`              | :ref:`stream<class_AudioStreamPlayer_property_stream>`               |
-+----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`stream_paused<class_AudioStreamPlayer_property_stream_paused>` |
-+----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`float<class_float>`                          | :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>`         |
-+----------------------------------------------------+----------------------------------------------------------------------+
++----------------------------------------------------+----------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                            | :ref:`autoplay<class_AudioStreamPlayer_property_autoplay>`           | false    |
++----------------------------------------------------+----------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                        | :ref:`bus<class_AudioStreamPlayer_property_bus>`                     | "Master" |
++----------------------------------------------------+----------------------------------------------------------------------+----------+
+| :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` | :ref:`mix_target<class_AudioStreamPlayer_property_mix_target>`       | 0        |
++----------------------------------------------------+----------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                          | :ref:`pitch_scale<class_AudioStreamPlayer_property_pitch_scale>`     | 1.0      |
++----------------------------------------------------+----------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                            | :ref:`playing<class_AudioStreamPlayer_property_playing>`             | false    |
++----------------------------------------------------+----------------------------------------------------------------------+----------+
+| :ref:`AudioStream<class_AudioStream>`              | :ref:`stream<class_AudioStreamPlayer_property_stream>`               | null     |
++----------------------------------------------------+----------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                            | :ref:`stream_paused<class_AudioStreamPlayer_property_stream_paused>` | false    |
++----------------------------------------------------+----------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                          | :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>`         | 0.0      |
++----------------------------------------------------+----------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -97,23 +97,27 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **autoplay**
 
-+----------+-----------------------+
-| *Setter* | set_autoplay(value)   |
-+----------+-----------------------+
-| *Getter* | is_autoplay_enabled() |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | false                 |
++-----------+-----------------------+
+| *Setter*  | set_autoplay(value)   |
++-----------+-----------------------+
+| *Getter*  | is_autoplay_enabled() |
++-----------+-----------------------+
 
-If ``true``, audio plays when added to scene tree. Default value: ``false``.
+If ``true``, audio plays when added to scene tree.
 
 .. _class_AudioStreamPlayer_property_bus:
 
 - :ref:`String<class_String>` **bus**
 
-+----------+----------------+
-| *Setter* | set_bus(value) |
-+----------+----------------+
-| *Getter* | get_bus()      |
-+----------+----------------+
++-----------+----------------+
+| *Default* | "Master"       |
++-----------+----------------+
+| *Setter*  | set_bus(value) |
++-----------+----------------+
+| *Getter*  | get_bus()      |
++-----------+----------------+
 
 Bus on which this audio is playing.
 
@@ -121,11 +125,13 @@ Bus on which this audio is playing.
 
 - :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` **mix_target**
 
-+----------+-----------------------+
-| *Setter* | set_mix_target(value) |
-+----------+-----------------------+
-| *Getter* | get_mix_target()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 0                     |
++-----------+-----------------------+
+| *Setter*  | set_mix_target(value) |
++-----------+-----------------------+
+| *Getter*  | get_mix_target()      |
++-----------+-----------------------+
 
 If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET_*`` constants.
 
@@ -133,11 +139,13 @@ If the audio configuration has more than two speakers, this sets the target chan
 
 - :ref:`float<class_float>` **pitch_scale**
 
-+----------+------------------------+
-| *Setter* | set_pitch_scale(value) |
-+----------+------------------------+
-| *Getter* | get_pitch_scale()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 1.0                    |
++-----------+------------------------+
+| *Setter*  | set_pitch_scale(value) |
++-----------+------------------------+
+| *Getter*  | get_pitch_scale()      |
++-----------+------------------------+
 
 Changes the pitch and the tempo of the audio.
 
@@ -145,9 +153,11 @@ Changes the pitch and the tempo of the audio.
 
 - :ref:`bool<class_bool>` **playing**
 
-+----------+--------------+
-| *Getter* | is_playing() |
-+----------+--------------+
++-----------+--------------+
+| *Default* | false        |
++-----------+--------------+
+| *Getter*  | is_playing() |
++-----------+--------------+
 
 If ``true``, audio is playing.
 
@@ -155,11 +165,13 @@ If ``true``, audio is playing.
 
 - :ref:`AudioStream<class_AudioStream>` **stream**
 
-+----------+-------------------+
-| *Setter* | set_stream(value) |
-+----------+-------------------+
-| *Getter* | get_stream()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | null              |
++-----------+-------------------+
+| *Setter*  | set_stream(value) |
++-----------+-------------------+
+| *Getter*  | get_stream()      |
++-----------+-------------------+
 
 The :ref:`AudioStream<class_AudioStream>` object to be played.
 
@@ -167,21 +179,25 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 
 - :ref:`bool<class_bool>` **stream_paused**
 
-+----------+--------------------------+
-| *Setter* | set_stream_paused(value) |
-+----------+--------------------------+
-| *Getter* | get_stream_paused()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | false                    |
++-----------+--------------------------+
+| *Setter*  | set_stream_paused(value) |
++-----------+--------------------------+
+| *Getter*  | get_stream_paused()      |
++-----------+--------------------------+
 
 .. _class_AudioStreamPlayer_property_volume_db:
 
 - :ref:`float<class_float>` **volume_db**
 
-+----------+----------------------+
-| *Setter* | set_volume_db(value) |
-+----------+----------------------+
-| *Getter* | get_volume_db()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0.0                  |
++-----------+----------------------+
+| *Setter*  | set_volume_db(value) |
++-----------+----------------------+
+| *Getter*  | get_volume_db()      |
++-----------+----------------------+
 
 Volume of sound, in dB.
 

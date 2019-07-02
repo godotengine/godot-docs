@@ -19,9 +19,9 @@ Executes a series of Sequence ports.
 Properties
 ----------
 
-+-----------------------+---------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`steps<class_VisualScriptSequence_property_steps>` |
-+-----------------------+---------------------------------------------------------+
++-----------------------+---------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`steps<class_VisualScriptSequence_property_steps>` | 1 |
++-----------------------+---------------------------------------------------------+---+
 
 Description
 -----------
@@ -47,11 +47,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **steps**
 
-+----------+------------------+
-| *Setter* | set_steps(value) |
-+----------+------------------+
-| *Getter* | get_steps()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 1                |
++-----------+------------------+
+| *Setter*  | set_steps(value) |
++-----------+------------------+
+| *Getter*  | get_steps()      |
++-----------+------------------+
 
 The number of steps in the sequence.
 

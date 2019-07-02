@@ -19,15 +19,15 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`collision_mask<class_SpringArm_property_collision_mask>` |
-+---------------------------+----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`margin<class_SpringArm_property_margin>`                 |
-+---------------------------+----------------------------------------------------------------+
-| :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_property_shape>`                   |
-+---------------------------+----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spring_length<class_SpringArm_property_spring_length>`   |
-+---------------------------+----------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------+------+
+| :ref:`int<class_int>`     | :ref:`collision_mask<class_SpringArm_property_collision_mask>` | 1    |
++---------------------------+----------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`margin<class_SpringArm_property_margin>`                 | 0.01 |
++---------------------------+----------------------------------------------------------------+------+
+| :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_property_shape>`                   | null |
++---------------------------+----------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`spring_length<class_SpringArm_property_spring_length>`   | 1.0  |
++---------------------------+----------------------------------------------------------------+------+
 
 Methods
 -------
@@ -49,41 +49,49 @@ Property Descriptions
 
 - :ref:`int<class_int>` **collision_mask**
 
-+----------+---------------------------+
-| *Setter* | set_collision_mask(value) |
-+----------+---------------------------+
-| *Getter* | get_collision_mask()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 1                         |
++-----------+---------------------------+
+| *Setter*  | set_collision_mask(value) |
++-----------+---------------------------+
+| *Getter*  | get_collision_mask()      |
++-----------+---------------------------+
 
 .. _class_SpringArm_property_margin:
 
 - :ref:`float<class_float>` **margin**
 
-+----------+-------------------+
-| *Setter* | set_margin(value) |
-+----------+-------------------+
-| *Getter* | get_margin()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0.01              |
++-----------+-------------------+
+| *Setter*  | set_margin(value) |
++-----------+-------------------+
+| *Getter*  | get_margin()      |
++-----------+-------------------+
 
 .. _class_SpringArm_property_shape:
 
 - :ref:`Shape<class_Shape>` **shape**
 
-+----------+------------------+
-| *Setter* | set_shape(value) |
-+----------+------------------+
-| *Getter* | get_shape()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | null             |
++-----------+------------------+
+| *Setter*  | set_shape(value) |
++-----------+------------------+
+| *Getter*  | get_shape()      |
++-----------+------------------+
 
 .. _class_SpringArm_property_spring_length:
 
 - :ref:`float<class_float>` **spring_length**
 
-+----------+-------------------+
-| *Setter* | set_length(value) |
-+----------+-------------------+
-| *Getter* | get_length()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1.0               |
++-----------+-------------------+
+| *Setter*  | set_length(value) |
++-----------+-------------------+
+| *Getter*  | get_length()      |
++-----------+-------------------+
 
 Method Descriptions
 -------------------

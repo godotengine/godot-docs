@@ -19,15 +19,15 @@ A material for physics properties.
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`absorbent<class_PhysicsMaterial_property_absorbent>` |
-+---------------------------+------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`bounce<class_PhysicsMaterial_property_bounce>`       |
-+---------------------------+------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`friction<class_PhysicsMaterial_property_friction>`   |
-+---------------------------+------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`rough<class_PhysicsMaterial_property_rough>`         |
-+---------------------------+------------------------------------------------------------+
++---------------------------+------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`absorbent<class_PhysicsMaterial_property_absorbent>` | false |
++---------------------------+------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`bounce<class_PhysicsMaterial_property_bounce>`       | 0.0   |
++---------------------------+------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`friction<class_PhysicsMaterial_property_friction>`   | 1.0   |
++---------------------------+------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`rough<class_PhysicsMaterial_property_rough>`         | false |
++---------------------------+------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -41,43 +41,51 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **absorbent**
 
-+----------+----------------------+
-| *Setter* | set_absorbent(value) |
-+----------+----------------------+
-| *Getter* | is_absorbent()       |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_absorbent(value) |
++-----------+----------------------+
+| *Getter*  | is_absorbent()       |
++-----------+----------------------+
 
 .. _class_PhysicsMaterial_property_bounce:
 
 - :ref:`float<class_float>` **bounce**
 
-+----------+-------------------+
-| *Setter* | set_bounce(value) |
-+----------+-------------------+
-| *Getter* | get_bounce()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0.0               |
++-----------+-------------------+
+| *Setter*  | set_bounce(value) |
++-----------+-------------------+
+| *Getter*  | get_bounce()      |
++-----------+-------------------+
 
-The body's bounciness. Default value: ``0``.
+The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
 
 .. _class_PhysicsMaterial_property_friction:
 
 - :ref:`float<class_float>` **friction**
 
-+----------+---------------------+
-| *Setter* | set_friction(value) |
-+----------+---------------------+
-| *Getter* | get_friction()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 1.0                 |
++-----------+---------------------+
+| *Setter*  | set_friction(value) |
++-----------+---------------------+
+| *Getter*  | get_friction()      |
++-----------+---------------------+
 
-The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction). Default value: ``1``.
+The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction).
 
 .. _class_PhysicsMaterial_property_rough:
 
 - :ref:`bool<class_bool>` **rough**
 
-+----------+------------------+
-| *Setter* | set_rough(value) |
-+----------+------------------+
-| *Getter* | is_rough()       |
-+----------+------------------+
++-----------+------------------+
+| *Default* | false            |
++-----------+------------------+
+| *Setter*  | set_rough(value) |
++-----------+------------------+
+| *Getter*  | is_rough()       |
++-----------+------------------+
 

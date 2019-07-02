@@ -19,37 +19,37 @@ Control that provides single-line string editing.
 Properties
 ----------
 
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`Align<enum_LineEdit_Align>`        | :ref:`align<class_LineEdit_property_align>`                                 |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`caret_blink<class_LineEdit_property_caret_blink>`                     |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`caret_blink_speed<class_LineEdit_property_caret_blink_speed>`         |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`caret_position<class_LineEdit_property_caret_position>`               |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`   |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`context_menu_enabled<class_LineEdit_property_context_menu_enabled>`   |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`editable<class_LineEdit_property_editable>`                           |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`expand_to_text_length<class_LineEdit_property_expand_to_text_length>` |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | :ref:`focus_mode<class_LineEdit_property_focus_mode>`                       |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`max_length<class_LineEdit_property_max_length>`                       |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`placeholder_alpha<class_LineEdit_property_placeholder_alpha>`         |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`String<class_String>`              | :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`           |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`secret<class_LineEdit_property_secret>`                               |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`String<class_String>`              | :ref:`secret_character<class_LineEdit_property_secret_character>`           |
-+------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`String<class_String>`              | :ref:`text<class_LineEdit_property_text>`                                   |
-+------------------------------------------+-----------------------------------------------------------------------------+
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`Align<enum_LineEdit_Align>`        | :ref:`align<class_LineEdit_property_align>`                                 | 0     |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                  | :ref:`caret_blink<class_LineEdit_property_caret_blink>`                     | false |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`                | :ref:`caret_blink_speed<class_LineEdit_property_caret_blink_speed>`         | 0.65  |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                    | :ref:`caret_position<class_LineEdit_property_caret_position>`               | 0     |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                  | :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`   | false |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                  | :ref:`context_menu_enabled<class_LineEdit_property_context_menu_enabled>`   | true  |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                  | :ref:`editable<class_LineEdit_property_editable>`                           | true  |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                  | :ref:`expand_to_text_length<class_LineEdit_property_expand_to_text_length>` | false |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | :ref:`focus_mode<class_LineEdit_property_focus_mode>`                       | 2     |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                    | :ref:`max_length<class_LineEdit_property_max_length>`                       | 0     |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`                | :ref:`placeholder_alpha<class_LineEdit_property_placeholder_alpha>`         | 0.6   |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>`              | :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`           | ""    |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                  | :ref:`secret<class_LineEdit_property_secret>`                               | false |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>`              | :ref:`secret_character<class_LineEdit_property_secret_character>`           | "*"   |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>`              | :ref:`text<class_LineEdit_property_text>`                                   | ""    |
++------------------------------------------+-----------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -73,33 +73,33 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+----------------------------+
-| :ref:`Texture<class_Texture>`   | clear                      |
-+---------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | clear_button_color         |
-+---------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | clear_button_color_pressed |
-+---------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | cursor_color               |
-+---------------------------------+----------------------------+
-| :ref:`StyleBox<class_StyleBox>` | focus                      |
-+---------------------------------+----------------------------+
-| :ref:`Font<class_Font>`         | font                       |
-+---------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | font_color                 |
-+---------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | font_color_selected        |
-+---------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | font_color_uneditable      |
-+---------------------------------+----------------------------+
-| :ref:`int<class_int>`           | minimum_spaces             |
-+---------------------------------+----------------------------+
-| :ref:`StyleBox<class_StyleBox>` | normal                     |
-+---------------------------------+----------------------------+
-| :ref:`StyleBox<class_StyleBox>` | read_only                  |
-+---------------------------------+----------------------------+
-| :ref:`Color<class_Color>`       | selection_color            |
-+---------------------------------+----------------------------+
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`Texture<class_Texture>`   | clear                      |                                            |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`Color<class_Color>`       | clear_button_color         | Color( 0.878431, 0.878431, 0.878431, 1 )   |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`Color<class_Color>`       | clear_button_color_pressed | Color( 1, 1, 1, 1 )                        |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`Color<class_Color>`       | cursor_color               | Color( 0.941176, 0.941176, 0.941176, 1 )   |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus                      |                                            |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`Font<class_Font>`         | font                       |                                            |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color                 | Color( 0.878431, 0.878431, 0.878431, 1 )   |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color_selected        | Color( 0, 0, 0, 1 )                        |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color_uneditable      | Color( 0.878431, 0.878431, 0.878431, 0.5 ) |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`int<class_int>`           | minimum_spaces             | 12                                         |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | normal                     |                                            |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | read_only                  |                                            |
++---------------------------------+----------------------------+--------------------------------------------+
+| :ref:`Color<class_Color>`       | selection_color            | Color( 0.490196, 0.490196, 0.490196, 1 )   |
++---------------------------------+----------------------------+--------------------------------------------+
 
 Signals
 -------
@@ -207,11 +207,13 @@ Property Descriptions
 
 - :ref:`Align<enum_LineEdit_Align>` **align**
 
-+----------+------------------+
-| *Setter* | set_align(value) |
-+----------+------------------+
-| *Getter* | get_align()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0                |
++-----------+------------------+
+| *Setter*  | set_align(value) |
++-----------+------------------+
+| *Getter*  | get_align()      |
++-----------+------------------+
 
 Text alignment as defined in the ``ALIGN_*`` enum.
 
@@ -219,11 +221,13 @@ Text alignment as defined in the ``ALIGN_*`` enum.
 
 - :ref:`bool<class_bool>` **caret_blink**
 
-+----------+---------------------------------+
-| *Setter* | cursor_set_blink_enabled(value) |
-+----------+---------------------------------+
-| *Getter* | cursor_get_blink_enabled()      |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | false                           |
++-----------+---------------------------------+
+| *Setter*  | cursor_set_blink_enabled(value) |
++-----------+---------------------------------+
+| *Getter*  | cursor_get_blink_enabled()      |
++-----------+---------------------------------+
 
 If ``true``, the caret (visual cursor) blinks.
 
@@ -231,11 +235,13 @@ If ``true``, the caret (visual cursor) blinks.
 
 - :ref:`float<class_float>` **caret_blink_speed**
 
-+----------+-------------------------------+
-| *Setter* | cursor_set_blink_speed(value) |
-+----------+-------------------------------+
-| *Getter* | cursor_get_blink_speed()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | 0.65                          |
++-----------+-------------------------------+
+| *Setter*  | cursor_set_blink_speed(value) |
++-----------+-------------------------------+
+| *Getter*  | cursor_get_blink_speed()      |
++-----------+-------------------------------+
 
 Duration (in seconds) of a caret's blinking cycle.
 
@@ -243,11 +249,13 @@ Duration (in seconds) of a caret's blinking cycle.
 
 - :ref:`int<class_int>` **caret_position**
 
-+----------+----------------------------+
-| *Setter* | set_cursor_position(value) |
-+----------+----------------------------+
-| *Getter* | get_cursor_position()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 0                          |
++-----------+----------------------------+
+| *Setter*  | set_cursor_position(value) |
++-----------+----------------------------+
+| *Getter*  | get_cursor_position()      |
++-----------+----------------------------+
 
 The cursor's position inside the ``LineEdit``. When set, the text may scroll to accommodate it.
 
@@ -255,11 +263,13 @@ The cursor's position inside the ``LineEdit``. When set, the text may scroll to 
 
 - :ref:`bool<class_bool>` **clear_button_enabled**
 
-+----------+---------------------------------+
-| *Setter* | set_clear_button_enabled(value) |
-+----------+---------------------------------+
-| *Getter* | is_clear_button_enabled()       |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | false                           |
++-----------+---------------------------------+
+| *Setter*  | set_clear_button_enabled(value) |
++-----------+---------------------------------+
+| *Getter*  | is_clear_button_enabled()       |
++-----------+---------------------------------+
 
 If ``true``, the ``LineEdit`` will show a clear button if ``text`` is not empty.
 
@@ -267,11 +277,13 @@ If ``true``, the ``LineEdit`` will show a clear button if ``text`` is not empty.
 
 - :ref:`bool<class_bool>` **context_menu_enabled**
 
-+----------+---------------------------------+
-| *Setter* | set_context_menu_enabled(value) |
-+----------+---------------------------------+
-| *Getter* | is_context_menu_enabled()       |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | true                            |
++-----------+---------------------------------+
+| *Setter*  | set_context_menu_enabled(value) |
++-----------+---------------------------------+
+| *Getter*  | is_context_menu_enabled()       |
++-----------+---------------------------------+
 
 If ``true``, the context menu will appear when right-clicked.
 
@@ -279,11 +291,13 @@ If ``true``, the context menu will appear when right-clicked.
 
 - :ref:`bool<class_bool>` **editable**
 
-+----------+---------------------+
-| *Setter* | set_editable(value) |
-+----------+---------------------+
-| *Getter* | is_editable()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | true                |
++-----------+---------------------+
+| *Setter*  | set_editable(value) |
++-----------+---------------------+
+| *Getter*  | is_editable()       |
++-----------+---------------------+
 
 If ``false``, existing text cannot be modified and new text cannot be added.
 
@@ -291,11 +305,13 @@ If ``false``, existing text cannot be modified and new text cannot be added.
 
 - :ref:`bool<class_bool>` **expand_to_text_length**
 
-+----------+----------------------------------+
-| *Setter* | set_expand_to_text_length(value) |
-+----------+----------------------------------+
-| *Getter* | get_expand_to_text_length()      |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | false                            |
++-----------+----------------------------------+
+| *Setter*  | set_expand_to_text_length(value) |
++-----------+----------------------------------+
+| *Getter*  | get_expand_to_text_length()      |
++-----------+----------------------------------+
 
 If ``true``, the ``LineEdit`` width will increase to stay longer than the :ref:`text<class_LineEdit_property_text>`. It will **not** compress if the :ref:`text<class_LineEdit_property_text>` is shortened.
 
@@ -303,11 +319,13 @@ If ``true``, the ``LineEdit`` width will increase to stay longer than the :ref:`
 
 - :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
 
-+----------+-----------------------+
-| *Setter* | set_focus_mode(value) |
-+----------+-----------------------+
-| *Getter* | get_focus_mode()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 2                     |
++-----------+-----------------------+
+| *Setter*  | set_focus_mode(value) |
++-----------+-----------------------+
+| *Getter*  | get_focus_mode()      |
++-----------+-----------------------+
 
 Defines how the ``LineEdit`` can grab focus (Keyboard and mouse, only keyboard, or none). See :ref:`FocusMode<enum_Control_FocusMode>` for details.
 
@@ -315,11 +333,13 @@ Defines how the ``LineEdit`` can grab focus (Keyboard and mouse, only keyboard, 
 
 - :ref:`int<class_int>` **max_length**
 
-+----------+-----------------------+
-| *Setter* | set_max_length(value) |
-+----------+-----------------------+
-| *Getter* | get_max_length()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 0                     |
++-----------+-----------------------+
+| *Setter*  | set_max_length(value) |
++-----------+-----------------------+
+| *Getter*  | get_max_length()      |
++-----------+-----------------------+
 
 Maximum amount of characters that can be entered inside the ``LineEdit``. If ``0``, there is no limit.
 
@@ -327,11 +347,13 @@ Maximum amount of characters that can be entered inside the ``LineEdit``. If ``0
 
 - :ref:`float<class_float>` **placeholder_alpha**
 
-+----------+------------------------------+
-| *Setter* | set_placeholder_alpha(value) |
-+----------+------------------------------+
-| *Getter* | get_placeholder_alpha()      |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | 0.6                          |
++-----------+------------------------------+
+| *Setter*  | set_placeholder_alpha(value) |
++-----------+------------------------------+
+| *Getter*  | get_placeholder_alpha()      |
++-----------+------------------------------+
 
 Opacity of the :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`. From ``0`` to ``1``.
 
@@ -339,11 +361,13 @@ Opacity of the :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`
 
 - :ref:`String<class_String>` **placeholder_text**
 
-+----------+------------------------+
-| *Setter* | set_placeholder(value) |
-+----------+------------------------+
-| *Getter* | get_placeholder()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | ""                     |
++-----------+------------------------+
+| *Setter*  | set_placeholder(value) |
++-----------+------------------------+
+| *Getter*  | get_placeholder()      |
++-----------+------------------------+
 
 Text shown when the ``LineEdit`` is empty. It is **not** the ``LineEdit``'s default value (see :ref:`text<class_LineEdit_property_text>`).
 
@@ -351,11 +375,13 @@ Text shown when the ``LineEdit`` is empty. It is **not** the ``LineEdit``'s defa
 
 - :ref:`bool<class_bool>` **secret**
 
-+----------+-------------------+
-| *Setter* | set_secret(value) |
-+----------+-------------------+
-| *Getter* | is_secret()       |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_secret(value) |
++-----------+-------------------+
+| *Getter*  | is_secret()       |
++-----------+-------------------+
 
 If ``true``, every character is replaced with the secret character (see :ref:`secret_character<class_LineEdit_property_secret_character>`).
 
@@ -363,11 +389,13 @@ If ``true``, every character is replaced with the secret character (see :ref:`se
 
 - :ref:`String<class_String>` **secret_character**
 
-+----------+-----------------------------+
-| *Setter* | set_secret_character(value) |
-+----------+-----------------------------+
-| *Getter* | get_secret_character()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | "*"                         |
++-----------+-----------------------------+
+| *Setter*  | set_secret_character(value) |
++-----------+-----------------------------+
+| *Getter*  | get_secret_character()      |
++-----------+-----------------------------+
 
 The character to use to mask secret input (defaults to "\*"). Only a single character can be used as the secret character.
 
@@ -375,11 +403,13 @@ The character to use to mask secret input (defaults to "\*"). Only a single char
 
 - :ref:`String<class_String>` **text**
 
-+----------+-----------------+
-| *Setter* | set_text(value) |
-+----------+-----------------+
-| *Getter* | get_text()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | ""              |
++-----------+-----------------+
+| *Setter*  | set_text(value) |
++-----------+-----------------+
+| *Getter*  | get_text()      |
++-----------+-----------------+
 
 String value of the ``LineEdit``.
 

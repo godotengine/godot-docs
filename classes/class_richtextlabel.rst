@@ -19,29 +19,29 @@ Label that displays rich text.
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                             |
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`                                   |
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                           |
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>` |
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`   | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                           |
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                               |
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                         |
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                       |
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`tab_size<class_RichTextLabel_property_tab_size>`                                         |
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`text<class_RichTextLabel_property_text>`                                                 |
-+-----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                     |
-+-----------------------------+------------------------------------------------------------------------------------------------+
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                             | false |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`                                   | ""    |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                           | true  |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>` | false |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                           | 1.0   |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                               | true  |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                         | false |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                       | false |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`tab_size<class_RichTextLabel_property_tab_size>`                                         | 4     |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`text<class_RichTextLabel_property_text>`                                                 | ""    |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                     | -1    |
++-----------------------------+------------------------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -101,41 +101,41 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------+
-| :ref:`Font<class_Font>`         | bold_font           |
-+---------------------------------+---------------------+
-| :ref:`Font<class_Font>`         | bold_italics_font   |
-+---------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | default_color       |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | focus               |
-+---------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | font_color_selected |
-+---------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | font_color_shadow   |
-+---------------------------------+---------------------+
-| :ref:`Font<class_Font>`         | italics_font        |
-+---------------------------------+---------------------+
-| :ref:`int<class_int>`           | line_separation     |
-+---------------------------------+---------------------+
-| :ref:`Font<class_Font>`         | mono_font           |
-+---------------------------------+---------------------+
-| :ref:`StyleBox<class_StyleBox>` | normal              |
-+---------------------------------+---------------------+
-| :ref:`Font<class_Font>`         | normal_font         |
-+---------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | selection_color     |
-+---------------------------------+---------------------+
-| :ref:`int<class_int>`           | shadow_as_outline   |
-+---------------------------------+---------------------+
-| :ref:`int<class_int>`           | shadow_offset_x     |
-+---------------------------------+---------------------+
-| :ref:`int<class_int>`           | shadow_offset_y     |
-+---------------------------------+---------------------+
-| :ref:`int<class_int>`           | table_hseparation   |
-+---------------------------------+---------------------+
-| :ref:`int<class_int>`           | table_vseparation   |
-+---------------------------------+---------------------+
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Font<class_Font>`         | bold_font           |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Font<class_Font>`         | bold_italics_font   |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | default_color       | Color( 1, 1, 1, 1 )                      |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus               |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color_selected | Color( 0.490196, 0.490196, 0.490196, 1 ) |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color_shadow   | Color( 0, 0, 0, 0 )                      |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Font<class_Font>`         | italics_font        |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`int<class_int>`           | line_separation     | 1                                        |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Font<class_Font>`         | mono_font           |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | normal              |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Font<class_Font>`         | normal_font         |                                          |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | selection_color     | Color( 0.1, 0.1, 1, 0.8 )                |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`int<class_int>`           | shadow_as_outline   | 0                                        |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`int<class_int>`           | shadow_offset_x     | 1                                        |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`int<class_int>`           | shadow_offset_y     | 1                                        |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`int<class_int>`           | table_hseparation   | 3                                        |
++---------------------------------+---------------------+------------------------------------------+
+| :ref:`int<class_int>`           | table_vseparation   | 3                                        |
++---------------------------------+---------------------+------------------------------------------+
 
 Signals
 -------
@@ -272,23 +272,27 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **bbcode_enabled**
 
-+----------+-----------------------+
-| *Setter* | set_use_bbcode(value) |
-+----------+-----------------------+
-| *Getter* | is_using_bbcode()     |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | false                 |
++-----------+-----------------------+
+| *Setter*  | set_use_bbcode(value) |
++-----------+-----------------------+
+| *Getter*  | is_using_bbcode()     |
++-----------+-----------------------+
 
-If ``true``, the label uses BBCode formatting. Default value: ``false``.
+If ``true``, the label uses BBCode formatting.
 
 .. _class_RichTextLabel_property_bbcode_text:
 
 - :ref:`String<class_String>` **bbcode_text**
 
-+----------+-------------------+
-| *Setter* | set_bbcode(value) |
-+----------+-------------------+
-| *Getter* | get_bbcode()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | ""                |
++-----------+-------------------+
+| *Setter*  | set_bbcode(value) |
++-----------+-------------------+
+| *Getter*  | get_bbcode()      |
++-----------+-------------------+
 
 The label's text in BBCode format. Is not representative of manual modifications to the internal tag stack. Erases changes made by other methods when edited.
 
@@ -296,35 +300,41 @@ The label's text in BBCode format. Is not representative of manual modifications
 
 - :ref:`bool<class_bool>` **meta_underlined**
 
-+----------+---------------------------+
-| *Setter* | set_meta_underline(value) |
-+----------+---------------------------+
-| *Getter* | is_meta_underlined()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | true                      |
++-----------+---------------------------+
+| *Setter*  | set_meta_underline(value) |
++-----------+---------------------------+
+| *Getter*  | is_meta_underlined()      |
++-----------+---------------------------+
 
-If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``. Default value: ``true``.
+If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``.
 
 .. _class_RichTextLabel_property_override_selected_font_color:
 
 - :ref:`bool<class_bool>` **override_selected_font_color**
 
-+----------+-----------------------------------------+
-| *Setter* | set_override_selected_font_color(value) |
-+----------+-----------------------------------------+
-| *Getter* | is_overriding_selected_font_color()     |
-+----------+-----------------------------------------+
++-----------+-----------------------------------------+
+| *Default* | false                                   |
++-----------+-----------------------------------------+
+| *Setter*  | set_override_selected_font_color(value) |
++-----------+-----------------------------------------+
+| *Getter*  | is_overriding_selected_font_color()     |
++-----------+-----------------------------------------+
 
-If ``true``, the label uses the custom font color. Default value: ``false``.
+If ``true``, the label uses the custom font color.
 
 .. _class_RichTextLabel_property_percent_visible:
 
 - :ref:`float<class_float>` **percent_visible**
 
-+----------+----------------------------+
-| *Setter* | set_percent_visible(value) |
-+----------+----------------------------+
-| *Getter* | get_percent_visible()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 1.0                        |
++-----------+----------------------------+
+| *Setter*  | set_percent_visible(value) |
++-----------+----------------------------+
+| *Getter*  | get_percent_visible()      |
++-----------+----------------------------+
 
 The text's visibility, as a :ref:`float<class_float>` between 0.0 and 1.0.
 
@@ -332,35 +342,41 @@ The text's visibility, as a :ref:`float<class_float>` between 0.0 and 1.0.
 
 - :ref:`bool<class_bool>` **scroll_active**
 
-+----------+--------------------------+
-| *Setter* | set_scroll_active(value) |
-+----------+--------------------------+
-| *Getter* | is_scroll_active()       |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | true                     |
++-----------+--------------------------+
+| *Setter*  | set_scroll_active(value) |
++-----------+--------------------------+
+| *Getter*  | is_scroll_active()       |
++-----------+--------------------------+
 
-If ``true``, the scrollbar is visible. Does not block scrolling completely. See :ref:`scroll_to_line<class_RichTextLabel_method_scroll_to_line>`. Default value: ``true``.
+If ``true``, the scrollbar is visible. Does not block scrolling completely. See :ref:`scroll_to_line<class_RichTextLabel_method_scroll_to_line>`.
 
 .. _class_RichTextLabel_property_scroll_following:
 
 - :ref:`bool<class_bool>` **scroll_following**
 
-+----------+--------------------------+
-| *Setter* | set_scroll_follow(value) |
-+----------+--------------------------+
-| *Getter* | is_scroll_following()    |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | false                    |
++-----------+--------------------------+
+| *Setter*  | set_scroll_follow(value) |
++-----------+--------------------------+
+| *Getter*  | is_scroll_following()    |
++-----------+--------------------------+
 
-If ``true``, the window scrolls down to display new content automatically. Default value: ``false``.
+If ``true``, the window scrolls down to display new content automatically.
 
 .. _class_RichTextLabel_property_selection_enabled:
 
 - :ref:`bool<class_bool>` **selection_enabled**
 
-+----------+------------------------------+
-| *Setter* | set_selection_enabled(value) |
-+----------+------------------------------+
-| *Getter* | is_selection_enabled()       |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | false                        |
++-----------+------------------------------+
+| *Setter*  | set_selection_enabled(value) |
++-----------+------------------------------+
+| *Getter*  | is_selection_enabled()       |
++-----------+------------------------------+
 
 If ``true``, the label allows text selection.
 
@@ -368,11 +384,13 @@ If ``true``, the label allows text selection.
 
 - :ref:`int<class_int>` **tab_size**
 
-+----------+---------------------+
-| *Setter* | set_tab_size(value) |
-+----------+---------------------+
-| *Getter* | get_tab_size()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 4                   |
++-----------+---------------------+
+| *Setter*  | set_tab_size(value) |
++-----------+---------------------+
+| *Getter*  | get_tab_size()      |
++-----------+---------------------+
 
 The number of spaces associated with a single tab length. Does not affect ``\t`` in text tags, only indent tags.
 
@@ -380,11 +398,13 @@ The number of spaces associated with a single tab length. Does not affect ``\t``
 
 - :ref:`String<class_String>` **text**
 
-+----------+-----------------+
-| *Setter* | set_text(value) |
-+----------+-----------------+
-| *Getter* | get_text()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | ""              |
++-----------+-----------------+
+| *Setter*  | set_text(value) |
++-----------+-----------------+
+| *Getter*  | get_text()      |
++-----------+-----------------+
 
 The raw text of the label.
 
@@ -394,11 +414,13 @@ When set, clears the tag stack and adds a raw text tag to the top of it. Does no
 
 - :ref:`int<class_int>` **visible_characters**
 
-+----------+-------------------------------+
-| *Setter* | set_visible_characters(value) |
-+----------+-------------------------------+
-| *Getter* | get_visible_characters()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | -1                            |
++-----------+-------------------------------+
+| *Setter*  | set_visible_characters(value) |
++-----------+-------------------------------+
+| *Getter*  | get_visible_characters()      |
++-----------+-------------------------------+
 
 The restricted number of characters to display in the label. If ``-1``, all characters will be displayed.
 

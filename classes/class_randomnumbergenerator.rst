@@ -19,9 +19,9 @@ A class for generating pseudo-random numbers.
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`seed<class_RandomNumberGenerator_property_seed>` |
-+-----------------------+--------------------------------------------------------+
++-----------------------+--------------------------------------------------------+----------------------+
+| :ref:`int<class_int>` | :ref:`seed<class_RandomNumberGenerator_property_seed>` | -6398989897141750821 |
++-----------------------+--------------------------------------------------------+----------------------+
 
 Methods
 -------
@@ -47,6 +47,15 @@ RandomNumberGenerator is a class for generating pseudo-random numbers. It curren
 
 **Note:** The underlying algorithm is an implementation detail. As a result, it should not be depended upon for reproducible random streams across Godot versions.
 
+To generate a random float number (within a given range) based on a time-dependant seed:
+
+::
+
+    var rng = RandomNumberGenerator.new()
+    func _ready():
+        rng.randomize()
+        var my_random_number = rng.randf_range(-10.0, 10.0)
+
 Property Descriptions
 ---------------------
 
@@ -54,11 +63,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **seed**
 
-+----------+-----------------+
-| *Setter* | set_seed(value) |
-+----------+-----------------+
-| *Getter* | get_seed()      |
-+----------+-----------------+
++-----------+----------------------+
+| *Default* | -6398989897141750821 |
++-----------+----------------------+
+| *Setter*  | set_seed(value)      |
++-----------+----------------------+
+| *Getter*  | get_seed()           |
++-----------+----------------------+
 
 The seed used by the random number generator. A given seed will give a reproducible sequence of pseudo-random numbers.
 

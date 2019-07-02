@@ -19,9 +19,9 @@ Input animation to use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBle
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` |
-+-----------------------------+-------------------------------------------------------------------+
++-----------------------------+-------------------------------------------------------------------+----+
+| :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | "" |
++-----------------------------+-------------------------------------------------------------------+----+
 
 Description
 -----------
@@ -35,11 +35,13 @@ Property Descriptions
 
 - :ref:`String<class_String>` **animation**
 
-+----------+----------------------+
-| *Setter* | set_animation(value) |
-+----------+----------------------+
-| *Getter* | get_animation()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | ""                   |
++-----------+----------------------+
+| *Setter*  | set_animation(value) |
++-----------+----------------------+
+| *Getter*  | get_animation()      |
++-----------+----------------------+
 
 Animation to use as an output. It is one of the animations provided by :ref:`AnimationTree.anim_player<class_AnimationTree_property_anim_player>`.
 

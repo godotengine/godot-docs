@@ -21,13 +21,13 @@ Raises or lowers the pitch of original sound.
 Properties
 ----------
 
-+------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` | :ref:`fft_size<class_AudioEffectPitchShift_property_fft_size>`         |
-+------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                | :ref:`oversampling<class_AudioEffectPitchShift_property_oversampling>` |
-+------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>`                            | :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>`   |
-+------------------------------------------------------+------------------------------------------------------------------------+
++------------------------------------------------------+------------------------------------------------------------------------+-----+
+| :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` | :ref:`fft_size<class_AudioEffectPitchShift_property_fft_size>`         | 3   |
++------------------------------------------------------+------------------------------------------------------------------------+-----+
+| :ref:`int<class_int>`                                | :ref:`oversampling<class_AudioEffectPitchShift_property_oversampling>` | 4   |
++------------------------------------------------------+------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>`                            | :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>`   | 1.0 |
++------------------------------------------------------+------------------------------------------------------------------------+-----+
 
 Enumerations
 ------------
@@ -72,31 +72,37 @@ Property Descriptions
 
 - :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` **fft_size**
 
-+----------+---------------------+
-| *Setter* | set_fft_size(value) |
-+----------+---------------------+
-| *Getter* | get_fft_size()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 3                   |
++-----------+---------------------+
+| *Setter*  | set_fft_size(value) |
++-----------+---------------------+
+| *Getter*  | get_fft_size()      |
++-----------+---------------------+
 
 .. _class_AudioEffectPitchShift_property_oversampling:
 
 - :ref:`int<class_int>` **oversampling**
 
-+----------+-------------------------+
-| *Setter* | set_oversampling(value) |
-+----------+-------------------------+
-| *Getter* | get_oversampling()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 4                       |
++-----------+-------------------------+
+| *Setter*  | set_oversampling(value) |
++-----------+-------------------------+
+| *Getter*  | get_oversampling()      |
++-----------+-------------------------+
 
 .. _class_AudioEffectPitchShift_property_pitch_scale:
 
 - :ref:`float<class_float>` **pitch_scale**
 
-+----------+------------------------+
-| *Setter* | set_pitch_scale(value) |
-+----------+------------------------+
-| *Getter* | get_pitch_scale()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 1.0                    |
++-----------+------------------------+
+| *Setter*  | set_pitch_scale(value) |
++-----------+------------------------+
+| *Getter*  | get_pitch_scale()      |
++-----------+------------------------+
 
 Pitch value. Can range from 0 (-1 octave) to 16 (+16 octaves).
 

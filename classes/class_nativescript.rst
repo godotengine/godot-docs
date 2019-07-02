@@ -19,15 +19,15 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`class_name<class_NativeScript_property_class_name>`                         |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_NativeScript_property_library>`                               |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`script_class_icon_path<class_NativeScript_property_script_class_icon_path>` |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`script_class_name<class_NativeScript_property_script_class_name>`           |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------------------------------+------+
+| :ref:`String<class_String>`                   | :ref:`class_name<class_NativeScript_property_class_name>`                         | ""   |
++-----------------------------------------------+-----------------------------------------------------------------------------------+------+
+| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_NativeScript_property_library>`                               | null |
++-----------------------------------------------+-----------------------------------------------------------------------------------+------+
+| :ref:`String<class_String>`                   | :ref:`script_class_icon_path<class_NativeScript_property_script_class_icon_path>` | ""   |
++-----------------------------------------------+-----------------------------------------------------------------------------------+------+
+| :ref:`String<class_String>`                   | :ref:`script_class_name<class_NativeScript_property_script_class_name>`           | ""   |
++-----------------------------------------------+-----------------------------------------------------------------------------------+------+
 
 Methods
 -------
@@ -51,41 +51,49 @@ Property Descriptions
 
 - :ref:`String<class_String>` **class_name**
 
-+----------+-----------------------+
-| *Setter* | set_class_name(value) |
-+----------+-----------------------+
-| *Getter* | get_class_name()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | ""                    |
++-----------+-----------------------+
+| *Setter*  | set_class_name(value) |
++-----------+-----------------------+
+| *Getter*  | get_class_name()      |
++-----------+-----------------------+
 
 .. _class_NativeScript_property_library:
 
 - :ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
 
-+----------+--------------------+
-| *Setter* | set_library(value) |
-+----------+--------------------+
-| *Getter* | get_library()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | null               |
++-----------+--------------------+
+| *Setter*  | set_library(value) |
++-----------+--------------------+
+| *Getter*  | get_library()      |
++-----------+--------------------+
 
 .. _class_NativeScript_property_script_class_icon_path:
 
 - :ref:`String<class_String>` **script_class_icon_path**
 
-+----------+-----------------------------------+
-| *Setter* | set_script_class_icon_path(value) |
-+----------+-----------------------------------+
-| *Getter* | get_script_class_icon_path()      |
-+----------+-----------------------------------+
++-----------+-----------------------------------+
+| *Default* | ""                                |
++-----------+-----------------------------------+
+| *Setter*  | set_script_class_icon_path(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_script_class_icon_path()      |
++-----------+-----------------------------------+
 
 .. _class_NativeScript_property_script_class_name:
 
 - :ref:`String<class_String>` **script_class_name**
 
-+----------+------------------------------+
-| *Setter* | set_script_class_name(value) |
-+----------+------------------------------+
-| *Getter* | get_script_class_name()      |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | ""                           |
++-----------+------------------------------+
+| *Setter*  | set_script_class_name(value) |
++-----------+------------------------------+
+| *Getter*  | get_script_class_name()      |
++-----------+------------------------------+
 
 Method Descriptions
 -------------------

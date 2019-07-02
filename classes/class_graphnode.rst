@@ -19,21 +19,21 @@ A GraphNode is a container with several input and output slots allowing connecti
 Properties
 ----------
 
-+----------------------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`comment<class_GraphNode_property_comment>`       |
-+----------------------------------------+--------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`          | :ref:`offset<class_GraphNode_property_offset>`         |
-+----------------------------------------+--------------------------------------------------------+
-| :ref:`Overlay<enum_GraphNode_Overlay>` | :ref:`overlay<class_GraphNode_property_overlay>`       |
-+----------------------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`resizable<class_GraphNode_property_resizable>`   |
-+----------------------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`selected<class_GraphNode_property_selected>`     |
-+----------------------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`show_close<class_GraphNode_property_show_close>` |
-+----------------------------------------+--------------------------------------------------------+
-| :ref:`String<class_String>`            | :ref:`title<class_GraphNode_property_title>`           |
-+----------------------------------------+--------------------------------------------------------+
++----------------------------------------+--------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                | :ref:`comment<class_GraphNode_property_comment>`       | false           |
++----------------------------------------+--------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>`          | :ref:`offset<class_GraphNode_property_offset>`         | Vector2( 0, 0 ) |
++----------------------------------------+--------------------------------------------------------+-----------------+
+| :ref:`Overlay<enum_GraphNode_Overlay>` | :ref:`overlay<class_GraphNode_property_overlay>`       | 0               |
++----------------------------------------+--------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                | :ref:`resizable<class_GraphNode_property_resizable>`   | false           |
++----------------------------------------+--------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                | :ref:`selected<class_GraphNode_property_selected>`     | false           |
++----------------------------------------+--------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                | :ref:`show_close<class_GraphNode_property_show_close>` | false           |
++----------------------------------------+--------------------------------------------------------+-----------------+
+| :ref:`String<class_String>`            | :ref:`title<class_GraphNode_property_title>`           | ""              |
++----------------------------------------+--------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -77,43 +77,43 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+---------------+
-| :ref:`StyleBox<class_StyleBox>` | breakpoint    |
-+---------------------------------+---------------+
-| :ref:`Texture<class_Texture>`   | close         |
-+---------------------------------+---------------+
-| :ref:`Color<class_Color>`       | close_color   |
-+---------------------------------+---------------+
-| :ref:`int<class_int>`           | close_offset  |
-+---------------------------------+---------------+
-| :ref:`StyleBox<class_StyleBox>` | comment       |
-+---------------------------------+---------------+
-| :ref:`StyleBox<class_StyleBox>` | commentfocus  |
-+---------------------------------+---------------+
-| :ref:`StyleBox<class_StyleBox>` | defaultfocus  |
-+---------------------------------+---------------+
-| :ref:`StyleBox<class_StyleBox>` | defaultframe  |
-+---------------------------------+---------------+
-| :ref:`StyleBox<class_StyleBox>` | frame         |
-+---------------------------------+---------------+
-| :ref:`Texture<class_Texture>`   | port          |
-+---------------------------------+---------------+
-| :ref:`int<class_int>`           | port_offset   |
-+---------------------------------+---------------+
-| :ref:`StyleBox<class_StyleBox>` | position      |
-+---------------------------------+---------------+
-| :ref:`Texture<class_Texture>`   | resizer       |
-+---------------------------------+---------------+
-| :ref:`StyleBox<class_StyleBox>` | selectedframe |
-+---------------------------------+---------------+
-| :ref:`int<class_int>`           | separation    |
-+---------------------------------+---------------+
-| :ref:`Color<class_Color>`       | title_color   |
-+---------------------------------+---------------+
-| :ref:`Font<class_Font>`         | title_font    |
-+---------------------------------+---------------+
-| :ref:`int<class_int>`           | title_offset  |
-+---------------------------------+---------------+
++---------------------------------+---------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | breakpoint    |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`Texture<class_Texture>`   | close         |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`Color<class_Color>`       | close_color   | Color( 0, 0, 0, 1 ) |
++---------------------------------+---------------+---------------------+
+| :ref:`int<class_int>`           | close_offset  | 18                  |
++---------------------------------+---------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | comment       |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | commentfocus  |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | defaultfocus  |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | defaultframe  |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | frame         |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`Texture<class_Texture>`   | port          |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`int<class_int>`           | port_offset   | 3                   |
++---------------------------------+---------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | position      |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`Texture<class_Texture>`   | resizer       |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | selectedframe |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`int<class_int>`           | separation    | 1                   |
++---------------------------------+---------------+---------------------+
+| :ref:`Color<class_Color>`       | title_color   | Color( 0, 0, 0, 1 ) |
++---------------------------------+---------------+---------------------+
+| :ref:`Font<class_Font>`         | title_font    |                     |
++---------------------------------+---------------+---------------------+
+| :ref:`int<class_int>`           | title_offset  | 20                  |
++---------------------------------+---------------+---------------------+
 
 Signals
 -------
@@ -177,21 +177,25 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **comment**
 
-+----------+--------------------+
-| *Setter* | set_comment(value) |
-+----------+--------------------+
-| *Getter* | is_comment()       |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | false              |
++-----------+--------------------+
+| *Setter*  | set_comment(value) |
++-----------+--------------------+
+| *Getter*  | is_comment()       |
++-----------+--------------------+
 
 .. _class_GraphNode_property_offset:
 
 - :ref:`Vector2<class_Vector2>` **offset**
 
-+----------+-------------------+
-| *Setter* | set_offset(value) |
-+----------+-------------------+
-| *Getter* | get_offset()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | Vector2( 0, 0 )   |
++-----------+-------------------+
+| *Setter*  | set_offset(value) |
++-----------+-------------------+
+| *Getter*  | get_offset()      |
++-----------+-------------------+
 
 The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdit<class_GraphEdit>`.
 
@@ -201,51 +205,61 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 
 - :ref:`Overlay<enum_GraphNode_Overlay>` **overlay**
 
-+----------+--------------------+
-| *Setter* | set_overlay(value) |
-+----------+--------------------+
-| *Getter* | get_overlay()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 0                  |
++-----------+--------------------+
+| *Setter*  | set_overlay(value) |
++-----------+--------------------+
+| *Getter*  | get_overlay()      |
++-----------+--------------------+
 
 .. _class_GraphNode_property_resizable:
 
 - :ref:`bool<class_bool>` **resizable**
 
-+----------+----------------------+
-| *Setter* | set_resizable(value) |
-+----------+----------------------+
-| *Getter* | is_resizable()       |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_resizable(value) |
++-----------+----------------------+
+| *Getter*  | is_resizable()       |
++-----------+----------------------+
 
 .. _class_GraphNode_property_selected:
 
 - :ref:`bool<class_bool>` **selected**
 
-+----------+---------------------+
-| *Setter* | set_selected(value) |
-+----------+---------------------+
-| *Getter* | is_selected()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_selected(value) |
++-----------+---------------------+
+| *Getter*  | is_selected()       |
++-----------+---------------------+
 
 .. _class_GraphNode_property_show_close:
 
 - :ref:`bool<class_bool>` **show_close**
 
-+----------+------------------------------+
-| *Setter* | set_show_close_button(value) |
-+----------+------------------------------+
-| *Getter* | is_close_button_visible()    |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | false                        |
++-----------+------------------------------+
+| *Setter*  | set_show_close_button(value) |
++-----------+------------------------------+
+| *Getter*  | is_close_button_visible()    |
++-----------+------------------------------+
 
 .. _class_GraphNode_property_title:
 
 - :ref:`String<class_String>` **title**
 
-+----------+------------------+
-| *Setter* | set_title(value) |
-+----------+------------------+
-| *Getter* | get_title()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | ""               |
++-----------+------------------+
+| *Setter*  | set_title(value) |
++-----------+------------------+
+| *Getter*  | get_title()      |
++-----------+------------------+
 
 Method Descriptions
 -------------------

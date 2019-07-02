@@ -19,11 +19,11 @@ A texture that shows a curve.
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------+
-| :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_property_curve>` |
-+---------------------------+-------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`width<class_CurveTexture_property_width>` |
-+---------------------------+-------------------------------------------------+
++---------------------------+-------------------------------------------------+------+
+| :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_property_curve>` | null |
++---------------------------+-------------------------------------------------+------+
+| :ref:`int<class_int>`     | :ref:`width<class_CurveTexture_property_width>` | 2048 |
++---------------------------+-------------------------------------------------+------+
 
 Description
 -----------
@@ -37,11 +37,13 @@ Property Descriptions
 
 - :ref:`Curve<class_Curve>` **curve**
 
-+----------+------------------+
-| *Setter* | set_curve(value) |
-+----------+------------------+
-| *Getter* | get_curve()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | null             |
++-----------+------------------+
+| *Setter*  | set_curve(value) |
++-----------+------------------+
+| *Getter*  | get_curve()      |
++-----------+------------------+
 
 The ``curve`` rendered onto the texture.
 
@@ -49,11 +51,13 @@ The ``curve`` rendered onto the texture.
 
 - :ref:`int<class_int>` **width**
 
-+----------+------------------+
-| *Setter* | set_width(value) |
-+----------+------------------+
-| *Getter* | get_width()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 2048             |
++-----------+------------------+
+| *Setter*  | set_width(value) |
++-----------+------------------+
+| *Getter*  | get_width()      |
++-----------+------------------+
 
 The width of the texture.
 

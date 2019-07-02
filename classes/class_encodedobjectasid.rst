@@ -19,9 +19,9 @@ Holds a reference to an :ref:`Object<class_Object>`'s instance ID.
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`object_id<class_EncodedObjectAsID_property_object_id>` |
-+-----------------------+--------------------------------------------------------------+
++-----------------------+--------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`object_id<class_EncodedObjectAsID_property_object_id>` | 0 |
++-----------------------+--------------------------------------------------------------+---+
 
 Description
 -----------
@@ -37,11 +37,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **object_id**
 
-+----------+----------------------+
-| *Setter* | set_object_id(value) |
-+----------+----------------------+
-| *Getter* | get_object_id()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0                    |
++-----------+----------------------+
+| *Setter*  | set_object_id(value) |
++-----------+----------------------+
+| *Getter*  | get_object_id()      |
++-----------+----------------------+
 
 The :ref:`Object<class_Object>` identifier stored in this ``EncodedObjectAsID`` instance. The object instance can be retrieved with :ref:`@GDScript.instance_from_id<class_@GDScript_method_instance_from_id>`.
 

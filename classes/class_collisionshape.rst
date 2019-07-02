@@ -19,11 +19,11 @@ Node that represents collision shape data in 3D space.
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`disabled<class_CollisionShape_property_disabled>` |
-+---------------------------+---------------------------------------------------------+
-| :ref:`Shape<class_Shape>` | :ref:`shape<class_CollisionShape_property_shape>`       |
-+---------------------------+---------------------------------------------------------+
++---------------------------+---------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`disabled<class_CollisionShape_property_disabled>` | false |
++---------------------------+---------------------------------------------------------+-------+
+| :ref:`Shape<class_Shape>` | :ref:`shape<class_CollisionShape_property_shape>`       | null  |
++---------------------------+---------------------------------------------------------+-------+
 
 Methods
 -------
@@ -51,11 +51,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **disabled**
 
-+----------+---------------------+
-| *Setter* | set_disabled(value) |
-+----------+---------------------+
-| *Getter* | is_disabled()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_disabled(value) |
++-----------+---------------------+
+| *Getter*  | is_disabled()       |
++-----------+---------------------+
 
 A disabled collision shape has no effect in the world.
 
@@ -63,11 +65,13 @@ A disabled collision shape has no effect in the world.
 
 - :ref:`Shape<class_Shape>` **shape**
 
-+----------+------------------+
-| *Setter* | set_shape(value) |
-+----------+------------------+
-| *Getter* | get_shape()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | null             |
++-----------+------------------+
+| *Setter*  | set_shape(value) |
++-----------+------------------+
+| *Getter*  | get_shape()      |
++-----------+------------------+
 
 The actual shape owned by this collision shape.
 

@@ -19,13 +19,13 @@ Contains data used to animate everything in the engine.
 Properties
 ----------
 
-+---------------------------+------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`length<class_Animation_property_length>` |
-+---------------------------+------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`loop<class_Animation_property_loop>`     |
-+---------------------------+------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`step<class_Animation_property_step>`     |
-+---------------------------+------------------------------------------------+
++---------------------------+------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`length<class_Animation_property_length>` | 1.0   |
++---------------------------+------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`loop<class_Animation_property_loop>`     | false |
++---------------------------+------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`step<class_Animation_property_step>`     | 0.1   |
++---------------------------+------------------------------------------------+-------+
 
 Methods
 -------
@@ -251,11 +251,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **length**
 
-+----------+-------------------+
-| *Setter* | set_length(value) |
-+----------+-------------------+
-| *Getter* | get_length()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1.0               |
++-----------+-------------------+
+| *Setter*  | set_length(value) |
++-----------+-------------------+
+| *Getter*  | get_length()      |
++-----------+-------------------+
 
 The total length of the animation (in seconds).
 
@@ -265,11 +267,13 @@ The total length of the animation (in seconds).
 
 - :ref:`bool<class_bool>` **loop**
 
-+----------+-----------------+
-| *Setter* | set_loop(value) |
-+----------+-----------------+
-| *Getter* | has_loop()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | false           |
++-----------+-----------------+
+| *Setter*  | set_loop(value) |
++-----------+-----------------+
+| *Getter*  | has_loop()      |
++-----------+-----------------+
 
 A flag indicating that the animation must loop. This is uses for correct interpolation of animation cycles, and for hinting the player that it must restart the animation.
 
@@ -277,11 +281,13 @@ A flag indicating that the animation must loop. This is uses for correct interpo
 
 - :ref:`float<class_float>` **step**
 
-+----------+-----------------+
-| *Setter* | set_step(value) |
-+----------+-----------------+
-| *Getter* | get_step()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 0.1             |
++-----------+-----------------+
+| *Setter*  | set_step(value) |
++-----------+-----------------+
+| *Getter*  | get_step()      |
++-----------+-----------------+
 
 The animation step value.
 
@@ -424,7 +430,7 @@ Finds the key index by time in a given track. Optionally, only find it if the ex
 
 - :ref:`bool<class_bool>` **track_get_interpolation_loop_wrap** **(** :ref:`int<class_int>` idx **)** const
 
-Returns ``true`` if the track at ``idx`` wraps the interpolation loop. Default value: ``true``.
+Returns ``true`` if the track at ``idx`` wraps the interpolation loop. New tracks wrap the interpolation loop by default.
 
 .. _class_Animation_method_track_get_interpolation_type:
 

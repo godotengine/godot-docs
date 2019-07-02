@@ -19,19 +19,19 @@ Provides high-performance mesh instancing.
 Properties
 ----------
 
-+----------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`ColorFormat<enum_MultiMesh_ColorFormat>`           | :ref:`color_format<class_MultiMesh_property_color_format>`                     |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` | :ref:`custom_data_format<class_MultiMesh_property_custom_data_format>`         |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                    | :ref:`instance_count<class_MultiMesh_property_instance_count>`                 |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                                  | :ref:`mesh<class_MultiMesh_property_mesh>`                                     |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`   | :ref:`transform_format<class_MultiMesh_property_transform_format>`             |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                    | :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>` |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+
++----------------------------------------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`ColorFormat<enum_MultiMesh_ColorFormat>`           | :ref:`color_format<class_MultiMesh_property_color_format>`                     | 0    |
++----------------------------------------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` | :ref:`custom_data_format<class_MultiMesh_property_custom_data_format>`         | 0    |
++----------------------------------------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`int<class_int>`                                    | :ref:`instance_count<class_MultiMesh_property_instance_count>`                 | 0    |
++----------------------------------------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`Mesh<class_Mesh>`                                  | :ref:`mesh<class_MultiMesh_property_mesh>`                                     | null |
++----------------------------------------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`   | :ref:`transform_format<class_MultiMesh_property_transform_format>`             | 0    |
++----------------------------------------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`int<class_int>`                                    | :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>` | -1   |
++----------------------------------------------------------+--------------------------------------------------------------------------------+------+
 
 Methods
 -------
@@ -128,11 +128,13 @@ Property Descriptions
 
 - :ref:`ColorFormat<enum_MultiMesh_ColorFormat>` **color_format**
 
-+----------+-------------------------+
-| *Setter* | set_color_format(value) |
-+----------+-------------------------+
-| *Getter* | get_color_format()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_color_format(value) |
++-----------+-------------------------+
+| *Getter*  | get_color_format()      |
++-----------+-------------------------+
 
 Format of colors in color array that gets passed to shader.
 
@@ -140,11 +142,13 @@ Format of colors in color array that gets passed to shader.
 
 - :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` **custom_data_format**
 
-+----------+-------------------------------+
-| *Setter* | set_custom_data_format(value) |
-+----------+-------------------------------+
-| *Getter* | get_custom_data_format()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | 0                             |
++-----------+-------------------------------+
+| *Setter*  | set_custom_data_format(value) |
++-----------+-------------------------------+
+| *Getter*  | get_custom_data_format()      |
++-----------+-------------------------------+
 
 Format of custom data in custom data array that gets passed to shader.
 
@@ -152,11 +156,13 @@ Format of custom data in custom data array that gets passed to shader.
 
 - :ref:`int<class_int>` **instance_count**
 
-+----------+---------------------------+
-| *Setter* | set_instance_count(value) |
-+----------+---------------------------+
-| *Getter* | get_instance_count()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 0                         |
++-----------+---------------------------+
+| *Setter*  | set_instance_count(value) |
++-----------+---------------------------+
+| *Getter*  | get_instance_count()      |
++-----------+---------------------------+
 
 Number of instances that will get drawn. This clears and (re)sizes the buffers. By default, all instances are drawn but you can limit this with :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>`.
 
@@ -164,11 +170,13 @@ Number of instances that will get drawn. This clears and (re)sizes the buffers. 
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | null            |
++-----------+-----------------+
+| *Setter*  | set_mesh(value) |
++-----------+-----------------+
+| *Getter*  | get_mesh()      |
++-----------+-----------------+
 
 Mesh to be drawn.
 
@@ -176,11 +184,13 @@ Mesh to be drawn.
 
 - :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **transform_format**
 
-+----------+-----------------------------+
-| *Setter* | set_transform_format(value) |
-+----------+-----------------------------+
-| *Getter* | get_transform_format()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0                           |
++-----------+-----------------------------+
+| *Setter*  | set_transform_format(value) |
++-----------+-----------------------------+
+| *Getter*  | get_transform_format()      |
++-----------+-----------------------------+
 
 Format of transform used to transform mesh, either 2D or 3D.
 
@@ -188,11 +198,13 @@ Format of transform used to transform mesh, either 2D or 3D.
 
 - :ref:`int<class_int>` **visible_instance_count**
 
-+----------+-----------------------------------+
-| *Setter* | set_visible_instance_count(value) |
-+----------+-----------------------------------+
-| *Getter* | get_visible_instance_count()      |
-+----------+-----------------------------------+
++-----------+-----------------------------------+
+| *Default* | -1                                |
++-----------+-----------------------------------+
+| *Setter*  | set_visible_instance_count(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_visible_instance_count()      |
++-----------+-----------------------------------+
 
 Limits the number of instances drawn, -1 draws all instances. Changing this does not change the sizes of the buffers.
 

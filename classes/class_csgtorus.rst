@@ -19,19 +19,19 @@ A CSG Torus shape.
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`inner_radius<class_CSGTorus_property_inner_radius>` |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGTorus_property_material>`         |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`outer_radius<class_CSGTorus_property_outer_radius>` |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`ring_sides<class_CSGTorus_property_ring_sides>`     |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`sides<class_CSGTorus_property_sides>`               |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGTorus_property_smooth_faces>` |
-+---------------------------------+-----------------------------------------------------------+
++---------------------------------+-----------------------------------------------------------+------+
+| :ref:`float<class_float>`       | :ref:`inner_radius<class_CSGTorus_property_inner_radius>` | 2.0  |
++---------------------------------+-----------------------------------------------------------+------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGTorus_property_material>`         | null |
++---------------------------------+-----------------------------------------------------------+------+
+| :ref:`float<class_float>`       | :ref:`outer_radius<class_CSGTorus_property_outer_radius>` | 3.0  |
++---------------------------------+-----------------------------------------------------------+------+
+| :ref:`int<class_int>`           | :ref:`ring_sides<class_CSGTorus_property_ring_sides>`     | 6    |
++---------------------------------+-----------------------------------------------------------+------+
+| :ref:`int<class_int>`           | :ref:`sides<class_CSGTorus_property_sides>`               | 8    |
++---------------------------------+-----------------------------------------------------------+------+
+| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGTorus_property_smooth_faces>` | true |
++---------------------------------+-----------------------------------------------------------+------+
 
 Description
 -----------
@@ -45,11 +45,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **inner_radius**
 
-+----------+-------------------------+
-| *Setter* | set_inner_radius(value) |
-+----------+-------------------------+
-| *Getter* | get_inner_radius()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 2.0                     |
++-----------+-------------------------+
+| *Setter*  | set_inner_radius(value) |
++-----------+-------------------------+
+| *Getter*  | get_inner_radius()      |
++-----------+-------------------------+
 
 The inner radius of the torus.
 
@@ -57,11 +59,13 @@ The inner radius of the torus.
 
 - :ref:`Material<class_Material>` **material**
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_material(value) |
++-----------+---------------------+
+| *Getter*  | get_material()      |
++-----------+---------------------+
 
 The material used to render the torus.
 
@@ -69,11 +73,13 @@ The material used to render the torus.
 
 - :ref:`float<class_float>` **outer_radius**
 
-+----------+-------------------------+
-| *Setter* | set_outer_radius(value) |
-+----------+-------------------------+
-| *Getter* | get_outer_radius()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 3.0                     |
++-----------+-------------------------+
+| *Setter*  | set_outer_radius(value) |
++-----------+-------------------------+
+| *Getter*  | get_outer_radius()      |
++-----------+-------------------------+
 
 The outer radius of the torus.
 
@@ -81,11 +87,13 @@ The outer radius of the torus.
 
 - :ref:`int<class_int>` **ring_sides**
 
-+----------+-----------------------+
-| *Setter* | set_ring_sides(value) |
-+----------+-----------------------+
-| *Getter* | get_ring_sides()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 6                     |
++-----------+-----------------------+
+| *Setter*  | set_ring_sides(value) |
++-----------+-----------------------+
+| *Getter*  | get_ring_sides()      |
++-----------+-----------------------+
 
 The number of edges each ring of the torus is constructed of.
 
@@ -93,11 +101,13 @@ The number of edges each ring of the torus is constructed of.
 
 - :ref:`int<class_int>` **sides**
 
-+----------+------------------+
-| *Setter* | set_sides(value) |
-+----------+------------------+
-| *Getter* | get_sides()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 8                |
++-----------+------------------+
+| *Setter*  | set_sides(value) |
++-----------+------------------+
+| *Getter*  | get_sides()      |
++-----------+------------------+
 
 The number of slices the torus is constructed of.
 
@@ -105,11 +115,13 @@ The number of slices the torus is constructed of.
 
 - :ref:`bool<class_bool>` **smooth_faces**
 
-+----------+-------------------------+
-| *Setter* | set_smooth_faces(value) |
-+----------+-------------------------+
-| *Getter* | get_smooth_faces()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | true                    |
++-----------+-------------------------+
+| *Setter*  | set_smooth_faces(value) |
++-----------+-------------------------+
+| *Getter*  | get_smooth_faces()      |
++-----------+-------------------------+
 
 If ``true`` the normals of the torus are set to give a smooth effect making the torus seem rounded. If ``false`` the torus will have a flat shaded look.
 

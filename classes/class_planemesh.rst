@@ -19,13 +19,13 @@ Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_property_size>`                       |
-+-------------------------------+------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` |
-+-------------------------------+------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` |
-+-------------------------------+------------------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_property_size>`                       | Vector2( 2, 2 ) |
++-------------------------------+------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` | 0               |
++-------------------------------+------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` | 0               |
++-------------------------------+------------------------------------------------------------------+-----------------+
 
 Description
 -----------
@@ -39,35 +39,41 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **size**
 
-+----------+-----------------+
-| *Setter* | set_size(value) |
-+----------+-----------------+
-| *Getter* | get_size()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | Vector2( 2, 2 ) |
++-----------+-----------------+
+| *Setter*  | set_size(value) |
++-----------+-----------------+
+| *Getter*  | get_size()      |
++-----------+-----------------+
 
-Size of the generated plane. Defaults to (2.0, 2.0).
+Size of the generated plane.
 
 .. _class_PlaneMesh_property_subdivide_depth:
 
 - :ref:`int<class_int>` **subdivide_depth**
 
-+----------+----------------------------+
-| *Setter* | set_subdivide_depth(value) |
-+----------+----------------------------+
-| *Getter* | get_subdivide_depth()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 0                          |
++-----------+----------------------------+
+| *Setter*  | set_subdivide_depth(value) |
++-----------+----------------------------+
+| *Getter*  | get_subdivide_depth()      |
++-----------+----------------------------+
 
-Number of subdivision along the Z axis. Defaults to 0.
+Number of subdivision along the Z axis.
 
 .. _class_PlaneMesh_property_subdivide_width:
 
 - :ref:`int<class_int>` **subdivide_width**
 
-+----------+----------------------------+
-| *Setter* | set_subdivide_width(value) |
-+----------+----------------------------+
-| *Getter* | get_subdivide_width()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 0                          |
++-----------+----------------------------+
+| *Setter*  | set_subdivide_width(value) |
++-----------+----------------------------+
+| *Getter*  | get_subdivide_width()      |
++-----------+----------------------------+
 
-Number of subdivision along the X axis. Defaults to 0.
+Number of subdivision along the X axis.
 

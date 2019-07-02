@@ -19,11 +19,11 @@ Exits a function and returns an optional value.
 Properties
 ----------
 
-+-----------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`return_enabled<class_VisualScriptReturn_property_return_enabled>` |
-+-----------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`return_type<class_VisualScriptReturn_property_return_type>`       |
-+-----------------------------------------------------+-------------------------------------------------------------------------+
++-----------------------------------------------------+-------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                             | :ref:`return_enabled<class_VisualScriptReturn_property_return_enabled>` | false |
++-----------------------------------------------------+-------------------------------------------------------------------------+-------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`return_type<class_VisualScriptReturn_property_return_type>`       | 0     |
++-----------------------------------------------------+-------------------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -47,11 +47,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **return_enabled**
 
-+----------+--------------------------------+
-| *Setter* | set_enable_return_value(value) |
-+----------+--------------------------------+
-| *Getter* | is_return_value_enabled()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | false                          |
++-----------+--------------------------------+
+| *Setter*  | set_enable_return_value(value) |
++-----------+--------------------------------+
+| *Getter*  | is_return_value_enabled()      |
++-----------+--------------------------------+
 
 If ``true``, the ``return`` input port is available.
 
@@ -59,11 +61,13 @@ If ``true``, the ``return`` input port is available.
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **return_type**
 
-+----------+------------------------+
-| *Setter* | set_return_type(value) |
-+----------+------------------------+
-| *Getter* | get_return_type()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0                      |
++-----------+------------------------+
+| *Setter*  | set_return_type(value) |
++-----------+------------------------+
+| *Getter*  | get_return_type()      |
++-----------+------------------------+
 
 The return value's data type.
 

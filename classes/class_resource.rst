@@ -21,13 +21,13 @@ Base class for all resources.
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` |
-+-----------------------------+---------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                     |
-+-----------------------------+---------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                     |
-+-----------------------------+---------------------------------------------------------------------------------+
++-----------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` | false |
++-----------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                     | ""    |
++-----------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                     | ""    |
++-----------------------------+---------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -72,11 +72,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **resource_local_to_scene**
 
-+----------+---------------------------+
-| *Setter* | set_local_to_scene(value) |
-+----------+---------------------------+
-| *Getter* | is_local_to_scene()       |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | false                     |
++-----------+---------------------------+
+| *Setter*  | set_local_to_scene(value) |
++-----------+---------------------------+
+| *Getter*  | is_local_to_scene()       |
++-----------+---------------------------+
 
 If ``true``, the resource will be made unique in each instance of its local scene. It can thus be modified in a scene instance without impacting other instances of that same scene.
 
@@ -84,11 +86,13 @@ If ``true``, the resource will be made unique in each instance of its local scen
 
 - :ref:`String<class_String>` **resource_name**
 
-+----------+-----------------+
-| *Setter* | set_name(value) |
-+----------+-----------------+
-| *Getter* | get_name()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | ""              |
++-----------+-----------------+
+| *Setter*  | set_name(value) |
++-----------+-----------------+
+| *Getter*  | get_name()      |
++-----------+-----------------+
 
 The name of the resource. This is an optional identifier.
 
@@ -96,11 +100,13 @@ The name of the resource. This is an optional identifier.
 
 - :ref:`String<class_String>` **resource_path**
 
-+----------+-----------------+
-| *Setter* | set_path(value) |
-+----------+-----------------+
-| *Getter* | get_path()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | ""              |
++-----------+-----------------+
+| *Setter*  | set_path(value) |
++-----------+-----------------+
+| *Getter*  | get_path()      |
++-----------+-----------------+
 
 The path to the resource. In case it has its own file, it will return its filepath. If it's tied to the scene, it will return the scene's path, followed by the resource's index.
 

@@ -19,9 +19,9 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` | :ref:`function<class_VisualShaderNodeVectorFunc_property_function>` |
-+-----------------------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------------------+---------------------------------------------------------------------+---+
+| :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` | :ref:`function<class_VisualShaderNodeVectorFunc_property_function>` | 0 |
++-----------------------------------------------------------+---------------------------------------------------------------------+---+
 
 Enumerations
 ------------
@@ -177,9 +177,11 @@ Property Descriptions
 
 - :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **function**
 
-+----------+---------------------+
-| *Setter* | set_function(value) |
-+----------+---------------------+
-| *Getter* | get_function()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0                   |
++-----------+---------------------+
+| *Setter*  | set_function(value) |
++-----------+---------------------+
+| *Getter*  | get_function()      |
++-----------+---------------------+
 

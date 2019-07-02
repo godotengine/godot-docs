@@ -17,13 +17,13 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`end<class_Rect2_property_end>`           |
-+-------------------------------+------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_Rect2_property_position>` |
-+-------------------------------+------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_Rect2_property_size>`         |
-+-------------------------------+------------------------------------------------+
++-------------------------------+------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`end<class_Rect2_property_end>`           | Vector2( 0, 0 ) |
++-------------------------------+------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_Rect2_property_position>` | Vector2( 0, 0 ) |
++-------------------------------+------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_Rect2_property_size>`         | Vector2( 0, 0 ) |
++-------------------------------+------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -75,17 +75,29 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **end**
 
++-----------+-----------------+
+| *Default* | Vector2( 0, 0 ) |
++-----------+-----------------+
+
 Ending corner.
 
 .. _class_Rect2_property_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
 
++-----------+-----------------+
+| *Default* | Vector2( 0, 0 ) |
++-----------+-----------------+
+
 Position (starting corner).
 
 .. _class_Rect2_property_size:
 
 - :ref:`Vector2<class_Vector2>` **size**
+
++-----------+-----------------+
+| *Default* | Vector2( 0, 0 ) |
++-----------+-----------------+
 
 Size from position to end.
 

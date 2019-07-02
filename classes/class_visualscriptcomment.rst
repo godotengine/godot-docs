@@ -19,13 +19,13 @@ A Visual Script node used to annotate the script.
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`description<class_VisualScriptComment_property_description>` |
-+-------------------------------+--------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualScriptComment_property_size>`               |
-+-------------------------------+--------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`title<class_VisualScriptComment_property_title>`             |
-+-------------------------------+--------------------------------------------------------------------+
++-------------------------------+--------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>`   | :ref:`description<class_VisualScriptComment_property_description>` | ""                  |
++-------------------------------+--------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualScriptComment_property_size>`               | Vector2( 150, 150 ) |
++-------------------------------+--------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>`   | :ref:`title<class_VisualScriptComment_property_title>`             | "Comment"           |
++-------------------------------+--------------------------------------------------------------------+---------------------+
 
 Description
 -----------
@@ -41,11 +41,13 @@ Property Descriptions
 
 - :ref:`String<class_String>` **description**
 
-+----------+------------------------+
-| *Setter* | set_description(value) |
-+----------+------------------------+
-| *Getter* | get_description()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | ""                     |
++-----------+------------------------+
+| *Setter*  | set_description(value) |
++-----------+------------------------+
+| *Getter*  | get_description()      |
++-----------+------------------------+
 
 The text inside the comment node.
 
@@ -53,11 +55,13 @@ The text inside the comment node.
 
 - :ref:`Vector2<class_Vector2>` **size**
 
-+----------+-----------------+
-| *Setter* | set_size(value) |
-+----------+-----------------+
-| *Getter* | get_size()      |
-+----------+-----------------+
++-----------+---------------------+
+| *Default* | Vector2( 150, 150 ) |
++-----------+---------------------+
+| *Setter*  | set_size(value)     |
++-----------+---------------------+
+| *Getter*  | get_size()          |
++-----------+---------------------+
 
 The comment node's size (in pixels).
 
@@ -65,11 +69,13 @@ The comment node's size (in pixels).
 
 - :ref:`String<class_String>` **title**
 
-+----------+------------------+
-| *Setter* | set_title(value) |
-+----------+------------------+
-| *Getter* | get_title()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | "Comment"        |
++-----------+------------------+
+| *Setter*  | set_title(value) |
++-----------+------------------+
+| *Getter*  | get_title()      |
++-----------+------------------+
 
 The comment node's title.
 

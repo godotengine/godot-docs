@@ -19,11 +19,11 @@ Occludes light cast by a Light2D, casting shadows.
 Properties
 ----------
 
-+---------------------------------------------------+--------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` |
-+---------------------------------------------------+--------------------------------------------------------------+
-| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     |
-+---------------------------------------------------+--------------------------------------------------------------+
++---------------------------------------------------+--------------------------------------------------------------+------+
+| :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` | 1    |
++---------------------------------------------------+--------------------------------------------------------------+------+
+| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     | null |
++---------------------------------------------------+--------------------------------------------------------------+------+
 
 Description
 -----------
@@ -42,11 +42,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **light_mask**
 
-+----------+--------------------------------+
-| *Setter* | set_occluder_light_mask(value) |
-+----------+--------------------------------+
-| *Getter* | get_occluder_light_mask()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | 1                              |
++-----------+--------------------------------+
+| *Setter*  | set_occluder_light_mask(value) |
++-----------+--------------------------------+
+| *Getter*  | get_occluder_light_mask()      |
++-----------+--------------------------------+
 
 The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only from Light2D(s) that have the same light mask(s).
 
@@ -54,11 +56,13 @@ The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only fro
 
 - :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **occluder**
 
-+----------+-----------------------------+
-| *Setter* | set_occluder_polygon(value) |
-+----------+-----------------------------+
-| *Getter* | get_occluder_polygon()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | null                        |
++-----------+-----------------------------+
+| *Setter*  | set_occluder_polygon(value) |
++-----------+-----------------------------+
+| *Getter*  | get_occluder_polygon()      |
++-----------+-----------------------------+
 
 The :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` used to compute the shadow.
 

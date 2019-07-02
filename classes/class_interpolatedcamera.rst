@@ -19,13 +19,13 @@ Camera which moves toward another node.
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`enabled<class_InterpolatedCamera_property_enabled>` |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`speed<class_InterpolatedCamera_property_speed>`     |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`target<class_InterpolatedCamera_property_target>`   |
-+---------------------------------+-----------------------------------------------------------+
++---------------------------------+-----------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`         | :ref:`enabled<class_InterpolatedCamera_property_enabled>` | false        |
++---------------------------------+-----------------------------------------------------------+--------------+
+| :ref:`float<class_float>`       | :ref:`speed<class_InterpolatedCamera_property_speed>`     | 1.0          |
++---------------------------------+-----------------------------------------------------------+--------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`target<class_InterpolatedCamera_property_target>`   | NodePath("") |
++---------------------------------+-----------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -48,11 +48,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **enabled**
 
-+----------+----------------------------------+
-| *Setter* | set_interpolation_enabled(value) |
-+----------+----------------------------------+
-| *Getter* | is_interpolation_enabled()       |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | false                            |
++-----------+----------------------------------+
+| *Setter*  | set_interpolation_enabled(value) |
++-----------+----------------------------------+
+| *Getter*  | is_interpolation_enabled()       |
++-----------+----------------------------------+
 
 If ``true``, and a target is set, the camera will move automatically.
 
@@ -60,11 +62,13 @@ If ``true``, and a target is set, the camera will move automatically.
 
 - :ref:`float<class_float>` **speed**
 
-+----------+------------------+
-| *Setter* | set_speed(value) |
-+----------+------------------+
-| *Getter* | get_speed()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 1.0              |
++-----------+------------------+
+| *Setter*  | set_speed(value) |
++-----------+------------------+
+| *Getter*  | get_speed()      |
++-----------+------------------+
 
 How quickly the camera moves toward its target. Higher values will result in tighter camera motion.
 
@@ -72,11 +76,13 @@ How quickly the camera moves toward its target. Higher values will result in tig
 
 - :ref:`NodePath<class_NodePath>` **target**
 
-+----------+------------------------+
-| *Setter* | set_target_path(value) |
-+----------+------------------------+
-| *Getter* | get_target_path()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | NodePath("")           |
++-----------+------------------------+
+| *Setter*  | set_target_path(value) |
++-----------+------------------------+
+| *Getter*  | get_target_path()      |
++-----------+------------------------+
 
 The target's :ref:`NodePath<class_NodePath>`.
 

@@ -19,21 +19,21 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`collide_with_areas<class_PhysicsShapeQueryParameters_property_collide_with_areas>`   |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`collide_with_bodies<class_PhysicsShapeQueryParameters_property_collide_with_bodies>` |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`collision_mask<class_PhysicsShapeQueryParameters_property_collision_mask>`           |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`         | :ref:`exclude<class_PhysicsShapeQueryParameters_property_exclude>`                         |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`         | :ref:`margin<class_PhysicsShapeQueryParameters_property_margin>`                           |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`             | :ref:`shape_rid<class_PhysicsShapeQueryParameters_property_shape_rid>`                     |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`transform<class_PhysicsShapeQueryParameters_property_transform>`                     |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
++-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`collide_with_areas<class_PhysicsShapeQueryParameters_property_collide_with_areas>`   | false                                           |
++-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`collide_with_bodies<class_PhysicsShapeQueryParameters_property_collide_with_bodies>` | true                                            |
++-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`collision_mask<class_PhysicsShapeQueryParameters_property_collision_mask>`           | 2147483647                                      |
++-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`Array<class_Array>`         | :ref:`exclude<class_PhysicsShapeQueryParameters_property_exclude>`                         | [  ]                                            |
++-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`float<class_float>`         | :ref:`margin<class_PhysicsShapeQueryParameters_property_margin>`                           | 0.0                                             |
++-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`RID<class_RID>`             | :ref:`shape_rid<class_PhysicsShapeQueryParameters_property_shape_rid>`                     |                                                 |
++-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`Transform<class_Transform>` | :ref:`transform<class_PhysicsShapeQueryParameters_property_transform>`                     | Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) |
++-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
 
 Methods
 -------
@@ -49,51 +49,61 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **collide_with_areas**
 
-+----------+---------------------------------+
-| *Setter* | set_collide_with_areas(value)   |
-+----------+---------------------------------+
-| *Getter* | is_collide_with_areas_enabled() |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | false                           |
++-----------+---------------------------------+
+| *Setter*  | set_collide_with_areas(value)   |
++-----------+---------------------------------+
+| *Getter*  | is_collide_with_areas_enabled() |
++-----------+---------------------------------+
 
 .. _class_PhysicsShapeQueryParameters_property_collide_with_bodies:
 
 - :ref:`bool<class_bool>` **collide_with_bodies**
 
-+----------+----------------------------------+
-| *Setter* | set_collide_with_bodies(value)   |
-+----------+----------------------------------+
-| *Getter* | is_collide_with_bodies_enabled() |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | true                             |
++-----------+----------------------------------+
+| *Setter*  | set_collide_with_bodies(value)   |
++-----------+----------------------------------+
+| *Getter*  | is_collide_with_bodies_enabled() |
++-----------+----------------------------------+
 
 .. _class_PhysicsShapeQueryParameters_property_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
 
-+----------+---------------------------+
-| *Setter* | set_collision_mask(value) |
-+----------+---------------------------+
-| *Getter* | get_collision_mask()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 2147483647                |
++-----------+---------------------------+
+| *Setter*  | set_collision_mask(value) |
++-----------+---------------------------+
+| *Getter*  | get_collision_mask()      |
++-----------+---------------------------+
 
 .. _class_PhysicsShapeQueryParameters_property_exclude:
 
 - :ref:`Array<class_Array>` **exclude**
 
-+----------+--------------------+
-| *Setter* | set_exclude(value) |
-+----------+--------------------+
-| *Getter* | get_exclude()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | [  ]               |
++-----------+--------------------+
+| *Setter*  | set_exclude(value) |
++-----------+--------------------+
+| *Getter*  | get_exclude()      |
++-----------+--------------------+
 
 .. _class_PhysicsShapeQueryParameters_property_margin:
 
 - :ref:`float<class_float>` **margin**
 
-+----------+-------------------+
-| *Setter* | set_margin(value) |
-+----------+-------------------+
-| *Getter* | get_margin()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0.0               |
++-----------+-------------------+
+| *Setter*  | set_margin(value) |
++-----------+-------------------+
+| *Getter*  | get_margin()      |
++-----------+-------------------+
 
 .. _class_PhysicsShapeQueryParameters_property_shape_rid:
 
@@ -109,11 +119,13 @@ Property Descriptions
 
 - :ref:`Transform<class_Transform>` **transform**
 
-+----------+----------------------+
-| *Setter* | set_transform(value) |
-+----------+----------------------+
-| *Getter* | get_transform()      |
-+----------+----------------------+
++-----------+-------------------------------------------------+
+| *Default* | Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) |
++-----------+-------------------------------------------------+
+| *Setter*  | set_transform(value)                            |
++-----------+-------------------------------------------------+
+| *Getter*  | get_transform()                                 |
++-----------+-------------------------------------------------+
 
 Method Descriptions
 -------------------

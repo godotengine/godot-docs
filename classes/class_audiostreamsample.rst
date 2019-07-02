@@ -19,21 +19,21 @@ Stores audio data loaded from WAV files.
 Properties
 ----------
 
-+--------------------------------------------------+----------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>`        | :ref:`data<class_AudioStreamSample_property_data>`             |
-+--------------------------------------------------+----------------------------------------------------------------+
-| :ref:`Format<enum_AudioStreamSample_Format>`     | :ref:`format<class_AudioStreamSample_property_format>`         |
-+--------------------------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` |
-+--------------------------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`loop_end<class_AudioStreamSample_property_loop_end>`     |
-+--------------------------------------------------+----------------------------------------------------------------+
-| :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` | :ref:`loop_mode<class_AudioStreamSample_property_loop_mode>`   |
-+--------------------------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`mix_rate<class_AudioStreamSample_property_mix_rate>`     |
-+--------------------------------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`stereo<class_AudioStreamSample_property_stereo>`         |
-+--------------------------------------------------+----------------------------------------------------------------+
++--------------------------------------------------+----------------------------------------------------------------+-------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>`        | :ref:`data<class_AudioStreamSample_property_data>`             | PoolByteArray(  ) |
++--------------------------------------------------+----------------------------------------------------------------+-------------------+
+| :ref:`Format<enum_AudioStreamSample_Format>`     | :ref:`format<class_AudioStreamSample_property_format>`         | 0                 |
++--------------------------------------------------+----------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`                            | :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` | 0                 |
++--------------------------------------------------+----------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`                            | :ref:`loop_end<class_AudioStreamSample_property_loop_end>`     | 0                 |
++--------------------------------------------------+----------------------------------------------------------------+-------------------+
+| :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` | :ref:`loop_mode<class_AudioStreamSample_property_loop_mode>`   | 0                 |
++--------------------------------------------------+----------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`                            | :ref:`mix_rate<class_AudioStreamSample_property_mix_rate>`     | 44100             |
++--------------------------------------------------+----------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                          | :ref:`stereo<class_AudioStreamSample_property_stereo>`         | false             |
++--------------------------------------------------+----------------------------------------------------------------+-------------------+
 
 Methods
 -------
@@ -95,11 +95,13 @@ Property Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **data**
 
-+----------+-----------------+
-| *Setter* | set_data(value) |
-+----------+-----------------+
-| *Getter* | get_data()      |
-+----------+-----------------+
++-----------+-------------------+
+| *Default* | PoolByteArray(  ) |
++-----------+-------------------+
+| *Setter*  | set_data(value)   |
++-----------+-------------------+
+| *Getter*  | get_data()        |
++-----------+-------------------+
 
 Contains the audio data in bytes.
 
@@ -107,11 +109,13 @@ Contains the audio data in bytes.
 
 - :ref:`Format<enum_AudioStreamSample_Format>` **format**
 
-+----------+-------------------+
-| *Setter* | set_format(value) |
-+----------+-------------------+
-| *Getter* | get_format()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0                 |
++-----------+-------------------+
+| *Setter*  | set_format(value) |
++-----------+-------------------+
+| *Getter*  | get_format()      |
++-----------+-------------------+
 
 Audio format. See ``FORMAT_*`` constants for values.
 
@@ -119,11 +123,13 @@ Audio format. See ``FORMAT_*`` constants for values.
 
 - :ref:`int<class_int>` **loop_begin**
 
-+----------+-----------------------+
-| *Setter* | set_loop_begin(value) |
-+----------+-----------------------+
-| *Getter* | get_loop_begin()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 0                     |
++-----------+-----------------------+
+| *Setter*  | set_loop_begin(value) |
++-----------+-----------------------+
+| *Getter*  | get_loop_begin()      |
++-----------+-----------------------+
 
 Loop start in bytes.
 
@@ -131,11 +137,13 @@ Loop start in bytes.
 
 - :ref:`int<class_int>` **loop_end**
 
-+----------+---------------------+
-| *Setter* | set_loop_end(value) |
-+----------+---------------------+
-| *Getter* | get_loop_end()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0                   |
++-----------+---------------------+
+| *Setter*  | set_loop_end(value) |
++-----------+---------------------+
+| *Getter*  | get_loop_end()      |
++-----------+---------------------+
 
 Loop end in bytes.
 
@@ -143,11 +151,13 @@ Loop end in bytes.
 
 - :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` **loop_mode**
 
-+----------+----------------------+
-| *Setter* | set_loop_mode(value) |
-+----------+----------------------+
-| *Getter* | get_loop_mode()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0                    |
++-----------+----------------------+
+| *Setter*  | set_loop_mode(value) |
++-----------+----------------------+
+| *Getter*  | get_loop_mode()      |
++-----------+----------------------+
 
 Loop mode. See ``LOOP_*`` constants for values.
 
@@ -155,11 +165,13 @@ Loop mode. See ``LOOP_*`` constants for values.
 
 - :ref:`int<class_int>` **mix_rate**
 
-+----------+---------------------+
-| *Setter* | set_mix_rate(value) |
-+----------+---------------------+
-| *Getter* | get_mix_rate()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 44100               |
++-----------+---------------------+
+| *Setter*  | set_mix_rate(value) |
++-----------+---------------------+
+| *Getter*  | get_mix_rate()      |
++-----------+---------------------+
 
 The sample rate for mixing this audio.
 
@@ -167,13 +179,15 @@ The sample rate for mixing this audio.
 
 - :ref:`bool<class_bool>` **stereo**
 
-+----------+-------------------+
-| *Setter* | set_stereo(value) |
-+----------+-------------------+
-| *Getter* | is_stereo()       |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_stereo(value) |
++-----------+-------------------+
+| *Getter*  | is_stereo()       |
++-----------+-------------------+
 
-If ``true``, audio is stereo. Default value: ``false``.
+If ``true``, audio is stereo.
 
 Method Descriptions
 -------------------

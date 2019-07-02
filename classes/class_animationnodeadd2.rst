@@ -19,9 +19,9 @@ Blends two animations additively inside of an :ref:`AnimationNodeBlendTree<class
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeAdd2_property_sync>` |
-+-------------------------+----------------------------------------------------+
++-------------------------+----------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeAdd2_property_sync>` | false |
++-------------------------+----------------------------------------------------+-------+
 
 Description
 -----------
@@ -35,11 +35,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **sync**
 
-+----------+---------------------+
-| *Setter* | set_use_sync(value) |
-+----------+---------------------+
-| *Getter* | is_using_sync()     |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_use_sync(value) |
++-----------+---------------------+
+| *Getter*  | is_using_sync()     |
++-----------+---------------------+
 
 If ``true``, sets the ``optimization`` to ``false`` when calling :ref:`AnimationNode.blend_input<class_AnimationNode_method_blend_input>`, forcing the blended animations to update every frame.
 

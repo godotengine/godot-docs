@@ -21,19 +21,19 @@ The CSG base class.
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`calculate_tangents<class_CSGShape_property_calculate_tangents>` |
-+-------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`collision_layer<class_CSGShape_property_collision_layer>`       |
-+-------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`collision_mask<class_CSGShape_property_collision_mask>`         |
-+-------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_property_operation>`                   |
-+-------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_property_snap>`                             |
-+-------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_property_use_collision>`           |
-+-------------------------------------------+-----------------------------------------------------------------------+
++-------------------------------------------+-----------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                   | :ref:`calculate_tangents<class_CSGShape_property_calculate_tangents>` | true  |
++-------------------------------------------+-----------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                     | :ref:`collision_layer<class_CSGShape_property_collision_layer>`       | 1     |
++-------------------------------------------+-----------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                     | :ref:`collision_mask<class_CSGShape_property_collision_mask>`         | 1     |
++-------------------------------------------+-----------------------------------------------------------------------+-------+
+| :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_property_operation>`                   | 0     |
++-------------------------------------------+-----------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_property_snap>`                             | 0.001 |
++-------------------------------------------+-----------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_property_use_collision>`           | false |
++-------------------------------------------+-----------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -83,11 +83,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **calculate_tangents**
 
-+----------+-------------------------------+
-| *Setter* | set_calculate_tangents(value) |
-+----------+-------------------------------+
-| *Getter* | is_calculating_tangents()     |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | true                          |
++-----------+-------------------------------+
+| *Setter*  | set_calculate_tangents(value) |
++-----------+-------------------------------+
+| *Getter*  | is_calculating_tangents()     |
++-----------+-------------------------------+
 
 Calculate tangents for the CSG shape which allows the use of normal maps. This is only applied on the root shape, this setting is ignored on any child.
 
@@ -95,11 +97,13 @@ Calculate tangents for the CSG shape which allows the use of normal maps. This i
 
 - :ref:`int<class_int>` **collision_layer**
 
-+----------+----------------------------+
-| *Setter* | set_collision_layer(value) |
-+----------+----------------------------+
-| *Getter* | get_collision_layer()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 1                          |
++-----------+----------------------------+
+| *Setter*  | set_collision_layer(value) |
++-----------+----------------------------+
+| *Getter*  | get_collision_layer()      |
++-----------+----------------------------+
 
 The physics layers this area is in.
 
@@ -111,11 +115,13 @@ A contact is detected if object A is in any of the layers that object B scans, o
 
 - :ref:`int<class_int>` **collision_mask**
 
-+----------+---------------------------+
-| *Setter* | set_collision_mask(value) |
-+----------+---------------------------+
-| *Getter* | get_collision_mask()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 1                         |
++-----------+---------------------------+
+| *Setter*  | set_collision_mask(value) |
++-----------+---------------------------+
+| *Getter*  | get_collision_mask()      |
++-----------+---------------------------+
 
 The physics layers this CSG shape scans for collisions.
 
@@ -123,11 +129,13 @@ The physics layers this CSG shape scans for collisions.
 
 - :ref:`Operation<enum_CSGShape_Operation>` **operation**
 
-+----------+----------------------+
-| *Setter* | set_operation(value) |
-+----------+----------------------+
-| *Getter* | get_operation()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0                    |
++-----------+----------------------+
+| *Setter*  | set_operation(value) |
++-----------+----------------------+
+| *Getter*  | get_operation()      |
++-----------+----------------------+
 
 The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
 
@@ -135,21 +143,25 @@ The operation that is performed on this shape. This is ignored for the first CSG
 
 - :ref:`float<class_float>` **snap**
 
-+----------+-----------------+
-| *Setter* | set_snap(value) |
-+----------+-----------------+
-| *Getter* | get_snap()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 0.001           |
++-----------+-----------------+
+| *Setter*  | set_snap(value) |
++-----------+-----------------+
+| *Getter*  | get_snap()      |
++-----------+-----------------+
 
 .. _class_CSGShape_property_use_collision:
 
 - :ref:`bool<class_bool>` **use_collision**
 
-+----------+--------------------------+
-| *Setter* | set_use_collision(value) |
-+----------+--------------------------+
-| *Getter* | is_using_collision()     |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | false                    |
++-----------+--------------------------+
+| *Setter*  | set_use_collision(value) |
++-----------+--------------------------+
+| *Getter*  | is_using_collision()     |
++-----------+--------------------------+
 
 Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden.
 

@@ -21,9 +21,9 @@ A :ref:`Resource<class_Resource>` that contains vertex array-based geometry.
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` |
-+-------------------------------+-------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` | Vector2( 0, 0 ) |
++-------------------------------+-------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -245,11 +245,13 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **lightmap_size_hint**
 
-+----------+-------------------------------+
-| *Setter* | set_lightmap_size_hint(value) |
-+----------+-------------------------------+
-| *Getter* | get_lightmap_size_hint()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | Vector2( 0, 0 )               |
++-----------+-------------------------------+
+| *Setter*  | set_lightmap_size_hint(value) |
++-----------+-------------------------------+
+| *Getter*  | get_lightmap_size_hint()      |
++-----------+-------------------------------+
 
 Method Descriptions
 -------------------

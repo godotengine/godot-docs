@@ -19,11 +19,11 @@ Capsule shape for collisions.
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape_property_height>` |
-+---------------------------+---------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape_property_radius>` |
-+---------------------------+---------------------------------------------------+
++---------------------------+---------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape_property_height>` | 1.0 |
++---------------------------+---------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape_property_radius>` | 1.0 |
++---------------------------+---------------------------------------------------+-----+
 
 Description
 -----------
@@ -37,11 +37,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **height**
 
-+----------+-------------------+
-| *Setter* | set_height(value) |
-+----------+-------------------+
-| *Getter* | get_height()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1.0               |
++-----------+-------------------+
+| *Setter*  | set_height(value) |
++-----------+-------------------+
+| *Getter*  | get_height()      |
++-----------+-------------------+
 
 The capsule's height.
 
@@ -49,11 +51,13 @@ The capsule's height.
 
 - :ref:`float<class_float>` **radius**
 
-+----------+-------------------+
-| *Setter* | set_radius(value) |
-+----------+-------------------+
-| *Getter* | get_radius()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1.0               |
++-----------+-------------------+
+| *Setter*  | set_radius(value) |
++-----------+-------------------+
+| *Getter*  | get_radius()      |
++-----------+-------------------+
 
 The capsule's radius.
 

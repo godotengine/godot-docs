@@ -19,15 +19,15 @@ A spotlight, such as a reflector spotlight or a lantern.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_angle<class_SpotLight_property_spot_angle>`                         |
-+---------------------------+--------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>` |
-+---------------------------+--------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_attenuation<class_SpotLight_property_spot_attenuation>`             |
-+---------------------------+--------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight_property_spot_range>`                         |
-+---------------------------+--------------------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`spot_angle<class_SpotLight_property_spot_angle>`                         | 45.0 |
++---------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>` | 1.0  |
++---------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`spot_attenuation<class_SpotLight_property_spot_attenuation>`             | 1.0  |
++---------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight_property_spot_range>`                         | 5.0  |
++---------------------------+--------------------------------------------------------------------------------+------+
 
 Description
 -----------
@@ -46,11 +46,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **spot_angle**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 45.0             |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The spotlight's angle in degrees.
 
@@ -58,11 +60,13 @@ The spotlight's angle in degrees.
 
 - :ref:`float<class_float>` **spot_angle_attenuation**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 1.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The spotlight's angular attenuation curve.
 
@@ -70,11 +74,13 @@ The spotlight's angular attenuation curve.
 
 - :ref:`float<class_float>` **spot_attenuation**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 1.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The spotlight's light energy attenuation curve.
 
@@ -82,11 +88,13 @@ The spotlight's light energy attenuation curve.
 
 - :ref:`float<class_float>` **spot_range**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 5.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The maximal range that can be reached by the spotlight.
 

@@ -19,17 +19,17 @@ Noise generator based on Open Simplex.
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`lacunarity<class_OpenSimplexNoise_property_lacunarity>`   |
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`octaves<class_OpenSimplexNoise_property_octaves>`         |
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`period<class_OpenSimplexNoise_property_period>`           |
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`persistence<class_OpenSimplexNoise_property_persistence>` |
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`seed<class_OpenSimplexNoise_property_seed>`               |
-+---------------------------+-----------------------------------------------------------------+
++---------------------------+-----------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`lacunarity<class_OpenSimplexNoise_property_lacunarity>`   | 2.0  |
++---------------------------+-----------------------------------------------------------------+------+
+| :ref:`int<class_int>`     | :ref:`octaves<class_OpenSimplexNoise_property_octaves>`         | 3    |
++---------------------------+-----------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`period<class_OpenSimplexNoise_property_period>`           | 64.0 |
++---------------------------+-----------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`persistence<class_OpenSimplexNoise_property_persistence>` | 0.5  |
++---------------------------+-----------------------------------------------------------------+------+
+| :ref:`int<class_int>`     | :ref:`seed<class_OpenSimplexNoise_property_seed>`               | 0    |
++---------------------------+-----------------------------------------------------------------+------+
 
 Methods
 -------
@@ -80,11 +80,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **lacunarity**
 
-+----------+-----------------------+
-| *Setter* | set_lacunarity(value) |
-+----------+-----------------------+
-| *Getter* | get_lacunarity()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 2.0                   |
++-----------+-----------------------+
+| *Setter*  | set_lacunarity(value) |
++-----------+-----------------------+
+| *Getter*  | get_lacunarity()      |
++-----------+-----------------------+
 
 Difference in period between :ref:`octaves<class_OpenSimplexNoise_property_octaves>`.
 
@@ -92,11 +94,13 @@ Difference in period between :ref:`octaves<class_OpenSimplexNoise_property_octav
 
 - :ref:`int<class_int>` **octaves**
 
-+----------+--------------------+
-| *Setter* | set_octaves(value) |
-+----------+--------------------+
-| *Getter* | get_octaves()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 3                  |
++-----------+--------------------+
+| *Setter*  | set_octaves(value) |
++-----------+--------------------+
+| *Getter*  | get_octaves()      |
++-----------+--------------------+
 
 Number of OpenSimplex noise layers that are sampled to get the fractal noise.
 
@@ -104,11 +108,13 @@ Number of OpenSimplex noise layers that are sampled to get the fractal noise.
 
 - :ref:`float<class_float>` **period**
 
-+----------+-------------------+
-| *Setter* | set_period(value) |
-+----------+-------------------+
-| *Getter* | get_period()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 64.0              |
++-----------+-------------------+
+| *Setter*  | set_period(value) |
++-----------+-------------------+
+| *Getter*  | get_period()      |
++-----------+-------------------+
 
 Period of the base octave. A lower period results in a higher-frequency noise (more value changes across the same distance).
 
@@ -116,11 +122,13 @@ Period of the base octave. A lower period results in a higher-frequency noise (m
 
 - :ref:`float<class_float>` **persistence**
 
-+----------+------------------------+
-| *Setter* | set_persistence(value) |
-+----------+------------------------+
-| *Getter* | get_persistence()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0.5                    |
++-----------+------------------------+
+| *Setter*  | set_persistence(value) |
++-----------+------------------------+
+| *Getter*  | get_persistence()      |
++-----------+------------------------+
 
 Contribution factor of the different octaves. A ``persistence`` value of 1 means all the octaves have the same contribution, a value of 0.5 means each octave contributes half as much as the previous one.
 
@@ -128,11 +136,13 @@ Contribution factor of the different octaves. A ``persistence`` value of 1 means
 
 - :ref:`int<class_int>` **seed**
 
-+----------+-----------------+
-| *Setter* | set_seed(value) |
-+----------+-----------------+
-| *Getter* | get_seed()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 0               |
++-----------+-----------------+
+| *Setter*  | set_seed(value) |
++-----------+-----------------+
+| *Getter*  | get_seed()      |
++-----------+-----------------+
 
 Seed used to generate random values, different seeds will generate different noise maps.
 

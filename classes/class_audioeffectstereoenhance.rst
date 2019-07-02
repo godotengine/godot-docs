@@ -19,13 +19,13 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`pan_pullout<class_AudioEffectStereoEnhance_property_pan_pullout>`         |
-+---------------------------+---------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`surround<class_AudioEffectStereoEnhance_property_surround>`               |
-+---------------------------+---------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`time_pullout_ms<class_AudioEffectStereoEnhance_property_time_pullout_ms>` |
-+---------------------------+---------------------------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`pan_pullout<class_AudioEffectStereoEnhance_property_pan_pullout>`         | 1.0 |
++---------------------------+---------------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`surround<class_AudioEffectStereoEnhance_property_surround>`               | 0.0 |
++---------------------------+---------------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`time_pullout_ms<class_AudioEffectStereoEnhance_property_time_pullout_ms>` | 0.0 |
++---------------------------+---------------------------------------------------------------------------------+-----+
 
 Property Descriptions
 ---------------------
@@ -34,29 +34,35 @@ Property Descriptions
 
 - :ref:`float<class_float>` **pan_pullout**
 
-+----------+------------------------+
-| *Setter* | set_pan_pullout(value) |
-+----------+------------------------+
-| *Getter* | get_pan_pullout()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 1.0                    |
++-----------+------------------------+
+| *Setter*  | set_pan_pullout(value) |
++-----------+------------------------+
+| *Getter*  | get_pan_pullout()      |
++-----------+------------------------+
 
 .. _class_AudioEffectStereoEnhance_property_surround:
 
 - :ref:`float<class_float>` **surround**
 
-+----------+---------------------+
-| *Setter* | set_surround(value) |
-+----------+---------------------+
-| *Getter* | get_surround()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_surround(value) |
++-----------+---------------------+
+| *Getter*  | get_surround()      |
++-----------+---------------------+
 
 .. _class_AudioEffectStereoEnhance_property_time_pullout_ms:
 
 - :ref:`float<class_float>` **time_pullout_ms**
 
-+----------+-------------------------+
-| *Setter* | set_time_pullout(value) |
-+----------+-------------------------+
-| *Getter* | get_time_pullout()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0.0                     |
++-----------+-------------------------+
+| *Setter*  | set_time_pullout(value) |
++-----------+-------------------------+
+| *Getter*  | get_time_pullout()      |
++-----------+-------------------------+
 

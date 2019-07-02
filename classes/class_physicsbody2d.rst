@@ -21,13 +21,13 @@ Base class for all objects affected by physics in 2D space.
 Properties
 ----------
 
-+-----------------------+----------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`collision_layer<class_PhysicsBody2D_property_collision_layer>` |
-+-----------------------+----------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`collision_mask<class_PhysicsBody2D_property_collision_mask>`   |
-+-----------------------+----------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`layers<class_PhysicsBody2D_property_layers>`                   |
-+-----------------------+----------------------------------------------------------------------+
++-----------------------+----------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`collision_layer<class_PhysicsBody2D_property_collision_layer>` | 1 |
++-----------------------+----------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`collision_mask<class_PhysicsBody2D_property_collision_mask>`   | 1 |
++-----------------------+----------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`layers<class_PhysicsBody2D_property_layers>`                   |   |
++-----------------------+----------------------------------------------------------------------+---+
 
 Methods
 -------
@@ -65,11 +65,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **collision_layer**
 
-+----------+----------------------------+
-| *Setter* | set_collision_layer(value) |
-+----------+----------------------------+
-| *Getter* | get_collision_layer()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 1                          |
++-----------+----------------------------+
+| *Setter*  | set_collision_layer(value) |
++-----------+----------------------------+
+| *Getter*  | get_collision_layer()      |
++-----------+----------------------------+
 
 The physics layers this area is in.
 
@@ -77,21 +79,19 @@ Collidable objects can exist in any of 32 different layers. These layers work li
 
 A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
 
-Default value: 1 (the first layer/bit is enabled).
-
 .. _class_PhysicsBody2D_property_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
 
-+----------+---------------------------+
-| *Setter* | set_collision_mask(value) |
-+----------+---------------------------+
-| *Getter* | get_collision_mask()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 1                         |
++-----------+---------------------------+
+| *Setter*  | set_collision_mask(value) |
++-----------+---------------------------+
+| *Getter*  | get_collision_mask()      |
++-----------+---------------------------+
 
 The physics layers this area scans for collisions.
-
-Default value: 1 (the first layer/bit is enabled).
 
 .. _class_PhysicsBody2D_property_layers:
 

@@ -19,9 +19,9 @@ The origin point in AR/VR.
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`world_scale<class_ARVROrigin_property_world_scale>` |
-+---------------------------+-----------------------------------------------------------+
++---------------------------+-----------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`world_scale<class_ARVROrigin_property_world_scale>` | 1.0 |
++---------------------------+-----------------------------------------------------------+-----+
 
 Description
 -----------
@@ -41,11 +41,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **world_scale**
 
-+----------+------------------------+
-| *Setter* | set_world_scale(value) |
-+----------+------------------------+
-| *Getter* | get_world_scale()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 1.0                    |
++-----------+------------------------+
+| *Setter*  | set_world_scale(value) |
++-----------+------------------------+
+| *Getter*  | get_world_scale()      |
++-----------+------------------------+
 
 Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 real world meter.
 

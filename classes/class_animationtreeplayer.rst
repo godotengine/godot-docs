@@ -19,15 +19,15 @@ Animation Player that uses a node graph for blending Animations.
 Properties
 ----------
 
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                    | :ref:`active<class_AnimationTreePlayer_property_active>`                               |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`                                            | :ref:`base_path<class_AnimationTreePlayer_property_base_path>`                         |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`                                            | :ref:`master_player<class_AnimationTreePlayer_property_master_player>`                 |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`AnimationProcessMode<enum_AnimationTreePlayer_AnimationProcessMode>` | :ref:`playback_process_mode<class_AnimationTreePlayer_property_playback_process_mode>` |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
+| :ref:`bool<class_bool>`                                                    | :ref:`active<class_AnimationTreePlayer_property_active>`                               | false          |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
+| :ref:`NodePath<class_NodePath>`                                            | :ref:`base_path<class_AnimationTreePlayer_property_base_path>`                         | NodePath("..") |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
+| :ref:`NodePath<class_NodePath>`                                            | :ref:`master_player<class_AnimationTreePlayer_property_master_player>`                 | NodePath("")   |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
+| :ref:`AnimationProcessMode<enum_AnimationTreePlayer_AnimationProcessMode>` | :ref:`playback_process_mode<class_AnimationTreePlayer_property_playback_process_mode>` | 1              |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
 
 Methods
 -------
@@ -221,25 +221,29 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **active**
 
-+----------+-------------------+
-| *Setter* | set_active(value) |
-+----------+-------------------+
-| *Getter* | is_active()       |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_active(value) |
++-----------+-------------------+
+| *Getter*  | is_active()       |
++-----------+-------------------+
 
-If ``true``, the ``AnimationTreePlayer`` is able to play animations. Default value: ``false``.
+If ``true``, the ``AnimationTreePlayer`` is able to play animations.
 
 .. _class_AnimationTreePlayer_property_base_path:
 
 - :ref:`NodePath<class_NodePath>` **base_path**
 
-+----------+----------------------+
-| *Setter* | set_base_path(value) |
-+----------+----------------------+
-| *Getter* | get_base_path()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | NodePath("..")       |
++-----------+----------------------+
+| *Setter*  | set_base_path(value) |
++-----------+----------------------+
+| *Getter*  | get_base_path()      |
++-----------+----------------------+
 
-The node from which to relatively access other nodes. Default value: ``".."``.
+The node from which to relatively access other nodes.
 
 It accesses the Bones, so it should point to the same Node the AnimationPlayer would point its Root Node at.
 
@@ -247,11 +251,13 @@ It accesses the Bones, so it should point to the same Node the AnimationPlayer w
 
 - :ref:`NodePath<class_NodePath>` **master_player**
 
-+----------+--------------------------+
-| *Setter* | set_master_player(value) |
-+----------+--------------------------+
-| *Getter* | get_master_player()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | NodePath("")             |
++-----------+--------------------------+
+| *Setter*  | set_master_player(value) |
++-----------+--------------------------+
+| *Getter*  | get_master_player()      |
++-----------+--------------------------+
 
 The path to the :ref:`AnimationPlayer<class_AnimationPlayer>` from which this ``AnimationTreePlayer`` binds animations to animation nodes.
 
@@ -261,13 +267,15 @@ Once set, Animation nodes can be added to the AnimationTreePlayer.
 
 - :ref:`AnimationProcessMode<enum_AnimationTreePlayer_AnimationProcessMode>` **playback_process_mode**
 
-+----------+-----------------------------------+
-| *Setter* | set_animation_process_mode(value) |
-+----------+-----------------------------------+
-| *Getter* | get_animation_process_mode()      |
-+----------+-----------------------------------+
++-----------+-----------------------------------+
+| *Default* | 1                                 |
++-----------+-----------------------------------+
+| *Setter*  | set_animation_process_mode(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_animation_process_mode()      |
++-----------+-----------------------------------+
 
-The thread in which to update animations. Default value: :ref:`ANIMATION_PROCESS_IDLE<class_AnimationTreePlayer_constant_ANIMATION_PROCESS_IDLE>`.
+The thread in which to update animations.
 
 Method Descriptions
 -------------------

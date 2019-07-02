@@ -19,9 +19,9 @@ Creates a new :ref:`Resource<class_Resource>` or loads one from the filesystem.
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`Resource<class_Resource>` | :ref:`resource<class_VisualScriptPreload_property_resource>` |
-+---------------------------------+--------------------------------------------------------------+
++---------------------------------+--------------------------------------------------------------+------+
+| :ref:`Resource<class_Resource>` | :ref:`resource<class_VisualScriptPreload_property_resource>` | null |
++---------------------------------+--------------------------------------------------------------+------+
 
 Description
 -----------
@@ -43,11 +43,13 @@ Property Descriptions
 
 - :ref:`Resource<class_Resource>` **resource**
 
-+----------+--------------------+
-| *Setter* | set_preload(value) |
-+----------+--------------------+
-| *Getter* | get_preload()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | null               |
++-----------+--------------------+
+| *Setter*  | set_preload(value) |
++-----------+--------------------+
+| *Getter*  | get_preload()      |
++-----------+--------------------+
 
 The :ref:`Resource<class_Resource>` to load.
 

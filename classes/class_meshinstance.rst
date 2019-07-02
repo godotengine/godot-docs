@@ -21,11 +21,11 @@ Node that instances meshes into a scenario.
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`         |
-+---------------------------------+-------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>` |
-+---------------------------------+-------------------------------------------------------+
++---------------------------------+-------------------------------------------------------+----------------+
+| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`         | null           |
++---------------------------------+-------------------------------------------------------+----------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>` | NodePath("..") |
++---------------------------------+-------------------------------------------------------+----------------+
 
 Methods
 -------
@@ -56,11 +56,13 @@ Property Descriptions
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | null            |
++-----------+-----------------+
+| *Setter*  | set_mesh(value) |
++-----------+-----------------+
+| *Getter*  | get_mesh()      |
++-----------+-----------------+
 
 The :ref:`Mesh<class_Mesh>` resource for the instance.
 
@@ -68,11 +70,13 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 
 - :ref:`NodePath<class_NodePath>` **skeleton**
 
-+----------+--------------------------+
-| *Setter* | set_skeleton_path(value) |
-+----------+--------------------------+
-| *Getter* | get_skeleton_path()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | NodePath("..")           |
++-----------+--------------------------+
+| *Setter*  | set_skeleton_path(value) |
++-----------+--------------------------+
+| *Getter*  | get_skeleton_path()      |
++-----------+--------------------------+
 
 :ref:`NodePath<class_NodePath>` to the :ref:`Skeleton<class_Skeleton>` associated with the instance.
 

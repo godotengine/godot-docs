@@ -19,21 +19,21 @@ Point sampler for a :ref:`Path<class_Path>`.
 Properties
 ----------
 
-+---------------------------------------------------+---------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`cubic_interp<class_PathFollow_property_cubic_interp>`   |
-+---------------------------------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`h_offset<class_PathFollow_property_h_offset>`           |
-+---------------------------------------------------+---------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`loop<class_PathFollow_property_loop>`                   |
-+---------------------------------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`offset<class_PathFollow_property_offset>`               |
-+---------------------------------------------------+---------------------------------------------------------------+
-| :ref:`RotationMode<enum_PathFollow_RotationMode>` | :ref:`rotation_mode<class_PathFollow_property_rotation_mode>` |
-+---------------------------------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`unit_offset<class_PathFollow_property_unit_offset>`     |
-+---------------------------------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`v_offset<class_PathFollow_property_v_offset>`           |
-+---------------------------------------------------+---------------------------------------------------------------+
++---------------------------------------------------+---------------------------------------------------------------+------+
+| :ref:`bool<class_bool>`                           | :ref:`cubic_interp<class_PathFollow_property_cubic_interp>`   | true |
++---------------------------------------------------+---------------------------------------------------------------+------+
+| :ref:`float<class_float>`                         | :ref:`h_offset<class_PathFollow_property_h_offset>`           | 0.0  |
++---------------------------------------------------+---------------------------------------------------------------+------+
+| :ref:`bool<class_bool>`                           | :ref:`loop<class_PathFollow_property_loop>`                   | true |
++---------------------------------------------------+---------------------------------------------------------------+------+
+| :ref:`float<class_float>`                         | :ref:`offset<class_PathFollow_property_offset>`               | 0.0  |
++---------------------------------------------------+---------------------------------------------------------------+------+
+| :ref:`RotationMode<enum_PathFollow_RotationMode>` | :ref:`rotation_mode<class_PathFollow_property_rotation_mode>` | 3    |
++---------------------------------------------------+---------------------------------------------------------------+------+
+| :ref:`float<class_float>`                         | :ref:`unit_offset<class_PathFollow_property_unit_offset>`     | 0.0  |
++---------------------------------------------------+---------------------------------------------------------------+------+
+| :ref:`float<class_float>`                         | :ref:`v_offset<class_PathFollow_property_v_offset>`           | 0.0  |
++---------------------------------------------------+---------------------------------------------------------------+------+
 
 Enumerations
 ------------
@@ -76,11 +76,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **cubic_interp**
 
-+----------+--------------------------------+
-| *Setter* | set_cubic_interpolation(value) |
-+----------+--------------------------------+
-| *Getter* | get_cubic_interpolation()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | true                           |
++-----------+--------------------------------+
+| *Setter*  | set_cubic_interpolation(value) |
++-----------+--------------------------------+
+| *Getter*  | get_cubic_interpolation()      |
++-----------+--------------------------------+
 
 If ``true``, the position between two cached points is interpolated cubically, and linearly otherwise.
 
@@ -92,11 +94,13 @@ There are two answers to this problem: either increase the number of cached poin
 
 - :ref:`float<class_float>` **h_offset**
 
-+----------+---------------------+
-| *Setter* | set_h_offset(value) |
-+----------+---------------------+
-| *Getter* | get_h_offset()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_h_offset(value) |
++-----------+---------------------+
+| *Getter*  | get_h_offset()      |
++-----------+---------------------+
 
 The node's offset along the curve.
 
@@ -104,11 +108,13 @@ The node's offset along the curve.
 
 - :ref:`bool<class_bool>` **loop**
 
-+----------+-----------------+
-| *Setter* | set_loop(value) |
-+----------+-----------------+
-| *Getter* | has_loop()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | true            |
++-----------+-----------------+
+| *Setter*  | set_loop(value) |
++-----------+-----------------+
+| *Getter*  | has_loop()      |
++-----------+-----------------+
 
 If ``true``, any offset outside the path's length will wrap around, instead of stopping at the ends. Use it for cyclic paths.
 
@@ -116,11 +122,13 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 
 - :ref:`float<class_float>` **offset**
 
-+----------+-------------------+
-| *Setter* | set_offset(value) |
-+----------+-------------------+
-| *Getter* | get_offset()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0.0               |
++-----------+-------------------+
+| *Setter*  | set_offset(value) |
++-----------+-------------------+
+| *Getter*  | get_offset()      |
++-----------+-------------------+
 
 The distance from the first vertex, measured in 3D units along the path. This sets this node's position to a point within the path.
 
@@ -128,11 +136,13 @@ The distance from the first vertex, measured in 3D units along the path. This se
 
 - :ref:`RotationMode<enum_PathFollow_RotationMode>` **rotation_mode**
 
-+----------+--------------------------+
-| *Setter* | set_rotation_mode(value) |
-+----------+--------------------------+
-| *Getter* | get_rotation_mode()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 3                        |
++-----------+--------------------------+
+| *Setter*  | set_rotation_mode(value) |
++-----------+--------------------------+
+| *Getter*  | get_rotation_mode()      |
++-----------+--------------------------+
 
 Allows or forbids rotation on one or more axes, depending on the :ref:`RotationMode<enum_PathFollow_RotationMode>` constants being used.
 
@@ -140,11 +150,13 @@ Allows or forbids rotation on one or more axes, depending on the :ref:`RotationM
 
 - :ref:`float<class_float>` **unit_offset**
 
-+----------+------------------------+
-| *Setter* | set_unit_offset(value) |
-+----------+------------------------+
-| *Getter* | get_unit_offset()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0.0                    |
++-----------+------------------------+
+| *Setter*  | set_unit_offset(value) |
++-----------+------------------------+
+| *Getter*  | get_unit_offset()      |
++-----------+------------------------+
 
 The distance from the first vertex, considering 0.0 as the first vertex and 1.0 as the last. This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
 
@@ -152,11 +164,13 @@ The distance from the first vertex, considering 0.0 as the first vertex and 1.0 
 
 - :ref:`float<class_float>` **v_offset**
 
-+----------+---------------------+
-| *Setter* | set_v_offset(value) |
-+----------+---------------------+
-| *Getter* | get_v_offset()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_v_offset(value) |
++-----------+---------------------+
+| *Getter*  | get_v_offset()      |
++-----------+---------------------+
 
 The node's offset perpendicular to the curve.
 

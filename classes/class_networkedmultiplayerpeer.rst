@@ -21,11 +21,11 @@ A high-level network interface to simplify multiplayer interactions.
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | true |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | 0    |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
 
 Methods
 -------
@@ -138,23 +138,27 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **refuse_new_connections**
 
-+----------+-----------------------------------+
-| *Setter* | set_refuse_new_connections(value) |
-+----------+-----------------------------------+
-| *Getter* | is_refusing_new_connections()     |
-+----------+-----------------------------------+
++-----------+-----------------------------------+
+| *Default* | true                              |
++-----------+-----------------------------------+
+| *Setter*  | set_refuse_new_connections(value) |
++-----------+-----------------------------------+
+| *Getter*  | is_refusing_new_connections()     |
++-----------+-----------------------------------+
 
-If ``true``, this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
+If ``true``, this ``NetworkedMultiplayerPeer`` refuses new connections.
 
 .. _class_NetworkedMultiplayerPeer_property_transfer_mode:
 
 - :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode**
 
-+----------+--------------------------+
-| *Setter* | set_transfer_mode(value) |
-+----------+--------------------------+
-| *Getter* | get_transfer_mode()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 0                        |
++-----------+--------------------------+
+| *Setter*  | set_transfer_mode(value) |
++-----------+--------------------------+
+| *Getter*  | get_transfer_mode()      |
++-----------+--------------------------+
 
 The manner in which to send packets to the ``target_peer``. See :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>`.
 
@@ -191,5 +195,5 @@ Waits up to 1 second to receive a new network event.
 
 Sets the peer to which packets will be sent.
 
-The ``id`` can be one of: :ref:`TARGET_PEER_BROADCAST<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_BROADCAST>` to send to all connected peers, :ref:`TARGET_PEER_SERVER<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_SERVER>` to send to the peer acting as server, a valid peer ID to send to that specific peer, a negative peer ID to send to all peers except that one. Default: :ref:`TARGET_PEER_BROADCAST<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_BROADCAST>`
+The ``id`` can be one of: :ref:`TARGET_PEER_BROADCAST<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_BROADCAST>` to send to all connected peers, :ref:`TARGET_PEER_SERVER<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_SERVER>` to send to the peer acting as server, a valid peer ID to send to that specific peer, a negative peer ID to send to all peers except that one. By default, the target peer is :ref:`TARGET_PEER_BROADCAST<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_BROADCAST>`.
 

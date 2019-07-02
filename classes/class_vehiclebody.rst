@@ -19,13 +19,13 @@ Physics body that simulates the behavior of a car.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody_property_brake>`               |
-+---------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody_property_engine_force>` |
-+---------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody_property_steering>`         |
-+---------------------------+--------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody_property_brake>`               | 0.0 |
++---------------------------+--------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody_property_engine_force>` | 0.0 |
++---------------------------+--------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody_property_steering>`         | 0.0 |
++---------------------------+--------------------------------------------------------------+-----+
 
 Description
 -----------
@@ -41,11 +41,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **brake**
 
-+----------+------------------+
-| *Setter* | set_brake(value) |
-+----------+------------------+
-| *Getter* | get_brake()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_brake(value) |
++-----------+------------------+
+| *Getter*  | get_brake()      |
++-----------+------------------+
 
 Slows down the vehicle by applying a braking force. The vehicle is only slowed down if the wheels are in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidBody.mass<class_RigidBody_property_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
 
@@ -53,11 +55,13 @@ Slows down the vehicle by applying a braking force. The vehicle is only slowed d
 
 - :ref:`float<class_float>` **engine_force**
 
-+----------+-------------------------+
-| *Setter* | set_engine_force(value) |
-+----------+-------------------------+
-| *Getter* | get_engine_force()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0.0                     |
++-----------+-------------------------+
+| *Setter*  | set_engine_force(value) |
++-----------+-------------------------+
+| *Getter*  | get_engine_force()      |
++-----------+-------------------------+
 
 Accelerates the vehicle by applying an engine force. The vehicle is only speed up if the wheels that have :ref:`VehicleWheel.use_as_traction<class_VehicleWheel_property_use_as_traction>` set to ``true`` and are in contact with a surface. The :ref:`RigidBody.mass<class_RigidBody_property_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration.
 
@@ -69,11 +73,13 @@ A negative value will result in the vehicle reversing.
 
 - :ref:`float<class_float>` **steering**
 
-+----------+---------------------+
-| *Setter* | set_steering(value) |
-+----------+---------------------+
-| *Getter* | get_steering()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_steering(value) |
++-----------+---------------------+
+| *Getter*  | get_steering()      |
++-----------+---------------------+
 
 The steering angle for the vehicle. Setting this to a non-zero value will result in the vehicle turning when it's moving. Wheels that have :ref:`VehicleWheel.use_as_steering<class_VehicleWheel_property_use_as_steering>` set to ``true`` will automatically be rotated.
 

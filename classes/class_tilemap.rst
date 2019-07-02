@@ -19,37 +19,39 @@ Node for 2D tile-based maps.
 Properties
 ----------
 
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`cell_clip_uv<class_TileMap_property_cell_clip_uv>`                       |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>`      | :ref:`cell_custom_transform<class_TileMap_property_cell_custom_transform>`     |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`HalfOffset<enum_TileMap_HalfOffset>` | :ref:`cell_half_offset<class_TileMap_property_cell_half_offset>`               |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`cell_quadrant_size<class_TileMap_property_cell_quadrant_size>`           |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`              | :ref:`cell_size<class_TileMap_property_cell_size>`                             |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`TileOrigin<enum_TileMap_TileOrigin>` | :ref:`cell_tile_origin<class_TileMap_property_cell_tile_origin>`               |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`cell_y_sort<class_TileMap_property_cell_y_sort>`                         |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`collision_bounce<class_TileMap_property_collision_bounce>`               |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`collision_friction<class_TileMap_property_collision_friction>`           |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`collision_layer<class_TileMap_property_collision_layer>`                 |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`collision_mask<class_TileMap_property_collision_mask>`                   |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`collision_use_kinematic<class_TileMap_property_collision_use_kinematic>` |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`Mode<enum_TileMap_Mode>`             | :ref:`mode<class_TileMap_property_mode>`                                       |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`occluder_light_mask<class_TileMap_property_occluder_light_mask>`         |
-+--------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`TileSet<class_TileSet>`              | :ref:`tile_set<class_TileMap_property_tile_set>`                               |
-+--------------------------------------------+--------------------------------------------------------------------------------+
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`cell_clip_uv<class_TileMap_property_cell_clip_uv>`                       | false                           |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`Transform2D<class_Transform2D>`      | :ref:`cell_custom_transform<class_TileMap_property_cell_custom_transform>`     | Transform2D( 1, 0, 0, 1, 0, 0 ) |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`HalfOffset<enum_TileMap_HalfOffset>` | :ref:`cell_half_offset<class_TileMap_property_cell_half_offset>`               | 2                               |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`int<class_int>`                      | :ref:`cell_quadrant_size<class_TileMap_property_cell_quadrant_size>`           | 16                              |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`Vector2<class_Vector2>`              | :ref:`cell_size<class_TileMap_property_cell_size>`                             | Vector2( 64, 64 )               |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`TileOrigin<enum_TileMap_TileOrigin>` | :ref:`cell_tile_origin<class_TileMap_property_cell_tile_origin>`               | 0                               |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`cell_y_sort<class_TileMap_property_cell_y_sort>`                         | false                           |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`float<class_float>`                  | :ref:`collision_bounce<class_TileMap_property_collision_bounce>`               | 0.0                             |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`float<class_float>`                  | :ref:`collision_friction<class_TileMap_property_collision_friction>`           | 1.0                             |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`int<class_int>`                      | :ref:`collision_layer<class_TileMap_property_collision_layer>`                 | 1                               |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`int<class_int>`                      | :ref:`collision_mask<class_TileMap_property_collision_mask>`                   | 1                               |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`collision_use_kinematic<class_TileMap_property_collision_use_kinematic>` | false                           |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`collision_use_parent<class_TileMap_property_collision_use_parent>`       | false                           |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`Mode<enum_TileMap_Mode>`             | :ref:`mode<class_TileMap_property_mode>`                                       | 0                               |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`int<class_int>`                      | :ref:`occluder_light_mask<class_TileMap_property_occluder_light_mask>`         | 1                               |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`TileSet<class_TileSet>`              | :ref:`tile_set<class_TileMap_property_tile_set>`                               | null                            |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
 
 Methods
 -------
@@ -192,21 +194,25 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **cell_clip_uv**
 
-+----------+--------------------+
-| *Setter* | set_clip_uv(value) |
-+----------+--------------------+
-| *Getter* | get_clip_uv()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | false              |
++-----------+--------------------+
+| *Setter*  | set_clip_uv(value) |
++-----------+--------------------+
+| *Getter*  | get_clip_uv()      |
++-----------+--------------------+
 
 .. _class_TileMap_property_cell_custom_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **cell_custom_transform**
 
-+----------+-----------------------------+
-| *Setter* | set_custom_transform(value) |
-+----------+-----------------------------+
-| *Getter* | get_custom_transform()      |
-+----------+-----------------------------+
++-----------+---------------------------------+
+| *Default* | Transform2D( 1, 0, 0, 1, 0, 0 ) |
++-----------+---------------------------------+
+| *Setter*  | set_custom_transform(value)     |
++-----------+---------------------------------+
+| *Getter*  | get_custom_transform()          |
++-----------+---------------------------------+
 
 The custom :ref:`Transform2D<class_Transform2D>` to be applied to the TileMap's cells.
 
@@ -214,35 +220,41 @@ The custom :ref:`Transform2D<class_Transform2D>` to be applied to the TileMap's 
 
 - :ref:`HalfOffset<enum_TileMap_HalfOffset>` **cell_half_offset**
 
-+----------+------------------------+
-| *Setter* | set_half_offset(value) |
-+----------+------------------------+
-| *Getter* | get_half_offset()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 2                      |
++-----------+------------------------+
+| *Setter*  | set_half_offset(value) |
++-----------+------------------------+
+| *Getter*  | get_half_offset()      |
++-----------+------------------------+
 
-Amount to offset alternating tiles. See :ref:`HalfOffset<enum_TileMap_HalfOffset>` for possible values. Default value: ``HALF_OFFSET_DISABLED``.
+Amount to offset alternating tiles. See :ref:`HalfOffset<enum_TileMap_HalfOffset>` for possible values.
 
 .. _class_TileMap_property_cell_quadrant_size:
 
 - :ref:`int<class_int>` **cell_quadrant_size**
 
-+----------+--------------------------+
-| *Setter* | set_quadrant_size(value) |
-+----------+--------------------------+
-| *Getter* | get_quadrant_size()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 16                       |
++-----------+--------------------------+
+| *Setter*  | set_quadrant_size(value) |
++-----------+--------------------------+
+| *Getter*  | get_quadrant_size()      |
++-----------+--------------------------+
 
-The TileMap's quadrant size. Optimizes drawing by batching, using chunks of this size. Default value: 16.
+The TileMap's quadrant size. Optimizes drawing by batching, using chunks of this size.
 
 .. _class_TileMap_property_cell_size:
 
 - :ref:`Vector2<class_Vector2>` **cell_size**
 
-+----------+----------------------+
-| *Setter* | set_cell_size(value) |
-+----------+----------------------+
-| *Getter* | get_cell_size()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | Vector2( 64, 64 )    |
++-----------+----------------------+
+| *Setter*  | set_cell_size(value) |
++-----------+----------------------+
+| *Getter*  | get_cell_size()      |
++-----------+----------------------+
 
 The TileMap's cell size.
 
@@ -250,59 +262,69 @@ The TileMap's cell size.
 
 - :ref:`TileOrigin<enum_TileMap_TileOrigin>` **cell_tile_origin**
 
-+----------+------------------------+
-| *Setter* | set_tile_origin(value) |
-+----------+------------------------+
-| *Getter* | get_tile_origin()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0                      |
++-----------+------------------------+
+| *Setter*  | set_tile_origin(value) |
++-----------+------------------------+
+| *Getter*  | get_tile_origin()      |
++-----------+------------------------+
 
-Position for tile origin. See :ref:`TileOrigin<enum_TileMap_TileOrigin>` for possible values. Default value: ``TILE_ORIGIN_TOP_LEFT``.
+Position for tile origin. See :ref:`TileOrigin<enum_TileMap_TileOrigin>` for possible values.
 
 .. _class_TileMap_property_cell_y_sort:
 
 - :ref:`bool<class_bool>` **cell_y_sort**
 
-+----------+--------------------------+
-| *Setter* | set_y_sort_mode(value)   |
-+----------+--------------------------+
-| *Getter* | is_y_sort_mode_enabled() |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | false                    |
++-----------+--------------------------+
+| *Setter*  | set_y_sort_mode(value)   |
++-----------+--------------------------+
+| *Getter*  | is_y_sort_mode_enabled() |
++-----------+--------------------------+
 
-If ``true``, the TileMap's children will be drawn in order of their Y coordinate. Default value: ``false``.
+If ``true``, the TileMap's children will be drawn in order of their Y coordinate.
 
 .. _class_TileMap_property_collision_bounce:
 
 - :ref:`float<class_float>` **collision_bounce**
 
-+----------+-----------------------------+
-| *Setter* | set_collision_bounce(value) |
-+----------+-----------------------------+
-| *Getter* | get_collision_bounce()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_collision_bounce(value) |
++-----------+-----------------------------+
+| *Getter*  | get_collision_bounce()      |
++-----------+-----------------------------+
 
-Bounce value for static body collisions (see ``collision_use_kinematic``). Default value: 0.
+Bounce value for static body collisions (see ``collision_use_kinematic``).
 
 .. _class_TileMap_property_collision_friction:
 
 - :ref:`float<class_float>` **collision_friction**
 
-+----------+-------------------------------+
-| *Setter* | set_collision_friction(value) |
-+----------+-------------------------------+
-| *Getter* | get_collision_friction()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | 1.0                           |
++-----------+-------------------------------+
+| *Setter*  | set_collision_friction(value) |
++-----------+-------------------------------+
+| *Getter*  | get_collision_friction()      |
++-----------+-------------------------------+
 
-Friction value for static body collisions (see ``collision_use_kinematic``). Default value: 1.
+Friction value for static body collisions (see ``collision_use_kinematic``).
 
 .. _class_TileMap_property_collision_layer:
 
 - :ref:`int<class_int>` **collision_layer**
 
-+----------+----------------------------+
-| *Setter* | set_collision_layer(value) |
-+----------+----------------------------+
-| *Getter* | get_collision_layer()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 1                          |
++-----------+----------------------------+
+| *Setter*  | set_collision_layer(value) |
++-----------+----------------------------+
+| *Getter*  | get_collision_layer()      |
++-----------+----------------------------+
 
 The collision layer(s) for all colliders in the TileMap.
 
@@ -310,11 +332,13 @@ The collision layer(s) for all colliders in the TileMap.
 
 - :ref:`int<class_int>` **collision_mask**
 
-+----------+---------------------------+
-| *Setter* | set_collision_mask(value) |
-+----------+---------------------------+
-| *Getter* | get_collision_mask()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 1                         |
++-----------+---------------------------+
+| *Setter*  | set_collision_mask(value) |
++-----------+---------------------------+
+| *Getter*  | get_collision_mask()      |
++-----------+---------------------------+
 
 The collision mask(s) for all colliders in the TileMap.
 
@@ -322,35 +346,53 @@ The collision mask(s) for all colliders in the TileMap.
 
 - :ref:`bool<class_bool>` **collision_use_kinematic**
 
-+----------+------------------------------------+
-| *Setter* | set_collision_use_kinematic(value) |
-+----------+------------------------------------+
-| *Getter* | get_collision_use_kinematic()      |
-+----------+------------------------------------+
++-----------+------------------------------------+
+| *Default* | false                              |
++-----------+------------------------------------+
+| *Setter*  | set_collision_use_kinematic(value) |
++-----------+------------------------------------+
+| *Getter*  | get_collision_use_kinematic()      |
++-----------+------------------------------------+
 
-If ``true``, TileMap collisions will be handled as a kinematic body. If ``false``, collisions will be handled as static body. Default value: ``false``.
+If ``true``, TileMap collisions will be handled as a kinematic body. If ``false``, collisions will be handled as static body.
+
+.. _class_TileMap_property_collision_use_parent:
+
+- :ref:`bool<class_bool>` **collision_use_parent**
+
++-----------+---------------------------------+
+| *Default* | false                           |
++-----------+---------------------------------+
+| *Setter*  | set_collision_use_parent(value) |
++-----------+---------------------------------+
+| *Getter*  | get_collision_use_parent()      |
++-----------+---------------------------------+
 
 .. _class_TileMap_property_mode:
 
 - :ref:`Mode<enum_TileMap_Mode>` **mode**
 
-+----------+-----------------+
-| *Setter* | set_mode(value) |
-+----------+-----------------+
-| *Getter* | get_mode()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 0               |
++-----------+-----------------+
+| *Setter*  | set_mode(value) |
++-----------+-----------------+
+| *Getter*  | get_mode()      |
++-----------+-----------------+
 
-The TileMap orientation mode. See :ref:`Mode<enum_TileMap_Mode>` for possible values. Default value: ``MODE_SQUARE``.
+The TileMap orientation mode. See :ref:`Mode<enum_TileMap_Mode>` for possible values.
 
 .. _class_TileMap_property_occluder_light_mask:
 
 - :ref:`int<class_int>` **occluder_light_mask**
 
-+----------+--------------------------------+
-| *Setter* | set_occluder_light_mask(value) |
-+----------+--------------------------------+
-| *Getter* | get_occluder_light_mask()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | 1                              |
++-----------+--------------------------------+
+| *Setter*  | set_occluder_light_mask(value) |
++-----------+--------------------------------+
+| *Getter*  | get_occluder_light_mask()      |
++-----------+--------------------------------+
 
 The light mask assigned to all light occluders in the TileMap. The TileSet's light occluders will cast shadows only from Light2D(s) that have the same light mask(s).
 
@@ -358,11 +400,13 @@ The light mask assigned to all light occluders in the TileMap. The TileSet's lig
 
 - :ref:`TileSet<class_TileSet>` **tile_set**
 
-+----------+--------------------+
-| *Setter* | set_tileset(value) |
-+----------+--------------------+
-| *Getter* | get_tileset()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | null               |
++-----------+--------------------+
+| *Setter*  | set_tileset(value) |
++-----------+--------------------+
+| *Getter*  | get_tileset()      |
++-----------+--------------------+
 
 The assigned :ref:`TileSet<class_TileSet>`.
 

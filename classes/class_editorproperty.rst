@@ -19,19 +19,19 @@ Custom control to edit properties for adding into the inspector.
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`checkable<class_EditorProperty_property_checkable>` |
-+-----------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`checked<class_EditorProperty_property_checked>`     |
-+-----------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`draw_red<class_EditorProperty_property_draw_red>`   |
-+-----------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`keying<class_EditorProperty_property_keying>`       |
-+-----------------------------+-----------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`label<class_EditorProperty_property_label>`         |
-+-----------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`read_only<class_EditorProperty_property_read_only>` |
-+-----------------------------+-----------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`checkable<class_EditorProperty_property_checkable>` | false |
++-----------------------------+-----------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`checked<class_EditorProperty_property_checked>`     | false |
++-----------------------------+-----------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`draw_red<class_EditorProperty_property_draw_red>`   | false |
++-----------------------------+-----------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`keying<class_EditorProperty_property_keying>`       | false |
++-----------------------------+-----------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`label<class_EditorProperty_property_label>`         | ""    |
++-----------------------------+-----------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`read_only<class_EditorProperty_property_read_only>` | false |
++-----------------------------+-----------------------------------------------------------+-------+
 
 Methods
 -------
@@ -115,11 +115,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **checkable**
 
-+----------+----------------------+
-| *Setter* | set_checkable(value) |
-+----------+----------------------+
-| *Getter* | is_checkable()       |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_checkable(value) |
++-----------+----------------------+
+| *Getter*  | is_checkable()       |
++-----------+----------------------+
 
 Used by the inspector, set when property is checkable.
 
@@ -127,11 +129,13 @@ Used by the inspector, set when property is checkable.
 
 - :ref:`bool<class_bool>` **checked**
 
-+----------+--------------------+
-| *Setter* | set_checked(value) |
-+----------+--------------------+
-| *Getter* | is_checked()       |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | false              |
++-----------+--------------------+
+| *Setter*  | set_checked(value) |
++-----------+--------------------+
+| *Getter*  | is_checked()       |
++-----------+--------------------+
 
 Used by the inspector, when the property is checked.
 
@@ -139,11 +143,13 @@ Used by the inspector, when the property is checked.
 
 - :ref:`bool<class_bool>` **draw_red**
 
-+----------+---------------------+
-| *Setter* | set_draw_red(value) |
-+----------+---------------------+
-| *Getter* | is_draw_red()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_draw_red(value) |
++-----------+---------------------+
+| *Getter*  | is_draw_red()       |
++-----------+---------------------+
 
 Used by the inspector, when the property must draw with error color.
 
@@ -151,11 +157,13 @@ Used by the inspector, when the property must draw with error color.
 
 - :ref:`bool<class_bool>` **keying**
 
-+----------+-------------------+
-| *Setter* | set_keying(value) |
-+----------+-------------------+
-| *Getter* | is_keying()       |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_keying(value) |
++-----------+-------------------+
+| *Getter*  | is_keying()       |
++-----------+-------------------+
 
 Used by the inspector, when the property can add keys for animation.
 
@@ -163,11 +171,13 @@ Used by the inspector, when the property can add keys for animation.
 
 - :ref:`String<class_String>` **label**
 
-+----------+------------------+
-| *Setter* | set_label(value) |
-+----------+------------------+
-| *Getter* | get_label()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | ""               |
++-----------+------------------+
+| *Setter*  | set_label(value) |
++-----------+------------------+
+| *Getter*  | get_label()      |
++-----------+------------------+
 
 Sets this property to change the label (if you want to show one).
 
@@ -175,11 +185,13 @@ Sets this property to change the label (if you want to show one).
 
 - :ref:`bool<class_bool>` **read_only**
 
-+----------+----------------------+
-| *Setter* | set_read_only(value) |
-+----------+----------------------+
-| *Getter* | is_read_only()       |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_read_only(value) |
++-----------+----------------------+
+| *Getter*  | is_read_only()       |
++-----------+----------------------+
 
 Used by the inspector, when the property is read-only.
 

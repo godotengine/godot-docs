@@ -19,11 +19,11 @@ A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`.
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>`                 | :ref:`lossy_quality<class_ImageTexture_property_lossy_quality>` |
-+-------------------------------------------+-----------------------------------------------------------------+
-| :ref:`Storage<enum_ImageTexture_Storage>` | :ref:`storage<class_ImageTexture_property_storage>`             |
-+-------------------------------------------+-----------------------------------------------------------------+
++-------------------------------------------+-----------------------------------------------------------------+-----+
+| :ref:`float<class_float>`                 | :ref:`lossy_quality<class_ImageTexture_property_lossy_quality>` | 0.7 |
++-------------------------------------------+-----------------------------------------------------------------+-----+
+| :ref:`Storage<enum_ImageTexture_Storage>` | :ref:`storage<class_ImageTexture_property_storage>`             | 0   |
++-------------------------------------------+-----------------------------------------------------------------+-----+
 
 Methods
 -------
@@ -73,11 +73,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **lossy_quality**
 
-+----------+----------------------------------+
-| *Setter* | set_lossy_storage_quality(value) |
-+----------+----------------------------------+
-| *Getter* | get_lossy_storage_quality()      |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | 0.7                              |
++-----------+----------------------------------+
+| *Setter*  | set_lossy_storage_quality(value) |
++-----------+----------------------------------+
+| *Getter*  | get_lossy_storage_quality()      |
++-----------+----------------------------------+
 
 The storage quality for :ref:`STORAGE_COMPRESS_LOSSY<class_ImageTexture_constant_STORAGE_COMPRESS_LOSSY>`.
 
@@ -85,11 +87,13 @@ The storage quality for :ref:`STORAGE_COMPRESS_LOSSY<class_ImageTexture_constant
 
 - :ref:`Storage<enum_ImageTexture_Storage>` **storage**
 
-+----------+--------------------+
-| *Setter* | set_storage(value) |
-+----------+--------------------+
-| *Getter* | get_storage()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 0                  |
++-----------+--------------------+
+| *Setter*  | set_storage(value) |
++-----------+--------------------+
+| *Getter*  | get_storage()      |
++-----------+--------------------+
 
 The storage type (raw, lossy, or compressed).
 

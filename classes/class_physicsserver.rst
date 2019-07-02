@@ -460,7 +460,7 @@ The swing span defines, how much rotation will not get corrected allong the swin
 
 Could be defined as looseness in the :ref:`ConeTwistJoint<class_ConeTwistJoint>`.
 
-If below 0.05, this behavior is locked. Default value: ``PI/4``.
+If below 0.05, this behavior is locked.
 
 - **CONE_TWIST_JOINT_TWIST_SPAN** = **1** --- Twist is the rotation around the twist axis, this value defined how far the joint can twist.
 

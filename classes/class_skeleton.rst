@@ -19,9 +19,9 @@ Skeleton for characters and animated objects.
 Properties
 ----------
 
-+-------------------------+-----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`bones_in_world_transform<class_Skeleton_property_bones_in_world_transform>` |
-+-------------------------+-----------------------------------------------------------------------------------+
++-------------------------+-----------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`bones_in_world_transform<class_Skeleton_property_bones_in_world_transform>` | false |
++-------------------------+-----------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -107,11 +107,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **bones_in_world_transform**
 
-+----------+-----------------------------------------+
-| *Setter* | set_use_bones_in_world_transform(value) |
-+----------+-----------------------------------------+
-| *Getter* | is_using_bones_in_world_transform()     |
-+----------+-----------------------------------------+
++-----------+-----------------------------------------+
+| *Default* | false                                   |
++-----------+-----------------------------------------+
+| *Setter*  | set_use_bones_in_world_transform(value) |
++-----------+-----------------------------------------+
+| *Getter*  | is_using_bones_in_world_transform()     |
++-----------+-----------------------------------------+
 
 Method Descriptions
 -------------------

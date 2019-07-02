@@ -21,15 +21,15 @@ Base class for all 3D joints.
 Properties
 ----------
 
-+---------------------------------+------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`collision/exclude_nodes<class_Joint_property_collision/exclude_nodes>` |
-+---------------------------------+------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_a<class_Joint_property_nodes/node_a>`                       |
-+---------------------------------+------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_b<class_Joint_property_nodes/node_b>`                       |
-+---------------------------------+------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`solver/priority<class_Joint_property_solver/priority>`                 |
-+---------------------------------+------------------------------------------------------------------------------+
++---------------------------------+------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`         | :ref:`collision/exclude_nodes<class_Joint_property_collision/exclude_nodes>` | true         |
++---------------------------------+------------------------------------------------------------------------------+--------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_a<class_Joint_property_nodes/node_a>`                       | NodePath("") |
++---------------------------------+------------------------------------------------------------------------------+--------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_b<class_Joint_property_nodes/node_b>`                       | NodePath("") |
++---------------------------------+------------------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`           | :ref:`solver/priority<class_Joint_property_solver/priority>`                 | 1            |
++---------------------------------+------------------------------------------------------------------------------+--------------+
 
 Description
 -----------
@@ -43,11 +43,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **collision/exclude_nodes**
 
-+----------+-----------------------------------------+
-| *Setter* | set_exclude_nodes_from_collision(value) |
-+----------+-----------------------------------------+
-| *Getter* | get_exclude_nodes_from_collision()      |
-+----------+-----------------------------------------+
++-----------+-----------------------------------------+
+| *Default* | true                                    |
++-----------+-----------------------------------------+
+| *Setter*  | set_exclude_nodes_from_collision(value) |
++-----------+-----------------------------------------+
+| *Getter*  | get_exclude_nodes_from_collision()      |
++-----------+-----------------------------------------+
 
 If ``true``, the two bodies of the nodes are not able to collide with each other.
 
@@ -55,11 +57,13 @@ If ``true``, the two bodies of the nodes are not able to collide with each other
 
 - :ref:`NodePath<class_NodePath>` **nodes/node_a**
 
-+----------+-------------------+
-| *Setter* | set_node_a(value) |
-+----------+-------------------+
-| *Getter* | get_node_a()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | NodePath("")      |
++-----------+-------------------+
+| *Setter*  | set_node_a(value) |
++-----------+-------------------+
+| *Getter*  | get_node_a()      |
++-----------+-------------------+
 
 The node attached to the first side (A) of the joint.
 
@@ -67,11 +71,13 @@ The node attached to the first side (A) of the joint.
 
 - :ref:`NodePath<class_NodePath>` **nodes/node_b**
 
-+----------+-------------------+
-| *Setter* | set_node_b(value) |
-+----------+-------------------+
-| *Getter* | get_node_b()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | NodePath("")      |
++-----------+-------------------+
+| *Setter*  | set_node_b(value) |
++-----------+-------------------+
+| *Getter*  | get_node_b()      |
++-----------+-------------------+
 
 The node attached to the second side (B) of the joint.
 
@@ -79,11 +85,13 @@ The node attached to the second side (B) of the joint.
 
 - :ref:`int<class_int>` **solver/priority**
 
-+----------+----------------------------+
-| *Setter* | set_solver_priority(value) |
-+----------+----------------------------+
-| *Getter* | get_solver_priority()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 1                          |
++-----------+----------------------------+
+| *Setter*  | set_solver_priority(value) |
++-----------+----------------------------+
+| *Getter*  | get_solver_priority()      |
++-----------+----------------------------+
 
 The priority used to define which solver is executed first for multiple joints. The lower the value, the higher the priority.
 

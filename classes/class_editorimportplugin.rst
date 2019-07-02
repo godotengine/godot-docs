@@ -141,7 +141,7 @@ Gets the name of the options preset at this index.
 
 - :ref:`float<class_float>` **get_priority** **(** **)** virtual
 
-Gets the priority of this plugin for the recognized extension. Higher priority plugins will be preferred. Default value is 1.0.
+Gets the priority of this plugin for the recognized extension. Higher priority plugins will be preferred. The default priority is ``1.0``.
 
 .. _class_EditorImportPlugin_method_get_recognized_extensions:
 

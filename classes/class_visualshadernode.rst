@@ -21,11 +21,11 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`default_input_values<class_VisualShaderNode_property_default_input_values>`       |
-+---------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>` |
-+---------------------------+-----------------------------------------------------------------------------------------+
++---------------------------+-----------------------------------------------------------------------------------------+---------------------------+
+| :ref:`Array<class_Array>` | :ref:`default_input_values<class_VisualShaderNode_property_default_input_values>`       | [ 0, Vector3( 0, 0, 0 ) ] |
++---------------------------+-----------------------------------------------------------------------------------------+---------------------------+
+| :ref:`int<class_int>`     | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>` | -1                        |
++---------------------------+-----------------------------------------------------------------------------------------+---------------------------+
 
 Methods
 -------
@@ -50,15 +50,21 @@ Property Descriptions
 
 - :ref:`Array<class_Array>` **default_input_values**
 
++-----------+---------------------------+
+| *Default* | [ 0, Vector3( 0, 0, 0 ) ] |
++-----------+---------------------------+
+
 .. _class_VisualShaderNode_property_output_port_for_preview:
 
 - :ref:`int<class_int>` **output_port_for_preview**
 
-+----------+------------------------------------+
-| *Setter* | set_output_port_for_preview(value) |
-+----------+------------------------------------+
-| *Getter* | get_output_port_for_preview()      |
-+----------+------------------------------------+
++-----------+------------------------------------+
+| *Default* | -1                                 |
++-----------+------------------------------------+
+| *Setter*  | set_output_port_for_preview(value) |
++-----------+------------------------------------+
+| *Getter*  | get_output_port_for_preview()      |
++-----------+------------------------------------+
 
 Method Descriptions
 -------------------

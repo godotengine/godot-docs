@@ -21,13 +21,13 @@ Base input event type for mouse events.
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         |
-+-------------------------------+------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`global_position<class_InputEventMouse_property_global_position>` |
-+-------------------------------+------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventMouse_property_position>`               |
-+-------------------------------+------------------------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`         | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | 0               |
++-------------------------------+------------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`global_position<class_InputEventMouse_property_global_position>` | Vector2( 0, 0 ) |
++-------------------------------+------------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventMouse_property_position>`               | Vector2( 0, 0 ) |
++-------------------------------+------------------------------------------------------------------------+-----------------+
 
 Description
 -----------
@@ -46,11 +46,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **button_mask**
 
-+----------+------------------------+
-| *Setter* | set_button_mask(value) |
-+----------+------------------------+
-| *Getter* | get_button_mask()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0                      |
++-----------+------------------------+
+| *Setter*  | set_button_mask(value) |
++-----------+------------------------+
+| *Getter*  | get_button_mask()      |
++-----------+------------------------+
 
 The mouse button mask identifier, one of or a bitwise combination of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button masks.
 
@@ -58,11 +60,13 @@ The mouse button mask identifier, one of or a bitwise combination of the :ref:`B
 
 - :ref:`Vector2<class_Vector2>` **global_position**
 
-+----------+----------------------------+
-| *Setter* | set_global_position(value) |
-+----------+----------------------------+
-| *Getter* | get_global_position()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | Vector2( 0, 0 )            |
++-----------+----------------------------+
+| *Setter*  | set_global_position(value) |
++-----------+----------------------------+
+| *Getter*  | get_global_position()      |
++-----------+----------------------------+
 
 The global mouse position relative to the current :ref:`Viewport<class_Viewport>` when used in :ref:`Control._gui_input<class_Control_method__gui_input>`, otherwise is at 0,0.
 
@@ -70,11 +74,13 @@ The global mouse position relative to the current :ref:`Viewport<class_Viewport>
 
 - :ref:`Vector2<class_Vector2>` **position**
 
-+----------+---------------------+
-| *Setter* | set_position(value) |
-+----------+---------------------+
-| *Getter* | get_position()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | Vector2( 0, 0 )     |
++-----------+---------------------+
+| *Setter*  | set_position(value) |
++-----------+---------------------+
+| *Getter*  | get_position()      |
++-----------+---------------------+
 
 The local mouse position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` which is under the mouse.
 

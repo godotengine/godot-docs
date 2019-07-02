@@ -19,23 +19,23 @@ Brief Description
 Properties
 ----------
 
-+-----------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`channel<class_InputEventMIDI_property_channel>`                     |
-+-----------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`controller_number<class_InputEventMIDI_property_controller_number>` |
-+-----------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`controller_value<class_InputEventMIDI_property_controller_value>`   |
-+-----------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`instrument<class_InputEventMIDI_property_instrument>`               |
-+-----------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`message<class_InputEventMIDI_property_message>`                     |
-+-----------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`pitch<class_InputEventMIDI_property_pitch>`                         |
-+-----------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`pressure<class_InputEventMIDI_property_pressure>`                   |
-+-----------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`velocity<class_InputEventMIDI_property_velocity>`                   |
-+-----------------------+---------------------------------------------------------------------------+
++-----------------------+---------------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`channel<class_InputEventMIDI_property_channel>`                     | 0 |
++-----------------------+---------------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`controller_number<class_InputEventMIDI_property_controller_number>` | 0 |
++-----------------------+---------------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`controller_value<class_InputEventMIDI_property_controller_value>`   | 0 |
++-----------------------+---------------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`instrument<class_InputEventMIDI_property_instrument>`               | 0 |
++-----------------------+---------------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`message<class_InputEventMIDI_property_message>`                     | 0 |
++-----------------------+---------------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`pitch<class_InputEventMIDI_property_pitch>`                         | 0 |
++-----------------------+---------------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`pressure<class_InputEventMIDI_property_pressure>`                   | 0 |
++-----------------------+---------------------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`velocity<class_InputEventMIDI_property_velocity>`                   | 0 |
++-----------------------+---------------------------------------------------------------------------+---+
 
 Property Descriptions
 ---------------------
@@ -44,79 +44,95 @@ Property Descriptions
 
 - :ref:`int<class_int>` **channel**
 
-+----------+--------------------+
-| *Setter* | set_channel(value) |
-+----------+--------------------+
-| *Getter* | get_channel()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 0                  |
++-----------+--------------------+
+| *Setter*  | set_channel(value) |
++-----------+--------------------+
+| *Getter*  | get_channel()      |
++-----------+--------------------+
 
 .. _class_InputEventMIDI_property_controller_number:
 
 - :ref:`int<class_int>` **controller_number**
 
-+----------+------------------------------+
-| *Setter* | set_controller_number(value) |
-+----------+------------------------------+
-| *Getter* | get_controller_number()      |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | 0                            |
++-----------+------------------------------+
+| *Setter*  | set_controller_number(value) |
++-----------+------------------------------+
+| *Getter*  | get_controller_number()      |
++-----------+------------------------------+
 
 .. _class_InputEventMIDI_property_controller_value:
 
 - :ref:`int<class_int>` **controller_value**
 
-+----------+-----------------------------+
-| *Setter* | set_controller_value(value) |
-+----------+-----------------------------+
-| *Getter* | get_controller_value()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0                           |
++-----------+-----------------------------+
+| *Setter*  | set_controller_value(value) |
++-----------+-----------------------------+
+| *Getter*  | get_controller_value()      |
++-----------+-----------------------------+
 
 .. _class_InputEventMIDI_property_instrument:
 
 - :ref:`int<class_int>` **instrument**
 
-+----------+-----------------------+
-| *Setter* | set_instrument(value) |
-+----------+-----------------------+
-| *Getter* | get_instrument()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 0                     |
++-----------+-----------------------+
+| *Setter*  | set_instrument(value) |
++-----------+-----------------------+
+| *Getter*  | get_instrument()      |
++-----------+-----------------------+
 
 .. _class_InputEventMIDI_property_message:
 
 - :ref:`int<class_int>` **message**
 
-+----------+--------------------+
-| *Setter* | set_message(value) |
-+----------+--------------------+
-| *Getter* | get_message()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 0                  |
++-----------+--------------------+
+| *Setter*  | set_message(value) |
++-----------+--------------------+
+| *Getter*  | get_message()      |
++-----------+--------------------+
 
 .. _class_InputEventMIDI_property_pitch:
 
 - :ref:`int<class_int>` **pitch**
 
-+----------+------------------+
-| *Setter* | set_pitch(value) |
-+----------+------------------+
-| *Getter* | get_pitch()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0                |
++-----------+------------------+
+| *Setter*  | set_pitch(value) |
++-----------+------------------+
+| *Getter*  | get_pitch()      |
++-----------+------------------+
 
 .. _class_InputEventMIDI_property_pressure:
 
 - :ref:`int<class_int>` **pressure**
 
-+----------+---------------------+
-| *Setter* | set_pressure(value) |
-+----------+---------------------+
-| *Getter* | get_pressure()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0                   |
++-----------+---------------------+
+| *Setter*  | set_pressure(value) |
++-----------+---------------------+
+| *Getter*  | get_pressure()      |
++-----------+---------------------+
 
 .. _class_InputEventMIDI_property_velocity:
 
 - :ref:`int<class_int>` **velocity**
 
-+----------+---------------------+
-| *Setter* | set_velocity(value) |
-+----------+---------------------+
-| *Getter* | get_velocity()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0                   |
++-----------+---------------------+
+| *Setter*  | set_velocity(value) |
++-----------+---------------------+
+| *Getter*  | get_velocity()      |
++-----------+---------------------+
 

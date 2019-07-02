@@ -19,47 +19,47 @@ Multiline text editing control.
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`breakpoint_gutter<class_TextEdit_property_breakpoint_gutter>`                       |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`caret_blink<class_TextEdit_property_caret_blink>`                                   |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`   | :ref:`caret_blink_speed<class_TextEdit_property_caret_blink_speed>`                       |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`caret_block_mode<class_TextEdit_property_caret_block_mode>`                         |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`caret_moving_by_right_click<class_TextEdit_property_caret_moving_by_right_click>`   |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`context_menu_enabled<class_TextEdit_property_context_menu_enabled>`                 |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`draw_spaces<class_TextEdit_property_draw_spaces>`                                   |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`draw_tabs<class_TextEdit_property_draw_tabs>`                                       |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`fold_gutter<class_TextEdit_property_fold_gutter>`                                   |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`hiding_enabled<class_TextEdit_property_hiding_enabled>`                             |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`highlight_all_occurrences<class_TextEdit_property_highlight_all_occurrences>`       |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`highlight_current_line<class_TextEdit_property_highlight_current_line>`             |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>` |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`readonly<class_TextEdit_property_readonly>`                                         |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`show_line_numbers<class_TextEdit_property_show_line_numbers>`                       |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`smooth_scrolling<class_TextEdit_property_smooth_scrolling>`                         |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`syntax_highlighting<class_TextEdit_property_syntax_highlighting>`                   |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`text<class_TextEdit_property_text>`                                                 |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`   | :ref:`v_scroll_speed<class_TextEdit_property_v_scroll_speed>`                             |
-+-----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`wrap_enabled<class_TextEdit_property_wrap_enabled>`                                 |
-+-----------------------------+-------------------------------------------------------------------------------------------+
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`breakpoint_gutter<class_TextEdit_property_breakpoint_gutter>`                       | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`caret_blink<class_TextEdit_property_caret_blink>`                                   | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`caret_blink_speed<class_TextEdit_property_caret_blink_speed>`                       | 0.65  |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`caret_block_mode<class_TextEdit_property_caret_block_mode>`                         | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`caret_moving_by_right_click<class_TextEdit_property_caret_moving_by_right_click>`   | true  |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`context_menu_enabled<class_TextEdit_property_context_menu_enabled>`                 | true  |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`draw_spaces<class_TextEdit_property_draw_spaces>`                                   | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`draw_tabs<class_TextEdit_property_draw_tabs>`                                       | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`fold_gutter<class_TextEdit_property_fold_gutter>`                                   | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`hiding_enabled<class_TextEdit_property_hiding_enabled>`                             | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`highlight_all_occurrences<class_TextEdit_property_highlight_all_occurrences>`       | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`highlight_current_line<class_TextEdit_property_highlight_current_line>`             | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>` | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`readonly<class_TextEdit_property_readonly>`                                         | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`show_line_numbers<class_TextEdit_property_show_line_numbers>`                       | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`smooth_scrolling<class_TextEdit_property_smooth_scrolling>`                         | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`syntax_highlighting<class_TextEdit_property_syntax_highlighting>`                   | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`text<class_TextEdit_property_text>`                                                 | ""    |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`v_scroll_speed<class_TextEdit_property_v_scroll_speed>`                             | 80.0  |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`wrap_enabled<class_TextEdit_property_wrap_enabled>`                                 | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -155,85 +155,85 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | background_color            |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | bookmark_color              |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | brace_mismatch_color        |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | breakpoint_color            |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | caret_background_color      |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | caret_color                 |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | code_folding_color          |
-+---------------------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>` | completion                  |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | completion_background_color |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | completion_existing_color   |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | completion_font_color       |
-+---------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | completion_lines            |
-+---------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | completion_max_width        |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | completion_scroll_color     |
-+---------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | completion_scroll_width     |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | completion_selected_color   |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | current_line_color          |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | executing_line_color        |
-+---------------------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>` | focus                       |
-+---------------------------------+-----------------------------+
-| :ref:`Texture<class_Texture>`   | fold                        |
-+---------------------------------+-----------------------------+
-| :ref:`Texture<class_Texture>`   | folded                      |
-+---------------------------------+-----------------------------+
-| :ref:`Font<class_Font>`         | font                        |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | font_color                  |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | font_color_readonly         |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | font_color_selected         |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | function_color              |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | line_number_color           |
-+---------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | line_spacing                |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | mark_color                  |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | member_variable_color       |
-+---------------------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>` | normal                      |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | number_color                |
-+---------------------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>` | read_only                   |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | safe_line_number_color      |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | selection_color             |
-+---------------------------------+-----------------------------+
-| :ref:`Texture<class_Texture>`   | space                       |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | symbol_color                |
-+---------------------------------+-----------------------------+
-| :ref:`Texture<class_Texture>`   | tab                         |
-+---------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | word_highlighted_color      |
-+---------------------------------+-----------------------------+
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | background_color            | Color( 0, 0, 0, 0 )                          |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | bookmark_color              | Color( 0.08, 0.49, 0.98, 1 )                 |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | brace_mismatch_color        | Color( 1, 0.2, 0.2, 1 )                      |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | breakpoint_color            | Color( 0.8, 0.8, 0.4, 0.2 )                  |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | caret_background_color      | Color( 0, 0, 0, 1 )                          |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | caret_color                 | Color( 0.878431, 0.878431, 0.878431, 1 )     |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | code_folding_color          | Color( 0.8, 0.8, 0.8, 0.8 )                  |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | completion                  |                                              |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | completion_background_color | Color( 0.172549, 0.164706, 0.196078, 1 )     |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | completion_existing_color   | Color( 0.87451, 0.87451, 0.87451, 0.129412 ) |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | completion_font_color       | Color( 0.666667, 0.666667, 0.666667, 1 )     |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`int<class_int>`           | completion_lines            | 7                                            |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`int<class_int>`           | completion_max_width        | 50                                           |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | completion_scroll_color     | Color( 1, 1, 1, 1 )                          |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`int<class_int>`           | completion_scroll_width     | 3                                            |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | completion_selected_color   | Color( 0.262745, 0.258824, 0.266667, 1 )     |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | current_line_color          | Color( 0.25, 0.25, 0.26, 0.8 )               |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | executing_line_color        | Color( 0.2, 0.8, 0.2, 0.4 )                  |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus                       |                                              |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Texture<class_Texture>`   | fold                        |                                              |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Texture<class_Texture>`   | folded                      |                                              |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Font<class_Font>`         | font                        |                                              |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color                  | Color( 0.878431, 0.878431, 0.878431, 1 )     |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color_readonly         | Color( 0.878431, 0.878431, 0.878431, 0.5 )   |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color_selected         | Color( 0, 0, 0, 1 )                          |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | function_color              | Color( 0.4, 0.635294, 0.807843, 1 )          |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | line_number_color           | Color( 0.666667, 0.666667, 0.666667, 0.4 )   |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`int<class_int>`           | line_spacing                | 4                                            |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | mark_color                  | Color( 1, 0.4, 0.4, 0.4 )                    |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | member_variable_color       | Color( 0.901961, 0.305882, 0.34902, 1 )      |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | normal                      |                                              |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | number_color                | Color( 0.921569, 0.584314, 0.196078, 1 )     |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | read_only                   |                                              |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | safe_line_number_color      | Color( 0.666667, 0.784314, 0.666667, 0.6 )   |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | selection_color             | Color( 0.490196, 0.490196, 0.490196, 1 )     |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Texture<class_Texture>`   | space                       |                                              |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | symbol_color                | Color( 0.941176, 0.941176, 0.941176, 1 )     |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Texture<class_Texture>`   | tab                         |                                              |
++---------------------------------+-----------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>`       | word_highlighted_color      | Color( 0.8, 0.9, 0.9, 0.15 )                 |
++---------------------------------+-----------------------------+----------------------------------------------+
 
 Signals
 -------
@@ -337,11 +337,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **breakpoint_gutter**
 
-+----------+--------------------------------------+
-| *Setter* | set_breakpoint_gutter_enabled(value) |
-+----------+--------------------------------------+
-| *Getter* | is_breakpoint_gutter_enabled()       |
-+----------+--------------------------------------+
++-----------+--------------------------------------+
+| *Default* | false                                |
++-----------+--------------------------------------+
+| *Setter*  | set_breakpoint_gutter_enabled(value) |
++-----------+--------------------------------------+
+| *Getter*  | is_breakpoint_gutter_enabled()       |
++-----------+--------------------------------------+
 
 If ``true``, the breakpoint gutter is visible.
 
@@ -349,11 +351,13 @@ If ``true``, the breakpoint gutter is visible.
 
 - :ref:`bool<class_bool>` **caret_blink**
 
-+----------+---------------------------------+
-| *Setter* | cursor_set_blink_enabled(value) |
-+----------+---------------------------------+
-| *Getter* | cursor_get_blink_enabled()      |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | false                           |
++-----------+---------------------------------+
+| *Setter*  | cursor_set_blink_enabled(value) |
++-----------+---------------------------------+
+| *Getter*  | cursor_get_blink_enabled()      |
++-----------+---------------------------------+
 
 If ``true``, the caret (visual cursor) blinks.
 
@@ -361,11 +365,13 @@ If ``true``, the caret (visual cursor) blinks.
 
 - :ref:`float<class_float>` **caret_blink_speed**
 
-+----------+-------------------------------+
-| *Setter* | cursor_set_blink_speed(value) |
-+----------+-------------------------------+
-| *Getter* | cursor_get_blink_speed()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | 0.65                          |
++-----------+-------------------------------+
+| *Setter*  | cursor_set_blink_speed(value) |
++-----------+-------------------------------+
+| *Getter*  | cursor_get_blink_speed()      |
++-----------+-------------------------------+
 
 Duration (in seconds) of a caret's blinking cycle.
 
@@ -373,11 +379,13 @@ Duration (in seconds) of a caret's blinking cycle.
 
 - :ref:`bool<class_bool>` **caret_block_mode**
 
-+----------+------------------------------+
-| *Setter* | cursor_set_block_mode(value) |
-+----------+------------------------------+
-| *Getter* | cursor_is_block_mode()       |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | false                        |
++-----------+------------------------------+
+| *Setter*  | cursor_set_block_mode(value) |
++-----------+------------------------------+
+| *Getter*  | cursor_is_block_mode()       |
++-----------+------------------------------+
 
 If ``true``, the caret displays as a rectangle.
 
@@ -387,11 +395,13 @@ If ``false``, the caret displays as a bar.
 
 - :ref:`bool<class_bool>` **caret_moving_by_right_click**
 
-+----------+------------------------------------+
-| *Setter* | set_right_click_moves_caret(value) |
-+----------+------------------------------------+
-| *Getter* | is_right_click_moving_caret()      |
-+----------+------------------------------------+
++-----------+------------------------------------+
+| *Default* | true                               |
++-----------+------------------------------------+
+| *Setter*  | set_right_click_moves_caret(value) |
++-----------+------------------------------------+
+| *Getter*  | is_right_click_moving_caret()      |
++-----------+------------------------------------+
 
 If ``true``, a right-click moves the cursor at the mouse position before displaying the context menu.
 
@@ -401,11 +411,13 @@ If ``false``, the context menu disregards mouse location.
 
 - :ref:`bool<class_bool>` **context_menu_enabled**
 
-+----------+---------------------------------+
-| *Setter* | set_context_menu_enabled(value) |
-+----------+---------------------------------+
-| *Getter* | is_context_menu_enabled()       |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | true                            |
++-----------+---------------------------------+
+| *Setter*  | set_context_menu_enabled(value) |
++-----------+---------------------------------+
+| *Getter*  | is_context_menu_enabled()       |
++-----------+---------------------------------+
 
 If ``true``, a right-click displays the context menu.
 
@@ -413,11 +425,13 @@ If ``true``, a right-click displays the context menu.
 
 - :ref:`bool<class_bool>` **draw_spaces**
 
-+----------+------------------------+
-| *Setter* | set_draw_spaces(value) |
-+----------+------------------------+
-| *Getter* | is_drawing_spaces()    |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | false                  |
++-----------+------------------------+
+| *Setter*  | set_draw_spaces(value) |
++-----------+------------------------+
+| *Getter*  | is_drawing_spaces()    |
++-----------+------------------------+
 
 If ``true``, the "space" character will have a visible representation.
 
@@ -425,11 +439,13 @@ If ``true``, the "space" character will have a visible representation.
 
 - :ref:`bool<class_bool>` **draw_tabs**
 
-+----------+----------------------+
-| *Setter* | set_draw_tabs(value) |
-+----------+----------------------+
-| *Getter* | is_drawing_tabs()    |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_draw_tabs(value) |
++-----------+----------------------+
+| *Getter*  | is_drawing_tabs()    |
++-----------+----------------------+
 
 If ``true``, the "tab" character will have a visible representation.
 
@@ -437,11 +453,13 @@ If ``true``, the "tab" character will have a visible representation.
 
 - :ref:`bool<class_bool>` **fold_gutter**
 
-+----------+-----------------------------+
-| *Setter* | set_draw_fold_gutter(value) |
-+----------+-----------------------------+
-| *Getter* | is_drawing_fold_gutter()    |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | false                       |
++-----------+-----------------------------+
+| *Setter*  | set_draw_fold_gutter(value) |
++-----------+-----------------------------+
+| *Getter*  | is_drawing_fold_gutter()    |
++-----------+-----------------------------+
 
 If ``true``, the fold gutter is visible. This enables folding groups of indented lines.
 
@@ -449,11 +467,13 @@ If ``true``, the fold gutter is visible. This enables folding groups of indented
 
 - :ref:`bool<class_bool>` **hiding_enabled**
 
-+----------+---------------------------+
-| *Setter* | set_hiding_enabled(value) |
-+----------+---------------------------+
-| *Getter* | is_hiding_enabled()       |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | false                     |
++-----------+---------------------------+
+| *Setter*  | set_hiding_enabled(value) |
++-----------+---------------------------+
+| *Getter*  | is_hiding_enabled()       |
++-----------+---------------------------+
 
 If ``true``, all lines that have been set to hidden by :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`, will not be visible.
 
@@ -461,11 +481,13 @@ If ``true``, all lines that have been set to hidden by :ref:`set_line_as_hidden<
 
 - :ref:`bool<class_bool>` **highlight_all_occurrences**
 
-+----------+----------------------------------------+
-| *Setter* | set_highlight_all_occurrences(value)   |
-+----------+----------------------------------------+
-| *Getter* | is_highlight_all_occurrences_enabled() |
-+----------+----------------------------------------+
++-----------+----------------------------------------+
+| *Default* | false                                  |
++-----------+----------------------------------------+
+| *Setter*  | set_highlight_all_occurrences(value)   |
++-----------+----------------------------------------+
+| *Getter*  | is_highlight_all_occurrences_enabled() |
++-----------+----------------------------------------+
 
 If ``true``, all occurrences of the selected text will be highlighted.
 
@@ -473,11 +495,13 @@ If ``true``, all occurrences of the selected text will be highlighted.
 
 - :ref:`bool<class_bool>` **highlight_current_line**
 
-+----------+-------------------------------------+
-| *Setter* | set_highlight_current_line(value)   |
-+----------+-------------------------------------+
-| *Getter* | is_highlight_current_line_enabled() |
-+----------+-------------------------------------+
++-----------+-------------------------------------+
+| *Default* | false                               |
++-----------+-------------------------------------+
+| *Setter*  | set_highlight_current_line(value)   |
++-----------+-------------------------------------+
+| *Getter*  | is_highlight_current_line_enabled() |
++-----------+-------------------------------------+
 
 If ``true``, the line containing the cursor is highlighted.
 
@@ -485,21 +509,25 @@ If ``true``, the line containing the cursor is highlighted.
 
 - :ref:`bool<class_bool>` **override_selected_font_color**
 
-+----------+-----------------------------------------+
-| *Setter* | set_override_selected_font_color(value) |
-+----------+-----------------------------------------+
-| *Getter* | is_overriding_selected_font_color()     |
-+----------+-----------------------------------------+
++-----------+-----------------------------------------+
+| *Default* | false                                   |
++-----------+-----------------------------------------+
+| *Setter*  | set_override_selected_font_color(value) |
++-----------+-----------------------------------------+
+| *Getter*  | is_overriding_selected_font_color()     |
++-----------+-----------------------------------------+
 
 .. _class_TextEdit_property_readonly:
 
 - :ref:`bool<class_bool>` **readonly**
 
-+----------+---------------------+
-| *Setter* | set_readonly(value) |
-+----------+---------------------+
-| *Getter* | is_readonly()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_readonly(value) |
++-----------+---------------------+
+| *Getter*  | is_readonly()       |
++-----------+---------------------+
 
 If ``true``, read-only mode is enabled. Existing text cannot be modified and new text cannot be added.
 
@@ -507,11 +535,13 @@ If ``true``, read-only mode is enabled. Existing text cannot be modified and new
 
 - :ref:`bool<class_bool>` **show_line_numbers**
 
-+----------+--------------------------------+
-| *Setter* | set_show_line_numbers(value)   |
-+----------+--------------------------------+
-| *Getter* | is_show_line_numbers_enabled() |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | false                          |
++-----------+--------------------------------+
+| *Setter*  | set_show_line_numbers(value)   |
++-----------+--------------------------------+
+| *Getter*  | is_show_line_numbers_enabled() |
++-----------+--------------------------------+
 
 If ``true``, line numbers are displayed to the left of the text.
 
@@ -519,11 +549,13 @@ If ``true``, line numbers are displayed to the left of the text.
 
 - :ref:`bool<class_bool>` **smooth_scrolling**
 
-+----------+---------------------------------+
-| *Setter* | set_smooth_scroll_enable(value) |
-+----------+---------------------------------+
-| *Getter* | is_smooth_scroll_enabled()      |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | false                           |
++-----------+---------------------------------+
+| *Setter*  | set_smooth_scroll_enable(value) |
++-----------+---------------------------------+
+| *Getter*  | is_smooth_scroll_enabled()      |
++-----------+---------------------------------+
 
 If ``true``, sets the ``step`` of the scrollbars to ``0.25`` which results in smoother scrolling.
 
@@ -531,11 +563,13 @@ If ``true``, sets the ``step`` of the scrollbars to ``0.25`` which results in sm
 
 - :ref:`bool<class_bool>` **syntax_highlighting**
 
-+----------+------------------------------+
-| *Setter* | set_syntax_coloring(value)   |
-+----------+------------------------------+
-| *Getter* | is_syntax_coloring_enabled() |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | false                        |
++-----------+------------------------------+
+| *Setter*  | set_syntax_coloring(value)   |
++-----------+------------------------------+
+| *Getter*  | is_syntax_coloring_enabled() |
++-----------+------------------------------+
 
 If ``true``, any custom color properties that have been set for this ``TextEdit`` will be visible.
 
@@ -543,11 +577,13 @@ If ``true``, any custom color properties that have been set for this ``TextEdit`
 
 - :ref:`String<class_String>` **text**
 
-+----------+-----------------+
-| *Setter* | set_text(value) |
-+----------+-----------------+
-| *Getter* | get_text()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | ""              |
++-----------+-----------------+
+| *Setter*  | set_text(value) |
++-----------+-----------------+
+| *Getter*  | get_text()      |
++-----------+-----------------+
 
 String value of the ``TextEdit``.
 
@@ -555,11 +591,13 @@ String value of the ``TextEdit``.
 
 - :ref:`float<class_float>` **v_scroll_speed**
 
-+----------+---------------------------+
-| *Setter* | set_v_scroll_speed(value) |
-+----------+---------------------------+
-| *Getter* | get_v_scroll_speed()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 80.0                      |
++-----------+---------------------------+
+| *Setter*  | set_v_scroll_speed(value) |
++-----------+---------------------------+
+| *Getter*  | get_v_scroll_speed()      |
++-----------+---------------------------+
 
 Vertical scroll sensitivity.
 
@@ -567,11 +605,13 @@ Vertical scroll sensitivity.
 
 - :ref:`bool<class_bool>` **wrap_enabled**
 
-+----------+-------------------------+
-| *Setter* | set_wrap_enabled(value) |
-+----------+-------------------------+
-| *Getter* | is_wrap_enabled()       |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | false                   |
++-----------+-------------------------+
+| *Setter*  | set_wrap_enabled(value) |
++-----------+-------------------------+
+| *Getter*  | is_wrap_enabled()       |
++-----------+-------------------------+
 
 If ``true``, enables text wrapping when it goes beyond the edge of what is visible.
 
@@ -636,7 +676,7 @@ Returns the line the editing cursor is at.
 
 Moves the cursor at the specified ``column`` index.
 
-If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs. Default value is ``true``.
+If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs.
 
 .. _class_TextEdit_method_cursor_set_line:
 
@@ -644,9 +684,9 @@ If ``adjust_viewport`` is set to true, the viewport will center at the cursor po
 
 Moves the cursor at the specified ``line`` index.
 
-If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs. Default value is ``true``.
+If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs.
 
-If ``can_be_hidden`` is set to true, the specified ``line`` can be hidden using :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`. Default value is ``true``.
+If ``can_be_hidden`` is set to true, the specified ``line`` can be hidden using :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`.
 
 .. _class_TextEdit_method_cut:
 

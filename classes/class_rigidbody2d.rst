@@ -19,47 +19,47 @@ A body that is controlled by the 2D physics engine.
 Properties
 ----------
 
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`angular_damp<class_RigidBody2D_property_angular_damp>`                           |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`angular_velocity<class_RigidBody2D_property_angular_velocity>`                   |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                 | :ref:`applied_force<class_RigidBody2D_property_applied_force>`                         |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`applied_torque<class_RigidBody2D_property_applied_torque>`                       |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`bounce<class_RigidBody2D_property_bounce>`                                       |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`can_sleep<class_RigidBody2D_property_can_sleep>`                                 |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>`                     |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>`                 |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`CCDMode<enum_RigidBody2D_CCDMode>`      | :ref:`continuous_cd<class_RigidBody2D_property_continuous_cd>`                         |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`                 |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`friction<class_RigidBody2D_property_friction>`                                   |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`gravity_scale<class_RigidBody2D_property_gravity_scale>`                         |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`inertia<class_RigidBody2D_property_inertia>`                                     |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`linear_damp<class_RigidBody2D_property_linear_damp>`                             |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                 | :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>`                     |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`mass<class_RigidBody2D_property_mass>`                                           |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Mode<enum_RigidBody2D_Mode>`            | :ref:`mode<class_RigidBody2D_property_mode>`                                           |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_RigidBody2D_property_physics_material_override>` |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`sleeping<class_RigidBody2D_property_sleeping>`                                   |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`weight<class_RigidBody2D_property_weight>`                                       |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                     | :ref:`angular_damp<class_RigidBody2D_property_angular_damp>`                           | -1.0            |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                     | :ref:`angular_velocity<class_RigidBody2D_property_angular_velocity>`                   | 0.0             |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>`                 | :ref:`applied_force<class_RigidBody2D_property_applied_force>`                         | Vector2( 0, 0 ) |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                     | :ref:`applied_torque<class_RigidBody2D_property_applied_torque>`                       | 0.0             |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                     | :ref:`bounce<class_RigidBody2D_property_bounce>`                                       |                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                       | :ref:`can_sleep<class_RigidBody2D_property_can_sleep>`                                 | true            |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                       | :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>`                     | false           |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                         | :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>`                 | 0               |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`CCDMode<enum_RigidBody2D_CCDMode>`      | :ref:`continuous_cd<class_RigidBody2D_property_continuous_cd>`                         | 0               |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                       | :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`                 | false           |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                     | :ref:`friction<class_RigidBody2D_property_friction>`                                   |                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                     | :ref:`gravity_scale<class_RigidBody2D_property_gravity_scale>`                         | 1.0             |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                     | :ref:`inertia<class_RigidBody2D_property_inertia>`                                     |                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                     | :ref:`linear_damp<class_RigidBody2D_property_linear_damp>`                             | -1.0            |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>`                 | :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>`                     | Vector2( 0, 0 ) |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                     | :ref:`mass<class_RigidBody2D_property_mass>`                                           | 1.0             |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`Mode<enum_RigidBody2D_Mode>`            | :ref:`mode<class_RigidBody2D_property_mode>`                                           | 0               |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_RigidBody2D_property_physics_material_override>` | null            |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                       | :ref:`sleeping<class_RigidBody2D_property_sleeping>`                                   | false           |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`                     | :ref:`weight<class_RigidBody2D_property_weight>`                                       | 9.8             |
++-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -178,23 +178,27 @@ Property Descriptions
 
 - :ref:`float<class_float>` **angular_damp**
 
-+----------+-------------------------+
-| *Setter* | set_angular_damp(value) |
-+----------+-------------------------+
-| *Getter* | get_angular_damp()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | -1.0                    |
++-----------+-------------------------+
+| *Setter*  | set_angular_damp(value) |
++-----------+-------------------------+
+| *Getter*  | get_angular_damp()      |
++-----------+-------------------------+
 
-Damps the body's :ref:`angular_velocity<class_RigidBody2D_property_angular_velocity>`. If ``-1``, the body will use the **Default Angular Damp** defined in **Project > Project Settings > Physics > 2d**. Default value: ``-1``.
+Damps the body's :ref:`angular_velocity<class_RigidBody2D_property_angular_velocity>`. If ``-1``, the body will use the **Default Angular Damp** defined in **Project > Project Settings > Physics > 2d**.
 
 .. _class_RigidBody2D_property_angular_velocity:
 
 - :ref:`float<class_float>` **angular_velocity**
 
-+----------+-----------------------------+
-| *Setter* | set_angular_velocity(value) |
-+----------+-----------------------------+
-| *Getter* | get_angular_velocity()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_angular_velocity(value) |
++-----------+-----------------------------+
+| *Getter*  | get_angular_velocity()      |
++-----------+-----------------------------+
 
 The body's rotational velocity.
 
@@ -202,11 +206,13 @@ The body's rotational velocity.
 
 - :ref:`Vector2<class_Vector2>` **applied_force**
 
-+----------+--------------------------+
-| *Setter* | set_applied_force(value) |
-+----------+--------------------------+
-| *Getter* | get_applied_force()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | Vector2( 0, 0 )          |
++-----------+--------------------------+
+| *Setter*  | set_applied_force(value) |
++-----------+--------------------------+
+| *Getter*  | get_applied_force()      |
++-----------+--------------------------+
 
 The body's total applied force.
 
@@ -214,11 +220,13 @@ The body's total applied force.
 
 - :ref:`float<class_float>` **applied_torque**
 
-+----------+---------------------------+
-| *Setter* | set_applied_torque(value) |
-+----------+---------------------------+
-| *Getter* | get_applied_torque()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 0.0                       |
++-----------+---------------------------+
+| *Setter*  | set_applied_torque(value) |
++-----------+---------------------------+
+| *Getter*  | get_applied_torque()      |
++-----------+---------------------------+
 
 The body's total applied torque.
 
@@ -232,55 +240,65 @@ The body's total applied torque.
 | *Getter* | get_bounce()      |
 +----------+-------------------+
 
-The body's bounciness. Default value: ``0``.
+The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
+
+Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_bounce>` instead via :ref:`physics_material_override<class_RigidBody2D_property_physics_material_override>`.
 
 .. _class_RigidBody2D_property_can_sleep:
 
 - :ref:`bool<class_bool>` **can_sleep**
 
-+----------+----------------------+
-| *Setter* | set_can_sleep(value) |
-+----------+----------------------+
-| *Getter* | is_able_to_sleep()   |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | true                 |
++-----------+----------------------+
+| *Setter*  | set_can_sleep(value) |
++-----------+----------------------+
+| *Getter*  | is_able_to_sleep()   |
++-----------+----------------------+
 
-If ``true``, the body will not calculate forces and will act as a static body if there is no movement. The body will wake up when other forces are applied via collisions or by using :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` or :ref:`add_force<class_RigidBody2D_method_add_force>`. Default value: ``true``.
+If ``true``, the body will not calculate forces and will act as a static body if there is no movement. The body will wake up when other forces are applied via collisions or by using :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` or :ref:`add_force<class_RigidBody2D_method_add_force>`.
 
 .. _class_RigidBody2D_property_contact_monitor:
 
 - :ref:`bool<class_bool>` **contact_monitor**
 
-+----------+------------------------------+
-| *Setter* | set_contact_monitor(value)   |
-+----------+------------------------------+
-| *Getter* | is_contact_monitor_enabled() |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | false                        |
++-----------+------------------------------+
+| *Setter*  | set_contact_monitor(value)   |
++-----------+------------------------------+
+| *Getter*  | is_contact_monitor_enabled() |
++-----------+------------------------------+
 
-If ``true``, the body will emit signals when it collides with another RigidBody2D. See also :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>`. Default value: ``false``.
+If ``true``, the body will emit signals when it collides with another RigidBody2D. See also :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>`.
 
 .. _class_RigidBody2D_property_contacts_reported:
 
 - :ref:`int<class_int>` **contacts_reported**
 
-+----------+----------------------------------+
-| *Setter* | set_max_contacts_reported(value) |
-+----------+----------------------------------+
-| *Getter* | get_max_contacts_reported()      |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | 0                                |
++-----------+----------------------------------+
+| *Setter*  | set_max_contacts_reported(value) |
++-----------+----------------------------------+
+| *Getter*  | get_max_contacts_reported()      |
++-----------+----------------------------------+
 
-The maximum number of contacts to report. Default value: ``0``.
+The maximum number of contacts to report.
 
 .. _class_RigidBody2D_property_continuous_cd:
 
 - :ref:`CCDMode<enum_RigidBody2D_CCDMode>` **continuous_cd**
 
-+----------+------------------------------------------------+
-| *Setter* | set_continuous_collision_detection_mode(value) |
-+----------+------------------------------------------------+
-| *Getter* | get_continuous_collision_detection_mode()      |
-+----------+------------------------------------------------+
++-----------+------------------------------------------------+
+| *Default* | 0                                              |
++-----------+------------------------------------------------+
+| *Setter*  | set_continuous_collision_detection_mode(value) |
++-----------+------------------------------------------------+
+| *Getter*  | get_continuous_collision_detection_mode()      |
++-----------+------------------------------------------------+
 
-Continuous collision detection mode. Default value: :ref:`CCD_MODE_DISABLED<class_RigidBody2D_constant_CCD_MODE_DISABLED>`.
+Continuous collision detection mode.
 
 Continuous collision detection tries to predict where a moving body will collide instead of moving it and correcting its movement after collision. Continuous collision detection is slower, but more precise and misses fewer collisions with small, fast-moving objects. Raycasting and shapecasting methods are available. See :ref:`CCDMode<enum_RigidBody2D_CCDMode>` for details.
 
@@ -288,11 +306,13 @@ Continuous collision detection tries to predict where a moving body will collide
 
 - :ref:`bool<class_bool>` **custom_integrator**
 
-+----------+----------------------------------+
-| *Setter* | set_use_custom_integrator(value) |
-+----------+----------------------------------+
-| *Getter* | is_using_custom_integrator()     |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | false                            |
++-----------+----------------------------------+
+| *Setter*  | set_use_custom_integrator(value) |
++-----------+----------------------------------+
+| *Getter*  | is_using_custom_integrator()     |
++-----------+----------------------------------+
 
 If ``true``, internal force integration is disabled for this body. Aside from collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` function.
 
@@ -306,19 +326,23 @@ If ``true``, internal force integration is disabled for this body. Aside from co
 | *Getter* | get_friction()      |
 +----------+---------------------+
 
-The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction). Default value: ``1``.
+The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction).
+
+Deprecated, use :ref:`PhysicsMaterial.friction<class_PhysicsMaterial_property_friction>` instead via :ref:`physics_material_override<class_RigidBody2D_property_physics_material_override>`.
 
 .. _class_RigidBody2D_property_gravity_scale:
 
 - :ref:`float<class_float>` **gravity_scale**
 
-+----------+--------------------------+
-| *Setter* | set_gravity_scale(value) |
-+----------+--------------------------+
-| *Getter* | get_gravity_scale()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 1.0                      |
++-----------+--------------------------+
+| *Setter*  | set_gravity_scale(value) |
++-----------+--------------------------+
+| *Getter*  | get_gravity_scale()      |
++-----------+--------------------------+
 
-Multiplies the gravity applied to the body. The body's gravity is calculated from the **Default Gravity** value in **Project > Project Settings > Physics > 2d** and/or any additional gravity vector applied by :ref:`Area2D<class_Area2D>`\ s. Default value: ``1``.
+Multiplies the gravity applied to the body. The body's gravity is calculated from the **Default Gravity** value in **Project > Project Settings > Physics > 2d** and/or any additional gravity vector applied by :ref:`Area2D<class_Area2D>`\ s.
 
 .. _class_RigidBody2D_property_inertia:
 
@@ -336,23 +360,27 @@ The body's moment of inertia. This is like mass, but for rotation: it determines
 
 - :ref:`float<class_float>` **linear_damp**
 
-+----------+------------------------+
-| *Setter* | set_linear_damp(value) |
-+----------+------------------------+
-| *Getter* | get_linear_damp()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | -1.0                   |
++-----------+------------------------+
+| *Setter*  | set_linear_damp(value) |
++-----------+------------------------+
+| *Getter*  | get_linear_damp()      |
++-----------+------------------------+
 
-Damps the body's :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>`. If ``-1``, the body will use the **Default Linear Damp** in **Project > Project Settings > Physics > 2d**. Default value: ``-1``.
+Damps the body's :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>`. If ``-1``, the body will use the **Default Linear Damp** in **Project > Project Settings > Physics > 2d**.
 
 .. _class_RigidBody2D_property_linear_velocity:
 
 - :ref:`Vector2<class_Vector2>` **linear_velocity**
 
-+----------+----------------------------+
-| *Setter* | set_linear_velocity(value) |
-+----------+----------------------------+
-| *Getter* | get_linear_velocity()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | Vector2( 0, 0 )            |
++-----------+----------------------------+
+| *Setter*  | set_linear_velocity(value) |
++-----------+----------------------------+
+| *Getter*  | get_linear_velocity()      |
++-----------+----------------------------+
 
 The body's linear velocity.
 
@@ -360,45 +388,53 @@ The body's linear velocity.
 
 - :ref:`float<class_float>` **mass**
 
-+----------+-----------------+
-| *Setter* | set_mass(value) |
-+----------+-----------------+
-| *Getter* | get_mass()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 1.0             |
++-----------+-----------------+
+| *Setter*  | set_mass(value) |
++-----------+-----------------+
+| *Getter*  | get_mass()      |
++-----------+-----------------+
 
-The body's mass. Default value: ``1``.
+The body's mass.
 
 .. _class_RigidBody2D_property_mode:
 
 - :ref:`Mode<enum_RigidBody2D_Mode>` **mode**
 
-+----------+-----------------+
-| *Setter* | set_mode(value) |
-+----------+-----------------+
-| *Getter* | get_mode()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 0               |
++-----------+-----------------+
+| *Setter*  | set_mode(value) |
++-----------+-----------------+
+| *Getter*  | get_mode()      |
++-----------+-----------------+
 
-The body's mode. See :ref:`Mode<enum_RigidBody2D_Mode>` for possible values. Default value: :ref:`MODE_RIGID<class_RigidBody2D_constant_MODE_RIGID>`.
+The body's mode. See :ref:`Mode<enum_RigidBody2D_Mode>` for possible values.
 
 .. _class_RigidBody2D_property_physics_material_override:
 
 - :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
 
-+----------+--------------------------------------+
-| *Setter* | set_physics_material_override(value) |
-+----------+--------------------------------------+
-| *Getter* | get_physics_material_override()      |
-+----------+--------------------------------------+
++-----------+--------------------------------------+
+| *Default* | null                                 |
++-----------+--------------------------------------+
+| *Setter*  | set_physics_material_override(value) |
++-----------+--------------------------------------+
+| *Getter*  | get_physics_material_override()      |
++-----------+--------------------------------------+
 
 .. _class_RigidBody2D_property_sleeping:
 
 - :ref:`bool<class_bool>` **sleeping**
 
-+----------+---------------------+
-| *Setter* | set_sleeping(value) |
-+----------+---------------------+
-| *Getter* | is_sleeping()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_sleeping(value) |
++-----------+---------------------+
+| *Getter*  | is_sleeping()       |
++-----------+---------------------+
 
 If ``true``, the body is sleeping and will not calculate forces until woken up by a collision or by using :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` or :ref:`add_force<class_RigidBody2D_method_add_force>`.
 
@@ -406,11 +442,13 @@ If ``true``, the body is sleeping and will not calculate forces until woken up b
 
 - :ref:`float<class_float>` **weight**
 
-+----------+-------------------+
-| *Setter* | set_weight(value) |
-+----------+-------------------+
-| *Getter* | get_weight()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 9.8               |
++-----------+-------------------+
+| *Setter*  | set_weight(value) |
++-----------+-------------------+
+| *Getter*  | get_weight()      |
++-----------+-------------------+
 
 The body's weight based on its mass and the **Default Gravity** value in **Project > Project Settings > Physics > 2d**.
 

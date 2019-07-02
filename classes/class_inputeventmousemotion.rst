@@ -19,11 +19,11 @@ Input event type for mouse motion events.
 Properties
 ----------
 
-+-------------------------------+----------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_property_relative>` |
-+-------------------------------+----------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventMouseMotion_property_speed>`       |
-+-------------------------------+----------------------------------------------------------------+
++-------------------------------+----------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_property_relative>` | Vector2( 0, 0 ) |
++-------------------------------+----------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventMouseMotion_property_speed>`       | Vector2( 0, 0 ) |
++-------------------------------+----------------------------------------------------------------+-----------------+
 
 Description
 -----------
@@ -42,11 +42,13 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **relative**
 
-+----------+---------------------+
-| *Setter* | set_relative(value) |
-+----------+---------------------+
-| *Getter* | get_relative()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | Vector2( 0, 0 )     |
++-----------+---------------------+
+| *Setter*  | set_relative(value) |
++-----------+---------------------+
+| *Getter*  | get_relative()      |
++-----------+---------------------+
 
 The mouse position relative to the previous position (position at the last frame).
 
@@ -54,11 +56,13 @@ The mouse position relative to the previous position (position at the last frame
 
 - :ref:`Vector2<class_Vector2>` **speed**
 
-+----------+------------------+
-| *Setter* | set_speed(value) |
-+----------+------------------+
-| *Getter* | get_speed()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | Vector2( 0, 0 )  |
++-----------+------------------+
+| *Setter*  | set_speed(value) |
++-----------+------------------+
+| *Getter*  | get_speed()      |
++-----------+------------------+
 
 The mouse speed in pixels per second.
 

@@ -19,13 +19,13 @@ Defines a 2D polygon for LightOccluder2D.
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`closed<class_OccluderPolygon2D_property_closed>`       |
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` |
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`  | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     |
-+--------------------------------------------------+--------------------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------+----------------------+
+| :ref:`bool<class_bool>`                          | :ref:`closed<class_OccluderPolygon2D_property_closed>`       | true                 |
++--------------------------------------------------+--------------------------------------------------------------+----------------------+
+| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` | 0                    |
++--------------------------------------------------+--------------------------------------------------------------+----------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`  | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     | PoolVector2Array(  ) |
++--------------------------------------------------+--------------------------------------------------------------+----------------------+
 
 Enumerations
 ------------
@@ -58,35 +58,41 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **closed**
 
-+----------+-------------------+
-| *Setter* | set_closed(value) |
-+----------+-------------------+
-| *Getter* | is_closed()       |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | true              |
++-----------+-------------------+
+| *Setter*  | set_closed(value) |
++-----------+-------------------+
+| *Getter*  | is_closed()       |
++-----------+-------------------+
 
-If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value: ``true``.
+If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction.
 
 .. _class_OccluderPolygon2D_property_cull_mode:
 
 - :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode**
 
-+----------+----------------------+
-| *Setter* | set_cull_mode(value) |
-+----------+----------------------+
-| *Getter* | get_cull_mode()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0                    |
++-----------+----------------------+
+| *Setter*  | set_cull_mode(value) |
++-----------+----------------------+
+| *Getter*  | get_cull_mode()      |
++-----------+----------------------+
 
-The culling mode to use. Default value: :ref:`CULL_DISABLED<class_OccluderPolygon2D_constant_CULL_DISABLED>`.
+The culling mode to use.
 
 .. _class_OccluderPolygon2D_property_polygon:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 
-+----------+--------------------+
-| *Setter* | set_polygon(value) |
-+----------+--------------------+
-| *Getter* | get_polygon()      |
-+----------+--------------------+
++-----------+----------------------+
+| *Default* | PoolVector2Array(  ) |
++-----------+----------------------+
+| *Setter*  | set_polygon(value)   |
++-----------+----------------------+
+| *Getter*  | get_polygon()        |
++-----------+----------------------+
 
 A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
 

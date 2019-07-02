@@ -982,7 +982,7 @@ enum **KeyList**:
 
 - **KEY_UNDERSCORE** = **95** --- \_ key.
 
-- **KEY_QUOTELEFT** = **96** --- Left Quote key.
+- **KEY_QUOTELEFT** = **96** --- ` key.
 
 - **KEY_BRACELEFT** = **123** --- { key.
 
@@ -1000,9 +1000,9 @@ enum **KeyList**:
 
 - **KEY_STERLING** = **163** --- £ key.
 
-- **KEY_CURRENCY** = **164**
+- **KEY_CURRENCY** = **164** --- ¤ key.
 
-- **KEY_YEN** = **165** --- Yen key.
+- **KEY_YEN** = **165** --- ¥ key.
 
 - **KEY_BROKENBAR** = **166** --- ¦ key.
 
@@ -1012,17 +1012,17 @@ enum **KeyList**:
 
 - **KEY_COPYRIGHT** = **169** --- © key.
 
-- **KEY_ORDFEMININE** = **170**
+- **KEY_ORDFEMININE** = **170** --- ª key.
 
 - **KEY_GUILLEMOTLEFT** = **171** --- « key.
 
-- **KEY_NOTSIGN** = **172** --- » key.
+- **KEY_NOTSIGN** = **172** --- ¬ key.
 
-- **KEY_HYPHEN** = **173** --- ‐ key.
+- **KEY_HYPHEN** = **173** --- Soft hyphen key.
 
 - **KEY_REGISTERED** = **174** --- ® key.
 
-- **KEY_MACRON** = **175** --- Macron key.
+- **KEY_MACRON** = **175** --- ¯ key.
 
 - **KEY_DEGREE** = **176** --- ° key.
 
@@ -1036,15 +1036,15 @@ enum **KeyList**:
 
 - **KEY_MU** = **181** --- µ key.
 
-- **KEY_PARAGRAPH** = **182** --- § key.
+- **KEY_PARAGRAPH** = **182** --- ¶ key.
 
 - **KEY_PERIODCENTERED** = **183** --- · key.
 
-- **KEY_CEDILLA** = **184** --- ¬ key.
+- **KEY_CEDILLA** = **184** --- ¸ key.
 
 - **KEY_ONESUPERIOR** = **185** --- ¹ key.
 
-- **KEY_MASCULINE** = **186** --- ♂ key.
+- **KEY_MASCULINE** = **186** --- º key.
 
 - **KEY_GUILLEMOTRIGHT** = **187** --- » key.
 
@@ -1056,67 +1056,67 @@ enum **KeyList**:
 
 - **KEY_QUESTIONDOWN** = **191** --- ¿ key.
 
-- **KEY_AGRAVE** = **192** --- à key.
+- **KEY_AGRAVE** = **192** --- À key.
 
-- **KEY_AACUTE** = **193** --- á key.
+- **KEY_AACUTE** = **193** --- Á key.
 
-- **KEY_ACIRCUMFLEX** = **194** --- â key.
+- **KEY_ACIRCUMFLEX** = **194** --- Â key.
 
-- **KEY_ATILDE** = **195** --- ã key.
+- **KEY_ATILDE** = **195** --- Ã key.
 
-- **KEY_ADIAERESIS** = **196** --- ä key.
+- **KEY_ADIAERESIS** = **196** --- Ä key.
 
-- **KEY_ARING** = **197** --- å key.
+- **KEY_ARING** = **197** --- Å key.
 
-- **KEY_AE** = **198** --- æ key.
+- **KEY_AE** = **198** --- Æ key.
 
-- **KEY_CCEDILLA** = **199** --- ç key.
+- **KEY_CCEDILLA** = **199** --- Ç key.
 
-- **KEY_EGRAVE** = **200** --- è key.
+- **KEY_EGRAVE** = **200** --- È key.
 
-- **KEY_EACUTE** = **201** --- é key.
+- **KEY_EACUTE** = **201** --- É key.
 
-- **KEY_ECIRCUMFLEX** = **202** --- ê key.
+- **KEY_ECIRCUMFLEX** = **202** --- Ê key.
 
-- **KEY_EDIAERESIS** = **203** --- ë key.
+- **KEY_EDIAERESIS** = **203** --- Ë key.
 
-- **KEY_IGRAVE** = **204** --- ì key.
+- **KEY_IGRAVE** = **204** --- Ì key.
 
-- **KEY_IACUTE** = **205** --- í key.
+- **KEY_IACUTE** = **205** --- Í key.
 
-- **KEY_ICIRCUMFLEX** = **206** --- î key.
+- **KEY_ICIRCUMFLEX** = **206** --- Î key.
 
-- **KEY_IDIAERESIS** = **207** --- ë key.
+- **KEY_IDIAERESIS** = **207** --- Ï key.
 
-- **KEY_ETH** = **208** --- ð key.
+- **KEY_ETH** = **208** --- Ð key.
 
-- **KEY_NTILDE** = **209** --- ñ key.
+- **KEY_NTILDE** = **209** --- Ñ key.
 
-- **KEY_OGRAVE** = **210** --- ò key.
+- **KEY_OGRAVE** = **210** --- Ò key.
 
-- **KEY_OACUTE** = **211** --- ó key.
+- **KEY_OACUTE** = **211** --- Ó key.
 
-- **KEY_OCIRCUMFLEX** = **212** --- ô key.
+- **KEY_OCIRCUMFLEX** = **212** --- Ô key.
 
-- **KEY_OTILDE** = **213** --- õ key.
+- **KEY_OTILDE** = **213** --- Õ key.
 
-- **KEY_ODIAERESIS** = **214** --- ö key.
+- **KEY_ODIAERESIS** = **214** --- Ö key.
 
 - **KEY_MULTIPLY** = **215** --- × key.
 
-- **KEY_OOBLIQUE** = **216** --- ø key.
+- **KEY_OOBLIQUE** = **216** --- Ø key.
 
-- **KEY_UGRAVE** = **217** --- ù key.
+- **KEY_UGRAVE** = **217** --- Ù key.
 
-- **KEY_UACUTE** = **218** --- ú key.
+- **KEY_UACUTE** = **218** --- Ú key.
 
-- **KEY_UCIRCUMFLEX** = **219** --- û key.
+- **KEY_UCIRCUMFLEX** = **219** --- Û key.
 
-- **KEY_UDIAERESIS** = **220** --- ü key.
+- **KEY_UDIAERESIS** = **220** --- Ü key.
 
-- **KEY_YACUTE** = **221** --- ý key.
+- **KEY_YACUTE** = **221** --- Ý key.
 
-- **KEY_THORN** = **222** --- þ key.
+- **KEY_THORN** = **222** --- Þ key.
 
 - **KEY_SSHARP** = **223** --- ß key.
 
@@ -1416,13 +1416,13 @@ enum **JoystickList**:
 
 - **JOY_XBOX_Y** = **3** --- Xbox controller Y button.
 
-- **JOY_DS_A** = **1** --- DualShock controller A button.
+- **JOY_DS_A** = **1** --- Nintendo controller A button.
 
-- **JOY_DS_B** = **0** --- DualShock controller B button.
+- **JOY_DS_B** = **0** --- Nintendo controller B button.
 
-- **JOY_DS_X** = **3** --- DualShock controller X button.
+- **JOY_DS_X** = **3** --- Nintendo controller X button.
 
-- **JOY_DS_Y** = **2** --- DualShock controller Y button.
+- **JOY_DS_Y** = **2** --- Nintendo controller Y button.
 
 - **JOY_VR_GRIP** = **2** --- Grip (side) buttons on a VR controller.
 
@@ -1470,17 +1470,17 @@ enum **JoystickList**:
 
 - **JOY_AXIS_3** = **3** --- Gamepad right stick vertical axis.
 
-- **JOY_AXIS_4** = **4**
+- **JOY_AXIS_4** = **4** --- Generic gamepad axis 4.
 
-- **JOY_AXIS_5** = **5**
+- **JOY_AXIS_5** = **5** --- Generic gamepad axis 5.
 
 - **JOY_AXIS_6** = **6** --- Gamepad left trigger analog axis.
 
 - **JOY_AXIS_7** = **7** --- Gamepad right trigger analog axis.
 
-- **JOY_AXIS_8** = **8**
+- **JOY_AXIS_8** = **8** --- Generic gamepad axis 8.
 
-- **JOY_AXIS_9** = **9**
+- **JOY_AXIS_9** = **9** --- Generic gamepad axis 9.
 
 - **JOY_AXIS_MAX** = **10** --- Represents the maximum number of joystick axes supported.
 
@@ -1522,19 +1522,19 @@ enum **JoystickList**:
 
 enum **MidiMessageList**:
 
-- **MIDI_MESSAGE_NOTE_OFF** = **8**
+- **MIDI_MESSAGE_NOTE_OFF** = **8** --- MIDI note OFF message.
 
-- **MIDI_MESSAGE_NOTE_ON** = **9**
+- **MIDI_MESSAGE_NOTE_ON** = **9** --- MIDI note ON message.
 
-- **MIDI_MESSAGE_AFTERTOUCH** = **10**
+- **MIDI_MESSAGE_AFTERTOUCH** = **10** --- MIDI aftertouch message.
 
-- **MIDI_MESSAGE_CONTROL_CHANGE** = **11**
+- **MIDI_MESSAGE_CONTROL_CHANGE** = **11** --- MIDI control change message.
 
-- **MIDI_MESSAGE_PROGRAM_CHANGE** = **12**
+- **MIDI_MESSAGE_PROGRAM_CHANGE** = **12** --- MIDI program change message.
 
-- **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13**
+- **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13** --- MIDI channel pressure message.
 
-- **MIDI_MESSAGE_PITCH_BEND** = **14**
+- **MIDI_MESSAGE_PITCH_BEND** = **14** --- MIDI pitch bend message.
 
 .. _enum_@GlobalScope_Error:
 
@@ -1797,47 +1797,47 @@ enum **PropertyHint**:
 
 - **PROPERTY_HINT_NONE** = **0** --- No hint for the edited property.
 
-- **PROPERTY_HINT_RANGE** = **1** --- Hints that the string is a range, defined as ``"min,max"`` or ``"min,max,step"``. This is valid for integers and floats.
+- **PROPERTY_HINT_RANGE** = **1** --- Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"allow_greater"`` and/or ``"allow_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,allow_greater,allow_lesser"``.
 
-- **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that the string is an exponential range, defined as ``"min,max"`` or ``"min,max,step"``. This is valid for integers and floats.
+- **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that an integer or float property should be within an exponential range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"allow_greater"`` and/or ``"allow_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"0.01,100,0.01,allow_greater"``.
 
-- **PROPERTY_HINT_ENUM** = **3** --- Property hint for an enumerated value, like ``"Hello,Something,Else"``. This is valid for integer, float and string properties.
+- **PROPERTY_HINT_ENUM** = **3** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
 
-- **PROPERTY_HINT_EXP_EASING** = **4**
+- **PROPERTY_HINT_EXP_EASING** = **4** --- Hints that a float property should be edited via an exponential easing function. The hint string can include ``"attenuation"`` to flip the curve horizontally and/or ``"inout"`` to also include in/out easing.
 
-- **PROPERTY_HINT_LENGTH** = **5**
+- **PROPERTY_HINT_LENGTH** = **5** --- Deprecated hint, unused.
 
-- **PROPERTY_HINT_KEY_ACCEL** = **7**
+- **PROPERTY_HINT_KEY_ACCEL** = **7** --- Deprecated hint, unused.
 
-- **PROPERTY_HINT_FLAGS** = **8** --- Property hint for a bitmask description. For example, for bits 0, 1, 2, 3 and 5, the hint could be something like ``"Bit0,Bit1,Bit2,Bit3,,Bit5"``. This is only valid for integer properties.
+- **PROPERTY_HINT_FLAGS** = **8** --- Hints that an integer property is a bitmask with named bit flags. For example, to allow toggling bits 0, 1, 2 and 4, the hint could be something like ``"Bit0,Bit1,Bit2,,Bit4"``.
 
-- **PROPERTY_HINT_LAYERS_2D_RENDER** = **9**
+- **PROPERTY_HINT_LAYERS_2D_RENDER** = **9** --- Hints that an integer property is a bitmask using the optionally named 2D render layers.
 
-- **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **10**
+- **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **10** --- Hints that an integer property is a bitmask using the optionally named 2D physics layers.
 
-- **PROPERTY_HINT_LAYERS_3D_RENDER** = **11**
+- **PROPERTY_HINT_LAYERS_3D_RENDER** = **11** --- Hints that an integer property is a bitmask using the optionally named 3D render layers.
 
-- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **12**
+- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **12** --- Hints that an integer property is a bitmask using the optionally named 3D physics layers.
 
-- **PROPERTY_HINT_FILE** = **13** --- String property is a file, will pop up a file dialog when edited. Hint string can be a set of wildcards like ``"*.doc"``.
+- **PROPERTY_HINT_FILE** = **13** --- Hints that a string property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
 
-- **PROPERTY_HINT_DIR** = **14** --- String property is a directory, will pop up a file dialog when edited.
+- **PROPERTY_HINT_DIR** = **14** --- Hints that a string property is a path to a directory. Editing it will show a file dialog for picking the path.
 
-- **PROPERTY_HINT_GLOBAL_FILE** = **15**
+- **PROPERTY_HINT_GLOBAL_FILE** = **15** --- Hints that a string property is an absolute path to a file outside the project folder. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
 
-- **PROPERTY_HINT_GLOBAL_DIR** = **16**
+- **PROPERTY_HINT_GLOBAL_DIR** = **16** --- Hints that a string property is an absolute path to a directory outside the project folder. Editing it will show a file dialog for picking the path.
 
-- **PROPERTY_HINT_RESOURCE_TYPE** = **17** --- String property is a resource, will open the resource popup menu when edited.
+- **PROPERTY_HINT_RESOURCE_TYPE** = **17** --- Hints that a property is an instance of a :ref:`Resource<class_Resource>`-derived type, optionally specified via the hint string (e.g. ``"Texture"``). Editing it will show a popup menu of valid resource types to instantiate.
 
-- **PROPERTY_HINT_MULTILINE_TEXT** = **18**
+- **PROPERTY_HINT_MULTILINE_TEXT** = **18** --- Hints that a string property is text with line breaks. Editing it will show a text input field where line breaks can be typed.
 
-- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **19**
+- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **19** --- Hints that a string property should have a placeholder text visible on its input field, whenever the property is empty. The hint string is the placeholder text to use.
 
-- **PROPERTY_HINT_COLOR_NO_ALPHA** = **20**
+- **PROPERTY_HINT_COLOR_NO_ALPHA** = **20** --- Hints that a color property should be edited without changing its alpha component, i.e. only R, G and B channels are edited.
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **21** --- Hints that the image is compressed using lossy compression.
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **21** --- Hints that an image is compressed using lossy compression.
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **22** --- Hints that the image is compressed using lossless compression.
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **22** --- Hints that an image is compressed using lossless compression.
 
 .. _enum_@GlobalScope_PropertyUsageFlags:
 
@@ -1873,35 +1873,35 @@ enum **PropertyHint**:
 
 enum **PropertyUsageFlags**:
 
-- **PROPERTY_USAGE_STORAGE** = **1** --- Property will be used as storage (default).
+- **PROPERTY_USAGE_STORAGE** = **1** --- The property is serialized and saved in the scene file (default).
 
-- **PROPERTY_USAGE_EDITOR** = **2** --- Property will be visible in editor (default).
+- **PROPERTY_USAGE_EDITOR** = **2** --- The property is shown in the editor inspector (default).
 
-- **PROPERTY_USAGE_NETWORK** = **4**
+- **PROPERTY_USAGE_NETWORK** = **4** --- Deprecated usage flag, unused.
 
-- **PROPERTY_USAGE_EDITOR_HELPER** = **8**
+- **PROPERTY_USAGE_EDITOR_HELPER** = **8** --- Deprecated usage flag, unused.
 
-- **PROPERTY_USAGE_CHECKABLE** = **16**
+- **PROPERTY_USAGE_CHECKABLE** = **16** --- The property can be checked in the editor inspector.
 
-- **PROPERTY_USAGE_CHECKED** = **32**
+- **PROPERTY_USAGE_CHECKED** = **32** --- The property is checked in the editor inspector.
 
-- **PROPERTY_USAGE_INTERNATIONALIZED** = **64**
+- **PROPERTY_USAGE_INTERNATIONALIZED** = **64** --- The property is a translatable string.
 
-- **PROPERTY_USAGE_GROUP** = **128**
+- **PROPERTY_USAGE_GROUP** = **128** --- Used to group properties together in the editor.
 
-- **PROPERTY_USAGE_CATEGORY** = **256**
+- **PROPERTY_USAGE_CATEGORY** = **256** --- Used to categorize properties together in the editor.
 
-- **PROPERTY_USAGE_NO_INSTANCE_STATE** = **2048**
+- **PROPERTY_USAGE_NO_INSTANCE_STATE** = **2048** --- The property does not save its state in :ref:`PackedScene<class_PackedScene>`.
 
-- **PROPERTY_USAGE_RESTART_IF_CHANGED** = **4096**
+- **PROPERTY_USAGE_RESTART_IF_CHANGED** = **4096** --- Editing the property prompts the user for restarting the editor.
 
-- **PROPERTY_USAGE_SCRIPT_VARIABLE** = **8192**
+- **PROPERTY_USAGE_SCRIPT_VARIABLE** = **8192** --- The property is a script variable which should be serialized and saved in the scene file.
 
-- **PROPERTY_USAGE_DEFAULT** = **7** --- Default usage (storage and editor).
+- **PROPERTY_USAGE_DEFAULT** = **7** --- Default usage (storage, editor and network).
 
-- **PROPERTY_USAGE_DEFAULT_INTL** = **71**
+- **PROPERTY_USAGE_DEFAULT_INTL** = **71** --- Default usage for translatable strings (storage, editor, network and internationalized).
 
-- **PROPERTY_USAGE_NOEDITOR** = **5**
+- **PROPERTY_USAGE_NOEDITOR** = **5** --- Default usage but without showing the property in the editor (storage, network).
 
 .. _enum_@GlobalScope_MethodFlags:
 
@@ -1927,15 +1927,15 @@ enum **MethodFlags**:
 
 - **METHOD_FLAG_EDITOR** = **2** --- Flag for an editor method.
 
-- **METHOD_FLAG_NOSCRIPT** = **4**
+- **METHOD_FLAG_NOSCRIPT** = **4** --- Deprecated method flag, unused.
 
 - **METHOD_FLAG_CONST** = **8** --- Flag for a constant method.
 
-- **METHOD_FLAG_REVERSE** = **16**
+- **METHOD_FLAG_REVERSE** = **16** --- Deprecated method flag, unused.
 
 - **METHOD_FLAG_VIRTUAL** = **32** --- Flag for a virtual method.
 
-- **METHOD_FLAG_FROM_SCRIPT** = **64** --- Flag for a method from a script.
+- **METHOD_FLAG_FROM_SCRIPT** = **64** --- Deprecated method flag, unused.
 
 - **METHOD_FLAGS_DEFAULT** = **1** --- Default method flags.
 
@@ -1999,13 +1999,13 @@ enum **MethodFlags**:
 
 enum **Variant.Type**:
 
-- **TYPE_NIL** = **0** --- Variable is of type nil (only applied for ``null``).
+- **TYPE_NIL** = **0** --- Variable is of type :ref:`Nil<class_Nil>` (only applied for ``null``).
 
 - **TYPE_BOOL** = **1** --- Variable is of type :ref:`bool<class_bool>`.
 
 - **TYPE_INT** = **2** --- Variable is of type :ref:`int<class_int>`.
 
-- **TYPE_REAL** = **3** --- Variable is of type :ref:`float<class_float>`/real.
+- **TYPE_REAL** = **3** --- Variable is of type :ref:`float<class_float>` (real).
 
 - **TYPE_STRING** = **4** --- Variable is of type :ref:`String<class_String>`.
 
@@ -2111,55 +2111,55 @@ enum **Variant.Type**:
 
 enum **Variant.Operator**:
 
-- **OP_EQUAL** = **0**
+- **OP_EQUAL** = **0** --- Equality operator (``==``).
 
-- **OP_NOT_EQUAL** = **1**
+- **OP_NOT_EQUAL** = **1** --- Inequality operator (``!=``).
 
-- **OP_LESS** = **2**
+- **OP_LESS** = **2** --- Less than operator (``<``).
 
-- **OP_LESS_EQUAL** = **3**
+- **OP_LESS_EQUAL** = **3** --- Less than or equal operator (``<=``).
 
-- **OP_GREATER** = **4**
+- **OP_GREATER** = **4** --- Greater than operator (``>``).
 
-- **OP_GREATER_EQUAL** = **5**
+- **OP_GREATER_EQUAL** = **5** --- Greater than or equal operator (``>=``).
 
-- **OP_ADD** = **6**
+- **OP_ADD** = **6** --- Addition operator (``+``).
 
-- **OP_SUBTRACT** = **7**
+- **OP_SUBTRACT** = **7** --- Subtraction operator (``-``).
 
-- **OP_MULTIPLY** = **8**
+- **OP_MULTIPLY** = **8** --- Multiplication operator (``*``).
 
-- **OP_DIVIDE** = **9**
+- **OP_DIVIDE** = **9** --- Division operator (``/``).
 
-- **OP_NEGATE** = **10**
+- **OP_NEGATE** = **10** --- Unary negation operator (``-``).
 
-- **OP_POSITIVE** = **11**
+- **OP_POSITIVE** = **11** --- Unary plus operator (``+``).
 
-- **OP_MODULE** = **12**
+- **OP_MODULE** = **12** --- Remainder/modulo operator (``%``).
 
-- **OP_STRING_CONCAT** = **13**
+- **OP_STRING_CONCAT** = **13** --- String concatenation operator (``+``).
 
-- **OP_SHIFT_LEFT** = **14**
+- **OP_SHIFT_LEFT** = **14** --- Left shift operator (``<<``).
 
-- **OP_SHIFT_RIGHT** = **15**
+- **OP_SHIFT_RIGHT** = **15** --- Right shift operator (``>>``).
 
-- **OP_BIT_AND** = **16**
+- **OP_BIT_AND** = **16** --- Bitwise AND operator (``&``).
 
-- **OP_BIT_OR** = **17**
+- **OP_BIT_OR** = **17** --- Bitwise OR operator (``|``).
 
-- **OP_BIT_XOR** = **18**
+- **OP_BIT_XOR** = **18** --- Bitwise XOR operator (``^``).
 
-- **OP_BIT_NEGATE** = **19**
+- **OP_BIT_NEGATE** = **19** --- Bitwise NOT operator (``~``).
 
-- **OP_AND** = **20**
+- **OP_AND** = **20** --- Logical AND operator (``and`` or ``&&``).
 
-- **OP_OR** = **21**
+- **OP_OR** = **21** --- Logical OR operator (``or`` or ``||``).
 
-- **OP_XOR** = **22**
+- **OP_XOR** = **22** --- Logical XOR operator (not implemented in GDScript).
 
-- **OP_NOT** = **23**
+- **OP_NOT** = **23** --- Logical NOT operator (``not`` or ``!``).
 
-- **OP_IN** = **24**
+- **OP_IN** = **24** --- Logical IN operator (``in``).
 
 - **OP_MAX** = **25** --- Represents the size of the :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` enum.
 

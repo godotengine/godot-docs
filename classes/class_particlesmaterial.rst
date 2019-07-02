@@ -19,113 +19,115 @@ Particle properties for :ref:`Particles<class_Particles>` and :ref:`Particles2D<
 Properties
 ----------
 
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`angle<class_ParticlesMaterial_property_angle>`                                     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`angle_curve<class_ParticlesMaterial_property_angle_curve>`                         |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`angle_random<class_ParticlesMaterial_property_angle_random>`                       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`angular_velocity<class_ParticlesMaterial_property_angular_velocity>`               |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`angular_velocity_curve<class_ParticlesMaterial_property_angular_velocity_curve>`   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`angular_velocity_random<class_ParticlesMaterial_property_angular_velocity_random>` |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`anim_offset<class_ParticlesMaterial_property_anim_offset>`                         |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`anim_offset_curve<class_ParticlesMaterial_property_anim_offset_curve>`             |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`anim_offset_random<class_ParticlesMaterial_property_anim_offset_random>`           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`anim_speed<class_ParticlesMaterial_property_anim_speed>`                           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`anim_speed_curve<class_ParticlesMaterial_property_anim_speed_curve>`               |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`anim_speed_random<class_ParticlesMaterial_property_anim_speed_random>`             |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`                                  | :ref:`color<class_ParticlesMaterial_property_color>`                                     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`color_ramp<class_ParticlesMaterial_property_color_ramp>`                           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`damping<class_ParticlesMaterial_property_damping>`                                 |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`damping_curve<class_ParticlesMaterial_property_damping_curve>`                     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`damping_random<class_ParticlesMaterial_property_damping_random>`                   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                              | :ref:`emission_box_extents<class_ParticlesMaterial_property_emission_box_extents>`       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`emission_color_texture<class_ParticlesMaterial_property_emission_color_texture>`   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`emission_normal_texture<class_ParticlesMaterial_property_emission_normal_texture>` |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`emission_point_count<class_ParticlesMaterial_property_emission_point_count>`       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`EmissionShape<enum_ParticlesMaterial_EmissionShape>` | :ref:`emission_shape<class_ParticlesMaterial_property_emission_shape>`                   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`emission_sphere_radius<class_ParticlesMaterial_property_emission_sphere_radius>`   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`flag_align_y<class_ParticlesMaterial_property_flag_align_y>`                       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>`                   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>`                     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`flatness<class_ParticlesMaterial_property_flatness>`                               |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                              | :ref:`gravity<class_ParticlesMaterial_property_gravity>`                                 |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`hue_variation<class_ParticlesMaterial_property_hue_variation>`                     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`hue_variation_curve<class_ParticlesMaterial_property_hue_variation_curve>`         |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`hue_variation_random<class_ParticlesMaterial_property_hue_variation_random>`       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`initial_velocity<class_ParticlesMaterial_property_initial_velocity>`               |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`initial_velocity_random<class_ParticlesMaterial_property_initial_velocity_random>` |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`linear_accel<class_ParticlesMaterial_property_linear_accel>`                       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`linear_accel_curve<class_ParticlesMaterial_property_linear_accel_curve>`           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`linear_accel_random<class_ParticlesMaterial_property_linear_accel_random>`         |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`orbit_velocity<class_ParticlesMaterial_property_orbit_velocity>`                   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`orbit_velocity_curve<class_ParticlesMaterial_property_orbit_velocity_curve>`       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`orbit_velocity_random<class_ParticlesMaterial_property_orbit_velocity_random>`     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`radial_accel<class_ParticlesMaterial_property_radial_accel>`                       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`radial_accel_curve<class_ParticlesMaterial_property_radial_accel_curve>`           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`radial_accel_random<class_ParticlesMaterial_property_radial_accel_random>`         |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`scale<class_ParticlesMaterial_property_scale>`                                     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`scale_curve<class_ParticlesMaterial_property_scale_curve>`                         |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`scale_random<class_ParticlesMaterial_property_scale_random>`                       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`spread<class_ParticlesMaterial_property_spread>`                                   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`tangential_accel<class_ParticlesMaterial_property_tangential_accel>`               |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`tangential_accel_curve<class_ParticlesMaterial_property_tangential_accel_curve>`   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`tangential_accel_random<class_ParticlesMaterial_property_tangential_accel_random>` |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`GradientTexture<class_GradientTexture>`              | :ref:`trail_color_modifier<class_ParticlesMaterial_property_trail_color_modifier>`       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`trail_divisor<class_ParticlesMaterial_property_trail_divisor>`                     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`CurveTexture<class_CurveTexture>`                    | :ref:`trail_size_modifier<class_ParticlesMaterial_property_trail_size_modifier>`         |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`angle<class_ParticlesMaterial_property_angle>`                                     | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`angle_curve<class_ParticlesMaterial_property_angle_curve>`                         | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`angle_random<class_ParticlesMaterial_property_angle_random>`                       | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`angular_velocity<class_ParticlesMaterial_property_angular_velocity>`               | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`angular_velocity_curve<class_ParticlesMaterial_property_angular_velocity_curve>`   | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`angular_velocity_random<class_ParticlesMaterial_property_angular_velocity_random>` | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`anim_offset<class_ParticlesMaterial_property_anim_offset>`                         | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`anim_offset_curve<class_ParticlesMaterial_property_anim_offset_curve>`             | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`anim_offset_random<class_ParticlesMaterial_property_anim_offset_random>`           | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`anim_speed<class_ParticlesMaterial_property_anim_speed>`                           | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`anim_speed_curve<class_ParticlesMaterial_property_anim_speed_curve>`               | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`anim_speed_random<class_ParticlesMaterial_property_anim_speed_random>`             | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Color<class_Color>`                                  | :ref:`color<class_ParticlesMaterial_property_color>`                                     | Color( 1, 1, 1, 1 )   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`color_ramp<class_ParticlesMaterial_property_color_ramp>`                           | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`damping<class_ParticlesMaterial_property_damping>`                                 | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`damping_curve<class_ParticlesMaterial_property_damping_curve>`                     | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`damping_random<class_ParticlesMaterial_property_damping_random>`                   | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Vector3<class_Vector3>`                              | :ref:`direction<class_ParticlesMaterial_property_direction>`                             | Vector3( 1, 0, 0 )    |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Vector3<class_Vector3>`                              | :ref:`emission_box_extents<class_ParticlesMaterial_property_emission_box_extents>`       |                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`emission_color_texture<class_ParticlesMaterial_property_emission_color_texture>`   |                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`emission_normal_texture<class_ParticlesMaterial_property_emission_normal_texture>` |                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`                                      | :ref:`emission_point_count<class_ParticlesMaterial_property_emission_point_count>`       |                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`   |                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`EmissionShape<enum_ParticlesMaterial_EmissionShape>` | :ref:`emission_shape<class_ParticlesMaterial_property_emission_shape>`                   | 0                     |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`emission_sphere_radius<class_ParticlesMaterial_property_emission_sphere_radius>`   |                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`flag_align_y<class_ParticlesMaterial_property_flag_align_y>`                       | false                 |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>`                   | false                 |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>`                     | false                 |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`flatness<class_ParticlesMaterial_property_flatness>`                               | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Vector3<class_Vector3>`                              | :ref:`gravity<class_ParticlesMaterial_property_gravity>`                                 | Vector3( 0, -9.8, 0 ) |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`hue_variation<class_ParticlesMaterial_property_hue_variation>`                     | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`hue_variation_curve<class_ParticlesMaterial_property_hue_variation_curve>`         | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`hue_variation_random<class_ParticlesMaterial_property_hue_variation_random>`       | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`initial_velocity<class_ParticlesMaterial_property_initial_velocity>`               | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`initial_velocity_random<class_ParticlesMaterial_property_initial_velocity_random>` | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`linear_accel<class_ParticlesMaterial_property_linear_accel>`                       | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`linear_accel_curve<class_ParticlesMaterial_property_linear_accel_curve>`           | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`linear_accel_random<class_ParticlesMaterial_property_linear_accel_random>`         | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`orbit_velocity<class_ParticlesMaterial_property_orbit_velocity>`                   |                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`orbit_velocity_curve<class_ParticlesMaterial_property_orbit_velocity_curve>`       |                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`orbit_velocity_random<class_ParticlesMaterial_property_orbit_velocity_random>`     |                       |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`radial_accel<class_ParticlesMaterial_property_radial_accel>`                       | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`radial_accel_curve<class_ParticlesMaterial_property_radial_accel_curve>`           | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`radial_accel_random<class_ParticlesMaterial_property_radial_accel_random>`         | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`scale<class_ParticlesMaterial_property_scale>`                                     | 1.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`scale_curve<class_ParticlesMaterial_property_scale_curve>`                         | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`scale_random<class_ParticlesMaterial_property_scale_random>`                       | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`spread<class_ParticlesMaterial_property_spread>`                                   | 45.0                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`tangential_accel<class_ParticlesMaterial_property_tangential_accel>`               | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`tangential_accel_curve<class_ParticlesMaterial_property_tangential_accel_curve>`   | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                  | :ref:`tangential_accel_random<class_ParticlesMaterial_property_tangential_accel_random>` | 0.0                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`GradientTexture<class_GradientTexture>`              | :ref:`trail_color_modifier<class_ParticlesMaterial_property_trail_color_modifier>`       | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`                                      | :ref:`trail_divisor<class_ParticlesMaterial_property_trail_divisor>`                     | 1                     |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`CurveTexture<class_CurveTexture>`                    | :ref:`trail_size_modifier<class_ParticlesMaterial_property_trail_size_modifier>`         | null                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------+-----------------------+
 
 Enumerations
 ------------
@@ -246,11 +248,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **angle**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Initial rotation applied to each particle, in degrees.
 
@@ -260,11 +264,13 @@ Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_dis
 
 - :ref:`Texture<class_Texture>` **angle_curve**
 
-+----------+--------------------------+
-| *Setter* | set_param_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_param_texture()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_param_texture(value) |
++-----------+--------------------------+
+| *Getter*  | get_param_texture()      |
++-----------+--------------------------+
 
 Each particle's rotation will be animated along this :ref:`CurveTexture<class_CurveTexture>`.
 
@@ -272,23 +278,27 @@ Each particle's rotation will be animated along this :ref:`CurveTexture<class_Cu
 
 - :ref:`float<class_float>` **angle_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Rotation randomness ratio. Default value: ``0``.
+Rotation randomness ratio.
 
 .. _class_ParticlesMaterial_property_angular_velocity:
 
 - :ref:`float<class_float>` **angular_velocity**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Initial angular velocity applied to each particle. Sets the speed of rotation of the particle.
 
@@ -298,11 +308,13 @@ Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_dis
 
 - :ref:`Texture<class_Texture>` **angular_velocity_curve**
 
-+----------+--------------------------+
-| *Setter* | set_param_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_param_texture()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_param_texture(value) |
++-----------+--------------------------+
+| *Getter*  | get_param_texture()      |
++-----------+--------------------------+
 
 Each particle's angular velocity will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 
@@ -310,23 +322,27 @@ Each particle's angular velocity will vary along this :ref:`CurveTexture<class_C
 
 - :ref:`float<class_float>` **angular_velocity_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Angular velocity randomness ratio. Default value: ``0``.
+Angular velocity randomness ratio.
 
 .. _class_ParticlesMaterial_property_anim_offset:
 
 - :ref:`float<class_float>` **anim_offset**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Particle animation offset.
 
@@ -334,11 +350,13 @@ Particle animation offset.
 
 - :ref:`Texture<class_Texture>` **anim_offset_curve**
 
-+----------+--------------------------+
-| *Setter* | set_param_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_param_texture()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_param_texture(value) |
++-----------+--------------------------+
+| *Getter*  | get_param_texture()      |
++-----------+--------------------------+
 
 Each particle's animation offset will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 
@@ -346,23 +364,27 @@ Each particle's animation offset will vary along this :ref:`CurveTexture<class_C
 
 - :ref:`float<class_float>` **anim_offset_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Animation offset randomness ratio. Default value: ``0``.
+Animation offset randomness ratio.
 
 .. _class_ParticlesMaterial_property_anim_speed:
 
 - :ref:`float<class_float>` **anim_speed**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Particle animation speed.
 
@@ -370,11 +392,13 @@ Particle animation speed.
 
 - :ref:`Texture<class_Texture>` **anim_speed_curve**
 
-+----------+--------------------------+
-| *Setter* | set_param_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_param_texture()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_param_texture(value) |
++-----------+--------------------------+
+| *Getter*  | get_param_texture()      |
++-----------+--------------------------+
 
 Each particle's animation speed will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 
@@ -382,23 +406,27 @@ Each particle's animation speed will vary along this :ref:`CurveTexture<class_Cu
 
 - :ref:`float<class_float>` **anim_speed_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Animation speed randomness ratio. Default value: ``0``.
+Animation speed randomness ratio.
 
 .. _class_ParticlesMaterial_property_color:
 
 - :ref:`Color<class_Color>` **color**
 
-+----------+------------------+
-| *Setter* | set_color(value) |
-+----------+------------------+
-| *Getter* | get_color()      |
-+----------+------------------+
++-----------+---------------------+
+| *Default* | Color( 1, 1, 1, 1 ) |
++-----------+---------------------+
+| *Setter*  | set_color(value)    |
++-----------+---------------------+
+| *Getter*  | get_color()         |
++-----------+---------------------+
 
 Each particle's initial color. If the :ref:`Particles2D<class_Particles2D>`'s ``texture`` is defined, it will be multiplied by this color. To have particle display color in a :ref:`SpatialMaterial<class_SpatialMaterial>` make sure to set :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` to ``true``.
 
@@ -406,11 +434,13 @@ Each particle's initial color. If the :ref:`Particles2D<class_Particles2D>`'s ``
 
 - :ref:`Texture<class_Texture>` **color_ramp**
 
-+----------+-----------------------+
-| *Setter* | set_color_ramp(value) |
-+----------+-----------------------+
-| *Getter* | get_color_ramp()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | null                  |
++-----------+-----------------------+
+| *Setter*  | set_color_ramp(value) |
++-----------+-----------------------+
+| *Getter*  | get_color_ramp()      |
++-----------+-----------------------+
 
 Each particle's color will vary along this :ref:`GradientTexture<class_GradientTexture>`.
 
@@ -418,11 +448,13 @@ Each particle's color will vary along this :ref:`GradientTexture<class_GradientT
 
 - :ref:`float<class_float>` **damping**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The rate at which particles lose velocity.
 
@@ -430,11 +462,13 @@ The rate at which particles lose velocity.
 
 - :ref:`Texture<class_Texture>` **damping_curve**
 
-+----------+--------------------------+
-| *Setter* | set_param_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_param_texture()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_param_texture(value) |
++-----------+--------------------------+
+| *Getter*  | get_param_texture()      |
++-----------+--------------------------+
 
 Damping will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 
@@ -442,13 +476,29 @@ Damping will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 
 - :ref:`float<class_float>` **damping_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Damping randomness ratio. Default value: ``0``.
+Damping randomness ratio.
+
+.. _class_ParticlesMaterial_property_direction:
+
+- :ref:`Vector3<class_Vector3>` **direction**
+
++-----------+----------------------+
+| *Default* | Vector3( 1, 0, 0 )   |
++-----------+----------------------+
+| *Setter*  | set_direction(value) |
++-----------+----------------------+
+| *Getter*  | get_direction()      |
++-----------+----------------------+
+
+Unit vector specifying the particles' emission direction.
 
 .. _class_ParticlesMaterial_property_emission_box_extents:
 
@@ -514,13 +564,15 @@ Particles will be emitted at positions determined by sampling this texture at a 
 
 - :ref:`EmissionShape<enum_ParticlesMaterial_EmissionShape>` **emission_shape**
 
-+----------+---------------------------+
-| *Setter* | set_emission_shape(value) |
-+----------+---------------------------+
-| *Getter* | get_emission_shape()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 0                         |
++-----------+---------------------------+
+| *Setter*  | set_emission_shape(value) |
++-----------+---------------------------+
+| *Getter*  | get_emission_shape()      |
++-----------+---------------------------+
 
-Particles will be emitted inside this region. Use ``EMISSION_SHAPE_*`` constants for values. Default value: :ref:`EMISSION_SHAPE_POINT<class_ParticlesMaterial_constant_EMISSION_SHAPE_POINT>`.
+Particles will be emitted inside this region. Use ``EMISSION_SHAPE_*`` constants for values.
 
 .. _class_ParticlesMaterial_property_emission_sphere_radius:
 
@@ -538,11 +590,13 @@ The sphere's radius if ``emission_shape`` is set to :ref:`EMISSION_SHAPE_SPHERE<
 
 - :ref:`bool<class_bool>` **flag_align_y**
 
-+----------+-----------------+
-| *Setter* | set_flag(value) |
-+----------+-----------------+
-| *Getter* | get_flag()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | false           |
++-----------+-----------------+
+| *Setter*  | set_flag(value) |
++-----------+-----------------+
+| *Getter*  | get_flag()      |
++-----------+-----------------+
 
 Align Y axis of particle with the direction of its velocity.
 
@@ -550,23 +604,27 @@ Align Y axis of particle with the direction of its velocity.
 
 - :ref:`bool<class_bool>` **flag_disable_z**
 
-+----------+-----------------+
-| *Setter* | set_flag(value) |
-+----------+-----------------+
-| *Getter* | get_flag()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | false           |
++-----------+-----------------+
+| *Setter*  | set_flag(value) |
++-----------+-----------------+
+| *Getter*  | get_flag()      |
++-----------+-----------------+
 
-If ``true``, particles will not move on the z axis. Default value: ``true`` for :ref:`Particles2D<class_Particles2D>`, ``false`` for :ref:`Particles<class_Particles>`.
+If ``true``, particles will not move on the z axis.
 
 .. _class_ParticlesMaterial_property_flag_rotate_y:
 
 - :ref:`bool<class_bool>` **flag_rotate_y**
 
-+----------+-----------------+
-| *Setter* | set_flag(value) |
-+----------+-----------------+
-| *Getter* | get_flag()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | false           |
++-----------+-----------------+
+| *Setter*  | set_flag(value) |
++-----------+-----------------+
+| *Getter*  | get_flag()      |
++-----------+-----------------+
 
 If ``true``, particles rotate around Y axis by :ref:`angle<class_ParticlesMaterial_property_angle>`.
 
@@ -574,35 +632,41 @@ If ``true``, particles rotate around Y axis by :ref:`angle<class_ParticlesMateri
 
 - :ref:`float<class_float>` **flatness**
 
-+----------+---------------------+
-| *Setter* | set_flatness(value) |
-+----------+---------------------+
-| *Getter* | get_flatness()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_flatness(value) |
++-----------+---------------------+
+| *Getter*  | get_flatness()      |
++-----------+---------------------+
 
-Amount of :ref:`spread<class_ParticlesMaterial_property_spread>` in Y/Z plane. A value of ``1`` restricts particles to X/Z plane. Default ``0``.
+Amount of :ref:`spread<class_ParticlesMaterial_property_spread>` in Y/Z plane. A value of ``1`` restricts particles to X/Z plane.
 
 .. _class_ParticlesMaterial_property_gravity:
 
 - :ref:`Vector3<class_Vector3>` **gravity**
 
-+----------+--------------------+
-| *Setter* | set_gravity(value) |
-+----------+--------------------+
-| *Getter* | get_gravity()      |
-+----------+--------------------+
++-----------+-----------------------+
+| *Default* | Vector3( 0, -9.8, 0 ) |
++-----------+-----------------------+
+| *Setter*  | set_gravity(value)    |
++-----------+-----------------------+
+| *Getter*  | get_gravity()         |
++-----------+-----------------------+
 
-Gravity applied to every particle. Default value: ``(0, -9.8, 0)``.
+Gravity applied to every particle.
 
 .. _class_ParticlesMaterial_property_hue_variation:
 
 - :ref:`float<class_float>` **hue_variation**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Initial hue variation applied to each particle.
 
@@ -610,11 +674,13 @@ Initial hue variation applied to each particle.
 
 - :ref:`Texture<class_Texture>` **hue_variation_curve**
 
-+----------+--------------------------+
-| *Setter* | set_param_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_param_texture()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_param_texture(value) |
++-----------+--------------------------+
+| *Getter*  | get_param_texture()      |
++-----------+--------------------------+
 
 Each particle's hue will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 
@@ -622,23 +688,27 @@ Each particle's hue will vary along this :ref:`CurveTexture<class_CurveTexture>`
 
 - :ref:`float<class_float>` **hue_variation_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Hue variation randomness ratio. Default value: ``0``.
+Hue variation randomness ratio.
 
 .. _class_ParticlesMaterial_property_initial_velocity:
 
 - :ref:`float<class_float>` **initial_velocity**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Initial velocity magnitude for each particle. Direction comes from :ref:`spread<class_ParticlesMaterial_property_spread>` and the node's orientation.
 
@@ -646,23 +716,27 @@ Initial velocity magnitude for each particle. Direction comes from :ref:`spread<
 
 - :ref:`float<class_float>` **initial_velocity_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Initial velocity randomness ratio. Default value: ``0``.
+Initial velocity randomness ratio.
 
 .. _class_ParticlesMaterial_property_linear_accel:
 
 - :ref:`float<class_float>` **linear_accel**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Linear acceleration applied to each particle in the direction of motion.
 
@@ -670,11 +744,13 @@ Linear acceleration applied to each particle in the direction of motion.
 
 - :ref:`Texture<class_Texture>` **linear_accel_curve**
 
-+----------+--------------------------+
-| *Setter* | set_param_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_param_texture()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_param_texture(value) |
++-----------+--------------------------+
+| *Getter*  | get_param_texture()      |
++-----------+--------------------------+
 
 Each particle's linear acceleration will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 
@@ -682,13 +758,15 @@ Each particle's linear acceleration will vary along this :ref:`CurveTexture<clas
 
 - :ref:`float<class_float>` **linear_accel_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Linear acceleration randomness ratio. Default value: ``0``.
+Linear acceleration randomness ratio.
 
 .. _class_ParticlesMaterial_property_orbit_velocity:
 
@@ -726,17 +804,19 @@ Each particle's orbital velocity will vary along this :ref:`CurveTexture<class_C
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-Orbital velocity randomness ratio. Default value: ``0``.
+Orbital velocity randomness ratio.
 
 .. _class_ParticlesMaterial_property_radial_accel:
 
 - :ref:`float<class_float>` **radial_accel**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Radial acceleration applied to each particle. Makes particle accelerate away from origin.
 
@@ -744,11 +824,13 @@ Radial acceleration applied to each particle. Makes particle accelerate away fro
 
 - :ref:`Texture<class_Texture>` **radial_accel_curve**
 
-+----------+--------------------------+
-| *Setter* | set_param_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_param_texture()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_param_texture(value) |
++-----------+--------------------------+
+| *Getter*  | get_param_texture()      |
++-----------+--------------------------+
 
 Each particle's radial acceleration will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 
@@ -756,23 +838,27 @@ Each particle's radial acceleration will vary along this :ref:`CurveTexture<clas
 
 - :ref:`float<class_float>` **radial_accel_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Radial acceleration randomness ratio. Default value: ``0``.
+Radial acceleration randomness ratio.
 
 .. _class_ParticlesMaterial_property_scale:
 
 - :ref:`float<class_float>` **scale**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 1.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Initial scale applied to each particle.
 
@@ -780,11 +866,13 @@ Initial scale applied to each particle.
 
 - :ref:`Texture<class_Texture>` **scale_curve**
 
-+----------+--------------------------+
-| *Setter* | set_param_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_param_texture()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_param_texture(value) |
++-----------+--------------------------+
+| *Getter*  | get_param_texture()      |
++-----------+--------------------------+
 
 Each particle's scale will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 
@@ -792,35 +880,41 @@ Each particle's scale will vary along this :ref:`CurveTexture<class_CurveTexture
 
 - :ref:`float<class_float>` **scale_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Scale randomness ratio. Default value: ``0``.
+Scale randomness ratio.
 
 .. _class_ParticlesMaterial_property_spread:
 
 - :ref:`float<class_float>` **spread**
 
-+----------+-------------------+
-| *Setter* | set_spread(value) |
-+----------+-------------------+
-| *Getter* | get_spread()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 45.0              |
++-----------+-------------------+
+| *Setter*  | set_spread(value) |
++-----------+-------------------+
+| *Getter*  | get_spread()      |
++-----------+-------------------+
 
-Each particle's initial direction range from ``+spread`` to ``-spread`` degrees. Default value: ``45``. Applied to X/Z plane and Y/Z planes.
+Each particle's initial direction range from ``+spread`` to ``-spread`` degrees. Applied to X/Z plane and Y/Z planes.
 
 .. _class_ParticlesMaterial_property_tangential_accel:
 
 - :ref:`float<class_float>` **tangential_accel**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Tangential acceleration applied to each particle. Tangential acceleration is perpendicular to the particle's velocity giving the particles a swirling motion.
 
@@ -828,11 +922,13 @@ Tangential acceleration applied to each particle. Tangential acceleration is per
 
 - :ref:`Texture<class_Texture>` **tangential_accel_curve**
 
-+----------+--------------------------+
-| *Setter* | set_param_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_param_texture()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_param_texture(value) |
++-----------+--------------------------+
+| *Getter*  | get_param_texture()      |
++-----------+--------------------------+
 
 Each particle's tangential acceleration will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 
@@ -840,23 +936,27 @@ Each particle's tangential acceleration will vary along this :ref:`CurveTexture<
 
 - :ref:`float<class_float>` **tangential_accel_random**
 
-+----------+-----------------------------+
-| *Setter* | set_param_randomness(value) |
-+----------+-----------------------------+
-| *Getter* | get_param_randomness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_param_randomness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_param_randomness()      |
++-----------+-----------------------------+
 
-Tangential acceleration randomness ratio. Default value: ``0``.
+Tangential acceleration randomness ratio.
 
 .. _class_ParticlesMaterial_property_trail_color_modifier:
 
 - :ref:`GradientTexture<class_GradientTexture>` **trail_color_modifier**
 
-+----------+---------------------------------+
-| *Setter* | set_trail_color_modifier(value) |
-+----------+---------------------------------+
-| *Getter* | get_trail_color_modifier()      |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | null                            |
++-----------+---------------------------------+
+| *Setter*  | set_trail_color_modifier(value) |
++-----------+---------------------------------+
+| *Getter*  | get_trail_color_modifier()      |
++-----------+---------------------------------+
 
 Trail particles' color will vary along this :ref:`GradientTexture<class_GradientTexture>`.
 
@@ -864,11 +964,13 @@ Trail particles' color will vary along this :ref:`GradientTexture<class_Gradient
 
 - :ref:`int<class_int>` **trail_divisor**
 
-+----------+--------------------------+
-| *Setter* | set_trail_divisor(value) |
-+----------+--------------------------+
-| *Getter* | get_trail_divisor()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 1                        |
++-----------+--------------------------+
+| *Setter*  | set_trail_divisor(value) |
++-----------+--------------------------+
+| *Getter*  | get_trail_divisor()      |
++-----------+--------------------------+
 
 Emitter will emit ``amount`` divided by ``trail_divisor`` particles. The remaining particles will be used as trail(s).
 
@@ -876,11 +978,13 @@ Emitter will emit ``amount`` divided by ``trail_divisor`` particles. The remaini
 
 - :ref:`CurveTexture<class_CurveTexture>` **trail_size_modifier**
 
-+----------+--------------------------------+
-| *Setter* | set_trail_size_modifier(value) |
-+----------+--------------------------------+
-| *Getter* | get_trail_size_modifier()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | null                           |
++-----------+--------------------------------+
+| *Setter*  | set_trail_size_modifier(value) |
++-----------+--------------------------------+
+| *Getter*  | get_trail_size_modifier()      |
++-----------+--------------------------------+
 
 Trail particles' size will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 

@@ -17,13 +17,13 @@ Vector class, which performs basic 3D vector math operations.
 Properties
 ----------
 
-+---------------------------+------------------------------------+
-| :ref:`float<class_float>` | :ref:`x<class_Vector3_property_x>` |
-+---------------------------+------------------------------------+
-| :ref:`float<class_float>` | :ref:`y<class_Vector3_property_y>` |
-+---------------------------+------------------------------------+
-| :ref:`float<class_float>` | :ref:`z<class_Vector3_property_z>` |
-+---------------------------+------------------------------------+
++---------------------------+------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`x<class_Vector3_property_x>` | 0.0 |
++---------------------------+------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`y<class_Vector3_property_y>` | 0.0 |
++---------------------------+------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`z<class_Vector3_property_z>` | 0.0 |
++---------------------------+------------------------------------+-----+
 
 Methods
 -------
@@ -158,17 +158,29 @@ Property Descriptions
 
 - :ref:`float<class_float>` **x**
 
++-----------+-----+
+| *Default* | 0.0 |
++-----------+-----+
+
 The vector's X component. Also accessible by using the index position ``[0]``.
 
 .. _class_Vector3_property_y:
 
 - :ref:`float<class_float>` **y**
 
++-----------+-----+
+| *Default* | 0.0 |
++-----------+-----+
+
 The vector's Y component. Also accessible by using the index position ``[1]``.
 
 .. _class_Vector3_property_z:
 
 - :ref:`float<class_float>` **z**
+
++-----------+-----+
+| *Default* | 0.0 |
++-----------+-----+
 
 The vector's Z component. Also accessible by using the index position ``[2]``.
 

@@ -19,15 +19,15 @@ Numerical input text field.
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------+
-| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`       |
-+-----------------------------------+--------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>` |
-+-----------------------------------+--------------------------------------------------+
-| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`     |
-+-----------------------------------+--------------------------------------------------+
-| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`     |
-+-----------------------------------+--------------------------------------------------+
++-----------------------------------+--------------------------------------------------+------+
+| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`       | 0    |
++-----------------------------------+--------------------------------------------------+------+
+| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>` | true |
++-----------------------------------+--------------------------------------------------+------+
+| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`     | ""   |
++-----------------------------------+--------------------------------------------------+------+
+| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`     | ""   |
++-----------------------------------+--------------------------------------------------+------+
 
 Methods
 -------
@@ -69,11 +69,13 @@ Property Descriptions
 
 - :ref:`Align<enum_LineEdit_Align>` **align**
 
-+----------+------------------+
-| *Setter* | set_align(value) |
-+----------+------------------+
-| *Getter* | get_align()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0                |
++-----------+------------------+
+| *Setter*  | set_align(value) |
++-----------+------------------+
+| *Getter*  | get_align()      |
++-----------+------------------+
 
 Sets the text alignment of the ``SpinBox``.
 
@@ -81,11 +83,13 @@ Sets the text alignment of the ``SpinBox``.
 
 - :ref:`bool<class_bool>` **editable**
 
-+----------+---------------------+
-| *Setter* | set_editable(value) |
-+----------+---------------------+
-| *Getter* | is_editable()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | true                |
++-----------+---------------------+
+| *Setter*  | set_editable(value) |
++-----------+---------------------+
+| *Getter*  | is_editable()       |
++-----------+---------------------+
 
 If ``true``, the ``SpinBox`` will be editable. Otherwise, it will be read only.
 
@@ -93,11 +97,13 @@ If ``true``, the ``SpinBox`` will be editable. Otherwise, it will be read only.
 
 - :ref:`String<class_String>` **prefix**
 
-+----------+-------------------+
-| *Setter* | set_prefix(value) |
-+----------+-------------------+
-| *Getter* | get_prefix()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | ""                |
++-----------+-------------------+
+| *Setter*  | set_prefix(value) |
++-----------+-------------------+
+| *Getter*  | get_prefix()      |
++-----------+-------------------+
 
 Adds the specified ``prefix`` string before the numerical value of the ``SpinBox``.
 
@@ -105,11 +111,13 @@ Adds the specified ``prefix`` string before the numerical value of the ``SpinBox
 
 - :ref:`String<class_String>` **suffix**
 
-+----------+-------------------+
-| *Setter* | set_suffix(value) |
-+----------+-------------------+
-| *Getter* | get_suffix()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | ""                |
++-----------+-------------------+
+| *Setter*  | set_suffix(value) |
++-----------+-------------------+
+| *Getter*  | get_suffix()      |
++-----------+-------------------+
 
 Adds the specified ``prefix`` string after the numerical value of the ``SpinBox``.
 

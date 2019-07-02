@@ -19,15 +19,15 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------------+-------------------------------------------------------------+
-| :ref:`String<class_String>`             | :ref:`animation<class_AnimatedSprite3D_property_animation>` |
-+-----------------------------------------+-------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`         |
-+-----------------------------------------+-------------------------------------------------------------+
-| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_property_frames>`       |
-+-----------------------------------------+-------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_property_playing>`     |
-+-----------------------------------------+-------------------------------------------------------------+
++-----------------------------------------+-------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`             | :ref:`animation<class_AnimatedSprite3D_property_animation>` | "default" |
++-----------------------------------------+-------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`         | 0         |
++-----------------------------------------+-------------------------------------------------------------+-----------+
+| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_property_frames>`       | null      |
++-----------------------------------------+-------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_property_playing>`     | false     |
++-----------------------------------------+-------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -61,11 +61,13 @@ Property Descriptions
 
 - :ref:`String<class_String>` **animation**
 
-+----------+----------------------+
-| *Setter* | set_animation(value) |
-+----------+----------------------+
-| *Getter* | get_animation()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | "default"            |
++-----------+----------------------+
+| *Setter*  | set_animation(value) |
++-----------+----------------------+
+| *Getter*  | get_animation()      |
++-----------+----------------------+
 
 The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
 
@@ -73,11 +75,13 @@ The current animation from the ``frames`` resource. If this value changes, the `
 
 - :ref:`int<class_int>` **frame**
 
-+----------+------------------+
-| *Setter* | set_frame(value) |
-+----------+------------------+
-| *Getter* | get_frame()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0                |
++-----------+------------------+
+| *Setter*  | set_frame(value) |
++-----------+------------------+
+| *Getter*  | get_frame()      |
++-----------+------------------+
 
 The displayed animation frame's index.
 
@@ -85,17 +89,23 @@ The displayed animation frame's index.
 
 - :ref:`SpriteFrames<class_SpriteFrames>` **frames**
 
-+----------+--------------------------+
-| *Setter* | set_sprite_frames(value) |
-+----------+--------------------------+
-| *Getter* | get_sprite_frames()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | null                     |
++-----------+--------------------------+
+| *Setter*  | set_sprite_frames(value) |
++-----------+--------------------------+
+| *Getter*  | get_sprite_frames()      |
++-----------+--------------------------+
 
 The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
 
 .. _class_AnimatedSprite3D_property_playing:
 
 - :ref:`bool<class_bool>` **playing**
+
++-----------+-------+
+| *Default* | false |
++-----------+-------+
 
 If ``true``, the :ref:`animation<class_AnimatedSprite3D_property_animation>` is currently playing.
 

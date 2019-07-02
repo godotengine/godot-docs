@@ -78,7 +78,7 @@ Adds a new material to the internal material list for the plugin. It can then be
 
 - :ref:`bool<class_bool>` **can_be_hidden** **(** **)** virtual
 
-Override this method to define whether the gizmo can be hidden or not. Defaults to ``true``.
+Override this method to define whether the gizmo can be hidden or not. Returns ``true`` if not overridden.
 
 .. _class_EditorSpatialGizmoPlugin_method_commit_handle:
 

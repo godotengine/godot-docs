@@ -19,9 +19,9 @@ Type to handle file reading and writing operations.
 Properties
 ----------
 
-+-------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`endian_swap<class_File_property_endian_swap>` |
-+-------------------------+-----------------------------------------------------+
++-------------------------+-----------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`endian_swap<class_File_property_endian_swap>` | false |
++-------------------------+-----------------------------------------------------+-------+
 
 Methods
 -------
@@ -193,11 +193,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **endian_swap**
 
-+----------+------------------------+
-| *Setter* | set_endian_swap(value) |
-+----------+------------------------+
-| *Getter* | get_endian_swap()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | false                  |
++-----------+------------------------+
+| *Setter*  | set_endian_swap(value) |
++-----------+------------------------+
+| *Getter*  | get_endian_swap()      |
++-----------+------------------------+
 
 If ``true``, the file's endianness is swapped. Use this if you're dealing with files written on big-endian machines.
 

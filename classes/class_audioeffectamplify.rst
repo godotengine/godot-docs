@@ -21,9 +21,9 @@ Increases or decreases the volume of the selected audio bus.
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`volume_db<class_AudioEffectAmplify_property_volume_db>` |
-+---------------------------+---------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`volume_db<class_AudioEffectAmplify_property_volume_db>` | 0.0 |
++---------------------------+---------------------------------------------------------------+-----+
 
 Description
 -----------
@@ -37,11 +37,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **volume_db**
 
-+----------+----------------------+
-| *Setter* | set_volume_db(value) |
-+----------+----------------------+
-| *Getter* | get_volume_db()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0.0                  |
++-----------+----------------------+
+| *Setter*  | set_volume_db(value) |
++-----------+----------------------+
+| *Getter*  | get_volume_db()      |
++-----------+----------------------+
 
-Amount of amplification in decibels. Positive values make the sound louder, negative values make it quieter. Value can range from -80 to 24. Default value: ``0``.
+Amount of amplification in decibels. Positive values make the sound louder, negative values make it quieter. Value can range from -80 to 24.
 

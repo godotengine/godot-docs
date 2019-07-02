@@ -19,11 +19,11 @@ Kinematic body 2D node.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody2D_property_collision/safe_margin>`   |
-+---------------------------+--------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`motion/sync_to_physics<class_KinematicBody2D_property_motion/sync_to_physics>` |
-+---------------------------+--------------------------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody2D_property_collision/safe_margin>`   | 0.08  |
++---------------------------+--------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`motion/sync_to_physics<class_KinematicBody2D_property_motion/sync_to_physics>` | false |
++---------------------------+--------------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -73,11 +73,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **collision/safe_margin**
 
-+----------+------------------------+
-| *Setter* | set_safe_margin(value) |
-+----------+------------------------+
-| *Getter* | get_safe_margin()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0.08                   |
++-----------+------------------------+
+| *Setter*  | set_safe_margin(value) |
++-----------+------------------------+
+| *Getter*  | get_safe_margin()      |
++-----------+------------------------+
 
 If the body is at least this close to another body, this body will consider them to be colliding.
 
@@ -85,11 +87,13 @@ If the body is at least this close to another body, this body will consider them
 
 - :ref:`bool<class_bool>` **motion/sync_to_physics**
 
-+----------+------------------------------+
-| *Setter* | set_sync_to_physics(value)   |
-+----------+------------------------------+
-| *Getter* | is_sync_to_physics_enabled() |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | false                        |
++-----------+------------------------------+
+| *Setter*  | set_sync_to_physics(value)   |
++-----------+------------------------------+
+| *Getter*  | is_sync_to_physics_enabled() |
++-----------+------------------------------+
 
 If ``true``, the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms. Do **not** use together with :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` or :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` functions.
 

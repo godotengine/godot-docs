@@ -19,9 +19,9 @@ Rectangle shape for 2D collisions.
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`extents<class_RectangleShape2D_property_extents>` |
-+-------------------------------+---------------------------------------------------------+
++-------------------------------+---------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`extents<class_RectangleShape2D_property_extents>` | Vector2( 10, 10 ) |
++-------------------------------+---------------------------------------------------------+-------------------+
 
 Description
 -----------
@@ -35,11 +35,13 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **extents**
 
-+----------+--------------------+
-| *Setter* | set_extents(value) |
-+----------+--------------------+
-| *Getter* | get_extents()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | Vector2( 10, 10 )  |
++-----------+--------------------+
+| *Setter*  | set_extents(value) |
++-----------+--------------------+
+| *Getter*  | get_extents()      |
++-----------+--------------------+
 
 The rectangle's half extents. The width and height of this shape is twice the half extents.
 

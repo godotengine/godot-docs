@@ -19,9 +19,9 @@ Keeps children controls centered.
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`use_top_left<class_CenterContainer_property_use_top_left>` |
-+-------------------------+------------------------------------------------------------------+
++-------------------------+------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`use_top_left<class_CenterContainer_property_use_top_left>` | false |
++-------------------------+------------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -35,11 +35,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **use_top_left**
 
-+----------+-------------------------+
-| *Setter* | set_use_top_left(value) |
-+----------+-------------------------+
-| *Getter* | is_using_top_left()     |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | false                   |
++-----------+-------------------------+
+| *Setter*  | set_use_top_left(value) |
++-----------+-------------------------+
+| *Getter*  | is_using_top_left()     |
++-----------+-------------------------+
 
-If ``true``, centers children relative to the ``CenterContainer``'s top left corner. Default value: ``false``.
+If ``true``, centers children relative to the ``CenterContainer``'s top left corner.
 

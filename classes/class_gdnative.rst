@@ -19,9 +19,9 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------------------+-------------------------------------------------+
-| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_GDNative_property_library>` |
-+-----------------------------------------------+-------------------------------------------------+
++-----------------------------------------------+-------------------------------------------------+------+
+| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_GDNative_property_library>` | null |
++-----------------------------------------------+-------------------------------------------------+------+
 
 Methods
 -------
@@ -41,11 +41,13 @@ Property Descriptions
 
 - :ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
 
-+----------+--------------------+
-| *Setter* | set_library(value) |
-+----------+--------------------+
-| *Getter* | get_library()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | null               |
++-----------+--------------------+
+| *Setter*  | set_library(value) |
++-----------+--------------------+
+| *Getter*  | get_library()      |
++-----------+--------------------+
 
 Method Descriptions
 -------------------

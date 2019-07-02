@@ -21,17 +21,17 @@ Base class for keys events with modifiers.
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`alt<class_InputEventWithModifiers_property_alt>`         |
-+-------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`command<class_InputEventWithModifiers_property_command>` |
-+-------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`control<class_InputEventWithModifiers_property_control>` |
-+-------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`meta<class_InputEventWithModifiers_property_meta>`       |
-+-------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`shift<class_InputEventWithModifiers_property_shift>`     |
-+-------------------------+----------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`alt<class_InputEventWithModifiers_property_alt>`         | false |
++-------------------------+----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`command<class_InputEventWithModifiers_property_command>` | false |
++-------------------------+----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`control<class_InputEventWithModifiers_property_control>` | false |
++-------------------------+----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`meta<class_InputEventWithModifiers_property_meta>`       | false |
++-------------------------+----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`shift<class_InputEventWithModifiers_property_shift>`     | false |
++-------------------------+----------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -50,11 +50,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **alt**
 
-+----------+----------------+
-| *Setter* | set_alt(value) |
-+----------+----------------+
-| *Getter* | get_alt()      |
-+----------+----------------+
++-----------+----------------+
+| *Default* | false          |
++-----------+----------------+
+| *Setter*  | set_alt(value) |
++-----------+----------------+
+| *Getter*  | get_alt()      |
++-----------+----------------+
 
 State of the ``Alt`` modifier.
 
@@ -62,11 +64,13 @@ State of the ``Alt`` modifier.
 
 - :ref:`bool<class_bool>` **command**
 
-+----------+--------------------+
-| *Setter* | set_command(value) |
-+----------+--------------------+
-| *Getter* | get_command()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | false              |
++-----------+--------------------+
+| *Setter*  | set_command(value) |
++-----------+--------------------+
+| *Getter*  | get_command()      |
++-----------+--------------------+
 
 State of the ``Command`` modifier.
 
@@ -74,11 +78,13 @@ State of the ``Command`` modifier.
 
 - :ref:`bool<class_bool>` **control**
 
-+----------+--------------------+
-| *Setter* | set_control(value) |
-+----------+--------------------+
-| *Getter* | get_control()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | false              |
++-----------+--------------------+
+| *Setter*  | set_control(value) |
++-----------+--------------------+
+| *Getter*  | get_control()      |
++-----------+--------------------+
 
 State of the ``Ctrl`` modifier.
 
@@ -86,11 +92,13 @@ State of the ``Ctrl`` modifier.
 
 - :ref:`bool<class_bool>` **meta**
 
-+----------+--------------------+
-| *Setter* | set_metakey(value) |
-+----------+--------------------+
-| *Getter* | get_metakey()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | false              |
++-----------+--------------------+
+| *Setter*  | set_metakey(value) |
++-----------+--------------------+
+| *Getter*  | get_metakey()      |
++-----------+--------------------+
 
 State of the ``Meta`` modifier.
 
@@ -98,11 +106,13 @@ State of the ``Meta`` modifier.
 
 - :ref:`bool<class_bool>` **shift**
 
-+----------+------------------+
-| *Setter* | set_shift(value) |
-+----------+------------------+
-| *Getter* | get_shift()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | false            |
++-----------+------------------+
+| *Setter*  | set_shift(value) |
++-----------+------------------+
+| *Getter*  | get_shift()      |
++-----------+------------------+
 
 State of the ``Shift`` modifier.
 

@@ -19,9 +19,9 @@ Box shape resource.
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`extents<class_BoxShape_property_extents>` |
-+-------------------------------+-------------------------------------------------+
++-------------------------------+-------------------------------------------------+--------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`extents<class_BoxShape_property_extents>` | Vector3( 1, 1, 1 ) |
++-------------------------------+-------------------------------------------------+--------------------+
 
 Description
 -----------
@@ -35,11 +35,13 @@ Property Descriptions
 
 - :ref:`Vector3<class_Vector3>` **extents**
 
-+----------+--------------------+
-| *Setter* | set_extents(value) |
-+----------+--------------------+
-| *Getter* | get_extents()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | Vector3( 1, 1, 1 ) |
++-----------+--------------------+
+| *Setter*  | set_extents(value) |
++-----------+--------------------+
+| *Getter*  | get_extents()      |
++-----------+--------------------+
 
 The box's half extents. The width, height and depth of this shape is twice the half extents.
 

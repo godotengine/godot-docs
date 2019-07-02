@@ -21,13 +21,13 @@ Container for splitting and adjusting.
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_property_collapsed>`                   |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_property_dragger_visibility>` |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_property_collapsed>`                   | false |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_property_dragger_visibility>` | 0     |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             | 0     |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -76,21 +76,25 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **collapsed**
 
-+----------+----------------------+
-| *Setter* | set_collapsed(value) |
-+----------+----------------------+
-| *Getter* | is_collapsed()       |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_collapsed(value) |
++-----------+----------------------+
+| *Getter*  | is_collapsed()       |
++-----------+----------------------+
 
 .. _class_SplitContainer_property_dragger_visibility:
 
 - :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility**
 
-+----------+-------------------------------+
-| *Setter* | set_dragger_visibility(value) |
-+----------+-------------------------------+
-| *Getter* | get_dragger_visibility()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | 0                             |
++-----------+-------------------------------+
+| *Setter*  | set_dragger_visibility(value) |
++-----------+-------------------------------+
+| *Getter*  | get_dragger_visibility()      |
++-----------+-------------------------------+
 
 Determines whether the dragger is visible.
 
@@ -98,11 +102,13 @@ Determines whether the dragger is visible.
 
 - :ref:`int<class_int>` **split_offset**
 
-+----------+-------------------------+
-| *Setter* | set_split_offset(value) |
-+----------+-------------------------+
-| *Getter* | get_split_offset()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_split_offset(value) |
++-----------+-------------------------+
+| *Getter*  | get_split_offset()      |
++-----------+-------------------------+
 
 Method Descriptions
 -------------------

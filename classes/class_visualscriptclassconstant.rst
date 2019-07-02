@@ -19,11 +19,11 @@ Gets a constant from a given class.
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptClassConstant_property_base_type>` |
-+-----------------------------+----------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptClassConstant_property_constant>`   |
-+-----------------------------+----------------------------------------------------------------------+
++-----------------------------+----------------------------------------------------------------------+----------+
+| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptClassConstant_property_base_type>` | "Object" |
++-----------------------------+----------------------------------------------------------------------+----------+
+| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptClassConstant_property_constant>`   | ""       |
++-----------------------------+----------------------------------------------------------------------+----------+
 
 Description
 -----------
@@ -45,11 +45,13 @@ Property Descriptions
 
 - :ref:`String<class_String>` **base_type**
 
-+----------+----------------------+
-| *Setter* | set_base_type(value) |
-+----------+----------------------+
-| *Getter* | get_base_type()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | "Object"             |
++-----------+----------------------+
+| *Setter*  | set_base_type(value) |
++-----------+----------------------+
+| *Getter*  | get_base_type()      |
++-----------+----------------------+
 
 The constant's parent class.
 
@@ -57,11 +59,13 @@ The constant's parent class.
 
 - :ref:`String<class_String>` **constant**
 
-+----------+---------------------------+
-| *Setter* | set_class_constant(value) |
-+----------+---------------------------+
-| *Getter* | get_class_constant()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | ""                        |
++-----------+---------------------------+
+| *Setter*  | set_class_constant(value) |
++-----------+---------------------------+
+| *Getter*  | get_class_constant()      |
++-----------+---------------------------+
 
 The constant to return. See the given class for its available constants.
 

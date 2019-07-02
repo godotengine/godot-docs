@@ -21,23 +21,23 @@ Most basic 3D game object, parent of all 3D-related nodes.
 Properties
 ----------
 
-+-----------------------------------------+------------------------------------------------------------------+
-| :ref:`SpatialGizmo<class_SpatialGizmo>` | :ref:`gizmo<class_Spatial_property_gizmo>`                       |
-+-----------------------------------------+------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>`       | :ref:`global_transform<class_Spatial_property_global_transform>` |
-+-----------------------------------------+------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`rotation<class_Spatial_property_rotation>`                 |
-+-----------------------------------------+------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`rotation_degrees<class_Spatial_property_rotation_degrees>` |
-+-----------------------------------------+------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`scale<class_Spatial_property_scale>`                       |
-+-----------------------------------------+------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>`       | :ref:`transform<class_Spatial_property_transform>`               |
-+-----------------------------------------+------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`translation<class_Spatial_property_translation>`           |
-+-----------------------------------------+------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`visible<class_Spatial_property_visible>`                   |
-+-----------------------------------------+------------------------------------------------------------------+
++-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`SpatialGizmo<class_SpatialGizmo>` | :ref:`gizmo<class_Spatial_property_gizmo>`                       |                                                 |
++-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`Transform<class_Transform>`       | :ref:`global_transform<class_Spatial_property_global_transform>` |                                                 |
++-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`rotation<class_Spatial_property_rotation>`                 |                                                 |
++-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`rotation_degrees<class_Spatial_property_rotation_degrees>` | Vector3( 0, 0, 0 )                              |
++-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`scale<class_Spatial_property_scale>`                       | Vector3( 1, 1, 1 )                              |
++-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`Transform<class_Transform>`       | :ref:`transform<class_Spatial_property_transform>`               | Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) |
++-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`translation<class_Spatial_property_translation>`           | Vector3( 0, 0, 0 )                              |
++-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`visible<class_Spatial_property_visible>`                   | true                                            |
++-----------------------------------------+------------------------------------------------------------------+-------------------------------------------------+
 
 Methods
 -------
@@ -197,11 +197,13 @@ Rotation part of the local transformation in radians, specified in terms of YXZ-
 
 - :ref:`Vector3<class_Vector3>` **rotation_degrees**
 
-+----------+-----------------------------+
-| *Setter* | set_rotation_degrees(value) |
-+----------+-----------------------------+
-| *Getter* | get_rotation_degrees()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | Vector3( 0, 0, 0 )          |
++-----------+-----------------------------+
+| *Setter*  | set_rotation_degrees(value) |
++-----------+-----------------------------+
+| *Getter*  | get_rotation_degrees()      |
++-----------+-----------------------------+
 
 Rotation part of the local transformation in degrees, specified in terms of YXZ-Euler angles in the format (X angle, Y angle, Z angle).
 
@@ -209,11 +211,13 @@ Rotation part of the local transformation in degrees, specified in terms of YXZ-
 
 - :ref:`Vector3<class_Vector3>` **scale**
 
-+----------+------------------+
-| *Setter* | set_scale(value) |
-+----------+------------------+
-| *Getter* | get_scale()      |
-+----------+------------------+
++-----------+--------------------+
+| *Default* | Vector3( 1, 1, 1 ) |
++-----------+--------------------+
+| *Setter*  | set_scale(value)   |
++-----------+--------------------+
+| *Getter*  | get_scale()        |
++-----------+--------------------+
 
 Scale part of the local transformation.
 
@@ -221,11 +225,13 @@ Scale part of the local transformation.
 
 - :ref:`Transform<class_Transform>` **transform**
 
-+----------+----------------------+
-| *Setter* | set_transform(value) |
-+----------+----------------------+
-| *Getter* | get_transform()      |
-+----------+----------------------+
++-----------+-------------------------------------------------+
+| *Default* | Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) |
++-----------+-------------------------------------------------+
+| *Setter*  | set_transform(value)                            |
++-----------+-------------------------------------------------+
+| *Getter*  | get_transform()                                 |
++-----------+-------------------------------------------------+
 
 Local space :ref:`Transform<class_Transform>` of this node, with respect to the parent node.
 
@@ -233,11 +239,13 @@ Local space :ref:`Transform<class_Transform>` of this node, with respect to the 
 
 - :ref:`Vector3<class_Vector3>` **translation**
 
-+----------+------------------------+
-| *Setter* | set_translation(value) |
-+----------+------------------------+
-| *Getter* | get_translation()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | Vector3( 0, 0, 0 )     |
++-----------+------------------------+
+| *Setter*  | set_translation(value) |
++-----------+------------------------+
+| *Getter*  | get_translation()      |
++-----------+------------------------+
 
 Local translation of this node.
 
@@ -245,13 +253,15 @@ Local translation of this node.
 
 - :ref:`bool<class_bool>` **visible**
 
-+----------+--------------------+
-| *Setter* | set_visible(value) |
-+----------+--------------------+
-| *Getter* | is_visible()       |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | true               |
++-----------+--------------------+
+| *Setter*  | set_visible(value) |
++-----------+--------------------+
+| *Getter*  | is_visible()       |
++-----------+--------------------+
 
-If ``true``, this node is drawn. Default value: ``true``.
+If ``true``, this node is drawn.
 
 Method Descriptions
 -------------------

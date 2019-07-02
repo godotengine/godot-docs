@@ -19,13 +19,13 @@ OGG Vorbis audio stream driver.
 Properties
 ----------
 
-+-------------------------------------------+---------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data<class_AudioStreamOGGVorbis_property_data>`               |
-+-------------------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`               |
-+-------------------------------------------+---------------------------------------------------------------------+
-| :ref:`float<class_float>`                 | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` |
-+-------------------------------------------+---------------------------------------------------------------------+
++-------------------------------------------+---------------------------------------------------------------------+-------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data<class_AudioStreamOGGVorbis_property_data>`               | PoolByteArray(  ) |
++-------------------------------------------+---------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                   | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`               | false             |
++-------------------------------------------+---------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`                 | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` | 0.0               |
++-------------------------------------------+---------------------------------------------------------------------+-------------------+
 
 Description
 -----------
@@ -39,11 +39,13 @@ Property Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **data**
 
-+----------+-----------------+
-| *Setter* | set_data(value) |
-+----------+-----------------+
-| *Getter* | get_data()      |
-+----------+-----------------+
++-----------+-------------------+
+| *Default* | PoolByteArray(  ) |
++-----------+-------------------+
+| *Setter*  | set_data(value)   |
++-----------+-------------------+
+| *Getter*  | get_data()        |
++-----------+-------------------+
 
 Contains the audio data in bytes.
 
@@ -51,19 +53,23 @@ Contains the audio data in bytes.
 
 - :ref:`bool<class_bool>` **loop**
 
-+----------+-----------------+
-| *Setter* | set_loop(value) |
-+----------+-----------------+
-| *Getter* | has_loop()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | false           |
++-----------+-----------------+
+| *Setter*  | set_loop(value) |
++-----------+-----------------+
+| *Getter*  | has_loop()      |
++-----------+-----------------+
 
 .. _class_AudioStreamOGGVorbis_property_loop_offset:
 
 - :ref:`float<class_float>` **loop_offset**
 
-+----------+------------------------+
-| *Setter* | set_loop_offset(value) |
-+----------+------------------------+
-| *Getter* | get_loop_offset()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0.0                    |
++-----------+------------------------+
+| *Setter*  | set_loop_offset(value) |
++-----------+------------------------+
+| *Getter*  | get_loop_offset()      |
++-----------+------------------------+
 

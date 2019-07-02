@@ -17,13 +17,13 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`origin<class_Transform2D_property_origin>` |
-+-------------------------------+--------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`x<class_Transform2D_property_x>`           |
-+-------------------------------+--------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`y<class_Transform2D_property_y>`           |
-+-------------------------------+--------------------------------------------------+
++-------------------------------+--------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`origin<class_Transform2D_property_origin>` | Vector2( 0, 0 ) |
++-------------------------------+--------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`x<class_Transform2D_property_x>`           | Vector2( 1, 0 ) |
++-------------------------------+--------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`y<class_Transform2D_property_y>`           | Vector2( 0, 1 ) |
++-------------------------------+--------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -91,17 +91,29 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **origin**
 
++-----------+-----------------+
+| *Default* | Vector2( 0, 0 ) |
++-----------+-----------------+
+
 The transform's translation offset.
 
 .. _class_Transform2D_property_x:
 
 - :ref:`Vector2<class_Vector2>` **x**
 
++-----------+-----------------+
+| *Default* | Vector2( 1, 0 ) |
++-----------+-----------------+
+
 The X axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 
 .. _class_Transform2D_property_y:
 
 - :ref:`Vector2<class_Vector2>` **y**
+
++-----------+-----------------+
+| *Default* | Vector2( 0, 1 ) |
++-----------+-----------------+
 
 The Y axis of 2×2 basis matrix containing 2 :ref:`Vector2<class_Vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 

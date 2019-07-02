@@ -19,9 +19,9 @@ Mesh-based navigation and pathfinding node.
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`up_vector<class_Navigation_property_up_vector>` |
-+-------------------------------+-------------------------------------------------------+
++-------------------------------+-------------------------------------------------------+--------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`up_vector<class_Navigation_property_up_vector>` | Vector3( 0, 1, 0 ) |
++-------------------------------+-------------------------------------------------------+--------------------+
 
 Methods
 -------
@@ -56,11 +56,13 @@ Property Descriptions
 
 - :ref:`Vector3<class_Vector3>` **up_vector**
 
-+----------+----------------------+
-| *Setter* | set_up_vector(value) |
-+----------+----------------------+
-| *Getter* | get_up_vector()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | Vector3( 0, 1, 0 )   |
++-----------+----------------------+
+| *Setter*  | set_up_vector(value) |
++-----------+----------------------+
+| *Getter*  | get_up_vector()      |
++-----------+----------------------+
 
 Defines which direction is up. By default, this is ``(0, 1, 0)``, which is the world's "up" direction.
 

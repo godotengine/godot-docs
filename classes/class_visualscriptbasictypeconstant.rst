@@ -19,11 +19,11 @@ A Visual Script node representing a constant from the base types.
 Properties
 ----------
 
-+-----------------------------------------------------+----------------------------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`basic_type<class_VisualScriptBasicTypeConstant_property_basic_type>` |
-+-----------------------------------------------------+----------------------------------------------------------------------------+
-| :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |
-+-----------------------------------------------------+----------------------------------------------------------------------------+
++-----------------------------------------------------+----------------------------------------------------------------------------+---+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`basic_type<class_VisualScriptBasicTypeConstant_property_basic_type>` | 0 |
++-----------------------------------------------------+----------------------------------------------------------------------------+---+
+| :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |   |
++-----------------------------------------------------+----------------------------------------------------------------------------+---+
 
 Description
 -----------
@@ -37,11 +37,13 @@ Property Descriptions
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
 
-+----------+-----------------------+
-| *Setter* | set_basic_type(value) |
-+----------+-----------------------+
-| *Getter* | get_basic_type()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 0                     |
++-----------+-----------------------+
+| *Setter*  | set_basic_type(value) |
++-----------+-----------------------+
+| *Getter*  | get_basic_type()      |
++-----------+-----------------------+
 
 The type to get the constant from.
 

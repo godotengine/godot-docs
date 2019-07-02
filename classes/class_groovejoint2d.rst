@@ -19,11 +19,11 @@ Groove constraint for 2D physics.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`initial_offset<class_GrooveJoint2D_property_initial_offset>` |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`length<class_GrooveJoint2D_property_length>`                 |
-+---------------------------+--------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`initial_offset<class_GrooveJoint2D_property_initial_offset>` | 25.0 |
++---------------------------+--------------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`length<class_GrooveJoint2D_property_length>`                 | 50.0 |
++---------------------------+--------------------------------------------------------------------+------+
 
 Description
 -----------
@@ -37,23 +37,27 @@ Property Descriptions
 
 - :ref:`float<class_float>` **initial_offset**
 
-+----------+---------------------------+
-| *Setter* | set_initial_offset(value) |
-+----------+---------------------------+
-| *Getter* | get_initial_offset()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 25.0                      |
++-----------+---------------------------+
+| *Setter*  | set_initial_offset(value) |
++-----------+---------------------------+
+| *Getter*  | get_initial_offset()      |
++-----------+---------------------------+
 
-The body B's initial anchor position defined by the joint's origin and a local offset :ref:`initial_offset<class_GrooveJoint2D_property_initial_offset>` along the joint's Y axis (along the groove). Default value: ``25``.
+The body B's initial anchor position defined by the joint's origin and a local offset :ref:`initial_offset<class_GrooveJoint2D_property_initial_offset>` along the joint's Y axis (along the groove).
 
 .. _class_GrooveJoint2D_property_length:
 
 - :ref:`float<class_float>` **length**
 
-+----------+-------------------+
-| *Setter* | set_length(value) |
-+----------+-------------------+
-| *Getter* | get_length()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 50.0              |
++-----------+-------------------+
+| *Setter*  | set_length(value) |
++-----------+-------------------+
+| *Getter*  | get_length()      |
++-----------+-------------------+
 
-The groove's length. The groove is from the joint's origin towards :ref:`length<class_GrooveJoint2D_property_length>` along the joint's local Y axis. Default value: ``50``.
+The groove's length. The groove is from the joint's origin towards :ref:`length<class_GrooveJoint2D_property_length>` along the joint's local Y axis.
 

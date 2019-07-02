@@ -21,9 +21,9 @@ Brief Description
 Properties
 ----------
 
-+----------------------------------------------------+----------------------------------------------------------------+
-| :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>` | :ref:`write_mode<class_WebRTCDataChannel_property_write_mode>` |
-+----------------------------------------------------+----------------------------------------------------------------+
++----------------------------------------------------+----------------------------------------------------------------+---+
+| :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>` | :ref:`write_mode<class_WebRTCDataChannel_property_write_mode>` | 1 |
++----------------------------------------------------+----------------------------------------------------------------+---+
 
 Methods
 -------
@@ -94,11 +94,13 @@ Property Descriptions
 
 - :ref:`WriteMode<enum_WebRTCDataChannel_WriteMode>` **write_mode**
 
-+----------+-----------------------+
-| *Setter* | set_write_mode(value) |
-+----------+-----------------------+
-| *Getter* | get_write_mode()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 1                     |
++-----------+-----------------------+
+| *Setter*  | set_write_mode(value) |
++-----------+-----------------------+
+| *Getter*  | get_write_mode()      |
++-----------+-----------------------+
 
 The transfer mode to use when sending outgoing packet. Either text or binary.
 

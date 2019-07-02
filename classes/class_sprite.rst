@@ -19,31 +19,31 @@ General-purpose sprite node.
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`centered<class_Sprite_property_centered>`                     |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`flip_h<class_Sprite_property_flip_h>`                         |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`flip_v<class_Sprite_property_flip_v>`                         |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`frame<class_Sprite_property_frame>`                           |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`hframes<class_Sprite_property_hframes>`                       |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_Sprite_property_normal_map>`                 |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`offset<class_Sprite_property_offset>`                         |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`region_enabled<class_Sprite_property_region_enabled>`         |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`region_filter_clip<class_Sprite_property_region_filter_clip>` |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite_property_region_rect>`               |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite_property_texture>`                       |
-+-------------------------------+---------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`vframes<class_Sprite_property_vframes>`                       |
-+-------------------------------+---------------------------------------------------------------------+
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`       | :ref:`centered<class_Sprite_property_centered>`                     | true                |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`       | :ref:`flip_h<class_Sprite_property_flip_h>`                         | false               |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`       | :ref:`flip_v<class_Sprite_property_flip_v>`                         | false               |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`         | :ref:`frame<class_Sprite_property_frame>`                           | 0                   |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`         | :ref:`hframes<class_Sprite_property_hframes>`                       | 1                   |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_Sprite_property_normal_map>`                 | null                |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`offset<class_Sprite_property_offset>`                         | Vector2( 0, 0 )     |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`       | :ref:`region_enabled<class_Sprite_property_region_enabled>`         | false               |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`       | :ref:`region_filter_clip<class_Sprite_property_region_filter_clip>` | false               |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite_property_region_rect>`               | Rect2( 0, 0, 0, 0 ) |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite_property_texture>`                       | null                |
++-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`         | :ref:`vframes<class_Sprite_property_vframes>`                       | 1                   |
++-------------------------------+---------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -81,47 +81,55 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **centered**
 
-+----------+---------------------+
-| *Setter* | set_centered(value) |
-+----------+---------------------+
-| *Getter* | is_centered()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | true                |
++-----------+---------------------+
+| *Setter*  | set_centered(value) |
++-----------+---------------------+
+| *Getter*  | is_centered()       |
++-----------+---------------------+
 
-If ``true``, texture is centered. Default value: ``true``.
+If ``true``, texture is centered.
 
 .. _class_Sprite_property_flip_h:
 
 - :ref:`bool<class_bool>` **flip_h**
 
-+----------+-------------------+
-| *Setter* | set_flip_h(value) |
-+----------+-------------------+
-| *Getter* | is_flipped_h()    |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_flip_h(value) |
++-----------+-------------------+
+| *Getter*  | is_flipped_h()    |
++-----------+-------------------+
 
-If ``true``, texture is flipped horizontally. Default value: ``false``.
+If ``true``, texture is flipped horizontally.
 
 .. _class_Sprite_property_flip_v:
 
 - :ref:`bool<class_bool>` **flip_v**
 
-+----------+-------------------+
-| *Setter* | set_flip_v(value) |
-+----------+-------------------+
-| *Getter* | is_flipped_v()    |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_flip_v(value) |
++-----------+-------------------+
+| *Getter*  | is_flipped_v()    |
++-----------+-------------------+
 
-If ``true``, texture is flipped vertically. Default value: ``false``.
+If ``true``, texture is flipped vertically.
 
 .. _class_Sprite_property_frame:
 
 - :ref:`int<class_int>` **frame**
 
-+----------+------------------+
-| *Setter* | set_frame(value) |
-+----------+------------------+
-| *Getter* | get_frame()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0                |
++-----------+------------------+
+| *Setter*  | set_frame(value) |
++-----------+------------------+
+| *Getter*  | get_frame()      |
++-----------+------------------+
 
 Current frame to display from sprite sheet. :ref:`vframes<class_Sprite_property_vframes>` or :ref:`hframes<class_Sprite_property_hframes>` must be greater than 1.
 
@@ -129,11 +137,13 @@ Current frame to display from sprite sheet. :ref:`vframes<class_Sprite_property_
 
 - :ref:`int<class_int>` **hframes**
 
-+----------+--------------------+
-| *Setter* | set_hframes(value) |
-+----------+--------------------+
-| *Getter* | get_hframes()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 1                  |
++-----------+--------------------+
+| *Setter*  | set_hframes(value) |
++-----------+--------------------+
+| *Getter*  | get_hframes()      |
++-----------+--------------------+
 
 The number of columns in the sprite sheet.
 
@@ -141,11 +151,13 @@ The number of columns in the sprite sheet.
 
 - :ref:`Texture<class_Texture>` **normal_map**
 
-+----------+-----------------------+
-| *Setter* | set_normal_map(value) |
-+----------+-----------------------+
-| *Getter* | get_normal_map()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | null                  |
++-----------+-----------------------+
+| *Setter*  | set_normal_map(value) |
++-----------+-----------------------+
+| *Getter*  | get_normal_map()      |
++-----------+-----------------------+
 
 The normal map gives depth to the Sprite.
 
@@ -153,11 +165,13 @@ The normal map gives depth to the Sprite.
 
 - :ref:`Vector2<class_Vector2>` **offset**
 
-+----------+-------------------+
-| *Setter* | set_offset(value) |
-+----------+-------------------+
-| *Getter* | get_offset()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | Vector2( 0, 0 )   |
++-----------+-------------------+
+| *Setter*  | set_offset(value) |
++-----------+-------------------+
+| *Getter*  | get_offset()      |
++-----------+-------------------+
 
 The texture's drawing offset.
 
@@ -165,23 +179,27 @@ The texture's drawing offset.
 
 - :ref:`bool<class_bool>` **region_enabled**
 
-+----------+-------------------+
-| *Setter* | set_region(value) |
-+----------+-------------------+
-| *Getter* | is_region()       |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_region(value) |
++-----------+-------------------+
+| *Getter*  | is_region()       |
++-----------+-------------------+
 
-If ``true``, texture is cut from a larger atlas texture. See :ref:`region_rect<class_Sprite_property_region_rect>`. Default value: ``false``.
+If ``true``, texture is cut from a larger atlas texture. See :ref:`region_rect<class_Sprite_property_region_rect>`.
 
 .. _class_Sprite_property_region_filter_clip:
 
 - :ref:`bool<class_bool>` **region_filter_clip**
 
-+----------+---------------------------------+
-| *Setter* | set_region_filter_clip(value)   |
-+----------+---------------------------------+
-| *Getter* | is_region_filter_clip_enabled() |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | false                           |
++-----------+---------------------------------+
+| *Setter*  | set_region_filter_clip(value)   |
++-----------+---------------------------------+
+| *Getter*  | is_region_filter_clip_enabled() |
++-----------+---------------------------------+
 
 If ``true``, the outermost pixels get blurred out.
 
@@ -189,11 +207,13 @@ If ``true``, the outermost pixels get blurred out.
 
 - :ref:`Rect2<class_Rect2>` **region_rect**
 
-+----------+------------------------+
-| *Setter* | set_region_rect(value) |
-+----------+------------------------+
-| *Getter* | get_region_rect()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | Rect2( 0, 0, 0, 0 )    |
++-----------+------------------------+
+| *Setter*  | set_region_rect(value) |
++-----------+------------------------+
+| *Getter*  | get_region_rect()      |
++-----------+------------------------+
 
 The region of the atlas texture to display. :ref:`region_enabled<class_Sprite_property_region_enabled>` must be ``true``.
 
@@ -201,11 +221,13 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite_pr
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | null               |
++-----------+--------------------+
+| *Setter*  | set_texture(value) |
++-----------+--------------------+
+| *Getter*  | get_texture()      |
++-----------+--------------------+
 
 :ref:`Texture<class_Texture>` object to draw.
 
@@ -213,11 +235,13 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite_pr
 
 - :ref:`int<class_int>` **vframes**
 
-+----------+--------------------+
-| *Setter* | set_vframes(value) |
-+----------+--------------------+
-| *Getter* | get_vframes()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 1                  |
++-----------+--------------------+
+| *Setter*  | set_vframes(value) |
++-----------+--------------------+
+| *Getter*  | get_vframes()      |
++-----------+--------------------+
 
 The number of rows in the sprite sheet.
 

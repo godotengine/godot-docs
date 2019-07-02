@@ -19,17 +19,17 @@ Control for drawing textures.
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             |
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             |
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             |
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` |
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_property_texture>`           |
-+--------------------------------------------------+--------------------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             | false |
++--------------------------------------------------+--------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             | false |
++--------------------------------------------------+--------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             | false |
++--------------------------------------------------+--------------------------------------------------------------+-------+
+| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` | 0     |
++--------------------------------------------------+--------------------------------------------------------------+-------+
+| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_property_texture>`           | null  |
++--------------------------------------------------+--------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -82,47 +82,55 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **expand**
 
-+----------+-------------------+
-| *Setter* | set_expand(value) |
-+----------+-------------------+
-| *Getter* | has_expand()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_expand(value) |
++-----------+-------------------+
+| *Getter*  | has_expand()      |
++-----------+-------------------+
 
-If ``true``, the texture scales to fit its bounding rectangle. Default value: ``false``.
+If ``true``, the texture scales to fit its bounding rectangle.
 
 .. _class_TextureRect_property_flip_h:
 
 - :ref:`bool<class_bool>` **flip_h**
 
-+----------+-------------------+
-| *Setter* | set_flip_h(value) |
-+----------+-------------------+
-| *Getter* | is_flipped_h()    |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_flip_h(value) |
++-----------+-------------------+
+| *Getter*  | is_flipped_h()    |
++-----------+-------------------+
 
-If ``true``, texture is flipped horizontally. Default value: ``false``.
+If ``true``, texture is flipped horizontally.
 
 .. _class_TextureRect_property_flip_v:
 
 - :ref:`bool<class_bool>` **flip_v**
 
-+----------+-------------------+
-| *Setter* | set_flip_v(value) |
-+----------+-------------------+
-| *Getter* | is_flipped_v()    |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_flip_v(value) |
++-----------+-------------------+
+| *Getter*  | is_flipped_v()    |
++-----------+-------------------+
 
-If ``true``, texture is flipped vertically. Default value: ``false``.
+If ``true``, texture is flipped vertically.
 
 .. _class_TextureRect_property_stretch_mode:
 
 - :ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode**
 
-+----------+-------------------------+
-| *Setter* | set_stretch_mode(value) |
-+----------+-------------------------+
-| *Getter* | get_stretch_mode()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_stretch_mode(value) |
++-----------+-------------------------+
+| *Getter*  | get_stretch_mode()      |
++-----------+-------------------------+
 
 Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_TextureRect_StretchMode>`.
 
@@ -130,11 +138,13 @@ Controls the texture's behavior when resizing the node's bounding rectangle. See
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | null               |
++-----------+--------------------+
+| *Setter*  | set_texture(value) |
++-----------+--------------------+
+| *Getter*  | get_texture()      |
++-----------+--------------------+
 
 The node's :ref:`Texture<class_Texture>` resource.
 

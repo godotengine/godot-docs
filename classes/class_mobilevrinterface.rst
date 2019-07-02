@@ -19,21 +19,21 @@ Generic mobile VR implementation.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`display_to_lens<class_MobileVRInterface_property_display_to_lens>` |
-+---------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`display_width<class_MobileVRInterface_property_display_width>`     |
-+---------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`eye_height<class_MobileVRInterface_property_eye_height>`           |
-+---------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`iod<class_MobileVRInterface_property_iod>`                         |
-+---------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`k1<class_MobileVRInterface_property_k1>`                           |
-+---------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`k2<class_MobileVRInterface_property_k2>`                           |
-+---------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`oversample<class_MobileVRInterface_property_oversample>`           |
-+---------------------------+--------------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`display_to_lens<class_MobileVRInterface_property_display_to_lens>` | 4.0   |
++---------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`display_width<class_MobileVRInterface_property_display_width>`     | 14.5  |
++---------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`eye_height<class_MobileVRInterface_property_eye_height>`           | 1.85  |
++---------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`iod<class_MobileVRInterface_property_iod>`                         | 6.0   |
++---------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`k1<class_MobileVRInterface_property_k1>`                           | 0.215 |
++---------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`k2<class_MobileVRInterface_property_k2>`                           | 0.215 |
++---------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`oversample<class_MobileVRInterface_property_oversample>`           | 1.5   |
++---------------------------+--------------------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -57,11 +57,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **display_to_lens**
 
-+----------+----------------------------+
-| *Setter* | set_display_to_lens(value) |
-+----------+----------------------------+
-| *Getter* | get_display_to_lens()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 4.0                        |
++-----------+----------------------------+
+| *Setter*  | set_display_to_lens(value) |
++-----------+----------------------------+
+| *Getter*  | get_display_to_lens()      |
++-----------+----------------------------+
 
 The distance between the display and the lenses inside of the device in centimeters.
 
@@ -69,11 +71,13 @@ The distance between the display and the lenses inside of the device in centimet
 
 - :ref:`float<class_float>` **display_width**
 
-+----------+--------------------------+
-| *Setter* | set_display_width(value) |
-+----------+--------------------------+
-| *Getter* | get_display_width()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 14.5                     |
++-----------+--------------------------+
+| *Setter*  | set_display_width(value) |
++-----------+--------------------------+
+| *Getter*  | get_display_width()      |
++-----------+--------------------------+
 
 The width of the display in centimeters.
 
@@ -81,11 +85,13 @@ The width of the display in centimeters.
 
 - :ref:`float<class_float>` **eye_height**
 
-+----------+-----------------------+
-| *Setter* | set_eye_height(value) |
-+----------+-----------------------+
-| *Getter* | get_eye_height()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 1.85                  |
++-----------+-----------------------+
+| *Setter*  | set_eye_height(value) |
++-----------+-----------------------+
+| *Getter*  | get_eye_height()      |
++-----------+-----------------------+
 
 The height at which the camera is placed in relation to the ground (i.e. :ref:`ARVROrigin<class_ARVROrigin>` node).
 
@@ -93,11 +99,13 @@ The height at which the camera is placed in relation to the ground (i.e. :ref:`A
 
 - :ref:`float<class_float>` **iod**
 
-+----------+----------------+
-| *Setter* | set_iod(value) |
-+----------+----------------+
-| *Getter* | get_iod()      |
-+----------+----------------+
++-----------+----------------+
+| *Default* | 6.0            |
++-----------+----------------+
+| *Setter*  | set_iod(value) |
++-----------+----------------+
+| *Getter*  | get_iod()      |
++-----------+----------------+
 
 The interocular distance, also known as the interpupillary distance. The distance between the pupils of the left and right eye.
 
@@ -105,11 +113,13 @@ The interocular distance, also known as the interpupillary distance. The distanc
 
 - :ref:`float<class_float>` **k1**
 
-+----------+---------------+
-| *Setter* | set_k1(value) |
-+----------+---------------+
-| *Getter* | get_k1()      |
-+----------+---------------+
++-----------+---------------+
+| *Default* | 0.215         |
++-----------+---------------+
+| *Setter*  | set_k1(value) |
++-----------+---------------+
+| *Getter*  | get_k1()      |
++-----------+---------------+
 
 The k1 lens factor is one of the two constants that define the strength of the lens used and directly influences the lens distortion effect.
 
@@ -117,11 +127,13 @@ The k1 lens factor is one of the two constants that define the strength of the l
 
 - :ref:`float<class_float>` **k2**
 
-+----------+---------------+
-| *Setter* | set_k2(value) |
-+----------+---------------+
-| *Getter* | get_k2()      |
-+----------+---------------+
++-----------+---------------+
+| *Default* | 0.215         |
++-----------+---------------+
+| *Setter*  | set_k2(value) |
++-----------+---------------+
+| *Getter*  | get_k2()      |
++-----------+---------------+
 
 The k2 lens factor, see k1.
 
@@ -129,11 +141,13 @@ The k2 lens factor, see k1.
 
 - :ref:`float<class_float>` **oversample**
 
-+----------+-----------------------+
-| *Setter* | set_oversample(value) |
-+----------+-----------------------+
-| *Getter* | get_oversample()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 1.5                   |
++-----------+-----------------------+
+| *Setter*  | set_oversample(value) |
++-----------+-----------------------+
+| *Getter*  | get_oversample()      |
++-----------+-----------------------+
 
 The oversample setting. Because of the lens distortion we have to render our buffers at a higher resolution then the screen can natively handle. A value between 1.5 and 2.0 often provides good results but at the cost of performance.
 

@@ -19,29 +19,29 @@ Manages the game loop via a hierarchy of nodes.
 Properties
 ----------
 
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                                         | :ref:`current_scene<class_SceneTree_property_current_scene>`                                   |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>`                   |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>`                   |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                                         | :ref:`edited_scene_root<class_SceneTree_property_edited_scene_root>`                           |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>`                     | :ref:`multiplayer<class_SceneTree_property_multiplayer>`                                       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`multiplayer_poll<class_SceneTree_property_multiplayer_poll>`                             |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_SceneTree_property_network_peer>`                                     |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`paused<class_SceneTree_property_paused>`                                                 |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_SceneTree_property_refuse_new_network_connections>` |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Viewport<class_Viewport>`                                 | :ref:`root<class_SceneTree_property_root>`                                                     |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`use_font_oversampling<class_SceneTree_property_use_font_oversampling>`                   |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`Node<class_Node>`                                         | :ref:`current_scene<class_SceneTree_property_current_scene>`                                   |       |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                                         | :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>`                   | false |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                                         | :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>`                   | false |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`Node<class_Node>`                                         | :ref:`edited_scene_root<class_SceneTree_property_edited_scene_root>`                           |       |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`MultiplayerAPI<class_MultiplayerAPI>`                     | :ref:`multiplayer<class_SceneTree_property_multiplayer>`                                       |       |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                                         | :ref:`multiplayer_poll<class_SceneTree_property_multiplayer_poll>`                             | true  |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_SceneTree_property_network_peer>`                                     |       |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                                         | :ref:`paused<class_SceneTree_property_paused>`                                                 | false |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_SceneTree_property_refuse_new_network_connections>` | false |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`Viewport<class_Viewport>`                                 | :ref:`root<class_SceneTree_property_root>`                                                     |       |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                                         | :ref:`use_font_oversampling<class_SceneTree_property_use_font_oversampling>`                   | false |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -285,11 +285,13 @@ The current scene.
 
 - :ref:`bool<class_bool>` **debug_collisions_hint**
 
-+----------+----------------------------------+
-| *Setter* | set_debug_collisions_hint(value) |
-+----------+----------------------------------+
-| *Getter* | is_debugging_collisions_hint()   |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | false                            |
++-----------+----------------------------------+
+| *Setter*  | set_debug_collisions_hint(value) |
++-----------+----------------------------------+
+| *Getter*  | is_debugging_collisions_hint()   |
++-----------+----------------------------------+
 
 If ``true``, collision shapes will be visible when running the game from the editor for debugging purposes.
 
@@ -297,11 +299,13 @@ If ``true``, collision shapes will be visible when running the game from the edi
 
 - :ref:`bool<class_bool>` **debug_navigation_hint**
 
-+----------+----------------------------------+
-| *Setter* | set_debug_navigation_hint(value) |
-+----------+----------------------------------+
-| *Getter* | is_debugging_navigation_hint()   |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | false                            |
++-----------+----------------------------------+
+| *Setter*  | set_debug_navigation_hint(value) |
++-----------+----------------------------------+
+| *Getter*  | is_debugging_navigation_hint()   |
++-----------+----------------------------------+
 
 If ``true``, navigation polygons will be visible when running the game from the editor for debugging purposes.
 
@@ -333,11 +337,13 @@ The default :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance for this ``Scen
 
 - :ref:`bool<class_bool>` **multiplayer_poll**
 
-+----------+-------------------------------------+
-| *Setter* | set_multiplayer_poll_enabled(value) |
-+----------+-------------------------------------+
-| *Getter* | is_multiplayer_poll_enabled()       |
-+----------+-------------------------------------+
++-----------+-------------------------------------+
+| *Default* | true                                |
++-----------+-------------------------------------+
+| *Setter*  | set_multiplayer_poll_enabled(value) |
++-----------+-------------------------------------+
+| *Getter*  | is_multiplayer_poll_enabled()       |
++-----------+-------------------------------------+
 
 If ``true`` (default value), enables automatic polling of the :ref:`MultiplayerAPI<class_MultiplayerAPI>` for this SceneTree during :ref:`idle_frame<class_SceneTree_signal_idle_frame>`.
 
@@ -359,11 +365,13 @@ The peer object to handle the RPC system (effectively enabling networking when s
 
 - :ref:`bool<class_bool>` **paused**
 
-+----------+------------------+
-| *Setter* | set_pause(value) |
-+----------+------------------+
-| *Getter* | is_paused()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | false            |
++-----------+------------------+
+| *Setter*  | set_pause(value) |
++-----------+------------------+
+| *Getter*  | is_paused()      |
++-----------+------------------+
 
 If ``true``, the ``SceneTree`` is paused. Doing so will have the following behavior:
 
@@ -375,11 +383,13 @@ If ``true``, the ``SceneTree`` is paused. Doing so will have the following behav
 
 - :ref:`bool<class_bool>` **refuse_new_network_connections**
 
-+----------+-------------------------------------------+
-| *Setter* | set_refuse_new_network_connections(value) |
-+----------+-------------------------------------------+
-| *Getter* | is_refusing_new_network_connections()     |
-+----------+-------------------------------------------+
++-----------+-------------------------------------------+
+| *Default* | false                                     |
++-----------+-------------------------------------------+
+| *Setter*  | set_refuse_new_network_connections(value) |
++-----------+-------------------------------------------+
+| *Getter*  | is_refusing_new_network_connections()     |
++-----------+-------------------------------------------+
 
 If ``true``, the ``SceneTree``'s :ref:`network_peer<class_SceneTree_property_network_peer>` refuses new incoming connections.
 
@@ -397,11 +407,13 @@ The ``SceneTree``'s root :ref:`Viewport<class_Viewport>`.
 
 - :ref:`bool<class_bool>` **use_font_oversampling**
 
-+----------+----------------------------------+
-| *Setter* | set_use_font_oversampling(value) |
-+----------+----------------------------------+
-| *Getter* | is_using_font_oversampling()     |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | false                            |
++-----------+----------------------------------+
+| *Setter*  | set_use_font_oversampling(value) |
++-----------+----------------------------------+
+| *Getter*  | is_using_font_oversampling()     |
++-----------+----------------------------------+
 
 If ``true``, font oversampling is used.
 
@@ -547,7 +559,7 @@ Returns an :ref:`Error<enum_@GlobalScope_Error>` code as described in :ref:`chan
 
 - void **set_auto_accept_quit** **(** :ref:`bool<class_bool>` enabled **)**
 
-If ``true``, the application automatically accepts quitting. Defaults to ``true``.
+If ``true``, the application automatically accepts quitting. Enabled by default.
 
 .. _class_SceneTree_method_set_group:
 
@@ -571,7 +583,7 @@ Marks the most recent :ref:`InputEvent<class_InputEvent>` as handled.
 
 - void **set_quit_on_go_back** **(** :ref:`bool<class_bool>` enabled **)**
 
-If ``true``, the application quits automatically on going back (e.g. on Android). Defaults to ``true``.
+If ``true``, the application quits automatically on going back (e.g. on Android). Enabled by default.
 
 .. _class_SceneTree_method_set_screen_stretch:
 

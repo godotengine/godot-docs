@@ -19,139 +19,139 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_0/auto_advance<class_AnimationNodeTransition_property_input_0/auto_advance>`   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_0/name<class_AnimationNodeTransition_property_input_0/name>`                   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_1/auto_advance<class_AnimationNodeTransition_property_input_1/auto_advance>`   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_1/name<class_AnimationNodeTransition_property_input_1/name>`                   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_10/auto_advance<class_AnimationNodeTransition_property_input_10/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_10/name<class_AnimationNodeTransition_property_input_10/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_11/auto_advance<class_AnimationNodeTransition_property_input_11/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_11/name<class_AnimationNodeTransition_property_input_11/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_12/auto_advance<class_AnimationNodeTransition_property_input_12/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_12/name<class_AnimationNodeTransition_property_input_12/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_13/auto_advance<class_AnimationNodeTransition_property_input_13/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_13/name<class_AnimationNodeTransition_property_input_13/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_14/auto_advance<class_AnimationNodeTransition_property_input_14/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_14/name<class_AnimationNodeTransition_property_input_14/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_15/auto_advance<class_AnimationNodeTransition_property_input_15/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_15/name<class_AnimationNodeTransition_property_input_15/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_16/auto_advance<class_AnimationNodeTransition_property_input_16/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_16/name<class_AnimationNodeTransition_property_input_16/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_17/auto_advance<class_AnimationNodeTransition_property_input_17/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_17/name<class_AnimationNodeTransition_property_input_17/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_18/auto_advance<class_AnimationNodeTransition_property_input_18/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_18/name<class_AnimationNodeTransition_property_input_18/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_19/auto_advance<class_AnimationNodeTransition_property_input_19/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_19/name<class_AnimationNodeTransition_property_input_19/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_2/auto_advance<class_AnimationNodeTransition_property_input_2/auto_advance>`   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_2/name<class_AnimationNodeTransition_property_input_2/name>`                   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_20/auto_advance<class_AnimationNodeTransition_property_input_20/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_20/name<class_AnimationNodeTransition_property_input_20/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_21/auto_advance<class_AnimationNodeTransition_property_input_21/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_21/name<class_AnimationNodeTransition_property_input_21/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_22/auto_advance<class_AnimationNodeTransition_property_input_22/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_22/name<class_AnimationNodeTransition_property_input_22/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_23/auto_advance<class_AnimationNodeTransition_property_input_23/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_23/name<class_AnimationNodeTransition_property_input_23/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_24/auto_advance<class_AnimationNodeTransition_property_input_24/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_24/name<class_AnimationNodeTransition_property_input_24/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_25/auto_advance<class_AnimationNodeTransition_property_input_25/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_25/name<class_AnimationNodeTransition_property_input_25/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_26/auto_advance<class_AnimationNodeTransition_property_input_26/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_26/name<class_AnimationNodeTransition_property_input_26/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_27/auto_advance<class_AnimationNodeTransition_property_input_27/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_27/name<class_AnimationNodeTransition_property_input_27/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_28/auto_advance<class_AnimationNodeTransition_property_input_28/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_28/name<class_AnimationNodeTransition_property_input_28/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_29/auto_advance<class_AnimationNodeTransition_property_input_29/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_29/name<class_AnimationNodeTransition_property_input_29/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_3/auto_advance<class_AnimationNodeTransition_property_input_3/auto_advance>`   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_3/name<class_AnimationNodeTransition_property_input_3/name>`                   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_30/auto_advance<class_AnimationNodeTransition_property_input_30/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_30/name<class_AnimationNodeTransition_property_input_30/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_31/auto_advance<class_AnimationNodeTransition_property_input_31/auto_advance>` |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_31/name<class_AnimationNodeTransition_property_input_31/name>`                 |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_4/auto_advance<class_AnimationNodeTransition_property_input_4/auto_advance>`   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_4/name<class_AnimationNodeTransition_property_input_4/name>`                   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_5/auto_advance<class_AnimationNodeTransition_property_input_5/auto_advance>`   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_5/name<class_AnimationNodeTransition_property_input_5/name>`                   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_6/auto_advance<class_AnimationNodeTransition_property_input_6/auto_advance>`   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_6/name<class_AnimationNodeTransition_property_input_6/name>`                   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_7/auto_advance<class_AnimationNodeTransition_property_input_7/auto_advance>`   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_7/name<class_AnimationNodeTransition_property_input_7/name>`                   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_8/auto_advance<class_AnimationNodeTransition_property_input_8/auto_advance>`   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_8/name<class_AnimationNodeTransition_property_input_8/name>`                   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`input_9/auto_advance<class_AnimationNodeTransition_property_input_9/auto_advance>`   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_9/name<class_AnimationNodeTransition_property_input_9/name>`                   |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`input_count<class_AnimationNodeTransition_property_input_count>`                     |
-+-----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`   | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`                       |
-+-----------------------------+--------------------------------------------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_0/auto_advance<class_AnimationNodeTransition_property_input_0/auto_advance>`   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_0/name<class_AnimationNodeTransition_property_input_0/name>`                   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_1/auto_advance<class_AnimationNodeTransition_property_input_1/auto_advance>`   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_1/name<class_AnimationNodeTransition_property_input_1/name>`                   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_10/auto_advance<class_AnimationNodeTransition_property_input_10/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_10/name<class_AnimationNodeTransition_property_input_10/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_11/auto_advance<class_AnimationNodeTransition_property_input_11/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_11/name<class_AnimationNodeTransition_property_input_11/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_12/auto_advance<class_AnimationNodeTransition_property_input_12/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_12/name<class_AnimationNodeTransition_property_input_12/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_13/auto_advance<class_AnimationNodeTransition_property_input_13/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_13/name<class_AnimationNodeTransition_property_input_13/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_14/auto_advance<class_AnimationNodeTransition_property_input_14/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_14/name<class_AnimationNodeTransition_property_input_14/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_15/auto_advance<class_AnimationNodeTransition_property_input_15/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_15/name<class_AnimationNodeTransition_property_input_15/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_16/auto_advance<class_AnimationNodeTransition_property_input_16/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_16/name<class_AnimationNodeTransition_property_input_16/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_17/auto_advance<class_AnimationNodeTransition_property_input_17/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_17/name<class_AnimationNodeTransition_property_input_17/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_18/auto_advance<class_AnimationNodeTransition_property_input_18/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_18/name<class_AnimationNodeTransition_property_input_18/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_19/auto_advance<class_AnimationNodeTransition_property_input_19/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_19/name<class_AnimationNodeTransition_property_input_19/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_2/auto_advance<class_AnimationNodeTransition_property_input_2/auto_advance>`   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_2/name<class_AnimationNodeTransition_property_input_2/name>`                   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_20/auto_advance<class_AnimationNodeTransition_property_input_20/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_20/name<class_AnimationNodeTransition_property_input_20/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_21/auto_advance<class_AnimationNodeTransition_property_input_21/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_21/name<class_AnimationNodeTransition_property_input_21/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_22/auto_advance<class_AnimationNodeTransition_property_input_22/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_22/name<class_AnimationNodeTransition_property_input_22/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_23/auto_advance<class_AnimationNodeTransition_property_input_23/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_23/name<class_AnimationNodeTransition_property_input_23/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_24/auto_advance<class_AnimationNodeTransition_property_input_24/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_24/name<class_AnimationNodeTransition_property_input_24/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_25/auto_advance<class_AnimationNodeTransition_property_input_25/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_25/name<class_AnimationNodeTransition_property_input_25/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_26/auto_advance<class_AnimationNodeTransition_property_input_26/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_26/name<class_AnimationNodeTransition_property_input_26/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_27/auto_advance<class_AnimationNodeTransition_property_input_27/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_27/name<class_AnimationNodeTransition_property_input_27/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_28/auto_advance<class_AnimationNodeTransition_property_input_28/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_28/name<class_AnimationNodeTransition_property_input_28/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_29/auto_advance<class_AnimationNodeTransition_property_input_29/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_29/name<class_AnimationNodeTransition_property_input_29/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_3/auto_advance<class_AnimationNodeTransition_property_input_3/auto_advance>`   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_3/name<class_AnimationNodeTransition_property_input_3/name>`                   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_30/auto_advance<class_AnimationNodeTransition_property_input_30/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_30/name<class_AnimationNodeTransition_property_input_30/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_31/auto_advance<class_AnimationNodeTransition_property_input_31/auto_advance>` |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_31/name<class_AnimationNodeTransition_property_input_31/name>`                 |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_4/auto_advance<class_AnimationNodeTransition_property_input_4/auto_advance>`   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_4/name<class_AnimationNodeTransition_property_input_4/name>`                   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_5/auto_advance<class_AnimationNodeTransition_property_input_5/auto_advance>`   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_5/name<class_AnimationNodeTransition_property_input_5/name>`                   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_6/auto_advance<class_AnimationNodeTransition_property_input_6/auto_advance>`   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_6/name<class_AnimationNodeTransition_property_input_6/name>`                   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_7/auto_advance<class_AnimationNodeTransition_property_input_7/auto_advance>`   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_7/name<class_AnimationNodeTransition_property_input_7/name>`                   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_8/auto_advance<class_AnimationNodeTransition_property_input_8/auto_advance>`   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_8/name<class_AnimationNodeTransition_property_input_8/name>`                   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`bool<class_bool>`     | :ref:`input_9/auto_advance<class_AnimationNodeTransition_property_input_9/auto_advance>`   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`String<class_String>` | :ref:`input_9/name<class_AnimationNodeTransition_property_input_9/name>`                   |     |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`int<class_int>`       | :ref:`input_count<class_AnimationNodeTransition_property_input_count>`                     | 0   |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>`   | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`                       | 0.0 |
++-----------------------------+--------------------------------------------------------------------------------------------+-----+
 
 Property Descriptions
 ---------------------
@@ -800,19 +800,23 @@ Property Descriptions
 
 - :ref:`int<class_int>` **input_count**
 
-+----------+---------------------------+
-| *Setter* | set_enabled_inputs(value) |
-+----------+---------------------------+
-| *Getter* | get_enabled_inputs()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 0                         |
++-----------+---------------------------+
+| *Setter*  | set_enabled_inputs(value) |
++-----------+---------------------------+
+| *Getter*  | get_enabled_inputs()      |
++-----------+---------------------------+
 
 .. _class_AnimationNodeTransition_property_xfade_time:
 
 - :ref:`float<class_float>` **xfade_time**
 
-+----------+----------------------------+
-| *Setter* | set_cross_fade_time(value) |
-+----------+----------------------------+
-| *Getter* | get_cross_fade_time()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 0.0                        |
++-----------+----------------------------+
+| *Setter*  | set_cross_fade_time(value) |
++-----------+----------------------------+
+| *Getter*  | get_cross_fade_time()      |
++-----------+----------------------------+
 

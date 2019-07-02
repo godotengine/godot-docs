@@ -19,17 +19,17 @@ Access to basic engine properties.
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`editor_hint<class_Engine_property_editor_hint>`                     |
-+---------------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`iterations_per_second<class_Engine_property_iterations_per_second>` |
-+---------------------------+---------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>`       |
-+---------------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`target_fps<class_Engine_property_target_fps>`                       |
-+---------------------------+---------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                       |
-+---------------------------+---------------------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------------------+------+
+| :ref:`bool<class_bool>`   | :ref:`editor_hint<class_Engine_property_editor_hint>`                     | true |
++---------------------------+---------------------------------------------------------------------------+------+
+| :ref:`int<class_int>`     | :ref:`iterations_per_second<class_Engine_property_iterations_per_second>` | 60   |
++---------------------------+---------------------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>`       | 0.5  |
++---------------------------+---------------------------------------------------------------------------+------+
+| :ref:`int<class_int>`     | :ref:`target_fps<class_Engine_property_target_fps>`                       | 0    |
++---------------------------+---------------------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                       | 1.0  |
++---------------------------+---------------------------------------------------------------------------+------+
 
 Methods
 -------
@@ -72,11 +72,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **editor_hint**
 
-+----------+------------------------+
-| *Setter* | set_editor_hint(value) |
-+----------+------------------------+
-| *Getter* | is_editor_hint()       |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | true                   |
++-----------+------------------------+
+| *Setter*  | set_editor_hint(value) |
++-----------+------------------------+
+| *Getter*  | is_editor_hint()       |
++-----------+------------------------+
 
 If ``true``, it is running inside the editor. Useful for tool scripts.
 
@@ -84,11 +86,13 @@ If ``true``, it is running inside the editor. Useful for tool scripts.
 
 - :ref:`int<class_int>` **iterations_per_second**
 
-+----------+----------------------------------+
-| *Setter* | set_iterations_per_second(value) |
-+----------+----------------------------------+
-| *Getter* | get_iterations_per_second()      |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | 60                               |
++-----------+----------------------------------+
+| *Setter*  | set_iterations_per_second(value) |
++-----------+----------------------------------+
+| *Getter*  | get_iterations_per_second()      |
++-----------+----------------------------------+
 
 The number of fixed iterations per second (for fixed process and physics).
 
@@ -96,33 +100,39 @@ The number of fixed iterations per second (for fixed process and physics).
 
 - :ref:`float<class_float>` **physics_jitter_fix**
 
-+----------+-------------------------------+
-| *Setter* | set_physics_jitter_fix(value) |
-+----------+-------------------------------+
-| *Getter* | get_physics_jitter_fix()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | 0.5                           |
++-----------+-------------------------------+
+| *Setter*  | set_physics_jitter_fix(value) |
++-----------+-------------------------------+
+| *Getter*  | get_physics_jitter_fix()      |
++-----------+-------------------------------+
 
 .. _class_Engine_property_target_fps:
 
 - :ref:`int<class_int>` **target_fps**
 
-+----------+-----------------------+
-| *Setter* | set_target_fps(value) |
-+----------+-----------------------+
-| *Getter* | get_target_fps()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 0                     |
++-----------+-----------------------+
+| *Setter*  | set_target_fps(value) |
++-----------+-----------------------+
+| *Getter*  | get_target_fps()      |
++-----------+-----------------------+
 
-The desired frames per second. If the hardware cannot keep up, this setting may not be respected. Defaults to 0, which indicates no limit.
+The desired frames per second. If the hardware cannot keep up, this setting may not be respected. A value of 0 means no limit.
 
 .. _class_Engine_property_time_scale:
 
 - :ref:`float<class_float>` **time_scale**
 
-+----------+-----------------------+
-| *Setter* | set_time_scale(value) |
-+----------+-----------------------+
-| *Getter* | get_time_scale()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 1.0                   |
++-----------+-----------------------+
+| *Setter*  | set_time_scale(value) |
++-----------+-----------------------+
+| *Getter*  | get_time_scale()      |
++-----------+-----------------------+
 
 Controls how fast or slow the in-game clock ticks versus the real life one. It defaults to 1.0. A value of 2.0 means the game moves twice as fast as real life, whilst a value of 0.5 means the game moves at half the regular speed.
 

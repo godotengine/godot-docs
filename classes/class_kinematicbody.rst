@@ -19,15 +19,15 @@ Kinematic body 3D node.
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody_property_collision/safe_margin>` |
-+---------------------------+----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_x<class_KinematicBody_property_move_lock_x>`                     |
-+---------------------------+----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_y<class_KinematicBody_property_move_lock_y>`                     |
-+---------------------------+----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_z<class_KinematicBody_property_move_lock_z>`                     |
-+---------------------------+----------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody_property_collision/safe_margin>` | 0.001 |
++---------------------------+----------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`move_lock_x<class_KinematicBody_property_move_lock_x>`                     | false |
++---------------------------+----------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`move_lock_y<class_KinematicBody_property_move_lock_y>`                     | false |
++---------------------------+----------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`move_lock_z<class_KinematicBody_property_move_lock_z>`                     | false |
++---------------------------+----------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -75,11 +75,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **collision/safe_margin**
 
-+----------+------------------------+
-| *Setter* | set_safe_margin(value) |
-+----------+------------------------+
-| *Getter* | get_safe_margin()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0.001                  |
++-----------+------------------------+
+| *Setter*  | set_safe_margin(value) |
++-----------+------------------------+
+| *Getter*  | get_safe_margin()      |
++-----------+------------------------+
 
 If the body is at least this close to another body, this body will consider them to be colliding.
 
@@ -87,11 +89,13 @@ If the body is at least this close to another body, this body will consider them
 
 - :ref:`bool<class_bool>` **move_lock_x**
 
-+----------+----------------------+
-| *Setter* | set_axis_lock(value) |
-+----------+----------------------+
-| *Getter* | get_axis_lock()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_axis_lock(value) |
++-----------+----------------------+
+| *Getter*  | get_axis_lock()      |
++-----------+----------------------+
 
 Lock the body's X axis movement.
 
@@ -99,11 +103,13 @@ Lock the body's X axis movement.
 
 - :ref:`bool<class_bool>` **move_lock_y**
 
-+----------+----------------------+
-| *Setter* | set_axis_lock(value) |
-+----------+----------------------+
-| *Getter* | get_axis_lock()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_axis_lock(value) |
++-----------+----------------------+
+| *Getter*  | get_axis_lock()      |
++-----------+----------------------+
 
 Lock the body's Y axis movement.
 
@@ -111,11 +117,13 @@ Lock the body's Y axis movement.
 
 - :ref:`bool<class_bool>` **move_lock_z**
 
-+----------+----------------------+
-| *Setter* | set_axis_lock(value) |
-+----------+----------------------+
-| *Getter* | get_axis_lock()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_axis_lock(value) |
++-----------+----------------------+
+| *Getter*  | get_axis_lock()      |
++-----------+----------------------+
 
 Lock the body's Z axis movement.
 

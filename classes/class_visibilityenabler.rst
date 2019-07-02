@@ -19,11 +19,11 @@ Enables certain nodes only when visible.
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler_property_freeze_bodies>`       |
-+-------------------------+----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_property_pause_animations>` |
-+-------------------------+----------------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------------------+------+
+| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler_property_freeze_bodies>`       | true |
++-------------------------+----------------------------------------------------------------------------+------+
+| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_property_pause_animations>` | true |
++-------------------------+----------------------------------------------------------------------------+------+
 
 Enumerations
 ------------
@@ -56,11 +56,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **freeze_bodies**
 
-+----------+----------------------+
-| *Setter* | set_enabler(value)   |
-+----------+----------------------+
-| *Getter* | is_enabler_enabled() |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | true                 |
++-----------+----------------------+
+| *Setter*  | set_enabler(value)   |
++-----------+----------------------+
+| *Getter*  | is_enabler_enabled() |
++-----------+----------------------+
 
 If ``true``, :ref:`RigidBody<class_RigidBody>` nodes will be paused.
 
@@ -68,11 +70,13 @@ If ``true``, :ref:`RigidBody<class_RigidBody>` nodes will be paused.
 
 - :ref:`bool<class_bool>` **pause_animations**
 
-+----------+----------------------+
-| *Setter* | set_enabler(value)   |
-+----------+----------------------+
-| *Getter* | is_enabler_enabled() |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | true                 |
++-----------+----------------------+
+| *Setter*  | set_enabler(value)   |
++-----------+----------------------+
+| *Getter*  | is_enabler_enabled() |
++-----------+----------------------+
 
 If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 

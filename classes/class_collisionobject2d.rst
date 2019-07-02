@@ -21,9 +21,9 @@ Base node for 2D collision objects.
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` |
-+-------------------------+------------------------------------------------------------------------+
++-------------------------+------------------------------------------------------------------------+------+
+| :ref:`bool<class_bool>` | :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` | true |
++-------------------------+------------------------------------------------------------------------+------+
 
 Methods
 -------
@@ -105,11 +105,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **input_pickable**
 
-+----------+---------------------+
-| *Setter* | set_pickable(value) |
-+----------+---------------------+
-| *Getter* | is_pickable()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | true                |
++-----------+---------------------+
+| *Setter*  | set_pickable(value) |
++-----------+---------------------+
+| *Getter*  | is_pickable()       |
++-----------+---------------------+
 
 If ``true``, this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events. Requires at least one ``collision_layer`` bit to be set.
 

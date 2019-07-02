@@ -19,29 +19,29 @@ Physics object that simulates the behavior of a wheel.
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`damping_compression<class_VehicleWheel_property_damping_compression>`   |
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`damping_relaxation<class_VehicleWheel_property_damping_relaxation>`     |
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`suspension_max_force<class_VehicleWheel_property_suspension_max_force>` |
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`suspension_stiffness<class_VehicleWheel_property_suspension_stiffness>` |
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`suspension_travel<class_VehicleWheel_property_suspension_travel>`       |
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`use_as_steering<class_VehicleWheel_property_use_as_steering>`           |
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`use_as_traction<class_VehicleWheel_property_use_as_traction>`           |
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`wheel_friction_slip<class_VehicleWheel_property_wheel_friction_slip>`   |
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`wheel_radius<class_VehicleWheel_property_wheel_radius>`                 |
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`wheel_rest_length<class_VehicleWheel_property_wheel_rest_length>`       |
-+---------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`wheel_roll_influence<class_VehicleWheel_property_wheel_roll_influence>` |
-+---------------------------+-------------------------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`damping_compression<class_VehicleWheel_property_damping_compression>`   | 0.83   |
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`damping_relaxation<class_VehicleWheel_property_damping_relaxation>`     | 0.88   |
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`suspension_max_force<class_VehicleWheel_property_suspension_max_force>` | 6000.0 |
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`suspension_stiffness<class_VehicleWheel_property_suspension_stiffness>` | 5.88   |
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`suspension_travel<class_VehicleWheel_property_suspension_travel>`       | 5.0    |
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`bool<class_bool>`   | :ref:`use_as_steering<class_VehicleWheel_property_use_as_steering>`           | false  |
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`bool<class_bool>`   | :ref:`use_as_traction<class_VehicleWheel_property_use_as_traction>`           | false  |
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`wheel_friction_slip<class_VehicleWheel_property_wheel_friction_slip>`   | 10.5   |
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`wheel_radius<class_VehicleWheel_property_wheel_radius>`                 | 0.5    |
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`wheel_rest_length<class_VehicleWheel_property_wheel_rest_length>`       | 0.15   |
++---------------------------+-------------------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`wheel_roll_influence<class_VehicleWheel_property_wheel_roll_influence>` | 0.1    |
++---------------------------+-------------------------------------------------------------------------------+--------+
 
 Methods
 -------
@@ -66,11 +66,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **damping_compression**
 
-+----------+--------------------------------+
-| *Setter* | set_damping_compression(value) |
-+----------+--------------------------------+
-| *Getter* | get_damping_compression()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | 0.83                           |
++-----------+--------------------------------+
+| *Setter*  | set_damping_compression(value) |
++-----------+--------------------------------+
+| *Getter*  | get_damping_compression()      |
++-----------+--------------------------------+
 
 The damping applied to the spring when the spring is being compressed. This value should be between 0.0 (no damping) and 1.0. A value of 0.0 means the car will keep bouncing as the spring keeps its energy. A good value for this is around 0.3 for a normal car, 0.5 for a race car.
 
@@ -78,11 +80,13 @@ The damping applied to the spring when the spring is being compressed. This valu
 
 - :ref:`float<class_float>` **damping_relaxation**
 
-+----------+-------------------------------+
-| *Setter* | set_damping_relaxation(value) |
-+----------+-------------------------------+
-| *Getter* | get_damping_relaxation()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | 0.88                          |
++-----------+-------------------------------+
+| *Setter*  | set_damping_relaxation(value) |
++-----------+-------------------------------+
+| *Getter*  | get_damping_relaxation()      |
++-----------+-------------------------------+
 
 The damping applied to the spring when relaxing. This value should be between 0.0 (no damping) and 1.0. This value should always be slightly higher than the :ref:`damping_compression<class_VehicleWheel_property_damping_compression>` property. For a :ref:`damping_compression<class_VehicleWheel_property_damping_compression>` value of 0.3, try a relaxation value of 0.5.
 
@@ -90,11 +94,13 @@ The damping applied to the spring when relaxing. This value should be between 0.
 
 - :ref:`float<class_float>` **suspension_max_force**
 
-+----------+---------------------------------+
-| *Setter* | set_suspension_max_force(value) |
-+----------+---------------------------------+
-| *Getter* | get_suspension_max_force()      |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | 6000.0                          |
++-----------+---------------------------------+
+| *Setter*  | set_suspension_max_force(value) |
++-----------+---------------------------------+
+| *Getter*  | get_suspension_max_force()      |
++-----------+---------------------------------+
 
 The maximum force the spring can resist. This value should be higher than a quarter of the :ref:`RigidBody.mass<class_RigidBody_property_mass>` of the :ref:`VehicleBody<class_VehicleBody>` or the spring will not carry the weight of the vehicle. Good results are often obtained by a value that is about 3× to 4× this number.
 
@@ -102,11 +108,13 @@ The maximum force the spring can resist. This value should be higher than a quar
 
 - :ref:`float<class_float>` **suspension_stiffness**
 
-+----------+---------------------------------+
-| *Setter* | set_suspension_stiffness(value) |
-+----------+---------------------------------+
-| *Getter* | get_suspension_stiffness()      |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | 5.88                            |
++-----------+---------------------------------+
+| *Setter*  | set_suspension_stiffness(value) |
++-----------+---------------------------------+
+| *Getter*  | get_suspension_stiffness()      |
++-----------+---------------------------------+
 
 This value defines the stiffness of the suspension. Use a value lower than 50 for an off-road car, a value between 50 and 100 for a race car and try something around 200 for something like a Formula 1 car.
 
@@ -114,11 +122,13 @@ This value defines the stiffness of the suspension. Use a value lower than 50 fo
 
 - :ref:`float<class_float>` **suspension_travel**
 
-+----------+------------------------------+
-| *Setter* | set_suspension_travel(value) |
-+----------+------------------------------+
-| *Getter* | get_suspension_travel()      |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | 5.0                          |
++-----------+------------------------------+
+| *Setter*  | set_suspension_travel(value) |
++-----------+------------------------------+
+| *Getter*  | get_suspension_travel()      |
++-----------+------------------------------+
 
 This is the distance the suspension can travel. As Godot units are equivalent to meters, keep this setting relatively low. Try a value between 0.1 and 0.3 depending on the type of car.
 
@@ -126,11 +136,13 @@ This is the distance the suspension can travel. As Godot units are equivalent to
 
 - :ref:`bool<class_bool>` **use_as_steering**
 
-+----------+----------------------------+
-| *Setter* | set_use_as_steering(value) |
-+----------+----------------------------+
-| *Getter* | is_used_as_steering()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | false                      |
++-----------+----------------------------+
+| *Setter*  | set_use_as_steering(value) |
++-----------+----------------------------+
+| *Getter*  | is_used_as_steering()      |
++-----------+----------------------------+
 
 If ``true``, this wheel will be turned when the car steers.
 
@@ -138,11 +150,13 @@ If ``true``, this wheel will be turned when the car steers.
 
 - :ref:`bool<class_bool>` **use_as_traction**
 
-+----------+----------------------------+
-| *Setter* | set_use_as_traction(value) |
-+----------+----------------------------+
-| *Getter* | is_used_as_traction()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | false                      |
++-----------+----------------------------+
+| *Setter*  | set_use_as_traction(value) |
++-----------+----------------------------+
+| *Getter*  | is_used_as_traction()      |
++-----------+----------------------------+
 
 If ``true``, this wheel transfers engine force to the ground to propel the vehicle forward.
 
@@ -150,11 +164,13 @@ If ``true``, this wheel transfers engine force to the ground to propel the vehic
 
 - :ref:`float<class_float>` **wheel_friction_slip**
 
-+----------+--------------------------+
-| *Setter* | set_friction_slip(value) |
-+----------+--------------------------+
-| *Getter* | get_friction_slip()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 10.5                     |
++-----------+--------------------------+
+| *Setter*  | set_friction_slip(value) |
++-----------+--------------------------+
+| *Getter*  | get_friction_slip()      |
++-----------+--------------------------+
 
 This determines how much grip this wheel has. It is combined with the friction setting of the surface the wheel is in contact with. 0.0 means no grip, 1.0 is normal grip. For a drift car setup, try setting the grip of the rear wheels slightly lower than the front wheels, or use a lower value to simulate tire wear.
 
@@ -164,11 +180,13 @@ It's best to set this to 1.0 when starting out.
 
 - :ref:`float<class_float>` **wheel_radius**
 
-+----------+-------------------+
-| *Setter* | set_radius(value) |
-+----------+-------------------+
-| *Getter* | get_radius()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0.5               |
++-----------+-------------------+
+| *Setter*  | set_radius(value) |
++-----------+-------------------+
+| *Getter*  | get_radius()      |
++-----------+-------------------+
 
 The radius of the wheel in meters.
 
@@ -176,11 +194,13 @@ The radius of the wheel in meters.
 
 - :ref:`float<class_float>` **wheel_rest_length**
 
-+----------+-----------------------------------+
-| *Setter* | set_suspension_rest_length(value) |
-+----------+-----------------------------------+
-| *Getter* | get_suspension_rest_length()      |
-+----------+-----------------------------------+
++-----------+-----------------------------------+
+| *Default* | 0.15                              |
++-----------+-----------------------------------+
+| *Setter*  | set_suspension_rest_length(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_suspension_rest_length()      |
++-----------+-----------------------------------+
 
 This is the distance in meters the wheel is lowered from its origin point. Don't set this to 0.0 and move the wheel into position, instead move the origin point of your wheel (the gizmo in Godot) to the position the wheel will take when bottoming out, then use the rest length to move the wheel down to the position it should be in when the car is in rest.
 
@@ -188,11 +208,13 @@ This is the distance in meters the wheel is lowered from its origin point. Don't
 
 - :ref:`float<class_float>` **wheel_roll_influence**
 
-+----------+---------------------------+
-| *Setter* | set_roll_influence(value) |
-+----------+---------------------------+
-| *Getter* | get_roll_influence()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 0.1                       |
++-----------+---------------------------+
+| *Setter*  | set_roll_influence(value) |
++-----------+---------------------------+
+| *Getter*  | get_roll_influence()      |
++-----------+---------------------------+
 
 This value affects the roll of your vehicle. If set to 0.0 for all wheels, your vehicle will be prone to rolling over, while a value of 1.0 will resist body roll.
 

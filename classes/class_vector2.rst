@@ -17,11 +17,11 @@ Vector used for 2D math.
 Properties
 ----------
 
-+---------------------------+------------------------------------+
-| :ref:`float<class_float>` | :ref:`x<class_Vector2_property_x>` |
-+---------------------------+------------------------------------+
-| :ref:`float<class_float>` | :ref:`y<class_Vector2_property_y>` |
-+---------------------------+------------------------------------+
++---------------------------+------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`x<class_Vector2_property_x>` | 0.0 |
++---------------------------+------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`y<class_Vector2_property_y>` | 0.0 |
++---------------------------+------------------------------------+-----+
 
 Methods
 -------
@@ -136,11 +136,19 @@ Property Descriptions
 
 - :ref:`float<class_float>` **x**
 
++-----------+-----+
+| *Default* | 0.0 |
++-----------+-----+
+
 The vector's X component. Also accessible by using the index position ``[0]``.
 
 .. _class_Vector2_property_y:
 
 - :ref:`float<class_float>` **y**
+
++-----------+-----+
+| *Default* | 0.0 |
++-----------+-----+
 
 The vector's Y component. Also accessible by using the index position ``[1]``.
 

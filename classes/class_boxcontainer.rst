@@ -21,9 +21,9 @@ Base class for box containers.
 Properties
 ----------
 
-+-----------------------------------------------+---------------------------------------------------------+
-| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` |
-+-----------------------------------------------+---------------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------+---+
+| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | 0 |
++-----------------------------------------------+---------------------------------------------------------+---+
 
 Methods
 -------
@@ -63,11 +63,13 @@ Property Descriptions
 
 - :ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment**
 
-+----------+----------------------+
-| *Setter* | set_alignment(value) |
-+----------+----------------------+
-| *Getter* | get_alignment()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0                    |
++-----------+----------------------+
+| *Setter*  | set_alignment(value) |
++-----------+----------------------+
+| *Getter*  | get_alignment()      |
++-----------+----------------------+
 
 The alignment of the container's children (must be one of :ref:`ALIGN_BEGIN<class_BoxContainer_constant_ALIGN_BEGIN>`, :ref:`ALIGN_CENTER<class_BoxContainer_constant_ALIGN_CENTER>` or :ref:`ALIGN_END<class_BoxContainer_constant_ALIGN_END>`).
 

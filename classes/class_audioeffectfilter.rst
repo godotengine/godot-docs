@@ -21,15 +21,15 @@ Adds a filter to the audio bus.
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` |
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` | :ref:`db<class_AudioEffectFilter_property_db>`               |
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`gain<class_AudioEffectFilter_property_gain>`           |
-+--------------------------------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`resonance<class_AudioEffectFilter_property_resonance>` |
-+--------------------------------------------------+--------------------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------+--------+
+| :ref:`float<class_float>`                        | :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` | 2000.0 |
++--------------------------------------------------+--------------------------------------------------------------+--------+
+| :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` | :ref:`db<class_AudioEffectFilter_property_db>`               | 0      |
++--------------------------------------------------+--------------------------------------------------------------+--------+
+| :ref:`float<class_float>`                        | :ref:`gain<class_AudioEffectFilter_property_gain>`           | 1.0    |
++--------------------------------------------------+--------------------------------------------------------------+--------+
+| :ref:`float<class_float>`                        | :ref:`resonance<class_AudioEffectFilter_property_resonance>` | 0.5    |
++--------------------------------------------------+--------------------------------------------------------------+--------+
 
 Enumerations
 ------------
@@ -66,11 +66,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **cutoff_hz**
 
-+----------+-------------------+
-| *Setter* | set_cutoff(value) |
-+----------+-------------------+
-| *Getter* | get_cutoff()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 2000.0            |
++-----------+-------------------+
+| *Setter*  | set_cutoff(value) |
++-----------+-------------------+
+| *Getter*  | get_cutoff()      |
++-----------+-------------------+
 
 Threshold frequency for the filter, in Hz.
 
@@ -78,21 +80,25 @@ Threshold frequency for the filter, in Hz.
 
 - :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db**
 
-+----------+---------------+
-| *Setter* | set_db(value) |
-+----------+---------------+
-| *Getter* | get_db()      |
-+----------+---------------+
++-----------+---------------+
+| *Default* | 0             |
++-----------+---------------+
+| *Setter*  | set_db(value) |
++-----------+---------------+
+| *Getter*  | get_db()      |
++-----------+---------------+
 
 .. _class_AudioEffectFilter_property_gain:
 
 - :ref:`float<class_float>` **gain**
 
-+----------+-----------------+
-| *Setter* | set_gain(value) |
-+----------+-----------------+
-| *Getter* | get_gain()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 1.0             |
++-----------+-----------------+
+| *Setter*  | set_gain(value) |
++-----------+-----------------+
+| *Getter*  | get_gain()      |
++-----------+-----------------+
 
 Gain amount of the frequencies after the filter.
 
@@ -100,11 +106,13 @@ Gain amount of the frequencies after the filter.
 
 - :ref:`float<class_float>` **resonance**
 
-+----------+----------------------+
-| *Setter* | set_resonance(value) |
-+----------+----------------------+
-| *Getter* | get_resonance()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0.5                  |
++-----------+----------------------+
+| *Setter*  | set_resonance(value) |
++-----------+----------------------+
+| *Getter*  | get_resonance()      |
++-----------+----------------------+
 
 Amount of boost in the overtones near the cutoff frequency.
 

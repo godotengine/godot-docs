@@ -19,13 +19,13 @@ Input event for gamepad buttons.
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventJoypadButton_property_button_index>` |
-+---------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventJoypadButton_property_pressed>`           |
-+---------------------------+-------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`pressure<class_InputEventJoypadButton_property_pressure>`         |
-+---------------------------+-------------------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventJoypadButton_property_button_index>` | 0     |
++---------------------------+-------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventJoypadButton_property_pressed>`           | false |
++---------------------------+-------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`pressure<class_InputEventJoypadButton_property_pressure>`         | 0.0   |
++---------------------------+-------------------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -44,11 +44,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **button_index**
 
-+----------+-------------------------+
-| *Setter* | set_button_index(value) |
-+----------+-------------------------+
-| *Getter* | get_button_index()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_button_index(value) |
++-----------+-------------------------+
+| *Getter*  | get_button_index()      |
++-----------+-------------------------+
 
 Button identifier. One of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>` button constants.
 
@@ -56,11 +58,13 @@ Button identifier. One of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>
 
 - :ref:`bool<class_bool>` **pressed**
 
-+----------+--------------------+
-| *Setter* | set_pressed(value) |
-+----------+--------------------+
-| *Getter* | is_pressed()       |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | false              |
++-----------+--------------------+
+| *Setter*  | set_pressed(value) |
++-----------+--------------------+
+| *Getter*  | is_pressed()       |
++-----------+--------------------+
 
 If ``true``, the button's state is pressed. If ``false``, the button's state is released.
 
@@ -68,11 +72,13 @@ If ``true``, the button's state is pressed. If ``false``, the button's state is 
 
 - :ref:`float<class_float>` **pressure**
 
-+----------+---------------------+
-| *Setter* | set_pressure(value) |
-+----------+---------------------+
-| *Getter* | get_pressure()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_pressure(value) |
++-----------+---------------------+
+| *Getter*  | get_pressure()      |
++-----------+---------------------+
 
 Represents the pressure the user puts on the button with his finger, if the controller supports it. Ranges from ``0`` to ``1``.
 

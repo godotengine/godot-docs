@@ -19,15 +19,15 @@ Blends linearly between two of any number of :ref:`AnimationNode<class_Animation
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>`   | :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`     |
-+-----------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>`   | :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>`     |
-+-----------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>`   | :ref:`snap<class_AnimationNodeBlendSpace1D_property_snap>`               |
-+-----------------------------+--------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`value_label<class_AnimationNodeBlendSpace1D_property_value_label>` |
-+-----------------------------+--------------------------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`   | :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`     | 1.0     |
++-----------------------------+--------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`   | :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>`     | -1.0    |
++-----------------------------+--------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`   | :ref:`snap<class_AnimationNodeBlendSpace1D_property_snap>`               | 0.1     |
++-----------------------------+--------------------------------------------------------------------------+---------+
+| :ref:`String<class_String>` | :ref:`value_label<class_AnimationNodeBlendSpace1D_property_value_label>` | "value" |
++-----------------------------+--------------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -66,11 +66,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **max_space**
 
-+----------+----------------------+
-| *Setter* | set_max_space(value) |
-+----------+----------------------+
-| *Getter* | get_max_space()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 1.0                  |
++-----------+----------------------+
+| *Setter*  | set_max_space(value) |
++-----------+----------------------+
+| *Getter*  | get_max_space()      |
++-----------+----------------------+
 
 The blend space's axis's upper limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
 
@@ -78,11 +80,13 @@ The blend space's axis's upper limit for the points' position. See :ref:`add_ble
 
 - :ref:`float<class_float>` **min_space**
 
-+----------+----------------------+
-| *Setter* | set_min_space(value) |
-+----------+----------------------+
-| *Getter* | get_min_space()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | -1.0                 |
++-----------+----------------------+
+| *Setter*  | set_min_space(value) |
++-----------+----------------------+
+| *Getter*  | get_min_space()      |
++-----------+----------------------+
 
 The blend space's axis's lower limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
 
@@ -90,11 +94,13 @@ The blend space's axis's lower limit for the points' position. See :ref:`add_ble
 
 - :ref:`float<class_float>` **snap**
 
-+----------+-----------------+
-| *Setter* | set_snap(value) |
-+----------+-----------------+
-| *Getter* | get_snap()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 0.1             |
++-----------+-----------------+
+| *Setter*  | set_snap(value) |
++-----------+-----------------+
+| *Getter*  | get_snap()      |
++-----------+-----------------+
 
 Position increment to snap to when moving a point on the axis.
 
@@ -102,11 +108,13 @@ Position increment to snap to when moving a point on the axis.
 
 - :ref:`String<class_String>` **value_label**
 
-+----------+------------------------+
-| *Setter* | set_value_label(value) |
-+----------+------------------------+
-| *Getter* | get_value_label()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | "value"                |
++-----------+------------------------+
+| *Setter*  | set_value_label(value) |
++-----------+------------------------+
+| *Getter*  | get_value_label()      |
++-----------+------------------------+
 
 Label of the virtual axis of the blend space.
 

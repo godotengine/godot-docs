@@ -19,9 +19,9 @@ A Visual Script node used to call built-in functions.
 Properties
 ----------
 
-+--------------------------------------------------------------+------------------------------------------------------------------+
-| :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_property_function>` |
-+--------------------------------------------------------------+------------------------------------------------------------------+
++--------------------------------------------------------------+------------------------------------------------------------------+---+
+| :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_property_function>` | 0 |
++--------------------------------------------------------------+------------------------------------------------------------------+---+
 
 Enumerations
 ------------
@@ -315,11 +315,13 @@ Property Descriptions
 
 - :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **function**
 
-+----------+-----------------+
-| *Setter* | set_func(value) |
-+----------+-----------------+
-| *Getter* | get_func()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 0               |
++-----------+-----------------+
+| *Setter*  | set_func(value) |
++-----------+-----------------+
+| *Getter*  | get_func()      |
++-----------+-----------------+
 
 The function to be executed.
 

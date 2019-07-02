@@ -21,9 +21,9 @@ Abstraction and base class for packet-based protocols.
 Properties
 ----------
 
-+-------------------------+-------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` |
-+-------------------------+-------------------------------------------------------------------------------+
++-------------------------+-------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` | false |
++-------------------------+-------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -54,11 +54,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **allow_object_decoding**
 
-+----------+----------------------------------+
-| *Setter* | set_allow_object_decoding(value) |
-+----------+----------------------------------+
-| *Getter* | is_object_decoding_allowed()     |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | false                            |
++-----------+----------------------------------+
+| *Setter*  | set_allow_object_decoding(value) |
++-----------+----------------------------------+
+| *Getter*  | is_object_decoding_allowed()     |
++-----------+----------------------------------+
 
 *Deprecated.* Use ``get_var`` and ``put_var`` parameters instead.
 

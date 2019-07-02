@@ -19,19 +19,19 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>`   |
-+-------------------------------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`bump_strength<class_NoiseTexture_property_bump_strength>` |
-+-------------------------------------------------+-----------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`               |
-+-------------------------------------------------+-----------------------------------------------------------------+
-| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 |
-+-------------------------------------------------+-----------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           |
-+-------------------------------------------------+-----------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 |
-+-------------------------------------------------+-----------------------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>`   | false |
++-------------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`float<class_float>`                       | :ref:`bump_strength<class_NoiseTexture_property_bump_strength>` | 8.0   |
++-------------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`               | 512   |
++-------------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 | null  |
++-------------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           | false |
++-------------------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 | 512   |
++-------------------------------------------------+-----------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -47,11 +47,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **as_normalmap**
 
-+----------+-------------------------+
-| *Setter* | set_as_normalmap(value) |
-+----------+-------------------------+
-| *Getter* | is_normalmap()          |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | false                   |
++-----------+-------------------------+
+| *Setter*  | set_as_normalmap(value) |
++-----------+-------------------------+
+| *Getter*  | is_normalmap()          |
++-----------+-------------------------+
 
 If ``true``, the resulting texture contains a normal map created from the original noise interpreted as a bump map.
 
@@ -59,21 +61,25 @@ If ``true``, the resulting texture contains a normal map created from the origin
 
 - :ref:`float<class_float>` **bump_strength**
 
-+----------+--------------------------+
-| *Setter* | set_bump_strength(value) |
-+----------+--------------------------+
-| *Getter* | get_bump_strength()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 8.0                      |
++-----------+--------------------------+
+| *Setter*  | set_bump_strength(value) |
++-----------+--------------------------+
+| *Getter*  | get_bump_strength()      |
++-----------+--------------------------+
 
 .. _class_NoiseTexture_property_height:
 
 - :ref:`int<class_int>` **height**
 
-+----------+-------------------+
-| *Setter* | set_height(value) |
-+----------+-------------------+
-| *Getter* | get_height()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 512               |
++-----------+-------------------+
+| *Setter*  | set_height(value) |
++-----------+-------------------+
+| *Getter*  | get_height()      |
++-----------+-------------------+
 
 Height of the generated texture.
 
@@ -81,11 +87,13 @@ Height of the generated texture.
 
 - :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` **noise**
 
-+----------+------------------+
-| *Setter* | set_noise(value) |
-+----------+------------------+
-| *Getter* | get_noise()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | null             |
++-----------+------------------+
+| *Setter*  | set_noise(value) |
++-----------+------------------+
+| *Getter*  | get_noise()      |
++-----------+------------------+
 
 The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate the noise.
 
@@ -93,11 +101,13 @@ The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate th
 
 - :ref:`bool<class_bool>` **seamless**
 
-+----------+---------------------+
-| *Setter* | set_seamless(value) |
-+----------+---------------------+
-| *Getter* | get_seamless()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_seamless(value) |
++-----------+---------------------+
+| *Getter*  | get_seamless()      |
++-----------+---------------------+
 
 Whether the texture can be tiled without visible seams or not. Seamless textures take longer to generate.
 
@@ -105,11 +115,13 @@ Whether the texture can be tiled without visible seams or not. Seamless textures
 
 - :ref:`int<class_int>` **width**
 
-+----------+------------------+
-| *Setter* | set_width(value) |
-+----------+------------------+
-| *Getter* | get_width()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 512              |
++-----------+------------------+
+| *Setter*  | set_width(value) |
++-----------+------------------+
+| *Getter*  | get_width()      |
++-----------+------------------+
 
 Width of the generated texture.
 

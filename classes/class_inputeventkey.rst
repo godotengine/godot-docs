@@ -19,15 +19,15 @@ Input event type for keyboard events.
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`         |
-+-------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`   |
-+-------------------------+--------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`scancode<class_InputEventKey_property_scancode>` |
-+-------------------------+--------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`   |
-+-------------------------+--------------------------------------------------------+
++-------------------------+--------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`         | false |
++-------------------------+--------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`   | false |
++-------------------------+--------------------------------------------------------+-------+
+| :ref:`int<class_int>`   | :ref:`scancode<class_InputEventKey_property_scancode>` | 0     |
++-------------------------+--------------------------------------------------------+-------+
+| :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`   | 0     |
++-------------------------+--------------------------------------------------------+-------+
 
 Methods
 -------
@@ -53,11 +53,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **echo**
 
-+----------+-----------------+
-| *Setter* | set_echo(value) |
-+----------+-----------------+
-| *Getter* | is_echo()       |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | false           |
++-----------+-----------------+
+| *Setter*  | set_echo(value) |
++-----------+-----------------+
+| *Getter*  | is_echo()       |
++-----------+-----------------+
 
 If ``true``, the key was already pressed before this event. It means the user is holding the key down.
 
@@ -65,11 +67,13 @@ If ``true``, the key was already pressed before this event. It means the user is
 
 - :ref:`bool<class_bool>` **pressed**
 
-+----------+--------------------+
-| *Setter* | set_pressed(value) |
-+----------+--------------------+
-| *Getter* | is_pressed()       |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | false              |
++-----------+--------------------+
+| *Setter*  | set_pressed(value) |
++-----------+--------------------+
+| *Getter*  | is_pressed()       |
++-----------+--------------------+
 
 If ``true``, the key's state is pressed. If ``false``, the key's state is released.
 
@@ -77,11 +81,13 @@ If ``true``, the key's state is pressed. If ``false``, the key's state is releas
 
 - :ref:`int<class_int>` **scancode**
 
-+----------+---------------------+
-| *Setter* | set_scancode(value) |
-+----------+---------------------+
-| *Getter* | get_scancode()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0                   |
++-----------+---------------------+
+| *Setter*  | set_scancode(value) |
++-----------+---------------------+
+| *Getter*  | get_scancode()      |
++-----------+---------------------+
 
 Key scancode, one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
 
@@ -89,11 +95,13 @@ Key scancode, one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
 
 - :ref:`int<class_int>` **unicode**
 
-+----------+--------------------+
-| *Setter* | set_unicode(value) |
-+----------+--------------------+
-| *Getter* | get_unicode()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 0                  |
++-----------+--------------------+
+| *Setter*  | set_unicode(value) |
++-----------+--------------------+
+| *Getter*  | get_unicode()      |
++-----------+--------------------+
 
 Key Unicode identifier when relevant. Unicode identifiers for the composite characters and complex scripts may not be available unless IME input mode is active. See :ref:`OS.set_ime_active<class_OS_method_set_ime_active>` for more information.
 

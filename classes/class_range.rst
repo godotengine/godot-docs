@@ -21,27 +21,27 @@ Abstract base class for range-based controls.
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`allow_greater<class_Range_property_allow_greater>` |
-+---------------------------+----------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`allow_lesser<class_Range_property_allow_lesser>`   |
-+---------------------------+----------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`exp_edit<class_Range_property_exp_edit>`           |
-+---------------------------+----------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`max_value<class_Range_property_max_value>`         |
-+---------------------------+----------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`min_value<class_Range_property_min_value>`         |
-+---------------------------+----------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`page<class_Range_property_page>`                   |
-+---------------------------+----------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`ratio<class_Range_property_ratio>`                 |
-+---------------------------+----------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`rounded<class_Range_property_rounded>`             |
-+---------------------------+----------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`step<class_Range_property_step>`                   |
-+---------------------------+----------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`value<class_Range_property_value>`                 |
-+---------------------------+----------------------------------------------------------+
++---------------------------+----------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`allow_greater<class_Range_property_allow_greater>` | false |
++---------------------------+----------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`allow_lesser<class_Range_property_allow_lesser>`   | false |
++---------------------------+----------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`exp_edit<class_Range_property_exp_edit>`           | false |
++---------------------------+----------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`max_value<class_Range_property_max_value>`         | 100.0 |
++---------------------------+----------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`min_value<class_Range_property_min_value>`         | 0.0   |
++---------------------------+----------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`page<class_Range_property_page>`                   | 0.0   |
++---------------------------+----------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`ratio<class_Range_property_ratio>`                 |       |
++---------------------------+----------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`rounded<class_Range_property_rounded>`             | false |
++---------------------------+----------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`step<class_Range_property_step>`                   | 1.0   |
++---------------------------+----------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`value<class_Range_property_value>`                 | 0.0   |
++---------------------------+----------------------------------------------------------+-------+
 
 Methods
 -------
@@ -79,35 +79,41 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **allow_greater**
 
-+----------+--------------------------+
-| *Setter* | set_allow_greater(value) |
-+----------+--------------------------+
-| *Getter* | is_greater_allowed()     |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | false                    |
++-----------+--------------------------+
+| *Setter*  | set_allow_greater(value) |
++-----------+--------------------------+
+| *Getter*  | is_greater_allowed()     |
++-----------+--------------------------+
 
-If ``true``, :ref:`value<class_Range_property_value>` may be greater than :ref:`max_value<class_Range_property_max_value>`. Default value: ``false``.
+If ``true``, :ref:`value<class_Range_property_value>` may be greater than :ref:`max_value<class_Range_property_max_value>`.
 
 .. _class_Range_property_allow_lesser:
 
 - :ref:`bool<class_bool>` **allow_lesser**
 
-+----------+-------------------------+
-| *Setter* | set_allow_lesser(value) |
-+----------+-------------------------+
-| *Getter* | is_lesser_allowed()     |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | false                   |
++-----------+-------------------------+
+| *Setter*  | set_allow_lesser(value) |
++-----------+-------------------------+
+| *Getter*  | is_lesser_allowed()     |
++-----------+-------------------------+
 
-If ``true``, :ref:`value<class_Range_property_value>` may be less than :ref:`min_value<class_Range_property_min_value>`. Default value: ``false``.
+If ``true``, :ref:`value<class_Range_property_value>` may be less than :ref:`min_value<class_Range_property_min_value>`.
 
 .. _class_Range_property_exp_edit:
 
 - :ref:`bool<class_bool>` **exp_edit**
 
-+----------+----------------------+
-| *Setter* | set_exp_ratio(value) |
-+----------+----------------------+
-| *Getter* | is_ratio_exp()       |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_exp_ratio(value) |
++-----------+----------------------+
+| *Getter*  | is_ratio_exp()       |
++-----------+----------------------+
 
 If ``true``, and ``min_value`` is greater than 0, ``value`` will be represented exponentially rather than linearly.
 
@@ -115,35 +121,41 @@ If ``true``, and ``min_value`` is greater than 0, ``value`` will be represented 
 
 - :ref:`float<class_float>` **max_value**
 
-+----------+----------------+
-| *Setter* | set_max(value) |
-+----------+----------------+
-| *Getter* | get_max()      |
-+----------+----------------+
++-----------+----------------+
+| *Default* | 100.0          |
++-----------+----------------+
+| *Setter*  | set_max(value) |
++-----------+----------------+
+| *Getter*  | get_max()      |
++-----------+----------------+
 
-Maximum value. Range is clamped if ``value`` is greater than ``max_value``. Default value: ``100``.
+Maximum value. Range is clamped if ``value`` is greater than ``max_value``.
 
 .. _class_Range_property_min_value:
 
 - :ref:`float<class_float>` **min_value**
 
-+----------+----------------+
-| *Setter* | set_min(value) |
-+----------+----------------+
-| *Getter* | get_min()      |
-+----------+----------------+
++-----------+----------------+
+| *Default* | 0.0            |
++-----------+----------------+
+| *Setter*  | set_min(value) |
++-----------+----------------+
+| *Getter*  | get_min()      |
++-----------+----------------+
 
-Minimum value. Range is clamped if ``value`` is less than ``min_value``. Default value: ``0``.
+Minimum value. Range is clamped if ``value`` is less than ``min_value``.
 
 .. _class_Range_property_page:
 
 - :ref:`float<class_float>` **page**
 
-+----------+-----------------+
-| *Setter* | set_page(value) |
-+----------+-----------------+
-| *Getter* | get_page()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 0.0             |
++-----------+-----------------+
+| *Setter*  | set_page(value) |
++-----------+-----------------+
+| *Getter*  | get_page()      |
++-----------+-----------------+
 
 Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length is its size multiplied by ``page`` over the difference between ``min_value`` and ``max_value``.
 
@@ -163,23 +175,27 @@ The value mapped between 0 and 1.
 
 - :ref:`bool<class_bool>` **rounded**
 
-+----------+-------------------------------+
-| *Setter* | set_use_rounded_values(value) |
-+----------+-------------------------------+
-| *Getter* | is_using_rounded_values()     |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | false                         |
++-----------+-------------------------------+
+| *Setter*  | set_use_rounded_values(value) |
++-----------+-------------------------------+
+| *Getter*  | is_using_rounded_values()     |
++-----------+-------------------------------+
 
-If ``true``, ``value`` will always be rounded to the nearest integer. Default value: ``false``.
+If ``true``, ``value`` will always be rounded to the nearest integer.
 
 .. _class_Range_property_step:
 
 - :ref:`float<class_float>` **step**
 
-+----------+-----------------+
-| *Setter* | set_step(value) |
-+----------+-----------------+
-| *Getter* | get_step()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | 1.0             |
++-----------+-----------------+
+| *Setter*  | set_step(value) |
++-----------+-----------------+
+| *Getter*  | get_step()      |
++-----------+-----------------+
 
 If greater than 0, ``value`` will always be rounded to a multiple of ``step``. If ``rounded`` is also ``true``, ``value`` will first be rounded to a multiple of ``step`` then rounded to the nearest integer.
 
@@ -187,11 +203,13 @@ If greater than 0, ``value`` will always be rounded to a multiple of ``step``. I
 
 - :ref:`float<class_float>` **value**
 
-+----------+------------------+
-| *Setter* | set_value(value) |
-+----------+------------------+
-| *Getter* | get_value()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_value(value) |
++-----------+------------------+
+| *Getter*  | get_value()      |
++-----------+------------------+
 
 Range's current value.
 

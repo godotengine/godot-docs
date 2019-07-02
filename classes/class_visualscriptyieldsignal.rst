@@ -19,15 +19,15 @@ Brief Description
 Properties
 ----------
 
-+--------------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptYieldSignal_property_base_type>` |
-+--------------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` | :ref:`call_mode<class_VisualScriptYieldSignal_property_call_mode>` |
-+--------------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptYieldSignal_property_node_path>` |
-+--------------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`String<class_String>`                            | :ref:`signal<class_VisualScriptYieldSignal_property_signal>`       |
-+--------------------------------------------------------+--------------------------------------------------------------------+
++--------------------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptYieldSignal_property_base_type>` | "Object" |
++--------------------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` | :ref:`call_mode<class_VisualScriptYieldSignal_property_call_mode>` | 0        |
++--------------------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptYieldSignal_property_node_path>` |          |
++--------------------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                            | :ref:`signal<class_VisualScriptYieldSignal_property_signal>`       | ""       |
++--------------------------------------------------------+--------------------------------------------------------------------+----------+
 
 Enumerations
 ------------
@@ -55,21 +55,25 @@ Property Descriptions
 
 - :ref:`String<class_String>` **base_type**
 
-+----------+----------------------+
-| *Setter* | set_base_type(value) |
-+----------+----------------------+
-| *Getter* | get_base_type()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | "Object"             |
++-----------+----------------------+
+| *Setter*  | set_base_type(value) |
++-----------+----------------------+
+| *Getter*  | get_base_type()      |
++-----------+----------------------+
 
 .. _class_VisualScriptYieldSignal_property_call_mode:
 
 - :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **call_mode**
 
-+----------+----------------------+
-| *Setter* | set_call_mode(value) |
-+----------+----------------------+
-| *Getter* | get_call_mode()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0                    |
++-----------+----------------------+
+| *Setter*  | set_call_mode(value) |
++-----------+----------------------+
+| *Getter*  | get_call_mode()      |
++-----------+----------------------+
 
 .. _class_VisualScriptYieldSignal_property_node_path:
 
@@ -85,9 +89,11 @@ Property Descriptions
 
 - :ref:`String<class_String>` **signal**
 
-+----------+-------------------+
-| *Setter* | set_signal(value) |
-+----------+-------------------+
-| *Getter* | get_signal()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | ""                |
++-----------+-------------------+
+| *Setter*  | set_signal(value) |
++-----------+-------------------+
+| *Getter*  | get_signal()      |
++-----------+-------------------+
 

@@ -19,15 +19,15 @@ Renders text using ``*.fnt`` fonts.
 Properties
 ----------
 
-+-------------------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`ascent<class_BitmapFont_property_ascent>`                 |
-+-------------------------------------+-----------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`distance_field<class_BitmapFont_property_distance_field>` |
-+-------------------------------------+-----------------------------------------------------------------+
-| :ref:`BitmapFont<class_BitmapFont>` | :ref:`fallback<class_BitmapFont_property_fallback>`             |
-+-------------------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`height<class_BitmapFont_property_height>`                 |
-+-------------------------------------+-----------------------------------------------------------------+
++-------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`float<class_float>`           | :ref:`ascent<class_BitmapFont_property_ascent>`                 | 0.0   |
++-------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`             | :ref:`distance_field<class_BitmapFont_property_distance_field>` | false |
++-------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`BitmapFont<class_BitmapFont>` | :ref:`fallback<class_BitmapFont_property_fallback>`             | null  |
++-------------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`float<class_float>`           | :ref:`height<class_BitmapFont_property_height>`                 | 1.0   |
++-------------------------------------+-----------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -64,11 +64,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **ascent**
 
-+----------+-------------------+
-| *Setter* | set_ascent(value) |
-+----------+-------------------+
-| *Getter* | get_ascent()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 0.0               |
++-----------+-------------------+
+| *Setter*  | set_ascent(value) |
++-----------+-------------------+
+| *Getter*  | get_ascent()      |
++-----------+-------------------+
 
 Ascent (number of pixels above the baseline).
 
@@ -76,11 +78,13 @@ Ascent (number of pixels above the baseline).
 
 - :ref:`bool<class_bool>` **distance_field**
 
-+----------+--------------------------------+
-| *Setter* | set_distance_field_hint(value) |
-+----------+--------------------------------+
-| *Getter* | is_distance_field_hint()       |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | false                          |
++-----------+--------------------------------+
+| *Setter*  | set_distance_field_hint(value) |
++-----------+--------------------------------+
+| *Getter*  | is_distance_field_hint()       |
++-----------+--------------------------------+
 
 If ``true``, distance field hint is enabled.
 
@@ -88,11 +92,13 @@ If ``true``, distance field hint is enabled.
 
 - :ref:`BitmapFont<class_BitmapFont>` **fallback**
 
-+----------+---------------------+
-| *Setter* | set_fallback(value) |
-+----------+---------------------+
-| *Getter* | get_fallback()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_fallback(value) |
++-----------+---------------------+
+| *Getter*  | get_fallback()      |
++-----------+---------------------+
 
 The fallback font.
 
@@ -100,11 +106,13 @@ The fallback font.
 
 - :ref:`float<class_float>` **height**
 
-+----------+-------------------+
-| *Setter* | set_height(value) |
-+----------+-------------------+
-| *Getter* | get_height()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1.0               |
++-----------+-------------------+
+| *Setter*  | set_height(value) |
++-----------+-------------------+
+| *Getter*  | get_height()      |
++-----------+-------------------+
 
 Total font height (ascent plus descent) in pixels.
 

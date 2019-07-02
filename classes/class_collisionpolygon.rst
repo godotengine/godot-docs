@@ -19,13 +19,13 @@ Editor-only class for defining a collision polygon in 3D space.
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`depth<class_CollisionPolygon_property_depth>`       |
-+-------------------------------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_property_disabled>` |
-+-------------------------------------------------+-----------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_property_polygon>`   |
-+-------------------------------------------------+-----------------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------+----------------------+
+| :ref:`float<class_float>`                       | :ref:`depth<class_CollisionPolygon_property_depth>`       | 1.0                  |
++-------------------------------------------------+-----------------------------------------------------------+----------------------+
+| :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_property_disabled>` | false                |
++-------------------------------------------------+-----------------------------------------------------------+----------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_property_polygon>`   | PoolVector2Array(  ) |
++-------------------------------------------------+-----------------------------------------------------------+----------------------+
 
 Description
 -----------
@@ -39,11 +39,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **depth**
 
-+----------+------------------+
-| *Setter* | set_depth(value) |
-+----------+------------------+
-| *Getter* | get_depth()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 1.0              |
++-----------+------------------+
+| *Setter*  | set_depth(value) |
++-----------+------------------+
+| *Getter*  | get_depth()      |
++-----------+------------------+
 
 Length that the resulting collision extends in either direction perpendicular to its polygon.
 
@@ -51,11 +53,13 @@ Length that the resulting collision extends in either direction perpendicular to
 
 - :ref:`bool<class_bool>` **disabled**
 
-+----------+---------------------+
-| *Setter* | set_disabled(value) |
-+----------+---------------------+
-| *Getter* | is_disabled()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_disabled(value) |
++-----------+---------------------+
+| *Getter*  | is_disabled()       |
++-----------+---------------------+
 
 If ``true``, no collision will be produced.
 
@@ -63,11 +67,13 @@ If ``true``, no collision will be produced.
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 
-+----------+--------------------+
-| *Setter* | set_polygon(value) |
-+----------+--------------------+
-| *Getter* | get_polygon()      |
-+----------+--------------------+
++-----------+----------------------+
+| *Default* | PoolVector2Array(  ) |
++-----------+----------------------+
+| *Setter*  | set_polygon(value)   |
++-----------+----------------------+
+| *Getter*  | get_polygon()        |
++-----------+----------------------+
 
 Array of vertices which define the polygon.
 

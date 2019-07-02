@@ -21,11 +21,11 @@ Base node for collision objects.
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`input_capture_on_drag<class_CollisionObject_property_input_capture_on_drag>` |
-+-------------------------+------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`input_ray_pickable<class_CollisionObject_property_input_ray_pickable>`       |
-+-------------------------+------------------------------------------------------------------------------------+
++-------------------------+------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`input_capture_on_drag<class_CollisionObject_property_input_capture_on_drag>` | false |
++-------------------------+------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`input_ray_pickable<class_CollisionObject_property_input_ray_pickable>`       | true  |
++-------------------------+------------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -99,25 +99,29 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **input_capture_on_drag**
 
-+----------+----------------------------------+
-| *Setter* | set_capture_input_on_drag(value) |
-+----------+----------------------------------+
-| *Getter* | get_capture_input_on_drag()      |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | false                            |
++-----------+----------------------------------+
+| *Setter*  | set_capture_input_on_drag(value) |
++-----------+----------------------------------+
+| *Getter*  | get_capture_input_on_drag()      |
++-----------+----------------------------------+
 
-If ``true``, the ``CollisionObject`` will continue to receive input events as the mouse is dragged across its shapes. Default value: ``false``.
+If ``true``, the ``CollisionObject`` will continue to receive input events as the mouse is dragged across its shapes.
 
 .. _class_CollisionObject_property_input_ray_pickable:
 
 - :ref:`bool<class_bool>` **input_ray_pickable**
 
-+----------+-------------------------+
-| *Setter* | set_ray_pickable(value) |
-+----------+-------------------------+
-| *Getter* | is_ray_pickable()       |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | true                    |
++-----------+-------------------------+
+| *Setter*  | set_ray_pickable(value) |
++-----------+-------------------------+
+| *Getter*  | is_ray_pickable()       |
++-----------+-------------------------+
 
-If ``true``, the ``CollisionObject``'s shapes will respond to :ref:`RayCast<class_RayCast>`\ s. Default value: ``true``.
+If ``true``, the ``CollisionObject``'s shapes will respond to :ref:`RayCast<class_RayCast>`\ s.
 
 Method Descriptions
 -------------------

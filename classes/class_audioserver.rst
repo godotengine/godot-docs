@@ -16,6 +16,17 @@ Brief Description
 
 Server interface for low-level audio access.
 
+Properties
+----------
+
++-----------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`bus_count<class_AudioServer_property_bus_count>`                 | 1         |
++-----------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`device<class_AudioServer_property_device>`                       | "Default" |
++-----------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`   | :ref:`global_rate_scale<class_AudioServer_property_global_rate_scale>` | 1.0       |
++-----------------------------+------------------------------------------------------------------------+-----------+
+
 Methods
 -------
 
@@ -34,8 +45,6 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                 | :ref:`get_bus_channels<class_AudioServer_method_get_bus_channels>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                            |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                 | :ref:`get_bus_count<class_AudioServer_method_get_bus_count>` **(** **)** const                                                                                                                |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioEffect<class_AudioEffect>`                 | :ref:`get_bus_effect<class_AudioServer_method_get_bus_effect>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)**                                                    |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                 | :ref:`get_bus_effect_count<class_AudioServer_method_get_bus_effect_count>` **(** :ref:`int<class_int>` bus_idx **)**                                                                          |
@@ -53,8 +62,6 @@ Methods
 | :ref:`String<class_String>`                           | :ref:`get_bus_send<class_AudioServer_method_get_bus_send>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                                    |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                             | :ref:`get_bus_volume_db<class_AudioServer_method_get_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                          |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`get_device<class_AudioServer_method_get_device>` **(** **)**                                                                                                                            |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                             | :ref:`get_device_list<class_AudioServer_method_get_device_list>` **(** **)**                                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -86,8 +93,6 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`set_bus_bypass_effects<class_AudioServer_method_set_bus_bypass_effects>` **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**                                      |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                  | :ref:`set_bus_count<class_AudioServer_method_set_bus_count>` **(** :ref:`int<class_int>` amount **)**                                                                                         |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`set_bus_effect_enabled<class_AudioServer_method_set_bus_effect_enabled>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`bool<class_bool>` enabled **)**   |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`set_bus_layout<class_AudioServer_method_set_bus_layout>` **(** :ref:`AudioBusLayout<class_AudioBusLayout>` bus_layout **)**                                                             |
@@ -101,8 +106,6 @@ Methods
 | void                                                  | :ref:`set_bus_solo<class_AudioServer_method_set_bus_solo>` **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**                                                          |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`set_bus_volume_db<class_AudioServer_method_set_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx, :ref:`float<class_float>` volume_db **)**                                           |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                  | :ref:`set_device<class_AudioServer_method_set_device>` **(** :ref:`String<class_String>` device **)**                                                                                         |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`swap_bus_effects<class_AudioServer_method_swap_bus_effects>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` by_effect_idx **)**           |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,13 +136,13 @@ Enumerations
 
 enum **SpeakerMode**:
 
-- **SPEAKER_MODE_STEREO** = **0** --- Two or fewer speakers are detected.
+- **SPEAKER_MODE_STEREO** = **0** --- Two or fewer speakers were detected.
 
-- **SPEAKER_SURROUND_31** = **1**
+- **SPEAKER_SURROUND_31** = **1** --- A 3.1 channel surround setup was detected.
 
-- **SPEAKER_SURROUND_51** = **2** --- A 5.1 channel surround setup detected.
+- **SPEAKER_SURROUND_51** = **2** --- A 5.1 channel surround setup was  detected.
 
-- **SPEAKER_SURROUND_71** = **3** --- A 7.1 channel surround setup detected.
+- **SPEAKER_SURROUND_71** = **3** --- A 7.1 channel surround setup was  detected.
 
 Description
 -----------
@@ -150,6 +153,51 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/audio/audio_buses`
+
+Property Descriptions
+---------------------
+
+.. _class_AudioServer_property_bus_count:
+
+- :ref:`int<class_int>` **bus_count**
+
++-----------+----------------------+
+| *Default* | 1                    |
++-----------+----------------------+
+| *Setter*  | set_bus_count(value) |
++-----------+----------------------+
+| *Getter*  | get_bus_count()      |
++-----------+----------------------+
+
+Number of available audio buses.
+
+.. _class_AudioServer_property_device:
+
+- :ref:`String<class_String>` **device**
+
++-----------+-------------------+
+| *Default* | "Default"         |
++-----------+-------------------+
+| *Setter*  | set_device(value) |
++-----------+-------------------+
+| *Getter*  | get_device()      |
++-----------+-------------------+
+
+Name of the current device (see :ref:`get_device_list<class_AudioServer_method_get_device_list>`).
+
+.. _class_AudioServer_property_global_rate_scale:
+
+- :ref:`float<class_float>` **global_rate_scale**
+
++-----------+------------------------------+
+| *Default* | 1.0                          |
++-----------+------------------------------+
+| *Setter*  | set_global_rate_scale(value) |
++-----------+------------------------------+
+| *Getter*  | get_global_rate_scale()      |
++-----------+------------------------------+
+
+Scales the rate at which audio is played (i.e. setting it to ``0.5`` will make the audio be played twice as fast).
 
 Method Descriptions
 -------------------
@@ -189,12 +237,6 @@ Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available bus
 - :ref:`int<class_int>` **get_bus_channels** **(** :ref:`int<class_int>` bus_idx **)** const
 
 Returns the amount of channels of the bus at index ``bus_idx``.
-
-.. _class_AudioServer_method_get_bus_count:
-
-- :ref:`int<class_int>` **get_bus_count** **(** **)** const
-
-Returns the number of available buses.
 
 .. _class_AudioServer_method_get_bus_effect:
 
@@ -248,23 +290,23 @@ Returns the name of the bus that the bus at index ``bus_idx`` sends to.
 
 Returns the volume of the bus at index ``bus_idx`` in dB.
 
-.. _class_AudioServer_method_get_device:
-
-- :ref:`String<class_String>` **get_device** **(** **)**
-
 .. _class_AudioServer_method_get_device_list:
 
 - :ref:`Array<class_Array>` **get_device_list** **(** **)**
+
+Returns the names of all audio devices detected on the system.
 
 .. _class_AudioServer_method_get_mix_rate:
 
 - :ref:`float<class_float>` **get_mix_rate** **(** **)** const
 
-Returns the sample rate at the output of the audioserver.
+Returns the sample rate at the output of the ``AudioServer``.
 
 .. _class_AudioServer_method_get_output_latency:
 
 - :ref:`float<class_float>` **get_output_latency** **(** **)** const
+
+Returns the audio driver's output latency.
 
 .. _class_AudioServer_method_get_speaker_mode:
 
@@ -308,7 +350,7 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 - void **lock** **(** **)**
 
-Locks the audio drivers mainloop. Remember to unlock it afterwards.
+Locks the audio driver's main loop. Remember to unlock it afterwards.
 
 .. _class_AudioServer_method_move_bus:
 
@@ -333,12 +375,6 @@ Removes the effect at index ``effect_idx`` from the bus at index ``bus_idx``.
 - void **set_bus_bypass_effects** **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**
 
 If ``true``, the bus at index ``bus_idx`` is bypassing effects.
-
-.. _class_AudioServer_method_set_bus_count:
-
-- void **set_bus_count** **(** :ref:`int<class_int>` amount **)**
-
-Adds and removes buses to make the number of buses match ``amount``.
 
 .. _class_AudioServer_method_set_bus_effect_enabled:
 
@@ -381,10 +417,6 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 - void **set_bus_volume_db** **(** :ref:`int<class_int>` bus_idx, :ref:`float<class_float>` volume_db **)**
 
 Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
-
-.. _class_AudioServer_method_set_device:
-
-- void **set_device** **(** :ref:`String<class_String>` device **)**
 
 .. _class_AudioServer_method_swap_bus_effects:
 

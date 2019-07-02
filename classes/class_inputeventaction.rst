@@ -19,13 +19,13 @@ Input event type for actions.
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_property_action>`     |
-+-----------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_property_pressed>`   |
-+-----------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`   | :ref:`strength<class_InputEventAction_property_strength>` |
-+-----------------------------+-----------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_property_action>`     | ""    |
++-----------------------------+-----------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_property_pressed>`   | false |
++-----------------------------+-----------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`strength<class_InputEventAction_property_strength>` | 1.0   |
++-----------------------------+-----------------------------------------------------------+-------+
 
 Description
 -----------
@@ -44,11 +44,13 @@ Property Descriptions
 
 - :ref:`String<class_String>` **action**
 
-+----------+-------------------+
-| *Setter* | set_action(value) |
-+----------+-------------------+
-| *Getter* | get_action()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | ""                |
++-----------+-------------------+
+| *Setter*  | set_action(value) |
++-----------+-------------------+
+| *Getter*  | get_action()      |
++-----------+-------------------+
 
 The action's name. Actions are accessed via this :ref:`String<class_String>`.
 
@@ -56,11 +58,13 @@ The action's name. Actions are accessed via this :ref:`String<class_String>`.
 
 - :ref:`bool<class_bool>` **pressed**
 
-+----------+--------------------+
-| *Setter* | set_pressed(value) |
-+----------+--------------------+
-| *Getter* | is_pressed()       |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | false              |
++-----------+--------------------+
+| *Setter*  | set_pressed(value) |
++-----------+--------------------+
+| *Getter*  | is_pressed()       |
++-----------+--------------------+
 
 If ``true``, the action's state is pressed. If ``false``, the action's state is released.
 
@@ -68,11 +72,13 @@ If ``true``, the action's state is pressed. If ``false``, the action's state is 
 
 - :ref:`float<class_float>` **strength**
 
-+----------+---------------------+
-| *Setter* | set_strength(value) |
-+----------+---------------------+
-| *Getter* | get_strength()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 1.0                 |
++-----------+---------------------+
+| *Setter*  | set_strength(value) |
++-----------+---------------------+
+| *Getter*  | get_strength()      |
++-----------+---------------------+
 
 The action's strength between 0 and 1. This value is considered as equal to 0 if pressed is ``false``. The event strength allows faking analog joypad motion events, by precising how strongly is the joypad axis bent or pressed.
 

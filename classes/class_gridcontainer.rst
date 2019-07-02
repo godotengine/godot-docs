@@ -19,18 +19,18 @@ Grid container used to arrange elements in a grid like layout.
 Properties
 ----------
 
-+-----------------------+------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`columns<class_GridContainer_property_columns>` |
-+-----------------------+------------------------------------------------------+
++-----------------------+------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`columns<class_GridContainer_property_columns>` | 1 |
++-----------------------+------------------------------------------------------+---+
 
 Theme Properties
 ----------------
 
-+-----------------------+-------------+
-| :ref:`int<class_int>` | hseparation |
-+-----------------------+-------------+
-| :ref:`int<class_int>` | vseparation |
-+-----------------------+-------------+
++-----------------------+-------------+---+
+| :ref:`int<class_int>` | hseparation | 4 |
++-----------------------+-------------+---+
+| :ref:`int<class_int>` | vseparation | 4 |
++-----------------------+-------------+---+
 
 Description
 -----------
@@ -44,11 +44,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **columns**
 
-+----------+--------------------+
-| *Setter* | set_columns(value) |
-+----------+--------------------+
-| *Getter* | get_columns()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 1                  |
++-----------+--------------------+
+| *Setter*  | set_columns(value) |
++-----------+--------------------+
+| *Getter*  | get_columns()      |
++-----------+--------------------+
 
 The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its children to accommodate the new layout.
 

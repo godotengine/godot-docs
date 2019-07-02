@@ -21,13 +21,13 @@ Base class for all primitive meshes. Handles applying a :ref:`Material<class_Mat
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`         | :ref:`custom_aabb<class_PrimitiveMesh_property_custom_aabb>` |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       |
-+---------------------------------+--------------------------------------------------------------+
++---------------------------------+--------------------------------------------------------------+--------------------------+
+| :ref:`AABB<class_AABB>`         | :ref:`custom_aabb<class_PrimitiveMesh_property_custom_aabb>` | AABB( 0, 0, 0, 0, 0, 0 ) |
++---------------------------------+--------------------------------------------------------------+--------------------------+
+| :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   | false                    |
++---------------------------------+--------------------------------------------------------------+--------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       | null                     |
++---------------------------------+--------------------------------------------------------------+--------------------------+
 
 Methods
 -------
@@ -48,11 +48,13 @@ Property Descriptions
 
 - :ref:`AABB<class_AABB>` **custom_aabb**
 
-+----------+------------------------+
-| *Setter* | set_custom_aabb(value) |
-+----------+------------------------+
-| *Getter* | get_custom_aabb()      |
-+----------+------------------------+
++-----------+--------------------------+
+| *Default* | AABB( 0, 0, 0, 0, 0, 0 ) |
++-----------+--------------------------+
+| *Setter*  | set_custom_aabb(value)   |
++-----------+--------------------------+
+| *Getter*  | get_custom_aabb()        |
++-----------+--------------------------+
 
 Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unnexpected culling when  using a shader to offset vertices.
 
@@ -60,23 +62,27 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 
 - :ref:`bool<class_bool>` **flip_faces**
 
-+----------+-----------------------+
-| *Setter* | set_flip_faces(value) |
-+----------+-----------------------+
-| *Getter* | get_flip_faces()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | false                 |
++-----------+-----------------------+
+| *Setter*  | set_flip_faces(value) |
++-----------+-----------------------+
+| *Getter*  | get_flip_faces()      |
++-----------+-----------------------+
 
-If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn. Result is the same as using \*CULL_BACK\* in :ref:`SpatialMaterial<class_SpatialMaterial>`. Default is false.
+If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn. Result is the same as using \*CULL_BACK\* in :ref:`SpatialMaterial<class_SpatialMaterial>`.
 
 .. _class_PrimitiveMesh_property_material:
 
 - :ref:`Material<class_Material>` **material**
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_material(value) |
++-----------+---------------------+
+| *Getter*  | get_material()      |
++-----------+---------------------+
 
 The current :ref:`Material<class_Material>` of the primitive mesh.
 

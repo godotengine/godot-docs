@@ -19,9 +19,9 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------------+--------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`__data__<class_PackedDataContainer_property___data__>` |
-+-------------------------------------------+--------------------------------------------------------------+
++-------------------------------------------+--------------------------------------------------------------+-------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`__data__<class_PackedDataContainer_property___data__>` | PoolByteArray(  ) |
++-------------------------------------------+--------------------------------------------------------------+-------------------+
 
 Methods
 -------
@@ -38,6 +38,10 @@ Property Descriptions
 .. _class_PackedDataContainer_property___data__:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **__data__**
+
++-----------+-------------------+
+| *Default* | PoolByteArray(  ) |
++-----------+-------------------+
 
 Method Descriptions
 -------------------

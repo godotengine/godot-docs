@@ -19,11 +19,11 @@ Gets a local variable's value.
 Properties
 ----------
 
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVar_property_type>`         |
-+-----------------------------------------------------+---------------------------------------------------------------+
-| :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVar_property_var_name>` |
-+-----------------------------------------------------+---------------------------------------------------------------+
++-----------------------------------------------------+---------------------------------------------------------------+-------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVar_property_type>`         | 0           |
++-----------------------------------------------------+---------------------------------------------------------------+-------------+
+| :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVar_property_var_name>` | "new_local" |
++-----------------------------------------------------+---------------------------------------------------------------+-------------+
 
 Description
 -----------
@@ -45,11 +45,13 @@ Property Descriptions
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
-+----------+---------------------+
-| *Setter* | set_var_type(value) |
-+----------+---------------------+
-| *Getter* | get_var_type()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0                   |
++-----------+---------------------+
+| *Setter*  | set_var_type(value) |
++-----------+---------------------+
+| *Getter*  | get_var_type()      |
++-----------+---------------------+
 
 The local variable's type.
 
@@ -57,11 +59,13 @@ The local variable's type.
 
 - :ref:`String<class_String>` **var_name**
 
-+----------+---------------------+
-| *Setter* | set_var_name(value) |
-+----------+---------------------+
-| *Getter* | get_var_name()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | "new_local"         |
++-----------+---------------------+
+| *Setter*  | set_var_name(value) |
++-----------+---------------------+
+| *Getter*  | get_var_name()      |
++-----------+---------------------+
 
 The local variable's name.
 

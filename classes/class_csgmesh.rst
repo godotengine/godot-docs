@@ -19,11 +19,11 @@ A CSG Mesh shape that uses a mesh resource.
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGMesh_property_material>` |
-+---------------------------------+--------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_CSGMesh_property_mesh>`         |
-+---------------------------------+--------------------------------------------------+
++---------------------------------+--------------------------------------------------+------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGMesh_property_material>` | null |
++---------------------------------+--------------------------------------------------+------+
+| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_CSGMesh_property_mesh>`         | null |
++---------------------------------+--------------------------------------------------+------+
 
 Description
 -----------
@@ -37,21 +37,25 @@ Property Descriptions
 
 - :ref:`Material<class_Material>` **material**
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_material(value) |
++-----------+---------------------+
+| *Getter*  | get_material()      |
++-----------+---------------------+
 
 .. _class_CSGMesh_property_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | null            |
++-----------+-----------------+
+| *Setter*  | set_mesh(value) |
++-----------+-----------------+
+| *Getter*  | get_mesh()      |
++-----------+-----------------+
 
 The mesh resource to use as a CSG shape.
 

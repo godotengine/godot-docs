@@ -19,13 +19,13 @@ A mathematic curve.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`bake_resolution<class_Curve_property_bake_resolution>` |
-+---------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`max_value<class_Curve_property_max_value>`             |
-+---------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`min_value<class_Curve_property_min_value>`             |
-+---------------------------+--------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------+-----+
+| :ref:`int<class_int>`     | :ref:`bake_resolution<class_Curve_property_bake_resolution>` | 100 |
++---------------------------+--------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`max_value<class_Curve_property_max_value>`             | 1.0 |
++---------------------------+--------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`min_value<class_Curve_property_min_value>`             | 0.0 |
++---------------------------+--------------------------------------------------------------+-----+
 
 Methods
 -------
@@ -110,11 +110,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **bake_resolution**
 
-+----------+----------------------------+
-| *Setter* | set_bake_resolution(value) |
-+----------+----------------------------+
-| *Getter* | get_bake_resolution()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 100                        |
++-----------+----------------------------+
+| *Setter*  | set_bake_resolution(value) |
++-----------+----------------------------+
+| *Getter*  | get_bake_resolution()      |
++-----------+----------------------------+
 
 The number of points to include in the baked (i.e. cached) curve data.
 
@@ -122,25 +124,29 @@ The number of points to include in the baked (i.e. cached) curve data.
 
 - :ref:`float<class_float>` **max_value**
 
-+----------+----------------------+
-| *Setter* | set_max_value(value) |
-+----------+----------------------+
-| *Getter* | get_max_value()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 1.0                  |
++-----------+----------------------+
+| *Setter*  | set_max_value(value) |
++-----------+----------------------+
+| *Getter*  | get_max_value()      |
++-----------+----------------------+
 
-The maximum value the curve can reach. Default value: ``1``.
+The maximum value the curve can reach.
 
 .. _class_Curve_property_min_value:
 
 - :ref:`float<class_float>` **min_value**
 
-+----------+----------------------+
-| *Setter* | set_min_value(value) |
-+----------+----------------------+
-| *Getter* | get_min_value()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 0.0                  |
++-----------+----------------------+
+| *Setter*  | set_min_value(value) |
++-----------+----------------------+
+| *Getter*  | get_min_value()      |
++-----------+----------------------+
 
-The minimum value the curve can reach. Default value: ``0``.
+The minimum value the curve can reach.
 
 Method Descriptions
 -------------------

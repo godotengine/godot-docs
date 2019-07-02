@@ -19,15 +19,15 @@ Class representing a capsule-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`mid_height<class_CapsuleMesh_property_mid_height>`           |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`radial_segments<class_CapsuleMesh_property_radial_segments>` |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`radius<class_CapsuleMesh_property_radius>`                   |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`rings<class_CapsuleMesh_property_rings>`                     |
-+---------------------------+--------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`mid_height<class_CapsuleMesh_property_mid_height>`           | 1.0 |
++---------------------------+--------------------------------------------------------------------+-----+
+| :ref:`int<class_int>`     | :ref:`radial_segments<class_CapsuleMesh_property_radial_segments>` | 64  |
++---------------------------+--------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`radius<class_CapsuleMesh_property_radius>`                   | 1.0 |
++---------------------------+--------------------------------------------------------------------+-----+
+| :ref:`int<class_int>`     | :ref:`rings<class_CapsuleMesh_property_rings>`                     | 8   |
++---------------------------+--------------------------------------------------------------------+-----+
 
 Description
 -----------
@@ -41,47 +41,55 @@ Property Descriptions
 
 - :ref:`float<class_float>` **mid_height**
 
-+----------+-----------------------+
-| *Setter* | set_mid_height(value) |
-+----------+-----------------------+
-| *Getter* | get_mid_height()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 1.0                   |
++-----------+-----------------------+
+| *Setter*  | set_mid_height(value) |
++-----------+-----------------------+
+| *Getter*  | get_mid_height()      |
++-----------+-----------------------+
 
-Height of the capsule mesh from the center point. Defaults to 1.0.
+Height of the capsule mesh from the center point.
 
 .. _class_CapsuleMesh_property_radial_segments:
 
 - :ref:`int<class_int>` **radial_segments**
 
-+----------+----------------------------+
-| *Setter* | set_radial_segments(value) |
-+----------+----------------------------+
-| *Getter* | get_radial_segments()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 64                         |
++-----------+----------------------------+
+| *Setter*  | set_radial_segments(value) |
++-----------+----------------------------+
+| *Getter*  | get_radial_segments()      |
++-----------+----------------------------+
 
-Number of radial segments on the capsule mesh. Defaults to 64.
+Number of radial segments on the capsule mesh.
 
 .. _class_CapsuleMesh_property_radius:
 
 - :ref:`float<class_float>` **radius**
 
-+----------+-------------------+
-| *Setter* | set_radius(value) |
-+----------+-------------------+
-| *Getter* | get_radius()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1.0               |
++-----------+-------------------+
+| *Setter*  | set_radius(value) |
++-----------+-------------------+
+| *Getter*  | get_radius()      |
++-----------+-------------------+
 
-Radius of the capsule mesh. Defaults to 1.0.
+Radius of the capsule mesh.
 
 .. _class_CapsuleMesh_property_rings:
 
 - :ref:`int<class_int>` **rings**
 
-+----------+------------------+
-| *Setter* | set_rings(value) |
-+----------+------------------+
-| *Getter* | get_rings()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 8                |
++-----------+------------------+
+| *Setter*  | set_rings(value) |
++-----------+------------------+
+| *Getter*  | get_rings()      |
++-----------+------------------+
 
-Number of rings along the height of the capsule. Defaults to 8.
+Number of rings along the height of the capsule.
 

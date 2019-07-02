@@ -19,9 +19,9 @@ Describes a Bézier curve in 2D space.
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`bake_interval<class_Curve2D_property_bake_interval>` |
-+---------------------------+------------------------------------------------------------+
++---------------------------+------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`bake_interval<class_Curve2D_property_bake_interval>` | 5.0 |
++---------------------------+------------------------------------------------------------+-----+
 
 Methods
 -------
@@ -78,11 +78,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **bake_interval**
 
-+----------+--------------------------+
-| *Setter* | set_bake_interval(value) |
-+----------+--------------------------+
-| *Getter* | get_bake_interval()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 5.0                      |
++-----------+--------------------------+
+| *Setter*  | set_bake_interval(value) |
++-----------+--------------------------+
+| *Getter*  | get_bake_interval()      |
++-----------+--------------------------+
 
 The distance in pixels between two adjacent cached points. Changing it forces the cache to be recomputed the next time the :ref:`get_baked_points<class_Curve2D_method_get_baked_points>` or :ref:`get_baked_length<class_Curve2D_method_get_baked_length>` function is called. The smaller the distance, the more points in the cache and the more memory it will consume, so use with care.
 

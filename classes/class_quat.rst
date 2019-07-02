@@ -17,15 +17,15 @@ Quaternion.
 Properties
 ----------
 
-+---------------------------+---------------------------------+
-| :ref:`float<class_float>` | :ref:`w<class_Quat_property_w>` |
-+---------------------------+---------------------------------+
-| :ref:`float<class_float>` | :ref:`x<class_Quat_property_x>` |
-+---------------------------+---------------------------------+
-| :ref:`float<class_float>` | :ref:`y<class_Quat_property_y>` |
-+---------------------------+---------------------------------+
-| :ref:`float<class_float>` | :ref:`z<class_Quat_property_z>` |
-+---------------------------+---------------------------------+
++---------------------------+---------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`w<class_Quat_property_w>` | 1.0 |
++---------------------------+---------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`x<class_Quat_property_x>` | 0.0 |
++---------------------------+---------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`y<class_Quat_property_y>` | 0.0 |
++---------------------------+---------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`z<class_Quat_property_z>` | 0.0 |
++---------------------------+---------------------------------+-----+
 
 Methods
 -------
@@ -94,25 +94,41 @@ Property Descriptions
 
 - :ref:`float<class_float>` **w**
 
-W component of the quaternion. Default value: ``1``.
++-----------+-----+
+| *Default* | 1.0 |
++-----------+-----+
+
+W component of the quaternion.
 
 .. _class_Quat_property_x:
 
 - :ref:`float<class_float>` **x**
 
-X component of the quaternion. Default value: ``0``.
++-----------+-----+
+| *Default* | 0.0 |
++-----------+-----+
+
+X component of the quaternion.
 
 .. _class_Quat_property_y:
 
 - :ref:`float<class_float>` **y**
 
-Y component of the quaternion. Default value: ``0``.
++-----------+-----+
+| *Default* | 0.0 |
++-----------+-----+
+
+Y component of the quaternion.
 
 .. _class_Quat_property_z:
 
 - :ref:`float<class_float>` **z**
 
-Z component of the quaternion. Default value: ``0``.
++-----------+-----+
+| *Default* | 0.0 |
++-----------+-----+
+
+Z component of the quaternion.
 
 Method Descriptions
 -------------------

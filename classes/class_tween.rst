@@ -19,13 +19,13 @@ Smoothly animates a node's properties over time.
 Properties
 ----------
 
-+------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` | :ref:`playback_process_mode<class_Tween_property_playback_process_mode>` |
-+------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>`                            | :ref:`playback_speed<class_Tween_property_playback_speed>`               |
-+------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`repeat<class_Tween_property_repeat>`                               |
-+------------------------------------------------------+--------------------------------------------------------------------------+
++------------------------------------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` | :ref:`playback_process_mode<class_Tween_property_playback_process_mode>` | 1     |
++------------------------------------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`                            | :ref:`playback_speed<class_Tween_property_playback_speed>`               | 1.0   |
++------------------------------------------------------+--------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                              | :ref:`repeat<class_Tween_property_repeat>`                               | false |
++------------------------------------------------------+--------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -212,23 +212,27 @@ Property Descriptions
 
 - :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **playback_process_mode**
 
-+----------+-------------------------------+
-| *Setter* | set_tween_process_mode(value) |
-+----------+-------------------------------+
-| *Getter* | get_tween_process_mode()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | 1                             |
++-----------+-------------------------------+
+| *Setter*  | set_tween_process_mode(value) |
++-----------+-------------------------------+
+| *Getter*  | get_tween_process_mode()      |
++-----------+-------------------------------+
 
-The tween's animation process thread. See :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`. Default value: :ref:`TWEEN_PROCESS_IDLE<class_Tween_constant_TWEEN_PROCESS_IDLE>`.
+The tween's animation process thread. See :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`.
 
 .. _class_Tween_property_playback_speed:
 
 - :ref:`float<class_float>` **playback_speed**
 
-+----------+------------------------+
-| *Setter* | set_speed_scale(value) |
-+----------+------------------------+
-| *Getter* | get_speed_scale()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 1.0                    |
++-----------+------------------------+
+| *Setter*  | set_speed_scale(value) |
++-----------+------------------------+
+| *Getter*  | get_speed_scale()      |
++-----------+------------------------+
 
 The tween's speed multiplier. For example, set it to ``1.0`` for normal speed, ``2.0`` for two times normal speed, or ``0.5`` for half of the normal speed. A value of ``0`` pauses the animation, but see also :ref:`set_active<class_Tween_method_set_active>` or :ref:`stop_all<class_Tween_method_stop_all>` for this.
 
@@ -236,11 +240,13 @@ The tween's speed multiplier. For example, set it to ``1.0`` for normal speed, `
 
 - :ref:`bool<class_bool>` **repeat**
 
-+----------+-------------------+
-| *Setter* | set_repeat(value) |
-+----------+-------------------+
-| *Getter* | is_repeat()       |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_repeat(value) |
++-----------+-------------------+
+| *Getter*  | is_repeat()       |
++-----------+-------------------+
 
 If ``true``, the tween loops.
 

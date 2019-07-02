@@ -19,15 +19,15 @@ Data class wrapper for decoded JSON.
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`error<class_JSONParseResult_property_error>`               |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`error_line<class_JSONParseResult_property_error_line>`     |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`error_string<class_JSONParseResult_property_error_string>` |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_property_result>`             |
-+---------------------------------------+------------------------------------------------------------------+
++---------------------------------------+------------------------------------------------------------------+----+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`error<class_JSONParseResult_property_error>`               |    |
++---------------------------------------+------------------------------------------------------------------+----+
+| :ref:`int<class_int>`                 | :ref:`error_line<class_JSONParseResult_property_error_line>`     | -1 |
++---------------------------------------+------------------------------------------------------------------+----+
+| :ref:`String<class_String>`           | :ref:`error_string<class_JSONParseResult_property_error_string>` | "" |
++---------------------------------------+------------------------------------------------------------------+----+
+| :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_property_result>`             |    |
++---------------------------------------+------------------------------------------------------------------+----+
 
 Description
 -----------
@@ -53,11 +53,13 @@ The error type if the JSON source was not successfully parsed. See the :ref:`@Gl
 
 - :ref:`int<class_int>` **error_line**
 
-+----------+-----------------------+
-| *Setter* | set_error_line(value) |
-+----------+-----------------------+
-| *Getter* | get_error_line()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | -1                    |
++-----------+-----------------------+
+| *Setter*  | set_error_line(value) |
++-----------+-----------------------+
+| *Getter*  | get_error_line()      |
++-----------+-----------------------+
 
 The line number where the error occurred if JSON source was not successfully parsed.
 
@@ -65,11 +67,13 @@ The line number where the error occurred if JSON source was not successfully par
 
 - :ref:`String<class_String>` **error_string**
 
-+----------+-------------------------+
-| *Setter* | set_error_string(value) |
-+----------+-------------------------+
-| *Getter* | get_error_string()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | ""                      |
++-----------+-------------------------+
+| *Setter*  | set_error_string(value) |
++-----------+-------------------------+
+| *Getter*  | get_error_string()      |
++-----------+-------------------------+
 
 The error message if JSON source was not successfully parsed. See the :ref:`@GlobalScope<class_@GlobalScope>` ``ERR_*`` constants.
 

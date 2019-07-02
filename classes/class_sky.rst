@@ -21,9 +21,9 @@ The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky
 Properties
 ----------
 
-+--------------------------------------------+--------------------------------------------------------+
-| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` |
-+--------------------------------------------+--------------------------------------------------------+
++--------------------------------------------+--------------------------------------------------------+---+
+| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` | 2 |
++--------------------------------------------+--------------------------------------------------------+---+
 
 Enumerations
 ------------
@@ -76,13 +76,15 @@ Property Descriptions
 
 - :ref:`RadianceSize<enum_Sky_RadianceSize>` **radiance_size**
 
-+----------+--------------------------+
-| *Setter* | set_radiance_size(value) |
-+----------+--------------------------+
-| *Getter* | get_radiance_size()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 2                        |
++-----------+--------------------------+
+| *Setter*  | set_radiance_size(value) |
++-----------+--------------------------+
+| *Getter*  | get_radiance_size()      |
++-----------+--------------------------+
 
 The ``Sky``'s radiance map size. The higher the radiance map size, the more detailed the lighting from the ``Sky`` will be.
 
-See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values. Default size is :ref:`RADIANCE_SIZE_512<class_Sky_constant_RADIANCE_SIZE_512>`.
+See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 

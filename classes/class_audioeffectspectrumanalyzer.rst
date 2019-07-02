@@ -19,13 +19,13 @@ Brief Description
 Properties
 ----------
 
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`buffer_length<class_AudioEffectSpectrumAnalyzer_property_buffer_length>` |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` | :ref:`fft_size<class_AudioEffectSpectrumAnalyzer_property_fft_size>`           |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`tap_back_pos<class_AudioEffectSpectrumAnalyzer_property_tap_back_pos>`   |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`float<class_float>`                                  | :ref:`buffer_length<class_AudioEffectSpectrumAnalyzer_property_buffer_length>` | 2.0  |
++------------------------------------------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` | :ref:`fft_size<class_AudioEffectSpectrumAnalyzer_property_fft_size>`           | 2    |
++------------------------------------------------------------+--------------------------------------------------------------------------------+------+
+| :ref:`float<class_float>`                                  | :ref:`tap_back_pos<class_AudioEffectSpectrumAnalyzer_property_tap_back_pos>`   | 0.01 |
++------------------------------------------------------------+--------------------------------------------------------------------------------+------+
 
 Enumerations
 ------------
@@ -65,29 +65,35 @@ Property Descriptions
 
 - :ref:`float<class_float>` **buffer_length**
 
-+----------+--------------------------+
-| *Setter* | set_buffer_length(value) |
-+----------+--------------------------+
-| *Getter* | get_buffer_length()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 2.0                      |
++-----------+--------------------------+
+| *Setter*  | set_buffer_length(value) |
++-----------+--------------------------+
+| *Getter*  | get_buffer_length()      |
++-----------+--------------------------+
 
 .. _class_AudioEffectSpectrumAnalyzer_property_fft_size:
 
 - :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **fft_size**
 
-+----------+---------------------+
-| *Setter* | set_fft_size(value) |
-+----------+---------------------+
-| *Getter* | get_fft_size()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 2                   |
++-----------+---------------------+
+| *Setter*  | set_fft_size(value) |
++-----------+---------------------+
+| *Getter*  | get_fft_size()      |
++-----------+---------------------+
 
 .. _class_AudioEffectSpectrumAnalyzer_property_tap_back_pos:
 
 - :ref:`float<class_float>` **tap_back_pos**
 
-+----------+-------------------------+
-| *Setter* | set_tap_back_pos(value) |
-+----------+-------------------------+
-| *Getter* | get_tap_back_pos()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0.01                    |
++-----------+-------------------------+
+| *Setter*  | set_tap_back_pos(value) |
++-----------+-------------------------+
+| *Getter*  | get_tap_back_pos()      |
++-----------+-------------------------+
 

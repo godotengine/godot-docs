@@ -21,11 +21,11 @@ Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |
-+---------------------------------+-----------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` |
-+---------------------------------+-----------------------------------------------------------------+
++---------------------------------+-----------------------------------------------------------------+------+
+| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             | null |
++---------------------------------+-----------------------------------------------------------------+------+
+| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` | 0    |
++---------------------------------+-----------------------------------------------------------------+------+
 
 Constants
 ---------
@@ -50,19 +50,23 @@ Property Descriptions
 
 - :ref:`Material<class_Material>` **next_pass**
 
-+----------+----------------------+
-| *Setter* | set_next_pass(value) |
-+----------+----------------------+
-| *Getter* | get_next_pass()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | null                 |
++-----------+----------------------+
+| *Setter*  | set_next_pass(value) |
++-----------+----------------------+
+| *Getter*  | get_next_pass()      |
++-----------+----------------------+
 
 .. _class_Material_property_render_priority:
 
 - :ref:`int<class_int>` **render_priority**
 
-+----------+----------------------------+
-| *Setter* | set_render_priority(value) |
-+----------+----------------------------+
-| *Getter* | get_render_priority()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 0                          |
++-----------+----------------------------+
+| *Setter*  | set_render_priority(value) |
++-----------+----------------------------+
+| *Getter*  | get_render_priority()      |
++-----------+----------------------------+
 

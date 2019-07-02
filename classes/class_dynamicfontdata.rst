@@ -19,13 +19,13 @@ Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a fo
 Properties
 ----------
 
-+----------------------------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>` |
-+----------------------------------------------+----------------------------------------------------------------+
-| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`     |
-+----------------------------------------------+----------------------------------------------------------------+
-| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`         |
-+----------------------------------------------+----------------------------------------------------------------+
++----------------------------------------------+----------------------------------------------------------------+------+
+| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>` | true |
++----------------------------------------------+----------------------------------------------------------------+------+
+| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`     | ""   |
++----------------------------------------------+----------------------------------------------------------------+------+
+| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`         | 2    |
++----------------------------------------------+----------------------------------------------------------------+------+
 
 Enumerations
 ------------
@@ -58,11 +58,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **antialiased**
 
-+----------+------------------------+
-| *Setter* | set_antialiased(value) |
-+----------+------------------------+
-| *Getter* | is_antialiased()       |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | true                   |
++-----------+------------------------+
+| *Setter*  | set_antialiased(value) |
++-----------+------------------------+
+| *Getter*  | is_antialiased()       |
++-----------+------------------------+
 
 Controls whether the font should be rendered with anti-aliasing.
 
@@ -70,11 +72,13 @@ Controls whether the font should be rendered with anti-aliasing.
 
 - :ref:`String<class_String>` **font_path**
 
-+----------+----------------------+
-| *Setter* | set_font_path(value) |
-+----------+----------------------+
-| *Getter* | get_font_path()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | ""                   |
++-----------+----------------------+
+| *Setter*  | set_font_path(value) |
++-----------+----------------------+
+| *Getter*  | get_font_path()      |
++-----------+----------------------+
 
 The path to the vector font file.
 
@@ -82,11 +86,13 @@ The path to the vector font file.
 
 - :ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting**
 
-+----------+--------------------+
-| *Setter* | set_hinting(value) |
-+----------+--------------------+
-| *Getter* | get_hinting()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 2                  |
++-----------+--------------------+
+| *Setter*  | set_hinting(value) |
++-----------+--------------------+
+| *Getter*  | get_hinting()      |
++-----------+--------------------+
 
 The font hinting mode used by FreeType.
 

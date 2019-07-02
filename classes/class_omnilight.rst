@@ -19,15 +19,15 @@ Omnidirectional light, such as a light bulb or a candle.
 Properties
 ----------
 
-+--------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>`     |
-+--------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`omni_range<class_OmniLight_property_omni_range>`                 |
-+--------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` | :ref:`omni_shadow_detail<class_OmniLight_property_omni_shadow_detail>` |
-+--------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`ShadowMode<enum_OmniLight_ShadowMode>`     | :ref:`omni_shadow_mode<class_OmniLight_property_omni_shadow_mode>`     |
-+--------------------------------------------------+------------------------------------------------------------------------+
++--------------------------------------------------+------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>`                        | :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>`     | 1.0 |
++--------------------------------------------------+------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>`                        | :ref:`omni_range<class_OmniLight_property_omni_range>`                 | 5.0 |
++--------------------------------------------------+------------------------------------------------------------------------+-----+
+| :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` | :ref:`omni_shadow_detail<class_OmniLight_property_omni_shadow_detail>` | 1   |
++--------------------------------------------------+------------------------------------------------------------------------+-----+
+| :ref:`ShadowMode<enum_OmniLight_ShadowMode>`     | :ref:`omni_shadow_mode<class_OmniLight_property_omni_shadow_mode>`     | 1   |
++--------------------------------------------------+------------------------------------------------------------------------+-----+
 
 Enumerations
 ------------
@@ -73,11 +73,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **omni_attenuation**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 1.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The light's attenuation (drop-off) curve. A number of presets are available in the **Inspector** by right-clicking the curve.
 
@@ -85,11 +87,13 @@ The light's attenuation (drop-off) curve. A number of presets are available in t
 
 - :ref:`float<class_float>` **omni_range**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 5.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The light's radius.
 
@@ -97,11 +101,13 @@ The light's radius.
 
 - :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **omni_shadow_detail**
 
-+----------+--------------------------+
-| *Setter* | set_shadow_detail(value) |
-+----------+--------------------------+
-| *Getter* | get_shadow_detail()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 1                        |
++-----------+--------------------------+
+| *Setter*  | set_shadow_detail(value) |
++-----------+--------------------------+
+| *Getter*  | get_shadow_detail()      |
++-----------+--------------------------+
 
 See :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>`.
 
@@ -109,11 +115,13 @@ See :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>`.
 
 - :ref:`ShadowMode<enum_OmniLight_ShadowMode>` **omni_shadow_mode**
 
-+----------+------------------------+
-| *Setter* | set_shadow_mode(value) |
-+----------+------------------------+
-| *Getter* | get_shadow_mode()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 1                      |
++-----------+------------------------+
+| *Setter*  | set_shadow_mode(value) |
++-----------+------------------------+
+| *Getter*  | get_shadow_mode()      |
++-----------+------------------------+
 
 See :ref:`ShadowMode<enum_OmniLight_ShadowMode>`.
 

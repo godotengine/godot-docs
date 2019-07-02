@@ -21,17 +21,17 @@ Combines the original signal with a copy that is slightly out of phase with the 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`depth<class_AudioEffectPhaser_property_depth>`               |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`feedback<class_AudioEffectPhaser_property_feedback>`         |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`range_max_hz<class_AudioEffectPhaser_property_range_max_hz>` |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`range_min_hz<class_AudioEffectPhaser_property_range_min_hz>` |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`rate_hz<class_AudioEffectPhaser_property_rate_hz>`           |
-+---------------------------+--------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`depth<class_AudioEffectPhaser_property_depth>`               | 1.0    |
++---------------------------+--------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`feedback<class_AudioEffectPhaser_property_feedback>`         | 0.7    |
++---------------------------+--------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`range_max_hz<class_AudioEffectPhaser_property_range_max_hz>` | 1600.0 |
++---------------------------+--------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`range_min_hz<class_AudioEffectPhaser_property_range_min_hz>` | 440.0  |
++---------------------------+--------------------------------------------------------------------+--------+
+| :ref:`float<class_float>` | :ref:`rate_hz<class_AudioEffectPhaser_property_rate_hz>`           | 0.5    |
++---------------------------+--------------------------------------------------------------------+--------+
 
 Description
 -----------
@@ -45,59 +45,69 @@ Property Descriptions
 
 - :ref:`float<class_float>` **depth**
 
-+----------+------------------+
-| *Setter* | set_depth(value) |
-+----------+------------------+
-| *Getter* | get_depth()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 1.0              |
++-----------+------------------+
+| *Setter*  | set_depth(value) |
++-----------+------------------+
+| *Getter*  | get_depth()      |
++-----------+------------------+
 
-Governs how high the filter frequencies sweep. Low value will primarily affect bass frequencies. High value can sweep high into the treble. Value can range from 0.1 to 4. Default value: ``1``.
+Governs how high the filter frequencies sweep. Low value will primarily affect bass frequencies. High value can sweep high into the treble. Value can range from 0.1 to 4.
 
 .. _class_AudioEffectPhaser_property_feedback:
 
 - :ref:`float<class_float>` **feedback**
 
-+----------+---------------------+
-| *Setter* | set_feedback(value) |
-+----------+---------------------+
-| *Getter* | get_feedback()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.7                 |
++-----------+---------------------+
+| *Setter*  | set_feedback(value) |
++-----------+---------------------+
+| *Getter*  | get_feedback()      |
++-----------+---------------------+
 
-Output percent of modified sound. Value can range from 0.1 to 0.9. Default value: ``0.7``.
+Output percent of modified sound. Value can range from 0.1 to 0.9.
 
 .. _class_AudioEffectPhaser_property_range_max_hz:
 
 - :ref:`float<class_float>` **range_max_hz**
 
-+----------+-------------------------+
-| *Setter* | set_range_max_hz(value) |
-+----------+-------------------------+
-| *Getter* | get_range_max_hz()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 1600.0                  |
++-----------+-------------------------+
+| *Setter*  | set_range_max_hz(value) |
++-----------+-------------------------+
+| *Getter*  | get_range_max_hz()      |
++-----------+-------------------------+
 
-Determines the maximum frequency affected by the LFO modulations, in Hz. Value can range from 10 to 10000. Default value: ``1600hz``.
+Determines the maximum frequency affected by the LFO modulations, in Hz. Value can range from 10 to 10000.
 
 .. _class_AudioEffectPhaser_property_range_min_hz:
 
 - :ref:`float<class_float>` **range_min_hz**
 
-+----------+-------------------------+
-| *Setter* | set_range_min_hz(value) |
-+----------+-------------------------+
-| *Getter* | get_range_min_hz()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 440.0                   |
++-----------+-------------------------+
+| *Setter*  | set_range_min_hz(value) |
++-----------+-------------------------+
+| *Getter*  | get_range_min_hz()      |
++-----------+-------------------------+
 
-Determines the minimum frequency affected by the LFO modulations, in Hz. Value can range from 10 to 10000. Default value: ``440hz``.
+Determines the minimum frequency affected by the LFO modulations, in Hz. Value can range from 10 to 10000.
 
 .. _class_AudioEffectPhaser_property_rate_hz:
 
 - :ref:`float<class_float>` **rate_hz**
 
-+----------+--------------------+
-| *Setter* | set_rate_hz(value) |
-+----------+--------------------+
-| *Getter* | get_rate_hz()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 0.5                |
++-----------+--------------------+
+| *Setter*  | set_rate_hz(value) |
++-----------+--------------------+
+| *Getter*  | get_rate_hz()      |
++-----------+--------------------+
 
 Adjusts the rate in Hz at which the effect sweeps up and down across the frequency range.
 

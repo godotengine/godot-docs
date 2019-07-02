@@ -21,9 +21,9 @@ Texture for 2D and 3D.
 Properties
 ----------
 
-+-----------------------+--------------------------------------------+
-| :ref:`int<class_int>` | :ref:`flags<class_Texture_property_flags>` |
-+-----------------------+--------------------------------------------+
++-----------------------+--------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`flags<class_Texture_property_flags>` | 4 |
++-----------------------+--------------------------------------------+---+
 
 Methods
 -------
@@ -69,7 +69,7 @@ Enumerations
 
 enum **Flags**:
 
-- **FLAGS_DEFAULT** = **7** --- Default flags. :ref:`FLAG_MIPMAPS<class_Texture_constant_FLAG_MIPMAPS>`, :ref:`FLAG_REPEAT<class_Texture_constant_FLAG_REPEAT>` and :ref:`FLAG_FILTER<class_Texture_constant_FLAG_FILTER>` are are enabled.
+- **FLAGS_DEFAULT** = **7** --- Default flags. :ref:`FLAG_MIPMAPS<class_Texture_constant_FLAG_MIPMAPS>`, :ref:`FLAG_REPEAT<class_Texture_constant_FLAG_REPEAT>` and :ref:`FLAG_FILTER<class_Texture_constant_FLAG_FILTER>` are enabled.
 
 - **FLAG_MIPMAPS** = **1** --- Generates mipmaps, which are smaller versions of the same texture to use when zoomed out, keeping the aspect ratio.
 
@@ -101,11 +101,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **flags**
 
-+----------+------------------+
-| *Setter* | set_flags(value) |
-+----------+------------------+
-| *Getter* | get_flags()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 4                |
++-----------+------------------+
+| *Setter*  | set_flags(value) |
++-----------+------------------+
+| *Getter*  | get_flags()      |
++-----------+------------------+
 
 The texture's flags.
 

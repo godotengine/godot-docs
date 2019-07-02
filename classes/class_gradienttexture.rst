@@ -19,11 +19,11 @@ Gradient-filled texture.
 Properties
 ----------
 
-+---------------------------------+----------------------------------------------------------+
-| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` |
-+---------------------------------+----------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       |
-+---------------------------------+----------------------------------------------------------+
++---------------------------------+----------------------------------------------------------+------+
+| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` | null |
++---------------------------------+----------------------------------------------------------+------+
+| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       | 2048 |
++---------------------------------+----------------------------------------------------------+------+
 
 Description
 -----------
@@ -37,11 +37,13 @@ Property Descriptions
 
 - :ref:`Gradient<class_Gradient>` **gradient**
 
-+----------+---------------------+
-| *Setter* | set_gradient(value) |
-+----------+---------------------+
-| *Getter* | get_gradient()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_gradient(value) |
++-----------+---------------------+
+| *Getter*  | get_gradient()      |
++-----------+---------------------+
 
 The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 
@@ -49,11 +51,13 @@ The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 
 - :ref:`int<class_int>` **width**
 
-+----------+------------------+
-| *Setter* | set_width(value) |
-+----------+------------------+
-| *Getter* | get_width()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 2048             |
++-----------+------------------+
+| *Setter*  | set_width(value) |
++-----------+------------------+
+| *Getter*  | get_width()      |
++-----------+------------------+
 
 The number of color samples that will be obtained from the :ref:`Gradient<class_Gradient>`.
 

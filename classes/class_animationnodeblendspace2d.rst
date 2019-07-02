@@ -19,21 +19,21 @@ Blends linearly between three :ref:`AnimationNode<class_AnimationNode>` of any t
 Properties
 ----------
 
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`auto_triangles<class_AnimationNodeBlendSpace2D_property_auto_triangles>` |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` | :ref:`blend_mode<class_AnimationNodeBlendSpace2D_property_blend_mode>`         |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                              | :ref:`max_space<class_AnimationNodeBlendSpace2D_property_max_space>`           |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                              | :ref:`min_space<class_AnimationNodeBlendSpace2D_property_min_space>`           |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                              | :ref:`snap<class_AnimationNodeBlendSpace2D_property_snap>`                     |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                | :ref:`x_label<class_AnimationNodeBlendSpace2D_property_x_label>`               |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                | :ref:`y_label<class_AnimationNodeBlendSpace2D_property_y_label>`               |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`auto_triangles<class_AnimationNodeBlendSpace2D_property_auto_triangles>` | true                |
++------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------+
+| :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` | :ref:`blend_mode<class_AnimationNodeBlendSpace2D_property_blend_mode>`         | 0                   |
++------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                              | :ref:`max_space<class_AnimationNodeBlendSpace2D_property_max_space>`           | Vector2( 1, 1 )     |
++------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                              | :ref:`min_space<class_AnimationNodeBlendSpace2D_property_min_space>`           | Vector2( -1, -1 )   |
++------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                              | :ref:`snap<class_AnimationNodeBlendSpace2D_property_snap>`                     | Vector2( 0.1, 0.1 ) |
++------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>`                                | :ref:`x_label<class_AnimationNodeBlendSpace2D_property_x_label>`               | "x"                 |
++------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>`                                | :ref:`y_label<class_AnimationNodeBlendSpace2D_property_y_label>`               | "y"                 |
++------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -106,11 +106,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **auto_triangles**
 
-+----------+---------------------------+
-| *Setter* | set_auto_triangles(value) |
-+----------+---------------------------+
-| *Getter* | get_auto_triangles()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | true                      |
++-----------+---------------------------+
+| *Setter*  | set_auto_triangles(value) |
++-----------+---------------------------+
+| *Getter*  | get_auto_triangles()      |
++-----------+---------------------------+
 
 If true, the blend space is triangulated automatically. The mesh updates every time you add or remove points with :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>` and :ref:`remove_blend_point<class_AnimationNodeBlendSpace2D_method_remove_blend_point>`.
 
@@ -118,11 +120,13 @@ If true, the blend space is triangulated automatically. The mesh updates every t
 
 - :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` **blend_mode**
 
-+----------+-----------------------+
-| *Setter* | set_blend_mode(value) |
-+----------+-----------------------+
-| *Getter* | get_blend_mode()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 0                     |
++-----------+-----------------------+
+| *Setter*  | set_blend_mode(value) |
++-----------+-----------------------+
+| *Getter*  | get_blend_mode()      |
++-----------+-----------------------+
 
 Controls the interpolation between animations. See :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` constants.
 
@@ -130,11 +134,13 @@ Controls the interpolation between animations. See :ref:`BlendMode<enum_Animatio
 
 - :ref:`Vector2<class_Vector2>` **max_space**
 
-+----------+----------------------+
-| *Setter* | set_max_space(value) |
-+----------+----------------------+
-| *Getter* | get_max_space()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | Vector2( 1, 1 )      |
++-----------+----------------------+
+| *Setter*  | set_max_space(value) |
++-----------+----------------------+
+| *Getter*  | get_max_space()      |
++-----------+----------------------+
 
 The blend space's X and Y axes' upper limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>`.
 
@@ -142,11 +148,13 @@ The blend space's X and Y axes' upper limit for the points' position. See :ref:`
 
 - :ref:`Vector2<class_Vector2>` **min_space**
 
-+----------+----------------------+
-| *Setter* | set_min_space(value) |
-+----------+----------------------+
-| *Getter* | get_min_space()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | Vector2( -1, -1 )    |
++-----------+----------------------+
+| *Setter*  | set_min_space(value) |
++-----------+----------------------+
+| *Getter*  | get_min_space()      |
++-----------+----------------------+
 
 The blend space's X and Y axes' lower limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>`.
 
@@ -154,11 +162,13 @@ The blend space's X and Y axes' lower limit for the points' position. See :ref:`
 
 - :ref:`Vector2<class_Vector2>` **snap**
 
-+----------+-----------------+
-| *Setter* | set_snap(value) |
-+----------+-----------------+
-| *Getter* | get_snap()      |
-+----------+-----------------+
++-----------+---------------------+
+| *Default* | Vector2( 0.1, 0.1 ) |
++-----------+---------------------+
+| *Setter*  | set_snap(value)     |
++-----------+---------------------+
+| *Getter*  | get_snap()          |
++-----------+---------------------+
 
 Position increment to snap to when moving a point.
 
@@ -166,11 +176,13 @@ Position increment to snap to when moving a point.
 
 - :ref:`String<class_String>` **x_label**
 
-+----------+--------------------+
-| *Setter* | set_x_label(value) |
-+----------+--------------------+
-| *Getter* | get_x_label()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | "x"                |
++-----------+--------------------+
+| *Setter*  | set_x_label(value) |
++-----------+--------------------+
+| *Getter*  | get_x_label()      |
++-----------+--------------------+
 
 Name of the blend space's X axis.
 
@@ -178,11 +190,13 @@ Name of the blend space's X axis.
 
 - :ref:`String<class_String>` **y_label**
 
-+----------+--------------------+
-| *Setter* | set_y_label(value) |
-+----------+--------------------+
-| *Getter* | get_y_label()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | "y"                |
++-----------+--------------------+
+| *Setter*  | set_y_label(value) |
++-----------+--------------------+
+| *Getter*  | get_y_label()      |
++-----------+--------------------+
 
 Name of the blend space's Y axis.
 

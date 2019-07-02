@@ -19,9 +19,9 @@ Class representing a square mesh.
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_QuadMesh_property_size>` |
-+-------------------------------+-------------------------------------------+
++-------------------------------+-------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_QuadMesh_property_size>` | Vector2( 1, 1 ) |
++-------------------------------+-------------------------------------------+-----------------+
 
 Description
 -----------
@@ -35,11 +35,13 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **size**
 
-+----------+-----------------+
-| *Setter* | set_size(value) |
-+----------+-----------------+
-| *Getter* | get_size()      |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | Vector2( 1, 1 ) |
++-----------+-----------------+
+| *Setter*  | set_size(value) |
++-----------+-----------------+
+| *Getter*  | get_size()      |
++-----------+-----------------+
 
-Size in the X and Y axes. Default is ``Vector2(1, 1)``.
+Size on the X and Y axes.
 

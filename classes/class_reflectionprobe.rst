@@ -19,31 +19,31 @@ Brief Description
 Properties
 ----------
 
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`box_projection<class_ReflectionProbe_property_box_projection>`                     |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                              | :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`                               |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`enable_shadows<class_ReflectionProbe_property_enable_shadows>`                     |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                      | :ref:`extents<class_ReflectionProbe_property_extents>`                                   |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                          | :ref:`intensity<class_ReflectionProbe_property_intensity>`                               |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`                          | :ref:`interior_ambient_color<class_ReflectionProbe_property_interior_ambient_color>`     |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                          | :ref:`interior_ambient_contrib<class_ReflectionProbe_property_interior_ambient_contrib>` |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                          | :ref:`interior_ambient_energy<class_ReflectionProbe_property_interior_ambient_energy>`   |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`                   |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                          | :ref:`max_distance<class_ReflectionProbe_property_max_distance>`                         |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                      | :ref:`origin_offset<class_ReflectionProbe_property_origin_offset>`                       |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` | :ref:`update_mode<class_ReflectionProbe_property_update_mode>`                           |
-+----------------------------------------------------+------------------------------------------------------------------------------------------+
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                            | :ref:`box_projection<class_ReflectionProbe_property_box_projection>`                     | false               |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                              | :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`                               | 1048575             |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                            | :ref:`enable_shadows<class_ReflectionProbe_property_enable_shadows>`                     | false               |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector3<class_Vector3>`                      | :ref:`extents<class_ReflectionProbe_property_extents>`                                   | Vector3( 1, 1, 1 )  |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                          | :ref:`intensity<class_ReflectionProbe_property_intensity>`                               | 1.0                 |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Color<class_Color>`                          | :ref:`interior_ambient_color<class_ReflectionProbe_property_interior_ambient_color>`     | Color( 0, 0, 0, 1 ) |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                          | :ref:`interior_ambient_contrib<class_ReflectionProbe_property_interior_ambient_contrib>` | 0.0                 |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                          | :ref:`interior_ambient_energy<class_ReflectionProbe_property_interior_ambient_energy>`   | 1.0                 |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                            | :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`                   | false               |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                          | :ref:`max_distance<class_ReflectionProbe_property_max_distance>`                         | 0.0                 |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector3<class_Vector3>`                      | :ref:`origin_offset<class_ReflectionProbe_property_origin_offset>`                       | Vector3( 0, 0, 0 )  |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
+| :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` | :ref:`update_mode<class_ReflectionProbe_property_update_mode>`                           | 0                   |
++----------------------------------------------------+------------------------------------------------------------------------------------------+---------------------+
 
 Enumerations
 ------------
@@ -72,119 +72,143 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **box_projection**
 
-+----------+----------------------------------+
-| *Setter* | set_enable_box_projection(value) |
-+----------+----------------------------------+
-| *Getter* | is_box_projection_enabled()      |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | false                            |
++-----------+----------------------------------+
+| *Setter*  | set_enable_box_projection(value) |
++-----------+----------------------------------+
+| *Getter*  | is_box_projection_enabled()      |
++-----------+----------------------------------+
 
 .. _class_ReflectionProbe_property_cull_mask:
 
 - :ref:`int<class_int>` **cull_mask**
 
-+----------+----------------------+
-| *Setter* | set_cull_mask(value) |
-+----------+----------------------+
-| *Getter* | get_cull_mask()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 1048575              |
++-----------+----------------------+
+| *Setter*  | set_cull_mask(value) |
++-----------+----------------------+
+| *Getter*  | get_cull_mask()      |
++-----------+----------------------+
 
 .. _class_ReflectionProbe_property_enable_shadows:
 
 - :ref:`bool<class_bool>` **enable_shadows**
 
-+----------+---------------------------+
-| *Setter* | set_enable_shadows(value) |
-+----------+---------------------------+
-| *Getter* | are_shadows_enabled()     |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | false                     |
++-----------+---------------------------+
+| *Setter*  | set_enable_shadows(value) |
++-----------+---------------------------+
+| *Getter*  | are_shadows_enabled()     |
++-----------+---------------------------+
 
 .. _class_ReflectionProbe_property_extents:
 
 - :ref:`Vector3<class_Vector3>` **extents**
 
-+----------+--------------------+
-| *Setter* | set_extents(value) |
-+----------+--------------------+
-| *Getter* | get_extents()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | Vector3( 1, 1, 1 ) |
++-----------+--------------------+
+| *Setter*  | set_extents(value) |
++-----------+--------------------+
+| *Getter*  | get_extents()      |
++-----------+--------------------+
 
 .. _class_ReflectionProbe_property_intensity:
 
 - :ref:`float<class_float>` **intensity**
 
-+----------+----------------------+
-| *Setter* | set_intensity(value) |
-+----------+----------------------+
-| *Getter* | get_intensity()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 1.0                  |
++-----------+----------------------+
+| *Setter*  | set_intensity(value) |
++-----------+----------------------+
+| *Getter*  | get_intensity()      |
++-----------+----------------------+
 
 .. _class_ReflectionProbe_property_interior_ambient_color:
 
 - :ref:`Color<class_Color>` **interior_ambient_color**
 
-+----------+-----------------------------+
-| *Setter* | set_interior_ambient(value) |
-+----------+-----------------------------+
-| *Getter* | get_interior_ambient()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | Color( 0, 0, 0, 1 )         |
++-----------+-----------------------------+
+| *Setter*  | set_interior_ambient(value) |
++-----------+-----------------------------+
+| *Getter*  | get_interior_ambient()      |
++-----------+-----------------------------+
 
 .. _class_ReflectionProbe_property_interior_ambient_contrib:
 
 - :ref:`float<class_float>` **interior_ambient_contrib**
 
-+----------+------------------------------------------------+
-| *Setter* | set_interior_ambient_probe_contribution(value) |
-+----------+------------------------------------------------+
-| *Getter* | get_interior_ambient_probe_contribution()      |
-+----------+------------------------------------------------+
++-----------+------------------------------------------------+
+| *Default* | 0.0                                            |
++-----------+------------------------------------------------+
+| *Setter*  | set_interior_ambient_probe_contribution(value) |
++-----------+------------------------------------------------+
+| *Getter*  | get_interior_ambient_probe_contribution()      |
++-----------+------------------------------------------------+
 
 .. _class_ReflectionProbe_property_interior_ambient_energy:
 
 - :ref:`float<class_float>` **interior_ambient_energy**
 
-+----------+------------------------------------+
-| *Setter* | set_interior_ambient_energy(value) |
-+----------+------------------------------------+
-| *Getter* | get_interior_ambient_energy()      |
-+----------+------------------------------------+
++-----------+------------------------------------+
+| *Default* | 1.0                                |
++-----------+------------------------------------+
+| *Setter*  | set_interior_ambient_energy(value) |
++-----------+------------------------------------+
+| *Getter*  | get_interior_ambient_energy()      |
++-----------+------------------------------------+
 
 .. _class_ReflectionProbe_property_interior_enable:
 
 - :ref:`bool<class_bool>` **interior_enable**
 
-+----------+------------------------+
-| *Setter* | set_as_interior(value) |
-+----------+------------------------+
-| *Getter* | is_set_as_interior()   |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | false                  |
++-----------+------------------------+
+| *Setter*  | set_as_interior(value) |
++-----------+------------------------+
+| *Getter*  | is_set_as_interior()   |
++-----------+------------------------+
 
 .. _class_ReflectionProbe_property_max_distance:
 
 - :ref:`float<class_float>` **max_distance**
 
-+----------+-------------------------+
-| *Setter* | set_max_distance(value) |
-+----------+-------------------------+
-| *Getter* | get_max_distance()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0.0                     |
++-----------+-------------------------+
+| *Setter*  | set_max_distance(value) |
++-----------+-------------------------+
+| *Getter*  | get_max_distance()      |
++-----------+-------------------------+
 
 .. _class_ReflectionProbe_property_origin_offset:
 
 - :ref:`Vector3<class_Vector3>` **origin_offset**
 
-+----------+--------------------------+
-| *Setter* | set_origin_offset(value) |
-+----------+--------------------------+
-| *Getter* | get_origin_offset()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | Vector3( 0, 0, 0 )       |
++-----------+--------------------------+
+| *Setter*  | set_origin_offset(value) |
++-----------+--------------------------+
+| *Getter*  | get_origin_offset()      |
++-----------+--------------------------+
 
 .. _class_ReflectionProbe_property_update_mode:
 
 - :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` **update_mode**
 
-+----------+------------------------+
-| *Setter* | set_update_mode(value) |
-+----------+------------------------+
-| *Getter* | get_update_mode()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0                      |
++-----------+------------------------+
+| *Setter*  | set_update_mode(value) |
++-----------+------------------------+
+| *Getter*  | get_update_mode()      |
++-----------+------------------------+
 

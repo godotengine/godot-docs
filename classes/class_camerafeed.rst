@@ -19,11 +19,11 @@ A camera feed gives you access to a single physical camera attached to your devi
 Properties
 ----------
 
-+---------------------------------------+-----------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`feed_is_active<class_CameraFeed_property_feed_is_active>` |
-+---------------------------------------+-----------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`feed_transform<class_CameraFeed_property_feed_transform>` |
-+---------------------------------------+-----------------------------------------------------------------+
++---------------------------------------+-----------------------------------------------------------------+----------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`feed_is_active<class_CameraFeed_property_feed_is_active>` | false                            |
++---------------------------------------+-----------------------------------------------------------------+----------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`feed_transform<class_CameraFeed_property_feed_transform>` | Transform2D( 1, 0, 0, -1, 0, 1 ) |
++---------------------------------------+-----------------------------------------------------------------+----------------------------------+
 
 Methods
 -------
@@ -89,21 +89,25 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **feed_is_active**
 
-+----------+-------------------+
-| *Setter* | set_active(value) |
-+----------+-------------------+
-| *Getter* | is_active()       |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | false             |
++-----------+-------------------+
+| *Setter*  | set_active(value) |
++-----------+-------------------+
+| *Getter*  | is_active()       |
++-----------+-------------------+
 
 .. _class_CameraFeed_property_feed_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **feed_transform**
 
-+----------+----------------------+
-| *Setter* | set_transform(value) |
-+----------+----------------------+
-| *Getter* | get_transform()      |
-+----------+----------------------+
++-----------+----------------------------------+
+| *Default* | Transform2D( 1, 0, 0, -1, 0, 1 ) |
++-----------+----------------------------------+
+| *Setter*  | set_transform(value)             |
++-----------+----------------------------------+
+| *Getter*  | get_transform()                  |
++-----------+----------------------------------+
 
 Method Descriptions
 -------------------

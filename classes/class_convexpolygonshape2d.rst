@@ -19,9 +19,9 @@ Convex polygon shape for 2D physics.
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` |
-+-------------------------------------------------+-----------------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------+----------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` | PoolVector2Array(  ) |
++-------------------------------------------------+-----------------------------------------------------------+----------------------+
 
 Methods
 -------
@@ -44,11 +44,13 @@ Property Descriptions
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
 
-+----------+-------------------+
-| *Setter* | set_points(value) |
-+----------+-------------------+
-| *Getter* | get_points()      |
-+----------+-------------------+
++-----------+----------------------+
+| *Default* | PoolVector2Array(  ) |
++-----------+----------------------+
+| *Setter*  | set_points(value)    |
++-----------+----------------------+
+| *Getter*  | get_points()         |
++-----------+----------------------+
 
 The polygon's list of vertices. Can be in either clockwise or counterclockwise order.
 

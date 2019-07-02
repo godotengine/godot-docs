@@ -19,27 +19,27 @@ Node for 3D tile-based maps.
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`       |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`       |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`cell_center_z<class_GridMap_property_cell_center_z>`       |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`cell_octant_size<class_GridMap_property_cell_octant_size>` |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`cell_scale<class_GridMap_property_cell_scale>`             |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`cell_size<class_GridMap_property_cell_size>`               |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`collision_layer<class_GridMap_property_collision_layer>`   |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`collision_mask<class_GridMap_property_collision_mask>`     |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`mesh_library<class_GridMap_property_mesh_library>`         |
-+---------------------------------------+------------------------------------------------------------------+
-| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`theme<class_GridMap_property_theme>`                       |
-+---------------------------------------+------------------------------------------------------------------+
++---------------------------------------+------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`               | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`       | true               |
++---------------------------------------+------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`               | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`       | true               |
++---------------------------------------+------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`               | :ref:`cell_center_z<class_GridMap_property_cell_center_z>`       | true               |
++---------------------------------------+------------------------------------------------------------------+--------------------+
+| :ref:`int<class_int>`                 | :ref:`cell_octant_size<class_GridMap_property_cell_octant_size>` | 8                  |
++---------------------------------------+------------------------------------------------------------------+--------------------+
+| :ref:`float<class_float>`             | :ref:`cell_scale<class_GridMap_property_cell_scale>`             | 1.0                |
++---------------------------------------+------------------------------------------------------------------+--------------------+
+| :ref:`Vector3<class_Vector3>`         | :ref:`cell_size<class_GridMap_property_cell_size>`               | Vector3( 2, 2, 2 ) |
++---------------------------------------+------------------------------------------------------------------+--------------------+
+| :ref:`int<class_int>`                 | :ref:`collision_layer<class_GridMap_property_collision_layer>`   | 1                  |
++---------------------------------------+------------------------------------------------------------------+--------------------+
+| :ref:`int<class_int>`                 | :ref:`collision_mask<class_GridMap_property_collision_mask>`     | 1                  |
++---------------------------------------+------------------------------------------------------------------+--------------------+
+| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`mesh_library<class_GridMap_property_mesh_library>`         | null               |
++---------------------------------------+------------------------------------------------------------------+--------------------+
+| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`theme<class_GridMap_property_theme>`                       |                    |
++---------------------------------------+------------------------------------------------------------------+--------------------+
 
 Methods
 -------
@@ -112,11 +112,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **cell_center_x**
 
-+----------+---------------------+
-| *Setter* | set_center_x(value) |
-+----------+---------------------+
-| *Getter* | get_center_x()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | true                |
++-----------+---------------------+
+| *Setter*  | set_center_x(value) |
++-----------+---------------------+
+| *Getter*  | get_center_x()      |
++-----------+---------------------+
 
 If ``true``, grid items are centered on the X axis.
 
@@ -124,11 +126,13 @@ If ``true``, grid items are centered on the X axis.
 
 - :ref:`bool<class_bool>` **cell_center_y**
 
-+----------+---------------------+
-| *Setter* | set_center_y(value) |
-+----------+---------------------+
-| *Getter* | get_center_y()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | true                |
++-----------+---------------------+
+| *Setter*  | set_center_y(value) |
++-----------+---------------------+
+| *Getter*  | get_center_y()      |
++-----------+---------------------+
 
 If ``true``, grid items are centered on the Y axis.
 
@@ -136,11 +140,13 @@ If ``true``, grid items are centered on the Y axis.
 
 - :ref:`bool<class_bool>` **cell_center_z**
 
-+----------+---------------------+
-| *Setter* | set_center_z(value) |
-+----------+---------------------+
-| *Getter* | get_center_z()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | true                |
++-----------+---------------------+
+| *Setter*  | set_center_z(value) |
++-----------+---------------------+
+| *Getter*  | get_center_z()      |
++-----------+---------------------+
 
 If ``true``, grid items are centered on the Z axis.
 
@@ -148,11 +154,13 @@ If ``true``, grid items are centered on the Z axis.
 
 - :ref:`int<class_int>` **cell_octant_size**
 
-+----------+------------------------+
-| *Setter* | set_octant_size(value) |
-+----------+------------------------+
-| *Getter* | get_octant_size()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 8                      |
++-----------+------------------------+
+| *Setter*  | set_octant_size(value) |
++-----------+------------------------+
+| *Getter*  | get_octant_size()      |
++-----------+------------------------+
 
 The size of each octant measured in number of cells. This applies to all three axis.
 
@@ -160,21 +168,25 @@ The size of each octant measured in number of cells. This applies to all three a
 
 - :ref:`float<class_float>` **cell_scale**
 
-+----------+-----------------------+
-| *Setter* | set_cell_scale(value) |
-+----------+-----------------------+
-| *Getter* | get_cell_scale()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 1.0                   |
++-----------+-----------------------+
+| *Setter*  | set_cell_scale(value) |
++-----------+-----------------------+
+| *Getter*  | get_cell_scale()      |
++-----------+-----------------------+
 
 .. _class_GridMap_property_cell_size:
 
 - :ref:`Vector3<class_Vector3>` **cell_size**
 
-+----------+----------------------+
-| *Setter* | set_cell_size(value) |
-+----------+----------------------+
-| *Getter* | get_cell_size()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | Vector3( 2, 2, 2 )   |
++-----------+----------------------+
+| *Setter*  | set_cell_size(value) |
++-----------+----------------------+
+| *Getter*  | get_cell_size()      |
++-----------+----------------------+
 
 The dimensions of the grid's cells.
 
@@ -182,31 +194,37 @@ The dimensions of the grid's cells.
 
 - :ref:`int<class_int>` **collision_layer**
 
-+----------+----------------------------+
-| *Setter* | set_collision_layer(value) |
-+----------+----------------------------+
-| *Getter* | get_collision_layer()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 1                          |
++-----------+----------------------------+
+| *Setter*  | set_collision_layer(value) |
++-----------+----------------------------+
+| *Getter*  | get_collision_layer()      |
++-----------+----------------------------+
 
 .. _class_GridMap_property_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
 
-+----------+---------------------------+
-| *Setter* | set_collision_mask(value) |
-+----------+---------------------------+
-| *Getter* | get_collision_mask()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 1                         |
++-----------+---------------------------+
+| *Setter*  | set_collision_mask(value) |
++-----------+---------------------------+
+| *Getter*  | get_collision_mask()      |
++-----------+---------------------------+
 
 .. _class_GridMap_property_mesh_library:
 
 - :ref:`MeshLibrary<class_MeshLibrary>` **mesh_library**
 
-+----------+-------------------------+
-| *Setter* | set_mesh_library(value) |
-+----------+-------------------------+
-| *Getter* | get_mesh_library()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | null                    |
++-----------+-------------------------+
+| *Setter*  | set_mesh_library(value) |
++-----------+-------------------------+
+| *Getter*  | get_mesh_library()      |
++-----------+-------------------------+
 
 The assigned :ref:`MeshLibrary<class_MeshLibrary>`.
 

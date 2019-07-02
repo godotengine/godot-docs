@@ -21,13 +21,13 @@ Base class for an AR/VR interface implementation.
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_property_ar_is_anchor_detection_enabled>` |
-+-------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_property_interface_is_initialized>`             |
-+-------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_property_interface_is_primary>`                     |
-+-------------------------+----------------------------------------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_property_ar_is_anchor_detection_enabled>` | false |
++-------------------------+----------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_property_interface_is_initialized>`             | false |
++-------------------------+----------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_property_interface_is_primary>`                     | false |
++-------------------------+----------------------------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -131,11 +131,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled**
 
-+----------+----------------------------------------+
-| *Setter* | set_anchor_detection_is_enabled(value) |
-+----------+----------------------------------------+
-| *Getter* | get_anchor_detection_is_enabled()      |
-+----------+----------------------------------------+
++-----------+----------------------------------------+
+| *Default* | false                                  |
++-----------+----------------------------------------+
+| *Setter*  | set_anchor_detection_is_enabled(value) |
++-----------+----------------------------------------+
+| *Getter*  | get_anchor_detection_is_enabled()      |
++-----------+----------------------------------------+
 
 On an AR interface, is our anchor detection enabled?
 
@@ -143,11 +145,13 @@ On an AR interface, is our anchor detection enabled?
 
 - :ref:`bool<class_bool>` **interface_is_initialized**
 
-+----------+---------------------------+
-| *Setter* | set_is_initialized(value) |
-+----------+---------------------------+
-| *Getter* | is_initialized()          |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | false                     |
++-----------+---------------------------+
+| *Setter*  | set_is_initialized(value) |
++-----------+---------------------------+
+| *Getter*  | is_initialized()          |
++-----------+---------------------------+
 
 Has this interface been initialized?
 
@@ -155,11 +159,13 @@ Has this interface been initialized?
 
 - :ref:`bool<class_bool>` **interface_is_primary**
 
-+----------+-----------------------+
-| *Setter* | set_is_primary(value) |
-+----------+-----------------------+
-| *Getter* | is_primary()          |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | false                 |
++-----------+-----------------------+
+| *Setter*  | set_is_primary(value) |
++-----------+-----------------------+
+| *Getter*  | is_primary()          |
++-----------+-----------------------+
 
 Is this our primary interface?
 

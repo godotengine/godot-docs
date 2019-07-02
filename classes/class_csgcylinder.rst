@@ -19,19 +19,19 @@ A CSG Cylinder shape.
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`cone<class_CSGCylinder_property_cone>`                 |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`height<class_CSGCylinder_property_height>`             |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGCylinder_property_material>`         |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`radius<class_CSGCylinder_property_radius>`             |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`sides<class_CSGCylinder_property_sides>`               |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGCylinder_property_smooth_faces>` |
-+---------------------------------+--------------------------------------------------------------+
++---------------------------------+--------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`         | :ref:`cone<class_CSGCylinder_property_cone>`                 | false |
++---------------------------------+--------------------------------------------------------------+-------+
+| :ref:`float<class_float>`       | :ref:`height<class_CSGCylinder_property_height>`             | 1.0   |
++---------------------------------+--------------------------------------------------------------+-------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGCylinder_property_material>`         | null  |
++---------------------------------+--------------------------------------------------------------+-------+
+| :ref:`float<class_float>`       | :ref:`radius<class_CSGCylinder_property_radius>`             | 1.0   |
++---------------------------------+--------------------------------------------------------------+-------+
+| :ref:`int<class_int>`           | :ref:`sides<class_CSGCylinder_property_sides>`               | 8     |
++---------------------------------+--------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGCylinder_property_smooth_faces>` | true  |
++---------------------------------+--------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -45,11 +45,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **cone**
 
-+----------+-----------------+
-| *Setter* | set_cone(value) |
-+----------+-----------------+
-| *Getter* | is_cone()       |
-+----------+-----------------+
++-----------+-----------------+
+| *Default* | false           |
++-----------+-----------------+
+| *Setter*  | set_cone(value) |
++-----------+-----------------+
+| *Getter*  | is_cone()       |
++-----------+-----------------+
 
 If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder_property_radius>` will only apply to one side.
 
@@ -57,11 +59,13 @@ If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder_property_radiu
 
 - :ref:`float<class_float>` **height**
 
-+----------+-------------------+
-| *Setter* | set_height(value) |
-+----------+-------------------+
-| *Getter* | get_height()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1.0               |
++-----------+-------------------+
+| *Setter*  | set_height(value) |
++-----------+-------------------+
+| *Getter*  | get_height()      |
++-----------+-------------------+
 
 The height of the cylinder.
 
@@ -69,11 +73,13 @@ The height of the cylinder.
 
 - :ref:`Material<class_Material>` **material**
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_material(value) |
++-----------+---------------------+
+| *Getter*  | get_material()      |
++-----------+---------------------+
 
 The material used to render the cylinder.
 
@@ -81,11 +87,13 @@ The material used to render the cylinder.
 
 - :ref:`float<class_float>` **radius**
 
-+----------+-------------------+
-| *Setter* | set_radius(value) |
-+----------+-------------------+
-| *Getter* | get_radius()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1.0               |
++-----------+-------------------+
+| *Setter*  | set_radius(value) |
++-----------+-------------------+
+| *Getter*  | get_radius()      |
++-----------+-------------------+
 
 The radius of the cylinder.
 
@@ -93,11 +101,13 @@ The radius of the cylinder.
 
 - :ref:`int<class_int>` **sides**
 
-+----------+------------------+
-| *Setter* | set_sides(value) |
-+----------+------------------+
-| *Getter* | get_sides()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 8                |
++-----------+------------------+
+| *Setter*  | set_sides(value) |
++-----------+------------------+
+| *Getter*  | get_sides()      |
++-----------+------------------+
 
 The number of sides of the cylinder, the higher this number the more detail there will be in the cylinder.
 
@@ -105,11 +115,13 @@ The number of sides of the cylinder, the higher this number the more detail ther
 
 - :ref:`bool<class_bool>` **smooth_faces**
 
-+----------+-------------------------+
-| *Setter* | set_smooth_faces(value) |
-+----------+-------------------------+
-| *Getter* | get_smooth_faces()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | true                    |
++-----------+-------------------------+
+| *Setter*  | set_smooth_faces(value) |
++-----------+-------------------------+
+| *Getter*  | get_smooth_faces()      |
++-----------+-------------------------+
 
 If ``true`` the normals of the cylinder are set to give a smooth effect making the cylinder seem rounded. If ``false`` the cylinder will have a flat shaded look.
 

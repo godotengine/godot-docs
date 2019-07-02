@@ -19,31 +19,31 @@ A soft mesh physics body.
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`areaAngular_stiffness<class_SoftBody_property_areaAngular_stiffness>`         |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`collision_layer<class_SoftBody_property_collision_layer>`                     |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`collision_mask<class_SoftBody_property_collision_mask>`                       |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`damping_coefficient<class_SoftBody_property_damping_coefficient>`             |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`drag_coefficient<class_SoftBody_property_drag_coefficient>`                   |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`linear_stiffness<class_SoftBody_property_linear_stiffness>`                   |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`parent_collision_ignore<class_SoftBody_property_parent_collision_ignore>`     |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`pose_matching_coefficient<class_SoftBody_property_pose_matching_coefficient>` |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`pressure_coefficient<class_SoftBody_property_pressure_coefficient>`           |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`simulation_precision<class_SoftBody_property_simulation_precision>`           |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`total_mass<class_SoftBody_property_total_mass>`                               |
-+---------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`volume_stiffness<class_SoftBody_property_volume_stiffness>`                   |
-+---------------------------------+-------------------------------------------------------------------------------------+
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`       | :ref:`areaAngular_stiffness<class_SoftBody_property_areaAngular_stiffness>`         | 0.5          |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`           | :ref:`collision_layer<class_SoftBody_property_collision_layer>`                     | 1            |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`           | :ref:`collision_mask<class_SoftBody_property_collision_mask>`                       | 1            |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`       | :ref:`damping_coefficient<class_SoftBody_property_damping_coefficient>`             | 0.01         |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`       | :ref:`drag_coefficient<class_SoftBody_property_drag_coefficient>`                   | 0.0          |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`       | :ref:`linear_stiffness<class_SoftBody_property_linear_stiffness>`                   | 0.5          |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`parent_collision_ignore<class_SoftBody_property_parent_collision_ignore>`     | NodePath("") |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`       | :ref:`pose_matching_coefficient<class_SoftBody_property_pose_matching_coefficient>` | 0.0          |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`       | :ref:`pressure_coefficient<class_SoftBody_property_pressure_coefficient>`           | 0.0          |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`           | :ref:`simulation_precision<class_SoftBody_property_simulation_precision>`           | 5            |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`       | :ref:`total_mass<class_SoftBody_property_total_mass>`                               | 1.0          |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`       | :ref:`volume_stiffness<class_SoftBody_property_volume_stiffness>`                   | 0.5          |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -80,21 +80,25 @@ Property Descriptions
 
 - :ref:`float<class_float>` **areaAngular_stiffness**
 
-+----------+----------------------------------+
-| *Setter* | set_areaAngular_stiffness(value) |
-+----------+----------------------------------+
-| *Getter* | get_areaAngular_stiffness()      |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | 0.5                              |
++-----------+----------------------------------+
+| *Setter*  | set_areaAngular_stiffness(value) |
++-----------+----------------------------------+
+| *Getter*  | get_areaAngular_stiffness()      |
++-----------+----------------------------------+
 
 .. _class_SoftBody_property_collision_layer:
 
 - :ref:`int<class_int>` **collision_layer**
 
-+----------+----------------------------+
-| *Setter* | set_collision_layer(value) |
-+----------+----------------------------+
-| *Getter* | get_collision_layer()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 1                          |
++-----------+----------------------------+
+| *Setter*  | set_collision_layer(value) |
++-----------+----------------------------+
+| *Getter*  | get_collision_layer()      |
++-----------+----------------------------+
 
 The physics layers this area is in.
 
@@ -106,11 +110,13 @@ A contact is detected if object A is in any of the layers that object B scans, o
 
 - :ref:`int<class_int>` **collision_mask**
 
-+----------+---------------------------+
-| *Setter* | set_collision_mask(value) |
-+----------+---------------------------+
-| *Getter* | get_collision_mask()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 1                         |
++-----------+---------------------------+
+| *Setter*  | set_collision_mask(value) |
++-----------+---------------------------+
+| *Getter*  | get_collision_mask()      |
++-----------+---------------------------+
 
 The physics layers this area scans for collisions.
 
@@ -118,71 +124,85 @@ The physics layers this area scans for collisions.
 
 - :ref:`float<class_float>` **damping_coefficient**
 
-+----------+--------------------------------+
-| *Setter* | set_damping_coefficient(value) |
-+----------+--------------------------------+
-| *Getter* | get_damping_coefficient()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | 0.01                           |
++-----------+--------------------------------+
+| *Setter*  | set_damping_coefficient(value) |
++-----------+--------------------------------+
+| *Getter*  | get_damping_coefficient()      |
++-----------+--------------------------------+
 
 .. _class_SoftBody_property_drag_coefficient:
 
 - :ref:`float<class_float>` **drag_coefficient**
 
-+----------+-----------------------------+
-| *Setter* | set_drag_coefficient(value) |
-+----------+-----------------------------+
-| *Getter* | get_drag_coefficient()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_drag_coefficient(value) |
++-----------+-----------------------------+
+| *Getter*  | get_drag_coefficient()      |
++-----------+-----------------------------+
 
 .. _class_SoftBody_property_linear_stiffness:
 
 - :ref:`float<class_float>` **linear_stiffness**
 
-+----------+-----------------------------+
-| *Setter* | set_linear_stiffness(value) |
-+----------+-----------------------------+
-| *Getter* | get_linear_stiffness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.5                         |
++-----------+-----------------------------+
+| *Setter*  | set_linear_stiffness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_linear_stiffness()      |
++-----------+-----------------------------+
 
 .. _class_SoftBody_property_parent_collision_ignore:
 
 - :ref:`NodePath<class_NodePath>` **parent_collision_ignore**
 
-+----------+------------------------------------+
-| *Setter* | set_parent_collision_ignore(value) |
-+----------+------------------------------------+
-| *Getter* | get_parent_collision_ignore()      |
-+----------+------------------------------------+
++-----------+------------------------------------+
+| *Default* | NodePath("")                       |
++-----------+------------------------------------+
+| *Setter*  | set_parent_collision_ignore(value) |
++-----------+------------------------------------+
+| *Getter*  | get_parent_collision_ignore()      |
++-----------+------------------------------------+
 
 .. _class_SoftBody_property_pose_matching_coefficient:
 
 - :ref:`float<class_float>` **pose_matching_coefficient**
 
-+----------+--------------------------------------+
-| *Setter* | set_pose_matching_coefficient(value) |
-+----------+--------------------------------------+
-| *Getter* | get_pose_matching_coefficient()      |
-+----------+--------------------------------------+
++-----------+--------------------------------------+
+| *Default* | 0.0                                  |
++-----------+--------------------------------------+
+| *Setter*  | set_pose_matching_coefficient(value) |
++-----------+--------------------------------------+
+| *Getter*  | get_pose_matching_coefficient()      |
++-----------+--------------------------------------+
 
 .. _class_SoftBody_property_pressure_coefficient:
 
 - :ref:`float<class_float>` **pressure_coefficient**
 
-+----------+---------------------------------+
-| *Setter* | set_pressure_coefficient(value) |
-+----------+---------------------------------+
-| *Getter* | get_pressure_coefficient()      |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | 0.0                             |
++-----------+---------------------------------+
+| *Setter*  | set_pressure_coefficient(value) |
++-----------+---------------------------------+
+| *Getter*  | get_pressure_coefficient()      |
++-----------+---------------------------------+
 
 .. _class_SoftBody_property_simulation_precision:
 
 - :ref:`int<class_int>` **simulation_precision**
 
-+----------+---------------------------------+
-| *Setter* | set_simulation_precision(value) |
-+----------+---------------------------------+
-| *Getter* | get_simulation_precision()      |
-+----------+---------------------------------+
++-----------+---------------------------------+
+| *Default* | 5                               |
++-----------+---------------------------------+
+| *Setter*  | set_simulation_precision(value) |
++-----------+---------------------------------+
+| *Getter*  | get_simulation_precision()      |
++-----------+---------------------------------+
 
 Increasing this value will improve the resulting simulation, but can affect performance. Use with care.
 
@@ -190,21 +210,25 @@ Increasing this value will improve the resulting simulation, but can affect perf
 
 - :ref:`float<class_float>` **total_mass**
 
-+----------+-----------------------+
-| *Setter* | set_total_mass(value) |
-+----------+-----------------------+
-| *Getter* | get_total_mass()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 1.0                   |
++-----------+-----------------------+
+| *Setter*  | set_total_mass(value) |
++-----------+-----------------------+
+| *Getter*  | get_total_mass()      |
++-----------+-----------------------+
 
 .. _class_SoftBody_property_volume_stiffness:
 
 - :ref:`float<class_float>` **volume_stiffness**
 
-+----------+-----------------------------+
-| *Setter* | set_volume_stiffness(value) |
-+----------+-----------------------------+
-| *Getter* | get_volume_stiffness()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.5                         |
++-----------+-----------------------------+
+| *Setter*  | set_volume_stiffness(value) |
++-----------+-----------------------------+
+| *Getter*  | get_volume_stiffness()      |
++-----------+-----------------------------+
 
 Method Descriptions
 -------------------

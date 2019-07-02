@@ -19,11 +19,11 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------------------------------+---------------------------------------------------------------+
-| :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` | :ref:`operator<class_VisualScriptOperator_property_operator>` |
-+-------------------------------------------------------------+---------------------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`         | :ref:`type<class_VisualScriptOperator_property_type>`         |
-+-------------------------------------------------------------+---------------------------------------------------------------+
++-------------------------------------------------------------+---------------------------------------------------------------+---+
+| :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` | :ref:`operator<class_VisualScriptOperator_property_operator>` | 6 |
++-------------------------------------------------------------+---------------------------------------------------------------+---+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`         | :ref:`type<class_VisualScriptOperator_property_type>`         | 0 |
++-------------------------------------------------------------+---------------------------------------------------------------+---+
 
 Description
 -----------
@@ -45,19 +45,23 @@ Property Descriptions
 
 - :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **operator**
 
-+----------+---------------------+
-| *Setter* | set_operator(value) |
-+----------+---------------------+
-| *Getter* | get_operator()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 6                   |
++-----------+---------------------+
+| *Setter*  | set_operator(value) |
++-----------+---------------------+
+| *Getter*  | get_operator()      |
++-----------+---------------------+
 
 .. _class_VisualScriptOperator_property_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
-+----------+------------------+
-| *Setter* | set_typed(value) |
-+----------+------------------+
-| *Getter* | get_typed()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0                |
++-----------+------------------+
+| *Setter*  | set_typed(value) |
++-----------+------------------+
+| *Getter*  | get_typed()      |
++-----------+------------------+
 

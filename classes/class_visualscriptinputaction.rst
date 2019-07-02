@@ -19,11 +19,11 @@ Brief Description
 Properties
 ----------
 
-+------------------------------------------------+--------------------------------------------------------------+
-| :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_property_action>` |
-+------------------------------------------------+--------------------------------------------------------------+
-| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_property_mode>`     |
-+------------------------------------------------+--------------------------------------------------------------+
++------------------------------------------------+--------------------------------------------------------------+----+
+| :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_property_action>` | "" |
++------------------------------------------------+--------------------------------------------------------------+----+
+| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_property_mode>`     | 0  |
++------------------------------------------------+--------------------------------------------------------------+----+
 
 Enumerations
 ------------
@@ -55,19 +55,23 @@ Property Descriptions
 
 - :ref:`String<class_String>` **action**
 
-+----------+------------------------+
-| *Setter* | set_action_name(value) |
-+----------+------------------------+
-| *Getter* | get_action_name()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | ""                     |
++-----------+------------------------+
+| *Setter*  | set_action_name(value) |
++-----------+------------------------+
+| *Getter*  | get_action_name()      |
++-----------+------------------------+
 
 .. _class_VisualScriptInputAction_property_mode:
 
 - :ref:`Mode<enum_VisualScriptInputAction_Mode>` **mode**
 
-+----------+------------------------+
-| *Setter* | set_action_mode(value) |
-+----------+------------------------+
-| *Getter* | get_action_mode()      |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | 0                      |
++-----------+------------------------+
+| *Setter*  | set_action_mode(value) |
++-----------+------------------------+
+| *Getter*  | get_action_mode()      |
++-----------+------------------------+
 

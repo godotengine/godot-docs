@@ -19,9 +19,9 @@ Pin Joint for 2D shapes.
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>` |
-+---------------------------+-----------------------------------------------------+
++---------------------------+-----------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>` | 0.0 |
++---------------------------+-----------------------------------------------------+-----+
 
 Description
 -----------
@@ -35,11 +35,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **softness**
 
-+----------+---------------------+
-| *Setter* | set_softness(value) |
-+----------+---------------------+
-| *Getter* | get_softness()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_softness(value) |
++-----------+---------------------+
+| *Getter*  | get_softness()      |
++-----------+---------------------+
 
 The higher this value, the more the bond to the pinned partner can flex.
 

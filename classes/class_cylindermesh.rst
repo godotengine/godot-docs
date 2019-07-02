@@ -19,17 +19,17 @@ Class representing a cylindrical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>`     |
-+---------------------------+---------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`height<class_CylinderMesh_property_height>`                   |
-+---------------------------+---------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`radial_segments<class_CylinderMesh_property_radial_segments>` |
-+---------------------------+---------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`rings<class_CylinderMesh_property_rings>`                     |
-+---------------------------+---------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`top_radius<class_CylinderMesh_property_top_radius>`           |
-+---------------------------+---------------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>`     | 1.0 |
++---------------------------+---------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`height<class_CylinderMesh_property_height>`                   | 2.0 |
++---------------------------+---------------------------------------------------------------------+-----+
+| :ref:`int<class_int>`     | :ref:`radial_segments<class_CylinderMesh_property_radial_segments>` | 64  |
++---------------------------+---------------------------------------------------------------------+-----+
+| :ref:`int<class_int>`     | :ref:`rings<class_CylinderMesh_property_rings>`                     | 4   |
++---------------------------+---------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`top_radius<class_CylinderMesh_property_top_radius>`           | 1.0 |
++---------------------------+---------------------------------------------------------------------+-----+
 
 Description
 -----------
@@ -43,59 +43,69 @@ Property Descriptions
 
 - :ref:`float<class_float>` **bottom_radius**
 
-+----------+--------------------------+
-| *Setter* | set_bottom_radius(value) |
-+----------+--------------------------+
-| *Getter* | get_bottom_radius()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 1.0                      |
++-----------+--------------------------+
+| *Setter*  | set_bottom_radius(value) |
++-----------+--------------------------+
+| *Getter*  | get_bottom_radius()      |
++-----------+--------------------------+
 
-Bottom radius of the cylinder. Defaults to 1.0.
+Bottom radius of the cylinder.
 
 .. _class_CylinderMesh_property_height:
 
 - :ref:`float<class_float>` **height**
 
-+----------+-------------------+
-| *Setter* | set_height(value) |
-+----------+-------------------+
-| *Getter* | get_height()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 2.0               |
++-----------+-------------------+
+| *Setter*  | set_height(value) |
++-----------+-------------------+
+| *Getter*  | get_height()      |
++-----------+-------------------+
 
-Full height of the cylinder. Defaults to 2.0.
+Full height of the cylinder.
 
 .. _class_CylinderMesh_property_radial_segments:
 
 - :ref:`int<class_int>` **radial_segments**
 
-+----------+----------------------------+
-| *Setter* | set_radial_segments(value) |
-+----------+----------------------------+
-| *Getter* | get_radial_segments()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | 64                         |
++-----------+----------------------------+
+| *Setter*  | set_radial_segments(value) |
++-----------+----------------------------+
+| *Getter*  | get_radial_segments()      |
++-----------+----------------------------+
 
-Number of radial segments on the cylinder. Defaults to 64.
+Number of radial segments on the cylinder.
 
 .. _class_CylinderMesh_property_rings:
 
 - :ref:`int<class_int>` **rings**
 
-+----------+------------------+
-| *Setter* | set_rings(value) |
-+----------+------------------+
-| *Getter* | get_rings()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 4                |
++-----------+------------------+
+| *Setter*  | set_rings(value) |
++-----------+------------------+
+| *Getter*  | get_rings()      |
++-----------+------------------+
 
-Number of edge rings along the height of the cylinder. Defaults to 4.
+Number of edge rings along the height of the cylinder.
 
 .. _class_CylinderMesh_property_top_radius:
 
 - :ref:`float<class_float>` **top_radius**
 
-+----------+-----------------------+
-| *Setter* | set_top_radius(value) |
-+----------+-----------------------+
-| *Getter* | get_top_radius()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 1.0                   |
++-----------+-----------------------+
+| *Setter*  | set_top_radius(value) |
++-----------+-----------------------+
+| *Getter*  | get_top_radius()      |
++-----------+-----------------------+
 
-Top radius of the cylinder. Defaults to 1.0.
+Top radius of the cylinder.
 

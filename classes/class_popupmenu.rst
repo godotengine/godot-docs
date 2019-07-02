@@ -19,17 +19,17 @@ PopupMenu displays a list of options.
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         |
-+---------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` |
-+---------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     |
-+---------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         |
-+---------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           |
-+---------------------------+----------------------------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | false |
++---------------------------+----------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | true  |
++---------------------------+----------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | true  |
++---------------------------+----------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | false |
++---------------------------+----------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | 0.3   |
++---------------------------+----------------------------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -137,43 +137,43 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | checked                 |
-+---------------------------------+-------------------------+
-| :ref:`Font<class_Font>`         | font                    |
-+---------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | font_color              |
-+---------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | font_color_accel        |
-+---------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | font_color_disabled     |
-+---------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | font_color_hover        |
-+---------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | hover                   |
-+---------------------------------+-------------------------+
-| :ref:`int<class_int>`           | hseparation             |
-+---------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | labeled_separator_left  |
-+---------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | labeled_separator_right |
-+---------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | panel                   |
-+---------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | panel_disabled          |
-+---------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | radio_checked           |
-+---------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | radio_unchecked         |
-+---------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | separator               |
-+---------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | submenu                 |
-+---------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | unchecked               |
-+---------------------------------+-------------------------+
-| :ref:`int<class_int>`           | vseparation             |
-+---------------------------------+-------------------------+
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`Texture<class_Texture>`   | checked                 |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`Font<class_Font>`         | font                    |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color              | Color( 0.878431, 0.878431, 0.878431, 1 ) |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color_accel        | Color( 0.7, 0.7, 0.7, 0.8 )              |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color_disabled     | Color( 0.4, 0.4, 0.4, 0.8 )              |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`Color<class_Color>`       | font_color_hover        | Color( 0.878431, 0.878431, 0.878431, 1 ) |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | hover                   |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`int<class_int>`           | hseparation             | 4                                        |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | labeled_separator_left  |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | labeled_separator_right |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | panel                   |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | panel_disabled          |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`Texture<class_Texture>`   | radio_checked           |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`Texture<class_Texture>`   | radio_unchecked         |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | separator               |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`Texture<class_Texture>`   | submenu                 |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`Texture<class_Texture>`   | unchecked               |                                          |
++---------------------------------+-------------------------+------------------------------------------+
+| :ref:`int<class_int>`           | vseparation             | 4                                        |
++---------------------------------+-------------------------+------------------------------------------+
 
 Signals
 -------
@@ -208,23 +208,27 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **allow_search**
 
-+----------+-------------------------+
-| *Setter* | set_allow_search(value) |
-+----------+-------------------------+
-| *Getter* | get_allow_search()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | false                   |
++-----------+-------------------------+
+| *Setter*  | set_allow_search(value) |
++-----------+-------------------------+
+| *Getter*  | get_allow_search()      |
++-----------+-------------------------+
 
-If ``true``, allows to navigate ``PopupMenu`` with letter keys. Default value: ``false``.
+If ``true``, allows to navigate ``PopupMenu`` with letter keys.
 
 .. _class_PopupMenu_property_hide_on_checkable_item_selection:
 
 - :ref:`bool<class_bool>` **hide_on_checkable_item_selection**
 
-+----------+---------------------------------------------+
-| *Setter* | set_hide_on_checkable_item_selection(value) |
-+----------+---------------------------------------------+
-| *Getter* | is_hide_on_checkable_item_selection()       |
-+----------+---------------------------------------------+
++-----------+---------------------------------------------+
+| *Default* | true                                        |
++-----------+---------------------------------------------+
+| *Setter*  | set_hide_on_checkable_item_selection(value) |
++-----------+---------------------------------------------+
+| *Getter*  | is_hide_on_checkable_item_selection()       |
++-----------+---------------------------------------------+
 
 If ``true``, hides the ``PopupMenu`` when a checkbox or radio button is selected.
 
@@ -232,11 +236,13 @@ If ``true``, hides the ``PopupMenu`` when a checkbox or radio button is selected
 
 - :ref:`bool<class_bool>` **hide_on_item_selection**
 
-+----------+-----------------------------------+
-| *Setter* | set_hide_on_item_selection(value) |
-+----------+-----------------------------------+
-| *Getter* | is_hide_on_item_selection()       |
-+----------+-----------------------------------+
++-----------+-----------------------------------+
+| *Default* | true                              |
++-----------+-----------------------------------+
+| *Setter*  | set_hide_on_item_selection(value) |
++-----------+-----------------------------------+
+| *Getter*  | is_hide_on_item_selection()       |
++-----------+-----------------------------------+
 
 If ``true``, hides the ``PopupMenu`` when an item is selected.
 
@@ -244,11 +250,13 @@ If ``true``, hides the ``PopupMenu`` when an item is selected.
 
 - :ref:`bool<class_bool>` **hide_on_state_item_selection**
 
-+----------+-----------------------------------------+
-| *Setter* | set_hide_on_state_item_selection(value) |
-+----------+-----------------------------------------+
-| *Getter* | is_hide_on_state_item_selection()       |
-+----------+-----------------------------------------+
++-----------+-----------------------------------------+
+| *Default* | false                                   |
++-----------+-----------------------------------------+
+| *Setter*  | set_hide_on_state_item_selection(value) |
++-----------+-----------------------------------------+
+| *Getter*  | is_hide_on_state_item_selection()       |
++-----------+-----------------------------------------+
 
 If ``true``, hides the ``PopupMenu`` when a state item is selected.
 
@@ -256,13 +264,15 @@ If ``true``, hides the ``PopupMenu`` when a state item is selected.
 
 - :ref:`float<class_float>` **submenu_popup_delay**
 
-+----------+--------------------------------+
-| *Setter* | set_submenu_popup_delay(value) |
-+----------+--------------------------------+
-| *Getter* | get_submenu_popup_delay()      |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | 0.3                            |
++-----------+--------------------------------+
+| *Setter*  | set_submenu_popup_delay(value) |
++-----------+--------------------------------+
+| *Getter*  | get_submenu_popup_delay()      |
++-----------+--------------------------------+
 
-Sets the delay time for the submenu item to popup on mouse hovering. If the popup menu is added as a child of another (acting as a submenu), it will inherit the delay time of the parent menu item. Default value: ``0.3`` seconds.
+Sets the delay time in seconds for the submenu item to popup on mouse hovering. If the popup menu is added as a child of another (acting as a submenu), it will inherit the delay time of the parent menu item.
 
 Method Descriptions
 -------------------

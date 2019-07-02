@@ -19,11 +19,11 @@ Describes a Bézier curve in 3D space.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`bake_interval<class_Curve3D_property_bake_interval>`         |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` |
-+---------------------------+--------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------+------+
+| :ref:`float<class_float>` | :ref:`bake_interval<class_Curve3D_property_bake_interval>`         | 0.2  |
++---------------------------+--------------------------------------------------------------------+------+
+| :ref:`bool<class_bool>`   | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` | true |
++---------------------------+--------------------------------------------------------------------+------+
 
 Methods
 -------
@@ -90,11 +90,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **bake_interval**
 
-+----------+--------------------------+
-| *Setter* | set_bake_interval(value) |
-+----------+--------------------------+
-| *Getter* | get_bake_interval()      |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | 0.2                      |
++-----------+--------------------------+
+| *Setter*  | set_bake_interval(value) |
++-----------+--------------------------+
+| *Getter*  | get_bake_interval()      |
++-----------+--------------------------+
 
 The distance in meters between two adjacent cached points. Changing it forces the cache to be recomputed the next time the :ref:`get_baked_points<class_Curve3D_method_get_baked_points>` or :ref:`get_baked_length<class_Curve3D_method_get_baked_length>` function is called. The smaller the distance, the more points in the cache and the more memory it will consume, so use with care.
 
@@ -102,11 +104,13 @@ The distance in meters between two adjacent cached points. Changing it forces th
 
 - :ref:`bool<class_bool>` **up_vector_enabled**
 
-+----------+------------------------------+
-| *Setter* | set_up_vector_enabled(value) |
-+----------+------------------------------+
-| *Getter* | is_up_vector_enabled()       |
-+----------+------------------------------+
++-----------+------------------------------+
+| *Default* | true                         |
++-----------+------------------------------+
+| *Setter*  | set_up_vector_enabled(value) |
++-----------+------------------------------+
+| *Getter*  | is_up_vector_enabled()       |
++-----------+------------------------------+
 
 If ``true``, the curve will bake up vectors used for orientation. This is used when :ref:`PathFollow.rotation_mode<class_PathFollow_property_rotation_mode>` is set to :ref:`PathFollow.ROTATION_ORIENTED<class_PathFollow_constant_ROTATION_ORIENTED>`. Changing it forces the cache to be recomputed.
 

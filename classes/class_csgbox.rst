@@ -19,15 +19,15 @@ A CSG Box shape.
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`depth<class_CSGBox_property_depth>`       |
-+---------------------------------+-------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`height<class_CSGBox_property_height>`     |
-+---------------------------------+-------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGBox_property_material>` |
-+---------------------------------+-------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`width<class_CSGBox_property_width>`       |
-+---------------------------------+-------------------------------------------------+
++---------------------------------+-------------------------------------------------+------+
+| :ref:`float<class_float>`       | :ref:`depth<class_CSGBox_property_depth>`       | 2.0  |
++---------------------------------+-------------------------------------------------+------+
+| :ref:`float<class_float>`       | :ref:`height<class_CSGBox_property_height>`     | 2.0  |
++---------------------------------+-------------------------------------------------+------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGBox_property_material>` | null |
++---------------------------------+-------------------------------------------------+------+
+| :ref:`float<class_float>`       | :ref:`width<class_CSGBox_property_width>`       | 2.0  |
++---------------------------------+-------------------------------------------------+------+
 
 Description
 -----------
@@ -41,11 +41,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **depth**
 
-+----------+------------------+
-| *Setter* | set_depth(value) |
-+----------+------------------+
-| *Getter* | get_depth()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 2.0              |
++-----------+------------------+
+| *Setter*  | set_depth(value) |
++-----------+------------------+
+| *Getter*  | get_depth()      |
++-----------+------------------+
 
 Depth of the box measured from the center of the box.
 
@@ -53,11 +55,13 @@ Depth of the box measured from the center of the box.
 
 - :ref:`float<class_float>` **height**
 
-+----------+-------------------+
-| *Setter* | set_height(value) |
-+----------+-------------------+
-| *Getter* | get_height()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 2.0               |
++-----------+-------------------+
+| *Setter*  | set_height(value) |
++-----------+-------------------+
+| *Getter*  | get_height()      |
++-----------+-------------------+
 
 Height of the box measured from the center of the box.
 
@@ -65,11 +69,13 @@ Height of the box measured from the center of the box.
 
 - :ref:`Material<class_Material>` **material**
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_material(value) |
++-----------+---------------------+
+| *Getter*  | get_material()      |
++-----------+---------------------+
 
 The material used to render the box.
 
@@ -77,11 +83,13 @@ The material used to render the box.
 
 - :ref:`float<class_float>` **width**
 
-+----------+------------------+
-| *Setter* | set_width(value) |
-+----------+------------------+
-| *Getter* | get_width()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 2.0              |
++-----------+------------------+
+| *Setter*  | set_width(value) |
++-----------+------------------+
+| *Getter*  | get_width()      |
++-----------+------------------+
 
 Width of the box measured from the center of the box.
 

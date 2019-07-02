@@ -19,11 +19,11 @@ Brief Description
 Properties
 ----------
 
-+--------------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`CubeMap<class_CubeMap>`                                | :ref:`cube_map<class_VisualShaderNodeCubeMap_property_cube_map>`         |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`TextureType<enum_VisualShaderNodeCubeMap_TextureType>` | :ref:`texture_type<class_VisualShaderNodeCubeMap_property_texture_type>` |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+
++--------------------------------------------------------------+--------------------------------------------------------------------------+------+
+| :ref:`CubeMap<class_CubeMap>`                                | :ref:`cube_map<class_VisualShaderNodeCubeMap_property_cube_map>`         | null |
++--------------------------------------------------------------+--------------------------------------------------------------------------+------+
+| :ref:`TextureType<enum_VisualShaderNodeCubeMap_TextureType>` | :ref:`texture_type<class_VisualShaderNodeCubeMap_property_texture_type>` | 0    |
++--------------------------------------------------------------+--------------------------------------------------------------------------+------+
 
 Enumerations
 ------------
@@ -51,19 +51,23 @@ Property Descriptions
 
 - :ref:`CubeMap<class_CubeMap>` **cube_map**
 
-+----------+---------------------+
-| *Setter* | set_cube_map(value) |
-+----------+---------------------+
-| *Getter* | get_cube_map()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | null                |
++-----------+---------------------+
+| *Setter*  | set_cube_map(value) |
++-----------+---------------------+
+| *Getter*  | get_cube_map()      |
++-----------+---------------------+
 
 .. _class_VisualShaderNodeCubeMap_property_texture_type:
 
 - :ref:`TextureType<enum_VisualShaderNodeCubeMap_TextureType>` **texture_type**
 
-+----------+-------------------------+
-| *Setter* | set_texture_type(value) |
-+----------+-------------------------+
-| *Getter* | get_texture_type()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_texture_type(value) |
++-----------+-------------------------+
+| *Getter*  | get_texture_type()      |
++-----------+-------------------------+
 

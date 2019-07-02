@@ -839,7 +839,7 @@ This results in better-looking textures when viewed from oblique angles.
 
 - **TEXTURE_FLAG_USED_FOR_STREAMING** = **2048** --- Texture is a video surface.
 
-- **TEXTURE_FLAGS_DEFAULT** = **7** --- Default flags. :ref:`TEXTURE_FLAG_MIPMAPS<class_VisualServer_constant_TEXTURE_FLAG_MIPMAPS>`, :ref:`TEXTURE_FLAG_REPEAT<class_VisualServer_constant_TEXTURE_FLAG_REPEAT>` and :ref:`TEXTURE_FLAG_FILTER<class_VisualServer_constant_TEXTURE_FLAG_FILTER>` are are enabled.
+- **TEXTURE_FLAGS_DEFAULT** = **7** --- Default flags. :ref:`TEXTURE_FLAG_MIPMAPS<class_VisualServer_constant_TEXTURE_FLAG_MIPMAPS>`, :ref:`TEXTURE_FLAG_REPEAT<class_VisualServer_constant_TEXTURE_FLAG_REPEAT>` and :ref:`TEXTURE_FLAG_FILTER<class_VisualServer_constant_TEXTURE_FLAG_FILTER>` are enabled.
 
 .. _enum_VisualServer_ShaderMode:
 

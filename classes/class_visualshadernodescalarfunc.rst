@@ -19,9 +19,9 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarFunc_property_function>` |
-+-----------------------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------------------+---------------------------------------------------------------------+----+
+| :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarFunc_property_function>` | 13 |
++-----------------------------------------------------------+---------------------------------------------------------------------+----+
 
 Enumerations
 ------------
@@ -165,9 +165,11 @@ Property Descriptions
 
 - :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **function**
 
-+----------+---------------------+
-| *Setter* | set_function(value) |
-+----------+---------------------+
-| *Getter* | get_function()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 13                  |
++-----------+---------------------+
+| *Setter*  | set_function(value) |
++-----------+---------------------+
+| *Getter*  | get_function()      |
++-----------+---------------------+
 

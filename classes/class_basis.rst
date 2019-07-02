@@ -17,13 +17,13 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------+----------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`x<class_Basis_property_x>` |
-+-------------------------------+----------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`y<class_Basis_property_y>` |
-+-------------------------------+----------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`z<class_Basis_property_z>` |
-+-------------------------------+----------------------------------+
++-------------------------------+----------------------------------+--------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`x<class_Basis_property_x>` | Vector3( 1, 0, 0 ) |
++-------------------------------+----------------------------------+--------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`y<class_Basis_property_y>` | Vector3( 0, 1, 0 ) |
++-------------------------------+----------------------------------+--------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`z<class_Basis_property_z>` | Vector3( 0, 0, 1 ) |
++-------------------------------+----------------------------------+--------------------+
 
 Methods
 -------
@@ -91,17 +91,29 @@ Property Descriptions
 
 - :ref:`Vector3<class_Vector3>` **x**
 
++-----------+--------------------+
+| *Default* | Vector3( 1, 0, 0 ) |
++-----------+--------------------+
+
 The basis matrix's X vector.
 
 .. _class_Basis_property_y:
 
 - :ref:`Vector3<class_Vector3>` **y**
 
++-----------+--------------------+
+| *Default* | Vector3( 0, 1, 0 ) |
++-----------+--------------------+
+
 The basis matrix's Y vector.
 
 .. _class_Basis_property_z:
 
 - :ref:`Vector3<class_Vector3>` **z**
+
++-----------+--------------------+
+| *Default* | Vector3( 0, 0, 1 ) |
++-----------+--------------------+
 
 The basis matrix's Z vector.
 

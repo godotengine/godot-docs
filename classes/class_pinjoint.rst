@@ -19,13 +19,13 @@ Pin joint for 3D shapes.
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`params/bias<class_PinJoint_property_params/bias>`                   |
-+---------------------------+---------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`params/damping<class_PinJoint_property_params/damping>`             |
-+---------------------------+---------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`params/impulse_clamp<class_PinJoint_property_params/impulse_clamp>` |
-+---------------------------+---------------------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`params/bias<class_PinJoint_property_params/bias>`                   | 0.3 |
++---------------------------+---------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`params/damping<class_PinJoint_property_params/damping>`             | 1.0 |
++---------------------------+---------------------------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`params/impulse_clamp<class_PinJoint_property_params/impulse_clamp>` | 0.0 |
++---------------------------+---------------------------------------------------------------------------+-----+
 
 Enumerations
 ------------
@@ -58,11 +58,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **params/bias**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.3              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The force with which the pinned objects stay in positional relation to each other. The higher, the stronger.
 
@@ -70,11 +72,13 @@ The force with which the pinned objects stay in positional relation to each othe
 
 - :ref:`float<class_float>` **params/damping**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 1.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The force with which the pinned objects stay in velocity relation to each other. The higher, the stronger.
 
@@ -82,11 +86,13 @@ The force with which the pinned objects stay in velocity relation to each other.
 
 - :ref:`float<class_float>` **params/impulse_clamp**
 
-+----------+------------------+
-| *Setter* | set_param(value) |
-+----------+------------------+
-| *Getter* | get_param()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | 0.0              |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 If above 0, this value is the maximum value for an impulse that this Joint produces.
 

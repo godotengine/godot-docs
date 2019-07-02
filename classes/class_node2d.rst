@@ -21,31 +21,31 @@ A 2D game object, parent of all 2D-related nodes. Has a position, rotation, scal
 Properties
 ----------
 
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`global_position<class_Node2D_property_global_position>`                 |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`global_rotation<class_Node2D_property_global_rotation>`                 |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`global_rotation_degrees<class_Node2D_property_global_rotation_degrees>` |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`global_scale<class_Node2D_property_global_scale>`                       |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`global_transform<class_Node2D_property_global_transform>`               |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`position<class_Node2D_property_position>`                               |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`rotation<class_Node2D_property_rotation>`                               |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`rotation_degrees<class_Node2D_property_rotation_degrees>`               |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_Node2D_property_scale>`                                     |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_Node2D_property_transform>`                             |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`z_as_relative<class_Node2D_property_z_as_relative>`                     |
-+---------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`z_index<class_Node2D_property_z_index>`                                 |
-+---------------------------------------+-------------------------------------------------------------------------------+
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`global_position<class_Node2D_property_global_position>`                 |                 |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`             | :ref:`global_rotation<class_Node2D_property_global_rotation>`                 |                 |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`             | :ref:`global_rotation_degrees<class_Node2D_property_global_rotation_degrees>` |                 |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`global_scale<class_Node2D_property_global_scale>`                       |                 |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`global_transform<class_Node2D_property_global_transform>`               |                 |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`position<class_Node2D_property_position>`                               | Vector2( 0, 0 ) |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`             | :ref:`rotation<class_Node2D_property_rotation>`                               | 0.0             |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`             | :ref:`rotation_degrees<class_Node2D_property_rotation_degrees>`               | 0.0             |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_Node2D_property_scale>`                                     | Vector2( 1, 1 ) |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_Node2D_property_transform>`                             |                 |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`               | :ref:`z_as_relative<class_Node2D_property_z_as_relative>`                     | true            |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                 | :ref:`z_index<class_Node2D_property_z_index>`                                 | 0               |
++---------------------------------------+-------------------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -151,11 +151,13 @@ Global :ref:`Transform2D<class_Transform2D>`.
 
 - :ref:`Vector2<class_Vector2>` **position**
 
-+----------+---------------------+
-| *Setter* | set_position(value) |
-+----------+---------------------+
-| *Getter* | get_position()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | Vector2( 0, 0 )     |
++-----------+---------------------+
+| *Setter*  | set_position(value) |
++-----------+---------------------+
+| *Getter*  | get_position()      |
++-----------+---------------------+
 
 Position, relative to the node's parent.
 
@@ -163,11 +165,13 @@ Position, relative to the node's parent.
 
 - :ref:`float<class_float>` **rotation**
 
-+----------+---------------------+
-| *Setter* | set_rotation(value) |
-+----------+---------------------+
-| *Getter* | get_rotation()      |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_rotation(value) |
++-----------+---------------------+
+| *Getter*  | get_rotation()      |
++-----------+---------------------+
 
 Rotation in radians, relative to the node's parent.
 
@@ -175,11 +179,13 @@ Rotation in radians, relative to the node's parent.
 
 - :ref:`float<class_float>` **rotation_degrees**
 
-+----------+-----------------------------+
-| *Setter* | set_rotation_degrees(value) |
-+----------+-----------------------------+
-| *Getter* | get_rotation_degrees()      |
-+----------+-----------------------------+
++-----------+-----------------------------+
+| *Default* | 0.0                         |
++-----------+-----------------------------+
+| *Setter*  | set_rotation_degrees(value) |
++-----------+-----------------------------+
+| *Getter*  | get_rotation_degrees()      |
++-----------+-----------------------------+
 
 Rotation in degrees, relative to the node's parent.
 
@@ -187,11 +193,13 @@ Rotation in degrees, relative to the node's parent.
 
 - :ref:`Vector2<class_Vector2>` **scale**
 
-+----------+------------------+
-| *Setter* | set_scale(value) |
-+----------+------------------+
-| *Getter* | get_scale()      |
-+----------+------------------+
++-----------+------------------+
+| *Default* | Vector2( 1, 1 )  |
++-----------+------------------+
+| *Setter*  | set_scale(value) |
++-----------+------------------+
+| *Getter*  | get_scale()      |
++-----------+------------------+
 
 The node's scale. Unscaled value: ``(1, 1)``.
 
@@ -211,11 +219,13 @@ Local :ref:`Transform2D<class_Transform2D>`.
 
 - :ref:`bool<class_bool>` **z_as_relative**
 
-+----------+--------------------------+
-| *Setter* | set_z_as_relative(value) |
-+----------+--------------------------+
-| *Getter* | is_z_relative()          |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | true                     |
++-----------+--------------------------+
+| *Setter*  | set_z_as_relative(value) |
++-----------+--------------------------+
+| *Getter*  | is_z_relative()          |
++-----------+--------------------------+
 
 If ``true``, the node's Z index is relative to its parent's Z index. If this node's Z index is 2 and its parent's effective Z index is 3, then this node's effective Z index will be 2 + 3 = 5.
 
@@ -223,11 +233,13 @@ If ``true``, the node's Z index is relative to its parent's Z index. If this nod
 
 - :ref:`int<class_int>` **z_index**
 
-+----------+--------------------+
-| *Setter* | set_z_index(value) |
-+----------+--------------------+
-| *Getter* | get_z_index()      |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | 0                  |
++-----------+--------------------+
+| *Setter*  | set_z_index(value) |
++-----------+--------------------+
+| *Getter*  | get_z_index()      |
++-----------+--------------------+
 
 Z index. Controls the order in which the nodes render. A node with a higher Z index will display in front of others.
 

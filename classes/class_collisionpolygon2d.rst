@@ -19,17 +19,17 @@ Defines a 2D collision polygon.
 Properties
 ----------
 
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` | :ref:`build_mode<class_CollisionPolygon2D_property_build_mode>`                             |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon2D_property_disabled>`                                 |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`one_way_collision<class_CollisionPolygon2D_property_one_way_collision>`               |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                           | :ref:`one_way_collision_margin<class_CollisionPolygon2D_property_one_way_collision_margin>` |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`polygon<class_CollisionPolygon2D_property_polygon>`                                   |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------+
+| :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` | :ref:`build_mode<class_CollisionPolygon2D_property_build_mode>`                             | 0                    |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------+
+| :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon2D_property_disabled>`                                 | false                |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------+
+| :ref:`bool<class_bool>`                             | :ref:`one_way_collision<class_CollisionPolygon2D_property_one_way_collision>`               | false                |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------+
+| :ref:`float<class_float>`                           | :ref:`one_way_collision_margin<class_CollisionPolygon2D_property_one_way_collision_margin>` | 1.0                  |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`polygon<class_CollisionPolygon2D_property_polygon>`                                   | PoolVector2Array(  ) |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------+
 
 Enumerations
 ------------
@@ -58,23 +58,27 @@ Property Descriptions
 
 - :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **build_mode**
 
-+----------+-----------------------+
-| *Setter* | set_build_mode(value) |
-+----------+-----------------------+
-| *Getter* | get_build_mode()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | 0                     |
++-----------+-----------------------+
+| *Setter*  | set_build_mode(value) |
++-----------+-----------------------+
+| *Getter*  | get_build_mode()      |
++-----------+-----------------------+
 
-Collision build mode. Use one of the ``BUILD_*`` constants. Default value: :ref:`BUILD_SOLIDS<class_CollisionPolygon2D_constant_BUILD_SOLIDS>`.
+Collision build mode. Use one of the ``BUILD_*`` constants.
 
 .. _class_CollisionPolygon2D_property_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
 
-+----------+---------------------+
-| *Setter* | set_disabled(value) |
-+----------+---------------------+
-| *Getter* | is_disabled()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_disabled(value) |
++-----------+---------------------+
+| *Getter*  | is_disabled()       |
++-----------+---------------------+
 
 If ``true``, no collisions will be detected.
 
@@ -82,11 +86,13 @@ If ``true``, no collisions will be detected.
 
 - :ref:`bool<class_bool>` **one_way_collision**
 
-+----------+--------------------------------+
-| *Setter* | set_one_way_collision(value)   |
-+----------+--------------------------------+
-| *Getter* | is_one_way_collision_enabled() |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| *Default* | false                          |
++-----------+--------------------------------+
+| *Setter*  | set_one_way_collision(value)   |
++-----------+--------------------------------+
+| *Getter*  | is_one_way_collision_enabled() |
++-----------+--------------------------------+
 
 If ``true``, only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
 
@@ -94,21 +100,25 @@ If ``true``, only edges that face up, relative to CollisionPolygon2D's rotation,
 
 - :ref:`float<class_float>` **one_way_collision_margin**
 
-+----------+-------------------------------------+
-| *Setter* | set_one_way_collision_margin(value) |
-+----------+-------------------------------------+
-| *Getter* | get_one_way_collision_margin()      |
-+----------+-------------------------------------+
++-----------+-------------------------------------+
+| *Default* | 1.0                                 |
++-----------+-------------------------------------+
+| *Setter*  | set_one_way_collision_margin(value) |
++-----------+-------------------------------------+
+| *Getter*  | get_one_way_collision_margin()      |
++-----------+-------------------------------------+
 
 .. _class_CollisionPolygon2D_property_polygon:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 
-+----------+--------------------+
-| *Setter* | set_polygon(value) |
-+----------+--------------------+
-| *Getter* | get_polygon()      |
-+----------+--------------------+
++-----------+----------------------+
+| *Default* | PoolVector2Array(  ) |
++-----------+----------------------+
+| *Setter*  | set_polygon(value)   |
++-----------+----------------------+
+| *Getter*  | get_polygon()        |
++-----------+----------------------+
 
 The polygon's list of vertices. The final point will be connected to the first. The returned value is a clone of the PoolVector2Array, not a reference.
 

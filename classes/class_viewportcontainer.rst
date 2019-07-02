@@ -19,11 +19,11 @@ Control for holding :ref:`Viewport<class_Viewport>`\ s.
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`stretch<class_ViewportContainer_property_stretch>`               |
-+-------------------------+------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` |
-+-------------------------+------------------------------------------------------------------------+
++-------------------------+------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>` | :ref:`stretch<class_ViewportContainer_property_stretch>`               | false |
++-------------------------+------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` | 1     |
++-------------------------+------------------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -37,21 +37,25 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **stretch**
 
-+----------+----------------------+
-| *Setter* | set_stretch(value)   |
-+----------+----------------------+
-| *Getter* | is_stretch_enabled() |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_stretch(value)   |
++-----------+----------------------+
+| *Getter*  | is_stretch_enabled() |
++-----------+----------------------+
 
-If ``true``, the viewport will be scaled to the control's size. Default value: ``false``.
+If ``true``, the viewport will be scaled to the control's size.
 
 .. _class_ViewportContainer_property_stretch_shrink:
 
 - :ref:`int<class_int>` **stretch_shrink**
 
-+----------+---------------------------+
-| *Setter* | set_stretch_shrink(value) |
-+----------+---------------------------+
-| *Getter* | get_stretch_shrink()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | 1                         |
++-----------+---------------------------+
+| *Setter*  | set_stretch_shrink(value) |
++-----------+---------------------------+
+| *Getter*  | get_stretch_shrink()      |
++-----------+---------------------------+
 

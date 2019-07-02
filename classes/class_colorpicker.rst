@@ -19,21 +19,21 @@ Color picker control.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_property_color>`                     |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>`     |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`           |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`hsv_mode<class_ColorPicker_property_hsv_mode>`               |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`presets_enabled<class_ColorPicker_property_presets_enabled>` |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`presets_visible<class_ColorPicker_property_presets_visible>` |
-+---------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_property_raw_mode>`               |
-+---------------------------+--------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------+---------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_property_color>`                     | Color( 1, 1, 1, 1 ) |
++---------------------------+--------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>`     | false               |
++---------------------------+--------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`           | true                |
++---------------------------+--------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`   | :ref:`hsv_mode<class_ColorPicker_property_hsv_mode>`               | false               |
++---------------------------+--------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`   | :ref:`presets_enabled<class_ColorPicker_property_presets_enabled>` | true                |
++---------------------------+--------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`   | :ref:`presets_visible<class_ColorPicker_property_presets_visible>` | true                |
++---------------------------+--------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_property_raw_mode>`               | false               |
++---------------------------+--------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -49,27 +49,27 @@ Methods
 Theme Properties
 ----------------
 
-+-------------------------------+---------------+
-| :ref:`Texture<class_Texture>` | add_preset    |
-+-------------------------------+---------------+
-| :ref:`Texture<class_Texture>` | color_hue     |
-+-------------------------------+---------------+
-| :ref:`Texture<class_Texture>` | color_sample  |
-+-------------------------------+---------------+
-| :ref:`int<class_int>`         | h_width       |
-+-------------------------------+---------------+
-| :ref:`int<class_int>`         | label_width   |
-+-------------------------------+---------------+
-| :ref:`int<class_int>`         | margin        |
-+-------------------------------+---------------+
-| :ref:`Texture<class_Texture>` | preset_bg     |
-+-------------------------------+---------------+
-| :ref:`Texture<class_Texture>` | screen_picker |
-+-------------------------------+---------------+
-| :ref:`int<class_int>`         | sv_height     |
-+-------------------------------+---------------+
-| :ref:`int<class_int>`         | sv_width      |
-+-------------------------------+---------------+
++-------------------------------+---------------+-----+
+| :ref:`Texture<class_Texture>` | add_preset    |     |
++-------------------------------+---------------+-----+
+| :ref:`Texture<class_Texture>` | color_hue     |     |
++-------------------------------+---------------+-----+
+| :ref:`Texture<class_Texture>` | color_sample  |     |
++-------------------------------+---------------+-----+
+| :ref:`int<class_int>`         | h_width       | 30  |
++-------------------------------+---------------+-----+
+| :ref:`int<class_int>`         | label_width   | 10  |
++-------------------------------+---------------+-----+
+| :ref:`int<class_int>`         | margin        | 4   |
++-------------------------------+---------------+-----+
+| :ref:`Texture<class_Texture>` | preset_bg     |     |
++-------------------------------+---------------+-----+
+| :ref:`Texture<class_Texture>` | screen_picker |     |
++-------------------------------+---------------+-----+
+| :ref:`int<class_int>`         | sv_height     | 256 |
++-------------------------------+---------------+-----+
+| :ref:`int<class_int>`         | sv_width      | 256 |
++-------------------------------+---------------+-----+
 
 Signals
 -------
@@ -104,11 +104,13 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **color**
 
-+----------+-----------------------+
-| *Setter* | set_pick_color(value) |
-+----------+-----------------------+
-| *Getter* | get_pick_color()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | Color( 1, 1, 1, 1 )   |
++-----------+-----------------------+
+| *Setter*  | set_pick_color(value) |
++-----------+-----------------------+
+| *Getter*  | get_pick_color()      |
++-----------+-----------------------+
 
 The currently selected color.
 
@@ -116,11 +118,13 @@ The currently selected color.
 
 - :ref:`bool<class_bool>` **deferred_mode**
 
-+----------+--------------------------+
-| *Setter* | set_deferred_mode(value) |
-+----------+--------------------------+
-| *Getter* | is_deferred_mode()       |
-+----------+--------------------------+
++-----------+--------------------------+
+| *Default* | false                    |
++-----------+--------------------------+
+| *Setter*  | set_deferred_mode(value) |
++-----------+--------------------------+
+| *Getter*  | is_deferred_mode()       |
++-----------+--------------------------+
 
 If ``true``, the color will apply only after the user releases the mouse button, otherwise it will apply immediately even in mouse motion event (which can cause performance issues).
 
@@ -128,11 +132,13 @@ If ``true``, the color will apply only after the user releases the mouse button,
 
 - :ref:`bool<class_bool>` **edit_alpha**
 
-+----------+-----------------------+
-| *Setter* | set_edit_alpha(value) |
-+----------+-----------------------+
-| *Getter* | is_editing_alpha()    |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | true                  |
++-----------+-----------------------+
+| *Setter*  | set_edit_alpha(value) |
++-----------+-----------------------+
+| *Getter*  | is_editing_alpha()    |
++-----------+-----------------------+
 
 If ``true``, shows an alpha channel slider (transparency).
 
@@ -140,11 +146,13 @@ If ``true``, shows an alpha channel slider (transparency).
 
 - :ref:`bool<class_bool>` **hsv_mode**
 
-+----------+---------------------+
-| *Setter* | set_hsv_mode(value) |
-+----------+---------------------+
-| *Getter* | is_hsv_mode()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_hsv_mode(value) |
++-----------+---------------------+
+| *Getter*  | is_hsv_mode()       |
++-----------+---------------------+
 
 If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 
@@ -154,31 +162,37 @@ If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 
 - :ref:`bool<class_bool>` **presets_enabled**
 
-+----------+----------------------------+
-| *Setter* | set_presets_enabled(value) |
-+----------+----------------------------+
-| *Getter* | are_presets_enabled()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | true                       |
++-----------+----------------------------+
+| *Setter*  | set_presets_enabled(value) |
++-----------+----------------------------+
+| *Getter*  | are_presets_enabled()      |
++-----------+----------------------------+
 
 .. _class_ColorPicker_property_presets_visible:
 
 - :ref:`bool<class_bool>` **presets_visible**
 
-+----------+----------------------------+
-| *Setter* | set_presets_visible(value) |
-+----------+----------------------------+
-| *Getter* | are_presets_visible()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | true                       |
++-----------+----------------------------+
+| *Setter*  | set_presets_visible(value) |
++-----------+----------------------------+
+| *Getter*  | are_presets_visible()      |
++-----------+----------------------------+
 
 .. _class_ColorPicker_property_raw_mode:
 
 - :ref:`bool<class_bool>` **raw_mode**
 
-+----------+---------------------+
-| *Setter* | set_raw_mode(value) |
-+----------+---------------------+
-| *Getter* | is_raw_mode()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_raw_mode(value) |
++-----------+---------------------+
+| *Getter*  | is_raw_mode()       |
++-----------+---------------------+
 
 If ``true``, allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
 

@@ -19,11 +19,11 @@ Copies a region of the screen (or the whole screen) to a buffer so it can be acc
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------+
-| :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` | :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` |
-+-----------------------------------------------+-----------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`                     | :ref:`rect<class_BackBufferCopy_property_rect>`           |
-+-----------------------------------------------+-----------------------------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------+-------------------------------+
+| :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` | :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` | 1                             |
++-----------------------------------------------+-----------------------------------------------------------+-------------------------------+
+| :ref:`Rect2<class_Rect2>`                     | :ref:`rect<class_BackBufferCopy_property_rect>`           | Rect2( -100, -100, 200, 200 ) |
++-----------------------------------------------+-----------------------------------------------------------+-------------------------------+
 
 Enumerations
 ------------
@@ -56,11 +56,13 @@ Property Descriptions
 
 - :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode**
 
-+----------+----------------------+
-| *Setter* | set_copy_mode(value) |
-+----------+----------------------+
-| *Getter* | get_copy_mode()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 1                    |
++-----------+----------------------+
+| *Setter*  | set_copy_mode(value) |
++-----------+----------------------+
+| *Getter*  | get_copy_mode()      |
++-----------+----------------------+
 
 Buffer mode. See :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` constants.
 
@@ -68,11 +70,13 @@ Buffer mode. See :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` constants.
 
 - :ref:`Rect2<class_Rect2>` **rect**
 
-+----------+-----------------+
-| *Setter* | set_rect(value) |
-+----------+-----------------+
-| *Getter* | get_rect()      |
-+----------+-----------------+
++-----------+-------------------------------+
+| *Default* | Rect2( -100, -100, 200, 200 ) |
++-----------+-------------------------------+
+| *Setter*  | set_rect(value)               |
++-----------+-------------------------------+
+| *Getter*  | get_rect()                    |
++-----------+-------------------------------+
 
 The area covered by the BackBufferCopy. Only used if :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` is :ref:`COPY_MODE_RECT<class_BackBufferCopy_constant_COPY_MODE_RECT>`.
 

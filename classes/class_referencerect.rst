@@ -19,14 +19,16 @@ Reference frame for GUI.
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`border_color<class_ReferenceRect_property_border_color>` |
-+---------------------------+----------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------+---------------------+
+| :ref:`Color<class_Color>` | :ref:`border_color<class_ReferenceRect_property_border_color>` | Color( 1, 0, 0, 1 ) |
++---------------------------+----------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`   | :ref:`editor_only<class_ReferenceRect_property_editor_only>`   | true                |
++---------------------------+----------------------------------------------------------------+---------------------+
 
 Description
 -----------
 
-Reference frame for GUI. It's just like an empty control, except an outline border :ref:`border_color<class_ReferenceRect_property_border_color>` is displayed while editing around its size at all times.
+A rectangle box that displays only a :ref:`border_color<class_ReferenceRect_property_border_color>` border color around its rectangle. ``ReferenceRect`` has no fill :ref:`Color<class_Color>`.
 
 Property Descriptions
 ---------------------
@@ -35,11 +37,27 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **border_color**
 
-+----------+-------------------------+
-| *Setter* | set_border_color(value) |
-+----------+-------------------------+
-| *Getter* | get_border_color()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | Color( 1, 0, 0, 1 )     |
++-----------+-------------------------+
+| *Setter*  | set_border_color(value) |
++-----------+-------------------------+
+| *Getter*  | get_border_color()      |
++-----------+-------------------------+
 
-Determines the border :ref:`Color<class_Color>` of the ``ReferenceRect``.
+Sets the border :ref:`Color<class_Color>` of the ``ReferenceRect``.
+
+.. _class_ReferenceRect_property_editor_only:
+
+- :ref:`bool<class_bool>` **editor_only**
+
++-----------+------------------------+
+| *Default* | true                   |
++-----------+------------------------+
+| *Setter*  | set_editor_only(value) |
++-----------+------------------------+
+| *Getter*  | get_editor_only()      |
++-----------+------------------------+
+
+If set to ``true``, the ``ReferenceRect`` will only be visible while in editor. Otherwise, ``ReferenceRect`` will be visible in game.
 

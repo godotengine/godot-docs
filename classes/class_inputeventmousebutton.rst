@@ -19,15 +19,15 @@ Input event type for mouse button events.
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventMouseButton_property_button_index>` |
-+---------------------------+------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`doubleclick<class_InputEventMouseButton_property_doubleclick>`   |
-+---------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`factor<class_InputEventMouseButton_property_factor>`             |
-+---------------------------+------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventMouseButton_property_pressed>`           |
-+---------------------------+------------------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventMouseButton_property_button_index>` | 0     |
++---------------------------+------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`doubleclick<class_InputEventMouseButton_property_doubleclick>`   | false |
++---------------------------+------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>` | :ref:`factor<class_InputEventMouseButton_property_factor>`             | 1.0   |
++---------------------------+------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventMouseButton_property_pressed>`           | false |
++---------------------------+------------------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -46,11 +46,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **button_index**
 
-+----------+-------------------------+
-| *Setter* | set_button_index(value) |
-+----------+-------------------------+
-| *Getter* | get_button_index()      |
-+----------+-------------------------+
++-----------+-------------------------+
+| *Default* | 0                       |
++-----------+-------------------------+
+| *Setter*  | set_button_index(value) |
++-----------+-------------------------+
+| *Getter*  | get_button_index()      |
++-----------+-------------------------+
 
 The mouse button identifier, one of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button or button wheel constants.
 
@@ -58,11 +60,13 @@ The mouse button identifier, one of the :ref:`ButtonList<enum_@GlobalScope_Butto
 
 - :ref:`bool<class_bool>` **doubleclick**
 
-+----------+------------------------+
-| *Setter* | set_doubleclick(value) |
-+----------+------------------------+
-| *Getter* | is_doubleclick()       |
-+----------+------------------------+
++-----------+------------------------+
+| *Default* | false                  |
++-----------+------------------------+
+| *Setter*  | set_doubleclick(value) |
++-----------+------------------------+
+| *Getter*  | is_doubleclick()       |
++-----------+------------------------+
 
 If ``true``, the mouse button's state is a double-click.
 
@@ -70,11 +74,13 @@ If ``true``, the mouse button's state is a double-click.
 
 - :ref:`float<class_float>` **factor**
 
-+----------+-------------------+
-| *Setter* | set_factor(value) |
-+----------+-------------------+
-| *Getter* | get_factor()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1.0               |
++-----------+-------------------+
+| *Setter*  | set_factor(value) |
++-----------+-------------------+
+| *Getter*  | get_factor()      |
++-----------+-------------------+
 
 The amount (or delta) of the event. When used for high-precision scroll events, this indicates the scroll amount (vertical or horizontal). This is only supported on some platforms; the reported sensitivity varies depending on the platform. May be ``0`` if not supported.
 
@@ -82,11 +88,13 @@ The amount (or delta) of the event. When used for high-precision scroll events, 
 
 - :ref:`bool<class_bool>` **pressed**
 
-+----------+--------------------+
-| *Setter* | set_pressed(value) |
-+----------+--------------------+
-| *Getter* | is_pressed()       |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | false              |
++-----------+--------------------+
+| *Setter*  | set_pressed(value) |
++-----------+--------------------+
+| *Getter*  | is_pressed()       |
++-----------+--------------------+
 
 If ``true``, the mouse button's state is pressed. If ``false``, the mouse button's state is released.
 

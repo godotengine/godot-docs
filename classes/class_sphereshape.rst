@@ -19,9 +19,9 @@ Sphere shape for 3D collisions.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`radius<class_SphereShape_property_radius>` |
-+---------------------------+--------------------------------------------------+
++---------------------------+--------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`radius<class_SphereShape_property_radius>` | 1.0 |
++---------------------------+--------------------------------------------------+-----+
 
 Description
 -----------
@@ -35,11 +35,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **radius**
 
-+----------+-------------------+
-| *Setter* | set_radius(value) |
-+----------+-------------------+
-| *Getter* | get_radius()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | 1.0               |
++-----------+-------------------+
+| *Setter*  | set_radius(value) |
++-----------+-------------------+
+| *Getter*  | get_radius()      |
++-----------+-------------------+
 
 The sphere's radius. The shape's diameter is double the radius.
 

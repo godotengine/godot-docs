@@ -19,13 +19,13 @@ High-level multiplayer API.
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`                   |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_MultiplayerAPI_property_refuse_new_network_connections>` |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                                         | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`                   | false |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
+| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`                                     |       |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_MultiplayerAPI_property_refuse_new_network_connections>` | false |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -148,11 +148,13 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **allow_object_decoding**
 
-+----------+----------------------------------+
-| *Setter* | set_allow_object_decoding(value) |
-+----------+----------------------------------+
-| *Getter* | is_object_decoding_allowed()     |
-+----------+----------------------------------+
++-----------+----------------------------------+
+| *Default* | false                            |
++-----------+----------------------------------+
+| *Setter*  | set_allow_object_decoding(value) |
++-----------+----------------------------------+
+| *Getter*  | is_object_decoding_allowed()     |
++-----------+----------------------------------+
 
 If ``true`` (or if the :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` has :ref:`PacketPeer.allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` set to ``true``), the MultiplayerAPI will allow encoding and decoding of object during RPCs/RSETs.
 
@@ -174,11 +176,13 @@ The peer object to handle the RPC system (effectively enabling networking when s
 
 - :ref:`bool<class_bool>` **refuse_new_network_connections**
 
-+----------+-------------------------------------------+
-| *Setter* | set_refuse_new_network_connections(value) |
-+----------+-------------------------------------------+
-| *Getter* | is_refusing_new_network_connections()     |
-+----------+-------------------------------------------+
++-----------+-------------------------------------------+
+| *Default* | false                                     |
++-----------+-------------------------------------------+
+| *Setter*  | set_refuse_new_network_connections(value) |
++-----------+-------------------------------------------+
+| *Getter*  | is_refusing_new_network_connections()     |
++-----------+-------------------------------------------+
 
 If ``true``, the MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` refuses new incoming connections.
 

@@ -19,11 +19,11 @@ Brief Description
 Properties
 ----------
 
-+---------------------------------------------+---------------------------------------------------------------+
-| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>` |
-+---------------------------------------------+---------------------------------------------------------------+
-| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>` |
-+---------------------------------------------+---------------------------------------------------------------+
++---------------------------------------------+---------------------------------------------------------------+------+
+| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>` | true |
++---------------------------------------------+---------------------------------------------------------------+------+
+| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>` | null |
++---------------------------------------------+---------------------------------------------------------------+------+
 
 Property Descriptions
 ---------------------
@@ -32,19 +32,23 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **enabled**
 
-+----------+--------------------+
-| *Setter* | set_enabled(value) |
-+----------+--------------------+
-| *Getter* | is_enabled()       |
-+----------+--------------------+
++-----------+--------------------+
+| *Default* | true               |
++-----------+--------------------+
+| *Setter*  | set_enabled(value) |
++-----------+--------------------+
+| *Getter*  | is_enabled()       |
++-----------+--------------------+
 
 .. _class_NavigationMeshInstance_property_navmesh:
 
 - :ref:`NavigationMesh<class_NavigationMesh>` **navmesh**
 
-+----------+----------------------------+
-| *Setter* | set_navigation_mesh(value) |
-+----------+----------------------------+
-| *Getter* | get_navigation_mesh()      |
-+----------+----------------------------+
++-----------+----------------------------+
+| *Default* | null                       |
++-----------+----------------------------+
+| *Setter*  | set_navigation_mesh(value) |
++-----------+----------------------------+
+| *Getter*  | get_navigation_mesh()      |
++-----------+----------------------------+
 

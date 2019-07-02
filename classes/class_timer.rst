@@ -19,19 +19,19 @@ A countdown timer.
 Properties
 ----------
 
-+------------------------------------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`autostart<class_Timer_property_autostart>`       |
-+------------------------------------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`one_shot<class_Timer_property_one_shot>`         |
-+------------------------------------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`paused<class_Timer_property_paused>`             |
-+------------------------------------------------------+--------------------------------------------------------+
-| :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>` | :ref:`process_mode<class_Timer_property_process_mode>` |
-+------------------------------------------------------+--------------------------------------------------------+
-| :ref:`float<class_float>`                            | :ref:`time_left<class_Timer_property_time_left>`       |
-+------------------------------------------------------+--------------------------------------------------------+
-| :ref:`float<class_float>`                            | :ref:`wait_time<class_Timer_property_wait_time>`       |
-+------------------------------------------------------+--------------------------------------------------------+
++------------------------------------------------------+--------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                              | :ref:`autostart<class_Timer_property_autostart>`       | false |
++------------------------------------------------------+--------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                              | :ref:`one_shot<class_Timer_property_one_shot>`         | false |
++------------------------------------------------------+--------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                              | :ref:`paused<class_Timer_property_paused>`             |       |
++------------------------------------------------------+--------------------------------------------------------+-------+
+| :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>` | :ref:`process_mode<class_Timer_property_process_mode>` | 1     |
++------------------------------------------------------+--------------------------------------------------------+-------+
+| :ref:`float<class_float>`                            | :ref:`time_left<class_Timer_property_time_left>`       |       |
++------------------------------------------------------+--------------------------------------------------------+-------+
+| :ref:`float<class_float>`                            | :ref:`wait_time<class_Timer_property_wait_time>`       | 1.0   |
++------------------------------------------------------+--------------------------------------------------------+-------+
 
 Methods
 -------
@@ -80,25 +80,29 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **autostart**
 
-+----------+----------------------+
-| *Setter* | set_autostart(value) |
-+----------+----------------------+
-| *Getter* | has_autostart()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | set_autostart(value) |
++-----------+----------------------+
+| *Getter*  | has_autostart()      |
++-----------+----------------------+
 
-If ``true``, the timer will automatically start when entering the scene tree. Default value: ``false``.
+If ``true``, the timer will automatically start when entering the scene tree.
 
 .. _class_Timer_property_one_shot:
 
 - :ref:`bool<class_bool>` **one_shot**
 
-+----------+---------------------+
-| *Setter* | set_one_shot(value) |
-+----------+---------------------+
-| *Getter* | is_one_shot()       |
-+----------+---------------------+
++-----------+---------------------+
+| *Default* | false               |
++-----------+---------------------+
+| *Setter*  | set_one_shot(value) |
++-----------+---------------------+
+| *Getter*  | is_one_shot()       |
++-----------+---------------------+
 
-If ``true``, the timer will stop when reaching 0. If ``false``, it will restart. Default value: ``false``.
+If ``true``, the timer will stop when reaching 0. If ``false``, it will restart.
 
 .. _class_Timer_property_paused:
 
@@ -116,11 +120,13 @@ If ``true``, the timer is paused and will not process until it is unpaused again
 
 - :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>` **process_mode**
 
-+----------+-------------------------------+
-| *Setter* | set_timer_process_mode(value) |
-+----------+-------------------------------+
-| *Getter* | get_timer_process_mode()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | 1                             |
++-----------+-------------------------------+
+| *Setter*  | set_timer_process_mode(value) |
++-----------+-------------------------------+
+| *Getter*  | get_timer_process_mode()      |
++-----------+-------------------------------+
 
 Processing mode. See :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>`.
 
@@ -140,11 +146,13 @@ The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 
 - :ref:`float<class_float>` **wait_time**
 
-+----------+----------------------+
-| *Setter* | set_wait_time(value) |
-+----------+----------------------+
-| *Getter* | get_wait_time()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | 1.0                  |
++-----------+----------------------+
+| *Setter*  | set_wait_time(value) |
++-----------+----------------------+
+| *Getter*  | get_wait_time()      |
++-----------+----------------------+
 
 Wait time in seconds.
 
