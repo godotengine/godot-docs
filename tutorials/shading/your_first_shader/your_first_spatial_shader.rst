@@ -167,14 +167,19 @@ Once you set it up and should look like this.
 
 .. image:: img/noise-set.png
 
-Now, access the noise texture using the ``texture()`` function. ``texture()`` takes the texture as a first
-argument and the position on the texture as the second. We use the ``x`` and ``z`` channels of ``VERTEX`` to 
-determine where on the texture to look up. 
+Now, access the noise texture using the ``texture()`` function. ``texture()`` takes a texture as the first
+argument and a ``vec2`` for the position on the texture as the second argument. We use the ``x`` and ``z``
+channels of ``VERTEX`` to determine where on the texture to look up. ``texture()`` returns a ``vec4`` of the
+``r, g, b, a`` channels at the position. Since the noise texture is grayscale, all of the values are the same,
+so we can use any one of the channels as the height. In this case we'll use the ``r``, or ``x`` channel.
 
 .. code-block:: glsl
 
-  float height = texture(noise, VERTEX.xz / 2.0 ); //divide by the size of the PlaneMesh
+  float height = texture(noise, VERTEX.xz / 2.0 ).x; //divide by the size of the PlaneMesh
   VERTEX.y += height;
+
+Note: ``xyzw`` is the same as ``rgba`` in GLSL, so instead of ``texture().x`` above, we could use ``texture().r``.
+See the `OpenGL documentation <https://www.khronos.org/opengl/wiki/Data_Type_(GLSL)#Vectors>`_ for more details.
 
 Using this code you can see the texture creates random looking hills.
 
@@ -328,6 +333,7 @@ most of the difficult stuff for you.
   void vertex() {
     vertex_position = VERTEX.xz / 2.0;
     float height = texture(noise, vertex_position).x * height_scale;
+    VERTEX.y += height * height_scale;
   }
 
   void fragment() {
