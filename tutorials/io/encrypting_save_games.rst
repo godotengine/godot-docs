@@ -71,7 +71,7 @@ some unique user identifier, for example:
     f.StoreVar(gameState);
     f.Close();
 
-Note that ``OS.get_unique_id()`` only works on iOS and Android.
+Note that ``OS.get_unique_id()`` does not work on UWP or HTML5.
 
 That is all! Thank you for your cooperation, citizen.
 
