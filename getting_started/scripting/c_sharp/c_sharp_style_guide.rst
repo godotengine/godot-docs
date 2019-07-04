@@ -141,7 +141,7 @@ Insert a space:
 * Between an opening parenthesis and ``if``, ``for``, ``foreach``, ``catch``, ``while``, ``lock`` or ``using`` keywords.
 * Before and within a single line accessor block.
 * Between accessors in a single line accessor block.
-* After a comma.
+* After a comma which is not at the end of a line.
 * After a semicolon in a ``for`` statement.
 * After a colon in a single line ``case`` statement.
 * Around a colon in a type declaration.
