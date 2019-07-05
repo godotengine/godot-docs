@@ -57,6 +57,7 @@ Inside we will create a simple summator class:
 .. code:: cpp
 
     /* summator.h */
+
     #ifndef SUMMATOR_H
     #define SUMMATOR_H
 
@@ -71,14 +72,14 @@ Inside we will create a simple summator class:
         static void _bind_methods();
 
     public:
-        void add(int value);
+        void add(int p_value);
         void reset();
         int get_total() const;
 
         Summator();
     };
 
-    #endif
+    #endif // SUMMATOR_H
 
 And then the cpp file.
 
@@ -88,23 +89,19 @@ And then the cpp file.
 
     #include "summator.h"
 
-    void Summator::add(int value) {
-
-        count += value;
+    void Summator::add(int p_value) {
+        count += p_value;
     }
 
     void Summator::reset() {
-
         count = 0;
     }
 
     int Summator::get_total() const {
-
         return count;
     }
 
     void Summator::_bind_methods() {
-
         ClassDB::bind_method(D_METHOD("add", "value"), &Summator::add);
         ClassDB::bind_method(D_METHOD("reset"), &Summator::reset);
         ClassDB::bind_method(D_METHOD("get_total"), &Summator::get_total);
@@ -142,12 +139,11 @@ With the following contents:
     #include "summator.h"
 
     void register_summator_types() {
-
-            ClassDB::register_class<Summator>();
+        ClassDB::register_class<Summator>();
     }
 
     void unregister_summator_types() {
-       //nothing to do here
+       // Nothing to do here in this example.
     }
 
 Next, we need to create a ``SCsub`` file so the build system compiles
@@ -156,9 +152,10 @@ this module:
 .. code:: python
 
     # SCsub
+
     Import('env')
 
-    env.add_source_files(env.modules_sources,"*.cpp") # Add all cpp files to the build
+    env.add_source_files(env.modules_sources, "*.cpp") # Add all cpp files to the build
 
 With multiple sources, you can also add each file individually to a Python
 string list:
@@ -177,8 +174,8 @@ environment's paths:
 
 .. code:: python
 
-    env.Append(CPPPATH="mylib/include") # this is a relative path
-    env.Append(CPPPATH="#myotherlib/include") # this is an 'absolute' path
+    env.Append(CPPPATH=["mylib/include"]) # this is a relative path
+    env.Append(CPPPATH=["#myotherlib/include"]) # this is an 'absolute' path
 
 If you want to add custom compiler flags when building your module, you need to clone
 `env` first, so it won't add those flags to whole Godot build (which can cause errors).
@@ -187,11 +184,13 @@ Example `SCsub` with custom flags:
 .. code:: python
 
     # SCsub
+
     Import('env')
 
     module_env = env.Clone()
-    module_env.add_source_files(env.modules_sources,"*.cpp")
-    module_env.Append(CXXFLAGS=['-O2', '-std=c++11'])
+    module_env.add_source_files(env.modules_sources, "*.cpp")
+    module_env.Append(CCFLAGS=['-O2']) # Flags for C and C++ code
+    module_env.Append(CXXFLAGS=['-std=c++11']) # Flags for C++ code only
 
 And finally, the configuration file for the module, this is a simple
 python script that must be named ``config.py``:
@@ -206,8 +205,8 @@ python script that must be named ``config.py``:
     def configure(env):
         pass
 
-The module is asked if it's ok to build for the specific platform (in
-this case, True means it will build for every platform).
+The module is asked if it's OK to build for the specific platform (in
+this case, ``True`` means it will build for every platform).
 
 And that's it. Hope it was not too complex! Your module should look like
 this:
@@ -266,6 +265,7 @@ library that will be dynamically loaded when starting our game's binary.
 .. code:: python
 
     # SCsub
+
     Import('env')
 
     sources = [
@@ -275,7 +275,7 @@ library that will be dynamically loaded when starting our game's binary.
 
     # First, create a custom env for the shared library.
     module_env = env.Clone()
-    module_env.Append(CXXFLAGS='-fPIC')  # Needed to compile shared library
+    module_env.Append(CCFLAGS=['-fPIC'])  # Needed to compile shared library
     # We don't want godot's dependencies to be injected into our shared library.
     module_env['LIBS'] = []
 
@@ -313,6 +313,7 @@ using the `ARGUMENT` command:
 .. code:: python
 
     # SCsub
+
     Import('env')
 
     sources = [
@@ -321,11 +322,12 @@ using the `ARGUMENT` command:
     ]
 
     module_env = env.Clone()
-    module_env.Append(CXXFLAGS=['-O2', '-std=c++11'])
+    module_env.Append(CCFLAGS=['-O2'])
+    module_env.Append(CXXFLAGS=['-std=c++11'])
 
     if ARGUMENTS.get('summator_shared', 'no') == 'yes':
         # Shared lib compilation
-        module_env.Append(CXXFLAGS='-fPIC')
+        module_env.Append(CCFLAGS=['-fPIC'])
         module_env['LIBS'] = []
         shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
         shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
@@ -335,7 +337,7 @@ using the `ARGUMENT` command:
         # Static compilation
         module_env.add_source_files(env.modules_sources, sources)
 
-Now by default ``scons`` command will build our module as part of godot's binary
+Now by default ``scons`` command will build our module as part of Godot's binary
 and as a shared library when passing ``summator_shared=yes``.
 
 Finally you can even speedup build further by explicitly specifying your
