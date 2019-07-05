@@ -207,7 +207,7 @@ They simplify this process but also include some patches needed for proper funct
 Read the README for instructions on how to use the scripts.
 
 Once you've built Mono, you can proceed to build Godot with the instructions described
-in this page and the :ref:`Compiling for Android<compiling_for_android>` page.
+in this page and the :ref:`Compiling for Android<doc_compiling_for_android>` page.
 Make sure to let SCons know about the location of the Mono runtime you just built:
 ``scons [...] mono_prefix=$HOME/mono-installs/android-armeabi-v7a-release``
 (This path may be different on your system depending on the options you used to build Mono).
