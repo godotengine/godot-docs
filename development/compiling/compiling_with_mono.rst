@@ -211,7 +211,6 @@ The following is an example script for building and copying the Godot API assemb
 The script assumes it's being executed from the directory where SConstruct is located.
 ``<godot_binary>`` refers to the tools binary compiled with the Mono module enabled.
 
-The ``Api`` subdirectory contains the Godot API assemblies.
 In the case of macOS, if the Godot editor is distributed as a bundle, the contents of the data directory may be placed in the following locations:
 
 +-------------------------------------------------------+---------------------------------------------------------------+
@@ -223,12 +222,6 @@ In the case of macOS, if the Godot editor is distributed as a bundle, the conten
 +-------------------------------------------------------+---------------------------------------------------------------+
 | ``bin/data.mono.<platform>.<bits>.<target>/Tools``    | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Tools``    |
 +-------------------------------------------------------+---------------------------------------------------------------+
-
-The ``Mono`` subdirectory is optional but will be needed when distributing the editor, as some issues might arise
-when the installed Mono version in the user's system is not be the same as the one the Godot editor was built with.
-Pass ``copy_mono_root=yes`` to SCons when building the editor in order to create this folder and its contents.
-
-The ``Tools`` subdirectory contains tools required by the editor, like the ``GodotTools`` assemblies and its dependencies.
 
 Command-line options
 --------------------
