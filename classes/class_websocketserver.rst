@@ -112,7 +112,7 @@ Returns ``true`` if the server is actively listening on a port.
 
 Starts listening on the given port.
 
-You can specify the desired subprotocols via the "protocols" array. If the list empty (default), "binary" will be used.
+You can specify the desired subprotocols via the "protocols" array. If the list empty (default), no sub-protocol will be requested.
 
 If ``true`` is passed as ``gd_mp_api``, the server will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections from non-Godot clients will not work, and :ref:`data_received<class_WebSocketServer_signal_data_received>` will not be emitted.
 

@@ -60,6 +60,15 @@ Signals
 
 - **settings_changed** **(** **)**
 
+Emitted when editor settings change.
+
+Constants
+---------
+
+.. _class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED:
+
+- **NOTIFICATION_EDITOR_SETTINGS_CHANGED** = **10000** --- Emitted when editor settings change. It used by various editor plugins to update their visuals on theme changes or logic on configuration changes.
+
 Description
 -----------
 

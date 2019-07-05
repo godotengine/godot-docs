@@ -19,27 +19,29 @@ Prerendered indirect light map for a scene.
 Properties
 ----------
 
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                          | :ref:`bake_cell_size<class_BakedLightmap_property_bake_cell_size>`       | 0.25                  |
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                          | :ref:`bake_energy<class_BakedLightmap_property_bake_energy>`             | 1.0                   |
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`Vector3<class_Vector3>`                      | :ref:`bake_extents<class_BakedLightmap_property_bake_extents>`           | Vector3( 10, 10, 10 ) |
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                            | :ref:`bake_hdr<class_BakedLightmap_property_bake_hdr>`                   | false                 |
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`BakeMode<enum_BakedLightmap_BakeMode>`       | :ref:`bake_mode<class_BakedLightmap_property_bake_mode>`                 | 0                     |
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                          | :ref:`bake_propagation<class_BakedLightmap_property_bake_propagation>`   | 1.0                   |
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` | :ref:`bake_quality<class_BakedLightmap_property_bake_quality>`           | 1                     |
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                          | :ref:`capture_cell_size<class_BakedLightmap_property_capture_cell_size>` | 0.5                   |
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`String<class_String>`                        | :ref:`image_path<class_BakedLightmap_property_image_path>`               | "."                   |
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`BakedLightmapData<class_BakedLightmapData>`  | :ref:`light_data<class_BakedLightmap_property_light_data>`               | null                  |
-+----------------------------------------------------+--------------------------------------------------------------------------+-----------------------+
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                          | :ref:`bake_cell_size<class_BakedLightmap_property_bake_cell_size>`                             | 0.25                  |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                          | :ref:`bake_default_texels_per_unit<class_BakedLightmap_property_bake_default_texels_per_unit>` | 20.0                  |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                          | :ref:`bake_energy<class_BakedLightmap_property_bake_energy>`                                   | 1.0                   |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Vector3<class_Vector3>`                      | :ref:`bake_extents<class_BakedLightmap_property_bake_extents>`                                 | Vector3( 10, 10, 10 ) |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                            | :ref:`bake_hdr<class_BakedLightmap_property_bake_hdr>`                                         | false                 |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`BakeMode<enum_BakedLightmap_BakeMode>`       | :ref:`bake_mode<class_BakedLightmap_property_bake_mode>`                                       | 0                     |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                          | :ref:`bake_propagation<class_BakedLightmap_property_bake_propagation>`                         | 1.0                   |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` | :ref:`bake_quality<class_BakedLightmap_property_bake_quality>`                                 | 1                     |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                          | :ref:`capture_cell_size<class_BakedLightmap_property_capture_cell_size>`                       | 0.5                   |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`String<class_String>`                        | :ref:`image_path<class_BakedLightmap_property_image_path>`                                     | "."                   |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`BakedLightmapData<class_BakedLightmapData>`  | :ref:`light_data<class_BakedLightmap_property_light_data>`                                     | null                  |
++----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
 
 Methods
 -------
@@ -131,6 +133,18 @@ Property Descriptions
 +-----------+---------------------------+
 
 Grid subdivision size for lightmapper calculation. The default value will work for most cases. Increase for better lighting on small details or if your scene is very large.
+
+.. _class_BakedLightmap_property_bake_default_texels_per_unit:
+
+- :ref:`float<class_float>` **bake_default_texels_per_unit**
+
++-----------+-----------------------------------------+
+| *Default* | 20.0                                    |
++-----------+-----------------------------------------+
+| *Setter*  | set_bake_default_texels_per_unit(value) |
++-----------+-----------------------------------------+
+| *Getter*  | get_bake_default_texels_per_unit()      |
++-----------+-----------------------------------------+
 
 .. _class_BakedLightmap_property_bake_energy:
 

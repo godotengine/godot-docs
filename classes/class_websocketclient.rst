@@ -102,7 +102,7 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_url** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
 
-Connects to the given URL requesting one of the given ``protocols`` as sub-protocol.
+Connects to the given URL requesting one of the given ``protocols`` as sub-protocol. If the list empty (default), no sub-protocol will be requested.
 
 If ``true`` is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections to non-Godot servers will not work, and :ref:`data_received<class_WebSocketClient_signal_data_received>` will not be emitted.
 

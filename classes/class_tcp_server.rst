@@ -22,6 +22,8 @@ Methods
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                   | :ref:`is_connection_available<class_TCP_Server_method_is_connection_available>` **(** **)** const                                  |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`is_listening<class_TCP_Server_method_is_listening>` **(** **)** const                                                        |
++-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`listen<class_TCP_Server_method_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)** |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`stop<class_TCP_Server_method_stop>` **(** **)**                                                                              |
@@ -42,6 +44,12 @@ Method Descriptions
 - :ref:`bool<class_bool>` **is_connection_available** **(** **)** const
 
 Returns ``true`` if a connection is available for taking.
+
+.. _class_TCP_Server_method_is_listening:
+
+- :ref:`bool<class_bool>` **is_listening** **(** **)** const
+
+Returns ``true`` if the server is currently listening for connections.
 
 .. _class_TCP_Server_method_listen:
 

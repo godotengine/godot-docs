@@ -69,13 +69,13 @@ Constants
 
 .. _class_Transform_constant_FLIP_Z:
 
-- **IDENTITY** = **Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )**
+- **IDENTITY** = **Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )** --- ``Transform`` with no translation, rotation or scaling applied. When applied to other data structures, :ref:`IDENTITY<class_Transform_constant_IDENTITY>` performs no transformation.
 
-- **FLIP_X** = **Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )**
+- **FLIP_X** = **Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )** --- ``Transform`` with mirroring applied perpendicular to the YZ plane.
 
-- **FLIP_Y** = **Transform( 1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0 )**
+- **FLIP_Y** = **Transform( 1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0 )** --- ``Transform`` with mirroring applied perpendicular to the XZ plane.
 
-- **FLIP_Z** = **Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0 )**
+- **FLIP_Z** = **Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0 )** --- ``Transform`` with mirroring applied perpendicular to the XY plane.
 
 Description
 -----------

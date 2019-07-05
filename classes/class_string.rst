@@ -178,6 +178,10 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`rstrip<class_String_method_rstrip>` **(** :ref:`String<class_String>` chars **)**                                                                                 |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`sha1_buffer<class_String_method_sha1_buffer>` **(** **)**                                                                                                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`sha1_text<class_String_method_sha1_text>` **(** **)**                                                                                                             |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`sha256_buffer<class_String_method_sha256_buffer>` **(** **)**                                                                                                     |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`sha256_text<class_String_method_sha256_text>` **(** **)**                                                                                                         |
@@ -665,6 +669,18 @@ For example, ``"One,Two,Three,Four"`` will return ``["Three","Four"]`` if split 
 - :ref:`String<class_String>` **rstrip** **(** :ref:`String<class_String>` chars **)**
 
 Returns a copy of the string with characters removed from the right.
+
+.. _class_String_method_sha1_buffer:
+
+- :ref:`PoolByteArray<class_PoolByteArray>` **sha1_buffer** **(** **)**
+
+Returns the SHA-1 hash of the string as an array of bytes.
+
+.. _class_String_method_sha1_text:
+
+- :ref:`String<class_String>` **sha1_text** **(** **)**
+
+Returns the SHA-1 hash of the string as a string.
 
 .. _class_String_method_sha256_buffer:
 

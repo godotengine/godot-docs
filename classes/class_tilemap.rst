@@ -34,6 +34,8 @@ Properties
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`cell_y_sort<class_TileMap_property_cell_y_sort>`                         | false                           |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`centered_textures<class_TileMap_property_centered_textures>`             | false                           |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
 | :ref:`float<class_float>`                  | :ref:`collision_bounce<class_TileMap_property_collision_bounce>`               | 0.0                             |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
 | :ref:`float<class_float>`                  | :ref:`collision_friction<class_TileMap_property_collision_friction>`           | 1.0                             |
@@ -45,6 +47,8 @@ Properties
 | :ref:`bool<class_bool>`                    | :ref:`collision_use_kinematic<class_TileMap_property_collision_use_kinematic>` | false                           |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`collision_use_parent<class_TileMap_property_collision_use_parent>`       | false                           |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`compatibility_mode<class_TileMap_property_compatibility_mode>`           | false                           |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
 | :ref:`Mode<enum_TileMap_Mode>`             | :ref:`mode<class_TileMap_property_mode>`                                       | 0                               |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
@@ -286,6 +290,22 @@ Position for tile origin. See :ref:`TileOrigin<enum_TileMap_TileOrigin>` for pos
 
 If ``true``, the TileMap's children will be drawn in order of their Y coordinate.
 
+.. _class_TileMap_property_centered_textures:
+
+- :ref:`bool<class_bool>` **centered_textures**
+
++-----------+--------------------------------+
+| *Default* | false                          |
++-----------+--------------------------------+
+| *Setter*  | set_centered_textures(value)   |
++-----------+--------------------------------+
+| *Getter*  | is_centered_textures_enabled() |
++-----------+--------------------------------+
+
+If ``true``, the textures will be centered in the middle of each tile. This is useful for certain isometric or top-down modes when textures are made larger or smaller than the tiles (e.g. to avoid flickering on tile edges). The offset is still applied, but from the center of the tile. If used, :ref:`compatibility_mode<class_TileMap_property_compatibility_mode>` is ignored.
+
+If ``false``, the texture position start in the top-left corner unless :ref:`compatibility_mode<class_TileMap_property_compatibility_mode>` is enabled.
+
 .. _class_TileMap_property_collision_bounce:
 
 - :ref:`float<class_float>` **collision_bounce**
@@ -367,6 +387,24 @@ If ``true``, TileMap collisions will be handled as a kinematic body. If ``false`
 +-----------+---------------------------------+
 | *Getter*  | get_collision_use_parent()      |
 +-----------+---------------------------------+
+
+.. _class_TileMap_property_compatibility_mode:
+
+- :ref:`bool<class_bool>` **compatibility_mode**
+
++-----------+---------------------------------+
+| *Default* | false                           |
++-----------+---------------------------------+
+| *Setter*  | set_compatibility_mode(value)   |
++-----------+---------------------------------+
+| *Getter*  | is_compatibility_mode_enabled() |
++-----------+---------------------------------+
+
+If ``true``, the compatibility with the tilemaps made in Godot 3.1 or earlier is maintained (textures move when the tile origin changes and rotate if the texture size is not homogeneous). This mode presents problems when doing ``flip_h``, ``flip_v`` and ``transpose`` tile operations on non-homogeneous isometric tiles (e.g. 2:1), in which the texture could not coincide with the collision, thus it is not recommended for isometric or non-square tiles.
+
+If ``false``, the textures do not move when doing ``flip_h``, ``flip_v`` operations if no offset is used, nor when changing the tile origin.
+
+The compatibility mode doesn't work with the :ref:`centered_textures<class_TileMap_property_centered_textures>` option, because displacing textures with the :ref:`cell_tile_origin<class_TileMap_property_cell_tile_origin>` option or in irregular tiles is not relevant when centering those textures.
 
 .. _class_TileMap_property_mode:
 

@@ -73,11 +73,11 @@ Constants
 
 .. _class_Transform2D_constant_FLIP_Y:
 
-- **IDENTITY** = **Transform2D( 1, 0, 0, 1, 0, 0 )**
+- **IDENTITY** = **Transform2D( 1, 0, 0, 1, 0, 0 )** --- ``Transform2D`` with no translation, rotation or scaling applied. When applied to other data structures, :ref:`IDENTITY<class_Transform2D_constant_IDENTITY>` performs no transformation.
 
-- **FLIP_X** = **Transform2D( -1, 0, 0, 1, 0, 0 )**
+- **FLIP_X** = **Transform2D( -1, 0, 0, 1, 0, 0 )** --- ``Transform2D`` with mirroring applied parallel to the X axis.
 
-- **FLIP_Y** = **Transform2D( 1, 0, 0, -1, 0, 0 )**
+- **FLIP_Y** = **Transform2D( 1, 0, 0, -1, 0, 0 )** --- ``Transform2D`` with mirroring applied parallel to the Y axis.
 
 Description
 -----------
