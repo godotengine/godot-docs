@@ -1231,6 +1231,9 @@ special export syntax is provided.
 
     export(Texture) var character_face
     export(PackedScene) var scene_file
+    # There are many resource types that can be used this way, try e.g.
+    # the following to list them:
+    export(Resource) var resource
 
     # Integers and strings hint enumerated values.
 
@@ -1440,6 +1443,11 @@ placed at the top of the file:
     func _ready():
         print("Hello")
 
+.. warning:: Be cautious when freeing nodes with `queue_free()` or `free()`
+             in a tool script (especially the script's owner itself). As tool
+             scripts run their code in the editor, misusing them may lead to
+             crashing the editor.
+
 Memory management
 ~~~~~~~~~~~~~~~~~
 
@@ -1460,104 +1468,161 @@ freed.
 Signals
 ~~~~~~~
 
-Signals are a way to send notification messages from an object that
-other objects can listen to in a generic way. Create custom signals for
-a class using the ``signal`` keyword.
+Signals are a tool to emit messages from an object that other objects can react
+to. To create custom signals for a class, use the ``signal`` keyword.
 
 ::
 
-   # Signal with no arguments
-   signal your_signal_name
+   extends Node
 
-   # Signal with two arguments
-   signal your_signal_name_with_args(a, b)
+   # A signal named health_depleted
+   signal health_depleted
 
-These signals may be connected to methods in the same manner as you connect
-built-in signals of nodes such as :ref:`class_Button` or :ref:`class_RigidBody`.
+.. note:: 
 
-Here's an example that creates a custom signal in one script and connects
-the custom signal to a method in a separate script, using the
-:ref:`Object.connect() <class_Object_method_connect>` method:
+   Signals are a `Callback
+   <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`
+   mechanism. They also fill the role of Observers, a common programming
+   pattern. For more information, read the `Observer
+   tutorial<http://gameprogrammingpatterns.com/observer.html>`_ in the
+   Game Programming Patterns ebook.
 
-::
+You can connect these signals to methods the same way you connect built-in
+signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody`.
 
-   # your_notifier.gd
-
-   signal data_found
-
-   var your_data = 42
-
-::
-
-   # your_handler.gd
-
-   func your_handler():
-      print("Your handler was called!")
+In the example below, we connect the ``health_depleted`` signal from a
+``Character`` node to a ``Game`` node. When the ``Character`` node emits the
+signal, the game node's ``_on_Character_health_depleted`` is called:
 
 ::
 
-   # your_game.gd
+   # Game.gd
 
    func _ready():
-      var notifier = your_notifier.new()
-      var handler = your_handler.new()
+      var character_node = get_node('Character')
+      character_node.connect("health_depleted", self, "_on_Character_health_depleted")
 
-      notifier.connect("data_found", handler, "your_handler")
+   func _on_Character_health_depleted():
+      get_tree().reload_current_scene()
 
-GDScript can bind arguments to connections between a signal and a method.
-When the signal is emitted, calling the connected method, the bound argument is
-given to the method. These bound arguments are specific to the connection
-rather than the signal or the method, meaning that each connection has
-unique bindings.
+You can emit as many arguments as you want along with a signal. 
 
-Here is an example that creates a connection between a button's ``pressed`` signal and
-a method, binding the button instance to the connection. The handler uses the
-bound argument to print which button instance was pressed.
+Here is an example where this is useful. Let's say we want a life bar on screen
+to react to health changes with an animation, but we want to keep the user
+interface separate from the player in our scene tree.
+
+In our ``Character.gd`` script, we define a ``health_changed`` signal and emit
+it with :ref:`Object.emit_signal() <class_Object_method_emit_signal>`, and from
+a ``Game`` node higher up our scene tree, we connect it to the ``Lifebar`` using
+the :ref:`Object.connect() <class_Object_method_connect>` method:
+
+::
+
+    # Character.gd
+
+    ...
+    signal health_changed
+
+    func take_damage(amount):
+        var old_health = health
+        health -= amount
+
+        # We emit the health_changed signal every time the
+        # character takes damage
+        emit_signal(health_changed", old_health, health)
+    ...
+
+::
+
+    # Lifebar.gd 
+
+    # Here, we define a function to use as a callback when the
+    # character's health_changed signal is emitted
+
+    ...
+    func _on_Character_health_changed(old_value, new_value):
+        if old_value > new_value:
+            progress_bar.modulate = Color.red
+        else:
+            progress_bar.modulate = Color.green
+
+        # Imagine that `animate` is a user-defined function that animates the
+        # bar filling up or emptying itself
+        progress_bar.animate(old_value, new_value)
+    ...
+
+.. note::
+   
+    To use signals, your class has to extend the ``Object`` class or any
+    type extending it like ``Node``, ``KinematicBody``, ``Control``...
+
+In the ``Game`` node, we get both the ``Character`` and ``Lifebar`` nodes, then
+connect the character, that emits the signal, to the receiver, the ``Lifebar``
+node in this case.
+
+::
+
+   # Game.gd
+
+   func _ready():
+      var character_node = get_node('Character')
+      var lifebar_node = get_node('UserInterface/Lifebar')
+
+      character_node.connect("health_changed", lifebar_node, "_on_Character_health_changed")
+
+This allows the ``Lifebar`` to react to health changes without coupling it to
+the ``Character`` node.
+
+you can write optional argument names in parentheses after the signal's
+definition. 
+
+::
+
+   # Defining a signal that forwards two arguments
+   signal health_changed(old_value, new_value)
+
+These arguments show up in the editor's node dock, and Godot can use them to
+generate callback functions for you. However, you can still emit any number of
+arguments when you emit signals. So it's up to you to emit the correct values.
+
+.. image:: img/gdscript_basics_signals_node_tab_1.png
+
+GDScript can bind an array of values to connections between a signal and a method. When
+the signal is emitted, the callback method receives the bound values. These bound
+arguments are unique to each connection, and the values will stay the same.
+
+You can use this array of values to add extra constant information to the
+connection if the emitted signal itself doesn't give you access to all the data
+that you need.
+
+Building on the example above, let's say we want to display a log of the damage
+taken by each character on the screen, like ``Player1 took 22 damage.``. The
+``health_changed`` signal doesn't give us the name of the character that took
+damage. So when we connect the signal to the in-game console, we can add the
+character's name in the binds array argument:
 
 ::
    
-   func pressed_handler(which):
-      print("A button was pressed! Button's name was:", which.get_name())
+   # Game.gd
 
    func _ready():
-      for button in get_node("buttons").get_children()
-         # Connect the button's 'pressed' signal to our 'pressed_handler' method
-         # Bind the button to the connection so we know which button was pressed
-         button.connect("pressed", self, "pressed_handler", [button])
+      var character_node = get_node('Character')
+      var battle_log_node = get_node('UserInterface/BattleLog')
 
-Signals are generated by the :ref:`Object.emit_signal() <class_Object_method_emit_signal>`
-method which broadcasts the signal and arguments.
+      character_node.connect("health_changed", battle_log_node, "_on_Character_health_changed", [character_node.name])
 
-Extending a previous example to use all the features of GDScript signals:
+Our ``BattleLog`` node receives each element in the binds array as an extra argument:
 
 ::
 
-   # your_notifier.gd
+   # BattleLog.gd
 
-   signal data_found(data)
+   func _on_Character_health_changed(old_value, new_value, character_name):
+      if not new_value <= old_value:
+         return
+      var damage = new_value - old_value
+      label.text += character_name + " took " + str(damage) + " damage."
 
-   var your_data = 42
-
-   func _process(delta):
-      if delta == your_data:
-         emit_signal("data_found", your_data)
-
-::
-
-   # your_handler.gd
-
-   func your_handler(data, obj):
-      print("Your handler was called from: ", obj.get_name(), " with data: ", data)
-
-::
-
-   # your_game.gd
-
-   func _ready():
-      var notifier = your_notifier.new()
-      var handler = your_handler.new()
-
-      notifier.connect("data_found", handler, "your_handler", [notifier])
 
 Coroutines with yield
 ~~~~~~~~~~~~~~~~~~~~~

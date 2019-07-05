@@ -111,19 +111,19 @@ Similar code as before, but draw a square using indices:
 
     normal_array[0] = Vector3(0, 0, 1)
     uv_array[0] = Vector2(0, 0)
-    vertex_array[0] = Vector3(-1, -1)
+    vertex_array[0] = Vector3(-1, -1, 0)
 
     normal_array[1] = Vector3(0, 0, 1)
     uv_array[1] = Vector2(0,1)
-    vertex_array[1] = Vector3(-1, 1)
+    vertex_array[1] = Vector3(-1, 1, 0)
 
     normal_array[2] = Vector3(0, 0, 1)
     uv_array[2] = Vector2(1, 1)
-    vertex_array[2] = Vector3(1, 1)
+    vertex_array[2] = Vector3(1, 1, 0)
 
     normal_array[3] = Vector3(0, 0, 1)
     uv_array[3] = Vector2(1, 0)
-    vertex_array[3] = Vector3(1, -1)
+    vertex_array[3] = Vector3(1, -1, 0)
 
     # Indices are optional in Godot, but if they exist they are used.
     index_array[0] = 0

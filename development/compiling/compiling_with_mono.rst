@@ -12,9 +12,9 @@ Requirements
 - MSBuild
 - NuGet
 - pkg-config
-- NuGet
 
-You may need to import necessary certificates for NuGet to perform HTTPS requests. You can do this with the following command (on Windows, you can run it from the Mono command line prompt):
+You may need to import necessary certificates for NuGet to perform HTTPS requests. You can do this
+with the following command (on Windows, you can run it from the Mono command line prompt):
 
 ::
 
@@ -23,25 +23,32 @@ You may need to import necessary certificates for NuGet to perform HTTPS request
 Environment variables
 ---------------------
 
-By default, SCons will try to find Mono in the Windows Registry on Windows or via ``pkg-config`` on other platforms. You can specify a different installation directory by using the following environment variables for the respective ``bits`` option: ``MONO32_PREFIX`` and ``MONO64_PREFIX``.
+By default, SCons will try to find Mono in the Windows Registry on Windows or via ``pkg-config`` on other platforms.
+You can specify a different installation directory by using the following environment variables for the respective
+``bits`` option: ``MONO32_PREFIX`` and ``MONO64_PREFIX``.
 
 The specified directory must contain the subdirectories ``bin``, ``include``, and ``lib``.
 
 Enable the Mono module
 ----------------------
 
-By default, the mono module is disabled for builds. To enable it you can pass the option ``module_mono_enabled=yes`` to your SCons command.
+By default, the mono module is disabled for builds. To enable it you can pass the
+option ``module_mono_enabled=yes`` to your SCons command.
 
 Generate the glue
 -------------------
 
-The glue sources are the wrapper functions that will be called by managed methods. These source files must be generated before building your final binaries. In order to generate them, first, you must build a temporary Godot binary with the options ``tools=yes`` and ``mono_glue=no``:
+The glue sources are the wrapper functions that will be called by managed methods. These source
+files must be generated before building your final binaries. In order to generate them, first,
+you must build a temporary Godot binary with the options ``tools=yes`` and ``mono_glue=no``:
 
 ::
 
     scons p=<platform> tools=yes module_mono_enabled=yes mono_glue=no
 
-After the build finishes, you need to run the compiled executable with the parameter ``--generate-mono-glue`` followed by the path to an output directory. This path must be ``modules/mono/glue`` in the Godot directory.
+After the build finishes, you need to run the compiled executable with the parameter
+``--generate-mono-glue`` followed by the path to an output directory. This path
+must be ``modules/mono/glue`` in the Godot directory.
 
 ::
 
@@ -51,19 +58,26 @@ This command will tell Godot to generate the file ``modules/mono/glue/mono_glue.
 Once this file is generated, you can build Godot for all the desired targets without the need to repeat this process.
 
 ``<godot_binary>`` refers to the tools binary you compiled above with the Mono module enabled.
-Its exact name will differ based on your system and configuration, but should be of the form ``bin/godot.<platform>.tools.<bits>.mono``, e.g. ``bin/godot.x11.tools.64.mono`` or ``bin/godot.windows.tools.64.exe``.
-Be especially aware of the **.mono** suffix! If you compiled Godot without Mono support previously, you might have similarly named binaries without this suffix which can't be used to generate the Mono glue.
+Its exact name will differ based on your system and configuration, but should be of the form
+``bin/godot.<platform>.tools.<bits>.mono``, e.g. ``bin/godot.x11.tools.64.mono`` or ``bin/godot.windows.tools.64.exe``.
+Be especially aware of the **.mono** suffix! If you compiled Godot without Mono support previously,
+you might have similarly named binaries without this suffix which can't be used to generate the Mono glue.
 
 Notes
 ^^^^^
--  **Do not** build your final binaries with ``mono_glue=no``. This disables C# scripting. This option must be used only for the temporary binary that will generate the glue. Godot will print a warning at startup if it was built without the glue sources.
--  The glue sources must be regenerated every time the ClassDB bindings changes. That is, for example, when a new method is added to ClassDB or one of the parameter of such a method changes. Godot will print an error at startup if there is an API mismatch between ClassDB and the glue sources.
+-  **Do not** build your final binaries with ``mono_glue=no``. This disables C# scripting.
+   This option must be used only for the temporary binary that will generate the glue.
+   Godot will print a warning at startup if it was built without the glue sources.
+-  The glue sources must be regenerated every time the ClassDB registered API changes. That is, for example,
+   when a new method is registered to the scripting API or one of the parameter of such a method changes.
+   Godot will print an error at startup if there is an API mismatch between ClassDB and the glue sources.
+
 
 Rebuild with Mono glue
 ----------------------
 
 Once you have generated the Mono glue, you can build the final binary with ``mono_glue=yes``.
-It's the default value for ``mono_glue`` so you can also omit it. You can build the Mono-enabled editor:
+This is the default value for ``mono_glue`` so you can also omit it. You can build the Mono-enabled editor:
 
 ::
 
@@ -77,8 +91,12 @@ And Mono-enabled export templates:
 
 If everything went well, apart from the normal output SCons should have created the following files in the ``bin`` directory:
 
-- If you're not static linking the Mono runtime, the build script will place the Mono runtime shared library next to the Godot binary.
-- Unlike "classical" Godot builds, when building with the mono module enabled a data directory will be created both for the editor and for export templates. This directory is important for proper functioning and must be distributed together with Godot. More details about this directory in :ref:`Data directory<compiling_with_mono_data_directory>`.
+-  If you're not static linking the Mono runtime, the build script will place the Mono runtime shared library (``monosgen-2.0``) next
+   next to the Godot binary in the output directory. Make sure to include this library when distributing Godot.
+-  Unlike "classical" Godot builds, when building with the mono module enabled and depending of the target platform a data directory
+   may be created both for the editor and for export templates. This directory is important for proper functioning and must be
+   distributed together with Godot. More details about this directory in :ref:`Data directory<compiling_with_mono_data_directory>`.
+
 
 Examples
 --------
@@ -120,18 +138,22 @@ Example (X11)
 Data directory
 --------------
 
-The data directory is a dependency for Godot binaries built with the mono module enabled. It contains files that are important for the correct functioning of Godot. It must be distributed next to the Godot executable.
+The data directory is a dependency for Godot binaries built with the mono module enabled. It contains files
+that are important for the correct functioning of Godot. It must be distributed together with the Godot executable.
 
 Export templates
 ^^^^^^^^^^^^^^^^
 
-The name of the data directory for a export template differs based on the configuration it was built with. The format is ``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.x11.32.debug`` or ``data.mono.windows.64.release``.
+The name of the data directory for a export template differs based on the configuration it was built with.
+The format is ``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.x11.32.debug`` or ``data.mono.windows.64.release``.
 
-In the case of export templates the data directory only contains Mono framework assemblies and configuration files, as well as some shared library dependencies like ``MonoPosixHelper``.
+This directory must be placed with its original name next to the Godot export templates.
+When exporting a project, Godot will also copy this directory with the game executable but
+the name will be changed to ``data_<APPNAME>``, where ``<APPNAME>`` is the application name
+as specified in the project setting ``application/config/name``.
 
-This directory must be placed with its original name next to the Godot export templates. When exporting a project, Godot will also copy this directory with the game executable but the name will be changed to ``data_<APPNAME>``, where ``<APPNAME>`` is the application name as specified in the project setting ``application/config/name``.
-
-In the case of macOS, where the export template is compressed as a zip file, the contents of the data directory can be placed in the following locations inside the zip:
+In the case of macOS, where the export template is compressed as a zip file, the
+contents of the data directory can be placed in the following locations inside the zip:
 
 +-------------------------------------------------------+---------------------------------------------------------------+
 | ``bin/data.mono.<platform>.<bits>.<target>/Mono/lib`` | ``/osx_template.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
@@ -140,9 +162,10 @@ In the case of macOS, where the export template is compressed as a zip file, the
 +-------------------------------------------------------+---------------------------------------------------------------+
 
 Editor
-^^^^^^^^
+^^^^^^
 
-The name of the data directory for the Godot editor will always be ``GodotSharp``. The main structure of this directory has the following subdirectories:
+The name of the data directory for the Godot editor will always be ``GodotSharp``.
+The contents of this directory are the following:
 
 - ``Api`` (optional)
 - ``Mono`` (optional)
@@ -188,6 +211,7 @@ The following is an example script for building and copying the Godot API assemb
 The script assumes it's being executed from the directory where SConstruct is located.
 ``<godot_binary>`` refers to the tools binary compiled with the Mono module enabled.
 
+The ``Api`` subdirectory contains the Godot API assemblies.
 In the case of macOS, if the Godot editor is distributed as a bundle, the contents of the data directory may be placed in the following locations:
 
 +-------------------------------------------------------+---------------------------------------------------------------+
@@ -199,6 +223,12 @@ In the case of macOS, if the Godot editor is distributed as a bundle, the conten
 +-------------------------------------------------------+---------------------------------------------------------------+
 | ``bin/data.mono.<platform>.<bits>.<target>/Tools``    | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Tools``    |
 +-------------------------------------------------------+---------------------------------------------------------------+
+
+The ``Mono`` subdirectory is optional but will be needed when distributing the editor, as some issues might arise
+when the installed Mono version in the user's system is not be the same as the one the Godot editor was built with.
+Pass ``copy_mono_root=yes`` to SCons when building the editor in order to create this folder and its contents.
+
+The ``Tools`` subdirectory contains tools required by the editor, like the ``GodotTools`` assemblies and its dependencies.
 
 Command-line options
 --------------------

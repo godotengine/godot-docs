@@ -25,21 +25,22 @@ Video tutorials
 - `Game from Scratch <https://www.youtube.com/watch?v=iDEcP8Mc-7s&list=PLS9MbmO_ssyDk79j9ewONxV88fD5e_o5d>`_
 - `HeartBeast <https://www.youtube.com/watch?v=wETY5_9kFtA&list=PL9FzW-m48fn2jlBu_0DRh7PvAt-GULEmd>`_
 - `Jeremy Bullock <https://www.youtube.com/channel/UCwJw2-V5S1TkBjLQ3_Ws54g>`_
-- `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`_
+- `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`__
 - `Mister Taft Creates <https://www.youtube.com/playlist?list=PL4vbr3u7UKWqwQlvwvgNcgDL1p_3hcNn2>`_
 - `Miziziziz <https://www.youtube.com/playlist?list=PLmugv6_kd0qN6AyjG245_Pdak4MXKUx88>`_
 - `P1X / Krzysztof Jankowski <https://www.youtube.com/playlist?list=PLvDk7UKhld4xGPovdB4IFtAHYMYjx_-3K>`_
 - `Pigdev <https://www.youtube.com/playlist?list=PLPMN4vCRFdordS3E-3zi0Hdh7pAsbWQ6a>`_
-- `Steincodes <https://www.youtube.com/c/steincodes/playlists>`_
+- `Steincodes <https://www.youtube.com/c/steincodes/playlists>`__
 
 Text tutorials
 --------------
 
-- `KidsCanCode <http://kidscancode.org/blog/tags/godot/>`_
-- `Steincodes <https://steincodes.tumblr.com>`_
+- `KidsCanCode <http://kidscancode.org/blog/tags/godot/>`__
+- `Steincodes <https://steincodes.tumblr.com>`__
 
 Devlogs
 -------
+
 - `Andrea Catania (Physics & AI) <https://www.youtube.com/channel/UCm4RuvYtgpgFDTCgaEUT5uQ/videos>`_
 - `Bastiaan Olij (AR & VR) <https://www.youtube.com/channel/UCrbLJYzJjDf2p-vJC011lYw/videos>`_
 

@@ -10,7 +10,7 @@ Requirements
 
 To compile export templates for the Web, the following is required:
 
--  `Emscripten 1.38.22+ <http://kripken.github.io/emscripten-site>`__: If the version available
+-  `Emscripten 1.38.27+ <http://kripken.github.io/emscripten-site>`__: If the version available
    per package manager is not recent enough, the best alternative is to install
    using the `Emscripten SDK <http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html>`__
 -  `Python 2.7+ or Python 3.5+ <https://www.python.org/>`__

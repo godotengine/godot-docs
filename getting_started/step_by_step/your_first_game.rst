@@ -1145,6 +1145,13 @@ current node at the end of the current frame.
 
     func _on_start_game():
         queue_free()
+ 
+ .. code-tab:: csharp
+
+    public void OnStartGame()
+    {
+        QueueFree();
+    }
           
 Then in ``Main.gd`` add a new line inside the ``_on_MobTimer_timeout()`` function,
 at the end.
@@ -1153,6 +1160,10 @@ at the end.
  .. code-tab:: gdscript GDScript
 
     $HUD.connect("start_game", mob, "_on_start_game")
+
+ .. code-tab:: csharp
+ 
+    GetNode("HUD").Connect("StartGame", mobInstance, "OnStartGame");
 
 This line tells the new Mob node (referenced by the ``mob`` variable) to respond
 to any ``start_game`` signal emitted by the ``HUD`` node by running its

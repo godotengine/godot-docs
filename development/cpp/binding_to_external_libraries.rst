@@ -22,10 +22,11 @@ Next, you will create a header file with a simple TTS class:
 .. code:: cpp
 
     /* tts.h */
+
     #ifndef GODOT_TTS_H
     #define GODOT_TTS_H
 
-    #include <reference.h>
+    #include "core/reference.h"
 
     class TTS : public Reference {
         GDCLASS(TTS, Reference);
@@ -34,7 +35,7 @@ Next, you will create a header file with a simple TTS class:
         static void _bind_methods();
 
     public:
-        bool say_text(String txt);
+        bool say_text(String p_txt);
 
         TTS();
     };
@@ -48,12 +49,13 @@ And then you'll add the cpp file.
     /* tts.cpp */
 
     #include "tts.h"
-    #include "festival/src/include/festival.h"
 
-    bool TTS::say_text(String txt) {
+    #include <festival.h>
+
+    bool TTS::say_text(String p_txt) {
 
         //convert Godot String to Godot CharString to C string
-        return festival_say_text(txt.ascii().get_data());
+        return festival_say_text(p_txt.ascii().get_data());
     }
 
     void TTS::_bind_methods() {
@@ -89,8 +91,7 @@ With the following contents:
 
     #include "register_types.h"
 
-    #include "class_db.h"
-
+    #include "core/class_db.h"
     #include "tts.h"
 
     void register_tts_types() {
@@ -98,7 +99,7 @@ With the following contents:
     }
 
     void unregister_tts_types() {
-       //nothing to do here
+        // Nothing to do here in this example.
     }
 
 Next, you need to create a ``SCsub`` file so the build system compiles
@@ -107,10 +108,11 @@ this module:
 .. code:: python
 
     # SCsub
+
     Import('env')
 
-    env_tts = env
-    env_tts.add_source_files(env.modules_sources,"*.cpp") # Add all cpp files to the build
+    env_tts = env.Clone()
+    env_tts.add_source_files(env.modules_sources, "*.cpp") # Add all cpp files to the build
 
 You'll need to install the external library on your machine to get the .a library files.  See the library's official
 documentation for specific instructions on how to do this for your operation system.  We've included the
@@ -157,7 +159,7 @@ environment's paths:
 
 .. code:: python
 
-    env_tts.Append(CPPPATH="speech_tools/include", "festival/src/include") # this is a path relative to /modules/tts/
+    env_tts.Append(CPPPATH=["speech_tools/include", "festival/src/include"]) # this is a path relative to /modules/tts/
     # http://www.cstr.ed.ac.uk/projects/festival/manual/festival_28.html#SEC132 <-- Festival library documentation
     env_tts.Append(LIBPATH=['libpath']) # this is a path relative to /modules/tts/ where your .a library files reside
     # You should check with the documentation of the external library to see which library files should be included/linked
@@ -170,11 +172,13 @@ Example `SCsub` with custom flags:
 .. code:: python
 
     # SCsub
+
     Import('env')
 
-    env_tts = env
-    env_tts.add_source_files(env.modules_sources,"*.cpp")
-    env_tts.Append(CXXFLAGS=['-O2', '-std=c++11'])
+    env_tts = env.Clone()
+    env_tts.add_source_files(env.modules_sources, "*.cpp")
+    env_tts.Append(CCFLAGS=['-O2']) # Flags for C and C++ code
+    env_tts.Append(CXXFLAGS=['-std=c++11']) # Flags for C++ code only
 
 The final module should look like this:
 
@@ -201,7 +205,7 @@ You can now use your newly created module from any script:
 ::
 
     var t = TTS.new()
-    var script = "Hello world.  This is a test!"
+    var script = "Hello world. This is a test!"
     var is_spoken = t.say_text(script)
     print('is_spoken: ', is_spoken)
 

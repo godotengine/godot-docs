@@ -89,7 +89,7 @@ Groups
 
 Groups in Godot work like tags you might have come across in other software.
 A node can be added to as many groups as desired. This is a useful feature for
-organizing large scenes. There are two ways to do add nodes to groups. The
+organizing large scenes. There are two ways to add nodes to groups. The
 first is from the UI, using the Groups button under the Node panel:
 
 .. image:: img/groups_in_nodes.png

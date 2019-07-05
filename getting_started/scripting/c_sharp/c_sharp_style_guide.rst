@@ -20,9 +20,9 @@ of the language, we encourage you to do the same, especially if you do not have 
 Language specification
 ----------------------
 
-Currently, Godot uses C# version 6.0 in its engine and example source code. So, before we move to
-a newer version, care must be taken to avoid mixing language features only available in C# 7.0 or
-later, such as pattern matching or expression-bodied members inside get/set accessors.
+Godot currently uses **C# version 7.0** in its engine and example source code. So, before we move to
+a newer version, care must be taken to avoid mixing language features only available in C# 7.1 or
+later.
 
 For detailed information on C# features in different versions, please see
 `What's New in C# <https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/>`_.
@@ -30,14 +30,15 @@ For detailed information on C# features in different versions, please see
 Formatting conventions
 ----------------------
 
-* If you create a new file, make sure that it uses linefeed (*LF*) characters to break lines, not *CRLF* or *CR*.
-* Use UTF-8 encoding without a byte order mark (BOM <https://en.wikipedia.org/wiki/Byte_order_mark>).
-* Use 4 spaces instead of tabs for indentation (which is referred to as 'soft tabs').
+* Use line feed (**LF**) characters to break lines, not CRLF or CR.
+* Use **UTF-8** encoding without a `byte order mark <https://en.wikipedia.org/wiki/Byte_order_mark>`_.
+* Use **4 spaces** instead of tabs for indentation (which is referred to as "soft tabs").
+* Consider breaking a line into several if it's longer than 100 characters.
 
 Line breaks and blank lines
 ---------------------------
 
-For a general indentation rule, follow `The 'Allman Style' <https://en.wikipedia.org/wiki/Indentation_style#Allman_style>`_
+For a general indentation rule, follow `the "Allman Style" <https://en.wikipedia.org/wiki/Indentation_style#Allman_style>`_
 which recommends placing the brace associated with a control statement on the next line, indented to
 the same level:
 
@@ -82,8 +83,9 @@ However, you may choose to omit line breaks inside brackets:
 
 Insert a blank line:
 
-* After *using* statement list.
+* After a list of ``using`` statements.
 * Between method, properties, and inner type declarations.
+* At the end of each file.
 
 Field and constant declarations can be grouped together according to relevance. In that case, consider
 inserting a blank line between the groups for easier reading.
@@ -92,47 +94,43 @@ Avoid inserting a blank line:
 
 * After ``{``, the opening brace.
 * Before ``}``, the closing brace.
-* After a comment block, or a single line comment.
+* After a comment block or a single-line comment.
 * Adjacent to another blank line.
 
 .. code-block:: csharp
 
     using System;
     using Godot;
-                                                  // Blank line after using list.
+                                              // Blank line after `using` list.
     public class MyClass
-    {                                             // No blank line after '{'.
+    {                                         // No blank line after `{`.
         public enum MyEnum
         {
             Value,
-            AnotherValue                          // No blank line before '}'.
+            AnotherValue                      // No blank line before `}`.
         }
-                                                  // Blank line around inner types.
+                                              // Blank line around inner types.
         public const int SomeConstant = 1;
         public const int AnotherConstant = 2;
 
-        private Vector3 _x;
-        private Vector3 _y;                       // Related constants or fields can be
-                                                  // grouped together.
+        private Vector3 _x;                  // Related constants or fields can be
+        private Vector3 _y;                  // grouped together.
+
         private float _width;
         private float _height;
 
         public int MyProperty { get; set; }
-                                                  // Blank line around properties.
+                                              // Blank line around properties.
         public void MyMethod()
         {
             // Some comment.
-            AnotherMethod();                      // No blank line after a comment.
+            AnotherMethod();                  // No blank line after a comment.
         }
-                                                  // Blank line around methods.
+                                              // Blank line around methods.
         public void AnotherMethod()
         {
         }
     }
-
-Consider breaking a line when it's longer than 100 characters. And it's also a good practice to
-insert a line feed (LF) character at the end of a file because some utilities have trouble
-recognizing the last line without it (e.g. the *cat* command on Linux).
 
 Using spaces
 ------------
@@ -140,15 +138,15 @@ Using spaces
 Insert a space:
 
 * Around a binary and tertiary operator.
-* Between an opening parenthesis and *if*, *for*, *foreach*, *catch*, *while*, *lock* or *using* keywords.
+* Between an opening parenthesis and ``if``, ``for``, ``foreach``, ``catch``, ``while``, ``lock`` or ``using`` keywords.
 * Before and within a single line accessor block.
 * Between accessors in a single line accessor block.
-* After a comma.
-* After a semi-colon in a *for* statement.
-* After a colon in a single line *case* statement.
+* After a comma which is not at the end of a line.
+* After a semicolon in a ``for`` statement.
+* After a colon in a single line ``case`` statement.
 * Around a colon in a type declaration.
 * Around a lambda arrow.
-* After a single line comment symbol ('//'), and before it if used at the end of a line.
+* After a single-line comment symbol (``//``), and before it if used at the end of a line.
 
 Do not use a space:
 
@@ -192,7 +190,7 @@ The following example shows a proper use of spaces, according to some of the abo
 Naming conventions
 ------------------
 
-Use *PascalCase* for all namespaces, type names and member level identifiers (i.e. methods, properties,
+Use **PascalCase** for all namespaces, type names and member level identifiers (i.e. methods, properties,
 constants, events), except for private fields:
 
 .. code-block:: csharp
@@ -213,12 +211,12 @@ constants, events), except for private fields:
         }
     }
 
-Use *camelCase* for all other identifiers (i.e. local variables, method arguments), and use
-underscore('_') as a prefix for private fields (but not for methods or properties, as explained above):
+Use **camelCase** for all other identifiers (i.e. local variables, method arguments), and use
+an underscore (``_``) as a prefix for private fields (but not for methods or properties, as explained above):
 
 .. code-block:: csharp
 
-    private Vector3 _aimingAt; // Use '_' prefix for private fields.
+    private Vector3 _aimingAt; // Use a `_` prefix for private fields.
 
     private void Attack(float attackStrength)
     {
@@ -227,10 +225,10 @@ underscore('_') as a prefix for private fields (but not for methods or propertie
         targetFound?.Hit(attackStrength);
     }
 
-There's an exception with acronyms which consist of two letters, like *'UI'*, which should be written in
-uppercase letters when used where Pascal case would be expected, and in lowercase letters otherwise.
+There's an exception with acronyms which consist of two letters, like ``UI``, which should be written in
+uppercase letters where PascalCase would be expected, and in lowercase letters otherwise.
 
-Note that *'id'* is **not** an acronym, so it should be treated as a normal identifier:
+Note that ``id`` is **not** an acronym, so it should be treated as a normal identifier:
 
 .. code-block:: csharp
 
@@ -241,20 +239,20 @@ Note that *'id'* is **not** an acronym, so it should be treated as a normal iden
         get { return uiManager; }
     }
 
-It is generally discouraged to use a type name as a prefix of an identifier, like *'string strText'*
-or *'float fPower'*, for example. An exception is made, however, for interfaces, which
-**should**, in fact, have an uppercase letter *'I'* prefixed to their names, like *'IInventoryHolder'* or *'IDamageable'*.
+It is generally discouraged to use a type name as a prefix of an identifier, like ``string strText``
+or ``float fPower``, for example. An exception is made, however, for interfaces, which
+**should**, in fact, have an uppercase letter ``I`` prefixed to their names, like ``IInventoryHolder`` or ``IDamageable``.
 
 Lastly, consider choosing descriptive names and do not try to shorten them too much if it affects
 readability.
 
-For instance, if you want to write code to find a nearby enemy and hit it with a weapon, prefer
+For instance, if you want to write code to find a nearby enemy and hit it with a weapon, prefer:
 
 .. code-block:: csharp
 
     FindNearbyEnemy()?.Damage(weaponDamage);
 
-Rather than,
+Rather than:
 
 .. code-block:: csharp
 
@@ -263,7 +261,7 @@ Rather than,
 Implicitly typed local variables
 --------------------------------
 
-Consider using implicitly typing (*'var'*) for declaration of a local variable, but do so
+Consider using implicitly typing (``var``) for declaration of a local variable, but do so
 **only when the type is evident** from the right side of the assignment:
 
 .. code-block:: csharp
@@ -287,8 +285,8 @@ Consider using implicitly typing (*'var'*) for declaration of a local variable, 
     var velocity = direction * 1.5;
 
     // It's generally a better idea to use explicit typing for numeric values, especially with
-    // the existence of 'real_t' alias in Godot, which can either be double or float depending
-    // on the build configuration.
+    // the existence of the `real_t` alias in Godot, which can either be double or float
+    // depending on the build configuration.
 
     var value = 1.5;
 
@@ -297,9 +295,10 @@ Other considerations
 
  * Use explicit access modifiers.
  * Use properties instead of non-private fields.
- * Use modifiers in this order: *'public/protected/private/internal virtual/override/abstract/new static readonly'*.
- * Avoid using fully qualified names or *'this.'* prefix for members when it's not necessary.
- * Remove unused *'using'* statements and unnecessary parentheses.
- * Consider omitting default initial value for a type.
+ * Use modifiers in this order:
+   ``public``/``protected``/``private``/``internal``/``virtual``/``override``/``abstract``/``new``/``static``/``readonly``.
+ * Avoid using fully-qualified names or ``this.`` prefix for members when it's not necessary.
+ * Remove unused ``using`` statements and unnecessary parentheses.
+ * Consider omitting the default initial value for a type.
  * Consider using null-conditional operators or type initializers to make the code more compact.
  * Use safe cast when there is a possibility of the value being a different type, and use direct cast otherwise.

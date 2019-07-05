@@ -49,7 +49,7 @@ Some games have a special menu (often in the settings) to display licenses.
 Output log
 ^^^^^^^^^^
 
-Just printing the licensing text using a print() function may be enough on platforms where a global output log is readable (as an example, mobile devices).
+Just printing the licensing text using a :ref:`print() <class_@GDScript_method_print>` function may be enough on platforms where a global output log is readable (as an example, mobile devices).
 
 Accompanying file
 ^^^^^^^^^^^^^^^^^
@@ -64,7 +64,7 @@ If the game includes printed manuals, license text can be included there.
 Third Party licenses
 --------------------
 
-Godot itself contains software written by `third parties <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_. Most of it does not requiere license inclusion, but some do. Make sure to do it if you are using them. Here is a list of which ones require it:
+Godot itself contains software written by `third parties <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_. Most of it does not require license inclusion, but some do. Make sure to do it if you are using them. Here is a list of which ones require it:
 
 FreeType
 ^^^^^^^^
@@ -78,7 +78,7 @@ Godot uses `FreeType <https://www.freetype.org/>`_ to render fonts. It's license
 ENet
 ^^^^
 
-If the project being creater is a multiplayer game using the `ENet <http://enet.bespin.org/>`_ driver, ENet has similar licensing terms as Godot
+If the project being created is a multiplayer game using the `ENet <http://enet.bespin.org/>`_ driver, ENet has similar licensing terms as Godot
 
 
 	Copyright (c) 2002-2016 Lee Salzman
@@ -92,7 +92,7 @@ If the project being creater is a multiplayer game using the `ENet <http://enet.
 MBedTLS
 ^^^^^^^
 
-If the is done with Godot 3.1 or above and it utilizes SSL (usually through HTTP requests), the `MBedTLS <https://tls.mbed.org>`_ Apache license needs to be complied by including the following text:
+If the project is done with Godot 3.1 or above and it utilizes SSL (usually through HTTP requests), the `MBedTLS <https://tls.mbed.org>`_ Apache license needs to be complied by including the following text:
 
 
 	MBedTLS is Copyright (C) 2013-2019 ARM

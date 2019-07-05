@@ -57,7 +57,7 @@ the following format:
   
   shader_type canvas_item;
 
-Becuase we are writing a CanvasItem shader, we specify ``canvas_item`` in the first line. All our code will
+Because we are writing a CanvasItem shader, we specify ``canvas_item`` in the first line. All our code will
 go beneath this declaration.
 
 This line tells the engine which built-in variables and functionality to supply you with.

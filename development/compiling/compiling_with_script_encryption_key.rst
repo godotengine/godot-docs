@@ -1,9 +1,9 @@
 .. _doc_compiling_with_script_encryption_key:
 
-.. highlight:: shell
-
 Compiling with script encryption key
 ====================================
+
+.. highlight:: shell
 
 The export dialog gives you the option to encrypt your scripts with an 256bit
 AES key, when releasing your game. This will make sure your scripts are not

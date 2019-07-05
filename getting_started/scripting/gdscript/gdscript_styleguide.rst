@@ -69,7 +69,20 @@ regular code blocks.
 Blank lines
 ~~~~~~~~~~~
 
-Surround functions and class definitions with a blank line.
+Surround functions and class definitions with two blank lines:
+
+::
+
+    func heal(amount):
+        health += amount
+        health = min(health, max_health)
+        emit_signal("health_changed", health)
+
+
+    func take_damage(amount, effect=null):
+        health -= amount
+        health = max(0, health)
+        emit_signal("health_changed", health)
 
 Use one blank line inside functions to separate logical sections.
 
@@ -194,3 +207,42 @@ Constants
 
 Use CONSTANT\_CASE, all caps, with an underscore (\_) to separate words:
 ``const MAX_SPEED = 200``
+
+Static typing
+-------------
+
+Since Godot 3.1, GDScript supports :ref:`optional static typing<doc_gdscript_static_typing>`.
+
+Type hints
+~~~~~~~~~~
+
+Place the colon right after the variable's name, without a space, and let the GDScript compiler infer the variable's type when possible.
+
+
+**Good**:
+
+::
+
+   onready var health_bar: ProgressBar = get_node("UI/LifeBar")
+
+   var health := 0 # The compiler will use the int type
+
+**Bad**:
+
+::
+
+   # The compiler can't infer the exact type and will use Node 
+   # instead of ProgressBar
+   onready var health_bar := get_node("UI/LifeBar") 
+
+When you let the compiler infer the type hint, write the colon and equal signs together: ``:=``.
+
+::
+
+   var health := 0 # The compiler will use the int type
+
+Add a space on either sides of the return type arrow when defining functions.
+
+::
+
+   func heal(amount: int) -> void:
