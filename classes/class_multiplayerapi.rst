@@ -20,6 +20,8 @@ Properties
 ----------
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`                   |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`                                     |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_MultiplayerAPI_property_refuse_new_network_connections>` |
@@ -141,6 +143,20 @@ It is possible to override the MultiplayerAPI instance used by specific Nodes by
 
 Property Descriptions
 ---------------------
+
+.. _class_MultiplayerAPI_property_allow_object_decoding:
+
+- :ref:`bool<class_bool>` **allow_object_decoding**
+
++----------+----------------------------------+
+| *Setter* | set_allow_object_decoding(value) |
++----------+----------------------------------+
+| *Getter* | is_object_decoding_allowed()     |
++----------+----------------------------------+
+
+If ``true`` (or if the :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` :ref:`PacketPeer.allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` the MultiplayerAPI will allow encoding and decoding of object during RPCs/RSETs.
+
+**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
 
 .. _class_MultiplayerAPI_property_network_peer:
 

@@ -73,7 +73,7 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_sha256<class_File_method_get_sha256>` **(** :ref:`String<class_String>` path **)** const                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`get_var<class_File_method_get_var>` **(** **)** const                                                                                                                                  |
+| :ref:`Variant<class_Variant>`                 | :ref:`get_var<class_File_method_get_var>` **(** :ref:`bool<class_bool>` allow_objects=false **)** const                                                                                      |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_open<class_File_method_is_open>` **(** **)** const                                                                                                                                  |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -113,7 +113,7 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`store_string<class_File_method_store_string>` **(** :ref:`String<class_String>` string **)**                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`store_var<class_File_method_store_var>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                |
+| void                                          | :ref:`store_var<class_File_method_store_var>` **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` full_objects=false **)**                                                    |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -256,6 +256,8 @@ Returns the next 8 bits from the file as an integer.
 
 Returns the whole file as a :ref:`String<class_String>`.
 
+Text is interpreted as being UTF-8 encoded.
+
 .. _class_File_method_get_buffer:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **get_buffer** **(** :ref:`int<class_int>` len **)** const
@@ -267,6 +269,8 @@ Returns next ``len`` bytes of the file as a :ref:`PoolByteArray<class_PoolByteAr
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_csv_line** **(** :ref:`String<class_String>` delim="," **)** const
 
 Returns the next value of the file in CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma), it should be one character long.
+
+Text is interpreted as being UTF-8 encoded.
 
 .. _class_File_method_get_double:
 
@@ -298,6 +302,8 @@ Returns the size of the file in bytes.
 
 Returns the next line of the file as a :ref:`String<class_String>`.
 
+Text is interpreted as being UTF-8 encoded.
+
 .. _class_File_method_get_md5:
 
 - :ref:`String<class_String>` **get_md5** **(** :ref:`String<class_String>` path **)** const
@@ -315,6 +321,8 @@ Returns the last time the ``file`` was modified in unix timestamp format or retu
 - :ref:`String<class_String>` **get_pascal_string** **(** **)**
 
 Returns a :ref:`String<class_String>` saved in Pascal format from the file.
+
+Text is interpreted as being UTF-8 encoded.
 
 .. _class_File_method_get_path:
 
@@ -348,9 +356,11 @@ Returns a SHA-256 :ref:`String<class_String>` representing the file at the given
 
 .. _class_File_method_get_var:
 
-- :ref:`Variant<class_Variant>` **get_var** **(** **)** const
+- :ref:`Variant<class_Variant>` **get_var** **(** :ref:`bool<class_bool>` allow_objects=false **)** const
 
-Returns the next :ref:`Variant<class_Variant>` value from the file.
+Returns the next :ref:`Variant<class_Variant>` value from the file. When ``allow_objects`` is ``true`` decoding objects is allowed.
+
+**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
 
 .. _class_File_method_is_open:
 
@@ -430,6 +440,8 @@ Stores the given array of bytes in the file.
 
 Store the given :ref:`PoolStringArray<class_PoolStringArray>` in the file as a line formatted in the CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma), it should be one character long.
 
+Text will be encoded as UTF-8.
+
 .. _class_File_method_store_double:
 
 - void **store_double** **(** :ref:`float<class_float>` value **)**
@@ -448,11 +460,15 @@ Stores a floating point number as 32 bits in the file.
 
 Stores the given :ref:`String<class_String>` as a line in the file.
 
+Text will be encoded as UTF-8.
+
 .. _class_File_method_store_pascal_string:
 
 - void **store_pascal_string** **(** :ref:`String<class_String>` string **)**
 
 Stores the given :ref:`String<class_String>` as a line in the file in Pascal format (i.e. also store the length of the string).
+
+Text will be encoded as UTF-8.
 
 .. _class_File_method_store_real:
 
@@ -466,9 +482,11 @@ Stores a floating point number in the file.
 
 Stores the given :ref:`String<class_String>` in the file.
 
+Text will be encoded as UTF-8.
+
 .. _class_File_method_store_var:
 
-- void **store_var** **(** :ref:`Variant<class_Variant>` value **)**
+- void **store_var** **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` full_objects=false **)**
 
-Stores any Variant value in the file.
+Stores any Variant value in the file. When ``full_objects`` is ``true`` encoding objects is allowed (and can potentially include code).
 

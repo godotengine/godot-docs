@@ -491,7 +491,7 @@ String value of the :ref:`TextEdit<class_TextEdit>`.
 | *Getter* | get_v_scroll_speed()      |
 +----------+---------------------------+
 
-If ``true``, enables text wrapping when it goes beyond he edge of what is visible.
+Vertical scroll sensitivity.
 
 .. _class_TextEdit_property_wrap_enabled:
 
@@ -502,6 +502,8 @@ If ``true``, enables text wrapping when it goes beyond he edge of what is visibl
 +----------+-------------------------+
 | *Getter* | is_wrap_enabled()       |
 +----------+-------------------------+
+
+If ``true``, enables text wrapping when it goes beyond the edge of what is visible.
 
 Method Descriptions
 -------------------

@@ -49,6 +49,8 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`add_point<class_Line2D_method_add_point>` **(** :ref:`Vector2<class_Vector2>` position **)**                                            |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`clear_points<class_Line2D_method_clear_points>` **(** **)**                                                                             |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_point_count<class_Line2D_method_get_point_count>` **(** **)** const                                                                 |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`get_point_position<class_Line2D_method_get_point_position>` **(** :ref:`int<class_int>` i **)** const                                   |
@@ -257,6 +259,12 @@ Method Descriptions
 - void **add_point** **(** :ref:`Vector2<class_Vector2>` position **)**
 
 Add a point at the ``position``. Appends the point at the end of the line.
+
+.. _class_Line2D_method_clear_points:
+
+- void **clear_points** **(** **)**
+
+Removes all points from the line.
 
 .. _class_Line2D_method_get_point_count:
 

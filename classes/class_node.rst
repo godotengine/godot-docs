@@ -475,6 +475,10 @@ Corresponds to the NOTIFICATION_EXIT_TREE notification in :ref:`Object._notifica
 
 - :ref:`String<class_String>` **_get_configuration_warning** **(** **)** virtual
 
+The string returned from this method is displayed as a warning in the "Scene Dock" if the script that overrides it is a ``tool`` script.
+
+Returning an empty string produces no warning.
+
 .. _class_Node_method__input:
 
 - void **_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
@@ -562,6 +566,8 @@ Setting "legible_unique_name" ``true`` creates child nodes with human-readable n
 - void **add_to_group** **(** :ref:`String<class_String>` group, :ref:`bool<class_bool>` persistent=false **)**
 
 Adds the node to a group. Groups are helpers to name and organize a subset of nodes, for example "enemies" or "collectables". A node can be in any number of groups. Nodes can be assigned a group at any time, but will not be added until they are inside the scene tree (see :ref:`is_inside_tree<class_Node_method_is_inside_tree>`). See notes in the description, and the group methods in :ref:`SceneTree<class_SceneTree>`.
+
+``persistent`` option is used when packing node to :ref:`PackedScene<class_PackedScene>` and saving to file. Non-persistent groups aren't stored.
 
 .. _class_Node_method_can_process:
 

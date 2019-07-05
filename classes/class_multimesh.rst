@@ -19,17 +19,19 @@ Provides high performance mesh instancing.
 Properties
 ----------
 
-+----------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`ColorFormat<enum_MultiMesh_ColorFormat>`           | :ref:`color_format<class_MultiMesh_property_color_format>`             |
-+----------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` | :ref:`custom_data_format<class_MultiMesh_property_custom_data_format>` |
-+----------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                    | :ref:`instance_count<class_MultiMesh_property_instance_count>`         |
-+----------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                                  | :ref:`mesh<class_MultiMesh_property_mesh>`                             |
-+----------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`   | :ref:`transform_format<class_MultiMesh_property_transform_format>`     |
-+----------------------------------------------------------+------------------------------------------------------------------------+
++----------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`ColorFormat<enum_MultiMesh_ColorFormat>`           | :ref:`color_format<class_MultiMesh_property_color_format>`                     |
++----------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` | :ref:`custom_data_format<class_MultiMesh_property_custom_data_format>`         |
++----------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                    | :ref:`instance_count<class_MultiMesh_property_instance_count>`                 |
++----------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                                  | :ref:`mesh<class_MultiMesh_property_mesh>`                                     |
++----------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`   | :ref:`transform_format<class_MultiMesh_property_transform_format>`             |
++----------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                    | :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>` |
++----------------------------------------------------------+--------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -179,6 +181,16 @@ Mesh to be drawn.
 +----------+-----------------------------+
 
 Format of transform used to transform mesh, either 2D or 3D.
+
+.. _class_MultiMesh_property_visible_instance_count:
+
+- :ref:`int<class_int>` **visible_instance_count**
+
++----------+-----------------------------------+
+| *Setter* | set_visible_instance_count(value) |
++----------+-----------------------------------+
+| *Getter* | get_visible_instance_count()      |
++----------+-----------------------------------+
 
 Method Descriptions
 -------------------

@@ -441,6 +441,8 @@ Commonly used to create a one-shot delay timer as in the following example:
 
 - :ref:`int<class_int>` **get_frame** **(** **)** const
 
+Returns the current frame, i.e. number of frames since the application started.
+
 .. _class_SceneTree_method_get_network_connected_peers:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_network_connected_peers** **(** **)** const

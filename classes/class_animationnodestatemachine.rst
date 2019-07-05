@@ -58,12 +58,22 @@ Methods
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`set_end_node<class_AnimationNodeStateMachine_method_set_end_node>` **(** :ref:`String<class_String>` name **)**                                                                                                                                       |
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`set_graph_offset<class_AnimationNodeStateMachine_method_set_graph_offset>` **(** :ref:`Vector2<class_Vector2>` name **)**                                                                                                                             |
+| void                                                                                  | :ref:`set_graph_offset<class_AnimationNodeStateMachine_method_set_graph_offset>` **(** :ref:`Vector2<class_Vector2>` offset **)**                                                                                                                           |
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`set_node_position<class_AnimationNodeStateMachine_method_set_node_position>` **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**                                                                                     |
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`set_start_node<class_AnimationNodeStateMachine_method_set_start_node>` **(** :ref:`String<class_String>` name **)**                                                                                                                                   |
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Contains multiple root nodes as children in a graph. Each node is used as a state, and provides multiple functions to alternate between states. Retrieve the AnimationNodeStateMachinePlayback object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programatically.
+
+::
+
+    var state_machine = anim_tree["parameters/StateMachine/playback"]
+    state_machine.travel("SomeState")
 
 Method Descriptions
 -------------------
@@ -146,7 +156,7 @@ Method Descriptions
 
 .. _class_AnimationNodeStateMachine_method_set_graph_offset:
 
-- void **set_graph_offset** **(** :ref:`Vector2<class_Vector2>` name **)**
+- void **set_graph_offset** **(** :ref:`Vector2<class_Vector2>` offset **)**
 
 .. _class_AnimationNodeStateMachine_method_set_node_position:
 

@@ -303,7 +303,7 @@ Searches the array in reverse order. Optionally, a start search index can be pas
 
 - void **shuffle** **(** **)**
 
-Shuffles the array such that the items will have a random order.
+Shuffles the array such that the items will have a random order. This method uses the global random number generator common to methods such as :ref:`@GDScript.randi<class_@GDScript_method_randi>`. Call :ref:`@GDScript.randomize<class_@GDScript_method_randomize>` to ensure that a new seed will be used each time if you want non-reproducible shuffling.
 
 .. _class_Array_method_size:
 

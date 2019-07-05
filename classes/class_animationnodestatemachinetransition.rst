@@ -53,11 +53,11 @@ Enumerations
 
 enum **SwitchMode**:
 
-- **SWITCH_MODE_IMMEDIATE** = **0**
+- **SWITCH_MODE_IMMEDIATE** = **0** --- Switch to the next state immediately. The current state will end and blend into the beginning of the new one.
 
-- **SWITCH_MODE_SYNC** = **1**
+- **SWITCH_MODE_SYNC** = **1** --- Switch to the next state immediately, but will seek the new state to the playback position of the old state.
 
-- **SWITCH_MODE_AT_END** = **2**
+- **SWITCH_MODE_AT_END** = **2** --- Wait for the current state playback to end, then switch to the beginning of the next state animation.
 
 Property Descriptions
 ---------------------
@@ -72,6 +72,8 @@ Property Descriptions
 | *Getter* | get_advance_condition()      |
 +----------+------------------------------+
 
+Turn on auto advance when this condition is set. This is a custom text field that can be filled with a variable name. The variable can be modified from code.
+
 .. _class_AnimationNodeStateMachineTransition_property_auto_advance:
 
 - :ref:`bool<class_bool>` **auto_advance**
@@ -81,6 +83,8 @@ Property Descriptions
 +----------+-------------------------+
 | *Getter* | has_auto_advance()      |
 +----------+-------------------------+
+
+Turn on the transition automatically when this state is reached. This works best with ``SWITCH_MODE_AT_END``.
 
 .. _class_AnimationNodeStateMachineTransition_property_disabled:
 
@@ -92,6 +96,8 @@ Property Descriptions
 | *Getter* | is_disabled()       |
 +----------+---------------------+
 
+Don't use this transition during :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>` or :ref:`auto_advance<class_AnimationNodeStateMachineTransition_property_auto_advance>`.
+
 .. _class_AnimationNodeStateMachineTransition_property_priority:
 
 - :ref:`int<class_int>` **priority**
@@ -101,6 +107,8 @@ Property Descriptions
 +----------+---------------------+
 | *Getter* | get_priority()      |
 +----------+---------------------+
+
+Lower priority transitions are preferred when travelling through the tree via :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>` or :ref:`auto_advance<class_AnimationNodeStateMachineTransition_property_auto_advance>`.
 
 .. _class_AnimationNodeStateMachineTransition_property_switch_mode:
 
@@ -112,6 +120,8 @@ Property Descriptions
 | *Getter* | get_switch_mode()      |
 +----------+------------------------+
 
+The transition type.
+
 .. _class_AnimationNodeStateMachineTransition_property_xfade_time:
 
 - :ref:`float<class_float>` **xfade_time**
@@ -121,4 +131,6 @@ Property Descriptions
 +----------+-----------------------+
 | *Getter* | get_xfade_time()      |
 +----------+-----------------------+
+
+The time to cross-fade between this state and the next.
 

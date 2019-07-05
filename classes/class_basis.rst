@@ -43,9 +43,13 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_orthogonal_index<class_Basis_method_get_orthogonal_index>` **(** **)**                                                                                    |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Quat<class_Quat>`       | :ref:`get_rotation_quat<class_Basis_method_get_rotation_quat>` **(** **)**                                                                                          |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`get_scale<class_Basis_method_get_scale>` **(** **)**                                                                                                          |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`inverse<class_Basis_method_inverse>` **(** **)**                                                                                                              |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=0.00001 **)**                       |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`orthonormalized<class_Basis_method_orthonormalized>` **(** **)**                                                                                              |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -140,6 +144,10 @@ Assuming that the matrix is a proper rotation matrix (orthonormal matrix with de
 
 This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1,0 or 1, and returns the index of the point best representing the orientation of the object. It is mainly used by the grid map editor. For further details, refer to Godot source code.
 
+.. _class_Basis_method_get_rotation_quat:
+
+- :ref:`Quat<class_Quat>` **get_rotation_quat** **(** **)**
+
 .. _class_Basis_method_get_scale:
 
 - :ref:`Vector3<class_Vector3>` **get_scale** **(** **)**
@@ -151,6 +159,10 @@ Assuming that the matrix is the combination of a rotation and scaling, return th
 - :ref:`Basis<class_Basis>` **inverse** **(** **)**
 
 Return the inverse of the matrix.
+
+.. _class_Basis_method_is_equal_approx:
+
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=0.00001 **)**
 
 .. _class_Basis_method_orthonormalized:
 

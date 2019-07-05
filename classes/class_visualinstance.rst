@@ -31,6 +31,10 @@ Methods
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>` | :ref:`get_aabb<class_VisualInstance_method_get_aabb>` **(** **)** const                                                                            |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`   | :ref:`get_base<class_VisualInstance_method_get_base>` **(** **)** const                                                                            |
++-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`   | :ref:`get_instance<class_VisualInstance_method_get_instance>` **(** **)** const                                                                    |
++-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`get_layer_mask_bit<class_VisualInstance_method_get_layer_mask_bit>` **(** :ref:`int<class_int>` layer **)** const                            |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>` | :ref:`get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>` **(** **)** const                                                    |
@@ -65,6 +69,14 @@ Method Descriptions
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
 
 Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this VisualInstance.
+
+.. _class_VisualInstance_method_get_base:
+
+- :ref:`RID<class_RID>` **get_base** **(** **)** const
+
+.. _class_VisualInstance_method_get_instance:
+
+- :ref:`RID<class_RID>` **get_instance** **(** **)** const
 
 .. _class_VisualInstance_method_get_layer_mask_bit:
 

@@ -61,6 +61,13 @@ enum **AnimationProcessMode**:
 
 - **ANIMATION_PROCESS_MANUAL** = **2**
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
+
+- `https://github.com/godotengine/tps-demo <https://github.com/godotengine/tps-demo>`_
+
 Property Descriptions
 ---------------------
 

@@ -9,6 +9,8 @@ AudioStreamPlayback
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`AudioStreamPlaybackResampled<class_AudioStreamPlaybackResampled>`
+
 **Category:** Core
 
 Brief Description

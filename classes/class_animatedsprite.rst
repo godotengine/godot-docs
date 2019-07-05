@@ -42,13 +42,13 @@ Properties
 Methods
 -------
 
-+-------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite_method_is_playing>` **(** **)** const                   |
-+-------------------------+-----------------------------------------------------------------------------------------------+
-| void                    | :ref:`play<class_AnimatedSprite_method_play>` **(** :ref:`String<class_String>` anim="" **)** |
-+-------------------------+-----------------------------------------------------------------------------------------------+
-| void                    | :ref:`stop<class_AnimatedSprite_method_stop>` **(** **)**                                     |
-+-------------------------+-----------------------------------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite_method_is_playing>` **(** **)** const                                                            |
++-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`play<class_AnimatedSprite_method_play>` **(** :ref:`String<class_String>` anim="", :ref:`bool<class_bool>` backwards=false **)** |
++-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`stop<class_AnimatedSprite_method_stop>` **(** **)**                                                                              |
++-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -184,9 +184,9 @@ Return true if an animation if currently being played.
 
 .. _class_AnimatedSprite_method_play:
 
-- void **play** **(** :ref:`String<class_String>` anim="" **)**
+- void **play** **(** :ref:`String<class_String>` anim="", :ref:`bool<class_bool>` backwards=false **)**
 
-Play the animation set in parameter. If no parameter is provided, the current animation is played.
+Play the animation set in parameter. If no parameter is provided, the current animation is played. Property ``backwards`` plays the animation in reverse if set to ``true``.
 
 .. _class_AnimatedSprite_method_stop:
 
