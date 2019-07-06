@@ -59,7 +59,7 @@ This may appear a little confusing, but be sure to follow these instructions car
 
   C:\users\<yourusername>\Documents\android-sdk
 
-is often good enough. Unzip the *sdk zip file* you just downloaded there. The only thing in the directory you created in the previous step should be the *tools* folder with it's contents inside, like this:
+is often good enough. Unzip the *sdk zip file* you just downloaded there. The only thing in the directory you created in the previous step should be the *tools* folder with its contents inside, like this:
 
 ::
 

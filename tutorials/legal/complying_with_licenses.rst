@@ -69,7 +69,7 @@ Godot itself contains software written by `third parties <https://github.com/god
 FreeType
 ^^^^^^^^
 
-Godot uses `FreeType <https://www.freetype.org/>`_ to render fonts. It's license requires attribution, so the following text must be included together with the Godot license:
+Godot uses `FreeType <https://www.freetype.org/>`_ to render fonts. Its license requires attribution, so the following text must be included together with the Godot license:
 
 
 	Portions of this software are copyright © <year> The FreeType Project (www.freetype.org).  All rights reserved.

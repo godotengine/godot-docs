@@ -618,7 +618,7 @@ _________
 
 Now let's look at ``process_movement``:
 
-First we ensure that ``dir`` does not have any movement on the ``Y`` axis by setting it's ``Y`` value to zero.
+First we ensure that ``dir`` does not have any movement on the ``Y`` axis by setting its ``Y`` value to zero.
 
 Next we normalize ``dir`` to ensure we're within a ``1`` radius unit circle. This makes it where we're moving at a constant speed regardless
 of whether the player is moving straight or diagonally. If we did not normalize, the player would move faster on the diagonal than when going straight.
