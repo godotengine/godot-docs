@@ -9,7 +9,7 @@ an export template every time you export the project.
 
 There are some reasons why you may want to do this:
 
-* Modify the project before it's build
+* Modify the project before it's built
 * Add external SDKs that build with your project
 
 Configuring custom build is a more or less straightforward process, but it may take a while to get used to how the Android SDK works.

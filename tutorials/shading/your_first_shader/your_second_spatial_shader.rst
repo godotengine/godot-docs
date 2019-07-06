@@ -83,8 +83,8 @@ a low ``METALLIC`` has a more equal representation of sky color and ``ALBEDO`` c
 .. note:: ``METALLIC`` should be close to ``0`` or ``1`` for proper PBR shading. Only set it between
           them for blending between materials.
 
-Water is not a metal, so we will set its ``METALLIC`` property to ``0.0``. But, water is also highly
-reflective, so we will set its ``ROUGHNESS`` property to by quite low as well.
+Water is not a metal, so we will set its ``METALLIC`` property to ``0.0``. Water is also highly
+reflective, so we will set its ``ROUGHNESS`` property to be quite low as well.
 
 .. code-block:: glsl
 
