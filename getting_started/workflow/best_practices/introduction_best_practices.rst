@@ -3,22 +3,27 @@
 Introduction
 ============
 
-This tutorial series aims to illustrate intended Godot workflows, i.e. the
-"best practices" of defining one's game API. Godot allows for a great 
-amount of flexibility in how one designs a project's code and scene
-structure. Each method will have its own advantages and disadvantages,
-so outlining the best practices should help users feel less confused
-as they further explore Godot's depth.
+This series is a collection of best practices to help you work efficiently with
+Godot.
 
-This series is also designed to help get users thinking about the best way
-to reason about best practices. It would be impossible to give a comprehensive
-overview of what one should do for any arbitrary design decision. As such,
-each article breaks problems down into the fundamental questions they pose,
-suggests the available solutions, analyzes the advantages and disadvantages
-of each option, and then highlights the best course of action depending on the
-circumstances.
+Godot allows for a great amount of flexibility in how you structure a project's
+codebase and break it down into scenes. Each approach has its own pros and
+cons, and they can be hard to weigh until you've worked with the engine for long enough.
 
-While the articles in this series are largely topic-directed, it is
-recommended that users begin with the :ref:`doc_what_are_godot_classes` article.
-It is from there that the "best practices" for the rest of the engine
-become more clear, based on established OOP practices.
+There are always many ways to structure your code and solve specific programming
+problems. It would be impossible to cover them all here.
+
+That is why each article starts from a real-world problem. We will break down
+each problem in fundamental questions, suggest solutions, analyze the pros and
+cons of each option, and highlight the best course of action for the problem at hand.
+
+You should start by reading :ref:`doc_what_are_godot_classes`. It explains how
+Godot's nodes and scenes relate to classes and objects in another
+Object-Oriented programming language. It will help you make sense of the rest of the series.
+
+.. note::
+
+   The best practices in Godot rely on Object-Oriented design principles. We
+   use tools like the `single responsibility
+   <https://en.wikipedia.org/wiki/Single_responsibility_principle>`_ principle and
+   `encapsulation <https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`_.
