@@ -1529,7 +1529,7 @@ the :ref:`Object.connect() <class_Object_method_connect>` method:
 
         # We emit the health_changed signal every time the
         # character takes damage
-        emit_signal(health_changed", old_health, health)
+        emit_signal("health_changed", old_health, health)
     ...
 
 ::
@@ -1620,7 +1620,7 @@ Our ``BattleLog`` node receives each element in the binds array as an extra argu
    func _on_Character_health_changed(old_value, new_value, character_name):
       if not new_value <= old_value:
          return
-      var damage = new_value - old_value
+      var damage = old_value - new_value
       label.text += character_name + " took " + str(damage) + " damage."
 
 
