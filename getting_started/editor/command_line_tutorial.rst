@@ -135,7 +135,7 @@ that is headless (server build, no video) is ideal for this.
 
 ::
 
-    user@host:~/newgame$ godot --export "Linux X11" /var/builds/project
+    user@host:~/newgame$ godot --export "Linux/X11" /var/builds/project
     user@host:~/newgame$ godot --export Android /var/builds/project.apk
 
 The platform names recognized by the ``--export`` switch are the same as
