@@ -198,14 +198,14 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
     var my_info = { name = "Johnson Magenta", favorite_color = Color8(255, 0, 255) }
 
     func _player_connected(id):
-        pass # Will go unused; not useful here.
+        # Called on both clients and server when a peer connects. Send my info to it.
+        rpc_id(id, "register_player", player_name)
 
     func _player_disconnected(id):
         player_info.erase(id) # Erase player from info.
 
     func _connected_ok():
-        # Only called on clients, not server. Send my ID and info to all the other peers.
-        rpc("register_player", get_tree().get_network_unique_id(), my_info)
+        pass # Only called on clients, not server. Will go unused; not useful here.
 
     func _server_disconnected():
         pass # Server kicked us; show error and abort.
@@ -213,16 +213,11 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
     func _connected_fail():
         pass # Could not even connect to server; abort.
 
-    remote func register_player(id, info):
+    remote func register_player(info):
+        # Get the id of the RPC sender.
+        var id = get_tree().get_rpc_sender_id()
         # Store the info
         player_info[id] = info
-        # If I'm the server, let the new guy know about existing players.
-        if get_tree().is_network_server():
-            # Send my info to new player
-            rpc_id(id, "register_player", 1, my_info)
-            # Send the info of existing players
-            for peer_id in player_info:
-                rpc_id(id, "register_player", peer_id, player_info[peer_id])
 
         # Call function to update lobby UI here
 
@@ -230,7 +225,7 @@ You might have already noticed something different, which is the usage of the `r
 
 ::
 
-    remote func register_player(id, info):
+    remote func register_player(info):
 
 This keyword has two main uses. The first is to let Godot know that this function can be called from RPC. If no keywords are added,
 Godot will block any attempts to call functions for security. This makes security work a lot easier (so a client can't call a function
