@@ -72,7 +72,12 @@ Multi-threading
 Creating content
 ^^^^^^^^^^^^^^^^
 
-- :ref:`doc_procedural_geometry`
+Procedural geometry series:
+  - :ref:`Procedural geometry <toc-procedural_geometry>`
+  - :ref:`doc_arraymesh`
+  - :ref:`doc_surfacetool`
+  - :ref:`doc_meshdatatool`
+  - :ref:`doc_immediategeometry`
 
 Optimization
 ^^^^^^^^^^^^

@@ -5,7 +5,7 @@ Using the ArrayMesh
 
 This tutorial will present the basics of using an :ref:`ArrayMesh <class_arraymesh>`
 
-To do so, we will use the function :ref:`add_surface_from_arrays <class_ArrayMesh_method_add_surface_from_arrays>`,
+To do so, we will use the function :ref:`add_surface_from_arrays() <class_ArrayMesh_method_add_surface_from_arrays>`,
 which takes up to four parameters. The first two are required, while the second two are optional.
 
 The first is the ``PrimitiveType``, this is an OpenGL concept that instructs the GPU
@@ -206,8 +206,8 @@ in each array and then you can follow tutorials for any language/engine and conv
 Saving
 ------
 
-Finally, Godot provides an single method to save ArrayMeshes using the :ref:`ResourceSaver <class_resourcesaver>`
-class. This is incredibly useful when you want to generate a mesh and then use it later without having to re-generate.
+Finally, Godot provides a single method to save ArrayMeshes using the :ref:`ResourceSaver <class_resourcesaver>`
+class. This is useful when you want to generate a mesh and then use it later without having to re-generate.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
