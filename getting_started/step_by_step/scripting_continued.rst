@@ -33,7 +33,7 @@ This method will be called every time a frame is drawn:
         // Do something...
     }
 
-It's important to bear in mind that the frequecy with which ``_process()``
+It's important to bear in mind that the frequency with which ``_process()``
 will be called depends on how many frames per second (FPS) your application
 is running at. This rate can vary over time and devices.
 
