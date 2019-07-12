@@ -116,6 +116,11 @@ Disable Ambient Light
 Makes the object not receive any kind of ambient lighting that would
 otherwise light it.
 
+Ensure Correct Normals
+~~~~~~~~~~~~~~~~~~~~~~
+
+Fixes normals when non-uniform scaling is used.
+
 Vertex Color
 ------------
 
@@ -243,6 +248,11 @@ faces the camera:
 .. image:: img/spatial_material9.png
 
 The above options are only enabled for Particle Billboard.
+
+Billboard Keep Scale
+~~~~~~~~~~~~~~~~~~~~
+
+Enables scaling a mesh in billboard mode.
 
 Grow
 ~~~~
