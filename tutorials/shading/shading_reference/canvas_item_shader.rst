@@ -143,7 +143,9 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 +----------------------------------+----------------------------------------------------------------+
 | Built-in                         | Description                                                    |
 +==================================+================================================================+
-| in vec4 **FRAGCOORD**            | Fragment coordinate, pixel adjusted.                           |
+| in vec4 **FRAGCOORD**            | Coordinate of pixel center. In screen space. ``xy`` specifies  |
+|                                  | position in window, ``z`` specifies fragment depth if          |
+|                                  | ``DEPTH`` is not used. Origin is lower-left.                   |
 +----------------------------------+----------------------------------------------------------------+
 | inout vec3 **NORMAL**            | Normal read from **NORMAL_TEXTURE**. Writable.                 |
 +----------------------------------+----------------------------------------------------------------+
@@ -192,7 +194,9 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 +-------------------------------------+-------------------------------------------------------------------------------+
 | Built-in                            | Description                                                                   |
 +=====================================+===============================================================================+
-| in vec4 **FRAGCOORD**               | Fragment coordinate of pixel center. Origin at lower left.                    |
+| in vec4 **FRAGCOORD**               | Coordinate of pixel center. In screen space. ``xy`` specifies                 |
+|                                     | position in window, ``z`` specifies fragment depth if                         |
+|                                     | ``DEPTH`` is not used. Origin is lower-left.                                  |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec3 **NORMAL**                  | Input Normal. Although this value is passed in,                               |
 |                                     | **normal calculation still happens outside of this function**.                |
