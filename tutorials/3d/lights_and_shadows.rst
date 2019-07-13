@@ -35,6 +35,7 @@ Each one has a specific function:
 -  **Indirect Energy**: Secondary multiplier used with indirect light (light bounces). This works in baked light or GIProbe.
 -  **Negative**: Light becomes subtractive instead of additive. It's sometimes useful to manually compensate some dark corners.
 -  **Specular**: Affects the intensity of the specular blob in objects affected by this light. At zero, this light becomes a pure diffuse light.
+-  **Bake Mode**: Sets the bake mode for the light. For more information see :ref:`doc_baked_lightmaps`
 -  **Cull Mask**: Objects that are in the selected layers below will be affected by this light.
 
 Shadow mapping
