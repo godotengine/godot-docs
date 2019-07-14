@@ -1351,7 +1351,7 @@ initializers, but they must be constant expressions.
 
     export(Array, int) var ints = [1,2,3]
     export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
-    export(Array, Array, float) var two_dimensional = [[1, 2], [3, 4]]
+    export(Array, Array, float) var two_dimensional = [[1.0, 2.0], [3.0, 4.0]]
 
     # You can omit the default value, but then it would be null if not assigned.
 
