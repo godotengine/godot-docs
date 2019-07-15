@@ -1481,10 +1481,10 @@ to. To create custom signals for a class, use the ``signal`` keyword.
 .. note:: 
 
    Signals are a `Callback
-   <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`
+   <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
    mechanism. They also fill the role of Observers, a common programming
-   pattern. For more information, read the `Observer
-   tutorial<http://gameprogrammingpatterns.com/observer.html>`_ in the
+   pattern. For more information, read the `Observer tutorial
+   <https://gameprogrammingpatterns.com/observer.html>`_ in the
    Game Programming Patterns ebook.
 
 You can connect these signals to methods the same way you connect built-in
