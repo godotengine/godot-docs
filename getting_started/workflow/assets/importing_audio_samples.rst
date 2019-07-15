@@ -10,6 +10,7 @@ Raw audio data in general is large and undesired. Godot provides two main
 options to import your audio data: WAV and OGG Vorbis.
 
 Each has different advantages.
+
 * Wav files use raw data or light compression, make few demands on the CPU to play back (hundreds of simultaneous voices in this format are fine), but take up significant space.
 * Ogg Vorbis files use a stronger compression that results in much smaller file size, but require significantly more processing power to play back.
 
