@@ -32,11 +32,19 @@ version = 'latest'
 # The full version, including alpha/beta/rc tags
 release = 'latest'
 
+# Parse Sphinx tags passed from RTD via environment
+env_tags = os.getenv('SPHINX_TAGS', [])
+for tag in env_tags.split(','):
+   print("Adding Sphinx tag: %s" % tag.strip())
+   tags.add(tag.strip())
+
+# Language / i18n
 language = 'en'
 is_i18n = tags.has('i18n')
 
 exclude_patterns = ['_build']
 
+# GDScript syntax highlighting
 from gdscript import GDScriptLexer
 from sphinx.highlighting import lexers
 lexers['gdscript'] = GDScriptLexer()
