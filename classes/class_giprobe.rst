@@ -24,7 +24,7 @@ Properties
 +---------------------------------------+------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`               | :ref:`compress<class_GIProbe_property_compress>`           | false                 |
 +---------------------------------------+------------------------------------------------------------+-----------------------+
-| :ref:`GIProbeData<class_GIProbeData>` | :ref:`data<class_GIProbe_property_data>`                   | null                  |
+| :ref:`GIProbeData<class_GIProbeData>` | :ref:`data<class_GIProbe_property_data>`                   |                       |
 +---------------------------------------+------------------------------------------------------------+-----------------------+
 | :ref:`int<class_int>`                 | :ref:`dynamic_range<class_GIProbe_property_dynamic_range>` | 4                     |
 +---------------------------------------+------------------------------------------------------------+-----------------------+
@@ -113,13 +113,11 @@ Property Descriptions
 
 - :ref:`GIProbeData<class_GIProbeData>` **data**
 
-+-----------+-----------------------+
-| *Default* | null                  |
-+-----------+-----------------------+
-| *Setter*  | set_probe_data(value) |
-+-----------+-----------------------+
-| *Getter*  | get_probe_data()      |
-+-----------+-----------------------+
++----------+-----------------------+
+| *Setter* | set_probe_data(value) |
++----------+-----------------------+
+| *Getter* | get_probe_data()      |
++----------+-----------------------+
 
 .. _class_GIProbe_property_dynamic_range:
 

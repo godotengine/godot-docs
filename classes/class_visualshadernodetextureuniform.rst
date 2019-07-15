@@ -9,6 +9,8 @@ VisualShaderNodeTextureUniform
 
 **Inherits:** :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`VisualShaderNodeTextureUniformTriplanar<class_VisualShaderNodeTextureUniformTriplanar>`
+
 **Category:** Core
 
 Brief Description

@@ -1068,7 +1068,7 @@ On Linux, this is ``~/.local/share/godot/app_userdata/[project_name]``, or ``~/.
 
 On macOS, this is ``~/Library/Application Support/Godot/app_userdata/[project_name]``, or ``~/Library/Application Support/[custom_name]`` if ``use_custom_user_dir`` is set.
 
-On Windows, this is ``%APPDATA%/Godot/app_userdata/[project_name]``, or ``%APPDATA%/[custom_name]`` if ``use_custom_user_dir`` is set.
+On Windows, this is ``%APPDATA%\Godot\app_userdata\[project_name]``, or ``%APPDATA%\[custom_name]`` if ``use_custom_user_dir`` is set. ``%APPDATA%`` expands to ``%USERPROFILE%\AppData\Roaming``.
 
 If the project name is empty, ``user://`` falls back to ``res://``.
 

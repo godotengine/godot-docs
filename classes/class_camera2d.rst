@@ -74,21 +74,29 @@ Properties
 Methods
 -------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------+
-| void                          | :ref:`align<class_Camera2D_method_align>` **(** **)**                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------+
-| void                          | :ref:`clear_current<class_Camera2D_method_clear_current>` **(** **)**                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------+
-| void                          | :ref:`force_update_scroll<class_Camera2D_method_force_update_scroll>` **(** **)**                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_position<class_Camera2D_method_get_camera_position>` **(** **)** const           |
-+-------------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` **(** **)** const |
-+-------------------------------+---------------------------------------------------------------------------------------------------+
-| void                          | :ref:`make_current<class_Camera2D_method_make_current>` **(** **)**                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------+
-| void                          | :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>` **(** **)**                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------+
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`align<class_Camera2D_method_align>` **(** **)**                                                                                                           |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`clear_current<class_Camera2D_method_clear_current>` **(** **)**                                                                                           |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`force_update_scroll<class_Camera2D_method_force_update_scroll>` **(** **)**                                                                               |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_position<class_Camera2D_method_get_camera_position>` **(** **)** const                                                                         |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` **(** **)** const                                                               |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`get_drag_margin<class_Camera2D_method_get_drag_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                  |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`get_limit<class_Camera2D_method_get_limit>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                              |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`make_current<class_Camera2D_method_make_current>` **(** **)**                                                                                             |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>` **(** **)**                                                                                       |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_drag_margin<class_Camera2D_method_set_drag_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` drag_margin **)** |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_limit<class_Camera2D_method_set_limit>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` limit **)**                       |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -504,6 +512,14 @@ Returns the camera position.
 
 Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
 
+.. _class_Camera2D_method_get_drag_margin:
+
+- :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+.. _class_Camera2D_method_get_limit:
+
+- :ref:`int<class_int>` **get_limit** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
 .. _class_Camera2D_method_make_current:
 
 - void **make_current** **(** **)**
@@ -517,4 +533,12 @@ Make this the current 2D camera for the scene (viewport and layer), in case ther
 Sets the camera's position immediately to its current smoothing destination.
 
 This has no effect if smoothing is disabled.
+
+.. _class_Camera2D_method_set_drag_margin:
+
+- void **set_drag_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` drag_margin **)**
+
+.. _class_Camera2D_method_set_limit:
+
+- void **set_limit** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` limit **)**
 

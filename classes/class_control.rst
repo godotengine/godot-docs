@@ -84,7 +84,7 @@ Properties
 +--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
 | :ref:`int<class_int>`                            | :ref:`size_flags_vertical<class_Control_property_size_flags_vertical>`               | 1               |
 +--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`Theme<class_Theme>`                        | :ref:`theme<class_Control_property_theme>`                                           | null            |
+| :ref:`Theme<class_Theme>`                        | :ref:`theme<class_Control_property_theme>`                                           |                 |
 +--------------------------------------------------+--------------------------------------------------------------------------------------+-----------------+
 
 Methods
@@ -119,6 +119,8 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`force_drag<class_Control_method_force_drag>` **(** :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` preview **)**                                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`get_anchor<class_Control_method_get_anchor>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                                                                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                | :ref:`get_begin<class_Control_method_get_begin>` **(** **)** const                                                                                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`                    | :ref:`get_color<class_Control_method_get_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                           |
@@ -133,6 +135,8 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                | :ref:`get_end<class_Control_method_get_end>` **(** **)** const                                                                                                                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`              | :ref:`get_focus_neighbour<class_Control_method_get_focus_neighbour>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                                                                                                              |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_Control>`                | :ref:`get_focus_owner<class_Control_method_get_focus_owner>` **(** **)** const                                                                                                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Font<class_Font>`                      | :ref:`get_font<class_Control_method_get_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                             |
@@ -140,6 +144,8 @@ Methods
 | :ref:`Rect2<class_Rect2>`                    | :ref:`get_global_rect<class_Control_method_get_global_rect>` **(** **)** const                                                                                                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_Texture>`                | :ref:`get_icon<class_Control_method_get_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                             |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`get_margin<class_Control_method_get_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                                                                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                | :ref:`get_minimum_size<class_Control_method_get_minimum_size>` **(** **)** const                                                                                                                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -205,7 +211,11 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_end<class_Control_method_set_end>` **(** :ref:`Vector2<class_Vector2>` position **)**                                                                                                                                                                    |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`set_focus_neighbour<class_Control_method_set_focus_neighbour>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`NodePath<class_NodePath>` neighbour **)**                                                                                         |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_global_position<class_Control_method_set_global_position>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` keep_margins=false **)**                                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`set_margin<class_Control_method_set_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` offset **)**                                                                                                                    |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_margins_preset<class_Control_method_set_margins_preset>` **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` resize_mode=0, :ref:`int<class_int>` margin=0 **)**                         |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1024,13 +1034,11 @@ Tells the parent :ref:`Container<class_Container>` nodes how they should resize 
 
 - :ref:`Theme<class_Theme>` **theme**
 
-+-----------+------------------+
-| *Default* | null             |
-+-----------+------------------+
-| *Setter*  | set_theme(value) |
-+-----------+------------------+
-| *Getter*  | get_theme()      |
-+-----------+------------------+
++----------+------------------+
+| *Setter* | set_theme(value) |
++----------+------------------+
+| *Getter* | get_theme()      |
++----------+------------------+
 
 Changing this property replaces the current :ref:`Theme<class_Theme>` resource this node and all its ``Control`` children use.
 
@@ -1142,6 +1150,10 @@ Forces drag and bypasses :ref:`get_drag_data<class_Control_method_get_drag_data>
 
 The methods :ref:`can_drop_data<class_Control_method_can_drop_data>` and :ref:`drop_data<class_Control_method_drop_data>` must be implemented on controls that want to receive drop data.
 
+.. _class_Control_method_get_anchor:
+
+- :ref:`float<class_float>` **get_anchor** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
 .. _class_Control_method_get_begin:
 
 - :ref:`Vector2<class_Vector2>` **get_begin** **(** **)** const
@@ -1189,6 +1201,10 @@ A preview that will follow the mouse that should represent the data can be set w
 
 Returns :ref:`margin_right<class_Control_property_margin_right>` and :ref:`margin_bottom<class_Control_property_margin_bottom>`.
 
+.. _class_Control_method_get_focus_neighbour:
+
+- :ref:`NodePath<class_NodePath>` **get_focus_neighbour** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
 .. _class_Control_method_get_focus_owner:
 
 - :ref:`Control<class_Control>` **get_focus_owner** **(** **)** const
@@ -1208,6 +1224,10 @@ Returns the position and size of the control relative to the top-left corner of 
 .. _class_Control_method_get_icon:
 
 - :ref:`Texture<class_Texture>` **get_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+
+.. _class_Control_method_get_margin:
+
+- :ref:`float<class_float>` **get_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
 .. _class_Control_method_get_minimum_size:
 
@@ -1388,9 +1408,17 @@ Shows the given control at the mouse pointer. A good time to call this method is
 
 Sets :ref:`margin_right<class_Control_property_margin_right>` and :ref:`margin_bottom<class_Control_property_margin_bottom>` at the same time.
 
+.. _class_Control_method_set_focus_neighbour:
+
+- void **set_focus_neighbour** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`NodePath<class_NodePath>` neighbour **)**
+
 .. _class_Control_method_set_global_position:
 
 - void **set_global_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` keep_margins=false **)**
+
+.. _class_Control_method_set_margin:
+
+- void **set_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` offset **)**
 
 .. _class_Control_method_set_margins_preset:
 

@@ -38,11 +38,11 @@ Properties
 +-------------------------------+------------------------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`         | :ref:`stretch_margin_top<class_TextureProgress_property_stretch_margin_top>`       | 0                   |
 +-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture_over<class_TextureProgress_property_texture_over>`                   | null                |
+| :ref:`Texture<class_Texture>` | :ref:`texture_over<class_TextureProgress_property_texture_over>`                   |                     |
 +-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture_progress<class_TextureProgress_property_texture_progress>`           | null                |
+| :ref:`Texture<class_Texture>` | :ref:`texture_progress<class_TextureProgress_property_texture_progress>`           |                     |
 +-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture_under<class_TextureProgress_property_texture_under>`                 | null                |
+| :ref:`Texture<class_Texture>` | :ref:`texture_under<class_TextureProgress_property_texture_under>`                 |                     |
 +-------------------------------+------------------------------------------------------------------------------------+---------------------+
 | :ref:`Color<class_Color>`     | :ref:`tint_over<class_TextureProgress_property_tint_over>`                         | Color( 1, 1, 1, 1 ) |
 +-------------------------------+------------------------------------------------------------------------------------+---------------------+
@@ -50,6 +50,15 @@ Properties
 +-------------------------------+------------------------------------------------------------------------------------+---------------------+
 | :ref:`Color<class_Color>`     | :ref:`tint_under<class_TextureProgress_property_tint_under>`                       | Color( 1, 1, 1, 1 ) |
 +-------------------------------+------------------------------------------------------------------------------------+---------------------+
+
+Methods
+-------
+
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_stretch_margin<class_TextureProgress_method_get_stretch_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                        |
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`set_stretch_margin<class_TextureProgress_method_set_stretch_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` value **)** |
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -234,13 +243,11 @@ The height of the 9-patch's top row.
 
 - :ref:`Texture<class_Texture>` **texture_over**
 
-+-----------+-------------------------+
-| *Default* | null                    |
-+-----------+-------------------------+
-| *Setter*  | set_over_texture(value) |
-+-----------+-------------------------+
-| *Getter*  | get_over_texture()      |
-+-----------+-------------------------+
++----------+-------------------------+
+| *Setter* | set_over_texture(value) |
++----------+-------------------------+
+| *Getter* | get_over_texture()      |
++----------+-------------------------+
 
 :ref:`Texture<class_Texture>` that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of :ref:`texture_progress<class_TextureProgress_property_texture_progress>`.
 
@@ -248,13 +255,11 @@ The height of the 9-patch's top row.
 
 - :ref:`Texture<class_Texture>` **texture_progress**
 
-+-----------+-----------------------------+
-| *Default* | null                        |
-+-----------+-----------------------------+
-| *Setter*  | set_progress_texture(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_progress_texture()      |
-+-----------+-----------------------------+
++----------+-----------------------------+
+| *Setter* | set_progress_texture(value) |
++----------+-----------------------------+
+| *Getter* | get_progress_texture()      |
++----------+-----------------------------+
 
 :ref:`Texture<class_Texture>` that clips based on the node's ``value`` and :ref:`fill_mode<class_TextureProgress_property_fill_mode>`. As ``value`` increased, the texture fills up. It shows entirely when ``value`` reaches ``max_value``. It doesn't show at all if ``value`` is equal to ``min_value``.
 
@@ -264,13 +269,11 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 
 - :ref:`Texture<class_Texture>` **texture_under**
 
-+-----------+--------------------------+
-| *Default* | null                     |
-+-----------+--------------------------+
-| *Setter*  | set_under_texture(value) |
-+-----------+--------------------------+
-| *Getter*  | get_under_texture()      |
-+-----------+--------------------------+
++----------+--------------------------+
+| *Setter* | set_under_texture(value) |
++----------+--------------------------+
+| *Getter* | get_under_texture()      |
++----------+--------------------------+
 
 :ref:`Texture<class_Texture>` that draws under the progress bar. The bar's background.
 
@@ -315,4 +318,15 @@ Multiplies the color of the bar's ``texture_progress`` texture.
 +-----------+-----------------------+
 
 Multiplies the color of the bar's ``texture_under`` texture.
+
+Method Descriptions
+-------------------
+
+.. _class_TextureProgress_method_get_stretch_margin:
+
+- :ref:`int<class_int>` **get_stretch_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+.. _class_TextureProgress_method_set_stretch_margin:
+
+- void **set_stretch_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` value **)**
 

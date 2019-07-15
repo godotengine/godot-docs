@@ -129,7 +129,7 @@ enum **MouseMode**:
 
 - **MOUSE_MODE_HIDDEN** = **1** --- Makes the mouse cursor hidden if it is visible.
 
-- **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window, but it will still register movement and mouse button presses.
+- **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window, but it will still register movement and mouse button presses. On Windows and Linux, the mouse will use raw input mode, which means the reported movement will be unaffected by the OS' mouse acceleration settings.
 
 - **MOUSE_MODE_CONFINED** = **3** --- Makes the mouse cursor visible but confines it to the game window.
 

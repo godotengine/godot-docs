@@ -23,6 +23,13 @@ Properties
 | :ref:`String<class_String>` | :ref:`load_path<class_StreamTexture_property_load_path>` | "" |
 +-----------------------------+----------------------------------------------------------+----+
 
+Methods
+-------
+
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_StreamTexture_method_load>` **(** :ref:`String<class_String>` path **)** |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+
 Description
 -----------
 
@@ -44,4 +51,11 @@ Property Descriptions
 +-----------+-----------------+
 
 The StreamTexture's file path to a ``.stex`` file.
+
+Method Descriptions
+-------------------
+
+.. _class_StreamTexture_method_load:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 

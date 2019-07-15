@@ -19,17 +19,17 @@ Class that has everything pertaining to a world.
 Properties
 ----------
 
-+---------------------------------------------------------------+------------------------------------------------------------------------+------+
-| :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` | :ref:`direct_space_state<class_World_property_direct_space_state>`     |      |
-+---------------------------------------------------------------+------------------------------------------------------------------------+------+
-| :ref:`Environment<class_Environment>`                         | :ref:`environment<class_World_property_environment>`                   | null |
-+---------------------------------------------------------------+------------------------------------------------------------------------+------+
-| :ref:`Environment<class_Environment>`                         | :ref:`fallback_environment<class_World_property_fallback_environment>` | null |
-+---------------------------------------------------------------+------------------------------------------------------------------------+------+
-| :ref:`RID<class_RID>`                                         | :ref:`scenario<class_World_property_scenario>`                         |      |
-+---------------------------------------------------------------+------------------------------------------------------------------------+------+
-| :ref:`RID<class_RID>`                                         | :ref:`space<class_World_property_space>`                               |      |
-+---------------------------------------------------------------+------------------------------------------------------------------------+------+
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` | :ref:`direct_space_state<class_World_property_direct_space_state>`     |
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`Environment<class_Environment>`                         | :ref:`environment<class_World_property_environment>`                   |
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`Environment<class_Environment>`                         | :ref:`fallback_environment<class_World_property_fallback_environment>` |
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                         | :ref:`scenario<class_World_property_scenario>`                         |
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                         | :ref:`space<class_World_property_space>`                               |
++---------------------------------------------------------------+------------------------------------------------------------------------+
 
 Description
 -----------
@@ -58,13 +58,11 @@ The World's physics direct space state, used for making various queries. Might b
 
 - :ref:`Environment<class_Environment>` **environment**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_environment(value) |
-+-----------+------------------------+
-| *Getter*  | get_environment()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_environment(value) |
++----------+------------------------+
+| *Getter* | get_environment()      |
++----------+------------------------+
 
 The World's :ref:`Environment<class_Environment>`.
 
@@ -72,13 +70,11 @@ The World's :ref:`Environment<class_Environment>`.
 
 - :ref:`Environment<class_Environment>` **fallback_environment**
 
-+-----------+---------------------------------+
-| *Default* | null                            |
-+-----------+---------------------------------+
-| *Setter*  | set_fallback_environment(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_fallback_environment()      |
-+-----------+---------------------------------+
++----------+---------------------------------+
+| *Setter* | set_fallback_environment(value) |
++----------+---------------------------------+
+| *Getter* | get_fallback_environment()      |
++----------+---------------------------------+
 
 The World's fallback_environment will be used if the World's :ref:`Environment<class_Environment>` fails or is missing.
 

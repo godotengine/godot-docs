@@ -24,7 +24,7 @@ Properties
 +---------------------------------+---------------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`           | :ref:`light_mask<class_CanvasItem_property_light_mask>`                   | 1                   |
 +---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CanvasItem_property_material>`                       | null                |
+| :ref:`Material<class_Material>` | :ref:`material<class_CanvasItem_property_material>`                       |                     |
 +---------------------------------+---------------------------------------------------------------------------+---------------------+
 | :ref:`Color<class_Color>`       | :ref:`modulate<class_CanvasItem_property_modulate>`                       | Color( 1, 1, 1, 1 ) |
 +---------------------------------+---------------------------------------------------------------------------+---------------------+
@@ -69,7 +69,7 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_primitive<class_CanvasItem_method_draw_primitive>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs, :ref:`Texture<class_Texture>` texture=null, :ref:`float<class_float>` width=1.0, :ref:`Texture<class_Texture>` normal_map=null **)**                        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`draw_rect<class_CanvasItem_method_draw_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` filled=true **)**                                                                                                                                                                                                                             |
+| void                                  | :ref:`draw_rect<class_CanvasItem_method_draw_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` filled=true, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                             |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_set_transform<class_CanvasItem_method_draw_set_transform>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` scale **)**                                                                                                                                                                                                |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -256,13 +256,11 @@ The rendering layers in which this ``CanvasItem`` responds to :ref:`Light2D<clas
 
 - :ref:`Material<class_Material>` **material**
 
-+-----------+---------------------+
-| *Default* | null                |
-+-----------+---------------------+
-| *Setter*  | set_material(value) |
-+-----------+---------------------+
-| *Getter*  | get_material()      |
-+-----------+---------------------+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
 
 The material applied to textures on this ``CanvasItem``.
 
@@ -421,9 +419,11 @@ Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for
 
 .. _class_CanvasItem_method_draw_rect:
 
-- void **draw_rect** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` filled=true **)**
+- void **draw_rect** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` filled=true, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws a colored rectangle.
+Draws a rectangle. If ``filled`` is ``true``, the rectangle will be filled with the ``color`` specified. If ``filled`` is ``false``, the rectangle will be drawn as a stroke with the ``color`` and ``width`` specified. If ``antialiased`` is ``true``, the lines will be antialiased.
+
+**Note:** ``width`` and ``antialiased`` are only effective if ``filled`` is ``false``.
 
 .. _class_CanvasItem_method_draw_set_transform:
 

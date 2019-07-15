@@ -448,15 +448,31 @@ Hashes the string and returns a 32-bit integer.
 
 - :ref:`int<class_int>` **hex_to_int** **(** **)**
 
-Converts a string containing a hexadecimal number into an integer.
+Converts a string containing a hexadecimal number into an integer. Hexadecimal strings are expected to be prefixed with "``0x``" otherwise ``0`` is returned.
+
+::
+
+    print("0xff".hex_to_int()) # Print "255"
 
 .. _class_String_method_http_escape:
 
 - :ref:`String<class_String>` **http_escape** **(** **)**
 
+Escapes (encodes) a string to URL friendly format. Also referred to as 'URL encode'.
+
+::
+
+    print("https://example.org/?escaped=" + "Godot Engine:'docs'".http_escape())
+
 .. _class_String_method_http_unescape:
 
 - :ref:`String<class_String>` **http_unescape** **(** **)**
+
+Unescapes (decodes) a string in URL encoded format. Also referred to as 'URL decode'.
+
+::
+
+    print("https://example.org/?escaped=" + "Godot%20Engine%3A%27docs%27".http_unescape())
 
 .. _class_String_method_insert:
 

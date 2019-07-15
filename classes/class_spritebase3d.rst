@@ -50,11 +50,15 @@ Properties
 Methods
 -------
 
-+-----------------------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`TriangleMesh<class_TriangleMesh>` | :ref:`generate_triangle_mesh<class_SpriteBase3D_method_generate_triangle_mesh>` **(** **)** const |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`               | :ref:`get_item_rect<class_SpriteBase3D_method_get_item_rect>` **(** **)** const                   |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------+
++-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TriangleMesh<class_TriangleMesh>` | :ref:`generate_triangle_mesh<class_SpriteBase3D_method_generate_triangle_mesh>` **(** **)** const                                                             |
++-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`get_draw_flag<class_SpriteBase3D_method_get_draw_flag>` **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** const                            |
++-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`               | :ref:`get_item_rect<class_SpriteBase3D_method_get_item_rect>` **(** **)** const                                                                               |
++-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`set_draw_flag<class_SpriteBase3D_method_set_draw_flag>` **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)** |
++-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -276,7 +280,15 @@ Method Descriptions
 
 - :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** const
 
+.. _class_SpriteBase3D_method_get_draw_flag:
+
+- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** const
+
 .. _class_SpriteBase3D_method_get_item_rect:
 
 - :ref:`Rect2<class_Rect2>` **get_item_rect** **(** **)** const
+
+.. _class_SpriteBase3D_method_set_draw_flag:
+
+- void **set_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
 

@@ -26,6 +26,8 @@ Properties
 +-----------------------------+--------------------------------------------------------------------+-------+
 | :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`     | 8     |
 +-----------------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                 | 0     |
++-----------------------------+--------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`         | false |
 +-----------------------------+--------------------------------------------------------------------+-------+
 
@@ -82,6 +84,8 @@ Enumerations
 
 .. _class_HTTPRequest_constant_RESULT_REDIRECT_LIMIT_REACHED:
 
+.. _class_HTTPRequest_constant_RESULT_TIMEOUT:
+
 enum **Result**:
 
 - **RESULT_SUCCESS** = **0** --- Request successful.
@@ -107,6 +111,8 @@ enum **Result**:
 - **RESULT_DOWNLOAD_FILE_WRITE_ERROR** = **10** --- HTTPRequest couldn't write to the download file.
 
 - **RESULT_REDIRECT_LIMIT_REACHED** = **11** --- Request reached its maximum redirect limit, see :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`.
+
+- **RESULT_TIMEOUT** = **12**
 
 Description
 -----------
@@ -164,6 +170,18 @@ The file to download into. Will output any received file into it.
 +-----------+--------------------------+
 
 Maximum number of allowed redirects.
+
+.. _class_HTTPRequest_property_timeout:
+
+- :ref:`int<class_int>` **timeout**
+
++-----------+--------------------+
+| *Default* | 0                  |
++-----------+--------------------+
+| *Setter*  | set_timeout(value) |
++-----------+--------------------+
+| *Getter*  | get_timeout()      |
++-----------+--------------------+
 
 .. _class_HTTPRequest_property_use_threads:
 

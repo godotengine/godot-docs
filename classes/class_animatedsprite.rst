@@ -30,7 +30,7 @@ Properties
 +-----------------------------------------+---------------------------------------------------------------+-----------------+
 | :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite_property_frame>`             | 0               |
 +-----------------------------------------+---------------------------------------------------------------+-----------------+
-| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite_property_frames>`           | null            |
+| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite_property_frames>`           |                 |
 +-----------------------------------------+---------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>`           | :ref:`offset<class_AnimatedSprite_property_offset>`           | Vector2( 0, 0 ) |
 +-----------------------------------------+---------------------------------------------------------------+-----------------+
@@ -147,13 +147,11 @@ The displayed animation frame's index.
 
 - :ref:`SpriteFrames<class_SpriteFrames>` **frames**
 
-+-----------+--------------------------+
-| *Default* | null                     |
-+-----------+--------------------------+
-| *Setter*  | set_sprite_frames(value) |
-+-----------+--------------------------+
-| *Getter*  | get_sprite_frames()      |
-+-----------+--------------------------+
++----------+--------------------------+
+| *Setter* | set_sprite_frames(value) |
++----------+--------------------------+
+| *Getter* | get_sprite_frames()      |
++----------+--------------------------+
 
 The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
 

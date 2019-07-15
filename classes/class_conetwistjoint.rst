@@ -31,6 +31,15 @@ Properties
 | :ref:`float<class_float>` | :ref:`twist_span<class_ConeTwistJoint_property_twist_span>` | 180.0 |
 +---------------------------+-------------------------------------------------------------+-------+
 
+Methods
+-------
+
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_param<class_ConeTwistJoint_method_get_param>` **(** :ref:`Param<enum_ConeTwistJoint_Param>` param **)** const                            |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param<class_ConeTwistJoint_method_set_param>` **(** :ref:`Param<enum_ConeTwistJoint_Param>` param, :ref:`float<class_float>` value **)** |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
@@ -155,4 +164,15 @@ If below 0.05, this behavior is locked.
 Twist is the rotation around the twist axis, this value defined how far the joint can twist.
 
 Twist is locked if below 0.05.
+
+Method Descriptions
+-------------------
+
+.. _class_ConeTwistJoint_method_get_param:
+
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_ConeTwistJoint_Param>` param **)** const
+
+.. _class_ConeTwistJoint_method_set_param:
+
+- void **set_param** **(** :ref:`Param<enum_ConeTwistJoint_Param>` param, :ref:`float<class_float>` value **)**
 

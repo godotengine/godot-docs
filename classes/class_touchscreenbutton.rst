@@ -22,15 +22,15 @@ Properties
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
 | :ref:`String<class_String>`                                  | :ref:`action<class_TouchScreenButton_property_action>`                   | ""    |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`BitMap<class_BitMap>`                                  | :ref:`bitmask<class_TouchScreenButton_property_bitmask>`                 | null  |
+| :ref:`BitMap<class_BitMap>`                                  | :ref:`bitmask<class_TouchScreenButton_property_bitmask>`                 |       |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                                | :ref:`normal<class_TouchScreenButton_property_normal>`                   | null  |
+| :ref:`Texture<class_Texture>`                                | :ref:`normal<class_TouchScreenButton_property_normal>`                   |       |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`                                      | :ref:`passby_press<class_TouchScreenButton_property_passby_press>`       | false |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                                | :ref:`pressed<class_TouchScreenButton_property_pressed>`                 | null  |
+| :ref:`Texture<class_Texture>`                                | :ref:`pressed<class_TouchScreenButton_property_pressed>`                 |       |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`Shape2D<class_Shape2D>`                                | :ref:`shape<class_TouchScreenButton_property_shape>`                     | null  |
+| :ref:`Shape2D<class_Shape2D>`                                | :ref:`shape<class_TouchScreenButton_property_shape>`                     |       |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`                                      | :ref:`shape_centered<class_TouchScreenButton_property_shape_centered>`   | true  |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
@@ -102,13 +102,11 @@ The button's action. Actions can be handled with :ref:`InputEventAction<class_In
 
 - :ref:`BitMap<class_BitMap>` **bitmask**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_bitmask(value) |
-+-----------+--------------------+
-| *Getter*  | get_bitmask()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_bitmask(value) |
++----------+--------------------+
+| *Getter* | get_bitmask()      |
++----------+--------------------+
 
 The button's bitmask.
 
@@ -116,13 +114,11 @@ The button's bitmask.
 
 - :ref:`Texture<class_Texture>` **normal**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 The button's texture for the normal state.
 
@@ -144,13 +140,11 @@ If ``true``, pass-by presses are enabled.
 
 - :ref:`Texture<class_Texture>` **pressed**
 
-+-----------+----------------------------+
-| *Default* | null                       |
-+-----------+----------------------------+
-| *Setter*  | set_texture_pressed(value) |
-+-----------+----------------------------+
-| *Getter*  | get_texture_pressed()      |
-+-----------+----------------------------+
++----------+----------------------------+
+| *Setter* | set_texture_pressed(value) |
++----------+----------------------------+
+| *Getter* | get_texture_pressed()      |
++----------+----------------------------+
 
 The button's texture for the pressed state.
 
@@ -158,13 +152,11 @@ The button's texture for the pressed state.
 
 - :ref:`Shape2D<class_Shape2D>` **shape**
 
-+-----------+------------------+
-| *Default* | null             |
-+-----------+------------------+
-| *Setter*  | set_shape(value) |
-+-----------+------------------+
-| *Getter*  | get_shape()      |
-+-----------+------------------+
++----------+------------------+
+| *Setter* | set_shape(value) |
++----------+------------------+
+| *Getter* | get_shape()      |
++----------+------------------+
 
 The button's shape.
 

@@ -28,7 +28,7 @@ Properties
 +-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
 | :ref:`DopplerTracking<enum_Camera_DopplerTracking>` | :ref:`doppler_tracking<class_Camera_property_doppler_tracking>` | 0               |
 +-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
-| :ref:`Environment<class_Environment>`               | :ref:`environment<class_Camera_property_environment>`           | null            |
+| :ref:`Environment<class_Environment>`               | :ref:`environment<class_Camera_property_environment>`           |                 |
 +-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
 | :ref:`float<class_float>`                           | :ref:`far<class_Camera_property_far>`                           | 100.0           |
 +-----------------------------------------------------+-----------------------------------------------------------------+-----------------+
@@ -187,13 +187,11 @@ If not :ref:`DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DI
 
 - :ref:`Environment<class_Environment>` **environment**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_environment(value) |
-+-----------+------------------------+
-| *Getter*  | get_environment()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_environment(value) |
++----------+------------------------+
+| *Getter* | get_environment()      |
++----------+------------------------+
 
 The :ref:`Environment<class_Environment>` to use for this camera.
 

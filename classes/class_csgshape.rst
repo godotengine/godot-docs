@@ -69,7 +69,7 @@ enum **Operation**:
 
 - **OPERATION_INTERSECTION** = **1** --- Only intersecting geometry remains, the rest is removed.
 
-- **OPERATION_SUBTRACTION** = **2** --- The second shape is susbtracted from the first, leaving a dent with it's shape.
+- **OPERATION_SUBTRACTION** = **2** --- The second shape is subtracted from the first, leaving a dent with its shape.
 
 Description
 -----------

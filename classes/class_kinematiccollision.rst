@@ -20,19 +20,19 @@ Properties
 ----------
 
 +-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Object<class_Object>`   | :ref:`collider<class_KinematicCollision_property_collider>`                         | null               |
+| :ref:`Object<class_Object>`   | :ref:`collider<class_KinematicCollision_property_collider>`                         |                    |
 +-------------------------------+-------------------------------------------------------------------------------------+--------------------+
 | :ref:`int<class_int>`         | :ref:`collider_id<class_KinematicCollision_property_collider_id>`                   | 0                  |
 +-------------------------------+-------------------------------------------------------------------------------------+--------------------+
 | :ref:`Variant<class_Variant>` | :ref:`collider_metadata<class_KinematicCollision_property_collider_metadata>`       |                    |
 +-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Object<class_Object>`   | :ref:`collider_shape<class_KinematicCollision_property_collider_shape>`             | null               |
+| :ref:`Object<class_Object>`   | :ref:`collider_shape<class_KinematicCollision_property_collider_shape>`             |                    |
 +-------------------------------+-------------------------------------------------------------------------------------+--------------------+
 | :ref:`int<class_int>`         | :ref:`collider_shape_index<class_KinematicCollision_property_collider_shape_index>` | 0                  |
 +-------------------------------+-------------------------------------------------------------------------------------+--------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`collider_velocity<class_KinematicCollision_property_collider_velocity>`       | Vector3( 0, 0, 0 ) |
 +-------------------------------+-------------------------------------------------------------------------------------+--------------------+
-| :ref:`Object<class_Object>`   | :ref:`local_shape<class_KinematicCollision_property_local_shape>`                   | null               |
+| :ref:`Object<class_Object>`   | :ref:`local_shape<class_KinematicCollision_property_local_shape>`                   |                    |
 +-------------------------------+-------------------------------------------------------------------------------------+--------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`normal<class_KinematicCollision_property_normal>`                             | Vector3( 0, 0, 0 ) |
 +-------------------------------+-------------------------------------------------------------------------------------+--------------------+
@@ -57,11 +57,9 @@ Property Descriptions
 
 - :ref:`Object<class_Object>` **collider**
 
-+-----------+----------------+
-| *Default* | null           |
-+-----------+----------------+
-| *Getter*  | get_collider() |
-+-----------+----------------+
++----------+----------------+
+| *Getter* | get_collider() |
++----------+----------------+
 
 The colliding body.
 
@@ -91,11 +89,9 @@ The colliding body's metadata. See :ref:`Object<class_Object>`.
 
 - :ref:`Object<class_Object>` **collider_shape**
 
-+-----------+----------------------+
-| *Default* | null                 |
-+-----------+----------------------+
-| *Getter*  | get_collider_shape() |
-+-----------+----------------------+
++----------+----------------------+
+| *Getter* | get_collider_shape() |
++----------+----------------------+
 
 The colliding body's shape.
 
@@ -127,11 +123,9 @@ The colliding object's velocity.
 
 - :ref:`Object<class_Object>` **local_shape**
 
-+-----------+-------------------+
-| *Default* | null              |
-+-----------+-------------------+
-| *Getter*  | get_local_shape() |
-+-----------+-------------------+
++----------+-------------------+
+| *Getter* | get_local_shape() |
++----------+-------------------+
 
 The moving object's colliding shape.
 

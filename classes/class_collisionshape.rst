@@ -22,7 +22,7 @@ Properties
 +---------------------------+---------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`   | :ref:`disabled<class_CollisionShape_property_disabled>` | false |
 +---------------------------+---------------------------------------------------------+-------+
-| :ref:`Shape<class_Shape>` | :ref:`shape<class_CollisionShape_property_shape>`       | null  |
+| :ref:`Shape<class_Shape>` | :ref:`shape<class_CollisionShape_property_shape>`       |       |
 +---------------------------+---------------------------------------------------------+-------+
 
 Methods
@@ -65,13 +65,11 @@ A disabled collision shape has no effect in the world.
 
 - :ref:`Shape<class_Shape>` **shape**
 
-+-----------+------------------+
-| *Default* | null             |
-+-----------+------------------+
-| *Setter*  | set_shape(value) |
-+-----------+------------------+
-| *Getter*  | get_shape()      |
-+-----------+------------------+
++----------+------------------+
+| *Setter* | set_shape(value) |
++----------+------------------+
+| *Getter* | get_shape()      |
++----------+------------------+
 
 The actual shape owned by this collision shape.
 

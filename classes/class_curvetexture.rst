@@ -20,7 +20,7 @@ Properties
 ----------
 
 +---------------------------+-------------------------------------------------+------+
-| :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_property_curve>` | null |
+| :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_property_curve>` |      |
 +---------------------------+-------------------------------------------------+------+
 | :ref:`int<class_int>`     | :ref:`width<class_CurveTexture_property_width>` | 2048 |
 +---------------------------+-------------------------------------------------+------+
@@ -37,13 +37,11 @@ Property Descriptions
 
 - :ref:`Curve<class_Curve>` **curve**
 
-+-----------+------------------+
-| *Default* | null             |
-+-----------+------------------+
-| *Setter*  | set_curve(value) |
-+-----------+------------------+
-| *Getter*  | get_curve()      |
-+-----------+------------------+
++----------+------------------+
+| *Setter* | set_curve(value) |
++----------+------------------+
+| *Getter* | get_curve()      |
++----------+------------------+
 
 The ``curve`` rendered onto the texture.
 

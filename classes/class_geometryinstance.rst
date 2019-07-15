@@ -34,7 +34,7 @@ Properties
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
 | :ref:`float<class_float>`                                               | :ref:`lod_min_hysteresis<class_GeometryInstance_property_lod_min_hysteresis>` | 0.0   |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
-| :ref:`Material<class_Material>`                                         | :ref:`material_override<class_GeometryInstance_property_material_override>`   | null  |
+| :ref:`Material<class_Material>`                                         | :ref:`material_override<class_GeometryInstance_property_material_override>`   |       |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`                                                 | :ref:`use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` | false |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
@@ -42,9 +42,13 @@ Properties
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_custom_aabb<class_GeometryInstance_method_set_custom_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)** |
-+------+----------------------------------------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`get_flag<class_GeometryInstance_method_get_flag>` **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** const                          |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`set_custom_aabb<class_GeometryInstance_method_set_custom_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)**                                    |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`set_flag<class_GeometryInstance_method_set_flag>` **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag, :ref:`bool<class_bool>` value **)** |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -187,13 +191,11 @@ The GeometryInstance's min LOD margin.
 
 - :ref:`Material<class_Material>` **material_override**
 
-+-----------+------------------------------+
-| *Default* | null                         |
-+-----------+------------------------------+
-| *Setter*  | set_material_override(value) |
-+-----------+------------------------------+
-| *Getter*  | get_material_override()      |
-+-----------+------------------------------+
++----------+------------------------------+
+| *Setter* | set_material_override(value) |
++----------+------------------------------+
+| *Getter* | get_material_override()      |
++----------+------------------------------+
 
 The material override for the whole geometry.
 
@@ -216,9 +218,17 @@ If ``true``, this GeometryInstance will be used when baking lights using a :ref:
 Method Descriptions
 -------------------
 
+.. _class_GeometryInstance_method_get_flag:
+
+- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** const
+
 .. _class_GeometryInstance_method_set_custom_aabb:
 
 - void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` aabb **)**
 
 Overrides the bounding box of this node with a custom one. To remove it, set an :ref:`AABB<class_AABB>` with all fields set to zero.
+
+.. _class_GeometryInstance_method_set_flag:
+
+- void **set_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag, :ref:`bool<class_bool>` value **)**
 

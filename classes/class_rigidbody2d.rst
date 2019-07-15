@@ -54,7 +54,7 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
 | :ref:`Mode<enum_RigidBody2D_Mode>`            | :ref:`mode<class_RigidBody2D_property_mode>`                                           | 0               |
 +-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
-| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_RigidBody2D_property_physics_material_override>` | null            |
+| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_RigidBody2D_property_physics_material_override>` |                 |
 +-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
 | :ref:`bool<class_bool>`                       | :ref:`sleeping<class_RigidBody2D_property_sleeping>`                                   | false           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------+-----------------+
@@ -416,13 +416,11 @@ The body's mode. See :ref:`Mode<enum_RigidBody2D_Mode>` for possible values.
 
 - :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
 
-+-----------+--------------------------------------+
-| *Default* | null                                 |
-+-----------+--------------------------------------+
-| *Setter*  | set_physics_material_override(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_physics_material_override()      |
-+-----------+--------------------------------------+
++----------+--------------------------------------+
+| *Setter* | set_physics_material_override(value) |
++----------+--------------------------------------+
+| *Getter* | get_physics_material_override()      |
++----------+--------------------------------------+
 
 .. _class_RigidBody2D_property_sleeping:
 

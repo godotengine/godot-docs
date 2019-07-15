@@ -191,6 +191,35 @@ Properties
 | :ref:`int<class_int>`     | :ref:`precision<class_Generic6DOFJoint_property_precision>`                                                   | 1     |
 +---------------------------+---------------------------------------------------------------------------------------------------------------+-------+
 
+Methods
+-------
+
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_flag_x<class_Generic6DOFJoint_method_get_flag_x>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const                                 |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_flag_y<class_Generic6DOFJoint_method_get_flag_y>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const                                 |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_flag_z<class_Generic6DOFJoint_method_get_flag_z>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const                                 |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_param_x<class_Generic6DOFJoint_method_get_param_x>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const                            |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_param_y<class_Generic6DOFJoint_method_get_param_y>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const                            |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_param_z<class_Generic6DOFJoint_method_get_param_z>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const                            |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_flag_x<class_Generic6DOFJoint_method_set_flag_x>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag, :ref:`bool<class_bool>` value **)**        |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_flag_y<class_Generic6DOFJoint_method_set_flag_y>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag, :ref:`bool<class_bool>` value **)**        |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_flag_z<class_Generic6DOFJoint_method_set_flag_z>` **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag, :ref:`bool<class_bool>` value **)**        |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param_x<class_Generic6DOFJoint_method_set_param_x>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param, :ref:`float<class_float>` value **)** |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param_y<class_Generic6DOFJoint_method_set_param_y>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param, :ref:`float<class_float>` value **)** |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param_z<class_Generic6DOFJoint_method_set_param_z>` **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param, :ref:`float<class_float>` value **)** |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
@@ -1423,4 +1452,55 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+----------------------+
 | *Getter*  | get_precision()      |
 +-----------+----------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_Generic6DOFJoint_method_get_flag_x:
+
+- :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const
+
+.. _class_Generic6DOFJoint_method_get_flag_y:
+
+- :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const
+
+.. _class_Generic6DOFJoint_method_get_flag_z:
+
+- :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const
+
+.. _class_Generic6DOFJoint_method_get_param_x:
+
+- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const
+
+.. _class_Generic6DOFJoint_method_get_param_y:
+
+- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const
+
+.. _class_Generic6DOFJoint_method_get_param_z:
+
+- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const
+
+.. _class_Generic6DOFJoint_method_set_flag_x:
+
+- void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag, :ref:`bool<class_bool>` value **)**
+
+.. _class_Generic6DOFJoint_method_set_flag_y:
+
+- void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag, :ref:`bool<class_bool>` value **)**
+
+.. _class_Generic6DOFJoint_method_set_flag_z:
+
+- void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag, :ref:`bool<class_bool>` value **)**
+
+.. _class_Generic6DOFJoint_method_set_param_x:
+
+- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param, :ref:`float<class_float>` value **)**
+
+.. _class_Generic6DOFJoint_method_set_param_y:
+
+- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param, :ref:`float<class_float>` value **)**
+
+.. _class_Generic6DOFJoint_method_set_param_z:
+
+- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param, :ref:`float<class_float>` value **)**
 

@@ -22,7 +22,7 @@ Properties
 +---------------------------------------------------+------------------------------------------------------------------+------+
 | :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationPolygonInstance_property_enabled>` | true |
 +---------------------------------------------------+------------------------------------------------------------------+------+
-| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_property_navpoly>` | null |
+| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_property_navpoly>` |      |
 +---------------------------------------------------+------------------------------------------------------------------+------+
 
 Property Descriptions
@@ -44,11 +44,9 @@ Property Descriptions
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` **navpoly**
 
-+-----------+-------------------------------+
-| *Default* | null                          |
-+-----------+-------------------------------+
-| *Setter*  | set_navigation_polygon(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_navigation_polygon()      |
-+-----------+-------------------------------+
++----------+-------------------------------+
+| *Setter* | set_navigation_polygon(value) |
++----------+-------------------------------+
+| *Getter* | get_navigation_polygon()      |
++----------+-------------------------------+
 

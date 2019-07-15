@@ -975,7 +975,7 @@ Queues a node for deletion at the end of the current frame. When deleted, all of
 
 - void **raise** **(** **)**
 
-Moves this node to the top of the array of nodes of the parent node. This is often useful in GUIs (:ref:`Control<class_Control>` nodes), because their order of drawing depends on their order in the tree.
+Moves this node to the bottom of parent node's children hierarchy. This is often useful in GUIs (:ref:`Control<class_Control>` nodes), because their order of drawing depends on their order in the tree, i.e. the further they are on the node list, the higher they are drawn. After using ``raise``, a Control will be drawn on top of their siblings.
 
 .. _class_Node_method_remove_and_skip:
 

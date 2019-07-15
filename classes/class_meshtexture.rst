@@ -20,11 +20,11 @@ Properties
 ----------
 
 +-------------------------------+--------------------------------------------------------------+-----------------+
-| :ref:`Texture<class_Texture>` | :ref:`base_texture<class_MeshTexture_property_base_texture>` | null            |
+| :ref:`Texture<class_Texture>` | :ref:`base_texture<class_MeshTexture_property_base_texture>` |                 |
 +-------------------------------+--------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`image_size<class_MeshTexture_property_image_size>`     | Vector2( 0, 0 ) |
 +-------------------------------+--------------------------------------------------------------+-----------------+
-| :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshTexture_property_mesh>`                 | null            |
+| :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshTexture_property_mesh>`                 |                 |
 +-------------------------------+--------------------------------------------------------------+-----------------+
 
 Description
@@ -39,13 +39,11 @@ Property Descriptions
 
 - :ref:`Texture<class_Texture>` **base_texture**
 
-+-----------+-------------------------+
-| *Default* | null                    |
-+-----------+-------------------------+
-| *Setter*  | set_base_texture(value) |
-+-----------+-------------------------+
-| *Getter*  | get_base_texture()      |
-+-----------+-------------------------+
++----------+-------------------------+
+| *Setter* | set_base_texture(value) |
++----------+-------------------------+
+| *Getter* | get_base_texture()      |
++----------+-------------------------+
 
 Sets the base texture that the Mesh will use to draw.
 
@@ -67,13 +65,11 @@ Sets the size of the image, needed for reference.
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
-+-----------+-----------------+
-| *Default* | null            |
-+-----------+-----------------+
-| *Setter*  | set_mesh(value) |
-+-----------+-----------------+
-| *Getter*  | get_mesh()      |
-+-----------+-----------------+
++----------+-----------------+
+| *Setter* | set_mesh(value) |
++----------+-----------------+
+| *Getter* | get_mesh()      |
++----------+-----------------+
 
 Sets the mesh used to draw. It must be a mesh using 2D vertices.
 

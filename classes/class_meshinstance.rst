@@ -22,7 +22,7 @@ Properties
 ----------
 
 +---------------------------------+-------------------------------------------------------+----------------+
-| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`         | null           |
+| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`         |                |
 +---------------------------------+-------------------------------------------------------+----------------+
 | :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>` | NodePath("..") |
 +---------------------------------+-------------------------------------------------------+----------------+
@@ -56,13 +56,11 @@ Property Descriptions
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
-+-----------+-----------------+
-| *Default* | null            |
-+-----------+-----------------+
-| *Setter*  | set_mesh(value) |
-+-----------+-----------------+
-| *Getter*  | get_mesh()      |
-+-----------+-----------------+
++----------+-----------------+
+| *Setter* | set_mesh(value) |
++----------+-----------------+
+| *Getter* | get_mesh()      |
++----------+-----------------+
 
 The :ref:`Mesh<class_Mesh>` resource for the instance.
 

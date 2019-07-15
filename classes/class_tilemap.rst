@@ -54,7 +54,7 @@ Properties
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
 | :ref:`int<class_int>`                      | :ref:`occluder_light_mask<class_TileMap_property_occluder_light_mask>`         | 1                               |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
-| :ref:`TileSet<class_TileSet>`              | :ref:`tile_set<class_TileMap_property_tile_set>`                               | null                            |
+| :ref:`TileSet<class_TileSet>`              | :ref:`tile_set<class_TileMap_property_tile_set>`                               |                                 |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------+
 
 Methods
@@ -438,13 +438,11 @@ The light mask assigned to all light occluders in the TileMap. The TileSet's lig
 
 - :ref:`TileSet<class_TileSet>` **tile_set**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_tileset(value) |
-+-----------+--------------------+
-| *Getter*  | get_tileset()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_tileset(value) |
++----------+--------------------+
+| *Getter* | get_tileset()      |
++----------+--------------------+
 
 The assigned :ref:`TileSet<class_TileSet>`.
 

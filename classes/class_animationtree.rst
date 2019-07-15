@@ -28,7 +28,7 @@ Properties
 +----------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+
 | :ref:`NodePath<class_NodePath>`                                      | :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` | NodePath("") |
 +----------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+
-| :ref:`AnimationNode<class_AnimationNode>`                            | :ref:`tree_root<class_AnimationTree_property_tree_root>`                 | null         |
+| :ref:`AnimationNode<class_AnimationNode>`                            | :ref:`tree_root<class_AnimationTree_property_tree_root>`                 |              |
 +----------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+
 
 Methods
@@ -123,13 +123,11 @@ Property Descriptions
 
 - :ref:`AnimationNode<class_AnimationNode>` **tree_root**
 
-+-----------+----------------------+
-| *Default* | null                 |
-+-----------+----------------------+
-| *Setter*  | set_tree_root(value) |
-+-----------+----------------------+
-| *Getter*  | get_tree_root()      |
-+-----------+----------------------+
++----------+----------------------+
+| *Setter* | set_tree_root(value) |
++----------+----------------------+
+| *Getter* | get_tree_root()      |
++----------+----------------------+
 
 Method Descriptions
 -------------------

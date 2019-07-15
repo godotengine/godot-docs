@@ -20,7 +20,7 @@ Properties
 ----------
 
 +-------------------------------------+---------------------------------------------------+------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     | {  } |
+| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     | {}   |
 +-------------------------------------+---------------------------------------------------+------+
 | :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_property_strings>` | [  ] |
 +-------------------------------------+---------------------------------------------------+------+
@@ -53,7 +53,7 @@ Property Descriptions
 - :ref:`Dictionary<class_Dictionary>` **names**
 
 +-----------+-------------+
-| *Default* | {  }        |
+| *Default* | {}          |
 +-----------+-------------+
 | *Getter*  | get_names() |
 +-----------+-------------+

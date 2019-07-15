@@ -32,7 +32,7 @@ Properties
 +---------------------------------------+--------------------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`               | :ref:`paused<class_VideoPlayer_property_paused>`                   | false    |
 +---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`VideoStream<class_VideoStream>` | :ref:`stream<class_VideoPlayer_property_stream>`                   | null     |
+| :ref:`VideoStream<class_VideoStream>` | :ref:`stream<class_VideoPlayer_property_stream>`                   |          |
 +---------------------------------------+--------------------------------------------------------------------+----------+
 | :ref:`float<class_float>`             | :ref:`stream_position<class_VideoPlayer_property_stream_position>` |          |
 +---------------------------------------+--------------------------------------------------------------------+----------+
@@ -161,13 +161,11 @@ If ``true``, the video is paused.
 
 - :ref:`VideoStream<class_VideoStream>` **stream**
 
-+-----------+-------------------+
-| *Default* | null              |
-+-----------+-------------------+
-| *Setter*  | set_stream(value) |
-+-----------+-------------------+
-| *Getter*  | get_stream()      |
-+-----------+-------------------+
++----------+-------------------+
+| *Setter* | set_stream(value) |
++----------+-------------------+
+| *Getter* | get_stream()      |
++----------+-------------------+
 
 .. _class_VideoPlayer_property_stream_position:
 

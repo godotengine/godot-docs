@@ -31,6 +31,13 @@ Properties
 | :ref:`bool<class_bool>`         | :ref:`use_global_coordinates<class_RemoteTransform2D_property_use_global_coordinates>` | true         |
 +---------------------------------+----------------------------------------------------------------------------------------+--------------+
 
+Methods
+-------
+
++------+------------------------------------------------------------------------------------------+
+| void | :ref:`force_update_cache<class_RemoteTransform2D_method_force_update_cache>` **(** **)** |
++------+------------------------------------------------------------------------------------------+
+
 Description
 -----------
 
@@ -110,4 +117,13 @@ If ``true``, the remote node's scale is updated.
 +-----------+-----------------------------------+
 
 If ``true``, global coordinates are used. If ``false``, local coordinates are used.
+
+Method Descriptions
+-------------------
+
+.. _class_RemoteTransform2D_method_force_update_cache:
+
+- void **force_update_cache** **(** **)**
+
+``RemoteTransform2D`` caches the remote node. It may not notice if the remote node disappears; :ref:`force_update_cache<class_RemoteTransform2D_method_force_update_cache>` forces it to update the cache again.
 

@@ -28,7 +28,7 @@ Properties
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
 | :ref:`float<class_float>`                     | :ref:`friction<class_StaticBody2D_property_friction>`                                   |                 |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
-| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>` | null            |
+| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>` |                 |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
 
 Description
@@ -101,11 +101,9 @@ Deprecated, use :ref:`PhysicsMaterial.friction<class_PhysicsMaterial_property_fr
 
 - :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
 
-+-----------+--------------------------------------+
-| *Default* | null                                 |
-+-----------+--------------------------------------+
-| *Setter*  | set_physics_material_override(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_physics_material_override()      |
-+-----------+--------------------------------------+
++----------+--------------------------------------+
+| *Setter* | set_physics_material_override(value) |
++----------+--------------------------------------+
+| *Getter* | get_physics_material_override()      |
++----------+--------------------------------------+
 

@@ -30,7 +30,7 @@ Properties
 +-------------------------------+---------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`         | :ref:`hframes<class_Sprite_property_hframes>`                       | 1                   |
 +-------------------------------+---------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_Sprite_property_normal_map>`                 | null                |
+| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_Sprite_property_normal_map>`                 |                     |
 +-------------------------------+---------------------------------------------------------------------+---------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`offset<class_Sprite_property_offset>`                         | Vector2( 0, 0 )     |
 +-------------------------------+---------------------------------------------------------------------+---------------------+
@@ -40,7 +40,7 @@ Properties
 +-------------------------------+---------------------------------------------------------------------+---------------------+
 | :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite_property_region_rect>`               | Rect2( 0, 0, 0, 0 ) |
 +-------------------------------+---------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite_property_texture>`                       | null                |
+| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite_property_texture>`                       |                     |
 +-------------------------------+---------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`         | :ref:`vframes<class_Sprite_property_vframes>`                       | 1                   |
 +-------------------------------+---------------------------------------------------------------------+---------------------+
@@ -151,13 +151,11 @@ The number of columns in the sprite sheet.
 
 - :ref:`Texture<class_Texture>` **normal_map**
 
-+-----------+-----------------------+
-| *Default* | null                  |
-+-----------+-----------------------+
-| *Setter*  | set_normal_map(value) |
-+-----------+-----------------------+
-| *Getter*  | get_normal_map()      |
-+-----------+-----------------------+
++----------+-----------------------+
+| *Setter* | set_normal_map(value) |
++----------+-----------------------+
+| *Getter* | get_normal_map()      |
++----------+-----------------------+
 
 The normal map gives depth to the Sprite.
 
@@ -221,13 +219,11 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite_pr
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 :ref:`Texture<class_Texture>` object to draw.
 

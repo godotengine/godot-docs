@@ -22,7 +22,7 @@ Properties
 +---------------------------------+-----------------------------------------------------------+------+
 | :ref:`float<class_float>`       | :ref:`inner_radius<class_CSGTorus_property_inner_radius>` | 2.0  |
 +---------------------------------+-----------------------------------------------------------+------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGTorus_property_material>`         | null |
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGTorus_property_material>`         |      |
 +---------------------------------+-----------------------------------------------------------+------+
 | :ref:`float<class_float>`       | :ref:`outer_radius<class_CSGTorus_property_outer_radius>` | 3.0  |
 +---------------------------------+-----------------------------------------------------------+------+
@@ -59,13 +59,11 @@ The inner radius of the torus.
 
 - :ref:`Material<class_Material>` **material**
 
-+-----------+---------------------+
-| *Default* | null                |
-+-----------+---------------------+
-| *Setter*  | set_material(value) |
-+-----------+---------------------+
-| *Getter*  | get_material()      |
-+-----------+---------------------+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
 
 The material used to render the torus.
 

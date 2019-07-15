@@ -24,7 +24,7 @@ Properties
 +--------------------------------------------+--------------------------------------------------------------------+-----------------------------+
 | :ref:`DrawOrder<enum_Particles_DrawOrder>` | :ref:`draw_order<class_Particles_property_draw_order>`             | 0                           |
 +--------------------------------------------+--------------------------------------------------------------------+-----------------------------+
-| :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_1<class_Particles_property_draw_pass_1>`           | null                        |
+| :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_1<class_Particles_property_draw_pass_1>`           |                             |
 +--------------------------------------------+--------------------------------------------------------------------+-----------------------------+
 | :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_2<class_Particles_property_draw_pass_2>`           |                             |
 +--------------------------------------------+--------------------------------------------------------------------+-----------------------------+
@@ -50,7 +50,7 @@ Properties
 +--------------------------------------------+--------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                  | :ref:`preprocess<class_Particles_property_preprocess>`             | 0.0                         |
 +--------------------------------------------+--------------------------------------------------------------------+-----------------------------+
-| :ref:`Material<class_Material>`            | :ref:`process_material<class_Particles_property_process_material>` | null                        |
+| :ref:`Material<class_Material>`            | :ref:`process_material<class_Particles_property_process_material>` |                             |
 +--------------------------------------------+--------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                  | :ref:`randomness<class_Particles_property_randomness>`             | 0.0                         |
 +--------------------------------------------+--------------------------------------------------------------------+-----------------------------+
@@ -62,11 +62,15 @@ Properties
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`capture_aabb<class_Particles_method_capture_aabb>` **(** **)** const |
-+-------------------------+----------------------------------------------------------------------------+
-| void                    | :ref:`restart<class_Particles_method_restart>` **(** **)**                 |
-+-------------------------+----------------------------------------------------------------------------+
++-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_AABB>` | :ref:`capture_aabb<class_Particles_method_capture_aabb>` **(** **)** const                                                                |
++-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>` | :ref:`get_draw_pass_mesh<class_Particles_method_get_draw_pass_mesh>` **(** :ref:`int<class_int>` pass **)** const                         |
++-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`restart<class_Particles_method_restart>` **(** **)**                                                                                |
++-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`set_draw_pass_mesh<class_Particles_method_set_draw_pass_mesh>` **(** :ref:`int<class_int>` pass, :ref:`Mesh<class_Mesh>` mesh **)** |
++-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -141,13 +145,11 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values.
 
 - :ref:`Mesh<class_Mesh>` **draw_pass_1**
 
-+-----------+---------------------------+
-| *Default* | null                      |
-+-----------+---------------------------+
-| *Setter*  | set_draw_pass_mesh(value) |
-+-----------+---------------------------+
-| *Getter*  | get_draw_pass_mesh()      |
-+-----------+---------------------------+
++----------+---------------------------+
+| *Setter* | set_draw_pass_mesh(value) |
++----------+---------------------------+
+| *Getter* | get_draw_pass_mesh()      |
++----------+---------------------------+
 
 :ref:`Mesh<class_Mesh>` that is drawn for the first draw pass.
 
@@ -317,13 +319,11 @@ Amount of time to preprocess the particles before animation starts. Lets you sta
 
 - :ref:`Material<class_Material>` **process_material**
 
-+-----------+-----------------------------+
-| *Default* | null                        |
-+-----------+-----------------------------+
-| *Setter*  | set_process_material(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_process_material()      |
-+-----------+-----------------------------+
++----------+-----------------------------+
+| *Setter* | set_process_material(value) |
++----------+-----------------------------+
+| *Getter* | get_process_material()      |
++----------+-----------------------------+
 
 :ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
@@ -378,9 +378,17 @@ Method Descriptions
 
 Returns the axis-aligned bounding box that contains all the particles that are active in the current frame.
 
+.. _class_Particles_method_get_draw_pass_mesh:
+
+- :ref:`Mesh<class_Mesh>` **get_draw_pass_mesh** **(** :ref:`int<class_int>` pass **)** const
+
 .. _class_Particles_method_restart:
 
 - void **restart** **(** **)**
 
 Restarts the particle emission, clearing existing particles.
+
+.. _class_Particles_method_set_draw_pass_mesh:
+
+- void **set_draw_pass_mesh** **(** :ref:`int<class_int>` pass, :ref:`Mesh<class_Mesh>` mesh **)**
 

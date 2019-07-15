@@ -30,7 +30,7 @@ Properties
 +----------------------------------------------------+----------------------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`                            | :ref:`playing<class_AudioStreamPlayer_property_playing>`             | false    |
 +----------------------------------------------------+----------------------------------------------------------------------+----------+
-| :ref:`AudioStream<class_AudioStream>`              | :ref:`stream<class_AudioStreamPlayer_property_stream>`               | null     |
+| :ref:`AudioStream<class_AudioStream>`              | :ref:`stream<class_AudioStreamPlayer_property_stream>`               |          |
 +----------------------------------------------------+----------------------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`                            | :ref:`stream_paused<class_AudioStreamPlayer_property_stream_paused>` | false    |
 +----------------------------------------------------+----------------------------------------------------------------------+----------+
@@ -165,13 +165,11 @@ If ``true``, audio is playing.
 
 - :ref:`AudioStream<class_AudioStream>` **stream**
 
-+-----------+-------------------+
-| *Default* | null              |
-+-----------+-------------------+
-| *Setter*  | set_stream(value) |
-+-----------+-------------------+
-| *Getter*  | get_stream()      |
-+-----------+-------------------+
++----------+-------------------+
+| *Setter* | set_stream(value) |
++----------+-------------------+
+| *Getter* | get_stream()      |
++----------+-------------------+
 
 The :ref:`AudioStream<class_AudioStream>` object to be played.
 

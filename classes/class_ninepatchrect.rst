@@ -36,8 +36,17 @@ Properties
 +------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
 | :ref:`Rect2<class_Rect2>`                                  | :ref:`region_rect<class_NinePatchRect_property_region_rect>`                         | Rect2( 0, 0, 0, 0 ) |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`texture<class_NinePatchRect_property_texture>`                                 | null                |
+| :ref:`Texture<class_Texture>`                              | :ref:`texture<class_NinePatchRect_property_texture>`                                 |                     |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+
+Methods
+-------
+
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_patch_margin<class_NinePatchRect_method_get_patch_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                        |
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`set_patch_margin<class_NinePatchRect_method_set_patch_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` value **)** |
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -191,13 +200,22 @@ Rectangular region of the texture to sample from. If you're working with an atla
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 The node's texture resource.
+
+Method Descriptions
+-------------------
+
+.. _class_NinePatchRect_method_get_patch_margin:
+
+- :ref:`int<class_int>` **get_patch_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+.. _class_NinePatchRect_method_set_patch_margin:
+
+- void **set_patch_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` value **)**
 

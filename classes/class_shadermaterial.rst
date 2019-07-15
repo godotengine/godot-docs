@@ -19,9 +19,9 @@ A material that uses a custom :ref:`Shader<class_Shader>` program.
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------+------+
-| :ref:`Shader<class_Shader>` | :ref:`shader<class_ShaderMaterial_property_shader>` | null |
-+-----------------------------+-----------------------------------------------------+------+
++-----------------------------+-----------------------------------------------------+
+| :ref:`Shader<class_Shader>` | :ref:`shader<class_ShaderMaterial_property_shader>` |
++-----------------------------+-----------------------------------------------------+
 
 Methods
 -------
@@ -53,13 +53,11 @@ Property Descriptions
 
 - :ref:`Shader<class_Shader>` **shader**
 
-+-----------+-------------------+
-| *Default* | null              |
-+-----------+-------------------+
-| *Setter*  | set_shader(value) |
-+-----------+-------------------+
-| *Getter*  | get_shader()      |
-+-----------+-------------------+
++----------+-------------------+
+| *Setter* | set_shader(value) |
++----------+-------------------+
+| *Getter* | get_shader()      |
++----------+-------------------+
 
 The :ref:`Shader<class_Shader>` program used to render this material.
 

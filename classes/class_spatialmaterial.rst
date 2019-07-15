@@ -22,7 +22,7 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`Color<class_Color>`                                      | :ref:`albedo_color<class_SpatialMaterial_property_albedo_color>`                                     | Color( 1, 1, 1, 1 ) |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                                  | :ref:`albedo_texture<class_SpatialMaterial_property_albedo_texture>`                                 | null                |
+| :ref:`Texture<class_Texture>`                                  | :ref:`albedo_texture<class_SpatialMaterial_property_albedo_texture>`                                 |                     |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                                      | :ref:`anisotropy<class_SpatialMaterial_property_anisotropy>`                                         |                     |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
@@ -122,7 +122,7 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                                      | :ref:`metallic_specular<class_SpatialMaterial_property_metallic_specular>`                           | 0.5                 |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                                  | :ref:`metallic_texture<class_SpatialMaterial_property_metallic_texture>`                             | null                |
+| :ref:`Texture<class_Texture>`                                  | :ref:`metallic_texture<class_SpatialMaterial_property_metallic_texture>`                             |                     |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`metallic_texture_channel<class_SpatialMaterial_property_metallic_texture_channel>`             | 2                   |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
@@ -186,7 +186,7 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                                      | :ref:`roughness<class_SpatialMaterial_property_roughness>`                                           | 1.0                 |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                                  | :ref:`roughness_texture<class_SpatialMaterial_property_roughness_texture>`                           | null                |
+| :ref:`Texture<class_Texture>`                                  | :ref:`roughness_texture<class_SpatialMaterial_property_roughness_texture>`                           |                     |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`roughness_texture_channel<class_SpatialMaterial_property_roughness_texture_channel>`           | 1                   |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
@@ -222,6 +222,23 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>`         | false               |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+
+Methods
+-------
+
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`get_feature<class_SpatialMaterial_method_get_feature>` **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature **)** const                                          |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`get_flag<class_SpatialMaterial_method_get_flag>` **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag **)** const                                                       |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`get_texture<class_SpatialMaterial_method_get_texture>` **(** :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` param **)** const                                  |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_feature<class_SpatialMaterial_method_set_feature>` **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature, :ref:`bool<class_bool>` enable **)**                |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_flag<class_SpatialMaterial_method_set_flag>` **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag, :ref:`bool<class_bool>` enable **)**                             |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_texture<class_SpatialMaterial_method_set_texture>` **(** :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` param, :ref:`Texture<class_Texture>` texture **)** |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -661,13 +678,11 @@ The material's base color.
 
 - :ref:`Texture<class_Texture>` **albedo_texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 .. _class_SpatialMaterial_property_anisotropy:
 
@@ -1247,13 +1262,11 @@ General reflectivity amount.
 
 - :ref:`Texture<class_Texture>` **metallic_texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 .. _class_SpatialMaterial_property_metallic_texture_channel:
 
@@ -1645,13 +1658,11 @@ Surface reflection. A value of ``0`` represents a perfect mirror while a value o
 
 - :ref:`Texture<class_Texture>` **roughness_texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 .. _class_SpatialMaterial_property_roughness_texture_channel:
 
@@ -1860,4 +1871,31 @@ If ``true``, the model's vertex colors are processed as sRGB mode.
 +-----------+-----------------+
 
 If ``true``, the vertex color is used as albedo color.
+
+Method Descriptions
+-------------------
+
+.. _class_SpatialMaterial_method_get_feature:
+
+- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature **)** const
+
+.. _class_SpatialMaterial_method_get_flag:
+
+- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag **)** const
+
+.. _class_SpatialMaterial_method_get_texture:
+
+- :ref:`Texture<class_Texture>` **get_texture** **(** :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` param **)** const
+
+.. _class_SpatialMaterial_method_set_feature:
+
+- void **set_feature** **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature, :ref:`bool<class_bool>` enable **)**
+
+.. _class_SpatialMaterial_method_set_flag:
+
+- void **set_flag** **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag, :ref:`bool<class_bool>` enable **)**
+
+.. _class_SpatialMaterial_method_set_texture:
+
+- void **set_texture** **(** :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` param, :ref:`Texture<class_Texture>` texture **)**
 

@@ -153,6 +153,19 @@ Properties
 | :ref:`float<class_float>`   | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`                       | 0.0 |
 +-----------------------------+--------------------------------------------------------------------------------------------+-----+
 
+Methods
+-------
+
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_input_caption<class_AnimationNodeTransition_method_get_input_caption>` **(** :ref:`int<class_int>` input **)** const                                           |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`is_input_set_as_auto_advance<class_AnimationNodeTransition_method_is_input_set_as_auto_advance>` **(** :ref:`int<class_int>` input **)** const                     |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`set_input_as_auto_advance<class_AnimationNodeTransition_method_set_input_as_auto_advance>` **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)** |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`set_input_caption<class_AnimationNodeTransition_method_set_input_caption>` **(** :ref:`int<class_int>` input, :ref:`String<class_String>` caption **)**            |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -819,4 +832,23 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | get_cross_fade_time()      |
 +-----------+----------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_AnimationNodeTransition_method_get_input_caption:
+
+- :ref:`String<class_String>` **get_input_caption** **(** :ref:`int<class_int>` input **)** const
+
+.. _class_AnimationNodeTransition_method_is_input_set_as_auto_advance:
+
+- :ref:`bool<class_bool>` **is_input_set_as_auto_advance** **(** :ref:`int<class_int>` input **)** const
+
+.. _class_AnimationNodeTransition_method_set_input_as_auto_advance:
+
+- void **set_input_as_auto_advance** **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)**
+
+.. _class_AnimationNodeTransition_method_set_input_caption:
+
+- void **set_input_caption** **(** :ref:`int<class_int>` input, :ref:`String<class_String>` caption **)**
 

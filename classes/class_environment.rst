@@ -22,7 +22,7 @@ Properties
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`adjustment_brightness<class_Environment_property_adjustment_brightness>`                     | 1.0                                |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
-| :ref:`Texture<class_Texture>`                          | :ref:`adjustment_color_correction<class_Environment_property_adjustment_color_correction>`         | null                               |
+| :ref:`Texture<class_Texture>`                          | :ref:`adjustment_color_correction<class_Environment_property_adjustment_color_correction>`         |                                    |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`adjustment_contrast<class_Environment_property_adjustment_contrast>`                         | 1.0                                |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
@@ -56,7 +56,7 @@ Properties
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`BGMode<enum_Environment_BGMode>`                 | :ref:`background_mode<class_Environment_property_background_mode>`                                 | 0                                  |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
-| :ref:`Sky<class_Sky>`                                  | :ref:`background_sky<class_Environment_property_background_sky>`                                   | null                               |
+| :ref:`Sky<class_Sky>`                                  | :ref:`background_sky<class_Environment_property_background_sky>`                                   |                                    |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`background_sky_custom_fov<class_Environment_property_background_sky_custom_fov>`             | 0.0                                |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
@@ -188,6 +188,15 @@ Properties
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`tonemap_white<class_Environment_property_tonemap_white>`                                     | 1.0                                |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
+
+Methods
+-------
+
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_glow_level_enabled<class_Environment_method_is_glow_level_enabled>` **(** :ref:`int<class_int>` idx **)** const              |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`set_glow_level<class_Environment_method_set_glow_level>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enabled **)** |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -361,13 +370,11 @@ Global brightness value of the rendered scene (default value is 1).
 
 - :ref:`Texture<class_Texture>` **adjustment_color_correction**
 
-+-----------+----------------------------------------+
-| *Default* | null                                   |
-+-----------+----------------------------------------+
-| *Setter*  | set_adjustment_color_correction(value) |
-+-----------+----------------------------------------+
-| *Getter*  | get_adjustment_color_correction()      |
-+-----------+----------------------------------------+
++----------+----------------------------------------+
+| *Setter* | set_adjustment_color_correction(value) |
++----------+----------------------------------------+
+| *Getter* | get_adjustment_color_correction()      |
++----------+----------------------------------------+
 
 Applies the provided :ref:`Texture<class_Texture>` resource to affect the global color aspect of the rendered scene.
 
@@ -599,13 +606,11 @@ Defines the mode of background.
 
 - :ref:`Sky<class_Sky>` **background_sky**
 
-+-----------+----------------+
-| *Default* | null           |
-+-----------+----------------+
-| *Setter*  | set_sky(value) |
-+-----------+----------------+
-| *Getter*  | get_sky()      |
-+-----------+----------------+
++----------+----------------+
+| *Setter* | set_sky(value) |
++----------+----------------+
+| *Getter* | get_sky()      |
++----------+----------------+
 
 :ref:`Sky<class_Sky>` resource defined as background.
 
@@ -1476,4 +1481,15 @@ Tonemapping mode.
 +-----------+--------------------------+
 
 White reference value for tonemap.
+
+Method Descriptions
+-------------------
+
+.. _class_Environment_method_is_glow_level_enabled:
+
+- :ref:`bool<class_bool>` **is_glow_level_enabled** **(** :ref:`int<class_int>` idx **)** const
+
+.. _class_Environment_method_set_glow_level:
+
+- void **set_glow_level** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enabled **)**
 

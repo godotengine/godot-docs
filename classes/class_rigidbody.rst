@@ -62,7 +62,7 @@ Properties
 +-----------------------------------------------+--------------------------------------------------------------------------------------+--------------------+
 | :ref:`Mode<enum_RigidBody_Mode>`              | :ref:`mode<class_RigidBody_property_mode>`                                           | 0                  |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+--------------------+
-| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_RigidBody_property_physics_material_override>` | null               |
+| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_RigidBody_property_physics_material_override>` |                    |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+--------------------+
 | :ref:`bool<class_bool>`                       | :ref:`sleeping<class_RigidBody_property_sleeping>`                                   | false              |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+--------------------+
@@ -87,7 +87,11 @@ Methods
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`apply_torque_impulse<class_RigidBody_method_apply_torque_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                               |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_axis_lock<class_RigidBody_method_get_axis_lock>` **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** const                           |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>` | :ref:`get_colliding_bodies<class_RigidBody_method_get_colliding_bodies>` **(** **)** const                                                               |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_axis_lock<class_RigidBody_method_set_axis_lock>` **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**   |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_axis_velocity<class_RigidBody_method_set_axis_velocity>` **(** :ref:`Vector3<class_Vector3>` axis_velocity **)**                               |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -457,13 +461,11 @@ The body mode. See :ref:`Mode<enum_RigidBody_Mode>` for possible values.
 
 - :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
 
-+-----------+--------------------------------------+
-| *Default* | null                                 |
-+-----------+--------------------------------------+
-| *Setter*  | set_physics_material_override(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_physics_material_override()      |
-+-----------+--------------------------------------+
++----------+--------------------------------------+
+| *Setter* | set_physics_material_override(value) |
++----------+--------------------------------------+
+| *Getter* | get_physics_material_override()      |
++----------+--------------------------------------+
 
 .. _class_RigidBody_property_sleeping:
 
@@ -542,6 +544,10 @@ Applies a positioned impulse to the body. An impulse is time independent! Applyi
 
 Applies a torque impulse which will be affected by the body mass and shape. This will rotate the body around the ``impulse`` vector passed.
 
+.. _class_RigidBody_method_get_axis_lock:
+
+- :ref:`bool<class_bool>` **get_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** const
+
 .. _class_RigidBody_method_get_colliding_bodies:
 
 - :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
@@ -549,6 +555,10 @@ Applies a torque impulse which will be affected by the body mass and shape. This
 Returns a list of the bodies colliding with this one. By default, number of max contacts reported is at 0, see the :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` property to increase it.
 
 **Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
+
+.. _class_RigidBody_method_set_axis_lock:
+
+- void **set_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**
 
 .. _class_RigidBody_method_set_axis_velocity:
 

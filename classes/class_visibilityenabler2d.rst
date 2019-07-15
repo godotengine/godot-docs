@@ -33,6 +33,15 @@ Properties
 | :ref:`bool<class_bool>` | :ref:`process_parent<class_VisibilityEnabler2D_property_process_parent>`                 | false |
 +-------------------------+------------------------------------------------------------------------------------------+-------+
 
+Methods
+-------
+
++-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_enabler_enabled<class_VisibilityEnabler2D_method_is_enabler_enabled>` **(** :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` enabler **)** const              |
++-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`set_enabler<class_VisibilityEnabler2D_method_set_enabler>` **(** :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)** |
++-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
@@ -159,4 +168,15 @@ If ``true``, the parent's :ref:`Node._physics_process<class_Node_method__physics
 +-----------+----------------------+
 
 If ``true``, the parent's :ref:`Node._process<class_Node_method__process>` will be stopped.
+
+Method Descriptions
+-------------------
+
+.. _class_VisibilityEnabler2D_method_is_enabler_enabled:
+
+- :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` enabler **)** const
+
+.. _class_VisibilityEnabler2D_method_set_enabler:
+
+- void **set_enabler** **(** :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)**
 

@@ -24,35 +24,35 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`angle<class_CPUParticles2D_property_angle>`                                     | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`angle_curve<class_CPUParticles2D_property_angle_curve>`                         | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`angle_curve<class_CPUParticles2D_property_angle_curve>`                         |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`angle_random<class_CPUParticles2D_property_angle_random>`                       | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`angular_velocity<class_CPUParticles2D_property_angular_velocity>`               | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`angular_velocity_curve<class_CPUParticles2D_property_angular_velocity_curve>`   | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`angular_velocity_curve<class_CPUParticles2D_property_angular_velocity_curve>`   |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`angular_velocity_random<class_CPUParticles2D_property_angular_velocity_random>` | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`anim_offset<class_CPUParticles2D_property_anim_offset>`                         | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`anim_offset_curve<class_CPUParticles2D_property_anim_offset_curve>`             | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`anim_offset_curve<class_CPUParticles2D_property_anim_offset_curve>`             |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`anim_offset_random<class_CPUParticles2D_property_anim_offset_random>`           | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`anim_speed<class_CPUParticles2D_property_anim_speed>`                           | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`anim_speed_curve<class_CPUParticles2D_property_anim_speed_curve>`               | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`anim_speed_curve<class_CPUParticles2D_property_anim_speed_curve>`               |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`anim_speed_random<class_CPUParticles2D_property_anim_speed_random>`             | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`Color<class_Color>`                               | :ref:`color<class_CPUParticles2D_property_color>`                                     | Color( 1, 1, 1, 1 ) |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Gradient<class_Gradient>`                         | :ref:`color_ramp<class_CPUParticles2D_property_color_ramp>`                           | null                |
+| :ref:`Gradient<class_Gradient>`                         | :ref:`color_ramp<class_CPUParticles2D_property_color_ramp>`                           |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`damping<class_CPUParticles2D_property_damping>`                                 | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`damping_curve<class_CPUParticles2D_property_damping_curve>`                     | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`damping_curve<class_CPUParticles2D_property_damping_curve>`                     |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`damping_random<class_CPUParticles2D_property_damping_random>`                   | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
@@ -88,7 +88,7 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`hue_variation<class_CPUParticles2D_property_hue_variation>`                     | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`hue_variation_curve<class_CPUParticles2D_property_hue_variation_curve>`         | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`hue_variation_curve<class_CPUParticles2D_property_hue_variation_curve>`         |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`hue_variation_random<class_CPUParticles2D_property_hue_variation_random>`       | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
@@ -98,21 +98,23 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`lifetime<class_CPUParticles2D_property_lifetime>`                               | 1.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                               | :ref:`lifetime_randomness<class_CPUParticles2D_property_lifetime_randomness>`         | 0.0                 |
++---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`linear_accel<class_CPUParticles2D_property_linear_accel>`                       | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`linear_accel_curve<class_CPUParticles2D_property_linear_accel_curve>`           | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`linear_accel_curve<class_CPUParticles2D_property_linear_accel_curve>`           |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`linear_accel_random<class_CPUParticles2D_property_linear_accel_random>`         | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`local_coords<class_CPUParticles2D_property_local_coords>`                       | true                |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                           | :ref:`normalmap<class_CPUParticles2D_property_normalmap>`                             | null                |
+| :ref:`Texture<class_Texture>`                           | :ref:`normalmap<class_CPUParticles2D_property_normalmap>`                             |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`one_shot<class_CPUParticles2D_property_one_shot>`                               | false               |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`orbit_velocity<class_CPUParticles2D_property_orbit_velocity>`                   | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`orbit_velocity_curve<class_CPUParticles2D_property_orbit_velocity_curve>`       | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`orbit_velocity_curve<class_CPUParticles2D_property_orbit_velocity_curve>`       |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`orbit_velocity_random<class_CPUParticles2D_property_orbit_velocity_random>`     | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
@@ -120,7 +122,7 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`radial_accel<class_CPUParticles2D_property_radial_accel>`                       | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`radial_accel_curve<class_CPUParticles2D_property_radial_accel_curve>`           | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`radial_accel_curve<class_CPUParticles2D_property_radial_accel_curve>`           |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`radial_accel_random<class_CPUParticles2D_property_radial_accel_random>`         | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
@@ -128,7 +130,7 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`scale_amount<class_CPUParticles2D_property_scale_amount>`                       | 1.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`scale_amount_curve<class_CPUParticles2D_property_scale_amount_curve>`           | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`scale_amount_curve<class_CPUParticles2D_property_scale_amount_curve>`           |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`scale_amount_random<class_CPUParticles2D_property_scale_amount_random>`         | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
@@ -138,21 +140,37 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`tangential_accel<class_CPUParticles2D_property_tangential_accel>`               | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`tangential_accel_curve<class_CPUParticles2D_property_tangential_accel_curve>`   | null                |
+| :ref:`Curve<class_Curve>`                               | :ref:`tangential_accel_curve<class_CPUParticles2D_property_tangential_accel_curve>`   |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                               | :ref:`tangential_accel_random<class_CPUParticles2D_property_tangential_accel_random>` | 0.0                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                           | :ref:`texture<class_CPUParticles2D_property_texture>`                                 | null                |
+| :ref:`Texture<class_Texture>`                           | :ref:`texture<class_CPUParticles2D_property_texture>`                                 |                     |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------+
 
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`convert_from_particles<class_CPUParticles2D_method_convert_from_particles>` **(** :ref:`Node<class_Node>` particles **)** |
-+------+---------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`restart<class_CPUParticles2D_method_restart>` **(** **)**                                                                 |
-+------+---------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`convert_from_particles<class_CPUParticles2D_method_convert_from_particles>` **(** :ref:`Node<class_Node>` particles **)**                                                       |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_param<class_CPUParticles2D_method_get_param>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** const                                                       |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>` | :ref:`get_param_curve<class_CPUParticles2D_method_get_param_curve>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** const                                           |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_param_randomness<class_CPUParticles2D_method_get_param_randomness>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** const                                 |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_particle_flag<class_CPUParticles2D_method_get_particle_flag>` **(** :ref:`Flags<enum_CPUParticles2D_Flags>` flag **)** const                                                |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`restart<class_CPUParticles2D_method_restart>` **(** **)**                                                                                                                       |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param<class_CPUParticles2D_method_set_param>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**                            |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**                |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` randomness **)** |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_particle_flag<class_CPUParticles2D_method_set_particle_flag>` **(** :ref:`Flags<enum_CPUParticles2D_Flags>` flag, :ref:`bool<class_bool>` enable **)**                      |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -199,29 +217,29 @@ enum **DrawOrder**:
 
 enum **Parameter**:
 
-- **PARAM_INITIAL_LINEAR_VELOCITY** = **0** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set initial velocity properties.
+- **PARAM_INITIAL_LINEAR_VELOCITY** = **0** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set initial velocity properties.
 
-- **PARAM_ANGULAR_VELOCITY** = **1** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set angular velocity properties.
+- **PARAM_ANGULAR_VELOCITY** = **1** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set angular velocity properties.
 
-- **PARAM_ORBIT_VELOCITY** = **2** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set orbital velocity properties.
+- **PARAM_ORBIT_VELOCITY** = **2** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set orbital velocity properties.
 
-- **PARAM_LINEAR_ACCEL** = **3** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set linear acceleration properties.
+- **PARAM_LINEAR_ACCEL** = **3** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set linear acceleration properties.
 
-- **PARAM_RADIAL_ACCEL** = **4** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set radial acceleration properties.
+- **PARAM_RADIAL_ACCEL** = **4** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set radial acceleration properties.
 
-- **PARAM_TANGENTIAL_ACCEL** = **5** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set tangential acceleration properties.
+- **PARAM_TANGENTIAL_ACCEL** = **5** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set tangential acceleration properties.
 
-- **PARAM_DAMPING** = **6** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set damping properties.
+- **PARAM_DAMPING** = **6** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set damping properties.
 
-- **PARAM_ANGLE** = **7** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set angle properties.
+- **PARAM_ANGLE** = **7** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set angle properties.
 
-- **PARAM_SCALE** = **8** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set scale properties.
+- **PARAM_SCALE** = **8** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set scale properties.
 
-- **PARAM_HUE_VARIATION** = **9** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set hue variation properties.
+- **PARAM_HUE_VARIATION** = **9** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set hue variation properties.
 
-- **PARAM_ANIM_SPEED** = **10** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set animation speed properties.
+- **PARAM_ANIM_SPEED** = **10** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set animation speed properties.
 
-- **PARAM_ANIM_OFFSET** = **11** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_texture<class_CPUParticles2D_method_set_param_texture>` to set animation offset properties.
+- **PARAM_ANIM_OFFSET** = **11** --- Use with :ref:`set_param<class_CPUParticles2D_method_set_param>`, :ref:`set_param_randomness<class_CPUParticles2D_method_set_param_randomness>`, and :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` to set animation offset properties.
 
 - **PARAM_MAX** = **12** --- Represents the size of the :ref:`Parameter<enum_CPUParticles2D_Parameter>` enum.
 
@@ -237,7 +255,7 @@ enum **Parameter**:
 
 enum **Flags**:
 
-- **FLAG_ALIGN_Y_TO_VELOCITY** = **0** --- Use with :ref:`set_flag<class_CPUParticles2D_method_set_flag>` to set :ref:`flag_align_y<class_CPUParticles2D_property_flag_align_y>`.
+- **FLAG_ALIGN_Y_TO_VELOCITY** = **0** --- Use with :ref:`set_particle_flag<class_CPUParticles2D_method_set_particle_flag>` to set :ref:`flag_align_y<class_CPUParticles2D_property_flag_align_y>`.
 
 - **FLAG_ROTATE_Y** = **1** --- Present for consistency with 3D particle nodes, not used in 2D.
 
@@ -316,13 +334,11 @@ Initial rotation applied to each particle, in degrees.
 
 - :ref:`Curve<class_Curve>` **angle_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Each particle's rotation will be animated along this :ref:`Curve<class_Curve>`.
 
@@ -358,13 +374,11 @@ Initial angular velocity applied to each particle. Sets the speed of rotation of
 
 - :ref:`Curve<class_Curve>` **angular_velocity_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`.
 
@@ -400,13 +414,11 @@ Particle animation offset.
 
 - :ref:`Curve<class_Curve>` **anim_offset_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Each particle's animation offset will vary along this :ref:`Curve<class_Curve>`.
 
@@ -442,13 +454,11 @@ Particle animation speed.
 
 - :ref:`Curve<class_Curve>` **anim_speed_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Each particle's animation speed will vary along this :ref:`Curve<class_Curve>`.
 
@@ -484,13 +494,11 @@ Each particle's initial color. If :ref:`texture<class_CPUParticles2D_property_te
 
 - :ref:`Gradient<class_Gradient>` **color_ramp**
 
-+-----------+-----------------------+
-| *Default* | null                  |
-+-----------+-----------------------+
-| *Setter*  | set_color_ramp(value) |
-+-----------+-----------------------+
-| *Getter*  | get_color_ramp()      |
-+-----------+-----------------------+
++----------+-----------------------+
+| *Setter* | set_color_ramp(value) |
++----------+-----------------------+
+| *Getter* | get_color_ramp()      |
++----------+-----------------------+
 
 Each particle's color will vary along this :ref:`Gradient<class_Gradient>`.
 
@@ -512,13 +520,11 @@ The rate at which particles lose velocity.
 
 - :ref:`Curve<class_Curve>` **damping_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Damping will vary along this :ref:`Curve<class_Curve>`.
 
@@ -746,13 +752,11 @@ Initial hue variation applied to each particle.
 
 - :ref:`Curve<class_Curve>` **hue_variation_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Each particle's hue will vary along this :ref:`Curve<class_Curve>`.
 
@@ -812,6 +816,20 @@ Initial velocity randomness ratio.
 
 Amount of time each particle will exist.
 
+.. _class_CPUParticles2D_property_lifetime_randomness:
+
+- :ref:`float<class_float>` **lifetime_randomness**
+
++-----------+--------------------------------+
+| *Default* | 0.0                            |
++-----------+--------------------------------+
+| *Setter*  | set_lifetime_randomness(value) |
++-----------+--------------------------------+
+| *Getter*  | get_lifetime_randomness()      |
++-----------+--------------------------------+
+
+Particle lifetime randomness ratio.
+
 .. _class_CPUParticles2D_property_linear_accel:
 
 - :ref:`float<class_float>` **linear_accel**
@@ -830,13 +848,11 @@ Linear acceleration applied to each particle in the direction of motion.
 
 - :ref:`Curve<class_Curve>` **linear_accel_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Each particle's linear acceleration will vary along this :ref:`Curve<class_Curve>`.
 
@@ -872,13 +888,11 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 
 - :ref:`Texture<class_Texture>` **normalmap**
 
-+-----------+----------------------+
-| *Default* | null                 |
-+-----------+----------------------+
-| *Setter*  | set_normalmap(value) |
-+-----------+----------------------+
-| *Getter*  | get_normalmap()      |
-+-----------+----------------------+
++----------+----------------------+
+| *Setter* | set_normalmap(value) |
++----------+----------------------+
+| *Getter* | get_normalmap()      |
++----------+----------------------+
 
 Normal map to be used for the :ref:`texture<class_CPUParticles2D_property_texture>` property.
 
@@ -914,13 +928,11 @@ Orbital velocity applied to each particle. Makes the particles circle around ori
 
 - :ref:`Curve<class_Curve>` **orbit_velocity_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Each particle's orbital velocity will vary along this :ref:`Curve<class_Curve>`.
 
@@ -970,13 +982,11 @@ Radial acceleration applied to each particle. Makes particle accelerate away fro
 
 - :ref:`Curve<class_Curve>` **radial_accel_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Each particle's radial acceleration will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1026,13 +1036,11 @@ Initial scale applied to each particle.
 
 - :ref:`Curve<class_Curve>` **scale_amount_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Each particle's scale will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1096,13 +1104,11 @@ Tangential acceleration applied to each particle. Tangential acceleration is per
 
 - :ref:`Curve<class_Curve>` **tangential_accel_curve**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_param_curve(value) |
-+-----------+------------------------+
-| *Getter*  | get_param_curve()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
 Each particle's tangential acceleration will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1124,13 +1130,11 @@ Tangential acceleration randomness ratio.
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 Particle texture. If ``null``, particles will be squares.
 
@@ -1143,9 +1147,41 @@ Method Descriptions
 
 Sets this node's properties to match a given :ref:`Particles2D<class_Particles2D>` node with an assigned :ref:`ParticlesMaterial<class_ParticlesMaterial>`.
 
+.. _class_CPUParticles2D_method_get_param:
+
+- :ref:`float<class_float>` **get_param** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** const
+
+.. _class_CPUParticles2D_method_get_param_curve:
+
+- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** const
+
+.. _class_CPUParticles2D_method_get_param_randomness:
+
+- :ref:`float<class_float>` **get_param_randomness** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** const
+
+.. _class_CPUParticles2D_method_get_particle_flag:
+
+- :ref:`bool<class_bool>` **get_particle_flag** **(** :ref:`Flags<enum_CPUParticles2D_Flags>` flag **)** const
+
 .. _class_CPUParticles2D_method_restart:
 
 - void **restart** **(** **)**
 
 Restarts the particle emitter.
+
+.. _class_CPUParticles2D_method_set_param:
+
+- void **set_param** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
+
+.. _class_CPUParticles2D_method_set_param_curve:
+
+- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
+
+.. _class_CPUParticles2D_method_set_param_randomness:
+
+- void **set_param_randomness** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` randomness **)**
+
+.. _class_CPUParticles2D_method_set_particle_flag:
+
+- void **set_particle_flag** **(** :ref:`Flags<enum_CPUParticles2D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
 

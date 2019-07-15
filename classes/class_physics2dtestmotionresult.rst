@@ -20,7 +20,7 @@ Properties
 ----------
 
 +-------------------------------+--------------------------------------------------------------------------------------+-----------------+
-| :ref:`Object<class_Object>`   | :ref:`collider<class_Physics2DTestMotionResult_property_collider>`                   | null            |
+| :ref:`Object<class_Object>`   | :ref:`collider<class_Physics2DTestMotionResult_property_collider>`                   |                 |
 +-------------------------------+--------------------------------------------------------------------------------------+-----------------+
 | :ref:`int<class_int>`         | :ref:`collider_id<class_Physics2DTestMotionResult_property_collider_id>`             | 0               |
 +-------------------------------+--------------------------------------------------------------------------------------+-----------------+
@@ -46,11 +46,9 @@ Property Descriptions
 
 - :ref:`Object<class_Object>` **collider**
 
-+-----------+----------------+
-| *Default* | null           |
-+-----------+----------------+
-| *Getter*  | get_collider() |
-+-----------+----------------+
++----------+----------------+
+| *Getter* | get_collider() |
++----------+----------------+
 
 .. _class_Physics2DTestMotionResult_property_collider_id:
 

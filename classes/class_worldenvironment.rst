@@ -19,9 +19,9 @@ Default environment properties for the entire scene (post-processing effects, li
 Properties
 ----------
 
-+---------------------------------------+-----------------------------------------------------------------+------+
-| :ref:`Environment<class_Environment>` | :ref:`environment<class_WorldEnvironment_property_environment>` | null |
-+---------------------------------------+-----------------------------------------------------------------+------+
++---------------------------------------+-----------------------------------------------------------------+
+| :ref:`Environment<class_Environment>` | :ref:`environment<class_WorldEnvironment_property_environment>` |
++---------------------------------------+-----------------------------------------------------------------+
 
 Description
 -----------
@@ -44,13 +44,11 @@ Property Descriptions
 
 - :ref:`Environment<class_Environment>` **environment**
 
-+-----------+------------------------+
-| *Default* | null                   |
-+-----------+------------------------+
-| *Setter*  | set_environment(value) |
-+-----------+------------------------+
-| *Getter*  | get_environment()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_environment(value) |
++----------+------------------------+
+| *Getter* | get_environment()      |
++----------+------------------------+
 
 The :ref:`Environment<class_Environment>` resource used by this ``WorldEnvironment``, defining the default properties.
 

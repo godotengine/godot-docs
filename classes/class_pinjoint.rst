@@ -27,6 +27,15 @@ Properties
 | :ref:`float<class_float>` | :ref:`params/impulse_clamp<class_PinJoint_property_params/impulse_clamp>` | 0.0 |
 +---------------------------+---------------------------------------------------------------------------+-----+
 
+Methods
+-------
+
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_param<class_PinJoint_method_get_param>` **(** :ref:`Param<enum_PinJoint_Param>` param **)** const                            |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param<class_PinJoint_method_set_param>` **(** :ref:`Param<enum_PinJoint_Param>` param, :ref:`float<class_float>` value **)** |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
@@ -95,4 +104,15 @@ The force with which the pinned objects stay in velocity relation to each other.
 +-----------+------------------+
 
 If above 0, this value is the maximum value for an impulse that this Joint produces.
+
+Method Descriptions
+-------------------
+
+.. _class_PinJoint_method_get_param:
+
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_PinJoint_Param>` param **)** const
+
+.. _class_PinJoint_method_set_param:
+
+- void **set_param** **(** :ref:`Param<enum_PinJoint_Param>` param, :ref:`float<class_float>` value **)**
 

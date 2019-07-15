@@ -40,7 +40,7 @@ Properties
 +----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`String<class_String>`                        | :ref:`image_path<class_BakedLightmap_property_image_path>`                                     | "."                   |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`BakedLightmapData<class_BakedLightmapData>`  | :ref:`light_data<class_BakedLightmap_property_light_data>`                                     | null                  |
+| :ref:`BakedLightmapData<class_BakedLightmapData>`  | :ref:`light_data<class_BakedLightmap_property_light_data>`                                     |                       |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------+
 
 Methods
@@ -146,6 +146,8 @@ Grid subdivision size for lightmapper calculation. The default value will work f
 | *Getter*  | get_bake_default_texels_per_unit()      |
 +-----------+-----------------------------------------+
 
+If a :ref:`Mesh.lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` isn't specified, the lightmap baker will dynamically set the lightmap size using this value. This value is measured in texels per world unit. The maximum lightmap texture size is 4096x4096.
+
 .. _class_BakedLightmap_property_bake_energy:
 
 - :ref:`float<class_float>` **bake_energy**
@@ -157,6 +159,8 @@ Grid subdivision size for lightmapper calculation. The default value will work f
 +-----------+-------------------+
 | *Getter*  | get_energy()      |
 +-----------+-------------------+
+
+Multiplies the light sources' intensity by this value. For instance, if the value is set to 2, lights will be twice as bright. If the value is set to 0.5, lights will be half as bright.
 
 .. _class_BakedLightmap_property_bake_extents:
 
@@ -212,6 +216,8 @@ Lightmapping mode. See :ref:`BakeMode<enum_BakedLightmap_BakeMode>`.
 | *Getter*  | get_propagation()      |
 +-----------+------------------------+
 
+Defines how far the light will travel before it is no longer effective. The higher the number, the farther the light will travel. For instance, if the value is set to 2, the light will go twice as far. If the value is set to 0.5, the light will only go half as far.
+
 .. _class_BakedLightmap_property_bake_quality:
 
 - :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **bake_quality**
@@ -258,13 +264,11 @@ The location where lightmaps will be saved.
 
 - :ref:`BakedLightmapData<class_BakedLightmapData>` **light_data**
 
-+-----------+-----------------------+
-| *Default* | null                  |
-+-----------+-----------------------+
-| *Setter*  | set_light_data(value) |
-+-----------+-----------------------+
-| *Getter*  | get_light_data()      |
-+-----------+-----------------------+
++----------+-----------------------+
+| *Setter* | set_light_data(value) |
++----------+-----------------------+
+| *Getter* | get_light_data()      |
++----------+-----------------------+
 
 The calculated light data.
 
@@ -275,7 +279,11 @@ Method Descriptions
 
 - :ref:`BakeError<enum_BakedLightmap_BakeError>` **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
+Bakes the lightmaps within the currently edited scene.
+
 .. _class_BakedLightmap_method_debug_bake:
 
 - void **debug_bake** **(** **)**
+
+Executes a dry run bake of lightmaps within the currently edited scene.
 

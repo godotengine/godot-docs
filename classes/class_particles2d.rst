@@ -36,19 +36,19 @@ Properties
 +----------------------------------------------+----------------------------------------------------------------------+-------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`local_coords<class_Particles2D_property_local_coords>`         | true                          |
 +----------------------------------------------+----------------------------------------------------------------------+-------------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`normal_map<class_Particles2D_property_normal_map>`             | null                          |
+| :ref:`Texture<class_Texture>`                | :ref:`normal_map<class_Particles2D_property_normal_map>`             |                               |
 +----------------------------------------------+----------------------------------------------------------------------+-------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`one_shot<class_Particles2D_property_one_shot>`                 | false                         |
 +----------------------------------------------+----------------------------------------------------------------------+-------------------------------+
 | :ref:`float<class_float>`                    | :ref:`preprocess<class_Particles2D_property_preprocess>`             | 0.0                           |
 +----------------------------------------------+----------------------------------------------------------------------+-------------------------------+
-| :ref:`Material<class_Material>`              | :ref:`process_material<class_Particles2D_property_process_material>` | null                          |
+| :ref:`Material<class_Material>`              | :ref:`process_material<class_Particles2D_property_process_material>` |                               |
 +----------------------------------------------+----------------------------------------------------------------------+-------------------------------+
 | :ref:`float<class_float>`                    | :ref:`randomness<class_Particles2D_property_randomness>`             | 0.0                           |
 +----------------------------------------------+----------------------------------------------------------------------+-------------------------------+
 | :ref:`float<class_float>`                    | :ref:`speed_scale<class_Particles2D_property_speed_scale>`           | 1.0                           |
 +----------------------------------------------+----------------------------------------------------------------------+-------------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`texture<class_Particles2D_property_texture>`                   | null                          |
+| :ref:`Texture<class_Texture>`                | :ref:`texture<class_Particles2D_property_texture>`                   |                               |
 +----------------------------------------------+----------------------------------------------------------------------+-------------------------------+
 | :ref:`Rect2<class_Rect2>`                    | :ref:`visibility_rect<class_Particles2D_property_visibility_rect>`   | Rect2( -100, -100, 200, 200 ) |
 +----------------------------------------------+----------------------------------------------------------------------+-------------------------------+
@@ -208,13 +208,11 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 
 - :ref:`Texture<class_Texture>` **normal_map**
 
-+-----------+-----------------------+
-| *Default* | null                  |
-+-----------+-----------------------+
-| *Setter*  | set_normal_map(value) |
-+-----------+-----------------------+
-| *Getter*  | get_normal_map()      |
-+-----------+-----------------------+
++----------+-----------------------+
+| *Setter* | set_normal_map(value) |
++----------+-----------------------+
+| *Getter* | get_normal_map()      |
++----------+-----------------------+
 
 Normal map to be used for the :ref:`texture<class_Particles2D_property_texture>` property.
 
@@ -250,13 +248,11 @@ Particle system starts as if it had already run for this many seconds.
 
 - :ref:`Material<class_Material>` **process_material**
 
-+-----------+-----------------------------+
-| *Default* | null                        |
-+-----------+-----------------------------+
-| *Setter*  | set_process_material(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_process_material()      |
-+-----------+-----------------------------+
++----------+-----------------------------+
+| *Setter* | set_process_material(value) |
++----------+-----------------------------+
+| *Getter* | get_process_material()      |
++----------+-----------------------------+
 
 :ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
@@ -292,13 +288,11 @@ Particle system's running speed scaling ratio. A value of ``0`` can be used to p
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 Particle texture. If ``null``, particles will be squares.
 

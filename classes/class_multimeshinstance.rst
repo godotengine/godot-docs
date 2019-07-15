@@ -19,9 +19,9 @@ Node that instances a :ref:`MultiMesh<class_MultiMesh>`.
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------------------+------+
-| :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance_property_multimesh>` | null |
-+-----------------------------------+--------------------------------------------------------------+------+
++-----------------------------------+--------------------------------------------------------------+
+| :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance_property_multimesh>` |
++-----------------------------------+--------------------------------------------------------------+
 
 Description
 -----------
@@ -44,13 +44,11 @@ Property Descriptions
 
 - :ref:`MultiMesh<class_MultiMesh>` **multimesh**
 
-+-----------+----------------------+
-| *Default* | null                 |
-+-----------+----------------------+
-| *Setter*  | set_multimesh(value) |
-+-----------+----------------------+
-| *Getter*  | get_multimesh()      |
-+-----------+----------------------+
++----------+----------------------+
+| *Setter* | set_multimesh(value) |
++----------+----------------------+
+| *Getter* | get_multimesh()      |
++----------+----------------------+
 
 The :ref:`MultiMesh<class_MultiMesh>` resource that will be used and shared among all instances of the ``MultiMeshInstance``.
 

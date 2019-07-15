@@ -24,7 +24,7 @@ Properties
 +---------------------------------+--------------------------------------------------------------+-------+
 | :ref:`float<class_float>`       | :ref:`height<class_CSGCylinder_property_height>`             | 1.0   |
 +---------------------------------+--------------------------------------------------------------+-------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGCylinder_property_material>`         | null  |
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGCylinder_property_material>`         |       |
 +---------------------------------+--------------------------------------------------------------+-------+
 | :ref:`float<class_float>`       | :ref:`radius<class_CSGCylinder_property_radius>`             | 1.0   |
 +---------------------------------+--------------------------------------------------------------+-------+
@@ -73,13 +73,11 @@ The height of the cylinder.
 
 - :ref:`Material<class_Material>` **material**
 
-+-----------+---------------------+
-| *Default* | null                |
-+-----------+---------------------+
-| *Setter*  | set_material(value) |
-+-----------+---------------------+
-| *Getter*  | get_material()      |
-+-----------+---------------------+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
 
 The material used to render the cylinder.
 

@@ -19,11 +19,11 @@ The AR/VR server.
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------------+------+
-| :ref:`ARVRInterface<class_ARVRInterface>` | :ref:`primary_interface<class_ARVRServer_property_primary_interface>` | null |
-+-------------------------------------------+-----------------------------------------------------------------------+------+
-| :ref:`float<class_float>`                 | :ref:`world_scale<class_ARVRServer_property_world_scale>`             | 1.0  |
-+-------------------------------------------+-----------------------------------------------------------------------+------+
++-------------------------------------------+-----------------------------------------------------------------------+-----+
+| :ref:`ARVRInterface<class_ARVRInterface>` | :ref:`primary_interface<class_ARVRServer_property_primary_interface>` |     |
++-------------------------------------------+-----------------------------------------------------------------------+-----+
+| :ref:`float<class_float>`                 | :ref:`world_scale<class_ARVRServer_property_world_scale>`             | 1.0 |
++-------------------------------------------+-----------------------------------------------------------------------+-----+
 
 Methods
 -------
@@ -140,13 +140,11 @@ Property Descriptions
 
 - :ref:`ARVRInterface<class_ARVRInterface>` **primary_interface**
 
-+-----------+------------------------------+
-| *Default* | null                         |
-+-----------+------------------------------+
-| *Setter*  | set_primary_interface(value) |
-+-----------+------------------------------+
-| *Getter*  | get_primary_interface()      |
-+-----------+------------------------------+
++----------+------------------------------+
+| *Setter* | set_primary_interface(value) |
++----------+------------------------------+
+| *Getter* | get_primary_interface()      |
++----------+------------------------------+
 
 .. _class_ARVRServer_property_world_scale:
 

@@ -65,6 +65,15 @@ Properties
 | :ref:`float<class_float>` | :ref:`linear_ortho/softness<class_SliderJoint_property_linear_ortho/softness>`             | 1.0  |
 +---------------------------+--------------------------------------------------------------------------------------------+------+
 
+Methods
+-------
+
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_param<class_SliderJoint_method_get_param>` **(** :ref:`Param<enum_SliderJoint_Param>` param **)** const                            |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param<class_SliderJoint_method_set_param>` **(** :ref:`Param<enum_SliderJoint_Param>` param, :ref:`float<class_float>` value **)** |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
@@ -477,4 +486,15 @@ The amount of restitution when movement is across axes orthogonal to the slider.
 +-----------+------------------+
 
 A factor applied to the movement across axes orthogonal to the slider.
+
+Method Descriptions
+-------------------
+
+.. _class_SliderJoint_method_get_param:
+
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_SliderJoint_Param>` param **)** const
+
+.. _class_SliderJoint_method_set_param:
+
+- void **set_param** **(** :ref:`Param<enum_SliderJoint_Param>` param, :ref:`float<class_float>` value **)**
 

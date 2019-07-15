@@ -41,6 +41,19 @@ Properties
 | :ref:`float<class_float>` | :ref:`params/bias<class_HingeJoint_property_params/bias>`                           | 0.3   |
 +---------------------------+-------------------------------------------------------------------------------------+-------+
 
+Methods
+-------
+
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_flag<class_HingeJoint_method_get_flag>` **(** :ref:`Flag<enum_HingeJoint_Flag>` flag **)** const                                 |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_param<class_HingeJoint_method_get_param>` **(** :ref:`Param<enum_HingeJoint_Param>` param **)** const                            |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_flag<class_HingeJoint_method_set_flag>` **(** :ref:`Flag<enum_HingeJoint_Flag>` flag, :ref:`bool<class_bool>` enabled **)**      |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param<class_HingeJoint_method_set_param>` **(** :ref:`Param<enum_HingeJoint_Param>` param, :ref:`float<class_float>` value **)** |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
@@ -237,4 +250,23 @@ Target speed for the motor.
 +-----------+------------------+
 
 The speed with which the two bodies get pulled together when they move in different directions.
+
+Method Descriptions
+-------------------
+
+.. _class_HingeJoint_method_get_flag:
+
+- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flag<enum_HingeJoint_Flag>` flag **)** const
+
+.. _class_HingeJoint_method_get_param:
+
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint_Param>` param **)** const
+
+.. _class_HingeJoint_method_set_flag:
+
+- void **set_flag** **(** :ref:`Flag<enum_HingeJoint_Flag>` flag, :ref:`bool<class_bool>` enabled **)**
+
+.. _class_HingeJoint_method_set_param:
+
+- void **set_param** **(** :ref:`Param<enum_HingeJoint_Param>` param, :ref:`float<class_float>` value **)**
 

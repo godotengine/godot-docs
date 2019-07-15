@@ -26,7 +26,7 @@ Properties
 +---------------------------------+--------------------------------------------------------------+--------------------------+
 | :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   | false                    |
 +---------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       | null                     |
+| :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       |                          |
 +---------------------------------+--------------------------------------------------------------+--------------------------+
 
 Methods
@@ -76,13 +76,11 @@ If set, the order of the vertices in each triangle are reversed resulting in the
 
 - :ref:`Material<class_Material>` **material**
 
-+-----------+---------------------+
-| *Default* | null                |
-+-----------+---------------------+
-| *Setter*  | set_material(value) |
-+-----------+---------------------+
-| *Getter*  | get_material()      |
-+-----------+---------------------+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
 
 The current :ref:`Material<class_Material>` of the primitive mesh.
 

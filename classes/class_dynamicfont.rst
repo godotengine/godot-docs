@@ -28,7 +28,7 @@ Properties
 +-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`                         | :ref:`extra_spacing_top<class_DynamicFont_property_extra_spacing_top>`       | 0                   |
 +-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`DynamicFontData<class_DynamicFontData>` | :ref:`font_data<class_DynamicFont_property_font_data>`                       | null                |
+| :ref:`DynamicFontData<class_DynamicFontData>` | :ref:`font_data<class_DynamicFont_property_font_data>`                       |                     |
 +-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
 | :ref:`Color<class_Color>`                     | :ref:`outline_color<class_DynamicFont_property_outline_color>`               | Color( 1, 1, 1, 1 ) |
 +-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
@@ -51,9 +51,13 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_fallback_count<class_DynamicFont_method_get_fallback_count>` **(** **)** const                                                             |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`get_spacing<class_DynamicFont_method_get_spacing>` **(** :ref:`int<class_int>` type **)** const                                                |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`remove_fallback<class_DynamicFont_method_remove_fallback>` **(** :ref:`int<class_int>` idx **)**                                               |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_fallback<class_DynamicFont_method_set_fallback>` **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_DynamicFontData>` data **)** |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_spacing<class_DynamicFont_method_set_spacing>` **(** :ref:`int<class_int>` type, :ref:`int<class_int>` value **)**                         |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -154,13 +158,11 @@ Extra spacing at the top in pixels.
 
 - :ref:`DynamicFontData<class_DynamicFontData>` **font_data**
 
-+-----------+----------------------+
-| *Default* | null                 |
-+-----------+----------------------+
-| *Setter*  | set_font_data(value) |
-+-----------+----------------------+
-| *Getter*  | get_font_data()      |
-+-----------+----------------------+
++----------+----------------------+
+| *Setter* | set_font_data(value) |
++----------+----------------------+
+| *Getter* | get_font_data()      |
++----------+----------------------+
 
 The font data.
 
@@ -251,6 +253,10 @@ Returns the fallback font at index ``idx``.
 
 Returns the number of fallback fonts.
 
+.. _class_DynamicFont_method_get_spacing:
+
+- :ref:`int<class_int>` **get_spacing** **(** :ref:`int<class_int>` type **)** const
+
 .. _class_DynamicFont_method_remove_fallback:
 
 - void **remove_fallback** **(** :ref:`int<class_int>` idx **)**
@@ -262,4 +268,8 @@ Removes the fallback font at index ``idx``.
 - void **set_fallback** **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_DynamicFontData>` data **)**
 
 Sets the fallback font at index ``idx``.
+
+.. _class_DynamicFont_method_set_spacing:
+
+- void **set_spacing** **(** :ref:`int<class_int>` type, :ref:`int<class_int>` value **)**
 

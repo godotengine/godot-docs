@@ -20,7 +20,7 @@ Properties
 ----------
 
 +---------------------------------+------------------------------------------------------------------+------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGSphere_property_material>`               | null |
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGSphere_property_material>`               |      |
 +---------------------------------+------------------------------------------------------------------+------+
 | :ref:`int<class_int>`           | :ref:`radial_segments<class_CSGSphere_property_radial_segments>` | 12   |
 +---------------------------------+------------------------------------------------------------------+------+
@@ -43,13 +43,11 @@ Property Descriptions
 
 - :ref:`Material<class_Material>` **material**
 
-+-----------+---------------------+
-| *Default* | null                |
-+-----------+---------------------+
-| *Setter*  | set_material(value) |
-+-----------+---------------------+
-| *Getter*  | get_material()      |
-+-----------+---------------------+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
 
 The material used to render the sphere.
 

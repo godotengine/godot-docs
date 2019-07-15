@@ -19,11 +19,11 @@ Occludes light cast by a Light2D, casting shadows.
 Properties
 ----------
 
-+---------------------------------------------------+--------------------------------------------------------------+------+
-| :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` | 1    |
-+---------------------------------------------------+--------------------------------------------------------------+------+
-| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     | null |
-+---------------------------------------------------+--------------------------------------------------------------+------+
++---------------------------------------------------+--------------------------------------------------------------+---+
+| :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` | 1 |
++---------------------------------------------------+--------------------------------------------------------------+---+
+| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     |   |
++---------------------------------------------------+--------------------------------------------------------------+---+
 
 Description
 -----------
@@ -56,13 +56,11 @@ The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only fro
 
 - :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **occluder**
 
-+-----------+-----------------------------+
-| *Default* | null                        |
-+-----------+-----------------------------+
-| *Setter*  | set_occluder_polygon(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_occluder_polygon()      |
-+-----------+-----------------------------+
++----------+-----------------------------+
+| *Setter* | set_occluder_polygon(value) |
++----------+-----------------------------+
+| *Getter* | get_occluder_polygon()      |
++----------+-----------------------------+
 
 The :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` used to compute the shadow.
 

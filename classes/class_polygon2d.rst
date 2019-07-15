@@ -40,7 +40,7 @@ Properties
 +-------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
 | :ref:`NodePath<class_NodePath>`                 | :ref:`skeleton<class_Polygon2D_property_skeleton>`                                 | NodePath("")         |
 +-------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-| :ref:`Texture<class_Texture>`                   | :ref:`texture<class_Polygon2D_property_texture>`                                   | null                 |
+| :ref:`Texture<class_Texture>`                   | :ref:`texture<class_Polygon2D_property_texture>`                                   |                      |
 +-------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
 | :ref:`Vector2<class_Vector2>`                   | :ref:`texture_offset<class_Polygon2D_property_texture_offset>`                     | Vector2( 0, 0 )      |
 +-------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
@@ -218,13 +218,11 @@ The polygon's list of vertices. The final point will be connected to the first.
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 The polygon's fill texture. Use ``uv`` to set texture coordinates.
 

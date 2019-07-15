@@ -19,19 +19,19 @@ Provides high-performance mesh instancing.
 Properties
 ----------
 
-+----------------------------------------------------------+--------------------------------------------------------------------------------+------+
-| :ref:`ColorFormat<enum_MultiMesh_ColorFormat>`           | :ref:`color_format<class_MultiMesh_property_color_format>`                     | 0    |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+------+
-| :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` | :ref:`custom_data_format<class_MultiMesh_property_custom_data_format>`         | 0    |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+------+
-| :ref:`int<class_int>`                                    | :ref:`instance_count<class_MultiMesh_property_instance_count>`                 | 0    |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+------+
-| :ref:`Mesh<class_Mesh>`                                  | :ref:`mesh<class_MultiMesh_property_mesh>`                                     | null |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+------+
-| :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`   | :ref:`transform_format<class_MultiMesh_property_transform_format>`             | 0    |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+------+
-| :ref:`int<class_int>`                                    | :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>` | -1   |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+------+
++----------------------------------------------------------+--------------------------------------------------------------------------------+----+
+| :ref:`ColorFormat<enum_MultiMesh_ColorFormat>`           | :ref:`color_format<class_MultiMesh_property_color_format>`                     | 0  |
++----------------------------------------------------------+--------------------------------------------------------------------------------+----+
+| :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` | :ref:`custom_data_format<class_MultiMesh_property_custom_data_format>`         | 0  |
++----------------------------------------------------------+--------------------------------------------------------------------------------+----+
+| :ref:`int<class_int>`                                    | :ref:`instance_count<class_MultiMesh_property_instance_count>`                 | 0  |
++----------------------------------------------------------+--------------------------------------------------------------------------------+----+
+| :ref:`Mesh<class_Mesh>`                                  | :ref:`mesh<class_MultiMesh_property_mesh>`                                     |    |
++----------------------------------------------------------+--------------------------------------------------------------------------------+----+
+| :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`   | :ref:`transform_format<class_MultiMesh_property_transform_format>`             | 0  |
++----------------------------------------------------------+--------------------------------------------------------------------------------+----+
+| :ref:`int<class_int>`                                    | :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>` | -1 |
++----------------------------------------------------------+--------------------------------------------------------------------------------+----+
 
 Methods
 -------
@@ -170,13 +170,11 @@ Number of instances that will get drawn. This clears and (re)sizes the buffers. 
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
-+-----------+-----------------+
-| *Default* | null            |
-+-----------+-----------------+
-| *Setter*  | set_mesh(value) |
-+-----------+-----------------+
-| *Getter*  | get_mesh()      |
-+-----------+-----------------+
++----------+-----------------+
+| *Setter* | set_mesh(value) |
++----------+-----------------+
+| *Getter* | get_mesh()      |
++----------+-----------------+
 
 Mesh to be drawn.
 

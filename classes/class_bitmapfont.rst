@@ -24,7 +24,7 @@ Properties
 +-------------------------------------+-----------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`             | :ref:`distance_field<class_BitmapFont_property_distance_field>` | false |
 +-------------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`BitmapFont<class_BitmapFont>` | :ref:`fallback<class_BitmapFont_property_fallback>`             | null  |
+| :ref:`BitmapFont<class_BitmapFont>` | :ref:`fallback<class_BitmapFont_property_fallback>`             |       |
 +-------------------------------------+-----------------------------------------------------------------+-------+
 | :ref:`float<class_float>`           | :ref:`height<class_BitmapFont_property_height>`                 | 1.0   |
 +-------------------------------------+-----------------------------------------------------------------+-------+
@@ -92,13 +92,11 @@ If ``true``, distance field hint is enabled.
 
 - :ref:`BitmapFont<class_BitmapFont>` **fallback**
 
-+-----------+---------------------+
-| *Default* | null                |
-+-----------+---------------------+
-| *Setter*  | set_fallback(value) |
-+-----------+---------------------+
-| *Getter*  | get_fallback()      |
-+-----------+---------------------+
++----------+---------------------+
+| *Setter* | set_fallback(value) |
++----------+---------------------+
+| *Getter* | get_fallback()      |
++----------+---------------------+
 
 The fallback font.
 

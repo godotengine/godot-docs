@@ -25,6 +25,15 @@ Properties
 | :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_property_pause_animations>` | true |
 +-------------------------+----------------------------------------------------------------------------+------+
 
+Methods
+-------
+
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_enabler_enabled<class_VisibilityEnabler_method_is_enabler_enabled>` **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** const              |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`set_enabler<class_VisibilityEnabler_method_set_enabler>` **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)** |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
@@ -79,4 +88,15 @@ If ``true``, :ref:`RigidBody<class_RigidBody>` nodes will be paused.
 +-----------+----------------------+
 
 If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
+
+Method Descriptions
+-------------------
+
+.. _class_VisibilityEnabler_method_is_enabler_enabled:
+
+- :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** const
+
+.. _class_VisibilityEnabler_method_set_enabler:
+
+- void **set_enabler** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)**
 

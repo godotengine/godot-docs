@@ -26,7 +26,7 @@ Properties
 +-------------------------------+-------------------------------------------------------------------------------------------+-------+
 | :ref:`float<class_float>`     | :ref:`one_way_collision_margin<class_CollisionShape2D_property_one_way_collision_margin>` | 1.0   |
 +-------------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                                       | null  |
+| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                                       |       |
 +-------------------------------+-------------------------------------------------------------------------------------------+-------+
 
 Description
@@ -86,13 +86,11 @@ Sets whether this collision shape should only detect collision on one side (top 
 
 - :ref:`Shape2D<class_Shape2D>` **shape**
 
-+-----------+------------------+
-| *Default* | null             |
-+-----------+------------------+
-| *Setter*  | set_shape(value) |
-+-----------+------------------+
-| *Getter*  | get_shape()      |
-+-----------+------------------+
++----------+------------------+
+| *Setter* | set_shape(value) |
++----------+------------------+
+| *Getter* | get_shape()      |
++----------+------------------+
 
 The actual shape owned by this collision shape.
 

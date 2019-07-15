@@ -36,7 +36,7 @@ Properties
 +---------------------------------------+------------------------------------------------------------------+--------------------+
 | :ref:`int<class_int>`                 | :ref:`collision_mask<class_GridMap_property_collision_mask>`     | 1                  |
 +---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`mesh_library<class_GridMap_property_mesh_library>`         | null               |
+| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`mesh_library<class_GridMap_property_mesh_library>`         |                    |
 +---------------------------------------+------------------------------------------------------------------+--------------------+
 | :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`theme<class_GridMap_property_theme>`                       |                    |
 +---------------------------------------+------------------------------------------------------------------+--------------------+
@@ -218,13 +218,11 @@ The dimensions of the grid's cells.
 
 - :ref:`MeshLibrary<class_MeshLibrary>` **mesh_library**
 
-+-----------+-------------------------+
-| *Default* | null                    |
-+-----------+-------------------------+
-| *Setter*  | set_mesh_library(value) |
-+-----------+-------------------------+
-| *Getter*  | get_mesh_library()      |
-+-----------+-------------------------+
++----------+-------------------------+
+| *Setter* | set_mesh_library(value) |
++----------+-------------------------+
+| *Getter* | get_mesh_library()      |
++----------+-------------------------+
 
 The assigned :ref:`MeshLibrary<class_MeshLibrary>`.
 

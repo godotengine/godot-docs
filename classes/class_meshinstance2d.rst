@@ -19,13 +19,13 @@ Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D.
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------+------+
-| :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshInstance2D_property_mesh>`             | null |
-+-------------------------------+-------------------------------------------------------------+------+
-| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_MeshInstance2D_property_normal_map>` | null |
-+-------------------------------+-------------------------------------------------------------+------+
-| :ref:`Texture<class_Texture>` | :ref:`texture<class_MeshInstance2D_property_texture>`       | null |
-+-------------------------------+-------------------------------------------------------------+------+
++-------------------------------+-------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshInstance2D_property_mesh>`             |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_MeshInstance2D_property_normal_map>` |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`texture<class_MeshInstance2D_property_texture>`       |
++-------------------------------+-------------------------------------------------------------+
 
 Signals
 -------
@@ -51,13 +51,11 @@ Property Descriptions
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
-+-----------+-----------------+
-| *Default* | null            |
-+-----------+-----------------+
-| *Setter*  | set_mesh(value) |
-+-----------+-----------------+
-| *Getter*  | get_mesh()      |
-+-----------+-----------------+
++----------+-----------------+
+| *Setter* | set_mesh(value) |
++----------+-----------------+
+| *Getter* | get_mesh()      |
++----------+-----------------+
 
 The :ref:`Mesh<class_Mesh>` that will be drawn by the ``MeshInstance2D``.
 
@@ -65,13 +63,11 @@ The :ref:`Mesh<class_Mesh>` that will be drawn by the ``MeshInstance2D``.
 
 - :ref:`Texture<class_Texture>` **normal_map**
 
-+-----------+-----------------------+
-| *Default* | null                  |
-+-----------+-----------------------+
-| *Setter*  | set_normal_map(value) |
-+-----------+-----------------------+
-| *Getter*  | get_normal_map()      |
-+-----------+-----------------------+
++----------+-----------------------+
+| *Setter* | set_normal_map(value) |
++----------+-----------------------+
+| *Getter* | get_normal_map()      |
++----------+-----------------------+
 
 The normal map that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`.
 
@@ -79,13 +75,11 @@ The normal map that will be used if using the default :ref:`CanvasItemMaterial<c
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 The :ref:`Texture<class_Texture>` that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`. Can be accessed as ``TEXTURE`` in CanvasItem shader.
 

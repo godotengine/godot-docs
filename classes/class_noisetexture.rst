@@ -26,7 +26,7 @@ Properties
 +-------------------------------------------------+-----------------------------------------------------------------+-------+
 | :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`               | 512   |
 +-------------------------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 | null  |
+| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 |       |
 +-------------------------------------------------+-----------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           | false |
 +-------------------------------------------------+-----------------------------------------------------------------+-------+
@@ -87,13 +87,11 @@ Height of the generated texture.
 
 - :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` **noise**
 
-+-----------+------------------+
-| *Default* | null             |
-+-----------+------------------+
-| *Setter*  | set_noise(value) |
-+-----------+------------------+
-| *Getter*  | get_noise()      |
-+-----------+------------------+
++----------+------------------+
+| *Setter* | set_noise(value) |
++----------+------------------+
+| *Getter* | get_noise()      |
++----------+------------------+
 
 The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate the noise.
 

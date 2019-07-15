@@ -20,7 +20,7 @@ Properties
 ----------
 
 +-------------------------------+-------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`atlas<class_AtlasTexture_property_atlas>`             | null                |
+| :ref:`Texture<class_Texture>` | :ref:`atlas<class_AtlasTexture_property_atlas>`             |                     |
 +-------------------------------+-------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`       | :ref:`filter_clip<class_AtlasTexture_property_filter_clip>` | false               |
 +-------------------------------+-------------------------------------------------------------+---------------------+
@@ -43,13 +43,11 @@ Property Descriptions
 
 - :ref:`Texture<class_Texture>` **atlas**
 
-+-----------+------------------+
-| *Default* | null             |
-+-----------+------------------+
-| *Setter*  | set_atlas(value) |
-+-----------+------------------+
-| *Getter*  | get_atlas()      |
-+-----------+------------------+
++----------+------------------+
+| *Setter* | set_atlas(value) |
++----------+------------------+
+| *Getter* | get_atlas()      |
++----------+------------------+
 
 The texture that contains the atlas. Can be any :ref:`Texture<class_Texture>` subtype.
 

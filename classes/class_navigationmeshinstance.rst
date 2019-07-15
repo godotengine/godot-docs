@@ -22,7 +22,7 @@ Properties
 +---------------------------------------------+---------------------------------------------------------------+------+
 | :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>` | true |
 +---------------------------------------------+---------------------------------------------------------------+------+
-| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>` | null |
+| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>` |      |
 +---------------------------------------------+---------------------------------------------------------------+------+
 
 Property Descriptions
@@ -44,11 +44,9 @@ Property Descriptions
 
 - :ref:`NavigationMesh<class_NavigationMesh>` **navmesh**
 
-+-----------+----------------------------+
-| *Default* | null                       |
-+-----------+----------------------------+
-| *Setter*  | set_navigation_mesh(value) |
-+-----------+----------------------------+
-| *Getter*  | get_navigation_mesh()      |
-+-----------+----------------------------+
++----------+----------------------------+
+| *Setter* | set_navigation_mesh(value) |
++----------+----------------------------+
+| *Getter* | get_navigation_mesh()      |
++----------+----------------------------+
 

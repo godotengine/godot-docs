@@ -58,7 +58,7 @@ Properties
 +------------------------------------------------+------------------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`                          | :ref:`shadow_item_cull_mask<class_Light2D_property_shadow_item_cull_mask>`   | 1                   |
 +------------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                  | :ref:`texture<class_Light2D_property_texture>`                               | null                |
+| :ref:`Texture<class_Texture>`                  | :ref:`texture<class_Light2D_property_texture>`                               |                     |
 +------------------------------------------------+------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                      | :ref:`texture_scale<class_Light2D_property_texture_scale>`                   | 1.0                 |
 +------------------------------------------------+------------------------------------------------------------------------------+---------------------+
@@ -399,13 +399,11 @@ The shadow mask. Used with :ref:`LightOccluder2D<class_LightOccluder2D>` to cast
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 :ref:`Texture<class_Texture>` used for the Light2D's appearance.
 

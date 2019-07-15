@@ -30,13 +30,13 @@ Properties
 +-----------------------------------------------+-----------------------------------------------------------------------------+-------+
 | :ref:`FocusMode<enum_Control_FocusMode>`      | :ref:`enabled_focus_mode<class_BaseButton_property_enabled_focus_mode>`     | 2     |
 +-----------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`ButtonGroup<class_ButtonGroup>`         | :ref:`group<class_BaseButton_property_group>`                               | null  |
+| :ref:`ButtonGroup<class_ButtonGroup>`         | :ref:`group<class_BaseButton_property_group>`                               |       |
 +-----------------------------------------------+-----------------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`                       | :ref:`keep_pressed_outside<class_BaseButton_property_keep_pressed_outside>` | false |
 +-----------------------------------------------+-----------------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`                       | :ref:`pressed<class_BaseButton_property_pressed>`                           | false |
 +-----------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`ShortCut<class_ShortCut>`               | :ref:`shortcut<class_BaseButton_property_shortcut>`                         | null  |
+| :ref:`ShortCut<class_ShortCut>`               | :ref:`shortcut<class_BaseButton_property_shortcut>`                         |       |
 +-----------------------------------------------+-----------------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`                       | :ref:`shortcut_in_tooltip<class_BaseButton_property_shortcut_in_tooltip>`   | true  |
 +-----------------------------------------------+-----------------------------------------------------------------------------+-------+
@@ -192,13 +192,11 @@ Focus access mode to use when switching between enabled/disabled (see :ref:`Cont
 
 - :ref:`ButtonGroup<class_ButtonGroup>` **group**
 
-+-----------+-------------------------+
-| *Default* | null                    |
-+-----------+-------------------------+
-| *Setter*  | set_button_group(value) |
-+-----------+-------------------------+
-| *Getter*  | get_button_group()      |
-+-----------+-------------------------+
++----------+-------------------------+
+| *Setter* | set_button_group(value) |
++----------+-------------------------+
+| *Getter* | get_button_group()      |
++----------+-------------------------+
 
 :ref:`ButtonGroup<class_ButtonGroup>` associated to the button.
 
@@ -234,13 +232,11 @@ If ``true``, the button's state is pressed. Means the button is pressed down or 
 
 - :ref:`ShortCut<class_ShortCut>` **shortcut**
 
-+-----------+---------------------+
-| *Default* | null                |
-+-----------+---------------------+
-| *Setter*  | set_shortcut(value) |
-+-----------+---------------------+
-| *Getter*  | get_shortcut()      |
-+-----------+---------------------+
++----------+---------------------+
+| *Setter* | set_shortcut(value) |
++----------+---------------------+
+| *Getter* | get_shortcut()      |
++----------+---------------------+
 
 :ref:`ShortCut<class_ShortCut>` associated to the button.
 

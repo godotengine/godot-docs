@@ -24,7 +24,7 @@ Properties
 +---------------------------+----------------------------------------------------------------+------+
 | :ref:`float<class_float>` | :ref:`margin<class_SpringArm_property_margin>`                 | 0.01 |
 +---------------------------+----------------------------------------------------------------+------+
-| :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_property_shape>`                   | null |
+| :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_property_shape>`                   |      |
 +---------------------------+----------------------------------------------------------------+------+
 | :ref:`float<class_float>` | :ref:`spring_length<class_SpringArm_property_spring_length>`   | 1.0  |
 +---------------------------+----------------------------------------------------------------+------+
@@ -73,13 +73,11 @@ Property Descriptions
 
 - :ref:`Shape<class_Shape>` **shape**
 
-+-----------+------------------+
-| *Default* | null             |
-+-----------+------------------+
-| *Setter*  | set_shape(value) |
-+-----------+------------------+
-| *Getter*  | get_shape()      |
-+-----------+------------------+
++----------+------------------+
+| *Setter* | set_shape(value) |
++----------+------------------+
+| *Getter* | get_shape()      |
++----------+------------------+
 
 .. _class_SpringArm_property_spring_length:
 

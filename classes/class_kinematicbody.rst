@@ -33,6 +33,8 @@ Methods
 -------
 
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`get_axis_lock<class_KinematicBody_method_get_axis_lock>` **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** const                                                                                                                                                                                                                                                                                                    |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                       | :ref:`get_floor_velocity<class_KinematicBody_method_get_floor_velocity>` **(** **)** const                                                                                                                                                                                                                                                                                                                                            |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`KinematicCollision<class_KinematicCollision>` | :ref:`get_slide_collision<class_KinematicBody_method_get_slide_collision>` **(** :ref:`int<class_int>` slide_idx **)**                                                                                                                                                                                                                                                                                                                |
@@ -50,6 +52,8 @@ Methods
 | :ref:`Vector3<class_Vector3>`                       | :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` **(** :ref:`Vector3<class_Vector3>` linear_velocity, :ref:`Vector3<class_Vector3>` floor_normal=Vector3( 0, 0, 0 ), :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` floor_max_angle=0.785398, :ref:`bool<class_bool>` infinite_inertia=true **)**                                                         |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                       | :ref:`move_and_slide_with_snap<class_KinematicBody_method_move_and_slide_with_snap>` **(** :ref:`Vector3<class_Vector3>` linear_velocity, :ref:`Vector3<class_Vector3>` snap, :ref:`Vector3<class_Vector3>` floor_normal=Vector3( 0, 0, 0 ), :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` floor_max_angle=0.785398, :ref:`bool<class_bool>` infinite_inertia=true **)** |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_axis_lock<class_KinematicBody_method_set_axis_lock>` **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**                                                                                                                                                                                                                                                                            |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`test_move<class_KinematicBody_method_test_move>` **(** :ref:`Transform<class_Transform>` from, :ref:`Vector3<class_Vector3>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true **)**                                                                                                                                                                                                                                       |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -130,6 +134,10 @@ Lock the body's Z axis movement.
 Method Descriptions
 -------------------
 
+.. _class_KinematicBody_method_get_axis_lock:
+
+- :ref:`bool<class_bool>` **get_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** const
+
 .. _class_KinematicBody_method_get_floor_velocity:
 
 - :ref:`Vector3<class_Vector3>` **get_floor_velocity** **(** **)** const
@@ -201,6 +209,10 @@ Returns the ``linear_velocity`` vector, rotated and/or scaled if a slide collisi
 Moves the body while keeping it attached to slopes. Similar to :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>`.
 
 As long as the ``snap`` vector is in contact with the ground, the body will remain attached to the surface. This means you must disable snap in order to jump, for example. You can do this by setting``snap`` to``(0, 0, 0)`` or by using :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` instead.
+
+.. _class_KinematicBody_method_set_axis_lock:
+
+- void **set_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**
 
 .. _class_KinematicBody_method_test_move:
 

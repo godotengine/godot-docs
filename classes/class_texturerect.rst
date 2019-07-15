@@ -28,7 +28,7 @@ Properties
 +--------------------------------------------------+--------------------------------------------------------------+-------+
 | :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` | 0     |
 +--------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_property_texture>`           | null  |
+| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_property_texture>`           |       |
 +--------------------------------------------------+--------------------------------------------------------------+-------+
 
 Enumerations
@@ -138,13 +138,11 @@ Controls the texture's behavior when resizing the node's bounding rectangle. See
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 The node's :ref:`Texture<class_Texture>` resource.
 

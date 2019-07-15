@@ -28,7 +28,7 @@ Properties
 +-------------------------------+---------------------------------------------------------------+---------------------+
 | :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite3D_property_region_rect>`       | Rect2( 0, 0, 0, 0 ) |
 +-------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite3D_property_texture>`               | null                |
+| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite3D_property_texture>`               |                     |
 +-------------------------------+---------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`         | :ref:`vframes<class_Sprite3D_property_vframes>`               | 1                   |
 +-------------------------------+---------------------------------------------------------------+---------------------+
@@ -110,13 +110,11 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 
 - :ref:`Texture<class_Texture>` **texture**
 
-+-----------+--------------------+
-| *Default* | null               |
-+-----------+--------------------+
-| *Setter*  | set_texture(value) |
-+-----------+--------------------+
-| *Getter*  | get_texture()      |
-+-----------+--------------------+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 :ref:`Texture<class_Texture>` object to draw.
 

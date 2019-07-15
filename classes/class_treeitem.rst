@@ -103,6 +103,8 @@ Methods
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_button<class_TreeItem_method_set_button>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`Texture<class_Texture>` button **)**                                                                                    |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_button_disabled<class_TreeItem_method_set_button_disabled>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`bool<class_bool>` disabled **)**                                                                      |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_cell_mode<class_TreeItem_method_set_cell_mode>` **(** :ref:`int<class_int>` column, :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` mode **)**                                                                                                |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_checked<class_TreeItem_method_set_checked>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` checked **)**                                                                                                                         |
@@ -441,6 +443,10 @@ Selects the column ``column``.
 - void **set_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`Texture<class_Texture>` button **)**
 
 Sets the given column's button :ref:`Texture<class_Texture>` at index ``button_idx`` to ``button``.
+
+.. _class_TreeItem_method_set_button_disabled:
+
+- void **set_button_disabled** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`bool<class_bool>` disabled **)**
 
 .. _class_TreeItem_method_set_cell_mode:
 

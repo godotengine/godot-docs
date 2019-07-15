@@ -49,6 +49,15 @@ Properties
 | :ref:`bool<class_bool>`              | :ref:`shadow_reverse_cull_face<class_Light_property_shadow_reverse_cull_face>` | false               |
 +--------------------------------------+--------------------------------------------------------------------------------+---------------------+
 
+Methods
+-------
+
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_param<class_Light_method_get_param>` **(** :ref:`Param<enum_Light_Param>` param **)** const                            |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_param<class_Light_method_set_param>` **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)** |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
@@ -332,4 +341,15 @@ If ``true``, the light will cast shadows.
 +-----------+-------------------------------------+
 | *Getter*  | get_shadow_reverse_cull_face()      |
 +-----------+-------------------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_Light_method_get_param:
+
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light_Param>` param **)** const
+
+.. _class_Light_method_set_param:
+
+- void **set_param** **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)**
 
