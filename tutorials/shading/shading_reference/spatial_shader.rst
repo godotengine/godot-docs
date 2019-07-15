@@ -174,7 +174,8 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | Built-in                          | Description                                                                                      |
 +===================================+==================================================================================================+
-| in vec4 **FRAGCOORD**             | Fragment coordinate, pixel adjusted. In screen space.                                            |
+| in vec4 **FRAGCOORD**             | Coordinate of pixel center. In screen space. ``xy`` specifies  position in window, ``z``         |
+|                                   | specifies fragment depth if ``DEPTH`` is not used. Origin is lower-left.                         |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **WORLD_MATRIX**          | Model space to world space transform.                                                            |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
@@ -287,7 +288,10 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+---------------------------------------------+
 | Built-in                          | Description                                 |
 +===================================+=============================================+
-| in vec4 **FRAGCOORD**             | Fragment coordinate, pixel adjusted.        |
+| in vec4 **FRAGCOORD**             | Coordinate of pixel center. In screen space.|
+|                                   | ``xy`` specifies  position in window, ``z`` |
+|                                   | specifies fragment depth if ``DEPTH`` is    |
+|                                   | not used. Origin is lower-left.             |
 +-----------------------------------+---------------------------------------------+
 | in mat4 **WORLD_MATRIX**          | Model space to world space transform.       |
 +-----------------------------------+---------------------------------------------+

@@ -159,7 +159,7 @@ uniform themself. The description gives the reader a hint about what they can pa
 +=====================+=========+========================+=====================================================+
 |fragColor            |out vec4 |COLOR                   |Output color for each pixel.                         |
 +---------------------+---------+------------------------+-----------------------------------------------------+
-|fragCoord            |vec2     |FRAGCOORD               |For full screen quads. For smaller quads, use UV.    |
+|fragCoord            |vec2     |FRAGCOORD.xy            |For full screen quads. For smaller quads, use UV.    |
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |iResolution          |vec3     |1.0 / SCREEN_PIXEL_SIZE |Can also pass in manually.                           |
 +---------------------+---------+------------------------+-----------------------------------------------------+
