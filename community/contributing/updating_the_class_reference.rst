@@ -12,7 +12,7 @@ The developers can't write the entire reference on their own. Godot needs you, a
 **Important:** If you are planning to make larger changes or a more substantial contribution, it is usually a good idea
 to create an issue (or a comment in an existing one) to let others know so they don't start working on the same thing too.
 
-.. note:: This guide is available as a `Youtube video <https://www.youtube.com/watch?v=mKKjOulm5XI>`_.
+.. note:: This guide is available as a `video tutorial on YouTube <https://www.youtube.com/watch?v=5jeHXxeX-JY>`_.
 
 
 How to contribute
