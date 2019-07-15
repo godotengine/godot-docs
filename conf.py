@@ -33,10 +33,11 @@ version = 'latest'
 release = 'latest'
 
 # Parse Sphinx tags passed from RTD via environment
-env_tags = os.getenv('SPHINX_TAGS', [])
-for tag in env_tags.split(','):
-   print("Adding Sphinx tag: %s" % tag.strip())
-   tags.add(tag.strip())
+env_tags = os.getenv('SPHINX_TAGS')
+if env_tags != None:
+   for tag in env_tags.split(','):
+       print("Adding Sphinx tag: %s" % tag.strip())
+       tags.add(tag.strip())
 
 # Language / i18n
 language = 'en'
