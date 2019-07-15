@@ -40,7 +40,7 @@ if env_tags != None:
        tags.add(tag.strip())
 
 # Language / i18n
-language = 'en'
+language = os.getenv('RTD_LANGUAGE', 'en')
 is_i18n = tags.has('i18n')
 
 exclude_patterns = ['_build']
