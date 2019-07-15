@@ -25,7 +25,7 @@ When a :ref:`Container <class_Container>`-derived node is used, all children :re
 own positioning ability. This means the *Container* will control their positioning and any attempt to manually alter these
 nodes will be either ignored or invalidated the next time their parent is resized.
 
-Likewise, when a *Container* derived node is resized, all it's children will be re-positioned according to it, 
+Likewise, when a *Container* derived node is resized, all its children will be re-positioned according to it, 
 with a behavior based on the type of container used:
 
    .. image:: img/container_example.gif

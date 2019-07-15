@@ -9,7 +9,7 @@ an export template every time you export the project.
 
 There are some reasons why you may want to do this:
 
-* Modify the project before it's build
+* Modify the project before it's built
 * Add external SDKs that build with your project
 
 Configuring custom build is a more or less straightforward process, but it may take a while to get used to how the Android SDK works.
@@ -59,7 +59,7 @@ This may appear a little confusing, but be sure to follow these instructions car
 
   C:\users\<yourusername>\Documents\android-sdk
 
-is often good enough. Unzip the *sdk zip file* you just downloaded there. The only thing in the directory you created in the previous step should be the *tools* folder with it's contents inside, like this:
+is often good enough. Unzip the *sdk zip file* you just downloaded there. The only thing in the directory you created in the previous step should be the *tools* folder with its contents inside, like this:
 
 ::
 

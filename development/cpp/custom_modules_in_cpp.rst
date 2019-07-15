@@ -21,7 +21,7 @@ transparently.
 What for?
 ---------
 
-While it's recommended that most of a game is written in scripting (as
+While it's recommended that most of a game be written in scripting (as
 it is an enormous time saver), it's perfectly possible to use C++
 instead. Adding C++ modules can be useful in the following scenarios:
 
