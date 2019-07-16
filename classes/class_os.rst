@@ -1320,7 +1320,9 @@ Sets the window title to the specified string.
 
 Requests the OS to open a resource with the most appropriate program. For example.
 
-``OS.shell_open("C:\\Users\name\Downloads")`` on Windows opens the file explorer at the downloads folders of the user.
+``OS.shell_open("C:\\Program Files")`` on Windows opens the file explorer at the Program Files directory.
+
+``OS.shell_open(OS.get_user_data_dir()+"/my_file.txt")`` opens ``user://my_file.txt`` using the default text editor.
 
 ``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
 
