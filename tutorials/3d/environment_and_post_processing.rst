@@ -256,6 +256,7 @@ Tweaking SSAO is possible with several parameters:
 - **Radius2/Intensity2:** A Secondary radius/intensity can be used. Combining a large and a small radius AO generally works well.
 - **Bias:** This can be tweaked to solve self occlusion, though the default generally works well enough.
 - **Light Affect:** SSAO only affects ambient light, but increasing this slider can make it also affect direct light. Some artists prefer this effect.
+- **Ao Channel Affect:** If a value of zero is used, only the material's AO texture will be used for ambient occlusion; SSAO will not be applied. Values greater than 0 multiply the AO texture by the SSAO effect to varying degrees. This does not affect materials without an AO texture.
 - **Quality:** Depending on quality, SSAO will take more samples over a sphere for every pixel. High quality only works well on modern GPUs.
 - **Blur:** Type of blur kernel used. The 1x1 kernel is a simple blur that preserves local detail better, but is not as efficient (generally works better with the high quality setting above), while 3x3 will soften the image better (with a bit of dithering-like effect), but does not preserve local detail as well.
 - **Edge Sharpness**: This can be used to preserve the sharpness of edges (avoids areas without AO on creases).
