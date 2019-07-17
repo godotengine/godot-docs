@@ -187,6 +187,65 @@ Keep in mind that some architectures (mainly mobile) benefit a lot from this, bu
 to find out more. In all honesty though, mobile drivers are buggy, so, to stay out of trouble, make simple 
 shaders without specifying precision unless you *really* need to.
 
+Arrays
+------
+
+Arrays are containers for multiple variables of a similar type.
+Note: As of Godot 3.2, only local arrays have been implemented.
+
+Local arrays
+~~~~~~~~~~~~
+
+Local arrays are declared in functions. They can use all of the allowed datatypes, except samplers.
+The array declaration follows a C-style syntax: ``typename + identifier + [array size]``.
+
+.. code-block:: glsl
+
+    void fragment() {
+        float arr[3];
+    }
+
+They can be initialized at the beginning like:
+
+.. code-block:: glsl
+
+      float arr[3] = float[3] (1.0, 0.5, 0.0); // first constructor
+
+      vec2 arr_v2[2] = { vec2(0.0, 0.0), vec2(1.0, 1.0) }; // second constructor
+
+      bool bvec_arr[] = { false, false, true, true }; // third constructor - size is defined automatically from the argument count
+
+You can declare multiple arrays (even with different sizes) in one expression:
+
+.. code-block:: glsl
+
+      float a[3] = float[3] (1.0, 0.5, 0.0),
+       b[2] = {1.0, 0.5},
+       c[] = { 0.7 },
+       d = 0.0,
+       e[5];
+
+To access an array element, use the indexing syntax:
+
+.. code-block:: glsl
+
+      float arr[3];
+      
+      arr[0] = 1.0; // setter
+      
+      COLOR.r = arr[0]; // getter
+
+Arrays also have a built-in function ``.length()`` (not to be confused with the built-in ``length()`` function). It doesn't accept any parameters and will return the array's size.
+
+.. code-block:: glsl
+
+    float arr[] = { 0.0, 1.0, 0.5, -1.0 };
+    for (int i = 0; i < arr.length(); i++) {
+        // ...
+    }
+
+Note: If you use an index below 0 or greater than array size - the shader will crash and break rendering. To prevent this, use ``length()``, ``if``, or ``clamp()`` functions to ensure the index is between 0 and the array's length. Always carefully test and check your code. If you pass a constant expression or a simple number, the editor will check its bounds to prevent this crash.
+
 Operators
 ---------
 
