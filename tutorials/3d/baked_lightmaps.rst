@@ -55,10 +55,10 @@ The main advantage is that, on complex objects that you may want to re-import a
 lot, the texture generation process can be quite costly within Godot,
 so having it unwrapped before import can be faster.
 
-Simply do an unwrap on the second UV2 layer.
+Simply do an unwrap and add a second UV layer.
 
 .. image:: img/baked_light_blender.png
-
+//Do not understand what this is talking about
 And import normally. Remember you will need to set the texture size on the mesh
 after import.
 
@@ -163,7 +163,7 @@ The modes are:
 
 Baking quality
 ~~~~~~~~~~~~~~
-
+// info still accurate?
 ``BakedLightmap`` uses, for simplicity, a voxelized version of the scene to compute
 lighting. Voxel size can be adjusted with the **Bake Subdiv** parameter.
 More subdivision results in more detail, but also takes more time to bake.
@@ -198,15 +198,17 @@ Configuring bake
 ~~~~~~~~~~~~~~~~
 
 Several more options are present for baking:
-
+//Same as cell size?
 - **Bake Subdiv**: The Godot lightmapper uses a grid to transfer light information around; the default value is fine and should work for most cases. Increase it in case you want better lighting on small details or your scene is large.
 - **Capture Subdiv**: This is the grid used for real-time capture information (lighting dynamic objects). Default value is generally OK, it's usually smaller than Bake Subdiv and can't be larger than it.
+- **Bake Cell Size**:
 - **Bake Quality**: Three bake quality modes are provided, Low, Medium and High. Higher quality takes more time.
 - **Bake Mode**: The baker can use two different techniques: *Voxel Cone Tracing* (fast, but approximate), or *RayTracing* (slow, but accurate).
 - **Propagation**: Used for the *Voxel Cone Trace* mode. Works just like in ``GIProbe``.
 - **HDR**: If disabled, lightmaps are smaller, but can't capture any light over white (1.0).
-- **Image Path**: Where lightmaps will be saved. By default, on the same directory as the scene ("."), but can be tweaked.
+- **Capture Cell Size**:
 - **Extents**: Size of the area affected (can be edited visually)
+- **Image Path**: Where lightmaps will be saved. By default, on the same directory as the scene ("."), but can be tweaked.
 - **Light Data**: Contains the light baked data after baking. Textures are saved to disk, but this also contains the capture data for dynamic objects, which can be a bit heavy. If you are using .tscn formats (instead of .scn), you can save it to disk.
 
 Dynamic objects
