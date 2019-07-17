@@ -101,65 +101,8 @@ indie games.
 Parameters of HDR
 -----------------
 
-HDR is found in the :ref:`Environment <class_Environment>`
+HDR setting can be found in the :ref:`Environment <class_Environment>`
 resource. These are found most of the time inside a
 :ref:`WorldEnvironment <class_WorldEnvironment>`
-node or set in a camera. There are many parameters for HDR:
-
-.. image:: img/hdr_parameters.png
-
-ToneMapper
-~~~~~~~~~~
-
-The ToneMapper is the heart of the algorithm. Many options for
-tonemappers are provided:
-
--  **Linear:** Simplest tonemapper. It does its job for adjusting scene
-   brightness, but if the differences in light are too big, it will
-   cause colors to be too saturated.
--  **Log:** Similar to linear but not as extreme.
--  **Reinhardt:** Classical tonemapper (modified, so it will not desaturate
-   as much)
--  **ReinhardtAutoWhite:** Same as above, but uses the max scene luminance
-   to adjust the white value.
-
-Exposure
-~~~~~~~~
-
-The same exposure parameter as in real cameras. Controls how much light
-enters the camera. Higher values will result in a brighter scene, and
-lower values will result in a darker scene.
-
-White
-~~~~~
-
-Maximum value of white.
-
-Glow threshold
-~~~~~~~~~~~~~~
-
-Determines above which value (from 0 to 1 after the scene is tonemapped)
-light will start bleeding.
-
-Glow scale
-~~~~~~~~~~
-
-Determines how much light will bleed.
-
-Min luminance
-~~~~~~~~~~~~~
-
-Lower bound value of light for the scene at which the tonemapper stops
-working. This allows dark scenes to remain dark.
-
-Max luminance
-~~~~~~~~~~~~~
-
-Upper bound value of light for the scene at which the tonemapper stops
-working. This allows bright scenes to remain saturated.
-
-Exposure adjustment speed
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Auto-exposure will change slowly and will take a while to adjust (like
-in real cameras). Bigger values mean faster adjustment.
+node or set in a camera. For more information see
+:ref:`doc_environment_and_post_processing`.
