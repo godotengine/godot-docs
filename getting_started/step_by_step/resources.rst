@@ -184,7 +184,7 @@ and :ref:`Resource <class_Resource>` features:
 
     Resources and Dictionaries are both passed by reference, but only Resources are
     reference-counted. This means that if a Dictionary is passed between objects and
-    the first object is deleted, all other objects' references to the Dictinoary will
+    the first object is deleted, all other objects' references to the Dictionary will
     be invalidated. Conversely, Resources will not be freed from memory until *all* the 
     objects are deleted.
 
