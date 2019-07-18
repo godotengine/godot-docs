@@ -1,80 +1,91 @@
 .. _doc_what_are_godot_classes:
 
-What are Godot classes really?
-==============================
+Godot scenes and scripts are classes
+====================================
 
-Godot offers two main means of creating types: scripts and scenes.
-Both of these represent a "class" since Godot revolves around
-Object-Oriented design. *How* they do this may not be clear to beginner
-or intermediate users though.
+In Godot, scripts and scenes can both be the equivalent of classes in an
+Object-Oriented programming language. The main difference is that scenes are
+`declarative code <https://en.wikipedia.org/wiki/Declarative_programming>`_,
+while scripts can contain `imperative code
+<https://en.wikipedia.org/wiki/Imperative_programming>`_.
 
-Godot Engine provides classes out-of-the-box (like
-:ref:`Node <class_Node>`), but user-created types are not actually classes.
-Instead they are resources that tell the engine a sequence of initializations
-to perform on an engine class.
+As a result, many best practices in Godot boil down to applying Object-Oriented
+design principles to the scenes, nodes, or script that make up your game.
 
-Godot's internal classes have methods that register a class's data with
-a :ref:`ClassDB <class_ClassDB>`. This database provides runtime access to
-class information (also called "reflection"). Things stored in the ClassDB
-include, among other things...
+This guide explains how scripts and scenes work in the engine's core, to help
+you get a sense of how Godot works under the hood, and to help you better
+understand where some of this series' best practices come from.
+
+Making sense of classes in Godot
+--------------------------------
+
+Godot Engine provides built-in classes like :ref:`Node <class_Node>`.
+User-created types are not technically classes. Instead, they are resources that
+tell the engine a sequence of initializations to perform on one of the engine's
+built-in classes.
+
+Godot's internal classes have methods that register a class's data with a
+:ref:`ClassDB <class_ClassDB>`. This database provides runtime access to class
+information. ``ClassDB`` contains information about classes like:
 
 - properties
-
 - methods
-
 - constants
-
 - signals
 
-Furthermore, this ClassDB is what Objects actually check against when
-performing any operation. Access a property? Call a method? Emit a signal?
-It will check the database's records (and the records of the Object's base
-types) to see if the Object supports the operation. Every C++ Object defines
-a static `_bind_methods()` function that describes what C++ content it
-registers to the database and how.
+This ``ClassDB`` is what Objects check against when performing an operation like
+accessing a property or calling a method. ``ClassDB`` checks the database's
+records and the records of the Object's base types to see if the Object supports
+the operation.
 
-So, if the engine provides all of this data at startup, then how does
-a user define their own data? It'd be nice if users could define a custom
-set of data to be appended to an object's data. That way, users could inject
-their own properties and methods into the engine's Object query requests.
+On the engine's side, every class defines a static ``_bind_methods()`` function
+that describes what C++ content it registers to the database and how. When you
+use the engine, you can extend the methods, properties, signals available from
+the ``ClassDB`` by attaching a :ref:`Script <class_Script>` to your node.
 
-*This* is what a :ref:`Script <class_Script>` is. Objects check their attached
-script before the database, so scripts can even override methods.
-If a script defines a `_get_property_list()` method, that data is appended to
-the list of properties the Object fetches from the ClassDB. The same holds
-true for other declarative code.
+Objects check their attached script before the database. This is why scripts can
+override built-in methods. If a script defines a ``_get_property_list()`` method,
+Godot appends that data to the list of properties the Object fetches from the
+ClassDB. The same is true for other declarative code.
 
-This can lead to some users' confusion when they see a script as being
-a class unto itself. In reality, the engine just auto-instantiates the
-base engine class and then adds the script to that object. This then allows
-the Object to defer to the Script's content where the engine logic deems
-appropriate.
+Even scripts that don't inherit from a built-in type, i.e. scripts that don't
+start with the ``extends`` keyword, implicitly inherit from the engine's base
+:ref:`Reference <class_Reference>` class. This allows the Object to defer
+to the script's content where the engine logic deems appropriate.
 
-A problem does present itself though. As the size of Objects increases,
-the scripts' necessary size to create them grows much, much larger.
-Creating node hierarchies demonstrates this. Each individual Node's logic
-could be several hundred lines of code in length.
+.. note::
 
-let's see a simple example of creating a single Node as a child.
+   As a result, you can instance scripts without the ``extends`` keyword
+   from code, but you cannot attach them to a :ref:`Node <class_Node>`
+
+
+Scripting performances and PackedScene
+--------------------------------------
+
+As the size of Objects increases, the scripts' necessary size to create them
+grows much, much larger. Creating node hierarchies demonstrates this. Each
+individual Node's logic could be several hundred lines of code in length.
+
+Let's see a simple example of creating a single ``Node`` as a child. The code
+below creates a new ``Node``, changes its name, assigns a script to it, sets its
+future parent as its owner so it gets saved to disk along with it, and finally
+adds it as a child of the ``Main`` node:
 
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # main.gd
+    # Main.gd
     extends Node
 
-    var child # define a variable to store a reference to the child
-
     func _init():
-        child = Node.new() # Construct the child.
-        child.name = "Child" # Change its name.
-        child.script = preload("child.gd") # Give it custom features.
-        child.owner = self # Serialize this node if self is saved.
-        add_child(child) # Add "Child" as a child of self.
+        var child = Node.new()
+        child.name = "Child"
+        child.script = preload("Child.gd")
+        child.owner = self
+        add_child(child)
 
   .. code-tab:: csharp
 
-    // Main.cs
     using System;
     using Godot;
 
@@ -86,53 +97,43 @@ let's see a simple example of creating a single Node as a child.
 
             public Main()
             {
-                Child = new Node(); // Construct the child.
-                Child.Name = "Child"; // Change its name.
-                Child.Script = (Script)ResourceLoader.Load("child.gd"); // Give it custom features.
-                Child.Owner = this; // Serialize this node if this is saved.
-                AddChild(Child); // Add "Child" as a child of this.
+                Child = new Node();
+                Child.Name = "Child";
+                Child.Script = (Script)ResourceLoader.Load("child.gd");
+                Child.Owner = this;
+                AddChild(Child);
             }
         }
     }
 
-Notice that only two pieces of declarative code are involved in
-the creation of this child node: the variable declaration and
-the constructor declaration. Everything else about the child
-must be setup using imperative code. However, script code is
-much slower than engine C++ code. Each change must make a separate
-call to the scripting API which means a lot of C++ "lookups" within
-data structures to find the corresponding logic to execute.
+Script code like this is much slower than engine-side C++ code. Each change
+makes a separate call to the scripting API which leads to many "look-ups" on the
+back-end to find the logic to execute.
 
-To help offload the work, it would be convenient if one could batch up
-all operations involved in creating and setting up node hierarchies. The
-engine could then handle the construction using its fast C++ code, and the
-script code would be free from the perils of imperative code.
+Scenes help to avoid this performance issue. :ref:`PackedScene
+<class_PackedScene>`, the base type that scenes inherit from, are resources that
+use serialized data to create objects. The engine can process scenes in batches
+on the back-end and provide much better performances than scripts.
 
-*This* is what a scene (:ref:`PackedScene <class_PackedScene>`) is: a
-resource that provides an advanced "constructor" serialization which is
-offloaded to the engine for batch processing.
+Scenes and scripts are objects
+------------------------------
 
-Now, why is any of this important to scene organization? Because one must
-understand that scenes *are* objects. One often pairs a scene with
-a scripted root node that makes use of the sub-nodes. This means that the
-scene is often an extension of the script's declarative code.
+Why is any of this important to scene organization? Because scenes *are*
+objects. One often pairs a scene with a scripted root node that makes use of the
+sub-nodes. This means that the scene is often an extension of the script's
+declarative code.
 
-It helps to define...
+The content of a scene helps to define:
 
-- what objects are available to the script?
+- What nodes are available to the script
+- How they are organized
+- How are they initialized
+- What signal connections they have with each other
 
-- how are they organized?
+Many Object-Oriented principles which apply to written code *also* apply to
+scenes.
 
-- how are they initialized?
+The scene is *always an extension of the script attached to its root node*. You
+can see all the nodes it contains as part of a single class.
 
-- what connections to each other do they have, if any?
-
-As such, many Object-Oriented principles which apply to "programming", i.e.
-scripts, *also* apply to scenes. Some scripts are designed to only work
-in one scene (which are often bundled into the scene itself). Other scripts
-are meant to be re-used between scenes.
-
-**Regardless, the scene is always an extension of the root script, and can
-therefore be interpreted as a part of the class.**
-Most of the points covered in this series will build on this point, so
-keep it in mind.
+Most of the tips and techniques explained in this series will build on his.
