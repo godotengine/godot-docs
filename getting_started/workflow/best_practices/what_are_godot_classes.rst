@@ -40,7 +40,7 @@ the operation.
 
 On the engine's side, every class defines a static ``_bind_methods()`` function
 that describes what C++ content it registers to the database and how. When you
-use the engine, you can extend the methods, properties, signals available from
+use the engine, you can extend the methods, properties, and signals available from
 the ``ClassDB`` by attaching a :ref:`Script <class_Script>` to your node.
 
 Objects check their attached script before the database. This is why scripts can
@@ -113,7 +113,7 @@ back-end to find the logic to execute.
 Scenes help to avoid this performance issue. :ref:`PackedScene
 <class_PackedScene>`, the base type that scenes inherit from, are resources that
 use serialized data to create objects. The engine can process scenes in batches
-on the back-end and provide much better performances than scripts.
+on the back-end and provide much better performance than scripts.
 
 Scenes and scripts are objects
 ------------------------------
@@ -136,4 +136,4 @@ scenes.
 The scene is *always an extension of the script attached to its root node*. You
 can see all the nodes it contains as part of a single class.
 
-Most of the tips and techniques explained in this series will build on his.
+Most of the tips and techniques explained in this series will build on this.
