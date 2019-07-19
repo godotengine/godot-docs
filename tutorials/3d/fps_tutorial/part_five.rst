@@ -484,7 +484,7 @@ With that done, all we need to do is add some code to ``process_input``:
             var ray_to = ray_from + camera.project_ray_normal(center_position) * OBJECT_GRAB_RAY_DISTANCE
 
             var ray_result = state.intersect_ray(ray_from, ray_to, [self, $Rotation_Helper/Gun_Fire_Points/Knife_Point/Area])
-            if ray_result != null:
+            if ray_result != null and "collider" in ray_result:
                 if ray_result["collider"] is RigidBody:
                     grabbed_object = ray_result["collider"]
                     grabbed_object.mode = RigidBody.MODE_STATIC
