@@ -529,7 +529,8 @@ Then we get the center of the screen by dividing the current :ref:`Viewport <cla
 Next we send the ray into the space state and see if it gets a result. We add the player and the knife's :ref:`Area <class_Area>` as two exceptions so the player cannot carry
 themselves or the knife's collision :ref:`Area <class_Area>`.
 
-Then we check to see if we got a result back from the ray. If we have, we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
+Then we check to see if we got a result back from the ray, also whether we have any colliders in our result.
+ If we have, we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
 
 If the ray collided with a :ref:`RigidBody <class_RigidBody>`, we set ``grabbed_object`` to the collider the ray collided with. We then set the mode on
 the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it doesn't move in our hands.
