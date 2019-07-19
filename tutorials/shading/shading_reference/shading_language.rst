@@ -704,6 +704,8 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 +----------------------------------------------------------------------------+--------------------------------------------------+
 | vec4_type **textureProjLod** ( sampler2D_type s, vec4 uv, float lod )      | Perform a 2D texture read with projection/lod    |
 +----------------------------------------------------------------------------+--------------------------------------------------+
+| vec4_type **textureProjLod** ( sampler3D_type s, vec4 uv, float lod )      | Perform a 3D texture read with projection/lod    |
++----------------------------------------------------------------------------+--------------------------------------------------+
 | vec4_type **texelFetch** ( sampler2D_type s, ivec2 uv, int lod )           | Fetch a single texel using integer coords        |
 +----------------------------------------------------------------------------+--------------------------------------------------+
 | vec4_type **texelFetch** ( sampler2DArray_type s, ivec3 uv, int lod )      | Fetch a single texel using integer coords        |
