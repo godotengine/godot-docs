@@ -102,8 +102,7 @@ for our player. Notice that there is a warning symbol next to the node.
 An ``AnimatedSprite`` requires a :ref:`SpriteFrames <class_SpriteFrames>` resource, which is a
 list of the animations it can display. To create one, find the
 ``Frames`` property in the Inspector and click "[empty]" ->
-"New SpriteFrames". Next, in the same location, click
-``<SpriteFrames>``, then click "Open Editor" to open the "SpriteFrames" panel:
+"New SpriteFrames". This should automatically open the SpriteFrames panel.
 
 .. image:: img/spriteframes_panel.png
 
