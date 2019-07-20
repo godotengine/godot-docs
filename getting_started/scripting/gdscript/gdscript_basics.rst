@@ -1714,6 +1714,39 @@ into an invalid state, for example:
 
 ``my_func`` will only continue execution once both buttons have been pressed.
 
+You can also get the signal's argument once it's emitted by an object:
+
+::
+
+    # Wait for when any node is added to the scene tree
+    var node = yield(get_tree(), "node_added")
+
+If you're unsure whether a function may yield or not, or whether it may yield
+multiple times, you can yield to the ``completed`` signal conditionally:
+
+::
+
+    func generate():
+        var result = rand_range(-1.0, 1.0)
+
+        if result < 0.0:
+            yield(get_tree(), "idle_frame")
+
+        return result
+
+    func make():
+        var result = generate()
+
+        if result is GDScriptFunctionState: # still working
+            result = yield(result, "completed")
+
+        return result
+
+This ensures that the function returns whatever it was supposed to return
+irregardless of whether coroutines were used internally. Note that using
+``while`` would be redundant here as the ``completed`` signal is only emitted
+when the function didn't yield anymore.
+
 Onready keyword
 ~~~~~~~~~~~~~~~
 
