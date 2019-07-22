@@ -68,7 +68,7 @@ Render modes
 +---------------------------------+-----------------------------------------------------------------------+
 | **vertex_lighting**             | Use vertex-based lighting.                                            |
 +---------------------------------+-----------------------------------------------------------------------+
-| **shadows_disabled**            | Disable computing shaders in shader.                                  |
+| **shadows_disabled**            | Disable computing shadows in shader.                                  |
 +---------------------------------+-----------------------------------------------------------------------+
 | **ambient_light_disabled**      | Disable contribution from ambient light and radiance map.             |
 +---------------------------------+-----------------------------------------------------------------------+
