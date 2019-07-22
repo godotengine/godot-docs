@@ -349,18 +349,21 @@ be assigned any other value.
 bool
 ^^^^
 
-The Boolean data type can only contain ``true`` or ``false``.
+Short for "boolean", it can only contain ``true`` or ``false``.
 
 int
 ^^^
 
-The integer data type can only contain integer numbers (both negative
-and positive).
+Short for "integer", it stores whole numbers (positive and negative).
+It is stored as a 64-bit value, equivalent to "int64_t" in C++.
 
 float
 ^^^^^
 
-Used to contain a floating-point value (real numbers).
+Stores real numbers, including decimals, using floating-point values.
+It is stored as a 64-bit value, equivalent to "double" in C++.
+Note: Currently, data structures such as Vector2, Vector3, and
+PoolRealArray store 32-bit single-precision "float" values.
 
 :ref:`String <class_String>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
