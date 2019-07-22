@@ -124,7 +124,7 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`Texture<class_Texture>`                                  | :ref:`metallic_texture<class_SpatialMaterial_property_metallic_texture>`                             |                     |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`metallic_texture_channel<class_SpatialMaterial_property_metallic_texture_channel>`             | 2                   |
+| :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`metallic_texture_channel<class_SpatialMaterial_property_metallic_texture_channel>`             | 0                   |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`normal_enabled<class_SpatialMaterial_property_normal_enabled>`                                 | false               |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
@@ -188,7 +188,7 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`Texture<class_Texture>`                                  | :ref:`roughness_texture<class_SpatialMaterial_property_roughness_texture>`                           |                     |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`roughness_texture_channel<class_SpatialMaterial_property_roughness_texture_channel>`           | 1                   |
+| :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`roughness_texture_channel<class_SpatialMaterial_property_roughness_texture_channel>`           | 0                   |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`subsurf_scatter_enabled<class_SpatialMaterial_property_subsurf_scatter_enabled>`               | false               |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
@@ -1273,7 +1273,7 @@ General reflectivity amount.
 - :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>` **metallic_texture_channel**
 
 +-----------+-------------------------------------+
-| *Default* | 2                                   |
+| *Default* | 0                                   |
 +-----------+-------------------------------------+
 | *Setter*  | set_metallic_texture_channel(value) |
 +-----------+-------------------------------------+
@@ -1669,7 +1669,7 @@ Surface reflection. A value of ``0`` represents a perfect mirror while a value o
 - :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>` **roughness_texture_channel**
 
 +-----------+--------------------------------------+
-| *Default* | 1                                    |
+| *Default* | 0                                    |
 +-----------+--------------------------------------+
 | *Setter*  | set_roughness_texture_channel(value) |
 +-----------+--------------------------------------+

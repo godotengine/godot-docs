@@ -270,27 +270,27 @@ Adds a script at ``path`` to the Autoload list as ``name``.
 
 - :ref:`ToolButton<class_ToolButton>` **add_control_to_bottom_panel** **(** :ref:`Control<class_Control>` control, :ref:`String<class_String>` title **)**
 
-Adds a control to the bottom panel (together with Output, Debug, Animation, etc). Returns a reference to the button added. It's up to you to hide/show the button when needed. When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_bottom_panel<class_EditorPlugin_method_remove_control_from_bottom_panel>` and free it with ``queue_free()``.
+Adds a control to the bottom panel (together with Output, Debug, Animation, etc). Returns a reference to the button added. It's up to you to hide/show the button when needed. When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_bottom_panel<class_EditorPlugin_method_remove_control_from_bottom_panel>` and free it with :ref:`Node.queue_free<class_Node_method_queue_free>`.
 
 .. _class_EditorPlugin_method_add_control_to_container:
 
 - void **add_control_to_container** **(** :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>` container, :ref:`Control<class_Control>` control **)**
 
-Adds a custom control to a container (see ``CONTAINER_*`` enum). There are many locations where custom controls can be added in the editor UI.
+Adds a custom control to a container (see :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>`). There are many locations where custom controls can be added in the editor UI.
 
 Please remember that you have to manage the visibility of your custom controls yourself (and likely hide it after adding it).
 
-When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_container<class_EditorPlugin_method_remove_control_from_container>` and free it with ``queue_free()``.
+When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_container<class_EditorPlugin_method_remove_control_from_container>` and free it with :ref:`Node.queue_free<class_Node_method_queue_free>`.
 
 .. _class_EditorPlugin_method_add_control_to_dock:
 
 - void **add_control_to_dock** **(** :ref:`DockSlot<enum_EditorPlugin_DockSlot>` slot, :ref:`Control<class_Control>` control **)**
 
-Adds the control to a specific dock slot (see ``DOCK_*`` enum for options).
+Adds the control to a specific dock slot (see :ref:`DockSlot<enum_EditorPlugin_DockSlot>` for options).
 
 If the dock is repositioned and as long as the plugin is active, the editor will save the dock position on further sessions.
 
-When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_docks<class_EditorPlugin_method_remove_control_from_docks>` and free it with ``queue_free()``.
+When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_docks<class_EditorPlugin_method_remove_control_from_docks>` and free it with :ref:`Node.queue_free<class_Node_method_queue_free>`.
 
 .. _class_EditorPlugin_method_add_custom_type:
 
@@ -358,6 +358,8 @@ Clear all the state and reset the object being edited to zero. This ensures your
 
 - void **disable_plugin** **(** **)** virtual
 
+Called by the engine when the user disables the ``EditorPlugin`` in the Plugin tab of the project settings window.
+
 .. _class_EditorPlugin_method_edit:
 
 - void **edit** **(** :ref:`Object<class_Object>` object **)** virtual
@@ -368,18 +370,11 @@ This function is used for plugins that edit specific object types (nodes or reso
 
 - void **enable_plugin** **(** **)** virtual
 
+Called by the engine when the user enables the ``EditorPlugin`` in the Plugin tab of the project settings window.
+
 .. _class_EditorPlugin_method_forward_canvas_draw_over_viewport:
 
 - void **forward_canvas_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** virtual
-
-This method is called when there is an input event in the 2D viewport, e.g. the user clicks with the mouse in the 2D space (canvas GUI). Keep in mind that for this method to be called you have to first declare the virtual method :ref:`handles<class_EditorPlugin_method_handles>` so the editor knows that you want to work with the workspace:
-
-::
-
-    func handles(object):
-        return true
-
-Also note that the edited scene must have a root node.
 
 .. _class_EditorPlugin_method_forward_canvas_force_draw_over_viewport:
 
@@ -389,18 +384,49 @@ Also note that the edited scene must have a root node.
 
 - :ref:`bool<class_bool>` **forward_canvas_gui_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
 
+Called when there is a root node in the current edited scene, :ref:`handles<class_EditorPlugin_method_handles>` is implemented and an :ref:`InputEvent<class_InputEvent>` happens in the 2D viewport. Intercepts the :ref:`InputEvent<class_InputEvent>`, if ``return true`` ``EditorPlugin`` consumes the ``event``, otherwise forwards ``event`` to other Editor classes. Example:
+
+::
+
+    # Prevents the InputEvent to reach other Editor classes
+    func forward_canvas_gui_input(event):
+        var forward = true
+        return forward
+
+Must ``return false`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes. Example:
+
+::
+
+    # Consumes InputEventMouseMotion and forwards other InputEvent types
+    func forward_canvas_gui_input(event):
+        var forward = false
+        if event is InputEventMouseMotion:
+            forward = true
+        return forward
+
 .. _class_EditorPlugin_method_forward_spatial_gui_input:
 
 - :ref:`bool<class_bool>` **forward_spatial_gui_input** **(** :ref:`Camera<class_Camera>` camera, :ref:`InputEvent<class_InputEvent>` event **)** virtual
 
-This method is called when there is an input event in the 3D viewport, e.g. the user clicks with the mouse in the 3D space (spatial GUI). Keep in mind that for this method to be called you have to first declare the virtual method :ref:`handles<class_EditorPlugin_method_handles>` so the editor knows that you want to work with the workspace:
+Called when there is a root node in the current edited scene, :ref:`handles<class_EditorPlugin_method_handles>` is implemented and an :ref:`InputEvent<class_InputEvent>` happens in the 3D viewport. Intercepts the :ref:`InputEvent<class_InputEvent>`, if ``return true`` ``EditorPlugin`` consumes the ``event``, otherwise forwards ``event`` to other Editor classes. Example:
 
 ::
 
-    func handles(object):
-        return true
+    # Prevents the InputEvent to reach other Editor classes
+    func forward_spatial_gui_input(camera, event):
+        var forward = true
+        return forward
 
-Also note that the edited scene must have a root node.
+Must ``return false`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes. Example:
+
+::
+
+    # Consumes InputEventMouseMotion and forwards other InputEvent types
+    func forward_spatial_gui_input(camera, event):
+        var forward = false
+        if event is InputEventMouseMotion:
+            forward = true
+        return forward
 
 .. _class_EditorPlugin_method_get_breakpoints:
 
@@ -492,19 +518,19 @@ Removes an Autoload ``name`` from the list.
 
 - void **remove_control_from_bottom_panel** **(** :ref:`Control<class_Control>` control **)**
 
-Removes the control from the bottom panel. You have to manually ``queue_free()`` the control.
+Removes the control from the bottom panel. You have to manually :ref:`Node.queue_free<class_Node_method_queue_free>` the control.
 
 .. _class_EditorPlugin_method_remove_control_from_container:
 
 - void **remove_control_from_container** **(** :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>` container, :ref:`Control<class_Control>` control **)**
 
-Removes the control from the specified container. You have to manually ``queue_free()`` the control.
+Removes the control from the specified container. You have to manually :ref:`Node.queue_free<class_Node_method_queue_free>` the control.
 
 .. _class_EditorPlugin_method_remove_control_from_docks:
 
 - void **remove_control_from_docks** **(** :ref:`Control<class_Control>` control **)**
 
-Removes the control from the dock. You have to manually ``queue_free()`` the control.
+Removes the control from the dock. You have to manually :ref:`Node.queue_free<class_Node_method_queue_free>` the control.
 
 .. _class_EditorPlugin_method_remove_custom_type:
 

@@ -77,8 +77,8 @@ Adds a new point at the given position with the given identifier. The algorithm 
 
 ::
 
-    var as = AStar2D.new()
-    as.add_point(1, Vector2(1, 0), 4) # Adds the point (1, 0) with weight_scale 4 and id 1
+    var astar = AStar2D.new()
+    astar.add_point(1, Vector2(1, 0), 4) # Adds the point (1, 0) with weight_scale 4 and id 1
 
 If there already exists a point for the given ``id``, its position and weight scale are updated to the given values.
 
@@ -102,10 +102,10 @@ Creates a segment between the given points. If ``bidirectional`` is ``false``, o
 
 ::
 
-    var as = AStar2D.new()
-    as.add_point(1, Vector2(1, 1))
-    as.add_point(2, Vector2(0, 5))
-    as.connect_points(1, 2, false)
+    var astar = AStar2D.new()
+    astar.add_point(1, Vector2(1, 1))
+    astar.add_point(2, Vector2(0, 5))
+    astar.connect_points(1, 2, false)
 
 .. _class_AStar2D_method_disconnect_points:
 
@@ -133,11 +133,11 @@ Returns the closest position to ``to_position`` that resides inside a segment be
 
 ::
 
-    var as = AStar2D.new()
-    as.add_point(1, Vector2(0, 0))
-    as.add_point(2, Vector2(0, 5))
-    as.connect_points(1, 2)
-    var res = as.get_closest_position_in_segment(Vector2(3, 3)) # Returns (0, 3)
+    var astar = AStar2D.new()
+    astar.add_point(1, Vector2(0, 0))
+    astar.add_point(2, Vector2(0, 5))
+    astar.connect_points(1, 2)
+    var res = astar.get_closest_position_in_segment(Vector2(3, 3)) # Returns (0, 3)
 
 The result is in the segment that goes from ``y = 0`` to ``y = 5``. It's the closest position in the segment to the given point.
 
@@ -149,19 +149,18 @@ Returns an array with the IDs of the points that form the path found by AStar2D 
 
 ::
 
-    var as = AStar2D.new()
-    as.add_point(1, Vector2(0, 0))
-    as.add_point(2, Vector2(0, 1), 1) # Default weight is 1
-    as.add_point(3, Vector2(1, 1))
-    as.add_point(4, Vector2(2, 0))
+    var astar = AStar2D.new()
+    astar.add_point(1, Vector2(0, 0))
+    astar.add_point(2, Vector2(0, 1), 1) # Default weight is 1
+    astar.add_point(3, Vector2(1, 1))
+    astar.add_point(4, Vector2(2, 0))
     
-    as.connect_points(1, 2, false)
-    as.connect_points(2, 3, false)
-    as.connect_points(4, 3, false)
-    as.connect_points(1, 4, false)
-    as.connect_points(5, 4, false)
+    astar.connect_points(1, 2, false)
+    astar.connect_points(2, 3, false)
+    astar.connect_points(4, 3, false)
+    astar.connect_points(1, 4, false)
     
-    var res = as.get_id_path(1, 3) # Returns [1, 2, 3]
+    var res = astar.get_id_path(1, 3) # Returns [1, 2, 3]
 
 If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]`` instead, because now even though the distance is longer, it's "easier" to get through point 4 than through point 2.
 
@@ -173,16 +172,16 @@ Returns an array with the IDs of the points that form the connection with the gi
 
 ::
 
-    var as = AStar2D.new()
-    as.add_point(1, Vector2(0, 0))
-    as.add_point(2, Vector2(0, 1))
-    as.add_point(3, Vector2(1, 1))
-    as.add_point(4, Vector2(2, 0))
+    var astar = AStar2D.new()
+    astar.add_point(1, Vector2(0, 0))
+    astar.add_point(2, Vector2(0, 1))
+    astar.add_point(3, Vector2(1, 1))
+    astar.add_point(4, Vector2(2, 0))
     
-    as.connect_points(1, 2, true)
-    as.connect_points(1, 3, true)
+    astar.connect_points(1, 2, true)
+    astar.connect_points(1, 3, true)
     
-    var neighbors = as.get_point_connections(1) # Returns [2, 3]
+    var neighbors = astar.get_point_connections(1) # Returns [2, 3]
 
 .. _class_AStar2D_method_get_point_path:
 

@@ -19,3 +19,29 @@ Description
 
 A Variant takes up only 20 bytes and can store almost any engine datatype inside of it. Variants are rarely used to hold information for long periods of time. Instead, they are used mainly for communication, editing, serialization and moving data around.
 
+A Variant:
+
+- Can store almost any datatype.
+
+- Can perform operations between many variants. GDScript uses Variant as its atomic/native datatype.
+
+- Can be hashed, so it can be compared quickly to other variants.
+
+- Can be used to convert safely between datatypes.
+
+- Can be used to abstract calling methods and their arguments. Godot exports all its functions through variants.
+
+- Can be used to defer calls or move data between threads.
+
+- Can be serialized as binary and stored to disk, or transferred via network.
+
+- Can be serialized to text and use it for printing values and editable settings.
+
+- Can work as an exported property, so the editor can edit it universally.
+
+- Can be used for dictionaries, arrays, parsers, etc.
+
+**Containers (:ref:`Array<class_Array>` and :ref:`Dictionary<class_Dictionary>`):** Both are implemented using variants. A :ref:`Dictionary<class_Dictionary>` can match any datatype used as key to any other datatype. An :ref:`Array<class_Array>` just holds an array of Variants. Of course, a Variant can also hold a :ref:`Dictionary<class_Dictionary>` and an :ref:`Array<class_Array>` inside, making it even more flexible.
+
+Modifications to a container will modify all references to it. A :ref:`Mutex<class_Mutex>` should be created to lock it if multi-threaded access is desired.
+

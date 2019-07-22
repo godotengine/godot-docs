@@ -88,6 +88,10 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **accumulate** **(** :ref:`InputEvent<class_InputEvent>` with_event **)**
 
+Returns ``true`` if the given input event and this input event can be added together (only for events of type :ref:`InputEventMouseMotion<class_InputEventMouseMotion>`).
+
+The given input event's position, global position and speed will be copied. The resulting ``relative`` is a sum of both events. Both events' modifiers have to be identical.
+
 .. _class_InputEvent_method_as_text:
 
 - :ref:`String<class_String>` **as_text** **(** **)** const
@@ -97,6 +101,8 @@ Returns a :ref:`String<class_String>` representation of the event.
 .. _class_InputEvent_method_get_action_strength:
 
 - :ref:`float<class_float>` **get_action_strength** **(** :ref:`String<class_String>` action **)** const
+
+Returns a value between 0.0 and 1.0 depending on the given actions' state. Useful for getting the value of events of type :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
 
 .. _class_InputEvent_method_is_action:
 
@@ -138,7 +144,11 @@ Returns ``true`` if this input event is pressed. Not relevant for events of type
 
 - :ref:`bool<class_bool>` **shortcut_match** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
+Returns ``true`` if the given input event is checking for the same key (:ref:`InputEventKey<class_InputEventKey>`), button (:ref:`InputEventJoypadButton<class_InputEventJoypadButton>`) or action (:ref:`InputEventAction<class_InputEventAction>`).
+
 .. _class_InputEvent_method_xformed_by:
 
 - :ref:`InputEvent<class_InputEvent>` **xformed_by** **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`Vector2<class_Vector2>` local_ofs=Vector2( 0, 0 ) **)** const
+
+Returns a copy of the given input event which has been offset by ``local_ofs`` and transformed by ``xform``. Relevant for events of type :ref:`InputEventMouseButton<class_InputEventMouseButton>`, :ref:`InputEventMouseMotion<class_InputEventMouseMotion>`, :ref:`InputEventScreenTouch<class_InputEventScreenTouch>`, :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`, :ref:`InputEventMagnifyGesture<class_InputEventMagnifyGesture>` and :ref:`InputEventPanGesture<class_InputEventPanGesture>`.
 

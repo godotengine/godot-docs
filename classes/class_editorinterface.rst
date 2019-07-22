@@ -185,6 +185,8 @@ Saves the scene as a file at ``path``.
 
 - void **select_file** **(** :ref:`String<class_String>` file **)**
 
+Selects the file, with the path provided by ``file``, in the FileSystem dock.
+
 .. _class_EditorInterface_method_set_plugin_enabled:
 
 - void **set_plugin_enabled** **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**

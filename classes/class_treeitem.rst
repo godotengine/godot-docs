@@ -448,6 +448,8 @@ Sets the given column's button :ref:`Texture<class_Texture>` at index ``button_i
 
 - void **set_button_disabled** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`bool<class_bool>` disabled **)**
 
+If ``true``, disables the button at index ``button_idx`` in column ``column``.
+
 .. _class_TreeItem_method_set_cell_mode:
 
 - void **set_cell_mode** **(** :ref:`int<class_int>` column, :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` mode **)**

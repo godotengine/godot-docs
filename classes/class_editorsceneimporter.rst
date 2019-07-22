@@ -16,7 +16,7 @@ EditorSceneImporter
 Brief Description
 -----------------
 
-
+Imports scenes from third-parties' 3D files.
 
 Methods
 -------

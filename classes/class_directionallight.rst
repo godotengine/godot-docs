@@ -26,7 +26,7 @@ Properties
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
 | :ref:`ShadowDepthRange<enum_DirectionalLight_ShadowDepthRange>` | :ref:`directional_shadow_depth_range<class_DirectionalLight_property_directional_shadow_depth_range>`           | 0     |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                                       | :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`         | 200.0 |
+| :ref:`float<class_float>`                                       | :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`         | 100.0 |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
 | :ref:`ShadowMode<enum_DirectionalLight_ShadowMode>`             | :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>`                         | 2     |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
@@ -130,7 +130,7 @@ Optimizes shadow rendering for detail versus movement. See :ref:`ShadowDepthRang
 - :ref:`float<class_float>` **directional_shadow_max_distance**
 
 +-----------+------------------+
-| *Default* | 200.0            |
+| *Default* | 100.0            |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+

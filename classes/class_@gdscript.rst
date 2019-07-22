@@ -66,9 +66,9 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`floor<class_@GDScript_method_floor>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                     |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                 | :ref:`fmod<class_@GDScript_method_fmod>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                                                                                          |
+| :ref:`float<class_float>`                                 | :ref:`fmod<class_@GDScript_method_fmod>` **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**                                                                                                                          |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                 | :ref:`fposmod<class_@GDScript_method_fposmod>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                                                                                    |
+| :ref:`float<class_float>`                                 | :ref:`fposmod<class_@GDScript_method_fposmod>` **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**                                                                                                                    |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`FuncRef<class_FuncRef>`                             | :ref:`funcref<class_@GDScript_method_funcref>` **(** :ref:`Object<class_Object>` instance, :ref:`String<class_String>` funcname **)**                                                                                                  |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,6 +96,8 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                             | :ref:`lerp<class_@GDScript_method_lerp>` **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` weight **)**                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                 | :ref:`lerp_angle<class_@GDScript_method_lerp_angle>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**                                                                        |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`linear2db<class_@GDScript_method_linear2db>` **(** :ref:`float<class_float>` nrg **)**                                                                                                                                           |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Resource<class_Resource>`                           | :ref:`load<class_@GDScript_method_load>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                  |
@@ -114,7 +116,9 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                             | :ref:`polar2cartesian<class_@GDScript_method_polar2cartesian>` **(** :ref:`float<class_float>` r, :ref:`float<class_float>` th **)**                                                                                                   |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                 | :ref:`pow<class_@GDScript_method_pow>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                                                                                            |
+| :ref:`int<class_int>`                                     | :ref:`posmod<class_@GDScript_method_posmod>` **(** :ref:`int<class_int>` a, :ref:`int<class_int>` b **)**                                                                                                                              |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                 | :ref:`pow<class_@GDScript_method_pow>` **(** :ref:`float<class_float>` base, :ref:`float<class_float>` exp **)**                                                                                                                       |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Resource<class_Resource>`                           | :ref:`preload<class_@GDScript_method_preload>` **(** :ref:`String<class_String>` path **)**                                                                                                                                            |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -492,42 +496,45 @@ Rounds ``s`` to the closest smaller integer and returns it.
 
 .. _class_@GDScript_method_fmod:
 
-- :ref:`float<class_float>` **fmod** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
+- :ref:`float<class_float>` **fmod** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**
 
-Returns the floating-point remainder of ``x/y``.
+Returns the floating-point remainder of ``a/b``, keeping the sign of ``a``.
 
 ::
 
     # Remainder is 1.5
     var remainder = fmod(7, 5.5)
 
+For the integer remainder operation, use the % operator.
+
 .. _class_@GDScript_method_fposmod:
 
-- :ref:`float<class_float>` **fposmod** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
+- :ref:`float<class_float>` **fposmod** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**
 
-Returns the floating-point remainder of ``x/y`` that wraps equally in positive and negative.
+Returns the floating-point modulus of ``a/b`` that wraps equally in positive and negative.
 
 ::
 
-    var i = -10
-    while i < 0:
-        prints(i, fposmod(i, 10))
+    var i = -6
+    while i < 5:
+        prints(i, fposmod(i, 3))
         i += 1
 
 Produces:
 
 ::
 
-    -10 10
-    -9 1
-    -8 2
-    -7 3
-    -6 4
-    -5 5
-    -4 6
-    -3 7
-    -2 8
-    -1 9
+    -6 0
+    -5 1
+    -4 2
+    -3 0
+    -2 1
+    -1 2
+    0 0
+    1 1
+    2 2
+    3 0
+    4 1
 
 .. _class_@GDScript_method_funcref:
 
@@ -679,6 +686,24 @@ If both are of the same vector type (:ref:`Vector2<class_Vector2>`, :ref:`Vector
     lerp(0, 4, 0.75) # Returns 3.0
     lerp(Vector2(1, 5), Vector2(3, 2), 0.5) # Returns Vector2(2, 3.5)
 
+.. _class_@GDScript_method_lerp_angle:
+
+- :ref:`float<class_float>` **lerp_angle** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
+
+Linearly interpolates between two angles (in radians) by a normalized value.
+
+Similar to :ref:`lerp<class_@GDScript_method_lerp>` but interpolate correctly when the angles wrap around :ref:`TAU<class_@GDScript_constant_TAU>`.
+
+::
+
+    extends Sprite
+    var elapsed = 0.0
+    func _process(delta):
+        var min_angle = deg2rad(0.0)
+        var max_angle = deg2rad(90.0)
+        rotation = lerp_angle(min_angle, max_angle, elapsed)
+        elapsed += delta
+
 .. _class_@GDScript_method_linear2db:
 
 - :ref:`float<class_float>` **linear2db** **(** :ref:`float<class_float>` nrg **)**
@@ -780,9 +805,38 @@ Note that JSON objects do not preserve key order like Godot dictionaries, thus y
 
 Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (X and Y axis).
 
+.. _class_@GDScript_method_posmod:
+
+- :ref:`int<class_int>` **posmod** **(** :ref:`int<class_int>` a, :ref:`int<class_int>` b **)**
+
+Returns the integer modulus of ``a/b`` that wraps equally in positive and negative.
+
+::
+
+    var i = -6
+    while i < 5:
+        prints(i, posmod(i, 3))
+        i += 1
+
+Produces:
+
+::
+
+    -6 0
+    -5 1
+    -4 2
+    -3 0
+    -2 1
+    -1 2
+    0 0
+    1 1
+    2 2
+    3 0
+    4 1
+
 .. _class_@GDScript_method_pow:
 
-- :ref:`float<class_float>` **pow** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
+- :ref:`float<class_float>` **pow** **(** :ref:`float<class_float>` base, :ref:`float<class_float>` exp **)**
 
 Returns the result of ``x`` raised to the power of ``y``.
 

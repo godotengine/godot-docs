@@ -158,6 +158,10 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_SMOOTHSTEP:
 
+.. _class_VisualScriptBuiltinFunc_constant_MATH_POSMOD:
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_LERP_ANGLE:
+
 .. _class_VisualScriptBuiltinFunc_constant_FUNC_MAX:
 
 enum **BuiltinFunc**:
@@ -299,7 +303,11 @@ enum **BuiltinFunc**:
     var t = clamp((weight - from) / (to - from), 0.0, 1.0)
     return t * t * (3.0 - 2.0 * t)
 
-- **FUNC_MAX** = **65** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
+- **MATH_POSMOD** = **65**
+
+- **MATH_LERP_ANGLE** = **66**
+
+- **FUNC_MAX** = **67** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
 
 Description
 -----------

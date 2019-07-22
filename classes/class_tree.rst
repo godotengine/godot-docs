@@ -539,13 +539,13 @@ Returns the current selection's column.
 
 - void **set_column_expand** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand **)**
 
-If ``true``, the column will have the "Expand" flag of :ref:`Control<class_Control>`.
+If ``true``, the column will have the "Expand" flag of :ref:`Control<class_Control>`. Columns that have the "Expand" flag will use their "min_width" in a similar fashion to :ref:`Control.size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>`.
 
 .. _class_Tree_method_set_column_min_width:
 
 - void **set_column_min_width** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` min_width **)**
 
-Sets the minimum width of a column.
+Sets the minimum width of a column. Columns that have the "Expand" flag will use their "min_width" in a similar fashion to :ref:`Control.size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>`.
 
 .. _class_Tree_method_set_column_title:
 
