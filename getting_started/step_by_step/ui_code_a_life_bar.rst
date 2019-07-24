@@ -612,7 +612,7 @@ textures.
 and alpha. If we darken any of the first three channels it darkens the
 interface. If we lower the alpha channel, our interface fades out.
 
-We're going to tween between two color values: from a white with an
+We're going to tween between two color values: from a black with an
 alpha of ``1``, that is to say at full opacity, to a pure white with an
 alpha value of ``0``, completely transparent. Let's add two variables at
 the top of the ``_on_Player_died`` method and name them ``start_color``
