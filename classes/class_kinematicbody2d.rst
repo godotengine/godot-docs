@@ -150,6 +150,8 @@ Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_
 
 Moves the body along the vector ``rel_vec``. The body will stop if it collides. Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about the collision.
 
+If ``test_only`` is ``true``, the body does not move but the would-be collision information is given.
+
 .. _class_KinematicBody2D_method_move_and_slide:
 
 - :ref:`Vector2<class_Vector2>` **move_and_slide** **(** :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`Vector2<class_Vector2>` floor_normal=Vector2( 0, 0 ), :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` floor_max_angle=0.785398, :ref:`bool<class_bool>` infinite_inertia=true **)**
