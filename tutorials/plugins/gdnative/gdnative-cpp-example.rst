@@ -689,7 +689,7 @@ need to make additional choices based on the state of your object.
 
     Modern C++ compilers are able to infer the class and variable type and allow
     you to omit the ``<GDExample, float>`` part of our ``register_property``
-    method. we've had mixed experiences with this however.
+    method. We've had mixed experiences with this however.
 
 Signals
 -------
