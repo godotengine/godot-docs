@@ -890,7 +890,7 @@ Create the following as children of the ``HUD`` node:
 -  :ref:`Button <class_Button>` named ``StartButton``.
 -  :ref:`Timer <class_Timer>` named ``MessageTimer``.
 
-Click on the ``ScoreLabel`` and type a number into the _Text_ field in the
+Click on the ``ScoreLabel`` and type a number into the *Text* field in the
 Inspector. The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following for each of
@@ -1213,10 +1213,10 @@ Since the game is played with keyboard controls, it would be convenient if we
 could also start the game by pressing a key on the keyboard. One way to do this
 is using the "Shortcut" property of the ``Button`` node.
 
-In the ``HUD`` scene, select the ``StartButton`` and find its _Shortcut_ property
+In the ``HUD`` scene, select the ``StartButton`` and find its *Shortcut* property
 in the Inspector. Select "New Shortcut" and click on the "Shortcut" item. A
-second _Shortcut_ property will appear. Select "New InputEventAction" and click
-the new "InputEvent". Finally, in the _Action_ property, type the name "ui_select".
+second *Shortcut* property will appear. Select "New InputEventAction" and click
+the new "InputEvent". Finally, in the *Action* property, type the name ``ui_select``.
 This is the default input event associated with the spacebar.
 
 .. image:: img/start_button_shortcut.png

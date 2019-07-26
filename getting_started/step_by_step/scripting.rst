@@ -211,7 +211,7 @@ a node, the NodePath at the bottom will automatically update to point to a
 relative path from the emitting node to the selected node.
 
 By default, the method name will contain the emitting node's name ("Button" in
-this case), resulting in "_on_[EmitterNode]_[signal_name]". If you do have the
+this case), resulting in ``_on_[EmitterNode]_[signal_name]``. If you do have the
 "Make Function" check button checked, then the editor will generate the function
 for you before setting up the connection.
 
