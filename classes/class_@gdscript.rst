@@ -479,6 +479,8 @@ The natural exponential function. It raises the mathematical constant **e** to t
 
 **e** has an approximate value of 2.71828.
 
+For exponents to other bases use the method pow.
+
 ::
 
     a = exp(2) # Approximately 7.39
