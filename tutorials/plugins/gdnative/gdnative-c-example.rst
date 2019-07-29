@@ -463,7 +463,7 @@ For our example, we only built libraries for Linux, macOS and/or Windows, so you
 can link them in the relevant fields by clicking the folder button. If you built
 all three libraries, you should have something like this:
 
-.. image:: img/gdnativelibrary_complete.png
+.. image:: img/gdnativelibrary_editor_complete.png
 
 Saving the resource
 ~~~~~~~~~~~~~~~~~~~
