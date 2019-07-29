@@ -293,7 +293,7 @@ Scene inheritance
 -----------------
 
 In many cases, it may be desired to make modifications to the imported scene. By default, this is not possible because
-if the source asset changes (source .dae, .glTF, .obj file re-exported from 3D modelling app), Godot will re-import the whole scene.
+if the source asset changes (source ``.dae``, ``.gltf``, ``.obj`` file re-exported from 3D modelling app), Godot will re-import the whole scene.
 
 It is possible, however, to make local modifications by using *Scene Inheritance*. Try to open the imported scene and the
 following dialog will appear:
