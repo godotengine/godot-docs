@@ -30,6 +30,8 @@ Properties
 +-------------------------------+---------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`         | :ref:`frame<class_Sprite_property_frame>`                           | 0                   |
 +-------------------------------+---------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`frame_coords<class_Sprite_property_frame_coords>`             | Vector2( 0, 0 )     |
++-------------------------------+---------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`         | :ref:`hframes<class_Sprite_property_hframes>`                       | 1                   |
 +-------------------------------+---------------------------------------------------------------------+---------------------+
 | :ref:`Texture<class_Texture>` | :ref:`normal_map<class_Sprite_property_normal_map>`                 |                     |
@@ -134,6 +136,20 @@ If ``true``, texture is flipped vertically.
 +-----------+------------------+
 
 Current frame to display from sprite sheet. :ref:`vframes<class_Sprite_property_vframes>` or :ref:`hframes<class_Sprite_property_hframes>` must be greater than 1.
+
+.. _class_Sprite_property_frame_coords:
+
+- :ref:`Vector2<class_Vector2>` **frame_coords**
+
++-----------+-------------------------+
+| *Default* | Vector2( 0, 0 )         |
++-----------+-------------------------+
+| *Setter*  | set_frame_coords(value) |
++-----------+-------------------------+
+| *Getter*  | get_frame_coords()      |
++-----------+-------------------------+
+
+Coordinates of the frame to display from sprite sheet. This is as an alias for the :ref:`frame<class_Sprite_property_frame>` property. :ref:`vframes<class_Sprite_property_vframes>` or :ref:`hframes<class_Sprite_property_hframes>` must be greater than 1.
 
 .. _class_Sprite_property_hframes:
 

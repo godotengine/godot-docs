@@ -432,6 +432,8 @@ Sets the default cursor shape to be used in the viewport instead of :ref:`CURSOR
 
 **Note:** If you want to change the default cursor shape for :ref:`Control<class_Control>`'s nodes, use :ref:`Control.mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>` instead.
 
+**Note:** This method generates an :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` to update cursor immediately.
+
 .. _class_Input_method_set_mouse_mode:
 
 - void **set_mouse_mode** **(** :ref:`MouseMode<enum_Input_MouseMode>` mode **)**
