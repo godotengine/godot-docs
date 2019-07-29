@@ -67,7 +67,7 @@ One can access all these custom notifications from the universal
 
   A classic example is the
   :ref:`_init <class_Object_method__init>` method in Object. While it has no
-  NOTIFICATION_* equivalent, the engine still calls the method. Most languages
+  ``NOTIFICATION_*`` equivalent, the engine still calls the method. Most languages
   (except C#) rely on it as a constructor.
 
 So, in which situation should one use each of these notifications or

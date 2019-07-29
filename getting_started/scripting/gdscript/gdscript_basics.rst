@@ -1351,7 +1351,7 @@ initializers, but they must be constant expressions.
 
     export(Array, int) var ints = [1,2,3]
     export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
-    export(Array, Array, float) var two_dimensional = [[1, 2], [3, 4]]
+    export(Array, Array, float) var two_dimensional = [[1.0, 2.0], [3.0, 4.0]]
 
     # You can omit the default value, but then it would be null if not assigned.
 
@@ -1481,10 +1481,10 @@ to. To create custom signals for a class, use the ``signal`` keyword.
 .. note:: 
 
    Signals are a `Callback
-   <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`
+   <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
    mechanism. They also fill the role of Observers, a common programming
-   pattern. For more information, read the `Observer
-   tutorial<http://gameprogrammingpatterns.com/observer.html>`_ in the
+   pattern. For more information, read the `Observer tutorial
+   <https://gameprogrammingpatterns.com/observer.html>`_ in the
    Game Programming Patterns ebook.
 
 You can connect these signals to methods the same way you connect built-in
@@ -1529,7 +1529,7 @@ the :ref:`Object.connect() <class_Object_method_connect>` method:
 
         # We emit the health_changed signal every time the
         # character takes damage
-        emit_signal(health_changed", old_health, health)
+        emit_signal("health_changed", old_health, health)
     ...
 
 ::
@@ -1620,7 +1620,7 @@ Our ``BattleLog`` node receives each element in the binds array as an extra argu
    func _on_Character_health_changed(old_value, new_value, character_name):
       if not new_value <= old_value:
          return
-      var damage = new_value - old_value
+      var damage = old_value - new_value
       label.text += character_name + " took " + str(damage) + " damage."
 
 

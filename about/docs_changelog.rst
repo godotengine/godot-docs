@@ -42,10 +42,11 @@ Shading
 ^^^^^^^
 
 Your First Shader Series:
-  - :ref:`doc_what_are_shaders`
-  - :ref:`doc_your_first_canvasitem_shader`
-  - :ref:`doc_your_first_spatial_shader`
-  - :ref:`doc_your_second_spatial_shader`
+
+- :ref:`doc_what_are_shaders`
+- :ref:`doc_your_first_canvasitem_shader`
+- :ref:`doc_your_first_spatial_shader`
+- :ref:`doc_your_second_spatial_shader`
 
 Plugins
 ^^^^^^^
@@ -91,16 +92,17 @@ Project workflow
 ^^^^^^^^^^^^^^^^
 
 Best Practices:
-  - :ref:`doc_introduction_best_practices`
-  - :ref:`doc_what_are_godot_classes`
-  - :ref:`doc_scene_organization`
-  - :ref:`doc_scenes_versus_scripts`
-  - :ref:`doc_autoloads_versus_internal_nodes`
-  - :ref:`doc_node_alternatives`
-  - :ref:`doc_godot_interfaces`
-  - :ref:`doc_godot_notifications`
-  - :ref:`doc_data_preferences`
-  - :ref:`doc_logic_preferences`
+
+- :ref:`doc_introduction_best_practices`
+- :ref:`doc_what_are_godot_classes`
+- :ref:`doc_scene_organization`
+- :ref:`doc_scenes_versus_scripts`
+- :ref:`doc_autoloads_versus_internal_nodes`
+- :ref:`doc_node_alternatives`
+- :ref:`doc_godot_interfaces`
+- :ref:`doc_godot_notifications`
+- :ref:`doc_data_preferences`
+- :ref:`doc_logic_preferences`
 
 2D
 ^^
@@ -146,11 +148,12 @@ Shading
 - :ref:`doc_advanced_postprocessing`
 
 Shading Reference:
-  - :ref:`doc_shaders`
-  - :ref:`doc_shading_language`
-  - :ref:`doc_spatial_shader`
-  - :ref:`doc_canvas_item_shader`
-  - :ref:`doc_particle_shader`
+
+- :ref:`doc_shaders`
+- :ref:`doc_shading_language`
+- :ref:`doc_spatial_shader`
+- :ref:`doc_canvas_item_shader`
+- :ref:`doc_particle_shader`
 
 VR
 ^^

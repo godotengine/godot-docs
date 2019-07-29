@@ -35,7 +35,7 @@ Video tutorials
 Text tutorials
 --------------
 
-- `KidsCanCode <http://kidscancode.org/blog/tags/godot/>`__
+- `Godot Recipes by KidsCanCode <http://godotrecipes.com/>`__
 - `Steincodes <https://steincodes.tumblr.com>`__
 
 Devlogs

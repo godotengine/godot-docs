@@ -174,8 +174,8 @@ class reference pages for
 :ref:`@GDScript <class_@gdscript>` and :ref:`@GlobalScope <class_@globalscope>`.
 
 .. note::
-    Keep in mind that the class you wish to attach to your node should be
-    named as the ``.cs`` file. Otherwise, you will get the following error
+    Keep in mind that the class you wish to attach to your node should have the same
+    name as the ``.cs`` file. Otherwise, you will get the following error
     and won't be able to run the scene:
     *"Cannot find class XXX for script res://XXX.cs"*
 

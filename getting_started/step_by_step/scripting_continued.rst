@@ -33,7 +33,7 @@ This method will be called every time a frame is drawn:
         // Do something...
     }
 
-It's important to bear in mind that the frequecy with which ``_process()``
+It's important to bear in mind that the frequency with which ``_process()``
 will be called depends on how many frames per second (FPS) your application
 is running at. This rate can vary over time and devices.
 
@@ -204,7 +204,7 @@ follows, can be applied to nodes:
  .. code-tab:: gdscript GDScript
 
     func _enter_tree():
-        # When the node enters the _Scene Tree_, it becomes active
+        # When the node enters the Scene Tree, it becomes active
         # and  this function is called. Children nodes have not entered
         # the active scene yet. In general, it's better to use _ready()
         # for most cases.
@@ -212,13 +212,13 @@ follows, can be applied to nodes:
 
     func _ready():
         # This function is called after _enter_tree, but it ensures
-        # that all children nodes have also entered the _Scene Tree_,
+        # that all children nodes have also entered the Scene Tree,
         # and became active.
         pass
 
     func _exit_tree():
-        # When the node exits the _Scene Tree_, this function is called.
-        # Children nodes have all exited the _Scene Tree_ at this point
+        # When the node exits the Scene Tree, this function is called.
+        # Children nodes have all exited the Scene Tree at this point
         # and all became inactive.
         pass
 
@@ -234,7 +234,7 @@ follows, can be applied to nodes:
 
     public override void _EnterTree()
     {
-        // When the node enters the _Scene Tree_, it becomes active
+        // When the node enters the Scene Tree, it becomes active
         // and  this function is called. Children nodes have not entered
         // the active scene yet. In general, it's better to use _ready()
         // for most cases.
@@ -244,15 +244,15 @@ follows, can be applied to nodes:
     public override void _Ready()
     {
         // This function is called after _enter_tree, but it ensures
-        // that all children nodes have also entered the _Scene Tree_,
+        // that all children nodes have also entered the Scene Tree,
         // and became active.
         base._Ready();
     }
 
     public override void _ExitTree()
     {
-        // When the node exits the _Scene Tree_, this function is called.
-        // Children nodes have all exited the _Scene Tree_ at this point
+        // When the node exits the Scene Tree, this function is called.
+        // Children nodes have all exited the Scene Tree at this point
         // and all became inactive.
         base._ExitTree();
     }

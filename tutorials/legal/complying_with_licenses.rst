@@ -19,7 +19,7 @@ In the case of the MIT license, the only requirement is to include the license t
 This text reads as follows:
 
 
-	Godot Engine
+	This game uses Godot Engine, available under the following license:
 
 	Copyright (c) 2007-2019 Juan Linietsky, Ariel Manzur.
 	Copyright (c) 2014-2019 Godot Engine contributors.
@@ -30,6 +30,8 @@ This text reads as follows:
 
 	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
+.. note:: Your games do not need to be under the same license. You are free to release your Godot projects under any license and to create commercial games with the engine.
 
 Inclusion
 ---------
@@ -69,7 +71,7 @@ Godot itself contains software written by `third parties <https://github.com/god
 FreeType
 ^^^^^^^^
 
-Godot uses `FreeType <https://www.freetype.org/>`_ to render fonts. It's license requires attribution, so the following text must be included together with the Godot license:
+Godot uses `FreeType <https://www.freetype.org/>`_ to render fonts. Its license requires attribution, so the following text must be included together with the Godot license:
 
 
 	Portions of this software are copyright © <year> The FreeType Project (www.freetype.org).  All rights reserved.

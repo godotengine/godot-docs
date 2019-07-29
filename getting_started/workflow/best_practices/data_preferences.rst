@@ -173,7 +173,7 @@ The important detail here is the complexity of the Object's task. Every time
 it performs one of these multi-source queries, it runs through *several*
 iteration loops and HashMap lookups. What's more, the queries are linear-time
 operations dependent on the Object's inheritance hierarchy size. If the class
-the Object queries (it's current class) doesn't find anything, the request
+the Object queries (its current class) doesn't find anything, the request
 defers to the next base class, all the way up until the original Object class.
 While these are each fast operations in isolation, the fact that it must make
 so many checks is what makes them slower than both of the alternatives for

@@ -54,17 +54,7 @@ in the top left corner.
           ``#godotengine-doc`` channel on `irc.freenode.net
           <http://webchat.freenode.net/?channels=#godotengine-doc>`_!
 
-.. only:: not i18n
-
-  .. image:: https://hosted.weblate.org/widgets/godot-engine/-/godot-docs/287x66-white.png
-      :alt: Translation status
-      :align: center
-      :target: https://hosted.weblate.org/engage/godot-engine/?utm_source=widget
-
-.. only:: i18n
-
-  .. centered:: |weblate_widget|
-
+.. centered:: |weblate_widget|
 
 The main documentation for the site is organized into the following sections:
 

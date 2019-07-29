@@ -3,7 +3,7 @@
 Design interfaces with the Control nodes
 ========================================
 
-Computer displays, mobile phones, and TV screen come in all shapes and
+Computer displays, mobile phones, and TV screens come in all shapes and
 sizes. To ship a game, you'll need to support different screen ratios
 and resolutions. It can be hard to build responsive interfaces that
 adapt to all platforms. Thankfully, Godot comes with robust tools to
@@ -132,7 +132,7 @@ To animate the bar, you'll want to look at the Range section. Set the
 ``Min`` and ``Max`` properties to define the range of the gauge. For instance,
 to represent a character's life, you'll want to set ``Min`` to ``0,`` and ``Max`` to
 the character's maximum life. Change the ``Value`` property to update the
-bar. If you leave the ``Min`` and ``Max`` values to the default of ``1`` and ``100,``
+bar. If you leave the ``Min`` and ``Max`` values to the default of ``0`` and ``100,``
 and set the ``Value`` property to ``40``, 40% of the ``Progress`` texture will show
 up, and 60% of it will stay hidden.
 

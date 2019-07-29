@@ -102,8 +102,7 @@ for our player. Notice that there is a warning symbol next to the node.
 An ``AnimatedSprite`` requires a :ref:`SpriteFrames <class_SpriteFrames>` resource, which is a
 list of the animations it can display. To create one, find the
 ``Frames`` property in the Inspector and click "[empty]" ->
-"New SpriteFrames". Next, in the same location, click
-``<SpriteFrames>``, then click "Open Editor" to open the "SpriteFrames" panel:
+"New SpriteFrames". This should automatically open the SpriteFrames panel.
 
 .. image:: img/spriteframes_panel.png
 
@@ -891,7 +890,7 @@ Create the following as children of the ``HUD`` node:
 -  :ref:`Button <class_Button>` named ``StartButton``.
 -  :ref:`Timer <class_Timer>` named ``MessageTimer``.
 
-Click on the ``ScoreLabel`` and type a number into the ``Text`` field in the
+Click on the ``ScoreLabel`` and type a number into the *Text* field in the
 Inspector. The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following for each of
@@ -1214,10 +1213,10 @@ Since the game is played with keyboard controls, it would be convenient if we
 could also start the game by pressing a key on the keyboard. One way to do this
 is using the "Shortcut" property of the ``Button`` node.
 
-In the ``HUD`` scene, select the ``StartButton`` and find its ``Shortcut`` property
+In the ``HUD`` scene, select the ``StartButton`` and find its *Shortcut* property
 in the Inspector. Select "New Shortcut" and click on the "Shortcut" item. A
-second ``Shortcut`` property will appear. Select "New InputEventAction" and click
-the new "InputEvent". Finally, in the ``Action`` property, type the name "ui_select".
+second *Shortcut* property will appear. Select "New InputEventAction" and click
+the new "InputEvent". Finally, in the *Action* property, type the name ``ui_select``.
 This is the default input event associated with the spacebar.
 
 .. image:: img/start_button_shortcut.png

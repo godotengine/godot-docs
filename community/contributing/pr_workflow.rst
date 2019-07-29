@@ -379,7 +379,7 @@ do:
 
 This will open a text editor with:
 
-::
+.. code-block:: text
 
     pick 1b4aad7 Add a pretty banner to the project manager
     pick e07077e Fix a typo in the banner's title
@@ -392,7 +392,7 @@ that "fixup" will discard the commit log from the squashed commit. In our
 example, we are not interested in keeping the log of the "Fix a typo" commit,
 so we use:
 
-::
+.. code-block:: text
 
     pick 1b4aad7 Add a pretty banner to the project manager
     fixup e07077e Fix a typo in the banner's title

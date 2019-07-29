@@ -32,11 +32,20 @@ version = 'latest'
 # The full version, including alpha/beta/rc tags
 release = 'latest'
 
-language = 'en'
+# Parse Sphinx tags passed from RTD via environment
+env_tags = os.getenv('SPHINX_TAGS')
+if env_tags != None:
+   for tag in env_tags.split(','):
+       print("Adding Sphinx tag: %s" % tag.strip())
+       tags.add(tag.strip())
+
+# Language / i18n
+language = os.getenv('READTHEDOCS_LANGUAGE', 'en')
 is_i18n = tags.has('i18n')
 
 exclude_patterns = ['_build']
 
+# GDScript syntax highlighting
 from gdscript import GDScriptLexer
 from sphinx.highlighting import lexers
 lexers['gdscript'] = GDScriptLexer()
@@ -107,14 +116,20 @@ linkcheck_timeout = 10
 
 locale_dirs = ['../sphinx/po/']
 gettext_compact = False
+
+# Couldn't find a way to retrieve variables nor do advanced string
+# concat from reST, so had to hardcode this in the "epilog" added to
+# all pages. This is used in index.rst to display the Weblate badge.
+# On English pages, the badge points to the language-neutral engage page.
+rst_epilog = """
+.. |weblate_widget| image:: https://hosted.weblate.org/widgets/godot-engine/{image_locale}/godot-docs/287x66-white.png
+    :alt: Translation status
+    :target: https://hosted.weblate.org/engage/godot-engine{target_locale}/?utm_source=widget
+""".format(
+    image_locale='-' if language == 'en' else language,
+    target_locale='' if language == 'en' else '/' + language
+)
+
 # Exclude class reference when marked with tag i18n.
 if is_i18n:
     exclude_patterns = ['classes']
-    # Couldn't find a way to retrieve variables nor do advanced string
-    # concat from reST, so had to hardcode this in the "epilog" added to
-    # all pages. This is used in index.rst to display the Weblate badge.
-    rst_epilog = """
-.. |weblate_widget| image:: https://hosted.weblate.org/widgets/godot-engine/{weblate_locale}/godot-docs/287x66-white.png
-    :alt: Translation status
-    :target: https://hosted.weblate.org/engage/godot-engine/{weblate_locale}/?utm_source=widget
-""".format(weblate_locale = language)

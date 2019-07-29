@@ -295,4 +295,4 @@ To create them:
 
 - You can now start Debug process again to test that everything works.
 
-- If the build phase fails, check console for hints. On Linux it's most likely that some dependencies are missing. Check :ref:`Compiling for X11 (Linux, \*BSD) <doc_compiling_for_x11>`
+- If the build phase fails, check the console for hints. On Linux it's most likely that some dependencies are missing. Check :ref:`Compiling for X11 (Linux, \*BSD) <doc_compiling_for_x11>`
