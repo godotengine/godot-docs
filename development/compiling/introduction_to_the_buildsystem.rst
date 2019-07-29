@@ -15,9 +15,8 @@ to move the build system to CMake, or Visual Studio, but this is not
 going to happen. There are many reasons why we have chosen SCons over
 other alternatives, for example:
 
--  Godot can be compiled for a dozen different platforms. All PC
-   platforms, all mobile platforms, many consoles, and many web-based
-   platforms (such as HTML5 and Chrome PNACL).
+-  Godot can be compiled for a dozen different platforms: all PC
+   platforms, all mobile platforms, many consoles, and WebAssembly.
 -  Developers often need to compile for several of the platforms **at
    the same time**, or even different targets of the same platform. They
    can't afford reconfiguring and rebuilding the project each time.
@@ -30,19 +29,24 @@ other alternatives, for example:
    customization (plugins). This requires complex logic which is easier
    to write in an actual programming language (like Python) rather than
    using a mostly macro-based language only meant for building.
--  Godot build process makes heavy use of cross compiling tools. Each
+-  Godot build process makes heavy use of cross-compiling tools. Each
    platform has a specific detection process, and all these must be
    handled as specific cases with special code written for each.
 
-So, please try to keep an open mind and get at least a little familiar with it if you are planning to
-build Godot yourself.
+So, please try to keep an open mind and get at least a little familiar with it
+if you are planning to build Godot yourself.
 
 Setup
 -----
 
-Please refer to the documentation for :ref:`doc_compiling_for_android`, :ref:`doc_compiling_for_ios`, :ref:`doc_compiling_for_osx`, :ref:`doc_compiling_for_uwp`, :ref:`doc_compiling_for_web`, :ref:`doc_compiling_for_windows` and :ref:`doc_compiling_for_x11`.
+Please refer to the documentation for :ref:`doc_compiling_for_android`,
+:ref:`doc_compiling_for_ios`, :ref:`doc_compiling_for_osx`,
+:ref:`doc_compiling_for_uwp`, :ref:`doc_compiling_for_web`,
+:ref:`doc_compiling_for_windows` and :ref:`doc_compiling_for_x11`.
 
-Note that for **Windows/Visual Studio**, you need to use ``x86_x64 Cross Tools Command Prompt for VS 2017`` or similar, depending on your install, instead of the standard Windows command prompt to enter the commands below.
+Note that for **Windows/Visual Studio**, you need to use ``x86_x64 Cross Tools
+Command Prompt for VS 2017`` or similar, depending on your install, instead of
+the standard Windows command prompt to enter the commands below.
 
 Platform selection
 ------------------
@@ -52,30 +56,25 @@ for. If not detected, the platform will simply not appear on the list of
 available platforms. The build requirements for each platform are
 described in the rest of this tutorial section.
 
-SCons is invoked by just calling ``scons``.
+SCons is invoked by just calling ``scons``. If no platform is specified,
+SCons will detect the target platform automatically based on the host platform.
+It will then start building for the target platform right away.
 
-However, this will do nothing except list the available platforms, for
-example:
+To list the available target platforms, use ``scons platform=list``::
 
-::
-
-    user@host:~/godot$ scons
+    user@host:~/godot$ scons platform=list
     scons: Reading SConscript files ...
-    No valid target platform selected.
-    The following were detected:
+    The following platforms are available:
+
         android
-        server
         javascript
+        server
         windows
         x11
 
-    Please run scons again with argument: platform=<string>
-    scons: done reading SConscript files.
-    scons: Building targets ...
-    scons: `.' is up to date.
-    scons: done building targets.
+    Please run SCons again and select a valid platform: platform=<string>
 
-To build for a platform (for example, x11), run with the ``platform=`` (or just
+To build for a platform (for example, x11), run with the ``platform=`` (or
 ``p=`` to make it short) argument:
 
 ::
@@ -83,8 +82,8 @@ To build for a platform (for example, x11), run with the ``platform=`` (or just
     user@host:~/godot$ scons platform=x11
 
 This will start the build process, which will take a while. If you want
-scons to build faster, use the ``-j <cores>`` parameter to specify how many
-cores will be used for the build. Or just leave it using one core, so you
+SCons to build faster, use the ``-j <cores>`` parameter to specify how many
+cores will be used for the build. Or leave it using one core, so you
 can use your computer for something else :)
 
 Example for using 4 cores:
@@ -96,16 +95,12 @@ Example for using 4 cores:
 Resulting binary
 ----------------
 
-The resulting binaries will be placed in the bin/ subdirectory,
-generally with this naming convention:
-
-::
+The resulting binaries will be placed in the ``bin/`` subdirectory,
+generally with this naming convention::
 
     godot.<platform>.[opt].[tools/debug].<architecture>[extension]
 
-For the previous build attempt the result would look like this:
-
-::
+For the previous build attempt, the result would look like this::
 
     user@host:~/godot$ ls bin
     bin/godot.x11.tools.64
@@ -113,18 +108,16 @@ For the previous build attempt the result would look like this:
 This means that the binary is for X11, is not optimized, has tools (the
 whole editor) compiled in, and is meant for 64 bits.
 
-A Windows binary with the same configuration will look like this.
+A Windows binary with the same configuration will look like this::
 
-::
-
-    C:\GODOT> DIR BIN/
+    C:\godot> dir bin/
     godot.windows.tools.64.exe
 
-Just copy that binary to wherever you like, as it contains the
-project manager, editor and all means to execute the game. However, it
-lacks the data to export it to the different platforms. For that the
-export templates are needed (which can be either downloaded from
-`godotengine.org <https://godotengine.org/>`__, or you can build them yourself).
+Copy that binary to any location you like, as it contains the project manager,
+editor and all means to execute the game. However, it lacks the data to export
+it to the different platforms. For that the export templates are needed (which
+can be either downloaded from `godotengine.org <https://godotengine.org/>`__, or
+you can build them yourself).
 
 Aside from that, there are a few standard options that can be set in all
 build targets, and which will be explained below.
@@ -150,19 +143,19 @@ Target controls optimization and debug flags. Each mode means:
    checks and reports error) and none to little optimization.
 -  **release_debug**: Build without C++ debugging symbols and
    optimization, but keep the runtime checks (performs checks and
-   reports errors). Official binaries use this configuration.
+   reports errors). Official editor binaries use this configuration.
 -  **release**: Build without symbols, with optimization and with little
    to no runtime checks. This target can't be used together with
-   tools=yes, as the tools require some debug functionality and run-time
+   ``tools=yes``, as the editor requires some debug functionality and run-time
    checks to run.
 
 ::
 
     scons platform=<platform> target=debug/release_debug/release
 
-This flag appends the ".debug" suffix (for debug), or ".tools" (for debug
-with tools enabled). When optimization is enabled (release) it appends
-the ".opt" suffix.
+This flag appends the ``.debug`` suffix (for debug), or ``.tools`` (for debug
+with tools enabled). When optimization is enabled (release), it appends
+the ``.opt`` suffix.
 
 Bits
 ----
@@ -171,18 +164,17 @@ Bits is meant to control the CPU or OS version intended to run the
 binaries. It is focused mostly on desktop platforms and ignored everywhere
 else.
 
--  **32**: Build binaries for 32 bits platform.
--  **64**: Build binaries for 64 bits platform.
--  **default**: Build whatever the build system feels is best. On Linux
-   this depends on the host platform (if not cross compiling),
-   on Mac it defaults to 64 bits and on Windows it defaults to 32 bits.
+-  **32**: Build binaries for 32-bit platforms.
+-  **64**: Build binaries for 64-bit platforms.
+-  **default**: Build for the architecture that matches the host platform.
 
 ::
 
     scons platform=<platform> bits=default/32/64
 
-This flag appends ".32" or ".64" suffixes to resulting binaries when
-relevant.
+This flag appends ``.32`` or ``.64`` suffixes to resulting binaries when
+relevant. If ``bits=default`` is used, the suffix will match the detected
+architecture.
 
 Other build options
 -------------------
@@ -203,7 +195,7 @@ to build them yourself (in case you want newer ones, you are using custom
 modules, or simply don't trust your own shadow).
 
 If you download the official export templates package and unzip it, you
-will notice that most are just optimized binaries or packages for each
+will notice that most files are optimized binaries or packages for each
 platform:
 
 ::
@@ -225,12 +217,19 @@ platform:
     windows_64_debug.exe
     windows_64_release.exe
 
-To create those yourself, just follow the instructions detailed for each
+To create those yourself, follow the instructions detailed for each
 platform in this same tutorial section. Each platform explains how to
 create its own template.
 
-If you are developing for multiple platforms, macOS is definitely the most convenient
-host platform for cross compilation, since you can cross-compile for
-almost every target (except for UWP). Linux and Windows come in second
-place, but Linux has the advantage of being the easier platform to set
-this up.
+The ``version.txt`` file should contain the corresponding Godot version
+identifier. This file is used to install export templates in a version-specific
+directory to avoid conflicts. For instance, if you are building export templates
+for Godot 3.1.1, ``version.txt`` should contain ``3.1.1.stable`` on the first
+line (and nothing else). This version identifier is based on the ``major``,
+``minor``, ``patch`` (if present) and ``status`` lines of the
+`version.py file in the Godot Git repository <https://github.com/godotengine/godot/blob/master/version.py>`__.
+
+If you are developing for multiple platforms, macOS is definitely the most
+convenient host platform for cross-compilation, since you can cross-compile for
+almost every target (except for UWP). Linux and Windows come in second place,
+but Linux has the advantage of being the easier platform to set this up.
