@@ -339,3 +339,8 @@ def setup(app):
                 app.add_javascript(path)
     app.connect('html-page-context', update_context)
     app.connect('build-finished', copy_assets)
+
+    return {
+        'parallel_read_safe': True,
+        'parallel_write_safe': True,
+    }
