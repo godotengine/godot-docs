@@ -14,8 +14,9 @@ transferred as close as possible.
 Godot supports the following 3D *scene file fomats*:
 
 * DAE (COLLADA), which is currently the most mature workflow.
-* GLTF 2.0. Both text and binary formats are supported. Godot has full support for it, but the format is new and gaining traction.
+* glTF 2.0. Both text and binary formats are supported. Godot has full support for it, but the format is new and gaining traction.
 * OBJ (Wavefront) formats. It is also fully supported, but pretty limited (no support for pivots, skeletons, etc).
+* ESCN, a Godot specific format that Blender can export with a plugin.
 
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
 
@@ -51,6 +52,25 @@ should not be used.
 Godot provides a `Python
 Plugin <https://github.com/godotengine/collada-exporter>`__
 that will do a much better job of exporting the scenes.
+
+Exporting glTF 2.0 files from Blender
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are three ways to export glTF files from Blender. As a glTF binary (``.glb`` file), glTF embedded (``.gltf`` file), 
+and with textures (``gltf`` + ``.bin`` + textures).
+
+glTF binary files are the smallest of the three options. They include the mesh and textures set up in Blender.
+When brought into Godot the textures are part of the object's material file.
+
+glTF embedded files function the same way as binary files. They don't provide extra functionality in Godot,
+and shouldn't be used since they have a larger file size.
+
+There are two reasons to use glTF with the textures separate. One is to have the scene description in a
+text based format and the binary data in a separate binary file. This can be useful for version control if you want to review
+changes in a text based format. The second is you need the texture files separate from the material file. If you don't need
+either of those glTF binary files are fine.
+
+.. note:: Blender does not export emissive textures with the glTF file. If your model uses one it must be brought in separately.
 
 Exporting ESCN files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,6 +118,11 @@ Root Name
 ^^^^^^^^^
 
 Allows setting a specific name to the generated root node.
+
+Root Scale
+^^^^^^^^^^
+
+The scale of the root node.
 
 Custom Script
 ^^^^^^^^^^^^^
@@ -204,6 +229,17 @@ not have much practical use unless one wants to build objects with them directly
 This option is provided to help those who prefer working directly with meshes
 instead of scenes.
 
+Light Baking
+^^^^^^^^^^^^
+
+Whether or not the mesh is used in baked lightmaps.
+
+- **Disabled:** The mesh is not used in baked lightmaps.
+- **Enable:** The mesh is used in baked lightmaps.
+- **Gen Lightmaps:** The mesh is used in baked lightmaps, and unwraps a second UV layer for lightmaps.
+
+.. note:: For more information on light baking see :ref:`doc_baked_lightmaps`.
+
 External Files
 ~~~~~~~~~~~~~~
 
@@ -257,7 +293,7 @@ Scene inheritance
 -----------------
 
 In many cases, it may be desired to make modifications to the imported scene. By default, this is not possible because
-if the source asset changes (source .dae, .gltf, .obj file re-exported from 3D modelling app), Godot will re-import the whole scene.
+if the source asset changes (source ``.dae``, ``.gltf``, ``.obj`` file re-exported from 3D modelling app), Godot will re-import the whole scene.
 
 It is possible, however, to make local modifications by using *Scene Inheritance*. Try to open the imported scene and the
 following dialog will appear:
