@@ -601,7 +601,7 @@ If the value is not a subtype, the casting operation will result in a ``null`` v
 ::
 
     var my_node2D: Node2D
-    my_node2D = $Button # Results in 'null' since a Button is not a subtype of Node2D
+    my_node2D = $Button as Node2D # Results in 'null' since a Button is not a subtype of Node2D
 
 For built-in types, they will be forcibly converted if possible, otherwise the
 engine will raise an error.
