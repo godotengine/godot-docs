@@ -12,25 +12,26 @@ fantastic, ready for integration!" then goes into the game, lighting is
 setup and the game runs.
 
 So at what point does all this HDR business come into play? The idea is that
-instead of dealing with colors that go from black to white (0 to 1), we
-use colors whiter than white (for example, 0 to 8 times white).
+instead of doing a simple 1:1 mapping of scene intensities that range from some incredibly low
+value to some incredibly large value to a display, a more complex transform happens. In any given game scene, ideas around
+what is “white” or “black” do not exist. It’s up to a virtual camera to determine
+what code values are mapped where!
 
 To be more practical, imagine that in a regular scene, the intensity
-of a light (generally 1.0) is set to 5.0. The whole scene will turn
-very bright (towards white) and look horrible.
+of a light is set to 5.0. The whole scene will turn
+very bright and look horrible if a simple or inappropriate camera rendering
+transform is used. 
 
-After this, the luminance of the scene is computed by averaging the
-luminance of every pixel of it, and this value is used to bring the
-scene back to normal ranges. This last operation is called
-tone-mapping. Finally, we are at a similar place from where we
-started:
+In a game engine or other physically plausible rendering engine, the scene values,
+also known more appropriately as *scene referred* values, require mapping of their
+intensities to the display. This last operation is sometimes oversimplified and called
+tone-mapping, which doesn’t do justice to the full degree of manipulations a camera
+rendering transform might apply to scene referred values.
 
 .. image:: img/hdr_tonemap.png
 
-Except the scene is more contrasted because there is a higher light
-range at play. What is this all useful for? The idea is that the scene
-luminance will change while you move through the world, allowing
-situations like this to happen:
+In a game, a character may move through varying intensities of
+illumination.
 
 .. image:: img/hdr_cave.png
 
@@ -38,62 +39,67 @@ Additionally, it is possible to set a threshold value to send to the
 glow buffer depending on the pixel luminance. This allows for more
 realistic light bleeding effects in the scene.
 
-Linear color space
+Linear Transfer Characteristic
 ------------------
 
-The problem with this technique is that computer monitors apply a
-gamma curve to adapt better to the way the human eye sees. Artists
-create their art on the screen too, so their art has an implicit gamma
-curve applied to it.
+Computer monitors expect a
+transfer function encoded set of values to compress the data. Artists
+create their art on the screen too, so their art will typically have
+had a series of nonlinear transfer functions applied
+to their work.
 
-The color space where images created on computer monitors exist is
-called "sRGB". All visual content that people have on their computers
-or download from the internet (such as pictures, movies, etc.)
-is in this colorspace.
+sRGB is a common encoding for imagery. Many pieces of visual content that people have on their computers
+or download from the internet such as photos or graphic design work
+is encoded in accordance with this specification.
+
+Sometimes the sRGB transfer function is oversimplified to a simple
+power function in some software and even some inexpensive lower
+quality displays. The nonlinearly encoded imagery is passed to the
+sRGB display in this case, and the display “undoes” this transfer
+characteristic to output linear light ratios.
 
 .. image:: img/hdr_gamma.png
 
-The mathematics of HDR require that we multiply the scene by different
-values to adjust the luminance and exposure to different light ranges,
-and this curve gets in the way, as we need colors in linear space for
-this.
+The mathematics of a scene referred model require that we multiply the scene by different
+values to adjust the intensities and exposure to different light ranges.
+The transfer function of the display cannot appropriately render
+the wide dynamic range of the scene using a simple power function,
+and therefore a more complex nonlinear approach is required.
 
-Linear color space & asset pipeline
------------------------------------
+Scene Linear & Asset Pipelines
+------------------------------
 
-Working in HDR is not just pressing a switch. First, imported image
-assets must be converted to linear space on import. There are two ways
+Working in scene linear sRGB is not just pressing a switch. First, imported image
+assets must be converted to linear light ratios on import. There are two ways
 to do this:
 
-sRGB -> linear conversion on image import
+sRGB Transfer Function to Display Linear on Image Import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the most compatible way of using linear-space assets, and it will
-work everywhere, including all mobile devices. The main issue with this
-is loss of quality, as sRGB exists to avoid this same problem. Using 8
-bits per channel to represent linear colors is inefficient from the
-point of view of the human eye. These textures might later be compressed
-too, which makes the problem worse.
+This is the easiest, but not ideal, method of using sRGB assets. One issue with this
+is loss of quality. Using 8
+bits per channel to represent linear light ratios is not sufficient but
+depth to quantise the values correctly. These textures might later be compressed
+too, which exacerbates the problem worse.
 
-In any case, though, this is the easy solution that works everywhere.
+In any case, though, this is the easiest solution.
 
-Hardware sRGB -> linear conversion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hardware sRGB Transfer Function to Display Linear Conversion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the most correct way to use assets in linear-space, as the
-texture sampler on the GPU will do the conversion after reading the
+The GPU will do the conversion after reading the
 texel using floating point. This works fine on PC and consoles, but most
 mobile devices do no support it, or do not support it on compressed
 texture format (iOS for example).
 
-Linear -> sRGB at the end
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Scene Linear to Display Referred Nonlinear
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After all the rendering is done, the linear-space rendered image must be
-converted back to sRGB. To do this, simply enable sRGB conversion in the
+After all the rendering is done, the scene linear render requires transforming
+to a suitable output such as an sRGB display. To do this, enable sRGB conversion in the
 current :ref:`Environment <class_Environment>` (more on that below).
 
-Keep in mind that sRGB -> Linear and Linear -> sRGB conversions
+Keep in mind that sRGB -> Display Linear and Display Linear -> sRGB conversions
 must always be **both** enabled. Failing to enable one of them will
 result in horrible visuals suitable only for avant-garde experimental
 indie games.
