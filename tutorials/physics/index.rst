@@ -7,6 +7,7 @@ Physics
 
    physics_introduction
    rigid_body
+   using_area_2d
    using_kinematic_body_2d
    ray-casting
    ragdoll_system
