@@ -6,7 +6,7 @@ GDScript basics
 Introduction
 ------------
 
-*GDScript* is a high level, dynamically typed programming language used to
+*GDScript* is a high-level, dynamically typed programming language used to
 create content. It uses a syntax similar to
 `Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_
 (blocks are indent-based and many keywords are similar). Its goal is
@@ -16,7 +16,7 @@ flexibility for content creation and integration.
 History
 ~~~~~~~
 
-In the early days, the engine used the `Lua <http://www.lua.org>`__
+In the early days, the engine used the `Lua <https://www.lua.org>`__
 scripting language. Lua is fast, but creating bindings to an object
 oriented system (by using fallbacks) was complex and slow and took an
 enormous amount of code. After some experiments with
@@ -63,12 +63,12 @@ here's a simple example of how GDScript looks.
 
     class_name MyClass, "res://path/to/optional/icon.svg"
 
-    # Member Variables
+    # Member variables
 
     var a = 5
     var s = "Hello"
     var arr = [1, 2, 3]
-    var dict = {"key": "value", 2:3}
+    var dict = {"key": "value", 2: 3}
     var typed_var: int
     var inferred_type := "String"
 
@@ -82,7 +82,7 @@ here's a simple example of how GDScript looks.
     enum {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
     enum Named {THING_1, THING_2, ANOTHER_THING = -1}
 
-    # Built-in Vector Types
+    # Built-in vector types
 
     var v2 = Vector2(1, 2)
     var v3 = Vector3(1, 2, 3)
@@ -114,7 +114,7 @@ here's a simple example of how GDScript looks.
     func something(p1, p2):
         .something(p1, p2)
 
-    # Inner Class
+    # Inner class
 
     class Something:
         var a = 10
@@ -246,15 +246,15 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------------------------------+-----------------------------------------+
 | **Operator**                                                  | **Description**                         |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``x[index]``                                                  | Subscription, Highest Priority          |
+| ``x[index]``                                                  | Subscription (highest priority)         |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``x.attribute``                                               | Attribute Reference                     |
+| ``x.attribute``                                               | Attribute reference                     |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``is``                                                        | Instance Type Checker                   |
+| ``is``                                                        | Instance type checker                   |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``~``                                                         | Bitwise NOT                             |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``-x``                                                        | Negative / Unary Negation               |
+| ``-x``                                                        | Negative / Unary negation               |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``*`` ``/`` ``%``                                             | Multiplication / Division / Remainder   |
 |                                                               |                                         |
@@ -264,11 +264,11 @@ The following is the list of supported operators and their precedence.
 |                                                               | number, and the % operator is only      |
 |                                                               | available for ints ("fmod" for floats)  |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``+``                                                         | Addition / Concatenation of Arrays      |
+| ``+``                                                         | Addition / Concatenation of arrays      |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``-``                                                         | Subtraction                             |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``<<`` ``>>``                                                 | Bit Shifting                            |
+| ``<<`` ``>>``                                                 | Bit shifting                            |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``&``                                                         | Bitwise AND                             |
 +---------------------------------------------------------------+-----------------------------------------+
@@ -278,7 +278,7 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------------------------------+-----------------------------------------+
 | ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                       | Comparisons                             |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``in``                                                        | Content Test                            |
+| ``in``                                                        | Content test                            |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``!`` ``not``                                                 | Boolean NOT                             |
 +---------------------------------------------------------------+-----------------------------------------+
@@ -288,7 +288,7 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------------------------------+-----------------------------------------+
 | ``if x else``                                                 | Ternary if/else                         |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``&=`` ``|=``        | Assignment, Lowest Priority             |
+| ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``&=`` ``|=``        | Assignment (lowest priority)            |
 +---------------------------------------------------------------+-----------------------------------------+
 
 Literals
@@ -299,15 +299,17 @@ Literals
 +--------------------------+----------------------------------------+
 | ``45``                   | Base 10 integer                        |
 +--------------------------+----------------------------------------+
-| ``0x8F51``               | Base 16 (hex) integer                  |
+| ``0x8F51``               | Base 16 (hexadecimal) integer          |
 +--------------------------+----------------------------------------+
-| ``3.14``, ``58.1e-10``   | Floating point number (real)           |
+| ``0b101010``             | Base 2 (binary) integer                |
++--------------------------+----------------------------------------+
+| ``3.14``, ``58.1e-10``   | Floating-point number (real)           |
 +--------------------------+----------------------------------------+
 | ``"Hello"``, ``"Hi"``    | Strings                                |
 +--------------------------+----------------------------------------+
 | ``"""Hello"""``          | Multiline string                       |
 +--------------------------+----------------------------------------+
-| ``@"Node/Label"``        | NodePath or StringName                 |
+| ``@"Node/Label"``        | :ref:`class_NodePath` or StringName    |
 +--------------------------+----------------------------------------+
 | ``$NodePath``            | Shorthand for ``get_node("NodePath")`` |
 +--------------------------+----------------------------------------+
@@ -322,27 +324,16 @@ considered a comment.
 
     # This is a comment.
 
-
-Multi-line comments can be created using """ (three quotes in a row) at
-the beginning and end of a block of text. Note that this creates a string,
-therefore, it will not be stripped away when the script is compiled.
-
-    ::
-
-        """ Everything on these
-        lines is considered
-        a comment. """
-
 .. _doc_gdscript_builtin_types:
 
 Built-in types
 --------------
 
-Built-in types are stack-allocated. They are passed as values.
-This means a copy is created on each assignment or when passing them as arguments to functions.
-The only exceptions are ``Array``\ s and ``Dictionaries``, which are passed by reference so they are shared.
-(Not ``PoolArray``\ s like ``PoolByteArray`` though, those are passed as values too,
-so consider this when deciding which to use!)
+Built-in types are stack-allocated. They are passed as values. This means a copy
+is created on each assignment or when passing them as arguments to functions.
+The only exceptions are ``Array``\ s and ``Dictionaries``, which are passed by
+reference so they are shared. (Pooled arrays such as ``PoolByteArray`` are still
+passed as values.)
 
 Basic built-in types
 ~~~~~~~~~~~~~~~~~~~~
@@ -363,21 +354,21 @@ The Boolean data type can only contain ``true`` or ``false``.
 int
 ^^^
 
-The integer data type can only contain integer numbers, (both negative
+The integer data type can only contain integer numbers (both negative
 and positive).
 
 float
 ^^^^^
 
-Used to contain a floating point value (real numbers).
+Used to contain a floating-point value (real numbers).
 
 :ref:`String <class_String>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_. Strings can contain the
+A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
+Strings can contain
 `standard C escape sequences <https://en.wikipedia.org/wiki/Escape_sequences_in_C>`_.
-GDScript supports :ref:`format strings aka printf functionality
-<doc_gdscript_printf>`.
+GDScript also supports :ref:`doc_gdscript_printf`.
 
 Vector built-in types
 ~~~~~~~~~~~~~~~~~~~~~
@@ -392,7 +383,7 @@ accessed as array.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D Rectangle type containing two vectors fields: ``position`` and ``size``.
-Alternatively contains an ``end`` field which is ``position+size``.
+Also contains an ``end`` field which is ``position + size``.
 
 :ref:`Vector3 <class_Vector3>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -403,7 +394,7 @@ be accessed as an array.
 :ref:`Transform2D <class_Transform2D>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3x2 matrix used for 2D transforms.
+3×2 matrix used for 2D transforms.
 
 :ref:`Plane <class_Plane>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -421,8 +412,8 @@ useful for interpolating rotations.
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Axis-aligned bounding box (or 3D box) contains 2 vectors fields: ``position``
-and ``size``. Alternatively contains an ``end`` field which is
-``position+size``.
+and ``size``. Also contains an ``end`` field which is
+``position + size``.
 
 :ref:`Basis <class_Basis>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -470,7 +461,7 @@ Container built-in types
 
 Generic sequence of arbitrary object types, including other arrays or dictionaries (see below).
 The array can resize dynamically. Arrays are indexed starting from index ``0``.
-Starting with Godot 2.1, indices may be negative like in Python, to count from the end.
+Negative indices count from the end.
 
 ::
 
@@ -486,7 +477,7 @@ GDScript arrays are allocated linearly in memory for speed.
 Large arrays (more than tens of thousands of elements) may however cause
 memory fragmentation. If this is a concern, special types of
 arrays are available. These only accept a single data type. They avoid memory
-fragmentation and also use less memory but are atomic and tend to run slower than generic
+fragmentation and use less memory, but are atomic and tend to run slower than generic
 arrays. They are therefore only recommended to use for large data sets:
 
 - :ref:`PoolByteArray <class_PoolByteArray>`: An array of bytes (integers from 0 to 255).
@@ -567,7 +558,7 @@ after the variable name, followed by the type.
 If the variable is initialized within the declaration, the type can be inferred, so
 it's possible to omit the type name::
 
-    var my_vector2 :=  Vector2() # 'my_vector2' is of type 'Vector2'
+    var my_vector2 := Vector2() # 'my_vector2' is of type 'Vector2'
     var my_node := Sprite.new() # 'my_node' is of type 'Sprite'
 
 Type inference is only possible if the assigned value has a defined type, otherwise
@@ -575,10 +566,10 @@ it will raise an error.
 
 Valid types are:
 
-- Built-in types (Array, Vector2, int, String, etc.)
-- Engine classes (Node, Resource, Reference, etc.)
+- Built-in types (Array, Vector2, int, String, etc.).
+- Engine classes (Node, Resource, Reference, etc.).
 - Constant names if they contain a script resource (``MyScript`` if you declared ``const MyScript = preload("res://my_script.gd")``).
-- Other classes in the same script, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope)
+- Other classes in the same script, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope).
 - Script classes declared with the ``class_name`` keyword.
 
 Casting
@@ -613,12 +604,12 @@ engine will raise an error.
     my_int = Vector2() as int # A Vector2 can't be converted to int, this will cause an error
 
 Casting is also useful to have better type-safe variables when interacting with
-tree::
+the scene tree::
 
-    # will infer the variable to be of type Sprite:
+    # Will infer the variable to be of type Sprite.
     var my_sprite := $Character as Sprite
 
-    # will fail if $AnimPlayer is not an AnimationPlayer, even if it has the method 'play()':
+    # Will fail if $AnimPlayer is not an AnimationPlayer, even if it has the method 'play()'.
     ($AnimPlayer as AnimationPlayer).play("walk")
 
 Constants
@@ -632,11 +623,11 @@ expressions and must be assigned on initialization.
     const A = 5
     const B = Vector2(20, 20)
     const C = 10 + 20 # Constant expression.
-    const D = Vector2(20, 30).x # Constant expression: 20
-    const E = [1, 2, 3, 4][0] # Constant expression: 1
-    const F = sin(20) # sin() can be used in constant expressions.
+    const D = Vector2(20, 30).x # Constant expression: 20.
+    const E = [1, 2, 3, 4][0] # Constant expression: 1.
+    const F = sin(20) # 'sin()' can be used in constant expressions.
     const G = x + 20 # Invalid; this is not a constant expression!
-    const H = A + 20 # Constant expression: 25
+    const H = A + 20 # Constant expression: 25.
 
 Although the type of constants is inferred from the assigned value, it's also
 possible to add explicit type specification::
@@ -655,9 +646,9 @@ want to assign consecutive integers to some constant.
 If you pass a name to the enum, it will put all the keys inside a constant
 dictionary of that name.
 
-.. important: The keys in a named enum are not registered as global constants
-              in Godot 3.1 and later, they should be accessed prefixed by the
-              enum's name (``Name.KEY``). See example below.
+.. important: In Godot 3.1 and later, keys in a named enum are not registered
+              as global constants. They should be accessed prefixed by the
+              enum's name (``Name.KEY``); see an example below.
 
 ::
 
@@ -725,14 +716,14 @@ return early with the ``return`` keyword, but they can't return any value.
           error because if the block is not executed, the function won't have a
           valid value to return.
 
-Referencing Functions
+Referencing functions
 ^^^^^^^^^^^^^^^^^^^^^
 
-Contrary to Python, functions are *not* first class objects in GDScript. This
+Contrary to Python, functions are *not* first-class objects in GDScript. This
 means they cannot be stored in variables, passed as an argument to another
 function or be returned from other functions. This is for performance reasons.
 
-To reference a function by name at runtime, (e.g. to store it in a variable, or
+To reference a function by name at run-time, (e.g. to store it in a variable, or
 pass it to another function as an argument) one must use the ``call`` or
 ``funcref`` helpers::
 
@@ -745,21 +736,12 @@ pass it to another function as an argument) one must use the ``call`` or
     my_func.call_func(args)
 
 
-Remember that default functions, like  ``_init``, and most
-notifications, such as ``_enter_tree``, ``_exit_tree``, ``_process``,
-``_physics_process``, etc. are called in all base classes automatically.
-So there is only a need to call the function explicitly when overloading
-them in some way.
-
-
 Static functions
 ^^^^^^^^^^^^^^^^
 
 A function can be declared static. When a function is static, it has no
 access to the instance member variables or ``self``. This is mainly
-useful to make libraries of helper functions:
-
-::
+useful to make libraries of helper functions::
 
     static func sum2(a, b):
         return a + b
@@ -796,7 +778,7 @@ Short statements can be written on the same line as the condition::
         var x = 3 + 3
         return x
 
-Sometimes you might want to assign a different initial value based on a
+Sometimes, you might want to assign a different initial value based on a
 boolean expression. In this case, ternary-if expressions come in handy::
 
     var x = [value] if [expression] else [value]
@@ -828,15 +810,15 @@ in the loop variable.
 
     var dict = {"a": 0, "b": 1, "c": 2}
     for i in dict:
-        print(dict[i])
+        print(dict[i]) # Prints 0, then 1, then 2.
 
     for i in range(3):
         statement # Similar to [0, 1, 2] but does not allocate an array.
 
-    for i in range(1,3):
+    for i in range(1, 3):
         statement # Similar to [1, 2] but does not allocate an array.
 
-    for i in range(2,8,2):
+    for i in range(2, 8, 2):
         statement # Similar to [2, 4, 6] but does not allocate an array.
 
     for c in "Hello":
@@ -848,9 +830,7 @@ match
 A ``match`` statement is used to branch execution of a program.
 It's the equivalent of the ``switch`` statement found in many other languages, but offers some additional features.
 
-Basic syntax:
-
-::
+Basic syntax::
 
     match [expression]:
         [pattern](s):
@@ -863,8 +843,8 @@ Basic syntax:
 
 **Crash-course for people who are familiar with switch statements**:
 
-1. Replace ``switch`` with ``match``
-2. Remove ``case``
+1. Replace ``switch`` with ``match``.
+2. Remove ``case``.
 3. Remove any ``break``\ s. If you don't want to ``break`` by default, you can use ``continue`` for a fallthrough.
 4. Change ``default`` to a single underscore.
 
@@ -877,8 +857,8 @@ If you want to have a fallthrough, you can use ``continue`` to stop execution in
 
 There are 6 pattern types:
 
-- constant pattern
-    constant primitives, like numbers and strings ::
+- Constant pattern
+    Constant primitives, like numbers and strings::
 
         match x:
             1:
@@ -889,8 +869,8 @@ There are 6 pattern types:
                 print("Oh snap! It's a string!")
 
 
-- variable pattern
-    matches the contents of a variable/enum ::
+- Variable pattern
+    Matches the contents of a variable/enum::
 
         match typeof(x):
             TYPE_REAL:
@@ -901,10 +881,10 @@ There are 6 pattern types:
                 print("array")
 
 
-- wildcard pattern
+- Wildcard pattern
     This pattern matches everything. It's written as a single underscore.
 
-    It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages. ::
+    It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages::
 
         match x:
             1:
@@ -912,12 +892,12 @@ There are 6 pattern types:
             2:
                 print("It's one times two!")
             _:
-                print("It's not 1 or 2. I don't care tbh.")
+                print("It's not 1 or 2. I don't care to be honest.")
 
 
-- binding pattern
+- Binding pattern
     A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
-    It's especially useful in array and dictionary patterns. ::
+    It's especially useful in array and dictionary patterns::
 
         match x:
             1:
@@ -928,14 +908,16 @@ There are 6 pattern types:
                 print("It's not 1 or 2, it's ", new_var)
 
 
-- array pattern
-    matches an array. Every single element of the array pattern is a pattern itself, so you can nest them.
+- Array pattern
+    Matches an array. Every single element of the array pattern is a pattern itself, so you can nest them.
 
     The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern doesn't match.
 
-    **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``
+    **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``.
 
-    Every subpattern has to be comma separated. ::
+    Every subpattern has to be comma-separated.
+
+    ::
 
         match x:
             []:
@@ -947,18 +929,20 @@ There are 6 pattern types:
             [42, ..]:
                 print("Open ended array")
 
-- dictionary pattern
+- Dictionary pattern
     Works in the same way as the array pattern. Every key has to be a constant pattern.
 
     The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern doesn't match.
 
-    **Open-ended dictionary**: A dictionary can be bigger than the pattern by making the last subpattern ``..``
+    **Open-ended dictionary**: A dictionary can be bigger than the pattern by making the last subpattern ``..``.
 
     Every subpattern has to be comma separated.
 
     If you don't specify a value, then only the existence of the key is checked.
 
-    A value pattern is separated from the key pattern with a ``:`` ::
+    A value pattern is separated from the key pattern with a ``:``.
+
+    ::
 
         match x:
             {}:
@@ -972,8 +956,10 @@ There are 6 pattern types:
             {"key": "godotisawesome", ..}:
                 print("I only checked for one entry and ignored the rest")
 
-Multipatterns:
-    You can also specify multiple patterns separated by a comma. These patterns aren't allowed to have any bindings in them. ::
+- Multiple patterns
+    You can also specify multiple patterns separated by a comma. These patterns aren't allowed to have any bindings in them.
+
+    ::
 
         match x:
             1, 2, 3:
@@ -988,9 +974,7 @@ Classes
 
 By default, all script files are unnamed classes. In this case, you can only
 reference them using the file's path, using either a relative or an absolute
-path. For example, if you name a script file ``character.gd``
-
-::
+path. For example, if you name a script file ``character.gd``::
 
    # Inherit from Character.gd
 
@@ -1002,11 +986,9 @@ path. For example, if you name a script file ``character.gd``
    var character_node = Character.new()
 
 Instead, you can give your class a name to register it as a new type in Godot's
-editor. For that, you use the 'class_name' keyword. You can add an
+editor. For that, you use the ``class_name`` keyword. You can add an
 optional comma followed by a path to an image, to use it as an icon. Your class
-will then appear with its new icon in the editor:
-
-::
+will then appear with its new icon in the editor::
 
    # Item.gd
 
@@ -1045,17 +1027,15 @@ Here's a class file example:
 Inheritance
 ^^^^^^^^^^^
 
-A class (stored as a file) can inherit from
+A class (stored as a file) can inherit from:
 
-- A global class
-- Another class file
+- A global class.
+- Another class file.
 - An inner class inside another class file.
 
 Multiple inheritance is not allowed.
 
-Inheritance uses the ``extends`` keyword:
-
-::
+Inheritance uses the ``extends`` keyword::
 
     # Inherit/extend a globally available class.
     extends SomeClass
@@ -1068,9 +1048,7 @@ Inheritance uses the ``extends`` keyword:
 
 
 To check if a given instance inherits from a given class,
-the ``is`` keyword can be used:
-
-::
+the ``is`` keyword can be used::
 
     # Cache the enemy class.
     const Enemy = preload("enemy.gd")
@@ -1081,40 +1059,41 @@ the ``is`` keyword can be used:
     if (entity is Enemy):
         entity.apply_damage()
 
-To call a function in a *base class* (i.e. one ``extend``-ed in your current class),
-prepend ``.`` to the function name:
+To call a function in a *parent class* (i.e. one ``extend``-ed in your current
+class), prepend ``.`` to the function name::
 
-::
-
-    .basefunc(args)
+    .base_func(args)
 
 This is especially useful because functions in extending classes replace
-functions with the same name in their base classes. So if you still want
-to call them, you can use ``.`` like the ``super`` keyword in other languages:
-
-::
+functions with the same name in their parent classes. If you still want to
+call them, you can prefix them with ``.`` (like the ``super`` keyword
+in other languages)::
 
     func some_func(x):
-        .some_func(x) # Calls same function on the parent class.
+        .some_func(x) # Calls the same function on the parent class.
+
+.. note:: Default functions like  ``_init``, and most notifications such as
+          ``_enter_tree``, ``_exit_tree``, ``_process``, ``_physics_process``,
+          etc. are called in all parent classes automatically.
+          There is no need to call them explicitly when overloading them.
+
 
 Class Constructor
 ^^^^^^^^^^^^^^^^^
 
-The class constructor, called on class instantiation, is named ``_init``.
-As mentioned earlier, the constructors of parent classes are called automatically when
-inheriting a class. So there is usually no need to call ``._init()`` explicitly.
+The class constructor, called on class instantiation, is named ``_init``. As
+mentioned earlier, the constructors of parent classes are called automatically
+when inheriting a class. So, there is usually no need to call ``._init()``
+explicitly.
 
-Unlike the call of a regular function, like in the above example with ``.some_func``,
-if the constructor from the inherited class takes arguments, they are passed like this:
-
-::
+Unlike the call of a regular function, like in the above example with
+``.some_func``, if the constructor from the inherited class takes arguments,
+they are passed like this::
 
     func _init(args).(parent_args):
        pass
 
-This is better explained through examples. Say we have this scenario:
-
-::
+This is better explained through examples. Consider this scenario::
 
     # State.gd (inherited class)
     var entity = null
@@ -1136,17 +1115,15 @@ This is better explained through examples. Say we have this scenario:
 
 There are a few things to keep in mind here:
 
-1. if the inherited class (``State.gd``) defines a ``_init`` constructor that takes
-   arguments (``e`` in this case), then the inheriting class (``Idle.gd``) *has* to
-   define ``_init`` as well and pass appropriate parameters to ``_init`` from ``State.gd``
-2. ``Idle.gd`` can have a different number of arguments than the base class ``State.gd``
-3. in the example above, ``e`` passed to the ``State.gd`` constructor is the same ``e`` passed
-   in to ``Idle.gd``
-4. if ``Idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
-   to the ``State.gd`` base class even if it does nothing. Which brings us to the fact that you
-   can pass literals in the base constructor as well, not just variables. Eg.:
-
-::
+1. If the inherited class (``State.gd``) defines a ``_init`` constructor that takes
+   arguments (``e`` in this case), then the inheriting class (``Idle.gd``) *must*
+   define ``_init`` as well and pass appropriate parameters to ``_init`` from ``State.gd``.
+2. ``Idle.gd`` can have a different number of arguments than the parent class ``State.gd``.
+3. In the example above, ``e`` passed to the ``State.gd`` constructor is the same ``e`` passed
+   in to ``Idle.gd``.
+4. If ``Idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
+   to the ``State.gd`` parent class, even if it does nothing. This brings us to the fact that you
+   can pass literals in the base constructor as well, not just variables. eg.::
 
     # Idle.gd
 
@@ -1242,13 +1219,13 @@ special export syntax is provided.
     # Editor will enumerate with string names.
     export(String, "Rebecca", "Mary", "Leah") var character_name
 
-    # Named Enum Values
+    # Named enum values
 
     # Editor will enumerate as THING_1, THING_2, ANOTHER_THING.
     enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
     export (NamedEnum) var x
 
-    # Strings as Paths
+    # Strings as paths
 
     # String is a path to a file.
     export(String, FILE) var f
@@ -1277,48 +1254,44 @@ special export syntax is provided.
     export(int, -10, 20) var j
     # Allow floats from -10 to 20, with a step of 0.2.
     export(float, -10, 20, 0.2) var k
-    # Allow values y = exp(x) where y varies between 100 and 1000
+    # Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
     # while snapping to steps of 20. The editor will present a
     # slider for easily editing the value.
     export(float, EXP, 100, 1000, 20) var l
 
-    # Floats with Easing Hint
+    # Floats with easing hint
 
-    # Display a visual representation of the ease() function
+    # Display a visual representation of the 'ease()' function
     # when editing.
     export(float, EASE) var transition_speed
 
     # Colors
 
-    # Color given as Red-Green-Blue value
-    export(Color, RGB) var col # Color is RGB.
-    # Color given as Red-Green-Blue-Alpha value
-    export(Color, RGBA) var col # Color is RGBA.
+    # Color given as red-green-blue value (alpha will always be 1)
+    export(Color, RGB) var col
+    # Color given as red-green-blue-alpha value
+    export(Color, RGBA) var col
 
     # Another node in the scene can be exported, too.
 
     export(NodePath) var node
 
-It must be noted that even if the script is not being run while at the
+It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable (see below for
-"tool").
+``tool``).
 
 Exporting bit flags
 ^^^^^^^^^^^^^^^^^^^
 
 Integers used as bit flags can store multiple ``true``/``false`` (boolean)
 values in one property. By using the export hint ``int, FLAGS``, they
-can be set from the editor:
-
-::
+can be set from the editor::
 
     # Individually edit the bits of an integer.
     export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER
 
 Restricting the flags to a certain number of named flags is also
-possible. The syntax is similar to the enumeration syntax:
-
-::
+possible. The syntax is similar to the enumeration syntax::
 
     # Set any of the given flags from the editor.
     export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0
@@ -1334,7 +1307,7 @@ doubt, boolean variables should be exported instead.
 Exporting arrays
 ^^^^^^^^^^^^^^^^
 
-Exporting arrays works, but with an important caveat: While regular
+Exporting arrays works, but with an important caveat: while regular
 arrays are created local to every class instance, exported arrays are *shared*
 between all instances. This means that editing them in one instance will
 cause them to change in all other instances. Exported arrays can have
@@ -1387,10 +1360,7 @@ Whenever the value of ``variable`` is modified by an *external* source
 (i.e. not from local usage in the class), the *setter* function (``setterfunc`` above)
 will be called. This happens *before* the value is changed. The *setter* must decide what to do
 with the new value. Vice versa, when ``variable`` is accessed, the *getter* function
-(``getterfunc`` above) must ``return`` the desired value. Below is an example:
-
-
-::
+(``getterfunc`` above) must ``return`` the desired value. Below is an example::
 
     var myvar setget my_var_set, my_var_get
 
@@ -1400,9 +1370,7 @@ with the new value. Vice versa, when ``variable`` is accessed, the *getter* func
     func my_var_get():
         return my_var # Getter must return a value.
 
-Either of the *setter* or *getter* functions can be omitted:
-
-::
+Either of the *setter* or *getter* functions can be omitted::
 
     # Only a setter.
     var my_var = 5 setget myvar_set
@@ -1429,13 +1397,11 @@ illustration of this:
 Tool mode
 ~~~~~~~~~
 
-Scripts, by default, don't run inside the editor and only the exported
+By default, scripts don't run inside the editor and only the exported
 properties can be changed. In some cases, it is desired that they do run
 inside the editor (as long as they don't execute game code or manually
 avoid doing so). For this, the ``tool`` keyword exists and must be
-placed at the top of the file:
-
-::
+placed at the top of the file::
 
     tool
     extends Button
@@ -1443,7 +1409,7 @@ placed at the top of the file:
     func _ready():
         print("Hello")
 
-.. warning:: Be cautious when freeing nodes with `queue_free()` or `free()`
+.. warning:: Be cautious when freeing nodes with ``queue_free()`` or ``free()``
              in a tool script (especially the script's owner itself). As tool
              scripts run their code in the editor, misusing them may lead to
              crashing the editor.
@@ -1478,7 +1444,7 @@ to. To create custom signals for a class, use the ``signal`` keyword.
    # A signal named health_depleted
    signal health_depleted
 
-.. note:: 
+.. note::
 
    Signals are a `Callback
    <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
@@ -1492,9 +1458,7 @@ signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
-signal, the game node's ``_on_Character_health_depleted`` is called:
-
-::
+signal, the game node's ``_on_Character_health_depleted`` is called::
 
    # Game.gd
 
@@ -1505,7 +1469,7 @@ signal, the game node's ``_on_Character_health_depleted`` is called:
    func _on_Character_health_depleted():
       get_tree().reload_current_scene()
 
-You can emit as many arguments as you want along with a signal. 
+You can emit as many arguments as you want along with a signal.
 
 Here is an example where this is useful. Let's say we want a life bar on screen
 to react to health changes with an animation, but we want to keep the user
@@ -1514,9 +1478,7 @@ interface separate from the player in our scene tree.
 In our ``Character.gd`` script, we define a ``health_changed`` signal and emit
 it with :ref:`Object.emit_signal() <class_Object_method_emit_signal>`, and from
 a ``Game`` node higher up our scene tree, we connect it to the ``Lifebar`` using
-the :ref:`Object.connect() <class_Object_method_connect>` method:
-
-::
+the :ref:`Object.connect() <class_Object_method_connect>` method::
 
     # Character.gd
 
@@ -1534,7 +1496,7 @@ the :ref:`Object.connect() <class_Object_method_connect>` method:
 
 ::
 
-    # Lifebar.gd 
+    # Lifebar.gd
 
     # Here, we define a function to use as a callback when the
     # character's health_changed signal is emitted
@@ -1552,7 +1514,7 @@ the :ref:`Object.connect() <class_Object_method_connect>` method:
     ...
 
 .. note::
-   
+
     To use signals, your class has to extend the ``Object`` class or any
     type extending it like ``Node``, ``KinematicBody``, ``Control``...
 
@@ -1573,23 +1535,22 @@ node in this case.
 This allows the ``Lifebar`` to react to health changes without coupling it to
 the ``Character`` node.
 
-you can write optional argument names in parentheses after the signal's
-definition. 
-
-::
+You can write optional argument names in parentheses after the signal's
+definition::
 
    # Defining a signal that forwards two arguments
    signal health_changed(old_value, new_value)
 
 These arguments show up in the editor's node dock, and Godot can use them to
 generate callback functions for you. However, you can still emit any number of
-arguments when you emit signals. So it's up to you to emit the correct values.
+arguments when you emit signals; it's up to you to emit the correct values.
 
 .. image:: img/gdscript_basics_signals_node_tab_1.png
 
-GDScript can bind an array of values to connections between a signal and a method. When
-the signal is emitted, the callback method receives the bound values. These bound
-arguments are unique to each connection, and the values will stay the same.
+GDScript can bind an array of values to connections between a signal
+and a method. When the signal is emitted, the callback method receives
+the bound values. These bound arguments are unique to each connection,
+and the values will stay the same.
 
 You can use this array of values to add extra constant information to the
 connection if the emitted signal itself doesn't give you access to all the data
@@ -1599,10 +1560,8 @@ Building on the example above, let's say we want to display a log of the damage
 taken by each character on the screen, like ``Player1 took 22 damage.``. The
 ``health_changed`` signal doesn't give us the name of the character that took
 damage. So when we connect the signal to the in-game console, we can add the
-character's name in the binds array argument:
+character's name in the binds array argument::
 
-::
-   
    # Game.gd
 
    func _ready():
@@ -1611,9 +1570,7 @@ character's name in the binds array argument:
 
       character_node.connect("health_changed", battle_log_node, "_on_Character_health_changed", [character_node.name])
 
-Our ``BattleLog`` node receives each element in the binds array as an extra argument:
-
-::
+Our ``BattleLog`` node receives each element in the binds array as an extra argument::
 
    # BattleLog.gd
 
@@ -1628,14 +1585,12 @@ Coroutines with yield
 ~~~~~~~~~~~~~~~~~~~~~
 
 GDScript offers support for `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
-via the ``yield`` built-in function. Calling ``yield()`` will
+via the :ref:`yield<class_@GDScript_method_yield>` built-in function. Calling ``yield()`` will
 immediately return from the current function, with the current frozen
-state of the same function as the return value. Calling ``resume`` on
+state of the same function as the return value. Calling ``resume()`` on
 this resulting object will continue execution and return whatever the
 function returns. Once resumed, the state object becomes invalid. Here is
-an example:
-
-::
+an example::
 
     func my_func():
        print("Hello")
@@ -1649,18 +1604,14 @@ an example:
         y.resume()
         # 'y' resumed and is now an invalid state.
 
-Will print:
-
-::
+Will print::
 
     Hello
     my dear
     world
 
-It is also possible to pass values between yield() and resume(), for
-example:
-
-::
+It is also possible to pass values between ``yield()`` and ``resume()``,
+for example::
 
     func my_func():
        print("Hello")
@@ -1673,9 +1624,7 @@ example:
         print(y.resume("world"))
         # 'y' resumed and is now an invalid state.
 
-Will print:
-
-::
+Will print::
 
     Hello
     world
@@ -1686,9 +1635,7 @@ Coroutines & signals
 
 The real strength of using ``yield`` is when combined with signals.
 ``yield`` can accept two arguments, an object and a signal. When the
-signal is received, execution will recommence. Here are some examples:
-
-::
+signal is received, execution will recommence. Here are some examples::
 
     # Resume execution the next frame.
     yield(get_tree(), "idle_frame")
@@ -1700,9 +1647,7 @@ signal is received, execution will recommence. Here are some examples:
     yield(get_tree().create_timer(5.0), "timeout")
 
 Coroutines themselves use the ``completed`` signal when they transition
-into an invalid state, for example:
-
-::
+into an invalid state, for example::
 
     func my_func():
         yield(button_func(), "completed")
@@ -1720,7 +1665,7 @@ Onready keyword
 When using nodes, it's common to desire to keep references to parts
 of the scene in a variable. As scenes are only warranted to be
 configured when entering the active scene tree, the sub-nodes can only
-be obtained when a call to Node._ready() is made.
+be obtained when a call to ``Node._ready()`` is made.
 
 ::
 
@@ -1731,20 +1676,25 @@ be obtained when a call to Node._ready() is made.
 
 This can get a little cumbersome, especially when nodes and external
 references pile up. For this, GDScript has the ``onready`` keyword, that
-defers initialization of a member variable until _ready is called. It
-can replace the above code with a single line:
-
-::
+defers initialization of a member variable until ``_ready()`` is called. It
+can replace the above code with a single line::
 
     onready var my_label = get_node("MyLabel")
 
 Assert keyword
 ~~~~~~~~~~~~~~
 
-The ``assert`` keyword can be used to check conditions in debug builds.
-These assertions are ignored in non-debug builds.
+The ``assert`` keyword can be used to check conditions in debug builds. These
+assertions are ignored in non-debug builds. This means that the expression
+passed as argument won't be evaluated in a project exported in release mode.
+Due to this, assertions must **not** contain expressions that have
+side effects. Otherwise, the behavior of the script would vary
+depending on whether the project is run in a debug build.
 
 ::
 
-    # Check that 'i' is 0.
+    # Check that 'i' is 0. If 'i' is not 0, an assertion error will occur.
     assert(i == 0)
+
+When running a project from the editor, the project will be paused if an
+assertion error occurs.
