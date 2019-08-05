@@ -63,7 +63,7 @@ This way, obtaining the actual playback position during *_process()* is possible
         print("Time is: ", time)
 
 
-In the long run, though, as the sound hardware clock is never exactly in sync with the system clock, they timing information will slowly drift away.
+In the long run, though, as the sound hardware clock is never exactly in sync with the system clock, the timing information will slowly drift away.
 
 For a rhythm game where a song begins and ends after a few minutes, this approach is fine (and it's the recommended approach). For a game where playback can last a much longer time, the game will eventually go out of sync and a different approach is needed.
 
