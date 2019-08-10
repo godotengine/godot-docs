@@ -42,7 +42,7 @@ The example code below draws a single triangle.
 
     extends ImmediateGeometry
 
-    void _process(delta):
+    func _process(delta):
         # Clean up before drawing.
         clear()
 
