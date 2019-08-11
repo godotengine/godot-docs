@@ -330,13 +330,13 @@ During run-time, this will be a simple object with a script so this function doe
 
 - void **add_tool_menu_item** **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` handler, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` ud=null **)**
 
-Adds a custom menu to **Project > Tools** as ``name`` that calls ``callback`` on an instance of ``handler`` with a parameter ``ud`` when user activates it.
+Adds a custom menu item to **Project > Tools** as ``name`` that calls ``callback`` on an instance of ``handler`` with a parameter ``ud`` when user activates it.
 
 .. _class_EditorPlugin_method_add_tool_submenu_item:
 
 - void **add_tool_submenu_item** **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` submenu **)**
 
-Like :ref:`add_tool_menu_item<class_EditorPlugin_method_add_tool_menu_item>` but adds the ``submenu`` item inside the ``name`` menu.
+Adds a custom submenu under **Project > Tools >** ``name``. ``submenu`` should be an object of class :ref:`PopupMenu<class_PopupMenu>`. This submenu should be cleaned up using ``remove_tool_menu_item(name)``.
 
 .. _class_EditorPlugin_method_apply_changes:
 
