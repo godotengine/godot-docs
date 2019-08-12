@@ -40,7 +40,7 @@ The third parameter is an array of blendshapes for the Mesh to use. While this t
 using blendshapes, it is possible to specify them when creating a surface from arrays.
 
 The last parameter is the compress flags which specifies which arrays to store with half as many bits. The
-values can be found in the classref for VisualServer under ArrayFormat.//I think I can link to this
+values can be found in the classref for :ref:`VisualServer <class_visualserver>` under :ref:`ArrayFormat <enum_visualserver_arrayformat>`.
 
 For normal usage you will find it is best to leave the last two parameters empty.
 
