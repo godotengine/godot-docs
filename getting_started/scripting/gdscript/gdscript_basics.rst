@@ -842,6 +842,12 @@ in the loop variable.
     for c in "Hello":
         print(c) # Iterate through all characters in a String, print every letter on new line.
 
+    for i in 3:
+        statement # Similar to range(3)
+
+    for i in 2.2:
+        statement # Similar to range(ceil(2.2))
+
 match
 ^^^^^
 
