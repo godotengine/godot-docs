@@ -149,12 +149,9 @@ called "Windows Desktop" and the template can be found.
 The output path is relative to the project path or absolute;
 it does not respect the directory the command was invoked from.
 
-You can also configure it to export only the PCK or ZIP file (allowing
-a single export to be used with multiple Godot executables). This
-takes place if:
-
- - the export preset is not marked as runnable,
- - the target name ends with ``.pck`` or ``.zip``.
+You can also configure it to export only the PCK or ZIP file, allowing
+a single export to be used with multiple Godot executables.
+This takes place if the target name ends with ``.pck`` or ``.zip``.
 
 It is often useful to combine the ``--export`` flag with the ``--path``
 flag, and to create a dedicated export preset for automated export:
