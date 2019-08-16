@@ -249,7 +249,7 @@ Note: If you use an index below 0 or greater than array size - the shader will c
 Constants
 ---------
 
-Use the ``const`` keyword before the variable declaration to make that variable immutable, which means that it cannot be modified. All basic types, except samplers can be declared as constants. Accessing and using a constant value is slightly faster than using a uniform.
+Use the ``const`` keyword before the variable declaration to make that variable immutable, which means that it cannot be modified. All basic types, except samplers can be declared as constants. Accessing and using a constant value is slightly faster than using a uniform. Constants must be initialized at their declaration.
 
 .. code-block:: glsl
 
@@ -276,7 +276,7 @@ Similar to variables, arrays can also be declared with ``const``.
     COLOR.r = arr[0]; // valid
 
 Constants can be declared both globally (outside of any function) or locally (inside a function).
-Global constants are useful when you want to have access to a value throughout your shader that does not need to be modified. Like uniforms, global constants are shared between all shader stages. However, they are not accessible outside of the shader and must be initialized at declaration.
+Global constants are useful when you want to have access to a value throughout your shader that does not need to be modified. Like uniforms, global constants are shared between all shader stages, but they are not accessible outside of the shader.
 
 .. code-block:: glsl
     
