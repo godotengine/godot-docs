@@ -246,6 +246,44 @@ Arrays also have a built-in function ``.length()`` (not to be confused with the 
 
 Note: If you use an index below 0 or greater than array size - the shader will crash and break rendering. To prevent this, use ``length()``, ``if``, or ``clamp()`` functions to ensure the index is between 0 and the array's length. Always carefully test and check your code. If you pass a constant expression or a simple number, the editor will check its bounds to prevent this crash.
 
+Constants
+---------
+
+Use the ``const`` keyword before the variable declaration to make that variable immutable, which means that it cannot be modified. All basic types, except samplers can be declared as constants. Accessing and using a constant value is slightly faster than using a uniform.
+
+.. code-block:: glsl
+
+    const vec2 a = vec2(0.0, 1.0);
+    vec2 b;
+
+    a = b; // invalid
+    b = a; // valid
+
+Constants cannot be modified and additionally cannot have hints, but multiple of them (if they have the same type) can be declared in a single expression e.g
+
+.. code-block:: glsl
+
+    const vec2 V1 = vec2(1, 1), V2 = vec2(2, 2);
+
+Similar to variables, arrays can also be declared with ``const``.
+
+.. code-block:: glsl
+
+    const float arr[] = { 1.0, 0.5, 0.0 };
+
+    arr[0] = 1.0; // invalid
+
+    COLOR.r = arr[0]; // valid
+
+Constants can be declared both globally (outside of any function) or locally (inside a function).
+Global constants are useful when you want to have access to a value throughout your shader that does not need to be modified. Like uniforms, global constants are shared between all shader stages. However, they are not accessible outside of the shader and must be initialized at declaration.
+
+.. code-block:: glsl
+    
+    shader_type spatial;
+
+    const float PI = 3.14159265358979323846;
+
 Operators
 ---------
 
@@ -303,6 +341,10 @@ Godot Shading language supports the most common types of flow control:
 
     }
 
+    // do while
+    do {
+
+    } while(true);
 
 Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze your application (including editor).
 Godot can't protect you from this, so be careful not to make this mistake!
@@ -491,24 +533,6 @@ Uniforms can also be assigned default values:
 
     uniform vec4 some_vector = vec4(0.0);
     uniform vec4 some_color : hint_color = vec4(1.0);
-
-Global constants
-~~~~~~~~~~~~~~~~
-
-Like uniforms, global constants are shared between all shader stages. However, they are not accessible outside of the shader and must be initialized at declaration.
-Use the **const** keyword to declare a variable as a constant. All basic types, except samplers can be declared as constants. Constants are useful when you want to have access to a value throughout your shader that does not need to be modified. Accessing and using a constant value is slightly faster than using a uniform.
-
-.. code-block:: glsl
-
-   shader_type spatial;
-
-   const float PI = 3.14159265358979323846;
-
-Constants cannot be modified and additionally cannot have hints, but multiple of them (if they have the same type) can be declared in a single expression e.g
-
-.. code-block:: glsl
-
-    const vec2 V1 = vec2(1, 1), V2 = vec2(2, 2);
 
 Built-in functions
 ------------------
