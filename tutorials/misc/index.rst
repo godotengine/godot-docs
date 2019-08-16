@@ -13,3 +13,4 @@ Miscellaneous
    change_scenes_manually
    gles2_gles3_differences
    instancing_with_signals
+   state_design_pattern
