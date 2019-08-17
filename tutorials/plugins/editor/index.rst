@@ -10,3 +10,4 @@ Editor plugins
    import_plugins
    spatial_gizmos
    inspector_plugins
+   visual_shader_plugins
