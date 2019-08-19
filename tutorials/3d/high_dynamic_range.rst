@@ -36,7 +36,7 @@ Computer displays
 -----------------
 
 Almost all displays require a nonlinear encoding for the code values sent
-to them. The display in turn, using it's unique transfer characteristic,
+to them. The display in turn, using its unique transfer characteristic,
 "decodes" the code value into linear light ratios of output, and projects
 the ratios out of the uniquely colored lights at each reddish, greenish,
 and blueish emission site.
