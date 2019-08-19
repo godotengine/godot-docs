@@ -1368,7 +1368,7 @@ will be called. This happens *before* the value is changed. The *setter* must de
 with the new value. Vice versa, when ``variable`` is accessed, the *getter* function
 (``getterfunc`` above) must ``return`` the desired value. Below is an example::
 
-    var myvar setget my_var_set, my_var_get
+    var my_var setget my_var_set, my_var_get
 
     func my_var_set(new_value):
         my_var = new_value
@@ -1379,9 +1379,9 @@ with the new value. Vice versa, when ``variable`` is accessed, the *getter* func
 Either of the *setter* or *getter* functions can be omitted::
 
     # Only a setter.
-    var my_var = 5 setget myvar_set
+    var my_var = 5 setget my_var_set
     # Only a getter (note the comma).
-    var my_var = 5 setget ,myvar_get
+    var my_var = 5 setget ,my_var_get
 
 Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
