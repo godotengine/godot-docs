@@ -1,6 +1,6 @@
 .. _doc_high_dynamic_range:
 
-Light Transport in Game Engines
+Light transport in game engines
 ===============================
 
 Introduction
@@ -15,14 +15,14 @@ So at what point does all this "HDR" business come into play? To understand
 the answer, we need to look at how displays behave.
 
 Your display outputs linear light ratios from some maximum to some minimum
-intensity. Modern game engines perform complex math linear light values on
+intensity. Modern game engines perform complex math on linear light values in
 their respective scenes. So what's the problem?
 
 The display has a limited range of intensity, depending on the display type.
 The game engine renders to an unlimited range of intensity values, however.
 While "maximum intensity" means something to an sRGB display, it has no bearing
-in the game engine's math world; there is only a massive range of intensity values
-generated per frame of rendering.
+in the game engine; there is only a potentially infinitely wide range of intensity
+values generated per frame of rendering.
 
 This means that some transformation of the scene light intensity, also known
 as _scene referred_ light ratios, need to be transformed and mapped to fit
@@ -32,13 +32,13 @@ through a virtual camera. Here, our virtual camera would apply a particular
 camera rendering transform to the scene data, and the output would be ready
 for display on a particular display type.
 
-Computer Displays
+Computer displays
 -----------------
 
 Almost all displays require a nonlinear encoding for the code values sent
 to them. The display in turn, using it's unique transfer characteristic,
 "decodes" the code value into linear light ratios of output, and projects
-the ratios out of the uniquely coloured lights at each reddish, greenish,
+the ratios out of the uniquely colored lights at each reddish, greenish,
 and blueish emission site.
 
 For a majority of computer displays, the specifications of the display are
@@ -64,7 +64,7 @@ the wider dynamic range of the game engine's scene output using the simple
 transfer function of the display however, and therefore a more complex approach
 to encoding is required.
 
-Scene Linear & Asset Pipelines
+Scene linear & asset pipelines
 ------------------------------
 
 Working in scene linear sRGB is not as simple as just pressing a switch. First,
@@ -74,7 +74,7 @@ depending on how they were generated.
 
 There are two ways to do this:
 
-sRGB Transfer Function to Display Linear Ratios on Image Import
+sRGB transfer function to display linear ratios on image import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the easiest, but not the most ideal, method of using sRGB assets.
@@ -82,7 +82,7 @@ One issue with this is loss of quality. Using 8 bit per channel to represent
 linear light ratios is not a sufficient but depth to quantise the values correctly.
 These textures might later be compressed too, which can exacerbate the problem.
 
-Hardware sRGB Transfer Function to Display Linear Conversion
+Hardware sRGB transfer function to display linear conversion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The GPU will do the conversion after reading the
@@ -90,7 +90,7 @@ texel using floating point. This works fine on PC and consoles, but most
 mobile devices do no support it, or do not support it on compressed
 texture format (iOS for example).
 
-Scene Linear to Display Referred Nonlinear
+Scene linear to display referred nonlinear
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After all the rendering is done, the scene linear render requires transforming
