@@ -252,7 +252,7 @@ Calls the ``method`` on the object during idle time and returns the result. This
 
 - :ref:`Variant<class_Variant>` **callv** **(** :ref:`String<class_String>` method, :ref:`Array<class_Array>` arg_array **)**
 
-Calls the ``method`` on the object and returns the result. Contrarily to :ref:`call<class_Object_method_call>`, this method does not support a variable number of arguments but expected all parameters passed via a single :ref:`Array<class_Array>`.
+Calls the ``method`` on the object and returns the result. Contrarily to :ref:`call<class_Object_method_call>`, this method does not support a variable number of arguments but expects all parameters to be via a single :ref:`Array<class_Array>`.
 
 ::
 

@@ -74,6 +74,25 @@ Methods
 | :ref:`Vector3<class_Vector3>` | :ref:`xform_inv<class_Basis_method_xform_inv>` **(** :ref:`Vector3<class_Vector3>` v **)**                                                                          |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Constants
+---------
+
+.. _class_Basis_constant_IDENTITY:
+
+.. _class_Basis_constant_FLIP_X:
+
+.. _class_Basis_constant_FLIP_Y:
+
+.. _class_Basis_constant_FLIP_Z:
+
+- **IDENTITY** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )**
+
+- **FLIP_X** = **Basis( -1, 0, 0, 0, 1, 0, 0, 0, 1 )**
+
+- **FLIP_Y** = **Basis( 1, 0, 0, 0, -1, 0, 0, 0, 1 )**
+
+- **FLIP_Z** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, -1 )**
+
 Description
 -----------
 

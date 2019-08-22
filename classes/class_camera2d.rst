@@ -30,7 +30,7 @@ Properties
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
 | :ref:`float<class_float>`                                     | :ref:`drag_margin_bottom<class_Camera2D_property_drag_margin_bottom>`           | 0.2             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                                       | :ref:`drag_margin_h_enabled<class_Camera2D_property_drag_margin_h_enabled>`     | true            |
+| :ref:`bool<class_bool>`                                       | :ref:`drag_margin_h_enabled<class_Camera2D_property_drag_margin_h_enabled>`     | false           |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
 | :ref:`float<class_float>`                                     | :ref:`drag_margin_left<class_Camera2D_property_drag_margin_left>`               | 0.2             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
@@ -38,7 +38,7 @@ Properties
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
 | :ref:`float<class_float>`                                     | :ref:`drag_margin_top<class_Camera2D_property_drag_margin_top>`                 | 0.2             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                                       | :ref:`drag_margin_v_enabled<class_Camera2D_property_drag_margin_v_enabled>`     | true            |
+| :ref:`bool<class_bool>`                                       | :ref:`drag_margin_v_enabled<class_Camera2D_property_drag_margin_v_enabled>`     | false           |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
 | :ref:`bool<class_bool>`                                       | :ref:`editor_draw_drag_margin<class_Camera2D_property_editor_draw_drag_margin>` | false           |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
@@ -194,7 +194,7 @@ Bottom margin needed to drag the camera. A value of ``1`` makes the camera move 
 - :ref:`bool<class_bool>` **drag_margin_h_enabled**
 
 +-----------+---------------------------+
-| *Default* | true                      |
+| *Default* | false                     |
 +-----------+---------------------------+
 | *Setter*  | set_h_drag_enabled(value) |
 +-----------+---------------------------+
@@ -250,7 +250,7 @@ Top margin needed to drag the camera. A value of ``1`` makes the camera move onl
 - :ref:`bool<class_bool>` **drag_margin_v_enabled**
 
 +-----------+---------------------------+
-| *Default* | true                      |
+| *Default* | false                     |
 +-----------+---------------------------+
 | *Setter*  | set_v_drag_enabled(value) |
 +-----------+---------------------------+
@@ -399,6 +399,8 @@ The camera's offset, useful for looking around or camera shake animations.
 
 The horizontal offset of the camera, relative to the drag margins.
 
+**Note:** Offset H is used only to force offset relative to margins. It's not updated in any way if drag margins are enabled and can be used to set inital offset.
+
 .. _class_Camera2D_property_offset_v:
 
 - :ref:`float<class_float>` **offset_v**
@@ -412,6 +414,8 @@ The horizontal offset of the camera, relative to the drag margins.
 +-----------+---------------------+
 
 The vertical offset of the camera, relative to the drag margins.
+
+**Note:** Used the same as :ref:`offset_h<class_Camera2D_property_offset_h>`.
 
 .. _class_Camera2D_property_process_mode:
 

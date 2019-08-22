@@ -34,6 +34,8 @@ Methods
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`               | :ref:`get_string_from_utf8<class_PoolByteArray_method_get_string_from_utf8>` **(** **)**                                                         |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`               | :ref:`hex_encode<class_PoolByteArray_method_hex_encode>` **(** **)**                                                                             |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`insert<class_PoolByteArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                               |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`invert<class_PoolByteArray_method_invert>` **(** **)**                                                                                     |
@@ -45,8 +47,6 @@ Methods
 | void                                      | :ref:`resize<class_PoolByteArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                                           |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set<class_PoolByteArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                                     |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`sha256_string<class_PoolByteArray_method_sha256_string>` **(** **)**                                                                       |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`size<class_PoolByteArray_method_size>` **(** **)**                                                                                         |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -105,6 +105,10 @@ Returns a copy of the array's contents as :ref:`String<class_String>`. Fast alte
 
 Returns a copy of the array's contents as :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PoolByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred.
 
+.. _class_PoolByteArray_method_hex_encode:
+
+- :ref:`String<class_String>` **hex_encode** **(** **)**
+
 .. _class_PoolByteArray_method_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**
@@ -140,12 +144,6 @@ Sets the size of the array. If the array is grown, reserves elements at the end 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**
 
 Changes the byte at the given index.
-
-.. _class_PoolByteArray_method_sha256_string:
-
-- :ref:`String<class_String>` **sha256_string** **(** **)**
-
-Returns SHA-256 string of the PoolByteArray.
 
 .. _class_PoolByteArray_method_size:
 

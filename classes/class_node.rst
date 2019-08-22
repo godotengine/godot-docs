@@ -627,6 +627,14 @@ Adds a child node. Nodes can have any number of children, but every child must h
 
 If ``legible_unique_name`` is ``true``, the child node will have an human-readable name based on the name of the node being instanced instead of its type.
 
+**Note:** If the child node already has a parent, the function will fail. Use :ref:`remove_child<class_Node_method_remove_child>` first to remove the node from its current parent. For example:
+
+::
+
+    if child_node.get_parent():
+        child_node.get_parent().remove_child(child_node)
+    add_child(child_node)
+
 .. _class_Node_method_add_child_below_node:
 
 - void **add_child_below_node** **(** :ref:`Node<class_Node>` node, :ref:`Node<class_Node>` child_node, :ref:`bool<class_bool>` legible_unique_name=false **)**

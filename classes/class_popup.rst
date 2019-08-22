@@ -41,6 +41,8 @@ Methods
 +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`popup_centered_ratio<class_Popup_method_popup_centered_ratio>` **(** :ref:`float<class_float>` ratio=0.75 **)**                                                                  |
 +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`set_as_minsize<class_Popup_method_set_as_minsize>` **(** **)**                                                                                                                   |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -122,4 +124,10 @@ Popup (show the control in modal form) in the center of the screen relative to t
 - void **popup_centered_ratio** **(** :ref:`float<class_float>` ratio=0.75 **)**
 
 Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, scaled at a ratio of size of the screen.
+
+.. _class_Popup_method_set_as_minsize:
+
+- void **set_as_minsize** **(** **)**
+
+Shrink popup to keep to the minimum size of content.
 

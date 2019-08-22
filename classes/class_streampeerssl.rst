@@ -28,17 +28,17 @@ Properties
 Methods
 -------
 
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`accept_stream<class_StreamPeerSSL_method_accept_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` base **)**                                                                                                      |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`connect_to_stream<class_StreamPeerSSL_method_connect_to_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="" **)** |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`disconnect_from_stream<class_StreamPeerSSL_method_disconnect_from_stream>` **(** **)**                                                                                                                             |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_StreamPeerSSL_Status>` | :ref:`get_status<class_StreamPeerSSL_method_get_status>` **(** **)** const                                                                                                                                               |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`poll<class_StreamPeerSSL_method_poll>` **(** **)**                                                                                                                                                                 |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`accept_stream<class_StreamPeerSSL_method_accept_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`CryptoKey<class_CryptoKey>` private_key, :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`X509Certificate<class_X509Certificate>` chain=null **)**      |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`connect_to_stream<class_StreamPeerSSL_method_connect_to_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="", :ref:`X509Certificate<class_X509Certificate>` valid_certificate=null **)** |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`disconnect_from_stream<class_StreamPeerSSL_method_disconnect_from_stream>` **(** **)**                                                                                                                                                                                                   |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Status<enum_StreamPeerSSL_Status>` | :ref:`get_status<class_StreamPeerSSL_method_get_status>` **(** **)** const                                                                                                                                                                                                                     |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`poll<class_StreamPeerSSL_method_poll>` **(** **)**                                                                                                                                                                                                                                       |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -97,11 +97,11 @@ Method Descriptions
 
 .. _class_StreamPeerSSL_method_accept_stream:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **accept_stream** **(** :ref:`StreamPeer<class_StreamPeer>` base **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **accept_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`CryptoKey<class_CryptoKey>` private_key, :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`X509Certificate<class_X509Certificate>` chain=null **)**
 
 .. _class_StreamPeerSSL_method_connect_to_stream:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="" **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="", :ref:`X509Certificate<class_X509Certificate>` valid_certificate=null **)**
 
 Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``stream``. If ``validate_certs`` is ``true``, ``StreamPeerSSL`` will validate that the certificate presented by the peer matches the ``for_hostname``.
 

@@ -11,6 +11,8 @@ ResourceFormatSaver
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`ResourceFormatSaverCrypto<class_ResourceFormatSaverCrypto>`
+
 **Category:** Core
 
 Brief Description

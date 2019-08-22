@@ -11,6 +11,8 @@ ResourceFormatLoader
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`ResourceFormatLoaderCrypto<class_ResourceFormatLoaderCrypto>`
+
 **Category:** Core
 
 Brief Description

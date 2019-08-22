@@ -48,6 +48,8 @@ An :ref:`Array<class_Array>` specifically designed to hold integer values (:ref:
 
 **Note:** This type is passed by value and not by reference.
 
+**Note:** This type is limited to signed 32-bit integers, which means it can only take values in the interval ``[-2^31, 2^31 - 1]``, i.e. ``[-2147483648, 2147483647]``. Exceeding those bounds will wrap around. In comparison, :ref:`int<class_int>` uses signed 64-bit integers which can hold much larger values.
+
 Method Descriptions
 -------------------
 

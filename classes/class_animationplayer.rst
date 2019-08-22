@@ -414,6 +414,8 @@ If the animation has been paused by ``stop(true)``, it will be resumed backwards
 
 Queues an animation for playback once the current one is done.
 
+**Note:** If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.
+
 .. _class_AnimationPlayer_method_remove_animation:
 
 - void **remove_animation** **(** :ref:`String<class_String>` name **)**

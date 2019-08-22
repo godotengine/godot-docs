@@ -130,6 +130,12 @@ Signal sent to the GraphEdit when the connection between the ``from_slot`` slot 
 
 Signal sent when user dragging connection from output port into empty space of the graph.
 
+.. _class_GraphEdit_signal_copy_nodes_request:
+
+- **copy_nodes_request** **(** **)**
+
+Signal sent when the user presses ``Ctrl + C``.
+
 .. _class_GraphEdit_signal_delete_nodes_request:
 
 - **delete_nodes_request** **(** **)**
@@ -153,6 +159,12 @@ Emitted when a GraphNode is attempted to be duplicated in the GraphEdit.
 - **node_selected** **(** :ref:`Node<class_Node>` node **)**
 
 Emitted when a GraphNode is selected.
+
+.. _class_GraphEdit_signal_paste_nodes_request:
+
+- **paste_nodes_request** **(** **)**
+
+Signal sent when the user presses ``Ctrl + V``.
 
 .. _class_GraphEdit_signal_popup_request:
 

@@ -11,7 +11,7 @@ VisualShaderNode
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VisualShaderNodeBooleanConstant<class_VisualShaderNodeBooleanConstant>`, :ref:`VisualShaderNodeColorConstant<class_VisualShaderNodeColorConstant>`, :ref:`VisualShaderNodeColorFunc<class_VisualShaderNodeColorFunc>`, :ref:`VisualShaderNodeColorOp<class_VisualShaderNodeColorOp>`, :ref:`VisualShaderNodeCompare<class_VisualShaderNodeCompare>`, :ref:`VisualShaderNodeCubeMap<class_VisualShaderNodeCubeMap>`, :ref:`VisualShaderNodeCubeMapUniform<class_VisualShaderNodeCubeMapUniform>`, :ref:`VisualShaderNodeDeterminant<class_VisualShaderNodeDeterminant>`, :ref:`VisualShaderNodeDotProduct<class_VisualShaderNodeDotProduct>`, :ref:`VisualShaderNodeFaceForward<class_VisualShaderNodeFaceForward>`, :ref:`VisualShaderNodeFresnel<class_VisualShaderNodeFresnel>`, :ref:`VisualShaderNodeGroupBase<class_VisualShaderNodeGroupBase>`, :ref:`VisualShaderNodeIf<class_VisualShaderNodeIf>`, :ref:`VisualShaderNodeInput<class_VisualShaderNodeInput>`, :ref:`VisualShaderNodeIs<class_VisualShaderNodeIs>`, :ref:`VisualShaderNodeOuterProduct<class_VisualShaderNodeOuterProduct>`, :ref:`VisualShaderNodeOutput<class_VisualShaderNodeOutput>`, :ref:`VisualShaderNodeScalarClamp<class_VisualShaderNodeScalarClamp>`, :ref:`VisualShaderNodeScalarConstant<class_VisualShaderNodeScalarConstant>`, :ref:`VisualShaderNodeScalarDerivativeFunc<class_VisualShaderNodeScalarDerivativeFunc>`, :ref:`VisualShaderNodeScalarFunc<class_VisualShaderNodeScalarFunc>`, :ref:`VisualShaderNodeScalarInterp<class_VisualShaderNodeScalarInterp>`, :ref:`VisualShaderNodeScalarOp<class_VisualShaderNodeScalarOp>`, :ref:`VisualShaderNodeScalarSmoothStep<class_VisualShaderNodeScalarSmoothStep>`, :ref:`VisualShaderNodeSwitch<class_VisualShaderNodeSwitch>`, :ref:`VisualShaderNodeTexture<class_VisualShaderNodeTexture>`, :ref:`VisualShaderNodeTransformCompose<class_VisualShaderNodeTransformCompose>`, :ref:`VisualShaderNodeTransformConstant<class_VisualShaderNodeTransformConstant>`, :ref:`VisualShaderNodeTransformDecompose<class_VisualShaderNodeTransformDecompose>`, :ref:`VisualShaderNodeTransformFunc<class_VisualShaderNodeTransformFunc>`, :ref:`VisualShaderNodeTransformMult<class_VisualShaderNodeTransformMult>`, :ref:`VisualShaderNodeTransformVecMult<class_VisualShaderNodeTransformVecMult>`, :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>`, :ref:`VisualShaderNodeVec3Constant<class_VisualShaderNodeVec3Constant>`, :ref:`VisualShaderNodeVectorClamp<class_VisualShaderNodeVectorClamp>`, :ref:`VisualShaderNodeVectorCompose<class_VisualShaderNodeVectorCompose>`, :ref:`VisualShaderNodeVectorDecompose<class_VisualShaderNodeVectorDecompose>`, :ref:`VisualShaderNodeVectorDerivativeFunc<class_VisualShaderNodeVectorDerivativeFunc>`, :ref:`VisualShaderNodeVectorDistance<class_VisualShaderNodeVectorDistance>`, :ref:`VisualShaderNodeVectorFunc<class_VisualShaderNodeVectorFunc>`, :ref:`VisualShaderNodeVectorInterp<class_VisualShaderNodeVectorInterp>`, :ref:`VisualShaderNodeVectorLen<class_VisualShaderNodeVectorLen>`, :ref:`VisualShaderNodeVectorOp<class_VisualShaderNodeVectorOp>`, :ref:`VisualShaderNodeVectorRefract<class_VisualShaderNodeVectorRefract>`, :ref:`VisualShaderNodeVectorScalarSmoothStep<class_VisualShaderNodeVectorScalarSmoothStep>`, :ref:`VisualShaderNodeVectorScalarStep<class_VisualShaderNodeVectorScalarStep>`, :ref:`VisualShaderNodeVectorSmoothStep<class_VisualShaderNodeVectorSmoothStep>`
+**Inherited By:** :ref:`VisualShaderNodeBooleanConstant<class_VisualShaderNodeBooleanConstant>`, :ref:`VisualShaderNodeColorConstant<class_VisualShaderNodeColorConstant>`, :ref:`VisualShaderNodeColorFunc<class_VisualShaderNodeColorFunc>`, :ref:`VisualShaderNodeColorOp<class_VisualShaderNodeColorOp>`, :ref:`VisualShaderNodeCompare<class_VisualShaderNodeCompare>`, :ref:`VisualShaderNodeCubeMap<class_VisualShaderNodeCubeMap>`, :ref:`VisualShaderNodeCubeMapUniform<class_VisualShaderNodeCubeMapUniform>`, :ref:`VisualShaderNodeCustom<class_VisualShaderNodeCustom>`, :ref:`VisualShaderNodeDeterminant<class_VisualShaderNodeDeterminant>`, :ref:`VisualShaderNodeDotProduct<class_VisualShaderNodeDotProduct>`, :ref:`VisualShaderNodeFaceForward<class_VisualShaderNodeFaceForward>`, :ref:`VisualShaderNodeFresnel<class_VisualShaderNodeFresnel>`, :ref:`VisualShaderNodeGroupBase<class_VisualShaderNodeGroupBase>`, :ref:`VisualShaderNodeIf<class_VisualShaderNodeIf>`, :ref:`VisualShaderNodeInput<class_VisualShaderNodeInput>`, :ref:`VisualShaderNodeIs<class_VisualShaderNodeIs>`, :ref:`VisualShaderNodeOuterProduct<class_VisualShaderNodeOuterProduct>`, :ref:`VisualShaderNodeOutput<class_VisualShaderNodeOutput>`, :ref:`VisualShaderNodeScalarClamp<class_VisualShaderNodeScalarClamp>`, :ref:`VisualShaderNodeScalarConstant<class_VisualShaderNodeScalarConstant>`, :ref:`VisualShaderNodeScalarDerivativeFunc<class_VisualShaderNodeScalarDerivativeFunc>`, :ref:`VisualShaderNodeScalarFunc<class_VisualShaderNodeScalarFunc>`, :ref:`VisualShaderNodeScalarInterp<class_VisualShaderNodeScalarInterp>`, :ref:`VisualShaderNodeScalarOp<class_VisualShaderNodeScalarOp>`, :ref:`VisualShaderNodeScalarSmoothStep<class_VisualShaderNodeScalarSmoothStep>`, :ref:`VisualShaderNodeSwitch<class_VisualShaderNodeSwitch>`, :ref:`VisualShaderNodeTexture<class_VisualShaderNodeTexture>`, :ref:`VisualShaderNodeTransformCompose<class_VisualShaderNodeTransformCompose>`, :ref:`VisualShaderNodeTransformConstant<class_VisualShaderNodeTransformConstant>`, :ref:`VisualShaderNodeTransformDecompose<class_VisualShaderNodeTransformDecompose>`, :ref:`VisualShaderNodeTransformFunc<class_VisualShaderNodeTransformFunc>`, :ref:`VisualShaderNodeTransformMult<class_VisualShaderNodeTransformMult>`, :ref:`VisualShaderNodeTransformVecMult<class_VisualShaderNodeTransformVecMult>`, :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>`, :ref:`VisualShaderNodeVec3Constant<class_VisualShaderNodeVec3Constant>`, :ref:`VisualShaderNodeVectorClamp<class_VisualShaderNodeVectorClamp>`, :ref:`VisualShaderNodeVectorCompose<class_VisualShaderNodeVectorCompose>`, :ref:`VisualShaderNodeVectorDecompose<class_VisualShaderNodeVectorDecompose>`, :ref:`VisualShaderNodeVectorDerivativeFunc<class_VisualShaderNodeVectorDerivativeFunc>`, :ref:`VisualShaderNodeVectorDistance<class_VisualShaderNodeVectorDistance>`, :ref:`VisualShaderNodeVectorFunc<class_VisualShaderNodeVectorFunc>`, :ref:`VisualShaderNodeVectorInterp<class_VisualShaderNodeVectorInterp>`, :ref:`VisualShaderNodeVectorLen<class_VisualShaderNodeVectorLen>`, :ref:`VisualShaderNodeVectorOp<class_VisualShaderNodeVectorOp>`, :ref:`VisualShaderNodeVectorRefract<class_VisualShaderNodeVectorRefract>`, :ref:`VisualShaderNodeVectorScalarMix<class_VisualShaderNodeVectorScalarMix>`, :ref:`VisualShaderNodeVectorScalarSmoothStep<class_VisualShaderNodeVectorScalarSmoothStep>`, :ref:`VisualShaderNodeVectorScalarStep<class_VisualShaderNodeVectorScalarStep>`, :ref:`VisualShaderNodeVectorSmoothStep<class_VisualShaderNodeVectorSmoothStep>`
 
 **Category:** Core
 
@@ -44,6 +44,33 @@ Signals
 .. _class_VisualShaderNode_signal_editor_refresh_request:
 
 - **editor_refresh_request** **(** **)**
+
+Enumerations
+------------
+
+.. _enum_VisualShaderNode_PortType:
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_SCALAR:
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_VECTOR:
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_BOOLEAN:
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_TRANSFORM:
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_ICON_COLOR:
+
+enum **PortType**:
+
+- **PORT_TYPE_SCALAR** = **0** --- Floating-point scalar. Translated to ``float`` type in shader code.
+
+- **PORT_TYPE_VECTOR** = **1** --- 3D vector of floating-point values. Translated to ``vec3`` type in shader code.
+
+- **PORT_TYPE_BOOLEAN** = **2** --- Boolean type. Translated to ``bool`` type in shader code.
+
+- **PORT_TYPE_TRANSFORM** = **3** --- Transform type. Translated to ``mat4`` type in shader code.
+
+- **PORT_TYPE_ICON_COLOR** = **4** --- Color type. Can be used for return icon type in members dialog (see :ref:`VisualShaderNodeCustom._get_return_icon_type<class_VisualShaderNodeCustom_method__get_return_icon_type>`) - do not use it in other cases!
 
 Property Descriptions
 ---------------------

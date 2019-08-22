@@ -100,6 +100,8 @@ Methods
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`stop_joy_vibration<class_Input_method_stop_joy_vibration>` **(** :ref:`int<class_int>` device **)**                                                                                                                               |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` **(** :ref:`int<class_int>` duration_ms=500 **)**                                                                                                                          |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`warp_mouse_position<class_Input_method_warp_mouse_position>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                                         |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -227,6 +229,8 @@ Method Descriptions
 This will simulate pressing the specified action.
 
 The strength can be used for non-boolean actions, it's ranged between 0 and 1 representing the intensity of the given action.
+
+**Note:** This method will not cause any :ref:`Node._input<class_Node_method__input>` calls. It is intended to be used with :ref:`is_action_pressed<class_Input_method_is_action_pressed>` and :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>`. If you want to simulate ``_input``, use :ref:`parse_input_event<class_Input_method_parse_input_event>` instead.
 
 .. _class_Input_method_action_release:
 
@@ -372,7 +376,7 @@ Returns ``true`` when the user stops pressing the action event, meaning it's ``t
 
 - :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`String<class_String>` action **)** const
 
-Returns ``true`` if you are pressing the action event.
+Returns ``true`` if you are pressing the action event. Note that if an action has multiple buttons asigned and more than one of them is pressed, releasing one button will release the action, even if some other button assigned to this action is still pressed.
 
 .. _class_Input_method_is_joy_button_pressed:
 
@@ -406,7 +410,16 @@ Returns ``true`` if you are pressing the mouse button specified with :ref:`Butto
 
 - void **parse_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)**
 
-Feeds an :ref:`InputEvent<class_InputEvent>` to the game. Can be used to artificially trigger input events from code.
+Feeds an :ref:`InputEvent<class_InputEvent>` to the game. Can be used to artificially trigger input events from code. Also generates :ref:`Node._input<class_Node_method__input>` calls.
+
+Example:
+
+::
+
+    var a = InputEventAction.new()
+    a.action = "ui_cancel"
+    a.pressed = true
+    Input.parse_input_event(a)
 
 .. _class_Input_method_remove_joy_mapping:
 
@@ -459,6 +472,14 @@ Starts to vibrate the joypad. Joypads usually come with two rumble motors, a str
 - void **stop_joy_vibration** **(** :ref:`int<class_int>` device **)**
 
 Stops the vibration of the joypad.
+
+.. _class_Input_method_vibrate_handheld:
+
+- void **vibrate_handheld** **(** :ref:`int<class_int>` duration_ms=500 **)**
+
+Vibrate Android and iOS devices.
+
+**Note:** It needs VIBRATE permission for Android at export settings. iOS does not support duration.
 
 .. _class_Input_method_warp_mouse_position:
 

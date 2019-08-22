@@ -11,6 +11,8 @@ VisualShaderNodeExpression
 
 **Inherits:** :ref:`VisualShaderNodeGroupBase<class_VisualShaderNodeGroupBase>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`VisualShaderNodeGlobalExpression<class_VisualShaderNodeGlobalExpression>`
+
 **Category:** Core
 
 Brief Description

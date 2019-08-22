@@ -141,7 +141,7 @@ Returns whether ``class`` or its ancestry has an integer constant called ``name`
 
 - :ref:`bool<class_bool>` **class_has_method** **(** :ref:`String<class_String>` class, :ref:`String<class_String>` method, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
-Returns whether ``class`` (or its ancestry if ``no_inheritance`` is false) has a method called ``method`` or not.
+Returns whether ``class`` (or its ancestry if ``no_inheritance`` is ``false``) has a method called ``method`` or not.
 
 .. _class_ClassDB_method_class_has_signal:
 
@@ -183,7 +183,7 @@ Creates an instance of ``class``.
 
 - :ref:`bool<class_bool>` **is_class_enabled** **(** :ref:`String<class_String>` class **)** const
 
-Returns whether this class is enabled or not.
+Returns whether this ``class`` is enabled or not.
 
 .. _class_ClassDB_method_is_parent_class:
 

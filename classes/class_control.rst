@@ -18,7 +18,7 @@ Control
 Brief Description
 -----------------
 
-All User Interface nodes inherit from Control. A control's anchors and margins adapt its position and size relative to its parent.
+All user interface nodes inherit from Control. A control's anchors and margins adapt its position and size relative to its parent.
 
 Properties
 ----------
@@ -460,13 +460,13 @@ enum **LayoutPreset**:
 
 enum **LayoutPresetMode**:
 
-- **PRESET_MODE_MINSIZE** = **0**
+- **PRESET_MODE_MINSIZE** = **0** --- The control will be resized to its minimum size.
 
-- **PRESET_MODE_KEEP_WIDTH** = **1**
+- **PRESET_MODE_KEEP_WIDTH** = **1** --- The control's width will not change.
 
-- **PRESET_MODE_KEEP_HEIGHT** = **2**
+- **PRESET_MODE_KEEP_HEIGHT** = **2** --- The control's height will not change.
 
-- **PRESET_MODE_KEEP_SIZE** = **3**
+- **PRESET_MODE_KEEP_SIZE** = **3** --- The control's size will not change.
 
 .. _enum_Control_SizeFlags:
 
@@ -612,7 +612,7 @@ Property Descriptions
 | *Getter*  | get_anchor() |
 +-----------+--------------+
 
-Anchors the bottom edge of the node to the origin, the center, or the end of its parent control. It changes how the bottom margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience.
+Anchors the bottom edge of the node to the origin, the center, or the end of its parent control. It changes how the bottom margin updates when the node moves or changes size. You can use one of the :ref:`Anchor<enum_Control_Anchor>` constants for convenience.
 
 .. _class_Control_property_anchor_left:
 
@@ -624,7 +624,7 @@ Anchors the bottom edge of the node to the origin, the center, or the end of its
 | *Getter*  | get_anchor() |
 +-----------+--------------+
 
-Anchors the left edge of the node to the origin, the center or the end of its parent control. It changes how the left margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience.
+Anchors the left edge of the node to the origin, the center or the end of its parent control. It changes how the left margin updates when the node moves or changes size. You can use one of the :ref:`Anchor<enum_Control_Anchor>` constants for convenience.
 
 .. _class_Control_property_anchor_right:
 
@@ -636,7 +636,7 @@ Anchors the left edge of the node to the origin, the center or the end of its pa
 | *Getter*  | get_anchor() |
 +-----------+--------------+
 
-Anchors the right edge of the node to the origin, the center or the end of its parent control. It changes how the right margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience.
+Anchors the right edge of the node to the origin, the center or the end of its parent control. It changes how the right margin updates when the node moves or changes size. You can use one of the :ref:`Anchor<enum_Control_Anchor>` constants for convenience.
 
 .. _class_Control_property_anchor_top:
 
@@ -648,7 +648,7 @@ Anchors the right edge of the node to the origin, the center or the end of its p
 | *Getter*  | get_anchor() |
 +-----------+--------------+
 
-Anchors the top edge of the node to the origin, the center or the end of its parent control. It changes how the top margin updates when the node moves or changes size. You can use  one of the ``ANCHOR_*`` constants for convenience.
+Anchors the top edge of the node to the origin, the center or the end of its parent control. It changes how the top margin updates when the node moves or changes size. You can use  one of the :ref:`Anchor<enum_Control_Anchor>` constants for convenience.
 
 .. _class_Control_property_focus_mode:
 
@@ -790,7 +790,7 @@ Controls the direction on the vertical axis in which the control should grow if 
 | *Setter*  | set_tooltip(value) |
 +-----------+--------------------+
 
-Changes the tooltip text. The tooltip appears when the user's mouse cursor stays idle over this control for a few moments, provided that the :ref:`mouse_filter<class_Control_property_mouse_filter>` property is not :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>`.
+Changes the tooltip text. The tooltip appears when the user's mouse cursor stays idle over this control for a few moments, provided that the :ref:`mouse_filter<class_Control_property_mouse_filter>` property is not :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>`. You can change the time required for the tooltip to appear with ``gui/timers/tooltip_delay_sec`` option in Project Settings.
 
 .. _class_Control_property_margin_bottom:
 
@@ -1002,7 +1002,7 @@ The size of the node's bounding rectangle, in pixels. :ref:`Container<class_Cont
 | *Getter*  | get_h_size_flags()      |
 +-----------+-------------------------+
 
-Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the X axis. Use one of the ``SIZE_*`` constants to change the flags. See the constants to learn what each does.
+Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the X axis. Use one of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
 
 .. _class_Control_property_size_flags_stretch_ratio:
 
@@ -1030,7 +1030,7 @@ If the node and at least one of its neighbours uses the :ref:`SIZE_EXPAND<class_
 | *Getter*  | get_v_size_flags()      |
 +-----------+-------------------------+
 
-Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the Y axis. Use one of the ``SIZE_*`` constants to change the flags. See the constants to learn what each does.
+Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the Y axis. Use one of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
 
 .. _class_Control_property_theme:
 
@@ -1051,23 +1051,72 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_clips_input** **(** **)** virtual
 
+Virtual method to be implemented by the user. Returns whether :ref:`_gui_input<class_Control_method__gui_input>` should not be called for children controls outside this control's rectangle. Input will be clipped to the Rect of this ``Control``. Similar to :ref:`rect_clip_content<class_Control_property_rect_clip_content>`, but doesn't affect visibility.
+
+If not overriden, defaults to ``false``.
+
 .. _class_Control_method__get_minimum_size:
 
 - :ref:`Vector2<class_Vector2>` **_get_minimum_size** **(** **)** virtual
 
-Returns the minimum size for this control. See :ref:`rect_min_size<class_Control_property_rect_min_size>`.
+Virtual method to be implemented by the user. Returns the minimum size for this control. Alternative to :ref:`rect_min_size<class_Control_property_rect_min_size>` for controlling minimum size via code. The actual minimum size will be the max value of these two (in each axis separately).
+
+If not overriden, defaults to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
 
 .. _class_Control_method__gui_input:
 
 - void **_gui_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
 
-Use this method to process and accept inputs on UI elements. See :ref:`accept_event<class_Control_method_accept_event>`.
+Virtual method to be implemented by the user. Use this method to process and accept inputs on UI elements. See :ref:`accept_event<class_Control_method_accept_event>`.
 
-Replaces Godot 2's ``_input_event``.
+Example: clicking a control.
+
+::
+
+    func _gui_input(event):
+        if event is InputEventMouseButton:
+            if event.button_index == BUTTON_LEFT and event.pressed:
+                print("I've been clicked D:")
+
+The event won't trigger if:
+
+\* clicking outside the control (see :ref:`has_point<class_Control_method_has_point>`);
+
+\* control has :ref:`mouse_filter<class_Control_property_mouse_filter>` set to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>`;
+
+\* control is obstructed by another ``Control`` on top of it, which doesn't have :ref:`mouse_filter<class_Control_property_mouse_filter>` set to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>`;
+
+\* control's parent has :ref:`mouse_filter<class_Control_property_mouse_filter>` set to :ref:`MOUSE_FILTER_STOP<class_Control_constant_MOUSE_FILTER_STOP>` or has accepted the event;
+
+\* it happens outside parent's rectangle and the parent has either :ref:`rect_clip_content<class_Control_property_rect_clip_content>` or :ref:`_clips_input<class_Control_method__clips_input>` enabled.
 
 .. _class_Control_method__make_custom_tooltip:
 
 - :ref:`Object<class_Object>` **_make_custom_tooltip** **(** :ref:`String<class_String>` for_text **)** virtual
+
+Virtual method to be implemented by the user. Returns a ``Control`` node that should be used as a tooltip instead of the default one. Use ``for_text`` parameter to determine what text the tooltip should contain (likely the contents of :ref:`hint_tooltip<class_Control_property_hint_tooltip>`).
+
+The returned node must be of type ``Control`` or Control-derieved. It can have child nodes of any type. It is freed when the tooltip disappears, so make sure you always provide a new instance, not e.g. a node from scene. When null or non-Control node is returned, the default tooltip will be used instead.
+
+**Note:** The tooltip is shrunk to minimal size. If you want to ensure it's fully visible, you might want to set its :ref:`rect_min_size<class_Control_property_rect_min_size>` to some non-zero value.
+
+Example of usage with custom-constructed node:
+
+::
+
+    func _make_custom_tooltip(for_text):
+        var label = Label.new()
+        label.text = for_text
+        return label
+
+Example of usage with custom scene instance:
+
+::
+
+    func _make_custom_tooltip(for_text):
+        var tooltip = preload("SomeTooltipScene.tscn").instance()
+        tooltip.get_node("Label").text = for_text
+        return tooltip
 
 .. _class_Control_method_accept_event:
 
@@ -1079,37 +1128,37 @@ Marks an input event as handled. Once you accept an input event, it stops propag
 
 - void **add_color_override** **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color **)**
 
-Overrides the color in the :ref:`theme<class_Control_property_theme>` resource the node uses.
+Overrides the :ref:`Color<class_Color>` with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If the ``color`` is empty or invalid, the override is cleared and the color from assigned :ref:`Theme<class_Theme>` is used.
 
 .. _class_Control_method_add_constant_override:
 
 - void **add_constant_override** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` constant **)**
 
-Overrides an integer constant in the :ref:`theme<class_Control_property_theme>` resource the node uses. If the ``constant`` is invalid, Godot clears the override.
+Overrides an integer constant with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If the ``constant`` is empty or invalid, the override is cleared and the constant from assigned :ref:`Theme<class_Theme>` is used.
 
 .. _class_Control_method_add_font_override:
 
 - void **add_font_override** **(** :ref:`String<class_String>` name, :ref:`Font<class_Font>` font **)**
 
-Overrides the ``name`` font in the :ref:`theme<class_Control_property_theme>` resource the node uses. If ``font`` is empty, Godot clears the override.
+Overrides the font with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If ``font`` is empty or invalid, the override is cleared and the font from assigned :ref:`Theme<class_Theme>` is used.
 
 .. _class_Control_method_add_icon_override:
 
 - void **add_icon_override** **(** :ref:`String<class_String>` name, :ref:`Texture<class_Texture>` texture **)**
 
-Overrides the ``name`` icon in the :ref:`theme<class_Control_property_theme>` resource the node uses. If ``icon`` is empty, Godot clears the override.
+Overrides the icon with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If ``icon`` is empty or invalid, the override is cleared and the icon from assigned :ref:`Theme<class_Theme>` is used.
 
 .. _class_Control_method_add_shader_override:
 
 - void **add_shader_override** **(** :ref:`String<class_String>` name, :ref:`Shader<class_Shader>` shader **)**
 
-Overrides the ``name`` shader in the :ref:`theme<class_Control_property_theme>` resource the node uses. If ``shader`` is empty, Godot clears the override.
+Overrides the :ref:`Shader<class_Shader>` with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If ``shader`` is empty or invalid, the override is cleared and the shader from assigned :ref:`Theme<class_Theme>` is used.
 
 .. _class_Control_method_add_stylebox_override:
 
 - void **add_stylebox_override** **(** :ref:`String<class_String>` name, :ref:`StyleBox<class_StyleBox>` stylebox **)**
 
-Overrides the ``name`` :ref:`StyleBox<class_StyleBox>` in the :ref:`theme<class_Control_property_theme>` resource the node uses. If ``stylebox`` is empty, Godot clears the override.
+Overrides the :ref:`StyleBox<class_StyleBox>` with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If ``stylebox`` is empty or invalid, the override is cleared and the :ref:`StyleBox<class_StyleBox>` from assigned :ref:`Theme<class_Theme>` is used.
 
 .. _class_Control_method_can_drop_data:
 
@@ -1121,8 +1170,6 @@ This method should only be used to test the data. Process the data in :ref:`drop
 
 ::
 
-    extends Control
-    
     func can_drop_data(position, data):
         # Check position if it is relevant to you
         # Otherwise, just check data
@@ -1136,8 +1183,6 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`get_drag
 
 ::
 
-    extends ColorRect
-    
     func can_drop_data(position, data):
         return typeof(data) == TYPE_DICTIONARY and data.has("color")
     
@@ -1156,6 +1201,8 @@ The methods :ref:`can_drop_data<class_Control_method_can_drop_data>` and :ref:`d
 
 - :ref:`float<class_float>` **get_anchor** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
+Returns the anchor identified by ``margin`` constant from :ref:`Margin<enum_@GlobalScope_Margin>` enum. A getter method for :ref:`anchor_bottom<class_Control_property_anchor_bottom>`, :ref:`anchor_left<class_Control_property_anchor_left>`, :ref:`anchor_right<class_Control_property_anchor_right>` and :ref:`anchor_top<class_Control_property_anchor_top>`.
+
 .. _class_Control_method_get_begin:
 
 - :ref:`Vector2<class_Vector2>` **get_begin** **(** **)** const
@@ -1166,13 +1213,24 @@ Returns :ref:`margin_left<class_Control_property_margin_left>` and :ref:`margin_
 
 - :ref:`Color<class_Color>` **get_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
 
+Returns a color from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
+
+::
+
+    func _ready():
+        modulate = get_color("font_color", "Button") #get the color defined for button fonts
+
 .. _class_Control_method_get_combined_minimum_size:
 
 - :ref:`Vector2<class_Vector2>` **get_combined_minimum_size** **(** **)** const
 
+Returns combined minimum size from :ref:`rect_min_size<class_Control_property_rect_min_size>` and :ref:`get_minimum_size<class_Control_method_get_minimum_size>`.
+
 .. _class_Control_method_get_constant:
 
 - :ref:`int<class_int>` **get_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+
+Returns a constant from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
 .. _class_Control_method_get_cursor_shape:
 
@@ -1190,8 +1248,6 @@ A preview that will follow the mouse that should represent the data can be set w
 
 ::
 
-    extends Control
-    
     func get_drag_data(position):
         var mydata = make_data()
         set_drag_preview(make_preview(mydata))
@@ -1207,6 +1263,8 @@ Returns :ref:`margin_right<class_Control_property_margin_right>` and :ref:`margi
 
 - :ref:`NodePath<class_NodePath>` **get_focus_neighbour** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
+Returns the focus neighbour identified by ``margin`` constant from :ref:`Margin<enum_@GlobalScope_Margin>` enum. A getter method for :ref:`focus_neighbour_bottom<class_Control_property_focus_neighbour_bottom>`, :ref:`focus_neighbour_left<class_Control_property_focus_neighbour_left>`, :ref:`focus_neighbour_right<class_Control_property_focus_neighbour_right>` and :ref:`focus_neighbour_top<class_Control_property_focus_neighbour_top>`.
+
 .. _class_Control_method_get_focus_owner:
 
 - :ref:`Control<class_Control>` **get_focus_owner** **(** **)** const
@@ -1216,6 +1274,8 @@ Returns the control that has the keyboard focus or ``null`` if none.
 .. _class_Control_method_get_font:
 
 - :ref:`Font<class_Font>` **get_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+
+Returns a font from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
 .. _class_Control_method_get_global_rect:
 
@@ -1227,9 +1287,13 @@ Returns the position and size of the control relative to the top-left corner of 
 
 - :ref:`Texture<class_Texture>` **get_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
 
+Returns an icon from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
+
 .. _class_Control_method_get_margin:
 
 - :ref:`float<class_float>` **get_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+Returns the anchor identified by ``margin`` constant from :ref:`Margin<enum_@GlobalScope_Margin>` enum. A getter method for :ref:`margin_bottom<class_Control_property_margin_bottom>`, :ref:`margin_left<class_Control_property_margin_left>`, :ref:`margin_right<class_Control_property_margin_right>` and :ref:`margin_top<class_Control_property_margin_top>`.
 
 .. _class_Control_method_get_minimum_size:
 
@@ -1265,15 +1329,24 @@ Returns the rotation (in radians).
 
 - :ref:`StyleBox<class_StyleBox>` **get_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
 
+Returns a :ref:`StyleBox<class_StyleBox>` from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
+
 .. _class_Control_method_get_tooltip:
 
 - :ref:`String<class_String>` **get_tooltip** **(** :ref:`Vector2<class_Vector2>` at_position=Vector2( 0, 0 ) **)** const
 
-Returns the tooltip, which will appear when the cursor is resting over this control.
+Returns the tooltip, which will appear when the cursor is resting over this control. See :ref:`hint_tooltip<class_Control_property_hint_tooltip>`.
 
 .. _class_Control_method_grab_click_focus:
 
 - void **grab_click_focus** **(** **)**
+
+Creates an :ref:`InputEventMouseButton<class_InputEventMouseButton>` that attempts to click the control. If the event is received, the control aquires focus.
+
+::
+
+    func _process(delta):
+        grab_click_focus() #when clicking another Control node, this node will be clicked instead
 
 .. _class_Control_method_grab_focus:
 
@@ -1285,17 +1358,25 @@ Steal the focus from another control and become the focused control (see :ref:`f
 
 - :ref:`bool<class_bool>` **has_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
 
+Returns ``true`` if :ref:`Color<class_Color>` with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
+
 .. _class_Control_method_has_color_override:
 
 - :ref:`bool<class_bool>` **has_color_override** **(** :ref:`String<class_String>` name **)** const
+
+Returns ``true`` if :ref:`Color<class_Color>` with given ``name`` has a valid override in this ``Control`` node.
 
 .. _class_Control_method_has_constant:
 
 - :ref:`bool<class_bool>` **has_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
 
+Returns ``true`` if constant with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
+
 .. _class_Control_method_has_constant_override:
 
 - :ref:`bool<class_bool>` **has_constant_override** **(** :ref:`String<class_String>` name **)** const
+
+Returns ``true`` if constant with given ``name`` has a valid override in this ``Control`` node.
 
 .. _class_Control_method_has_focus:
 
@@ -1307,37 +1388,59 @@ Returns ``true`` if this is the current focused control. See :ref:`focus_mode<cl
 
 - :ref:`bool<class_bool>` **has_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
 
+Returns ``true`` if font with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
+
 .. _class_Control_method_has_font_override:
 
 - :ref:`bool<class_bool>` **has_font_override** **(** :ref:`String<class_String>` name **)** const
+
+Returns ``true`` if font with given ``name`` has a valid override in this ``Control`` node.
 
 .. _class_Control_method_has_icon:
 
 - :ref:`bool<class_bool>` **has_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
 
+Returns ``true`` if icon with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
+
 .. _class_Control_method_has_icon_override:
 
 - :ref:`bool<class_bool>` **has_icon_override** **(** :ref:`String<class_String>` name **)** const
+
+Returns ``true`` if icon with given ``name`` has a valid override in this ``Control`` node.
 
 .. _class_Control_method_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2<class_Vector2>` point **)** virtual
 
+Virtual method to be implemented by the user. Returns whether the given ``point`` is inside this control.
+
+If not overriden, default behavior is checking if the point is within control's Rect.
+
+**Node:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
+
 .. _class_Control_method_has_shader_override:
 
 - :ref:`bool<class_bool>` **has_shader_override** **(** :ref:`String<class_String>` name **)** const
+
+Returns ``true`` if :ref:`Shader<class_Shader>` with given ``name`` has a valid override in this ``Control`` node.
 
 .. _class_Control_method_has_stylebox:
 
 - :ref:`bool<class_bool>` **has_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
 
+Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
+
 .. _class_Control_method_has_stylebox_override:
 
 - :ref:`bool<class_bool>` **has_stylebox_override** **(** :ref:`String<class_String>` name **)** const
 
+Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with given ``name`` has a valid override in this ``Control`` node.
+
 .. _class_Control_method_minimum_size_changed:
 
 - void **minimum_size_changed** **(** **)**
+
+Invalidates the size cache in this node and in parent nodes up to toplevel. Intended to be used with :ref:`get_minimum_size<class_Control_method_get_minimum_size>` when the return value is changed. Setting :ref:`rect_min_size<class_Control_property_rect_min_size>` directly calls this method automatically.
 
 .. _class_Control_method_release_focus:
 
@@ -1349,23 +1452,37 @@ Give up the focus. No other control will be able to receive keyboard input.
 
 - void **set_anchor** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` anchor, :ref:`bool<class_bool>` keep_margin=false, :ref:`bool<class_bool>` push_opposite_anchor=true **)**
 
+Sets the anchor identified by ``margin`` constant from :ref:`Margin<enum_@GlobalScope_Margin>` enum to value ``anchor``. A setter method for :ref:`anchor_bottom<class_Control_property_anchor_bottom>`, :ref:`anchor_left<class_Control_property_anchor_left>`, :ref:`anchor_right<class_Control_property_anchor_right>` and :ref:`anchor_top<class_Control_property_anchor_top>`.
+
+If ``keep_margin`` is ``true``, margins aren't updated after this operation.
+
+If ``push_opposite_anchor`` is ``true`` and the opposite anchor overlaps this anchor, the opposite one will have its value overriden. For example, when setting left anchor to 1 and the right anchor has value of 0.5, the right anchor will also get value of 1. If ``push_opposite_anchor`` was ``false``, the left anchor would get value 0.5.
+
 .. _class_Control_method_set_anchor_and_margin:
 
 - void **set_anchor_and_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` anchor, :ref:`float<class_float>` offset, :ref:`bool<class_bool>` push_opposite_anchor=false **)**
+
+Works the same as :ref:`set_anchor<class_Control_method_set_anchor>`, but instead of ``keep_margin`` argument and automatic update of margin, it allows to set the margin offset yourself (see :ref:`set_margin<class_Control_method_set_margin>`).
 
 .. _class_Control_method_set_anchors_and_margins_preset:
 
 - void **set_anchors_and_margins_preset** **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` resize_mode=0, :ref:`int<class_int>` margin=0 **)**
 
+Sets both anchor preset and margin preset. See :ref:`set_anchors_preset<class_Control_method_set_anchors_preset>` and :ref:`set_margins_preset<class_Control_method_set_margins_preset>`.
+
 .. _class_Control_method_set_anchors_preset:
 
 - void **set_anchors_preset** **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`bool<class_bool>` keep_margins=false **)**
+
+Sets the anchors to a ``preset`` from :ref:`LayoutPreset<enum_Control_LayoutPreset>` enum. This is code equivalent of using the Layout menu in 2D editor.
+
+If ``keep_margins`` is ``true``, control's position will also be updated.
 
 .. _class_Control_method_set_begin:
 
 - void **set_begin** **(** :ref:`Vector2<class_Vector2>` position **)**
 
-Sets :ref:`margin_left<class_Control_property_margin_left>` and :ref:`margin_top<class_Control_property_margin_top>` at the same time.
+Sets :ref:`margin_left<class_Control_property_margin_left>` and :ref:`margin_top<class_Control_property_margin_top>` at the same time. Equivalent of changing :ref:`rect_position<class_Control_property_rect_position>`.
 
 .. _class_Control_method_set_drag_forwarding:
 
@@ -1414,21 +1531,39 @@ Sets :ref:`margin_right<class_Control_property_margin_right>` and :ref:`margin_b
 
 - void **set_focus_neighbour** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`NodePath<class_NodePath>` neighbour **)**
 
+Sets the anchor identified by ``margin`` constant from :ref:`Margin<enum_@GlobalScope_Margin>` enum to ``Control`` at ``neighbor`` node path. A setter method for :ref:`focus_neighbour_bottom<class_Control_property_focus_neighbour_bottom>`, :ref:`focus_neighbour_left<class_Control_property_focus_neighbour_left>`, :ref:`focus_neighbour_right<class_Control_property_focus_neighbour_right>` and :ref:`focus_neighbour_top<class_Control_property_focus_neighbour_top>`.
+
 .. _class_Control_method_set_global_position:
 
 - void **set_global_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` keep_margins=false **)**
+
+Sets the :ref:`rect_global_position<class_Control_property_rect_global_position>` to given ``position``.
+
+If ``keep_margins`` is ``true``, control's anchors will be updated instead of margins.
 
 .. _class_Control_method_set_margin:
 
 - void **set_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` offset **)**
 
+Sets the margin identified by ``margin`` constant from :ref:`Margin<enum_@GlobalScope_Margin>` enum to given ``offset``. A setter method for :ref:`margin_bottom<class_Control_property_margin_bottom>`, :ref:`margin_left<class_Control_property_margin_left>`, :ref:`margin_right<class_Control_property_margin_right>` and :ref:`margin_top<class_Control_property_margin_top>`.
+
 .. _class_Control_method_set_margins_preset:
 
 - void **set_margins_preset** **(** :ref:`LayoutPreset<enum_Control_LayoutPreset>` preset, :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` resize_mode=0, :ref:`int<class_int>` margin=0 **)**
 
+Sets the margins to a ``preset`` from :ref:`LayoutPreset<enum_Control_LayoutPreset>` enum. This is code equivalent of using the Layout menu in 2D editor.
+
+Use parameter ``resize_mode`` with constants from :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` to better determine the resulting size of the ``Control``. Constant size will be ignored if used with presets that change size, e.g. ``PRESET_LEFT_WIDE``.
+
+Use parameter ``margin`` to determine the gap between the ``Control`` and the edges.
+
 .. _class_Control_method_set_position:
 
 - void **set_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` keep_margins=false **)**
+
+Sets the :ref:`rect_position<class_Control_property_rect_position>` to given ``position``.
+
+If ``keep_margins`` is ``true``, control's anchors will be updated instead of margins.
 
 .. _class_Control_method_set_rotation:
 
@@ -1440,13 +1575,21 @@ Sets the rotation (in radians).
 
 - void **set_size** **(** :ref:`Vector2<class_Vector2>` size, :ref:`bool<class_bool>` keep_margins=false **)**
 
+Sets the size (see :ref:`rect_size<class_Control_property_rect_size>`).
+
+If ``keep_margins`` is ``true``, control's anchors will be updated instead of margins.
+
 .. _class_Control_method_show_modal:
 
 - void **show_modal** **(** :ref:`bool<class_bool>` exclusive=false **)**
 
 Displays a control as modal. Control must be a subwindow. Modal controls capture the input signals until closed or the area outside them is accessed. When a modal control loses focus, or the ESC key is pressed, they automatically hide. Modal controls are used extensively for popup dialogs and menus.
 
+If ``exclusive`` is ``true``, other controls will not receive input and clicking outside this control will not close it.
+
 .. _class_Control_method_warp_mouse:
 
 - void **warp_mouse** **(** :ref:`Vector2<class_Vector2>` to_position **)**
+
+Moves the mouse cursor to ``to_position``, relative to :ref:`rect_position<class_Control_property_rect_position>` of this ``Control``.
 

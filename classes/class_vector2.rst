@@ -124,7 +124,7 @@ Constants
 Description
 -----------
 
-2-element structure that can be used to represent positions in 2d space or any other pair of numeric values.
+2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
 
 Tutorials
 ---------

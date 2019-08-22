@@ -1799,9 +1799,9 @@ enum **PropertyHint**:
 
 - **PROPERTY_HINT_NONE** = **0** --- No hint for the edited property.
 
-- **PROPERTY_HINT_RANGE** = **1** --- Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"allow_greater"`` and/or ``"allow_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,allow_greater,allow_lesser"``.
+- **PROPERTY_HINT_RANGE** = **1** --- Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,or_greater,or_lesser"``.
 
-- **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that an integer or float property should be within an exponential range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"allow_greater"`` and/or ``"allow_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"0.01,100,0.01,allow_greater"``.
+- **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that an integer or float property should be within an exponential range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"0.01,100,0.01,or_greater"``.
 
 - **PROPERTY_HINT_ENUM** = **3** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
 

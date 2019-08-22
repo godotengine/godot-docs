@@ -46,6 +46,10 @@ Properties
 +-----------------------------+-------------------------------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`     | :ref:`highlight_current_line<class_TextEdit_property_highlight_current_line>`             | false |
 +-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`minimap_draw<class_TextEdit_property_minimap_draw>`                                 | false |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`minimap_width<class_TextEdit_property_minimap_width>`                               | 80    |
++-----------------------------+-------------------------------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>` | false |
 +-----------------------------+-------------------------------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`     | :ref:`readonly<class_TextEdit_property_readonly>`                                         | false |
@@ -506,6 +510,30 @@ If ``true``, all occurrences of the selected text will be highlighted.
 +-----------+-------------------------------------+
 
 If ``true``, the line containing the cursor is highlighted.
+
+.. _class_TextEdit_property_minimap_draw:
+
+- :ref:`bool<class_bool>` **minimap_draw**
+
++-----------+----------------------+
+| *Default* | false                |
++-----------+----------------------+
+| *Setter*  | draw_minimap(value)  |
++-----------+----------------------+
+| *Getter*  | is_drawing_minimap() |
++-----------+----------------------+
+
+.. _class_TextEdit_property_minimap_width:
+
+- :ref:`int<class_int>` **minimap_width**
+
++-----------+--------------------------+
+| *Default* | 80                       |
++-----------+--------------------------+
+| *Setter*  | set_minimap_width(value) |
++-----------+--------------------------+
+| *Getter*  | get_minimap_width()      |
++-----------+--------------------------+
 
 .. _class_TextEdit_property_override_selected_font_color:
 

@@ -117,6 +117,8 @@ Methods
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_Image>`                 | :ref:`rgbe_to_srgb<class_Image_method_rgbe_to_srgb>` **(** **)**                                                                                                                                                                                                 |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`save_exr<class_Image_method_save_exr>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** const                                                                                                                         |
++-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`save_png<class_Image_method_save_png>` **(** :ref:`String<class_String>` path **)** const                                                                                                                                                                  |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set_pixel<class_Image_method_set_pixel>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_Color>` color **)**                                                                                                                     |
@@ -686,6 +688,12 @@ Resizes the image to the nearest power of 2 for the width and height. If ``squar
 .. _class_Image_method_rgbe_to_srgb:
 
 - :ref:`Image<class_Image>` **rgbe_to_srgb** **(** **)**
+
+.. _class_Image_method_save_exr:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **save_exr** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** const
+
+Saves the image as an EXR file to ``path``. If grayscale is true and the image has only one channel, it will be saved explicitely as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>`  if Godot was compiled without the TinyEXR module.
 
 .. _class_Image_method_save_png:
 

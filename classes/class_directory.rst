@@ -168,9 +168,9 @@ On UNIX desktop systems, returns the available space on the current directory's 
 
 Initializes the stream used to list all files and directories using the :ref:`get_next<class_Directory_method_get_next>` function, closing the current opened stream if needed. Once the stream has been processed, it should typically be closed with :ref:`list_dir_end<class_Directory_method_list_dir_end>`.
 
-If you pass ``skip_navigational``, then ``.`` and ``..`` would be filtered out.
+If ``skip_navigational`` is ``true``, ``.`` and ``..`` are filtered out.
 
-If you pass ``skip_hidden``, then hidden files would be filtered out.
+If ``skip_hidden`` is ``true``, hidden files are filtered out.
 
 .. _class_Directory_method_list_dir_end:
 

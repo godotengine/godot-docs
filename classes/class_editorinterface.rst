@@ -62,6 +62,10 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`select_file<class_EditorInterface_method_select_file>` **(** :ref:`String<class_String>` file **)**                                                      |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`set_distraction_free_mode<class_EditorInterface_method_set_distraction_free_mode>` **(** :ref:`bool<class_bool>` enter **)**                             |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`set_main_screen_editor<class_EditorInterface_method_set_main_screen_editor>` **(** :ref:`String<class_String>` name **)**                                |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`set_plugin_enabled<class_EditorInterface_method_set_plugin_enabled>` **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**     |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -188,6 +192,14 @@ Saves the scene as a file at ``path``.
 - void **select_file** **(** :ref:`String<class_String>` file **)**
 
 Selects the file, with the path provided by ``file``, in the FileSystem dock.
+
+.. _class_EditorInterface_method_set_distraction_free_mode:
+
+- void **set_distraction_free_mode** **(** :ref:`bool<class_bool>` enter **)**
+
+.. _class_EditorInterface_method_set_main_screen_editor:
+
+- void **set_main_screen_editor** **(** :ref:`String<class_String>` name **)**
 
 .. _class_EditorInterface_method_set_plugin_enabled:
 
