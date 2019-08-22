@@ -29,8 +29,8 @@ Script-Setup
 
 The feature of inheritance is useful for getting started with this design principle.
 A class should be created that describes the base features of the player. For now, a
-player will be limited to two actions: move left, move right. This means
-there will be two states: idle and run.
+player will be limited to two actions: **move left**, **move right**. This means
+there will be two states: **idle** and **run**.
 
 Below is the generic state, from which all other states will inherit.
 
@@ -61,29 +61,28 @@ Below is the generic state, from which all other states will inherit.
 	pass
 
 A few notes on the above script. First, this implementation uses a 
-''setup(change_state, animated_sprite, persistent_state)'' method to assign
+``setup(change_state, animated_sprite, persistent_state)`` method to assign
 references. These references will be instantiated in the parent of this state. This helps with something 
-in programming known as cohesion. The state of the player does not want the responsibility of creating 
-these variables, but does want to be able to use them. However, this does make the state 'coupled' to the 
+in programming known as *cohesion*. The state of the player does not want the responsibility of creating 
+these variables, but does want to be able to use them. However, this does make the state *coupled* to the 
 state's parent. This means that the state is highly reliant on whether it has a parent which contains 
-these variables. So, remember that coupling and cohesion are important concepts when it comes to code management.
+these variables. So, remember that *coupling* and *cohesion* are important concepts when it comes to code management.
 
 .. note:: 
   See the following page for more details on cohesion and coupling:
   https://courses.cs.washington.edu/courses/cse403/96sp/coupling-cohesion.html
 
 Second, there are some methods in the script for moving, but no implementation. The state script
-just uses 'pass' to show that it will not execute any instructions when the methods are called. This is important.
+just uses ``pass`` to show that it will not execute any instructions when the methods are called. This is important.
 
-Third, the ''_physics_process(delta)'' method is actually implemented here. This allows the states to have a default
-''_phyics_process(delta)'' implementation where a velocity is used to move the player. The way that the states can modify
-the movement of the player is to use the velocity variable defined in their base class, then call their base class's
-implementation of ''_physics_process(delta)''.
+Third, the ``_physics_process(delta)`` method is actually implemented here. This allows the states to have a default
+``_phyics_process(delta)`` implementation where ``velocity`` is used to move the player. The way that the states can modify
+the movement of the player is to use the ``velocity`` variable defined in their base class.
 
-Finally, this script is actually being designated as a class named ''State''. This makes refactoring the code
-easier, since the file path from using the 'load' and 'preload' functions in Godot will not be needed.
+Finally, this script is actually being designated as a class named ``State``. This makes refactoring the code
+easier, since the file path from using the ``load()`` and ``preload()`` functions in godot will not be needed.
 
-So, now that there is a base state, the three states discussed earlier can be implemented.
+So, now that there is a base state, the two states discussed earlier can be implemented.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
@@ -132,7 +131,6 @@ So, now that there is a base state, the three states discussed earlier can be im
       persistent_state.velocity += move_speed
 
     func _physics_process(delta):
-      .physics_process(delta)
       if abs(velocity) < min_move_speed:
         change_state.call_func("idle")
       persistent_state.velocity.x *= friction
@@ -148,6 +146,14 @@ So, now that there is a base state, the three states discussed earlier can be im
         persistent_state.velocity += move_speed
       else:
         change_state.call_func("idle")
+
+.. note::
+  The since the ``Run`` and ``Idle`` states extend from ``State`` which extends ``Node2D``, the function
+  ``_physics_process(delta)`` is called from the **bottom-up** meaning ``Run`` and ``Idle`` will call their
+  implementation of ``_physics_process(delta)``, then ``State`` will call its implementation, then ``Node2D``
+  will call its own implementation and so on. This may seem strange, but it is only relevant for predefined functions
+  such as ``_ready()``, ``_process(delta)``, etc. Custom functions use the normal inheritance rules of overriding
+  the base implementation.
 
 There is a round-about method for obtaining a state instance. A state factory can be used.
 
@@ -176,7 +182,7 @@ This will look for states in a dictionary and return the state if found.
 
 Now that all the states are defined with their own scripts, it is time to figure out
 how those references that passed to them will be instantiated. Since these references
-will not change even the current state will, it makes sense to call this new script ''persistent state.gd''.
+will not change it makes sense to call this new script ``persistent_state.gd``.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
@@ -217,25 +223,26 @@ will not change even the current state will, it makes sense to call this new scr
       add_child(state)
 
 .. note:: 
-  The ''persistent_state.gd'' script contains code for detecting input. This was to make the tutorial simple, but it is not usually 
+  The ``persistent_state.gd`` script contains code for detecting input. This was to make the tutorial simple, but it is not usually 
   best practice to do this.
 
 Project-Setup
 -------------
 
-This tutorial made an assumption that the node it would be attached to contained a child node which is an :ref:'AnimatedSprite <class_AnimatedSprite>'. 
-There is also the assumption that this ''AnimatedSprite'' has at least two animations, the idle and run animations. Also, the top-level node
-is assumed to be a :ref:'KinematicBody2D <class_KinematicBody2D>'.
+This tutorial made an assumption that the node it would be attached to contained a child node which is an :ref:`AnimatedSprite <class_AnimatedSprite>`. 
+There is also the assumption that this :ref:`AnimatedSprite <class_AnimatedSprite>` has at least two animations,
+the idle and run animations. Also, the top-level node is assumed to be a :ref:`KinematicBody2D <class_KinematicBody2D>`.
 
 .. image:: img/llama_run.gif
 
-.. note:: The zip file of the llama used in this tutorial is :download:'here <files/llama.zip>' and
-  the source was from 'piskel_llama <https://www.piskelapp.com/p/agxzfnBpc2tlbC1hcHByEwsSBlBpc2tlbBiAgICfx5ygCQw/edit>'_
+.. note:: 
+  The zip file of the llama used in this tutorial is :download:`here <files/llama.zip>`.
+  The source was from `piskel_llama <https://www.piskelapp.com/p/agxzfnBpc2tlbC1hcHByEwsSBlBpc2tlbBiAgICfx5ygCQw/edit>`_, but
   I couldn't find the original creator information on that page though...
-  There is also a good tutorial for sprite animation already. See :ref:'2D Sprite Animation <doc_2d_sprite_animation>'.
+  There is also a good tutorial for sprite animation already. See :ref:`2D Sprite Animation <doc_2d_sprite_animation>`.
 
-So, the only script that must be attached is 'persistent_state.gd', which  should be attached to the top node of the
-player, which is a ''KinematicBody2D''.
+So, the only script that must be attached is ``persistent_state.gd``, which  should be attached to the top node of the
+player, which is a :ref:`KinematicBody2D <class_KinematicBody2D>`.
 
 .. image:: img/state_design_node_setup.png
 
