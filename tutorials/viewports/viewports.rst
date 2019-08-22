@@ -51,7 +51,7 @@ Listener
 --------
 
 Godot supports 3D sound (in both 2D and 3D nodes); more on this can be
-found in the :ref:`Audio Streams Tutorial<doc_audio-streams>`. For this type of sound to be
+found in the :ref:`Audio Streams Tutorial<doc_audio_streams>`. For this type of sound to be
 audible, the :ref:`Viewport <class_Viewport>` needs to be enabled as a listener (for 2D or 3D).
 If you are using a custom :ref:`Viewport <class_Viewport>` to display your :ref:`World <class_World>`, don't forget
 to enable this!
