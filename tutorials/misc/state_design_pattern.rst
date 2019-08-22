@@ -11,6 +11,19 @@ only one script can be attached to a node at a time. Instead of creating a state
 within the player's control script, it would make development simpler if the states were
 separated out into different classes.
 
+There are many ways to implement a state machine with godot, and some other methods are below:
+
+* The player can have a child node for each state, which are called when utilized
+* Enums can be used in conjunction with a match statement
+* The state scripts themselves could be swapped out from a node dynamically at run-time 
+
+This tutorial will focus only on adding and removing nodes which have a state script attached. Each state
+script will be an implementation of a different state.
+
+.. note::
+  There is a great resource explaining the concept of the state design pattern here:
+  https://gameprogrammingpatterns.com/state.html
+
 Script-Setup
 ------------
 
@@ -30,17 +43,16 @@ Below is the generic state, from which all other states will inherit.
 
     var change_state
     var animated_sprite
-    var kinematic_body_2d
+    var persistent_state
     var velocity
 
     func _physics_process(delta):
-      kinematic_body_2d.move_and_slide(velocity, Vector2.UP)
+      persistent_state.move_and_slide(persistent_state.velocity, Vector2.UP)
 
-    func setup(change_state, animated_sprite, kinematic_body_2d, velocity):
+    func setup(change_state, animated_sprite, kinematic_body_2d):
 	self.change_state = change_state
 	self.animated_sprite = animated_sprite
-	self.kinematic_body_2d = kinematic_body_2d
-        self.velocity = velocity
+	self.persistent_state = persistent_state
 
     func move_left():
 	pass
@@ -49,7 +61,7 @@ Below is the generic state, from which all other states will inherit.
 	pass
 
 A few notes on the above script. First, this implementation uses a 
-''setup(change_state, animated_sprite, kinematic_body_2d, velocity)'' method to assign
+''setup(change_state, animated_sprite, persistent_state)'' method to assign
 references. These references will be instantiated in the parent of this state. This helps with something 
 in programming known as cohesion. The state of the player does not want the responsibility of creating 
 these variables, but does want to be able to use them. However, this does make the state 'coupled' to the 
@@ -117,23 +129,23 @@ So, now that there is a base state, the three states discussed earlier can be im
       animated_sprite.play("run")
       if animated_sprite.flip_h:
          move_speed.x *= -1
-      velocity += move_speed
+      persistent_state.velocity += move_speed
 
     func _physics_process(delta):
       .physics_process(delta)
       if abs(velocity) < min_move_speed:
         change_state.call_func("idle")
-      velocity.x *= friction
+      persistent_state.velocity.x *= friction
     
     func move_left():
       if animated_sprite.flip_h:
-        velocity += move_speed
+        persistent_state.velocity += move_speed
       else:
         change_state.call_func("idle")
 
     func move_right():
       if not animated_sprite.flip_h:
-        velocity += move_speed
+        persistent_state.velocity += move_speed
       else:
         change_state.call_func("idle")
 
@@ -200,12 +212,12 @@ will not change even the current state will, it makes sense to call this new scr
     func change_state(new_state_name):
       state.queue_free()
       state = state_factory.get_state(new_state_name).new()
-      state.setup(funcref(self, "change_state"), $AnimatedSprite, self, velocity)
+      state.setup(funcref(self, "change_state"), $AnimatedSprite, self)
       state.name = "current_state"
       add_child(state)
 
 .. note:: 
-  The ''persisent_state.gd'' script contains code for detecting input. This was to make the tutorial simple, but it is not usually 
+  The ''persistent_state.gd'' script contains code for detecting input. This was to make the tutorial simple, but it is not usually 
   best practice to do this.
 
 Project-Setup
@@ -222,7 +234,7 @@ is assumed to be a :ref:'KinematicBody2D <class_KinematicBody2D>'.
   I couldn't find the original creator information on that page though...
   There is also a good tutorial for sprite animation already. See :ref:'2D Sprite Animation <doc_2d_sprite_animation>'.
 
-So, the only script that must be attached is 'persisent_state.gd', which  should be attached to the top node of the
+So, the only script that must be attached is 'persistent_state.gd', which  should be attached to the top node of the
 player, which is a ''KinematicBody2D''.
 
 .. image:: img/state_design_node_setup.png
@@ -230,6 +242,6 @@ player, which is a ''KinematicBody2D''.
 .. image:: img/state_design_complete.gif
 
 Now the player has utilized the state design pattern to implement its two different states. The nice part of this
-pattern is that if one wanted to add another state, then it would invlove creating another class that need only
+pattern is that if one wanted to add another state, then it would involve creating another class that need only
 focus on itself and how it changes to another state. Each state is functionally separated and instantiated dynamically.
 
