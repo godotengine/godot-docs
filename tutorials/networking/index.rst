@@ -9,4 +9,5 @@ Networking
    http_request_class
    http_client_class
    ssl_certificates
+   websocket
    webrtc
