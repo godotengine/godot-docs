@@ -135,7 +135,7 @@ Whitespace
 ~~~~~~~~~~
 
 Always use one space around operators and after commas. Avoid extra
-spaces in dictionary references and function calls, or to create "columns."
+spaces in dictionary references and function calls, or to create "columns".
 
 **Good**:
 
