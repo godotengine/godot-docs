@@ -1,7 +1,7 @@
 .. _doc_high_dynamic_range:
 
-High dynamic range
-==================
+Light transport in game engines
+===============================
 
 Introduction
 ------------
@@ -11,89 +11,93 @@ looks at their awesome looking model in the 3D DCC and says "looks
 fantastic, ready for integration!" then goes into the game, lighting is
 setup and the game runs.
 
-So at what point does all this HDR business come into play? The idea is that
-instead of dealing with colors that go from black to white (0 to 1), we
-use colors whiter than white (for example, 0 to 8 times white).
+So at what point does all this "HDR" business come into play? To understand
+the answer, we need to look at how displays behave.
 
-To be more practical, imagine that in a regular scene, the intensity
-of a light (generally 1.0) is set to 5.0. The whole scene will turn
-very bright (towards white) and look horrible.
+Your display outputs linear light ratios from some maximum to some minimum
+intensity. Modern game engines perform complex math on linear light values in
+their respective scenes. So what's the problem?
 
-After this, the luminance of the scene is computed by averaging the
-luminance of every pixel of it, and this value is used to bring the
-scene back to normal ranges. This last operation is called
-tone-mapping. Finally, we are at a similar place from where we
-started:
+The display has a limited range of intensity, depending on the display type.
+The game engine renders to an unlimited range of intensity values, however.
+While "maximum intensity" means something to an sRGB display, it has no bearing
+in the game engine; there is only a potentially infinitely wide range of intensity
+values generated per frame of rendering.
 
-.. image:: img/hdr_tonemap.png
+This means that some transformation of the scene light intensity, also known
+as _scene referred_ light ratios, need to be transformed and mapped to fit
+within the particular output range of the chosen display. This can be most
+easily understood if we consider virtually photographing our game engine scene
+through a virtual camera. Here, our virtual camera would apply a particular
+camera rendering transform to the scene data, and the output would be ready
+for display on a particular display type.
 
-Except the scene is more contrasted because there is a higher light
-range at play. What is this all useful for? The idea is that the scene
-luminance will change while you move through the world, allowing
-situations like this to happen:
+Computer displays
+-----------------
 
-.. image:: img/hdr_cave.png
+Almost all displays require a nonlinear encoding for the code values sent
+to them. The display in turn, using its unique transfer characteristic,
+"decodes" the code value into linear light ratios of output, and projects
+the ratios out of the uniquely colored lights at each reddish, greenish,
+and blueish emission site.
 
-Additionally, it is possible to set a threshold value to send to the
-glow buffer depending on the pixel luminance. This allows for more
-realistic light bleeding effects in the scene.
+For a majority of computer displays, the specifications of the display are
+outlined in accordance with IEC 61966-2-1, also known as the 1996 sRGB specification.
+This specification outlines how an sRGB display is to behave, including the
+color of the lights in the LED pixels as well as the transfer characteristics
+of the input (OETF) and output (EOTF).
 
-Linear color space
-------------------
+Not all displays use the same OETF and EOTF as a computer display however,
+for example, television broadcast displays use the BT.1886 EOTF. It should
+be noted that Godot is limited in its pixel management chain,
+and only supports sRGB displays currently.
 
-The problem with this technique is that computer monitors apply a
-gamma curve to adapt better to the way the human eye sees. Artists
-create their art on the screen too, so their art has an implicit gamma
-curve applied to it.
-
-The color space where images created on computer monitors exist is
-called "sRGB". All visual content that people have on their computers
-or download from the internet (such as pictures, movies, etc.)
-is in this colorspace.
+The sRGB standard is based around the nonlinear relationship between the current
+to light output of common desktop computing CRT displays.
 
 .. image:: img/hdr_gamma.png
 
-The mathematics of HDR require that we multiply the scene by different
-values to adjust the luminance and exposure to different light ranges,
-and this curve gets in the way, as we need colors in linear space for
-this.
+The mathematics of a scene referred model require that we multiply the scene by different
+values to adjust the intensities and exposure to different light ranges.
+The transfer function of the display cannot appropriately render
+the wider dynamic range of the game engine's scene output using the simple
+transfer function of the display however, and therefore a more complex approach
+to encoding is required.
 
-Linear color space & asset pipeline
------------------------------------
+Scene linear & asset pipelines
+------------------------------
 
-Working in HDR is not just pressing a switch. First, imported image
-assets must be converted to linear space on import. There are two ways
-to do this:
+Working in scene linear sRGB is not as simple as just pressing a switch. First,
+imported image assets must be converted to linear light ratios on import. Even
+when linearized, those assets may not be perfectly well suited for use as textures,
+depending on how they were generated.
 
-sRGB -> linear conversion on image import
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+There are two ways to do this:
 
-This is the most compatible way of using linear-space assets, and it will
-work everywhere, including all mobile devices. The main issue with this
-is loss of quality, as sRGB exists to avoid this same problem. Using 8
-bits per channel to represent linear colors is inefficient from the
-point of view of the human eye. These textures might later be compressed
-too, which makes the problem worse.
+sRGB transfer function to display linear ratios on image import
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In any case, though, this is the easy solution that works everywhere.
+This is the easiest, but not the most ideal, method of using sRGB assets.
+One issue with this is loss of quality. Using 8 bit per channel to represent
+linear light ratios is not a sufficient but depth to quantise the values correctly.
+These textures might later be compressed too, which can exacerbate the problem.
 
-Hardware sRGB -> linear conversion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hardware sRGB transfer function to display linear conversion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the most correct way to use assets in linear-space, as the
-texture sampler on the GPU will do the conversion after reading the
+The GPU will do the conversion after reading the
 texel using floating point. This works fine on PC and consoles, but most
 mobile devices do no support it, or do not support it on compressed
 texture format (iOS for example).
 
-Linear -> sRGB at the end
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Scene linear to display referred nonlinear
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After all the rendering is done, the linear-space rendered image must be
-converted back to sRGB. To do this, simply enable sRGB conversion in the
+After all the rendering is done, the scene linear render requires transforming
+to a suitable output such as an sRGB display. To do this, enable sRGB conversion in the
 current :ref:`Environment <class_Environment>` (more on that below).
 
-Keep in mind that sRGB -> Linear and Linear -> sRGB conversions
+Keep in mind that sRGB -> Display Linear and Display Linear -> sRGB conversions
 must always be **both** enabled. Failing to enable one of them will
 result in horrible visuals suitable only for avant-garde experimental
 indie games.
