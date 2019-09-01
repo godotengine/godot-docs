@@ -9,7 +9,7 @@ Introduction
 An import plugin is a special type of editor tool that allows custom resources
 to be imported by Godot and be treated as first-class resources. The editor
 itself comes bundled with a lot of import plugins to handle the common resources
-like PNG images, Collada and glTF models, OGG Vorbis sounds, and many more.
+like PNG images, Collada and glTF models, Ogg Vorbis sounds, and many more.
 
 This tutorial will show you how to create a simple import plugin to load a
 custom text file as a material resource. This text file will contain three
