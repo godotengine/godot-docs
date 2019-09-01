@@ -14,8 +14,8 @@ optimized and without symbols, it would take some effort to find it.
 For this to work, you need to build the export templates from source,
 with that same key.
 
-Step by step (Linux)
---------------------
+Step by step
+------------
 
 1. Generate a 256bit AES key in HEX. You can use the aes-256-cbc variant from
    `this service <https://asecuritysite.com/encryption/keygen>`_.
@@ -37,14 +37,17 @@ Step by step (Linux)
    You can generate the key without redirecting the output to a file, but
    that way you can minimize the risk of exposing the key.
 
-
 2. Set this key as environment variable in the console that you will use to
    compile Godot, like this:
 
-   ::
+   .. tabs::
+    .. code-tab:: bash Linux/macOS
 
        export SCRIPT_AES256_ENCRYPTION_KEY="your_generated_key"
 
+    .. code-tab:: bat Windows
+
+       set SCRIPT_AES256_ENCRYPTION_KEY=your_generated_key
 
 3. Compile Godot export templates and set them as custom export templates
    in the export preset options.
