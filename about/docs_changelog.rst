@@ -64,6 +64,7 @@ Plugins
 
 - :ref:`doc_android_plugin`
 - :ref:`doc_inspector_plugins`
+- :ref:`doc_visual_shader_plugins`
 
 Multi-threading
 ^^^^^^^^^^^^^^^
