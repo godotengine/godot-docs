@@ -12,9 +12,9 @@ in the user's browser.
                with :kbd:`F12`, to view **debug information** like JavaScript,
                engine, and WebGL errors.
 
-.. attention:: Many browsers, Chromium-based browsers specifically, will not
-               load exported projects when **opened locally** per ``file://``
-               protocol. To get around this, use a local server.
+.. attention:: Many browsers, including Firefox and Chromium-based browsers,
+               will not load exported projects when **opened locally** per
+               ``file://`` protocol. To get around this, use a local server.
 
                .. tip:: Python offers an easy method to start a local server.
                         Use ``python -m SimpleHTTPServer`` with Python 2 or
@@ -25,7 +25,7 @@ WebGL 2
 -------
 
 Until the *OpenGL ES 3* renderer is removed from Godot in favor of *Vulkan*,
-HTML5 export uses *WebGL 2* when the *GLES3* option selected.
+HTML5 export uses *WebGL 2* when the *GLES3* option is selected.
 
 .. warning:: Usage of WebGL 2 is not recommended due to its expected removal
              from Godot without replacement.
