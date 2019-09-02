@@ -410,6 +410,35 @@ the docs will become accessible within the engine's built-in documentation syste
 In order to keep documentation up-to-date, all you'll have to do is simply modify
 one of the ``ClassName.xml`` files and recompile the engine from now on.
 
+.. _doc_custom_module_icons:
+
+Adding custom editor icons
+--------------------------
+
+Similarly to how you can write self-contained documentation within a module,
+you can also create your own custom icons for classes to appear in the editor.
+
+For the actual process of creating editor icons to be integrated within the engine,
+please refer to :ref:`doc_editor_icons` first.
+
+Once you've created your icon(s), proceed with the following steps:
+
+1. Make a new directory in the root of the module named ``icons``. This is the
+   default path for the engine to look for module's editor icons.
+
+2. Move your newly created ``svg`` icons (optimized or not) into that folder.
+
+3. Recompile the engine and run the editor. Now the icon(s) will appear in
+   editor's interface where appropriate.
+
+If you'd like to store your icons somewhere else within your module,
+add the following code snippet to ``config.py`` to override the default path:
+
+   .. code:: python
+
+       def get_icons_path():
+           return "path/to/icons"
+
 Summing up
 ----------
 
