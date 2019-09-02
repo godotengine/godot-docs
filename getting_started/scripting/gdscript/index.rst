@@ -7,7 +7,7 @@ GDScript
 
    gdscript_basics
    gdscript_advanced
-   gdscript_styleguide
    gdscript_exports
+   gdscript_styleguide
    static_typing
    gdscript_format_string

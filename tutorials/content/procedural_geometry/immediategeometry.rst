@@ -26,7 +26,7 @@ Then you call ``add_vertex()`` to add a vertex with those attributes. For exampl
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # Add a vertex with normal and uv
+    # Add a vertex with normal and uv.
     set_normal(Vector3(0, 1, 0))
     set_uv(Vector2(1, 1))
     add_vertex(Vector3(0, 0, 1))
@@ -42,7 +42,7 @@ The example code below draws a single triangle.
 
     extends ImmediateGeometry
 
-    func _process(delta):
+    func _process(_delta):
         # Clean up before drawing.
         clear()
 
@@ -50,7 +50,7 @@ The example code below draws a single triangle.
         begin(Mesh.PRIMITIVE_TRIANGLES)
 
         # Prepare attributes for add_vertex.
-        set_normal( Vector3(0, 0, 1))
+        set_normal(Vector3(0, 0, 1))
         set_uv(Vector2(0, 0))
         # Call last for each vertex, adds the above attributes.
         add_vertex(Vector3(-1, -1, 0))
