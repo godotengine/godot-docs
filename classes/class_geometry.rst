@@ -56,6 +56,8 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                       | :ref:`intersect_polyline_with_polygon_2d<class_Geometry_method_intersect_polyline_with_polygon_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_point_in_circle<class_Geometry_method_is_point_in_circle>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**                                                                                      |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`is_point_in_polygon<class_Geometry_method_is_point_in_polygon>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                                                                   |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                                                                                                      |
@@ -85,8 +87,6 @@ Methods
 | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`segment_intersects_sphere<class_Geometry_method_segment_intersects_sphere>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` sphere_position, :ref:`float<class_float>` sphere_radius **)**                                       |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                   | :ref:`segment_intersects_triangle<class_Geometry_method_segment_intersects_triangle>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**                        |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`transform_points_2d<class_Geometry_method_transform_points_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                        |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`triangulate_delaunay_2d<class_Geometry_method_triangulate_delaunay_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**                                                                                                                                                 |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -265,6 +265,12 @@ The operation may result in an outer polygon (boundary) and inner polygon (hole)
 
 Intersects ``polyline`` with ``polygon`` and returns an array of intersected polylines. This performs :ref:`OPERATION_INTERSECTION<class_Geometry_constant_OPERATION_INTERSECTION>` between the polyline and the polygon. This operation can be thought of as chopping a line with a closed shape.
 
+.. _class_Geometry_method_is_point_in_circle:
+
+- :ref:`bool<class_bool>` **is_point_in_circle** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**
+
+Returns ``true`` if ``point`` is inside the circle or if it's located exactly *on* the circle's boundary, otherwise returns ``false``.
+
 .. _class_Geometry_method_is_point_in_polygon:
 
 - :ref:`bool<class_bool>` **is_point_in_polygon** **(** :ref:`Vector2<class_Vector2>` point, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
@@ -368,14 +374,6 @@ Checks if the segment (``from``, ``to``) intersects the sphere that is located a
 - :ref:`Variant<class_Variant>` **segment_intersects_triangle** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**
 
 Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, an empty :ref:`Variant<class_Variant>` is returned.
-
-.. _class_Geometry_method_transform_points_2d:
-
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **transform_points_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Transform2D<class_Transform2D>` transform **)**
-
-Transforms an array of points by ``transform`` and returns the result.
-
-Can be useful in conjunction with performing polygon boolean operations in a CSG-like manner, see :ref:`merge_polygons_2d<class_Geometry_method_merge_polygons_2d>`, :ref:`clip_polygons_2d<class_Geometry_method_clip_polygons_2d>`, :ref:`intersect_polygons_2d<class_Geometry_method_intersect_polygons_2d>`, :ref:`exclude_polygons_2d<class_Geometry_method_exclude_polygons_2d>`.
 
 .. _class_Geometry_method_triangulate_delaunay_2d:
 

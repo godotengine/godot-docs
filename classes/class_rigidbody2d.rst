@@ -356,7 +356,7 @@ Multiplies the gravity applied to the body. The body's gravity is calculated fro
 | *Getter* | get_inertia()      |
 +----------+--------------------+
 
-The body's moment of inertia. This is like mass, but for rotation: it determines how much torque it takes to rotate the body. The moment of inertia is usually computed automatically from the mass and the shapes, but this function allows you to set a custom value. Set 0 (or negative) inertia to return to automatically computing it.
+The body's moment of inertia. This is like mass, but for rotation: it determines how much torque it takes to rotate the body. The moment of inertia is usually computed automatically from the mass and the shapes, but this function allows you to set a custom value. Set 0 inertia to return to automatically computing it.
 
 .. _class_RigidBody2D_property_linear_damp:
 

@@ -21,16 +21,16 @@ Brief Description
 Methods
 -------
 
-+-----------------------------+------------------------------------------------------------------+
-| :ref:`Object<class_Object>` | :ref:`new<class_PluginScript_method_new>` **(** ... **)** vararg |
-+-----------------------------+------------------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`new<class_PluginScript_method_new>` **(** ... **)** vararg |
++-------------------------------+------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_PluginScript_method_new:
 
-- :ref:`Object<class_Object>` **new** **(** ... **)** vararg
+- :ref:`Variant<class_Variant>` **new** **(** ... **)** vararg
 
 Returns a new instance of the script.
 

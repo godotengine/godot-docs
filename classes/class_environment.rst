@@ -96,7 +96,7 @@ Properties
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`fog_depth_enabled<class_Environment_property_fog_depth_enabled>`                             | true                               |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
-| :ref:`float<class_float>`                              | :ref:`fog_depth_end<class_Environment_property_fog_depth_end>`                                     | 0.0                                |
+| :ref:`float<class_float>`                              | :ref:`fog_depth_end<class_Environment_property_fog_depth_end>`                                     | 100.0                              |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`fog_enabled<class_Environment_property_fog_enabled>`                                         | false                              |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
@@ -873,12 +873,14 @@ Enables the fog depth.
 - :ref:`float<class_float>` **fog_depth_end**
 
 +-----------+--------------------------+
-| *Default* | 0.0                      |
+| *Default* | 100.0                    |
 +-----------+--------------------------+
 | *Setter*  | set_fog_depth_end(value) |
 +-----------+--------------------------+
 | *Getter*  | get_fog_depth_end()      |
 +-----------+--------------------------+
+
+Fog's depth end distance from the camera. If this value is set to 0, it will be equal to the current camera's :ref:`Camera.far<class_Camera_property_far>` value.
 
 .. _class_Environment_property_fog_enabled:
 
@@ -892,7 +894,7 @@ Enables the fog depth.
 | *Getter*  | is_fog_enabled()       |
 +-----------+------------------------+
 
-Enables the fog. Needs fog_height_enabled and/or for_depth_enabled to actually display fog.
+Enables the fog. Needs :ref:`fog_height_enabled<class_Environment_property_fog_height_enabled>` and/or :ref:`fog_depth_enabled<class_Environment_property_fog_depth_enabled>` to actually display fog.
 
 .. _class_Environment_property_fog_height_curve:
 

@@ -24,7 +24,7 @@ Methods
 +-------------------------------------------+-----------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** const |
 +-------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`               | :ref:`new<class_GDScript_method_new>` **(** ... **)** vararg                      |
+| :ref:`Variant<class_Variant>`             | :ref:`new<class_GDScript_method_new>` **(** ... **)** vararg                      |
 +-------------------------------------------+-----------------------------------------------------------------------------------+
 
 Description
@@ -50,7 +50,7 @@ Returns byte code for the script source code.
 
 .. _class_GDScript_method_new:
 
-- :ref:`Object<class_Object>` **new** **(** ... **)** vararg
+- :ref:`Variant<class_Variant>` **new** **(** ... **)** vararg
 
 Returns a new instance of the script.
 

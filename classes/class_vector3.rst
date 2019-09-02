@@ -14,7 +14,7 @@ Vector3
 Brief Description
 -----------------
 
-Vector class, which performs basic 3D vector math operations.
+Vector used for 3D math.
 
 Properties
 ----------
@@ -75,6 +75,10 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`outer<class_Vector3_method_outer>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                                 |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`posmod<class_Vector3_method_posmod>` **(** :ref:`float<class_float>` mod **)**                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`posmodv<class_Vector3_method_posmodv>` **(** :ref:`Vector3<class_Vector3>` modv **)**                                                                                                                          |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`project<class_Vector3_method_project>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                             |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`reflect<class_Vector3_method_reflect>` **(** :ref:`Vector3<class_Vector3>` n **)**                                                                                                                             |
@@ -82,6 +86,8 @@ Methods
 | :ref:`Vector3<class_Vector3>` | :ref:`rotated<class_Vector3_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**                                                                                           |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`round<class_Vector3_method_round>` **(** **)**                                                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`sign<class_Vector3_method_sign>` **(** **)**                                                                                                                                                                   |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`slerp<class_Vector3_method_slerp>` **(** :ref:`Vector3<class_Vector3>` b, :ref:`float<class_float>` t **)**                                                                                                    |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -121,15 +127,15 @@ Constants
 
 - **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis<class_Vector3_method_max_axis>` and :ref:`min_axis<class_Vector3_method_min_axis>`.
 
-- **AXIS_Y** = **1** --- Enumerated value for the Y axis.
+- **AXIS_Y** = **1** --- Enumerated value for the Y axis. Returned by :ref:`max_axis<class_Vector3_method_max_axis>` and :ref:`min_axis<class_Vector3_method_min_axis>`.
 
-- **AXIS_Z** = **2** --- Enumerated value for the Z axis.
+- **AXIS_Z** = **2** --- Enumerated value for the Z axis. Returned by :ref:`max_axis<class_Vector3_method_max_axis>` and :ref:`min_axis<class_Vector3_method_min_axis>`.
 
 - **ZERO** = **Vector3( 0, 0, 0 )** --- Zero vector.
 
 - **ONE** = **Vector3( 1, 1, 1 )** --- One vector.
 
-- **INF** = **Vector3( inf, inf, inf )** --- Infinite vector.
+- **INF** = **Vector3( inf, inf, inf )** --- Infinity vector.
 
 - **LEFT** = **Vector3( -1, 0, 0 )** --- Left unit vector.
 
@@ -146,7 +152,7 @@ Constants
 Description
 -----------
 
-Vector3 is one of the core classes of the engine, and includes several built-in helper functions to perform basic vector math operations.
+3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
 
 Tutorials
 ---------
@@ -321,6 +327,18 @@ Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
 Returns the outer product with ``b``.
 
+.. _class_Vector3_method_posmod:
+
+- :ref:`Vector3<class_Vector3>` **posmod** **(** :ref:`float<class_float>` mod **)**
+
+Returns a vector composed of the ``fposmod`` of this vector's components and ``mod``.
+
+.. _class_Vector3_method_posmodv:
+
+- :ref:`Vector3<class_Vector3>` **posmodv** **(** :ref:`Vector3<class_Vector3>` modv **)**
+
+Returns a vector composed of the ``fposmod`` of this vector's components and ``modv``'s components.
+
 .. _class_Vector3_method_project:
 
 - :ref:`Vector3<class_Vector3>` **project** **(** :ref:`Vector3<class_Vector3>` b **)**
@@ -344,6 +362,12 @@ Rotates the vector around a given axis by ``phi`` radians. The axis must be a no
 - :ref:`Vector3<class_Vector3>` **round** **(** **)**
 
 Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
+
+.. _class_Vector3_method_sign:
+
+- :ref:`Vector3<class_Vector3>` **sign** **(** **)**
+
+Returns the vector with each component set to one or negative one, depending on the signs of the components.
 
 .. _class_Vector3_method_slerp:
 

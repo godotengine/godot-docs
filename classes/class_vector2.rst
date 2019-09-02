@@ -73,6 +73,10 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`normalized<class_Vector2_method_normalized>` **(** **)**                                                                                                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`posmod<class_Vector2_method_posmod>` **(** :ref:`float<class_float>` mod **)**                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`posmodv<class_Vector2_method_posmodv>` **(** :ref:`Vector2<class_Vector2>` modv **)**                                                                                                                          |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`project<class_Vector2_method_project>` **(** :ref:`Vector2<class_Vector2>` b **)**                                                                                                                             |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`reflect<class_Vector2_method_reflect>` **(** :ref:`Vector2<class_Vector2>` n **)**                                                                                                                             |
@@ -80,6 +84,8 @@ Methods
 | :ref:`Vector2<class_Vector2>` | :ref:`rotated<class_Vector2_method_rotated>` **(** :ref:`float<class_float>` phi **)**                                                                                                                               |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`round<class_Vector2_method_round>` **(** **)**                                                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`sign<class_Vector2_method_sign>` **(** **)**                                                                                                                                                                   |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`slerp<class_Vector2_method_slerp>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**                                                                                                    |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -92,6 +98,10 @@ Methods
 
 Constants
 ---------
+
+.. _class_Vector2_constant_AXIS_X:
+
+.. _class_Vector2_constant_AXIS_Y:
 
 .. _class_Vector2_constant_ZERO:
 
@@ -107,11 +117,15 @@ Constants
 
 .. _class_Vector2_constant_DOWN:
 
+- **AXIS_X** = **0** --- Enumerated value for the X axis.
+
+- **AXIS_Y** = **1** --- Enumerated value for the Y axis.
+
 - **ZERO** = **Vector2( 0, 0 )** --- Zero vector.
 
 - **ONE** = **Vector2( 1, 1 )** --- One vector.
 
-- **INF** = **Vector2( inf, inf )** --- Infinite vector.
+- **INF** = **Vector2( inf, inf )** --- Infinity vector.
 
 - **LEFT** = **Vector2( -1, 0 )** --- Left unit vector.
 
@@ -291,6 +305,18 @@ Moves the vector toward ``to`` by the fixed ``delta`` amount.
 
 Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
+.. _class_Vector2_method_posmod:
+
+- :ref:`Vector2<class_Vector2>` **posmod** **(** :ref:`float<class_float>` mod **)**
+
+Returns a vector composed of the ``fposmod`` of this vector's components and ``mod``.
+
+.. _class_Vector2_method_posmodv:
+
+- :ref:`Vector2<class_Vector2>` **posmodv** **(** :ref:`Vector2<class_Vector2>` modv **)**
+
+Returns a vector composed of the ``fposmod`` of this vector's components and ``modv``'s components.
+
 .. _class_Vector2_method_project:
 
 - :ref:`Vector2<class_Vector2>` **project** **(** :ref:`Vector2<class_Vector2>` b **)**
@@ -314,6 +340,12 @@ Returns the vector rotated by ``phi`` radians. See also :ref:`@GDScript.deg2rad<
 - :ref:`Vector2<class_Vector2>` **round** **(** **)**
 
 Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
+
+.. _class_Vector2_method_sign:
+
+- :ref:`Vector2<class_Vector2>` **sign** **(** **)**
+
+Returns the vector with each component set to one or negative one, depending on the signs of the components.
 
 .. _class_Vector2_method_slerp:
 

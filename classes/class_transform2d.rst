@@ -212,11 +212,11 @@ Translates the transform by the given offset.
 
 - :ref:`Variant<class_Variant>` **xform** **(** :ref:`Variant<class_Variant>` v **)**
 
-Transforms the given :ref:`Vector2<class_Vector2>` or :ref:`Rect2<class_Rect2>` by this transform.
+Transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PoolVector2Array<class_PoolVector2Array>` by this transform.
 
 .. _class_Transform2D_method_xform_inv:
 
 - :ref:`Variant<class_Variant>` **xform_inv** **(** :ref:`Variant<class_Variant>` v **)**
 
-Inverse-transforms the given :ref:`Vector2<class_Vector2>` or :ref:`Rect2<class_Rect2>` by this transform.
+Inverse-transforms the given :ref:`Vector2<class_Vector2>`, :ref:`Rect2<class_Rect2>`, or :ref:`PoolVector2Array<class_PoolVector2Array>` by this transform.
 

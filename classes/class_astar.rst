@@ -44,7 +44,11 @@ Methods
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_id_path<class_AStar_method_get_id_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                               |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_point_capacity<class_AStar_method_get_point_capacity>` **(** **)** const                                                                                      |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_point_connections<class_AStar_method_get_point_connections>` **(** :ref:`int<class_int>` id **)**                                                             |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_point_count<class_AStar_method_get_point_count>` **(** **)** const                                                                                            |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_point_path<class_AStar_method_get_point_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                         |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -59,6 +63,8 @@ Methods
 | :ref:`bool<class_bool>`                         | :ref:`is_point_disabled<class_AStar_method_is_point_disabled>` **(** :ref:`int<class_int>` id **)** const                                                               |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`remove_point<class_AStar_method_remove_point>` **(** :ref:`int<class_int>` id **)**                                                                               |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`reserve_space<class_AStar_method_reserve_space>` **(** :ref:`int<class_int>` num_nodes **)**                                                                      |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_point_disabled<class_AStar_method_set_point_disabled>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` disabled=true **)**                            |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -184,6 +190,12 @@ Returns an array with the IDs of the points that form the path found by AStar be
 
 If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]`` instead, because now even though the distance is longer, it's "easier" to get through point 4 than through point 2.
 
+.. _class_AStar_method_get_point_capacity:
+
+- :ref:`int<class_int>` **get_point_capacity** **(** **)** const
+
+Returns the capacity of the structure backing the points, useful in conjunction with ``reserve_space``.
+
 .. _class_AStar_method_get_point_connections:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_point_connections** **(** :ref:`int<class_int>` id **)**
@@ -202,6 +214,12 @@ Returns an array with the IDs of the points that form the connection with the gi
     astar.connect_points(1, 3, true)
     
     var neighbors = astar.get_point_connections(1) # Returns [2, 3]
+
+.. _class_AStar_method_get_point_count:
+
+- :ref:`int<class_int>` **get_point_count** **(** **)** const
+
+Returns the number of points currently in the points pool.
 
 .. _class_AStar_method_get_point_path:
 
@@ -244,6 +262,12 @@ Returns whether a point is disabled or not for pathfinding. By default, all poin
 - void **remove_point** **(** :ref:`int<class_int>` id **)**
 
 Removes the point associated with the given ``id`` from the points pool.
+
+.. _class_AStar_method_reserve_space:
+
+- void **reserve_space** **(** :ref:`int<class_int>` num_nodes **)**
+
+Reserves space internally for ``num_nodes`` points, useful if you're adding a known large number of points at once, for a grid for instance. New capacity must be greater or equals to old capacity.
 
 .. _class_AStar_method_set_point_disabled:
 

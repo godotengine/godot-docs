@@ -115,7 +115,7 @@ Text alignment policy for the button's text, use one of the ``ALIGN_*`` constant
 | *Getter*  | get_clip_text()      |
 +-----------+----------------------+
 
-When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text. This property is disabled by default.
+When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text.
 
 .. _class_Button_property_flat:
 

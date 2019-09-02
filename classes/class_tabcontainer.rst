@@ -21,15 +21,17 @@ Tabbed container.
 Properties
 ----------
 
-+---------------------------------------------+-----------------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                       | :ref:`current_tab<class_TabContainer_property_current_tab>`                             | 0     |
-+---------------------------------------------+-----------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                     | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>` | false |
-+---------------------------------------------+-----------------------------------------------------------------------------------------+-------+
-| :ref:`TabAlign<enum_TabContainer_TabAlign>` | :ref:`tab_align<class_TabContainer_property_tab_align>`                                 | 1     |
-+---------------------------------------------+-----------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                     | :ref:`tabs_visible<class_TabContainer_property_tabs_visible>`                           | true  |
-+---------------------------------------------+-----------------------------------------------------------------------------------------+-------+
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                       | :ref:`current_tab<class_TabContainer_property_current_tab>`                                   | 0     |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                     | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`       | false |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
+| :ref:`TabAlign<enum_TabContainer_TabAlign>` | :ref:`tab_align<class_TabContainer_property_tab_align>`                                       | 1     |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                     | :ref:`tabs_visible<class_TabContainer_property_tabs_visible>`                                 | true  |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                     | :ref:`use_hidden_tabs_for_min_size<class_TabContainer_property_use_hidden_tabs_for_min_size>` | false |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -216,6 +218,18 @@ The alignment of all tabs in the tab container. See the ``ALIGN_*`` constants fo
 +-----------+-------------------------+
 
 If ``true``, tabs are visible. If ``false``, tabs' content and titles are hidden.
+
+.. _class_TabContainer_property_use_hidden_tabs_for_min_size:
+
+- :ref:`bool<class_bool>` **use_hidden_tabs_for_min_size**
+
++-----------+-----------------------------------------+
+| *Default* | false                                   |
++-----------+-----------------------------------------+
+| *Setter*  | set_use_hidden_tabs_for_min_size(value) |
++-----------+-----------------------------------------+
+| *Getter*  | get_use_hidden_tabs_for_min_size()      |
++-----------+-----------------------------------------+
 
 Method Descriptions
 -------------------

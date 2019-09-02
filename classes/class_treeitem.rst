@@ -59,6 +59,8 @@ Methods
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`get_icon_max_width<class_TreeItem_method_get_icon_max_width>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                      |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                       | :ref:`get_icon_modulate<class_TreeItem_method_get_icon_modulate>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                        |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>`                       | :ref:`get_icon_region<class_TreeItem_method_get_icon_region>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                            |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                   | :ref:`get_metadata<class_TreeItem_method_get_metadata>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                                  |
@@ -126,6 +128,8 @@ Methods
 | void                                            | :ref:`set_icon<class_TreeItem_method_set_icon>` **(** :ref:`int<class_int>` column, :ref:`Texture<class_Texture>` texture **)**                                                                                                                         |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_icon_max_width<class_TreeItem_method_set_icon_max_width>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` width **)**                                                                                                               |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_icon_modulate<class_TreeItem_method_set_icon_modulate>` **(** :ref:`int<class_int>` column, :ref:`Color<class_Color>` modulate **)**                                                                                                          |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_icon_region<class_TreeItem_method_set_icon_region>` **(** :ref:`int<class_int>` column, :ref:`Rect2<class_Rect2>` region **)**                                                                                                                |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -311,6 +315,12 @@ Returns the given column's icon :ref:`Texture<class_Texture>`. Error if no icon 
 - :ref:`int<class_int>` **get_icon_max_width** **(** :ref:`int<class_int>` column **)** const
 
 Returns the column's icon's maximum width.
+
+.. _class_TreeItem_method_get_icon_modulate:
+
+- :ref:`Color<class_Color>` **get_icon_modulate** **(** :ref:`int<class_int>` column **)** const
+
+Returns the :ref:`Color<class_Color>` modulating the column's icon.
 
 .. _class_TreeItem_method_get_icon_region:
 
@@ -511,6 +521,12 @@ Sets the given column's icon :ref:`Texture<class_Texture>`.
 - void **set_icon_max_width** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` width **)**
 
 Sets the given column's icon's maximum width.
+
+.. _class_TreeItem_method_set_icon_modulate:
+
+- void **set_icon_modulate** **(** :ref:`int<class_int>` column, :ref:`Color<class_Color>` modulate **)**
+
+Modulates the given column's icon with ``modulate``.
 
 .. _class_TreeItem_method_set_icon_region:
 

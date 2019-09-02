@@ -133,7 +133,7 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`CursorShape<enum_Control_CursorShape>` | :ref:`get_cursor_shape<class_Control_method_get_cursor_shape>` **(** :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)** const                                                                                                                            |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                  | :ref:`get_drag_data<class_Control_method_get_drag_data>` **(** :ref:`Vector2<class_Vector2>` position **)** virtual                                                                                                                                                |
+| :ref:`Variant<class_Variant>`                | :ref:`get_drag_data<class_Control_method_get_drag_data>` **(** :ref:`Vector2<class_Vector2>` position **)** virtual                                                                                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                | :ref:`get_end<class_Control_method_get_end>` **(** **)** const                                                                                                                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1240,7 +1240,7 @@ Returns the mouse cursor shape the control displays on mouse hover. See :ref:`Cu
 
 .. _class_Control_method_get_drag_data:
 
-- :ref:`Object<class_Object>` **get_drag_data** **(** :ref:`Vector2<class_Vector2>` position **)** virtual
+- :ref:`Variant<class_Variant>` **get_drag_data** **(** :ref:`Vector2<class_Vector2>` position **)** virtual
 
 Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns ``null`` if there is no data to drag. Controls that want to receive drop data should implement :ref:`can_drop_data<class_Control_method_can_drop_data>` and :ref:`drop_data<class_Control_method_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
 

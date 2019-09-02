@@ -107,6 +107,8 @@ Property Descriptions
 
 Contains the audio data in bytes.
 
+**Note:** This property expects signed PCM8 data. To convert unsigned PCM8 to signed PCM8, subtract 128 from each byte.
+
 .. _class_AudioStreamSample_property_format:
 
 - :ref:`Format<enum_AudioStreamSample_Format>` **format**

@@ -123,6 +123,12 @@ Emitted whenever this ``SceneTree``'s :ref:`network_peer<class_SceneTree_propert
 
 Emitted when files are dragged from the OS file manager and dropped in the game window. The arguments are a list of file paths and the identifier of the screen where the drag originated.
 
+.. _class_SceneTree_signal_global_menu_action:
+
+- **global_menu_action** **(** :ref:`Nil<class_Nil>` id, :ref:`Nil<class_Nil>` meta **)**
+
+Emitted whenever global menu item is clicked.
+
 .. _class_SceneTree_signal_idle_frame:
 
 - **idle_frame** **(** **)**

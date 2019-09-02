@@ -62,6 +62,11 @@ In order for the node to be registered as an editor addon, you must use the ``to
     extends VisualShaderNodeCustom
     class_name VisualShaderNodeNoise
 
+Tutorials
+---------
+
+- :doc:`../tutorials/plugins/editor/visual_shader_plugins`
+
 Method Descriptions
 -------------------
 

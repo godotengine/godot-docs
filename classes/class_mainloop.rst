@@ -28,6 +28,8 @@ Methods
 +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`_finalize<class_MainLoop_method__finalize>` **(** **)** virtual                                                                                            |
 +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`_global_menu_action<class_MainLoop_method__global_menu_action>` **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** virtual   |
++-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`_idle<class_MainLoop_method__idle>` **(** :ref:`float<class_float>` delta **)** virtual                                                                    |
 +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`_initialize<class_MainLoop_method__initialize>` **(** **)** virtual                                                                                        |
@@ -180,6 +182,10 @@ Called when files are dragged from the OS file manager and dropped in the game w
 - void **_finalize** **(** **)** virtual
 
 Called before the program exits.
+
+.. _class_MainLoop_method__global_menu_action:
+
+- void **_global_menu_action** **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** virtual
 
 .. _class_MainLoop_method__idle:
 

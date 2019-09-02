@@ -175,6 +175,14 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>`                     | :ref:`get_window_safe_area<class_OS_method_get_window_safe_area>` **(** **)** const                                                                                                                                                                               |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`global_menu_add_item<class_OS_method_global_menu_add_item>` **(** :ref:`String<class_String>` menu, :ref:`String<class_String>` label, :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)**                                           |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`global_menu_add_separator<class_OS_method_global_menu_add_separator>` **(** :ref:`String<class_String>` menu **)**                                                                                                                                          |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`global_menu_clear<class_OS_method_global_menu_clear>` **(** :ref:`String<class_String>` menu **)**                                                                                                                                                          |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`global_menu_remove_item<class_OS_method_global_menu_remove_item>` **(** :ref:`String<class_String>` menu, :ref:`int<class_int>` idx **)**                                                                                                                   |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`has_environment<class_OS_method_has_environment>` **(** :ref:`String<class_String>` environment **)** const                                                                                                                                                 |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`has_feature<class_OS_method_has_feature>` **(** :ref:`String<class_String>` tag_name **)** const                                                                                                                                                            |
@@ -1097,6 +1105,30 @@ Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyb
 - :ref:`Rect2<class_Rect2>` **get_window_safe_area** **(** **)** const
 
 Returns unobscured area of the window where interactive controls should be rendered.
+
+.. _class_OS_method_global_menu_add_item:
+
+- void **global_menu_add_item** **(** :ref:`String<class_String>` menu, :ref:`String<class_String>` label, :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)**
+
+Add a new item with text "label" to global menu. Use "_dock" menu to add item to the macOS dock icon menu.
+
+.. _class_OS_method_global_menu_add_separator:
+
+- void **global_menu_add_separator** **(** :ref:`String<class_String>` menu **)**
+
+Add a separator between items. Separators also occupy an index.
+
+.. _class_OS_method_global_menu_clear:
+
+- void **global_menu_clear** **(** :ref:`String<class_String>` menu **)**
+
+Clear the global menu, in effect removing all items.
+
+.. _class_OS_method_global_menu_remove_item:
+
+- void **global_menu_remove_item** **(** :ref:`String<class_String>` menu, :ref:`int<class_int>` idx **)**
+
+Removes the item at index "idx" from the global menu. Note that the indexes of items after the removed item are going to be shifted by one.
 
 .. _class_OS_method_has_environment:
 
