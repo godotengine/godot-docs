@@ -149,9 +149,9 @@ Hello.tscn in Scene -> Save:
 
 And here's when something funny happens. The file dialog is a special
 file dialog, and only allows you to save inside the project. The project
-root is "res://" which means "resource path". This means that files can
+root is ``res://`` which means "resource path". This means that files can
 only be saved inside the project. For the future, when doing file
-operations in Godot, remember that "res://" is the resource path, and no
+operations in Godot, remember that ``res://`` is the resource path, and no
 matter the platform or install location, it is the way to locate where
 resource files are from inside the game.
 
