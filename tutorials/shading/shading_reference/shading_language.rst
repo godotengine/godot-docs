@@ -342,6 +342,7 @@ Godot Shading language supports the most common types of flow control:
             break;
         //...
         default: // optional
+            break;
     }
 
     // for loops
