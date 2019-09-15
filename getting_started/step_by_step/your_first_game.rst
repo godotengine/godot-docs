@@ -913,8 +913,8 @@ the three ``Control`` nodes:
           represent the distance from the control node's edges to its anchor.
           See :ref:`doc_design_interfaces_with_the_control_nodes` for more details.
 
-Arrange the nodes as shown below. Click the "Anchor" button to
-set a Control node's anchor:
+Arrange the nodes as shown below. Click the "Layout" button to
+set a Control node's layout:
 
 .. image:: img/ui_anchor.png
 
