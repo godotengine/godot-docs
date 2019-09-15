@@ -667,10 +667,12 @@ you will see some new buttons at the top of the editor:
 .. image:: img/path2d_buttons.png
 
 Select the middle one ("Add Point") and draw the path by clicking to add
-the points at the corners shown. To have the points snap to the grid, make sure "Snap to
-Grid" is checked. This option can be found under the "Snapping options"
-button to the left of the "Lock" button, appearing as a series of three
-vertical dots.
+the points at the corners shown. To have the points snap to the grid, first make
+sure that "Use Snap" is turned on, and then check that "Snap to Grid" is checked in
+the "Snapping options". The "Use Snap" button can be found to the right
+of the "Pan Mode" button, and has a small magnet symbol with three small dots. 
+The "Snapping options" button is immediately to the right of the "Use Snap" button,
+and appears as a series of three vertical dots.
 
 .. image:: img/draw_path2d.gif
 
