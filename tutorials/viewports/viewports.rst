@@ -80,6 +80,11 @@ or make it the current camera by calling:
 
     camera.make_current()
 
+By default, cameras will render all objects in their world. In 3D, cameras can use their
+:ref:`cull_mask <class_Camera_property_cull_mask>` property combined with the
+:ref:`VisualInstance's <class_VisualInstance>` :ref:`layer <class_VisualInstance_property_layers>`
+property to restrict which objects are rendered.
+
 Scale & stretching
 ------------------
 
@@ -150,14 +155,9 @@ it using (for example):
 
 ::
 
-   # Let two frames pass to make sure the screen can be captured.
-   yield(get_tree(), "idle_frame")
-   yield(get_tree(), "idle_frame")
+   # Wait until the frame has finished before getting the texture
+   yield(VisualServer, "frame_post_draw")
    # You can get the image after this.
-
-If the returned image is empty, capture still didn't happen, wait a
-little more, as Godot's rendering API is asynchronous. For a working example of this,
-check out the `Screen Capture example <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/screen_capture>`_ in the demo projects
 
 Viewport Container
 ------------------
