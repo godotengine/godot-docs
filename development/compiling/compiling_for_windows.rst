@@ -22,7 +22,7 @@ For compiling under Windows, the following is required:
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
 
-              scoop install gcc python scons
+              scoop install gcc python scons make
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
