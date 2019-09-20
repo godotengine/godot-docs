@@ -21,84 +21,101 @@ It can take lots of practice and iterations to get this right, but there are a f
 Throughout the course of this tutorial, we will cover:
 
 - How to tell Godot to run in VR.
-- How to make a teleportation system for moving the player.
-- How to make a directional movement system (locomotion) for moving the player.
-- How to make a :ref:`RigidBody <class_RigidBody>`-based pick up and drop system.
-- How to make various items that can be used in VR.
+- How to make a teleportation locomotion system that uses the VR controllers.
+- How to make a artificial movement locomotion system that uses the VR controllers.
+- How to create a :ref:`RigidBody <class_RigidBody>`-based system that allows for picking up, dropping, and throwing RigidBody nodes using the VR controllers.
+- How to create simple destroyable target.
+- How to create some special :ref:`RigidBody <class_RigidBody>`-based objects that can destroy the targets.
 
-.. note:: While this tutorial can be completed by beginners, it is highly
+.. tip:: While this tutorial can be completed by beginners, it is highly
           advised to complete :ref:`doc_your_first_game`,
-          if you are new to Godot and/or game development and have some experience with making 3D games
-          **before** going through this tutorial series.
+          if you are new to Godot and/or game development.
+          
+          **Some experience with making 3D games is required** before going through this tutorial series.
+          This tutorial assumes you have experience with the Godot editor, GDScript, and basic 3D game development.
+          A OpenVR-ready headset and two OpenVR-ready controllers are required.
+          
+          This tutorial was written and tested using a Windows Mixed Reality headset and controllers. This project has also been tested on the HTC Vive. Code adjustments may be required
+          for other VR Headsets, such as the Oculus Rift.
 
-          This tutorial assumes you have experience working with the Godot editor,
-          have basic programming experience in GDScript, and have basic 3D game development experience.
+The Godot project for this tutorial is found on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_. The starter assets for this tutorial can be found under
+the "Starter Assets" branch of the GitHub repository. The starter assets contain some 3D models, sounds, scripts, and scenes that are configured for this tutorial.
 
-          Also, it is assumed you have both an OpenVR-ready headset and two OpenVR-ready controllers! This tutorial was written using a Windows Mixed Reality headset on Windows 10,
-          so the tutorial is written to work on that headset. It has also been tested on the HTC Vive. You may need to adjust the code to work with other VR headsets, such as the Oculus Rift.
+.. note:: **Credits for the assets provided**:
+          
+          - The sky panorama was created by `CGTuts <https://cgi.tutsplus.com/articles/freebie-8-awesome-ocean-hdris--cg-5684>`_.
+          
+          - The font used is Titillium-Regular 
+          - - The font is licensed under the SIL Open Font License, Version 1.1
+          
+          - The audio used are from several different sources, all downloaded from the Sonniss #GameAudioGDC Bundle (`License PDF <https://sonniss.com/gdc-bundle-license/>`_) 
+          - - The folders where the audio files are stored have the same name as folders in the Sonniss audio bundle.
+          
+          - The OpenVR addon was created by `Bastiaan Olij <https://github.com/BastiaanOlij>`_ and is released under the MIT license. It can be found both on the `Godot Asset Library <https://godotengine.org/asset-library/asset/150>`_ and on `GitHub <https://github.com/GodotVR/godot-openvr-asset>`_.
+          
+          - The initial project, 3D models, and scripts were created by `TwistedTwigleg <https://github.com/TwistedTwigleg>`_ and is released under the MIT license.
 
-You can find the start assets for this tutorial here: :download:`VR_Starter_Tutorial_Start.zip <files/VR_Starter_Tutorial_Start.zip>`
+.. tip:: You can find the finished project on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_.
 
-The provided starter assets contain some 3D models, sounds, and a few scenes already set up and configured for this tutorial.
-
-Feel free to use these assets however you want! All original assets belong to the Godot community, with the other assets belonging to those listed below:
-
-.. note:: The sky panorama was created by **CGTuts** (`original source <https://cgi.tutsplus.com/articles/freebie-8-awesome-ocean-hdris--cg-5684>`_).
-
-          The font used is **Titillium-Regular**, and is licensed under the SIL Open Font License, Version 1.1.
-
-          The audio used are from several different sources, all downloaded from the **Sonnis #GameAudioGDC Bundle** (`license in PDF format <https://sonniss.com/gdc-bundle-license/>`_).
-          The folders where the audio files are stored have the same name as folders in the bundle.
-
-          The **OpenVR addon** was created by Bastiaan Olij and is released under the MIT license. It can be found both `on the Asset Library <https://godotengine.org/asset-library/asset/150>`_ and `on GitHub <https://github.com/GodotVR/godot-openvr-asset>`_.
-
-          Everything else is original and created solely for this tutorial by TwistedTwigleg. They are released under the MIT license, so feel free to use them however you see fit!
-
-.. tip:: You can find the finished project at the bottom of this page.
 
 Getting everything ready
 ------------------------
 
-Launch Godot and open up the project included in the starter assets.
+If you have not already, go to the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_ and download the "Starter Assets" branch. Once you have the
+starter assets branch downloaded, open up the project in Godot.
 
-.. note:: While these assets are not necessarily required to use the scripts provided in this tutorial,
-          they will make the tutorial much easier to follow, as there are several premade scenes we
-          will be using throughout the tutorial series.
+.. note:: The starter assets are not required to use the scripts provided in this tutorial.
+          The starter assets include several premade scenes and scripts that will be used throughout the tutorial.
 
-First, you may notice there is already quite a bit set up. This includes a pre-built level, several instanced scenes placed around,
-some background music, and several GUI-related :ref:`MeshInstances <class_MeshInstance>` nodes.
+When the project is first loaded, the Game.tscn scene will be opened. This will be the main scene used for the tutorial. It includes several nodes and scenes already placed
+throughout the scene, some background music, and several GUI-related :ref:`MeshInstance <class_MeshInstance>` nodes.
 
-You may also notice that the GUI-related meshes already have a script attached to them. This is used to show whatever is inside the :ref:`Viewport <class_Viewport>`
-on the mesh. Feel free to take a look if you want, but this tutorial will not be going over how to use the :ref:`Viewport <class_Viewport>` nodes for making 3D GUI
-:ref:`MeshInstance <class_MeshInstance>` nodes.
+_________________
 
-The other thing to notice, before we jump into writing the code, is how the :ref:`ARVROrigin <class_ARVROrigin>` node works. How it works is kind of hard to explain,
-especially if you have never used VR before, but here is the gist of it:
-The :ref:`ARVROrigin <class_ARVROrigin>` node is the center point of the room. If there is no room-scale tracking, then the :ref:`ARVROrigin <class_ARVROrigin>` will
-be directly below the player, but if there is room-scale tracking, then the :ref:`ARVROrigin <class_ARVROrigin>` will be the center of the tracked room.
+The GUI-related :ref:`MeshInstance <class_MeshInstance>` nodes already have scripts attached to them. These scripts will set the texture of a :ref:`Viewport <class_Viewport>`
+node to the albedo texture of the material of the :ref:`MeshInstance <class_MeshInstance>` node. This is used to display text within the VR project. Feel free to take a look
+at the script, ``GUI.gd``, if you want. We will not be going over how to to use :ref:`Viewport <class_Viewport>` nodes for displaying UI on :ref:`MeshInstance <class_MeshInstance>`
+nodes in this tutorial .
 
-.. note:: This is a bit of a simplification, and honestly, I do not know enough about the various different VR headsets and how they work to give a more detailed
-          and complete explanation. Consider it like this: The :ref:`ARVROrigin <class_ARVROrigin>` is the center of the VR world. If there is
-          room tracking, the player can move away from the center point, the :ref:`ARVROrigin <class_ARVROrigin>` node, but only as far as the room scaling tracks.
+If you are interested in how to use :ref:`Viewport <class_Viewport>` nodes for displaying UI on :ref:`MeshInstance <class_MeshInstance>` nodes, see the :ref:`doc_viewport_as_texture`
+tutorial. It covers how to use a :ref:`Viewport <class_Viewport>` as a render texture, along with how to apply that texture onto a :ref:`MeshInstance <class_MeshInstance>` node.
 
-If you select the :ref:`ARVROrigin <class_ARVROrigin>` node, you may notice that the world scale is set to ``1.4``. This is because I originally made the world too big,
-and so I needed to scale the VR player slightly so they better fit the world. As mentioned earlier, keeping the scale relatively constant is very important!
+_________________
 
-Another thing to notice here is how we have everything set up under the :ref:`ARVROrigin <class_ARVROrigin>` node. The player camera is an :ref:`ARVRCamera <class_ARVRCamera>`
-that represents the player's head in the game. The :ref:`ARVRCamera <class_ARVRCamera>` will be offset by the player's height, and if there is room tracking, then the camera
-can move around 3D space as well, relative to the :ref:`ARVROrigin <class_ARVROrigin>`. This is important to note, especially for later when we add teleporting.
+Before we jump into the tutorial, let's take a moment to talk about how the nodes used for VR work.
 
-Notice how there is a :ref:`ColorRect <class_ColorRect>` node called ``Movement_Vignette``. This will be a vignette shader that will only be visible when the player is moving.
-We are going to use the vignette shader to help reduce motion sickness while moving in VR.
-The reason it is a child of :ref:`ARVROrigin <class_ARVROrigin>` is because we want it to easily access the VR controllers.
+The :ref:`ARVROrigin <class_ARVROrigin>` node is the center point of the VR tracking system. The position of the :ref:`ARVROrigin <class_ARVROrigin>` is the position
+the VR system considers the 'center' point on the floor. The :ref:`ARVROrigin <class_ARVROrigin>` has a `world scale` property that effects the size of the user within
+the VR scene. For this tutorial, it is set to `1.4`, as the world was originally just a tad to big. As mentioned earlier, keeping the scale relatively consistent is
+important in VR.
 
-The final thing to note is that there are two :ref:`ARVRController <class_ARVRController>` nodes, and these will represent the left and right controllers in 3D space.
-An :ref:`ARVRController <class_ARVRController>` with an ID of 1 is the left hand, while an :ref:`ARVRController <class_ARVRController>` with an ID of 2 is the right hand.
+The :ref:`ARVRCamera <class_ARVRCamera>` is the player's headset and view into the scene. The :ref:`ARVRCamera <class_ARVRCamera>` is offset on the Y axis by the VR user's height,
+which will be important later when we add teleportation locomotoin. If the VR system supports room tracking, then the :ref:`ARVRCamera <class_ARVRCamera>` will move as the player moves.
+This means that the :ref:`ARVRCamera <class_ARVRCamera>` is not guaranteed to be in the same position as the :ref:`ARVROrigin <class_ARVROrigin>` node.
+
+The :ref:`ARVRController <class_ARVRController>` node represents a VR controller. The :ref:`ARVRController <class_ARVRController>` will follow the position and rotation of the VR
+controller relative to the :ref:`ARVROrigin <class_ARVROrigin>` node. All of the input for the VR controllers happens through the :ref:`ARVRController <class_ARVRController>` node.
+An :ref:`ARVRController <class_ARVRController>` node with an ``ID`` of ``1`` represents the left VR controller, while an :ref:`ARVRController <class_ARVRController>` controller with an
+``ID`` of ``2`` represents the right VR controller.
+
+To summerize: 
+
+- The :ref:`ARVROrigin <class_ARVROrigin>` node is the center of the VR tracking system and is positioned on the floor.
+
+- The :ref:`ARVRCamera <class_ARVRCamera>` is the player's VR headset and view into the scene.
+
+- The :ref:`ARVRCamera <class_ARVRCamera>` node is offset on the Y axis by the user's height.
+
+- If the VR system supports room tracking, then the :ref:`ARVRCamera <class_ARVRCamera>` node may be offset on the X and Z axises as the player moves.
+
+- The :ref:`ARVRController <class_ARVRController>` nodes represent the VR controllers and handle all of the input from the VR controllers.
+
 
 Starting VR
 -----------
 
-First, let's get the VR up and going! While ``Game.tscn`` is open, select the ``Game`` node and make a new script called ``Game.gd``. Add the following code:
+Now that we have gone over the VR nodes, let's start working on the project. While in ``Game.tscn``, select the ``Game`` node and make a new script called ``Game.gd``.
+In the ``Game.gd`` file, add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -139,31 +156,98 @@ First, let's get the VR up and going! While ``Game.tscn`` is open, select the ``
         }
     }
 
-For this to work, you will need to have the `OpenVR asset from the Asset Library <https://godotengine.org/asset-library/asset/150>`_. The OpenVR asset is included in the starter assets, but there may be newer
-versions that work better, so I would highly suggest deleting the ``addons`` folder, then going to the Asset Library and downloading the newest
-version.
+Let's go over what this code does.
 
-With that done, let's quickly go over what this script does.
+_________________
 
-First, we find a VR interface from the ARVR server. We do this because by default Godot does not include any VR interfaces, but rather exposes an API so anyone can make
-AR/VR interfaces with GDNative/C++. Next, we check to see if an OpenVR interface was found, and then we initialize it.
+In the ``_ready`` function, we first get the OpenVR VR interface using the ``find_interface`` function in the :ref:`ARVRServer <class_ARVRServer>` and assign it to a variable
+called `VR`. If the :ref:`ARVRServer <class_ARVRServer>` finds an interface with the name OpenVR, it will return it, otherwise it will return ``null``.
 
-Assuming nothing went wrong with initializing, we then turn the main :ref:`Viewport <class_Viewport>` into an AR/VR viewport, by setting ``arvr`` to ``true``.
-We also set HDR to ``false``, since you cannot use HDR in OpenVR.
+.. note:: The OpenVR VR interface is not included with Godot by default. You need the OpenVR asset from the `Asset Library <https://godotengine.org/asset-library/asset/150>`_ or
+`GitHub <https://github.com/GodotVR/godot-openvr-asset>`_.
 
-Then, we disable V-Sync and set the target FPS to 90 frames per second. Most VR headsets run at 90 Hz, and since the game will display
-on both the VR headset and the computer's monitor, we want to disable V-Sync and set the target FPS manually, so the computer's monitor does not drag the VR display down to 60 FPS.
+The code then combines two conditionals, one to check if the `VR` variable is NOT null (``if VR``) and another calls the initialize function, which returns a boolean based on
+whether the OpenVR interface was able to initialize or not. If both of these conditionals return true, then we can turn the main Godot :ref:`Viewport <class_Viewport>` into
+an ARVR viewport.
 
-.. note:: One thing to notice as well is that the physics FPS is also set to 90! This makes the physics run at the same frame rate as the display, which makes
-          things look smoother in VR.
+If the VR interface initialized successfully, we then get the root :ref:`Viewport <class_Viewport>` and set the `arvr` property to ``true``. This will tell Godot to use the initialized
+ARVR interface to drive the :ref:`Viewport <class_Viewport>` display. After setting the ``arvr`` property to ``true``, we set the ``hdr`` property to ``false``. We do this because
+most of the VR headsets do not currently support HDR rendering.
+
+Finally, we disable VSync so the Frames Per Second (FPS) is not capped by the computer monitor. After this we tell Godot to render at ``90`` frames per second, which is the
+standard for most VR headsets. Without disabling VSync, the normal computer monitor may limit the frame rate of the VR headset to the frame rate of the computer monitor.
+
+.. note:: In the project settings, under the ``Physics->Common`` tab, the physics FPS has been set to ``90``. THis makes the physics engine run at the same frame rate as
+          the VR display, which makes physics reactions look smoother when in VR.
+
+_________________
+
+That is all we need to do for Godot to launch OpenVR within the project! Go ahead and give it a try if you want. Assuming everything works, you will be able to look around
+the world. If you have a VR headset with room tracking, then you will be able to move around the scene within the limits of the room tracking.
+
+Creating the controllers
+------------------------
 
 .. image:: img/starter_vr_tutorial_hands.png
 
-With that done, go ahead and give the game a try! If everything goes well, you will now be able to look around the world! If you have a VR headset with room tracking,
-you will be able to move around as far as the room tracking allows.
+Right now all that the VR user can do is stand around, which isn't really what we are going for unless we are working on a VR film. Lets write the code for the
+VR controllers. We are going to write all of the code for the VR controllers in one go, so the code is rather long. That said, once we are finished you will be
+able to teleport around the scene, artificially move using the touchpad/joystick on the VR controller, and be able to pick up, drop, and throw
+:ref:`RigidBody <class_RigidBody>`-based nodes.
 
-Coding the controllers
-----------------------
+First we need to open the scene used for the VR controllers. ``Left_Controller.tscn`` or ``Right_Controller.tscn``. Let's briefly go over how the scene is setup.
+
+How the VR controller scene is setup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In both scenes the root node is a ARVRController node. The only difference is that the ``Left_Controller`` scene has the ``Controller Id`` property set to ``1`` while
+the ``Right_Controller`` has the ``Controller Id`` property set to ``2``.
+
+Next is the ``Hand`` :ref:`MeshInstance <class_MeshInstance>` node. This node is used to display the hand mesh that will be used when the VR controller is not holding onto a
+:ref:`RigidBody <class_RigidBody>` node. The hand in the ``Left_Controller`` scene is a left hand, while the hand on the ``Right_Controller`` scene is a right hand.
+
+The node named ``Raycast`` is a :ref:`Raycast <class_Raycast>` node that is used for aiming where to teleport to when the VR controller is teleporting.
+The length of the :ref:`Raycast <class_Raycast>` is set to ``-16`` on the Y axis and is rotated so that it points out of the pointer finger of the hand. The ``Raycast`` node has
+a single child node, ``Mesh``, that is a :ref:`MeshInstance <class_MeshInstance>`. This is used for visually showing where the teleportation :ref:`Raycast <class_Raycast>` is aiming.
+
+The node named ``Area`` is a :ref:`Area <class_Area>` node will be used for grabbing :ref:`RigidBody <class_RigidBody>`-based nodes when the VR controller grab mode is set to ``AREA``.
+The ``Area`` node has a single child node, ``CollisionShape``, that defines a sphere :ref:`CollisionShape <CollisionShape>`. When the VR controller is not holding any objects and the grab button is pressed,
+the first :ref:`RigidBody <class_RigidBody>`-based node within the ``Area`` node will be picked up.
+
+Next is a :ref:`Position3D <class_Position3D>` node called ``Grab_Pos``. This is used to define the position that grabbed :ref:`RigidBody <class_RigidBody>` nodes will follow then
+they are held by the VR controller.
+
+A large :ref:`Area <class_Area>` node called ``Sleep_Area`` is used to disable sleeping for any RigidBody nodes within its :ref:`CollisionShape <CollisionShape>`,
+simple called ``CollisionShape``. This is needed because if a :ref:`RigidBody <class_RigidBody>` node falls asleep, then the VR controller will be unable to grab it.
+By using ``Sleep_Area``, we can write code that makes any :ref:`RigidBody <class_RigidBody>` node within it not able to sleep, therefore allowing the VR controller to grab it.
+
+An :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node called ``AudioStreamPlayer3D`` has a sound loaded that we will use when an object has been picked up, dropped
+or thrown by the VR controller. While this is not necessary for the functionality of the VR controller, it makes grabbing and dropping objects feel more natural.
+
+Finally, the last nodes are the ``Grab_Cast`` node and it's only child node, ``Mesh``. The ``Grab_Cast`` node will be used for grabbing :ref:`RigidBody <class_RigidBody>`-based
+nodes when the VR controller grab mode is set to ``RAYCAST``. This will allow the VR controller to grab objects that are just slightly out of reach using a Raycast. The ``Mesh``
+node is used for visually showing where the teleportation :ref:`Raycast <class_Raycast>` is aiming.
+
+That is a quick overview of how the VR controller scenes are setup, and how we will be using the nodes to provide the functionality for them. Now that we have looked at the
+VR controller scene, let's write the code that will drive them.
+
+The code for the VR controllers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Select the root node of the scene, either ``Right_Controller`` or ``Left_Controller``, and make a new script called ``VR_Controller.gd``. Both scenes will be using
+the same script, so it doesn't matter which you use first. With ``VR_Controller.gd`` opened, add the following code:
+
+.. tip:: You can copy and paste the code from this page directly into the script editor.
+         
+         If you do this, all of the code copied will be using spaces instead of tabs.
+
+         To convert the spaces to tabs in the script editor, click the ``Edit`` menu and select ``Convert Indent To Tabs``.
+         This will convert all the spaces into tabs. You can select ``Convert Indent To Spaces`` to convert tabs back into spaces.
+
+
+.. seealso:: **TWISTED TWIGLEG: Finished editing here. Everything below this line is the OLD tutorial**.
+             
+             Self note: Mention the ColorRect node and how it is parented to the VR Origin node when talking about the vignette shader!
 
 While perhaps interesting if we were making a VR film, we really want to do more than stand around and look. Currently, we cannot move outside of the room tracking boundaries
 (assuming your VR headset has room tracking) and we cannot interact with anything! Let's change that!
