@@ -596,105 +596,255 @@ Finally, the ``button_pressed`` and ``button_release`` signals in the :ref:`ARVR
 ``button_pressed`` and ``button_released`` functions respectively. This means that when a button on the VR controller is pressed or released, the ``button_pressed`` or ``button_released``
 functions defined in this script will be called.
 
-_________________
 
 ``_physics_process`` function step-by-step explanation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+First we check to see if the ``rumble`` variable is more than zero. If the ``rumble`` variable, which is a property of the :ref:`ARVRController <class_ARVRController>` node, is more
+than zero then the VR controller rumbles.
+
+If the ``rumble`` variable is more than zero, then we reduce the rumble by ``CONTROLLER_RUMBLE_FADE_SPEED`` every second by subtracting ``CONTROLLER_RUMBLE_FADE_SPEED`` multiplied by delta.
+There is then a ``if`` condition to check if ``rumble`` is less than zero, which sets ``rumble`` to zero if its value is less than zero.
+
+This small section of code is all we need for reducing the VR controller's rumble. Now when we set ``rumble`` to a value, this code will automatically make it fade over time.
 
 _________________
+
+The first section of code checks to see if the ``teleport_button_down`` variable is equal to ``true``, which means this VR controller is trying to teleport.
+
+If ``teleport_button_down`` is equal to ``true``, we force the ``teleport_raycast`` :ref:`Raycast <class_Raycast>` node to update using the ``force_raycast_update`` function.
+The ``force_raycast_update`` function will update the properties within the :ref:`Raycast <class_Raycast>` node with the latest version of the physics world.
+
+The code then checks to see if the ``teleport_raycast`` collided with anything by checking of the ``is_colliding`` function in ``teleport_raycast`` is true. If the :ref:`Raycast <class_Raycast>`
+collided with something, we then check to see if the :ref:`PhysicsBody <class_PhysicsBody>` the raycast collided with is a :ref:`StaticBody <class_StaticBody>` or not. We then check to
+see if the collision normal vector returned by the raycast is greater than or equal to ``0.85`` on the Y axis.
+
+.. note:: We do this because we do not want the user to be able to teleport onto RigidBody nodes and we only want the player to be able to teleport on floor-like surfaces.
+
+If all these conditions are met, then we assign the ``teleport_pos`` variable to the ``get_collision_point`` function in ``teleport_raycast``. This will assign ``teleport_pos`` to the
+position the raycast collided at in world space. We then move the ``teleport_mesh`` to the world position stored in ``teleport_pos``.
+
+This section of code will get the position the player is aiming at with the teleportation raycast and update the teleportation mesh, giving a visual update on where the user will be teleporting
+to when the release the teleport button.
+
+_________________
+
+The next section of code first checks to see if the VR controller is active through the ``get_is_active`` function, which is defined by :ref:`ARVRController <class_ARVRController>`. If the
+VR controller is active, then it calls the ``_physics_process_update_controller_velocity`` function.
+
+The ``_physics_process_update_controller_velocity`` function will calculate the VR controller's velocity through changes in position. It is not perfect, but this process gets a rough
+idea of the velocity of the VR controller, which is fine for the purposes of this tutorial.
+
+_________________
+
+The next section of code checks to see if the VR controller is holding an object by checking to see if the ``held_object`` variable is not equal to ``null``.
+
+If the VR controller is holding an object, we first store it's scale in a temporary variable called ``held_scale``. We then set the ``global_transform`` of the held object
+to the ``global_transform`` of the ``held_object`` node. This will make the held object have the same position, rotation, and scale of the ``grab_pos_node`` node in world space.
+
+However, because we do not want the held object to change in scale when it is grabbed, we need to set the ``scale`` property of the ``held_object`` node back to ``held_scale``.
+
+This section of code will keep the held object in the same position and rotation as the VR controller, keeping it synced with the VR controller.
+
+_________________
+
+Finally, the last section of code simply calls the ``_physics_process_directional_movement`` function. This function contains all of the code for moving the player when the
+touchpad/joystick on the VR controller moves.
+
 
 ``_physics_process_update_controller_velocity`` function step-by-step explanation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 TODO
 
-_________________
 
 ``_physics_process_directional_movement`` function step-by-step explanation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 TODO
 
-_________________
 
 ``button_pressed`` function step-by-step explanation
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 TODO
 
-_________________
 
 ``_on_button_pressed_trigger`` function step-by-step explanation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 TODO
 
-_________________
 
 ``_on_button_pressed_grab`` function step-by-step explanation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 TODO
 
-_________________
 
 ``_pickup_rigidbody`` function step-by-step explanation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+First the function makes a variable called ``rigid_body``, which we'll be using to store the :ref:`RigidBody <class_RigidBody>` that the VR controller is going to
+pick up, assuming there is a RigidBody to pick up.
 
 _________________
+
+Then the function checks to see if the ``grab_mode`` variable is equal to ``AREA``. If it is, then it gets all of the :ref:`PhysicsBody <class_PhysicsBody>` nodes within the ``grab_area`` using
+the ``get_overlapping_bodies`` functions. This function will return an array of :ref:`PhysicsBody <class_PhysicsBody>` nodes. We assign the array of :ref:`PhysicsBody <class_PhysicsBody>` to a new
+variable called ``bodies``.
+
+We then check to see if the length of the ``bodies`` variable is more than ``0``. If it is, we go through each of the :ref:`PhysicsBody <class_PhysicsBody>` nodes in ``bodies`` using a for loop.
+
+For each :ref:`PhysicsBody <class_PhysicsBody>` node, we check if it is, or extends, a :ref:`RigidBody <class_RigidBody>` node using ``if body is RigidBody``, which will return ``true`` if the
+:ref:`PhysicsBody <class_PhysicsBody>` node is or extends the :ref:`RigidBody <class_RigidBody>` node. If the object is a :ref:`RigidBody <class_RigidBody>`, then we check to make sure there is not
+a variable/constant called ``NO_PICKUP`` defined in the body. We do this because if you want to have :ref:`RigidBody <class_RigidBody>` nodes that cannot be picked up, all you have to do is
+define a constant/variable called ``NO_PICKUP`` and the VR controller will be unable to pick it up. If the :ref:`RigidBody <class_RigidBody>` node does not have a variable/constant defined with
+the name ``NO_PICKUP``, then we assign the ``rigid_body`` variable to the :ref:`RigidBody <class_RigidBody>` node and break the for loop.
+
+What this section of code does is goes through all of the physics bodies within the ``grab_area`` and grabs the first :ref:`RigidBody <class_RigidBody>` node that does not have a
+variable/constant named ``NO_PICKUP`` and assigns it to the ``rigid_body`` variable so we can do some additional post processing later in this function.
+
+_________________
+
+If the ``grab_mode`` variable is not equal to ``AREA``, we then check to see if it is equal to ``RAYCAST`` instead. If it is equal to ``RAYCAST``, we force the ``grab_raycast`` node to update
+using the ``force_raycast_update`` function. The ``force_raycast_update`` function will update the :ref:`Raycast <class_Raycast>` with the latest changes in the physics world. We then check
+to see if the ``grab_raycast`` node collided with something using the ``is_colliding`` function, which will return true if the :ref:`Raycast <class_Raycast>` hit something.
+
+If the ``grab_raycast`` hit something, we get the :ref:`PhysicsBody <class_PhysicsBody>` node hit using the ``get_collider`` function. The code then checks to see if the node hit is
+a :ref:`RigidBody <class_RigidBody>` node using ``if body is RigidBody``, which will return ``true`` if the :ref:`PhysicsBody <class_PhysicsBody>` node is or extends the
+:ref:`RigidBody <class_RigidBody>` node. Then the code checks to see if the :ref:`RigidBody <class_RigidBody>` node does not have a variable named ``NO_PICKUP``, and if it does not,
+then it assigns the :ref:`RigidBody <class_RigidBody>` node to the ``rigid_body`` variable.
+
+What this section of code does is sends the ``grab_raycast`` :ref:`Raycast <class_Raycast>` node out and checks if it collided with a :ref:`RigidBody <class_RigidBody>` node that does
+not have a variable/constant named ``NO_PICKUP``. If it collided with a RigidBody without ``NO_PICKUP``, it assigns the node to the ``rigid_body`` variable so we can do some
+additional post processing later in this function.
+
+_________________
+
+The final section of code first checks to see if ``rigid_body`` is not equal to ``null``. If ``rigid_body`` is not equal to ``null``, then the VR controller found a
+:ref:`RigidBody <class_RigidBody>`-based node that can be picked up.
+
+If there is a VR controller to pickup, we assign ``held_object`` to the :ref:`RigidBody <class_RigidBody>` node stored in ``rigid_body``. We then store the :ref:`RigidBody <class_RigidBody>` node's
+``mode``, ``collision_layer``, and ``collision_mask`` in ``held_object_data`` using ``mode``, ``layer``, and ``mask`` as keys for the respective values. This is so we can reapply them
+later when the object is dropped by the VR controller.
+
+We then set the :ref:`RigidBody <class_RigidBody>`'s mode to ``MODE_STATIC``, it's ``collision_layer`` to zero, and it's ``collision_mask`` to zero. This will make it where the held
+:ref:`RigidBody <class_RigidBody>` cannot interact with other objects in the physics world when held by the VR controller.
+
+Next the ``hand_mesh`` :ref:`MeshInstance <class_MeshInstance>` is made invisible by setting the ``visible`` property to ``false``. This is so the hand does not get in the way of the held object.
+Likewise, the ``grab_raycast`` 'laser sight' is made invisible by setting the ``visible`` property to ``false``.
+
+Then the code checks to see if the held object extends a class called ``VR_Interactable_Rigidbody``. If it does, then sets a variable called ``controller`` on ``held_object`` to ``self``, and
+calls the ``picked_up`` function on ``held_object``. While we haven't made ``VR_Interactable_Rigidbody`` yet, **we'll do that in part 2 of this tutorial series``, what this will do is set tell
+the ``VR_Interactable_Rigidbody`` class that it is being held by a VR controller, where the a reference to the controller is stored in the ``controller`` variable, through calling the ``picked_up`` function.
+
+.. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` in the next part of this tutorial series! If this code does not make sense, just keep going to Part 2 and come back.
+         The code should make more sense after completing part 2 of this tutorial series.
+
+What this section of code does is that if a :ref:`RigidBody <class_RigidBody>` was found using the grab :ref:`Area <class_Area>` or :ref:`Raycast <class_Raycast>`, it sets it up so that
+it can be carried by the VR controller.
 
 ``_throw_rigidbody`` function step-by-step explanation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+First the function checks to see if the VR controller is not holding any object by checking if the ``held_object`` variable is equal to ``null``. If it is, then it simply
+calls ``return`` so nothing happens. While this shouldn't be possible, the ``_throw_rigidbody`` function should only be called if an object is held, this check helps ensure
+that if something strange happens, this function will react as expected.
 
-_________________
+After checking if the VR controller is holding an object, we assume it is and set the stored :ref:`RigidBody <class_RigidBody>` data back to the held object. We take the ``mode``, ``layer`` and
+``mask`` data stored in the ``held_object_data`` dictionary and reapply it to the object in ``held_object``. This will set the :ref:`RigidBody <class_RigidBody>` back to the state it was prior to
+being picked up.
+
+Then we call ``apply_impulse`` on the ``held_object`` so that the :ref:`RigidBody <class_RigidBody>` is thrown in the direction of the VR controller's velocity, ``controller_velocity``.
+
+We then check to see if the object held extends a class called ``VR_Interactable_Rigidbody``. If it does, then we call a function called ``dropped`` in ``held_object`` and set
+``held_object.controller`` to ``null``. While we haven't made ``VR_Interactable_Rigidbody`` yet, **we'll do that in part 2 of this tutorial series``, what this will do is call the
+``droppped`` function so the :ref:`RigidBody <class_RigidBody>` can do whatever it needs to do when dropped, and we set the ``controller`` variable to ``null`` so that the
+:ref:`RigidBody <class_RigidBody>` knows that it is not being held.
+
+.. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` in the next part of this tutorial series! If this code does not make sense, just keep going to Part 2 and come back.
+         The code should make more sense after completing part 2 of this tutorial series.
+
+Regardless of whether ``held_object`` extends ``VR_Interactable_Rigidbody`` or not, we then set ``held_object`` to ``null`` so the VR controller knows it is no longer holding anything.
+Because the VR controller is no longer holding anything, we make the ``hand_mesh`` visible by setting ``hand_mesh.visible`` to true.
+
+Finally, if the ``grab_mode`` variable is set to ``RAYCAST``, we set ``grab_raycast.visible`` to ``true`` so the 'laser sight' for the :ref:`Raycast <class_Raycast>` in ``grab_raycast`` is visible.
+
 
 ``_on_button_pressed_menu`` function step-by-step explanation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+First this function checks to see if the ``grab_mode`` variable is equal to ``AREA``. If it is, then it sets ``grab_mode`` to ``RAYCAST``. It then checks to see if the VR controller is not
+holding anything by checking to see if ``held_object`` is equal to ``null``. If the VR controller is not holding anything, then ``grab_raycast.visible`` is set to ``true`` so the
+'laser sight' on the grab raycast is visible.
 
-_________________
+If the ``grab_mode`` variable is not equal to ``AREA``, then it checks to see if it is equal to ``RAYCAST``. If it is, then it sets the ``grab_mode`` to ``AREA`` and sets ``grab_raycast.visible``
+to ``false`` so the 'laser sight' on the grab raycast is not visible.
+
+This section of code simply changes how the VR controller will grab :ref:`RigidBody <class_RigidBody>`-based nodes when the grab/grip button is pressed. If ``grab_mode`` is set to ``AREA``, then
+the :ref:`Area <class_Area>` node in ``grab_area`` will be used for detecting :ref:`RigidBody <class_RigidBody>` nodes, while if ``grab_mode`` is set to ``RAYCAST`` the :ref:`Raycast <class_Raycast>`
+node in ``grab_raycast`` will be used for detecting :ref:`RigidBody <class_RigidBody>` nodes.
 
 
 ``button_released`` function step-by-step explanation
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+The only section of code in this function checks to see if the index of the button that was just released, ``button_index``, is equal to ``15``, which should map to the trigger button
+on the VR controller. The ``button_index`` variable is passed in by the ``button_pressed`` signal in :ref:`ARVRController <class_ARVRController>`, which we connected in the ``_ready`` function.
 
-_________________
+If the trigger button was just released, then the ``_on_button_released_trigger`` function is called.
 
 
 ``_on_button_released_trigger`` function step-by-step explanation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+The only section of code in this function first checks to see if the VR controller is trying to teleport by checking if the ``teleport_button_down`` variable is equal to ``true``.
 
-_________________
+If the ``teleport_button_down`` variable is equal to ``true``, the code then checks if there is a teleport position set and whether the teleport mesh is visible. It does this by
+checking to see if ``teleport_pos`` is not equal to ``null`` and if ``teleport_mesh.visible`` is equal to ``true``.
+
+If there is a teleport position set and the teleport mesh is visible, the code then calculates the offset from the camera to the :ref:`ARVROrigin <class_ARVROrigin>` node, which is assumed to be the
+parent node of the VR controller. To calculate the offset, the global position (``global_transform.origin``) of the ``Player_Camera`` node has the global position of the :ref:`ARVROrigin <class_ARVROrigin>`
+subtracted from it. This will result in a vector that points from the :ref:`ARVROrigin <class_ARVROrigin>` to the :ref:`ARVRCamera <class_ARVRCamera>`, which we store in a variable called ``camera_offset``.
+
+The reason we need to know the offset is because some VR headsets use room tracking, where the player's camera can be offset from the :ref:`ARVROrigin <class_ARVROrigin>` node. Because of this, when we teleport we want to
+keep the offset created by room tracking so that when the player teleports, the offset created by the room tracking is not applied. Without this, if you moved in a room and then teleported, instead
+of appearing at the position you wanted to teleport at, your position would be offset by the amount of distance you have from the :ref:`ARVROrigin <class_ARVROrigin>` node.
+
+Now that we know the offset from the VR camera to the VR origin, we need to remove the difference on the ``Y`` axis. We do this because we do not want to offset based on the user's height.
+If we did not do this, when teleporting the player's head would be level with the ground.
+
+Then we can 'teleport' the player by setting the global position (``global_transform.origin``) of the ARVROrigin node to the position stored in ``teleport_pos`` with ``camera_offset`` subtracted from it.
+This will teleport the player and remove the room tracking offset, so the user appears exactly where they want when teleporting.
+
+Finally, regardless of whether the VR controller teleported the user or not, we reset the teleport related variables. ``teleport_button_down`` is set to ``false``, ``teleport_mesh.visible`` is
+set to ``false`` so the mesh is invisible, ``teleport_raycast.visible`` is set to ``false``, and ``teleport_pos`` is set to ``null``.
 
 
 ``sleep_area_entered`` function step-by-step explanation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+The only section of code in this function checks to see if the :ref:`PhysicsBody <class_PhysicsBody>` node that entered the ``Sleep_Area`` node
+has a variable called ``can_sleep``. If it does, then it sets the ``can_sleep`` variable to ``false`` and sets the ``sleeping`` variable to ``false``.
 
-_________________
+Without doing this, sleeping :ref:`PhysicsBody <class_PhysicsBody>` nodes would not be able to be picked up by the VR controller, even if the VR controller
+is at the same position as the :ref:`PhysicsBody <class_PhysicsBody>` node. To work around this, we simply 'wake up' :ref:`PhysicsBody <class_PhysicsBody>` nodes
+that are close to the VR controller.
 
 
 ``sleep_area_exited`` function step-by-step explanation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+The only section of code in this function checks to see if the :ref:`PhysicsBody <class_PhysicsBody>` node that entered the ``Sleep_Area`` node
+has a variable called ``can_sleep``. If it does, then it sets the ``can_sleep`` variable to ``true``.
+
+This allows :ref:`RigidBody <class_RigidBody>` nodes that leave the ``Sleep_Area`` to sleep again, saving performance.
 
 _________________
 
 
-Okay, whew! That was a lot of code! Add the same script, ``VR_Controller.gd`` to the other controller so both controllers have the same script.
+Okay, whew! That was a lot of code! Add the same script, ``VR_Controller.gd`` to the other VR controller scene so both VR controllers have the same script.
 
 Now go ahead and try the game again, and you should find you can teleport around by pressing the touch pad, and can grab and throw objects
 using the grab/grip buttons.
@@ -702,7 +852,7 @@ using the grab/grip buttons.
 Now, you may want to try moving using the trackpads and/or joysticks, but **it may make you motion sick!**
 
 One of the main reasons this can make you feel motion sick is because your vision tells you that you are moving, while your body is not moving.
-This conflict of signals makes the body feel sick. Let's add a vignette shader to help reduce motion sickness while moving in VR!
+This conflict of signals can make the body feel sick. Let's add a vignette shader to help reduce motion sickness while moving in VR!
 
 .. seealso:: **TWISTED TWIGLEG: Finished editing here. Everything below this line is the OLD tutorial**.
              
