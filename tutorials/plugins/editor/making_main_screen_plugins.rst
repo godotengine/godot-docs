@@ -119,7 +119,7 @@ Select the ``pressed()`` signal and click the ``Connect`` button (you can also
 double-click the ``pressed()`` signal instead). In the window that opened,
 select the Panel node (we will centralize all behaviors in its attached
 script). Keep the default function name, make sure that the ``Make function``
-toggle is ON and hit ``Connect``. This creates an ``on_Button_pressed()``
+toggle is ON and hit ``Connect``. This creates an ``_on_Button_pressed()``
 function in the ``main_panel.gd`` script, that will be called every time the
 button is pressed.
 
@@ -136,7 +136,7 @@ script:
 
     signal main_button_pressed(value)
 
-    func on_Button_pressed():
+    func _on_Button_pressed():
        emit_signal("main_button_pressed", "Hello from main screen!")
 
 In the same way, this main scene's Label node has to show a value when it
@@ -168,7 +168,7 @@ Here is the script's full content:
 
     signal side_button_pressed(value)
 
-    func on_Button_pressed():
+    func _on_Button_pressed():
        emit_signal("side_button_pressed", "Hello from side panel!")
 
     func _on_main_button_pressed(text_to_show):
