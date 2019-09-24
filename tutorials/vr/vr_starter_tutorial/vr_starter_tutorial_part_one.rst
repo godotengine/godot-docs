@@ -655,31 +655,141 @@ touchpad/joystick on the VR controller moves.
 ``_physics_process_update_controller_velocity`` function step-by-step explanation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+First this function resets the ``controller_velocity`` variable to zero :ref:`Vector3 <class_Vector3>`.
+
+_________________
+
+Then we check to see if there are any stored/cached VR controller velocities saved in the ``prior_controller_velocities`` array. We do this by checking to see if the ``size()`` function
+returns a value greater than ``0``. If there are cached velocities within ``prior_controller_velocities``, then we iterate through each of the stored velocities using a ``for`` loop.
+
+For each of the cached velocities, we simply add its value to ``controller_velocity``. Once the code has gone through all of the cached velocities in ``prior_controller_velocities``,
+we divide ``controller_velocity`` by the size of the ``prior_controller_velocities`` array, which will give us the combined velocity value. This helps take the previous velocities into
+account, making the direction of the controller's velocity more accurate.
+
+_________________
+
+Next we calculate the change in position the VR controller has taken since the last ``_physics_process`` function call. We do this by subtracting ``prior_controller_position`` from the
+global position of the VR controller, ``global_transform.origin``. This will give us a :ref:`Vector3 <class_Vector3>` that points from the position in ``prior_controller_position`` to
+the current position of the VR controller, which we store in a variable called ``relative_controller_position``.
+
+Next we add the change in position to ``controller_velocity`` so the latest change in position is taken into account in the velocity calculation. We then add ``relative_controller_position``
+to ``prior_controller_velocities`` so it can be taken into account on the next calculation of the VR controller's velocity.
+
+Then ``prior_controller_position`` is updated with the global position of the VR controller, ``global_transform.origin``. We then divide ``controller_velocity`` by ``delta`` so the velocity
+is higher, giving results like those we expect, while still being relative to the amount of time that has passed. It is not a perfect solution, but the results look decent most of the time
+and for the purposes of this tutorial, it is good enough.
+
+Finally, the function checks to see if the ``prior_controller_velocities`` has more than ``30`` velocities cached by checking if the ``size()`` function returns a value greater than ``30``.
+If there are more than ``30`` cached velocities stored in ``prior_controller_velocities``, then we simply remove the oldest cached velocity by calling the ``remove`` function and passing in
+a index position of ``0``.
+
+_________________
+
+What this function ultimately does is that it gets a rough idea of the VR controller's velocity by calculating the VR controller's relative changes in position
+over the last thirty ``_physics_process`` calls. While this is not perfect, it gives a decent idea of how fast the VR controller is moving in 3D space.
 
 
 ``_physics_process_directional_movement`` function step-by-step explanation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+First this function gets the axises for the trackpad and the joystick and assigns them to :ref:`Vector2 <class_Vector2>` variables called ``trackpad_vector`` and ``joystick_vector`` respectively.
+
+.. note:: You may need to remap the joystick and/or touchpad index values depending on your VR headset and controller. The inputs in this tutorial are the index values of a
+          Windows Mixed Reality headset.
+
+Then ``trackpad_vector`` and ``joystick_vector`` have their deadzones account for. The code for this is detailed in the article below, with slight changes as the code is converted from
+C# to GDScript.
+
+.. note:: You can find a great article explaining all about how to handle touchpad/joystick dead zones here: http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
+
+Once the ``trackpad_vector`` and ``joystick_vector`` variables have had their deadzones account for, the code then gets the forward and right direction vectors relative to the
+global transform of the :ref:`ARVRCamera <class_ARVRCamera>`. What this does is that it gives us vectors that point forward and right relative to the rotation of the user camera,
+the :ref:`ARVRCamera <class_ARVRCamera>`, in world space. These vectors point in the same direction of the blue and red arrows when you select an object in the Godot editor with
+the ``local space mode`` button enabled. The forward direction vector is stored in a variable called ``forward_direction``, while the right direction vector is stored in a variable
+called ``right_direction``.
+
+Next the code adds the ``trackpad_vector`` and ``joystick_vector`` variables together and normalizes the results using the ``normalized`` function. This gives us the
+combined movement direction of both input devices, so we can use a single :ref:`Vector2 <class_Vector2>` for moving the user. We assign the combined direction to a variable called ``movement_vector``.
+
+Then we calculate the distance the user will move forward, relative to the forward direction stored in ``forward_direction``. To calculate this, we multiply ``forward_direction`` by ``movement_vector.x``,
+``delta``, and ``MOVEMENT_SPEED``. This will give us the distance the user will move forward when the trackpad/joystick is pushed forward or backwards. We assign this to a variable called
+``movement_forward``.
+
+We do a similar calculation for the distance the user will move right, relative to the right direction stored in ``right_direction``. To calculate the distance the user will move right,
+we multiply ``right_direction`` by ``movement_vector.y``, ``delta``, and ``MOVEMENT_SPEED``. This will give us the distance the user will move right when the trackpad/joystick is pushed right or left.
+We assign this to a variable called ``movement_right``.
+
+Next we remove any movement on the ``Y`` axis of ``movement_forward`` and ``movement_right`` by assigning their ``Y`` values to ``0``. We do this so the user cannot fly/fall simply by moving the trackpad
+or joystick. Without doing this, the player could fly in the direction they are facing.
+
+Finally, we check to see if the ``length`` function on ``movement_right`` or ``movement_forward`` is greater than ``0``. If it is, then we need to move the user. To move the user, we perform a global
+translation to the :ref:`ARVROrigin <class_ARVROrigin>` node using ``get_parent().global_translate`` and pass in the ``movement_right`` variable with the ``movement_forward`` variable added to it. This
+will move the player in the direction the trackpad/joystick is pointing, relative to the rotation of the VR headset. We also set the ``directional_movement`` variable to ``true`` so the code knows this
+VR controller is moving the player.
+
+If the ``length`` function on ``movement_right`` or ``movement_forward`` is less than or equal to ``0``, then we simply set the ``directional_movement`` variable to ``false`` so the code knows this VR
+controller is not moving the player.
+
+
+_________________
+
+What this function ultimately does is takes the input from the VR controller's trackpad and joystick and moves the player in the direction the player is pushing them. Movement is relative to the rotation
+of the VR headset, so if the player pushes forward and turns their head to the left, they will move to the left.
 
 
 ``button_pressed`` function step-by-step explanation
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+This function checks to see if the VR button that was just pressed is equal to one of the VR buttons used in this project. The ``button_index`` variable is passed in by the
+``button_pressed`` signal in :ref:`ARVRController <class_ARVRController>`, which we connected in the ``_ready`` function.
+
+There are only three buttons we are looking for in this project: the trigger button, the grab/grip button, and the menu button.
+
+.. note:: You may need to remap these button index values depending on your VR headset and controller. The inputs in this tutorial are the index values of a
+          Windows Mixed Reality headset.
+
+First we check if the ``button_index`` is equal to ``15``, which should map to the trigger button on the VR controller. If the button pressed is the trigger button,
+then the ``_on_button_pressed_trigger`` function is called.
+
+If the ``button_index`` is equal to ``2``, then the grab button was just pressed. If the button pressed is the grab button, the ``_on_button_pressed_grab`` function is called.
+
+Finally, if the ``button_index`` is equal to ``1``, then the menu button was just pressed. If the button pressed is the menu button, the ``_on_button_pressed_menu`` function is called.
 
 
 ``_on_button_pressed_trigger`` function step-by-step explanation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+First this function checks to see if the VR controller is not holding by checking if ``held_object`` is equal to ``null``. If the VR controller is not holding anything, then
+we assume that the trigger press on the VR controller was for teleporting. We then make sure that ``teleport_mesh.visible`` is equal to ``false``. We use this to tell if
+the other VR controller is trying to teleport or not, as ``teleport_mesh`` will be visible if the other VR controller is teleporting.
+
+If ``teleport_mesh.visible`` is equal to ``false``, then we can teleport with this VR controller. We set the ``teleport_button_down`` variable to ``true``, set
+``teleport_mesh.visible`` to true, and set ``teleport_raycast.visible`` to ``true``. This will tell the code in ``_physics_process`` that this VR controller is going to
+teleport, it will make the ``teleport_mesh`` visible so the user knows where the are teleporting to, and will make ``teleport_raycast`` visible to the player has a
+'laser sight' they can use to aim the teleportation pos.
+
+_________________
+
+If ``held_object`` is not equal to ``null``, then the VR controller is holding something. We then check to see if the object that is being held, ``held_object``, extends
+a class called ``VR_Interactable_Rigidbody``. we have not made ``VR_Interactable_Rigidbody`` yet, but ``VR_Interactable_Rigidbody`` will be a custom class we will use
+on all of the special/custom :ref:`RigidBody <class_RigidBody>`-based nodes in the project.
+
+.. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` after this section!
+
+If the ``held_object`` extends ``VR_Interactable_Rigidbody``, then we call the ``interact`` function, so the held object can do whatever it is supposed to do when
+the trigger is pressed and the object is held by the VR controller.
 
 
 ``_on_button_pressed_grab`` function step-by-step explanation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-TODO
+First this function checks to see if ``teleport_button_down`` is equal to ``true``. If it is, then it calls ``return``. We do this because we do not want the user to be
+able to pick up objects while teleporting.
+
+Then we check to see if the VR controller is currently not holding anything by checking if ``held_object`` is equal to ``null``. If the VR controller is not holding anything,
+then the ``_pickup_rigidbody`` function is called. If the VR controller is holding something, ``held_object`` is not equal to ``null``, then the ``_throw_rigidbody`` function is called.
+
+Finally, the pick-up/drop sound is played by calling the ``play`` function on ``hand_pickup_drop_sound``.
 
 
 ``_pickup_rigidbody`` function step-by-step explanation
@@ -736,11 +846,12 @@ Next the ``hand_mesh`` :ref:`MeshInstance <class_MeshInstance>` is made invisibl
 Likewise, the ``grab_raycast`` 'laser sight' is made invisible by setting the ``visible`` property to ``false``.
 
 Then the code checks to see if the held object extends a class called ``VR_Interactable_Rigidbody``. If it does, then sets a variable called ``controller`` on ``held_object`` to ``self``, and
-calls the ``picked_up`` function on ``held_object``. While we haven't made ``VR_Interactable_Rigidbody`` yet, **we'll do that in part 2 of this tutorial series``, what this will do is set tell
-the ``VR_Interactable_Rigidbody`` class that it is being held by a VR controller, where the a reference to the controller is stored in the ``controller`` variable, through calling the ``picked_up`` function.
+calls the ``picked_up`` function on ``held_object``. While we haven't made ``VR_Interactable_Rigidbody`` just yet, what this will do is set tell the ``VR_Interactable_Rigidbody`` class that it is
+being held by a VR controller, where the a reference to the controller is stored in the ``controller`` variable, through calling the ``picked_up`` function.
 
-.. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` in the next part of this tutorial series! If this code does not make sense, just keep going to Part 2 and come back.
-         The code should make more sense after completing part 2 of this tutorial series.
+.. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` after this section!
+         
+         The code should make more sense after completing part 2 of this tutorial series, where we will actually be using ``VR_Interactable_Rigidbody``.
 
 What this section of code does is that if a :ref:`RigidBody <class_RigidBody>` was found using the grab :ref:`Area <class_Area>` or :ref:`Raycast <class_Raycast>`, it sets it up so that
 it can be carried by the VR controller.
@@ -759,12 +870,12 @@ being picked up.
 Then we call ``apply_impulse`` on the ``held_object`` so that the :ref:`RigidBody <class_RigidBody>` is thrown in the direction of the VR controller's velocity, ``controller_velocity``.
 
 We then check to see if the object held extends a class called ``VR_Interactable_Rigidbody``. If it does, then we call a function called ``dropped`` in ``held_object`` and set
-``held_object.controller`` to ``null``. While we haven't made ``VR_Interactable_Rigidbody`` yet, **we'll do that in part 2 of this tutorial series``, what this will do is call the
-``droppped`` function so the :ref:`RigidBody <class_RigidBody>` can do whatever it needs to do when dropped, and we set the ``controller`` variable to ``null`` so that the
-:ref:`RigidBody <class_RigidBody>` knows that it is not being held.
+``held_object.controller`` to ``null``. While we have not made ``VR_Interactable_Rigidbody`` yet, but what this will do is call the ``droppped`` function so the :ref:`RigidBody <class_RigidBody>`
+can do whatever it needs to do when dropped, and we set the ``controller`` variable to ``null`` so that the :ref:`RigidBody <class_RigidBody>` knows that it is not being held.
 
-.. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` in the next part of this tutorial series! If this code does not make sense, just keep going to Part 2 and come back.
-         The code should make more sense after completing part 2 of this tutorial series.
+.. tip:: Don't worry, we will cover ``VR_Interactable_Rigidbody`` after this section!
+         
+         The code should make more sense after completing part 2 of this tutorial series, where we will actually be using ``VR_Interactable_Rigidbody``.
 
 Regardless of whether ``held_object`` extends ``VR_Interactable_Rigidbody`` or not, we then set ``held_object`` to ``null`` so the VR controller knows it is no longer holding anything.
 Because the VR controller is no longer holding anything, we make the ``hand_mesh`` visible by setting ``hand_mesh.visible`` to true.
@@ -791,7 +902,7 @@ node in ``grab_raycast`` will be used for detecting :ref:`RigidBody <class_Rigid
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 
 The only section of code in this function checks to see if the index of the button that was just released, ``button_index``, is equal to ``15``, which should map to the trigger button
-on the VR controller. The ``button_index`` variable is passed in by the ``button_pressed`` signal in :ref:`ARVRController <class_ARVRController>`, which we connected in the ``_ready`` function.
+on the VR controller. The ``button_index`` variable is passed in by the ``button_release`` signal in :ref:`ARVRController <class_ARVRController>`, which we connected in the ``_ready`` function.
 
 If the trigger button was just released, then the ``_on_button_released_trigger`` function is called.
 
@@ -843,20 +954,83 @@ This allows :ref:`RigidBody <class_RigidBody>` nodes that leave the ``Sleep_Area
 
 _________________
 
-
 Okay, whew! That was a lot of code! Add the same script, ``VR_Controller.gd`` to the other VR controller scene so both VR controllers have the same script.
 
-Now go ahead and try the game again, and you should find you can teleport around by pressing the touch pad, and can grab and throw objects
-using the grab/grip buttons.
+Now we just need to do one thing before testing the project! Right now we are referencing a class called ``VR_Interactable_Rigidbody``, but we have not defined it yet.
+While we will not be using ``VR_Interactable_Rigidbody`` in this tutorial, let's create it real quick so the project can be run.
+
+
+
+Creating a base class for interactable VR objects
+-------------------------------------------------
+
+With the ``Script`` tab still open, create a new GDScript called ``VR_Interactable_Rigidbody.gd``.
+
+.. tip:: You can create GDScripts in the ``Script`` tab by pressing ``File -> New Script...``.
+
+Once you have ``VR_Interactable_Rigidbody.gd`` open, add the following code:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+    class_name VR_Interactable_Rigidbody
+    extends RigidBody
+    
+    # (Ignore the unused variable warning)
+    # warning-ignore:unused_class_variable
+    var controller = null
+
+
+    func _ready():
+        pass
+
+
+    func interact():
+        pass
+
+
+    func picked_up():
+        pass
+
+
+    func dropped():
+        pass
+
+
+Let's quickly go through what this script.
+
+_________________
+
+First we start the script with ``class_name VR_Interactable_Rigidbody``. What this does is that it tells Godot that this GDScript is a new class that called ``VR_Interactable_Rigidbody``.
+This allows us to compare nodes against the ``VR_Interactable_Rigidbody`` class in other script files without having to load the script directly or do anything special. We can compare
+the class just like all of the built-in Godot classes.
+
+Next is a class variable called ``controller``. ``controller`` will be used to hold a reference to the VR controller that is currently holding the object. If a VR controller is not
+holding the object, then the ``controller`` variable will be ``null``. The reason we need to have a reference to the VR controller is so held objects can access VR controller specific
+data, like ``controller_velocity``.
+
+Finally, we have four functions. The ``_ready`` function is defined by Godot and all we do is simply have ``pass`` as there is nothing we need to do when the object is added to the scene
+in ``VR_Interactable_Rigidbody``.
+
+The ``interact`` function is a stub function that will be called when the interact button on the VR controller, the trigger in this case, is pressed while the object is held.
+
+.. tip:: A stub function is a function that is defined but does not have any code. Stub functions are generally designed to be overwritten or extended. In this project, we are using
+         the stub functions so there is a consistent interface across all interactable :ref:`RigidBody <class_RigidBody>` objects.
+
+The ``picked_up`` and ``dropped`` functions are stub functions that will be called when the object is picked up and dropped by the VR controller.
+
+_________________
+
+That is all we need to do for now! In the next part of this tutorial series, we'll start making special interactable :ref:`RigidBody <class_RigidBody>` objects.
+
+Now that the base class is defined, the code in the VR controller should work. Go ahead and try the game again, and you should find you can teleport around by pressing the touch pad,
+and can grab and throw objects using the grab/grip buttons.
 
 Now, you may want to try moving using the trackpads and/or joysticks, but **it may make you motion sick!**
 
 One of the main reasons this can make you feel motion sick is because your vision tells you that you are moving, while your body is not moving.
 This conflict of signals can make the body feel sick. Let's add a vignette shader to help reduce motion sickness while moving in VR!
 
-.. seealso:: **TWISTED TWIGLEG: Finished editing here. Everything below this line is the OLD tutorial**.
-             
-             Self note: Mention the ColorRect node and how it is parented to the VR Origin node when talking about the vignette shader!
+
 
 Reducing motion sickness
 ------------------------
@@ -867,62 +1041,98 @@ Reducing motion sickness
 
 To help reduce motion sickness while moving, we are going to add a vignette effect that will only be visible while the player moves.
 
-Open up ``Movement_Vignette.tscn``, which you can find in the ``Scenes`` folder. Notice how it is just a :ref:`ColorRect <class_ColorRect>` node with a custom
-shader. Feel free to look at the custom shader if you want, it is just a slightly modified version of the vignette shader you can find in the Godot demo repository.
+First, quickly switch back to ``Game.tscn```. Under the :ref:`ARVROrigin <class_ARVROrigin>` node there is a child node called ``Movement_Vignette``. This node is going to apply a simple
+vignette to the VR headset when the player is moving using the VR controllers. This should help reduce motion sickness.
 
-With ``Movement_Vignette`` selected, make a new script called ``Movement_Vignette.gd``. Add the following code to ``Movement_Vignette.gd``:
+Open up ``Movement_Vignette.tscn``, which you can find in the ``Scenes`` folder. The scene is just a :ref:`ColorRect <class_ColorRect>` node with a custom
+shader. Feel free to look at the custom shader if you want, it is just a slightly modified version of the vignette shader you can find in the
+`Godot demo repository <https://github.com/godotengine/godot-demo-projects>`_.
+
+Let's write the code that will make the vignette shader visible when the player is moving. Select the ``Movement_Vignette`` node and create a new script called ``Movement_Vignette.gd``.
+Add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends ColorRect
+    extends Control
 
     var controller_one
     var controller_two
+
 
     func _ready():
         yield(get_tree(), "idle_frame")
         yield(get_tree(), "idle_frame")
         yield(get_tree(), "idle_frame")
         yield(get_tree(), "idle_frame")
-
-        var interface = ARVRServer.get_primary_interface()
-
+        
+        var interface = ARVRServer.primary_interface
+        
+        if interface == null:
+            set_process(false)
+            printerr("Movement_Vignette: no VR interface found!")
+            return
+        
         rect_size = interface.get_render_targetsize()
-        rect_position = Vector2(0, 0)
-
+        rect_position = Vector2(0,0)
+        
         controller_one = get_parent().get_node("Left_Controller")
         controller_two = get_parent().get_node("Right_Controller")
-
+        
         visible = false
 
 
-    func _process(delta):
-
-        if not controller_one or not controller_two:
+    func _process(_delta):
+        if (controller_one == null or controller_two == null):
             return
-
-        if controller_one.directional_movement or controller_two.directional_movement:
+        
+        if (controller_one.directional_movement == true or controller_two.directional_movement == true):
             visible = true
         else:
             visible = false
 
 Because this script is fairly brief, let's quickly go over what it does.
 
-In ``_ready``, we wait for four frames. We do this to ensure the VR interface is ready and going.
 
-Next, we get the current VR interface, and resize the :ref:`ColorRect <class_ColorRect>` node's size and position so that it covers the entire view in VR.
+Explaining the vignette code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Then, we get the left and right controllers, assigning them to ``controller_one`` and ``controller_two``.
+There are two class variables, ``controller_one`` and ``controller_two``. These variables will hold references to the left and right VR controllers.
 
-We then make the vignette invisible by default.
+_________________
 
-In ``_process``, we check to see if either of the controllers are moving the player by checking ``directional_movement``. If either controller is moving the player,
-we make the vignette visible, while if neither controller is moving the player, we make the vignette invisible.
+In the ``_ready`` function first waits for four frames using ``yield``. The reason we are waiting four frames is because we want to ensure the VR interface is ready
+and accessible.
 
-_________
+After waiting the primary VR interface is retrieved using ``ARVRServer.primary_interface``, which is assigned to a variable called ``interface``.
+The code then checks to see if ``interface`` is equal to ``null``. If ``interface`` is equal to ``null``, then ``_process`` is disabled using ``set_process`` with a value of ``false``.
 
-With that done, go ahead and try moving around with the joystick and/or the trackpad. You should find it is much less motion sickness-inducing than before!
+If ``interface`` is not ``null``, then we set the ``rect_size`` of the vignette shader to the render size of the VR viewport so it takes up the entire screen. We need to do this because
+different VR headsets have different resolutions and aspect ratios, so we need to resize the node accordingly. We also set the ``rect_position`` of the vignette shader to zero so it
+is in the correct position relative to the screen.
+
+The left and right VR controllers are then retrieved and assigned to ``controller_one`` and ``controller_two`` respectively. Finally, the vignette shader is made invisible by default
+by setting it's ``visible`` property to ``false``.
+
+_________________
+
+In ``_process`` the code first checks if either ``controller_one`` or ``controller_two`` are equal to ``null``. If either node is equal to ``null``, then ``return`` is called so
+nothing happens.
+
+Then the code checks to see if either of the VR controllers are moving the player using the touchpad/joystick by checking if ``directional_movement`` is equal to ``true`` in
+``controller_one`` or ``controller_two``. If either of the VR controllers are moving the player, then the vignette shader makes itself visible by setting it's ``visible`` property
+to ``true``. If neither VR controller is moving the player, so ``directional_movement`` is ``false`` in both VR controllers, than the vignette shader makes itself invisible by setting
+it's ``visible`` property to ``false``.
+
+_________________
+
+That is the whole script! Now that we have written the code, go ahead and try moving around with the trackpad and/or joystick. You should find that it is less motion sickness-inducing
+then before!
+
+.. note:: As previously mentioned, there are plenty of ways to reduce motion sickness in VR. Check out
+          `this page on the Oculus Developer Center <https://developer.oculus.com/design/latest/concepts/bp-locomotion/>`_
+          for more information on how to implement locomotion and reducing motion sickness.
+
 
 
 Final notes
