@@ -8,52 +8,10 @@ Introduction
 
 .. image:: img/starter_vr_tutorial_sword.png
 
-This tutorial will show you how to make a beginner VR game project in Godot.
+In this part of the VR starter tutorial series, we will be adding a number of special :ref:`RigidBody <class_RigidBody>`-based nodes that can be used in VR.
 
-Keep in mind, **one of the most important things when making VR content is getting the scale of your assets correct**!
-It can take lots of practice and iterations to get this right, but there are a few things you can do to make it easier:
-
-- In VR, 1 unit is typically considered 1 meter. If you design your assets around that standard, you can save yourself a lot of headache.
-- In your 3D modeling program, see if there is a way to measure and use real world distances. In Blender, you can use the MeasureIt add-on; in Maya, you can use the Measure Tool.
-- You can make rough models using a tool like `Google Blocks <https://vr.google.com/blocks/>`_, and then refine in another 3D modelling program.
-- Test often, as the assets can look dramatically different in VR than on a flat screen!
-
-Throughout the course of this tutorial, we will cover:
-
-- How to tell Godot to run in VR.
-- How to make a teleportation locomotion system that uses the VR controllers.
-- How to make a artificial movement locomotion system that uses the VR controllers.
-- How to create a :ref:`RigidBody <class_RigidBody>`-based system that allows for picking up, dropping, and throwing RigidBody nodes using the VR controllers.
-- How to create simple destroyable target.
-- How to create some special :ref:`RigidBody <class_RigidBody>`-based objects that can destroy the targets.
-
-.. tip:: While this tutorial can be completed by beginners, it is highly
-          advised to complete :ref:`doc_your_first_game`,
-          if you are new to Godot and/or game development.
-          
-          **Some experience with making 3D games is required** before going through this tutorial series.
-          This tutorial assumes you have experience with the Godot editor, GDScript, and basic 3D game development.
-          A OpenVR-ready headset and two OpenVR-ready controllers are required.
-          
-          This tutorial was written and tested using a Windows Mixed Reality headset and controllers. This project has also been tested on the HTC Vive. Code adjustments may be required
-          for other VR Headsets, such as the Oculus Rift.
-
-The Godot project for this tutorial is found on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_. The starter assets for this tutorial can be found in the releases
-section on the GitHub repository. The starter assets contain some 3D models, sounds, scripts, and scenes that are configured for this tutorial.
-
-.. note:: **Credits for the assets provided**:
-          
-          - The sky panorama was created by `CGTuts <https://cgi.tutsplus.com/articles/freebie-8-awesome-ocean-hdris--cg-5684>`_.
-          
-          - The font used is Titillium-Regular 
-          - - The font is licensed under the SIL Open Font License, Version 1.1
-          
-          - The audio used are from several different sources, all downloaded from the Sonniss #GameAudioGDC Bundle (`License PDF <https://sonniss.com/gdc-bundle-license/>`_) 
-          - - The folders where the audio files are stored have the same name as folders in the Sonniss audio bundle.
-          
-          - The OpenVR addon was created by `Bastiaan Olij <https://github.com/BastiaanOlij>`_ and is released under the MIT license. It can be found both on the `Godot Asset Library <https://godotengine.org/asset-library/asset/150>`_ and on `GitHub <https://github.com/GodotVR/godot-openvr-asset>`_.
-          
-          - The initial project, 3D models, and scripts were created by `TwistedTwigleg <https://github.com/TwistedTwigleg>`_ and is released under the MIT license.
+This continues from where we left on in the last tutorial part, where we just finished getting the VR controllers working and defined a custom
+class called ``VR_Interactable_Rigidbody``.
 
 .. tip:: You can find the finished project on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_.
 
@@ -61,18 +19,21 @@ section on the GitHub repository. The starter assets contain some 3D models, sou
 Adding destroyable targets
 --------------------------
 
-Firstly, let's start by making some targets we will destroy in various ways with various special :ref:`RigidBody <class_RigidBody>` nodes.
+Before we make any of the special :ref:`RigidBody <class_RigidBody>`-based nodes, we need something for them to do. Let's make a simple sphere target that will break into a bunch of pieces
+when destroyed.
 
-Open up ``Sphere_Target.tscn``, which you can find in the ``Scenes`` folder. ``Sphere.tscn`` is just a :ref:`StaticBody <class_StaticBody>`
-with a :ref:`CollisionShape <class_CollisionShape>`, a mesh, and a audio player.
+Open up ``Sphere_Target.tscn``, which is in the ``Scenes`` folder. The scene is fairly simple, with just a :ref:`StaticBody <class_StaticBody>` with a sphere shaped
+:ref:`CollisionShape <class_CollisionShape>`, a :ref:`MeshInstance <class_MeshInstance>` node displaying a sphere mesh, and an :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node.
 
-Select the ``Sphere_Target`` root node, the :ref:`StaticBody <class_StaticBody>` node, and make a new script called ``Sphere_Target.gd``. Add the following
-to ``Sphere_Target.gd``:
+The special :ref:`RigidBody <class_RigidBody>` nodes will handle damaging the sphere, which is why we are using a :ref:`StaticBody <class_StaticBody>` node instead of something like
+an :ref:`Area <class_Area>` or :ref:`RigidBody <class_RigidBody>` node. Outside of that, there isn't really a lot to talk about, so let's move straight into writing the code.
+
+Select the ``Sphere_Target_Root`` node and make a new script called ``Sphere_Target.gd``. Add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends StaticBody
+    extends Spatial
 
     var destroyed = false
     var destroyed_timer = 0
@@ -82,8 +43,10 @@ to ``Sphere_Target.gd``:
 
     const RIGID_BODY_TARGET = preload("res://Assets/RigidBody_Sphere.scn")
 
+
     func _ready():
         set_physics_process(false)
+
 
     func _physics_process(delta):
         destroyed_timer += delta
@@ -91,71 +54,94 @@ to ``Sphere_Target.gd``:
             queue_free()
 
 
-    func damage(bullet_global_transform, damage):
-
-        if destroyed:
+    func damage(damage):
+        if destroyed == true:
             return
-
+        
         health -= damage
-
+        
         if health <= 0:
-
-            $CollisionShape.disabled = true
-            $Sphere_Target.visible = false
-
+            
+            get_node("CollisionShape").disabled = true
+            get_node("Shpere_Target").visible = false
+            
             var clone = RIGID_BODY_TARGET.instance()
             add_child(clone)
             clone.global_transform = global_transform
-
+            
             destroyed = true
             set_physics_process(true)
-
-            $AudioStreamPlayer.play()
+            
+            get_node("AudioStreamPlayer").play()
             get_tree().root.get_node("Game").remove_sphere()
 
-Let's go over how this script works, starting with the class variables.
 
-- ``destroyed``: A variable to track whether this target is destroyed or not.
-- ``destroyed_timer``: A variable to track how long the target has been destroyed.
-- ``DESTROY_WAIT_TIME``: A constant to tell the sphere target how long to wait before destroying/deleting itself.
-- ``health``: The amount of health the target has.
-- ``RIGID_BODY_TARGET``: The target broken into several smaller :ref:`RigidBody <class_RigidBody>` nodes.
+Let's go over how this script works.
 
-________
+Explaining the Sphere Target code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let's go over ``_ready``.
+First, let's go through all of the class variables in the script:
 
-All we are doing in ``_ready`` is setting ``_physics_process`` to ``false``. This is because we will only use ``_physics_process``
-for destroying the target, so we do not want to call it until the target is broken.
+* ``destroyed``: A variable to track whether the sphere target has been destroyed.
+* ``destroyed_timer``: A variable to track how long the sphere target has been destroyed.
+* ``DESTROY_WAIT_TIME``: A constant to define the length of time the target can be destroyed for before it frees/deletes itself.
+* ``health``: A variable to store the amount of health the sphere target has.
+* ``RIGID_BODY_TARGET``: A constant to hold the scene of the destroyed sphere target.
 
-________
+.. note:: Feel free to check out the ``RIGID_BODY_TARGET`` scene. It is just a bunch of :ref:`RigidBody <class_RigidBody>` nodes and a broken sphere model.
+          
+          We'll be instancing this scene so when the target is destroyed, it looks like it broke into a bunch of pieces.
 
-Next, let's go over ``_physics_process``.
 
-Firstly, we add time to ``destroyed_timer``. Then we check to see whether enough time has passed and we can destroy the target. If enough time has
-passed, we free/destroy the target using ``queue_free``.
+``_ready`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""
 
-________
+All the ``_ready`` function does is that it stops the ``_physics_process`` from being called by calling ``set_physics_process`` and passing ``false``.
+The reason we do this is because all of the code in ``_physics_process`` is for destroying this node when enough time has passed, which we only want to
+do when the target has been destroyed.
 
-Finally, let's go over ``damage``.
 
-Firstly, we check to make sure the target has not already been destroyed.
+``_physics_process`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Then, we remove however much damage the target has taken from the target's health.
+First this function adds time, ``delta``, to the ``destroyed_timer`` variable. It then checks to see if ``destroyed_timer`` is greater than or equal to
+``DESTROY_WAIT_TIME``. If ``destroyed_timer`` is greater than or equal to ``DESTROY_WAIT_TIME``, then the sphere target frees/deletes itself by calling
+the ``queue_free`` function. 
 
-If the target has zero or less health, then it has taken enough damage to break.
+``damage`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""
 
-Firstly, we disable the collision shape and make the whole target mesh invisible.
-Next, we spawn/instance the :ref:`RigidBody <class_RigidBody>` version of the target, and instance it at this target's position.
+The ``damage`` function will be called by the special :ref:`RigidBody <class_RigidBody>` nodes, which will pass the amount of damage done to the target, which is a function argument
+variable called ``damage``. The ``damage`` variable will hold the amount of damage the special :ref:`RigidBody <class_RigidBody>` node did to the sphere target.
 
-Then, we set ``destroyed`` to ``true`` and start processing ``_physics_process``.
-Finally, we play a sound, and remove a sphere from ``Game.gd`` by calling ``remove_sphere``.
+First this function checks to make sure the target is not already destroyed by checking if the ``destroyed`` variable is equal to ``true``. If ``destroyed`` is equal to ``true``, then
+the function calls ``return`` so none of the other code is called. This is just a safety check so that if two things damage the target at exactly the same time, the target cannot be
+destroyed twice.
 
-________
+Next the function removes the amount of damage taken, ``damage``, from the target's health, ``health``. If then checks to see if ``health`` is equal to zero or less, meaning that the
+target has just been destroyed.
 
-Now, you may have noticed we are calling a function in ``Game.gd`` we have not made yet, so let's fix that!
+If the target has just been destroyed, then we disable the :ref:`CollisionShape <class_CollisionShape>` by setting it's ``disabled`` property to ``true``. We then make the ``Sphere_Target``
+:ref:`MeshInstance <class_MeshInstance>` invisible by setting the ``visible`` property to ``false``. We do this so the target can no longer effect the physics world and so the non-broken target mesh is not visible.
 
-Firstly, open up ``Game.gd`` and add the following additional class variables:
+After this the function then instances the ``RIGID_BODY_TARGET`` scene and adds it as a child of the target. It then sets the ``global_transform`` of the newly instanced scene, called ``clone``, to the
+``global_transform`` of the non-broken target. This makes it where the broken target starts at the same position as the non-broken target with the same rotation and scale.
+
+Then the function sets the ``destroyed`` variable to ``true`` so the target knows it has been destroyed and calls the ``set_physics_process`` function and passes ``true``. This will start
+executing the code in ``_physics_process`` so that after ``DESTROY_WAIT_TIME`` seconds have passed, the sphere target will free/destroy itself.
+
+The function then gets the :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node and calls the ``play`` function so it plays its sound.
+
+Finally, the ``remove_sphere`` function is called in ``Game.gd``. To get ``Game.gd``, the code uses the scene tree and works its way from the root of the scene tree to the root of the
+``Game.tscn`` scene.
+
+
+Adding the ``remove_sphere`` function to ``Game.gd``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You may have noticed we are calling a function in ``Game.gd``, called ``remove_sphere``, that we have not defined yet. Open up ``Game.gd`` and
+add the following additional class variables:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -163,10 +149,10 @@ Firstly, open up ``Game.gd`` and add the following additional class variables:
     var spheres_left = 10
     var sphere_ui = null
 
-- ``spheres_left``: The amount of sphere targets left in the game world.
-- ``sphere_ui``: A reference to the sphere UI. We will use this later!
+- ``spheres_left``: The amount of sphere targets left in the world. In the provided ``Game`` scene, there are ``10`` spheres, so that is the initial value.
+- ``sphere_ui``: A reference to the sphere UI. We will use this later in the tutorial to display the amount of spheres left in the world.
 
-Next, we need to add the ``remove_sphere`` function. Add the following to ``Game.gd``:
+With these variables defined, we can now add the ``remove_sphere`` function. Add the following code to ``Game.gd``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -174,96 +160,128 @@ Next, we need to add the ``remove_sphere`` function. Add the following to ``Game
     func remove_sphere():
         spheres_left -= 1
 
-        if sphere_ui:
+        if sphere_ui != null:
             sphere_ui.update_ui(spheres_left)
 
-What this function does is it subtracts one from ``spheres_left``.
 
-Then, it checks to see whether ``sphere_ui`` is not null, and if it is not, then it calls its ``update_ui`` function, passing in the amount of spheres left.
-We'll add the UI code later in this part.
+Let's go through what this function does real quick:
 
-Now that we have destroyable targets, we need a way to destroy them!
+First, it removes one from the ``spheres_left`` variable. It then checks to see if the ``sphere_ui`` variable is not equal to ``null``, and if it is not
+equal to ``null`` it calls the ``update_ui`` function on ``sphere_ui``, passing in the number of spheres as an argument to the function.
+
+.. note:: We will add the code for ``sphere_ui`` later in this tutorial!
+
+Now the ``Sphere_Target`` is ready to be used, but we don't have any way to destroy it. Let's fix that by adding some special :ref:`RigidBody <class_RigidBody>`-based nodes
+that can damage the targets.
+
 
 Adding a pistol
 ---------------
 
-Okay, let's add a pistol. Open up ``Pistol.tscn``, which you will find in the ``Scenes`` folder.
+Let's add a pistol as the first interactable :ref:`RigidBody <class_RigidBody>` node. Open up ``Pistol.tscn``, which you can find in the ``Scenes`` folder.
 
-There are a few things to note here. The first thing to note is how everything is rotated. This is to make the pistol rotate correctly when the player grabs it. The other thing to notice is
-how there is a laser sight mesh, and a flash mesh; both of these do what you'd expect: act as a laser pointer and muzzle flash, respectively.
+Let's quickly go over a few things of note in ``Pistol.tscn`` real quick before we add the code.
 
-The other thing to notice is how there is a :ref:`Raycast <class_Raycast>` node at the end of the pistol. This is what we will be using to calculate where the bullets impact.
+All of the nodes in ``Pistol.tscn`` expect the root node are rotated. This is so the pistol is in the correct rotation relative to the VR controller when it is picked up. The root node
+is a :ref:`RigidBody <class_RigidBody>` node, which we need because we're going to use the ``VR_Interactable_Rigidbody`` class we created in the last part of this tutorial series.
 
-Now that we have looked at the scene, let's write the code. Select the ``Pistol`` root node, the :ref:`RigidBody <class_RigidBody>` node, and make a new
-script called ``Pistol.gd``. Add the following code to ``Pistol.gd``:
+There is a :ref:`MeshInstance <class_MeshInstance>` node called ``Pistol_Flash``, which is a simple mesh that we will be using to simulate the muzzle flash on the end of the pistol's barrel.
+A :ref:`MeshInstance <class_MeshInstance>` node called ``LaserSight`` is used to as a guide for aiming the pistol, and it follows the direction of the :ref:`Raycast <class_Raycast>` node,
+called ``Raycast``, that the pistol uses to detect if its 'bullet' hit something. Finally, there is an :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node at the end of the
+pistol that we will use to play the sound of the pistol firing.
+
+Feel free to look at the other parts of the scene if you want. Most of the scene is fairly straightforward, with the major changes mentioned above. Select the :ref:`RigidBody <class_RigidBody>`
+node called ``Pistol`` and make a new script called ``Pistol.gd``. Add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+    
+    extends VR_Interactable_Rigidbody
 
-    extends RigidBody
-
-    onready var flash_mesh = $Pistol_Flash
-    onready var laser_sight_mesh = $LaserSight
-    onready var raycast = $RayCast
-
+    var flash_mesh
     const FLASH_TIME = 0.25
     var flash_timer = 0
 
-    var BULLET_DAMAGE = 20
+    var laser_sight_mesh
+    var pistol_fire_sound
+
+    var raycast
+    const BULLET_DAMAGE = 20
+    const COLLISION_FORCE = 1.5
+
 
     func _ready():
+        flash_mesh = get_node("Pistol_Flash")
         flash_mesh.visible = false
+        
+        laser_sight_mesh = get_node("LaserSight")
         laser_sight_mesh.visible = false
+        
+        raycast = get_node("RayCast")
+        pistol_fire_sound = get_node("AudioStreamPlayer3D")
+
 
     func _physics_process(delta):
         if flash_timer > 0:
             flash_timer -= delta
-            # If the flash has been visible enough, then make the flash mesh invisible.
             if flash_timer <= 0:
                 flash_mesh.visible = false
 
 
-    # Called when the interact button is pressed while the object is held.
     func interact():
-
         if flash_timer <= 0:
-
+            
             flash_timer = FLASH_TIME
             flash_mesh.visible = true
-
+            
             raycast.force_raycast_update()
             if raycast.is_colliding():
-
+                
                 var body = raycast.get_collider()
-
+                var direction_vector = raycast.global_transform.basis.z.normalized()
+                var raycast_distance = raycast.global_transform.origin.distance_to(raycast.get_collision_point())
+                
                 if body.has_method("damage"):
-                    body.damage(raycast.global_transform, BULLET_DAMAGE)
+                    body.damage(BULLET_DAMAGE)
                 elif body.has_method("apply_impulse"):
-                    var direction_vector = raycast.global_transform.basis.z.normalized()
-                    body.apply_impulse((raycast.global_transform.origin - body.global_transform.origin).normalized(), direction_vector * 1.2)
+                    var collision_force = (COLLISION_FORCE / raycast_distance) * body.mass
+                    body.apply_impulse((raycast.global_transform.origin - body.global_transform.origin).normalized(), direction_vector * collision_force)
+            
+            pistol_fire_sound.play()
+            
+            if controller != null:
+                controller.rumble = 0.25
 
-            $AudioStreamPlayer3D.play()
 
-
-    # Called when the object is picked up.
     func picked_up():
         laser_sight_mesh.visible = true
 
 
-    # Called when the object is dropped.
     func dropped():
         laser_sight_mesh.visible = false
 
-Let's go over what this script does, starting with the class variables:
+Let's go over how this script works.
 
-- ``flash_mesh``: The mesh used to make the muzzle flash.
-- ``FLASH_TIME``: The length of time the muzzle flash is visible.
-- ``flash_timer``: A variable to track how long the muzzle flash has been visible.
-- ``laser_sight_mesh``: A long rectangular mesh used for the laser sight.
-- ``raycast``: The raycast node used for the pistol firing.
-- ``BULLET_DAMAGE``: The amount of damage a single bullet does.
 
-________
+Explaining the Pistol code
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First, notice how instead of ``extends RigidBody``, we instead have ``extends VR_Interactable_Rigidbody``. This makes it where the pistol script extends the
+``VR_Interactable_Rigidbody`` class so the VR controllers know this object can be interacted with and that the functions defined in ``VR_Interactable_Rigidbody``
+can be called when this object is held by a VR controller.
+
+Next, let's look at the class variables:
+
+* ``flash_mesh``: A variable to hold the :ref:`MeshInstance <class_MeshInstance>` node that is used to simulate muzzle flash on the pistol.
+* ``FLASH_TIME``: A constant to define how long the muzzle flash will be visible. This will also define how fast the pistol can fire.
+* ``flash_timer``: A variable to hold the amount of time the muzzle flash has been visible for.
+* ``laser_sight_mesh``: A variable to hold the :ref:`MeshInstance <class_MeshInstance>` node that acts as the pistol's 'laser sight'.
+* ``pistol_fire_sound``: A variable to hold the :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node used for the pistol's firing sound.
+* ``raycast``: A variable to hold the :ref:`Raycast <class_Raycast>` node that is used for calculating the bullet's position and normal when the pistol is fired.
+* ``BULLET_DAMAGE``: A constant to define the amount of damage a single bullet from the pistol does.
+* ``COLLISION_FORCE``: A constant that defines the amount of force that is applied to :ref:`RigidBody <class_RigidBody>` nodes when the pistol's bullet collides.
+
+.. error:: TwistedTwigleg stopped editing here! Everything below this line is OLD tutorial!
 
 Let's go over ``_ready``.
 
