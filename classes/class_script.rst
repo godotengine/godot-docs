@@ -30,23 +30,33 @@ Properties
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`can_instance<class_Script_method_can_instance>` **(** **)** const                                                   |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Script<class_Script>`           | :ref:`get_base_script<class_Script_method_get_base_script>` **(** **)** const                                             |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_instance_base_type<class_Script_method_get_instance_base_type>` **(** **)** const                               |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_script_signal<class_Script_method_has_script_signal>` **(** :ref:`String<class_String>` signal_name **)** const |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_source_code<class_Script_method_has_source_code>` **(** **)** const                                             |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`instance_has<class_Script_method_instance_has>` **(** :ref:`Object<class_Object>` base_object **)** const           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_tool<class_Script_method_is_tool>` **(** **)** const                                                             |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`reload<class_Script_method_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`can_instance<class_Script_method_can_instance>` **(** **)** const                                                            |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Script<class_Script>`           | :ref:`get_base_script<class_Script_method_get_base_script>` **(** **)** const                                                      |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_instance_base_type<class_Script_method_get_instance_base_type>` **(** **)** const                                        |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`get_property_default_value<class_Script_method_get_property_default_value>` **(** :ref:`String<class_String>` property **)** |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`   | :ref:`get_script_constant_map<class_Script_method_get_script_constant_map>` **(** **)**                                            |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`             | :ref:`get_script_method_list<class_Script_method_get_script_method_list>` **(** **)**                                              |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`             | :ref:`get_script_property_list<class_Script_method_get_script_property_list>` **(** **)**                                          |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`             | :ref:`get_script_signal_list<class_Script_method_get_script_signal_list>` **(** **)**                                              |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`has_script_signal<class_Script_method_has_script_signal>` **(** :ref:`String<class_String>` signal_name **)** const          |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`has_source_code<class_Script_method_has_source_code>` **(** **)** const                                                      |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`instance_has<class_Script_method_instance_has>` **(** :ref:`Object<class_Object>` base_object **)** const                    |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_tool<class_Script_method_is_tool>` **(** **)** const                                                                      |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`reload<class_Script_method_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                                     |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -95,6 +105,26 @@ Returns the script directly inherited by this script.
 - :ref:`String<class_String>` **get_instance_base_type** **(** **)** const
 
 Returns the script's base type.
+
+.. _class_Script_method_get_property_default_value:
+
+- :ref:`Variant<class_Variant>` **get_property_default_value** **(** :ref:`String<class_String>` property **)**
+
+.. _class_Script_method_get_script_constant_map:
+
+- :ref:`Dictionary<class_Dictionary>` **get_script_constant_map** **(** **)**
+
+.. _class_Script_method_get_script_method_list:
+
+- :ref:`Array<class_Array>` **get_script_method_list** **(** **)**
+
+.. _class_Script_method_get_script_property_list:
+
+- :ref:`Array<class_Array>` **get_script_property_list** **(** **)**
+
+.. _class_Script_method_get_script_signal_list:
+
+- :ref:`Array<class_Array>` **get_script_signal_list** **(** **)**
 
 .. _class_Script_method_has_script_signal:
 

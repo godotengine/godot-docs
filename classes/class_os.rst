@@ -1348,15 +1348,19 @@ Sets whether the window should always be on top.
 
 Sets the window title to the specified string.
 
+**Note:** This should be used sporadically. Don't set this every frame, as that will negatively affect performance on some window managers.
+
 .. _class_OS_method_shell_open:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **shell_open** **(** :ref:`String<class_String>` uri **)**
 
-Requests the OS to open a resource with the most appropriate program. For example.
+Requests the OS to open a resource with the most appropriate program. For example:
 
-``OS.shell_open("C:\\Users\name\Downloads")`` on Windows opens the file explorer at the downloads folders of the user.
+- ``OS.shell_open("C:\\Users\name\Downloads")`` on Windows opens the file explorer at the user's Downloads folder.
 
-``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
+- ``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
+
+- ``OS.shell_open("mailto:example@example.com")`` opens the default email client with the "To" field set to ``example@example.com``. See `Customizing ``mailto:`` Links <https://blog.escapecreative.com/customizing-mailto-links/>`_ for a list of fields that can be added.
 
 .. _class_OS_method_show_virtual_keyboard:
 

@@ -18,6 +18,13 @@ Brief Description
 
 Virtual class to define custom :ref:`VisualShaderNode<class_VisualShaderNode>`\ s for use in the Visual Shader Editor.
 
+Properties
+----------
+
++---------------------------+----------------------+-------------+
+| :ref:`Array<class_Array>` | default_input_values | **O:** [  ] |
++---------------------------+----------------------+-------------+
+
 Methods
 -------
 

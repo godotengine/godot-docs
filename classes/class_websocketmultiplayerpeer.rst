@@ -20,6 +20,15 @@ Brief Description
 
 Base class for WebSocket server and client.
 
+Properties
+----------
+
++-----------------------------------------------------------------+------------------------+--------------+
+| :ref:`bool<class_bool>`                                         | refuse_new_connections | **O:** false |
++-----------------------------------------------------------------+------------------------+--------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | **O:** 2     |
++-----------------------------------------------------------------+------------------------+--------------+
+
 Methods
 -------
 

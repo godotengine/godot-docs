@@ -28,6 +28,8 @@ Properties
 +---------------------------------+-------------------------------------------------------+----------------+
 | :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>` | NodePath("..") |
 +---------------------------------+-------------------------------------------------------+----------------+
+| :ref:`Skin<class_Skin>`         | :ref:`skin<class_MeshInstance_property_skin>`         |                |
++---------------------------------+-------------------------------------------------------+----------------+
 
 Methods
 -------
@@ -79,6 +81,16 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 +-----------+--------------------------+
 
 :ref:`NodePath<class_NodePath>` to the :ref:`Skeleton<class_Skeleton>` associated with the instance.
+
+.. _class_MeshInstance_property_skin:
+
+- :ref:`Skin<class_Skin>` **skin**
+
++----------+-----------------+
+| *Setter* | set_skin(value) |
++----------+-----------------+
+| *Getter* | get_skin()      |
++----------+-----------------+
 
 Method Descriptions
 -------------------

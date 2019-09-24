@@ -2646,7 +2646,7 @@ Fix to improve physics jitter, specially on monitors where refresh rate is diffe
 | *Default* | Color( 0.3, 0.3, 0.3, 1 ) |
 +-----------+---------------------------+
 
-Default background clear color. Overriddable per :ref:`Viewport<class_Viewport>` using its :ref:`Environment<class_Environment>`. See :ref:`Environment.background_mode<class_Environment_property_background_mode>` and :ref:`Environment.background_color<class_Environment_property_background_color>` in particular. To change this default color programmatically, use :ref:`VisualServer.set_default_clear_color<class_VisualServer_method_set_default_clear_color>`.
+Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` using its :ref:`Environment<class_Environment>`. See :ref:`Environment.background_mode<class_Environment_property_background_mode>` and :ref:`Environment.background_color<class_Environment_property_background_color>` in particular. To change this default color programmatically, use :ref:`VisualServer.set_default_clear_color<class_VisualServer_method_set_default_clear_color>`.
 
 .. _class_ProjectSettings_property_rendering/limits/buffers/blend_shape_max_buffer_size_kb:
 
@@ -2778,7 +2778,7 @@ If ``true``, performs a previous depth pass before rendering materials. This inc
 | *Default* | 4096 |
 +-----------+------+
 
-The directional shadow's size in pixels. Higher values will result in sharper shadows, at the cost of performance.
+The directional shadow's size in pixels. Higher values will result in sharper shadows, at the cost of performance. The value will be rounded up to the nearest power of 2.
 
 .. _class_ProjectSettings_property_rendering/quality/directional_shadow/size.mobile:
 

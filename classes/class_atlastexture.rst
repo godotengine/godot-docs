@@ -26,6 +26,8 @@ Properties
 +-------------------------------+-------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`       | :ref:`filter_clip<class_AtlasTexture_property_filter_clip>` | false               |
 +-------------------------------+-------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`         | flags                                                       | **O:** 0            |
++-------------------------------+-------------------------------------------------------------+---------------------+
 | :ref:`Rect2<class_Rect2>`     | :ref:`margin<class_AtlasTexture_property_margin>`           | Rect2( 0, 0, 0, 0 ) |
 +-------------------------------+-------------------------------------------------------------+---------------------+
 | :ref:`Rect2<class_Rect2>`     | :ref:`region<class_AtlasTexture_property_region>`           | Rect2( 0, 0, 0, 0 ) |
@@ -34,9 +36,7 @@ Properties
 Description
 -----------
 
-:ref:`Texture<class_Texture>` resource aimed at managing big textures files that pack multiple smaller textures. Consists of a :ref:`Texture<class_Texture>`, a margin that defines the border width,
-
-and a region that defines the actual area of the AtlasTexture.
+:ref:`Texture<class_Texture>` resource aimed at managing big textures files that pack multiple smaller textures. Consists of a :ref:`Texture<class_Texture>`, a margin that defines the border width, and a region that defines the actual area of the AtlasTexture.
 
 Property Descriptions
 ---------------------

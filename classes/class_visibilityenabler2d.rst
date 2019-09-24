@@ -82,7 +82,7 @@ enum **Enabler**:
 Description
 -----------
 
-The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, and other nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler2D itself.
+The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, and other nodes when they are not visible. It will only affect nodes with the same root node as the VisibilityEnabler2D, and the root node itself.
 
 Property Descriptions
 ---------------------

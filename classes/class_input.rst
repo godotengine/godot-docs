@@ -376,7 +376,7 @@ Returns ``true`` when the user stops pressing the action event, meaning it's ``t
 
 - :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`String<class_String>` action **)** const
 
-Returns ``true`` if you are pressing the action event. Note that if an action has multiple buttons asigned and more than one of them is pressed, releasing one button will release the action, even if some other button assigned to this action is still pressed.
+Returns ``true`` if you are pressing the action event. Note that if an action has multiple buttons assigned and more than one of them is pressed, releasing one button will release the action, even if some other button assigned to this action is still pressed.
 
 .. _class_Input_method_is_joy_button_pressed:
 
@@ -436,6 +436,10 @@ Sets a custom mouse cursor image, which is only visible inside the game window. 
 ``image``'s size must be lower than 256×256.
 
 ``hotspot`` must be within ``image``'s size.
+
+**Note:** :ref:`AnimatedTexture<class_AnimatedTexture>`\ s aren't supported as custom mouse cursors. If using an :ref:`AnimatedTexture<class_AnimatedTexture>`, only the first frame will be displayed.
+
+**Note:** Only images imported with the **Lossless**, **Lossy** or **Uncompressed** compression modes are supported. The **Video RAM** compression mode can't be used for custom cursors.
 
 .. _class_Input_method_set_default_cursor_shape:
 

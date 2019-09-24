@@ -28,6 +28,8 @@ Properties
 +------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`draw_center<class_NinePatchRect_property_draw_center>`                         | true                |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>`               | mouse_filter                                                                         | **O:** 2            |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`                                      | :ref:`patch_margin_bottom<class_NinePatchRect_property_patch_margin_bottom>`         | 0                   |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
 | :ref:`int<class_int>`                                      | :ref:`patch_margin_left<class_NinePatchRect_property_patch_margin_left>`             | 0                   |
@@ -196,7 +198,7 @@ The height of the 9-slice's top row.
 | *Getter*  | get_region_rect()      |
 +-----------+------------------------+
 
-Rectangular region of the texture to sample from. If you're working with an atlas, use this property to define the area the 9-slice should use. All other properties are relative to this one.
+Rectangular region of the texture to sample from. If you're working with an atlas, use this property to define the area the 9-slice should use. All other properties are relative to this one. If the rect is empty, NinePatchRect will use the whole texture.
 
 .. _class_NinePatchRect_property_texture:
 

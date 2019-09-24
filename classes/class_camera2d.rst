@@ -399,7 +399,7 @@ The camera's offset, useful for looking around or camera shake animations.
 
 The horizontal offset of the camera, relative to the drag margins.
 
-**Note:** Offset H is used only to force offset relative to margins. It's not updated in any way if drag margins are enabled and can be used to set inital offset.
+**Note:** Offset H is used only to force offset relative to margins. It's not updated in any way if drag margins are enabled and can be used to set initial offset.
 
 .. _class_Camera2D_property_offset_v:
 

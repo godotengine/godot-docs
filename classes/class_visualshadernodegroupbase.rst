@@ -23,9 +23,11 @@ Brief Description
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`editable<class_VisualShaderNodeGroupBase_property_editable>` | false |
-+-------------------------+--------------------------------------------------------------------+-------+
++---------------------------+--------------------------------------------------------------------+-------------+
+| :ref:`Array<class_Array>` | default_input_values                                               | **O:** [  ] |
++---------------------------+--------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>`   | :ref:`editable<class_VisualShaderNodeGroupBase_property_editable>` | false       |
++---------------------------+--------------------------------------------------------------------+-------------+
 
 Methods
 -------
@@ -67,15 +69,15 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_control<class_VisualShaderNodeGroupBase_method_set_control>` **(** :ref:`Control<class_Control>` control, :ref:`int<class_int>` index **)**                             |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_input_port_name<class_VisualShaderNodeGroupBase_method_set_input_port_name>` **(** :ref:`int<class_int>` arg0, :ref:`String<class_String>` arg1 **)**                   |
+| void                          | :ref:`set_input_port_name<class_VisualShaderNodeGroupBase_method_set_input_port_name>` **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**                     |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_input_port_type<class_VisualShaderNodeGroupBase_method_set_input_port_type>` **(** :ref:`int<class_int>` arg0, :ref:`int<class_int>` arg1 **)**                         |
+| void                          | :ref:`set_input_port_type<class_VisualShaderNodeGroupBase_method_set_input_port_type>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` type **)**                           |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_inputs<class_VisualShaderNodeGroupBase_method_set_inputs>` **(** :ref:`String<class_String>` inputs **)**                                                               |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_output_port_name<class_VisualShaderNodeGroupBase_method_set_output_port_name>` **(** :ref:`int<class_int>` arg0, :ref:`String<class_String>` arg1 **)**                 |
+| void                          | :ref:`set_output_port_name<class_VisualShaderNodeGroupBase_method_set_output_port_name>` **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_output_port_type<class_VisualShaderNodeGroupBase_method_set_output_port_type>` **(** :ref:`int<class_int>` arg0, :ref:`int<class_int>` arg1 **)**                       |
+| void                          | :ref:`set_output_port_type<class_VisualShaderNodeGroupBase_method_set_output_port_type>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` type **)**                         |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_outputs<class_VisualShaderNodeGroupBase_method_set_outputs>` **(** :ref:`String<class_String>` outputs **)**                                                            |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -174,11 +176,11 @@ Method Descriptions
 
 .. _class_VisualShaderNodeGroupBase_method_set_input_port_name:
 
-- void **set_input_port_name** **(** :ref:`int<class_int>` arg0, :ref:`String<class_String>` arg1 **)**
+- void **set_input_port_name** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**
 
 .. _class_VisualShaderNodeGroupBase_method_set_input_port_type:
 
-- void **set_input_port_type** **(** :ref:`int<class_int>` arg0, :ref:`int<class_int>` arg1 **)**
+- void **set_input_port_type** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` type **)**
 
 .. _class_VisualShaderNodeGroupBase_method_set_inputs:
 
@@ -186,11 +188,11 @@ Method Descriptions
 
 .. _class_VisualShaderNodeGroupBase_method_set_output_port_name:
 
-- void **set_output_port_name** **(** :ref:`int<class_int>` arg0, :ref:`String<class_String>` arg1 **)**
+- void **set_output_port_name** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**
 
 .. _class_VisualShaderNodeGroupBase_method_set_output_port_type:
 
-- void **set_output_port_type** **(** :ref:`int<class_int>` arg0, :ref:`int<class_int>` arg1 **)**
+- void **set_output_port_type** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` type **)**
 
 .. _class_VisualShaderNodeGroupBase_method_set_outputs:
 

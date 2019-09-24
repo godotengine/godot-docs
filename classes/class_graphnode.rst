@@ -189,6 +189,8 @@ Property Descriptions
 | *Getter*  | is_comment()       |
 +-----------+--------------------+
 
+If ``true``, the GraphNode is a comment node.
+
 .. _class_GraphNode_property_offset:
 
 - :ref:`Vector2<class_Vector2>` **offset**

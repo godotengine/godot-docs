@@ -23,17 +23,19 @@ A helper node for displaying scrollable elements such as lists.
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------------------------+------+
-| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | 0    |
-+-------------------------+--------------------------------------------------------------------------------------------+------+
-| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | 0    |
-+-------------------------+--------------------------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | true |
-+-------------------------+--------------------------------------------------------------------------------------------+------+
-| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | 0    |
-+-------------------------+--------------------------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | true |
-+-------------------------+--------------------------------------------------------------------------------------------+------+
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>` | rect_clip_content                                                                          | **O:** true |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | 0           |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | 0           |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | true        |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | 0           |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | true        |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
 
 Methods
 -------

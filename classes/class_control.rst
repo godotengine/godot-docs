@@ -1053,7 +1053,7 @@ Method Descriptions
 
 Virtual method to be implemented by the user. Returns whether :ref:`_gui_input<class_Control_method__gui_input>` should not be called for children controls outside this control's rectangle. Input will be clipped to the Rect of this ``Control``. Similar to :ref:`rect_clip_content<class_Control_property_rect_clip_content>`, but doesn't affect visibility.
 
-If not overriden, defaults to ``false``.
+If not overridden, defaults to ``false``.
 
 .. _class_Control_method__get_minimum_size:
 
@@ -1061,7 +1061,7 @@ If not overriden, defaults to ``false``.
 
 Virtual method to be implemented by the user. Returns the minimum size for this control. Alternative to :ref:`rect_min_size<class_Control_property_rect_min_size>` for controlling minimum size via code. The actual minimum size will be the max value of these two (in each axis separately).
 
-If not overriden, defaults to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
+If not overridden, defaults to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
 
 .. _class_Control_method__gui_input:
 
@@ -1341,7 +1341,7 @@ Returns the tooltip, which will appear when the cursor is resting over this cont
 
 - void **grab_click_focus** **(** **)**
 
-Creates an :ref:`InputEventMouseButton<class_InputEventMouseButton>` that attempts to click the control. If the event is received, the control aquires focus.
+Creates an :ref:`InputEventMouseButton<class_InputEventMouseButton>` that attempts to click the control. If the event is received, the control acquires focus.
 
 ::
 
@@ -1414,7 +1414,7 @@ Returns ``true`` if icon with given ``name`` has a valid override in this ``Cont
 
 Virtual method to be implemented by the user. Returns whether the given ``point`` is inside this control.
 
-If not overriden, default behavior is checking if the point is within control's Rect.
+If not overridden, default behavior is checking if the point is within control's Rect.
 
 **Node:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
 
@@ -1456,7 +1456,7 @@ Sets the anchor identified by ``margin`` constant from :ref:`Margin<enum_@Global
 
 If ``keep_margin`` is ``true``, margins aren't updated after this operation.
 
-If ``push_opposite_anchor`` is ``true`` and the opposite anchor overlaps this anchor, the opposite one will have its value overriden. For example, when setting left anchor to 1 and the right anchor has value of 0.5, the right anchor will also get value of 1. If ``push_opposite_anchor`` was ``false``, the left anchor would get value 0.5.
+If ``push_opposite_anchor`` is ``true`` and the opposite anchor overlaps this anchor, the opposite one will have its value overridden. For example, when setting left anchor to 1 and the right anchor has value of 0.5, the right anchor will also get value of 1. If ``push_opposite_anchor`` was ``false``, the left anchor would get value 0.5.
 
 .. _class_Control_method_set_anchor_and_margin:
 

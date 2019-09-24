@@ -271,7 +271,7 @@ enum **GlowBlendMode**:
 
 enum **ToneMapper**:
 
-- **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and performs an exposure adjustment.
+- **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and passes it on unmodified.
 
 - **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``.
 

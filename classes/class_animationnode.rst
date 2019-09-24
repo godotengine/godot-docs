@@ -153,7 +153,7 @@ Blend an input. This is only useful for nodes created for an :ref:`AnimationNode
 
 - :ref:`float<class_float>` **blend_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` optimize=true **)**
 
-Blend another animaiton node (in case this node contains children animation nodes). This function is only useful if you inherit from :ref:`AnimationRootNode<class_AnimationRootNode>` instead, else editors will not display your node for addition.
+Blend another animation node (in case this node contains children animation nodes). This function is only useful if you inherit from :ref:`AnimationRootNode<class_AnimationRootNode>` instead, else editors will not display your node for addition.
 
 .. _class_AnimationNode_method_get_caption:
 

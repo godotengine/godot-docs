@@ -21,37 +21,39 @@ Texture-based progress bar. Useful for loading screens and life or stamina bars.
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`fill_mode<class_TextureProgress_property_fill_mode>`                         | 0                   |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`       | :ref:`nine_patch_stretch<class_TextureProgress_property_nine_patch_stretch>`       | false               |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`radial_center_offset<class_TextureProgress_property_radial_center_offset>`   | Vector2( 0, 0 )     |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`     | :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>`     | 360.0               |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`     | :ref:`radial_initial_angle<class_TextureProgress_property_radial_initial_angle>`   | 0.0                 |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`stretch_margin_bottom<class_TextureProgress_property_stretch_margin_bottom>` | 0                   |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`stretch_margin_left<class_TextureProgress_property_stretch_margin_left>`     | 0                   |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`stretch_margin_right<class_TextureProgress_property_stretch_margin_right>`   | 0                   |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`stretch_margin_top<class_TextureProgress_property_stretch_margin_top>`       | 0                   |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture_over<class_TextureProgress_property_texture_over>`                   |                     |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture_progress<class_TextureProgress_property_texture_progress>`           |                     |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture_under<class_TextureProgress_property_texture_under>`                 |                     |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`     | :ref:`tint_over<class_TextureProgress_property_tint_over>`                         | Color( 1, 1, 1, 1 ) |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`     | :ref:`tint_progress<class_TextureProgress_property_tint_progress>`                 | Color( 1, 1, 1, 1 ) |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`     | :ref:`tint_under<class_TextureProgress_property_tint_under>`                       | Color( 1, 1, 1, 1 ) |
-+-------------------------------+------------------------------------------------------------------------------------+---------------------+
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                        | :ref:`fill_mode<class_TextureProgress_property_fill_mode>`                         | 0                   |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                                       | **O:** 1            |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                      | :ref:`nine_patch_stretch<class_TextureProgress_property_nine_patch_stretch>`       | false               |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                | :ref:`radial_center_offset<class_TextureProgress_property_radial_center_offset>`   | Vector2( 0, 0 )     |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                    | :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>`     | 360.0               |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                    | :ref:`radial_initial_angle<class_TextureProgress_property_radial_initial_angle>`   | 0.0                 |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                        | :ref:`stretch_margin_bottom<class_TextureProgress_property_stretch_margin_bottom>` | 0                   |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                        | :ref:`stretch_margin_left<class_TextureProgress_property_stretch_margin_left>`     | 0                   |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                        | :ref:`stretch_margin_right<class_TextureProgress_property_stretch_margin_right>`   | 0                   |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                        | :ref:`stretch_margin_top<class_TextureProgress_property_stretch_margin_top>`       | 0                   |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`Texture<class_Texture>`                | :ref:`texture_over<class_TextureProgress_property_texture_over>`                   |                     |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`Texture<class_Texture>`                | :ref:`texture_progress<class_TextureProgress_property_texture_progress>`           |                     |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`Texture<class_Texture>`                | :ref:`texture_under<class_TextureProgress_property_texture_under>`                 |                     |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`Color<class_Color>`                    | :ref:`tint_over<class_TextureProgress_property_tint_over>`                         | Color( 1, 1, 1, 1 ) |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`Color<class_Color>`                    | :ref:`tint_progress<class_TextureProgress_property_tint_progress>`                 | Color( 1, 1, 1, 1 ) |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
+| :ref:`Color<class_Color>`                    | :ref:`tint_under<class_TextureProgress_property_tint_under>`                       | Color( 1, 1, 1, 1 ) |
++----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
 
 Methods
 -------

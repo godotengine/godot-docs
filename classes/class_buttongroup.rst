@@ -18,6 +18,13 @@ Brief Description
 
 Group of Buttons.
 
+Properties
+----------
+
++-------------------------+-------------------------+-------------+
+| :ref:`bool<class_bool>` | resource_local_to_scene | **O:** true |
++-------------------------+-------------------------+-------------+
+
 Methods
 -------
 

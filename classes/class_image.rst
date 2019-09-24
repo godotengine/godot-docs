@@ -577,11 +577,13 @@ Returns the offset where the image's mipmap with index ``mipmap`` is stored in t
 
 - :ref:`Color<class_Color>` **get_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
-Returns the color of the pixel at ``(x, y)`` if the image is locked. If the image is unlocked it always returns a :ref:`Color<class_Color>` with the value ``(0, 0, 0, 1.0)``.
+Returns the color of the pixel at ``(x, y)`` if the image is locked. If the image is unlocked, it always returns a :ref:`Color<class_Color>` with the value ``(0, 0, 0, 1.0)``. This is the same as :ref:`get_pixelv<class_Image_method_get_pixelv>`, but two integer arguments instead of a Vector2 argument.
 
 .. _class_Image_method_get_pixelv:
 
 - :ref:`Color<class_Color>` **get_pixelv** **(** :ref:`Vector2<class_Vector2>` src **)** const
+
+Returns the color of the pixel at ``src`` if the image is locked. If the image is unlocked, it always returns a :ref:`Color<class_Color>` with the value ``(0, 0, 0, 1.0)``. This is the same as :ref:`get_pixel<class_Image_method_get_pixel>`, but with a Vector2 argument instead of two integer arguments.
 
 .. _class_Image_method_get_rect:
 
@@ -693,7 +695,7 @@ Resizes the image to the nearest power of 2 for the width and height. If ``squar
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_exr** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** const
 
-Saves the image as an EXR file to ``path``. If grayscale is true and the image has only one channel, it will be saved explicitely as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>`  if Godot was compiled without the TinyEXR module.
+Saves the image as an EXR file to ``path``. If grayscale is true and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>`  if Godot was compiled without the TinyEXR module.
 
 .. _class_Image_method_save_png:
 

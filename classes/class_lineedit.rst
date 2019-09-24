@@ -21,37 +21,45 @@ Control that provides single-line string editing.
 Properties
 ----------
 
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`Align<enum_LineEdit_Align>`        | :ref:`align<class_LineEdit_property_align>`                                 | 0     |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                  | :ref:`caret_blink<class_LineEdit_property_caret_blink>`                     | false |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                | :ref:`caret_blink_speed<class_LineEdit_property_caret_blink_speed>`         | 0.65  |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                    | :ref:`caret_position<class_LineEdit_property_caret_position>`               | 0     |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                  | :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`   | false |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                  | :ref:`context_menu_enabled<class_LineEdit_property_context_menu_enabled>`   | true  |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                  | :ref:`editable<class_LineEdit_property_editable>`                           | true  |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                  | :ref:`expand_to_text_length<class_LineEdit_property_expand_to_text_length>` | false |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | :ref:`focus_mode<class_LineEdit_property_focus_mode>`                       | 2     |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                    | :ref:`max_length<class_LineEdit_property_max_length>`                       | 0     |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                | :ref:`placeholder_alpha<class_LineEdit_property_placeholder_alpha>`         | 0.6   |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>`              | :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`           | ""    |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                  | :ref:`secret<class_LineEdit_property_secret>`                               | false |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>`              | :ref:`secret_character<class_LineEdit_property_secret_character>`           | "*"   |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>`              | :ref:`text<class_LineEdit_property_text>`                                   | ""    |
-+------------------------------------------+-----------------------------------------------------------------------------+-------+
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`Align<enum_LineEdit_Align>`            | :ref:`align<class_LineEdit_property_align>`                                 | 0        |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`caret_blink<class_LineEdit_property_caret_blink>`                     | false    |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                    | :ref:`caret_blink_speed<class_LineEdit_property_caret_blink_speed>`         | 0.65     |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                        | :ref:`caret_position<class_LineEdit_property_caret_position>`               | 0        |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`   | false    |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`context_menu_enabled<class_LineEdit_property_context_menu_enabled>`   | true     |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`editable<class_LineEdit_property_editable>`                           | true     |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`expand_to_text_length<class_LineEdit_property_expand_to_text_length>` | false    |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`FocusMode<enum_Control_FocusMode>`     | focus_mode                                                                  | **O:** 2 |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                        | :ref:`max_length<class_LineEdit_property_max_length>`                       | 0        |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`CursorShape<enum_Control_CursorShape>` | mouse_default_cursor_shape                                                  | **O:** 1 |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                    | :ref:`placeholder_alpha<class_LineEdit_property_placeholder_alpha>`         | 0.6      |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                  | :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`           | ""       |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`Texture<class_Texture>`                | :ref:`right_icon<class_LineEdit_property_right_icon>`                       |          |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`secret<class_LineEdit_property_secret>`                               | false    |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                  | :ref:`secret_character<class_LineEdit_property_secret_character>`           | "*"      |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`selecting_enabled<class_LineEdit_property_selecting_enabled>`         | true     |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`shortcut_keys_enabled<class_LineEdit_property_shortcut_keys_enabled>` | true     |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                  | :ref:`text<class_LineEdit_property_text>`                                   | ""       |
++----------------------------------------------+-----------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -317,20 +325,6 @@ If ``false``, existing text cannot be modified and new text cannot be added.
 
 If ``true``, the ``LineEdit`` width will increase to stay longer than the :ref:`text<class_LineEdit_property_text>`. It will **not** compress if the :ref:`text<class_LineEdit_property_text>` is shortened.
 
-.. _class_LineEdit_property_focus_mode:
-
-- :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
-
-+-----------+-----------------------+
-| *Default* | 2                     |
-+-----------+-----------------------+
-| *Setter*  | set_focus_mode(value) |
-+-----------+-----------------------+
-| *Getter*  | get_focus_mode()      |
-+-----------+-----------------------+
-
-Defines how the ``LineEdit`` can grab focus (Keyboard and mouse, only keyboard, or none). See :ref:`FocusMode<enum_Control_FocusMode>` for details.
-
 .. _class_LineEdit_property_max_length:
 
 - :ref:`int<class_int>` **max_length**
@@ -373,6 +367,18 @@ Opacity of the :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`
 
 Text shown when the ``LineEdit`` is empty. It is **not** the ``LineEdit``'s default value (see :ref:`text<class_LineEdit_property_text>`).
 
+.. _class_LineEdit_property_right_icon:
+
+- :ref:`Texture<class_Texture>` **right_icon**
+
++----------+-----------------------+
+| *Setter* | set_right_icon(value) |
++----------+-----------------------+
+| *Getter* | get_right_icon()      |
++----------+-----------------------+
+
+Sets the icon that will appear in the right end of the ``LineEdit`` if there's no :ref:`text<class_LineEdit_property_text>`, or always, if :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>` is set to ``false``.
+
 .. _class_LineEdit_property_secret:
 
 - :ref:`bool<class_bool>` **secret**
@@ -400,6 +406,30 @@ If ``true``, every character is replaced with the secret character (see :ref:`se
 +-----------+-----------------------------+
 
 The character to use to mask secret input (defaults to "\*"). Only a single character can be used as the secret character.
+
+.. _class_LineEdit_property_selecting_enabled:
+
+- :ref:`bool<class_bool>` **selecting_enabled**
+
++-----------+------------------------------+
+| *Default* | true                         |
++-----------+------------------------------+
+| *Setter*  | set_selecting_enabled(value) |
++-----------+------------------------------+
+| *Getter*  | is_selecting_enabled()       |
++-----------+------------------------------+
+
+.. _class_LineEdit_property_shortcut_keys_enabled:
+
+- :ref:`bool<class_bool>` **shortcut_keys_enabled**
+
++-----------+----------------------------------+
+| *Default* | true                             |
++-----------+----------------------------------+
+| *Setter*  | set_shortcut_keys_enabled(value) |
++-----------+----------------------------------+
+| *Getter*  | is_shortcut_keys_enabled()       |
++-----------+----------------------------------+
 
 .. _class_LineEdit_property_text:
 

@@ -21,17 +21,19 @@ PopupMenu displays a list of options.
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | false |
-+---------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | true  |
-+---------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | true  |
-+---------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | false |
-+---------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | 0.3   |
-+---------------------------+----------------------------------------------------------------------------------------------------+-------+
++------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                  | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | false    |
++------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                                         | **O:** 2 |
++------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | true     |
++------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | true     |
++------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | false    |
++------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | 0.3      |
++------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -419,7 +421,7 @@ Returns the id of the item at index ``idx``. ``id`` can be manually assigned, wh
 
 - :ref:`int<class_int>` **get_item_index** **(** :ref:`int<class_int>` id **)** const
 
-Returns the index of the item containing the specified ``id``. Index is automatically assigned to each item by the engine. Index can not be set manualy.
+Returns the index of the item containing the specified ``id``. Index is automatically assigned to each item by the engine. Index can not be set manually.
 
 .. _class_PopupMenu_method_get_item_metadata:
 

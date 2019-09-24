@@ -119,6 +119,8 @@ Notifies when an animation starts playing.
 
 - **caches_cleared** **(** **)**
 
+Notifies when the caches have been cleared, either automatically, or manually via :ref:`clear_caches<class_AnimationPlayer_method_clear_caches>`.
+
 Enumerations
 ------------
 
@@ -350,7 +352,7 @@ Clears all queued, unplayed animations.
 
 - :ref:`String<class_String>` **find_animation** **(** :ref:`Animation<class_Animation>` animation **)** const
 
-Returns the name of ``animation`` or empty string if not found.
+Returns the name of ``animation`` or an empty string if not found.
 
 .. _class_AnimationPlayer_method_get_animation:
 
@@ -379,6 +381,8 @@ Gets the actual playing speed of current animation or 0 if not playing. This spe
 .. _class_AnimationPlayer_method_get_queue:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_queue** **(** **)**
+
+Returns a list of the animation names that are currently queued to play.
 
 .. _class_AnimationPlayer_method_has_animation:
 

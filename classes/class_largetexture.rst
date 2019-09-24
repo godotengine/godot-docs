@@ -18,6 +18,13 @@ Brief Description
 
 A :ref:`Texture<class_Texture>` capable of storing many smaller textures with offsets.
 
+Properties
+----------
+
++-----------------------+-------+----------+
+| :ref:`int<class_int>` | flags | **O:** 0 |
++-----------------------+-------+----------+
+
 Methods
 -------
 

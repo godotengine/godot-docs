@@ -339,6 +339,10 @@ Constants
 
 .. _class_Node_constant_NOTIFICATION_OS_IME_UPDATE:
 
+.. _class_Node_constant_NOTIFICATION_APP_RESUMED:
+
+.. _class_Node_constant_NOTIFICATION_APP_PAUSED:
+
 - **NOTIFICATION_ENTER_TREE** = **10** --- Notification received when the node enters a :ref:`SceneTree<class_SceneTree>`.
 
 - **NOTIFICATION_EXIT_TREE** = **11** --- Notification received when the node is about to exit a :ref:`SceneTree<class_SceneTree>`.
@@ -418,6 +422,14 @@ Implemented on desktop platforms if the crash handler is enabled.
 - **NOTIFICATION_OS_IME_UPDATE** = **1013** --- Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
 
 Specific to the macOS platform.
+
+- **NOTIFICATION_APP_RESUMED** = **1014** --- Notification received from the OS when the app is resumed.
+
+Specific to the Android platform.
+
+- **NOTIFICATION_APP_PAUSED** = **1015** --- Notification received from the OS when the app is paused.
+
+Specific to the Android platform.
 
 Description
 -----------
@@ -664,6 +676,8 @@ Returns ``true`` if the node can process while the scene tree is paused (see :re
 Duplicates the node, returning a new node.
 
 You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enum_Node_DuplicateFlags>`).
+
+**Note:** It will not work properly if the node contains a script with constructor arguments (i.e. needs to supply arguments to :ref:`Object._init<class_Object_method__init>` method). In that case, the node will be duplicated without a script.
 
 .. _class_Node_method_find_node:
 

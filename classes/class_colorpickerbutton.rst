@@ -26,6 +26,8 @@ Properties
 +---------------------------+----------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_property_edit_alpha>` | true                |
 +---------------------------+----------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`   | toggle_mode                                                    | **O:** true         |
++---------------------------+----------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -73,6 +75,10 @@ Signals
 - **color_changed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when the color changes.
+
+.. _class_ColorPickerButton_signal_picker_created:
+
+- **picker_created** **(** **)**
 
 .. _class_ColorPickerButton_signal_popup_closed:
 

@@ -982,7 +982,7 @@ Sets a body state using one of the :ref:`BodyState<enum_Physics2DServer_BodyStat
 
 - :ref:`bool<class_bool>` **body_test_motion** **(** :ref:`RID<class_RID>` body, :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` motion, :ref:`bool<class_bool>` infinite_inertia, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>` result=null **)**
 
-Returns whether a body can move from a given point in a given direction. Apart from the boolean return value, a :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>` can be passed to return additional information in.
+Returns ``true`` if a collision would result from moving in the given direction from a given point in space. Margin increases the size of the shapes involved in the collision detection. :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>` can be passed to return additional information in.
 
 .. _class_Physics2DServer_method_capsule_shape_create:
 

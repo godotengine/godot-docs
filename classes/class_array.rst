@@ -88,6 +88,8 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`size<class_Array_method_size>` **(** **)**                                                                                                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`     | :ref:`slice<class_Array_method_slice>` **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=False **)**                                      |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`sort<class_Array_method_sort>` **(** **)**                                                                                                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`sort_custom<class_Array_method_sort_custom>` **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func **)**                                                                                 |
@@ -318,6 +320,12 @@ Shuffles the array such that the items will have a random order. This method use
 - :ref:`int<class_int>` **size** **(** **)**
 
 Returns the number of elements in the array.
+
+.. _class_Array_method_slice:
+
+- :ref:`Array<class_Array>` **slice** **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=False **)**
+
+Duplicates the subset described in the function and returns it in an array, deeply copying the array if ``deep`` is true. Lower and upper index are inclusive, with the ``step`` describing the change between indices while slicing.
 
 .. _class_Array_method_sort:
 

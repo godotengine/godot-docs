@@ -80,6 +80,10 @@ Constants
 
 .. _class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE:
 
+.. _class_MainLoop_constant_NOTIFICATION_APP_RESUMED:
+
+.. _class_MainLoop_constant_NOTIFICATION_APP_PAUSED:
+
 - **NOTIFICATION_WM_MOUSE_ENTER** = **1002** --- Notification received from the OS when the mouse enters the game window.
 
 Implemented on desktop and web platforms.
@@ -125,6 +129,14 @@ Implemented on desktop platforms if the crash handler is enabled.
 - **NOTIFICATION_OS_IME_UPDATE** = **1013** --- Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
 
 Specific to the macOS platform.
+
+- **NOTIFICATION_APP_RESUMED** = **1014** --- Notification received from the OS when the app is resumed.
+
+Specific to the Android platform.
+
+- **NOTIFICATION_APP_PAUSED** = **1015** --- Notification received from the OS when the app is paused.
+
+Specific to the Android platform.
 
 Description
 -----------

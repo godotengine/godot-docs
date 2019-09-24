@@ -21,29 +21,33 @@ Label that displays rich text.
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                             | false |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`                                   | ""    |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                           | true  |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>` | false |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`   | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                           | 1.0   |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                               | true  |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                         | false |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                       | false |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`tab_size<class_RichTextLabel_property_tab_size>`                                         | 4     |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`text<class_RichTextLabel_property_text>`                                                 | ""    |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                     | -1    |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------+
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>`     | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                             | false       |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`String<class_String>` | :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`                                   | ""          |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`Array<class_Array>`   | :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`                             | [  ]        |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>`     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                           | true        |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>` | false       |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`float<class_float>`   | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                           | 1.0         |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>`     | rect_clip_content                                                                              | **O:** true |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>`     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                               | true        |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>`     | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                         | false       |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>`     | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                       | false       |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`int<class_int>`       | :ref:`tab_size<class_RichTextLabel_property_tab_size>`                                         | 4           |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`String<class_String>` | :ref:`text<class_RichTextLabel_property_text>`                                                 | ""          |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
+| :ref:`int<class_int>`       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                     | -1          |
++-----------------------------+------------------------------------------------------------------------------------------------+-------------+
 
 Methods
 -------
@@ -67,9 +71,13 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_visible_line_count<class_RichTextLabel_method_get_visible_line_count>` **(** **)** const                                                                                       |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`install_effect<class_RichTextLabel_method_install_effect>` **(** :ref:`Variant<class_Variant>` effect **)**                                                                        |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`newline<class_RichTextLabel_method_newline>` **(** **)**                                                                                                                           |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse_bbcode<class_RichTextLabel_method_parse_bbcode>` **(** :ref:`String<class_String>` bbcode **)**                                                                              |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`   | :ref:`parse_expressions_for_values<class_RichTextLabel_method_parse_expressions_for_values>` **(** :ref:`PoolStringArray<class_PoolStringArray>` expressions **)**                       |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`pop<class_RichTextLabel_method_pop>` **(** **)**                                                                                                                                   |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -225,6 +233,18 @@ enum **ListType**:
 
 .. _class_RichTextLabel_constant_ITEM_TABLE:
 
+.. _class_RichTextLabel_constant_ITEM_FADE:
+
+.. _class_RichTextLabel_constant_ITEM_SHAKE:
+
+.. _class_RichTextLabel_constant_ITEM_WAVE:
+
+.. _class_RichTextLabel_constant_ITEM_TORNADO:
+
+.. _class_RichTextLabel_constant_ITEM_RAINBOW:
+
+.. _class_RichTextLabel_constant_ITEM_CUSTOMFX:
+
 .. _class_RichTextLabel_constant_ITEM_META:
 
 enum **ItemType**:
@@ -253,7 +273,19 @@ enum **ItemType**:
 
 - **ITEM_TABLE** = **11**
 
-- **ITEM_META** = **12**
+- **ITEM_FADE** = **12**
+
+- **ITEM_SHAKE** = **13**
+
+- **ITEM_WAVE** = **14**
+
+- **ITEM_TORNADO** = **15**
+
+- **ITEM_RAINBOW** = **16**
+
+- **ITEM_CUSTOMFX** = **18**
+
+- **ITEM_META** = **17**
 
 Description
 -----------
@@ -297,6 +329,18 @@ If ``true``, the label uses BBCode formatting.
 +-----------+-------------------+
 
 The label's text in BBCode format. Is not representative of manual modifications to the internal tag stack. Erases changes made by other methods when edited.
+
+.. _class_RichTextLabel_property_custom_effects:
+
+- :ref:`Array<class_Array>` **custom_effects**
+
++-----------+--------------------+
+| *Default* | [  ]               |
++-----------+--------------------+
+| *Setter*  | set_effects(value) |
++-----------+--------------------+
+| *Getter*  | get_effects()      |
++-----------+--------------------+
 
 .. _class_RichTextLabel_property_meta_underlined:
 
@@ -483,6 +527,10 @@ Returns the vertical scrollbar.
 
 Returns the number of visible lines.
 
+.. _class_RichTextLabel_method_install_effect:
+
+- void **install_effect** **(** :ref:`Variant<class_Variant>` effect **)**
+
 .. _class_RichTextLabel_method_newline:
 
 - void **newline** **(** **)**
@@ -494,6 +542,10 @@ Adds a newline tag to the tag stack.
 - :ref:`Error<enum_@GlobalScope_Error>` **parse_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
 The assignment version of :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>`. Clears the tag stack and inserts the new content. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if parses ``bbcode`` successfully.
+
+.. _class_RichTextLabel_method_parse_expressions_for_values:
+
+- :ref:`Dictionary<class_Dictionary>` **parse_expressions_for_values** **(** :ref:`PoolStringArray<class_PoolStringArray>` expressions **)**
 
 .. _class_RichTextLabel_method_pop:
 

@@ -21,25 +21,27 @@ Directional light from a distance, as from the Sun.
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                                       | :ref:`directional_shadow_bias_split_scale<class_DirectionalLight_property_directional_shadow_bias_split_scale>` | 0.25  |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`directional_shadow_blend_splits<class_DirectionalLight_property_directional_shadow_blend_splits>`         | false |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`ShadowDepthRange<enum_DirectionalLight_ShadowDepthRange>` | :ref:`directional_shadow_depth_range<class_DirectionalLight_property_directional_shadow_depth_range>`           | 0     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                                       | :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`         | 100.0 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`ShadowMode<enum_DirectionalLight_ShadowMode>`             | :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>`                         | 2     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                                       | :ref:`directional_shadow_normal_bias<class_DirectionalLight_property_directional_shadow_normal_bias>`           | 0.8   |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                                       | :ref:`directional_shadow_split_1<class_DirectionalLight_property_directional_shadow_split_1>`                   | 0.1   |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                                       | :ref:`directional_shadow_split_2<class_DirectionalLight_property_directional_shadow_split_2>`                   | 0.2   |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                                       | :ref:`directional_shadow_split_3<class_DirectionalLight_property_directional_shadow_split_3>`                   | 0.5   |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+-------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>`                                       | :ref:`directional_shadow_bias_split_scale<class_DirectionalLight_property_directional_shadow_bias_split_scale>` | 0.25       |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
+| :ref:`bool<class_bool>`                                         | :ref:`directional_shadow_blend_splits<class_DirectionalLight_property_directional_shadow_blend_splits>`         | false      |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
+| :ref:`ShadowDepthRange<enum_DirectionalLight_ShadowDepthRange>` | :ref:`directional_shadow_depth_range<class_DirectionalLight_property_directional_shadow_depth_range>`           | 0          |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>`                                       | :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`         | 100.0      |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
+| :ref:`ShadowMode<enum_DirectionalLight_ShadowMode>`             | :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>`                         | 2          |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>`                                       | :ref:`directional_shadow_normal_bias<class_DirectionalLight_property_directional_shadow_normal_bias>`           | 0.8        |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>`                                       | :ref:`directional_shadow_split_1<class_DirectionalLight_property_directional_shadow_split_1>`                   | 0.1        |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>`                                       | :ref:`directional_shadow_split_2<class_DirectionalLight_property_directional_shadow_split_2>`                   | 0.2        |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>`                                       | :ref:`directional_shadow_split_3<class_DirectionalLight_property_directional_shadow_split_3>`                   | 0.5        |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
+| :ref:`float<class_float>`                                       | shadow_bias                                                                                                     | **O:** 0.1 |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+------------+
 
 Enumerations
 ------------

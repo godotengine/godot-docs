@@ -18,6 +18,13 @@ Brief Description
 
 Playback control for AnimationNodeStateMachine.
 
+Properties
+----------
+
++-------------------------+-------------------------+-------------+
+| :ref:`bool<class_bool>` | resource_local_to_scene | **O:** true |
++-------------------------+-------------------------+-------------+
+
 Methods
 -------
 

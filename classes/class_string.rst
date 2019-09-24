@@ -174,6 +174,8 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`replacen<class_String_method_replacen>` **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**                                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`repeat<class_String_method_repeat>` **(** :ref:`int<class_int>` count **)**                                                                                       |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rfind<class_String_method_rfind>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)**                                                     |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rfindn<class_String_method_rfindn>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)**                                                   |
@@ -667,6 +669,12 @@ Replaces occurrences of a case-sensitive substring with the given one inside the
 - :ref:`String<class_String>` **replacen** **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**
 
 Replaces occurrences of a case-insensitive substring with the given one inside the string.
+
+.. _class_String_method_repeat:
+
+- :ref:`String<class_String>` **repeat** **(** :ref:`int<class_int>` count **)**
+
+Returns original string repeated a number of times. The number of repetitions is given by the argument.
 
 .. _class_String_method_rfind:
 

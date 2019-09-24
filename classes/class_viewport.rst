@@ -671,7 +671,9 @@ The subdivision amount of fourth quadrant on shadow atlas.
 | *Getter*  | get_shadow_atlas_size()      |
 +-----------+------------------------------+
 
-The resolution of shadow atlas. Both width and height is equal to one value.
+The shadow atlas' resolution (used for omni and spot lights). The value will be rounded up to the nearest power of 2.
+
+**Note:** If this is set to 0, shadows won't be visible. Since user-created viewports default to a value of 0, this value must be set above 0 manually.
 
 .. _class_Viewport_property_size:
 

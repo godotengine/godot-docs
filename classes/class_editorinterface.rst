@@ -26,6 +26,8 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_Control>`                             | :ref:`get_base_control<class_EditorInterface_method_get_base_control>` **(** **)**                                                                             |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                               | :ref:`get_current_path<class_EditorInterface_method_get_current_path>` **(** **)** const                                                                       |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`                                   | :ref:`get_edited_scene_root<class_EditorInterface_method_get_edited_scene_root>` **(** **)**                                                                   |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorSettings<class_EditorSettings>`               | :ref:`get_editor_settings<class_EditorInterface_method_get_editor_settings>` **(** **)**                                                                       |
@@ -88,6 +90,10 @@ Edits the given :ref:`Resource<class_Resource>`.
 - :ref:`Control<class_Control>` **get_base_control** **(** **)**
 
 Returns the main container of Godot editor's window. You can use it, for example, to retrieve the size of the container and place your controls accordingly.
+
+.. _class_EditorInterface_method_get_current_path:
+
+- :ref:`String<class_String>` **get_current_path** **(** **)** const
 
 .. _class_EditorInterface_method_get_edited_scene_root:
 

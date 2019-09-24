@@ -23,17 +23,19 @@ Standard themed Button.
 Properties
 ----------
 
-+-----------------------------------------+---------------------------------------------------+-------+
-| :ref:`TextAlign<enum_Button_TextAlign>` | :ref:`align<class_Button_property_align>`         | 1     |
-+-----------------------------------------+---------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                 | :ref:`clip_text<class_Button_property_clip_text>` | false |
-+-----------------------------------------+---------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                 | :ref:`flat<class_Button_property_flat>`           | false |
-+-----------------------------------------+---------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`           | :ref:`icon<class_Button_property_icon>`           |       |
-+-----------------------------------------+---------------------------------------------------+-------+
-| :ref:`String<class_String>`             | :ref:`text<class_Button_property_text>`           | ""    |
-+-----------------------------------------+---------------------------------------------------+-------+
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`TextAlign<enum_Button_TextAlign>` | :ref:`align<class_Button_property_align>`             | 1     |
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                 | :ref:`clip_text<class_Button_property_clip_text>`     | false |
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                 | :ref:`expand_icon<class_Button_property_expand_icon>` | false |
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                 | :ref:`flat<class_Button_property_flat>`               | false |
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`Texture<class_Texture>`           | :ref:`icon<class_Button_property_icon>`               |       |
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`String<class_String>`             | :ref:`text<class_Button_property_text>`               | ""    |
++-----------------------------------------+-------------------------------------------------------+-------+
 
 Theme Properties
 ----------------
@@ -116,6 +118,20 @@ Text alignment policy for the button's text, use one of the ``ALIGN_*`` constant
 +-----------+----------------------+
 
 When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text.
+
+.. _class_Button_property_expand_icon:
+
+- :ref:`bool<class_bool>` **expand_icon**
+
++-----------+------------------------+
+| *Default* | false                  |
++-----------+------------------------+
+| *Setter*  | set_expand_icon(value) |
++-----------+------------------------+
+| *Getter*  | is_expand_icon()       |
++-----------+------------------------+
+
+When enabled, the button's icon will expand/shrink to fit the button's size while keeping its aspect.
 
 .. _class_Button_property_flat:
 

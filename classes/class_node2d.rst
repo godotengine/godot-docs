@@ -276,7 +276,7 @@ Adds the ``offset`` vector to the node's global position.
 
 - void **look_at** **(** :ref:`Vector2<class_Vector2>` point **)**
 
-Rotates the node so it points towards the ``point``.
+Rotates the node so it points towards the ``point``, which is expected to use global coordinates.
 
 .. _class_Node2D_method_move_local_x:
 

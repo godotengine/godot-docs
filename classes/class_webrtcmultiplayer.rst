@@ -18,6 +18,15 @@ Brief Description
 
 A simple interface to create a peer-to-peer mesh network composed of :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` that is compatible with the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
+Properties
+----------
+
++-----------------------------------------------------------------+------------------------+--------------+
+| :ref:`bool<class_bool>`                                         | refuse_new_connections | **O:** false |
++-----------------------------------------------------------------+------------------------+--------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | **O:** 2     |
++-----------------------------------------------------------------+------------------------+--------------+
+
 Methods
 -------
 
