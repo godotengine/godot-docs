@@ -174,6 +174,7 @@ A singleton object template follows:
 
     import android.app.Activity;
     import android.content.Intent;
+    import android.content.Context;
     import com.godot.game.R;
     import javax.microedition.khronos.opengles.GL10;
 
@@ -181,11 +182,12 @@ A singleton object template follows:
 
         protected Activity appActivity;
         protected Context appContext;
+        private Godot activity = null;
         private int instanceId = 0;
 
-        public int myFunction(String p_str) {
+        public String myFunction(String p_str) {
             // A function to bind.
-            return 1;
+            return "Hello " + p_str;
         }
 
         public void getInstanceId(int pInstanceId) {
@@ -208,7 +210,8 @@ A singleton object template follows:
             this.appContext = appActivity.getApplicationContext();
             // You might want to try initializing your singleton here, but android
             // threads are weird and this runs in another thread, so to interact with Godot you usually have to do.
-            activity.runOnUiThread(new Runnable() {
+            this.activity = (Godot)p_activity;
+            this.activity.runOnUiThread(new Runnable() {
                     public void run() {
                         // Useful way to get config info from "project.godot".
                         String key = GodotLib.getGlobal("plugin/api_key");
@@ -249,6 +252,30 @@ Java will most likely run in a separate thread, so calls are deferred:
 
 
 Godot will detect this singleton and initialize it at the proper time.
+
+
+Using it from GDScript
+^^^^^^^^^^^^^^^^^^^^^^
+
+First you will need to add your singleton into the android modules to be loaded.
+
+Go to "Project > Project Settings"
+
+Then on the tab "General" go to the "Android" section, and fill the Modules part with your module name.
+
+The module should include the full Java path. For our example: org/godotengine/godot/MySingleton
+
+.. image:: img/android_modules.png
+
+
+Then, from your script:
+
+.. code:: gdscript
+
+    if Engine.has_singleton("MySingleton"):
+        var singleton = Engine.get_singleton("MySingleton")
+        print(singleton.myFunction("World"))
+
 
 
 Troubleshooting
