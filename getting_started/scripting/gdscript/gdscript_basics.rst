@@ -987,7 +987,7 @@ path. For example, if you name a script file ``character.gd``::
 
    # Inherit from Character.gd
 
-   extends res://path/to/character.gd
+   extends "res://path/to/character.gd"
 
    # Load character.gd and create a new node instance from it
 
