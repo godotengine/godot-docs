@@ -258,7 +258,7 @@ Using it from GDScript
 
 First you will need to add your singleton into the android modules to be loaded. Go to "Project > Project Settings".
 Then on the tab "General" go to the "Android" section, and fill the Modules part with your module name. 
-The module should include the full Java path. For our example: `org/godotengine/godot/MySingleton`
+The module should include the full Java path. For our example: ``org/godotengine/godot/MySingleton``.
 
 .. image:: img/android_modules.png
 
