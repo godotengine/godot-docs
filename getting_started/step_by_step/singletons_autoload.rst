@@ -116,7 +116,7 @@ it inherits from ``Node``:
 
 The next step is to add this script to the autoLoad list. Open
 ``Project > Project Settings`` from the menu, switch to the "AutoLoad" tab and
-select the script by clicking the browse button (|Browse|) or typing its path:
+select the script by clicking the browse button or typing its path:
 ``res://Global.gd``. Press "Add" to add it to the autoload list:
 
 .. image:: img/autoload_tutorial1.png
@@ -275,6 +275,3 @@ the button.
 Note: When scenes are small, the transition is instantaneous. However, if your
 scenes are more complex, they may take a noticeable amount of time to appear. To
 learn how to handle this, see the next tutorial: :ref:`doc_background_loading`
-
-.. |Browse| image:: img/browse_button.png
-    :alt: browse
