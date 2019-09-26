@@ -6,9 +6,9 @@ Saving games
 Introduction
 ------------
 
-Save games can be complicated. It can be desired to store more
-information than the current level or number of stars earned on a level.
-More advanced save games may need to store additional information about
+Save games can be complicated. For example, it may be desirable 
+to store information from multiple objects across multiple levels.
+Advanced save game systems should allow for additional information about
 an arbitrary number of objects. This will allow the save function to
 scale as the game grows more complex.
 
@@ -118,8 +118,8 @@ loading.
 Saving and reading data
 -----------------------
 
-As covered in the :ref:`doc_filesystem` tutorial, we'll need to open a file
-and write to it and then later, read from it. Now that we have a way to
+As covered in the :ref:`doc_filesystem` tutorial, we'll need to open a file 
+so we can write to it or read from it. Now that we have a way to
 call our groups and get their relevant data, let's use to_json() to
 convert it into an easily stored string and store them in a file. Doing
 it this way ensures that each line is its own object, so we have an easy
@@ -192,6 +192,9 @@ load function:
         save_game.open("user://savegame.save", File.READ)
         while not save_game.eof_reached():
             var current_line = parse_json(save_game.get_line())
+            if current_line == null:
+                continue
+            
             # Firstly, we need to create the object and add it to the tree and set its position.
             var new_object = load(current_line["filename"]).instance()
             get_node(current_line["parent"]).add_child(new_object)
@@ -251,18 +254,19 @@ load function:
     }
 
 
-And now, we can save and load an arbitrary number of objects laid out
+Now we can save and load an arbitrary number of objects laid out
 almost anywhere across the scene tree! Each object can store different
 data depending on what it needs to save.
 
 Some notes
 ----------
 
-We may have glossed over a step, but setting the game state to one fit
-to start loading data can be complicated. This step will need to be
-heavily customized based on the needs of an individual project.
+We have glossed over setting up the game state for loading. It's ultimately up
+to the project creator where much of this logic goes. 
+This is often complicated and will need to be heavily 
+customized based on the needs of the individual project.
 
-This implementation assumes no Persist objects are children of other
+Additionally, our implementation assumes no Persist objects are children of other
 Persist objects. Otherwise, invalid paths would be created. To 
 accommodate nested Persist objects, consider saving objects in stages. 
 Load parent objects first so they are available for the add_child() 
