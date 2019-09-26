@@ -312,13 +312,13 @@ _________________
 If the ``raycast`` hit something, then we get the :ref:`PhysicsBody <class_PhysicsBody>` it collided with through the ``get_collider`` function. We assign the
 hit :ref:`PhysicsBody <class_PhysicsBody>` to a variable called ``body``.
 
-We then get the direction of the raycast by getting it's positive ``Z`` directional axis from the :ref:`Basis <class_Basis>` on the ``raycast`` node's ``global_transform``.
+We then get the direction of the :ref:`Raycast <class_Raycast>` by getting it's positive ``Z`` directional axis from the :ref:`Basis <class_Basis>` on the ``raycast`` node's ``global_transform``.
 This will give us the direction the raycast is pointing on the Z axis, which is the same direction as the blue arrow on the :ref:`Spatial <class_Spatial>` gizmo when
 ``Local space mode`` is enabled in the Godot editor. We store this direction in a variable called ``direction_vector``.
 
-Next we get the distance from the raycast origin to the raycast collision point by getting the distance from the global position, ``global_transform.origin`` of the ``raycast``
-node to the collision point of the raycast, ``raycast.get_collision_point``, using the ``distance_to`` function. This will give us the distance the :ref:`Raycast <class_Raycast>`
-traveled before it collided, which we store in a variable called ``raycast_distance``.
+Next we get the distance from the :ref:`Raycast <class_Raycast>` origin to the :ref:`Raycast <class_Raycast>` collision point by getting the distance from the global position, ``global_transform.origin``
+of the ``raycast`` node to the collision point of the :ref:`Raycast <class_Raycast>`, ``raycast.get_collision_point``, using the ``distance_to`` function. This will give us the distance the
+:ref:`Raycast <class_Raycast>` traveled before it collided, which we store in a variable called ``raycast_distance``.
 
 Then the code checks if the :ref:`PhysicsBody <class_PhysicsBody>`, ``body``, has a function/method called ``damage`` using the ``has_method`` function. If the :ref:`PhysicsBody <class_PhysicsBody>`
 has a function/method called ``damage``, then we call the ``damage`` function and pass ``BULLET_DAMAGE`` so it takes damage from the bullet colliding into it.
@@ -523,7 +523,7 @@ and the collision force is the ``collision_force`` variable we calculated.
 
 _________________
 
-Once all of the Raycasts in the ``raycast`` variable have been iterated over, we then play the shotgun shot sound by calling the ``play`` function on the ``shotgun_fire_sound`` variable.
+Once all of the :ref:`Raycast <class_Raycast>`s in the ``raycast`` variable have been iterated over, we then play the shotgun shot sound by calling the ``play`` function on the ``shotgun_fire_sound`` variable.
 
 Finally, we check to see if the shotgun is being held by a VR controller by checking to see if the ``controller`` variable is not equal to ``null``. If it is not equal to ``null``,
 we then set the ``rumble`` property of the VR controller to ``0.25``, so there is a slight rumble when the shotgun fires.
@@ -942,8 +942,6 @@ Next, we get ``Game.gd`` by using ``get_tree().root`` and assign ``sphere_ui`` t
 In ``update_ui``, we change the sphere :ref:`Label <class_Label>`'s text. If there is at least one sphere remaining, we change the text to show how many spheres are still
 left in the world. If there are no more spheres remaining, we change the text and congratulate the player.
 
-.. error:: TwistedTwigleg stopped editing here! Everything below this line is OLD tutorial!
-           TODO: test the tutorial project again to make sure the *minor* changes made while writing the tutorial didn't break anything!
 
 
 Adding the final special RigidBody
@@ -952,17 +950,18 @@ Adding the final special RigidBody
 Finally, before we finish this tutorial, let's add a way to reset the game while in VR.
 
 Open up ``Reset_Box.tscn``, which you will find in ``Scenes``. Select the ``Reset_Box`` :ref:`RigidBody <class_RigidBody>` node and make a new script called ``Reset_Box.gd``.
-Add the following code to ``Reset_Box.gd``:
+Add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends RigidBody
+    extends VR_Interactable_Rigidbody
 
     var start_transform
 
     var reset_timer = 0
-    const RESET_TIME = 120
+    const RESET_TIME = 10
+    const RESET_MIN_DISTANCE = 1
 
 
     func _ready():
@@ -970,52 +969,68 @@ Add the following code to ``Reset_Box.gd``:
 
 
     func _physics_process(delta):
-        reset_timer += delta
-        if reset_timer >= RESET_TIME:
-            global_transform = start_transform
-            reset_timer = 0
+        if start_transform.origin.distance_to(global_transform.origin) >= RESET_MIN_DISTANCE:
+            reset_timer += delta
+            if reset_timer >= RESET_TIME:
+                global_transform = start_transform
+                reset_timer = 0
 
 
-    # Called when the interact button is pressed while the object is held.
     func interact():
+        # (Ignore the unused variable warning)
+        # warning-ignore:return_value_discarded
         get_tree().change_scene("res://Game.tscn")
 
 
-    # Called when the object is picked up.
-    func picked_up():
-        pass
-
-
-    # Called when the object is dropped.
     func dropped():
         global_transform = start_transform
         reset_timer = 0
 
-Let's go over what this does.
 
-First, we get the starting global :ref:`Transform <class_Transform>` in ``_ready``, and assign it to ``start_transform``. We will use this to reset the position of the reset box every so often.
+Let's quickly go over how this script works.
 
-In ``_physics_process``, we check to see if enough time has passed to reset. If it has, we reset the box's :ref:`Transform <class_Transform>` and then reset the timer.
 
-If the player interacts while holding the reset box, we reset the scene by calling ``get_tree().change_scene`` and passing in the path to the current scene. This resets/restarts
-the scene completely.
+Explaining the reset box code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When the reset box is dropped, we reset the :ref:`Transform <class_Transform>` and timer.
+Like with the other special :ref:`RigidBody <class_RigidBody>`-based objects we've created, the reset box extends ``VR_Interactable_Rigidbody``.
 
-________
+The ``start_transform`` class variable will store the global transform of the reset box when the game starts, the ``reset_timer`` class variable will hold the length of
+time that has passed since the reset box's position has moved, the ``RESET_TIME`` constant defines the length of time the reset box has to wait before being reset, and
+the ``RESET_MIN_DISTANCE`` constant defines how far the reset box has to be away from it's initial position before the reset timer starts.
+
+In the ``_ready`` function all we are doing is storing the ``global_transform`` of the reset position when the scene starts. This is so we can reset the position, rotation, and scale
+of the reset box object to this initial transform when enough time has passed.
+
+In the ``_physics_process`` function, the code checks to see if the reset box's initial position to the reset box's current position is farther than ``RESET_MIN_DISTANCE``. If it is
+farther, then it starts adding time, ``delta``, to ``reset_timer``. Once ``reset_timer`` is more than or equal to ``RESET_TIME``, we reset the ``global_transform`` to the ``start_transform``
+so the reset box is back in its initial position. We then set ``reset_timer`` to ``0``.
+
+The ``interact`` function simply reloads the ``Game.tscn`` scene using ``get_tree().change_scene``. This will reload the game scene, resetting everything.
+
+Finally, the ``dropped`` function resets the ``global_transform`` to the initial transform in ``start_transform`` so the reset box has its initial position/rotation. Then ``reset_timer`` is
+set to ``0`` so the timer is reset.
+
+
+Reset box finished
+^^^^^^^^^^^^^^^^^^
 
 With that done, when you grab and interact with the reset box, the entire scene will reset/restart and you can destroy all the targets again!
+
+.. note:: Resetting the scene abruptly without any sort of transition can lead to discomfort in VR.
 
 
 
 Final notes
 -----------
 
-.. image:: img/starter_vr_tutorial_sword.png
+.. image:: img/starter_vr_tutorial_pistol.png
 
-Whew! That was a lot of work. Now you have a fully working VR project!
+Whew! That was a lot of work.
 
-.. warning:: You can download the finished project for this tutorial series on the Godot OpenVR GitHub repository, under the releases tab!
-
-This will hopefully serve as an introduction to making fully-featured VR games in Godot! The code written here can be expanded to make puzzle games, action games,
+Now you have a fully working VR project with multiple different types of special :ref:`RigidBody <class_RigidBody>`-based nodes that can be used and extended. Hopefully this will
+help serve as an introduction to making fully-featured VR games in Godot! The code and concepts detailed in this tutorial can be expanded on to make puzzle games, action games,
 story-based games, and more!
+
+.. warning:: You can download the finished project for this tutorial series on the `OpenVR GitHub repository <https://github.com/GodotVR/godot_openvr_fps>`_, under the releases tab!
+
