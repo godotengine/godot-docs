@@ -1,6 +1,6 @@
 .. _doc_state_design_pattern:
 
-State Design Pattern
+State design pattern
 ====================
 
 Introduction
@@ -11,20 +11,20 @@ only one script can be attached to a node at a time. Instead of creating a state
 within the player's control script, it would make development simpler if the states were
 separated out into different classes.
 
-There are many ways to implement a state machine with godot, and some other methods are below:
+There are many ways to implement a state machine with Godot, and some other methods are below:
 
-* The player can have a child node for each state, which are called when utilized
-* Enums can be used in conjunction with a match statement
-* The state scripts themselves could be swapped out from a node dynamically at run-time 
+* The player can have a child node for each state, which are called when utilized.
+* Enums can be used in conjunction with a match statement.
+* The state scripts themselves could be swapped out from a node dynamically at run-time.
 
 This tutorial will focus only on adding and removing nodes which have a state script attached. Each state
 script will be an implementation of a different state.
 
 .. note::
-  There is a great resource explaining the concept of the state design pattern here:
-  https://gameprogrammingpatterns.com/state.html
+    There is a great resource explaining the concept of the state design pattern here:
+    https://gameprogrammingpatterns.com/state.html
 
-Script-Setup
+Script setup
 ------------
 
 The feature of inheritance is useful for getting started with this design principle.
@@ -37,6 +37,8 @@ Below is the generic state, from which all other states will inherit.
 .. tabs::
   .. code-tab:: gdscript GDScript
 
+    # state.gd
+
     extends Node2D
     
     class_name State
@@ -46,10 +48,11 @@ Below is the generic state, from which all other states will inherit.
     var persistent_state
     var velocity
 
-    func _physics_process(delta):
+    # Writing _delta instead of delta here prevents the unused variable warning.
+    func _physics_process(_delta):
       persistent_state.move_and_slide(persistent_state.velocity, Vector2.UP)
 
-    func setup(change_state, animated_sprite, kinematic_body_2d):
+    func setup(change_state, animated_sprite, persistent_state):
 	self.change_state = change_state
 	self.animated_sprite = animated_sprite
 	self.persistent_state = persistent_state
@@ -87,7 +90,7 @@ So, now that there is a base state, the two states discussed earlier can be impl
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # filename: idle_state.gd
+    # idle_state.gd
 
     extends State
 
@@ -114,7 +117,7 @@ So, now that there is a base state, the two states discussed earlier can be impl
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # filename: run_state.gd
+    # run_state.gd
 
     extends State
 
@@ -130,7 +133,7 @@ So, now that there is a base state, the two states discussed earlier can be impl
          move_speed.x *= -1
       persistent_state.velocity += move_speed
 
-    func _physics_process(delta):
+    func _physics_process(_delta):
       if abs(velocity) < min_move_speed:
         change_state.call_func("idle")
       persistent_state.velocity.x *= friction
@@ -160,7 +163,7 @@ There is a round-about method for obtaining a state instance. A state factory ca
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    #filename: state_factory.gd
+    # state_factory.gd
 
     class_name StateFactory
 
@@ -168,8 +171,8 @@ There is a round-about method for obtaining a state instance. A state factory ca
 
     func _init():
       states = {
-          "idle":IdleState,
-          "run":RunState
+          "idle": IdleState,
+          "run": RunState
       }
 
     func get_state(state_name):
@@ -187,7 +190,7 @@ will not change it makes sense to call this new script ``persistent_state.gd``.
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # filename: persistent_state.gd
+    # persistent_state.gd
 
     extends KinematicBody2D
 
@@ -203,7 +206,7 @@ will not change it makes sense to call this new script ``persistent_state.gd``.
       change_state("idle")
 
     # Input code was placed here for tutorial purposes.
-    func _process(delta):
+    func _process(_delta):
       if Input.is_action_pressed("ui_left"):
         move_left()
       elif Input.is_action_pressed("ui_right"):
@@ -226,7 +229,7 @@ will not change it makes sense to call this new script ``persistent_state.gd``.
   The ``persistent_state.gd`` script contains code for detecting input. This was to make the tutorial simple, but it is not usually 
   best practice to do this.
 
-Project-Setup
+Project setup
 -------------
 
 This tutorial made an assumption that the node it would be attached to contained a child node which is an :ref:`AnimatedSprite <class_AnimatedSprite>`. 
