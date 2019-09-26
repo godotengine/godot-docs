@@ -243,7 +243,7 @@ node called ``Pistol`` and make a new script called ``Pistol.gd``. Add the follo
                 
                 if body.has_method("damage"):
                     body.damage(BULLET_DAMAGE)
-                elif body.has_method("apply_impulse"):
+                elif body is RigidBody:
                     var collision_force = (COLLISION_FORCE / raycast_distance) * body.mass
                     body.apply_impulse((raycast.global_transform.origin - body.global_transform.origin).normalized(), direction_vector * collision_force)
             
@@ -263,7 +263,7 @@ node called ``Pistol`` and make a new script called ``Pistol.gd``. Add the follo
 Let's go over how this script works.
 
 
-Explaining the Pistol code
+Explaining the pistol code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, notice how instead of ``extends RigidBody``, we instead have ``extends VR_Interactable_Rigidbody``. This makes it where the pistol script extends the
@@ -281,81 +281,129 @@ Next, let's look at the class variables:
 * ``BULLET_DAMAGE``: A constant to define the amount of damage a single bullet from the pistol does.
 * ``COLLISION_FORCE``: A constant that defines the amount of force that is applied to :ref:`RigidBody <class_RigidBody>` nodes when the pistol's bullet collides.
 
-.. error:: TwistedTwigleg stopped editing here! Everything below this line is OLD tutorial!
 
-Let's go over ``_ready``.
+``_ready`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""
 
-All we are doing here is getting the nodes and assigning them to the proper variables. We also make sure the flash and laser
-sight meshes are invisible.
+This function gets the nodes and assigns them to their proper variables. For the ``flash_mesh`` and ``laser_sight_mesh`` nodes, both have their ``visible`` property set to ``false``
+so they are not visible initially.
 
-________
+``_physics_process`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Next, let's look at ``_physics_process``.
+The ``_physics_process`` function first checks to see if the pistol's muzzle flash is visible by checking if ``flash_timer`` is more than zero. If ``flash_timer`` is more than
+zero, then we remove time, ``delta`` from it. Next we check if the ``flash_timer`` variable is zero or less now that we removed ``delta`` from it. If it is, then the pistol
+muzzle flash timer just finished and so we need to make ``flash_mesh`` invisible by setting it's ``visible`` property to ``false``.
 
-Firstly, we check to see if the flash is visible. We do this by checking to see if ``flash_timer`` is more than zero. This is because ``flash_timer`` will be an inverted timer,
-a timer that counts down instead of counting up.
+``interact`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""""
 
-If ``flash_timer`` is more than zero, we subtract ``delta`` from it and check to see whether it is equal to zero or less.
-If it is, we make the flash mesh invisible.
+The interact function first checks to see if the pistol's muzzle flash is invisible by checking to see if ``flash_timer`` is less than or equal to zero. We do this so we
+can limit the rate of fire of the pistol to the length of time the muzzle flash is visible, which is a simple solution for limiting how fast the player can fire.
 
-This makes it where the flash mesh becomes invisible after ``FLASH_TIME`` many seconds have gone by.
+If ``flash_timer`` is zero or less, we then set ``flash_timer`` to ``FLASH_TIME`` so there is a delay before the pistol can fire again. After that we set ``flash_mesh.visible``
+to ``true`` so the muzzle flash at the end of the pistol is visible while ``flash_timer`` is more than zero.
 
-________
+Next we call the ``force_raycast_update`` function on the :ref:`Raycast <class_Raycast>` node in ``raycast`` so that it gets the latest collision info from the physics world.
+We then check if the ``raycast`` hit something by checking if the ``is_colliding`` function is equal to ``true``.
 
-Now, let's look at ``interact``, which is called when the trigger button on the VR controller is pressed and the pistol is being held.
+_________________
 
-Firstly, we check to see if the flash timer is less than or equal to zero. This check makes it where we cannot fire when the flash is visible, limiting how often
-the pistol can fire.
+If the ``raycast`` hit something, then we get the :ref:`PhysicsBody <class_PhysicsBody>` it collided with through the ``get_collider`` function. We assign the
+hit :ref:`PhysicsBody <class_PhysicsBody>` to a variable called ``body``.
 
-If we can fire, we reset ``flash_timer`` by setting it to ``FLASH_TIME``, and we make the flash mesh visible.
+We then get the direction of the raycast by getting it's positive ``Z`` directional axis from the :ref:`Basis <class_Basis>` on the ``raycast`` node's ``global_transform``.
+This will give us the direction the raycast is pointing on the Z axis, which is the same direction as the blue arrow on the :ref:`Spatial <class_Spatial>` gizmo when
+``Local space mode`` is enabled in the Godot editor. We store this direction in a variable called ``direction_vector``.
 
-We then update the :ref:`Raycast <class_Raycast>` and check to see if it is colliding with anything.
+Next we get the distance from the raycast origin to the raycast collision point by getting the distance from the global position, ``global_transform.origin`` of the ``raycast``
+node to the collision point of the raycast, ``raycast.get_collision_point``, using the ``distance_to`` function. This will give us the distance the :ref:`Raycast <class_Raycast>`
+traveled before it collided, which we store in a variable called ``raycast_distance``.
 
-If the :ref:`Raycast <class_Raycast>` is colliding with something, we get the collider. We check to see if the collider has the ``damage`` function, and if it does, we call it.
-If it does not, we then check to see if the collider has the ``apply_impulse`` function, and if it does, we call it after calculating the direction from the
-:ref:`Raycast <class_Raycast>` to the collider.
+Then the code checks if the :ref:`PhysicsBody <class_PhysicsBody>`, ``body``, has a function/method called ``damage`` using the ``has_method`` function. If the :ref:`PhysicsBody <class_PhysicsBody>`
+has a function/method called ``damage``, then we call the ``damage`` function and pass ``BULLET_DAMAGE`` so it takes damage from the bullet colliding into it.
 
-Finally, regardless of whether the pistol hit something or not, we play the pistol firing sound.
+Regardless of whether the :ref:`PhysicsBody <class_PhysicsBody>` has a ``damage`` function, we then check to see if ``body`` is a :ref:`RigidBody <class_RigidBody>`-based node. If ``body`` is a
+:ref:`RigidBody <class_RigidBody>`-based node, then we want to push it when the bullet collides.
 
-________
+To calculate the amount of force applied, we simply take ``COLLISION_FORCE`` and divide it by ``raycast_distance``, then we multiply the whole thing by ``body.mass``. We store this calculation in
+a variable called ``collision_force``. This will make collisions over a shorter distance apply move force than those over longer distances, giving a *slightly* more realistic collision response.
 
-Finally, let's look at ``picked_up`` and ``dropped``, which are called when the pistol is picked up and dropped, respectively.
+We then push the :ref:`RigidBody <class_RigidBody>` using the ``apply_impulse`` function, where the position is a zero Vector3 so the force is applied from the center, and the collision force is the ``collision_force`` variable we calculated.
 
-All we are doing in these functions is making the laser pointer visible when the pistol is picked up, and making it invisible when the pistol is dropped.
+_________________
 
-________
+Regardless of whether the ``raycast`` variable hit something or not, we then play the pistol shot sound by calling the ``play`` function on the ``pistol_fire_sound`` variable.
+
+Finally, we check to see if the pistol is being held by a VR controller by checking to see if the ``controller`` variable is not equal to ``null``. If it is not equal to ``null``,
+we then set the ``rumble`` property of the VR controller to ``0.25``, so there is a slight rumble when the pistol fires.
+
+
+``picked_up`` function step-by-step explanation
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+This function simply makes the ``laser_sight_mesh`` :ref:`MeshInstance <class_MeshInstance>` visible by setting the ``visible`` property to ``true``.
+
+``dropped`` function step-by-step explanation
+"""""""""""""""""""""""""""""""""""""""""""""
+
+This function simply makes the ``laser_sight_mesh`` :ref:`MeshInstance <class_MeshInstance>` invisible by setting the ``visible`` property to ``false``.
+
+
+Pistol finished
+^^^^^^^^^^^^^^^
 
 .. image:: img/starter_vr_tutorial_pistol.png
 
-With that done, go ahead and give the game a try! If you climb up the stairs and grab the pistols, you should be able to fire at the spheres and they will break!
+
+That is all we need to do to have working pistols in the project! Go ahead and run the project. If you climb up the stairs and grab the pistols, you can fire them at the sphere
+targets in the scene using the trigger button on the VR controller! If you fire at the targets long enough, they will break into pieces.
+
+
 
 Adding a shotgun
 ----------------
 
-Let's add a different type of weapon :ref:`RigidBody <class_RigidBody>`: a shotgun. This is fairly straightforward, as almost everything is the same as the pistol.
+Next let's add a shotgun to the VR project.
 
-Open up ``Shotgun.tscn``, which you can find in ``Scenes``. Notice how everything is more or less the same, but instead of a single :ref:`Raycast <class_Raycast>`,
-there are five, and there is no laser pointer.
-This is because a shotgun generally fires in a cone shape, and so we are going to emulate that by having several :ref:`Raycast <class_Raycast>` nodes, all rotated randomly
-in a cone shape, and I removed the laser pointer so the player has to aim without knowing for sure where the shotgun is pointing.
+Adding a special shotgun :ref:`RigidBody <class_RigidBody>` should be fairly straightforward, as almost everything with the shotgun is the same as the pistol.
 
-Alright, select the ``Shotgun`` root node, the :ref:`RigidBody <class_RigidBody>` and make a new script called ``Shotgun.gd``. Add the following to ``Shotgun.gd``:
+Open up ``Shotgun.tscn``, which you can find in the ``Scenes`` folder and take a look at the scene. Almost everything is the same as in ``Pistol.tscn``.
+The only thing that is different, beyond name changes, is that instead of a single :ref:`Raycast <class_Raycast>`, there are five :ref:`Raycast <class_Raycast>` nodes.
+This is because a shotgun generally fires in a cone shape, so we are going to emulate that effect by having several :ref:`Raycast <class_Raycast>` nodes that will rotate
+randomly in a cone shape when the shotgun fires.
+
+Outside of that, everything is more or less the same as ``Pistol.tscn``.
+
+Let's write the code for the shotgun. Select the :ref:`RigidBody <class_RigidBody>` node called ``Shotgun`` and make a new script called ``Shotgun.gd``. Add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends RigidBody
+    extends VR_Interactable_Rigidbody
 
-    onready var flash_mesh = $Shotgun_Flash
-    onready var raycasts = $Raycasts
-
+    var flash_mesh
     const FLASH_TIME = 0.25
     var flash_timer = 0
 
-    var BULLET_DAMAGE = 30
+    var laser_sight_mesh
+    var shotgun_fire_sound
+
+    var raycasts
+    const BULLET_DAMAGE = 30
+    const COLLISION_FORCE = 4
+
 
     func _ready():
+        flash_mesh = get_node("Shotgun_Flash")
         flash_mesh.visible = false
+        
+        laser_sight_mesh = get_node("LaserSight")
+        laser_sight_mesh.visible = false
+        
+        raycasts = get_node("Raycasts")
+        shotgun_fire_sound = get_node("AudioStreamPlayer3D")
+
 
     func _physics_process(delta):
         if flash_timer > 0:
@@ -364,349 +412,521 @@ Alright, select the ``Shotgun`` root node, the :ref:`RigidBody <class_RigidBody>
                 flash_mesh.visible = false
 
 
-    # Called when the interact button is pressed while the object is held.
     func interact():
-
         if flash_timer <= 0:
-
+            
             flash_timer = FLASH_TIME
             flash_mesh.visible = true
-
+            
             for raycast in raycasts.get_children():
-
+                
+                if not raycast is RayCast:
+                    continue
+                
                 raycast.rotation_degrees = Vector3(90 + rand_range(10, -10), 0, rand_range(10, -10))
-
+                
                 raycast.force_raycast_update()
                 if raycast.is_colliding():
-
+                    
                     var body = raycast.get_collider()
-
-                    # If the body has the damage method, then use that; otherwise, use apply_impulse.
+                    var direction_vector = raycasts.global_transform.basis.z.normalized()
+                    var raycast_distance = raycasts.global_transform.origin.distance_to(raycast.get_collision_point())
+                    
                     if body.has_method("damage"):
-                        body.damage(raycast.global_transform, BULLET_DAMAGE)
-                    elif body.has_method("apply_impulse"):
-                        var direction_vector = raycast.global_transform.basis.z.normalized()
-                        body.apply_impulse((raycast.global_transform.origin - body.global_transform.origin).normalized(), direction_vector * 4)
-
-            $AudioStreamPlayer3D.play()
+                        body.damage(BULLET_DAMAGE)
+                    
+                    if body is RigidBody:
+                        var collision_force = (COLLISION_FORCE / raycast_distance) * body.mass
+                        body.apply_impulse((raycast.global_transform.origin - body.global_transform.origin).normalized(), direction_vector * collision_force)
+            
+            shotgun_fire_sound.play()
+            
+            if controller != null:
+                controller.rumble = 0.25
 
 
     func picked_up():
-        pass
+        laser_sight_mesh.visible = true
 
 
     func dropped():
-        pass
+        laser_sight_mesh.visible = false
 
-You may have noticed this is almost exactly the same as the pistol, and indeed it is, so let's only go over what has changed.
 
-- ``raycasts``: The node that holds all of the five :ref:`Raycast <class_Raycast>` nodes used for the shotgun's firing.
+The majority of this code is exactly the same as the code for the pistol with just a few *minor* changes that are primarily just different names.
+Due to how similar these scripts are, let's just focus on the changes.
 
-In ``_ready``, we get the ``Raycasts`` node, instead of just a single :ref:`Raycast <class_Raycast>`.
+Explaining the shotgun code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The only other change, besides there being nothing in ``picked_up`` and ``dropped``, is in ``interact``.
+Like with the pistol, the shotgun extends ``VR_Interactable_Rigidbody`` so the VR controllers know that this object can be interacted with and what functions are
+available.
 
-Now we go through each :ref:`Raycast <class_Raycast>` in ``raycasts``. We then rotate it on the X and Z axes, making within a 10 to ``-10`` cone.
-From there, we process each :ref:`Raycast <class_Raycast>` like we did the single :ref:`Raycast <class_Raycast>` in the pistol, nothing changed at all,
-we are just doing it five times, once for each :ref:`Raycast <class_Raycast>` in ``raycasts``.
+There is only one new class variable:
 
-________
+* ``raycasts``: A variable to hold the node that has all of the :ref:`Raycast <class_Raycast>` nodes as its children.
 
-Now you can find and fire the shotgun too! The shotgun is located around the back behind one of the walls (not in the building though!).
+The new class variable replaces the ``raycast`` variable from ``Pistol.gd``, because with the shotgun we need to process multiple :ref:`Raycast <class_Raycast>` nodes
+instead of just one. All of the other class variables are the same as ``Pistol.gd`` and function the same way, some just are renamed to be non-pistol specific.
+
+``interact`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""""
+
+The interact function first checks to see if the shotgun's muzzle flash is invisible by checking to see if ``flash_timer`` is less than or equal to zero. We do this so we
+can limit the rate of fire of the shotgun to the length of time the muzzle flash is visible, which is a simple solution for limiting how fast the player can fire.
+
+If ``flash_timer`` is zero or less, we then set ``flash_timer`` to ``FLASH_TIME`` so there is a delay before the shotgun can fire again. After that we set ``flash_mesh.visible``
+to ``true`` so the muzzle flash at the end of the shotgun is visible while ``flash_timer`` is more than zero.
+
+Next we call the ``force_raycast_update`` function on the :ref:`Raycast <class_Raycast>` node in ``raycast`` so that it gets the latest collision info from the physics world.
+We then check if the ``raycast`` hit something by checking if the ``is_colliding`` function is equal to ``true``.
+
+Next we go through each of the child nodes of the ``raycasts`` variable using a for loop. This way the code will go through each of the :ref:`Raycast <class_Raycast>` nodes
+that are children of the ``raycasts`` variable.
+
+_________________
+
+For each node, we check to see if ``raycast`` is *not* a :ref:`Raycast <class_Raycast>` node. If the node is not a :ref:`Raycast <class_Raycast>` node, we simply use ``continue`` to skip it.
+
+Next we rotate the ``raycast`` node randomly around a small ``10`` degrees cone by settings the ``rotation_degrees`` variable of the ``raycast`` to a Vector3 where the X and Z axis
+are a random number from ``-10`` to ``10``. This random number is selected using the ``rand_range`` function.
+
+Then we call the ``force_raycast_update`` function on the :ref:`Raycast <class_Raycast>` node in ``raycast`` so that it gets the latest collision info from the physics world.
+We then check if the ``raycast`` hit something by checking if the ``is_colliding`` function is equal to ``true``.
+
+The rest of the code is exactly the same, but this process is repeated for each :ref:`Raycast <class_Raycast>` node that is a child of the ``raycasts`` variable.
+
+_________________
+
+If the ``raycast`` hit something, then we get the :ref:`PhysicsBody <class_PhysicsBody>` it collided with through the ``get_collider`` function. We assign the
+hit :ref:`PhysicsBody <class_PhysicsBody>` to a variable called ``body``.
+
+We then get the direction of the raycast by getting it's positive ``Z`` directional axis from the :ref:`Basis <class_Basis>` on the ``raycast`` node's ``global_transform``.
+This will give us the direction the raycast is pointing on the Z axis, which is the same direction as the blue arrow on the :ref:`Spatial <class_Spatial>` gizmo when
+``Local space mode`` is enabled in the Godot editor. We store this direction in a variable called ``direction_vector``.
+
+Next we get the distance from the raycast origin to the raycast collision point by getting the distance from the global position, ``global_transform.origin`` of the ``raycast``
+node to the collision point of the raycast, ``raycast.get_collision_point``, using the ``distance_to`` function. This will give us the distance the :ref:`Raycast <class_Raycast>`
+traveled before it collided, which we store in a variable called ``raycast_distance``.
+
+Then the code checks if the :ref:`PhysicsBody <class_PhysicsBody>`, ``body``, has a function/method called ``damage`` using the ``has_method`` function. If the :ref:`PhysicsBody <class_PhysicsBody>`
+has a function/method called ``damage``, then we call the ``damage`` function and pass ``BULLET_DAMAGE`` so it takes damage from the bullet colliding into it.
+
+Regardless of whether the :ref:`PhysicsBody <class_PhysicsBody>` has a ``damage`` function, we then check to see if ``body`` is a :ref:`RigidBody <class_RigidBody>`-based node. If ``body`` is a
+:ref:`RigidBody <class_RigidBody>`-based node, then we want to push it when the bullet collides.
+
+To calculate the amount of force applied, we simply take ``COLLISION_FORCE`` and divide it by ``raycast_distance``, then we multiply the whole thing by ``body.mass``. We store this calculation in
+a variable called ``collision_force``. This will make collisions over a shorter distance apply move force than those over longer distances, giving a *slightly* more realistic collision response.
+
+We then push the :ref:`RigidBody <class_RigidBody>` using the ``apply_impulse`` function, where the position is a zero Vector3 so the force is applied from the center,
+and the collision force is the ``collision_force`` variable we calculated.
+
+_________________
+
+Once all of the Raycasts in the ``raycast`` variable have been iterated over, we then play the shotgun shot sound by calling the ``play`` function on the ``shotgun_fire_sound`` variable.
+
+Finally, we check to see if the shotgun is being held by a VR controller by checking to see if the ``controller`` variable is not equal to ``null``. If it is not equal to ``null``,
+we then set the ``rumble`` property of the VR controller to ``0.25``, so there is a slight rumble when the shotgun fires.
+
+Shotgun finished
+^^^^^^^^^^^^^^^^
+
+Everything else is exactly the same as the pistol, with at most just some simple name changes.
+
+Now the shotgun is finished! You can find the shotgun in the sample scene by looking around the back of one of the walls (not in the building though!).
+
+
 
 Adding a bomb
 -------------
 
-While both of those are well and good, let's add something we can throw next — a bomb!
+Okay, let's add a different special :ref:`RigidBody <class_RigidBody>`. Instead of adding something that shoots, let's add something we can throw - a bomb!
 
-Open up ``Bomb.tscn``, which you will find in the ``Scenes`` folder.
+Open up ``Bomb.tscn``, which is in the ``Scenes`` folder.
 
-First, notice how there is a rather large :ref:`Area <class_Area>` node. This is the explosion radius for the bomb. Anything within this :ref:`Area <class_Area>` will be
-effected by the explosion when the bomb explodes.
+The root node is a :ref:`RigidBody <class_RigidBody>` node that we'll be extending to use ``VR_Interactable_Rigidbody``, which has a :ref:`CollisionShape <class_CollisionShape>`
+like the other special :ref:`RigidBody <class_RigidBody>` nodes we've made so far. Likewise, there is a :ref:`MeshInstance <class_MeshInstance>` called ``Bomb`` that is used to
+display the mesh for the bomb.
 
-The other thing to note is how there are two sets of :ref:`Particles <class_Particles>`: one for smoke coming out of the fuse, and another for the explosion itself.
-Feel free to take a look at the :ref:`Particles <class_Particles>` nodes if you want!
+Then we have an :ref:`Area <class_Area>` node simply called ``Area`` that has a large :ref:`CollisionShape <class_CollisionShape>` as its child. We'll use this :ref:`Area <class_Area>`
+node to effect anything within it when the bomb explodes. Essentially, this :ref:`Area <class_Area>` node will be the blast radius for the bomb.
 
-The only thing to notice is how long the explosion :ref:`Particles <class_Particles>` node will last, their lifetime, which is 0.75 seconds. We need to know this so we can time
-the removal of the bomb with the end of the explosion :ref:`Particles <class_Particles>`.
+There is also a couple :ref:`Particles <class_Particles>` nodes. One of the :ref:`Particles <class_Particles>` nodes are for the smoke coming out of the bomb's fuse, while another
+is for the explosion. You can take a look at the :ref:`ParticlesMaterial <class_ParticlesMaterial>` resources, which define how the particles work, if you want. We will not be covering
+how the particles work in this tutorial due to it being outside of the scope of this tutorial.
 
-Alright, now let's write the code for the bomb. Select the ``Bomb`` :ref:`RigidBody <class_RigidBody>` node and make a new script called ``Bomb.gd``. Add the following code to
-``Bomb.gd``:
+There is one thing with the :ref:`Particles <class_Particles>` nodes that we need to make note of. If you select the ``Explosion_Particles`` node, you'll find that its ``lifetime`` property
+is set to ``0.75`` and that the ``one shot`` checkbox is enabled. This means that the particles will only play once, and the particles will last for ``0.75`` seconds.
+We'll need to know this so we can time the removal of the bomb with the end of the explosion :ref:`Particles <class_Particles>`.
+
+Let's write the code for the bomb. Select the ``Bomb`` :ref:`RigidBody <class_RigidBody>` node and make a new script called ``Bomb.gd``. Add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends RigidBody
+    extends VR_Interactable_Rigidbody
 
-    onready var bomb_mesh = $Bomb
-    onready var explosion_area = $Area
-    onready var fuse_particles = $Fuse_Particles
-    onready var explosion_particles = $Explosion_Particles
+    var bomb_mesh
 
     const FUSE_TIME = 4
     var fuse_timer = 0
 
-    var EXPLOSION_DAMAGE = 100
-    var EXPLOSION_TIME = 0.75
+    var explosion_area
+    const EXPLOSION_DAMAGE = 100
+    const EXPLOSION_TIME = 0.75
     var explosion_timer = 0
-    var explode = false
-    var controller = null
+    var exploded = false
+
+    const COLLISION_FORCE = 8
+
+    var fuse_particles
+    var explosion_particles
+    var explosion_sound
+
 
     func _ready():
+        
+        bomb_mesh = get_node("Bomb")
+        explosion_area = get_node("Area")
+        fuse_particles = get_node("Fuse_Particles")
+        explosion_particles = get_node("Explosion_Particles")
+        explosion_sound = get_node("AudioStreamPlayer3D")
+        
         set_physics_process(false)
 
+
     func _physics_process(delta):
-
+        
         if fuse_timer < FUSE_TIME:
-
+            
             fuse_timer += delta
-
+            
             if fuse_timer >= FUSE_TIME:
-
+                
                 fuse_particles.emitting = false
+                
                 explosion_particles.one_shot = true
                 explosion_particles.emitting = true
+                
                 bomb_mesh.visible = false
-
+                
                 collision_layer = 0
                 collision_mask = 0
                 mode = RigidBody.MODE_STATIC
-
+                
                 for body in explosion_area.get_overlapping_bodies():
                     if body == self:
                         pass
                     else:
                         if body.has_method("damage"):
-                            body.damage(global_transform.looking_at(body.global_transform.origin, Vector3(0, 1, 0)), EXPLOSION_DAMAGE)
-                        elif body.has_method("apply_impulse"):
+                            body.damage(EXPLOSION_DAMAGE)
+                        
+                        if body is RigidBody:
                             var direction_vector = body.global_transform.origin - global_transform.origin
-                            body.apply_impulse(direction_vector.normalized(), direction_vector.normalized() * 1.8)
-
-                explode = true
-                $AudioStreamPlayer3D.play()
-
-
-        if explode:
-
+                            var bomb_distance = direction_vector.length()
+                            var collision_force = (COLLISION_FORCE / bomb_distance) * body.mass
+                            body.apply_impulse(Vector3.ZERO, direction_vector.normalized() * collision_force)
+                
+                exploded = true
+                explosion_sound.play()
+        
+        
+        if exploded:
+            
             explosion_timer += delta
+            
             if explosion_timer >= EXPLOSION_TIME:
-
+                
                 explosion_area.monitoring = false
 
-                if controller:
+                if controller != null:
                     controller.held_object = null
                     controller.hand_mesh.visible = true
-
+                    
                     if controller.grab_mode == "RAYCAST":
                         controller.grab_raycast.visible = true
-
+                
                 queue_free()
 
 
     func interact():
         set_physics_process(true)
+        
         fuse_particles.emitting = true
 
 
-    func picked_up():
-        pass
+Let's go over how this script works.
 
-    func dropped():
-        pass
 
-Let's go through what this script does, starting with the class variables:
+Explaining the bomb code
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-- ``bomb_mesh``: The :ref:`MeshInstance <class_MeshInstance>` used for the bomb mesh.
-- ``FUSE_TIME``: The length of time for which the fuse burns.
-- ``fuse_timer``: A variable for tracking how long the fuse has been burning.
-- ``explosion_area``: The :ref:`Area <class_Area>` node used for detecting what nodes are inside the explosion.
-- ``EXPLOSION_DAMAGE``: The amount of damage the explosion does.
-- ``EXPLOSION_TIME``: The length of time the explosion :ref:`Particles <class_Particles>` take (you can calculate this number by multiplying the particles ``lifetime`` by its ``speed scale``)
-- ``explosion_timer``: A variable for tracking how long the explosion has lasted.
-- ``explode``: A boolean for tracking whether the bomb has exploded.
-- ``fuse_particles``: The fuse :ref:`Particles <class_Particles>` node.
-- ``explosion_particles``: The explosion :ref:`Particles <class_Particles>` node.
-- ``controller``: The controller that is currently holding the bomb, if there is one. This is set by the controller, so we do not need to check anything outside of checking if it is ``null``.
+Like with the other special :ref:`RigidBody <class_RigidBody>` nodes, the bomb extends ``VR_Interactable_Rigidbody`` so the VR controllers know this object can be interacted with and
+that the functions defined defined in ``VR_Interactable_Rigidbody`` can be called when this object is held by a VR controller.
 
-________
+Next, let's look at the class variables:
 
-Let's go through ``_ready``.
+* ``bomb_mesh``: A variable to hold the :ref:`MeshInstance <class_MeshInstance>` node that is used for the non-exploded bomb.
+* ``FUSE_TIME``: A constant to define how long the fuse will 'burn' before the bomb explodes
+* ``fuse_timer``: A variable to hold the length of time that has passed since the bomb's fuse has started to burn.
+* ``explosion_area``: A variable to hold the :ref:`Area <class_Area>` node used to detect objects within the bomb's explosion.
+* ``EXPLOSION_DAMAGE``: A constant to define how much damage is applied with the bomb explodes.
+* ``EXPLOSION_TIME``: A constant to define how long the bomb will last in the scene after it explodes. This value should be the same as the ``lifetime`` property of the explosion :ref:`Particles <class_Particles>` node.
+* ``explosion_timer`` A variable to hold the length of time that has passed since the bomb exploded.
+* ``exploded``: A variable to hold whether the bomb has exploded or not.
+* ``COLLISION_FORCE``: A constant that defines the amount of force that is applied to :ref:`RigidBody <class_RigidBody>` nodes when the bomb explodes.
+* ``fuse_particles``: A variable to hold a reference to the :ref:`Particles <class_Particles>` node used for the bomb's fuse.
+* ``explosion_particles``: A variable to hold a reference to the :ref:`Particles <class_Particles>` node used for the bomb's explosion.
+* ``explosion_sound``: A variable to hold a reference to the :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node used for the explosion sound.
 
-Firstly, we get all the nodes and assign them to the proper variables for later use.
 
-Then, we make sure ``_physics_process`` is not going to be called. We do this since we will be using ``_physics_process`` only for the fuse and
-for destroying the bomb, so we do not want to trigger that early, we only want the fuse to start when the player interacts while holding a bomb.
+``_ready`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""
 
-________
+The ``_ready`` function first gets all of the nodes from the bomb scene and assigns them to their respective class variables for later use.
 
-Now, let's look at ``_physics_process``.
+Then we call ``set_physics_process`` and pass ``false`` so ``_physics_process`` is not executed. We do this because the code in ``_physics_process`` will start burning
+the fuse and exploding the bomb, which we only want to do when the user interacts with the bomb. If we did not disable ``_physics_process``, the bomb's fuse would start
+before the user has a chance to get to the bomb.
 
-Firstly we check to see whether ``fuse_timer`` is less than ``FUSE_TIME``. If ``fuse_timer`` is less than ``FUSE_TIME``, then the bomb must be burning down the fuse.
 
-We then add time to ``fuse_timer``, and check to see whether the bomb has waited long enough and has burned through the entire fuse.
+``_physics_process`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-If the bomb has waited long enough, then we need to explode the bomb. We do this first by stopping the smoke :ref:`Particles <class_Particles>` from emitting, and
-making the explosion :ref:`Particles <class_Particles>` emit. We also hide the bomb mesh so it is no longer visible.
+The ``_physics_process`` function first checks to see if ``fuse_timer`` is less than ``FUSE_TIME``. If it is, then the bomb's fuse is still burning.
 
-Next, we make the set the collision layer and mask to zero, and set the :ref:`RigidBody <class_RigidBody>` mode to static. This makes it where the now exploded bomb cannot
-interact with the physics world, and so it will stay in place.
+If the bomb's fuse is still burning, we then add time, ``delta``, to the ``fuse_timer`` variable. We then check to see if ``fuse_timer`` is more than or equal to ``FUSE_TIME``
+now that we have added ``delta`` to it. If ``fuse_timer`` is more than or equal to ``FUSE_TIME``, then the fuse has just finished and we need to explode the bomb.
 
-Then, we go through everything inside the explosion :ref:`Area <class_Area>`. We make sure the bodies inside the explosion :ref:`Area <class_Area>` are not the bomb itself, since we
-do not want to explode the bomb with itself. We then check to see whether the bodies have the ``damage`` method/function, and if it does, we call that, while if it does not, we check to
-see if it has the ``apply_impulse`` method/function, and call that instead.
+To explode the bomb, we first stop emitting particles for the fuse by setting ``emitting`` to ``false`` on ``fuse_particles``. We then tell the explosion :ref:`Particles <class_Particles>`
+node, ``explosion_particles``, to emit all of its particle in a single shot by setting ``one_shot`` to ``true``. After that, we set ``emitting`` to ``true`` on ``explosion_particles`` so it looks
+like the bomb has exploded. To help make it look like the bomb exploded, we hide the bomb :ref:`MeshInstance <class_MeshInstance>` node by setting ``bomb_mesh.visible`` to ``false``.
 
-Then, we set ``explode`` to true since the bomb has exploded, and we play a sound.
+To keep the bomb from colliding with other objects in the physics world, we set the ``collision_layer`` and ``collision_mask`` properties of the bomb to ``0``. We also
+change the :ref:`RigidBody <class_RigidBody>` mode to ``MODE_STATIC`` so the bomb :ref:`RigidBody <class_RigidBody>` does not move.
 
-Next, we check to see if the bomb has exploded, as we need to wait until the explosion :ref:`Particles <class_Particles>` are done.
+Then we need to get all of the :ref:`PhysicsBody <class_PhysicsBody>` nodes within the ``explosion_area`` node. To do this, we use the ``get_overlapping_bodies`` in a for loop. The ``get_overlapping_bodies``
+function will return an array of :ref:`PhysicsBody <class_PhysicsBody>` nodes within the :ref:`Area <class_Area>` node, which is exactly what we are looking for.
 
-If the bomb has exploded, we add time to ``explosion_timer``. We then check to see if the explosion :ref:`Particles <class_Particles>` are done. If they are, we set the explosion
-:ref:`Area <class_Area>`'s monitoring property to ``false`` to ensure we do not get any bugs in the debugger, we make the controller drop the bomb if it is holding onto it,
-we make the grab :ref:`Raycast <class_Raycast>` visible if the grab mode is ``RAYCAST``, and we free/destroy the bomb using ``queue_free``.
+_________________
 
-________
+For each :ref:`PhysicsBody <class_PhysicsBody>` node, which we store in a variable called ``body``, we check to see if it is equal to ``self``. We do this so the bomb does not accidentally explode
+itself, as the ``explosion_area`` could potentially detect the ``Bomb`` :ref:`RigidBody <class_RigidBody>` as a PhysicsBody within the explosion area.
 
-Finally, let's look at ``interact``.
+If the :ref:`PhysicsBody <class_PhysicsBody>` node, ``body``, is not the bomb, then we first check to see if the :ref:`PhysicsBody <class_PhysicsBody>` node has a function
+called ``damage``. If the :ref:`PhysicsBody <class_PhysicsBody>` node has a function called ``damage``, we call it and pass ``EXPLOSION_DAMAGE`` to it so it takes damage from the explosion.
 
-All we are doing here is making it where ``_physics_process`` will be called, which will start the fuse.
-We also make the fuse :ref:`Particles <class_Particles>` start emitting, so smoke comes out the top of the bomb.
+Next we check to see if the :ref:`PhysicsBody <class_PhysicsBody>` node is a :ref:`RigidBody <class_RigidBody>`. If ``body`` is a :ref:`RigidBody <class_RigidBody>`, we want to move it
+when the bomb explodes.
 
-________
+To move the :ref:`RigidBody <class_RigidBody>` node when the bomb explodes, we first need to calculate the direction from the bomb to the :ref:`RigidBody <class_RigidBody>` node. To do this
+we subtract the global position of the bomb, ``global_transform.origin`` from the global position of the :ref:`RigidBody <class_RigidBody>`. This will give us a :ref:`Vector3 <class_Vector3>`
+that points from the bomb to the :ref:`RigidBody <class_RigidBody>` node. We store this :ref:`Vector3 <class_Vector3>` in a variable called ``direction_vector``.
 
-With that done, the bombs are ready to go! You can find them in the orange building. Because of how we are calculating velocity, it is easiest to throw bombs in a trusting-like
-motion as opposed to a more natural throwing like motion. The smooth curve of a throwing-like motion is harder to track, and the because of how we are tracking velocity, it does
-not always work.
+We then calculate the distance the :ref:`RigidBody <class_RigidBody>` is from the bomb by using the ``length`` function on ``direction_vector``. We store the distance in a variable called
+``bomb_distance``.
+
+We then calculate the amount of force the bomb will be applied to the :ref:`RigidBody <class_RigidBody>` node when the bomb explodes by dividing ``COLLISION_FORCE`` by
+``bomb_distance``, and multiplying that by ``collision_force``. This will make it so if the :ref:`RigidBody <class_RigidBody>` node is closer to the bomb, it will be pushed farther.
+
+Finally, we push the :ref:`RigidBody <class_RigidBody>` node using the ``apply_impulse`` function, with a :ref:`Vector3 <class_Vector3>` position of zero and ``collision_force``
+multiplied by ``direction_vector.normalized`` as the force. This will send the :ref:`RigidBody <class_RigidBody>` node flying when the bomb explodes.
+
+_________________
+
+After we have looped through all of the :ref:`PhysicsBody <class_PhysicsBody>` nodes within the ``explosion_area``, we set the ``exploded`` variable to ``true`` so the code knows the bomb
+exploded and call ``play`` on ``explosion_sound`` so the sound of an explosion is played.
+
+_________________
+
+Alright, the next section of code starts by first checking if ``exploded`` is equal to ``true``.
+
+If ``exploded`` is equal to ``true``, then that means the bomb is waiting for the explosion particles to finish before it frees/destroys itself. We add time, ``delta``, to
+``explosion_timer`` so we can track how long it has been since the bomb has exploded.
+
+If ``explosion_timer`` is greater than or equal to ``EXPLOSION_TIME`` after we added ``delta``, then the explosion timer just finished.
+
+If the explosion timer just finished, we set ``explosion_area.monitoring`` to ``false``. The reason we do this is because there was a bug that would print an error when you
+freed/deleted an :ref:`Area <class_Area>` node when the ``monitoring`` property was true. To make sure this doesn't happen, we simply set ``monitoring`` to false on ``explosion_area``.
+
+Next we check to see if the bomb is being held by a VR controller by checking to see if the ``controller`` variable is not equal to ``null``. If the bomb is being held by a VR controller,
+we set the ``held_object`` property of the VR controller, ``controller``, to ``null``. Because the VR controller is no longer holding anything, we make the VR controller's hand mesh
+visible by setting ``controller.hand_mesh.visible`` to ``true``. Then we check to see if the VR controller grab mode is ``RAYCAST``, and if it is we set ``controller.grab_raycast.visible`` to
+``true`` so the 'laser sight' for the grab raycast is visible.
+
+Finally, regardless if the bomb is being held by a VR controller or not, we call ``queue_free`` so the bomb scene is freed/removed from the scene.
+
+``interact`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""""
+
+First the ``interact`` function calls ``set_physics_process`` and passes ``true`` so the code in ``_physics_process`` starts executing. This will start the bomb's fuse and
+eventually lead to the bomb exploding.
+
+Finally, we start the fuse particles by setting ``fuse_particles.visible`` to ``true``.
+
+
+Bomb finished
+^^^^^^^^^^^^^
+
+Now the bomb is ready to go! You can find the bombs in the orange building.
+
+Because of how we are calculating the VR controller's velocity, it is easiest to throw the bombs using a thrusting-like motion instead of a more natural throwing-like motion.
+The smooth curve of a throwing-like motion is harder to track with the code we are using for calculating the velocity of the VR controllers, so it does not always work correctly
+and can lead inaccurately calculated velocities.
+
+
 
 Adding a sword
 --------------
 
-Finally, let's add a sword so we can slice through things!
+Let's add one last special :ref:`RigidBody <class_RigidBody>`-based node that can destroy targets. Let's add a sword so we can slice through the targets!
 
-Open up ``Sword.tscn``, which you will find in ``Scenes``.
+Open up ``Sword.tscn``, which you can find in the ``Scenes`` folder.
 
-There is not a whole lot to note here, but there is just one thing, and that is how the length of the blade of the sword is broken into several small :ref:`Area <class_Area>` nodes.
-This is because we need to roughly know where on the blade the sword collided, and this is the easiest (and only) way I could figure out how to do this.
+There is not a whole lot going on here. All of the child nodes of the root ``Sword`` :ref:`RigidBody <class_RigidBody>` node are rotated to they are positioned correctly when the
+VR controller picks them up, there is a :ref:`MeshInstance <class_MeshInstance>` node for displaying the sword, and there is an :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>`
+node that holds a sound for the sword colliding with something.
 
-.. tip:: If you know how to find the point where an :ref:`Area <class_Area>` and a :ref:`CollisionObject <class_CollisionObject>` meet, please let me know and/or make a PR on the
-         Godot documentation! This method of using several small :ref:`Area <class_Area>` nodes works okay, but it is not ideal.
+There is one thing that is slightly different though. There is a :ref:`KinematicBody <class_KinematicBody>` node called ``Damage_Body``. If you take a look at it, you'll find that it
+is not on any collision layers, and is instead only on a single collision mask. This is so the :ref:`KinematicBody <class_KinematicBody>` will not effect other
+:ref:`PhysicsBody <class_PhysicsBody>` nodes in the scene, but it will still be effected by :ref:`PhysicsBody <class_PhysicsBody>` nodes.
 
-Other than that, there really is not much of note, so let's write the code. Select the ``Sword`` root node, the :ref:`RigidBody <class_RigidBody>` and make a new script called
-``Sword.gd``. Add the following code to ``Sword.gd``:
+We are going to use the ``Damage_Body`` :ref:`KinematicBody <class_KinematicBody>` node to detect the collision point and normal when the sword collides with something in the scene.
+
+.. tip:: While this is perhaps not the best way of getting the collision information from a performance point of view, it does give us a lot of information we can use for post-processing!
+         Using a :ref:`KinematicBody <class_KinematicBody>` this way means we can detect exactly where ths sword collided with other :ref:`PhysicsBody <class_PhysicsBody>` nodes.
+
+That is really the only thing note worthy about the sword scene. Select the ``Sword`` :ref:`RigidBody <class_RigidBody>` node and make a new script called ``Sword.gd``.
+Add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends RigidBody
+    extends VR_Interactable_Rigidbody
 
-    const SWORD_DAMAGE = 20
+    const SWORD_DAMAGE = 2
 
-    var controller
+    const COLLISION_FORCE = 0.15
+
+    var damage_body = null
+
 
     func _ready():
-        $Damage_Area_01.connect("body_entered", self, "body_entered_sword", ["01"])
-        $Damage_Area_02.connect("body_entered", self, "body_entered_sword", ["02"])
-        $Damage_Area_03.connect("body_entered", self, "body_entered_sword", ["03"])
-        $Damage_Area_04.connect("body_entered", self, "body_entered_sword", ["04"])
+        damage_body = get_node("Damage_Body")
+        damage_body.add_collision_exception_with(self)
+        sword_noise = get_node("AudioStreamPlayer3D")
 
 
-    # Called when the interact button is pressed while the object is held.
-    func interact():
-        pass
-
-
-    # Called when the object is picked up.
-    func picked_up():
-        pass
-
-
-    # Called when the object is dropped.
-    func dropped():
-        pass
-
-
-    func body_entered_sword(body, number):
-        if body == self:
-            pass
-        else:
-
-            var sword_part = null
-            if number == "01":
-                sword_part = get_node("Damage_Area_01")
-            elif number == "02":
-                sword_part = get_node("Damage_Area_02")
-            elif number == "03":
-                sword_part = get_node("Damage_Area_03")
-            elif number == "04":
-                sword_part = get_node("Damage_Area_04")
-
-            if body.has_method("damage"):
-                body.damage(sword_part.global_transform.looking_at(body.global_transform.origin, Vector3(0, 1, 0)), SWORD_DAMAGE)
-
-                get_node("AudioStreamPlayer3D").play()
-
-           elif body.has_method("apply_impulse"):
-
-                var direction_vector = sword_part.global_transform.origin - body.global_transform.origin
-
-                if not controller:
-                    body.apply_impulse(direction_vector.normalized(), direction_vector.normalized() * self.linear_velocity)
+    func _physics_process(_delta):
+        
+        var collision_results = damage_body.move_and_collide(Vector3.ZERO, true, true, true);
+        
+        if (collision_results != null):
+            if collision_results.collider.has_method("damage"):
+                collision_results.collider.damage(SWORD_DAMAGE)
+            
+            if collision_results.collider is RigidBody:
+                if controller == null:
+                    collision_results.collider.apply_impulse(
+                        collision_results.position, 
+                        collision_results.normal * linear_velocity * COLLISION_FORCE)
                 else:
-                    body.apply_impulse(direction_vector.normalized(), direction_vector.normalized() * controller.controller_velocity)
+                    collision_results.collider.apply_impulse(
+                        collision_results.position,
+                        collision_results.normal * controller.controller_velocity * COLLISION_FORCE)
+            
+            sword_noise.play()
 
-                $AudioStreamPlayer3D.play()
+Let's go over how this script works!
 
-Let's go over what this script does, starting with the two class variables:
 
-- ``SWORD_DAMAGE``: The amount of damage a single sword slice does.
-- ``controller``: The controller that is holding the sword, if there is one. This is set by the controller, so we do not need to set it here, in ``Sword.gd``.
+Explaining the sword code
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-________
+Like with the other special :ref:`RigidBody <class_RigidBody>` nodes, the sword extends ``VR_Interactable_Rigidbody`` so the VR controllers know this object can be interacted with and
+that the functions defined defined in ``VR_Interactable_Rigidbody`` can be called when this object is held by a VR controller.
 
-Let's go over ``_ready`` next.
+Next, let's look at the class variables:
 
-All we are doing here is connecting each of the :ref:`Area <class_Area>` nodes ``body_entered`` signal to the ``body_entered_sword`` function, passing in an additional argument,
-which will be the number of the damage :ref:`Area <class_Area>`, so we can figure out where on the sword the body collided.
+* ``SWORD_DAMAGE``: A constant to define the amount of damage the sword does. This damage is applied  to every object in the sword on every ``_physics_process`` call
+* ``COLLISION_FORCE``: A constant that defines the amount of force applied to :ref:`RigidBody <class_RigidBody>` nodes when the sword collides with a :ref:`PhysicsBody <class_PhysicsBody>`.
+* ``damage_body``: A variable to hold the :ref:`KinematicBody <class_KinematicBody>` node used to detect whether the sword is stabbing a :ref:`PhysicsBody <class_PhysicsBody>` node or not.
+* ``sword_noise``: A variable to hold the :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node used to play a sound when the sword collides with something.
 
-________
 
-Now let's go over ``body_entered_sword``.
+``_ready`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""
 
-Firstly, we make sure the body the sword has collided with is not itself.
+All we are doing in the ``_ready`` function is getting the ``Damage_Body`` :ref:`KinematicBody <class_KinematicBody>` node and assigning it to ``damage_body``.
+Because we do not want the sword to detect a collision with the root :ref:`RigidBody <class_RigidBody>` node of the sword, we call
+``add_collision_exception_with`` on ``damage_body`` and pass ``self`` so the sword will not be detected.
 
-Then we figure out which part of the sword the body collided with, using the passed-in number.
+Finally, we get the :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node for the sword collision sound and apply it to the ``sword_noise`` variable.
 
-Next, we check to see whether the body the sword collided with has the ``damage`` function, and if it does, we call it and play a sound.
 
-If it does not have the damage function, we then check to see whether it has the ``apply_impulse`` function. If it does, we then calculate the direction from the sword part the
-body collided with to the body. We then check to see whether the sword is being held or not.
+``_physics_process`` function step-by-step explanation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-If the sword is not being held, we use the :ref:`RigidBody <class_RigidBody>`'s velocity as the force in ``apply_impulse``, while if the sword is being held, we use the
-controller's velocity as the force in the impulse.
+First we need to determine whether the sword is colliding with something or not. To do this, we use the ``move_and_collide`` function of the ``damage_body`` node.
+Unlike how ``move_and_collide`` is normally used, we are not passing a velocity and instead are passing an empty :ref:`Vector3 <class_Vector3>`. Because we do not
+want the ``damage_body`` node to move, we set the ``test_only`` argument (the fourth argument) as ``true`` so the :ref:`KinematicBody <class_KinematicBody>` generates
+collision info without actually causing any collisions within the collision world.
 
-Finally, we play a sound.
+The ``move_and_collide`` function will return a :ref:`KinematicCollision <class_KinematicCollision>` class that has all of the information we need for detecting collisions
+on the sword. We assign the return value of ``move_and_collide`` to a variable called ``collision_results``.
 
-________
+Next we check to see if ``collision_results`` is not equal to ``null``. If ``collision_results`` is not equal to ``null``, then we know that the sword has collided with something.
+
+We then check to see if the :ref:`PhysicsBody <class_PhysicsBody>` the sword collided with has a function/method called ``damage`` using the ``has_method`` function. If the
+:ref:`PhysicsBody <class_PhysicsBody>` has a function called ``damage_body``, we call it and pass the amount of damage the sword does, ``SWORD_DAMAGE``, to it.
+
+Next we check to see if the :ref:`PhysicsBody <class_PhysicsBody>` the sword collided with is a :ref:`RigidBody <class_RigidBody>`. If what the sword collided with is a
+:ref:`RigidBody <class_RigidBody>` node, we then check to see if the sword is being held by a VR controller or not by checking to see if ``controller`` is equal to ``null``.
+
+If the sword is not being held by a VR controller, ``controller`` is equal to ``null``, then we move the :ref:`RigidBody <class_RigidBody>` node the sword collided with using
+the ``apply_impulse`` function. For the ``position`` of the ``apply_impulse`` function, we use ``collision_position`` variable stored within the :ref:`KinematicCollision <class_KinematicCollision>`
+class in ``collision_results``. For the ``velocity`` of the ``apply_impulse`` function, we use the ``collision_normal`` multiplied by the ``linear_velocity`` of the sword's
+:ref:`RigidBody <class_RigidBody>` node multiplied by ``COLLISION_FORCE``.
+
+If the sword is being held by a VR controller, ``controller`` is not equal to ``null``, then we move the :ref:`RigidBody <class_RigidBody>` node the sword collided with using
+the ``apply_impulse`` function. For the ``position`` of the ``apply_impulse`` function, we use ``collision_position`` variable stored within the :ref:`KinematicCollision <class_KinematicCollision>`
+class in ``collision_results``. For the ``velocity`` of the ``apply_impulse`` function, we use the ``collision_normal`` multiplied by the VR controller's velocity multiplied by ``COLLISION_FORCE``.
+
+Finally, regardless of whether the :ref:`PhysicsBody <class_PhysicsBody>` is a :ref:`RigidBody <class_RigidBody>` or not, we play the sound of the sword colliding with
+something by calling ``play`` on ``sword_noise``.
+
+
+Sword finished
+^^^^^^^^^^^^^^
 
 .. image:: img/starter_vr_tutorial_sword.png
 
 With that done, you can now slice through the targets! You can find the sword in the corner in between the shotgun and the pistol.
 
+
+
 Updating the target UI
 ----------------------
 
-Okay, let's update the UI as the sphere targets are destroyed.
+Let's update the UI as the sphere targets are destroyed.
 
-Open up ``Game.tscn`` and then expand the ``GUI`` :ref:`MeshInstance <class_MeshInstance>`. From there, expand the ``GUI`` :ref:`Viewport <class_Viewport>` node
-and then select the ``Base_Control`` node. Add a new script called ``Base_Control``, and add the following:
+Open up ``Main_VR_GUI.tscn``, which you can find in the ``Scenes`` folder.
+Feel free to look at how the scene is setup if you want, but in an effort to keep this tutorial from becoming too long, we will not be covering the scene setup in this tutorial.
+
+Expand the ``GUI`` :ref:`Viewport <class_Viewport>` node and then select the ``Base_Control`` node. Add a new script called ``Base_Control.gd``, and add the following:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends Control
 
-    var sphere_count_label = $Label_Sphere_Count
+    var sphere_count_label
 
     func _ready():
+        sphere_count_label = get_node("Label_Sphere_Count")
+
         get_tree().root.get_node("Game").sphere_ui = self
+
 
     func update_ui(sphere_count):
         if sphere_count > 0:
@@ -714,13 +934,17 @@ and then select the ``Base_Control`` node. Add a new script called ``Base_Contro
         else:
             sphere_count_label.text = "No spheres remaining! Good job!"
 
-Let's go over what this script does.
+Let's go over how this script works real quick.
 
 First, in ``_ready``, we get the :ref:`Label <class_Label>` that shows how many spheres are left and assign it to the ``sphere_count_label`` class variable.
 Next, we get ``Game.gd`` by using ``get_tree().root`` and assign ``sphere_ui`` to this script.
 
 In ``update_ui``, we change the sphere :ref:`Label <class_Label>`'s text. If there is at least one sphere remaining, we change the text to show how many spheres are still
 left in the world. If there are no more spheres remaining, we change the text and congratulate the player.
+
+.. error:: TwistedTwigleg stopped editing here! Everything below this line is OLD tutorial!
+           TODO: test the tutorial project again to make sure the *minor* changes made while writing the tutorial didn't break anything!
+
 
 Adding the final special RigidBody
 ----------------------------------
@@ -782,12 +1006,14 @@ ________
 
 With that done, when you grab and interact with the reset box, the entire scene will reset/restart and you can destroy all the targets again!
 
+
+
 Final notes
 -----------
 
 .. image:: img/starter_vr_tutorial_sword.png
 
-Whew! That was a lot of work. Now you have a  fully working VR project!
+Whew! That was a lot of work. Now you have a fully working VR project!
 
 .. warning:: You can download the finished project for this tutorial series on the Godot OpenVR GitHub repository, under the releases tab!
 
