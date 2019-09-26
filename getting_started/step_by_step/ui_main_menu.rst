@@ -25,7 +25,7 @@ project in Godot to follow this tutorial. The ``end/`` folder contains the
 final result. You'll find all the sprites in the ``start/assets/main_menu``
 folder.
 
-.. note:
+.. note::
 
     Read the :doc:`ui_introduction_to_the_ui_system` first to learn how Godot’s UI system works
 
