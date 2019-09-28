@@ -85,9 +85,9 @@ like this:
 
  .. code-tab:: csharp
 
-    public Dictionary<object, object> Save()
+    public Godot.Collections.Dictionary<object, object> Save()
     {
-        return new Dictionary<object, object>()
+        return new Godot.Collections.Dictionary<object, object>()
         {
             { "Filename", GetFilename() },
             { "Parent", GetParent().GetPath() },
@@ -230,7 +230,7 @@ load function:
 
         while (!saveGame.EofReached())
         {
-            var currentLine = (Dictionary<object, object>)JSON.Parse(saveGame.GetLine()).Result;
+            var currentLine = (Godot.Collections.Dictionary<object, object>)JSON.Parse(saveGame.GetLine()).Result;
             if (currentLine == null)
                 continue;
 
