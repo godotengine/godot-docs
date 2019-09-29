@@ -995,10 +995,14 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
 
     func show_game_over():
         show_message("Game Over")
+
         yield($MessageTimer, "timeout")
+
         $MessageLabel.text = "Dodge the\nCreeps!"
         $MessageLabel.show()
-        yield(get_tree().create_timer(1), 'timeout')
+
+        yield(get_tree().create_timer(1), "timeout")
+
         $StartButton.show()
 
  .. code-tab:: csharp
