@@ -48,7 +48,7 @@ important uses:
 
 -  It contains the root :ref:`Viewport <class_Viewport>`, to which a
    scene is added as a child when it's first opened to become
-   part of the *Scene Tree* (more on that next)
+   part of the *Scene Tree* (more on that next).
 -  It contains information about the groups and has the means to call all
    nodes in a group or get a list of them.
 -  It contains some global state functionality, such as setting pause
