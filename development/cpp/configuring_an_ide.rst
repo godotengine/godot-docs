@@ -15,6 +15,7 @@ Development Environment), here are setup instructions for some popular ones:
 - :ref:`Xcode <doc_configuring_an_ide_xcode>` (macOS)
 - :ref:`Visual Studio <doc_compiling_for_windows_install_vs>` (Windows)
 - :ref:`Visual Studio Code<doc_configuring_an_ide_vscode>` (all desktop platforms)
+- :ref:`Android Studio<doc_configuring_an_ide_android_studio>` (all desktop platforms)
 
 It is possible to use other IDEs, but their setup is not documented yet.
 
@@ -296,3 +297,22 @@ To create them:
 - You can now start Debug process again to test that everything works.
 
 - If the build phase fails, check the console for hints. On Linux it's most likely that some dependencies are missing. Check :ref:`Compiling for X11 (Linux, \*BSD) <doc_compiling_for_x11>`
+
+
+.. _doc_configuring_an_ide_android_studio:
+
+Android Studio
+-----------------
+
+`Android Studio <https://developer.android.com/studio>`_ is a `Jetbrain <https://www.jetbrains.com/>`_ IDE for Android development. It has a features rich editor which supports Java and C/C++, so it can be used for development of the Godot core engine, and Android platform codebases.
+
+Project setup
+^^^^^^^^^^^^^^
+
+- From the Android Studio *Welcome to Android Studio* window, select *Open an existing Android Studio project*
+
+.. image:: img/android_studio_setup_project_1.png
+
+- Navigate to ``<godot root directory>/platform/android/java`` and select the ``settings.gradle`` gradle file.
+- Android Studio will import and index the project.
+- To build the project, follow the `compiling instructions <https://docs.godotengine.org/en/latest/development/compiling/index.html>`_.
