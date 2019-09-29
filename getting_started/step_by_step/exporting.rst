@@ -273,7 +273,7 @@ files:
 
 Viewing the `.html` file in your browser lets you play the game. However, you
 can't open the file directly, it needs to be served by a web server. If you don't
-have one set up on your computer, you can use Google to find suggestions for
+have one set up on your computer, you can search online to find suggestions for
 your specific OS.
 
 Point your browser at the URL where you've placed the html file. You may have
