@@ -327,17 +327,6 @@ the matrix's Y vector by the y component). It will leave the origin alone:
 
 .. image:: img/tutomat15.png
 
-These kind of operations in matrices are accumulative. It means every
-one starts relative to the previous one. For those who have been living
-on this planet long enough, a good reference of how transform works is
-this:
-
-.. image:: img/tutomat16.png
-
-A matrix is used similarly to a turtle. The turtle most likely had a
-matrix inside (and you are likely learning this many years *after*
-discovering Santa is not real).
-
 Transform
 ~~~~~~~~~
 
