@@ -308,20 +308,20 @@ as well as :ref:`Spatial.to_local() <class_Spatial_method_to_local>` and :ref:`S
 Scale
 ~~~~~
 
-A matrix can be scaled too. Scaling will multiply the basis vectors by a
-vector (X vector by x component of the scale, Y vector by y component of
-the scale). It will leave the origin alone:
+A matrix can be scaled too. Scaling will multiply the the matrix's vectors by
+the components of another vector (the matrix's X vector by the x component, and
+the matrix's Y vector by the y component). It will leave the origin alone:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Make the basis twice its size.
+    # Scale the transform's vectors to twice their size
     var m = Transform2D()
     m = m.scaled( Vector2(2,2) )
 
  .. code-tab:: csharp
 
-    // Make the basis twice its size.
+    // Scale the transform's vectors to twice their size
     var m = Transform2D.Identity;
     m = m.Scaled(new Vector2(2, 2));
 
