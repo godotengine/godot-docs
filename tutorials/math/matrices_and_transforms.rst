@@ -308,9 +308,9 @@ as well as :ref:`Spatial.to_local() <class_Spatial_method_to_local>` and :ref:`S
 Scale
 ~~~~~
 
-A matrix can be scaled too. Scaling will multiply the the matrix's vectors by
-the components of another vector (the matrix's X vector by the x component, and
-the matrix's Y vector by the y component). It will leave the origin alone:
+A matrix can be scaled too. Scaling will multiply the X and Y vectors of the
+matrix by the x and y components of another vector (`X * x`, `Y * y`). It will
+leave the origin alone:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
