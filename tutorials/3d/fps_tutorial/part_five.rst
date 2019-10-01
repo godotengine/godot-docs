@@ -484,7 +484,7 @@ With that done, all we need to do is add some code to ``process_input``:
             var ray_to = ray_from + camera.project_ray_normal(center_position) * OBJECT_GRAB_RAY_DISTANCE
 
             var ray_result = state.intersect_ray(ray_from, ray_to, [self, $Rotation_Helper/Gun_Fire_Points/Knife_Point/Area])
-            if ray_result != null:
+            if !ray_result.empty():
                 if ray_result["collider"] is RigidBody:
                     grabbed_object = ray_result["collider"]
                     grabbed_object.mode = RigidBody.MODE_STATIC
@@ -529,7 +529,7 @@ Then we get the center of the screen by dividing the current :ref:`Viewport <cla
 Next we send the ray into the space state and see if it gets a result. We add the player and the knife's :ref:`Area <class_Area>` as two exceptions so the player cannot carry
 themselves or the knife's collision :ref:`Area <class_Area>`.
 
-Then we check to see if we got a result back from the ray. If we have, we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
+Then we check to see if we got a result back from the ray. If no object has collided with the ray, an empty Dictionary will be returned. If the Dictionary is not empty (i.e. at least one object has collided), we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
 
 If the ray collided with a :ref:`RigidBody <class_RigidBody>`, we set ``grabbed_object`` to the collider the ray collided with. We then set the mode on
 the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it doesn't move in our hands.
