@@ -167,9 +167,9 @@ For a complete list of built-in GLSL functions see the :ref:`Shading Language do
 +------------------------------------------------------------------------+--------------------------------------------------+
 | mat_type **inverse** ( mat_type )                                      |                                                  |
 +------------------------------------------------------------------------+--------------------------------------------------+
-| ivec2 **textureSize** ( sampler2D_type s, int lod )                    |                                                  |
+| ivec2 **textureSize** ( sampler2D_type s, int lod )                    | See workaround below                                         |
 +------------------------------------------------------------------------+--------------------------------------------------+
-| ivec2 **textureSize** ( samplerCube s, int lod )                       |                                                  |
+| ivec2 **textureSize** ( samplerCube s, int lod )                       | See workaround below                                                 |
 +------------------------------------------------------------------------+--------------------------------------------------+
 | vec4_type **texture** ( sampler2D_type s, vec2 uv [, float bias] )     | **bias** not available in vertex shader          |
 +------------------------------------------------------------------------+--------------------------------------------------+
@@ -195,6 +195,25 @@ For a complete list of built-in GLSL functions see the :ref:`Shading Language do
 +------------------------------------------------------------------------+--------------------------------------------------+
 | vec_type **fwidth** ( vec_type )                                       |                                                  |
 +------------------------------------------------------------------------+--------------------------------------------------+
+
+textureSize() workaround
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+GLES2 does not support ``textureSize()``. You can get the size of a texture the old fashioned way by passing in a 
+uniform with the texture size yourself.
+
+.. code-block:: glsl
+
+    // in shader
+    uniform sampler2D textureName;
+    uniform vec2 textureName_size;
+
+::
+
+    #in GDScript
+    material_name.set_shader_param("textureName", myTexture)
+    material_name.set_shader_param("textureName_size", size_of_myTexture)
+
 
 Godot also provides many built-in variables and render modes. Some cannot be supported in GLES2. Below is a list of
 built-in variables and render modes that, when written to, will have no effect or could even cause issues when using 
