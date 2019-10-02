@@ -309,8 +309,8 @@ Scale
 ~~~~~
 
 A matrix can be scaled too. Scaling will multiply the X and Y vectors of the
-matrix by the `x` and `y` components of another vector (`X * x`, `Y * y`). It
-will leave the origin alone:
+matrix by the ``x`` and ``y`` components of another vector (``X * x``, ``Y * y``).
+It will leave the origin alone:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
