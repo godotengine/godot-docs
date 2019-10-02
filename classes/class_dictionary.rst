@@ -60,6 +60,7 @@ To add a key to an existing dictionary, access it like an existing key and assig
 
 ::
 
+    d.waiting = 14 # Add String "waiting" as a key and assign the value 14 to it.
     d[4] = "hello"  # Add integer 4 as a key and assign the String "hello" as its value.
     d["Godot"] = 3.01  # Add String "Godot" as a key and assign the value 3.01 to it.
 
@@ -136,4 +137,3 @@ Returns the size of the dictionary (in pairs).
 - :ref:`Array<class_Array>` **values** **(** **)**
 
 Returns the list of values in the ``Dictionary``.
-
