@@ -378,7 +378,7 @@ click the "Insert Key" option. This will bring up a list of methods
 that can be called for the AudioStreamPlayer node. Select the first
 one.
 
-.. image:: img/animation_method_list.png
+.. image:: img/animation_method_options.png
 
 When Godot reaches the keyframe, Godot calls the
 :ref:`class_AnimationPlayer` node's "play" function and the stream
@@ -387,7 +387,7 @@ plays.
 You can change its position by dragging it on the timeline, you can also
 click on the keyframe and use the keyframe settings in the inspector.
 
-.. img:: img/animation_call_method_keyframe.png
+.. image:: img/animation_call_method_keyframe.png
 
 .. |Play from beginning| image:: img/animation_play_from_beginning.png
 .. |Add Animation| image:: img/animation_add.png
