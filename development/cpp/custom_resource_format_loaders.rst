@@ -57,51 +57,51 @@ read and handle data serialization.
 
 .. code:: cpp
 
-    /* resource_loader_json.h */
+	/* resource_loader_json.h */
 
-    #ifndef RESOURCE_LOADER_JSON_H
-    #define RESOURCE_LOADER_JSON_H
+	#ifndef RESOURCE_LOADER_JSON_H
+	#define RESOURCE_LOADER_JSON_H
 
-    #include "core/io/resource_loader.h"
+	#include "core/io/resource_loader.h"
 
-    class ResourceFormatLoaderJson : public ResourceFormatLoader {
-        GDCLASS(ResourceFormatLoaderJson, ResourceFormatLoader)
-    public:
-        virtual RES load(const String &p_path, const String &p_original_path, Error *r_error = NULL);
-        virtual void get_recognized_extensions(List<String> *p_extensions) const;
-        virtual bool handles_type(const String &p_type) const;
-        virtual String get_resource_type(const String &p_path) const;
-    };
-    #endif // RESOURCE_LOADER_JSON_H
+	class ResourceFormatLoaderJson : public ResourceFormatLoader {
+		GDCLASS(ResourceFormatLoaderJson, ResourceFormatLoader)
+	public:
+		virtual RES load(const String &p_path, const String &p_original_path, Error *r_error = NULL);
+		virtual void get_recognized_extensions(List<String> *p_extensions) const;
+		virtual bool handles_type(const String &p_type) const;
+		virtual String get_resource_type(const String &p_path) const;
+	};
+	#endif // RESOURCE_LOADER_JSON_H
 
 .. code:: cpp
 
-    /* resource_loader_json.cpp */
+	/* resource_loader_json.cpp */
 
-    #include "resource_loader_json.h"
-    #include "resource_json.h"
+	#include "resource_loader_json.h"
+	#include "resource_json.h"
 
 
-    RES ResourceFormatLoaderJson::load(const String &p_path, const String &p_original_path, Error *r_error) {
-        Ref<JsonResource> json = memnew(JsonResource);
-        if (r_error)
-            *r_error = OK;
-        Error err = json->load_file(p_path);
-        return json;
-    }
+	RES ResourceFormatLoaderJson::load(const String &p_path, const String &p_original_path, Error *r_error) {
+		Ref<JsonResource> json = memnew(JsonResource);
+		if (r_error)
+			*r_error = OK;
+		Error err = json->load_file(p_path);
+		return json;
+	}
 
-    void ResourceFormatLoaderJson::get_recognized_extensions(List<String> *p_extensions) const {
-        if (!p_extensions->find("json"))
-            p_extensions->push_back("json");
-    }
+	void ResourceFormatLoaderJson::get_recognized_extensions(List<String> *p_extensions) const {
+		if (!p_extensions->find("json"))
+			p_extensions->push_back("json");
+	}
 
-    String ResourceFormatLoaderJson::get_resource_type(const String &p_path) const {
-        return "Resource";
-    }
+	String ResourceFormatLoaderJson::get_resource_type(const String &p_path) const {
+		return "Resource";
+	}
 
-    bool ResourceFormatLoaderJson::handles_type(const String &p_type) const {
-        return (ClassDB::is_parent_class(p_type, "Resource"));
-    }
+	bool ResourceFormatLoaderJson::handles_type(const String &p_type) const {
+		return (ClassDB::is_parent_class(p_type, "Resource"));
+	}
 
 Creating a ResourceFormatSaver
 ------------------------------
@@ -111,46 +111,46 @@ I you like to be able to edit and save a resource, you can implement a ResourceF
 
 .. code:: cpp
 
-    /* resource_saver_json.h */
+	/* resource_saver_json.h */
 
-    #ifndef RESOURCE_SAVER_JSON_H
-    #define RESOURCE_SAVER_JSON_H
+	#ifndef RESOURCE_SAVER_JSON_H
+	#define RESOURCE_SAVER_JSON_H
 
-    #include "core/io/resource_saver.h"
+	#include "core/io/resource_saver.h"
 
-    class ResourceFormatSaverJson : public ResourceFormatSaver {
-        GDCLASS(ResourceFormatSaverJson, ResourceFormatSaver)
-    public:
-        virtual Error save(const String &p_path, const RES &p_resource, uint32_t p_flags = 0);
-        virtual bool recognize(const RES &p_resource) const;
-        virtual void get_recognized_extensions(const RES &p_resource, List<String> *p_extensions) const;
-    };
-    #endif // RESOURCE_SAVER_JSON_H
-    
+	class ResourceFormatSaverJson : public ResourceFormatSaver {
+		GDCLASS(ResourceFormatSaverJson, ResourceFormatSaver)
+	public:
+		virtual Error save(const String &p_path, const RES &p_resource, uint32_t p_flags = 0);
+		virtual bool recognize(const RES &p_resource) const;
+		virtual void get_recognized_extensions(const RES &p_resource, List<String> *p_extensions) const;
+	};
+	#endif // RESOURCE_SAVER_JSON_H
+	
 .. code:: cpp
 
-    /* resource_saver_json.cpp */
+	/* resource_saver_json.cpp */
 
-    #include "resource_saver_json.h"
-    #include "resource_json.h"
-    #include "scene\resources\resource_format_text.h"
+	#include "resource_saver_json.h"
+	#include "resource_json.h"
+	#include "scene\resources\resource_format_text.h"
 
 
-    Error ResourceFormatSaverJson::save(const String &p_path, const RES &p_resource, uint32_t p_flags) {
-        Ref<JsonResource> json = memnew(JsonResource);
-        Error error = json->save_file(p_path, p_resource);
-        return error;
-    }
+	Error ResourceFormatSaverJson::save(const String &p_path, const RES &p_resource, uint32_t p_flags) {
+		Ref<JsonResource> json = memnew(JsonResource);
+		Error error = json->save_file(p_path, p_resource);
+		return error;
+	}
 
-    bool ResourceFormatSaverJson::recognize(const RES &p_resource) const {
-        return Object::cast_to<JsonResource>(*p_resource) != NULL;
-    }
+	bool ResourceFormatSaverJson::recognize(const RES &p_resource) const {
+		return Object::cast_to<JsonResource>(*p_resource) != NULL;
+	}
 
-    void ResourceFormatSaverJson::get_recognized_extensions(const RES &p_resource, List<String> *p_extensions) const {
-        if (Object::cast_to<JsonResource>(*p_resource))
-            p_extensions->push_back("json");
-    }
-    
+	void ResourceFormatSaverJson::get_recognized_extensions(const RES &p_resource, List<String> *p_extensions) const {
+		if (Object::cast_to<JsonResource>(*p_resource))
+			p_extensions->push_back("json");
+	}
+	
 Creating custom data types
 --------------------------
 
@@ -162,95 +162,95 @@ Here is an example of how to create a custom datatype
 
 .. code:: cpp
 
-    /* resource_json.h */
+	/* resource_json.h */
 
-    #ifndef RESOURCE_JSON_H
-    #define RESOURCE_JSON_H
+	#ifndef RESOURCE_JSON_H
+	#define RESOURCE_JSON_H
 
-    #include "core/io/json.h"
-    #include "core/variant_parser.h"
+	#include "core/io/json.h"
+	#include "core/variant_parser.h"
 
-    class JsonResource : public Resource {
-        GDCLASS(JsonResource, Resource);
+	class JsonResource : public Resource {
+		GDCLASS(JsonResource, Resource);
 
-    protected:
-        static void _bind_methods() {
-            ClassDB::bind_method(D_METHOD("set_dict", "dict"), &JsonResource::set_dict);
-            ClassDB::bind_method(D_METHOD("get_dict"), &JsonResource::get_dict);
+	protected:
+		static void _bind_methods() {
+			ClassDB::bind_method(D_METHOD("set_dict", "dict"), &JsonResource::set_dict);
+			ClassDB::bind_method(D_METHOD("get_dict"), &JsonResource::get_dict);
 
-            ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "content", PROPERTY_HINT_NONE, ""), "set_dict", "get_dict");
-        }
+			ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "content", PROPERTY_HINT_NONE, ""), "set_dict", "get_dict");
+		}
 
-    private:
-        Dictionary content;
+	private:
+		Dictionary content;
 
-    public:
-        Error load_file(const String &p_path);
-        Error save_file(const String &p_path, const RES &p_resource);
+	public:
+		Error load_file(const String &p_path);
+		Error save_file(const String &p_path, const RES &p_resource);
 
-        void set_dict(const Dictionary &p_dict);
-        Dictionary get_dict();
-    };
-    #endif // RESOURCE_JSON_H
+		void set_dict(const Dictionary &p_dict);
+		Dictionary get_dict();
+	};
+	#endif // RESOURCE_JSON_H
 
 .. code:: cpp
 
-    /* resource_json.cpp */
+	/* resource_json.cpp */
 
-    #include "resource_json.h"
+	#include "resource_json.h"
 
-    Error JsonResource::load_file(const String &p_path) {
-        Error error;
-        FileAccess *file = FileAccess::open(p_path, FileAccess::READ, &error);
-        if (!error == OK) {
-            if (file)
-                file->close();
-            return error;
-        }
+	Error JsonResource::load_file(const String &p_path) {
+		Error error;
+		FileAccess *file = FileAccess::open(p_path, FileAccess::READ, &error);
+		if (!error == OK) {
+			if (file)
+				file->close();
+			return error;
+		}
 
-        String json_string = String("");
-        while (!file->eof_reached())
-            json_string += file->get_line();
-        file->close();
+		String json_string = String("");
+		while (!file->eof_reached())
+			json_string += file->get_line();
+		file->close();
 
-        String error_string;
-        int error_line;
-        JSON json;
-        Variant result;
-        error = json.parse(json_string, result, error_string, error_line);
-        if (!error == OK) {
-            file->close();
-            return error;
-        }
+		String error_string;
+		int error_line;
+		JSON json;
+		Variant result;
+		error = json.parse(json_string, result, error_string, error_line);
+		if (!error == OK) {
+			file->close();
+			return error;
+		}
 
-        content = Dictionary(result);
-        return OK;
-    }
+		content = Dictionary(result);
+		return OK;
+	}
 
-    Error JsonResource::save_file(const String &p_path, const RES &p_resource) {
-        Error error;
-        FileAccess *file = FileAccess::open(p_path, FileAccess::WRITE, &error);
-        if (!error == OK) {
-            if (file)
-                file->close();
-            return error;
-        }
+	Error JsonResource::save_file(const String &p_path, const RES &p_resource) {
+		Error error;
+		FileAccess *file = FileAccess::open(p_path, FileAccess::WRITE, &error);
+		if (!error == OK) {
+			if (file)
+				file->close();
+			return error;
+		}
 
-        Ref<JsonResource> json_ref = p_resource.get_ref_ptr();
-        JSON json;
+		Ref<JsonResource> json_ref = p_resource.get_ref_ptr();
+		JSON json;
 
-        file->store_string(json.print(json_ref->get_dict(), "    "));
-        file->close();
-        return Error::OK;
-    }
+		file->store_string(json.print(json_ref->get_dict(), "	 "));
+		file->close();
+		return Error::OK;
+	}
 
-    void JsonResource::set_dict(const Dictionary &p_dict) {
-        content = p_dict;
-    }
+	void JsonResource::set_dict(const Dictionary &p_dict) {
+		content = p_dict;
+	}
 
-    Dictionary JsonResource::get_dict() {
-        return content;
-    }
+	Dictionary JsonResource::get_dict() {
+		return content;
+	}
 
 Considerations
 ~~~~~~~~~~~~~~
@@ -307,42 +307,42 @@ when ``load`` is called.
 
 .. code:: cpp
 
-    /* register_types.h */
+	/* register_types.h */
 
-    void register_json_types();
-    void unregister_json_types();
+	void register_json_types();
+	void unregister_json_types();
 
 .. code:: cpp
 
-    /* register_types.cpp */
+	/* register_types.cpp */
 
-    #include "register_types.h"
-    #include "core/class_db.h"
+	#include "register_types.h"
+	#include "core/class_db.h"
 
-    #include "resource_loader_json.h"
-    #include "resource_saver_json.h"
-    #include "resource_json.h"
+	#include "resource_loader_json.h"
+	#include "resource_saver_json.h"
+	#include "resource_json.h"
 
-    static Ref<ResourceFormatLoaderJson> json_loader;
-    static Ref<ResourceFormatSaverJson> json_saver;
+	static Ref<ResourceFormatLoaderJson> json_loader;
+	static Ref<ResourceFormatSaverJson> json_saver;
 
-    void register_json_types() {
-        ClassDB::register_class<JsonResource>();
+	void register_json_types() {
+		ClassDB::register_class<JsonResource>();
 
-        json_loader.instance();
-        ResourceLoader::add_resource_format_loader(json_loader);
+		json_loader.instance();
+		ResourceLoader::add_resource_format_loader(json_loader);
 
-        json_saver.instance();
-        ResourceSaver::add_resource_format_saver(json_saver);
-    }
+		json_saver.instance();
+		ResourceSaver::add_resource_format_saver(json_saver);
+	}
 
-    void unregister_json_types() {
-        ResourceLoader::remove_resource_format_loader(json_loader);
-        json_loader.unref();
+	void unregister_json_types() {
+		ResourceLoader::remove_resource_format_loader(json_loader);
+		json_loader.unref();
 
-        ResourceSaver::remove_resource_format_saver(json_saver);
-        json_saver.unref();
-    }
+		ResourceSaver::remove_resource_format_saver(json_saver);
+		json_saver.unref();
+	}
 
 References
 ~~~~~~~~~~
@@ -355,23 +355,23 @@ Loading it on GDScript
 
 .. code::
 
-    /* example .json file */
-    {
-      "savefilename" : "demo.json",
-      "demo": [
-        "welcome",
-        "to",
-        "godot",
-        "resource",
-        "loaders"
-      ]
-    }
+	/* example .json file */
+	{
+	"savefilename" : "demo.json",
+	"demo": [
+		"welcome",
+		"to",
+		"godot",
+		"resource",
+		"loaders"
+	]
+	}
 
 .. code::
 
-    extends Node
+	extends Node
 
-    onready var json_resource = load("res://demo.json")
+	onready var json_resource = load("res://demo.json")
 
-    func _ready():
-        print(json_resource.get_dict())
+	func _ready():
+		print(json_resource.get_dict())
