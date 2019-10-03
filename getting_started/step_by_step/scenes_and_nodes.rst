@@ -86,7 +86,11 @@ appears. This helps developers manage their projects.
 .. image:: img/project_manager.png
 
 To create a new project, click the "New Project" option. Choose and create a
-path for the project and specify the project name "New Project":
+path for the project and specify the project name, or use the defualt one. You
+also choose the project renderer here. You can use OpenGL ES3.0 or OpenGL ES2.0.
+The advantages and disadvantages of each are listed to help you choose, and you
+can find a complete list of differences here :ref:`doc_gles2_gles3_differences`. For
+this tutorial either is fine.
 
 .. image:: img/create_new_project.png
 
@@ -103,7 +107,20 @@ kitchen, so let's open the refrigerator and add some fresh nodes to the
 project. We'll begin with a "Hello World" message that we'll put on the
 screen.
 
-To do this, press the "New Node" button (which looks like a plus symbol):
+To do this we need to add a label node. In a blank scene the scene tree
+dock has several options , 2D Scene adds a Node2D, 3D Scene adds a Spatial
+node, user interface adds a Control node, and Custom Node which lets you
+add any node.
+
+It's important to know that these are here for convenience and are not
+mandatory for the different types of scenes. Not every 3D scene needs
+a Spatial node as its root node, likewise not every GUI or 2D scene
+needs a Control node or Node2D as their root node. In a lot of cases
+doing that makes things more complicated than they need to be.
+
+Now, to add a label node to this scene you can click on the Custom Node
+button or the Add Node button at the top. In scenes that aren't empty you
+use the add node button to create every child node.
 
 .. image:: img/newnode_button.png
 
