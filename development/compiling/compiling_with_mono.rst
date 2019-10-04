@@ -23,7 +23,7 @@ from the Mono command line prompt, or from the regular command prompt if you add
 
     cert-sync --user cacert.pem
 
-Aternatively, you can do this with the following command, though it won't work for Mono v6 or newer ::
+Alternatively, you can do this with the following command, though it won't work for Mono v6 or newer ::
 
     mozroots --import --sync
 
