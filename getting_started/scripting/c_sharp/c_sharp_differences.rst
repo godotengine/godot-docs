@@ -289,10 +289,7 @@ Variant
 Communicating with other scripting languages
 --------------------------------------------
 
-The methods ``object Object.Call(string method, params object[] args)``,
-``object Object.Get(string field)`` and ``object Object.Set(string field, object value)``
-are provided to communicate with instances of other
-scripting languages via the Variant API.
+This is explained extensively in :ref:`doc_cross_language_scripting`.
 
 Yield
 -----

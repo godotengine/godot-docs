@@ -6,6 +6,8 @@ Features
 This page provides an overview of the commonly used features of both C# and Godot
 and how they are used together.
 
+.. _doc_c_sharp_features_type_conversion_and_casting:
+
 Type conversion and casting
 ---------------------------
 
