@@ -427,7 +427,7 @@ The second reason is because we do not want the cursor to leave the game window.
 the game window there could be instances where the player clicks outside the window, and then the game
 would lose focus. To assure neither of these issues happens, we capture the mouse cursor.
 
-.. note:: see :ref:`Input documentation <class_Input>` for the various mouse modes. We will only be using
+.. note:: See :ref:`Input documentation <class_Input>` for the various mouse modes. We will only be using
           ``MOUSE_MODE_CAPTURED`` and ``MOUSE_MODE_VISIBLE`` in this tutorial series.
 
 _________
