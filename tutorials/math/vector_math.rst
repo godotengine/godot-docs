@@ -77,7 +77,8 @@ Godot supports both :ref:`Vector2 <class_Vector2>` and
 :ref:`Vector3 <class_Vector3>` for 2D and 3D usage, respectively. The same
 mathematical rules discussed in this article apply to both types.
 
-- Member access
+Member access
+-------------
 
 The individual components of the vector can be accessed directly by name.
 
@@ -100,7 +101,8 @@ The individual components of the vector can be accessed directly by name.
     b.x = 3;
     b.y = 1;
 
-- Adding vectors
+Adding vectors
+--------------
 
 When adding or subtracting two vectors, the corresponding components are added:
 
@@ -120,7 +122,8 @@ the first:
 
 Note that adding ``a + b`` gives the same result as ``b + a``.
 
-- Scalar multiplication
+Scalar multiplication
+---------------------
 
 .. note:: Vectors represent both direction and magnitude. A value
           representing only magnitude is called a **scalar**.
@@ -148,7 +151,8 @@ Practical applications
 
 Let's look at two common uses for vector addition and subtraction.
 
-- Movement
+Movement
+--------
 
 A vector can represent **any** quantity with a magnitude and direction. Typical examples are: position, velocity, acceleration, and force. In
 this image, the spaceship at step 1 has a position vector of ``(1,3)`` and
@@ -161,7 +165,8 @@ the velocity to the current position.
 .. tip:: Velocity measures the **change** in position per unit of time. The
          new position is found by adding velocity to the previous position.
 
-- Pointing toward a target
+Pointing toward a target
+------------------------
 
 In this scenario, you have a tank that wishes to point its turret at a
 robot. Subtracting the tank's position from the robot's position gives the
