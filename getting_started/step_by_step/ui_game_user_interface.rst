@@ -185,7 +185,7 @@ change the ``Size`` property to (50, 40) so it only takes the left half of
 the background.  Next, select the ``Number`` node. In the viewport, click the
 ``Layout`` menu and click ``Full Rect``. The node will resize to fit
 the ``Background``. Head to the Inspector and change its ``Align``
-property to ``Right``, and the ``VAlign`` property to ``Center``. The
+property to ``Right``, and the ``Valign`` property to ``Center``. The
 text should snap to the center of the ``Background``'s right edge.
 Resize the node horizontally, so it takes the right half of the
 ``Background`` and there's a bit of padding with the right edge.
@@ -217,7 +217,7 @@ the HP texture on the left. To do so, still in the ``DynamicFont``
 resource, you can tweak the ``Bottom`` property under the
 ``Extra Spacing`` category. It adds some bottom padding to the text.
 Click the ``Number`` node in the Scene tab to go back to the node's
-properties and change the ``VAlign`` to ``Bottom``. To adjust the text's
+properties and change the ``Valign`` to ``Bottom``. To adjust the text's
 baseline, click on the font field under the ``Custom Font`` category
 again and tweak the ``Bottom`` property until the text aligns with the
 ``Title`` node. I used a value of ``2`` pixels.
@@ -286,7 +286,7 @@ the size of the ``Background``.
 
 Let's change the ``Number``'s align properties to move it to the left
 and center of the ``Background``. Select the ``Number`` node, change its
-``Align`` property to left and the ``VAlign`` property to centre. Then
+``Align`` property to left and the ``Valign`` property to centre. Then
 resize its left edge a little bit to add some padding between the left
 edge of the ``Background`` and the text.
 
