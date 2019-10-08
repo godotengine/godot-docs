@@ -269,7 +269,46 @@ Filter Script
 ~~~~~~~~~~~~~
 
 It is possible to specify a filter script in a special syntax to decide which tracks from which
-animations should be kept. (@TODO this needs documentation)
+animations should be kept.
+
+The filter script is executed against each imported animation. The syntax consists of two types of
+statements, the first for choosing which animations to filter, and the second for filtering
+individual tracks within the matched animation. All name patterns are performed using a case
+insensitive expression match, using `?` and `*` wildcards (using `String.matchn()` under the hood).
+
+The script must start with an animation filter statement (as denoted by the line beginning with an
+`@`).  For example, if we would like to apply filters to all imported animations which have a name
+ending in `"_Loop"`:
+::
+    @+*_Loop
+
+Similarly, additional patterns can be added to the same line, separated by commas.  Here is a
+modified example to additionally *include* all animations with names that begin with `"Arm_Left"`,
+but also *exclude* all animations which have names ending in `"Attack"`:
+::
+    @+*_Loop, +Arm_Left*, -*Attack
+
+Following the animation selection filter statement, we add track filtering patterns to indicate
+which animation tracks should be kept or discarded. If no track filter patterns are specified, then
+all tracks within the matched animations will be discarded!
+
+It's important to note that track filter statements are applied in order for each track within the
+animation, this means that one line may include a track, a later rule can still discard it.
+Similarly, an track excluded by an early rule may then be re-included once again by a filter rule
+further down in the filter script.
+
+For example: include all tracks in animations with names ending in `"_Loop"`, but discard any
+tracks affecting a `"Skeleton"` which end in `"Control"`, unless they have `"Arm"` in their name.
+::
+    @+*_Loop
+    +*
+    -Skeleton:*Control
+    +*Arm*
+
+In the above example, tracks like `"Skeleton:Leg_Control"` would be discarded, while tracks such as
+`"Skeleton:Head"` or `"Skeleton:Arm_Left_Control"` would be retained.
+
+Any track filter lines that do not begin with a `+` or `-` are ignored.
 
 Storage
 ~~~~~~~
