@@ -42,7 +42,7 @@ Maybe REST
 ----------
 
 Most of these APIs allow communication via REST/JSON APIs. If the API is relatively simple and does not require
-complex authenthication, this may be a better idea than writing a specific Android plugin.
+complex authentication, this may be a better idea than writing a specific Android plugin.
 
 Godot has great support for HTTP, HTTPS and JSON, so an API implemented this way
 will work on every platform, too. 
@@ -52,7 +52,7 @@ Of course, in most of the cases, it's easier to just write an Android plugin, so
 Android plugin
 --------------
 
-Writing an Android plugin is now possible begining Godot 3.2. It's also pretty easy! Re-compiling the engine is no longer needed.
+Writing an Android plugin is now possible, beginning with Godot 3.2. It's also pretty easy! Re-compiling the engine is no longer needed.
 
 Before anything, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
 

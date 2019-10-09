@@ -35,7 +35,7 @@ Using WebRTC in Godot
 
 WebRTC is implemented in Godot via two main classes :ref:`WebRTCPeerConnection <class_WebRTCPeerConnection>` and :ref:`WebRTCDataChannel <class_WebRTCDataChannel>`, plus the multiplayer API implementation :ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>`. See section on :ref:`high-level multiplayer <doc_high_level_multiplayer>` for more details.
 
-.. note:: These classes are available automatically in HTML5, but **require an external GDNative plugin on native (non-HTML5) plaftorms**. Check out the `webrtc-native plugin repository <https://github.com/godotengine/webrtc-native>`__ for instructions and to get the latest `release <https://github.com/godotengine/webrtc-native/releases>`__.
+.. note:: These classes are available automatically in HTML5, but **require an external GDNative plugin on native (non-HTML5) platforms**. Check out the `webrtc-native plugin repository <https://github.com/godotengine/webrtc-native>`__ for instructions and to get the latest `release <https://github.com/godotengine/webrtc-native/releases>`__.
 
 Minimal connection example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

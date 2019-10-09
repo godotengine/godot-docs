@@ -82,7 +82,7 @@ Adding the return value from this function to *get_playback_position()* increase
 
     var time = $Player.get_playback_position() + AudioServer.get_time_since_last_mix()
 
-To increase precision, substract the latency information (how much it takes for the audio to be heard after it was mixed):
+To increase precision, subtract the latency information (how much it takes for the audio to be heard after it was mixed):
 
 .. tabs::
  .. code-tab:: gdscript GDScript

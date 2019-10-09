@@ -115,7 +115,7 @@ Chorus
 
 The Chorus effect duplicates the incoming audio, delays the duplicate slightly
 and uses an LFO to continuously modulate the pitch of the duplicated signal
-before mixing the duplicatated signal(s) and the original together again. This
+before mixing the duplicated signal(s) and the original together again. This
 creates a shimmering effect and adds stereo width to the sound.
 
 Compressor
