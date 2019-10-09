@@ -43,6 +43,8 @@ environment variable after installing it, then check again.
 You can do so by running the Python installer again and enabling the option
 to add Python to the ``PATH``.
 
+If you are not using MinGW, make sure SCons 3.1.1 is installed. Download `Scons 3.1.1 <https://scons.org/pages/download.html>`_, extract the zip file, and execute ``python setup.py install``.
+
 .. _doc_compiling_for_windows_install_vs:
 
 Installing Visual Studio caveats
