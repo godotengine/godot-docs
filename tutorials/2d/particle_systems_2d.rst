@@ -260,7 +260,7 @@ high linear velocity and then stop as they fade.
 Angle
 ~~~~~
 
-Determines the initial angle of the particle (in degress). This parameter
+Determines the initial angle of the particle (in degrees). This parameter
 is mostly useful randomized.
 
 .. image:: img/paranim11.gif

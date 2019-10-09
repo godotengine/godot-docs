@@ -69,7 +69,7 @@ From a high level, this looks like:
 
   void vertex() {
     if (RESTART) {
-      //Initialition code goes here
+      //Initialization code goes here
     } else {
       //per-frame code goes here
     }

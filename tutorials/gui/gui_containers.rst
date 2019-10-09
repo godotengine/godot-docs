@@ -106,7 +106,7 @@ Changing the *current* one is done via tabs located at the top of the container,
 
    .. image:: img/containers_tab_click.gif
 
-The titles are generated from the node names by default (although they can be overriden via *TabContainer* API).
+The titles are generated from the node names by default (although they can be overridden via *TabContainer* API).
 
 Settings such as tab placement and *StyleBox* can be modified in the *TabContainer* theme overrides.
 
@@ -177,5 +177,5 @@ to its rect size:
                 fit_child_in_rect( c, Rect2( Vector2(), rect_size ) )
 	
     func set_some_setting():
-        # Some setting changed, ask for childre re-sort
+        # Some setting changed, ask for children re-sort
         queue_sort()

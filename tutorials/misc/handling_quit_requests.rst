@@ -7,7 +7,7 @@ Quitting
 --------
 
 Most platforms have the option to request the application to quit. On
-desktops, this is usually done with the "x" icon on the window titlebar.
+desktops, this is usually done with the "x" icon on the window title bar.
 On Android, the back button is used to quit when on the main screen (and
 to go back otherwise).
 

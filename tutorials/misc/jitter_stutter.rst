@@ -59,7 +59,7 @@ stutter.
 
 Eliminating this completely requires giving your game full privileges to become "time critical", which is not advised.
 Some games may do it, but it is advised to learn to live with this problem, as it is common for Windows games and most users
-won't play games windowed (games that are played in a window, e.g. puzzle games, will usaully not exhibit this problem anyway).
+won't play games windowed (games that are played in a window, e.g. puzzle games, will usually not exhibit this problem anyway).
 
 For fullscreen, Windows gives special priority to the game so stutter is no longer visible and very rare.
 This is how most games are played.
