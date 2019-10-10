@@ -108,7 +108,7 @@ If all goes well, the resulting binary executable will be placed in
 ``godot.windows.tools.64.exe``.
 
 .. note:: By default, SCons will build a binary matching your CPU architecture,
-          but this can be overriden using ``bits=64`` or ``bits=32``.
+          but this can be overridden using ``bits=64`` or ``bits=32``.
 
 This executable file contains the whole engine and runs without any
 dependencies. Running it will bring up the Project Manager.
