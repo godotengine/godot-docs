@@ -469,6 +469,10 @@ The body mode. See :ref:`Mode<enum_RigidBody_Mode>` for possible values.
 | *Getter* | get_physics_material_override()      |
 +----------+--------------------------------------+
 
+The physics material override for the body.
+
+If a material is assigned to this property, it will be used instead of any other physics material, such as an inherited one.
+
 .. _class_RigidBody_property_sleeping:
 
 - :ref:`bool<class_bool>` **sleeping**
@@ -550,6 +554,8 @@ Applies a torque impulse which will be affected by the body mass and shape. This
 
 - :ref:`bool<class_bool>` **get_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** const
 
+Returns ``true`` if the specified linear or rotational axis is locked.
+
 .. _class_RigidBody_method_get_colliding_bodies:
 
 - :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
@@ -561,6 +567,8 @@ Returns a list of the bodies colliding with this one. By default, number of max 
 .. _class_RigidBody_method_set_axis_lock:
 
 - void **set_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**
+
+Locks the specified linear or rotational axis.
 
 .. _class_RigidBody_method_set_axis_velocity:
 

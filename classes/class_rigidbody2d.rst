@@ -424,6 +424,10 @@ The body's mode. See :ref:`Mode<enum_RigidBody2D_Mode>` for possible values.
 | *Getter* | get_physics_material_override()      |
 +----------+--------------------------------------+
 
+The physics material override for the body.
+
+If a material is assigned to this property, it will be used instead of any other physics material, such as an inherited one.
+
 .. _class_RigidBody2D_property_sleeping:
 
 - :ref:`bool<class_bool>` **sleeping**

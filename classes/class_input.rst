@@ -268,6 +268,8 @@ Returns an :ref:`Array<class_Array>` containing the device IDs of all currently 
 
 - :ref:`CursorShape<enum_Input_CursorShape>` **get_current_cursor_shape** **(** **)** const
 
+Returns the currently assigned cursor shape (see :ref:`CursorShape<enum_Input_CursorShape>`).
+
 .. _class_Input_method_get_gravity:
 
 - :ref:`Vector3<class_Vector3>` **get_gravity** **(** **)** const

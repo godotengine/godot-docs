@@ -62,7 +62,7 @@ Methods
 Description
 -----------
 
-Library of meshes. Contains a list of :ref:`Mesh<class_Mesh>` resources, each with name and ID. This resource is used in :ref:`GridMap<class_GridMap>`.
+A library of meshes. Contains a list of :ref:`Mesh<class_Mesh>` resources, each with a name and ID. This resource is used in :ref:`GridMap<class_GridMap>`.
 
 Method Descriptions
 -------------------
@@ -71,13 +71,13 @@ Method Descriptions
 
 - void **clear** **(** **)**
 
-Clear the library.
+Clears the library.
 
 .. _class_MeshLibrary_method_create_item:
 
 - void **create_item** **(** :ref:`int<class_int>` id **)**
 
-Create a new item in the library, supplied an id.
+Create a new item in the library, supplied as an ID.
 
 .. _class_MeshLibrary_method_find_item_by_name:
 
@@ -113,6 +113,10 @@ Returns the name of the item.
 
 - :ref:`Texture<class_Texture>` **get_item_preview** **(** :ref:`int<class_int>` id **)** const
 
+Returns a generated item preview (a 3D rendering in isometric perspective).
+
+**Note:** Since item previews are only generated in an editor context, this function will return an empty :ref:`Texture<class_Texture>` in a running project.
+
 .. _class_MeshLibrary_method_get_item_shapes:
 
 - :ref:`Array<class_Array>` **get_item_shapes** **(** :ref:`int<class_int>` id **)** const
@@ -121,7 +125,7 @@ Returns the name of the item.
 
 - :ref:`int<class_int>` **get_last_unused_item_id** **(** **)** const
 
-Gets an unused id for a new item.
+Gets an unused ID for a new item.
 
 .. _class_MeshLibrary_method_remove_item:
 
@@ -133,13 +137,13 @@ Removes the item.
 
 - void **set_item_mesh** **(** :ref:`int<class_int>` id, :ref:`Mesh<class_Mesh>` mesh **)**
 
-Sets the mesh of the item.
+Sets the item's mesh.
 
 .. _class_MeshLibrary_method_set_item_name:
 
 - void **set_item_name** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**
 
-Sets the name of the item.
+Sets the item's name.
 
 .. _class_MeshLibrary_method_set_item_navmesh:
 

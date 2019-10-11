@@ -141,7 +141,7 @@ The fill direction. See :ref:`FillMode<enum_TextureProgress_FillMode>` for possi
 | *Getter*  | get_nine_patch_stretch()      |
 +-----------+-------------------------------+
 
-If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_NinePatchRect>`. Use the ``stretch_margin_*`` properties like :ref:`stretch_margin_bottom<class_TextureProgress_property_stretch_margin_bottom>` to set up the nine patch's 3×3 grid.
+If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_NinePatchRect>`. Use the ``stretch_margin_*`` properties like :ref:`stretch_margin_bottom<class_TextureProgress_property_stretch_margin_bottom>` to set up the nine patch's 3×3 grid. When using a radial :ref:`fill_mode<class_TextureProgress_property_fill_mode>`, this setting will enable stretching.
 
 .. _class_TextureProgress_property_radial_center_offset:
 

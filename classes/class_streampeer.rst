@@ -271,6 +271,12 @@ Sends a chunk of data through the connection. If all the data could not be sent 
 
 Puts a zero-terminated ASCII string into the stream prepended by a 32-bit unsigned integer representing its size.
 
+Note: To put an ASCII string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+
+::
+
+    put_data("Hello world".to_ascii())
+
 .. _class_StreamPeer_method_put_u16:
 
 - void **put_u16** **(** :ref:`int<class_int>` value **)**
@@ -300,6 +306,12 @@ Puts an unsigned byte into the stream.
 - void **put_utf8_string** **(** :ref:`String<class_String>` value **)**
 
 Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsigned integer representing its size.
+
+Note: To put an UTF-8 string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+
+::
+
+    put_data("Hello world".to_utf8())
 
 .. _class_StreamPeer_method_put_var:
 

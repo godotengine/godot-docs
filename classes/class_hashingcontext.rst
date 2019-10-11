@@ -16,7 +16,7 @@ HashingContext
 Brief Description
 -----------------
 
-
+Context to compute cryptographic hashes over multiple iterations.
 
 Methods
 -------
@@ -42,11 +42,40 @@ Enumerations
 
 enum **HashType**:
 
-- **HASH_MD5** = **0**
+- **HASH_MD5** = **0** --- Hashing algorithm: MD5.
 
-- **HASH_SHA1** = **1**
+- **HASH_SHA1** = **1** --- Hashing algorithm: SHA-1.
 
-- **HASH_SHA256** = **2**
+- **HASH_SHA256** = **2** --- Hashing algorithm: SHA-256.
+
+Description
+-----------
+
+The HashingContext class provides an interface for computing cryptographic hashes over multiple iterations. This is useful for example when computing hashes of big files (so you don't have to load them all in memory), network streams, and data streams in general (so you don't have to hold buffers).
+
+The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashing algorithms.
+
+::
+
+    const CHUNK_SIZE = 1024
+    
+    func hash_file(path):
+        var ctx = HashingContext.new()
+        var file = File.new()
+        # Start a SHA-256 context.
+        ctx.start(HashingContext.HASH_SHA256)
+        # Check that file exists.
+        if not file.file_exists(path):
+            return
+        # Open the file to hash.
+        file.open(path, File.READ)
+        # Update the context after reading each chunk.
+        while not file.eof_reached():
+            ctx.update(file.get_buffer(CHUNK_SIZE))
+        # Get the computed hash.
+        var res = ctx.finish()
+        # Print the result as hex string and array.
+        printt(res.hex_encode(), Array(res))
 
 Method Descriptions
 -------------------
@@ -55,11 +84,17 @@ Method Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **finish** **(** **)**
 
+Closes the current context, and return the computed hash.
+
 .. _class_HashingContext_method_start:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**
 
+Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` to start computation of a SHA-256).
+
 .. _class_HashingContext_method_update:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PoolByteArray<class_PoolByteArray>` chunk **)**
+
+Updates the computation with the given ``chunk`` of data.
 

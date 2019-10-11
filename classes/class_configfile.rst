@@ -24,6 +24,8 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`erase_section<class_ConfigFile_method_erase_section>` **(** :ref:`String<class_String>` section **)**                                                                            |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`erase_section_key<class_ConfigFile_method_erase_section_key>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)**                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_section_keys<class_ConfigFile_method_get_section_keys>` **(** :ref:`String<class_String>` section **)** const                                                                |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_sections<class_ConfigFile_method_get_sections>` **(** **)** const                                                                                                            |
@@ -88,6 +90,10 @@ Method Descriptions
 - void **erase_section** **(** :ref:`String<class_String>` section **)**
 
 Deletes the specified section along with all the key-value pairs inside.
+
+.. _class_ConfigFile_method_erase_section_key:
+
+- void **erase_section_key** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)**
 
 .. _class_ConfigFile_method_get_section_keys:
 

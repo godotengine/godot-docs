@@ -16,7 +16,7 @@ CryptoKey
 Brief Description
 -----------------
 
-
+A cryptographic key (RSA).
 
 Methods
 -------
@@ -27,6 +27,13 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_CryptoKey_method_save>` **(** :ref:`String<class_String>` path **)** |
 +---------------------------------------+---------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+The CryptoKey class represents a cryptographic key. Keys can be loaded and saved like any other :ref:`Resource<class_Resource>`.
+
+They can be used to generate a self-signed :ref:`X509Certificate<class_X509Certificate>` via :ref:`Crypto.generate_self_signed_certificate<class_Crypto_method_generate_self_signed_certificate>` and as private key in :ref:`StreamPeerSSL.accept_stream<class_StreamPeerSSL_method_accept_stream>` along with the appropriate certificate.
+
 Method Descriptions
 -------------------
 
@@ -34,7 +41,11 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
+Loads a key from ``path`` ("\*.key" file).
+
 .. _class_CryptoKey_method_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**
+
+Saves a key to the given ``path`` (should be a "\*.key" file).
 

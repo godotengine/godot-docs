@@ -111,3 +111,7 @@ Deprecated, use :ref:`PhysicsMaterial.friction<class_PhysicsMaterial_property_fr
 | *Getter* | get_physics_material_override()      |
 +----------+--------------------------------------+
 
+The physics material override for the body.
+
+If a material is assigned to this property, it will be used instead of any other physics material, such as an inherited one.
+

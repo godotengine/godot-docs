@@ -44,9 +44,9 @@ As opposed to :ref:`Timer<class_Timer>`, it does not require the instantiation o
 ::
 
     func some_function():
-    print("start")
-    yield(get_tree().create_timer(1.0), "timeout")
-    print("end")
+        print("Timer started.")
+        yield(get_tree().create_timer(1.0), "timeout")
+        print("Timer ended.")
 
 Property Descriptions
 ---------------------

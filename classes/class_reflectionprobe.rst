@@ -16,7 +16,7 @@ ReflectionProbe
 Brief Description
 -----------------
 
-
+Captures its surroundings to create reflections.
 
 Properties
 ----------
@@ -62,6 +62,11 @@ enum **UpdateMode**:
 
 - **UPDATE_ALWAYS** = **1**
 
+Description
+-----------
+
+Capture its surroundings as a dual parabolid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
+
 Tutorials
 ---------
 
@@ -81,6 +86,8 @@ Property Descriptions
 +-----------+----------------------------------+
 | *Getter*  | is_box_projection_enabled()      |
 +-----------+----------------------------------+
+
+If ``true``, enables box projection. This makes reflections look more correct in rectangle-shaped rooms by offsetting the reflection center depending on the camera's location.
 
 .. _class_ReflectionProbe_property_cull_mask:
 
@@ -106,6 +113,8 @@ Property Descriptions
 | *Getter*  | are_shadows_enabled()     |
 +-----------+---------------------------+
 
+If ``true``, computes shadows in the reflection probe. This makes the reflection probe slower to render; you may want to disable this if using the :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>` :ref:`update_mode<class_ReflectionProbe_property_update_mode>`.
+
 .. _class_ReflectionProbe_property_extents:
 
 - :ref:`Vector3<class_Vector3>` **extents**
@@ -129,6 +138,8 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_intensity()      |
 +-----------+----------------------+
+
+Defines the reflection intensity.
 
 .. _class_ReflectionProbe_property_interior_ambient_color:
 

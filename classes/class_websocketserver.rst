@@ -18,6 +18,17 @@ Brief Description
 
 A WebSocket server implementation.
 
+Properties
+----------
+
++-----------------------------------------------+------------------------------------------------------------------------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`               |
++-----------------------------------------------+------------------------------------------------------------------------+
+| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`         |
++-----------------------------------------------+------------------------------------------------------------------------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>` |
++-----------------------------------------------+------------------------------------------------------------------------+
+
 Methods
 -------
 
@@ -74,6 +85,45 @@ This class implements a WebSocket server that can also support the high-level mu
 After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`). When clients connect, disconnect, or send data, you will receive the appropriate signal.
 
 **Note:** This class will not work in HTML5 exports due to browser restrictions.
+
+Property Descriptions
+---------------------
+
+.. _class_WebSocketServer_property_ca_chain:
+
+- :ref:`X509Certificate<class_X509Certificate>` **ca_chain**
+
++----------+---------------------+
+| *Setter* | set_ca_chain(value) |
++----------+---------------------+
+| *Getter* | get_ca_chain()      |
++----------+---------------------+
+
+When using SSL (see :ref:`private_key<class_WebSocketServer_property_private_key>` and :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`), you can set this to a valid :ref:`X509Certificate<class_X509Certificate>` to be provided as additional CA chain information during the SSL handshake.
+
+.. _class_WebSocketServer_property_private_key:
+
+- :ref:`CryptoKey<class_CryptoKey>` **private_key**
+
++----------+------------------------+
+| *Setter* | set_private_key(value) |
++----------+------------------------+
+| *Getter* | get_private_key()      |
++----------+------------------------+
+
+When set to a valid :ref:`CryptoKey<class_CryptoKey>` (along with :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`) will cause the server to require SSL instead of regular TCP (i.e. the ``wss://`` protocol).
+
+.. _class_WebSocketServer_property_ssl_certificate:
+
+- :ref:`X509Certificate<class_X509Certificate>` **ssl_certificate**
+
++----------+----------------------------+
+| *Setter* | set_ssl_certificate(value) |
++----------+----------------------------+
+| *Getter* | get_ssl_certificate()      |
++----------+----------------------------+
+
+When set to a valid :ref:`X509Certificate<class_X509Certificate>` (along with :ref:`private_key<class_WebSocketServer_property_private_key>`) will cause the server to require SSL instead of regular TCP (i.e. the ``wss://`` protocol).
 
 Method Descriptions
 -------------------

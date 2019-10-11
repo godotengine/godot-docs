@@ -36,7 +36,7 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`get_string_size<class_Font_method_get_string_size>` **(** :ref:`String<class_String>` string **)** const                                                                                                                                                                                                               |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_wordwrap_string_size<class_Font_method_get_wordwrap_string_size>` **(** :ref:`String<class_String>` string, :ref:`float<class_float>` p_width **)** const                                                                                                                                                          |
+| :ref:`Vector2<class_Vector2>` | :ref:`get_wordwrap_string_size<class_Font_method_get_wordwrap_string_size>` **(** :ref:`String<class_String>` string, :ref:`float<class_float>` width **)** const                                                                                                                                                            |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`has_outline<class_Font_method_has_outline>` **(** **)** const                                                                                                                                                                                                                                                          |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -91,7 +91,7 @@ Returns the size of a string, taking kerning and advance into account.
 
 .. _class_Font_method_get_wordwrap_string_size:
 
-- :ref:`Vector2<class_Vector2>` **get_wordwrap_string_size** **(** :ref:`String<class_String>` string, :ref:`float<class_float>` p_width **)** const
+- :ref:`Vector2<class_Vector2>` **get_wordwrap_string_size** **(** :ref:`String<class_String>` string, :ref:`float<class_float>` width **)** const
 
 .. _class_Font_method_has_outline:
 

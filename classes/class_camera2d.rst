@@ -123,9 +123,9 @@ enum **AnchorMode**:
 
 enum **Camera2DProcessMode**:
 
-- **CAMERA2D_PROCESS_PHYSICS** = **0**
+- **CAMERA2D_PROCESS_PHYSICS** = **0** --- The camera updates with the ``_physics_process`` callback.
 
-- **CAMERA2D_PROCESS_IDLE** = **1**
+- **CAMERA2D_PROCESS_IDLE** = **1** --- The camera updates with the ``_process`` callback.
 
 Description
 -----------
@@ -429,6 +429,8 @@ The vertical offset of the camera, relative to the drag margins.
 | *Getter*  | get_process_mode()      |
 +-----------+-------------------------+
 
+The camera's process callback. See :ref:`Camera2DProcessMode<enum_Camera2D_Camera2DProcessMode>`.
+
 .. _class_Camera2D_property_rotating:
 
 - :ref:`bool<class_bool>` **rotating**
@@ -522,9 +524,13 @@ Returns the location of the ``Camera2D``'s screen-center, relative to the origin
 
 - :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
+Returns the specified margin. See also :ref:`drag_margin_bottom<class_Camera2D_property_drag_margin_bottom>`, :ref:`drag_margin_top<class_Camera2D_property_drag_margin_top>`, :ref:`drag_margin_left<class_Camera2D_property_drag_margin_left>`, and :ref:`drag_margin_right<class_Camera2D_property_drag_margin_right>`.
+
 .. _class_Camera2D_method_get_limit:
 
 - :ref:`int<class_int>` **get_limit** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+Returns the specified camera limit. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 
 .. _class_Camera2D_method_make_current:
 
@@ -544,7 +550,11 @@ This has no effect if smoothing is disabled.
 
 - void **set_drag_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` drag_margin **)**
 
+Sets the specified margin. See also :ref:`drag_margin_bottom<class_Camera2D_property_drag_margin_bottom>`, :ref:`drag_margin_top<class_Camera2D_property_drag_margin_top>`, :ref:`drag_margin_left<class_Camera2D_property_drag_margin_left>`, and :ref:`drag_margin_right<class_Camera2D_property_drag_margin_right>`.
+
 .. _class_Camera2D_method_set_limit:
 
 - void **set_limit** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` limit **)**
+
+Sets the specified camera limit. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 

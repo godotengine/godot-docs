@@ -70,7 +70,7 @@ enum **Status**:
 Description
 -----------
 
-SSL stream peer. This object can be used to connect to SSL servers.
+SSL stream peer. This object can be used to connect to an SSL server or accept a single SSL client connection.
 
 Tutorials
 ---------
@@ -98,6 +98,8 @@ Method Descriptions
 .. _class_StreamPeerSSL_method_accept_stream:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **accept_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`CryptoKey<class_CryptoKey>` private_key, :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`X509Certificate<class_X509Certificate>` chain=null **)**
+
+Accepts a peer connection as a server using the given ``private_key`` and providing the given ``certificate`` to the client. You can pass the optional ``chain`` parameter to provide additional CA chain information along with the certificate.
 
 .. _class_StreamPeerSSL_method_connect_to_stream:
 

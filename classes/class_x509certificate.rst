@@ -16,7 +16,7 @@ X509Certificate
 Brief Description
 -----------------
 
-
+An X509 certificate (e.g. for SSL).
 
 Methods
 -------
@@ -27,6 +27,13 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_X509Certificate_method_save>` **(** :ref:`String<class_String>` path **)** |
 +---------------------------------------+---------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+The X509Certificate class represents an X509 certificate. Certificates can be loaded and saved like any other :ref:`Resource<class_Resource>`.
+
+They can be used as the server certificate in :ref:`StreamPeerSSL.accept_stream<class_StreamPeerSSL_method_accept_stream>` (along with the proper :ref:`CryptoKey<class_CryptoKey>`), and to specify the only certificate that should be accepted when connecting to an SSL server via :ref:`StreamPeerSSL.connect_to_stream<class_StreamPeerSSL_method_connect_to_stream>`.
+
 Method Descriptions
 -------------------
 
@@ -34,7 +41,11 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
+Loads a certificate from ``path`` ("\*.crt" file).
+
 .. _class_X509Certificate_method_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**
+
+Saves a certificate to the given ``path`` (should be a "\*.crt" file).
 

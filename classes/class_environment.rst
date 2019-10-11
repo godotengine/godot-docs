@@ -1020,6 +1020,8 @@ Enables fog's light transmission. If enabled, lets reflections light to be trans
 | *Getter*  | is_glow_bicubic_upscale_enabled() |
 +-----------+-----------------------------------+
 
+Smooths out blockiness created by sampling higher levels.
+
 .. _class_Environment_property_glow_blend_mode:
 
 - :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **glow_blend_mode**
@@ -1100,7 +1102,7 @@ Bleed scale of the HDR glow.
 | *Getter*  | get_glow_hdr_bleed_threshold()      |
 +-----------+-------------------------------------+
 
-Bleed threshold of the HDR glow.
+Bleed threshold of the HDR glow. In GLES2, this needs to be below 1.0 in order for glow to be visible, a default value of 0.9 works well.
 
 .. _class_Environment_property_glow_intensity:
 
@@ -1114,7 +1116,7 @@ Bleed threshold of the HDR glow.
 | *Getter*  | get_glow_intensity()      |
 +-----------+---------------------------+
 
-Glow intensity.
+Glow intensity. In GLES2, this should be increased to 1.5 by default to compensate for not using HDR.
 
 .. _class_Environment_property_glow_levels/1:
 
@@ -1226,7 +1228,7 @@ Seventh level of glow (most global).
 | *Getter*  | get_glow_strength()      |
 +-----------+--------------------------+
 
-Glow strength.
+Glow strength. In GLES2, this should be increased to 1.3 by default to compensate for not using HDR.
 
 .. _class_Environment_property_ss_reflections_depth_tolerance:
 

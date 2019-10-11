@@ -772,14 +772,14 @@ If ``blocking`` is ``true``, the Godot thread will pause its execution while wai
 
 If ``blocking`` is ``false``, the Godot thread will continue while the new process runs. It is not possible to retrieve the shell output in non-blocking mode, so ``output`` will be empty.
 
-The return value also depends on the blocking mode. When blocking, the method will return -2 (no process ID information is available in blocking mode). When non-blocking, the method returns a process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). If the process forking (non-blocking) or opening (blocking) fails, the method will return ``-1``.
+The return value also depends on the blocking mode. When blocking, the method will return an exit code of the process. When non-blocking, the method returns a process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). If the process forking (non-blocking) or opening (blocking) fails, the method will return ``-1`` or another exit code.
 
 Example of blocking mode and retrieving the shell output:
 
 ::
 
     var output = []
-    OS.execute("ls", ["-l", "/tmp"], true, output)
+    var exit_code = OS.execute("ls", ["-l", "/tmp"], true, output)
 
 Example of non-blocking mode, running another instance of the project and storing its process ID:
 
@@ -959,7 +959,7 @@ Returns the number of displays attached to the host machine.
 
 - :ref:`int<class_int>` **get_screen_dpi** **(** :ref:`int<class_int>` screen=-1 **)** const
 
-Returns the dots per inch density of the specified screen.
+Returns the dots per inch density of the specified screen. If ``screen`` is ``-1`` (the default value), the current screen will be used.
 
 On Android devices, the actual screen densities are grouped into six generalized densities:
 
@@ -976,13 +976,13 @@ On Android devices, the actual screen densities are grouped into six generalized
 
 - :ref:`Vector2<class_Vector2>` **get_screen_position** **(** :ref:`int<class_int>` screen=-1 **)** const
 
-Returns the position of the specified screen by index. If no screen index is provided, the current screen will be used.
+Returns the position of the specified screen by index. If ``screen`` is ``-1`` (the default value), the current screen will be used.
 
 .. _class_OS_method_get_screen_size:
 
 - :ref:`Vector2<class_Vector2>` **get_screen_size** **(** :ref:`int<class_int>` screen=-1 **)** const
 
-Returns the dimensions in pixels of the specified screen.
+Returns the dimensions in pixels of the specified screen. If ``screen`` is ``-1`` (the default value), the current screen will be used.
 
 .. _class_OS_method_get_splash_tick_msec:
 

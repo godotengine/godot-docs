@@ -116,6 +116,8 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`http_unescape<class_String_method_http_unescape>` **(** **)**                                                                                                     |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`humanize_size<class_String_method_humanize_size>` **(** :ref:`int<class_int>` size **)**                                                                          |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`insert<class_String_method_insert>` **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)**                                                  |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_abs_path<class_String_method_is_abs_path>` **(** **)**                                                                                                         |
@@ -170,11 +172,11 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`plus_file<class_String_method_plus_file>` **(** :ref:`String<class_String>` file **)**                                                                            |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`repeat<class_String_method_repeat>` **(** :ref:`int<class_int>` count **)**                                                                                       |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`replace<class_String_method_replace>` **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**                                           |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`replacen<class_String_method_replacen>` **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**                                         |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`repeat<class_String_method_repeat>` **(** :ref:`int<class_int>` count **)**                                                                                       |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rfind<class_String_method_rfind>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)**                                                     |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -494,6 +496,18 @@ Unescapes (decodes) a string in URL encoded format. Also referred to as 'URL dec
 
     print("https://example.org/?escaped=" + "Godot%20Engine%3A%27docs%27".http_unescape())
 
+.. _class_String_method_humanize_size:
+
+- :ref:`String<class_String>` **humanize_size** **(** :ref:`int<class_int>` size **)**
+
+Converts ``size`` represented as number of bytes to human-readable format using internationalized set of data size units, namely: B, KiB, MiB, GiB, TiB, PiB, EiB. Note that the next smallest unit is picked automatically to hold at most 1024 units.
+
+::
+
+    var bytes = 133790307
+    var size = String.humanize_size(bytes)
+    print(size) # prints "127.5 MiB"
+
 .. _class_String_method_insert:
 
 - :ref:`String<class_String>` **insert** **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)**
@@ -658,6 +672,12 @@ Percent-encodes a string. Encodes parameters in a URL when sending a HTTP GET re
 
 If the string is a path, this concatenates ``file`` at the end of the string as a subpath. E.g. ``"this/is".plus_file("path") == "this/is/path"``.
 
+.. _class_String_method_repeat:
+
+- :ref:`String<class_String>` **repeat** **(** :ref:`int<class_int>` count **)**
+
+Returns original string repeated a number of times. The number of repetitions is given by the argument.
+
 .. _class_String_method_replace:
 
 - :ref:`String<class_String>` **replace** **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**
@@ -669,12 +689,6 @@ Replaces occurrences of a case-sensitive substring with the given one inside the
 - :ref:`String<class_String>` **replacen** **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**
 
 Replaces occurrences of a case-insensitive substring with the given one inside the string.
-
-.. _class_String_method_repeat:
-
-- :ref:`String<class_String>` **repeat** **(** :ref:`int<class_int>` count **)**
-
-Returns original string repeated a number of times. The number of repetitions is given by the argument.
 
 .. _class_String_method_rfind:
 

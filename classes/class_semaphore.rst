@@ -32,6 +32,11 @@ Description
 
 A synchronization semaphore which can be used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Initialized to zero on creation. Be careful to avoid deadlocks. For a binary version, see :ref:`Mutex<class_Mutex>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/threads/using_multiple_threads`
+
 Method Descriptions
 -------------------
 

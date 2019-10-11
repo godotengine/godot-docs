@@ -35,6 +35,8 @@ Methods
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`add_button<class_TreeItem_method_add_button>` **(** :ref:`int<class_int>` column, :ref:`Texture<class_Texture>` button, :ref:`int<class_int>` button_idx=-1, :ref:`bool<class_bool>` disabled=false, :ref:`String<class_String>` tooltip="" **)** |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                   | :ref:`call_recursive<class_TreeItem_method_call_recursive>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                                                                  |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`clear_custom_bg_color<class_TreeItem_method_clear_custom_bg_color>` **(** :ref:`int<class_int>` column **)**                                                                                                                                      |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`clear_custom_color<class_TreeItem_method_clear_custom_color>` **(** :ref:`int<class_int>` column **)**                                                                                                                                            |
@@ -47,11 +49,15 @@ Methods
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`get_button_count<class_TreeItem_method_get_button_count>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                          |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                     | :ref:`get_button_tooltip<class_TreeItem_method_get_button_tooltip>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** const                                                                                                    |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` | :ref:`get_cell_mode<class_TreeItem_method_get_cell_mode>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                                |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeItem<class_TreeItem>`                 | :ref:`get_children<class_TreeItem_method_get_children>` **(** **)**                                                                                                                                                                                     |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`                       | :ref:`get_custom_bg_color<class_TreeItem_method_get_custom_bg_color>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                    |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                       | :ref:`get_custom_color<class_TreeItem_method_get_custom_color>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                          |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`get_expand_right<class_TreeItem_method_get_expand_right>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                          |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -244,6 +250,12 @@ Method Descriptions
 
 Adds a button with :ref:`Texture<class_Texture>` ``button`` at column ``column``. The ``button_idx`` index is used to identify the button when calling other methods. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count<class_TreeItem_method_get_button_count>` immediately after this method. Optionally, the button can be ``disabled`` and have a ``tooltip``.
 
+.. _class_TreeItem_method_call_recursive:
+
+- :ref:`Variant<class_Variant>` **call_recursive** **(** :ref:`String<class_String>` method, ... **)** vararg
+
+Calls the ``method`` on the actual TreeItem and its children recursively. Pass parameters as a comma separated list.
+
 .. _class_TreeItem_method_clear_custom_bg_color:
 
 - void **clear_custom_bg_color** **(** :ref:`int<class_int>` column **)**
@@ -280,6 +292,12 @@ Returns the :ref:`Texture<class_Texture>` of the button at index ``button_idx`` 
 
 Returns the number of buttons in column ``column``. May be used to get the most recently added button's index, if no index was specified.
 
+.. _class_TreeItem_method_get_button_tooltip:
+
+- :ref:`String<class_String>` **get_button_tooltip** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** const
+
+Returns the tooltip string for the button at index ``button_idx`` in column ``column``.
+
 .. _class_TreeItem_method_get_cell_mode:
 
 - :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **get_cell_mode** **(** :ref:`int<class_int>` column **)** const
@@ -297,6 +315,12 @@ Returns the TreeItem's child items.
 - :ref:`Color<class_Color>` **get_custom_bg_color** **(** :ref:`int<class_int>` column **)** const
 
 Returns the custom background color of column ``column``.
+
+.. _class_TreeItem_method_get_custom_color:
+
+- :ref:`Color<class_Color>` **get_custom_color** **(** :ref:`int<class_int>` column **)** const
+
+Returns the custom color of column ``column``.
 
 .. _class_TreeItem_method_get_expand_right:
 

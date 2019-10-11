@@ -169,6 +169,8 @@ If ``true``, the video is paused.
 | *Getter* | get_stream()      |
 +----------+-------------------+
 
+The assigned video stream. See description for supported formats.
+
 .. _class_VideoPlayer_property_stream_position:
 
 - :ref:`float<class_float>` **stream_position**

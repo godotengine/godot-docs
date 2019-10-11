@@ -51,27 +51,29 @@ Methods
 Theme Properties
 ----------------
 
-+-------------------------------+---------------+-----+
-| :ref:`Texture<class_Texture>` | add_preset    |     |
-+-------------------------------+---------------+-----+
-| :ref:`Texture<class_Texture>` | color_hue     |     |
-+-------------------------------+---------------+-----+
-| :ref:`Texture<class_Texture>` | color_sample  |     |
-+-------------------------------+---------------+-----+
-| :ref:`int<class_int>`         | h_width       | 30  |
-+-------------------------------+---------------+-----+
-| :ref:`int<class_int>`         | label_width   | 10  |
-+-------------------------------+---------------+-----+
-| :ref:`int<class_int>`         | margin        | 4   |
-+-------------------------------+---------------+-----+
-| :ref:`Texture<class_Texture>` | preset_bg     |     |
-+-------------------------------+---------------+-----+
-| :ref:`Texture<class_Texture>` | screen_picker |     |
-+-------------------------------+---------------+-----+
-| :ref:`int<class_int>`         | sv_height     | 256 |
-+-------------------------------+---------------+-----+
-| :ref:`int<class_int>`         | sv_width      | 256 |
-+-------------------------------+---------------+-----+
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | add_preset           |     |
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | color_hue            |     |
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | color_sample         |     |
++-------------------------------+----------------------+-----+
+| :ref:`int<class_int>`         | h_width              | 30  |
++-------------------------------+----------------------+-----+
+| :ref:`int<class_int>`         | label_width          | 10  |
++-------------------------------+----------------------+-----+
+| :ref:`int<class_int>`         | margin               | 4   |
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | overbright_indicator |     |
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | preset_bg            |     |
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | screen_picker        |     |
++-------------------------------+----------------------+-----+
+| :ref:`int<class_int>`         | sv_height            | 256 |
++-------------------------------+----------------------+-----+
+| :ref:`int<class_int>`         | sv_width             | 256 |
++-------------------------------+----------------------+-----+
 
 Signals
 -------
@@ -172,6 +174,8 @@ If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 | *Getter*  | are_presets_enabled()      |
 +-----------+----------------------------+
 
+If ``true``, the "add preset" button is enabled.
+
 .. _class_ColorPicker_property_presets_visible:
 
 - :ref:`bool<class_bool>` **presets_visible**
@@ -183,6 +187,8 @@ If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 +-----------+----------------------------+
 | *Getter*  | are_presets_visible()      |
 +-----------+----------------------------+
+
+If ``true``, saved color presets are visible.
 
 .. _class_ColorPicker_property_raw_mode:
 

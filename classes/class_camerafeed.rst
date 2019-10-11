@@ -99,6 +99,8 @@ Property Descriptions
 | *Getter*  | is_active()       |
 +-----------+-------------------+
 
+If ``true``, the feed is active.
+
 .. _class_CameraFeed_property_feed_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **feed_transform**
@@ -111,6 +113,8 @@ Property Descriptions
 | *Getter*  | get_transform()                  |
 +-----------+----------------------------------+
 
+The transform applied to the camera's image.
+
 Method Descriptions
 -------------------
 
@@ -118,17 +122,17 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_id** **(** **)** const
 
-Gets the unique ID for this feed.
+Returns the unique ID for this feed.
 
 .. _class_CameraFeed_method_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
-Gets the camera's name.
+Returns the camera's name.
 
 .. _class_CameraFeed_method_get_position:
 
 - :ref:`FeedPosition<enum_CameraFeed_FeedPosition>` **get_position** **(** **)** const
 
-Position of camera on the device.
+Returns the position of camera on the device.
 

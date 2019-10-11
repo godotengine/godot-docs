@@ -32,6 +32,8 @@ Methods
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`get_bone_count<class_Skeleton_method_get_bone_count>` **(** **)** const                                                                                                                                                                            |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>`         | :ref:`get_bone_custom_pose<class_Skeleton_method_get_bone_custom_pose>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                                                 |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>`         | :ref:`get_bone_global_pose<class_Skeleton_method_get_bone_global_pose>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                                                 |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`               | :ref:`get_bone_name<class_Skeleton_method_get_bone_name>` **(** :ref:`int<class_int>` bone_idx **)** const                                                                                                                                               |
@@ -57,6 +59,8 @@ Methods
 | void                                      | :ref:`physical_bones_stop_simulation<class_Skeleton_method_physical_bones_stop_simulation>` **(** **)**                                                                                                                                                  |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`SkinReference<class_SkinReference>` | :ref:`register_skin<class_Skeleton_method_register_skin>` **(** :ref:`Skin<class_Skin>` skin **)**                                                                                                                                                       |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`set_bone_custom_pose<class_Skeleton_method_set_bone_custom_pose>` **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` custom_pose **)**                                                                                        |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set_bone_disable_rest<class_Skeleton_method_set_bone_disable_rest>` **(** :ref:`int<class_int>` bone_idx, :ref:`bool<class_bool>` disable **)**                                                                                                    |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -121,6 +125,12 @@ Returns the bone index that matches ``name`` as its name.
 - :ref:`int<class_int>` **get_bone_count** **(** **)** const
 
 Returns the amount of bones in the skeleton.
+
+.. _class_Skeleton_method_get_bone_custom_pose:
+
+- :ref:`Transform<class_Transform>` **get_bone_custom_pose** **(** :ref:`int<class_int>` bone_idx **)** const
+
+Returns the custom pose of the specified bone. Custom pose is applied on top of the rest pose.
 
 .. _class_Skeleton_method_get_bone_global_pose:
 
@@ -187,6 +197,10 @@ Returns the rest transform for a bone ``bone_idx``.
 .. _class_Skeleton_method_register_skin:
 
 - :ref:`SkinReference<class_SkinReference>` **register_skin** **(** :ref:`Skin<class_Skin>` skin **)**
+
+.. _class_Skeleton_method_set_bone_custom_pose:
+
+- void **set_bone_custom_pose** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` custom_pose **)**
 
 .. _class_Skeleton_method_set_bone_disable_rest:
 

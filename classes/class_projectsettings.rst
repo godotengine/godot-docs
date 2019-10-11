@@ -578,42 +578,44 @@ Properties
 Methods
 -------
 
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`add_property_info<class_ProjectSettings_method_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` hint **)**                              |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`clear<class_ProjectSettings_method_clear>` **(** :ref:`String<class_String>` name **)**                                                              |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_order<class_ProjectSettings_method_get_order>` **(** :ref:`String<class_String>` name **)** const                                                |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`get_setting<class_ProjectSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** const                                            |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` **(** :ref:`String<class_String>` path **)** const                                      |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_setting<class_ProjectSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** const                                            |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`load_resource_pack<class_ProjectSettings_method_load_resource_pack>` **(** :ref:`String<class_String>` pack **)**                                    |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`localize_path<class_ProjectSettings_method_localize_path>` **(** :ref:`String<class_String>` path **)** const                                        |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`property_can_revert<class_ProjectSettings_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                  |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`property_get_revert<class_ProjectSettings_method_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                  |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_ProjectSettings_method_save>` **(** **)**                                                                                                 |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_custom<class_ProjectSettings_method_save_custom>` **(** :ref:`String<class_String>` file **)**                                                  |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_initial_value<class_ProjectSettings_method_set_initial_value>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)** |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_order<class_ProjectSettings_method_set_order>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` position **)**                      |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_setting<class_ProjectSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**             |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`add_property_info<class_ProjectSettings_method_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` hint **)**                                       |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`clear<class_ProjectSettings_method_clear>` **(** :ref:`String<class_String>` name **)**                                                                       |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_order<class_ProjectSettings_method_get_order>` **(** :ref:`String<class_String>` name **)** const                                                         |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`get_setting<class_ProjectSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** const                                                     |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` **(** :ref:`String<class_String>` path **)** const                                               |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`has_setting<class_ProjectSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** const                                                     |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`load_resource_pack<class_ProjectSettings_method_load_resource_pack>` **(** :ref:`String<class_String>` pack, :ref:`bool<class_bool>` replace_files=true **)** |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`localize_path<class_ProjectSettings_method_localize_path>` **(** :ref:`String<class_String>` path **)** const                                                 |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`property_can_revert<class_ProjectSettings_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                           |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`property_get_revert<class_ProjectSettings_method_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                           |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_ProjectSettings_method_save>` **(** **)**                                                                                                          |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_custom<class_ProjectSettings_method_save_custom>` **(** :ref:`String<class_String>` file **)**                                                           |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_initial_value<class_ProjectSettings_method_set_initial_value>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**          |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_order<class_ProjectSettings_method_set_order>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` position **)**                               |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_setting<class_ProjectSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                      |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
 Contains global variables accessible from everywhere. Use :ref:`get_setting<class_ProjectSettings_method_get_setting>`, :ref:`set_setting<class_ProjectSettings_method_set_setting>` or :ref:`has_setting<class_ProjectSettings_method_has_setting>` to access them. Variables stored in ``project.godot`` are also loaded into ProjectSettings, making this object very useful for reading custom game configuration options.
+
+When naming a Project Settings property, use the full path to the setting including the category. For example, ``"application/config/name"`` for the project name. Category and property names can be viewed in the Project Settings dialog.
 
 Property Descriptions
 ---------------------
@@ -1408,7 +1410,7 @@ Sets the window to full screen when it starts.
 | *Default* | 600 |
 +-----------+-----+
 
-Sets the main window height. On desktop, this is the default window size. Stretch mode settings use this also as a reference when enabled.
+Sets the game's main viewport height. On desktop platforms, this is the default window size. Stretch mode settings also use this as a reference when enabled.
 
 .. _class_ProjectSettings_property_display/window/size/resizable:
 
@@ -1428,7 +1430,7 @@ Allows the window to be resizable by default.
 | *Default* | 0 |
 +-----------+---+
 
-If greater than zero, uses a different height for the window when running from the editor. The main use for this is to test with stretch modes.
+If greater than zero, overrides the window height when running the game. Useful for testing stretch modes.
 
 .. _class_ProjectSettings_property_display/window/size/test_width:
 
@@ -1438,7 +1440,7 @@ If greater than zero, uses a different height for the window when running from t
 | *Default* | 0 |
 +-----------+---+
 
-If greater than zero, uses a different width for the window when running from the editor. The main use for this is to test with stretch modes.
+If greater than zero, overrides the window width when running the game. Useful for testing stretch modes.
 
 .. _class_ProjectSettings_property_display/window/size/width:
 
@@ -1448,7 +1450,7 @@ If greater than zero, uses a different width for the window when running from th
 | *Default* | 1024 |
 +-----------+------+
 
-Sets the main window width. On desktop platforms, this is the default window size. Stretch mode settings use this also as a reference when enabled.
+Sets the game's main viewport width. On desktop platforms, this is the default window size. Stretch mode settings also use this as a reference when enabled.
 
 .. _class_ProjectSettings_property_display/window/vsync/use_vsync:
 
@@ -3168,6 +3170,14 @@ Returns the order of a configuration value (influences when saved to the config 
 
 - :ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** const
 
+Returns the value of a setting.
+
+**Example:**
+
+::
+
+    print(ProjectSettings.get_setting("application/config/name"))
+
 .. _class_ProjectSettings_method_globalize_path:
 
 - :ref:`String<class_String>` **globalize_path** **(** :ref:`String<class_String>` path **)** const
@@ -3182,11 +3192,11 @@ Returns ``true`` if a configuration value is present.
 
 .. _class_ProjectSettings_method_load_resource_pack:
 
-- :ref:`bool<class_bool>` **load_resource_pack** **(** :ref:`String<class_String>` pack **)**
+- :ref:`bool<class_bool>` **load_resource_pack** **(** :ref:`String<class_String>` pack, :ref:`bool<class_bool>` replace_files=true **)**
 
 Loads the contents of the .pck or .zip file specified by ``pack`` into the resource filesystem (``res://``). Returns ``true`` on success.
 
-**Note:** If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack``.
+**Note:** If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack`` unless ``replace_files`` is set to ``false``.
 
 .. _class_ProjectSettings_method_localize_path:
 

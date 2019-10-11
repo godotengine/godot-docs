@@ -21,18 +21,24 @@ A WebSocket client implementation.
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`verify_ssl<class_WebSocketClient_property_verify_ssl>` |
-+-------------------------+--------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`trusted_ssl_certificate<class_WebSocketClient_property_trusted_ssl_certificate>` |
++-----------------------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`verify_ssl<class_WebSocketClient_property_verify_ssl>`                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------+
 
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>` **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`disconnect_from_host<class_WebSocketClient_method_disconnect_from_host>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                                                    |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>` **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ) **)** |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`disconnect_from_host<class_WebSocketClient_method_disconnect_from_host>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                                                                                                                                      |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_connected_host<class_WebSocketClient_method_get_connected_host>` **(** **)** const                                                                                                                                                                                                                           |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_connected_port<class_WebSocketClient_method_get_connected_port>` **(** **)** const                                                                                                                                                                                                                           |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -83,6 +89,18 @@ You will receive appropriate signals when connecting, disconnecting, or when new
 Property Descriptions
 ---------------------
 
+.. _class_WebSocketClient_property_trusted_ssl_certificate:
+
+- :ref:`X509Certificate<class_X509Certificate>` **trusted_ssl_certificate**
+
++----------+------------------------------------+
+| *Setter* | set_trusted_ssl_certificate(value) |
++----------+------------------------------------+
+| *Getter* | get_trusted_ssl_certificate()      |
++----------+------------------------------------+
+
+If specified, this :ref:`X509Certificate<class_X509Certificate>` will be the only one accepted when connecting to an SSL host. Any other certificate provided by the server will be regarded as invalid.
+
 .. _class_WebSocketClient_property_verify_ssl:
 
 - :ref:`bool<class_bool>` **verify_ssl**
@@ -102,7 +120,7 @@ Method Descriptions
 
 .. _class_WebSocketClient_method_connect_to_url:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_url** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_url** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ) **)**
 
 Connects to the given URL requesting one of the given ``protocols`` as sub-protocol. If the list empty (default), no sub-protocol will be requested.
 
@@ -110,9 +128,23 @@ If ``true`` is passed as ``gd_mp_api``, the client will behave like a network pe
 
 If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.) on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(1)`` and not on this object directly (e.g. ``get_peer(1).put_packet(data)``).
 
+You can optionally pass a list of ``custom_headers`` to be added to the handshake HTTP request (not supported in HTML5 platform).
+
 .. _class_WebSocketClient_method_disconnect_from_host:
 
 - void **disconnect_from_host** **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
 Disconnects this client from the connected host. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more information.
+
+.. _class_WebSocketClient_method_get_connected_host:
+
+- :ref:`String<class_String>` **get_connected_host** **(** **)** const
+
+Return the IP address of the currently connected host.
+
+.. _class_WebSocketClient_method_get_connected_port:
+
+- :ref:`int<class_int>` **get_connected_port** **(** **)** const
+
+Return the IP port of the currently connected host.
 
