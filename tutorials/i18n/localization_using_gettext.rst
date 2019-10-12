@@ -96,9 +96,11 @@ while in the ``locale`` directory:
 
     msginit --no-translator --input=messages.pot --locale=fr
 
-
 The command above will create a file named ``fr.po`` in the same directory
 as the PO template.
+
+Alternatively, you can do that graphically using Poedit, or by uploading the
+POT file to your web platform of choice.
 
 Loading a messages file in Godot
 --------------------------------
@@ -124,7 +126,6 @@ automatically using the ``msgmerge`` tool:
 
     # The order matters: specify the message file *then* the PO template!
     msgmerge --update --backup=none fr.po messages.pot
-
 
 If you want to keep a backup of the original message file (which would be
 saved as ``fr.po~`` in this example), remove the ``--backup=none`` argument.
