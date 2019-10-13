@@ -58,8 +58,8 @@ install them.
 - **Linux:** On most distributions, install the ``gettext`` package from
   your distribution's package manager.
 
-Creating the PO template
-------------------------
+Creating the PO template (POT) manually
+---------------------------------------
 
 Godot currently doesn't support extracting source strings using ``xgettext``,
 so the ``.pot`` file must be created manually. This file can be placed anywhere
@@ -85,6 +85,41 @@ the translated string.
 The ``msgstr`` value in PO template files (``.pot``) should **always** be empty.
 Localization will be done in the generated ``.po`` files instead.
 
+Creating the PO template (POT) using pybabel
+--------------------------------------------
+
+The Python tool pybabel has support for Godot and can be used to automatically
+create and update the POT file from your scene files and scripts.
+
+After installing ``babel`` and ``babel-godot``, for example using pip:
+
+::
+
+    pip install babel babel-godot
+
+Write a mapping file (for example ``babelrc``) which will indicate which files
+pybabel needs to process (note that we process GDScript as Python, which is
+generally sufficient):
+
+::
+
+    [python: **.gd]
+    encoding = utf-8
+
+    [godot_scene: **.tscn]
+    encoding = utf-8
+
+You can then run pybabel like so:
+
+::
+
+    pybabel extract -F babelrc -k text -k LineEdit/placeholder_text -k tr -o godot-l10n.pot .
+
+Use the ``-k`` option to specify what needs to be extracted. In this case,
+arguments to :ref:`tr() <class_Object_method_tr>` will be translated, as well
+as properties named "text" (commonly used by Control nodes) and LineEdit's
+"placeholder_text" property.
+
 Creating a messages file from a PO template
 -------------------------------------------
 
@@ -96,9 +131,11 @@ while in the ``locale`` directory:
 
     msginit --no-translator --input=messages.pot --locale=fr
 
-
 The command above will create a file named ``fr.po`` in the same directory
 as the PO template.
+
+Alternatively, you can do that graphically using Poedit, or by uploading the
+POT file to your web platform of choice.
 
 Loading a messages file in Godot
 --------------------------------
@@ -124,7 +161,6 @@ automatically using the ``msgmerge`` tool:
 
     # The order matters: specify the message file *then* the PO template!
     msgmerge --update --backup=none fr.po messages.pot
-
 
 If you want to keep a backup of the original message file (which would be
 saved as ``fr.po~`` in this example), remove the ``--backup=none`` argument.
