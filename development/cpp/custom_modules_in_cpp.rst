@@ -224,7 +224,7 @@ You can then zip it and share the module with everyone else. When
 building for every platform (instructions in the previous sections),
 your module will be included.
 
-.. note:: There is a paramter limit of 5 in C++ modules for things such
+.. note:: There is a parameter limit of 5 in C++ modules for things such
           as subclasses. This can be raised to 13 by including the header
           file ``core/method_bind_ext.gen.inc``.
 
