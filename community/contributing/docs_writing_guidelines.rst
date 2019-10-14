@@ -342,7 +342,7 @@ Also surround boolean values, variable names and methods with ``[code][/code]``.
 ::
 
     Timer.autostart
-    If [code]true[/code] the timer will automatically start when it enters the scene tree. Default value: [code]false[/code].
+    If [code]true[/code], the timer will automatically start when entering the scene tree.
 
 
 Use ``[code]`` around arguments
