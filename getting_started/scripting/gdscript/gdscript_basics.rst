@@ -649,9 +649,9 @@ want to assign consecutive integers to some constant.
 If you pass a name to the enum, it will put all the keys inside a constant
 dictionary of that name.
 
-.. important: In Godot 3.1 and later, keys in a named enum are not registered
-              as global constants. They should be accessed prefixed by the
-              enum's name (``Name.KEY``); see an example below.
+.. important:: In Godot 3.1 and later, keys in a named enum are not registered
+               as global constants. They should be accessed prefixed by the
+               enum's name (``Name.KEY``); see an example below.
 
 ::
 
