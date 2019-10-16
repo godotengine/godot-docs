@@ -83,7 +83,7 @@ Static:
 
     void print_value(int value) {
 
-        printf("value is %i\n", value);
+        print("value is %i\n", value);
     }
 
     [..]
@@ -328,7 +328,7 @@ Iterating in some statically typed languages can be quite complex:
     for (int i = 0; i < 50; i++)
     {
 
-        printf("Value: %s\n", i, strings[i]);
+        print("Value: %s\n", i, strings[i]);
     }
 
     // Even in STL:
