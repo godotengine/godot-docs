@@ -371,7 +371,7 @@ PoolRealArray store 32-bit single-precision "float" values.
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
 Strings can contain
 `standard C escape sequences <https://en.wikipedia.org/wiki/Escape_sequences_in_C>`_.
-GDScript also supports :ref:`doc_gdscript_printf`.
+GDScript also supports :ref:`doc_gdscript_print`.
 
 Vector built-in types
 ~~~~~~~~~~~~~~~~~~~~~
