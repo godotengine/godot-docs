@@ -1486,7 +1486,7 @@ signal is received, execution will recommence. Here are some examples::
     yield(get_tree(), "idle_frame")
 
     # Resume execution when animation is done playing.
-    yield(get_node("AnimationPlayer"), "finished")
+    yield(get_node("AnimationPlayer"), "animation_finished")
 
     # Wait 5 seconds, then resume execution.
     yield(get_tree().create_timer(5.0), "timeout")
