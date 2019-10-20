@@ -49,6 +49,7 @@ Here is an editor for editing integers
  .. code-tab:: gdscript GDScript
     
     # MyEditor.gd 
+    extends EditorProperty
     class_name MyEditor
 
     var updating = false
@@ -57,7 +58,7 @@ Here is an editor for editing integers
         if (updating):
             return
 
-        emit_changed( get_property(), value )
+        emit_changed( get_edited_property(), value )
 
     func update_property():
         var new_value = get_edited_object()[ get_edited_property() ]
