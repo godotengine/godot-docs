@@ -131,6 +131,26 @@ necessary for order of operations, they only reduce readability.
     if (is_colliding()):
         queue_free()
 
+Comment spacing
+~~~~~~~~~~~~~~~
+
+Normal comments should start with a space, but comments which are disabled
+code should not. This helps differentiate text comments from disabled code.
+
+**Good**:
+
+::
+
+    # This is a comment.
+    #print("This is disabled code")
+
+**Bad**:
+
+::
+
+    #This is a comment.
+    # print("This is disabled code")
+
 Whitespace
 ~~~~~~~~~~
 
