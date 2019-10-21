@@ -17,12 +17,22 @@ organic look is the "randomness" associated with each parameter. In
 essence, creating a particle system means setting base physics
 parameters and then adding randomness to them.
 
-Particles2D
-~~~~~~~~~~~
+Particle Nodes
+~~~~~~~~~~~~~~
 
-Particle systems are added to the scene via the
-:ref:`Particles2D <class_Particles2D>`
-node. However, after creating that node you will notice that only a white dot was created,
+Godot uses two nodes for 2D particles,
+:ref:`Particles2D <class_Particles2D>` and :ref:`CPUParticles2D <class_CPUParticles2D>`.
+CPUParticles2D is less advanced than Particles2D, and you need to use it if you're
+using the GLES2 renderer. It has the ParticlesMaterial options in the node itself (with
+the exception of the trail settings), but unlike Particles2D you cannot use a shader as a
+process material. If you want to you can convert a Particles2D node into a CPUParticles2D
+node. To do this click on the node in the inspector, a particles button should appear in
+the toolbar, click on it and select "Convert to CPUParticles2D."
+
+.. image:: img/particles_convert.png
+
+The rest of this tutorial is going to use the Particles2D node. First, add a Particles2D
+node to your scene. After creating that node you will notice that only a white dot was created,
 and that there is a warning icon next to your Particles2D node in the inspector. This
 is because the node needs a ParticlesMaterial to function.
 
@@ -201,7 +211,7 @@ The gravity applied to every particle.
 Initial Velocity
 ~~~~~~~~~~~~~~~~
 
-Linear velocity is the speed at which particles will be emitted (in
+Initial velocity is the speed at which particles will be emitted (in
 pixels/sec). Speed might later be modified by gravity or other
 accelerations (as described further below).
 
