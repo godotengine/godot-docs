@@ -10,8 +10,9 @@ Save games can be complicated. For example, it may be desirable
 to store information from multiple objects across multiple levels.
 Advanced save game systems should allow for additional information about
 an arbitrary number of objects. This will allow the save function to
-scale as the game grows more complex.For simply saving user settings,
-you can go to :ref:`class_configfile`.
+scale as the game grows more complex.
+
+For simply saving user settings,you can refer to :ref:`class_configfile`.
 
 Identify persistent objects
 ---------------------------
