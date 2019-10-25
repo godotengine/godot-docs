@@ -167,6 +167,7 @@ You can also declare your own custom signals in Godot:
     extends Node
 
     signal my_signal
+    signal my_signal_with_arguments(x, y)
 
  .. code-tab:: csharp
 
@@ -203,6 +204,32 @@ To emit a signal via code, use the ``emit_signal`` function:
             EmitSignal(nameof(MySignal));
         }
     }
+
+As different signals can have different number of parameters, ``emit_signal(String signal, ...)`` takes a variable number of arguments (indicated by ``...``).
+To supply the parameter to the signal:
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Node
+
+    signal my_signal(arg1, arg2)
+
+    func _ready():
+        emit_signal("my_signal", 5, 1)
+
+ .. code-tab:: csharp
+
+    public class Main : Node
+    {
+        [Signal]
+        public delegate void MySignal(int x, int y);
+
+        public override void _Ready()
+        {
+            EmitSignal(nameof(MySignal), 5, 1);
+        }
+    }
+
 
 Conclusion
 ----------
