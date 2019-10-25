@@ -1,3 +1,5 @@
+.. _doc_classes:
+
 Godot API
 =========
 

@@ -13,13 +13,17 @@ How to build relationships effectively
 When Godot users begin crafting their own scenes, they often run into the
 following problem:
 
-They create their first scene and fill it with content before the creeping
-sense that they need to split it up into re-usable pieces haunts them. They
-save branches of their scene into their own scene. However, they then notice
-that the hard references they were able to rely on before are no longer
-possible. Re-using the scene in multiple places creates issues because the
-node paths do not find their targets. Signal connections established in the
-editor break.
+The best practice for referencing nodes within a scene is to export a NodePath
+and have the scene configure the NodePath's value. This makes the script defer
+to the scene file. When someone moves a node, the editor has direct access to
+the scene file's data to update the exported NodePaths to match. This fixes
+any need to update hardcoded NodePaths within a script.
+
+However, while that works in the beginning, users inevitably create their
+first scene, fill it with content, and then realize they want to split
+it up into reusable chunks. But splitting a scene into subscenes may
+break NodePaths that previously found nodes successfully. Additionally,
+signal connections established in the editor break.
 
 To fix these problems, one must instantiate the sub-scenes without them
 requiring details about their environment. One needs to be able to trust

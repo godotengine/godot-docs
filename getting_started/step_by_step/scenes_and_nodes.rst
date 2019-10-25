@@ -73,6 +73,8 @@ Basically, the Godot editor is a **scene editor**. It has plenty of tools for
 editing 2D and 3D scenes as well as user interfaces, but the editor is based on
 the concept of editing a scene and the nodes that compose it.
 
+.. _doc_creating_a_new_project:
+
 Creating a new project
 ----------------------
 

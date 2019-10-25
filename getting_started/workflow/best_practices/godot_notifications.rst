@@ -297,3 +297,92 @@ nodes that one might create at runtime.
             GD.Print("I'm reacting to my parent's interaction!");
         }
     }
+
+.. _doc_propagation:
+
+Method and notification propagation
+-----------------------------------
+
+Godot's SceneTree and Node classes provide a few avenues of simulating your
+own notification-like behaviors.
+
+One option is to well and truly define your own ``NOTIFICATION_`` constant,
+and then use
+:ref:`Node.propagate_notification(what) <class_Node_method_propagate_notification>`
+on the SceneTree's root node to relay that notification to every Node in the
+world. Or, if you already have a subset of nodes in mind, you can use
+:ref:`SceneTree.notify_group(what) <class_SceneTree_method_notify_group>`
+to similar effect, but only targeting nodes in a group. Any node that
+implements the :ref:`Node._notification <class_Node_method__notification>`
+method will be able to catch and react to those notifications.
+
+Another option is to create your own custom "notification callbacks". You
+can use :ref:`Node.propagate_call <class_Node_method_propagate_call>` on
+the SceneTree's root node to trigger a method call on every node that
+implements the method. Or, if you already havea a subset of nodes in mind,
+you can use :ref:`SceneTree.group_call <class_SceneTree_method_call_group>`.
+Naturally, operating with groups is going to be much less expensive.
+
+These group callbacks can even replace a more complex signal use case. If,
+for example, you needed everything in your game to react to a "game over"
+event, you have two options.
+
+The first is to connect each of those nodes to some node with a "game_over"
+signal. But reacting nodes may be spread out. To do this, one would need
+a global or nearly global common ancestor to handle the work of connecting
+each node. And while doable, it is much more complicated than the
+alternative.
+
+The second option is to add each node to a group, e.g. "f_game_over", as in,
+"has a f-unction called '_game_over'." The "notifying" node can then use
+this pseudo-notification callback via mass group call to trigger logic.
+
+.. tabs::
+  .. code-tab:: gdscript GDScript
+
+    # Receiver
+    extends Node
+    func _ready():
+        add_to_group("f_game_over")
+    func _game_over():
+        pass # Do something
+    
+    # Notifier
+    extends Node
+    func game_over():
+        get_tree().call_group("f_game_over", "_game_over")
+
+  .. code-tab:: csharp
+
+    public class ReceiverNode : public Node
+    {
+        public override void _Ready()
+        {
+            AddToGroup("F_GameOver");
+        }
+
+        public void _GameOver()
+        {
+            // Do something
+        }
+    }
+
+    public class NotifierNode : public Node
+    {
+        public void GameOver()
+        {
+            GetTree().CallGroup("F_GameOver", "_GameOver");
+        }
+    }
+
+.. note::
+
+  In C#, one could also use a C# interface in combination with the group for
+  statically typed access to the _GameOver method call.
+
+.. note::
+
+  ``call_group`` will execute on the next idle frame by default. If you must
+  execute method calls immediately, then you will need to use
+  :ref:`SceneTree.call_group_flags <class_SceneTree_method_notify_group_flags>`
+  which has options for executing the methods immediately, among other things.

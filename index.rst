@@ -70,6 +70,7 @@ The main documentation for the site is organized into the following sections:
 
    getting_started/step_by_step/index
    getting_started/editor/index
+   getting_started/guides/index
    getting_started/scripting/index
    getting_started/workflow/index
 

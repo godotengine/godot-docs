@@ -462,6 +462,8 @@ And it can be used like any other iterator:
 Make sure to reset the state of the iterator in ``_iter_init``, otherwise nested
 for-loops that use custom iterators will not work as expected.
 
+.. _doc_gdscript_advanced_duck_typing:
+
 Duck typing
 -----------
 

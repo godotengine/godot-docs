@@ -147,6 +147,8 @@ When a ``Resource`` is no longer in use, it will automatically free itself.
 Since, in most cases, Resources are contained in Nodes, when you free a node,
 the engine frees all the resources it owns as well if no other node uses them.
 
+.. doc_resources_custom_resources:
+
 Creating your own resources
 ---------------------------
 
