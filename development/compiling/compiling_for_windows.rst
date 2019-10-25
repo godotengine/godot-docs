@@ -217,13 +217,6 @@ And for 32-bit::
     sudo update-alternatives --config i686-w64-mingw32-g++
     <choose i686-w64-mingw32-g++-posix from the list>
 
-.. note::
-
-    Using certain MinGW distributions (e.g. from Homebrew) may result in a build
-    error about ``sprintf_s`` or ``wcscpy_s`` when compiling Godot. If this is
-    the case, try passing
-    ``CXXFLAGS="-DMINGW_HAS_SECURE_API"`` at the end of the SCons command line.
-
 Creating Windows export templates
 ---------------------------------
 
