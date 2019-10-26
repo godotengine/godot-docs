@@ -12,7 +12,10 @@ Advanced save game systems should allow for additional information about
 an arbitrary number of objects. This will allow the save function to
 scale as the game grows more complex.
 
-For simply saving user settings,you can refer to :ref:`class_configfile`.
+.. note::
+
+    If you're looking to save user configuration, you can use the
+    :ref:`class_ConfigFile` class for this purpose.
 
 Identify persistent objects
 ---------------------------
