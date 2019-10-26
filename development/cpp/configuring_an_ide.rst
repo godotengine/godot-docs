@@ -3,7 +3,7 @@
 Configuring an IDE
 ==================
 
-We assume that you already `cloned <https://github.com/godotengine/godot>`_
+We assume that you have already `cloned <https://github.com/godotengine/godot>`_
 and :ref:`compiled <toc-devel-compiling>` Godot.
 
 You can easily develop Godot with any text editor and by invoking ``scons``
@@ -83,13 +83,13 @@ from the upstream git repository or a specific fork etc. However this
 brings a little problem with it: as the development continues, source files
 (and folders) are added or removed. These changes needs to be reflected in
 your project files for Qt Creator too, so you continue to have a nice
-experience coding in it. A simple way to check these things, is to right click
+experience coding in it. A simple way to check is to right click
 at your root folder in the "Projects View" and click on "Edit files..."
 
 .. image:: img/qtcreator-edit-files-menu.png
 
 Now a new dialog should appear that is similar in functionality to the one in the third step
-of the "Importing the project" section. Here now you can check whether you want to add/remove
+of the "Importing the project" section. Here you can check whether you want to add/remove
 specific files and/or folders. You can chose by clicking with your mouse or just simply by
 clicking the "Apply Filter" button. A simple click on "Ok" and you're ready to continue your work.
 
@@ -270,22 +270,22 @@ Visual Studio Code
 
 - Now open cloned godot folder in VS Code (File > Open Folder...)
 
-In order to build the project, we need configurations files: *launch.json* and *tasks.json*.
+In order to build the project, we need two configuration files: *launch.json* and *tasks.json*.
 To create them:
 
-- Open Debug view (Ctrl + Shift + D) and select cogwheel with orange dot:
+- Open Debug view (Ctrl + Shift + D) and select cogwheel with an orange dot:
 
 .. image:: img/vscode_1_create_launch.json.png
 
-- Select *C++ (GDB/LLDB)* (it might be slightly differently called on macOS or Windows)
+- Select *C++ (GDB/LLDB)* (it might be named differently on macOS or Windows)
 
 - Update *launch.json* to match:
 
 .. image:: img/vscode_2_launch.json.png
 
-(Note that *godot.x11.tools.64* in "program" value might be differently called on macOS or Windows)
+(Note that *godot.x11.tools.64* in "program" value might be named differently on macOS or Windows)
 
-- Create *tasks.json* by starting Debug process (F5). VS Code will show dialog with *Configure Task* button. Tap it and select *Create tasks.json file from template*, then select *Others*
+- Create *tasks.json* by starting the Debug process (F5). VS Code will show a dialog with a *Configure Task* button. Tap it and select *Create tasks.json file from template*, then select *Others*
 
 - Update *tasks.json* to match:
 
@@ -293,6 +293,6 @@ To create them:
 
 (Note that *platform=x11* will be different for macOX and Windows)
 
-- You can now start Debug process again to test that everything works.
+- You can now start the Debug process again to test that everything works.
 
 - If the build phase fails, check the console for hints. On Linux it's most likely that some dependencies are missing. Check :ref:`Compiling for X11 (Linux, \*BSD) <doc_compiling_for_x11>`
