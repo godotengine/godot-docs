@@ -203,6 +203,56 @@ To emit a signal via code, use the ``emit_signal`` function:
             EmitSignal(nameof(MySignal));
         }
     }
+    
+A signal can also optionally declare one or more arguments. Specify the
+argument names between parentheses:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Node
+
+    signal my_signal(value, other_value)
+
+ .. code-tab:: csharp
+
+    public class Main : Node
+    {
+        [Signal]
+        public delegate void MySignal();
+    }
+
+.. note::
+
+    The signal arguments show up in the editor's node dock, and Godot
+    can use them to generate callback functions for you. However, you can still
+    emit any number of arguments when you emit signals. So it's up to you to
+    emit the correct values.
+
+To pass values, add them as the second argument to the ``emit_signal`` function:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Node
+
+    signal my_signal(value, other_value)
+
+    func _ready():
+        emit_signal("my_signal", true, 42)
+
+ .. code-tab:: csharp
+
+    public class Main : Node
+    {
+        [Signal]
+        public delegate void MySignal();
+
+        public override void _Ready()
+        {
+            EmitSignal(nameof(MySignal));
+        }
+    }
 
 Conclusion
 ----------
