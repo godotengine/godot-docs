@@ -381,7 +381,7 @@ one.
 .. image:: img/animation_method_options.png
 
 When Godot reaches the keyframe, Godot calls the
-:ref:`class_AnimationPlayer` node's "play" function and the stream
+:ref:`class_AudioStreamPlayer` node's "play" function and the stream
 plays.
 
 You can change its position by dragging it on the timeline, you can also
