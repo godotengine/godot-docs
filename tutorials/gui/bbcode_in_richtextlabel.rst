@@ -74,6 +74,10 @@ Reference
 +-------------------+--------------------------------------------+--------------------------------------------------------------+
 | **image**         | ``[img]{path}[/img]``                      | Insert image at resource {path}.                             |
 +-------------------+--------------------------------------------+--------------------------------------------------------------+
+| **resized image** | ``[img=<width>]{path}[/img]``              | Insert image at resource {path} using <width> (keeps ratio). |
++-------------------+--------------------------------------------+--------------------------------------------------------------+
+| **resized image** | ``[img=<width>x<height>]{path}[/img]``     | Insert image at resource {path} using <width> & <height>.    |
++-------------------+--------------------------------------------+--------------------------------------------------------------+
 | **font**          | ``[font=<path>]{text}[/font]``             | Use custom font at <path> for {text}.                        |
 +-------------------+--------------------------------------------+--------------------------------------------------------------+
 | **color**         | ``[color=<code/name>]{text}[/color]``      | Change {text} color; use name or # format, such as #ff00ff.  |
@@ -107,6 +111,15 @@ For opaque RGB colors, any valid 6-digit hexadecimal code is supported, e.g. ``[
 
 For transparent RGB colors, any 8-digit hexadecimal code can be used, e.g. ``[color=#88ffffff]translucent white[/color]``.
 In this case, note that the alpha channel is the **first** component of the color code, not the last one.
+
+Image vertical offset
+~~~~~~~~~~~~~~~~~~~~~
+
+You use a custom font for your image in order to align it vertically.
+
+1. Create a ``BitmapFont`` resource
+2. Set this bitmap font with a positive value for the ``ascent`` property, that's your height offset
+3. Set the BBCode tag this way: ``[font=<font-path>][img]{image-path}[/img][/font]``
 
 Animation effects
 -----------------
