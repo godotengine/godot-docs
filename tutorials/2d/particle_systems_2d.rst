@@ -17,17 +17,19 @@ organic look is the "randomness" associated with each parameter. In
 essence, creating a particle system means setting base physics
 parameters and then adding randomness to them.
 
-Particle Nodes
+Particle nodes
 ~~~~~~~~~~~~~~
 
-Godot uses two nodes for 2D particles,
-:ref:`Particles2D <class_Particles2D>` and :ref:`CPUParticles2D <class_CPUParticles2D>`.
-CPUParticles2D is less advanced than Particles2D, and you need to use it if you're
-using the GLES2 renderer. It has the ParticlesMaterial options in the node itself (with
-the exception of the trail settings), but unlike Particles2D you cannot use a shader as a
-process material. If you want to you can convert a Particles2D node into a CPUParticles2D
-node. To do this click on the node in the inspector, a particles button should appear in
-the toolbar, click on it and select "Convert to CPUParticles2D."
+Godot provides two different nodes for 2D particles, :ref:`class_Particles2D` and
+:ref:`class_CPUParticles2D`.
+Particles2D is more advanced and uses the GPU to process particle effects, but that limits
+it to higher end graphics API, and in our case to the GLES3 renderer. For projects using
+the GLES2 backend, CPUParticles2D is a CPU-driven option with near feature parity with
+Particles2D, but lesser performance. While Particles2D is configured via a
+:ref:`class_ParticlesMaterial` (and optionally with a custom shader), the matching options
+are provided via node properties in CPUParticles2D (with the exception of the trail settings).
+You can convert a Particles2D node into a CPUParticles2D node by clicking on the node in the
+inspector, and selecting "Convert to CPUParticles2D" in the "Particles" menu of the toolbar.
 
 .. image:: img/particles_convert.png
 
