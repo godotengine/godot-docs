@@ -47,6 +47,8 @@ Property Descriptions
 | *Getter*  | get_buffer_length()      |
 +-----------+--------------------------+
 
+----
+
 .. _class_AudioStreamGenerator_property_mix_rate:
 
 - :ref:`float<class_float>` **mix_rate**

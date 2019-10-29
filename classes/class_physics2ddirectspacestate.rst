@@ -58,11 +58,15 @@ Checks how far the shape can travel toward a point. If the shape can not move, t
 
 **Note:** Both the shape and the motion are supplied through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object. The method will return an array with two floats between 0 and 1, both representing a fraction of ``motion``. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be ``[1, 1]``.
 
+----
+
 .. _class_Physics2DDirectSpaceState_method_collide_shape:
 
 - :ref:`Array<class_Array>` **collide_shape** **(** :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**
 
 Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object, against the space. The resulting array contains a list of points where the shape intersects another. Like with :ref:`intersect_shape<class_Physics2DDirectSpaceState_method_intersect_shape>`, the number of returned results can be limited to save processing time.
+
+----
 
 .. _class_Physics2DDirectSpaceState_method_get_rest_info:
 
@@ -86,6 +90,8 @@ Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryPa
 
 ``shape``: The shape index of the colliding shape.
 
+----
+
 .. _class_Physics2DDirectSpaceState_method_intersect_point:
 
 - :ref:`Array<class_Array>` **intersect_point** **(** :ref:`Vector2<class_Vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_Array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647, :ref:`bool<class_bool>` collide_with_bodies=true, :ref:`bool<class_bool>` collide_with_areas=false **)**
@@ -104,9 +110,13 @@ Checks whether a point is inside any shape. The shapes the point is inside of ar
 
 Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<class_RID>`\ s that are to be excluded from collisions, a ``collision_mask`` bitmask representing the physics layers to check in, or booleans to determine if the ray should collide with :ref:`PhysicsBody<class_PhysicsBody>`\ s or :ref:`Area<class_Area>`\ s, respectively.
 
+----
+
 .. _class_Physics2DDirectSpaceState_method_intersect_point_on_canvas:
 
 - :ref:`Array<class_Array>` **intersect_point_on_canvas** **(** :ref:`Vector2<class_Vector2>` point, :ref:`int<class_int>` canvas_instance_id, :ref:`int<class_int>` max_results=32, :ref:`Array<class_Array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647, :ref:`bool<class_bool>` collide_with_bodies=true, :ref:`bool<class_bool>` collide_with_areas=false **)**
+
+----
 
 .. _class_Physics2DDirectSpaceState_method_intersect_ray:
 
@@ -131,6 +141,8 @@ Intersects a ray in a given space. The returned object is a dictionary with the 
 If the ray did not intersect anything, then an empty dictionary is returned instead.
 
 Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<class_RID>`\ s that are to be excluded from collisions, a ``collision_mask`` bitmask representing the physics layers to check in, or booleans to determine if the ray should collide with :ref:`PhysicsBody<class_PhysicsBody>`\ s or :ref:`Area<class_Area>`\ s, respectively.
+
+----
 
 .. _class_Physics2DDirectSpaceState_method_intersect_shape:
 

@@ -57,17 +57,23 @@ Signals
 
 Emitted when a client requests a clean close. You should keep polling until you get a :ref:`client_disconnected<class_WebSocketServer_signal_client_disconnected>` signal with the same ``id`` to achieve the clean close. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more details.
 
+----
+
 .. _class_WebSocketServer_signal_client_connected:
 
 - **client_connected** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` protocol **)**
 
 Emitted when a new client connects. "protocol" will be the sub-protocol agreed with the client.
 
+----
+
 .. _class_WebSocketServer_signal_client_disconnected:
 
 - **client_disconnected** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` was_clean_close **)**
 
 Emitted when a client disconnects. ``was_clean_close`` will be ``true`` if the connection was shutdown cleanly.
+
+----
 
 .. _class_WebSocketServer_signal_data_received:
 
@@ -101,6 +107,8 @@ Property Descriptions
 
 When using SSL (see :ref:`private_key<class_WebSocketServer_property_private_key>` and :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`), you can set this to a valid :ref:`X509Certificate<class_X509Certificate>` to be provided as additional CA chain information during the SSL handshake.
 
+----
+
 .. _class_WebSocketServer_property_private_key:
 
 - :ref:`CryptoKey<class_CryptoKey>` **private_key**
@@ -112,6 +120,8 @@ When using SSL (see :ref:`private_key<class_WebSocketServer_property_private_key
 +----------+------------------------+
 
 When set to a valid :ref:`CryptoKey<class_CryptoKey>` (along with :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`) will cause the server to require SSL instead of regular TCP (i.e. the ``wss://`` protocol).
+
+----
 
 .. _class_WebSocketServer_property_ssl_certificate:
 
@@ -134,11 +144,15 @@ Method Descriptions
 
 Disconnects the peer identified by ``id`` from the server. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more information.
 
+----
+
 .. _class_WebSocketServer_method_get_peer_address:
 
 - :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** const
 
 Returns the IP address of the given peer.
+
+----
 
 .. _class_WebSocketServer_method_get_peer_port:
 
@@ -146,17 +160,23 @@ Returns the IP address of the given peer.
 
 Returns the remote port of the given peer.
 
+----
+
 .. _class_WebSocketServer_method_has_peer:
 
 - :ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` id **)** const
 
 Returns ``true`` if a peer with the given ID is connected.
 
+----
+
 .. _class_WebSocketServer_method_is_listening:
 
 - :ref:`bool<class_bool>` **is_listening** **(** **)** const
 
 Returns ``true`` if the server is actively listening on a port.
+
+----
 
 .. _class_WebSocketServer_method_listen:
 
@@ -169,6 +189,8 @@ You can specify the desired subprotocols via the "protocols" array. If the list 
 If ``true`` is passed as ``gd_mp_api``, the server will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections from non-Godot clients will not work, and :ref:`data_received<class_WebSocketServer_signal_data_received>` will not be emitted.
 
 If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.), on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(id)`` to communicate with the peer with given ``id`` (e.g. ``get_peer(id).get_available_packet_count``).
+
+----
 
 .. _class_WebSocketServer_method_stop:
 

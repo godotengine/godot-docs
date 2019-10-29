@@ -58,6 +58,8 @@ Property Descriptions
 
 The drag event index in the case of a multi-drag event.
 
+----
+
 .. _class_InputEventScreenDrag_property_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
@@ -72,6 +74,8 @@ The drag event index in the case of a multi-drag event.
 
 The drag position.
 
+----
+
 .. _class_InputEventScreenDrag_property_relative:
 
 - :ref:`Vector2<class_Vector2>` **relative**
@@ -85,6 +89,8 @@ The drag position.
 +-----------+---------------------+
 
 The drag position relative to its start position.
+
+----
 
 .. _class_InputEventScreenDrag_property_speed:
 

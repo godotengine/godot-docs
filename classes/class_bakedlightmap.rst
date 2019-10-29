@@ -73,6 +73,8 @@ enum **BakeQuality**:
 
 - **BAKE_QUALITY_HIGH** = **2** --- The highest bake quality mode. Takes longer to calculate.
 
+----
+
 .. _enum_BakedLightmap_BakeMode:
 
 .. _class_BakedLightmap_constant_BAKE_MODE_CONE_TRACE:
@@ -84,6 +86,8 @@ enum **BakeMode**:
 - **BAKE_MODE_CONE_TRACE** = **0** --- Less precise but faster bake mode.
 
 - **BAKE_MODE_RAY_TRACE** = **1** --- More precise bake mode but can take considerably longer to bake.
+
+----
 
 .. _enum_BakedLightmap_BakeError:
 
@@ -136,6 +140,8 @@ Property Descriptions
 
 Grid subdivision size for lightmapper calculation. The default value will work for most cases. Increase for better lighting on small details or if your scene is very large.
 
+----
+
 .. _class_BakedLightmap_property_bake_default_texels_per_unit:
 
 - :ref:`float<class_float>` **bake_default_texels_per_unit**
@@ -149,6 +155,8 @@ Grid subdivision size for lightmapper calculation. The default value will work f
 +-----------+-----------------------------------------+
 
 If a :ref:`Mesh.lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` isn't specified, the lightmap baker will dynamically set the lightmap size using this value. This value is measured in texels per world unit. The maximum lightmap texture size is 4096x4096.
+
+----
 
 .. _class_BakedLightmap_property_bake_energy:
 
@@ -164,6 +172,8 @@ If a :ref:`Mesh.lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` isn'
 
 Multiplies the light sources' intensity by this value. For instance, if the value is set to 2, lights will be twice as bright. If the value is set to 0.5, lights will be half as bright.
 
+----
+
 .. _class_BakedLightmap_property_bake_extents:
 
 - :ref:`Vector3<class_Vector3>` **bake_extents**
@@ -177,6 +187,8 @@ Multiplies the light sources' intensity by this value. For instance, if the valu
 +-----------+-----------------------+
 
 The size of the affected area.
+
+----
 
 .. _class_BakedLightmap_property_bake_hdr:
 
@@ -192,6 +204,8 @@ The size of the affected area.
 
 If ``true``, the lightmap can capture light values greater than ``1.0``. Turning this off will result in a smaller file size.
 
+----
+
 .. _class_BakedLightmap_property_bake_mode:
 
 - :ref:`BakeMode<enum_BakedLightmap_BakeMode>` **bake_mode**
@@ -205,6 +219,8 @@ If ``true``, the lightmap can capture light values greater than ``1.0``. Turning
 +-----------+----------------------+
 
 Lightmapping mode. See :ref:`BakeMode<enum_BakedLightmap_BakeMode>`.
+
+----
 
 .. _class_BakedLightmap_property_bake_propagation:
 
@@ -220,6 +236,8 @@ Lightmapping mode. See :ref:`BakeMode<enum_BakedLightmap_BakeMode>`.
 
 Defines how far the light will travel before it is no longer effective. The higher the number, the farther the light will travel. For instance, if the value is set to 2, the light will go twice as far. If the value is set to 0.5, the light will only go half as far.
 
+----
+
 .. _class_BakedLightmap_property_bake_quality:
 
 - :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **bake_quality**
@@ -233,6 +251,8 @@ Defines how far the light will travel before it is no longer effective. The high
 +-----------+-------------------------+
 
 Three quality modes are available. Higher quality requires more rendering time. See :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>`.
+
+----
 
 .. _class_BakedLightmap_property_capture_cell_size:
 
@@ -248,6 +268,8 @@ Three quality modes are available. Higher quality requires more rendering time. 
 
 Grid size used for real-time capture information on dynamic objects. Cannot be larger than :ref:`bake_cell_size<class_BakedLightmap_property_bake_cell_size>`.
 
+----
+
 .. _class_BakedLightmap_property_image_path:
 
 - :ref:`String<class_String>` **image_path**
@@ -261,6 +283,8 @@ Grid size used for real-time capture information on dynamic objects. Cannot be l
 +-----------+-----------------------+
 
 The location where lightmaps will be saved.
+
+----
 
 .. _class_BakedLightmap_property_light_data:
 
@@ -282,6 +306,8 @@ Method Descriptions
 - :ref:`BakeError<enum_BakedLightmap_BakeError>` **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
 Bakes the lightmaps within the currently edited scene.
+
+----
 
 .. _class_BakedLightmap_method_debug_bake:
 

@@ -69,6 +69,8 @@ Property Descriptions
 
 The distance between the display and the lenses inside of the device in centimeters.
 
+----
+
 .. _class_MobileVRInterface_property_display_width:
 
 - :ref:`float<class_float>` **display_width**
@@ -82,6 +84,8 @@ The distance between the display and the lenses inside of the device in centimet
 +-----------+--------------------------+
 
 The width of the display in centimeters.
+
+----
 
 .. _class_MobileVRInterface_property_eye_height:
 
@@ -97,6 +101,8 @@ The width of the display in centimeters.
 
 The height at which the camera is placed in relation to the ground (i.e. :ref:`ARVROrigin<class_ARVROrigin>` node).
 
+----
+
 .. _class_MobileVRInterface_property_iod:
 
 - :ref:`float<class_float>` **iod**
@@ -110,6 +116,8 @@ The height at which the camera is placed in relation to the ground (i.e. :ref:`A
 +-----------+----------------+
 
 The interocular distance, also known as the interpupillary distance. The distance between the pupils of the left and right eye.
+
+----
 
 .. _class_MobileVRInterface_property_k1:
 
@@ -125,6 +133,8 @@ The interocular distance, also known as the interpupillary distance. The distanc
 
 The k1 lens factor is one of the two constants that define the strength of the lens used and directly influences the lens distortion effect.
 
+----
+
 .. _class_MobileVRInterface_property_k2:
 
 - :ref:`float<class_float>` **k2**
@@ -138,6 +148,8 @@ The k1 lens factor is one of the two constants that define the strength of the l
 +-----------+---------------+
 
 The k2 lens factor, see k1.
+
+----
 
 .. _class_MobileVRInterface_property_oversample:
 

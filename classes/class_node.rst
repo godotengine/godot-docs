@@ -207,6 +207,8 @@ Methods
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_scene_instance_load_placeholder<class_Node_method_set_scene_instance_load_placeholder>` **(** :ref:`bool<class_bool>` load_placeholder **)**                                              |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`update_configuration_warning<class_Node_method_update_configuration_warning>` **(** **)**                                                                                                     |
++-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -217,11 +219,15 @@ Signals
 
 Emitted when the node is ready.
 
+----
+
 .. _class_Node_signal_renamed:
 
 - **renamed** **(** **)**
 
 Emitted when the node is renamed.
+
+----
 
 .. _class_Node_signal_tree_entered:
 
@@ -229,11 +235,15 @@ Emitted when the node is renamed.
 
 Emitted when the node enters the tree.
 
+----
+
 .. _class_Node_signal_tree_exited:
 
 - **tree_exited** **(** **)**
 
 Emitted after the node exits the tree and is no longer active.
+
+----
 
 .. _class_Node_signal_tree_exiting:
 
@@ -259,6 +269,8 @@ enum **PauseMode**:
 - **PAUSE_MODE_STOP** = **1** --- Stops processing when the :ref:`SceneTree<class_SceneTree>` is paused.
 
 - **PAUSE_MODE_PROCESS** = **2** --- Continue to process regardless of the :ref:`SceneTree<class_SceneTree>` pause state.
+
+----
 
 .. _enum_Node_DuplicateFlags:
 
@@ -476,6 +488,8 @@ Property Descriptions
 
 The override to the default :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Set to ``null`` to use the default :ref:`SceneTree<class_SceneTree>` one.
 
+----
+
 .. _class_Node_property_filename:
 
 - :ref:`String<class_String>` **filename**
@@ -488,6 +502,8 @@ The override to the default :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Set to 
 
 When a scene is instanced from a file, its topmost node contains the filename from which it was loaded.
 
+----
+
 .. _class_Node_property_multiplayer:
 
 - :ref:`MultiplayerAPI<class_MultiplayerAPI>` **multiplayer**
@@ -497,6 +513,8 @@ When a scene is instanced from a file, its topmost node contains the filename fr
 +----------+-------------------+
 
 The :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance associated with this node. Either the :ref:`custom_multiplayer<class_Node_property_custom_multiplayer>`, or the default SceneTree one (if inside tree).
+
+----
 
 .. _class_Node_property_name:
 
@@ -510,6 +528,8 @@ The :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance associated with this no
 
 The name of the node. This name is unique among the siblings (other child nodes from the same parent). When set to an existing name, the node will be automatically renamed.
 
+----
+
 .. _class_Node_property_owner:
 
 - :ref:`Node<class_Node>` **owner**
@@ -521,6 +541,8 @@ The name of the node. This name is unique among the siblings (other child nodes 
 +----------+------------------+
 
 The node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc. ascending in the tree). When saving a node (using :ref:`PackedScene<class_PackedScene>`), all the nodes it owns will be saved with it. This allows for the creation of complex :ref:`SceneTree<class_SceneTree>`\ s, with instancing and subinstancing.
+
+----
 
 .. _class_Node_property_pause_mode:
 
@@ -547,6 +569,8 @@ Called when the node enters the :ref:`SceneTree<class_SceneTree>` (e.g. upon ins
 
 Corresponds to the :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
+----
+
 .. _class_Node_method__exit_tree:
 
 - void **_exit_tree** **(** **)** virtual
@@ -555,13 +579,19 @@ Called when the node is about to leave the :ref:`SceneTree<class_SceneTree>` (e.
 
 Corresponds to the :ref:`NOTIFICATION_EXIT_TREE<class_Node_constant_NOTIFICATION_EXIT_TREE>` notification in :ref:`Object._notification<class_Object_method__notification>` and signal :ref:`tree_exiting<class_Node_signal_tree_exiting>`. To get notified when the node has already left the active tree, connect to the :ref:`tree_exited<class_Node_signal_tree_exited>`
 
+----
+
 .. _class_Node_method__get_configuration_warning:
 
 - :ref:`String<class_String>` **_get_configuration_warning** **(** **)** virtual
 
-The string returned from this method is displayed as a warning in the "Scene Dock" if the script that overrides it is a ``tool`` script.
+The string returned from this method is displayed as a warning in the Scene Dock if the script that overrides it is a ``tool`` script.
 
 Returning an empty string produces no warning.
+
+Call :ref:`update_configuration_warning<class_Node_method_update_configuration_warning>` when the warning needs to be updated for this node.
+
+----
 
 .. _class_Node_method__input:
 
@@ -575,6 +605,8 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 
 For gameplay input, :ref:`_unhandled_input<class_Node_method__unhandled_input>` and :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` are usually a better fit as they allow the GUI to intercept the events first.
 
+----
+
 .. _class_Node_method__physics_process:
 
 - void **_physics_process** **(** :ref:`float<class_float>` delta **)** virtual
@@ -585,6 +617,8 @@ It is only called if physics processing is enabled, which is done automatically 
 
 Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
+----
+
 .. _class_Node_method__process:
 
 - void **_process** **(** :ref:`float<class_float>` delta **)** virtual
@@ -594,6 +628,8 @@ Called during the processing step of the main loop. Processing happens at every 
 It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process<class_Node_method_set_process>`.
 
 Corresponds to the :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` notification in :ref:`Object._notification<class_Object_method__notification>`.
+
+----
 
 .. _class_Node_method__ready:
 
@@ -607,6 +643,8 @@ Usually used for initialization. For even earlier initialization, :ref:`Object._
 
 **Note:** :ref:`_ready<class_Node_method__ready>` may be called only once for each node. After removing a node from the scene tree and adding again, ``_ready`` will not be called for the second time. This can be bypassed with requesting another call with :ref:`request_ready<class_Node_method_request_ready>`, which may be called anywhere before adding the node again.
 
+----
+
 .. _class_Node_method__unhandled_input:
 
 - void **_unhandled_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
@@ -619,6 +657,8 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 
 For gameplay input, this and :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` are usually a better fit than :ref:`_input<class_Node_method__input>` as they allow the GUI to intercept the events first.
 
+----
+
 .. _class_Node_method__unhandled_key_input:
 
 - void **_unhandled_key_input** **(** :ref:`InputEventKey<class_InputEventKey>` event **)** virtual
@@ -630,6 +670,8 @@ It is only called if unhandled key input processing is enabled, which is done au
 To consume the input event and stop it propagating further to other nodes, :ref:`SceneTree.set_input_as_handled<class_SceneTree_method_set_input_as_handled>` can be called.
 
 For gameplay input, this and :ref:`_unhandled_input<class_Node_method__unhandled_input>` are usually a better fit than :ref:`_input<class_Node_method__input>` as they allow the GUI to intercept the events first.
+
+----
 
 .. _class_Node_method_add_child:
 
@@ -647,6 +689,8 @@ If ``legible_unique_name`` is ``true``, the child node will have an human-readab
         child_node.get_parent().remove_child(child_node)
     add_child(child_node)
 
+----
+
 .. _class_Node_method_add_child_below_node:
 
 - void **add_child_below_node** **(** :ref:`Node<class_Node>` node, :ref:`Node<class_Node>` child_node, :ref:`bool<class_bool>` legible_unique_name=false **)**
@@ -654,6 +698,8 @@ If ``legible_unique_name`` is ``true``, the child node will have an human-readab
 Adds a child node. The child is placed below the given node in the list of children.
 
 If ``legible_unique_name`` is ``true``, the child node will have an human-readable name based on the name of the node being instanced instead of its type.
+
+----
 
 .. _class_Node_method_add_to_group:
 
@@ -663,11 +709,15 @@ Adds the node to a group. Groups are helpers to name and organize a subset of no
 
 The ``persistent`` option is used when packing node to :ref:`PackedScene<class_PackedScene>` and saving to file. Non-persistent groups aren't stored.
 
+----
+
 .. _class_Node_method_can_process:
 
 - :ref:`bool<class_bool>` **can_process** **(** **)** const
 
 Returns ``true`` if the node can process while the scene tree is paused (see :ref:`pause_mode<class_Node_property_pause_mode>`). Always returns ``true`` if the scene tree is not paused, and ``false`` if the node is not in the tree.
+
+----
 
 .. _class_Node_method_duplicate:
 
@@ -679,6 +729,8 @@ You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enu
 
 **Note:** It will not work properly if the node contains a script with constructor arguments (i.e. needs to supply arguments to :ref:`Object._init<class_Object_method__init>` method). In that case, the node will be duplicated without a script.
 
+----
+
 .. _class_Node_method_find_node:
 
 - :ref:`Node<class_Node>` **find_node** **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** const
@@ -689,6 +741,8 @@ Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.m
 
 If ``owned`` is ``true``, this method only finds nodes whose owner is this node. This is especially important for scenes instantiated through a script, because those scenes don't have an owner.
 
+----
+
 .. _class_Node_method_find_parent:
 
 - :ref:`Node<class_Node>` **find_parent** **(** :ref:`String<class_String>` mask **)** const
@@ -696,6 +750,8 @@ If ``owned`` is ``true``, this method only finds nodes whose owner is this node.
 Finds the first parent of the current node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``).
 
 **Note:** It does not match against the full path, just against individual node names.
+
+----
 
 .. _class_Node_method_get_child:
 
@@ -705,11 +761,15 @@ Returns a child node by its index (see :ref:`get_child_count<class_Node_method_g
 
 To access a child node via its name, use :ref:`get_node<class_Node_method_get_node>`.
 
+----
+
 .. _class_Node_method_get_child_count:
 
 - :ref:`int<class_int>` **get_child_count** **(** **)** const
 
 Returns the number of child nodes.
+
+----
 
 .. _class_Node_method_get_children:
 
@@ -717,11 +777,15 @@ Returns the number of child nodes.
 
 Returns an array of references to node's children.
 
+----
+
 .. _class_Node_method_get_groups:
 
 - :ref:`Array<class_Array>` **get_groups** **(** **)** const
 
 Returns an array listing the groups that the node is a member of.
+
+----
 
 .. _class_Node_method_get_index:
 
@@ -729,11 +793,15 @@ Returns an array listing the groups that the node is a member of.
 
 Returns the node's index, i.e. its position among the siblings of its parent.
 
+----
+
 .. _class_Node_method_get_network_master:
 
 - :ref:`int<class_int>` **get_network_master** **(** **)** const
 
 Returns the peer ID of the network master for this node. See :ref:`set_network_master<class_Node_method_set_network_master>`.
+
+----
 
 .. _class_Node_method_get_node:
 
@@ -765,6 +833,8 @@ Possible paths are:
     get_node("../Swamp/Alligator")
     get_node("/root/MyGame")
 
+----
+
 .. _class_Node_method_get_node_and_resource:
 
 - :ref:`Array<class_Array>` **get_node_and_resource** **(** :ref:`NodePath<class_NodePath>` path **)**
@@ -781,11 +851,15 @@ For example, assuming that ``Area2D/CollisionShape2D`` is a valid node and that 
     print(get_node_and_resource("Area2D/CollisionShape2D:shape")) # [[CollisionShape2D:1161], [RectangleShape2D:1156], ]
     print(get_node_and_resource("Area2D/CollisionShape2D:shape:extents")) # [[CollisionShape2D:1161], [RectangleShape2D:1156], :extents]
 
+----
+
 .. _class_Node_method_get_node_or_null:
 
 - :ref:`Node<class_Node>` **get_node_or_null** **(** :ref:`NodePath<class_NodePath>` path **)** const
 
 Similar to :ref:`get_node<class_Node_method_get_node>`, but does not raise an error if ``path`` does not point to a valid ``Node``.
+
+----
 
 .. _class_Node_method_get_parent:
 
@@ -793,11 +867,15 @@ Similar to :ref:`get_node<class_Node_method_get_node>`, but does not raise an er
 
 Returns the parent node of the current node, or an empty ``Node`` if the node lacks a parent.
 
+----
+
 .. _class_Node_method_get_path:
 
 - :ref:`NodePath<class_NodePath>` **get_path** **(** **)** const
 
 Returns the absolute path of the current node. This only works if the current node is inside the scene tree (see :ref:`is_inside_tree<class_Node_method_is_inside_tree>`).
+
+----
 
 .. _class_Node_method_get_path_to:
 
@@ -805,11 +883,15 @@ Returns the absolute path of the current node. This only works if the current no
 
 Returns the relative :ref:`NodePath<class_NodePath>` from this node to the specified ``node``. Both nodes must be in the same scene or the function will fail.
 
+----
+
 .. _class_Node_method_get_physics_process_delta_time:
 
 - :ref:`float<class_float>` **get_physics_process_delta_time** **(** **)** const
 
 Returns the time elapsed since the last physics-bound frame (see :ref:`_physics_process<class_Node_method__physics_process>`). This is always a constant value in physics processing unless the frames per second is changed via :ref:`Engine.target_fps<class_Engine_property_target_fps>`.
+
+----
 
 .. _class_Node_method_get_position_in_parent:
 
@@ -817,11 +899,15 @@ Returns the time elapsed since the last physics-bound frame (see :ref:`_physics_
 
 Returns the node's order in the scene tree branch. For example, if called on the first child node the position is ``0``.
 
+----
+
 .. _class_Node_method_get_process_delta_time:
 
 - :ref:`float<class_float>` **get_process_delta_time** **(** **)** const
 
 Returns the time elapsed (in seconds) since the last process callback. This value may vary from frame to frame.
+
+----
 
 .. _class_Node_method_get_scene_instance_load_placeholder:
 
@@ -829,11 +915,15 @@ Returns the time elapsed (in seconds) since the last process callback. This valu
 
 Returns ``true`` if this is an instance load placeholder. See :ref:`InstancePlaceholder<class_InstancePlaceholder>`.
 
+----
+
 .. _class_Node_method_get_tree:
 
 - :ref:`SceneTree<class_SceneTree>` **get_tree** **(** **)** const
 
 Returns the :ref:`SceneTree<class_SceneTree>` that contains this node.
+
+----
 
 .. _class_Node_method_get_viewport:
 
@@ -841,11 +931,15 @@ Returns the :ref:`SceneTree<class_SceneTree>` that contains this node.
 
 Returns the node's :ref:`Viewport<class_Viewport>`.
 
+----
+
 .. _class_Node_method_has_node:
 
 - :ref:`bool<class_bool>` **has_node** **(** :ref:`NodePath<class_NodePath>` path **)** const
 
 Returns ``true`` if the node that the :ref:`NodePath<class_NodePath>` points to exists.
+
+----
 
 .. _class_Node_method_has_node_and_resource:
 
@@ -853,11 +947,15 @@ Returns ``true`` if the node that the :ref:`NodePath<class_NodePath>` points to 
 
 Returns ``true`` if the :ref:`NodePath<class_NodePath>` points to a valid node and its subname points to a valid resource, e.g. ``Area2D/CollisionShape2D:shape``. Properties with a non-:ref:`Resource<class_Resource>` type (e.g. nodes or primitive math types) are not considered resources.
 
+----
+
 .. _class_Node_method_is_a_parent_of:
 
 - :ref:`bool<class_bool>` **is_a_parent_of** **(** :ref:`Node<class_Node>` node **)** const
 
 Returns ``true`` if the given node is a direct or indirect child of the current node.
+
+----
 
 .. _class_Node_method_is_displayed_folded:
 
@@ -865,11 +963,15 @@ Returns ``true`` if the given node is a direct or indirect child of the current 
 
 Returns ``true`` if the node is folded (collapsed) in the Scene dock.
 
+----
+
 .. _class_Node_method_is_greater_than:
 
 - :ref:`bool<class_bool>` **is_greater_than** **(** :ref:`Node<class_Node>` node **)** const
 
 Returns ``true`` if the given node occurs later in the scene hierarchy than the current node.
+
+----
 
 .. _class_Node_method_is_in_group:
 
@@ -877,11 +979,15 @@ Returns ``true`` if the given node occurs later in the scene hierarchy than the 
 
 Returns ``true`` if this node is in the specified group. See notes in the description, and the group methods in :ref:`SceneTree<class_SceneTree>`.
 
+----
+
 .. _class_Node_method_is_inside_tree:
 
 - :ref:`bool<class_bool>` **is_inside_tree** **(** **)** const
 
 Returns ``true`` if this node is currently inside a :ref:`SceneTree<class_SceneTree>`.
+
+----
 
 .. _class_Node_method_is_network_master:
 
@@ -889,11 +995,15 @@ Returns ``true`` if this node is currently inside a :ref:`SceneTree<class_SceneT
 
 Returns ``true`` if the local system is the master of this node.
 
+----
+
 .. _class_Node_method_is_physics_processing:
 
 - :ref:`bool<class_bool>` **is_physics_processing** **(** **)** const
 
 Returns ``true`` if physics processing is enabled (see :ref:`set_physics_process<class_Node_method_set_physics_process>`).
+
+----
 
 .. _class_Node_method_is_physics_processing_internal:
 
@@ -901,11 +1011,15 @@ Returns ``true`` if physics processing is enabled (see :ref:`set_physics_process
 
 Returns ``true`` if internal physics processing is enabled (see :ref:`set_physics_process_internal<class_Node_method_set_physics_process_internal>`).
 
+----
+
 .. _class_Node_method_is_processing:
 
 - :ref:`bool<class_bool>` **is_processing** **(** **)** const
 
 Returns ``true`` if processing is enabled (see :ref:`set_process<class_Node_method_set_process>`).
+
+----
 
 .. _class_Node_method_is_processing_input:
 
@@ -913,11 +1027,15 @@ Returns ``true`` if processing is enabled (see :ref:`set_process<class_Node_meth
 
 Returns ``true`` if the node is processing input (see :ref:`set_process_input<class_Node_method_set_process_input>`).
 
+----
+
 .. _class_Node_method_is_processing_internal:
 
 - :ref:`bool<class_bool>` **is_processing_internal** **(** **)** const
 
 Returns ``true`` if internal processing is enabled (see :ref:`set_process_internal<class_Node_method_set_process_internal>`).
+
+----
 
 .. _class_Node_method_is_processing_unhandled_input:
 
@@ -925,11 +1043,15 @@ Returns ``true`` if internal processing is enabled (see :ref:`set_process_intern
 
 Returns ``true`` if the node is processing unhandled input (see :ref:`set_process_unhandled_input<class_Node_method_set_process_unhandled_input>`).
 
+----
+
 .. _class_Node_method_is_processing_unhandled_key_input:
 
 - :ref:`bool<class_bool>` **is_processing_unhandled_key_input** **(** **)** const
 
 Returns ``true`` if the node is processing unhandled key input (see :ref:`set_process_unhandled_key_input<class_Node_method_set_process_unhandled_key_input>`).
+
+----
 
 .. _class_Node_method_move_child:
 
@@ -937,11 +1059,15 @@ Returns ``true`` if the node is processing unhandled key input (see :ref:`set_pr
 
 Moves a child node to a different position (order) among the other children. Since calls, signals, etc are performed by tree order, changing the order of children nodes may be useful.
 
+----
+
 .. _class_Node_method_print_stray_nodes:
 
 - void **print_stray_nodes** **(** **)**
 
 Prints all stray nodes (nodes outside the :ref:`SceneTree<class_SceneTree>`). Used for debugging. Works only in debug builds.
+
+----
 
 .. _class_Node_method_print_tree:
 
@@ -960,6 +1086,8 @@ Prints the tree to stdout. Used mainly for debugging purposes. This version disp
     TheGame/SplashScreen
     TheGame/SplashScreen/Camera2D
 
+----
+
 .. _class_Node_method_print_tree_pretty:
 
 - void **print_tree_pretty** **(** **)**
@@ -977,11 +1105,15 @@ Similar to :ref:`print_tree<class_Node_method_print_tree>`, this prints the tree
         ┖-SplashScreen
            ┖╴Camera2D
 
+----
+
 .. _class_Node_method_propagate_call:
 
 - void **propagate_call** **(** :ref:`String<class_String>` method, :ref:`Array<class_Array>` args=[  ], :ref:`bool<class_bool>` parent_first=false **)**
 
 Calls the given method (if present) with the arguments given in ``args`` on this node and recursively on all its children. If the ``parent_first`` argument is ``true``, the method will be called on the current node first, then on all its children. If ``parent_first`` is ``false``, the children will be called first.
+
+----
 
 .. _class_Node_method_propagate_notification:
 
@@ -989,11 +1121,15 @@ Calls the given method (if present) with the arguments given in ``args`` on this
 
 Notifies the current node and all its children recursively by calling :ref:`Object.notification<class_Object_method_notification>` on all of them.
 
+----
+
 .. _class_Node_method_queue_free:
 
 - void **queue_free** **(** **)**
 
 Queues a node for deletion at the end of the current frame. When deleted, all of its child nodes will be deleted as well. This method ensures it's safe to delete the node, contrary to :ref:`Object.free<class_Object_method_free>`. Use :ref:`Object.is_queued_for_deletion<class_Object_method_is_queued_for_deletion>` to check whether a node will be deleted at the end of the frame.
+
+----
 
 .. _class_Node_method_raise:
 
@@ -1001,11 +1137,15 @@ Queues a node for deletion at the end of the current frame. When deleted, all of
 
 Moves this node to the bottom of parent node's children hierarchy. This is often useful in GUIs (:ref:`Control<class_Control>` nodes), because their order of drawing depends on their order in the tree, i.e. the further they are on the node list, the higher they are drawn. After using ``raise``, a Control will be drawn on top of their siblings.
 
+----
+
 .. _class_Node_method_remove_and_skip:
 
 - void **remove_and_skip** **(** **)**
 
 Removes a node and sets all its children as children of the parent node (if it exists). All event subscriptions that pass by the removed node will be unsubscribed.
+
+----
 
 .. _class_Node_method_remove_child:
 
@@ -1013,11 +1153,15 @@ Removes a node and sets all its children as children of the parent node (if it e
 
 Removes a child node. The node is NOT deleted and must be deleted manually.
 
+----
+
 .. _class_Node_method_remove_from_group:
 
 - void **remove_from_group** **(** :ref:`String<class_String>` group **)**
 
 Removes a node from a group. See notes in the description, and the group methods in :ref:`SceneTree<class_SceneTree>`.
+
+----
 
 .. _class_Node_method_replace_by:
 
@@ -1025,11 +1169,15 @@ Removes a node from a group. See notes in the description, and the group methods
 
 Replaces a node in a scene by the given one. Subscriptions that pass through this node will be lost.
 
+----
+
 .. _class_Node_method_request_ready:
 
 - void **request_ready** **(** **)**
 
 Requests that ``_ready`` be called again. Note that the method won't be called immediately, but is scheduled for when the node is added to the scene tree again (see :ref:`_ready<class_Node_method__ready>`). ``_ready`` is called only for the node which requested it, which means that you need to request ready for each child if you want them to call ``_ready`` too (in which case, ``_ready`` will be called in the same order as it would normally).
+
+----
 
 .. _class_Node_method_rpc:
 
@@ -1039,11 +1187,15 @@ Sends a remote procedure call request for the given ``method`` to peers on the n
 
 **Note:** You can only safely use RPCs on clients after you received the ``connected_to_server`` signal from the :ref:`SceneTree<class_SceneTree>`. You also need to keep track of the connection state, either by the :ref:`SceneTree<class_SceneTree>` signals like ``server_disconnected`` or by checking ``SceneTree.network_peer.get_connection_status() == CONNECTION_CONNECTED``.
 
+----
+
 .. _class_Node_method_rpc_config:
 
 - void **rpc_config** **(** :ref:`String<class_String>` method, :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` mode **)**
 
 Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``master``, ``puppet``, ``remotesync``, ``mastersync``, ``puppetsync``). By default, methods are not exposed to networking (and RPCs). See also :ref:`rset<class_Node_method_rset>` and :ref:`rset_config<class_Node_method_rset_config>` for properties.
+
+----
 
 .. _class_Node_method_rpc_id:
 
@@ -1051,11 +1203,15 @@ Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`R
 
 Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Returns an empty :ref:`Variant<class_Variant>`.
 
+----
+
 .. _class_Node_method_rpc_unreliable:
 
 - :ref:`Variant<class_Variant>` **rpc_unreliable** **(** :ref:`String<class_String>` method, ... **)** vararg
 
 Sends a :ref:`rpc<class_Node_method_rpc>` using an unreliable protocol. Returns an empty :ref:`Variant<class_Variant>`.
+
+----
 
 .. _class_Node_method_rpc_unreliable_id:
 
@@ -1063,11 +1219,15 @@ Sends a :ref:`rpc<class_Node_method_rpc>` using an unreliable protocol. Returns 
 
 Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` using an unreliable protocol (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Returns an empty :ref:`Variant<class_Variant>`.
 
+----
+
 .. _class_Node_method_rset:
 
 - void **rset** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Remotely changes a property's value on other peers (and locally). Behaviour depends on the RPC configuration for the given property, see :ref:`rset_config<class_Node_method_rset_config>`. See also :ref:`rpc<class_Node_method_rpc>` for RPCs for methods, most information applies to this method as well.
+
+----
 
 .. _class_Node_method_rset_config:
 
@@ -1075,11 +1235,15 @@ Remotely changes a property's value on other peers (and locally). Behaviour depe
 
 Changes the RPC mode for the given ``property`` to the given ``mode``. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``master``, ``puppet``, ``remotesync``, ``mastersync``, ``puppetsync``). By default, properties are not exposed to networking (and RPCs). See also :ref:`rpc<class_Node_method_rpc>` and :ref:`rpc_config<class_Node_method_rpc_config>` for methods.
 
+----
+
 .. _class_Node_method_rset_id:
 
 - void **rset_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Remotely changes the property's value on a specific peer identified by ``peer_id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`).
+
+----
 
 .. _class_Node_method_rset_unreliable:
 
@@ -1087,11 +1251,15 @@ Remotely changes the property's value on a specific peer identified by ``peer_id
 
 Remotely changes the property's value on other peers (and locally) using an unreliable protocol.
 
+----
+
 .. _class_Node_method_rset_unreliable_id:
 
 - void **rset_unreliable_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Remotely changes property's value on a specific peer identified by ``peer_id`` using an unreliable protocol (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`).
+
+----
 
 .. _class_Node_method_set_display_folded:
 
@@ -1099,11 +1267,15 @@ Remotely changes property's value on a specific peer identified by ``peer_id`` u
 
 Sets the folded state of the node in the Scene dock.
 
+----
+
 .. _class_Node_method_set_network_master:
 
 - void **set_network_master** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true **)**
 
 Sets the node's network master to the peer with the given peer ID. The network master is the peer that has authority over the node on the network. Useful in conjunction with the ``master`` and ``puppet`` keywords. Inherited from the parent node by default, which ultimately defaults to peer ID 1 (the server). If ``recursive``, the given peer is recursively set as the master for all children of this node.
+
+----
 
 .. _class_Node_method_set_physics_process:
 
@@ -1111,11 +1283,15 @@ Sets the node's network master to the peer with the given peer ID. The network m
 
 Enables or disables physics (i.e. fixed framerate) processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` at a fixed (usually 60 FPS, see :ref:`Engine.target_fps<class_Engine_property_target_fps>` to change) interval (and the :ref:`_physics_process<class_Node_method__physics_process>` callback will be called if exists). Enabled automatically if :ref:`_physics_process<class_Node_method__physics_process>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
 
+----
+
 .. _class_Node_method_set_physics_process_internal:
 
 - void **set_physics_process_internal** **(** :ref:`bool<class_bool>` enable **)**
 
 Enables or disables internal physics for this node. Internal physics processing happens in isolation from the normal :ref:`_physics_process<class_Node_method__physics_process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or physics processing is disabled for scripting (:ref:`set_physics_process<class_Node_method_set_physics_process>`). Only useful for advanced uses to manipulate built-in nodes' behaviour.
+
+----
 
 .. _class_Node_method_set_process:
 
@@ -1123,11 +1299,15 @@ Enables or disables internal physics for this node. Internal physics processing 
 
 Enables or disables processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` on every drawn frame (and the :ref:`_process<class_Node_method__process>` callback will be called if exists). Enabled automatically if :ref:`_process<class_Node_method__process>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
 
+----
+
 .. _class_Node_method_set_process_input:
 
 - void **set_process_input** **(** :ref:`bool<class_bool>` enable **)**
 
 Enables or disables input processing. This is not required for GUI controls! Enabled automatically if :ref:`_input<class_Node_method__input>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
+
+----
 
 .. _class_Node_method_set_process_internal:
 
@@ -1135,11 +1315,15 @@ Enables or disables input processing. This is not required for GUI controls! Ena
 
 Enables or disabled internal processing for this node. Internal processing happens in isolation from the normal :ref:`_process<class_Node_method__process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (:ref:`set_process<class_Node_method_set_process>`). Only useful for advanced uses to manipulate built-in nodes' behaviour.
 
+----
+
 .. _class_Node_method_set_process_priority:
 
 - void **set_process_priority** **(** :ref:`int<class_int>` priority **)**
 
 Sets the node's priority in the execution order of the enabled processing callbacks (i.e. :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` and their internal counterparts). Nodes with a higher process priority will have their processing callbacks executed first.
+
+----
 
 .. _class_Node_method_set_process_unhandled_input:
 
@@ -1147,15 +1331,29 @@ Sets the node's priority in the execution order of the enabled processing callba
 
 Enables unhandled input processing. This is not required for GUI controls! It enables the node to receive all input that was not previously handled (usually by a :ref:`Control<class_Control>`). Enabled automatically if :ref:`_unhandled_input<class_Node_method__unhandled_input>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
 
+----
+
 .. _class_Node_method_set_process_unhandled_key_input:
 
 - void **set_process_unhandled_key_input** **(** :ref:`bool<class_bool>` enable **)**
 
 Enables unhandled key input processing. Enabled automatically if :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
 
+----
+
 .. _class_Node_method_set_scene_instance_load_placeholder:
 
 - void **set_scene_instance_load_placeholder** **(** :ref:`bool<class_bool>` load_placeholder **)**
 
 Sets whether this is an instance load placeholder. See :ref:`InstancePlaceholder<class_InstancePlaceholder>`.
+
+----
+
+.. _class_Node_method_update_configuration_warning:
+
+- void **update_configuration_warning** **(** **)**
+
+Updates the warning displayed for this node in the Scene Dock.
+
+Use :ref:`_get_configuration_warning<class_Node_method__get_configuration_warning>` to setup the warning message to display.
 

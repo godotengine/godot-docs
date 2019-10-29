@@ -52,6 +52,8 @@ Property Descriptions
 | *Getter* | get_collider() |
 +----------+----------------+
 
+----
+
 .. _class_Physics2DTestMotionResult_property_collider_id:
 
 - :ref:`int<class_int>` **collider_id**
@@ -62,6 +64,8 @@ Property Descriptions
 | *Getter*  | get_collider_id() |
 +-----------+-------------------+
 
+----
+
 .. _class_Physics2DTestMotionResult_property_collider_rid:
 
 - :ref:`RID<class_RID>` **collider_rid**
@@ -69,6 +73,8 @@ Property Descriptions
 +----------+--------------------+
 | *Getter* | get_collider_rid() |
 +----------+--------------------+
+
+----
 
 .. _class_Physics2DTestMotionResult_property_collider_shape:
 
@@ -80,6 +86,8 @@ Property Descriptions
 | *Getter*  | get_collider_shape() |
 +-----------+----------------------+
 
+----
+
 .. _class_Physics2DTestMotionResult_property_collider_velocity:
 
 - :ref:`Vector2<class_Vector2>` **collider_velocity**
@@ -89,6 +97,8 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_collider_velocity() |
 +-----------+-------------------------+
+
+----
 
 .. _class_Physics2DTestMotionResult_property_collision_normal:
 
@@ -100,6 +110,8 @@ Property Descriptions
 | *Getter*  | get_collision_normal() |
 +-----------+------------------------+
 
+----
+
 .. _class_Physics2DTestMotionResult_property_collision_point:
 
 - :ref:`Vector2<class_Vector2>` **collision_point**
@@ -110,6 +122,8 @@ Property Descriptions
 | *Getter*  | get_collision_point() |
 +-----------+-----------------------+
 
+----
+
 .. _class_Physics2DTestMotionResult_property_motion:
 
 - :ref:`Vector2<class_Vector2>` **motion**
@@ -119,6 +133,8 @@ Property Descriptions
 +-----------+-----------------+
 | *Getter*  | get_motion()    |
 +-----------+-----------------+
+
+----
 
 .. _class_Physics2DTestMotionResult_property_motion_remainder:
 

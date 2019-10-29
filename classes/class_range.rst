@@ -11,7 +11,7 @@ Range
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ProgressBar<class_ProgressBar>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, :ref:`SpinBox<class_SpinBox>`, :ref:`TextureProgress<class_TextureProgress>`
+**Inherited By:** :ref:`EditorSpinSlider<class_EditorSpinSlider>`, :ref:`ProgressBar<class_ProgressBar>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, :ref:`SpinBox<class_SpinBox>`, :ref:`TextureProgress<class_TextureProgress>`
 
 **Category:** Core
 
@@ -63,6 +63,8 @@ Signals
 
 Emitted when :ref:`min_value<class_Range_property_min_value>`, :ref:`max_value<class_Range_property_max_value>`, :ref:`page<class_Range_property_page>`, or :ref:`step<class_Range_property_step>` change.
 
+----
+
 .. _class_Range_signal_value_changed:
 
 - **value_changed** **(** :ref:`float<class_float>` value **)**
@@ -91,6 +93,8 @@ Property Descriptions
 
 If ``true``, :ref:`value<class_Range_property_value>` may be greater than :ref:`max_value<class_Range_property_max_value>`.
 
+----
+
 .. _class_Range_property_allow_lesser:
 
 - :ref:`bool<class_bool>` **allow_lesser**
@@ -104,6 +108,8 @@ If ``true``, :ref:`value<class_Range_property_value>` may be greater than :ref:`
 +-----------+-------------------------+
 
 If ``true``, :ref:`value<class_Range_property_value>` may be less than :ref:`min_value<class_Range_property_min_value>`.
+
+----
 
 .. _class_Range_property_exp_edit:
 
@@ -119,6 +125,8 @@ If ``true``, :ref:`value<class_Range_property_value>` may be less than :ref:`min
 
 If ``true``, and ``min_value`` is greater than 0, ``value`` will be represented exponentially rather than linearly.
 
+----
+
 .. _class_Range_property_max_value:
 
 - :ref:`float<class_float>` **max_value**
@@ -132,6 +140,8 @@ If ``true``, and ``min_value`` is greater than 0, ``value`` will be represented 
 +-----------+----------------+
 
 Maximum value. Range is clamped if ``value`` is greater than ``max_value``.
+
+----
 
 .. _class_Range_property_min_value:
 
@@ -147,6 +157,8 @@ Maximum value. Range is clamped if ``value`` is greater than ``max_value``.
 
 Minimum value. Range is clamped if ``value`` is less than ``min_value``.
 
+----
+
 .. _class_Range_property_page:
 
 - :ref:`float<class_float>` **page**
@@ -161,6 +173,8 @@ Minimum value. Range is clamped if ``value`` is less than ``min_value``.
 
 Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length is its size multiplied by ``page`` over the difference between ``min_value`` and ``max_value``.
 
+----
+
 .. _class_Range_property_ratio:
 
 - :ref:`float<class_float>` **ratio**
@@ -172,6 +186,8 @@ Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length
 +----------+---------------------+
 
 The value mapped between 0 and 1.
+
+----
 
 .. _class_Range_property_rounded:
 
@@ -187,6 +203,8 @@ The value mapped between 0 and 1.
 
 If ``true``, ``value`` will always be rounded to the nearest integer.
 
+----
+
 .. _class_Range_property_step:
 
 - :ref:`float<class_float>` **step**
@@ -200,6 +218,8 @@ If ``true``, ``value`` will always be rounded to the nearest integer.
 +-----------+-----------------+
 
 If greater than 0, ``value`` will always be rounded to a multiple of ``step``. If ``rounded`` is also ``true``, ``value`` will first be rounded to a multiple of ``step`` then rounded to the nearest integer.
+
+----
 
 .. _class_Range_property_value:
 
@@ -223,6 +243,8 @@ Method Descriptions
 - void **share** **(** :ref:`Node<class_Node>` with **)**
 
 Binds two ranges together along with any ranges previously grouped with either of them. When any of range's member variables change, it will share the new value with all other ranges in its group.
+
+----
 
 .. _class_Range_method_unshare:
 

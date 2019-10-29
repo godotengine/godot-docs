@@ -54,6 +54,8 @@ Property Descriptions
 
 The mouse position relative to the previous position (position at the last frame).
 
+----
+
 .. _class_InputEventMouseMotion_property_speed:
 
 - :ref:`Vector2<class_Vector2>` **speed**

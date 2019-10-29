@@ -54,6 +54,8 @@ Property Descriptions
 
 Axis identifier. Use one of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>` axis constants.
 
+----
+
 .. _class_InputEventJoypadMotion_property_axis_value:
 
 - :ref:`float<class_float>` **axis_value**

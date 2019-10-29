@@ -97,33 +97,49 @@ Method Descriptions
 
 - void **add_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)**
 
+----
+
 .. _class_AnimationNodeBlendTree_method_connect_node:
 
 - void **connect_node** **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index, :ref:`String<class_String>` output_node **)**
+
+----
 
 .. _class_AnimationNodeBlendTree_method_disconnect_node:
 
 - void **disconnect_node** **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index **)**
 
+----
+
 .. _class_AnimationNodeBlendTree_method_get_node:
 
 - :ref:`AnimationNode<class_AnimationNode>` **get_node** **(** :ref:`String<class_String>` name **)** const
+
+----
 
 .. _class_AnimationNodeBlendTree_method_get_node_position:
 
 - :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` name **)** const
 
+----
+
 .. _class_AnimationNodeBlendTree_method_has_node:
 
 - :ref:`bool<class_bool>` **has_node** **(** :ref:`String<class_String>` name **)** const
+
+----
 
 .. _class_AnimationNodeBlendTree_method_remove_node:
 
 - void **remove_node** **(** :ref:`String<class_String>` name **)**
 
+----
+
 .. _class_AnimationNodeBlendTree_method_rename_node:
 
 - void **rename_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**
+
+----
 
 .. _class_AnimationNodeBlendTree_method_set_node_position:
 

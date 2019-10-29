@@ -57,6 +57,8 @@ The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounci
 
 Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_bounce>` instead via :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>`.
 
+----
+
 .. _class_StaticBody2D_property_constant_angular_velocity:
 
 - :ref:`float<class_float>` **constant_angular_velocity**
@@ -70,6 +72,8 @@ Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_boun
 +-----------+--------------------------------------+
 
 The body's constant angular velocity. This does not rotate the body, but affects colliding bodies, as if it were rotating.
+
+----
 
 .. _class_StaticBody2D_property_constant_linear_velocity:
 
@@ -85,6 +89,8 @@ The body's constant angular velocity. This does not rotate the body, but affects
 
 The body's constant linear velocity. This does not move the body, but affects colliding bodies, as if it were moving.
 
+----
+
 .. _class_StaticBody2D_property_friction:
 
 - :ref:`float<class_float>` **friction**
@@ -98,6 +104,8 @@ The body's constant linear velocity. This does not move the body, but affects co
 The body's friction. Values range from ``0`` (no friction) to ``1`` (full friction).
 
 Deprecated, use :ref:`PhysicsMaterial.friction<class_PhysicsMaterial_property_friction>` instead via :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>`.
+
+----
 
 .. _class_StaticBody2D_property_physics_material_override:
 

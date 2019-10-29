@@ -41,6 +41,8 @@ Method Descriptions
 
 Parses a JSON encoded string and returns a :ref:`JSONParseResult<class_JSONParseResult>` containing the result.
 
+----
+
 .. _class_JSON_method_print:
 
 - :ref:`String<class_String>` **print** **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)**

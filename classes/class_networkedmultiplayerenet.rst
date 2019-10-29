@@ -114,6 +114,8 @@ Property Descriptions
 
 Enforce ordered packets when using :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_UNRELIABLE<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE>` (thus behaving similarly to :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_UNRELIABLE_ORDERED<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED>`). This is the only way to use ordering with the RPC system.
 
+----
+
 .. _class_NetworkedMultiplayerENet_property_channel_count:
 
 - :ref:`int<class_int>` **channel_count**
@@ -128,6 +130,8 @@ Enforce ordered packets when using :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_
 
 The number of channels to be used by ENet. Channels are used to separate different kinds of data. In reliable or ordered mode, for example, the packet delivery order is ensured on a per channel basis.
 
+----
+
 .. _class_NetworkedMultiplayerENet_property_compression_mode:
 
 - :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **compression_mode**
@@ -141,6 +145,8 @@ The number of channels to be used by ENet. Channels are used to separate differe
 +-----------+-----------------------------+
 
 The compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.
+
+----
 
 .. _class_NetworkedMultiplayerENet_property_transfer_channel:
 
@@ -165,11 +171,15 @@ Method Descriptions
 
 Closes the connection. Ignored if no connection is currently established. If this is a server it tries to notify all clients before forcibly disconnecting them. If this is a client it simply closes the connection to the server.
 
+----
+
 .. _class_NetworkedMultiplayerENet_method_create_client:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0, :ref:`int<class_int>` client_port=0 **)**
 
 Create client that connects to a server at ``address`` using specified ``port``. The given address needs to be either a fully qualified domain name (e.g. ``"www.example.com"``) or an IP address in IPv4 or IPv6 format (e.g. ``"192.168.1.1"``). The ``port`` is the port the server is listening on. The ``in_bandwidth`` and ``out_bandwidth`` parameters can be used to limit the incoming and outgoing bandwidth to the given number of bytes per second. The default of 0 means unlimited bandwidth. Note that ENet will strategically drop packets on specific sides of a connection between peers to ensure the peer's bandwidth is not overwhelmed. The bandwidth parameters also determine the window size of a connection which limits the amount of reliable packets that may be in transit at any given time. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a client was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the client could not be created. If ``client_port`` is specified, the client will also listen to the given port; this is useful for some NAT traversal techniques.
+
+----
 
 .. _class_NetworkedMultiplayerENet_method_create_server:
 
@@ -177,11 +187,15 @@ Create client that connects to a server at ``address`` using specified ``port``.
 
 Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>`. The default IP is the wildcard ``"*"``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4096 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>`. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a server was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the server could not be created.
 
+----
+
 .. _class_NetworkedMultiplayerENet_method_disconnect_peer:
 
 - void **disconnect_peer** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` now=false **)**
 
 Disconnect the given peer. If "now" is set to ``true``, the connection will be closed immediately without flushing queued messages.
+
+----
 
 .. _class_NetworkedMultiplayerENet_method_get_last_packet_channel:
 
@@ -189,11 +203,15 @@ Disconnect the given peer. If "now" is set to ``true``, the connection will be c
 
 Returns the channel of the last packet fetched via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`
 
+----
+
 .. _class_NetworkedMultiplayerENet_method_get_packet_channel:
 
 - :ref:`int<class_int>` **get_packet_channel** **(** **)** const
 
 Returns the channel of the next packet that will be retrieved via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`
+
+----
 
 .. _class_NetworkedMultiplayerENet_method_get_peer_address:
 
@@ -201,11 +219,15 @@ Returns the channel of the next packet that will be retrieved via :ref:`PacketPe
 
 Returns the IP address of the given peer.
 
+----
+
 .. _class_NetworkedMultiplayerENet_method_get_peer_port:
 
 - :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** const
 
 Returns the remote port of the given peer.
+
+----
 
 .. _class_NetworkedMultiplayerENet_method_set_bind_ip:
 

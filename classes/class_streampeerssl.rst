@@ -101,11 +101,15 @@ Method Descriptions
 
 Accepts a peer connection as a server using the given ``private_key`` and providing the given ``certificate`` to the client. You can pass the optional ``chain`` parameter to provide additional CA chain information along with the certificate.
 
+----
+
 .. _class_StreamPeerSSL_method_connect_to_stream:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="", :ref:`X509Certificate<class_X509Certificate>` valid_certificate=null **)**
 
 Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``stream``. If ``validate_certs`` is ``true``, ``StreamPeerSSL`` will validate that the certificate presented by the peer matches the ``for_hostname``.
+
+----
 
 .. _class_StreamPeerSSL_method_disconnect_from_stream:
 
@@ -113,11 +117,15 @@ Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``str
 
 Disconnects from host.
 
+----
+
 .. _class_StreamPeerSSL_method_get_status:
 
 - :ref:`Status<enum_StreamPeerSSL_Status>` **get_status** **(** **)** const
 
 Returns the status of the connection. See :ref:`Status<enum_StreamPeerSSL_Status>` for values.
+
+----
 
 .. _class_StreamPeerSSL_method_poll:
 

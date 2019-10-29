@@ -60,6 +60,8 @@ Property Descriptions
 
 Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unnexpected culling when  using a shader to offset vertices.
 
+----
+
 .. _class_PrimitiveMesh_property_flip_faces:
 
 - :ref:`bool<class_bool>` **flip_faces**
@@ -73,6 +75,8 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 +-----------+-----------------------+
 
 If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn. Result is the same as using \*CULL_BACK\* in :ref:`SpatialMaterial<class_SpatialMaterial>`.
+
+----
 
 .. _class_PrimitiveMesh_property_material:
 

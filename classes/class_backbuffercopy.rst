@@ -68,6 +68,8 @@ Property Descriptions
 
 Buffer mode. See :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` constants.
 
+----
+
 .. _class_BackBufferCopy_property_rect:
 
 - :ref:`Rect2<class_Rect2>` **rect**

@@ -43,6 +43,8 @@ Method Descriptions
 
 Loads a key from ``path`` ("\*.key" file).
 
+----
+
 .. _class_CryptoKey_method_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**

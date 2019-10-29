@@ -89,6 +89,8 @@ Property Descriptions
 | *Getter*  | get_text()      |
 +-----------+-----------------+
 
+----
+
 .. _class_LinkButton_property_underline:
 
 - :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **underline**

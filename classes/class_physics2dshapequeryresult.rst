@@ -40,17 +40,25 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_result_count** **(** **)** const
 
+----
+
 .. _class_Physics2DShapeQueryResult_method_get_result_object:
 
 - :ref:`Object<class_Object>` **get_result_object** **(** :ref:`int<class_int>` idx **)** const
+
+----
 
 .. _class_Physics2DShapeQueryResult_method_get_result_object_id:
 
 - :ref:`int<class_int>` **get_result_object_id** **(** :ref:`int<class_int>` idx **)** const
 
+----
+
 .. _class_Physics2DShapeQueryResult_method_get_result_object_shape:
 
 - :ref:`int<class_int>` **get_result_object_shape** **(** :ref:`int<class_int>` idx **)** const
+
+----
 
 .. _class_Physics2DShapeQueryResult_method_get_result_rid:
 

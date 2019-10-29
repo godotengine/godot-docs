@@ -69,17 +69,23 @@ Signals
 
 Emitted when the button starts being held down.
 
+----
+
 .. _class_BaseButton_signal_button_up:
 
 - **button_up** **(** **)**
 
 Emitted when the button stops being held down.
 
+----
+
 .. _class_BaseButton_signal_pressed:
 
 - **pressed** **(** **)**
 
 Emitted when the button is toggled or pressed. This is on :ref:`button_down<class_BaseButton_signal_button_down>` if :ref:`action_mode<class_BaseButton_property_action_mode>` is :ref:`ACTION_MODE_BUTTON_PRESS<class_BaseButton_constant_ACTION_MODE_BUTTON_PRESS>` and on :ref:`button_up<class_BaseButton_signal_button_up>` otherwise.
+
+----
 
 .. _class_BaseButton_signal_toggled:
 
@@ -113,6 +119,8 @@ enum **DrawMode**:
 - **DRAW_DISABLED** = **3** --- The state of buttons are disabled.
 
 - **DRAW_HOVER_PRESSED** = **4**
+
+----
 
 .. _enum_BaseButton_ActionMode:
 
@@ -148,6 +156,8 @@ Property Descriptions
 
 Determines when the button is considered clicked, one of the ``ACTION_MODE_*`` constants.
 
+----
+
 .. _class_BaseButton_property_button_mask:
 
 - :ref:`int<class_int>` **button_mask**
@@ -164,6 +174,8 @@ Binary mask to choose which mouse buttons this button will respond to.
 
 To allow both left-click and right-click, use ``BUTTON_MASK_LEFT | BUTTON_MASK_RIGHT``.
 
+----
+
 .. _class_BaseButton_property_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
@@ -177,6 +189,8 @@ To allow both left-click and right-click, use ``BUTTON_MASK_LEFT | BUTTON_MASK_R
 +-----------+---------------------+
 
 If ``true``, the button is in disabled state and can't be clicked or toggled.
+
+----
 
 .. _class_BaseButton_property_enabled_focus_mode:
 
@@ -192,6 +206,8 @@ If ``true``, the button is in disabled state and can't be clicked or toggled.
 
 Focus access mode to use when switching between enabled/disabled (see :ref:`Control.focus_mode<class_Control_property_focus_mode>` and :ref:`disabled<class_BaseButton_property_disabled>`).
 
+----
+
 .. _class_BaseButton_property_group:
 
 - :ref:`ButtonGroup<class_ButtonGroup>` **group**
@@ -203,6 +219,8 @@ Focus access mode to use when switching between enabled/disabled (see :ref:`Cont
 +----------+-------------------------+
 
 :ref:`ButtonGroup<class_ButtonGroup>` associated to the button.
+
+----
 
 .. _class_BaseButton_property_keep_pressed_outside:
 
@@ -218,6 +236,8 @@ Focus access mode to use when switching between enabled/disabled (see :ref:`Cont
 
 If ``true``, the button stays pressed when moving the cursor outside the button while pressing it.
 
+----
+
 .. _class_BaseButton_property_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
@@ -232,6 +252,8 @@ If ``true``, the button stays pressed when moving the cursor outside the button 
 
 If ``true``, the button's state is pressed. Means the button is pressed down or toggled (if toggle_mode is active).
 
+----
+
 .. _class_BaseButton_property_shortcut:
 
 - :ref:`ShortCut<class_ShortCut>` **shortcut**
@@ -243,6 +265,8 @@ If ``true``, the button's state is pressed. Means the button is pressed down or 
 +----------+---------------------+
 
 :ref:`ShortCut<class_ShortCut>` associated to the button.
+
+----
 
 .. _class_BaseButton_property_shortcut_in_tooltip:
 
@@ -257,6 +281,8 @@ If ``true``, the button's state is pressed. Means the button is pressed down or 
 +-----------+----------------------------------+
 
 If ``true``, the button will add information about its shortcut in the tooltip.
+
+----
 
 .. _class_BaseButton_property_toggle_mode:
 
@@ -281,17 +307,23 @@ Method Descriptions
 
 Called when the button is pressed.
 
+----
+
 .. _class_BaseButton_method__toggled:
 
 - void **_toggled** **(** :ref:`bool<class_bool>` button_pressed **)** virtual
 
 Called when the button is toggled (only if toggle_mode is active).
 
+----
+
 .. _class_BaseButton_method_get_draw_mode:
 
 - :ref:`DrawMode<enum_BaseButton_DrawMode>` **get_draw_mode** **(** **)** const
 
 Returns the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the ``DRAW_*`` enum.
+
+----
 
 .. _class_BaseButton_method_is_hovered:
 

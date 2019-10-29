@@ -34,6 +34,8 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **get_skeleton** **(** **)** const
 
+----
+
 .. _class_SkinReference_method_get_skin:
 
 - :ref:`Skin<class_Skin>` **get_skin** **(** **)** const

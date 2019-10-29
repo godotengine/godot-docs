@@ -18,6 +18,13 @@ Brief Description
 
 Base class for popup dialogs.
 
+Theme Properties
+----------------
+
++---------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>` | panel |
++---------------------------------+-------+
+
 Description
 -----------
 

@@ -97,6 +97,8 @@ Property Descriptions
 
 Ending corner.
 
+----
+
 .. _class_AABB_property_position:
 
 - :ref:`Vector3<class_Vector3>` **position**
@@ -106,6 +108,8 @@ Ending corner.
 +-----------+--------------------+
 
 Beginning corner.
+
+----
 
 .. _class_AABB_property_size:
 
@@ -126,11 +130,15 @@ Method Descriptions
 
 Optional constructor, accepts position and size.
 
+----
+
 .. _class_AABB_method_encloses:
 
 - :ref:`bool<class_bool>` **encloses** **(** :ref:`AABB<class_AABB>` with **)**
 
 Returns ``true`` if this ``AABB`` completely encloses another one.
+
+----
 
 .. _class_AABB_method_expand:
 
@@ -138,11 +146,15 @@ Returns ``true`` if this ``AABB`` completely encloses another one.
 
 Returns this ``AABB`` expanded to include a given point.
 
+----
+
 .. _class_AABB_method_get_area:
 
 - :ref:`float<class_float>` **get_area** **(** **)**
 
 Gets the area of the ``AABB``.
+
+----
 
 .. _class_AABB_method_get_endpoint:
 
@@ -150,11 +162,15 @@ Gets the area of the ``AABB``.
 
 Gets the position of the 8 endpoints of the ``AABB`` in space.
 
+----
+
 .. _class_AABB_method_get_longest_axis:
 
 - :ref:`Vector3<class_Vector3>` **get_longest_axis** **(** **)**
 
 Returns the normalized longest axis of the ``AABB``.
+
+----
 
 .. _class_AABB_method_get_longest_axis_index:
 
@@ -162,11 +178,15 @@ Returns the normalized longest axis of the ``AABB``.
 
 Returns the index of the longest axis of the ``AABB`` (according to :ref:`Vector3<class_Vector3>`::AXIS\* enum).
 
+----
+
 .. _class_AABB_method_get_longest_axis_size:
 
 - :ref:`float<class_float>` **get_longest_axis_size** **(** **)**
 
 Returns the scalar length of the longest axis of the ``AABB``.
+
+----
 
 .. _class_AABB_method_get_shortest_axis:
 
@@ -174,11 +194,15 @@ Returns the scalar length of the longest axis of the ``AABB``.
 
 Returns the normalized shortest axis of the ``AABB``.
 
+----
+
 .. _class_AABB_method_get_shortest_axis_index:
 
 - :ref:`int<class_int>` **get_shortest_axis_index** **(** **)**
 
 Returns the index of the shortest axis of the ``AABB`` (according to :ref:`Vector3<class_Vector3>`::AXIS\* enum).
+
+----
 
 .. _class_AABB_method_get_shortest_axis_size:
 
@@ -186,11 +210,15 @@ Returns the index of the shortest axis of the ``AABB`` (according to :ref:`Vecto
 
 Returns the scalar length of the shortest axis of the ``AABB``.
 
+----
+
 .. _class_AABB_method_get_support:
 
 - :ref:`Vector3<class_Vector3>` **get_support** **(** :ref:`Vector3<class_Vector3>` dir **)**
 
 Returns the support point in a given direction. This is useful for collision detection algorithms.
+
+----
 
 .. _class_AABB_method_grow:
 
@@ -198,11 +226,15 @@ Returns the support point in a given direction. This is useful for collision det
 
 Returns a copy of the ``AABB`` grown a given amount of units towards all the sides.
 
+----
+
 .. _class_AABB_method_has_no_area:
 
 - :ref:`bool<class_bool>` **has_no_area** **(** **)**
 
 Returns ``true`` if the ``AABB`` is flat or empty.
+
+----
 
 .. _class_AABB_method_has_no_surface:
 
@@ -210,11 +242,15 @@ Returns ``true`` if the ``AABB`` is flat or empty.
 
 Returns ``true`` if the ``AABB`` is empty.
 
+----
+
 .. _class_AABB_method_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point **)**
 
 Returns ``true`` if the ``AABB`` contains a point.
+
+----
 
 .. _class_AABB_method_intersection:
 
@@ -222,11 +258,15 @@ Returns ``true`` if the ``AABB`` contains a point.
 
 Returns the intersection between two ``AABB``. An empty AABB (size 0,0,0) is returned on failure.
 
+----
+
 .. _class_AABB_method_intersects:
 
 - :ref:`bool<class_bool>` **intersects** **(** :ref:`AABB<class_AABB>` with **)**
 
 Returns ``true`` if the ``AABB`` overlaps with another.
+
+----
 
 .. _class_AABB_method_intersects_plane:
 
@@ -234,11 +274,15 @@ Returns ``true`` if the ``AABB`` overlaps with another.
 
 Returns ``true`` if the ``AABB`` is on both sides of a plane.
 
+----
+
 .. _class_AABB_method_intersects_segment:
 
 - :ref:`bool<class_bool>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)**
 
 Returns ``true`` if the ``AABB`` intersects the line segment between ``from`` and ``to``.
+
+----
 
 .. _class_AABB_method_merge:
 

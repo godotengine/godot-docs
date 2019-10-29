@@ -50,6 +50,8 @@ Method Descriptions
 
 Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have this as their ``ButtonGroup`` (see :ref:`BaseButton.group<class_BaseButton_property_group>`).
 
+----
+
 .. _class_ButtonGroup_method_get_pressed_button:
 
 - :ref:`BaseButton<class_BaseButton>` **get_pressed_button** **(** **)**

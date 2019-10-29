@@ -58,6 +58,8 @@ Property Descriptions
 
 The touch index in the case of a multi-touch event. One index = one finger.
 
+----
+
 .. _class_InputEventScreenTouch_property_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
@@ -71,6 +73,8 @@ The touch index in the case of a multi-touch event. One index = one finger.
 +-----------+---------------------+
 
 The touch position.
+
+----
 
 .. _class_InputEventScreenTouch_property_pressed:
 

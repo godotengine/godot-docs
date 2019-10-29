@@ -59,11 +59,15 @@ Method Descriptions
 
 Constructs a new ``PoolStringArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
+----
+
 .. _class_PoolStringArray_method_append:
 
 - void **append** **(** :ref:`String<class_String>` string **)**
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_PoolStringArray_method_push_back>`).
+
+----
 
 .. _class_PoolStringArray_method_append_array:
 
@@ -71,11 +75,15 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_PoolS
 
 Appends a ``PoolStringArray`` at the end of this array.
 
+----
+
 .. _class_PoolStringArray_method_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+
+----
 
 .. _class_PoolStringArray_method_invert:
 
@@ -83,11 +91,15 @@ Inserts a new element at a given position in the array. The position must be val
 
 Reverses the order of the elements in the array.
 
+----
+
 .. _class_PoolStringArray_method_join:
 
 - :ref:`String<class_String>` **join** **(** :ref:`String<class_String>` delimiter **)**
 
 Returns a :ref:`String<class_String>` with each element of the array joined with the given ``delimiter``.
+
+----
 
 .. _class_PoolStringArray_method_push_back:
 
@@ -95,11 +107,15 @@ Returns a :ref:`String<class_String>` with each element of the array joined with
 
 Appends a string element at end of the array.
 
+----
+
 .. _class_PoolStringArray_method_remove:
 
 - void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Removes an element from the array by index.
+
+----
 
 .. _class_PoolStringArray_method_resize:
 
@@ -107,11 +123,15 @@ Removes an element from the array by index.
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
+----
+
 .. _class_PoolStringArray_method_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**
 
 Changes the :ref:`String<class_String>` at the given index.
+
+----
 
 .. _class_PoolStringArray_method_size:
 

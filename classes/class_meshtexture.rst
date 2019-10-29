@@ -51,6 +51,8 @@ Property Descriptions
 
 Sets the base texture that the Mesh will use to draw.
 
+----
+
 .. _class_MeshTexture_property_image_size:
 
 - :ref:`Vector2<class_Vector2>` **image_size**
@@ -64,6 +66,8 @@ Sets the base texture that the Mesh will use to draw.
 +-----------+-----------------------+
 
 Sets the size of the image, needed for reference.
+
+----
 
 .. _class_MeshTexture_property_mesh:
 

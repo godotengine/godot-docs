@@ -70,6 +70,8 @@ Property Descriptions
 
 Controls whether the font should be rendered with anti-aliasing.
 
+----
+
 .. _class_DynamicFontData_property_font_path:
 
 - :ref:`String<class_String>` **font_path**
@@ -83,6 +85,8 @@ Controls whether the font should be rendered with anti-aliasing.
 +-----------+----------------------+
 
 The path to the vector font file.
+
+----
 
 .. _class_DynamicFontData_property_hinting:
 

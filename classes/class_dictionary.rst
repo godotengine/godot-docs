@@ -77,11 +77,15 @@ Method Descriptions
 
 Clear the dictionary, removing all key/value pairs.
 
+----
+
 .. _class_Dictionary_method_duplicate:
 
 - :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=False **)**
 
 Creates a copy of the dictionary, and returns it.
+
+----
 
 .. _class_Dictionary_method_empty:
 
@@ -89,11 +93,15 @@ Creates a copy of the dictionary, and returns it.
 
 Returns ``true`` if the dictionary is empty.
 
+----
+
 .. _class_Dictionary_method_erase:
 
 - :ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
 
 Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise. Does not erase elements while iterating over the dictionary.
+
+----
 
 .. _class_Dictionary_method_get:
 
@@ -101,11 +109,15 @@ Erase a dictionary key/value pair by key. Returns ``true`` if the given key was 
 
 Returns the current value for the specified key in the ``Dictionary``. If the key does not exist, the method returns the value of the optional default argument, or ``null`` if it is omitted.
 
+----
+
 .. _class_Dictionary_method_has:
 
 - :ref:`bool<class_bool>` **has** **(** :ref:`Variant<class_Variant>` key **)**
 
 Returns ``true`` if the dictionary has a given key.
+
+----
 
 .. _class_Dictionary_method_has_all:
 
@@ -113,11 +125,15 @@ Returns ``true`` if the dictionary has a given key.
 
 Returns ``true`` if the dictionary has all of the keys in the given array.
 
+----
+
 .. _class_Dictionary_method_hash:
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
 Returns a hashed integer value representing the dictionary contents.
+
+----
 
 .. _class_Dictionary_method_keys:
 
@@ -125,11 +141,15 @@ Returns a hashed integer value representing the dictionary contents.
 
 Returns the list of keys in the ``Dictionary``.
 
+----
+
 .. _class_Dictionary_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 
 Returns the size of the dictionary (in pairs).
+
+----
 
 .. _class_Dictionary_method_values:
 

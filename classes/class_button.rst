@@ -105,6 +105,8 @@ Property Descriptions
 
 Text alignment policy for the button's text, use one of the ``ALIGN_*`` constants.
 
+----
+
 .. _class_Button_property_clip_text:
 
 - :ref:`bool<class_bool>` **clip_text**
@@ -118,6 +120,8 @@ Text alignment policy for the button's text, use one of the ``ALIGN_*`` constant
 +-----------+----------------------+
 
 When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text.
+
+----
 
 .. _class_Button_property_expand_icon:
 
@@ -133,6 +137,8 @@ When this property is enabled, text that is too large to fit the button is clipp
 
 When enabled, the button's icon will expand/shrink to fit the button's size while keeping its aspect.
 
+----
+
 .. _class_Button_property_flat:
 
 - :ref:`bool<class_bool>` **flat**
@@ -147,6 +153,8 @@ When enabled, the button's icon will expand/shrink to fit the button's size whil
 
 Flat buttons don't display decoration.
 
+----
+
 .. _class_Button_property_icon:
 
 - :ref:`Texture<class_Texture>` **icon**
@@ -158,6 +166,8 @@ Flat buttons don't display decoration.
 +----------+------------------------+
 
 Button's icon, if text is present the icon will be placed before the text.
+
+----
 
 .. _class_Button_property_text:
 

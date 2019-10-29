@@ -94,11 +94,15 @@ Method Descriptions
 
 Returns ``true`` if the script can be instanced.
 
+----
+
 .. _class_Script_method_get_base_script:
 
 - :ref:`Script<class_Script>` **get_base_script** **(** **)** const
 
 Returns the script directly inherited by this script.
+
+----
 
 .. _class_Script_method_get_instance_base_type:
 
@@ -106,25 +110,37 @@ Returns the script directly inherited by this script.
 
 Returns the script's base type.
 
+----
+
 .. _class_Script_method_get_property_default_value:
 
 - :ref:`Variant<class_Variant>` **get_property_default_value** **(** :ref:`String<class_String>` property **)**
+
+----
 
 .. _class_Script_method_get_script_constant_map:
 
 - :ref:`Dictionary<class_Dictionary>` **get_script_constant_map** **(** **)**
 
+----
+
 .. _class_Script_method_get_script_method_list:
 
 - :ref:`Array<class_Array>` **get_script_method_list** **(** **)**
+
+----
 
 .. _class_Script_method_get_script_property_list:
 
 - :ref:`Array<class_Array>` **get_script_property_list** **(** **)**
 
+----
+
 .. _class_Script_method_get_script_signal_list:
 
 - :ref:`Array<class_Array>` **get_script_signal_list** **(** **)**
+
+----
 
 .. _class_Script_method_has_script_signal:
 
@@ -132,11 +148,15 @@ Returns the script's base type.
 
 Returns ``true`` if the script, or a base class, defines a signal with the given name.
 
+----
+
 .. _class_Script_method_has_source_code:
 
 - :ref:`bool<class_bool>` **has_source_code** **(** **)** const
 
 Returns ``true`` if the script contains non-empty source code.
+
+----
 
 .. _class_Script_method_instance_has:
 
@@ -144,11 +164,15 @@ Returns ``true`` if the script contains non-empty source code.
 
 Returns ``true`` if ``base_object`` is an instance of this script.
 
+----
+
 .. _class_Script_method_is_tool:
 
 - :ref:`bool<class_bool>` **is_tool** **(** **)** const
 
 Returns ``true`` if the script is a tool script. A tool script can run in the editor.
+
+----
 
 .. _class_Script_method_reload:
 

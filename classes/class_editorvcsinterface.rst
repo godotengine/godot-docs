@@ -59,6 +59,8 @@ Method Descriptions
 
 Creates a version commit if the addon is initialized, else returns without doing anything. Uses the files which have been staged previously, with the commit message set to a value as provided as in the argument.
 
+----
+
 .. _class_EditorVCSInterface_method_get_file_diff:
 
 - :ref:`Array<class_Array>` **get_file_diff** **(** :ref:`String<class_String>` file_path **)**
@@ -79,11 +81,15 @@ Each :ref:`Dictionary<class_Dictionary>` object has the line diff contents under
 
 - ``"offset"`` to store the offset of the line change since the first contextual line content.
 
+----
+
 .. _class_EditorVCSInterface_method_get_is_vcs_intialized:
 
 - :ref:`bool<class_bool>` **get_is_vcs_intialized** **(** **)**
 
 Returns ``true`` if the VCS addon has been initialized, else returns ``false``.
+
+----
 
 .. _class_EditorVCSInterface_method_get_modified_files_data:
 
@@ -103,11 +109,15 @@ The following integer values are being used to signify that the detected file is
 
 - ``4``: Typechanged
 
+----
+
 .. _class_EditorVCSInterface_method_get_project_name:
 
 - :ref:`String<class_String>` **get_project_name** **(** **)**
 
 Return the project name of the VCS working directory
+
+----
 
 .. _class_EditorVCSInterface_method_get_vcs_name:
 
@@ -115,11 +125,15 @@ Return the project name of the VCS working directory
 
 Return the name of the VCS if the VCS has been initialized, else return an empty string.
 
+----
+
 .. _class_EditorVCSInterface_method_initialize:
 
 - :ref:`bool<class_bool>` **initialize** **(** :ref:`String<class_String>` project_root_path **)**
 
 Initialize the VCS addon if not already. Uses the argument value as the path to the working directory of the project. Creates the initial commit if required. Returns ``true`` if no failure occurs, else returns ``false``.
+
+----
 
 .. _class_EditorVCSInterface_method_is_addon_ready:
 
@@ -127,17 +141,23 @@ Initialize the VCS addon if not already. Uses the argument value as the path to 
 
 Returns ``true`` if the addon is ready to respond to function calls, else returns ``false``.
 
+----
+
 .. _class_EditorVCSInterface_method_shut_down:
 
 - :ref:`bool<class_bool>` **shut_down** **(** **)**
 
 Shuts down the VCS addon to allow cleanup code to run on call. Returns ``true`` is no failure occurs, else returns ``false``.
 
+----
+
 .. _class_EditorVCSInterface_method_stage_file:
 
 - void **stage_file** **(** :ref:`String<class_String>` file_path **)**
 
 Stage the file which should be committed when :ref:`commit<class_EditorVCSInterface_method_commit>` is called. Argument should contain the absolute path.
+
+----
 
 .. _class_EditorVCSInterface_method_unstage_file:
 

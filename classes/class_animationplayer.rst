@@ -103,17 +103,23 @@ Signals
 
 If the currently being played animation changes, this signal will notify of such change.
 
+----
+
 .. _class_AnimationPlayer_signal_animation_finished:
 
 - **animation_finished** **(** :ref:`String<class_String>` anim_name **)**
 
 Notifies when an animation finished playing.
 
+----
+
 .. _class_AnimationPlayer_signal_animation_started:
 
 - **animation_started** **(** :ref:`String<class_String>` anim_name **)**
 
 Notifies when an animation starts playing.
+
+----
 
 .. _class_AnimationPlayer_signal_caches_cleared:
 
@@ -140,6 +146,8 @@ enum **AnimationProcessMode**:
 
 - **ANIMATION_PROCESS_MANUAL** = **2** --- Do not process animation. Use :ref:`advance<class_AnimationPlayer_method_advance>` to process the animation manually.
 
+----
+
 .. _enum_AnimationPlayer_AnimationMethodCallMode:
 
 .. _class_AnimationPlayer_constant_ANIMATION_METHOD_CALL_DEFERRED:
@@ -156,6 +164,8 @@ Description
 -----------
 
 An animation player is used for general-purpose playback of :ref:`Animation<class_Animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.
+
+Updating the target properties of animations occurs at process time.
 
 Tutorials
 ---------
@@ -179,6 +189,8 @@ Property Descriptions
 
 If playing, the current animation; otherwise, the animation last played. When set, would change the animation, but would not play it unless currently playing. See also :ref:`current_animation<class_AnimationPlayer_property_current_animation>`.
 
+----
+
 .. _class_AnimationPlayer_property_autoplay:
 
 - :ref:`String<class_String>` **autoplay**
@@ -192,6 +204,8 @@ If playing, the current animation; otherwise, the animation last played. When se
 +-----------+---------------------+
 
 The name of the animation to play when the scene loads.
+
+----
 
 .. _class_AnimationPlayer_property_current_animation:
 
@@ -207,6 +221,8 @@ The name of the animation to play when the scene loads.
 
 The name of the current animation, "" if not playing anything. When being set, does not restart the animation. See also :ref:`play<class_AnimationPlayer_method_play>`.
 
+----
+
 .. _class_AnimationPlayer_property_current_animation_length:
 
 - :ref:`float<class_float>` **current_animation_length**
@@ -217,6 +233,8 @@ The name of the current animation, "" if not playing anything. When being set, d
 
 The length (in seconds) of the currently being played animation.
 
+----
+
 .. _class_AnimationPlayer_property_current_animation_position:
 
 - :ref:`float<class_float>` **current_animation_position**
@@ -226,6 +244,8 @@ The length (in seconds) of the currently being played animation.
 +----------+----------------------------------+
 
 The position (in seconds) of the currently playing animation.
+
+----
 
 .. _class_AnimationPlayer_property_method_call_mode:
 
@@ -241,6 +261,8 @@ The position (in seconds) of the currently playing animation.
 
 The call mode to use for Call Method tracks.
 
+----
+
 .. _class_AnimationPlayer_property_playback_active:
 
 - :ref:`bool<class_bool>` **playback_active**
@@ -252,6 +274,8 @@ The call mode to use for Call Method tracks.
 +----------+-------------------+
 
 If ``true``, updates animations in response to process-related notifications.
+
+----
 
 .. _class_AnimationPlayer_property_playback_default_blend_time:
 
@@ -267,6 +291,8 @@ If ``true``, updates animations in response to process-related notifications.
 
 The default time in which to blend animations. Ranges from 0 to 4096 with 0.01 precision.
 
+----
+
 .. _class_AnimationPlayer_property_playback_process_mode:
 
 - :ref:`AnimationProcessMode<enum_AnimationPlayer_AnimationProcessMode>` **playback_process_mode**
@@ -281,6 +307,8 @@ The default time in which to blend animations. Ranges from 0 to 4096 with 0.01 p
 
 The process notification in which to update animations.
 
+----
+
 .. _class_AnimationPlayer_property_playback_speed:
 
 - :ref:`float<class_float>` **playback_speed**
@@ -294,6 +322,8 @@ The process notification in which to update animations.
 +-----------+------------------------+
 
 The speed scaling ratio. For instance, if this value is 1, then the animation plays at normal speed. If it's 0.5, then it plays at half speed. If it's 2, then it plays at double speed.
+
+----
 
 .. _class_AnimationPlayer_property_root_node:
 
@@ -318,11 +348,15 @@ Method Descriptions
 
 Adds ``animation`` to the player accessible with the key ``name``.
 
+----
+
 .. _class_AnimationPlayer_method_advance:
 
 - void **advance** **(** :ref:`float<class_float>` delta **)**
 
-Shifts position in the animation timeline. Delta is the time in seconds to shift. Events between the current frame and ``delta`` are handled.
+Shifts position in the animation timeline and immediately updates the animation. ``delta`` is the time in seconds to shift. Events between the current frame and ``delta`` are handled.
+
+----
 
 .. _class_AnimationPlayer_method_animation_get_next:
 
@@ -330,11 +364,15 @@ Shifts position in the animation timeline. Delta is the time in seconds to shift
 
 Returns the name of the next animation in the queue.
 
+----
+
 .. _class_AnimationPlayer_method_animation_set_next:
 
 - void **animation_set_next** **(** :ref:`String<class_String>` anim_from, :ref:`String<class_String>` anim_to **)**
 
 Triggers the ``anim_to`` animation when the ``anim_from`` animation completes.
+
+----
 
 .. _class_AnimationPlayer_method_clear_caches:
 
@@ -342,11 +380,15 @@ Triggers the ``anim_to`` animation when the ``anim_from`` animation completes.
 
 ``AnimationPlayer`` caches animated nodes. It may not notice if a node disappears; :ref:`clear_caches<class_AnimationPlayer_method_clear_caches>` forces it to update the cache again.
 
+----
+
 .. _class_AnimationPlayer_method_clear_queue:
 
 - void **clear_queue** **(** **)**
 
 Clears all queued, unplayed animations.
+
+----
 
 .. _class_AnimationPlayer_method_find_animation:
 
@@ -354,11 +396,15 @@ Clears all queued, unplayed animations.
 
 Returns the name of ``animation`` or an empty string if not found.
 
+----
+
 .. _class_AnimationPlayer_method_get_animation:
 
 - :ref:`Animation<class_Animation>` **get_animation** **(** :ref:`String<class_String>` name **)** const
 
 Returns the :ref:`Animation<class_Animation>` with key ``name`` or ``null`` if not found.
+
+----
 
 .. _class_AnimationPlayer_method_get_animation_list:
 
@@ -366,11 +412,15 @@ Returns the :ref:`Animation<class_Animation>` with key ``name`` or ``null`` if n
 
 Returns the list of stored animation names.
 
+----
+
 .. _class_AnimationPlayer_method_get_blend_time:
 
 - :ref:`float<class_float>` **get_blend_time** **(** :ref:`String<class_String>` anim_from, :ref:`String<class_String>` anim_to **)** const
 
 Gets the blend time (in seconds) between two animations, referenced by their names.
+
+----
 
 .. _class_AnimationPlayer_method_get_playing_speed:
 
@@ -378,11 +428,15 @@ Gets the blend time (in seconds) between two animations, referenced by their nam
 
 Gets the actual playing speed of current animation or 0 if not playing. This speed is the ``playback_speed`` property multiplied by ``custom_speed`` argument specified when calling the ``play`` method.
 
+----
+
 .. _class_AnimationPlayer_method_get_queue:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_queue** **(** **)**
 
 Returns a list of the animation names that are currently queued to play.
+
+----
 
 .. _class_AnimationPlayer_method_has_animation:
 
@@ -390,11 +444,15 @@ Returns a list of the animation names that are currently queued to play.
 
 Returns ``true`` if the ``AnimationPlayer`` stores an :ref:`Animation<class_Animation>` with key ``name``.
 
+----
+
 .. _class_AnimationPlayer_method_is_playing:
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
 Returns ``true`` if playing an animation.
+
+----
 
 .. _class_AnimationPlayer_method_play:
 
@@ -404,6 +462,10 @@ Plays the animation with key ``name``. Custom speed and blend times can be set. 
 
 If the animation has been paused by :ref:`stop<class_AnimationPlayer_method_stop>`, it will be resumed. Calling :ref:`play<class_AnimationPlayer_method_play>` without arguments will also resume the animation.
 
+**Note:** The animation will be updated the next time the AnimationPlayer is processed. If other variables are updated at the same time this is called, they may be updated too early. To perform the update immediately, call ``advance(0)``.
+
+----
+
 .. _class_AnimationPlayer_method_play_backwards:
 
 - void **play_backwards** **(** :ref:`String<class_String>` name="", :ref:`float<class_float>` custom_blend=-1 **)**
@@ -411,6 +473,10 @@ If the animation has been paused by :ref:`stop<class_AnimationPlayer_method_stop
 Plays the animation with key ``name`` in reverse.
 
 If the animation has been paused by ``stop(true)``, it will be resumed backwards. Calling ``play_backwards()`` without arguments will also resume the animation backwards.
+
+**Note:** This is the same as ``play`` in regards to process/update behavior.
+
+----
 
 .. _class_AnimationPlayer_method_queue:
 
@@ -420,11 +486,15 @@ Queues an animation for playback once the current one is done.
 
 **Note:** If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.
 
+----
+
 .. _class_AnimationPlayer_method_remove_animation:
 
 - void **remove_animation** **(** :ref:`String<class_String>` name **)**
 
 Removes the animation with key ``name``.
+
+----
 
 .. _class_AnimationPlayer_method_rename_animation:
 
@@ -432,17 +502,23 @@ Removes the animation with key ``name``.
 
 Renames an existing animation with key ``name`` to ``newname``.
 
+----
+
 .. _class_AnimationPlayer_method_seek:
 
 - void **seek** **(** :ref:`float<class_float>` seconds, :ref:`bool<class_bool>` update=false **)**
 
 Seeks the animation to the ``seconds`` point in time (in seconds). If ``update`` is ``true``, the animation updates too, otherwise it updates at process time. Events between the current frame and ``seconds`` are skipped.
 
+----
+
 .. _class_AnimationPlayer_method_set_blend_time:
 
 - void **set_blend_time** **(** :ref:`String<class_String>` anim_from, :ref:`String<class_String>` anim_to, :ref:`float<class_float>` sec **)**
 
 Specifies a blend time (in seconds) between two animations, referenced by their names.
+
+----
 
 .. _class_AnimationPlayer_method_stop:
 

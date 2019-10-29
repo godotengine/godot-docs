@@ -101,11 +101,15 @@ Adds a point to a curve at ``position``, with control points ``in`` and ``out``.
 
 If ``at_position`` is given, the point is inserted before the point number ``at_position``, moving that point (and every point after) after the inserted point. If ``at_position`` is not given, or is an illegal value (``at_position <0`` or ``at_position >= [method get_point_count]``), the point will be appended at the end of the point list.
 
+----
+
 .. _class_Curve2D_method_clear_points:
 
 - void **clear_points** **(** **)**
 
 Removes all points from the curve.
+
+----
 
 .. _class_Curve2D_method_get_baked_length:
 
@@ -113,11 +117,15 @@ Removes all points from the curve.
 
 Returns the total length of the curve, based on the cached points. Given enough density (see :ref:`bake_interval<class_Curve2D_property_bake_interval>`), it should be approximate enough.
 
+----
+
 .. _class_Curve2D_method_get_baked_points:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **get_baked_points** **(** **)** const
 
 Returns the cache of points as a :ref:`PoolVector2Array<class_PoolVector2Array>`.
+
+----
 
 .. _class_Curve2D_method_get_closest_offset:
 
@@ -127,6 +135,8 @@ Returns the closest offset to ``to_point``. This offset is meant to be used in :
 
 ``to_point`` must be in this curve's local space.
 
+----
+
 .. _class_Curve2D_method_get_closest_point:
 
 - :ref:`Vector2<class_Vector2>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` to_point **)** const
@@ -135,11 +145,15 @@ Returns the closest point (in curve's local space) to ``to_point``.
 
 ``to_point`` must be in this curve's local space.
 
+----
+
 .. _class_Curve2D_method_get_point_count:
 
 - :ref:`int<class_int>` **get_point_count** **(** **)** const
 
 Returns the number of points describing the curve.
+
+----
 
 .. _class_Curve2D_method_get_point_in:
 
@@ -147,17 +161,23 @@ Returns the number of points describing the curve.
 
 Returns the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0)``.
 
+----
+
 .. _class_Curve2D_method_get_point_out:
 
 - :ref:`Vector2<class_Vector2>` **get_point_out** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0)``.
 
+----
+
 .. _class_Curve2D_method_get_point_position:
 
 - :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the position of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0)``.
+
+----
 
 .. _class_Curve2D_method_interpolate:
 
@@ -166,6 +186,8 @@ Returns the position of the vertex ``idx``. If the index is out of bounds, the f
 Returns the position between the vertex ``idx`` and the vertex ``idx + 1``, where ``t`` controls if the point is the first vertex (``t = 0.0``), the last vertex (``t = 1.0``), or in between. Values of ``t`` outside the range (``0.0 >= t <=1``) give strange, but predictable results.
 
 If ``idx`` is out of bounds it is truncated to the first or last vertex, and ``t`` is ignored. If the curve has no points, the function sends an error to the console, and returns ``(0, 0)``.
+
+----
 
 .. _class_Curve2D_method_interpolate_baked:
 
@@ -177,11 +199,15 @@ To do that, it finds the two cached points where the ``offset`` lies between, th
 
 Cubic interpolation tends to follow the curves better, but linear is faster (and often, precise enough).
 
+----
+
 .. _class_Curve2D_method_interpolatef:
 
 - :ref:`Vector2<class_Vector2>` **interpolatef** **(** :ref:`float<class_float>` fofs **)** const
 
 Returns the position at the vertex ``fofs``. It calls :ref:`interpolate<class_Curve2D_method_interpolate>` using the integer part of ``fofs`` as ``idx``, and its fractional part as ``t``.
+
+----
 
 .. _class_Curve2D_method_remove_point:
 
@@ -189,11 +215,15 @@ Returns the position at the vertex ``fofs``. It calls :ref:`interpolate<class_Cu
 
 Deletes the point ``idx`` from the curve. Sends an error to the console if ``idx`` is out of bounds.
 
+----
+
 .. _class_Curve2D_method_set_point_in:
 
 - void **set_point_in** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` position **)**
 
 Sets the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
+
+----
 
 .. _class_Curve2D_method_set_point_out:
 
@@ -201,11 +231,15 @@ Sets the position of the control point leading to the vertex ``idx``. If the ind
 
 Sets the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
 
+----
+
 .. _class_Curve2D_method_set_point_position:
 
 - void **set_point_position** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` position **)**
 
 Sets the position for the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
+
+----
 
 .. _class_Curve2D_method_tessellate:
 

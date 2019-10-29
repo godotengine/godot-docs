@@ -46,29 +46,43 @@ Method Descriptions
 
 - void **add_bind** **(** :ref:`int<class_int>` bone, :ref:`Transform<class_Transform>` pose **)**
 
+----
+
 .. _class_Skin_method_clear_binds:
 
 - void **clear_binds** **(** **)**
+
+----
 
 .. _class_Skin_method_get_bind_bone:
 
 - :ref:`int<class_int>` **get_bind_bone** **(** :ref:`int<class_int>` bind_index **)** const
 
+----
+
 .. _class_Skin_method_get_bind_count:
 
 - :ref:`int<class_int>` **get_bind_count** **(** **)** const
+
+----
 
 .. _class_Skin_method_get_bind_pose:
 
 - :ref:`Transform<class_Transform>` **get_bind_pose** **(** :ref:`int<class_int>` bind_index **)** const
 
+----
+
 .. _class_Skin_method_set_bind_bone:
 
 - void **set_bind_bone** **(** :ref:`int<class_int>` bind_index, :ref:`int<class_int>` bone **)**
 
+----
+
 .. _class_Skin_method_set_bind_count:
 
 - void **set_bind_count** **(** :ref:`int<class_int>` bind_count **)**
+
+----
 
 .. _class_Skin_method_set_bind_pose:
 

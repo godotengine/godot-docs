@@ -125,11 +125,15 @@ Method Descriptions
 
 Gets a signed 16-bit value from the stream.
 
+----
+
 .. _class_StreamPeer_method_get_32:
 
 - :ref:`int<class_int>` **get_32** **(** **)**
 
 Gets a signed 32-bit value from the stream.
+
+----
 
 .. _class_StreamPeer_method_get_64:
 
@@ -137,11 +141,15 @@ Gets a signed 32-bit value from the stream.
 
 Gets a signed 64-bit value from the stream.
 
+----
+
 .. _class_StreamPeer_method_get_8:
 
 - :ref:`int<class_int>` **get_8** **(** **)**
 
 Gets a signed byte from the stream.
+
+----
 
 .. _class_StreamPeer_method_get_available_bytes:
 
@@ -149,11 +157,15 @@ Gets a signed byte from the stream.
 
 Returns the amount of bytes this ``StreamPeer`` has available.
 
+----
+
 .. _class_StreamPeer_method_get_data:
 
 - :ref:`Array<class_Array>` **get_data** **(** :ref:`int<class_int>` bytes **)**
 
 Returns a chunk data with the received bytes. The amount of bytes to be received can be requested in the ``bytes`` argument. If not enough bytes are available, the function will block until the desired amount is received. This function returns two values, an :ref:`Error<enum_@GlobalScope_Error>` code and a data array.
+
+----
 
 .. _class_StreamPeer_method_get_double:
 
@@ -161,11 +173,15 @@ Returns a chunk data with the received bytes. The amount of bytes to be received
 
 Gets a double-precision float from the stream.
 
+----
+
 .. _class_StreamPeer_method_get_float:
 
 - :ref:`float<class_float>` **get_float** **(** **)**
 
 Gets a single-precision float from the stream.
+
+----
 
 .. _class_StreamPeer_method_get_partial_data:
 
@@ -173,11 +189,15 @@ Gets a single-precision float from the stream.
 
 Returns a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values, an :ref:`Error<enum_@GlobalScope_Error>` code, and a data array.
 
+----
+
 .. _class_StreamPeer_method_get_string:
 
 - :ref:`String<class_String>` **get_string** **(** :ref:`int<class_int>` bytes=-1 **)**
 
 Gets a string with byte-length ``bytes`` from the stream. If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_string<class_StreamPeer_method_put_string>`.
+
+----
 
 .. _class_StreamPeer_method_get_u16:
 
@@ -185,11 +205,15 @@ Gets a string with byte-length ``bytes`` from the stream. If ``bytes`` is negati
 
 Gets an unsigned 16-bit value from the stream.
 
+----
+
 .. _class_StreamPeer_method_get_u32:
 
 - :ref:`int<class_int>` **get_u32** **(** **)**
 
 Gets an unsigned 32-bit value from the stream.
+
+----
 
 .. _class_StreamPeer_method_get_u64:
 
@@ -197,17 +221,23 @@ Gets an unsigned 32-bit value from the stream.
 
 Gets an unsigned 64-bit value from the stream.
 
+----
+
 .. _class_StreamPeer_method_get_u8:
 
 - :ref:`int<class_int>` **get_u8** **(** **)**
 
 Gets an unsigned byte from the stream.
 
+----
+
 .. _class_StreamPeer_method_get_utf8_string:
 
 - :ref:`String<class_String>` **get_utf8_string** **(** :ref:`int<class_int>` bytes=-1 **)**
 
 Gets an UTF-8 string with byte-length ``bytes`` from the stream (this decodes the string sent as UTF-8). If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_utf8_string<class_StreamPeer_method_put_utf8_string>`.
+
+----
 
 .. _class_StreamPeer_method_get_var:
 
@@ -217,11 +247,15 @@ Gets a Variant from the stream. If ``allow_objects`` is ``true``, decoding objec
 
 **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
+----
+
 .. _class_StreamPeer_method_put_16:
 
 - void **put_16** **(** :ref:`int<class_int>` value **)**
 
 Puts a signed 16-bit value into the stream.
+
+----
 
 .. _class_StreamPeer_method_put_32:
 
@@ -229,11 +263,15 @@ Puts a signed 16-bit value into the stream.
 
 Puts a signed 32-bit value into the stream.
 
+----
+
 .. _class_StreamPeer_method_put_64:
 
 - void **put_64** **(** :ref:`int<class_int>` value **)**
 
 Puts a signed 64-bit value into the stream.
+
+----
 
 .. _class_StreamPeer_method_put_8:
 
@@ -241,11 +279,15 @@ Puts a signed 64-bit value into the stream.
 
 Puts a signed byte into the stream.
 
+----
+
 .. _class_StreamPeer_method_put_data:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **put_data** **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
 Sends a chunk of data through the connection, blocking if necessary until the data is done sending. This function returns an :ref:`Error<enum_@GlobalScope_Error>` code.
+
+----
 
 .. _class_StreamPeer_method_put_double:
 
@@ -253,17 +295,23 @@ Sends a chunk of data through the connection, blocking if necessary until the da
 
 Puts a double-precision float into the stream.
 
+----
+
 .. _class_StreamPeer_method_put_float:
 
 - void **put_float** **(** :ref:`float<class_float>` value **)**
 
 Puts a single-precision float into the stream.
 
+----
+
 .. _class_StreamPeer_method_put_partial_data:
 
 - :ref:`Array<class_Array>` **put_partial_data** **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
 Sends a chunk of data through the connection. If all the data could not be sent at once, only part of it will. This function returns two values, an :ref:`Error<enum_@GlobalScope_Error>` code and an integer, describing how much data was actually sent.
+
+----
 
 .. _class_StreamPeer_method_put_string:
 
@@ -277,11 +325,15 @@ Note: To put an ASCII string without prepending its size, you can use :ref:`put_
 
     put_data("Hello world".to_ascii())
 
+----
+
 .. _class_StreamPeer_method_put_u16:
 
 - void **put_u16** **(** :ref:`int<class_int>` value **)**
 
 Puts an unsigned 16-bit value into the stream.
+
+----
 
 .. _class_StreamPeer_method_put_u32:
 
@@ -289,17 +341,23 @@ Puts an unsigned 16-bit value into the stream.
 
 Puts an unsigned 32-bit value into the stream.
 
+----
+
 .. _class_StreamPeer_method_put_u64:
 
 - void **put_u64** **(** :ref:`int<class_int>` value **)**
 
 Puts an unsigned 64-bit value into the stream.
 
+----
+
 .. _class_StreamPeer_method_put_u8:
 
 - void **put_u8** **(** :ref:`int<class_int>` value **)**
 
 Puts an unsigned byte into the stream.
+
+----
 
 .. _class_StreamPeer_method_put_utf8_string:
 
@@ -312,6 +370,8 @@ Note: To put an UTF-8 string without prepending its size, you can use :ref:`put_
 ::
 
     put_data("Hello world".to_utf8())
+
+----
 
 .. _class_StreamPeer_method_put_var:
 

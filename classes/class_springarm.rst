@@ -59,6 +59,8 @@ Property Descriptions
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
+----
+
 .. _class_SpringArm_property_margin:
 
 - :ref:`float<class_float>` **margin**
@@ -71,6 +73,8 @@ Property Descriptions
 | *Getter*  | get_margin()      |
 +-----------+-------------------+
 
+----
+
 .. _class_SpringArm_property_shape:
 
 - :ref:`Shape<class_Shape>` **shape**
@@ -80,6 +84,8 @@ Property Descriptions
 +----------+------------------+
 | *Getter* | get_shape()      |
 +----------+------------------+
+
+----
 
 .. _class_SpringArm_property_spring_length:
 
@@ -100,13 +106,19 @@ Method Descriptions
 
 - void **add_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
 
+----
+
 .. _class_SpringArm_method_clear_excluded_objects:
 
 - void **clear_excluded_objects** **(** **)**
 
+----
+
 .. _class_SpringArm_method_get_hit_length:
 
 - :ref:`float<class_float>` **get_hit_length** **(** **)**
+
+----
 
 .. _class_SpringArm_method_remove_excluded_object:
 

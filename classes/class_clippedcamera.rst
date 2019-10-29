@@ -91,6 +91,8 @@ Property Descriptions
 
 If ``true``, the camera stops on contact with :ref:`Area<class_Area>`\ s.
 
+----
+
 .. _class_ClippedCamera_property_clip_to_bodies:
 
 - :ref:`bool<class_bool>` **clip_to_bodies**
@@ -104,6 +106,8 @@ If ``true``, the camera stops on contact with :ref:`Area<class_Area>`\ s.
 +-----------+-----------------------------+
 
 If ``true``, the camera stops on contact with :ref:`PhysicsBody<class_PhysicsBody>`\ s.
+
+----
 
 .. _class_ClippedCamera_property_collision_mask:
 
@@ -119,6 +123,8 @@ If ``true``, the camera stops on contact with :ref:`PhysicsBody<class_PhysicsBod
 
 The camera's collision mask. Only objects in at least one collision layer matching the mask will be detected.
 
+----
+
 .. _class_ClippedCamera_property_margin:
 
 - :ref:`float<class_float>` **margin**
@@ -132,6 +138,8 @@ The camera's collision mask. Only objects in at least one collision layer matchi
 +-----------+-------------------+
 
 The camera's collision margin. The camera can't get closer than this distance to a colliding object.
+
+----
 
 .. _class_ClippedCamera_property_process_mode:
 
@@ -156,11 +164,15 @@ Method Descriptions
 
 Adds a collision exception so the camera does not collide with the specified node.
 
+----
+
 .. _class_ClippedCamera_method_add_exception_rid:
 
 - void **add_exception_rid** **(** :ref:`RID<class_RID>` rid **)**
 
 Adds a collision exception so the camera does not collide with the specified :ref:`RID<class_RID>`.
+
+----
 
 .. _class_ClippedCamera_method_clear_exceptions:
 
@@ -168,11 +180,15 @@ Adds a collision exception so the camera does not collide with the specified :re
 
 Removes all collision exceptions.
 
+----
+
 .. _class_ClippedCamera_method_get_clip_offset:
 
 - :ref:`float<class_float>` **get_clip_offset** **(** **)** const
 
 Returns the distance the camera has been offset due to a collision.
+
+----
 
 .. _class_ClippedCamera_method_get_collision_mask_bit:
 
@@ -182,17 +198,23 @@ Returns ``true`` if the specified bit index is on.
 
 **Note:** Bit indices range from 0-19.
 
+----
+
 .. _class_ClippedCamera_method_remove_exception:
 
 - void **remove_exception** **(** :ref:`Object<class_Object>` node **)**
 
 Removes a collision exception with the specified node.
 
+----
+
 .. _class_ClippedCamera_method_remove_exception_rid:
 
 - void **remove_exception_rid** **(** :ref:`RID<class_RID>` rid **)**
 
 Removes a collision exception with the specified :ref:`RID<class_RID>`.
+
+----
 
 .. _class_ClippedCamera_method_set_collision_mask_bit:
 

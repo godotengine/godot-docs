@@ -97,11 +97,15 @@ Signals
 
 Emitted when a body enters into contact with this one. :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` greater than ``0``.
 
+----
+
 .. _class_RigidBody2D_signal_body_exited:
 
 - **body_exited** **(** :ref:`Node<class_Node>` body **)**
 
 Emitted when a body exits contact with this one. :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` greater than ``0``.
+
+----
 
 .. _class_RigidBody2D_signal_body_shape_entered:
 
@@ -109,11 +113,15 @@ Emitted when a body exits contact with this one. :ref:`contact_monitor<class_Rig
 
 Emitted when a body enters into contact with this one. Reports colliding shape information. See :ref:`CollisionObject2D<class_CollisionObject2D>` for shape index information. :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` greater than ``0``.
 
+----
+
 .. _class_RigidBody2D_signal_body_shape_exited:
 
 - **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
 Emitted when a body shape exits contact with this one. Reports colliding shape information. See :ref:`CollisionObject2D<class_CollisionObject2D>` for shape index information. :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` greater than ``0``.
+
+----
 
 .. _class_RigidBody2D_signal_sleeping_state_changed:
 
@@ -143,6 +151,8 @@ enum **Mode**:
 - **MODE_CHARACTER** = **2** --- Character mode. Similar to :ref:`MODE_RIGID<class_RigidBody2D_constant_MODE_RIGID>`, but the body can not rotate.
 
 - **MODE_KINEMATIC** = **3** --- Kinematic mode. The body behaves like a :ref:`KinematicBody2D<class_KinematicBody2D>`, and must be moved by code.
+
+----
 
 .. _enum_RigidBody2D_CCDMode:
 
@@ -190,6 +200,8 @@ Property Descriptions
 
 Damps the body's :ref:`angular_velocity<class_RigidBody2D_property_angular_velocity>`. If ``-1``, the body will use the **Default Angular Damp** defined in **Project > Project Settings > Physics > 2d**.
 
+----
+
 .. _class_RigidBody2D_property_angular_velocity:
 
 - :ref:`float<class_float>` **angular_velocity**
@@ -203,6 +215,8 @@ Damps the body's :ref:`angular_velocity<class_RigidBody2D_property_angular_veloc
 +-----------+-----------------------------+
 
 The body's rotational velocity.
+
+----
 
 .. _class_RigidBody2D_property_applied_force:
 
@@ -218,6 +232,8 @@ The body's rotational velocity.
 
 The body's total applied force.
 
+----
+
 .. _class_RigidBody2D_property_applied_torque:
 
 - :ref:`float<class_float>` **applied_torque**
@@ -231,6 +247,8 @@ The body's total applied force.
 +-----------+---------------------------+
 
 The body's total applied torque.
+
+----
 
 .. _class_RigidBody2D_property_bounce:
 
@@ -246,6 +264,8 @@ The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounci
 
 Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_bounce>` instead via :ref:`physics_material_override<class_RigidBody2D_property_physics_material_override>`.
 
+----
+
 .. _class_RigidBody2D_property_can_sleep:
 
 - :ref:`bool<class_bool>` **can_sleep**
@@ -259,6 +279,8 @@ Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_boun
 +-----------+----------------------+
 
 If ``true``, the body will not calculate forces and will act as a static body if there is no movement. The body will wake up when other forces are applied via collisions or by using :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` or :ref:`add_force<class_RigidBody2D_method_add_force>`.
+
+----
 
 .. _class_RigidBody2D_property_contact_monitor:
 
@@ -274,6 +296,8 @@ If ``true``, the body will not calculate forces and will act as a static body if
 
 If ``true``, the body will emit signals when it collides with another RigidBody2D. See also :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>`.
 
+----
+
 .. _class_RigidBody2D_property_contacts_reported:
 
 - :ref:`int<class_int>` **contacts_reported**
@@ -287,6 +311,8 @@ If ``true``, the body will emit signals when it collides with another RigidBody2
 +-----------+----------------------------------+
 
 The maximum number of contacts to report.
+
+----
 
 .. _class_RigidBody2D_property_continuous_cd:
 
@@ -304,6 +330,8 @@ Continuous collision detection mode.
 
 Continuous collision detection tries to predict where a moving body will collide instead of moving it and correcting its movement after collision. Continuous collision detection is slower, but more precise and misses fewer collisions with small, fast-moving objects. Raycasting and shapecasting methods are available. See :ref:`CCDMode<enum_RigidBody2D_CCDMode>` for details.
 
+----
+
 .. _class_RigidBody2D_property_custom_integrator:
 
 - :ref:`bool<class_bool>` **custom_integrator**
@@ -317,6 +345,8 @@ Continuous collision detection tries to predict where a moving body will collide
 +-----------+----------------------------------+
 
 If ``true``, internal force integration is disabled for this body. Aside from collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` function.
+
+----
 
 .. _class_RigidBody2D_property_friction:
 
@@ -332,6 +362,8 @@ The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum fr
 
 Deprecated, use :ref:`PhysicsMaterial.friction<class_PhysicsMaterial_property_friction>` instead via :ref:`physics_material_override<class_RigidBody2D_property_physics_material_override>`.
 
+----
+
 .. _class_RigidBody2D_property_gravity_scale:
 
 - :ref:`float<class_float>` **gravity_scale**
@@ -346,6 +378,8 @@ Deprecated, use :ref:`PhysicsMaterial.friction<class_PhysicsMaterial_property_fr
 
 Multiplies the gravity applied to the body. The body's gravity is calculated from the **Default Gravity** value in **Project > Project Settings > Physics > 2d** and/or any additional gravity vector applied by :ref:`Area2D<class_Area2D>`\ s.
 
+----
+
 .. _class_RigidBody2D_property_inertia:
 
 - :ref:`float<class_float>` **inertia**
@@ -357,6 +391,8 @@ Multiplies the gravity applied to the body. The body's gravity is calculated fro
 +----------+--------------------+
 
 The body's moment of inertia. This is like mass, but for rotation: it determines how much torque it takes to rotate the body. The moment of inertia is usually computed automatically from the mass and the shapes, but this function allows you to set a custom value. Set 0 inertia to return to automatically computing it.
+
+----
 
 .. _class_RigidBody2D_property_linear_damp:
 
@@ -372,6 +408,8 @@ The body's moment of inertia. This is like mass, but for rotation: it determines
 
 Damps the body's :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>`. If ``-1``, the body will use the **Default Linear Damp** in **Project > Project Settings > Physics > 2d**.
 
+----
+
 .. _class_RigidBody2D_property_linear_velocity:
 
 - :ref:`Vector2<class_Vector2>` **linear_velocity**
@@ -385,6 +423,8 @@ Damps the body's :ref:`linear_velocity<class_RigidBody2D_property_linear_velocit
 +-----------+----------------------------+
 
 The body's linear velocity.
+
+----
 
 .. _class_RigidBody2D_property_mass:
 
@@ -400,6 +440,8 @@ The body's linear velocity.
 
 The body's mass.
 
+----
+
 .. _class_RigidBody2D_property_mode:
 
 - :ref:`Mode<enum_RigidBody2D_Mode>` **mode**
@@ -413,6 +455,8 @@ The body's mass.
 +-----------+-----------------+
 
 The body's mode. See :ref:`Mode<enum_RigidBody2D_Mode>` for possible values.
+
+----
 
 .. _class_RigidBody2D_property_physics_material_override:
 
@@ -428,6 +472,8 @@ The physics material override for the body.
 
 If a material is assigned to this property, it will be used instead of any other physics material, such as an inherited one.
 
+----
+
 .. _class_RigidBody2D_property_sleeping:
 
 - :ref:`bool<class_bool>` **sleeping**
@@ -441,6 +487,8 @@ If a material is assigned to this property, it will be used instead of any other
 +-----------+---------------------+
 
 If ``true``, the body is sleeping and will not calculate forces until woken up by a collision or by using :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` or :ref:`add_force<class_RigidBody2D_method_add_force>`.
+
+----
 
 .. _class_RigidBody2D_property_weight:
 
@@ -465,11 +513,15 @@ Method Descriptions
 
 Allows you to read and safely modify the simulation state for the object. Use this instead of :ref:`Node._physics_process<class_Node_method__physics_process>` if you need to directly change the body's ``position`` or other physics properties. By default, it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
 
+----
+
 .. _class_RigidBody2D_method_add_central_force:
 
 - void **add_central_force** **(** :ref:`Vector2<class_Vector2>` force **)**
 
 Adds a constant directional force without affecting rotation.
+
+----
 
 .. _class_RigidBody2D_method_add_force:
 
@@ -477,11 +529,15 @@ Adds a constant directional force without affecting rotation.
 
 Adds a positioned force to the body. Both the force and the offset from the body origin are in global coordinates.
 
+----
+
 .. _class_RigidBody2D_method_add_torque:
 
 - void **add_torque** **(** :ref:`float<class_float>` torque **)**
 
 Adds a constant rotational force.
+
+----
 
 .. _class_RigidBody2D_method_apply_central_impulse:
 
@@ -489,17 +545,23 @@ Adds a constant rotational force.
 
 Applies a directional impulse without affecting rotation.
 
+----
+
 .. _class_RigidBody2D_method_apply_impulse:
 
 - void **apply_impulse** **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` impulse **)**
 
 Applies a positioned impulse to the body. An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason it should only be used when simulating one-time impacts (use the "_force" functions otherwise). The position uses the rotation of the global coordinate system, but is centered at the object's origin.
 
+----
+
 .. _class_RigidBody2D_method_apply_torque_impulse:
 
 - void **apply_torque_impulse** **(** :ref:`float<class_float>` torque **)**
 
 Applies a rotational impulse to the body.
+
+----
 
 .. _class_RigidBody2D_method_get_colliding_bodies:
 
@@ -509,11 +571,15 @@ Returns a list of the bodies colliding with this one. Use :ref:`contacts_reporte
 
 **Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
+----
+
 .. _class_RigidBody2D_method_set_axis_velocity:
 
 - void **set_axis_velocity** **(** :ref:`Vector2<class_Vector2>` axis_velocity **)**
 
 Sets the body's velocity on the given axis. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
+
+----
 
 .. _class_RigidBody2D_method_test_motion:
 

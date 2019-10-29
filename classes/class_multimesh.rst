@@ -75,6 +75,8 @@ enum **TransformFormat**:
 
 - **TRANSFORM_3D** = **1** --- Use this when using 3D transforms.
 
+----
+
 .. _enum_MultiMesh_ColorFormat:
 
 .. _class_MultiMesh_constant_COLOR_NONE:
@@ -90,6 +92,8 @@ enum **ColorFormat**:
 - **COLOR_8BIT** = **1** --- Compress :ref:`Color<class_Color>` data into 8 bits when passing to shader. This uses less memory and can be faster, but the :ref:`Color<class_Color>` loses precision.
 
 - **COLOR_FLOAT** = **2** --- The :ref:`Color<class_Color>` passed into :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>` will use 4 floats. Use this for highest precision :ref:`Color<class_Color>`.
+
+----
 
 .. _enum_MultiMesh_CustomDataFormat:
 
@@ -140,6 +144,8 @@ Property Descriptions
 
 Format of colors in color array that gets passed to shader.
 
+----
+
 .. _class_MultiMesh_property_custom_data_format:
 
 - :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` **custom_data_format**
@@ -153,6 +159,8 @@ Format of colors in color array that gets passed to shader.
 +-----------+-------------------------------+
 
 Format of custom data in custom data array that gets passed to shader.
+
+----
 
 .. _class_MultiMesh_property_instance_count:
 
@@ -168,6 +176,8 @@ Format of custom data in custom data array that gets passed to shader.
 
 Number of instances that will get drawn. This clears and (re)sizes the buffers. By default, all instances are drawn but you can limit this with :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>`.
 
+----
+
 .. _class_MultiMesh_property_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**
@@ -179,6 +189,8 @@ Number of instances that will get drawn. This clears and (re)sizes the buffers. 
 +----------+-----------------+
 
 Mesh to be drawn.
+
+----
 
 .. _class_MultiMesh_property_transform_format:
 
@@ -193,6 +205,8 @@ Mesh to be drawn.
 +-----------+-----------------------------+
 
 Format of transform used to transform mesh, either 2D or 3D.
+
+----
 
 .. _class_MultiMesh_property_visible_instance_count:
 
@@ -217,11 +231,15 @@ Method Descriptions
 
 Returns the visibility axis-aligned bounding box.
 
+----
+
 .. _class_MultiMesh_method_get_instance_color:
 
 - :ref:`Color<class_Color>` **get_instance_color** **(** :ref:`int<class_int>` instance **)** const
 
 Gets a specific instance's color.
+
+----
 
 .. _class_MultiMesh_method_get_instance_custom_data:
 
@@ -229,17 +247,23 @@ Gets a specific instance's color.
 
 Returns the custom data that has been set for a specific instance.
 
+----
+
 .. _class_MultiMesh_method_get_instance_transform:
 
 - :ref:`Transform<class_Transform>` **get_instance_transform** **(** :ref:`int<class_int>` instance **)** const
 
 Returns the :ref:`Transform<class_Transform>` of a specific instance.
 
+----
+
 .. _class_MultiMesh_method_get_instance_transform_2d:
 
 - :ref:`Transform2D<class_Transform2D>` **get_instance_transform_2d** **(** :ref:`int<class_int>` instance **)** const
 
 Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
+
+----
 
 .. _class_MultiMesh_method_set_as_bulk_array:
 
@@ -251,6 +275,8 @@ All data is packed in one large float array. An array may look like this: Transf
 
 :ref:`Transform<class_Transform>` is stored as 12 floats, :ref:`Transform2D<class_Transform2D>` is stored as 8 floats, ``COLOR_8BIT`` / ``CUSTOM_DATA_8BIT`` is stored as 1 float (4 bytes as is) and ``COLOR_FLOAT`` / ``CUSTOM_DATA_FLOAT`` is stored as 4 floats.
 
+----
+
 .. _class_MultiMesh_method_set_instance_color:
 
 - void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
@@ -259,17 +285,23 @@ Sets the color of a specific instance.
 
 For the color to take effect, ensure that :ref:`color_format<class_MultiMesh_property_color_format>` is non-``null`` on the ``MultiMesh`` and :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` is ``true`` on the material.
 
+----
+
 .. _class_MultiMesh_method_set_instance_custom_data:
 
 - void **set_instance_custom_data** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**
 
 Sets custom data for a specific instance. Although :ref:`Color<class_Color>` is used, it is just a container for 4 numbers.
 
+----
+
 .. _class_MultiMesh_method_set_instance_transform:
 
 - void **set_instance_transform** **(** :ref:`int<class_int>` instance, :ref:`Transform<class_Transform>` transform **)**
 
 Sets the :ref:`Transform<class_Transform>` for a specific instance.
+
+----
 
 .. _class_MultiMesh_method_set_instance_transform_2d:
 

@@ -49,11 +49,15 @@ Method Descriptions
 
 Returns the navigation point closest to the point given. Points are in local coordinate space.
 
+----
+
 .. _class_Navigation2D_method_get_closest_point_owner:
 
 - :ref:`Object<class_Object>` **get_closest_point_owner** **(** :ref:`Vector2<class_Vector2>` to_point **)**
 
 Returns the owner of the :ref:`NavigationPolygon<class_NavigationPolygon>` which contains the navigation point closest to the point given. This is usually a :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>`. For polygons added via :ref:`navpoly_add<class_Navigation2D_method_navpoly_add>`, returns the owner that was given (or ``null`` if the ``owner`` parameter was omitted).
+
+----
 
 .. _class_Navigation2D_method_get_simple_path:
 
@@ -61,17 +65,23 @@ Returns the owner of the :ref:`NavigationPolygon<class_NavigationPolygon>` which
 
 Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the path is smoothed by merging path segments where possible.
 
+----
+
 .. _class_Navigation2D_method_navpoly_add:
 
 - :ref:`int<class_int>` **navpoly_add** **(** :ref:`NavigationPolygon<class_NavigationPolygon>` mesh, :ref:`Transform2D<class_Transform2D>` xform, :ref:`Object<class_Object>` owner=null **)**
 
 Adds a :ref:`NavigationPolygon<class_NavigationPolygon>`. Returns an ID for use with :ref:`navpoly_remove<class_Navigation2D_method_navpoly_remove>` or :ref:`navpoly_set_transform<class_Navigation2D_method_navpoly_set_transform>`. If given, a :ref:`Transform2D<class_Transform2D>` is applied to the polygon. The optional ``owner`` is used as return value for :ref:`get_closest_point_owner<class_Navigation2D_method_get_closest_point_owner>`.
 
+----
+
 .. _class_Navigation2D_method_navpoly_remove:
 
 - void **navpoly_remove** **(** :ref:`int<class_int>` id **)**
 
 Removes the :ref:`NavigationPolygon<class_NavigationPolygon>` with the given ID.
+
+----
 
 .. _class_Navigation2D_method_navpoly_set_transform:
 

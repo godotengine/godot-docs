@@ -51,6 +51,8 @@ Initializes the internal reference counter. Use this only if you really know wha
 
 Returns whether the initialization was successful.
 
+----
+
 .. _class_Reference_method_reference:
 
 - :ref:`bool<class_bool>` **reference** **(** **)**
@@ -58,6 +60,8 @@ Returns whether the initialization was successful.
 Increments the internal reference counter. Use this only if you really know what you are doing.
 
 Returns ``true`` if the increment was successful, ``false`` otherwise.
+
+----
 
 .. _class_Reference_method_unreference:
 

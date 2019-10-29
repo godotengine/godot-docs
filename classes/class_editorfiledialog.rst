@@ -67,11 +67,15 @@ Signals
 
 Emitted when a directory is selected.
 
+----
+
 .. _class_EditorFileDialog_signal_file_selected:
 
 - **file_selected** **(** :ref:`String<class_String>` path **)**
 
 Emitted when a file is selected.
+
+----
 
 .. _class_EditorFileDialog_signal_files_selected:
 
@@ -106,6 +110,8 @@ enum **Mode**:
 
 - **MODE_SAVE_FILE** = **4** --- The ``EditorFileDialog`` can select only one file. Accepting the window will save the file.
 
+----
+
 .. _enum_EditorFileDialog_Access:
 
 .. _class_EditorFileDialog_constant_ACCESS_RESOURCES:
@@ -121,6 +127,8 @@ enum **Access**:
 - **ACCESS_USERDATA** = **1** --- The ``EditorFileDialog`` can only view ``user://`` directory contents.
 
 - **ACCESS_FILESYSTEM** = **2** --- The ``EditorFileDialog`` can view the entire local file system.
+
+----
 
 .. _enum_EditorFileDialog_DisplayMode:
 
@@ -151,6 +159,8 @@ Property Descriptions
 
 The location from which the user may select a file, including ``res://``, ``user://``, and the local file system.
 
+----
+
 .. _class_EditorFileDialog_property_current_dir:
 
 - :ref:`String<class_String>` **current_dir**
@@ -164,6 +174,8 @@ The location from which the user may select a file, including ``res://``, ``user
 +-----------+------------------------+
 
 The currently occupied directory.
+
+----
 
 .. _class_EditorFileDialog_property_current_file:
 
@@ -179,6 +191,8 @@ The currently occupied directory.
 
 The currently selected file.
 
+----
+
 .. _class_EditorFileDialog_property_current_path:
 
 - :ref:`String<class_String>` **current_path**
@@ -192,6 +206,8 @@ The currently selected file.
 +-----------+-------------------------+
 
 The file system path in the address bar.
+
+----
 
 .. _class_EditorFileDialog_property_disable_overwrite_warning:
 
@@ -207,6 +223,8 @@ The file system path in the address bar.
 
 If ``true``, the ``EditorFileDialog`` will not warn the user before overwriting files.
 
+----
+
 .. _class_EditorFileDialog_property_display_mode:
 
 - :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **display_mode**
@@ -221,6 +239,8 @@ If ``true``, the ``EditorFileDialog`` will not warn the user before overwriting 
 
 The view format in which the ``EditorFileDialog`` displays resources to the user.
 
+----
+
 .. _class_EditorFileDialog_property_mode:
 
 - :ref:`Mode<enum_EditorFileDialog_Mode>` **mode**
@@ -234,6 +254,8 @@ The view format in which the ``EditorFileDialog`` displays resources to the user
 +-----------+-----------------+
 
 The purpose of the ``EditorFileDialog``, which defines the allowed behaviors.
+
+----
 
 .. _class_EditorFileDialog_property_show_hidden_files:
 
@@ -260,17 +282,23 @@ Adds a comma-delimited file extension filter option to the ``EditorFileDialog`` 
 
 For example, ``"*.tscn, *.scn; Scenes"`` results in filter text "Scenes (\*.tscn, \*.scn)".
 
+----
+
 .. _class_EditorFileDialog_method_clear_filters:
 
 - void **clear_filters** **(** **)**
 
 Removes all filters except for "All Files (\*)".
 
+----
+
 .. _class_EditorFileDialog_method_get_vbox:
 
 - :ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
 
 Returns the ``VBoxContainer`` used to display the file system.
+
+----
 
 .. _class_EditorFileDialog_method_invalidate:
 

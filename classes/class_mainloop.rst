@@ -53,6 +53,15 @@ Methods
 | :ref:`bool<class_bool>` | :ref:`iteration<class_MainLoop_method_iteration>` **(** :ref:`float<class_float>` delta **)**                                                                    |
 +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_MainLoop_signal_on_request_permissions_result:
+
+- **on_request_permissions_result** **(** :ref:`String<class_String>` permission, :ref:`bool<class_bool>` granted **)**
+
+Emitted when an user responds to permission request.
+
 Constants
 ---------
 
@@ -189,15 +198,21 @@ Method Descriptions
 
 Called when files are dragged from the OS file manager and dropped in the game window. The arguments are a list of file paths and the identifier of the screen where the drag originated.
 
+----
+
 .. _class_MainLoop_method__finalize:
 
 - void **_finalize** **(** **)** virtual
 
 Called before the program exits.
 
+----
+
 .. _class_MainLoop_method__global_menu_action:
 
 - void **_global_menu_action** **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** virtual
+
+----
 
 .. _class_MainLoop_method__idle:
 
@@ -207,11 +222,15 @@ Called each idle frame with the time since the last idle frame as argument (in s
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
 
+----
+
 .. _class_MainLoop_method__initialize:
 
 - void **_initialize** **(** **)** virtual
 
 Called once during initialization.
+
+----
 
 .. _class_MainLoop_method__input_event:
 
@@ -219,11 +238,15 @@ Called once during initialization.
 
 Called whenever an :ref:`InputEvent<class_InputEvent>` is received by the main loop.
 
+----
+
 .. _class_MainLoop_method__input_text:
 
 - void **_input_text** **(** :ref:`String<class_String>` text **)** virtual
 
 Deprecated callback, does not do anything. Use :ref:`_input_event<class_MainLoop_method__input_event>` to parse text input. Will be removed in Godot 4.0.
+
+----
 
 .. _class_MainLoop_method__iteration:
 
@@ -233,11 +256,15 @@ Called each physics frame with the time since the last physics frame as argument
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
 
+----
+
 .. _class_MainLoop_method_finish:
 
 - void **finish** **(** **)**
 
 Should not be called manually, override :ref:`_finalize<class_MainLoop_method__finalize>` instead. Will be removed in Godot 4.0.
+
+----
 
 .. _class_MainLoop_method_idle:
 
@@ -245,11 +272,15 @@ Should not be called manually, override :ref:`_finalize<class_MainLoop_method__f
 
 Should not be called manually, override :ref:`_idle<class_MainLoop_method__idle>` instead. Will be removed in Godot 4.0.
 
+----
+
 .. _class_MainLoop_method_init:
 
 - void **init** **(** **)**
 
 Should not be called manually, override :ref:`_initialize<class_MainLoop_method__initialize>` instead. Will be removed in Godot 4.0.
+
+----
 
 .. _class_MainLoop_method_input_event:
 
@@ -257,11 +288,15 @@ Should not be called manually, override :ref:`_initialize<class_MainLoop_method_
 
 Should not be called manually, override :ref:`_input_event<class_MainLoop_method__input_event>` instead. Will be removed in Godot 4.0.
 
+----
+
 .. _class_MainLoop_method_input_text:
 
 - void **input_text** **(** :ref:`String<class_String>` text **)**
 
 Should not be called manually, override :ref:`_input_text<class_MainLoop_method__input_text>` instead. Will be removed in Godot 4.0.
+
+----
 
 .. _class_MainLoop_method_iteration:
 

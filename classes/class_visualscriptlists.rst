@@ -53,29 +53,43 @@ Method Descriptions
 
 - void **add_input_data_port** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)**
 
+----
+
 .. _class_VisualScriptLists_method_add_output_data_port:
 
 - void **add_output_data_port** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)**
+
+----
 
 .. _class_VisualScriptLists_method_remove_input_data_port:
 
 - void **remove_input_data_port** **(** :ref:`int<class_int>` index **)**
 
+----
+
 .. _class_VisualScriptLists_method_remove_output_data_port:
 
 - void **remove_output_data_port** **(** :ref:`int<class_int>` index **)**
+
+----
 
 .. _class_VisualScriptLists_method_set_input_data_port_name:
 
 - void **set_input_data_port_name** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
 
+----
+
 .. _class_VisualScriptLists_method_set_input_data_port_type:
 
 - void **set_input_data_port_type** **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**
 
+----
+
 .. _class_VisualScriptLists_method_set_output_data_port_name:
 
 - void **set_output_data_port_name** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
+
+----
 
 .. _class_VisualScriptLists_method_set_output_data_port_type:
 

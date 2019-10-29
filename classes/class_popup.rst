@@ -55,6 +55,8 @@ Signals
 
 Emitted when a popup is about to be shown. This is often used in :ref:`PopupMenu<class_PopupMenu>` to clear the list of options then create a new one according to the current context.
 
+----
+
 .. _class_Popup_signal_popup_hide:
 
 - **popup_hide** **(** **)**
@@ -103,11 +105,15 @@ Method Descriptions
 
 Popup (show the control in modal form).
 
+----
+
 .. _class_Popup_method_popup_centered:
 
 - void **popup_centered** **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**
 
 Popup (show the control in modal form) in the center of the screen relative to its current canvas transform, at the current size, or at a size determined by ``size``.
+
+----
 
 .. _class_Popup_method_popup_centered_clamped:
 
@@ -115,17 +121,23 @@ Popup (show the control in modal form) in the center of the screen relative to i
 
 Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, clamping the size to ``size``, then ensuring the popup is no larger than the viewport size multiplied by ``fallback_ratio``.
 
+----
+
 .. _class_Popup_method_popup_centered_minsize:
 
 - void **popup_centered_minsize** **(** :ref:`Vector2<class_Vector2>` minsize=Vector2( 0, 0 ) **)**
 
 Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, ensuring the size is never smaller than ``minsize``.
 
+----
+
 .. _class_Popup_method_popup_centered_ratio:
 
 - void **popup_centered_ratio** **(** :ref:`float<class_float>` ratio=0.75 **)**
 
 Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, scaled at a ratio of size of the screen.
+
+----
 
 .. _class_Popup_method_set_as_minsize:
 

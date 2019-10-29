@@ -50,6 +50,8 @@ Property Descriptions
 
 The ID of the :ref:`CameraFeed<class_CameraFeed>` for which we want to display the image.
 
+----
+
 .. _class_CameraTexture_property_camera_is_active:
 
 - :ref:`bool<class_bool>` **camera_is_active**
@@ -63,6 +65,8 @@ The ID of the :ref:`CameraFeed<class_CameraFeed>` for which we want to display t
 +-----------+--------------------------+
 
 Convenience property that gives access to the active property of the :ref:`CameraFeed<class_CameraFeed>`.
+
+----
 
 .. _class_CameraTexture_property_which_feed:
 

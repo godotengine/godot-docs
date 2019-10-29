@@ -87,6 +87,8 @@ Property Descriptions
 
 The storage quality for :ref:`STORAGE_COMPRESS_LOSSY<class_ImageTexture_constant_STORAGE_COMPRESS_LOSSY>`.
 
+----
+
 .. _class_ImageTexture_property_storage:
 
 - :ref:`Storage<enum_ImageTexture_Storage>` **storage**
@@ -112,11 +114,15 @@ Create a new ``ImageTexture`` with ``width`` and ``height``.
 
 ``format`` is a value from :ref:`Format<enum_Image_Format>`, ``flags`` is any combination of :ref:`Flags<enum_Texture_Flags>`.
 
+----
+
 .. _class_ImageTexture_method_create_from_image:
 
 - void **create_from_image** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` flags=7 **)**
 
 Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with ``flags`` from :ref:`Flags<enum_Texture_Flags>`. An sRGB to linear color space conversion can take place, according to :ref:`Format<enum_Image_Format>`.
+
+----
 
 .. _class_ImageTexture_method_get_format:
 
@@ -124,17 +130,23 @@ Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with ``flags`` f
 
 Returns the format of the ``ImageTexture``, one of :ref:`Format<enum_Image_Format>`.
 
+----
+
 .. _class_ImageTexture_method_load:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
 Load an ``ImageTexture`` from a file path.
 
+----
+
 .. _class_ImageTexture_method_set_data:
 
 - void **set_data** **(** :ref:`Image<class_Image>` image **)**
 
 Sets the :ref:`Image<class_Image>` of this ``ImageTexture``.
+
+----
 
 .. _class_ImageTexture_method_set_size_override:
 

@@ -82,6 +82,8 @@ Property Descriptions
 | *Getter*  | get_fft_size()      |
 +-----------+---------------------+
 
+----
+
 .. _class_AudioEffectPitchShift_property_oversampling:
 
 - :ref:`int<class_int>` **oversampling**
@@ -93,6 +95,8 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_oversampling()      |
 +-----------+-------------------------+
+
+----
 
 .. _class_AudioEffectPitchShift_property_pitch_scale:
 

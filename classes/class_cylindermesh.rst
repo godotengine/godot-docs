@@ -55,6 +55,8 @@ Property Descriptions
 
 Bottom radius of the cylinder.
 
+----
+
 .. _class_CylinderMesh_property_height:
 
 - :ref:`float<class_float>` **height**
@@ -68,6 +70,8 @@ Bottom radius of the cylinder.
 +-----------+-------------------+
 
 Full height of the cylinder.
+
+----
 
 .. _class_CylinderMesh_property_radial_segments:
 
@@ -83,6 +87,8 @@ Full height of the cylinder.
 
 Number of radial segments on the cylinder.
 
+----
+
 .. _class_CylinderMesh_property_rings:
 
 - :ref:`int<class_int>` **rings**
@@ -96,6 +102,8 @@ Number of radial segments on the cylinder.
 +-----------+------------------+
 
 Number of edge rings along the height of the cylinder.
+
+----
 
 .. _class_CylinderMesh_property_top_radius:
 

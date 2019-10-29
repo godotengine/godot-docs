@@ -118,11 +118,15 @@ Signals
 
 Emitted when the ``TabContainer``'s :ref:`Popup<class_Popup>` button is clicked. See :ref:`set_popup<class_TabContainer_method_set_popup>` for details.
 
+----
+
 .. _class_TabContainer_signal_tab_changed:
 
 - **tab_changed** **(** :ref:`int<class_int>` tab **)**
 
 Emitted when switching to another tab.
+
+----
 
 .. _class_TabContainer_signal_tab_selected:
 
@@ -177,6 +181,8 @@ Property Descriptions
 
 The current tab index. When set, this index's :ref:`Control<class_Control>` node's ``visible`` property is set to ``true`` and all others are set to ``false``.
 
+----
+
 .. _class_TabContainer_property_drag_to_rearrange_enabled:
 
 - :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
@@ -190,6 +196,8 @@ The current tab index. When set, this index's :ref:`Control<class_Control>` node
 +-----------+--------------------------------------+
 
 If ``true``, tabs can be rearranged with mouse drag.
+
+----
 
 .. _class_TabContainer_property_tab_align:
 
@@ -205,6 +213,8 @@ If ``true``, tabs can be rearranged with mouse drag.
 
 The alignment of all tabs in the tab container. See the ``ALIGN_*`` constants for details.
 
+----
+
 .. _class_TabContainer_property_tabs_visible:
 
 - :ref:`bool<class_bool>` **tabs_visible**
@@ -218,6 +228,8 @@ The alignment of all tabs in the tab container. See the ``ALIGN_*`` constants fo
 +-----------+-------------------------+
 
 If ``true``, tabs are visible. If ``false``, tabs' content and titles are hidden.
+
+----
 
 .. _class_TabContainer_property_use_hidden_tabs_for_min_size:
 
@@ -240,11 +252,15 @@ Method Descriptions
 
 Returns the child :ref:`Control<class_Control>` node located at the active tab index.
 
+----
+
 .. _class_TabContainer_method_get_popup:
 
 - :ref:`Popup<class_Popup>` **get_popup** **(** **)** const
 
 Returns the :ref:`Popup<class_Popup>` node instance if one has been set already with :ref:`set_popup<class_TabContainer_method_set_popup>`.
+
+----
 
 .. _class_TabContainer_method_get_previous_tab:
 
@@ -252,11 +268,15 @@ Returns the :ref:`Popup<class_Popup>` node instance if one has been set already 
 
 Returns the previously active tab index.
 
+----
+
 .. _class_TabContainer_method_get_tab_control:
 
 - :ref:`Control<class_Control>` **get_tab_control** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the currently visible tab's :ref:`Control<class_Control>` node.
+
+----
 
 .. _class_TabContainer_method_get_tab_count:
 
@@ -264,11 +284,15 @@ Returns the currently visible tab's :ref:`Control<class_Control>` node.
 
 Returns the number of tabs.
 
+----
+
 .. _class_TabContainer_method_get_tab_disabled:
 
 - :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** const
 
 Returns ``true`` if the tab at index ``tab_idx`` is disabled.
+
+----
 
 .. _class_TabContainer_method_get_tab_icon:
 
@@ -276,11 +300,15 @@ Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
 Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or ``null`` if the tab has no :ref:`Texture<class_Texture>`.
 
+----
+
 .. _class_TabContainer_method_get_tab_title:
 
 - :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** const
 
 Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
+
+----
 
 .. _class_TabContainer_method_get_tabs_rearrange_group:
 
@@ -288,11 +316,15 @@ Returns the title of the tab at index ``tab_idx``. Tab titles default to the nam
 
 Returns the ``TabContainer`` rearrange group id.
 
+----
+
 .. _class_TabContainer_method_set_popup:
 
 - void **set_popup** **(** :ref:`Node<class_Node>` popup **)**
 
 If set on a :ref:`Popup<class_Popup>` node instance, a popup menu icon appears in the top-right corner of the ``TabContainer``. Clicking it will expand the :ref:`Popup<class_Popup>` node.
+
+----
 
 .. _class_TabContainer_method_set_tab_disabled:
 
@@ -302,17 +334,23 @@ If ``disabled`` is ``false``, hides the tab at index ``tab_idx``.
 
 **Note:** Its title text will remain, unless also removed with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
 
+----
+
 .. _class_TabContainer_method_set_tab_icon:
 
 - void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**
 
 Sets an icon for the tab at index ``tab_idx``.
 
+----
+
 .. _class_TabContainer_method_set_tab_title:
 
 - void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**
 
 Sets a title for the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
+
+----
 
 .. _class_TabContainer_method_set_tabs_rearrange_group:
 

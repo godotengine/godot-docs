@@ -110,11 +110,15 @@ Signals
 
 Signal sent at the beginning of a GraphNode movement.
 
+----
+
 .. _class_GraphEdit_signal__end_node_move:
 
 - **_end_node_move** **(** **)**
 
 Signal sent at the end of a GraphNode movement.
+
+----
 
 .. _class_GraphEdit_signal_connection_from_empty:
 
@@ -122,11 +126,15 @@ Signal sent at the end of a GraphNode movement.
 
 Signal sent when user dragging connection from input port into empty space of the graph.
 
+----
+
 .. _class_GraphEdit_signal_connection_request:
 
 - **connection_request** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot **)**
 
 Signal sent to the GraphEdit when the connection between the ``from_slot`` slot of the ``from`` GraphNode and the ``to_slot`` slot of the ``to`` GraphNode is attempted to be created.
+
+----
 
 .. _class_GraphEdit_signal_connection_to_empty:
 
@@ -134,11 +142,15 @@ Signal sent to the GraphEdit when the connection between the ``from_slot`` slot 
 
 Signal sent when user dragging connection from output port into empty space of the graph.
 
+----
+
 .. _class_GraphEdit_signal_copy_nodes_request:
 
 - **copy_nodes_request** **(** **)**
 
 Signal sent when the user presses ``Ctrl + C``.
+
+----
 
 .. _class_GraphEdit_signal_delete_nodes_request:
 
@@ -146,11 +158,15 @@ Signal sent when the user presses ``Ctrl + C``.
 
 Signal sent when a GraphNode is attempted to be removed from the GraphEdit.
 
+----
+
 .. _class_GraphEdit_signal_disconnection_request:
 
 - **disconnection_request** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot **)**
 
 Emitted to the GraphEdit when the connection between ``from_slot`` slot of ``from`` GraphNode and ``to_slot`` slot of ``to`` GraphNode is attempted to be removed.
+
+----
 
 .. _class_GraphEdit_signal_duplicate_nodes_request:
 
@@ -158,11 +174,15 @@ Emitted to the GraphEdit when the connection between ``from_slot`` slot of ``fro
 
 Emitted when a GraphNode is attempted to be duplicated in the GraphEdit.
 
+----
+
 .. _class_GraphEdit_signal_node_selected:
 
 - **node_selected** **(** :ref:`Node<class_Node>` node **)**
 
 Emitted when a GraphNode is selected.
+
+----
 
 .. _class_GraphEdit_signal_paste_nodes_request:
 
@@ -170,11 +190,15 @@ Emitted when a GraphNode is selected.
 
 Signal sent when the user presses ``Ctrl + V``.
 
+----
+
 .. _class_GraphEdit_signal_popup_request:
 
 - **popup_request** **(** :ref:`Vector2<class_Vector2>` position **)**
 
 Emitted when a popup is requested. Happens on right-clicking in the GraphEdit. ``position`` is the position of the mouse pointer when the signal is sent.
+
+----
 
 .. _class_GraphEdit_signal_scroll_offset_changed:
 
@@ -204,6 +228,8 @@ Property Descriptions
 
 If ``true``, enables disconnection of existing connections in the GraphEdit by dragging the right end.
 
+----
+
 .. _class_GraphEdit_property_scroll_offset:
 
 - :ref:`Vector2<class_Vector2>` **scroll_offset**
@@ -217,6 +243,8 @@ If ``true``, enables disconnection of existing connections in the GraphEdit by d
 +-----------+-----------------------+
 
 The scroll offset.
+
+----
 
 .. _class_GraphEdit_property_snap_distance:
 
@@ -232,6 +260,8 @@ The scroll offset.
 
 The snapping distance in pixels.
 
+----
+
 .. _class_GraphEdit_property_use_snap:
 
 - :ref:`bool<class_bool>` **use_snap**
@@ -245,6 +275,8 @@ The snapping distance in pixels.
 +-----------+---------------------+
 
 If ``true``, enables snapping.
+
+----
 
 .. _class_GraphEdit_property_zoom:
 
@@ -269,11 +301,15 @@ Method Descriptions
 
 Makes possible the connection between two different slot types. The type is defined with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
 
+----
+
 .. _class_GraphEdit_method_add_valid_left_disconnect_type:
 
 - void **add_valid_left_disconnect_type** **(** :ref:`int<class_int>` type **)**
 
 Makes possible to disconnect nodes when dragging from the slot at the left if it has the specified type.
+
+----
 
 .. _class_GraphEdit_method_add_valid_right_disconnect_type:
 
@@ -281,11 +317,15 @@ Makes possible to disconnect nodes when dragging from the slot at the left if it
 
 Makes possible to disconnect nodes when dragging from the slot at the right if it has the specified type.
 
+----
+
 .. _class_GraphEdit_method_clear_connections:
 
 - void **clear_connections** **(** **)**
 
 Removes all connections between nodes.
+
+----
 
 .. _class_GraphEdit_method_connect_node:
 
@@ -293,11 +333,15 @@ Removes all connections between nodes.
 
 Create a connection between the ``from_port`` slot of the ``from`` GraphNode and the ``to_port`` slot of the ``to`` GraphNode. If the connection already exists, no connection is created.
 
+----
+
 .. _class_GraphEdit_method_disconnect_node:
 
 - void **disconnect_node** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
 Removes the connection between the ``from_port`` slot of the ``from`` GraphNode and the ``to_port`` slot of the ``to`` GraphNode. If the connection does not exist, no connection is removed.
+
+----
 
 .. _class_GraphEdit_method_get_connection_list:
 
@@ -305,9 +349,13 @@ Removes the connection between the ``from_port`` slot of the ``from`` GraphNode 
 
 Returns an Array containing the list of connections. A connection consists in a structure of the form ``{ from_port: 0, from: "GraphNode name 0", to_port: 1, to: "GraphNode name 1" }``.
 
+----
+
 .. _class_GraphEdit_method_get_zoom_hbox:
 
 - :ref:`HBoxContainer<class_HBoxContainer>` **get_zoom_hbox** **(** **)**
+
+----
 
 .. _class_GraphEdit_method_is_node_connected:
 
@@ -315,11 +363,15 @@ Returns an Array containing the list of connections. A connection consists in a 
 
 Returns ``true`` if the ``from_port`` slot of the ``from`` GraphNode is connected to the ``to_port`` slot of the ``to`` GraphNode.
 
+----
+
 .. _class_GraphEdit_method_is_valid_connection_type:
 
 - :ref:`bool<class_bool>` **is_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** const
 
 Returns whether it's possible to connect slots of the specified types.
+
+----
 
 .. _class_GraphEdit_method_remove_valid_connection_type:
 
@@ -327,11 +379,15 @@ Returns whether it's possible to connect slots of the specified types.
 
 Makes it not possible to connect between two different slot types. The type is defined with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
 
+----
+
 .. _class_GraphEdit_method_remove_valid_left_disconnect_type:
 
 - void **remove_valid_left_disconnect_type** **(** :ref:`int<class_int>` type **)**
 
 Removes the possibility to disconnect nodes when dragging from the slot at the left if it has the specified type.
+
+----
 
 .. _class_GraphEdit_method_remove_valid_right_disconnect_type:
 
@@ -339,9 +395,13 @@ Removes the possibility to disconnect nodes when dragging from the slot at the l
 
 Removes the possibility to disconnect nodes when dragging from the slot at the right if it has the specified type.
 
+----
+
 .. _class_GraphEdit_method_set_connection_activity:
 
 - void **set_connection_activity** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)**
+
+----
 
 .. _class_GraphEdit_method_set_selected:
 

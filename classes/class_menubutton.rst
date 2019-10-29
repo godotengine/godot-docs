@@ -111,6 +111,8 @@ Method Descriptions
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
+----
+
 .. _class_MenuButton_method_set_disable_shortcuts:
 
 - void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**

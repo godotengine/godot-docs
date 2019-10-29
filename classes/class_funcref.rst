@@ -49,11 +49,15 @@ Method Descriptions
 
 Calls the referenced function previously set by :ref:`set_function<class_FuncRef_method_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`.
 
+----
+
 .. _class_FuncRef_method_call_funcv:
 
 - :ref:`Variant<class_Variant>` **call_funcv** **(** :ref:`Array<class_Array>` arg_array **)**
 
 Calls the referenced function previously set by :ref:`set_function<class_FuncRef_method_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`. Contrarily to :ref:`call_func<class_FuncRef_method_call_func>`, this method does not support a variable number of arguments but expects all parameters to be passed via a single :ref:`Array<class_Array>`.
+
+----
 
 .. _class_FuncRef_method_is_valid:
 
@@ -61,11 +65,15 @@ Calls the referenced function previously set by :ref:`set_function<class_FuncRef
 
 Returns whether the object still exists and has the function assigned.
 
+----
+
 .. _class_FuncRef_method_set_function:
 
 - void **set_function** **(** :ref:`String<class_String>` name **)**
 
 The name of the referenced function to call on the object, without parentheses or any parameters.
+
+----
 
 .. _class_FuncRef_method_set_instance:
 

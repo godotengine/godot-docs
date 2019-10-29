@@ -76,6 +76,8 @@ Property Descriptions
 
 Ascent (number of pixels above the baseline).
 
+----
+
 .. _class_BitmapFont_property_distance_field:
 
 - :ref:`bool<class_bool>` **distance_field**
@@ -90,6 +92,8 @@ Ascent (number of pixels above the baseline).
 
 If ``true``, distance field hint is enabled.
 
+----
+
 .. _class_BitmapFont_property_fallback:
 
 - :ref:`BitmapFont<class_BitmapFont>` **fallback**
@@ -101,6 +105,8 @@ If ``true``, distance field hint is enabled.
 +----------+---------------------+
 
 The fallback font.
+
+----
 
 .. _class_BitmapFont_property_height:
 
@@ -125,11 +131,15 @@ Method Descriptions
 
 Adds a character to the font, where ``character`` is the Unicode value, ``texture`` is the texture index, ``rect`` is the region in the texture (in pixels!), ``align`` is the (optional) alignment for the character and ``advance`` is the (optional) advance.
 
+----
+
 .. _class_BitmapFont_method_add_kerning_pair:
 
 - void **add_kerning_pair** **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b, :ref:`int<class_int>` kerning **)**
 
 Adds a kerning pair to the ``BitmapFont`` as a difference. Kerning pairs are special cases where a typeface advance is determined by the next character.
+
+----
 
 .. _class_BitmapFont_method_add_texture:
 
@@ -137,11 +147,15 @@ Adds a kerning pair to the ``BitmapFont`` as a difference. Kerning pairs are spe
 
 Adds a texture to the ``BitmapFont``.
 
+----
+
 .. _class_BitmapFont_method_clear:
 
 - void **clear** **(** **)**
 
 Clears all the font data and settings.
+
+----
 
 .. _class_BitmapFont_method_create_from_fnt:
 
@@ -149,11 +163,15 @@ Clears all the font data and settings.
 
 Creates a BitmapFont from the ``*.fnt`` file at ``path``.
 
+----
+
 .. _class_BitmapFont_method_get_char_size:
 
 - :ref:`Vector2<class_Vector2>` **get_char_size** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** const
 
 Returns the size of a character, optionally taking kerning into account if the next character is provided.
+
+----
 
 .. _class_BitmapFont_method_get_kerning_pair:
 
@@ -161,11 +179,15 @@ Returns the size of a character, optionally taking kerning into account if the n
 
 Returns a kerning pair as a difference.
 
+----
+
 .. _class_BitmapFont_method_get_texture:
 
 - :ref:`Texture<class_Texture>` **get_texture** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the font atlas texture at index ``idx``.
+
+----
 
 .. _class_BitmapFont_method_get_texture_count:
 

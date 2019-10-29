@@ -26,11 +26,27 @@ Properties
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
 | :ref:`Array<class_Array>`                                    | default_input_values                                                     | **O:** [  ] |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
+| :ref:`Source<enum_VisualShaderNodeCubeMap_Source>`           | :ref:`source<class_VisualShaderNodeCubeMap_property_source>`             | 0           |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
 | :ref:`TextureType<enum_VisualShaderNodeCubeMap_TextureType>` | :ref:`texture_type<class_VisualShaderNodeCubeMap_property_texture_type>` | 0           |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
 
 Enumerations
 ------------
+
+.. _enum_VisualShaderNodeCubeMap_Source:
+
+.. _class_VisualShaderNodeCubeMap_constant_SOURCE_TEXTURE:
+
+.. _class_VisualShaderNodeCubeMap_constant_SOURCE_PORT:
+
+enum **Source**:
+
+- **SOURCE_TEXTURE** = **0**
+
+- **SOURCE_PORT** = **1**
+
+----
 
 .. _enum_VisualShaderNodeCubeMap_TextureType:
 
@@ -60,6 +76,22 @@ Property Descriptions
 +----------+---------------------+
 | *Getter* | get_cube_map()      |
 +----------+---------------------+
+
+----
+
+.. _class_VisualShaderNodeCubeMap_property_source:
+
+- :ref:`Source<enum_VisualShaderNodeCubeMap_Source>` **source**
+
++-----------+-------------------+
+| *Default* | 0                 |
++-----------+-------------------+
+| *Setter*  | set_source(value) |
++-----------+-------------------+
+| *Getter*  | get_source()      |
++-----------+-------------------+
+
+----
 
 .. _class_VisualShaderNodeCubeMap_property_texture_type:
 

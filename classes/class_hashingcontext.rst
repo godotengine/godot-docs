@@ -86,11 +86,15 @@ Method Descriptions
 
 Closes the current context, and return the computed hash.
 
+----
+
 .. _class_HashingContext_method_start:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**
 
 Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` to start computation of a SHA-256).
+
+----
 
 .. _class_HashingContext_method_update:
 

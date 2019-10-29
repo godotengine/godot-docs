@@ -60,11 +60,15 @@ Method Descriptions
 
 Adds a :ref:`Translation<class_Translation>` resource.
 
+----
+
 .. _class_TranslationServer_method_clear:
 
 - void **clear** **(** **)**
 
 Clears the server from all translations.
+
+----
 
 .. _class_TranslationServer_method_get_loaded_locales:
 
@@ -72,11 +76,15 @@ Clears the server from all translations.
 
 Returns an Array of all loaded locales of the game.
 
+----
+
 .. _class_TranslationServer_method_get_locale:
 
 - :ref:`String<class_String>` **get_locale** **(** **)** const
 
 Returns the current locale of the game.
+
+----
 
 .. _class_TranslationServer_method_get_locale_name:
 
@@ -84,17 +92,23 @@ Returns the current locale of the game.
 
 Returns a locale's language and its variant (e.g. ``"en_US"`` would return ``"English (United States)"``).
 
+----
+
 .. _class_TranslationServer_method_remove_translation:
 
 - void **remove_translation** **(** :ref:`Translation<class_Translation>` translation **)**
 
 Removes the given translation from the server.
 
+----
+
 .. _class_TranslationServer_method_set_locale:
 
 - void **set_locale** **(** :ref:`String<class_String>` locale **)**
 
 Sets the locale of the game.
+
+----
 
 .. _class_TranslationServer_method_translate:
 

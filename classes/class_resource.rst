@@ -84,6 +84,8 @@ Property Descriptions
 
 If ``true``, the resource will be made unique in each instance of its local scene. It can thus be modified in a scene instance without impacting other instances of that same scene.
 
+----
+
 .. _class_Resource_property_resource_name:
 
 - :ref:`String<class_String>` **resource_name**
@@ -97,6 +99,8 @@ If ``true``, the resource will be made unique in each instance of its local scen
 +-----------+-----------------+
 
 The name of the resource. This is an optional identifier.
+
+----
 
 .. _class_Resource_property_resource_path:
 
@@ -121,11 +125,15 @@ Method Descriptions
 
 Virtual function which can be overridden to customize the behavior value of :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>`.
 
+----
+
 .. _class_Resource_method_duplicate:
 
 - :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** const
 
 Duplicates the resource, returning a new resource. By default, sub-resources are shared between resource copies for efficiency, this can be changed by passing ``true`` to the ``subresources`` argument.
+
+----
 
 .. _class_Resource_method_get_local_scene:
 
@@ -133,11 +141,15 @@ Duplicates the resource, returning a new resource. By default, sub-resources are
 
 If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is enabled and the resource was loaded from a :ref:`PackedScene<class_PackedScene>` instantiation, returns the local scene where this resource's unique copy is in use. Otherwise, returns ``null``.
 
+----
+
 .. _class_Resource_method_get_rid:
 
 - :ref:`RID<class_RID>` **get_rid** **(** **)** const
 
 Returns the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture<class_Texture>`, :ref:`Mesh<class_Mesh>`, etc) are high-level abstractions of resources stored in a server, so this function will return the original RID.
+
+----
 
 .. _class_Resource_method_setup_local_to_scene:
 
@@ -146,6 +158,8 @@ Returns the RID of the resource (or an empty RID). Many resources (such as :ref:
 This method is called when a resource with :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` enabled is loaded from a :ref:`PackedScene<class_PackedScene>` instantiation. Its behavior can be customized by overriding :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>` from script.
 
 For most resources, this method performs no base logic. :ref:`ViewportTexture<class_ViewportTexture>` performs custom logic to properly set the proxy texture and flags in the local viewport.
+
+----
 
 .. _class_Resource_method_take_over_path:
 

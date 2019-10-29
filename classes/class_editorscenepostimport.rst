@@ -69,11 +69,15 @@ Method Descriptions
 
 Returns the source file path which got imported (e.g. ``res://scene.dae``).
 
+----
+
 .. _class_EditorScenePostImport_method_get_source_folder:
 
 - :ref:`String<class_String>` **get_source_folder** **(** **)** const
 
 Returns the resource folder the imported scene file is located in.
+
+----
 
 .. _class_EditorScenePostImport_method_post_import:
 

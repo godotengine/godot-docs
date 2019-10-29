@@ -278,6 +278,8 @@ enum **JointType**:
 
 - **JOINT_6DOF** = **4** --- The :ref:`Joint<class_Joint>` is a :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`.
 
+----
+
 .. _enum_PhysicsServer_PinJointParam:
 
 .. _class_PhysicsServer_constant_PIN_JOINT_BIAS:
@@ -297,6 +299,8 @@ The higher, the stronger.
 The higher, the stronger.
 
 - **PIN_JOINT_IMPULSE_CLAMP** = **2** --- If above 0, this value is the maximum value for an impulse that this Joint puts on its ends.
+
+----
 
 .. _enum_PhysicsServer_HingeJointParam:
 
@@ -334,6 +338,8 @@ enum **HingeJointParam**:
 
 - **HINGE_JOINT_MOTOR_MAX_IMPULSE** = **7** --- Maximum acceleration for the motor.
 
+----
+
 .. _enum_PhysicsServer_HingeJointFlag:
 
 .. _class_PhysicsServer_constant_HINGE_JOINT_FLAG_USE_LIMIT:
@@ -345,6 +351,8 @@ enum **HingeJointFlag**:
 - **HINGE_JOINT_FLAG_USE_LIMIT** = **0** --- If ``true``, the Hinge has a maximum and a minimum rotation.
 
 - **HINGE_JOINT_FLAG_ENABLE_MOTOR** = **1** --- If ``true``, a motor turns the Hinge
+
+----
 
 .. _enum_PhysicsServer_SliderJointParam:
 
@@ -442,6 +450,8 @@ enum **SliderJointParam**:
 
 - **SLIDER_JOINT_MAX** = **22** --- Represents the size of the :ref:`SliderJointParam<enum_PhysicsServer_SliderJointParam>` enum.
 
+----
+
 .. _enum_PhysicsServer_ConeTwistJointParam:
 
 .. _class_PhysicsServer_constant_CONE_TWIST_JOINT_SWING_SPAN:
@@ -475,6 +485,8 @@ The higher, the faster.
 - **CONE_TWIST_JOINT_SOFTNESS** = **3** --- The ease with which the Joint twists, if it's too low, it takes more force to twist the joint.
 
 - **CONE_TWIST_JOINT_RELAXATION** = **4** --- Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
+
+----
 
 .. _enum_PhysicsServer_G6DOFJointAxisParam:
 
@@ -544,6 +556,8 @@ enum **G6DOFJointAxisParam**:
 
 - **G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT** = **18** --- Maximum acceleration for the motor at the axes.
 
+----
+
 .. _enum_PhysicsServer_G6DOFJointAxisFlag:
 
 .. _class_PhysicsServer_constant_G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT:
@@ -563,6 +577,8 @@ enum **G6DOFJointAxisFlag**:
 - **G6DOF_JOINT_FLAG_ENABLE_MOTOR** = **4** --- If ``set`` there is a rotational motor across these axes.
 
 - **G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR** = **5** --- If ``set`` there is a linear motor on this axis that targets a specific velocity.
+
+----
 
 .. _enum_PhysicsServer_ShapeType:
 
@@ -608,6 +624,8 @@ enum **ShapeType**:
 
 - **SHAPE_CUSTOM** = **9** --- This constant is used internally by the engine. Any attempt to create this kind of shape results in an error.
 
+----
+
 .. _enum_PhysicsServer_AreaParameter:
 
 .. _class_PhysicsServer_constant_AREA_PARAM_GRAVITY:
@@ -644,6 +662,8 @@ enum **AreaParameter**:
 
 - **AREA_PARAM_PRIORITY** = **7** --- Constant to set/get the priority (order of processing) of an area.
 
+----
+
 .. _enum_PhysicsServer_AreaSpaceOverrideMode:
 
 .. _class_PhysicsServer_constant_AREA_SPACE_OVERRIDE_DISABLED:
@@ -668,6 +688,8 @@ enum **AreaSpaceOverrideMode**:
 
 - **AREA_SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damp calculated so far, but keeps calculating the rest of the areas, down to the default one.
 
+----
+
 .. _enum_PhysicsServer_BodyMode:
 
 .. _class_PhysicsServer_constant_BODY_MODE_STATIC:
@@ -687,6 +709,8 @@ enum **BodyMode**:
 - **BODY_MODE_RIGID** = **2** --- Constant for rigid bodies.
 
 - **BODY_MODE_CHARACTER** = **3** --- Constant for rigid bodies in character mode. In this mode, a body can not rotate, and only its linear velocity is affected by physics.
+
+----
 
 .. _enum_PhysicsServer_BodyParameter:
 
@@ -720,6 +744,8 @@ enum **BodyParameter**:
 
 - **BODY_PARAM_MAX** = **6** --- Represents the size of the :ref:`BodyParameter<enum_PhysicsServer_BodyParameter>` enum.
 
+----
+
 .. _enum_PhysicsServer_BodyState:
 
 .. _class_PhysicsServer_constant_BODY_STATE_TRANSFORM:
@@ -744,6 +770,8 @@ enum **BodyState**:
 
 - **BODY_STATE_CAN_SLEEP** = **4** --- Constant to set/get whether the body can sleep.
 
+----
+
 .. _enum_PhysicsServer_AreaBodyStatus:
 
 .. _class_PhysicsServer_constant_AREA_BODY_ADDED:
@@ -755,6 +783,8 @@ enum **AreaBodyStatus**:
 - **AREA_BODY_ADDED** = **0** --- The value of the first parameter and area callback function receives, when an object enters one of its shapes.
 
 - **AREA_BODY_REMOVED** = **1** --- The value of the first parameter and area callback function receives, when an object exits one of its shapes.
+
+----
 
 .. _enum_PhysicsServer_ProcessInfo:
 
@@ -771,6 +801,8 @@ enum **ProcessInfo**:
 - **INFO_COLLISION_PAIRS** = **1** --- Constant to get the number of possible collisions.
 
 - **INFO_ISLAND_COUNT** = **2** --- Constant to get the number of space regions where a collision could occur.
+
+----
 
 .. _enum_PhysicsServer_SpaceParameter:
 
@@ -811,6 +843,8 @@ enum **SpaceParameter**:
 - **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **7** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
 
 - **SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH** = **8**
+
+----
 
 .. _enum_PhysicsServer_BodyAxis:
 
@@ -854,11 +888,15 @@ Method Descriptions
 
 Adds a shape to the area, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
 
+----
+
 .. _class_PhysicsServer_method_area_attach_object_instance_id:
 
 - void **area_attach_object_instance_id** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` id **)**
 
 Assigns the area to a descendant of :ref:`Object<class_Object>`, so it can exist in the node tree.
+
+----
 
 .. _class_PhysicsServer_method_area_clear_shapes:
 
@@ -866,11 +904,15 @@ Assigns the area to a descendant of :ref:`Object<class_Object>`, so it can exist
 
 Removes all shapes from an area. It does not delete the shapes, so they can be reassigned later.
 
+----
+
 .. _class_PhysicsServer_method_area_create:
 
 - :ref:`RID<class_RID>` **area_create** **(** **)**
 
 Creates an :ref:`Area<class_Area>`.
+
+----
 
 .. _class_PhysicsServer_method_area_get_object_instance_id:
 
@@ -878,11 +920,15 @@ Creates an :ref:`Area<class_Area>`.
 
 Gets the instance ID of the object the area is assigned to.
 
+----
+
 .. _class_PhysicsServer_method_area_get_param:
 
 - :ref:`Variant<class_Variant>` **area_get_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_PhysicsServer_AreaParameter>` param **)** const
 
 Returns an area parameter value. A list of available parameters is on the ``AREA_PARAM_*`` constants.
+
+----
 
 .. _class_PhysicsServer_method_area_get_shape:
 
@@ -890,11 +936,15 @@ Returns an area parameter value. A list of available parameters is on the ``AREA
 
 Returns the :ref:`RID<class_RID>` of the nth shape of an area.
 
+----
+
 .. _class_PhysicsServer_method_area_get_shape_count:
 
 - :ref:`int<class_int>` **area_get_shape_count** **(** :ref:`RID<class_RID>` area **)** const
 
 Returns the number of shapes assigned to an area.
+
+----
 
 .. _class_PhysicsServer_method_area_get_shape_transform:
 
@@ -902,11 +952,15 @@ Returns the number of shapes assigned to an area.
 
 Returns the transform matrix of a shape within an area.
 
+----
+
 .. _class_PhysicsServer_method_area_get_space:
 
 - :ref:`RID<class_RID>` **area_get_space** **(** :ref:`RID<class_RID>` area **)** const
 
 Returns the space assigned to the area.
+
+----
 
 .. _class_PhysicsServer_method_area_get_space_override_mode:
 
@@ -914,11 +968,15 @@ Returns the space assigned to the area.
 
 Returns the space override mode for the area.
 
+----
+
 .. _class_PhysicsServer_method_area_get_transform:
 
 - :ref:`Transform<class_Transform>` **area_get_transform** **(** :ref:`RID<class_RID>` area **)** const
 
 Returns the transform matrix for an area.
+
+----
 
 .. _class_PhysicsServer_method_area_is_ray_pickable:
 
@@ -926,15 +984,21 @@ Returns the transform matrix for an area.
 
 If ``true``, area collides with rays.
 
+----
+
 .. _class_PhysicsServer_method_area_remove_shape:
 
 - void **area_remove_shape** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)**
 
 Removes a shape from an area. It does not delete the shape, so it can be reassigned later.
 
+----
+
 .. _class_PhysicsServer_method_area_set_area_monitor_callback:
 
 - void **area_set_area_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` method **)**
+
+----
 
 .. _class_PhysicsServer_method_area_set_collision_layer:
 
@@ -942,11 +1006,15 @@ Removes a shape from an area. It does not delete the shape, so it can be reassig
 
 Assigns the area to one or many physics layers.
 
+----
+
 .. _class_PhysicsServer_method_area_set_collision_mask:
 
 - void **area_set_collision_mask** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` mask **)**
 
 Sets which physics layers the area will monitor.
+
+----
 
 .. _class_PhysicsServer_method_area_set_monitor_callback:
 
@@ -964,9 +1032,13 @@ Sets the function to call when any body/area enters or exits the area. This call
 
 5: The shape index of the area where the object entered/exited.
 
+----
+
 .. _class_PhysicsServer_method_area_set_monitorable:
 
 - void **area_set_monitorable** **(** :ref:`RID<class_RID>` area, :ref:`bool<class_bool>` monitorable **)**
+
+----
 
 .. _class_PhysicsServer_method_area_set_param:
 
@@ -974,11 +1046,15 @@ Sets the function to call when any body/area enters or exits the area. This call
 
 Sets the value for an area parameter. A list of available parameters is on the ``AREA_PARAM_*`` constants.
 
+----
+
 .. _class_PhysicsServer_method_area_set_ray_pickable:
 
 - void **area_set_ray_pickable** **(** :ref:`RID<class_RID>` area, :ref:`bool<class_bool>` enable **)**
 
 Sets object pickable with rays.
+
+----
 
 .. _class_PhysicsServer_method_area_set_shape:
 
@@ -986,9 +1062,13 @@ Sets object pickable with rays.
 
 Substitutes a given area shape by another. The old shape is selected by its index, the new one by its :ref:`RID<class_RID>`.
 
+----
+
 .. _class_PhysicsServer_method_area_set_shape_disabled:
 
 - void **area_set_shape_disabled** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disabled **)**
+
+----
 
 .. _class_PhysicsServer_method_area_set_shape_transform:
 
@@ -996,11 +1076,15 @@ Substitutes a given area shape by another. The old shape is selected by its inde
 
 Sets the transform matrix for an area shape.
 
+----
+
 .. _class_PhysicsServer_method_area_set_space:
 
 - void **area_set_space** **(** :ref:`RID<class_RID>` area, :ref:`RID<class_RID>` space **)**
 
 Assigns a space to the area.
+
+----
 
 .. _class_PhysicsServer_method_area_set_space_override_mode:
 
@@ -1008,15 +1092,21 @@ Assigns a space to the area.
 
 Sets the space override mode for the area. The modes are described in the constants ``AREA_SPACE_OVERRIDE_*``.
 
+----
+
 .. _class_PhysicsServer_method_area_set_transform:
 
 - void **area_set_transform** **(** :ref:`RID<class_RID>` area, :ref:`Transform<class_Transform>` transform **)**
 
 Sets the transform matrix for an area.
 
+----
+
 .. _class_PhysicsServer_method_body_add_central_force:
 
 - void **body_add_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**
+
+----
 
 .. _class_PhysicsServer_method_body_add_collision_exception:
 
@@ -1024,9 +1114,13 @@ Sets the transform matrix for an area.
 
 Adds a body to the list of bodies exempt from collisions.
 
+----
+
 .. _class_PhysicsServer_method_body_add_force:
 
 - void **body_add_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)**
+
+----
 
 .. _class_PhysicsServer_method_body_add_shape:
 
@@ -1034,13 +1128,19 @@ Adds a body to the list of bodies exempt from collisions.
 
 Adds a shape to the body, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
 
+----
+
 .. _class_PhysicsServer_method_body_add_torque:
 
 - void **body_add_torque** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` torque **)**
 
+----
+
 .. _class_PhysicsServer_method_body_apply_central_impulse:
 
 - void **body_apply_central_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` impulse **)**
+
+----
 
 .. _class_PhysicsServer_method_body_apply_impulse:
 
@@ -1048,11 +1148,15 @@ Adds a shape to the body, along with a transform matrix. Shapes are usually refe
 
 Gives the body a push at a ``position`` in the direction of the ``impulse``.
 
+----
+
 .. _class_PhysicsServer_method_body_apply_torque_impulse:
 
 - void **body_apply_torque_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` impulse **)**
 
 Gives the body a push to rotate it.
+
+----
 
 .. _class_PhysicsServer_method_body_attach_object_instance_id:
 
@@ -1060,11 +1164,15 @@ Gives the body a push to rotate it.
 
 Assigns the area to a descendant of :ref:`Object<class_Object>`, so it can exist in the node tree.
 
+----
+
 .. _class_PhysicsServer_method_body_clear_shapes:
 
 - void **body_clear_shapes** **(** :ref:`RID<class_RID>` body **)**
 
 Removes all shapes from a body.
+
+----
 
 .. _class_PhysicsServer_method_body_create:
 
@@ -1072,11 +1180,15 @@ Removes all shapes from a body.
 
 Creates a physics body. The first parameter can be any value from constants BODY_MODE\*, for the type of body created. Additionally, the body can be created in sleeping state to save processing time.
 
+----
+
 .. _class_PhysicsServer_method_body_get_collision_layer:
 
 - :ref:`int<class_int>` **body_get_collision_layer** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns the physics layer or layers a body belongs to.
+
+----
 
 .. _class_PhysicsServer_method_body_get_collision_mask:
 
@@ -1086,15 +1198,21 @@ Returns the physics layer or layers a body can collide with.
 
 -
 
+----
+
 .. _class_PhysicsServer_method_body_get_direct_state:
 
 - :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` **body_get_direct_state** **(** :ref:`RID<class_RID>` body **)**
 
 Returns the :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` of the body.
 
+----
+
 .. _class_PhysicsServer_method_body_get_kinematic_safe_margin:
 
 - :ref:`float<class_float>` **body_get_kinematic_safe_margin** **(** :ref:`RID<class_RID>` body **)** const
+
+----
 
 .. _class_PhysicsServer_method_body_get_max_contacts_reported:
 
@@ -1102,11 +1220,15 @@ Returns the :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` of the b
 
 Returns the maximum contacts that can be reported. See :ref:`body_set_max_contacts_reported<class_PhysicsServer_method_body_set_max_contacts_reported>`.
 
+----
+
 .. _class_PhysicsServer_method_body_get_mode:
 
 - :ref:`BodyMode<enum_PhysicsServer_BodyMode>` **body_get_mode** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns the body mode.
+
+----
 
 .. _class_PhysicsServer_method_body_get_object_instance_id:
 
@@ -1114,11 +1236,15 @@ Returns the body mode.
 
 Gets the instance ID of the object the area is assigned to.
 
+----
+
 .. _class_PhysicsServer_method_body_get_param:
 
 - :ref:`float<class_float>` **body_get_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_PhysicsServer_BodyParameter>` param **)** const
 
 Returns the value of a body parameter. A list of available parameters is on the ``BODY_PARAM_*`` constants.
+
+----
 
 .. _class_PhysicsServer_method_body_get_shape:
 
@@ -1126,11 +1252,15 @@ Returns the value of a body parameter. A list of available parameters is on the 
 
 Returns the :ref:`RID<class_RID>` of the nth shape of a body.
 
+----
+
 .. _class_PhysicsServer_method_body_get_shape_count:
 
 - :ref:`int<class_int>` **body_get_shape_count** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns the number of shapes assigned to a body.
+
+----
 
 .. _class_PhysicsServer_method_body_get_shape_transform:
 
@@ -1138,11 +1268,15 @@ Returns the number of shapes assigned to a body.
 
 Returns the transform matrix of a body shape.
 
+----
+
 .. _class_PhysicsServer_method_body_get_space:
 
 - :ref:`RID<class_RID>` **body_get_space** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns the :ref:`RID<class_RID>` of the space assigned to a body.
+
+----
 
 .. _class_PhysicsServer_method_body_get_state:
 
@@ -1150,9 +1284,13 @@ Returns the :ref:`RID<class_RID>` of the space assigned to a body.
 
 Returns a body state.
 
+----
+
 .. _class_PhysicsServer_method_body_is_axis_locked:
 
 - :ref:`bool<class_bool>` **body_is_axis_locked** **(** :ref:`RID<class_RID>` body, :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** const
+
+----
 
 .. _class_PhysicsServer_method_body_is_continuous_collision_detection_enabled:
 
@@ -1160,17 +1298,23 @@ Returns a body state.
 
 If ``true``, the continuous collision detection mode is enabled.
 
+----
+
 .. _class_PhysicsServer_method_body_is_omitting_force_integration:
 
 - :ref:`bool<class_bool>` **body_is_omitting_force_integration** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns whether a body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_PhysicsServer_method_body_set_force_integration_callback>`).
 
+----
+
 .. _class_PhysicsServer_method_body_is_ray_pickable:
 
 - :ref:`bool<class_bool>` **body_is_ray_pickable** **(** :ref:`RID<class_RID>` body **)** const
 
 If ``true``, the body can be detected by rays.
+
+----
 
 .. _class_PhysicsServer_method_body_remove_collision_exception:
 
@@ -1180,15 +1324,21 @@ Removes a body from the list of bodies exempt from collisions.
 
 Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided.
 
+----
+
 .. _class_PhysicsServer_method_body_remove_shape:
 
 - void **body_remove_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)**
 
 Removes a shape from a body. The shape is not deleted, so it can be reused afterwards.
 
+----
+
 .. _class_PhysicsServer_method_body_set_axis_lock:
 
 - void **body_set_axis_lock** **(** :ref:`RID<class_RID>` body, :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**
+
+----
 
 .. _class_PhysicsServer_method_body_set_axis_velocity:
 
@@ -1196,17 +1346,23 @@ Removes a shape from a body. The shape is not deleted, so it can be reused after
 
 Sets an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
 
+----
+
 .. _class_PhysicsServer_method_body_set_collision_layer:
 
 - void **body_set_collision_layer** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` layer **)**
 
 Sets the physics layer or layers a body belongs to.
 
+----
+
 .. _class_PhysicsServer_method_body_set_collision_mask:
 
 - void **body_set_collision_mask** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` mask **)**
 
 Sets the physics layer or layers a body can collide with.
+
+----
 
 .. _class_PhysicsServer_method_body_set_enable_continuous_collision_detection:
 
@@ -1216,15 +1372,21 @@ If ``true``, the continuous collision detection mode is enabled.
 
 Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided.
 
+----
+
 .. _class_PhysicsServer_method_body_set_force_integration_callback:
 
 - void **body_set_force_integration_callback** **(** :ref:`RID<class_RID>` body, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null **)**
 
 Sets the function used to calculate physics for an object, if that object allows it (see :ref:`body_set_omit_force_integration<class_PhysicsServer_method_body_set_omit_force_integration>`).
 
+----
+
 .. _class_PhysicsServer_method_body_set_kinematic_safe_margin:
 
 - void **body_set_kinematic_safe_margin** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` margin **)**
+
+----
 
 .. _class_PhysicsServer_method_body_set_max_contacts_reported:
 
@@ -1232,11 +1394,15 @@ Sets the function used to calculate physics for an object, if that object allows
 
 Sets the maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.
 
+----
+
 .. _class_PhysicsServer_method_body_set_mode:
 
 - void **body_set_mode** **(** :ref:`RID<class_RID>` body, :ref:`BodyMode<enum_PhysicsServer_BodyMode>` mode **)**
 
 Sets the body mode, from one of the constants BODY_MODE\*.
+
+----
 
 .. _class_PhysicsServer_method_body_set_omit_force_integration:
 
@@ -1244,11 +1410,15 @@ Sets the body mode, from one of the constants BODY_MODE\*.
 
 Sets whether a body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_PhysicsServer_method_body_set_force_integration_callback>`).
 
+----
+
 .. _class_PhysicsServer_method_body_set_param:
 
 - void **body_set_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_PhysicsServer_BodyParameter>` param, :ref:`float<class_float>` value **)**
 
 Sets a body parameter. A list of available parameters is on the ``BODY_PARAM_*`` constants.
+
+----
 
 .. _class_PhysicsServer_method_body_set_ray_pickable:
 
@@ -1256,15 +1426,21 @@ Sets a body parameter. A list of available parameters is on the ``BODY_PARAM_*``
 
 Sets the body pickable with rays if ``enabled`` is set.
 
+----
+
 .. _class_PhysicsServer_method_body_set_shape:
 
 - void **body_set_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`RID<class_RID>` shape **)**
 
 Substitutes a given body shape by another. The old shape is selected by its index, the new one by its :ref:`RID<class_RID>`.
 
+----
+
 .. _class_PhysicsServer_method_body_set_shape_disabled:
 
 - void **body_set_shape_disabled** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disabled **)**
+
+----
 
 .. _class_PhysicsServer_method_body_set_shape_transform:
 
@@ -1272,11 +1448,15 @@ Substitutes a given body shape by another. The old shape is selected by its inde
 
 Sets the transform matrix for a body shape.
 
+----
+
 .. _class_PhysicsServer_method_body_set_space:
 
 - void **body_set_space** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` space **)**
 
 Assigns a space to the body (see :ref:`space_create<class_PhysicsServer_method_space_create>`).
+
+----
 
 .. _class_PhysicsServer_method_body_set_state:
 
@@ -1284,11 +1464,15 @@ Assigns a space to the body (see :ref:`space_create<class_PhysicsServer_method_s
 
 Sets a body state (see BODY_STATE\* constants).
 
+----
+
 .. _class_PhysicsServer_method_cone_twist_joint_get_param:
 
 - :ref:`float<class_float>` **cone_twist_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`ConeTwistJointParam<enum_PhysicsServer_ConeTwistJointParam>` param **)** const
 
 Gets a cone_twist_joint parameter (see CONE_TWIST_JOINT\* constants).
+
+----
 
 .. _class_PhysicsServer_method_cone_twist_joint_set_param:
 
@@ -1296,11 +1480,15 @@ Gets a cone_twist_joint parameter (see CONE_TWIST_JOINT\* constants).
 
 Sets a cone_twist_joint parameter (see CONE_TWIST_JOINT\* constants).
 
+----
+
 .. _class_PhysicsServer_method_free_rid:
 
 - void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
 Destroys any of the objects created by PhysicsServer. If the :ref:`RID<class_RID>` passed is not one of the objects that can be created by PhysicsServer, an error will be sent to the console.
+
+----
 
 .. _class_PhysicsServer_method_generic_6dof_joint_get_flag:
 
@@ -1308,11 +1496,15 @@ Destroys any of the objects created by PhysicsServer. If the :ref:`RID<class_RID
 
 Gets a generic_6_DOF_joint flag (see G6DOF_JOINT_FLAG\* constants).
 
+----
+
 .. _class_PhysicsServer_method_generic_6dof_joint_get_param:
 
 - :ref:`float<class_float>` **generic_6dof_joint_get_param** **(** :ref:`RID<class_RID>` joint, Vector3.Axis axis, :ref:`G6DOFJointAxisParam<enum_PhysicsServer_G6DOFJointAxisParam>` param **)**
 
 Gets a generic_6_DOF_joint parameter (see G6DOF_JOINT\* constants without the G6DOF_JOINT_FLAG\*).
+
+----
 
 .. _class_PhysicsServer_method_generic_6dof_joint_set_flag:
 
@@ -1320,11 +1512,15 @@ Gets a generic_6_DOF_joint parameter (see G6DOF_JOINT\* constants without the G6
 
 Sets a generic_6_DOF_joint flag (see G6DOF_JOINT_FLAG\* constants).
 
+----
+
 .. _class_PhysicsServer_method_generic_6dof_joint_set_param:
 
 - void **generic_6dof_joint_set_param** **(** :ref:`RID<class_RID>` joint, Vector3.Axis axis, :ref:`G6DOFJointAxisParam<enum_PhysicsServer_G6DOFJointAxisParam>` param, :ref:`float<class_float>` value **)**
 
 Sets a generic_6_DOF_joint parameter (see G6DOF_JOINT\* constants without the G6DOF_JOINT_FLAG\*).
+
+----
 
 .. _class_PhysicsServer_method_get_process_info:
 
@@ -1332,11 +1528,15 @@ Sets a generic_6_DOF_joint parameter (see G6DOF_JOINT\* constants without the G6
 
 Returns an Info defined by the :ref:`ProcessInfo<enum_PhysicsServer_ProcessInfo>` input given.
 
+----
+
 .. _class_PhysicsServer_method_hinge_joint_get_flag:
 
 - :ref:`bool<class_bool>` **hinge_joint_get_flag** **(** :ref:`RID<class_RID>` joint, :ref:`HingeJointFlag<enum_PhysicsServer_HingeJointFlag>` flag **)** const
 
 Gets a hinge_joint flag (see HINGE_JOINT_FLAG\* constants).
+
+----
 
 .. _class_PhysicsServer_method_hinge_joint_get_param:
 
@@ -1344,11 +1544,15 @@ Gets a hinge_joint flag (see HINGE_JOINT_FLAG\* constants).
 
 Gets a hinge_joint parameter (see HINGE_JOINT\* constants without the HINGE_JOINT_FLAG\*).
 
+----
+
 .. _class_PhysicsServer_method_hinge_joint_set_flag:
 
 - void **hinge_joint_set_flag** **(** :ref:`RID<class_RID>` joint, :ref:`HingeJointFlag<enum_PhysicsServer_HingeJointFlag>` flag, :ref:`bool<class_bool>` enabled **)**
 
 Sets a hinge_joint flag (see HINGE_JOINT_FLAG\* constants).
+
+----
 
 .. _class_PhysicsServer_method_hinge_joint_set_param:
 
@@ -1356,11 +1560,15 @@ Sets a hinge_joint flag (see HINGE_JOINT_FLAG\* constants).
 
 Sets a hinge_joint parameter (see HINGE_JOINT\* constants without the HINGE_JOINT_FLAG\*).
 
+----
+
 .. _class_PhysicsServer_method_joint_create_cone_twist:
 
 - :ref:`RID<class_RID>` **joint_create_cone_twist** **(** :ref:`RID<class_RID>` body_A, :ref:`Transform<class_Transform>` local_ref_A, :ref:`RID<class_RID>` body_B, :ref:`Transform<class_Transform>` local_ref_B **)**
 
 Creates a :ref:`ConeTwistJoint<class_ConeTwistJoint>`.
+
+----
 
 .. _class_PhysicsServer_method_joint_create_generic_6dof:
 
@@ -1368,11 +1576,15 @@ Creates a :ref:`ConeTwistJoint<class_ConeTwistJoint>`.
 
 Creates a :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`.
 
+----
+
 .. _class_PhysicsServer_method_joint_create_hinge:
 
 - :ref:`RID<class_RID>` **joint_create_hinge** **(** :ref:`RID<class_RID>` body_A, :ref:`Transform<class_Transform>` hinge_A, :ref:`RID<class_RID>` body_B, :ref:`Transform<class_Transform>` hinge_B **)**
 
 Creates a :ref:`HingeJoint<class_HingeJoint>`.
+
+----
 
 .. _class_PhysicsServer_method_joint_create_pin:
 
@@ -1380,11 +1592,15 @@ Creates a :ref:`HingeJoint<class_HingeJoint>`.
 
 Creates a :ref:`PinJoint<class_PinJoint>`.
 
+----
+
 .. _class_PhysicsServer_method_joint_create_slider:
 
 - :ref:`RID<class_RID>` **joint_create_slider** **(** :ref:`RID<class_RID>` body_A, :ref:`Transform<class_Transform>` local_ref_A, :ref:`RID<class_RID>` body_B, :ref:`Transform<class_Transform>` local_ref_B **)**
 
 Creates a :ref:`SliderJoint<class_SliderJoint>`.
+
+----
 
 .. _class_PhysicsServer_method_joint_get_solver_priority:
 
@@ -1392,11 +1608,15 @@ Creates a :ref:`SliderJoint<class_SliderJoint>`.
 
 Gets the priority value of the Joint.
 
+----
+
 .. _class_PhysicsServer_method_joint_get_type:
 
 - :ref:`JointType<enum_PhysicsServer_JointType>` **joint_get_type** **(** :ref:`RID<class_RID>` joint **)** const
 
 Returns the type of the Joint.
+
+----
 
 .. _class_PhysicsServer_method_joint_set_solver_priority:
 
@@ -1404,11 +1624,15 @@ Returns the type of the Joint.
 
 Sets the priority value of the Joint.
 
+----
+
 .. _class_PhysicsServer_method_pin_joint_get_local_a:
 
 - :ref:`Vector3<class_Vector3>` **pin_joint_get_local_a** **(** :ref:`RID<class_RID>` joint **)** const
 
 Returns position of the joint in the local space of body a of the joint.
+
+----
 
 .. _class_PhysicsServer_method_pin_joint_get_local_b:
 
@@ -1416,11 +1640,15 @@ Returns position of the joint in the local space of body a of the joint.
 
 Returns position of the joint in the local space of body b of the joint.
 
+----
+
 .. _class_PhysicsServer_method_pin_joint_get_param:
 
 - :ref:`float<class_float>` **pin_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer_PinJointParam>` param **)** const
 
 Gets a pin_joint parameter (see PIN_JOINT\* constants).
+
+----
 
 .. _class_PhysicsServer_method_pin_joint_set_local_a:
 
@@ -1428,11 +1656,15 @@ Gets a pin_joint parameter (see PIN_JOINT\* constants).
 
 Sets position of the joint in the local space of body a of the joint.
 
+----
+
 .. _class_PhysicsServer_method_pin_joint_set_local_b:
 
 - void **pin_joint_set_local_b** **(** :ref:`RID<class_RID>` joint, :ref:`Vector3<class_Vector3>` local_B **)**
 
 Sets position of the joint in the local space of body b of the joint.
+
+----
 
 .. _class_PhysicsServer_method_pin_joint_set_param:
 
@@ -1440,11 +1672,15 @@ Sets position of the joint in the local space of body b of the joint.
 
 Sets a pin_joint parameter (see PIN_JOINT\* constants).
 
+----
+
 .. _class_PhysicsServer_method_set_active:
 
 - void **set_active** **(** :ref:`bool<class_bool>` active **)**
 
 Activates or deactivates the 3D physics engine.
+
+----
 
 .. _class_PhysicsServer_method_shape_create:
 
@@ -1452,11 +1688,15 @@ Activates or deactivates the 3D physics engine.
 
 Creates a shape of type ``SHAPE_*``. Does not assign it to a body or an area. To do so, you must use :ref:`area_set_shape<class_PhysicsServer_method_area_set_shape>` or :ref:`body_set_shape<class_PhysicsServer_method_body_set_shape>`.
 
+----
+
 .. _class_PhysicsServer_method_shape_get_data:
 
 - :ref:`Variant<class_Variant>` **shape_get_data** **(** :ref:`RID<class_RID>` shape **)** const
 
 Returns the shape data.
+
+----
 
 .. _class_PhysicsServer_method_shape_get_type:
 
@@ -1464,11 +1704,15 @@ Returns the shape data.
 
 Returns the type of shape (see ``SHAPE_*`` constants).
 
+----
+
 .. _class_PhysicsServer_method_shape_set_data:
 
 - void **shape_set_data** **(** :ref:`RID<class_RID>` shape, :ref:`Variant<class_Variant>` data **)**
 
 Sets the shape data that defines its shape and size. The data to be passed depends on the kind of shape created :ref:`shape_get_type<class_PhysicsServer_method_shape_get_type>`.
+
+----
 
 .. _class_PhysicsServer_method_slider_joint_get_param:
 
@@ -1476,11 +1720,15 @@ Sets the shape data that defines its shape and size. The data to be passed depen
 
 Gets a slider_joint parameter (see SLIDER_JOINT\* constants).
 
+----
+
 .. _class_PhysicsServer_method_slider_joint_set_param:
 
 - void **slider_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`SliderJointParam<enum_PhysicsServer_SliderJointParam>` param, :ref:`float<class_float>` value **)**
 
 Gets a slider_joint parameter (see SLIDER_JOINT\* constants).
+
+----
 
 .. _class_PhysicsServer_method_space_create:
 
@@ -1488,11 +1736,15 @@ Gets a slider_joint parameter (see SLIDER_JOINT\* constants).
 
 Creates a space. A space is a collection of parameters for the physics engine that can be assigned to an area or a body. It can be assigned to an area with :ref:`area_set_space<class_PhysicsServer_method_area_set_space>`, or to a body with :ref:`body_set_space<class_PhysicsServer_method_body_set_space>`.
 
+----
+
 .. _class_PhysicsServer_method_space_get_direct_state:
 
 - :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` **space_get_direct_state** **(** :ref:`RID<class_RID>` space **)**
 
 Returns the state of a space, a :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>`. This object can be used to make collision/intersection queries.
+
+----
 
 .. _class_PhysicsServer_method_space_get_param:
 
@@ -1500,17 +1752,23 @@ Returns the state of a space, a :ref:`PhysicsDirectSpaceState<class_PhysicsDirec
 
 Returns the value of a space parameter.
 
+----
+
 .. _class_PhysicsServer_method_space_is_active:
 
 - :ref:`bool<class_bool>` **space_is_active** **(** :ref:`RID<class_RID>` space **)** const
 
 Returns whether the space is active.
 
+----
+
 .. _class_PhysicsServer_method_space_set_active:
 
 - void **space_set_active** **(** :ref:`RID<class_RID>` space, :ref:`bool<class_bool>` active **)**
 
 Marks a space as active. It will not have an effect, unless it is assigned to an area or body.
+
+----
 
 .. _class_PhysicsServer_method_space_set_param:
 

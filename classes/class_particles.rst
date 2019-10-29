@@ -129,6 +129,8 @@ Property Descriptions
 
 Number of particles to emit.
 
+----
+
 .. _class_Particles_property_draw_order:
 
 - :ref:`DrawOrder<enum_Particles_DrawOrder>` **draw_order**
@@ -143,6 +145,8 @@ Number of particles to emit.
 
 Particle draw order. Uses ``DRAW_ORDER_*`` values.
 
+----
+
 .. _class_Particles_property_draw_pass_1:
 
 - :ref:`Mesh<class_Mesh>` **draw_pass_1**
@@ -154,6 +158,8 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values.
 +----------+---------------------------+
 
 :ref:`Mesh<class_Mesh>` that is drawn for the first draw pass.
+
+----
 
 .. _class_Particles_property_draw_pass_2:
 
@@ -167,6 +173,8 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values.
 
 :ref:`Mesh<class_Mesh>` that is drawn for the second draw pass.
 
+----
+
 .. _class_Particles_property_draw_pass_3:
 
 - :ref:`Mesh<class_Mesh>` **draw_pass_3**
@@ -179,6 +187,8 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values.
 
 :ref:`Mesh<class_Mesh>` that is drawn for the third draw pass.
 
+----
+
 .. _class_Particles_property_draw_pass_4:
 
 - :ref:`Mesh<class_Mesh>` **draw_pass_4**
@@ -190,6 +200,8 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values.
 +----------+---------------------------+
 
 :ref:`Mesh<class_Mesh>` that is drawn for the fourth draw pass.
+
+----
 
 .. _class_Particles_property_draw_passes:
 
@@ -205,6 +217,8 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values.
 
 The number of draw passes when rendering particles.
 
+----
+
 .. _class_Particles_property_emitting:
 
 - :ref:`bool<class_bool>` **emitting**
@@ -218,6 +232,8 @@ The number of draw passes when rendering particles.
 +-----------+---------------------+
 
 If ``true``, particles are being emitted.
+
+----
 
 .. _class_Particles_property_explosiveness:
 
@@ -233,6 +249,8 @@ If ``true``, particles are being emitted.
 
 Time ratio between each emission. If ``0``, particles are emitted continuously. If ``1``, all particles are emitted simultaneously.
 
+----
+
 .. _class_Particles_property_fixed_fps:
 
 - :ref:`int<class_int>` **fixed_fps**
@@ -246,6 +264,8 @@ Time ratio between each emission. If ``0``, particles are emitted continuously. 
 +-----------+----------------------+
 
 The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
+
+----
 
 .. _class_Particles_property_fract_delta:
 
@@ -261,6 +281,8 @@ The particle system's frame rate is fixed to a value. For instance, changing the
 
 If ``true``, results in fractional delta calculation which has a smoother particles display effect.
 
+----
+
 .. _class_Particles_property_lifetime:
 
 - :ref:`float<class_float>` **lifetime**
@@ -274,6 +296,8 @@ If ``true``, results in fractional delta calculation which has a smoother partic
 +-----------+---------------------+
 
 Amount of time each particle will exist.
+
+----
 
 .. _class_Particles_property_local_coords:
 
@@ -289,6 +313,8 @@ Amount of time each particle will exist.
 
 If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates.
 
+----
+
 .. _class_Particles_property_one_shot:
 
 - :ref:`bool<class_bool>` **one_shot**
@@ -302,6 +328,8 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 +-----------+---------------------+
 
 If ``true``, only ``amount`` particles will be emitted.
+
+----
 
 .. _class_Particles_property_preprocess:
 
@@ -317,6 +345,8 @@ If ``true``, only ``amount`` particles will be emitted.
 
 Amount of time to preprocess the particles before animation starts. Lets you start the animation some time after particles have started emitting.
 
+----
+
 .. _class_Particles_property_process_material:
 
 - :ref:`Material<class_Material>` **process_material**
@@ -328,6 +358,8 @@ Amount of time to preprocess the particles before animation starts. Lets you sta
 +----------+-----------------------------+
 
 :ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
+
+----
 
 .. _class_Particles_property_randomness:
 
@@ -343,6 +375,8 @@ Amount of time to preprocess the particles before animation starts. Lets you sta
 
 Emission randomness ratio.
 
+----
+
 .. _class_Particles_property_speed_scale:
 
 - :ref:`float<class_float>` **speed_scale**
@@ -356,6 +390,8 @@ Emission randomness ratio.
 +-----------+------------------------+
 
 Speed scaling ratio. A value of ``0`` can be used to pause the particles.
+
+----
 
 .. _class_Particles_property_visibility_aabb:
 
@@ -380,15 +416,21 @@ Method Descriptions
 
 Returns the axis-aligned bounding box that contains all the particles that are active in the current frame.
 
+----
+
 .. _class_Particles_method_get_draw_pass_mesh:
 
 - :ref:`Mesh<class_Mesh>` **get_draw_pass_mesh** **(** :ref:`int<class_int>` pass **)** const
+
+----
 
 .. _class_Particles_method_restart:
 
 - void **restart** **(** **)**
 
 Restarts the particle emission, clearing existing particles.
+
+----
 
 .. _class_Particles_method_set_draw_pass_mesh:
 

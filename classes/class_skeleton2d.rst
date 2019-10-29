@@ -48,11 +48,15 @@ Method Descriptions
 
 - :ref:`Bone2D<class_Bone2D>` **get_bone** **(** :ref:`int<class_int>` idx **)**
 
+----
+
 .. _class_Skeleton2D_method_get_bone_count:
 
 - :ref:`int<class_int>` **get_bone_count** **(** **)** const
 
 Returns the amount of bones in the skeleton.
+
+----
 
 .. _class_Skeleton2D_method_get_skeleton:
 

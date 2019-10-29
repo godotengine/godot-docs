@@ -77,6 +77,8 @@ Animation speed in frames per second. This value defines the default time interv
 
 For example, an animation with 8 frames, no frame delay and a ``fps`` value of 2 will run for 4 seconds, with each frame lasting 0.5 seconds.
 
+----
+
 .. _class_AnimatedTexture_property_frames:
 
 - :ref:`int<class_int>` **frames**
@@ -100,11 +102,15 @@ Method Descriptions
 
 Returns the given frame's delay value.
 
+----
+
 .. _class_AnimatedTexture_method_get_frame_texture:
 
 - :ref:`Texture<class_Texture>` **get_frame_texture** **(** :ref:`int<class_int>` frame **)** const
 
 Returns the given frame's :ref:`Texture<class_Texture>`.
+
+----
 
 .. _class_AnimatedTexture_method_set_frame_delay:
 
@@ -120,6 +126,8 @@ For example, for an animation with 3 frames, 2 FPS and a frame delay on the seco
     Frame 1: 1.7 s (1 / fps + 1.2)
     Frame 2: 0.5 s (1 / fps)
     Total duration: 2.7 s
+
+----
 
 .. _class_AnimatedTexture_method_set_frame_texture:
 

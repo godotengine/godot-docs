@@ -46,6 +46,8 @@ Method Descriptions
 
 Lowers the ``Semaphore``, allowing one more thread in. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
 
+----
+
 .. _class_Semaphore_method_wait:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**

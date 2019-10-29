@@ -61,6 +61,8 @@ Property Descriptions
 
 If ``true``, the resulting texture contains a normal map created from the original noise interpreted as a bump map.
 
+----
+
 .. _class_NoiseTexture_property_bump_strength:
 
 - :ref:`float<class_float>` **bump_strength**
@@ -72,6 +74,8 @@ If ``true``, the resulting texture contains a normal map created from the origin
 +-----------+--------------------------+
 | *Getter*  | get_bump_strength()      |
 +-----------+--------------------------+
+
+----
 
 .. _class_NoiseTexture_property_height:
 
@@ -87,6 +91,8 @@ If ``true``, the resulting texture contains a normal map created from the origin
 
 Height of the generated texture.
 
+----
+
 .. _class_NoiseTexture_property_noise:
 
 - :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` **noise**
@@ -98,6 +104,8 @@ Height of the generated texture.
 +----------+------------------+
 
 The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate the noise.
+
+----
 
 .. _class_NoiseTexture_property_seamless:
 
@@ -112,6 +120,8 @@ The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate th
 +-----------+---------------------+
 
 Whether the texture can be tiled without visible seams or not. Seamless textures take longer to generate.
+
+----
 
 .. _class_NoiseTexture_property_width:
 

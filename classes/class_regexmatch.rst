@@ -62,6 +62,8 @@ Property Descriptions
 
 A dictionary of named groups and its corresponding group number. Only groups with that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
 
+----
+
 .. _class_RegExMatch_property_strings:
 
 - :ref:`Array<class_Array>` **strings**
@@ -73,6 +75,8 @@ A dictionary of named groups and its corresponding group number. Only groups wit
 +-----------+---------------+
 
 An :ref:`Array<class_Array>` of the match and its capturing groups.
+
+----
 
 .. _class_RegExMatch_property_subject:
 
@@ -97,11 +101,15 @@ Returns the end position of the match within the source string. The end position
 
 Returns -1 if the group did not match or doesn't exist.
 
+----
+
 .. _class_RegExMatch_method_get_group_count:
 
 - :ref:`int<class_int>` **get_group_count** **(** **)** const
 
 Returns the number of capturing groups.
+
+----
 
 .. _class_RegExMatch_method_get_start:
 
@@ -110,6 +118,8 @@ Returns the number of capturing groups.
 Returns the starting position of the match within the source string. The starting position of capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 
 Returns -1 if the group did not match or doesn't exist.
+
+----
 
 .. _class_RegExMatch_method_get_string:
 

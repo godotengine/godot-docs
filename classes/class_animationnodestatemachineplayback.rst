@@ -63,9 +63,13 @@ Method Descriptions
 
 Returns the currently playing animation state.
 
+----
+
 .. _class_AnimationNodeStateMachinePlayback_method_get_travel_path:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_travel_path** **(** **)** const
+
+----
 
 .. _class_AnimationNodeStateMachinePlayback_method_is_playing:
 
@@ -73,17 +77,23 @@ Returns the currently playing animation state.
 
 Returns ``true`` if an animation is playing.
 
+----
+
 .. _class_AnimationNodeStateMachinePlayback_method_start:
 
 - void **start** **(** :ref:`String<class_String>` node **)**
 
 Starts playing the given animation.
 
+----
+
 .. _class_AnimationNodeStateMachinePlayback_method_stop:
 
 - void **stop** **(** **)**
 
 Stops the currently playing animation.
+
+----
 
 .. _class_AnimationNodeStateMachinePlayback_method_travel:
 

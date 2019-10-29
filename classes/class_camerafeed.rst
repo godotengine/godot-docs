@@ -61,6 +61,8 @@ enum **FeedDataType**:
 
 - **FEED_YCBCR_SEP** = **3** --- Feed supplies separate Y and CbCr images that need to be combined and converted to RGB.
 
+----
+
 .. _enum_CameraFeed_FeedPosition:
 
 .. _class_CameraFeed_constant_FEED_UNSPECIFIED:
@@ -101,6 +103,8 @@ Property Descriptions
 
 If ``true``, the feed is active.
 
+----
+
 .. _class_CameraFeed_property_feed_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **feed_transform**
@@ -124,11 +128,15 @@ Method Descriptions
 
 Returns the unique ID for this feed.
 
+----
+
 .. _class_CameraFeed_method_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
 Returns the camera's name.
+
+----
 
 .. _class_CameraFeed_method_get_position:
 

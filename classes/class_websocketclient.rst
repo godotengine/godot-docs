@@ -49,17 +49,23 @@ Signals
 
 Emitted when the connection to the server is closed. ``was_clean_close`` will be ``true`` if the connection was shutdown cleanly.
 
+----
+
 .. _class_WebSocketClient_signal_connection_error:
 
 - **connection_error** **(** **)**
 
 Emitted when the connection to the server fails.
 
+----
+
 .. _class_WebSocketClient_signal_connection_established:
 
 - **connection_established** **(** :ref:`String<class_String>` protocol **)**
 
 Emitted when a connection with the server is established, ``protocol`` will contain the sub-protocol agreed with the server.
+
+----
 
 .. _class_WebSocketClient_signal_data_received:
 
@@ -68,6 +74,8 @@ Emitted when a connection with the server is established, ``protocol`` will cont
 Emitted when a WebSocket message is received.
 
 **Note:** This signal is *not* emitted when used as high-level multiplayer peer.
+
+----
 
 .. _class_WebSocketClient_signal_server_close_request:
 
@@ -101,6 +109,8 @@ Property Descriptions
 
 If specified, this :ref:`X509Certificate<class_X509Certificate>` will be the only one accepted when connecting to an SSL host. Any other certificate provided by the server will be regarded as invalid.
 
+----
+
 .. _class_WebSocketClient_property_verify_ssl:
 
 - :ref:`bool<class_bool>` **verify_ssl**
@@ -130,17 +140,23 @@ If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_P
 
 You can optionally pass a list of ``custom_headers`` to be added to the handshake HTTP request (not supported in HTML5 platform).
 
+----
+
 .. _class_WebSocketClient_method_disconnect_from_host:
 
 - void **disconnect_from_host** **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
 Disconnects this client from the connected host. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more information.
 
+----
+
 .. _class_WebSocketClient_method_get_connected_host:
 
 - :ref:`String<class_String>` **get_connected_host** **(** **)** const
 
 Return the IP address of the currently connected host.
+
+----
 
 .. _class_WebSocketClient_method_get_connected_port:
 

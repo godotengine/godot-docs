@@ -95,6 +95,8 @@ Property Descriptions
 
 Calculate tangents for the CSG shape which allows the use of normal maps. This is only applied on the root shape, this setting is ignored on any child.
 
+----
+
 .. _class_CSGShape_property_collision_layer:
 
 - :ref:`int<class_int>` **collision_layer**
@@ -113,6 +115,8 @@ Collidable objects can exist in any of 32 different layers. These layers work li
 
 A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
 
+----
+
 .. _class_CSGShape_property_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
@@ -126,6 +130,8 @@ A contact is detected if object A is in any of the layers that object B scans, o
 +-----------+---------------------------+
 
 The physics layers this CSG shape scans for collisions.
+
+----
 
 .. _class_CSGShape_property_operation:
 
@@ -141,6 +147,8 @@ The physics layers this CSG shape scans for collisions.
 
 The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
 
+----
+
 .. _class_CSGShape_property_snap:
 
 - :ref:`float<class_float>` **snap**
@@ -152,6 +160,8 @@ The operation that is performed on this shape. This is ignored for the first CSG
 +-----------+-----------------+
 | *Getter*  | get_snap()      |
 +-----------+-----------------+
+
+----
 
 .. _class_CSGShape_property_use_collision:
 
@@ -176,15 +186,21 @@ Method Descriptions
 
 Returns an individual bit on the collision mask.
 
+----
+
 .. _class_CSGShape_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns an individual bit on the collision mask.
 
+----
+
 .. _class_CSGShape_method_get_meshes:
 
 - :ref:`Array<class_Array>` **get_meshes** **(** **)** const
+
+----
 
 .. _class_CSGShape_method_is_root_shape:
 
@@ -192,11 +208,15 @@ Returns an individual bit on the collision mask.
 
 Returns ``true`` if this is a root shape and is thus the object that is rendered.
 
+----
+
 .. _class_CSGShape_method_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets individual bits on the layer mask. Use this if you only need to change one layer's value.
+
+----
 
 .. _class_CSGShape_method_set_collision_mask_bit:
 

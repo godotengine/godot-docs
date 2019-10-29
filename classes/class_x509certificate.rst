@@ -43,6 +43,8 @@ Method Descriptions
 
 Loads a certificate from ``path`` ("\*.crt" file).
 
+----
+
 .. _class_X509Certificate_method_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**

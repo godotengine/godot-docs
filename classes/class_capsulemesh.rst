@@ -53,6 +53,8 @@ Property Descriptions
 
 Height of the capsule mesh from the center point.
 
+----
+
 .. _class_CapsuleMesh_property_radial_segments:
 
 - :ref:`int<class_int>` **radial_segments**
@@ -67,6 +69,8 @@ Height of the capsule mesh from the center point.
 
 Number of radial segments on the capsule mesh.
 
+----
+
 .. _class_CapsuleMesh_property_radius:
 
 - :ref:`float<class_float>` **radius**
@@ -80,6 +84,8 @@ Number of radial segments on the capsule mesh.
 +-----------+-------------------+
 
 Radius of the capsule mesh.
+
+----
 
 .. _class_CapsuleMesh_property_rings:
 

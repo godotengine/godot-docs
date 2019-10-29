@@ -54,6 +54,8 @@ enum **ComparsionType**:
 
 - **CTYPE_TRANSFORM** = **3**
 
+----
+
 .. _enum_VisualShaderNodeCompare_Function:
 
 .. _class_VisualShaderNodeCompare_constant_FUNC_EQUAL:
@@ -82,6 +84,8 @@ enum **Function**:
 
 - **FUNC_LESS_THAN_EQUAL** = **5**
 
+----
+
 .. _enum_VisualShaderNodeCompare_Condition:
 
 .. _class_VisualShaderNodeCompare_constant_COND_ALL:
@@ -109,6 +113,8 @@ Property Descriptions
 | *Getter*  | get_condition()      |
 +-----------+----------------------+
 
+----
+
 .. _class_VisualShaderNodeCompare_property_function:
 
 - :ref:`Function<enum_VisualShaderNodeCompare_Function>` **function**
@@ -120,6 +126,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_function()      |
 +-----------+---------------------+
+
+----
 
 .. _class_VisualShaderNodeCompare_property_type:
 

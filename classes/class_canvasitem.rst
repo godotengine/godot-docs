@@ -47,6 +47,8 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`_draw<class_CanvasItem_method__draw>` **(** **)** virtual                                                                                                                                                                                                                                                                                                                                  |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`draw_arc<class_CanvasItem_method_draw_arc>` **(** :ref:`Vector2<class_Vector2>` center, :ref:`float<class_float>` radius, :ref:`float<class_float>` start_angle, :ref:`float<class_float>` end_angle, :ref:`int<class_int>` point_count, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                             |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`             | :ref:`draw_char<class_CanvasItem_method_draw_char>` **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` char, :ref:`String<class_String>` next, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**                                                                                                                                 |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_circle<class_CanvasItem_method_draw_circle>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` radius, :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                    |
@@ -145,17 +147,23 @@ Signals
 
 Emitted when the CanvasItem must redraw. This can only be connected realtime, as deferred will not allow drawing.
 
+----
+
 .. _class_CanvasItem_signal_hide:
 
 - **hide** **(** **)**
 
 Emitted when becoming hidden.
 
+----
+
 .. _class_CanvasItem_signal_item_rect_changed:
 
 - **item_rect_changed** **(** **)**
 
 Emitted when the item rect has changed.
+
+----
 
 .. _class_CanvasItem_signal_visibility_changed:
 
@@ -254,6 +262,8 @@ Property Descriptions
 
 The rendering layers in which this ``CanvasItem`` responds to :ref:`Light2D<class_Light2D>` nodes.
 
+----
+
 .. _class_CanvasItem_property_material:
 
 - :ref:`Material<class_Material>` **material**
@@ -265,6 +275,8 @@ The rendering layers in which this ``CanvasItem`` responds to :ref:`Light2D<clas
 +----------+---------------------+
 
 The material applied to textures on this ``CanvasItem``.
+
+----
 
 .. _class_CanvasItem_property_modulate:
 
@@ -280,6 +292,8 @@ The material applied to textures on this ``CanvasItem``.
 
 The color applied to textures on this ``CanvasItem``.
 
+----
+
 .. _class_CanvasItem_property_self_modulate:
 
 - :ref:`Color<class_Color>` **self_modulate**
@@ -293,6 +307,8 @@ The color applied to textures on this ``CanvasItem``.
 +-----------+--------------------------+
 
 The color applied to textures on this ``CanvasItem``. This is not inherited by children ``CanvasItem``\ s.
+
+----
 
 .. _class_CanvasItem_property_show_behind_parent:
 
@@ -308,11 +324,15 @@ The color applied to textures on this ``CanvasItem``. This is not inherited by c
 
 If ``true``, the object draws behind its parent.
 
+----
+
 .. _class_CanvasItem_property_show_on_top:
 
 - :ref:`bool<class_bool>` **show_on_top**
 
 If ``true``, the object draws on top of its parent.
+
+----
 
 .. _class_CanvasItem_property_use_parent_material:
 
@@ -327,6 +347,8 @@ If ``true``, the object draws on top of its parent.
 +-----------+--------------------------------+
 
 If ``true``, the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_property_material>` property is used as this one's material.
+
+----
 
 .. _class_CanvasItem_property_visible:
 
@@ -351,11 +373,21 @@ Method Descriptions
 
 Called (if exists) to draw the canvas item.
 
+----
+
+.. _class_CanvasItem_method_draw_arc:
+
+- void **draw_arc** **(** :ref:`Vector2<class_Vector2>` center, :ref:`float<class_float>` radius, :ref:`float<class_float>` start_angle, :ref:`float<class_float>` end_angle, :ref:`int<class_int>` point_count, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+
+----
+
 .. _class_CanvasItem_method_draw_char:
 
 - :ref:`float<class_float>` **draw_char** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` char, :ref:`String<class_String>` next, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**
 
 Draws a string character using a custom font. Returns the advance, depending on the character width and kerning with an optional next character.
+
+----
 
 .. _class_CanvasItem_method_draw_circle:
 
@@ -363,11 +395,15 @@ Draws a string character using a custom font. Returns the advance, depending on 
 
 Draws a colored circle.
 
+----
+
 .. _class_CanvasItem_method_draw_colored_polygon:
 
 - void **draw_colored_polygon** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_Texture>` texture=null, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws a colored polygon of any amount of points, convex or concave.
+
+----
 
 .. _class_CanvasItem_method_draw_line:
 
@@ -375,9 +411,13 @@ Draws a colored polygon of any amount of points, convex or concave.
 
 Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased.
 
+----
+
 .. _class_CanvasItem_method_draw_mesh:
 
 - void **draw_mesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null, :ref:`Transform2D<class_Transform2D>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ), :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**
+
+----
 
 .. _class_CanvasItem_method_draw_multiline:
 
@@ -385,15 +425,21 @@ Draws a line from a 2D point to another, with a given color and width. It can be
 
 Draws multiple, parallel lines with a uniform ``color``. ``width`` and ``antialiased`` are currently not implemented and have no effect.
 
+----
+
 .. _class_CanvasItem_method_draw_multiline_colors:
 
 - void **draw_multiline_colors** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws multiple, parallel lines with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
 
+----
+
 .. _class_CanvasItem_method_draw_multimesh:
 
 - void **draw_multimesh** **(** :ref:`MultiMesh<class_MultiMesh>` multimesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**
+
+----
 
 .. _class_CanvasItem_method_draw_polygon:
 
@@ -401,11 +447,15 @@ Draws multiple, parallel lines with a uniform ``width``, segment-by-segment colo
 
 Draws a polygon of any amount of points, convex or concave.
 
+----
+
 .. _class_CanvasItem_method_draw_polyline:
 
 - void **draw_polyline** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing.
+
+----
 
 .. _class_CanvasItem_method_draw_polyline_colors:
 
@@ -413,11 +463,15 @@ Draws interconnected line segments with a uniform ``color`` and ``width`` and op
 
 Draws interconnected line segments with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
 
+----
+
 .. _class_CanvasItem_method_draw_primitive:
 
 - void **draw_primitive** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs, :ref:`Texture<class_Texture>` texture=null, :ref:`float<class_float>` width=1.0, :ref:`Texture<class_Texture>` normal_map=null **)**
 
 Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle and 4 points for a quad.
+
+----
 
 .. _class_CanvasItem_method_draw_rect:
 
@@ -427,11 +481,15 @@ Draws a rectangle. If ``filled`` is ``true``, the rectangle will be filled with 
 
 **Note:** ``width`` and ``antialiased`` are only effective if ``filled`` is ``false``.
 
+----
+
 .. _class_CanvasItem_method_draw_set_transform:
 
 - void **draw_set_transform** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` scale **)**
 
 Sets a custom transform for drawing via components. Anything drawn afterwards will be transformed by this.
+
+----
 
 .. _class_CanvasItem_method_draw_set_transform_matrix:
 
@@ -439,11 +497,15 @@ Sets a custom transform for drawing via components. Anything drawn afterwards wi
 
 Sets a custom transform for drawing via matrix. Anything drawn afterwards will be transformed by this.
 
+----
+
 .. _class_CanvasItem_method_draw_string:
 
 - void **draw_string** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` text, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1 **)**
 
 Draws a string using a custom font.
+
+----
 
 .. _class_CanvasItem_method_draw_style_box:
 
@@ -451,11 +513,15 @@ Draws a string using a custom font.
 
 Draws a styled rectangle.
 
+----
+
 .. _class_CanvasItem_method_draw_texture:
 
 - void **draw_texture** **(** :ref:`Texture<class_Texture>` texture, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`Texture<class_Texture>` normal_map=null **)**
 
 Draws a texture at a given position.
+
+----
 
 .. _class_CanvasItem_method_draw_texture_rect:
 
@@ -463,15 +529,21 @@ Draws a texture at a given position.
 
 Draws a textured rectangle at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped.
 
+----
+
 .. _class_CanvasItem_method_draw_texture_rect_region:
 
 - void **draw_texture_rect_region** **(** :ref:`Texture<class_Texture>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)**
 
 Draws a textured rectangle region at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped.
 
+----
+
 .. _class_CanvasItem_method_force_update_transform:
 
 - void **force_update_transform** **(** **)**
+
+----
 
 .. _class_CanvasItem_method_get_canvas:
 
@@ -479,11 +551,15 @@ Draws a textured rectangle region at a given position, optionally modulated by a
 
 Returns the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this item is in.
 
+----
+
 .. _class_CanvasItem_method_get_canvas_item:
 
 - :ref:`RID<class_RID>` **get_canvas_item** **(** **)** const
 
 Returns the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for this item.
+
+----
 
 .. _class_CanvasItem_method_get_canvas_transform:
 
@@ -491,11 +567,15 @@ Returns the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for 
 
 Gets the transform matrix of this item's canvas.
 
+----
+
 .. _class_CanvasItem_method_get_global_mouse_position:
 
 - :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** const
 
 Gets the global position of the mouse.
+
+----
 
 .. _class_CanvasItem_method_get_global_transform:
 
@@ -503,11 +583,15 @@ Gets the global position of the mouse.
 
 Gets the global transform matrix of this item.
 
+----
+
 .. _class_CanvasItem_method_get_global_transform_with_canvas:
 
 - :ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas** **(** **)** const
 
 Gets the global transform matrix of this item in relation to the canvas.
+
+----
 
 .. _class_CanvasItem_method_get_local_mouse_position:
 
@@ -515,11 +599,15 @@ Gets the global transform matrix of this item in relation to the canvas.
 
 Gets the mouse position relative to this item's position.
 
+----
+
 .. _class_CanvasItem_method_get_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)** const
 
 Gets the transform matrix of this item.
+
+----
 
 .. _class_CanvasItem_method_get_viewport_rect:
 
@@ -527,11 +615,15 @@ Gets the transform matrix of this item.
 
 Gets the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
+----
+
 .. _class_CanvasItem_method_get_viewport_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_viewport_transform** **(** **)** const
 
 Gets this item's transform in relation to the viewport.
+
+----
 
 .. _class_CanvasItem_method_get_world_2d:
 
@@ -539,11 +631,15 @@ Gets this item's transform in relation to the viewport.
 
 Gets the :ref:`World2D<class_World2D>` where this item is in.
 
+----
+
 .. _class_CanvasItem_method_hide:
 
 - void **hide** **(** **)**
 
 Hide the CanvasItem if it's currently visible.
+
+----
 
 .. _class_CanvasItem_method_is_local_transform_notification_enabled:
 
@@ -551,11 +647,15 @@ Hide the CanvasItem if it's currently visible.
 
 Returns ``true`` if local transform notifications are communicated to children.
 
+----
+
 .. _class_CanvasItem_method_is_set_as_toplevel:
 
 - :ref:`bool<class_bool>` **is_set_as_toplevel** **(** **)** const
 
 Returns ``true`` if the node is set as top-level. See :ref:`set_as_toplevel<class_CanvasItem_method_set_as_toplevel>`.
+
+----
 
 .. _class_CanvasItem_method_is_transform_notification_enabled:
 
@@ -563,11 +663,15 @@ Returns ``true`` if the node is set as top-level. See :ref:`set_as_toplevel<clas
 
 Returns ``true`` if global transform notifications are communicated to children.
 
+----
+
 .. _class_CanvasItem_method_is_visible_in_tree:
 
 - :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const
 
 Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and its inherited visibility is also ``true``.
+
+----
 
 .. _class_CanvasItem_method_make_canvas_position_local:
 
@@ -575,11 +679,15 @@ Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`
 
 Assigns ``screen_point`` as this node's new local transform.
 
+----
+
 .. _class_CanvasItem_method_make_input_local:
 
 - :ref:`InputEvent<class_InputEvent>` **make_input_local** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
 Transformations issued by ``event``'s inputs are applied in local space instead of global space.
+
+----
 
 .. _class_CanvasItem_method_set_as_toplevel:
 
@@ -587,11 +695,15 @@ Transformations issued by ``event``'s inputs are applied in local space instead 
 
 If ``enable`` is ``true``, the node won't inherit its transform from parent canvas items.
 
+----
+
 .. _class_CanvasItem_method_set_notify_local_transform:
 
 - void **set_notify_local_transform** **(** :ref:`bool<class_bool>` enable **)**
 
 If ``enable`` is ``true``, children will be updated with local transform data.
+
+----
 
 .. _class_CanvasItem_method_set_notify_transform:
 
@@ -599,11 +711,15 @@ If ``enable`` is ``true``, children will be updated with local transform data.
 
 If ``enable`` is ``true``, children will be updated with global transform data.
 
+----
+
 .. _class_CanvasItem_method_show:
 
 - void **show** **(** **)**
 
 Show the CanvasItem if it's currently hidden. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
+
+----
 
 .. _class_CanvasItem_method_update:
 

@@ -61,6 +61,8 @@ Signals
 
 Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn.
 
+----
+
 .. _class_AnimatedSprite_signal_frame_changed:
 
 - **frame_changed** **(** **)**
@@ -89,6 +91,8 @@ Property Descriptions
 
 The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
 
+----
+
 .. _class_AnimatedSprite_property_centered:
 
 - :ref:`bool<class_bool>` **centered**
@@ -102,6 +106,8 @@ The current animation from the ``frames`` resource. If this value changes, the `
 +-----------+---------------------+
 
 If ``true``, texture will be centered.
+
+----
 
 .. _class_AnimatedSprite_property_flip_h:
 
@@ -117,6 +123,8 @@ If ``true``, texture will be centered.
 
 If ``true``, texture is flipped horizontally.
 
+----
+
 .. _class_AnimatedSprite_property_flip_v:
 
 - :ref:`bool<class_bool>` **flip_v**
@@ -130,6 +138,8 @@ If ``true``, texture is flipped horizontally.
 +-----------+-------------------+
 
 If ``true``, texture is flipped vertically.
+
+----
 
 .. _class_AnimatedSprite_property_frame:
 
@@ -145,6 +155,8 @@ If ``true``, texture is flipped vertically.
 
 The displayed animation frame's index.
 
+----
+
 .. _class_AnimatedSprite_property_frames:
 
 - :ref:`SpriteFrames<class_SpriteFrames>` **frames**
@@ -156,6 +168,8 @@ The displayed animation frame's index.
 +----------+--------------------------+
 
 The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
+
+----
 
 .. _class_AnimatedSprite_property_offset:
 
@@ -171,6 +185,8 @@ The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s)
 
 The texture's drawing offset.
 
+----
+
 .. _class_AnimatedSprite_property_playing:
 
 - :ref:`bool<class_bool>` **playing**
@@ -180,6 +196,8 @@ The texture's drawing offset.
 +-----------+-------+
 
 If ``true``, the :ref:`animation<class_AnimatedSprite_property_animation>` is currently playing.
+
+----
 
 .. _class_AnimatedSprite_property_speed_scale:
 
@@ -204,11 +222,15 @@ Method Descriptions
 
 Returns ``true`` if an animation is currently being played.
 
+----
+
 .. _class_AnimatedSprite_method_play:
 
 - void **play** **(** :ref:`String<class_String>` anim="", :ref:`bool<class_bool>` backwards=false **)**
 
 Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played. If ``backwards`` is ``true``, the animation will be played in reverse.
+
+----
 
 .. _class_AnimatedSprite_method_stop:
 

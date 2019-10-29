@@ -96,6 +96,8 @@ Property Descriptions
 
 If ``true``, the texture scales to fit its bounding rectangle.
 
+----
+
 .. _class_TextureRect_property_flip_h:
 
 - :ref:`bool<class_bool>` **flip_h**
@@ -109,6 +111,8 @@ If ``true``, the texture scales to fit its bounding rectangle.
 +-----------+-------------------+
 
 If ``true``, texture is flipped horizontally.
+
+----
 
 .. _class_TextureRect_property_flip_v:
 
@@ -124,6 +128,8 @@ If ``true``, texture is flipped horizontally.
 
 If ``true``, texture is flipped vertically.
 
+----
+
 .. _class_TextureRect_property_stretch_mode:
 
 - :ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode**
@@ -137,6 +143,8 @@ If ``true``, texture is flipped vertically.
 +-----------+-------------------------+
 
 Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_TextureRect_StretchMode>`.
+
+----
 
 .. _class_TextureRect_property_texture:
 

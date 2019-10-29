@@ -129,6 +129,8 @@ Property Descriptions
 
 The fill direction. See :ref:`FillMode<enum_TextureProgress_FillMode>` for possible values.
 
+----
+
 .. _class_TextureProgress_property_nine_patch_stretch:
 
 - :ref:`bool<class_bool>` **nine_patch_stretch**
@@ -143,6 +145,8 @@ The fill direction. See :ref:`FillMode<enum_TextureProgress_FillMode>` for possi
 
 If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_NinePatchRect>`. Use the ``stretch_margin_*`` properties like :ref:`stretch_margin_bottom<class_TextureProgress_property_stretch_margin_bottom>` to set up the nine patch's 3×3 grid. When using a radial :ref:`fill_mode<class_TextureProgress_property_fill_mode>`, this setting will enable stretching.
 
+----
+
 .. _class_TextureProgress_property_radial_center_offset:
 
 - :ref:`Vector2<class_Vector2>` **radial_center_offset**
@@ -156,6 +160,8 @@ If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_N
 +-----------+---------------------------------+
 
 Offsets :ref:`texture_progress<class_TextureProgress_property_texture_progress>` if :ref:`fill_mode<class_TextureProgress_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgress_constant_FILL_CLOCKWISE>` or :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgress_constant_FILL_COUNTER_CLOCKWISE>`.
+
+----
 
 .. _class_TextureProgress_property_radial_fill_degrees:
 
@@ -173,6 +179,8 @@ Upper limit for the fill of :ref:`texture_progress<class_TextureProgress_propert
 
 See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_Range_property_max_value>`.
 
+----
+
 .. _class_TextureProgress_property_radial_initial_angle:
 
 - :ref:`float<class_float>` **radial_initial_angle**
@@ -186,6 +194,8 @@ See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_
 +-----------+---------------------------------+
 
 Starting angle for the fill of :ref:`texture_progress<class_TextureProgress_property_texture_progress>` if :ref:`fill_mode<class_TextureProgress_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgress_constant_FILL_CLOCKWISE>` or :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgress_constant_FILL_COUNTER_CLOCKWISE>`. When the node's ``value`` is equal to its ``min_value``, the texture doesn't show up at all. When the ``value`` increases, the texture fills and tends towards :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>`.
+
+----
 
 .. _class_TextureProgress_property_stretch_margin_bottom:
 
@@ -201,6 +211,8 @@ Starting angle for the fill of :ref:`texture_progress<class_TextureProgress_prop
 
 The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's bottom corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.
 
+----
+
 .. _class_TextureProgress_property_stretch_margin_left:
 
 - :ref:`int<class_int>` **stretch_margin_left**
@@ -214,6 +226,8 @@ The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's botto
 +-----------+---------------------------+
 
 The width of the 9-patch's left column.
+
+----
 
 .. _class_TextureProgress_property_stretch_margin_right:
 
@@ -229,6 +243,8 @@ The width of the 9-patch's left column.
 
 The width of the 9-patch's right column.
 
+----
+
 .. _class_TextureProgress_property_stretch_margin_top:
 
 - :ref:`int<class_int>` **stretch_margin_top**
@@ -243,6 +259,8 @@ The width of the 9-patch's right column.
 
 The height of the 9-patch's top row.
 
+----
+
 .. _class_TextureProgress_property_texture_over:
 
 - :ref:`Texture<class_Texture>` **texture_over**
@@ -254,6 +272,8 @@ The height of the 9-patch's top row.
 +----------+-------------------------+
 
 :ref:`Texture<class_Texture>` that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of :ref:`texture_progress<class_TextureProgress_property_texture_progress>`.
+
+----
 
 .. _class_TextureProgress_property_texture_progress:
 
@@ -269,6 +289,8 @@ The height of the 9-patch's top row.
 
 The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.min_value<class_Range_property_min_value>`, :ref:`Range.max_value<class_Range_property_max_value>`.
 
+----
+
 .. _class_TextureProgress_property_texture_under:
 
 - :ref:`Texture<class_Texture>` **texture_under**
@@ -280,6 +302,8 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 +----------+--------------------------+
 
 :ref:`Texture<class_Texture>` that draws under the progress bar. The bar's background.
+
+----
 
 .. _class_TextureProgress_property_tint_over:
 
@@ -295,6 +319,8 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 
 Multiplies the color of the bar's ``texture_over`` texture. The effect is similar to :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`, except it only affects this specific texture instead of the entire node.
 
+----
+
 .. _class_TextureProgress_property_tint_progress:
 
 - :ref:`Color<class_Color>` **tint_progress**
@@ -308,6 +334,8 @@ Multiplies the color of the bar's ``texture_over`` texture. The effect is simila
 +-----------+--------------------------+
 
 Multiplies the color of the bar's ``texture_progress`` texture.
+
+----
 
 .. _class_TextureProgress_property_tint_under:
 
@@ -329,6 +357,8 @@ Method Descriptions
 .. _class_TextureProgress_method_get_stretch_margin:
 
 - :ref:`int<class_int>` **get_stretch_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+----
 
 .. _class_TextureProgress_method_set_stretch_margin:
 

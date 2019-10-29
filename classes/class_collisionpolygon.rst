@@ -51,6 +51,8 @@ Property Descriptions
 
 Length that the resulting collision extends in either direction perpendicular to its polygon.
 
+----
+
 .. _class_CollisionPolygon_property_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
@@ -64,6 +66,8 @@ Length that the resulting collision extends in either direction perpendicular to
 +-----------+---------------------+
 
 If ``true``, no collision will be produced.
+
+----
 
 .. _class_CollisionPolygon_property_polygon:
 

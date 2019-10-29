@@ -61,6 +61,8 @@ Property Descriptions
 | *Getter*  | get_absolute_index()      |
 +-----------+---------------------------+
 
+----
+
 .. _class_CharFXTransform_property_character:
 
 - :ref:`int<class_int>` **character**
@@ -72,6 +74,8 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_character()      |
 +-----------+----------------------+
+
+----
 
 .. _class_CharFXTransform_property_color:
 
@@ -85,6 +89,8 @@ Property Descriptions
 | *Getter*  | get_color()         |
 +-----------+---------------------+
 
+----
+
 .. _class_CharFXTransform_property_elapsed_time:
 
 - :ref:`float<class_float>` **elapsed_time**
@@ -96,6 +102,8 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_elapsed_time()      |
 +-----------+-------------------------+
+
+----
 
 .. _class_CharFXTransform_property_env:
 
@@ -109,6 +117,8 @@ Property Descriptions
 | *Getter*  | get_environment()      |
 +-----------+------------------------+
 
+----
+
 .. _class_CharFXTransform_property_offset:
 
 - :ref:`Vector2<class_Vector2>` **offset**
@@ -121,6 +131,8 @@ Property Descriptions
 | *Getter*  | get_offset()      |
 +-----------+-------------------+
 
+----
+
 .. _class_CharFXTransform_property_relative_index:
 
 - :ref:`int<class_int>` **relative_index**
@@ -132,6 +144,8 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_relative_index()      |
 +-----------+---------------------------+
+
+----
 
 .. _class_CharFXTransform_property_visible:
 

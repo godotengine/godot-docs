@@ -73,6 +73,8 @@ Property Descriptions
 
 Output percent of original sound. At 0, only delayed sounds are output. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectDelay_property_feedback/active:
 
 - :ref:`bool<class_bool>` **feedback/active**
@@ -86,6 +88,8 @@ Output percent of original sound. At 0, only delayed sounds are output. Value ca
 +-----------+----------------------------+
 
 If ``true``, feedback is enabled.
+
+----
 
 .. _class_AudioEffectDelay_property_feedback/delay_ms:
 
@@ -101,6 +105,8 @@ If ``true``, feedback is enabled.
 
 Feedback delay time in milliseconds.
 
+----
+
 .. _class_AudioEffectDelay_property_feedback/level_db:
 
 - :ref:`float<class_float>` **feedback/level_db**
@@ -114,6 +120,8 @@ Feedback delay time in milliseconds.
 +-----------+------------------------------+
 
 Sound level for ``tap1``.
+
+----
 
 .. _class_AudioEffectDelay_property_feedback/lowpass:
 
@@ -129,6 +137,8 @@ Sound level for ``tap1``.
 
 Low-pass filter for feedback, in Hz. Frequencies below this value are filtered out of the source signal.
 
+----
+
 .. _class_AudioEffectDelay_property_tap1/active:
 
 - :ref:`bool<class_bool>` **tap1/active**
@@ -142,6 +152,8 @@ Low-pass filter for feedback, in Hz. Frequencies below this value are filtered o
 +-----------+------------------------+
 
 If ``true``, ``tap1`` will be enabled.
+
+----
 
 .. _class_AudioEffectDelay_property_tap1/delay_ms:
 
@@ -157,6 +169,8 @@ If ``true``, ``tap1`` will be enabled.
 
 ``tap1`` delay time in milliseconds.
 
+----
+
 .. _class_AudioEffectDelay_property_tap1/level_db:
 
 - :ref:`float<class_float>` **tap1/level_db**
@@ -170,6 +184,8 @@ If ``true``, ``tap1`` will be enabled.
 +-----------+--------------------------+
 
 Sound level for ``tap1``.
+
+----
 
 .. _class_AudioEffectDelay_property_tap1/pan:
 
@@ -185,6 +201,8 @@ Sound level for ``tap1``.
 
 Pan position for ``tap1``. Value can range from -1 (fully left) to 1 (fully right).
 
+----
+
 .. _class_AudioEffectDelay_property_tap2/active:
 
 - :ref:`bool<class_bool>` **tap2/active**
@@ -198,6 +216,8 @@ Pan position for ``tap1``. Value can range from -1 (fully left) to 1 (fully righ
 +-----------+------------------------+
 
 If ``true``, ``tap2`` will be enabled.
+
+----
 
 .. _class_AudioEffectDelay_property_tap2/delay_ms:
 
@@ -213,6 +233,8 @@ If ``true``, ``tap2`` will be enabled.
 
 **Tap2** delay time in milliseconds.
 
+----
+
 .. _class_AudioEffectDelay_property_tap2/level_db:
 
 - :ref:`float<class_float>` **tap2/level_db**
@@ -226,6 +248,8 @@ If ``true``, ``tap2`` will be enabled.
 +-----------+--------------------------+
 
 Sound level for ``tap2``.
+
+----
 
 .. _class_AudioEffectDelay_property_tap2/pan:
 

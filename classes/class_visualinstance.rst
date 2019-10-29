@@ -74,17 +74,25 @@ Method Descriptions
 
 Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this VisualInstance.
 
+----
+
 .. _class_VisualInstance_method_get_base:
 
 - :ref:`RID<class_RID>` **get_base** **(** **)** const
+
+----
 
 .. _class_VisualInstance_method_get_instance:
 
 - :ref:`RID<class_RID>` **get_instance** **(** **)** const
 
+----
+
 .. _class_VisualInstance_method_get_layer_mask_bit:
 
 - :ref:`bool<class_bool>` **get_layer_mask_bit** **(** :ref:`int<class_int>` layer **)** const
+
+----
 
 .. _class_VisualInstance_method_get_transformed_aabb:
 
@@ -94,6 +102,8 @@ Returns the transformed :ref:`AABB<class_AABB>` (also known as the bounding box)
 
 Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, rotation, and scale of the :ref:`Spatial<class_Spatial>`\ s :ref:`Transform<class_Transform>`
 
+----
+
 .. _class_VisualInstance_method_set_base:
 
 - void **set_base** **(** :ref:`RID<class_RID>` base **)**
@@ -101,6 +111,8 @@ Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, ro
 Sets the base of the VisualInstance, which changes how the engine handles the VisualInstance under the hood.
 
 It is recommended to only use :ref:`set_base<class_VisualInstance_method_set_base>` if you know what you're doing.
+
+----
 
 .. _class_VisualInstance_method_set_layer_mask_bit:
 

@@ -86,6 +86,8 @@ Property Descriptions
 
 Distortion power. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectDistortion_property_keep_hf_hz:
 
 - :ref:`float<class_float>` **keep_hf_hz**
@@ -99,6 +101,8 @@ Distortion power. Value can range from 0 to 1.
 +-----------+-----------------------+
 
 High-pass filter, in Hz. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000.
+
+----
 
 .. _class_AudioEffectDistortion_property_mode:
 
@@ -114,6 +118,8 @@ High-pass filter, in Hz. Frequencies higher than this value will not be affected
 
 Distortion type.
 
+----
+
 .. _class_AudioEffectDistortion_property_post_gain:
 
 - :ref:`float<class_float>` **post_gain**
@@ -127,6 +133,8 @@ Distortion type.
 +-----------+----------------------+
 
 Increases or decreases the volume after the effect. Value can range from -80 to 24.
+
+----
 
 .. _class_AudioEffectDistortion_property_pre_gain:
 

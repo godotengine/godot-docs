@@ -109,6 +109,8 @@ Property Descriptions
 
 If ``true``, audio plays when added to scene tree.
 
+----
+
 .. _class_AudioStreamPlayer_property_bus:
 
 - :ref:`String<class_String>` **bus**
@@ -122,6 +124,8 @@ If ``true``, audio plays when added to scene tree.
 +-----------+----------------+
 
 Bus on which this audio is playing.
+
+----
 
 .. _class_AudioStreamPlayer_property_mix_target:
 
@@ -137,6 +141,8 @@ Bus on which this audio is playing.
 
 If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET_*`` constants.
 
+----
+
 .. _class_AudioStreamPlayer_property_pitch_scale:
 
 - :ref:`float<class_float>` **pitch_scale**
@@ -151,6 +157,8 @@ If the audio configuration has more than two speakers, this sets the target chan
 
 Changes the pitch and the tempo of the audio.
 
+----
+
 .. _class_AudioStreamPlayer_property_playing:
 
 - :ref:`bool<class_bool>` **playing**
@@ -162,6 +170,8 @@ Changes the pitch and the tempo of the audio.
 +-----------+--------------+
 
 If ``true``, audio is playing.
+
+----
 
 .. _class_AudioStreamPlayer_property_stream:
 
@@ -175,6 +185,8 @@ If ``true``, audio is playing.
 
 The :ref:`AudioStream<class_AudioStream>` object to be played.
 
+----
+
 .. _class_AudioStreamPlayer_property_stream_paused:
 
 - :ref:`bool<class_bool>` **stream_paused**
@@ -186,6 +198,8 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 +-----------+--------------------------+
 | *Getter*  | get_stream_paused()      |
 +-----------+--------------------------+
+
+----
 
 .. _class_AudioStreamPlayer_property_volume_db:
 
@@ -210,9 +224,13 @@ Method Descriptions
 
 Returns the position in the :ref:`AudioStream<class_AudioStream>` in seconds.
 
+----
+
 .. _class_AudioStreamPlayer_method_get_stream_playback:
 
 - :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback** **(** **)**
+
+----
 
 .. _class_AudioStreamPlayer_method_play:
 
@@ -220,11 +238,15 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>` in seconds.
 
 Plays the audio from the given ``from_position``, in seconds.
 
+----
+
 .. _class_AudioStreamPlayer_method_seek:
 
 - void **seek** **(** :ref:`float<class_float>` to_position **)**
 
 Sets the position from which audio will be played, in seconds.
+
+----
 
 .. _class_AudioStreamPlayer_method_stop:
 

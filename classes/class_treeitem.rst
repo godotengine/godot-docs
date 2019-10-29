@@ -181,6 +181,8 @@ enum **TreeCellMode**:
 
 - **CELL_MODE_CUSTOM** = **4**
 
+----
+
 .. _enum_TreeItem_TextAlign:
 
 .. _class_TreeItem_constant_ALIGN_LEFT:
@@ -217,6 +219,8 @@ Property Descriptions
 
 If ``true``, the TreeItem is collapsed.
 
+----
+
 .. _class_TreeItem_property_custom_minimum_height:
 
 - :ref:`int<class_int>` **custom_minimum_height**
@@ -228,6 +232,8 @@ If ``true``, the TreeItem is collapsed.
 +----------+----------------------------------+
 
 The custom minimum height.
+
+----
 
 .. _class_TreeItem_property_disable_folding:
 
@@ -250,11 +256,15 @@ Method Descriptions
 
 Adds a button with :ref:`Texture<class_Texture>` ``button`` at column ``column``. The ``button_idx`` index is used to identify the button when calling other methods. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count<class_TreeItem_method_get_button_count>` immediately after this method. Optionally, the button can be ``disabled`` and have a ``tooltip``.
 
+----
+
 .. _class_TreeItem_method_call_recursive:
 
 - :ref:`Variant<class_Variant>` **call_recursive** **(** :ref:`String<class_String>` method, ... **)** vararg
 
 Calls the ``method`` on the actual TreeItem and its children recursively. Pass parameters as a comma separated list.
+
+----
 
 .. _class_TreeItem_method_clear_custom_bg_color:
 
@@ -262,11 +272,15 @@ Calls the ``method`` on the actual TreeItem and its children recursively. Pass p
 
 Resets the background color for the given column to default.
 
+----
+
 .. _class_TreeItem_method_clear_custom_color:
 
 - void **clear_custom_color** **(** :ref:`int<class_int>` column **)**
 
 Resets the color for the given column to default.
+
+----
 
 .. _class_TreeItem_method_deselect:
 
@@ -274,11 +288,15 @@ Resets the color for the given column to default.
 
 Deselects the given column.
 
+----
+
 .. _class_TreeItem_method_erase_button:
 
 - void **erase_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)**
 
 Removes the button at index ``button_idx`` in column ``column``.
+
+----
 
 .. _class_TreeItem_method_get_button:
 
@@ -286,11 +304,15 @@ Removes the button at index ``button_idx`` in column ``column``.
 
 Returns the :ref:`Texture<class_Texture>` of the button at index ``button_idx`` in column ``column``.
 
+----
+
 .. _class_TreeItem_method_get_button_count:
 
 - :ref:`int<class_int>` **get_button_count** **(** :ref:`int<class_int>` column **)** const
 
 Returns the number of buttons in column ``column``. May be used to get the most recently added button's index, if no index was specified.
+
+----
 
 .. _class_TreeItem_method_get_button_tooltip:
 
@@ -298,11 +320,15 @@ Returns the number of buttons in column ``column``. May be used to get the most 
 
 Returns the tooltip string for the button at index ``button_idx`` in column ``column``.
 
+----
+
 .. _class_TreeItem_method_get_cell_mode:
 
 - :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **get_cell_mode** **(** :ref:`int<class_int>` column **)** const
 
 Returns the column's cell mode.
+
+----
 
 .. _class_TreeItem_method_get_children:
 
@@ -310,11 +336,15 @@ Returns the column's cell mode.
 
 Returns the TreeItem's child items.
 
+----
+
 .. _class_TreeItem_method_get_custom_bg_color:
 
 - :ref:`Color<class_Color>` **get_custom_bg_color** **(** :ref:`int<class_int>` column **)** const
 
 Returns the custom background color of column ``column``.
+
+----
 
 .. _class_TreeItem_method_get_custom_color:
 
@@ -322,11 +352,15 @@ Returns the custom background color of column ``column``.
 
 Returns the custom color of column ``column``.
 
+----
+
 .. _class_TreeItem_method_get_expand_right:
 
 - :ref:`bool<class_bool>` **get_expand_right** **(** :ref:`int<class_int>` column **)** const
 
 Returns ``true`` if ``expand_right`` is set.
+
+----
 
 .. _class_TreeItem_method_get_icon:
 
@@ -334,11 +368,15 @@ Returns ``true`` if ``expand_right`` is set.
 
 Returns the given column's icon :ref:`Texture<class_Texture>`. Error if no icon is set.
 
+----
+
 .. _class_TreeItem_method_get_icon_max_width:
 
 - :ref:`int<class_int>` **get_icon_max_width** **(** :ref:`int<class_int>` column **)** const
 
 Returns the column's icon's maximum width.
+
+----
 
 .. _class_TreeItem_method_get_icon_modulate:
 
@@ -346,21 +384,29 @@ Returns the column's icon's maximum width.
 
 Returns the :ref:`Color<class_Color>` modulating the column's icon.
 
+----
+
 .. _class_TreeItem_method_get_icon_region:
 
 - :ref:`Rect2<class_Rect2>` **get_icon_region** **(** :ref:`int<class_int>` column **)** const
 
 Returns the icon :ref:`Texture<class_Texture>` region as :ref:`Rect2<class_Rect2>`.
 
+----
+
 .. _class_TreeItem_method_get_metadata:
 
 - :ref:`Variant<class_Variant>` **get_metadata** **(** :ref:`int<class_int>` column **)** const
+
+----
 
 .. _class_TreeItem_method_get_next:
 
 - :ref:`TreeItem<class_TreeItem>` **get_next** **(** **)**
 
 Returns the next TreeItem in the tree.
+
+----
 
 .. _class_TreeItem_method_get_next_visible:
 
@@ -370,17 +416,23 @@ Returns the next visible TreeItem in the tree.
 
 If ``wrap`` is enabled, the method will wrap around to the first visible element in the tree when called on the last visible element, otherwise it returns ``null``.
 
+----
+
 .. _class_TreeItem_method_get_parent:
 
 - :ref:`TreeItem<class_TreeItem>` **get_parent** **(** **)**
 
 Returns the parent TreeItem.
 
+----
+
 .. _class_TreeItem_method_get_prev:
 
 - :ref:`TreeItem<class_TreeItem>` **get_prev** **(** **)**
 
 Returns the previous TreeItem in the tree.
+
+----
 
 .. _class_TreeItem_method_get_prev_visible:
 
@@ -390,13 +442,19 @@ Returns the previous visible TreeItem in the tree.
 
 If ``wrap`` is enabled, the method will wrap around to the last visible element in the tree when called on the first visible element, otherwise it returns ``null``.
 
+----
+
 .. _class_TreeItem_method_get_range:
 
 - :ref:`float<class_float>` **get_range** **(** :ref:`int<class_int>` column **)** const
 
+----
+
 .. _class_TreeItem_method_get_range_config:
 
 - :ref:`Dictionary<class_Dictionary>` **get_range_config** **(** :ref:`int<class_int>` column **)**
+
+----
 
 .. _class_TreeItem_method_get_text:
 
@@ -404,11 +462,15 @@ If ``wrap`` is enabled, the method will wrap around to the last visible element 
 
 Returns the given column's text.
 
+----
+
 .. _class_TreeItem_method_get_text_align:
 
 - :ref:`TextAlign<enum_TreeItem_TextAlign>` **get_text_align** **(** :ref:`int<class_int>` column **)** const
 
 Returns the given column's text alignment.
+
+----
 
 .. _class_TreeItem_method_get_tooltip:
 
@@ -416,11 +478,15 @@ Returns the given column's text alignment.
 
 Returns the given column's tooltip.
 
+----
+
 .. _class_TreeItem_method_is_button_disabled:
 
 - :ref:`bool<class_bool>` **is_button_disabled** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** const
 
 Returns ``true`` if the button at index ``button_idx`` for the given column is disabled.
+
+----
 
 .. _class_TreeItem_method_is_checked:
 
@@ -428,9 +494,13 @@ Returns ``true`` if the button at index ``button_idx`` for the given column is d
 
 Returns ``true`` if the given column is checked.
 
+----
+
 .. _class_TreeItem_method_is_custom_set_as_button:
 
 - :ref:`bool<class_bool>` **is_custom_set_as_button** **(** :ref:`int<class_int>` column **)** const
+
+----
 
 .. _class_TreeItem_method_is_editable:
 
@@ -438,11 +508,15 @@ Returns ``true`` if the given column is checked.
 
 Returns ``true`` if column ``column`` is editable.
 
+----
+
 .. _class_TreeItem_method_is_selectable:
 
 - :ref:`bool<class_bool>` **is_selectable** **(** :ref:`int<class_int>` column **)** const
 
 Returns ``true`` if column ``column`` is selectable.
+
+----
 
 .. _class_TreeItem_method_is_selected:
 
@@ -450,11 +524,15 @@ Returns ``true`` if column ``column`` is selectable.
 
 Returns ``true`` if column ``column`` is selected.
 
+----
+
 .. _class_TreeItem_method_move_to_bottom:
 
 - void **move_to_bottom** **(** **)**
 
 Moves this TreeItem to the bottom in the :ref:`Tree<class_Tree>` hierarchy.
+
+----
 
 .. _class_TreeItem_method_move_to_top:
 
@@ -462,11 +540,15 @@ Moves this TreeItem to the bottom in the :ref:`Tree<class_Tree>` hierarchy.
 
 Moves this TreeItem to the top in the :ref:`Tree<class_Tree>` hierarchy.
 
+----
+
 .. _class_TreeItem_method_remove_child:
 
 - void **remove_child** **(** :ref:`Object<class_Object>` child **)**
 
 Removes the given child TreeItem.
+
+----
 
 .. _class_TreeItem_method_select:
 
@@ -474,11 +556,15 @@ Removes the given child TreeItem.
 
 Selects the column ``column``.
 
+----
+
 .. _class_TreeItem_method_set_button:
 
 - void **set_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`Texture<class_Texture>` button **)**
 
 Sets the given column's button :ref:`Texture<class_Texture>` at index ``button_idx`` to ``button``.
+
+----
 
 .. _class_TreeItem_method_set_button_disabled:
 
@@ -486,11 +572,15 @@ Sets the given column's button :ref:`Texture<class_Texture>` at index ``button_i
 
 If ``true``, disables the button at index ``button_idx`` in column ``column``.
 
+----
+
 .. _class_TreeItem_method_set_cell_mode:
 
 - void **set_cell_mode** **(** :ref:`int<class_int>` column, :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` mode **)**
 
 Sets the given column's cell mode to ``mode``. See ``CELL_MODE_*`` constants.
+
+----
 
 .. _class_TreeItem_method_set_checked:
 
@@ -498,9 +588,13 @@ Sets the given column's cell mode to ``mode``. See ``CELL_MODE_*`` constants.
 
 If ``true``, the column ``column`` is checked.
 
+----
+
 .. _class_TreeItem_method_set_custom_as_button:
 
 - void **set_custom_as_button** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**
+
+----
 
 .. _class_TreeItem_method_set_custom_bg_color:
 
@@ -508,11 +602,15 @@ If ``true``, the column ``column`` is checked.
 
 Sets the given column's custom background color and whether to just use it as an outline.
 
+----
+
 .. _class_TreeItem_method_set_custom_color:
 
 - void **set_custom_color** **(** :ref:`int<class_int>` column, :ref:`Color<class_Color>` color **)**
 
 Sets the given column's custom color.
+
+----
 
 .. _class_TreeItem_method_set_custom_draw:
 
@@ -522,11 +620,15 @@ Sets the given column's custom draw callback to ``callback`` method on ``object`
 
 The ``callback`` should accept two arguments: the ``TreeItem`` that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
 
+----
+
 .. _class_TreeItem_method_set_editable:
 
 - void **set_editable** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enabled **)**
 
 If ``true``, column ``column`` is editable.
+
+----
 
 .. _class_TreeItem_method_set_expand_right:
 
@@ -534,11 +636,15 @@ If ``true``, column ``column`` is editable.
 
 If ``true``, column ``column`` is expanded to the right.
 
+----
+
 .. _class_TreeItem_method_set_icon:
 
 - void **set_icon** **(** :ref:`int<class_int>` column, :ref:`Texture<class_Texture>` texture **)**
 
 Sets the given column's icon :ref:`Texture<class_Texture>`.
+
+----
 
 .. _class_TreeItem_method_set_icon_max_width:
 
@@ -546,11 +652,15 @@ Sets the given column's icon :ref:`Texture<class_Texture>`.
 
 Sets the given column's icon's maximum width.
 
+----
+
 .. _class_TreeItem_method_set_icon_modulate:
 
 - void **set_icon_modulate** **(** :ref:`int<class_int>` column, :ref:`Color<class_Color>` modulate **)**
 
 Modulates the given column's icon with ``modulate``.
+
+----
 
 .. _class_TreeItem_method_set_icon_region:
 
@@ -558,17 +668,25 @@ Modulates the given column's icon with ``modulate``.
 
 Sets the given column's icon's texture region.
 
+----
+
 .. _class_TreeItem_method_set_metadata:
 
 - void **set_metadata** **(** :ref:`int<class_int>` column, :ref:`Variant<class_Variant>` meta **)**
+
+----
 
 .. _class_TreeItem_method_set_range:
 
 - void **set_range** **(** :ref:`int<class_int>` column, :ref:`float<class_float>` value **)**
 
+----
+
 .. _class_TreeItem_method_set_range_config:
 
 - void **set_range_config** **(** :ref:`int<class_int>` column, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`float<class_float>` step, :ref:`bool<class_bool>` expr=false **)**
+
+----
 
 .. _class_TreeItem_method_set_selectable:
 
@@ -576,15 +694,21 @@ Sets the given column's icon's texture region.
 
 If ``true``, the given column is selectable.
 
+----
+
 .. _class_TreeItem_method_set_text:
 
 - void **set_text** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` text **)**
+
+----
 
 .. _class_TreeItem_method_set_text_align:
 
 - void **set_text_align** **(** :ref:`int<class_int>` column, :ref:`TextAlign<enum_TreeItem_TextAlign>` text_align **)**
 
 Sets the given column's text alignment. See :ref:`TextAlign<enum_TreeItem_TextAlign>` for possible values.
+
+----
 
 .. _class_TreeItem_method_set_tooltip:
 

@@ -76,11 +76,15 @@ Method Descriptions
 
 Adds a new material to the internal material list for the plugin. It can then be accessed with :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>`. Should not be overridden.
 
+----
+
 .. _class_EditorSpatialGizmoPlugin_method_can_be_hidden:
 
 - :ref:`bool<class_bool>` **can_be_hidden** **(** **)** virtual
 
 Override this method to define whether the gizmo can be hidden or not. Returns ``true`` if not overridden.
+
+----
 
 .. _class_EditorSpatialGizmoPlugin_method_commit_handle:
 
@@ -88,11 +92,15 @@ Override this method to define whether the gizmo can be hidden or not. Returns `
 
 Override this method to commit gizmo handles. Called for this plugin's active gizmos.
 
+----
+
 .. _class_EditorSpatialGizmoPlugin_method_create_gizmo:
 
 - :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` **create_gizmo** **(** :ref:`Spatial<class_Spatial>` spatial **)** virtual
 
 Override this method to return a custom :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` for the spatial nodes of your choice, return ``null`` for the rest of nodes. (See also :ref:`has_gizmo<class_EditorSpatialGizmoPlugin_method_has_gizmo>`)
+
+----
 
 .. _class_EditorSpatialGizmoPlugin_method_create_handle_material:
 
@@ -100,11 +108,15 @@ Override this method to return a custom :ref:`EditorSpatialGizmo<class_EditorSpa
 
 Creates a handle material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>` and used in :ref:`EditorSpatialGizmo.add_handles<class_EditorSpatialGizmo_method_add_handles>`. Should not be overridden.
 
+----
+
 .. _class_EditorSpatialGizmoPlugin_method_create_icon_material:
 
 - void **create_icon_material** **(** :ref:`String<class_String>` name, :ref:`Texture<class_Texture>` texture, :ref:`bool<class_bool>` on_top=false, :ref:`Color<class_Color>` color=Color( 1, 1, 1, 1 ) **)**
 
 Creates an icon material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>` and used in :ref:`EditorSpatialGizmo.add_unscaled_billboard<class_EditorSpatialGizmo_method_add_unscaled_billboard>`. Should not be overridden.
+
+----
 
 .. _class_EditorSpatialGizmoPlugin_method_create_material:
 
@@ -112,11 +124,15 @@ Creates an icon material with its variants (selected and/or editable) and adds t
 
 Creates an unshaded material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>` and used in :ref:`EditorSpatialGizmo.add_mesh<class_EditorSpatialGizmo_method_add_mesh>` and :ref:`EditorSpatialGizmo.add_lines<class_EditorSpatialGizmo_method_add_lines>`. Should not be overridden.
 
+----
+
 .. _class_EditorSpatialGizmoPlugin_method_get_handle_name:
 
 - :ref:`String<class_String>` **get_handle_name** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual
 
 Override this method to provide gizmo's handle names. Called for this plugin's active gizmos.
+
+----
 
 .. _class_EditorSpatialGizmoPlugin_method_get_handle_value:
 
@@ -124,11 +140,15 @@ Override this method to provide gizmo's handle names. Called for this plugin's a
 
 Gets actual value of a handle from gizmo. Called for this plugin's active gizmos.
 
+----
+
 .. _class_EditorSpatialGizmoPlugin_method_get_material:
 
 - :ref:`SpatialMaterial<class_SpatialMaterial>` **get_material** **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**
 
 Gets material from the internal list of materials. If an :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` is provided, it will try to get the corresponding variant (selected and/or editable).
+
+----
 
 .. _class_EditorSpatialGizmoPlugin_method_get_name:
 
@@ -136,9 +156,13 @@ Gets material from the internal list of materials. If an :ref:`EditorSpatialGizm
 
 Override this method to provide the name that will appear in the gizmo visibility menu.
 
+----
+
 .. _class_EditorSpatialGizmoPlugin_method_get_priority:
 
 - :ref:`String<class_String>` **get_priority** **(** **)** virtual
+
+----
 
 .. _class_EditorSpatialGizmoPlugin_method_has_gizmo:
 
@@ -146,11 +170,15 @@ Override this method to provide the name that will appear in the gizmo visibilit
 
 Override this method to define which Spatial nodes have a gizmo from this plugin. Whenever a :ref:`Spatial<class_Spatial>` node is added to a scene this method is called, if it returns ``true`` the node gets a generic :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` assigned and is added to this plugin's list of active gizmos.
 
+----
+
 .. _class_EditorSpatialGizmoPlugin_method_is_handle_highlighted:
 
 - :ref:`bool<class_bool>` **is_handle_highlighted** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual
 
 Gets whether a handle is highlighted or not. Called for this plugin's active gizmos.
+
+----
 
 .. _class_EditorSpatialGizmoPlugin_method_is_selectable_when_hidden:
 
@@ -158,11 +186,15 @@ Gets whether a handle is highlighted or not. Called for this plugin's active giz
 
 Override this method to define whether Spatial with this gizmo should be selecteble even when the gizmo is hidden.
 
+----
+
 .. _class_EditorSpatialGizmoPlugin_method_redraw:
 
 - void **redraw** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)** virtual
 
 Callback to redraw the provided gizmo. Called for this plugin's active gizmos.
+
+----
 
 .. _class_EditorSpatialGizmoPlugin_method_set_handle:
 

@@ -83,6 +83,8 @@ Property Descriptions
 
 Ending corner.
 
+----
+
 .. _class_Rect2_property_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
@@ -92,6 +94,8 @@ Ending corner.
 +-----------+-----------------+
 
 Position (starting corner).
+
+----
 
 .. _class_Rect2_property_size:
 
@@ -112,9 +116,13 @@ Method Descriptions
 
 Constructs a ``Rect2`` by position and size.
 
+----
+
 - :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**
 
 Constructs a ``Rect2`` by x, y, width, and height.
+
+----
 
 .. _class_Rect2_method_abs:
 
@@ -122,11 +130,15 @@ Constructs a ``Rect2`` by x, y, width, and height.
 
 Returns a ``Rect2`` with equivalent position and area, modified so that the top-left corner is the origin and ``width`` and ``height`` are positive.
 
+----
+
 .. _class_Rect2_method_clip:
 
 - :ref:`Rect2<class_Rect2>` **clip** **(** :ref:`Rect2<class_Rect2>` b **)**
 
 Returns the intersection of this ``Rect2`` and b.
+
+----
 
 .. _class_Rect2_method_encloses:
 
@@ -134,11 +146,15 @@ Returns the intersection of this ``Rect2`` and b.
 
 Returns ``true`` if this ``Rect2`` completely encloses another one.
 
+----
+
 .. _class_Rect2_method_expand:
 
 - :ref:`Rect2<class_Rect2>` **expand** **(** :ref:`Vector2<class_Vector2>` to **)**
 
 Returns this ``Rect2`` expanded to include a given point.
+
+----
 
 .. _class_Rect2_method_get_area:
 
@@ -146,11 +162,15 @@ Returns this ``Rect2`` expanded to include a given point.
 
 Returns the area of the ``Rect2``.
 
+----
+
 .. _class_Rect2_method_grow:
 
 - :ref:`Rect2<class_Rect2>` **grow** **(** :ref:`float<class_float>` by **)**
 
 Returns a copy of the ``Rect2`` grown a given amount of units towards all the sides.
+
+----
 
 .. _class_Rect2_method_grow_individual:
 
@@ -158,11 +178,15 @@ Returns a copy of the ``Rect2`` grown a given amount of units towards all the si
 
 Returns a copy of the ``Rect2`` grown a given amount of units towards each direction individually.
 
+----
+
 .. _class_Rect2_method_grow_margin:
 
 - :ref:`Rect2<class_Rect2>` **grow_margin** **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` by **)**
 
 Returns a copy of the ``Rect2`` grown a given amount of units towards the :ref:`Margin<enum_@GlobalScope_Margin>` direction.
+
+----
 
 .. _class_Rect2_method_has_no_area:
 
@@ -170,17 +194,23 @@ Returns a copy of the ``Rect2`` grown a given amount of units towards the :ref:`
 
 Returns ``true`` if the ``Rect2`` is flat or empty.
 
+----
+
 .. _class_Rect2_method_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2<class_Vector2>` point **)**
 
 Returns ``true`` if the ``Rect2`` contains a point.
 
+----
+
 .. _class_Rect2_method_intersects:
 
 - :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2<class_Rect2>` b **)**
 
 Returns ``true`` if the ``Rect2`` overlaps with another.
+
+----
 
 .. _class_Rect2_method_merge:
 

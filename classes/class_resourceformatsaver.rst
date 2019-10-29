@@ -47,11 +47,15 @@ Method Descriptions
 
 Returns the list of extensions available for saving the resource object, provided it is recognized (see :ref:`recognize<class_ResourceFormatSaver_method_recognize>`).
 
+----
+
 .. _class_ResourceFormatSaver_method_recognize:
 
 - :ref:`bool<class_bool>` **recognize** **(** :ref:`Resource<class_Resource>` resource **)** virtual
 
 Returns whether the given resource object can be saved by this saver.
+
+----
 
 .. _class_ResourceFormatSaver_method_save:
 

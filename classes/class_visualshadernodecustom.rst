@@ -85,6 +85,8 @@ Override this method to define the category of the associated custom node in the
 
 Defining this method is **optional**. If not overridden, the node will be filed under the "Custom" category.
 
+----
+
 .. _class_VisualShaderNodeCustom_method__get_code:
 
 - :ref:`String<class_String>` **_get_code** **(** :ref:`Array<class_Array>` input_vars, :ref:`Array<class_Array>` output_vars, :ref:`int<class_int>` mode, :ref:`int<class_int>` type **)** virtual
@@ -99,6 +101,8 @@ You can customize the generated code based on the shader ``mode`` (see :ref:`Mod
 
 Defining this method is **required**.
 
+----
+
 .. _class_VisualShaderNodeCustom_method__get_description:
 
 - :ref:`String<class_String>` **_get_description** **(** **)** virtual
@@ -106,6 +110,8 @@ Defining this method is **required**.
 Override this method to define the description of the associated custom node in the Visual Shader Editor's members dialog.
 
 Defining this method is **optional**.
+
+----
 
 .. _class_VisualShaderNodeCustom_method__get_global_code:
 
@@ -119,6 +125,8 @@ You can customize the generated code based on the shader ``mode`` (see :ref:`Mod
 
 Defining this method is **optional**.
 
+----
+
 .. _class_VisualShaderNodeCustom_method__get_input_port_count:
 
 - :ref:`int<class_int>` **_get_input_port_count** **(** **)** virtual
@@ -126,6 +134,8 @@ Defining this method is **optional**.
 Override this method to define the amount of input ports of the associated custom node.
 
 Defining this method is **required**. If not overridden, the node has no input ports.
+
+----
 
 .. _class_VisualShaderNodeCustom_method__get_input_port_name:
 
@@ -135,6 +145,8 @@ Override this method to define the names of input ports of the associated custom
 
 Defining this method is **optional**, but recommended. If not overridden, input ports are named as ``"in" + str(port)``.
 
+----
+
 .. _class_VisualShaderNodeCustom_method__get_input_port_type:
 
 - :ref:`int<class_int>` **_get_input_port_type** **(** :ref:`int<class_int>` port **)** virtual
@@ -142,6 +154,8 @@ Defining this method is **optional**, but recommended. If not overridden, input 
 Override this method to define the returned type of each input port of the associated custom node (see :ref:`PortType<enum_VisualShaderNode_PortType>` for possible types).
 
 Defining this method is **optional**, but recommended. If not overridden, input ports will return the :ref:`VisualShaderNode.PORT_TYPE_SCALAR<class_VisualShaderNode_constant_PORT_TYPE_SCALAR>` type.
+
+----
 
 .. _class_VisualShaderNodeCustom_method__get_name:
 
@@ -151,6 +165,8 @@ Override this method to define the name of the associated custom node in the Vis
 
 Defining this method is **optional**, but recommended. If not overridden, the node will be named as "Unnamed".
 
+----
+
 .. _class_VisualShaderNodeCustom_method__get_output_port_count:
 
 - :ref:`int<class_int>` **_get_output_port_count** **(** **)** virtual
@@ -158,6 +174,8 @@ Defining this method is **optional**, but recommended. If not overridden, the no
 Override this method to define the amount of output ports of the associated custom node.
 
 Defining this method is **required**. If not overridden, the node has no output ports.
+
+----
 
 .. _class_VisualShaderNodeCustom_method__get_output_port_name:
 
@@ -167,6 +185,8 @@ Override this method to define the names of output ports of the associated custo
 
 Defining this method is **optional**, but recommended. If not overridden, output ports are named as ``"out" + str(port)``.
 
+----
+
 .. _class_VisualShaderNodeCustom_method__get_output_port_type:
 
 - :ref:`int<class_int>` **_get_output_port_type** **(** :ref:`int<class_int>` port **)** virtual
@@ -175,6 +195,8 @@ Override this method to define the returned type of each output port of the asso
 
 Defining this method is **optional**, but recommended. If not overridden, output ports will return the :ref:`VisualShaderNode.PORT_TYPE_SCALAR<class_VisualShaderNode_constant_PORT_TYPE_SCALAR>` type.
 
+----
+
 .. _class_VisualShaderNodeCustom_method__get_return_icon_type:
 
 - :ref:`int<class_int>` **_get_return_icon_type** **(** **)** virtual
@@ -182,6 +204,8 @@ Defining this method is **optional**, but recommended. If not overridden, output
 Override this method to define the return icon of the associated custom node in the Visual Shader Editor's members dialog.
 
 Defining this method is **optional**. If not overridden, no return icon is shown.
+
+----
 
 .. _class_VisualShaderNodeCustom_method__get_subcategory:
 

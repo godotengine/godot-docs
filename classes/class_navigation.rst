@@ -77,11 +77,15 @@ Method Descriptions
 
 Returns the navigation point closest to the point given. Points are in local coordinate space.
 
+----
+
 .. _class_Navigation_method_get_closest_point_normal:
 
 - :ref:`Vector3<class_Vector3>` **get_closest_point_normal** **(** :ref:`Vector3<class_Vector3>` to_point **)**
 
 Returns the surface normal at the navigation point closest to the point given. Useful for rotating a navigation agent according to the navigation mesh it moves on.
+
+----
 
 .. _class_Navigation_method_get_closest_point_owner:
 
@@ -89,11 +93,15 @@ Returns the surface normal at the navigation point closest to the point given. U
 
 Returns the owner of the :ref:`NavigationMesh<class_NavigationMesh>` which contains the navigation point closest to the point given. This is usually a :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`. For meshes added via :ref:`navmesh_add<class_Navigation_method_navmesh_add>`, returns the owner that was given (or ``null`` if the ``owner`` parameter was omitted).
 
+----
+
 .. _class_Navigation_method_get_closest_point_to_segment:
 
 - :ref:`Vector3<class_Vector3>` **get_closest_point_to_segment** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` use_collision=false **)**
 
 Returns the navigation point closest to the given line segment. When enabling ``use_collision``, only considers intersection points between segment and navigation meshes. If multiple intersection points are found, the one closest to the segment start point is returned.
+
+----
 
 .. _class_Navigation_method_get_simple_path:
 
@@ -101,17 +109,23 @@ Returns the navigation point closest to the given line segment. When enabling ``
 
 Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the agent properties associated with each :ref:`NavigationMesh<class_NavigationMesh>` (radius, height, etc.) are considered in the path calculation, otherwise they are ignored.
 
+----
+
 .. _class_Navigation_method_navmesh_add:
 
 - :ref:`int<class_int>` **navmesh_add** **(** :ref:`NavigationMesh<class_NavigationMesh>` mesh, :ref:`Transform<class_Transform>` xform, :ref:`Object<class_Object>` owner=null **)**
 
 Adds a :ref:`NavigationMesh<class_NavigationMesh>`. Returns an ID for use with :ref:`navmesh_remove<class_Navigation_method_navmesh_remove>` or :ref:`navmesh_set_transform<class_Navigation_method_navmesh_set_transform>`. If given, a :ref:`Transform2D<class_Transform2D>` is applied to the polygon. The optional ``owner`` is used as return value for :ref:`get_closest_point_owner<class_Navigation_method_get_closest_point_owner>`.
 
+----
+
 .. _class_Navigation_method_navmesh_remove:
 
 - void **navmesh_remove** **(** :ref:`int<class_int>` id **)**
 
 Removes the :ref:`NavigationMesh<class_NavigationMesh>` with the given ID.
+
+----
 
 .. _class_Navigation_method_navmesh_set_transform:
 

@@ -170,7 +170,7 @@ Theme Properties
 ----------------
 
 +---------------------------------+-----------------------------+---------------------------------+
-| :ref:`Color<class_Color>`       | background_color            | Color( 0, 0, 0, 1 )             |
+| :ref:`Color<class_Color>`       | background_color            | Color( 0, 0, 0, 0 )             |
 +---------------------------------+-----------------------------+---------------------------------+
 | :ref:`Color<class_Color>`       | bookmark_color              | Color( 0.08, 0.49, 0.98, 1 )    |
 +---------------------------------+-----------------------------+---------------------------------+
@@ -258,11 +258,15 @@ Signals
 
 Emitted when a breakpoint is placed via the breakpoint gutter.
 
+----
+
 .. _class_TextEdit_signal_cursor_changed:
 
 - **cursor_changed** **(** **)**
 
 Emitted when the cursor changes.
+
+----
 
 .. _class_TextEdit_signal_info_clicked:
 
@@ -270,13 +274,19 @@ Emitted when the cursor changes.
 
 Emitted when the info icon is clicked.
 
+----
+
 .. _class_TextEdit_signal_request_completion:
 
 - **request_completion** **(** **)**
 
+----
+
 .. _class_TextEdit_signal_symbol_lookup:
 
 - **symbol_lookup** **(** :ref:`String<class_String>` symbol, :ref:`int<class_int>` row, :ref:`int<class_int>` column **)**
+
+----
 
 .. _class_TextEdit_signal_text_changed:
 
@@ -302,6 +312,8 @@ enum **SearchFlags**:
 - **SEARCH_WHOLE_WORDS** = **2** --- Match whole words when searching.
 
 - **SEARCH_BACKWARDS** = **4** --- Search from end to beginning.
+
+----
 
 .. _enum_TextEdit_MenuItems:
 
@@ -361,6 +373,8 @@ Property Descriptions
 
 If ``true``, the breakpoint gutter is visible.
 
+----
+
 .. _class_TextEdit_property_caret_blink:
 
 - :ref:`bool<class_bool>` **caret_blink**
@@ -375,6 +389,8 @@ If ``true``, the breakpoint gutter is visible.
 
 If ``true``, the caret (visual cursor) blinks.
 
+----
+
 .. _class_TextEdit_property_caret_blink_speed:
 
 - :ref:`float<class_float>` **caret_blink_speed**
@@ -388,6 +404,8 @@ If ``true``, the caret (visual cursor) blinks.
 +-----------+-------------------------------+
 
 Duration (in seconds) of a caret's blinking cycle.
+
+----
 
 .. _class_TextEdit_property_caret_block_mode:
 
@@ -405,6 +423,8 @@ If ``true``, the caret displays as a rectangle.
 
 If ``false``, the caret displays as a bar.
 
+----
+
 .. _class_TextEdit_property_caret_moving_by_right_click:
 
 - :ref:`bool<class_bool>` **caret_moving_by_right_click**
@@ -421,6 +441,8 @@ If ``true``, a right-click moves the cursor at the mouse position before display
 
 If ``false``, the context menu disregards mouse location.
 
+----
+
 .. _class_TextEdit_property_context_menu_enabled:
 
 - :ref:`bool<class_bool>` **context_menu_enabled**
@@ -434,6 +456,8 @@ If ``false``, the context menu disregards mouse location.
 +-----------+---------------------------------+
 
 If ``true``, a right-click displays the context menu.
+
+----
 
 .. _class_TextEdit_property_draw_spaces:
 
@@ -449,6 +473,8 @@ If ``true``, a right-click displays the context menu.
 
 If ``true``, the "space" character will have a visible representation.
 
+----
+
 .. _class_TextEdit_property_draw_tabs:
 
 - :ref:`bool<class_bool>` **draw_tabs**
@@ -462,6 +488,8 @@ If ``true``, the "space" character will have a visible representation.
 +-----------+----------------------+
 
 If ``true``, the "tab" character will have a visible representation.
+
+----
 
 .. _class_TextEdit_property_fold_gutter:
 
@@ -477,6 +505,8 @@ If ``true``, the "tab" character will have a visible representation.
 
 If ``true``, the fold gutter is visible. This enables folding groups of indented lines.
 
+----
+
 .. _class_TextEdit_property_hiding_enabled:
 
 - :ref:`bool<class_bool>` **hiding_enabled**
@@ -490,6 +520,8 @@ If ``true``, the fold gutter is visible. This enables folding groups of indented
 +-----------+---------------------------+
 
 If ``true``, all lines that have been set to hidden by :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`, will not be visible.
+
+----
 
 .. _class_TextEdit_property_highlight_all_occurrences:
 
@@ -505,6 +537,8 @@ If ``true``, all lines that have been set to hidden by :ref:`set_line_as_hidden<
 
 If ``true``, all occurrences of the selected text will be highlighted.
 
+----
+
 .. _class_TextEdit_property_highlight_current_line:
 
 - :ref:`bool<class_bool>` **highlight_current_line**
@@ -519,6 +553,8 @@ If ``true``, all occurrences of the selected text will be highlighted.
 
 If ``true``, the line containing the cursor is highlighted.
 
+----
+
 .. _class_TextEdit_property_minimap_draw:
 
 - :ref:`bool<class_bool>` **minimap_draw**
@@ -530,6 +566,8 @@ If ``true``, the line containing the cursor is highlighted.
 +-----------+----------------------+
 | *Getter*  | is_drawing_minimap() |
 +-----------+----------------------+
+
+----
 
 .. _class_TextEdit_property_minimap_width:
 
@@ -543,6 +581,8 @@ If ``true``, the line containing the cursor is highlighted.
 | *Getter*  | get_minimap_width()      |
 +-----------+--------------------------+
 
+----
+
 .. _class_TextEdit_property_override_selected_font_color:
 
 - :ref:`bool<class_bool>` **override_selected_font_color**
@@ -554,6 +594,8 @@ If ``true``, the line containing the cursor is highlighted.
 +-----------+-----------------------------------------+
 | *Getter*  | is_overriding_selected_font_color()     |
 +-----------+-----------------------------------------+
+
+----
 
 .. _class_TextEdit_property_readonly:
 
@@ -569,6 +611,8 @@ If ``true``, the line containing the cursor is highlighted.
 
 If ``true``, read-only mode is enabled. Existing text cannot be modified and new text cannot be added.
 
+----
+
 .. _class_TextEdit_property_selecting_enabled:
 
 - :ref:`bool<class_bool>` **selecting_enabled**
@@ -581,6 +625,8 @@ If ``true``, read-only mode is enabled. Existing text cannot be modified and new
 | *Getter*  | is_selecting_enabled()       |
 +-----------+------------------------------+
 
+----
+
 .. _class_TextEdit_property_shortcut_keys_enabled:
 
 - :ref:`bool<class_bool>` **shortcut_keys_enabled**
@@ -592,6 +638,8 @@ If ``true``, read-only mode is enabled. Existing text cannot be modified and new
 +-----------+----------------------------------+
 | *Getter*  | is_shortcut_keys_enabled()       |
 +-----------+----------------------------------+
+
+----
 
 .. _class_TextEdit_property_show_line_numbers:
 
@@ -607,6 +655,8 @@ If ``true``, read-only mode is enabled. Existing text cannot be modified and new
 
 If ``true``, line numbers are displayed to the left of the text.
 
+----
+
 .. _class_TextEdit_property_smooth_scrolling:
 
 - :ref:`bool<class_bool>` **smooth_scrolling**
@@ -620,6 +670,8 @@ If ``true``, line numbers are displayed to the left of the text.
 +-----------+---------------------------------+
 
 If ``true``, sets the ``step`` of the scrollbars to ``0.25`` which results in smoother scrolling.
+
+----
 
 .. _class_TextEdit_property_syntax_highlighting:
 
@@ -635,6 +687,8 @@ If ``true``, sets the ``step`` of the scrollbars to ``0.25`` which results in sm
 
 If ``true``, any custom color properties that have been set for this ``TextEdit`` will be visible.
 
+----
+
 .. _class_TextEdit_property_text:
 
 - :ref:`String<class_String>` **text**
@@ -649,6 +703,8 @@ If ``true``, any custom color properties that have been set for this ``TextEdit`
 
 String value of the ``TextEdit``.
 
+----
+
 .. _class_TextEdit_property_v_scroll_speed:
 
 - :ref:`float<class_float>` **v_scroll_speed**
@@ -662,6 +718,8 @@ String value of the ``TextEdit``.
 +-----------+---------------------------+
 
 Vertical scroll sensitivity.
+
+----
 
 .. _class_TextEdit_property_wrap_enabled:
 
@@ -686,11 +744,15 @@ Method Descriptions
 
 Adds color region (given the delimiters) and its colors.
 
+----
+
 .. _class_TextEdit_method_add_keyword_color:
 
 - void **add_keyword_color** **(** :ref:`String<class_String>` keyword, :ref:`Color<class_Color>` color **)**
 
 Adds a ``keyword`` and its :ref:`Color<class_Color>`.
+
+----
 
 .. _class_TextEdit_method_can_fold:
 
@@ -698,15 +760,21 @@ Adds a ``keyword`` and its :ref:`Color<class_Color>`.
 
 Returns if the given line is foldable, that is, it has indented lines right below it.
 
+----
+
 .. _class_TextEdit_method_center_viewport_to_cursor:
 
 - void **center_viewport_to_cursor** **(** **)**
+
+----
 
 .. _class_TextEdit_method_clear_colors:
 
 - void **clear_colors** **(** **)**
 
-Clears all the syntax coloring information.
+Clears all custom syntax coloring information previously added with :ref:`add_color_region<class_TextEdit_method_add_color_region>` or :ref:`add_keyword_color<class_TextEdit_method_add_keyword_color>`.
+
+----
 
 .. _class_TextEdit_method_clear_undo_history:
 
@@ -714,11 +782,15 @@ Clears all the syntax coloring information.
 
 Clears the undo history.
 
+----
+
 .. _class_TextEdit_method_copy:
 
 - void **copy** **(** **)**
 
 Copy's the current text selection.
+
+----
 
 .. _class_TextEdit_method_cursor_get_column:
 
@@ -726,11 +798,15 @@ Copy's the current text selection.
 
 Returns the column the editing cursor is at.
 
+----
+
 .. _class_TextEdit_method_cursor_get_line:
 
 - :ref:`int<class_int>` **cursor_get_line** **(** **)** const
 
 Returns the line the editing cursor is at.
+
+----
 
 .. _class_TextEdit_method_cursor_set_column:
 
@@ -739,6 +815,8 @@ Returns the line the editing cursor is at.
 Moves the cursor at the specified ``column`` index.
 
 If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs.
+
+----
 
 .. _class_TextEdit_method_cursor_set_line:
 
@@ -750,11 +828,15 @@ If ``adjust_viewport`` is set to true, the viewport will center at the cursor po
 
 If ``can_be_hidden`` is set to true, the specified ``line`` can be hidden using :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`.
 
+----
+
 .. _class_TextEdit_method_cut:
 
 - void **cut** **(** **)**
 
 Cut's the current selection.
+
+----
 
 .. _class_TextEdit_method_deselect:
 
@@ -762,11 +844,15 @@ Cut's the current selection.
 
 Deselects the current selection.
 
+----
+
 .. _class_TextEdit_method_fold_all_lines:
 
 - void **fold_all_lines** **(** **)**
 
 Folds all lines that are possible to be folded (see :ref:`can_fold<class_TextEdit_method_can_fold>`).
+
+----
 
 .. _class_TextEdit_method_fold_line:
 
@@ -774,11 +860,15 @@ Folds all lines that are possible to be folded (see :ref:`can_fold<class_TextEdi
 
 Folds the given line, if possible (see :ref:`can_fold<class_TextEdit_method_can_fold>`).
 
+----
+
 .. _class_TextEdit_method_get_breakpoints:
 
 - :ref:`Array<class_Array>` **get_breakpoints** **(** **)** const
 
 Returns an array containing the line number of each breakpoint.
+
+----
 
 .. _class_TextEdit_method_get_keyword_color:
 
@@ -786,11 +876,15 @@ Returns an array containing the line number of each breakpoint.
 
 Returns the :ref:`Color<class_Color>` of the specified ``keyword``.
 
+----
+
 .. _class_TextEdit_method_get_line:
 
 - :ref:`String<class_String>` **get_line** **(** :ref:`int<class_int>` line **)** const
 
 Returns the text of a specific line.
+
+----
 
 .. _class_TextEdit_method_get_line_count:
 
@@ -798,11 +892,15 @@ Returns the text of a specific line.
 
 Returns the amount of total lines in the text.
 
+----
+
 .. _class_TextEdit_method_get_menu:
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_menu** **(** **)** const
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``TextEdit``. By default, this menu is displayed when right-clicking on the ``TextEdit``.
+
+----
 
 .. _class_TextEdit_method_get_selection_from_column:
 
@@ -810,11 +908,15 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``TextEdit``. By default, 
 
 Returns the selection begin column.
 
+----
+
 .. _class_TextEdit_method_get_selection_from_line:
 
 - :ref:`int<class_int>` **get_selection_from_line** **(** **)** const
 
 Returns the selection begin line.
+
+----
 
 .. _class_TextEdit_method_get_selection_text:
 
@@ -822,11 +924,15 @@ Returns the selection begin line.
 
 Returns the text inside the selection.
 
+----
+
 .. _class_TextEdit_method_get_selection_to_column:
 
 - :ref:`int<class_int>` **get_selection_to_column** **(** **)** const
 
 Returns the selection end column.
+
+----
 
 .. _class_TextEdit_method_get_selection_to_line:
 
@@ -834,11 +940,15 @@ Returns the selection end column.
 
 Returns the selection end line.
 
+----
+
 .. _class_TextEdit_method_get_word_under_cursor:
 
 - :ref:`String<class_String>` **get_word_under_cursor** **(** **)** const
 
 Returns a :ref:`String<class_String>` text with the word under the mouse cursor location.
+
+----
 
 .. _class_TextEdit_method_has_keyword_color:
 
@@ -846,11 +956,15 @@ Returns a :ref:`String<class_String>` text with the word under the mouse cursor 
 
 Returns whether the specified ``keyword`` has a color set to it or not.
 
+----
+
 .. _class_TextEdit_method_insert_text_at_cursor:
 
 - void **insert_text_at_cursor** **(** :ref:`String<class_String>` text **)**
 
 Insert the specified text at the cursor position.
+
+----
 
 .. _class_TextEdit_method_is_folded:
 
@@ -858,11 +972,15 @@ Insert the specified text at the cursor position.
 
 Returns whether the line at the specified index is folded or not.
 
+----
+
 .. _class_TextEdit_method_is_line_hidden:
 
 - :ref:`bool<class_bool>` **is_line_hidden** **(** :ref:`int<class_int>` line **)** const
 
 Returns whether the line at the specified index is hidden or not.
+
+----
 
 .. _class_TextEdit_method_is_selection_active:
 
@@ -870,11 +988,15 @@ Returns whether the line at the specified index is hidden or not.
 
 Returns ``true`` if the selection is active.
 
+----
+
 .. _class_TextEdit_method_menu_option:
 
 - void **menu_option** **(** :ref:`int<class_int>` option **)**
 
 Triggers a right-click menu action by the specified index. See :ref:`MenuItems<enum_TextEdit_MenuItems>` for a list of available indexes.
+
+----
 
 .. _class_TextEdit_method_paste:
 
@@ -882,11 +1004,15 @@ Triggers a right-click menu action by the specified index. See :ref:`MenuItems<e
 
 Paste the current selection.
 
+----
+
 .. _class_TextEdit_method_redo:
 
 - void **redo** **(** **)**
 
 Perform redo operation.
+
+----
 
 .. _class_TextEdit_method_remove_breakpoints:
 
@@ -894,11 +1020,15 @@ Perform redo operation.
 
 Removes all the breakpoints. This will not fire the :ref:`breakpoint_toggled<class_TextEdit_signal_breakpoint_toggled>` signal.
 
+----
+
 .. _class_TextEdit_method_search:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **search** **(** :ref:`String<class_String>` key, :ref:`int<class_int>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column **)** const
 
 Perform a search inside the text. Search flags can be specified in the``SEARCH_*`` enum.
+
+----
 
 .. _class_TextEdit_method_select:
 
@@ -906,11 +1036,15 @@ Perform a search inside the text. Search flags can be specified in the``SEARCH_*
 
 Perform selection, from line/column to line/column.
 
+----
+
 .. _class_TextEdit_method_select_all:
 
 - void **select_all** **(** **)**
 
 Select all the text.
+
+----
 
 .. _class_TextEdit_method_set_line_as_hidden:
 
@@ -918,11 +1052,15 @@ Select all the text.
 
 If ``true``, hides the line of the specified index.
 
+----
+
 .. _class_TextEdit_method_toggle_fold_line:
 
 - void **toggle_fold_line** **(** :ref:`int<class_int>` line **)**
 
 Toggle the folding of the code block at the given line.
+
+----
 
 .. _class_TextEdit_method_undo:
 
@@ -930,11 +1068,15 @@ Toggle the folding of the code block at the given line.
 
 Perform undo operation.
 
+----
+
 .. _class_TextEdit_method_unfold_line:
 
 - void **unfold_line** **(** :ref:`int<class_int>` line **)**
 
 Unfolds the given line, if folded.
+
+----
 
 .. _class_TextEdit_method_unhide_all_lines:
 

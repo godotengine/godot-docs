@@ -54,11 +54,15 @@ Checks whether the shape can travel to a point. The method will return an array 
 
 If the shape can not move, the returned array will be ``[0, 0]`` under Bullet, and empty under GodotPhysics.
 
+----
+
 .. _class_PhysicsDirectSpaceState_method_collide_shape:
 
 - :ref:`Array<class_Array>` **collide_shape** **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**
 
 Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` object, against the space. The resulting array contains a list of points where the shape intersects another. Like with :ref:`intersect_shape<class_PhysicsDirectSpaceState_method_intersect_shape>`, the number of returned results can be limited to save processing time.
+
+----
 
 .. _class_PhysicsDirectSpaceState_method_get_rest_info:
 
@@ -79,6 +83,8 @@ Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryPara
 ``shape``: The shape index of the colliding shape.
 
 If the shape did not intersect anything, then an empty dictionary is returned instead.
+
+----
 
 .. _class_PhysicsDirectSpaceState_method_intersect_ray:
 
@@ -101,6 +107,8 @@ Intersects a ray in a given space. The returned object is a dictionary with the 
 If the ray did not intersect anything, then an empty dictionary is returned instead.
 
 Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<class_RID>`\ s that are to be excluded from collisions, a ``collision_mask`` bitmask representing the physics layers to check in, or booleans to determine if the ray should collide with :ref:`PhysicsBody<class_PhysicsBody>`\ s or :ref:`Area<class_Area>`\ s, respectively.
+
+----
 
 .. _class_PhysicsDirectSpaceState_method_intersect_shape:
 

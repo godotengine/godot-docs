@@ -63,6 +63,8 @@ Method Descriptions
 
 Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``peer_id``.
 
+----
+
 .. _class_WebSocketMultiplayerPeer_method_set_buffers:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **set_buffers** **(** :ref:`int<class_int>` input_buffer_size_kb, :ref:`int<class_int>` input_max_packets, :ref:`int<class_int>` output_buffer_size_kb, :ref:`int<class_int>` output_max_packets **)**

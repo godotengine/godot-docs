@@ -55,6 +55,8 @@ Property Descriptions
 
 Full height of the sphere.
 
+----
+
 .. _class_SphereMesh_property_is_hemisphere:
 
 - :ref:`bool<class_bool>` **is_hemisphere**
@@ -71,6 +73,8 @@ Determines whether a full sphere or a hemisphere is created.
 
 **Note:** To get a regular hemisphere, the height and radius of the sphere must be equal.
 
+----
+
 .. _class_SphereMesh_property_radial_segments:
 
 - :ref:`int<class_int>` **radial_segments**
@@ -85,6 +89,8 @@ Determines whether a full sphere or a hemisphere is created.
 
 Number of radial segments on the sphere.
 
+----
+
 .. _class_SphereMesh_property_radius:
 
 - :ref:`float<class_float>` **radius**
@@ -98,6 +104,8 @@ Number of radial segments on the sphere.
 +-----------+-------------------+
 
 Radius of sphere.
+
+----
 
 .. _class_SphereMesh_property_rings:
 

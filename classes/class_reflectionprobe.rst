@@ -89,6 +89,8 @@ Property Descriptions
 
 If ``true``, enables box projection. This makes reflections look more correct in rectangle-shaped rooms by offsetting the reflection center depending on the camera's location.
 
+----
+
 .. _class_ReflectionProbe_property_cull_mask:
 
 - :ref:`int<class_int>` **cull_mask**
@@ -100,6 +102,8 @@ If ``true``, enables box projection. This makes reflections look more correct in
 +-----------+----------------------+
 | *Getter*  | get_cull_mask()      |
 +-----------+----------------------+
+
+----
 
 .. _class_ReflectionProbe_property_enable_shadows:
 
@@ -115,6 +119,8 @@ If ``true``, enables box projection. This makes reflections look more correct in
 
 If ``true``, computes shadows in the reflection probe. This makes the reflection probe slower to render; you may want to disable this if using the :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>` :ref:`update_mode<class_ReflectionProbe_property_update_mode>`.
 
+----
+
 .. _class_ReflectionProbe_property_extents:
 
 - :ref:`Vector3<class_Vector3>` **extents**
@@ -126,6 +132,8 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 +-----------+--------------------+
 | *Getter*  | get_extents()      |
 +-----------+--------------------+
+
+----
 
 .. _class_ReflectionProbe_property_intensity:
 
@@ -141,6 +149,8 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 
 Defines the reflection intensity.
 
+----
+
 .. _class_ReflectionProbe_property_interior_ambient_color:
 
 - :ref:`Color<class_Color>` **interior_ambient_color**
@@ -152,6 +162,8 @@ Defines the reflection intensity.
 +-----------+-----------------------------+
 | *Getter*  | get_interior_ambient()      |
 +-----------+-----------------------------+
+
+----
 
 .. _class_ReflectionProbe_property_interior_ambient_contrib:
 
@@ -165,6 +177,8 @@ Defines the reflection intensity.
 | *Getter*  | get_interior_ambient_probe_contribution()      |
 +-----------+------------------------------------------------+
 
+----
+
 .. _class_ReflectionProbe_property_interior_ambient_energy:
 
 - :ref:`float<class_float>` **interior_ambient_energy**
@@ -176,6 +190,8 @@ Defines the reflection intensity.
 +-----------+------------------------------------+
 | *Getter*  | get_interior_ambient_energy()      |
 +-----------+------------------------------------+
+
+----
 
 .. _class_ReflectionProbe_property_interior_enable:
 
@@ -189,6 +205,8 @@ Defines the reflection intensity.
 | *Getter*  | is_set_as_interior()   |
 +-----------+------------------------+
 
+----
+
 .. _class_ReflectionProbe_property_max_distance:
 
 - :ref:`float<class_float>` **max_distance**
@@ -201,6 +219,8 @@ Defines the reflection intensity.
 | *Getter*  | get_max_distance()      |
 +-----------+-------------------------+
 
+----
+
 .. _class_ReflectionProbe_property_origin_offset:
 
 - :ref:`Vector3<class_Vector3>` **origin_offset**
@@ -212,6 +232,8 @@ Defines the reflection intensity.
 +-----------+--------------------------+
 | *Getter*  | get_origin_offset()      |
 +-----------+--------------------------+
+
+----
 
 .. _class_ReflectionProbe_property_update_mode:
 

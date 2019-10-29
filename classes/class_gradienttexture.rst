@@ -47,6 +47,8 @@ Property Descriptions
 
 The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 
+----
+
 .. _class_GradientTexture_property_width:
 
 - :ref:`int<class_int>` **width**

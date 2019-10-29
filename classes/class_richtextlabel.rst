@@ -53,7 +53,7 @@ Methods
 -------
 
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`add_image<class_RichTextLabel_method_add_image>` **(** :ref:`Texture<class_Texture>` image **)**                                                                                   |
+| void                                  | :ref:`add_image<class_RichTextLabel_method_add_image>` **(** :ref:`Texture<class_Texture>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0 **)**                    |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`add_text<class_RichTextLabel_method_add_text>` **(** :ref:`String<class_String>` text **)**                                                                                        |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,6 +83,10 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`push_align<class_RichTextLabel_method_push_align>` **(** :ref:`Align<enum_RichTextLabel_Align>` align **)**                                                                        |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`push_bold<class_RichTextLabel_method_push_bold>` **(** **)**                                                                                                                       |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`push_bold_italics<class_RichTextLabel_method_push_bold_italics>` **(** **)**                                                                                                       |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`push_cell<class_RichTextLabel_method_push_cell>` **(** **)**                                                                                                                       |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`push_color<class_RichTextLabel_method_push_color>` **(** :ref:`Color<class_Color>` color **)**                                                                                     |
@@ -91,9 +95,15 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`push_indent<class_RichTextLabel_method_push_indent>` **(** :ref:`int<class_int>` level **)**                                                                                       |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`push_italics<class_RichTextLabel_method_push_italics>` **(** **)**                                                                                                                 |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`push_list<class_RichTextLabel_method_push_list>` **(** :ref:`ListType<enum_RichTextLabel_ListType>` type **)**                                                                     |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`push_meta<class_RichTextLabel_method_push_meta>` **(** :ref:`Variant<class_Variant>` data **)**                                                                                    |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`push_mono<class_RichTextLabel_method_push_mono>` **(** **)**                                                                                                                       |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`push_normal<class_RichTextLabel_method_push_normal>` **(** **)**                                                                                                                   |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`push_strikethrough<class_RichTextLabel_method_push_strikethrough>` **(** **)**                                                                                                     |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -156,11 +166,15 @@ Signals
 
 Triggered when the user clicks on content between ``[url]`` tags. If the meta is defined in text, e.g. ``[url={"data"="hi"}]hi[/url]``, then the parameter for this signal will be a :ref:`String<class_String>` type. If a particular type or an object is desired, the :ref:`push_meta<class_RichTextLabel_method_push_meta>` method must be used to manually insert the data into the tag stack.
 
+----
+
 .. _class_RichTextLabel_signal_meta_hover_ended:
 
 - **meta_hover_ended** **(** :ref:`Nil<class_Nil>` meta **)**
 
 Triggers when the mouse exits a meta tag.
+
+----
 
 .. _class_RichTextLabel_signal_meta_hover_started:
 
@@ -191,6 +205,8 @@ enum **Align**:
 
 - **ALIGN_FILL** = **3**
 
+----
+
 .. _enum_RichTextLabel_ListType:
 
 .. _class_RichTextLabel_constant_LIST_NUMBERS:
@@ -206,6 +222,8 @@ enum **ListType**:
 - **LIST_LETTERS** = **1**
 
 - **LIST_DOTS** = **2**
+
+----
 
 .. _enum_RichTextLabel_ItemType:
 
@@ -316,6 +334,8 @@ Property Descriptions
 
 If ``true``, the label uses BBCode formatting.
 
+----
+
 .. _class_RichTextLabel_property_bbcode_text:
 
 - :ref:`String<class_String>` **bbcode_text**
@@ -330,6 +350,8 @@ If ``true``, the label uses BBCode formatting.
 
 The label's text in BBCode format. Is not representative of manual modifications to the internal tag stack. Erases changes made by other methods when edited.
 
+----
+
 .. _class_RichTextLabel_property_custom_effects:
 
 - :ref:`Array<class_Array>` **custom_effects**
@@ -341,6 +363,8 @@ The label's text in BBCode format. Is not representative of manual modifications
 +-----------+--------------------+
 | *Getter*  | get_effects()      |
 +-----------+--------------------+
+
+----
 
 .. _class_RichTextLabel_property_meta_underlined:
 
@@ -356,6 +380,8 @@ The label's text in BBCode format. Is not representative of manual modifications
 
 If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``.
 
+----
+
 .. _class_RichTextLabel_property_override_selected_font_color:
 
 - :ref:`bool<class_bool>` **override_selected_font_color**
@@ -369,6 +395,8 @@ If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``.
 +-----------+-----------------------------------------+
 
 If ``true``, the label uses the custom font color.
+
+----
 
 .. _class_RichTextLabel_property_percent_visible:
 
@@ -384,6 +412,8 @@ If ``true``, the label uses the custom font color.
 
 The text's visibility, as a :ref:`float<class_float>` between 0.0 and 1.0.
 
+----
+
 .. _class_RichTextLabel_property_scroll_active:
 
 - :ref:`bool<class_bool>` **scroll_active**
@@ -397,6 +427,8 @@ The text's visibility, as a :ref:`float<class_float>` between 0.0 and 1.0.
 +-----------+--------------------------+
 
 If ``true``, the scrollbar is visible. Does not block scrolling completely. See :ref:`scroll_to_line<class_RichTextLabel_method_scroll_to_line>`.
+
+----
 
 .. _class_RichTextLabel_property_scroll_following:
 
@@ -412,6 +444,8 @@ If ``true``, the scrollbar is visible. Does not block scrolling completely. See 
 
 If ``true``, the window scrolls down to display new content automatically.
 
+----
+
 .. _class_RichTextLabel_property_selection_enabled:
 
 - :ref:`bool<class_bool>` **selection_enabled**
@@ -426,6 +460,8 @@ If ``true``, the window scrolls down to display new content automatically.
 
 If ``true``, the label allows text selection.
 
+----
+
 .. _class_RichTextLabel_property_tab_size:
 
 - :ref:`int<class_int>` **tab_size**
@@ -439,6 +475,8 @@ If ``true``, the label allows text selection.
 +-----------+---------------------+
 
 The number of spaces associated with a single tab length. Does not affect ``\t`` in text tags, only indent tags.
+
+----
 
 .. _class_RichTextLabel_property_text:
 
@@ -455,6 +493,8 @@ The number of spaces associated with a single tab length. Does not affect ``\t``
 The raw text of the label.
 
 When set, clears the tag stack and adds a raw text tag to the top of it. Does not parse BBCodes. Does not modify :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`.
+
+----
 
 .. _class_RichTextLabel_property_visible_characters:
 
@@ -475,9 +515,13 @@ Method Descriptions
 
 .. _class_RichTextLabel_method_add_image:
 
-- void **add_image** **(** :ref:`Texture<class_Texture>` image **)**
+- void **add_image** **(** :ref:`Texture<class_Texture>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0 **)**
 
-Adds an image's opening and closing tags to the tag stack.
+Adds an image's opening and closing tags to the tag stack, optionally providing a ``width`` and ``height`` to resize the image.
+
+If ``width`` or ``height`` is set to 0, the image size will be adjusted in order to keep the original aspect ratio.
+
+----
 
 .. _class_RichTextLabel_method_add_text:
 
@@ -485,11 +529,15 @@ Adds an image's opening and closing tags to the tag stack.
 
 Adds raw non-BBCode-parsed text to the tag stack.
 
+----
+
 .. _class_RichTextLabel_method_append_bbcode:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **append_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
 Parses ``bbcode`` and adds tags to the tag stack as needed. Returns the result of the parsing, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if successful.
+
+----
 
 .. _class_RichTextLabel_method_clear:
 
@@ -497,11 +545,15 @@ Parses ``bbcode`` and adds tags to the tag stack as needed. Returns the result o
 
 Clears the tag stack and sets :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` to an empty string.
 
+----
+
 .. _class_RichTextLabel_method_get_content_height:
 
 - :ref:`int<class_int>` **get_content_height** **(** **)**
 
 Returns the height of the content.
+
+----
 
 .. _class_RichTextLabel_method_get_line_count:
 
@@ -509,11 +561,15 @@ Returns the height of the content.
 
 Returns the total number of newlines in the tag stack's text tags. Considers wrapped text as one line.
 
+----
+
 .. _class_RichTextLabel_method_get_total_character_count:
 
 - :ref:`int<class_int>` **get_total_character_count** **(** **)** const
 
 Returns the total number of characters from text tags. Does not include BBCodes.
+
+----
 
 .. _class_RichTextLabel_method_get_v_scroll:
 
@@ -521,15 +577,21 @@ Returns the total number of characters from text tags. Does not include BBCodes.
 
 Returns the vertical scrollbar.
 
+----
+
 .. _class_RichTextLabel_method_get_visible_line_count:
 
 - :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
 
 Returns the number of visible lines.
 
+----
+
 .. _class_RichTextLabel_method_install_effect:
 
 - void **install_effect** **(** :ref:`Variant<class_Variant>` effect **)**
+
+----
 
 .. _class_RichTextLabel_method_newline:
 
@@ -537,15 +599,21 @@ Returns the number of visible lines.
 
 Adds a newline tag to the tag stack.
 
+----
+
 .. _class_RichTextLabel_method_parse_bbcode:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **parse_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
 The assignment version of :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>`. Clears the tag stack and inserts the new content. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if parses ``bbcode`` successfully.
 
+----
+
 .. _class_RichTextLabel_method_parse_expressions_for_values:
 
 - :ref:`Dictionary<class_Dictionary>` **parse_expressions_for_values** **(** :ref:`PoolStringArray<class_PoolStringArray>` expressions **)**
+
+----
 
 .. _class_RichTextLabel_method_pop:
 
@@ -553,11 +621,27 @@ The assignment version of :ref:`append_bbcode<class_RichTextLabel_method_append_
 
 Terminates the current tag. Use after ``push_*`` methods to close BBCodes manually. Does not need to follow ``add_*`` methods.
 
+----
+
 .. _class_RichTextLabel_method_push_align:
 
 - void **push_align** **(** :ref:`Align<enum_RichTextLabel_Align>` align **)**
 
 Adds an ``[align]`` tag based on the given ``align`` value. See :ref:`Align<enum_RichTextLabel_Align>` for possible values.
+
+----
+
+.. _class_RichTextLabel_method_push_bold:
+
+- void **push_bold** **(** **)**
+
+----
+
+.. _class_RichTextLabel_method_push_bold_italics:
+
+- void **push_bold_italics** **(** **)**
+
+----
 
 .. _class_RichTextLabel_method_push_cell:
 
@@ -565,11 +649,15 @@ Adds an ``[align]`` tag based on the given ``align`` value. See :ref:`Align<enum
 
 Adds a ``[cell]`` tag to the tag stack. Must be inside a ``[table]`` tag. See :ref:`push_table<class_RichTextLabel_method_push_table>` for details.
 
+----
+
 .. _class_RichTextLabel_method_push_color:
 
 - void **push_color** **(** :ref:`Color<class_Color>` color **)**
 
 Adds a ``[color]`` tag to the tag stack.
+
+----
 
 .. _class_RichTextLabel_method_push_font:
 
@@ -577,11 +665,21 @@ Adds a ``[color]`` tag to the tag stack.
 
 Adds a ``[font]`` tag to the tag stack. Overrides default fonts for its duration.
 
+----
+
 .. _class_RichTextLabel_method_push_indent:
 
 - void **push_indent** **(** :ref:`int<class_int>` level **)**
 
 Adds an ``[indent]`` tag to the tag stack. Multiplies "level" by current tab_size to determine new margin length.
+
+----
+
+.. _class_RichTextLabel_method_push_italics:
+
+- void **push_italics** **(** **)**
+
+----
 
 .. _class_RichTextLabel_method_push_list:
 
@@ -589,11 +687,27 @@ Adds an ``[indent]`` tag to the tag stack. Multiplies "level" by current tab_siz
 
 Adds a ``[list]`` tag to the tag stack. Similar to the BBCodes ``[ol]`` or ``[ul]``, but supports more list types. Not fully implemented!
 
+----
+
 .. _class_RichTextLabel_method_push_meta:
 
 - void **push_meta** **(** :ref:`Variant<class_Variant>` data **)**
 
 Adds a ``[meta]`` tag to the tag stack. Similar to the BBCode ``[url=something]{text}[/url]``, but supports non-:ref:`String<class_String>` metadata types.
+
+----
+
+.. _class_RichTextLabel_method_push_mono:
+
+- void **push_mono** **(** **)**
+
+----
+
+.. _class_RichTextLabel_method_push_normal:
+
+- void **push_normal** **(** **)**
+
+----
 
 .. _class_RichTextLabel_method_push_strikethrough:
 
@@ -601,11 +715,15 @@ Adds a ``[meta]`` tag to the tag stack. Similar to the BBCode ``[url=something]{
 
 Adds a ``[s]`` tag to the tag stack.
 
+----
+
 .. _class_RichTextLabel_method_push_table:
 
 - void **push_table** **(** :ref:`int<class_int>` columns **)**
 
 Adds a ``[table=columns]`` tag to the tag stack.
+
+----
 
 .. _class_RichTextLabel_method_push_underline:
 
@@ -613,17 +731,23 @@ Adds a ``[table=columns]`` tag to the tag stack.
 
 Adds a ``[u]`` tag to the tag stack.
 
+----
+
 .. _class_RichTextLabel_method_remove_line:
 
 - :ref:`bool<class_bool>` **remove_line** **(** :ref:`int<class_int>` line **)**
 
 Removes a line of content from the label. Returns ``true`` if the line exists.
 
+----
+
 .. _class_RichTextLabel_method_scroll_to_line:
 
 - void **scroll_to_line** **(** :ref:`int<class_int>` line **)**
 
 Scrolls the window's top line to match ``line``.
+
+----
 
 .. _class_RichTextLabel_method_set_table_column_expand:
 

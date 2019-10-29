@@ -75,6 +75,8 @@ Property Descriptions
 | *Getter*  | get_buffer_length()      |
 +-----------+--------------------------+
 
+----
+
 .. _class_AudioEffectSpectrumAnalyzer_property_fft_size:
 
 - :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **fft_size**
@@ -86,6 +88,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_fft_size()      |
 +-----------+---------------------+
+
+----
 
 .. _class_AudioEffectSpectrumAnalyzer_property_tap_back_pos:
 

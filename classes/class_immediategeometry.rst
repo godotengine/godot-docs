@@ -57,11 +57,15 @@ Method Descriptions
 
 Simple helper to draw an UV sphere with given latitude, longitude and radius.
 
+----
+
 .. _class_ImmediateGeometry_method_add_vertex:
 
 - void **add_vertex** **(** :ref:`Vector3<class_Vector3>` position **)**
 
 Adds a vertex with the currently set color/uv/etc.
+
+----
 
 .. _class_ImmediateGeometry_method_begin:
 
@@ -71,11 +75,15 @@ Begin drawing (And optionally pass a texture override). When done call end(). Fo
 
 For the type of primitive, use the :ref:`Mesh<class_Mesh>`.``PRIMITIVE_*`` enumerations.
 
+----
+
 .. _class_ImmediateGeometry_method_clear:
 
 - void **clear** **(** **)**
 
 Clears everything that was drawn using begin/end.
+
+----
 
 .. _class_ImmediateGeometry_method_end:
 
@@ -83,11 +91,15 @@ Clears everything that was drawn using begin/end.
 
 Ends a drawing context and displays the results.
 
+----
+
 .. _class_ImmediateGeometry_method_set_color:
 
 - void **set_color** **(** :ref:`Color<class_Color>` color **)**
 
 The current drawing color.
+
+----
 
 .. _class_ImmediateGeometry_method_set_normal:
 
@@ -95,17 +107,23 @@ The current drawing color.
 
 The next vertex's normal.
 
+----
+
 .. _class_ImmediateGeometry_method_set_tangent:
 
 - void **set_tangent** **(** :ref:`Plane<class_Plane>` tangent **)**
 
 The next vertex's tangent (and binormal facing).
 
+----
+
 .. _class_ImmediateGeometry_method_set_uv:
 
 - void **set_uv** **(** :ref:`Vector2<class_Vector2>` uv **)**
 
 The next vertex's UV.
+
+----
 
 .. _class_ImmediateGeometry_method_set_uv2:
 

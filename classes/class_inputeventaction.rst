@@ -56,6 +56,8 @@ Property Descriptions
 
 The action's name. Actions are accessed via this :ref:`String<class_String>`.
 
+----
+
 .. _class_InputEventAction_property_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
@@ -69,6 +71,8 @@ The action's name. Actions are accessed via this :ref:`String<class_String>`.
 +-----------+--------------------+
 
 If ``true``, the action's state is pressed. If ``false``, the action's state is released.
+
+----
 
 .. _class_InputEventAction_property_strength:
 

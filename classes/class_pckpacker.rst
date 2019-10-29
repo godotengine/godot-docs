@@ -36,9 +36,13 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **add_file** **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path **)**
 
+----
+
 .. _class_PCKPacker_method_flush:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **flush** **(** :ref:`bool<class_bool>` verbose **)**
+
+----
 
 .. _class_PCKPacker_method_pck_start:
 

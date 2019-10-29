@@ -69,11 +69,15 @@ Method Descriptions
 
 Returns the current ``Thread``'s ID, uniquely identifying it among all threads.
 
+----
+
 .. _class_Thread_method_is_active:
 
 - :ref:`bool<class_bool>` **is_active** **(** **)** const
 
 Returns ``true`` if this ``Thread`` is currently active. An active ``Thread`` cannot start work on a new method but can be joined with :ref:`wait_to_finish<class_Thread_method_wait_to_finish>`.
+
+----
 
 .. _class_Thread_method_start:
 
@@ -82,6 +86,8 @@ Returns ``true`` if this ``Thread`` is currently active. An active ``Thread`` ca
 Starts a new ``Thread`` that runs ``method`` on object ``instance`` with ``userdata`` passed as an argument. The ``priority`` of the ``Thread`` can be changed by passing a value from the :ref:`Priority<enum_Thread_Priority>` enum.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` on failure.
+
+----
 
 .. _class_Thread_method_wait_to_finish:
 

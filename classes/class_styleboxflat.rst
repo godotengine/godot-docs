@@ -141,6 +141,8 @@ Property Descriptions
 
 Antialiasing draws a small ring around the edges, which fades to transparency. As a result, edges look much smoother. This is only noticeable when using rounded corners.
 
+----
+
 .. _class_StyleBoxFlat_property_anti_aliasing_size:
 
 - :ref:`int<class_int>` **anti_aliasing_size**
@@ -154,6 +156,8 @@ Antialiasing draws a small ring around the edges, which fades to transparency. A
 +-----------+--------------------+
 
 This changes the size of the faded ring. Higher values can be used to achieve a "blurry" effect.
+
+----
 
 .. _class_StyleBoxFlat_property_bg_color:
 
@@ -169,6 +173,8 @@ This changes the size of the faded ring. Higher values can be used to achieve a 
 
 The background color of the stylebox.
 
+----
+
 .. _class_StyleBoxFlat_property_border_blend:
 
 - :ref:`bool<class_bool>` **border_blend**
@@ -182,6 +188,8 @@ The background color of the stylebox.
 +-----------+-------------------------+
 
 If ``true``, the border will fade into the background color.
+
+----
 
 .. _class_StyleBoxFlat_property_border_color:
 
@@ -197,6 +205,8 @@ If ``true``, the border will fade into the background color.
 
 Sets the color of the border.
 
+----
+
 .. _class_StyleBoxFlat_property_border_width_bottom:
 
 - :ref:`int<class_int>` **border_width_bottom**
@@ -210,6 +220,8 @@ Sets the color of the border.
 +-----------+-------------------------+
 
 Border width for the bottom border.
+
+----
 
 .. _class_StyleBoxFlat_property_border_width_left:
 
@@ -225,6 +237,8 @@ Border width for the bottom border.
 
 Border width for the left border.
 
+----
+
 .. _class_StyleBoxFlat_property_border_width_right:
 
 - :ref:`int<class_int>` **border_width_right**
@@ -239,6 +253,8 @@ Border width for the left border.
 
 Border width for the right border.
 
+----
+
 .. _class_StyleBoxFlat_property_border_width_top:
 
 - :ref:`int<class_int>` **border_width_top**
@@ -252,6 +268,8 @@ Border width for the right border.
 +-----------+-------------------------+
 
 Border width for the top border.
+
+----
 
 .. _class_StyleBoxFlat_property_corner_detail:
 
@@ -269,6 +287,8 @@ This sets the amount of vertices used for each corner. Higher values result in r
 
 For corner radii smaller than 10, 4-5 should be enough. For corner radii smaller than 30, 8-12 should be enough.
 
+----
+
 .. _class_StyleBoxFlat_property_corner_radius_bottom_left:
 
 - :ref:`int<class_int>` **corner_radius_bottom_left**
@@ -282,6 +302,8 @@ For corner radii smaller than 10, 4-5 should be enough. For corner radii smaller
 +-----------+--------------------------+
 
 The bottom-left corner's radius. If ``0``, the corner is not rounded.
+
+----
 
 .. _class_StyleBoxFlat_property_corner_radius_bottom_right:
 
@@ -297,6 +319,8 @@ The bottom-left corner's radius. If ``0``, the corner is not rounded.
 
 The bottom-right corner's radius. If ``0``, the corner is not rounded.
 
+----
+
 .. _class_StyleBoxFlat_property_corner_radius_top_left:
 
 - :ref:`int<class_int>` **corner_radius_top_left**
@@ -310,6 +334,8 @@ The bottom-right corner's radius. If ``0``, the corner is not rounded.
 +-----------+--------------------------+
 
 The top-left corner's radius. If ``0``, the corner is not rounded.
+
+----
 
 .. _class_StyleBoxFlat_property_corner_radius_top_right:
 
@@ -325,6 +351,8 @@ The top-left corner's radius. If ``0``, the corner is not rounded.
 
 The top-right corner's radius. If ``0``, the corner is not rounded.
 
+----
+
 .. _class_StyleBoxFlat_property_draw_center:
 
 - :ref:`bool<class_bool>` **draw_center**
@@ -338,6 +366,8 @@ The top-right corner's radius. If ``0``, the corner is not rounded.
 +-----------+--------------------------+
 
 Toggles drawing of the inner part of the stylebox.
+
+----
 
 .. _class_StyleBoxFlat_property_expand_margin_bottom:
 
@@ -353,6 +383,8 @@ Toggles drawing of the inner part of the stylebox.
 
 Expands the stylebox outside of the control rect on the bottom edge. Useful in combination with :ref:`border_width_bottom<class_StyleBoxFlat_property_border_width_bottom>` to draw a border outside the control rect.
 
+----
+
 .. _class_StyleBoxFlat_property_expand_margin_left:
 
 - :ref:`float<class_float>` **expand_margin_left**
@@ -366,6 +398,8 @@ Expands the stylebox outside of the control rect on the bottom edge. Useful in c
 +-----------+--------------------------+
 
 Expands the stylebox outside of the control rect on the left edge. Useful in combination with :ref:`border_width_left<class_StyleBoxFlat_property_border_width_left>` to draw a border outside the control rect.
+
+----
 
 .. _class_StyleBoxFlat_property_expand_margin_right:
 
@@ -381,6 +415,8 @@ Expands the stylebox outside of the control rect on the left edge. Useful in com
 
 Expands the stylebox outside of the control rect on the right edge. Useful in combination with :ref:`border_width_right<class_StyleBoxFlat_property_border_width_right>` to draw a border outside the control rect.
 
+----
+
 .. _class_StyleBoxFlat_property_expand_margin_top:
 
 - :ref:`float<class_float>` **expand_margin_top**
@@ -394,6 +430,8 @@ Expands the stylebox outside of the control rect on the right edge. Useful in co
 +-----------+--------------------------+
 
 Expands the stylebox outside of the control rect on the top edge. Useful in combination with :ref:`border_width_top<class_StyleBoxFlat_property_border_width_top>` to draw a border outside the control rect.
+
+----
 
 .. _class_StyleBoxFlat_property_shadow_color:
 
@@ -409,6 +447,8 @@ Expands the stylebox outside of the control rect on the top edge. Useful in comb
 
 The color of the shadow. This has no effect if :ref:`shadow_size<class_StyleBoxFlat_property_shadow_size>` is lower than 1.
 
+----
+
 .. _class_StyleBoxFlat_property_shadow_offset:
 
 - :ref:`Vector2<class_Vector2>` **shadow_offset**
@@ -422,6 +462,8 @@ The color of the shadow. This has no effect if :ref:`shadow_size<class_StyleBoxF
 +-----------+--------------------------+
 
 The shadow offset in pixels. Adjusts the position of the shadow relatively to the stylebox.
+
+----
 
 .. _class_StyleBoxFlat_property_shadow_size:
 
@@ -444,45 +486,67 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_border_width** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
+----
+
 .. _class_StyleBoxFlat_method_get_border_width_min:
 
 - :ref:`int<class_int>` **get_border_width_min** **(** **)** const
+
+----
 
 .. _class_StyleBoxFlat_method_get_corner_radius:
 
 - :ref:`int<class_int>` **get_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** const
 
+----
+
 .. _class_StyleBoxFlat_method_get_expand_margin:
 
 - :ref:`float<class_float>` **get_expand_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+----
 
 .. _class_StyleBoxFlat_method_set_border_width:
 
 - void **set_border_width** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` width **)**
 
+----
+
 .. _class_StyleBoxFlat_method_set_border_width_all:
 
 - void **set_border_width_all** **(** :ref:`int<class_int>` width **)**
+
+----
 
 .. _class_StyleBoxFlat_method_set_corner_radius:
 
 - void **set_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)**
 
+----
+
 .. _class_StyleBoxFlat_method_set_corner_radius_all:
 
 - void **set_corner_radius_all** **(** :ref:`int<class_int>` radius **)**
+
+----
 
 .. _class_StyleBoxFlat_method_set_corner_radius_individual:
 
 - void **set_corner_radius_individual** **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_bottom_right, :ref:`int<class_int>` radius_bottom_left **)**
 
+----
+
 .. _class_StyleBoxFlat_method_set_expand_margin:
 
 - void **set_expand_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` size **)**
 
+----
+
 .. _class_StyleBoxFlat_method_set_expand_margin_all:
 
 - void **set_expand_margin_all** **(** :ref:`float<class_float>` size **)**
+
+----
 
 .. _class_StyleBoxFlat_method_set_expand_margin_individual:
 

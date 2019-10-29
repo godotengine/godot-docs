@@ -67,17 +67,23 @@ Executes the expression that was previously parsed by :ref:`parse<class_Expressi
 
 If you defined input variables in :ref:`parse<class_Expression_method_parse>`, you can specify their values in the inputs array, in the same order.
 
+----
+
 .. _class_Expression_method_get_error_text:
 
 - :ref:`String<class_String>` **get_error_text** **(** **)** const
 
 Returns the error text if :ref:`parse<class_Expression_method_parse>` has failed.
 
+----
+
 .. _class_Expression_method_has_execute_failed:
 
 - :ref:`bool<class_bool>` **has_execute_failed** **(** **)** const
 
 Returns ``true`` if :ref:`execute<class_Expression_method_execute>` has failed.
+
+----
 
 .. _class_Expression_method_parse:
 
