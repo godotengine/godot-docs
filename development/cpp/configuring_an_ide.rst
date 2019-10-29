@@ -315,4 +315,4 @@ Project setup
 
 - Navigate to ``<godot root directory>/platform/android/java`` and select the ``settings.gradle`` gradle file.
 - Android Studio will import and index the project.
-- To build the project, follow the `compiling instructions <https://docs.godotengine.org/en/latest/development/compiling/index.html>`_.
+- To build the project, follow the :ref:`compiling instructions <toc-devel-compiling>`.
