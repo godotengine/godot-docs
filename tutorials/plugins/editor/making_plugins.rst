@@ -43,14 +43,14 @@ creation of the files and the config file's values.
 
 To continue with the example, use the following values::
 
-  Plugin Name: My Custom Node
-  Subfolder: my_custom_node
-  Description: A custom node made to extend the Godot Engine.
-  Author: Your Name Here
-  Version: 1.0.0
-  Language: GDScript
-  Script Name: custom_node.gd
-  Activate now: No
+    Plugin Name: My Custom Node
+    Subfolder: my_custom_node
+    Description: A custom node made to extend the Godot Engine.
+    Author: Your Name Here
+    Version: 1.0.0
+    Language: GDScript
+    Script Name: custom_node.gd
+    Activate now: No
 
 You should end up with a directory structure like this:
 
@@ -132,8 +132,6 @@ custom behavior.
   with any scripting language, they have fewer features than
   :ref:`the Script Class system <doc_scripting_continued_class_name>`. If you
   are writing GDScript or NativeScript, we recommend using them instead.
-  Godot 4.0 will have full Script Class support for all languages. At that
-  point, we will deprecate and remove the entire CustomType system.
 
 To create a new node type, you can use the function
 :ref:`add_custom_type() <class_EditorPlugin_method_add_custom_type>` from the
