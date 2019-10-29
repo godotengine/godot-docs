@@ -92,7 +92,7 @@ Examples
     export(int, 20) var i
     # Allow integer values from -10 to 20.
     export(int, -10, 20) var j
-    # Allow floats from -10 to 20, with a step of 0.2.
+    # Allow floats from -10 to 20 and snap the value to multiples of 0.2.
     export(float, -10, 20, 0.2) var k
     # Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
     # while snapping to steps of 20. The editor will present a
