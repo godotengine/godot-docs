@@ -180,6 +180,12 @@ You can also set the :ref:`Viewport <class_Viewport>` to use HDR, HDR is very us
 
 If you know how the :ref:`Viewport <class_Viewport>` is going to be used, you can set its Usage to either 3D or 2D. Godot will then
 restrict how the :ref:`Viewport <class_Viewport>` is drawn to in accordance with your choice; default is 3D.
+The 2D usage mode is slightly faster and uses less memory compared to the 3D one. It's a good idea to set the :ref:`Viewport <class_Viewport>`'s Usage property to 2D if your viewport doesn't render anything in 3D.
+
+.. note::
+
+    If you need to render 3D shadows in the viewport, make sure to set the viewport's *Shadow Atlas Size* property to a value higher than 0.
+    Otherwise, shadows won't be rendered. For reference, the Project Settings define it to 4096 by default.
 
 Godot also provides a way of customizing how everything is drawn inside :ref:`Viewports <class_Viewport>` using “Debug Draw”.
 Debug Draw allows you to specify one of four options for how the :ref:`Viewport <class_Viewport>` will display things drawn
@@ -203,8 +209,11 @@ Overdraw draws the meshes semi-transparent with an additive blend so you can see
 
 *The same scene with Debug Draw set to Overdraw*
 
-Lastly, Wireframe draws the scene using only the edges of triangles in the meshes. NOTE: As of
-this writing (v3.0.2), wireframe mode is not functional and currently renders the scene normally.
+Lastly, Wireframe draws the scene using only the edges of triangles in the meshes.
+
+.. note::
+
+    The effects of the Wireframe mode are only visible in the editor, not while the project is running.
 
 Render target
 -------------
