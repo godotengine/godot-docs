@@ -62,6 +62,10 @@ your visual shader to a text shader.
 
 .. image:: img/visual_shader_code.png
 
+.. note::
+
+   To learn more about visual shaders, read :ref:`doc_visual_shaders`.
+
 Converting to ShaderMaterial
 ----------------------------
 
