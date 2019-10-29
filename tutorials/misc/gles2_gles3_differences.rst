@@ -196,23 +196,23 @@ For a complete list of built-in GLSL functions see the :ref:`Shading Language do
 | vec_type **fwidth** ( vec_type )                                       |                                                  |
 +------------------------------------------------------------------------+--------------------------------------------------+
 
-textureSize() workaround
-^^^^^^^^^^^^^^^^^^^^^^^^
+``textureSize()`` workaround
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 GLES2 does not support ``textureSize()``. You can get the size of a texture the old fashioned way by passing in a 
 uniform with the texture size yourself.
 
 .. code-block:: glsl
 
-    // in shader
+    // In the shader:
     uniform sampler2D textureName;
     uniform vec2 textureName_size;
 
 ::
 
-    #in GDScript
-    material_name.set_shader_param("textureName", myTexture)
-    material_name.set_shader_param("textureName_size", size_of_myTexture)
+    # In GDScript:
+    material_name.set_shader_param("textureName", my_texture)
+    material_name.set_shader_param("textureName_size", my_texture_size)
 
 
 Godot also provides many built-in variables and render modes. Some cannot be supported in GLES2. Below is a list of
