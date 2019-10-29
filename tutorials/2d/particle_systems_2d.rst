@@ -17,12 +17,24 @@ organic look is the "randomness" associated with each parameter. In
 essence, creating a particle system means setting base physics
 parameters and then adding randomness to them.
 
-Particles2D
-~~~~~~~~~~~
+Particle nodes
+~~~~~~~~~~~~~~
 
-Particle systems are added to the scene via the
-:ref:`Particles2D <class_Particles2D>`
-node. However, after creating that node you will notice that only a white dot was created,
+Godot provides two different nodes for 2D particles, :ref:`class_Particles2D` and
+:ref:`class_CPUParticles2D`.
+Particles2D is more advanced and uses the GPU to process particle effects, but that limits
+it to higher end graphics API, and in our case to the GLES3 renderer. For projects using
+the GLES2 backend, CPUParticles2D is a CPU-driven option with near feature parity with
+Particles2D, but lesser performance. While Particles2D is configured via a
+:ref:`class_ParticlesMaterial` (and optionally with a custom shader), the matching options
+are provided via node properties in CPUParticles2D (with the exception of the trail settings).
+You can convert a Particles2D node into a CPUParticles2D node by clicking on the node in the
+inspector, and selecting "Convert to CPUParticles2D" in the "Particles" menu of the toolbar.
+
+.. image:: img/particles_convert.png
+
+The rest of this tutorial is going to use the Particles2D node. First, add a Particles2D
+node to your scene. After creating that node you will notice that only a white dot was created,
 and that there is a warning icon next to your Particles2D node in the inspector. This
 is because the node needs a ParticlesMaterial to function.
 
@@ -201,7 +213,7 @@ The gravity applied to every particle.
 Initial Velocity
 ~~~~~~~~~~~~~~~~
 
-Linear velocity is the speed at which particles will be emitted (in
+Initial velocity is the speed at which particles will be emitted (in
 pixels/sec). Speed might later be modified by gravity or other
 accelerations (as described further below).
 
