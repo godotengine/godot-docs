@@ -1,33 +1,34 @@
 .. _doc_visual_shader_plugins:
 
-Visual Shader Plugins
+Visual Shader plugins
 =====================
 
-Introduction
-------------
+Visual Shader plugins are used to create custom :ref:`class_VisualShader` nodes
+in GDScript.
 
-Visual Shader Plugins are used to create custom Visual Shader nodes in GDScript.
+The creation process is different from usual editor plugins. You do not need to
+create a ``plugin.cfg`` file to register it; instead, create and save a script
+file and it will be ready to use, provided the custom node is registered with
+``class_name``.
 
-The creation process is different from EditorPlugins - you simply create and save a script file and it will be ready to use.
+This short tutorial will explain how to make a Perlin-3D noise node (original
+code from this `GPU noise shaders plugin
+<https://github.com/curly-brace/Godot-3.0-Noise-Shaders/blob/master/assets/gpu_noise_shaders/classic_perlin3d.tres>`_.
 
-Visual Shader Plugin
---------------------
-
-This short tutorial will explain how to make a Perlin-3D noise node (original code from https://github.com/curly-brace/Godot-3.0-Noise-Shaders/blob/master/assets/gpu_noise_shaders/classic_perlin3d.tres).
-
-Create a sprite and assign a :ref:`ShaderMaterial <class_ShaderMaterial>` to its material slot:
+Create a Sprite and assign a :ref:`class_ShaderMaterial` to its material slot:
 
 .. image:: img/visual_shader_plugins_start.png
 
-Assign :ref:`VisualShader <class_VisualShader>` to the shader slot of the material:
+Assign :ref:`class_VisualShader` to the shader slot of the material:
 
 .. image:: img/visual_shader_plugins_start2.png
 
-Don't forget to change its mode to CanvasItem (if you are using a sprite):
+Don't forget to change its mode to "CanvasItem" (if you are using a Sprite):
 
 .. image:: img/visual_shader_plugins_start3.png
 
-Create a script which derives from :ref:`VisualShaderNodeCustom <class_VisualShaderNodeCustom>`. This is all you need to initialize your plugin.
+Create a script which derives from :ref:`class_VisualShaderNodeCustom`. This is
+all you need to initialize your plugin.
 
 ::
 
@@ -94,7 +95,7 @@ Create a script which derives from :ref:`VisualShaderNodeCustom <class_VisualSha
             }
 
             vec4 permute(vec4 x) {
-                return mod289_4(((x*34.0)+1.0)*x);
+                return mod289_4(((x * 34.0) + 1.0) * x);
             }
 
             vec4 taylorInvSqrt(vec4 r) {
@@ -107,12 +108,12 @@ Create a script which derives from :ref:`VisualShaderNodeCustom <class_VisualSha
 
             // Classic Perlin noise
             float cnoise(vec3 P) {
-                vec3 Pi0 = floor(P); // Integer part for indexing
-                vec3 Pi1 = Pi0 + vec3(1.0); // Integer part + 1
+                vec3 Pi0 = floor(P); // Integer part for indexing.
+                vec3 Pi1 = Pi0 + vec3(1.0); // Integer part + 1.
                 Pi0 = mod289_3(Pi0);
                 Pi1 = mod289_3(Pi1);
-                vec3 Pf0 = fract(P); // Fractional part for interpolation
-                vec3 Pf1 = Pf0 - vec3(1.0); // Fractional part - 1.0
+                vec3 Pf0 = fract(P); // Fractional part for interpolation.
+                vec3 Pf1 = Pf0 - vec3(1.0); // Fractional part - 1.0.
                 vec4 ix = vec4(Pi0.x, Pi1.x, Pi0.x, Pi1.x);
                 vec4 iy = vec4(Pi0.yy, Pi1.yy);
                 vec4 iz0 = vec4(Pi0.z);
@@ -138,14 +139,14 @@ Create a script which derives from :ref:`VisualShaderNodeCustom <class_VisualSha
                 gx1 -= sz1 * (step(0.0, gx1) - 0.5);
                 gy1 -= sz1 * (step(0.0, gy1) - 0.5);
                 
-                vec3 g000 = vec3(gx0.x,gy0.x,gz0.x);
-                vec3 g100 = vec3(gx0.y,gy0.y,gz0.y);
-                vec3 g010 = vec3(gx0.z,gy0.z,gz0.z);
-                vec3 g110 = vec3(gx0.w,gy0.w,gz0.w);
-                vec3 g001 = vec3(gx1.x,gy1.x,gz1.x);
-                vec3 g101 = vec3(gx1.y,gy1.y,gz1.y);
-                vec3 g011 = vec3(gx1.z,gy1.z,gz1.z);
-                vec3 g111 = vec3(gx1.w,gy1.w,gz1.w);
+                vec3 g000 = vec3(gx0.x, gy0.x, gz0.x);
+                vec3 g100 = vec3(gx0.y, gy0.y, gz0.y);
+                vec3 g010 = vec3(gx0.z, gy0.z, gz0.z);
+                vec3 g110 = vec3(gx0.w, gy0.w, gz0.w);
+                vec3 g001 = vec3(gx1.x, gy1.x, gz1.x);
+                vec3 g101 = vec3(gx1.y, gy1.y, gz1.y);
+                vec3 g011 = vec3(gx1.z, gy1.z, gz1.z);
+                vec3 g111 = vec3(gx1.w, gy1.w, gz1.w);
                 
                 vec4 norm0 = taylorInvSqrt(vec4(dot(g000, g000), dot(g010, g010), dot(g100, g100), dot(g110, g110)));
                 g000 *= norm0.x;
@@ -176,9 +177,9 @@ Create a script which derives from :ref:`VisualShaderNodeCustom <class_VisualSha
         """
 
     func _get_code(input_vars, output_vars, mode, type):
-        return output_vars[0] + " = cnoise ( vec3 ( ( %s.xy + %s.xy ) * %s, %s ) ) * 0.5 + 0.5" % [input_vars[0], input_vars[1], input_vars[2], input_vars[3]]
+        return output_vars[0] + " = cnoise(vec3((%s.xy + %s.xy) * %s, %s)) * 0.5 + 0.5" % [input_vars[0], input_vars[1], input_vars[2], input_vars[3]]
 
-Save it and open the visual shader. You should see your new node type inside the member's dialog (if you can't see your new node, try restarting the editor):
+Save it and open the Visual Shader. You should see your new node type within the member's dialog (if you can't see your new node, try restarting the editor):
 
 .. image:: img/visual_shader_plugins_result1.png
 
@@ -186,4 +187,4 @@ Place it on a graph and connect the required ports:
 
 .. image:: img/visual_shader_plugins_result2.png
 
-That is everything you need to do, as you can see it is very easy to create your own custom VisualShader nodes!
+That is everything you need to do, as you can see it is easy to create your own custom VisualShader nodes!
