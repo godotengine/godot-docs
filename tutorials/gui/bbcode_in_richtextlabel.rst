@@ -32,14 +32,14 @@ markup to format the text as requested. Before this happens, you need to toggle 
 For example, ``BBCode [color=blue]blue[/color]`` would render the word "blue" with
 a blue color.
 
-.. iamge:: img/bbcodeDemo.png
+.. image:: img/bbcodeDemo.png
 
 You'll notice that after writing in the BBCode "Text" property the regular "Text"
 property now has the text without the BBCode. While the text property will be updated
 by the BBCode property, you can't edit the text property or you'll lose the BBCode
 markup. All changes to the text must be done in the BBCode parameter.
 
-.. node::
+.. note::
 
     For BBCode tags such as ``[b]`` (bold) or ``[i]`` (italics) to work you must
     set up custom fonts for the RichTextLabel node first.
@@ -115,7 +115,7 @@ BBCode can also be used to create different text animation effects. Five customi
 effects are provided out of the box, and you can easily create your own.
 
 Wave
-++++
+~~~~
 
 .. image:: img/wave.png
 
@@ -124,7 +124,7 @@ Wave makes the text go up and down. Its tag format is ``[wave amp=50 freq=2][/wa
 text goes up and down.
 
 Tornado
-+++++++
+~~~~~~~
 
 .. image:: img/tornado.png
 
@@ -134,7 +134,7 @@ Tornao makes the text move around in a circle. Its tag format is
 fast the text moves in a circle.
 
 Shake
-+++++
+~~~~~
 
 .. image:: img/shake.png
 
@@ -143,7 +143,7 @@ Shake makes the text shake. Its tag format is ``[shake rate=5 level=10][/shake]`
 offset from the origin.
 
 Fade
-++++
+~~~~
 
 .. image:: img/fade.png
 
@@ -154,7 +154,7 @@ command is inserted, ``length`` controls over how many characters should the fad
 out take place.
 
 Rainbow
-+++++++
+~~~~~~~
 
 .. image:: img/rainbow.png
 
@@ -177,8 +177,8 @@ Optionally, you can also provide a custom BBCode identifier simply by adding a m
 name ``bbcode``. The code will check the ``bbcode`` property automatically or will
 use the name of the file to determine what the BBCode tag should be.
 
-_process_custom_fx
-++++++++++++++++++
+``_process_custom_fx``
+~~~~~~~~~~~~~~~~~~~~~~
 
 This is where the logic of each effect takes place and is called once per character
 during the draw phase of text rendering. This passes in a :ref:`class_CharFXTransform`
@@ -209,7 +209,7 @@ the user fixes whatever error cropped up in their custom effect logic.
 Here are some examples of custom effects:
 
 Ghost
-+++++
+~~~~~
 
 ::
 
@@ -231,7 +231,7 @@ Ghost
         return true
 
 Pulse
-+++++
+~~~~~
 
 ::
 
@@ -257,7 +257,7 @@ Pulse
         return true
 
 Matrix
-++++++
+~~~~~~
 
 ::
 

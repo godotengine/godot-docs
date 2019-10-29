@@ -60,7 +60,7 @@ Your plugin needs to be in a folder other than *"build/"* inside the *"res://and
 
 Once created, there are certain rules to follow, but they are simple.
 
-Android Directories
+Android directories
 ^^^^^^^^^^^^^^^^^^^
 
 Inside your plugin folder, you can use the standard folders as if they were from an Android Gradle project. Examples of this are:
@@ -264,7 +264,7 @@ The module should include the full Java path. For our example: ``org/godotengine
 
 Then, from your script:
 
-.. code:: gdscript
+.. code::
 
     if Engine.has_singleton("MySingleton"):
         var singleton = Engine.get_singleton("MySingleton")

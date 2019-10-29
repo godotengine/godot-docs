@@ -167,9 +167,9 @@ For a complete list of built-in GLSL functions see the :ref:`Shading Language do
 +------------------------------------------------------------------------+--------------------------------------------------+
 | mat_type **inverse** ( mat_type )                                      |                                                  |
 +------------------------------------------------------------------------+--------------------------------------------------+
-| ivec2 **textureSize** ( sampler2D_type s, int lod )                    | See workaround below                                         |
+| ivec2 **textureSize** ( sampler2D_type s, int lod )                    | See workaround below                             |
 +------------------------------------------------------------------------+--------------------------------------------------+
-| ivec2 **textureSize** ( samplerCube s, int lod )                       | See workaround below                                                 |
+| ivec2 **textureSize** ( samplerCube s, int lod )                       | See workaround below                             |
 +------------------------------------------------------------------------+--------------------------------------------------+
 | vec4_type **texture** ( sampler2D_type s, vec2 uv [, float bias] )     | **bias** not available in vertex shader          |
 +------------------------------------------------------------------------+--------------------------------------------------+
