@@ -216,7 +216,7 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
         {
             // Initialization of the plugin goes here
             // Add the new type with a name, a parent type, a script and an icon
-            var script = GD.Load<Script>("addons/MyButton.cs");
+            var script = GD.Load<Script>("MyButton.cs");
             var texture = GD.Load<Texture>("icon.png");
             AddCustomType("MyButton", "Button", script, texture);
         }
