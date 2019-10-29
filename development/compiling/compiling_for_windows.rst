@@ -16,7 +16,8 @@ For compiling under Windows, the following is required:
   will have to run/download the installer again.**
 - MinGW-w64 can be used as an alternative to Visual Studio.
 - `Python 3.5+ (recommended) or Python 2.7+. <https://www.python.org/downloads/windows/>`_
-- `SCons <https://www.scons.org>`_ build system.
+- `SCons <https://www.scons.org>`_ build system. If using Visual Studio 2019,
+  you *must* have SCons 3.1.1 or later.
 - *Optional* - `yasm <https://yasm.tortall.net/>`_ (for WebM SIMD optimizations)
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
