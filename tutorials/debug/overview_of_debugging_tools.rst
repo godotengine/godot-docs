@@ -53,34 +53,34 @@ Sync Script Changes
 Any script that is saved will be reloaded on the running game.
 When used remotely on a device, this is more efficient with network filesystem.
 
-Script Editor Debug Tools and Options
+Script editor debug tools and options
 -------------------------------------
 
 The script editor has its own set of debug tools for use with breakpoints, and two
-options. The breakpoint tools can also be found in the debugger tab of the debugger.
+options. The breakpoint tools can also be found in the "Debugger" tab of the debugger.
 
 ..image:: img/overview_script_editor.png
 
-The ``Break`` Button causes a break in the script like a breakpoint would. ``Continue``
+The ``Break`` button causes a break in the script like a breakpoint would. ``Continue``
 makes the game continue after pausing at a breakpoint. ``Step Over`` goes to the next
-line of code, and ``Step Into`` goes into a function if it can, if it can't it does the
-same thing as ``Step Over``
+line of code, and ``Step Into`` goes into a function if possible, otherwise it does the
+same thing as ``Step Over``.
 
-The ``Keep Debugger Open`` Option keeps the debugger open after a scene has been closed.
+The ``Keep Debugger Open`` option keeps the debugger open after a scene has been closed.
 And the ``Debug with External Editor`` option lets you debug your game with an external
 editor.
 
 Debug project settings
 ----------------------
 
-In the project settings there is a debug category with three sub categories which
+In the project settings there is a "Debug" category with three sub categories which
 control different things.
 
 Settings
 ++++++++
 
 These are some general settings such as printing the current FPS to the Output panel, the
-maximum ammount of functions when profiling and others
+maximum ammount of functions when profiling and others.
 
 GDScript
 ++++++++
@@ -91,8 +91,8 @@ or off. You can also turn off warnings completely.
 Shapes
 ++++++
 
-Shapes is where you can adjust the color of shapes that only appear for debugging pruposes,
-such as collisions and navigation.
+Shapes is where you can adjust the color of shapes that only appear for debugging purposes,
+such as collision and navigation shapes.
 
 Debugging tools
 ---------------
@@ -110,10 +110,14 @@ Debugger
 The debugger tab is for working with breakpoints in the script. When a script reaches a breakpoint
 this panel gives you information on it.
 
-The buttons in the top right can be used to turn off breakpoints completely, copy an error, Step
-Into goes into a function if possible and if it can't it acts like step over, step over goes to
-the next line of code, you can cause a break in the game topause it like a breakpoint would, and
-you can stop the break and continue the game.
+The buttons in the top right can be used respectively to:
+
+- Skip all defined breakpoints, without removing them (so you can toggle them on or off while testing).
+- Copy the current error message.
+- Step Into goes to the next line of code, and if it's a function, it step line by line through the function.
+- Step Over goes to the next line of code, but does not go down into function code.
+- Break pauses the game like a breakpoint would.
+- Continue resumes the game after a breakpoint or pause.
 
 Errors
 ++++++
@@ -142,7 +146,7 @@ monitor isn't open while the game is running, you can open it later and see how 
 Video Mem
 +++++++++
 
-Video Lists the video memory usage of the running game and which resource is using it.
+Video Mem list the video memory usage of the running game and which resource is using it.
 
 Misc
 ++++
