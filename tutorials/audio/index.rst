@@ -8,5 +8,6 @@ Audio
    audio_buses
    audio_streams
    sync_with_audio
+   recording_with_microphone
 
 
