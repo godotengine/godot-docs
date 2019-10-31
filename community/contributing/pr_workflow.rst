@@ -204,8 +204,13 @@ Therefore, the command that you should (almost) always use is:
 
     $ git pull --rebase upstream master
 
+You may configure git to use ``--rebase`` option automatically for you when you pull, with:
 
-If you have already pushed the merge commit without using ``rebase``, or 
+::
+
+    $ git config --global pull.rebase true
+
+If you have pushed the merge commit without using ``rebase``, or 
 have made any other changes that have resulted in undesired history, you may
 use a hard reset to revert to a specific commit and try again:
 
