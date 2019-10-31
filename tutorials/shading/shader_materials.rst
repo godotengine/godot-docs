@@ -55,6 +55,10 @@ If you create a visual shader the visual shader editor will open automatically.
 
 .. image:: img/visual_shader_editor.png
 
+.. note::
+
+   To learn more about visual shader, read :ref:`doc_visual_shader`
+
 Converting to ShaderMaterial
 ----------------------------
 
