@@ -29,7 +29,16 @@ Other chats
 -----------
 
 - `Matrix (IRC compatible) <https://matrix.to/#/#godotengine:matrix.org>`_
-- `Discord <https://discordapp.com/invite/zH7NUgz>`_
+- `Discord Server <https://discordapp.com/invite/zH7NUgz>`_
+
+Multilingual Communities
+------------------------
+
+- `Brazilian Discord Server <https://discord.gg/gWmQKBv>`_
+- `French Discord Server <https://discord.gg/3jvf3XN>`_
+- `French Discord Server #2 <https://discord.gg/gZ3QJ5T>`_
+- `German Discord Server <https://discord.gg/Tr7Ma6E>`_
+- `Swedish Discord Server <https://discord.gg/6ZsgWmH>`_
 
 Social networks
 ---------------
