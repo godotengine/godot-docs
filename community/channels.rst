@@ -31,7 +31,7 @@ Other chats
 - `Matrix (IRC compatible) <https://matrix.to/#/#godotengine:matrix.org>`_
 - `Discord Server <https://discordapp.com/invite/zH7NUgz>`_
 
-Multilingual Communities
+Multilingual communities
 ------------------------
 
 - `Brazilian Discord Server <https://discord.gg/gWmQKBv>`_
