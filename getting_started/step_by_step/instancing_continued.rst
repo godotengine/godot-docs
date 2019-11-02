@@ -10,16 +10,89 @@ Instancing has many handy uses. At a glance, with instancing you have:
 
 -  The ability to subdivide scenes and make them easier to manage.
 -  A tool to manage and edit multiple node instances at once.
--  A way to organize and embed complex game flows or even UIs (in Godot, UI
-   Elements are nodes, too).
+-  A way to organize and embed complex game flows or even UI (in Godot, UI
+   Elements are nodes too)
+
+Instancing scenes using code
+----------------------------
+
+In GDScript, we can add "export" before any variable to have it appear
+in the inspector window. This is often used for integers and other types
+of variables, but we can also export variables that hold objects.
+By clarifying the exported variable as a PackedScene, the script
+is able to embed scenes into its code, letting us instance them.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+	
+	# Let the editor adjust this PackedScene variable.
+    export (PackedScene) var MyScene
+
+This example uses "MyScene" as the name for the Script Variable,
+but this name can be changed, and more Script Variables could be added.
+
+Try adding this to your root node of a new project and look at your
+inspector window, you'll see a new segment at the top. These are the
+"Script Variables" and changing these in-editor will change what our
+code is referring to. Because the variable is a PackedScene type,
+we can click on the empty slot and load the scene we want to instantiate
+using the inspector window. Keep this in mind as your "original"
+version of the scene that will be cloned later on.
+
+Now that we have the export code written - and our script has a scene
+attached to the variable - we want to make a copy of the original scene
+so it can be placed in our game. This example uses "clone" as the name
+for the copy, but this name could be anything else.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+	
+	# Copy our originally-loaded Script Variable scene.
+	var clone = MyScene.instance()
+	
+We create a new variable that will be our clone, set it to the original,
+and finally use the "instance()" function in our PackedScene to clone it.
+
+From here, we can call upon this clone and change its properties.
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+	# Any other properties from the original scene can be adjusted here.
+    clone.position = Vector2(0, 0)
+	clone.name = ("Godot")
+
+When we're finally done setting up our clone, we have to add it to the
+SceneTree using the following line:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    add_child(clone)
+
+Just remember to have a way to remove the node when it's no longer needed.
+This could be done by using the original scene's script, and adding a
+conditional statement that ends in "queue_free()".
+
+Ultimately, our code to instance a scene looks like this:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+    
+	export (PackedScene) var MyScene
+	var clone = MyScene.instance() #create a clone of the original PackedScene
+	
+	clone.position = Vector2(0, 0)
+	clone.name = ("Godot")
+    add_child(clone) #add to the SceneTree
+
+And don't forget to load the scene you want instantiated in the inspector!
 
 Design language
 ---------------
 
-But the greatest strength that comes with instancing scenes is that it works
+The greatest strength that comes with instancing scenes is that it works
 as an excellent design language. This distinguishes Godot
-from all the other engines out there. Godot was designed from the ground up
-around this concept.
+from other engines.
 
 When making games with Godot, the recommended approach is to dismiss most
 common design patterns, such as MVC or Entity-Relationship diagrams, and
@@ -72,10 +145,6 @@ and animators, all working with the editor interface.
 Information overload!
 ---------------------
 
-This has been a lot of high level information dropped on you all at once.
-However, the important part of this tutorial was to create an awareness of how
-scenes and instancing are used in real projects.
+This has been a lot of high level information dropped on you all at once. However, the important part of this tutorial was to create an awareness of how scenes and instancing are used in real projects.
 
-Everything discussed here will become second nature to you once you start
-making games and putting these concepts into practice. For now, don't worry
-about it too much, and go on to the next tutorial!
+Everything discussed here will become second nature to you once you start making games and putting these concepts into practice. For now, don’t worry about it too much, and go on to the next tutorial!
