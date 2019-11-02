@@ -243,7 +243,7 @@ Remove a resource from the queue, discarding any loading done.
 
     func is_ready(path)
 
-Returns true if a resource is fully loaded and ready to be retrieved.
+Returns ``true`` if a resource is fully loaded and ready to be retrieved.
 
 ::
 
@@ -259,8 +259,8 @@ actually ready.
 
     func get_resource(path)
 
-Returns the fully loaded resource, or null on error. If the resource is
-not fully loaded (``is_ready`` returns false), it will block your thread
+Returns the fully loaded resource, or ``null`` on error. If the resource is
+not fully loaded (``is_ready`` returns ``false``), it will block your thread
 and finish the load. If the resource is not on the queue, it will call
 ``ResourceLoader::load`` to load it normally and return it.
 

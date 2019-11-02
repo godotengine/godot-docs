@@ -271,7 +271,7 @@ If the body the sticky grenade has collided with is indeed ``player_body``, we i
 
 Next, we check if the sticky grenade has attached to something already or not.
 
-If the sticky grenade is not attached, we then set ``attached`` to true so we know the sticky grenade has attached to something.
+If the sticky grenade is not attached, we then set ``attached`` to ``true`` so we know the sticky grenade has attached to something.
 
 We then make a new :ref:`Spatial <class_Spatial>` node, and make it a child of the body the sticky grenade collided with. We then set the :ref:`Spatial <class_Spatial>`'s position
 to the sticky grenade's current global position.

@@ -61,7 +61,7 @@ and no others.
 First we will distinguish between code that needs to be run only when the particle system starts
 and code that should always run. We want to give each fish a random position and a random animation
 offset when the system is first run so we wrap that code in an ``if`` statement that checks the 
-built-in variable ``RESTART`` which becomes true for one frame when the particle system is restarted.
+built-in variable ``RESTART`` which becomes ``true`` for one frame when the particle system is restarted.
 
 From a high level, this looks like:
 

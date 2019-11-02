@@ -66,7 +66,7 @@ file. In our example, ``main_screen_plugin.gd``.
        return "Main Screen Plugin"
 
 The important part in this script is the ``has_main_screen()`` function, which is
-overloaded so it returns true. This function is automatically called by the
+overloaded so it returns ``true``. This function is automatically called by the
 editor on plugin activation, to tell it that this plugin adds a new center view to
 the editor. For now, we'll leave this script as-is and we'll come back to it
 later.

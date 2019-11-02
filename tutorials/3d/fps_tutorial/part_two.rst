@@ -1055,13 +1055,13 @@ the player has and it ensures ``weapon_change_number`` is ``0`` or more.
 
 Then we check to make sure the player is not already changing weapons. If the player is not, we then check to see if the weapon the player wants to change to
 is a new weapon and not the weapon the player is currently using. If the weapon the player is wanting to change to is a new weapon, we then set ``changing_weapon_name`` to
-the weapon at ``weapon_change_number`` and set ``changing_weapon`` to true.
+the weapon at ``weapon_change_number`` and set ``changing_weapon`` to ``true``.
 
 For firing the weapon we first check to see if the ``fire`` action is pressed.
 Then we check to make sure the player is not changing weapons.
 Next we get the weapon node for the current weapon.
 
-If the current weapon node does not equal null, and the player is in its ``IDLE_ANIM_NAME`` state, we set the player's animation
+If the current weapon node does not equal ``null``, and the player is in its ``IDLE_ANIM_NAME`` state, we set the player's animation
 to the current weapon's ``FIRE_ANIM_NAME``.
 
 _________

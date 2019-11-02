@@ -70,7 +70,7 @@ This means that any node can access a singleton named "PlayerVariables" with:
     var playerVariables = (PlayerVariables)GetNode("/root/PlayerVariables");
     playerVariables.Health -= 10; // Instance field.
 
-If the "Enable" column is checked (default true) then the singleton can simply
+If the "Enable" column is checked (default ``true``) then the singleton can simply
 be accessed directly:
 
 .. tabs::
