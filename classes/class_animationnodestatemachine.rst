@@ -88,11 +88,15 @@ Method Descriptions
 
 Adds a new node to the graph. The ``position`` is used for display in the editor.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_add_transition:
 
 - void **add_transition** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` transition **)**
 
 Adds a transition between the given nodes.
+
+----
 
 .. _class_AnimationNodeStateMachine_method_get_end_node:
 
@@ -100,11 +104,15 @@ Adds a transition between the given nodes.
 
 Returns the graph's end node.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_get_graph_offset:
 
 - :ref:`Vector2<class_Vector2>` **get_graph_offset** **(** **)** const
 
 Returns the draw offset of the graph. Used for display in the editor.
+
+----
 
 .. _class_AnimationNodeStateMachine_method_get_node:
 
@@ -112,11 +120,15 @@ Returns the draw offset of the graph. Used for display in the editor.
 
 Returns the animation node with the given name.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_get_node_name:
 
 - :ref:`String<class_String>` **get_node_name** **(** :ref:`AnimationNode<class_AnimationNode>` node **)** const
 
 Returns the given animation node's name.
+
+----
 
 .. _class_AnimationNodeStateMachine_method_get_node_position:
 
@@ -124,11 +136,15 @@ Returns the given animation node's name.
 
 Returns the given node's coordinates. Used for display in the editor.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_get_start_node:
 
 - :ref:`String<class_String>` **get_start_node** **(** **)** const
 
 Returns the graph's end node.
+
+----
 
 .. _class_AnimationNodeStateMachine_method_get_transition:
 
@@ -136,11 +152,15 @@ Returns the graph's end node.
 
 Returns the given transition.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_get_transition_count:
 
 - :ref:`int<class_int>` **get_transition_count** **(** **)** const
 
 Returns the number of connections in the graph.
+
+----
 
 .. _class_AnimationNodeStateMachine_method_get_transition_from:
 
@@ -148,11 +168,15 @@ Returns the number of connections in the graph.
 
 Returns the given transition's start node.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_get_transition_to:
 
 - :ref:`String<class_String>` **get_transition_to** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the given transition's end node.
+
+----
 
 .. _class_AnimationNodeStateMachine_method_has_node:
 
@@ -160,11 +184,15 @@ Returns the given transition's end node.
 
 Returns ``true`` if the graph contains the given node.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_has_transition:
 
 - :ref:`bool<class_bool>` **has_transition** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)** const
 
 Returns ``true`` if there is a transition between the given nodes.
+
+----
 
 .. _class_AnimationNodeStateMachine_method_remove_node:
 
@@ -172,11 +200,15 @@ Returns ``true`` if there is a transition between the given nodes.
 
 Deletes the given node from the graph.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_remove_transition:
 
 - void **remove_transition** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
 
 Deletes the given transition.
+
+----
 
 .. _class_AnimationNodeStateMachine_method_remove_transition_by_index:
 
@@ -184,11 +216,15 @@ Deletes the given transition.
 
 Deletes the given transition.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_rename_node:
 
 - void **rename_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**
 
 Renames the given node.
+
+----
 
 .. _class_AnimationNodeStateMachine_method_set_end_node:
 
@@ -196,17 +232,23 @@ Renames the given node.
 
 Sets the given node as the graph end point.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_set_graph_offset:
 
 - void **set_graph_offset** **(** :ref:`Vector2<class_Vector2>` offset **)**
 
 Sets the draw offset of the graph. Used for display in the editor.
 
+----
+
 .. _class_AnimationNodeStateMachine_method_set_node_position:
 
 - void **set_node_position** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**
 
 Sets the node's coordinates. Used for display in the editor.
+
+----
 
 .. _class_AnimationNodeStateMachine_method_set_start_node:
 

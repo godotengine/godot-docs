@@ -89,11 +89,15 @@ Signals
 
 Emitted when another area enters.
 
+----
+
 .. _class_Area_signal_area_exited:
 
 - **area_exited** **(** :ref:`Area<class_Area>` area **)**
 
 Emitted when another area exits.
+
+----
 
 .. _class_Area_signal_area_shape_entered:
 
@@ -101,11 +105,15 @@ Emitted when another area exits.
 
 Emitted when another area enters, reporting which areas overlapped.
 
+----
+
 .. _class_Area_signal_area_shape_exited:
 
 - **area_shape_exited** **(** :ref:`int<class_int>` area_id, :ref:`Area<class_Area>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
 
 Emitted when another area exits, reporting which areas were overlapping.
+
+----
 
 .. _class_Area_signal_body_entered:
 
@@ -115,6 +123,8 @@ Emitted when a physics body enters.
 
 The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
+----
+
 .. _class_Area_signal_body_exited:
 
 - **body_exited** **(** :ref:`Node<class_Node>` body **)**
@@ -123,6 +133,8 @@ Emitted when a physics body exits.
 
 The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
+----
+
 .. _class_Area_signal_body_shape_entered:
 
 - **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
@@ -130,6 +142,8 @@ The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a
 Emitted when a physics body enters, reporting which shapes overlapped.
 
 The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
+
+----
 
 .. _class_Area_signal_body_shape_exited:
 
@@ -188,6 +202,8 @@ Property Descriptions
 
 The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
 
+----
+
 .. _class_Area_property_audio_bus_name:
 
 - :ref:`String<class_String>` **audio_bus_name**
@@ -201,6 +217,8 @@ The rate at which objects stop spinning in this area. Represents the angular vel
 +-----------+----------------------+
 
 The name of the area's audio bus.
+
+----
 
 .. _class_Area_property_audio_bus_override:
 
@@ -216,6 +234,8 @@ The name of the area's audio bus.
 
 If ``true``, the area's audio bus overrides the default audio bus.
 
+----
+
 .. _class_Area_property_collision_layer:
 
 - :ref:`int<class_int>` **collision_layer**
@@ -229,6 +249,8 @@ If ``true``, the area's audio bus overrides the default audio bus.
 +-----------+----------------------------+
 
 The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also :ref:`collision_mask<class_Area_property_collision_mask>`.
+
+----
 
 .. _class_Area_property_collision_mask:
 
@@ -244,6 +266,8 @@ The area's physics layer(s). Collidable objects can exist in any of 32 different
 
 The physics layers this area scans to determine collision detection.
 
+----
+
 .. _class_Area_property_gravity:
 
 - :ref:`float<class_float>` **gravity**
@@ -257,6 +281,8 @@ The physics layers this area scans to determine collision detection.
 +-----------+--------------------+
 
 The area's gravity intensity (ranges from -1024 to 1024). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
+
+----
 
 .. _class_Area_property_gravity_distance_scale:
 
@@ -272,6 +298,8 @@ The area's gravity intensity (ranges from -1024 to 1024). This value multiplies 
 
 The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
 
+----
+
 .. _class_Area_property_gravity_point:
 
 - :ref:`bool<class_bool>` **gravity_point**
@@ -285,6 +313,8 @@ The falloff factor for point gravity. The greater the value, the faster gravity 
 +-----------+-----------------------------+
 
 If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area_property_gravity_vec>`). See also :ref:`space_override<class_Area_property_space_override>`.
+
+----
 
 .. _class_Area_property_gravity_vec:
 
@@ -300,6 +330,8 @@ If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class
 
 The area's gravity vector (not normalized). If gravity is a point (see :ref:`gravity_point<class_Area_property_gravity_point>`), this will be the point of attraction.
 
+----
+
 .. _class_Area_property_linear_damp:
 
 - :ref:`float<class_float>` **linear_damp**
@@ -313,6 +345,8 @@ The area's gravity vector (not normalized). If gravity is a point (see :ref:`gra
 +-----------+------------------------+
 
 The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
+
+----
 
 .. _class_Area_property_monitorable:
 
@@ -328,6 +362,8 @@ The rate at which objects stop moving in this area. Represents the linear veloci
 
 If ``true``, other monitoring areas can detect this area.
 
+----
+
 .. _class_Area_property_monitoring:
 
 - :ref:`bool<class_bool>` **monitoring**
@@ -341,6 +377,8 @@ If ``true``, other monitoring areas can detect this area.
 +-----------+-----------------------+
 
 If ``true``, the area detects bodies or areas entering and exiting it.
+
+----
 
 .. _class_Area_property_priority:
 
@@ -356,6 +394,8 @@ If ``true``, the area detects bodies or areas entering and exiting it.
 
 The area's priority. Higher priority areas are processed first.
 
+----
+
 .. _class_Area_property_reverb_bus_amount:
 
 - :ref:`float<class_float>` **reverb_bus_amount**
@@ -369,6 +409,8 @@ The area's priority. Higher priority areas are processed first.
 +-----------+--------------------------+
 
 The degree to which this area applies reverb to its associated audio. Ranges from ``0`` to ``1`` with ``0.1`` precision.
+
+----
 
 .. _class_Area_property_reverb_bus_enable:
 
@@ -384,6 +426,8 @@ The degree to which this area applies reverb to its associated audio. Ranges fro
 
 If ``true``, the area applies reverb to its associated audio.
 
+----
+
 .. _class_Area_property_reverb_bus_name:
 
 - :ref:`String<class_String>` **reverb_bus_name**
@@ -398,6 +442,8 @@ If ``true``, the area applies reverb to its associated audio.
 
 The reverb bus name to use for this area's associated audio.
 
+----
+
 .. _class_Area_property_reverb_bus_uniformity:
 
 - :ref:`float<class_float>` **reverb_bus_uniformity**
@@ -411,6 +457,8 @@ The reverb bus name to use for this area's associated audio.
 +-----------+------------------------------+
 
 The degree to which this area's reverb is a uniform effect. Ranges from ``0`` to ``1`` with ``0.1`` precision.
+
+----
 
 .. _class_Area_property_space_override:
 
@@ -435,11 +483,15 @@ Method Descriptions
 
 Returns an individual bit on the layer mask.
 
+----
+
 .. _class_Area_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns an individual bit on the collision mask.
+
+----
 
 .. _class_Area_method_get_overlapping_areas:
 
@@ -447,11 +499,15 @@ Returns an individual bit on the collision mask.
 
 Returns a list of intersecting ``Area``\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
+----
+
 .. _class_Area_method_get_overlapping_bodies:
 
 - :ref:`Array<class_Array>` **get_overlapping_bodies** **(** **)** const
 
 Returns a list of intersecting :ref:`PhysicsBody<class_PhysicsBody>`\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
+
+----
 
 .. _class_Area_method_overlaps_area:
 
@@ -460,6 +516,8 @@ Returns a list of intersecting :ref:`PhysicsBody<class_PhysicsBody>`\ s. For per
 If ``true``, the given area overlaps the Area.
 
 **Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+
+----
 
 .. _class_Area_method_overlaps_body:
 
@@ -471,11 +529,15 @@ If ``true``, the given physics body overlaps the Area.
 
 The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
+----
+
 .. _class_Area_method_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Set/clear individual bits on the layer mask. This simplifies editing this ``Area``'s layers.
+
+----
 
 .. _class_Area_method_set_collision_mask_bit:
 

@@ -281,6 +281,59 @@ developer experiences as a whole.
 Bonus points for bringing screenshots, concrete numbers, test cases, or example
 projects (if applicable).
 
+
+Why does Godot not use STL (Standard Template Library)
+------------------------------------------------------
+
+Like many other libraries (Qt as an example), Godot does not make use of
+STL. We believe STL is a great general purpose library, but we had special
+requirements for Godot.
+
+* STL templates create very large symbols, which results in huge debug binaries. We use few templates with very short names instead.
+* Most of our containers cater to special needs, like Vector, which uses copy on write and we use to pass data around, or the RID system, which requires O(1) access time for performance. Likewise, our hash map implementations are designed to integrate seamlessly with internal engine types.
+* Our containers have memory tracking built-in, which helps better track memory usage.
+* For large arrays, we use pooled memory, which can be mapped to either a preallocated buffer or virtual memory.
+* We use our custom String type, as the one provided by STL is too basic and lacks proper internationalization support.
+
+Why does Godot not use exceptions?
+----------------------------------
+
+We believe games should not crash, no matter what. If an unexpected
+situation happens, Godot will print an error (which can be traced even to
+script), but then it will try to recover as gracefully as possible and keep
+going.
+
+Additionally, exceptions significantly increase binary size for the
+executable.
+
+Why does Godot not enforce RTTI?
+--------------------------------
+
+Godot provides its own type-casting system, which can optionally use RTTI 
+internally. Disabling RTTI in Godot means considerably smaller binary sizes can
+be achieved, at a little performance cost.
+
+Why does Godot not force users to implement DoD (Data oriented Design)?
+-----------------------------------------------------------------------
+
+While Godot internally for a lot of the heavy performance tasks attempts
+to use cache coherency as best as possible, we believe most users don't
+really need to be forced to use DoD practices.
+
+DoD is mostly a cache coherency optimization that can only gain you
+significant performance improvements when dealing with dozens of 
+thousands of objects (which are processed every frame with little
+modification). As in, if you are moving a few hundred sprites or enemies
+per frame, DoD won't help you, and you should consider a different approach
+to optimization.
+
+The vast majority of games do not need this and Godot provides handy helpers
+to do the job for most cases when you do.
+
+If a game that really needs to process such large amount of objects is
+needed, our recommendation is to use C++ and GDNative for the high
+performance parts and GDScript (or C#) for the rest of the game.
+
 How can I support Godot development or contribute?
 --------------------------------------------------
 

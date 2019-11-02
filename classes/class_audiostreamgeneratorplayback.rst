@@ -35,6 +35,11 @@ Methods
 | :ref:`bool<class_bool>` | :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` **(** :ref:`Vector2<class_Vector2>` frame **)**                      |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
+Tutorials
+---------
+
+- `https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator <https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator>`_
+
 Method Descriptions
 -------------------
 
@@ -42,21 +47,31 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **can_push_buffer** **(** :ref:`int<class_int>` amount **)** const
 
+----
+
 .. _class_AudioStreamGeneratorPlayback_method_clear_buffer:
 
 - void **clear_buffer** **(** **)**
+
+----
 
 .. _class_AudioStreamGeneratorPlayback_method_get_frames_available:
 
 - :ref:`int<class_int>` **get_frames_available** **(** **)** const
 
+----
+
 .. _class_AudioStreamGeneratorPlayback_method_get_skips:
 
 - :ref:`int<class_int>` **get_skips** **(** **)** const
 
+----
+
 .. _class_AudioStreamGeneratorPlayback_method_push_buffer:
 
 - :ref:`bool<class_bool>` **push_buffer** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` frames **)**
+
+----
 
 .. _class_AudioStreamGeneratorPlayback_method_push_frame:
 

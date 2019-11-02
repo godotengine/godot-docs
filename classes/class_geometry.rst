@@ -56,6 +56,8 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                       | :ref:`intersect_polyline_with_polygon_2d<class_Geometry_method_intersect_polyline_with_polygon_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_point_in_circle<class_Geometry_method_is_point_in_circle>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**                                                                                      |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`is_point_in_polygon<class_Geometry_method_is_point_in_polygon>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                                                                   |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                                                                                                      |
@@ -86,8 +88,6 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                   | :ref:`segment_intersects_triangle<class_Geometry_method_segment_intersects_triangle>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**                        |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`transform_points_2d<class_Geometry_method_transform_points_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                        |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`triangulate_delaunay_2d<class_Geometry_method_triangulate_delaunay_2d>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**                                                                                                                                                 |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`triangulate_polygon<class_Geometry_method_triangulate_polygon>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**                                                                                                                                                        |
@@ -116,6 +116,8 @@ enum **PolyBooleanOperation**:
 
 - **OPERATION_XOR** = **3** --- Create regions where either subject or clip polygons are filled but not where both are filled.
 
+----
+
 .. _enum_Geometry_PolyJoinType:
 
 .. _class_Geometry_constant_JOIN_SQUARE:
@@ -131,6 +133,8 @@ enum **PolyJoinType**:
 - **JOIN_ROUND** = **1** --- While flattened paths can never perfectly trace an arc, they are approximated by a series of arc chords.
 
 - **JOIN_MITER** = **2** --- There's a necessary limit to mitered joins since offsetting edges that join at very acute angles will produce excessively long and narrow "spikes". For any given edge join, when miter offsetting would exceed that maximum distance, "square" joining is applied.
+
+----
 
 .. _enum_Geometry_PolyEndType:
 
@@ -165,11 +169,15 @@ Method Descriptions
 
 Returns an array with 6 :ref:`Plane<class_Plane>`\ s that describe the sides of a box centered at the origin. The box size is defined by ``extents``, which represents one (positive) corner of the box (i.e. half its actual size).
 
+----
+
 .. _class_Geometry_method_build_capsule_planes:
 
 - :ref:`Array<class_Array>` **build_capsule_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, Vector3.Axis axis=2 **)**
 
 Returns an array of :ref:`Plane<class_Plane>`\ s closely bounding a faceted capsule centered at the origin with radius ``radius`` and height ``height``. The parameter ``sides`` defines how many planes will be generated for the side part of the capsule, whereas ``lats`` gives the number of latitudinal steps at the bottom and top of the capsule. The parameter ``axis`` describes the axis along which the capsule is oriented (0 for X, 1 for Y, 2 for Z).
+
+----
 
 .. _class_Geometry_method_build_cylinder_planes:
 
@@ -177,11 +185,15 @@ Returns an array of :ref:`Plane<class_Plane>`\ s closely bounding a faceted caps
 
 Returns an array of :ref:`Plane<class_Plane>`\ s closely bounding a faceted cylinder centered at the origin with radius ``radius`` and height ``height``. The parameter ``sides`` defines how many planes will be generated for the round part of the cylinder. The parameter ``axis`` describes the axis along which the cylinder is oriented (0 for X, 1 for Y, 2 for Z).
 
+----
+
 .. _class_Geometry_method_clip_polygon:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **clip_polygon** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` points, :ref:`Plane<class_Plane>` plane **)**
 
 Clips the polygon defined by the points in ``points`` against the ``plane`` and returns the points of the clipped polygon.
+
+----
 
 .. _class_Geometry_method_clip_polygons_2d:
 
@@ -191,17 +203,23 @@ Clips ``polygon_a`` against ``polygon_b`` and returns an array of clipped polygo
 
 If ``polygon_b`` is enclosed by ``polygon_a``, returns an outer polygon (boundary) and inner polygon (hole) which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
+----
+
 .. _class_Geometry_method_clip_polyline_with_polygon_2d:
 
 - :ref:`Array<class_Array>` **clip_polyline_with_polygon_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
 
 Clips ``polyline`` against ``polygon`` and returns an array of clipped polylines. This performs :ref:`OPERATION_DIFFERENCE<class_Geometry_constant_OPERATION_DIFFERENCE>` between the polyline and the polygon. This operation can be thought of as cutting a line with a closed shape.
 
+----
+
 .. _class_Geometry_method_convex_hull_2d:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **convex_hull_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**
 
 Given an array of :ref:`Vector2<class_Vector2>`\ s, returns the convex hull as a list of points in counterclockwise order. The last point is the same as the first one.
+
+----
 
 .. _class_Geometry_method_exclude_polygons_2d:
 
@@ -211,11 +229,15 @@ Mutually excludes common area defined by intersection of ``polygon_a`` and ``pol
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distiguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
+----
+
 .. _class_Geometry_method_get_closest_point_to_segment:
 
 - :ref:`Vector3<class_Vector3>` **get_closest_point_to_segment** **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**
 
 Returns the 3d point on the 3d segment (``s1``, ``s2``) that is closest to ``point``. The returned point will always be inside the specified segment.
+
+----
 
 .. _class_Geometry_method_get_closest_point_to_segment_2d:
 
@@ -223,11 +245,15 @@ Returns the 3d point on the 3d segment (``s1``, ``s2``) that is closest to ``poi
 
 Returns the 2d point on the 2d segment (``s1``, ``s2``) that is closest to ``point``. The returned point will always be inside the specified segment.
 
+----
+
 .. _class_Geometry_method_get_closest_point_to_segment_uncapped:
 
 - :ref:`Vector3<class_Vector3>` **get_closest_point_to_segment_uncapped** **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**
 
 Returns the 3d point on the 3d line defined by (``s1``, ``s2``) that is closest to ``point``. The returned point can be inside the segment (``s1``, ``s2``) or outside of it, i.e. somewhere on the line extending from the segment.
+
+----
 
 .. _class_Geometry_method_get_closest_point_to_segment_uncapped_2d:
 
@@ -235,11 +261,15 @@ Returns the 3d point on the 3d line defined by (``s1``, ``s2``) that is closest 
 
 Returns the 2d point on the 2d line defined by (``s1``, ``s2``) that is closest to ``point``. The returned point can be inside the segment (``s1``, ``s2``) or outside of it, i.e. somewhere on the line extending from the segment.
 
+----
+
 .. _class_Geometry_method_get_closest_points_between_segments:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_closest_points_between_segments** **(** :ref:`Vector3<class_Vector3>` p1, :ref:`Vector3<class_Vector3>` p2, :ref:`Vector3<class_Vector3>` q1, :ref:`Vector3<class_Vector3>` q2 **)**
 
 Given the two 3d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PoolVector3Array<class_PoolVector3Array>` that contains this point on (``p1``, ``p2``) as well the accompanying point on (``q1``, ``q2``).
+
+----
 
 .. _class_Geometry_method_get_closest_points_between_segments_2d:
 
@@ -247,9 +277,13 @@ Given the two 3d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two
 
 Given the two 2d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains this point on (``p1``, ``p2``) as well the accompanying point on (``q1``, ``q2``).
 
+----
+
 .. _class_Geometry_method_get_uv84_normal_bit:
 
 - :ref:`int<class_int>` **get_uv84_normal_bit** **(** :ref:`Vector3<class_Vector3>` normal **)**
+
+----
 
 .. _class_Geometry_method_intersect_polygons_2d:
 
@@ -259,11 +293,23 @@ Intersects ``polygon_a`` with ``polygon_b`` and returns an array of intersected 
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
+----
+
 .. _class_Geometry_method_intersect_polyline_with_polygon_2d:
 
 - :ref:`Array<class_Array>` **intersect_polyline_with_polygon_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polyline, :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
 
 Intersects ``polyline`` with ``polygon`` and returns an array of intersected polylines. This performs :ref:`OPERATION_INTERSECTION<class_Geometry_constant_OPERATION_INTERSECTION>` between the polyline and the polygon. This operation can be thought of as chopping a line with a closed shape.
+
+----
+
+.. _class_Geometry_method_is_point_in_circle:
+
+- :ref:`bool<class_bool>` **is_point_in_circle** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**
+
+Returns ``true`` if ``point`` is inside the circle or if it's located exactly *on* the circle's boundary, otherwise returns ``false``.
+
+----
 
 .. _class_Geometry_method_is_point_in_polygon:
 
@@ -271,11 +317,15 @@ Intersects ``polyline`` with ``polygon`` and returns an array of intersected pol
 
 Returns ``true`` if ``point`` is inside ``polygon`` or if it's located exactly *on* polygon's boundary, otherwise returns ``false``.
 
+----
+
 .. _class_Geometry_method_is_polygon_clockwise:
 
 - :ref:`bool<class_bool>` **is_polygon_clockwise** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
 
 Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, otherwise returns ``false``.
+
+----
 
 .. _class_Geometry_method_line_intersects_line_2d:
 
@@ -285,11 +335,15 @@ Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) inte
 
 **Note:** The lines are specified using direction vectors, not end points.
 
+----
+
 .. _class_Geometry_method_make_atlas:
 
 - :ref:`Dictionary<class_Dictionary>` **make_atlas** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` sizes **)**
 
 Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an atlas. The returned dictionary has two keys: ``points`` is a vector of :ref:`Vector2<class_Vector2>` that specifies the positions of each tile, ``size`` contains the overall size of the whole atlas as :ref:`Vector2<class_Vector2>`.
+
+----
 
 .. _class_Geometry_method_merge_polygons_2d:
 
@@ -298,6 +352,8 @@ Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an
 Merges (combines) ``polygon_a`` and ``polygon_b`` and returns an array of merged polygons. This performs :ref:`OPERATION_UNION<class_Geometry_constant_OPERATION_UNION>` between polygons.
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+
+----
 
 .. _class_Geometry_method_offset_polygon_2d:
 
@@ -308,6 +364,8 @@ Inflates or deflates ``polygon`` by ``delta`` units (pixels). If ``delta`` is po
 Each polygon's vertices will be rounded as determined by ``join_type``, see :ref:`PolyJoinType<enum_Geometry_PolyJoinType>`.
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
+
+----
 
 .. _class_Geometry_method_offset_polyline_2d:
 
@@ -321,11 +379,15 @@ Each polygon's endpoints will be rounded as determined by ``end_type``, see :ref
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
+----
+
 .. _class_Geometry_method_point_is_inside_triangle:
 
 - :ref:`bool<class_bool>` **point_is_inside_triangle** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` a, :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` c **)** const
 
 Returns if ``point`` is inside the triangle specified by ``a``, ``b`` and ``c``.
+
+----
 
 .. _class_Geometry_method_ray_intersects_triangle:
 
@@ -333,11 +395,15 @@ Returns if ``point`` is inside the triangle specified by ``a``, ``b`` and ``c``.
 
 Tests if the 3d ray starting at ``from`` with the direction of ``dir`` intersects the triangle specified by ``a``, ``b`` and ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, an empty :ref:`Variant<class_Variant>` is returned.
 
+----
+
 .. _class_Geometry_method_segment_intersects_circle:
 
 - :ref:`float<class_float>` **segment_intersects_circle** **(** :ref:`Vector2<class_Vector2>` segment_from, :ref:`Vector2<class_Vector2>` segment_to, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**
 
 Given the 2d segment (``segment_from``, ``segment_to``), returns the position on the segment (as a number between 0 and 1) at which the segment hits the circle that is located at position ``circle_position`` and has radius ``circle_radius``. If the segment does not intersect the circle, -1 is returned (this is also the case if the line extending the segment would intersect the circle, but the segment does not).
+
+----
 
 .. _class_Geometry_method_segment_intersects_convex:
 
@@ -345,11 +411,15 @@ Given the 2d segment (``segment_from``, ``segment_to``), returns the position on
 
 Given a convex hull defined though the :ref:`Plane<class_Plane>`\ s in the array ``planes``, tests if the segment (``from``, ``to``) intersects with that hull. If an intersection is found, returns a :ref:`PoolVector3Array<class_PoolVector3Array>` containing the point the intersection and the hull's normal. If no intersecion is found, an the returned array is empty.
 
+----
+
 .. _class_Geometry_method_segment_intersects_cylinder:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **segment_intersects_cylinder** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` height, :ref:`float<class_float>` radius **)**
 
 Checks if the segment (``from``, ``to``) intersects the cylinder with height ``height`` that is centered at the origin and has radius ``radius``. If no, returns an empty :ref:`PoolVector3Array<class_PoolVector3Array>`. If an intersection takes place, the returned array contains the point of intersection and the cylinder's normal at the point of intersection.
+
+----
 
 .. _class_Geometry_method_segment_intersects_segment_2d:
 
@@ -357,11 +427,15 @@ Checks if the segment (``from``, ``to``) intersects the cylinder with height ``h
 
 Checks if the two segments (``from_a``, ``to_a``) and (``from_b``, ``to_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_Variant>`.
 
+----
+
 .. _class_Geometry_method_segment_intersects_sphere:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **segment_intersects_sphere** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` sphere_position, :ref:`float<class_float>` sphere_radius **)**
 
 Checks if the segment (``from``, ``to``) intersects the sphere that is located at ``sphere_position`` and has radius ``sphere_radius``. If no, returns an empty :ref:`PoolVector3Array<class_PoolVector3Array>`. If yes, returns a :ref:`PoolVector3Array<class_PoolVector3Array>` containing the point of intersection and the sphere's normal at the point of intersection.
+
+----
 
 .. _class_Geometry_method_segment_intersects_triangle:
 
@@ -369,19 +443,15 @@ Checks if the segment (``from``, ``to``) intersects the sphere that is located a
 
 Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, an empty :ref:`Variant<class_Variant>` is returned.
 
-.. _class_Geometry_method_transform_points_2d:
-
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **transform_points_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Transform2D<class_Transform2D>` transform **)**
-
-Transforms an array of points by ``transform`` and returns the result.
-
-Can be useful in conjunction with performing polygon boolean operations in a CSG-like manner, see :ref:`merge_polygons_2d<class_Geometry_method_merge_polygons_2d>`, :ref:`clip_polygons_2d<class_Geometry_method_clip_polygons_2d>`, :ref:`intersect_polygons_2d<class_Geometry_method_intersect_polygons_2d>`, :ref:`exclude_polygons_2d<class_Geometry_method_exclude_polygons_2d>`.
+----
 
 .. _class_Geometry_method_triangulate_delaunay_2d:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **triangulate_delaunay_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**
 
 Triangulates the area specified by discrete set of ``points`` such that no point is inside the circumcircle of any resulting triangle. Returns a :ref:`PoolIntArray<class_PoolIntArray>` where each triangle consists of three consecutive point indices into ``points`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). If the triangulation did not succeed, an empty :ref:`PoolIntArray<class_PoolIntArray>` is returned.
+
+----
 
 .. _class_Geometry_method_triangulate_polygon:
 

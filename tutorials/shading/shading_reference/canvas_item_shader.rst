@@ -218,7 +218,11 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in float **TIME**                   | Global time in seconds.                                                       |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec2 **LIGHT_VEC**            | Vector from light to fragment, can be modified to alter shadow computation.   |
+| inout vec2 **LIGHT_VEC**            | Vector from light to fragment in local coordinates. It can be modified to     |
+|                                     | alter illumination direction when normal maps are used.                       |
++-------------------------------------+-------------------------------------------------------------------------------+
+| inout vec2 **SHADOW_VEC**           | Vector from light to fragment in local coordinates. It can be modified to     |
+|                                     | alter shadow computation.                                                     |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | inout float **LIGHT_HEIGHT**        | Height of Light. Only effective when normals are used.                        |
 +-------------------------------------+-------------------------------------------------------------------------------+

@@ -74,6 +74,25 @@ Methods
 | :ref:`Vector3<class_Vector3>` | :ref:`xform_inv<class_Basis_method_xform_inv>` **(** :ref:`Vector3<class_Vector3>` v **)**                                                                          |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Constants
+---------
+
+.. _class_Basis_constant_IDENTITY:
+
+.. _class_Basis_constant_FLIP_X:
+
+.. _class_Basis_constant_FLIP_Y:
+
+.. _class_Basis_constant_FLIP_Z:
+
+- **IDENTITY** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )**
+
+- **FLIP_X** = **Basis( -1, 0, 0, 0, 1, 0, 0, 0, 1 )**
+
+- **FLIP_Y** = **Basis( 1, 0, 0, 0, -1, 0, 0, 0, 1 )**
+
+- **FLIP_Z** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, -1 )**
+
 Description
 -----------
 
@@ -99,6 +118,8 @@ Property Descriptions
 
 The basis matrix's X vector.
 
+----
+
 .. _class_Basis_property_y:
 
 - :ref:`Vector3<class_Vector3>` **y**
@@ -108,6 +129,8 @@ The basis matrix's X vector.
 +-----------+--------------------+
 
 The basis matrix's Y vector.
+
+----
 
 .. _class_Basis_property_z:
 
@@ -128,17 +151,25 @@ Method Descriptions
 
 Create a rotation matrix from the given quaternion.
 
+----
+
 - :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` from **)**
 
 Create a rotation matrix (in the YXZ convention: first Z, then X, and Y last) from the specified Euler angles, given in the vector format as (X angle, Y angle, Z angle).
+
+----
 
 - :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
 
 Create a rotation matrix which rotates around the given axis by the specified angle, in radians. The axis must be a normalized vector.
 
+----
+
 - :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis **)**
 
 Create a matrix from 3 axis vectors.
+
+----
 
 .. _class_Basis_method_determinant:
 
@@ -146,11 +177,15 @@ Create a matrix from 3 axis vectors.
 
 Returns the determinant of the matrix.
 
+----
+
 .. _class_Basis_method_get_euler:
 
 - :ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
 
 Assuming that the matrix is a proper rotation matrix (orthonormal matrix with determinant +1), return Euler angles (in the YXZ convention: first Z, then X, and Y last). Returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
+
+----
 
 .. _class_Basis_method_get_orthogonal_index:
 
@@ -158,9 +193,13 @@ Assuming that the matrix is a proper rotation matrix (orthonormal matrix with de
 
 This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1,0 or 1, and returns the index of the point best representing the orientation of the object. It is mainly used by the grid map editor. For further details, refer to Godot source code.
 
+----
+
 .. _class_Basis_method_get_rotation_quat:
 
 - :ref:`Quat<class_Quat>` **get_rotation_quat** **(** **)**
+
+----
 
 .. _class_Basis_method_get_scale:
 
@@ -168,15 +207,21 @@ This function considers a discretization of rotations into 24 points on unit sph
 
 Assuming that the matrix is the combination of a rotation and scaling, return the absolute value of scaling factors along each axis.
 
+----
+
 .. _class_Basis_method_inverse:
 
 - :ref:`Basis<class_Basis>` **inverse** **(** **)**
 
 Returns the inverse of the matrix.
 
+----
+
 .. _class_Basis_method_is_equal_approx:
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=0.00001 **)**
+
+----
 
 .. _class_Basis_method_orthonormalized:
 
@@ -184,11 +229,15 @@ Returns the inverse of the matrix.
 
 Returns the orthonormalized version of the matrix (useful to call from time to time to avoid rounding error for orthogonal matrices). This performs a Gram-Schmidt orthonormalization on the basis of the matrix.
 
+----
+
 .. _class_Basis_method_rotated:
 
 - :ref:`Basis<class_Basis>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
 
 Introduce an additional rotation around the given axis by phi (radians). The axis must be a normalized vector.
+
+----
 
 .. _class_Basis_method_scaled:
 
@@ -196,11 +245,15 @@ Introduce an additional rotation around the given axis by phi (radians). The axi
 
 Introduce an additional scaling specified by the given 3D scaling factor.
 
+----
+
 .. _class_Basis_method_slerp:
 
 - :ref:`Basis<class_Basis>` **slerp** **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` t **)**
 
 Assuming that the matrix is a proper rotation matrix, slerp performs a spherical-linear interpolation with another rotation matrix.
+
+----
 
 .. _class_Basis_method_tdotx:
 
@@ -208,11 +261,15 @@ Assuming that the matrix is a proper rotation matrix, slerp performs a spherical
 
 Transposed dot product with the X axis of the matrix.
 
+----
+
 .. _class_Basis_method_tdoty:
 
 - :ref:`float<class_float>` **tdoty** **(** :ref:`Vector3<class_Vector3>` with **)**
 
 Transposed dot product with the Y axis of the matrix.
+
+----
 
 .. _class_Basis_method_tdotz:
 
@@ -220,17 +277,23 @@ Transposed dot product with the Y axis of the matrix.
 
 Transposed dot product with the Z axis of the matrix.
 
+----
+
 .. _class_Basis_method_transposed:
 
 - :ref:`Basis<class_Basis>` **transposed** **(** **)**
 
 Returns the transposed version of the matrix.
 
+----
+
 .. _class_Basis_method_xform:
 
 - :ref:`Vector3<class_Vector3>` **xform** **(** :ref:`Vector3<class_Vector3>` v **)**
 
 Returns a vector transformed (multiplied) by the matrix.
+
+----
 
 .. _class_Basis_method_xform_inv:
 

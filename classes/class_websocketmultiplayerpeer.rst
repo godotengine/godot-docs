@@ -20,6 +20,15 @@ Brief Description
 
 Base class for WebSocket server and client.
 
+Properties
+----------
+
++-----------------------------------------------------------------+------------------------+--------------+
+| :ref:`bool<class_bool>`                                         | refuse_new_connections | **O:** false |
++-----------------------------------------------------------------+------------------------+--------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | **O:** 2     |
++-----------------------------------------------------------------+------------------------+--------------+
+
 Methods
 -------
 
@@ -53,6 +62,8 @@ Method Descriptions
 - :ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** const
 
 Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``peer_id``.
+
+----
 
 .. _class_WebSocketMultiplayerPeer_method_set_buffers:
 

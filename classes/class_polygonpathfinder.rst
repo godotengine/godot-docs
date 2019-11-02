@@ -46,29 +46,43 @@ Method Descriptions
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **find_path** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**
 
+----
+
 .. _class_PolygonPathFinder_method_get_bounds:
 
 - :ref:`Rect2<class_Rect2>` **get_bounds** **(** **)** const
+
+----
 
 .. _class_PolygonPathFinder_method_get_closest_point:
 
 - :ref:`Vector2<class_Vector2>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` point **)** const
 
+----
+
 .. _class_PolygonPathFinder_method_get_intersections:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **get_intersections** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)** const
+
+----
 
 .. _class_PolygonPathFinder_method_get_point_penalty:
 
 - :ref:`float<class_float>` **get_point_penalty** **(** :ref:`int<class_int>` idx **)** const
 
+----
+
 .. _class_PolygonPathFinder_method_is_point_inside:
 
 - :ref:`bool<class_bool>` **is_point_inside** **(** :ref:`Vector2<class_Vector2>` point **)** const
 
+----
+
 .. _class_PolygonPathFinder_method_set_point_penalty:
 
 - void **set_point_penalty** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` penalty **)**
+
+----
 
 .. _class_PolygonPathFinder_method_setup:
 

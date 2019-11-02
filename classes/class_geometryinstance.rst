@@ -79,7 +79,9 @@ Will not take culling into account, so all faces will be taken into account when
 
 - **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = **3** --- Will only show the shadows casted from this object.
 
-In other words: The actual mesh will not be visible, only the shadows casted from the mesh.
+In other words, the actual mesh will not be visible, only the shadows casted from the mesh will be.
+
+----
 
 .. _enum_GeometryInstance_Flags:
 
@@ -91,7 +93,7 @@ In other words: The actual mesh will not be visible, only the shadows casted fro
 
 enum **Flags**:
 
-- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
+- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>` or :ref:`BakedLightmap<class_BakedLightmap>`.
 
 - **FLAG_DRAW_NEXT_FRAME_IF_VISIBLE** = **1** --- Unused in this class, exposed for consistency with :ref:`InstanceFlags<enum_VisualServer_InstanceFlags>`.
 
@@ -119,6 +121,8 @@ Property Descriptions
 
 The selected shadow casting flag. See :ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` for possible values.
 
+----
+
 .. _class_GeometryInstance_property_extra_cull_margin:
 
 - :ref:`float<class_float>` **extra_cull_margin**
@@ -132,6 +136,8 @@ The selected shadow casting flag. See :ref:`ShadowCastingSetting<enum_GeometryIn
 +-----------+------------------------------+
 
 The extra distance added to the GeometryInstance's bounding box (:ref:`AABB<class_AABB>`) to increase its cull box.
+
+----
 
 .. _class_GeometryInstance_property_lod_max_distance:
 
@@ -147,6 +153,10 @@ The extra distance added to the GeometryInstance's bounding box (:ref:`AABB<clas
 
 The GeometryInstance's max LOD distance.
 
+**Note:** This property currently has no effect.
+
+----
+
 .. _class_GeometryInstance_property_lod_max_hysteresis:
 
 - :ref:`float<class_float>` **lod_max_hysteresis**
@@ -160,6 +170,10 @@ The GeometryInstance's max LOD distance.
 +-----------+-------------------------------+
 
 The GeometryInstance's max LOD margin.
+
+**Note:** This property currently has no effect.
+
+----
 
 .. _class_GeometryInstance_property_lod_min_distance:
 
@@ -175,6 +189,10 @@ The GeometryInstance's max LOD margin.
 
 The GeometryInstance's min LOD distance.
 
+**Note:** This property currently has no effect.
+
+----
+
 .. _class_GeometryInstance_property_lod_min_hysteresis:
 
 - :ref:`float<class_float>` **lod_min_hysteresis**
@@ -189,6 +207,10 @@ The GeometryInstance's min LOD distance.
 
 The GeometryInstance's min LOD margin.
 
+**Note:** This property currently has no effect.
+
+----
+
 .. _class_GeometryInstance_property_material_override:
 
 - :ref:`Material<class_Material>` **material_override**
@@ -201,7 +223,9 @@ The GeometryInstance's min LOD margin.
 
 The material override for the whole geometry.
 
-If there is a material in ``material_override``, it will be used instead of any material set in any material slot of the mesh.
+If a material is assigned to this property, it will be used instead of any material set in any material slot of the mesh.
+
+----
 
 .. _class_GeometryInstance_property_use_in_baked_light:
 
@@ -215,7 +239,7 @@ If there is a material in ``material_override``, it will be used instead of any 
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
-If ``true``, this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
+If ``true``, this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_GIProbe>` or :ref:`BakedLightmap<class_BakedLightmap>`.
 
 Method Descriptions
 -------------------
@@ -224,11 +248,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** const
 
+----
+
 .. _class_GeometryInstance_method_set_custom_aabb:
 
 - void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` aabb **)**
 
 Overrides the bounding box of this node with a custom one. To remove it, set an :ref:`AABB<class_AABB>` with all fields set to zero.
+
+----
 
 .. _class_GeometryInstance_method_set_flag:
 

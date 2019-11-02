@@ -87,21 +87,31 @@ Method Descriptions
 
 - :ref:`Array<class_Array>` **_get_extensions** **(** **)** virtual
 
+----
+
 .. _class_EditorSceneImporter_method__get_import_flags:
 
 - :ref:`int<class_int>` **_get_import_flags** **(** **)** virtual
+
+----
 
 .. _class_EditorSceneImporter_method__import_animation:
 
 - :ref:`Animation<class_Animation>` **_import_animation** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual
 
+----
+
 .. _class_EditorSceneImporter_method__import_scene:
 
 - :ref:`Node<class_Node>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual
 
+----
+
 .. _class_EditorSceneImporter_method_import_animation_from_other_importer:
 
 - :ref:`Animation<class_Animation>` **import_animation_from_other_importer** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)**
+
+----
 
 .. _class_EditorSceneImporter_method_import_scene_from_other_importer:
 

@@ -59,11 +59,15 @@ Returns whether a recognized resource exists for the given ``path``.
 
 An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
 
+----
+
 .. _class_ResourceLoader_method_get_dependencies:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_dependencies** **(** :ref:`String<class_String>` path **)**
 
 Returns the dependencies for the resource at the given ``path``.
+
+----
 
 .. _class_ResourceLoader_method_get_recognized_extensions_for_type:
 
@@ -71,11 +75,15 @@ Returns the dependencies for the resource at the given ``path``.
 
 Returns the list of recognized extensions for a resource type.
 
+----
+
 .. _class_ResourceLoader_method_has:
 
 - :ref:`bool<class_bool>` **has** **(** :ref:`String<class_String>` path **)**
 
 *Deprecated method.* Use :ref:`has_cached<class_ResourceLoader_method_has_cached>` or :ref:`exists<class_ResourceLoader_method_exists>` instead.
+
+----
 
 .. _class_ResourceLoader_method_has_cached:
 
@@ -84,6 +92,8 @@ Returns the list of recognized extensions for a resource type.
 Returns whether a cached resource is available for the given ``path``.
 
 Once a resource has been loaded by the engine, it is cached in memory for faster access, and future calls to the :ref:`load<class_ResourceLoader_method_load>` or :ref:`load_interactive<class_ResourceLoader_method_load_interactive>` methods will use the cached version. The cached resource can be overridden by using :ref:`Resource.take_over_path<class_Resource_method_take_over_path>` on a new resource for that same path.
+
+----
 
 .. _class_ResourceLoader_method_load:
 
@@ -99,6 +109,8 @@ If ``no_cache`` is ``true``, the resource cache will be bypassed and the resourc
 
 Returns an empty resource if no ResourceFormatLoader could handle the file.
 
+----
+
 .. _class_ResourceLoader_method_load_interactive:
 
 - :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` **load_interactive** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**
@@ -106,6 +118,8 @@ Returns an empty resource if no ResourceFormatLoader could handle the file.
 Starts loading a resource interactively. The returned :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` object allows to load with high granularity, calling its :ref:`ResourceInteractiveLoader.poll<class_ResourceInteractiveLoader_method_poll>` method successively to load chunks.
 
 An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
+
+----
 
 .. _class_ResourceLoader_method_set_abort_on_missing_resources:
 

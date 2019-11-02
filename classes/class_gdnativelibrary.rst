@@ -16,7 +16,7 @@ GDNativeLibrary
 Brief Description
 -----------------
 
-
+An external library containing functions or script classes to use in Godot.
 
 Properties
 ----------
@@ -42,6 +42,18 @@ Methods
 | :ref:`String<class_String>`                   | :ref:`get_current_library_path<class_GDNativeLibrary_method_get_current_library_path>` **(** **)** const |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+A GDNative library can implement :ref:`NativeScript<class_NativeScript>`\ s, global functions to call with the :ref:`GDNative<class_GDNative>` class, or low-level engine extensions through interfaces such as :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`. The library must be compiled for each platform and architecture that the project will run on.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/plugins/gdnative/gdnative-c-example`
+
+- :doc:`../tutorials/plugins/gdnative/gdnative-cpp-example`
+
 Property Descriptions
 ---------------------
 
@@ -55,6 +67,10 @@ Property Descriptions
 | *Getter* | get_config_file()      |
 +----------+------------------------+
 
+This resource in INI-style :ref:`ConfigFile<class_ConfigFile>` format, as in ``.gdnlib`` files.
+
+----
+
 .. _class_GDNativeLibrary_property_load_once:
 
 - :ref:`bool<class_bool>` **load_once**
@@ -66,6 +82,12 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | should_load_once()   |
 +-----------+----------------------+
+
+If ``true``, Godot loads only one copy of the library and each script that references the library will share static data like static or global variables.
+
+If ``false``, Godot loads a separate copy of the library into memory for each script that references it.
+
+----
 
 .. _class_GDNativeLibrary_property_reloadable:
 
@@ -79,6 +101,12 @@ Property Descriptions
 | *Getter*  | is_reloadable()       |
 +-----------+-----------------------+
 
+If ``true``, the editor will temporarily unload the library whenever the user switches away from the editor window, allowing the user to recompile the library without restarting Godot.
+
+**Note:** If the library defines tool scripts that run inside the editor, ``reloadable`` must be ``false``. Otherwise, the editor will attempt to unload the tool scripts while they're in use and crash.
+
+----
+
 .. _class_GDNativeLibrary_property_singleton:
 
 - :ref:`bool<class_bool>` **singleton**
@@ -90,6 +118,12 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | is_singleton()       |
 +-----------+----------------------+
+
+If ``true``, Godot loads the library at startup rather than the first time a script uses the library, calling ``{prefix}gdnative_singleton`` after initializing the library (where ``{prefix}`` is the value of :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>`). The library remains loaded as long as Godot is running.
+
+**Note:** A singleton library cannot be :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`.
+
+----
 
 .. _class_GDNativeLibrary_property_symbol_prefix:
 
@@ -103,6 +137,10 @@ Property Descriptions
 | *Getter*  | get_symbol_prefix()      |
 +-----------+--------------------------+
 
+The prefix this library's entry point functions begin with. For example, a GDNativeLibrary would declare its ``gdnative_init`` function as ``godot_gdnative_init`` by default.
+
+On platforms that require statically linking libraries (currently only iOS), each library must have a different ``symbol_prefix``.
+
 Method Descriptions
 -------------------
 
@@ -110,7 +148,13 @@ Method Descriptions
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_current_dependencies** **(** **)** const
 
+Returns paths to all dependency libraries for the current platform and architecture.
+
+----
+
 .. _class_GDNativeLibrary_method_get_current_library_path:
 
 - :ref:`String<class_String>` **get_current_library_path** **(** **)** const
+
+Returns the path to the dynamic library file for the current platform and architecture.
 

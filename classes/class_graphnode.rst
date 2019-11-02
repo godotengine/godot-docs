@@ -106,6 +106,8 @@ Theme Properties
 +---------------------------------+---------------+---------------------+
 | :ref:`Texture<class_Texture>`   | resizer       |                     |
 +---------------------------------+---------------+---------------------+
+| :ref:`Color<class_Color>`       | resizer_color | Color( 0, 0, 0, 1 ) |
++---------------------------------+---------------+---------------------+
 | :ref:`StyleBox<class_StyleBox>` | selectedframe |                     |
 +---------------------------------+---------------+---------------------+
 | :ref:`int<class_int>`           | separation    | 1                   |
@@ -126,11 +128,15 @@ Signals
 
 Signal sent on closing the GraphNode.
 
+----
+
 .. _class_GraphNode_signal_dragged:
 
 - **dragged** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**
 
 Signal sent when the GraphNode is dragged.
+
+----
 
 .. _class_GraphNode_signal_offset_changed:
 
@@ -138,11 +144,15 @@ Signal sent when the GraphNode is dragged.
 
 Signal sent when the GraphNode is moved.
 
+----
+
 .. _class_GraphNode_signal_raise_request:
 
 - **raise_request** **(** **)**
 
 Signal sent when the GraphNode is requested to be displayed over other ones. Happens on focusing (clicking into) the GraphNode.
+
+----
 
 .. _class_GraphNode_signal_resize_request:
 
@@ -187,6 +197,10 @@ Property Descriptions
 | *Getter*  | is_comment()       |
 +-----------+--------------------+
 
+If ``true``, the GraphNode is a comment node.
+
+----
+
 .. _class_GraphNode_property_offset:
 
 - :ref:`Vector2<class_Vector2>` **offset**
@@ -203,6 +217,8 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 
 **Note:** You cannot use position directly, as :ref:`GraphEdit<class_GraphEdit>` is a :ref:`Container<class_Container>`.
 
+----
+
 .. _class_GraphNode_property_overlay:
 
 - :ref:`Overlay<enum_GraphNode_Overlay>` **overlay**
@@ -214,6 +230,8 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 +-----------+--------------------+
 | *Getter*  | get_overlay()      |
 +-----------+--------------------+
+
+----
 
 .. _class_GraphNode_property_resizable:
 
@@ -227,6 +245,8 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 | *Getter*  | is_resizable()       |
 +-----------+----------------------+
 
+----
+
 .. _class_GraphNode_property_selected:
 
 - :ref:`bool<class_bool>` **selected**
@@ -239,6 +259,8 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 | *Getter*  | is_selected()       |
 +-----------+---------------------+
 
+----
+
 .. _class_GraphNode_property_show_close:
 
 - :ref:`bool<class_bool>` **show_close**
@@ -250,6 +272,8 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 +-----------+------------------------------+
 | *Getter*  | is_close_button_visible()    |
 +-----------+------------------------------+
+
+----
 
 .. _class_GraphNode_property_title:
 
@@ -272,11 +296,15 @@ Method Descriptions
 
 Disables all input and output slots of the GraphNode.
 
+----
+
 .. _class_GraphNode_method_clear_slot:
 
 - void **clear_slot** **(** :ref:`int<class_int>` idx **)**
 
 Disables input and output slot whose index is ``idx``.
+
+----
 
 .. _class_GraphNode_method_get_connection_input_color:
 
@@ -284,11 +312,15 @@ Disables input and output slot whose index is ``idx``.
 
 Returns the color of the input connection ``idx``.
 
+----
+
 .. _class_GraphNode_method_get_connection_input_count:
 
 - :ref:`int<class_int>` **get_connection_input_count** **(** **)**
 
 Returns the number of enabled input slots (connections) to the GraphNode.
+
+----
 
 .. _class_GraphNode_method_get_connection_input_position:
 
@@ -296,11 +328,15 @@ Returns the number of enabled input slots (connections) to the GraphNode.
 
 Returns the position of the input connection ``idx``.
 
+----
+
 .. _class_GraphNode_method_get_connection_input_type:
 
 - :ref:`int<class_int>` **get_connection_input_type** **(** :ref:`int<class_int>` idx **)**
 
 Returns the type of the input connection ``idx``.
+
+----
 
 .. _class_GraphNode_method_get_connection_output_color:
 
@@ -308,11 +344,15 @@ Returns the type of the input connection ``idx``.
 
 Returns the color of the output connection ``idx``.
 
+----
+
 .. _class_GraphNode_method_get_connection_output_count:
 
 - :ref:`int<class_int>` **get_connection_output_count** **(** **)**
 
 Returns the number of enabled output slots (connections) of the GraphNode.
+
+----
 
 .. _class_GraphNode_method_get_connection_output_position:
 
@@ -320,11 +360,15 @@ Returns the number of enabled output slots (connections) of the GraphNode.
 
 Returns the position of the output connection ``idx``.
 
+----
+
 .. _class_GraphNode_method_get_connection_output_type:
 
 - :ref:`int<class_int>` **get_connection_output_type** **(** :ref:`int<class_int>` idx **)**
 
 Returns the type of the output connection ``idx``.
+
+----
 
 .. _class_GraphNode_method_get_slot_color_left:
 
@@ -332,11 +376,15 @@ Returns the type of the output connection ``idx``.
 
 Returns the color set to ``idx`` left (input) slot.
 
+----
+
 .. _class_GraphNode_method_get_slot_color_right:
 
 - :ref:`Color<class_Color>` **get_slot_color_right** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the color set to ``idx`` right (output) slot.
+
+----
 
 .. _class_GraphNode_method_get_slot_type_left:
 
@@ -344,11 +392,15 @@ Returns the color set to ``idx`` right (output) slot.
 
 Returns the (integer) type of left (input) ``idx`` slot.
 
+----
+
 .. _class_GraphNode_method_get_slot_type_right:
 
 - :ref:`int<class_int>` **get_slot_type_right** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the (integer) type of right (output) ``idx`` slot.
+
+----
 
 .. _class_GraphNode_method_is_slot_enabled_left:
 
@@ -356,11 +408,15 @@ Returns the (integer) type of right (output) ``idx`` slot.
 
 Returns ``true`` if left (input) slot ``idx`` is enabled, ``false`` otherwise.
 
+----
+
 .. _class_GraphNode_method_is_slot_enabled_right:
 
 - :ref:`bool<class_bool>` **is_slot_enabled_right** **(** :ref:`int<class_int>` idx **)** const
 
 Returns ``true`` if right (output) slot ``idx`` is enabled, ``false`` otherwise.
+
+----
 
 .. _class_GraphNode_method_set_slot:
 

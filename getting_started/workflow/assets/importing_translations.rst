@@ -45,7 +45,7 @@ a special arrangement. The CSV files must be saved in UTF-8 encoding
 and be formatted as follows:
 
 +--------+----------+----------+----------+
-|        | <lang1>  | <lang2>  | <langN>  |
+| keys   | <lang1>  | <lang2>  | <langN>  |
 +========+==========+==========+==========+
 | KEY1   | string   | string   | string   |
 +--------+----------+----------+----------+
@@ -57,17 +57,35 @@ and be formatted as follows:
 The "lang" tags must represent a language, which must be one of the :ref:`valid
 locales <doc_locales>` supported by the engine. The "KEY" tags must be
 unique and represent a string universally (they are usually in
-uppercase, to differentiate from other strings). Here's an example:
+uppercase, to differentiate from other strings). These keys will be replaced at
+runtime by the matching translated string. Note that the case is important,
+"KEY1" and "Key1" will be different keys.
+The top-left cell is ignored and can be left empty or having any content.
+Here's an example:
 
 +---------+------------------+----------------+--------------+
-| id      | en               | es             | ja           |
+| keys    | en               | es             | ja           |
 +=========+==================+================+==============+
-| GREET   | Hello, friend!   | Hola, Amigo!   | こんにちは   |
+| GREET   | Hello, friend!   | Hola, amigo!   | こんにちは   |
 +---------+------------------+----------------+--------------+
 | ASK     | How are you?     | Cómo está?     | 元気ですか   |
 +---------+------------------+----------------+--------------+
-| BYE     | Good Bye         | Adiós          | さようなら   |
+| BYE     | Goodbye          | Adiós          | さようなら   |
 +---------+------------------+----------------+--------------+
+
+The same example is shown below as a comma-separated plain text file,
+which should be the result of editing the above in a spreadsheet.
+When editing the plain text version, be sure to enclose any message
+that contains a comma with double quotes, so that the comma is not
+parsed as delimiter. Alternatively, you can select another delimiter
+in the import options.
+
+.. code-block:: none
+
+    keys,en,es,ja
+    GREET,"Hello, friend!","Hola, amigo!",こんにちは
+    ASK,How are you?,Cómo está?,元気ですか
+    BYE,Goodbye,Adiós,さようなら
 
 CSV importer
 ------------
@@ -79,3 +97,11 @@ Importing will also add the translation to the list of
 translations to load when the game runs, specified in project.godot (or the
 project settings). Godot allows loading and removing translations at
 runtime as well.
+
+Select the ``.csv`` file and access the "Import" dock to define import
+options. You can toggle the compression of the imported translations, and
+select the delimiter to use when parsing the CSV file.
+
+.. image:: img/import_csv.png
+
+Be sure to click "Reimport" after any change to these options.

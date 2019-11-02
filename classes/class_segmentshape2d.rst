@@ -49,6 +49,8 @@ Property Descriptions
 
 The segment's first point position.
 
+----
+
 .. _class_SegmentShape2D_property_b:
 
 - :ref:`Vector2<class_Vector2>` **b**

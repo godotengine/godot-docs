@@ -21,45 +21,49 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`agent/height<class_NavigationMesh_property_agent/height>`                                                               | 2.0   |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`agent/max_climb<class_NavigationMesh_property_agent/max_climb>`                                                         | 0.9   |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`agent/max_slope<class_NavigationMesh_property_agent/max_slope>`                                                         | 45.0  |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`agent/radius<class_NavigationMesh_property_agent/radius>`                                                               | 0.6   |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`cell/height<class_NavigationMesh_property_cell/height>`                                                                 | 0.2   |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`cell/size<class_NavigationMesh_property_cell/size>`                                                                     | 0.3   |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`detail/sample_distance<class_NavigationMesh_property_detail/sample_distance>`                                           | 6.0   |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`detail/sample_max_error<class_NavigationMesh_property_detail/sample_max_error>`                                         | 1.0   |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`edge/max_error<class_NavigationMesh_property_edge/max_error>`                                                           | 1.3   |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`edge/max_length<class_NavigationMesh_property_edge/max_length>`                                                         | 12.0  |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`filter/filter_walkable_low_height_spans<class_NavigationMesh_property_filter/filter_walkable_low_height_spans>`         | false |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`filter/ledge_spans<class_NavigationMesh_property_filter/ledge_spans>`                                                   | false |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`filter/low_hanging_obstacles<class_NavigationMesh_property_filter/low_hanging_obstacles>`                               | false |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`     | :ref:`geometry/collision_mask<class_NavigationMesh_property_geometry/collision_mask>`                                         |       |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`     | :ref:`geometry/parsed_geometry_type<class_NavigationMesh_property_geometry/parsed_geometry_type>`                             | 0     |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`polygon/verts_per_poly<class_NavigationMesh_property_polygon/verts_per_poly>`                                           | 6.0   |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`region/merge_size<class_NavigationMesh_property_region/merge_size>`                                                     | 20.0  |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`region/min_size<class_NavigationMesh_property_region/min_size>`                                                         | 8.0   |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`     | :ref:`sample_partition_type/sample_partition_type<class_NavigationMesh_property_sample_partition_type/sample_partition_type>` | 0     |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`agent/height<class_NavigationMesh_property_agent/height>`                                                               | 2.0   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`agent/max_climb<class_NavigationMesh_property_agent/max_climb>`                                                         | 0.9   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`agent/max_slope<class_NavigationMesh_property_agent/max_slope>`                                                         | 45.0  |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`agent/radius<class_NavigationMesh_property_agent/radius>`                                                               | 0.6   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`cell/height<class_NavigationMesh_property_cell/height>`                                                                 | 0.2   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`cell/size<class_NavigationMesh_property_cell/size>`                                                                     | 0.3   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`detail/sample_distance<class_NavigationMesh_property_detail/sample_distance>`                                           | 6.0   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`detail/sample_max_error<class_NavigationMesh_property_detail/sample_max_error>`                                         | 1.0   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`edge/max_error<class_NavigationMesh_property_edge/max_error>`                                                           | 1.3   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`edge/max_length<class_NavigationMesh_property_edge/max_length>`                                                         | 12.0  |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`filter/filter_walkable_low_height_spans<class_NavigationMesh_property_filter/filter_walkable_low_height_spans>`         | false |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`filter/ledge_spans<class_NavigationMesh_property_filter/ledge_spans>`                                                   | false |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`filter/low_hanging_obstacles<class_NavigationMesh_property_filter/low_hanging_obstacles>`                               | false |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`geometry/collision_mask<class_NavigationMesh_property_geometry/collision_mask>`                                         |       |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`geometry/parsed_geometry_type<class_NavigationMesh_property_geometry/parsed_geometry_type>`                             | 0     |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`geometry/source_geometry_mode<class_NavigationMesh_property_geometry/source_geometry_mode>`                             | 0     |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`geometry/source_group_name<class_NavigationMesh_property_geometry/source_group_name>`                                   |       |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`polygon/verts_per_poly<class_NavigationMesh_property_polygon/verts_per_poly>`                                           | 6.0   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`region/merge_size<class_NavigationMesh_property_region/merge_size>`                                                     | 20.0  |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`float<class_float>`   | :ref:`region/min_size<class_NavigationMesh_property_region/min_size>`                                                         | 8.0   |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`sample_partition_type/sample_partition_type<class_NavigationMesh_property_sample_partition_type/sample_partition_type>` | 0     |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -126,6 +130,8 @@ Property Descriptions
 | *Getter*  | get_agent_height()      |
 +-----------+-------------------------+
 
+----
+
 .. _class_NavigationMesh_property_agent/max_climb:
 
 - :ref:`float<class_float>` **agent/max_climb**
@@ -137,6 +143,8 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | get_agent_max_climb()      |
 +-----------+----------------------------+
+
+----
 
 .. _class_NavigationMesh_property_agent/max_slope:
 
@@ -150,6 +158,8 @@ Property Descriptions
 | *Getter*  | get_agent_max_slope()      |
 +-----------+----------------------------+
 
+----
+
 .. _class_NavigationMesh_property_agent/radius:
 
 - :ref:`float<class_float>` **agent/radius**
@@ -161,6 +171,8 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_agent_radius()      |
 +-----------+-------------------------+
+
+----
 
 .. _class_NavigationMesh_property_cell/height:
 
@@ -174,6 +186,8 @@ Property Descriptions
 | *Getter*  | get_cell_height()      |
 +-----------+------------------------+
 
+----
+
 .. _class_NavigationMesh_property_cell/size:
 
 - :ref:`float<class_float>` **cell/size**
@@ -185,6 +199,8 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_cell_size()      |
 +-----------+----------------------+
+
+----
 
 .. _class_NavigationMesh_property_detail/sample_distance:
 
@@ -198,6 +214,8 @@ Property Descriptions
 | *Getter*  | get_detail_sample_distance()      |
 +-----------+-----------------------------------+
 
+----
+
 .. _class_NavigationMesh_property_detail/sample_max_error:
 
 - :ref:`float<class_float>` **detail/sample_max_error**
@@ -209,6 +227,8 @@ Property Descriptions
 +-----------+------------------------------------+
 | *Getter*  | get_detail_sample_max_error()      |
 +-----------+------------------------------------+
+
+----
 
 .. _class_NavigationMesh_property_edge/max_error:
 
@@ -222,6 +242,8 @@ Property Descriptions
 | *Getter*  | get_edge_max_error()      |
 +-----------+---------------------------+
 
+----
+
 .. _class_NavigationMesh_property_edge/max_length:
 
 - :ref:`float<class_float>` **edge/max_length**
@@ -233,6 +255,8 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | get_edge_max_length()      |
 +-----------+----------------------------+
+
+----
 
 .. _class_NavigationMesh_property_filter/filter_walkable_low_height_spans:
 
@@ -246,6 +270,8 @@ Property Descriptions
 | *Getter*  | get_filter_walkable_low_height_spans()      |
 +-----------+---------------------------------------------+
 
+----
+
 .. _class_NavigationMesh_property_filter/ledge_spans:
 
 - :ref:`bool<class_bool>` **filter/ledge_spans**
@@ -257,6 +283,8 @@ Property Descriptions
 +-----------+-------------------------------+
 | *Getter*  | get_filter_ledge_spans()      |
 +-----------+-------------------------------+
+
+----
 
 .. _class_NavigationMesh_property_filter/low_hanging_obstacles:
 
@@ -270,6 +298,8 @@ Property Descriptions
 | *Getter*  | get_filter_low_hanging_obstacles()      |
 +-----------+-----------------------------------------+
 
+----
+
 .. _class_NavigationMesh_property_geometry/collision_mask:
 
 - :ref:`int<class_int>` **geometry/collision_mask**
@@ -279,6 +309,8 @@ Property Descriptions
 +----------+---------------------------+
 | *Getter* | get_collision_mask()      |
 +----------+---------------------------+
+
+----
 
 .. _class_NavigationMesh_property_geometry/parsed_geometry_type:
 
@@ -292,6 +324,34 @@ Property Descriptions
 | *Getter*  | get_parsed_geometry_type()      |
 +-----------+---------------------------------+
 
+----
+
+.. _class_NavigationMesh_property_geometry/source_geometry_mode:
+
+- :ref:`int<class_int>` **geometry/source_geometry_mode**
+
++-----------+---------------------------------+
+| *Default* | 0                               |
++-----------+---------------------------------+
+| *Setter*  | set_source_geometry_mode(value) |
++-----------+---------------------------------+
+| *Getter*  | get_source_geometry_mode()      |
++-----------+---------------------------------+
+
+----
+
+.. _class_NavigationMesh_property_geometry/source_group_name:
+
+- :ref:`String<class_String>` **geometry/source_group_name**
+
++----------+------------------------------+
+| *Setter* | set_source_group_name(value) |
++----------+------------------------------+
+| *Getter* | get_source_group_name()      |
++----------+------------------------------+
+
+----
+
 .. _class_NavigationMesh_property_polygon/verts_per_poly:
 
 - :ref:`float<class_float>` **polygon/verts_per_poly**
@@ -303,6 +363,8 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_verts_per_poly()      |
 +-----------+---------------------------+
+
+----
 
 .. _class_NavigationMesh_property_region/merge_size:
 
@@ -316,6 +378,8 @@ Property Descriptions
 | *Getter*  | get_region_merge_size()      |
 +-----------+------------------------------+
 
+----
+
 .. _class_NavigationMesh_property_region/min_size:
 
 - :ref:`float<class_float>` **region/min_size**
@@ -327,6 +391,8 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | get_region_min_size()      |
 +-----------+----------------------------+
+
+----
 
 .. _class_NavigationMesh_property_sample_partition_type/sample_partition_type:
 
@@ -347,33 +413,49 @@ Method Descriptions
 
 - void **add_polygon** **(** :ref:`PoolIntArray<class_PoolIntArray>` polygon **)**
 
+----
+
 .. _class_NavigationMesh_method_clear_polygons:
 
 - void **clear_polygons** **(** **)**
+
+----
 
 .. _class_NavigationMesh_method_create_from_mesh:
 
 - void **create_from_mesh** **(** :ref:`Mesh<class_Mesh>` mesh **)**
 
+----
+
 .. _class_NavigationMesh_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+
+----
 
 .. _class_NavigationMesh_method_get_polygon:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_polygon** **(** :ref:`int<class_int>` idx **)**
 
+----
+
 .. _class_NavigationMesh_method_get_polygon_count:
 
 - :ref:`int<class_int>` **get_polygon_count** **(** **)** const
+
+----
 
 .. _class_NavigationMesh_method_get_vertices:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_vertices** **(** **)** const
 
+----
+
 .. _class_NavigationMesh_method_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+
+----
 
 .. _class_NavigationMesh_method_set_vertices:
 

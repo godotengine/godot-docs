@@ -60,6 +60,8 @@ Property Descriptions
 | *Getter*  | get_bias()      |
 +-----------+-----------------+
 
+----
+
 .. _class_GIProbeData_property_bounds:
 
 - :ref:`AABB<class_AABB>` **bounds**
@@ -71,6 +73,8 @@ Property Descriptions
 +-----------+--------------------------+
 | *Getter*  | get_bounds()             |
 +-----------+--------------------------+
+
+----
 
 .. _class_GIProbeData_property_cell_size:
 
@@ -84,6 +88,8 @@ Property Descriptions
 | *Getter*  | get_cell_size()      |
 +-----------+----------------------+
 
+----
+
 .. _class_GIProbeData_property_compress:
 
 - :ref:`bool<class_bool>` **compress**
@@ -95,6 +101,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | is_compressed()     |
 +-----------+---------------------+
+
+----
 
 .. _class_GIProbeData_property_dynamic_data:
 
@@ -108,6 +116,8 @@ Property Descriptions
 | *Getter*  | get_dynamic_data()      |
 +-----------+-------------------------+
 
+----
+
 .. _class_GIProbeData_property_dynamic_range:
 
 - :ref:`int<class_int>` **dynamic_range**
@@ -119,6 +129,8 @@ Property Descriptions
 +-----------+--------------------------+
 | *Getter*  | get_dynamic_range()      |
 +-----------+--------------------------+
+
+----
 
 .. _class_GIProbeData_property_energy:
 
@@ -132,6 +144,8 @@ Property Descriptions
 | *Getter*  | get_energy()      |
 +-----------+-------------------+
 
+----
+
 .. _class_GIProbeData_property_interior:
 
 - :ref:`bool<class_bool>` **interior**
@@ -143,6 +157,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | is_interior()       |
 +-----------+---------------------+
+
+----
 
 .. _class_GIProbeData_property_normal_bias:
 
@@ -156,6 +172,8 @@ Property Descriptions
 | *Getter*  | get_normal_bias()      |
 +-----------+------------------------+
 
+----
+
 .. _class_GIProbeData_property_propagation:
 
 - :ref:`float<class_float>` **propagation**
@@ -167,6 +185,8 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_propagation()      |
 +-----------+------------------------+
+
+----
 
 .. _class_GIProbeData_property_to_cell_xform:
 

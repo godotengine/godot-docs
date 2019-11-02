@@ -164,6 +164,8 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_LERP_ANGLE:
 
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_ORD:
+
 .. _class_VisualScriptBuiltinFunc_constant_FUNC_MAX:
 
 enum **BuiltinFunc**:
@@ -309,7 +311,9 @@ enum **BuiltinFunc**:
 
 - **MATH_LERP_ANGLE** = **66**
 
-- **FUNC_MAX** = **67** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
+- **TEXT_ORD** = **67**
+
+- **FUNC_MAX** = **68** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
 
 Description
 -----------

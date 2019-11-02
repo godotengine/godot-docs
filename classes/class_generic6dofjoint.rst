@@ -297,6 +297,8 @@ enum **Param**:
 
 - **PARAM_MAX** = **22** --- Represents the size of the :ref:`Param<enum_Generic6DOFJoint_Param>` enum.
 
+----
+
 .. _enum_Generic6DOFJoint_Flag:
 
 .. _class_Generic6DOFJoint_constant_FLAG_ENABLE_LINEAR_LIMIT:
@@ -353,6 +355,8 @@ The amount of rotational damping across the X axis.
 
 The lower, the longer an impulse from one side takes to travel to the other side.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_x/enabled:
 
 - :ref:`bool<class_bool>` **angular_limit_x/enabled**
@@ -366,6 +370,8 @@ The lower, the longer an impulse from one side takes to travel to the other side
 +-----------+-------------------+
 
 If ``true``, rotation across the X axis is limited.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_limit_x/erp:
 
@@ -381,6 +387,8 @@ If ``true``, rotation across the X axis is limited.
 
 When rotating across the X axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_x/force_limit:
 
 - :ref:`float<class_float>` **angular_limit_x/force_limit**
@@ -395,6 +403,8 @@ When rotating across the X axis, this error tolerance factor defines how much th
 
 The maximum amount of force that can occur, when rotating around the X axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_x/lower_angle:
 
 - :ref:`float<class_float>` **angular_limit_x/lower_angle**
@@ -404,6 +414,8 @@ The maximum amount of force that can occur, when rotating around the X axis.
 +-----------+-----+
 
 The minimum rotation in negative direction to break loose and rotate around the X axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_limit_x/restitution:
 
@@ -419,6 +431,8 @@ The minimum rotation in negative direction to break loose and rotate around the 
 
 The amount of rotational restitution across the X axis. The lower, the more restitution occurs.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_x/softness:
 
 - :ref:`float<class_float>` **angular_limit_x/softness**
@@ -433,6 +447,8 @@ The amount of rotational restitution across the X axis. The lower, the more rest
 
 The speed of all rotations across the X axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_x/upper_angle:
 
 - :ref:`float<class_float>` **angular_limit_x/upper_angle**
@@ -442,6 +458,8 @@ The speed of all rotations across the X axis.
 +-----------+-----+
 
 The minimum rotation in positive direction to break loose and rotate around the X axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/damping:
 
@@ -457,6 +475,8 @@ The minimum rotation in positive direction to break loose and rotate around the 
 
 The amount of rotational damping across the Y axis. The lower, the more dampening occurs.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_y/enabled:
 
 - :ref:`bool<class_bool>` **angular_limit_y/enabled**
@@ -470,6 +490,8 @@ The amount of rotational damping across the Y axis. The lower, the more dampenin
 +-----------+-------------------+
 
 If ``true``, rotation across the Y axis is limited.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/erp:
 
@@ -485,6 +507,8 @@ If ``true``, rotation across the Y axis is limited.
 
 When rotating across the Y axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_y/force_limit:
 
 - :ref:`float<class_float>` **angular_limit_y/force_limit**
@@ -499,6 +523,8 @@ When rotating across the Y axis, this error tolerance factor defines how much th
 
 The maximum amount of force that can occur, when rotating around the Y axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_y/lower_angle:
 
 - :ref:`float<class_float>` **angular_limit_y/lower_angle**
@@ -508,6 +534,8 @@ The maximum amount of force that can occur, when rotating around the Y axis.
 +-----------+-----+
 
 The minimum rotation in negative direction to break loose and rotate around the Y axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_limit_y/restitution:
 
@@ -523,6 +551,8 @@ The minimum rotation in negative direction to break loose and rotate around the 
 
 The amount of rotational restitution across the Y axis. The lower, the more restitution occurs.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_y/softness:
 
 - :ref:`float<class_float>` **angular_limit_y/softness**
@@ -537,6 +567,8 @@ The amount of rotational restitution across the Y axis. The lower, the more rest
 
 The speed of all rotations across the Y axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_y/upper_angle:
 
 - :ref:`float<class_float>` **angular_limit_y/upper_angle**
@@ -546,6 +578,8 @@ The speed of all rotations across the Y axis.
 +-----------+-----+
 
 The minimum rotation in positive direction to break loose and rotate around the Y axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/damping:
 
@@ -561,6 +595,8 @@ The minimum rotation in positive direction to break loose and rotate around the 
 
 The amount of rotational damping across the Z axis. The lower, the more dampening occurs.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_z/enabled:
 
 - :ref:`bool<class_bool>` **angular_limit_z/enabled**
@@ -574,6 +610,8 @@ The amount of rotational damping across the Z axis. The lower, the more dampenin
 +-----------+-------------------+
 
 If ``true``, rotation across the Z axis is limited.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/erp:
 
@@ -589,6 +627,8 @@ If ``true``, rotation across the Z axis is limited.
 
 When rotating across the Z axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_z/force_limit:
 
 - :ref:`float<class_float>` **angular_limit_z/force_limit**
@@ -603,6 +643,8 @@ When rotating across the Z axis, this error tolerance factor defines how much th
 
 The maximum amount of force that can occur, when rotating around the Z axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_z/lower_angle:
 
 - :ref:`float<class_float>` **angular_limit_z/lower_angle**
@@ -612,6 +654,8 @@ The maximum amount of force that can occur, when rotating around the Z axis.
 +-----------+-----+
 
 The minimum rotation in negative direction to break loose and rotate around the Z axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_limit_z/restitution:
 
@@ -627,6 +671,8 @@ The minimum rotation in negative direction to break loose and rotate around the 
 
 The amount of rotational restitution across the Z axis. The lower, the more restitution occurs.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_z/softness:
 
 - :ref:`float<class_float>` **angular_limit_z/softness**
@@ -641,6 +687,8 @@ The amount of rotational restitution across the Z axis. The lower, the more rest
 
 The speed of all rotations across the Z axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_limit_z/upper_angle:
 
 - :ref:`float<class_float>` **angular_limit_z/upper_angle**
@@ -650,6 +698,8 @@ The speed of all rotations across the Z axis.
 +-----------+-----+
 
 The minimum rotation in positive direction to break loose and rotate around the Z axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_motor_x/enabled:
 
@@ -665,6 +715,8 @@ The minimum rotation in positive direction to break loose and rotate around the 
 
 If ``true``, a rotating motor at the X axis is enabled.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_motor_x/force_limit:
 
 - :ref:`float<class_float>` **angular_motor_x/force_limit**
@@ -678,6 +730,8 @@ If ``true``, a rotating motor at the X axis is enabled.
 +-----------+--------------------+
 
 Maximum acceleration for the motor at the X axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_motor_x/target_velocity:
 
@@ -693,6 +747,8 @@ Maximum acceleration for the motor at the X axis.
 
 Target speed for the motor at the X axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_motor_y/enabled:
 
 - :ref:`bool<class_bool>` **angular_motor_y/enabled**
@@ -706,6 +762,8 @@ Target speed for the motor at the X axis.
 +-----------+-------------------+
 
 If ``true``, a rotating motor at the Y axis is enabled.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_motor_y/force_limit:
 
@@ -721,6 +779,8 @@ If ``true``, a rotating motor at the Y axis is enabled.
 
 Maximum acceleration for the motor at the Y axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_motor_y/target_velocity:
 
 - :ref:`float<class_float>` **angular_motor_y/target_velocity**
@@ -734,6 +794,8 @@ Maximum acceleration for the motor at the Y axis.
 +-----------+--------------------+
 
 Target speed for the motor at the Y axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_motor_z/enabled:
 
@@ -749,6 +811,8 @@ Target speed for the motor at the Y axis.
 
 If ``true``, a rotating motor at the Z axis is enabled.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_motor_z/force_limit:
 
 - :ref:`float<class_float>` **angular_motor_z/force_limit**
@@ -762,6 +826,8 @@ If ``true``, a rotating motor at the Z axis is enabled.
 +-----------+--------------------+
 
 Maximum acceleration for the motor at the Z axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_motor_z/target_velocity:
 
@@ -777,6 +843,8 @@ Maximum acceleration for the motor at the Z axis.
 
 Target speed for the motor at the Z axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_spring_x/damping:
 
 - :ref:`float<class_float>` **angular_spring_x/damping**
@@ -788,6 +856,8 @@ Target speed for the motor at the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_spring_x/enabled:
 
@@ -801,6 +871,8 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_flag_x()      |
 +-----------+-------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_spring_x/equilibrium_point:
 
 - :ref:`float<class_float>` **angular_spring_x/equilibrium_point**
@@ -812,6 +884,8 @@ Target speed for the motor at the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_spring_x/stiffness:
 
@@ -825,6 +899,8 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_spring_y/damping:
 
 - :ref:`float<class_float>` **angular_spring_y/damping**
@@ -836,6 +912,8 @@ Target speed for the motor at the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_spring_y/enabled:
 
@@ -849,6 +927,8 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_flag_y()      |
 +-----------+-------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_spring_y/equilibrium_point:
 
 - :ref:`float<class_float>` **angular_spring_y/equilibrium_point**
@@ -860,6 +940,8 @@ Target speed for the motor at the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_spring_y/stiffness:
 
@@ -873,6 +955,8 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_spring_z/damping:
 
 - :ref:`float<class_float>` **angular_spring_z/damping**
@@ -884,6 +968,8 @@ Target speed for the motor at the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_angular_spring_z/enabled:
 
@@ -897,6 +983,8 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_flag_z()      |
 +-----------+-------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_spring_z/equilibrium_point:
 
 - :ref:`float<class_float>` **angular_spring_z/equilibrium_point**
@@ -909,6 +997,8 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_angular_spring_z/stiffness:
 
 - :ref:`float<class_float>` **angular_spring_z/stiffness**
@@ -920,6 +1010,8 @@ Target speed for the motor at the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_limit_x/damping:
 
@@ -935,6 +1027,8 @@ Target speed for the motor at the Z axis.
 
 The amount of damping that happens at the X motion.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_limit_x/enabled:
 
 - :ref:`bool<class_bool>` **linear_limit_x/enabled**
@@ -948,6 +1042,8 @@ The amount of damping that happens at the X motion.
 +-----------+-------------------+
 
 If ``true``, the linear motion across the X axis is limited.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_limit_x/lower_distance:
 
@@ -963,6 +1059,8 @@ If ``true``, the linear motion across the X axis is limited.
 
 The minimum difference between the pivot points' X axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_limit_x/restitution:
 
 - :ref:`float<class_float>` **linear_limit_x/restitution**
@@ -976,6 +1074,8 @@ The minimum difference between the pivot points' X axis.
 +-----------+--------------------+
 
 The amount of restitution on the X axis movement. The lower, the more momentum gets lost.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_limit_x/softness:
 
@@ -991,6 +1091,8 @@ The amount of restitution on the X axis movement. The lower, the more momentum g
 
 A factor applied to the movement across the X axis. The lower, the slower the movement.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_limit_x/upper_distance:
 
 - :ref:`float<class_float>` **linear_limit_x/upper_distance**
@@ -1004,6 +1106,8 @@ A factor applied to the movement across the X axis. The lower, the slower the mo
 +-----------+--------------------+
 
 The maximum difference between the pivot points' X axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_limit_y/damping:
 
@@ -1019,6 +1123,8 @@ The maximum difference between the pivot points' X axis.
 
 The amount of damping that happens at the Y motion.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_limit_y/enabled:
 
 - :ref:`bool<class_bool>` **linear_limit_y/enabled**
@@ -1032,6 +1138,8 @@ The amount of damping that happens at the Y motion.
 +-----------+-------------------+
 
 If ``true``, the linear motion across the Y axis is limited.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_limit_y/lower_distance:
 
@@ -1047,6 +1155,8 @@ If ``true``, the linear motion across the Y axis is limited.
 
 The minimum difference between the pivot points' Y axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_limit_y/restitution:
 
 - :ref:`float<class_float>` **linear_limit_y/restitution**
@@ -1060,6 +1170,8 @@ The minimum difference between the pivot points' Y axis.
 +-----------+--------------------+
 
 The amount of restitution on the Y axis movement. The lower, the more momentum gets lost.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_limit_y/softness:
 
@@ -1075,6 +1187,8 @@ The amount of restitution on the Y axis movement. The lower, the more momentum g
 
 A factor applied to the movement across the Y axis. The lower, the slower the movement.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_limit_y/upper_distance:
 
 - :ref:`float<class_float>` **linear_limit_y/upper_distance**
@@ -1088,6 +1202,8 @@ A factor applied to the movement across the Y axis. The lower, the slower the mo
 +-----------+--------------------+
 
 The maximum difference between the pivot points' Y axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_limit_z/damping:
 
@@ -1103,6 +1219,8 @@ The maximum difference between the pivot points' Y axis.
 
 The amount of damping that happens at the Z motion.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_limit_z/enabled:
 
 - :ref:`bool<class_bool>` **linear_limit_z/enabled**
@@ -1116,6 +1234,8 @@ The amount of damping that happens at the Z motion.
 +-----------+-------------------+
 
 If ``true``, the linear motion across the Z axis is limited.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_limit_z/lower_distance:
 
@@ -1131,6 +1251,8 @@ If ``true``, the linear motion across the Z axis is limited.
 
 The minimum difference between the pivot points' Z axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_limit_z/restitution:
 
 - :ref:`float<class_float>` **linear_limit_z/restitution**
@@ -1144,6 +1266,8 @@ The minimum difference between the pivot points' Z axis.
 +-----------+--------------------+
 
 The amount of restitution on the Z axis movement. The lower, the more momentum gets lost.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_limit_z/softness:
 
@@ -1159,6 +1283,8 @@ The amount of restitution on the Z axis movement. The lower, the more momentum g
 
 A factor applied to the movement across the Z axis. The lower, the slower the movement.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_limit_z/upper_distance:
 
 - :ref:`float<class_float>` **linear_limit_z/upper_distance**
@@ -1172,6 +1298,8 @@ A factor applied to the movement across the Z axis. The lower, the slower the mo
 +-----------+--------------------+
 
 The maximum difference between the pivot points' Z axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_motor_x/enabled:
 
@@ -1187,6 +1315,8 @@ The maximum difference between the pivot points' Z axis.
 
 If ``true``, then there is a linear motor on the X axis. It will attempt to reach the target velocity while staying within the force limits.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_motor_x/force_limit:
 
 - :ref:`float<class_float>` **linear_motor_x/force_limit**
@@ -1200,6 +1330,8 @@ If ``true``, then there is a linear motor on the X axis. It will attempt to reac
 +-----------+--------------------+
 
 The maximum force the linear motor can apply on the X axis while trying to reach the target velocity.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_motor_x/target_velocity:
 
@@ -1215,6 +1347,8 @@ The maximum force the linear motor can apply on the X axis while trying to reach
 
 The speed that the linear motor will attempt to reach on the X axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_motor_y/enabled:
 
 - :ref:`bool<class_bool>` **linear_motor_y/enabled**
@@ -1228,6 +1362,8 @@ The speed that the linear motor will attempt to reach on the X axis.
 +-----------+-------------------+
 
 If ``true``, then there is a linear motor on the Y axis. It will attempt to reach the target velocity while staying within the force limits.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_motor_y/force_limit:
 
@@ -1243,6 +1379,8 @@ If ``true``, then there is a linear motor on the Y axis. It will attempt to reac
 
 The maximum force the linear motor can apply on the Y axis while trying to reach the target velocity.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_motor_y/target_velocity:
 
 - :ref:`float<class_float>` **linear_motor_y/target_velocity**
@@ -1256,6 +1394,8 @@ The maximum force the linear motor can apply on the Y axis while trying to reach
 +-----------+--------------------+
 
 The speed that the linear motor will attempt to reach on the Y axis.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_motor_z/enabled:
 
@@ -1271,6 +1411,8 @@ The speed that the linear motor will attempt to reach on the Y axis.
 
 If ``true``, then there is a linear motor on the Z axis. It will attempt to reach the target velocity while staying within the force limits.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_motor_z/force_limit:
 
 - :ref:`float<class_float>` **linear_motor_z/force_limit**
@@ -1284,6 +1426,8 @@ If ``true``, then there is a linear motor on the Z axis. It will attempt to reac
 +-----------+--------------------+
 
 The maximum force the linear motor can apply on the Z axis while trying to reach the target velocity.
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_motor_z/target_velocity:
 
@@ -1299,6 +1443,8 @@ The maximum force the linear motor can apply on the Z axis while trying to reach
 
 The speed that the linear motor will attempt to reach on the Z axis.
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_spring_x/damping:
 
 - :ref:`float<class_float>` **linear_spring_x/damping**
@@ -1310,6 +1456,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_spring_x/enabled:
 
@@ -1323,6 +1471,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_flag_x()      |
 +-----------+-------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_spring_x/equilibrium_point:
 
 - :ref:`float<class_float>` **linear_spring_x/equilibrium_point**
@@ -1334,6 +1484,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_spring_x/stiffness:
 
@@ -1347,6 +1499,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_spring_y/damping:
 
 - :ref:`float<class_float>` **linear_spring_y/damping**
@@ -1358,6 +1512,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_spring_y/enabled:
 
@@ -1371,6 +1527,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_flag_y()      |
 +-----------+-------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_spring_y/equilibrium_point:
 
 - :ref:`float<class_float>` **linear_spring_y/equilibrium_point**
@@ -1382,6 +1540,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_spring_y/stiffness:
 
@@ -1395,6 +1555,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_spring_z/damping:
 
 - :ref:`float<class_float>` **linear_spring_z/damping**
@@ -1406,6 +1568,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_linear_spring_z/enabled:
 
@@ -1419,6 +1583,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_flag_z()      |
 +-----------+-------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_spring_z/equilibrium_point:
 
 - :ref:`float<class_float>` **linear_spring_z/equilibrium_point**
@@ -1431,6 +1597,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
 
+----
+
 .. _class_Generic6DOFJoint_property_linear_spring_z/stiffness:
 
 - :ref:`float<class_float>` **linear_spring_z/stiffness**
@@ -1442,6 +1610,8 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
+
+----
 
 .. _class_Generic6DOFJoint_property_precision:
 
@@ -1462,45 +1632,67 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const
 
+----
+
 .. _class_Generic6DOFJoint_method_get_flag_y:
 
 - :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const
+
+----
 
 .. _class_Generic6DOFJoint_method_get_flag_z:
 
 - :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag **)** const
 
+----
+
 .. _class_Generic6DOFJoint_method_get_param_x:
 
 - :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const
+
+----
 
 .. _class_Generic6DOFJoint_method_get_param_y:
 
 - :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const
 
+----
+
 .. _class_Generic6DOFJoint_method_get_param_z:
 
 - :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param **)** const
+
+----
 
 .. _class_Generic6DOFJoint_method_set_flag_x:
 
 - void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag, :ref:`bool<class_bool>` value **)**
 
+----
+
 .. _class_Generic6DOFJoint_method_set_flag_y:
 
 - void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag, :ref:`bool<class_bool>` value **)**
+
+----
 
 .. _class_Generic6DOFJoint_method_set_flag_z:
 
 - void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint_Flag>` flag, :ref:`bool<class_bool>` value **)**
 
+----
+
 .. _class_Generic6DOFJoint_method_set_param_x:
 
 - void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param, :ref:`float<class_float>` value **)**
 
+----
+
 .. _class_Generic6DOFJoint_method_set_param_y:
 
 - void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint_Param>` param, :ref:`float<class_float>` value **)**
+
+----
 
 .. _class_Generic6DOFJoint_method_set_param_z:
 

@@ -23,17 +23,19 @@ Standard themed Button.
 Properties
 ----------
 
-+-----------------------------------------+---------------------------------------------------+-------+
-| :ref:`TextAlign<enum_Button_TextAlign>` | :ref:`align<class_Button_property_align>`         | 1     |
-+-----------------------------------------+---------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                 | :ref:`clip_text<class_Button_property_clip_text>` | false |
-+-----------------------------------------+---------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                 | :ref:`flat<class_Button_property_flat>`           | false |
-+-----------------------------------------+---------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`           | :ref:`icon<class_Button_property_icon>`           |       |
-+-----------------------------------------+---------------------------------------------------+-------+
-| :ref:`String<class_String>`             | :ref:`text<class_Button_property_text>`           | ""    |
-+-----------------------------------------+---------------------------------------------------+-------+
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`TextAlign<enum_Button_TextAlign>` | :ref:`align<class_Button_property_align>`             | 1     |
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                 | :ref:`clip_text<class_Button_property_clip_text>`     | false |
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                 | :ref:`expand_icon<class_Button_property_expand_icon>` | false |
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                 | :ref:`flat<class_Button_property_flat>`               | false |
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`Texture<class_Texture>`           | :ref:`icon<class_Button_property_icon>`               |       |
++-----------------------------------------+-------------------------------------------------------+-------+
+| :ref:`String<class_String>`             | :ref:`text<class_Button_property_text>`               | ""    |
++-----------------------------------------+-------------------------------------------------------+-------+
 
 Theme Properties
 ----------------
@@ -103,6 +105,8 @@ Property Descriptions
 
 Text alignment policy for the button's text, use one of the ``ALIGN_*`` constants.
 
+----
+
 .. _class_Button_property_clip_text:
 
 - :ref:`bool<class_bool>` **clip_text**
@@ -115,7 +119,25 @@ Text alignment policy for the button's text, use one of the ``ALIGN_*`` constant
 | *Getter*  | get_clip_text()      |
 +-----------+----------------------+
 
-When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text. This property is disabled by default.
+When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text.
+
+----
+
+.. _class_Button_property_expand_icon:
+
+- :ref:`bool<class_bool>` **expand_icon**
+
++-----------+------------------------+
+| *Default* | false                  |
++-----------+------------------------+
+| *Setter*  | set_expand_icon(value) |
++-----------+------------------------+
+| *Getter*  | is_expand_icon()       |
++-----------+------------------------+
+
+When enabled, the button's icon will expand/shrink to fit the button's size while keeping its aspect.
+
+----
 
 .. _class_Button_property_flat:
 
@@ -131,6 +153,8 @@ When this property is enabled, text that is too large to fit the button is clipp
 
 Flat buttons don't display decoration.
 
+----
+
 .. _class_Button_property_icon:
 
 - :ref:`Texture<class_Texture>` **icon**
@@ -142,6 +166,8 @@ Flat buttons don't display decoration.
 +----------+------------------------+
 
 Button's icon, if text is present the icon will be placed before the text.
+
+----
 
 .. _class_Button_property_text:
 

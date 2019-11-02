@@ -81,11 +81,15 @@ Signals
 
 Emitted when another area enters.
 
+----
+
 .. _class_Area2D_signal_area_exited:
 
 - **area_exited** **(** :ref:`Area2D<class_Area2D>` area **)**
 
 Emitted when another area exits.
+
+----
 
 .. _class_Area2D_signal_area_shape_entered:
 
@@ -93,11 +97,15 @@ Emitted when another area exits.
 
 Emitted when another area enters, reporting which shapes overlapped.
 
+----
+
 .. _class_Area2D_signal_area_shape_exited:
 
 - **area_shape_exited** **(** :ref:`int<class_int>` area_id, :ref:`Area2D<class_Area2D>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
 
 Emitted when another area exits, reporting which shapes were overlapping.
+
+----
 
 .. _class_Area2D_signal_body_entered:
 
@@ -107,6 +115,8 @@ Emitted when a physics body enters.
 
 The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance (while TileMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
+----
+
 .. _class_Area2D_signal_body_exited:
 
 - **body_exited** **(** :ref:`Node<class_Node>` body **)**
@@ -115,6 +125,8 @@ Emitted when a physics body exits.
 
 The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance (while TileMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
+----
+
 .. _class_Area2D_signal_body_shape_entered:
 
 - **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
@@ -122,6 +134,8 @@ The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` 
 Emitted when a physics body enters, reporting which shapes overlapped.
 
 The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance (while TileMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
+
+----
 
 .. _class_Area2D_signal_body_shape_exited:
 
@@ -180,6 +194,8 @@ Property Descriptions
 
 The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
 
+----
+
 .. _class_Area2D_property_audio_bus_name:
 
 - :ref:`String<class_String>` **audio_bus_name**
@@ -193,6 +209,8 @@ The rate at which objects stop spinning in this area. Represents the angular vel
 +-----------+---------------------------+
 
 The name of the area's audio bus.
+
+----
 
 .. _class_Area2D_property_audio_bus_override:
 
@@ -208,6 +226,8 @@ The name of the area's audio bus.
 
 If ``true``, the area's audio bus overrides the default audio bus.
 
+----
+
 .. _class_Area2D_property_collision_layer:
 
 - :ref:`int<class_int>` **collision_layer**
@@ -221,6 +241,8 @@ If ``true``, the area's audio bus overrides the default audio bus.
 +-----------+----------------------------+
 
 The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also :ref:`collision_mask<class_Area2D_property_collision_mask>`.
+
+----
 
 .. _class_Area2D_property_collision_mask:
 
@@ -236,6 +258,8 @@ The area's physics layer(s). Collidable objects can exist in any of 32 different
 
 The physics layers this area scans to determine collision detection.
 
+----
+
 .. _class_Area2D_property_gravity:
 
 - :ref:`float<class_float>` **gravity**
@@ -249,6 +273,8 @@ The physics layers this area scans to determine collision detection.
 +-----------+--------------------+
 
 The area's gravity intensity (ranges from -1024 to 1024). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
+
+----
 
 .. _class_Area2D_property_gravity_distance_scale:
 
@@ -264,6 +290,8 @@ The area's gravity intensity (ranges from -1024 to 1024). This value multiplies 
 
 The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
 
+----
+
 .. _class_Area2D_property_gravity_point:
 
 - :ref:`bool<class_bool>` **gravity_point**
@@ -277,6 +305,8 @@ The falloff factor for point gravity. The greater the value, the faster gravity 
 +-----------+-----------------------------+
 
 If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area2D_property_gravity_vec>`). See also :ref:`space_override<class_Area2D_property_space_override>`.
+
+----
 
 .. _class_Area2D_property_gravity_vec:
 
@@ -292,6 +322,8 @@ If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class
 
 The area's gravity vector (not normalized). If gravity is a point (see :ref:`gravity_point<class_Area2D_property_gravity_point>`), this will be the point of attraction.
 
+----
+
 .. _class_Area2D_property_linear_damp:
 
 - :ref:`float<class_float>` **linear_damp**
@@ -305,6 +337,8 @@ The area's gravity vector (not normalized). If gravity is a point (see :ref:`gra
 +-----------+------------------------+
 
 The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
+
+----
 
 .. _class_Area2D_property_monitorable:
 
@@ -320,6 +354,8 @@ The rate at which objects stop moving in this area. Represents the linear veloci
 
 If ``true``, other monitoring areas can detect this area.
 
+----
+
 .. _class_Area2D_property_monitoring:
 
 - :ref:`bool<class_bool>` **monitoring**
@@ -334,6 +370,8 @@ If ``true``, other monitoring areas can detect this area.
 
 If ``true``, the area detects bodies or areas entering and exiting it.
 
+----
+
 .. _class_Area2D_property_priority:
 
 - :ref:`float<class_float>` **priority**
@@ -347,6 +385,8 @@ If ``true``, the area detects bodies or areas entering and exiting it.
 +-----------+---------------------+
 
 The area's priority. Higher priority areas are processed first.
+
+----
 
 .. _class_Area2D_property_space_override:
 
@@ -371,11 +411,15 @@ Method Descriptions
 
 Returns an individual bit on the layer mask. Describes whether other areas will collide with this one on the given layer.
 
+----
+
 .. _class_Area2D_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns an individual bit on the collision mask. Describes whether this area will collide with others on the given layer.
+
+----
 
 .. _class_Area2D_method_get_overlapping_areas:
 
@@ -383,11 +427,15 @@ Returns an individual bit on the collision mask. Describes whether this area wil
 
 Returns a list of intersecting ``Area2D``\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
+----
+
 .. _class_Area2D_method_get_overlapping_bodies:
 
 - :ref:`Array<class_Array>` **get_overlapping_bodies** **(** **)** const
 
 Returns a list of intersecting :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
+
+----
 
 .. _class_Area2D_method_overlaps_area:
 
@@ -396,6 +444,8 @@ Returns a list of intersecting :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s. For
 If ``true``, the given area overlaps the Area2D.
 
 **Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+
+----
 
 .. _class_Area2D_method_overlaps_body:
 
@@ -407,11 +457,15 @@ If ``true``, the given physics body overlaps the Area2D.
 
 The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance (while TileMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 
+----
+
 .. _class_Area2D_method_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Set/clear individual bits on the layer mask. This makes getting an area in/out of only one layer easier.
+
+----
 
 .. _class_Area2D_method_set_collision_mask_bit:
 

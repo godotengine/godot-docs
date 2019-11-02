@@ -113,6 +113,8 @@ For triangles, the index array is interpreted as triples, referring to the verti
 
 - **ARRAY_MAX** = **9** --- Represents the size of the :ref:`ArrayType<enum_ArrayMesh_ArrayType>` enum.
 
+----
+
 .. _enum_ArrayMesh_ArrayFormat:
 
 .. _class_ArrayMesh_constant_ARRAY_FORMAT_VERTEX:
@@ -202,6 +204,8 @@ Property Descriptions
 | *Getter*  | get_blend_shape_mode()      |
 +-----------+-----------------------------+
 
+----
+
 .. _class_ArrayMesh_property_custom_aabb:
 
 - :ref:`AABB<class_AABB>` **custom_aabb**
@@ -225,6 +229,8 @@ Method Descriptions
 
 Adds name for a blend shape that will be added with :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`. Must be called before surface is added.
 
+----
+
 .. _class_ArrayMesh_method_add_surface_from_arrays:
 
 - void **add_surface_from_arrays** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Array<class_Array>` arrays, :ref:`Array<class_Array>` blend_shapes=[  ], :ref:`int<class_int>` compress_flags=97280 **)**
@@ -239,11 +245,15 @@ Adding an index array puts this function into "index mode" where the vertex and 
 
 Godot uses clockwise winding order for front faces of triangle primitive modes.
 
+----
+
 .. _class_ArrayMesh_method_clear_blend_shapes:
 
 - void **clear_blend_shapes** **(** **)**
 
 Removes all blend shapes from this ``ArrayMesh``.
+
+----
 
 .. _class_ArrayMesh_method_get_blend_shape_count:
 
@@ -251,11 +261,15 @@ Removes all blend shapes from this ``ArrayMesh``.
 
 Returns the number of blend shapes that the ``ArrayMesh`` holds.
 
+----
+
 .. _class_ArrayMesh_method_get_blend_shape_name:
 
 - :ref:`String<class_String>` **get_blend_shape_name** **(** :ref:`int<class_int>` index **)** const
 
 Returns the name of the blend shape at this index.
+
+----
 
 .. _class_ArrayMesh_method_lightmap_unwrap:
 
@@ -263,11 +277,15 @@ Returns the name of the blend shape at this index.
 
 Will perform a UV unwrap on the ``ArrayMesh`` to prepare the mesh for lightmapping.
 
+----
+
 .. _class_ArrayMesh_method_regen_normalmaps:
 
 - void **regen_normalmaps** **(** **)**
 
 Will regenerate normal maps for the ``ArrayMesh``.
+
+----
 
 .. _class_ArrayMesh_method_surface_find_by_name:
 
@@ -275,11 +293,15 @@ Will regenerate normal maps for the ``ArrayMesh``.
 
 Returns the index of the first surface with this name held within this ``ArrayMesh``. If none are found, -1 is returned.
 
+----
+
 .. _class_ArrayMesh_method_surface_get_array_index_len:
 
 - :ref:`int<class_int>` **surface_get_array_index_len** **(** :ref:`int<class_int>` surf_idx **)** const
 
 Returns the length in indices of the index array in the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
+
+----
 
 .. _class_ArrayMesh_method_surface_get_array_len:
 
@@ -287,11 +309,15 @@ Returns the length in indices of the index array in the requested surface (see :
 
 Returns the length in vertices of the vertex array in the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
 
+----
+
 .. _class_ArrayMesh_method_surface_get_format:
 
 - :ref:`int<class_int>` **surface_get_format** **(** :ref:`int<class_int>` surf_idx **)** const
 
 Returns the format mask of the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
+
+----
 
 .. _class_ArrayMesh_method_surface_get_name:
 
@@ -299,11 +325,15 @@ Returns the format mask of the requested surface (see :ref:`add_surface_from_arr
 
 Gets the name assigned to this surface.
 
+----
+
 .. _class_ArrayMesh_method_surface_get_primitive_type:
 
 - :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **surface_get_primitive_type** **(** :ref:`int<class_int>` surf_idx **)** const
 
 Returns the primitive type of the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
+
+----
 
 .. _class_ArrayMesh_method_surface_remove:
 
@@ -311,11 +341,15 @@ Returns the primitive type of the requested surface (see :ref:`add_surface_from_
 
 Removes a surface at position ``surf_idx``, shifting greater surfaces one ``surf_idx`` slot down.
 
+----
+
 .. _class_ArrayMesh_method_surface_set_name:
 
 - void **surface_set_name** **(** :ref:`int<class_int>` surf_idx, :ref:`String<class_String>` name **)**
 
 Sets a name for a given surface.
+
+----
 
 .. _class_ArrayMesh_method_surface_update_region:
 

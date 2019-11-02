@@ -26,6 +26,8 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_Control>`                             | :ref:`get_base_control<class_EditorInterface_method_get_base_control>` **(** **)**                                                                             |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                               | :ref:`get_current_path<class_EditorInterface_method_get_current_path>` **(** **)** const                                                                       |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`                                   | :ref:`get_edited_scene_root<class_EditorInterface_method_get_edited_scene_root>` **(** **)**                                                                   |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorSettings<class_EditorSettings>`               | :ref:`get_editor_settings<class_EditorInterface_method_get_editor_settings>` **(** **)**                                                                       |
@@ -62,6 +64,10 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`select_file<class_EditorInterface_method_select_file>` **(** :ref:`String<class_String>` file **)**                                                      |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`set_distraction_free_mode<class_EditorInterface_method_set_distraction_free_mode>` **(** :ref:`bool<class_bool>` enter **)**                             |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`set_main_screen_editor<class_EditorInterface_method_set_main_screen_editor>` **(** :ref:`String<class_String>` name **)**                                |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`set_plugin_enabled<class_EditorInterface_method_set_plugin_enabled>` **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**     |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -79,11 +85,21 @@ Method Descriptions
 
 Edits the given :ref:`Resource<class_Resource>`.
 
+----
+
 .. _class_EditorInterface_method_get_base_control:
 
 - :ref:`Control<class_Control>` **get_base_control** **(** **)**
 
 Returns the main container of Godot editor's window. You can use it, for example, to retrieve the size of the container and place your controls accordingly.
+
+----
+
+.. _class_EditorInterface_method_get_current_path:
+
+- :ref:`String<class_String>` **get_current_path** **(** **)** const
+
+----
 
 .. _class_EditorInterface_method_get_edited_scene_root:
 
@@ -91,11 +107,15 @@ Returns the main container of Godot editor's window. You can use it, for example
 
 Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
+----
+
 .. _class_EditorInterface_method_get_editor_settings:
 
 - :ref:`EditorSettings<class_EditorSettings>` **get_editor_settings** **(** **)**
 
 Returns the :ref:`EditorSettings<class_EditorSettings>`.
+
+----
 
 .. _class_EditorInterface_method_get_editor_viewport:
 
@@ -103,9 +123,13 @@ Returns the :ref:`EditorSettings<class_EditorSettings>`.
 
 Returns the editor :ref:`Viewport<class_Viewport>`.
 
+----
+
 .. _class_EditorInterface_method_get_inspector:
 
 - :ref:`EditorInspector<class_EditorInspector>` **get_inspector** **(** **)** const
+
+----
 
 .. _class_EditorInterface_method_get_open_scenes:
 
@@ -113,11 +137,15 @@ Returns the editor :ref:`Viewport<class_Viewport>`.
 
 Returns an :ref:`Array<class_Array>` with the file paths of the currently opened scenes.
 
+----
+
 .. _class_EditorInterface_method_get_resource_filesystem:
 
 - :ref:`EditorFileSystem<class_EditorFileSystem>` **get_resource_filesystem** **(** **)**
 
 Returns the :ref:`EditorFileSystem<class_EditorFileSystem>`.
+
+----
 
 .. _class_EditorInterface_method_get_resource_previewer:
 
@@ -125,15 +153,21 @@ Returns the :ref:`EditorFileSystem<class_EditorFileSystem>`.
 
 Returns the :ref:`EditorResourcePreview<class_EditorResourcePreview>`.
 
+----
+
 .. _class_EditorInterface_method_get_script_editor:
 
 - :ref:`ScriptEditor<class_ScriptEditor>` **get_script_editor** **(** **)**
 
 Returns the :ref:`ScriptEditor<class_ScriptEditor>`.
 
+----
+
 .. _class_EditorInterface_method_get_selected_path:
 
 - :ref:`String<class_String>` **get_selected_path** **(** **)** const
+
+----
 
 .. _class_EditorInterface_method_get_selection:
 
@@ -141,11 +175,15 @@ Returns the :ref:`ScriptEditor<class_ScriptEditor>`.
 
 Returns the :ref:`EditorSelection<class_EditorSelection>`.
 
+----
+
 .. _class_EditorInterface_method_inspect_object:
 
 - void **inspect_object** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="" **)**
 
 Shows the given property on the given ``object`` in the Editor's Inspector dock.
+
+----
 
 .. _class_EditorInterface_method_is_plugin_enabled:
 
@@ -153,11 +191,15 @@ Shows the given property on the given ``object`` in the Editor's Inspector dock.
 
 Returns the enabled status of a plugin. The plugin name is the same as its directory name.
 
+----
+
 .. _class_EditorInterface_method_make_mesh_previews:
 
 - :ref:`Array<class_Array>` **make_mesh_previews** **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**
 
 Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>` of :ref:`Texture<class_Texture>`\ s.
+
+----
 
 .. _class_EditorInterface_method_open_scene_from_path:
 
@@ -165,11 +207,15 @@ Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>`
 
 Opens the scene at the given path.
 
+----
+
 .. _class_EditorInterface_method_reload_scene_from_path:
 
 - void **reload_scene_from_path** **(** :ref:`String<class_String>` scene_filepath **)**
 
 Reloads the scene at the given path.
+
+----
 
 .. _class_EditorInterface_method_save_scene:
 
@@ -177,17 +223,35 @@ Reloads the scene at the given path.
 
 Saves the scene. Returns either ``OK`` or ``ERR_CANT_CREATE`` (see :ref:`@GlobalScope<class_@GlobalScope>` constants).
 
+----
+
 .. _class_EditorInterface_method_save_scene_as:
 
 - void **save_scene_as** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` with_preview=true **)**
 
 Saves the scene as a file at ``path``.
 
+----
+
 .. _class_EditorInterface_method_select_file:
 
 - void **select_file** **(** :ref:`String<class_String>` file **)**
 
 Selects the file, with the path provided by ``file``, in the FileSystem dock.
+
+----
+
+.. _class_EditorInterface_method_set_distraction_free_mode:
+
+- void **set_distraction_free_mode** **(** :ref:`bool<class_bool>` enter **)**
+
+----
+
+.. _class_EditorInterface_method_set_main_screen_editor:
+
+- void **set_main_screen_editor** **(** :ref:`String<class_String>` name **)**
+
+----
 
 .. _class_EditorInterface_method_set_plugin_enabled:
 

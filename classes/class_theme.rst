@@ -124,11 +124,15 @@ Method Descriptions
 
 - void **clear** **(** **)**
 
+----
+
 .. _class_Theme_method_clear_color:
 
 - void **clear_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)**
 
 Clears the :ref:`Color<class_Color>` at ``name`` if the Theme has ``type``.
+
+----
 
 .. _class_Theme_method_clear_constant:
 
@@ -136,11 +140,15 @@ Clears the :ref:`Color<class_Color>` at ``name`` if the Theme has ``type``.
 
 Clears the constant at ``name`` if the Theme has ``type``.
 
+----
+
 .. _class_Theme_method_clear_font:
 
 - void **clear_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)**
 
 Clears the :ref:`Font<class_Font>` at ``name`` if the Theme has ``type``.
+
+----
 
 .. _class_Theme_method_clear_icon:
 
@@ -148,11 +156,15 @@ Clears the :ref:`Font<class_Font>` at ``name`` if the Theme has ``type``.
 
 Clears the icon at ``name`` if the Theme has ``type``.
 
+----
+
 .. _class_Theme_method_clear_stylebox:
 
 - void **clear_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)**
 
 Clears :ref:`StyleBox<class_StyleBox>` at ``name`` if the Theme has ``type``.
+
+----
 
 .. _class_Theme_method_copy_default_theme:
 
@@ -160,9 +172,13 @@ Clears :ref:`StyleBox<class_StyleBox>` at ``name`` if the Theme has ``type``.
 
 Sets the Theme's values to a copy of the default theme values.
 
+----
+
 .. _class_Theme_method_copy_theme:
 
 - void **copy_theme** **(** :ref:`Theme<class_Theme>` other **)**
+
+----
 
 .. _class_Theme_method_get_color:
 
@@ -170,11 +186,15 @@ Sets the Theme's values to a copy of the default theme values.
 
 Returns the :ref:`Color<class_Color>` at ``name`` if the Theme has ``type``.
 
+----
+
 .. _class_Theme_method_get_color_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_color_list** **(** :ref:`String<class_String>` type **)** const
 
 Returns all the :ref:`Color<class_Color>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Color<class_Color>`'s name, for use in :ref:`get_color<class_Theme_method_get_color>`, if the Theme has ``type``.
+
+----
 
 .. _class_Theme_method_get_constant:
 
@@ -182,11 +202,15 @@ Returns all the :ref:`Color<class_Color>`\ s as a :ref:`PoolStringArray<class_Po
 
 Returns the constant at ``name`` if the Theme has ``type``.
 
+----
+
 .. _class_Theme_method_get_constant_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_constant_list** **(** :ref:`String<class_String>` type **)** const
 
 Returns all the constants as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each constant's name, for use in :ref:`get_constant<class_Theme_method_get_constant>`, if the Theme has ``type``.
+
+----
 
 .. _class_Theme_method_get_font:
 
@@ -194,11 +218,15 @@ Returns all the constants as a :ref:`PoolStringArray<class_PoolStringArray>` fil
 
 Returns the :ref:`Font<class_Font>` at ``name`` if the Theme has ``type``.
 
+----
+
 .. _class_Theme_method_get_font_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_font_list** **(** :ref:`String<class_String>` type **)** const
 
 Returns all the :ref:`Font<class_Font>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Font<class_Font>`'s name, for use in :ref:`get_font<class_Theme_method_get_font>`, if the Theme has ``type``.
+
+----
 
 .. _class_Theme_method_get_icon:
 
@@ -206,11 +234,15 @@ Returns all the :ref:`Font<class_Font>`\ s as a :ref:`PoolStringArray<class_Pool
 
 Returns the icon :ref:`Texture<class_Texture>` at ``name`` if the Theme has ``type``.
 
+----
+
 .. _class_Theme_method_get_icon_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_icon_list** **(** :ref:`String<class_String>` type **)** const
 
 Returns all the icons as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Texture<class_Texture>`'s name, for use in :ref:`get_icon<class_Theme_method_get_icon>`, if the Theme has ``type``.
+
+----
 
 .. _class_Theme_method_get_stylebox:
 
@@ -218,11 +250,15 @@ Returns all the icons as a :ref:`PoolStringArray<class_PoolStringArray>` filled 
 
 Returns the icon :ref:`StyleBox<class_StyleBox>` at ``name`` if the Theme has ``type``.
 
+----
+
 .. _class_Theme_method_get_stylebox_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_stylebox_list** **(** :ref:`String<class_String>` type **)** const
 
 Returns all the :ref:`StyleBox<class_StyleBox>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`StyleBox<class_StyleBox>`'s name, for use in :ref:`get_stylebox<class_Theme_method_get_stylebox>`, if the Theme has ``type``.
+
+----
 
 .. _class_Theme_method_get_stylebox_types:
 
@@ -230,11 +266,15 @@ Returns all the :ref:`StyleBox<class_StyleBox>`\ s as a :ref:`PoolStringArray<cl
 
 Returns all the :ref:`StyleBox<class_StyleBox>` types as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`StyleBox<class_StyleBox>`'s type, for use in :ref:`get_stylebox<class_Theme_method_get_stylebox>` and/or :ref:`get_stylebox_list<class_Theme_method_get_stylebox_list>`, if the Theme has ``type``.
 
+----
+
 .. _class_Theme_method_get_type_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_type_list** **(** :ref:`String<class_String>` type **)** const
 
 Returns all the types in ``type`` as a :ref:`PoolStringArray<class_PoolStringArray>` for use in any of the get\_\* functions, if the Theme has ``type``.
+
+----
 
 .. _class_Theme_method_has_color:
 
@@ -244,6 +284,8 @@ Returns ``true`` if :ref:`Color<class_Color>` with ``name`` is in ``type``.
 
 Returns ``false`` if the Theme does not have ``type``.
 
+----
+
 .. _class_Theme_method_has_constant:
 
 - :ref:`bool<class_bool>` **has_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
@@ -251,6 +293,8 @@ Returns ``false`` if the Theme does not have ``type``.
 Returns ``true`` if constant with ``name`` is in ``type``.
 
 Returns ``false`` if the Theme does not have ``type``.
+
+----
 
 .. _class_Theme_method_has_font:
 
@@ -260,6 +304,8 @@ Returns ``true`` if :ref:`Font<class_Font>` with ``name`` is in ``type``.
 
 Returns ``false`` if the Theme does not have ``type``.
 
+----
+
 .. _class_Theme_method_has_icon:
 
 - :ref:`bool<class_bool>` **has_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type **)** const
@@ -267,6 +313,8 @@ Returns ``false`` if the Theme does not have ``type``.
 Returns ``true`` if icon :ref:`Texture<class_Texture>` with ``name`` is in ``type``.
 
 Returns ``false`` if the Theme does not have ``type``.
+
+----
 
 .. _class_Theme_method_has_stylebox:
 
@@ -276,6 +324,8 @@ Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with ``name`` is in ``type``
 
 Returns ``false`` if the Theme does not have ``type``.
 
+----
+
 .. _class_Theme_method_set_color:
 
 - void **set_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type, :ref:`Color<class_Color>` color **)**
@@ -283,6 +333,8 @@ Returns ``false`` if the Theme does not have ``type``.
 Sets the Theme's :ref:`Color<class_Color>` to ``color`` at ``name`` in ``type``.
 
 Does nothing if the Theme does not have ``type``.
+
+----
 
 .. _class_Theme_method_set_constant:
 
@@ -292,6 +344,8 @@ Sets the Theme's constant to ``constant`` at ``name`` in ``type``.
 
 Does nothing if the Theme does not have ``type``.
 
+----
+
 .. _class_Theme_method_set_font:
 
 - void **set_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type, :ref:`Font<class_Font>` font **)**
@@ -300,6 +354,8 @@ Sets the Theme's :ref:`Font<class_Font>` to ``font`` at ``name`` in ``type``.
 
 Does nothing if the Theme does not have ``type``.
 
+----
+
 .. _class_Theme_method_set_icon:
 
 - void **set_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type, :ref:`Texture<class_Texture>` texture **)**
@@ -307,6 +363,8 @@ Does nothing if the Theme does not have ``type``.
 Sets the Theme's icon :ref:`Texture<class_Texture>` to ``texture`` at ``name`` in ``type``.
 
 Does nothing if the Theme does not have ``type``.
+
+----
 
 .. _class_Theme_method_set_stylebox:
 

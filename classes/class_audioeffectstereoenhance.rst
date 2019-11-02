@@ -44,6 +44,8 @@ Property Descriptions
 | *Getter*  | get_pan_pullout()      |
 +-----------+------------------------+
 
+----
+
 .. _class_AudioEffectStereoEnhance_property_surround:
 
 - :ref:`float<class_float>` **surround**
@@ -55,6 +57,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_surround()      |
 +-----------+---------------------+
+
+----
 
 .. _class_AudioEffectStereoEnhance_property_time_pullout_ms:
 

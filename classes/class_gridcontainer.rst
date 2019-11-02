@@ -21,9 +21,11 @@ Grid container used to arrange elements in a grid like layout.
 Properties
 ----------
 
-+-----------------------+------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`columns<class_GridContainer_property_columns>` | 1 |
-+-----------------------+------------------------------------------------------+---+
++----------------------------------------------+------------------------------------------------------+----------+
+| :ref:`int<class_int>`                        | :ref:`columns<class_GridContainer_property_columns>` | 1        |
++----------------------------------------------+------------------------------------------------------+----------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                         | **O:** 1 |
++----------------------------------------------+------------------------------------------------------+----------+
 
 Theme Properties
 ----------------
@@ -37,7 +39,9 @@ Theme Properties
 Description
 -----------
 
-Grid container will arrange its children in a grid like structure, the grid columns are specified using the :ref:`columns<class_GridContainer_property_columns>` property and the number of rows will be equal to the number of children in the container divided by the number of columns. For example, if the container has 5 children, and 2 columns, there will be 3 rows in the container. Notice that grid layout will preserve the columns and rows for every size of the container.
+Grid container will arrange its children in a grid like structure, the grid columns are specified using the :ref:`columns<class_GridContainer_property_columns>` property and the number of rows will be equal to the number of children in the container divided by the number of columns. For example, if the container has 5 children, and 2 columns, there will be 3 rows in the container.
+
+Notice that grid layout will preserve the columns and rows for every size of the container, and that empty columns will be expanded automatically.
 
 Property Descriptions
 ---------------------

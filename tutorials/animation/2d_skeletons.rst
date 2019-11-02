@@ -102,7 +102,7 @@ This is normal for bones without children. The length of *tip* bones can be chan
 
 .. image:: img/skel2d12.png
 
-In this case, we don't need to rotate the bone (coincidentially the jaw points right in the sprite), but in case you need to, feel free to do it.
+In this case, we don't need to rotate the bone (coincidentally the jaw points right in the sprite), but in case you need to, feel free to do it.
 Again, this is only really needed for tip bones as nodes with children don't usually need a length or a specific rotation.
 
 Keep going and build the whole skeleton:

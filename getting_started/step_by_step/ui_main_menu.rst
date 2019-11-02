@@ -25,7 +25,7 @@ project in Godot to follow this tutorial. The ``end/`` folder contains the
 final result. You'll find all the sprites in the ``start/assets/main_menu``
 folder.
 
-.. note:
+.. note::
 
     Read the :doc:`ui_introduction_to_the_ui_system` first to learn how Godot’s UI system works
 
@@ -137,8 +137,8 @@ define the margins' size. Scroll down the ``Control`` class, to the
 -  Margin Left: *120*
 -  Margin Bottom: *80*
 
-We want the container to fit the window. In the Viewport, open the
-``Layout`` menu and select the last option, ``Full Rect``.
+We want the container to fit the window. In the toolbar above the Viewport, 
+open the ``Layout`` menu and select the last option, ``Full Rect``.
 
 Add the UI sprites
 ~~~~~~~~~~~~~~~~~~

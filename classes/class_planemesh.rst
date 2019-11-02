@@ -51,6 +51,8 @@ Property Descriptions
 
 Size of the generated plane.
 
+----
+
 .. _class_PlaneMesh_property_subdivide_depth:
 
 - :ref:`int<class_int>` **subdivide_depth**
@@ -64,6 +66,8 @@ Size of the generated plane.
 +-----------+----------------------------+
 
 Number of subdivision along the Z axis.
+
+----
 
 .. _class_PlaneMesh_property_subdivide_width:
 

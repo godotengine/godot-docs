@@ -46,6 +46,8 @@ enum **ShadowMode**:
 
 - **SHADOW_CUBE** = **1** --- Shadows are rendered to a cubemap. Slower than :ref:`SHADOW_DUAL_PARABOLOID<class_OmniLight_constant_SHADOW_DUAL_PARABOLOID>`, but higher-quality.
 
+----
+
 .. _enum_OmniLight_ShadowDetail:
 
 .. _class_OmniLight_constant_SHADOW_DETAIL_VERTICAL:
@@ -85,6 +87,8 @@ Property Descriptions
 
 The light's attenuation (drop-off) curve. A number of presets are available in the **Inspector** by right-clicking the curve.
 
+----
+
 .. _class_OmniLight_property_omni_range:
 
 - :ref:`float<class_float>` **omni_range**
@@ -99,6 +103,8 @@ The light's attenuation (drop-off) curve. A number of presets are available in t
 
 The light's radius.
 
+----
+
 .. _class_OmniLight_property_omni_shadow_detail:
 
 - :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **omni_shadow_detail**
@@ -112,6 +118,8 @@ The light's radius.
 +-----------+--------------------------+
 
 See :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>`.
+
+----
 
 .. _class_OmniLight_property_omni_shadow_mode:
 

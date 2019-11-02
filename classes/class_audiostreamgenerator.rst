@@ -27,6 +27,11 @@ Properties
 | :ref:`float<class_float>` | :ref:`mix_rate<class_AudioStreamGenerator_property_mix_rate>`           | 44100.0 |
 +---------------------------+-------------------------------------------------------------------------+---------+
 
+Tutorials
+---------
+
+- `https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator <https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator>`_
+
 Property Descriptions
 ---------------------
 
@@ -41,6 +46,8 @@ Property Descriptions
 +-----------+--------------------------+
 | *Getter*  | get_buffer_length()      |
 +-----------+--------------------------+
+
+----
 
 .. _class_AudioStreamGenerator_property_mix_rate:
 

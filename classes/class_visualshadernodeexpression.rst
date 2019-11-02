@@ -11,6 +11,8 @@ VisualShaderNodeExpression
 
 **Inherits:** :ref:`VisualShaderNodeGroupBase<class_VisualShaderNodeGroupBase>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`VisualShaderNodeGlobalExpression<class_VisualShaderNodeGlobalExpression>`
+
 **Category:** Core
 
 Brief Description
@@ -21,9 +23,11 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------+----+
-| :ref:`String<class_String>` | :ref:`expression<class_VisualShaderNodeExpression_property_expression>` | "" |
-+-----------------------------+-------------------------------------------------------------------------+----+
++-----------------------------+-------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>`     | editable                                                                | **O:** true |
++-----------------------------+-------------------------------------------------------------------------+-------------+
+| :ref:`String<class_String>` | :ref:`expression<class_VisualShaderNodeExpression_property_expression>` | ""          |
++-----------------------------+-------------------------------------------------------------------------+-------------+
 
 Methods
 -------

@@ -66,11 +66,15 @@ Method Descriptions
 
 Adds an :ref:`InputEvent<class_InputEvent>` to an action. This :ref:`InputEvent<class_InputEvent>` will trigger the action.
 
+----
+
 .. _class_InputMap_method_action_erase_event:
 
 - void **action_erase_event** **(** :ref:`String<class_String>` action, :ref:`InputEvent<class_InputEvent>` event **)**
 
 Removes an :ref:`InputEvent<class_InputEvent>` from an action.
+
+----
 
 .. _class_InputMap_method_action_erase_events:
 
@@ -78,15 +82,21 @@ Removes an :ref:`InputEvent<class_InputEvent>` from an action.
 
 Removes all events from an action.
 
+----
+
 .. _class_InputMap_method_action_has_event:
 
 - :ref:`bool<class_bool>` **action_has_event** **(** :ref:`String<class_String>` action, :ref:`InputEvent<class_InputEvent>` event **)**
 
 Returns ``true`` if the action has the given :ref:`InputEvent<class_InputEvent>` associated with it.
 
+----
+
 .. _class_InputMap_method_action_set_deadzone:
 
 - void **action_set_deadzone** **(** :ref:`String<class_String>` action, :ref:`float<class_float>` deadzone **)**
+
+----
 
 .. _class_InputMap_method_add_action:
 
@@ -96,11 +106,15 @@ Adds an empty action to the ``InputMap`` with a configurable ``deadzone``.
 
 An :ref:`InputEvent<class_InputEvent>` can then be added to this action with :ref:`action_add_event<class_InputMap_method_action_add_event>`.
 
+----
+
 .. _class_InputMap_method_erase_action:
 
 - void **erase_action** **(** :ref:`String<class_String>` action **)**
 
 Removes an action from the ``InputMap``.
+
+----
 
 .. _class_InputMap_method_event_is_action:
 
@@ -108,11 +122,15 @@ Removes an action from the ``InputMap``.
 
 Returns ``true`` if the given event is part of an existing action. This method ignores keyboard modifiers if the given :ref:`InputEvent<class_InputEvent>` is not pressed (for proper release detection). See :ref:`action_has_event<class_InputMap_method_action_has_event>` if you don't want this behavior.
 
+----
+
 .. _class_InputMap_method_get_action_list:
 
 - :ref:`Array<class_Array>` **get_action_list** **(** :ref:`String<class_String>` action **)**
 
 Returns an array of :ref:`InputEvent<class_InputEvent>`\ s associated with a given action.
+
+----
 
 .. _class_InputMap_method_get_actions:
 
@@ -120,11 +138,15 @@ Returns an array of :ref:`InputEvent<class_InputEvent>`\ s associated with a giv
 
 Returns an array of all actions in the ``InputMap``.
 
+----
+
 .. _class_InputMap_method_has_action:
 
 - :ref:`bool<class_bool>` **has_action** **(** :ref:`String<class_String>` action **)** const
 
 Returns ``true`` if the ``InputMap`` has a registered action with the given name.
+
+----
 
 .. _class_InputMap_method_load_from_globals:
 

@@ -120,17 +120,25 @@ Method Descriptions
 
 - void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** const
 
+----
+
 .. _class_Texture_method_draw_rect:
 
 - void **draw_rect** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** const
+
+----
 
 .. _class_Texture_method_draw_rect_region:
 
 - void **draw_rect_region** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** const
 
+----
+
 .. _class_Texture_method_get_data:
 
 - :ref:`Image<class_Image>` **get_data** **(** **)** const
+
+----
 
 .. _class_Texture_method_get_height:
 
@@ -138,17 +146,23 @@ Method Descriptions
 
 Returns the texture height.
 
+----
+
 .. _class_Texture_method_get_size:
 
 - :ref:`Vector2<class_Vector2>` **get_size** **(** **)** const
 
 Returns the texture size.
 
+----
+
 .. _class_Texture_method_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
 Returns the texture width.
+
+----
 
 .. _class_Texture_method_has_alpha:
 

@@ -32,6 +32,11 @@ Description
 
 A synchronization semaphore which can be used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Initialized to zero on creation. Be careful to avoid deadlocks. For a binary version, see :ref:`Mutex<class_Mutex>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/threads/using_multiple_threads`
+
 Method Descriptions
 -------------------
 
@@ -40,6 +45,8 @@ Method Descriptions
 - :ref:`Error<enum_@GlobalScope_Error>` **post** **(** **)**
 
 Lowers the ``Semaphore``, allowing one more thread in. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
+
+----
 
 .. _class_Semaphore_method_wait:
 

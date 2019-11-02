@@ -118,6 +118,8 @@ Property Descriptions
 
 If true, the blend space is triangulated automatically. The mesh updates every time you add or remove points with :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>` and :ref:`remove_blend_point<class_AnimationNodeBlendSpace2D_method_remove_blend_point>`.
 
+----
+
 .. _class_AnimationNodeBlendSpace2D_property_blend_mode:
 
 - :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` **blend_mode**
@@ -131,6 +133,8 @@ If true, the blend space is triangulated automatically. The mesh updates every t
 +-----------+-----------------------+
 
 Controls the interpolation between animations. See :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` constants.
+
+----
 
 .. _class_AnimationNodeBlendSpace2D_property_max_space:
 
@@ -146,6 +150,8 @@ Controls the interpolation between animations. See :ref:`BlendMode<enum_Animatio
 
 The blend space's X and Y axes' upper limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>`.
 
+----
+
 .. _class_AnimationNodeBlendSpace2D_property_min_space:
 
 - :ref:`Vector2<class_Vector2>` **min_space**
@@ -159,6 +165,8 @@ The blend space's X and Y axes' upper limit for the points' position. See :ref:`
 +-----------+----------------------+
 
 The blend space's X and Y axes' lower limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>`.
+
+----
 
 .. _class_AnimationNodeBlendSpace2D_property_snap:
 
@@ -174,6 +182,8 @@ The blend space's X and Y axes' lower limit for the points' position. See :ref:`
 
 Position increment to snap to when moving a point.
 
+----
+
 .. _class_AnimationNodeBlendSpace2D_property_x_label:
 
 - :ref:`String<class_String>` **x_label**
@@ -187,6 +197,8 @@ Position increment to snap to when moving a point.
 +-----------+--------------------+
 
 Name of the blend space's X axis.
+
+----
 
 .. _class_AnimationNodeBlendSpace2D_property_y_label:
 
@@ -211,11 +223,15 @@ Method Descriptions
 
 Adds a new point that represents a ``node`` at the position set by ``pos``. You can insert it at a specific index using the ``at_index`` argument. If you use the default value for ``at_index`` , the point is inserted at the end of the blend points array.
 
+----
+
 .. _class_AnimationNodeBlendSpace2D_method_add_triangle:
 
 - void **add_triangle** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` at_index=-1 **)**
 
 Creates a new triangle using three points ``x``, ``y``, and ``z``. Triangles can overlap. You can insert the triangle at a specific index using the ``at_index`` argument. If you use the default value for ``at_index`` , the point is inserted at the end of the blend points array.
+
+----
 
 .. _class_AnimationNodeBlendSpace2D_method_get_blend_point_count:
 
@@ -223,11 +239,15 @@ Creates a new triangle using three points ``x``, ``y``, and ``z``. Triangles can
 
 Returns the number of points in the blend space.
 
+----
+
 .. _class_AnimationNodeBlendSpace2D_method_get_blend_point_node:
 
 - :ref:`AnimationRootNode<class_AnimationRootNode>` **get_blend_point_node** **(** :ref:`int<class_int>` point **)** const
 
 Returns the ``AnimationRootNode`` referenced by the point at index ``point``.
+
+----
 
 .. _class_AnimationNodeBlendSpace2D_method_get_blend_point_position:
 
@@ -235,11 +255,15 @@ Returns the ``AnimationRootNode`` referenced by the point at index ``point``.
 
 Returns the position of the point at index ``point``.
 
+----
+
 .. _class_AnimationNodeBlendSpace2D_method_get_triangle_count:
 
 - :ref:`int<class_int>` **get_triangle_count** **(** **)** const
 
 Returns the number of triangles in the blend space.
+
+----
 
 .. _class_AnimationNodeBlendSpace2D_method_get_triangle_point:
 
@@ -247,11 +271,15 @@ Returns the number of triangles in the blend space.
 
 Returns the position of the point at index ``point`` in the triangle of index ``triangle``.
 
+----
+
 .. _class_AnimationNodeBlendSpace2D_method_remove_blend_point:
 
 - void **remove_blend_point** **(** :ref:`int<class_int>` point **)**
 
 Removes the point at index ``point`` from the blend space.
+
+----
 
 .. _class_AnimationNodeBlendSpace2D_method_remove_triangle:
 
@@ -259,11 +287,15 @@ Removes the point at index ``point`` from the blend space.
 
 Removes the triangle at index ``triangle`` from the blend space.
 
+----
+
 .. _class_AnimationNodeBlendSpace2D_method_set_blend_point_node:
 
 - void **set_blend_point_node** **(** :ref:`int<class_int>` point, :ref:`AnimationRootNode<class_AnimationRootNode>` node **)**
 
 Changes the AnimationNode referenced by the point at index ``point``.
+
+----
 
 .. _class_AnimationNodeBlendSpace2D_method_set_blend_point_position:
 

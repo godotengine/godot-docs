@@ -54,7 +54,7 @@ regular code blocks.
 
 ::
 
-    effect.interpolate_property(sprite, 'transform/scale',
+    effect.interpolate_property(sprite, "transform/scale",
                 sprite.get_scale(), Vector2(2.0, 2.0), 0.3,
                 Tween.TRANS_QUAD, Tween.EASE_OUT)
 
@@ -62,7 +62,7 @@ regular code blocks.
 
 ::
 
-    effect.interpolate_property(sprite, 'transform/scale',
+    effect.interpolate_property(sprite, "transform/scale",
         sprite.get_scale(), Vector2(2.0, 2.0), 0.3,
         Tween.TRANS_QUAD, Tween.EASE_OUT)
 
@@ -131,6 +131,26 @@ necessary for order of operations, they only reduce readability.
     if (is_colliding()):
         queue_free()
 
+Comment spacing
+~~~~~~~~~~~~~~~
+
+Normal comments should start with a space, but comments which are disabled
+code should not. This helps differentiate text comments from disabled code.
+
+**Good**:
+
+::
+
+    # This is a comment.
+    #print("This is disabled code")
+
+**Bad**:
+
+::
+
+    #This is a comment.
+    # print("This is disabled code")
+
 Whitespace
 ~~~~~~~~~~
 
@@ -143,9 +163,9 @@ spaces in dictionary references and function calls, or to create "columns."
 
     position.x = 5
     position.y = mpos.y + 10
-    dict['key'] = 5
+    dict["key"] = 5
     myarray = [4, 5, 6]
-    print('foo')
+    print("foo")
 
 **Bad**:
 
@@ -181,7 +201,7 @@ Also when loading a class into a constant or variable:
 
 ::
 
-    const MyCoolNode = preload('res://my_cool_node.gd')
+    const MyCoolNode = preload("res://my_cool_node.gd")
 
 Functions and variables
 ~~~~~~~~~~~~~~~~~~~~~~~

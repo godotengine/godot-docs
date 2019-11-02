@@ -9,7 +9,7 @@
 Object
 ======
 
-**Inherited By:** :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`, :ref:`ARVRServer<class_ARVRServer>`, :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`Engine<class_Engine>`, :ref:`Geometry<class_Geometry>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`IP<class_IP>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`JSON<class_JSON>`, :ref:`JavaScript<class_JavaScript>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`, :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>`, :ref:`Physics2DServer<class_Physics2DServer>`, :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>`, :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>`, :ref:`PhysicsServer<class_PhysicsServer>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`Reference<class_Reference>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`VisualScriptEditor<class_VisualScriptEditor>`, :ref:`VisualServer<class_VisualServer>`
+**Inherited By:** :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`, :ref:`ARVRServer<class_ARVRServer>`, :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`Geometry<class_Geometry>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`IP<class_IP>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`JSON<class_JSON>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`JavaScript<class_JavaScript>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`, :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>`, :ref:`Physics2DServer<class_Physics2DServer>`, :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>`, :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>`, :ref:`PhysicsServer<class_PhysicsServer>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`Reference<class_Reference>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`VisualScriptEditor<class_VisualScriptEditor>`, :ref:`VisualServer<class_VisualServer>`
 
 **Category:** Core
 
@@ -184,6 +184,8 @@ Virtual method which can be overridden to customize the return value of :ref:`ge
 
 Returns the given property. Returns ``null`` if the ``property`` does not exist.
 
+----
+
 .. _class_Object_method__get_property_list:
 
 - :ref:`Array<class_Array>` **_get_property_list** **(** **)** virtual
@@ -194,17 +196,23 @@ Returns the object's property list as an :ref:`Array<class_Array>` of dictionari
 
 Each property's :ref:`Dictionary<class_Dictionary>` must contain at least ``name: String`` and ``type: int`` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`) entries. Optionally, it can also include ``hint: int`` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`), ``hint_string: String``, and ``usage: int`` (see :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>`).
 
+----
+
 .. _class_Object_method__init:
 
 - void **_init** **(** **)** virtual
 
 Called when the object is initialized.
 
+----
+
 .. _class_Object_method__notification:
 
 - void **_notification** **(** :ref:`int<class_int>` what **)** virtual
 
 Called whenever the object receives a notification, which is identified in ``what`` by a constant. The base ``Object`` has two constants :ref:`NOTIFICATION_POSTINITIALIZE<class_Object_constant_NOTIFICATION_POSTINITIALIZE>` and :ref:`NOTIFICATION_PREDELETE<class_Object_constant_NOTIFICATION_PREDELETE>`, but subclasses such as :ref:`Node<class_Node>` define a lot more notifications which are also received by this method.
+
+----
 
 .. _class_Object_method__set:
 
@@ -214,6 +222,8 @@ Virtual method which can be overridden to customize the return value of :ref:`se
 
 Sets a property. Returns ``true`` if the ``property`` exists.
 
+----
+
 .. _class_Object_method__to_string:
 
 - :ref:`String<class_String>` **_to_string** **(** **)** virtual
@@ -222,11 +232,15 @@ Virtual method which can be overridden to customize the return value of :ref:`to
 
 Returns a :ref:`String<class_String>` representing the object. If not overridden, defaults to ``"[ClassName:RID]"``.
 
+----
+
 .. _class_Object_method_add_user_signal:
 
 - void **add_user_signal** **(** :ref:`String<class_String>` signal, :ref:`Array<class_Array>` arguments=[  ] **)**
 
 Adds a user-defined ``signal``. Arguments are optional, but can be added as an :ref:`Array<class_Array>` of dictionaries, each containing ``name: String`` and ``type: int`` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`) entries.
+
+----
 
 .. _class_Object_method_call:
 
@@ -238,6 +252,8 @@ Calls the ``method`` on the object and returns the result. This method supports 
 
     call("set", "position", Vector2(42.0, 0.0))
 
+----
+
 .. _class_Object_method_call_deferred:
 
 - :ref:`Variant<class_Variant>` **call_deferred** **(** :ref:`String<class_String>` method, ... **)** vararg
@@ -248,21 +264,27 @@ Calls the ``method`` on the object during idle time and returns the result. This
 
     call_deferred("set", "position", Vector2(42.0, 0.0))
 
+----
+
 .. _class_Object_method_callv:
 
 - :ref:`Variant<class_Variant>` **callv** **(** :ref:`String<class_String>` method, :ref:`Array<class_Array>` arg_array **)**
 
-Calls the ``method`` on the object and returns the result. Contrarily to :ref:`call<class_Object_method_call>`, this method does not support a variable number of arguments but expected all parameters passed via a single :ref:`Array<class_Array>`.
+Calls the ``method`` on the object and returns the result. Contrarily to :ref:`call<class_Object_method_call>`, this method does not support a variable number of arguments but expects all parameters to be via a single :ref:`Array<class_Array>`.
 
 ::
 
     callv("set", [ "position", Vector2(42.0, 0.0) ])
+
+----
 
 .. _class_Object_method_can_translate_messages:
 
 - :ref:`bool<class_bool>` **can_translate_messages** **(** **)** const
 
 Returns ``true`` if the object can translate strings. See :ref:`set_message_translation<class_Object_method_set_message_translation>` and :ref:`tr<class_Object_method_tr>`.
+
+----
 
 .. _class_Object_method_connect:
 
@@ -282,6 +304,8 @@ Examples:
     connect("text_entered", self, "_on_LineEdit_text_entered") # LineEdit signal
     connect("hit", self, "_on_Player_hit", [ weapon_type, damage ]) # User-defined signal
 
+----
+
 .. _class_Object_method_disconnect:
 
 - void **disconnect** **(** :ref:`String<class_String>` signal, :ref:`Object<class_Object>` target, :ref:`String<class_String>` method **)**
@@ -289,6 +313,8 @@ Examples:
 Disconnects a ``signal`` from a ``method`` on the given ``target``.
 
 If you try to disconnect a connection that does not exist, the method will throw an error. Use :ref:`is_connected<class_Object_method_is_connected>` to ensure that the connection exists.
+
+----
 
 .. _class_Object_method_emit_signal:
 
@@ -301,11 +327,15 @@ Emits the given ``signal``. The signal must exist, so it should be a built-in si
     emit_signal("hit", weapon_type, damage)
     emit_signal("game_over")
 
+----
+
 .. _class_Object_method_free:
 
 - void **free** **(** **)**
 
 Deletes the object from memory. Any pre-existing reference to the freed object will now return ``null``.
+
+----
 
 .. _class_Object_method_get:
 
@@ -313,11 +343,15 @@ Deletes the object from memory. Any pre-existing reference to the freed object w
 
 Returns the :ref:`Variant<class_Variant>` value of the given ``property``.
 
+----
+
 .. _class_Object_method_get_class:
 
 - :ref:`String<class_String>` **get_class** **(** **)** const
 
 Returns the object's class as a :ref:`String<class_String>`.
+
+----
 
 .. _class_Object_method_get_incoming_connections:
 
@@ -333,11 +367,15 @@ Each :ref:`Dictionary<class_Dictionary>` contains three String entries:
 
 - ``method_name`` is the name of the method to which the signal is connected.
 
+----
+
 .. _class_Object_method_get_indexed:
 
 - :ref:`Variant<class_Variant>` **get_indexed** **(** :ref:`NodePath<class_NodePath>` property **)** const
 
 Gets the object's property indexed by the given :ref:`NodePath<class_NodePath>`. The node path should be relative to the current object and can use the colon character (``:``) to access nested properties. Examples: ``"position:x"`` or ``"material:next_pass:blend_mode"``.
+
+----
 
 .. _class_Object_method_get_instance_id:
 
@@ -347,11 +385,15 @@ Returns the object's unique instance ID.
 
 This ID can be saved in :ref:`EncodedObjectAsID<class_EncodedObjectAsID>`, and can be used to retrieve the object instance with :ref:`@GDScript.instance_from_id<class_@GDScript_method_instance_from_id>`.
 
+----
+
 .. _class_Object_method_get_meta:
 
 - :ref:`Variant<class_Variant>` **get_meta** **(** :ref:`String<class_String>` name **)** const
 
 Returns the object's metadata entry for the given ``name``.
+
+----
 
 .. _class_Object_method_get_meta_list:
 
@@ -359,11 +401,15 @@ Returns the object's metadata entry for the given ``name``.
 
 Returns the object's metadata as a :ref:`PoolStringArray<class_PoolStringArray>`.
 
+----
+
 .. _class_Object_method_get_method_list:
 
 - :ref:`Array<class_Array>` **get_method_list** **(** **)** const
 
 Returns the object's methods and their signatures as an :ref:`Array<class_Array>`.
+
+----
 
 .. _class_Object_method_get_property_list:
 
@@ -373,11 +419,15 @@ Returns the object's property list as an :ref:`Array<class_Array>` of dictionari
 
 Each property's :ref:`Dictionary<class_Dictionary>` contain at least ``name: String`` and ``type: int`` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`) entries. Optionally, it can also include ``hint: int`` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`), ``hint_string: String``, and ``usage: int`` (see :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>`).
 
+----
+
 .. _class_Object_method_get_script:
 
 - :ref:`Reference<class_Reference>` **get_script** **(** **)** const
 
 Returns the object's :ref:`Script<class_Script>` instance, or ``null`` if none is assigned.
+
+----
 
 .. _class_Object_method_get_signal_connection_list:
 
@@ -385,11 +435,15 @@ Returns the object's :ref:`Script<class_Script>` instance, or ``null`` if none i
 
 Returns an :ref:`Array<class_Array>` of connections for the given ``signal``.
 
+----
+
 .. _class_Object_method_get_signal_list:
 
 - :ref:`Array<class_Array>` **get_signal_list** **(** **)** const
 
 Returns the list of signals as an :ref:`Array<class_Array>` of dictionaries.
+
+----
 
 .. _class_Object_method_has_meta:
 
@@ -397,11 +451,15 @@ Returns the list of signals as an :ref:`Array<class_Array>` of dictionaries.
 
 Returns ``true`` if a metadata entry is found with the given ``name``.
 
+----
+
 .. _class_Object_method_has_method:
 
 - :ref:`bool<class_bool>` **has_method** **(** :ref:`String<class_String>` method **)** const
 
 Returns ``true`` if the object contains the given ``method``.
+
+----
 
 .. _class_Object_method_has_user_signal:
 
@@ -409,11 +467,15 @@ Returns ``true`` if the object contains the given ``method``.
 
 Returns ``true`` if the given user-defined ``signal`` exists.
 
+----
+
 .. _class_Object_method_is_blocking_signals:
 
 - :ref:`bool<class_bool>` **is_blocking_signals** **(** **)** const
 
 Returns ``true`` if signal emission blocking is enabled.
+
+----
 
 .. _class_Object_method_is_class:
 
@@ -421,17 +483,23 @@ Returns ``true`` if signal emission blocking is enabled.
 
 Returns ``true`` if the object inherits from the given ``class``.
 
+----
+
 .. _class_Object_method_is_connected:
 
 - :ref:`bool<class_bool>` **is_connected** **(** :ref:`String<class_String>` signal, :ref:`Object<class_Object>` target, :ref:`String<class_String>` method **)** const
 
 Returns ``true`` if a connection exists for a given ``signal``, ``target``, and ``method``.
 
+----
+
 .. _class_Object_method_is_queued_for_deletion:
 
 - :ref:`bool<class_bool>` **is_queued_for_deletion** **(** **)** const
 
 Returns ``true`` if the :ref:`Node.queue_free<class_Node_method_queue_free>` method was called for the object.
+
+----
 
 .. _class_Object_method_notification:
 
@@ -441,11 +509,15 @@ Send a given notification to the object, which will also trigger a call to the :
 
 If ``reversed`` is ``true``, :ref:`_notification<class_Object_method__notification>` is called first on the object's own class, and then up to its successive parent classes. If ``reversed`` is ``false``, :ref:`_notification<class_Object_method__notification>` is called first on the highest ancestor (``Object`` itself), and then down to its successive inheriting classes.
 
+----
+
 .. _class_Object_method_property_list_changed_notify:
 
 - void **property_list_changed_notify** **(** **)**
 
 Notify the editor that the property list has changed, so that editor plugins can take the new values into account. Does nothing on export builds.
+
+----
 
 .. _class_Object_method_remove_meta:
 
@@ -453,11 +525,15 @@ Notify the editor that the property list has changed, so that editor plugins can
 
 Removes a given entry from the object's metadata.
 
+----
+
 .. _class_Object_method_set:
 
 - void **set** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Assigns a new value to the given property. If the ``property`` does not exist, nothing will happen.
+
+----
 
 .. _class_Object_method_set_block_signals:
 
@@ -465,11 +541,15 @@ Assigns a new value to the given property. If the ``property`` does not exist, n
 
 If set to ``true``, signal emission is blocked.
 
+----
+
 .. _class_Object_method_set_deferred:
 
 - void **set_deferred** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Assigns a new value to the given property, after the current frame's physics step. This is equivalent to calling :ref:`set<class_Object_method_set>` via :ref:`call_deferred<class_Object_method_call_deferred>`, i.e. ``call_deferred("set", property, value)``.
+
+----
 
 .. _class_Object_method_set_indexed:
 
@@ -483,11 +563,15 @@ Assigns a new value to the property identified by the :ref:`NodePath<class_NodeP
     set_indexed("position:y", -10)
     print(position) # (42, -10)
 
+----
+
 .. _class_Object_method_set_message_translation:
 
 - void **set_message_translation** **(** :ref:`bool<class_bool>` enable **)**
 
 Defines whether the object can translate strings (with calls to :ref:`tr<class_Object_method_tr>`). Enabled by default.
+
+----
 
 .. _class_Object_method_set_meta:
 
@@ -495,11 +579,15 @@ Defines whether the object can translate strings (with calls to :ref:`tr<class_O
 
 Adds or changes a given entry in the object's metadata. Metadata are serialized, and can take any :ref:`Variant<class_Variant>` value.
 
+----
+
 .. _class_Object_method_set_script:
 
 - void **set_script** **(** :ref:`Reference<class_Reference>` script **)**
 
 Assigns a script to the object. Each object can have a single script assigned to it, which are used to extend its functionality.
+
+----
 
 .. _class_Object_method_to_string:
 
@@ -508,6 +596,8 @@ Assigns a script to the object. Each object can have a single script assigned to
 Returns a :ref:`String<class_String>` representing the object. If not overridden, defaults to ``"[ClassName:RID]"``.
 
 Override the method :ref:`_to_string<class_Object_method__to_string>` to customize the :ref:`String<class_String>` representation.
+
+----
 
 .. _class_Object_method_tr:
 

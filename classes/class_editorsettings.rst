@@ -108,11 +108,15 @@ Adds a custom property info to a property. The dictionary must contain: name::re
     
     editor_settings.add_property_info(property_info)
 
+----
+
 .. _class_EditorSettings_method_erase:
 
 - void **erase** **(** :ref:`String<class_String>` property **)**
 
 Erase a given setting (pass full property path).
+
+----
 
 .. _class_EditorSettings_method_get_favorites:
 
@@ -120,9 +124,13 @@ Erase a given setting (pass full property path).
 
 Gets the list of favorite files and directories for this project.
 
+----
+
 .. _class_EditorSettings_method_get_project_metadata:
 
 - :ref:`Variant<class_Variant>` **get_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const
+
+----
 
 .. _class_EditorSettings_method_get_project_settings_dir:
 
@@ -130,15 +138,21 @@ Gets the list of favorite files and directories for this project.
 
 Gets the specific project settings path. Projects all have a unique sub-directory inside the settings path where project specific settings are saved.
 
+----
+
 .. _class_EditorSettings_method_get_recent_dirs:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_recent_dirs** **(** **)** const
 
 Gets the list of recently visited folders in the file dialog for this project.
 
+----
+
 .. _class_EditorSettings_method_get_setting:
 
 - :ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** const
+
+----
 
 .. _class_EditorSettings_method_get_settings_dir:
 
@@ -150,17 +164,25 @@ Gets the global settings path for the engine. Inside this path, you can find som
 
 ``settings/templates`` - Where export templates are located
 
+----
+
 .. _class_EditorSettings_method_has_setting:
 
 - :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** const
+
+----
 
 .. _class_EditorSettings_method_property_can_revert:
 
 - :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
+----
+
 .. _class_EditorSettings_method_property_get_revert:
 
 - :ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
+
+----
 
 .. _class_EditorSettings_method_set_favorites:
 
@@ -168,19 +190,27 @@ Gets the global settings path for the engine. Inside this path, you can find som
 
 Sets the list of favorite files and directories for this project.
 
+----
+
 .. _class_EditorSettings_method_set_initial_value:
 
 - void **set_initial_value** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` update_current **)**
 
+----
+
 .. _class_EditorSettings_method_set_project_metadata:
 
 - void **set_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` data **)**
+
+----
 
 .. _class_EditorSettings_method_set_recent_dirs:
 
 - void **set_recent_dirs** **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**
 
 Sets the list of recently visited folders in the file dialog for this project.
+
+----
 
 .. _class_EditorSettings_method_set_setting:
 

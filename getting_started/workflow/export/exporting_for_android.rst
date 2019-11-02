@@ -77,13 +77,35 @@ Now fill in the following forms in your Android Export Presets:
 
 .. image:: img/editor-export-presets-android.png
 
-- Release: Enter the path to the keystore file you just generated.
-- Release User: Replace with the key alias.
-- Release Password: Key password. Note that the keystore password and the key password currently have to be the same.
+- **Release:** Enter the path to the keystore file you just generated.
+- **Release User:** Replace with the key alias.
+- **Release Password:** Key password. Note that the keystore password and the key password currently have to be the same.
 
-**Now your export_presets.cfg file contains sensitive info;** if using a Version Control System, it is a good idea to remove it from public repositories.
+**Your export_presets.cfg file now contains sensitive information.** If you use
+a version control system, you should remove it from public repositories and add
+it to your ``.gitignore`` file or equivalent.
 
-Don't forget to disable the ``Export With Debug`` button while choosing the APK's name.
+Don't forget to uncheck the **Export With Debug** checkbox while choosing the APK's name.
 
 .. image:: img/export-with-debug-button.png
 
+Optimizing the APK size
+-----------------------
+
+By default, the APK will contain native libraries for both ARMv7 and ARMv8
+architectures. This increases its size significantly. To create a smaller APK,
+uncheck either **Armeabi-v 7a** or **Arm 64 -v 8a** in your project's Android
+export preset. This will create an APK that only contains a library for
+a single architecture. Note that applications targeting ARMv7 can also run on
+ARMv8 devices, but the opposite is not true.
+
+Since August 2019, Google Play requires all applications to be available in
+64-bit form. This means you cannot upload an APK that contains *just* an ARMv7
+library. To solve this, you can upload several APKs to Google Play using its
+`Multiple APK support <https://developer.android.com/google/play/publishing/multiple-apks>`__.
+Each APK should target a single architecture; creating an APK for ARMv7
+and ARMv8 is usually sufficient to cover most devices in use today.
+
+You can optimize the size further by compiling an Android export template with
+only the features you need. See :ref:`doc_optimizing_for_size` for more
+information.

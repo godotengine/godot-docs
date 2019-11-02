@@ -18,6 +18,15 @@ Brief Description
 
 Vertical slider.
 
+Properties
+----------
+
++-----------------------+-----------------------+----------+
+| :ref:`int<class_int>` | size_flags_horizontal | **O:** 0 |
++-----------------------+-----------------------+----------+
+| :ref:`int<class_int>` | size_flags_vertical   | **O:** 1 |
++-----------------------+-----------------------+----------+
+
 Theme Properties
 ----------------
 

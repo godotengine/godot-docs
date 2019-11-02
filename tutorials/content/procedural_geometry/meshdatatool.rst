@@ -23,8 +23,8 @@ before re-using the MeshDataTool
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-  var mdt = MeshDataTool.new()
-  mdt.create_from_surface(mesh)
+    var mdt = MeshDataTool.new()
+    mdt.create_from_surface(mesh)
 
 ``create_from_surface()`` uses the vertex arrays from the ArrayMesh to calculate two additional arrays,
 one for edges and one for faces.
@@ -43,10 +43,10 @@ To access information from these arrays you use a function of the form ``get_***
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-  mdt.get_vertex_count() # returns number of vertices in vertex array
-  mdt.get_vertex_faces(0) # returns array of faces that contain vertex[0]
-  mdt.get_face_normal(1) # calculates and returns face normal
-  mdt.get_edge_vertex(10, 1) # returns the second vertex comprsing edge at index 10
+    mdt.get_vertex_count() # Returns number of vertices in vertex array.
+    mdt.get_vertex_faces(0) # Returns array of faces that contain vertex[0].
+    mdt.get_face_normal(1) # Calculates and returns face normal.
+    mdt.get_edge_vertex(10, 1) # Returns the second vertex comprsing edge at index 10.
 
 What you choose to do with these functions is up to you. A common use case is to iterate over all vertices
 and transform them in some way:
@@ -54,10 +54,10 @@ and transform them in some way:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-  for i in range(get_vertex_count):
-    var vert = mdt.get_vertex(i)
-    vert *= 2.0 # scales the vertex by doubling size
-    mdt.set_vertex(i, vert)
+    for i in range(get_vertex_count):
+        var vert = mdt.get_vertex(i)
+        vert *= 2.0 # Scales the vertex by doubling size.
+        mdt.set_vertex(i, vert)
 
 Finally, ``commit_to_surface()`` adds a new surface to the ArrayMesh. So if you are dynamically
 updating an existing ArrayMesh, first delete the existing surface before adding a new one.
@@ -65,8 +65,8 @@ updating an existing ArrayMesh, first delete the existing surface before adding 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-  mesh.surface_remove(0) # delete the first surface of the mesh
-  mdt.commit_to_surface(mesh)
+    mesh.surface_remove(0) # Deletes the first surface of the mesh.
+    mdt.commit_to_surface(mesh)
 
 Below is a complete example that creates a pulsing blob complete with new normals and vertex colors.
 
@@ -79,41 +79,40 @@ Below is a complete example that creates a pulsing blob complete with new normal
     var mdt = MeshDataTool.new()
 
     func _ready():
-	    sn.period = 0.7
-	
-	    mdt.create_from_surface(mesh, 0)
-	
-	    for i in range(mdt.get_vertex_count()):
-		    var vertex = mdt.get_vertex(i).normalized()
-		    # Push out vertex by noise
-		    vertex = vertex * (sn.get_noise_3dv(vertex)*0.5+0.75)
-		    mdt.set_vertex(i, vertex)
+        sn.period = 0.7
 
-    	# Calculate vertex normals, face-by-face
-	    for i in range(mdt.get_face_count()):
-		    # Get the index in the vertex array
-		    var a = mdt.get_face_vertex(i, 0)
-		    var b = mdt.get_face_vertex(i, 1)
-		    var c = mdt.get_face_vertex(i, 2)
-		    # Get vertex position using vertex index
-		    var ap = mdt.get_vertex(a)
-		    var bp = mdt.get_vertex(b)
-		    var cp = mdt.get_vertex(c)
-		    # Calculate face normal
-		    var n = (bp - cp).cross(ap - bp).normalized()
-		    # Add face normal to current vertex normal
-		    # this will not result in perfect normals, but it will be close
-		    mdt.set_vertex_normal(a, n + mdt.get_vertex_normal(a))
-		    mdt.set_vertex_normal(b, n + mdt.get_vertex_normal(b))
-		    mdt.set_vertex_normal(c, n + mdt.get_vertex_normal(c))
+        mdt.create_from_surface(mesh, 0)
 
-    	# Run through vertices one last time to normalize normals and
-	    # set color to normal
-	    for i in range(mdt.get_vertex_count()):
-		    var v = mdt.get_vertex_normal(i).normalized()
-		    mdt.set_vertex_normal(i, v)
-		    mdt.set_vertex_color(i, Color(v.x, v.y, v.z))
+        for i in range(mdt.get_vertex_count()):
+            var vertex = mdt.get_vertex(i).normalized()
+            # Push out vertex by noise.
+            vertex = vertex * (sn.get_noise_3dv(vertex) * 0.5 + 0.75)
+            mdt.set_vertex(i, vertex)
 
-	    mesh.surface_remove(0)
-	    mdt.commit_to_surface(mesh)
+        # Calculate vertex normals, face-by-face.
+        for i in range(mdt.get_face_count()):
+            # Get the index in the vertex array.
+            var a = mdt.get_face_vertex(i, 0)
+            var b = mdt.get_face_vertex(i, 1)
+            var c = mdt.get_face_vertex(i, 2)
+            # Get vertex position using vertex index.
+            var ap = mdt.get_vertex(a)
+            var bp = mdt.get_vertex(b)
+            var cp = mdt.get_vertex(c)
+            # Calculate face normal.
+            var n = (bp - cp).cross(ap - bp).normalized()
+            # Add face normal to current vertex normal.
+            # This will not result in perfect normals, but it will be close.
+            mdt.set_vertex_normal(a, n + mdt.get_vertex_normal(a))
+            mdt.set_vertex_normal(b, n + mdt.get_vertex_normal(b))
+            mdt.set_vertex_normal(c, n + mdt.get_vertex_normal(c))
 
+        # Run through vertices one last time to normalize normals and
+        # set color to normal.
+        for i in range(mdt.get_vertex_count()):
+            var v = mdt.get_vertex_normal(i).normalized()
+            mdt.set_vertex_normal(i, v)
+            mdt.set_vertex_color(i, Color(v.x, v.y, v.z))
+
+        mesh.surface_remove(0)
+        mdt.commit_to_surface(mesh)

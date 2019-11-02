@@ -73,6 +73,10 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`normalized<class_Vector2_method_normalized>` **(** **)**                                                                                                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`posmod<class_Vector2_method_posmod>` **(** :ref:`float<class_float>` mod **)**                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`posmodv<class_Vector2_method_posmodv>` **(** :ref:`Vector2<class_Vector2>` modv **)**                                                                                                                          |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`project<class_Vector2_method_project>` **(** :ref:`Vector2<class_Vector2>` b **)**                                                                                                                             |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`reflect<class_Vector2_method_reflect>` **(** :ref:`Vector2<class_Vector2>` n **)**                                                                                                                             |
@@ -80,6 +84,8 @@ Methods
 | :ref:`Vector2<class_Vector2>` | :ref:`rotated<class_Vector2_method_rotated>` **(** :ref:`float<class_float>` phi **)**                                                                                                                               |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`round<class_Vector2_method_round>` **(** **)**                                                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`sign<class_Vector2_method_sign>` **(** **)**                                                                                                                                                                   |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`slerp<class_Vector2_method_slerp>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**                                                                                                    |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -92,6 +98,10 @@ Methods
 
 Constants
 ---------
+
+.. _class_Vector2_constant_AXIS_X:
+
+.. _class_Vector2_constant_AXIS_Y:
 
 .. _class_Vector2_constant_ZERO:
 
@@ -107,11 +117,15 @@ Constants
 
 .. _class_Vector2_constant_DOWN:
 
+- **AXIS_X** = **0** --- Enumerated value for the X axis.
+
+- **AXIS_Y** = **1** --- Enumerated value for the Y axis.
+
 - **ZERO** = **Vector2( 0, 0 )** --- Zero vector.
 
 - **ONE** = **Vector2( 1, 1 )** --- One vector.
 
-- **INF** = **Vector2( inf, inf )** --- Infinite vector.
+- **INF** = **Vector2( inf, inf )** --- Infinity vector.
 
 - **LEFT** = **Vector2( -1, 0 )** --- Left unit vector.
 
@@ -124,7 +138,7 @@ Constants
 Description
 -----------
 
-2-element structure that can be used to represent positions in 2d space or any other pair of numeric values.
+2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
 
 Tutorials
 ---------
@@ -143,6 +157,8 @@ Property Descriptions
 +-----------+-----+
 
 The vector's X component. Also accessible by using the index position ``[0]``.
+
+----
 
 .. _class_Vector2_property_y:
 
@@ -163,11 +179,15 @@ Method Descriptions
 
 Constructs a new Vector2 from the given ``x`` and ``y``.
 
+----
+
 .. _class_Vector2_method_abs:
 
 - :ref:`Vector2<class_Vector2>` **abs** **(** **)**
 
 Returns a new vector with all components in absolute values (i.e. positive).
+
+----
 
 .. _class_Vector2_method_angle:
 
@@ -177,11 +197,15 @@ Returns the vector's angle in radians with respect to the X axis, or ``(1, 0)`` 
 
 Equivalent to the result of :ref:`@GDScript.atan2<class_@GDScript_method_atan2>` when called with the vector's :ref:`x<class_Vector2_property_x>` and :ref:`y<class_Vector2_property_y>` as parameters: ``atan2(x, y)``.
 
+----
+
 .. _class_Vector2_method_angle_to:
 
 - :ref:`float<class_float>` **angle_to** **(** :ref:`Vector2<class_Vector2>` to **)**
 
 Returns the angle in radians between the two vectors.
+
+----
 
 .. _class_Vector2_method_angle_to_point:
 
@@ -189,11 +213,15 @@ Returns the angle in radians between the two vectors.
 
 Returns the angle in radians between the line connecting the two points and the X coordinate.
 
+----
+
 .. _class_Vector2_method_aspect:
 
 - :ref:`float<class_float>` **aspect** **(** **)**
 
 Returns the ratio of :ref:`x<class_Vector2_property_x>` to :ref:`y<class_Vector2_property_y>`.
+
+----
 
 .. _class_Vector2_method_bounce:
 
@@ -201,11 +229,15 @@ Returns the ratio of :ref:`x<class_Vector2_property_x>` to :ref:`y<class_Vector2
 
 Returns the vector "bounced off" from a plane defined by the given normal.
 
+----
+
 .. _class_Vector2_method_ceil:
 
 - :ref:`Vector2<class_Vector2>` **ceil** **(** **)**
 
 Returns the vector with all components rounded up.
+
+----
 
 .. _class_Vector2_method_clamped:
 
@@ -213,11 +245,15 @@ Returns the vector with all components rounded up.
 
 Returns the vector with a maximum length.
 
+----
+
 .. _class_Vector2_method_cross:
 
 - :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_Vector2>` with **)**
 
 Returns the 2-dimensional analog of the cross product with the given vector.
+
+----
 
 .. _class_Vector2_method_cubic_interpolate:
 
@@ -225,11 +261,15 @@ Returns the 2-dimensional analog of the cross product with the given vector.
 
 Cubically interpolates between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
+----
+
 .. _class_Vector2_method_direction_to:
 
 - :ref:`Vector2<class_Vector2>` **direction_to** **(** :ref:`Vector2<class_Vector2>` b **)**
 
 Returns the normalized vector pointing from this vector to ``b``.
+
+----
 
 .. _class_Vector2_method_distance_squared_to:
 
@@ -237,11 +277,15 @@ Returns the normalized vector pointing from this vector to ``b``.
 
 Returns the squared distance to vector ``b``. Prefer this function over :ref:`distance_to<class_Vector2_method_distance_to>` if you need to sort vectors or need the squared distance for some formula.
 
+----
+
 .. _class_Vector2_method_distance_to:
 
 - :ref:`float<class_float>` **distance_to** **(** :ref:`Vector2<class_Vector2>` to **)**
 
 Returns the distance to vector ``b``.
+
+----
 
 .. _class_Vector2_method_dot:
 
@@ -249,11 +293,15 @@ Returns the distance to vector ``b``.
 
 Returns the dot product with vector ``b``.
 
+----
+
 .. _class_Vector2_method_floor:
 
 - :ref:`Vector2<class_Vector2>` **floor** **(** **)**
 
 Returns the vector with all components rounded down.
+
+----
 
 .. _class_Vector2_method_is_normalized:
 
@@ -261,11 +309,15 @@ Returns the vector with all components rounded down.
 
 Returns ``true`` if the vector is normalized.
 
+----
+
 .. _class_Vector2_method_length:
 
 - :ref:`float<class_float>` **length** **(** **)**
 
 Returns the vector's length.
+
+----
 
 .. _class_Vector2_method_length_squared:
 
@@ -273,11 +325,15 @@ Returns the vector's length.
 
 Returns the vector's length squared. Prefer this method over :ref:`length<class_Vector2_method_length>` if you need to sort vectors or need the squared length for some formula.
 
+----
+
 .. _class_Vector2_method_linear_interpolate:
 
 - :ref:`Vector2<class_Vector2>` **linear_interpolate** **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**
 
 Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
+
+----
 
 .. _class_Vector2_method_move_toward:
 
@@ -285,11 +341,31 @@ Returns the result of the linear interpolation between this vector and ``b`` by 
 
 Moves the vector toward ``to`` by the fixed ``delta`` amount.
 
+----
+
 .. _class_Vector2_method_normalized:
 
 - :ref:`Vector2<class_Vector2>` **normalized** **(** **)**
 
 Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
+
+----
+
+.. _class_Vector2_method_posmod:
+
+- :ref:`Vector2<class_Vector2>` **posmod** **(** :ref:`float<class_float>` mod **)**
+
+Returns a vector composed of the ``fposmod`` of this vector's components and ``mod``.
+
+----
+
+.. _class_Vector2_method_posmodv:
+
+- :ref:`Vector2<class_Vector2>` **posmodv** **(** :ref:`Vector2<class_Vector2>` modv **)**
+
+Returns a vector composed of the ``fposmod`` of this vector's components and ``modv``'s components.
+
+----
 
 .. _class_Vector2_method_project:
 
@@ -297,11 +373,15 @@ Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
 Returns the vector projected onto the vector ``b``.
 
+----
+
 .. _class_Vector2_method_reflect:
 
 - :ref:`Vector2<class_Vector2>` **reflect** **(** :ref:`Vector2<class_Vector2>` n **)**
 
 Returns the vector reflected from a plane defined by the given normal.
+
+----
 
 .. _class_Vector2_method_rotated:
 
@@ -309,11 +389,23 @@ Returns the vector reflected from a plane defined by the given normal.
 
 Returns the vector rotated by ``phi`` radians. See also :ref:`@GDScript.deg2rad<class_@GDScript_method_deg2rad>`.
 
+----
+
 .. _class_Vector2_method_round:
 
 - :ref:`Vector2<class_Vector2>` **round** **(** **)**
 
 Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
+
+----
+
+.. _class_Vector2_method_sign:
+
+- :ref:`Vector2<class_Vector2>` **sign** **(** **)**
+
+Returns the vector with each component set to one or negative one, depending on the signs of the components.
+
+----
 
 .. _class_Vector2_method_slerp:
 
@@ -323,17 +415,23 @@ Returns the result of spherical linear interpolation between this vector and ``b
 
 **Note:** Both vectors must be normalized.
 
+----
+
 .. _class_Vector2_method_slide:
 
 - :ref:`Vector2<class_Vector2>` **slide** **(** :ref:`Vector2<class_Vector2>` n **)**
 
 Returns the component of the vector along a plane defined by the given normal.
 
+----
+
 .. _class_Vector2_method_snapped:
 
 - :ref:`Vector2<class_Vector2>` **snapped** **(** :ref:`Vector2<class_Vector2>` by **)**
 
 Returns the vector snapped to a grid with the given size.
+
+----
 
 .. _class_Vector2_method_tangent:
 

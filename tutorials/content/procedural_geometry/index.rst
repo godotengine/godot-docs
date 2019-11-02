@@ -1,4 +1,4 @@
-Procedural Geometry
+Procedural geometry
 ===================
 
 There are many ways to procedurally generate geometry in Godot. In this tutorial series

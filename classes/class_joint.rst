@@ -55,6 +55,8 @@ Property Descriptions
 
 If ``true``, the two bodies of the nodes are not able to collide with each other.
 
+----
+
 .. _class_Joint_property_nodes/node_a:
 
 - :ref:`NodePath<class_NodePath>` **nodes/node_a**
@@ -69,6 +71,8 @@ If ``true``, the two bodies of the nodes are not able to collide with each other
 
 The node attached to the first side (A) of the joint.
 
+----
+
 .. _class_Joint_property_nodes/node_b:
 
 - :ref:`NodePath<class_NodePath>` **nodes/node_b**
@@ -82,6 +86,8 @@ The node attached to the first side (A) of the joint.
 +-----------+-------------------+
 
 The node attached to the second side (B) of the joint.
+
+----
 
 .. _class_Joint_property_solver/priority:
 

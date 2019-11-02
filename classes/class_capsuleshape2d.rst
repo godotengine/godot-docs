@@ -49,6 +49,8 @@ Property Descriptions
 
 The capsule's height.
 
+----
+
 .. _class_CapsuleShape2D_property_radius:
 
 - :ref:`float<class_float>` **radius**

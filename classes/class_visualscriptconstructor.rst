@@ -43,13 +43,19 @@ Method Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **get_constructor** **(** **)** const
 
+----
+
 .. _class_VisualScriptConstructor_method_get_constructor_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_constructor_type** **(** **)** const
 
+----
+
 .. _class_VisualScriptConstructor_method_set_constructor:
 
 - void **set_constructor** **(** :ref:`Dictionary<class_Dictionary>` constructor **)**
+
+----
 
 .. _class_VisualScriptConstructor_method_set_constructor_type:
 

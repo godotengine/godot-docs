@@ -111,11 +111,15 @@ Method Descriptions
 
 Gets the options and default values for the preset at this index. Returns an Array of Dictionaries with the following keys: ``name``, ``default_value``, ``property_hint`` (optional), ``hint_string`` (optional), ``usage`` (optional).
 
+----
+
 .. _class_EditorImportPlugin_method_get_import_order:
 
 - :ref:`int<class_int>` **get_import_order** **(** **)** virtual
 
 Gets the order of this importer to be run when importing resources. Higher values will be called later. Use this to ensure the importer runs after the dependencies are already imported.
+
+----
 
 .. _class_EditorImportPlugin_method_get_importer_name:
 
@@ -123,9 +127,13 @@ Gets the order of this importer to be run when importing resources. Higher value
 
 Gets the unique name of the importer.
 
+----
+
 .. _class_EditorImportPlugin_method_get_option_visibility:
 
 - :ref:`bool<class_bool>` **get_option_visibility** **(** :ref:`String<class_String>` option, :ref:`Dictionary<class_Dictionary>` options **)** virtual
+
+----
 
 .. _class_EditorImportPlugin_method_get_preset_count:
 
@@ -133,11 +141,15 @@ Gets the unique name of the importer.
 
 Gets the number of initial presets defined by the plugin. Use :ref:`get_import_options<class_EditorImportPlugin_method_get_import_options>` to get the default options for the preset and :ref:`get_preset_name<class_EditorImportPlugin_method_get_preset_name>` to get the name of the preset.
 
+----
+
 .. _class_EditorImportPlugin_method_get_preset_name:
 
 - :ref:`String<class_String>` **get_preset_name** **(** :ref:`int<class_int>` preset **)** virtual
 
 Gets the name of the options preset at this index.
+
+----
 
 .. _class_EditorImportPlugin_method_get_priority:
 
@@ -145,11 +157,15 @@ Gets the name of the options preset at this index.
 
 Gets the priority of this plugin for the recognized extension. Higher priority plugins will be preferred. The default priority is ``1.0``.
 
+----
+
 .. _class_EditorImportPlugin_method_get_recognized_extensions:
 
 - :ref:`Array<class_Array>` **get_recognized_extensions** **(** **)** virtual
 
 Gets the list of file extensions to associate with this loader (case-insensitive). e.g. ``["obj"]``.
+
+----
 
 .. _class_EditorImportPlugin_method_get_resource_type:
 
@@ -157,17 +173,23 @@ Gets the list of file extensions to associate with this loader (case-insensitive
 
 Gets the Godot resource type associated with this loader. e.g. ``"Mesh"`` or ``"Animation"``.
 
+----
+
 .. _class_EditorImportPlugin_method_get_save_extension:
 
 - :ref:`String<class_String>` **get_save_extension** **(** **)** virtual
 
 Gets the extension used to save this resource in the ``.import`` directory.
 
+----
+
 .. _class_EditorImportPlugin_method_get_visible_name:
 
 - :ref:`String<class_String>` **get_visible_name** **(** **)** virtual
 
 Gets the name to display in the import window.
+
+----
 
 .. _class_EditorImportPlugin_method_import:
 

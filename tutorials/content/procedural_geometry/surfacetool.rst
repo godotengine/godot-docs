@@ -4,9 +4,9 @@ Using the SurfaceTool
 =====================
 
 The :ref:`SurfaceTool <doc_surfacetool>` provides a useful interface for constructing geometry.
-The interface is similar to the :ref:`ImmediateGeometry <class_immediategeometry>` node. You 
-set each per-vertex attribute (e.g. normal, uv, color) and then when you add a vertex it 
-captures the attributes. 
+The interface is similar to the :ref:`ImmediateGeometry <class_immediategeometry>` node. You
+set each per-vertex attribute (e.g. normal, uv, color) and then when you add a vertex it
+captures the attributes.
 
 The SurfaceTool also provides some useful helper functions like ``index()`` and ``generate_normals()``.
 
@@ -14,12 +14,12 @@ Attributes are added before each vertex is added:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    
-    st.add_normal() # overwritten by normal below
-    st.add_normal() # added to next vertex
-    st.add_color() # added to next vertex
-    st.add_vertex() # captures normal and color above
-    st.add_normal() # normal never added to a vertex
+
+    st.add_normal() # Overwritten by normal below.
+    st.add_normal() # Added to next vertex.
+    st.add_color() # Added to next vertex.
+    st.add_vertex() # Captures normal and color above.
+    st.add_normal() # Normal never added to a vertex.
 
 When finished generating your geometry with the :ref:`SurfaceTool <class_surfacetool>`
 call ``commit()`` to finished generating the mesh. If an :ref:`ArrayMesh <class_ArrayMesh>` is passed
@@ -29,9 +29,9 @@ in, ``commit()`` returns an ArrayMesh.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-  st.commit(mesh)
-  #or 
-  var mesh = st.commit()
+    st.commit(mesh)
+    # Or:
+    var mesh = st.commit()
 
 Code creates a triangle with indices
 
@@ -39,11 +39,11 @@ Code creates a triangle with indices
  .. code-tab:: gdscript GDScript
 
     var st = SurfaceTool.new()
-    
+
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
 
     # Prepare attributes for add_vertex.
-    st.add_normal(Vector3(0, 0, 1)
+    st.add_normal(Vector3(0, 0, 1))
     st.add_uv(Vector2(0, 0))
     # Call last for each vertex, adds the above attributes.
     st.add_vertex(Vector3(-1, -1, 0))
@@ -61,23 +61,23 @@ Code creates a triangle with indices
 
 You can optionally add an index array, either by calling ``add_index()`` and adding
 vertices to the index array or by calling ``index()`` which shrinks the vertex array
-to remove duplicate vertices. 
+to remove duplicate vertices.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-  # creates a quad from four corner vertices
-  # add_index does not need to be called before add_vertex
-  st.add_index(0)
-  st.add_index(1)
-  st.add_index(2)
+    # Creates a quad from four corner vertices.
+    # Add_index does not need to be called before add_vertex.
+    st.add_index(0)
+    st.add_index(1)
+    st.add_index(2)
 
-  st.add_index(1)
-  st.add_index(3)
-  st.add_index(2)
+    st.add_index(1)
+    st.add_index(3)
+    st.add_index(2)
 
-  # or alternatively
-  st.index()
+    # Or alternatively:
+    st.index()
 
 Similarly, if you have an index array, but you want each vertex to be unique (e.g. because
 you want to use unique normals or colors per face instead of per-vertex), you can call ``deindex()``.
@@ -85,7 +85,7 @@ you want to use unique normals or colors per face instead of per-vertex), you ca
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-  st.deindex()
+    st.deindex()
 
 If you don't add custom normals yourself, you can add them using ``generate_normals()``. The same goes for tangents.
 

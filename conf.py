@@ -12,6 +12,7 @@ needs_sphinx = '1.3'
 # Sphinx extension module names and templates location
 sys.path.append(os.path.abspath('extensions'))
 extensions = ['gdscript', 'sphinx_tabs.tabs', 'sphinx.ext.imgmath']
+
 templates_path = ['_templates']
 
 # You can specify multiple suffix as a list of string: ['.rst', '.md']

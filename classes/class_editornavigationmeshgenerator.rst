@@ -34,6 +34,8 @@ Method Descriptions
 
 - void **bake** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh, :ref:`Node<class_Node>` root_node **)**
 
+----
+
 .. _class_EditorNavigationMeshGenerator_method_clear:
 
 - void **clear** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)**

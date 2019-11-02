@@ -18,6 +18,15 @@ Brief Description
 
 A simple interface to create a peer-to-peer mesh network composed of :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` that is compatible with the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
+Properties
+----------
+
++-----------------------------------------------------------------+------------------------+--------------+
+| :ref:`bool<class_bool>`                                         | refuse_new_connections | **O:** false |
++-----------------------------------------------------------------+------------------------+--------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | **O:** 2     |
++-----------------------------------------------------------------+------------------------+--------------+
+
 Methods
 -------
 
@@ -57,11 +66,15 @@ Add a new peer to the mesh with the given ``peer_id``. The :ref:`WebRTCPeerConne
 
 Three channels will be created for reliable, unreliable, and ordered transport. The value of ``unreliable_lifetime`` will be passed to the ``maxPacketLifetime`` option when creating unreliable and ordered channels (see :ref:`WebRTCPeerConnection.create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>`).
 
+----
+
 .. _class_WebRTCMultiplayer_method_close:
 
 - void **close** **(** **)**
 
 Close all the add peer connections and channels, freeing all resources.
+
+----
 
 .. _class_WebRTCMultiplayer_method_get_peer:
 
@@ -69,17 +82,23 @@ Close all the add peer connections and channels, freeing all resources.
 
 Return a dictionary representation of the peer with given ``peer_id`` with three keys. ``connection`` containing the :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` to this peer, ``channels`` an array of three :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`, and ``connected`` a boolean representing if the peer connection is currently connected (all three channels are open).
 
+----
+
 .. _class_WebRTCMultiplayer_method_get_peers:
 
 - :ref:`Dictionary<class_Dictionary>` **get_peers** **(** **)**
 
 Returns a dictionary which keys are the peer ids and values the peer representation as in :ref:`get_peer<class_WebRTCMultiplayer_method_get_peer>`
 
+----
+
 .. _class_WebRTCMultiplayer_method_has_peer:
 
 - :ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` peer_id **)**
 
 Returns ``true`` if the given ``peer_id`` is in the peers map (it might not be connected though).
+
+----
 
 .. _class_WebRTCMultiplayer_method_initialize:
 
@@ -90,6 +109,8 @@ Initialize the multiplayer peer with the given ``peer_id`` (must be between 1 an
 If ``server_compatibilty`` is ``false`` (default), the multiplayer peer will be immediately in state :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTED<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTED>` and :ref:`NetworkedMultiplayerPeer.connection_succeeded<class_NetworkedMultiplayerPeer_signal_connection_succeeded>` will not be emitted.
 
 If ``server_compatibilty`` is ``true`` the peer will suppress all :ref:`NetworkedMultiplayerPeer.peer_connected<class_NetworkedMultiplayerPeer_signal_peer_connected>` signals until a peer with id :ref:`NetworkedMultiplayerPeer.TARGET_PEER_SERVER<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_SERVER>` connects and then emit :ref:`NetworkedMultiplayerPeer.connection_succeeded<class_NetworkedMultiplayerPeer_signal_connection_succeeded>`. After that the signal :ref:`NetworkedMultiplayerPeer.peer_connected<class_NetworkedMultiplayerPeer_signal_peer_connected>` will be emitted for every already connected peer, and any new peer that might connect. If the server peer disconnects after that, signal :ref:`NetworkedMultiplayerPeer.server_disconnected<class_NetworkedMultiplayerPeer_signal_server_disconnected>` will be emitted and state will become :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTED<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTED>`.
+
+----
 
 .. _class_WebRTCMultiplayer_method_remove_peer:
 

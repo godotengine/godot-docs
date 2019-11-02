@@ -108,6 +108,8 @@ Property Descriptions
 
 Number of particles emitted in one emission cycle.
 
+----
+
 .. _class_Particles2D_property_draw_order:
 
 - :ref:`DrawOrder<enum_Particles2D_DrawOrder>` **draw_order**
@@ -121,6 +123,8 @@ Number of particles emitted in one emission cycle.
 +-----------+-----------------------+
 
 Particle draw order. Uses ``DRAW_ORDER_*`` values.
+
+----
 
 .. _class_Particles2D_property_emitting:
 
@@ -136,6 +140,8 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values.
 
 If ``true``, particles are being emitted.
 
+----
+
 .. _class_Particles2D_property_explosiveness:
 
 - :ref:`float<class_float>` **explosiveness**
@@ -149,6 +155,8 @@ If ``true``, particles are being emitted.
 +-----------+--------------------------------+
 
 How rapidly particles in an emission cycle are emitted. If greater than ``0``, there will be a gap in emissions before the next cycle begins.
+
+----
 
 .. _class_Particles2D_property_fixed_fps:
 
@@ -164,6 +172,8 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 
 The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
 
+----
+
 .. _class_Particles2D_property_fract_delta:
 
 - :ref:`bool<class_bool>` **fract_delta**
@@ -177,6 +187,8 @@ The particle system's frame rate is fixed to a value. For instance, changing the
 +-----------+-----------------------------+
 
 If ``true``, results in fractional delta calculation which has a smoother particles display effect.
+
+----
 
 .. _class_Particles2D_property_lifetime:
 
@@ -192,6 +204,8 @@ If ``true``, results in fractional delta calculation which has a smoother partic
 
 Amount of time each particle will exist.
 
+----
+
 .. _class_Particles2D_property_local_coords:
 
 - :ref:`bool<class_bool>` **local_coords**
@@ -206,6 +220,8 @@ Amount of time each particle will exist.
 
 If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates.
 
+----
+
 .. _class_Particles2D_property_normal_map:
 
 - :ref:`Texture<class_Texture>` **normal_map**
@@ -217,6 +233,8 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 +----------+-----------------------+
 
 Normal map to be used for the :ref:`texture<class_Particles2D_property_texture>` property.
+
+----
 
 .. _class_Particles2D_property_one_shot:
 
@@ -232,6 +250,8 @@ Normal map to be used for the :ref:`texture<class_Particles2D_property_texture>`
 
 If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emission will stop at the cycle's end.
 
+----
+
 .. _class_Particles2D_property_preprocess:
 
 - :ref:`float<class_float>` **preprocess**
@@ -246,6 +266,8 @@ If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emi
 
 Particle system starts as if it had already run for this many seconds.
 
+----
+
 .. _class_Particles2D_property_process_material:
 
 - :ref:`Material<class_Material>` **process_material**
@@ -257,6 +279,8 @@ Particle system starts as if it had already run for this many seconds.
 +----------+-----------------------------+
 
 :ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
+
+----
 
 .. _class_Particles2D_property_randomness:
 
@@ -272,6 +296,8 @@ Particle system starts as if it had already run for this many seconds.
 
 Emission lifetime randomness ratio.
 
+----
+
 .. _class_Particles2D_property_speed_scale:
 
 - :ref:`float<class_float>` **speed_scale**
@@ -286,6 +312,8 @@ Emission lifetime randomness ratio.
 
 Particle system's running speed scaling ratio. A value of ``0`` can be used to pause the particles.
 
+----
+
 .. _class_Particles2D_property_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
@@ -297,6 +325,8 @@ Particle system's running speed scaling ratio. A value of ``0`` can be used to p
 +----------+--------------------+
 
 Particle texture. If ``null``, particles will be squares.
+
+----
 
 .. _class_Particles2D_property_visibility_rect:
 
@@ -320,6 +350,8 @@ Method Descriptions
 - :ref:`Rect2<class_Rect2>` **capture_rect** **(** **)** const
 
 Returns a rectangle containing the positions of all existing particles.
+
+----
 
 .. _class_Particles2D_method_restart:
 

@@ -49,11 +49,15 @@ Method Descriptions
 
 Returns a decoded :ref:`PoolByteArray<class_PoolByteArray>` corresponding to the Base64-encoded string ``base64_str``.
 
+----
+
 .. _class_Marshalls_method_base64_to_utf8:
 
 - :ref:`String<class_String>` **base64_to_utf8** **(** :ref:`String<class_String>` base64_str **)**
 
 Returns a decoded string corresponding to the Base64-encoded string ``base64_str``.
+
+----
 
 .. _class_Marshalls_method_base64_to_variant:
 
@@ -63,17 +67,23 @@ Returns a decoded :ref:`Variant<class_Variant>` corresponding to the Base64-enco
 
 **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
+----
+
 .. _class_Marshalls_method_raw_to_base64:
 
 - :ref:`String<class_String>` **raw_to_base64** **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**
 
 Returns a Base64-encoded string of a given :ref:`PoolByteArray<class_PoolByteArray>`.
 
+----
+
 .. _class_Marshalls_method_utf8_to_base64:
 
 - :ref:`String<class_String>` **utf8_to_base64** **(** :ref:`String<class_String>` utf8_str **)**
 
 Returns a Base64-encoded string of the UTF-8 string ``utf8_str``.
+
+----
 
 .. _class_Marshalls_method_variant_to_base64:
 

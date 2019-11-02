@@ -61,6 +61,8 @@ Method Descriptions
 
 Fit a child control in a given rect. This is mainly a helper for creating custom container classes.
 
+----
+
 .. _class_Container_method_queue_sort:
 
 - void **queue_sort** **(** **)**

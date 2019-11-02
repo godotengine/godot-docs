@@ -64,6 +64,8 @@ enum **ResolverStatus**:
 
 - **RESOLVER_STATUS_ERROR** = **3** --- DNS hostname resolver status: Error.
 
+----
+
 .. _enum_IP_Type:
 
 .. _class_IP_constant_TYPE_NONE:
@@ -109,17 +111,23 @@ Method Descriptions
 
 Removes all of a ``hostname``'s cached references. If no ``hostname`` is given, all cached IP addresses are removed.
 
+----
+
 .. _class_IP_method_erase_resolve_item:
 
 - void **erase_resolve_item** **(** :ref:`int<class_int>` id **)**
 
 Removes a given item ``id`` from the queue. This should be used to free a queue after it has completed to enable more queries to happen.
 
+----
+
 .. _class_IP_method_get_local_addresses:
 
 - :ref:`Array<class_Array>` **get_local_addresses** **(** **)** const
 
 Returns all of the user's current IPv4 and IPv6 addresses as an array.
+
+----
 
 .. _class_IP_method_get_local_interfaces:
 
@@ -138,11 +146,15 @@ Each adapter is a dictionary of the form:
         "addresses": ["192.168.1.101"], # An array of IP addresses associated to this interface.
     }
 
+----
+
 .. _class_IP_method_get_resolve_item_address:
 
 - :ref:`String<class_String>` **get_resolve_item_address** **(** :ref:`int<class_int>` id **)** const
 
 Returns a queued hostname's IP address, given its queue ``id``. Returns an empty string on error or if resolution hasn't happened yet (see :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>`).
+
+----
 
 .. _class_IP_method_get_resolve_item_status:
 
@@ -150,11 +162,15 @@ Returns a queued hostname's IP address, given its queue ``id``. Returns an empty
 
 Returns a queued hostname's status as a ``RESOLVER_STATUS_*`` constant, given its queue ``id``.
 
+----
+
 .. _class_IP_method_resolve_hostname:
 
 - :ref:`String<class_String>` **resolve_hostname** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 
 Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type method). The address type returned depends on the ``TYPE_*`` constant given as ``ip_type``.
+
+----
 
 .. _class_IP_method_resolve_hostname_queue_item:
 

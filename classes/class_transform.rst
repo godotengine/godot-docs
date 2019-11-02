@@ -104,6 +104,8 @@ Property Descriptions
 
 The basis is a matrix containing 3 :ref:`Vector3<class_Vector3>` as its columns: X axis, Y axis, and Z axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 
+----
+
 .. _class_Transform_property_origin:
 
 - :ref:`Vector3<class_Vector3>` **origin**
@@ -123,21 +125,31 @@ Method Descriptions
 
 Constructs the Transform from four :ref:`Vector3<class_Vector3>`. Each axis corresponds to local basis vectors (some of which may be scaled).
 
+----
+
 - :ref:`Transform<class_Transform>` **Transform** **(** :ref:`Basis<class_Basis>` basis, :ref:`Vector3<class_Vector3>` origin **)**
 
 Constructs the Transform from a :ref:`Basis<class_Basis>` and :ref:`Vector3<class_Vector3>`.
+
+----
 
 - :ref:`Transform<class_Transform>` **Transform** **(** :ref:`Transform2D<class_Transform2D>` from **)**
 
 Constructs the Transform from a :ref:`Transform2D<class_Transform2D>`.
 
+----
+
 - :ref:`Transform<class_Transform>` **Transform** **(** :ref:`Quat<class_Quat>` from **)**
 
 Constructs the Transform from a :ref:`Quat<class_Quat>`. The origin will be Vector3(0, 0, 0).
 
+----
+
 - :ref:`Transform<class_Transform>` **Transform** **(** :ref:`Basis<class_Basis>` from **)**
 
 Constructs the Transform from a :ref:`Basis<class_Basis>`. The origin will be Vector3(0, 0, 0).
+
+----
 
 .. _class_Transform_method_affine_inverse:
 
@@ -145,17 +157,23 @@ Constructs the Transform from a :ref:`Basis<class_Basis>`. The origin will be Ve
 
 Returns the inverse of the transform, under the assumption that the transformation is composed of rotation, scaling and translation.
 
+----
+
 .. _class_Transform_method_interpolate_with:
 
 - :ref:`Transform<class_Transform>` **interpolate_with** **(** :ref:`Transform<class_Transform>` transform, :ref:`float<class_float>` weight **)**
 
 Interpolates the transform to other Transform by weight amount (0-1).
 
+----
+
 .. _class_Transform_method_inverse:
 
 - :ref:`Transform<class_Transform>` **inverse** **(** **)**
 
 Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use affine_inverse for transforms with scaling).
+
+----
 
 .. _class_Transform_method_looking_at:
 
@@ -167,11 +185,15 @@ The transform will first be rotated around the given ``up`` vector, and then ful
 
 Operations take place in global space.
 
+----
+
 .. _class_Transform_method_orthonormalized:
 
 - :ref:`Transform<class_Transform>` **orthonormalized** **(** **)**
 
 Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors.
+
+----
 
 .. _class_Transform_method_rotated:
 
@@ -179,11 +201,15 @@ Returns the transform with the basis orthogonal (90 degrees), and normalized axi
 
 Rotates the transform around given axis by phi. The axis must be a normalized vector.
 
+----
+
 .. _class_Transform_method_scaled:
 
 - :ref:`Transform<class_Transform>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
 Scales the transform by the specified 3D scaling factors.
+
+----
 
 .. _class_Transform_method_translated:
 
@@ -191,15 +217,19 @@ Scales the transform by the specified 3D scaling factors.
 
 Translates the transform by the specified offset.
 
+----
+
 .. _class_Transform_method_xform:
 
 - :ref:`Variant<class_Variant>` **xform** **(** :ref:`Variant<class_Variant>` v **)**
 
-Transforms the given :ref:`Vector3<class_Vector3>`, :ref:`Plane<class_Plane>`, or :ref:`AABB<class_AABB>` by this transform.
+Transforms the given :ref:`Vector3<class_Vector3>`, :ref:`Plane<class_Plane>`, :ref:`AABB<class_AABB>`, or :ref:`PoolVector3Array<class_PoolVector3Array>` by this transform.
+
+----
 
 .. _class_Transform_method_xform_inv:
 
 - :ref:`Variant<class_Variant>` **xform_inv** **(** :ref:`Variant<class_Variant>` v **)**
 
-Inverse-transforms the given :ref:`Vector3<class_Vector3>`, :ref:`Plane<class_Plane>`, or :ref:`AABB<class_AABB>` by this transform.
+Inverse-transforms the given :ref:`Vector3<class_Vector3>`, :ref:`Plane<class_Plane>`, :ref:`AABB<class_AABB>`, or :ref:`PoolVector3Array<class_PoolVector3Array>` by this transform.
 

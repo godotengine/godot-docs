@@ -96,7 +96,7 @@ Properties
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`fog_depth_enabled<class_Environment_property_fog_depth_enabled>`                             | true                               |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
-| :ref:`float<class_float>`                              | :ref:`fog_depth_end<class_Environment_property_fog_depth_end>`                                     | 0.0                                |
+| :ref:`float<class_float>`                              | :ref:`fog_depth_end<class_Environment_property_fog_depth_end>`                                     | 100.0                              |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`fog_enabled<class_Environment_property_fog_enabled>`                                         | false                              |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
@@ -104,9 +104,9 @@ Properties
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`fog_height_enabled<class_Environment_property_fog_height_enabled>`                           | false                              |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
-| :ref:`float<class_float>`                              | :ref:`fog_height_max<class_Environment_property_fog_height_max>`                                   | 100.0                              |
+| :ref:`float<class_float>`                              | :ref:`fog_height_max<class_Environment_property_fog_height_max>`                                   | 0.0                                |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
-| :ref:`float<class_float>`                              | :ref:`fog_height_min<class_Environment_property_fog_height_min>`                                   | 0.0                                |
+| :ref:`float<class_float>`                              | :ref:`fog_height_min<class_Environment_property_fog_height_min>`                                   | 10.0                               |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`fog_sun_amount<class_Environment_property_fog_sun_amount>`                                   | 0.0                                |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------+
@@ -239,6 +239,8 @@ enum **BGMode**:
 
 - **BG_MAX** = **7** --- Represents the size of the :ref:`BGMode<enum_Environment_BGMode>` enum.
 
+----
+
 .. _enum_Environment_GlowBlendMode:
 
 .. _class_Environment_constant_GLOW_BLEND_MODE_ADDITIVE:
@@ -259,6 +261,8 @@ enum **GlowBlendMode**:
 
 - **GLOW_BLEND_MODE_REPLACE** = **3** --- Replace glow blending mode. Replaces all pixels' color by the glow value.
 
+----
+
 .. _enum_Environment_ToneMapper:
 
 .. _class_Environment_constant_TONE_MAPPER_LINEAR:
@@ -271,13 +275,15 @@ enum **GlowBlendMode**:
 
 enum **ToneMapper**:
 
-- **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and performs an exposure adjustment.
+- **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and passes it on unmodified.
 
 - **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``.
 
 - **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator.
 
 - **TONE_MAPPER_ACES** = **3** --- Academy Color Encoding System tonemapper operator.
+
+----
 
 .. _enum_Environment_DOFBlurQuality:
 
@@ -294,6 +300,8 @@ enum **DOFBlurQuality**:
 - **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
 
 - **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality.
+
+----
 
 .. _enum_Environment_SSAOBlur:
 
@@ -314,6 +322,8 @@ enum **SSAOBlur**:
 - **SSAO_BLUR_2x2** = **2**
 
 - **SSAO_BLUR_3x3** = **3**
+
+----
 
 .. _enum_Environment_SSAOQuality:
 
@@ -368,6 +378,8 @@ Property Descriptions
 
 Global brightness value of the rendered scene (default value is 1).
 
+----
+
 .. _class_Environment_property_adjustment_color_correction:
 
 - :ref:`Texture<class_Texture>` **adjustment_color_correction**
@@ -379,6 +391,8 @@ Global brightness value of the rendered scene (default value is 1).
 +----------+----------------------------------------+
 
 Applies the provided :ref:`Texture<class_Texture>` resource to affect the global color aspect of the rendered scene.
+
+----
 
 .. _class_Environment_property_adjustment_contrast:
 
@@ -394,6 +408,8 @@ Applies the provided :ref:`Texture<class_Texture>` resource to affect the global
 
 Global contrast value of the rendered scene (default value is 1).
 
+----
+
 .. _class_Environment_property_adjustment_enabled:
 
 - :ref:`bool<class_bool>` **adjustment_enabled**
@@ -407,6 +423,8 @@ Global contrast value of the rendered scene (default value is 1).
 +-----------+------------------------------+
 
 Enables the adjustment\_\* options provided by this resource. If ``false``, adjustments modifications will have no effect on the rendered scene.
+
+----
 
 .. _class_Environment_property_adjustment_saturation:
 
@@ -422,6 +440,8 @@ Enables the adjustment\_\* options provided by this resource. If ``false``, adju
 
 Global color saturation value of the rendered scene (default value is 1).
 
+----
+
 .. _class_Environment_property_ambient_light_color:
 
 - :ref:`Color<class_Color>` **ambient_light_color**
@@ -435,6 +455,8 @@ Global color saturation value of the rendered scene (default value is 1).
 +-----------+--------------------------------+
 
 :ref:`Color<class_Color>` of the ambient light.
+
+----
 
 .. _class_Environment_property_ambient_light_energy:
 
@@ -450,6 +472,8 @@ Global color saturation value of the rendered scene (default value is 1).
 
 Energy of the ambient light. The higher the value, the stronger the light.
 
+----
+
 .. _class_Environment_property_ambient_light_sky_contribution:
 
 - :ref:`float<class_float>` **ambient_light_sky_contribution**
@@ -463,6 +487,8 @@ Energy of the ambient light. The higher the value, the stronger the light.
 +-----------+-------------------------------------------+
 
 Defines the amount of light that the sky brings on the scene. A value of 0 means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of 1 means that all the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.
+
+----
 
 .. _class_Environment_property_auto_exposure_enabled:
 
@@ -478,6 +504,8 @@ Defines the amount of light that the sky brings on the scene. A value of 0 means
 
 Enables the tonemapping auto exposure mode of the scene renderer. If activated, the renderer will automatically determine the exposure setting to adapt to the illumination of the scene and the observed light.
 
+----
+
 .. _class_Environment_property_auto_exposure_max_luma:
 
 - :ref:`float<class_float>` **auto_exposure_max_luma**
@@ -491,6 +519,8 @@ Enables the tonemapping auto exposure mode of the scene renderer. If activated, 
 +-----------+--------------------------------------+
 
 Maximum luminance value for the auto exposure.
+
+----
 
 .. _class_Environment_property_auto_exposure_min_luma:
 
@@ -506,6 +536,8 @@ Maximum luminance value for the auto exposure.
 
 Minimum luminance value for the auto exposure.
 
+----
+
 .. _class_Environment_property_auto_exposure_scale:
 
 - :ref:`float<class_float>` **auto_exposure_scale**
@@ -519,6 +551,8 @@ Minimum luminance value for the auto exposure.
 +-----------+---------------------------------------+
 
 Scale of the auto exposure effect. Affects the intensity of auto exposure.
+
+----
 
 .. _class_Environment_property_auto_exposure_speed:
 
@@ -534,6 +568,8 @@ Scale of the auto exposure effect. Affects the intensity of auto exposure.
 
 Speed of the auto exposure effect. Affects the time needed for the camera to perform auto exposure.
 
+----
+
 .. _class_Environment_property_background_camera_feed_id:
 
 - :ref:`int<class_int>` **background_camera_feed_id**
@@ -547,6 +583,8 @@ Speed of the auto exposure effect. Affects the time needed for the camera to per
 +-----------+---------------------------+
 
 The id of the camera feed to show in the background.
+
+----
 
 .. _class_Environment_property_background_canvas_max_layer:
 
@@ -562,6 +600,8 @@ The id of the camera feed to show in the background.
 
 Maximum layer id (if using Layer background mode).
 
+----
+
 .. _class_Environment_property_background_color:
 
 - :ref:`Color<class_Color>` **background_color**
@@ -575,6 +615,8 @@ Maximum layer id (if using Layer background mode).
 +-----------+---------------------+
 
 Color displayed for clear areas of the scene (if using Custom color or Color+Sky background modes).
+
+----
 
 .. _class_Environment_property_background_energy:
 
@@ -590,6 +632,8 @@ Color displayed for clear areas of the scene (if using Custom color or Color+Sky
 
 Power of light emitted by the background.
 
+----
+
 .. _class_Environment_property_background_mode:
 
 - :ref:`BGMode<enum_Environment_BGMode>` **background_mode**
@@ -604,6 +648,8 @@ Power of light emitted by the background.
 
 Defines the mode of background.
 
+----
+
 .. _class_Environment_property_background_sky:
 
 - :ref:`Sky<class_Sky>` **background_sky**
@@ -615,6 +661,8 @@ Defines the mode of background.
 +----------+----------------+
 
 :ref:`Sky<class_Sky>` resource defined as background.
+
+----
 
 .. _class_Environment_property_background_sky_custom_fov:
 
@@ -630,6 +678,8 @@ Defines the mode of background.
 
 :ref:`Sky<class_Sky>` resource's custom field of view.
 
+----
+
 .. _class_Environment_property_background_sky_orientation:
 
 - :ref:`Basis<class_Basis>` **background_sky_orientation**
@@ -643,6 +693,8 @@ Defines the mode of background.
 +-----------+------------------------------------+
 
 :ref:`Sky<class_Sky>` resource's rotation expressed as a :ref:`Basis<class_Basis>`
+
+----
 
 .. _class_Environment_property_background_sky_rotation:
 
@@ -658,6 +710,8 @@ Defines the mode of background.
 
 :ref:`Sky<class_Sky>` resource's rotation expressed as euler angles in radians
 
+----
+
 .. _class_Environment_property_background_sky_rotation_degrees:
 
 - :ref:`Vector3<class_Vector3>` **background_sky_rotation_degrees**
@@ -671,6 +725,8 @@ Defines the mode of background.
 +-----------+---------------------------------+
 
 :ref:`Sky<class_Sky>` resource's rotation expressed as euler angles in degrees
+
+----
 
 .. _class_Environment_property_dof_blur_far_amount:
 
@@ -686,6 +742,8 @@ Defines the mode of background.
 
 Amount of far blur.
 
+----
+
 .. _class_Environment_property_dof_blur_far_distance:
 
 - :ref:`float<class_float>` **dof_blur_far_distance**
@@ -699,6 +757,8 @@ Amount of far blur.
 +-----------+----------------------------------+
 
 Distance from the camera where the far blur effect affects the rendering.
+
+----
 
 .. _class_Environment_property_dof_blur_far_enabled:
 
@@ -714,6 +774,8 @@ Distance from the camera where the far blur effect affects the rendering.
 
 Enables the far blur effect.
 
+----
+
 .. _class_Environment_property_dof_blur_far_quality:
 
 - :ref:`DOFBlurQuality<enum_Environment_DOFBlurQuality>` **dof_blur_far_quality**
@@ -727,6 +789,8 @@ Enables the far blur effect.
 +-----------+---------------------------------+
 
 Quality of the far blur quality.
+
+----
 
 .. _class_Environment_property_dof_blur_far_transition:
 
@@ -742,6 +806,8 @@ Quality of the far blur quality.
 
 Transition between no-blur area and far blur.
 
+----
+
 .. _class_Environment_property_dof_blur_near_amount:
 
 - :ref:`float<class_float>` **dof_blur_near_amount**
@@ -755,6 +821,8 @@ Transition between no-blur area and far blur.
 +-----------+---------------------------------+
 
 Amount of near blur.
+
+----
 
 .. _class_Environment_property_dof_blur_near_distance:
 
@@ -770,6 +838,8 @@ Amount of near blur.
 
 Distance from the camera where the near blur effect affects the rendering.
 
+----
+
 .. _class_Environment_property_dof_blur_near_enabled:
 
 - :ref:`bool<class_bool>` **dof_blur_near_enabled**
@@ -783,6 +853,8 @@ Distance from the camera where the near blur effect affects the rendering.
 +-----------+----------------------------------+
 
 Enables the near blur effect.
+
+----
 
 .. _class_Environment_property_dof_blur_near_quality:
 
@@ -798,6 +870,8 @@ Enables the near blur effect.
 
 Quality of the near blur quality.
 
+----
+
 .. _class_Environment_property_dof_blur_near_transition:
 
 - :ref:`float<class_float>` **dof_blur_near_transition**
@@ -811,6 +885,8 @@ Quality of the near blur quality.
 +-----------+-------------------------------------+
 
 Transition between near blur and no-blur area.
+
+----
 
 .. _class_Environment_property_fog_color:
 
@@ -826,6 +902,8 @@ Transition between near blur and no-blur area.
 
 Fog's :ref:`Color<class_Color>`.
 
+----
+
 .. _class_Environment_property_fog_depth_begin:
 
 - :ref:`float<class_float>` **fog_depth_begin**
@@ -839,6 +917,8 @@ Fog's :ref:`Color<class_Color>`.
 +-----------+----------------------------+
 
 Fog's depth starting distance from the camera.
+
+----
 
 .. _class_Environment_property_fog_depth_curve:
 
@@ -854,6 +934,8 @@ Fog's depth starting distance from the camera.
 
 Value defining the fog depth intensity.
 
+----
+
 .. _class_Environment_property_fog_depth_enabled:
 
 - :ref:`bool<class_bool>` **fog_depth_enabled**
@@ -868,17 +950,23 @@ Value defining the fog depth intensity.
 
 Enables the fog depth.
 
+----
+
 .. _class_Environment_property_fog_depth_end:
 
 - :ref:`float<class_float>` **fog_depth_end**
 
 +-----------+--------------------------+
-| *Default* | 0.0                      |
+| *Default* | 100.0                    |
 +-----------+--------------------------+
 | *Setter*  | set_fog_depth_end(value) |
 +-----------+--------------------------+
 | *Getter*  | get_fog_depth_end()      |
 +-----------+--------------------------+
+
+Fog's depth end distance from the camera. If this value is set to 0, it will be equal to the current camera's :ref:`Camera.far<class_Camera_property_far>` value.
+
+----
 
 .. _class_Environment_property_fog_enabled:
 
@@ -892,7 +980,9 @@ Enables the fog depth.
 | *Getter*  | is_fog_enabled()       |
 +-----------+------------------------+
 
-Enables the fog. Needs fog_height_enabled and/or for_depth_enabled to actually display fog.
+Enables the fog. Needs :ref:`fog_height_enabled<class_Environment_property_fog_height_enabled>` and/or :ref:`fog_depth_enabled<class_Environment_property_fog_depth_enabled>` to actually display fog.
+
+----
 
 .. _class_Environment_property_fog_height_curve:
 
@@ -908,6 +998,8 @@ Enables the fog. Needs fog_height_enabled and/or for_depth_enabled to actually d
 
 Value defining the fog height intensity.
 
+----
+
 .. _class_Environment_property_fog_height_enabled:
 
 - :ref:`bool<class_bool>` **fog_height_enabled**
@@ -922,33 +1014,39 @@ Value defining the fog height intensity.
 
 Enables the fog height.
 
+----
+
 .. _class_Environment_property_fog_height_max:
 
 - :ref:`float<class_float>` **fog_height_max**
 
 +-----------+---------------------------+
-| *Default* | 100.0                     |
+| *Default* | 0.0                       |
 +-----------+---------------------------+
 | *Setter*  | set_fog_height_max(value) |
 +-----------+---------------------------+
 | *Getter*  | get_fog_height_max()      |
 +-----------+---------------------------+
 
-Maximum height of fog.
+The Y coordinate where the height fog will be the most intense. If this value is greater than :ref:`fog_height_min<class_Environment_property_fog_height_min>`, fog will be displayed from bottom to top. Otherwise, it will be displayed from top to bottom.
+
+----
 
 .. _class_Environment_property_fog_height_min:
 
 - :ref:`float<class_float>` **fog_height_min**
 
 +-----------+---------------------------+
-| *Default* | 0.0                       |
+| *Default* | 10.0                      |
 +-----------+---------------------------+
 | *Setter*  | set_fog_height_min(value) |
 +-----------+---------------------------+
 | *Getter*  | get_fog_height_min()      |
 +-----------+---------------------------+
 
-Minimum height of fog.
+The Y coordinate where the height fog will be the least intense. If this value is greater than :ref:`fog_height_max<class_Environment_property_fog_height_max>`, fog will be displayed from top to bottom. Otherwise, it will be displayed from bottom to top.
+
+----
 
 .. _class_Environment_property_fog_sun_amount:
 
@@ -964,6 +1062,8 @@ Minimum height of fog.
 
 Amount of sun that affects the fog rendering.
 
+----
+
 .. _class_Environment_property_fog_sun_color:
 
 - :ref:`Color<class_Color>` **fog_sun_color**
@@ -977,6 +1077,8 @@ Amount of sun that affects the fog rendering.
 +-----------+--------------------------+
 
 Sun :ref:`Color<class_Color>`.
+
+----
 
 .. _class_Environment_property_fog_transmit_curve:
 
@@ -992,6 +1094,8 @@ Sun :ref:`Color<class_Color>`.
 
 Amount of light that the fog transmits.
 
+----
+
 .. _class_Environment_property_fog_transmit_enabled:
 
 - :ref:`bool<class_bool>` **fog_transmit_enabled**
@@ -1006,6 +1110,8 @@ Amount of light that the fog transmits.
 
 Enables fog's light transmission. If enabled, lets reflections light to be transmitted by the fog.
 
+----
+
 .. _class_Environment_property_glow_bicubic_upscale:
 
 - :ref:`bool<class_bool>` **glow_bicubic_upscale**
@@ -1017,6 +1123,10 @@ Enables fog's light transmission. If enabled, lets reflections light to be trans
 +-----------+-----------------------------------+
 | *Getter*  | is_glow_bicubic_upscale_enabled() |
 +-----------+-----------------------------------+
+
+Smooths out blockiness created by sampling higher levels.
+
+----
 
 .. _class_Environment_property_glow_blend_mode:
 
@@ -1032,6 +1142,8 @@ Enables fog's light transmission. If enabled, lets reflections light to be trans
 
 Glow blending mode.
 
+----
+
 .. _class_Environment_property_glow_bloom:
 
 - :ref:`float<class_float>` **glow_bloom**
@@ -1045,6 +1157,8 @@ Glow blending mode.
 +-----------+-----------------------+
 
 Bloom value (global glow).
+
+----
 
 .. _class_Environment_property_glow_enabled:
 
@@ -1060,6 +1174,8 @@ Bloom value (global glow).
 
 Enables glow rendering.
 
+----
+
 .. _class_Environment_property_glow_hdr_luminance_cap:
 
 - :ref:`float<class_float>` **glow_hdr_luminance_cap**
@@ -1071,6 +1187,8 @@ Enables glow rendering.
 +-----------+-----------------------------------+
 | *Getter*  | get_glow_hdr_luminance_cap()      |
 +-----------+-----------------------------------+
+
+----
 
 .. _class_Environment_property_glow_hdr_scale:
 
@@ -1086,6 +1204,8 @@ Enables glow rendering.
 
 Bleed scale of the HDR glow.
 
+----
+
 .. _class_Environment_property_glow_hdr_threshold:
 
 - :ref:`float<class_float>` **glow_hdr_threshold**
@@ -1098,7 +1218,9 @@ Bleed scale of the HDR glow.
 | *Getter*  | get_glow_hdr_bleed_threshold()      |
 +-----------+-------------------------------------+
 
-Bleed threshold of the HDR glow.
+Bleed threshold of the HDR glow. In GLES2, this needs to be below 1.0 in order for glow to be visible, a default value of 0.9 works well.
+
+----
 
 .. _class_Environment_property_glow_intensity:
 
@@ -1112,7 +1234,9 @@ Bleed threshold of the HDR glow.
 | *Getter*  | get_glow_intensity()      |
 +-----------+---------------------------+
 
-Glow intensity.
+Glow intensity. In GLES2, this should be increased to 1.5 by default to compensate for not using HDR.
+
+----
 
 .. _class_Environment_property_glow_levels/1:
 
@@ -1128,6 +1252,8 @@ Glow intensity.
 
 First level of glow (most local).
 
+----
+
 .. _class_Environment_property_glow_levels/2:
 
 - :ref:`bool<class_bool>` **glow_levels/2**
@@ -1141,6 +1267,8 @@ First level of glow (most local).
 +-----------+-------------------------+
 
 Second level of glow.
+
+----
 
 .. _class_Environment_property_glow_levels/3:
 
@@ -1156,6 +1284,8 @@ Second level of glow.
 
 Third level of glow.
 
+----
+
 .. _class_Environment_property_glow_levels/4:
 
 - :ref:`bool<class_bool>` **glow_levels/4**
@@ -1169,6 +1299,8 @@ Third level of glow.
 +-----------+-------------------------+
 
 Fourth level of glow.
+
+----
 
 .. _class_Environment_property_glow_levels/5:
 
@@ -1184,6 +1316,8 @@ Fourth level of glow.
 
 Fifth level of glow.
 
+----
+
 .. _class_Environment_property_glow_levels/6:
 
 - :ref:`bool<class_bool>` **glow_levels/6**
@@ -1197,6 +1331,8 @@ Fifth level of glow.
 +-----------+-------------------------+
 
 Sixth level of glow.
+
+----
 
 .. _class_Environment_property_glow_levels/7:
 
@@ -1212,6 +1348,8 @@ Sixth level of glow.
 
 Seventh level of glow (most global).
 
+----
+
 .. _class_Environment_property_glow_strength:
 
 - :ref:`float<class_float>` **glow_strength**
@@ -1224,7 +1362,9 @@ Seventh level of glow (most global).
 | *Getter*  | get_glow_strength()      |
 +-----------+--------------------------+
 
-Glow strength.
+Glow strength. In GLES2, this should be increased to 1.3 by default to compensate for not using HDR.
+
+----
 
 .. _class_Environment_property_ss_reflections_depth_tolerance:
 
@@ -1238,6 +1378,8 @@ Glow strength.
 | *Getter*  | get_ssr_depth_tolerance()      |
 +-----------+--------------------------------+
 
+----
+
 .. _class_Environment_property_ss_reflections_enabled:
 
 - :ref:`bool<class_bool>` **ss_reflections_enabled**
@@ -1249,6 +1391,8 @@ Glow strength.
 +-----------+------------------------+
 | *Getter*  | is_ssr_enabled()       |
 +-----------+------------------------+
+
+----
 
 .. _class_Environment_property_ss_reflections_fade_in:
 
@@ -1262,6 +1406,8 @@ Glow strength.
 | *Getter*  | get_ssr_fade_in()      |
 +-----------+------------------------+
 
+----
+
 .. _class_Environment_property_ss_reflections_fade_out:
 
 - :ref:`float<class_float>` **ss_reflections_fade_out**
@@ -1273,6 +1419,8 @@ Glow strength.
 +-----------+-------------------------+
 | *Getter*  | get_ssr_fade_out()      |
 +-----------+-------------------------+
+
+----
 
 .. _class_Environment_property_ss_reflections_max_steps:
 
@@ -1286,6 +1434,8 @@ Glow strength.
 | *Getter*  | get_ssr_max_steps()      |
 +-----------+--------------------------+
 
+----
+
 .. _class_Environment_property_ss_reflections_roughness:
 
 - :ref:`bool<class_bool>` **ss_reflections_roughness**
@@ -1297,6 +1447,8 @@ Glow strength.
 +-----------+----------------------+
 | *Getter*  | is_ssr_rough()       |
 +-----------+----------------------+
+
+----
 
 .. _class_Environment_property_ssao_ao_channel_affect:
 
@@ -1310,6 +1462,8 @@ Glow strength.
 | *Getter*  | get_ssao_ao_channel_affect()      |
 +-----------+-----------------------------------+
 
+----
+
 .. _class_Environment_property_ssao_bias:
 
 - :ref:`float<class_float>` **ssao_bias**
@@ -1321,6 +1475,8 @@ Glow strength.
 +-----------+----------------------+
 | *Getter*  | get_ssao_bias()      |
 +-----------+----------------------+
+
+----
 
 .. _class_Environment_property_ssao_blur:
 
@@ -1334,6 +1490,8 @@ Glow strength.
 | *Getter*  | get_ssao_blur()      |
 +-----------+----------------------+
 
+----
+
 .. _class_Environment_property_ssao_color:
 
 - :ref:`Color<class_Color>` **ssao_color**
@@ -1345,6 +1503,8 @@ Glow strength.
 +-----------+-----------------------+
 | *Getter*  | get_ssao_color()      |
 +-----------+-----------------------+
+
+----
 
 .. _class_Environment_property_ssao_edge_sharpness:
 
@@ -1358,6 +1518,8 @@ Glow strength.
 | *Getter*  | get_ssao_edge_sharpness()      |
 +-----------+--------------------------------+
 
+----
+
 .. _class_Environment_property_ssao_enabled:
 
 - :ref:`bool<class_bool>` **ssao_enabled**
@@ -1369,6 +1531,8 @@ Glow strength.
 +-----------+-------------------------+
 | *Getter*  | is_ssao_enabled()       |
 +-----------+-------------------------+
+
+----
 
 .. _class_Environment_property_ssao_intensity:
 
@@ -1382,6 +1546,8 @@ Glow strength.
 | *Getter*  | get_ssao_intensity()      |
 +-----------+---------------------------+
 
+----
+
 .. _class_Environment_property_ssao_intensity2:
 
 - :ref:`float<class_float>` **ssao_intensity2**
@@ -1393,6 +1559,8 @@ Glow strength.
 +-----------+----------------------------+
 | *Getter*  | get_ssao_intensity2()      |
 +-----------+----------------------------+
+
+----
 
 .. _class_Environment_property_ssao_light_affect:
 
@@ -1406,6 +1574,8 @@ Glow strength.
 | *Getter*  | get_ssao_direct_light_affect()      |
 +-----------+-------------------------------------+
 
+----
+
 .. _class_Environment_property_ssao_quality:
 
 - :ref:`SSAOQuality<enum_Environment_SSAOQuality>` **ssao_quality**
@@ -1417,6 +1587,8 @@ Glow strength.
 +-----------+-------------------------+
 | *Getter*  | get_ssao_quality()      |
 +-----------+-------------------------+
+
+----
 
 .. _class_Environment_property_ssao_radius:
 
@@ -1430,6 +1602,8 @@ Glow strength.
 | *Getter*  | get_ssao_radius()      |
 +-----------+------------------------+
 
+----
+
 .. _class_Environment_property_ssao_radius2:
 
 - :ref:`float<class_float>` **ssao_radius2**
@@ -1441,6 +1615,8 @@ Glow strength.
 +-----------+-------------------------+
 | *Getter*  | get_ssao_radius2()      |
 +-----------+-------------------------+
+
+----
 
 .. _class_Environment_property_tonemap_exposure:
 
@@ -1456,6 +1632,8 @@ Glow strength.
 
 Default exposure for tonemap.
 
+----
+
 .. _class_Environment_property_tonemap_mode:
 
 - :ref:`ToneMapper<enum_Environment_ToneMapper>` **tonemap_mode**
@@ -1469,6 +1647,8 @@ Default exposure for tonemap.
 +-----------+-----------------------+
 
 Tonemapping mode.
+
+----
 
 .. _class_Environment_property_tonemap_white:
 
@@ -1490,6 +1670,8 @@ Method Descriptions
 .. _class_Environment_method_is_glow_level_enabled:
 
 - :ref:`bool<class_bool>` **is_glow_level_enabled** **(** :ref:`int<class_int>` idx **)** const
+
+----
 
 .. _class_Environment_method_set_glow_level:
 

@@ -116,7 +116,7 @@ it inherits from ``Node``:
 
 The next step is to add this script to the autoLoad list. Open
 ``Project > Project Settings`` from the menu, switch to the "AutoLoad" tab and
-select the script by clicking the ``..`` button or typing its path:
+select the script by clicking the browse button or typing its path:
 ``res://Global.gd``. Press "Add" to add it to the autoload list:
 
 .. image:: img/autoload_tutorial1.png

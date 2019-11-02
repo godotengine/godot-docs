@@ -52,6 +52,8 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Variant<class_Variant>` value **)**
 
+----
+
 .. _class_PackedDataContainer_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)** const

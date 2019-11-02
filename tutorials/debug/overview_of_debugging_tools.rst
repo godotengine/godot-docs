@@ -6,10 +6,12 @@ Overview of debugging tools
 Introduction
 ------------
 
-When developing your game, you would want to test your game and debug when problems occurred. Godot provides several debugging options and tools which aid your debugging process.
+When developing your game, you want to test your game and debug when problems occurr. Godot provides several debugging options and
+tools which aid your debugging process. There are the debug dropdown options, Script editor debug options, debug project settings,
+and the debugger.
 
-Debug options
--------------
+Debug dropdown options
+----------------------
 
 There are a few options that you can enable when running your game in the editor which can help you in debugging your game.
 These options are located in ``DEBUG`` in the main menus.
@@ -51,56 +53,113 @@ Sync Script Changes
 Any script that is saved will be reloaded on the running game.
 When used remotely on a device, this is more efficient with network filesystem.
 
+Script editor debug tools and options
+-------------------------------------
+
+The script editor has its own set of debug tools for use with breakpoints, and two
+options. The breakpoint tools can also be found in the "Debugger" tab of the debugger.
+
+..image:: img/overview_script_editor.png
+
+The ``Break`` button causes a break in the script like a breakpoint would. ``Continue``
+makes the game continue after pausing at a breakpoint. ``Step Over`` goes to the next
+line of code, and ``Step Into`` goes into a function if possible, otherwise it does the
+same thing as ``Step Over``.
+
+The ``Keep Debugger Open`` option keeps the debugger open after a scene has been closed.
+And the ``Debug with External Editor`` option lets you debug your game with an external
+editor.
+
+Debug project settings
+----------------------
+
+In the project settings there is a "Debug" category with three sub categories which
+control different things.
+
+Settings
+++++++++
+
+These are some general settings such as printing the current FPS to the Output panel, the
+maximum ammount of functions when profiling and others.
+
+GDScript
+++++++++
+
+These settings allow you to turn specific GDScript warnings, such as an unused variable, on
+or off. You can also turn off warnings completely.
+
+Shapes
+++++++
+
+Shapes is where you can adjust the color of shapes that only appear for debugging purposes,
+such as collision and navigation shapes.
+
 Debugging tools
 ---------------
 
-The ``Debugger`` is the second option in the bottom panel. Click on it and a new panel occurs.
+The ``Debugger`` can be found in Godot's bottom panel. Click on it and the panel expands
+to show all the debugging tools.
 
 .. image:: img/overview_debugger.png
 
-The ``Debugger`` provides certain tools under different tabs.
-
-Here are some brief descriptions of the tools:
+There are multiple parts of the debugger, each is for a specific task.
 
 Debugger
 ++++++++
 
-Monitor the game running process.
+The debugger tab is for working with breakpoints in the script. When a script reaches a breakpoint
+this panel gives you information on it.
+
+The buttons in the top right can be used respectively to:
+
+- Skip all defined breakpoints, without removing them (so you can toggle them on or off while testing).
+- Copy the current error message.
+- Step Into goes to the next line of code, and if it's a function, it step line by line through the function.
+- Step Over goes to the next line of code, but does not go down into function code.
+- Break pauses the game like a breakpoint would.
+- Continue resumes the game after a breakpoint or pause.
 
 Errors
 ++++++
 
-Print out errors when running the game.
+This is where errors and warning messages are printed while running the game.
 
 Profiler
 ++++++++
 
-Profiling the performance of the any function call in the running game.
+Profiles the performance of any function call in the running game.
+
+Network Profiler
+++++++++++++++++
+
+The Network Profiler contains a list of all the nodes that communicate over the multiplayer API
+and, for each one, some counters on the amount of incoming and outgoing network interactions.
+It also features a bandwidth meter that displays the total bandwidth usage at any given moment 
 
 Monitors
 ++++++++
 
-Monitors the performance of the running game, such as the fps and physics collisions.
+The monitors are graphs of several aspects of the game while its running such as FPS, memory usage,
+how many nodes are in a scene and more. All monitors keep track of stats automatically, so even if one
+monitor isn't open while the game is running, you can open it later and see how the values changed.
 
 Video Mem
 +++++++++
 
-Listing the video memory usage of the running game.
+Video Mem list the video memory usage of the running game and which resource is using it.
 
 Misc
 ++++
 
 Miscellaneous options for debug.
 
-
 Remote in Scene dock
 --------------------
 
-When running your game, a bar will occur at the top of the ``Scene`` dock. You can switch to ``Remote`` and inspect or change the nodes' parameters in the running game.
+When running a game in the editor two options appear at the top of the ``Scene`` dock,
+``Remote`` and ``Local``. While using ``Remote`` you can inspect or change the nodes' parameters
+in the running game.
 
 .. image:: img/overview_remote.png
 
 .. note:: Some editor settings related to debugging can be found inside the ``Editor Settings``, under Network>Debug and Debugger sections.
-
-
-

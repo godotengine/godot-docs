@@ -51,7 +51,7 @@ Listener
 --------
 
 Godot supports 3D sound (in both 2D and 3D nodes); more on this can be
-found in the :ref:`Audio Streams Tutorial<doc_audio-streams>`. For this type of sound to be
+found in the :ref:`Audio Streams Tutorial<doc_audio_streams>`. For this type of sound to be
 audible, the :ref:`Viewport <class_Viewport>` needs to be enabled as a listener (for 2D or 3D).
 If you are using a custom :ref:`Viewport <class_Viewport>` to display your :ref:`World <class_World>`, don't forget
 to enable this!
@@ -79,6 +79,11 @@ or make it the current camera by calling:
 ::
 
     camera.make_current()
+
+By default, cameras will render all objects in their world. In 3D, cameras can use their
+:ref:`cull_mask <class_Camera_property_cull_mask>` property combined with the
+:ref:`VisualInstance's <class_VisualInstance>` :ref:`layer <class_VisualInstance_property_layers>`
+property to restrict which objects are rendered.
 
 Scale & stretching
 ------------------
@@ -150,14 +155,9 @@ it using (for example):
 
 ::
 
-   # Let two frames pass to make sure the screen can be captured.
-   yield(get_tree(), "idle_frame")
-   yield(get_tree(), "idle_frame")
+   # Wait until the frame has finished before getting the texture
+   yield(VisualServer, "frame_post_draw")
    # You can get the image after this.
-
-If the returned image is empty, capture still didn't happen, wait a
-little more, as Godot's rendering API is asynchronous. For a working example of this,
-check out the `Screen Capture example <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/screen_capture>`_ in the demo projects
 
 Viewport Container
 ------------------
@@ -180,6 +180,12 @@ You can also set the :ref:`Viewport <class_Viewport>` to use HDR, HDR is very us
 
 If you know how the :ref:`Viewport <class_Viewport>` is going to be used, you can set its Usage to either 3D or 2D. Godot will then
 restrict how the :ref:`Viewport <class_Viewport>` is drawn to in accordance with your choice; default is 3D.
+The 2D usage mode is slightly faster and uses less memory compared to the 3D one. It's a good idea to set the :ref:`Viewport <class_Viewport>`'s Usage property to 2D if your viewport doesn't render anything in 3D.
+
+.. note::
+
+    If you need to render 3D shadows in the viewport, make sure to set the viewport's *Shadow Atlas Size* property to a value higher than 0.
+    Otherwise, shadows won't be rendered. For reference, the Project Settings define it to 4096 by default.
 
 Godot also provides a way of customizing how everything is drawn inside :ref:`Viewports <class_Viewport>` using “Debug Draw”.
 Debug Draw allows you to specify one of four options for how the :ref:`Viewport <class_Viewport>` will display things drawn
@@ -203,8 +209,11 @@ Overdraw draws the meshes semi-transparent with an additive blend so you can see
 
 *The same scene with Debug Draw set to Overdraw*
 
-Lastly, Wireframe draws the scene using only the edges of triangles in the meshes. NOTE: As of
-this writing (v3.0.2), wireframe mode is not functional and currently renders the scene normally.
+Lastly, Wireframe draws the scene using only the edges of triangles in the meshes.
+
+.. note::
+
+    The effects of the Wireframe mode are only visible in the editor, not while the project is running.
 
 Render target
 -------------

@@ -72,13 +72,19 @@ Method Descriptions
 
 Returns the current value set for this material of a uniform in the shader.
 
+----
+
 .. _class_ShaderMaterial_method_property_can_revert:
 
 - :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
+----
+
 .. _class_ShaderMaterial_method_property_get_revert:
 
 - :ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
+
+----
 
 .. _class_ShaderMaterial_method_set_shader_param:
 

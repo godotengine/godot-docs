@@ -141,6 +141,8 @@ enum **ModeFlags**:
 
 - **WRITE_READ** = **7** --- Opens the file for read and write operations. Create it if the file does not exist and truncate if it exists.
 
+----
+
 .. _enum_File_CompressionMode:
 
 .. _class_File_constant_COMPRESSION_FASTLZ:
@@ -216,6 +218,8 @@ Method Descriptions
 
 Closes the currently opened file.
 
+----
+
 .. _class_File_method_eof_reached:
 
 - :ref:`bool<class_bool>` **eof_reached** **(** **)** const
@@ -223,6 +227,8 @@ Closes the currently opened file.
 Returns ``true`` if the file cursor has read past the end of the file.
 
 **Note:** This function will still return ``false`` while at the end of the file and only activates when reading past it. This can be confusing but it conforms to how low-level file access works in all operating systems. There is always :ref:`get_len<class_File_method_get_len>` and :ref:`get_position<class_File_method_get_position>` to implement a custom logic.
+
+----
 
 .. _class_File_method_file_exists:
 
@@ -232,11 +238,15 @@ Returns ``true`` if the file exists in the given path.
 
 **Note:** Many resources types are imported (e.g. textures or sound files), and that their source asset will not be included in the exported game, as only the imported version is used (in the ``res://.import`` folder). To check for the existence of such resources while taking into account the remapping to their imported location, use :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>`. Typically, using ``File.file_exists`` on an imported resource would work while you are developing in the editor (the source asset is present in ``res://``, but fail when exported).
 
+----
+
 .. _class_File_method_get_16:
 
 - :ref:`int<class_int>` **get_16** **(** **)** const
 
 Returns the next 16 bits from the file as an integer.
+
+----
 
 .. _class_File_method_get_32:
 
@@ -244,17 +254,23 @@ Returns the next 16 bits from the file as an integer.
 
 Returns the next 32 bits from the file as an integer.
 
+----
+
 .. _class_File_method_get_64:
 
 - :ref:`int<class_int>` **get_64** **(** **)** const
 
 Returns the next 64 bits from the file as an integer.
 
+----
+
 .. _class_File_method_get_8:
 
 - :ref:`int<class_int>` **get_8** **(** **)** const
 
 Returns the next 8 bits from the file as an integer.
+
+----
 
 .. _class_File_method_get_as_text:
 
@@ -264,11 +280,15 @@ Returns the whole file as a :ref:`String<class_String>`.
 
 Text is interpreted as being UTF-8 encoded.
 
+----
+
 .. _class_File_method_get_buffer:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **get_buffer** **(** :ref:`int<class_int>` len **)** const
 
 Returns next ``len`` bytes of the file as a :ref:`PoolByteArray<class_PoolByteArray>`.
+
+----
 
 .. _class_File_method_get_csv_line:
 
@@ -278,11 +298,15 @@ Returns the next value of the file in CSV (Comma-Separated Values) format. You c
 
 Text is interpreted as being UTF-8 encoded.
 
+----
+
 .. _class_File_method_get_double:
 
 - :ref:`float<class_float>` **get_double** **(** **)** const
 
 Returns the next 64 bits from the file as a floating-point number.
+
+----
 
 .. _class_File_method_get_error:
 
@@ -290,17 +314,23 @@ Returns the next 64 bits from the file as a floating-point number.
 
 Returns the last error that happened when trying to perform operations. Compare with the ``ERR_FILE_*`` constants from :ref:`Error<enum_@GlobalScope_Error>`.
 
+----
+
 .. _class_File_method_get_float:
 
 - :ref:`float<class_float>` **get_float** **(** **)** const
 
 Returns the next 32 bits from the file as a floating-point number.
 
+----
+
 .. _class_File_method_get_len:
 
 - :ref:`int<class_int>` **get_len** **(** **)** const
 
 Returns the size of the file in bytes.
+
+----
 
 .. _class_File_method_get_line:
 
@@ -310,17 +340,23 @@ Returns the next line of the file as a :ref:`String<class_String>`.
 
 Text is interpreted as being UTF-8 encoded.
 
+----
+
 .. _class_File_method_get_md5:
 
 - :ref:`String<class_String>` **get_md5** **(** :ref:`String<class_String>` path **)** const
 
 Returns an MD5 String representing the file at the given path or an empty :ref:`String<class_String>` on failure.
 
+----
+
 .. _class_File_method_get_modified_time:
 
 - :ref:`int<class_int>` **get_modified_time** **(** :ref:`String<class_String>` file **)** const
 
 Returns the last time the ``file`` was modified in unix timestamp format or returns a :ref:`String<class_String>` "ERROR IN ``file``". This unix timestamp can be converted to datetime by using :ref:`OS.get_datetime_from_unix_time<class_OS_method_get_datetime_from_unix_time>`.
+
+----
 
 .. _class_File_method_get_pascal_string:
 
@@ -330,11 +366,15 @@ Returns a :ref:`String<class_String>` saved in Pascal format from the file.
 
 Text is interpreted as being UTF-8 encoded.
 
+----
+
 .. _class_File_method_get_path:
 
 - :ref:`String<class_String>` **get_path** **(** **)** const
 
 Returns the path as a :ref:`String<class_String>` for the current open file.
+
+----
 
 .. _class_File_method_get_path_absolute:
 
@@ -342,11 +382,15 @@ Returns the path as a :ref:`String<class_String>` for the current open file.
 
 Returns the absolute path as a :ref:`String<class_String>` for the current open file.
 
+----
+
 .. _class_File_method_get_position:
 
 - :ref:`int<class_int>` **get_position** **(** **)** const
 
 Returns the file cursor's position.
+
+----
 
 .. _class_File_method_get_real:
 
@@ -354,11 +398,15 @@ Returns the file cursor's position.
 
 Returns the next bits from the file as a floating-point number.
 
+----
+
 .. _class_File_method_get_sha256:
 
 - :ref:`String<class_String>` **get_sha256** **(** :ref:`String<class_String>` path **)** const
 
 Returns a SHA-256 :ref:`String<class_String>` representing the file at the given path or an empty :ref:`String<class_String>` on failure.
+
+----
 
 .. _class_File_method_get_var:
 
@@ -368,11 +416,15 @@ Returns the next :ref:`Variant<class_Variant>` value from the file. If ``allow_o
 
 **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
+----
+
 .. _class_File_method_is_open:
 
 - :ref:`bool<class_bool>` **is_open** **(** **)** const
 
 Returns ``true`` if the file is currently opened.
+
+----
 
 .. _class_File_method_open:
 
@@ -380,11 +432,15 @@ Returns ``true`` if the file is currently opened.
 
 Opens the file for writing or reading, depending on the flags.
 
+----
+
 .. _class_File_method_open_compressed:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open_compressed** **(** :ref:`String<class_String>` path, :ref:`ModeFlags<enum_File_ModeFlags>` mode_flags, :ref:`CompressionMode<enum_File_CompressionMode>` compression_mode=0 **)**
 
 Opens a compressed file for reading or writing.
+
+----
 
 .. _class_File_method_open_encrypted:
 
@@ -392,17 +448,23 @@ Opens a compressed file for reading or writing.
 
 Opens an encrypted file in write or read mode. You need to pass a binary key to encrypt/decrypt it.
 
+----
+
 .. _class_File_method_open_encrypted_with_pass:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open_encrypted_with_pass** **(** :ref:`String<class_String>` path, :ref:`ModeFlags<enum_File_ModeFlags>` mode_flags, :ref:`String<class_String>` pass **)**
 
 Opens an encrypted file in write or read mode. You need to pass a password to encrypt/decrypt it.
 
+----
+
 .. _class_File_method_seek:
 
 - void **seek** **(** :ref:`int<class_int>` position **)**
 
 Changes the file reading/writing cursor to the specified position (in bytes from the beginning of the file).
+
+----
 
 .. _class_File_method_seek_end:
 
@@ -412,11 +474,15 @@ Changes the file reading/writing cursor to the specified position (in bytes from
 
 **Note:** This is an offset, so you should use negative numbers or the cursor will be at the end of the file.
 
+----
+
 .. _class_File_method_store_16:
 
 - void **store_16** **(** :ref:`int<class_int>` value **)**
 
 Stores an integer as 16 bits in the file.
+
+----
 
 .. _class_File_method_store_32:
 
@@ -424,11 +490,15 @@ Stores an integer as 16 bits in the file.
 
 Stores an integer as 32 bits in the file.
 
+----
+
 .. _class_File_method_store_64:
 
 - void **store_64** **(** :ref:`int<class_int>` value **)**
 
 Stores an integer as 64 bits in the file.
+
+----
 
 .. _class_File_method_store_8:
 
@@ -436,11 +506,15 @@ Stores an integer as 64 bits in the file.
 
 Stores an integer as 8 bits in the file.
 
+----
+
 .. _class_File_method_store_buffer:
 
 - void **store_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Stores the given array of bytes in the file.
+
+----
 
 .. _class_File_method_store_csv_line:
 
@@ -450,17 +524,23 @@ Store the given :ref:`PoolStringArray<class_PoolStringArray>` in the file as a l
 
 Text will be encoded as UTF-8.
 
+----
+
 .. _class_File_method_store_double:
 
 - void **store_double** **(** :ref:`float<class_float>` value **)**
 
 Stores a floating-point number as 64 bits in the file.
 
+----
+
 .. _class_File_method_store_float:
 
 - void **store_float** **(** :ref:`float<class_float>` value **)**
 
 Stores a floating-point number as 32 bits in the file.
+
+----
 
 .. _class_File_method_store_line:
 
@@ -470,6 +550,8 @@ Stores the given :ref:`String<class_String>` as a line in the file.
 
 Text will be encoded as UTF-8.
 
+----
+
 .. _class_File_method_store_pascal_string:
 
 - void **store_pascal_string** **(** :ref:`String<class_String>` string **)**
@@ -478,11 +560,15 @@ Stores the given :ref:`String<class_String>` as a line in the file in Pascal for
 
 Text will be encoded as UTF-8.
 
+----
+
 .. _class_File_method_store_real:
 
 - void **store_real** **(** :ref:`float<class_float>` value **)**
 
 Stores a floating-point number in the file.
+
+----
 
 .. _class_File_method_store_string:
 
@@ -491,6 +577,8 @@ Stores a floating-point number in the file.
 Stores the given :ref:`String<class_String>` in the file.
 
 Text will be encoded as UTF-8.
+
+----
 
 .. _class_File_method_store_var:
 

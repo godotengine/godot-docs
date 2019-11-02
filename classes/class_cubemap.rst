@@ -61,6 +61,8 @@ enum **Storage**:
 
 - **STORAGE_COMPRESS_LOSSLESS** = **2** --- Store the ``CubeMap`` with moderate compression that doesn't reduce image quality.
 
+----
+
 .. _enum_CubeMap_Side:
 
 .. _class_CubeMap_constant_SIDE_LEFT:
@@ -88,6 +90,8 @@ enum **Side**:
 - **SIDE_FRONT** = **4** --- Identifier for the front face of the ``CubeMap``.
 
 - **SIDE_BACK** = **5** --- Identifier for the back face of the ``CubeMap``.
+
+----
 
 .. _enum_CubeMap_Flags:
 
@@ -131,6 +135,8 @@ Property Descriptions
 
 The render flags for the ``CubeMap``. See the ``FLAG_*`` constants for details.
 
+----
+
 .. _class_CubeMap_property_lossy_storage_quality:
 
 - :ref:`float<class_float>` **lossy_storage_quality**
@@ -144,6 +150,8 @@ The render flags for the ``CubeMap``. See the ``FLAG_*`` constants for details.
 +-----------+----------------------------------+
 
 The lossy storage quality of the ``CubeMap`` if the storage mode is set to STORAGE_COMPRESS_LOSSY.
+
+----
 
 .. _class_CubeMap_property_storage_mode:
 
@@ -168,17 +176,23 @@ Method Descriptions
 
 Returns the ``CubeMap``'s height.
 
+----
+
 .. _class_CubeMap_method_get_side:
 
 - :ref:`Image<class_Image>` **get_side** **(** :ref:`Side<enum_CubeMap_Side>` side **)** const
 
 Returns an :ref:`Image<class_Image>` for a side of the ``CubeMap`` using one of the ``SIDE_*`` constants or an integer 0-5.
 
+----
+
 .. _class_CubeMap_method_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
 Returns the ``CubeMap``'s width.
+
+----
 
 .. _class_CubeMap_method_set_side:
 

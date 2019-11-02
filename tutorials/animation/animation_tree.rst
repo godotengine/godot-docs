@@ -149,7 +149,7 @@ There are many types of transitions:
 
 .. image:: img/animtree12.png
 
-* *Immeditate*: Will switch to the next state immediately. The current state will end and blend into the beginning of the new one.
+* *Immediate*: Will switch to the next state immediately. The current state will end and blend into the beginning of the new one.
 * *Sync*: Will switch to the next state immediately, but will seek the new state to the playback position of the old state.
 * *At End*: Will wait for the current state playback to end, then switch to the beginning of the next state animation.
 

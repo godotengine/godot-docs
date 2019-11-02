@@ -69,6 +69,8 @@ Property Descriptions
 | *Getter* | get_base_script()      |
 +----------+------------------------+
 
+----
+
 .. _class_VisualScriptPropertyGet_property_base_type:
 
 - :ref:`String<class_String>` **base_type**
@@ -81,6 +83,8 @@ Property Descriptions
 | *Getter*  | get_base_type()      |
 +-----------+----------------------+
 
+----
+
 .. _class_VisualScriptPropertyGet_property_basic_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
@@ -90,6 +94,8 @@ Property Descriptions
 +----------+-----------------------+
 | *Getter* | get_basic_type()      |
 +----------+-----------------------+
+
+----
 
 .. _class_VisualScriptPropertyGet_property_index:
 
@@ -101,6 +107,8 @@ Property Descriptions
 | *Getter* | get_index()      |
 +----------+------------------+
 
+----
+
 .. _class_VisualScriptPropertyGet_property_node_path:
 
 - :ref:`NodePath<class_NodePath>` **node_path**
@@ -110,6 +118,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_base_path()      |
 +----------+----------------------+
+
+----
 
 .. _class_VisualScriptPropertyGet_property_property:
 
@@ -122,6 +132,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_property()      |
 +-----------+---------------------+
+
+----
 
 .. _class_VisualScriptPropertyGet_property_set_mode:
 

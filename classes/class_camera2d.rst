@@ -30,7 +30,7 @@ Properties
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
 | :ref:`float<class_float>`                                     | :ref:`drag_margin_bottom<class_Camera2D_property_drag_margin_bottom>`           | 0.2             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                                       | :ref:`drag_margin_h_enabled<class_Camera2D_property_drag_margin_h_enabled>`     | true            |
+| :ref:`bool<class_bool>`                                       | :ref:`drag_margin_h_enabled<class_Camera2D_property_drag_margin_h_enabled>`     | false           |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
 | :ref:`float<class_float>`                                     | :ref:`drag_margin_left<class_Camera2D_property_drag_margin_left>`               | 0.2             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
@@ -38,7 +38,7 @@ Properties
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
 | :ref:`float<class_float>`                                     | :ref:`drag_margin_top<class_Camera2D_property_drag_margin_top>`                 | 0.2             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                                       | :ref:`drag_margin_v_enabled<class_Camera2D_property_drag_margin_v_enabled>`     | true            |
+| :ref:`bool<class_bool>`                                       | :ref:`drag_margin_v_enabled<class_Camera2D_property_drag_margin_v_enabled>`     | false           |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
 | :ref:`bool<class_bool>`                                       | :ref:`editor_draw_drag_margin<class_Camera2D_property_editor_draw_drag_margin>` | false           |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+-----------------+
@@ -115,6 +115,8 @@ enum **AnchorMode**:
 
 - **ANCHOR_MODE_DRAG_CENTER** = **1** --- The camera's position takes into account vertical/horizontal offsets and the screen size.
 
+----
+
 .. _enum_Camera2D_Camera2DProcessMode:
 
 .. _class_Camera2D_constant_CAMERA2D_PROCESS_PHYSICS:
@@ -123,9 +125,9 @@ enum **AnchorMode**:
 
 enum **Camera2DProcessMode**:
 
-- **CAMERA2D_PROCESS_PHYSICS** = **0**
+- **CAMERA2D_PROCESS_PHYSICS** = **0** --- The camera updates with the ``_physics_process`` callback.
 
-- **CAMERA2D_PROCESS_IDLE** = **1**
+- **CAMERA2D_PROCESS_IDLE** = **1** --- The camera updates with the ``_process`` callback.
 
 Description
 -----------
@@ -151,6 +153,8 @@ Property Descriptions
 
 The Camera2D's anchor point. See ``ANCHOR_MODE_*`` constants.
 
+----
+
 .. _class_Camera2D_property_current:
 
 - :ref:`bool<class_bool>` **current**
@@ -163,6 +167,8 @@ The Camera2D's anchor point. See ``ANCHOR_MODE_*`` constants.
 
 If ``true``, the camera is the active camera for the current scene. Only one camera can be current, so setting a different camera ``current`` will disable this one.
 
+----
+
 .. _class_Camera2D_property_custom_viewport:
 
 - :ref:`Node<class_Node>` **custom_viewport**
@@ -174,6 +180,8 @@ If ``true``, the camera is the active camera for the current scene. Only one cam
 +----------+----------------------------+
 
 The custom :ref:`Viewport<class_Viewport>` node attached to the ``Camera2D``. If ``null`` or not a :ref:`Viewport<class_Viewport>`, uses the default viewport instead.
+
+----
 
 .. _class_Camera2D_property_drag_margin_bottom:
 
@@ -189,12 +197,14 @@ The custom :ref:`Viewport<class_Viewport>` node attached to the ``Camera2D``. If
 
 Bottom margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
 
+----
+
 .. _class_Camera2D_property_drag_margin_h_enabled:
 
 - :ref:`bool<class_bool>` **drag_margin_h_enabled**
 
 +-----------+---------------------------+
-| *Default* | true                      |
+| *Default* | false                     |
 +-----------+---------------------------+
 | *Setter*  | set_h_drag_enabled(value) |
 +-----------+---------------------------+
@@ -202,6 +212,8 @@ Bottom margin needed to drag the camera. A value of ``1`` makes the camera move 
 +-----------+---------------------------+
 
 If ``true``, the camera only moves when reaching the horizontal drag margins. If ``false``, the camera moves horizontally regardless of margins.
+
+----
 
 .. _class_Camera2D_property_drag_margin_left:
 
@@ -217,6 +229,8 @@ If ``true``, the camera only moves when reaching the horizontal drag margins. If
 
 Left margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
 
+----
+
 .. _class_Camera2D_property_drag_margin_right:
 
 - :ref:`float<class_float>` **drag_margin_right**
@@ -230,6 +244,8 @@ Left margin needed to drag the camera. A value of ``1`` makes the camera move on
 +-----------+------------------------+
 
 Right margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+
+----
 
 .. _class_Camera2D_property_drag_margin_top:
 
@@ -245,12 +261,14 @@ Right margin needed to drag the camera. A value of ``1`` makes the camera move o
 
 Top margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
 
+----
+
 .. _class_Camera2D_property_drag_margin_v_enabled:
 
 - :ref:`bool<class_bool>` **drag_margin_v_enabled**
 
 +-----------+---------------------------+
-| *Default* | true                      |
+| *Default* | false                     |
 +-----------+---------------------------+
 | *Setter*  | set_v_drag_enabled(value) |
 +-----------+---------------------------+
@@ -258,6 +276,8 @@ Top margin needed to drag the camera. A value of ``1`` makes the camera move onl
 +-----------+---------------------------+
 
 If ``true``, the camera only moves when reaching the vertical drag margins. If ``false``, the camera moves vertically regardless of margins.
+
+----
 
 .. _class_Camera2D_property_editor_draw_drag_margin:
 
@@ -273,6 +293,8 @@ If ``true``, the camera only moves when reaching the vertical drag margins. If `
 
 If ``true``, draws the camera's drag margin rectangle in the editor.
 
+----
+
 .. _class_Camera2D_property_editor_draw_limits:
 
 - :ref:`bool<class_bool>` **editor_draw_limits**
@@ -286,6 +308,8 @@ If ``true``, draws the camera's drag margin rectangle in the editor.
 +-----------+----------------------------------+
 
 If ``true``, draws the camera's limits rectangle in the editor.
+
+----
 
 .. _class_Camera2D_property_editor_draw_screen:
 
@@ -301,6 +325,8 @@ If ``true``, draws the camera's limits rectangle in the editor.
 
 If ``true``, draws the camera's screen rectangle in the editor.
 
+----
+
 .. _class_Camera2D_property_limit_bottom:
 
 - :ref:`int<class_int>` **limit_bottom**
@@ -314,6 +340,8 @@ If ``true``, draws the camera's screen rectangle in the editor.
 +-----------+------------------+
 
 Bottom scroll limit in pixels. The camera stops moving when reaching this value.
+
+----
 
 .. _class_Camera2D_property_limit_left:
 
@@ -329,6 +357,8 @@ Bottom scroll limit in pixels. The camera stops moving when reaching this value.
 
 Left scroll limit in pixels. The camera stops moving when reaching this value.
 
+----
+
 .. _class_Camera2D_property_limit_right:
 
 - :ref:`int<class_int>` **limit_right**
@@ -342,6 +372,8 @@ Left scroll limit in pixels. The camera stops moving when reaching this value.
 +-----------+------------------+
 
 Right scroll limit in pixels. The camera stops moving when reaching this value.
+
+----
 
 .. _class_Camera2D_property_limit_smoothed:
 
@@ -357,6 +389,8 @@ Right scroll limit in pixels. The camera stops moving when reaching this value.
 
 If ``true``, the camera smoothly stops when reaches its limits.
 
+----
+
 .. _class_Camera2D_property_limit_top:
 
 - :ref:`int<class_int>` **limit_top**
@@ -370,6 +404,8 @@ If ``true``, the camera smoothly stops when reaches its limits.
 +-----------+------------------+
 
 Top scroll limit in pixels. The camera stops moving when reaching this value.
+
+----
 
 .. _class_Camera2D_property_offset:
 
@@ -385,6 +421,8 @@ Top scroll limit in pixels. The camera stops moving when reaching this value.
 
 The camera's offset, useful for looking around or camera shake animations.
 
+----
+
 .. _class_Camera2D_property_offset_h:
 
 - :ref:`float<class_float>` **offset_h**
@@ -398,6 +436,10 @@ The camera's offset, useful for looking around or camera shake animations.
 +-----------+---------------------+
 
 The horizontal offset of the camera, relative to the drag margins.
+
+**Note:** Offset H is used only to force offset relative to margins. It's not updated in any way if drag margins are enabled and can be used to set initial offset.
+
+----
 
 .. _class_Camera2D_property_offset_v:
 
@@ -413,6 +455,10 @@ The horizontal offset of the camera, relative to the drag margins.
 
 The vertical offset of the camera, relative to the drag margins.
 
+**Note:** Used the same as :ref:`offset_h<class_Camera2D_property_offset_h>`.
+
+----
+
 .. _class_Camera2D_property_process_mode:
 
 - :ref:`Camera2DProcessMode<enum_Camera2D_Camera2DProcessMode>` **process_mode**
@@ -424,6 +470,10 @@ The vertical offset of the camera, relative to the drag margins.
 +-----------+-------------------------+
 | *Getter*  | get_process_mode()      |
 +-----------+-------------------------+
+
+The camera's process callback. See :ref:`Camera2DProcessMode<enum_Camera2D_Camera2DProcessMode>`.
+
+----
 
 .. _class_Camera2D_property_rotating:
 
@@ -439,6 +489,8 @@ The vertical offset of the camera, relative to the drag margins.
 
 If ``true``, the camera rotates with the target.
 
+----
+
 .. _class_Camera2D_property_smoothing_enabled:
 
 - :ref:`bool<class_bool>` **smoothing_enabled**
@@ -453,6 +505,8 @@ If ``true``, the camera rotates with the target.
 
 If ``true``, the camera smoothly moves towards the target at :ref:`smoothing_speed<class_Camera2D_property_smoothing_speed>`.
 
+----
+
 .. _class_Camera2D_property_smoothing_speed:
 
 - :ref:`float<class_float>` **smoothing_speed**
@@ -466,6 +520,8 @@ If ``true``, the camera smoothly moves towards the target at :ref:`smoothing_spe
 +-----------+-----------------------------+
 
 Speed in pixels per second of the camera's smoothing effect when :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``true``.
+
+----
 
 .. _class_Camera2D_property_zoom:
 
@@ -490,11 +546,15 @@ Method Descriptions
 
 Aligns the camera to the tracked node.
 
+----
+
 .. _class_Camera2D_method_clear_current:
 
 - void **clear_current** **(** **)**
 
 Removes any ``Camera2D`` from the ancestor :ref:`Viewport<class_Viewport>`'s internal currently-assigned camera.
+
+----
 
 .. _class_Camera2D_method_force_update_scroll:
 
@@ -502,11 +562,15 @@ Removes any ``Camera2D`` from the ancestor :ref:`Viewport<class_Viewport>`'s int
 
 Forces the camera to update scroll immediately.
 
+----
+
 .. _class_Camera2D_method_get_camera_position:
 
 - :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** const
 
 Returns the camera position.
+
+----
 
 .. _class_Camera2D_method_get_camera_screen_center:
 
@@ -514,19 +578,31 @@ Returns the camera position.
 
 Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
 
+----
+
 .. _class_Camera2D_method_get_drag_margin:
 
 - :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
+Returns the specified margin. See also :ref:`drag_margin_bottom<class_Camera2D_property_drag_margin_bottom>`, :ref:`drag_margin_top<class_Camera2D_property_drag_margin_top>`, :ref:`drag_margin_left<class_Camera2D_property_drag_margin_left>`, and :ref:`drag_margin_right<class_Camera2D_property_drag_margin_right>`.
+
+----
+
 .. _class_Camera2D_method_get_limit:
 
 - :ref:`int<class_int>` **get_limit** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+Returns the specified camera limit. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
+
+----
 
 .. _class_Camera2D_method_make_current:
 
 - void **make_current** **(** **)**
 
 Make this the current 2D camera for the scene (viewport and layer), in case there are many cameras in the scene.
+
+----
 
 .. _class_Camera2D_method_reset_smoothing:
 
@@ -536,11 +612,19 @@ Sets the camera's position immediately to its current smoothing destination.
 
 This has no effect if smoothing is disabled.
 
+----
+
 .. _class_Camera2D_method_set_drag_margin:
 
 - void **set_drag_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` drag_margin **)**
 
+Sets the specified margin. See also :ref:`drag_margin_bottom<class_Camera2D_property_drag_margin_bottom>`, :ref:`drag_margin_top<class_Camera2D_property_drag_margin_top>`, :ref:`drag_margin_left<class_Camera2D_property_drag_margin_left>`, and :ref:`drag_margin_right<class_Camera2D_property_drag_margin_right>`.
+
+----
+
 .. _class_Camera2D_method_set_limit:
 
 - void **set_limit** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` limit **)**
+
+Sets the specified camera limit. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 

@@ -308,9 +308,10 @@ AnimatedSprite animation.
          ``$`` is shorthand for ``get_node()``.
          So in the code above, ``$AnimatedSprite.play()`` is the same as ``get_node("AnimatedSprite").play()``.
 
-Now that we have a movement direction, we can update the player's position
-and use ``clamp()`` to prevent it from leaving the screen by adding the following
-to the bottom of the ``_process`` function:
+Now that we have a movement direction, we can update the player's position. We
+can also use ``clamp()`` to prevent it from leaving the screen. *Clamping* a value
+means restricting it to a given range. Add the following to the bottom of
+the ``_process`` function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -328,7 +329,10 @@ to the bottom of the ``_process`` function:
         );
 
 
-.. tip:: *Clamping* a value means restricting it to a given range.
+.. tip:: The `delta` parameter in the `_process()` function refers to the
+        *frame length* - the amount of time that the previous frame took to
+        complete. Using this value ensures that your movement will remain
+        consistent even if the frame rate changes.
 
 Click "Play Scene" (``F6``) and confirm you can move the player
 around the screen in all directions. The console output that opens upon playing
@@ -913,8 +917,8 @@ the three ``Control`` nodes:
           represent the distance from the control node's edges to its anchor.
           See :ref:`doc_design_interfaces_with_the_control_nodes` for more details.
 
-Arrange the nodes as shown below. Click the "Anchor" button to
-set a Control node's anchor:
+Arrange the nodes as shown below. Click the "Layout" button to
+set a Control node's layout:
 
 .. image:: img/ui_anchor.png
 
@@ -934,6 +938,7 @@ MessageLabel
 -  *Text* : ``Dodge the Creeps!``
 -  *Layout* : "HCenter Wide"
 -  *Align* : "Center"
+-  *Autowrap* : "On"
 
 StartButton
 ~~~~~~~~~~~
@@ -995,10 +1000,14 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
 
     func show_game_over():
         show_message("Game Over")
+
         yield($MessageTimer, "timeout")
+
         $MessageLabel.text = "Dodge the\nCreeps!"
         $MessageLabel.show()
-        yield(get_tree().create_timer(1), 'timeout')
+
+        yield(get_tree().create_timer(1), "timeout")
+
         $StartButton.show()
 
  .. code-tab:: csharp
@@ -1144,14 +1153,14 @@ current node at the end of the current frame.
 
     func _on_start_game():
         queue_free()
- 
+
  .. code-tab:: csharp
 
     public void OnStartGame()
     {
         QueueFree();
     }
-          
+
 Then in ``Main.gd`` add a new line inside the ``_on_MobTimer_timeout()`` function,
 at the end.
 
@@ -1161,7 +1170,7 @@ at the end.
     $HUD.connect("start_game", mob, "_on_start_game")
 
  .. code-tab:: csharp
- 
+
     GetNode("HUD").Connect("StartGame", mobInstance, "OnStartGame");
 
 This line tells the new Mob node (referenced by the ``mob`` variable) to respond

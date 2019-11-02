@@ -47,11 +47,15 @@ Method Descriptions
 
 Returns the number of bands of the equalizer.
 
+----
+
 .. _class_AudioEffectEQ_method_get_band_gain_db:
 
 - :ref:`float<class_float>` **get_band_gain_db** **(** :ref:`int<class_int>` band_idx **)** const
 
 Returns the band's gain at the specified index, in dB.
+
+----
 
 .. _class_AudioEffectEQ_method_set_band_gain_db:
 

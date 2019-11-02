@@ -82,7 +82,7 @@ enum **Enabler**:
 Description
 -----------
 
-The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, and other nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler2D itself.
+The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, and other nodes when they are not visible. It will only affect nodes with the same root node as the VisibilityEnabler2D, and the root node itself.
 
 Property Descriptions
 ---------------------
@@ -101,6 +101,8 @@ Property Descriptions
 
 If ``true``, :ref:`RigidBody2D<class_RigidBody2D>` nodes will be paused.
 
+----
+
 .. _class_VisibilityEnabler2D_property_pause_animated_sprites:
 
 - :ref:`bool<class_bool>` **pause_animated_sprites**
@@ -114,6 +116,8 @@ If ``true``, :ref:`RigidBody2D<class_RigidBody2D>` nodes will be paused.
 +-----------+----------------------+
 
 If ``true``, :ref:`AnimatedSprite<class_AnimatedSprite>` nodes will be paused.
+
+----
 
 .. _class_VisibilityEnabler2D_property_pause_animations:
 
@@ -129,6 +133,8 @@ If ``true``, :ref:`AnimatedSprite<class_AnimatedSprite>` nodes will be paused.
 
 If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 
+----
+
 .. _class_VisibilityEnabler2D_property_pause_particles:
 
 - :ref:`bool<class_bool>` **pause_particles**
@@ -143,6 +149,8 @@ If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 
 If ``true``, :ref:`Particles2D<class_Particles2D>` nodes will be paused.
 
+----
+
 .. _class_VisibilityEnabler2D_property_physics_process_parent:
 
 - :ref:`bool<class_bool>` **physics_process_parent**
@@ -156,6 +164,8 @@ If ``true``, :ref:`Particles2D<class_Particles2D>` nodes will be paused.
 +-----------+----------------------+
 
 If ``true``, the parent's :ref:`Node._physics_process<class_Node_method__physics_process>` will be stopped.
+
+----
 
 .. _class_VisibilityEnabler2D_property_process_parent:
 
@@ -177,6 +187,8 @@ Method Descriptions
 .. _class_VisibilityEnabler2D_method_is_enabler_enabled:
 
 - :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` enabler **)** const
+
+----
 
 .. _class_VisibilityEnabler2D_method_set_enabler:
 

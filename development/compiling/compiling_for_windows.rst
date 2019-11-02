@@ -16,13 +16,14 @@ For compiling under Windows, the following is required:
   will have to run/download the installer again.**
 - MinGW-w64 can be used as an alternative to Visual Studio.
 - `Python 3.5+ (recommended) or Python 2.7+. <https://www.python.org/downloads/windows/>`_
-- `SCons <https://www.scons.org>`_ build system.
+- `SCons <https://www.scons.org>`_ build system. If using Visual Studio 2019,
+  you *must* have SCons 3.1.1 or later.
 - *Optional* - `yasm <https://yasm.tortall.net/>`_ (for WebM SIMD optimizations)
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
 
-              scoop install gcc python scons
+              scoop install gcc python scons make
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
@@ -108,7 +109,7 @@ If all goes well, the resulting binary executable will be placed in
 ``godot.windows.tools.64.exe``.
 
 .. note:: By default, SCons will build a binary matching your CPU architecture,
-          but this can be overriden using ``bits=64`` or ``bits=32``.
+          but this can be overridden using ``bits=64`` or ``bits=32``.
 
 This executable file contains the whole engine and runs without any
 dependencies. Running it will bring up the Project Manager.

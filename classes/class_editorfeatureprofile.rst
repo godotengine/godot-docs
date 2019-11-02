@@ -21,29 +21,29 @@ Brief Description
 Methods
 -------
 
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_feature_name<class_EditorFeatureProfile_method_get_feature_name>` **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)**                                                                      |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_class_disabled<class_EditorFeatureProfile_method_is_class_disabled>` **(** :ref:`String<class_String>` class_name **)** const                                                                                 |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_class_editor_disabled<class_EditorFeatureProfile_method_is_class_editor_disabled>` **(** :ref:`String<class_String>` class_name **)** const                                                                   |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_class_property_disabled<class_EditorFeatureProfile_method_is_class_property_disabled>` **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` arg1 **)** const                             |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_feature_disabled<class_EditorFeatureProfile_method_is_feature_disabled>` **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)** const                                                          |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load_from_file<class_EditorFeatureProfile_method_load_from_file>` **(** :ref:`String<class_String>` path **)**                                                                                                   |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_to_file<class_EditorFeatureProfile_method_save_to_file>` **(** :ref:`String<class_String>` path **)**                                                                                                       |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_disable_class<class_EditorFeatureProfile_method_set_disable_class>` **(** :ref:`String<class_String>` class_name, :ref:`bool<class_bool>` disable **)**                                                      |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_disable_class_editor<class_EditorFeatureProfile_method_set_disable_class_editor>` **(** :ref:`String<class_String>` class_name, :ref:`bool<class_bool>` disable **)**                                        |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_disable_class_property<class_EditorFeatureProfile_method_set_disable_class_property>` **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property, :ref:`bool<class_bool>` arg2 **)** |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_disable_feature<class_EditorFeatureProfile_method_set_disable_feature>` **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature, :ref:`bool<class_bool>` disable **)**                               |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_feature_name<class_EditorFeatureProfile_method_get_feature_name>` **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)**                                                                         |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_class_disabled<class_EditorFeatureProfile_method_is_class_disabled>` **(** :ref:`String<class_String>` class_name **)** const                                                                                    |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_class_editor_disabled<class_EditorFeatureProfile_method_is_class_editor_disabled>` **(** :ref:`String<class_String>` class_name **)** const                                                                      |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_class_property_disabled<class_EditorFeatureProfile_method_is_class_property_disabled>` **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property **)** const                            |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_feature_disabled<class_EditorFeatureProfile_method_is_feature_disabled>` **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)** const                                                             |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load_from_file<class_EditorFeatureProfile_method_load_from_file>` **(** :ref:`String<class_String>` path **)**                                                                                                      |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_to_file<class_EditorFeatureProfile_method_save_to_file>` **(** :ref:`String<class_String>` path **)**                                                                                                          |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_disable_class<class_EditorFeatureProfile_method_set_disable_class>` **(** :ref:`String<class_String>` class_name, :ref:`bool<class_bool>` disable **)**                                                         |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_disable_class_editor<class_EditorFeatureProfile_method_set_disable_class_editor>` **(** :ref:`String<class_String>` class_name, :ref:`bool<class_bool>` disable **)**                                           |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_disable_class_property<class_EditorFeatureProfile_method_set_disable_class_property>` **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property, :ref:`bool<class_bool>` disable **)** |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_disable_feature<class_EditorFeatureProfile_method_set_disable_feature>` **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature, :ref:`bool<class_bool>` disable **)**                                  |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -91,41 +91,61 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_feature_name** **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)**
 
+----
+
 .. _class_EditorFeatureProfile_method_is_class_disabled:
 
 - :ref:`bool<class_bool>` **is_class_disabled** **(** :ref:`String<class_String>` class_name **)** const
+
+----
 
 .. _class_EditorFeatureProfile_method_is_class_editor_disabled:
 
 - :ref:`bool<class_bool>` **is_class_editor_disabled** **(** :ref:`String<class_String>` class_name **)** const
 
+----
+
 .. _class_EditorFeatureProfile_method_is_class_property_disabled:
 
-- :ref:`bool<class_bool>` **is_class_property_disabled** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` arg1 **)** const
+- :ref:`bool<class_bool>` **is_class_property_disabled** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property **)** const
+
+----
 
 .. _class_EditorFeatureProfile_method_is_feature_disabled:
 
 - :ref:`bool<class_bool>` **is_feature_disabled** **(** :ref:`Feature<enum_EditorFeatureProfile_Feature>` feature **)** const
 
+----
+
 .. _class_EditorFeatureProfile_method_load_from_file:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load_from_file** **(** :ref:`String<class_String>` path **)**
+
+----
 
 .. _class_EditorFeatureProfile_method_save_to_file:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_to_file** **(** :ref:`String<class_String>` path **)**
 
+----
+
 .. _class_EditorFeatureProfile_method_set_disable_class:
 
 - void **set_disable_class** **(** :ref:`String<class_String>` class_name, :ref:`bool<class_bool>` disable **)**
+
+----
 
 .. _class_EditorFeatureProfile_method_set_disable_class_editor:
 
 - void **set_disable_class_editor** **(** :ref:`String<class_String>` class_name, :ref:`bool<class_bool>` disable **)**
 
+----
+
 .. _class_EditorFeatureProfile_method_set_disable_class_property:
 
-- void **set_disable_class_property** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property, :ref:`bool<class_bool>` arg2 **)**
+- void **set_disable_class_property** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` property, :ref:`bool<class_bool>` disable **)**
+
+----
 
 .. _class_EditorFeatureProfile_method_set_disable_feature:
 

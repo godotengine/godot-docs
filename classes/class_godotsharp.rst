@@ -48,19 +48,27 @@ Method Descriptions
 
 Attaches the current thread to the mono runtime.
 
+----
+
 .. _class_GodotSharp_method_detach_thread:
 
 - void **detach_thread** **(** **)**
 
 Detaches the current thread from the mono runtime.
 
+----
+
 .. _class_GodotSharp_method_get_domain_id:
 
 - :ref:`int<class_int>` **get_domain_id** **(** **)**
 
+----
+
 .. _class_GodotSharp_method_get_scripts_domain_id:
 
 - :ref:`int<class_int>` **get_scripts_domain_id** **(** **)**
+
+----
 
 .. _class_GodotSharp_method_is_domain_finalizing_for_unload:
 
@@ -68,13 +76,19 @@ Detaches the current thread from the mono runtime.
 
 Returns whether the domain is being finalized.
 
+----
+
 .. _class_GodotSharp_method_is_runtime_initialized:
 
 - :ref:`bool<class_bool>` **is_runtime_initialized** **(** **)**
 
+----
+
 .. _class_GodotSharp_method_is_runtime_shutting_down:
 
 - :ref:`bool<class_bool>` **is_runtime_shutting_down** **(** **)**
+
+----
 
 .. _class_GodotSharp_method_is_scripts_domain_loaded:
 

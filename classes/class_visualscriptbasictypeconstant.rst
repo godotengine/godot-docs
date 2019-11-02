@@ -49,6 +49,8 @@ Property Descriptions
 
 The type to get the constant from.
 
+----
+
 .. _class_VisualScriptBasicTypeConstant_property_constant:
 
 - :ref:`String<class_String>` **constant**

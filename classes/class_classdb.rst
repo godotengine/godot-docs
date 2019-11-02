@@ -77,11 +77,15 @@ Method Descriptions
 
 Returns ``true`` if you can instance objects from the specified ``class``, ``false`` in other case.
 
+----
+
 .. _class_ClassDB_method_class_exists:
 
 - :ref:`bool<class_bool>` **class_exists** **(** :ref:`String<class_String>` class **)** const
 
 Returns whether the specified ``class`` is available or not.
+
+----
 
 .. _class_ClassDB_method_class_get_category:
 
@@ -89,11 +93,15 @@ Returns whether the specified ``class`` is available or not.
 
 Returns a category associated with the class for use in documentation and the Asset Library. Debug mode required.
 
+----
+
 .. _class_ClassDB_method_class_get_integer_constant:
 
 - :ref:`int<class_int>` **class_get_integer_constant** **(** :ref:`String<class_String>` class, :ref:`String<class_String>` name **)** const
 
 Returns the value of the integer constant ``name`` of ``class`` or its ancestry. Always returns 0 when the constant could not be found.
+
+----
 
 .. _class_ClassDB_method_class_get_integer_constant_list:
 
@@ -101,11 +109,15 @@ Returns the value of the integer constant ``name`` of ``class`` or its ancestry.
 
 Returns an array with the names all the integer constants of ``class`` or its ancestry.
 
+----
+
 .. _class_ClassDB_method_class_get_method_list:
 
 - :ref:`Array<class_Array>` **class_get_method_list** **(** :ref:`String<class_String>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
 Returns an array with all the methods of ``class`` or its ancestry if ``no_inheritance`` is ``false``. Every element of the array is a :ref:`Dictionary<class_Dictionary>` with the following keys: ``args``, ``default_args``, ``flags``, ``id``, ``name``, ``return: (class_name, hint, hint_string, name, type, usage)``.
+
+----
 
 .. _class_ClassDB_method_class_get_property:
 
@@ -113,11 +125,15 @@ Returns an array with all the methods of ``class`` or its ancestry if ``no_inher
 
 Returns the value of ``property`` of ``class`` or its ancestry.
 
+----
+
 .. _class_ClassDB_method_class_get_property_list:
 
 - :ref:`Array<class_Array>` **class_get_property_list** **(** :ref:`String<class_String>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
 Returns an array with all the properties of ``class`` or its ancestry if ``no_inheritance`` is ``false``.
+
+----
 
 .. _class_ClassDB_method_class_get_signal:
 
@@ -125,11 +141,15 @@ Returns an array with all the properties of ``class`` or its ancestry if ``no_in
 
 Returns the ``signal`` data of ``class`` or its ancestry. The returned value is a :ref:`Dictionary<class_Dictionary>` with the following keys: ``args``, ``default_args``, ``flags``, ``id``, ``name``, ``return: (class_name, hint, hint_string, name, type, usage)``.
 
+----
+
 .. _class_ClassDB_method_class_get_signal_list:
 
 - :ref:`Array<class_Array>` **class_get_signal_list** **(** :ref:`String<class_String>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
 Returns an array with all the signals of ``class`` or its ancestry if ``no_inheritance`` is ``false``. Every element of the array is a :ref:`Dictionary<class_Dictionary>` as described in :ref:`class_get_signal<class_ClassDB_method_class_get_signal>`.
+
+----
 
 .. _class_ClassDB_method_class_has_integer_constant:
 
@@ -137,11 +157,15 @@ Returns an array with all the signals of ``class`` or its ancestry if ``no_inher
 
 Returns whether ``class`` or its ancestry has an integer constant called ``name`` or not.
 
+----
+
 .. _class_ClassDB_method_class_has_method:
 
 - :ref:`bool<class_bool>` **class_has_method** **(** :ref:`String<class_String>` class, :ref:`String<class_String>` method, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
-Returns whether ``class`` (or its ancestry if ``no_inheritance`` is false) has a method called ``method`` or not.
+Returns whether ``class`` (or its ancestry if ``no_inheritance`` is ``false``) has a method called ``method`` or not.
+
+----
 
 .. _class_ClassDB_method_class_has_signal:
 
@@ -149,11 +173,15 @@ Returns whether ``class`` (or its ancestry if ``no_inheritance`` is false) has a
 
 Returns whether ``class`` or its ancestry has a signal called ``signal`` or not.
 
+----
+
 .. _class_ClassDB_method_class_set_property:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **class_set_property** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)** const
 
 Sets ``property`` value of ``class`` to ``value``.
+
+----
 
 .. _class_ClassDB_method_get_class_list:
 
@@ -161,11 +189,15 @@ Sets ``property`` value of ``class`` to ``value``.
 
 Returns the names of all the classes available.
 
+----
+
 .. _class_ClassDB_method_get_inheriters_from_class:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_inheriters_from_class** **(** :ref:`String<class_String>` class **)** const
 
 Returns the names of all the classes that directly or indirectly inherit from ``class``.
+
+----
 
 .. _class_ClassDB_method_get_parent_class:
 
@@ -173,17 +205,23 @@ Returns the names of all the classes that directly or indirectly inherit from ``
 
 Returns the parent class of ``class``.
 
+----
+
 .. _class_ClassDB_method_instance:
 
 - :ref:`Variant<class_Variant>` **instance** **(** :ref:`String<class_String>` class **)** const
 
 Creates an instance of ``class``.
 
+----
+
 .. _class_ClassDB_method_is_class_enabled:
 
 - :ref:`bool<class_bool>` **is_class_enabled** **(** :ref:`String<class_String>` class **)** const
 
-Returns whether this class is enabled or not.
+Returns whether this ``class`` is enabled or not.
+
+----
 
 .. _class_ClassDB_method_is_parent_class:
 

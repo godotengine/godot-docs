@@ -12,9 +12,9 @@ in the user's browser.
                with :kbd:`F12`, to view **debug information** like JavaScript,
                engine, and WebGL errors.
 
-.. attention:: Many browsers, Chromium-based browsers specifically, will not
-               load exported projects when **opened locally** per ``file://``
-               protocol. To get around this, use a local server.
+.. attention:: Many browsers, including Firefox and Chromium-based browsers,
+               will not load exported projects when **opened locally** per
+               ``file://`` protocol. To get around this, use a local server.
 
                .. tip:: Python offers an easy method to start a local server.
                         Use ``python -m SimpleHTTPServer`` with Python 2 or
@@ -25,7 +25,7 @@ WebGL 2
 -------
 
 Until the *OpenGL ES 3* renderer is removed from Godot in favor of *Vulkan*,
-HTML5 export uses *WebGL 2* when the *GLES3* option selected.
+HTML5 export uses *WebGL 2* when the *GLES3* option is selected.
 
 .. warning:: Usage of WebGL 2 is not recommended due to its expected removal
              from Godot without replacement.
@@ -94,9 +94,8 @@ The HTTP classes have several restrictions on the HTML5 platform:
 Exported ``.html`` file must not be reused
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On export, several text placeholders are replaced in the **generated HTML
-file** specifically for the given export options. It must not be reused in
-further exports.
+Each project must generate their own HTML file. On export, several text placeholders are replaced in the **generated HTML
+file** specifically for the given export options. Any direct modifications to the **generated HTML file** will be lost in future exports. To customize the generated file, see :ref:`doc_customizing_html5_shell`.
 
 Boot splash is not displayed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

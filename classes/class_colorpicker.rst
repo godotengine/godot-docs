@@ -51,27 +51,29 @@ Methods
 Theme Properties
 ----------------
 
-+-------------------------------+---------------+-----+
-| :ref:`Texture<class_Texture>` | add_preset    |     |
-+-------------------------------+---------------+-----+
-| :ref:`Texture<class_Texture>` | color_hue     |     |
-+-------------------------------+---------------+-----+
-| :ref:`Texture<class_Texture>` | color_sample  |     |
-+-------------------------------+---------------+-----+
-| :ref:`int<class_int>`         | h_width       | 30  |
-+-------------------------------+---------------+-----+
-| :ref:`int<class_int>`         | label_width   | 10  |
-+-------------------------------+---------------+-----+
-| :ref:`int<class_int>`         | margin        | 4   |
-+-------------------------------+---------------+-----+
-| :ref:`Texture<class_Texture>` | preset_bg     |     |
-+-------------------------------+---------------+-----+
-| :ref:`Texture<class_Texture>` | screen_picker |     |
-+-------------------------------+---------------+-----+
-| :ref:`int<class_int>`         | sv_height     | 256 |
-+-------------------------------+---------------+-----+
-| :ref:`int<class_int>`         | sv_width      | 256 |
-+-------------------------------+---------------+-----+
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | add_preset           |     |
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | color_hue            |     |
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | color_sample         |     |
++-------------------------------+----------------------+-----+
+| :ref:`int<class_int>`         | h_width              | 30  |
++-------------------------------+----------------------+-----+
+| :ref:`int<class_int>`         | label_width          | 10  |
++-------------------------------+----------------------+-----+
+| :ref:`int<class_int>`         | margin               | 4   |
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | overbright_indicator |     |
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | preset_bg            |     |
++-------------------------------+----------------------+-----+
+| :ref:`Texture<class_Texture>` | screen_picker        |     |
++-------------------------------+----------------------+-----+
+| :ref:`int<class_int>`         | sv_height            | 256 |
++-------------------------------+----------------------+-----+
+| :ref:`int<class_int>`         | sv_width             | 256 |
++-------------------------------+----------------------+-----+
 
 Signals
 -------
@@ -82,11 +84,15 @@ Signals
 
 Emitted when the color is changed.
 
+----
+
 .. _class_ColorPicker_signal_preset_added:
 
 - **preset_added** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when a preset is added.
+
+----
 
 .. _class_ColorPicker_signal_preset_removed:
 
@@ -116,6 +122,8 @@ Property Descriptions
 
 The currently selected color.
 
+----
+
 .. _class_ColorPicker_property_deferred_mode:
 
 - :ref:`bool<class_bool>` **deferred_mode**
@@ -130,6 +138,8 @@ The currently selected color.
 
 If ``true``, the color will apply only after the user releases the mouse button, otherwise it will apply immediately even in mouse motion event (which can cause performance issues).
 
+----
+
 .. _class_ColorPicker_property_edit_alpha:
 
 - :ref:`bool<class_bool>` **edit_alpha**
@@ -143,6 +153,8 @@ If ``true``, the color will apply only after the user releases the mouse button,
 +-----------+-----------------------+
 
 If ``true``, shows an alpha channel slider (transparency).
+
+----
 
 .. _class_ColorPicker_property_hsv_mode:
 
@@ -160,6 +172,8 @@ If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 
 **Note:** Cannot be enabled if raw mode is on.
 
+----
+
 .. _class_ColorPicker_property_presets_enabled:
 
 - :ref:`bool<class_bool>` **presets_enabled**
@@ -172,6 +186,10 @@ If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 | *Getter*  | are_presets_enabled()      |
 +-----------+----------------------------+
 
+If ``true``, the "add preset" button is enabled.
+
+----
+
 .. _class_ColorPicker_property_presets_visible:
 
 - :ref:`bool<class_bool>` **presets_visible**
@@ -183,6 +201,10 @@ If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 +-----------+----------------------------+
 | *Getter*  | are_presets_visible()      |
 +-----------+----------------------------+
+
+If ``true``, saved color presets are visible.
+
+----
 
 .. _class_ColorPicker_property_raw_mode:
 
@@ -211,11 +233,15 @@ Adds the given color to a list of color presets. The presets are displayed in th
 
 **Note:** the presets list is only for *this* color picker.
 
+----
+
 .. _class_ColorPicker_method_erase_preset:
 
 - void **erase_preset** **(** :ref:`Color<class_Color>` color **)**
 
 Removes the given color from the list of color presets of this color picker.
+
+----
 
 .. _class_ColorPicker_method_get_presets:
 

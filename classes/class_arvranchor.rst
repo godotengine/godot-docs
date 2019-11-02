@@ -84,11 +84,15 @@ Method Descriptions
 
 Returns the name given to this anchor.
 
+----
+
 .. _class_ARVRAnchor_method_get_is_active:
 
 - :ref:`bool<class_bool>` **get_is_active** **(** **)** const
 
 Returns ``true`` if the anchor is being tracked and ``false`` if no anchor with this ID is currently known.
+
+----
 
 .. _class_ARVRAnchor_method_get_mesh:
 
@@ -96,11 +100,15 @@ Returns ``true`` if the anchor is being tracked and ``false`` if no anchor with 
 
 If provided by the ARVR Interface, this returns a mesh object for the anchor. For an anchor, this can be a shape related to the object being tracked or it can be a mesh that provides topology related to the anchor and can be used to create shadows/reflections on surfaces or for generating collision shapes.
 
+----
+
 .. _class_ARVRAnchor_method_get_plane:
 
 - :ref:`Plane<class_Plane>` **get_plane** **(** **)** const
 
 Returns a plane aligned with our anchor; handy for intersection testing.
+
+----
 
 .. _class_ARVRAnchor_method_get_size:
 

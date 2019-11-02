@@ -55,11 +55,15 @@ Method Descriptions
 
 Closes the UDP socket the ``PacketPeerUDP`` is currently listening on.
 
+----
+
 .. _class_PacketPeerUDP_method_get_packet_ip:
 
 - :ref:`String<class_String>` **get_packet_ip** **(** **)** const
 
 Returns the IP of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
+
+----
 
 .. _class_PacketPeerUDP_method_get_packet_port:
 
@@ -67,11 +71,15 @@ Returns the IP of the remote peer that sent the last packet(that was received wi
 
 Returns the port of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
 
+----
+
 .. _class_PacketPeerUDP_method_is_listening:
 
 - :ref:`bool<class_bool>` **is_listening** **(** **)** const
 
 Returns whether this ``PacketPeerUDP`` is listening.
+
+----
 
 .. _class_PacketPeerUDP_method_join_multicast_group:
 
@@ -81,11 +89,15 @@ Joins the multicast group specified by ``multicast_address`` using the interface
 
 You can join the same multicast group with multiple interfaces. Use :ref:`IP.get_local_interfaces<class_IP_method_get_local_interfaces>` to know which are available.
 
+----
+
 .. _class_PacketPeerUDP_method_leave_multicast_group:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **leave_multicast_group** **(** :ref:`String<class_String>` multicast_address, :ref:`String<class_String>` interface_name **)**
 
 Removes the interface identified by ``interface_name`` from the multicast group specified by ``multicast_address``.
+
+----
 
 .. _class_PacketPeerUDP_method_listen:
 
@@ -99,11 +111,15 @@ If ``bind_address`` is set to ``"0.0.0.0"`` (for IPv4) or ``"::"`` (for IPv6), t
 
 If ``bind_address`` is set to any valid address (e.g. ``"192.168.1.101"``, ``"::1"``, etc), the peer will only listen on the interface with that addresses (or fail if no interface with the given address exists).
 
+----
+
 .. _class_PacketPeerUDP_method_set_dest_address:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **set_dest_address** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
 
 Sets the destination address and port for sending packets and variables. A hostname will be resolved using DNS if needed.
+
+----
 
 .. _class_PacketPeerUDP_method_wait:
 

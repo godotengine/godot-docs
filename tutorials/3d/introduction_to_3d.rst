@@ -27,7 +27,7 @@ node for everything 3D.
 .. image:: img/tuto_3d1.png
 
 Spatial nodes have a local transform, which is relative to the parent
-node (as long as the parent node is also of **or inherits** from the type
+node (as long as the parent node is also of **or inherits from** the type
 Spatial). This transform can be accessed as a 4x3
 :ref:`Transform <class_Transform>`, or as 3 :ref:`Vector3 <class_Vector3>`
 members representing location, Euler rotation (x,y and z angles) and
@@ -159,7 +159,7 @@ Vector3,Color,etc.).
 
 Some useful keybindings:
 
--  To snap placement or rotation, press the "s" key while moving, scaling
+-  To snap placement or rotation, press the "Ctrl" key while moving, scaling
    or rotating.
 -  To center the view on the selected object, press the "f" key.
 

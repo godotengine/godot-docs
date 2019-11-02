@@ -47,6 +47,8 @@ Property Descriptions
 
 The current :ref:`AudioStream<class_AudioStream>`.
 
+----
+
 .. _class_AudioStreamRandomPitch_property_random_pitch:
 
 - :ref:`float<class_float>` **random_pitch**

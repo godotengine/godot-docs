@@ -88,6 +88,8 @@ look that nice in normal maps, the RGTC compression format is the best fit for t
 image as RGTC compressed. By default, it's set to "Detect", which means that if the texture is ever used as a normal map, it will be changed to "Enabled" and
 reimported automatically.
 
+Note that RGTC compression affects the resulting normal map image. You will have to adjust custom shaders that use the normal map to take this into account.
+
 Flags
 -----
 

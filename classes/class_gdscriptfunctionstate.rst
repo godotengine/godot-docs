@@ -50,6 +50,8 @@ Check whether the function call may be resumed. This is not the case if the func
 
 If ``extended_check`` is enabled, it also checks if the associated script and object still exist. The extended check is done in debug mode as part of :ref:`resume<class_GDScriptFunctionState_method_resume>`, but you can use this if you know you may be trying to resume without knowing for sure the object and/or script have survived up to that point.
 
+----
+
 .. _class_GDScriptFunctionState_method_resume:
 
 - :ref:`Variant<class_Variant>` **resume** **(** :ref:`Variant<class_Variant>` arg=null **)**

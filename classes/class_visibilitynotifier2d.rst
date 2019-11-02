@@ -43,17 +43,23 @@ Signals
 
 Emitted when the VisibilityNotifier2D enters the screen.
 
+----
+
 .. _class_VisibilityNotifier2D_signal_screen_exited:
 
 - **screen_exited** **(** **)**
 
 Emitted when the VisibilityNotifier2D exits the screen.
 
+----
+
 .. _class_VisibilityNotifier2D_signal_viewport_entered:
 
 - **viewport_entered** **(** :ref:`Viewport<class_Viewport>` viewport **)**
 
 Emitted when the VisibilityNotifier2D enters a :ref:`Viewport<class_Viewport>`'s view.
+
+----
 
 .. _class_VisibilityNotifier2D_signal_viewport_exited:
 
