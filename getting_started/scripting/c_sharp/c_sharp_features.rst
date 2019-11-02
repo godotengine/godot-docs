@@ -33,7 +33,7 @@ You would use it instead of the ``as`` operator if you are pretty sure it won't 
 
 **Using the AS operator**
 
-The ``as`` operator returns null if the node cannot be cast to Sprite,
+The ``as`` operator returns ``null`` if the node cannot be cast to Sprite,
 and for that reason, it cannot be used with value types.
 
 .. code-block:: csharp

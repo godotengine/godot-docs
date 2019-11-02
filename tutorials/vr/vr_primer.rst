@@ -34,9 +34,9 @@ To enable an interface, you execute the following code:
 
 This code finds the interface we wish to use, initializes it and, if that is successful, binds the main viewport to the interface. This last step gives some control over the viewport to the interface, which automatically enables things like stereoscopic rendering on the viewport.
 
-For our mobile VR interface, and any interface where the main input is directly displayed on screen, the main viewport needs to be the viewport where arvr is set to true. But for interfaces that render on an externally attached device, you can use a secondary viewport. In the latter case, a viewport that shows its output on screen will show an undistorted version of the left eye, while showing the fully processed stereoscopic output on the device.
+For our mobile VR interface, and any interface where the main input is directly displayed on screen, the main viewport needs to be the viewport where :ref:`arvr<class_Viewport_property_arvr>` is set to ``true``. But for interfaces that render on an externally attached device, you can use a secondary viewport. In the latter case, a viewport that shows its output on screen will show an undistorted version of the left eye, while showing the fully processed stereoscopic output on the device.
 
-Finally, you should only initialize an interface once; switching scenes and reinitializing interfaces will just introduce a lot of overhead. If you want to turn the headset off temporarily, just disable the viewport or set arvr to false on the viewport. In most scenarios though, you wouldn't disable the headset once you're in VR, this can be disconcerting to the gamer.
+Finally, you should only initialize an interface once; switching scenes and reinitializing interfaces will just introduce a lot of overhead. If you want to turn the headset off temporarily, just disable the viewport or set :ref:`arvr<class_Viewport_property_arvr>` to ``false`` on the viewport. In most scenarios though, you wouldn't disable the headset once you're in VR, this can be disconcerting to the gamer.
 
 New AR/VR nodes
 ---------------

@@ -149,7 +149,7 @@ following code:
    # Set Sprite Texture.
    $sprite.texture = tex
 
-But if you use this in _ready() or from the first frame of the :ref:`Viewport's <class_Viewport>` initialization,
+But if you use this in ``_ready()`` or from the first frame of the :ref:`Viewport's <class_Viewport>` initialization,
 you will get an empty texture because there is nothing to get as texture. You can deal with
 it using (for example):
 
@@ -167,7 +167,7 @@ If the :ref:`Viewport <class_Viewport>` is a child of a :ref:`ViewportContainer 
 .. image:: img/container.png
 
 The :ref:`Viewport <class_Viewport>` will cover the area of its parent :ref:`ViewportContainer <class_viewportcontainer>` completely
-if stretch is set to true in :ref:`ViewportContainer <class_viewportcontainer>`.
+if :ref:`Stretch<class_viewportcontainer_property_stretch>` is set to ``true`` in :ref:`ViewportContainer <class_viewportcontainer>`.
 Note: The size of the :ref:`ViewportContainer <class_viewportcontainer>` cannot be smaller than the size of the :ref:`Viewport <class_Viewport>`.
 
 Rendering
@@ -237,7 +237,7 @@ and then selecting the :ref:`Viewport <class_Viewport>` you want to use.
 .. image:: img/texturepath.png
 
 Every frame, the :ref:`Viewport <class_Viewport>`'s texture is cleared away with the default clear color (or a transparent
-color if Transparent BG is set to true). This can be changed by setting Clear Mode to Never or Next Frame.
+color if :ref:`Transparent BG<class_Viewport_property_transparent_bg>` is set to ``true``). This can be changed by setting :ref:`Clear Mode<class_Viewport_property_render_target_clear_mode>` to Never or Next Frame.
 As the name implies, Never means the texture will never be cleared, while next frame will
 clear the texture on the next frame and then set itself to Never.
 

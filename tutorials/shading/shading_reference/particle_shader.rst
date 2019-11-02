@@ -56,9 +56,9 @@ to ``true``. In a ShaderMaterial, access it with the ``COLOR`` variable.
 +---------------------------------+-------------------------------------------------------------------------------------+
 | out float **MASS**              | Particle mass, use for attractors (not implemented in 3.1).                         |
 +---------------------------------+-------------------------------------------------------------------------------------+
-| inout bool **ACTIVE**           | True when Particle is active, can be set to false.                                  |
+| inout bool **ACTIVE**           | ``true`` when Particle is active, can be set to ``false``.                          |
 +---------------------------------+-------------------------------------------------------------------------------------+
-| in bool **RESTART**             | True when particle must restart (lifetime cycled).                                  |
+| in bool **RESTART**             | ``true`` when particle must restart (lifetime cycled).                              |
 +---------------------------------+-------------------------------------------------------------------------------------+
 | inout vec4 **CUSTOM**           | Custom particle data. Accessible from shader of mesh as **INSTANCE_CUSTOM**.        |
 +---------------------------------+-------------------------------------------------------------------------------------+

@@ -779,7 +779,7 @@ Now we need to change some of the code in ``process_input``. Add the following s
 
 Let's go over the additions:
 
-We set ``is_sprinting`` to true when the player is holding down the ``movement_sprint`` action, and false
+We set ``is_sprinting`` to ``true`` when the player is holding down the ``movement_sprint`` action, and ``false``
 when the ``movement_sprint`` action is released. In ``process_movement`` we'll add the code that makes the player faster when
 they sprint. Here in ``process_input`` we are just going to change the ``is_sprinting`` variable.
 

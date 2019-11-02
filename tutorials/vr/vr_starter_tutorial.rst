@@ -471,7 +471,7 @@ Next, we check to see if the collision body the :ref:`Raycast <class_Raycast>` i
 can only teleport on :ref:`StaticBody <class_StaticBody>` nodes. We then check to see if the ``Y`` value returned by the :ref:`Raycast <class_Raycast>`'s
 ``get_collision_normal`` function is more than ``0.85``, which is mostly pointing straight up. This allows the player only to teleport on fairly flat faces pointing upwards.
 
-If all those checks for the teleport :ref:`Raycast <class_Raycast>` return true, we then set ``teleport_pos`` to the collision point, and we move the teleportation
+If all those checks for the teleport :ref:`Raycast <class_Raycast>` return ``true``, we then set ``teleport_pos`` to the collision point, and we move the teleportation
 mesh to ``teleport_pos``.
 
 The next thing we check is to see if the :ref:`ARVRController <class_ARVRController>` is active or not. If the :ref:`ARVRController <class_ARVRController>` is active, then
@@ -823,7 +823,7 @@ Next, we need to add the ``remove_sphere`` function. Add the following to ``Game
 
 What this function does is it subtracts one from ``spheres_left``.
 
-Then, it checks to see whether ``sphere_ui`` is not null, and if it is not, then it calls its ``update_ui`` function, passing in the amount of spheres left.
+Then, it checks to see whether ``sphere_ui`` is not ``null``, and if it is not, then it calls its ``update_ui`` function, passing in the amount of spheres left.
 We'll add the UI code later in this part.
 
 Now that we have destroyable targets, we need a way to destroy them!
@@ -1181,7 +1181,7 @@ Then, we go through everything inside the explosion :ref:`Area <class_Area>`. We
 do not want to explode the bomb with itself. We then check to see whether the bodies have the ``damage`` method/function, and if it does, we call that, while if it does not, we check to
 see if it has the ``apply_impulse`` method/function, and call that instead.
 
-Then, we set ``explode`` to true since the bomb has exploded, and we play a sound.
+Then, we set ``explode`` to ``true`` since the bomb has exploded, and we play a sound.
 
 Next, we check to see if the bomb has exploded, as we need to wait until the explosion :ref:`Particles <class_Particles>` are done.
 

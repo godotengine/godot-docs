@@ -330,7 +330,7 @@ given condition.
 Condition
 ^^^^^^^^^
 
-This is a simple node that checks a bool port. If true, it will go via the "true" sequence port. If false,
+This is a simple node that checks a bool port. If ``true``, it will go via the "true" sequence port. If ``false``,
 the second. After going for either of them, it goes via the "done" port. Leaving sequence
 ports disconnected is fine if not all of them are used.
 
