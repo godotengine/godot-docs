@@ -206,7 +206,7 @@ Therefore, the command that you should (almost) always use is:
 
 You may configure git to use ``--rebase`` option automatically for you when you pull, with:
 
-::
+.. tip::
 
     $ git config --global pull.rebase true
 
