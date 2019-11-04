@@ -179,6 +179,10 @@ A RigidBody2D has 4 behavior :ref:`mode<class_RigidBody2D_property_mode>`\ s: Ri
 
 **Note:** You should not change a RigidBody2D's ``position`` or ``linear_velocity`` every frame or even very often. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>`, which allows you to directly access the physics state.
 
+Once in kinematic mode, the body's state is forced set to sleeping (though **can_sleep** is false), and the **_integrate_forces** function is not called. Applying forces or impulse won't move the body, so the ``position`` can be altered.
+
+When controlling the RigidBody2D in kinematic mode , one needs to alter the ``position`` of the node, in order to have the **_integrate_forces** called. One must also update the :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` transform , to not get into problems later on when switching back and forth between rigid mode and kinematic mode.
+
 Please also keep in mind that physics bodies manage their own transform which overwrites the ones you set. So any direct or indirect transformation (including scaling of the node or its parent) will be visible in the editor only, and immediately reset at runtime.
 
 If you need to override the default physics behavior or add a transformation at runtime, you can write a custom force integration. See :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`.
