@@ -45,7 +45,7 @@ RIDs
 ----
 
 The key to using servers is understanding Resource ID (:ref:`RID <class_RID>`) objects. These are opaque
-handles to the sever implementation. They are allocated and freed manually. Almost every
+handles to the server implementation. They are allocated and freed manually. Almost every
 function in the servers requires RIDs to access the actual resource.
 
 Most Godot nodes and resources contain these RIDs from the servers internally, and they can
