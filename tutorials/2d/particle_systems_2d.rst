@@ -199,7 +199,8 @@ Spread
 
 This parameter is the angle in degrees which will be randomly added in
 either direction to the base ``Direction``. A spread of ``180`` will emit
-in all directions (+/- 180).
+in all directions (+/- 180). For spread to do anything the "Initial Velocity"
+parameter must be greater than 0.
 
 .. image:: img/paranim3.gif
 
