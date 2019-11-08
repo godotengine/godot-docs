@@ -895,6 +895,10 @@ Returns the command line arguments passed to the engine.
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_connected_midi_inputs** **(** **)**
 
+Returns an array of MIDI device names.
+
+The returned array will be empty if the system MIDI driver has not previously been initialised with :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`.
+
 ----
 
 .. _class_OS_method_get_current_video_driver:
@@ -1463,6 +1467,8 @@ Resumes native video playback.
 .. _class_OS_method_open_midi_inputs:
 
 - void **open_midi_inputs** **(** **)**
+
+Initialises the singleton for the system MIDI driver.
 
 ----
 

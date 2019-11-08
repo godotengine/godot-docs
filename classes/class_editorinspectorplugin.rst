@@ -46,7 +46,7 @@ This plugins allows adding custom property editors to :ref:`EditorInspector<clas
 
 Plugins are registered via :ref:`EditorPlugin.add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>`.
 
-When an object is edited, the :ref:`can_handle<class_EditorInspectorPlugin_method_can_handle>` function is called and must return true if the object type is supported.
+When an object is edited, the :ref:`can_handle<class_EditorInspectorPlugin_method_can_handle>` function is called and must return ``true`` if the object type is supported.
 
 If supported, the function :ref:`parse_begin<class_EditorInspectorPlugin_method_parse_begin>` will be called, allowing to place custom controls at the beginning of the class.
 
@@ -87,7 +87,7 @@ Adds an editor that allows modifying multiple properties, this must inherit :ref
 
 - :ref:`bool<class_bool>` **can_handle** **(** :ref:`Object<class_Object>` object **)** virtual
 
-Returns true if this object can be handled by this plugin.
+Returns ``true`` if this object can be handled by this plugin.
 
 ----
 

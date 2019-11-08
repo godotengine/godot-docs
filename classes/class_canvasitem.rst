@@ -543,6 +543,8 @@ Draws a textured rectangle region at a given position, optionally modulated by a
 
 - void **force_update_transform** **(** **)**
 
+Forces the transform to update. Transform changes in physics are not instant for performance reasons. Transforms are accumulated and then set. Use this if you need an up-to-date transform when doing physics operations.
+
 ----
 
 .. _class_CanvasItem_method_get_canvas:

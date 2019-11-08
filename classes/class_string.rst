@@ -610,7 +610,7 @@ Converts ``size`` represented as number of bytes to human-readable format using 
 
 - :ref:`String<class_String>` **insert** **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)**
 
-Inserts a substring at a given position.
+Returns a copy of the string with the substring ``what`` inserted at the given position.
 
 ----
 

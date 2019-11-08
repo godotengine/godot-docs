@@ -177,6 +177,11 @@ Description
 
 2D area that detects :ref:`CollisionObject2D<class_CollisionObject2D>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping).
 
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/using_area_2d`
+
 Property Descriptions
 ---------------------
 

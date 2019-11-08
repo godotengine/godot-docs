@@ -422,6 +422,8 @@ Returns the axis-aligned bounding box that contains all the particles that are a
 
 - :ref:`Mesh<class_Mesh>` **get_draw_pass_mesh** **(** :ref:`int<class_int>` pass **)** const
 
+Returns the :ref:`Mesh<class_Mesh>` that is drawn at index ``pass``.
+
 ----
 
 .. _class_Particles_method_restart:
@@ -435,4 +437,6 @@ Restarts the particle emission, clearing existing particles.
 .. _class_Particles_method_set_draw_pass_mesh:
 
 - void **set_draw_pass_mesh** **(** :ref:`int<class_int>` pass, :ref:`Mesh<class_Mesh>` mesh **)**
+
+Sets the :ref:`Mesh<class_Mesh>` that is drawn at index ``pass``.
 

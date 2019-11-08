@@ -315,6 +315,20 @@ enum **SearchFlags**:
 
 ----
 
+.. _enum_TextEdit_SearchResult:
+
+.. _class_TextEdit_constant_SEARCH_RESULT_COLUMN:
+
+.. _class_TextEdit_constant_SEARCH_RESULT_LINE:
+
+enum **SearchResult**:
+
+- **SEARCH_RESULT_COLUMN** = **0** --- Used to access the result column from :ref:`search<class_TextEdit_method_search>`.
+
+- **SEARCH_RESULT_LINE** = **1** --- Used to access the result line from :ref:`search<class_TextEdit_method_search>`.
+
+----
+
 .. _enum_TextEdit_MenuItems:
 
 .. _class_TextEdit_constant_MENU_CUT:
@@ -335,7 +349,7 @@ enum **SearchFlags**:
 
 enum **MenuItems**:
 
-- **MENU_CUT** = **0** --- Cuts (Copies and clears) the selected text.
+- **MENU_CUT** = **0** --- Cuts (copies and clears) the selected text.
 
 - **MENU_COPY** = **1** --- Copies the selected text.
 
@@ -814,7 +828,7 @@ Returns the line the editing cursor is at.
 
 Moves the cursor at the specified ``column`` index.
 
-If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs.
+If ``adjust_viewport`` is set to ``true``, the viewport will center at the cursor position after the move occurs.
 
 ----
 
@@ -824,9 +838,9 @@ If ``adjust_viewport`` is set to true, the viewport will center at the cursor po
 
 Moves the cursor at the specified ``line`` index.
 
-If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs.
+If ``adjust_viewport`` is set to ``true``, the viewport will center at the cursor position after the move occurs.
 
-If ``can_be_hidden`` is set to true, the specified ``line`` can be hidden using :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`.
+If ``can_be_hidden`` is set to ``true``, the specified ``line`` can be hidden using :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`.
 
 ----
 
@@ -1026,7 +1040,17 @@ Removes all the breakpoints. This will not fire the :ref:`breakpoint_toggled<cla
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **search** **(** :ref:`String<class_String>` key, :ref:`int<class_int>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column **)** const
 
-Perform a search inside the text. Search flags can be specified in the``SEARCH_*`` enum.
+Perform a search inside the text. Search flags can be specified in the :ref:`SearchFlags<enum_TextEdit_SearchFlags>` enum.
+
+Returns an empty ``PoolIntArray`` if no result was found. Otherwise, the result line and column can be accessed at indices specified in the :ref:`SearchResult<enum_TextEdit_SearchResult>` enum, e.g:
+
+::
+
+    var result = search(key, flags, line, column)
+    if result.size() > 0:
+        # result found
+        var res_line = result[TextEdit.SEARCH_RESULT_LINE]
+        var res_column = result[TextEdit.SEARCH_RESULT_COLUMN]
 
 ----
 

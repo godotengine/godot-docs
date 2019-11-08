@@ -791,7 +791,7 @@ Resizes the image to the nearest power of 2 for the width and height. If ``squar
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_exr** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** const
 
-Saves the image as an EXR file to ``path``. If grayscale is true and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>`  if Godot was compiled without the TinyEXR module.
+Saves the image as an EXR file to ``path``. If grayscale is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if Godot was compiled without the TinyEXR module.
 
 ----
 
@@ -823,6 +823,17 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``(x, y)`` if the image is lo
 .. _class_Image_method_set_pixelv:
 
 - void **set_pixelv** **(** :ref:`Vector2<class_Vector2>` dst, :ref:`Color<class_Color>` color **)**
+
+Sets the :ref:`Color<class_Color>` of the pixel at ``(dst.x, dst.y)`` if the image is locked. Note that the ``dst`` values must be integers. Example:
+
+::
+
+    var img = Image.new()
+    img.create(img_width, img_height, false, Image.FORMAT_RGBA8)
+    img.lock()
+    img.set_pixelv(Vector2(x, y), color) # Works
+    img.unlock()
+    img.set_pixelv(Vector2(x, y), color) # Does not have an effect
 
 ----
 

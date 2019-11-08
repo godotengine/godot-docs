@@ -212,6 +212,8 @@ Property Descriptions
 | *Getter*  | get_clip_uv()      |
 +-----------+--------------------+
 
+If ``true``, the cell's UVs will be clipped.
+
 ----
 
 .. _class_TileMap_property_cell_custom_transform:
@@ -420,6 +422,8 @@ If ``true``, TileMap collisions will be handled as a kinematic body. If ``false`
 | *Getter*  | get_collision_use_parent()      |
 +-----------+---------------------------------+
 
+If ``true``, this tilemap's collision shape will be added to the collision shape of the parent. The parent has to be a :ref:`CollisionObject2D<class_CollisionObject2D>`.
+
 ----
 
 .. _class_TileMap_property_compatibility_mode:
@@ -516,6 +520,8 @@ Returns the tile index of the given cell. If no tile exists in the cell, returns
 .. _class_TileMap_method_get_cell_autotile_coord:
 
 - :ref:`Vector2<class_Vector2>` **get_cell_autotile_coord** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
+
+Returns the coordinate of the autotile variation in the tileset. Returns a zero vector if the cell doesn't have autotiling.
 
 ----
 

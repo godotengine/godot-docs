@@ -240,7 +240,7 @@ Method Descriptions
 
 - :ref:`Color<class_Color>` **Color8** **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8=255 **)**
 
-Returns a 32 bit color with red, green, blue and alpha channels. Each channel has 8 bits of information ranging from 0 to 255.
+Returns a color constructed from integer red, green, blue, and alpha channels. Each channel should have 8 bits of information ranging from 0 to 255.
 
 ``r8`` red channel
 
@@ -1031,6 +1031,8 @@ Prints one or more arguments to strings in the best way possible to console. No 
     printraw("A")
     printraw("B")
     # Prints AB
+
+**Note:** Due to limitations with Godot's built-in console, this only prints to the terminal. If you need to print in the editor, use another method, such as :ref:`print<class_@GDScript_method_print>`.
 
 ----
 

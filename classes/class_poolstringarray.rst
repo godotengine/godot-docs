@@ -26,6 +26,8 @@ Methods
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`append_array<class_PoolStringArray_method_append_array>` **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)** |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`empty<class_PoolStringArray_method_empty>` **(** **)**                                                                   |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`insert<class_PoolStringArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**   |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`invert<class_PoolStringArray_method_invert>` **(** **)**                                                                 |
@@ -74,6 +76,14 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_PoolS
 - void **append_array** **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)**
 
 Appends a ``PoolStringArray`` at the end of this array.
+
+----
+
+.. _class_PoolStringArray_method_empty:
+
+- :ref:`bool<class_bool>` **empty** **(** **)**
+
+Returns ``true`` if the array is empty.
 
 ----
 

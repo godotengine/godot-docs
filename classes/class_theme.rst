@@ -124,6 +124,8 @@ Method Descriptions
 
 - void **clear** **(** **)**
 
+Clears all values on the theme.
+
 ----
 
 .. _class_Theme_method_clear_color:
@@ -177,6 +179,8 @@ Sets the Theme's values to a copy of the default theme values.
 .. _class_Theme_method_copy_theme:
 
 - void **copy_theme** **(** :ref:`Theme<class_Theme>` other **)**
+
+Sets the Theme's values to a copy of a given theme.
 
 ----
 

@@ -393,7 +393,7 @@ Returns the number of elements in the array.
 
 - :ref:`Array<class_Array>` **slice** **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=False **)**
 
-Duplicates the subset described in the function and returns it in an array, deeply copying the array if ``deep`` is true. Lower and upper index are inclusive, with the ``step`` describing the change between indices while slicing.
+Duplicates the subset described in the function and returns it in an array, deeply copying the array if ``deep`` is ``true``. Lower and upper index are inclusive, with the ``step`` describing the change between indices while slicing.
 
 ----
 

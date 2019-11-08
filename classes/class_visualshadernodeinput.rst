@@ -27,6 +27,13 @@ Properties
 | :ref:`String<class_String>` | :ref:`input_name<class_VisualShaderNodeInput_property_input_name>` | "[None]"    |
 +-----------------------------+--------------------------------------------------------------------+-------------+
 
+Methods
+-------
+
++-----------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_input_real_name<class_VisualShaderNodeInput_method_get_input_real_name>` **(** **)** const |
++-----------------------------+------------------------------------------------------------------------------------------------------+
+
 Signals
 -------
 
@@ -48,4 +55,11 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_input_name()      |
 +-----------+-----------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_VisualShaderNodeInput_method_get_input_real_name:
+
+- :ref:`String<class_String>` **get_input_real_name** **(** **)** const
 

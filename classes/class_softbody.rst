@@ -40,6 +40,8 @@ Properties
 +---------------------------------+-------------------------------------------------------------------------------------+--------------+
 | :ref:`float<class_float>`       | :ref:`pressure_coefficient<class_SoftBody_property_pressure_coefficient>`           | 0.0          |
 +---------------------------------+-------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`         | :ref:`ray_pickable<class_SoftBody_property_ray_pickable>`                           | true         |
++---------------------------------+-------------------------------------------------------------------------------------+--------------+
 | :ref:`int<class_int>`           | :ref:`simulation_precision<class_SoftBody_property_simulation_precision>`           | 5            |
 +---------------------------------+-------------------------------------------------------------------------------------+--------------+
 | :ref:`float<class_float>`       | :ref:`total_mass<class_SoftBody_property_total_mass>`                               | 1.0          |
@@ -59,21 +61,22 @@ Methods
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_SoftBody_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`is_ray_pickable<class_SoftBody_method_is_ray_pickable>` **(** **)** const                                                                    |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`remove_collision_exception_with<class_SoftBody_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**             |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_collision_layer_bit<class_SoftBody_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_collision_mask_bit<class_SoftBody_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_ray_pickable<class_SoftBody_method_set_ray_pickable>` **(** :ref:`bool<class_bool>` ray_pickable **)**                                   |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
 A deformable physics body. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/soft_body`
 
 Property Descriptions
 ---------------------
@@ -104,7 +107,7 @@ Property Descriptions
 | *Getter*  | get_collision_layer()      |
 +-----------+----------------------------+
 
-The physics layers this area is in.
+The physics layers this SoftBody is in.
 
 Collidable objects can exist in any of 32 different layers. These layers work like a tagging system, and are not visual. A collidable can use these layers to select with which objects it can collide, using the collision_mask property.
 
@@ -124,7 +127,7 @@ A contact is detected if object A is in any of the layers that object B scans, o
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The physics layers this area scans for collisions.
+The physics layers this SoftBody scans for collisions.
 
 ----
 
@@ -182,6 +185,8 @@ The physics layers this area scans for collisions.
 | *Getter*  | get_parent_collision_ignore()      |
 +-----------+------------------------------------+
 
+:ref:`NodePath<class_NodePath>` to a :ref:`CollisionObject<class_CollisionObject>` this SoftBody should avoid clipping.
+
 ----
 
 .. _class_SoftBody_property_pose_matching_coefficient:
@@ -212,6 +217,22 @@ The physics layers this area scans for collisions.
 
 ----
 
+.. _class_SoftBody_property_ray_pickable:
+
+- :ref:`bool<class_bool>` **ray_pickable**
+
++-----------+-------------------------+
+| *Default* | true                    |
++-----------+-------------------------+
+| *Setter*  | set_ray_pickable(value) |
++-----------+-------------------------+
+| *Getter*  | is_ray_pickable()       |
++-----------+-------------------------+
+
+If ``true``, the ``SoftBody`` will respond to :ref:`RayCast<class_RayCast>`\ s.
+
+----
+
 .. _class_SoftBody_property_simulation_precision:
 
 - :ref:`int<class_int>` **simulation_precision**
@@ -239,6 +260,8 @@ Increasing this value will improve the resulting simulation, but can affect perf
 +-----------+-----------------------+
 | *Getter*  | get_total_mass()      |
 +-----------+-----------------------+
+
+The SoftBody's mass.
 
 ----
 
@@ -289,12 +312,6 @@ Returns an individual bit on the collision mask.
 
 ----
 
-.. _class_SoftBody_method_is_ray_pickable:
-
-- :ref:`bool<class_bool>` **is_ray_pickable** **(** **)** const
-
-----
-
 .. _class_SoftBody_method_remove_collision_exception_with:
 
 - void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
@@ -316,10 +333,4 @@ Sets individual bits on the layer mask. Use this if you only need to change one 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets individual bits on the collision mask. Use this if you only need to change one layer's value.
-
-----
-
-.. _class_SoftBody_method_set_ray_pickable:
-
-- void **set_ray_pickable** **(** :ref:`bool<class_bool>` ray_pickable **)**
 

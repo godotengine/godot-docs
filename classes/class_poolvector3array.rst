@@ -26,6 +26,8 @@ Methods
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`append_array<class_PoolVector3Array_method_append_array>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` array **)** |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`empty<class_PoolVector3Array_method_empty>` **(** **)**                                                                     |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`insert<class_PoolVector3Array_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` vector3 **)**  |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`invert<class_PoolVector3Array_method_invert>` **(** **)**                                                                   |
@@ -72,6 +74,14 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_PoolV
 - void **append_array** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` array **)**
 
 Appends a ``PoolVector3Array`` at the end of this array.
+
+----
+
+.. _class_PoolVector3Array_method_empty:
+
+- :ref:`bool<class_bool>` **empty** **(** **)**
+
+Returns ``true`` if the array is empty.
 
 ----
 

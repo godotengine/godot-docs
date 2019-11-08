@@ -71,6 +71,8 @@ Methods
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`intersects_segment<class_AABB_method_intersects_segment>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)** |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` **(** :ref:`AABB<class_AABB>` aabb **)**                                               |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>`       | :ref:`merge<class_AABB_method_merge>` **(** :ref:`AABB<class_AABB>` with **)**                                                                   |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -281,6 +283,12 @@ Returns ``true`` if the ``AABB`` is on both sides of a plane.
 - :ref:`bool<class_bool>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)**
 
 Returns ``true`` if the ``AABB`` intersects the line segment between ``from`` and ``to``.
+
+----
+
+.. _class_AABB_method_is_equal_approx:
+
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`AABB<class_AABB>` aabb **)**
 
 ----
 

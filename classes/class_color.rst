@@ -67,6 +67,8 @@ Methods
 +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`inverted<class_Color_method_inverted>` **(** **)**                                                                                                                      |
 +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`is_equal_approx<class_Color_method_is_equal_approx>` **(** :ref:`Color<class_Color>` color **)**                                                                        |
++-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`lightened<class_Color_method_lightened>` **(** :ref:`float<class_float>` amount **)**                                                                                   |
 +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`linear_interpolate<class_Color_method_linear_interpolate>` **(** :ref:`Color<class_Color>` b, :ref:`float<class_float>` t **)**                                         |
@@ -939,6 +941,12 @@ Returns the inverted color ``(1 - r, 1 - g, 1 - b, a)``.
 
     var c = Color(0.3, 0.4, 0.9)
     var inverted_color = c.inverted() # A color of an RGBA(178, 153, 26, 255)
+
+----
+
+.. _class_Color_method_is_equal_approx:
+
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Color<class_Color>` color **)**
 
 ----
 

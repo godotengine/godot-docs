@@ -26,6 +26,8 @@ Methods
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`append_array<class_PoolColorArray_method_append_array>` **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)** |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                     | :ref:`empty<class_PoolColorArray_method_empty>` **(** **)**                                                                 |
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                       | :ref:`insert<class_PoolColorArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**    |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`invert<class_PoolColorArray_method_invert>` **(** **)**                                                               |
@@ -72,6 +74,14 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_PoolC
 - void **append_array** **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)**
 
 Appends a ``PoolColorArray`` at the end of this array.
+
+----
+
+.. _class_PoolColorArray_method_empty:
+
+- :ref:`bool<class_bool>` **empty** **(** **)**
+
+Returns ``true`` if the array is empty.
 
 ----
 

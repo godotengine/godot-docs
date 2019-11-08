@@ -55,6 +55,8 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`intersects_segment<class_Plane_method_intersects_segment>` **(** :ref:`Vector3<class_Vector3>` begin, :ref:`Vector3<class_Vector3>` end **)**                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` **(** :ref:`Plane<class_Plane>` plane **)**                                                                |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_point_over<class_Plane_method_is_point_over>` **(** :ref:`Vector3<class_Vector3>` point **)**                                                                |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Plane<class_Plane>`     | :ref:`normalized<class_Plane_method_normalized>` **(** **)**                                                                                                          |
@@ -214,6 +216,12 @@ Returns the intersection point of a ray consisting of the position ``from`` and 
 - :ref:`Vector3<class_Vector3>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` begin, :ref:`Vector3<class_Vector3>` end **)**
 
 Returns the intersection point of a segment from position ``begin`` to position ``end`` with this plane. If no intersection is found, ``null`` is returned.
+
+----
+
+.. _class_Plane_method_is_equal_approx:
+
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Plane<class_Plane>` plane **)**
 
 ----
 

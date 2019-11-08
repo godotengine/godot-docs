@@ -26,6 +26,8 @@ Methods
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`append_array<class_PoolRealArray_method_append_array>` **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)** |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`empty<class_PoolRealArray_method_empty>` **(** **)**                                                               |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`insert<class_PoolRealArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`invert<class_PoolRealArray_method_invert>` **(** **)**                                                             |
@@ -72,6 +74,14 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_PoolR
 - void **append_array** **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)**
 
 Appends a ``PoolRealArray`` at the end of this array.
+
+----
+
+.. _class_PoolRealArray_method_empty:
+
+- :ref:`bool<class_bool>` **empty** **(** **)**
+
+Returns ``true`` if the array is empty.
 
 ----
 

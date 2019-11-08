@@ -30,6 +30,8 @@ Methods
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress<class_PoolByteArray_method_decompress>` **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)** |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`empty<class_PoolByteArray_method_empty>` **(** **)**                                                                                       |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`               | :ref:`get_string_from_ascii<class_PoolByteArray_method_get_string_from_ascii>` **(** **)**                                                       |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`               | :ref:`get_string_from_utf8<class_PoolByteArray_method_get_string_from_utf8>` **(** **)**                                                         |
@@ -100,6 +102,14 @@ Returns a new ``PoolByteArray`` with the data compressed. Set the compression mo
 - :ref:`PoolByteArray<class_PoolByteArray>` **decompress** **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**
 
 Returns a new ``PoolByteArray`` with the data decompressed. Set ``buffer_size`` to the size of the uncompressed data. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
+
+----
+
+.. _class_PoolByteArray_method_empty:
+
+- :ref:`bool<class_bool>` **empty** **(** **)**
+
+Returns ``true`` if the array is empty.
 
 ----
 

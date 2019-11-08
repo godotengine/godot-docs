@@ -1194,7 +1194,7 @@ The event won't trigger if:
 
 Virtual method to be implemented by the user. Returns a ``Control`` node that should be used as a tooltip instead of the default one. Use ``for_text`` parameter to determine what text the tooltip should contain (likely the contents of :ref:`hint_tooltip<class_Control_property_hint_tooltip>`).
 
-The returned node must be of type ``Control`` or Control-derieved. It can have child nodes of any type. It is freed when the tooltip disappears, so make sure you always provide a new instance, not e.g. a node from scene. When null or non-Control node is returned, the default tooltip will be used instead.
+The returned node must be of type ``Control`` or Control-derieved. It can have child nodes of any type. It is freed when the tooltip disappears, so make sure you always provide a new instance, not e.g. a node from scene. When ``null`` or non-Control node is returned, the default tooltip will be used instead.
 
 **Note:** The tooltip is shrunk to minimal size. If you want to ensure it's fully visible, you might want to set its :ref:`rect_min_size<class_Control_property_rect_min_size>` to some non-zero value.
 
@@ -1727,7 +1727,19 @@ Forwarding can be implemented in the target control similar to the methods :ref:
 
 - void **set_drag_preview** **(** :ref:`Control<class_Control>` control **)**
 
-Shows the given control at the mouse pointer. A good time to call this method is in :ref:`get_drag_data<class_Control_method_get_drag_data>`.
+Shows the given control at the mouse pointer. A good time to call this method is in :ref:`get_drag_data<class_Control_method_get_drag_data>`. The control must not be in the scene tree.
+
+::
+
+    export (Color, RGBA) var color = Color(1, 0, 0, 1)
+    
+    func get_drag_data(position):
+        # Use a control that is not in the tree
+        var cpb = ColorPickerButton.new()
+        cpb.color = color
+        cpb.rect_size = Vector2(50, 50)
+        set_drag_preview(cpb)
+        return color
 
 ----
 

@@ -45,6 +45,8 @@ Methods
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>` | :ref:`inverse<class_Transform_method_inverse>` **(** **)**                                                                                                                                                            |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`is_equal_approx<class_Transform_method_is_equal_approx>` **(** :ref:`Transform<class_Transform>` transform **)**                                                                                                |
++-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>` | :ref:`looking_at<class_Transform_method_looking_at>` **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up **)**                                                                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>` | :ref:`orthonormalized<class_Transform_method_orthonormalized>` **(** **)**                                                                                                                                            |
@@ -172,6 +174,12 @@ Interpolates the transform to other Transform by weight amount (0-1).
 - :ref:`Transform<class_Transform>` **inverse** **(** **)**
 
 Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use affine_inverse for transforms with scaling).
+
+----
+
+.. _class_Transform_method_is_equal_approx:
+
+- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform<class_Transform>` transform **)**
 
 ----
 

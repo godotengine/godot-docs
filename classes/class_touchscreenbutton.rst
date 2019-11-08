@@ -188,7 +188,7 @@ The button's shape.
 | *Getter*  | is_shape_centered()       |
 +-----------+---------------------------+
 
-If ``true``, the button's shape is centered.
+If ``true``, the button's shape is centered in the provided texture. If no texture is used, this property has no effect.
 
 ----
 

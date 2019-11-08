@@ -647,7 +647,7 @@ Sets whether the item at index ``idx`` has a checkbox. If ``false``, sets the ty
 
 - void **set_item_as_radio_checkable** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**
 
-Sets the type of the item at the specified index ``idx`` to radio button. If false, sets the type of the item to plain text.
+Sets the type of the item at the specified index ``idx`` to radio button. If ``false``, sets the type of the item to plain text.
 
 ----
 

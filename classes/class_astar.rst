@@ -16,69 +16,84 @@ AStar
 Brief Description
 -----------------
 
-AStar class representation that uses 3d-vectors as edges.
+An implementation of A\* to find shortest paths among connected points in space.
 
 Methods
 -------
 
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`_compute_cost<class_AStar_method__compute_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual                                      |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`_estimate_cost<class_AStar_method__estimate_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual                                    |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`add_point<class_AStar_method_add_point>` **(** :ref:`int<class_int>` id, :ref:`Vector3<class_Vector3>` position, :ref:`float<class_float>` weight_scale=1.0 **)**    |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`are_points_connected<class_AStar_method_are_points_connected>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)** const                               |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`clear<class_AStar_method_clear>` **(** **)**                                                                                                                         |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`connect_points<class_AStar_method_connect_points>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)**     |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`disconnect_points<class_AStar_method_disconnect_points>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)**                                           |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_available_point_id<class_AStar_method_get_available_point_id>` **(** **)** const                                                                                 |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_closest_point<class_AStar_method_get_closest_point>` **(** :ref:`Vector3<class_Vector3>` to_position, :ref:`bool<class_bool>` include_disabled=false **)** const |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_position_in_segment<class_AStar_method_get_closest_position_in_segment>` **(** :ref:`Vector3<class_Vector3>` to_position **)** const                     |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_id_path<class_AStar_method_get_id_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                                  |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_point_capacity<class_AStar_method_get_point_capacity>` **(** **)** const                                                                                         |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_point_connections<class_AStar_method_get_point_connections>` **(** :ref:`int<class_int>` id **)**                                                                |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_point_count<class_AStar_method_get_point_count>` **(** **)** const                                                                                               |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_point_path<class_AStar_method_get_point_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                            |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_point_position<class_AStar_method_get_point_position>` **(** :ref:`int<class_int>` id **)** const                                                                |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`get_point_weight_scale<class_AStar_method_get_point_weight_scale>` **(** :ref:`int<class_int>` id **)** const                                                        |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                       | :ref:`get_points<class_AStar_method_get_points>` **(** **)**                                                                                                               |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`has_point<class_AStar_method_has_point>` **(** :ref:`int<class_int>` id **)** const                                                                                  |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`is_point_disabled<class_AStar_method_is_point_disabled>` **(** :ref:`int<class_int>` id **)** const                                                                  |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`remove_point<class_AStar_method_remove_point>` **(** :ref:`int<class_int>` id **)**                                                                                  |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`reserve_space<class_AStar_method_reserve_space>` **(** :ref:`int<class_int>` num_nodes **)**                                                                         |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_point_disabled<class_AStar_method_set_point_disabled>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` disabled=true **)**                               |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_point_position<class_AStar_method_set_point_position>` **(** :ref:`int<class_int>` id, :ref:`Vector3<class_Vector3>` position **)**                              |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_point_weight_scale<class_AStar_method_set_point_weight_scale>` **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**                      |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`_compute_cost<class_AStar_method__compute_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual                                                    |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`_estimate_cost<class_AStar_method__estimate_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual                                                  |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`add_point<class_AStar_method_add_point>` **(** :ref:`int<class_int>` id, :ref:`Vector3<class_Vector3>` position, :ref:`float<class_float>` weight_scale=1.0 **)**                  |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`are_points_connected<class_AStar_method_are_points_connected>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)** const |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear<class_AStar_method_clear>` **(** **)**                                                                                                                                       |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`connect_points<class_AStar_method_connect_points>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)**                   |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`disconnect_points<class_AStar_method_disconnect_points>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)**             |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_available_point_id<class_AStar_method_get_available_point_id>` **(** **)** const                                                                                               |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_closest_point<class_AStar_method_get_closest_point>` **(** :ref:`Vector3<class_Vector3>` to_position, :ref:`bool<class_bool>` include_disabled=false **)** const               |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_position_in_segment<class_AStar_method_get_closest_position_in_segment>` **(** :ref:`Vector3<class_Vector3>` to_position **)** const                                   |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_id_path<class_AStar_method_get_id_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                                                |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_point_capacity<class_AStar_method_get_point_capacity>` **(** **)** const                                                                                                       |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_point_connections<class_AStar_method_get_point_connections>` **(** :ref:`int<class_int>` id **)**                                                                              |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_point_count<class_AStar_method_get_point_count>` **(** **)** const                                                                                                             |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_point_path<class_AStar_method_get_point_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                                          |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                   | :ref:`get_point_position<class_AStar_method_get_point_position>` **(** :ref:`int<class_int>` id **)** const                                                                              |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`get_point_weight_scale<class_AStar_method_get_point_weight_scale>` **(** :ref:`int<class_int>` id **)** const                                                                      |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`get_points<class_AStar_method_get_points>` **(** **)**                                                                                                                             |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`has_point<class_AStar_method_has_point>` **(** :ref:`int<class_int>` id **)** const                                                                                                |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_point_disabled<class_AStar_method_is_point_disabled>` **(** :ref:`int<class_int>` id **)** const                                                                                |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`remove_point<class_AStar_method_remove_point>` **(** :ref:`int<class_int>` id **)**                                                                                                |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`reserve_space<class_AStar_method_reserve_space>` **(** :ref:`int<class_int>` num_nodes **)**                                                                                       |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_point_disabled<class_AStar_method_set_point_disabled>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` disabled=true **)**                                             |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_point_position<class_AStar_method_set_point_position>` **(** :ref:`int<class_int>` id, :ref:`Vector3<class_Vector3>` position **)**                                            |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_point_weight_scale<class_AStar_method_set_point_weight_scale>` **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**                                    |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-A\* (A star) is a computer algorithm that is widely used in pathfinding and graph traversal, the process of plotting an efficiently directed path between multiple points. It enjoys widespread use due to its performance and accuracy. Godot's A\* implementation make use of vectors as points.
+A\* (A star) is a computer algorithm that is widely used in pathfinding and graph traversal, the process of plotting short paths among vertices (points), passing through a given set of edges (segments). It enjoys widespread use due to its performance and accuracy. Godot's A\* implementation uses points in three-dimensional space and Euclidean distances by default.
 
-You must add points manually with :ref:`add_point<class_AStar_method_add_point>` and create segments manually with :ref:`connect_points<class_AStar_method_connect_points>`. So you can test if there is a path between two points with the :ref:`are_points_connected<class_AStar_method_are_points_connected>` function, get the list of existing ids in the found path with :ref:`get_id_path<class_AStar_method_get_id_path>`, or the points list with :ref:`get_point_path<class_AStar_method_get_point_path>`.
+You must add points manually with :ref:`add_point<class_AStar_method_add_point>` and create segments manually with :ref:`connect_points<class_AStar_method_connect_points>`. Then you can test if there is a path between two points with the :ref:`are_points_connected<class_AStar_method_are_points_connected>` function, get a path containing indices by :ref:`get_id_path<class_AStar_method_get_id_path>`, or one containing actual coordinates with :ref:`get_point_path<class_AStar_method_get_point_path>`.
+
+It is also possible to use non-Euclidean distances. To do so, create a class that extends ``AStar`` and override methods :ref:`_compute_cost<class_AStar_method__compute_cost>` and :ref:`_estimate_cost<class_AStar_method__estimate_cost>`. Both take two indices and return a length, as is shown in the following example.
+
+::
+
+    class MyAStar:
+        extends AStar
+    
+        func _compute_cost(u, v):
+            return abs(u - v)
+    
+        func _estimate_cost(u, v):
+            return min(0, abs(u - v) - 1)
+
+:ref:`_estimate_cost<class_AStar_method__estimate_cost>` should return a lower bound of the distance, i.e. ``_estimate_cost(u, v) <= _compute_cost(u, v)``. This serves as a hint to the algorithm because the custom ``_compute_cost`` might be computation-heavy. If this is not the case, make :ref:`_estimate_cost<class_AStar_method__estimate_cost>` return the same value as :ref:`_compute_cost<class_AStar_method__compute_cost>` to provide the algorithm with the most accurate information.
 
 Method Descriptions
 -------------------
@@ -89,6 +104,8 @@ Method Descriptions
 
 Called when computing the cost between two connected points.
 
+Note that this function is hidden in the default ``AStar`` class.
+
 ----
 
 .. _class_AStar_method__estimate_cost:
@@ -96,6 +113,8 @@ Called when computing the cost between two connected points.
 - :ref:`float<class_float>` **_estimate_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual
 
 Called when estimating the cost between a point and the path's ending point.
+
+Note that this function is hidden in the default ``AStar`` class.
 
 ----
 
@@ -116,9 +135,9 @@ If there already exists a point for the given ``id``, its position and weight sc
 
 .. _class_AStar_method_are_points_connected:
 
-- :ref:`bool<class_bool>` **are_points_connected** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)** const
+- :ref:`bool<class_bool>` **are_points_connected** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)** const
 
-Returns whether there is a connection/segment between the given points.
+Returns whether the two given points are directly connected by a segment. If ``bidirectional`` is ``false``, returns whether movement from ``id`` to ``to_id`` is possible through this segment.
 
 ----
 
@@ -147,9 +166,9 @@ Creates a segment between the given points. If ``bidirectional`` is ``false``, o
 
 .. _class_AStar_method_disconnect_points:
 
-- void **disconnect_points** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)**
+- void **disconnect_points** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)**
 
-Deletes the segment between the given points.
+Deletes the segment between the given points. If ``bidirectional`` is ``false``, only movement from ``id`` to ``to_id`` is prevented, and a unidirectional segment possibly remains.
 
 ----
 

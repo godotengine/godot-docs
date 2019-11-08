@@ -286,6 +286,8 @@ Method Descriptions
 
 - void **force_update_transform** **(** **)**
 
+Forces the transform to update. Transform changes in physics are not instant for performance reasons. Transforms are accumulated and then set. Use this if you need an up-to-date transform when doing physics operations.
+
 ----
 
 .. _class_Spatial_method_get_parent_spatial:
@@ -316,6 +318,8 @@ Rotates the global (world) transformation around axis, a unit :ref:`Vector3<clas
 
 - void **global_scale** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
+Scales the global (world) transformation by the given :ref:`Vector3<class_Vector3>` scale factors.
+
 ----
 
 .. _class_Spatial_method_global_translate:
@@ -345,6 +349,8 @@ Returns whether node notifies about its local transformation changes. ``Spatial`
 .. _class_Spatial_method_is_scale_disabled:
 
 - :ref:`bool<class_bool>` **is_scale_disabled** **(** **)** const
+
+Returns whether this node uses a scale of ``(1, 1, 1)`` or its local transformation scale.
 
 ----
 
@@ -459,6 +465,8 @@ Makes the node ignore its parents transformations. Node transformations are only
 .. _class_Spatial_method_set_disable_scale:
 
 - void **set_disable_scale** **(** :ref:`bool<class_bool>` disable **)**
+
+Sets whether the node uses a scale of ``(1, 1, 1)`` or its local transformation scale. Changes to the local transformation scale are preserved.
 
 ----
 
