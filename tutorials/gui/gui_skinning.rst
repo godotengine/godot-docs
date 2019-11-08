@@ -134,8 +134,9 @@ controls.
 Example: theming a button
 --------------------------
 
-Take some assets (:download:`skin_assets.zip <files/skin_assets.zip>`),
-go to the "theme" menu and select "Add Class Item":
+Download these assets (:download:`skin_assets.zip <files/skin_assets.zip>`)
+and add them to your project. Open the theme editor, click on "Edit Theme"
+and select "Add Class Items":
 
 .. image:: img/themeci.png
 
