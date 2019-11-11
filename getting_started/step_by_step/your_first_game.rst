@@ -660,7 +660,7 @@ follows:
 By default, a timer will loop back to its original start time once it reaches 
 zero. Enabling the ``One Shot`` property of ``StartTimer`` to "On" will prevent 
 it from looping. In addition, set the ``Position`` of the ``StartPosition`` node
-``(240, 450)``.
+to ``(240, 450)``.
 
 Spawning mobs
 ~~~~~~~~~~~~~
