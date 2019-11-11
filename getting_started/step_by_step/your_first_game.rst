@@ -657,8 +657,10 @@ follows:
 -  ``ScoreTimer``: ``1``
 -  ``StartTimer``: ``2``
 
-In addition, set the ``One Shot`` property of ``StartTimer`` to "On" and
-set ``Position`` of the ``StartPosition`` node to ``(240, 450)``.
+By default, a timer will loop back to its original start time once it reaches 
+zero. Enabling the ``One Shot`` property of ``StartTimer`` to "On" will prevent 
+it from looping. In addition, set the ``Position`` of the ``StartPosition`` node
+``(240, 450)``.
 
 Spawning mobs
 ~~~~~~~~~~~~~
