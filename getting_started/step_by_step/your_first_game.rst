@@ -658,7 +658,7 @@ follows:
 -  ``StartTimer``: ``2``
 
 By default, a ``Timer`` node will restart once it reaches zero. Enabling 
-the ``One Shot`` property of ``StartTimer`` to "On" stop it at zero. In 
+the ``One Shot`` property of ``StartTimer`` to "On" will stop it at zero. In 
 addition, set the ``Position`` of the ``StartPosition`` node to ``(240, 450)``.
 
 Spawning mobs
