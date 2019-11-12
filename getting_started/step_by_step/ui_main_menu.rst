@@ -204,7 +204,7 @@ need two containers as children of our ``HBoxContainer``: a
    sitting aside from it
 
 In the node tree, select all the ``TextureRect`` nodes that should go on
-the left side: the logo, the menu options and the version note. Drag and
+the left side: the logo, the menu options (Continue, NewGame, Options) and the version note. Drag and
 drop them into the ``VBoxContainer``. The nodes should position automatically.
 
 .. figure:: img/ui_main_menu_containers_step_2.png
