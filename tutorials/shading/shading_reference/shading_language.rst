@@ -477,7 +477,7 @@ You can set uniforms in the editor in the material. Or you can set them through 
           must match *exactly* to the name of the uniform in the shader or else it will not be recognized.
 
 Any GLSL type except for *void* can be a uniform. Additionally, Godot provides optional shader hints
-to make the compiler understand for what the uniform is used.
+to make the compiler understand for what the uniform is used. ``hint_albedo`` is required for proper sRGB->linear conversion, as Godot’s 3D engine renders in linear color space.
 
 .. code-block:: glsl
 
@@ -534,10 +534,6 @@ to shaders, Godot converts the type automatically. Below is a table of the corre
 
 .. note:: Be careful when setting shader uniforms from GDScript, no error will be thrown if the
           type does not match. Your shader will just exhibit undefined behaviour.
-
-As Godot's 3D engine renders in linear color space, it's important to understand that textures
-that are supplied as color (i.e. albedo) need to be specified as such for proper sRGB->linear
-conversion.
 
 Uniforms can also be assigned default values:
 
