@@ -40,8 +40,8 @@ Next, click on the shader material to see its properties. From here you
 can create a shader or visual shader. Regular shaders use code to set
 their properties while a visual shader uses a node based workflow.
 
-There is no way to convert between the two, so if you decide you want to
-change to a visual shader or vice versa, you will have to start from scratch.
+If you need to you can convert a visual shader to a text shader.
+However you can't convert a text shader to a visual shader.
 
 Choose one of them and you can start editing your shader.
 
@@ -54,6 +54,13 @@ If you create a regular shader click on it and the shader editor will open.
 If you create a visual shader the visual shader editor will open automatically.
 
 .. image:: img/visual_shader_editor.png
+
+In the visual shader editor you can click a button and see what your visual
+shader looks like as shader code. This can be useful if you're trying to
+replicate a text shader as nodes, or it can be used as a preview for converting
+your visual shader to a text shader.
+
+.. image:: img/visual_shader_code.png
 
 Converting to ShaderMaterial
 ----------------------------
