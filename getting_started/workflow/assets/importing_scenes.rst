@@ -13,25 +13,16 @@ transferred as close as possible.
 
 Godot supports the following 3D *scene file formats*:
 
-* DAE (COLLADA), which is currently the most mature workflow.
-* glTF 2.0. Both text and binary formats are supported. Godot has full support for it, but the format is new and gaining traction.
+* glTF 2.0. Godot has full support for text and binary formats.
+* DAE (COLLADA), an older format that is fully supported.
 * OBJ (Wavefront) formats. It is also fully supported, but pretty limited (no support for pivots, skeletons, etc).
 * ESCN, a Godot specific format that Blender can export with a plugin.
+* FBX, supported with the open asset import library. however it should only be used if you can't use another format.
 
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
 
 It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose 
 or default rest pose before exporting with your favorite 3D editor.
-
-Why not FBX?
-~~~~~~~~~~~~
-
-Most game engines use the FBX format for importing 3D scenes, which is
-definitely one of the most standardized in the industry. However, this
-format requires the use of a closed library from Autodesk, which is
-distributed with more restrictive licensing terms than Godot.
-
-The plan is, sometime in the future, to offer a binary plug-in using GDNative.
 
 Exporting DAE files from Maya and 3DS Max
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,16 +33,6 @@ is by using the
 `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`__
 plugins. They work well, although they are not always up-to date
 with the latest version of the software.
-
-Exporting DAE files from Blender
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Blender has built-in COLLADA support too, but it's also broken and
-should not be used.
-
-Godot provides a `Python
-Plugin <https://github.com/godotengine/collada-exporter>`__
-that will do a much better job of exporting the scenes.
 
 Exporting glTF 2.0 files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,6 +52,18 @@ changes in a text based format. The second is you need the texture files separat
 either of those glTF binary files are fine.
 
 .. note:: Blender does not export emissive textures with the glTF file. If your model uses one it must be brought in separately.
+
+Exporting DAE files from Blender
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Blender has built-in COLLADA support, but it's broken and
+should not be used.
+
+Godot provides a `Python
+Plugin <https://github.com/godotengine/collada-exporter>`__
+that will correctly export scnenes, however it only works for
+Blender 2.79. If you are using Blender 2.8 or newer you should
+use gLTF 2.0.
 
 Exporting ESCN files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
