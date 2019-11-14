@@ -110,7 +110,7 @@ like this:
 
         public override void _ExitTree()
         {
-            // Initialization of the plugin goes here
+            // Clean-up of the plugin goes here
         }
     }
     #endif
