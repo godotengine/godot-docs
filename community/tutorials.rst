@@ -39,6 +39,7 @@ Text tutorials
 
 - `Godot Recipes by KidsCanCode <http://godotrecipes.com/>`__
 - `Steincodes <https://steincodes.tumblr.com>`__
+- `Insert Coin(s) <http://insert-coins.org>`__
 
 Devlogs
 -------
