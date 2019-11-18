@@ -153,7 +153,7 @@ Export templates
 
 The name of the data directory for an export template differs based on the
 configuration it was built with. The format is
-``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.x11.32.debug`` or
+``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.x11.32.release_debug`` or
 ``data.mono.windows.64.release``.
 
 This directory must be placed with its original name next to the Godot export
