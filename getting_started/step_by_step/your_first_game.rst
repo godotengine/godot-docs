@@ -808,11 +808,6 @@ well as its position.
 Note that a new instance must be added to the scene using
 ``add_child()``.
 
-Now click on ``MobTimer`` in the scene window then head to inspector window,
-switch to node view then click on ``timeout()`` and connect the signal.
-
-Add the following code:
-
 .. tabs::
  .. code-tab:: gdscript GDScript
 
