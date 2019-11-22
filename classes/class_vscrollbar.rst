@@ -16,7 +16,7 @@ VScrollBar
 Brief Description
 -----------------
 
-Vertical version of :ref:`ScrollBar<class_ScrollBar>`, which goes from left (min) to right (max).
+Vertical version of :ref:`ScrollBar<class_ScrollBar>`, which goes from top (min) to bottom (max).
 
 Properties
 ----------

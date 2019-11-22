@@ -26,8 +26,6 @@ Methods
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`           | :ref:`get_file_diff<class_EditorVCSInterface_method_get_file_diff>` **(** :ref:`String<class_String>` file_path **)**   |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`get_is_vcs_intialized<class_EditorVCSInterface_method_get_is_vcs_intialized>` **(** **)**                         |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>` | :ref:`get_modified_files_data<class_EditorVCSInterface_method_get_modified_files_data>` **(** **)**                     |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`get_project_name<class_EditorVCSInterface_method_get_project_name>` **(** **)**                                   |
@@ -37,6 +35,8 @@ Methods
 | :ref:`bool<class_bool>`             | :ref:`initialize<class_EditorVCSInterface_method_initialize>` **(** :ref:`String<class_String>` project_root_path **)** |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`is_addon_ready<class_EditorVCSInterface_method_is_addon_ready>` **(** **)**                                       |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_vcs_initialized<class_EditorVCSInterface_method_is_vcs_initialized>` **(** **)**                               |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`shut_down<class_EditorVCSInterface_method_shut_down>` **(** **)**                                                 |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
@@ -80,14 +80,6 @@ Each :ref:`Dictionary<class_Dictionary>` object has the line diff contents under
 - ``"old_line_number"`` to store an integer containing the old line number of the line content.
 
 - ``"offset"`` to store the offset of the line change since the first contextual line content.
-
-----
-
-.. _class_EditorVCSInterface_method_get_is_vcs_intialized:
-
-- :ref:`bool<class_bool>` **get_is_vcs_intialized** **(** **)**
-
-Returns ``true`` if the VCS addon has been initialized, else returns ``false``.
 
 ----
 
@@ -140,6 +132,14 @@ Initialize the VCS addon if not already. Uses the argument value as the path to 
 - :ref:`bool<class_bool>` **is_addon_ready** **(** **)**
 
 Returns ``true`` if the addon is ready to respond to function calls, else returns ``false``.
+
+----
+
+.. _class_EditorVCSInterface_method_is_vcs_initialized:
+
+- :ref:`bool<class_bool>` **is_vcs_initialized** **(** **)**
+
+Returns ``true`` if the VCS addon has been initialized, else returns ``false``.
 
 ----
 

@@ -48,6 +48,21 @@ You will usually just pass a string to :ref:`Node.get_node<class_Node_method_get
 
 A ``NodePath`` is composed of a list of slash-separated node names (like a filesystem path) and an optional colon-separated list of "subnames" which can be resources or properties.
 
+Some examples of NodePaths include the following:
+
+::
+
+    # No leading slash means it is relative to the current node.
+    @"A" # Immediate child A
+    @"A/B" # A's child B
+    @"." # The current node.
+    @".." # The parent node.
+    @"../C" # A sibling node C.
+    # A leading slash means it is absolute from the SceneTree.
+    @"/root" # Equivalent to get_tree().get_root().
+    @"/root/Main" # If your main scene's root node were named "Main".
+    @"/root/MyAutoload" # If you have an autoloaded node or scene.
+
 Method Descriptions
 -------------------
 

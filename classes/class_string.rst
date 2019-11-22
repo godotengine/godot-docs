@@ -882,7 +882,15 @@ The splits in the returned array are sorted in the same order as the original st
 
 If ``maxsplit`` is specified, it defines the number of splits to do from the right up to ``maxsplit``. The default value of 0 means that all items are split, thus giving the same result as :ref:`split<class_String_method_split>`.
 
-For example, ``"One,Two,Three,Four"`` will return ``["Three","Four"]`` if split by ``","`` with a ``maxsplit`` value of 2.
+Example:
+
+::
+
+    var some_string = "One,Two,Three,Four"
+    var some_array = some_string.rsplit(",", true, 1)
+    print(some_array.size()) # Prints 2
+    print(some_array[0]) # Prints "Four"
+    print(some_array[1]) # Prints "Three,Two,One"
 
 ----
 
@@ -942,7 +950,15 @@ Splits the string by a ``delimiter`` string and returns an array of the substrin
 
 If ``maxsplit`` is specified, it defines the number of splits to do from the left up to ``maxsplit``. The default value of 0 means that all items are split.
 
-For example, ``"One,Two,Three"`` will return ``["One","Two"]`` if split by ``","`` with a ``maxsplit`` value of 2.
+Example:
+
+::
+
+    var some_string = "One,Two,Three,Four"
+    var some_array = some_string.split(",", true, 1)
+    print(some_array.size()) # Prints 2
+    print(some_array[0]) # Prints "One"
+    print(some_array[1]) # Prints "Two,Three,Four"
 
 ----
 

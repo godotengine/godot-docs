@@ -651,7 +651,7 @@ Quits the application.
 
 Reloads the currently active scene.
 
-Returns an :ref:`Error<enum_@GlobalScope_Error>` code as described in :ref:`change_scene<class_SceneTree_method_change_scene>`, with the addition of :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if no :ref:`current_scene<class_SceneTree_property_current_scene>` was defined yet.
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if no :ref:`current_scene<class_SceneTree_property_current_scene>` was defined yet, :ref:`@GlobalScope.ERR_CANT_OPEN<class_@GlobalScope_constant_ERR_CANT_OPEN>` if :ref:`current_scene<class_SceneTree_property_current_scene>` cannot be loaded into a :ref:`PackedScene<class_PackedScene>`, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the scene cannot be instantiated.
 
 ----
 
@@ -660,6 +660,8 @@ Returns an :ref:`Error<enum_@GlobalScope_Error>` code as described in :ref:`chan
 - void **set_auto_accept_quit** **(** :ref:`bool<class_bool>` enabled **)**
 
 If ``true``, the application automatically accepts quitting. Enabled by default.
+
+For mobile platforms, see :ref:`set_quit_on_go_back<class_SceneTree_method_set_quit_on_go_back>`.
 
 ----
 
@@ -692,6 +694,8 @@ Marks the most recent :ref:`InputEvent<class_InputEvent>` as handled.
 - void **set_quit_on_go_back** **(** :ref:`bool<class_bool>` enabled **)**
 
 If ``true``, the application quits automatically on going back (e.g. on Android). Enabled by default.
+
+To handle 'Go Back' button when this option is disabled, use :ref:`MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST<class_MainLoop_constant_NOTIFICATION_WM_GO_BACK_REQUEST>`.
 
 ----
 

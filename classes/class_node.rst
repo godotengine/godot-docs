@@ -36,6 +36,8 @@ Properties
 +---------------------------------------------+-------------------------------------------------------------------+---+
 | :ref:`PauseMode<enum_Node_PauseMode>`       | :ref:`pause_mode<class_Node_property_pause_mode>`                 | 0 |
 +---------------------------------------------+-------------------------------------------------------------------+---+
+| :ref:`int<class_int>`                       | :ref:`process_priority<class_Node_property_process_priority>`     | 0 |
++---------------------------------------------+-------------------------------------------------------------------+---+
 
 Methods
 -------
@@ -198,8 +200,6 @@ Methods
 | void                              | :ref:`set_process_input<class_Node_method_set_process_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                                            |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_process_internal<class_Node_method_set_process_internal>` **(** :ref:`bool<class_bool>` enable **)**                                                                                      |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_process_priority<class_Node_method_set_process_priority>` **(** :ref:`int<class_int>` priority **)**                                                                                      |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_process_unhandled_input<class_Node_method_set_process_unhandled_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                        |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -557,6 +557,22 @@ The node owner. A node can have any other node as owner (as long as it is a vali
 +-----------+-----------------------+
 
 Pause mode. How the node will behave if the :ref:`SceneTree<class_SceneTree>` is paused.
+
+----
+
+.. _class_Node_property_process_priority:
+
+- :ref:`int<class_int>` **process_priority**
+
++-----------+-----------------------------+
+| *Default* | 0                           |
++-----------+-----------------------------+
+| *Setter*  | set_process_priority(value) |
++-----------+-----------------------------+
+| *Getter*  | get_process_priority()      |
++-----------+-----------------------------+
+
+The node's priority in the execution order of the enabled processing callbacks (i.e. :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` and their internal counterparts). Nodes with a higher process priority will have their processing callbacks executed first.
 
 Method Descriptions
 -------------------
@@ -1314,14 +1330,6 @@ Enables or disables input processing. This is not required for GUI controls! Ena
 - void **set_process_internal** **(** :ref:`bool<class_bool>` enable **)**
 
 Enables or disabled internal processing for this node. Internal processing happens in isolation from the normal :ref:`_process<class_Node_method__process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (:ref:`set_process<class_Node_method_set_process>`). Only useful for advanced uses to manipulate built-in nodes' behaviour.
-
-----
-
-.. _class_Node_method_set_process_priority:
-
-- void **set_process_priority** **(** :ref:`int<class_int>` priority **)**
-
-Sets the node's priority in the execution order of the enabled processing callbacks (i.e. :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` and their internal counterparts). Nodes with a higher process priority will have their processing callbacks executed first.
 
 ----
 

@@ -791,7 +791,7 @@ Resizes the image to the nearest power of 2 for the width and height. If ``squar
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_exr** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** const
 
-Saves the image as an EXR file to ``path``. If grayscale is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if Godot was compiled without the TinyEXR module.
+Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if Godot was compiled without the TinyEXR module.
 
 ----
 

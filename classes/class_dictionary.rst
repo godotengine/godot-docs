@@ -131,7 +131,14 @@ Returns ``true`` if the dictionary has all of the keys in the given array.
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
-Returns a hashed integer value representing the dictionary contents.
+Returns a hashed integer value representing the dictionary contents. This can be used to compare dictionaries by value:
+
+::
+
+    var dict1 = {0: 10}
+    var dict2 = {0: 10}
+    # The line below prints `true`, whereas it would have printed `false` if both variables were compared directly.
+    print(dict1.hash() == dict2.hash())
 
 ----
 

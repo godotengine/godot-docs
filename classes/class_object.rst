@@ -290,7 +290,7 @@ Returns ``true`` if the object can translate strings. See :ref:`set_message_tran
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect** **(** :ref:`String<class_String>` signal, :ref:`Object<class_Object>` target, :ref:`String<class_String>` method, :ref:`Array<class_Array>` binds=[  ], :ref:`int<class_int>` flags=0 **)**
 
-Connects a ``signal`` to a ``method`` on a ``target`` object. Pass optional ``binds`` to the call as an :ref:`Array<class_Array>` of parameters. Use ``flags`` to set deferred or one-shot connections. See :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants.
+Connects a ``signal`` to a ``method`` on a ``target`` object. Pass optional ``binds`` to the call as an :ref:`Array<class_Array>` of parameters. These parameters will be passed to the method after any parameter used in the call to :ref:`emit_signal<class_Object_method_emit_signal>`. Use ``flags`` to set deferred or one-shot connections. See :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants.
 
 A ``signal`` can only be connected once to a ``method``. It will throw an error if already connected, unless the signal was connected with :ref:`CONNECT_REFERENCE_COUNTED<class_Object_constant_CONNECT_REFERENCE_COUNTED>`. To avoid this, first, use :ref:`is_connected<class_Object_method_is_connected>` to check for existing connections.
 
@@ -303,6 +303,15 @@ Examples:
     connect("pressed", self, "_on_Button_pressed") # BaseButton signal
     connect("text_entered", self, "_on_LineEdit_text_entered") # LineEdit signal
     connect("hit", self, "_on_Player_hit", [ weapon_type, damage ]) # User-defined signal
+
+An example of the relationship between ``binds`` passed to :ref:`connect<class_Object_method_connect>` and parameters used when calling :ref:`emit_signal<class_Object_method_emit_signal>`:
+
+::
+
+    connect("hit", self, "_on_Player_hit", [ weapon_type, damage ]) # weapon_type and damage are passed last
+    emit_signal("hit", "Dark lord", 5) # "Dark lord" and 5 are passed first
+    func _on_Player_hit(hit_by, level, weapon_type, damage):
+        print("Hit by %s (lvl %d) with weapon %s for %d damage" % [hit_by, level, weapon_type, damage])
 
 ----
 

@@ -32,6 +32,8 @@ Properties
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
 | :ref:`bool<class_bool>`                             | :ref:`low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`                           | false           |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                               | :ref:`low_processor_usage_mode_sleep_usec<class_OS_property_low_processor_usage_mode_sleep_usec>`     | 6900            |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>`                       | :ref:`max_window_size<class_OS_property_max_window_size>`                                             | Vector2( 0, 0 ) |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>`                       | :ref:`min_window_size<class_OS_property_min_window_size>`                                             | Vector2( 0, 0 ) |
@@ -544,6 +546,22 @@ If ``true``, the engine tries to keep the screen on while the game is running. U
 +-----------+-------------------------------------+
 
 If ``true``, the engine optimizes for low processor usage by only refreshing the screen if needed. Can improve battery consumption on mobile.
+
+----
+
+.. _class_OS_property_low_processor_usage_mode_sleep_usec:
+
+- :ref:`int<class_int>` **low_processor_usage_mode_sleep_usec**
+
++-----------+------------------------------------------------+
+| *Default* | 6900                                           |
++-----------+------------------------------------------------+
+| *Setter*  | set_low_processor_usage_mode_sleep_usec(value) |
++-----------+------------------------------------------------+
+| *Getter*  | get_low_processor_usage_mode_sleep_usec()      |
++-----------+------------------------------------------------+
+
+The amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU usage.
 
 ----
 
