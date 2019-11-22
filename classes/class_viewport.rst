@@ -949,6 +949,8 @@ Returns ``true`` if there are visible modals on-screen.
 
 - :ref:`bool<class_bool>` **gui_is_dragging** **(** **)** const
 
+Returns ``true`` if the viewport is currently performing a drag operation.
+
 ----
 
 .. _class_Viewport_method_input:
