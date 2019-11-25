@@ -188,7 +188,7 @@ spaces in dictionary references and function calls, or to create "columns."
 Quotes
 ~~~~~~
 
-Use double quotes unless single quotes make it possible to escape less
+Use double quotes unless single quotes make it possible to escape fewer
 characters in a given string. See the examples below:
 
 ::
