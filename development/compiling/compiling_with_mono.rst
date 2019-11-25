@@ -18,8 +18,8 @@ requests.
 
 The recommended method is to use **curl**'s CA (Certificate Autorities) certificate bundle.
 
-Run the following commands to download and import it (on Windows, you can run it
-from the Mono command line prompt, or from the regular command prompt if you added the Mono installation's bin directory to the PATH environemnt variable)::
+Run the following commands to download and import it
+On Windows, you can run it from the Mono command line prompt. If Mono's \\bin directory is present in the PATH environment variable, you can use the regular command prompt for that::
     curl -LO https://curl.haxx.se/ca/cacert.pem
     cert-sync --user cacert.pem
 
