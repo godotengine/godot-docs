@@ -185,6 +185,26 @@ spaces in dictionary references and function calls, or to create "columns."
     y        = 100
     velocity = 500
 
+Quotes
+~~~~~~
+
+Use double quotes unless single quotes make it possible to escape less
+characters in a given string. See the examples below:
+
+::
+
+    # Normal string.
+    print("hello world")
+
+    # Use double quotes as usual to avoid escapes.
+    print("hello 'world'")
+
+    # Use single quotes as an exception to the rule to avoid escapes.
+    print('hello "world"')
+
+    # Both quote styles would require 2 escapes; prefer double quotes if it's a tie.
+    print("'hello' \"world\"")
+
 Naming conventions
 ------------------
 
@@ -251,9 +271,9 @@ Place the colon right after the variable's name, without a space, and let the GD
 
 ::
 
-   # The compiler can't infer the exact type and will use Node 
+   # The compiler can't infer the exact type and will use Node
    # instead of ProgressBar
-   onready var health_bar := get_node("UI/LifeBar") 
+   onready var health_bar := get_node("UI/LifeBar")
 
 When you let the compiler infer the type hint, write the colon and equal signs together: ``:=``.
 
