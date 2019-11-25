@@ -6,18 +6,18 @@ Design a title screen
 In the next two tutorials, you will build two responsive UI (user interface)
 scenes step-by-step using the engine's UI system:
 
-1. A main menu
-2. A game UI with a health bar, energy bar, bomb and money counters
+1. A main menu.
+2. A game UI with a health bar, energy bar, bomb and money counters.
 
 You will learn how to design game UIs efficiently, and how to use Godot's
 Control nodes. This page focuses on the visual part: everything you do
 from the editor. To learn how to code a life bar,
-read :doc:`ui_code_a_life_bar`
+read :doc:`ui_code_a_life_bar`.
 
 
 .. figure:: img/ui_main_menu_design_final_result.png
 
-   The GUI you're going to create
+   The GUI you're going to create.
 
 Download the project files: :download:`ui_main_menu_design.zip
 <files/ui_main_menu_design.zip>` and extract the archive. Import the ``start/``
@@ -27,7 +27,8 @@ folder.
 
 .. note::
 
-    Read the :doc:`ui_introduction_to_the_ui_system` first to learn how Godot’s UI system works
+    Read the :doc:`ui_introduction_to_the_ui_system` first to learn how
+    Godot’s UI system works.
 
 How to design your game UI
 --------------------------
@@ -49,8 +50,8 @@ simple and clean. Avoid special effects, animation, and detailed
 illustration before you have players playtest your UI. Otherwise:
 
 1. The graphics might skew the players' perception of the experience and
-   you'll miss out on valuable feedback
-2. If the User Experience doesn't work, you'll have to redo some sprites
+   you'll miss out on valuable feedback.
+2. If the User Experience doesn't work, you'll have to redo some sprites.
 
 .. tip::
 
@@ -64,9 +65,9 @@ illustration before you have players playtest your UI. Otherwise:
 There are two ways to design your UI in Godot. You can:
 
 1. Build it all in a single scene, and eventually save some branches as
-   reusable scenes
+   reusable scenes.
 2. Build template scenes for reusable components and create specific
-   components that inherit from your base scenes
+   components that inherit from your base scenes.
 
 We will use the first approach, because the first version of your UI may
 not work as well as you’d like. You’re likely to throw parts away and
@@ -76,7 +77,7 @@ easy to make some parts reusable, as you'll see below.
 .. figure:: img/ui_main_menu_placeholder_assets.png
 
    The files you'll find in Godot. The graphics look cleaner than on the
-   rough design, but they're still placeholders
+   rough design, but they're still placeholders.
 
 Design the main menu
 --------------------
@@ -91,10 +92,10 @@ Here are my three rules of thumb to find the right containers:
 
 1. Break down the UI into nested boxes, from the largest that contains
    everything, to the smallest ones, that encompass one widget, like a
-   bar with its label, a panel or a button
-2. If there's some padding around an area, use a ``MarginContainer``
+   bar with its label, a panel or a button.
+2. If there's some padding around an area, use a ``MarginContainer``.
 3. If the elements are arranged in rows or columns, use an
-   ``HBoxContainer`` or ``VBoxContainer``
+   ``HBoxContainer`` or ``VBoxContainer``.
 
 These rules are enough to get us started, and work well for simple
 interfaces.
@@ -108,7 +109,7 @@ center the illustration with a ``CenterContainer``.
 
 .. figure:: img/ui_mockup_break_down.png
 
-   Interface building blocks, broken down using the three rules of thumb
+   Interface building blocks, broken down using the three rules of thumb.
 
 .. tip::
 
@@ -120,7 +121,7 @@ Prepare the Main Menu scene
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's create the main menu. We'll build it in a single scene. To create
-an empty scene, click on the Scene menu -> New Scene.
+an empty scene, click on **Scene > New Scene**.
 
 We have to add a root node before we can save the scene. Your UI's root
 should be the outermost container or element. In this case it's a
@@ -137,8 +138,8 @@ define the margins' size. Scroll down the ``Control`` class, to the
 -  Margin Left: *120*
 -  Margin Bottom: *80*
 
-We want the container to fit the window. In the toolbar above the Viewport, 
-open the ``Layout`` menu and select the last option, ``Full Rect``.
+We want the container to fit the window. In the toolbar above the Viewport,
+open the **Layout** menu and select the last option, **Full Rect**.
 
 Add the UI sprites
 ~~~~~~~~~~~~~~~~~~
@@ -146,23 +147,23 @@ Add the UI sprites
 Select the ``MarginContainer``, and create the UI elements as
 ``TextureRect`` nodes. We need:
 
-1. The title, or logo
-2. The three text options, as individual nodes
-3. The version note
-4. And the main menu’s illustration
+1. the title or logo,
+2. the three text options as individual nodes,
+3. the version note,
+4. and the main menu’s illustration.
 
-Click the ``Add Node`` button or press ``Meta+A`` on your keyboard.
+Click the **Add Node** button or press ``Meta+A`` on your keyboard.
 Start to type ``TextureRect`` to find the corresponding node and press
 enter. With the new node selected, press ``Meta+D`` five times to
 create five extra ``TextureRect`` instances.
 
-Click each of the nodes to select it. In the inspector, find the ``Texture``
-property and click ``[empty]`` -> ``Load``. A file browser opens and lets
+Click each of the nodes to select it. In the inspector, find the **Texture**
+property and click **[empty] > Load**. A file browser opens and lets
 you pick a sprite to load into the texture slot.
 
 .. figure:: img/ui_texturerect_load_texture.png
 
-   The file browser lets you find and load textures
+   The file browser lets you find and load textures.
 
 Repeat the operation for all ``TextureRect`` nodes. You should have the
 logo, the illustration, the three menu options and the version note,
@@ -172,7 +173,7 @@ should look messy.
 
 .. figure:: img/ui_main_menu_6_texturerect_nodes.png
 
-   The six nodes, with textures loaded
+   The six nodes with textures loaded.
 
 .. note::
 
@@ -200,8 +201,8 @@ need two containers as children of our ``HBoxContainer``: a
 
 .. figure:: img/ui_main_menu_containers_step_1.png
 
-   You should have four nested containers, and the TextureRect nodes
-   sitting aside from it
+   You should have four nested containers and the TextureRect nodes
+   sitting aside from it.
 
 In the node tree, select all the ``TextureRect`` nodes that should go on the
 left side: the logo, the menu options (Continue, NewGame, Options), and the
@@ -214,13 +215,13 @@ position automatically.
 
 We're left with two problems to solve:
 
-1. The characters on the right aren't centered
-2. There's no space between the logo and the other UI elements
+1. The characters on the right aren't centered.
+2. There's no space between the logo and the other UI elements.
 
 To center the characters on the right, first select the ``CenterContainer``.
-Then in the Inspector, scroll down to the ``Size Flags`` category and click
-on the field to the right of the ``Vertical`` property, and check ``Expand``
-in addition to ``Fill``. Do the same for the ``Horizontal`` property. This
+Then in the Inspector, scroll down to the **Size Flags** category and click
+on the field to the right of the **Vertical** property, and check **Expand**
+in addition to **Fill**. Do the same for the **Horizontal** property. This
 makes the ``CenterContainer`` expand into all available space while
 respecting its neighbour ``VBoxContainer``. Finally, drag and drop the
 Characters node into the ``CenterContainer``. The Characters element will center
@@ -229,12 +230,12 @@ automatically.
 .. figure:: img/ui_main_menu_containers_step_3.png
 
    The character node centers inside the right half of the screen as
-   soon as you place it inside the CenterContainer
+   soon as you place it inside the CenterContainer.
 
 To space out the menu options and the logo on the left, we'll use one
 final container and its size flags. Select the ``VBoxContainer`` and
 press ``Meta+A`` to add a new node inside it. Add a second
-``VBoxContainer`` and name it "MenuOptions". Select all three menu
+``VBoxContainer`` and name it *MenuOptions*. Select all three menu
 options, ``Continue``, ``NewGame`` and ``Options``, and drag and drop
 them inside the new ``VBoxContainer``. The UI's layout should barely
 change, if at all.
@@ -242,32 +243,32 @@ change, if at all.
 .. figure:: img/ui_main_menu_containers_step_4.png
 
    Place the new container between the other two nodes to retain the
-   UI's layout
+   UI's layout.
 
 Now we grouped the menu options together, we can tell their container to
 expand to take as much vertical space as possible. Select the
 ``MenuOptions`` node. In the Inspector, scroll down to the
-``Size Flags`` category. Click on the field to the right of the
-``Vertical`` property, and check ``Expand`` in addition to ``Fill``. The container expands to
-take all the available vertical space. But it respects its neighbors,
-the ``Logo`` and ``Version`` elements.
+**Size Flags** category. Click on the field to the right of the
+**Vertical** property, and check **Expand** in addition to **Fill**.
+The container expands to take all the available vertical space
+while respecting its neighbors, the ``Logo`` and ``Version`` elements.
 
 To center the nodes in the ``VBoxContainer``, scroll to the top of the
-Inspector and change the ``Alignment`` property to ``Center``.
+Inspector and change the **Alignment** property to **Center**.
 
 .. figure:: img/ui_main_menu_containers_step_5.png
 
-   The menu options should center vertically in the UI's left column
+   The menu options should center vertically in the UI's left column.
 
 To wrap things up, let's add some separation between the menu options.
-Expand the ``Custom Constants`` category below ``Size Flags``, and click
-the field next to the ``Separation`` parameter. Set it to 30. Once you
-press enter, the ``Separation`` property becomes active and Godot adds
+Expand the **Custom Constants** category below **Size Flags**, and click
+the field next to the **Separation** parameter. Set it to 30. Once you
+press enter, the **Separation** property becomes active and Godot adds
 30 pixels between menu options.
 
 .. figure:: img/ui_main_menu_design_final_result.png
 
-   The final interface
+   The final interface.
 
 Without a single line of code, we have a precise and responsive main
 menu.
@@ -297,8 +298,9 @@ We want the UI system to handle different screen ratios, but we also
 need the entire game to adapt to different screen resolutions. To do
 this, Godot scales the entire window up and down.
 
-You can change the scale mode in the project settings: click the Project menu -> Project
-Settings. In the window's left column, look for the Display category.
-Click on the Window sub-category. On the right side of the window,
-you'll find a Stretch section. The three settings, Mode, Aspect, and
-Shrink, control the screen size. For more information, see :ref:`doc_multiple_resolutions`.
+You can change the scale mode in the project settings: click
+**Project > Project Settings** in the top menu. In the window's left column,
+look for the **Display** category. Click on the **Window** sub-category.
+On the right side of the window, you'll find a **Stretch** section.
+The three settings, **Mode**, **Aspect**, and **Shrink**, control the
+screen size. For more information, see :ref:`doc_multiple_resolutions`.
