@@ -26,7 +26,7 @@ as they require advanced GPU features. Instead, use :ref:`CPUParticles <class_CP
 ---------------------------
 
 In GLES2, ``SCREEN_TEXTURE`` (accessed via a :ref:`ShaderMaterial <class_ShaderMaterial>`) does not have
-computed mip-maps. So when accessing at a different LOD, the texture will not appear blurry. 
+computed mip-maps. So when accessing at a different LOD, the texture will not appear blurry.
 
 ``DEPTH_TEXTURE``
 -----------------
@@ -37,17 +37,17 @@ Color space
 -----------
 
 GLES2 and GLES3 are in different color spaces. This means that colors will appear slightly
-different between them  especially when lighting is used. 
+different between them  especially when lighting is used.
 
-If your game is going to use both GLES2 and GLES3, you can use an ``if`` 
-statement check and see if the output is in sRGB, using ``OUTPUT_IS_SRGB``. ``OUTPUT_IS_SRGB`` is 
+If your game is going to use both GLES2 and GLES3, you can use an ``if``
+statement check and see if the output is in sRGB, using ``OUTPUT_IS_SRGB``. ``OUTPUT_IS_SRGB`` is
 ``true`` in GLES2 and ``false`` in GLES3.
 
 HDR
 ---
 
-GLES is not capable of using High Dynamic Range (HDR) rendering features. If HDR is set for your 
-project, or for a given viewport, Godot will still user Low Dynamic Range (LDR) which limits 
+GLES is not capable of using High Dynamic Range (HDR) rendering features. If HDR is set for your
+project, or for a given viewport, Godot will still user Low Dynamic Range (LDR) which limits
 viewport values to the ``0-1`` range.
 
 SpatialMaterial features
@@ -63,8 +63,8 @@ In GLES2, the following advanced rendering features in the :ref:`SpatialMaterial
 
 When using SpatialMaterials they will not even appear in the editor.
 
-In custom :ref:`ShaderMaterials <class_ShaderMaterial>`, you can set values for these features but they 
-will be non-functional. For example, you will still be able to set the ``SSS`` built-in (which normally adds 
+In custom :ref:`ShaderMaterials <class_ShaderMaterial>`, you can set values for these features but they
+will be non-functional. For example, you will still be able to set the ``SSS`` built-in (which normally adds
 subsurface scattering) in your shader, but nothing will happen.
 
 Environment features
@@ -76,7 +76,7 @@ In GLES2, the following features in the :ref:`Environment <class_Environment>` a
 - Tonemapping
 - Screen space reflections
 - Screen space ambient occlusion
- 
+
 That means that in GLES2 environments you can only set:
 
 - Sky (including procedural sky)
@@ -89,7 +89,7 @@ That means that in GLES2 environments you can only set:
 GIProbes
 --------
 
-:ref:`GIProbes <class_GIProbe>` do not work in GLES2. Instead use :ref:`Baked Lightmaps <class_BakedLightmap>`. 
+:ref:`GIProbes <class_GIProbe>` do not work in GLES2. Instead use :ref:`Baked Lightmaps <class_BakedLightmap>`.
 For a description of how baked lightmaps work see the :ref:`Baked Lightmaps tutorial <doc_baked_lightmaps>`.
 
 Contact shadows
@@ -100,16 +100,23 @@ The ``shadow_contact`` property of :ref:`Lights <class_Light>` is not supported 
 Light performance
 -----------------
 
-In GLES2, performance scales poorly with several lights, as each light is processed in a separate render 
-pass (in opposition to GLES3 which is all done in a single pass). Try to limit scenes to as few lights as 
-possible in order to achieve greatest performance. 
+In GLES2, performance scales poorly with several lights, as each light is processed in a separate render
+pass (in opposition to GLES3 which is all done in a single pass). Try to limit scenes to as few lights as
+possible in order to achieve greatest performance.
 
 Texture compression
 -------------------
 
-On mobile, GLES2 requires ETC texture compression, while GLES3 requires ETC2. ETC2 is enabled by default, 
-so if exporting to mobile using GLES2 make sure to set the project setting 
+On mobile, GLES2 requires ETC texture compression, while GLES3 requires ETC2. ETC2 is enabled by default,
+so if exporting to mobile using GLES2 make sure to set the project setting
 ``rendering/vram_compression/import_etc`` and then reimport textures.
+
+.. warning::
+
+    Since ETC doesn't support transparency, you must reimport textures that contain
+    an alpha channel to use the Uncompressed, Lossy or Lossless compression mode
+    (instead of Video RAM). This can be done in the Import dock after selecting
+    them in the FileSystem dock.
 
 Blend shapes
 ------------
@@ -119,7 +126,7 @@ Blend shapes are not supported in GLES2.
 Shading language
 ----------------
 
-GLES3 provides many built-in functions that GLES2 does not. Below is a list of functions 
+GLES3 provides many built-in functions that GLES2 does not. Below is a list of functions
 that are not available or are have limited support in GLES2.
 
 For a complete list of built-in GLSL functions see the :ref:`Shading Language doc <doc_shading_language>`.
@@ -163,7 +170,7 @@ For a complete list of built-in GLSL functions see the :ref:`Shading Language do
 ``textureSize()`` workaround
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-GLES2 does not support ``textureSize()``. You can get the size of a texture the old fashioned way by passing in a 
+GLES2 does not support ``textureSize()``. You can get the size of a texture the old fashioned way by passing in a
 uniform with the texture size yourself.
 
 .. code-block:: glsl
@@ -182,7 +189,7 @@ Built in variables and render modes
 -----------------------------------
 
 Godot also provides many built-in variables and render modes. Some cannot be supported in GLES2. Below is a list of
-built-in variables and render modes that, when written to, will have no effect or could even cause issues when using 
+built-in variables and render modes that, when written to, will have no effect or could even cause issues when using
 the GLES2 backend.
 
 +----------------------------+
