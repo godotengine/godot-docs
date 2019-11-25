@@ -16,11 +16,11 @@ Requirements
 You may need to import necessary certificates for NuGet to perform HTTPS
 requests.
 
-First you have to download **curl**'s CA (Certificate Autorities) certificate bundle: https://curl.haxx.se/ca/cacert.pem
+The recommended method is to use **curl**'s CA (Certificate Autorities) certificate bundle.
 
-Then you run the following command to import it (on Windows, you can run it
+Run the following commands to download and import it (on Windows, you can run it
 from the Mono command line prompt, or from the regular command prompt if you added the Mono installation's bin directory to the PATH environemnt variable)::
-
+    curl -LO https://curl.haxx.se/ca/cacert.pem
     cert-sync --user cacert.pem
 
 Alternatively, you can use the following command, though it's deprecated and may not work ::
