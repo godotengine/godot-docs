@@ -158,6 +158,8 @@ For a complete list of built-in GLSL functions see the :ref:`Shading Language do
 | vec_type **fwidth** ( vec_type p )                                                          |                                                  |
 +---------------------------------------------------------------------------------------------+--------------------------------------------------+
 
+.. note:: Functions not in GLES2's GLSL were added with Godots own shader standard library. These functions may perform worse in GLES2 compared to GLES3.
+
 ``textureSize()`` workaround
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
