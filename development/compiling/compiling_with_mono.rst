@@ -23,7 +23,7 @@ from the Mono command line prompt, or from the regular command prompt if you add
     curl -LO https://curl.haxx.se/ca/cacert.pem
     cert-sync --user cacert.pem
 
-Alternatively, you can use the following command, though it's deprecated and may not work correctly ::
+Alternatively, you can use the following command, though it's deprecated and may not work correctly::
 
     mozroots --import --sync
 
