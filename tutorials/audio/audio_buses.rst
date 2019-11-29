@@ -162,10 +162,16 @@ Distortion effects make the sound "dirty". Godot offers several types of
 distortion: *overdrive*, *tan* and *bit crushing*. Distortion can be used
 to simulate sound coming through a low-quality speaker or device.
 
-EQ, EQ6, EQ10, EQ21
-~~~~~~~~~~~~~~~~~~~
+EQ
+~~
 
-Godot provides four equalizers with different numbers of bands. An equalizer on
+EQ is what all other equalizers inherit from. It can be extended with with Custom
+scripts to create an equalizer with a custom number of bands.
+
+EQ6, EQ10, EQ21
+~~~~~~~~~~~~~~~
+
+Godot provides three equalizers with different numbers of bands. An equalizer on
 the Master bus can be useful to cut frequencies that the device's speakers can't
 reproduce well (e.g. a mobile phone's speakers won't reproduce bass content
 well). The equalizer effect can be disabled when headphones are plugged in.
@@ -173,8 +179,7 @@ well). The equalizer effect can be disabled when headphones are plugged in.
 Filter
 ~~~~~~
 
-Filter is what all other effects processors inherit from and should not be used
-directly.
+Filter is what all other filters inherit from and should not be used directly.
 
 HighPassFilter, HighShelfFilter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -239,6 +244,13 @@ be tweaked to obtain the sound of a specific room. Reverb is commonly outputted
 from :ref:`Areas <class_Area>`
 (see :ref:`Reverb buses <doc_audio_streams_reverb_buses>`), or to apply
 a "chamber" feel to all sounds.
+
+SpectrumAnalyzer
+~~~~~~~~~~~~~~~~
+
+This effect doesn't alter audio, instead, you add this effect to buses you want
+a spectrum analysis of. This would typically be used for audio visualization. A
+demo project using this can be found `here <https://github.com/godotengine/godot-demo-projects/tree/master/audio/spectrum>`__.
 
 StereoEnhance
 ~~~~~~~~~~~~~
