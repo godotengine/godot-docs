@@ -5,9 +5,10 @@ Project organization
 
 Introduction
 ------------
+
 Since Godot has no restrictions on project structure or filesystem usage,
 organizing files when learning the engine can seem challenging. This
-tutorial suggests a workflow which should be a good starting point. 
+tutorial suggests a workflow which should be a good starting point.
 We will also cover using version control with Godot.
 
 Organization
@@ -30,7 +31,7 @@ They can then use a separate folder to store built levels that use them.
 ::
 
     /project.godot
-    /docs/.gdignore
+    /docs/.gdignore  # See "Ignoring specific folders" below
     /docs/learning.html
     /models/town/house/house.dae
     /models/town/house/window.png
@@ -53,5 +54,21 @@ resulted in an organization hassle for most developers.
 Because of this, assets are now transparently imported from within the project
 folder.
 
-If a folder shouldn't be imported into Godot, an exception can be made with a
-.gdignore file.
+Ignoring specific folders
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To prevent Godot from importing files contained in a specific folder, create
+an empty file called ``.gdignore`` in the folder (the leading ``.`` is required).
+This can be useful to speed up the initial project importing.
+
+.. note::
+
+    To create a file whose name starts with a dot on Windows, you can use a
+    text editor such as Notepad++ or use the following command in a
+    command prompt: ``type nul > .gdignore``
+
+Once the folder is ignored, resources in that folder can't be loaded anymore
+using the ``load()`` and ``preload()`` methods.
+
+Ignoring a folder will also automatically hide it from the FileSystem dock,
+which can be useful to reduce clutter.
