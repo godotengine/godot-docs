@@ -89,10 +89,10 @@ To playback the recording, you assign the recording as the stream of the
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-  func _on_SaveButton_pressed():
-	var save_path = $SaveButton/Filename.text
-	recording.save_to_wav(save_path)
-	$Status.text = "Saved WAV file to: %s\n(%s)" % [save_path, ProjectSettings.globalize_path(save_path)]
+    func _on_SaveButton_pressed():
+        var save_path = $SaveButton/Filename.text
+        recording.save_to_wav(save_path)
+        $Status.text = "Saved WAV file to: %s\n(%s)" % [save_path, ProjectSettings.globalize_path(save_path)]
 
 To save the recording, you call ``save_to_wav()`` with the path to a file.
 In this demo, the path is defined by the user via a ``LineEdit`` input box.
