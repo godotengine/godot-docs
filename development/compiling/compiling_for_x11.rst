@@ -35,7 +35,7 @@ Distro-specific oneliners
 +------------------+-----------------------------------------------------------------------------------------------------------+
 | **Arch Linux**   | ::                                                                                                        |
 |                  |                                                                                                           |
-|                  |     pacman -S scons pkgconf gcc libxcursor libxinerama libxi libxrandr mesa glu alsa-lib pulseaudio yasm  |
+|                  |     pacman -S scons pkgconf gcc libxcursor libxinerama libxi libxrandr mesa glu libglvnd alsa-lib pulseaudio yasm  |
 +------------------+-----------------------------------------------------------------------------------------------------------+
 | **Debian** /     | ::                                                                                                        |
 | **Ubuntu**       |                                                                                                           |
