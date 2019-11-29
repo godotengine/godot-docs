@@ -21,17 +21,17 @@ An external library containing functions or script classes to use in Godot.
 Properties
 ----------
 
-+-------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`ConfigFile<class_ConfigFile>` | :ref:`config_file<class_GDNativeLibrary_property_config_file>`     |          |
-+-------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`             | :ref:`load_once<class_GDNativeLibrary_property_load_once>`         | true     |
-+-------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`             | :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`       | true     |
-+-------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`             | :ref:`singleton<class_GDNativeLibrary_property_singleton>`         | false    |
-+-------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`String<class_String>`         | :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>` | "godot_" |
-+-------------------------------------+--------------------------------------------------------------------+----------+
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`ConfigFile<class_ConfigFile>` | :ref:`config_file<class_GDNativeLibrary_property_config_file>`     |           |
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`             | :ref:`load_once<class_GDNativeLibrary_property_load_once>`         | true      |
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`             | :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`       | true      |
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`             | :ref:`singleton<class_GDNativeLibrary_property_singleton>`         | false     |
++-------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`         | :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>` | "godot\_" |
++-------------------------------------+--------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -130,7 +130,7 @@ If ``true``, Godot loads the library at startup rather than the first time a scr
 - :ref:`String<class_String>` **symbol_prefix**
 
 +-----------+--------------------------+
-| *Default* | "godot_"                 |
+| *Default* | "godot\_"                |
 +-----------+--------------------------+
 | *Setter*  | set_symbol_prefix(value) |
 +-----------+--------------------------+

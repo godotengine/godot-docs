@@ -52,7 +52,7 @@ Properties
 +----------------------------------------------+-----------------------------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`                      | :ref:`secret<class_LineEdit_property_secret>`                               | false    |
 +----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`String<class_String>`                  | :ref:`secret_character<class_LineEdit_property_secret_character>`           | "*"      |
+| :ref:`String<class_String>`                  | :ref:`secret_character<class_LineEdit_property_secret_character>`           | "\*"     |
 +----------------------------------------------+-----------------------------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`                      | :ref:`selecting_enabled<class_LineEdit_property_selecting_enabled>`         | true     |
 +----------------------------------------------+-----------------------------------------------------------------------------+----------+
@@ -428,7 +428,7 @@ If ``true``, every character is replaced with the secret character (see :ref:`se
 - :ref:`String<class_String>` **secret_character**
 
 +-----------+-----------------------------+
-| *Default* | "*"                         |
+| *Default* | "\*"                        |
 +-----------+-----------------------------+
 | *Setter*  | set_secret_character(value) |
 +-----------+-----------------------------+

@@ -8,7 +8,7 @@ iOS.
 
 A simple demo is included in the official demo projects and will be used as
 support for this tutorial:
-`https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record`_.
+`<https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record>`_.
 
 The structure of the demo
 -------------------------
