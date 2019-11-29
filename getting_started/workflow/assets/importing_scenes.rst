@@ -57,14 +57,11 @@ either of those glTF binary files are fine.
 Exporting DAE files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Blender has built-in COLLADA support, but it's broken and
-should not be used.
+Blender has built-in COLLADA support, but it does not work properly for the needs of game engines
+and should not be used as is.
 
-Godot provides a `Python
-Plugin <https://github.com/godotengine/collada-exporter>`__
-that will correctly export scnenes, however it only works for
-Blender 2.79. If you are using Blender 2.8 or newer you should
-use gLTF 2.0.
+Godot provides a `Blender plugin <https://github.com/godotengine/collada-exporter>`_
+that will correctly export COLLADA scenes for use in Godot.
 
 Exporting ESCN files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
