@@ -14,8 +14,17 @@ Requirements
 - pkg-config
 
 You may need to import necessary certificates for NuGet to perform HTTPS
-requests. You can do this with the following command (on Windows, you can run it
-from the Mono command line prompt)::
+requests.
+
+The recommended method is to use **curl**'s CA (Certificate Autorities) certificate bundle.
+
+Run the following commands to download and import it.
+On Windows, you can run it from the Mono command line prompt (or the regular prompt if you added Mono's ``bin`` directory to your ``PATH`` environment variable)::
+
+    curl -LO https://curl.haxx.se/ca/cacert.pem
+    cert-sync --user cacert.pem
+
+Alternatively, you can use the following command, though it's deprecated and may not work correctly::
 
     mozroots --import --sync
 
