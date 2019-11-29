@@ -692,7 +692,7 @@ Defines the mode of background.
 | *Getter*  | get_sky_orientation()              |
 +-----------+------------------------------------+
 
-:ref:`Sky<class_Sky>` resource's rotation expressed as a :ref:`Basis<class_Basis>`
+:ref:`Sky<class_Sky>` resource's rotation expressed as a :ref:`Basis<class_Basis>`.
 
 ----
 
@@ -708,7 +708,7 @@ Defines the mode of background.
 | *Getter*  | get_sky_rotation()      |
 +-----------+-------------------------+
 
-:ref:`Sky<class_Sky>` resource's rotation expressed as euler angles in radians
+:ref:`Sky<class_Sky>` resource's rotation expressed as Euler angles in radians.
 
 ----
 
@@ -724,7 +724,7 @@ Defines the mode of background.
 | *Getter*  | get_sky_rotation_degrees()      |
 +-----------+---------------------------------+
 
-:ref:`Sky<class_Sky>` resource's rotation expressed as euler angles in degrees
+:ref:`Sky<class_Sky>` resource's rotation expressed as Euler angles in degrees.
 
 ----
 

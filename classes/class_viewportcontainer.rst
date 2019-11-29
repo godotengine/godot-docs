@@ -63,3 +63,9 @@ If ``true``, the viewport will be scaled to the control's size.
 | *Getter*  | get_stretch_shrink()      |
 +-----------+---------------------------+
 
+Divides the viewport's effective resolution by this value while preserving its scale. This can be used to speed up rendering.
+
+For example, a 1280×720 viewport with :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` set to ``2`` will be rendered at 640×360 while occupying the same size in the container.
+
+**Note:** :ref:`stretch<class_ViewportContainer_property_stretch>` must be ``true`` for this property to work.
+

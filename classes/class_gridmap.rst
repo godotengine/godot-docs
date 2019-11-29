@@ -40,8 +40,6 @@ Properties
 +---------------------------------------+------------------------------------------------------------------+--------------------+
 | :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`mesh_library<class_GridMap_property_mesh_library>`         |                    |
 +---------------------------------------+------------------------------------------------------------------+--------------------+
-| :ref:`MeshLibrary<class_MeshLibrary>` | :ref:`theme<class_GridMap_property_theme>`                       |                    |
-+---------------------------------------+------------------------------------------------------------------+--------------------+
 
 Methods
 -------
@@ -250,20 +248,6 @@ The dimensions of the grid's cells.
 +----------+-------------------------+
 
 The assigned :ref:`MeshLibrary<class_MeshLibrary>`.
-
-----
-
-.. _class_GridMap_property_theme:
-
-- :ref:`MeshLibrary<class_MeshLibrary>` **theme**
-
-+----------+------------------+
-| *Setter* | set_theme(value) |
-+----------+------------------+
-| *Getter* | get_theme()      |
-+----------+------------------+
-
-Deprecated, use :ref:`mesh_library<class_GridMap_property_mesh_library>` instead.
 
 Method Descriptions
 -------------------

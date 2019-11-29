@@ -1559,3 +1559,27 @@ From the caller, call :ref:`GDScriptFunctionState.resume<class_GDScriptFunctionS
 
 If passed an object and a signal, the execution is resumed when the object emits the given signal. In this case, ``yield()`` returns the argument passed to ``emit_signal()`` if the signal takes only one argument, or an array containing all the arguments passed to ``emit_signal()`` if the signal takes multiple arguments.
 
+You can also use ``yield`` to wait for a function to finish:
+
+::
+
+    func _ready():
+        yield(do_something(), "completed")
+        yield(do_something_else(), "completed")
+        print("All functions are done!")
+    
+    func do_something():
+        print("Something is done!")
+    
+    func do_something_else():
+        print("Something else is done!")
+    
+    # prints:
+    # Something is done!
+    # Something else is done!
+    # All functions are done!
+
+When yielding on a function, the ``completed`` signal will be emitted automatically when the function returns. It can, therefore, be used as the ``signal`` parameter of the ``yield`` method to resume.
+
+If you are planning on calling the same function within a loop, you should consider using ``yield(get_tree(), "idle_frame")`` also.
+

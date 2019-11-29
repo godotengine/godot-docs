@@ -21,17 +21,19 @@ A node with the ability to send HTTP(S) requests.
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>` | -1    |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_property_download_file>`     | ""    |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`     | 8     |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                 | 0     |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`         | false |
-+-----------------------------+--------------------------------------------------------------------+-------+
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>`         | -1    |
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`download_chunk_size<class_HTTPRequest_property_download_chunk_size>` | 4096  |
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_property_download_file>`             | ""    |
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`             | 8     |
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                         | 0     |
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`                 | false |
++-----------------------------+----------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -177,6 +179,24 @@ Property Descriptions
 +-----------+----------------------------+
 
 Maximum allowed size for response bodies.
+
+----
+
+.. _class_HTTPRequest_property_download_chunk_size:
+
+- :ref:`int<class_int>` **download_chunk_size**
+
++-----------+--------------------------------+
+| *Default* | 4096                           |
++-----------+--------------------------------+
+| *Setter*  | set_download_chunk_size(value) |
++-----------+--------------------------------+
+| *Getter*  | get_download_chunk_size()      |
++-----------+--------------------------------+
+
+The size of the buffer used and maximum bytes to read per iteration. See :ref:`HTTPClient.read_chunk_size<class_HTTPClient_property_read_chunk_size>`.
+
+Set this to a higher value (e.g. 65536 for 64 KiB) when downloading large files to achieve better speeds at the cost of memory.
 
 ----
 

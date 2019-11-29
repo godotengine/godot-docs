@@ -823,7 +823,7 @@ Returns the peer ID of the network master for this node. See :ref:`set_network_m
 
 - :ref:`Node<class_Node>` **get_node** **(** :ref:`NodePath<class_NodePath>` path **)** const
 
-Fetches a node. The :ref:`NodePath<class_NodePath>` can be either a relative path (from the current node) or an absolute path (in the scene tree) to a node. If the path does not exist, a ``null instance`` is returned and attempts to access it will result in an "Attempt to call <method> on a null instance." error.
+Fetches a node. The :ref:`NodePath<class_NodePath>` can be either a relative path (from the current node) or an absolute path (in the scene tree) to a node. If the path does not exist, a ``null instance`` is returned and an error is logged. Attempts to access methods on the return value will result in an "Attempt to call <method> on a null instance." error.
 
 **Note:** Fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_tree<class_Node_method_is_inside_tree>`).
 
@@ -873,7 +873,7 @@ For example, assuming that ``Area2D/CollisionShape2D`` is a valid node and that 
 
 - :ref:`Node<class_Node>` **get_node_or_null** **(** :ref:`NodePath<class_NodePath>` path **)** const
 
-Similar to :ref:`get_node<class_Node_method_get_node>`, but does not raise an error if ``path`` does not point to a valid ``Node``.
+Similar to :ref:`get_node<class_Node_method_get_node>`, but does not log an error if ``path`` does not point to a valid ``Node``.
 
 ----
 

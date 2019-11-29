@@ -77,7 +77,7 @@ Constants
 Description
 -----------
 
-Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior.
+Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior. All popup methods ensure correct placement within the viewport.
 
 Property Descriptions
 ---------------------

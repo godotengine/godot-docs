@@ -26,6 +26,8 @@ Properties
 +-------------------------------------+-------------------------------------------------------------------------------+-------+
 | :ref:`StreamPeer<class_StreamPeer>` | :ref:`connection<class_HTTPClient_property_connection>`                       |       |
 +-------------------------------------+-------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`               | :ref:`read_chunk_size<class_HTTPClient_property_read_chunk_size>`             | 4096  |
++-------------------------------------+-------------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -58,8 +60,6 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`request<class_HTTPClient_method_request>` **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`String<class_String>` body="" **)**                    |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`request_raw<class_HTTPClient_method_request_raw>` **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)** |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_read_chunk_size<class_HTTPClient_method_set_read_chunk_size>` **(** :ref:`int<class_int>` bytes **)**                                                                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -454,6 +454,22 @@ If ``true``, execution will block until all data is read from the response.
 
 The connection to use for this client.
 
+----
+
+.. _class_HTTPClient_property_read_chunk_size:
+
+- :ref:`int<class_int>` **read_chunk_size**
+
++-----------+----------------------------+
+| *Default* | 4096                       |
++-----------+----------------------------+
+| *Setter*  | set_read_chunk_size(value) |
++-----------+----------------------------+
+| *Getter*  | get_read_chunk_size()      |
++-----------+----------------------------+
+
+The size of the buffer used and maximum bytes to read per iteration. See :ref:`read_response_body_chunk<class_HTTPClient_method_read_response_body_chunk>`.
+
 Method Descriptions
 -------------------
 
@@ -612,12 +628,4 @@ Sends a raw request to the connected host. The URL parameter is just the part af
 Headers are HTTP request headers. For available HTTP methods, see ``METHOD_*``.
 
 Sends the body data raw, as a byte array and does not encode it in any way.
-
-----
-
-.. _class_HTTPClient_method_set_read_chunk_size:
-
-- void **set_read_chunk_size** **(** :ref:`int<class_int>` bytes **)**
-
-Sets the size of the buffer used and maximum bytes to read per iteration. See :ref:`read_response_body_chunk<class_HTTPClient_method_read_response_body_chunk>`.
 

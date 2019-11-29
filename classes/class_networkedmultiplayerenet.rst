@@ -30,6 +30,8 @@ Properties
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
 | :ref:`bool<class_bool>`                                               | refuse_new_connections                                                            | **O:** false |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                                               | :ref:`server_relay<class_NetworkedMultiplayerENet_property_server_relay>`         | true         |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
 | :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | -1           |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
 | :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>`       | transfer_mode                                                                     | **O:** 2     |
@@ -145,6 +147,22 @@ The number of channels to be used by ENet. Channels are used to separate differe
 +-----------+-----------------------------+
 
 The compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.
+
+----
+
+.. _class_NetworkedMultiplayerENet_property_server_relay:
+
+- :ref:`bool<class_bool>` **server_relay**
+
++-----------+---------------------------------+
+| *Default* | true                            |
++-----------+---------------------------------+
+| *Setter*  | set_server_relay_enabled(value) |
++-----------+---------------------------------+
+| *Getter*  | is_server_relay_enabled()       |
++-----------+---------------------------------+
+
+Enable or disable the server feature that notifies clients of other peers' connection/disconnection, and relays messages between them. When this option is ``false``, clients won't be automatically notified of other peers and won't be able to send them packets through the server.
 
 ----
 
