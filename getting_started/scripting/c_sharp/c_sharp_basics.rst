@@ -211,6 +211,10 @@ take a look over the official
   `#20271 <https://github.com/godotengine/godot/issues/20271>`_).
 - Attached C# scripts should refer to a class that has a class name
   that matches the file name.
+- There are some methods such as ``Get()``/``Set()``, ``Call()``/``CallDeferred()`` 
+  and signal connection method ``Connect()`` that rely on godot's snake_case api naming conventions. 
+  So when using ``CallDeffered("AddChild")``, ``AddChild`` will not work here because the api is expecting the snake_case version 
+  ``add_child``. However, you can use any custom properties or methods without this snake_case limitation.
 
 Performance of C# in Godot
 --------------------------
