@@ -465,7 +465,6 @@ NativeScript.
     resource_name = "gdexample"
     class_name = "GDExample"
     library = ExtResource( 1 )
-    _sections_unfolded = [ "Resource" ]
 
 This is a standard Godot resource; you could just create it directly in your
 scene, but saving it to a file makes it much easier to reuse it in other places.
