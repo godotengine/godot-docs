@@ -32,6 +32,8 @@ For compiling under Windows, the following is required:
               mingw-w64-x86_64-gcc mingw-w64-x86_64-yasm \
               mingw-w64-i686-python3-pip mingw-w64-i686-gcc \
               mingw-w64-i686-yasm make
+              
+              For each MSYS2 MinGW subsystem in it's own shell pip install scons
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
