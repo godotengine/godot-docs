@@ -57,6 +57,8 @@ Property Descriptions
 
 The local variable's type.
 
+----
+
 .. _class_VisualScriptLocalVar_property_var_name:
 
 - :ref:`String<class_String>` **var_name**

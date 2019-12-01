@@ -16,7 +16,7 @@ SpringArm
 Brief Description
 -----------------
 
-
+A helper node, mostly used in 3rd person cameras.
 
 Properties
 ----------
@@ -44,6 +44,17 @@ Methods
 | :ref:`bool<class_bool>`   | :ref:`remove_excluded_object<class_SpringArm_method_remove_excluded_object>` **(** :ref:`RID<class_RID>` RID **)** |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+The SpringArm node is a node that casts a ray (or collision shape) along its z axis and moves all its direct children to the collision point, minus a margin.
+
+The most common use case for this is to make a 3rd person camera that reacts to collisions in the environment.
+
+The SpringArm will either cast a ray, or if a shape is given, it will cast the shape in the direction of its z axis.
+
+If you use the SpringArm as a camera controller for your player, you might need to exclude the player's collider from the SpringArm's collision check.
+
 Property Descriptions
 ---------------------
 
@@ -59,6 +70,10 @@ Property Descriptions
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
+The layers against which the collision check shall be done.
+
+----
+
 .. _class_SpringArm_property_margin:
 
 - :ref:`float<class_float>` **margin**
@@ -71,6 +86,14 @@ Property Descriptions
 | *Getter*  | get_margin()      |
 +-----------+-------------------+
 
+When the collision check is made, a candidate length for the SpringArm is given.
+
+The margin is then subtracted to this length and the translation is applied to the child objects of the SpringArm.
+
+This margin is useful for when the SpringArm has a :ref:`Camera<class_Camera>` as a child node: without the margin, the :ref:`Camera<class_Camera>` would be placed on the exact point of collision, while with the margin the :ref:`Camera<class_Camera>` would be placed close to the point of collision.
+
+----
+
 .. _class_SpringArm_property_shape:
 
 - :ref:`Shape<class_Shape>` **shape**
@@ -80,6 +103,12 @@ Property Descriptions
 +----------+------------------+
 | *Getter* | get_shape()      |
 +----------+------------------+
+
+The :ref:`Shape<class_Shape>` to use for the SpringArm.
+
+When the shape is set, the SpringArm will cast the :ref:`Shape<class_Shape>` on its z axis instead of performing a ray cast.
+
+----
 
 .. _class_SpringArm_property_spring_length:
 
@@ -93,6 +122,10 @@ Property Descriptions
 | *Getter*  | get_length()      |
 +-----------+-------------------+
 
+The maximum extent of the SpringArm. This is used as a length for both the ray and the shape cast used internally to calculate the desired position of the SpringArm's child nodes.
+
+To know more about how to perform a shape cast or a ray cast, please consult the :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` documentation.
+
 Method Descriptions
 -------------------
 
@@ -100,15 +133,29 @@ Method Descriptions
 
 - void **add_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
 
+Adds the object with the given :ref:`RID<class_RID>` to the list of objects excluded from the collision check.
+
+----
+
 .. _class_SpringArm_method_clear_excluded_objects:
 
 - void **clear_excluded_objects** **(** **)**
+
+Clears the list of objects excluded from the collision check.
+
+----
 
 .. _class_SpringArm_method_get_hit_length:
 
 - :ref:`float<class_float>` **get_hit_length** **(** **)**
 
+Returns the proportion between the current arm length (after checking for collisions) and the :ref:`spring_length<class_SpringArm_property_spring_length>`. Ranges from 0 to 1.
+
+----
+
 .. _class_SpringArm_method_remove_excluded_object:
 
 - :ref:`bool<class_bool>` **remove_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
+
+Removes the given :ref:`RID<class_RID>` from the list of objects excluded from the collision check.
 

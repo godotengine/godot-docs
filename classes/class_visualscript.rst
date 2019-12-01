@@ -139,11 +139,15 @@ Method Descriptions
 
 Add a custom signal with the specified name to the VisualScript.
 
+----
+
 .. _class_VisualScript_method_add_function:
 
 - void **add_function** **(** :ref:`String<class_String>` name **)**
 
 Add a function with the specified name to the VisualScript.
+
+----
 
 .. _class_VisualScript_method_add_node:
 
@@ -151,11 +155,15 @@ Add a function with the specified name to the VisualScript.
 
 Add a node to a function of the VisualScript.
 
+----
+
 .. _class_VisualScript_method_add_variable:
 
 - void **add_variable** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value=null, :ref:`bool<class_bool>` export=false **)**
 
 Add a variable to the VisualScript, optionally giving it a default value or marking it as exported.
+
+----
 
 .. _class_VisualScript_method_custom_signal_add_argument:
 
@@ -163,11 +171,15 @@ Add a variable to the VisualScript, optionally giving it a default value or mark
 
 Add an argument to a custom signal added with :ref:`add_custom_signal<class_VisualScript_method_add_custom_signal>`.
 
+----
+
 .. _class_VisualScript_method_custom_signal_get_argument_count:
 
 - :ref:`int<class_int>` **custom_signal_get_argument_count** **(** :ref:`String<class_String>` name **)** const
 
 Get the count of a custom signal's arguments.
+
+----
 
 .. _class_VisualScript_method_custom_signal_get_argument_name:
 
@@ -175,11 +187,15 @@ Get the count of a custom signal's arguments.
 
 Get the name of a custom signal's argument.
 
+----
+
 .. _class_VisualScript_method_custom_signal_get_argument_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **custom_signal_get_argument_type** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx **)** const
 
 Get the type of a custom signal's argument.
+
+----
 
 .. _class_VisualScript_method_custom_signal_remove_argument:
 
@@ -187,11 +203,15 @@ Get the type of a custom signal's argument.
 
 Remove a specific custom signal's argument.
 
+----
+
 .. _class_VisualScript_method_custom_signal_set_argument_name:
 
 - void **custom_signal_set_argument_name** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx, :ref:`String<class_String>` argname **)**
 
 Rename a custom signal's argument.
+
+----
 
 .. _class_VisualScript_method_custom_signal_set_argument_type:
 
@@ -199,11 +219,15 @@ Rename a custom signal's argument.
 
 Change the type of a custom signal's argument.
 
+----
+
 .. _class_VisualScript_method_custom_signal_swap_argument:
 
 - void **custom_signal_swap_argument** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` argidx, :ref:`int<class_int>` withidx **)**
 
 Swap two of the arguments of a custom signal.
+
+----
 
 .. _class_VisualScript_method_data_connect:
 
@@ -211,11 +235,15 @@ Swap two of the arguments of a custom signal.
 
 Connect two data ports. The value of ``from_node``'s ``from_port`` would be fed into ``to_node``'s ``to_port``.
 
+----
+
 .. _class_VisualScript_method_data_disconnect:
 
 - void **data_disconnect** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)**
 
 Disconnect two data ports previously connected with :ref:`data_connect<class_VisualScript_method_data_connect>`.
+
+----
 
 .. _class_VisualScript_method_get_function_node_id:
 
@@ -223,11 +251,15 @@ Disconnect two data ports previously connected with :ref:`data_connect<class_Vis
 
 Returns the id of a function's entry point node.
 
+----
+
 .. _class_VisualScript_method_get_function_scroll:
 
 - :ref:`Vector2<class_Vector2>` **get_function_scroll** **(** :ref:`String<class_String>` name **)** const
 
 Returns the position of the center of the screen for a given function.
+
+----
 
 .. _class_VisualScript_method_get_node:
 
@@ -235,11 +267,15 @@ Returns the position of the center of the screen for a given function.
 
 Returns a node given its id and its function.
 
+----
+
 .. _class_VisualScript_method_get_node_position:
 
 - :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)** const
 
 Returns a node's position in pixels.
+
+----
 
 .. _class_VisualScript_method_get_variable_default_value:
 
@@ -247,11 +283,15 @@ Returns a node's position in pixels.
 
 Returns the default (initial) value of a variable.
 
+----
+
 .. _class_VisualScript_method_get_variable_export:
 
 - :ref:`bool<class_bool>` **get_variable_export** **(** :ref:`String<class_String>` name **)** const
 
 Returns whether a variable is exported.
+
+----
 
 .. _class_VisualScript_method_get_variable_info:
 
@@ -259,11 +299,15 @@ Returns whether a variable is exported.
 
 Returns the information for a given variable as a dictionary. The information includes its name, type, hint and usage.
 
+----
+
 .. _class_VisualScript_method_has_custom_signal:
 
 - :ref:`bool<class_bool>` **has_custom_signal** **(** :ref:`String<class_String>` name **)** const
 
 Returns whether a signal exists with the specified name.
+
+----
 
 .. _class_VisualScript_method_has_data_connection:
 
@@ -271,11 +315,15 @@ Returns whether a signal exists with the specified name.
 
 Returns whether the specified data ports are connected.
 
+----
+
 .. _class_VisualScript_method_has_function:
 
 - :ref:`bool<class_bool>` **has_function** **(** :ref:`String<class_String>` name **)** const
 
 Returns whether a function exists with the specified name.
+
+----
 
 .. _class_VisualScript_method_has_node:
 
@@ -283,11 +331,15 @@ Returns whether a function exists with the specified name.
 
 Returns whether a node exists with the given id.
 
+----
+
 .. _class_VisualScript_method_has_sequence_connection:
 
 - :ref:`bool<class_bool>` **has_sequence_connection** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_output, :ref:`int<class_int>` to_node **)** const
 
 Returns whether the specified sequence ports are connected.
+
+----
 
 .. _class_VisualScript_method_has_variable:
 
@@ -295,11 +347,15 @@ Returns whether the specified sequence ports are connected.
 
 Returns whether a variable exists with the specified name.
 
+----
+
 .. _class_VisualScript_method_remove_custom_signal:
 
 - void **remove_custom_signal** **(** :ref:`String<class_String>` name **)**
 
 Remove a custom signal with the given name.
+
+----
 
 .. _class_VisualScript_method_remove_function:
 
@@ -307,11 +363,15 @@ Remove a custom signal with the given name.
 
 Remove a specific function and its nodes from the script.
 
+----
+
 .. _class_VisualScript_method_remove_node:
 
 - void **remove_node** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` id **)**
 
 Remove a specific node.
+
+----
 
 .. _class_VisualScript_method_remove_variable:
 
@@ -319,11 +379,15 @@ Remove a specific node.
 
 Remove a variable with the given name.
 
+----
+
 .. _class_VisualScript_method_rename_custom_signal:
 
 - void **rename_custom_signal** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**
 
 Change the name of a custom signal.
+
+----
 
 .. _class_VisualScript_method_rename_function:
 
@@ -331,11 +395,15 @@ Change the name of a custom signal.
 
 Change the name of a function.
 
+----
+
 .. _class_VisualScript_method_rename_variable:
 
 - void **rename_variable** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**
 
 Change the name of a variable.
+
+----
 
 .. _class_VisualScript_method_sequence_connect:
 
@@ -345,11 +413,15 @@ Connect two sequence ports. The execution will flow from of ``from_node``'s ``fr
 
 Unlike :ref:`data_connect<class_VisualScript_method_data_connect>`, there isn't a ``to_port``, since the target node can have only one sequence port.
 
+----
+
 .. _class_VisualScript_method_sequence_disconnect:
 
 - void **sequence_disconnect** **(** :ref:`String<class_String>` func, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_output, :ref:`int<class_int>` to_node **)**
 
 Disconnect two sequence ports previously connected with :ref:`sequence_connect<class_VisualScript_method_sequence_connect>`.
+
+----
 
 .. _class_VisualScript_method_set_function_scroll:
 
@@ -357,11 +429,15 @@ Disconnect two sequence ports previously connected with :ref:`sequence_connect<c
 
 Position the center of the screen for a function.
 
+----
+
 .. _class_VisualScript_method_set_instance_base_type:
 
 - void **set_instance_base_type** **(** :ref:`String<class_String>` type **)**
 
 Set the base type of the script.
+
+----
 
 .. _class_VisualScript_method_set_node_position:
 
@@ -369,17 +445,23 @@ Set the base type of the script.
 
 Position a node on the screen.
 
+----
+
 .. _class_VisualScript_method_set_variable_default_value:
 
 - void **set_variable_default_value** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
 
 Change the default (initial) value of a variable.
 
+----
+
 .. _class_VisualScript_method_set_variable_export:
 
 - void **set_variable_export** **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` enable **)**
 
 Change whether a variable is exported.
+
+----
 
 .. _class_VisualScript_method_set_variable_info:
 

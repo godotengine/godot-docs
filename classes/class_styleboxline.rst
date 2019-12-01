@@ -48,6 +48,8 @@ Property Descriptions
 | *Getter*  | get_color()         |
 +-----------+---------------------+
 
+----
+
 .. _class_StyleBoxLine_property_grow_begin:
 
 - :ref:`float<class_float>` **grow_begin**
@@ -59,6 +61,8 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_grow_begin()      |
 +-----------+-----------------------+
+
+----
 
 .. _class_StyleBoxLine_property_grow_end:
 
@@ -72,6 +76,8 @@ Property Descriptions
 | *Getter*  | get_grow_end()      |
 +-----------+---------------------+
 
+----
+
 .. _class_StyleBoxLine_property_thickness:
 
 - :ref:`int<class_int>` **thickness**
@@ -83,6 +89,8 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_thickness()      |
 +-----------+----------------------+
+
+----
 
 .. _class_StyleBoxLine_property_vertical:
 

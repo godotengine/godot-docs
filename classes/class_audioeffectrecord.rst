@@ -58,9 +58,13 @@ Method Descriptions
 
 - :ref:`AudioStreamSample<class_AudioStreamSample>` **get_recording** **(** **)** const
 
+----
+
 .. _class_AudioEffectRecord_method_is_recording_active:
 
 - :ref:`bool<class_bool>` **is_recording_active** **(** **)** const
+
+----
 
 .. _class_AudioEffectRecord_method_set_recording_active:
 

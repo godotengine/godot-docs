@@ -53,6 +53,15 @@ Methods
 | :ref:`bool<class_bool>` | :ref:`iteration<class_MainLoop_method_iteration>` **(** :ref:`float<class_float>` delta **)**                                                                    |
 +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_MainLoop_signal_on_request_permissions_result:
+
+- **on_request_permissions_result** **(** :ref:`String<class_String>` permission, :ref:`bool<class_bool>` granted **)**
+
+Emitted when an user responds to permission request.
+
 Constants
 ---------
 
@@ -79,6 +88,10 @@ Constants
 .. _class_MainLoop_constant_NOTIFICATION_CRASH:
 
 .. _class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE:
+
+.. _class_MainLoop_constant_NOTIFICATION_APP_RESUMED:
+
+.. _class_MainLoop_constant_NOTIFICATION_APP_PAUSED:
 
 - **NOTIFICATION_WM_MOUSE_ENTER** = **1002** --- Notification received from the OS when the mouse enters the game window.
 
@@ -126,6 +139,14 @@ Implemented on desktop platforms if the crash handler is enabled.
 
 Specific to the macOS platform.
 
+- **NOTIFICATION_APP_RESUMED** = **1014** --- Notification received from the OS when the app is resumed.
+
+Specific to the Android platform.
+
+- **NOTIFICATION_APP_PAUSED** = **1015** --- Notification received from the OS when the app is paused.
+
+Specific to the Android platform.
+
 Description
 -----------
 
@@ -144,29 +165,29 @@ Here is an example script implementing a simple ``MainLoop``:
     var quit = false
     
     func _initialize():
-    print("Initialized:")
-    print("  Starting time: %s" % str(time_elapsed))
+        print("Initialized:")
+        print("  Starting time: %s" % str(time_elapsed))
     
     func _idle(delta):
-    time_elapsed += delta
-    # Return true to end the main loop
-    return quit
+        time_elapsed += delta
+        # Return true to end the main loop.
+        return quit
     
     func _input_event(event):
-    # Record keys
-    if event is InputEventKey and event.pressed and !event.echo:
-    keys_typed.append(OS.get_scancode_string(event.scancode))
-    # Quit on Escape press
-    if event.scancode == KEY_ESCAPE:
-        quit = true
-    # Quit on any mouse click
-    if event is InputEventMouseButton:
-    quit = true
+        # Record keys.
+        if event is InputEventKey and event.pressed and !event.echo:
+            keys_typed.append(OS.get_scancode_string(event.scancode))
+            # Quit on Escape press.
+            if event.scancode == KEY_ESCAPE:
+                quit = true
+        # Quit on any mouse click.
+        if event is InputEventMouseButton:
+            quit = true
     
     func _finalize():
-    print("Finalized:")
-    print("  End time: %s" % str(time_elapsed))
-    print("  Keys typed: %s" % var2str(keys_typed))
+        print("Finalized:")
+        print("  End time: %s" % str(time_elapsed))
+        print("  Keys typed: %s" % var2str(keys_typed))
 
 Method Descriptions
 -------------------
@@ -177,15 +198,21 @@ Method Descriptions
 
 Called when files are dragged from the OS file manager and dropped in the game window. The arguments are a list of file paths and the identifier of the screen where the drag originated.
 
+----
+
 .. _class_MainLoop_method__finalize:
 
 - void **_finalize** **(** **)** virtual
 
 Called before the program exits.
 
+----
+
 .. _class_MainLoop_method__global_menu_action:
 
 - void **_global_menu_action** **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** virtual
+
+----
 
 .. _class_MainLoop_method__idle:
 
@@ -195,11 +222,15 @@ Called each idle frame with the time since the last idle frame as argument (in s
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
 
+----
+
 .. _class_MainLoop_method__initialize:
 
 - void **_initialize** **(** **)** virtual
 
 Called once during initialization.
+
+----
 
 .. _class_MainLoop_method__input_event:
 
@@ -207,11 +238,15 @@ Called once during initialization.
 
 Called whenever an :ref:`InputEvent<class_InputEvent>` is received by the main loop.
 
+----
+
 .. _class_MainLoop_method__input_text:
 
 - void **_input_text** **(** :ref:`String<class_String>` text **)** virtual
 
 Deprecated callback, does not do anything. Use :ref:`_input_event<class_MainLoop_method__input_event>` to parse text input. Will be removed in Godot 4.0.
+
+----
 
 .. _class_MainLoop_method__iteration:
 
@@ -221,11 +256,15 @@ Called each physics frame with the time since the last physics frame as argument
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
 
+----
+
 .. _class_MainLoop_method_finish:
 
 - void **finish** **(** **)**
 
 Should not be called manually, override :ref:`_finalize<class_MainLoop_method__finalize>` instead. Will be removed in Godot 4.0.
+
+----
 
 .. _class_MainLoop_method_idle:
 
@@ -233,11 +272,15 @@ Should not be called manually, override :ref:`_finalize<class_MainLoop_method__f
 
 Should not be called manually, override :ref:`_idle<class_MainLoop_method__idle>` instead. Will be removed in Godot 4.0.
 
+----
+
 .. _class_MainLoop_method_init:
 
 - void **init** **(** **)**
 
 Should not be called manually, override :ref:`_initialize<class_MainLoop_method__initialize>` instead. Will be removed in Godot 4.0.
+
+----
 
 .. _class_MainLoop_method_input_event:
 
@@ -245,11 +288,15 @@ Should not be called manually, override :ref:`_initialize<class_MainLoop_method_
 
 Should not be called manually, override :ref:`_input_event<class_MainLoop_method__input_event>` instead. Will be removed in Godot 4.0.
 
+----
+
 .. _class_MainLoop_method_input_text:
 
 - void **input_text** **(** :ref:`String<class_String>` text **)**
 
 Should not be called manually, override :ref:`_input_text<class_MainLoop_method__input_text>` instead. Will be removed in Godot 4.0.
+
+----
 
 .. _class_MainLoop_method_iteration:
 

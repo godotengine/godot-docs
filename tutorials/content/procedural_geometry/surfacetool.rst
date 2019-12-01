@@ -4,9 +4,9 @@ Using the SurfaceTool
 =====================
 
 The :ref:`SurfaceTool <doc_surfacetool>` provides a useful interface for constructing geometry.
-The interface is similar to the :ref:`ImmediateGeometry <class_immediategeometry>` node. You 
-set each per-vertex attribute (e.g. normal, uv, color) and then when you add a vertex it 
-captures the attributes. 
+The interface is similar to the :ref:`ImmediateGeometry <class_immediategeometry>` node. You
+set each per-vertex attribute (e.g. normal, uv, color) and then when you add a vertex it
+captures the attributes.
 
 The SurfaceTool also provides some useful helper functions like ``index()`` and ``generate_normals()``.
 
@@ -14,7 +14,7 @@ Attributes are added before each vertex is added:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    
+
     st.add_normal() # Overwritten by normal below.
     st.add_normal() # Added to next vertex.
     st.add_color() # Added to next vertex.
@@ -30,7 +30,7 @@ in, ``commit()`` returns an ArrayMesh.
  .. code-tab:: gdscript GDScript
 
     st.commit(mesh)
-    # Or: 
+    # Or:
     var mesh = st.commit()
 
 Code creates a triangle with indices
@@ -39,11 +39,11 @@ Code creates a triangle with indices
  .. code-tab:: gdscript GDScript
 
     var st = SurfaceTool.new()
-    
+
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
 
     # Prepare attributes for add_vertex.
-    st.add_normal(Vector3(0, 0, 1)
+    st.add_normal(Vector3(0, 0, 1))
     st.add_uv(Vector2(0, 0))
     # Call last for each vertex, adds the above attributes.
     st.add_vertex(Vector3(-1, -1, 0))
@@ -61,7 +61,7 @@ Code creates a triangle with indices
 
 You can optionally add an index array, either by calling ``add_index()`` and adding
 vertices to the index array or by calling ``index()`` which shrinks the vertex array
-to remove duplicate vertices. 
+to remove duplicate vertices.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

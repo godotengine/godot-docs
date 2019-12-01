@@ -465,7 +465,6 @@ NativeScript.
     resource_name = "gdexample"
     class_name = "GDExample"
     library = ExtResource( 1 )
-    _sections_unfolded = [ "Resource" ]
 
 This is a standard Godot resource; you could just create it directly in your
 scene, but saving it to a file makes it much easier to reuse it in other places.
@@ -761,7 +760,7 @@ as follows:
 
 Here we see a nice improvement in the latest version of godot-cpp where our
 ``register_signal`` method can be a single call first taking the signals name,
-then having pairs of values specificying the parameter name and type of each
+then having pairs of values specifying the parameter name and type of each
 parameter we'll send along with this signal.
 
 For NativeScript 1.0 we first build a dictionary in which we tell Godot about

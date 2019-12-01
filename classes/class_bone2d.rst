@@ -66,6 +66,8 @@ Property Descriptions
 
 Length of the bone's representation drawn in the editor's viewport in pixels.
 
+----
+
 .. _class_Bone2D_property_rest:
 
 - :ref:`Transform2D<class_Transform2D>` **rest**
@@ -89,11 +91,15 @@ Method Descriptions
 
 Stores the node's current transforms in :ref:`rest<class_Bone2D_property_rest>`.
 
+----
+
 .. _class_Bone2D_method_get_index_in_skeleton:
 
 - :ref:`int<class_int>` **get_index_in_skeleton** **(** **)** const
 
 Returns the node's index as part of the entire skeleton. See :ref:`Skeleton2D<class_Skeleton2D>`.
+
+----
 
 .. _class_Bone2D_method_get_skeleton_rest:
 

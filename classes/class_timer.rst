@@ -92,6 +92,8 @@ Property Descriptions
 
 If ``true``, the timer will automatically start when entering the scene tree.
 
+----
+
 .. _class_Timer_property_one_shot:
 
 - :ref:`bool<class_bool>` **one_shot**
@@ -106,6 +108,8 @@ If ``true``, the timer will automatically start when entering the scene tree.
 
 If ``true``, the timer will stop when reaching 0. If ``false``, it will restart.
 
+----
+
 .. _class_Timer_property_paused:
 
 - :ref:`bool<class_bool>` **paused**
@@ -117,6 +121,8 @@ If ``true``, the timer will stop when reaching 0. If ``false``, it will restart.
 +----------+-------------------+
 
 If ``true``, the timer is paused and will not process until it is unpaused again, even if :ref:`start<class_Timer_method_start>` is called.
+
+----
 
 .. _class_Timer_property_process_mode:
 
@@ -132,6 +138,8 @@ If ``true``, the timer is paused and will not process until it is unpaused again
 
 Processing mode. See :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>`.
 
+----
+
 .. _class_Timer_property_time_left:
 
 - :ref:`float<class_float>` **time_left**
@@ -143,6 +151,8 @@ Processing mode. See :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>`.
 The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 
 **Note:** You cannot set this value. To change the timer's remaining time, use :ref:`wait_time<class_Timer_property_wait_time>`.
+
+----
 
 .. _class_Timer_property_wait_time:
 
@@ -167,6 +177,8 @@ Method Descriptions
 
 Returns ``true`` if the timer is stopped.
 
+----
+
 .. _class_Timer_method_start:
 
 - void **start** **(** :ref:`float<class_float>` time_sec=-1 **)**
@@ -174,6 +186,8 @@ Returns ``true`` if the timer is stopped.
 Starts the timer. Sets ``wait_time`` to ``time_sec`` if ``time_sec > 0``. This also resets the remaining time to ``wait_time``.
 
 **Note:** this method will not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
+
+----
 
 .. _class_Timer_method_stop:
 

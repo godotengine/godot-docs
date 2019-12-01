@@ -72,6 +72,8 @@ Closes this WebSocket connection. ``code`` is the status code for the closure (s
 
 **Note:** The HTML5 export might not support all status codes. Please refer to browser-specific documentation for more details.
 
+----
+
 .. _class_WebSocketPeer_method_get_connected_host:
 
 - :ref:`String<class_String>` **get_connected_host** **(** **)** const
@@ -79,6 +81,8 @@ Closes this WebSocket connection. ``code`` is the status code for the closure (s
 Returns the IP address of the connected peer.
 
 **Note:** Not available in the HTML5 export.
+
+----
 
 .. _class_WebSocketPeer_method_get_connected_port:
 
@@ -88,11 +92,15 @@ Returns the remote port of the connected peer.
 
 **Note:** Not available in the HTML5 export.
 
+----
+
 .. _class_WebSocketPeer_method_get_write_mode:
 
 - :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` **get_write_mode** **(** **)** const
 
 Gets the current selected write mode. See :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
+
+----
 
 .. _class_WebSocketPeer_method_is_connected_to_host:
 
@@ -100,11 +108,15 @@ Gets the current selected write mode. See :ref:`WriteMode<enum_WebSocketPeer_Wri
 
 Returns ``true`` if this peer is currently connected.
 
+----
+
 .. _class_WebSocketPeer_method_set_write_mode:
 
 - void **set_write_mode** **(** :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` mode **)**
 
 Sets the socket to use the given :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
+
+----
 
 .. _class_WebSocketPeer_method_was_string_packet:
 

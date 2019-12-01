@@ -78,6 +78,8 @@ Method Descriptions
 
 Returns the list of extensions available for saving a resource of a given type.
 
+----
+
 .. _class_ResourceSaver_method_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**

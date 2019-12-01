@@ -98,6 +98,8 @@ Changes the currently opened directory to the one passed as an argument. The arg
 
 The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``ERR_*``).
 
+----
+
 .. _class_Directory_method_copy:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **copy** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
@@ -106,11 +108,15 @@ Copies the ``from`` file to the ``to`` destination. Both arguments should be pat
 
 Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK``, ``FAILED`` or ``ERR_*``).
 
+----
+
 .. _class_Directory_method_current_is_dir:
 
 - :ref:`bool<class_bool>` **current_is_dir** **(** **)** const
 
 Returns whether the current item processed with the last :ref:`get_next<class_Directory_method_get_next>` call is a directory (``.`` and ``..`` are considered directories).
+
+----
 
 .. _class_Directory_method_dir_exists:
 
@@ -118,11 +124,15 @@ Returns whether the current item processed with the last :ref:`get_next<class_Di
 
 Returns whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
 
+----
+
 .. _class_Directory_method_file_exists:
 
 - :ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path **)**
 
 Returns whether the target file exists. The argument can be relative to the current directory, or an absolute path.
+
+----
 
 .. _class_Directory_method_get_current_dir:
 
@@ -130,11 +140,15 @@ Returns whether the target file exists. The argument can be relative to the curr
 
 Returns the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
 
+----
+
 .. _class_Directory_method_get_current_drive:
 
 - :ref:`int<class_int>` **get_current_drive** **(** **)**
 
 Returns the currently opened directory's drive index. See :ref:`get_drive<class_Directory_method_get_drive>` to convert returned index to the name of the drive.
+
+----
 
 .. _class_Directory_method_get_drive:
 
@@ -142,11 +156,15 @@ Returns the currently opened directory's drive index. See :ref:`get_drive<class_
 
 On Windows, returns the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not existed, the method returns an empty String.
 
+----
+
 .. _class_Directory_method_get_drive_count:
 
 - :ref:`int<class_int>` **get_drive_count** **(** **)**
 
 On Windows, returns the number of drives (partitions) mounted on the current filesystem. On other platforms, the method returns 0.
+
+----
 
 .. _class_Directory_method_get_next:
 
@@ -156,11 +174,15 @@ Returns the next element (file or directory) in the current directory (including
 
 The name of the file or directory is returned (and not its full path). Once the stream has been fully processed, the method returns an empty String and closes the stream automatically (i.e. :ref:`list_dir_end<class_Directory_method_list_dir_end>` would not be mandatory in such a case).
 
+----
+
 .. _class_Directory_method_get_space_left:
 
 - :ref:`int<class_int>` **get_space_left** **(** **)**
 
 On UNIX desktop systems, returns the available space on the current directory's disk. On other platforms, this information is not available and the method returns 0 or -1.
+
+----
 
 .. _class_Directory_method_list_dir_begin:
 
@@ -172,11 +194,15 @@ If ``skip_navigational`` is ``true``, ``.`` and ``..`` are filtered out.
 
 If ``skip_hidden`` is ``true``, hidden files are filtered out.
 
+----
+
 .. _class_Directory_method_list_dir_end:
 
 - void **list_dir_end** **(** **)**
 
 Closes the current stream opened with :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` (whether it has been fully processed with :ref:`get_next<class_Directory_method_get_next>` or not does not matter).
+
+----
 
 .. _class_Directory_method_make_dir:
 
@@ -186,6 +212,8 @@ Creates a directory. The argument can be relative to the current directory, or a
 
 The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK``, ``FAILED`` or ``ERR_*``).
 
+----
+
 .. _class_Directory_method_make_dir_recursive:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **make_dir_recursive** **(** :ref:`String<class_String>` path **)**
@@ -193,6 +221,8 @@ The method returns one of the error code constants defined in :ref:`@GlobalScope
 Creates a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_Directory_method_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
 Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``0K``, ``FAILED`` or ``ERR_*``).
+
+----
 
 .. _class_Directory_method_open:
 
@@ -202,6 +232,8 @@ Opens an existing directory of the filesystem. The ``path`` argument can be with
 
 The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``ERR_*``).
 
+----
+
 .. _class_Directory_method_remove:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **remove** **(** :ref:`String<class_String>` path **)**
@@ -209,6 +241,8 @@ The method returns one of the error code constants defined in :ref:`@GlobalScope
 Deletes the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
 
 Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``FAILED``).
+
+----
 
 .. _class_Directory_method_rename:
 

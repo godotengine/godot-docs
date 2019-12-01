@@ -41,6 +41,8 @@ Method Descriptions
 
 Returns the faces (an array of triangles).
 
+----
+
 .. _class_ConcavePolygonShape_method_set_faces:
 
 - void **set_faces** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)**

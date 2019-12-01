@@ -948,6 +948,8 @@ We then set ``should_loop``, and add ``new_audio`` as a child of ``Globals.gd``.
 
 .. note:: Remember, we have to be careful adding nodes to a singleton, since these nodes will not be destroyed when changing scenes.
 
+We add the ``new_audio`` into the ``created_audio`` list to hold all created audios.
+
 We then call ``play_sound``, passing in the audio clip associated with ``sound_name`` and the sound position.
 
 ______

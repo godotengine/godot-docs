@@ -86,6 +86,8 @@ Property Descriptions
 
 If ``true``, it is running inside the editor. Useful for tool scripts.
 
+----
+
 .. _class_Engine_property_iterations_per_second:
 
 - :ref:`int<class_int>` **iterations_per_second**
@@ -100,6 +102,8 @@ If ``true``, it is running inside the editor. Useful for tool scripts.
 
 The number of fixed iterations per second (for fixed process and physics).
 
+----
+
 .. _class_Engine_property_physics_jitter_fix:
 
 - :ref:`float<class_float>` **physics_jitter_fix**
@@ -111,6 +115,8 @@ The number of fixed iterations per second (for fixed process and physics).
 +-----------+-------------------------------+
 | *Getter*  | get_physics_jitter_fix()      |
 +-----------+-------------------------------+
+
+----
 
 .. _class_Engine_property_target_fps:
 
@@ -125,6 +131,8 @@ The number of fixed iterations per second (for fixed process and physics).
 +-----------+-----------------------+
 
 The desired frames per second. If the hardware cannot keep up, this setting may not be respected. A value of 0 means no limit.
+
+----
 
 .. _class_Engine_property_time_scale:
 
@@ -157,6 +165,8 @@ Returns engine author information in a Dictionary.
 
 ``developers``         - Array of Strings, developer names
 
+----
+
 .. _class_Engine_method_get_copyright_info:
 
 - :ref:`Array<class_Array>` **get_copyright_info** **(** **)** const
@@ -167,6 +177,8 @@ Returns an Array of copyright information Dictionaries.
 
 ``parts``   - Array of Dictionaries {``files``, ``copyright``, ``license``} describing subsections of the component
 
+----
+
 .. _class_Engine_method_get_donor_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_donor_info** **(** **)** const
@@ -175,11 +187,15 @@ Returns a Dictionary of Arrays of donor names.
 
 {``platinum_sponsors``, ``gold_sponsors``, ``mini_sponsors``, ``gold_donors``, ``silver_donors``, ``bronze_donors``}
 
+----
+
 .. _class_Engine_method_get_frames_drawn:
 
 - :ref:`int<class_int>` **get_frames_drawn** **(** **)**
 
 Returns the total number of frames drawn.
+
+----
 
 .. _class_Engine_method_get_frames_per_second:
 
@@ -187,11 +203,15 @@ Returns the total number of frames drawn.
 
 Returns the frames per second of the running game.
 
+----
+
 .. _class_Engine_method_get_license_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_license_info** **(** **)** const
 
 Returns Dictionary of licenses used by Godot and included third party components.
+
+----
 
 .. _class_Engine_method_get_license_text:
 
@@ -199,11 +219,15 @@ Returns Dictionary of licenses used by Godot and included third party components
 
 Returns Godot license text.
 
+----
+
 .. _class_Engine_method_get_main_loop:
 
 - :ref:`MainLoop<class_MainLoop>` **get_main_loop** **(** **)** const
 
 Returns the main loop object (see :ref:`MainLoop<class_MainLoop>` and :ref:`SceneTree<class_SceneTree>`).
+
+----
 
 .. _class_Engine_method_get_physics_interpolation_fraction:
 
@@ -211,9 +235,13 @@ Returns the main loop object (see :ref:`MainLoop<class_MainLoop>` and :ref:`Scen
 
 Returns the fraction through the current physics tick we are at the time of rendering the frame. This can be used to implement fixed timestep interpolation.
 
+----
+
 .. _class_Engine_method_get_singleton:
 
 - :ref:`Object<class_Object>` **get_singleton** **(** :ref:`String<class_String>` name **)** const
+
+----
 
 .. _class_Engine_method_get_version_info:
 
@@ -248,9 +276,13 @@ The ``hex`` value is encoded as follows, from left to right: one byte for the ma
     else:
         # Do things specific to versions before 3.2
 
+----
+
 .. _class_Engine_method_has_singleton:
 
 - :ref:`bool<class_bool>` **has_singleton** **(** :ref:`String<class_String>` name **)** const
+
+----
 
 .. _class_Engine_method_is_in_physics_frame:
 

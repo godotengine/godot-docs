@@ -14,8 +14,17 @@ Requirements
 - pkg-config
 
 You may need to import necessary certificates for NuGet to perform HTTPS
-requests. You can do this with the following command (on Windows, you can run it
-from the Mono command line prompt)::
+requests.
+
+The recommended method is to use **curl**'s CA (Certificate Autorities) certificate bundle.
+
+Run the following commands to download and import it.
+On Windows, you can run it from the Mono command line prompt (or the regular prompt if you added Mono's ``bin`` directory to your ``PATH`` environment variable)::
+
+    curl -LO https://curl.haxx.se/ca/cacert.pem
+    cert-sync --user cacert.pem
+
+Alternatively, you can use the following command, though it's deprecated and may not work correctly::
 
     mozroots --import --sync
 
@@ -123,7 +132,7 @@ Example (Windows)
     # Editor
     scons p=windows target=release_debug tools=yes module_mono_enabled=yes
     # Export templates
-    scons p=windows target=debug tools=no module_mono_enabled=yes
+    scons p=windows target=release_debug tools=no module_mono_enabled=yes
     scons p=windows target=release tools=no module_mono_enabled=yes
 
 Example (X11)
@@ -139,7 +148,7 @@ Example (X11)
     # Editor
     scons p=x11 target=release_debug tools=yes module_mono_enabled=yes
     # Export templates
-    scons p=x11 target=debug tools=no module_mono_enabled=yes
+    scons p=x11 target=release_debug tools=no module_mono_enabled=yes
     scons p=x11 target=release tools=no module_mono_enabled=yes
 
 .. _compiling_with_mono_data_directory:
@@ -159,7 +168,7 @@ Export templates
 
 The name of the data directory for an export template differs based on the
 configuration it was built with. The format is
-``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.x11.32.debug`` or
+``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.x11.32.release_debug`` or
 ``data.mono.windows.64.release``.
 
 This directory must be placed with its original name next to the Godot export

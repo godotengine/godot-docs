@@ -77,6 +77,8 @@ Signals
 
 Called when the node was removed from the graph.
 
+----
+
 .. _class_AnimationNode_signal_tree_changed:
 
 - **tree_changed** **(** **)**
@@ -137,11 +139,15 @@ Method Descriptions
 
 Adds an input to the node. This is only useful for nodes created for use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`
 
+----
+
 .. _class_AnimationNode_method_blend_animation:
 
 - void **blend_animation** **(** :ref:`String<class_String>` animation, :ref:`float<class_float>` time, :ref:`float<class_float>` delta, :ref:`bool<class_bool>` seeked, :ref:`float<class_float>` blend **)**
 
 Blend an animation by "blend" amount (name must be valid in the linked :ref:`AnimationPlayer<class_AnimationPlayer>`). A time and delta mas be passed, as well as whether seek happened.
+
+----
 
 .. _class_AnimationNode_method_blend_input:
 
@@ -149,11 +155,15 @@ Blend an animation by "blend" amount (name must be valid in the linked :ref:`Ani
 
 Blend an input. This is only useful for nodes created for an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Time is a delta, unless "seek" is ``true``, in which case it is absolute. A filter mode may be optionally passed.
 
+----
+
 .. _class_AnimationNode_method_blend_node:
 
 - :ref:`float<class_float>` **blend_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` optimize=true **)**
 
-Blend another animaiton node (in case this node contains children animation nodes). This function is only useful if you inherit from :ref:`AnimationRootNode<class_AnimationRootNode>` instead, else editors will not display your node for addition.
+Blend another animation node (in case this node contains children animation nodes). This function is only useful if you inherit from :ref:`AnimationRootNode<class_AnimationRootNode>` instead, else editors will not display your node for addition.
+
+----
 
 .. _class_AnimationNode_method_get_caption:
 
@@ -161,11 +171,15 @@ Blend another animaiton node (in case this node contains children animation node
 
 Gets the text caption for this node (used by some editors).
 
+----
+
 .. _class_AnimationNode_method_get_child_by_name:
 
 - :ref:`Object<class_Object>` **get_child_by_name** **(** :ref:`String<class_String>` name **)** virtual
 
 Gets a child node by index (used by editors inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`).
+
+----
 
 .. _class_AnimationNode_method_get_child_nodes:
 
@@ -173,11 +187,15 @@ Gets a child node by index (used by editors inheriting from :ref:`AnimationRootN
 
 Gets all children nodes in order as a ``name: node`` dictionary. Only useful when inheriting :ref:`AnimationRootNode<class_AnimationRootNode>`.
 
+----
+
 .. _class_AnimationNode_method_get_input_count:
 
 - :ref:`int<class_int>` **get_input_count** **(** **)** const
 
 Amount of inputs in this node, only useful for nodes that go into :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
+----
 
 .. _class_AnimationNode_method_get_input_name:
 
@@ -185,11 +203,15 @@ Amount of inputs in this node, only useful for nodes that go into :ref:`Animatio
 
 Gets the name of an input by index.
 
+----
+
 .. _class_AnimationNode_method_get_parameter:
 
 - :ref:`Variant<class_Variant>` **get_parameter** **(** :ref:`String<class_String>` name **)** const
 
 Gets the value of a parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
+
+----
 
 .. _class_AnimationNode_method_get_parameter_default_value:
 
@@ -197,11 +219,15 @@ Gets the value of a parameter. Parameters are custom local memory used for your 
 
 Gets the default value of a parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
 
+----
+
 .. _class_AnimationNode_method_get_parameter_list:
 
 - :ref:`Array<class_Array>` **get_parameter_list** **(** **)** virtual
 
 Gets the property information for parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
+
+----
 
 .. _class_AnimationNode_method_has_filter:
 
@@ -209,11 +235,15 @@ Gets the property information for parameter. Parameters are custom local memory 
 
 Returns ``true`` whether you want the blend tree editor to display filter editing on this node.
 
+----
+
 .. _class_AnimationNode_method_is_path_filtered:
 
 - :ref:`bool<class_bool>` **is_path_filtered** **(** :ref:`NodePath<class_NodePath>` path **)** const
 
 Returns ``true`` whether a given path is filtered.
+
+----
 
 .. _class_AnimationNode_method_process:
 
@@ -227,17 +257,23 @@ You can also use :ref:`get_parameter<class_AnimationNode_method_get_parameter>` 
 
 This function returns the time left for the current animation to finish (if unsure, just pass  the value from the main blend being called).
 
+----
+
 .. _class_AnimationNode_method_remove_input:
 
 - void **remove_input** **(** :ref:`int<class_int>` index **)**
 
 Removes an input, call this only when inactive.
 
+----
+
 .. _class_AnimationNode_method_set_filter_path:
 
 - void **set_filter_path** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**
 
 Adds or removes a path for the filter.
+
+----
 
 .. _class_AnimationNode_method_set_parameter:
 

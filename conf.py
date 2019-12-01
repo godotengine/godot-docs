@@ -12,6 +12,7 @@ needs_sphinx = '1.3'
 # Sphinx extension module names and templates location
 sys.path.append(os.path.abspath('extensions'))
 extensions = ['gdscript', 'sphinx_tabs.tabs', 'sphinx.ext.imgmath']
+
 templates_path = ['_templates']
 
 # You can specify multiple suffix as a list of string: ['.rst', '.md']
@@ -86,6 +87,15 @@ html_context = {
 }
 
 html_logo = 'img/docs_logo.png'
+
+# These folders are copied to the documentation's HTML output
+html_static_path = ['_static']
+
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files = [
+    'css/custom.css',
+]
 
 # Output file base name for HTML help builder
 htmlhelp_basename = 'GodotEnginedoc'

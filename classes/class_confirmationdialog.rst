@@ -20,6 +20,15 @@ Brief Description
 
 Dialog for confirmation of actions.
 
+Properties
+----------
+
++-------------------------------+---------------+----------------------------+
+| :ref:`Vector2<class_Vector2>` | rect_min_size | **O:** Vector2( 200, 70 )  |
++-------------------------------+---------------+----------------------------+
+| :ref:`String<class_String>`   | window_title  | **O:** "Please Confirm..." |
++-------------------------------+---------------+----------------------------+
+
 Methods
 -------
 

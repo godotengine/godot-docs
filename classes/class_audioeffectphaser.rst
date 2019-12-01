@@ -57,6 +57,8 @@ Property Descriptions
 
 Governs how high the filter frequencies sweep. Low value will primarily affect bass frequencies. High value can sweep high into the treble. Value can range from 0.1 to 4.
 
+----
+
 .. _class_AudioEffectPhaser_property_feedback:
 
 - :ref:`float<class_float>` **feedback**
@@ -70,6 +72,8 @@ Governs how high the filter frequencies sweep. Low value will primarily affect b
 +-----------+---------------------+
 
 Output percent of modified sound. Value can range from 0.1 to 0.9.
+
+----
 
 .. _class_AudioEffectPhaser_property_range_max_hz:
 
@@ -85,6 +89,8 @@ Output percent of modified sound. Value can range from 0.1 to 0.9.
 
 Determines the maximum frequency affected by the LFO modulations, in Hz. Value can range from 10 to 10000.
 
+----
+
 .. _class_AudioEffectPhaser_property_range_min_hz:
 
 - :ref:`float<class_float>` **range_min_hz**
@@ -98,6 +104,8 @@ Determines the maximum frequency affected by the LFO modulations, in Hz. Value c
 +-----------+-------------------------+
 
 Determines the minimum frequency affected by the LFO modulations, in Hz. Value can range from 10 to 10000.
+
+----
 
 .. _class_AudioEffectPhaser_property_rate_hz:
 

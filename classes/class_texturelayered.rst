@@ -84,6 +84,8 @@ Property Descriptions
 | *Default* | {"depth": 0,"flags": 4,"format": 37,"height": 0,"layers": [  ],"width": 0} |
 +-----------+----------------------------------------------------------------------------+
 
+----
+
 .. _class_TextureLayered_property_flags:
 
 - :ref:`int<class_int>` **flags**
@@ -103,29 +105,43 @@ Method Descriptions
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=4 **)**
 
+----
+
 .. _class_TextureLayered_method_get_depth:
 
 - :ref:`int<class_int>` **get_depth** **(** **)** const
+
+----
 
 .. _class_TextureLayered_method_get_format:
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
+----
+
 .. _class_TextureLayered_method_get_height:
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
+
+----
 
 .. _class_TextureLayered_method_get_layer_data:
 
 - :ref:`Image<class_Image>` **get_layer_data** **(** :ref:`int<class_int>` layer **)** const
 
+----
+
 .. _class_TextureLayered_method_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
+----
+
 .. _class_TextureLayered_method_set_data_partial:
 
 - void **set_data_partial** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` x_offset, :ref:`int<class_int>` y_offset, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap=0 **)**
+
+----
 
 .. _class_TextureLayered_method_set_layer_data:
 

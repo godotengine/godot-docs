@@ -70,6 +70,8 @@ Property Descriptions
 
 Gradient's colors returned as a :ref:`PoolColorArray<class_PoolColorArray>`.
 
+----
+
 .. _class_Gradient_property_offsets:
 
 - :ref:`PoolRealArray<class_PoolRealArray>` **offsets**
@@ -93,11 +95,15 @@ Method Descriptions
 
 Adds the specified color to the end of the ramp, with the specified offset.
 
+----
+
 .. _class_Gradient_method_get_color:
 
 - :ref:`Color<class_Color>` **get_color** **(** :ref:`int<class_int>` point **)** const
 
 Returns the color of the ramp color at index ``point``.
+
+----
 
 .. _class_Gradient_method_get_offset:
 
@@ -105,11 +111,15 @@ Returns the color of the ramp color at index ``point``.
 
 Returns the offset of the ramp color at index ``point``.
 
+----
+
 .. _class_Gradient_method_get_point_count:
 
 - :ref:`int<class_int>` **get_point_count** **(** **)** const
 
 Returns the number of colors in the ramp.
+
+----
 
 .. _class_Gradient_method_interpolate:
 
@@ -117,17 +127,23 @@ Returns the number of colors in the ramp.
 
 Returns the interpolated color specified by ``offset``.
 
+----
+
 .. _class_Gradient_method_remove_point:
 
 - void **remove_point** **(** :ref:`int<class_int>` offset **)**
 
 Removes the color at the index ``offset``.
 
+----
+
 .. _class_Gradient_method_set_color:
 
 - void **set_color** **(** :ref:`int<class_int>` point, :ref:`Color<class_Color>` color **)**
 
 Sets the color of the ramp color at index ``point``.
+
+----
 
 .. _class_Gradient_method_set_offset:
 

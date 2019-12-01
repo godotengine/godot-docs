@@ -649,9 +649,9 @@ want to assign consecutive integers to some constant.
 If you pass a name to the enum, it will put all the keys inside a constant
 dictionary of that name.
 
-.. important: In Godot 3.1 and later, keys in a named enum are not registered
-              as global constants. They should be accessed prefixed by the
-              enum's name (``Name.KEY``); see an example below.
+.. important:: In Godot 3.1 and later, keys in a named enum are not registered
+               as global constants. They should be accessed prefixed by the
+               enum's name (``Name.KEY``); see an example below.
 
 ::
 
@@ -987,7 +987,7 @@ path. For example, if you name a script file ``character.gd``::
 
    # Inherit from Character.gd
 
-   extends res://path/to/character.gd
+   extends "res://path/to/character.gd"
 
    # Load character.gd and create a new node instance from it
 
@@ -1486,7 +1486,7 @@ signal is received, execution will recommence. Here are some examples::
     yield(get_tree(), "idle_frame")
 
     # Resume execution when animation is done playing.
-    yield(get_node("AnimationPlayer"), "finished")
+    yield(get_node("AnimationPlayer"), "animation_finished")
 
     # Wait 5 seconds, then resume execution.
     yield(get_tree().create_timer(5.0), "timeout")

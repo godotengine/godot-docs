@@ -11,7 +11,7 @@ VisualShaderNodeTextureUniform
 
 **Inherits:** :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VisualShaderNodeTextureUniformTriplanar<class_VisualShaderNodeTextureUniformTriplanar>`
+**Inherited By:** :ref:`VisualShaderNodeCubeMapUniform<class_VisualShaderNodeCubeMapUniform>`, :ref:`VisualShaderNodeTextureUniformTriplanar<class_VisualShaderNodeTextureUniformTriplanar>`
 
 **Category:** Core
 
@@ -52,6 +52,8 @@ enum **TextureType**:
 
 - **TYPE_ANISO** = **3**
 
+----
+
 .. _enum_VisualShaderNodeTextureUniform_ColorDefault:
 
 .. _class_VisualShaderNodeTextureUniform_constant_COLOR_DEFAULT_WHITE:
@@ -78,6 +80,8 @@ Property Descriptions
 +-----------+--------------------------+
 | *Getter*  | get_color_default()      |
 +-----------+--------------------------+
+
+----
 
 .. _class_VisualShaderNodeTextureUniform_property_texture_type:
 

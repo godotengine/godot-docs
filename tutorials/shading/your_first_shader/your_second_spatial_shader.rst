@@ -299,10 +299,10 @@ Here is an example for how you could layer the four waves to achieve nicer looki
 .. code-block:: glsl
 
   float height(vec2 position, float time) {
-    float d = wave((position + time) * 0.4, 8.0) * 0.3;
-    d += wave((position - time) * 0.3, 8.0) * 0.3;
-    d += wave((position + time) * 0.5, 4.0) * 0.2;
-    d += wave((position - time) * 0.6, 4.0) * 0.2;
+    float d = wave((position + time) * 0.4) * 0.3;
+    d += wave((position - time) * 0.3) * 0.3;
+    d += wave((position + time) * 0.5) * 0.2;
+    d += wave((position - time) * 0.6) * 0.2;
     return d;
   }
 

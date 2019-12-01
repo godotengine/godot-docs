@@ -21,7 +21,9 @@ editor’s language.
 |image1|
 
 From the **Templates** tab you can download open source project templates and
-demos to help you get started faster.
+demos to help you get started faster. Just select the template or demo you want,
+click download, once it's finished downloading click install and choose where
+you want the project to go.
 
 |image2|
 

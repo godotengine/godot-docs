@@ -58,9 +58,13 @@ Method Descriptions
 
 - :ref:`Vector3<class_Vector3>` **get_tracked_linear_velocity** **(** **)** const
 
+----
+
 .. _class_SpatialVelocityTracker_method_reset:
 
 - void **reset** **(** :ref:`Vector3<class_Vector3>` position **)**
+
+----
 
 .. _class_SpatialVelocityTracker_method_update_position:
 

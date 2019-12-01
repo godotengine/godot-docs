@@ -63,6 +63,8 @@ Property Descriptions
 
 A disabled collision shape has no effect in the world.
 
+----
+
 .. _class_CollisionShape_property_shape:
 
 - :ref:`Shape<class_Shape>` **shape**
@@ -83,6 +85,8 @@ Method Descriptions
 - void **make_convex_from_brothers** **(** **)**
 
 Sets the collision shape's shape to the addition of all its convexed :ref:`MeshInstance<class_MeshInstance>` siblings geometry.
+
+----
 
 .. _class_CollisionShape_method_resource_changed:
 

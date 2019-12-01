@@ -11,27 +11,19 @@ When dealing with 3D assets, Godot has a flexible and configurable importer.
 Godot works with *scenes*. This means that the entire scene being worked on in your favorite 3D DCC will be
 transferred as close as possible.
 
-Godot supports the following 3D *scene file fomats*:
+Godot supports the following 3D *scene file formats*:
 
-* DAE (COLLADA), which is currently the most mature workflow.
-* glTF 2.0. Both text and binary formats are supported. Godot has full support for it, but the format is new and gaining traction.
+* glTF 2.0. Godot has full support for text and binary formats.
+* DAE (COLLADA), an older format that is fully supported.
 * OBJ (Wavefront) formats. It is also fully supported, but pretty limited (no support for pivots, skeletons, etc).
 * ESCN, a Godot specific format that Blender can export with a plugin.
+* FBX, supported via the Open Asset Import library. However, FBX is proprietary so we recommend using other formats
+  listed above, if suitable for your workflow.
 
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
 
 It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose 
 or default rest pose before exporting with your favorite 3D editor.
-
-Why not FBX?
-~~~~~~~~~~~~
-
-Most game engines use the FBX format for importing 3D scenes, which is
-definitely one of the most standardized in the industry. However, this
-format requires the use of a closed library from Autodesk, which is
-distributed with more restrictive licensing terms than Godot.
-
-The plan is, sometime in the future, to offer a binary plug-in using GDNative.
 
 Exporting DAE files from Maya and 3DS Max
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,16 +34,6 @@ is by using the
 `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`__
 plugins. They work well, although they are not always up-to date
 with the latest version of the software.
-
-Exporting DAE files from Blender
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Blender has built-in COLLADA support too, but it's also broken and
-should not be used.
-
-Godot provides a `Python
-Plugin <https://github.com/godotengine/collada-exporter>`__
-that will do a much better job of exporting the scenes.
 
 Exporting glTF 2.0 files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,6 +53,15 @@ changes in a text based format. The second is you need the texture files separat
 either of those glTF binary files are fine.
 
 .. note:: Blender does not export emissive textures with the glTF file. If your model uses one it must be brought in separately.
+
+Exporting DAE files from Blender
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Blender has built-in COLLADA support, but it does not work properly for the needs of game engines
+and should not be used as is.
+
+Godot provides a `Blender plugin <https://github.com/godotengine/collada-exporter>`_
+that will correctly export COLLADA scenes for use in Godot.
 
 Exporting ESCN files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -269,7 +260,48 @@ Filter Script
 ~~~~~~~~~~~~~
 
 It is possible to specify a filter script in a special syntax to decide which tracks from which
-animations should be kept. (@TODO this needs documentation)
+animations should be kept.
+
+The filter script is executed against each imported animation. The syntax consists of two types of
+statements, the first for choosing which animations to filter, and the second for filtering
+individual tracks within the matched animation. All name patterns are performed using a case
+insensitive expression match, using ``?`` and ``*`` wildcards (using ``String.matchn()`` under the
+hood).
+
+The script must start with an animation filter statement (as denoted by the line beginning with an
+``@``). For example, if we would like to apply filters to all imported animations which have a name
+ending in ``"_Loop"``::
+
+    @+*_Loop
+
+Similarly, additional patterns can be added to the same line, separated by commas. Here is a
+modified example to additionally *include* all animations with names that begin with ``"Arm_Left"``,
+but also *exclude* all animations which have names ending in ``"Attack"``::
+
+    @+*_Loop, +Arm_Left*, -*Attack
+
+Following the animation selection filter statement, we add track filtering patterns to indicate
+which animation tracks should be kept or discarded. If no track filter patterns are specified, then
+all tracks within the matched animations will be discarded!
+
+It's important to note that track filter statements are applied in order for each track within the
+animation, this means that one line may include a track, a later rule can still discard it.
+Similarly, a track excluded by an early rule may then be re-included once again by a filter rule
+further down in the filter script.
+
+For example: include all tracks in animations with names ending in ``"_Loop"``, but discard any
+tracks affecting a `"Skeleton"`` which end in ``"Control"``, unless they have ``"Arm"`` in their
+name::
+
+    @+*_Loop
+    +*
+    -Skeleton:*Control
+    +*Arm*
+
+In the above example, tracks like ``"Skeleton:Leg_Control"`` would be discarded, while tracks such
+as ``"Skeleton:Head"`` or ``"Skeleton:Arm_Left_Control"`` would be retained.
+
+Any track filter lines that do not begin with a ``+`` or ``-`` are ignored.
 
 Storage
 ~~~~~~~

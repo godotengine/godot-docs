@@ -45,15 +45,21 @@ Method Descriptions
 
 - :ref:`Node<class_Node>` **create_instance** **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**
 
+----
+
 .. _class_InstancePlaceholder_method_get_instance_path:
 
 - :ref:`String<class_String>` **get_instance_path** **(** **)** const
 
 Gets the path to the :ref:`PackedScene<class_PackedScene>` resource file that is loaded by default when calling :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>`.
 
+----
+
 .. _class_InstancePlaceholder_method_get_stored_values:
 
 - :ref:`Dictionary<class_Dictionary>` **get_stored_values** **(** :ref:`bool<class_bool>` with_order=false **)**
+
+----
 
 .. _class_InstancePlaceholder_method_replace_by_instance:
 

@@ -53,6 +53,8 @@ Property Descriptions
 
 The material used to render the sphere.
 
+----
+
 .. _class_CSGSphere_property_radial_segments:
 
 - :ref:`int<class_int>` **radial_segments**
@@ -66,6 +68,8 @@ The material used to render the sphere.
 +-----------+----------------------------+
 
 Number of vertical slices for the sphere.
+
+----
 
 .. _class_CSGSphere_property_radius:
 
@@ -81,6 +85,8 @@ Number of vertical slices for the sphere.
 
 Radius of the sphere.
 
+----
+
 .. _class_CSGSphere_property_rings:
 
 - :ref:`int<class_int>` **rings**
@@ -94,6 +100,8 @@ Radius of the sphere.
 +-----------+------------------+
 
 Number of horizontal slices for the sphere.
+
+----
 
 .. _class_CSGSphere_property_smooth_faces:
 

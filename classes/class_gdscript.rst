@@ -48,6 +48,8 @@ Method Descriptions
 
 Returns byte code for the script source code.
 
+----
+
 .. _class_GDScript_method_new:
 
 - :ref:`Variant<class_Variant>` **new** **(** ... **)** vararg

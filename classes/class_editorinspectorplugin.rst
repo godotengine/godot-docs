@@ -46,7 +46,7 @@ This plugins allows adding custom property editors to :ref:`EditorInspector<clas
 
 Plugins are registered via :ref:`EditorPlugin.add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>`.
 
-When an object is edited, the :ref:`can_handle<class_EditorInspectorPlugin_method_can_handle>` function is called and must return true if the object type is supported.
+When an object is edited, the :ref:`can_handle<class_EditorInspectorPlugin_method_can_handle>` function is called and must return ``true`` if the object type is supported.
 
 If supported, the function :ref:`parse_begin<class_EditorInspectorPlugin_method_parse_begin>` will be called, allowing to place custom controls at the beginning of the class.
 
@@ -65,11 +65,15 @@ Method Descriptions
 
 Adds a custom control, not necessarily a property editor.
 
+----
+
 .. _class_EditorInspectorPlugin_method_add_property_editor:
 
 - void **add_property_editor** **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor **)**
 
 Adds a property editor, this must inherit :ref:`EditorProperty<class_EditorProperty>`.
+
+----
 
 .. _class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties:
 
@@ -77,11 +81,15 @@ Adds a property editor, this must inherit :ref:`EditorProperty<class_EditorPrope
 
 Adds an editor that allows modifying multiple properties, this must inherit :ref:`EditorProperty<class_EditorProperty>`.
 
+----
+
 .. _class_EditorInspectorPlugin_method_can_handle:
 
 - :ref:`bool<class_bool>` **can_handle** **(** :ref:`Object<class_Object>` object **)** virtual
 
-Returns true if this object can be handled by this plugin.
+Returns ``true`` if this object can be handled by this plugin.
+
+----
 
 .. _class_EditorInspectorPlugin_method_parse_begin:
 
@@ -89,17 +97,23 @@ Returns true if this object can be handled by this plugin.
 
 Called to allow adding controls at the beginning of the list.
 
+----
+
 .. _class_EditorInspectorPlugin_method_parse_category:
 
 - void **parse_category** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` category **)** virtual
 
 Called to allow adding controls at the beginning of the category.
 
+----
+
 .. _class_EditorInspectorPlugin_method_parse_end:
 
 - void **parse_end** **(** **)** virtual
 
 Called to allow adding controls at the end of the list.
+
+----
 
 .. _class_EditorInspectorPlugin_method_parse_property:
 

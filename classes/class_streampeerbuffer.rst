@@ -64,21 +64,31 @@ Method Descriptions
 
 - void **clear** **(** **)**
 
+----
+
 .. _class_StreamPeerBuffer_method_duplicate:
 
 - :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` **duplicate** **(** **)** const
+
+----
 
 .. _class_StreamPeerBuffer_method_get_position:
 
 - :ref:`int<class_int>` **get_position** **(** **)** const
 
+----
+
 .. _class_StreamPeerBuffer_method_get_size:
 
 - :ref:`int<class_int>` **get_size** **(** **)** const
 
+----
+
 .. _class_StreamPeerBuffer_method_resize:
 
 - void **resize** **(** :ref:`int<class_int>` size **)**
+
+----
 
 .. _class_StreamPeerBuffer_method_seek:
 

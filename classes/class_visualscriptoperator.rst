@@ -55,6 +55,8 @@ Property Descriptions
 | *Getter*  | get_operator()      |
 +-----------+---------------------+
 
+----
+
 .. _class_VisualScriptOperator_property_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**

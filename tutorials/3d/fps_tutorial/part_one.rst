@@ -427,7 +427,7 @@ The second reason is because we do not want the cursor to leave the game window.
 the game window there could be instances where the player clicks outside the window, and then the game
 would lose focus. To assure neither of these issues happens, we capture the mouse cursor.
 
-.. note:: see :ref:`Input documentation <class_Input>` for the various mouse modes. We will only be using
+.. note:: See :ref:`Input documentation <class_Input>` for the various mouse modes. We will only be using
           ``MOUSE_MODE_CAPTURED`` and ``MOUSE_MODE_VISIBLE`` in this tutorial series.
 
 _________
@@ -779,7 +779,7 @@ Now we need to change some of the code in ``process_input``. Add the following s
 
 Let's go over the additions:
 
-We set ``is_sprinting`` to true when the player is holding down the ``movement_sprint`` action, and false
+We set ``is_sprinting`` to ``true`` when the player is holding down the ``movement_sprint`` action, and ``false``
 when the ``movement_sprint`` action is released. In ``process_movement`` we'll add the code that makes the player faster when
 they sprint. Here in ``process_input`` we are just going to change the ``is_sprinting`` variable.
 

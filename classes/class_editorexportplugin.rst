@@ -52,41 +52,61 @@ Method Descriptions
 
 - void **_export_begin** **(** :ref:`PoolStringArray<class_PoolStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** virtual
 
+----
+
 .. _class_EditorExportPlugin_method__export_end:
 
 - void **_export_end** **(** **)** virtual
+
+----
 
 .. _class_EditorExportPlugin_method__export_file:
 
 - void **_export_file** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type, :ref:`PoolStringArray<class_PoolStringArray>` features **)** virtual
 
+----
+
 .. _class_EditorExportPlugin_method_add_file:
 
 - void **add_file** **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` file, :ref:`bool<class_bool>` remap **)**
+
+----
 
 .. _class_EditorExportPlugin_method_add_ios_bundle_file:
 
 - void **add_ios_bundle_file** **(** :ref:`String<class_String>` path **)**
 
+----
+
 .. _class_EditorExportPlugin_method_add_ios_cpp_code:
 
 - void **add_ios_cpp_code** **(** :ref:`String<class_String>` code **)**
+
+----
 
 .. _class_EditorExportPlugin_method_add_ios_framework:
 
 - void **add_ios_framework** **(** :ref:`String<class_String>` path **)**
 
+----
+
 .. _class_EditorExportPlugin_method_add_ios_linker_flags:
 
 - void **add_ios_linker_flags** **(** :ref:`String<class_String>` flags **)**
+
+----
 
 .. _class_EditorExportPlugin_method_add_ios_plist_content:
 
 - void **add_ios_plist_content** **(** :ref:`String<class_String>` plist_content **)**
 
+----
+
 .. _class_EditorExportPlugin_method_add_shared_object:
 
 - void **add_shared_object** **(** :ref:`String<class_String>` path, :ref:`PoolStringArray<class_PoolStringArray>` tags **)**
+
+----
 
 .. _class_EditorExportPlugin_method_skip:
 

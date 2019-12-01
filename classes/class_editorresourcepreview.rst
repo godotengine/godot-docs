@@ -56,11 +56,15 @@ Method Descriptions
 
 Create an own, custom preview generator.
 
+----
+
 .. _class_EditorResourcePreview_method_check_for_invalidation:
 
 - void **check_for_invalidation** **(** :ref:`String<class_String>` path **)**
 
 Check if the resource changed, if so, it will be invalidated and the corresponding signal emitted.
+
+----
 
 .. _class_EditorResourcePreview_method_queue_edited_resource_preview:
 
@@ -68,11 +72,15 @@ Check if the resource changed, if so, it will be invalidated and the correspondi
 
 Queue a resource being edited for preview (using an instance). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texture (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
 
+----
+
 .. _class_EditorResourcePreview_method_queue_resource_preview:
 
 - void **queue_resource_preview** **(** :ref:`String<class_String>` path, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**
 
 Queue a resource file for preview (using a path). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texture (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
+
+----
 
 .. _class_EditorResourcePreview_method_remove_preview_generator:
 

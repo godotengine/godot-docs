@@ -104,7 +104,7 @@ is usually:
 +--------------------------------+----------------------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                                          |
 +--------------------------------+----------------------------------------------------------------+
-| in bool **AT_LIGHT_PASS**      | True if this is a light pass.                                  |
+| in bool **AT_LIGHT_PASS**      | ``true`` if this is a light pass.                              |
 +--------------------------------+----------------------------------------------------------------+
 | inout vec2 **VERTEX**          | Vertex, in image space.                                        |
 +--------------------------------+----------------------------------------------------------------+
@@ -175,7 +175,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 +----------------------------------+----------------------------------------------------------------+
 | in float **TIME**                | Global time in seconds.                                        |
 +----------------------------------+----------------------------------------------------------------+
-| in bool **AT_LIGHT_PASS**        | True if this is a light pass.                                  |
+| in bool **AT_LIGHT_PASS**        | ``true`` if this is a light pass.                              |
 +----------------------------------+----------------------------------------------------------------+
 | in sampler2D **SCREEN_TEXTURE**  | Screen texture, mipmaps contain gaussian blurred versions.     |
 +----------------------------------+----------------------------------------------------------------+
@@ -218,7 +218,11 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in float **TIME**                   | Global time in seconds.                                                       |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec2 **LIGHT_VEC**            | Vector from light to fragment, can be modified to alter shadow computation.   |
+| inout vec2 **LIGHT_VEC**            | Vector from light to fragment in local coordinates. It can be modified to     |
+|                                     | alter illumination direction when normal maps are used.                       |
++-------------------------------------+-------------------------------------------------------------------------------+
+| inout vec2 **SHADOW_VEC**           | Vector from light to fragment in local coordinates. It can be modified to     |
+|                                     | alter shadow computation.                                                     |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | inout float **LIGHT_HEIGHT**        | Height of Light. Only effective when normals are used.                        |
 +-------------------------------------+-------------------------------------------------------------------------------+

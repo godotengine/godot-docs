@@ -78,6 +78,8 @@ Property Descriptions
 
 The blend space's axis's upper limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
 
+----
+
 .. _class_AnimationNodeBlendSpace1D_property_min_space:
 
 - :ref:`float<class_float>` **min_space**
@@ -92,6 +94,8 @@ The blend space's axis's upper limit for the points' position. See :ref:`add_ble
 
 The blend space's axis's lower limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
 
+----
+
 .. _class_AnimationNodeBlendSpace1D_property_snap:
 
 - :ref:`float<class_float>` **snap**
@@ -105,6 +109,8 @@ The blend space's axis's lower limit for the points' position. See :ref:`add_ble
 +-----------+-----------------+
 
 Position increment to snap to when moving a point on the axis.
+
+----
 
 .. _class_AnimationNodeBlendSpace1D_property_value_label:
 
@@ -129,11 +135,15 @@ Method Descriptions
 
 Adds a new point that represents a ``node`` on the virtual axis at a given position set by ``pos``. You can insert it at a specific index using the ``at_index`` argument. If you use the default value for ``at_index`` , the point is inserted at the end of the blend points array.
 
+----
+
 .. _class_AnimationNodeBlendSpace1D_method_get_blend_point_count:
 
 - :ref:`int<class_int>` **get_blend_point_count** **(** **)** const
 
 Returns the number of points on the blend axis.
+
+----
 
 .. _class_AnimationNodeBlendSpace1D_method_get_blend_point_node:
 
@@ -141,11 +151,15 @@ Returns the number of points on the blend axis.
 
 Returns the ``AnimationNode`` referenced by the point at index ``point``.
 
+----
+
 .. _class_AnimationNodeBlendSpace1D_method_get_blend_point_position:
 
 - :ref:`float<class_float>` **get_blend_point_position** **(** :ref:`int<class_int>` point **)** const
 
 Returns the position of the point at index ``point``.
+
+----
 
 .. _class_AnimationNodeBlendSpace1D_method_remove_blend_point:
 
@@ -153,11 +167,15 @@ Returns the position of the point at index ``point``.
 
 Removes the point at index ``point`` from the blend axis.
 
+----
+
 .. _class_AnimationNodeBlendSpace1D_method_set_blend_point_node:
 
 - void **set_blend_point_node** **(** :ref:`int<class_int>` point, :ref:`AnimationRootNode<class_AnimationRootNode>` node **)**
 
 Changes the AnimationNode referenced by the point at index ``point``.
+
+----
 
 .. _class_AnimationNodeBlendSpace1D_method_set_blend_point_position:
 

@@ -291,14 +291,16 @@ def copy_assets(app, exception):
     """ Copy asset files to the output """
     if 'getLogger' in dir(logging):
         log = logging.getLogger(__name__).info  # pylint: disable=no-member
+        warn = logging.getLogger(__name__).warning  # pylint: disable=no-member
     else:
         log = app.info
+        warn = app.warn
     builders = get_compatible_builders(app)
     if exception:
         return
     if app.builder.name not in builders:
         if not app.config['sphinx_tabs_nowarn']:
-            app.warn(
+            warn(
                 'Not copying tabs assets! Not compatible with %s builder' %
                 app.builder.name)
         return

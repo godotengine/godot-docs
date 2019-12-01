@@ -63,6 +63,8 @@ Property Descriptions
 
 Defines how reflective the imaginary room's walls are. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectReverb_property_dry:
 
 - :ref:`float<class_float>` **dry**
@@ -76,6 +78,8 @@ Defines how reflective the imaginary room's walls are. Value can range from 0 to
 +-----------+----------------+
 
 Output percent of original sound. At 0, only modified sound is outputted. Value can range from 0 to 1.
+
+----
 
 .. _class_AudioEffectReverb_property_hipass:
 
@@ -91,6 +95,8 @@ Output percent of original sound. At 0, only modified sound is outputted. Value 
 
 High-pass filter passes signals with a frequency higher than a certain cutoff frequency and attenuates signals with frequencies lower than the cutoff frequency. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectReverb_property_predelay_feedback:
 
 - :ref:`float<class_float>` **predelay_feedback**
@@ -104,6 +110,8 @@ High-pass filter passes signals with a frequency higher than a certain cutoff fr
 +-----------+------------------------------+
 
 Output percent of predelay. Value can range from 0 to 1.
+
+----
 
 .. _class_AudioEffectReverb_property_predelay_msec:
 
@@ -119,6 +127,8 @@ Output percent of predelay. Value can range from 0 to 1.
 
 Time between the original signal and the early reflections of the reverb signal, in milliseconds.
 
+----
+
 .. _class_AudioEffectReverb_property_room_size:
 
 - :ref:`float<class_float>` **room_size**
@@ -133,6 +143,8 @@ Time between the original signal and the early reflections of the reverb signal,
 
 Dimensions of simulated room. Bigger means more echoes. Value can range from 0 to 1.
 
+----
+
 .. _class_AudioEffectReverb_property_spread:
 
 - :ref:`float<class_float>` **spread**
@@ -146,6 +158,8 @@ Dimensions of simulated room. Bigger means more echoes. Value can range from 0 t
 +-----------+-------------------+
 
 Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1.
+
+----
 
 .. _class_AudioEffectReverb_property_wet:
 

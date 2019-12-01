@@ -63,11 +63,15 @@ Signals
 
 Emit it if you want multiple properties modified at the same time. Do not use if added via :ref:`EditorInspectorPlugin.parse_property<class_EditorInspectorPlugin_method_parse_property>`.
 
+----
+
 .. _class_EditorProperty_signal_object_id_selected:
 
 - **object_id_selected** **(** :ref:`String<class_String>` property, :ref:`int<class_int>` id **)**
 
 Used by sub-inspectors. Emit it if what was selected was an Object ID.
+
+----
 
 .. _class_EditorProperty_signal_property_changed:
 
@@ -75,11 +79,15 @@ Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
 Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_method_emit_changed>` method instead.
 
+----
+
 .. _class_EditorProperty_signal_property_checked:
 
 - **property_checked** **(** :ref:`String<class_String>` property, :ref:`String<class_String>` bool **)**
 
 Emitted when a property was checked. Used internally.
+
+----
 
 .. _class_EditorProperty_signal_property_keyed:
 
@@ -87,17 +95,23 @@ Emitted when a property was checked. Used internally.
 
 Emit it if you want to add this value as an animation key (check for keying being enabled first).
 
+----
+
 .. _class_EditorProperty_signal_property_keyed_with_value:
 
 - **property_keyed_with_value** **(** :ref:`String<class_String>` property, :ref:`Nil<class_Nil>` value **)**
 
 Emit it if you want to key a property with a single value.
 
+----
+
 .. _class_EditorProperty_signal_resource_selected:
 
 - **resource_selected** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource **)**
 
 If you want a sub-resource to be edited, emit this signal with the resource.
+
+----
 
 .. _class_EditorProperty_signal_selected:
 
@@ -127,6 +141,8 @@ Property Descriptions
 
 Used by the inspector, set when property is checkable.
 
+----
+
 .. _class_EditorProperty_property_checked:
 
 - :ref:`bool<class_bool>` **checked**
@@ -140,6 +156,8 @@ Used by the inspector, set when property is checkable.
 +-----------+--------------------+
 
 Used by the inspector, when the property is checked.
+
+----
 
 .. _class_EditorProperty_property_draw_red:
 
@@ -155,6 +173,8 @@ Used by the inspector, when the property is checked.
 
 Used by the inspector, when the property must draw with error color.
 
+----
+
 .. _class_EditorProperty_property_keying:
 
 - :ref:`bool<class_bool>` **keying**
@@ -169,6 +189,8 @@ Used by the inspector, when the property must draw with error color.
 
 Used by the inspector, when the property can add keys for animation.
 
+----
+
 .. _class_EditorProperty_property_label:
 
 - :ref:`String<class_String>` **label**
@@ -182,6 +204,8 @@ Used by the inspector, when the property can add keys for animation.
 +-----------+------------------+
 
 Sets this property to change the label (if you want to show one).
+
+----
 
 .. _class_EditorProperty_property_read_only:
 
@@ -206,11 +230,15 @@ Method Descriptions
 
 If any of the controls added can gain keyboard focus, add it here. This ensures that focus will be restored if the inspector is refreshed.
 
+----
+
 .. _class_EditorProperty_method_emit_changed:
 
 - void **emit_changed** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` field="", :ref:`bool<class_bool>` changing=false **)**
 
 If one or several properties have changed, this must be called. ``field`` is used in case your editor can modify fields separately (as an example, Vector3.x). The ``changing`` argument avoids the editor requesting this property to be refreshed (leave as ``false`` if unsure).
+
+----
 
 .. _class_EditorProperty_method_get_edited_object:
 
@@ -218,11 +246,15 @@ If one or several properties have changed, this must be called. ``field`` is use
 
 Gets the edited object.
 
+----
+
 .. _class_EditorProperty_method_get_edited_property:
 
 - :ref:`String<class_String>` **get_edited_property** **(** **)**
 
 Gets the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin.parse_property<class_EditorInspectorPlugin_method_parse_property>`), then this will return the property.
+
+----
 
 .. _class_EditorProperty_method_get_tooltip_text:
 
@@ -230,11 +262,15 @@ Gets the edited property. If your editor is for a single property (added via :re
 
 Override if you want to allow a custom tooltip over your property.
 
+----
+
 .. _class_EditorProperty_method_set_bottom_editor:
 
 - void **set_bottom_editor** **(** :ref:`Control<class_Control>` editor **)**
 
 Adds controls with this function if you want them on the bottom (below the label).
+
+----
 
 .. _class_EditorProperty_method_update_property:
 

@@ -39,7 +39,7 @@ positive to the engine, regardless of their skill set:
 
 -  **Donate.** Godot is a non-profit project, but it can still benefit from
    user donations for many things. Apart from usual expenses such as hosting
-   costs or promotion material on events, we also use donation money to
+   costs or promotional material on events, we also use donation money to
    acquire hardware when necessary (e.g. we used donation money to buy a
    Macbook Pro to implement Retina/HiDPI support and various other
    macOS-related features).

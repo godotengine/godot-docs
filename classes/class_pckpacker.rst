@@ -29,6 +29,20 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pck_start<class_PCKPacker_method_pck_start>` **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment **)**       |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+The ``PCKPacker`` is used to create packages in application runtime.
+
+::
+
+    var packer = PCKPacker.new()
+    packer.pck_start("test.pck", 0)
+    packer.add_file("res://text.txt", "text.txt")
+    packer.flush(false)
+
+The above ``PCKPacker`` creates package **test.pck**, then adds a file named **text.txt** in the root of the package.
+
 Method Descriptions
 -------------------
 
@@ -36,9 +50,15 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **add_file** **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path **)**
 
+Adds the ``source_path`` file to the current PCK package at the ``pck_path`` internal path (should start with ``res://``).
+
+----
+
 .. _class_PCKPacker_method_flush:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **flush** **(** :ref:`bool<class_bool>` verbose **)**
+
+----
 
 .. _class_PCKPacker_method_pck_start:
 

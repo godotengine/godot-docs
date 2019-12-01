@@ -201,19 +201,12 @@ button in the bottom right, you'll open up the connection creation dialogue.
 
 .. image:: img/connect_dialogue.png
 
-In the bottom-left are the key things you need to create a connection: a node
-which implements the method you want to trigger (represented here as a
-NodePath) and the name of the method to trigger.
+The top of the dialogue displays a list of your scene's nodes with the emitting
+node's name highlighted in blue. Select the "Panel" node here.
 
-The top-left section displays a list of your scene's nodes with the emitting
-node's name highlighted in red. Select the "Panel" node here. When you select
-a node, the NodePath at the bottom will automatically update to point to a
-relative path from the emitting node to the selected node.
-
+The bottom of the dialogue shows the name of the method that will be created.
 By default, the method name will contain the emitting node's name ("Button" in
-this case), resulting in ``_on_[EmitterNode]_[signal_name]``. If you do have the
-"Make Function" check button checked, then the editor will generate the function
-for you before setting up the connection.
+this case), resulting in ``_on_[EmitterNode]_[signal_name]``.
 
 And that concludes the guide on how to use the visual interface. However, this
 is a scripting tutorial, so for the sake of learning, let's dive into the

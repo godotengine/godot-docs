@@ -273,7 +273,7 @@ files:
 
 Viewing the `.html` file in your browser lets you play the game. However, you
 can't open the file directly, it needs to be served by a web server. If you don't
-have one set up on your computer, you can use Google to find suggestions for
+have one set up on your computer, you can search online to find suggestions for
 your specific OS.
 
 Point your browser at the URL where you've placed the html file. You may have
@@ -284,7 +284,8 @@ to wait a few moments while the game loads before you see the start screen.
 The console window beneath the game tells you if anything goes wrong. You can
 disable it by setting "Export With Debug" off when you export the project.
 
-.. note:: Browser support for WASM is not very widespread. Firefox and Chrome
-          both support it, but you may still find some things that don't work.
-          Make sure you have updated your browser to the most recent version,
-          and report any bugs you find at the `Godot Github repository <https://github.com/godotengine/godot/issues>`_.
+.. note:: While WASM is supported in all major browsers, it is still an emerging
+          technology and you may find some things that don't work. Make sure
+          you have updated your browser to the most recent version, and report
+          any bugs you find at the `Godot Github repository
+          <https://github.com/godotengine/godot/issues>`_.

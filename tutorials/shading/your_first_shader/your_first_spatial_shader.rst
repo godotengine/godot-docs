@@ -91,7 +91,7 @@ Shader magic
 
 Notice how there is already error? This is because the shader editor reloads shaders on
 the fly. The first thing Godot shaders need is a declaration of what type of shader they are.
-We set the variable ``shader_type`` to ``spatial`` becuase this is a spatial shader.
+We set the variable ``shader_type`` to ``spatial`` because this is a spatial shader.
 
 .. code-block:: glsl
 
@@ -273,7 +273,7 @@ off "As Normalmap".
 
 .. image:: img/normal-set.png
 
-Now, becuase this is a normalmap and not a per-vertex normal. We are going to assign it in the ``fragment()``
+Now, because this is a normalmap and not a per-vertex normal, we are going to assign it in the ``fragment()``
 function. The ``fragment()`` function will be explained in more detail in the next part of this tutorial.
 
 .. code-block:: glsl

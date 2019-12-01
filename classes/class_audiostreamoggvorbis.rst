@@ -51,6 +51,8 @@ Property Descriptions
 
 Contains the audio data in bytes.
 
+----
+
 .. _class_AudioStreamOGGVorbis_property_loop:
 
 - :ref:`bool<class_bool>` **loop**
@@ -62,6 +64,8 @@ Contains the audio data in bytes.
 +-----------+-----------------+
 | *Getter*  | has_loop()      |
 +-----------+-----------------+
+
+----
 
 .. _class_AudioStreamOGGVorbis_property_loop_offset:
 

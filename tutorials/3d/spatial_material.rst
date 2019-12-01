@@ -40,6 +40,12 @@ specified otherwise. The main settings that enable transparency are:
 * Blend mode set to other than "Mix"
 * Enabling distance or proximity fade
 
+Use Shadow to Opacity
+~~~~~~~~~~~~~~~~~~~~~
+
+Lighting modifies the alpha so shadowed areas are opaque and non-shadowed
+areas are transparent. Useful for overlaying shadows onto a camera feed in AR.
+
 Unshaded
 ~~~~~~~~
 

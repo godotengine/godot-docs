@@ -92,6 +92,8 @@ Property Descriptions
 
 Difference in period between :ref:`octaves<class_OpenSimplexNoise_property_octaves>`.
 
+----
+
 .. _class_OpenSimplexNoise_property_octaves:
 
 - :ref:`int<class_int>` **octaves**
@@ -105,6 +107,8 @@ Difference in period between :ref:`octaves<class_OpenSimplexNoise_property_octav
 +-----------+--------------------+
 
 Number of OpenSimplex noise layers that are sampled to get the fractal noise.
+
+----
 
 .. _class_OpenSimplexNoise_property_period:
 
@@ -120,6 +124,8 @@ Number of OpenSimplex noise layers that are sampled to get the fractal noise.
 
 Period of the base octave. A lower period results in a higher-frequency noise (more value changes across the same distance).
 
+----
+
 .. _class_OpenSimplexNoise_property_persistence:
 
 - :ref:`float<class_float>` **persistence**
@@ -133,6 +139,8 @@ Period of the base octave. A lower period results in a higher-frequency noise (m
 +-----------+------------------------+
 
 Contribution factor of the different octaves. A ``persistence`` value of 1 means all the octaves have the same contribution, a value of 0.5 means each octave contributes half as much as the previous one.
+
+----
 
 .. _class_OpenSimplexNoise_property_seed:
 
@@ -157,6 +165,8 @@ Method Descriptions
 
 Generate a noise image with the requested ``width`` and ``height``, based on the current noise parameters.
 
+----
+
 .. _class_OpenSimplexNoise_method_get_noise_1d:
 
 - :ref:`float<class_float>` **get_noise_1d** **(** :ref:`float<class_float>` x **)**
@@ -165,11 +175,15 @@ Returns the 1D noise value ``[-1,1]`` at the given x-coordinate.
 
 **Note:** This method actually returns the 2D noise value ``[-1,1]`` with fixed y-coordinate value 0.0.
 
+----
+
 .. _class_OpenSimplexNoise_method_get_noise_2d:
 
 - :ref:`float<class_float>` **get_noise_2d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
 Returns the 2D noise value ``[-1,1]`` at the given position.
+
+----
 
 .. _class_OpenSimplexNoise_method_get_noise_2dv:
 
@@ -177,11 +191,15 @@ Returns the 2D noise value ``[-1,1]`` at the given position.
 
 Returns the 2D noise value ``[-1,1]`` at the given position.
 
+----
+
 .. _class_OpenSimplexNoise_method_get_noise_3d:
 
 - :ref:`float<class_float>` **get_noise_3d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**
 
 Returns the 3D noise value ``[-1,1]`` at the given position.
+
+----
 
 .. _class_OpenSimplexNoise_method_get_noise_3dv:
 
@@ -189,11 +207,15 @@ Returns the 3D noise value ``[-1,1]`` at the given position.
 
 Returns the 3D noise value ``[-1,1]`` at the given position.
 
+----
+
 .. _class_OpenSimplexNoise_method_get_noise_4d:
 
 - :ref:`float<class_float>` **get_noise_4d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
 
 Returns the 4D noise value ``[-1,1]`` at the given position.
+
+----
 
 .. _class_OpenSimplexNoise_method_get_seamless_image:
 

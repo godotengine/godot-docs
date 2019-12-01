@@ -63,6 +63,8 @@ Property Descriptions
 | *Getter*  | get_bounds()             |
 +-----------+--------------------------+
 
+----
+
 .. _class_BakedLightmapData_property_cell_space_transform:
 
 - :ref:`Transform<class_Transform>` **cell_space_transform**
@@ -74,6 +76,8 @@ Property Descriptions
 +-----------+-------------------------------------------------+
 | *Getter*  | get_cell_space_transform()                      |
 +-----------+-------------------------------------------------+
+
+----
 
 .. _class_BakedLightmapData_property_cell_subdiv:
 
@@ -87,6 +91,8 @@ Property Descriptions
 | *Getter*  | get_cell_subdiv()      |
 +-----------+------------------------+
 
+----
+
 .. _class_BakedLightmapData_property_energy:
 
 - :ref:`float<class_float>` **energy**
@@ -98,6 +104,8 @@ Property Descriptions
 +-----------+-------------------+
 | *Getter*  | get_energy()      |
 +-----------+-------------------+
+
+----
 
 .. _class_BakedLightmapData_property_octree:
 
@@ -118,17 +126,25 @@ Method Descriptions
 
 - void **add_user** **(** :ref:`NodePath<class_NodePath>` path, :ref:`Texture<class_Texture>` lightmap, :ref:`int<class_int>` instance **)**
 
+----
+
 .. _class_BakedLightmapData_method_clear_users:
 
 - void **clear_users** **(** **)**
+
+----
 
 .. _class_BakedLightmapData_method_get_user_count:
 
 - :ref:`int<class_int>` **get_user_count** **(** **)** const
 
+----
+
 .. _class_BakedLightmapData_method_get_user_lightmap:
 
 - :ref:`Texture<class_Texture>` **get_user_lightmap** **(** :ref:`int<class_int>` user_idx **)** const
+
+----
 
 .. _class_BakedLightmapData_method_get_user_path:
 

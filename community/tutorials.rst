@@ -32,7 +32,7 @@ Video tutorials
 - `Pigdev <https://www.youtube.com/playlist?list=PLPMN4vCRFdordS3E-3zi0Hdh7pAsbWQ6a>`_
 - `Steincodes <https://www.youtube.com/c/steincodes/playlists>`__
 - `Code with Tom <https://www.youtube.com/playlist?list=PLiUQR4U_J9ec0k91iHPme_qtfS1nrWF3W>`_
-
+- `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ>`_
 
 Text tutorials
 --------------

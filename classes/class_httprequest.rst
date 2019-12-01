@@ -16,22 +16,24 @@ HTTPRequest
 Brief Description
 -----------------
 
-A node with the ability to send HTTP requests.
+A node with the ability to send HTTP(S) requests.
 
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>` | -1    |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_property_download_file>`     | ""    |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`     | 8     |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                 | 0     |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`         | false |
-+-----------------------------+--------------------------------------------------------------------+-------+
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>`         | -1    |
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`download_chunk_size<class_HTTPRequest_property_download_chunk_size>` | 4096  |
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_property_download_file>`             | ""    |
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`             | 8     |
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                         | 0     |
++-----------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`                 | false |
++-----------------------------+----------------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -123,8 +125,41 @@ A node with the ability to send HTTP requests. Uses :ref:`HTTPClient<class_HTTPC
 
 Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.
 
+**Example of loading and displaying an image using HTTPRequest:**
+
+::
+
+    func _ready():
+        # Create an HTTP request node and connect its completion signal.
+        var http_request = HTTPRequest.new()
+        add_child(http_request)
+        http_request.connect("request_completed", self, "_http_request_completed")
+    
+        # Perform the HTTP request. The URL below returns a PNG image as of writing.
+        var error = http_request.request("https://via.placeholder.com/512")
+        if error != OK:
+            push_error("An error occurred in the HTTP request.")
+    
+    
+    # Called when the HTTP request is completed.
+    func _http_request_completed(result, response_code, headers, body):
+        var image = Image.new()
+        var error = image.load_png_from_buffer(body)
+        if error != OK:
+            push_error("Couldn't load the image.")
+    
+        var texture = ImageTexture.new()
+        texture.create_from_image(image)
+    
+        # Display the image in a TextureRect node.
+        var texture_rect = TextureRect.new()
+        add_child(texture_rect)
+        texture_rect.texture = texture
+
 Tutorials
 ---------
+
+- :doc:`../tutorials/networking/http_request_class`
 
 - :doc:`../tutorials/networking/ssl_certificates`
 
@@ -145,6 +180,26 @@ Property Descriptions
 
 Maximum allowed size for response bodies.
 
+----
+
+.. _class_HTTPRequest_property_download_chunk_size:
+
+- :ref:`int<class_int>` **download_chunk_size**
+
++-----------+--------------------------------+
+| *Default* | 4096                           |
++-----------+--------------------------------+
+| *Setter*  | set_download_chunk_size(value) |
++-----------+--------------------------------+
+| *Getter*  | get_download_chunk_size()      |
++-----------+--------------------------------+
+
+The size of the buffer used and maximum bytes to read per iteration. See :ref:`HTTPClient.read_chunk_size<class_HTTPClient_property_read_chunk_size>`.
+
+Set this to a higher value (e.g. 65536 for 64 KiB) when downloading large files to achieve better speeds at the cost of memory.
+
+----
+
 .. _class_HTTPRequest_property_download_file:
 
 - :ref:`String<class_String>` **download_file**
@@ -158,6 +213,8 @@ Maximum allowed size for response bodies.
 +-----------+--------------------------+
 
 The file to download into. Will output any received file into it.
+
+----
 
 .. _class_HTTPRequest_property_max_redirects:
 
@@ -173,6 +230,8 @@ The file to download into. Will output any received file into it.
 
 Maximum number of allowed redirects.
 
+----
+
 .. _class_HTTPRequest_property_timeout:
 
 - :ref:`int<class_int>` **timeout**
@@ -184,6 +243,8 @@ Maximum number of allowed redirects.
 +-----------+--------------------+
 | *Getter*  | get_timeout()      |
 +-----------+--------------------+
+
+----
 
 .. _class_HTTPRequest_property_use_threads:
 
@@ -208,11 +269,17 @@ Method Descriptions
 
 Cancels the current request.
 
+----
+
 .. _class_HTTPRequest_method_get_body_size:
 
 - :ref:`int<class_int>` **get_body_size** **(** **)** const
 
 Returns the response body length.
+
+**Note:** Some Web servers may not send a body length. In this case, the value returned will be ``-1``. If using chunked transfer encoding, the body length will also be ``-1``.
+
+----
 
 .. _class_HTTPRequest_method_get_downloaded_bytes:
 
@@ -220,11 +287,15 @@ Returns the response body length.
 
 Returns the amount of bytes this HTTPRequest downloaded.
 
+----
+
 .. _class_HTTPRequest_method_get_http_client_status:
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_http_client_status** **(** **)** const
 
 Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See ``STATUS_*`` enum on :ref:`HTTPClient<class_HTTPClient>`.
+
+----
 
 .. _class_HTTPRequest_method_request:
 

@@ -317,6 +317,8 @@ enum **TextureParam**:
 
 - **TEXTURE_MAX** = **16** --- Represents the size of the :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` enum.
 
+----
+
 .. _enum_SpatialMaterial_DetailUV:
 
 .. _class_SpatialMaterial_constant_DETAIL_UV_1:
@@ -328,6 +330,8 @@ enum **DetailUV**:
 - **DETAIL_UV_1** = **0**
 
 - **DETAIL_UV_2** = **1**
+
+----
 
 .. _enum_SpatialMaterial_Feature:
 
@@ -385,6 +389,8 @@ enum **Feature**:
 
 - **FEATURE_MAX** = **12** --- Represents the size of the :ref:`Feature<enum_SpatialMaterial_Feature>` enum.
 
+----
+
 .. _enum_SpatialMaterial_BlendMode:
 
 .. _class_SpatialMaterial_constant_BLEND_MODE_MIX:
@@ -404,6 +410,8 @@ enum **BlendMode**:
 - **BLEND_MODE_SUB** = **2**
 
 - **BLEND_MODE_MUL** = **3**
+
+----
 
 .. _enum_SpatialMaterial_DepthDrawMode:
 
@@ -425,6 +433,8 @@ enum **DepthDrawMode**:
 
 - **DEPTH_DRAW_ALPHA_OPAQUE_PREPASS** = **3** --- For transparent objects, an opaque pass is made first with the opaque parts, then transparency is drawn.
 
+----
+
 .. _enum_SpatialMaterial_CullMode:
 
 .. _class_SpatialMaterial_constant_CULL_BACK:
@@ -440,6 +450,8 @@ enum **CullMode**:
 - **CULL_FRONT** = **1** --- The front of the object is culled when not visible.
 
 - **CULL_DISABLED** = **2** --- No culling is performed.
+
+----
 
 .. _enum_SpatialMaterial_Flags:
 
@@ -525,6 +537,8 @@ enum **Flags**:
 
 - **FLAG_MAX** = **19** --- Represents the size of the :ref:`Flags<enum_SpatialMaterial_Flags>` enum.
 
+----
+
 .. _enum_SpatialMaterial_DiffuseMode:
 
 .. _class_SpatialMaterial_constant_DIFFUSE_BURLEY:
@@ -548,6 +562,8 @@ enum **DiffuseMode**:
 - **DIFFUSE_OREN_NAYAR** = **3** --- Attempts to use roughness to emulate microsurfacing.
 
 - **DIFFUSE_TOON** = **4** --- Uses a hard cut for lighting, with smoothing affected by roughness.
+
+----
 
 .. _enum_SpatialMaterial_SpecularMode:
 
@@ -573,6 +589,8 @@ enum **SpecularMode**:
 
 - **SPECULAR_DISABLED** = **4** --- No specular blob.
 
+----
+
 .. _enum_SpatialMaterial_BillboardMode:
 
 .. _class_SpatialMaterial_constant_BILLBOARD_DISABLED:
@@ -592,6 +610,8 @@ enum **BillboardMode**:
 - **BILLBOARD_FIXED_Y** = **2** --- The object's X axis will always face the camera.
 
 - **BILLBOARD_PARTICLES** = **3** --- Used for particle systems. Enables particle animation options.
+
+----
 
 .. _enum_SpatialMaterial_TextureChannel:
 
@@ -617,6 +637,8 @@ enum **TextureChannel**:
 
 - **TEXTURE_CHANNEL_GRAYSCALE** = **4**
 
+----
+
 .. _enum_SpatialMaterial_EmissionOperator:
 
 .. _class_SpatialMaterial_constant_EMISSION_OP_ADD:
@@ -628,6 +650,8 @@ enum **EmissionOperator**:
 - **EMISSION_OP_ADD** = **0**
 
 - **EMISSION_OP_MULTIPLY** = **1**
+
+----
 
 .. _enum_SpatialMaterial_DistanceFadeMode:
 
@@ -676,6 +700,8 @@ Property Descriptions
 
 The material's base color.
 
+----
+
 .. _class_SpatialMaterial_property_albedo_texture:
 
 - :ref:`Texture<class_Texture>` **albedo_texture**
@@ -685,6 +711,8 @@ The material's base color.
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_anisotropy:
 
@@ -697,6 +725,8 @@ The material's base color.
 +----------+-----------------------+
 
 The strength of the anisotropy effect.
+
+----
 
 .. _class_SpatialMaterial_property_anisotropy_enabled:
 
@@ -712,6 +742,8 @@ The strength of the anisotropy effect.
 
 If ``true``, anisotropy is enabled. Changes the shape of the specular blob and aligns it to tangent space.
 
+----
+
 .. _class_SpatialMaterial_property_anisotropy_flowmap:
 
 - :ref:`Texture<class_Texture>` **anisotropy_flowmap**
@@ -721,6 +753,8 @@ If ``true``, anisotropy is enabled. Changes the shape of the specular blob and a
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_ao_enabled:
 
@@ -736,6 +770,8 @@ If ``true``, anisotropy is enabled. Changes the shape of the specular blob and a
 
 If ``true``, ambient occlusion is enabled.
 
+----
+
 .. _class_SpatialMaterial_property_ao_light_affect:
 
 - :ref:`float<class_float>` **ao_light_affect**
@@ -745,6 +781,8 @@ If ``true``, ambient occlusion is enabled.
 +----------+----------------------------+
 | *Getter* | get_ao_light_affect()      |
 +----------+----------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_ao_on_uv2:
 
@@ -756,6 +794,8 @@ If ``true``, ambient occlusion is enabled.
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
+----
+
 .. _class_SpatialMaterial_property_ao_texture:
 
 - :ref:`Texture<class_Texture>` **ao_texture**
@@ -765,6 +805,8 @@ If ``true``, ambient occlusion is enabled.
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_ao_texture_channel:
 
@@ -776,6 +818,8 @@ If ``true``, ambient occlusion is enabled.
 | *Getter* | get_ao_texture_channel()      |
 +----------+-------------------------------+
 
+----
+
 .. _class_SpatialMaterial_property_clearcoat:
 
 - :ref:`float<class_float>` **clearcoat**
@@ -785,6 +829,8 @@ If ``true``, ambient occlusion is enabled.
 +----------+----------------------+
 | *Getter* | get_clearcoat()      |
 +----------+----------------------+
+
+----
 
 .. _class_SpatialMaterial_property_clearcoat_enabled:
 
@@ -800,6 +846,8 @@ If ``true``, ambient occlusion is enabled.
 
 If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass to the material.
 
+----
+
 .. _class_SpatialMaterial_property_clearcoat_gloss:
 
 - :ref:`float<class_float>` **clearcoat_gloss**
@@ -809,6 +857,8 @@ If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass t
 +----------+----------------------------+
 | *Getter* | get_clearcoat_gloss()      |
 +----------+----------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_clearcoat_texture:
 
@@ -820,6 +870,8 @@ If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass t
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
+----
+
 .. _class_SpatialMaterial_property_depth_deep_parallax:
 
 - :ref:`bool<class_bool>` **depth_deep_parallax**
@@ -829,6 +881,8 @@ If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass t
 +----------+----------------------------------+
 | *Getter* | is_depth_deep_parallax_enabled() |
 +----------+----------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_depth_enabled:
 
@@ -844,6 +898,8 @@ If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass t
 
 If ``true``, depth mapping is enabled (also called "parallax mapping" or "height mapping"). See also :ref:`normal_enabled<class_SpatialMaterial_property_normal_enabled>`.
 
+----
+
 .. _class_SpatialMaterial_property_depth_flip_binormal:
 
 - :ref:`bool<class_bool>` **depth_flip_binormal**
@@ -853,6 +909,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 +----------+----------------------------------------------+
 | *Getter* | get_depth_deep_parallax_flip_binormal()      |
 +----------+----------------------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_depth_flip_tangent:
 
@@ -864,6 +922,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 | *Getter* | get_depth_deep_parallax_flip_tangent()      |
 +----------+---------------------------------------------+
 
+----
+
 .. _class_SpatialMaterial_property_depth_max_layers:
 
 - :ref:`int<class_int>` **depth_max_layers**
@@ -873,6 +933,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 +----------+-------------------------------------------+
 | *Getter* | get_depth_deep_parallax_max_layers()      |
 +----------+-------------------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_depth_min_layers:
 
@@ -884,6 +946,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 | *Getter* | get_depth_deep_parallax_min_layers()      |
 +----------+-------------------------------------------+
 
+----
+
 .. _class_SpatialMaterial_property_depth_scale:
 
 - :ref:`float<class_float>` **depth_scale**
@@ -893,6 +957,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 +----------+------------------------+
 | *Getter* | get_depth_scale()      |
 +----------+------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_depth_texture:
 
@@ -904,6 +970,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
+----
+
 .. _class_SpatialMaterial_property_detail_albedo:
 
 - :ref:`Texture<class_Texture>` **detail_albedo**
@@ -914,6 +982,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
+----
+
 .. _class_SpatialMaterial_property_detail_blend_mode:
 
 - :ref:`BlendMode<enum_SpatialMaterial_BlendMode>` **detail_blend_mode**
@@ -923,6 +993,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 +----------+------------------------------+
 | *Getter* | get_detail_blend_mode()      |
 +----------+------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_detail_enabled:
 
@@ -936,6 +1008,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 | *Getter*  | get_feature()      |
 +-----------+--------------------+
 
+----
+
 .. _class_SpatialMaterial_property_detail_mask:
 
 - :ref:`Texture<class_Texture>` **detail_mask**
@@ -945,6 +1019,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_detail_normal:
 
@@ -956,6 +1032,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
+----
+
 .. _class_SpatialMaterial_property_detail_uv_layer:
 
 - :ref:`DetailUV<enum_SpatialMaterial_DetailUV>` **detail_uv_layer**
@@ -965,6 +1043,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 +----------+----------------------+
 | *Getter* | get_detail_uv()      |
 +----------+----------------------+
+
+----
 
 .. _class_SpatialMaterial_property_distance_fade_max_distance:
 
@@ -976,6 +1056,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 | *Getter* | get_distance_fade_max_distance()      |
 +----------+---------------------------------------+
 
+----
+
 .. _class_SpatialMaterial_property_distance_fade_min_distance:
 
 - :ref:`float<class_float>` **distance_fade_min_distance**
@@ -985,6 +1067,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 +----------+---------------------------------------+
 | *Getter* | get_distance_fade_min_distance()      |
 +----------+---------------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_distance_fade_mode:
 
@@ -998,6 +1082,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 | *Getter*  | get_distance_fade()      |
 +-----------+--------------------------+
 
+----
+
 .. _class_SpatialMaterial_property_emission:
 
 - :ref:`Color<class_Color>` **emission**
@@ -1009,6 +1095,8 @@ If ``true``, depth mapping is enabled (also called "parallax mapping" or "height
 +----------+---------------------+
 
 The emitted light's color. See :ref:`emission_enabled<class_SpatialMaterial_property_emission_enabled>`.
+
+----
 
 .. _class_SpatialMaterial_property_emission_enabled:
 
@@ -1024,6 +1112,8 @@ The emitted light's color. See :ref:`emission_enabled<class_SpatialMaterial_prop
 
 If ``true``, the body emits light.
 
+----
+
 .. _class_SpatialMaterial_property_emission_energy:
 
 - :ref:`float<class_float>` **emission_energy**
@@ -1036,6 +1126,8 @@ If ``true``, the body emits light.
 
 The emitted light's strength. See :ref:`emission_enabled<class_SpatialMaterial_property_emission_enabled>`.
 
+----
+
 .. _class_SpatialMaterial_property_emission_on_uv2:
 
 - :ref:`bool<class_bool>` **emission_on_uv2**
@@ -1045,6 +1137,8 @@ The emitted light's strength. See :ref:`emission_enabled<class_SpatialMaterial_p
 +----------+-----------------+
 | *Getter* | get_flag()      |
 +----------+-----------------+
+
+----
 
 .. _class_SpatialMaterial_property_emission_operator:
 
@@ -1056,6 +1150,8 @@ The emitted light's strength. See :ref:`emission_enabled<class_SpatialMaterial_p
 | *Getter* | get_emission_operator()      |
 +----------+------------------------------+
 
+----
+
 .. _class_SpatialMaterial_property_emission_texture:
 
 - :ref:`Texture<class_Texture>` **emission_texture**
@@ -1065,6 +1161,8 @@ The emitted light's strength. See :ref:`emission_enabled<class_SpatialMaterial_p
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_flags_albedo_tex_force_srgb:
 
@@ -1077,6 +1175,8 @@ The emitted light's strength. See :ref:`emission_enabled<class_SpatialMaterial_p
 +-----------+-----------------+
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
+
+----
 
 .. _class_SpatialMaterial_property_flags_disable_ambient_light:
 
@@ -1092,6 +1192,8 @@ The emitted light's strength. See :ref:`emission_enabled<class_SpatialMaterial_p
 
 If ``true``, the object receives no ambient light.
 
+----
+
 .. _class_SpatialMaterial_property_flags_do_not_receive_shadows:
 
 - :ref:`bool<class_bool>` **flags_do_not_receive_shadows**
@@ -1106,6 +1208,8 @@ If ``true``, the object receives no ambient light.
 
 If ``true``, the object receives no shadow that would otherwise be cast onto it.
 
+----
+
 .. _class_SpatialMaterial_property_flags_ensure_correct_normals:
 
 - :ref:`bool<class_bool>` **flags_ensure_correct_normals**
@@ -1117,6 +1221,8 @@ If ``true``, the object receives no shadow that would otherwise be cast onto it.
 +-----------+-----------------+
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
+
+----
 
 .. _class_SpatialMaterial_property_flags_fixed_size:
 
@@ -1132,6 +1238,8 @@ If ``true``, the object receives no shadow that would otherwise be cast onto it.
 
 If ``true``, the object is rendered at the same size regardless of distance.
 
+----
+
 .. _class_SpatialMaterial_property_flags_no_depth_test:
 
 - :ref:`bool<class_bool>` **flags_no_depth_test**
@@ -1145,6 +1253,8 @@ If ``true``, the object is rendered at the same size regardless of distance.
 +-----------+-----------------+
 
 If ``true``, depth testing is disabled and the object will be drawn in render order.
+
+----
 
 .. _class_SpatialMaterial_property_flags_transparent:
 
@@ -1160,6 +1270,8 @@ If ``true``, depth testing is disabled and the object will be drawn in render or
 
 If ``true``, transparency is enabled on the body. See also :ref:`params_blend_mode<class_SpatialMaterial_property_params_blend_mode>`.
 
+----
+
 .. _class_SpatialMaterial_property_flags_unshaded:
 
 - :ref:`bool<class_bool>` **flags_unshaded**
@@ -1173,6 +1285,8 @@ If ``true``, transparency is enabled on the body. See also :ref:`params_blend_mo
 +-----------+-----------------+
 
 If ``true``, the object is unaffected by lighting.
+
+----
 
 .. _class_SpatialMaterial_property_flags_use_point_size:
 
@@ -1190,6 +1304,8 @@ If ``true``, render point size can be changed.
 
 **Note:** this is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`params_point_size<class_SpatialMaterial_property_params_point_size>`.
 
+----
+
 .. _class_SpatialMaterial_property_flags_use_shadow_to_opacity:
 
 - :ref:`bool<class_bool>` **flags_use_shadow_to_opacity**
@@ -1201,6 +1317,8 @@ If ``true``, render point size can be changed.
 +-----------+-----------------+
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
+
+----
 
 .. _class_SpatialMaterial_property_flags_vertex_lighting:
 
@@ -1216,6 +1334,8 @@ If ``true``, render point size can be changed.
 
 If ``true``, lighting is calculated per vertex rather than per pixel. This may increase performance on low-end devices.
 
+----
+
 .. _class_SpatialMaterial_property_flags_world_triplanar:
 
 - :ref:`bool<class_bool>` **flags_world_triplanar**
@@ -1230,6 +1350,8 @@ If ``true``, lighting is calculated per vertex rather than per pixel. This may i
 
 If ``true``, triplanar mapping is calculated in world space rather than object local space. See also :ref:`uv1_triplanar<class_SpatialMaterial_property_uv1_triplanar>`.
 
+----
+
 .. _class_SpatialMaterial_property_metallic:
 
 - :ref:`float<class_float>` **metallic**
@@ -1243,6 +1365,8 @@ If ``true``, triplanar mapping is calculated in world space rather than object l
 +-----------+---------------------+
 
 The reflectivity of the object's surface. The higher the value, the more light is reflected.
+
+----
 
 .. _class_SpatialMaterial_property_metallic_specular:
 
@@ -1260,6 +1384,8 @@ General reflectivity amount.
 
 **Note:** unlike :ref:`metallic<class_SpatialMaterial_property_metallic>`, this is not energy-conserving, so it should be left at ``0.5`` in most cases. See also :ref:`roughness<class_SpatialMaterial_property_roughness>`.
 
+----
+
 .. _class_SpatialMaterial_property_metallic_texture:
 
 - :ref:`Texture<class_Texture>` **metallic_texture**
@@ -1269,6 +1395,8 @@ General reflectivity amount.
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_metallic_texture_channel:
 
@@ -1281,6 +1409,8 @@ General reflectivity amount.
 +-----------+-------------------------------------+
 | *Getter*  | get_metallic_texture_channel()      |
 +-----------+-------------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_normal_enabled:
 
@@ -1296,6 +1426,8 @@ General reflectivity amount.
 
 If ``true``, normal mapping is enabled.
 
+----
+
 .. _class_SpatialMaterial_property_normal_scale:
 
 - :ref:`float<class_float>` **normal_scale**
@@ -1308,6 +1440,8 @@ If ``true``, normal mapping is enabled.
 
 The strength of the normal map's effect.
 
+----
+
 .. _class_SpatialMaterial_property_normal_texture:
 
 - :ref:`Texture<class_Texture>` **normal_texture**
@@ -1318,6 +1452,8 @@ The strength of the normal map's effect.
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
+----
+
 .. _class_SpatialMaterial_property_params_alpha_scissor_threshold:
 
 - :ref:`float<class_float>` **params_alpha_scissor_threshold**
@@ -1327,6 +1463,8 @@ The strength of the normal map's effect.
 +----------+------------------------------------+
 | *Getter* | get_alpha_scissor_threshold()      |
 +----------+------------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_params_billboard_keep_scale:
 
@@ -1339,6 +1477,8 @@ The strength of the normal map's effect.
 +-----------+-----------------+
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
+
+----
 
 .. _class_SpatialMaterial_property_params_billboard_mode:
 
@@ -1353,6 +1493,8 @@ The strength of the normal map's effect.
 +-----------+---------------------------+
 
 Controls how the object faces the camera. See :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>`.
+
+----
 
 .. _class_SpatialMaterial_property_params_blend_mode:
 
@@ -1370,6 +1512,8 @@ The material's blend mode.
 
 **Note:** Values other than ``Mix`` force the object into the transparent pipeline. See :ref:`BlendMode<enum_SpatialMaterial_BlendMode>`.
 
+----
+
 .. _class_SpatialMaterial_property_params_cull_mode:
 
 - :ref:`CullMode<enum_SpatialMaterial_CullMode>` **params_cull_mode**
@@ -1383,6 +1527,8 @@ The material's blend mode.
 +-----------+----------------------+
 
 Which side of the object is not drawn when backfaces are rendered. See :ref:`CullMode<enum_SpatialMaterial_CullMode>`.
+
+----
 
 .. _class_SpatialMaterial_property_params_depth_draw_mode:
 
@@ -1398,6 +1544,8 @@ Which side of the object is not drawn when backfaces are rendered. See :ref:`Cul
 
 Determines when depth rendering takes place. See :ref:`DepthDrawMode<enum_SpatialMaterial_DepthDrawMode>`. See also :ref:`flags_transparent<class_SpatialMaterial_property_flags_transparent>`.
 
+----
+
 .. _class_SpatialMaterial_property_params_diffuse_mode:
 
 - :ref:`DiffuseMode<enum_SpatialMaterial_DiffuseMode>` **params_diffuse_mode**
@@ -1411,6 +1559,8 @@ Determines when depth rendering takes place. See :ref:`DepthDrawMode<enum_Spatia
 +-----------+-------------------------+
 
 The algorithm used for diffuse light scattering. See :ref:`DiffuseMode<enum_SpatialMaterial_DiffuseMode>`.
+
+----
 
 .. _class_SpatialMaterial_property_params_grow:
 
@@ -1426,6 +1576,8 @@ The algorithm used for diffuse light scattering. See :ref:`DiffuseMode<enum_Spat
 
 If ``true``, enables the vertex grow setting. See :ref:`params_grow_amount<class_SpatialMaterial_property_params_grow_amount>`.
 
+----
+
 .. _class_SpatialMaterial_property_params_grow_amount:
 
 - :ref:`float<class_float>` **params_grow_amount**
@@ -1438,6 +1590,8 @@ If ``true``, enables the vertex grow setting. See :ref:`params_grow_amount<class
 
 Grows object vertices in the direction of their normals.
 
+----
+
 .. _class_SpatialMaterial_property_params_line_width:
 
 - :ref:`float<class_float>` **params_line_width**
@@ -1449,6 +1603,8 @@ Grows object vertices in the direction of their normals.
 +-----------+-----------------------+
 | *Getter*  | get_line_width()      |
 +-----------+-----------------------+
+
+----
 
 .. _class_SpatialMaterial_property_params_point_size:
 
@@ -1464,6 +1620,8 @@ Grows object vertices in the direction of their normals.
 
 The point size in pixels. See :ref:`flags_use_point_size<class_SpatialMaterial_property_flags_use_point_size>`.
 
+----
+
 .. _class_SpatialMaterial_property_params_specular_mode:
 
 - :ref:`SpecularMode<enum_SpatialMaterial_SpecularMode>` **params_specular_mode**
@@ -1478,6 +1636,8 @@ The point size in pixels. See :ref:`flags_use_point_size<class_SpatialMaterial_p
 
 The method for rendering the specular blob. See :ref:`SpecularMode<enum_SpatialMaterial_SpecularMode>`.
 
+----
+
 .. _class_SpatialMaterial_property_params_use_alpha_scissor:
 
 - :ref:`bool<class_bool>` **params_use_alpha_scissor**
@@ -1489,6 +1649,8 @@ The method for rendering the specular blob. See :ref:`SpecularMode<enum_SpatialM
 +-----------+-----------------+
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
+
+----
 
 .. _class_SpatialMaterial_property_particles_anim_h_frames:
 
@@ -1502,6 +1664,8 @@ The method for rendering the specular blob. See :ref:`SpecularMode<enum_SpatialM
 
 The number of horizontal frames in the particle sprite sheet. Only enabled when using :ref:`BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`. See :ref:`params_billboard_mode<class_SpatialMaterial_property_params_billboard_mode>`.
 
+----
+
 .. _class_SpatialMaterial_property_particles_anim_loop:
 
 - :ref:`bool<class_bool>` **particles_anim_loop**
@@ -1513,6 +1677,8 @@ The number of horizontal frames in the particle sprite sheet. Only enabled when 
 +----------+--------------------------------+
 
 If ``true``, particle animations are looped. Only enabled when using :ref:`BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`. See :ref:`params_billboard_mode<class_SpatialMaterial_property_params_billboard_mode>`.
+
+----
 
 .. _class_SpatialMaterial_property_particles_anim_v_frames:
 
@@ -1526,6 +1692,8 @@ If ``true``, particle animations are looped. Only enabled when using :ref:`BILLB
 
 The number of vertical frames in the particle sprite sheet. Only enabled when using :ref:`BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`. See :ref:`params_billboard_mode<class_SpatialMaterial_property_params_billboard_mode>`.
 
+----
+
 .. _class_SpatialMaterial_property_proximity_fade_distance:
 
 - :ref:`float<class_float>` **proximity_fade_distance**
@@ -1535,6 +1703,8 @@ The number of vertical frames in the particle sprite sheet. Only enabled when us
 +----------+------------------------------------+
 | *Getter* | get_proximity_fade_distance()      |
 +----------+------------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_proximity_fade_enable:
 
@@ -1550,6 +1720,8 @@ The number of vertical frames in the particle sprite sheet. Only enabled when us
 
 If ``true``, the proximity and distance fade effect is enabled.
 
+----
+
 .. _class_SpatialMaterial_property_refraction_enabled:
 
 - :ref:`bool<class_bool>` **refraction_enabled**
@@ -1564,6 +1736,8 @@ If ``true``, the proximity and distance fade effect is enabled.
 
 If ``true``, the refraction effect is enabled. Distorts transparency based on light from behind the object.
 
+----
+
 .. _class_SpatialMaterial_property_refraction_scale:
 
 - :ref:`float<class_float>` **refraction_scale**
@@ -1576,6 +1750,8 @@ If ``true``, the refraction effect is enabled. Distorts transparency based on li
 
 The strength of the refraction effect.
 
+----
+
 .. _class_SpatialMaterial_property_refraction_texture:
 
 - :ref:`Texture<class_Texture>` **refraction_texture**
@@ -1585,6 +1761,8 @@ The strength of the refraction effect.
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_refraction_texture_channel:
 
@@ -1596,6 +1774,8 @@ The strength of the refraction effect.
 | *Getter* | get_refraction_texture_channel()      |
 +----------+---------------------------------------+
 
+----
+
 .. _class_SpatialMaterial_property_rim:
 
 - :ref:`float<class_float>` **rim**
@@ -1605,6 +1785,8 @@ The strength of the refraction effect.
 +----------+----------------+
 | *Getter* | get_rim()      |
 +----------+----------------+
+
+----
 
 .. _class_SpatialMaterial_property_rim_enabled:
 
@@ -1620,6 +1802,8 @@ The strength of the refraction effect.
 
 If ``true``, rim effect is enabled.
 
+----
+
 .. _class_SpatialMaterial_property_rim_texture:
 
 - :ref:`Texture<class_Texture>` **rim_texture**
@@ -1629,6 +1813,8 @@ If ``true``, rim effect is enabled.
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_rim_tint:
 
@@ -1641,6 +1827,8 @@ If ``true``, rim effect is enabled.
 +----------+---------------------+
 
 The amount of to blend light and albedo color when rendering rim effect. If ``0`` the light color is used, while ``1`` means albedo color is used. An intermediate value generally works best.
+
+----
 
 .. _class_SpatialMaterial_property_roughness:
 
@@ -1656,6 +1844,8 @@ The amount of to blend light and albedo color when rendering rim effect. If ``0`
 
 Surface reflection. A value of ``0`` represents a perfect mirror while a value of ``1`` completely blurs the reflection. See also :ref:`metallic<class_SpatialMaterial_property_metallic>`.
 
+----
+
 .. _class_SpatialMaterial_property_roughness_texture:
 
 - :ref:`Texture<class_Texture>` **roughness_texture**
@@ -1665,6 +1855,8 @@ Surface reflection. A value of ``0`` represents a perfect mirror while a value o
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_roughness_texture_channel:
 
@@ -1677,6 +1869,8 @@ Surface reflection. A value of ``0`` represents a perfect mirror while a value o
 +-----------+--------------------------------------+
 | *Getter*  | get_roughness_texture_channel()      |
 +-----------+--------------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_subsurf_scatter_enabled:
 
@@ -1692,6 +1886,8 @@ Surface reflection. A value of ``0`` represents a perfect mirror while a value o
 
 If ``true``, subsurface scattering is enabled. Emulates light that penetrates an object's surface, is scattered, and then emerges.
 
+----
+
 .. _class_SpatialMaterial_property_subsurf_scatter_strength:
 
 - :ref:`float<class_float>` **subsurf_scatter_strength**
@@ -1704,6 +1900,8 @@ If ``true``, subsurface scattering is enabled. Emulates light that penetrates an
 
 The strength of the subsurface scattering effect.
 
+----
+
 .. _class_SpatialMaterial_property_subsurf_scatter_texture:
 
 - :ref:`Texture<class_Texture>` **subsurf_scatter_texture**
@@ -1713,6 +1911,8 @@ The strength of the subsurface scattering effect.
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_transmission:
 
@@ -1725,6 +1925,8 @@ The strength of the subsurface scattering effect.
 +----------+-------------------------+
 
 The color used by the transmission effect. Represents the light passing through an object.
+
+----
 
 .. _class_SpatialMaterial_property_transmission_enabled:
 
@@ -1740,6 +1942,8 @@ The color used by the transmission effect. Represents the light passing through 
 
 If ``true``, the transmission effect is enabled.
 
+----
+
 .. _class_SpatialMaterial_property_transmission_texture:
 
 - :ref:`Texture<class_Texture>` **transmission_texture**
@@ -1749,6 +1953,8 @@ If ``true``, the transmission effect is enabled.
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_SpatialMaterial_property_uv1_offset:
 
@@ -1762,6 +1968,8 @@ If ``true``, the transmission effect is enabled.
 | *Getter*  | get_uv1_offset()      |
 +-----------+-----------------------+
 
+----
+
 .. _class_SpatialMaterial_property_uv1_scale:
 
 - :ref:`Vector3<class_Vector3>` **uv1_scale**
@@ -1773,6 +1981,8 @@ If ``true``, the transmission effect is enabled.
 +-----------+----------------------+
 | *Getter*  | get_uv1_scale()      |
 +-----------+----------------------+
+
+----
 
 .. _class_SpatialMaterial_property_uv1_triplanar:
 
@@ -1786,6 +1996,8 @@ If ``true``, the transmission effect is enabled.
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
+----
+
 .. _class_SpatialMaterial_property_uv1_triplanar_sharpness:
 
 - :ref:`float<class_float>` **uv1_triplanar_sharpness**
@@ -1797,6 +2009,8 @@ If ``true``, the transmission effect is enabled.
 +-----------+------------------------------------------+
 | *Getter*  | get_uv1_triplanar_blend_sharpness()      |
 +-----------+------------------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_uv2_offset:
 
@@ -1810,6 +2024,8 @@ If ``true``, the transmission effect is enabled.
 | *Getter*  | get_uv2_offset()      |
 +-----------+-----------------------+
 
+----
+
 .. _class_SpatialMaterial_property_uv2_scale:
 
 - :ref:`Vector3<class_Vector3>` **uv2_scale**
@@ -1821,6 +2037,8 @@ If ``true``, the transmission effect is enabled.
 +-----------+----------------------+
 | *Getter*  | get_uv2_scale()      |
 +-----------+----------------------+
+
+----
 
 .. _class_SpatialMaterial_property_uv2_triplanar:
 
@@ -1834,6 +2052,8 @@ If ``true``, the transmission effect is enabled.
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
+----
+
 .. _class_SpatialMaterial_property_uv2_triplanar_sharpness:
 
 - :ref:`float<class_float>` **uv2_triplanar_sharpness**
@@ -1845,6 +2065,8 @@ If ``true``, the transmission effect is enabled.
 +-----------+------------------------------------------+
 | *Getter*  | get_uv2_triplanar_blend_sharpness()      |
 +-----------+------------------------------------------+
+
+----
 
 .. _class_SpatialMaterial_property_vertex_color_is_srgb:
 
@@ -1859,6 +2081,8 @@ If ``true``, the transmission effect is enabled.
 +-----------+-----------------+
 
 If ``true``, the model's vertex colors are processed as sRGB mode.
+
+----
 
 .. _class_SpatialMaterial_property_vertex_color_use_as_albedo:
 
@@ -1881,21 +2105,31 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature **)** const
 
+----
+
 .. _class_SpatialMaterial_method_get_flag:
 
 - :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag **)** const
+
+----
 
 .. _class_SpatialMaterial_method_get_texture:
 
 - :ref:`Texture<class_Texture>` **get_texture** **(** :ref:`TextureParam<enum_SpatialMaterial_TextureParam>` param **)** const
 
+----
+
 .. _class_SpatialMaterial_method_set_feature:
 
 - void **set_feature** **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature, :ref:`bool<class_bool>` enable **)**
 
+----
+
 .. _class_SpatialMaterial_method_set_flag:
 
 - void **set_flag** **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag, :ref:`bool<class_bool>` enable **)**
+
+----
 
 .. _class_SpatialMaterial_method_set_texture:
 

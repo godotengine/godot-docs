@@ -99,6 +99,8 @@ Property Descriptions
 | *Getter*  | get_bias()      |
 +-----------+-----------------+
 
+----
+
 .. _class_GIProbe_property_compress:
 
 - :ref:`bool<class_bool>` **compress**
@@ -111,6 +113,8 @@ Property Descriptions
 | *Getter*  | is_compressed()     |
 +-----------+---------------------+
 
+----
+
 .. _class_GIProbe_property_data:
 
 - :ref:`GIProbeData<class_GIProbeData>` **data**
@@ -120,6 +124,8 @@ Property Descriptions
 +----------+-----------------------+
 | *Getter* | get_probe_data()      |
 +----------+-----------------------+
+
+----
 
 .. _class_GIProbe_property_dynamic_range:
 
@@ -133,6 +139,8 @@ Property Descriptions
 | *Getter*  | get_dynamic_range()      |
 +-----------+--------------------------+
 
+----
+
 .. _class_GIProbe_property_energy:
 
 - :ref:`float<class_float>` **energy**
@@ -144,6 +152,8 @@ Property Descriptions
 +-----------+-------------------+
 | *Getter*  | get_energy()      |
 +-----------+-------------------+
+
+----
 
 .. _class_GIProbe_property_extents:
 
@@ -157,6 +167,8 @@ Property Descriptions
 | *Getter*  | get_extents()         |
 +-----------+-----------------------+
 
+----
+
 .. _class_GIProbe_property_interior:
 
 - :ref:`bool<class_bool>` **interior**
@@ -168,6 +180,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | is_interior()       |
 +-----------+---------------------+
+
+----
 
 .. _class_GIProbe_property_normal_bias:
 
@@ -181,6 +195,8 @@ Property Descriptions
 | *Getter*  | get_normal_bias()      |
 +-----------+------------------------+
 
+----
+
 .. _class_GIProbe_property_propagation:
 
 - :ref:`float<class_float>` **propagation**
@@ -192,6 +208,8 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_propagation()      |
 +-----------+------------------------+
+
+----
 
 .. _class_GIProbe_property_subdiv:
 
@@ -211,6 +229,8 @@ Method Descriptions
 .. _class_GIProbe_method_bake:
 
 - void **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
+
+----
 
 .. _class_GIProbe_method_debug_bake:
 

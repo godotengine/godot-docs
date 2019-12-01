@@ -80,6 +80,11 @@ or make it the current camera by calling:
 
     camera.make_current()
 
+By default, cameras will render all objects in their world. In 3D, cameras can use their
+:ref:`cull_mask <class_Camera_property_cull_mask>` property combined with the
+:ref:`VisualInstance's <class_VisualInstance>` :ref:`layer <class_VisualInstance_property_layers>`
+property to restrict which objects are rendered.
+
 Scale & stretching
 ------------------
 
@@ -144,20 +149,15 @@ following code:
    # Set Sprite Texture.
    $sprite.texture = tex
 
-But if you use this in _ready() or from the first frame of the :ref:`Viewport's <class_Viewport>` initialization,
+But if you use this in ``_ready()`` or from the first frame of the :ref:`Viewport's <class_Viewport>` initialization,
 you will get an empty texture because there is nothing to get as texture. You can deal with
 it using (for example):
 
 ::
 
-   # Let two frames pass to make sure the screen can be captured.
-   yield(get_tree(), "idle_frame")
-   yield(get_tree(), "idle_frame")
+   # Wait until the frame has finished before getting the texture
+   yield(VisualServer, "frame_post_draw")
    # You can get the image after this.
-
-If the returned image is empty, capture still didn't happen, wait a
-little more, as Godot's rendering API is asynchronous. For a working example of this,
-check out the `Screen Capture example <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/screen_capture>`_ in the demo projects
 
 Viewport Container
 ------------------
@@ -167,7 +167,7 @@ If the :ref:`Viewport <class_Viewport>` is a child of a :ref:`ViewportContainer 
 .. image:: img/container.png
 
 The :ref:`Viewport <class_Viewport>` will cover the area of its parent :ref:`ViewportContainer <class_viewportcontainer>` completely
-if stretch is set to true in :ref:`ViewportContainer <class_viewportcontainer>`.
+if :ref:`Stretch<class_viewportcontainer_property_stretch>` is set to ``true`` in :ref:`ViewportContainer <class_viewportcontainer>`.
 Note: The size of the :ref:`ViewportContainer <class_viewportcontainer>` cannot be smaller than the size of the :ref:`Viewport <class_Viewport>`.
 
 Rendering
@@ -180,6 +180,12 @@ You can also set the :ref:`Viewport <class_Viewport>` to use HDR, HDR is very us
 
 If you know how the :ref:`Viewport <class_Viewport>` is going to be used, you can set its Usage to either 3D or 2D. Godot will then
 restrict how the :ref:`Viewport <class_Viewport>` is drawn to in accordance with your choice; default is 3D.
+The 2D usage mode is slightly faster and uses less memory compared to the 3D one. It's a good idea to set the :ref:`Viewport <class_Viewport>`'s Usage property to 2D if your viewport doesn't render anything in 3D.
+
+.. note::
+
+    If you need to render 3D shadows in the viewport, make sure to set the viewport's *Shadow Atlas Size* property to a value higher than 0.
+    Otherwise, shadows won't be rendered. For reference, the Project Settings define it to 4096 by default.
 
 Godot also provides a way of customizing how everything is drawn inside :ref:`Viewports <class_Viewport>` using “Debug Draw”.
 Debug Draw allows you to specify one of four options for how the :ref:`Viewport <class_Viewport>` will display things drawn
@@ -203,8 +209,11 @@ Overdraw draws the meshes semi-transparent with an additive blend so you can see
 
 *The same scene with Debug Draw set to Overdraw*
 
-Lastly, Wireframe draws the scene using only the edges of triangles in the meshes. NOTE: As of
-this writing (v3.0.2), wireframe mode is not functional and currently renders the scene normally.
+Lastly, Wireframe draws the scene using only the edges of triangles in the meshes.
+
+.. note::
+
+    The effects of the Wireframe mode are only visible in the editor, not while the project is running.
 
 Render target
 -------------
@@ -228,7 +237,7 @@ and then selecting the :ref:`Viewport <class_Viewport>` you want to use.
 .. image:: img/texturepath.png
 
 Every frame, the :ref:`Viewport <class_Viewport>`'s texture is cleared away with the default clear color (or a transparent
-color if Transparent BG is set to true). This can be changed by setting Clear Mode to Never or Next Frame.
+color if :ref:`Transparent BG<class_Viewport_property_transparent_bg>` is set to ``true``). This can be changed by setting :ref:`Clear Mode<class_Viewport_property_render_target_clear_mode>` to Never or Next Frame.
 As the name implies, Never means the texture will never be cleared, while next frame will
 clear the texture on the next frame and then set itself to Never.
 

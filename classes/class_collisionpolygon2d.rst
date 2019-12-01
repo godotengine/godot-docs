@@ -70,6 +70,8 @@ Property Descriptions
 
 Collision build mode. Use one of the ``BUILD_*`` constants.
 
+----
+
 .. _class_CollisionPolygon2D_property_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
@@ -83,6 +85,8 @@ Collision build mode. Use one of the ``BUILD_*`` constants.
 +-----------+---------------------+
 
 If ``true``, no collisions will be detected.
+
+----
 
 .. _class_CollisionPolygon2D_property_one_way_collision:
 
@@ -98,6 +102,8 @@ If ``true``, no collisions will be detected.
 
 If ``true``, only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
 
+----
+
 .. _class_CollisionPolygon2D_property_one_way_collision_margin:
 
 - :ref:`float<class_float>` **one_way_collision_margin**
@@ -109,6 +115,8 @@ If ``true``, only edges that face up, relative to CollisionPolygon2D's rotation,
 +-----------+-------------------------------------+
 | *Getter*  | get_one_way_collision_margin()      |
 +-----------+-------------------------------------+
+
+----
 
 .. _class_CollisionPolygon2D_property_polygon:
 

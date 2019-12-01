@@ -193,8 +193,8 @@ current upstream ``master`` branch, you will have to update your branch by
 
 However, if you had local commits, this method will create a so-called "merge
 commit", and you will soon hear from fellow contributors that those are not
-wanted in PRs. Then how to update the branch without creating a merge commit?
-You will have to use the ``--rebase`` option, so that your local commits are
+wanted in PRs. To update the branch without creating a merge commit,
+you will have to use the ``--rebase`` option, so that your local commits are
 replayed on top of the updated upstream ``master`` branch. It will effectively
 modify the Git history of your branch, but that is for the greater good.
 
@@ -203,6 +203,26 @@ Therefore, the command that you should (almost) always use is:
 ::
 
     $ git pull --rebase upstream master
+
+
+If you have already pushed the merge commit without using ``rebase``, or 
+have made any other changes that have resulted in undesired history, you may
+use a hard reset to revert to a specific commit and try again:
+
+::
+
+    $ git reset --hard [The ID of the last desired commit]
+
+Once you have done this, you may run ``--rebase`` to merge master correctly.
+
+If you have already pushed the wrong commits to your remote branch, 
+you will have to force push by using ``git push --force``.
+
+.. warning:: ``git reset --hard`` can be a dangerous operation, especially 
+            if you have untracked or uncommitted changes. However, if 
+            you have committed changes that you reset using ``git reset --hard``, 
+            you may still be able to recover them by resetting to a commit ID 
+            found with the ``git reflog`` command.
 
 Making changes
 --------------

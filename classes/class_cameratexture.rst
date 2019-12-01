@@ -23,13 +23,15 @@ This texture gives access to the camera texture provided by a :ref:`CameraFeed<c
 Properties
 ----------
 
-+-----------------------------------------------+------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                         | :ref:`camera_feed_id<class_CameraTexture_property_camera_feed_id>`     | 0     |
-+-----------------------------------------------+------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                       | :ref:`camera_is_active<class_CameraTexture_property_camera_is_active>` | false |
-+-----------------------------------------------+------------------------------------------------------------------------+-------+
-| :ref:`FeedImage<enum_CameraServer_FeedImage>` | :ref:`which_feed<class_CameraTexture_property_which_feed>`             | 0     |
-+-----------------------------------------------+------------------------------------------------------------------------+-------+
++-----------------------------------------------+------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                         | :ref:`camera_feed_id<class_CameraTexture_property_camera_feed_id>`     | 0        |
++-----------------------------------------------+------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                       | :ref:`camera_is_active<class_CameraTexture_property_camera_is_active>` | false    |
++-----------------------------------------------+------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                         | flags                                                                  | **O:** 0 |
++-----------------------------------------------+------------------------------------------------------------------------+----------+
+| :ref:`FeedImage<enum_CameraServer_FeedImage>` | :ref:`which_feed<class_CameraTexture_property_which_feed>`             | 0        |
++-----------------------------------------------+------------------------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -48,6 +50,8 @@ Property Descriptions
 
 The ID of the :ref:`CameraFeed<class_CameraFeed>` for which we want to display the image.
 
+----
+
 .. _class_CameraTexture_property_camera_is_active:
 
 - :ref:`bool<class_bool>` **camera_is_active**
@@ -61,6 +65,8 @@ The ID of the :ref:`CameraFeed<class_CameraFeed>` for which we want to display t
 +-----------+--------------------------+
 
 Convenience property that gives access to the active property of the :ref:`CameraFeed<class_CameraFeed>`.
+
+----
 
 .. _class_CameraTexture_property_which_feed:
 

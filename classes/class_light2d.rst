@@ -88,6 +88,8 @@ enum **Mode**:
 
 - **MODE_MASK** = **3** --- The light texture of the Light2D is used as a mask, hiding or revealing parts of the screen underneath depending on the value of each pixel of the light (mask) texture.
 
+----
+
 .. _enum_Light2D_ShadowFilter:
 
 .. _class_Light2D_constant_SHADOW_FILTER_NONE:
@@ -145,6 +147,8 @@ Property Descriptions
 
 The Light2D's :ref:`Color<class_Color>`.
 
+----
+
 .. _class_Light2D_property_editor_only:
 
 - :ref:`bool<class_bool>` **editor_only**
@@ -158,6 +162,8 @@ The Light2D's :ref:`Color<class_Color>`.
 +-----------+------------------------+
 
 If ``true``, Light2D will only appear when editing the scene.
+
+----
 
 .. _class_Light2D_property_enabled:
 
@@ -173,6 +179,8 @@ If ``true``, Light2D will only appear when editing the scene.
 
 If ``true``, Light2D will emit light.
 
+----
+
 .. _class_Light2D_property_energy:
 
 - :ref:`float<class_float>` **energy**
@@ -186,6 +194,8 @@ If ``true``, Light2D will emit light.
 +-----------+-------------------+
 
 The Light2D's energy value. The larger the value, the stronger the light.
+
+----
 
 .. _class_Light2D_property_mode:
 
@@ -201,6 +211,8 @@ The Light2D's energy value. The larger the value, the stronger the light.
 
 The Light2D's mode. See ``MODE_*`` constants for values.
 
+----
+
 .. _class_Light2D_property_offset:
 
 - :ref:`Vector2<class_Vector2>` **offset**
@@ -214,6 +226,8 @@ The Light2D's mode. See ``MODE_*`` constants for values.
 +-----------+---------------------------+
 
 The offset of the Light2D's ``texture``.
+
+----
 
 .. _class_Light2D_property_range_height:
 
@@ -229,6 +243,8 @@ The offset of the Light2D's ``texture``.
 
 The height of the Light2D. Used with 2D normal mapping.
 
+----
+
 .. _class_Light2D_property_range_item_cull_mask:
 
 - :ref:`int<class_int>` **range_item_cull_mask**
@@ -242,6 +258,8 @@ The height of the Light2D. Used with 2D normal mapping.
 +-----------+---------------------------+
 
 The layer mask. Only objects with a matching mask will be affected by the Light2D.
+
+----
 
 .. _class_Light2D_property_range_layer_max:
 
@@ -257,6 +275,8 @@ The layer mask. Only objects with a matching mask will be affected by the Light2
 
 Maximum layer value of objects that are affected by the Light2D.
 
+----
+
 .. _class_Light2D_property_range_layer_min:
 
 - :ref:`int<class_int>` **range_layer_min**
@@ -270,6 +290,8 @@ Maximum layer value of objects that are affected by the Light2D.
 +-----------+----------------------------+
 
 Minimum layer value of objects that are affected by the Light2D.
+
+----
 
 .. _class_Light2D_property_range_z_max:
 
@@ -285,6 +307,8 @@ Minimum layer value of objects that are affected by the Light2D.
 
 Maximum ``z`` value of objects that are affected by the Light2D.
 
+----
+
 .. _class_Light2D_property_range_z_min:
 
 - :ref:`int<class_int>` **range_z_min**
@@ -298,6 +322,8 @@ Maximum ``z`` value of objects that are affected by the Light2D.
 +-----------+------------------------+
 
 Minimum ``z`` value of objects that are affected by the Light2D.
+
+----
 
 .. _class_Light2D_property_shadow_buffer_size:
 
@@ -313,6 +339,8 @@ Minimum ``z`` value of objects that are affected by the Light2D.
 
 Shadow buffer size.
 
+----
+
 .. _class_Light2D_property_shadow_color:
 
 - :ref:`Color<class_Color>` **shadow_color**
@@ -326,6 +354,8 @@ Shadow buffer size.
 +-----------+-------------------------+
 
 :ref:`Color<class_Color>` of shadows cast by the Light2D.
+
+----
 
 .. _class_Light2D_property_shadow_enabled:
 
@@ -341,6 +371,8 @@ Shadow buffer size.
 
 If ``true``, the Light2D will cast shadows.
 
+----
+
 .. _class_Light2D_property_shadow_filter:
 
 - :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` **shadow_filter**
@@ -354,6 +386,8 @@ If ``true``, the Light2D will cast shadows.
 +-----------+--------------------------+
 
 Shadow filter type. See :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` for possible values.
+
+----
 
 .. _class_Light2D_property_shadow_filter_smooth:
 
@@ -369,6 +403,8 @@ Shadow filter type. See :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` for possi
 
 Smoothing value for shadows.
 
+----
+
 .. _class_Light2D_property_shadow_gradient_length:
 
 - :ref:`float<class_float>` **shadow_gradient_length**
@@ -382,6 +418,8 @@ Smoothing value for shadows.
 +-----------+-----------------------------------+
 
 Smooth shadow gradient length.
+
+----
 
 .. _class_Light2D_property_shadow_item_cull_mask:
 
@@ -397,6 +435,8 @@ Smooth shadow gradient length.
 
 The shadow mask. Used with :ref:`LightOccluder2D<class_LightOccluder2D>` to cast shadows. Only occluders with a matching shadow mask will cast shadows.
 
+----
+
 .. _class_Light2D_property_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
@@ -408,6 +448,8 @@ The shadow mask. Used with :ref:`LightOccluder2D<class_LightOccluder2D>` to cast
 +----------+--------------------+
 
 :ref:`Texture<class_Texture>` used for the Light2D's appearance.
+
+----
 
 .. _class_Light2D_property_texture_scale:
 

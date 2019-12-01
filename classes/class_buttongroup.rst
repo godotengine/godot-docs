@@ -18,6 +18,13 @@ Brief Description
 
 Group of Buttons.
 
+Properties
+----------
+
++-------------------------+-------------------------+-------------+
+| :ref:`bool<class_bool>` | resource_local_to_scene | **O:** true |
++-------------------------+-------------------------+-------------+
+
 Methods
 -------
 
@@ -42,6 +49,8 @@ Method Descriptions
 - :ref:`Array<class_Array>` **get_buttons** **(** **)**
 
 Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have this as their ``ButtonGroup`` (see :ref:`BaseButton.group<class_BaseButton_property_group>`).
+
+----
 
 .. _class_ButtonGroup_method_get_pressed_button:
 

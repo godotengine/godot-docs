@@ -91,15 +91,21 @@ Method Descriptions
 
 - :ref:`Texture<class_Texture>` **get_default_texture_param** **(** :ref:`String<class_String>` param **)** const
 
+----
+
 .. _class_Shader_method_get_mode:
 
 - :ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** const
 
 Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shader_constant_MODE_CANVAS_ITEM>`, :ref:`MODE_SPATIAL<class_Shader_constant_MODE_SPATIAL>` or :ref:`MODE_PARTICLES<class_Shader_constant_MODE_PARTICLES>`
 
+----
+
 .. _class_Shader_method_has_param:
 
 - :ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_String>` name **)** const
+
+----
 
 .. _class_Shader_method_set_default_texture_param:
 

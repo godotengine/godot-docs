@@ -45,14 +45,14 @@ RIDs
 ----
 
 The key to using servers is understanding Resource ID (:ref:`RID <class_RID>`) objects. These are opaque
-handles to the sever implementation. They are allocated and freed manually. Almost every
+handles to the server implementation. They are allocated and freed manually. Almost every
 function in the servers requires RIDs to access the actual resource.
 
 Most Godot nodes and resources contain these RIDs from the servers internally, and they can
 be obtained with different functions. In fact, anything that inherits :ref:`Resource <class_Resource>`
 can be directly casted to an RID (not all resources contain an RID, though, in such cases
 the RID will be empty). In fact, resources can be passed to server APIs as RIDs. Just make
-sure to keep references to the resources ouside the server, because if the resource is erased,
+sure to keep references to the resources outside the server, because if the resource is erased,
 the internal RID is erased too.
 
 For nodes, there are many functions available:

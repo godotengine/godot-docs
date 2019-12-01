@@ -23,17 +23,19 @@ A helper node for displaying scrollable elements such as lists.
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------------------------+------+
-| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | 0    |
-+-------------------------+--------------------------------------------------------------------------------------------+------+
-| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | 0    |
-+-------------------------+--------------------------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | true |
-+-------------------------+--------------------------------------------------------------------------------------------+------+
-| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | 0    |
-+-------------------------+--------------------------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | true |
-+-------------------------+--------------------------------------------------------------------------------------------+------+
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>` | rect_clip_content                                                                          | **O:** true |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | 0           |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | 0           |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | true        |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | 0           |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | true        |
++-------------------------+--------------------------------------------------------------------------------------------+-------------+
 
 Methods
 -------
@@ -59,6 +61,8 @@ Signals
 - **scroll_ended** **(** **)**
 
 Emitted when scrolling stops.
+
+----
 
 .. _class_ScrollContainer_signal_scroll_started:
 
@@ -86,6 +90,8 @@ Property Descriptions
 | *Getter*  | get_deadzone()      |
 +-----------+---------------------+
 
+----
+
 .. _class_ScrollContainer_property_scroll_horizontal:
 
 - :ref:`int<class_int>` **scroll_horizontal**
@@ -99,6 +105,8 @@ Property Descriptions
 +-----------+---------------------+
 
 The current horizontal scroll value.
+
+----
 
 .. _class_ScrollContainer_property_scroll_horizontal_enabled:
 
@@ -114,6 +122,8 @@ The current horizontal scroll value.
 
 If ``true``, enables horizontal scrolling.
 
+----
+
 .. _class_ScrollContainer_property_scroll_vertical:
 
 - :ref:`int<class_int>` **scroll_vertical**
@@ -127,6 +137,8 @@ If ``true``, enables horizontal scrolling.
 +-----------+---------------------+
 
 The current vertical scroll value.
+
+----
 
 .. _class_ScrollContainer_property_scroll_vertical_enabled:
 
@@ -148,6 +160,8 @@ Method Descriptions
 .. _class_ScrollContainer_method_get_h_scrollbar:
 
 - :ref:`HScrollBar<class_HScrollBar>` **get_h_scrollbar** **(** **)**
+
+----
 
 .. _class_ScrollContainer_method_get_v_scrollbar:
 

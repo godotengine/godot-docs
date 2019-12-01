@@ -77,6 +77,8 @@ Property Descriptions
 
 The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``. If ``null``, uses the default viewport instead.
 
+----
+
 .. _class_CanvasLayer_property_follow_viewport_enable:
 
 - :ref:`bool<class_bool>` **follow_viewport_enable**
@@ -89,6 +91,8 @@ The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``.
 | *Getter*  | is_following_viewport()    |
 +-----------+----------------------------+
 
+----
+
 .. _class_CanvasLayer_property_follow_viewport_scale:
 
 - :ref:`float<class_float>` **follow_viewport_scale**
@@ -100,6 +104,8 @@ The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``.
 +-----------+----------------------------------+
 | *Getter*  | get_follow_viewport_scale()      |
 +-----------+----------------------------------+
+
+----
 
 .. _class_CanvasLayer_property_layer:
 
@@ -115,6 +121,8 @@ The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``.
 
 Layer index for draw order. Lower values are drawn first.
 
+----
+
 .. _class_CanvasLayer_property_offset:
 
 - :ref:`Vector2<class_Vector2>` **offset**
@@ -128,6 +136,8 @@ Layer index for draw order. Lower values are drawn first.
 +-----------+-------------------+
 
 The layer's base offset.
+
+----
 
 .. _class_CanvasLayer_property_rotation:
 
@@ -143,6 +153,8 @@ The layer's base offset.
 
 The layer's rotation in radians.
 
+----
+
 .. _class_CanvasLayer_property_rotation_degrees:
 
 - :ref:`float<class_float>` **rotation_degrees**
@@ -157,6 +169,8 @@ The layer's rotation in radians.
 
 The layer's rotation in degrees.
 
+----
+
 .. _class_CanvasLayer_property_scale:
 
 - :ref:`Vector2<class_Vector2>` **scale**
@@ -170,6 +184,8 @@ The layer's rotation in degrees.
 +-----------+------------------+
 
 The layer's scale.
+
+----
 
 .. _class_CanvasLayer_property_transform:
 

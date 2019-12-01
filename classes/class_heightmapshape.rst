@@ -51,6 +51,8 @@ Property Descriptions
 
 Height map data, pool array must be of :ref:`map_width<class_HeightMapShape_property_map_width>` \* :ref:`map_depth<class_HeightMapShape_property_map_depth>` size.
 
+----
+
 .. _class_HeightMapShape_property_map_depth:
 
 - :ref:`int<class_int>` **map_depth**
@@ -64,6 +66,8 @@ Height map data, pool array must be of :ref:`map_width<class_HeightMapShape_prop
 +-----------+----------------------+
 
 Depth of the height map data. Changing this will resize the :ref:`map_data<class_HeightMapShape_property_map_data>`.
+
+----
 
 .. _class_HeightMapShape_property_map_width:
 

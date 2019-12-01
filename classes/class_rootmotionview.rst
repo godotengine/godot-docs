@@ -46,6 +46,8 @@ Property Descriptions
 | *Getter* | get_animation_path()      |
 +----------+---------------------------+
 
+----
+
 .. _class_RootMotionView_property_cell_size:
 
 - :ref:`float<class_float>` **cell_size**
@@ -55,6 +57,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_cell_size()      |
 +----------+----------------------+
+
+----
 
 .. _class_RootMotionView_property_color:
 
@@ -66,6 +70,8 @@ Property Descriptions
 | *Getter* | get_color()      |
 +----------+------------------+
 
+----
+
 .. _class_RootMotionView_property_radius:
 
 - :ref:`float<class_float>` **radius**
@@ -75,6 +81,8 @@ Property Descriptions
 +----------+-------------------+
 | *Getter* | get_radius()      |
 +----------+-------------------+
+
+----
 
 .. _class_RootMotionView_property_zero_y:
 

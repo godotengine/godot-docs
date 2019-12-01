@@ -38,13 +38,19 @@ Method Descriptions
 
 - void **clear_current** **(** **)**
 
+----
+
 .. _class_Listener_method_get_listener_transform:
 
 - :ref:`Transform<class_Transform>` **get_listener_transform** **(** **)** const
 
+----
+
 .. _class_Listener_method_is_current:
 
 - :ref:`bool<class_bool>` **is_current** **(** **)** const
+
+----
 
 .. _class_Listener_method_make_current:
 

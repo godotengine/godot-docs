@@ -49,6 +49,8 @@ Property Descriptions
 
 The cylinder's height.
 
+----
+
 .. _class_CylinderShape_property_radius:
 
 - :ref:`float<class_float>` **radius**

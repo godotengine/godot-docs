@@ -50,15 +50,21 @@ Signals
 
 Emitted if the filesystem changed.
 
+----
+
 .. _class_EditorFileSystem_signal_resources_reimported:
 
 - **resources_reimported** **(** :ref:`PoolStringArray<class_PoolStringArray>` resources **)**
 
 Remitted if a resource is reimported.
 
+----
+
 .. _class_EditorFileSystem_signal_resources_reload:
 
 - **resources_reload** **(** :ref:`PoolStringArray<class_PoolStringArray>` resources **)**
+
+----
 
 .. _class_EditorFileSystem_signal_sources_changed:
 
@@ -80,11 +86,15 @@ Method Descriptions
 
 Gets the type of the file, given the full path.
 
+----
+
 .. _class_EditorFileSystem_method_get_filesystem:
 
 - :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_filesystem** **(** **)**
 
 Gets the root directory object.
+
+----
 
 .. _class_EditorFileSystem_method_get_filesystem_path:
 
@@ -92,11 +102,15 @@ Gets the root directory object.
 
 Returns a view into the filesystem at ``path``.
 
+----
+
 .. _class_EditorFileSystem_method_get_scanning_progress:
 
 - :ref:`float<class_float>` **get_scanning_progress** **(** **)** const
 
 Returns the scan progress for 0 to 1 if the FS is being scanned.
+
+----
 
 .. _class_EditorFileSystem_method_is_scanning:
 
@@ -104,11 +118,15 @@ Returns the scan progress for 0 to 1 if the FS is being scanned.
 
 Returns ``true`` of the filesystem is being scanned.
 
+----
+
 .. _class_EditorFileSystem_method_scan:
 
 - void **scan** **(** **)**
 
 Scan the filesystem for changes.
+
+----
 
 .. _class_EditorFileSystem_method_scan_sources:
 
@@ -116,11 +134,15 @@ Scan the filesystem for changes.
 
 Check if the source of any imported resource changed.
 
+----
+
 .. _class_EditorFileSystem_method_update_file:
 
 - void **update_file** **(** :ref:`String<class_String>` path **)**
 
 Update a file information. Call this if an external program (not Godot) modified the file.
+
+----
 
 .. _class_EditorFileSystem_method_update_script_classes:
 

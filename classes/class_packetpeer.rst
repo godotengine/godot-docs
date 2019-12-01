@@ -79,17 +79,23 @@ Method Descriptions
 
 Returns the number of packets currently available in the ring-buffer.
 
+----
+
 .. _class_PacketPeer_method_get_packet:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **get_packet** **(** **)**
 
 Gets a raw packet.
 
+----
+
 .. _class_PacketPeer_method_get_packet_error:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **get_packet_error** **(** **)** const
 
 Returns the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_method_get_packet>` and :ref:`get_var<class_PacketPeer_method_get_var>`).
+
+----
 
 .. _class_PacketPeer_method_get_var:
 
@@ -99,11 +105,15 @@ Gets a Variant. If ``allow_objects`` (or :ref:`allow_object_decoding<class_Packe
 
 **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
+----
+
 .. _class_PacketPeer_method_put_packet:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **put_packet** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Sends a raw packet.
+
+----
 
 .. _class_PacketPeer_method_put_var:
 

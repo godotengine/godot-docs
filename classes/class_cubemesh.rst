@@ -55,6 +55,8 @@ Property Descriptions
 
 Size of the cuboid mesh.
 
+----
+
 .. _class_CubeMesh_property_subdivide_depth:
 
 - :ref:`int<class_int>` **subdivide_depth**
@@ -69,6 +71,8 @@ Size of the cuboid mesh.
 
 Number of extra edge loops inserted along the Z axis.
 
+----
+
 .. _class_CubeMesh_property_subdivide_height:
 
 - :ref:`int<class_int>` **subdivide_height**
@@ -82,6 +86,8 @@ Number of extra edge loops inserted along the Z axis.
 +-----------+-----------------------------+
 
 Number of extra edge loops inserted along the Y axis.
+
+----
 
 .. _class_CubeMesh_property_subdivide_width:
 

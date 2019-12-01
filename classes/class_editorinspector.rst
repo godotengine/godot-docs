@@ -18,6 +18,13 @@ Brief Description
 
 
 
+Properties
+----------
+
++-------------------------+---------------------------+--------------+
+| :ref:`bool<class_bool>` | scroll_horizontal_enabled | **O:** false |
++-------------------------+---------------------------+--------------+
+
 Methods
 -------
 
@@ -32,25 +39,37 @@ Signals
 
 - **object_id_selected** **(** :ref:`int<class_int>` id **)**
 
+----
+
 .. _class_EditorInspector_signal_property_edited:
 
 - **property_edited** **(** :ref:`String<class_String>` property **)**
+
+----
 
 .. _class_EditorInspector_signal_property_keyed:
 
 - **property_keyed** **(** :ref:`String<class_String>` property **)**
 
+----
+
 .. _class_EditorInspector_signal_property_selected:
 
 - **property_selected** **(** :ref:`String<class_String>` property **)**
+
+----
 
 .. _class_EditorInspector_signal_property_toggled:
 
 - **property_toggled** **(** :ref:`String<class_String>` property, :ref:`bool<class_bool>` checked **)**
 
+----
+
 .. _class_EditorInspector_signal_resource_selected:
 
 - **resource_selected** **(** :ref:`Object<class_Object>` res, :ref:`String<class_String>` prop **)**
+
+----
 
 .. _class_EditorInspector_signal_restart_requested:
 

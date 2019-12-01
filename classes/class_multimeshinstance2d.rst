@@ -58,6 +58,8 @@ Property Descriptions
 
 The :ref:`MultiMesh<class_MultiMesh>` that will be drawn by the ``MultiMeshInstance2D``.
 
+----
+
 .. _class_MultiMeshInstance2D_property_normal_map:
 
 - :ref:`Texture<class_Texture>` **normal_map**
@@ -69,6 +71,8 @@ The :ref:`MultiMesh<class_MultiMesh>` that will be drawn by the ``MultiMeshInsta
 +----------+-----------------------+
 
 The normal map that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`.
+
+----
 
 .. _class_MultiMeshInstance2D_property_texture:
 

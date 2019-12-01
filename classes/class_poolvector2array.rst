@@ -26,6 +26,8 @@ Methods
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`append_array<class_PoolVector2Array_method_append_array>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` array **)** |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`empty<class_PoolVector2Array_method_empty>` **(** **)**                                                                     |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`insert<class_PoolVector2Array_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` vector2 **)**  |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`invert<class_PoolVector2Array_method_invert>` **(** **)**                                                                   |
@@ -57,11 +59,15 @@ Method Descriptions
 
 Constructs a new ``PoolVector2Array``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
+----
+
 .. _class_PoolVector2Array_method_append:
 
 - void **append** **(** :ref:`Vector2<class_Vector2>` vector2 **)**
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_PoolVector2Array_method_push_back>`).
+
+----
 
 .. _class_PoolVector2Array_method_append_array:
 
@@ -69,11 +75,23 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_PoolV
 
 Appends a ``PoolVector2Array`` at the end of this array.
 
+----
+
+.. _class_PoolVector2Array_method_empty:
+
+- :ref:`bool<class_bool>` **empty** **(** **)**
+
+Returns ``true`` if the array is empty.
+
+----
+
 .. _class_PoolVector2Array_method_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` vector2 **)**
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+
+----
 
 .. _class_PoolVector2Array_method_invert:
 
@@ -81,11 +99,15 @@ Inserts a new element at a given position in the array. The position must be val
 
 Reverses the order of the elements in the array.
 
+----
+
 .. _class_PoolVector2Array_method_push_back:
 
 - void **push_back** **(** :ref:`Vector2<class_Vector2>` vector2 **)**
 
 Inserts a :ref:`Vector2<class_Vector2>` at the end.
+
+----
 
 .. _class_PoolVector2Array_method_remove:
 
@@ -93,17 +115,23 @@ Inserts a :ref:`Vector2<class_Vector2>` at the end.
 
 Removes an element from the array by index.
 
+----
+
 .. _class_PoolVector2Array_method_resize:
 
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
+----
+
 .. _class_PoolVector2Array_method_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` vector2 **)**
 
 Changes the :ref:`Vector2<class_Vector2>` at the given index.
+
+----
 
 .. _class_PoolVector2Array_method_size:
 

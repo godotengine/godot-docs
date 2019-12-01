@@ -42,7 +42,7 @@ Maybe REST
 ----------
 
 Most of these APIs allow communication via REST/JSON APIs. If the API is relatively simple and does not require
-complex authenthication, this may be a better idea than writing a specific Android plugin.
+complex authentication, this may be a better idea than writing a specific Android plugin.
 
 Godot has great support for HTTP, HTTPS and JSON, so an API implemented this way
 will work on every platform, too. 
@@ -52,7 +52,7 @@ Of course, in most of the cases, it's easier to just write an Android plugin, so
 Android plugin
 --------------
 
-Writing an Android plugin is now possible begining Godot 3.2. It's also pretty easy! Re-compiling the engine is no longer needed.
+Writing an Android plugin is now possible, beginning with Godot 3.2. It's also pretty easy! Re-compiling the engine is no longer needed.
 
 Before anything, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
 
@@ -60,7 +60,7 @@ Your plugin needs to be in a folder other than *"build/"* inside the *"res://and
 
 Once created, there are certain rules to follow, but they are simple.
 
-Android Directories
+Android directories
 ^^^^^^^^^^^^^^^^^^^
 
 Inside your plugin folder, you can use the standard folders as if they were from an Android Gradle project. Examples of this are:
@@ -174,6 +174,7 @@ A singleton object template follows:
 
     import android.app.Activity;
     import android.content.Intent;
+    import android.content.Context;
     import com.godot.game.R;
     import javax.microedition.khronos.opengles.GL10;
 
@@ -181,11 +182,12 @@ A singleton object template follows:
 
         protected Activity appActivity;
         protected Context appContext;
+        private Godot activity = null;
         private int instanceId = 0;
 
-        public int myFunction(String p_str) {
+        public String myFunction(String p_str) {
             // A function to bind.
-            return 1;
+            return "Hello " + p_str;
         }
 
         public void getInstanceId(int pInstanceId) {
@@ -208,7 +210,8 @@ A singleton object template follows:
             this.appContext = appActivity.getApplicationContext();
             // You might want to try initializing your singleton here, but android
             // threads are weird and this runs in another thread, so to interact with Godot you usually have to do.
-            activity.runOnUiThread(new Runnable() {
+            this.activity = (Godot)p_activity;
+            this.activity.runOnUiThread(new Runnable() {
                     public void run() {
                         // Useful way to get config info from "project.godot".
                         String key = GodotLib.getGlobal("plugin/api_key");
@@ -250,6 +253,22 @@ Java will most likely run in a separate thread, so calls are deferred:
 
 Godot will detect this singleton and initialize it at the proper time.
 
+Using it from GDScript
+^^^^^^^^^^^^^^^^^^^^^^
+
+First you will need to add your singleton into the android modules to be loaded. Go to "Project > Project Settings".
+Then on the tab "General" go to the "Android" section, and fill the Modules part with your module name. 
+The module should include the full Java path. For our example: ``org/godotengine/godot/MySingleton``.
+
+.. image:: img/android_modules.png
+
+Then, from your script:
+
+.. code::
+
+    if Engine.has_singleton("MySingleton"):
+        var singleton = Engine.get_singleton("MySingleton")
+        print(singleton.myFunction("World"))
 
 Troubleshooting
 ---------------

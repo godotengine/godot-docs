@@ -19,7 +19,7 @@ This guide will get you started with UI design. You will learn:
 -  How to work with the anchor of UI elements
 -  How to efficiently place and arrange your user interface using
    containers
--  The five most common containers (at a later time, you can learn more about containers in
+-  The five most common containers (you can learn more about containers in
    the :ref:`GUI Containers <doc_gui_containers>` documentation page).
 
 To learn how to control the interface and connect it to other scripts,

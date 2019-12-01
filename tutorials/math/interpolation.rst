@@ -23,8 +23,6 @@ And often simplified to:
 
     interpolation = A + (B - A) * t
 
-which is exactly the same.
-
 The name of this type of interpolation, which transforms a value into another at *constant speed* is *"linear"*. So, when you hear about *Linear Interpolation*, you know they are referring to this simple formula.
 
 There are other types of interpolations, which will not be covered here. A recommended read afterwards is the :ref:`Bezier <doc_beziers_and_curves>` page.

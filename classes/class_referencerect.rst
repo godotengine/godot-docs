@@ -49,6 +49,8 @@ Property Descriptions
 
 Sets the border :ref:`Color<class_Color>` of the ``ReferenceRect``.
 
+----
+
 .. _class_ReferenceRect_property_editor_only:
 
 - :ref:`bool<class_bool>` **editor_only**

@@ -65,6 +65,8 @@ Property Descriptions
 | *Getter*  | get_base_type()      |
 +-----------+----------------------+
 
+----
+
 .. _class_VisualScriptYieldSignal_property_call_mode:
 
 - :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **call_mode**
@@ -77,6 +79,8 @@ Property Descriptions
 | *Getter*  | get_call_mode()      |
 +-----------+----------------------+
 
+----
+
 .. _class_VisualScriptYieldSignal_property_node_path:
 
 - :ref:`NodePath<class_NodePath>` **node_path**
@@ -86,6 +90,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_base_path()      |
 +----------+----------------------+
+
+----
 
 .. _class_VisualScriptYieldSignal_property_signal:
 

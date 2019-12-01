@@ -86,11 +86,15 @@ Method Descriptions
 
 Generates a pseudo-random float between ``0.0`` and ``1.0`` (inclusive).
 
+----
+
 .. _class_RandomNumberGenerator_method_randf_range:
 
 - :ref:`float<class_float>` **randf_range** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
 
 Generates a pseudo-random float between ``from`` and ``to`` (inclusive).
+
+----
 
 .. _class_RandomNumberGenerator_method_randfn:
 
@@ -98,17 +102,23 @@ Generates a pseudo-random float between ``from`` and ``to`` (inclusive).
 
 Generates a `normally-distributed <https://en.wikipedia.org/wiki/Normal_distribution>`_ pseudo-random number, using Box-Muller transform with the specified ``mean`` and a standard ``deviation``. This is also called Gaussian distribution.
 
+----
+
 .. _class_RandomNumberGenerator_method_randi:
 
 - :ref:`int<class_int>` **randi** **(** **)**
 
 Generates a pseudo-random 32-bit unsigned integer between ``0`` and ``4294967295`` (inclusive).
 
+----
+
 .. _class_RandomNumberGenerator_method_randi_range:
 
 - :ref:`int<class_int>` **randi_range** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
 
 Generates a pseudo-random 32-bit signed integer between ``from`` and ``to`` (inclusive).
+
+----
 
 .. _class_RandomNumberGenerator_method_randomize:
 

@@ -24,6 +24,8 @@ Properties
 +-------------------------------+--------------------------------------------------------------+-----------------+
 | :ref:`Texture<class_Texture>` | :ref:`base_texture<class_MeshTexture_property_base_texture>` |                 |
 +-------------------------------+--------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`         | flags                                                        | **O:** 0        |
++-------------------------------+--------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`image_size<class_MeshTexture_property_image_size>`     | Vector2( 0, 0 ) |
 +-------------------------------+--------------------------------------------------------------+-----------------+
 | :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshTexture_property_mesh>`                 |                 |
@@ -49,6 +51,8 @@ Property Descriptions
 
 Sets the base texture that the Mesh will use to draw.
 
+----
+
 .. _class_MeshTexture_property_image_size:
 
 - :ref:`Vector2<class_Vector2>` **image_size**
@@ -62,6 +66,8 @@ Sets the base texture that the Mesh will use to draw.
 +-----------+-----------------------+
 
 Sets the size of the image, needed for reference.
+
+----
 
 .. _class_MeshTexture_property_mesh:
 

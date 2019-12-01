@@ -94,9 +94,8 @@ The HTTP classes have several restrictions on the HTML5 platform:
 Exported ``.html`` file must not be reused
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On export, several text placeholders are replaced in the **generated HTML
-file** specifically for the given export options. It must not be reused in
-further exports.
+Each project must generate their own HTML file. On export, several text placeholders are replaced in the **generated HTML
+file** specifically for the given export options. Any direct modifications to the **generated HTML file** will be lost in future exports. To customize the generated file, see :ref:`doc_customizing_html5_shell`.
 
 Boot splash is not displayed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

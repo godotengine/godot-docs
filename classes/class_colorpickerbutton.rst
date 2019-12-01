@@ -26,6 +26,8 @@ Properties
 +---------------------------+----------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_property_edit_alpha>` | true                |
 +---------------------------+----------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`   | toggle_mode                                                    | **O:** true         |
++---------------------------+----------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -74,6 +76,14 @@ Signals
 
 Emitted when the color changes.
 
+----
+
+.. _class_ColorPickerButton_signal_picker_created:
+
+- **picker_created** **(** **)**
+
+----
+
 .. _class_ColorPickerButton_signal_popup_closed:
 
 - **popup_closed** **(** **)**
@@ -100,6 +110,8 @@ Property Descriptions
 
 The currently selected color.
 
+----
+
 .. _class_ColorPickerButton_property_edit_alpha:
 
 - :ref:`bool<class_bool>` **edit_alpha**
@@ -122,6 +134,8 @@ Method Descriptions
 - :ref:`ColorPicker<class_ColorPicker>` **get_picker** **(** **)**
 
 Returns the :ref:`ColorPicker<class_ColorPicker>` that this node toggles.
+
+----
 
 .. _class_ColorPickerButton_method_get_popup:
 

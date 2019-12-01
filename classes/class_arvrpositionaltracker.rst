@@ -104,11 +104,15 @@ Method Descriptions
 
 Returns the hand holding this tracker, if known. See ``TRACKER_*`` constants.
 
+----
+
 .. _class_ARVRPositionalTracker_method_get_joy_id:
 
 - :ref:`int<class_int>` **get_joy_id** **(** **)** const
 
 If this is a controller that is being tracked, the controller will also be represented by a joystick entry with this ID.
+
+----
 
 .. _class_ARVRPositionalTracker_method_get_mesh:
 
@@ -116,11 +120,15 @@ If this is a controller that is being tracked, the controller will also be repre
 
 Returns the mesh related to a controller or anchor point if one is available.
 
+----
+
 .. _class_ARVRPositionalTracker_method_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
 Returns the controller or anchor point's name if available.
+
+----
 
 .. _class_ARVRPositionalTracker_method_get_orientation:
 
@@ -128,11 +136,15 @@ Returns the controller or anchor point's name if available.
 
 Returns the controller's orientation matrix.
 
+----
+
 .. _class_ARVRPositionalTracker_method_get_position:
 
 - :ref:`Vector3<class_Vector3>` **get_position** **(** **)** const
 
 Returns the world-space controller position.
+
+----
 
 .. _class_ARVRPositionalTracker_method_get_tracks_orientation:
 
@@ -140,17 +152,23 @@ Returns the world-space controller position.
 
 Returns ``true`` if this device tracks orientation.
 
+----
+
 .. _class_ARVRPositionalTracker_method_get_tracks_position:
 
 - :ref:`bool<class_bool>` **get_tracks_position** **(** **)** const
 
 Returns ``true`` if this device tracks position.
 
+----
+
 .. _class_ARVRPositionalTracker_method_get_transform:
 
 - :ref:`Transform<class_Transform>` **get_transform** **(** :ref:`bool<class_bool>` adjust_by_reference_frame **)** const
 
 Returns the transform combining this device's orientation and position.
+
+----
 
 .. _class_ARVRPositionalTracker_method_get_type:
 

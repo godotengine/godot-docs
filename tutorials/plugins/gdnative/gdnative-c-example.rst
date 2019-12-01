@@ -429,7 +429,7 @@ globally will be accessible from any instance of your object you create. If
 time a script accesses the library.
 
 If *Singleton* is enabled, our library is automatically loaded and a function
-called ``godot_singleton_init`` is called. We'll leave that for another
+called ``godot_gdnative_singleton`` is called. We'll leave that for another
 tutorial.
 
 The *Symbol Prefix* is a prefix for our core functions, such as ``godot_`` in

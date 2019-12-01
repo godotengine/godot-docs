@@ -59,6 +59,8 @@ Property Descriptions
 | *Getter*  | is_collide_with_areas_enabled() |
 +-----------+---------------------------------+
 
+----
+
 .. _class_PhysicsShapeQueryParameters_property_collide_with_bodies:
 
 - :ref:`bool<class_bool>` **collide_with_bodies**
@@ -70,6 +72,8 @@ Property Descriptions
 +-----------+----------------------------------+
 | *Getter*  | is_collide_with_bodies_enabled() |
 +-----------+----------------------------------+
+
+----
 
 .. _class_PhysicsShapeQueryParameters_property_collision_mask:
 
@@ -83,6 +87,8 @@ Property Descriptions
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
+----
+
 .. _class_PhysicsShapeQueryParameters_property_exclude:
 
 - :ref:`Array<class_Array>` **exclude**
@@ -94,6 +100,8 @@ Property Descriptions
 +-----------+--------------------+
 | *Getter*  | get_exclude()      |
 +-----------+--------------------+
+
+----
 
 .. _class_PhysicsShapeQueryParameters_property_margin:
 
@@ -107,6 +115,8 @@ Property Descriptions
 | *Getter*  | get_margin()      |
 +-----------+-------------------+
 
+----
+
 .. _class_PhysicsShapeQueryParameters_property_shape_rid:
 
 - :ref:`RID<class_RID>` **shape_rid**
@@ -116,6 +126,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_shape_rid()      |
 +----------+----------------------+
+
+----
 
 .. _class_PhysicsShapeQueryParameters_property_transform:
 

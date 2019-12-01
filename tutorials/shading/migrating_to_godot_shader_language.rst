@@ -151,8 +151,8 @@ In order to make writing fragment shaders straightforward and easy, Shadertoy ha
 of helpful information from the main program into the fragment shader for you. A few of these
 have no equivalents in Godot because Godot has chosen not to make them available by default.
 This is okay because Godot gives you the ability to make your own uniforms. For variables whose
-equivalents are listed as "Provide with Uniform", the user is responsible for creating that
-uniform themself. The description gives the reader a hint about what they can pass in as a substitute.
+equivalents are listed as "Provide with Uniform", users are responsible for creating that
+uniform themselves. The description gives the reader a hint about what they can pass in as a substitute.
 
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |Variable             |Type     |Equivalent              |Description                                          |

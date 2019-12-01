@@ -62,6 +62,8 @@ enum **BlendMode**:
 
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
 
+----
+
 .. _enum_CanvasItemMaterial_LightMode:
 
 .. _class_CanvasItemMaterial_constant_LIGHT_MODE_NORMAL:
@@ -100,6 +102,8 @@ Property Descriptions
 
 The manner in which a material's rendering is applied to underlying textures.
 
+----
+
 .. _class_CanvasItemMaterial_property_light_mode:
 
 - :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **light_mode**
@@ -114,6 +118,8 @@ The manner in which a material's rendering is applied to underlying textures.
 
 The manner in which material reacts to lighting.
 
+----
+
 .. _class_CanvasItemMaterial_property_particles_anim_h_frames:
 
 - :ref:`int<class_int>` **particles_anim_h_frames**
@@ -123,6 +129,8 @@ The manner in which material reacts to lighting.
 +----------+------------------------------------+
 | *Getter* | get_particles_anim_h_frames()      |
 +----------+------------------------------------+
+
+----
 
 .. _class_CanvasItemMaterial_property_particles_anim_loop:
 
@@ -134,6 +142,8 @@ The manner in which material reacts to lighting.
 | *Getter* | get_particles_anim_loop()      |
 +----------+--------------------------------+
 
+----
+
 .. _class_CanvasItemMaterial_property_particles_anim_v_frames:
 
 - :ref:`int<class_int>` **particles_anim_v_frames**
@@ -143,6 +153,8 @@ The manner in which material reacts to lighting.
 +----------+------------------------------------+
 | *Getter* | get_particles_anim_v_frames()      |
 +----------+------------------------------------+
+
+----
 
 .. _class_CanvasItemMaterial_property_particles_animation:
 

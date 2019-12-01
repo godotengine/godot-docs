@@ -342,9 +342,9 @@ The network master of a node is the peer that has the ultimate authority over it
 When not explicitly set, the network master is inherited from the parent node, which if not changed, is always going to be the server (ID 1). Thus the server has authority over all nodes by default.
 
 The network master can be set
-with the function :ref:`Node.set_network_master(id, recursive) <class_Node_method_set_network_master>` (recursive is true by default and means the network master is recursively set on all child nodes of the node as well).
+with the function :ref:`Node.set_network_master(id, recursive) <class_Node_method_set_network_master>` (recursive is ``true`` by default and means the network master is recursively set on all child nodes of the node as well).
 
-Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling :ref:`Node.is_network_master() <class_Node_method_is_network_master>`. This will return true when executed on the server and false on all client peers.
+Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling :ref:`Node.is_network_master() <class_Node_method_is_network_master>`. This will return ``true`` when executed on the server and ``false`` on all client peers.
 
 If you have paid attention to the previous example, it's possible you noticed that each peer was set to have network master authority for their own player (Node) instead of the server:
 

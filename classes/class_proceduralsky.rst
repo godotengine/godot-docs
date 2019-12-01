@@ -110,6 +110,8 @@ Property Descriptions
 
 Color of the ground at the bottom.
 
+----
+
 .. _class_ProceduralSky_property_ground_curve:
 
 - :ref:`float<class_float>` **ground_curve**
@@ -123,6 +125,8 @@ Color of the ground at the bottom.
 +-----------+-------------------------+
 
 How quickly the :ref:`ground_horizon_color<class_ProceduralSky_property_ground_horizon_color>` fades into the :ref:`ground_bottom_color<class_ProceduralSky_property_ground_bottom_color>`.
+
+----
 
 .. _class_ProceduralSky_property_ground_energy:
 
@@ -138,6 +142,8 @@ How quickly the :ref:`ground_horizon_color<class_ProceduralSky_property_ground_h
 
 Amount of energy contribution from the ground.
 
+----
+
 .. _class_ProceduralSky_property_ground_horizon_color:
 
 - :ref:`Color<class_Color>` **ground_horizon_color**
@@ -151,6 +157,8 @@ Amount of energy contribution from the ground.
 +-----------+------------------------------------------+
 
 Color of the ground at the horizon.
+
+----
 
 .. _class_ProceduralSky_property_sky_curve:
 
@@ -166,6 +174,8 @@ Color of the ground at the horizon.
 
 How quickly the :ref:`sky_horizon_color<class_ProceduralSky_property_sky_horizon_color>` fades into the :ref:`sky_top_color<class_ProceduralSky_property_sky_top_color>`.
 
+----
+
 .. _class_ProceduralSky_property_sky_energy:
 
 - :ref:`float<class_float>` **sky_energy**
@@ -179,6 +189,8 @@ How quickly the :ref:`sky_horizon_color<class_ProceduralSky_property_sky_horizon
 +-----------+-----------------------+
 
 Amount of energy contribution from the sky.
+
+----
 
 .. _class_ProceduralSky_property_sky_horizon_color:
 
@@ -194,6 +206,8 @@ Amount of energy contribution from the sky.
 
 Color of the sky at the horizon.
 
+----
+
 .. _class_ProceduralSky_property_sky_top_color:
 
 - :ref:`Color<class_Color>` **sky_top_color**
@@ -207,6 +221,8 @@ Color of the sky at the horizon.
 +-----------+------------------------------------------+
 
 Color of the sky at the top.
+
+----
 
 .. _class_ProceduralSky_property_sun_angle_max:
 
@@ -222,6 +238,8 @@ Color of the sky at the top.
 
 Distance from center of sun where it fades out completely.
 
+----
+
 .. _class_ProceduralSky_property_sun_angle_min:
 
 - :ref:`float<class_float>` **sun_angle_min**
@@ -235,6 +253,8 @@ Distance from center of sun where it fades out completely.
 +-----------+--------------------------+
 
 Distance from sun where it goes from solid to starting to fade.
+
+----
 
 .. _class_ProceduralSky_property_sun_color:
 
@@ -250,6 +270,8 @@ Distance from sun where it goes from solid to starting to fade.
 
 The sun's color.
 
+----
+
 .. _class_ProceduralSky_property_sun_curve:
 
 - :ref:`float<class_float>` **sun_curve**
@@ -263,6 +285,8 @@ The sun's color.
 +-----------+----------------------+
 
 How quickly the sun fades away between :ref:`sun_angle_min<class_ProceduralSky_property_sun_angle_min>` and :ref:`sun_angle_max<class_ProceduralSky_property_sun_angle_max>`.
+
+----
 
 .. _class_ProceduralSky_property_sun_energy:
 
@@ -278,6 +302,8 @@ How quickly the sun fades away between :ref:`sun_angle_min<class_ProceduralSky_p
 
 Amount of energy contribution from the sun.
 
+----
+
 .. _class_ProceduralSky_property_sun_latitude:
 
 - :ref:`float<class_float>` **sun_latitude**
@@ -292,6 +318,8 @@ Amount of energy contribution from the sun.
 
 The sun's height using polar coordinates.
 
+----
+
 .. _class_ProceduralSky_property_sun_longitude:
 
 - :ref:`float<class_float>` **sun_longitude**
@@ -305,6 +333,8 @@ The sun's height using polar coordinates.
 +-----------+--------------------------+
 
 The direction of the sun using polar coordinates.
+
+----
 
 .. _class_ProceduralSky_property_texture_size:
 

@@ -53,6 +53,8 @@ Property Descriptions
 
 The text inside the comment node.
 
+----
+
 .. _class_VisualScriptComment_property_size:
 
 - :ref:`Vector2<class_Vector2>` **size**
@@ -66,6 +68,8 @@ The text inside the comment node.
 +-----------+---------------------+
 
 The comment node's size (in pixels).
+
+----
 
 .. _class_VisualScriptComment_property_title:
 

@@ -11,10 +11,19 @@ VisualShaderNodeSwitch
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`VisualShaderNodeScalarSwitch<class_VisualShaderNodeScalarSwitch>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++---------------------------+----------------------+-------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | default_input_values | **O:** [ 0, false, 1, Vector3( 1, 1, 1 ), 2, Vector3( 0, 0, 0 ) ] |
++---------------------------+----------------------+-------------------------------------------------------------------+
 

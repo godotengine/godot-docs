@@ -56,6 +56,8 @@ Property Descriptions
 
 Button identifier. One of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>` button constants.
 
+----
+
 .. _class_InputEventJoypadButton_property_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
@@ -69,6 +71,8 @@ Button identifier. One of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>
 +-----------+--------------------+
 
 If ``true``, the button's state is pressed. If ``false``, the button's state is released.
+
+----
 
 .. _class_InputEventJoypadButton_property_pressure:
 

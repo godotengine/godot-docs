@@ -58,6 +58,8 @@ Property Descriptions
 
 A disabled collision shape has no effect in the world.
 
+----
+
 .. _class_CollisionShape2D_property_one_way_collision:
 
 - :ref:`bool<class_bool>` **one_way_collision**
@@ -72,6 +74,8 @@ A disabled collision shape has no effect in the world.
 
 Sets whether this collision shape should only detect collision on one side (top or bottom).
 
+----
+
 .. _class_CollisionShape2D_property_one_way_collision_margin:
 
 - :ref:`float<class_float>` **one_way_collision_margin**
@@ -83,6 +87,8 @@ Sets whether this collision shape should only detect collision on one side (top 
 +-----------+-------------------------------------+
 | *Getter*  | get_one_way_collision_margin()      |
 +-----------+-------------------------------------+
+
+----
 
 .. _class_CollisionShape2D_property_shape:
 

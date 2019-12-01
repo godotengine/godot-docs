@@ -145,6 +145,36 @@ Press "Play" on the animation to see how it looks.
 
 .. image:: img/2d_animation_running.gif
 
+Controlling an AnimationPlayer animation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Like with AnimatedSprite, you can control the animation via code using
+the ``play()`` and ``stop()`` methods. Again, here is an example to play the
+animation while the right arrow key is held, and stop it when the key is
+released.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends KinematicBody2D
+
+    func _process(delta):
+        if Input.is_action_pressed("ui_right"):
+            $AnimationPlayer.play("walk")
+        else:
+            $AnimationPlayer.stop()
+
+
+.. note:: If updating both an animation and a separate property at once
+          (for example, a platformer may update the sprite's ``h_flip``/``v_flip``
+          properties when a character turns while starting a 'turning' animation),
+          it's important to keep in mind that ``play()`` isn't applied instantly.
+          Instead, it's applied the next time the :ref:`AnimationPlayer <class_AnimationPlayer>` is processed.
+          This may end up being on the next frame, causing a 'glitch' frame,
+          where the property change was applied but the animation was not.
+          If this turns out to be a problem, after calling ``play()``, you can call ``advance(0)``
+          to update the animation immediately.
+
 Summary
 -------
 

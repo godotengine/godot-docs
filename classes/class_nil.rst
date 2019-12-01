@@ -80,53 +80,103 @@ Method Descriptions
 
 - void **Nil** **(** :ref:`PoolColorArray<class_PoolColorArray>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`PoolStringArray<class_PoolStringArray>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`PoolRealArray<class_PoolRealArray>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`PoolIntArray<class_PoolIntArray>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`PoolByteArray<class_PoolByteArray>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`Array<class_Array>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`Dictionary<class_Dictionary>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`Object<class_Object>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`RID<class_RID>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`NodePath<class_NodePath>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`Color<class_Color>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`Transform<class_Transform>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`Basis<class_Basis>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`AABB<class_AABB>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`Quat<class_Quat>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`Plane<class_Plane>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`Transform2D<class_Transform2D>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`Vector3<class_Vector3>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`Rect2<class_Rect2>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`Vector2<class_Vector2>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`String<class_String>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`float<class_float>` from **)**
 
+----
+
 - void **Nil** **(** :ref:`int<class_int>` from **)**
+
+----
 
 - void **Nil** **(** :ref:`bool<class_bool>` from **)**
 

@@ -41,9 +41,13 @@ Method Descriptions
 
 Cast a :ref:`bool<class_bool>` value to a floating-point value, ``float(true)`` will be equal to 1.0 and ``float(false)`` will be equal to 0.0.
 
+----
+
 - :ref:`float<class_float>` **float** **(** :ref:`int<class_int>` from **)**
 
 Cast an :ref:`int<class_int>` value to a floating-point value, ``float(1)`` will be equal to 1.0.
+
+----
 
 - :ref:`float<class_float>` **float** **(** :ref:`String<class_String>` from **)**
 

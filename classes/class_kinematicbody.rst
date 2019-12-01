@@ -91,6 +91,8 @@ Property Descriptions
 
 If the body is at least this close to another body, this body will consider them to be colliding.
 
+----
+
 .. _class_KinematicBody_property_move_lock_x:
 
 - :ref:`bool<class_bool>` **move_lock_x**
@@ -105,6 +107,8 @@ If the body is at least this close to another body, this body will consider them
 
 Lock the body's X axis movement.
 
+----
+
 .. _class_KinematicBody_property_move_lock_y:
 
 - :ref:`bool<class_bool>` **move_lock_y**
@@ -118,6 +122,8 @@ Lock the body's X axis movement.
 +-----------+----------------------+
 
 Lock the body's Y axis movement.
+
+----
 
 .. _class_KinematicBody_property_move_lock_z:
 
@@ -140,11 +146,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis **)** const
 
+----
+
 .. _class_KinematicBody_method_get_floor_velocity:
 
 - :ref:`Vector3<class_Vector3>` **get_floor_velocity** **(** **)** const
 
 Returns the velocity of the floor. Only updates when calling :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>`.
+
+----
 
 .. _class_KinematicBody_method_get_slide_collision:
 
@@ -152,11 +162,15 @@ Returns the velocity of the floor. Only updates when calling :ref:`move_and_slid
 
 Returns a :ref:`KinematicCollision<class_KinematicCollision>`, which contains information about a collision that occurred during the last :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` call. Since the body can collide several times in a single call to :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_count<class_KinematicBody_method_get_slide_count>` - 1).
 
+----
+
 .. _class_KinematicBody_method_get_slide_count:
 
 - :ref:`int<class_int>` **get_slide_count** **(** **)** const
 
 Returns the number of times the body collided and changed direction during the last call to :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>`.
+
+----
 
 .. _class_KinematicBody_method_is_on_ceiling:
 
@@ -164,17 +178,23 @@ Returns the number of times the body collided and changed direction during the l
 
 Returns ``true`` if the body is on the ceiling. Only updates when calling :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>`.
 
+----
+
 .. _class_KinematicBody_method_is_on_floor:
 
 - :ref:`bool<class_bool>` **is_on_floor** **(** **)** const
 
 Returns ``true`` if the body is on the floor. Only updates when calling :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>`.
 
+----
+
 .. _class_KinematicBody_method_is_on_wall:
 
 - :ref:`bool<class_bool>` **is_on_wall** **(** **)** const
 
 Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>`.
+
+----
 
 .. _class_KinematicBody_method_move_and_collide:
 
@@ -183,6 +203,8 @@ Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_
 Moves the body along the vector ``rel_vec``. The body will stop if it collides. Returns a :ref:`KinematicCollision<class_KinematicCollision>`, which contains information about the collision.
 
 If ``test_only`` is ``true``, the body does not move but the would-be collision information is given.
+
+----
 
 .. _class_KinematicBody_method_move_and_slide:
 
@@ -204,6 +226,8 @@ If ``infinite_inertia`` is ``true``, body will be able to push :ref:`RigidBody<c
 
 Returns the ``linear_velocity`` vector, rotated and/or scaled if a slide collision occurred. To get detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody_method_get_slide_collision>`.
 
+----
+
 .. _class_KinematicBody_method_move_and_slide_with_snap:
 
 - :ref:`Vector3<class_Vector3>` **move_and_slide_with_snap** **(** :ref:`Vector3<class_Vector3>` linear_velocity, :ref:`Vector3<class_Vector3>` snap, :ref:`Vector3<class_Vector3>` floor_normal=Vector3( 0, 0, 0 ), :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` floor_max_angle=0.785398, :ref:`bool<class_bool>` infinite_inertia=true **)**
@@ -212,9 +236,13 @@ Moves the body while keeping it attached to slopes. Similar to :ref:`move_and_sl
 
 As long as the ``snap`` vector is in contact with the ground, the body will remain attached to the surface. This means you must disable snap in order to jump, for example. You can do this by setting``snap`` to``(0, 0, 0)`` or by using :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` instead.
 
+----
+
 .. _class_KinematicBody_method_set_axis_lock:
 
 - void **set_axis_lock** **(** :ref:`BodyAxis<enum_PhysicsServer_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**
+
+----
 
 .. _class_KinematicBody_method_test_move:
 

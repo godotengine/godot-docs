@@ -62,6 +62,8 @@ Property Descriptions
 
 State of the ``Alt`` modifier.
 
+----
+
 .. _class_InputEventWithModifiers_property_command:
 
 - :ref:`bool<class_bool>` **command**
@@ -75,6 +77,8 @@ State of the ``Alt`` modifier.
 +-----------+--------------------+
 
 State of the ``Command`` modifier.
+
+----
 
 .. _class_InputEventWithModifiers_property_control:
 
@@ -90,6 +94,8 @@ State of the ``Command`` modifier.
 
 State of the ``Ctrl`` modifier.
 
+----
+
 .. _class_InputEventWithModifiers_property_meta:
 
 - :ref:`bool<class_bool>` **meta**
@@ -103,6 +109,8 @@ State of the ``Ctrl`` modifier.
 +-----------+--------------------+
 
 State of the ``Meta`` modifier.
+
+----
 
 .. _class_InputEventWithModifiers_property_shift:
 

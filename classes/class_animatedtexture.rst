@@ -21,11 +21,13 @@ Proxy texture for simple frame-based animations.
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`       | 4.0 |
-+---------------------------+------------------------------------------------------+-----+
-| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>` | 1   |
-+---------------------------+------------------------------------------------------+-----+
++---------------------------+------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | flags                                                | **O:** 0 |
++---------------------------+------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`       | 4.0      |
++---------------------------+------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>` | 1        |
++---------------------------+------------------------------------------------------+----------+
 
 Methods
 -------
@@ -54,7 +56,7 @@ Description
 
 The playback of the animation is controlled by the :ref:`fps<class_AnimatedTexture_property_fps>` property as well as each frame's optional delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
 
-``AnimatedTexture`` currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one.
+``AnimatedTexture`` currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one. Also, it doesn't support :ref:`AtlasTexture<class_AtlasTexture>`. Each frame needs to be separate image.
 
 Property Descriptions
 ---------------------
@@ -74,6 +76,8 @@ Property Descriptions
 Animation speed in frames per second. This value defines the default time interval between two frames of the animation, and thus the overall duration of the animation loop based on the :ref:`frames<class_AnimatedTexture_property_frames>` property. A value of 0 means no predefined number of frames per second, the animation will play according to each frame's frame delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`).
 
 For example, an animation with 8 frames, no frame delay and a ``fps`` value of 2 will run for 4 seconds, with each frame lasting 0.5 seconds.
+
+----
 
 .. _class_AnimatedTexture_property_frames:
 
@@ -98,11 +102,15 @@ Method Descriptions
 
 Returns the given frame's delay value.
 
+----
+
 .. _class_AnimatedTexture_method_get_frame_texture:
 
 - :ref:`Texture<class_Texture>` **get_frame_texture** **(** :ref:`int<class_int>` frame **)** const
 
 Returns the given frame's :ref:`Texture<class_Texture>`.
+
+----
 
 .. _class_AnimatedTexture_method_set_frame_delay:
 
@@ -118,6 +126,8 @@ For example, for an animation with 3 frames, 2 FPS and a frame delay on the seco
     Frame 1: 1.7 s (1 / fps + 1.2)
     Frame 2: 0.5 s (1 / fps)
     Total duration: 2.7 s
+
+----
 
 .. _class_AnimatedTexture_method_set_frame_texture:
 

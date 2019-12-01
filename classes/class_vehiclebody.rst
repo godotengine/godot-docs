@@ -21,13 +21,17 @@ Physics body that simulates the behavior of a car.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody_property_brake>`               | 0.0 |
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody_property_engine_force>` | 0.0 |
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody_property_steering>`         | 0.0 |
-+---------------------------+--------------------------------------------------------------+-----+
++---------------------------+--------------------------------------------------------------+--------------+
+| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody_property_brake>`               | 0.0          |
++---------------------------+--------------------------------------------------------------+--------------+
+| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody_property_engine_force>` | 0.0          |
++---------------------------+--------------------------------------------------------------+--------------+
+| :ref:`float<class_float>` | mass                                                         | **O:** 40.0  |
++---------------------------+--------------------------------------------------------------+--------------+
+| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody_property_steering>`         | 0.0          |
++---------------------------+--------------------------------------------------------------+--------------+
+| :ref:`float<class_float>` | weight                                                       | **O:** 392.0 |
++---------------------------+--------------------------------------------------------------+--------------+
 
 Description
 -----------
@@ -53,6 +57,8 @@ Property Descriptions
 
 Slows down the vehicle by applying a braking force. The vehicle is only slowed down if the wheels are in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidBody.mass<class_RigidBody_property_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
 
+----
+
 .. _class_VehicleBody_property_engine_force:
 
 - :ref:`float<class_float>` **engine_force**
@@ -70,6 +76,8 @@ Accelerates the vehicle by applying an engine force. The vehicle is only speed u
 **Note:** The simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
 
 A negative value will result in the vehicle reversing.
+
+----
 
 .. _class_VehicleBody_property_steering:
 

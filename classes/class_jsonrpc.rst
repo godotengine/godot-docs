@@ -71,25 +71,37 @@ Method Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **make_notification** **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` params **)**
 
+----
+
 .. _class_JSONRPC_method_make_request:
 
 - :ref:`Dictionary<class_Dictionary>` **make_request** **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` params, :ref:`Variant<class_Variant>` id **)**
+
+----
 
 .. _class_JSONRPC_method_make_response:
 
 - :ref:`Dictionary<class_Dictionary>` **make_response** **(** :ref:`Variant<class_Variant>` result, :ref:`Variant<class_Variant>` id **)**
 
+----
+
 .. _class_JSONRPC_method_make_response_error:
 
 - :ref:`Dictionary<class_Dictionary>` **make_response_error** **(** :ref:`int<class_int>` code, :ref:`String<class_String>` message, :ref:`Variant<class_Variant>` id=null **)** const
+
+----
 
 .. _class_JSONRPC_method_process_action:
 
 - :ref:`Variant<class_Variant>` **process_action** **(** :ref:`Variant<class_Variant>` action, :ref:`bool<class_bool>` recurse=false **)**
 
+----
+
 .. _class_JSONRPC_method_process_string:
 
 - :ref:`String<class_String>` **process_string** **(** :ref:`String<class_String>` action **)**
+
+----
 
 .. _class_JSONRPC_method_set_scope:
 

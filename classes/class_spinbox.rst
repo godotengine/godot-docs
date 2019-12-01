@@ -81,6 +81,8 @@ Property Descriptions
 
 Sets the text alignment of the ``SpinBox``.
 
+----
+
 .. _class_SpinBox_property_editable:
 
 - :ref:`bool<class_bool>` **editable**
@@ -95,6 +97,8 @@ Sets the text alignment of the ``SpinBox``.
 
 If ``true``, the ``SpinBox`` will be editable. Otherwise, it will be read only.
 
+----
+
 .. _class_SpinBox_property_prefix:
 
 - :ref:`String<class_String>` **prefix**
@@ -108,6 +112,8 @@ If ``true``, the ``SpinBox`` will be editable. Otherwise, it will be read only.
 +-----------+-------------------+
 
 Adds the specified ``prefix`` string before the numerical value of the ``SpinBox``.
+
+----
 
 .. _class_SpinBox_property_suffix:
 

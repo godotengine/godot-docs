@@ -53,11 +53,15 @@ Signals
 
 Emitted when a connection attempt fails.
 
+----
+
 .. _class_NetworkedMultiplayerPeer_signal_connection_succeeded:
 
 - **connection_succeeded** **(** **)**
 
 Emitted when a connection attempt succeeds.
+
+----
 
 .. _class_NetworkedMultiplayerPeer_signal_peer_connected:
 
@@ -65,11 +69,15 @@ Emitted when a connection attempt succeeds.
 
 Emitted by the server when a client connects.
 
+----
+
 .. _class_NetworkedMultiplayerPeer_signal_peer_disconnected:
 
 - **peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
 Emitted by the server when a client disconnects.
+
+----
 
 .. _class_NetworkedMultiplayerPeer_signal_server_disconnected:
 
@@ -95,6 +103,8 @@ enum **TransferMode**:
 - **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are not acknowledged, no resend attempts are made for lost packets. Packets are received in the order they were sent in. Potentially faster than :ref:`TRANSFER_MODE_RELIABLE<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_RELIABLE>`. Use for non-critical data or data that would be outdated if received late due to resend attempt(s) anyway, for example movement and positional data.
 
 - **TRANSFER_MODE_RELIABLE** = **2** --- Packets must be received and resend attempts should be made until the packets are acknowledged. Packets must be received in the order they were sent in. Most reliable transfer mode, but potentially the slowest due to the overhead. Use for critical data that must be transmitted and arrive in order, for example an ability being triggered or a chat message. Consider carefully if the information really is critical, and use sparingly.
+
+----
 
 .. _enum_NetworkedMultiplayerPeer_ConnectionStatus:
 
@@ -150,6 +160,8 @@ Property Descriptions
 
 If ``true``, this ``NetworkedMultiplayerPeer`` refuses new connections.
 
+----
+
 .. _class_NetworkedMultiplayerPeer_property_transfer_mode:
 
 - :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode**
@@ -173,11 +185,15 @@ Method Descriptions
 
 Returns the current state of the connection. See :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>`.
 
+----
+
 .. _class_NetworkedMultiplayerPeer_method_get_packet_peer:
 
 - :ref:`int<class_int>` **get_packet_peer** **(** **)** const
 
 Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent packet.
+
+----
 
 .. _class_NetworkedMultiplayerPeer_method_get_unique_id:
 
@@ -185,11 +201,15 @@ Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent pack
 
 Returns the ID of this ``NetworkedMultiplayerPeer``.
 
+----
+
 .. _class_NetworkedMultiplayerPeer_method_poll:
 
 - void **poll** **(** **)**
 
 Waits up to 1 second to receive a new network event.
+
+----
 
 .. _class_NetworkedMultiplayerPeer_method_set_target_peer:
 

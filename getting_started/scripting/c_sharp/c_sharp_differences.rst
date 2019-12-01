@@ -86,6 +86,8 @@ Export keyword
 --------------
 
 Use the ``[Export]`` attribute instead of the GDScript ``export`` keyword.
+This attribute can also be provided with optional :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` and ``hintString`` parameters.
+Default values can be set by assigning a value.
 
 Example:
 
@@ -96,7 +98,16 @@ Example:
     public class MyNode : Node
     {
         [Export]
-        NodePath _nodePath;
+        private NodePath _nodePath;
+
+        [Export]
+        private string _name = "default";
+
+        [Export(PropertyHint.Range, "0,100000,1000,or_greater")]
+        private int _income;
+
+        [Export(PropertyHint.File, "*.png,*.jpg")]
+        private string _icon;
     }
 
 Signal keyword

@@ -21,27 +21,31 @@ Displays plain text in a line or wrapped inside a rectangle. For formatted text,
 Properties
 ----------
 
-+----------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`Align<enum_Label_Align>`   | :ref:`align<class_Label_property_align>`                           | 0     |
-+----------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`          | :ref:`autowrap<class_Label_property_autowrap>`                     | false |
-+----------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`          | :ref:`clip_text<class_Label_property_clip_text>`                   | false |
-+----------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`            | :ref:`lines_skipped<class_Label_property_lines_skipped>`           | 0     |
-+----------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`            | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`   | -1    |
-+----------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`        | :ref:`percent_visible<class_Label_property_percent_visible>`       | 1.0   |
-+----------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`String<class_String>`      | :ref:`text<class_Label_property_text>`                             | ""    |
-+----------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`          | :ref:`uppercase<class_Label_property_uppercase>`                   | false |
-+----------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`VAlign<enum_Label_VAlign>` | :ref:`valign<class_Label_property_valign>`                         | 0     |
-+----------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`            | :ref:`visible_characters<class_Label_property_visible_characters>` | -1    |
-+----------------------------------+--------------------------------------------------------------------+-------+
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`Align<enum_Label_Align>`               | :ref:`align<class_Label_property_align>`                           | 0        |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`autowrap<class_Label_property_autowrap>`                     | false    |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`clip_text<class_Label_property_clip_text>`                   | false    |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                        | :ref:`lines_skipped<class_Label_property_lines_skipped>`           | 0        |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                        | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`   | -1       |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                       | **O:** 2 |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                    | :ref:`percent_visible<class_Label_property_percent_visible>`       | 1.0      |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                        | size_flags_vertical                                                | **O:** 4 |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                  | :ref:`text<class_Label_property_text>`                             | ""       |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`uppercase<class_Label_property_uppercase>`                   | false    |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`VAlign<enum_Label_VAlign>`             | :ref:`valign<class_Label_property_valign>`                         | 0        |
++----------------------------------------------+--------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                        | :ref:`visible_characters<class_Label_property_visible_characters>` | -1       |
++----------------------------------------------+--------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -102,6 +106,8 @@ enum **Align**:
 
 - **ALIGN_FILL** = **3** --- Expand row whitespaces to fit the width.
 
+----
+
 .. _enum_Label_VAlign:
 
 .. _class_Label_constant_VALIGN_TOP:
@@ -146,6 +152,8 @@ Property Descriptions
 
 Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the ``ALIGN_*`` constants.
 
+----
+
 .. _class_Label_property_autowrap:
 
 - :ref:`bool<class_bool>` **autowrap**
@@ -159,6 +167,8 @@ Controls the text's horizontal align. Supports left, center, right, and fill, or
 +-----------+---------------------+
 
 If ``true``, wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text.
+
+----
 
 .. _class_Label_property_clip_text:
 
@@ -174,6 +184,8 @@ If ``true``, wraps the text inside the node's bounding rectangle. If you resize 
 
 If ``true``, the Label only shows the text that fits inside its bounding rectangle. It also lets you scale the node down freely.
 
+----
+
 .. _class_Label_property_lines_skipped:
 
 - :ref:`int<class_int>` **lines_skipped**
@@ -187,6 +199,8 @@ If ``true``, the Label only shows the text that fits inside its bounding rectang
 +-----------+--------------------------+
 
 The node ignores the first ``lines_skipped`` lines before it starts to display text.
+
+----
 
 .. _class_Label_property_max_lines_visible:
 
@@ -202,6 +216,8 @@ The node ignores the first ``lines_skipped`` lines before it starts to display t
 
 Limits the lines of text the node shows on screen.
 
+----
+
 .. _class_Label_property_percent_visible:
 
 - :ref:`float<class_float>` **percent_visible**
@@ -215,6 +231,8 @@ Limits the lines of text the node shows on screen.
 +-----------+----------------------------+
 
 Limits the count of visible characters. If you set ``percent_visible`` to 50, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
+
+----
 
 .. _class_Label_property_text:
 
@@ -230,6 +248,8 @@ Limits the count of visible characters. If you set ``percent_visible`` to 50, on
 
 The text to display on screen.
 
+----
+
 .. _class_Label_property_uppercase:
 
 - :ref:`bool<class_bool>` **uppercase**
@@ -244,6 +264,8 @@ The text to display on screen.
 
 If ``true``, all the text displays as UPPERCASE.
 
+----
+
 .. _class_Label_property_valign:
 
 - :ref:`VAlign<enum_Label_VAlign>` **valign**
@@ -257,6 +279,8 @@ If ``true``, all the text displays as UPPERCASE.
 +-----------+-------------------+
 
 Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the ``VALIGN_*`` constants.
+
+----
 
 .. _class_Label_property_visible_characters:
 
@@ -281,17 +305,23 @@ Method Descriptions
 
 Returns the amount of lines of text the Label has.
 
+----
+
 .. _class_Label_method_get_line_height:
 
 - :ref:`int<class_int>` **get_line_height** **(** **)** const
 
 Returns the font size in pixels.
 
+----
+
 .. _class_Label_method_get_total_character_count:
 
 - :ref:`int<class_int>` **get_total_character_count** **(** **)** const
 
 Returns the total number of printable characters in the text (excluding spaces and newlines).
+
+----
 
 .. _class_Label_method_get_visible_line_count:
 

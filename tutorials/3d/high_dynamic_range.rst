@@ -25,7 +25,7 @@ in the game engine; there is only a potentially infinitely wide range of intensi
 values generated per frame of rendering.
 
 This means that some transformation of the scene light intensity, also known
-as _scene referred_ light ratios, need to be transformed and mapped to fit
+as scene-referred light ratios, need to be transformed and mapped to fit
 within the particular output range of the chosen display. This can be most
 easily understood if we consider virtually photographing our game engine scene
 through a virtual camera. Here, our virtual camera would apply a particular

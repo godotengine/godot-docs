@@ -54,6 +54,8 @@ Property Descriptions
 
 The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only from Light2D(s) that have the same light mask(s).
 
+----
+
 .. _class_LightOccluder2D_property_occluder:
 
 - :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **occluder**

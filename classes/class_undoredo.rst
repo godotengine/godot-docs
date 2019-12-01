@@ -124,11 +124,15 @@ Method Descriptions
 
 Register a method that will be called when the action is committed.
 
+----
+
 .. _class_UndoRedo_method_add_do_property:
 
 - void **add_do_property** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Register a property value change for "do".
+
+----
 
 .. _class_UndoRedo_method_add_do_reference:
 
@@ -136,11 +140,15 @@ Register a property value change for "do".
 
 Register a reference for "do" that will be erased if the "do" history is lost. This is useful mostly for new nodes created for the "do" call. Do not use for resources.
 
+----
+
 .. _class_UndoRedo_method_add_undo_method:
 
 - :ref:`Variant<class_Variant>` **add_undo_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, ... **)** vararg
 
 Register a method that will be called when the action is undone.
+
+----
 
 .. _class_UndoRedo_method_add_undo_property:
 
@@ -148,11 +156,15 @@ Register a method that will be called when the action is undone.
 
 Register a property value change for "undo".
 
+----
+
 .. _class_UndoRedo_method_add_undo_reference:
 
 - void **add_undo_reference** **(** :ref:`Object<class_Object>` object **)**
 
 Register a reference for "undo" that will be erased if the "undo" history is lost. This is useful mostly for nodes removed with the "do" call (not the "undo" call!).
+
+----
 
 .. _class_UndoRedo_method_clear_history:
 
@@ -162,11 +174,15 @@ Clear the undo/redo history and associated references.
 
 Passing ``false`` to ``increase_version`` will prevent the version number to be increased from this.
 
+----
+
 .. _class_UndoRedo_method_commit_action:
 
 - void **commit_action** **(** **)**
 
 Commit the action. All "do" methods/properties are called/set when this function is called.
+
+----
 
 .. _class_UndoRedo_method_create_action:
 
@@ -176,11 +192,15 @@ Create a new action. After this is called, do all your calls to :ref:`add_do_met
 
 The way actions are merged is dictated by the ``merge_mode`` argument. See :ref:`MergeMode<enum_UndoRedo_MergeMode>` for details.
 
+----
+
 .. _class_UndoRedo_method_get_current_action_name:
 
 - :ref:`String<class_String>` **get_current_action_name** **(** **)** const
 
 Gets the name of the current action.
+
+----
 
 .. _class_UndoRedo_method_get_version:
 
@@ -190,11 +210,15 @@ Gets the version. Every time a new action is committed, the ``UndoRedo``'s versi
 
 This is useful mostly to check if something changed from a saved version.
 
+----
+
 .. _class_UndoRedo_method_has_redo:
 
 - :ref:`bool<class_bool>` **has_redo** **(** **)**
 
 Returns ``true`` if a "redo" action is available.
+
+----
 
 .. _class_UndoRedo_method_has_undo:
 
@@ -202,17 +226,23 @@ Returns ``true`` if a "redo" action is available.
 
 Returns ``true`` if an "undo" action is available.
 
+----
+
 .. _class_UndoRedo_method_is_commiting_action:
 
 - :ref:`bool<class_bool>` **is_commiting_action** **(** **)** const
 
 Returns ``true`` if the ``UndoRedo`` is currently committing the action, i.e. running its "do" method or property change (see :ref:`commit_action<class_UndoRedo_method_commit_action>`).
 
+----
+
 .. _class_UndoRedo_method_redo:
 
 - :ref:`bool<class_bool>` **redo** **(** **)**
 
 Redo the last action.
+
+----
 
 .. _class_UndoRedo_method_undo:
 

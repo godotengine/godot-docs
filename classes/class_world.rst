@@ -56,6 +56,8 @@ Property Descriptions
 
 The World's physics direct space state, used for making various queries. Might be used only during ``_physics_process``.
 
+----
+
 .. _class_World_property_environment:
 
 - :ref:`Environment<class_Environment>` **environment**
@@ -67,6 +69,8 @@ The World's physics direct space state, used for making various queries. Might b
 +----------+------------------------+
 
 The World's :ref:`Environment<class_Environment>`.
+
+----
 
 .. _class_World_property_fallback_environment:
 
@@ -80,6 +84,8 @@ The World's :ref:`Environment<class_Environment>`.
 
 The World's fallback_environment will be used if the World's :ref:`Environment<class_Environment>` fails or is missing.
 
+----
+
 .. _class_World_property_scenario:
 
 - :ref:`RID<class_RID>` **scenario**
@@ -89,6 +95,8 @@ The World's fallback_environment will be used if the World's :ref:`Environment<c
 +----------+----------------+
 
 The World's visual scenario.
+
+----
 
 .. _class_World_property_space:
 

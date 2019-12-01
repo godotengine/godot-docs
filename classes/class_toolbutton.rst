@@ -18,6 +18,13 @@ Brief Description
 
 Flat button helper class.
 
+Properties
+----------
+
++-------------------------+------+-------------+
+| :ref:`bool<class_bool>` | flat | **O:** true |
++-------------------------+------+-------------+
+
 Theme Properties
 ----------------
 

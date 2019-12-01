@@ -124,9 +124,9 @@ Similarly to the web version of the AssetLib, here you can search
 for assets by category, name, and sort them by factors such as name or edit date.
 
 Notably, you can only fetch assets for the current version of Godot you are running.
-Also, you can only download Projects, Demos and Templates from the Project Manager
-view of the AssetLib, while Addons (tools, scripts, materials etc.) can only be
-downloaded from the in-project AssetLib.
+Projects, Demos and Templates can be downloaded from from the Project Manager
+view of the AssetLib. Addons (tools, scripts, materials etc.) can be downloaded from
+the in-project AssetLib and added to the current project.
 In addition, unlike when using the web frontend, the search results are updated
 in real-time (you do not have to press Search after every change to your search
 query for the changes to take place).

@@ -58,6 +58,8 @@ Property Descriptions
 
 The spotlight's angle in degrees.
 
+----
+
 .. _class_SpotLight_property_spot_angle_attenuation:
 
 - :ref:`float<class_float>` **spot_angle_attenuation**
@@ -72,6 +74,8 @@ The spotlight's angle in degrees.
 
 The spotlight's angular attenuation curve.
 
+----
+
 .. _class_SpotLight_property_spot_attenuation:
 
 - :ref:`float<class_float>` **spot_attenuation**
@@ -85,6 +89,8 @@ The spotlight's angular attenuation curve.
 +-----------+------------------+
 
 The spotlight's light energy attenuation curve.
+
+----
 
 .. _class_SpotLight_property_spot_range:
 

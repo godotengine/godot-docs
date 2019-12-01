@@ -122,6 +122,8 @@ you can build them yourself).
 Aside from that, there are a few standard options that can be set in all
 build targets, and which will be explained below.
 
+.. _doc_introduction_to_the_buildsystem_tools:
+
 Tools
 -----
 
@@ -133,6 +135,8 @@ manager.
 ::
 
     scons platform=<platform> tools=yes/no
+
+.. _doc_introduction_to_the_buildsystem_target:
 
 Target
 ------

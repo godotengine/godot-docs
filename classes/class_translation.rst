@@ -80,11 +80,15 @@ Method Descriptions
 
 Adds a message if nonexistent, followed by its translation.
 
+----
+
 .. _class_Translation_method_erase_message:
 
 - void **erase_message** **(** :ref:`String<class_String>` src_message **)**
 
 Erases a message.
+
+----
 
 .. _class_Translation_method_get_message:
 
@@ -92,11 +96,15 @@ Erases a message.
 
 Returns a message's translation.
 
+----
+
 .. _class_Translation_method_get_message_count:
 
 - :ref:`int<class_int>` **get_message_count** **(** **)** const
 
 Returns the number of existing messages.
+
+----
 
 .. _class_Translation_method_get_message_list:
 

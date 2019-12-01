@@ -65,6 +65,8 @@ Property Descriptions
 
 If ``true``, the key was already pressed before this event. It means the user is holding the key down.
 
+----
+
 .. _class_InputEventKey_property_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
@@ -79,6 +81,8 @@ If ``true``, the key was already pressed before this event. It means the user is
 
 If ``true``, the key's state is pressed. If ``false``, the key's state is released.
 
+----
+
 .. _class_InputEventKey_property_scancode:
 
 - :ref:`int<class_int>` **scancode**
@@ -92,6 +96,8 @@ If ``true``, the key's state is pressed. If ``false``, the key's state is releas
 +-----------+---------------------+
 
 Key scancode, one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
+
+----
 
 .. _class_InputEventKey_property_unicode:
 

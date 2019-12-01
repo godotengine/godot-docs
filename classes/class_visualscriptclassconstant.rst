@@ -57,6 +57,8 @@ Property Descriptions
 
 The constant's parent class.
 
+----
+
 .. _class_VisualScriptClassConstant_property_constant:
 
 - :ref:`String<class_String>` **constant**

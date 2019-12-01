@@ -67,6 +67,8 @@ The points along the :ref:`Curve2D<class_Curve2D>` of the :ref:`Path2D<class_Pat
 
 There are two answers to this problem: either increase the number of cached points and increase memory consumption, or make a cubic interpolation between two points at the cost of (slightly) slower calculations.
 
+----
+
 .. _class_PathFollow2D_property_h_offset:
 
 - :ref:`float<class_float>` **h_offset**
@@ -80,6 +82,8 @@ There are two answers to this problem: either increase the number of cached poin
 +-----------+---------------------+
 
 The node's offset along the curve.
+
+----
 
 .. _class_PathFollow2D_property_lookahead:
 
@@ -95,6 +99,8 @@ The node's offset along the curve.
 
 How far to look ahead of the curve to calculate the tangent if the node is rotating. E.g. shorter lookaheads will lead to faster rotations.
 
+----
+
 .. _class_PathFollow2D_property_loop:
 
 - :ref:`bool<class_bool>` **loop**
@@ -108,6 +114,8 @@ How far to look ahead of the curve to calculate the tangent if the node is rotat
 +-----------+-----------------+
 
 If ``true``, any offset outside the path's length will wrap around, instead of stopping at the ends. Use it for cyclic paths.
+
+----
 
 .. _class_PathFollow2D_property_offset:
 
@@ -123,6 +131,8 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 
 The distance along the path in pixels.
 
+----
+
 .. _class_PathFollow2D_property_rotate:
 
 - :ref:`bool<class_bool>` **rotate**
@@ -137,6 +147,8 @@ The distance along the path in pixels.
 
 If ``true``, this node rotates to follow the path, making its descendants rotate.
 
+----
+
 .. _class_PathFollow2D_property_unit_offset:
 
 - :ref:`float<class_float>` **unit_offset**
@@ -150,6 +162,8 @@ If ``true``, this node rotates to follow the path, making its descendants rotate
 +-----------+------------------------+
 
 The distance along the path as a number in the range 0.0 (for the first vertex) to 1.0 (for the last). This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
+
+----
 
 .. _class_PathFollow2D_property_v_offset:
 

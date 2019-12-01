@@ -65,6 +65,8 @@ Property Descriptions
 | *Getter*  | get_action_name()      |
 +-----------+------------------------+
 
+----
+
 .. _class_VisualScriptInputAction_property_mode:
 
 - :ref:`Mode<enum_VisualScriptInputAction_Mode>` **mode**

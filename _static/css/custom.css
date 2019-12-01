@@ -1,0 +1,273 @@
+/**
+ * Various tweaks to the Read the Docs theme to better conform with Godot's visual identity.
+ */
+
+ :root {
+    --navbar-background-color: #333f67;
+    --navbar-background-color-hover: #29355c;
+    --navbar-background-color-active: #212d51;
+    --navbar-current-background-color: #212d51;
+    --navbar-current-background-color-hover: #182343;
+    --navbar-current-background-color-active: #131e3b;
+    --navbar-level-1-color: #c3e3ff;
+    --navbar-level-2-color: #b8d6f0;
+    --navbar-level-3-color: #a3c4e1;
+    --navbar-heading-color: #ff7381;
+    --link-color-active: #105078;
+    --code-literal-color: #d04c60;
+    --highlight-background-color: #f5ffe1;
+    --input-background-color: #fcfcfc;
+    --input-focus-border-color: #5f8cff;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input[type="text"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea,
+legend,
+.btn,
+.rst-content .toctree-wrapper p.caption,
+.rst-versions {
+    /* Use a system font stack for better performance (no Web fonts required) */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend,
+.rst-content .toctree-wrapper p.caption {
+    /* Use a lighter font for headers (Medium instead of Bold) */
+    font-weight: 500;
+}
+
+p,
+article ul,
+article ol,
+.wy-plain-list-disc,
+.wy-plain-list-decimal,
+.rst-content ol.arabic,
+.rst-content .section ul,
+.rst-content .toctree-wrapper ul,
+.rst-content .section ol {
+    /* Increase the line height slightly to account for the different font */
+    line-height: 25px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    /* Add visual feedback when clicking on a link */
+    color: var(--link-color-active);
+}
+
+a.btn:hover {
+    text-decoration: none;
+}
+
+/* Code display tweaks */
+
+code,
+.rst-content tt,
+.rst-content code {
+    font-size: 14px;
+}
+
+.rst-content tt.literal,
+.rst-content code.literal {
+    color: var(--code-literal-color);
+}
+
+.rst-content pre.literal-block,
+.rst-content div[class^="highlight"] pre,
+.rst-content .linenodiv pre {
+    /* Increase the font size and line height in code blocks */
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.highlight {
+    background-color: var(--highlight-background-color);
+}
+
+/* Navigation bar logo and search */
+
+.wy-side-nav-search {
+    background-color: var(--navbar-background-color);
+}
+
+.wy-side-nav-search > a:hover,
+.wy-side-nav-search .wy-dropdown > a:hover {
+    background-color: var(--navbar-background-color-hover);
+}
+
+.wy-side-nav-search > a:active,
+.wy-side-nav-search .wy-dropdown > a:active {
+    background-color: var(--navbar-background-color-active);
+}
+
+.wy-side-nav-search input[type="text"] {
+    background-color: var(--input-background-color);
+    /* Avoid reflowing when toggling the focus state */
+    border: 2px solid transparent;
+    box-shadow: none;
+    /* Make visual feedback instant */
+    transition: none;
+    font-size: 14px;
+}
+
+.wy-side-nav-search input[type="text"]:focus {
+    border: 2px solid var(--input-focus-border-color);
+}
+
+/* Navigation bar */
+
+.wy-nav-side {
+    background-color: var(--navbar-background-color);
+}
+
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+    color: var(--navbar-heading-color);
+
+    /* Improves the apperance of uppercase text */
+    letter-spacing: 0.75px;
+}
+
+/* Mobile navigation */
+
+.wy-nav-top,
+.wy-nav-top a {
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-level-1-color);
+}
+
+/* Version branch label below the logo */
+.wy-side-nav-search > div.version {
+    color: var(--navbar-level-3-color);
+    opacity: 0.9;
+}
+
+/* First level of navigation items */
+
+.wy-menu-vertical {
+    /* Account for the increased `toctree-expand` button margins */
+    width: 308px;
+}
+
+.wy-menu-vertical a {
+    color: var(--navbar-level-1-color);
+}
+
+.wy-menu-vertical a:hover {
+    background-color: var(--navbar-background-color-hover);
+    color: var(--navbar-level-1-color);
+}
+
+.wy-menu-vertical a:active {
+    background-color: var(--navbar-background-color-active);
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+    border: none;
+}
+
+.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a span.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a span.toctree-expand {
+    color: var(--navbar-level-3-color);
+    opacity: 0.9;
+    margin-right: 8px;
+}
+
+.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand {
+    color: var(--navbar-level-2-color);
+    opacity: 1;
+}
+
+.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:active span.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a:active span.toctree-expand {
+    color: var(--navbar-level-1-color);
+    opacity: 1;
+}
+
+/* Second (and higher) levels of navigation items */
+
+.wy-menu-vertical li.current a,
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
+    background-color: var(--navbar-current-background-color);
+    color: var(--navbar-level-2-color);
+}
+
+.wy-menu-vertical li.current a:hover,
+.wy-menu-vertical li.toctree-l2.current > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:hover {
+    background-color: var(--navbar-current-background-color-hover);
+}
+
+.wy-menu-vertical li.current a:active,
+.wy-menu-vertical li.toctree-l2.current > a:active,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:active,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:active {
+    background-color: var(--navbar-current-background-color-active);
+}
+
+/* Version selector (only visible on Read the Docs) */
+
+.rst-versions {
+    background-color: var(--navbar-current-background-color);
+}
+
+.rst-versions a,
+.rst-versions .rst-current-version,
+.rst-versions .rst-current-version .fa,
+.rst-versions .rst-other-versions dd a {
+    color: var(--navbar-level-1-color);
+}
+
+.rst-versions .rst-other-versions small {
+    color: var(--navbar-level-3-color);
+}
+
+.rst-versions .rst-other-versions dd a:hover {
+    text-decoration: underline;
+}
+
+.rst-versions .rst-other-versions {
+    color: var(--navbar-heading-color);
+}
+
+.rst-versions .rst-current-version {
+    background-color: var(--navbar-current-background-color);
+}
+
+.rst-versions .rst-current-version:hover {
+    background-color: var(--navbar-current-background-color-hover);
+}
+
+.rst-versions .rst-current-version:active {
+    background-color: var(--navbar-current-background-color-active);
+}
+
+/* Hide the obnoxious automatic highlight in search results */
+.rst-content .highlighted {
+    background-color: transparent;
+    font-weight: inherit;
+    padding: 0;
+}

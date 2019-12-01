@@ -57,6 +57,8 @@ Signals
 
 Emitted when the button is pressed (down).
 
+----
+
 .. _class_TouchScreenButton_signal_released:
 
 - **released** **(** **)**
@@ -100,6 +102,8 @@ Property Descriptions
 
 The button's action. Actions can be handled with :ref:`InputEventAction<class_InputEventAction>`.
 
+----
+
 .. _class_TouchScreenButton_property_bitmask:
 
 - :ref:`BitMap<class_BitMap>` **bitmask**
@@ -112,6 +116,8 @@ The button's action. Actions can be handled with :ref:`InputEventAction<class_In
 
 The button's bitmask.
 
+----
+
 .. _class_TouchScreenButton_property_normal:
 
 - :ref:`Texture<class_Texture>` **normal**
@@ -123,6 +129,8 @@ The button's bitmask.
 +----------+--------------------+
 
 The button's texture for the normal state.
+
+----
 
 .. _class_TouchScreenButton_property_passby_press:
 
@@ -138,6 +146,8 @@ The button's texture for the normal state.
 
 If ``true``, pass-by presses are enabled.
 
+----
+
 .. _class_TouchScreenButton_property_pressed:
 
 - :ref:`Texture<class_Texture>` **pressed**
@@ -149,6 +159,8 @@ If ``true``, pass-by presses are enabled.
 +----------+----------------------------+
 
 The button's texture for the pressed state.
+
+----
 
 .. _class_TouchScreenButton_property_shape:
 
@@ -162,6 +174,8 @@ The button's texture for the pressed state.
 
 The button's shape.
 
+----
+
 .. _class_TouchScreenButton_property_shape_centered:
 
 - :ref:`bool<class_bool>` **shape_centered**
@@ -174,7 +188,9 @@ The button's shape.
 | *Getter*  | is_shape_centered()       |
 +-----------+---------------------------+
 
-If ``true``, the button's shape is centered.
+If ``true``, the button's shape is centered in the provided texture. If no texture is used, this property has no effect.
+
+----
 
 .. _class_TouchScreenButton_property_shape_visible:
 
@@ -189,6 +205,8 @@ If ``true``, the button's shape is centered.
 +-----------+--------------------------+
 
 If ``true``, the button's shape is visible.
+
+----
 
 .. _class_TouchScreenButton_property_visibility_mode:
 

@@ -85,6 +85,8 @@ Property Descriptions
 
 If the body is at least this close to another body, this body will consider them to be colliding.
 
+----
+
 .. _class_KinematicBody2D_property_motion/sync_to_physics:
 
 - :ref:`bool<class_bool>` **motion/sync_to_physics**
@@ -108,6 +110,8 @@ Method Descriptions
 
 Returns the velocity of the floor. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`.
 
+----
+
 .. _class_KinematicBody2D_method_get_slide_collision:
 
 - :ref:`KinematicCollision2D<class_KinematicCollision2D>` **get_slide_collision** **(** :ref:`int<class_int>` slide_idx **)**
@@ -122,11 +126,15 @@ Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contain
         var collision = get_slide_collision(i)
         print("Collided with: ", collision.collider.name)
 
+----
+
 .. _class_KinematicBody2D_method_get_slide_count:
 
 - :ref:`int<class_int>` **get_slide_count** **(** **)** const
 
 Returns the number of times the body collided and changed direction during the last call to :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`.
+
+----
 
 .. _class_KinematicBody2D_method_is_on_ceiling:
 
@@ -134,17 +142,23 @@ Returns the number of times the body collided and changed direction during the l
 
 Returns ``true`` if the body is on the ceiling. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`.
 
+----
+
 .. _class_KinematicBody2D_method_is_on_floor:
 
 - :ref:`bool<class_bool>` **is_on_floor** **(** **)** const
 
 Returns ``true`` if the body is on the floor. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`.
 
+----
+
 .. _class_KinematicBody2D_method_is_on_wall:
 
 - :ref:`bool<class_bool>` **is_on_wall** **(** **)** const
 
 Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`.
+
+----
 
 .. _class_KinematicBody2D_method_move_and_collide:
 
@@ -153,6 +167,8 @@ Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_
 Moves the body along the vector ``rel_vec``. The body will stop if it collides. Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about the collision.
 
 If ``test_only`` is ``true``, the body does not move but the would-be collision information is given.
+
+----
 
 .. _class_KinematicBody2D_method_move_and_slide:
 
@@ -174,6 +190,8 @@ If ``infinite_inertia`` is ``true``, body will be able to push :ref:`RigidBody2D
 
 Returns the ``linear_velocity`` vector, rotated and/or scaled if a slide collision occurred. To get detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody2D_method_get_slide_collision>`.
 
+----
+
 .. _class_KinematicBody2D_method_move_and_slide_with_snap:
 
 - :ref:`Vector2<class_Vector2>` **move_and_slide_with_snap** **(** :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`Vector2<class_Vector2>` snap, :ref:`Vector2<class_Vector2>` floor_normal=Vector2( 0, 0 ), :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` floor_max_angle=0.785398, :ref:`bool<class_bool>` infinite_inertia=true **)**
@@ -181,6 +199,8 @@ Returns the ``linear_velocity`` vector, rotated and/or scaled if a slide collisi
 Moves the body while keeping it attached to slopes. Similar to :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`.
 
 As long as the ``snap`` vector is in contact with the ground, the body will remain attached to the surface. This means you must disable snap in order to jump, for example. You can do this by setting ``snap`` to ``(0, 0)`` or by using :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` instead.
+
+----
 
 .. _class_KinematicBody2D_method_test_move:
 

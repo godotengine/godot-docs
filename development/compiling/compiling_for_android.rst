@@ -91,9 +91,9 @@ the following arguments:
     scons platform=android target=release android_arch=arm64v8
     cd platform/android/java
     # On Windows
-    .\gradlew build
+    .\gradlew generateGodotTemplates
     # On Linux and macOS
-    ./gradlew build
+    ./gradlew generateGodotTemplates
 
 
 The resulting APK will be located at ``bin/android_release.apk``.
@@ -106,9 +106,9 @@ The resulting APK will be located at ``bin/android_release.apk``.
     scons platform=android target=release_debug android_arch=arm64v8
     cd platform/android/java
     # On Windows
-    .\gradlew build
+    .\gradlew generateGodotTemplates
     # On Linux and macOS
-    ./gradlew build
+    ./gradlew generateGodotTemplates
 
 
 The resulting APK will be located at ``bin/android_debug.apk``.
@@ -127,15 +127,29 @@ with Gradle. For example, for the release template:
     scons platform=android target=release android_arch=x86
     cd platform/android/java
     # On Windows
-    .\gradlew build
+    .\gradlew generateGodotTemplates
     # On Linux and macOS
-    ./gradlew build
+    ./gradlew generateGodotTemplates
 
 
 This will create a fat binary that works on all platforms.
 The final APK size of exported projects will depend on the platforms you choose
 to support when exporting; in other words, unused platforms will be removed from
 the APK.
+
+Cleaning the generated export templates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can use the following commands to remove the generated export templates:
+
+::
+
+    cd platform/android/java
+    # On Windows
+    .\gradlew cleanGodotTemplates
+    # On Linux and macOS
+    ./gradlew cleanGodotTemplates
+
 
 Using the export templates
 --------------------------

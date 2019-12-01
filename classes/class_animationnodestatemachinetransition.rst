@@ -82,6 +82,8 @@ Turn on auto advance when this condition is set. The provided name will become a
 
     $animation_tree["parameters/conditions/idle"] = is_on_floor and linear_velocity.x == 0
 
+----
+
 .. _class_AnimationNodeStateMachineTransition_property_auto_advance:
 
 - :ref:`bool<class_bool>` **auto_advance**
@@ -95,6 +97,8 @@ Turn on auto advance when this condition is set. The provided name will become a
 +-----------+-------------------------+
 
 Turn on the transition automatically when this state is reached. This works best with :ref:`SWITCH_MODE_AT_END<class_AnimationNodeStateMachineTransition_constant_SWITCH_MODE_AT_END>`.
+
+----
 
 .. _class_AnimationNodeStateMachineTransition_property_disabled:
 
@@ -110,6 +114,8 @@ Turn on the transition automatically when this state is reached. This works best
 
 Don't use this transition during :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>` or :ref:`auto_advance<class_AnimationNodeStateMachineTransition_property_auto_advance>`.
 
+----
+
 .. _class_AnimationNodeStateMachineTransition_property_priority:
 
 - :ref:`int<class_int>` **priority**
@@ -124,6 +130,8 @@ Don't use this transition during :ref:`AnimationNodeStateMachinePlayback.travel<
 
 Lower priority transitions are preferred when travelling through the tree via :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>` or :ref:`auto_advance<class_AnimationNodeStateMachineTransition_property_auto_advance>`.
 
+----
+
 .. _class_AnimationNodeStateMachineTransition_property_switch_mode:
 
 - :ref:`SwitchMode<enum_AnimationNodeStateMachineTransition_SwitchMode>` **switch_mode**
@@ -137,6 +145,8 @@ Lower priority transitions are preferred when travelling through the tree via :r
 +-----------+------------------------+
 
 The transition type.
+
+----
 
 .. _class_AnimationNodeStateMachineTransition_property_xfade_time:
 

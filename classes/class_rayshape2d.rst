@@ -49,6 +49,8 @@ Property Descriptions
 
 The ray's length.
 
+----
+
 .. _class_RayShape2D_property_slips_on_slope:
 
 - :ref:`bool<class_bool>` **slips_on_slope**

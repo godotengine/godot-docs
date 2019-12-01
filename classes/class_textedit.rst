@@ -21,51 +21,59 @@ Multiline text editing control.
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`breakpoint_gutter<class_TextEdit_property_breakpoint_gutter>`                       | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`caret_blink<class_TextEdit_property_caret_blink>`                                   | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`   | :ref:`caret_blink_speed<class_TextEdit_property_caret_blink_speed>`                       | 0.65  |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`caret_block_mode<class_TextEdit_property_caret_block_mode>`                         | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`caret_moving_by_right_click<class_TextEdit_property_caret_moving_by_right_click>`   | true  |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`context_menu_enabled<class_TextEdit_property_context_menu_enabled>`                 | true  |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`draw_spaces<class_TextEdit_property_draw_spaces>`                                   | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`draw_tabs<class_TextEdit_property_draw_tabs>`                                       | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`fold_gutter<class_TextEdit_property_fold_gutter>`                                   | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`hiding_enabled<class_TextEdit_property_hiding_enabled>`                             | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`highlight_all_occurrences<class_TextEdit_property_highlight_all_occurrences>`       | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`highlight_current_line<class_TextEdit_property_highlight_current_line>`             | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`minimap_draw<class_TextEdit_property_minimap_draw>`                                 | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`minimap_width<class_TextEdit_property_minimap_width>`                               | 80    |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>` | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`readonly<class_TextEdit_property_readonly>`                                         | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`show_line_numbers<class_TextEdit_property_show_line_numbers>`                       | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`smooth_scrolling<class_TextEdit_property_smooth_scrolling>`                         | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`syntax_highlighting<class_TextEdit_property_syntax_highlighting>`                   | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`text<class_TextEdit_property_text>`                                                 | ""    |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`   | :ref:`v_scroll_speed<class_TextEdit_property_v_scroll_speed>`                             | 80.0  |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`wrap_enabled<class_TextEdit_property_wrap_enabled>`                                 | false |
-+-----------------------------+-------------------------------------------------------------------------------------------+-------+
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`breakpoint_gutter<class_TextEdit_property_breakpoint_gutter>`                       | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`caret_blink<class_TextEdit_property_caret_blink>`                                   | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                    | :ref:`caret_blink_speed<class_TextEdit_property_caret_blink_speed>`                       | 0.65     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`caret_block_mode<class_TextEdit_property_caret_block_mode>`                         | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`caret_moving_by_right_click<class_TextEdit_property_caret_moving_by_right_click>`   | true     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`context_menu_enabled<class_TextEdit_property_context_menu_enabled>`                 | true     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`draw_spaces<class_TextEdit_property_draw_spaces>`                                   | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`draw_tabs<class_TextEdit_property_draw_tabs>`                                       | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`FocusMode<enum_Control_FocusMode>`     | focus_mode                                                                                | **O:** 2 |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`fold_gutter<class_TextEdit_property_fold_gutter>`                                   | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`hiding_enabled<class_TextEdit_property_hiding_enabled>`                             | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`highlight_all_occurrences<class_TextEdit_property_highlight_all_occurrences>`       | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`highlight_current_line<class_TextEdit_property_highlight_current_line>`             | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`minimap_draw<class_TextEdit_property_minimap_draw>`                                 | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                        | :ref:`minimap_width<class_TextEdit_property_minimap_width>`                               | 80       |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`CursorShape<enum_Control_CursorShape>` | mouse_default_cursor_shape                                                                | **O:** 1 |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>` | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`readonly<class_TextEdit_property_readonly>`                                         | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`selecting_enabled<class_TextEdit_property_selecting_enabled>`                       | true     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`shortcut_keys_enabled<class_TextEdit_property_shortcut_keys_enabled>`               | true     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`show_line_numbers<class_TextEdit_property_show_line_numbers>`                       | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`smooth_scrolling<class_TextEdit_property_smooth_scrolling>`                         | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`syntax_highlighting<class_TextEdit_property_syntax_highlighting>`                   | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                  | :ref:`text<class_TextEdit_property_text>`                                                 | ""       |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                    | :ref:`v_scroll_speed<class_TextEdit_property_v_scroll_speed>`                             | 80.0     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`wrap_enabled<class_TextEdit_property_wrap_enabled>`                                 | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -162,7 +170,7 @@ Theme Properties
 ----------------
 
 +---------------------------------+-----------------------------+---------------------------------+
-| :ref:`Color<class_Color>`       | background_color            | Color( 0, 0, 0, 1 )             |
+| :ref:`Color<class_Color>`       | background_color            | Color( 0, 0, 0, 0 )             |
 +---------------------------------+-----------------------------+---------------------------------+
 | :ref:`Color<class_Color>`       | bookmark_color              | Color( 0.08, 0.49, 0.98, 1 )    |
 +---------------------------------+-----------------------------+---------------------------------+
@@ -250,11 +258,15 @@ Signals
 
 Emitted when a breakpoint is placed via the breakpoint gutter.
 
+----
+
 .. _class_TextEdit_signal_cursor_changed:
 
 - **cursor_changed** **(** **)**
 
 Emitted when the cursor changes.
+
+----
 
 .. _class_TextEdit_signal_info_clicked:
 
@@ -262,13 +274,19 @@ Emitted when the cursor changes.
 
 Emitted when the info icon is clicked.
 
+----
+
 .. _class_TextEdit_signal_request_completion:
 
 - **request_completion** **(** **)**
 
+----
+
 .. _class_TextEdit_signal_symbol_lookup:
 
 - **symbol_lookup** **(** :ref:`String<class_String>` symbol, :ref:`int<class_int>` row, :ref:`int<class_int>` column **)**
+
+----
 
 .. _class_TextEdit_signal_text_changed:
 
@@ -295,6 +313,22 @@ enum **SearchFlags**:
 
 - **SEARCH_BACKWARDS** = **4** --- Search from end to beginning.
 
+----
+
+.. _enum_TextEdit_SearchResult:
+
+.. _class_TextEdit_constant_SEARCH_RESULT_COLUMN:
+
+.. _class_TextEdit_constant_SEARCH_RESULT_LINE:
+
+enum **SearchResult**:
+
+- **SEARCH_RESULT_COLUMN** = **0** --- Used to access the result column from :ref:`search<class_TextEdit_method_search>`.
+
+- **SEARCH_RESULT_LINE** = **1** --- Used to access the result line from :ref:`search<class_TextEdit_method_search>`.
+
+----
+
 .. _enum_TextEdit_MenuItems:
 
 .. _class_TextEdit_constant_MENU_CUT:
@@ -315,7 +349,7 @@ enum **SearchFlags**:
 
 enum **MenuItems**:
 
-- **MENU_CUT** = **0** --- Cuts (Copies and clears) the selected text.
+- **MENU_CUT** = **0** --- Cuts (copies and clears) the selected text.
 
 - **MENU_COPY** = **1** --- Copies the selected text.
 
@@ -353,6 +387,8 @@ Property Descriptions
 
 If ``true``, the breakpoint gutter is visible.
 
+----
+
 .. _class_TextEdit_property_caret_blink:
 
 - :ref:`bool<class_bool>` **caret_blink**
@@ -367,6 +403,8 @@ If ``true``, the breakpoint gutter is visible.
 
 If ``true``, the caret (visual cursor) blinks.
 
+----
+
 .. _class_TextEdit_property_caret_blink_speed:
 
 - :ref:`float<class_float>` **caret_blink_speed**
@@ -380,6 +418,8 @@ If ``true``, the caret (visual cursor) blinks.
 +-----------+-------------------------------+
 
 Duration (in seconds) of a caret's blinking cycle.
+
+----
 
 .. _class_TextEdit_property_caret_block_mode:
 
@@ -397,6 +437,8 @@ If ``true``, the caret displays as a rectangle.
 
 If ``false``, the caret displays as a bar.
 
+----
+
 .. _class_TextEdit_property_caret_moving_by_right_click:
 
 - :ref:`bool<class_bool>` **caret_moving_by_right_click**
@@ -413,6 +455,8 @@ If ``true``, a right-click moves the cursor at the mouse position before display
 
 If ``false``, the context menu disregards mouse location.
 
+----
+
 .. _class_TextEdit_property_context_menu_enabled:
 
 - :ref:`bool<class_bool>` **context_menu_enabled**
@@ -426,6 +470,8 @@ If ``false``, the context menu disregards mouse location.
 +-----------+---------------------------------+
 
 If ``true``, a right-click displays the context menu.
+
+----
 
 .. _class_TextEdit_property_draw_spaces:
 
@@ -441,6 +487,8 @@ If ``true``, a right-click displays the context menu.
 
 If ``true``, the "space" character will have a visible representation.
 
+----
+
 .. _class_TextEdit_property_draw_tabs:
 
 - :ref:`bool<class_bool>` **draw_tabs**
@@ -454,6 +502,8 @@ If ``true``, the "space" character will have a visible representation.
 +-----------+----------------------+
 
 If ``true``, the "tab" character will have a visible representation.
+
+----
 
 .. _class_TextEdit_property_fold_gutter:
 
@@ -469,6 +519,8 @@ If ``true``, the "tab" character will have a visible representation.
 
 If ``true``, the fold gutter is visible. This enables folding groups of indented lines.
 
+----
+
 .. _class_TextEdit_property_hiding_enabled:
 
 - :ref:`bool<class_bool>` **hiding_enabled**
@@ -482,6 +534,8 @@ If ``true``, the fold gutter is visible. This enables folding groups of indented
 +-----------+---------------------------+
 
 If ``true``, all lines that have been set to hidden by :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`, will not be visible.
+
+----
 
 .. _class_TextEdit_property_highlight_all_occurrences:
 
@@ -497,6 +551,8 @@ If ``true``, all lines that have been set to hidden by :ref:`set_line_as_hidden<
 
 If ``true``, all occurrences of the selected text will be highlighted.
 
+----
+
 .. _class_TextEdit_property_highlight_current_line:
 
 - :ref:`bool<class_bool>` **highlight_current_line**
@@ -511,6 +567,8 @@ If ``true``, all occurrences of the selected text will be highlighted.
 
 If ``true``, the line containing the cursor is highlighted.
 
+----
+
 .. _class_TextEdit_property_minimap_draw:
 
 - :ref:`bool<class_bool>` **minimap_draw**
@@ -522,6 +580,8 @@ If ``true``, the line containing the cursor is highlighted.
 +-----------+----------------------+
 | *Getter*  | is_drawing_minimap() |
 +-----------+----------------------+
+
+----
 
 .. _class_TextEdit_property_minimap_width:
 
@@ -535,6 +595,8 @@ If ``true``, the line containing the cursor is highlighted.
 | *Getter*  | get_minimap_width()      |
 +-----------+--------------------------+
 
+----
+
 .. _class_TextEdit_property_override_selected_font_color:
 
 - :ref:`bool<class_bool>` **override_selected_font_color**
@@ -546,6 +608,8 @@ If ``true``, the line containing the cursor is highlighted.
 +-----------+-----------------------------------------+
 | *Getter*  | is_overriding_selected_font_color()     |
 +-----------+-----------------------------------------+
+
+----
 
 .. _class_TextEdit_property_readonly:
 
@@ -561,6 +625,36 @@ If ``true``, the line containing the cursor is highlighted.
 
 If ``true``, read-only mode is enabled. Existing text cannot be modified and new text cannot be added.
 
+----
+
+.. _class_TextEdit_property_selecting_enabled:
+
+- :ref:`bool<class_bool>` **selecting_enabled**
+
++-----------+------------------------------+
+| *Default* | true                         |
++-----------+------------------------------+
+| *Setter*  | set_selecting_enabled(value) |
++-----------+------------------------------+
+| *Getter*  | is_selecting_enabled()       |
++-----------+------------------------------+
+
+----
+
+.. _class_TextEdit_property_shortcut_keys_enabled:
+
+- :ref:`bool<class_bool>` **shortcut_keys_enabled**
+
++-----------+----------------------------------+
+| *Default* | true                             |
++-----------+----------------------------------+
+| *Setter*  | set_shortcut_keys_enabled(value) |
++-----------+----------------------------------+
+| *Getter*  | is_shortcut_keys_enabled()       |
++-----------+----------------------------------+
+
+----
+
 .. _class_TextEdit_property_show_line_numbers:
 
 - :ref:`bool<class_bool>` **show_line_numbers**
@@ -574,6 +668,8 @@ If ``true``, read-only mode is enabled. Existing text cannot be modified and new
 +-----------+--------------------------------+
 
 If ``true``, line numbers are displayed to the left of the text.
+
+----
 
 .. _class_TextEdit_property_smooth_scrolling:
 
@@ -589,6 +685,8 @@ If ``true``, line numbers are displayed to the left of the text.
 
 If ``true``, sets the ``step`` of the scrollbars to ``0.25`` which results in smoother scrolling.
 
+----
+
 .. _class_TextEdit_property_syntax_highlighting:
 
 - :ref:`bool<class_bool>` **syntax_highlighting**
@@ -602,6 +700,8 @@ If ``true``, sets the ``step`` of the scrollbars to ``0.25`` which results in sm
 +-----------+------------------------------+
 
 If ``true``, any custom color properties that have been set for this ``TextEdit`` will be visible.
+
+----
 
 .. _class_TextEdit_property_text:
 
@@ -617,6 +717,8 @@ If ``true``, any custom color properties that have been set for this ``TextEdit`
 
 String value of the ``TextEdit``.
 
+----
+
 .. _class_TextEdit_property_v_scroll_speed:
 
 - :ref:`float<class_float>` **v_scroll_speed**
@@ -630,6 +732,8 @@ String value of the ``TextEdit``.
 +-----------+---------------------------+
 
 Vertical scroll sensitivity.
+
+----
 
 .. _class_TextEdit_property_wrap_enabled:
 
@@ -654,11 +758,15 @@ Method Descriptions
 
 Adds color region (given the delimiters) and its colors.
 
+----
+
 .. _class_TextEdit_method_add_keyword_color:
 
 - void **add_keyword_color** **(** :ref:`String<class_String>` keyword, :ref:`Color<class_Color>` color **)**
 
 Adds a ``keyword`` and its :ref:`Color<class_Color>`.
+
+----
 
 .. _class_TextEdit_method_can_fold:
 
@@ -666,15 +774,21 @@ Adds a ``keyword`` and its :ref:`Color<class_Color>`.
 
 Returns if the given line is foldable, that is, it has indented lines right below it.
 
+----
+
 .. _class_TextEdit_method_center_viewport_to_cursor:
 
 - void **center_viewport_to_cursor** **(** **)**
+
+----
 
 .. _class_TextEdit_method_clear_colors:
 
 - void **clear_colors** **(** **)**
 
-Clears all the syntax coloring information.
+Clears all custom syntax coloring information previously added with :ref:`add_color_region<class_TextEdit_method_add_color_region>` or :ref:`add_keyword_color<class_TextEdit_method_add_keyword_color>`.
+
+----
 
 .. _class_TextEdit_method_clear_undo_history:
 
@@ -682,11 +796,15 @@ Clears all the syntax coloring information.
 
 Clears the undo history.
 
+----
+
 .. _class_TextEdit_method_copy:
 
 - void **copy** **(** **)**
 
 Copy's the current text selection.
+
+----
 
 .. _class_TextEdit_method_cursor_get_column:
 
@@ -694,11 +812,15 @@ Copy's the current text selection.
 
 Returns the column the editing cursor is at.
 
+----
+
 .. _class_TextEdit_method_cursor_get_line:
 
 - :ref:`int<class_int>` **cursor_get_line** **(** **)** const
 
 Returns the line the editing cursor is at.
+
+----
 
 .. _class_TextEdit_method_cursor_set_column:
 
@@ -706,7 +828,9 @@ Returns the line the editing cursor is at.
 
 Moves the cursor at the specified ``column`` index.
 
-If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs.
+If ``adjust_viewport`` is set to ``true``, the viewport will center at the cursor position after the move occurs.
+
+----
 
 .. _class_TextEdit_method_cursor_set_line:
 
@@ -714,9 +838,11 @@ If ``adjust_viewport`` is set to true, the viewport will center at the cursor po
 
 Moves the cursor at the specified ``line`` index.
 
-If ``adjust_viewport`` is set to true, the viewport will center at the cursor position after the move occurs.
+If ``adjust_viewport`` is set to ``true``, the viewport will center at the cursor position after the move occurs.
 
-If ``can_be_hidden`` is set to true, the specified ``line`` can be hidden using :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`.
+If ``can_be_hidden`` is set to ``true``, the specified ``line`` can be hidden using :ref:`set_line_as_hidden<class_TextEdit_method_set_line_as_hidden>`.
+
+----
 
 .. _class_TextEdit_method_cut:
 
@@ -724,11 +850,15 @@ If ``can_be_hidden`` is set to true, the specified ``line`` can be hidden using 
 
 Cut's the current selection.
 
+----
+
 .. _class_TextEdit_method_deselect:
 
 - void **deselect** **(** **)**
 
 Deselects the current selection.
+
+----
 
 .. _class_TextEdit_method_fold_all_lines:
 
@@ -736,11 +866,15 @@ Deselects the current selection.
 
 Folds all lines that are possible to be folded (see :ref:`can_fold<class_TextEdit_method_can_fold>`).
 
+----
+
 .. _class_TextEdit_method_fold_line:
 
 - void **fold_line** **(** :ref:`int<class_int>` line **)**
 
 Folds the given line, if possible (see :ref:`can_fold<class_TextEdit_method_can_fold>`).
+
+----
 
 .. _class_TextEdit_method_get_breakpoints:
 
@@ -748,11 +882,15 @@ Folds the given line, if possible (see :ref:`can_fold<class_TextEdit_method_can_
 
 Returns an array containing the line number of each breakpoint.
 
+----
+
 .. _class_TextEdit_method_get_keyword_color:
 
 - :ref:`Color<class_Color>` **get_keyword_color** **(** :ref:`String<class_String>` keyword **)** const
 
 Returns the :ref:`Color<class_Color>` of the specified ``keyword``.
+
+----
 
 .. _class_TextEdit_method_get_line:
 
@@ -760,11 +898,15 @@ Returns the :ref:`Color<class_Color>` of the specified ``keyword``.
 
 Returns the text of a specific line.
 
+----
+
 .. _class_TextEdit_method_get_line_count:
 
 - :ref:`int<class_int>` **get_line_count** **(** **)** const
 
 Returns the amount of total lines in the text.
+
+----
 
 .. _class_TextEdit_method_get_menu:
 
@@ -772,11 +914,15 @@ Returns the amount of total lines in the text.
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``TextEdit``. By default, this menu is displayed when right-clicking on the ``TextEdit``.
 
+----
+
 .. _class_TextEdit_method_get_selection_from_column:
 
 - :ref:`int<class_int>` **get_selection_from_column** **(** **)** const
 
 Returns the selection begin column.
+
+----
 
 .. _class_TextEdit_method_get_selection_from_line:
 
@@ -784,11 +930,15 @@ Returns the selection begin column.
 
 Returns the selection begin line.
 
+----
+
 .. _class_TextEdit_method_get_selection_text:
 
 - :ref:`String<class_String>` **get_selection_text** **(** **)** const
 
 Returns the text inside the selection.
+
+----
 
 .. _class_TextEdit_method_get_selection_to_column:
 
@@ -796,11 +946,15 @@ Returns the text inside the selection.
 
 Returns the selection end column.
 
+----
+
 .. _class_TextEdit_method_get_selection_to_line:
 
 - :ref:`int<class_int>` **get_selection_to_line** **(** **)** const
 
 Returns the selection end line.
+
+----
 
 .. _class_TextEdit_method_get_word_under_cursor:
 
@@ -808,11 +962,15 @@ Returns the selection end line.
 
 Returns a :ref:`String<class_String>` text with the word under the mouse cursor location.
 
+----
+
 .. _class_TextEdit_method_has_keyword_color:
 
 - :ref:`bool<class_bool>` **has_keyword_color** **(** :ref:`String<class_String>` keyword **)** const
 
 Returns whether the specified ``keyword`` has a color set to it or not.
+
+----
 
 .. _class_TextEdit_method_insert_text_at_cursor:
 
@@ -820,11 +978,15 @@ Returns whether the specified ``keyword`` has a color set to it or not.
 
 Insert the specified text at the cursor position.
 
+----
+
 .. _class_TextEdit_method_is_folded:
 
 - :ref:`bool<class_bool>` **is_folded** **(** :ref:`int<class_int>` line **)** const
 
 Returns whether the line at the specified index is folded or not.
+
+----
 
 .. _class_TextEdit_method_is_line_hidden:
 
@@ -832,11 +994,15 @@ Returns whether the line at the specified index is folded or not.
 
 Returns whether the line at the specified index is hidden or not.
 
+----
+
 .. _class_TextEdit_method_is_selection_active:
 
 - :ref:`bool<class_bool>` **is_selection_active** **(** **)** const
 
 Returns ``true`` if the selection is active.
+
+----
 
 .. _class_TextEdit_method_menu_option:
 
@@ -844,11 +1010,15 @@ Returns ``true`` if the selection is active.
 
 Triggers a right-click menu action by the specified index. See :ref:`MenuItems<enum_TextEdit_MenuItems>` for a list of available indexes.
 
+----
+
 .. _class_TextEdit_method_paste:
 
 - void **paste** **(** **)**
 
 Paste the current selection.
+
+----
 
 .. _class_TextEdit_method_redo:
 
@@ -856,17 +1026,33 @@ Paste the current selection.
 
 Perform redo operation.
 
+----
+
 .. _class_TextEdit_method_remove_breakpoints:
 
 - void **remove_breakpoints** **(** **)**
 
 Removes all the breakpoints. This will not fire the :ref:`breakpoint_toggled<class_TextEdit_signal_breakpoint_toggled>` signal.
 
+----
+
 .. _class_TextEdit_method_search:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **search** **(** :ref:`String<class_String>` key, :ref:`int<class_int>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column **)** const
 
-Perform a search inside the text. Search flags can be specified in the``SEARCH_*`` enum.
+Perform a search inside the text. Search flags can be specified in the :ref:`SearchFlags<enum_TextEdit_SearchFlags>` enum.
+
+Returns an empty ``PoolIntArray`` if no result was found. Otherwise, the result line and column can be accessed at indices specified in the :ref:`SearchResult<enum_TextEdit_SearchResult>` enum, e.g:
+
+::
+
+    var result = search(key, flags, line, column)
+    if result.size() > 0:
+        # result found
+        var res_line = result[TextEdit.SEARCH_RESULT_LINE]
+        var res_column = result[TextEdit.SEARCH_RESULT_COLUMN]
+
+----
 
 .. _class_TextEdit_method_select:
 
@@ -874,11 +1060,15 @@ Perform a search inside the text. Search flags can be specified in the``SEARCH_*
 
 Perform selection, from line/column to line/column.
 
+----
+
 .. _class_TextEdit_method_select_all:
 
 - void **select_all** **(** **)**
 
 Select all the text.
+
+----
 
 .. _class_TextEdit_method_set_line_as_hidden:
 
@@ -886,11 +1076,15 @@ Select all the text.
 
 If ``true``, hides the line of the specified index.
 
+----
+
 .. _class_TextEdit_method_toggle_fold_line:
 
 - void **toggle_fold_line** **(** :ref:`int<class_int>` line **)**
 
 Toggle the folding of the code block at the given line.
+
+----
 
 .. _class_TextEdit_method_undo:
 
@@ -898,11 +1092,15 @@ Toggle the folding of the code block at the given line.
 
 Perform undo operation.
 
+----
+
 .. _class_TextEdit_method_unfold_line:
 
 - void **unfold_line** **(** :ref:`int<class_int>` line **)**
 
 Unfolds the given line, if folded.
+
+----
 
 .. _class_TextEdit_method_unhide_all_lines:
 

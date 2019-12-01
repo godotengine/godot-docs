@@ -45,6 +45,8 @@ Property Descriptions
 | *Getter* | get_material()      |
 +----------+---------------------+
 
+----
+
 .. _class_CSGMesh_property_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**

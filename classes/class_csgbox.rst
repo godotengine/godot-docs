@@ -53,6 +53,8 @@ Property Descriptions
 
 Depth of the box measured from the center of the box.
 
+----
+
 .. _class_CSGBox_property_height:
 
 - :ref:`float<class_float>` **height**
@@ -67,6 +69,8 @@ Depth of the box measured from the center of the box.
 
 Height of the box measured from the center of the box.
 
+----
+
 .. _class_CSGBox_property_material:
 
 - :ref:`Material<class_Material>` **material**
@@ -78,6 +82,8 @@ Height of the box measured from the center of the box.
 +----------+---------------------+
 
 The material used to render the box.
+
+----
 
 .. _class_CSGBox_property_width:
 

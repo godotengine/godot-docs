@@ -79,6 +79,8 @@ enum **Capabilities**:
 
 - **ARVR_EXTERNAL** = **8** --- This interface outputs to an external device, if the main viewport is used the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>`). Using a separate viewport node frees up the main viewport for other purposes.
 
+----
+
 .. _enum_ARVRInterface_Eyes:
 
 .. _class_ARVRInterface_constant_EYE_MONO:
@@ -94,6 +96,8 @@ enum **Eyes**:
 - **EYE_LEFT** = **1** --- Left eye output, this is mostly used internally when rendering the image for the left eye and obtaining positioning and projection information.
 
 - **EYE_RIGHT** = **2** --- Right eye output, this is mostly used internally when rendering the image for the right eye and obtaining positioning and projection information.
+
+----
 
 .. _enum_ARVRInterface_Tracking_status:
 
@@ -143,6 +147,8 @@ Property Descriptions
 
 On an AR interface, is our anchor detection enabled?
 
+----
+
 .. _class_ARVRInterface_property_interface_is_initialized:
 
 - :ref:`bool<class_bool>` **interface_is_initialized**
@@ -156,6 +162,8 @@ On an AR interface, is our anchor detection enabled?
 +-----------+---------------------------+
 
 Has this interface been initialized?
+
+----
 
 .. _class_ARVRInterface_property_interface_is_primary:
 
@@ -180,11 +188,15 @@ Method Descriptions
 
 If this is an AR interface that requires displaying a camera feed as the background, this method returns the feed ID in the :ref:`CameraServer<class_CameraServer>` for this interface.
 
+----
+
 .. _class_ARVRInterface_method_get_capabilities:
 
 - :ref:`int<class_int>` **get_capabilities** **(** **)** const
 
 Returns a combination of flags providing information about the capabilities of this interface.
+
+----
 
 .. _class_ARVRInterface_method_get_name:
 
@@ -192,17 +204,23 @@ Returns a combination of flags providing information about the capabilities of t
 
 Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
 
+----
+
 .. _class_ARVRInterface_method_get_render_targetsize:
 
 - :ref:`Vector2<class_Vector2>` **get_render_targetsize** **(** **)**
 
 Returns the resolution at which we should render our intermediate results before things like lens distortion are applied by the VR platform.
 
+----
+
 .. _class_ARVRInterface_method_get_tracking_status:
 
 - :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **get_tracking_status** **(** **)** const
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
+
+----
 
 .. _class_ARVRInterface_method_initialize:
 
@@ -218,11 +236,15 @@ If you do this for a platform that handles its own output (such as OpenVR) Godot
 
 While currently not used you can activate additional interfaces, you may wish to do this if you want to track controllers from other platforms. However, at this point in time only one interface can render to an HMD.
 
+----
+
 .. _class_ARVRInterface_method_is_stereo:
 
 - :ref:`bool<class_bool>` **is_stereo** **(** **)**
 
 Returns ``true`` if the current output of this interface is in stereo.
+
+----
 
 .. _class_ARVRInterface_method_uninitialize:
 

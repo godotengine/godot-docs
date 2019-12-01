@@ -102,6 +102,8 @@ Method Descriptions
 
 Returns the list of bound parameters for the signal at ``idx``.
 
+----
+
 .. _class_SceneState_method_get_connection_count:
 
 - :ref:`int<class_int>` **get_connection_count** **(** **)** const
@@ -110,11 +112,15 @@ Returns the number of signal connections in the scene.
 
 The ``idx`` argument used to query connection metadata in other ``get_connection_*`` methods in the interval ``[0, get_connection_count() - 1]``.
 
+----
+
 .. _class_SceneState_method_get_connection_flags:
 
 - :ref:`int<class_int>` **get_connection_flags** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the connection flags for the signal at ``idx``. See :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants.
+
+----
 
 .. _class_SceneState_method_get_connection_method:
 
@@ -122,11 +128,15 @@ Returns the connection flags for the signal at ``idx``. See :ref:`ConnectFlags<e
 
 Returns the method connected to the signal at ``idx``.
 
+----
+
 .. _class_SceneState_method_get_connection_signal:
 
 - :ref:`String<class_String>` **get_connection_signal** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the name of the signal at ``idx``.
+
+----
 
 .. _class_SceneState_method_get_connection_source:
 
@@ -134,11 +144,15 @@ Returns the name of the signal at ``idx``.
 
 Returns the path to the node that owns the signal at ``idx``, relative to the root node.
 
+----
+
 .. _class_SceneState_method_get_connection_target:
 
 - :ref:`NodePath<class_NodePath>` **get_connection_target** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the path to the node that owns the method connected to the signal at ``idx``, relative to the root node.
+
+----
 
 .. _class_SceneState_method_get_node_count:
 
@@ -148,11 +162,15 @@ Returns the number of nodes in the scene.
 
 The ``idx`` argument used to query node data in other ``get_node_*`` methods in the interval ``[0, get_node_count() - 1]``.
 
+----
+
 .. _class_SceneState_method_get_node_groups:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_node_groups** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the list of group names associated with the node at ``idx``.
+
+----
 
 .. _class_SceneState_method_get_node_index:
 
@@ -160,11 +178,15 @@ Returns the list of group names associated with the node at ``idx``.
 
 Returns the node's index, which is its position relative to its siblings. This is only relevant and saved in scenes for cases where new nodes are added to an instanced or inherited scene among siblings from the base scene. Despite the name, this index is not related to the ``idx`` argument used here and in other methods.
 
+----
+
 .. _class_SceneState_method_get_node_instance:
 
 - :ref:`PackedScene<class_PackedScene>` **get_node_instance** **(** :ref:`int<class_int>` idx **)** const
 
 Returns a :ref:`PackedScene<class_PackedScene>` for the node at ``idx`` (i.e. the whole branch starting at this node, with its child nodes and resources), or ``null`` if the node is not an instance.
+
+----
 
 .. _class_SceneState_method_get_node_instance_placeholder:
 
@@ -172,17 +194,23 @@ Returns a :ref:`PackedScene<class_PackedScene>` for the node at ``idx`` (i.e. th
 
 Returns the path to the represented scene file if the node at ``idx`` is an :ref:`InstancePlaceholder<class_InstancePlaceholder>`.
 
+----
+
 .. _class_SceneState_method_get_node_name:
 
 - :ref:`String<class_String>` **get_node_name** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the name of the node at ``idx``.
 
+----
+
 .. _class_SceneState_method_get_node_owner_path:
 
 - :ref:`NodePath<class_NodePath>` **get_node_owner_path** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the path to the owner of the node at ``idx``, relative to the root node.
+
+----
 
 .. _class_SceneState_method_get_node_path:
 
@@ -192,6 +220,8 @@ Returns the path to the node at ``idx``.
 
 If ``for_parent`` is ``true``, returns the path of the ``idx`` node's parent instead.
 
+----
+
 .. _class_SceneState_method_get_node_property_count:
 
 - :ref:`int<class_int>` **get_node_property_count** **(** :ref:`int<class_int>` idx **)** const
@@ -200,11 +230,15 @@ Returns the number of exported or overridden properties for the node at ``idx``.
 
 The ``prop_idx`` argument used to query node property data in other ``get_node_property_*`` methods in the interval ``[0, get_node_property_count() - 1]``.
 
+----
+
 .. _class_SceneState_method_get_node_property_name:
 
 - :ref:`String<class_String>` **get_node_property_name** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx **)** const
 
 Returns the name of the property at ``prop_idx`` for the node at ``idx``.
+
+----
 
 .. _class_SceneState_method_get_node_property_value:
 
@@ -212,11 +246,15 @@ Returns the name of the property at ``prop_idx`` for the node at ``idx``.
 
 Returns the value of the property at ``prop_idx`` for the node at ``idx``.
 
+----
+
 .. _class_SceneState_method_get_node_type:
 
 - :ref:`String<class_String>` **get_node_type** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the type of the node at ``idx``.
+
+----
 
 .. _class_SceneState_method_is_node_instance_placeholder:
 

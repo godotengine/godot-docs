@@ -49,6 +49,8 @@ Property Descriptions
 
 The line's distance from the origin.
 
+----
+
 .. _class_LineShape2D_property_normal:
 
 - :ref:`Vector2<class_Vector2>` **normal**

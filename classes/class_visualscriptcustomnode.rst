@@ -111,11 +111,15 @@ Method Descriptions
 
 Return the node's title.
 
+----
+
 .. _class_VisualScriptCustomNode_method__get_category:
 
 - :ref:`String<class_String>` **_get_category** **(** **)** virtual
 
 Return the node's category.
+
+----
 
 .. _class_VisualScriptCustomNode_method__get_input_value_port_count:
 
@@ -123,11 +127,15 @@ Return the node's category.
 
 Return the count of input value ports.
 
+----
+
 .. _class_VisualScriptCustomNode_method__get_input_value_port_name:
 
 - :ref:`String<class_String>` **_get_input_value_port_name** **(** :ref:`int<class_int>` idx **)** virtual
 
 Return the specified input port's name.
+
+----
 
 .. _class_VisualScriptCustomNode_method__get_input_value_port_type:
 
@@ -135,11 +143,15 @@ Return the specified input port's name.
 
 Return the specified input port's type. See the ``TYPE_*`` enum in :ref:`@GlobalScope<class_@GlobalScope>`.
 
+----
+
 .. _class_VisualScriptCustomNode_method__get_output_sequence_port_count:
 
 - :ref:`int<class_int>` **_get_output_sequence_port_count** **(** **)** virtual
 
 Return the amount of output **sequence** ports.
+
+----
 
 .. _class_VisualScriptCustomNode_method__get_output_sequence_port_text:
 
@@ -147,11 +159,15 @@ Return the amount of output **sequence** ports.
 
 Return the specified **sequence** output's name.
 
+----
+
 .. _class_VisualScriptCustomNode_method__get_output_value_port_count:
 
 - :ref:`int<class_int>` **_get_output_value_port_count** **(** **)** virtual
 
 Return the amount of output value ports.
+
+----
 
 .. _class_VisualScriptCustomNode_method__get_output_value_port_name:
 
@@ -159,11 +175,15 @@ Return the amount of output value ports.
 
 Return the specified output's name.
 
+----
+
 .. _class_VisualScriptCustomNode_method__get_output_value_port_type:
 
 - :ref:`int<class_int>` **_get_output_value_port_type** **(** :ref:`int<class_int>` idx **)** virtual
 
 Return the specified output's type. See the ``TYPE_*`` enum in :ref:`@GlobalScope<class_@GlobalScope>`.
+
+----
 
 .. _class_VisualScriptCustomNode_method__get_text:
 
@@ -171,17 +191,23 @@ Return the specified output's type. See the ``TYPE_*`` enum in :ref:`@GlobalScop
 
 Return the custom node's text, which is shown right next to the input **sequence** port (if there is none, on the place that is usually taken by it).
 
+----
+
 .. _class_VisualScriptCustomNode_method__get_working_memory_size:
 
 - :ref:`int<class_int>` **_get_working_memory_size** **(** **)** virtual
 
 Return the size of the custom node's working memory. See :ref:`_step<class_VisualScriptCustomNode_method__step>` for more details.
 
+----
+
 .. _class_VisualScriptCustomNode_method__has_input_sequence_port:
 
 - :ref:`bool<class_bool>` **_has_input_sequence_port** **(** **)** virtual
 
 Return whether the custom node has an input **sequence** port.
+
+----
 
 .. _class_VisualScriptCustomNode_method__step:
 
