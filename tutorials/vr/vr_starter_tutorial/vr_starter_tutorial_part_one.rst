@@ -51,7 +51,7 @@ section on the GitHub repository. The starter assets contain some 3D models, sou
           - The audio used are from several different sources, all downloaded from the Sonniss #GameAudioGDC Bundle (`License PDF <https://sonniss.com/gdc-bundle-license/>`_) 
           - - The folders where the audio files are stored have the same name as folders in the Sonniss audio bundle.
           
-          - The OpenVR addon was created by `Bastiaan Olij <https://github.com/BastiaanOlij>`_ and is released under the MIT license. It can be found both on the `Godot Asset Library <https://godotengine.org/asset-library/asset/150>`_ and on `GitHub <https://github.com/GodotVR/godot-openvr-asset>`_.
+          - The OpenVR addon was created by `Bastiaan Olij <https://github.com/BastiaanOlij>`_ and is released under the MIT license. It can be found both on the `Godot Asset Library <https://godotengine.org/asset-library/asset/150>`_ and on `GitHub <https://github.com/GodotVR/godot-openvr-asset>`_. *3rd party code and libraries used in the OpenVR addon may be under a different license.*
           
           - The initial project, 3D models, and scripts were created by `TwistedTwigleg <https://github.com/TwistedTwigleg>`_ and is released under the MIT license.
 
@@ -174,6 +174,8 @@ If the VR interface initialized successfully, we then get the root :ref:`Viewpor
 ARVR interface to drive the :ref:`Viewport <class_Viewport>` display. After setting the ``arvr`` property to ``true``, we set the ``hdr`` property to ``false``. We do this because
 most of the VR headsets do not currently support HDR rendering.
 
+.. note:: HDR support will be available for VR in Godot 3.2.
+
 Finally, we disable VSync so the Frames Per Second (FPS) is not capped by the computer monitor. After this we tell Godot to render at ``90`` frames per second, which is the
 standard for most VR headsets. Without disabling VSync, the normal computer monitor may limit the frame rate of the VR headset to the frame rate of the computer monitor.
 
@@ -202,6 +204,9 @@ How the VR controller scene is setup
 
 In both scenes the root node is a ARVRController node. The only difference is that the ``Left_Controller`` scene has the ``Controller Id`` property set to ``1`` while
 the ``Right_Controller`` has the ``Controller Id`` property set to ``2``.
+
+.. note:: The :ref:`ARVRServer <class_ARVRServer>` attempts to use these two IDs for the left and right VR controllers. For VR systems that support more than 2
+          controllers/tracked-objects, these IDs may need adjusting.
 
 Next is the ``Hand`` :ref:`MeshInstance <class_MeshInstance>` node. This node is used to display the hand mesh that will be used when the VR controller is not holding onto a
 :ref:`RigidBody <class_RigidBody>` node. The hand in the ``Left_Controller`` scene is a left hand, while the hand on the ``Right_Controller`` scene is a right hand.
