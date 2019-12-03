@@ -412,7 +412,7 @@ It is possible to emit signals to GDScript by calling the GDScript dummy object.
 
 	public:
 		RID create_bus();
-		void connect_singals();
+		void connect_signals();
 		bool delete_bus(RID id);
 		static _HilbertHotel *get_singleton();
 		Variant get_bus_info(RID id);
@@ -451,7 +451,7 @@ It is possible to emit signals to GDScript by calling the GDScript dummy object.
 		ADD_SIGNAL(MethodInfo("occupy_room", PropertyInfo(Variant::INT, "room_number"), PropertyInfo(Variant::_RID, "r_id")));
 	}
 
-	void _HilbertHotel::connect_singals() {
+	void _HilbertHotel::connect_signals() {
 		HilbertHotel::get_singleton()->connect("occupy_room", _HilbertHotel::get_singleton(), "_occupy_room");
 	}
 
