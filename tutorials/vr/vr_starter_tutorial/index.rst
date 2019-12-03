@@ -1,5 +1,5 @@
-VR Starer tutorial
-==================
+VR starter tutorial
+===================
 
 .. toctree::
    :maxdepth: 1

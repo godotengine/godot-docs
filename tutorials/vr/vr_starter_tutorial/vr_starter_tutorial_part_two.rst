@@ -1,7 +1,7 @@
 .. _doc_vr_starter_tutorial_part_two:
 
-VR Starter Tutorial Part Two
-============================
+VR starter tutorial part 2
+==========================
 
 Introduction
 ------------
@@ -523,7 +523,7 @@ and the collision force is the ``collision_force`` variable we calculated.
 
 _________________
 
-Once all of the :ref:`Raycast <class_Raycast>`s in the ``raycast`` variable have been iterated over, we then play the shotgun shot sound by calling the ``play`` function on the ``shotgun_fire_sound`` variable.
+Once all of the :ref:`Raycast <class_Raycast>`\s in the ``raycast`` variable have been iterated over, we then play the shotgun shot sound by calling the ``play`` function on the ``shotgun_fire_sound`` variable.
 
 Finally, we check to see if the shotgun is being held by a VR controller by checking to see if the ``controller`` variable is not equal to ``null``. If it is not equal to ``null``,
 we then set the ``rumble`` property of the VR controller to ``0.25``, so there is a slight rumble when the shotgun fires.
