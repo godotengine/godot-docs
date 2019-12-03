@@ -29,11 +29,12 @@ For compiling under Windows, the following is required:
           install MinGW and other dependencies using the following command::
 
               pacman -S mingw-w64-x86_64-python3-pip \
-              mingw-w64-x86_64-gcc mingw-w64-x86_64-yasm \
-              mingw-w64-i686-python3-pip mingw-w64-i686-gcc \
-              mingw-w64-i686-yasm make
+                  mingw-w64-x86_64-gcc mingw-w64-x86_64-yasm \
+                  mingw-w64-i686-python3-pip mingw-w64-i686-gcc \
+                  mingw-w64-i686-yasm make
               
-              For each MSYS2 MinGW subsystem in it's own shell pip install scons
+              For each MSYS2 MinGW subsystem, you should then run
+              ``pip install scons`` in its shell.
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
