@@ -948,6 +948,8 @@ Returns the inverted color ``(1 - r, 1 - g, 1 - b, a)``.
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Color<class_Color>` color **)**
 
+Returns ``true`` if this color and ``color`` are approximately equal, by running :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` on each component.
+
 ----
 
 .. _class_Color_method_lightened:

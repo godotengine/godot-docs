@@ -221,6 +221,8 @@ Returns the inverse of the matrix.
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=0.00001 **)**
 
+Returns ``true`` if this basis and ``b`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
 ----
 
 .. _class_Basis_method_orthonormalized:

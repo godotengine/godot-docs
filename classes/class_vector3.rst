@@ -309,6 +309,8 @@ Returns the inverse of the vector. This is the same as ``Vector3( 1.0 / v.x, 1.0
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Vector3<class_Vector3>` v **)**
 
+Returns ``true`` if this vector and ``v`` are approximately equal, by running :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` on each component.
+
 ----
 
 .. _class_Vector3_method_is_normalized:

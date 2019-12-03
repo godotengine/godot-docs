@@ -223,6 +223,8 @@ Returns the intersection point of a segment from position ``begin`` to position 
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Plane<class_Plane>` plane **)**
 
+Returns ``true`` if this plane and ``plane`` are approximately equal, by running :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` on each component.
+
 ----
 
 .. _class_Plane_method_is_point_over:

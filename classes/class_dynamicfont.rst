@@ -88,7 +88,9 @@ enum **SpacingType**:
 Description
 -----------
 
-DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_BitmapFont>`. This trades the faster loading time of :ref:`BitmapFont<class_BitmapFont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_DynamicFontData>` is used for referencing the font file paths.
+DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_BitmapFont>`. This trades the faster loading time of :ref:`BitmapFont<class_BitmapFont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_DynamicFontData>` is used for referencing the font file paths. DynamicFont also supports defining one or more fallbacks fonts, which will be used when displaying a character not supported by the main font.
+
+DynamicFont uses the `FreeType <https://www.freetype.org/>`_ library for rasterization.
 
 ::
 
@@ -190,6 +192,10 @@ The font data.
 | *Getter*  | get_outline_color()      |
 +-----------+--------------------------+
 
+The font outline's color.
+
+**Note:** It's recommended to leave this at the default value so that you can adjust it in individual controls. For example, if the outline is made black here, it won't be possible to change its color using a Label's font outline modulate theme item.
+
 ----
 
 .. _class_DynamicFont_property_outline_size:
@@ -203,6 +209,8 @@ The font data.
 +-----------+-------------------------+
 | *Getter*  | get_outline_size()      |
 +-----------+-------------------------+
+
+The font outline's thickness in pixels (not relative to the font size).
 
 ----
 
@@ -218,7 +226,7 @@ The font data.
 | *Getter*  | get_size()      |
 +-----------+-----------------+
 
-The font size.
+The font size in pixels.
 
 ----
 
@@ -234,7 +242,7 @@ The font size.
 | *Getter*  | get_use_filter()      |
 +-----------+-----------------------+
 
-If ``true``, filtering is used.
+If ``true``, filtering is used. This makes the font blurry instead of pixelated when scaling it if font oversampling is disabled or ineffective. It's recommended to enable this when using the font in a control whose size changes over time, unless a pixel art aesthetic is desired.
 
 ----
 
@@ -250,7 +258,7 @@ If ``true``, filtering is used.
 | *Getter*  | get_use_mipmaps()      |
 +-----------+------------------------+
 
-If ``true``, mipmapping is used.
+If ``true``, mipmapping is used. This improves the font's appearance when downscaling it if font oversampling is disabled or ineffective.
 
 Method Descriptions
 -------------------
@@ -283,6 +291,8 @@ Returns the number of fallback fonts.
 
 - :ref:`int<class_int>` **get_spacing** **(** :ref:`int<class_int>` type **)** const
 
+Returns the spacing for the given ``type`` (see :ref:`SpacingType<enum_DynamicFont_SpacingType>`).
+
 ----
 
 .. _class_DynamicFont_method_remove_fallback:
@@ -304,4 +314,6 @@ Sets the fallback font at index ``idx``.
 .. _class_DynamicFont_method_set_spacing:
 
 - void **set_spacing** **(** :ref:`int<class_int>` type, :ref:`int<class_int>` value **)**
+
+Sets the spacing for ``type`` (see :ref:`SpacingType<enum_DynamicFont_SpacingType>`) to ``value`` in pixels (not relative to the font size).
 

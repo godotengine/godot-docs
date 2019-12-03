@@ -541,10 +541,12 @@ Rounds ``s`` to the closest smaller integer and returns it.
 
 ::
 
-    # a is 2
+    # a is 2.0
     a = floor(2.99)
-    # a is -3
+    # a is -3.0
     a = floor(-2.99)
+
+**Note:** This method returns a float. If you need an integer, you can use ``int(s)`` directly.
 
 ----
 
@@ -702,7 +704,7 @@ Returns a normalized value considering the given range.
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**
 
-Returns True/False whether ``a`` and ``b`` are approximately equal to each other.
+Returns ``true`` if ``a`` and ``b`` are approximately equal to each other.
 
 ----
 
@@ -734,7 +736,7 @@ Returns whether ``s`` is a NaN (Not-A-Number) value.
 
 - :ref:`bool<class_bool>` **is_zero_approx** **(** :ref:`float<class_float>` s **)**
 
-Returns True/False whether ``s`` is zero or almost zero.
+Returns ``true`` if ``s`` is zero or almost zero.
 
 ----
 

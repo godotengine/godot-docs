@@ -216,6 +216,8 @@ Returns the inverse of the transform, under the assumption that the transformati
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform2D<class_Transform2D>` transform **)**
 
+Returns ``true`` if this transform and ``transform`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
 ----
 
 .. _class_Transform2D_method_orthonormalized:

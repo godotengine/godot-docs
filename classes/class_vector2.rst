@@ -309,6 +309,8 @@ Returns the vector with all components rounded down.
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Vector2<class_Vector2>` v **)**
 
+Returns ``true`` if this vector and ``v`` are approximately equal, by running :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` on each component.
+
 ----
 
 .. _class_Vector2_method_is_normalized:

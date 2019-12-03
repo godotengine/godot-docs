@@ -290,11 +290,13 @@ Returns ``true`` if the ``AABB`` intersects the line segment between ``from`` an
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`AABB<class_AABB>` aabb **)**
 
+Returns ``true`` if this ``AABB`` and ``aabb`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
 ----
 
 .. _class_AABB_method_merge:
 
 - :ref:`AABB<class_AABB>` **merge** **(** :ref:`AABB<class_AABB>` with **)**
 
-Returns a larger AABB that contains this AABB and ``with``.
+Returns a larger ``AABB`` that contains both this ``AABB`` and ``with``.
 

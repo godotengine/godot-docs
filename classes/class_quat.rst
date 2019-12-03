@@ -205,6 +205,8 @@ Returns the inverse of the quaternion.
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Quat<class_Quat>` quat **)**
 
+Returns ``true`` if this quaterion and ``quat`` are approximately equal, by running :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` on each component.
+
 ----
 
 .. _class_Quat_method_is_normalized:

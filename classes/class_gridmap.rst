@@ -89,6 +89,8 @@ Signals
 
 - **cell_size_changed** **(** :ref:`Vector3<class_Vector3>` cell_size **)**
 
+Emitted when :ref:`cell_size<class_GridMap_property_cell_size>` changes.
+
 Constants
 ---------
 
@@ -99,13 +101,13 @@ Constants
 Description
 -----------
 
-GridMap lets you place meshes on a grid interactively. It works both from the editor and can help you create in-game level editors.
+GridMap lets you place meshes on a grid interactively. It works both from the editor and from scripts, which can help you create in-game level editors.
 
-GridMaps use a :ref:`MeshLibrary<class_MeshLibrary>` which contain a list of tiles: meshes with materials plus optional collisions and extra elements.
+GridMaps use a :ref:`MeshLibrary<class_MeshLibrary>` which contains a list of tiles. Each tile is a mesh with materials plus optional collision and navigation shapes.
 
-A GridMap contains a collection of cells. Each grid cell refers to a :ref:`MeshLibrary<class_MeshLibrary>` item. All cells in the map have the same dimensions.
+A GridMap contains a collection of cells. Each grid cell refers to a tile in the :ref:`MeshLibrary<class_MeshLibrary>`. All cells in the map have the same dimensions.
 
-A GridMap is split into a sparse collection of octants for efficient rendering and physics processing. Every octant has the same dimensions and can contain several cells.
+Internally, a GridMap is split into a sparse collection of octants for efficient rendering and physics processing. Every octant has the same dimensions and can contain several cells.
 
 Tutorials
 ---------
@@ -191,6 +193,10 @@ The size of each octant measured in number of cells. This applies to all three a
 | *Getter*  | get_cell_scale()      |
 +-----------+-----------------------+
 
+The scale of the cell items.
+
+This does not affect the size of the grid cells themselves, only the items in them. This can be used to make cell items overlap their neighbors.
+
 ----
 
 .. _class_GridMap_property_cell_size:
@@ -207,6 +213,8 @@ The size of each octant measured in number of cells. This applies to all three a
 
 The dimensions of the grid's cells.
 
+This does not affect the size of the meshes. See :ref:`cell_scale<class_GridMap_property_cell_scale>`.
+
 ----
 
 .. _class_GridMap_property_collision_layer:
@@ -221,6 +229,10 @@ The dimensions of the grid's cells.
 | *Getter*  | get_collision_layer()      |
 +-----------+----------------------------+
 
+The physics layers this GridMap is in.
+
+GridMaps act as static bodies, meaning they aren't affected by gravity or other forces. They only affect other physics bodies that collide with them.
+
 ----
 
 .. _class_GridMap_property_collision_mask:
@@ -234,6 +246,8 @@ The dimensions of the grid's cells.
 +-----------+---------------------------+
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
+
+The physics layers this GridMap detects collisions in.
 
 ----
 
@@ -298,11 +312,15 @@ The orientation of the cell at the grid-based X, Y and Z coordinates. -1 is retu
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
+Returns an individual bit on the :ref:`collision_layer<class_GridMap_property_collision_layer>`.
+
 ----
 
 .. _class_GridMap_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+
+Returns an individual bit on the :ref:`collision_mask<class_GridMap_property_collision_mask>`.
 
 ----
 
@@ -310,7 +328,7 @@ The orientation of the cell at the grid-based X, Y and Z coordinates. -1 is retu
 
 - :ref:`Array<class_Array>` **get_meshes** **(** **)**
 
-Array of :ref:`Transform<class_Transform>` and :ref:`Mesh<class_Mesh>` references corresponding to the non-empty cells in the grid. The transforms are specified in world space.
+Returns an array of :ref:`Transform<class_Transform>` and :ref:`Mesh<class_Mesh>` references corresponding to the non-empty cells in the grid. The transforms are specified in world space.
 
 ----
 
@@ -318,7 +336,7 @@ Array of :ref:`Transform<class_Transform>` and :ref:`Mesh<class_Mesh>` reference
 
 - :ref:`Array<class_Array>` **get_used_cells** **(** **)** const
 
-Array of :ref:`Vector3<class_Vector3>` with the non-empty cell coordinates in the grid map.
+Returns an array of :ref:`Vector3<class_Vector3>` with the non-empty cell coordinates in the grid map.
 
 ----
 
@@ -332,6 +350,8 @@ Array of :ref:`Vector3<class_Vector3>` with the non-empty cell coordinates in th
 
 - :ref:`Vector3<class_Vector3>` **map_to_world** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const
 
+Returns the position of a grid cell in the GridMap's local coordinate space.
+
 ----
 
 .. _class_GridMap_method_resource_changed:
@@ -344,11 +364,11 @@ Array of :ref:`Vector3<class_Vector3>` with the non-empty cell coordinates in th
 
 - void **set_cell_item** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` item, :ref:`int<class_int>` orientation=0 **)**
 
-Set the mesh index for the cell referenced by its grid-based X, Y and Z coordinates.
+Sets the mesh index for the cell referenced by its grid-based X, Y and Z coordinates.
 
-A negative item index will clear the cell.
+A negative item index such as :ref:`INVALID_CELL_ITEM<class_GridMap_constant_INVALID_CELL_ITEM>` will clear the cell.
 
-Optionally, the item's orientation can be passed.
+Optionally, the item's orientation can be passed. For valid orientation values, see :ref:`Basis.get_orthogonal_index<class_Basis_method_get_orthogonal_index>`.
 
 ----
 
@@ -362,15 +382,23 @@ Optionally, the item's orientation can be passed.
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
+Sets an individual bit on the :ref:`collision_layer<class_GridMap_property_collision_layer>`.
+
 ----
 
 .. _class_GridMap_method_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
+Sets an individual bit on the :ref:`collision_mask<class_GridMap_property_collision_mask>`.
+
 ----
 
 .. _class_GridMap_method_world_to_map:
 
 - :ref:`Vector3<class_Vector3>` **world_to_map** **(** :ref:`Vector3<class_Vector3>` pos **)** const
+
+Returns the coordinates of the grid cell containing the given point.
+
+``pos`` should be in the GridMap's local coordinate space.
 

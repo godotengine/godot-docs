@@ -22,6 +22,8 @@ Properties
 ----------
 
 +-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`antialiased<class_Line2D_property_antialiased>`         | false                   |
++-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
 | :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`begin_cap_mode<class_Line2D_property_begin_cap_mode>`   | 0                       |
 +-----------------------------------------------------+---------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`                           | :ref:`default_color<class_Line2D_property_default_color>`     | Color( 0.4, 0.5, 1, 1 ) |
@@ -126,6 +128,22 @@ A line through several points in 2D space.
 
 Property Descriptions
 ---------------------
+
+.. _class_Line2D_property_antialiased:
+
+- :ref:`bool<class_bool>` **antialiased**
+
++-----------+------------------------+
+| *Default* | false                  |
++-----------+------------------------+
+| *Setter*  | set_antialiased(value) |
++-----------+------------------------+
+| *Getter*  | get_antialiased()      |
++-----------+------------------------+
+
+If ``true``, the line's border will be anti-aliased.
+
+----
 
 .. _class_Line2D_property_begin_cap_mode:
 

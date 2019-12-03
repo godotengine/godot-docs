@@ -218,11 +218,13 @@ Returns ``true`` if the ``Rect2`` overlaps with another.
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Rect2<class_Rect2>` rect **)**
 
+Returns ``true`` if this ``Rect2`` and ``rect`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
 ----
 
 .. _class_Rect2_method_merge:
 
 - :ref:`Rect2<class_Rect2>` **merge** **(** :ref:`Rect2<class_Rect2>` b **)**
 
-Returns a larger Rect2 that contains this Rect2 and ``b``.
+Returns a larger ``Rect2`` that contains this ``Rect2`` and ``b``.
 

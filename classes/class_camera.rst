@@ -133,11 +133,11 @@ enum **KeepAspect**:
 
 enum **DopplerTracking**:
 
-- **DOPPLER_TRACKING_DISABLED** = **0** --- Disables Doppler effect simulation (default).
+- **DOPPLER_TRACKING_DISABLED** = **0** --- Disables `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`_ simulation (default).
 
-- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`_ by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
 
-- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`_ by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
 
 Description
 -----------
@@ -191,7 +191,7 @@ If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using thi
 | *Getter*  | get_doppler_tracking()      |
 +-----------+-----------------------------+
 
-If not :ref:`DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>`, this camera will simulate the Doppler effect for objects changed in particular ``_process`` methods. See :ref:`DopplerTracking<enum_Camera_DopplerTracking>` for possible values.
+If not :ref:`DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>`, this camera will simulate the `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`_ for objects changed in particular ``_process`` methods. See :ref:`DopplerTracking<enum_Camera_DopplerTracking>` for possible values.
 
 ----
 
@@ -252,6 +252,8 @@ The camera's field of view angle (in degrees). Only applicable in perspective mo
 +-----------+---------------------------+
 | *Getter*  | get_frustum_offset()      |
 +-----------+---------------------------+
+
+The camera's frustum offset. This can be changed from the default to create "tilted frustum" effects such as `Y-shearing <https://zdoom.org/wiki/Y-shearing>`_.
 
 ----
 
@@ -380,11 +382,15 @@ Gets the camera transform. Subclassed cameras such as :ref:`InterpolatedCamera<c
 
 - :ref:`bool<class_bool>` **get_cull_mask_bit** **(** :ref:`int<class_int>` layer **)** const
 
+Returns ``true`` if the given ``layer`` in the :ref:`cull_mask<class_Camera_property_cull_mask>` is enabled, ``false`` otherwise.
+
 ----
 
 .. _class_Camera_method_get_frustum:
 
 - :ref:`Array<class_Array>` **get_frustum** **(** **)** const
+
+Returns the camera's frustum planes in world-space units as an array of :ref:`Plane<class_Plane>`\ s in the following order: near, far, left, top, right, bottom. Not to be confused with :ref:`frustum_offset<class_Camera_property_frustum_offset>`.
 
 ----
 
@@ -442,11 +448,15 @@ Returns a 3D position in worldspace, that is the result of projecting a point on
 
 - void **set_cull_mask_bit** **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enable **)**
 
+Enables or disables the given ``layer`` in the :ref:`cull_mask<class_Camera_property_cull_mask>`.
+
 ----
 
 .. _class_Camera_method_set_frustum:
 
 - void **set_frustum** **(** :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
+
+Sets the camera projection to frustum mode (see :ref:`PROJECTION_FRUSTUM<class_Camera_constant_PROJECTION_FRUSTUM>`), by specifying a ``size``, an ``offset``, and the ``z_near`` and ``z_far`` clip planes in world-space units.
 
 ----
 
@@ -454,7 +464,7 @@ Returns a 3D position in worldspace, that is the result of projecting a point on
 
 - void **set_orthogonal** **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Sets the camera projection to orthogonal mode, by specifying a width and the ``near`` and ``far`` clip planes in worldspace units. (As a hint, 2D games often use this projection, with values specified in pixels)
+Sets the camera projection to orthogonal mode (see :ref:`PROJECTION_ORTHOGONAL<class_Camera_constant_PROJECTION_ORTHOGONAL>`), by specifying a ``size``, and the ``z_near`` and ``z_far`` clip planes in world-space units. (As a hint, 2D games often use this projection, with values specified in pixels.)
 
 ----
 
@@ -462,7 +472,7 @@ Sets the camera projection to orthogonal mode, by specifying a width and the ``n
 
 - void **set_perspective** **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Sets the camera projection to perspective mode, by specifying a ``fov`` angle in degrees (FOV means Field of View), and the ``near`` and ``far`` clip planes in world-space units.
+Sets the camera projection to perspective mode (see :ref:`PROJECTION_PERSPECTIVE<class_Camera_constant_PROJECTION_PERSPECTIVE>`), by specifying a ``fov`` (field of view) angle in degrees, and the ``z_near`` and ``z_far`` clip planes in world-space units.
 
 ----
 

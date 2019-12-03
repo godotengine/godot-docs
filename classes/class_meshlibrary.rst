@@ -62,7 +62,7 @@ Methods
 Description
 -----------
 
-A library of meshes. Contains a list of :ref:`Mesh<class_Mesh>` resources, each with a name and ID. This resource is used in :ref:`GridMap<class_GridMap>`.
+A library of meshes. Contains a list of :ref:`Mesh<class_Mesh>` resources, each with a name and ID. Each item can also include collision and navigation shapes. This resource is used in :ref:`GridMap<class_GridMap>`.
 
 Method Descriptions
 -------------------
@@ -79,7 +79,9 @@ Clears the library.
 
 - void **create_item** **(** :ref:`int<class_int>` id **)**
 
-Create a new item in the library, supplied as an ID.
+Creates a new item in the library with the given ID.
+
+You can get an unused ID from :ref:`get_last_unused_item_id<class_MeshLibrary_method_get_last_unused_item_id>`.
 
 ----
 
@@ -87,13 +89,15 @@ Create a new item in the library, supplied as an ID.
 
 - :ref:`int<class_int>` **find_item_by_name** **(** :ref:`String<class_String>` name **)** const
 
+Returns the first item with the given name.
+
 ----
 
 .. _class_MeshLibrary_method_get_item_list:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_item_list** **(** **)** const
 
-Returns the list of items.
+Returns the list of item IDs in use.
 
 ----
 
@@ -101,7 +105,7 @@ Returns the list of items.
 
 - :ref:`Mesh<class_Mesh>` **get_item_mesh** **(** :ref:`int<class_int>` id **)** const
 
-Returns the mesh of the item.
+Returns the item's mesh.
 
 ----
 
@@ -109,7 +113,7 @@ Returns the mesh of the item.
 
 - :ref:`String<class_String>` **get_item_name** **(** :ref:`int<class_int>` id **)** const
 
-Returns the name of the item.
+Returns the item's name.
 
 ----
 
@@ -117,11 +121,15 @@ Returns the name of the item.
 
 - :ref:`NavigationMesh<class_NavigationMesh>` **get_item_navmesh** **(** :ref:`int<class_int>` id **)** const
 
+Returns the item's navigation mesh.
+
 ----
 
 .. _class_MeshLibrary_method_get_item_navmesh_transform:
 
 - :ref:`Transform<class_Transform>` **get_item_navmesh_transform** **(** :ref:`int<class_int>` id **)** const
+
+Returns the transform applied to the item's navigation mesh.
 
 ----
 
@@ -138,6 +146,10 @@ Returns a generated item preview (a 3D rendering in isometric perspective).
 .. _class_MeshLibrary_method_get_item_shapes:
 
 - :ref:`Array<class_Array>` **get_item_shapes** **(** :ref:`int<class_int>` id **)** const
+
+Returns an item's collision shapes.
+
+The array consists of each :ref:`Shape<class_Shape>` followed by its :ref:`Transform<class_Transform>`.
 
 ----
 
@@ -171,11 +183,15 @@ Sets the item's mesh.
 
 Sets the item's name.
 
+This name is shown in the editor. It can also be used to look up the item later using :ref:`find_item_by_name<class_MeshLibrary_method_find_item_by_name>`.
+
 ----
 
 .. _class_MeshLibrary_method_set_item_navmesh:
 
 - void **set_item_navmesh** **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_NavigationMesh>` navmesh **)**
+
+Sets the item's navigation mesh.
 
 ----
 
@@ -183,15 +199,23 @@ Sets the item's name.
 
 - void **set_item_navmesh_transform** **(** :ref:`int<class_int>` id, :ref:`Transform<class_Transform>` navmesh **)**
 
+Sets the transform to apply to the item's navigation mesh.
+
 ----
 
 .. _class_MeshLibrary_method_set_item_preview:
 
 - void **set_item_preview** **(** :ref:`int<class_int>` id, :ref:`Texture<class_Texture>` texture **)**
 
+Sets a texture to use as the item's preview icon in the editor.
+
 ----
 
 .. _class_MeshLibrary_method_set_item_shapes:
 
 - void **set_item_shapes** **(** :ref:`int<class_int>` id, :ref:`Array<class_Array>` shapes **)**
+
+Sets an item's collision shapes.
+
+The array should consist of :ref:`Shape<class_Shape>` objects, each followed by a :ref:`Transform<class_Transform>` that will be applied to it. For shapes that should not have a transform, use :ref:`Transform.IDENTITY<class_Transform_constant_IDENTITY>`.
 

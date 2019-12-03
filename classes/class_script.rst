@@ -61,7 +61,7 @@ Methods
 Description
 -----------
 
-A class stored as a resource. A script exends the functionality of all objects that instance it.
+A class stored as a resource. A script extends the functionality of all objects that instance it.
 
 The ``new`` method of a script subclass creates a new instance. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
 
