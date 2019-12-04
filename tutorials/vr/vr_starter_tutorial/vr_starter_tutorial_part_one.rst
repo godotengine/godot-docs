@@ -1,7 +1,7 @@
 .. _doc_vr_starter_tutorial_part_one:
 
-VR Starter Tutorial Part One
-============================
+VR starter tutorial part 1
+==========================
 
 Introduction
 ------------
