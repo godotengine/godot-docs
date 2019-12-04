@@ -51,5 +51,5 @@ Cast an :ref:`int<class_int>` value to a floating-point value, ``float(1)`` will
 
 - :ref:`float<class_float>` **float** **(** :ref:`String<class_String>` from **)**
 
-Cast a :ref:`String<class_String>` value to a floating-point value. This method accepts float value strings like ``"1.23"`` and exponential notation strings for its parameter so calling ``float("1e3")`` will return 1000.0 and calling ``float("1e-3")`` will return 0.001.
+Cast a :ref:`String<class_String>` value to a floating-point value. This method accepts float value strings like ``"1.23"`` and exponential notation strings for its parameter so calling ``float("1e3")`` will return 1000.0 and calling ``float("1e-3")`` will return 0.001. Calling this method with an invalid float string will return 0. This method will ignore all non-number characters that can't be interpreted as the exponential notation, so calling int('1a3') will return 13.
 
