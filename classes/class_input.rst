@@ -499,7 +499,7 @@ Removes all mappings from the internal database that match the given GUID.
 
 - void **set_custom_mouse_cursor** **(** :ref:`Resource<class_Resource>` image, :ref:`CursorShape<enum_Input_CursorShape>` shape=0, :ref:`Vector2<class_Vector2>` hotspot=Vector2( 0, 0 ) **)**
 
-Sets a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor. See enum ``CURSOR_*`` for the list of shapes.
+Sets a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor. See :ref:`CursorShape<enum_Input_CursorShape>` for the list of shapes.
 
 ``image``'s size must be lower than 256×256.
 

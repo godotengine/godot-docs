@@ -340,7 +340,7 @@ enum **AreaParameter**:
 
 - **AREA_PARAM_GRAVITY_DISTANCE_SCALE** = **3** --- Constant to set/get the falloff factor for point gravity of an area. The greater this value is, the faster the strength of gravity decreases with the square of distance.
 
-- **AREA_PARAM_GRAVITY_POINT_ATTENUATION** = **4** --- This constant was used to set/get the falloff factor for point gravity. It has been superseded by AREA_PARAM_GRAVITY_DISTANCE_SCALE.
+- **AREA_PARAM_GRAVITY_POINT_ATTENUATION** = **4** --- This constant was used to set/get the falloff factor for point gravity. It has been superseded by :ref:`AREA_PARAM_GRAVITY_DISTANCE_SCALE<class_Physics2DServer_constant_AREA_PARAM_GRAVITY_DISTANCE_SCALE>`.
 
 - **AREA_PARAM_LINEAR_DAMP** = **5** --- Constant to set/get the linear dampening factor of an area.
 
@@ -716,7 +716,7 @@ Sets which physics layers the area will monitor.
 
 Sets the function to call when any body/area enters or exits the area. This callback will be called for any object interacting with the area, and takes five parameters:
 
-1: AREA_BODY_ADDED or AREA_BODY_REMOVED, depending on whether the object entered or exited the area.
+1: :ref:`AREA_BODY_ADDED<class_Physics2DServer_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_Physics2DServer_constant_AREA_BODY_REMOVED>`, depending on whether the object entered or exited the area.
 
 2: :ref:`RID<class_RID>` of the object that entered/exited the area.
 

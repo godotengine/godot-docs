@@ -426,7 +426,7 @@ Gets the blend time (in seconds) between two animations, referenced by their nam
 
 - :ref:`float<class_float>` **get_playing_speed** **(** **)** const
 
-Gets the actual playing speed of current animation or 0 if not playing. This speed is the ``playback_speed`` property multiplied by ``custom_speed`` argument specified when calling the ``play`` method.
+Gets the actual playing speed of current animation or 0 if not playing. This speed is the :ref:`playback_speed<class_AnimationPlayer_property_playback_speed>` property multiplied by ``custom_speed`` argument specified when calling the :ref:`play<class_AnimationPlayer_method_play>` method.
 
 ----
 
@@ -458,11 +458,11 @@ Returns ``true`` if playing an animation.
 
 - void **play** **(** :ref:`String<class_String>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)**
 
-Plays the animation with key ``name``. Custom speed and blend times can be set. If ``custom_speed`` is negative and ``from_end`` is ``true``, the animation will play backwards.
+Plays the animation with key ``name``. Custom blend times and speed can be set. If ``custom_speed`` is negative and ``from_end`` is ``true``, the animation will play backwards (which is equivalent to calling :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>`).
 
-If the animation has been paused by :ref:`stop<class_AnimationPlayer_method_stop>`, it will be resumed. Calling :ref:`play<class_AnimationPlayer_method_play>` without arguments will also resume the animation.
+The ``AnimationPlayer`` keeps track of its current or last played animation with :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`. If this method is called with that same animation ``name``, or with no ``name`` parameter, the assigned animation will resume playing if it was paused, or restart if it was stopped (see :ref:`stop<class_AnimationPlayer_method_stop>` for both pause and stop). If the animation was already playing, it will keep playing.
 
-**Note:** The animation will be updated the next time the AnimationPlayer is processed. If other variables are updated at the same time this is called, they may be updated too early. To perform the update immediately, call ``advance(0)``.
+**Note:** The animation will be updated the next time the ``AnimationPlayer`` is processed. If other variables are updated at the same time this is called, they may be updated too early. To perform the update immediately, call ``advance(0)``.
 
 ----
 
@@ -472,9 +472,7 @@ If the animation has been paused by :ref:`stop<class_AnimationPlayer_method_stop
 
 Plays the animation with key ``name`` in reverse.
 
-If the animation has been paused by ``stop(true)``, it will be resumed backwards. Calling ``play_backwards()`` without arguments will also resume the animation backwards.
-
-**Note:** This is the same as ``play`` in regards to process/update behavior.
+This method is a shorthand for :ref:`play<class_AnimationPlayer_method_play>` with ``custom_speed = -1.0`` and ``from_end = true``, so see its description for more information.
 
 ----
 
@@ -524,7 +522,7 @@ Specifies a blend time (in seconds) between two animations, referenced by their 
 
 - void **stop** **(** :ref:`bool<class_bool>` reset=true **)**
 
-Stops the currently playing animation. If ``reset`` is ``true``, the animation position is reset to ``0`` and the playback speed is reset to ``1.0``.
+Stops or pauses the currently playing animation. If ``reset`` is ``true``, the animation position is reset to ``0`` and the playback speed is reset to ``1.0``.
 
-If ``reset`` is ``false``, then calling :ref:`play<class_AnimationPlayer_method_play>` without arguments or ``play("same_as_before")`` will resume the animation. Works the same for the :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>`.
+If ``reset`` is ``false``, the :ref:`current_animation_position<class_AnimationPlayer_property_current_animation_position>` will be kept and calling :ref:`play<class_AnimationPlayer_method_play>` or :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>` without arguments or with the same animation name as :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>` will resume the animation.
 

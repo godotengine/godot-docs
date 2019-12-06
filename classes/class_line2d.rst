@@ -157,7 +157,7 @@ If ``true``, the line's border will be anti-aliased.
 | *Getter*  | get_begin_cap_mode()      |
 +-----------+---------------------------+
 
-Controls the style of the line's first point. Use ``LINE_CAP_*`` constants.
+Controls the style of the line's first point. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
 
 ----
 
@@ -189,7 +189,7 @@ The line's color. Will not be used if a gradient is set.
 | *Getter*  | get_end_cap_mode()      |
 +-----------+-------------------------+
 
-Controls the style of the line's last point. Use ``LINE_CAP_*`` constants.
+Controls the style of the line's last point. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
 
 ----
 
@@ -297,7 +297,7 @@ The texture used for the line's texture. Uses ``texture_mode`` for drawing style
 | *Getter*  | get_texture_mode()      |
 +-----------+-------------------------+
 
-The style to render the ``texture`` on the line. Use ``LINE_TEXTURE_*`` constants.
+The style to render the ``texture`` on the line. Use :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` constants.
 
 ----
 

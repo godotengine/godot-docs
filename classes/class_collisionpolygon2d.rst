@@ -51,7 +51,7 @@ enum **BuildMode**:
 Description
 -----------
 
-Provides a 2D collision polygon to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent. Polygon can be drawn in the editor or specified by a list of vertices.
+Provides a 2D collision polygon to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent. Polygons can be drawn in the editor or specified by a list of vertices.
 
 Property Descriptions
 ---------------------
@@ -68,7 +68,7 @@ Property Descriptions
 | *Getter*  | get_build_mode()      |
 +-----------+-----------------------+
 
-Collision build mode. Use one of the ``BUILD_*`` constants.
+Collision build mode. Use one of the :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` constants.
 
 ----
 
@@ -100,7 +100,7 @@ If ``true``, no collisions will be detected.
 | *Getter*  | is_one_way_collision_enabled() |
 +-----------+--------------------------------+
 
-If ``true``, only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
+If ``true``, only edges that face up, relative to ``CollisionPolygon2D``'s rotation, will collide with other objects.
 
 ----
 
@@ -130,5 +130,5 @@ If ``true``, only edges that face up, relative to CollisionPolygon2D's rotation,
 | *Getter*  | get_polygon()        |
 +-----------+----------------------+
 
-The polygon's list of vertices. The final point will be connected to the first. The returned value is a clone of the PoolVector2Array, not a reference.
+The polygon's list of vertices. The final point will be connected to the first. The returned value is a clone of the :ref:`PoolVector2Array<class_PoolVector2Array>`, not a reference.
 

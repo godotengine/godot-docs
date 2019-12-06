@@ -151,7 +151,7 @@ Property Descriptions
 | *Getter*  | get_anchor_mode()      |
 +-----------+------------------------+
 
-The Camera2D's anchor point. See ``ANCHOR_MODE_*`` constants.
+The Camera2D's anchor point. See :ref:`AnchorMode<enum_Camera2D_AnchorMode>` constants.
 
 ----
 

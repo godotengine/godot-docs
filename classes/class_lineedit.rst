@@ -229,7 +229,7 @@ Property Descriptions
 | *Getter*  | get_align()      |
 +-----------+------------------+
 
-Text alignment as defined in the ``ALIGN_*`` enum.
+Text alignment as defined in the :ref:`Align<enum_LineEdit_Align>` enum.
 
 ----
 
@@ -520,7 +520,7 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``LineEdit``. By default, 
 
 - void **menu_option** **(** :ref:`int<class_int>` option **)**
 
-Executes a given action as defined in the``MENU_*`` enum.
+Executes a given action as defined in the :ref:`MenuItems<enum_LineEdit_MenuItems>` enum.
 
 ----
 

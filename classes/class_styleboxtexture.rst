@@ -77,6 +77,8 @@ Signals
 
 - **texture_changed** **(** **)**
 
+Emitted when the stylebox's texture is changed.
+
 Enumerations
 ------------
 
@@ -90,11 +92,11 @@ Enumerations
 
 enum **AxisStretchMode**:
 
-- **AXIS_STRETCH_MODE_STRETCH** = **0**
+- **AXIS_STRETCH_MODE_STRETCH** = **0** --- Stretch the stylebox's texture. This results in visible distortion unless the texture size matches the stylebox's size perfectly.
 
-- **AXIS_STRETCH_MODE_TILE** = **1**
+- **AXIS_STRETCH_MODE_TILE** = **1** --- Repeats the stylebox's texture to match the stylebox's size according to the nine-patch system.
 
-- **AXIS_STRETCH_MODE_TILE_FIT** = **2**
+- **AXIS_STRETCH_MODE_TILE_FIT** = **2** --- Repeats the stylebox's texture to match the stylebox's size according to the nine-patch system. Unlike :ref:`AXIS_STRETCH_MODE_TILE<class_StyleBoxTexture_constant_AXIS_STRETCH_MODE_TILE>`, the texture may be slightly stretched to make the nine-patch texture tile seamlessly.
 
 Description
 -----------
@@ -116,6 +118,8 @@ Property Descriptions
 | *Getter*  | get_h_axis_stretch_mode()      |
 +-----------+--------------------------------+
 
+Controls how the stylebox's texture will be stretched or tiled horizontally. See :ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` for possible values.
+
 ----
 
 .. _class_StyleBoxTexture_property_axis_stretch_vertical:
@@ -130,6 +134,8 @@ Property Descriptions
 | *Getter*  | get_v_axis_stretch_mode()      |
 +-----------+--------------------------------+
 
+Controls how the stylebox's texture will be stretched or tiled vertically. See :ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` for possible values.
+
 ----
 
 .. _class_StyleBoxTexture_property_draw_center:
@@ -143,6 +149,8 @@ Property Descriptions
 +-----------+--------------------------+
 | *Getter*  | is_draw_center_enabled() |
 +-----------+--------------------------+
+
+If ``true``, the nine-patch texture's center tile will be drawn.
 
 ----
 
@@ -332,7 +340,7 @@ The normal map to use when drawing this style box.
 | *Getter*  | get_region_rect()      |
 +-----------+------------------------+
 
-Species a sub region of the texture to use.
+Species a sub-region of the texture to use.
 
 This is equivalent to first wrapping the texture in an :ref:`AtlasTexture<class_AtlasTexture>` with the same region.
 
@@ -357,11 +365,15 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_expand_margin_size** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
+Returns the size of the given ``margin``'s expand margin. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
+
 ----
 
 .. _class_StyleBoxTexture_method_get_margin_size:
 
 - :ref:`float<class_float>` **get_margin_size** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+Returns the size of the given ``margin``. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
 
 ----
 
@@ -369,11 +381,15 @@ Method Descriptions
 
 - void **set_expand_margin_all** **(** :ref:`float<class_float>` size **)**
 
+Sets the expand margin to ``size`` pixels for all margins.
+
 ----
 
 .. _class_StyleBoxTexture_method_set_expand_margin_individual:
 
 - void **set_expand_margin_individual** **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom **)**
+
+Sets the expand margin for each margin to ``size_left``, ``size_top``, ``size_right``, and ``size_bottom`` pixels.
 
 ----
 
@@ -381,9 +397,13 @@ Method Descriptions
 
 - void **set_expand_margin_size** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` size **)**
 
+Sets the expand margin to ``size`` pixels for the given ``margin``. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
+
 ----
 
 .. _class_StyleBoxTexture_method_set_margin_size:
 
 - void **set_margin_size** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` size **)**
+
+Sets the margin to ``size`` pixels for the given ``margin``. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
 

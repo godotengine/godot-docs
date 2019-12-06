@@ -143,7 +143,9 @@ Returns ``true`` if the specified section-key pair exists.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
-Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on. Returns one of the :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
+Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on.
+
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
 ----
 
@@ -163,7 +165,9 @@ Loads the config file specified as a parameter. The file's contents are parsed a
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**
 
-Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure. Returns one of the :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
+Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure.
+
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
 ----
 

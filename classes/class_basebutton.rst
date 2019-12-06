@@ -154,7 +154,7 @@ Property Descriptions
 | *Getter*  | get_action_mode()      |
 +-----------+------------------------+
 
-Determines when the button is considered clicked, one of the ``ACTION_MODE_*`` constants.
+Determines when the button is considered clicked, one of the :ref:`ActionMode<enum_BaseButton_ActionMode>` constants.
 
 ----
 
@@ -250,7 +250,7 @@ If ``true``, the button stays pressed when moving the cursor outside the button 
 | *Getter*  | is_pressed()       |
 +-----------+--------------------+
 
-If ``true``, the button's state is pressed. Means the button is pressed down or toggled (if toggle_mode is active).
+If ``true``, the button's state is pressed. Means the button is pressed down or toggled (if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active).
 
 ----
 
@@ -313,7 +313,7 @@ Called when the button is pressed.
 
 - void **_toggled** **(** :ref:`bool<class_bool>` button_pressed **)** virtual
 
-Called when the button is toggled (only if toggle_mode is active).
+Called when the button is toggled (only if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is active).
 
 ----
 
@@ -321,7 +321,7 @@ Called when the button is toggled (only if toggle_mode is active).
 
 - :ref:`DrawMode<enum_BaseButton_DrawMode>` **get_draw_mode** **(** **)** const
 
-Returns the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the ``DRAW_*`` enum.
+Returns the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the :ref:`DrawMode<enum_BaseButton_DrawMode>` enum.
 
 ----
 

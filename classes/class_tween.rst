@@ -194,9 +194,9 @@ enum **EaseType**:
 
 - **EASE_OUT** = **1** --- The interpolation starts quickly and slows down towards the end.
 
-- **EASE_IN_OUT** = **2** --- A combination of EASE_IN and EASE_OUT. The interpolation is slowest at both ends.
+- **EASE_IN_OUT** = **2** --- A combination of :ref:`EASE_IN<class_Tween_constant_EASE_IN>` and :ref:`EASE_OUT<class_Tween_constant_EASE_OUT>`. The interpolation is slowest at both ends.
 
-- **EASE_OUT_IN** = **3** --- A combination of EASE_IN and EASE_OUT. The interpolation is fastest at both ends.
+- **EASE_OUT_IN** = **3** --- A combination of :ref:`EASE_IN<class_Tween_constant_EASE_IN>` and :ref:`EASE_OUT<class_Tween_constant_EASE_OUT>`. The interpolation is fastest at both ends.
 
 Description
 -----------

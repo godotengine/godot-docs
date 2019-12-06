@@ -16,7 +16,7 @@ StyleBoxFlat
 Brief Description
 -----------------
 
-Customizable Stylebox with a given set of parameters. (no texture required)
+Customizable :ref:`StyleBox<class_StyleBox>` with a given set of parameters (no texture required).
 
 Properties
 ----------
@@ -99,7 +99,7 @@ Methods
 Description
 -----------
 
-This stylebox can be used to achieve all kinds of looks without the need of a texture. Those properties are customizable:
+This :ref:`StyleBox<class_StyleBox>` can be used to achieve all kinds of looks without the need of a texture. Those properties are customizable:
 
 - Color
 
@@ -107,7 +107,7 @@ This stylebox can be used to achieve all kinds of looks without the need of a te
 
 - Rounded corners (individual radius for each corner)
 
-- Shadow
+- Shadow (with blur and offset)
 
 Setting corner radius to high values is allowed. As soon as corners would overlap, the stylebox will switch to a relative system. Example:
 
@@ -486,11 +486,15 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_border_width** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
+Returns the given ``margin``'s border width. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
+
 ----
 
 .. _class_StyleBoxFlat_method_get_border_width_min:
 
 - :ref:`int<class_int>` **get_border_width_min** **(** **)** const
+
+Returns the smallest border width out of all four borders.
 
 ----
 
@@ -498,11 +502,15 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** const
 
+Returns the given ``corner``'s radius. See :ref:`Corner<enum_@GlobalScope_Corner>` for possible values.
+
 ----
 
 .. _class_StyleBoxFlat_method_get_expand_margin:
 
 - :ref:`float<class_float>` **get_expand_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
+
+Returns the size of the given ``margin``'s expand margin. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
 
 ----
 
@@ -510,11 +518,15 @@ Method Descriptions
 
 - void **set_border_width** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`int<class_int>` width **)**
 
+Sets the border width to ``width`` pixels for the given ``margin``. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
+
 ----
 
 .. _class_StyleBoxFlat_method_set_border_width_all:
 
 - void **set_border_width_all** **(** :ref:`int<class_int>` width **)**
+
+Sets the border width to ``width`` pixels for all margins.
 
 ----
 
@@ -522,11 +534,15 @@ Method Descriptions
 
 - void **set_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)**
 
+Sets the corner radius to ``radius`` pixels for the given ``corner``. See :ref:`Corner<enum_@GlobalScope_Corner>` for possible values.
+
 ----
 
 .. _class_StyleBoxFlat_method_set_corner_radius_all:
 
 - void **set_corner_radius_all** **(** :ref:`int<class_int>` radius **)**
+
+Sets the corner radius to ``radius`` pixels for all corners.
 
 ----
 
@@ -534,11 +550,15 @@ Method Descriptions
 
 - void **set_corner_radius_individual** **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_bottom_right, :ref:`int<class_int>` radius_bottom_left **)**
 
+Sets the corner radius for each corner to ``radius_top_left``, ``radius_top_right``, ``radius_bottom_right``, and ``radius_bottom_left`` pixels.
+
 ----
 
 .. _class_StyleBoxFlat_method_set_expand_margin:
 
 - void **set_expand_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` size **)**
+
+Sets the expand margin to ``size`` pixels for the given ``margin``. See :ref:`Margin<enum_@GlobalScope_Margin>` for possible values.
 
 ----
 
@@ -546,9 +566,13 @@ Method Descriptions
 
 - void **set_expand_margin_all** **(** :ref:`float<class_float>` size **)**
 
+Sets the expand margin to ``size`` pixels for all margins.
+
 ----
 
 .. _class_StyleBoxFlat_method_set_expand_margin_individual:
 
 - void **set_expand_margin_individual** **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom **)**
+
+Sets the expand margin for each margin to ``size_left``, ``size_top``, ``size_right``, and ``size_bottom`` pixels.
 

@@ -71,9 +71,9 @@ Adds a vertex with the currently set color/uv/etc.
 
 - void **begin** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Texture<class_Texture>` texture=null **)**
 
-Begin drawing (And optionally pass a texture override). When done call end(). For more information on how this works, search for glBegin() glEnd() references.
+Begin drawing (and optionally pass a texture override). When done call :ref:`end<class_ImmediateGeometry_method_end>`. For more information on how this works, search for ``glBegin()`` and ``glEnd()`` references.
 
-For the type of primitive, use the :ref:`Mesh<class_Mesh>`.``PRIMITIVE_*`` enumerations.
+For the type of primitive, see the :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` enum.
 
 ----
 

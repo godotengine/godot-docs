@@ -122,7 +122,7 @@ Number of particles emitted in one emission cycle.
 | *Getter*  | get_draw_order()      |
 +-----------+-----------------------+
 
-Particle draw order. Uses ``DRAW_ORDER_*`` values.
+Particle draw order. Uses :ref:`DrawOrder<enum_Particles2D_DrawOrder>` values.
 
 ----
 

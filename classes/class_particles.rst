@@ -143,7 +143,7 @@ Number of particles to emit.
 | *Getter*  | get_draw_order()      |
 +-----------+-----------------------+
 
-Particle draw order. Uses ``DRAW_ORDER_*`` values.
+Particle draw order. Uses :ref:`DrawOrder<enum_Particles_DrawOrder>` values.
 
 ----
 

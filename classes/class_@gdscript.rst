@@ -419,7 +419,7 @@ Clamps ``value`` and returns a value not less than ``min`` and not more than ``m
 
 - :ref:`Variant<class_Variant>` **convert** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` type **)**
 
-Converts from a type to another in the best way possible. The ``type`` parameter uses the enum ``TYPE_*`` in :ref:`@GlobalScope<class_@GlobalScope>`.
+Converts from a type to another in the best way possible. The ``type`` parameter uses the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
 ::
 
@@ -1409,7 +1409,7 @@ Returns whether the given class exists in :ref:`ClassDB<class_ClassDB>`.
 
 - :ref:`int<class_int>` **typeof** **(** :ref:`Variant<class_Variant>` what **)**
 
-Returns the internal type of the given Variant object, using the ``TYPE_*`` enum in :ref:`@GlobalScope<class_@GlobalScope>`.
+Returns the internal type of the given Variant object, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
 ::
 
@@ -1425,7 +1425,7 @@ Returns the internal type of the given Variant object, using the ``TYPE_*`` enum
 
 - :ref:`String<class_String>` **validate_json** **(** :ref:`String<class_String>` json **)**
 
-Checks that ``json`` is valid JSON data. Returns empty string if valid. Returns error message if not valid.
+Checks that ``json`` is valid JSON data. Returns an empty string if valid, or an error message otherwise.
 
 ::
 

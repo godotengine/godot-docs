@@ -16,7 +16,7 @@ RichTextEffect
 Brief Description
 -----------------
 
-
+A custom effect for use with :ref:`RichTextLabel<class_RichTextLabel>`.
 
 Methods
 -------
@@ -25,10 +25,33 @@ Methods
 | :ref:`bool<class_bool>` | :ref:`_process_custom_fx<class_RichTextEffect_method__process_custom_fx>` **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** virtual |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+A custom effect for use with :ref:`RichTextLabel<class_RichTextLabel>`.
+
+**Note:** For a ``RichTextEffect`` to be usable, a BBCode tag must be defined as a member variable called ``bbcode`` in the script.
+
+::
+
+    # The RichTextEffect will be usable like this: `[example]Some text[/example]`
+    var bbcode = "example"
+
+**Note:** As soon as a :ref:`RichTextLabel<class_RichTextLabel>` contains at least one ``RichTextEffect``, it will continuously process the effect unless the project is paused. This may impact battery life negatively.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/gui/bbcode_in_richtextlabel`
+
+- `https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project <https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project>`_
+
 Method Descriptions
 -------------------
 
 .. _class_RichTextEffect_method__process_custom_fx:
 
 - :ref:`bool<class_bool>` **_process_custom_fx** **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** virtual
+
+Override this method to modify properties in ``char_fx``. The method must return ``true`` if the character could be transformed successfully. If the method returns ``false``, it will skip transformation to avoid displaying broken text.
 

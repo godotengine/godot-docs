@@ -16,7 +16,7 @@ StyleBoxLine
 Brief Description
 -----------------
 
-
+:ref:`StyleBox<class_StyleBox>` that displays a single line.
 
 Properties
 ----------
@@ -33,6 +33,11 @@ Properties
 | :ref:`bool<class_bool>`   | :ref:`vertical<class_StyleBoxLine_property_vertical>`     | false               |
 +---------------------------+-----------------------------------------------------------+---------------------+
 
+Description
+-----------
+
+:ref:`StyleBox<class_StyleBox>` that displays a single line of a given color and thickness. It can be used to draw things like separators.
+
 Property Descriptions
 ---------------------
 
@@ -48,6 +53,8 @@ Property Descriptions
 | *Getter*  | get_color()         |
 +-----------+---------------------+
 
+The line's color.
+
 ----
 
 .. _class_StyleBoxLine_property_grow_begin:
@@ -61,6 +68,8 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_grow_begin()      |
 +-----------+-----------------------+
+
+The number of pixels the line will extend before the ``StyleBoxLine``'s bounds. If set to a negative value, the line will begin inside the ``StyleBoxLine``'s bounds.
 
 ----
 
@@ -76,6 +85,8 @@ Property Descriptions
 | *Getter*  | get_grow_end()      |
 +-----------+---------------------+
 
+The number of pixels the line will extend past the ``StyleBoxLine``'s bounds. If set to a negative value, the line will end inside the ``StyleBoxLine``'s bounds.
+
 ----
 
 .. _class_StyleBoxLine_property_thickness:
@@ -90,6 +101,8 @@ Property Descriptions
 | *Getter*  | get_thickness()      |
 +-----------+----------------------+
 
+The line's thickness in pixels.
+
 ----
 
 .. _class_StyleBoxLine_property_vertical:
@@ -103,4 +116,6 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | is_vertical()       |
 +-----------+---------------------+
+
+If ``true``, the line will be vertical. If ``false``, the line will be horizontal.
 

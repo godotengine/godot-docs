@@ -432,7 +432,7 @@ Methods
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`material_set_shader<class_VisualServer_method_material_set_shader>` **(** :ref:`RID<class_RID>` shader_material, :ref:`RID<class_RID>` shader **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                    | :ref:`mesh_add_surface_from_arrays<class_VisualServer_method_mesh_add_surface_from_arrays>` **(** :ref:`RID<class_RID>` mesh, :ref:`PrimitiveType<enum_VisualServer_PrimitiveType>` primtive, :ref:`Array<class_Array>` arrays, :ref:`Array<class_Array>` blend_shapes=[  ], :ref:`int<class_int>` compress_format=97280 **)**                                                                                                                                                                                                                                                                                                                                  |
+| void                                                    | :ref:`mesh_add_surface_from_arrays<class_VisualServer_method_mesh_add_surface_from_arrays>` **(** :ref:`RID<class_RID>` mesh, :ref:`PrimitiveType<enum_VisualServer_PrimitiveType>` primitive, :ref:`Array<class_Array>` arrays, :ref:`Array<class_Array>` blend_shapes=[  ], :ref:`int<class_int>` compress_format=97280 **)**                                                                                                                                                                                                                                                                                                                                 |
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`mesh_clear<class_VisualServer_method_mesh_clear>` **(** :ref:`RID<class_RID>` mesh **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -485,6 +485,8 @@ Methods
 | void                                                    | :ref:`mesh_surface_update_region<class_VisualServer_method_mesh_surface_update_region>` **(** :ref:`RID<class_RID>` mesh, :ref:`int<class_int>` surface, :ref:`int<class_int>` offset, :ref:`PoolByteArray<class_PoolByteArray>` data **)**                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`multimesh_allocate<class_VisualServer_method_multimesh_allocate>` **(** :ref:`RID<class_RID>` multimesh, :ref:`int<class_int>` instances, :ref:`MultimeshTransformFormat<enum_VisualServer_MultimeshTransformFormat>` transform_format, :ref:`MultimeshColorFormat<enum_VisualServer_MultimeshColorFormat>` color_format, :ref:`MultimeshCustomDataFormat<enum_VisualServer_MultimeshCustomDataFormat>` custom_data_format=0 **)**                                                                                                                                                                                                                        |
++---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                   | :ref:`multimesh_create<class_VisualServer_method_multimesh_create>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>`                                 | :ref:`multimesh_get_aabb<class_VisualServer_method_multimesh_get_aabb>` **(** :ref:`RID<class_RID>` multimesh **)** const                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2348,7 +2350,7 @@ The layer range that gets rendered with this light.
 
 - void **canvas_light_set_mode** **(** :ref:`RID<class_RID>` light, :ref:`CanvasLightMode<enum_VisualServer_CanvasLightMode>` mode **)**
 
-The mode of the light, see ``CANVAS_LIGHT_MODE_*`` constants.
+The mode of the light, see :ref:`CanvasLightMode<enum_VisualServer_CanvasLightMode>` constants.
 
 ----
 
@@ -2386,7 +2388,7 @@ Enables or disables the canvas light's shadow.
 
 - void **canvas_light_set_shadow_filter** **(** :ref:`RID<class_RID>` light, :ref:`CanvasLightShadowFilter<enum_VisualServer_CanvasLightShadowFilter>` filter **)**
 
-Sets the canvas light's shadow's filter, see ``CANVAS_LIGHT_SHADOW_FILTER_*`` constants.
+Sets the canvas light's shadow's filter, see :ref:`CanvasLightShadowFilter<enum_VisualServer_CanvasLightShadowFilter>` constants.
 
 ----
 
@@ -2444,7 +2446,7 @@ Creates a new light occluder polygon.
 
 - void **canvas_occluder_polygon_set_cull_mode** **(** :ref:`RID<class_RID>` occluder_polygon, :ref:`CanvasOccluderPolygonCullMode<enum_VisualServer_CanvasOccluderPolygonCullMode>` mode **)**
 
-Sets an occluder polygons cull mode. See ``CANVAS_OCCLUDER_POLYGON_CULL_MODE_*`` constants.
+Sets an occluder polygons cull mode. See :ref:`CanvasOccluderPolygonCullMode<enum_VisualServer_CanvasOccluderPolygonCullMode>` constants.
 
 ----
 
@@ -2640,7 +2642,7 @@ Tries to free an object in the VisualServer.
 
 - :ref:`int<class_int>` **get_render_info** **(** :ref:`RenderInfo<enum_VisualServer_RenderInfo>` info **)**
 
-Returns a certain information, see ``RENDER_INFO_*`` for options.
+Returns a certain information, see :ref:`RenderInfo<enum_VisualServer_RenderInfo>` for options.
 
 ----
 
@@ -3288,9 +3290,9 @@ Sets a shader material's shader.
 
 .. _class_VisualServer_method_mesh_add_surface_from_arrays:
 
-- void **mesh_add_surface_from_arrays** **(** :ref:`RID<class_RID>` mesh, :ref:`PrimitiveType<enum_VisualServer_PrimitiveType>` primtive, :ref:`Array<class_Array>` arrays, :ref:`Array<class_Array>` blend_shapes=[  ], :ref:`int<class_int>` compress_format=97280 **)**
+- void **mesh_add_surface_from_arrays** **(** :ref:`RID<class_RID>` mesh, :ref:`PrimitiveType<enum_VisualServer_PrimitiveType>` primitive, :ref:`Array<class_Array>` arrays, :ref:`Array<class_Array>` blend_shapes=[  ], :ref:`int<class_int>` compress_format=97280 **)**
 
-Adds a surface generated from the Arrays to a mesh. See ``PRIMITIVE_TYPE_*`` constants for types.
+Adds a surface generated from the Arrays to a mesh. See :ref:`PrimitiveType<enum_VisualServer_PrimitiveType>` constants for types.
 
 ----
 
@@ -3491,6 +3493,16 @@ Sets a mesh's surface's material.
 .. _class_VisualServer_method_multimesh_allocate:
 
 - void **multimesh_allocate** **(** :ref:`RID<class_RID>` multimesh, :ref:`int<class_int>` instances, :ref:`MultimeshTransformFormat<enum_VisualServer_MultimeshTransformFormat>` transform_format, :ref:`MultimeshColorFormat<enum_VisualServer_MultimeshColorFormat>` color_format, :ref:`MultimeshCustomDataFormat<enum_VisualServer_MultimeshCustomDataFormat>` custom_data_format=0 **)**
+
+----
+
+.. _class_VisualServer_method_multimesh_create:
+
+- :ref:`RID<class_RID>` **multimesh_create** **(** **)**
+
+Creates a new multimesh on the VisualServer and returns an :ref:`RID<class_RID>` handle.
+
+Once finished with your RID, you will want to free the RID using the VisualServer's :ref:`free_rid<class_VisualServer_method_free_rid>` static method.
 
 ----
 
@@ -4196,7 +4208,7 @@ Detaches the viewport from the screen.
 
 - :ref:`int<class_int>` **viewport_get_render_info** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportRenderInfo<enum_VisualServer_ViewportRenderInfo>` info **)**
 
-Returns a viewport's render information. For options, see the ``VIEWPORT_RENDER_INFO*`` constants.
+Returns a viewport's render information. For options, see the :ref:`ViewportRenderInfo<enum_VisualServer_ViewportRenderInfo>` constants.
 
 ----
 

@@ -150,7 +150,7 @@ Property Descriptions
 | *Getter*  | get_align()      |
 +-----------+------------------+
 
-Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the ``ALIGN_*`` constants.
+Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the :ref:`Align<enum_Label_Align>` constants.
 
 ----
 
@@ -278,7 +278,7 @@ If ``true``, all the text displays as UPPERCASE.
 | *Getter*  | get_valign()      |
 +-----------+-------------------+
 
-Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the ``VALIGN_*`` constants.
+Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the :ref:`VAlign<enum_Label_VAlign>` constants.
 
 ----
 

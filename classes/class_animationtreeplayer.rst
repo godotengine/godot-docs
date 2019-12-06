@@ -518,7 +518,7 @@ Returns position of a node in the graph given its name.
 
 - :ref:`NodeType<enum_AnimationTreePlayer_NodeType>` **node_get_type** **(** :ref:`String<class_String>` id **)** const
 
-Gets the node type, will return from ``NODE_*`` enum.
+Gets the node type, will return from :ref:`NodeType<enum_AnimationTreePlayer_NodeType>` enum.
 
 ----
 

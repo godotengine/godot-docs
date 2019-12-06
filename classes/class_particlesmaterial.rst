@@ -635,7 +635,7 @@ Particles will be emitted at positions determined by sampling this texture at a 
 | *Getter*  | get_emission_shape()      |
 +-----------+---------------------------+
 
-Particles will be emitted inside this region. Use ``EMISSION_SHAPE_*`` constants for values.
+Particles will be emitted inside this region. Use :ref:`EmissionShape<enum_ParticlesMaterial_EmissionShape>` constants for values.
 
 ----
 

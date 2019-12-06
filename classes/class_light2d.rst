@@ -209,7 +209,7 @@ The Light2D's energy value. The larger the value, the stronger the light.
 | *Getter*  | get_mode()      |
 +-----------+-----------------+
 
-The Light2D's mode. See ``MODE_*`` constants for values.
+The Light2D's mode. See :ref:`Mode<enum_Light2D_Mode>` constants for values.
 
 ----
 

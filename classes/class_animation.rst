@@ -730,5 +730,5 @@ Returns the update mode of a value track.
 
 - void **value_track_set_update_mode** **(** :ref:`int<class_int>` track_idx, :ref:`UpdateMode<enum_Animation_UpdateMode>` mode **)**
 
-Sets the update mode (``UPDATE_*``) of a value track.
+Sets the update mode (see :ref:`UpdateMode<enum_Animation_UpdateMode>`) of a value track.
 

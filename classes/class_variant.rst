@@ -39,7 +39,7 @@ Godot tracks all scripting API variables within Variants. Without even realizing
 
 - The statically-typed language NativeScript C++ does not define a built-in Variant-like class. Godot's GDNative bindings provide their own godot::Variant class for users; Any point at which the C++ code starts interacting with the Godot runtime is a place where you might have to start wrapping data inside Variant objects.
 
-The global :ref:`@GDScript.typeof<class_@GDScript_method_typeof>` function returns the enumerated value of the Variant type stored in the current variable. These correspond to ``TYPE_*`` constants in the :ref:`@GlobalScope<class_@GlobalScope>` docs.
+The global :ref:`@GDScript.typeof<class_@GDScript_method_typeof>` function returns the enumerated value of the Variant type stored in the current variable (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`).
 
 ::
 

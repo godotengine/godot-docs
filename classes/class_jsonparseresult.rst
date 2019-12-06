@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter* | get_error()      |
 +----------+------------------+
 
-The error type if the JSON source was not successfully parsed. See the :ref:`@GlobalScope<class_@GlobalScope>` ``ERR_*`` constants.
+The error type if the JSON source was not successfully parsed. See the :ref:`Error<enum_@GlobalScope_Error>` constants.
 
 ----
 
@@ -81,7 +81,7 @@ The line number where the error occurred if JSON source was not successfully par
 | *Getter*  | get_error_string()      |
 +-----------+-------------------------+
 
-The error message if JSON source was not successfully parsed. See the :ref:`@GlobalScope<class_@GlobalScope>` ``ERR_*`` constants.
+The error message if JSON source was not successfully parsed. See the :ref:`Error<enum_@GlobalScope_Error>` constants.
 
 ----
 

@@ -125,7 +125,7 @@ Contains the audio data in bytes.
 | *Getter*  | get_format()      |
 +-----------+-------------------+
 
-Audio format. See ``FORMAT_*`` constants for values.
+Audio format. See :ref:`Format<enum_AudioStreamSample_Format>` constants for values.
 
 ----
 
@@ -173,7 +173,7 @@ Loop end in bytes.
 | *Getter*  | get_loop_mode()      |
 +-----------+----------------------+
 
-Loop mode. See ``LOOP_*`` constants for values.
+Loop mode. See :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` constants for values.
 
 ----
 

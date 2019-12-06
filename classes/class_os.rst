@@ -42,6 +42,8 @@ Properties
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
 | :ref:`bool<class_bool>`                             | :ref:`vsync_enabled<class_OS_property_vsync_enabled>`                                                 | true            |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                             | :ref:`vsync_via_compositor<class_OS_property_vsync_via_compositor>`                                   | false           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
 | :ref:`bool<class_bool>`                             | :ref:`window_borderless<class_OS_property_window_borderless>`                                         | false           |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
 | :ref:`bool<class_bool>`                             | :ref:`window_fullscreen<class_OS_property_window_fullscreen>`                                         | false           |
@@ -629,6 +631,22 @@ If ``true``, vertical synchronization (Vsync) is enabled.
 
 ----
 
+.. _class_OS_property_vsync_via_compositor:
+
+- :ref:`bool<class_bool>` **vsync_via_compositor**
+
++-----------+-----------------------------------+
+| *Default* | false                             |
++-----------+-----------------------------------+
+| *Setter*  | set_vsync_via_compositor(value)   |
++-----------+-----------------------------------+
+| *Getter*  | is_vsync_via_compositor_enabled() |
++-----------+-----------------------------------+
+
+If ``true`` and ``vsync_enabled`` is true, the operating system's window compositor will be used for vsync when the compositor is enabled and the game is in windowed mode.
+
+----
+
 .. _class_OS_property_window_borderless:
 
 - :ref:`bool<class_bool>` **window_borderless**
@@ -712,6 +730,8 @@ If ``true``, the window background is transparent and window frame is removed.
 Use ``get_tree().get_root().set_transparent_background(true)`` to disable main viewport background rendering.
 
 **Note:** This property has no effect if **Project > Project Settings > Display > Window > Per-pixel transparency > Allowed** setting is disabled.
+
+**Note:** This property is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -800,6 +820,10 @@ Centers the window on the screen if in windowed mode.
 
 - void **close_midi_inputs** **(** **)**
 
+Shuts down system MIDI driver.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
+
 ----
 
 .. _class_OS_method_delay_msec:
@@ -875,6 +899,8 @@ If you wish to access a shell built-in or perform a composite command, a platfor
 
     OS.execute("CMD.exe", ["/C", "cd %TEMP% && dir"], true, output)
 
+**Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+
 ----
 
 .. _class_OS_method_find_scancode_from_string:
@@ -916,6 +942,8 @@ Returns the command line arguments passed to the engine.
 Returns an array of MIDI device names.
 
 The returned array will be empty if the system MIDI driver has not previously been initialised with :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -983,6 +1011,8 @@ Returns the path to the current engine executable.
 
 With this function you can get the list of dangerous permissions that have been granted to the Android application.
 
+**Note:** This method is implemented on Android.
+
 ----
 
 .. _class_OS_method_get_ime_selection:
@@ -992,6 +1022,8 @@ With this function you can get the list of dangerous permissions that have been 
 Returns the IME cursor position (the currently-edited portion of the string) relative to the characters in the composition string.
 
 :ref:`MainLoop.NOTIFICATION_OS_IME_UPDATE<class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE>` is sent to the application to notify it of changes to the IME cursor position.
+
+**Note:** This method is implemented on macOS.
 
 ----
 
@@ -1003,6 +1035,8 @@ Returns the IME intermediate composition string.
 
 :ref:`MainLoop.NOTIFICATION_OS_IME_UPDATE<class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE>` is sent to the application to notify it of changes to the IME composition string.
 
+**Note:** This method is implemented on macOS.
+
 ----
 
 .. _class_OS_method_get_latin_keyboard_variant:
@@ -1012,6 +1046,8 @@ Returns the IME intermediate composition string.
 Returns the current latin keyboard variant as a String.
 
 Possible return values are: ``"QWERTY"``, ``"AZERTY"``, ``"QZERTY"``, ``"DVORAK"``, ``"NEO"``, ``"COLEMAK"`` or ``"ERROR"``.
+
+**Note:** This method is implemented on Linux, macOS and Windows. Returns ``"QWERTY"`` on unsupported platforms.
 
 ----
 
@@ -1029,6 +1065,8 @@ Returns the host OS locale.
 
 Returns the model name of the current device.
 
+**Note:** This method is implemented on Android and iOS. Returns ``"GenericDevice"`` on unsupported platforms.
+
 ----
 
 .. _class_OS_method_get_name:
@@ -1043,7 +1081,9 @@ Returns the name of the host OS. Possible values are: ``"Android"``, ``"Haiku"``
 
 - :ref:`int<class_int>` **get_power_percent_left** **(** **)**
 
-Returns the amount of battery left in the device as a percentage.
+Returns the amount of battery left in the device as a percentage. Returns ``-1`` if power state is unknown.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -1051,7 +1091,9 @@ Returns the amount of battery left in the device as a percentage.
 
 - :ref:`int<class_int>` **get_power_seconds_left** **(** **)**
 
-Returns an estimate of the time left in seconds before the device runs out of battery.
+Returns an estimate of the time left in seconds before the device runs out of battery. Returns ``-1`` if power state is unknown.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -1061,6 +1103,8 @@ Returns an estimate of the time left in seconds before the device runs out of ba
 
 Returns the current state of the device regarding battery and power. See :ref:`PowerState<enum_OS_PowerState>` constants.
 
+**Note:** This method is implemented on Linux, macOS and Windows.
+
 ----
 
 .. _class_OS_method_get_process_id:
@@ -1068,6 +1112,8 @@ Returns the current state of the device regarding battery and power. See :ref:`P
 - :ref:`int<class_int>` **get_process_id** **(** **)** const
 
 Returns the project's process ID.
+
+**Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
 
 ----
 
@@ -1120,6 +1166,8 @@ On Android devices, the actual screen densities are grouped into six generalized
      xxhdpi - 480 dpi
     xxxhdpi - 640 dpi
 
+**Note:** This method is implemented on Android, Linux, macOS and Windows. Returns ``72`` on unsupported platforms.
+
 ----
 
 .. _class_OS_method_get_screen_position:
@@ -1167,6 +1215,8 @@ Returns the amount of static memory being used by the program in bytes.
 - :ref:`String<class_String>` **get_system_dir** **(** :ref:`SystemDir<enum_OS_SystemDir>` dir **)** const
 
 Returns the actual path to commonly used folders across different platforms. Available locations are specified in :ref:`SystemDir<enum_OS_SystemDir>`.
+
+**Note:** This method is implemented on Android, Linux, macOS and Windows.
 
 ----
 
@@ -1302,6 +1352,8 @@ Returns unobscured area of the window where interactive controls should be rende
 
 Add a new item with text "label" to global menu. Use "_dock" menu to add item to the macOS dock icon menu.
 
+**Note:** This method is implemented on macOS.
+
 ----
 
 .. _class_OS_method_global_menu_add_separator:
@@ -1309,6 +1361,8 @@ Add a new item with text "label" to global menu. Use "_dock" menu to add item to
 - void **global_menu_add_separator** **(** :ref:`String<class_String>` menu **)**
 
 Add a separator between items. Separators also occupy an index.
+
+**Note:** This method is implemented on macOS.
 
 ----
 
@@ -1318,6 +1372,8 @@ Add a separator between items. Separators also occupy an index.
 
 Clear the global menu, in effect removing all items.
 
+**Note:** This method is implemented on macOS.
+
 ----
 
 .. _class_OS_method_global_menu_remove_item:
@@ -1325,6 +1381,8 @@ Clear the global menu, in effect removing all items.
 - void **global_menu_remove_item** **(** :ref:`String<class_String>` menu, :ref:`int<class_int>` idx **)**
 
 Removes the item at index "idx" from the global menu. Note that the indexes of items after the removed item are going to be shifted by one.
+
+**Note:** This method is implemented on macOS.
 
 ----
 
@@ -1430,6 +1488,8 @@ Kill (terminate) the process identified by the given process ID (``pid``), e.g. 
 
 **Note:** This method can also be used to kill processes that were not spawned by the game.
 
+**Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+
 ----
 
 .. _class_OS_method_move_window_to_foreground:
@@ -1437,6 +1497,8 @@ Kill (terminate) the process identified by the given process ID (``pid``), e.g. 
 - void **move_window_to_foreground** **(** **)**
 
 Moves the window to the front.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -1446,6 +1508,8 @@ Moves the window to the front.
 
 Returns ``true`` if native video is playing.
 
+**Note:** This method is implemented on Android and iOS.
+
 ----
 
 .. _class_OS_method_native_video_pause:
@@ -1453,6 +1517,8 @@ Returns ``true`` if native video is playing.
 - void **native_video_pause** **(** **)**
 
 Pauses native video playback.
+
+**Note:** This method is implemented on Android and iOS.
 
 ----
 
@@ -1462,7 +1528,7 @@ Pauses native video playback.
 
 Plays native video from the specified path, at the given volume and with audio and subtitle tracks.
 
-**Note:** This method is only implemented on Android and iOS, and the current Android implementation does not support the ``volume``, ``audio_track`` and ``subtitle_track`` options.
+**Note:** This method is implemented on Android and iOS, and the current Android implementation does not support the ``volume``, ``audio_track`` and ``subtitle_track`` options.
 
 ----
 
@@ -1472,6 +1538,8 @@ Plays native video from the specified path, at the given volume and with audio a
 
 Stops native video playback.
 
+**Note:** This method is implemented on Android and iOS.
+
 ----
 
 .. _class_OS_method_native_video_unpause:
@@ -1480,6 +1548,8 @@ Stops native video playback.
 
 Resumes native video playback.
 
+**Note:** This method is implemented on Android and iOS.
+
 ----
 
 .. _class_OS_method_open_midi_inputs:
@@ -1487,6 +1557,8 @@ Resumes native video playback.
 - void **open_midi_inputs** **(** **)**
 
 Initialises the singleton for the system MIDI driver.
+
+**Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -1528,6 +1600,8 @@ Shows all resources currently used by the game.
 
 Request the user attention to the window. It'll flash the taskbar button on Windows or bounce the dock icon on OSX.
 
+**Note:** This method is implemented on Linux, macOS and Windows.
+
 ----
 
 .. _class_OS_method_request_permission:
@@ -1544,6 +1618,8 @@ At the moment this function is only used by ``AudioDriverOpenSL`` to request per
 
 With this function you can request dangerous permissions since normal permissions are automatically granted at install time in Android application.
 
+**Note:** This method is implemented on Android.
+
 ----
 
 .. _class_OS_method_set_icon:
@@ -1553,6 +1629,8 @@ With this function you can request dangerous permissions since normal permission
 Sets the game's icon using an :ref:`Image<class_Image>` resource.
 
 The same image is used for window caption, taskbar/dock and window selection dialog. Image is scaled as needed.
+
+**Note:** This method is implemented on HTML5, Linux, macOS and Windows.
 
 ----
 
@@ -1568,6 +1646,8 @@ Application can retrieve the composition status by using :ref:`get_ime_selection
 
 Completed composition string is committed when input is finished.
 
+**Note:** This method is implemented on Linux, macOS and Windows.
+
 ----
 
 .. _class_OS_method_set_ime_position:
@@ -1575,6 +1655,8 @@ Completed composition string is committed when input is finished.
 - void **set_ime_position** **(** :ref:`Vector2<class_Vector2>` position **)**
 
 Sets position of IME suggestion list popup (in window coordinates).
+
+**Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -1586,7 +1668,7 @@ Sets the game's icon using a multi-size platform-specific icon file (``*.ico`` o
 
 Appropriate size sub-icons are used for window caption, taskbar/dock and window selection dialog.
 
-**Note:** This method is only implemented on macOS and Windows.
+**Note:** This method is implemented on macOS and Windows.
 
 ----
 
@@ -1612,6 +1694,8 @@ Enables backup saves if ``enabled`` is ``true``.
 
 Sets whether the window should always be on top.
 
+**Note:** This method is implemented on Linux, macOS and Windows.
+
 ----
 
 .. _class_OS_method_set_window_title:
@@ -1621,6 +1705,8 @@ Sets whether the window should always be on top.
 Sets the window title to the specified string.
 
 **Note:** This should be used sporadically. Don't set this every frame, as that will negatively affect performance on some window managers.
+
+**Note:** This method is implemented on HTML5, Linux, macOS and Windows.
 
 ----
 
@@ -1636,6 +1722,8 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 
 - ``OS.shell_open("mailto:example@example.com")`` opens the default email client with the "To" field set to ``example@example.com``. See `Customizing ``mailto:`` Links <https://blog.escapecreative.com/customizing-mailto-links/>`_ for a list of fields that can be added.
 
+**Note:** This method is implemented on Android, iOS, HTML5, Linux, macOS and Windows.
+
 ----
 
 .. _class_OS_method_show_virtual_keyboard:
@@ -1643,4 +1731,6 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 - void **show_virtual_keyboard** **(** :ref:`String<class_String>` existing_text="" **)**
 
 Shows the virtual keyboard if the platform has one. The ``existing_text`` parameter is useful for implementing your own LineEdit, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
+
+**Note:** This method is implemented on Android, iOS and UWP.
 

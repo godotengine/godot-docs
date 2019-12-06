@@ -542,7 +542,7 @@ Returns all response headers as a Dictionary of structure ``{ "key": "value1; va
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_status** **(** **)** const
 
-Returns a ``STATUS_*`` enum constant. Need to call :ref:`poll<class_HTTPClient_method_poll>` in order to get status updates.
+Returns a :ref:`Status<enum_HTTPClient_Status>` constant. Need to call :ref:`poll<class_HTTPClient_method_poll>` in order to get status updates.
 
 ----
 
@@ -606,7 +606,7 @@ Reads one chunk from the response.
 
 Sends a request to the connected host. The URL parameter is just the part after the host, so for ``http://somehost.com/index.php``, it is ``index.php``.
 
-Headers are HTTP request headers. For available HTTP methods, see ``METHOD_*``.
+Headers are HTTP request headers. For available HTTP methods, see :ref:`Method<enum_HTTPClient_Method>`.
 
 To create a POST request with query strings to push to the server, do:
 
@@ -625,7 +625,7 @@ To create a POST request with query strings to push to the server, do:
 
 Sends a raw request to the connected host. The URL parameter is just the part after the host, so for ``http://somehost.com/index.php``, it is ``index.php``.
 
-Headers are HTTP request headers. For available HTTP methods, see ``METHOD_*``.
+Headers are HTTP request headers. For available HTTP methods, see :ref:`Method<enum_HTTPClient_Method>`.
 
 Sends the body data raw, as a byte array and does not encode it in any way.
 

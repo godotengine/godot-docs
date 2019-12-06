@@ -16,7 +16,7 @@ CharFXTransform
 Brief Description
 -----------------
 
-
+Controls how an individual character will be displayed in a :ref:`RichTextEffect<class_RichTextEffect>`.
 
 Properties
 ----------
@@ -46,6 +46,18 @@ Methods
 | :ref:`Variant<class_Variant>` | :ref:`get_value_or<class_CharFXTransform_method_get_value_or>` **(** :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default_value **)** |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+By setting various properties on this object, you can control how individual characters will be displayed in a :ref:`RichTextEffect<class_RichTextEffect>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/gui/bbcode_in_richtextlabel`
+
+- `https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project <https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project>`_
+
 Property Descriptions
 ---------------------
 
@@ -61,6 +73,8 @@ Property Descriptions
 | *Getter*  | get_absolute_index()      |
 +-----------+---------------------------+
 
+The index of the current character (starting from 0). Setting this property won't affect drawing.
+
 ----
 
 .. _class_CharFXTransform_property_character:
@@ -74,6 +88,14 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_character()      |
 +-----------+----------------------+
+
+The Unicode codepoint the character will use. This only affects non-whitespace characters. :ref:`@GDScript.ord<class_@GDScript_method_ord>` can be useful here. For example, the following will replace all characters with asterisks:
+
+::
+
+    # `char_fx` is the CharFXTransform parameter from `_process_custom_fx()`.
+    # See the RichTextEffect documentation for details.
+    char_fx.character = ord("*")
 
 ----
 
@@ -89,6 +111,8 @@ Property Descriptions
 | *Getter*  | get_color()         |
 +-----------+---------------------+
 
+The color the character will be drawn with.
+
 ----
 
 .. _class_CharFXTransform_property_elapsed_time:
@@ -102,6 +126,10 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_elapsed_time()      |
 +-----------+-------------------------+
+
+The time elapsed since the :ref:`RichTextLabel<class_RichTextLabel>` was added to the scene tree (in seconds). Time stops when the project is paused, unless the :ref:`RichTextLabel<class_RichTextLabel>`'s :ref:`Node.pause_mode<class_Node_property_pause_mode>` is set to :ref:`Node.PAUSE_MODE_PROCESS<class_Node_constant_PAUSE_MODE_PROCESS>`.
+
+**Note:** Time still passes while the :ref:`RichTextLabel<class_RichTextLabel>` is hidden.
 
 ----
 
@@ -117,6 +145,14 @@ Property Descriptions
 | *Getter*  | get_environment()      |
 +-----------+------------------------+
 
+Contains the arguments passed in the opening BBCode tag. By default, arguments are strings; if their contents match a type such as :ref:`bool<class_bool>`, :ref:`int<class_int>` or :ref:`float<class_float>`, they will be converted automatically. Color codes in the form ``#rrggbb`` or ``#rgb`` will be converted to an opaque :ref:`Color<class_Color>`. String arguments may not contain spaces, even if they're quoted. If present, quotes will also be present in the final string.
+
+For example, the opening BBCode tag ``[example foo=hello bar=true baz=42 color=#ffffff]`` will map to the following :ref:`Dictionary<class_Dictionary>`:
+
+::
+
+    {"foo": "hello", "bar": true, "baz": 42, "color": Color(1, 1, 1, 1)}
+
 ----
 
 .. _class_CharFXTransform_property_offset:
@@ -130,6 +166,8 @@ Property Descriptions
 +-----------+-------------------+
 | *Getter*  | get_offset()      |
 +-----------+-------------------+
+
+The position offset the character will be drawn with (in pixels).
 
 ----
 
@@ -145,6 +183,8 @@ Property Descriptions
 | *Getter*  | get_relative_index()      |
 +-----------+---------------------------+
 
+The index of the current character (starting from 0). Setting this property won't affect drawing.
+
 ----
 
 .. _class_CharFXTransform_property_visible:
@@ -159,10 +199,14 @@ Property Descriptions
 | *Getter*  | is_visible()          |
 +-----------+-----------------------+
 
+If ``true``, the character will be drawn. If ``false``, the character will be hidden. Characters around hidden characters will reflow to take the space of hidden characters. If this is not desired, set their :ref:`color<class_CharFXTransform_property_color>` to ``Color(1, 1, 1, 0)`` instead.
+
 Method Descriptions
 -------------------
 
 .. _class_CharFXTransform_method_get_value_or:
 
 - :ref:`Variant<class_Variant>` **get_value_or** **(** :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default_value **)**
+
+Returns the value for ``key`` in the :ref:`env<class_CharFXTransform_property_env>` :ref:`Dictionary<class_Dictionary>`, or ``default_value`` if ``key`` isn't defined in :ref:`env<class_CharFXTransform_property_env>`. If the value's type doesn't match ``default_value``'s type, this method will return ``default_value``.
 

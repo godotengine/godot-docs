@@ -293,7 +293,7 @@ Returns the amount of bytes this HTTPRequest downloaded.
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_http_client_status** **(** **)** const
 
-Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See ``STATUS_*`` enum on :ref:`HTTPClient<class_HTTPClient>`.
+Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See :ref:`Status<enum_HTTPClient_Status>`.
 
 ----
 

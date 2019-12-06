@@ -176,7 +176,7 @@ Gets the byte offset of the current node since the beginning of the file or buff
 
 - :ref:`NodeType<enum_XMLParser_NodeType>` **get_node_type** **(** **)**
 
-Gets the type of the current node. Compare with ``NODE_*`` constants.
+Gets the type of the current node. Compare with :ref:`NodeType<enum_XMLParser_NodeType>` constants.
 
 ----
 

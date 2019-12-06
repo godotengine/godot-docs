@@ -211,7 +211,7 @@ Clear all information passed into the surface tool so far.
 
 Returns a constructed :ref:`ArrayMesh<class_ArrayMesh>` from current information passed in. If an existing :ref:`ArrayMesh<class_ArrayMesh>` is passed in as an argument, will add an extra surface to the existing :ref:`ArrayMesh<class_ArrayMesh>`.
 
-Default flag is :ref:`Mesh.ARRAY_COMPRESS_DEFAULT<class_Mesh_constant_ARRAY_COMPRESS_DEFAULT>`. See ``Mesh.ARRAY_COMPRESS_*`` constants for other flags.
+Default flag is :ref:`Mesh.ARRAY_COMPRESS_DEFAULT<class_Mesh_constant_ARRAY_COMPRESS_DEFAULT>`. See ``ARRAY_COMPRESS_*`` constants in :ref:`ArrayFormat<enum_Mesh_ArrayFormat>` for other flags.
 
 ----
 

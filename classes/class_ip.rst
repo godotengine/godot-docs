@@ -160,7 +160,7 @@ Returns a queued hostname's IP address, given its queue ``id``. Returns an empty
 
 - :ref:`ResolverStatus<enum_IP_ResolverStatus>` **get_resolve_item_status** **(** :ref:`int<class_int>` id **)** const
 
-Returns a queued hostname's status as a ``RESOLVER_STATUS_*`` constant, given its queue ``id``.
+Returns a queued hostname's status as a :ref:`ResolverStatus<enum_IP_ResolverStatus>` constant, given its queue ``id``.
 
 ----
 
@@ -168,7 +168,7 @@ Returns a queued hostname's status as a ``RESOLVER_STATUS_*`` constant, given it
 
 - :ref:`String<class_String>` **resolve_hostname** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 
-Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type method). The address type returned depends on the ``TYPE_*`` constant given as ``ip_type``.
+Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type method). The address type returned depends on the :ref:`Type<enum_IP_Type>` constant given as ``ip_type``.
 
 ----
 
@@ -176,5 +176,5 @@ Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type met
 
 - :ref:`int<class_int>` **resolve_hostname_queue_item** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 
-Creates a queue item to resolve a hostname to an IPv4 or IPv6 address depending on the ``TYPE_*`` constant given as ``ip_type``. Returns the queue ID if successful, or :ref:`RESOLVER_INVALID_ID<class_IP_constant_RESOLVER_INVALID_ID>` on error.
+Creates a queue item to resolve a hostname to an IPv4 or IPv6 address depending on the :ref:`Type<enum_IP_Type>` constant given as ``ip_type``. Returns the queue ID if successful, or :ref:`RESOLVER_INVALID_ID<class_IP_constant_RESOLVER_INVALID_ID>` on error.
 

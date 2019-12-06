@@ -184,7 +184,7 @@ If ``true`` (or if the :ref:`network_peer<class_MultiplayerAPI_property_network_
 | *Getter* | get_network_peer()      |
 +----------+-------------------------+
 
-The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>`) and will set root node's network mode to master (see ``NETWORK_MODE_*`` constants in :ref:`Node<class_Node>`), or it will become a regular peer with root node set to puppet. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
+The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>`) and will set root node's network mode to master, or it will become a regular peer with root node set to puppet. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
 
 ----
 

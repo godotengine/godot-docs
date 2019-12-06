@@ -578,7 +578,7 @@ If ``true``, disables the button at index ``button_idx`` in column ``column``.
 
 - void **set_cell_mode** **(** :ref:`int<class_int>` column, :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` mode **)**
 
-Sets the given column's cell mode to ``mode``. See ``CELL_MODE_*`` constants.
+Sets the given column's cell mode to ``mode``. See :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` constants.
 
 ----
 

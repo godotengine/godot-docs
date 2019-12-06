@@ -102,7 +102,7 @@ Method Descriptions
 
 - :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** const
 
-Returns the hand holding this tracker, if known. See ``TRACKER_*`` constants.
+Returns the hand holding this tracker, if known. See :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` constants.
 
 ----
 

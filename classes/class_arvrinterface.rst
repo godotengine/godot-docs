@@ -75,9 +75,9 @@ enum **Capabilities**:
 
 - **ARVR_STEREO** = **2** --- This interface supports stereoscopic rendering.
 
-- **ARVR_AR** = **4** --- This interface support AR (video background and real world tracking).
+- **ARVR_AR** = **4** --- This interface supports AR (video background and real world tracking).
 
-- **ARVR_EXTERNAL** = **8** --- This interface outputs to an external device, if the main viewport is used the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>`). Using a separate viewport node frees up the main viewport for other purposes.
+- **ARVR_EXTERNAL** = **8** --- This interface outputs to an external device. If the main viewport is used, the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>`). Using a separate viewport node frees up the main viewport for other purposes.
 
 ----
 
@@ -115,7 +115,7 @@ enum **Tracking_status**:
 
 - **ARVR_NORMAL_TRACKING** = **0** --- Tracking is behaving as expected.
 
-- **ARVR_EXCESSIVE_MOTION** = **1** --- Tracking is hindered by excessive motion, player is moving faster than tracking can keep up.
+- **ARVR_EXCESSIVE_MOTION** = **1** --- Tracking is hindered by excessive motion (the player is moving faster than tracking can keep up).
 
 - **ARVR_INSUFFICIENT_FEATURES** = **2** --- Tracking is hindered by insufficient features, it's too dark (for camera-based tracking), player is blocked, etc.
 
@@ -145,7 +145,7 @@ Property Descriptions
 | *Getter*  | get_anchor_detection_is_enabled()      |
 +-----------+----------------------------------------+
 
-On an AR interface, is our anchor detection enabled?
+On an AR interface, ``true`` if anchor detection is enabled.
 
 ----
 
@@ -161,7 +161,7 @@ On an AR interface, is our anchor detection enabled?
 | *Getter*  | is_initialized()          |
 +-----------+---------------------------+
 
-Has this interface been initialized?
+``true`` if this interface been initialized.
 
 ----
 
@@ -177,7 +177,7 @@ Has this interface been initialized?
 | *Getter*  | is_primary()          |
 +-----------+-----------------------+
 
-Is this our primary interface?
+``true`` if this is the primary interface.
 
 Method Descriptions
 -------------------
@@ -194,7 +194,7 @@ If this is an AR interface that requires displaying a camera feed as the backgro
 
 - :ref:`int<class_int>` **get_capabilities** **(** **)** const
 
-Returns a combination of flags providing information about the capabilities of this interface.
+Returns a combination of :ref:`Capabilities<enum_ARVRInterface_Capabilities>` flags providing information about the capabilities of this interface.
 
 ----
 
@@ -230,11 +230,11 @@ Call this to initialize this interface. The first interface that is initialized 
 
 After initializing the interface you want to use you then need to enable the AR/VR mode of a viewport and rendering should commence.
 
-**Note:** You must enable the AR/VR mode on the main viewport for any device that uses the main output of Godot such as for mobile VR.
+**Note:** You must enable the AR/VR mode on the main viewport for any device that uses the main output of Godot, such as for mobile VR.
 
-If you do this for a platform that handles its own output (such as OpenVR) Godot will show just one eye without distortion on screen. Alternatively, you can add a separate viewport node to your scene and enable AR/VR on that viewport and it will be used to output to the HMD leaving you free to do anything you like in the main window such as using a separate camera as a spectator camera or render out something completely different.
+If you do this for a platform that handles its own output (such as OpenVR) Godot will show just one eye without distortion on screen. Alternatively, you can add a separate viewport node to your scene and enable AR/VR on that viewport. It will be used to output to the HMD, leaving you free to do anything you like in the main window, such as using a separate camera as a spectator camera or rendering something completely different.
 
-While currently not used you can activate additional interfaces, you may wish to do this if you want to track controllers from other platforms. However, at this point in time only one interface can render to an HMD.
+While currently not used, you can activate additional interfaces. You may wish to do this if you want to track controllers from other platforms. However, at this point in time only one interface can render to an HMD.
 
 ----
 

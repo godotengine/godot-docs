@@ -96,7 +96,7 @@ Method Descriptions
 
 Changes the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
-The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``ERR_*``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
 ----
 
@@ -106,7 +106,7 @@ The method returns one of the error code constants defined in :ref:`@GlobalScope
 
 Copies the ``from`` file to the ``to`` destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
-Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK``, ``FAILED`` or ``ERR_*``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
 ----
 
@@ -210,7 +210,7 @@ Closes the current stream opened with :ref:`list_dir_begin<class_Directory_metho
 
 Creates a directory. The argument can be relative to the current directory, or an absolute path. The target directory should be placed in an already existing directory (to create the full path recursively, see :ref:`make_dir_recursive<class_Directory_method_make_dir_recursive>`).
 
-The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK``, ``FAILED`` or ``ERR_*``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
 ----
 
@@ -220,7 +220,7 @@ The method returns one of the error code constants defined in :ref:`@GlobalScope
 
 Creates a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_Directory_method_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
-Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``0K``, ``FAILED`` or ``ERR_*``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
 ----
 
@@ -230,7 +230,7 @@ Returns one of the error code constants defined in :ref:`@GlobalScope<class_@Glo
 
 Opens an existing directory of the filesystem. The ``path`` argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
 
-The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``ERR_*``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
 ----
 
@@ -240,7 +240,7 @@ The method returns one of the error code constants defined in :ref:`@GlobalScope
 
 Deletes the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
 
-Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``FAILED``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
 ----
 
@@ -250,5 +250,5 @@ Returns one of the error code constants defined in :ref:`@GlobalScope<class_@Glo
 
 Renames (move) the ``from`` file to the ``to`` destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
-Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (``OK`` or ``FAILED``).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 

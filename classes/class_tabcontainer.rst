@@ -211,7 +211,7 @@ If ``true``, tabs can be rearranged with mouse drag.
 | *Getter*  | get_tab_align()      |
 +-----------+----------------------+
 
-The alignment of all tabs in the tab container. See the ``ALIGN_*`` constants for details.
+The alignment of all tabs in the tab container. See the :ref:`TabAlign<enum_TabContainer_TabAlign>` constants for details.
 
 ----
 

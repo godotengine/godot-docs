@@ -112,7 +112,7 @@ If ``true``, the texture stretches to the edges of the node's bounding rectangle
 | *Getter*  | get_stretch_mode()      |
 +-----------+-------------------------+
 
-Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_property_expand>` is ``true``. Set it to one of the ``STRETCH_*`` constants. See the constants to learn more.
+Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_property_expand>` is ``true``. Set it to one of the :ref:`StretchMode<enum_TextureButton_StretchMode>` constants. See the constants to learn more.
 
 ----
 

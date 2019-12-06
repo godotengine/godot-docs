@@ -416,7 +416,7 @@ The number of columns.
 | *Getter*  | get_drop_mode_flags()      |
 +-----------+----------------------------+
 
-The drop mode as an OR combination of flags. See ``DROP_MODE_*`` constants. Once dropping is done, reverts to :ref:`DROP_MODE_DISABLED<class_Tree_constant_DROP_MODE_DISABLED>`. Setting this during :ref:`Control.can_drop_data<class_Control_method_can_drop_data>` is recommended.
+The drop mode as an OR combination of flags. See :ref:`DropModeFlags<enum_Tree_DropModeFlags>` constants. Once dropping is done, reverts to :ref:`DROP_MODE_DISABLED<class_Tree_constant_DROP_MODE_DISABLED>`. Setting this during :ref:`Control.can_drop_data<class_Control_method_can_drop_data>` is recommended.
 
 ----
 
@@ -464,7 +464,7 @@ If ``true``, the tree's root is hidden.
 | *Getter*  | get_select_mode()      |
 +-----------+------------------------+
 
-Allows single or multiple selection. See the ``SELECT_*`` constants.
+Allows single or multiple selection. See the :ref:`SelectMode<enum_Tree_SelectMode>` constants.
 
 Method Descriptions
 -------------------

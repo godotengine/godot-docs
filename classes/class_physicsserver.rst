@@ -654,7 +654,7 @@ enum **AreaParameter**:
 
 - **AREA_PARAM_GRAVITY_DISTANCE_SCALE** = **3** --- Constant to set/get the falloff factor for point gravity of an area. The greater this value is, the faster the strength of gravity decreases with the square of distance.
 
-- **AREA_PARAM_GRAVITY_POINT_ATTENUATION** = **4** --- This constant was used to set/get the falloff factor for point gravity. It has been superseded by AREA_PARAM_GRAVITY_DISTANCE_SCALE.
+- **AREA_PARAM_GRAVITY_POINT_ATTENUATION** = **4** --- This constant was used to set/get the falloff factor for point gravity. It has been superseded by :ref:`AREA_PARAM_GRAVITY_DISTANCE_SCALE<class_PhysicsServer_constant_AREA_PARAM_GRAVITY_DISTANCE_SCALE>`.
 
 - **AREA_PARAM_LINEAR_DAMP** = **5** --- Constant to set/get the linear dampening factor of an area.
 
@@ -926,7 +926,7 @@ Gets the instance ID of the object the area is assigned to.
 
 - :ref:`Variant<class_Variant>` **area_get_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_PhysicsServer_AreaParameter>` param **)** const
 
-Returns an area parameter value. A list of available parameters is on the ``AREA_PARAM_*`` constants.
+Returns an area parameter value. A list of available parameters is on the :ref:`AreaParameter<enum_PhysicsServer_AreaParameter>` constants.
 
 ----
 
@@ -1022,7 +1022,7 @@ Sets which physics layers the area will monitor.
 
 Sets the function to call when any body/area enters or exits the area. This callback will be called for any object interacting with the area, and takes five parameters:
 
-1: AREA_BODY_ADDED or AREA_BODY_REMOVED, depending on whether the object entered or exited the area.
+1: :ref:`AREA_BODY_ADDED<class_PhysicsServer_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_PhysicsServer_constant_AREA_BODY_REMOVED>`, depending on whether the object entered or exited the area.
 
 2: :ref:`RID<class_RID>` of the object that entered/exited the area.
 
@@ -1044,7 +1044,7 @@ Sets the function to call when any body/area enters or exits the area. This call
 
 - void **area_set_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_PhysicsServer_AreaParameter>` param, :ref:`Variant<class_Variant>` value **)**
 
-Sets the value for an area parameter. A list of available parameters is on the ``AREA_PARAM_*`` constants.
+Sets the value for an area parameter. A list of available parameters is on the :ref:`AreaParameter<enum_PhysicsServer_AreaParameter>` constants.
 
 ----
 
@@ -1090,7 +1090,7 @@ Assigns a space to the area.
 
 - void **area_set_space_override_mode** **(** :ref:`RID<class_RID>` area, :ref:`AreaSpaceOverrideMode<enum_PhysicsServer_AreaSpaceOverrideMode>` mode **)**
 
-Sets the space override mode for the area. The modes are described in the constants ``AREA_SPACE_OVERRIDE_*``.
+Sets the space override mode for the area. The modes are described in the :ref:`AreaSpaceOverrideMode<enum_PhysicsServer_AreaSpaceOverrideMode>` constants.
 
 ----
 
@@ -1178,7 +1178,7 @@ Removes all shapes from a body.
 
 - :ref:`RID<class_RID>` **body_create** **(** :ref:`BodyMode<enum_PhysicsServer_BodyMode>` mode=2, :ref:`bool<class_bool>` init_sleeping=false **)**
 
-Creates a physics body. The first parameter can be any value from constants BODY_MODE\*, for the type of body created. Additionally, the body can be created in sleeping state to save processing time.
+Creates a physics body. The first parameter can be any value from :ref:`BodyMode<enum_PhysicsServer_BodyMode>` constants, for the type of body created. Additionally, the body can be created in sleeping state to save processing time.
 
 ----
 
@@ -1242,7 +1242,7 @@ Gets the instance ID of the object the area is assigned to.
 
 - :ref:`float<class_float>` **body_get_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_PhysicsServer_BodyParameter>` param **)** const
 
-Returns the value of a body parameter. A list of available parameters is on the ``BODY_PARAM_*`` constants.
+Returns the value of a body parameter. A list of available parameters is on the :ref:`BodyParameter<enum_PhysicsServer_BodyParameter>` constants.
 
 ----
 
@@ -1400,7 +1400,7 @@ Sets the maximum contacts to report. Bodies can keep a log of the contacts with 
 
 - void **body_set_mode** **(** :ref:`RID<class_RID>` body, :ref:`BodyMode<enum_PhysicsServer_BodyMode>` mode **)**
 
-Sets the body mode, from one of the constants BODY_MODE\*.
+Sets the body mode, from one of the :ref:`BodyMode<enum_PhysicsServer_BodyMode>` constants.
 
 ----
 
@@ -1416,7 +1416,7 @@ Sets whether a body uses a callback function to calculate its own physics (see :
 
 - void **body_set_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_PhysicsServer_BodyParameter>` param, :ref:`float<class_float>` value **)**
 
-Sets a body parameter. A list of available parameters is on the ``BODY_PARAM_*`` constants.
+Sets a body parameter. A list of available parameters is on the :ref:`BodyParameter<enum_PhysicsServer_BodyParameter>` constants.
 
 ----
 
@@ -1462,7 +1462,7 @@ Assigns a space to the body (see :ref:`space_create<class_PhysicsServer_method_s
 
 - void **body_set_state** **(** :ref:`RID<class_RID>` body, :ref:`BodyState<enum_PhysicsServer_BodyState>` state, :ref:`Variant<class_Variant>` value **)**
 
-Sets a body state (see BODY_STATE\* constants).
+Sets a body state (see :ref:`BodyState<enum_PhysicsServer_BodyState>` constants).
 
 ----
 
@@ -1470,7 +1470,7 @@ Sets a body state (see BODY_STATE\* constants).
 
 - :ref:`float<class_float>` **cone_twist_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`ConeTwistJointParam<enum_PhysicsServer_ConeTwistJointParam>` param **)** const
 
-Gets a cone_twist_joint parameter (see CONE_TWIST_JOINT\* constants).
+Gets a cone_twist_joint parameter (see :ref:`ConeTwistJointParam<enum_PhysicsServer_ConeTwistJointParam>` constants).
 
 ----
 
@@ -1478,7 +1478,7 @@ Gets a cone_twist_joint parameter (see CONE_TWIST_JOINT\* constants).
 
 - void **cone_twist_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`ConeTwistJointParam<enum_PhysicsServer_ConeTwistJointParam>` param, :ref:`float<class_float>` value **)**
 
-Sets a cone_twist_joint parameter (see CONE_TWIST_JOINT\* constants).
+Sets a cone_twist_joint parameter (see :ref:`ConeTwistJointParam<enum_PhysicsServer_ConeTwistJointParam>` constants).
 
 ----
 
@@ -1494,7 +1494,7 @@ Destroys any of the objects created by PhysicsServer. If the :ref:`RID<class_RID
 
 - :ref:`bool<class_bool>` **generic_6dof_joint_get_flag** **(** :ref:`RID<class_RID>` joint, Vector3.Axis axis, :ref:`G6DOFJointAxisFlag<enum_PhysicsServer_G6DOFJointAxisFlag>` flag **)**
 
-Gets a generic_6_DOF_joint flag (see G6DOF_JOINT_FLAG\* constants).
+Gets a generic_6_DOF_joint flag (see :ref:`G6DOFJointAxisFlag<enum_PhysicsServer_G6DOFJointAxisFlag>` constants).
 
 ----
 
@@ -1502,7 +1502,7 @@ Gets a generic_6_DOF_joint flag (see G6DOF_JOINT_FLAG\* constants).
 
 - :ref:`float<class_float>` **generic_6dof_joint_get_param** **(** :ref:`RID<class_RID>` joint, Vector3.Axis axis, :ref:`G6DOFJointAxisParam<enum_PhysicsServer_G6DOFJointAxisParam>` param **)**
 
-Gets a generic_6_DOF_joint parameter (see G6DOF_JOINT\* constants without the G6DOF_JOINT_FLAG\*).
+Gets a generic_6_DOF_joint parameter (see :ref:`G6DOFJointAxisParam<enum_PhysicsServer_G6DOFJointAxisParam>` constants).
 
 ----
 
@@ -1510,7 +1510,7 @@ Gets a generic_6_DOF_joint parameter (see G6DOF_JOINT\* constants without the G6
 
 - void **generic_6dof_joint_set_flag** **(** :ref:`RID<class_RID>` joint, Vector3.Axis axis, :ref:`G6DOFJointAxisFlag<enum_PhysicsServer_G6DOFJointAxisFlag>` flag, :ref:`bool<class_bool>` enable **)**
 
-Sets a generic_6_DOF_joint flag (see G6DOF_JOINT_FLAG\* constants).
+Sets a generic_6_DOF_joint flag (see :ref:`G6DOFJointAxisFlag<enum_PhysicsServer_G6DOFJointAxisFlag>` constants).
 
 ----
 
@@ -1518,7 +1518,7 @@ Sets a generic_6_DOF_joint flag (see G6DOF_JOINT_FLAG\* constants).
 
 - void **generic_6dof_joint_set_param** **(** :ref:`RID<class_RID>` joint, Vector3.Axis axis, :ref:`G6DOFJointAxisParam<enum_PhysicsServer_G6DOFJointAxisParam>` param, :ref:`float<class_float>` value **)**
 
-Sets a generic_6_DOF_joint parameter (see G6DOF_JOINT\* constants without the G6DOF_JOINT_FLAG\*).
+Sets a generic_6_DOF_joint parameter (see :ref:`G6DOFJointAxisParam<enum_PhysicsServer_G6DOFJointAxisParam>` constants).
 
 ----
 
@@ -1534,7 +1534,7 @@ Returns an Info defined by the :ref:`ProcessInfo<enum_PhysicsServer_ProcessInfo>
 
 - :ref:`bool<class_bool>` **hinge_joint_get_flag** **(** :ref:`RID<class_RID>` joint, :ref:`HingeJointFlag<enum_PhysicsServer_HingeJointFlag>` flag **)** const
 
-Gets a hinge_joint flag (see HINGE_JOINT_FLAG\* constants).
+Gets a hinge_joint flag (see :ref:`HingeJointFlag<enum_PhysicsServer_HingeJointFlag>` constants).
 
 ----
 
@@ -1542,7 +1542,7 @@ Gets a hinge_joint flag (see HINGE_JOINT_FLAG\* constants).
 
 - :ref:`float<class_float>` **hinge_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`HingeJointParam<enum_PhysicsServer_HingeJointParam>` param **)** const
 
-Gets a hinge_joint parameter (see HINGE_JOINT\* constants without the HINGE_JOINT_FLAG\*).
+Gets a hinge_joint parameter (see :ref:`HingeJointParam<enum_PhysicsServer_HingeJointParam>`).
 
 ----
 
@@ -1550,7 +1550,7 @@ Gets a hinge_joint parameter (see HINGE_JOINT\* constants without the HINGE_JOIN
 
 - void **hinge_joint_set_flag** **(** :ref:`RID<class_RID>` joint, :ref:`HingeJointFlag<enum_PhysicsServer_HingeJointFlag>` flag, :ref:`bool<class_bool>` enabled **)**
 
-Sets a hinge_joint flag (see HINGE_JOINT_FLAG\* constants).
+Sets a hinge_joint flag (see :ref:`HingeJointFlag<enum_PhysicsServer_HingeJointFlag>` constants).
 
 ----
 
@@ -1558,7 +1558,7 @@ Sets a hinge_joint flag (see HINGE_JOINT_FLAG\* constants).
 
 - void **hinge_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`HingeJointParam<enum_PhysicsServer_HingeJointParam>` param, :ref:`float<class_float>` value **)**
 
-Sets a hinge_joint parameter (see HINGE_JOINT\* constants without the HINGE_JOINT_FLAG\*).
+Sets a hinge_joint parameter (see :ref:`HingeJointParam<enum_PhysicsServer_HingeJointParam>` constants).
 
 ----
 
@@ -1646,7 +1646,7 @@ Returns position of the joint in the local space of body b of the joint.
 
 - :ref:`float<class_float>` **pin_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer_PinJointParam>` param **)** const
 
-Gets a pin_joint parameter (see PIN_JOINT\* constants).
+Gets a pin_joint parameter (see :ref:`PinJointParam<enum_PhysicsServer_PinJointParam>` constants).
 
 ----
 
@@ -1670,7 +1670,7 @@ Sets position of the joint in the local space of body b of the joint.
 
 - void **pin_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer_PinJointParam>` param, :ref:`float<class_float>` value **)**
 
-Sets a pin_joint parameter (see PIN_JOINT\* constants).
+Sets a pin_joint parameter (see :ref:`PinJointParam<enum_PhysicsServer_PinJointParam>` constants).
 
 ----
 
@@ -1686,7 +1686,7 @@ Activates or deactivates the 3D physics engine.
 
 - :ref:`RID<class_RID>` **shape_create** **(** :ref:`ShapeType<enum_PhysicsServer_ShapeType>` type **)**
 
-Creates a shape of type ``SHAPE_*``. Does not assign it to a body or an area. To do so, you must use :ref:`area_set_shape<class_PhysicsServer_method_area_set_shape>` or :ref:`body_set_shape<class_PhysicsServer_method_body_set_shape>`.
+Creates a shape of a type from :ref:`ShapeType<enum_PhysicsServer_ShapeType>`. Does not assign it to a body or an area. To do so, you must use :ref:`area_set_shape<class_PhysicsServer_method_area_set_shape>` or :ref:`body_set_shape<class_PhysicsServer_method_body_set_shape>`.
 
 ----
 
@@ -1702,7 +1702,7 @@ Returns the shape data.
 
 - :ref:`ShapeType<enum_PhysicsServer_ShapeType>` **shape_get_type** **(** :ref:`RID<class_RID>` shape **)** const
 
-Returns the type of shape (see ``SHAPE_*`` constants).
+Returns the type of shape (see :ref:`ShapeType<enum_PhysicsServer_ShapeType>` constants).
 
 ----
 
@@ -1718,7 +1718,7 @@ Sets the shape data that defines its shape and size. The data to be passed depen
 
 - :ref:`float<class_float>` **slider_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`SliderJointParam<enum_PhysicsServer_SliderJointParam>` param **)** const
 
-Gets a slider_joint parameter (see SLIDER_JOINT\* constants).
+Gets a slider_joint parameter (see :ref:`SliderJointParam<enum_PhysicsServer_SliderJointParam>` constants).
 
 ----
 
@@ -1726,7 +1726,7 @@ Gets a slider_joint parameter (see SLIDER_JOINT\* constants).
 
 - void **slider_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`SliderJointParam<enum_PhysicsServer_SliderJointParam>` param, :ref:`float<class_float>` value **)**
 
-Gets a slider_joint parameter (see SLIDER_JOINT\* constants).
+Gets a slider_joint parameter (see :ref:`SliderJointParam<enum_PhysicsServer_SliderJointParam>` constants).
 
 ----
 
@@ -1774,5 +1774,5 @@ Marks a space as active. It will not have an effect, unless it is assigned to an
 
 - void **space_set_param** **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_PhysicsServer_SpaceParameter>` param, :ref:`float<class_float>` value **)**
 
-Sets the value for a space parameter. A list of available parameters is on the ``SPACE_PARAM_*`` constants.
+Sets the value for a space parameter. A list of available parameters is on the :ref:`SpaceParameter<enum_PhysicsServer_SpaceParameter>` constants.
 

@@ -139,7 +139,7 @@ Bus on which this audio is playing.
 | *Getter*  | get_mix_target()      |
 +-----------+-----------------------+
 
-If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET_*`` constants.
+If the audio configuration has more than two speakers, this sets the target channels. See :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` constants.
 
 ----
 

@@ -434,7 +434,7 @@ Property Descriptions
 | *Default* | {"data": PoolByteArray(  ),"format": "Lum8","height": 0,"mipmaps": false,"width": 0} |
 +-----------+--------------------------------------------------------------------------------------+
 
-Holds all of the image's color data in a given format. See ``FORMAT_*`` constants.
+Holds all of the image's color data in a given format. See :ref:`Format<enum_Image_Format>` constants.
 
 Method Descriptions
 -------------------
@@ -489,7 +489,7 @@ Removes the image's mipmaps.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **compress** **(** :ref:`CompressMode<enum_Image_CompressMode>` mode, :ref:`CompressSource<enum_Image_CompressSource>` source, :ref:`float<class_float>` lossy_quality **)**
 
-Compresses the image to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available. See ``COMPRESS_*`` constants.
+Compresses the image to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available. See :ref:`CompressMode<enum_Image_CompressMode>` and :ref:`CompressSource<enum_Image_CompressSource>` constants.
 
 ----
 
@@ -497,7 +497,7 @@ Compresses the image to use less memory. Can not directly access pixel data whil
 
 - void **convert** **(** :ref:`Format<enum_Image_Format>` format **)**
 
-Converts the image's format. See ``FORMAT_*`` constants.
+Converts the image's format. See :ref:`Format<enum_Image_Format>` constants.
 
 ----
 
@@ -513,7 +513,7 @@ Copies ``src`` image to this image.
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format **)**
 
-Creates an empty image of given size and format. See ``FORMAT_*`` constants. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
+Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
 
 ----
 
@@ -521,7 +521,7 @@ Creates an empty image of given size and format. See ``FORMAT_*`` constants. If 
 
 - void **create_from_data** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format, :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
-Creates a new image of given size and format. See ``FORMAT_*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
+Creates a new image of given size and format. See :ref:`Format<enum_Image_Format>` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
 
 ----
 
@@ -545,7 +545,7 @@ Decompresses the image if it is compressed. Returns an error if decompress funct
 
 - :ref:`AlphaMode<enum_Image_AlphaMode>` **detect_alpha** **(** **)** const
 
-Returns ALPHA_BLEND if the image has data for alpha values. Returns ALPHA_BIT if all the alpha values are below a certain threshold or the maximum value. Returns ALPHA_NONE if no data for alpha values is found.
+Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has data for alpha values. Returns :ref:`ALPHA_BIT<class_Image_constant_ALPHA_BIT>` if all the alpha values are below a certain threshold or the maximum value. Returns :ref:`ALPHA_NONE<class_Image_constant_ALPHA_NONE>` if no data for alpha values is found.
 
 ----
 
@@ -609,7 +609,7 @@ Returns the image's raw data.
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
-Returns the image's format. See ``FORMAT_*`` constants.
+Returns the image's format. See :ref:`Format<enum_Image_Format>` constants.
 
 ----
 

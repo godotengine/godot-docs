@@ -178,7 +178,7 @@ Returns the normalized longest axis of the ``AABB``.
 
 - :ref:`int<class_int>` **get_longest_axis_index** **(** **)**
 
-Returns the index of the longest axis of the ``AABB`` (according to :ref:`Vector3<class_Vector3>`::AXIS\* enum).
+Returns the index of the longest axis of the ``AABB`` (according to :ref:`Vector3<class_Vector3>`'s ``AXIS_*`` constants).
 
 ----
 
