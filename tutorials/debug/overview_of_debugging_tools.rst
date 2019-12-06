@@ -127,17 +127,17 @@ This is where errors and warning messages are printed while running the game.
 Profiler
 ++++++++
 
-The profiler is used to show why individual frames take as long as they do to render.
+The profiler is used to show why individual frames take as long as they do to process and render.
 
 Unlike other debugging tools the profiler does not start automatically. It can be started at any
 time during gameplay by pressing the start button. You can even start the profiler before opening
 the game to profile start up performance. It can also be started and stopped while the game is
-running without losing information from when it was last running. The information it records wont
+running without losing information from when it was last running. The information it records won't
 go away unless you click clear, or close the game, reopen it and start the profiler again.
 
 After starting and stopping the profiler you should see things being kept track of on the left and
-a graph on the right. The things listed on the left are everything that contributes to frame render
-time, and they should each have a value for time and calls for the current frame you are looking at.
+a graph on the right. The items listed on the left are everything that contributes to frame time,
+and they should each have a value for time and calls for the current frame you are looking at.
 
 The frame number in the top right tells you which frame you are currently looking at. You can change
 this by using the up or down arrows, typing in the frame number, or clicking on the graph.
