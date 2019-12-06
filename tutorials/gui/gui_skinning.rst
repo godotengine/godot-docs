@@ -104,7 +104,7 @@ directly, and only for a specific control, by using the override API in
     l.AddColorOverride("fontColor", new Color(1.0f, 1.0f, 1.0f));
 
 In the inline help of Godot (in the script tab) you can check which theme options
-are overrideable, or check the :ref:`Control <class_Control>` class reference.
+are overridable, or check the :ref:`Control <class_Control>` class reference.
 
 Customizing a control
 ---------------------

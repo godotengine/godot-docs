@@ -143,7 +143,7 @@ code,
 .wy-menu-vertical p.caption {
     color: var(--navbar-heading-color);
 
-    /* Improves the apperance of uppercase text */
+    /* Improves the appearance of uppercase text */
     letter-spacing: 0.75px;
 }
 

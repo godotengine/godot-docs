@@ -106,7 +106,7 @@ To summerize:
 
 - The :ref:`ARVRCamera <class_ARVRCamera>` node is offset on the Y axis by the user's height.
 
-- If the VR system supports room tracking, then the :ref:`ARVRCamera <class_ARVRCamera>` node may be offset on the X and Z axises as the player moves.
+- If the VR system supports room tracking, then the :ref:`ARVRCamera <class_ARVRCamera>` node may be offset on the X and Z axes as the player moves.
 
 - The :ref:`ARVRController <class_ARVRController>` nodes represent the VR controllers and handle all of the input from the VR controllers.
 
@@ -697,7 +697,7 @@ over the last thirty ``_physics_process`` calls. While this is not perfect, it g
 ``_physics_process_directional_movement`` function step-by-step explanation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-First this function gets the axises for the trackpad and the joystick and assigns them to :ref:`Vector2 <class_Vector2>` variables called ``trackpad_vector`` and ``joystick_vector`` respectively.
+First this function gets the axes for the trackpad and the joystick and assigns them to :ref:`Vector2 <class_Vector2>` variables called ``trackpad_vector`` and ``joystick_vector`` respectively.
 
 .. note:: You may need to remap the joystick and/or touchpad index values depending on your VR headset and controller. The inputs in this tutorial are the index values of a
           Windows Mixed Reality headset.

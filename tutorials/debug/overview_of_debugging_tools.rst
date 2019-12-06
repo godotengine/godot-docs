@@ -6,7 +6,7 @@ Overview of debugging tools
 Introduction
 ------------
 
-When developing your game, you want to test your game and debug when problems occurr. Godot provides several debugging options and
+When developing your game, you want to test your game and debug when problems occur. Godot provides several debugging options and
 tools which aid your debugging process. There are the debug dropdown options, Script editor debug options, debug project settings,
 and the debugger.
 
@@ -80,7 +80,7 @@ Settings
 ++++++++
 
 These are some general settings such as printing the current FPS to the Output panel, the
-maximum ammount of functions when profiling and others.
+maximum amount of functions when profiling and others.
 
 GDScript
 ++++++++

@@ -192,12 +192,12 @@ function in your script:
 
 The documentation of each class in the :ref:`Class Reference <toc-class-ref>`
 shows the notifications it can receive. However, in most cases GDScript
-provides simpler overrideable functions.
+provides simpler overridable functions.
 
-Overrideable functions
-----------------------
+Overridable functions
+---------------------
 
-Such overrideable functions, which are described as
+Such overridable functions, which are described as
 follows, can be applied to nodes:
 
 .. tabs::

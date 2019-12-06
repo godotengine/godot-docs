@@ -48,7 +48,7 @@ either? Let's see an example:
     #    such, preloading the value here actually does not benefit anyone.
     #
     # 3. Because the user exports the value, if this script stored on
-    #    a node in a scene file, the scene instantation code will overwrite the
+    #    a node in a scene file, the scene instantiation code will overwrite the
     #    preloaded initial value anyway (wasting it). It's usually better to
     #    provide null, empty, or otherwise invalid default values for exports.
     #

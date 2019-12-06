@@ -25,8 +25,8 @@ required:
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
-Distro-specific oneliners
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Distro-specific one-liners
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 +------------------+-----------------------------------------------------------------------------------------------------------+
 | **Alpine Linux** | ::                                                                                                        |
 |                  |                                                                                                           |
