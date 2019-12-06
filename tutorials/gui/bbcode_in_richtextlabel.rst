@@ -172,7 +172,7 @@ Rainbow
 .. image:: img/rainbow.png
 
 Rainbow gives the text a rainbow color that changes over time. Its tag format is
-``[rainbow freq=0.2 sat=10 val=20][/rainbow].
+``[rainbow freq=0.2 sat=10 val=20][/rainbow]``.
 ``freq`` is the number of full rainbow cycles per second, ``sat`` is the saturation
 of the rainbow, ``val`` is the value of the rainbow.
 
@@ -209,7 +209,7 @@ object, which holds a few variables to control how the associated character is r
   normal circumstances.
 - ``color`` is the color of a given character.
 - Finally, ``env`` is a :ref:`class_Dictionary` of parameters assigned to a given custom
-  effect. You can use `:ref:`class_Dictionary_method_get` with an optional default value
+  effect. You can use :ref:`get() <class_Dictionary_method_get>` with an optional default value
   to retrieve each parameter, if specified by the user. For example ``[custom_fx spread=0.5
   color=#FFFF00]test[/custom_fx]`` would have a float ``spread`` and Color ``color``
   parameters in its ` `env`` Dictionary. See below for more usage examples.

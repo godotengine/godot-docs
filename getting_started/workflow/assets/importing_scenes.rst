@@ -290,7 +290,7 @@ Similarly, a track excluded by an early rule may then be re-included once again 
 further down in the filter script.
 
 For example: include all tracks in animations with names ending in ``"_Loop"``, but discard any
-tracks affecting a `"Skeleton"`` which end in ``"Control"``, unless they have ``"Arm"`` in their
+tracks affecting a ``"Skeleton"`` which end in ``"Control"``, unless they have ``"Arm"`` in their
 name::
 
     @+*_Loop

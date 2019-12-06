@@ -16,8 +16,8 @@ another datatype that is just as important:
 arrange user interfaces, etc. **Resources** are **data containers**. They don't
 do anything on their own: instead, nodes use the data contained in resources.
 
-Anything Godot saves or loads from disk is a resource. Be it a scene (a .tscn or
-an .scn file), an image, a script... Here are some ``Resource`` examples:
+Anything Godot saves or loads from disk is a resource. Be it a scene (a ``.tscn``
+or an ``.scn`` file), an image, a script... Here are some ``Resource`` examples:
 :ref:`Texture <class_Texture>`, :ref:`Script <class_Script>`, :ref:`Mesh
 <class_Mesh>`, :ref:`Animation <class_Animation>`, :ref:`AudioStream
 <class_AudioStream>`, :ref:`Font <class_Font>`, :ref:`Translation
@@ -41,7 +41,7 @@ External vs built-in
 There are two ways to save resources. They can be:
 
 1. **External** to a scene, saved on the disk as individual files.
-2. **Built-in**, saved inside the \*.tscn or the \*.scn file they're attached to.
+2. **Built-in**, saved inside the ``.tscn`` or the ``.scn`` file they're attached to.
 
 To be more specific, here's a :ref:`Texture <class_Texture>`
 in a :ref:`Sprite <class_Sprite>` node:
@@ -58,8 +58,8 @@ this, it is an external resource. If you erase the path or this path is empty,
 it becomes a built-in resource.
 
 The switch between built-in and external resources happens when you save the
-scene. In the example above, if you erase the path \`"res://robi.png"\` and
-save, Godot will save the image inside the .tscn scene file.
+scene. In the example above, if you erase the path ``"res://robi.png"`` and
+save, Godot will save the image inside the ``.tscn`` scene file.
 
 .. note::
 
