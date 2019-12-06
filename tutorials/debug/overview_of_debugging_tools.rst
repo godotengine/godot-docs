@@ -127,7 +127,23 @@ This is where errors and warning messages are printed while running the game.
 Profiler
 ++++++++
 
-Profiles the performance of any function call in the running game.
+The profiler is used to show why individual frames take as long as they do to process and render.
+
+Unlike other debugging tools the profiler does not start automatically. It can be started at any
+time during gameplay by pressing the start button. You can even start the profiler before opening
+the game to profile start up performance. It can also be started and stopped while the game is
+running without losing information from when it was last running. The information it records won't
+go away unless you click clear, or close the game, reopen it and start the profiler again.
+
+After starting and stopping the profiler you should see things being kept track of on the left and
+a graph on the right. The items listed on the left are everything that contributes to frame time,
+and they should each have a value for time and calls for the current frame you are looking at.
+
+The frame number in the top right tells you which frame you are currently looking at. You can change
+this by using the up or down arrows, typing in the frame number, or clicking on the graph.
+
+If you want to add something to your graph, or think it looks too cluttered, you can check and
+uncheck the box next to an item to add or remove it from the graph.
 
 Network Profiler
 ++++++++++++++++
@@ -151,7 +167,8 @@ Video Mem list the video memory usage of the running game and which resource is 
 Misc
 ++++
 
-Miscellaneous options for debug.
+Misc is used to identify which control node you are clicking while the game is running. "Clicked Control"
+shows where on the scene tree the node is. "Clicked Control Type" tells you what type of node it is.
 
 Remote in Scene dock
 --------------------
