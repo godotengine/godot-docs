@@ -11,10 +11,11 @@ Requirements
 For compiling under Windows, the following is required:
 
 - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
-  version 2015 (14.0) or later.
+  version 2015 (14.0) or later. VS 2019 is recommended.
   **Make sure to read "Installing Visual Studio caveats" below or you
   will have to run/download the installer again.**
-- MinGW-w64 can be used as an alternative to Visual Studio.
+- MinGW-w64 with GCC can be used as an alternative to Visual Studio.
+  Be sure to install/configure it to use the ``posix`` thread model.
 - `Python 3.5+ (recommended) or Python 2.7+. <https://www.python.org/downloads/windows/>`_
 - `SCons <https://www.scons.org>`_ build system. If using Visual Studio 2019,
   you *must* have SCons 3.1.1 or later.
@@ -34,7 +35,7 @@ For compiling under Windows, the following is required:
                   mingw-w64-i686-yasm make
               
               For each MSYS2 MinGW subsystem, you should then run
-              ``pip install scons`` in its shell.
+              `pip install scons` in its shell.
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
