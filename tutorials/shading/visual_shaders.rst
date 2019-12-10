@@ -24,16 +24,15 @@ Creating a VisualShader
 VisualShaders can be created in any :ref:`class_ShaderMaterial`. To begin using
 VisualShaders, create a new ``ShaderMaterial`` in an object of your choice.
 
-.. image:: img/shader_material_create.png
+.. image:: img/shader_material_create_mesh.png
 
 Then assign a :ref:`class_VisualShader` resource to the ``Shader`` property.
+
+.. image:: img/visual_shader_create.png
+
 Click on the new ``VisualShader`` resource and the Visual Shader Editor will
-open automatically.
-
-.. image:: img/shader_create.png
-
-The layout of the Visual Shader Editor comprises two parts: the upper toolbar
-and the graph itself.
+open automatically. The layout of the Visual Shader Editor comprises two parts:
+the upper toolbar and the graph itself.
 
 .. image:: img/visual_shader_editor2.png
 
