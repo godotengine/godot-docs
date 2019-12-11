@@ -27,7 +27,7 @@ the current fragment. As a result, this simple 2D fragment shader:
 
 .. code-block:: glsl
 
-    void fragment() {}
+    void fragment() {
         COLOR = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0);
     }
 
