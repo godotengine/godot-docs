@@ -1,7 +1,10 @@
 .. _doc_android_plugin:
 
-Creating Android plugins
-========================
+Creating Android plugins v1 (Godot 3.2 - Deprecated in Godot 4.0)
+=================================================================
+
+Note: DEPRECATED in Godot 4.0
+-----------------------------
 
 Introduction
 ------------
@@ -49,10 +52,10 @@ will work on every platform, too.
 
 Of course, in most of the cases, it's easier to just write an Android plugin, so keep reading.
 
-Android plugin
---------------
+Android plugin v1
+-----------------
 
-Writing an Android plugin is now possible, beginning with Godot 3.2. It's also pretty easy! Re-compiling the engine is no longer needed.
+Android plugin v1 are supported in Godot 3.2. It's also pretty easy! Re-compiling the engine is no longer needed.
 
 Before anything, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
 
@@ -161,7 +164,7 @@ Any bit of text below this tag is inserted inside the global scope of the build 
 Java singleton
 --------------
 
-An Android plugin will usually have a singleton class that will load it,
+A v1 Android plugin will usually have a singleton class that will load it,
 this class inherits from ``Godot.SingletonBase``. Resource identifiers for
 any additional resources you have provided for the module will be in the
 ``com.godot.game.R`` class, so you'll likely want to import it.
@@ -281,18 +284,3 @@ Check ``adb logcat`` for possible problems, then:
 -  Make sure libgodot_android.so is in the ``libs/armeabi`` folder
 -  Check that the methods used in the Java singleton only use simple
    Java datatypes, more complex ones are not supported.
-
-Future
-------
-
-Godot has an experimental Java API Wrapper that allows to use the
-entire Java API from GDScript.
-
-It's simple to use and it's used like this:
-
-.. code-block:: none
-
-    class = JavaClassWrapper.wrap(<javaclass as text>)
-
-This is most likely not functional yet, if you want to test it and help
-us make it work, contact us on irc.freenode.org:#godotengine-devel.
