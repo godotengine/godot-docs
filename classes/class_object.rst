@@ -587,6 +587,8 @@ Adds or changes a given entry in the object's metadata. Metadata are serialized,
 
 Assigns a script to the object. Each object can have a single script assigned to it, which are used to extend its functionality.
 
+The object's old variables will be lost and new variables will be initialized from the new script.
+
 ----
 
 .. _class_Object_method_to_string:
