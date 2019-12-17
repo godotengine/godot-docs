@@ -232,7 +232,7 @@ Returns the transform with the basis orthogonal (90 degrees), and normalized axi
 
 - :ref:`Transform2D<class_Transform2D>` **rotated** **(** :ref:`float<class_float>` phi **)**
 
-Rotates the transform by the given angle (in radians).
+Rotates the transform by the given angle (in radians), using matrix multiplication.
 
 ----
 
@@ -240,7 +240,7 @@ Rotates the transform by the given angle (in radians).
 
 - :ref:`Transform2D<class_Transform2D>` **scaled** **(** :ref:`Vector2<class_Vector2>` scale **)**
 
-Scales the transform by the given factor.
+Scales the transform by the given scale factor, using matrix multiplication.
 
 ----
 
@@ -248,7 +248,9 @@ Scales the transform by the given factor.
 
 - :ref:`Transform2D<class_Transform2D>` **translated** **(** :ref:`Vector2<class_Vector2>` offset **)**
 
-Translates the transform by the given offset.
+Translates the transform by the given offset, relative to the transform's basis vectors.
+
+Unlike :ref:`rotated<class_Transform2D_method_rotated>` and :ref:`scaled<class_Transform2D_method_scaled>`, this does not use matrix multiplication.
 
 ----
 

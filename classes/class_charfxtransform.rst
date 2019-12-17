@@ -39,13 +39,6 @@ Properties
 | :ref:`bool<class_bool>`             | :ref:`visible<class_CharFXTransform_property_visible>`               | true                |
 +-------------------------------------+----------------------------------------------------------------------+---------------------+
 
-Methods
--------
-
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_value_or<class_CharFXTransform_method_get_value_or>` **(** :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default_value **)** |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Description
 -----------
 
@@ -200,13 +193,4 @@ The index of the current character (starting from 0). Setting this property won'
 +-----------+-----------------------+
 
 If ``true``, the character will be drawn. If ``false``, the character will be hidden. Characters around hidden characters will reflow to take the space of hidden characters. If this is not desired, set their :ref:`color<class_CharFXTransform_property_color>` to ``Color(1, 1, 1, 0)`` instead.
-
-Method Descriptions
--------------------
-
-.. _class_CharFXTransform_method_get_value_or:
-
-- :ref:`Variant<class_Variant>` **get_value_or** **(** :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default_value **)**
-
-Returns the value for ``key`` in the :ref:`env<class_CharFXTransform_property_env>` :ref:`Dictionary<class_Dictionary>`, or ``default_value`` if ``key`` isn't defined in :ref:`env<class_CharFXTransform_property_env>`. If the value's type doesn't match ``default_value``'s type, this method will return ``default_value``.
 

@@ -49,7 +49,7 @@ Methods
 Description
 -----------
 
-This class contains the shape and other parameters for intersection/collision queries.
+This class contains the shape and other parameters for 2D intersection/collision queries. See also :ref:`Physics2DShapeQueryResult<class_Physics2DShapeQueryResult>`.
 
 Property Descriptions
 ---------------------
@@ -66,6 +66,8 @@ Property Descriptions
 | *Getter*  | is_collide_with_areas_enabled() |
 +-----------+---------------------------------+
 
+If ``true``, the query will take :ref:`Area2D<class_Area2D>`\ s into account.
+
 ----
 
 .. _class_Physics2DShapeQueryParameters_property_collide_with_bodies:
@@ -79,6 +81,8 @@ Property Descriptions
 +-----------+----------------------------------+
 | *Getter*  | is_collide_with_bodies_enabled() |
 +-----------+----------------------------------+
+
+If ``true``, the query will take :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s into account.
 
 ----
 
@@ -94,7 +98,7 @@ Property Descriptions
 | *Getter*  | get_collision_layer()      |
 +-----------+----------------------------+
 
-The physics layer the query should be made on.
+The physics layer(s) the query will take into account (as a bitmask).
 
 ----
 
@@ -110,7 +114,7 @@ The physics layer the query should be made on.
 | *Getter*  | get_exclude()      |
 +-----------+--------------------+
 
-The list of objects or object :ref:`RID<class_RID>`\ s, that will be excluded from collisions.
+The list of objects or object :ref:`RID<class_RID>`\ s that will be excluded from collisions.
 
 ----
 
@@ -156,7 +160,7 @@ The motion of the shape being queried for.
 | *Getter* | get_shape_rid()      |
 +----------+----------------------+
 
-The :ref:`RID<class_RID>` of the queried shape. See also :ref:`set_shape<class_Physics2DShapeQueryParameters_method_set_shape>`.
+The queried shape's :ref:`RID<class_RID>`. See also :ref:`set_shape<class_Physics2DShapeQueryParameters_method_set_shape>`.
 
 ----
 
@@ -172,7 +176,7 @@ The :ref:`RID<class_RID>` of the queried shape. See also :ref:`set_shape<class_P
 | *Getter*  | get_transform()                 |
 +-----------+---------------------------------+
 
-the transform matrix of the queried shape.
+The queried shape's transform matrix.
 
 Method Descriptions
 -------------------

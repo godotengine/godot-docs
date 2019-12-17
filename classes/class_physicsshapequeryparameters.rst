@@ -16,7 +16,7 @@ PhysicsShapeQueryParameters
 Brief Description
 -----------------
 
-
+Parameters to be sent to a 3D shape physics query.
 
 Properties
 ----------
@@ -44,6 +44,11 @@ Methods
 | void | :ref:`set_shape<class_PhysicsShapeQueryParameters_method_set_shape>` **(** :ref:`Resource<class_Resource>` shape **)** |
 +------+------------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+This class contains the shape and other parameters for 3D intersection/collision queries. See also :ref:`PhysicsShapeQueryResult<class_PhysicsShapeQueryResult>`.
+
 Property Descriptions
 ---------------------
 
@@ -59,6 +64,8 @@ Property Descriptions
 | *Getter*  | is_collide_with_areas_enabled() |
 +-----------+---------------------------------+
 
+If ``true``, the query will take :ref:`Area<class_Area>`\ s into account.
+
 ----
 
 .. _class_PhysicsShapeQueryParameters_property_collide_with_bodies:
@@ -72,6 +79,8 @@ Property Descriptions
 +-----------+----------------------------------+
 | *Getter*  | is_collide_with_bodies_enabled() |
 +-----------+----------------------------------+
+
+If ``true``, the query will take :ref:`PhysicsBody<class_PhysicsBody>`\ s into account.
 
 ----
 
@@ -87,6 +96,8 @@ Property Descriptions
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
+The physics layer(s) the query will take into account (as a bitmask).
+
 ----
 
 .. _class_PhysicsShapeQueryParameters_property_exclude:
@@ -100,6 +111,8 @@ Property Descriptions
 +-----------+--------------------+
 | *Getter*  | get_exclude()      |
 +-----------+--------------------+
+
+The list of objects or object :ref:`RID<class_RID>`\ s that will be excluded from collisions.
 
 ----
 
@@ -115,6 +128,8 @@ Property Descriptions
 | *Getter*  | get_margin()      |
 +-----------+-------------------+
 
+The collision margin for the shape.
+
 ----
 
 .. _class_PhysicsShapeQueryParameters_property_shape_rid:
@@ -126,6 +141,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_shape_rid()      |
 +----------+----------------------+
+
+The queried shape's :ref:`RID<class_RID>`. See also :ref:`set_shape<class_PhysicsShapeQueryParameters_method_set_shape>`.
 
 ----
 
@@ -141,10 +158,14 @@ Property Descriptions
 | *Getter*  | get_transform()                                 |
 +-----------+-------------------------------------------------+
 
+The queried shape's transform matrix.
+
 Method Descriptions
 -------------------
 
 .. _class_PhysicsShapeQueryParameters_method_set_shape:
 
 - void **set_shape** **(** :ref:`Resource<class_Resource>` shape **)**
+
+Sets the :ref:`Shape<class_Shape>` that will be used for collision/intersection queries.
 

@@ -22,19 +22,13 @@ Theme Properties
 ----------------
 
 +---------------------------------+-------------------+
-| :ref:`StyleBox<class_StyleBox>` | focus             |
-+---------------------------------+-------------------+
 | :ref:`Texture<class_Texture>`   | grabber           |
 +---------------------------------+-------------------+
 | :ref:`StyleBox<class_StyleBox>` | grabber_area      |
 +---------------------------------+-------------------+
 | :ref:`Texture<class_Texture>`   | grabber_disabled  |
 +---------------------------------+-------------------+
-| :ref:`StyleBox<class_StyleBox>` | grabber_disabled  |
-+---------------------------------+-------------------+
 | :ref:`Texture<class_Texture>`   | grabber_highlight |
-+---------------------------------+-------------------+
-| :ref:`StyleBox<class_StyleBox>` | grabber_highlight |
 +---------------------------------+-------------------+
 | :ref:`StyleBox<class_StyleBox>` | slider            |
 +---------------------------------+-------------------+

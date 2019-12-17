@@ -355,6 +355,10 @@ Returns an Array containing the list of connections. A connection consists in a 
 
 - :ref:`HBoxContainer<class_HBoxContainer>` **get_zoom_hbox** **(** **)**
 
+Gets the :ref:`HBoxContainer<class_HBoxContainer>` that contains the zooming and grid snap controls in the top left of the graph.
+
+Warning: The intended usage of this function is to allow you to reposition or add your own custom controls to the container. This is an internal control and as such should not be freed. If you wish to hide this or any of it's children use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property instead.
+
 ----
 
 .. _class_GraphEdit_method_is_node_connected:

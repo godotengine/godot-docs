@@ -46,6 +46,8 @@ Enumerations
 
 .. _class_VisualShaderNodeTexture_constant_SOURCE_DEPTH:
 
+.. _class_VisualShaderNodeTexture_constant_SOURCE_PORT:
+
 enum **Source**:
 
 - **SOURCE_TEXTURE** = **0**
@@ -57,6 +59,8 @@ enum **Source**:
 - **SOURCE_2D_NORMAL** = **3**
 
 - **SOURCE_DEPTH** = **4**
+
+- **SOURCE_PORT** = **5**
 
 ----
 

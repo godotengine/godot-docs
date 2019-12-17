@@ -36,6 +36,8 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_PacketPeerUDP_method_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`int<class_int>` recv_buf_size=65536 **)**     |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_broadcast_enabled<class_PacketPeerUDP_method_set_broadcast_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                                           |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`set_dest_address<class_PacketPeerUDP_method_set_dest_address>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_PacketPeerUDP_method_wait>` **(** **)**                                                                                                                             |
@@ -89,6 +91,8 @@ Joins the multicast group specified by ``multicast_address`` using the interface
 
 You can join the same multicast group with multiple interfaces. Use :ref:`IP.get_local_interfaces<class_IP_method_get_local_interfaces>` to know which are available.
 
+Note: Some Android devices might require the ``CHANGE_WIFI_MULTICAST_STATE`` permission for multicast to work.
+
 ----
 
 .. _class_PacketPeerUDP_method_leave_multicast_group:
@@ -113,11 +117,23 @@ If ``bind_address`` is set to any valid address (e.g. ``"192.168.1.101"``, ``"::
 
 ----
 
+.. _class_PacketPeerUDP_method_set_broadcast_enabled:
+
+- void **set_broadcast_enabled** **(** :ref:`bool<class_bool>` enabled **)**
+
+Enable or disable sending of broadcast packets (e.g. ``set_dest_address("255.255.255.255", 4343)``. This option is disabled by default.
+
+Note: Some Android devices might require the ``CHANGE_WIFI_MULTICAST_STATE`` permission and this option to be enabled to receive broadcast packets too.
+
+----
+
 .. _class_PacketPeerUDP_method_set_dest_address:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **set_dest_address** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
 
 Sets the destination address and port for sending packets and variables. A hostname will be resolved using DNS if needed.
+
+Note: :ref:`set_broadcast_enabled<class_PacketPeerUDP_method_set_broadcast_enabled>` must be enabled before sending packets to a broadcast address (e.g. ``255.255.255.255``).
 
 ----
 

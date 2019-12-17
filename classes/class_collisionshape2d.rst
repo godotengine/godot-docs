@@ -88,6 +88,8 @@ Sets whether this collision shape should only detect collision on one side (top 
 | *Getter*  | get_one_way_collision_margin()      |
 +-----------+-------------------------------------+
 
+The margin used for one-way collision (in pixels).
+
 ----
 
 .. _class_CollisionShape2D_property_shape:

@@ -42,15 +42,19 @@ Properties
 Methods
 -------
 
-+-------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone_method_get_bone_id>` **(** **)** const               |
-+-------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_simulate_physics<class_PhysicalBone_method_get_simulate_physics>` **(** **)**   |
-+-------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_simulating_physics<class_PhysicalBone_method_is_simulating_physics>` **(** **)** |
-+-------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_static_body<class_PhysicalBone_method_is_static_body>` **(** **)**               |
-+-------------------------+-------------------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`apply_central_impulse<class_PhysicalBone_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                         |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`apply_impulse<class_PhysicalBone_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)** |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone_method_get_bone_id>` **(** **)** const                                                                             |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`get_simulate_physics<class_PhysicalBone_method_get_simulate_physics>` **(** **)**                                                                 |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_simulating_physics<class_PhysicalBone_method_is_simulating_physics>` **(** **)**                                                               |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_static_body<class_PhysicalBone_method_is_static_body>` **(** **)**                                                                             |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -198,6 +202,18 @@ Property Descriptions
 
 Method Descriptions
 -------------------
+
+.. _class_PhysicalBone_method_apply_central_impulse:
+
+- void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
+
+----
+
+.. _class_PhysicalBone_method_apply_impulse:
+
+- void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)**
+
+----
 
 .. _class_PhysicalBone_method_get_bone_id:
 

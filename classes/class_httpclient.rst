@@ -579,7 +579,7 @@ Generates a GET/POST application/x-www-form-urlencoded style query string from a
 ::
 
     var fields = {"username": "user", "password": "pass"}
-    String query_string = http_client.query_string_from_dict(fields)
+    var query_string = http_client.query_string_from_dict(fields)
     # Returns "username=user&password=pass"
 
 Furthermore, if a key has a ``null`` value, only the key itself is added, without equal sign and value. If the value is an array, for each value in it a pair with the same key is added.
@@ -587,7 +587,7 @@ Furthermore, if a key has a ``null`` value, only the key itself is added, withou
 ::
 
     var fields = {"single": 123, "not_valued": null, "multiple": [22, 33, 44]}
-    String query_string = http_client.query_string_from_dict(fields)
+    var query_string = http_client.query_string_from_dict(fields)
     # Returns "single=123&not_valued&multiple=22&multiple=33&multiple=44"
 
 ----

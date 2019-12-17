@@ -65,6 +65,8 @@ Property Descriptions
 | *Getter*  | get_custom_solver_bias()      |
 +-----------+-------------------------------+
 
+The shape's custom solver bias.
+
 Method Descriptions
 -------------------
 

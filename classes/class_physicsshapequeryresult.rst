@@ -16,7 +16,7 @@ PhysicsShapeQueryResult
 Brief Description
 -----------------
 
-Result of a shape query in Physics2DServer.
+Result of a 3D shape query in :ref:`PhysicsServer<class_PhysicsServer>`.
 
 Methods
 -------
@@ -33,6 +33,11 @@ Methods
 | :ref:`RID<class_RID>`       | :ref:`get_result_rid<class_PhysicsShapeQueryResult_method_get_result_rid>` **(** :ref:`int<class_int>` idx **)** const                   |
 +-----------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+The result of a 3D shape query in :ref:`PhysicsServer<class_PhysicsServer>`. See also :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>`.
+
 Method Descriptions
 -------------------
 
@@ -40,11 +45,15 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_result_count** **(** **)** const
 
+Returns the number of objects that intersected with the shape.
+
 ----
 
 .. _class_PhysicsShapeQueryResult_method_get_result_object:
 
 - :ref:`Object<class_Object>` **get_result_object** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the :ref:`Object<class_Object>` that intersected with the shape at index ``idx``.
 
 ----
 
@@ -52,15 +61,21 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_result_object_id** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the instance ID of the :ref:`Object<class_Object>` that intersected with the shape at index ``idx``.
+
 ----
 
 .. _class_PhysicsShapeQueryResult_method_get_result_object_shape:
 
 - :ref:`int<class_int>` **get_result_object_shape** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the child index of the object's :ref:`Shape<class_Shape>` that intersected with the shape at index ``idx``.
+
 ----
 
 .. _class_PhysicsShapeQueryResult_method_get_result_rid:
 
 - :ref:`RID<class_RID>` **get_result_rid** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the :ref:`RID<class_RID>` of the object that intersected with the shape at index ``idx``.
 

@@ -42,7 +42,7 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`ceil<class_@GDScript_method_ceil>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                       |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                               | :ref:`char<class_@GDScript_method_char>` **(** :ref:`int<class_int>` ascii **)**                                                                                                                                                       |
+| :ref:`String<class_String>`                               | :ref:`char<class_@GDScript_method_char>` **(** :ref:`int<class_int>` code **)**                                                                                                                                                        |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`clamp<class_@GDScript_method_clamp>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**                                                                                   |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -386,14 +386,17 @@ Rounds ``s`` upward, returning the smallest integral value that is not less than
 
 .. _class_@GDScript_method_char:
 
-- :ref:`String<class_String>` **char** **(** :ref:`int<class_int>` ascii **)**
+- :ref:`String<class_String>` **char** **(** :ref:`int<class_int>` code **)**
 
-Returns a character as a String of the given ASCII code.
+Returns a character as a String of the given Unicode code point (which is compatible with ASCII code).
 
 ::
 
     a = char(65)      # a is "A"
     a = char(65 + 32) # a is "a"
+    a = char(8364)    # a is "€"
+
+This is the inverse of :ref:`ord<class_@GDScript_method_ord>`.
 
 ----
 
@@ -810,8 +813,10 @@ Loads a resource from the filesystem located at ``path``.
 
 ::
 
-    # Load a scene called main located in the root of the project directory
+    # Load a scene called main located in the root of the project directory.
     var main = load("res://main.tscn")
+
+**Important:** The path must be absolute, a local path will just return ``null``.
 
 ----
 
@@ -886,6 +891,16 @@ Returns the nearest larger power of 2 for integer ``value``.
 .. _class_@GDScript_method_ord:
 
 - :ref:`int<class_int>` **ord** **(** :ref:`String<class_String>` char **)**
+
+Returns an integer representing the Unicode code point of the given Unicode character ``char``.
+
+::
+
+    a = ord("A") # a is 65
+    a = ord("a") # a is 97
+    a = ord("€") # a is 8364
+
+This is the inverse of :ref:`char<class_@GDScript_method_char>`.
 
 ----
 
@@ -970,7 +985,7 @@ Returns a resource from the filesystem that is loaded during script parsing.
 
 ::
 
-    # Load a scene called main located in the root of the project directory
+    # Load a scene called main located in the root of the project directory.
     var main = preload("res://main.tscn")
 
 ----
@@ -1134,7 +1149,7 @@ Returns a random floating point value on the interval ``[0, 1]``.
 
 - :ref:`int<class_int>` **randi** **(** **)**
 
-Returns a random unsigned 32 bit integer. Use remainder to obtain a random value in the interval ``[0, N]`` (where N is smaller than 2^32 -1).
+Returns a random unsigned 32 bit integer. Use remainder to obtain a random value in the interval ``[0, N - 1]`` (where N is smaller than 2^32).
 
 ::
 
@@ -1566,22 +1581,25 @@ You can also use ``yield`` to wait for a function to finish:
 ::
 
     func _ready():
-        yield(do_something(), "completed")
-        yield(do_something_else(), "completed")
-        print("All functions are done!")
+        yield(countdown(), "completed") # waiting for the countdown() function to complete
+        print('Ready')
     
-    func do_something():
-        print("Something is done!")
-    
-    func do_something_else():
-        print("Something else is done!")
+    func countdown():
+        yield(get_tree(), "idle_frame") # returns a GDScriptFunctionState object to _ready()
+        print(3)
+        yield(get_tree().create_timer(1.0), "timeout")
+        print(2)
+        yield(get_tree().create_timer(1.0), "timeout")
+        print(1)
+        yield(get_tree().create_timer(1.0), "timeout")
     
     # prints:
-    # Something is done!
-    # Something else is done!
-    # All functions are done!
+    # 3
+    # 2
+    # 1
+    # Ready
 
 When yielding on a function, the ``completed`` signal will be emitted automatically when the function returns. It can, therefore, be used as the ``signal`` parameter of the ``yield`` method to resume.
 
-If you are planning on calling the same function within a loop, you should consider using ``yield(get_tree(), "idle_frame")`` also.
+In order to yield on a function, the resulting function should also return a ``GDScriptFunctionState``. Notice ``yield(get_tree(), "idle_frame")`` from the above example.
 

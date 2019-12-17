@@ -182,6 +182,8 @@ Description
 
 A GraphNode is a container defined by a title. It can have one or more input and output slots, which can be enabled (shown) or disabled (not shown) and have different (incompatible) types. Colors can also be assigned to slots. A tuple of input and output slots is defined for each GUI element included in the GraphNode. Input and output connections are left and right slots, but only enabled slots are counted as connections.
 
+To add a slot to GraphNode, add any :ref:`Control<class_Control>`-derived child node to it.
+
 Property Descriptions
 ---------------------
 
@@ -421,4 +423,16 @@ Returns ``true`` if right (output) slot ``idx`` is enabled, ``false`` otherwise.
 .. _class_GraphNode_method_set_slot:
 
 - void **set_slot** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_left, :ref:`int<class_int>` type_left, :ref:`Color<class_Color>` color_left, :ref:`bool<class_bool>` enable_right, :ref:`int<class_int>` type_right, :ref:`Color<class_Color>` color_right, :ref:`Texture<class_Texture>` custom_left=null, :ref:`Texture<class_Texture>` custom_right=null **)**
+
+Sets properties of the slot with id ``idx``.
+
+If ``enable_left``/``right``, a port will appear and the slot will be able to be connected from this side.
+
+``type_left``/``right`` is an arbitrary type of the port. Only ports with the same type values can be connected.
+
+``color_left``/``right`` is the tint of the port's icon on this side.
+
+``custom_left``/``right`` is a custom texture for this side's port.
+
+**Note:** this method only sets properties of the slot. To create the slot, add a :ref:`Control<class_Control>`-derived child to the GraphNode.
 

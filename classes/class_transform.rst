@@ -55,7 +55,7 @@ Methods
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>` | :ref:`scaled<class_Transform_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)**                                                                                                                          |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`translated<class_Transform_method_translated>` **(** :ref:`Vector3<class_Vector3>` ofs **)**                                                                                                                    |
+| :ref:`Transform<class_Transform>` | :ref:`translated<class_Transform_method_translated>` **(** :ref:`Vector3<class_Vector3>` offset **)**                                                                                                                 |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`     | :ref:`xform<class_Transform_method_xform>` **(** :ref:`Variant<class_Variant>` v **)**                                                                                                                                |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -209,7 +209,7 @@ Returns the transform with the basis orthogonal (90 degrees), and normalized axi
 
 - :ref:`Transform<class_Transform>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
 
-Rotates the transform around given axis by phi. The axis must be a normalized vector.
+Rotates the transform around the given axis by the given angle (in radians), using matrix multiplication. The axis must be a normalized vector.
 
 ----
 
@@ -217,15 +217,17 @@ Rotates the transform around given axis by phi. The axis must be a normalized ve
 
 - :ref:`Transform<class_Transform>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
-Scales the transform by the specified 3D scaling factors.
+Scales the transform by the given scale factor, using matrix multiplication.
 
 ----
 
 .. _class_Transform_method_translated:
 
-- :ref:`Transform<class_Transform>` **translated** **(** :ref:`Vector3<class_Vector3>` ofs **)**
+- :ref:`Transform<class_Transform>` **translated** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
-Translates the transform by the specified offset.
+Translates the transform by the given offset, relative to the transform's basis vectors.
+
+Unlike :ref:`rotated<class_Transform_method_rotated>` and :ref:`scaled<class_Transform_method_scaled>`, this does not use matrix multiplication.
 
 ----
 

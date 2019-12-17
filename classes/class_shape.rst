@@ -52,3 +52,5 @@ Property Descriptions
 | *Getter*  | get_margin()      |
 +-----------+-------------------+
 
+The collision margin for the shape.
+

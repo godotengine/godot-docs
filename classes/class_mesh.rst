@@ -39,6 +39,8 @@ Methods
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TriangleMesh<class_TriangleMesh>`         | :ref:`generate_triangle_mesh<class_Mesh_method_generate_triangle_mesh>` **(** **)** const                                                                |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_AABB>`                         | :ref:`get_aabb<class_Mesh_method_get_aabb>` **(** **)** const                                                                                            |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_faces<class_Mesh_method_get_faces>` **(** **)** const                                                                                          |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`get_surface_count<class_Mesh_method_get_surface_count>` **(** **)** const                                                                          |
@@ -295,6 +297,16 @@ Calculate a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` from the mesh.
 - :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** const
 
 Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh.
+
+----
+
+.. _class_Mesh_method_get_aabb:
+
+- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
+
+Returns the smallest :ref:`AABB<class_AABB>` enclosing this mesh. Not affected by ``custom_aabb``.
+
+**Note:** This is only implemented for :ref:`ArrayMesh<class_ArrayMesh>` and :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
 ----
 

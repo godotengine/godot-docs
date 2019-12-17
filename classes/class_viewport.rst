@@ -141,6 +141,14 @@ Methods
 Signals
 -------
 
+.. _class_Viewport_signal_gui_focus_changed:
+
+- **gui_focus_changed** **(** :ref:`Control<class_Control>` node **)**
+
+Emitted when a Control node grabs keyboard focus.
+
+----
+
 .. _class_Viewport_signal_size_changed:
 
 - **size_changed** **(** **)**

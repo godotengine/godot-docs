@@ -16,7 +16,7 @@ PCKPacker
 Brief Description
 -----------------
 
-
+Creates packages that can be loaded into a running project.
 
 Methods
 -------
@@ -24,24 +24,24 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_file<class_PCKPacker_method_add_file>` **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path **)** |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`flush<class_PCKPacker_method_flush>` **(** :ref:`bool<class_bool>` verbose **)**                                                     |
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`flush<class_PCKPacker_method_flush>` **(** :ref:`bool<class_bool>` verbose=false **)**                                               |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pck_start<class_PCKPacker_method_pck_start>` **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment **)**       |
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pck_start<class_PCKPacker_method_pck_start>` **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=0 **)**     |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-The ``PCKPacker`` is used to create packages in application runtime.
+The ``PCKPacker`` is used to create packages that can be loaded into a running project using :ref:`ProjectSettings.load_resource_pack<class_ProjectSettings_method_load_resource_pack>`.
 
 ::
 
     var packer = PCKPacker.new()
-    packer.pck_start("test.pck", 0)
+    packer.pck_start("test.pck")
     packer.add_file("res://text.txt", "text.txt")
-    packer.flush(false)
+    packer.flush()
 
-The above ``PCKPacker`` creates package **test.pck**, then adds a file named **text.txt** in the root of the package.
+The above ``PCKPacker`` creates package ``test.pck``, then adds a file named ``text.txt`` at the root of the package.
 
 Method Descriptions
 -------------------
@@ -56,11 +56,15 @@ Adds the ``source_path`` file to the current PCK package at the ``pck_path`` int
 
 .. _class_PCKPacker_method_flush:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **flush** **(** :ref:`bool<class_bool>` verbose **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **flush** **(** :ref:`bool<class_bool>` verbose=false **)**
+
+Writes the files specified using all :ref:`add_file<class_PCKPacker_method_add_file>` calls since the last flush. If ``verbose`` is ``true``, a list of files added will be printed to the console for easier debugging.
 
 ----
 
 .. _class_PCKPacker_method_pck_start:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **pck_start** **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **pck_start** **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment=0 **)**
+
+Creates a new PCK file with the name ``pck_name``. The ``.pck`` file extension isn't added automatically, so it should be part of ``pck_name`` (even though it's not required).
 
