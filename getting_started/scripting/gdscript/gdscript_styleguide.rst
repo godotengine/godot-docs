@@ -86,6 +86,13 @@ Surround functions and class definitions with two blank lines:
 
 Use one blank line inside functions to separate logical sections.
 
+Line length
+~~~~~~~~~~~
+
+Try to keep lines under 80 characters. This ensures greater readability on small
+displays and splitted editors (such as side-by-side diffs). It's OK to go over
+by a few characters, but a line should never exceed 100 characters.
+
 One statement per line
 ~~~~~~~~~~~~~~~~~~~~~~
 
