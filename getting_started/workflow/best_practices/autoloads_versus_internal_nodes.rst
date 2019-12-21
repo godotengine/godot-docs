@@ -6,7 +6,7 @@ Autoloads versus regular nodes
 Godot offers a feature to automatically load nodes at the root of your project,
 allowing you to access them globally, that can fulfill the role of a Singleton:
 :ref:`doc_singletons_autoload`. These auto-loaded nodes are not freed when you
-change the scene from code with :ref:`SceneTree.change_scene <class_SceneTree_method_change_scene>`..
+change the scene from code with :ref:`SceneTree.change_scene <class_SceneTree_method_change_scene>`.
 
 In this guide, you will learn when to use the Autoload feature, and techniques
 you can use to avoid it.
@@ -46,7 +46,7 @@ solves the problem in the short term but causes more problems:
    data to the ``Sound`` autoload in our example. As a result, the domain to
    explore to fix the bug spans the entire project.
 
-   When you keep code inside a scene, only one one or two scripts may be
+   When you keep code inside a scene, only one or two scripts may be
    involved in audio.
 
 Contrast this with each scene keeping as many ``AudioStreamPlayer`` nodes as it
@@ -96,7 +96,7 @@ Auto-loaded nodes can simplify your code in some cases:
 Until Godot 3.1, another use was just for convenience: autoloads have a global
 variable for their name generated in GDScript, allowing you to call them from
 any script file in your project. But now, you can use the ``class_name`` keyword
-instead to get autocompletion for a type in your entire project.
+instead to get auto-completion for a type in your entire project.
 
 .. note::
 
