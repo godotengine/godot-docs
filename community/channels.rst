@@ -28,17 +28,17 @@ IRC on Freenode
 Other chats
 -----------
 
-- `Matrix (IRC compatible) <https://matrix.to/#/#godotengine:matrix.org>`_
 - `Discord Server <https://discordapp.com/invite/zH7NUgz>`_
+- `Matrix (IRC compatible) <https://matrix.to/#/#godotengine:matrix.org>`_
 
-Multilingual communities
-------------------------
+Language-based communities
+--------------------------
 
-- `Brazilian Discord Server <https://discord.gg/gWmQKBv>`_
-- `French Discord Server <https://discord.gg/3jvf3XN>`_
-- `French Discord Server #2 <https://discord.gg/gZ3QJ5T>`_
-- `German Discord Server <https://discord.gg/Tr7Ma6E>`_
-- `Swedish Discord Server <https://discord.gg/6ZsgWmH>`_
+- Brazilian Portuguese: `Godot Brasil (Discord) <https://discord.gg/gWmQKBv>`_
+- French: `Godot Francophone Officiel (Discord) <https://discord.gg/3jvf3XN>`_
+- French: `SoloCode Godot (Discord) <https://discord.gg/gZ3QJ5T>`_
+- German: `Deutsche Godot Community (Discord) <https://discord.gg/Tr7Ma6E>`_
+- Swedish: `Swedish Godot Community (Discord) <https://discord.gg/6ZsgWmH>`_
 
 Social networks
 ---------------
