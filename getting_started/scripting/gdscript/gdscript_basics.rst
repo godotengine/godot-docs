@@ -1161,6 +1161,8 @@ function.
         var c = SomeInnerClass.new()
         c.print_value_of_a()
 
+.. _doc_gdscript_classes_as_resources:
+
 Classes as resources
 ^^^^^^^^^^^^^^^^^^^^
 
