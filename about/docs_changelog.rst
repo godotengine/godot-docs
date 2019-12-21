@@ -59,6 +59,12 @@ Networking
 
 - :ref:`doc_webrtc`
 
+VR
+^^
+
+- :ref:`doc_vr_starter_tutorial_part_one`
+- :ref:`doc_vr_starter_tutorial_part_two`
+
 Plugins
 ^^^^^^^
 
@@ -172,11 +178,6 @@ Shading Reference:
 - :ref:`doc_spatial_shader`
 - :ref:`doc_canvas_item_shader`
 - :ref:`doc_particle_shader`
-
-VR
-^^
-
-- :ref:`doc_vr_starter_tutorial`
 
 Plugins
 ^^^^^^^
