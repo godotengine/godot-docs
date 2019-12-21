@@ -100,6 +100,8 @@ Property Descriptions
 | *Default* | 0.0 |
 +-----------+-----+
 
+Distance from the origin to the plane, in the direction of :ref:`normal<class_Plane_property_normal>`.
+
 ----
 
 .. _class_Plane_property_normal:
@@ -109,6 +111,8 @@ Property Descriptions
 +-----------+--------------------+
 | *Default* | Vector3( 0, 0, 0 ) |
 +-----------+--------------------+
+
+The normal of the plane. "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
 
 ----
 
@@ -120,6 +124,8 @@ Property Descriptions
 | *Default* | 0.0 |
 +-----------+-----+
 
+The :ref:`normal<class_Plane_property_normal>`'s X component.
+
 ----
 
 .. _class_Plane_property_y:
@@ -129,6 +135,8 @@ Property Descriptions
 +-----------+-----+
 | *Default* | 0.0 |
 +-----------+-----+
+
+The :ref:`normal<class_Plane_property_normal>`'s Y component.
 
 ----
 
@@ -140,6 +148,8 @@ Property Descriptions
 | *Default* | 0.0 |
 +-----------+-----+
 
+The :ref:`normal<class_Plane_property_normal>`'s Z component.
+
 Method Descriptions
 -------------------
 
@@ -147,13 +157,13 @@ Method Descriptions
 
 - :ref:`Plane<class_Plane>` **Plane** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d **)**
 
-Creates a plane from the four parameters ``a``, ``b``, ``c`` and ``d``.
+Creates a plane from the four parameters. The three components of the resulting plane's :ref:`normal<class_Plane_property_normal>` are ``a``, ``b`` and ``c``, and the plane has a distance of ``d`` from the origin.
 
 ----
 
 - :ref:`Plane<class_Plane>` **Plane** **(** :ref:`Vector3<class_Vector3>` v1, :ref:`Vector3<class_Vector3>` v2, :ref:`Vector3<class_Vector3>` v3 **)**
 
-Creates a plane from three points.
+Creates a plane from the three points, given in clockwise order.
 
 ----
 

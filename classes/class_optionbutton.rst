@@ -144,6 +144,8 @@ Property Descriptions
 | *Getter*  | get_selected() |
 +-----------+----------------+
 
+The index of the currently selected item, or ``-1`` if no item is selected.
+
 Method Descriptions
 -------------------
 
@@ -151,7 +153,7 @@ Method Descriptions
 
 - void **add_icon_item** **(** :ref:`Texture<class_Texture>` texture, :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1 **)**
 
-Adds an item, with a ``texture`` icon, text ``label`` and (optionally) ``id``. If no ``id`` is passed, ``id`` becomes the item index. New items are appended at the end.
+Adds an item, with a ``texture`` icon, text ``label`` and (optionally) ``id``. If no ``id`` is passed, the item index will be used as the item's ID. New items are appended at the end.
 
 ----
 
@@ -159,7 +161,7 @@ Adds an item, with a ``texture`` icon, text ``label`` and (optionally) ``id``. I
 
 - void **add_item** **(** :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1 **)**
 
-Adds an item, with text ``label`` and (optionally) ``id``. If no ``id`` is passed, ``id`` becomes the item index. New items are appended at the end.
+Adds an item, with text ``label`` and (optionally) ``id``. If no ``id`` is passed, the item index will be used as the item's ID. New items are appended at the end.
 
 ----
 
@@ -175,7 +177,7 @@ Adds a separator to the list of items. Separators help to group items. Separator
 
 - void **clear** **(** **)**
 
-Clear all the items in the ``OptionButton``.
+Clears all the items in the ``OptionButton``.
 
 ----
 
@@ -183,7 +185,7 @@ Clear all the items in the ``OptionButton``.
 
 - :ref:`int<class_int>` **get_item_count** **(** **)** const
 
-Returns the amount of items in the OptionButton.
+Returns the amount of items in the OptionButton, including separators.
 
 ----
 
@@ -215,6 +217,8 @@ Returns the index of the item with the given ``id``.
 
 - :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
 
+Retrieves the metadata of an item. Metadata may be any type and can be used to store extra information about an item, such as an external string ID.
+
 ----
 
 .. _class_OptionButton_method_get_item_text:
@@ -237,11 +241,15 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 - :ref:`int<class_int>` **get_selected_id** **(** **)** const
 
+Returns the ID of the selected item, or ``0`` if no item is selected.
+
 ----
 
 .. _class_OptionButton_method_get_selected_metadata:
 
 - :ref:`Variant<class_Variant>` **get_selected_metadata** **(** **)** const
+
+Gets the metadata of the selected item. Metadata for items can be set using :ref:`set_item_metadata<class_OptionButton_method_set_item_metadata>`.
 
 ----
 
@@ -249,11 +257,15 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
 
+Returns ``true`` if the item at index ``idx`` is disabled.
+
 ----
 
 .. _class_OptionButton_method_remove_item:
 
 - void **remove_item** **(** :ref:`int<class_int>` idx **)**
+
+Removes the item at index ``idx``.
 
 ----
 
@@ -261,7 +273,7 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 - void **select** **(** :ref:`int<class_int>` idx **)**
 
-Select an item by index and make it the current item.
+Selects an item by index and makes it the current item. This will work even if the item is disabled.
 
 ----
 
@@ -269,13 +281,17 @@ Select an item by index and make it the current item.
 
 - void **set_item_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
 
+Sets whether the item at index ``idx`` is disabled.
+
+Disabled items are drawn differently in the dropdown and are not selectable by the user. If the current selected item is set as disabled, it will remain selected.
+
 ----
 
 .. _class_OptionButton_method_set_item_icon:
 
 - void **set_item_icon** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` texture **)**
 
-Sets the icon of an item at index ``idx``.
+Sets the icon of the item at index ``idx``.
 
 ----
 
@@ -283,7 +299,7 @@ Sets the icon of an item at index ``idx``.
 
 - void **set_item_id** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` id **)**
 
-Sets the ID of an item at index ``idx``.
+Sets the ID of the item at index ``idx``.
 
 ----
 
@@ -291,11 +307,13 @@ Sets the ID of an item at index ``idx``.
 
 - void **set_item_metadata** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**
 
+Sets the metadata of an item. Metadata may be of any type and can be used to store extra information about an item, such as an external string ID.
+
 ----
 
 .. _class_OptionButton_method_set_item_text:
 
 - void **set_item_text** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**
 
-Sets the text of an item at index ``idx``.
+Sets the text of the item at index ``idx``.
 

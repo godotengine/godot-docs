@@ -756,11 +756,15 @@ Signals
 
 - **frame_post_draw** **(** **)**
 
+Emitted at the end of the frame, after the VisualServer has finished updating all the Viewports.
+
 ----
 
 .. _class_VisualServer_signal_frame_pre_draw:
 
 - **frame_pre_draw** **(** **)**
+
+Emitted at the beginning of the frame, before the VisualServer updates all the Viewports.
 
 Enumerations
 ------------
@@ -1904,11 +1908,15 @@ Sets margin size, where black bars (or images, if :ref:`black_bars_set_images<cl
 
 - :ref:`RID<class_RID>` **camera_create** **(** **)**
 
+Creates a camera and adds it to the VisualServer. It can be accessed with the RID that is returned. This RID will be used in all ``camera_*`` VisualServer functions.
+
 ----
 
 .. _class_VisualServer_method_camera_set_cull_mask:
 
 - void **camera_set_cull_mask** **(** :ref:`RID<class_RID>` camera, :ref:`int<class_int>` layers **)**
+
+Sets the cull mask associated with this camera. The cull mask describes which 3d layers are rendered by this camera. Equivalent to :ref:`Camera.cull_mask<class_Camera_property_cull_mask>`.
 
 ----
 
@@ -1916,11 +1924,15 @@ Sets margin size, where black bars (or images, if :ref:`black_bars_set_images<cl
 
 - void **camera_set_environment** **(** :ref:`RID<class_RID>` camera, :ref:`RID<class_RID>` env **)**
 
+Sets the environment used by this camera. Equivalent to :ref:`Camera.environment<class_Camera_property_environment>`.
+
 ----
 
 .. _class_VisualServer_method_camera_set_frustum:
 
 - void **camera_set_frustum** **(** :ref:`RID<class_RID>` camera, :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
+
+Sets camera to use frustum projection. This mode allows adjusting the ``offset`` argument to create "tilted frustum" effects.
 
 ----
 
@@ -1928,11 +1940,15 @@ Sets margin size, where black bars (or images, if :ref:`black_bars_set_images<cl
 
 - void **camera_set_orthogonal** **(** :ref:`RID<class_RID>` camera, :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
+Sets camera to use orthogonal projection, also known as orthographic projection. Objects remain the same size on the screen no matter how far away they are.
+
 ----
 
 .. _class_VisualServer_method_camera_set_perspective:
 
 - void **camera_set_perspective** **(** :ref:`RID<class_RID>` camera, :ref:`float<class_float>` fovy_degrees, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
+
+Sets camera to use perspective projection. Objects on the screen becomes smaller when they are far away.
 
 ----
 
@@ -1940,11 +1956,15 @@ Sets margin size, where black bars (or images, if :ref:`black_bars_set_images<cl
 
 - void **camera_set_transform** **(** :ref:`RID<class_RID>` camera, :ref:`Transform<class_Transform>` transform **)**
 
+Sets :ref:`Transform<class_Transform>` of camera.
+
 ----
 
 .. _class_VisualServer_method_camera_set_use_vertical_aspect:
 
 - void **camera_set_use_vertical_aspect** **(** :ref:`RID<class_RID>` camera, :ref:`bool<class_bool>` enable **)**
+
+If ``true``, preserves the horizontal aspect ratio which is equivalent to :ref:`Camera.KEEP_WIDTH<class_Camera_constant_KEEP_WIDTH>`. If ``false``, preserves the vertical aspect ratio which is equivalent to :ref:`Camera.KEEP_HEIGHT<class_Camera_constant_KEEP_HEIGHT>`.
 
 ----
 
@@ -1983,6 +2003,8 @@ Adds a line command to the :ref:`CanvasItem<class_CanvasItem>`'s draw commands.
 .. _class_VisualServer_method_canvas_item_add_mesh:
 
 - void **canvas_item_add_mesh** **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` mesh, :ref:`Transform2D<class_Transform2D>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ), :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`RID<class_RID>` texture, :ref:`RID<class_RID>` normal_map **)**
+
+Adds a mesh command to the :ref:`CanvasItem<class_CanvasItem>`'s draw commands.
 
 ----
 
@@ -2074,6 +2096,8 @@ Adds a texture rect with region setting to the :ref:`CanvasItem<class_CanvasItem
 
 - void **canvas_item_add_triangle_array** **(** :ref:`RID<class_RID>` item, :ref:`PoolIntArray<class_PoolIntArray>` indices, :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`PoolIntArray<class_PoolIntArray>` bones=PoolIntArray(  ), :ref:`PoolRealArray<class_PoolRealArray>` weights=PoolRealArray(  ), :ref:`RID<class_RID>` texture, :ref:`int<class_int>` count=-1, :ref:`RID<class_RID>` normal_map, :ref:`bool<class_bool>` antialiased=false **)**
 
+Adds a triangle array to the :ref:`CanvasItem<class_CanvasItem>`'s draw commands.
+
 ----
 
 .. _class_VisualServer_method_canvas_item_clear:
@@ -2119,6 +2143,8 @@ Defines a custom drawing rectangle for the :ref:`CanvasItem<class_CanvasItem>`.
 .. _class_VisualServer_method_canvas_item_set_distance_field_mode:
 
 - void **canvas_item_set_distance_field_mode** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**
+
+Enables the use of distance fields for GUI elements that are rendering distance field based fonts.
 
 ----
 
@@ -2358,6 +2384,8 @@ The mode of the light, see :ref:`CanvasLightMode<enum_VisualServer_CanvasLightMo
 
 - void **canvas_light_set_scale** **(** :ref:`RID<class_RID>` light, :ref:`float<class_float>` scale **)**
 
+Sets the texture's scale factor of the light. Equivalent to :ref:`Light2D.texture_scale<class_Light2D_property_texture_scale>`.
+
 ----
 
 .. _class_VisualServer_method_canvas_light_set_shadow_buffer_size:
@@ -2412,11 +2440,15 @@ Smoothens the shadow. The lower, the smoother.
 
 - void **canvas_light_set_texture** **(** :ref:`RID<class_RID>` light, :ref:`RID<class_RID>` texture **)**
 
+Sets texture to be used by light. Equivalent to :ref:`Light2D.texture<class_Light2D_property_texture>`.
+
 ----
 
 .. _class_VisualServer_method_canvas_light_set_texture_offset:
 
 - void **canvas_light_set_texture_offset** **(** :ref:`RID<class_RID>` light, :ref:`Vector2<class_Vector2>` offset **)**
+
+Sets the offset of the light's texture. Equivalent to :ref:`Light2D.offset<class_Light2D_property_offset>`.
 
 ----
 
@@ -2431,6 +2463,8 @@ Sets the canvas light's :ref:`Transform2D<class_Transform2D>`.
 .. _class_VisualServer_method_canvas_light_set_z_range:
 
 - void **canvas_light_set_z_range** **(** :ref:`RID<class_RID>` light, :ref:`int<class_int>` min_z, :ref:`int<class_int>` max_z **)**
+
+Sets the Z range of objects that will be affected by this light. Equivalent to :ref:`Light2D.range_z_min<class_Light2D_property_range_z_min>` and :ref:`Light2D.range_z_max<class_Light2D_property_range_z_max>`.
 
 ----
 
@@ -2486,11 +2520,15 @@ Modulates all colors in the given canvas.
 
 - :ref:`RID<class_RID>` **directional_light_create** **(** **)**
 
+Creates a directional light and adds it to the VisualServer. It can be accessed with the RID that is returned. This RID can be used in most ``light_*`` VisualServer functions.
+
 ----
 
 .. _class_VisualServer_method_draw:
 
 - void **draw** **(** :ref:`bool<class_bool>` swap_buffers=true, :ref:`float<class_float>` frame_step=0.0 **)**
+
+Draws a frame. *This method is deprecated*, please use :ref:`force_draw<class_VisualServer_method_force_draw>` instead.
 
 ----
 
@@ -2498,11 +2536,15 @@ Modulates all colors in the given canvas.
 
 - :ref:`RID<class_RID>` **environment_create** **(** **)**
 
+Creates an environment and adds it to the VisualServer. It can be accessed with the RID that is returned. This RID will be used in all ``environment_*`` VisualServer functions.
+
 ----
 
 .. _class_VisualServer_method_environment_set_adjustment:
 
 - void **environment_set_adjustment** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` brightness, :ref:`float<class_float>` contrast, :ref:`float<class_float>` saturation, :ref:`RID<class_RID>` ramp **)**
+
+Sets the values to be used with the "Adjustment" post-process effect. See :ref:`Environment<class_Environment>` for more details.
 
 ----
 
@@ -2510,11 +2552,15 @@ Modulates all colors in the given canvas.
 
 - void **environment_set_ambient_light** **(** :ref:`RID<class_RID>` env, :ref:`Color<class_Color>` color, :ref:`float<class_float>` energy=1.0, :ref:`float<class_float>` sky_contibution=0.0 **)**
 
+Sets the ambient light parameters. See :ref:`Environment<class_Environment>` for more details.
+
 ----
 
 .. _class_VisualServer_method_environment_set_background:
 
 - void **environment_set_background** **(** :ref:`RID<class_RID>` env, :ref:`EnvironmentBG<enum_VisualServer_EnvironmentBG>` bg **)**
+
+Sets the *BGMode* of the environment. Equivalent to :ref:`Environment.background_mode<class_Environment_property_background_mode>`.
 
 ----
 
@@ -2522,11 +2568,15 @@ Modulates all colors in the given canvas.
 
 - void **environment_set_bg_color** **(** :ref:`RID<class_RID>` env, :ref:`Color<class_Color>` color **)**
 
+Color displayed for clear areas of the scene (if using Custom color or Color+Sky background modes).
+
 ----
 
 .. _class_VisualServer_method_environment_set_bg_energy:
 
 - void **environment_set_bg_energy** **(** :ref:`RID<class_RID>` env, :ref:`float<class_float>` energy **)**
+
+Sets the intensity of the background color.
 
 ----
 
@@ -2534,11 +2584,15 @@ Modulates all colors in the given canvas.
 
 - void **environment_set_canvas_max_layer** **(** :ref:`RID<class_RID>` env, :ref:`int<class_int>` max_layer **)**
 
+Sets the maximum layer to use if using Canvas background mode.
+
 ----
 
 .. _class_VisualServer_method_environment_set_dof_blur_far:
 
 - void **environment_set_dof_blur_far** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` distance, :ref:`float<class_float>` transition, :ref:`float<class_float>` far_amount, :ref:`EnvironmentDOFBlurQuality<enum_VisualServer_EnvironmentDOFBlurQuality>` quality **)**
+
+Sets the values to be used with the "DoF Far Blur" post-process effect. See :ref:`Environment<class_Environment>` for more details.
 
 ----
 
@@ -2546,11 +2600,15 @@ Modulates all colors in the given canvas.
 
 - void **environment_set_dof_blur_near** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` distance, :ref:`float<class_float>` transition, :ref:`float<class_float>` far_amount, :ref:`EnvironmentDOFBlurQuality<enum_VisualServer_EnvironmentDOFBlurQuality>` quality **)**
 
+Sets the values to be used with the "DoF Near Blur" post-process effect. See :ref:`Environment<class_Environment>` for more details.
+
 ----
 
 .. _class_VisualServer_method_environment_set_fog:
 
 - void **environment_set_fog** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`Color<class_Color>` color, :ref:`Color<class_Color>` sun_color, :ref:`float<class_float>` sun_amount **)**
+
+Sets the variables to be used with the scene fog. See :ref:`Environment<class_Environment>` for more details.
 
 ----
 
@@ -2558,11 +2616,15 @@ Modulates all colors in the given canvas.
 
 - void **environment_set_fog_depth** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` depth_begin, :ref:`float<class_float>` depth_end, :ref:`float<class_float>` depth_curve, :ref:`bool<class_bool>` transmit, :ref:`float<class_float>` transmit_curve **)**
 
+Sets the variables to be used with the fog depth effect. See :ref:`Environment<class_Environment>` for more details.
+
 ----
 
 .. _class_VisualServer_method_environment_set_fog_height:
 
 - void **environment_set_fog_height** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` min_height, :ref:`float<class_float>` max_height, :ref:`float<class_float>` height_curve **)**
+
+Sets the variables to be used with the fog height effect. See :ref:`Environment<class_Environment>` for more details.
 
 ----
 
@@ -2570,11 +2632,15 @@ Modulates all colors in the given canvas.
 
 - void **environment_set_glow** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`int<class_int>` level_flags, :ref:`float<class_float>` intensity, :ref:`float<class_float>` strength, :ref:`float<class_float>` bloom_threshold, :ref:`EnvironmentGlowBlendMode<enum_VisualServer_EnvironmentGlowBlendMode>` blend_mode, :ref:`float<class_float>` hdr_bleed_threshold, :ref:`float<class_float>` hdr_bleed_scale, :ref:`float<class_float>` hdr_luminance_cap, :ref:`bool<class_bool>` bicubic_upscale **)**
 
+Sets the variables to be used with the "glow" post-process effect. See :ref:`Environment<class_Environment>` for more details.
+
 ----
 
 .. _class_VisualServer_method_environment_set_sky:
 
 - void **environment_set_sky** **(** :ref:`RID<class_RID>` env, :ref:`RID<class_RID>` sky **)**
+
+Sets the :ref:`Sky<class_Sky>` to be used as the environment's background when using *BGMode* sky. Equivalent to :ref:`Environment.background_sky<class_Environment_property_background_sky>`.
 
 ----
 
@@ -2582,11 +2648,15 @@ Modulates all colors in the given canvas.
 
 - void **environment_set_sky_custom_fov** **(** :ref:`RID<class_RID>` env, :ref:`float<class_float>` scale **)**
 
+Sets a custom field of view for the background :ref:`Sky<class_Sky>`. Equivalent to :ref:`Environment.background_sky_custom_fov<class_Environment_property_background_sky_custom_fov>`.
+
 ----
 
 .. _class_VisualServer_method_environment_set_sky_orientation:
 
 - void **environment_set_sky_orientation** **(** :ref:`RID<class_RID>` env, :ref:`Basis<class_Basis>` orientation **)**
+
+Sets the rotation of the background :ref:`Sky<class_Sky>` expressed as a :ref:`Basis<class_Basis>`. Equivalent to :ref:`Environment.background_sky_orientation<class_Environment_property_background_sky_orientation>`.
 
 ----
 
@@ -2594,17 +2664,23 @@ Modulates all colors in the given canvas.
 
 - void **environment_set_ssao** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` radius, :ref:`float<class_float>` intensity, :ref:`float<class_float>` radius2, :ref:`float<class_float>` intensity2, :ref:`float<class_float>` bias, :ref:`float<class_float>` light_affect, :ref:`float<class_float>` ao_channel_affect, :ref:`Color<class_Color>` color, :ref:`EnvironmentSSAOQuality<enum_VisualServer_EnvironmentSSAOQuality>` quality, :ref:`EnvironmentSSAOBlur<enum_VisualServer_EnvironmentSSAOBlur>` blur, :ref:`float<class_float>` bilateral_sharpness **)**
 
+Sets the variables to be used with the "Screen Space Ambient Occlusion (SSAO)" post-process effect. See :ref:`Environment<class_Environment>` for more details.
+
 ----
 
 .. _class_VisualServer_method_environment_set_ssr:
 
 - void **environment_set_ssr** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`int<class_int>` max_steps, :ref:`float<class_float>` fade_in, :ref:`float<class_float>` fade_out, :ref:`float<class_float>` depth_tolerance, :ref:`bool<class_bool>` roughness **)**
 
+Sets the variables to be used with the "screen space reflections" post-process effect. See :ref:`Environment<class_Environment>` for more details.
+
 ----
 
 .. _class_VisualServer_method_environment_set_tonemap:
 
 - void **environment_set_tonemap** **(** :ref:`RID<class_RID>` env, :ref:`EnvironmentToneMapper<enum_VisualServer_EnvironmentToneMapper>` tone_mapper, :ref:`float<class_float>` exposure, :ref:`float<class_float>` white, :ref:`bool<class_bool>` auto_exposure, :ref:`float<class_float>` min_luminance, :ref:`float<class_float>` max_luminance, :ref:`float<class_float>` auto_exp_speed, :ref:`float<class_float>` auto_exp_grey **)**
+
+Sets the variables to be used with the "tonemap" post-process effect. See :ref:`Environment<class_Environment>` for more details.
 
 ----
 
@@ -2619,6 +2695,8 @@ Removes buffers and clears testcubes.
 .. _class_VisualServer_method_force_draw:
 
 - void **force_draw** **(** :ref:`bool<class_bool>` swap_buffers=true, :ref:`float<class_float>` frame_step=0.0 **)**
+
+Forces a frame to be drawn when the function is called. Drawing a frame updates all :ref:`Viewport<class_Viewport>`\ s that are set to update. Use with extreme caution.
 
 ----
 
@@ -2834,11 +2912,15 @@ Returns ``true`` if the OS supports a certain feature. Features might be s3tc, e
 
 - void **immediate_begin** **(** :ref:`RID<class_RID>` immediate, :ref:`PrimitiveType<enum_VisualServer_PrimitiveType>` primitive, :ref:`RID<class_RID>` texture **)**
 
+Sets up :ref:`ImmediateGeometry<class_ImmediateGeometry>` internals to prepare for drawing. Equivalent to :ref:`ImmediateGeometry.begin<class_ImmediateGeometry_method_begin>`.
+
 ----
 
 .. _class_VisualServer_method_immediate_clear:
 
 - void **immediate_clear** **(** :ref:`RID<class_RID>` immediate **)**
+
+Clears everything that was set up between :ref:`immediate_begin<class_VisualServer_method_immediate_begin>` and :ref:`immediate_end<class_VisualServer_method_immediate_end>`. Equivalent to :ref:`ImmediateGeometry.clear<class_ImmediateGeometry_method_clear>`.
 
 ----
 
@@ -2846,11 +2928,15 @@ Returns ``true`` if the OS supports a certain feature. Features might be s3tc, e
 
 - void **immediate_color** **(** :ref:`RID<class_RID>` immediate, :ref:`Color<class_Color>` color **)**
 
+Sets the color to be used with next vertex. Equivalent to :ref:`ImmediateGeometry.set_color<class_ImmediateGeometry_method_set_color>`.
+
 ----
 
 .. _class_VisualServer_method_immediate_create:
 
 - :ref:`RID<class_RID>` **immediate_create** **(** **)**
+
+Creates an :ref:`ImmediateGeometry<class_ImmediateGeometry>` and adds it to the VisualServer. It can be accessed with the RID that is returned. This RID will be used in all ``immediate_*`` VisualServer functions.
 
 ----
 
@@ -2858,11 +2944,15 @@ Returns ``true`` if the OS supports a certain feature. Features might be s3tc, e
 
 - void **immediate_end** **(** :ref:`RID<class_RID>` immediate **)**
 
+Ends drawing the :ref:`ImmediateGeometry<class_ImmediateGeometry>` and displays it. Equivalent to :ref:`ImmediateGeometry.end<class_ImmediateGeometry_method_end>`.
+
 ----
 
 .. _class_VisualServer_method_immediate_get_material:
 
 - :ref:`RID<class_RID>` **immediate_get_material** **(** :ref:`RID<class_RID>` immediate **)** const
+
+Returns the material assigned to the :ref:`ImmediateGeometry<class_ImmediateGeometry>`.
 
 ----
 
@@ -2870,11 +2960,15 @@ Returns ``true`` if the OS supports a certain feature. Features might be s3tc, e
 
 - void **immediate_normal** **(** :ref:`RID<class_RID>` immediate, :ref:`Vector3<class_Vector3>` normal **)**
 
+Sets the normal to be used with next vertex. Equivalent to :ref:`ImmediateGeometry.set_normal<class_ImmediateGeometry_method_set_normal>`.
+
 ----
 
 .. _class_VisualServer_method_immediate_set_material:
 
 - void **immediate_set_material** **(** :ref:`RID<class_RID>` immediate, :ref:`RID<class_RID>` material **)**
+
+Sets the material to be used to draw the :ref:`ImmediateGeometry<class_ImmediateGeometry>`.
 
 ----
 
@@ -2882,11 +2976,15 @@ Returns ``true`` if the OS supports a certain feature. Features might be s3tc, e
 
 - void **immediate_tangent** **(** :ref:`RID<class_RID>` immediate, :ref:`Plane<class_Plane>` tangent **)**
 
+Sets the tangent to be used with next vertex. Equivalent to :ref:`ImmediateGeometry.set_tangent<class_ImmediateGeometry_method_set_tangent>`.
+
 ----
 
 .. _class_VisualServer_method_immediate_uv:
 
 - void **immediate_uv** **(** :ref:`RID<class_RID>` immediate, :ref:`Vector2<class_Vector2>` tex_uv **)**
+
+Sets the UV to be used with next vertex. Equivalent to :ref:`ImmediateGeometry.set_uv<class_ImmediateGeometry_method_set_uv>`.
 
 ----
 
@@ -2894,11 +2992,15 @@ Returns ``true`` if the OS supports a certain feature. Features might be s3tc, e
 
 - void **immediate_uv2** **(** :ref:`RID<class_RID>` immediate, :ref:`Vector2<class_Vector2>` tex_uv **)**
 
+Sets the UV2 to be used with next vertex. Equivalent to :ref:`ImmediateGeometry.set_uv2<class_ImmediateGeometry_method_set_uv2>`.
+
 ----
 
 .. _class_VisualServer_method_immediate_vertex:
 
 - void **immediate_vertex** **(** :ref:`RID<class_RID>` immediate, :ref:`Vector3<class_Vector3>` vertex **)**
+
+Adds the next vertex using the information provided in advance. Equivalent to :ref:`ImmediateGeometry.add_vertex<class_ImmediateGeometry_method_add_vertex>`.
 
 ----
 

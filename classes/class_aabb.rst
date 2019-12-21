@@ -97,7 +97,7 @@ Property Descriptions
 | *Default* | Vector3( 0, 0, 0 ) |
 +-----------+--------------------+
 
-Ending corner.
+Ending corner. This is calculated as ``position + size``. Changing this property changes :ref:`size<class_AABB_property_size>` accordingly.
 
 ----
 
@@ -154,7 +154,7 @@ Returns this ``AABB`` expanded to include a given point.
 
 - :ref:`float<class_float>` **get_area** **(** **)**
 
-Gets the area of the ``AABB``.
+Returns the volume of the ``AABB``.
 
 ----
 
@@ -290,7 +290,7 @@ Returns ``true`` if the ``AABB`` intersects the line segment between ``from`` an
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`AABB<class_AABB>` aabb **)**
 
-Returns ``true`` if this ``AABB`` and ``aabb`` are approximately equal, by calling ``is_equal_approx`` on each component.
+Returns ``true`` if this ``AABB`` and ``aabb`` are approximately equal, by calling :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` on each component.
 
 ----
 

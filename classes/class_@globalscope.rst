@@ -1172,7 +1172,7 @@ enum **KeyModifierMask**:
 
 - **KEY_MASK_CTRL** = **268435456** --- Ctrl key mask.
 
-- **KEY_MASK_CMD** = **268435456** --- Cmd key mask.
+- **KEY_MASK_CMD** = **268435456** --- Command key mask. On macOS, this is equivalent to :ref:`KEY_MASK_META<class_@GlobalScope_constant_KEY_MASK_META>`. On other platforms, this is equivalent to :ref:`KEY_MASK_CTRL<class_@GlobalScope_constant_KEY_MASK_CTRL>`. This mask should be preferred to :ref:`KEY_MASK_META<class_@GlobalScope_constant_KEY_MASK_META>` or :ref:`KEY_MASK_CTRL<class_@GlobalScope_constant_KEY_MASK_CTRL>` for system shortcuts as it handles all platforms correctly.
 
 - **KEY_MASK_KPAD** = **536870912** --- Keypad key mask.
 

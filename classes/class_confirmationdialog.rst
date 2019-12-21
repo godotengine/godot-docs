@@ -41,6 +41,12 @@ Description
 
 Dialog for confirmation of actions. This dialog inherits from :ref:`AcceptDialog<class_AcceptDialog>`, but has by default an OK and Cancel button (in host OS order).
 
+To get cancel action, you can use:
+
+::
+
+    get_cancel().connect("pressed", self, "cancelled").
+
 Method Descriptions
 -------------------
 
