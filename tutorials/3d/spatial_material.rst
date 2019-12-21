@@ -12,8 +12,19 @@ it can be converted to shader code if additional functionality is needed.
 
 This tutorial explains most parameters present in ``SpatialMaterial``.
 
-You can add a ``SpatialMaterial`` to an object by choosing "New SpatialMaterial"
-in the *Material* property of the Inspector.
+There are three ways to add a ``SpatialMaterial`` to an object. It can be added in
+the *Material* property of the mesh. It can be added in the *Material* property of
+the node using the mesh (such as a MeshInstance node), or in the *Material Override*
+property of the node using the mesh.
+
+.. image:: img/add_material.png
+
+If you add a material to the mesh itself, every time that mesh is used it will have that
+material. If you add a material to the node using the mesh, the material will only be used
+by that node, it will also override the material property of the mesh. If a material is
+added in the *Material Overrive* property of the node, it will only be used by that node.
+It will also override the regular material property of the node and the material property of
+the mesh.
 
 Flags
 -----
