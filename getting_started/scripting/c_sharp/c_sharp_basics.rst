@@ -19,8 +19,8 @@ and (re)visit the :ref:`Scripting section <doc_scripting>` of the
 step-by-step tutorial.
 
 C# is a high-level programming language developed by Microsoft. In Godot,
-it is implemented with the Mono 5.x .NET framework, including full support
-for C# 7.0. Mono is an open source implementation of Microsoft's .NET Framework
+it is implemented with the Mono 6.x .NET framework, including full support
+for C# 8.0. Mono is an open source implementation of Microsoft's .NET Framework
 based on the ECMA standards for C# and the Common Language Runtime.
 A good starting point for checking its capabilities is the
 `Compatibility <http://www.mono-project.com/docs/about-mono/compatibility/>`_
@@ -82,7 +82,13 @@ or MonoDevelop. These provide autocompletion, debugging, and other
 useful features for C#. To select an external editor in Godot, 
 click on **Editor → Editor Settings** and scroll down to
 **Mono**. Under **Mono**, click on **Editor**, and select your 
-external editor of choice.
+external editor of choice. Godot currently supports the following
+external editors:
+
+- Visual Studio Code
+- MonoDevelop
+- Visual Studio for Mac
+- JetBrains Rider
 
 .. note:: If you are using Visual Studio Code, ensure you download and install
           the `C# extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp>`_
