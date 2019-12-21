@@ -154,6 +154,9 @@ you are in the root Godot source directory:
 
 ::
 
-    $ /path/to/iostoolchain/usr/bin/arm-apple-darwin11-lipo -create bin/godot.iphone.opt.debug.arm bin/godot.iphone.opt.debug.arm64 -output bin/godot.iphone.opt.debug.fat
+    $ /path/to/iostoolchain/usr/bin/arm-apple-darwin11-lipo -create bin/libgodot.iphone.opt.debug.arm.a bin/libgodot.iphone.opt.debug.arm64.a -output bin/libgodot.iphone.debug.fat.a
+    $ /path/to/iostoolchain/usr/bin/arm-apple-darwin11-lipo -create bin/libgodot_camera_module.iphone.opt.debug.arm.a bin/libgodot_camera_module.iphone.opt.debug.arm64.a -output bin/libgodot_camera_module.iphone.debug.fat.a
+    $ /path/to/iostoolchain/usr/bin/arm-apple-darwin11-lipo -create bin/libgodot_arkit_module.iphone.opt.debug.arm.a bin/libgodot_arkit_module.iphone.opt.debug.arm64.a -output bin/libgodot_arkit_module.iphone.debug.fat.a
 
-Then you will have an iOS fat binary in ``bin/godot.iphone.opt.debug.fat``.
+
+Then you will have iOS fat binaries in ``bin`` directory.
