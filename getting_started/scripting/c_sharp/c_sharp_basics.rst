@@ -85,9 +85,9 @@ click on **Editor → Editor Settings** and scroll down to
 external editor of choice. Godot currently supports the following
 external editors:
 
-- VisualStudio for mac
+- Visual Studio Code
 - MonoDevelop
-- VisualStudio Code
+- Visual Studio for Mac
 - JetBrains Rider
 
 .. note:: If you are using Visual Studio Code, ensure you download and install
