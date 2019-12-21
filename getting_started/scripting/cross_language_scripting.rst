@@ -1,6 +1,6 @@
 .. _doc_cross_language_scripting:
 
-Cross Language Scripting
+Cross-language scripting
 ========================
 
 Godot allows you to mix and match scripting languages to suit your needs.
