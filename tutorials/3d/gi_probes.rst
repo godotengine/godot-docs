@@ -114,6 +114,9 @@ GI Probes support a few parameters for tweaking:
 - **Propagation** How much light propagates through the probe internally.
 - **Bias** Value used to avoid self-occlusion when doing voxel cone tracing, should generally be above 1.0 (1==voxel size).
 - **Normal Bias** Alternative type of bias useful for some scenes. Experiment with this one if regular bias does not work.
+- **Interior** Allows mixing with lighting from the sky.
+- **Compress** Currently broken. Do not use.
+- **Data** Contains the light baked data after baking. If you are saving the data it should be saved as a .res file.
 
 Quality
 -------
