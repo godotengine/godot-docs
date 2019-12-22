@@ -94,7 +94,7 @@ Declaring a signal in C# is done with the ``[Signal]`` attribute on a delegate.
     delegate void MySignalWithArguments(string foo, int bar);
 
 These signals can then be connected either in the editor or from code with ``Connect``.
-If you want to connect a signal in the editor, you need to (re)build the project assemblies to see the new signal. This build can be manually triggered by clicking the word “Mono” at the bottom of the editor window to reveal the Mono Panel, then clicking the “Build Project” button. 
+If you want to connect a signal in the editor, you need to (re)build the project assemblies to see the new signal. This build can be manually triggered by clicking the “Build” button at the top right corner of the editor window. 
 
 .. code-block:: csharp
 
