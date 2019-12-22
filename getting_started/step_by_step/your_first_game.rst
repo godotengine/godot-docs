@@ -67,6 +67,9 @@ node to the scene.
 
 .. image:: img/add_node.png
 
+Godot will display a warning icon next to the node in the scene tree. You can
+ignore it for now. We will address it later.
+
 With ``Area2D`` we can detect objects that overlap or run into the player.
 Change its name to ``Player`` by clicking on the node's name.
 This is the scene's root node. We can add additional nodes to the player to add
@@ -1085,7 +1088,7 @@ Now we need to connect the ``HUD`` functionality to our ``Main`` script.
 This requires a few additions to the ``Main`` scene:
 
 In the Node tab, connect the HUD's ``start_game`` signal to the
-``new_game()`` function.
+``new_game()`` function of the Main node.
 
 In ``new_game()``, update the score display and show the "Get Ready"
 message:
