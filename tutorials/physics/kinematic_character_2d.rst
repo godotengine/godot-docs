@@ -32,8 +32,8 @@ So, what is the difference?:
    solved, so a few collisions may seem to displace a tiny bit. Those
    problems can be fixed, but require a certain amount of skill.
 -  A **kinematic character controller** is assumed to always begin in a
-   non-colliding state, and will always move to a non colliding state.
-   If it starts in a colliding state, it will try to free itself (like
+   non-colliding state, and will always move to a non-colliding state.
+   If it enters a colliding state, it will try to free itself (like
    rigid bodies do), but this is the exception, not the rule. This makes
    their control and motion a lot more predictable and easier to
    program. However, as a downside, they can't directly interact with

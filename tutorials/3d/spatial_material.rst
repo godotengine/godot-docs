@@ -22,7 +22,7 @@ property of the node using the mesh.
 If you add a material to the mesh itself, every time that mesh is used it will have that
 material. If you add a material to the node using the mesh, the material will only be used
 by that node, it will also override the material property of the mesh. If a material is
-added in the *Material Overrive* property of the node, it will only be used by that node.
+added in the *Material Override* property of the node, it will only be used by that node.
 It will also override the regular material property of the node and the material property of
 the mesh.
 
