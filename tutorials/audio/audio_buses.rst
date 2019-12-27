@@ -23,10 +23,10 @@ professionals. To this end, it primarily uses the decibel scale.
 For those unfamiliar with it, it can be explained with a few facts:
 
 - The decibel (dB) scale is a relative scale. It represents the ratio of
-  sound power by using 10 times the base 10 logarithm of the ratio
-  (10 × log\ :sub:`10`\ (P/P\ :sub:`0`\ )).
-- For every 3 dB, sound amplitude doubles or halves. 6 dB represents a factor
-  of 4, 9 dB a factor of 8, 10 dB a factor of 10, 20 dB a factor of 100, etc.
+  sound power by using 20 times the base 10 logarithm of the ratio
+  (20 × log\ :sub:`10`\ (P/P\ :sub:`0`\ )).
+- For every 6 dB, sound amplitude doubles or halves. 12 dB represents a factor
+  of 4, 18 dB a factor of 8, 20 dB a factor of 10, 40 dB a factor of 100, etc.
 - Since the scale is logarithmic, true zero (no audio) can't be represented.
 - 0 dB is the maximum amplitude possible in a digital audio system.
   This limit is not the human limit, but a limit from the sound hardware.
@@ -34,9 +34,9 @@ For those unfamiliar with it, it can be explained with a few facts:
   create a kind of distortion called *clipping*.
 - To avoid clipping, your sound mix be arranged so that the output of the
   *master bus* (more on that later) never exceeds 0 dB.
-- Every 3 dB below the 0 dB limit, sound energy is *halved*.
-  It means the sound volume at -3 dB is half as loud as 0dB.
-  -6 dB is half as loud as -3 dB and so on.
+- Every 6 dB below the 0 dB limit, sound energy is *halved*.
+  It means the sound volume at -6 dB is half as loud as 0dB.
+  -12 dB is half as loud as -6 dB and so on.
 - When working with decibels, sound is considered no longer audible
   between -60 dB and -80 dB. This makes your working range generally
   between -60 dB and 0 dB.
