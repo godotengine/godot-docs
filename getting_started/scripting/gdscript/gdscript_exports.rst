@@ -63,7 +63,7 @@ Examples
 
     # Editor will enumerate as THING_1, THING_2, ANOTHER_THING.
     enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
-    export (NamedEnum) var x
+    export(NamedEnum) var x
 
     # Strings as paths
 
@@ -107,9 +107,9 @@ Examples
 
     # Colors
 
-    # Color given as red-green-blue value (alpha will always be 1)
+    # Color given as red-green-blue value (alpha will always be 1).
     export(Color, RGB) var col
-    # Color given as red-green-blue-alpha value
+    # Color given as red-green-blue-alpha value.
     export(Color, RGBA) var col
 
     # Another node in the scene can be exported, too.
