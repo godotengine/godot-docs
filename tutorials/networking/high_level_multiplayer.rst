@@ -199,7 +199,7 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
 
     func _player_connected(id):
         # Called on both clients and server when a peer connects. Send my info to it.
-        rpc_id(id, "register_player", player_name)
+        rpc_id(id, "register_player", my_info)
 
     func _player_disconnected(id):
         player_info.erase(id) # Erase player from info.
