@@ -191,7 +191,7 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 Light built-ins
 ^^^^^^^^^^^^^^^
 
-The `light` shader runs for each fragment of each light source.
+The `light` processor function runs for each fragment of each light source.
 
 +-------------------------------------+-------------------------------------------------------------------------------+
 | Built-in                            | Description                                                                   |
