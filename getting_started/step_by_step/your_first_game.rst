@@ -746,6 +746,9 @@ function to set everything up for a new game:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+ 
+    func _on_Player_hit():
+         game_over()
 
     func game_over():
         $ScoreTimer.stop()
@@ -757,6 +760,11 @@ function to set everything up for a new game:
         $StartTimer.start()
 
  .. code-tab:: csharp
+ 
+    public void OnPlayerHit()
+    {
+        GameOver();
+    }
 
     public void GameOver()
     {
@@ -933,7 +941,7 @@ ScoreLabel
 MessageLabel
 ~~~~~~~~~~~~
 
--  *Text* : ``Dodge the Creeps!``
+-  *Text* : ``Dodge the\nCreeps!``
 -  *Layout* : "HCenter Wide"
 -  *Align* : "Center"
 -  *Autowrap* : "On"
@@ -1048,8 +1056,8 @@ show the "Start" button.
 
 This function is called by ``Main`` whenever the score changes.
 
-Connect the ``timeout()`` signal of ``MessageTimer`` and the
-``pressed()`` signal of ``StartButton``.
+Connect the
+``pressed()`` signal of ``StartButton`` and the ``timeout()`` signal of ``MessageTimer``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -1089,6 +1097,19 @@ This requires a few additions to the ``Main`` scene:
 
 In the Node tab, connect the HUD's ``start_game`` signal to the
 ``new_game()`` function of the Main node.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _on_HUD_start_game():
+        new_game()
+
+ .. code-tab:: csharp
+
+    public void OnHUDStartGame()
+    {
+        NewGame();
+    }
 
 In ``new_game()``, update the score display and show the "Get Ready"
 message:
@@ -1130,6 +1151,8 @@ sync with the changing score:
 
 Now you're ready to play! Click the "Play the Project" button. You will
 be asked to select a main scene, so choose ``Main.tscn``.
+
+.. tip:: If you chose a different scene as the main scene earlier, you can change it in Project -> Project Settings -> Application -> Run -> Main Scene
 
 Removing old creeps
 ~~~~~~~~~~~~~~~~~~~
