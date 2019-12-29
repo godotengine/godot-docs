@@ -180,16 +180,18 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 | in sampler2D **SCREEN_TEXTURE**  | Screen texture, mipmaps contain gaussian blurred versions.     |
 +----------------------------------+----------------------------------------------------------------+
 
-Light built-ins
-^^^^^^^^^^^^^^^
-
 Light processor functions work differently in 2D than they do in 3D. In CanvasItem shaders, the 
-shader is called once for the object being drawn, and then once for each light touching that 
+`fragment` shader is called once for the object being drawn, and then once for each light touching that 
 object in the scene. Use render_mode ``unshaded`` if you do not want any light passes to occur
 for that object. Use render_mode ``light_only`` if you only want light passes to occur for
 that object; this can be useful when you only want the object visible where it is covered by light. 
 
 When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``true``.
+
+Light built-ins
+^^^^^^^^^^^^^^^
+
+The `light` shader runs for each fragment of each light source.
 
 +-------------------------------------+-------------------------------------------------------------------------------+
 | Built-in                            | Description                                                                   |
