@@ -181,7 +181,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 +----------------------------------+----------------------------------------------------------------+
 
 Light processor functions work differently in 2D than they do in 3D. In CanvasItem shaders, the 
-`fragment` shader is called once for the object being drawn, and then once for each light touching that 
+``fragment`` shader is called once for the object being drawn, and then once for each light touching that 
 object in the scene. Use render_mode ``unshaded`` if you do not want any light passes to occur
 for that object. Use render_mode ``light_only`` if you only want light passes to occur for
 that object; this can be useful when you only want the object visible where it is covered by light. 
