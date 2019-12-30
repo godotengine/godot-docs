@@ -292,6 +292,8 @@ enum **DuplicateFlags**:
 
 - **DUPLICATE_USE_INSTANCING** = **8** --- Duplicate using instancing.
 
+An instance stays linked to the original so when the original changes, the instance changes too.
+
 Constants
 ---------
 
@@ -572,7 +574,7 @@ Pause mode. How the node will behave if the :ref:`SceneTree<class_SceneTree>` is
 | *Getter*  | get_process_priority()      |
 +-----------+-----------------------------+
 
-The node's priority in the execution order of the enabled processing callbacks (i.e. :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` and their internal counterparts). Nodes with a higher process priority will have their processing callbacks executed first.
+The node's priority in the execution order of the enabled processing callbacks (i.e. :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` and their internal counterparts). Nodes whose process priority value is *lower* will have their processing callbacks executed first.
 
 Method Descriptions
 -------------------

@@ -16,7 +16,9 @@ BitmapFont
 Brief Description
 -----------------
 
-Renders text using ``*.fnt`` fonts.
+Renders text using fonts under the `BMFont <https://www.angelcode.com/products/bmfont/>`_ format.
+
+Handles files with the ``.fnt`` extension
 
 Properties
 ----------

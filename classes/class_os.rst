@@ -515,7 +515,7 @@ The current screen index (starting from 0).
 | *Getter*  | get_exit_code()      |
 +-----------+----------------------+
 
-The exit code passed to the OS when the main loop exits.
+The exit code passed to the OS when the main loop exits. By convention, an exit code of ``0`` indicates success whereas a non-zero exit code indicates an error. For portability reasons, the exit code should be set between 0 and 125 (inclusive).
 
 ----
 

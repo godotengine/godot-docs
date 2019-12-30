@@ -433,7 +433,7 @@ Smooth shadow gradient length.
 | *Getter*  | get_item_shadow_cull_mask()      |
 +-----------+----------------------------------+
 
-The shadow mask. Used with :ref:`LightOccluder2D<class_LightOccluder2D>` to cast shadows. Only occluders with a matching shadow mask will cast shadows.
+The shadow mask. Used with :ref:`LightOccluder2D<class_LightOccluder2D>` to cast shadows. Only occluders with a matching light mask will cast shadows.
 
 ----
 

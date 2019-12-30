@@ -172,7 +172,7 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_Array
 
 - :ref:`Variant<class_Variant>` **back** **(** **)**
 
-Returns the last element of the array if the array is not empty.
+Returns the last element of the array, or ``null`` if the array is empty.
 
 ----
 
@@ -258,7 +258,7 @@ Searches the array in reverse order for a value and returns its index or -1 if n
 
 - :ref:`Variant<class_Variant>` **front** **(** **)**
 
-Returns the first element of the array if the array is not empty.
+Returns the first element of the array, or ``null`` if the array is empty.
 
 ----
 
@@ -321,7 +321,7 @@ Returns the minimum value contained in the array if all elements are of comparab
 
 - :ref:`Variant<class_Variant>` **pop_back** **(** **)**
 
-Removes the last element of the array.
+Removes and returns the last element of the array. Returns ``null`` if the array is empty.
 
 ----
 
@@ -329,7 +329,7 @@ Removes the last element of the array.
 
 - :ref:`Variant<class_Variant>` **pop_front** **(** **)**
 
-Removes the first element of the array.
+Removes and returns the first element of the array. Returns ``null`` if the array is empty.
 
 ----
 

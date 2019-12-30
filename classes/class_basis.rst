@@ -85,13 +85,13 @@ Constants
 
 .. _class_Basis_constant_FLIP_Z:
 
-- **IDENTITY** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )**
+- **IDENTITY** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )** --- The identity basis. This is identical to calling ``Basis()`` without any parameters. This constant can be used to make your code clearer.
 
-- **FLIP_X** = **Basis( -1, 0, 0, 0, 1, 0, 0, 0, 1 )**
+- **FLIP_X** = **Basis( -1, 0, 0, 0, 1, 0, 0, 0, 1 )** --- The basis that will flip something along the X axis when used in a transformation.
 
-- **FLIP_Y** = **Basis( 1, 0, 0, 0, -1, 0, 0, 0, 1 )**
+- **FLIP_Y** = **Basis( 1, 0, 0, 0, -1, 0, 0, 0, 1 )** --- The basis that will flip something along the Y axis when used in a transformation.
 
-- **FLIP_Z** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, -1 )**
+- **FLIP_Z** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, -1 )** --- The basis that will flip something along the Z axis when used in a transformation.
 
 Description
 -----------
@@ -183,7 +183,7 @@ Returns the determinant of the matrix.
 
 - :ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
 
-Assuming that the matrix is a proper rotation matrix (orthonormal matrix with determinant +1), return Euler angles (in the YXZ convention: first Z, then X, and Y last). Returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
+Returns the basis's rotation in the form of Euler angles (in the YXZ convention: first Z, then X, and Y last). The returned vector contains the rotation angles in the format (X angle, Y angle, Z angle). See :ref:`get_rotation_quat<class_Basis_method_get_rotation_quat>` if you need a quaternion instead.
 
 ----
 
@@ -191,13 +191,15 @@ Assuming that the matrix is a proper rotation matrix (orthonormal matrix with de
 
 - :ref:`int<class_int>` **get_orthogonal_index** **(** **)**
 
-This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1,0 or 1, and returns the index of the point best representing the orientation of the object. It is mainly used by the grid map editor. For further details, refer to Godot source code.
+This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1, 0, or 1, and returns the index of the point best representing the orientation of the object. It is mainly used by the grid map editor. For further details, refer to the Godot source code.
 
 ----
 
 .. _class_Basis_method_get_rotation_quat:
 
 - :ref:`Quat<class_Quat>` **get_rotation_quat** **(** **)**
+
+Returns the basis's rotation in the form of a quaternion. See :ref:`get_euler<class_Basis_method_get_euler>` if you need Euler angles, but keep in mind quaternions should generally be preferred to Euler angles.
 
 ----
 

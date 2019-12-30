@@ -95,7 +95,7 @@ Emitted when another area exits.
 
 - **area_shape_entered** **(** :ref:`int<class_int>` area_id, :ref:`Area2D<class_Area2D>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
 
-Emitted when another area enters, reporting which shapes overlapped.
+Emitted when another area enters, reporting which shapes overlapped. ``shape_owner_get_owner(shape_find_owner(shape))`` returns the parent object of the owner of the ``shape``.
 
 ----
 

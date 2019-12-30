@@ -77,7 +77,7 @@ The colliding body.
 | *Getter*  | get_collider_id() |
 +-----------+-------------------+
 
-The colliding body's unique :ref:`RID<class_RID>`.
+The colliding body's unique instance ID. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
 
 ----
 

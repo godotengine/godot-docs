@@ -83,6 +83,8 @@ Property Descriptions
 
 The event's device ID.
 
+**Note:** This device ID will always be ``-1`` for emulated mouse input from a touchscreen. This can be used to distinguish emulated mouse input from physical mouse input.
+
 Method Descriptions
 -------------------
 

@@ -296,7 +296,7 @@ This is the distance in meters the wheel is lowered from its origin point. Don't
 | *Getter*  | get_roll_influence()      |
 +-----------+---------------------------+
 
-This value affects the roll of your vehicle. If set to 0.0 for all wheels, your vehicle will be prone to rolling over, while a value of 1.0 will resist body roll.
+This value affects the roll of your vehicle. If set to 1.0 for all wheels, your vehicle will be prone to rolling over, while a value of 0.0 will resist body roll.
 
 Method Descriptions
 -------------------

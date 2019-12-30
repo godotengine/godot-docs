@@ -350,6 +350,8 @@ If ``true``, the label uses BBCode formatting.
 
 The label's text in BBCode format. Is not representative of manual modifications to the internal tag stack. Erases changes made by other methods when edited.
 
+**Note:** It is unadvised to use ``+=`` operator with ``bbcode_text`` (e.g. ``bbcode_text += "some string"``) as it replaces the whole text and can cause slowdowns. Use :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` for adding text instead.
+
 ----
 
 .. _class_RichTextLabel_property_custom_effects:

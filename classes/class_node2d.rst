@@ -18,7 +18,7 @@ Node2D
 Brief Description
 -----------------
 
-A 2D game object, parent of all 2D-related nodes. Has a position, rotation, scale and Z index.
+A 2D game object, inherited by all 2D-related nodes. Has a position, rotation, scale, and Z index.
 
 Properties
 ----------
@@ -79,7 +79,7 @@ Methods
 Description
 -----------
 
-A 2D game object, with a position, rotation and scale. All 2D physics nodes and sprites inherit from Node2D. Use Node2D as a parent node to move, scale and rotate children in a 2D project. Also gives control on the node's render order.
+A 2D game object, with a transform (position, rotation, and scale). All 2D nodes, including physics objects and sprites, inherit from Node2D. Use Node2D as a parent node to move, scale and rotate children in a 2D project. Also gives control of the node's render order.
 
 Tutorials
 ---------

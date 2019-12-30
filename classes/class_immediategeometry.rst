@@ -63,7 +63,7 @@ Simple helper to draw an UV sphere with given latitude, longitude and radius.
 
 - void **add_vertex** **(** :ref:`Vector3<class_Vector3>` position **)**
 
-Adds a vertex with the currently set color/uv/etc.
+Adds a vertex in local coordinate space with the currently set color/uv/etc.
 
 ----
 

@@ -171,6 +171,14 @@ Some classes that extend Object add memory management. This is the case of :ref:
 
 Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<class_Object_method__get_property_list>` and handled in :ref:`_get<class_Object_method__get>` and :ref:`_set<class_Object_method__set>`. However, scripting languages and C++ have simpler means to export them.
 
+Property membership can be tested directly in GDScript using ``in``:
+
+::
+
+    var n = Node2D.new()
+    print("position" in n)  # Prints "True".
+    print("other_property" in n)  # Prints "False".
+
 Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See :ref:`_notification<class_Object_method__notification>`.
 
 Method Descriptions
