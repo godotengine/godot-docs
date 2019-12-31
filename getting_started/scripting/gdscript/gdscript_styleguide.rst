@@ -242,11 +242,24 @@ Use past tense:
     signal door_opened
     signal score_changed
 
-Constants
-~~~~~~~~~
+Constants and enums
+~~~~~~~~~~~~~~~~~~~
 
-Use CONSTANT\_CASE, all caps, with an underscore (\_) to separate words:
-``const MAX_SPEED = 200``
+Use CONSTANT\_CASE, all caps, with an underscore (\_) to separate words.
+
+Enum *names* (if any) should use PascalCase, but their *values* should be in
+CONSTANT\_CASE.
+
+::
+
+    const MAX_SPEED = 200
+
+    enum Element {
+        EARTH,
+        WATER,
+        AIR,
+        FIRE,
+    }
 
 Static typing
 -------------
