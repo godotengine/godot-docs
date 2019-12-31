@@ -90,8 +90,7 @@ One statement per line
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Never combine multiple statements on a single line. No, C programmers,
-not with a single line conditional statement (except with the ternary
-operator)!
+not even with a single line conditional statement.
 
 **Good**:
 
@@ -110,6 +109,12 @@ operator)!
     if position.x > width: position.x = 0
 
     if flag: print("flagged")
+
+The only exception to that rule is the ternary operator:
+
+::
+
+   next_state = "fall" if not is_on_floor() else "idle"
 
 Avoid unnecessary parentheses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,12 +139,13 @@ necessary for order of operations, they only reduce readability.
 Boolean operators
 ~~~~~~~~~~~~~~~~~
 
-Prefer the spelled-out versions of boolean operators (``and``/``or``) to their
-symbolic equivalents (`&&`/`||`). They're usually more readable as they're plain
-English words.
+Prefer the plain English versions of boolean operators, as they are the most accessible:
 
-Add parentheses around boolean operators to avoid ambiguity, even if they're not
-strictly required. This makes long expressions easier to read.
+- Use ``and`` instead of ``&&``.
+- Use ``or`` instead of ``||``.
+
+You may also use parentheses around boolean operators to clear any ambiguity.
+This can make long expressions easier to read.
 
 **Good**:
 
@@ -158,8 +164,8 @@ strictly required. This makes long expressions easier to read.
 Comment spacing
 ~~~~~~~~~~~~~~~
 
-Normal comments should start with a space, but comments which are disabled
-code should not. This helps differentiate text comments from disabled code.
+Regular comments should start with a space, but not code that you comment out.
+This helps differentiate text comments from disabled code.
 
 **Good**:
 
@@ -172,23 +178,29 @@ code should not. This helps differentiate text comments from disabled code.
 
 ::
 
-    #This is a comment.
+    This is a comment.
     # print("This is disabled code")
+
+.. note::
+
+   In the script editor, to toggle the selected code commented, press
+   <kbd>Ctrl</kbd> <kbd>K</kbd>. This feature adds a single # sign at the start
+   of the selected lines.
 
 Whitespace
 ~~~~~~~~~~
 
-Always use one space around operators and after commas. Avoid extra
-spaces in dictionary references and function calls, or to create "columns."
+Always use one space around operators and after commas. Also, avoid extra spaces
+in dictionary references and function calls.
 
 **Good**:
 
 ::
 
     position.x = 5
-    position.y = mpos.y + 10
+    position.y = target_position.y + 10
     dict["key"] = 5
-    myarray = [4, 5, 6]
+    my_array = [4, 5, 6]
     print("foo")
 
 **Bad**:
@@ -197,11 +209,11 @@ spaces in dictionary references and function calls, or to create "columns."
 
     position.x=5
     position.y = mpos.y+10
-    dict ['key'] = 5
+    dict ["key"] = 5
     myarray = [4,5,6]
-    print ('foo')
+    print ("foo")
 
-**NEVER**:
+Don't use spaces to align expressions vertically:
 
 ::
 
@@ -239,27 +251,40 @@ ugly.
 Classes and nodes
 ~~~~~~~~~~~~~~~~~
 
-Use PascalCase: ``extends KinematicBody``
-
-Also when loading a class into a constant or variable:
+Use PascalCase for class and node names:
 
 ::
 
-    const MyCoolNode = preload("res://my_cool_node.gd")
+   extends KinematicBody
+
+Also use PascalCase when loading a class into a constant or a variable:
+
+::
+
+    const Weapon = preload("res://weapon.gd")
 
 Functions and variables
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Use snake\_case: ``get_node()``
+Use snake\_case to name functions and variables:
 
-Prepend a single underscore (\_) to virtual methods (functions the user
-must override), private functions, and private variables:
-``func _ready()``
+::
+
+   var particle_effect
+   func load_level():
+
+Prepend a single underscore (\_) to virtual methods functions the user must
+override, private functions, and private variables:
+
+::
+
+   var _counter = 0
+   func _recalculate_path():
 
 Signals
 ~~~~~~~
 
-Use past tense:
+Use the past tense to name signals:
 
 ::
 
@@ -269,14 +294,17 @@ Use past tense:
 Constants and enums
 ~~~~~~~~~~~~~~~~~~~
 
-Use CONSTANT\_CASE, all caps, with an underscore (\_) to separate words.
-
-Enum *names* (if any) should use PascalCase, but their *values* should be in
-CONSTANT\_CASE.
+Write constants with CONSTANT\_CASE, that is to say in all caps with an
+underscore (\_) to separate words:
 
 ::
 
     const MAX_SPEED = 200
+
+Use PascalCase for enum *names* and CONSTANT\_CASE for their members, as they
+are constants:
+
+::
 
     enum Element {
         EARTH,
@@ -293,8 +321,8 @@ Since Godot 3.1, GDScript supports :ref:`optional static typing<doc_gdscript_sta
 Type hints
 ~~~~~~~~~~
 
-Place the colon right after the variable's name, without a space, and let the GDScript compiler infer the variable's type when possible.
-
+Place the colon right after the variable's name, without a space, and let the
+GDScript compiler infer the variable's type when possible.
 
 **Good**:
 
