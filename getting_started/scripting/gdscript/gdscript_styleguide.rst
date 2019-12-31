@@ -131,6 +131,30 @@ necessary for order of operations, they only reduce readability.
     if (is_colliding()):
         queue_free()
 
+Boolean operators
+~~~~~~~~~~~~~~~~~
+
+Prefer the spelled-out versions of boolean operators (``and``/``or``) to their
+symbolic equivalents (`&&`/`||`). They're usually more readable as they're plain
+English words.
+
+Add parentheses around boolean operators to avoid ambiguity, even if they're not
+strictly required. This makes long expressions easier to read.
+
+**Good**:
+
+::
+
+    if (foo and bar) or baz:
+        print("condition is true")
+
+**Bad**:
+
+::
+
+    if foo && bar || baz:
+        print("condition is true")
+
 Comment spacing
 ~~~~~~~~~~~~~~~
 
