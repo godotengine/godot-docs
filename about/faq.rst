@@ -1,3 +1,6 @@
+.. meta::
+    :keywords: FAQ
+
 .. _doc_faq:
 
 Frequently asked questions
@@ -309,7 +312,7 @@ executable.
 Why does Godot not enforce RTTI?
 --------------------------------
 
-Godot provides its own type-casting system, which can optionally use RTTI 
+Godot provides its own type-casting system, which can optionally use RTTI
 internally. Disabling RTTI in Godot means considerably smaller binary sizes can
 be achieved, at a little performance cost.
 
@@ -321,7 +324,7 @@ to use cache coherency as best as possible, we believe most users don't
 really need to be forced to use DoD practices.
 
 DoD is mostly a cache coherency optimization that can only gain you
-significant performance improvements when dealing with dozens of 
+significant performance improvements when dealing with dozens of
 thousands of objects (which are processed every frame with little
 modification). As in, if you are moving a few hundred sprites or enemies
 per frame, DoD won't help you, and you should consider a different approach
