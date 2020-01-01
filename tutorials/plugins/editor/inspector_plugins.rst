@@ -8,17 +8,46 @@ editing properties. This tutorial explains how to use the
 :ref:`class_EditorInspectorPlugin` and :ref:`class_EditorProperty` classes to
 write such plugins with the example of creating a custom value editor.
 
-.. note::
+Setup
+-----
 
-    To register these scripts as a new editor plugin, you have to create a
-    ``plugin.cfg`` file as described in :ref:`doc_making_plugins`.
+Just like :ref:`doc_making_plugins`, we start out by making a new plugin,
+getting a ``plugin.cfg`` file created, and start with our
+:ref:`class_EditorPlugin`.  However, instead of using
+``add_custom_node`` or ``add_control_to_dock`` we'll use
+``add_inspector_plugin``.
+
+.. tabs::
+  .. code-tab:: gdscript GDScript
+    # MyEditorPlugin.gd
+
+    tool extends EditorPlugin
+
+    var plugin: EditorInspectorPlugin
+
+    func _enter_tree():
+        # EditorInspectorPlugin is a resource, so we use `new()` instead of `instance()`.
+        plugin = preload("res://addons/MyPlugin/MyInspectorPlugin.gd").new()
+        add_inspector_plugin(plugin)
+
+    func _exit_tree():
+        remove_inspector_plugin(plugin)
 
 EditorInspectorPlugin
 ---------------------
 
-We start by creating a script extending the :ref:`class_EditorInspectorPlugin`
-class. This is needed to initialize the plugin and add the custom property
-editor that we'll later define.
+To actually connect into the Inspector, we create a
+:ref:`class_EditorInspectorPlugin` class. This script provides the "hooks" to
+the inspector. Thanks to this class, the editor will call the functions within
+the EditorInspectorPlugin while it goes through the process of building the UI
+for the inspector. The script is used to check if we should enable ourselves for
+any :ref:`class_Object` that is currently in the inspector (including any
+:ref:`class_Resource` that is embedded!).
+
+Once enabled, EditorInspectorPlugin has methods that allow for adding
+:ref:`class_EditorProperty` nodes or just custom :ref:`class_Control` nodes to
+the beginning and end of the inspector for that :ref:`class_Object`, or for
+overriding or changing existing property editors.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
