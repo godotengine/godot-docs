@@ -89,9 +89,11 @@ Use one blank line inside functions to separate logical sections.
 Line length
 ~~~~~~~~~~~
 
-Try to keep lines under 80 characters. This ensures greater readability on small
-displays and splitted editors (such as side-by-side diffs). It's OK to go over
-by a few characters, but a line should never exceed 100 characters.
+Keep individual lines of code under 100 characters.
+
+If you can, try to keep lines under 80 characters. This helps to read the code
+on small displays and with two scripts opened side-by-side in an external text
+editor. For example, when looking at a differential revision.
 
 One statement per line
 ~~~~~~~~~~~~~~~~~~~~~~
