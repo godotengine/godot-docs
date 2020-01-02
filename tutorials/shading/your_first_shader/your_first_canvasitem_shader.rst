@@ -217,4 +217,4 @@ At their core, shaders do what you have seen so far, they compute ``VERTEX`` and
 up to you to dream up more complex mathematical strategies for assigning values to those variables. 
 
 For inspiration, take a look at some of the more advanced shader tutorials, and look at other sites
-like `Shadertoy <https://www.shadertoy.com>`_ and `The Book of Shaders <https://thebookofshaders.com>`_. 
+like `Shadertoy <https://www.shadertoy.com/results?query=&sort=popular&from=10&num=4>`_ and `The Book of Shaders <https://thebookofshaders.com>`_. 
