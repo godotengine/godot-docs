@@ -72,6 +72,11 @@ EditorPlugin script for you. The script has two requirements that you cannot
 change: it must be a ``tool`` script, or else it will not load properly in the
 editor, and it must inherit from :ref:`class_EditorPlugin`.
 
+.. warning::
+    In addition to the EditorPlugin script, any other GDScript that your plugin uses
+    must *also* be a tool.  Any GDScript without ``tool`` imported into the editor
+    will act like an empty file!
+
 It's important to deal with initialization and clean-up of resources.
 A good practice is to use the virtual function
 :ref:`_enter_tree() <class_Node_method__enter_tree>` to initialize your plugin and
