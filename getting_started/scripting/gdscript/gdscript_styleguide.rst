@@ -178,7 +178,7 @@ This helps differentiate text comments from disabled code.
 
 ::
 
-    This is a comment.
+    #This is a comment.
     # print("This is disabled code")
 
 .. note::
