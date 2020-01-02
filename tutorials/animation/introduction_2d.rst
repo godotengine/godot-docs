@@ -57,9 +57,6 @@ It consists of four parts:
 -  The timeline and track controls, where you can zoom the timeline and
    edit tracks for example.
 
-See the `animation panel reference <#animation-panel-reference>`__ below
-for details.
-
 Computer animation relies on keyframes
 --------------------------------------
 
@@ -168,21 +165,6 @@ the timeline:
    :alt: The sprite track
 
    The sprite track
-
-The track name consists of a Node Path, followed by a colon, followed by
-a reference to its property, that we would like to modify.
-
-In our example, the path is ``AnimationPlayer/Sprite`` and the property
-is ``position``.
-
-The path always starts at the AnimationPlayer node's parent (so paths
-always have to include the AnimationPlayer node itself).
-
-.. note::
-
-   Don't worry if you change the names of nodes in the Scene Tree, that you
-   already have tracks for. Godot automatically updates the paths in the
-   tracks.
 
 The second keyframe
 ~~~~~~~~~~~~~~~~~~~
