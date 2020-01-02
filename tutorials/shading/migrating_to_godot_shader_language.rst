@@ -123,7 +123,7 @@ more information, see the :ref:`Shading Language <doc_shading_language>` referen
 Shadertoy
 ---------
 
-`Shadertoy <https://www.shadertoy.com>`_ is a website that makes it easy to write fragment shaders and
+`Shadertoy <https://www.shadertoy.com/results?query=&sort=popular&from=10&num=4>`_ is a website that makes it easy to write fragment shaders and
 create `pure magic <https://www.shadertoy.com/view/4tjGRh>`_.
 
 Shadertoy does not give the user full control over the shader. It handles all
