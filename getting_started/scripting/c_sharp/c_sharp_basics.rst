@@ -259,3 +259,9 @@ msbuild to use, run:
 .. code-block:: none
 
     msbuild /t:restore
+
+Profiling your C# code
+-----------------------------
+
+- `Mono log profiler <https://www.mono-project.com/docs/debug+profile/profile/profiler/>`_ is available via `this PR <https://github.com/godotengine/godot/pull/26513>`_
+- External Mono profiler like `JetBrains dotTrace <https://www.jetbrains.com/profiler/>`_ can be used as described `here <https://github.com/godotengine/godot/pull/34382>`_.
