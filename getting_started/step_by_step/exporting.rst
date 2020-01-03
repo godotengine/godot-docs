@@ -29,16 +29,17 @@ be treated the same as a touch event, we'll convert the game to a click-and-move
 input style.
 
 By default Godot emulates mouse input from touch input. That means if anything
-is coded to happen on a mouse event, touch will trigger it as well. If you wish to
-disable that for whatever reason, or emulate touch from mouse input, you can do that
-in the "Project Settings" under *Input Devices* and *Pointing*
+is coded to happen on a mouse event, touch will trigger it as well. Godot can also 
+emulate touch input from mouse clicks, which we will need to be able to keep playing
+our game on our computer after we switch to touch input. In the "Project Settings" 
+under *Input Devices* and *Pointing*, set *Emulate Touch From Mouse* to "On". 
 
 .. image:: img/export_touchsettings.png
 
-Before we change the input method, in the project settings go to *Display*,
-then click on *Window*. In the *Stretch* options, set *Mode* to "2d" and *Aspect* to 
-"keep". This ensures that the game scales consistently on different sized screens.
-   
+We also want to ensure that the game scales consistently on different-sized screens,
+so in the project settings go to *Display*, then click on *Window*. In the *Stretch* 
+options, set *Mode* to "2d" and *Aspect* to "keep". 
+
 Since we are already in the *Window* settings, we should also set under *Handheld*
 the *Orientation* to "portrait". 
 

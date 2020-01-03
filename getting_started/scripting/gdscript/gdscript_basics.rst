@@ -348,19 +348,19 @@ null
 ``null`` is an empty data type that contains no information and can not
 be assigned any other value.
 
-bool
-^^^^
+:ref:`bool <class_bool>`
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Short for "boolean", it can only contain ``true`` or ``false``.
 
-int
-^^^
+:ref:`int <class_int>`
+^^^^^^^^^^^^^^^^^^^^^^
 
 Short for "integer", it stores whole numbers (positive and negative).
 It is stored as a 64-bit value, equivalent to "int64_t" in C++.
 
-float
-^^^^^
+:ref:`float <class_float>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Stores real numbers, including decimals, using floating-point values.
 It is stored as a 64-bit value, equivalent to "double" in C++.
