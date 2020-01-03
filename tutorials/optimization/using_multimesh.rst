@@ -47,7 +47,7 @@ then change the amount visible depending on how many are currently needed.
 Multimesh example
 -----------------
 
-Here is an example of using a MultiMesh from code (using GDScript). Other languages may be more
+Here is an example of using a MultiMesh from code. Languages other than GDScript may be more
 efficient for millions of objects, but for a few thousands, GDScript should be fine.
 
 .. tabs::
@@ -69,3 +69,29 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
         # Set the transform of the instances.
         for i in multimesh.visible_instance_count:
             multimesh.set_instance_transform(i, Transform(Basis(), Vector3(i * 20, 0, 0)))
+
+ .. code-tab:: csharp
+    using Godot;
+    using System;
+
+    public class MultiMeshInstance : Godot.MultiMeshInstance
+    {
+        public override void _Ready()
+        {
+            // Create the multimesh.
+            var multimesh = new MultiMesh();
+            // Set the format first.
+            multimesh.TransformFormat = MultiMesh.TransformFormatEnum.Transform3d;
+            multimesh.ColorFormat = MultiMesh.ColorFormatEnum.None;
+            multimesh.CustomDataFormat = MultiMesh.CustomDataFormatEnum.None;
+            // Then resize (otherwise, changing the format is not allowed)
+            multimesh.InstanceCount = 1000;
+            // Maybe not all of them should be visible at first.
+            multimesh.VisibleInstanceCount = 1000;
+            // Set the transform of the instances.
+            for (int i = 0; i < multimesh.VisibleInstanceCount; i++)
+            {
+                multimesh.SetInstanceTransform(i, new Transform(new Basis(), new Vector3(i * 20, 0, 0)));
+            }
+        }
+    }
