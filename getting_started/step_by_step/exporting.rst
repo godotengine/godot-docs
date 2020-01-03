@@ -40,7 +40,10 @@ We also want to ensure that the game scales consistently on different-sized scre
 so in the project settings go to *Display*, then click on *Window*. In the *Stretch* 
 options, set *Mode* to "2d" and *Aspect* to "keep". 
 
-.. image:: img/export_stretchsettings.png
+Since we are already in the *Window* settings, we should also set under *Handheld*
+the *Orientation* to "portrait". 
+
+.. image:: img/export_handheld_stretchsettings.png
 
 Next, we need to modify the ``Player.gd`` script to change the input method.
 We'll remove the key inputs and make the player move towards a "target" that's
@@ -223,7 +226,8 @@ your system and the location of the keystore you just created.
 .. image:: img/export_editor_android_settings.png
 
 Now you're ready to export. Click on *Project -> Export* and add a preset
-for Android (see above).
+for Android (see above). Select the Android Presets and under *Options* go to 
+*Screen* and set *Orientation* to "Portrait".
 
 Click the "Export Project" button and Godot will build an APK you can download
 on your device. To do this on the command line, use the following:
