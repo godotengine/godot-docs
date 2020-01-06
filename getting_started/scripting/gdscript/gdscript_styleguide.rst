@@ -18,17 +18,18 @@ styleguide.
 .. note:: Godot's built-in script editor uses a lot of these conventions
           by default. Let it help you.
 
-Code structure
---------------
+Formatting conventions
+----------------------
 
-Indentation
-~~~~~~~~~~~
-
-Indent type: Tabs *(editor default)*
-
-Indent size: 4 *(editor default)*
+* Use line feed (**LF**) characters to break lines, not CRLF or CR. *(editor default)*
+* Use one line feed character at the end of each file. *(editor default)*
+* Use **UTF-8** encoding without a `byte order mark <https://en.wikipedia.org/wiki/Byte_order_mark>`_. *(editor default)*
+* Use **Tabs** instead of spaces for indentation. *(editor default)*
 
 Each indent level should be one greater than the block containing it.
+
+Code structure
+--------------
 
 **Good**:
 
