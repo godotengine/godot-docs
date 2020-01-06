@@ -27,8 +27,11 @@ later.
 For detailed information on C# features in different versions, please see
 `What's New in C# <https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/>`_.
 
-Formatting conventions
-----------------------
+Formatting
+----------
+
+General guidelines
+~~~~~~~~~~~~~~~~~~
 
 * Use line feed (**LF**) characters to break lines, not CRLF or CR.
 * Use one line feed character at the end of each file, except for `csproj` files.
@@ -36,8 +39,6 @@ Formatting conventions
 * Use **4 spaces** instead of tabs for indentation (which is referred to as "soft tabs").
 * Consider breaking a line into several if it's longer than 100 characters.
 
-Code structure
---------------
 
 Line breaks and blank lines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,6 +136,7 @@ Avoid inserting a blank line:
         {
         }
     }
+
 
 Using spaces
 ~~~~~~~~~~~~
