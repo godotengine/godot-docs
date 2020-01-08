@@ -59,7 +59,8 @@ Head over to the *Points* mode, select the pencil and draw a polygon around the 
 
 .. image:: img/skel2d4.png
 
-Duplicate the polygon node, rename it properly, enter the "UV" dialog again and replace the old polygon with another one in the new desired piece. For duplicated nodes with similar shape, if you want to move the previous similar polygon (instead of drawing new polygon), just remember to update the UV by selecting Edit>” Polygon->UV” in Polygon 2D UV Editor, after moving the polygon. This would update the UV shown in viewport.
+Duplicate the polygon node, rename it properly, enter the "UV" dialog again and replace the old polygon with another one in the new desired piece. In duplicated nodes with similar shape, you can move the previous polygon (instead of drawing new one). After moving the polygon, remember to update the UV by selecting Edit>” Polygon->UV” in Polygon 2D UV Editor. 
+
 
 .. image:: img/skel2d5.png
 
