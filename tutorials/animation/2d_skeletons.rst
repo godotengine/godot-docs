@@ -59,7 +59,8 @@ Head over to the *Points* mode, select the pencil and draw a polygon around the 
 
 .. image:: img/skel2d4.png
 
-Duplicate the polygon node, rename it properly, enter the "UV" dialog again and replace the old polygon with another one in the new desired piece.
+Duplicate the polygon node, rename it properly, enter the "UV" dialog again and replace the old polygon with another one in the new desired piece. In duplicated nodes with similar shape, you can move the previous polygon (instead of drawing new one). After moving the polygon, remember to update the UV by selecting Edit>” Polygon->UV” in Polygon 2D UV Editor. 
+
 
 .. image:: img/skel2d5.png
 
@@ -119,7 +120,7 @@ The warnings will go away. If you modify the skeleton (add/remove bones) you wil
 Deforming the polygons
 ----------------------
 
-Select the previously created polygons and assign the skeleton node to their ``Skeleton`` property. This will ensure that they can eventually by deformed by it.
+Select the previously created polygons and assign the skeleton node to their ``Skeleton`` property. This will ensure that they can eventually be deformed by it.
 
 .. image:: img/skel2d15.png
 
