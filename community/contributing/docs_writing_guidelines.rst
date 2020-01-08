@@ -274,6 +274,29 @@ element of a list with more than two elements.
 How to write methods and classes
 --------------------------------
 
+Dynamic vs Static typing
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Despite the addition of optional static typing, GDScript remains primarily 
+dynamic language. Unless you are specifily discussing static typing, you
+should only use dynamic typing in your code examples and snipets. 
+This will help reduce confusion to new users by promoting consistent look
+to the code examples they are exposed to. 
+
+**Don't** write using using static typing:
+
+::
+
+    var a := 5
+    var b: String = "My String"
+
+**Do** write code using dynamic typing:
+
+::
+
+    var a = 5
+    var b = "My String"
+
 Give an overview of the node in the brief description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
