@@ -49,15 +49,15 @@ framerate performance. Solving this is game specific and will require optimizati
 The second is more complicated, because it is often not associated to the engine or game but the underlying operating system.
 Here is some information regarding stutter on different OSs.
 
-VSync
-^^^^^
+Use VSync
+^^^^^^^^^
 
 A common cause of Jitter is when the game's framerate is out of step with the monitor's refresh rate.  Go to ``` Project Settings -->  Display --> Window``` and ensure that ```Vsync``` is enabled, and if you are on Windows, also ensure that ```Vsync Via Compositor``` is enabled.
 
 .. note::
 
     ```Vsync Via Compositor```, a Windows-specific setting, is not enabled by default.  
-    If you are on Windows and seeing Jitter, enabling this as a first step.
+    If you are on Windows and seeing Jitter, enable this as a first step.
 
 Windows
 ^^^^^^^
