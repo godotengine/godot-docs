@@ -78,7 +78,8 @@ which should be the result of editing the above in a spreadsheet.
 When editing the plain text version, be sure to enclose any message
 that contains a comma with double quotes, so that the comma is not
 parsed as delimiter. Alternatively, you can select another delimiter
-in the import options.
+in the import options. Be sure to also escape any double quotes a
+message may contain by preceding them with another double quote.
 
 .. code-block:: none
 
