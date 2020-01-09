@@ -52,7 +52,7 @@ Here is some information regarding stutter on different OSs.
 Use VSync
 ^^^^^^^^^
 
-A common cause of Jitter is when the game's framerate is out of step with the monitor's refresh rate.  Go to ``` Project Settings -->  Display --> Window``` and ensure that ```Vsync``` is enabled, and if you are on Windows, also ensure that ```Vsync Via Compositor``` is enabled.
+A common cause of Jitter is when the game's framerate is out of step with the monitor's refresh rate.  Go to ``` Project Settings -->  Display --> Window``` and ensure that ```Vsync``` is enabled, and if you are on Windows, also ensure that ```Vsync Via Compositor``` *(same location in settings)* is enabled.
 
 .. note::
 
