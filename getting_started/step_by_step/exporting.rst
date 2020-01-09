@@ -105,10 +105,12 @@ changed:
             $AnimatedSprite.stop()
 
         position += velocity * delta
-        # We don't need to clamp the player's position
-        # because you can't click outside the screen.
-        # position.x = clamp(position.x, 0, screensize.x)
-        # position.y = clamp(position.y, 0, screensize.y)
+        # We still need to clamp the player's position here because on devices that don't
+        # match your game's aspect ratio, Godot will try to maintain it as much as possible 
+        # by creating black borders, if necessary.
+        # Without clamp(), the player would be able to move under those borders.
+        position.x = clamp(position.x, 0, screen_size.x)
+        position.y = clamp(position.y, 0, screen_size.y)
 
         if velocity.x != 0:
             $AnimatedSprite.animation = "right"
