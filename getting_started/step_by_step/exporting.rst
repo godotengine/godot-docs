@@ -104,7 +104,7 @@ changed:
         # We still need to clamp the player's position here because on devices that don't
         # match your game's aspect ratio, Godot will try to maintain it as much as possible 
         # by creating black borders, if necessary.
-        # Without clamp() the player would be able to move under those borders.
+        # Without clamp(), the player would be able to move under those borders.
         position.x = clamp(position.x, 0, screen_size.x)
         position.y = clamp(position.y, 0, screen_size.y)
 
