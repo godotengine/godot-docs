@@ -103,13 +103,14 @@ scenes.
 Main screen scene
 -----------------
 
-Create a new scene with a ``Panel`` root node. Select this root node and, in the
-viewport, click the ``Layout`` menu and select ``Full Rect``. The panel now uses
-all the space available in the viewport. Now, let's add a new script on the root
-node. Name it ``main_panel.gd``.
+Create a new scene with a ``Panel`` root node. Select this root node,
+and in the viewport, click the ``Layout`` menu and select ``Full Rect``.
+You also need to enable the ``Expand`` vertical size flag in the inspector.
+The panel now uses all the space available in the viewport.
+Now, let's add a new script on the root node. Name it ``main_panel.gd``.
 
 We then add 2 children to this Panel node: first a ``Button`` node. Place it
-anywhere on the Panel.
+anywhere on the Panel. Then add a ``Label`` node.
 
 Now we need to define a behaviour when this button is pressed. This is covered
 by the :ref:`Handling a signal <doc_scripting_handling_a_signal>` page, so this
