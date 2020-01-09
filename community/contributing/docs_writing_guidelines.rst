@@ -277,25 +277,43 @@ How to write methods and classes
 Dynamic vs Static typing
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Despite the addition of optional static typing, GDScript remains primarily 
-dynamic language. Unless you are specifily discussing static typing, you
-should only use dynamic typing in your code examples and snipets. 
-This will help reduce confusion to new users by promoting consistent look
-to the code examples they are exposed to. 
+GDScript aims to be concise and easy to learn. Optional static typing conflicts with this vision
+by making documentation more congested. To improve its accessibility for new users, please use 
+dynamic GDScript code samples where possible. The one exception is topics that explain 
+static typing concepts to users.
 
-**Don't** write using using static typing:
+**Don't** add a type hint with a colon or by casting:
 
 ::
 
     var a := 5
     var b: String = "My String"
+    var my_sprite : Sprite = $Sprite as Sprite
 
-**Do** write code using dynamic typing:
+
+**Do** write varibles with dynamic typing:
 
 ::
 
     var a = 5
     var b = "My String"
+    var my_sprite = $Sprite
+
+
+**Don't** write functions with inferred arguments or return types:
+
+::
+
+    func my_func(arg1 : int, arg2 : String = "") -> void:
+    return
+
+**Do** write functions using dynamic typing:
+
+::
+
+    func my_func(arg1, arg2 = ""):
+    return
+
 
 Give an overview of the node in the brief description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
