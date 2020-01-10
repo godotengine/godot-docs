@@ -274,19 +274,21 @@ element of a list with more than two elements.
 How to write methods and classes
 --------------------------------
 
-Dynamic vs Static typing
+Dynamic vs static typing
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-GDScript aims to be concise and easy to learn. Optional static typing conflicts with this vision
-by making documentation more congested. To improve its accessibility for new users, please use 
-dynamic GDScript code samples where possible. The one exception is topics that explain 
-static typing concepts to users.
+The code examples in the documentation should follow a consistent style not to
+confuse users. As static type hints are an optional feature of GDScript, we
+chose to stick to writing dynamic code. This leads to writing GDScript that is
+concise and accessible.
+
+The exception is topics that explain static typing concepts to users.
 
 **Don't** add a type hint with a colon or by casting:
 
 ::
 
-    const main_attack := preload("res://fire_attack.gd")
+    const MainAttack := preload("res://fire_attack.gd")
     var hit_points := 5
     var name: String = "Bob"
     var body_sprite := $Sprite as Sprite
@@ -296,7 +298,7 @@ static typing concepts to users.
 
 ::
 
-    const main_attack = preload("res://fire_attack.gd")
+    const MainAttack = preload("res://fire_attack.gd")
     var hit_points = 5
     var name = "Bob"
     var body_sprite = $Sprite
@@ -307,7 +309,7 @@ static typing concepts to users.
 ::
 
     func choose(arguments: Array): 
-        # Chooses one of the arguments from array with equal chance
+        # Chooses one of the arguments from array with equal chances
         randomize()
         var size := arguments.size()
         var choice: int = randi() % size
@@ -317,8 +319,8 @@ static typing concepts to users.
 
 ::
 
-    func choose(arguments:): 
-        # Chooses one of the arguments from array with equal chance
+    func choose(arguments):
+        # Chooses one of the arguments from array with equal chances
         randomize()
         var size = arguments.size()
         var choice = randi() % size
