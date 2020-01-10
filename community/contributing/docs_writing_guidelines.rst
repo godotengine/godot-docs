@@ -307,7 +307,7 @@ static typing concepts to users.
 ::
 
     func choose(arguments: Array): 
-        #Chooses one of the arguments from array with equal chance
+        # Chooses one of the arguments from array with equal chance
         randomize()
         var size := arguments.size()
         var choice: int = randi() % size
@@ -318,7 +318,7 @@ static typing concepts to users.
 ::
 
     func choose(arguments:): 
-        #Chooses one of the arguments from array with equal chance
+        # Chooses one of the arguments from array with equal chance
         randomize()
         var size = arguments.size()
         var choice = randi() % size
