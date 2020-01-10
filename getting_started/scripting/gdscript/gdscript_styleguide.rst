@@ -37,8 +37,8 @@ Here is a complete class example based on these guidelines:
     export var initial_state = NodePath()
     var is_active = true setget set_is_active
 
-    onready var state = get_node(initial_state) setget set_state
-    onready var _state_name = state.name
+    onready var _state = get_node(initial_state) setget set_state
+    onready var _state_name = _state.name
 
     func _init():
         add_to_group("state_machine")
@@ -46,15 +46,15 @@ Here is a complete class example based on these guidelines:
 
     func _ready():
         connect("state_changed", self, "_on_state_changed")
-        state.enter()
+        _state.enter()
 
 
     func _unhandled_input(event):
-        state.unhandled_input(event)
+        _state.unhandled_input(event)
 
 
     func _physics_process(delta):
-        state.physics_process(delta)
+        _state.physics_process(delta)
 
 
     func transition_to(target_state_path, msg={}):
@@ -64,10 +64,10 @@ Here is a complete class example based on these guidelines:
         var target_state = get_node(target_state_path)
         assert target_state.is_composite == false
 
-        state.exit()
-        self.state = target_state
-        state.enter(msg)
-        Events.emit_signal("player_state_changed", state.name)
+        _state.exit()
+        self._state = target_state
+        _state.enter(msg)
+        Events.emit_signal("player_state_changed", _state.name)
 
 
     func set_is_active(value):
@@ -78,8 +78,8 @@ Here is a complete class example based on these guidelines:
 
 
     func set_state(value):
-        state = value
-        _state_name = state.name
+        _state = value
+        _state_name = _state.name
 
 
     func _on_state_changed(previous, new):
@@ -408,23 +408,24 @@ We suggest to organize GDScript code this way:
 
 ::
 
-    01. class_name
-    02. extends
-    03. # docstring
+    01. tool
+    02. class_name
+    03. extends
+    04. # docstring
 
-    04. signals
-    05. enums
-    06. constants
-    07. exported variables
-    08. public variables
-    09. private variables
-    10. onready variables
+    05. signals
+    06. enums
+    07. constants
+    08. exported variables
+    09. public variables
+    10. private variables
+    11. onready variables
 
-    11. optional built-in virtual _init method
-    12. built-in virtual _ready method
-    13. remaining built-in virtual methods
-    14. public methods
-    15. private methods
+    12. optional built-in virtual _init method
+    13. built-in virtual _ready method
+    14. remaining built-in virtual methods
+    15. public methods
+    16. private methods
 
 We optimized the order to make it easy to read the code from top to bottom, to
 help developers reading the code for the first time understand how it works, and
@@ -442,7 +443,10 @@ This code order follows four rules of thumb:
 Class declaration
 ~~~~~~~~~~~~~~~~~
 
-Start with the `class_name` if necessary. You can turn a GDScript file into a
+If the code is meant to run in the editor, place the ``tool`` keyword on the
+first line of the script.
+
+Follow with the `class_name` if necessary. You can turn a GDScript file into a
 global type in your project using this feature. For more information, see
 :ref:`doc_gdscript`.
 
@@ -524,11 +528,11 @@ in that order.
 
     func _ready():
         connect("state_changed", self, "_on_state_changed")
-        state.enter()
+        _state.enter()
 
 
     func _unhandled_input(event):
-        state.unhandled_input(event)
+        _state.unhandled_input(event)
 
 
     func transition_to(target_state_path, msg={}):
@@ -538,10 +542,10 @@ in that order.
         var target_state = get_node(target_state_path)
         assert target_state.is_composite == false
 
-        state.exit()
-        self.state = target_state
-        state.enter(msg)
-        Events.emit_signal("player_state_changed", state.name)
+        _state.exit()
+        self._state = target_state
+        _state.enter(msg)
+        Events.emit_signal("player_state_changed", _state.name)
 
 
     func _on_state_changed(previous, new):
