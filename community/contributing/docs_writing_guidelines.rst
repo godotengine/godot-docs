@@ -274,6 +274,57 @@ element of a list with more than two elements.
 How to write methods and classes
 --------------------------------
 
+Dynamic vs Static typing
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+GDScript aims to be concise and easy to learn. Optional static typing conflicts with this vision
+by making documentation more congested. To improve its accessibility for new users, please use 
+dynamic GDScript code samples where possible. The one exception is topics that explain 
+static typing concepts to users.
+
+**Don't** add a type hint with a colon or by casting:
+
+::
+
+    const main_attack := preload("res://fire_attack.gd")
+    var hit_points := 5
+    var name: String = "Bob"
+    var body_sprite := $Sprite as Sprite
+
+
+**Do** write constants variables with dynamic typing:
+
+::
+
+    const main_attack = preload("res://fire_attack.gd")
+    var hit_points = 5
+    var name = "Bob"
+    var body_sprite = $Sprite
+
+
+**Don't** write functions with inferred arguments or return types:
+
+::
+
+    func choose(arguments: Array): 
+        # Chooses one of the arguments from array with equal chance
+        randomize()
+        var size := arguments.size()
+        var choice: int = randi() % size
+        return arguments[choice]
+
+**Do** write functions using dynamic typing:
+
+::
+
+    func choose(arguments:): 
+        # Chooses one of the arguments from array with equal chance
+        randomize()
+        var size = arguments.size()
+        var choice = randi() % size
+        return arguments[choice]
+
+
 Give an overview of the node in the brief description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
