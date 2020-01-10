@@ -286,35 +286,43 @@ static typing concepts to users.
 
 ::
 
-    const MyNode := preload("preload("res://my_node.gd")
-    var a := 5
-    var b: String = "My String"
-    var my_sprite := $Sprite as Sprite
+    const main_attack := preload("res://fire_attack.gd")
+    var hit_points := 5
+    var name: String = "Bob"
+    var body_sprite := $Sprite as Sprite
 
 
 **Do** write constants variables with dynamic typing:
 
 ::
 
-    const MyNode = preload("preload("res://my_node.gd")
-    var a = 5
-    var b = "My String"
-    var my_sprite = $Sprite
+    const main_attack = preload("res://fire_attack.gd")
+    var hit_points = 5
+    var name = "Bob"
+    var body_sprite = $Sprite
 
 
 **Don't** write functions with inferred arguments or return types:
 
 ::
 
-    func my_func(arg1 : int, arg2 : String = "") -> void:
-        pass
+    func choose(arguments: Array): 
+        #Chooses one of the arguments from array with equal chance
+        randomize()
+        var size := arguments.size()
+        var choice: int = randi() % size
+        return arguments[choice]
 
 **Do** write functions using dynamic typing:
 
 ::
 
-    func my_func(arg1, arg2 = ""):
-        pass
+    func choose(arguments:): 
+        #Chooses one of the arguments from array with equal chance
+        randomize()
+        var size = arguments.size()
+        var choice = randi() % size
+        return arguments[choice]
 
 
 Give an overview of the node in the brief description
