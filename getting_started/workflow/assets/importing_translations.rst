@@ -63,22 +63,27 @@ runtime by the matching translated string. Note that the case is important,
 The top-left cell is ignored and can be left empty or having any content.
 Here's an example:
 
-+---------+------------------+----------------+--------------+
-| keys    | en               | es             | ja           |
-+=========+==================+================+==============+
-| GREET   | Hello, friend!   | Hola, amigo!   | こんにちは   |
-+---------+------------------+----------------+--------------+
-| ASK     | How are you?     | Cómo está?     | 元気ですか   |
-+---------+------------------+----------------+--------------+
-| BYE     | Goodbye          | Adiós          | さようなら   |
-+---------+------------------+----------------+--------------+
++-------+-----------------------+------------------------+--------------------------+
+| keys  | en                    | es                     | ja                      |
++=======+=======================+========================+==========================+
+| GREET | Hello, friend!        | Hola, amigo!           | こんにちは                |
++-------+-----------------------+------------------------+--------------------------+
+| ASK   | How are you?          | Cómo está?             | 元気ですか                |
++-------+-----------------------+------------------------+--------------------------+
+| BYE   | Goodbye               | Adiós                  | さようなら                |
++-------+-----------------------+------------------------+--------------------------+
+| QUOTE | "Hello" said the man. | "Hola" dijo el hombre. | 「こんにちは」男は言いました |
++-------+-----------------------+------------------------+--------------------------+
 
 The same example is shown below as a comma-separated plain text file,
 which should be the result of editing the above in a spreadsheet.
-When editing the plain text version, be sure to enclose any message
-that contains a comma with double quotes, so that the comma is not
-parsed as delimiter. Alternatively, you can select another delimiter
-in the import options.
+When editing the plain text version, be sure to enclose with double 
+quotes any message that contains commas, line breaks or double quotes,
+so that commas are not parsed as delimiters, line breaks don't create new
+entries and double quotes are not parsed as enclosing characters. Be sure
+to escape any double quotes a message may contain by preceding them with 
+another double quote. Alternatively, you can select another delimiter than
+comma in the import options.
 
 .. code-block:: none
 
@@ -86,6 +91,7 @@ in the import options.
     GREET,"Hello, friend!","Hola, amigo!",こんにちは
     ASK,How are you?,Cómo está?,元気ですか
     BYE,Goodbye,Adiós,さようなら
+    QUOTE,"""Hello"" said the man.","""Hola"" dijo el hombre.",「こんにちは」男は言いました
 
 CSV importer
 ------------
