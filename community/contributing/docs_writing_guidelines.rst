@@ -286,15 +286,17 @@ static typing concepts to users.
 
 ::
 
+    const MyNode := preload("preload("res://my_node.gd")
     var a := 5
     var b: String = "My String"
-    var my_sprite : Sprite = $Sprite as Sprite
+    var my_sprite := $Sprite as Sprite
 
 
-**Do** write varibles with dynamic typing:
+**Do** write constants variables with dynamic typing:
 
 ::
 
+    const MyNode = preload("preload("res://my_node.gd")
     var a = 5
     var b = "My String"
     var my_sprite = $Sprite
@@ -305,14 +307,14 @@ static typing concepts to users.
 ::
 
     func my_func(arg1 : int, arg2 : String = "") -> void:
-    return
+        pass
 
 **Do** write functions using dynamic typing:
 
 ::
 
     func my_func(arg1, arg2 = ""):
-    return
+        pass
 
 
 Give an overview of the node in the brief description
