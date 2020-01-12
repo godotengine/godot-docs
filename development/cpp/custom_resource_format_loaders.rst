@@ -252,7 +252,7 @@ Loading it on GDScript
 ----------------------
 
 
-.. code::
+.. code-block:: json
 
     {
       "savefilename" : "demo.mjson",

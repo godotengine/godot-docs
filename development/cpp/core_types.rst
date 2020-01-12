@@ -79,7 +79,7 @@ should not be used. Instead, a few other ones are provided.
 
 For C-style allocation, Godot provides a few macros:
 
-.. code:: cpp
+.. code-block:: none
 
     memalloc()
     memrealloc()
@@ -90,7 +90,7 @@ library.
 
 For C++-style allocation, special macros are provided:
 
-.. code:: cpp
+.. code-block:: none
 
     memnew( Class / Class(args) )
     memdelete( instance )
@@ -152,7 +152,7 @@ pointers, like this:
 .. code:: cpp
 
     for(List<int>::Element *E=somelist.front();E;E=E->next()) {
-        print_line(E->get()); //print the element
+        print_line(E->get()); // print the element
     }
 
 The Vector<> class also has a few nice features:
