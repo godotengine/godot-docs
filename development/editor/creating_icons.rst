@@ -16,7 +16,7 @@ For instance, you can use the open-source `Inkscape <https://inkscape.org/>`_ ed
 
 Clone the ``godot-design`` repository containing all the original editor icons:
 
-   .. code:: bash
+   .. code-block:: bash
 
        git clone https://github.com/godotengine/godot-design
 
@@ -58,7 +58,7 @@ optimized before being added to the engine, to do so:
 
 2. Run the ``optimize.py`` script. You must have the ``scour`` package installed:
 
-   .. code:: bash
+   .. code-block:: bash
 
        pip install scour
        cd godot-design/engine/icons && ./optimize.py

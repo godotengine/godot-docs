@@ -285,7 +285,7 @@ The script must inherit from SceneTree or MainLoop.
 
 Here is a simple example of how it works:
 
-.. code:: python
+.. code-block:: python
 
     #sayhello.gd
     extends SceneTree

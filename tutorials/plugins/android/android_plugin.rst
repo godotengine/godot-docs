@@ -168,7 +168,7 @@ any additional resources you have provided for the module will be in the
 
 A singleton object template follows:
 
-.. code:: java
+.. code-block:: java
 
     package org.godotengine.godot;
 
@@ -246,7 +246,7 @@ passed to Java.
 From Java, use the ``calldeferred`` function to communicate back with Godot.
 Java will most likely run in a separate thread, so calls are deferred:
 
-.. code:: java
+.. code-block:: java
 
     GodotLib.calldeferred(<instanceid>, "<function>", new Object[]{param1, param2, etc});
 

@@ -11,7 +11,7 @@ inherit directly or indirectly from it. Objects provide reflection and
 editable properties, and declaring them is a matter of using a single
 macro like this.
 
-.. code:: cpp
+.. code-block:: cpp
 
     class CustomObject : public Object {
 
@@ -20,7 +20,7 @@ macro like this.
 
 This makes Objects gain a lot of functionality, like for example
 
-.. code:: cpp
+.. code-block:: cpp
 
     obj = memnew(CustomObject);
     print_line("Object class: ", obj->get_class()); // print object class
@@ -41,7 +41,7 @@ their methods properties and integer constants.
 
 Classes are registered by calling:
 
-.. code:: cpp
+.. code-block:: cpp
 
     ClassDB::register_class<MyCustomClass>()
 
@@ -50,7 +50,7 @@ creating them again when deserializing.
 
 Registering as virtual is the same but it can't be instanced.
 
-.. code:: cpp
+.. code-block:: cpp
 
     ClassDB::register_virtual_class<MyCustomClass>()
 
@@ -64,13 +64,13 @@ virtual automatically.
 Inside ``_bind_methods``, there are a couple of things that can be done.
 Registering functions is one:
 
-.. code:: cpp
+.. code-block:: cpp
 
     ClassDB::register_method(D_METHOD("methodname", "arg1name", "arg2name"), &MyCustomMethod);
 
 Default values for arguments can be passed in reverse order:
 
-.. code:: cpp
+.. code-block:: cpp
 
     ClassDB::register_method(D_METHOD("methodname", "arg1name", "arg2name"), &MyCustomType::method, DEFVAL(-1)); // default value for arg2name
 
@@ -95,7 +95,7 @@ Constants
 
 Classes often have enums such as:
 
-.. code:: cpp
+.. code-block:: cpp
 
     enum SomeMode {
        MODE_FIRST,
@@ -105,13 +105,13 @@ Classes often have enums such as:
 For these to work when binding to methods, the enum must be declared
 convertible to int, for this a macro is provided:
 
-.. code:: cpp
+.. code-block:: cpp
 
     VARIANT_ENUM_CAST(MyClass::SomeMode); // now functions that take SomeMode can be bound.
 
 The constants can also be bound inside ``_bind_methods``, by using:
 
-.. code:: cpp
+.. code-block:: cpp
 
     BIND_CONSTANT(MODE_FIRST);
     BIND_CONSTANT(MODE_SECOND);
@@ -127,13 +127,13 @@ Objects export properties, properties are useful for the following:
 Properties are usually defined by the PropertyInfo() class. Usually
 constructed as:
 
-.. code:: cpp
+.. code-block:: cpp
 
     PropertyInfo(type, name, hint, hint_string, usage_flags)
 
 For example:
 
-.. code:: cpp
+.. code-block:: cpp
 
     PropertyInfo(Variant::INT, "amount", PROPERTY_HINT_RANGE, "0,49,1", PROPERTY_USAGE_EDITOR)
 
@@ -143,7 +143,7 @@ from 0 to 49 in steps of 1 (integers). It is only usable for the editor
 
 Another example:
 
-.. code:: cpp
+.. code-block:: cpp
 
     PropertyInfo(Variant::STRING, "modes", PROPERTY_HINT_ENUM, "Enabled,Disabled,Turbo")
 
@@ -163,7 +163,7 @@ impossible unless using operator [].
 From ``_bind_methods()``, properties can be created and bound as long as
 set/get functions exist. Example:
 
-.. code:: cpp
+.. code-block:: cpp
 
     ADD_PROPERTY(PropertyInfo(Variant::INT, "amount"), "set_amount", "get_amount")
 
@@ -180,7 +180,7 @@ they are NOT virtual, DO NOT make them virtual, they are called for
 every override and the previous ones are not invalidated (multilevel
 call).
 
-.. code:: cpp
+.. code-block:: cpp
 
     void _get_property_info(List<PropertyInfo> *r_props); // return list of properties
     bool _get(const StringName &p_property, Variant &r_value) const; // return true if property was found
@@ -195,7 +195,7 @@ Dynamic casting
 Godot provides dynamic casting between Object-derived classes, for
 example:
 
-.. code:: cpp
+.. code-block:: cpp
 
     void somefunc(Object *some_obj) {
 
@@ -213,7 +213,7 @@ Signals
 Objects can have a set of signals defined (similar to Delegates in other
 languages). Connecting to them is rather easy:
 
-.. code:: cpp
+.. code-block:: cpp
 
     obj->connect(<signal>, target_instance, target_method)
     // for example:
@@ -225,7 +225,7 @@ The method ``_node_entered_tree`` must be registered to the class using
 Adding signals to a class is done in ``_bind_methods``, using the
 ``ADD_SIGNAL`` macro, for example:
 
-.. code:: cpp
+.. code-block:: cpp
 
     ADD_SIGNAL(MethodInfo("been_killed"))
 
@@ -236,7 +236,7 @@ References
 reference count. It is the base for reference counted object types.
 Declaring them must be done using Ref<> template. For example:
 
-.. code:: cpp
+.. code-block:: cpp
 
     class MyReference: public Reference {
         GDCLASS(MyReference, Reference);
@@ -273,7 +273,7 @@ Resource loading
 
 Resources can be loaded with the ResourceLoader API, like this:
 
-.. code:: cpp
+.. code-block:: cpp
 
     Ref<Resource> res = ResourceLoader::load("res://someresource.res")
 
@@ -294,7 +294,7 @@ Resource saving
 
 Saving a resource can be done with the resource saver API:
 
-.. code:: cpp
+.. code-block:: cpp
 
     ResourceSaver::save("res://someresource.res", instance)
 

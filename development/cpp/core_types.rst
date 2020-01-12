@@ -107,18 +107,18 @@ For dynamic memory, the PoolVector<> template is provided. PoolVector is a
 standard vector class, and is very similar to vector in the C++ standard library.
 To create a PoolVector buffer, use this:
 
-.. code:: cpp
+.. code-block:: cpp
 
     PoolVector<int> data;
 
 PoolVector can be accessed using the [] operator and a few helpers exist for this:
 
-.. code:: cpp
+.. code-block:: cpp
 
     PoolVector<int>::Read r = data.read()
     int someint = r[4]
 
-.. code:: cpp
+.. code-block:: cpp
 
     PoolVector<int>::Write w = data.write()
     w[4] = 22;
@@ -149,7 +149,7 @@ in C++ are often inlined and make the binary size much fatter, both in
 debug symbols and code. List, Set and Map can be iterated using
 pointers, like this:
 
-.. code:: cpp
+.. code-block:: cpp
 
     for(List<int>::Element *E=somelist.front();E;E=E->next()) {
         print_line(E->get()); // print the element

@@ -54,7 +54,7 @@ located):
 
 Inside we will create a simple summator class:
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* summator.h */
 
@@ -83,7 +83,7 @@ Inside we will create a simple summator class:
 
 And then the cpp file.
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* summator.cpp */
 
@@ -121,7 +121,7 @@ need to be created:
 
 With the following contents:
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* register_types.h */
 
@@ -129,7 +129,7 @@ With the following contents:
     void unregister_summator_types();
     /* yes, the word in the middle must be the same as the module folder name */
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* register_types.cpp */
 
@@ -149,7 +149,7 @@ With the following contents:
 Next, we need to create a ``SCsub`` file so the build system compiles
 this module:
 
-.. code:: python
+.. code-block:: python
 
     # SCsub
 
@@ -160,7 +160,7 @@ this module:
 With multiple sources, you can also add each file individually to a Python
 string list:
 
-.. code:: python
+.. code-block:: python
 
     src_list = ["summator.cpp", "other.cpp", "etc.cpp"]
     env.add_source_files(env.modules_sources, src_list)
@@ -172,7 +172,7 @@ with Godot by default for examples.
 To add include directories for the compiler to look at you can append it to the
 environment's paths:
 
-.. code:: python
+.. code-block:: python
 
     env.Append(CPPPATH=["mylib/include"]) # this is a relative path
     env.Append(CPPPATH=["#myotherlib/include"]) # this is an 'absolute' path
@@ -181,7 +181,7 @@ If you want to add custom compiler flags when building your module, you need to 
 `env` first, so it won't add those flags to whole Godot build (which can cause errors).
 Example `SCsub` with custom flags:
 
-.. code:: python
+.. code-block:: python
 
     # SCsub
 
@@ -195,7 +195,7 @@ Example `SCsub` with custom flags:
 And finally, the configuration file for the module, this is a simple
 python script that must be named ``config.py``:
 
-.. code:: python
+.. code-block:: python
 
     # config.py
 
@@ -266,7 +266,7 @@ long and costly part.
 The solution to avoid such a cost is to build our own module as a shared
 library that will be dynamically loaded when starting our game's binary.
 
-.. code:: python
+.. code-block:: python
 
     # SCsub
 
@@ -314,7 +314,7 @@ module as shared library (for development) or as a part of the Godot binary
 (for release). To do that we can define a custom flag to be passed to SCons
 using the `ARGUMENT` command:
 
-.. code:: python
+.. code-block:: python
 
     # SCsub
 
@@ -367,7 +367,7 @@ There are several steps in order to setup custom docs for the module:
 
 2. Append the following code snippet to ``config.py``:
 
-   .. code:: python
+   .. code-block:: python
 
        def get_doc_classes():
            return [
@@ -438,7 +438,7 @@ Once you've created your icon(s), proceed with the following steps:
 If you'd like to store your icons somewhere else within your module,
 add the following code snippet to ``config.py`` to override the default path:
 
-   .. code:: python
+   .. code-block:: python
 
        def get_icons_path():
            return "path/to/icons"
