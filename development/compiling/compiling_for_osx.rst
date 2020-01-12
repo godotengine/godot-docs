@@ -26,7 +26,7 @@ Start a terminal, go to the root dir of the engine source code and type:
 
 ::
 
-    user@host:~/godot$ scons platform=osx
+    scons platform=osx --jobs=$(sysctl -n hw.logicalcpu)
 
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
