@@ -481,7 +481,7 @@ Summing it up
 
 Here is the GDScript sample code:
 
-.. code::
+::
 
     extends Node
 

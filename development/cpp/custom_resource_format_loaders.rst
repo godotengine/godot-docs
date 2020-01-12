@@ -265,7 +265,7 @@ Loading it on GDScript
       ]
     }
 
-.. code::
+::
 
     extends Node
 

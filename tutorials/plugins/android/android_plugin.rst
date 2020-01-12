@@ -264,7 +264,7 @@ The module should include the full Java path. For our example: ``org/godotengine
 
 Then, from your script:
 
-.. code::
+::
 
     if Engine.has_singleton("MySingleton"):
         var singleton = Engine.get_singleton("MySingleton")

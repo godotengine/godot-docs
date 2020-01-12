@@ -75,7 +75,7 @@ Using C# from GDScript doesn't need much work. Once loaded
 (see :ref:`doc_gdscript_classes_as_resources`) the script can be instantiated
 with :ref:`new() <class_CSharpScript_method_new>`.
 
-.. code-block:: gdscript
+::
 
     var my_csharp_script = load("res://path_to_cs_file.cs")
     var my_csharp_node = my_csharp_script.new()
@@ -116,7 +116,7 @@ Accessing C# fields from GDScript
 Accessing C# fields from GDScript is straightforward, you shouldn't have
 anything to worry about.
 
-.. code-block:: gdscript
+::
 
     print(my_csharp_node.str1) # bar
     my_csharp_node.str1 = "BAR"
@@ -160,7 +160,7 @@ marshalling process will do its best to cast your the arguments to match
 function signatures.
 If that's impossible you'll see the following error: ``Invalid call. Nonexistent function `FunctionName```.
 
-.. code-block:: gdscript
+::
 
     my_csharp_node.PrintNodeName(self) # myGDScriptNode
     # my_csharp_node.PrintNodeName() # This line will fail.
