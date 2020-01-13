@@ -382,7 +382,7 @@ Vector built-in types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D vector type containing ``x`` and ``y`` fields. Can also be
-accessed as array.
+accessed as an array.
 
 :ref:`Rect2 <class_Rect2>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
