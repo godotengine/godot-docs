@@ -308,7 +308,7 @@ The exception is topics that explain static typing concepts to users.
 
 ::
 
-    func choose(arguments: Array): 
+    func choose(arguments: Array):
         # Chooses one of the arguments from array with equal chances
         randomize()
         var size := arguments.size()
@@ -326,6 +326,40 @@ The exception is topics that explain static typing concepts to users.
         var choice = randi() % size
         return arguments[choice]
 
+Use real working code examples where appropriate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Real-world examples are more accessible to beginners. In addition you can copy them directly
+from your own projects ensuring that any code snippet compiles without errors.
+Writing ``var speed = 10`` rather than ``var my_var = 10`` allows beginners to understand code better.
+It gives them a frame of reference as to where the code snippets could be used in a live project.
+
+**Don't** write made up examples:
+
+::
+
+    onready var a = preload("res://MyPath")
+    onready var my_node = $MyNode
+
+
+    func foo():
+        # Do stuff
+
+**Do** write concrete examples:
+
+::
+
+    onready var sfx_player_gun = preload("res://Assets/Sound/SFXPlayerGun.ogg")
+    onready var audio_player = $Audio/AudioStreamPlayer
+
+
+    func play_shooting_sound():
+        audio_player.stream = sfx_player_gun
+        audio_player.play()
+
+Of course  there will be times when using live project example is not practical.
+In those situations you should still avoid using names such as ``my_var``, ``foo()`` or ``my_func()``
+and should consider more meaningful names for your examples.
 
 Give an overview of the node in the brief description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
