@@ -30,7 +30,66 @@ Methods
 Description
 -----------
 
-Boolean built-in type.
+Boolean (pronounced BOOL-ee-an) is built-in type. It can represent any data 
+type that is either a true or false value. You can think of it as on or off 
+(1 or 0) switch. It's often used as part of programming logic in condition 
+statements like `if` statements.
+
+**For example**:
+
+::
+
+    var can_shoot = true # Assigns true value to can_shoot
+
+
+    func shoot():
+        if can_shoot:
+            # Perform shooting actions here
+
+As you can see above `if can_shoot` is equivalent of `if can_shoot == true`. 
+It is good practice to follow the natural spoken language structure when possible. 
+Use `if can_shoot` rather than `if can_shoot == true` and use `if not can_shoot` 
+rather than `if can_shoot == false`.
+
+You can use booleans to create more complex logic **for example**:
+
+::
+
+    var can_shoot = true # Assigns true values to can_shoot
+
+
+    func shoot():
+        if can_shoot and Input.is_action_pressed("shoot"):
+            create_bullet()
+
+Please note that `Input.is_action_pressed("shoot")` is also a boolean that is 
+true when "shoot" is pressed and false when `shoot` isn't pressed.
+
+The above code will only create a bullet if both condition are met action "shoot" is pressed 
+and if can_shoot is true. One of practical use cases could be implementing a 
+cool down on player weapon. 
+
+For example above code could be **expanded further to**:
+
+::
+
+    var can_shoot = true # Assigns true values to can_shoot
+    on ready var cool_down = $CoolDownTimer
+
+
+    func shoot():
+        if can_shoot and Input.is_action_pressed("shoot"):
+            create_bullet()
+            can_shoot = false
+            cool_down.start
+
+
+    func _on_CoolDownTimer_timeout():
+        can_shoot = true
+
+The code above will set can_shoot to false and start a timer. This will 
+prevent player from shooting until timer runs out. Next can_shoot will be set 
+to true again allowing player to shoot once again.
 
 Method Descriptions
 -------------------
