@@ -326,15 +326,18 @@ The exception is topics that explain static typing concepts to users.
         var choice = randi() % size
         return arguments[choice]
 
-Use real working code examples where appropriate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use real-world code examples where appropriate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Real-world examples are more accessible to beginners. In addition you can copy them directly
-from your own projects ensuring that any code snippet compiles without errors.
-Writing ``var speed = 10`` rather than ``var my_var = 10`` allows beginners to understand code better.
-It gives them a frame of reference as to where the code snippets could be used in a live project.
+Real-world examples are more accessible to beginners than abstract ``foos`` and
+``bars``. You can also copy them directly from your game projects, ensuring that
+any code snippet compiles without errors.
 
-**Don't** write made up examples:
+Writing ``var speed = 10`` rather than ``var my_var = 10`` allows beginners to
+understand code better. It gives them a frame of reference as to where they
+could use the code snippets in a live project.
+
+**Don't** write made-up examples:
 
 ::
 
@@ -357,9 +360,9 @@ It gives them a frame of reference as to where the code snippets could be used i
         audio_player.stream = sfx_player_gun
         audio_player.play()
 
-Of course  there will be times when using live project example is not practical.
-In those situations you should still avoid using names such as ``my_var``, ``foo()`` or ``my_func()``
-and should consider more meaningful names for your examples.
+Of course, there are times when using real-world examples is impractical. In
+those situations, you should still avoid using names such as ``my_var``,
+``foo()`` or ``my_func()`` and consider more meaningful names for your examples.
 
 Give an overview of the node in the brief description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
