@@ -153,12 +153,12 @@ version that matches your version of Godot.
 Export presets
 --------------
 
-Next, you can configure the export settings by clicking on *Project -> Export*:
-
-.. image:: img/export_presets_window.png
+Next, you can configure the export settings by clicking on *Project -> Export*.
 
 Create a new export preset by clicking "Add..." and selecting a platform. You
 can make as many presets as you like with different settings.
+
+.. image:: img/export_presets_window.png
 
 At the bottom of the window are two buttons. "Export PCK/ZIP" only creates
 a packed version of your project's data. This doesn't include an executable
