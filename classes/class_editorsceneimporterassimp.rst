@@ -11,11 +11,6 @@ EditorSceneImporterAssimp
 
 **Inherits:** :ref:`EditorSceneImporter<class_EditorSceneImporter>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Multi-format 3D asset importer based on `Assimp <http://assimp.org/>`_.
 
 Description

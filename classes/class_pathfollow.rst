@@ -11,12 +11,14 @@ PathFollow
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Point sampler for a :ref:`Path<class_Path>`.
+
+Description
+-----------
+
+This node takes its parent :ref:`Path<class_Path>`, and returns the coordinates of a point within it, given a distance from the first vertex.
+
+It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting an offset in this node.
 
 Properties
 ----------
@@ -63,13 +65,6 @@ enum **RotationMode**:
 - **ROTATION_XYZ** = **3** --- Allows the PathFollow to rotate in any axis.
 
 - **ROTATION_ORIENTED** = **4** --- Uses the up vector information in a :ref:`Curve3D<class_Curve3D>` to enforce orientation. This rotation mode requires the :ref:`Path<class_Path>`'s :ref:`Curve3D.up_vector_enabled<class_Curve3D_property_up_vector_enabled>` property to be set to ``true``.
-
-Description
------------
-
-This node takes its parent :ref:`Path<class_Path>`, and returns the coordinates of a point within it, given a distance from the first vertex.
-
-It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting an offset in this node.
 
 Property Descriptions
 ---------------------

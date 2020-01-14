@@ -11,12 +11,14 @@ Path2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Contains a :ref:`Curve2D<class_Curve2D>` path for :ref:`PathFollow2D<class_PathFollow2D>` nodes to follow.
+
+Description
+-----------
+
+Can have :ref:`PathFollow2D<class_PathFollow2D>` child nodes moving along the :ref:`Curve2D<class_Curve2D>`. See :ref:`PathFollow2D<class_PathFollow2D>` for more information on usage.
+
+**Note:** The path is considered as relative to the moved nodes (children of :ref:`PathFollow2D<class_PathFollow2D>`). As such, the curve should usually start with a zero vector (``(0, 0)``).
 
 Properties
 ----------
@@ -26,13 +28,6 @@ Properties
 +-------------------------------+-------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`     | self_modulate                             | **O:** Color( 0.5, 0.6, 1, 0.7 ) |
 +-------------------------------+-------------------------------------------+----------------------------------+
-
-Description
------------
-
-Can have :ref:`PathFollow2D<class_PathFollow2D>` child nodes moving along the :ref:`Curve2D<class_Curve2D>`. See :ref:`PathFollow2D<class_PathFollow2D>` for more information on usage.
-
-**Note:** The path is considered as relative to the moved nodes (children of :ref:`PathFollow2D<class_PathFollow2D>`). As such, the curve should usually start with a zero vector (``(0, 0)``).
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,14 @@ RemoteTransform
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 RemoteTransform pushes its own :ref:`Transform<class_Transform>` to another :ref:`Spatial<class_Spatial>` derived Node in the scene.
+
+Description
+-----------
+
+RemoteTransform pushes its own :ref:`Transform<class_Transform>` to another :ref:`Spatial<class_Spatial>` derived Node (called the remote node) in the scene.
+
+It can be set to update another Node's position, rotation and/or scale. It can use either global or local coordinates.
 
 Properties
 ----------
@@ -39,13 +41,6 @@ Methods
 +------+----------------------------------------------------------------------------------------+
 | void | :ref:`force_update_cache<class_RemoteTransform_method_force_update_cache>` **(** **)** |
 +------+----------------------------------------------------------------------------------------+
-
-Description
------------
-
-RemoteTransform pushes its own :ref:`Transform<class_Transform>` to another :ref:`Spatial<class_Spatial>` derived Node (called the remote node) in the scene.
-
-It can be set to update another Node's position, rotation and/or scale. It can use either global or local coordinates.
 
 Property Descriptions
 ---------------------

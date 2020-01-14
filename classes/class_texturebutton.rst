@@ -11,12 +11,14 @@ TextureButton
 
 **Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Texture-based button. Supports Pressed, Hover, Disabled and Focused states.
+
+Description
+-----------
+
+``TextureButton`` has the same functionality as :ref:`Button<class_Button>`, except it uses sprites instead of Godot's :ref:`Theme<class_Theme>` resource. It is faster to create, but it doesn't support localization like more complex :ref:`Control<class_Control>`\ s.
+
+The "normal" state must contain a texture (:ref:`texture_normal<class_TextureButton_property_texture_normal>`); other textures are optional.
 
 Properties
 ----------
@@ -73,13 +75,6 @@ enum **StretchMode**:
 - **STRETCH_KEEP_ASPECT_CENTERED** = **5** --- Scale the texture to fit the node's bounding rectangle, center it, and maintain its aspect ratio.
 
 - **STRETCH_KEEP_ASPECT_COVERED** = **6** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
-
-Description
------------
-
-``TextureButton`` has the same functionality as :ref:`Button<class_Button>`, except it uses sprites instead of Godot's :ref:`Theme<class_Theme>` resource. It is faster to create, but it doesn't support localization like more complex :ref:`Control<class_Control>`\ s.
-
-The "normal" state must contain a texture (:ref:`texture_normal<class_TextureButton_property_texture_normal>`); other textures are optional.
 
 Property Descriptions
 ---------------------

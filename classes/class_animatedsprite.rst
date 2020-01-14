@@ -11,12 +11,12 @@ AnimatedSprite
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Sprite node that can use multiple textures for animation.
+
+Description
+-----------
+
+Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
 
 Properties
 ----------
@@ -68,11 +68,6 @@ Emitted when the animation is finished (when it plays the last frame). If the an
 - **frame_changed** **(** **)**
 
 Emitted when :ref:`frame<class_AnimatedSprite_property_frame>` changed.
-
-Description
------------
-
-Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
 
 Property Descriptions
 ---------------------

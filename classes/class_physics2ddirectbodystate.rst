@@ -13,12 +13,17 @@ Physics2DDirectBodyState
 
 **Inherited By:** :ref:`Physics2DDirectBodyStateSW<class_Physics2DDirectBodyStateSW>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Direct access object to a physics body in the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+Description
+-----------
+
+Provides direct access to a physics body in the :ref:`Physics2DServer<class_Physics2DServer>`, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid/character bodies, and is intended for changing the direct state of that body. See :ref:`RigidBody2D._integrate_forces<class_RigidBody2D_method__integrate_forces>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/ray-casting`
 
 Properties
 ----------
@@ -87,16 +92,6 @@ Methods
 +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`integrate_forces<class_Physics2DDirectBodyState_method_integrate_forces>` **(** **)**                                                                                           |
 +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Provides direct access to a physics body in the :ref:`Physics2DServer<class_Physics2DServer>`, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid/character bodies, and is intended for changing the direct state of that body. See :ref:`RigidBody2D._integrate_forces<class_RigidBody2D_method__integrate_forces>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/ray-casting`
 
 Property Descriptions
 ---------------------

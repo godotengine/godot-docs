@@ -13,12 +13,12 @@ Font
 
 **Inherited By:** :ref:`BitmapFont<class_BitmapFont>`, :ref:`DynamicFont<class_DynamicFont>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Internationalized font and text drawing support.
+
+Description
+-----------
+
+Font contains a Unicode-compatible character set, as well as the ability to draw it with variable width, ascent, descent and kerning. For creating fonts from TTF files (or other font formats), see the editor support for fonts.
 
 Methods
 -------
@@ -44,11 +44,6 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`update_changes<class_Font_method_update_changes>` **(** **)**                                                                                                                                                                                                                                                          |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Font contains a Unicode-compatible character set, as well as the ability to draw it with variable width, ascent, descent and kerning. For creating fonts from TTF files (or other font formats), see the editor support for fonts.
 
 Method Descriptions
 -------------------
@@ -110,6 +105,8 @@ Returns the size of a string, taking kerning and advance into account.
 .. _class_Font_method_has_outline:
 
 - :ref:`bool<class_bool>` **has_outline** **(** **)** const
+
+Returns ``true`` if the font has an outline.
 
 ----
 

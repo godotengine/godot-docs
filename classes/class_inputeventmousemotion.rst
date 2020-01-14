@@ -11,12 +11,17 @@ InputEventMouseMotion
 
 **Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event type for mouse motion events.
+
+Description
+-----------
+
+Contains mouse and pen motion information. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node_method__input>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
 
 Properties
 ----------
@@ -30,16 +35,6 @@ Properties
 +-------------------------------+----------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`tilt<class_InputEventMouseMotion_property_tilt>`         | Vector2( 0, 0 ) |
 +-------------------------------+----------------------------------------------------------------+-----------------+
-
-Description
------------
-
-Contains mouse and pen motion information. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node_method__input>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
 
 Property Descriptions
 ---------------------

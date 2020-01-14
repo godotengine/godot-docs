@@ -13,12 +13,12 @@ Mesh
 
 **Inherited By:** :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`PrimitiveMesh<class_PrimitiveMesh>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A :ref:`Resource<class_Resource>` that contains vertex array-based geometry.
+
+Description
+-----------
+
+Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
 
 Properties
 ----------
@@ -242,11 +242,6 @@ enum **ArrayType**:
 - **ARRAY_INDEX** = **8** --- Array of indices.
 
 - **ARRAY_MAX** = **9** --- Represents the size of the :ref:`ArrayType<enum_Mesh_ArrayType>` enum.
-
-Description
------------
-
-Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
 
 Property Descriptions
 ---------------------

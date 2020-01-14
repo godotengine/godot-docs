@@ -11,12 +11,12 @@ HSplitContainer
 
 **Inherits:** :ref:`SplitContainer<class_SplitContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Horizontal split container.
+
+Description
+-----------
+
+Horizontal split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from left to right.
 
 Theme Properties
 ----------------
@@ -30,9 +30,4 @@ Theme Properties
 +---------------------------------+------------+----+
 | :ref:`int<class_int>`           | separation | 12 |
 +---------------------------------+------------+----+
-
-Description
------------
-
-Horizontal split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from left to right.
 

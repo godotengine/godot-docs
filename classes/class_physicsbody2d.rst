@@ -13,12 +13,17 @@ PhysicsBody2D
 
 **Inherited By:** :ref:`KinematicBody2D<class_KinematicBody2D>`, :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`StaticBody2D<class_StaticBody2D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all objects affected by physics in 2D space.
+
+Description
+-----------
+
+PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
 
 Properties
 ----------
@@ -51,16 +56,6 @@ Methods
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_collision_mask_bit<class_PhysicsBody2D_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/physics_introduction`
 
 Property Descriptions
 ---------------------

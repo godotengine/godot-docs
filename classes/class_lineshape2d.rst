@@ -11,12 +11,12 @@ LineShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Line shape for 2D collisions.
+
+Description
+-----------
+
+Line shape for 2D collisions. It works like a 2D plane and will not allow any physics body to go to the negative side. Not recommended for rigid bodies, and usually not recommended for static bodies either because it forces checks against it on every frame.
 
 Properties
 ----------
@@ -26,11 +26,6 @@ Properties
 +-------------------------------+--------------------------------------------------+------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`normal<class_LineShape2D_property_normal>` | Vector2( 0, -1 ) |
 +-------------------------------+--------------------------------------------------+------------------+
-
-Description
------------
-
-Line shape for 2D collisions. It works like a 2D plane and will not allow any physics body to go to the negative side. Not recommended for rigid bodies, and usually not recommended for static bodies either because it forces checks against it on every frame.
 
 Property Descriptions
 ---------------------

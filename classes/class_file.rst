@@ -11,12 +11,34 @@ File
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Type to handle file reading and writing operations.
+
+Description
+-----------
+
+File type. This is used to permanently store data into the user device's file system and to read from it. This can be used to store game save data or player configuration files, for example.
+
+Here's a sample on how to write and read from a file:
+
+::
+
+    func save(content):
+        var file = File.new()
+        file.open("user://save_game.dat", File.WRITE)
+        file.store_string(content)
+        file.close()
+    
+    func load():
+        var file = File.new()
+        file.open("user://save_game.dat", File.READ)
+        var content = file.get_as_text()
+        file.close()
+        return content
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/filesystem`
 
 Properties
 ----------
@@ -162,33 +184,6 @@ enum **CompressionMode**:
 - **COMPRESSION_ZSTD** = **2** --- Uses the `Zstandard <https://facebook.github.io/zstd/>`_ compression method.
 
 - **COMPRESSION_GZIP** = **3** --- Uses the `gzip <https://www.gzip.org/>`_ compression method.
-
-Description
------------
-
-File type. This is used to permanently store data into the user device's file system and to read from it. This can be used to store game save data or player configuration files, for example.
-
-Here's a sample on how to write and read from a file:
-
-::
-
-    func save(content):
-        var file = File.new()
-        file.open("user://save_game.dat", File.WRITE)
-        file.store_string(content)
-        file.close()
-    
-    func load():
-        var file = File.new()
-        file.open("user://save_game.dat", File.READ)
-        var content = file.get_as_text()
-        file.close()
-        return content
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/filesystem`
 
 Property Descriptions
 ---------------------

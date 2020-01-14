@@ -13,12 +13,12 @@ BoxContainer
 
 **Inherited By:** :ref:`ColorPicker<class_ColorPicker>`, :ref:`HBoxContainer<class_HBoxContainer>`, :ref:`VBoxContainer<class_VBoxContainer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for box containers.
+
+Description
+-----------
+
+Arranges child controls vertically or horizontally, and rearranges the controls automatically when their minimum size changes.
 
 Properties
 ----------
@@ -54,11 +54,6 @@ enum **AlignMode**:
 - **ALIGN_CENTER** = **1** --- Aligns children with the center of the container.
 
 - **ALIGN_END** = **2** --- Aligns children with the end of the container.
-
-Description
------------
-
-Arranges child controls vertically or horizontally, and rearranges the controls automatically when their minimum size changes.
 
 Property Descriptions
 ---------------------

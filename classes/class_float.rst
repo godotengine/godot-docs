@@ -9,12 +9,12 @@
 float
 =====
 
-**Category:** Built-In Types
+Float built-in type.
 
-Brief Description
------------------
+Description
+-----------
 
-Float built-in type
+Float built-in type.
 
 Methods
 -------
@@ -26,11 +26,6 @@ Methods
 +---------------------------+-------------------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`String<class_String>` from **)** |
 +---------------------------+-------------------------------------------------------------------------------------+
-
-Description
------------
-
-Float built-in type.
 
 Method Descriptions
 -------------------

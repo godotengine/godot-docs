@@ -11,12 +11,14 @@ FuncRef
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Reference to a function in an object.
+
+Description
+-----------
+
+In GDScript, functions are not *first-class objects*. This means it is impossible to store them directly as variables, return them from another function, or pass them as arguments.
+
+However, by creating a ``FuncRef`` using the :ref:`@GDScript.funcref<class_@GDScript_method_funcref>` function, a reference to a function in a given object can be created, passed around and called.
 
 Methods
 -------
@@ -32,13 +34,6 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_instance<class_FuncRef_method_set_instance>` **(** :ref:`Object<class_Object>` instance **)** |
 +-------------------------------+---------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-In GDScript, functions are not *first-class objects*. This means it is impossible to store them directly as variables, return them from another function, or pass them as arguments.
-
-However, by creating a ``FuncRef`` using the :ref:`@GDScript.funcref<class_@GDScript_method_funcref>` function, a reference to a function in a given object can be created, passed around and called.
 
 Method Descriptions
 -------------------

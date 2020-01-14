@@ -11,12 +11,21 @@ DynamicFont
 
 **Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 DynamicFont renders vector font files at runtime.
+
+Description
+-----------
+
+DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_BitmapFont>`. This trades the faster loading time of :ref:`BitmapFont<class_BitmapFont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_DynamicFontData>` is used for referencing the font file paths. DynamicFont also supports defining one or more fallbacks fonts, which will be used when displaying a character not supported by the main font.
+
+DynamicFont uses the `FreeType <https://www.freetype.org/>`_ library for rasterization.
+
+::
+
+    var dynamic_font = DynamicFont.new()
+    dynamic_font.font_data = load("res://BarlowCondensed-Bold.ttf")
+    dynamic_font.size = 64
+    $"Label".set("custom_fonts/font", dynamic_font)
 
 Properties
 ----------
@@ -84,20 +93,6 @@ enum **SpacingType**:
 - **SPACING_CHAR** = **2** --- Character spacing.
 
 - **SPACING_SPACE** = **3** --- Space spacing.
-
-Description
------------
-
-DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_BitmapFont>`. This trades the faster loading time of :ref:`BitmapFont<class_BitmapFont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_DynamicFontData>` is used for referencing the font file paths. DynamicFont also supports defining one or more fallbacks fonts, which will be used when displaying a character not supported by the main font.
-
-DynamicFont uses the `FreeType <https://www.freetype.org/>`_ library for rasterization.
-
-::
-
-    var dynamic_font = DynamicFont.new()
-    dynamic_font.font_data = load("res://BarlowCondensed-Bold.ttf")
-    dynamic_font.size = 64
-    $"Label".set("custom_fonts/font", dynamic_font)
 
 Property Descriptions
 ---------------------

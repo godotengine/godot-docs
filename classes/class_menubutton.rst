@@ -11,12 +11,12 @@ MenuButton
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
+
+Description
+-----------
+
+Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. That's pretty much all it does, as it's just a helper class when building GUIs.
 
 Properties
 ----------
@@ -79,11 +79,6 @@ Signals
 - **about_to_show** **(** **)**
 
 Emitted when :ref:`PopupMenu<class_PopupMenu>` of this MenuButton is about to show.
-
-Description
------------
-
-Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. That's pretty much all it does, as it's just a helper class when building GUIs.
 
 Property Descriptions
 ---------------------

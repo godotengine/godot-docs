@@ -11,12 +11,12 @@ OptionButton
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Button control that provides selectable options when pressed.
+
+Description
+-----------
+
+OptionButton is a type button that provides a selectable list of items when pressed. The item selected becomes the "current" item and is displayed as the button text.
 
 Properties
 ----------
@@ -125,11 +125,6 @@ Emitted the when user navigates to an item using the ``ui_up`` or ``ui_down`` ac
 - **item_selected** **(** :ref:`int<class_int>` id **)**
 
 Emitted when the current item has been changed by the user. The index of the item selected is passed as argument.
-
-Description
------------
-
-OptionButton is a type button that provides a selectable list of items when pressed. The item selected becomes the "current" item and is displayed as the button text.
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,16 @@ WebSocketServer
 
 **Inherits:** :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>` **<** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A WebSocket server implementation.
+
+Description
+-----------
+
+This class implements a WebSocket server that can also support the high-level multiplayer API.
+
+After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`). When clients connect, disconnect, or send data, you will receive the appropriate signal.
+
+**Note:** Not available in HTML5 exports.
 
 Properties
 ----------
@@ -82,15 +86,6 @@ Emitted when a client disconnects. ``was_clean_close`` will be ``true`` if the c
 Emitted when a new message is received.
 
 **Note:** This signal is *not* emitted when used as high-level multiplayer peer.
-
-Description
------------
-
-This class implements a WebSocket server that can also support the high-level multiplayer API.
-
-After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`). When clients connect, disconnect, or send data, you will receive the appropriate signal.
-
-**Note:** This class will not work in HTML5 exports due to browser restrictions.
 
 Property Descriptions
 ---------------------

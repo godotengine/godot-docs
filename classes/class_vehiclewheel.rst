@@ -11,12 +11,12 @@ VehicleWheel
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Physics object that simulates the behavior of a wheel.
+
+Description
+-----------
+
+This node needs to be used as a child node of :ref:`VehicleBody<class_VehicleBody>` and simulates the behavior of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.
 
 Properties
 ----------
@@ -61,11 +61,6 @@ Methods
 +---------------------------+---------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`is_in_contact<class_VehicleWheel_method_is_in_contact>` **(** **)** const |
 +---------------------------+---------------------------------------------------------------------------------+
-
-Description
------------
-
-This node needs to be used as a child node of :ref:`VehicleBody<class_VehicleBody>` and simulates the behavior of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.
 
 Property Descriptions
 ---------------------

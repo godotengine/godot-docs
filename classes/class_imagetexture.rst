@@ -11,12 +11,12 @@ ImageTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`.
+
+Description
+-----------
+
+A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`. Can be created from an :ref:`Image<class_Image>` with :ref:`create_from_image<class_ImageTexture_method_create_from_image>`.
 
 Properties
 ----------
@@ -64,11 +64,6 @@ enum **Storage**:
 - **STORAGE_COMPRESS_LOSSY** = **1** --- :ref:`Image<class_Image>` data is compressed with a lossy algorithm. You can set the storage quality with :ref:`lossy_quality<class_ImageTexture_property_lossy_quality>`.
 
 - **STORAGE_COMPRESS_LOSSLESS** = **2** --- :ref:`Image<class_Image>` data is compressed with a lossless algorithm.
-
-Description
------------
-
-A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`. Can be created from an :ref:`Image<class_Image>` with :ref:`create_from_image<class_ImageTexture_method_create_from_image>`.
 
 Property Descriptions
 ---------------------

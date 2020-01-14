@@ -11,12 +11,12 @@ AudioStreamGenerator
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
 
 
+Tutorials
+---------
+
+- `https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator <https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator>`_
 
 Properties
 ----------
@@ -26,11 +26,6 @@ Properties
 +---------------------------+-------------------------------------------------------------------------+---------+
 | :ref:`float<class_float>` | :ref:`mix_rate<class_AudioStreamGenerator_property_mix_rate>`           | 44100.0 |
 +---------------------------+-------------------------------------------------------------------------+---------+
-
-Tutorials
----------
-
-- `https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator <https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator>`_
 
 Property Descriptions
 ---------------------

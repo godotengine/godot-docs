@@ -13,12 +13,12 @@ PacketPeer
 
 **Inherited By:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`, :ref:`WebSocketPeer<class_WebSocketPeer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Abstraction and base class for packet-based protocols.
+
+Description
+-----------
+
+PacketPeer is an abstraction and base class for packet-based protocols (such as UDP). It provides an API for sending and receiving packets both as raw data or variables. This makes it easy to transfer data over a protocol, without having to encode data as low-level bytes or having to worry about network ordering.
 
 Properties
 ----------
@@ -43,11 +43,6 @@ Methods
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`put_var<class_PacketPeer_method_put_var>` **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)** |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-PacketPeer is an abstraction and base class for packet-based protocols (such as UDP). It provides an API for sending and receiving packets both as raw data or variables. This makes it easy to transfer data over a protocol, without having to encode data as low-level bytes or having to worry about network ordering.
 
 Property Descriptions
 ---------------------

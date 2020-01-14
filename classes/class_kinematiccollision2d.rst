@@ -11,12 +11,14 @@ KinematicCollision2D
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Collision data for :ref:`KinematicBody2D<class_KinematicBody2D>` collisions.
+
+Description
+-----------
+
+Contains collision data for :ref:`KinematicBody2D<class_KinematicBody2D>` collisions. When a :ref:`KinematicBody2D<class_KinematicBody2D>` is moved using :ref:`KinematicBody2D.move_and_collide<class_KinematicBody2D_method_move_and_collide>`, it stops if it detects a collision with another body. If a collision is detected, a KinematicCollision2D object is returned.
+
+This object contains information about the collision, including the colliding object, the remaining motion, and the collision position. This information can be used to calculate a collision response.
 
 Properties
 ----------
@@ -44,13 +46,6 @@ Properties
 +-------------------------------+---------------------------------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`travel<class_KinematicCollision2D_property_travel>`                             | Vector2( 0, 0 ) |
 +-------------------------------+---------------------------------------------------------------------------------------+-----------------+
-
-Description
------------
-
-Contains collision data for :ref:`KinematicBody2D<class_KinematicBody2D>` collisions. When a :ref:`KinematicBody2D<class_KinematicBody2D>` is moved using :ref:`KinematicBody2D.move_and_collide<class_KinematicBody2D_method_move_and_collide>`, it stops if it detects a collision with another body. If a collision is detected, a KinematicCollision2D object is returned.
-
-This object contains information about the collision, including the colliding object, the remaining motion, and the collision position. This information can be used to calculate a collision response.
 
 Property Descriptions
 ---------------------

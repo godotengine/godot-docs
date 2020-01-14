@@ -11,12 +11,14 @@ InterpolatedCamera
 
 **Inherits:** :ref:`Camera<class_Camera>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Camera which moves toward another node.
+
+Description
+-----------
+
+InterpolatedCamera is a :ref:`Camera<class_Camera>` which smoothly moves to match a target node's position and rotation.
+
+If it is not :ref:`enabled<class_InterpolatedCamera_property_enabled>` or does not have a valid target set, InterpolatedCamera acts like a normal Camera.
 
 Properties
 ----------
@@ -35,13 +37,6 @@ Methods
 +------+--------------------------------------------------------------------------------------------------------------+
 | void | :ref:`set_target<class_InterpolatedCamera_method_set_target>` **(** :ref:`Object<class_Object>` target **)** |
 +------+--------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-InterpolatedCamera is a :ref:`Camera<class_Camera>` which smoothly moves to match a target node's position and rotation.
-
-If it is not :ref:`enabled<class_InterpolatedCamera_property_enabled>` or does not have a valid target set, InterpolatedCamera acts like a normal Camera.
 
 Property Descriptions
 ---------------------

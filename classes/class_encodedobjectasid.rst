@@ -11,19 +11,7 @@ EncodedObjectAsID
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Holds a reference to an :ref:`Object<class_Object>`'s instance ID.
-
-Properties
-----------
-
-+-----------------------+--------------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`object_id<class_EncodedObjectAsID_property_object_id>` | 0 |
-+-----------------------+--------------------------------------------------------------+---+
 
 Description
 -----------
@@ -31,6 +19,13 @@ Description
 Utility class which holds a reference to the internal identifier of an :ref:`Object<class_Object>` instance, as given by :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`. This ID can then be used to retrieve the object instance with :ref:`@GDScript.instance_from_id<class_@GDScript_method_instance_from_id>`.
 
 This class is used internally by the editor inspector and script debugger, but can also be used in plugins to pass and display objects as their IDs.
+
+Properties
+----------
+
++-----------------------+--------------------------------------------------------------+---+
+| :ref:`int<class_int>` | :ref:`object_id<class_EncodedObjectAsID_property_object_id>` | 0 |
++-----------------------+--------------------------------------------------------------+---+
 
 Property Descriptions
 ---------------------

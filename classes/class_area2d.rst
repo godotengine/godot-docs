@@ -11,12 +11,17 @@ Area2D
 
 **Inherits:** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 2D area for detection and 2D physics influence.
+
+Description
+-----------
+
+2D area that detects :ref:`CollisionObject2D<class_CollisionObject2D>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping).
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/using_area_2d`
 
 Properties
 ----------
@@ -171,16 +176,6 @@ enum **SpaceOverride**:
 - **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
 
 - **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in :ref:`priority<class_Area2D_property_priority>` order), but keeps calculating the rest of the areas.
-
-Description
------------
-
-2D area that detects :ref:`CollisionObject2D<class_CollisionObject2D>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping).
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/using_area_2d`
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,75 @@ HTTPRequest
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A node with the ability to send HTTP(S) requests.
+
+Description
+-----------
+
+A node with the ability to send HTTP requests. Uses :ref:`HTTPClient<class_HTTPClient>` internally.
+
+Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.
+
+**Example of contacting a REST API and printing one of its returned fields:**
+
+::
+
+    func _ready():
+        # Create an HTTP request node and connect its completion signal.
+        var http_request = HTTPRequest.new()
+        add_child(http_request)
+        http_request.connect("request_completed", self, "_http_request_completed")
+    
+        # Perform the HTTP request. The URL below returns some JSON as of writing.
+        var error = http_request.request("https://httpbin.org/get")
+        if error != OK:
+            push_error("An error occurred in the HTTP request.")
+    
+    
+    # Called when the HTTP request is completed.
+    func _http_request_completed(result, response_code, headers, body):
+        var response = parse_json(body.get_string_from_utf8())
+    
+        # Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
+        print(response.headers["User-Agent"])
+
+**Example of loading and displaying an image using HTTPRequest:**
+
+::
+
+    func _ready():
+        # Create an HTTP request node and connect its completion signal.
+        var http_request = HTTPRequest.new()
+        add_child(http_request)
+        http_request.connect("request_completed", self, "_http_request_completed")
+    
+        # Perform the HTTP request. The URL below returns a PNG image as of writing.
+        var error = http_request.request("https://via.placeholder.com/512")
+        if error != OK:
+            push_error("An error occurred in the HTTP request.")
+    
+    
+    # Called when the HTTP request is completed.
+    func _http_request_completed(result, response_code, headers, body):
+        var image = Image.new()
+        var error = image.load_png_from_buffer(body)
+        if error != OK:
+            push_error("Couldn't load the image.")
+    
+        var texture = ImageTexture.new()
+        texture.create_from_image(image)
+    
+        # Display the image in a TextureRect node.
+        var texture_rect = TextureRect.new()
+        add_child(texture_rect)
+        texture_rect.texture = texture
+
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/http_request_class`
+
+- :doc:`../tutorials/networking/ssl_certificates`
 
 Properties
 ----------
@@ -117,74 +180,6 @@ enum **Result**:
 - **RESULT_REDIRECT_LIMIT_REACHED** = **11** --- Request reached its maximum redirect limit, see :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`.
 
 - **RESULT_TIMEOUT** = **12**
-
-Description
------------
-
-A node with the ability to send HTTP requests. Uses :ref:`HTTPClient<class_HTTPClient>` internally.
-
-Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.
-
-**Example of contacting a REST API and printing one of its returned fields:**
-
-::
-
-    func _ready():
-        # Create an HTTP request node and connect its completion signal.
-        var http_request = HTTPRequest.new()
-        add_child(http_request)
-        http_request.connect("request_completed", self, "_http_request_completed")
-    
-        # Perform the HTTP request. The URL below returns some JSON as of writing.
-        var error = http_request.request("https://httpbin.org/get")
-        if error != OK:
-            push_error("An error occurred in the HTTP request.")
-    
-    
-    # Called when the HTTP request is completed.
-    func _http_request_completed(result, response_code, headers, body):
-        var response = parse_json(body.get_string_from_utf8())
-    
-        # Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
-        print(response.headers["User-Agent"])
-
-**Example of loading and displaying an image using HTTPRequest:**
-
-::
-
-    func _ready():
-        # Create an HTTP request node and connect its completion signal.
-        var http_request = HTTPRequest.new()
-        add_child(http_request)
-        http_request.connect("request_completed", self, "_http_request_completed")
-    
-        # Perform the HTTP request. The URL below returns a PNG image as of writing.
-        var error = http_request.request("https://via.placeholder.com/512")
-        if error != OK:
-            push_error("An error occurred in the HTTP request.")
-    
-    
-    # Called when the HTTP request is completed.
-    func _http_request_completed(result, response_code, headers, body):
-        var image = Image.new()
-        var error = image.load_png_from_buffer(body)
-        if error != OK:
-            push_error("Couldn't load the image.")
-    
-        var texture = ImageTexture.new()
-        texture.create_from_image(image)
-    
-        # Display the image in a TextureRect node.
-        var texture_rect = TextureRect.new()
-        add_child(texture_rect)
-        texture_rect.texture = texture
-
-Tutorials
----------
-
-- :doc:`../tutorials/networking/http_request_class`
-
-- :doc:`../tutorials/networking/ssl_certificates`
 
 Property Descriptions
 ---------------------

@@ -11,14 +11,14 @@ AudioEffectPitchShift
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a pitch-shifting audio effect to an Audio bus.
 
 Raises or lowers the pitch of original sound.
+
+Description
+-----------
+
+Allows modulation of pitch independently of tempo. All frequencies can be increased/decreased with minimal effect on transients.
 
 Properties
 ----------
@@ -61,11 +61,6 @@ enum **FFT_Size**:
 - **FFT_SIZE_4096** = **4**
 
 - **FFT_SIZE_MAX** = **5** --- Represents the size of the :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` enum.
-
-Description
------------
-
-Allows modulation of pitch independently of tempo. All frequencies can be increased/decreased with minimal effect on transients.
 
 Property Descriptions
 ---------------------

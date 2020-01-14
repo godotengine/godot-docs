@@ -11,12 +11,14 @@ VehicleBody
 
 **Inherits:** :ref:`RigidBody<class_RigidBody>` **<** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Physics body that simulates the behavior of a car.
+
+Description
+-----------
+
+This node implements all the physics logic needed to simulate a car. It is based on the raycast vehicle system commonly found in physics engines. You will need to add a :ref:`CollisionShape<class_CollisionShape>` for the main body of your vehicle and add :ref:`VehicleWheel<class_VehicleWheel>` nodes for the wheels. You should also add a :ref:`MeshInstance<class_MeshInstance>` to this node for the 3D model of your car but this model should not include meshes for the wheels. You should control the vehicle by using the :ref:`brake<class_VehicleBody_property_brake>`, :ref:`engine_force<class_VehicleBody_property_engine_force>`, and :ref:`steering<class_VehicleBody_property_steering>` properties and not change the position or orientation of this node directly.
+
+**Note:** The origin point of your VehicleBody will determine the center of gravity of your vehicle so it is better to keep this low and move the :ref:`CollisionShape<class_CollisionShape>` and :ref:`MeshInstance<class_MeshInstance>` upwards.
 
 Properties
 ----------
@@ -32,13 +34,6 @@ Properties
 +---------------------------+--------------------------------------------------------------+--------------+
 | :ref:`float<class_float>` | weight                                                       | **O:** 392.0 |
 +---------------------------+--------------------------------------------------------------+--------------+
-
-Description
------------
-
-This node implements all the physics logic needed to simulate a car. It is based on the raycast vehicle system commonly found in physics engines. You will need to add a :ref:`CollisionShape<class_CollisionShape>` for the main body of your vehicle and add :ref:`VehicleWheel<class_VehicleWheel>` nodes for the wheels. You should also add a :ref:`MeshInstance<class_MeshInstance>` to this node for the 3D model of your car but this model should not include meshes for the wheels. You should control the vehicle by using the :ref:`brake<class_VehicleBody_property_brake>`, :ref:`engine_force<class_VehicleBody_property_engine_force>`, and :ref:`steering<class_VehicleBody_property_steering>` properties and not change the position or orientation of this node directly.
-
-**Note:** The origin point of your VehicleBody will determine the center of gravity of your vehicle so it is better to keep this low and move the :ref:`CollisionShape<class_CollisionShape>` and :ref:`MeshInstance<class_MeshInstance>` upwards.
 
 Property Descriptions
 ---------------------

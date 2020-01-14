@@ -11,12 +11,21 @@ AnimationPlayer
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Container and player of :ref:`Animation<class_Animation>` resources.
+
+Description
+-----------
+
+An animation player is used for general-purpose playback of :ref:`Animation<class_Animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.
+
+Updating the target properties of animations occurs at process time.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/animations`
+
+- :doc:`../tutorials/animation/index`
 
 Properties
 ----------
@@ -159,20 +168,6 @@ enum **AnimationMethodCallMode**:
 - **ANIMATION_METHOD_CALL_DEFERRED** = **0** --- Batch method calls during the animation process, then do the calls after events are processed. This avoids bugs involving deleting nodes or modifying the AnimationPlayer while playing.
 
 - **ANIMATION_METHOD_CALL_IMMEDIATE** = **1** --- Make method calls immediately when reached in the animation.
-
-Description
------------
-
-An animation player is used for general-purpose playback of :ref:`Animation<class_Animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.
-
-Updating the target properties of animations occurs at process time.
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/animations`
-
-- :doc:`../tutorials/animation/index`
 
 Property Descriptions
 ---------------------

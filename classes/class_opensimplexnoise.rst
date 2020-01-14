@@ -11,12 +11,28 @@ OpenSimplexNoise
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Noise generator based on Open Simplex.
+
+Description
+-----------
+
+This resource allows you to configure and sample a fractal noise space. Here is a brief usage example that configures an OpenSimplexNoise and gets samples at various positions and dimensions:
+
+::
+
+    var noise = OpenSimplexNoise.new()
+    
+    # Configure
+    noise.seed = randi()
+    noise.octaves = 4
+    noise.period = 20.0
+    noise.persistence = 0.8
+    
+    # Sample
+    print("Values:")
+    print(noise.get_noise_2d(1.0, 1.0))
+    print(noise.get_noise_3d(0.5, 3.0, 15.0))
+    print(noise.get_noise_4d(0.5, 1.9, 4.7, 0.0))
 
 Properties
 ----------
@@ -53,27 +69,6 @@ Methods
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_Image>` | :ref:`get_seamless_image<class_OpenSimplexNoise_method_get_seamless_image>` **(** :ref:`int<class_int>` size **)**                                                                             |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-This resource allows you to configure and sample a fractal noise space. Here is a brief usage example that configures an OpenSimplexNoise and gets samples at various positions and dimensions:
-
-::
-
-    var noise = OpenSimplexNoise.new()
-    
-    # Configure
-    noise.seed = randi()
-    noise.octaves = 4
-    noise.period = 20.0
-    noise.persistence = 0.8
-    
-    # Sample
-    print("Values:")
-    print(noise.get_noise_2d(1.0, 1.0))
-    print(noise.get_noise_3d(0.5, 3.0, 15.0))
-    print(noise.get_noise_4d(0.5, 1.9, 4.7, 0.0))
 
 Property Descriptions
 ---------------------

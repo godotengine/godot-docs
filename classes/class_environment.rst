@@ -11,12 +11,27 @@ Environment
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironment>`) that define multiple rendering options.
+
+Description
+-----------
+
+Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironment>`) that define multiple environment operations (such as background :ref:`Sky<class_Sky>` or :ref:`Color<class_Color>`, ambient light, fog, depth-of-field...). These parameters affect the final render of the scene. The order of these operations is:
+
+- Depth of Field Blur
+
+- Glow
+
+- Tonemap (Auto Exposure)
+
+- Adjustments
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/environment_and_post_processing`
+
+- :doc:`../tutorials/3d/high_dynamic_range`
 
 Properties
 ----------
@@ -223,19 +238,19 @@ Enumerations
 
 enum **BGMode**:
 
-- **BG_KEEP** = **5** --- Keep on screen every pixel drawn in the background.
+- **BG_KEEP** = **5** --- Keeps on screen every pixel drawn in the background. This is the fastest background mode, but it can only be safely used in fully-interior scenes (no visible sky or sky reflections). If enabled in a scene where the background is visible, "ghost trail" artifacts will be visible when moving the camera.
 
-- **BG_CLEAR_COLOR** = **0** --- Clear the background using the project's clear color.
+- **BG_CLEAR_COLOR** = **0** --- Clears the background using the clear color defined in :ref:`ProjectSettings.rendering/environment/default_clear_color<class_ProjectSettings_property_rendering/environment/default_clear_color>`.
 
-- **BG_COLOR** = **1** --- Clear the background using a custom clear color.
+- **BG_COLOR** = **1** --- Clears the background using a custom clear color.
 
-- **BG_SKY** = **2** --- Display a user-defined sky in the background.
+- **BG_SKY** = **2** --- Displays a user-defined sky in the background.
 
-- **BG_COLOR_SKY** = **3** --- Clear the background using a custom clear color and allows defining a sky for shading and reflection.
+- **BG_COLOR_SKY** = **3** --- Clears the background using a custom clear color and allows defining a sky for shading and reflection. This mode is slightly faster than :ref:`BG_SKY<class_Environment_constant_BG_SKY>` and should be preferred in scenes where reflections can be visible, but the sky itself never is (e.g. top-down camera).
 
-- **BG_CANVAS** = **4** --- Display a :ref:`CanvasLayer<class_CanvasLayer>` in the background.
+- **BG_CANVAS** = **4** --- Displays a :ref:`CanvasLayer<class_CanvasLayer>` in the background.
 
-- **BG_CAMERA_FEED** = **6** --- Display a camera feed in the background.
+- **BG_CAMERA_FEED** = **6** --- Displays a camera feed in the background.
 
 - **BG_MAX** = **7** --- Represents the size of the :ref:`BGMode<enum_Environment_BGMode>` enum.
 
@@ -257,9 +272,9 @@ enum **GlowBlendMode**:
 
 - **GLOW_BLEND_MODE_SCREEN** = **1** --- Screen glow blending mode. Increases brightness, used frequently with bloom.
 
-- **GLOW_BLEND_MODE_SOFTLIGHT** = **2** --- Soft light glow blending mode. Modifies contrast, exposes shadows and highlights, vivid bloom.
+- **GLOW_BLEND_MODE_SOFTLIGHT** = **2** --- Soft light glow blending mode. Modifies contrast, exposes shadows and highlights (vivid bloom).
 
-- **GLOW_BLEND_MODE_REPLACE** = **3** --- Replace glow blending mode. Replaces all pixels' color by the glow value.
+- **GLOW_BLEND_MODE_REPLACE** = **3** --- Replace glow blending mode. Replaces all pixels' color by the glow value. This can be used to simulate a full-screen blur effect by tweaking the glow parameters to match the original image's brightness.
 
 ----
 
@@ -295,11 +310,11 @@ enum **ToneMapper**:
 
 enum **DOFBlurQuality**:
 
-- **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality.
+- **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality (fastest).
 
 - **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
 
-- **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality.
+- **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality (slowest).
 
 ----
 
@@ -315,13 +330,13 @@ enum **DOFBlurQuality**:
 
 enum **SSAOBlur**:
 
-- **SSAO_BLUR_DISABLED** = **0**
+- **SSAO_BLUR_DISABLED** = **0** --- No blur for the screen-space ambient occlusion effect (fastest).
 
-- **SSAO_BLUR_1x1** = **1**
+- **SSAO_BLUR_1x1** = **1** --- 1×1 blur for the screen-space ambient occlusion effect.
 
-- **SSAO_BLUR_2x2** = **2**
+- **SSAO_BLUR_2x2** = **2** --- 2×2 blur for the screen-space ambient occlusion effect.
 
-- **SSAO_BLUR_3x3** = **3**
+- **SSAO_BLUR_3x3** = **3** --- 3×3 blur for the screen-space ambient occlusion effect (slowest).
 
 ----
 
@@ -335,31 +350,11 @@ enum **SSAOBlur**:
 
 enum **SSAOQuality**:
 
-- **SSAO_QUALITY_LOW** = **0**
+- **SSAO_QUALITY_LOW** = **0** --- Low quality for the screen-space ambient occlusion effect (fastest).
 
-- **SSAO_QUALITY_MEDIUM** = **1**
+- **SSAO_QUALITY_MEDIUM** = **1** --- Low quality for the screen-space ambient occlusion effect.
 
-- **SSAO_QUALITY_HIGH** = **2**
-
-Description
------------
-
-Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironment>`) that define multiple environment operations (such as background :ref:`Sky<class_Sky>` or :ref:`Color<class_Color>`, ambient light, fog, depth-of-field...). These parameters affect the final render of the scene. The order of these operations is:
-
-- Depth of Field Blur
-
-- Glow
-
-- Tonemap (Auto Exposure)
-
-- Adjustments
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/environment_and_post_processing`
-
-- :doc:`../tutorials/3d/high_dynamic_range`
+- **SSAO_QUALITY_HIGH** = **2** --- Low quality for the screen-space ambient occlusion effect (slowest).
 
 Property Descriptions
 ---------------------
@@ -376,7 +371,7 @@ Property Descriptions
 | *Getter*  | get_adjustment_brightness()      |
 +-----------+----------------------------------+
 
-Global brightness value of the rendered scene (default value is 1).
+The global brightness value of the rendered scene. Effective only if ``adjustment_enabled`` is ``true``.
 
 ----
 
@@ -390,7 +385,7 @@ Global brightness value of the rendered scene (default value is 1).
 | *Getter* | get_adjustment_color_correction()      |
 +----------+----------------------------------------+
 
-Applies the provided :ref:`Texture<class_Texture>` resource to affect the global color aspect of the rendered scene.
+Applies the provided :ref:`Texture<class_Texture>` resource to affect the global color aspect of the rendered scene. Effective only if ``adjustment_enabled`` is ``true``.
 
 ----
 
@@ -406,7 +401,7 @@ Applies the provided :ref:`Texture<class_Texture>` resource to affect the global
 | *Getter*  | get_adjustment_contrast()      |
 +-----------+--------------------------------+
 
-Global contrast value of the rendered scene (default value is 1).
+The global contrast value of the rendered scene (default value is 1). Effective only if ``adjustment_enabled`` is ``true``.
 
 ----
 
@@ -422,7 +417,7 @@ Global contrast value of the rendered scene (default value is 1).
 | *Getter*  | is_adjustment_enabled()      |
 +-----------+------------------------------+
 
-Enables the ``adjustment_*`` options provided by this resource. If ``false``, adjustments modifications will have no effect on the rendered scene.
+If ``true``, enables the ``adjustment_*`` properties provided by this resource. If ``false``, modifications to the ``adjustment_*`` properties will have no effect on the rendered scene.
 
 ----
 
@@ -438,7 +433,7 @@ Enables the ``adjustment_*`` options provided by this resource. If ``false``, ad
 | *Getter*  | get_adjustment_saturation()      |
 +-----------+----------------------------------+
 
-Global color saturation value of the rendered scene (default value is 1).
+The global color saturation value of the rendered scene (default value is 1). Effective only if ``adjustment_enabled`` is ``true``.
 
 ----
 
@@ -454,7 +449,7 @@ Global color saturation value of the rendered scene (default value is 1).
 | *Getter*  | get_ambient_light_color()      |
 +-----------+--------------------------------+
 
-:ref:`Color<class_Color>` of the ambient light.
+The ambient light's :ref:`Color<class_Color>`.
 
 ----
 
@@ -470,7 +465,7 @@ Global color saturation value of the rendered scene (default value is 1).
 | *Getter*  | get_ambient_light_energy()      |
 +-----------+---------------------------------+
 
-Energy of the ambient light. The higher the value, the stronger the light.
+The ambient light's energy. The higher the value, the stronger the light.
 
 ----
 
@@ -502,7 +497,7 @@ Defines the amount of light that the sky brings on the scene. A value of 0 means
 | *Getter*  | get_tonemap_auto_exposure()      |
 +-----------+----------------------------------+
 
-Enables the tonemapping auto exposure mode of the scene renderer. If activated, the renderer will automatically determine the exposure setting to adapt to the illumination of the scene and the observed light.
+If ``true``, enables the tonemapping auto exposure mode of the scene renderer. If ``true``, the renderer will automatically determine the exposure setting to adapt to the scene's illumination and the observed light.
 
 ----
 
@@ -518,7 +513,7 @@ Enables the tonemapping auto exposure mode of the scene renderer. If activated, 
 | *Getter*  | get_tonemap_auto_exposure_max()      |
 +-----------+--------------------------------------+
 
-Maximum luminance value for the auto exposure.
+The maximum luminance value for the auto exposure.
 
 ----
 
@@ -534,7 +529,7 @@ Maximum luminance value for the auto exposure.
 | *Getter*  | get_tonemap_auto_exposure_min()      |
 +-----------+--------------------------------------+
 
-Minimum luminance value for the auto exposure.
+The minimum luminance value for the auto exposure.
 
 ----
 
@@ -550,7 +545,7 @@ Minimum luminance value for the auto exposure.
 | *Getter*  | get_tonemap_auto_exposure_grey()      |
 +-----------+---------------------------------------+
 
-Scale of the auto exposure effect. Affects the intensity of auto exposure.
+The scale of the auto exposure effect. Affects the intensity of auto exposure.
 
 ----
 
@@ -566,7 +561,7 @@ Scale of the auto exposure effect. Affects the intensity of auto exposure.
 | *Getter*  | get_tonemap_auto_exposure_speed()      |
 +-----------+----------------------------------------+
 
-Speed of the auto exposure effect. Affects the time needed for the camera to perform auto exposure.
+The speed of the auto exposure effect. Affects the time needed for the camera to perform auto exposure.
 
 ----
 
@@ -582,7 +577,7 @@ Speed of the auto exposure effect. Affects the time needed for the camera to per
 | *Getter*  | get_camera_feed_id()      |
 +-----------+---------------------------+
 
-The id of the camera feed to show in the background.
+The ID of the camera feed to show in the background.
 
 ----
 
@@ -598,7 +593,7 @@ The id of the camera feed to show in the background.
 | *Getter*  | get_canvas_max_layer()      |
 +-----------+-----------------------------+
 
-Maximum layer id (if using Layer background mode).
+The maximum layer ID to display. Only effective when using the :ref:`BG_CANVAS<class_Environment_constant_BG_CANVAS>` background mode.
 
 ----
 
@@ -614,7 +609,7 @@ Maximum layer id (if using Layer background mode).
 | *Getter*  | get_bg_color()      |
 +-----------+---------------------+
 
-Color displayed for clear areas of the scene (if using Custom color or Color+Sky background modes).
+The :ref:`Color<class_Color>` displayed for clear areas of the scene. Only effective when using the :ref:`BG_COLOR<class_Environment_constant_BG_COLOR>` or :ref:`BG_COLOR_SKY<class_Environment_constant_BG_COLOR_SKY>` background modes).
 
 ----
 
@@ -630,7 +625,7 @@ Color displayed for clear areas of the scene (if using Custom color or Color+Sky
 | *Getter*  | get_bg_energy()      |
 +-----------+----------------------+
 
-Power of light emitted by the background.
+The power of the light emitted by the background.
 
 ----
 
@@ -646,7 +641,7 @@ Power of light emitted by the background.
 | *Getter*  | get_background()      |
 +-----------+-----------------------+
 
-Defines the mode of background.
+The background mode. See :ref:`BGMode<enum_Environment_BGMode>` for possible values.
 
 ----
 
@@ -660,7 +655,7 @@ Defines the mode of background.
 | *Getter* | get_sky()      |
 +----------+----------------+
 
-:ref:`Sky<class_Sky>` resource defined as background.
+The :ref:`Sky<class_Sky>` resource defined as background.
 
 ----
 
@@ -676,7 +671,7 @@ Defines the mode of background.
 | *Getter*  | get_sky_custom_fov()      |
 +-----------+---------------------------+
 
-:ref:`Sky<class_Sky>` resource's custom field of view.
+The :ref:`Sky<class_Sky>` resource's custom field of view.
 
 ----
 
@@ -692,7 +687,7 @@ Defines the mode of background.
 | *Getter*  | get_sky_orientation()              |
 +-----------+------------------------------------+
 
-:ref:`Sky<class_Sky>` resource's rotation expressed as a :ref:`Basis<class_Basis>`.
+The :ref:`Sky<class_Sky>` resource's rotation expressed as a :ref:`Basis<class_Basis>`.
 
 ----
 
@@ -708,7 +703,7 @@ Defines the mode of background.
 | *Getter*  | get_sky_rotation()      |
 +-----------+-------------------------+
 
-:ref:`Sky<class_Sky>` resource's rotation expressed as Euler angles in radians.
+The :ref:`Sky<class_Sky>` resource's rotation expressed as Euler angles in radians.
 
 ----
 
@@ -724,7 +719,7 @@ Defines the mode of background.
 | *Getter*  | get_sky_rotation_degrees()      |
 +-----------+---------------------------------+
 
-:ref:`Sky<class_Sky>` resource's rotation expressed as Euler angles in degrees.
+The :ref:`Sky<class_Sky>` resource's rotation expressed as Euler angles in degrees.
 
 ----
 
@@ -740,7 +735,7 @@ Defines the mode of background.
 | *Getter*  | get_dof_blur_far_amount()      |
 +-----------+--------------------------------+
 
-Amount of far blur.
+The amount of far blur for the depth-of-field effect.
 
 ----
 
@@ -756,7 +751,7 @@ Amount of far blur.
 | *Getter*  | get_dof_blur_far_distance()      |
 +-----------+----------------------------------+
 
-Distance from the camera where the far blur effect affects the rendering.
+The distance from the camera where the far blur effect affects the rendering.
 
 ----
 
@@ -772,7 +767,7 @@ Distance from the camera where the far blur effect affects the rendering.
 | *Getter*  | is_dof_blur_far_enabled()       |
 +-----------+---------------------------------+
 
-Enables the far blur effect.
+If ``true``, enables the depth-of-field far blur effect.
 
 ----
 
@@ -788,7 +783,7 @@ Enables the far blur effect.
 | *Getter*  | get_dof_blur_far_quality()      |
 +-----------+---------------------------------+
 
-Quality of the far blur quality.
+The depth-of-field far blur's quality. Higher values can mitigate the visible banding effect seen at higher strengths, but are much slower.
 
 ----
 
@@ -804,7 +799,7 @@ Quality of the far blur quality.
 | *Getter*  | get_dof_blur_far_transition()      |
 +-----------+------------------------------------+
 
-Transition between no-blur area and far blur.
+The length of the transition between the no-blur area and far blur.
 
 ----
 
@@ -820,7 +815,7 @@ Transition between no-blur area and far blur.
 | *Getter*  | get_dof_blur_near_amount()      |
 +-----------+---------------------------------+
 
-Amount of near blur.
+The amount of near blur for the depth-of-field effect.
 
 ----
 
@@ -852,7 +847,7 @@ Distance from the camera where the near blur effect affects the rendering.
 | *Getter*  | is_dof_blur_near_enabled()       |
 +-----------+----------------------------------+
 
-Enables the near blur effect.
+If ``true``, enables the depth-of-field near blur effect.
 
 ----
 
@@ -868,7 +863,7 @@ Enables the near blur effect.
 | *Getter*  | get_dof_blur_near_quality()      |
 +-----------+----------------------------------+
 
-Quality of the near blur quality.
+The depth-of-field near blur's quality. Higher values can mitigate the visible banding effect seen at higher strengths, but are much slower.
 
 ----
 
@@ -884,7 +879,7 @@ Quality of the near blur quality.
 | *Getter*  | get_dof_blur_near_transition()      |
 +-----------+-------------------------------------+
 
-Transition between near blur and no-blur area.
+The length of the transition between the near blur and no-blur area.
 
 ----
 
@@ -900,7 +895,7 @@ Transition between near blur and no-blur area.
 | *Getter*  | get_fog_color()           |
 +-----------+---------------------------+
 
-Fog's :ref:`Color<class_Color>`.
+The fog's :ref:`Color<class_Color>`.
 
 ----
 
@@ -916,7 +911,7 @@ Fog's :ref:`Color<class_Color>`.
 | *Getter*  | get_fog_depth_begin()      |
 +-----------+----------------------------+
 
-Fog's depth starting distance from the camera.
+The fog's depth starting distance from the camera.
 
 ----
 
@@ -932,7 +927,7 @@ Fog's depth starting distance from the camera.
 | *Getter*  | get_fog_depth_curve()      |
 +-----------+----------------------------+
 
-Value defining the fog depth intensity.
+The fog depth's intensity curve. A number of presets are available in the **Inspector** by right-clicking the curve.
 
 ----
 
@@ -948,7 +943,7 @@ Value defining the fog depth intensity.
 | *Getter*  | is_fog_depth_enabled()       |
 +-----------+------------------------------+
 
-Enables the fog depth.
+If ``true``, the depth fog effect is enabled. When enabled, fog will appear in the distance (relative to the camera).
 
 ----
 
@@ -964,7 +959,7 @@ Enables the fog depth.
 | *Getter*  | get_fog_depth_end()      |
 +-----------+--------------------------+
 
-Fog's depth end distance from the camera. If this value is set to 0, it will be equal to the current camera's :ref:`Camera.far<class_Camera_property_far>` value.
+The fog's depth end distance from the camera. If this value is set to 0, it will be equal to the current camera's :ref:`Camera.far<class_Camera_property_far>` value.
 
 ----
 
@@ -980,7 +975,7 @@ Fog's depth end distance from the camera. If this value is set to 0, it will be 
 | *Getter*  | is_fog_enabled()       |
 +-----------+------------------------+
 
-Enables the fog. Needs :ref:`fog_height_enabled<class_Environment_property_fog_height_enabled>` and/or :ref:`fog_depth_enabled<class_Environment_property_fog_depth_enabled>` to actually display fog.
+If ``true``, fog effects are enabled. :ref:`fog_height_enabled<class_Environment_property_fog_height_enabled>` and/or :ref:`fog_depth_enabled<class_Environment_property_fog_depth_enabled>` must be set to ``true`` to actually display fog.
 
 ----
 
@@ -996,7 +991,7 @@ Enables the fog. Needs :ref:`fog_height_enabled<class_Environment_property_fog_h
 | *Getter*  | get_fog_height_curve()      |
 +-----------+-----------------------------+
 
-Value defining the fog height intensity.
+The height fog's intensity. A number of presets are available in the **Inspector** by right-clicking the curve.
 
 ----
 
@@ -1012,7 +1007,7 @@ Value defining the fog height intensity.
 | *Getter*  | is_fog_height_enabled()       |
 +-----------+-------------------------------+
 
-Enables the fog height.
+If ``true``, the height fog effect is enabled. When enabled, fog will appear in a defined height range, regardless of the distance from the camera. This can be used to simulate "deep water" effects with a lower performance cost compared to a dedicated shader.
 
 ----
 
@@ -1060,7 +1055,7 @@ The Y coordinate where the height fog will be the least intense. If this value i
 | *Getter*  | get_fog_sun_amount()      |
 +-----------+---------------------------+
 
-Amount of sun that affects the fog rendering.
+The intensity of the depth fog color transition when looking towards the sun. The sun's direction is determined automatically using the DirectionalLight node in the scene.
 
 ----
 
@@ -1076,7 +1071,7 @@ Amount of sun that affects the fog rendering.
 | *Getter*  | get_fog_sun_color()      |
 +-----------+--------------------------+
 
-Sun :ref:`Color<class_Color>`.
+The depth fog's :ref:`Color<class_Color>` when looking towards the sun.
 
 ----
 
@@ -1092,7 +1087,7 @@ Sun :ref:`Color<class_Color>`.
 | *Getter*  | get_fog_transmit_curve()      |
 +-----------+-------------------------------+
 
-Amount of light that the fog transmits.
+The intensity of the fog light transmittance effect. Amount of light that the fog transmits.
 
 ----
 
@@ -1108,7 +1103,7 @@ Amount of light that the fog transmits.
 | *Getter*  | is_fog_transmit_enabled()       |
 +-----------+---------------------------------+
 
-Enables fog's light transmission. If enabled, lets reflections light to be transmitted by the fog.
+Enables fog's light transmission effect. If ``true``, light will be more visible in the fog to simulate light scattering as in real life.
 
 ----
 
@@ -1124,7 +1119,9 @@ Enables fog's light transmission. If enabled, lets reflections light to be trans
 | *Getter*  | is_glow_bicubic_upscale_enabled() |
 +-----------+-----------------------------------+
 
-Smooths out blockiness created by sampling higher levels.
+Smooths out the blockiness created by sampling higher levels, at the cost of performance.
+
+**Note:** When using the GLES2 renderer, this is only available if the GPU supports the ``GL_EXT_gpu_shader4`` extension.
 
 ----
 
@@ -1140,7 +1137,7 @@ Smooths out blockiness created by sampling higher levels.
 | *Getter*  | get_glow_blend_mode()      |
 +-----------+----------------------------+
 
-Glow blending mode.
+The glow blending mode.
 
 ----
 
@@ -1156,7 +1153,7 @@ Glow blending mode.
 | *Getter*  | get_glow_bloom()      |
 +-----------+-----------------------+
 
-Bloom value (global glow).
+The bloom's intensity. If set to a value higher than ``0``, this will make glow visible in areas darker than the :ref:`glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>`.
 
 ----
 
@@ -1172,7 +1169,7 @@ Bloom value (global glow).
 | *Getter*  | is_glow_enabled()       |
 +-----------+-------------------------+
 
-Enables glow rendering.
+If ``true``, the glow effect is enabled.
 
 ----
 
@@ -1188,6 +1185,8 @@ Enables glow rendering.
 | *Getter*  | get_glow_hdr_luminance_cap()      |
 +-----------+-----------------------------------+
 
+The higher threshold of the HDR glow. Areas brighter than this threshold will be clamped for the purposes of the glow effect.
+
 ----
 
 .. _class_Environment_property_glow_hdr_scale:
@@ -1202,7 +1201,7 @@ Enables glow rendering.
 | *Getter*  | get_glow_hdr_bleed_scale()      |
 +-----------+---------------------------------+
 
-Bleed scale of the HDR glow.
+The bleed scale of the HDR glow.
 
 ----
 
@@ -1218,7 +1217,7 @@ Bleed scale of the HDR glow.
 | *Getter*  | get_glow_hdr_bleed_threshold()      |
 +-----------+-------------------------------------+
 
-Bleed threshold of the HDR glow. In GLES2, this needs to be below 1.0 in order for glow to be visible, a default value of 0.9 works well.
+The lower threshold of the HDR glow. When using the GLES2 renderer (which doesn't support HDR), this needs to be below ``1.0`` for glow to be visible. A value of ``0.9`` works well in this case.
 
 ----
 
@@ -1234,7 +1233,7 @@ Bleed threshold of the HDR glow. In GLES2, this needs to be below 1.0 in order f
 | *Getter*  | get_glow_intensity()      |
 +-----------+---------------------------+
 
-Glow intensity. In GLES2, this should be increased to 1.5 by default to compensate for not using HDR.
+The glow intensity. When using the GLES2 renderer, this should be increased to 1.5 to compensate for the lack of HDR rendering.
 
 ----
 
@@ -1250,7 +1249,7 @@ Glow intensity. In GLES2, this should be increased to 1.5 by default to compensa
 | *Getter*  | is_glow_level_enabled() |
 +-----------+-------------------------+
 
-First level of glow (most local).
+If ``true``, the 1st level of glow is enabled. This is the most "local" level (least blurry).
 
 ----
 
@@ -1266,7 +1265,7 @@ First level of glow (most local).
 | *Getter*  | is_glow_level_enabled() |
 +-----------+-------------------------+
 
-Second level of glow.
+If ``true``, the 2th level of glow is enabled.
 
 ----
 
@@ -1282,7 +1281,7 @@ Second level of glow.
 | *Getter*  | is_glow_level_enabled() |
 +-----------+-------------------------+
 
-Third level of glow.
+If ``true``, the 3th level of glow is enabled.
 
 ----
 
@@ -1298,7 +1297,7 @@ Third level of glow.
 | *Getter*  | is_glow_level_enabled() |
 +-----------+-------------------------+
 
-Fourth level of glow.
+If ``true``, the 4th level of glow is enabled.
 
 ----
 
@@ -1314,7 +1313,7 @@ Fourth level of glow.
 | *Getter*  | is_glow_level_enabled() |
 +-----------+-------------------------+
 
-Fifth level of glow.
+If ``true``, the 5th level of glow is enabled.
 
 ----
 
@@ -1330,7 +1329,7 @@ Fifth level of glow.
 | *Getter*  | is_glow_level_enabled() |
 +-----------+-------------------------+
 
-Sixth level of glow.
+If ``true``, the 6th level of glow is enabled.
 
 ----
 
@@ -1346,7 +1345,7 @@ Sixth level of glow.
 | *Getter*  | is_glow_level_enabled() |
 +-----------+-------------------------+
 
-Seventh level of glow (most global).
+If ``true``, the 7th level of glow is enabled. This is the most "global" level (blurriest).
 
 ----
 
@@ -1362,7 +1361,7 @@ Seventh level of glow (most global).
 | *Getter*  | get_glow_strength()      |
 +-----------+--------------------------+
 
-Glow strength. In GLES2, this should be increased to 1.3 by default to compensate for not using HDR.
+The glow strength. When using the GLES2 renderer, this should be increased to 1.3 to compensate for the lack of HDR rendering.
 
 ----
 
@@ -1378,6 +1377,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 | *Getter*  | get_ssr_depth_tolerance()      |
 +-----------+--------------------------------+
 
+The depth tolerance for screen-space reflections.
+
 ----
 
 .. _class_Environment_property_ss_reflections_enabled:
@@ -1391,6 +1392,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 +-----------+------------------------+
 | *Getter*  | is_ssr_enabled()       |
 +-----------+------------------------+
+
+If ``true``, screen-space reflections are enabled. Screen-space reflections are more accurate than reflections from :ref:`GIProbe<class_GIProbe>`\ s or :ref:`ReflectionProbe<class_ReflectionProbe>`\ s, but are slower and can't reflect surfaces occluded by others.
 
 ----
 
@@ -1406,6 +1409,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 | *Getter*  | get_ssr_fade_in()      |
 +-----------+------------------------+
 
+The fade-in distance for screen-space reflections. Affects the area from the reflected material to the screen-space reflection).
+
 ----
 
 .. _class_Environment_property_ss_reflections_fade_out:
@@ -1419,6 +1424,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 +-----------+-------------------------+
 | *Getter*  | get_ssr_fade_out()      |
 +-----------+-------------------------+
+
+The fade-out distance for screen-space reflections. Affects the area from the screen-space reflection to the "global" reflection.
 
 ----
 
@@ -1434,6 +1441,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 | *Getter*  | get_ssr_max_steps()      |
 +-----------+--------------------------+
 
+The maximum number of steps for screen-space reflections. Higher values are slower.
+
 ----
 
 .. _class_Environment_property_ss_reflections_roughness:
@@ -1447,6 +1456,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 +-----------+----------------------+
 | *Getter*  | is_ssr_rough()       |
 +-----------+----------------------+
+
+If ``true``, screen-space reflections will take the material roughness into account.
 
 ----
 
@@ -1462,6 +1473,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 | *Getter*  | get_ssao_ao_channel_affect()      |
 +-----------+-----------------------------------+
 
+The screen-space ambient occlusion intensity on materials that have an AO texture defined. Values higher than ``0`` will make the SSAO effect visible in areas darkened by AO textures.
+
 ----
 
 .. _class_Environment_property_ssao_bias:
@@ -1475,6 +1488,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 +-----------+----------------------+
 | *Getter*  | get_ssao_bias()      |
 +-----------+----------------------+
+
+The screen-space ambient occlusion bias. This should be kept high enough to prevent "smooth" curves from being affected by ambient occlusion.
 
 ----
 
@@ -1490,6 +1505,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 | *Getter*  | get_ssao_blur()      |
 +-----------+----------------------+
 
+The screen-space ambient occlusion blur quality. See :ref:`SSAOBlur<enum_Environment_SSAOBlur>` for possible values.
+
 ----
 
 .. _class_Environment_property_ssao_color:
@@ -1503,6 +1520,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 +-----------+-----------------------+
 | *Getter*  | get_ssao_color()      |
 +-----------+-----------------------+
+
+The screen-space ambient occlusion color.
 
 ----
 
@@ -1518,6 +1537,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 | *Getter*  | get_ssao_edge_sharpness()      |
 +-----------+--------------------------------+
 
+The screen-space ambient occlusion edge sharpness.
+
 ----
 
 .. _class_Environment_property_ssao_enabled:
@@ -1531,6 +1552,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 +-----------+-------------------------+
 | *Getter*  | is_ssao_enabled()       |
 +-----------+-------------------------+
+
+If ``true``, the screen-space ambient occlusion effect is enabled. This darkens objects' corners and cavities to simulate ambient light not reaching the entire object as in real life. This works well for small, dynamic objects, but baked lighting or ambient occlusion textures will do a better job at displaying ambient occlusion on large static objects. This is a costly effect and should be disabled first when running into performance issues.
 
 ----
 
@@ -1546,6 +1569,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 | *Getter*  | get_ssao_intensity()      |
 +-----------+---------------------------+
 
+The primary screen-space ambient occlusion intensity. See also :ref:`ssao_radius<class_Environment_property_ssao_radius>`.
+
 ----
 
 .. _class_Environment_property_ssao_intensity2:
@@ -1559,6 +1584,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 +-----------+----------------------------+
 | *Getter*  | get_ssao_intensity2()      |
 +-----------+----------------------------+
+
+The secondary screen-space ambient occlusion intensity. See also :ref:`ssao_radius2<class_Environment_property_ssao_radius2>`.
 
 ----
 
@@ -1574,6 +1601,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 | *Getter*  | get_ssao_direct_light_affect()      |
 +-----------+-------------------------------------+
 
+The screen-space ambient occlusion intensity in direct light. In real life, ambient occlusion only applies to indirect light, which means its effects can't be seen in direct light. Values higher than ``0`` will make the SSAO effect visible in direct light.
+
 ----
 
 .. _class_Environment_property_ssao_quality:
@@ -1587,6 +1616,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 +-----------+-------------------------+
 | *Getter*  | get_ssao_quality()      |
 +-----------+-------------------------+
+
+The screen-space ambient occlusion quality. Higher qualities will make better use of small objects for ambient occlusion, but are slower.
 
 ----
 
@@ -1602,6 +1633,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 | *Getter*  | get_ssao_radius()      |
 +-----------+------------------------+
 
+The primary screen-space ambient occlusion radius.
+
 ----
 
 .. _class_Environment_property_ssao_radius2:
@@ -1615,6 +1648,8 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 +-----------+-------------------------+
 | *Getter*  | get_ssao_radius2()      |
 +-----------+-------------------------+
+
+The secondary screen-space ambient occlusion radius. If set to a value higher than ``0``, enables the secondary screen-space ambient occlusion effect which can be used to improve the effect's appearance (at the cost of performance).
 
 ----
 
@@ -1630,7 +1665,7 @@ Glow strength. In GLES2, this should be increased to 1.3 by default to compensat
 | *Getter*  | get_tonemap_exposure()      |
 +-----------+-----------------------------+
 
-Default exposure for tonemap.
+The default exposure used for tonemapping.
 
 ----
 
@@ -1646,7 +1681,7 @@ Default exposure for tonemap.
 | *Getter*  | get_tonemapper()      |
 +-----------+-----------------------+
 
-Tonemapping mode.
+The tonemapping mode to use. Tonemapping is the process that "converts" HDR values to be suitable for rendering on a LDR display. (Godot doesn't support rendering on HDR displays yet.)
 
 ----
 
@@ -1662,7 +1697,7 @@ Tonemapping mode.
 | *Getter*  | get_tonemap_white()      |
 +-----------+--------------------------+
 
-White reference value for tonemap.
+The white reference value for tonemapping. Only effective if the :ref:`tonemap_mode<class_Environment_property_tonemap_mode>` isn't set to :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`.
 
 Method Descriptions
 -------------------
@@ -1671,9 +1706,13 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_glow_level_enabled** **(** :ref:`int<class_int>` idx **)** const
 
+Returns ``true`` if the glow level ``idx`` is specified, ``false`` otherwise.
+
 ----
 
 .. _class_Environment_method_set_glow_level:
 
 - void **set_glow_level** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enabled **)**
+
+Enables or disables the glow level at index ``idx``. Each level relies on the previous level. This means that enabling higher glow levels will slow down the glow effect rendering, even if previous levels aren't enabled.
 

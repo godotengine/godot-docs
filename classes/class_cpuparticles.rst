@@ -11,12 +11,14 @@ CPUParticles
 
 **Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 CPU-based 3D particle emitter.
+
+Description
+-----------
+
+CPU-based 3D particle node used to create a variety of particle systems and effects.
+
+See also :ref:`Particles<class_Particles>`, which provides the same functionality with hardware acceleration, but may not run on older devices.
 
 Properties
 ----------
@@ -300,13 +302,6 @@ enum **EmissionShape**:
 - **EMISSION_SHAPE_POINTS** = **3** --- Particles will be emitted at a position chosen randomly among :ref:`emission_points<class_CPUParticles_property_emission_points>`. Particle color will be modulated by :ref:`emission_colors<class_CPUParticles_property_emission_colors>`.
 
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4** --- Particles will be emitted at a position chosen randomly among :ref:`emission_points<class_CPUParticles_property_emission_points>`. Particle velocity and rotation will be set based on :ref:`emission_normals<class_CPUParticles_property_emission_normals>`. Particle color will be modulated by :ref:`emission_colors<class_CPUParticles_property_emission_colors>`.
-
-Description
------------
-
-CPU-based 3D particle node used to create a variety of particle systems and effects.
-
-See also :ref:`Particles<class_Particles>`, which provides the same functionality with hardware acceleration, but may not run on older devices.
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,17 @@ EditorSpatialGizmoPlugin
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Used by the editor to define Spatial gizmo types.
+
+Description
+-----------
+
+EditorSpatialGizmoPlugin allows you to define a new type of Gizmo. There are two main ways to do so: extending ``EditorSpatialGizmoPlugin`` for the simpler gizmos, or creating a new :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` type. See the tutorial in the documentation for more info.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/plugins/editor/spatial_gizmos`
 
 Methods
 -------
@@ -56,16 +61,6 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set_handle<class_EditorSpatialGizmoPlugin_method_set_handle>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index, :ref:`Camera<class_Camera>` camera, :ref:`Vector2<class_Vector2>` point **)** virtual                                    |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-EditorSpatialGizmoPlugin allows you to define a new type of Gizmo. There are two main ways to do so: extending ``EditorSpatialGizmoPlugin`` for the simpler gizmos, or creating a new :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` type. See the tutorial in the documentation for more info.
-
-Tutorials
----------
-
-- :doc:`../tutorials/plugins/editor/spatial_gizmos`
 
 Method Descriptions
 -------------------

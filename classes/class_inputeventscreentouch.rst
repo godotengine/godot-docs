@@ -11,14 +11,19 @@ InputEventScreenTouch
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event type for screen touch events.
 
 (only available on mobile devices)
+
+Description
+-----------
+
+Stores multi-touch press/release information. Supports touch press, touch release and :ref:`index<class_InputEventScreenTouch_property_index>` for multi-touch count and order.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
 
 Properties
 ----------
@@ -30,16 +35,6 @@ Properties
 +-------------------------------+----------------------------------------------------------------+-----------------+
 | :ref:`bool<class_bool>`       | :ref:`pressed<class_InputEventScreenTouch_property_pressed>`   | false           |
 +-------------------------------+----------------------------------------------------------------+-----------------+
-
-Description
------------
-
-Stores multi-touch press/release information. Supports touch press, touch release and :ref:`index<class_InputEventScreenTouch_property_index>` for multi-touch count and order.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/inputevent`
 
 Property Descriptions
 ---------------------

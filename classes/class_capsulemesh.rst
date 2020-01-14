@@ -11,10 +11,10 @@ CapsuleMesh
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Class representing a capsule-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
-Brief Description
------------------
+Description
+-----------
 
 Class representing a capsule-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
@@ -30,11 +30,6 @@ Properties
 +---------------------------+--------------------------------------------------------------------+-----+
 | :ref:`int<class_int>`     | :ref:`rings<class_CapsuleMesh_property_rings>`                     | 8   |
 +---------------------------+--------------------------------------------------------------------+-----+
-
-Description
------------
-
-Class representing a capsule-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
 Property Descriptions
 ---------------------

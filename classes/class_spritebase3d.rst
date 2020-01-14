@@ -13,12 +13,12 @@ SpriteBase3D
 
 **Inherited By:** :ref:`AnimatedSprite3D<class_AnimatedSprite3D>`, :ref:`Sprite3D<class_Sprite3D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 2D sprite node in 3D environment.
+
+Description
+-----------
+
+A node that displays 2D texture information in a 3D environment.
 
 Properties
 ----------
@@ -104,11 +104,6 @@ enum **AlphaCutMode**:
 - **ALPHA_CUT_DISCARD** = **1**
 
 - **ALPHA_CUT_OPAQUE_PREPASS** = **2**
-
-Description
------------
-
-A node that displays 2D texture information in a 3D environment.
 
 Property Descriptions
 ---------------------

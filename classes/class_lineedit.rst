@@ -11,12 +11,30 @@ LineEdit
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Control that provides single-line string editing.
+
+Description
+-----------
+
+LineEdit provides a single-line string editor, used for text fields. It features many built-in shortcuts which will always be available:
+
+- Ctrl + C: Copy
+
+- Ctrl + X: Cut
+
+- Ctrl + V or Ctrl + Y: Paste/"yank"
+
+- Ctrl + Z: Undo
+
+- Ctrl + Shift + Z: Redo
+
+- Ctrl + U: Delete text from the cursor position to the beginning of the line
+
+- Ctrl + K: Delete text from the cursor position to the end of the line
+
+- Ctrl + A: Select all text
+
+- Up/Down arrow: Move the cursor to the beginning/end of the line
 
 Properties
 ----------
@@ -114,6 +132,14 @@ Theme Properties
 Signals
 -------
 
+.. _class_LineEdit_signal_text_change_rejected:
+
+- **text_change_rejected** **(** **)**
+
+Emitted when trying to append text that would overflow the :ref:`max_length<class_LineEdit_property_max_length>`.
+
+----
+
 .. _class_LineEdit_signal_text_changed:
 
 - **text_changed** **(** :ref:`String<class_String>` new_text **)**
@@ -190,29 +216,6 @@ Non-printable escape characters are automatically stripped from the OS clipboard
 - **MENU_REDO** = **6** --- Reverse the last undo action.
 
 - **MENU_MAX** = **7** --- Represents the size of the :ref:`MenuItems<enum_LineEdit_MenuItems>` enum.
-
-Description
------------
-
-LineEdit provides a single-line string editor, used for text fields. It features many built-in shortcuts which will always be available:
-
-- Ctrl + C: Copy
-
-- Ctrl + X: Cut
-
-- Ctrl + V or Ctrl + Y: Paste/"yank"
-
-- Ctrl + Z: Undo
-
-- Ctrl + Shift + Z: Redo
-
-- Ctrl + U: Delete text from the cursor position to the beginning of the line
-
-- Ctrl + K: Delete text from the cursor position to the end of the line
-
-- Ctrl + A: Select all text
-
-- Up/Down arrow: Move the cursor to the beginning/end of the line
 
 Property Descriptions
 ---------------------
@@ -293,7 +296,7 @@ The cursor's position inside the ``LineEdit``. When set, the text may scroll to 
 | *Getter*  | is_clear_button_enabled()       |
 +-----------+---------------------------------+
 
-If ``true``, the ``LineEdit`` will show a clear button if ``text`` is not empty.
+If ``true``, the ``LineEdit`` will show a clear button if ``text`` is not empty, which can be used to clear the text quickly.
 
 ----
 
@@ -451,6 +454,8 @@ The character to use to mask secret input (defaults to "\*"). Only a single char
 | *Getter*  | is_selecting_enabled()       |
 +-----------+------------------------------+
 
+If ``false``, it's impossible to select the text using mouse nor keyboard.
+
 ----
 
 .. _class_LineEdit_property_shortcut_keys_enabled:
@@ -464,6 +469,8 @@ The character to use to mask secret input (defaults to "\*"). Only a single char
 +-----------+----------------------------------+
 | *Getter*  | is_shortcut_keys_enabled()       |
 +-----------+----------------------------------+
+
+If ``false``, using shortcuts will be disabled.
 
 ----
 

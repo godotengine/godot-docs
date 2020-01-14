@@ -13,12 +13,12 @@ Range
 
 **Inherited By:** :ref:`EditorSpinSlider<class_EditorSpinSlider>`, :ref:`ProgressBar<class_ProgressBar>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, :ref:`SpinBox<class_SpinBox>`, :ref:`TextureProgress<class_TextureProgress>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Abstract base class for range-based controls.
+
+Description
+-----------
+
+Range is a base class for :ref:`Control<class_Control>` nodes that change a floating-point *value* between a *minimum* and a *maximum*, using *step* and *page*, for example a :ref:`ScrollBar<class_ScrollBar>`.
 
 Properties
 ----------
@@ -70,11 +70,6 @@ Emitted when :ref:`min_value<class_Range_property_min_value>`, :ref:`max_value<c
 - **value_changed** **(** :ref:`float<class_float>` value **)**
 
 Emitted when :ref:`value<class_Range_property_value>` changes.
-
-Description
------------
-
-Range is a base class for :ref:`Control<class_Control>` nodes that change a floating-point *value* between a *minimum* and a *maximum*, using *step* and *page*, for example a :ref:`ScrollBar<class_ScrollBar>`.
 
 Property Descriptions
 ---------------------

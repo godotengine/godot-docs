@@ -11,12 +11,12 @@ TextureRect
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Control for drawing textures.
+
+Description
+-----------
+
+Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
 
 Properties
 ----------
@@ -73,11 +73,6 @@ enum **StretchMode**:
 - **STRETCH_KEEP_ASPECT_CENTERED** = **6** --- Scale the texture to fit the node's bounding rectangle, center it and maintain its aspect ratio.
 
 - **STRETCH_KEEP_ASPECT_COVERED** = **7** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
-
-Description
------------
-
-Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
 
 Property Descriptions
 ---------------------

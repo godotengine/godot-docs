@@ -11,12 +11,25 @@ MultiMesh
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Provides high-performance mesh instancing.
+
+Description
+-----------
+
+MultiMesh provides low-level mesh instancing. Drawing thousands of :ref:`MeshInstance<class_MeshInstance>` nodes can be slow, since each object is submitted to the GPU then drawn individually.
+
+MultiMesh is much faster as it can draw thousands of instances with a single draw call, resulting in less API overhead.
+
+As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object).
+
+Since instances may have any behavior, the AABB used for visibility must be provided by the user.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/vertex_animation/animating_thousands_of_fish`
+
+- :doc:`../tutorials/optimization/using_multimesh`
 
 Properties
 ----------
@@ -107,25 +120,9 @@ enum **CustomDataFormat**:
 
 - **CUSTOM_DATA_NONE** = **0** --- Use when you are not using per-instance custom data.
 
-- **CUSTOM_DATA_8BIT** = **1** --- Compress custom_data into 8 bits when passing to shader. This uses less memory and can be faster, but loses precision.
+- **CUSTOM_DATA_8BIT** = **1** --- Compress custom_data into 8 bits when passing to shader. This uses less memory and can be faster, but loses precision and range. Floats packed into 8 bits can only represent values between 0 and 1, numbers outside that range will be clamped.
 
 - **CUSTOM_DATA_FLOAT** = **2** --- The :ref:`Color<class_Color>` passed into :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>` will use 4 floats. Use this for highest precision.
-
-Description
------------
-
-MultiMesh provides low-level mesh instancing. Drawing thousands of :ref:`MeshInstance<class_MeshInstance>` nodes can be slow, since each object is submitted to the GPU then drawn individually.
-
-MultiMesh is much faster as it can draw thousands of instances with a single draw call, resulting in less API overhead.
-
-As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object).
-
-Since instances may have any behavior, the AABB used for visibility must be provided by the user.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/vertex_animation/animating_thousands_of_fish`
 
 Property Descriptions
 ---------------------
@@ -291,7 +288,7 @@ For the color to take effect, ensure that :ref:`color_format<class_MultiMesh_pro
 
 - void **set_instance_custom_data** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**
 
-Sets custom data for a specific instance. Although :ref:`Color<class_Color>` is used, it is just a container for 4 numbers.
+Sets custom data for a specific instance. Although :ref:`Color<class_Color>` is used, it is just a container for 4 floating point numbers. The format of the number can change depending on the :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` used.
 
 ----
 

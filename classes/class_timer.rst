@@ -11,12 +11,12 @@ Timer
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A countdown timer.
+
+Description
+-----------
+
+Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.
 
 Properties
 ----------
@@ -69,11 +69,6 @@ enum **TimerProcessMode**:
 - **TIMER_PROCESS_PHYSICS** = **0** --- Update the timer during the physics step at each frame (fixed framerate processing).
 
 - **TIMER_PROCESS_IDLE** = **1** --- Update the timer during the idle time at each frame.
-
-Description
------------
-
-Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.
 
 Property Descriptions
 ---------------------
@@ -150,7 +145,7 @@ Processing mode. See :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>`.
 
 The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 
-**Note:** You cannot set this value. To change the timer's remaining time, use :ref:`wait_time<class_Timer_property_wait_time>`.
+**Note:** You cannot set this value. To change the timer's remaining time, use :ref:`start<class_Timer_method_start>`.
 
 ----
 

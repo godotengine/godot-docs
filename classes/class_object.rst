@@ -11,12 +11,30 @@ Object
 
 **Inherited By:** :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`, :ref:`ARVRServer<class_ARVRServer>`, :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`Geometry<class_Geometry>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`IP<class_IP>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`JSON<class_JSON>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`JavaScript<class_JavaScript>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`, :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>`, :ref:`Physics2DServer<class_Physics2DServer>`, :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>`, :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>`, :ref:`PhysicsServer<class_PhysicsServer>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`Reference<class_Reference>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`VisualScriptEditor<class_VisualScriptEditor>`, :ref:`VisualServer<class_VisualServer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all non built-in types.
+
+Description
+-----------
+
+Every class which is not a built-in type inherits from this class.
+
+You can construct Objects from scripting languages, using ``Object.new()`` in GDScript, ``new Object`` in C#, or the "Construct Object" node in VisualScript.
+
+Objects do not manage memory. If a class inherits from Object, you will have to delete instances of it manually. To do so, call the :ref:`free<class_Object_method_free>` method from your script or delete the instance from C++.
+
+Some classes that extend Object add memory management. This is the case of :ref:`Reference<class_Reference>`, which counts references and deletes itself automatically when no longer referenced. :ref:`Node<class_Node>`, another fundamental type, deletes all its children when freed from memory.
+
+Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<class_Object_method__get_property_list>` and handled in :ref:`_get<class_Object_method__get>` and :ref:`_set<class_Object_method__set>`. However, scripting languages and C++ have simpler means to export them.
+
+Property membership can be tested directly in GDScript using ``in``:
+
+::
+
+    var n = Node2D.new()
+    print("position" in n)  # Prints "True".
+    print("other_property" in n)  # Prints "False".
+
+Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See :ref:`_notification<class_Object_method__notification>`.
 
 Methods
 -------
@@ -38,7 +56,7 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                 | :ref:`call<class_Object_method_call>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                                                                        |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`call_deferred<class_Object_method_call_deferred>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                                                      |
+| void                                          | :ref:`call_deferred<class_Object_method_call_deferred>` **(** :ref:`String<class_String>` method, ... **)** vararg                                                                                                                      |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                 | :ref:`callv<class_Object_method_callv>` **(** :ref:`String<class_String>` method, :ref:`Array<class_Array>` arg_array **)**                                                                                                             |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -48,7 +66,7 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`disconnect<class_Object_method_disconnect>` **(** :ref:`String<class_String>` signal, :ref:`Object<class_Object>` target, :ref:`String<class_String>` method **)**                                                                |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`emit_signal<class_Object_method_emit_signal>` **(** :ref:`String<class_String>` signal, ... **)** vararg                                                                                                                          |
+| void                                          | :ref:`emit_signal<class_Object_method_emit_signal>` **(** :ref:`String<class_String>` signal, ... **)** vararg                                                                                                                          |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`free<class_Object_method_free>` **(** **)**                                                                                                                                                                                       |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -158,29 +176,6 @@ Constants
 
 - **NOTIFICATION_PREDELETE** = **1** --- Called before the object is about to be deleted.
 
-Description
------------
-
-Every class which is not a built-in type inherits from this class.
-
-You can construct Objects from scripting languages, using ``Object.new()`` in GDScript, ``new Object`` in C#, or the "Construct Object" node in VisualScript.
-
-Objects do not manage memory. If a class inherits from Object, you will have to delete instances of it manually. To do so, call the :ref:`free<class_Object_method_free>` method from your script or delete the instance from C++.
-
-Some classes that extend Object add memory management. This is the case of :ref:`Reference<class_Reference>`, which counts references and deletes itself automatically when no longer referenced. :ref:`Node<class_Node>`, another fundamental type, deletes all its children when freed from memory.
-
-Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<class_Object_method__get_property_list>` and handled in :ref:`_get<class_Object_method__get>` and :ref:`_set<class_Object_method__set>`. However, scripting languages and C++ have simpler means to export them.
-
-Property membership can be tested directly in GDScript using ``in``:
-
-::
-
-    var n = Node2D.new()
-    print("position" in n)  # Prints "True".
-    print("other_property" in n)  # Prints "False".
-
-Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See :ref:`_notification<class_Object_method__notification>`.
-
 Method Descriptions
 -------------------
 
@@ -264,9 +259,9 @@ Calls the ``method`` on the object and returns the result. This method supports 
 
 .. _class_Object_method_call_deferred:
 
-- :ref:`Variant<class_Variant>` **call_deferred** **(** :ref:`String<class_String>` method, ... **)** vararg
+- void **call_deferred** **(** :ref:`String<class_String>` method, ... **)** vararg
 
-Calls the ``method`` on the object during idle time and returns the result. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:
+Calls the ``method`` on the object during idle time. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:
 
 ::
 
@@ -335,7 +330,7 @@ If you try to disconnect a connection that does not exist, the method will throw
 
 .. _class_Object_method_emit_signal:
 
-- :ref:`Variant<class_Variant>` **emit_signal** **(** :ref:`String<class_String>` signal, ... **)** vararg
+- void **emit_signal** **(** :ref:`String<class_String>` signal, ... **)** vararg
 
 Emits the given ``signal``. The signal must exist, so it should be a built-in signal of this class or one of its parent classes, or a user-defined signal. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:
 
@@ -358,7 +353,7 @@ Deletes the object from memory. Any pre-existing reference to the freed object w
 
 - :ref:`Variant<class_Variant>` **get** **(** :ref:`String<class_String>` property **)** const
 
-Returns the :ref:`Variant<class_Variant>` value of the given ``property``.
+Returns the :ref:`Variant<class_Variant>` value of the given ``property``. If the ``property`` doesn't exist, this will return ``null``.
 
 ----
 
@@ -603,6 +598,8 @@ Adds or changes a given entry in the object's metadata. Metadata are serialized,
 - void **set_script** **(** :ref:`Reference<class_Reference>` script **)**
 
 Assigns a script to the object. Each object can have a single script assigned to it, which are used to extend its functionality.
+
+If the object already had a script, the previous script instance will be freed and its variables and state will be lost. The new script's :ref:`_init<class_Object_method__init>` method will be called.
 
 ----
 

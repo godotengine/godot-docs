@@ -13,12 +13,12 @@ ScrollBar
 
 **Inherited By:** :ref:`HScrollBar<class_HScrollBar>`, :ref:`VScrollBar<class_VScrollBar>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for scroll bars.
+
+Description
+-----------
+
+Scrollbars are a :ref:`Range<class_Range>`-based :ref:`Control<class_Control>`, that display a draggable area (the size of the page). Horizontal (:ref:`HScrollBar<class_HScrollBar>`) and Vertical (:ref:`VScrollBar<class_VScrollBar>`) versions are available.
 
 Properties
 ----------
@@ -40,11 +40,6 @@ Signals
 
 Emitted when the scrollbar is being scrolled.
 
-Description
------------
-
-Scrollbars are a :ref:`Range<class_Range>`-based :ref:`Control<class_Control>`, that display a draggable area (the size of the page). Horizontal (:ref:`HScrollBar<class_HScrollBar>`) and Vertical (:ref:`VScrollBar<class_VScrollBar>`) versions are available.
-
 Property Descriptions
 ---------------------
 
@@ -59,4 +54,6 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_custom_step()      |
 +-----------+------------------------+
+
+Overrides the step used when clicking increment and decrement buttons or when using arrow keys when the ``ScrollBar`` is focused.
 

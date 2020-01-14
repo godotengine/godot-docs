@@ -9,12 +9,17 @@
 Rect2
 =====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 2D axis-aligned bounding box.
+
+Description
+-----------
+
+Rect2 consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
@@ -61,16 +66,6 @@ Methods
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>` | :ref:`merge<class_Rect2_method_merge>` **(** :ref:`Rect2<class_Rect2>` b **)**                                                                                                                           |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Rect2 consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
 
 Property Descriptions
 ---------------------

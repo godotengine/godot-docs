@@ -11,12 +11,14 @@ PathFollow2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Point sampler for a :ref:`Path2D<class_Path2D>`.
+
+Description
+-----------
+
+This node takes its parent :ref:`Path2D<class_Path2D>`, and returns the coordinates of a point within it, given a distance from the first vertex.
+
+It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting an offset in this node.
 
 Properties
 ----------
@@ -38,13 +40,6 @@ Properties
 +---------------------------+---------------------------------------------------------------+------+
 | :ref:`float<class_float>` | :ref:`v_offset<class_PathFollow2D_property_v_offset>`         | 0.0  |
 +---------------------------+---------------------------------------------------------------+------+
-
-Description
------------
-
-This node takes its parent :ref:`Path2D<class_Path2D>`, and returns the coordinates of a point within it, given a distance from the first vertex.
-
-It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting an offset in this node.
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,18 @@ WebSocketClient
 
 **Inherits:** :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>` **<** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A WebSocket client implementation.
+
+Description
+-----------
+
+This class implements a WebSocket client compatible with any RFC 6455-compliant WebSocket server.
+
+This client can be optionally used as a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
+
+After starting the client (:ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`).
+
+You will receive appropriate signals when connecting, disconnecting, or when new data is available.
 
 Properties
 ----------
@@ -83,17 +89,6 @@ Emitted when a WebSocket message is received.
 
 Emitted when the server requests a clean close. You should keep polling until you get a :ref:`connection_closed<class_WebSocketClient_signal_connection_closed>` signal to achieve the clean close. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more details.
 
-Description
------------
-
-This class implements a WebSocket client compatible with any RFC 6455-compliant WebSocket server.
-
-This client can be optionally used as a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
-
-After starting the client (:ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`).
-
-You will receive appropriate signals when connecting, disconnecting, or when new data is available.
-
 Property Descriptions
 ---------------------
 
@@ -108,6 +103,8 @@ Property Descriptions
 +----------+------------------------------------+
 
 If specified, this :ref:`X509Certificate<class_X509Certificate>` will be the only one accepted when connecting to an SSL host. Any other certificate provided by the server will be regarded as invalid.
+
+**Note:** Specifying a custom ``trusted_ssl_certificate`` is not supported in HTML5 exports due to browsers restrictions.
 
 ----
 
@@ -138,7 +135,9 @@ If ``true`` is passed as ``gd_mp_api``, the client will behave like a network pe
 
 If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.) on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(1)`` and not on this object directly (e.g. ``get_peer(1).put_packet(data)``).
 
-You can optionally pass a list of ``custom_headers`` to be added to the handshake HTTP request (not supported in HTML5 platform).
+You can optionally pass a list of ``custom_headers`` to be added to the handshake HTTP request.
+
+**Note:** Specifying ``custom_headers`` is not supported in HTML5 exports due to browsers restrictions.
 
 ----
 

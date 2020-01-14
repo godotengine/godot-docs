@@ -11,12 +11,14 @@ Path
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Contains a :ref:`Curve3D<class_Curve3D>` path for :ref:`PathFollow<class_PathFollow>` nodes to follow.
+
+Description
+-----------
+
+Can have :ref:`PathFollow<class_PathFollow>` child nodes moving along the :ref:`Curve3D<class_Curve3D>`. See :ref:`PathFollow<class_PathFollow>` for more information on the usage.
+
+Note that the path is considered as relative to the moved nodes (children of :ref:`PathFollow<class_PathFollow>`). As such, the curve should usually start with a zero vector ``(0, 0, 0)``.
 
 Properties
 ----------
@@ -33,13 +35,6 @@ Signals
 - **curve_changed** **(** **)**
 
 Emitted when the :ref:`curve<class_Path_property_curve>` changes.
-
-Description
------------
-
-Can have :ref:`PathFollow<class_PathFollow>` child nodes moving along the :ref:`Curve3D<class_Curve3D>`. See :ref:`PathFollow<class_PathFollow>` for more information on the usage.
-
-Note that the path is considered as relative to the moved nodes (children of :ref:`PathFollow<class_PathFollow>`). As such, the curve should usually start with a zero vector ``(0, 0, 0)``.
 
 Property Descriptions
 ---------------------

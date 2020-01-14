@@ -11,14 +11,24 @@ AudioEffectCompressor
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a compressor audio effect to an audio bus.
 
 Reduces sounds that exceed a certain threshold level, smooths out the dynamics and increases the overall volume.
+
+Description
+-----------
+
+Dynamic range compressor reduces the level of the sound when the amplitude goes over a certain threshold in Decibels. One of the main uses of a compressor is to increase the dynamic range by clipping as little as possible (when sound goes over 0dB).
+
+Compressor has many uses in the mix:
+
+- In the Master bus to compress the whole output (although an :ref:`AudioEffectLimiter<class_AudioEffectLimiter>` is probably better).
+
+- In voice channels to ensure they sound as balanced as possible.
+
+- Sidechained. This can reduce the sound level sidechained with another audio bus for threshold detection. This technique is common in video game mixing to the level of music and SFX while voices are being heard.
+
+- Accentuates transients by using a wider attack, making effects sound more punchy.
 
 Properties
 ----------
@@ -38,21 +48,6 @@ Properties
 +-----------------------------+--------------------------------------------------------------------+-------+
 | :ref:`float<class_float>`   | :ref:`threshold<class_AudioEffectCompressor_property_threshold>`   | 0.0   |
 +-----------------------------+--------------------------------------------------------------------+-------+
-
-Description
------------
-
-Dynamic range compressor reduces the level of the sound when the amplitude goes over a certain threshold in Decibels. One of the main uses of a compressor is to increase the dynamic range by clipping as little as possible (when sound goes over 0dB).
-
-Compressor has many uses in the mix:
-
-- In the Master bus to compress the whole output (although an :ref:`AudioEffectLimiter<class_AudioEffectLimiter>` is probably better).
-
-- In voice channels to ensure they sound as balanced as possible.
-
-- Sidechained. This can reduce the sound level sidechained with another audio bus for threshold detection. This technique is common in video game mixing to the level of music and SFX while voices are being heard.
-
-- Accentuates transients by using a wider attack, making effects sound more punchy.
 
 Property Descriptions
 ---------------------

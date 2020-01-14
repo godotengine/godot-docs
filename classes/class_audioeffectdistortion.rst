@@ -11,14 +11,16 @@ AudioEffectDistortion
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a distortion audio effect to an Audio bus.
 
 Modify the sound to make it dirty.
+
+Description
+-----------
+
+Modify the sound and make it dirty. Different types are available: clip, tan, lo-fi (bit crushing), overdrive, or waveshape.
+
+By distorting the waveform the frequency content change, which will often make the sound "crunchy" or "abrasive". For games, it can simulate sound coming from some saturated device or speaker very efficiently.
 
 Properties
 ----------
@@ -61,13 +63,6 @@ enum **Mode**:
 - **MODE_OVERDRIVE** = **3** --- Emulates the warm distortion produced by a field effect transistor, which is commonly used in solid-state musical instrument amplifiers.
 
 - **MODE_WAVESHAPE** = **4** --- Waveshaper distortions are used mainly by electronic musicians to achieve an extra-abrasive sound.
-
-Description
------------
-
-Modify the sound and make it dirty. Different types are available: clip, tan, lo-fi (bit crushing), overdrive, or waveshape.
-
-By distorting the waveform the frequency content change, which will often make the sound "crunchy" or "abrasive". For games, it can simulate sound coming from some saturated device or speaker very efficiently.
 
 Property Descriptions
 ---------------------

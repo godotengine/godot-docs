@@ -9,12 +9,14 @@
 PoolRealArray
 =============
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 A pooled :ref:`Array<class_Array>` of reals (:ref:`float<class_float>`).
+
+Description
+-----------
+
+An :ref:`Array<class_Array>` specifically designed to hold floating-point values (:ref:`float<class_float>`). Optimized for memory usage, does not fragment the memory.
+
+**Note:** This type is passed by value and not by reference.
 
 Methods
 -------
@@ -42,13 +44,6 @@ Methods
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`size<class_PoolRealArray_method_size>` **(** **)**                                                                 |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-An :ref:`Array<class_Array>` specifically designed to hold floating-point values (:ref:`float<class_float>`). Optimized for memory usage, does not fragment the memory.
-
-**Note:** This type is passed by value and not by reference.
 
 Method Descriptions
 -------------------

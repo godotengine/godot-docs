@@ -13,12 +13,19 @@ CanvasLayer
 
 **Inherited By:** :ref:`ParallaxBackground<class_ParallaxBackground>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Canvas drawing layer.
+
+Description
+-----------
+
+Canvas drawing layer. :ref:`CanvasItem<class_CanvasItem>` nodes that are direct or indirect children of a ``CanvasLayer`` will be drawn in that layer. The layer is a numeric index that defines the draw order. The default 2D scene renders with index 0, so a ``CanvasLayer`` with index -1 will be drawn below, and one with index 1 will be drawn above. This is very useful for HUDs (in layer 1+ or above), or backgrounds (in layer -1 or below).
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_transforms`
+
+- :doc:`../tutorials/2d/canvas_layers`
 
 Properties
 ----------
@@ -49,18 +56,6 @@ Methods
 +-----------------------+--------------------------------------------------------------------------+
 | :ref:`RID<class_RID>` | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** const |
 +-----------------------+--------------------------------------------------------------------------+
-
-Description
------------
-
-Canvas drawing layer. :ref:`CanvasItem<class_CanvasItem>` nodes that are direct or indirect children of a ``CanvasLayer`` will be drawn in that layer. The layer is a numeric index that defines the draw order. The default 2D scene renders with index 0, so a ``CanvasLayer`` with index -1 will be drawn below, and one with index 1 will be drawn above. This is very useful for HUDs (in layer 1+ or above), or backgrounds (in layer -1 or below).
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/2d_transforms`
-
-- :doc:`../tutorials/2d/canvas_layers`
 
 Property Descriptions
 ---------------------

@@ -11,11 +11,6 @@ SkeletonIK
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

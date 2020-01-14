@@ -13,12 +13,12 @@ SplitContainer
 
 **Inherited By:** :ref:`HSplitContainer<class_HSplitContainer>`, :ref:`VSplitContainer<class_VSplitContainer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Container for splitting and adjusting.
+
+Description
+-----------
+
+Container for splitting two :ref:`Control<class_Control>`\ s vertically or horizontally, with a grabber that allows adjusting the split offset or ratio.
 
 Properties
 ----------
@@ -60,16 +60,11 @@ Enumerations
 
 enum **DraggerVisibility**:
 
-- **DRAGGER_VISIBLE** = **0** --- The split dragger is visible.
+- **DRAGGER_VISIBLE** = **0** --- The split dragger is visible when the cursor hovers it.
 
-- **DRAGGER_HIDDEN** = **1** --- The split dragger is invisible.
+- **DRAGGER_HIDDEN** = **1** --- The split dragger is never visible.
 
-- **DRAGGER_HIDDEN_COLLAPSED** = **2** --- The split dragger is invisible and collapsed.
-
-Description
------------
-
-Container for splitting two controls vertically or horizontally, with a grabber that allows adjusting the split offset or ratio.
+- **DRAGGER_HIDDEN_COLLAPSED** = **2** --- The split dragger is never visible and its space collapsed.
 
 Property Descriptions
 ---------------------
@@ -86,6 +81,8 @@ Property Descriptions
 | *Getter*  | is_collapsed()       |
 +-----------+----------------------+
 
+If ``true``, the area of the first :ref:`Control<class_Control>` will be collapsed and the dragger will be disabled.
+
 ----
 
 .. _class_SplitContainer_property_dragger_visibility:
@@ -100,7 +97,7 @@ Property Descriptions
 | *Getter*  | get_dragger_visibility()      |
 +-----------+-------------------------------+
 
-Determines whether the dragger is visible.
+Determines the dragger's visibility. See :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` for details.
 
 ----
 
@@ -116,10 +113,14 @@ Determines whether the dragger is visible.
 | *Getter*  | get_split_offset()      |
 +-----------+-------------------------+
 
+The initial offset of the splitting between the two :ref:`Control<class_Control>`\ s, with ``0`` being at the end of the first :ref:`Control<class_Control>`.
+
 Method Descriptions
 -------------------
 
 .. _class_SplitContainer_method_clamp_split_offset:
 
 - void **clamp_split_offset** **(** **)**
+
+Clamps the :ref:`split_offset<class_SplitContainer_property_split_offset>` value to not go outside the currently possible minimal and maximum values.
 

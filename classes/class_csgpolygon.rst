@@ -11,12 +11,12 @@ CSGPolygon
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Extrudes a 2D polygon shape to create a 3D mesh.
+
+Description
+-----------
+
+This node takes a 2D polygon shape and extrudes it to create a 3D mesh.
 
 Properties
 ----------
@@ -85,11 +85,6 @@ enum **PathRotation**:
 - **PATH_ROTATION_PATH** = **1** --- Slice is rotated around the up vector of the path.
 
 - **PATH_ROTATION_PATH_FOLLOW** = **2** --- Slice is rotate to match the path exactly.
-
-Description
------------
-
-This node takes a 2D polygon shape and extrudes it to create a 3D mesh.
 
 Property Descriptions
 ---------------------

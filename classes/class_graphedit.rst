@@ -11,12 +11,14 @@ GraphEdit
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 GraphEdit is an area capable of showing various GraphNodes. It manages connection events between them.
+
+Description
+-----------
+
+GraphEdit manages the showing of GraphNodes it contains, as well as connections and disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNode slots is disabled by default.
+
+It is greatly advised to enable low-processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
 
 Properties
 ----------
@@ -98,6 +100,10 @@ Theme Properties
 +---------------------------------+-------------------------------+------------------------+
 | :ref:`Texture<class_Texture>`   | reset                         |                        |
 +---------------------------------+-------------------------------+------------------------+
+| :ref:`Color<class_Color>`       | selection_fill                | Color( 1, 1, 1, 0.3 )  |
++---------------------------------+-------------------------------+------------------------+
+| :ref:`Color<class_Color>`       | selection_stroke              | Color( 1, 1, 1, 0.8 )  |
++---------------------------------+-------------------------------+------------------------+
 | :ref:`Texture<class_Texture>`   | snap                          |                        |
 +---------------------------------+-------------------------------+------------------------+
 
@@ -108,7 +114,7 @@ Signals
 
 - **_begin_node_move** **(** **)**
 
-Signal sent at the beginning of a GraphNode movement.
+Emitted at the beginning of a GraphNode movement.
 
 ----
 
@@ -116,7 +122,7 @@ Signal sent at the beginning of a GraphNode movement.
 
 - **_end_node_move** **(** **)**
 
-Signal sent at the end of a GraphNode movement.
+Emitted at the end of a GraphNode movement.
 
 ----
 
@@ -124,7 +130,7 @@ Signal sent at the end of a GraphNode movement.
 
 - **connection_from_empty** **(** :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot, :ref:`Vector2<class_Vector2>` release_position **)**
 
-Signal sent when user dragging connection from input port into empty space of the graph.
+Emitted when user dragging connection from input port into empty space of the graph.
 
 ----
 
@@ -132,7 +138,7 @@ Signal sent when user dragging connection from input port into empty space of th
 
 - **connection_request** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot **)**
 
-Signal sent to the GraphEdit when the connection between the ``from_slot`` slot of the ``from`` GraphNode and the ``to_slot`` slot of the ``to`` GraphNode is attempted to be created.
+Emitted to the GraphEdit when the connection between the ``from_slot`` slot of the ``from`` GraphNode and the ``to_slot`` slot of the ``to`` GraphNode is attempted to be created.
 
 ----
 
@@ -140,7 +146,7 @@ Signal sent to the GraphEdit when the connection between the ``from_slot`` slot 
 
 - **connection_to_empty** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`Vector2<class_Vector2>` release_position **)**
 
-Signal sent when user dragging connection from output port into empty space of the graph.
+Emitted when user dragging connection from output port into empty space of the graph.
 
 ----
 
@@ -148,7 +154,7 @@ Signal sent when user dragging connection from output port into empty space of t
 
 - **copy_nodes_request** **(** **)**
 
-Signal sent when the user presses ``Ctrl + C``.
+Emitted when the user presses ``Ctrl + C``.
 
 ----
 
@@ -156,7 +162,7 @@ Signal sent when the user presses ``Ctrl + C``.
 
 - **delete_nodes_request** **(** **)**
 
-Signal sent when a GraphNode is attempted to be removed from the GraphEdit.
+Emitted when a GraphNode is attempted to be removed from the GraphEdit.
 
 ----
 
@@ -188,7 +194,7 @@ Emitted when a GraphNode is selected.
 
 - **paste_nodes_request** **(** **)**
 
-Signal sent when the user presses ``Ctrl + V``.
+Emitted when the user presses ``Ctrl + V``.
 
 ----
 
@@ -204,12 +210,7 @@ Emitted when a popup is requested. Happens on right-clicking in the GraphEdit. `
 
 - **scroll_offset_changed** **(** :ref:`Vector2<class_Vector2>` ofs **)**
 
-Description
------------
-
-GraphEdit manages the showing of GraphNodes it contains, as well as connections and disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNode slots is disabled by default.
-
-It is greatly advised to enable low-processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
+Emitted when the scroll offset is changed by the user. It will not be emitted when changed in code.
 
 Property Descriptions
 ---------------------
@@ -404,6 +405,8 @@ Removes the possibility to disconnect nodes when dragging from the slot at the r
 .. _class_GraphEdit_method_set_connection_activity:
 
 - void **set_connection_activity** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)**
+
+Sets the coloration of the connection between ``from``'s ``from_port`` and ``to``'s ``to_port`` with the color provided in the ``activity`` theme property.
 
 ----
 

@@ -11,12 +11,12 @@ EditorVCSInterface
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Version Control System (VCS) interface which reads and writes to the local VCS in use.
+
+Description
+-----------
+
+Used by the editor to display VCS extracted information in the editor. The implementation of this API is included in VCS addons, which are essentially GDNative plugins that need to be put into the project folder. These VCS addons are scripts which are attached (on demand) to the object instance of ``EditorVCSInterface``. All the functions listed below, instead of performing the task themselves, they call the internally defined functions in the VCS addons to provide a plug-n-play experience.
 
 Methods
 -------
@@ -44,11 +44,6 @@ Methods
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`unstage_file<class_EditorVCSInterface_method_unstage_file>` **(** :ref:`String<class_String>` file_path **)**     |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Used by the editor to display VCS extracted information in the editor. The implementation of this API is included in VCS addons, which are essentially GDNative plugins that need to be put into the project folder. These VCS addons are scripts which are attached (on demand) to the object instance of ``EditorVCSInterface``. All the functions listed below, instead of performing the task themselves, they call the internally defined functions in the VCS addons to provide a plug-n-play experience.
 
 Method Descriptions
 -------------------

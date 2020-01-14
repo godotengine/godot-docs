@@ -11,12 +11,17 @@ OmniLight
 
 **Inherits:** :ref:`Light<class_Light>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Omnidirectional light, such as a light bulb or a candle.
+
+Description
+-----------
+
+An Omnidirectional light is a type of :ref:`Light<class_Light>` that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/lights_and_shadows`
 
 Properties
 ----------
@@ -59,16 +64,6 @@ enum **ShadowDetail**:
 - **SHADOW_DETAIL_VERTICAL** = **0**
 
 - **SHADOW_DETAIL_HORIZONTAL** = **1**
-
-Description
------------
-
-An Omnidirectional light is a type of :ref:`Light<class_Light>` that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/lights_and_shadows`
 
 Property Descriptions
 ---------------------

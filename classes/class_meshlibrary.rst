@@ -11,12 +11,12 @@ MeshLibrary
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Library of meshes.
+
+Description
+-----------
+
+A library of meshes. Contains a list of :ref:`Mesh<class_Mesh>` resources, each with a name and ID. Each item can also include collision and navigation shapes. This resource is used in :ref:`GridMap<class_GridMap>`.
 
 Methods
 -------
@@ -58,11 +58,6 @@ Methods
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_item_shapes<class_MeshLibrary_method_set_item_shapes>` **(** :ref:`int<class_int>` id, :ref:`Array<class_Array>` shapes **)**                                |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A library of meshes. Contains a list of :ref:`Mesh<class_Mesh>` resources, each with a name and ID. Each item can also include collision and navigation shapes. This resource is used in :ref:`GridMap<class_GridMap>`.
 
 Method Descriptions
 -------------------

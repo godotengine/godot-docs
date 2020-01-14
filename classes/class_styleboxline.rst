@@ -11,12 +11,12 @@ StyleBoxLine
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 :ref:`StyleBox<class_StyleBox>` that displays a single line.
+
+Description
+-----------
+
+:ref:`StyleBox<class_StyleBox>` that displays a single line of a given color and thickness. It can be used to draw things like separators.
 
 Properties
 ----------
@@ -32,11 +32,6 @@ Properties
 +---------------------------+-----------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`   | :ref:`vertical<class_StyleBoxLine_property_vertical>`     | false               |
 +---------------------------+-----------------------------------------------------------+---------------------+
-
-Description
------------
-
-:ref:`StyleBox<class_StyleBox>` that displays a single line of a given color and thickness. It can be used to draw things like separators.
 
 Property Descriptions
 ---------------------

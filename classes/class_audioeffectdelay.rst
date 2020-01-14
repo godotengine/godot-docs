@@ -11,14 +11,14 @@ AudioEffectDelay
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a delay audio effect to an audio bus. Plays input signal back after a period of time.
 
 Two tap delay and feedback options.
+
+Description
+-----------
+
+Plays input signal back after a period of time. The delayed signal may be played back multiple times to create the sound of a repeating, decaying echo. Delay effects range from a subtle echo effect to a pronounced blending of previous sounds with new sounds.
 
 Properties
 ----------
@@ -50,11 +50,6 @@ Properties
 +---------------------------+-----------------------------------------------------------------------------+---------+
 | :ref:`float<class_float>` | :ref:`tap2/pan<class_AudioEffectDelay_property_tap2/pan>`                   | -0.4    |
 +---------------------------+-----------------------------------------------------------------------------+---------+
-
-Description
------------
-
-Plays input signal back after a period of time. The delayed signal may be played back multiple times to create the sound of a repeating, decaying echo. Delay effects range from a subtle echo effect to a pronounced blending of previous sounds with new sounds.
 
 Property Descriptions
 ---------------------

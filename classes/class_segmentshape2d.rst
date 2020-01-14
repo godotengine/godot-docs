@@ -11,12 +11,12 @@ SegmentShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Segment shape for 2D collisions.
+
+Description
+-----------
+
+Segment shape for 2D collisions. Consists of two points, ``a`` and ``b``.
 
 Properties
 ----------
@@ -26,11 +26,6 @@ Properties
 +-------------------------------+-------------------------------------------+------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`b<class_SegmentShape2D_property_b>` | Vector2( 0, 10 ) |
 +-------------------------------+-------------------------------------------+------------------+
-
-Description
------------
-
-Segment shape for 2D collisions. Consists of two points, ``a`` and ``b``.
 
 Property Descriptions
 ---------------------

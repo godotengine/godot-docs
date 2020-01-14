@@ -11,12 +11,12 @@ JSONParseResult
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Data class wrapper for decoded JSON.
+
+Description
+-----------
+
+Returned by :ref:`JSON.parse<class_JSON_method_parse>`, ``JSONParseResult`` contains the decoded JSON or error information if the JSON source wasn't successfully parsed. You can check if the JSON source was successfully parsed with ``if json_result.error == OK``.
 
 Properties
 ----------
@@ -30,11 +30,6 @@ Properties
 +---------------------------------------+------------------------------------------------------------------+----+
 | :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_property_result>`             |    |
 +---------------------------------------+------------------------------------------------------------------+----+
-
-Description
------------
-
-Returned by :ref:`JSON.parse<class_JSON_method_parse>`, ``JSONParseResult`` contains the decoded JSON or error information if the JSON source wasn't successfully parsed. You can check if the JSON source was successfully parsed with ``if json_result.error == OK``.
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,17 @@ SoftBody
 
 **Inherits:** :ref:`MeshInstance<class_MeshInstance>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A soft mesh physics body.
+
+Description
+-----------
+
+A deformable physics body. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/soft_body`
 
 Properties
 ----------
@@ -67,16 +72,6 @@ Methods
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_collision_mask_bit<class_SoftBody_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A deformable physics body. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/soft_body`
 
 Property Descriptions
 ---------------------

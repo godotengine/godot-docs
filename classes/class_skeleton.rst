@@ -11,12 +11,16 @@ Skeleton
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Skeleton for characters and animated objects.
+
+Description
+-----------
+
+Skeleton provides a hierarchical interface for managing bones, including pose, rest and animation (see :ref:`Animation<class_Animation>`). It can also use ragdoll physics.
+
+The overall transform of a bone with respect to the skeleton is determined by the following hierarchical order: rest pose, custom pose and pose.
+
+Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it not the actual global/world transform of the bone.
 
 Methods
 -------
@@ -83,15 +87,6 @@ Constants
 .. _class_Skeleton_constant_NOTIFICATION_UPDATE_SKELETON:
 
 - **NOTIFICATION_UPDATE_SKELETON** = **50**
-
-Description
------------
-
-Skeleton provides a hierarchical interface for managing bones, including pose, rest and animation (see :ref:`Animation<class_Animation>`). It can also use ragdoll physics.
-
-The overall transform of a bone with respect to the skeleton is determined by the following hierarchical order: rest pose, custom pose and pose.
-
-Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it not the actual global/world transform of the bone.
 
 Method Descriptions
 -------------------

@@ -11,12 +11,12 @@ VisibilityEnabler2D
 
 **Inherits:** :ref:`VisibilityNotifier2D<class_VisibilityNotifier2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Enables certain nodes only when visible.
+
+Description
+-----------
+
+The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, and other nodes when they are not visible. It will only affect nodes with the same root node as the VisibilityEnabler2D, and the root node itself.
 
 Properties
 ----------
@@ -75,14 +75,9 @@ enum **Enabler**:
 
 - **ENABLER_PARENT_PHYSICS_PROCESS** = **4** --- This enabler will stop the parent's _physics_process function.
 
-- **ENABLER_PAUSE_ANIMATED_SPRITES** = **5**
+- **ENABLER_PAUSE_ANIMATED_SPRITES** = **5** --- This enabler will stop :ref:`AnimatedSprite<class_AnimatedSprite>` nodes animations.
 
 - **ENABLER_MAX** = **6** --- Represents the size of the :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` enum.
-
-Description
------------
-
-The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, and other nodes when they are not visible. It will only affect nodes with the same root node as the VisibilityEnabler2D, and the root node itself.
 
 Property Descriptions
 ---------------------
@@ -188,9 +183,13 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` enabler **)** const
 
+Returns whether the enabler identified by given :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` constant is active.
+
 ----
 
 .. _class_VisibilityEnabler2D_method_set_enabler:
 
 - void **set_enabler** **(** :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)**
+
+Sets active state of the enabler identified by given :ref:`Enabler<enum_VisibilityEnabler2D_Enabler>` constant.
 

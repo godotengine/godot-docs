@@ -11,12 +11,12 @@ AudioEffectChorus
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a chorus audio effect.
+
+Description
+-----------
+
+Adds a chorus audio effect. The effect applies a filter with voices to duplicate the audio source and manipulate it through the filter.
 
 Properties
 ----------
@@ -105,11 +105,6 @@ Methods
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_voice_rate_hz<class_AudioEffectChorus_method_set_voice_rate_hz>` **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` rate_hz **)**       |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Adds a chorus audio effect. The effect applies a filter with voices to duplicate the audio source and manipulate it through the filter.
 
 Property Descriptions
 ---------------------

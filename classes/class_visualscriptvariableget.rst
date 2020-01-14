@@ -11,19 +11,7 @@ VisualScriptVariableGet
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Gets a variable's value.
-
-Properties
-----------
-
-+-----------------------------+------------------------------------------------------------------+----+
-| :ref:`String<class_String>` | :ref:`var_name<class_VisualScriptVariableGet_property_var_name>` | "" |
-+-----------------------------+------------------------------------------------------------------+----+
 
 Description
 -----------
@@ -37,6 +25,13 @@ none
 **Output Ports:**
 
 - Data (variant): ``value``
+
+Properties
+----------
+
++-----------------------------+------------------------------------------------------------------+----+
+| :ref:`String<class_String>` | :ref:`var_name<class_VisualScriptVariableGet_property_var_name>` | "" |
++-----------------------------+------------------------------------------------------------------+----+
 
 Property Descriptions
 ---------------------

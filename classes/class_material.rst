@@ -13,12 +13,12 @@ Material
 
 **Inherited By:** :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, :ref:`ParticlesMaterial<class_ParticlesMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`, :ref:`SpatialMaterial<class_SpatialMaterial>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
+
+Description
+-----------
+
+Material is a base :ref:`Resource<class_Resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance<class_VisualInstance>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
 
 Properties
 ----------
@@ -39,11 +39,6 @@ Constants
 - **RENDER_PRIORITY_MAX** = **127** --- Maximum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
 
 - **RENDER_PRIORITY_MIN** = **-128** --- Minimum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
-
-Description
------------
-
-Material is a base :ref:`Resource<class_Resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance<class_VisualInstance>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,17 @@ InputEventAction
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event type for actions.
+
+Description
+-----------
+
+Contains a generic action which can be targeted from several types of inputs. Actions can be created from the **Input Map** tab in the **Project > Project Settings** menu. See :ref:`Node._input<class_Node_method__input>`.
+
+Tutorials
+---------
+
+- `#actions <../tutorials/inputs/inputevent.html#actions>`_ in :doc:`../tutorials/inputs/inputevent`
 
 Properties
 ----------
@@ -28,16 +33,6 @@ Properties
 +-----------------------------+-----------------------------------------------------------+-------+
 | :ref:`float<class_float>`   | :ref:`strength<class_InputEventAction_property_strength>` | 1.0   |
 +-----------------------------+-----------------------------------------------------------+-------+
-
-Description
------------
-
-Contains a generic action which can be targeted from several types of inputs. Actions can be created from the **Input Map** tab in the **Project > Project Settings** menu. See :ref:`Node._input<class_Node_method__input>`.
-
-Tutorials
----------
-
-- `#actions <../tutorials/inputs/inputevent.html#actions>`_ in :doc:`../tutorials/inputs/inputevent`
 
 Property Descriptions
 ---------------------

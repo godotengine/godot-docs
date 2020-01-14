@@ -11,12 +11,12 @@ Sprite
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 General-purpose sprite node.
+
+Description
+-----------
+
+A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
 Properties
 ----------
@@ -74,11 +74,6 @@ Emitted when the :ref:`frame<class_Sprite_property_frame>` changes.
 - **texture_changed** **(** **)**
 
 Emitted when the :ref:`texture<class_Sprite_property_texture>` changes.
-
-Description
------------
-
-A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
 Property Descriptions
 ---------------------

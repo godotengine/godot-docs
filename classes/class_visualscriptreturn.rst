@@ -11,21 +11,7 @@ VisualScriptReturn
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Exits a function and returns an optional value.
-
-Properties
-----------
-
-+-----------------------------------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                             | :ref:`return_enabled<class_VisualScriptReturn_property_return_enabled>` | false |
-+-----------------------------------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`return_type<class_VisualScriptReturn_property_return_type>`       | 0     |
-+-----------------------------------------------------+-------------------------------------------------------------------------+-------+
 
 Description
 -----------
@@ -41,6 +27,15 @@ Ends the execution of a function and returns control to the calling function. Op
 **Output Ports:**
 
 none
+
+Properties
+----------
+
++-----------------------------------------------------+-------------------------------------------------------------------------+-------+
+| :ref:`bool<class_bool>`                             | :ref:`return_enabled<class_VisualScriptReturn_property_return_enabled>` | false |
++-----------------------------------------------------+-------------------------------------------------------------------------+-------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`return_type<class_VisualScriptReturn_property_return_type>`       | 0     |
++-----------------------------------------------------+-------------------------------------------------------------------------+-------+
 
 Property Descriptions
 ---------------------

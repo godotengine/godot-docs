@@ -11,12 +11,12 @@ AnimationNodeAnimation
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input animation to use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
+Description
+-----------
+
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Only features one output set using the :ref:`animation<class_AnimationNodeAnimation_property_animation>` property. Use it as an input for :ref:`AnimationNode<class_AnimationNode>` that blend animations together.
 
 Properties
 ----------
@@ -24,11 +24,6 @@ Properties
 +-----------------------------+-------------------------------------------------------------------+----+
 | :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | "" |
 +-----------------------------+-------------------------------------------------------------------+----+
-
-Description
------------
-
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Only features one output set using the :ref:`animation<class_AnimationNodeAnimation_property_animation>` property. Use it as an input for :ref:`AnimationNode<class_AnimationNode>` that blend animations together.
 
 Property Descriptions
 ---------------------

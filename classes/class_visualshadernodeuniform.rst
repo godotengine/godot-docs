@@ -13,11 +13,6 @@ VisualShaderNodeUniform
 
 **Inherited By:** :ref:`VisualShaderNodeBooleanUniform<class_VisualShaderNodeBooleanUniform>`, :ref:`VisualShaderNodeColorUniform<class_VisualShaderNodeColorUniform>`, :ref:`VisualShaderNodeScalarUniform<class_VisualShaderNodeScalarUniform>`, :ref:`VisualShaderNodeTextureUniform<class_VisualShaderNodeTextureUniform>`, :ref:`VisualShaderNodeTransformUniform<class_VisualShaderNodeTransformUniform>`, :ref:`VisualShaderNodeVec3Uniform<class_VisualShaderNodeVec3Uniform>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

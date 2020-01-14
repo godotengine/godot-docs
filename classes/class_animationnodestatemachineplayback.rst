@@ -11,12 +11,19 @@ AnimationNodeStateMachinePlayback
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Playback control for AnimationNodeStateMachine.
+
+Description
+-----------
+
+Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines created with :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`. Retrieve with ``$AnimationTree.get("parameters/playback")``.
+
+**Example:**
+
+::
+
+    var state_machine = $AnimationTree.get("parameters/playback")
+    state_machine.travel("some_state")
 
 Properties
 ----------
@@ -41,18 +48,6 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`travel<class_AnimationNodeStateMachinePlayback_method_travel>` **(** :ref:`String<class_String>` to_node **)** |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines created with :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`. Retrieve with ``$AnimationTree.get("parameters/playback")``.
-
-**Example:**
-
-::
-
-    var state_machine = $AnimationTree.get("parameters/playback")
-    state_machine.travel("some_state")
 
 Method Descriptions
 -------------------

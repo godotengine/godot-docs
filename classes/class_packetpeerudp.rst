@@ -11,12 +11,12 @@ PacketPeerUDP
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 UDP packet peer.
+
+Description
+-----------
+
+UDP packet peer. Can be used to send raw UDP packets as well as :ref:`Variant<class_Variant>`\ s.
 
 Methods
 -------
@@ -42,11 +42,6 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_PacketPeerUDP_method_wait>` **(** **)**                                                                                                                             |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-UDP packet peer. Can be used to send raw UDP packets as well as :ref:`Variant<class_Variant>`\ s.
 
 Method Descriptions
 -------------------

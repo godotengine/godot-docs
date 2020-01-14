@@ -13,12 +13,12 @@ CSGShape
 
 **Inherited By:** :ref:`CSGCombiner<class_CSGCombiner>`, :ref:`CSGPrimitive<class_CSGPrimitive>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 The CSG base class.
+
+Description
+-----------
+
+This is the CSG base class that provides CSG operation support to the various CSG nodes in Godot.
 
 Properties
 ----------
@@ -72,11 +72,6 @@ enum **Operation**:
 - **OPERATION_INTERSECTION** = **1** --- Only intersecting geometry remains, the rest is removed.
 
 - **OPERATION_SUBTRACTION** = **2** --- The second shape is subtracted from the first, leaving a dent with its shape.
-
-Description
------------
-
-This is the CSG base class that provides CSG operation support to the various CSG nodes in Godot.
 
 Property Descriptions
 ---------------------

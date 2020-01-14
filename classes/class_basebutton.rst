@@ -13,12 +13,12 @@ BaseButton
 
 **Inherited By:** :ref:`Button<class_Button>`, :ref:`LinkButton<class_LinkButton>`, :ref:`TextureButton<class_TextureButton>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for different kinds of buttons.
+
+Description
+-----------
+
+BaseButton is the abstract base class for buttons, so it shouldn't be used directly (it doesn't display anything). Other types of buttons inherit from it.
 
 Properties
 ----------
@@ -118,7 +118,7 @@ enum **DrawMode**:
 
 - **DRAW_DISABLED** = **3** --- The state of buttons are disabled.
 
-- **DRAW_HOVER_PRESSED** = **4**
+- **DRAW_HOVER_PRESSED** = **4** --- The state of buttons are both hovered and pressed.
 
 ----
 
@@ -133,11 +133,6 @@ enum **ActionMode**:
 - **ACTION_MODE_BUTTON_PRESS** = **0** --- Require just a press to consider the button clicked.
 
 - **ACTION_MODE_BUTTON_RELEASE** = **1** --- Require a press and a subsequent release before considering the button clicked.
-
-Description
------------
-
-BaseButton is the abstract base class for buttons, so it shouldn't be used directly (it doesn't display anything). Other types of buttons inherit from it.
 
 Property Descriptions
 ---------------------

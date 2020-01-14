@@ -11,11 +11,6 @@ StreamPeerBuffer
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

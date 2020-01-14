@@ -11,12 +11,14 @@ AnimationTreePlayer
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Animation Player that uses a node graph for blending Animations.
+
+Description
+-----------
+
+A node graph tool for blending multiple animations bound to an :ref:`AnimationPlayer<class_AnimationPlayer>`. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose.
+
+It takes :ref:`Animation<class_Animation>`\ s from an :ref:`AnimationPlayer<class_AnimationPlayer>` node and mixes them depending on the graph.
 
 Properties
 ----------
@@ -210,13 +212,6 @@ enum **AnimationProcessMode**:
 - **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
 
 - **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
-
-Description
------------
-
-A node graph tool for blending multiple animations bound to an :ref:`AnimationPlayer<class_AnimationPlayer>`. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose.
-
-It takes :ref:`Animation<class_Animation>`\ s from an :ref:`AnimationPlayer<class_AnimationPlayer>` node and mixes them depending on the graph.
 
 Property Descriptions
 ---------------------

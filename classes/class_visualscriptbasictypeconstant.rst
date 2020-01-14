@@ -11,12 +11,12 @@ VisualScriptBasicTypeConstant
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A Visual Script node representing a constant from the base types.
+
+Description
+-----------
+
+A Visual Script node representing a constant from base types, such as :ref:`Vector3.AXIS_X<class_Vector3_constant_AXIS_X>`.
 
 Properties
 ----------
@@ -26,11 +26,6 @@ Properties
 +-----------------------------------------------------+----------------------------------------------------------------------------+---+
 | :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |   |
 +-----------------------------------------------------+----------------------------------------------------------------------------+---+
-
-Description
------------
-
-A Visual Script node representing a constant from base types, such as :ref:`Vector3.AXIS_X<class_Vector3_constant_AXIS_X>`.
 
 Property Descriptions
 ---------------------

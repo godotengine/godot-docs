@@ -11,11 +11,6 @@ PluginScript
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Methods

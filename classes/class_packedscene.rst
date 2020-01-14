@@ -11,12 +11,38 @@ PackedScene
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 An abstraction of a serialized scene.
+
+Description
+-----------
+
+A simplified interface to a scene file. Provides access to operations and checks that can be performed on the scene resource itself.
+
+Can be used to save a node to a file. When saving, the node as well as all the node it owns get saved (see ``owner`` property on :ref:`Node<class_Node>`).
+
+**Note:** The node doesn't need to own itself.
+
+**Example of saving a node with different owners:** The following example creates 3 objects: ``Node2D`` (``node``), ``RigidBody2D`` (``rigid``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``rigid`` which is a child of ``node``. Only ``rigid`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
+
+::
+
+    # Create the objects
+    var node = Node2D.new()
+    var rigid = RigidBody2D.new()
+    var collision = CollisionShape2D.new()
+    
+    # Create the object hierarchy
+    rigid.add_child(collision)
+    node.add_child(rigid)
+    
+    # Change owner of rigid, but not of collision
+    rigid.owner = node
+    
+    var scene = PackedScene.new()
+    # Only node and rigid are now packed
+    var result = scene.pack(node)
+    if result == OK:
+        ResourceSaver.save("res://path/name.scn", scene) # Or "user://..."
 
 Properties
 ----------
@@ -60,37 +86,6 @@ enum **GenEditState**:
 - **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
 
 **Note:** Only available in editor builds.
-
-Description
------------
-
-A simplified interface to a scene file. Provides access to operations and checks that can be performed on the scene resource itself.
-
-Can be used to save a node to a file. When saving, the node as well as all the node it owns get saved (see ``owner`` property on :ref:`Node<class_Node>`).
-
-**Note:** The node doesn't need to own itself.
-
-**Example of saving a node with different owners:** The following example creates 3 objects: ``Node2D`` (``node``), ``RigidBody2D`` (``rigid``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``rigid`` which is a child of ``node``. Only ``rigid`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
-
-::
-
-    # Create the objects
-    var node = Node2D.new()
-    var rigid = RigidBody2D.new()
-    var collision = CollisionShape2D.new()
-    
-    # Create the object hierarchy
-    rigid.add_child(collision)
-    node.add_child(rigid)
-    
-    # Change owner of rigid, but not of collision
-    rigid.owner = node
-    
-    var scene = PackedScene.new()
-    # Only node and rigid are now packed
-    var result = scene.pack(node)
-    if result == OK:
-        ResourceSaver.save("res://path/name.scn", scene) # Or "user://..."
 
 Property Descriptions
 ---------------------

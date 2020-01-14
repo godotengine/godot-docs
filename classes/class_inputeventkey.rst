@@ -11,12 +11,17 @@ InputEventKey
 
 **Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event type for keyboard events.
+
+Description
+-----------
+
+Stores key presses on the keyboard. Supports key presses, key releases and :ref:`echo<class_InputEventKey_property_echo>` events.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
 
 Properties
 ----------
@@ -37,16 +42,6 @@ Methods
 +-----------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>` | :ref:`get_scancode_with_modifiers<class_InputEventKey_method_get_scancode_with_modifiers>` **(** **)** const |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Stores key presses on the keyboard. Supports key presses, key releases and :ref:`echo<class_InputEventKey_property_echo>` events.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/inputevent`
 
 Property Descriptions
 ---------------------

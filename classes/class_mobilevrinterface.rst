@@ -11,12 +11,22 @@ MobileVRInterface
 
 **Inherits:** :ref:`ARVRInterface<class_ARVRInterface>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Generic mobile VR implementation.
+
+Description
+-----------
+
+This is a generic mobile VR implementation where you need to provide details about the phone and HMD used. It does not rely on any existing framework. This is the most basic interface we have. For the best effect, you need a mobile phone with a gyroscope and accelerometer.
+
+Note that even though there is no positional tracking, the camera will assume the headset is at a height of 1.85 meters. You can change this by setting :ref:`eye_height<class_MobileVRInterface_property_eye_height>`.
+
+You can initialise this interface as follows:
+
+::
+
+    var interface = ARVRServer.find_interface("Native mobile")
+    if interface and interface.initialize():
+        get_viewport().arvr = true
 
 Properties
 ----------
@@ -36,21 +46,6 @@ Properties
 +---------------------------+--------------------------------------------------------------------------+-------+
 | :ref:`float<class_float>` | :ref:`oversample<class_MobileVRInterface_property_oversample>`           | 1.5   |
 +---------------------------+--------------------------------------------------------------------------+-------+
-
-Description
------------
-
-This is a generic mobile VR implementation where you need to provide details about the phone and HMD used. It does not rely on any existing framework. This is the most basic interface we have. For the best effect, you need a mobile phone with a gyroscope and accelerometer.
-
-Note that even though there is no positional tracking, the camera will assume the headset is at a height of 1.85 meters. You can change this by setting :ref:`eye_height<class_MobileVRInterface_property_eye_height>`.
-
-You can initialise this interface as follows:
-
-::
-
-    var interface = ARVRServer.find_interface("Native mobile")
-    if interface and interface.initialize():
-        get_viewport().arvr = true
 
 Property Descriptions
 ---------------------

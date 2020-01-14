@@ -11,11 +11,6 @@ AudioEffectSpectrumAnalyzerInstance
 
 **Inherits:** :ref:`AudioEffectInstance<class_AudioEffectInstance>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Methods

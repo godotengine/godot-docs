@@ -11,12 +11,12 @@ OS
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Operating System functions.
+
+Description
+-----------
+
+Operating System functions. OS wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, date and time, timers, environment variables, execution of binaries, command line, etc.
 
 Properties
 ----------
@@ -210,6 +210,8 @@ Methods
 | :ref:`bool<class_bool>`                       | :ref:`is_userfs_persistent<class_OS_method_is_userfs_persistent>` **(** **)** const                                                                                                                                                                               |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_window_always_on_top<class_OS_method_is_window_always_on_top>` **(** **)** const                                                                                                                                                                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`is_window_focused<class_OS_method_is_window_focused>` **(** **)** const                                                                                                                                                                                     |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`kill<class_OS_method_kill>` **(** :ref:`int<class_int>` pid **)**                                                                                                                                                                                           |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -463,11 +465,6 @@ enum **PowerState**:
 
 - **POWERSTATE_CHARGED** = **4** --- Plugged in, battery fully charged.
 
-Description
------------
-
-Operating System functions. OS wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, date and time, timers, environment variables, execution of binaries, command line, etc.
-
 Property Descriptions
 ---------------------
 
@@ -516,6 +513,8 @@ The current screen index (starting from 0).
 +-----------+----------------------+
 
 The exit code passed to the OS when the main loop exits. By convention, an exit code of ``0`` indicates success whereas a non-zero exit code indicates an error. For portability reasons, the exit code should be set between 0 and 125 (inclusive).
+
+**Note:** This value will be ignored if using :ref:`SceneTree.quit<class_SceneTree_method_quit>` with an ``exit_code`` argument passed.
 
 ----
 
@@ -644,6 +643,10 @@ If ``true``, vertical synchronization (Vsync) is enabled.
 +-----------+-----------------------------------+
 
 If ``true`` and ``vsync_enabled`` is true, the operating system's window compositor will be used for vsync when the compositor is enabled and the game is in windowed mode.
+
+**Note:** This option is experimental and meant to alleviate stutter experienced by some users. However, some users have experienced a Vsync framerate halving (e.g. from 60 FPS to 30 FPS) when using it.
+
+**Note:** This property is only implemented on Windows.
 
 ----
 
@@ -1432,11 +1435,11 @@ Hides the virtual keyboard if it is shown, does nothing otherwise.
 
 - :ref:`bool<class_bool>` **is_debug_build** **(** **)** const
 
-Returns ``true`` if the build is a debug build.
+Returns ``true`` if the Godot binary used to run the project is a *debug* export template, or when running in the editor.
 
-Returns ``true`` when running in the editor.
+Returns ``false`` if the Godot binary used to run the project is a *release* export template.
 
-Returns ``false`` if the build is a release build.
+To check whether the Godot binary used to run the project is an export template (debug or release), use ``OS.has_feature("standalone")`` instead.
 
 ----
 
@@ -1477,6 +1480,16 @@ If ``true``, the ``user://`` file system is persistent, so that its state is the
 - :ref:`bool<class_bool>` **is_window_always_on_top** **(** **)** const
 
 Returns ``true`` if the window should always be on top of other windows.
+
+----
+
+.. _class_OS_method_is_window_focused:
+
+- :ref:`bool<class_bool>` **is_window_focused** **(** **)** const
+
+Returns ``true`` if the window is currently focused.
+
+**Note:** Only implemented on desktop platforms. On other platforms, it will always return ``true``.
 
 ----
 

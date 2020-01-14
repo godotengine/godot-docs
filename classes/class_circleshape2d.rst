@@ -11,12 +11,12 @@ CircleShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Circular shape for 2D collisions.
+
+Description
+-----------
+
+Circular shape for 2D collisions. This shape is useful for modeling balls or small characters and its collision detection with everything else is very fast.
 
 Properties
 ----------
@@ -24,11 +24,6 @@ Properties
 +---------------------------+----------------------------------------------------+------+
 | :ref:`float<class_float>` | :ref:`radius<class_CircleShape2D_property_radius>` | 10.0 |
 +---------------------------+----------------------------------------------------+------+
-
-Description
------------
-
-Circular shape for 2D collisions. This shape is useful for modeling balls or small characters and its collision detection with everything else is very fast.
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,12 @@ AtlasTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Packs multiple small textures in a single, bigger one. Helps to optimize video memory costs and render calls.
+
+Description
+-----------
+
+:ref:`Texture<class_Texture>` resource aimed at managing big textures files that pack multiple smaller textures. Consists of a :ref:`Texture<class_Texture>`, a margin that defines the border width, and a region that defines the actual area of the AtlasTexture.
 
 Properties
 ----------
@@ -32,11 +32,6 @@ Properties
 +-------------------------------+-------------------------------------------------------------+---------------------+
 | :ref:`Rect2<class_Rect2>`     | :ref:`region<class_AtlasTexture_property_region>`           | Rect2( 0, 0, 0, 0 ) |
 +-------------------------------+-------------------------------------------------------------+---------------------+
-
-Description
------------
-
-:ref:`Texture<class_Texture>` resource aimed at managing big textures files that pack multiple smaller textures. Consists of a :ref:`Texture<class_Texture>`, a margin that defines the border width, and a region that defines the actual area of the AtlasTexture.
 
 Property Descriptions
 ---------------------

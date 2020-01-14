@@ -13,12 +13,19 @@ Spatial
 
 **Inherited By:** :ref:`ARVRAnchor<class_ARVRAnchor>`, :ref:`ARVRController<class_ARVRController>`, :ref:`ARVROrigin<class_ARVROrigin>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment<class_BoneAttachment>`, :ref:`Camera<class_Camera>`, :ref:`CollisionObject<class_CollisionObject>`, :ref:`CollisionPolygon<class_CollisionPolygon>`, :ref:`CollisionShape<class_CollisionShape>`, :ref:`GridMap<class_GridMap>`, :ref:`Joint<class_Joint>`, :ref:`Listener<class_Listener>`, :ref:`Navigation<class_Navigation>`, :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`, :ref:`Path<class_Path>`, :ref:`PathFollow<class_PathFollow>`, :ref:`Position3D<class_Position3D>`, :ref:`ProximityGroup<class_ProximityGroup>`, :ref:`RayCast<class_RayCast>`, :ref:`RemoteTransform<class_RemoteTransform>`, :ref:`Skeleton<class_Skeleton>`, :ref:`SpringArm<class_SpringArm>`, :ref:`VehicleWheel<class_VehicleWheel>`, :ref:`VisibilityNotifier<class_VisibilityNotifier>`, :ref:`VisualInstance<class_VisualInstance>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Most basic 3D game object, parent of all 3D-related nodes.
+
+Description
+-----------
+
+Most basic 3D game object, with a 3D :ref:`Transform<class_Transform>` and visibility settings. All other 3D game objects inherit from Spatial. Use ``Spatial`` as a parent node to move, scale, rotate and show/hide children in a 3D project.
+
+Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the ``Spatial`` object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the ``Spatial``'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the ``Spatial`` object itself is referred to as object-local coordinate system.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/introduction_to_3d`
 
 Properties
 ----------
@@ -141,18 +148,6 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Spatial_constant_NOTIFIC
 - **NOTIFICATION_EXIT_WORLD** = **42** --- Spatial nodes receives this notification when they are unregistered from current :ref:`World<class_World>` resource.
 
 - **NOTIFICATION_VISIBILITY_CHANGED** = **43** --- Spatial nodes receives this notification when their visibility changes.
-
-Description
------------
-
-Most basic 3D game object, with a 3D :ref:`Transform<class_Transform>` and visibility settings. All other 3D game objects inherit from Spatial. Use ``Spatial`` as a parent node to move, scale, rotate and show/hide children in a 3D project.
-
-Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the ``Spatial`` object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the ``Spatial``'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the ``Spatial`` object itself is referred to as object-local coordinate system.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/introduction_to_3d`
 
 Property Descriptions
 ---------------------

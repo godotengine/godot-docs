@@ -9,12 +9,12 @@
 RID
 ===
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Handle for a :ref:`Resource<class_Resource>`'s unique ID.
+
+Description
+-----------
+
+The RID type is used to access the unique integer ID of a resource. They are opaque, which means they do not grant access to the associated resource by themselves. They are used by and with the low-level Server classes such as :ref:`VisualServer<class_VisualServer>`.
 
 Methods
 -------
@@ -24,11 +24,6 @@ Methods
 +-----------------------+-------------------------------------------------------------------------------+
 | :ref:`int<class_int>` | :ref:`get_id<class_RID_method_get_id>` **(** **)**                            |
 +-----------------------+-------------------------------------------------------------------------------+
-
-Description
------------
-
-The RID type is used to access the unique integer ID of a resource. They are opaque, which means they do not grant access to the associated resource by themselves. They are used by and with the low-level Server classes such as :ref:`VisualServer<class_VisualServer>`.
 
 Method Descriptions
 -------------------

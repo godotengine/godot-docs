@@ -11,12 +11,12 @@ Engine
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Access to basic engine properties.
+
+Description
+-----------
+
+The ``Engine`` class allows you to query and modify the project's run-time parameters, such as frames per second, time scale, and others.
 
 Properties
 ----------
@@ -47,11 +47,15 @@ Methods
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`get_frames_per_second<class_Engine_method_get_frames_per_second>` **(** **)** const                           |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_idle_frames<class_Engine_method_get_idle_frames>` **(** **)** const                                       |
++-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>` | :ref:`get_license_info<class_Engine_method_get_license_info>` **(** **)** const                                     |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`get_license_text<class_Engine_method_get_license_text>` **(** **)** const                                     |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`MainLoop<class_MainLoop>`     | :ref:`get_main_loop<class_Engine_method_get_main_loop>` **(** **)** const                                           |
++-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_physics_frames<class_Engine_method_get_physics_frames>` **(** **)** const                                 |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`get_physics_interpolation_fraction<class_Engine_method_get_physics_interpolation_fraction>` **(** **)** const |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
@@ -63,11 +67,6 @@ Methods
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`is_in_physics_frame<class_Engine_method_is_in_physics_frame>` **(** **)** const                               |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-The ``Engine`` class allows you to query and modify the project's run-time parameters, such as frames per second, time scale, and others.
 
 Property Descriptions
 ---------------------
@@ -115,6 +114,8 @@ The number of fixed iterations per second (for fixed process and physics).
 +-----------+-------------------------------+
 | *Getter*  | get_physics_jitter_fix()      |
 +-----------+-------------------------------+
+
+Controls how much physic ticks are synchronized  with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows to smooth out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
 
 ----
 
@@ -193,7 +194,7 @@ Returns a Dictionary of Arrays of donor names.
 
 - :ref:`int<class_int>` **get_frames_drawn** **(** **)**
 
-Returns the total number of frames drawn.
+Returns the total number of frames drawn. If the render loop is disabled with ``--disable-render-loop`` via command line, this returns ``0``. See also :ref:`get_idle_frames<class_Engine_method_get_idle_frames>`.
 
 ----
 
@@ -202,6 +203,14 @@ Returns the total number of frames drawn.
 - :ref:`float<class_float>` **get_frames_per_second** **(** **)** const
 
 Returns the frames per second of the running game.
+
+----
+
+.. _class_Engine_method_get_idle_frames:
+
+- :ref:`int<class_int>` **get_idle_frames** **(** **)** const
+
+Returns the total number of frames passed since engine initialization which is advanced on each **idle frame**, regardless of whether the render loop is enabled. See also :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>`.
 
 ----
 
@@ -229,6 +238,14 @@ Returns the main loop object (see :ref:`MainLoop<class_MainLoop>` and :ref:`Scen
 
 ----
 
+.. _class_Engine_method_get_physics_frames:
+
+- :ref:`int<class_int>` **get_physics_frames** **(** **)** const
+
+Returns the total number of frames passed since engine initialization which is advanced on each **physics frame**.
+
+----
+
 .. _class_Engine_method_get_physics_interpolation_fraction:
 
 - :ref:`float<class_float>` **get_physics_interpolation_fraction** **(** **)** const
@@ -240,6 +257,8 @@ Returns the fraction through the current physics tick we are at the time of rend
 .. _class_Engine_method_get_singleton:
 
 - :ref:`Object<class_Object>` **get_singleton** **(** :ref:`String<class_String>` name **)** const
+
+Returns a global singleton with given ``name``. Often used for plugins, e.g. GodotPayments.
 
 ----
 
@@ -281,6 +300,8 @@ The ``hex`` value is encoded as follows, from left to right: one byte for the ma
 .. _class_Engine_method_has_singleton:
 
 - :ref:`bool<class_bool>` **has_singleton** **(** :ref:`String<class_String>` name **)** const
+
+Returns ``true`` if a singleton with given ``name`` exists in global scope.
 
 ----
 

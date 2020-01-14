@@ -11,12 +11,12 @@ StreamTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A ``.stex`` texture.
+
+Description
+-----------
+
+A texture that is loaded from a ``.stex`` file.
 
 Properties
 ----------
@@ -33,11 +33,6 @@ Methods
 +---------------------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_StreamTexture_method_load>` **(** :ref:`String<class_String>` path **)** |
 +---------------------------------------+-------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A texture that is loaded from a ``.stex`` file.
 
 Property Descriptions
 ---------------------

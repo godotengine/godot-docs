@@ -13,11 +13,6 @@ VisualShaderNodeExpression
 
 **Inherited By:** :ref:`VisualShaderNodeGlobalExpression<class_VisualShaderNodeGlobalExpression>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

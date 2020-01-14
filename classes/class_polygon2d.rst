@@ -11,12 +11,12 @@ Polygon2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A 2D polygon.
+
+Description
+-----------
+
+A Polygon2D is defined by a set of points. Each point is connected to the next, with the final point being connected to the first, resulting in a closed polygon. Polygon2Ds can be filled with color (solid or gradient) or filled with a given texture.
 
 Properties
 ----------
@@ -77,11 +77,6 @@ Methods
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set_bone_weights<class_Polygon2D_method_set_bone_weights>` **(** :ref:`int<class_int>` index, :ref:`PoolRealArray<class_PoolRealArray>` weights **)** |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A Polygon2D is defined by a set of points. Each point is connected to the next, with the final point being connected to the first, resulting in a closed polygon. Polygon2Ds can be filled with color (solid or gradient) or filled with a given texture.
 
 Property Descriptions
 ---------------------

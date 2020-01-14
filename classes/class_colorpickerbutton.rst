@@ -11,12 +11,12 @@ ColorPickerButton
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Button that pops out a :ref:`ColorPicker<class_ColorPicker>`.
+
+Description
+-----------
+
+Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accessible by pressing a button. Pressing the button will toggle the :ref:`ColorPicker<class_ColorPicker>` visibility.
 
 Properties
 ----------
@@ -82,16 +82,15 @@ Emitted when the color changes.
 
 - **picker_created** **(** **)**
 
+Emitted when the :ref:`ColorPicker<class_ColorPicker>` is created (the button is pressed for the first time).
+
 ----
 
 .. _class_ColorPickerButton_signal_popup_closed:
 
 - **popup_closed** **(** **)**
 
-Description
------------
-
-Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accessible by pressing a button. Pressing the button will toggle the :ref:`ColorPicker<class_ColorPicker>` visibility.
+Emitted when the :ref:`ColorPicker<class_ColorPicker>` is closed.
 
 Property Descriptions
 ---------------------

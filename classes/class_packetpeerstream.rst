@@ -11,12 +11,12 @@ PacketPeerStream
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Wrapper to use a PacketPeer over a StreamPeer.
+
+Description
+-----------
+
+PacketStreamPeer provides a wrapper for working using packets over a stream. This allows for using packet based code with StreamPeers. PacketPeerStream implements a custom protocol over the StreamPeer, so the user should not read or write to the wrapped StreamPeer directly.
 
 Properties
 ----------
@@ -28,11 +28,6 @@ Properties
 +-------------------------------------+---------------------------------------------------------------------------------------+-------+
 | :ref:`StreamPeer<class_StreamPeer>` | :ref:`stream_peer<class_PacketPeerStream_property_stream_peer>`                       |       |
 +-------------------------------------+---------------------------------------------------------------------------------------+-------+
-
-Description
------------
-
-PacketStreamPeer provides a wrapper for working using packets over a stream. This allows for using packet based code with StreamPeers. PacketPeerStream implements a custom protocol over the StreamPeer, so the user should not read or write to the wrapped StreamPeer directly.
 
 Property Descriptions
 ---------------------

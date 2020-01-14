@@ -11,12 +11,24 @@ EditorInspectorPlugin
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Plugin for adding custom property editors on inspector.
+
+Description
+-----------
+
+This plugins allows adding custom property editors to :ref:`EditorInspector<class_EditorInspector>`.
+
+Plugins are registered via :ref:`EditorPlugin.add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>`.
+
+When an object is edited, the :ref:`can_handle<class_EditorInspectorPlugin_method_can_handle>` function is called and must return ``true`` if the object type is supported.
+
+If supported, the function :ref:`parse_begin<class_EditorInspectorPlugin_method_parse_begin>` will be called, allowing to place custom controls at the beginning of the class.
+
+Subsequently, the :ref:`parse_category<class_EditorInspectorPlugin_method_parse_category>` and :ref:`parse_property<class_EditorInspectorPlugin_method_parse_property>` are called for every category and property. They offer the ability to add custom controls to the inspector too.
+
+Finally :ref:`parse_end<class_EditorInspectorPlugin_method_parse_end>` will be called.
+
+On each of these calls, the "add" functions can be called.
 
 Methods
 -------
@@ -38,23 +50,6 @@ Methods
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`parse_property<class_EditorInspectorPlugin_method_parse_property>` **(** :ref:`Object<class_Object>` object, :ref:`int<class_int>` type, :ref:`String<class_String>` path, :ref:`int<class_int>` hint, :ref:`String<class_String>` hint_text, :ref:`int<class_int>` usage **)** virtual |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-This plugins allows adding custom property editors to :ref:`EditorInspector<class_EditorInspector>`.
-
-Plugins are registered via :ref:`EditorPlugin.add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>`.
-
-When an object is edited, the :ref:`can_handle<class_EditorInspectorPlugin_method_can_handle>` function is called and must return ``true`` if the object type is supported.
-
-If supported, the function :ref:`parse_begin<class_EditorInspectorPlugin_method_parse_begin>` will be called, allowing to place custom controls at the beginning of the class.
-
-Subsequently, the :ref:`parse_category<class_EditorInspectorPlugin_method_parse_category>` and :ref:`parse_property<class_EditorInspectorPlugin_method_parse_property>` are called for every category and property. They offer the ability to add custom controls to the inspector too.
-
-Finally :ref:`parse_end<class_EditorInspectorPlugin_method_parse_end>` will be called.
-
-On each of these calls, the "add" functions can be called.
 
 Method Descriptions
 -------------------

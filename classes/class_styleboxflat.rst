@@ -11,12 +11,35 @@ StyleBoxFlat
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Customizable :ref:`StyleBox<class_StyleBox>` with a given set of parameters (no texture required).
+
+Description
+-----------
+
+This :ref:`StyleBox<class_StyleBox>` can be used to achieve all kinds of looks without the need of a texture. Those properties are customizable:
+
+- Color
+
+- Border width (individual width for each border)
+
+- Rounded corners (individual radius for each corner)
+
+- Shadow (with blur and offset)
+
+Setting corner radius to high values is allowed. As soon as corners would overlap, the stylebox will switch to a relative system. Example:
+
+::
+
+    height = 30
+    corner_radius_top_left = 50
+    corner_radius_bottom_left = 100
+
+The relative system now would take the 1:2 ratio of the two left corners to calculate the actual corner width. Both corners added will **never** be more than the height. Result:
+
+::
+
+    corner_radius_top_left: 10
+    corner_radius_bottom_left: 20
 
 Properties
 ----------
@@ -95,34 +118,6 @@ Methods
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_expand_margin_individual<class_StyleBoxFlat_method_set_expand_margin_individual>` **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom **)**               |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-This :ref:`StyleBox<class_StyleBox>` can be used to achieve all kinds of looks without the need of a texture. Those properties are customizable:
-
-- Color
-
-- Border width (individual width for each border)
-
-- Rounded corners (individual radius for each corner)
-
-- Shadow (with blur and offset)
-
-Setting corner radius to high values is allowed. As soon as corners would overlap, the stylebox will switch to a relative system. Example:
-
-::
-
-    height = 30
-    corner_radius_top_left = 50
-    corner_radius_bottom_left = 100
-
-The relative system now would take the 1:2 ratio of the two left corners to calculate the actual corner width. Both corners added will **never** be more than the height. Result:
-
-::
-
-    corner_radius_top_left: 10
-    corner_radius_bottom_left: 20
 
 Property Descriptions
 ---------------------

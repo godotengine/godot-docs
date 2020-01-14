@@ -11,12 +11,12 @@ PlaneShape
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Infinite plane shape for 3D collisions.
+
+Description
+-----------
+
+An infinite plane shape for 3D collisions. Note that the :ref:`Plane<class_Plane>`'s normal matters; anything "below" the plane will collide with it. If the ``PlaneShape`` is used in a :ref:`PhysicsBody<class_PhysicsBody>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
 
 Properties
 ----------
@@ -24,11 +24,6 @@ Properties
 +---------------------------+-----------------------------------------------+---------------------+
 | :ref:`Plane<class_Plane>` | :ref:`plane<class_PlaneShape_property_plane>` | Plane( 0, 1, 0, 0 ) |
 +---------------------------+-----------------------------------------------+---------------------+
-
-Description
------------
-
-An infinite plane shape for 3D collisions. Note that the :ref:`Plane<class_Plane>`'s normal matters; anything "below" the plane will collide with it. If the ``PlaneShape`` is used in a :ref:`PhysicsBody<class_PhysicsBody>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
 
 Property Descriptions
 ---------------------

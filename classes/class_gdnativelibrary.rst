@@ -11,12 +11,19 @@ GDNativeLibrary
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 An external library containing functions or script classes to use in Godot.
+
+Description
+-----------
+
+A GDNative library can implement :ref:`NativeScript<class_NativeScript>`\ s, global functions to call with the :ref:`GDNative<class_GDNative>` class, or low-level engine extensions through interfaces such as :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`. The library must be compiled for each platform and architecture that the project will run on.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/plugins/gdnative/gdnative-c-example`
+
+- :doc:`../tutorials/plugins/gdnative/gdnative-cpp-example`
 
 Properties
 ----------
@@ -41,18 +48,6 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_current_library_path<class_GDNativeLibrary_method_get_current_library_path>` **(** **)** const |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A GDNative library can implement :ref:`NativeScript<class_NativeScript>`\ s, global functions to call with the :ref:`GDNative<class_GDNative>` class, or low-level engine extensions through interfaces such as :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`. The library must be compiled for each platform and architecture that the project will run on.
-
-Tutorials
----------
-
-- :doc:`../tutorials/plugins/gdnative/gdnative-c-example`
-
-- :doc:`../tutorials/plugins/gdnative/gdnative-cpp-example`
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,16 @@ ParallaxLayer
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A parallax scrolling layer to be used with :ref:`ParallaxBackground<class_ParallaxBackground>`.
+
+Description
+-----------
+
+A ParallaxLayer must be the child of a :ref:`ParallaxBackground<class_ParallaxBackground>` node. Each ParallaxLayer can be set to move at different speeds relative to the camera movement or the :ref:`ParallaxBackground.scroll_offset<class_ParallaxBackground_property_scroll_offset>` value.
+
+This node's children will be affected by its scroll offset.
+
+**Note:** Any changes to this node's position and scale made after it enters the scene will be ignored.
 
 Properties
 ----------
@@ -28,15 +32,6 @@ Properties
 +-------------------------------+------------------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`motion_scale<class_ParallaxLayer_property_motion_scale>`         | Vector2( 1, 1 ) |
 +-------------------------------+------------------------------------------------------------------------+-----------------+
-
-Description
------------
-
-A ParallaxLayer must be the child of a :ref:`ParallaxBackground<class_ParallaxBackground>` node. Each ParallaxLayer can be set to move at different speeds relative to the camera movement or the :ref:`ParallaxBackground.scroll_offset<class_ParallaxBackground_property_scroll_offset>` value.
-
-This node's children will be affected by its scroll offset.
-
-**Note:** Any changes to this node's position and scale made after it enters the scene will be ignored.
 
 Property Descriptions
 ---------------------

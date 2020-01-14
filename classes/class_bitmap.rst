@@ -11,12 +11,12 @@ BitMap
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Boolean matrix.
+
+Description
+-----------
+
+A two-dimensional array of boolean values, can be used to efficiently store a binary matrix (every matrix element takes only one bit) and query the values using natural cartesian coordinates.
 
 Methods
 -------
@@ -40,11 +40,6 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_bit_rect<class_BitMap_method_set_bit_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` bit **)**                                    |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A two-dimensional array of boolean values, can be used to efficiently store a binary matrix (every matrix element takes only one bit) and query the values using natural cartesian coordinates.
 
 Method Descriptions
 -------------------

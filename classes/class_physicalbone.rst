@@ -11,11 +11,6 @@ PhysicalBone
 
 **Inherits:** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

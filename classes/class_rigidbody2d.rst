@@ -11,12 +11,20 @@ RigidBody2D
 
 **Inherits:** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A body that is controlled by the 2D physics engine.
+
+Description
+-----------
+
+This node implements simulated 2D physics. You do not control a RigidBody2D directly. Instead you apply forces to it (gravity, impulses, etc.) and the physics simulation calculates the resulting movement based on its mass, friction, and other physical properties.
+
+A RigidBody2D has 4 behavior :ref:`mode<class_RigidBody2D_property_mode>`\ s: Rigid, Static, Character, and Kinematic.
+
+**Note:** You should not change a RigidBody2D's ``position`` or ``linear_velocity`` every frame or even very often. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>`, which allows you to directly access the physics state.
+
+Please also keep in mind that physics bodies manage their own transform which overwrites the ones you set. So any direct or indirect transformation (including scaling of the node or its parent) will be visible in the editor only, and immediately reset at runtime.
+
+If you need to override the default physics behavior or add a transformation at runtime, you can write a custom force integration. See :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`.
 
 Properties
 ----------
@@ -169,19 +177,6 @@ enum **CCDMode**:
 - **CCD_MODE_CAST_RAY** = **1** --- Continuous collision detection enabled using raycasting. This is faster than shapecasting but less precise.
 
 - **CCD_MODE_CAST_SHAPE** = **2** --- Continuous collision detection enabled using shapecasting. This is the slowest CCD method and the most precise.
-
-Description
------------
-
-This node implements simulated 2D physics. You do not control a RigidBody2D directly. Instead you apply forces to it (gravity, impulses, etc.) and the physics simulation calculates the resulting movement based on its mass, friction, and other physical properties.
-
-A RigidBody2D has 4 behavior :ref:`mode<class_RigidBody2D_property_mode>`\ s: Rigid, Static, Character, and Kinematic.
-
-**Note:** You should not change a RigidBody2D's ``position`` or ``linear_velocity`` every frame or even very often. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>`, which allows you to directly access the physics state.
-
-Please also keep in mind that physics bodies manage their own transform which overwrites the ones you set. So any direct or indirect transformation (including scaling of the node or its parent) will be visible in the editor only, and immediately reset at runtime.
-
-If you need to override the default physics behavior or add a transformation at runtime, you can write a custom force integration. See :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`.
 
 Property Descriptions
 ---------------------

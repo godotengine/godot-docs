@@ -13,11 +13,6 @@ WebRTCDataChannel
 
 **Inherited By:** :ref:`WebRTCDataChannelGDNative<class_WebRTCDataChannelGDNative>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

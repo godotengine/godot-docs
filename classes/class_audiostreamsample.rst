@@ -11,12 +11,14 @@ AudioStreamSample
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Stores audio data loaded from WAV files.
+
+Description
+-----------
+
+AudioStreamSample stores sound samples loaded from WAV files. To play the stored sound, use an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` (for non-positional audio) or :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`/:ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` (for positional audio). The sound can be looped.
+
+This class can also be used to store dynamically-generated PCM audio data.
 
 Properties
 ----------
@@ -84,13 +86,6 @@ enum **LoopMode**:
 - **LOOP_PING_PONG** = **2** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing back and forth.
 
 - **LOOP_BACKWARD** = **3** --- Audio loops the data between :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` and :ref:`loop_end<class_AudioStreamSample_property_loop_end>` playing backward only.
-
-Description
------------
-
-AudioStreamSample stores sound samples loaded from WAV files. To play the stored sound, use an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` (for non-positional audio) or :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`/:ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` (for positional audio). The sound can be looped.
-
-This class can also be used to store dynamically-generated PCM audio data.
 
 Property Descriptions
 ---------------------

@@ -13,12 +13,12 @@ CollisionObject
 
 **Inherited By:** :ref:`Area<class_Area>`, :ref:`PhysicsBody<class_PhysicsBody>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base node for collision objects.
+
+Description
+-----------
+
+CollisionObject is the base class for physics objects. It can hold any number of collision :ref:`Shape<class_Shape>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
 
 Properties
 ----------
@@ -92,11 +92,6 @@ Emitted when the mouse pointer enters any of this object's shapes.
 - **mouse_exited** **(** **)**
 
 Emitted when the mouse pointer exits all this object's shapes.
-
-Description
------------
-
-CollisionObject is the base class for physics objects. It can hold any number of collision :ref:`Shape<class_Shape>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
 
 Property Descriptions
 ---------------------

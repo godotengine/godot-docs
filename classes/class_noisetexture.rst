@@ -11,12 +11,14 @@ NoiseTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` filled texture.
+
+Description
+-----------
+
+Uses an :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` to fill the texture data. You can specify the texture size but keep in mind that larger textures will take longer to generate and seamless noise only works with square sized textures.
+
+NoiseTexture can also generate normalmap textures.
 
 Properties
 ----------
@@ -36,13 +38,6 @@ Properties
 +-------------------------------------------------+-----------------------------------------------------------------+----------+
 | :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 | 512      |
 +-------------------------------------------------+-----------------------------------------------------------------+----------+
-
-Description
------------
-
-Uses an :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` to fill the texture data. You can specify the texture size but keep in mind that larger textures will take longer to generate and seamless noise only works with square sized textures.
-
-NoiseTexture can also generate normalmap textures.
 
 Property Descriptions
 ---------------------

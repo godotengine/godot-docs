@@ -9,12 +9,14 @@
 Color
 =====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Color in RGBA format with some support for ARGB format.
+
+Description
+-----------
+
+A color is represented by red, green, and blue ``(r, g, b)`` components. Additionally, ``a`` represents the alpha component, often used for transparency. Values are in floating-point and usually range from 0 to 1. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may accept values greater than 1.
+
+You can also create a color from standardized color names by using :ref:`@GDScript.ColorN<class_@GDScript_method_ColorN>`.
 
 Properties
 ----------
@@ -674,13 +676,6 @@ Constants
 - **yellow** = **Color( 1, 1, 0, 1 )**
 
 - **yellowgreen** = **Color( 0.6, 0.8, 0.2, 1 )**
-
-Description
------------
-
-A color is represented by red, green, and blue ``(r, g, b)`` components. Additionally, ``a`` represents the alpha component, often used for transparency. Values are in floating-point and usually range from 0 to 1. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may accept values greater than 1.
-
-You can also create a color from standardized color names by using :ref:`@GDScript.ColorN<class_@GDScript_method_ColorN>`.
 
 Property Descriptions
 ---------------------

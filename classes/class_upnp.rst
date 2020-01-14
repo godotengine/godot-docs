@@ -11,12 +11,27 @@ UPNP
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 UPNP network functions.
+
+Description
+-----------
+
+Provides UPNP functionality to discover :ref:`UPNPDevice<class_UPNPDevice>`\ s on the local network and execute commands on them, like managing port mappings (port forwarding) and querying the local and remote network IP address. Note that methods on this class are synchronous and block the calling thread.
+
+To forward a specific port:
+
+::
+
+    const PORT = 7777
+    var upnp = UPNP.new()
+    upnp.discover(2000, 2, "InternetGatewayDevice")
+    upnp.add_port_mapping(port)
+
+To close a specific port (e.g. after you have finished using it):
+
+::
+
+    upnp.delete_port_mapping(port)
 
 Properties
 ----------
@@ -178,26 +193,6 @@ enum **UPNPResult**:
 - **UPNP_RESULT_NO_DEVICES** = **27** --- No devices available. You may need to call :ref:`discover<class_UPNP_method_discover>` first, or discovery didn't detect any valid :ref:`UPNPDevice<class_UPNPDevice>`\ s.
 
 - **UPNP_RESULT_UNKNOWN_ERROR** = **28** --- Unknown error.
-
-Description
------------
-
-Provides UPNP functionality to discover :ref:`UPNPDevice<class_UPNPDevice>`\ s on the local network and execute commands on them, like managing port mappings (port forwarding) and querying the local and remote network IP address. Note that methods on this class are synchronous and block the calling thread.
-
-To forward a specific port:
-
-::
-
-    const PORT = 7777
-    var upnp = UPNP.new()
-    upnp.discover(2000, 2, "InternetGatewayDevice")
-    upnp.add_port_mapping(port)
-
-To close a specific port (e.g. after you have finished using it):
-
-::
-
-    upnp.delete_port_mapping(port)
 
 Property Descriptions
 ---------------------

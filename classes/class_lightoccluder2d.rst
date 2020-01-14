@@ -11,21 +11,7 @@ LightOccluder2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Occludes light cast by a Light2D, casting shadows.
-
-Properties
-----------
-
-+---------------------------------------------------+--------------------------------------------------------------+---+
-| :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` | 1 |
-+---------------------------------------------------+--------------------------------------------------------------+---+
-| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     |   |
-+---------------------------------------------------+--------------------------------------------------------------+---+
 
 Description
 -----------
@@ -36,6 +22,15 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/2d/2d_lights_and_shadows`
+
+Properties
+----------
+
++---------------------------------------------------+--------------------------------------------------------------+---+
+| :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` | 1 |
++---------------------------------------------------+--------------------------------------------------------------+---+
+| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     |   |
++---------------------------------------------------+--------------------------------------------------------------+---+
 
 Property Descriptions
 ---------------------

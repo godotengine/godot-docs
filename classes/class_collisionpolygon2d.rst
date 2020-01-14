@@ -11,12 +11,12 @@ CollisionPolygon2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Defines a 2D collision polygon.
+
+Description
+-----------
+
+Provides a 2D collision polygon to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent. Polygons can be drawn in the editor or specified by a list of vertices.
 
 Properties
 ----------
@@ -47,11 +47,6 @@ enum **BuildMode**:
 - **BUILD_SOLIDS** = **0** --- Collisions will include the polygon and its contained area.
 
 - **BUILD_SEGMENTS** = **1** --- Collisions will only include the polygon edges.
-
-Description
------------
-
-Provides a 2D collision polygon to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent. Polygons can be drawn in the editor or specified by a list of vertices.
 
 Property Descriptions
 ---------------------

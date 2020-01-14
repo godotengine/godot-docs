@@ -11,12 +11,17 @@ SpotLight
 
 **Inherits:** :ref:`Light<class_Light>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A spotlight, such as a reflector spotlight or a lantern.
+
+Description
+-----------
+
+A Spotlight is a type of :ref:`Light<class_Light>` node that emits lights in a specific direction, in the shape of a cone. The light is attenuated through the distance. This attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light<class_Light>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/lights_and_shadows`
 
 Properties
 ----------
@@ -30,16 +35,6 @@ Properties
 +---------------------------+--------------------------------------------------------------------------------+------+
 | :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight_property_spot_range>`                         | 5.0  |
 +---------------------------+--------------------------------------------------------------------------------+------+
-
-Description
------------
-
-A Spotlight is a type of :ref:`Light<class_Light>` node that emits lights in a specific direction, in the shape of a cone. The light is attenuated through the distance. This attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light<class_Light>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/lights_and_shadows`
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,19 @@ NetworkedMultiplayerENet
 
 **Inherits:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 PacketPeer implementation using the `ENet <http://enet.bespin.org/index.html>`_ library.
+
+Description
+-----------
+
+A PacketPeer implementation that should be passed to :ref:`SceneTree.network_peer<class_SceneTree_property_network_peer>` after being initialized as either a client or server. Events can then be handled by connecting to :ref:`SceneTree<class_SceneTree>` signals.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/high_level_multiplayer`
+
+- `http://enet.bespin.org/usergroup0.html <http://enet.bespin.org/usergroup0.html>`_
 
 Properties
 ----------
@@ -86,18 +93,6 @@ enum **CompressionMode**:
 - **COMPRESS_ZLIB** = **3** --- `Zlib <https://www.zlib.net/>`_ compression. This option uses less bandwidth compared to :ref:`COMPRESS_FASTLZ<class_NetworkedMultiplayerENet_constant_COMPRESS_FASTLZ>`, at the expense of using more CPU resources.
 
 - **COMPRESS_ZSTD** = **4** --- `Zstandard <https://facebook.github.io/zstd/>`_ compression.
-
-Description
------------
-
-A PacketPeer implementation that should be passed to :ref:`SceneTree.network_peer<class_SceneTree_property_network_peer>` after being initialized as either a client or server. Events can then be handled by connecting to :ref:`SceneTree<class_SceneTree>` signals.
-
-Tutorials
----------
-
-- :doc:`../tutorials/networking/high_level_multiplayer`
-
-- `http://enet.bespin.org/usergroup0.html <http://enet.bespin.org/usergroup0.html>`_
 
 Property Descriptions
 ---------------------
@@ -203,7 +198,7 @@ Create client that connects to a server at ``address`` using specified ``port``.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**
 
-Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>`. The default IP is the wildcard ``"*"``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4096 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>`. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a server was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the server could not be created.
+Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>`. The default IP is the wildcard ``"*"``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4095 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>`. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a server was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the server could not be created.
 
 ----
 

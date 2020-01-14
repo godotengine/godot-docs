@@ -11,12 +11,17 @@ InputEventScreenDrag
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event type for screen drag events. Only available on mobile devices.
+
+Description
+-----------
+
+Contains screen drag information. See :ref:`Node._input<class_Node_method__input>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
 
 Properties
 ----------
@@ -30,16 +35,6 @@ Properties
 +-------------------------------+---------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventScreenDrag_property_speed>`       | Vector2( 0, 0 ) |
 +-------------------------------+---------------------------------------------------------------+-----------------+
-
-Description
------------
-
-Contains screen drag information. See :ref:`Node._input<class_Node_method__input>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/inputevent`
 
 Property Descriptions
 ---------------------

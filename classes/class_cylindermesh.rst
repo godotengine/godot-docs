@@ -11,12 +11,12 @@ CylinderMesh
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Class representing a cylindrical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
+
+Description
+-----------
+
+Class representing a cylindrical :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This class can be used to create cones by setting either the :ref:`top_radius<class_CylinderMesh_property_top_radius>` or :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>` properties to 0.0.
 
 Properties
 ----------
@@ -32,11 +32,6 @@ Properties
 +---------------------------+---------------------------------------------------------------------+-----+
 | :ref:`float<class_float>` | :ref:`top_radius<class_CylinderMesh_property_top_radius>`           | 1.0 |
 +---------------------------+---------------------------------------------------------------------+-----+
-
-Description
------------
-
-Class representing a cylindrical :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This class can be used to create cones by setting either the :ref:`top_radius<class_CylinderMesh_property_top_radius>` or :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>` properties to 0.0.
 
 Property Descriptions
 ---------------------

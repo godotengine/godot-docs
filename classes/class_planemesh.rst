@@ -11,12 +11,12 @@ PlaneMesh
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
+
+Description
+-----------
+
+Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Z axes; this default rotation isn't suited for use with billboarded materials. For billboarded materials, use :ref:`QuadMesh<class_QuadMesh>` instead.
 
 Properties
 ----------
@@ -28,11 +28,6 @@ Properties
 +-------------------------------+------------------------------------------------------------------+-----------------+
 | :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` | 0               |
 +-------------------------------+------------------------------------------------------------------+-----------------+
-
-Description
------------
-
-Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Z axes; this default rotation isn't suited for use with billboarded materials. For billboarded materials, use :ref:`QuadMesh<class_QuadMesh>` instead.
 
 Property Descriptions
 ---------------------

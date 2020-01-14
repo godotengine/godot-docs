@@ -13,12 +13,17 @@ Input
 
 **Inherited By:** :ref:`InputDefault<class_InputDefault>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A Singleton that deals with inputs.
+
+Description
+-----------
+
+A Singleton that deals with inputs. This includes key presses, mouse buttons and movement, joypads, and input actions. Actions and their events can be set in the **Input Map** tab in the **Project > Project Settings**, or with the :ref:`InputMap<class_InputMap>` class.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/index`
 
 Methods
 -------
@@ -210,16 +215,6 @@ enum **CursorShape**:
 - **CURSOR_HSPLIT** = **15** --- Horizontal split mouse cursor. On Windows, it's the same as :ref:`CURSOR_HSIZE<class_Input_constant_CURSOR_HSIZE>`.
 
 - **CURSOR_HELP** = **16** --- Help cursor. Usually a question mark.
-
-Description
------------
-
-A Singleton that deals with inputs. This includes key presses, mouse buttons and movement, joypads, and input actions. Actions and their events can be set in the **Input Map** tab in the **Project > Project Settings**, or with the :ref:`InputMap<class_InputMap>` class.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/index`
 
 Method Descriptions
 -------------------

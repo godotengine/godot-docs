@@ -11,12 +11,19 @@ AnimationNodeStateMachine
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 State machine for control of animations.
+
+Description
+-----------
+
+Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the AnimationNodeStateMachinePlayback object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
+
+**Example:**
+
+::
+
+    var state_machine = $AnimationTree.get("parameters/playback")
+    state_machine.travel("some_state")
 
 Methods
 -------
@@ -66,18 +73,6 @@ Methods
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`set_start_node<class_AnimationNodeStateMachine_method_set_start_node>` **(** :ref:`String<class_String>` name **)**                                                                                                                                   |
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the AnimationNodeStateMachinePlayback object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
-
-**Example:**
-
-::
-
-    var state_machine = $AnimationTree.get("parameters/playback")
-    state_machine.travel("some_state")
 
 Method Descriptions
 -------------------

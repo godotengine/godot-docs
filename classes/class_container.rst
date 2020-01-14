@@ -13,12 +13,14 @@ Container
 
 **Inherited By:** :ref:`BoxContainer<class_BoxContainer>`, :ref:`CenterContainer<class_CenterContainer>`, :ref:`EditorProperty<class_EditorProperty>`, :ref:`GraphNode<class_GraphNode>`, :ref:`GridContainer<class_GridContainer>`, :ref:`MarginContainer<class_MarginContainer>`, :ref:`PanelContainer<class_PanelContainer>`, :ref:`ScrollContainer<class_ScrollContainer>`, :ref:`SplitContainer<class_SplitContainer>`, :ref:`TabContainer<class_TabContainer>`, :ref:`ViewportContainer<class_ViewportContainer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base node for containers.
+
+Description
+-----------
+
+Base node for containers. A ``Container`` contains other controls and automatically arranges them in a certain way.
+
+A Control can inherit this to create custom container classes.
 
 Methods
 -------
@@ -44,13 +46,6 @@ Constants
 .. _class_Container_constant_NOTIFICATION_SORT_CHILDREN:
 
 - **NOTIFICATION_SORT_CHILDREN** = **50** --- Notification for when sorting the children, it must be obeyed immediately.
-
-Description
------------
-
-Base node for containers. A ``Container`` contains other controls and automatically arranges them in a certain way.
-
-A Control can inherit this to create custom container classes.
 
 Method Descriptions
 -------------------

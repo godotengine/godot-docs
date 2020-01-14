@@ -11,12 +11,12 @@ Area
 
 **Inherits:** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 General-purpose area node for detection and 3D physics influence.
+
+Description
+-----------
+
+3D area that detects :ref:`CollisionObject<class_CollisionObject>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping).
 
 Properties
 ----------
@@ -179,11 +179,6 @@ enum **SpaceOverride**:
 - **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
 
 - **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in :ref:`priority<class_Area_property_priority>` order), but keeps calculating the rest of the areas.
-
-Description
------------
-
-3D area that detects :ref:`CollisionObject<class_CollisionObject>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping).
 
 Property Descriptions
 ---------------------

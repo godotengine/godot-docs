@@ -11,12 +11,16 @@ AnimatedTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Proxy texture for simple frame-based animations.
+
+Description
+-----------
+
+``AnimatedTexture`` is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite<class_AnimatedSprite>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture<class_Texture>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
+
+The playback of the animation is controlled by the :ref:`fps<class_AnimatedTexture_property_fps>` property as well as each frame's optional delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
+
+``AnimatedTexture`` currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one. Also, it doesn't support :ref:`AtlasTexture<class_AtlasTexture>`. Each frame needs to be separate image.
 
 Properties
 ----------
@@ -48,15 +52,6 @@ Constants
 .. _class_AnimatedTexture_constant_MAX_FRAMES:
 
 - **MAX_FRAMES** = **256** --- The maximum number of frames supported by ``AnimatedTexture``. If you need more frames in your animation, use :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite<class_AnimatedSprite>`.
-
-Description
------------
-
-``AnimatedTexture`` is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite<class_AnimatedSprite>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture<class_Texture>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
-
-The playback of the animation is controlled by the :ref:`fps<class_AnimatedTexture_property_fps>` property as well as each frame's optional delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
-
-``AnimatedTexture`` currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one. Also, it doesn't support :ref:`AtlasTexture<class_AtlasTexture>`. Each frame needs to be separate image.
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,14 @@ Camera2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Camera node for 2D scenes.
+
+Description
+-----------
+
+Camera node for 2D scenes. It forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of :ref:`CanvasItem<class_CanvasItem>`-based nodes.
+
+This node is intended to be a simple helper to get things going quickly and it may happen that more functionality is desired to change how the camera works. To make your own custom camera node, simply inherit from :ref:`Node2D<class_Node2D>` and change the transform of the canvas by calling get_viewport().set_canvas_transform(m) in :ref:`Viewport<class_Viewport>`.
 
 Properties
 ----------
@@ -128,13 +130,6 @@ enum **Camera2DProcessMode**:
 - **CAMERA2D_PROCESS_PHYSICS** = **0** --- The camera updates with the ``_physics_process`` callback.
 
 - **CAMERA2D_PROCESS_IDLE** = **1** --- The camera updates with the ``_process`` callback.
-
-Description
------------
-
-Camera node for 2D scenes. It forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of :ref:`CanvasItem<class_CanvasItem>`-based nodes.
-
-This node is intended to be a simple helper to get things going quickly and it may happen that more functionality is desired to change how the camera works. To make your own custom camera node, simply inherit from :ref:`Node2D<class_Node2D>` and change the transform of the canvas by calling get_viewport().set_canvas_transform(m) in :ref:`Viewport<class_Viewport>`.
 
 Property Descriptions
 ---------------------

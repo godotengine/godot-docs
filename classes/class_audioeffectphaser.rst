@@ -11,14 +11,14 @@ AudioEffectPhaser
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a phaser audio effect to an Audio bus.
 
 Combines the original signal with a copy that is slightly out of phase with the original.
+
+Description
+-----------
+
+Combines phase-shifted signals with the original signal. The movement of the phase-shifted signals is controlled using a low-frequency oscillator.
 
 Properties
 ----------
@@ -34,11 +34,6 @@ Properties
 +---------------------------+--------------------------------------------------------------------+--------+
 | :ref:`float<class_float>` | :ref:`rate_hz<class_AudioEffectPhaser_property_rate_hz>`           | 0.5    |
 +---------------------------+--------------------------------------------------------------------+--------+
-
-Description
------------
-
-Combines phase-shifted signals with the original signal. The movement of the phase-shifted signals is controlled using a low-frequency oscillator.
 
 Property Descriptions
 ---------------------

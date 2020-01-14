@@ -13,12 +13,17 @@ NetworkedMultiplayerPeer
 
 **Inherited By:** :ref:`MultiplayerPeerGDNative<class_MultiplayerPeerGDNative>`, :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`, :ref:`WebRTCMultiplayer<class_WebRTCMultiplayer>`, :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A high-level network interface to simplify multiplayer interactions.
+
+Description
+-----------
+
+Manages the connection to network peers. Assigns unique IDs to each client connected to the server.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/high_level_multiplayer`
 
 Properties
 ----------
@@ -132,16 +137,6 @@ Constants
 - **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
 
 - **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
-
-Description
------------
-
-Manages the connection to network peers. Assigns unique IDs to each client connected to the server.
-
-Tutorials
----------
-
-- :doc:`../tutorials/networking/high_level_multiplayer`
 
 Property Descriptions
 ---------------------

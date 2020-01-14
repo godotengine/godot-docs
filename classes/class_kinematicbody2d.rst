@@ -11,12 +11,23 @@ KinematicBody2D
 
 **Inherits:** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Kinematic body 2D node.
+
+Description
+-----------
+
+Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a character or a rigid body, these are the same as a static body. However, they have two main uses:
+
+**Simulated motion:** When these bodies are moved manually, either from code or from an :ref:`AnimationPlayer<class_AnimationPlayer>` (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to "physics"), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
+
+**Kinematic characters:** KinematicBody2D also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/kinematic_character_2d`
+
+- :doc:`../tutorials/physics/using_kinematic_body_2d`
 
 Properties
 ----------
@@ -30,6 +41,8 @@ Properties
 Methods
 -------
 
++---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                           | :ref:`get_floor_normal<class_KinematicBody2D_method_get_floor_normal>` **(** **)** const                                                                                                                                                                                                                                                                                                                                             |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                           | :ref:`get_floor_velocity<class_KinematicBody2D_method_get_floor_velocity>` **(** **)** const                                                                                                                                                                                                                                                                                                                                         |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -51,22 +64,6 @@ Methods
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`test_move<class_KinematicBody2D_method_test_move>` **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true **)**                                                                                                                                                                                                                                |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a character or a rigid body, these are the same as a static body. However, they have two main uses:
-
-**Simulated motion:** When these bodies are moved manually, either from code or from an :ref:`AnimationPlayer<class_AnimationPlayer>` (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to "physics"), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
-
-**Kinematic characters:** KinematicBody2D also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/kinematic_character_2d`
-
-- :doc:`../tutorials/physics/using_kinematic_body_2d`
 
 Property Descriptions
 ---------------------
@@ -103,6 +100,14 @@ If ``true``, the body's movement will be synchronized to the physics frame. This
 
 Method Descriptions
 -------------------
+
+.. _class_KinematicBody2D_method_get_floor_normal:
+
+- :ref:`Vector2<class_Vector2>` **get_floor_normal** **(** **)** const
+
+Returns the normal vector of the floor.
+
+----
 
 .. _class_KinematicBody2D_method_get_floor_velocity:
 

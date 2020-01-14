@@ -11,12 +11,16 @@ ItemList
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Control that provides a list of selectable items (and/or icons) in a single column, or optionally in multiple columns.
+
+Description
+-----------
+
+This control provides a selectable list of items that may be in a single (or multiple columns) with option of text, icons, or both text and icon. Tooltips are supported and may be different for every item in the list.
+
+Selectable items in the list may be selected or deselected and multiple selection may be enabled. Selection with right mouse button may also be enabled to allow use of popup context menus. Items may also be "activated" by double-clicking them or by pressing Enter.
+
+Item text only supports single-line strings, newline characters (e.g. ``\n``) in the string won't produce a newline. Text wrapping is enabled in :ref:`ICON_MODE_TOP<class_ItemList_constant_ICON_MODE_TOP>` mode, but column's width is adjusted to fully fit its content by default. You need to set :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` greater than zero to wrap the text.
 
 Properties
 ----------
@@ -115,7 +119,7 @@ Methods
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`set_item_icon_region<class_ItemList_method_set_item_icon_region>` **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_Rect2>` rect **)**                                  |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`set_item_icon_transposed<class_ItemList_method_set_item_icon_transposed>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` rect **)**                            |
+| void                                    | :ref:`set_item_icon_transposed<class_ItemList_method_set_item_icon_transposed>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` transposed **)**                      |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`set_item_metadata<class_ItemList_method_set_item_metadata>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**                                |
 +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -235,9 +239,9 @@ Enumerations
 
 enum **IconMode**:
 
-- **ICON_MODE_TOP** = **0**
+- **ICON_MODE_TOP** = **0** --- Icon is drawn above the text.
 
-- **ICON_MODE_LEFT** = **1**
+- **ICON_MODE_LEFT** = **1** --- Icon is drawn to the left of the text.
 
 ----
 
@@ -252,13 +256,6 @@ enum **SelectMode**:
 - **SELECT_SINGLE** = **0** --- Only allow selecting a single item.
 
 - **SELECT_MULTI** = **1** --- Allows selecting multiple items by holding Ctrl or Shift.
-
-Description
------------
-
-This control provides a selectable list of items that may be in a single (or multiple columns) with option of text, icons, or both text and icon. Tooltips are supported and may be different for every item in the list.
-
-Selectable items in the list may be selected or deselected and multiple selection may be enabled. Selection with right mouse button may also be enabled to allow use of popup context menus. Items may also be "activated" by double-clicking them or by pressing Enter.
 
 Property Descriptions
 ---------------------
@@ -323,7 +320,9 @@ If ``true``, the control will automatically resize the height to fit its content
 | *Getter*  | get_fixed_column_width()      |
 +-----------+-------------------------------+
 
-Sets the default column width in pixels. If left to default value, each item will have a width equal to the width of its content and the columns will have an uneven width.
+The width all columns will be adjusted to.
+
+A value of zero disables the adjustment, each item will have a width equal to the width of its content and the columns will have an uneven width.
 
 ----
 
@@ -339,7 +338,9 @@ Sets the default column width in pixels. If left to default value, each item wil
 | *Getter*  | get_fixed_icon_size()      |
 +-----------+----------------------------+
 
-Sets the default icon size in pixels.
+The size all icons will be adjusted to.
+
+If either X or Y component is not greater than zero, icon size won't be affected.
 
 ----
 
@@ -355,7 +356,7 @@ Sets the default icon size in pixels.
 | *Getter*  | get_icon_mode()      |
 +-----------+----------------------+
 
-Sets the default position of the icon to either :ref:`ICON_MODE_LEFT<class_ItemList_constant_ICON_MODE_LEFT>` or :ref:`ICON_MODE_TOP<class_ItemList_constant_ICON_MODE_TOP>`.
+The icon position, whether above or to the left of the text. See the :ref:`IconMode<enum_ItemList_IconMode>` constants.
 
 ----
 
@@ -371,7 +372,7 @@ Sets the default position of the icon to either :ref:`ICON_MODE_LEFT<class_ItemL
 | *Getter*  | get_icon_scale()      |
 +-----------+-----------------------+
 
-Sets the icon size to its initial size multiplied by the specified scale.
+The scale of icon applied after :ref:`fixed_icon_size<class_ItemList_property_fixed_icon_size>` and transposing takes effect.
 
 ----
 
@@ -387,7 +388,11 @@ Sets the icon size to its initial size multiplied by the specified scale.
 | *Getter*  | get_max_columns()      |
 +-----------+------------------------+
 
-Sets the maximum columns the list will have. If set to anything other than the default, the content will be split among the specified columns.
+Maximum columns the list will have.
+
+If greater than zero, the content will be split among the specified columns.
+
+A value of zero means unlimited columns, i.e. all items will be put in the same row.
 
 ----
 
@@ -403,6 +408,10 @@ Sets the maximum columns the list will have. If set to anything other than the d
 | *Getter*  | get_max_text_lines()      |
 +-----------+---------------------------+
 
+Maximum lines of text allowed in each item. Space will be reserved even when there is not enough lines of text to display.
+
+**Note:** This property takes effect only when :ref:`icon_mode<class_ItemList_property_icon_mode>` is :ref:`ICON_MODE_TOP<class_ItemList_constant_ICON_MODE_TOP>`. To make the text wrap, :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` should be greater than zero.
+
 ----
 
 .. _class_ItemList_property_same_column_width:
@@ -417,7 +426,9 @@ Sets the maximum columns the list will have. If set to anything other than the d
 | *Getter*  | is_same_column_width()       |
 +-----------+------------------------------+
 
-If set to ``true``, all columns will have the same width specified by :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>`.
+Whether all columns will have the same width.
+
+If ``true``, the width is equal to the largest column width of all columns.
 
 ----
 
@@ -476,7 +487,9 @@ Ensure current selection is visible, adjusting the scroll position as necessary.
 
 - :ref:`int<class_int>` **get_item_at_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` exact=false **)** const
 
-Given a position within the control return the item (if any) at that point.
+Returns the item index at the given ``position``.
+
+When there is no item at that point, -1 will be returned if ``exact`` is ``true``, and the closest item index will be returned otherwise.
 
 ----
 
@@ -523,6 +536,8 @@ Returns a :ref:`Color<class_Color>` modulating item's icon at the specified inde
 .. _class_ItemList_method_get_item_icon_region:
 
 - :ref:`Rect2<class_Rect2>` **get_item_icon_region** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the region of item's icon used. The whole icon will be used if the region has no area.
 
 ----
 
@@ -585,6 +600,8 @@ Returns ``true`` if the item at the specified index is disabled.
 .. _class_ItemList_method_is_item_icon_transposed:
 
 - :ref:`bool<class_bool>` **is_item_icon_transposed** **(** :ref:`int<class_int>` idx **)** const
+
+Returns ``true`` if the item icon will be drawn transposed, i.e. the X and Y axes are swapped.
 
 ----
 
@@ -694,11 +711,15 @@ Sets a modulating :ref:`Color<class_Color>` of the item associated with the spec
 
 - void **set_item_icon_region** **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_Rect2>` rect **)**
 
+Sets the region of item's icon used. The whole icon will be used if the region has no area.
+
 ----
 
 .. _class_ItemList_method_set_item_icon_transposed:
 
-- void **set_item_icon_transposed** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` rect **)**
+- void **set_item_icon_transposed** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` transposed **)**
+
+Sets whether the item icon will be drawn transposed.
 
 ----
 

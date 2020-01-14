@@ -13,12 +13,12 @@ IP
 
 **Inherited By:** :ref:`IP_Unix<class_IP_Unix>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Internet protocol (IP) support functions such as DNS resolution.
+
+Description
+-----------
+
+IP contains support functions for the Internet Protocol (IP). TCP/IP support is in different classes (see :ref:`StreamPeerTCP<class_StreamPeerTCP>` and :ref:`TCP_Server<class_TCP_Server>`). IP provides DNS hostname resolution support, both blocking and threaded.
 
 Methods
 -------
@@ -96,11 +96,6 @@ Constants
 - **RESOLVER_MAX_QUERIES** = **32** --- Maximum number of concurrent DNS resolver queries allowed, :ref:`RESOLVER_INVALID_ID<class_IP_constant_RESOLVER_INVALID_ID>` is returned if exceeded.
 
 - **RESOLVER_INVALID_ID** = **-1** --- Invalid ID constant. Returned if :ref:`RESOLVER_MAX_QUERIES<class_IP_constant_RESOLVER_MAX_QUERIES>` is exceeded.
-
-Description
------------
-
-IP contains support functions for the Internet Protocol (IP). TCP/IP support is in different classes (see :ref:`StreamPeerTCP<class_StreamPeerTCP>` and :ref:`TCP_Server<class_TCP_Server>`). IP provides DNS hostname resolution support, both blocking and threaded.
 
 Method Descriptions
 -------------------

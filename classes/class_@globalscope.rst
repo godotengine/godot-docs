@@ -9,12 +9,14 @@
 @GlobalScope
 ============
 
-**Category:** Core
-
-Brief Description
------------------
-
 Global scope constants and variables.
+
+Description
+-----------
+
+Global scope constants and variables. This is all that resides in the globals, constants regarding error codes, scancodes, property hints, etc.
+
+Singletons are also documented here, since they can be accessed from anywhere.
 
 Properties
 ----------
@@ -2201,13 +2203,6 @@ Constants
 .. _class_@GlobalScope_constant_SPKEY:
 
 - **SPKEY** = **16777216** --- Scancodes with this bit applied are non-printable.
-
-Description
------------
-
-Global scope constants and variables. This is all that resides in the globals, constants regarding error codes, scancodes, property hints, etc.
-
-Singletons are also documented here, since they can be accessed from anywhere.
 
 Property Descriptions
 ---------------------

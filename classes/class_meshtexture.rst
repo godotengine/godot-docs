@@ -11,12 +11,12 @@ MeshTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Simple texture that uses a mesh to draw itself.
+
+Description
+-----------
+
+Simple texture that uses a mesh to draw itself. It's limited because flags can't be changed and region drawing is not supported.
 
 Properties
 ----------
@@ -30,11 +30,6 @@ Properties
 +-------------------------------+--------------------------------------------------------------+-----------------+
 | :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshTexture_property_mesh>`                 |                 |
 +-------------------------------+--------------------------------------------------------------+-----------------+
-
-Description
------------
-
-Simple texture that uses a mesh to draw itself. It's limited because flags can't be changed and region drawing is not supported.
 
 Property Descriptions
 ---------------------

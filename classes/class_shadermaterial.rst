@@ -11,12 +11,17 @@ ShaderMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A material that uses a custom :ref:`Shader<class_Shader>` program.
+
+Description
+-----------
+
+A material that uses a custom :ref:`Shader<class_Shader>` program to render either items to screen or process particles. You can create multiple materials for the same shader but configure different values for the uniforms defined in the shader.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/shading/index`
 
 Properties
 ----------
@@ -37,16 +42,6 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_shader_param<class_ShaderMaterial_method_set_shader_param>` **(** :ref:`String<class_String>` param, :ref:`Variant<class_Variant>` value **)** |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A material that uses a custom :ref:`Shader<class_Shader>` program to render either items to screen or process particles. You can create multiple materials for the same shader but configure different values for the uniforms defined in the shader.
-
-Tutorials
----------
-
-- :doc:`../tutorials/shading/index`
 
 Property Descriptions
 ---------------------
@@ -78,11 +73,15 @@ Returns the current value set for this material of a uniform in the shader.
 
 - :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
+Returns ``true`` if the property identified by ``name`` can be reverted to a default value.
+
 ----
 
 .. _class_ShaderMaterial_method_property_get_revert:
 
 - :ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
+
+Returns the default value of the material property with given ``name``.
 
 ----
 

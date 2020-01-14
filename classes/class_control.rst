@@ -13,12 +13,31 @@ Control
 
 **Inherited By:** :ref:`BaseButton<class_BaseButton>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Container<class_Container>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`ItemList<class_ItemList>`, :ref:`Label<class_Label>`, :ref:`LineEdit<class_LineEdit>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`Panel<class_Panel>`, :ref:`Popup<class_Popup>`, :ref:`Range<class_Range>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Separator<class_Separator>`, :ref:`Tabs<class_Tabs>`, :ref:`TextEdit<class_TextEdit>`, :ref:`TextureRect<class_TextureRect>`, :ref:`Tree<class_Tree>`, :ref:`VideoPlayer<class_VideoPlayer>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 All user interface nodes inherit from Control. A control's anchors and margins adapt its position and size relative to its parent.
+
+Description
+-----------
+
+Base class for all UI-related nodes. ``Control`` features a bounding rectangle that defines its extents, an anchor position relative to its parent control or the current viewport, and margins that represent an offset to the anchor. The margins update automatically when the node, any of its parents, or the screen size change.
+
+For more information on Godot's UI system, anchors, margins, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from ``Control`` and :ref:`Container<class_Container>` nodes.
+
+**User Interface nodes and input**
+
+Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node_method__input>`. :ref:`Node._input<class_Node_method__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls :ref:`MainLoop._input_event<class_MainLoop_method__input_event>`. Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accepted an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` will not process it.
+
+Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`grab_focus<class_Control_method_grab_focus>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
+
+Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
+
+:ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_*_override`` methods, like :ref:`add_font_override<class_Control_method_add_font_override>`. You can override the theme with the inspector.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/gui/index`
+
+- :doc:`../tutorials/2d/custom_drawing_in_2d`
 
 Properties
 ----------
@@ -604,30 +623,6 @@ Constants
 - **NOTIFICATION_SCROLL_BEGIN** = **47** --- Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has begun being scrolled.
 
 - **NOTIFICATION_SCROLL_END** = **48** --- Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has stopped being scrolled.
-
-Description
------------
-
-Base class for all UI-related nodes. ``Control`` features a bounding rectangle that defines its extents, an anchor position relative to its parent control or the current viewport, and margins that represent an offset to the anchor. The margins update automatically when the node, any of its parents, or the screen size change.
-
-For more information on Godot's UI system, anchors, margins, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from ``Control`` and :ref:`Container<class_Container>` nodes.
-
-**User Interface nodes and input**
-
-Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node_method__input>`. :ref:`Node._input<class_Node_method__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls :ref:`MainLoop._input_event<class_MainLoop_method__input_event>`. Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accepted an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` will not process it.
-
-Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`grab_focus<class_Control_method_grab_focus>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
-
-Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
-
-:ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_*_override`` methods, like :ref:`add_font_override<class_Control_method_add_font_override>`. You can override the theme with the inspector.
-
-Tutorials
----------
-
-- :doc:`../tutorials/gui/index`
-
-- :doc:`../tutorials/2d/custom_drawing_in_2d`
 
 Property Descriptions
 ---------------------
@@ -1600,7 +1595,7 @@ Virtual method to be implemented by the user. Returns whether the given ``point`
 
 If not overridden, default behavior is checking if the point is within control's Rect.
 
-**Node:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
+**Note:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
 
 ----
 

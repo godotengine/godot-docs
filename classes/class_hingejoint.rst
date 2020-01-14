@@ -11,12 +11,12 @@ HingeJoint
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A hinge between two 3D bodies.
+
+Description
+-----------
+
+A HingeJoint normally uses the Z axis of body A as the hinge axis, another axis can be specified when adding it manually though.
 
 Properties
 ----------
@@ -116,11 +116,6 @@ enum **Flag**:
 - **FLAG_ENABLE_MOTOR** = **1** --- When activated, a motor turns the hinge.
 
 - **FLAG_MAX** = **2** --- Represents the size of the :ref:`Flag<enum_HingeJoint_Flag>` enum.
-
-Description
------------
-
-A HingeJoint normally uses the Z axis of body A as the hinge axis, another axis can be specified when adding it manually though.
 
 Property Descriptions
 ---------------------

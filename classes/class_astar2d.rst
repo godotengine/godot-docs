@@ -11,12 +11,12 @@ AStar2D
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 AStar class representation that uses 2d-vectors as edges.
+
+Description
+-----------
+
+This is a wrapper for the :ref:`AStar<class_AStar>` class which uses 2D vectors instead of 3D vectors.
 
 Methods
 -------
@@ -68,11 +68,6 @@ Methods
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_point_weight_scale<class_AStar2D_method_set_point_weight_scale>` **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**                      |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-This is a wrapper for the :ref:`AStar<class_AStar>` class which uses 2D vectors instead of 3D vectors.
 
 Method Descriptions
 -------------------

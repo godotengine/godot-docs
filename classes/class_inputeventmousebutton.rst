@@ -11,12 +11,17 @@ InputEventMouseButton
 
 **Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event type for mouse button events.
+
+Description
+-----------
+
+Contains mouse click information. See :ref:`Node._input<class_Node_method__input>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
 
 Properties
 ----------
@@ -30,16 +35,6 @@ Properties
 +---------------------------+------------------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventMouseButton_property_pressed>`           | false |
 +---------------------------+------------------------------------------------------------------------+-------+
-
-Description
------------
-
-Contains mouse click information. See :ref:`Node._input<class_Node_method__input>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
 
 Property Descriptions
 ---------------------

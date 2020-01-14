@@ -11,12 +11,12 @@ CheckBox
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Binary choice user interface widget.
+
+Description
+-----------
+
+A checkbox allows the user to make a binary choice (choosing only one of two possible options).
 
 Properties
 ----------
@@ -67,9 +67,4 @@ Theme Properties
 +---------------------------------+--------------------------+------------------------------+
 | :ref:`Texture<class_Texture>`   | unchecked                |                              |
 +---------------------------------+--------------------------+------------------------------+
-
-Description
------------
-
-A checkbox allows the user to make a binary choice (choosing only one of two possible options).
 

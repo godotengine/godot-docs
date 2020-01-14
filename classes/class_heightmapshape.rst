@@ -11,12 +11,12 @@ HeightMapShape
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Height map shape for 3D physics (Bullet only).
+
+Description
+-----------
+
+Height map shape resource, which can be added to a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`.
 
 Properties
 ----------
@@ -28,11 +28,6 @@ Properties
 +-------------------------------------------+-----------------------------------------------------------+-----------------------------+
 | :ref:`int<class_int>`                     | :ref:`map_width<class_HeightMapShape_property_map_width>` | 2                           |
 +-------------------------------------------+-----------------------------------------------------------+-----------------------------+
-
-Description
------------
-
-Height map shape resource, which can be added to a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`.
 
 Property Descriptions
 ---------------------

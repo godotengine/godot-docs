@@ -11,12 +11,17 @@ ToolButton
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Flat button helper class.
+
+Description
+-----------
+
+This is a helper class to generate a flat :ref:`Button<class_Button>` (see :ref:`Button.flat<class_Button_property_flat>`), creating a ``ToolButton`` is equivalent to:
+
+::
+
+    var btn = Button.new()
+    btn.flat = true
 
 Properties
 ----------
@@ -51,14 +56,4 @@ Theme Properties
 +---------------------------------+---------------------+------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | pressed             |                              |
 +---------------------------------+---------------------+------------------------------+
-
-Description
------------
-
-This is a helper class to generate a flat :ref:`Button<class_Button>` (see :ref:`Button.flat<class_Button_property_flat>`), creating a ``ToolButton`` is equivalent to:
-
-::
-
-    var btn = Button.new()
-    btn.flat = true
 

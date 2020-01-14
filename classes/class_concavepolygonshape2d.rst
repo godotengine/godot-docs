@@ -11,19 +11,7 @@ ConcavePolygonShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Concave polygon 2D shape resource for physics.
-
-Properties
-----------
-
-+-------------------------------------------------+----------------------------------------------------------------+----------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | PoolVector2Array(  ) |
-+-------------------------------------------------+----------------------------------------------------------------+----------------------+
 
 Description
 -----------
@@ -31,6 +19,13 @@ Description
 Concave polygon 2D shape resource for physics. It is made out of segments and is optimal for complex polygonal concave collisions. However, it is not advised to use for :ref:`RigidBody2D<class_RigidBody2D>` nodes. A CollisionPolygon2D in convex decomposition mode (solids) or several convex objects are advised for that instead. Otherwise, a concave polygon 2D shape is better for static collisions.
 
 The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` and a ``ConcavePolygonShape2D`` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
+
+Properties
+----------
+
++-------------------------------------------------+----------------------------------------------------------------+----------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | PoolVector2Array(  ) |
++-------------------------------------------------+----------------------------------------------------------------+----------------------+
 
 Property Descriptions
 ---------------------

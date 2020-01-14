@@ -11,12 +11,20 @@ VisualScriptMathConstant
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Commonly used mathematical constants.
+
+Description
+-----------
+
+Provides common math constants, such as Pi, on an output Data port.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (variant): ``get``
 
 Properties
 ----------
@@ -67,19 +75,6 @@ enum **MathConstant**:
 - **MATH_CONSTANT_NAN** = **7** --- Not a number: ``nan``
 
 - **MATH_CONSTANT_MAX** = **8** --- Represents the size of the :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` enum.
-
-Description
------------
-
-Provides common math constants, such as Pi, on an output Data port.
-
-**Input Ports:**
-
-none
-
-**Output Ports:**
-
-- Data (variant): ``get``
 
 Property Descriptions
 ---------------------

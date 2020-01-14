@@ -11,12 +11,14 @@ WebSocketPeer
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A class representing a specific WebSocket connection.
+
+Description
+-----------
+
+This class represent a specific WebSocket connection, you can do lower level operations with it.
+
+You can choose to write to the socket in binary or text mode, and you can recognize the mode used for writing by the other peer.
 
 Methods
 -------
@@ -51,13 +53,6 @@ enum **WriteMode**:
 - **WRITE_MODE_TEXT** = **0** --- Specifies that WebSockets messages should be transferred as text payload (only valid UTF-8 is allowed).
 
 - **WRITE_MODE_BINARY** = **1** --- Specifies that WebSockets messages should be transferred as binary payload (any byte combination is allowed).
-
-Description
------------
-
-This class represent a specific WebSocket connection, you can do lower level operations with it.
-
-You can choose to write to the socket in binary or text mode, and you can recognize the mode used for writing by the other peer.
 
 Method Descriptions
 -------------------

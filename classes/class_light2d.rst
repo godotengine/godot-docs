@@ -11,12 +11,19 @@ Light2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Casts light in a 2D environment.
+
+Description
+-----------
+
+Casts light in a 2D environment. Light is defined by a (usually grayscale) texture, a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related).
+
+**Note:** Light2D can also be used as a mask.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_lights_and_shadows`
 
 Properties
 ----------
@@ -117,18 +124,6 @@ enum **ShadowFilter**:
 - **SHADOW_FILTER_PCF9** = **4** --- Percentage closer filtering (9 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_property_shadow_filter>`.
 
 - **SHADOW_FILTER_PCF13** = **5** --- Percentage closer filtering (13 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_property_shadow_filter>`.
-
-Description
------------
-
-Casts light in a 2D environment. Light is defined by a (usually grayscale) texture, a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related).
-
-**Note:** Light2D can also be used as a mask.
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/2d_lights_and_shadows`
 
 Property Descriptions
 ---------------------

@@ -13,12 +13,17 @@ Light
 
 **Inherited By:** :ref:`DirectionalLight<class_DirectionalLight>`, :ref:`OmniLight<class_OmniLight>`, :ref:`SpotLight<class_SpotLight>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Provides a base class for different kinds of light nodes.
+
+Description
+-----------
+
+Light is the abstract base class for light nodes, so it shouldn't be used directly (it can't be instanced). Other types of light nodes inherit from it. Light contains the common variables and parameters used for lighting.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/lights_and_shadows`
 
 Properties
 ----------
@@ -152,16 +157,6 @@ enum **BakeMode**:
 - **BAKE_ALL** = **2** --- Both direct and indirect light will be baked.
 
 **Note:** You should hide the light if you don't want it to appear twice (dynamic and baked).
-
-Description
------------
-
-Light is the abstract base class for light nodes, so it shouldn't be used directly (it can't be instanced). Other types of light nodes inherit from it. Light contains the common variables and parameters used for lighting.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/lights_and_shadows`
 
 Property Descriptions
 ---------------------

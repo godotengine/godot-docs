@@ -13,12 +13,14 @@ AnimationNode
 
 **Inherited By:** :ref:`AnimationNodeAdd2<class_AnimationNodeAdd2>`, :ref:`AnimationNodeAdd3<class_AnimationNodeAdd3>`, :ref:`AnimationNodeBlend2<class_AnimationNodeBlend2>`, :ref:`AnimationNodeBlend3<class_AnimationNodeBlend3>`, :ref:`AnimationNodeOneShot<class_AnimationNodeOneShot>`, :ref:`AnimationNodeOutput<class_AnimationNodeOutput>`, :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>`, :ref:`AnimationNodeTimeSeek<class_AnimationNodeTimeSeek>`, :ref:`AnimationNodeTransition<class_AnimationNodeTransition>`, :ref:`AnimationRootNode<class_AnimationRootNode>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base resource for :ref:`AnimationTree<class_AnimationTree>` nodes.
+
+Description
+-----------
+
+Base resource for :ref:`AnimationTree<class_AnimationTree>` nodes. In general, it's not used directly, but you can create custom ones with custom blending formulas.
+
+Inherit this when creating nodes mainly for use in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`, otherwise :ref:`AnimationRootNode<class_AnimationRootNode>` should be used instead.
 
 Properties
 ----------
@@ -108,13 +110,6 @@ enum **FilterAction**:
 
 - **FILTER_BLEND** = **3** --- Paths matching the filter will be blended (by the blend value).
 
-Description
------------
-
-Base resource for :ref:`AnimationTree<class_AnimationTree>` nodes. In general, it's not used directly, but you can create custom ones with custom blending formulas.
-
-Inherit this when creating nodes mainly for use in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`, otherwise :ref:`AnimationRootNode<class_AnimationRootNode>` should be used instead.
-
 Property Descriptions
 ---------------------
 
@@ -128,7 +123,7 @@ Property Descriptions
 | *Getter* | is_filter_enabled()       |
 +----------+---------------------------+
 
-Returns whether filtering is enabled.
+If ``true``, filtering is enabled.
 
 Method Descriptions
 -------------------

@@ -11,14 +11,14 @@ AudioEffectReverb
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a reverberation audio effect to an Audio bus.
 
 Simulates the sound of acoustic environments such as rooms, concert halls, caverns, or an open spaces.
+
+Description
+-----------
+
+Simulates rooms of different sizes. Its parameters can be adjusted to simulate the sound of a specific room.
 
 Properties
 ----------
@@ -40,11 +40,6 @@ Properties
 +---------------------------+------------------------------------------------------------------------------+-------+
 | :ref:`float<class_float>` | :ref:`wet<class_AudioEffectReverb_property_wet>`                             | 0.5   |
 +---------------------------+------------------------------------------------------------------------------+-------+
-
-Description
------------
-
-Simulates rooms of different sizes. Its parameters can be adjusted to simulate the sound of a specific room.
 
 Property Descriptions
 ---------------------

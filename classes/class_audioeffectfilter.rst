@@ -13,12 +13,12 @@ AudioEffectFilter
 
 **Inherited By:** :ref:`AudioEffectBandLimitFilter<class_AudioEffectBandLimitFilter>`, :ref:`AudioEffectBandPassFilter<class_AudioEffectBandPassFilter>`, :ref:`AudioEffectHighPassFilter<class_AudioEffectHighPassFilter>`, :ref:`AudioEffectHighShelfFilter<class_AudioEffectHighShelfFilter>`, :ref:`AudioEffectLowPassFilter<class_AudioEffectLowPassFilter>`, :ref:`AudioEffectLowShelfFilter<class_AudioEffectLowShelfFilter>`, :ref:`AudioEffectNotchFilter<class_AudioEffectNotchFilter>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Adds a filter to the audio bus.
+
+Description
+-----------
+
+Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` to pass.
 
 Properties
 ----------
@@ -55,11 +55,6 @@ enum **FilterDB**:
 - **FILTER_18DB** = **2**
 
 - **FILTER_24DB** = **3**
-
-Description
------------
-
-Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` to pass.
 
 Property Descriptions
 ---------------------

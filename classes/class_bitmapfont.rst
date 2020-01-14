@@ -11,14 +11,14 @@ BitmapFont
 
 **Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Renders text using fonts under the `BMFont <https://www.angelcode.com/products/bmfont/>`_ format.
 
 Handles files with the ``.fnt`` extension
+
+Description
+-----------
+
+Renders text using ``*.fnt`` fonts containing texture atlases. Supports distance fields. For using vector font files like TTF directly, see :ref:`DynamicFont<class_DynamicFont>`.
 
 Properties
 ----------
@@ -55,11 +55,6 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_texture_count<class_BitmapFont_method_get_texture_count>` **(** **)** const                                                                                                                                                                   |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Renders text using ``*.fnt`` fonts containing texture atlases. Supports distance fields. For using vector font files like TTF directly, see :ref:`DynamicFont<class_DynamicFont>`.
 
 Property Descriptions
 ---------------------

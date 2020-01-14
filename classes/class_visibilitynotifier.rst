@@ -13,12 +13,12 @@ VisibilityNotifier
 
 **Inherited By:** :ref:`VisibilityEnabler<class_VisibilityEnabler>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Detects when the node is visible on screen.
+
+Description
+-----------
+
+The VisibilityNotifier detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a :ref:`Camera<class_Camera>`'s view.
 
 Properties
 ----------
@@ -66,11 +66,6 @@ Emitted when the VisibilityNotifier enters the screen.
 - **screen_exited** **(** **)**
 
 Emitted when the VisibilityNotifier exits the screen.
-
-Description
------------
-
-The VisibilityNotifier detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a :ref:`Camera<class_Camera>`'s view.
 
 Property Descriptions
 ---------------------

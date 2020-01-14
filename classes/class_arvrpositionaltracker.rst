@@ -11,12 +11,16 @@ ARVRPositionalTracker
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A tracked object.
+
+Description
+-----------
+
+An instance of this object represents a device that is tracked, such as a controller or anchor point. HMDs aren't represented here as they are handled internally.
+
+As controllers are turned on and the AR/VR interface detects them, instances of this object are automatically added to this list of active tracking objects accessible through the :ref:`ARVRServer<class_ARVRServer>`.
+
+The :ref:`ARVRController<class_ARVRController>` and :ref:`ARVRAnchor<class_ARVRAnchor>` both consume objects of this type and should be used in your project. The positional trackers are just under-the-hood objects that make this all work. These are mostly exposed so that GDNative-based interfaces can interact with them.
 
 Properties
 ----------
@@ -68,15 +72,6 @@ enum **TrackerHand**:
 - **TRACKER_LEFT_HAND** = **1** --- This tracker is the left hand controller.
 
 - **TRACKER_RIGHT_HAND** = **2** --- This tracker is the right hand controller.
-
-Description
------------
-
-An instance of this object represents a device that is tracked, such as a controller or anchor point. HMDs aren't represented here as they are handled internally.
-
-As controllers are turned on and the AR/VR interface detects them, instances of this object are automatically added to this list of active tracking objects accessible through the :ref:`ARVRServer<class_ARVRServer>`.
-
-The :ref:`ARVRController<class_ARVRController>` and :ref:`ARVRAnchor<class_ARVRAnchor>` both consume objects of this type and should be used in your project. The positional trackers are just under-the-hood objects that make this all work. These are mostly exposed so that GDNative-based interfaces can interact with them.
 
 Property Descriptions
 ---------------------

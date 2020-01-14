@@ -9,12 +9,12 @@
 @GDScript
 =========
 
-**Category:** Core
-
-Brief Description
------------------
-
 Built-in GDScript functions.
+
+Description
+-----------
+
+List of core built-in GDScript functions. Math functions and other utilities. Everything else is provided by objects. (Keywords: builtin, built in, global functions.)
 
 Methods
 -------
@@ -227,11 +227,6 @@ Constants
 - **NAN** = **nan** --- Macro constant that expands to an expression of type float that represents a NaN.
 
 The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
-
-Description
------------
-
-List of core built-in GDScript functions. Math functions and other utilities. Everything else is provided by objects. (Keywords: builtin, built in, global functions.)
 
 Method Descriptions
 -------------------

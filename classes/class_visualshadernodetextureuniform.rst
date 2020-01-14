@@ -13,11 +13,6 @@ VisualShaderNodeTextureUniform
 
 **Inherited By:** :ref:`VisualShaderNodeCubeMapUniform<class_VisualShaderNodeCubeMapUniform>`, :ref:`VisualShaderNodeTextureUniformTriplanar<class_VisualShaderNodeTextureUniformTriplanar>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

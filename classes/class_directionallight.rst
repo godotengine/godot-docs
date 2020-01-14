@@ -11,12 +11,17 @@ DirectionalLight
 
 **Inherits:** :ref:`Light<class_Light>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Directional light from a distance, as from the Sun.
+
+Description
+-----------
+
+A directional light is a type of :ref:`Light<class_Light>` node that models an infinite number of parallel rays covering the entire scene. It is used for lights with strong intensity that are located far away from the scene to model sunlight or moonlight. The worldspace location of the DirectionalLight transform (origin) is ignored. Only the basis is used to determine light direction.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/lights_and_shadows`
 
 Properties
 ----------
@@ -75,16 +80,6 @@ enum **ShadowDepthRange**:
 - **SHADOW_DEPTH_RANGE_STABLE** = **0** --- Keeps the shadow stable when the camera moves, at the cost of lower effective shadow resolution.
 
 - **SHADOW_DEPTH_RANGE_OPTIMIZED** = **1** --- Tries to achieve maximum shadow resolution. May result in saw effect on shadow edges.
-
-Description
------------
-
-A directional light is a type of :ref:`Light<class_Light>` node that models an infinite number of parallel rays covering the entire scene. It is used for lights with strong intensity that are located far away from the scene to model sunlight or moonlight. The worldspace location of the DirectionalLight transform (origin) is ignored. Only the basis is used to determine light direction.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/lights_and_shadows`
 
 Property Descriptions
 ---------------------

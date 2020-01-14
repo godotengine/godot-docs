@@ -11,12 +11,19 @@ Particles2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 2D particle emitter.
+
+Description
+-----------
+
+2D particle node used to create a variety of particle systems and effects. ``Particles2D`` features an emitter that generates some number of particles at a given rate.
+
+Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/particle_systems_2d`
 
 Properties
 ----------
@@ -78,18 +85,6 @@ enum **DrawOrder**:
 - **DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted.
 
 - **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
-
-Description
------------
-
-2D particle node used to create a variety of particle systems and effects. ``Particles2D`` features an emitter that generates some number of particles at a given rate.
-
-Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/particle_systems_2d`
 
 Property Descriptions
 ---------------------

@@ -13,12 +13,12 @@ AcceptDialog
 
 **Inherited By:** :ref:`ConfirmationDialog<class_ConfirmationDialog>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base dialog for user notification.
+
+Description
+-----------
+
+This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
 
 Properties
 ----------
@@ -64,11 +64,6 @@ Emitted when the dialog is accepted, i.e. the OK button is pressed.
 - **custom_action** **(** :ref:`String<class_String>` action **)**
 
 Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog_method_add_button>`.
-
-Description
------------
-
-This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
 
 Property Descriptions
 ---------------------

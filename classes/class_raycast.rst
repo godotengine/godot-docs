@@ -11,12 +11,25 @@ RayCast
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Query the closest object intersecting a ray.
+
+Description
+-----------
+
+A RayCast represents a line from its origin to its destination position, ``cast_to``. It is used to query the 3D space in order to find the closest object along the path of the ray.
+
+RayCast can ignore some objects by adding them to the exception list via ``add_exception`` or by setting proper filtering with collision layers and masks.
+
+RayCast can be configured to report collisions with :ref:`Area<class_Area>`\ s (:ref:`collide_with_areas<class_RayCast_property_collide_with_areas>`) and/or :ref:`PhysicsBody<class_PhysicsBody>`\ s (:ref:`collide_with_bodies<class_RayCast_property_collide_with_bodies>`).
+
+Only enabled raycasts will be able to query the space and report collisions.
+
+RayCast calculates intersection every physics frame (see :ref:`Node<class_Node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between physics frames (or during the same frame), use :ref:`force_raycast_update<class_RayCast_method_force_raycast_update>` after adjusting the raycast.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/ray-casting`
 
 Properties
 ----------
@@ -65,24 +78,6 @@ Methods
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_collision_mask_bit<class_RayCast_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A RayCast represents a line from its origin to its destination position, ``cast_to``. It is used to query the 3D space in order to find the closest object along the path of the ray.
-
-RayCast can ignore some objects by adding them to the exception list via ``add_exception`` or by setting proper filtering with collision layers and masks.
-
-RayCast can be configured to report collisions with :ref:`Area<class_Area>`\ s (:ref:`collide_with_areas<class_RayCast_property_collide_with_areas>`) and/or :ref:`PhysicsBody<class_PhysicsBody>`\ s (:ref:`collide_with_bodies<class_RayCast_property_collide_with_bodies>`).
-
-Only enabled raycasts will be able to query the space and report collisions.
-
-RayCast calculates intersection every physics frame (see :ref:`Node<class_Node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between physics frames (or during the same frame), use :ref:`force_raycast_update<class_RayCast_method_force_raycast_update>` after adjusting the raycast.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/ray-casting`
 
 Property Descriptions
 ---------------------

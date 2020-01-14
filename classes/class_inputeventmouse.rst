@@ -13,12 +13,17 @@ InputEventMouse
 
 **Inherited By:** :ref:`InputEventMouseButton<class_InputEventMouseButton>`, :ref:`InputEventMouseMotion<class_InputEventMouseMotion>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base input event type for mouse events.
+
+Description
+-----------
+
+Stores general mouse events information.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
 
 Properties
 ----------
@@ -30,16 +35,6 @@ Properties
 +-------------------------------+------------------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventMouse_property_position>`               | Vector2( 0, 0 ) |
 +-------------------------------+------------------------------------------------------------------------+-----------------+
-
-Description
------------
-
-Stores general mouse events information.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/inputevent`
 
 Property Descriptions
 ---------------------

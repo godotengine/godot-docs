@@ -11,12 +11,19 @@ Particles
 
 **Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 3D particle emitter.
+
+Description
+-----------
+
+3D particle node used to create a variety of particle systems and effects. ``Particles`` features an emitter that generates some number of particles at a given rate.
+
+Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/vertex_animation/controlling_thousands_of_fish`
 
 Properties
 ----------
@@ -99,18 +106,6 @@ Constants
 .. _class_Particles_constant_MAX_DRAW_PASSES:
 
 - **MAX_DRAW_PASSES** = **4** --- Maximum number of draw passes supported.
-
-Description
------------
-
-3D particle node used to create a variety of particle systems and effects. ``Particles`` features an emitter that generates some number of particles at a given rate.
-
-Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/vertex_animation/controlling_thousands_of_fish`
 
 Property Descriptions
 ---------------------

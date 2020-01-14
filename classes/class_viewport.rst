@@ -11,12 +11,29 @@ Viewport
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Creates a sub-view into the screen.
+
+Description
+-----------
+
+A Viewport creates a different view into the screen, or a sub-view inside another viewport. Children 2D Nodes will display on it, and children Camera 3D nodes will render on it too.
+
+Optionally, a viewport can have its own 2D or 3D world, so they don't share what they draw with other viewports.
+
+If a viewport is a child of a :ref:`ViewportContainer<class_ViewportContainer>`, it will automatically take up its size, otherwise it must be set manually.
+
+Viewports can also choose to be audio listeners, so they generate positional audio depending on a 2D or 3D camera child of it.
+
+Also, viewports can be assigned to different screens in case the devices have multiple screens.
+
+Finally, viewports can also behave as render targets, in which case they will not be visible unless the associated texture is used to draw.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_transforms`
+
+- :doc:`../tutorials/viewports/index`
 
 Properties
 ----------
@@ -337,28 +354,6 @@ enum **ClearMode**:
 - **CLEAR_MODE_NEVER** = **1** --- Never clear the render target.
 
 - **CLEAR_MODE_ONLY_NEXT_FRAME** = **2** --- Clear the render target next frame, then switch to :ref:`CLEAR_MODE_NEVER<class_Viewport_constant_CLEAR_MODE_NEVER>`.
-
-Description
------------
-
-A Viewport creates a different view into the screen, or a sub-view inside another viewport. Children 2D Nodes will display on it, and children Camera 3D nodes will render on it too.
-
-Optionally, a viewport can have its own 2D or 3D world, so they don't share what they draw with other viewports.
-
-If a viewport is a child of a :ref:`ViewportContainer<class_ViewportContainer>`, it will automatically take up its size, otherwise it must be set manually.
-
-Viewports can also choose to be audio listeners, so they generate positional audio depending on a 2D or 3D camera child of it.
-
-Also, viewports can be assigned to different screens in case the devices have multiple screens.
-
-Finally, viewports can also behave as render targets, in which case they will not be visible unless the associated texture is used to draw.
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/2d_transforms`
-
-- :doc:`../tutorials/viewports/index`
 
 Property Descriptions
 ---------------------

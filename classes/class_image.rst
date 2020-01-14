@@ -11,12 +11,12 @@ Image
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Image datatype.
+
+Description
+-----------
+
+Native image datatype. Contains image data, which can be converted to a :ref:`Texture<class_Texture>`, and several functions to interact with it. The maximum width and height for an ``Image`` are :ref:`MAX_WIDTH<class_Image_constant_MAX_WIDTH>` and :ref:`MAX_HEIGHT<class_Image_constant_MAX_HEIGHT>`.
 
 Properties
 ----------
@@ -417,11 +417,6 @@ Constants
 - **MAX_WIDTH** = **16384** --- The maximal width allowed for ``Image`` resources.
 
 - **MAX_HEIGHT** = **16384** --- The maximal height allowed for ``Image`` resources.
-
-Description
------------
-
-Native image datatype. Contains image data, which can be converted to a :ref:`Texture<class_Texture>`, and several functions to interact with it. The maximum width and height for an ``Image`` are :ref:`MAX_WIDTH<class_Image_constant_MAX_WIDTH>` and :ref:`MAX_HEIGHT<class_Image_constant_MAX_HEIGHT>`.
 
 Property Descriptions
 ---------------------

@@ -13,12 +13,12 @@ PrimitiveMesh
 
 **Inherited By:** :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PointMesh<class_PointMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, :ref:`SphereMesh<class_SphereMesh>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh.
+
+Description
+-----------
+
+Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh. Examples include :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, and :ref:`SphereMesh<class_SphereMesh>`.
 
 Properties
 ----------
@@ -37,11 +37,6 @@ Methods
 +---------------------------+--------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** const |
 +---------------------------+--------------------------------------------------------------------------------------+
-
-Description
------------
-
-Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh. Examples include :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, and :ref:`SphereMesh<class_SphereMesh>`.
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,12 @@ CSGSphere
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A CSG Sphere shape.
+
+Description
+-----------
+
+This node allows you to create a sphere for use with the CSG system.
 
 Properties
 ----------
@@ -32,11 +32,6 @@ Properties
 +---------------------------------+------------------------------------------------------------------+------+
 | :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGSphere_property_smooth_faces>`       | true |
 +---------------------------------+------------------------------------------------------------------+------+
-
-Description
------------
-
-This node allows you to create a sphere for use with the CSG system.
 
 Property Descriptions
 ---------------------

@@ -13,12 +13,17 @@ PhysicsBody
 
 **Inherited By:** :ref:`KinematicBody<class_KinematicBody>`, :ref:`PhysicalBone<class_PhysicalBone>`, :ref:`RigidBody<class_RigidBody>`, :ref:`StaticBody<class_StaticBody>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all objects affected by physics in 3D space.
+
+Description
+-----------
+
+PhysicsBody is an abstract base class for implementing a physics body. All \*Body types inherit from it.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
 
 Properties
 ----------
@@ -47,16 +52,6 @@ Methods
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_collision_mask_bit<class_PhysicsBody_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
 +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-PhysicsBody is an abstract base class for implementing a physics body. All \*Body types inherit from it.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/physics_introduction`
 
 Property Descriptions
 ---------------------

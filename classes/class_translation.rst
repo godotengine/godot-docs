@@ -13,12 +13,19 @@ Translation
 
 **Inherited By:** :ref:`PHashTranslation<class_PHashTranslation>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Language Translation.
+
+Description
+-----------
+
+Translations are resources that can be loaded and unloaded on demand. They map a string to another string.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/i18n/internationalizing_games`
+
+- :doc:`../tutorials/i18n/locales`
 
 Properties
 ----------
@@ -41,18 +48,6 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_message_list<class_Translation_method_get_message_list>` **(** **)** const                                                                     |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Translations are resources that can be loaded and unloaded on demand. They map a string to another string.
-
-Tutorials
----------
-
-- :doc:`../tutorials/i18n/internationalizing_games`
-
-- :doc:`../tutorials/i18n/locales`
 
 Property Descriptions
 ---------------------

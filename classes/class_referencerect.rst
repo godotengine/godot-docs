@@ -11,12 +11,12 @@ ReferenceRect
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Reference frame for GUI.
+
+Description
+-----------
+
+A rectangle box that displays only a :ref:`border_color<class_ReferenceRect_property_border_color>` border color around its rectangle. ``ReferenceRect`` has no fill :ref:`Color<class_Color>`.
 
 Properties
 ----------
@@ -26,11 +26,6 @@ Properties
 +---------------------------+----------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`   | :ref:`editor_only<class_ReferenceRect_property_editor_only>`   | true                |
 +---------------------------+----------------------------------------------------------------+---------------------+
-
-Description
------------
-
-A rectangle box that displays only a :ref:`border_color<class_ReferenceRect_property_border_color>` border color around its rectangle. ``ReferenceRect`` has no fill :ref:`Color<class_Color>`.
 
 Property Descriptions
 ---------------------

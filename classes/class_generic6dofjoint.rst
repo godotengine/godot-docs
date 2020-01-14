@@ -11,12 +11,12 @@ Generic6DOFJoint
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 The generic 6-degrees-of-freedom joint can implement a variety of joint types by locking certain axes' rotation or translation.
+
+Description
+-----------
+
+The first 3 DOF axes are linear axes, which represent translation of Bodies, and the latter 3 DOF axes represent the angular motion. Each axis can be either locked, or limited.
 
 Properties
 ----------
@@ -330,11 +330,6 @@ enum **Flag**:
 - **FLAG_ENABLE_LINEAR_MOTOR** = **5** --- If enabled, there is a linear motor across these axes.
 
 - **FLAG_MAX** = **6** --- Represents the size of the :ref:`Flag<enum_Generic6DOFJoint_Flag>` enum.
-
-Description
------------
-
-The first 3 DOF axes are linear axes, which represent translation of Bodies, and the latter 3 DOF axes represent the angular motion. Each axis can be either locked, or limited.
 
 Property Descriptions
 ---------------------

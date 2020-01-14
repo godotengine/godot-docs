@@ -11,12 +11,12 @@ CanvasItemMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A material for :ref:`CanvasItem<class_CanvasItem>`\ s.
+
+Description
+-----------
+
+``CanvasItemMaterial``\ s provide a means of modifying the textures associated with a CanvasItem. They specialize in describing blend and lighting behaviors for textures. Use a :ref:`ShaderMaterial<class_ShaderMaterial>` to more fully customize a material's interactions with a :ref:`CanvasItem<class_CanvasItem>`.
 
 Properties
 ----------
@@ -79,11 +79,6 @@ enum **LightMode**:
 - **LIGHT_MODE_UNSHADED** = **1** --- Render the material as if there were no light.
 
 - **LIGHT_MODE_LIGHT_ONLY** = **2** --- Render the material as if there were only light.
-
-Description
------------
-
-``CanvasItemMaterial``\ s provide a means of modifying the textures associated with a CanvasItem. They specialize in describing blend and lighting behaviors for textures. Use a :ref:`ShaderMaterial<class_ShaderMaterial>` to more fully customize a material's interactions with a :ref:`CanvasItem<class_CanvasItem>`.
 
 Property Descriptions
 ---------------------

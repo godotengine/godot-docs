@@ -11,12 +11,17 @@ BakedLightmap
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Prerendered indirect light map for a scene.
+
+Description
+-----------
+
+Baked lightmaps are an alternative workflow for adding indirect (or baked) lighting to a scene. Unlike the :ref:`GIProbe<class_GIProbe>` approach, baked lightmaps work fine on low-end PCs and mobile devices as they consume almost no resources in run-time.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/baked_lightmaps`
 
 Properties
 ----------
@@ -112,16 +117,6 @@ enum **BakeError**:
 - **BAKE_ERROR_CANT_CREATE_IMAGE** = **3**
 
 - **BAKE_ERROR_USER_ABORTED** = **4**
-
-Description
------------
-
-Baked lightmaps are an alternative workflow for adding indirect (or baked) lighting to a scene. Unlike the :ref:`GIProbe<class_GIProbe>` approach, baked lightmaps work fine on low-end PCs and mobile devices as they consume almost no resources in run-time.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/baked_lightmaps`
 
 Property Descriptions
 ---------------------

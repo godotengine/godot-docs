@@ -11,12 +11,12 @@ ColorPicker
 
 **Inherits:** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Color picker control.
+
+Description
+-----------
+
+:ref:`Control<class_Control>` node displaying a color picker widget. It's useful for selecting a color from an RGB/RGBA colorspace.
 
 Properties
 ----------
@@ -99,11 +99,6 @@ Emitted when a preset is added.
 - **preset_removed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when a preset is removed.
-
-Description
------------
-
-:ref:`Control<class_Control>` node displaying a color picker widget. It's useful for selecting a color from an RGB/RGBA colorspace.
 
 Property Descriptions
 ---------------------

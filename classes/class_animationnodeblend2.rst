@@ -11,12 +11,12 @@ AnimationNodeBlend2
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Blends two animations linearly inside of an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
+Description
+-----------
+
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations linearly based on an amount value in the ``[0.0, 1.0]`` range.
 
 Properties
 ----------
@@ -24,11 +24,6 @@ Properties
 +-------------------------+------------------------------------------------------+-------+
 | :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeBlend2_property_sync>` | false |
 +-------------------------+------------------------------------------------------+-------+
-
-Description
------------
-
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations linearly based on an amount value in the ``[0.0, 1.0]`` range.
 
 Property Descriptions
 ---------------------

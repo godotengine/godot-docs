@@ -11,12 +11,12 @@ TextEdit
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Multiline text editing control.
+
+Description
+-----------
+
+TextEdit is meant for editing large, multiline text. It also has facilities for editing code, such as syntax highlighting support and multiple levels of undo/redo.
 
 Properties
 ----------
@@ -57,6 +57,10 @@ Properties
 | :ref:`bool<class_bool>`                      | :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>` | false    |
 +----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`                      | :ref:`readonly<class_TextEdit_property_readonly>`                                         | false    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                        | :ref:`scroll_horizontal<class_TextEdit_property_scroll_horizontal>`                       | 0        |
++----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                    | :ref:`scroll_vertical<class_TextEdit_property_scroll_vertical>`                           | 0.0      |
 +----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`                      | :ref:`selecting_enabled<class_TextEdit_property_selecting_enabled>`                       | true     |
 +----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
@@ -365,11 +369,6 @@ enum **MenuItems**:
 
 - **MENU_MAX** = **7** --- Represents the size of the :ref:`MenuItems<enum_TextEdit_MenuItems>` enum.
 
-Description
------------
-
-TextEdit is meant for editing large, multiline text. It also has facilities for editing code, such as syntax highlighting support and multiple levels of undo/redo.
-
 Property Descriptions
 ---------------------
 
@@ -624,6 +623,38 @@ If ``true``, the line containing the cursor is highlighted.
 +-----------+---------------------+
 
 If ``true``, read-only mode is enabled. Existing text cannot be modified and new text cannot be added.
+
+----
+
+.. _class_TextEdit_property_scroll_horizontal:
+
+- :ref:`int<class_int>` **scroll_horizontal**
+
++-----------+---------------------+
+| *Default* | 0                   |
++-----------+---------------------+
+| *Setter*  | set_h_scroll(value) |
++-----------+---------------------+
+| *Getter*  | get_h_scroll()      |
++-----------+---------------------+
+
+The current horizontal scroll value.
+
+----
+
+.. _class_TextEdit_property_scroll_vertical:
+
+- :ref:`float<class_float>` **scroll_vertical**
+
++-----------+---------------------+
+| *Default* | 0.0                 |
++-----------+---------------------+
+| *Setter*  | set_v_scroll(value) |
++-----------+---------------------+
+| *Getter*  | get_v_scroll()      |
++-----------+---------------------+
+
+The current vertical scroll value.
 
 ----
 

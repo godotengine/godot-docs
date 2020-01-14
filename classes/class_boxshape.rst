@@ -11,12 +11,12 @@ BoxShape
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Box shape resource.
+
+Description
+-----------
+
+3D box shape that can be a child of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`.
 
 Properties
 ----------
@@ -24,11 +24,6 @@ Properties
 +-------------------------------+-------------------------------------------------+--------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`extents<class_BoxShape_property_extents>` | Vector3( 1, 1, 1 ) |
 +-------------------------------+-------------------------------------------------+--------------------+
-
-Description
------------
-
-3D box shape that can be a child of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`.
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,14 @@ InstancePlaceholder
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Placeholder for the root :ref:`Node<class_Node>` of a :ref:`PackedScene<class_PackedScene>`.
+
+Description
+-----------
+
+Turning on the option **Load As Placeholder** for an instanced scene in the editor causes it to be replaced by an InstancePlaceholder when running the game. This makes it possible to delay actually loading the scene until calling :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>`. This is useful to avoid loading large scenes all at once by loading parts of it selectively.
+
+The InstancePlaceholder does not have a transform. This causes any child nodes to be positioned relatively to the Viewport from point (0,0), rather than their parent as displayed in the editor. Replacing the placeholder with a scene with a transform will transform children relatively to their parent again.
 
 Methods
 -------
@@ -30,13 +32,6 @@ Methods
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>` **(** :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**                                |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Turning on the option **Load As Placeholder** for an instanced scene in the editor causes it to be replaced by an InstancePlaceholder when running the game. This makes it possible to delay actually loading the scene until calling :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>`. This is useful to avoid loading large scenes all at once by loading parts of it selectively.
-
-The InstancePlaceholder does not have a transform. This causes any child nodes to be positioned relatively to the Viewport from point (0,0), rather than their parent as displayed in the editor. Replacing the placeholder with a scene with a transform will transform children relatively to their parent again.
 
 Method Descriptions
 -------------------

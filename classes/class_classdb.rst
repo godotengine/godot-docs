@@ -11,12 +11,12 @@ ClassDB
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Class information repository.
+
+Description
+-----------
+
+Provides access to metadata stored for every available class.
 
 Methods
 -------
@@ -62,11 +62,6 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_parent_class<class_ClassDB_method_is_parent_class>` **(** :ref:`String<class_String>` class, :ref:`String<class_String>` inherits **)** const                                               |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Provides access to metadata stored for every available class.
 
 Method Descriptions
 -------------------

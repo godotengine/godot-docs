@@ -11,12 +11,14 @@ StaticBody2D
 
 **Inherits:** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Static body for 2D physics.
+
+Description
+-----------
+
+Static body for 2D physics. A StaticBody2D is a body that is not intended to move. It is ideal for implementing objects in the environment, such as walls or platforms.
+
+Additionally, a constant linear or angular velocity can be set for the static body, which will affect colliding bodies as if it were moving (for example, a conveyor belt).
 
 Properties
 ----------
@@ -32,13 +34,6 @@ Properties
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
 | :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>` |                 |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
-
-Description
------------
-
-Static body for 2D physics. A StaticBody2D is a body that is not intended to move. It is ideal for implementing objects in the environment, such as walls or platforms.
-
-Additionally, a constant linear or angular velocity can be set for the static body, which will affect colliding bodies as if it were moving (for example, a conveyor belt).
 
 Property Descriptions
 ---------------------

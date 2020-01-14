@@ -11,12 +11,14 @@ ResourcePreloader
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Resource Preloader Node.
+
+Description
+-----------
+
+This node is used to preload sub-resources inside a scene, so when the scene is loaded, all the resources are ready to use and can be retrieved from the preloader.
+
+GDScript has a simplified :ref:`@GDScript.preload<class_@GDScript_method_preload>` built-in method which can be used in most situations, leaving the use of ``ResourcePreloader`` for more advanced scenarios.
 
 Methods
 -------
@@ -34,13 +36,6 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`rename_resource<class_ResourcePreloader_method_rename_resource>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)** |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-This node is used to preload sub-resources inside a scene, so when the scene is loaded, all the resources are ready to use and can be retrieved from the preloader.
-
-GDScript has a simplified :ref:`@GDScript.preload<class_@GDScript_method_preload>` built-in method which can be used in most situations, leaving the use of ``ResourcePreloader`` for more advanced scenarios.
 
 Method Descriptions
 -------------------

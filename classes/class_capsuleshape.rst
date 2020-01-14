@@ -11,10 +11,10 @@ CapsuleShape
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Capsule shape for collisions.
 
-Brief Description
------------------
+Description
+-----------
 
 Capsule shape for collisions.
 
@@ -26,11 +26,6 @@ Properties
 +---------------------------+---------------------------------------------------+-----+
 | :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape_property_radius>` | 1.0 |
 +---------------------------+---------------------------------------------------+-----+
-
-Description
------------
-
-Capsule shape for collisions.
 
 Property Descriptions
 ---------------------

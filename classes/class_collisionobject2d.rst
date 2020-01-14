@@ -13,12 +13,12 @@ CollisionObject2D
 
 **Inherited By:** :ref:`Area2D<class_Area2D>`, :ref:`PhysicsBody2D<class_PhysicsBody2D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base node for 2D collision objects.
+
+Description
+-----------
+
+CollisionObject2D is the base class for 2D physics objects. It can hold any number of 2D collision :ref:`Shape2D<class_Shape2D>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject2D can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
 
 Properties
 ----------
@@ -99,11 +99,6 @@ Emitted when the mouse pointer enters any of this object's shapes. Requires :ref
 
 Emitted when the mouse pointer exits all this object's shapes. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one ``collision_layer`` bit to be set.
 
-Description
------------
-
-CollisionObject2D is the base class for 2D physics objects. It can hold any number of 2D collision :ref:`Shape2D<class_Shape2D>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject2D can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
-
 Property Descriptions
 ---------------------
 
@@ -151,6 +146,8 @@ Returns the object's :ref:`RID<class_RID>`.
 .. _class_CollisionObject2D_method_get_shape_owner_one_way_collision_margin:
 
 - :ref:`float<class_float>` **get_shape_owner_one_way_collision_margin** **(** :ref:`int<class_int>` owner_id **)** const
+
+Returns the ``one_way_collision_margin`` of the shape owner identified by given ``owner_id``.
 
 ----
 
@@ -277,6 +274,8 @@ If ``enable`` is ``true``, collisions for the shape owner originating from this 
 .. _class_CollisionObject2D_method_shape_owner_set_one_way_collision_margin:
 
 - void **shape_owner_set_one_way_collision_margin** **(** :ref:`int<class_int>` owner_id, :ref:`float<class_float>` margin **)**
+
+Sets the ``one_way_collision_margin`` of the shape owner identified by given ``owner_id`` to ``margin`` pixels.
 
 ----
 

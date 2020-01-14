@@ -11,12 +11,12 @@ EditorFileSystemDirectory
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A directory for the resource filesystem.
+
+Description
+-----------
+
+A more generalized, low-level variation of the directory concept.
 
 Methods
 -------
@@ -50,11 +50,6 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                             | :ref:`get_subdir_count<class_EditorFileSystemDirectory_method_get_subdir_count>` **(** **)** const                                                     |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A more generalized, low-level variation of the directory concept.
 
 Method Descriptions
 -------------------

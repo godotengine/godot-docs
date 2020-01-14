@@ -11,12 +11,16 @@ AnimationNodeBlendSpace2D
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Blends linearly between three :ref:`AnimationNode<class_AnimationNode>` of any type placed in a 2d space.
+
+Description
+-----------
+
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
+This node allows you to blend linearly between three animations using a :ref:`Vector2<class_Vector2>` weight.
+
+You can add vertices to the blend space with :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>` and automatically triangulate it by setting :ref:`auto_triangles<class_AnimationNodeBlendSpace2D_property_auto_triangles>` to ``true``. Otherwise, use :ref:`add_triangle<class_AnimationNodeBlendSpace2D_method_add_triangle>` and :ref:`remove_triangle<class_AnimationNodeBlendSpace2D_method_remove_triangle>` to create up the blend space by hand.
 
 Properties
 ----------
@@ -91,15 +95,6 @@ enum **BlendMode**:
 - **BLEND_MODE_DISCRETE** = **1** --- The blend space plays the animation of the node the blending position is closest to. Useful for frame-by-frame 2D animations.
 
 - **BLEND_MODE_DISCRETE_CARRY** = **2** --- Similar to :ref:`BLEND_MODE_DISCRETE<class_AnimationNodeBlendSpace2D_constant_BLEND_MODE_DISCRETE>`, but starts the new animation at the last animation's playback position.
-
-Description
------------
-
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
-
-This node allows you to blend linearly between three animations using a :ref:`Vector2<class_Vector2>` weight.
-
-You can add vertices to the blend space with :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>` and automatically triangulate it by setting :ref:`auto_triangles<class_AnimationNodeBlendSpace2D_property_auto_triangles>` to ``true``. Otherwise, use :ref:`add_triangle<class_AnimationNodeBlendSpace2D_method_add_triangle>` and :ref:`remove_triangle<class_AnimationNodeBlendSpace2D_method_remove_triangle>` to create up the blend space by hand.
 
 Property Descriptions
 ---------------------

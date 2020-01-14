@@ -11,10 +11,10 @@ SphereMesh
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
-Brief Description
------------------
+Description
+-----------
 
 Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
@@ -32,11 +32,6 @@ Properties
 +---------------------------+-------------------------------------------------------------------+-------+
 | :ref:`int<class_int>`     | :ref:`rings<class_SphereMesh_property_rings>`                     | 32    |
 +---------------------------+-------------------------------------------------------------------+-------+
-
-Description
------------
-
-Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
 Property Descriptions
 ---------------------
@@ -69,7 +64,7 @@ Full height of the sphere.
 | *Getter*  | get_is_hemisphere()      |
 +-----------+--------------------------+
 
-Determines whether a full sphere or a hemisphere is created.
+If ``true``, a hemisphere is created rather than a full sphere.
 
 **Note:** To get a regular hemisphere, the height and radius of the sphere must be equal.
 

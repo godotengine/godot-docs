@@ -9,12 +9,17 @@
 Vector3
 =======
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Vector used for 3D math.
+
+Description
+-----------
+
+3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
@@ -150,16 +155,6 @@ Constants
 - **FORWARD** = **Vector3( 0, 0, -1 )** --- Forward unit vector.
 
 - **BACK** = **Vector3( 0, 0, 1 )** --- Back unit vector.
-
-Description
------------
-
-3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
 
 Property Descriptions
 ---------------------

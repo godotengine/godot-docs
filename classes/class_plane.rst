@@ -9,12 +9,17 @@
 Plane
 =====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Plane in hessian form.
+
+Description
+-----------
+
+Plane represents a normalized plane equation. Basically, "normal" is the normal of the plane (a,b,c normalized), and "d" is the distance from the origin to the plane (in the direction of "normal"). "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
@@ -78,16 +83,6 @@ Constants
 - **PLANE_XZ** = **Plane( 0, 1, 0, 0 )**
 
 - **PLANE_XY** = **Plane( 0, 0, 1, 0 )**
-
-Description
------------
-
-Plane represents a normalized plane equation. Basically, "normal" is the normal of the plane (a,b,c normalized), and "d" is the distance from the origin to the plane (in the direction of "normal"). "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
 
 Property Descriptions
 ---------------------

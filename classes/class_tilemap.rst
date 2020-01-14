@@ -11,12 +11,17 @@ TileMap
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Node for 2D tile-based maps.
+
+Description
+-----------
+
+Node for 2D tile-based maps. Tilemaps use a :ref:`TileSet<class_TileSet>` which contain a list of tiles (textures plus optional collision, navigation, and/or occluder shapes) which are used to create grid-based maps.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/using_tilemaps`
 
 Properties
 ----------
@@ -186,16 +191,6 @@ Constants
 .. _class_TileMap_constant_INVALID_CELL:
 
 - **INVALID_CELL** = **-1** --- Returned when a cell doesn't exist.
-
-Description
------------
-
-Node for 2D tile-based maps. Tilemaps use a :ref:`TileSet<class_TileSet>` which contain a list of tiles (textures plus optional collision, navigation, and/or occluder shapes) which are used to create grid-based maps.
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/using_tilemaps`
 
 Property Descriptions
 ---------------------

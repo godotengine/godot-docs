@@ -13,11 +13,6 @@ VisualShaderNodeSwitch
 
 **Inherited By:** :ref:`VisualShaderNodeScalarSwitch<class_VisualShaderNodeScalarSwitch>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

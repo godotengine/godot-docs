@@ -11,12 +11,12 @@ EditorResourcePreview
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Helper to generate previews of resources or files.
+
+Description
+-----------
+
+This object is used to generate previews for resources of files.
 
 Methods
 -------
@@ -41,11 +41,6 @@ Signals
 - **preview_invalidated** **(** :ref:`String<class_String>` path **)**
 
 Emitted if a preview was invalidated (changed). ``path`` corresponds to the path of the preview.
-
-Description
------------
-
-This object is used to generate previews for resources of files.
 
 Method Descriptions
 -------------------

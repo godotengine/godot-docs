@@ -13,12 +13,17 @@ Shape2D
 
 **Inherited By:** :ref:`CapsuleShape2D<class_CapsuleShape2D>`, :ref:`CircleShape2D<class_CircleShape2D>`, :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`, :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`, :ref:`LineShape2D<class_LineShape2D>`, :ref:`RayShape2D<class_RayShape2D>`, :ref:`RectangleShape2D<class_RectangleShape2D>`, :ref:`SegmentShape2D<class_SegmentShape2D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all 2D shapes.
+
+Description
+-----------
+
+Base class for all 2D shapes. All 2D shape types inherit from this.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
 
 Properties
 ----------
@@ -39,16 +44,6 @@ Methods
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>` | :ref:`collide_with_motion_and_get_contacts<class_Shape2D_method_collide_with_motion_and_get_contacts>` **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Vector2<class_Vector2>` local_motion, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform, :ref:`Vector2<class_Vector2>` shape_motion **)** |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Base class for all 2D shapes. All 2D shape types inherit from this.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/physics_introduction`
 
 Property Descriptions
 ---------------------

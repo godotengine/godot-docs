@@ -13,10 +13,10 @@ Slider
 
 **Inherited By:** :ref:`HSlider<class_HSlider>`, :ref:`VSlider<class_VSlider>`
 
-**Category:** Core
+Base class for GUI sliders.
 
-Brief Description
------------------
+Description
+-----------
 
 Base class for GUI sliders.
 
@@ -36,11 +36,6 @@ Properties
 +------------------------------------------+-----------------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | false    |
 +------------------------------------------+-----------------------------------------------------------------+----------+
-
-Description
------------
-
-Base class for GUI sliders.
 
 Property Descriptions
 ---------------------

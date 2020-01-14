@@ -11,12 +11,12 @@ OccluderPolygon2D
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Defines a 2D polygon for LightOccluder2D.
+
+Description
+-----------
+
+Editor facility that helps you draw a 2D polygon used as resource for :ref:`LightOccluder2D<class_LightOccluder2D>`.
 
 Properties
 ----------
@@ -47,11 +47,6 @@ enum **CullMode**:
 - **CULL_CLOCKWISE** = **1** --- Culling is performed in the clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
 
 - **CULL_COUNTER_CLOCKWISE** = **2** --- Culling is performed in the counterclockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
-
-Description
------------
-
-Editor facility that helps you draw a 2D polygon used as resource for :ref:`LightOccluder2D<class_LightOccluder2D>`.
 
 Property Descriptions
 ---------------------

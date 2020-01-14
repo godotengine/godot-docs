@@ -11,12 +11,14 @@ VisualScriptBuiltinFunc
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A Visual Script node used to call built-in functions.
+
+Description
+-----------
+
+A built-in function used inside a :ref:`VisualScript<class_VisualScript>`. It is usually a math function or an utility function.
+
+See also :ref:`@GDScript<class_@GDScript>`, for the same functions in the GDScript language.
 
 Properties
 ----------
@@ -314,13 +316,6 @@ enum **BuiltinFunc**:
 - **TEXT_ORD** = **67**
 
 - **FUNC_MAX** = **68** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
-
-Description
------------
-
-A built-in function used inside a :ref:`VisualScript<class_VisualScript>`. It is usually a math function or an utility function.
-
-See also :ref:`@GDScript<class_@GDScript>`, for the same functions in the GDScript language.
 
 Property Descriptions
 ---------------------

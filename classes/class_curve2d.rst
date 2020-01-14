@@ -11,12 +11,14 @@ Curve2D
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Describes a Bézier curve in 2D space.
+
+Description
+-----------
+
+This class describes a Bézier curve in 2D space. It is mainly used to give a shape to a :ref:`Path2D<class_Path2D>`, but can be manually sampled for other purposes.
+
+It keeps a cache of precalculated points along the curve, to speed up further calculations.
 
 Properties
 ----------
@@ -65,13 +67,6 @@ Methods
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`tessellate<class_Curve2D_method_tessellate>` **(** :ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** const                                                                                         |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-This class describes a Bézier curve in 2D space. It is mainly used to give a shape to a :ref:`Path2D<class_Path2D>`, but can be manually sampled for other purposes.
-
-It keeps a cache of precalculated points along the curve, to speed up further calculations.
 
 Property Descriptions
 ---------------------

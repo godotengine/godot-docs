@@ -11,12 +11,17 @@ AudioStreamPlayer
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Plays back audio non-positionally.
+
+Description
+-----------
+
+Plays an audio stream non-positionally.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/audio/audio_streams`
 
 Properties
 ----------
@@ -81,16 +86,6 @@ enum **MixTarget**:
 - **MIX_TARGET_SURROUND** = **1** --- The audio will be played on all surround channels.
 
 - **MIX_TARGET_CENTER** = **2** --- The audio will be played on the second channel, which is usually the center.
-
-Description
------------
-
-Plays an audio stream non-positionally.
-
-Tutorials
----------
-
-- :doc:`../tutorials/audio/audio_streams`
 
 Property Descriptions
 ---------------------
@@ -199,6 +194,8 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 | *Getter*  | get_stream_paused()      |
 +-----------+--------------------------+
 
+If ``true``, the playback is paused. You can resume it by setting ``stream_paused`` to ``false``.
+
 ----
 
 .. _class_AudioStreamPlayer_property_volume_db:
@@ -229,6 +226,8 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>` in seconds.
 .. _class_AudioStreamPlayer_method_get_stream_playback:
 
 - :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback** **(** **)**
+
+Returns the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object associated with this ``AudioStreamPlayer``.
 
 ----
 

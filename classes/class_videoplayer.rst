@@ -11,12 +11,12 @@ VideoPlayer
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Control for playing video streams.
+
+Description
+-----------
+
+Control node for playing video streams. Supported formats are `WebM <https://www.webmproject.org/>`_ and `Ogg Theora <https://www.theora.org/>`_.
 
 Properties
 ----------
@@ -66,11 +66,6 @@ Signals
 - **finished** **(** **)**
 
 Emitted when playback is finished.
-
-Description
------------
-
-Control node for playing video streams. Supported formats are `WebM <https://www.webmproject.org/>`_ and `Ogg Theora <https://www.theora.org/>`_.
 
 Property Descriptions
 ---------------------

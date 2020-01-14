@@ -11,12 +11,14 @@ GraphNode
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A GraphNode is a container with several input and output slots allowing connections between GraphNodes. Slots can have different, incompatible types.
+
+Description
+-----------
+
+A GraphNode is a container defined by a title. It can have one or more input and output slots, which can be enabled (shown) or disabled (not shown) and have different (incompatible) types. Colors can also be assigned to slots. A tuple of input and output slots is defined for each GUI element included in the GraphNode. Input and output connections are left and right slots, but only enabled slots are counted as connections.
+
+To add a slot to GraphNode, add any :ref:`Control<class_Control>`-derived child node to it.
 
 Properties
 ----------
@@ -126,7 +128,7 @@ Signals
 
 - **close_request** **(** **)**
 
-Signal sent on closing the GraphNode.
+Emitted when the GraphNode is requested to be closed. Happens on clicking the close button (see :ref:`show_close<class_GraphNode_property_show_close>`).
 
 ----
 
@@ -134,7 +136,7 @@ Signal sent on closing the GraphNode.
 
 - **dragged** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**
 
-Signal sent when the GraphNode is dragged.
+Emitted when the GraphNode is dragged.
 
 ----
 
@@ -142,7 +144,7 @@ Signal sent when the GraphNode is dragged.
 
 - **offset_changed** **(** **)**
 
-Signal sent when the GraphNode is moved.
+Emitted when the GraphNode is moved.
 
 ----
 
@@ -150,13 +152,15 @@ Signal sent when the GraphNode is moved.
 
 - **raise_request** **(** **)**
 
-Signal sent when the GraphNode is requested to be displayed over other ones. Happens on focusing (clicking into) the GraphNode.
+Emitted when the GraphNode is requested to be displayed over other ones. Happens on focusing (clicking into) the GraphNode.
 
 ----
 
 .. _class_GraphNode_signal_resize_request:
 
 - **resize_request** **(** :ref:`Vector2<class_Vector2>` new_minsize **)**
+
+Emitted when the GraphNode is requested to be resized. Happens on dragging the resizer handle (see :ref:`resizable<class_GraphNode_property_resizable>`).
 
 Enumerations
 ------------
@@ -171,18 +175,11 @@ Enumerations
 
 enum **Overlay**:
 
-- **OVERLAY_DISABLED** = **0**
+- **OVERLAY_DISABLED** = **0** --- No overlay is shown.
 
-- **OVERLAY_BREAKPOINT** = **1**
+- **OVERLAY_BREAKPOINT** = **1** --- Show overlay set in the ``breakpoint`` theme property.
 
-- **OVERLAY_POSITION** = **2**
-
-Description
------------
-
-A GraphNode is a container defined by a title. It can have one or more input and output slots, which can be enabled (shown) or disabled (not shown) and have different (incompatible) types. Colors can also be assigned to slots. A tuple of input and output slots is defined for each GUI element included in the GraphNode. Input and output connections are left and right slots, but only enabled slots are counted as connections.
-
-To add a slot to GraphNode, add any :ref:`Control<class_Control>`-derived child node to it.
+- **OVERLAY_POSITION** = **2** --- Show overlay set in the ``position`` theme property.
 
 Property Descriptions
 ---------------------
@@ -233,6 +230,8 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 | *Getter*  | get_overlay()      |
 +-----------+--------------------+
 
+Sets the overlay shown above the GraphNode. See :ref:`Overlay<enum_GraphNode_Overlay>`.
+
 ----
 
 .. _class_GraphNode_property_resizable:
@@ -246,6 +245,10 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 +-----------+----------------------+
 | *Getter*  | is_resizable()       |
 +-----------+----------------------+
+
+If ``true``, the user can resize the GraphNode.
+
+**Note:** Dragging the handle will only trigger the :ref:`resize_request<class_GraphNode_signal_resize_request>` signal, the GraphNode needs to be resized manually.
 
 ----
 
@@ -261,6 +264,8 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 | *Getter*  | is_selected()       |
 +-----------+---------------------+
 
+If ``true``, the GraphNode is selected.
+
 ----
 
 .. _class_GraphNode_property_show_close:
@@ -275,6 +280,10 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 | *Getter*  | is_close_button_visible()    |
 +-----------+------------------------------+
 
+If ``true``, the close button will be visible.
+
+**Note:** Pressing it will only trigger the :ref:`close_request<class_GraphNode_signal_close_request>` signal, the GraphNode needs to be removed manually.
+
 ----
 
 .. _class_GraphNode_property_title:
@@ -288,6 +297,8 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 +-----------+------------------+
 | *Getter*  | get_title()      |
 +-----------+------------------+
+
+The text displayed in the GraphNode's title bar.
 
 Method Descriptions
 -------------------
@@ -424,7 +435,7 @@ Returns ``true`` if right (output) slot ``idx`` is enabled, ``false`` otherwise.
 
 - void **set_slot** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_left, :ref:`int<class_int>` type_left, :ref:`Color<class_Color>` color_left, :ref:`bool<class_bool>` enable_right, :ref:`int<class_int>` type_right, :ref:`Color<class_Color>` color_right, :ref:`Texture<class_Texture>` custom_left=null, :ref:`Texture<class_Texture>` custom_right=null **)**
 
-Sets properties of the slot with id ``idx``.
+Sets properties of the slot with ID ``idx``.
 
 If ``enable_left``/``right``, a port will appear and the slot will be able to be connected from this side.
 
@@ -434,5 +445,5 @@ If ``enable_left``/``right``, a port will appear and the slot will be able to be
 
 ``custom_left``/``right`` is a custom texture for this side's port.
 
-**Note:** this method only sets properties of the slot. To create the slot, add a :ref:`Control<class_Control>`-derived child to the GraphNode.
+**Note:** This method only sets properties of the slot. To create the slot, add a :ref:`Control<class_Control>`-derived child to the GraphNode.
 

@@ -13,11 +13,6 @@ InputEventGesture
 
 **Inherited By:** :ref:`InputEventMagnifyGesture<class_InputEventMagnifyGesture>`, :ref:`InputEventPanGesture<class_InputEventPanGesture>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

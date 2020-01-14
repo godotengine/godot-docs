@@ -11,12 +11,30 @@ ArrayMesh
 
 **Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 :ref:`Mesh<class_Mesh>` type that provides utility for constructing a surface from arrays.
+
+Description
+-----------
+
+The ``ArrayMesh`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying the attributes as arrays. The most basic example is the creation of a single triangle
+
+::
+
+    var vertices = PoolVector3Array()
+    vertices.push_back(Vector3(0, 1, 0))
+    vertices.push_back(Vector3(1, 0, 0))
+    vertices.push_back(Vector3(0, 0, 1))
+    # Initialize the ArrayMesh.
+    var arr_mesh = ArrayMesh.new()
+    var arrays = []
+    arrays.resize(ArrayMesh.ARRAY_MAX)
+    arrays[ArrayMesh.ARRAY_VERTEX] = vertices
+    # Create the Mesh.
+    arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
+    var m = MeshInstance.new()
+    m.mesh = arr_mesh
+
+The ``MeshInstance`` is ready to be added to the SceneTree to be shown.
 
 Properties
 ----------
@@ -165,29 +183,6 @@ Constants
 - **NO_INDEX_ARRAY** = **-1** --- Default value used for index_array_len when no indices are present.
 
 - **ARRAY_WEIGHTS_SIZE** = **4** --- Amount of weights/bone indices per vertex (always 4).
-
-Description
------------
-
-The ``ArrayMesh`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying the attributes as arrays. The most basic example is the creation of a single triangle
-
-::
-
-    var vertices = PoolVector3Array()
-    vertices.push_back(Vector3(0, 1, 0))
-    vertices.push_back(Vector3(1, 0, 0))
-    vertices.push_back(Vector3(0, 0, 1))
-    # Initialize the ArrayMesh.
-    var arr_mesh = ArrayMesh.new()
-    var arrays = []
-    arrays.resize(ArrayMesh.ARRAY_MAX)
-    arrays[ArrayMesh.ARRAY_VERTEX] = vertices
-    # Create the Mesh.
-    arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
-    var m = MeshInstance.new()
-    m.mesh = arr_mesh
-
-The ``MeshInstance`` is ready to be added to the SceneTree to be shown.
 
 Property Descriptions
 ---------------------

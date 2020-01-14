@@ -13,12 +13,12 @@ Joint2D
 
 **Inherited By:** :ref:`DampedSpringJoint2D<class_DampedSpringJoint2D>`, :ref:`GrooveJoint2D<class_GrooveJoint2D>`, :ref:`PinJoint2D<class_PinJoint2D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base node for all joint constraints in 2D physics.
+
+Description
+-----------
+
+Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.
 
 Properties
 ----------
@@ -32,11 +32,6 @@ Properties
 +---------------------------------+--------------------------------------------------------------------+--------------+
 | :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_property_node_b>`                       | NodePath("") |
 +---------------------------------+--------------------------------------------------------------------+--------------+
-
-Description
------------
-
-Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.
 
 Property Descriptions
 ---------------------

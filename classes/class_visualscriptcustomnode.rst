@@ -11,12 +11,12 @@ VisualScriptCustomNode
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A scripted Visual Script node.
+
+Description
+-----------
+
+A custom Visual Script node which can be scripted in powerful ways.
 
 Methods
 -------
@@ -96,11 +96,6 @@ This is used by :ref:`VisualScriptCondition<class_VisualScriptCondition>` to red
 - **STEP_YIELD_BIT** = **268435456** --- Hint used by :ref:`_step<class_VisualScriptCustomNode_method__step>` to tell that the function should be yielded.
 
 Using this requires you to have at least one working memory slot, which is used for the :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`.
-
-Description
------------
-
-A custom Visual Script node which can be scripted in powerful ways.
 
 Method Descriptions
 -------------------

@@ -11,12 +11,12 @@ TextureProgress
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Texture-based progress bar. Useful for loading screens and life or stamina bars.
+
+Description
+-----------
+
+TextureProgress works like :ref:`ProgressBar<class_ProgressBar>`, but uses up to 3 textures instead of Godot's :ref:`Theme<class_Theme>` resource. It can be used to create horizontal, vertical and radial progress bars.
 
 Properties
 ----------
@@ -93,7 +93,7 @@ enum **FillMode**:
 
 - **FILL_RIGHT_TO_LEFT** = **1** --- The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills from right to left.
 
-- **FILL_TOP_TO_BOTTOM** = **2** --- The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills from top to bototm.
+- **FILL_TOP_TO_BOTTOM** = **2** --- The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills from top to bottom.
 
 - **FILL_BOTTOM_TO_TOP** = **3** --- The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills from bottom to top.
 
@@ -106,11 +106,6 @@ enum **FillMode**:
 - **FILL_BILINEAR_TOP_AND_BOTTOM** = **7** --- The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills from the center, expanding both towards the top and the bottom.
 
 - **FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE** = **8** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_property_texture_progress>` fills radially from the center, expanding both clockwise and counterclockwise. See :ref:`radial_center_offset<class_TextureProgress_property_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_property_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>` to control the way the bar fills up.
-
-Description
------------
-
-TextureProgress works like :ref:`ProgressBar<class_ProgressBar>`, but uses up to 3 textures instead of Godot's :ref:`Theme<class_Theme>` resource. It can be used to create horizontal, vertical and radial progress bars.
 
 Property Descriptions
 ---------------------

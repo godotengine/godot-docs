@@ -13,11 +13,6 @@ TextureLayered
 
 **Inherited By:** :ref:`Texture3D<class_Texture3D>`, :ref:`TextureArray<class_TextureArray>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

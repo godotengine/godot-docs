@@ -11,12 +11,14 @@ CubeMesh
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
-Brief Description
------------------
+Description
+-----------
 
 Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
+
+The cube's UV layout is arranged in a 3×2 layout that allows texturing each face individually. To apply the same texture on all faces, change the material's UV property to ``Vector3(3, 2, 1)``.
 
 Properties
 ----------
@@ -30,13 +32,6 @@ Properties
 +-------------------------------+-------------------------------------------------------------------+--------------------+
 | :ref:`int<class_int>`         | :ref:`subdivide_width<class_CubeMesh_property_subdivide_width>`   | 0                  |
 +-------------------------------+-------------------------------------------------------------------+--------------------+
-
-Description
------------
-
-Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
-
-The cube's UV layout is arranged in a 3×2 layout that allows texturing each face individually. To apply the same texture on all faces, change the material's UV property to ``Vector3(3, 2, 1)``.
 
 Property Descriptions
 ---------------------

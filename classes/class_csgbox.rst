@@ -11,12 +11,12 @@ CSGBox
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A CSG Box shape.
+
+Description
+-----------
+
+This node allows you to create a box for use with the CSG system.
 
 Properties
 ----------
@@ -30,11 +30,6 @@ Properties
 +---------------------------------+-------------------------------------------------+-----+
 | :ref:`float<class_float>`       | :ref:`width<class_CSGBox_property_width>`       | 2.0 |
 +---------------------------------+-------------------------------------------------+-----+
-
-Description
------------
-
-This node allows you to create a box for use with the CSG system.
 
 Property Descriptions
 ---------------------

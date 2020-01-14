@@ -11,12 +11,29 @@ AStar
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 An implementation of A\* to find shortest paths among connected points in space.
+
+Description
+-----------
+
+A\* (A star) is a computer algorithm that is widely used in pathfinding and graph traversal, the process of plotting short paths among vertices (points), passing through a given set of edges (segments). It enjoys widespread use due to its performance and accuracy. Godot's A\* implementation uses points in three-dimensional space and Euclidean distances by default.
+
+You must add points manually with :ref:`add_point<class_AStar_method_add_point>` and create segments manually with :ref:`connect_points<class_AStar_method_connect_points>`. Then you can test if there is a path between two points with the :ref:`are_points_connected<class_AStar_method_are_points_connected>` function, get a path containing indices by :ref:`get_id_path<class_AStar_method_get_id_path>`, or one containing actual coordinates with :ref:`get_point_path<class_AStar_method_get_point_path>`.
+
+It is also possible to use non-Euclidean distances. To do so, create a class that extends ``AStar`` and override methods :ref:`_compute_cost<class_AStar_method__compute_cost>` and :ref:`_estimate_cost<class_AStar_method__estimate_cost>`. Both take two indices and return a length, as is shown in the following example.
+
+::
+
+    class MyAStar:
+        extends AStar
+    
+        func _compute_cost(u, v):
+            return abs(u - v)
+    
+        func _estimate_cost(u, v):
+            return min(0, abs(u - v) - 1)
+
+:ref:`_estimate_cost<class_AStar_method__estimate_cost>` should return a lower bound of the distance, i.e. ``_estimate_cost(u, v) <= _compute_cost(u, v)``. This serves as a hint to the algorithm because the custom ``_compute_cost`` might be computation-heavy. If this is not the case, make :ref:`_estimate_cost<class_AStar_method__estimate_cost>` return the same value as :ref:`_compute_cost<class_AStar_method__compute_cost>` to provide the algorithm with the most accurate information.
 
 Methods
 -------
@@ -72,28 +89,6 @@ Methods
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_point_weight_scale<class_AStar_method_set_point_weight_scale>` **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**                                    |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A\* (A star) is a computer algorithm that is widely used in pathfinding and graph traversal, the process of plotting short paths among vertices (points), passing through a given set of edges (segments). It enjoys widespread use due to its performance and accuracy. Godot's A\* implementation uses points in three-dimensional space and Euclidean distances by default.
-
-You must add points manually with :ref:`add_point<class_AStar_method_add_point>` and create segments manually with :ref:`connect_points<class_AStar_method_connect_points>`. Then you can test if there is a path between two points with the :ref:`are_points_connected<class_AStar_method_are_points_connected>` function, get a path containing indices by :ref:`get_id_path<class_AStar_method_get_id_path>`, or one containing actual coordinates with :ref:`get_point_path<class_AStar_method_get_point_path>`.
-
-It is also possible to use non-Euclidean distances. To do so, create a class that extends ``AStar`` and override methods :ref:`_compute_cost<class_AStar_method__compute_cost>` and :ref:`_estimate_cost<class_AStar_method__estimate_cost>`. Both take two indices and return a length, as is shown in the following example.
-
-::
-
-    class MyAStar:
-        extends AStar
-    
-        func _compute_cost(u, v):
-            return abs(u - v)
-    
-        func _estimate_cost(u, v):
-            return min(0, abs(u - v) - 1)
-
-:ref:`_estimate_cost<class_AStar_method__estimate_cost>` should return a lower bound of the distance, i.e. ``_estimate_cost(u, v) <= _compute_cost(u, v)``. This serves as a hint to the algorithm because the custom ``_compute_cost`` might be computation-heavy. If this is not the case, make :ref:`_estimate_cost<class_AStar_method__estimate_cost>` return the same value as :ref:`_compute_cost<class_AStar_method__compute_cost>` to provide the algorithm with the most accurate information.
 
 Method Descriptions
 -------------------

@@ -9,12 +9,16 @@
 PoolIntArray
 ============
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 A pooled :ref:`Array<class_Array>` of integers (:ref:`int<class_int>`).
+
+Description
+-----------
+
+An :ref:`Array<class_Array>` specifically designed to hold integer values (:ref:`int<class_int>`). Optimized for memory usage, does not fragment the memory.
+
+**Note:** This type is passed by value and not by reference.
+
+**Note:** This type is limited to signed 32-bit integers, which means it can only take values in the interval ``[-2^31, 2^31 - 1]``, i.e. ``[-2147483648, 2147483647]``. Exceeding those bounds will wrap around. In comparison, :ref:`int<class_int>` uses signed 64-bit integers which can hold much larger values.
 
 Methods
 -------
@@ -42,15 +46,6 @@ Methods
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                   | :ref:`size<class_PoolIntArray_method_size>` **(** **)**                                                               |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-An :ref:`Array<class_Array>` specifically designed to hold integer values (:ref:`int<class_int>`). Optimized for memory usage, does not fragment the memory.
-
-**Note:** This type is passed by value and not by reference.
-
-**Note:** This type is limited to signed 32-bit integers, which means it can only take values in the interval ``[-2^31, 2^31 - 1]``, i.e. ``[-2147483648, 2147483647]``. Exceeding those bounds will wrap around. In comparison, :ref:`int<class_int>` uses signed 64-bit integers which can hold much larger values.
 
 Method Descriptions
 -------------------

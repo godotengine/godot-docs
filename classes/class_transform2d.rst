@@ -9,12 +9,12 @@
 Transform2D
 ===========
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 2D transformation (3×2 matrix).
+
+Description
+-----------
+
+Represents one or many transformations in 2D space such as translation, rotation, or scaling. It consists of two :ref:`x<class_Transform2D_property_x>` and :ref:`y<class_Transform2D_property_y>` :ref:`Vector2<class_Vector2>`\ s and an :ref:`origin<class_Transform2D_property_origin>`. It is similar to a 3×2 matrix.
 
 Properties
 ----------
@@ -82,11 +82,6 @@ Constants
 - **FLIP_X** = **Transform2D( -1, 0, 0, 1, 0, 0 )** --- ``Transform2D`` with mirroring applied parallel to the X axis.
 
 - **FLIP_Y** = **Transform2D( 1, 0, 0, -1, 0, 0 )** --- ``Transform2D`` with mirroring applied parallel to the Y axis.
-
-Description
------------
-
-Represents one or many transformations in 2D space such as translation, rotation, or scaling. It consists of two :ref:`x<class_Transform2D_property_x>` and :ref:`y<class_Transform2D_property_y>` :ref:`Vector2<class_Vector2>`\ s and an :ref:`origin<class_Transform2D_property_origin>`. It is similar to a 3×2 matrix.
 
 Property Descriptions
 ---------------------

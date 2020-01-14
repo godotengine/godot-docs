@@ -13,12 +13,12 @@ PhysicsDirectBodyState
 
 **Inherited By:** :ref:`BulletPhysicsDirectBodyState<class_BulletPhysicsDirectBodyState>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Direct access object to a physics body in the :ref:`PhysicsServer<class_PhysicsServer>`.
+
+Description
+-----------
+
+Provides direct access to a physics body in the :ref:`PhysicsServer<class_PhysicsServer>`, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid/character bodies, and is intended for changing the direct state of that body. See :ref:`RigidBody._integrate_forces<class_RigidBody_method__integrate_forces>`.
 
 Properties
 ----------
@@ -91,11 +91,6 @@ Methods
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                          | :ref:`integrate_forces<class_PhysicsDirectBodyState_method_integrate_forces>` **(** **)**                                                                                           |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Provides direct access to a physics body in the :ref:`PhysicsServer<class_PhysicsServer>`, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid/character bodies, and is intended for changing the direct state of that body. See :ref:`RigidBody._integrate_forces<class_RigidBody_method__integrate_forces>`.
 
 Property Descriptions
 ---------------------

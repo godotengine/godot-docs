@@ -11,19 +11,7 @@ ARVROrigin
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 The origin point in AR/VR.
-
-Properties
-----------
-
-+---------------------------+-----------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`world_scale<class_ARVROrigin_property_world_scale>` | 1.0 |
-+---------------------------+-----------------------------------------------------------+-----+
 
 Description
 -----------
@@ -35,6 +23,13 @@ There should be only one of these nodes in your scene and you must have one. All
 It is the position of this node that you update when your character needs to move through your game world while we're not moving in the real world. Movement in the real world is always in relation to this origin point.
 
 For example, if your character is driving a car, the ARVROrigin node should be a child node of this car. Or, if you're implementing a teleport system to move your character, you should change the position of this node.
+
+Properties
+----------
+
++---------------------------+-----------------------------------------------------------+-----+
+| :ref:`float<class_float>` | :ref:`world_scale<class_ARVROrigin_property_world_scale>` | 1.0 |
++---------------------------+-----------------------------------------------------------+-----+
 
 Property Descriptions
 ---------------------

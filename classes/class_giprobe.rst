@@ -11,12 +11,12 @@ GIProbe
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
 
 
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/gi_probes`
 
 Properties
 ----------
@@ -78,11 +78,6 @@ enum **Subdiv**:
 - **SUBDIV_512** = **3**
 
 - **SUBDIV_MAX** = **4** --- Represents the size of the :ref:`Subdiv<enum_GIProbe_Subdiv>` enum.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/gi_probes`
 
 Property Descriptions
 ---------------------

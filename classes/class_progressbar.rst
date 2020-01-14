@@ -11,12 +11,12 @@ ProgressBar
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 General-purpose progress bar.
+
+Description
+-----------
+
+General-purpose progress bar. Shows fill percentage from right to left.
 
 Properties
 ----------
@@ -43,11 +43,6 @@ Theme Properties
 +---------------------------------+-------------------+------------------------------+
 | :ref:`Color<class_Color>`       | font_color_shadow | Color( 0, 0, 0, 1 )          |
 +---------------------------------+-------------------+------------------------------+
-
-Description
------------
-
-General-purpose progress bar. Shows fill percentage from right to left.
 
 Property Descriptions
 ---------------------

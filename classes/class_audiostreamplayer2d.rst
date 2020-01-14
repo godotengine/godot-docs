@@ -11,12 +11,17 @@ AudioStreamPlayer2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Plays audio in 2D.
+
+Description
+-----------
+
+Plays audio that dampens with distance from screen center.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/audio/audio_streams`
 
 Properties
 ----------
@@ -66,16 +71,6 @@ Signals
 - **finished** **(** **)**
 
 Emitted when the audio stops playing.
-
-Description
------------
-
-Plays audio that dampens with distance from screen center.
-
-Tutorials
----------
-
-- :doc:`../tutorials/audio/audio_streams`
 
 Property Descriptions
 ---------------------
@@ -216,6 +211,8 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 | *Getter*  | get_stream_paused()      |
 +-----------+--------------------------+
 
+If ``true``, the playback is paused. You can resume it by setting ``stream_paused`` to ``false``.
+
 ----
 
 .. _class_AudioStreamPlayer2D_property_volume_db:
@@ -246,6 +243,8 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 .. _class_AudioStreamPlayer2D_method_get_stream_playback:
 
 - :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback** **(** **)**
+
+Returns the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object associated with this ``AudioStreamPlayer2D``.
 
 ----
 

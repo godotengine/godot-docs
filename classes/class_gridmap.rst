@@ -11,12 +11,23 @@ GridMap
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Node for 3D tile-based maps.
+
+Description
+-----------
+
+GridMap lets you place meshes on a grid interactively. It works both from the editor and from scripts, which can help you create in-game level editors.
+
+GridMaps use a :ref:`MeshLibrary<class_MeshLibrary>` which contains a list of tiles. Each tile is a mesh with materials plus optional collision and navigation shapes.
+
+A GridMap contains a collection of cells. Each grid cell refers to a tile in the :ref:`MeshLibrary<class_MeshLibrary>`. All cells in the map have the same dimensions.
+
+Internally, a GridMap is split into a sparse collection of octants for efficient rendering and physics processing. Every octant has the same dimensions and can contain several cells.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/using_gridmaps`
 
 Properties
 ----------
@@ -97,22 +108,6 @@ Constants
 .. _class_GridMap_constant_INVALID_CELL_ITEM:
 
 - **INVALID_CELL_ITEM** = **-1** --- Invalid cell item that can be used in :ref:`set_cell_item<class_GridMap_method_set_cell_item>` to clear cells (or represent an empty cell in :ref:`get_cell_item<class_GridMap_method_get_cell_item>`).
-
-Description
------------
-
-GridMap lets you place meshes on a grid interactively. It works both from the editor and from scripts, which can help you create in-game level editors.
-
-GridMaps use a :ref:`MeshLibrary<class_MeshLibrary>` which contains a list of tiles. Each tile is a mesh with materials plus optional collision and navigation shapes.
-
-A GridMap contains a collection of cells. Each grid cell refers to a tile in the :ref:`MeshLibrary<class_MeshLibrary>`. All cells in the map have the same dimensions.
-
-Internally, a GridMap is split into a sparse collection of octants for efficient rendering and physics processing. Every octant has the same dimensions and can contain several cells.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/using_gridmaps`
 
 Property Descriptions
 ---------------------

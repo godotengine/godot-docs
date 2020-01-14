@@ -9,12 +9,17 @@
 Vector2
 =======
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Vector used for 2D math.
+
+Description
+-----------
+
+2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
@@ -136,16 +141,6 @@ Constants
 - **UP** = **Vector2( 0, -1 )** --- Up unit vector.
 
 - **DOWN** = **Vector2( 0, 1 )** --- Down unit vector.
-
-Description
------------
-
-2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
 
 Property Descriptions
 ---------------------

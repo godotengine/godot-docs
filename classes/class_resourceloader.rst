@@ -11,12 +11,16 @@ ResourceLoader
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Singleton used to load resource files.
+
+Description
+-----------
+
+Singleton used to load resource files from the filesystem.
+
+It uses the many :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` classes registered in the engine (either built-in or from a plugin) to load files into memory and convert them to a format that can be used by the engine.
+
+GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` built-in method which can be used in most situations, leaving the use of ``ResourceLoader`` for more advanced scenarios.
 
 Methods
 -------
@@ -38,15 +42,6 @@ Methods
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`set_abort_on_missing_resources<class_ResourceLoader_method_set_abort_on_missing_resources>` **(** :ref:`bool<class_bool>` abort **)**                                  |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Singleton used to load resource files from the filesystem.
-
-It uses the many :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` classes registered in the engine (either built-in or from a plugin) to load files into memory and convert them to a format that can be used by the engine.
-
-GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` built-in method which can be used in most situations, leaving the use of ``ResourceLoader`` for more advanced scenarios.
 
 Method Descriptions
 -------------------

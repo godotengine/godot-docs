@@ -13,12 +13,17 @@ Node2D
 
 **Inherited By:** :ref:`AnimatedSprite<class_AnimatedSprite>`, :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`, :ref:`BackBufferCopy<class_BackBufferCopy>`, :ref:`Bone2D<class_Bone2D>`, :ref:`CPUParticles2D<class_CPUParticles2D>`, :ref:`Camera2D<class_Camera2D>`, :ref:`CanvasModulate<class_CanvasModulate>`, :ref:`CollisionObject2D<class_CollisionObject2D>`, :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`, :ref:`CollisionShape2D<class_CollisionShape2D>`, :ref:`Joint2D<class_Joint2D>`, :ref:`Light2D<class_Light2D>`, :ref:`LightOccluder2D<class_LightOccluder2D>`, :ref:`Line2D<class_Line2D>`, :ref:`MeshInstance2D<class_MeshInstance2D>`, :ref:`MultiMeshInstance2D<class_MultiMeshInstance2D>`, :ref:`Navigation2D<class_Navigation2D>`, :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>`, :ref:`ParallaxLayer<class_ParallaxLayer>`, :ref:`Particles2D<class_Particles2D>`, :ref:`Path2D<class_Path2D>`, :ref:`PathFollow2D<class_PathFollow2D>`, :ref:`Polygon2D<class_Polygon2D>`, :ref:`Position2D<class_Position2D>`, :ref:`RayCast2D<class_RayCast2D>`, :ref:`RemoteTransform2D<class_RemoteTransform2D>`, :ref:`Skeleton2D<class_Skeleton2D>`, :ref:`Sprite<class_Sprite>`, :ref:`TileMap<class_TileMap>`, :ref:`TouchScreenButton<class_TouchScreenButton>`, :ref:`VisibilityNotifier2D<class_VisibilityNotifier2D>`, :ref:`YSort<class_YSort>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A 2D game object, inherited by all 2D-related nodes. Has a position, rotation, scale, and Z index.
+
+Description
+-----------
+
+A 2D game object, with a transform (position, rotation, and scale). All 2D nodes, including physics objects and sprites, inherit from Node2D. Use Node2D as a parent node to move, scale and rotate children in a 2D project. Also gives control of the node's render order.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/custom_drawing_in_2d`
 
 Properties
 ----------
@@ -75,16 +80,6 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`translate<class_Node2D_method_translate>` **(** :ref:`Vector2<class_Vector2>` offset **)**                                               |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A 2D game object, with a transform (position, rotation, and scale). All 2D nodes, including physics objects and sprites, inherit from Node2D. Use Node2D as a parent node to move, scale and rotate children in a 2D project. Also gives control of the node's render order.
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/custom_drawing_in_2d`
 
 Property Descriptions
 ---------------------

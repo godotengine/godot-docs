@@ -11,12 +11,17 @@ AudioServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Server interface for low-level audio access.
+
+Description
+-----------
+
+AudioServer is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/audio/audio_buses`
 
 Properties
 ----------
@@ -165,16 +170,6 @@ enum **SpeakerMode**:
 - **SPEAKER_SURROUND_51** = **2** --- A 5.1 channel surround setup was  detected.
 
 - **SPEAKER_SURROUND_71** = **3** --- A 7.1 channel surround setup was  detected.
-
-Description
------------
-
-AudioServer is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
-
-Tutorials
----------
-
-- :doc:`../tutorials/audio/audio_buses`
 
 Property Descriptions
 ---------------------

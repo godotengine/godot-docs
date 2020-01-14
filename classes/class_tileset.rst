@@ -11,12 +11,14 @@ TileSet
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Tile library for tilemaps.
+
+Description
+-----------
+
+A TileSet is a library of tiles for a :ref:`TileMap<class_TileMap>`. It contains a list of tiles, each consisting of a sprite and optional collision shapes.
+
+Tiles are referenced by a unique integer ID.
 
 Methods
 -------
@@ -233,13 +235,6 @@ enum **TileMode**:
 - **AUTO_TILE** = **1**
 
 - **ATLAS_TILE** = **2**
-
-Description
------------
-
-A TileSet is a library of tiles for a :ref:`TileMap<class_TileMap>`. It contains a list of tiles, each consisting of a sprite and optional collision shapes.
-
-Tiles are referenced by a unique integer ID.
 
 Method Descriptions
 -------------------

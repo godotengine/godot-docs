@@ -11,12 +11,19 @@ ScriptCreateDialog
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 The Editor's popup dialog for creating new :ref:`Script<class_Script>` files.
+
+Description
+-----------
+
+The ``ScriptCreateDialog`` creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Popup.popup<class_Popup_method_popup>` methods.
+
+::
+
+    func _ready():
+        dialog.config("Node", "res://new_node.gd") # For in-engine types
+        dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # For script types
+        dialog.popup_centered()
 
 Properties
 ----------
@@ -36,9 +43,9 @@ Properties
 Methods
 -------
 
-+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`config<class_ScriptCreateDialog_method_config>` **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true **)** |
-+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`config<class_ScriptCreateDialog_method_config>` **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true, :ref:`bool<class_bool>` load_enabled=true **)** |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -49,24 +56,12 @@ Signals
 
 Emitted when the user clicks the OK button.
 
-Description
------------
-
-The ``ScriptCreateDialog`` creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Popup.popup<class_Popup_method_popup>` methods.
-
-::
-
-    func _ready():
-        dialog.config("Node", "res://new_node.gd") # For in-engine types
-        dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # For script types
-        dialog.popup_centered()
-
 Method Descriptions
 -------------------
 
 .. _class_ScriptCreateDialog_method_config:
 
-- void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true **)**
+- void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true, :ref:`bool<class_bool>` load_enabled=true **)**
 
 Prefills required fields to configure the ScriptCreateDialog for use.
 

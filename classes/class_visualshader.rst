@@ -11,12 +11,14 @@ VisualShader
 
 **Inherits:** :ref:`Shader<class_Shader>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A custom shader program with a visual editor.
+
+Description
+-----------
+
+This class allows you to define a custom shader program that can be used for various materials to render objects.
+
+The visual shader editor creates the shader.
 
 Properties
 ----------
@@ -93,13 +95,6 @@ Constants
 - **NODE_ID_INVALID** = **-1**
 
 - **NODE_ID_OUTPUT** = **0**
-
-Description
------------
-
-This class allows you to define a custom shader program that can be used for various materials to render objects.
-
-The visual shader editor creates the shader.
 
 Property Descriptions
 ---------------------

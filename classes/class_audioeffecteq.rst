@@ -13,14 +13,14 @@ AudioEffectEQ
 
 **Inherited By:** :ref:`AudioEffectEQ10<class_AudioEffectEQ10>`, :ref:`AudioEffectEQ21<class_AudioEffectEQ21>`, :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for audio equalizers. Gives you control over frequencies.
 
 Use it to create a custom equalizer if :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`, :ref:`AudioEffectEQ10<class_AudioEffectEQ10>` or :ref:`AudioEffectEQ21<class_AudioEffectEQ21>` don't fit your needs.
+
+Description
+-----------
+
+AudioEffectEQ gives you control over frequencies. Use it to compensate for existing deficiencies in audio. AudioEffectEQs are useful on the Master bus to completely master a mix and give it more character. They are also useful when a game is run on a mobile device, to adjust the mix to that kind of speakers (it can be added but disabled when headphones are plugged).
 
 Methods
 -------
@@ -32,11 +32,6 @@ Methods
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_band_gain_db<class_AudioEffectEQ_method_set_band_gain_db>` **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)** |
 +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-AudioEffectEQ gives you control over frequencies. Use it to compensate for existing deficiencies in audio. AudioEffectEQs are useful on the Master bus to completely master a mix and give it more character. They are also useful when a game is run on a mobile device, to adjust the mix to that kind of speakers (it can be added but disabled when headphones are plugged).
 
 Method Descriptions
 -------------------

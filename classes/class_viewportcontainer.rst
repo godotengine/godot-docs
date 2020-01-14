@@ -11,12 +11,12 @@ ViewportContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Control for holding :ref:`Viewport<class_Viewport>`\ s.
+
+Description
+-----------
+
+A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewport>`, automatically setting its size.
 
 Properties
 ----------
@@ -26,11 +26,6 @@ Properties
 +-------------------------+------------------------------------------------------------------------+-------+
 | :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` | 1     |
 +-------------------------+------------------------------------------------------------------------+-------+
-
-Description
------------
-
-A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewport>`, automatically setting its size.
 
 Property Descriptions
 ---------------------

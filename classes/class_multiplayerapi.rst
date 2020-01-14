@@ -11,12 +11,16 @@ MultiplayerAPI
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 High-level multiplayer API.
+
+Description
+-----------
+
+This class implements most of the logic behind the high-level multiplayer API.
+
+By default, :ref:`SceneTree<class_SceneTree>` has a reference to this class that is used to provide multiplayer capabilities (i.e. RPC/RSET) across the whole scene.
+
+It is possible to override the MultiplayerAPI instance used by specific Nodes by setting the :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` property, effectively allowing to run both client and server in the same scene.
 
 Properties
 ----------
@@ -143,15 +147,6 @@ enum **RPCMode**:
 - **RPC_MODE_MASTERSYNC** = **5** --- Behave like :ref:`RPC_MODE_MASTER<class_MultiplayerAPI_constant_RPC_MODE_MASTER>` but also make the call or property change locally. Analogous to the ``mastersync`` keyword.
 
 - **RPC_MODE_PUPPETSYNC** = **6** --- Behave like :ref:`RPC_MODE_PUPPET<class_MultiplayerAPI_constant_RPC_MODE_PUPPET>` but also make the call or property change locally. Analogous to the ``puppetsync`` keyword.
-
-Description
------------
-
-This class implements most of the logic behind the high-level multiplayer API.
-
-By default, :ref:`SceneTree<class_SceneTree>` has a reference to this class that is used to provide multiplayer capabilities (i.e. RPC/RSET) across the whole scene.
-
-It is possible to override the MultiplayerAPI instance used by specific Nodes by setting the :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` property, effectively allowing to run both client and server in the same scene.
 
 Property Descriptions
 ---------------------

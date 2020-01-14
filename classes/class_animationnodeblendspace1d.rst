@@ -11,12 +11,18 @@ AnimationNodeBlendSpace1D
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Blends linearly between two of any number of :ref:`AnimationNode<class_AnimationNode>` of any type placed on a virtual axis.
+
+Description
+-----------
+
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
+This is a virtual axis on which you can add any type of :ref:`AnimationNode<class_AnimationNode>` using :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
+
+Outputs the linear blend of the two ``AnimationNode`` closest to the node's current ``value``.
+
+You can set the extents of the axis using the :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>` and :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`.
 
 Properties
 ----------
@@ -49,17 +55,6 @@ Methods
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_blend_point_position<class_AnimationNodeBlendSpace1D_method_set_blend_point_position>` **(** :ref:`int<class_int>` point, :ref:`float<class_float>` pos **)**                                             |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
-
-This is a virtual axis on which you can add any type of :ref:`AnimationNode<class_AnimationNode>` using :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
-
-Outputs the linear blend of the two ``AnimationNode`` closest to the node's current ``value``.
-
-You can set the extents of the axis using the :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>` and :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`.
 
 Property Descriptions
 ---------------------

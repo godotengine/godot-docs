@@ -11,12 +11,14 @@ ResourceSaver
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Singleton for saving Godot-specific resource types.
+
+Description
+-----------
+
+Singleton for saving Godot-specific resource types to the filesystem.
+
+It uses the many :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` classes registered in the engine (either built-in or from a plugin) to save engine-specific resource data to text-based (e.g. ``.tres`` or ``.tscn``) or binary files (e.g. ``.res`` or ``.scn``).
 
 Methods
 -------
@@ -61,13 +63,6 @@ enum **SaverFlags**:
 - **FLAG_COMPRESS** = **32** --- Compress the resource on save using :ref:`File.COMPRESSION_ZSTD<class_File_constant_COMPRESSION_ZSTD>`. Only available for binary resource types.
 
 - **FLAG_REPLACE_SUBRESOURCE_PATHS** = **64** --- Take over the paths of the saved subresources (see :ref:`Resource.take_over_path<class_Resource_method_take_over_path>`).
-
-Description
------------
-
-Singleton for saving Godot-specific resource types to the filesystem.
-
-It uses the many :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` classes registered in the engine (either built-in or from a plugin) to save engine-specific resource data to text-based (e.g. ``.tres`` or ``.tscn``) or binary files (e.g. ``.res`` or ``.scn``).
 
 Method Descriptions
 -------------------

@@ -11,12 +11,23 @@ SceneTree
 
 **Inherits:** :ref:`MainLoop<class_MainLoop>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Manages the game loop via a hierarchy of nodes.
+
+Description
+-----------
+
+As one of the most important classes, the ``SceneTree`` manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded.
+
+You can also use the ``SceneTree`` to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. a "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
+
+``SceneTree`` is the default :ref:`MainLoop<class_MainLoop>` implementation used by scenes, and is thus in charge of the game loop.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/scene_tree`
+
+- :doc:`../tutorials/viewports/multiple_resolutions`
 
 Properties
 ----------
@@ -85,7 +96,7 @@ Methods
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`queue_delete<class_SceneTree_method_queue_delete>` **(** :ref:`Object<class_Object>` obj **)**                                                                                                                                                                       |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`quit<class_SceneTree_method_quit>` **(** **)**                                                                                                                                                                                                                       |
+| void                                        | :ref:`quit<class_SceneTree_method_quit>` **(** :ref:`int<class_int>` exit_code=-1 **)**                                                                                                                                                                                    |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`reload_current_scene<class_SceneTree_method_reload_current_scene>` **(** **)**                                                                                                                                                                                       |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -289,22 +300,6 @@ enum **StretchAspect**:
 - **STRETCH_ASPECT_KEEP_HEIGHT** = **3** --- Expand horizontally. Top/bottom black bars may appear if the window is too tall.
 
 - **STRETCH_ASPECT_EXPAND** = **4** --- Expand in both directions, retaining the same aspect ratio. This prevents distortion while avoiding black bars.
-
-Description
------------
-
-As one of the most important classes, the ``SceneTree`` manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded.
-
-You can also use the ``SceneTree`` to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. a "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
-
-``SceneTree`` is the default :ref:`MainLoop<class_MainLoop>` implementation used by scenes, and is thus in charge of the game loop.
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/scene_tree`
-
-- :doc:`../tutorials/viewports/multiple_resolutions`
 
 Property Descriptions
 ---------------------
@@ -639,9 +634,9 @@ Queues the given object for deletion, delaying the call to :ref:`Object.free<cla
 
 .. _class_SceneTree_method_quit:
 
-- void **quit** **(** **)**
+- void **quit** **(** :ref:`int<class_int>` exit_code=-1 **)**
 
-Quits the application.
+Quits the application. A process ``exit_code`` can optionally be passed as an argument. If this argument is ``0`` or greater, it will override the :ref:`OS.exit_code<class_OS_property_exit_code>` defined before quitting the application.
 
 ----
 

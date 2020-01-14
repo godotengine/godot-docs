@@ -13,12 +13,23 @@ RigidBody
 
 **Inherited By:** :ref:`VehicleBody<class_VehicleBody>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Physics Body whose position is determined through physics simulation in 3D space.
+
+Description
+-----------
+
+This is the node that implements full 3D physics. This means that you do not control a RigidBody directly. Instead, you can apply forces to it (gravity, impulses, etc.), and the physics simulation will calculate the resulting movement, collision, bouncing, rotating, etc.
+
+A RigidBody has 4 behavior :ref:`mode<class_RigidBody_property_mode>`\ s: Rigid, Static, Character, and Kinematic.
+
+**Note:** Don't change a RigidBody's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed Hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop may result in strange behavior. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody_method__integrate_forces>`, which allows you to directly access the physics state.
+
+If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidBody_property_custom_integrator>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
 
 Properties
 ----------
@@ -165,22 +176,6 @@ enum **Mode**:
 - **MODE_CHARACTER** = **2** --- Character body mode. This behaves like a rigid body, but can not rotate.
 
 - **MODE_KINEMATIC** = **3** --- Kinematic body mode. The body behaves like a :ref:`KinematicBody<class_KinematicBody>`, and can only move by user code.
-
-Description
------------
-
-This is the node that implements full 3D physics. This means that you do not control a RigidBody directly. Instead, you can apply forces to it (gravity, impulses, etc.), and the physics simulation will calculate the resulting movement, collision, bouncing, rotating, etc.
-
-A RigidBody has 4 behavior :ref:`mode<class_RigidBody_property_mode>`\ s: Rigid, Static, Character, and Kinematic.
-
-**Note:** Don't change a RigidBody's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed Hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop may result in strange behavior. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody_method__integrate_forces>`, which allows you to directly access the physics state.
-
-If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidBody_property_custom_integrator>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/physics_introduction`
 
 Property Descriptions
 ---------------------

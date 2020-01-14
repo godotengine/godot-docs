@@ -11,12 +11,19 @@ CharFXTransform
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Controls how an individual character will be displayed in a :ref:`RichTextEffect<class_RichTextEffect>`.
+
+Description
+-----------
+
+By setting various properties on this object, you can control how individual characters will be displayed in a :ref:`RichTextEffect<class_RichTextEffect>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/gui/bbcode_in_richtextlabel`
+
+- `https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project <https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project>`_
 
 Properties
 ----------
@@ -38,18 +45,6 @@ Properties
 +-------------------------------------+----------------------------------------------------------------------+---------------------+
 | :ref:`bool<class_bool>`             | :ref:`visible<class_CharFXTransform_property_visible>`               | true                |
 +-------------------------------------+----------------------------------------------------------------------+---------------------+
-
-Description
------------
-
-By setting various properties on this object, you can control how individual characters will be displayed in a :ref:`RichTextEffect<class_RichTextEffect>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/gui/bbcode_in_richtextlabel`
-
-- `https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project <https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project>`_
 
 Property Descriptions
 ---------------------

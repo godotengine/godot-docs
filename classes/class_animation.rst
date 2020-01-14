@@ -11,12 +11,29 @@ Animation
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Contains data used to animate everything in the engine.
+
+Description
+-----------
+
+An Animation resource contains data used to animate everything in the engine. Animations are divided into tracks, and each track must be linked to a node. The state of that node can be changed through time, by adding timed keys (events) to the track.
+
+::
+
+    # This creates an animation that makes the node "Enemy" move to the right by
+    # 100 pixels in 1 second.
+    var animation = Animation.new()
+    var track_index = animation.add_track(Animation.TYPE_VALUE)
+    animation.track_set_path(track_index, "Enemy:position.x")
+    animation.track_insert_key(track_index, 0.0, 0)
+    animation.track_insert_key(track_index, 0.5, 100)
+
+Animations are just data containers, and must be added to nodes such as an :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimationTreePlayer<class_AnimationTreePlayer>` to be played back.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/index`
 
 Properties
 ----------
@@ -227,28 +244,6 @@ enum **UpdateMode**:
 - **UPDATE_TRIGGER** = **2** --- Update at the keyframes.
 
 - **UPDATE_CAPTURE** = **3**
-
-Description
------------
-
-An Animation resource contains data used to animate everything in the engine. Animations are divided into tracks, and each track must be linked to a node. The state of that node can be changed through time, by adding timed keys (events) to the track.
-
-::
-
-    # This creates an animation that makes the node "Enemy" move to the right by
-    # 100 pixels in 1 second.
-    var animation = Animation.new()
-    var track_index = animation.add_track(Animation.TYPE_VALUE)
-    animation.track_set_path(track_index, "Enemy:position.x")
-    animation.track_insert_key(track_index, 0.0, 0)
-    animation.track_insert_key(track_index, 0.5, 100)
-
-Animations are just data containers, and must be added to nodes such as an :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimationTreePlayer<class_AnimationTreePlayer>` to be played back.
-
-Tutorials
----------
-
-- :doc:`../tutorials/animation/index`
 
 Property Descriptions
 ---------------------

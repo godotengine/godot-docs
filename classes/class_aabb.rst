@@ -9,12 +9,17 @@
 AABB
 ====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Axis-Aligned Bounding Box.
+
+Description
+-----------
+
+AABB consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Properties
 ----------
@@ -75,16 +80,6 @@ Methods
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>`       | :ref:`merge<class_AABB_method_merge>` **(** :ref:`AABB<class_AABB>` with **)**                                                                   |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-AABB consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
 
 Property Descriptions
 ---------------------

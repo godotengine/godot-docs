@@ -11,12 +11,17 @@ SpatialMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Default 3D rendering material.
+
+Description
+-----------
+
+This provides a default material with a wide variety of rendering features and properties without the need to write shader code. See the tutorial below for details.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/spatial_material`
 
 Properties
 ----------
@@ -672,16 +677,6 @@ enum **DistanceFadeMode**:
 - **DISTANCE_FADE_PIXEL_DITHER** = **2**
 
 - **DISTANCE_FADE_OBJECT_DITHER** = **3**
-
-Description
------------
-
-This provides a default material with a wide variety of rendering features and properties without the need to write shader code. See the tutorial below for details.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/spatial_material`
 
 Property Descriptions
 ---------------------

@@ -13,11 +13,6 @@ VisualInstance
 
 **Inherited By:** :ref:`BakedLightmap<class_BakedLightmap>`, :ref:`GIProbe<class_GIProbe>`, :ref:`GeometryInstance<class_GeometryInstance>`, :ref:`Light<class_Light>`, :ref:`ReflectionProbe<class_ReflectionProbe>`, :ref:`RootMotionView<class_RootMotionView>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

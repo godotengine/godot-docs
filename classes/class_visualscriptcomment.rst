@@ -11,12 +11,14 @@ VisualScriptComment
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A Visual Script node used to annotate the script.
+
+Description
+-----------
+
+A Visual Script node used to display annotations in the script, so that code may be documented.
+
+Comment nodes can be resized so they encompass a group of nodes.
 
 Properties
 ----------
@@ -28,13 +30,6 @@ Properties
 +-------------------------------+--------------------------------------------------------------------+---------------------+
 | :ref:`String<class_String>`   | :ref:`title<class_VisualScriptComment_property_title>`             | "Comment"           |
 +-------------------------------+--------------------------------------------------------------------+---------------------+
-
-Description
------------
-
-A Visual Script node used to display annotations in the script, so that code may be documented.
-
-Comment nodes can be resized so they encompass a group of nodes.
 
 Property Descriptions
 ---------------------

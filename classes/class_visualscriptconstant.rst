@@ -11,21 +11,7 @@ VisualScriptConstant
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Gets a contant's value.
-
-Properties
-----------
-
-+-----------------------------------------------------+---------------------------------------------------------+---+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptConstant_property_type>`   | 0 |
-+-----------------------------------------------------+---------------------------------------------------------+---+
-| :ref:`Variant<class_Variant>`                       | :ref:`value<class_VisualScriptConstant_property_value>` |   |
-+-----------------------------------------------------+---------------------------------------------------------+---+
 
 Description
 -----------
@@ -39,6 +25,15 @@ none
 **Output Ports:**
 
 - Data (variant): ``get``
+
+Properties
+----------
+
++-----------------------------------------------------+---------------------------------------------------------+---+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptConstant_property_type>`   | 0 |
++-----------------------------------------------------+---------------------------------------------------------+---+
+| :ref:`Variant<class_Variant>`                       | :ref:`value<class_VisualScriptConstant_property_value>` |   |
++-----------------------------------------------------+---------------------------------------------------------+---+
 
 Property Descriptions
 ---------------------

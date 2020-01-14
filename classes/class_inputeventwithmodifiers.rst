@@ -13,12 +13,17 @@ InputEventWithModifiers
 
 **Inherited By:** :ref:`InputEventGesture<class_InputEventGesture>`, :ref:`InputEventKey<class_InputEventKey>`, :ref:`InputEventMouse<class_InputEventMouse>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for keys events with modifiers.
+
+Description
+-----------
+
+Contains keys events information with modifiers support like ``Shift`` or ``Alt``. See :ref:`Node._input<class_Node_method__input>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
 
 Properties
 ----------
@@ -34,16 +39,6 @@ Properties
 +-------------------------+----------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>` | :ref:`shift<class_InputEventWithModifiers_property_shift>`     | false |
 +-------------------------+----------------------------------------------------------------+-------+
-
-Description
------------
-
-Contains keys events information with modifiers support like ``Shift`` or ``Alt``. See :ref:`Node._input<class_Node_method__input>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/inputevent`
 
 Property Descriptions
 ---------------------

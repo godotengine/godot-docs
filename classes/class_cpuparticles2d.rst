@@ -11,12 +11,19 @@ CPUParticles2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 CPU-based 2D particle emitter.
+
+Description
+-----------
+
+CPU-based 2D particle node used to create a variety of particle systems and effects.
+
+See also :ref:`Particles2D<class_Particles2D>`, which provides the same functionality with hardware acceleration, but may not run on older devices.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/particle_systems_2d`
 
 Properties
 ----------
@@ -294,18 +301,6 @@ enum **EmissionShape**:
 - **EMISSION_SHAPE_POINTS** = **3** --- Particles will be emitted at a position chosen randomly among :ref:`emission_points<class_CPUParticles2D_property_emission_points>`. Particle color will be modulated by :ref:`emission_colors<class_CPUParticles2D_property_emission_colors>`.
 
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4** --- Particles will be emitted at a position chosen randomly among :ref:`emission_points<class_CPUParticles2D_property_emission_points>`. Particle velocity and rotation will be set based on :ref:`emission_normals<class_CPUParticles2D_property_emission_normals>`. Particle color will be modulated by :ref:`emission_colors<class_CPUParticles2D_property_emission_colors>`.
-
-Description
------------
-
-CPU-based 2D particle node used to create a variety of particle systems and effects.
-
-See also :ref:`Particles2D<class_Particles2D>`, which provides the same functionality with hardware acceleration, but may not run on older devices.
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/particle_systems_2d`
 
 Property Descriptions
 ---------------------

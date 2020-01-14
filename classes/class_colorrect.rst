@@ -11,12 +11,12 @@ ColorRect
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Colored rectangle.
+
+Description
+-----------
+
+Displays a colored rectangle.
 
 Properties
 ----------
@@ -24,11 +24,6 @@ Properties
 +---------------------------+----------------------------------------------+---------------------+
 | :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_property_color>` | Color( 1, 1, 1, 1 ) |
 +---------------------------+----------------------------------------------+---------------------+
-
-Description
------------
-
-Displays a colored rectangle.
 
 Property Descriptions
 ---------------------

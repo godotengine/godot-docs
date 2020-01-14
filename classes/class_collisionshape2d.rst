@@ -11,12 +11,17 @@ CollisionShape2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Node that represents collision shape data in 2D space.
+
+Description
+-----------
+
+Editor facility for creating and editing collision shapes in 2D space. You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area2D<class_Area2D>` to give it a detection shape, or add it to a :ref:`PhysicsBody2D<class_PhysicsBody2D>` to create a solid object. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`CollisionObject2D.shape_owner_get_shape<class_CollisionObject2D_method_shape_owner_get_shape>` to get the actual shape.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
 
 Properties
 ----------
@@ -30,16 +35,6 @@ Properties
 +-------------------------------+-------------------------------------------------------------------------------------------+-------+
 | :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                                       |       |
 +-------------------------------+-------------------------------------------------------------------------------------------+-------+
-
-Description
------------
-
-Editor facility for creating and editing collision shapes in 2D space. You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area2D<class_Area2D>` to give it a detection shape, or add it to a :ref:`PhysicsBody2D<class_PhysicsBody2D>` to create a solid object. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`CollisionObject2D.shape_owner_get_shape<class_CollisionObject2D_method_shape_owner_get_shape>` to get the actual shape.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/physics_introduction`
 
 Property Descriptions
 ---------------------

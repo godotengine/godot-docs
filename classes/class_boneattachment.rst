@@ -11,12 +11,12 @@ BoneAttachment
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A node that will attach to a bone.
+
+Description
+-----------
+
+This node must be the child of a :ref:`Skeleton<class_Skeleton>` node. You can then select a bone for this node to attach to. The BoneAttachment node will copy the transform of the selected bone.
 
 Properties
 ----------
@@ -24,11 +24,6 @@ Properties
 +-----------------------------+-----------------------------------------------------------+----+
 | :ref:`String<class_String>` | :ref:`bone_name<class_BoneAttachment_property_bone_name>` | "" |
 +-----------------------------+-----------------------------------------------------------+----+
-
-Description
------------
-
-This node must be the child of a :ref:`Skeleton<class_Skeleton>` node. You can then select a bone for this node to attach to. The BoneAttachment node will copy the transform of the selected bone.
 
 Property Descriptions
 ---------------------

@@ -13,12 +13,12 @@ GeometryInstance
 
 **Inherited By:** :ref:`CPUParticles<class_CPUParticles>`, :ref:`CSGShape<class_CSGShape>`, :ref:`ImmediateGeometry<class_ImmediateGeometry>`, :ref:`MeshInstance<class_MeshInstance>`, :ref:`MultiMeshInstance<class_MultiMeshInstance>`, :ref:`Particles<class_Particles>`, :ref:`SpriteBase3D<class_SpriteBase3D>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base node for geometry-based visual instances.
+
+Description
+-----------
+
+Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.
 
 Properties
 ----------
@@ -98,11 +98,6 @@ enum **Flags**:
 - **FLAG_DRAW_NEXT_FRAME_IF_VISIBLE** = **1** --- Unused in this class, exposed for consistency with :ref:`InstanceFlags<enum_VisualServer_InstanceFlags>`.
 
 - **FLAG_MAX** = **2** --- Represents the size of the :ref:`Flags<enum_GeometryInstance_Flags>` enum.
-
-Description
------------
-
-Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.
 
 Property Descriptions
 ---------------------

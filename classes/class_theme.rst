@@ -11,12 +11,19 @@ Theme
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Theme for controls.
+
+Description
+-----------
+
+A theme for skinning controls. Controls can be skinned individually, but for complex applications, it's more practical to just create a global theme that defines everything. This theme can be applied to any :ref:`Control<class_Control>`; the Control and its children will automatically use it.
+
+Theme resources can alternatively be loaded by writing them in a ``.theme`` file, see the documentation for more information.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/gui/gui_skinning`
 
 Properties
 ----------
@@ -89,18 +96,6 @@ Methods
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_stylebox<class_Theme_method_set_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type, :ref:`StyleBox<class_StyleBox>` texture **)** |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A theme for skinning controls. Controls can be skinned individually, but for complex applications, it's more practical to just create a global theme that defines everything. This theme can be applied to any :ref:`Control<class_Control>`; the Control and its children will automatically use it.
-
-Theme resources can alternatively be loaded by writing them in a ``.theme`` file, see the documentation for more information.
-
-Tutorials
----------
-
-- :doc:`../tutorials/gui/gui_skinning`
 
 Property Descriptions
 ---------------------

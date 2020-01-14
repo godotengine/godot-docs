@@ -11,12 +11,19 @@ RichTextLabel
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Label that displays rich text.
+
+Description
+-----------
+
+Rich text can contain custom text, fonts, images and some basic formatting. The label manages these as an internal tag stack. It also adapts itself to given width/heights.
+
+**Note:** Assignments to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` methods.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/gui/bbcode_in_richtextlabel`
 
 Properties
 ----------
@@ -164,7 +171,7 @@ Signals
 
 - **meta_clicked** **(** :ref:`Nil<class_Nil>` meta **)**
 
-Triggered when the user clicks on content between ``[url]`` tags. If the meta is defined in text, e.g. ``[url={"data"="hi"}]hi[/url]``, then the parameter for this signal will be a :ref:`String<class_String>` type. If a particular type or an object is desired, the :ref:`push_meta<class_RichTextLabel_method_push_meta>` method must be used to manually insert the data into the tag stack.
+Triggered when the user clicks on content between meta tags. If the meta is defined in text, e.g. ``[url={"data"="hi"}]hi[/url]``, then the parameter for this signal will be a :ref:`String<class_String>` type. If a particular type or an object is desired, the :ref:`push_meta<class_RichTextLabel_method_push_meta>` method must be used to manually insert the data into the tag stack.
 
 ----
 
@@ -197,13 +204,13 @@ Enumerations
 
 enum **Align**:
 
-- **ALIGN_LEFT** = **0**
+- **ALIGN_LEFT** = **0** --- Makes text left aligned.
 
-- **ALIGN_CENTER** = **1**
+- **ALIGN_CENTER** = **1** --- Makes text centered.
 
-- **ALIGN_RIGHT** = **2**
+- **ALIGN_RIGHT** = **2** --- Makes text right aligned.
 
-- **ALIGN_FILL** = **3**
+- **ALIGN_FILL** = **3** --- Makes text fill width.
 
 ----
 
@@ -217,11 +224,11 @@ enum **Align**:
 
 enum **ListType**:
 
-- **LIST_NUMBERS** = **0**
+- **LIST_NUMBERS** = **0** --- Each list item has a number marker.
 
-- **LIST_LETTERS** = **1**
+- **LIST_LETTERS** = **1** --- Each list item has a letter marker.
 
-- **LIST_DOTS** = **2**
+- **LIST_DOTS** = **2** --- Each list item has a filled circle marker.
 
 ----
 
@@ -305,18 +312,6 @@ enum **ItemType**:
 
 - **ITEM_META** = **17**
 
-Description
------------
-
-Rich text can contain custom text, fonts, images and some basic formatting. The label manages these as an internal tag stack. It also adapts itself to given width/heights.
-
-**Note:** Assignments to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` methods.
-
-Tutorials
----------
-
-- :doc:`../tutorials/gui/bbcode_in_richtextlabel`
-
 Property Descriptions
 ---------------------
 
@@ -366,6 +361,10 @@ The label's text in BBCode format. Is not representative of manual modifications
 | *Getter*  | get_effects()      |
 +-----------+--------------------+
 
+The currently installed custom effects. This is an array of :ref:`RichTextEffect<class_RichTextEffect>`\ s.
+
+To add a custom effect, it's more convenient to use :ref:`install_effect<class_RichTextLabel_method_install_effect>`.
+
 ----
 
 .. _class_RichTextLabel_property_meta_underlined:
@@ -412,7 +411,9 @@ If ``true``, the label uses the custom font color.
 | *Getter*  | get_percent_visible()      |
 +-----------+----------------------------+
 
-The text's visibility, as a :ref:`float<class_float>` between 0.0 and 1.0.
+The range of characters to display, as a :ref:`float<class_float>` between 0.0 and 1.0. When assigned an out of range value, it's the same as assigning 1.0.
+
+**Note:** Setting this property updates :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` based on current :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`.
 
 ----
 
@@ -428,7 +429,7 @@ The text's visibility, as a :ref:`float<class_float>` between 0.0 and 1.0.
 | *Getter*  | is_scroll_active()       |
 +-----------+--------------------------+
 
-If ``true``, the scrollbar is visible. Does not block scrolling completely. See :ref:`scroll_to_line<class_RichTextLabel_method_scroll_to_line>`.
+If ``true``, the scrollbar is visible. Setting this to ``false`` does not block scrolling completely. See :ref:`scroll_to_line<class_RichTextLabel_method_scroll_to_line>`.
 
 ----
 
@@ -593,6 +594,8 @@ Returns the number of visible lines.
 
 - void **install_effect** **(** :ref:`Variant<class_Variant>` effect **)**
 
+Installs a custom effect. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
+
 ----
 
 .. _class_RichTextLabel_method_newline:
@@ -614,6 +617,8 @@ The assignment version of :ref:`append_bbcode<class_RichTextLabel_method_append_
 .. _class_RichTextLabel_method_parse_expressions_for_values:
 
 - :ref:`Dictionary<class_Dictionary>` **parse_expressions_for_values** **(** :ref:`PoolStringArray<class_PoolStringArray>` expressions **)**
+
+Parses BBCode parameter ``expressions`` into a dictionary.
 
 ----
 
@@ -637,11 +642,15 @@ Adds an ``[align]`` tag based on the given ``align`` value. See :ref:`Align<enum
 
 - void **push_bold** **(** **)**
 
+Adds a ``[font]`` tag with a bold font to the tag stack. This is the same as adding a ``[b]`` tag if not currently in a ``[i]`` tag.
+
 ----
 
 .. _class_RichTextLabel_method_push_bold_italics:
 
 - void **push_bold_italics** **(** **)**
+
+Adds a ``[font]`` tag with a bold italics font to the tag stack.
 
 ----
 
@@ -673,13 +682,15 @@ Adds a ``[font]`` tag to the tag stack. Overrides default fonts for its duration
 
 - void **push_indent** **(** :ref:`int<class_int>` level **)**
 
-Adds an ``[indent]`` tag to the tag stack. Multiplies "level" by current tab_size to determine new margin length.
+Adds an ``[indent]`` tag to the tag stack. Multiplies ``level`` by current :ref:`tab_size<class_RichTextLabel_property_tab_size>` to determine new margin length.
 
 ----
 
 .. _class_RichTextLabel_method_push_italics:
 
 - void **push_italics** **(** **)**
+
+Adds a ``[font]`` tag with a italics font to the tag stack. This is the same as adding a ``[i]`` tag if not currently in a ``[b]`` tag.
 
 ----
 
@@ -703,11 +714,15 @@ Adds a ``[meta]`` tag to the tag stack. Similar to the BBCode ``[url=something]{
 
 - void **push_mono** **(** **)**
 
+Adds a ``[font]`` tag with a monospace font to the tag stack.
+
 ----
 
 .. _class_RichTextLabel_method_push_normal:
 
 - void **push_normal** **(** **)**
+
+Adds a ``[font]`` tag with a normal font to the tag stack.
 
 ----
 
@@ -740,6 +755,8 @@ Adds a ``[u]`` tag to the tag stack.
 - :ref:`bool<class_bool>` **remove_line** **(** :ref:`int<class_int>` line **)**
 
 Removes a line of content from the label. Returns ``true`` if the line exists.
+
+The ``line`` argument is the index of the line to remove, it can take values in the interval ``[0, get_line_count() - 1]``.
 
 ----
 

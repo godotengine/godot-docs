@@ -11,12 +11,12 @@ PhysicsMaterial
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A material for physics properties.
+
+Description
+-----------
+
+Provides a means of modifying the collision properties of a :ref:`PhysicsBody<class_PhysicsBody>`.
 
 Properties
 ----------
@@ -30,11 +30,6 @@ Properties
 +---------------------------+------------------------------------------------------------+-------+
 | :ref:`bool<class_bool>`   | :ref:`rough<class_PhysicsMaterial_property_rough>`         | false |
 +---------------------------+------------------------------------------------------------+-------+
-
-Description
------------
-
-Provides a means of modifying the collision properties of a :ref:`PhysicsBody<class_PhysicsBody>`.
 
 Property Descriptions
 ---------------------

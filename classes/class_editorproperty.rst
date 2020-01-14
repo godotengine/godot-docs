@@ -11,12 +11,12 @@ EditorProperty
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Custom control to edit properties for adding into the inspector.
+
+Description
+-----------
+
+This control allows property editing for one or multiple properties into :ref:`EditorInspector<class_EditorInspector>`. It is added via :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`.
 
 Properties
 ----------
@@ -118,11 +118,6 @@ If you want a sub-resource to be edited, emit this signal with the resource.
 - **selected** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` focusable_idx **)**
 
 Emitted when selected. Used internally.
-
-Description
------------
-
-This control allows property editing for one or multiple properties into :ref:`EditorInspector<class_EditorInspector>`. It is added via :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`.
 
 Property Descriptions
 ---------------------

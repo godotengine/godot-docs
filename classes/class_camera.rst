@@ -13,12 +13,12 @@ Camera
 
 **Inherited By:** :ref:`ARVRCamera<class_ARVRCamera>`, :ref:`ClippedCamera<class_ClippedCamera>`, :ref:`InterpolatedCamera<class_InterpolatedCamera>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Camera node, displays from a point of view.
+
+Description
+-----------
+
+Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a :ref:`Viewport<class_Viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_Viewport>` (or higher viewports) can't be displayed.
 
 Properties
 ----------
@@ -138,11 +138,6 @@ enum **DopplerTracking**:
 - **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`_ by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
 
 - **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`_ by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
-
-Description
------------
-
-Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a :ref:`Viewport<class_Viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_Viewport>` (or higher viewports) can't be displayed.
 
 Property Descriptions
 ---------------------

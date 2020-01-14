@@ -11,12 +11,17 @@ InputEventJoypadButton
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Input event for gamepad buttons.
+
+Description
+-----------
+
+Input event type for gamepad buttons. For gamepad analog sticks and joysticks, see :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
 
 Properties
 ----------
@@ -28,16 +33,6 @@ Properties
 +---------------------------+-------------------------------------------------------------------------+-------+
 | :ref:`float<class_float>` | :ref:`pressure<class_InputEventJoypadButton_property_pressure>`         | 0.0   |
 +---------------------------+-------------------------------------------------------------------------+-------+
-
-Description
------------
-
-Input event type for gamepad buttons. For gamepad analog sticks and joysticks, see :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/inputevent`
 
 Property Descriptions
 ---------------------

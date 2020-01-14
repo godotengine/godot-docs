@@ -11,10 +11,10 @@ ProximityGroup
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+General-purpose proximity detection node.
 
-Brief Description
------------------
+Description
+-----------
 
 General-purpose proximity detection node.
 
@@ -57,11 +57,6 @@ enum **DispatchMode**:
 - **MODE_PROXY** = **0**
 
 - **MODE_SIGNAL** = **1**
-
-Description
------------
-
-General-purpose proximity detection node.
 
 Property Descriptions
 ---------------------

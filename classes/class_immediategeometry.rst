@@ -11,12 +11,12 @@ ImmediateGeometry
 
 **Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Draws simple geometry from code.
+
+Description
+-----------
+
+Draws simple geometry from code. Uses a drawing mode similar to OpenGL 1.x.
 
 Methods
 -------
@@ -42,11 +42,6 @@ Methods
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`set_uv2<class_ImmediateGeometry_method_set_uv2>` **(** :ref:`Vector2<class_Vector2>` uv **)**                                                                                                    |
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Draws simple geometry from code. Uses a drawing mode similar to OpenGL 1.x.
 
 Method Descriptions
 -------------------

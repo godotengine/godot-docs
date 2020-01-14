@@ -13,10 +13,10 @@ Sky
 
 **Inherited By:** :ref:`PanoramaSky<class_PanoramaSky>`, :ref:`ProceduralSky<class_ProceduralSky>`
 
-**Category:** Core
+The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
 
-Brief Description
------------------
+Description
+-----------
 
 The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
 
@@ -65,11 +65,6 @@ enum **RadianceSize**:
 - **RADIANCE_SIZE_2048** = **6** --- Radiance texture size is 2048×2048 pixels.
 
 - **RADIANCE_SIZE_MAX** = **7** --- Represents the size of the :ref:`RadianceSize<enum_Sky_RadianceSize>` enum.
-
-Description
------------
-
-The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
 
 Property Descriptions
 ---------------------

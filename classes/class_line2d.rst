@@ -11,12 +11,12 @@ Line2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A 2D line.
+
+Description
+-----------
+
+A line through several points in 2D space.
 
 Properties
 ----------
@@ -120,11 +120,6 @@ enum **LineTextureMode**:
 - **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture must be imported with **Repeat** enabled for it to work properly.
 
 - **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. Import the texture with **Repeat** disabled for best results.
-
-Description
------------
-
-A line through several points in 2D space.
 
 Property Descriptions
 ---------------------

@@ -11,12 +11,18 @@ TabContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Tabbed container.
+
+Description
+-----------
+
+Sets the active tab's ``visible`` property to the value ``true``. Sets all other children's to ``false``.
+
+Ignores non-:ref:`Control<class_Control>` children.
+
+Individual tabs are always visible unless you use :ref:`set_tab_disabled<class_TabContainer_method_set_tab_disabled>` and :ref:`set_tab_title<class_TabContainer_method_set_tab_title>` to hide it.
+
+To hide only a tab's content, nest the content inside a child :ref:`Control<class_Control>`, so it receives the ``TabContainer``'s visibility setting instead.
 
 Properties
 ----------
@@ -153,17 +159,6 @@ enum **TabAlign**:
 
 - **ALIGN_RIGHT** = **2** --- Align the tabs to the right.
 
-Description
------------
-
-Sets the active tab's ``visible`` property to the value ``true``. Sets all other children's to ``false``.
-
-Ignores non-:ref:`Control<class_Control>` children.
-
-Individual tabs are always visible unless you use :ref:`set_tab_disabled<class_TabContainer_method_set_tab_disabled>` and :ref:`set_tab_title<class_TabContainer_method_set_tab_title>` to hide it.
-
-To hide only a tab's content, nest the content inside a child :ref:`Control<class_Control>`, so it receives the ``TabContainer``'s visibility setting instead.
-
 Property Descriptions
 ---------------------
 
@@ -242,6 +237,8 @@ If ``true``, tabs are visible. If ``false``, tabs' content and titles are hidden
 +-----------+-----------------------------------------+
 | *Getter*  | get_use_hidden_tabs_for_min_size()      |
 +-----------+-----------------------------------------+
+
+If ``true``, children :ref:`Control<class_Control>` nodes that are hidden have their minimum size take into account in the total, instead of only the currently visible one.
 
 Method Descriptions
 -------------------

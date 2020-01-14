@@ -11,12 +11,12 @@ GDScriptFunctionState
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 State of a function call after yielding.
+
+Description
+-----------
+
+Calling :ref:`@GDScript.yield<class_@GDScript_method_yield>` within a function will cause that function to yield and return its current state as an object of this type. The yielded function call can then be resumed later by calling :ref:`resume<class_GDScriptFunctionState_method_resume>` on this state object.
 
 Methods
 -------
@@ -33,11 +33,6 @@ Signals
 .. _class_GDScriptFunctionState_signal_completed:
 
 - **completed** **(** :ref:`Nil<class_Nil>` result **)**
-
-Description
------------
-
-Calling :ref:`@GDScript.yield<class_@GDScript_method_yield>` within a function will cause that function to yield and return its current state as an object of this type. The yielded function call can then be resumed later by calling :ref:`resume<class_GDScriptFunctionState_method_resume>` on this state object.
 
 Method Descriptions
 -------------------

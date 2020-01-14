@@ -11,12 +11,12 @@ BackBufferCopy
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Copies a region of the screen (or the whole screen) to a buffer so it can be accessed in your shader scripts through the ``texture(SCREEN_TEXTURE, ...)`` function.
+
+Description
+-----------
+
+Node for back-buffering the currently-displayed screen. The region defined in the BackBufferCopy node is bufferized with the content of the screen it covers, or the entire screen according to the copy mode set. Use the ``texture(SCREEN_TEXTURE, ...)`` function in your shader scripts to access the buffer.
 
 Properties
 ----------
@@ -45,11 +45,6 @@ enum **CopyMode**:
 - **COPY_MODE_RECT** = **1** --- BackBufferCopy buffers a rectangular region.
 
 - **COPY_MODE_VIEWPORT** = **2** --- BackBufferCopy buffers the entire screen.
-
-Description
------------
-
-Node for back-buffering the currently-displayed screen. The region defined in the BackBufferCopy node is bufferized with the content of the screen it covers, or the entire screen according to the copy mode set. Use the ``texture(SCREEN_TEXTURE, ...)`` function in your shader scripts to access the buffer.
 
 Property Descriptions
 ---------------------

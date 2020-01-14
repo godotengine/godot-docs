@@ -9,10 +9,5 @@
 @NativeScript
 =============
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 

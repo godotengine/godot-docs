@@ -11,12 +11,12 @@ Physics2DShapeQueryParameters
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Parameters to be sent to a 2D shape physics query.
+
+Description
+-----------
+
+This class contains the shape and other parameters for 2D intersection/collision queries. See also :ref:`Physics2DShapeQueryResult<class_Physics2DShapeQueryResult>`.
 
 Properties
 ----------
@@ -45,11 +45,6 @@ Methods
 +------+--------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`set_shape<class_Physics2DShapeQueryParameters_method_set_shape>` **(** :ref:`Resource<class_Resource>` shape **)** |
 +------+--------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-This class contains the shape and other parameters for 2D intersection/collision queries. See also :ref:`Physics2DShapeQueryResult<class_Physics2DShapeQueryResult>`.
 
 Property Descriptions
 ---------------------

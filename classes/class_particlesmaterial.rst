@@ -11,12 +11,16 @@ ParticlesMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Particle properties for :ref:`Particles<class_Particles>` and :ref:`Particles2D<class_Particles2D>` nodes.
+
+Description
+-----------
+
+ParticlesMaterial defines particle properties and behavior. It is used in the ``process_material`` of :ref:`Particles<class_Particles>` and :ref:`Particles2D<class_Particles2D>` emitter nodes.
+
+Some of this material's properties are applied to each particle when emitted, while others can have a :ref:`CurveTexture<class_CurveTexture>` applied to vary values over the lifetime of the particle.
+
+When a randomness ratio is applied to a property it is used to scale that property by a random amount. The random ratio is used to interpolate between ``1.0`` and a random number less than one, the result is multiplied by the property to obtain the randomized property. For example a random ratio of ``0.4`` would scale the original property between ``0.4-1.0`` of its original value.
 
 Properties
 ----------
@@ -260,15 +264,6 @@ enum **EmissionShape**:
 - **EMISSION_SHAPE_POINTS** = **3** --- Particles will be emitted at a position determined by sampling a random point on the :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`. Particle color will be modulated by :ref:`emission_color_texture<class_ParticlesMaterial_property_emission_color_texture>`.
 
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4** --- Particles will be emitted at a position determined by sampling a random point on the :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`. Particle velocity and rotation will be set based on :ref:`emission_normal_texture<class_ParticlesMaterial_property_emission_normal_texture>`. Particle color will be modulated by :ref:`emission_color_texture<class_ParticlesMaterial_property_emission_color_texture>`.
-
-Description
------------
-
-ParticlesMaterial defines particle properties and behavior. It is used in the ``process_material`` of :ref:`Particles<class_Particles>` and :ref:`Particles2D<class_Particles2D>` emitter nodes.
-
-Some of this material's properties are applied to each particle when emitted, while others can have a :ref:`CurveTexture<class_CurveTexture>` applied to vary values over the lifetime of the particle.
-
-When a randomness ratio is applied to a property it is used to scale that property by a random amount. The random ratio is used to interpolate between ``1.0`` and a random number less than one, the result is multiplied by the property to obtain the randomized property. For example a random ratio of ``0.4`` would scale the original property between ``0.4-1.0`` of its original value.
 
 Property Descriptions
 ---------------------

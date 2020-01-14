@@ -11,12 +11,12 @@ Curve
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A mathematic curve.
+
+Description
+-----------
+
+A curve that can be saved and re-used for other objects. By default, it ranges between ``0`` and ``1`` on the Y axis and positions points relative to the ``0.5`` Y position.
 
 Properties
 ----------
@@ -99,11 +99,6 @@ enum **TangentMode**:
 - **TANGENT_LINEAR** = **1** --- The curve calculates the tangent on this side of the point as the slope halfway towards the adjacent point.
 
 - **TANGENT_MODE_COUNT** = **2** --- The total number of available tangent modes.
-
-Description
------------
-
-A curve that can be saved and re-used for other objects. By default, it ranges between ``0`` and ``1`` on the Y axis and positions points relative to the ``0.5`` Y position.
 
 Property Descriptions
 ---------------------

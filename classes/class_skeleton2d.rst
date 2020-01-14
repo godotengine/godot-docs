@@ -11,12 +11,12 @@ Skeleton2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Skeleton for 2D characters and animated objects.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/2d_skeletons`
 
 Methods
 -------
@@ -35,11 +35,6 @@ Signals
 .. _class_Skeleton2D_signal_bone_setup_changed:
 
 - **bone_setup_changed** **(** **)**
-
-Tutorials
----------
-
-- :doc:`../tutorials/animation/2d_skeletons`
 
 Method Descriptions
 -------------------

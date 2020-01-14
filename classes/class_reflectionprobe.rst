@@ -11,12 +11,17 @@ ReflectionProbe
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Captures its surroundings to create reflections.
+
+Description
+-----------
+
+Capture its surroundings as a dual parabolid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/reflection_probes`
 
 Properties
 ----------
@@ -61,16 +66,6 @@ enum **UpdateMode**:
 - **UPDATE_ONCE** = **0**
 
 - **UPDATE_ALWAYS** = **1**
-
-Description
------------
-
-Capture its surroundings as a dual parabolid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/reflection_probes`
 
 Property Descriptions
 ---------------------

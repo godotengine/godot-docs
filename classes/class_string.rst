@@ -9,12 +9,17 @@
 String
 ======
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Built-in string class.
+
+Description
+-----------
+
+This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference counted and use a copy-on-write approach, so passing them around is cheap in resources.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/scripting/gdscript/gdscript_format_string`
 
 Methods
 -------
@@ -228,16 +233,6 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`xml_unescape<class_String_method_xml_unescape>` **(** **)**                                                                                                       |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference counted and use a copy-on-write approach, so passing them around is cheap in resources.
-
-Tutorials
----------
-
-- :doc:`../getting_started/scripting/gdscript/gdscript_format_string`
 
 Method Descriptions
 -------------------

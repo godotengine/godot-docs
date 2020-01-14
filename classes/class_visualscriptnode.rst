@@ -13,12 +13,12 @@ VisualScriptNode
 
 **Inherited By:** :ref:`VisualScriptBasicTypeConstant<class_VisualScriptBasicTypeConstant>`, :ref:`VisualScriptBuiltinFunc<class_VisualScriptBuiltinFunc>`, :ref:`VisualScriptClassConstant<class_VisualScriptClassConstant>`, :ref:`VisualScriptComment<class_VisualScriptComment>`, :ref:`VisualScriptCondition<class_VisualScriptCondition>`, :ref:`VisualScriptConstant<class_VisualScriptConstant>`, :ref:`VisualScriptConstructor<class_VisualScriptConstructor>`, :ref:`VisualScriptCustomNode<class_VisualScriptCustomNode>`, :ref:`VisualScriptDeconstruct<class_VisualScriptDeconstruct>`, :ref:`VisualScriptEmitSignal<class_VisualScriptEmitSignal>`, :ref:`VisualScriptEngineSingleton<class_VisualScriptEngineSingleton>`, :ref:`VisualScriptExpression<class_VisualScriptExpression>`, :ref:`VisualScriptFunction<class_VisualScriptFunction>`, :ref:`VisualScriptFunctionCall<class_VisualScriptFunctionCall>`, :ref:`VisualScriptGlobalConstant<class_VisualScriptGlobalConstant>`, :ref:`VisualScriptIndexGet<class_VisualScriptIndexGet>`, :ref:`VisualScriptIndexSet<class_VisualScriptIndexSet>`, :ref:`VisualScriptInputAction<class_VisualScriptInputAction>`, :ref:`VisualScriptIterator<class_VisualScriptIterator>`, :ref:`VisualScriptLists<class_VisualScriptLists>`, :ref:`VisualScriptLocalVar<class_VisualScriptLocalVar>`, :ref:`VisualScriptLocalVarSet<class_VisualScriptLocalVarSet>`, :ref:`VisualScriptMathConstant<class_VisualScriptMathConstant>`, :ref:`VisualScriptOperator<class_VisualScriptOperator>`, :ref:`VisualScriptPreload<class_VisualScriptPreload>`, :ref:`VisualScriptPropertyGet<class_VisualScriptPropertyGet>`, :ref:`VisualScriptPropertySet<class_VisualScriptPropertySet>`, :ref:`VisualScriptResourcePath<class_VisualScriptResourcePath>`, :ref:`VisualScriptReturn<class_VisualScriptReturn>`, :ref:`VisualScriptSceneNode<class_VisualScriptSceneNode>`, :ref:`VisualScriptSceneTree<class_VisualScriptSceneTree>`, :ref:`VisualScriptSelect<class_VisualScriptSelect>`, :ref:`VisualScriptSelf<class_VisualScriptSelf>`, :ref:`VisualScriptSequence<class_VisualScriptSequence>`, :ref:`VisualScriptSubCall<class_VisualScriptSubCall>`, :ref:`VisualScriptSwitch<class_VisualScriptSwitch>`, :ref:`VisualScriptTypeCast<class_VisualScriptTypeCast>`, :ref:`VisualScriptVariableGet<class_VisualScriptVariableGet>`, :ref:`VisualScriptVariableSet<class_VisualScriptVariableSet>`, :ref:`VisualScriptWhile<class_VisualScriptWhile>`, :ref:`VisualScriptYield<class_VisualScriptYield>`, :ref:`VisualScriptYieldSignal<class_VisualScriptYieldSignal>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A node which is part of a :ref:`VisualScript<class_VisualScript>`.
+
+Description
+-----------
+
+A node which is part of a :ref:`VisualScript<class_VisualScript>`. Not to be confused with :ref:`Node<class_Node>`, which is a part of a :ref:`SceneTree<class_SceneTree>`.
 
 Methods
 -------
@@ -41,11 +41,6 @@ Signals
 - **ports_changed** **(** **)**
 
 Emitted when the available input/output ports are changed.
-
-Description
------------
-
-A node which is part of a :ref:`VisualScript<class_VisualScript>`. Not to be confused with :ref:`Node<class_Node>`, which is a part of a :ref:`SceneTree<class_SceneTree>`.
 
 Method Descriptions
 -------------------

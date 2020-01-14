@@ -11,12 +11,12 @@ DynamicFontData
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a font file.
+
+Description
+-----------
+
+Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a vector font file for dynamic rendering at runtime.
 
 Properties
 ----------
@@ -48,11 +48,6 @@ enum **Hinting**:
 
 - **HINTING_NORMAL** = **2** --- Use the default font hinting mode (crisper but less smooth).
 
-Description
------------
-
-Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a vector font file for dynamic rendering at runtime.
-
 Property Descriptions
 ---------------------
 
@@ -68,7 +63,7 @@ Property Descriptions
 | *Getter*  | is_antialiased()       |
 +-----------+------------------------+
 
-Controls whether the font should be rendered with anti-aliasing.
+If ``true``, the font is rendered with anti-aliasing.
 
 ----
 
@@ -100,5 +95,5 @@ The path to the vector font file.
 | *Getter*  | get_hinting()      |
 +-----------+--------------------+
 
-The font hinting mode used by FreeType.
+The font hinting mode used by FreeType. See :ref:`Hinting<enum_DynamicFontData_Hinting>` for options.
 

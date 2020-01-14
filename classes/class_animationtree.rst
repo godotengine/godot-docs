@@ -11,12 +11,14 @@ AnimationTree
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
 
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
+
+- `https://github.com/godotengine/tps-demo <https://github.com/godotengine/tps-demo>`_
 
 Properties
 ----------
@@ -62,13 +64,6 @@ enum **AnimationProcessMode**:
 - **ANIMATION_PROCESS_IDLE** = **1**
 
 - **ANIMATION_PROCESS_MANUAL** = **2**
-
-Tutorials
----------
-
-- :doc:`../tutorials/animation/animation_tree`
-
-- `https://github.com/godotengine/tps-demo <https://github.com/godotengine/tps-demo>`_
 
 Property Descriptions
 ---------------------

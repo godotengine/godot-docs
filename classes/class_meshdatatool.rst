@@ -11,12 +11,27 @@ MeshDataTool
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Helper tool to access and edit :ref:`Mesh<class_Mesh>` data.
+
+Description
+-----------
+
+MeshDataTool provides access to individual vertices in a :ref:`Mesh<class_Mesh>`. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges.
+
+To use MeshDataTool, load a mesh with :ref:`create_from_surface<class_MeshDataTool_method_create_from_surface>`. When you are finished editing the data commit the data to a mesh with :ref:`commit_to_surface<class_MeshDataTool_method_commit_to_surface>`.
+
+Below is an example of how MeshDataTool may be used.
+
+::
+
+    var mdt = MeshDataTool.new()
+    mdt.create_from_surface(mesh, 0)
+    for i in range(mdt.get_vertex_count()):
+        var vertex = mdt.get_vertex(i)
+        ...
+        mdt.set_vertex(i, vertex)
+    mesh.surface_remove(0)
+    mdt.commit_to_surface(mesh)
 
 Methods
 -------
@@ -98,26 +113,6 @@ Methods
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set_vertex_weights<class_MeshDataTool_method_set_vertex_weights>` **(** :ref:`int<class_int>` idx, :ref:`PoolRealArray<class_PoolRealArray>` weights **)** |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-MeshDataTool provides access to individual vertices in a :ref:`Mesh<class_Mesh>`. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges.
-
-To use MeshDataTool, load a mesh with :ref:`create_from_surface<class_MeshDataTool_method_create_from_surface>`. When you are finished editing the data commit the data to a mesh with :ref:`commit_to_surface<class_MeshDataTool_method_commit_to_surface>`.
-
-Below is an example of how MeshDataTool may be used.
-
-::
-
-    var mdt = MeshDataTool.new()
-    mdt.create_from_surface(mesh, 0)
-    for i in range(mdt.get_vertex_count()):
-        var vertex = mdt.get_vertex(i)
-        ...
-        mdt.set_vertex(i, vertex)
-    mesh.surface_remove(0)
-    mdt.commit_to_surface(mesh)
 
 Method Descriptions
 -------------------

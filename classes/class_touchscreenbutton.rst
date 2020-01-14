@@ -11,12 +11,12 @@ TouchScreenButton
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Button for touch screen devices.
+
+Description
+-----------
+
+Button for touch screen devices. You can set it to be visible on all screens, or only on touch devices.
 
 Properties
 ----------
@@ -79,11 +79,6 @@ enum **VisibilityMode**:
 - **VISIBILITY_ALWAYS** = **0** --- Always visible.
 
 - **VISIBILITY_TOUCHSCREEN_ONLY** = **1** --- Visible on touch screens only.
-
-Description
------------
-
-Button for touch screen devices. You can set it to be visible on all screens, or only on touch devices.
 
 Property Descriptions
 ---------------------

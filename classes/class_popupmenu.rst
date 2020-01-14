@@ -11,12 +11,12 @@ PopupMenu
 
 **Inherits:** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 PopupMenu displays a list of options.
+
+Description
+-----------
+
+``PopupMenu`` is a :ref:`Control<class_Control>` that displays a list of options. They are popular in toolbars or context menus.
 
 Properties
 ----------
@@ -209,11 +209,6 @@ Emitted when an item of some ``id`` is pressed or its accelerator is activated.
 - **index_pressed** **(** :ref:`int<class_int>` index **)**
 
 Emitted when an item of some ``index`` is pressed or its accelerator is activated.
-
-Description
------------
-
-``PopupMenu`` is a :ref:`Control<class_Control>` that displays a list of options. They are popular in toolbars or context menus.
 
 Property Descriptions
 ---------------------
@@ -549,7 +544,7 @@ Returns the tooltip associated with the specified index index ``idx``.
 
 - :ref:`bool<class_bool>` **is_hide_on_window_lose_focus** **(** **)** const
 
-Returns whether the popup will be hidden when the window loses focus or not.
+Returns ``true`` if the popup will be hidden when the window loses focus or not.
 
 ----
 
@@ -603,7 +598,7 @@ Returns ``true`` if the item is a separator. If it is, it will be displayed as a
 
 - :ref:`bool<class_bool>` **is_item_shortcut_disabled** **(** :ref:`int<class_int>` idx **)** const
 
-Returns whether the shortcut of the specified item ``idx`` is disabled or not.
+Returns ``true`` if the specified item's shortcut is disabled.
 
 ----
 
@@ -671,7 +666,7 @@ Sets the checkstate status of the item at index ``idx``.
 
 - void **set_item_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
 
-Sets whether the item at index ``idx`` is disabled or not. When it is disabled, it can't be selected and its action can't be invoked.
+Enables/disables the item at index ``idx``. When it is disabled, it can't be selected and its action can't be invoked.
 
 ----
 
@@ -702,6 +697,8 @@ Sets the metadata of an item, which may be of any type. You can later get it wit
 .. _class_PopupMenu_method_set_item_multistate:
 
 - void **set_item_multistate** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` state **)**
+
+Sets the state of an multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
 
 ----
 
@@ -756,4 +753,6 @@ Toggles the check state of the item of the specified index ``idx``.
 .. _class_PopupMenu_method_toggle_item_multistate:
 
 - void **toggle_item_multistate** **(** :ref:`int<class_int>` idx **)**
+
+Cycle to the next state of an multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
 

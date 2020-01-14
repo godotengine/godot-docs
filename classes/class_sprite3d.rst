@@ -11,12 +11,12 @@ Sprite3D
 
 **Inherits:** :ref:`SpriteBase3D<class_SpriteBase3D>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 2D sprite node in a 3D world.
+
+Description
+-----------
+
+A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
 Properties
 ----------
@@ -45,11 +45,6 @@ Signals
 - **frame_changed** **(** **)**
 
 Emitted when the :ref:`frame<class_Sprite3D_property_frame>` changes.
-
-Description
------------
-
-A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
 Property Descriptions
 ---------------------

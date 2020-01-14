@@ -11,12 +11,12 @@ EditorResourcePreviewGenerator
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Custom generator of previews.
+
+Description
+-----------
+
+Custom code to generate previews. Please check ``file_dialog/thumbnail_size`` in :ref:`EditorSettings<class_EditorSettings>` to find out the right size to do previews at.
 
 Methods
 -------
@@ -32,11 +32,6 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`handles<class_EditorResourcePreviewGenerator_method_handles>` **(** :ref:`String<class_String>` type **)** virtual                                                           |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Custom code to generate previews. Please check ``file_dialog/thumbnail_size`` in :ref:`EditorSettings<class_EditorSettings>` to find out the right size to do previews at.
 
 Method Descriptions
 -------------------

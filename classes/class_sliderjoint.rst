@@ -11,12 +11,12 @@ SliderJoint
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Piston kind of slider between two bodies in 3D.
+
+Description
+-----------
+
+Slides across the X axis of the pivot object.
 
 Properties
 ----------
@@ -174,11 +174,6 @@ enum **Param**:
 - **PARAM_ANGULAR_ORTHOGONAL_DAMPING** = **21** --- The amount of damping of the rotation across axes orthogonal to the slider.
 
 - **PARAM_MAX** = **22** --- Represents the size of the :ref:`Param<enum_SliderJoint_Param>` enum.
-
-Description
------------
-
-Slides across the X axis of the pivot object.
 
 Property Descriptions
 ---------------------

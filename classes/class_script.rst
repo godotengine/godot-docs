@@ -13,12 +13,19 @@ Script
 
 **Inherited By:** :ref:`CSharpScript<class_CSharpScript>`, :ref:`GDScript<class_GDScript>`, :ref:`NativeScript<class_NativeScript>`, :ref:`PluginScript<class_PluginScript>`, :ref:`VisualScript<class_VisualScript>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A class stored as a resource.
+
+Description
+-----------
+
+A class stored as a resource. A script extends the functionality of all objects that instance it.
+
+The ``new`` method of a script subclass creates a new instance. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/scripting`
 
 Properties
 ----------
@@ -57,18 +64,6 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`reload<class_Script_method_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                                     |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A class stored as a resource. A script extends the functionality of all objects that instance it.
-
-The ``new`` method of a script subclass creates a new instance. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/scripting`
 
 Property Descriptions
 ---------------------

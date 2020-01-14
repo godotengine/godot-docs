@@ -11,12 +11,12 @@ ARVRServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 The AR/VR server.
+
+Description
+-----------
+
+The AR/VR server is the heart of our AR/VR solution and handles all the processing.
 
 Properties
 ----------
@@ -137,11 +137,6 @@ enum **RotationMode**:
 - **RESET_BUT_KEEP_TILT** = **1** --- Resets the orientation but keeps the tilt of the device. So if we're looking down, we keep looking down but heading will be reset.
 
 - **DONT_RESET_ROTATION** = **2** --- Does not reset the orientation of the HMD, only the position of the player gets centered.
-
-Description
------------
-
-The AR/VR server is the heart of our AR/VR solution and handles all the processing.
 
 Property Descriptions
 ---------------------

@@ -13,12 +13,12 @@ Joint
 
 **Inherited By:** :ref:`ConeTwistJoint<class_ConeTwistJoint>`, :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`, :ref:`HingeJoint<class_HingeJoint>`, :ref:`PinJoint<class_PinJoint>`, :ref:`SliderJoint<class_SliderJoint>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for all 3D joints.
+
+Description
+-----------
+
+Joints are used to bind together two physics bodies. They have a solver priority and can define if the bodies of the two attached nodes should be able to collide with each other.
 
 Properties
 ----------
@@ -32,11 +32,6 @@ Properties
 +---------------------------------+------------------------------------------------------------------------------+--------------+
 | :ref:`int<class_int>`           | :ref:`solver/priority<class_Joint_property_solver/priority>`                 | 1            |
 +---------------------------------+------------------------------------------------------------------------------+--------------+
-
-Description
------------
-
-Joints are used to bind together two physics bodies. They have a solver priority and can define if the bodies of the two attached nodes should be able to collide with each other.
 
 Property Descriptions
 ---------------------

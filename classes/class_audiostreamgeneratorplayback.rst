@@ -11,12 +11,12 @@ AudioStreamGeneratorPlayback
 
 **Inherits:** :ref:`AudioStreamPlaybackResampled<class_AudioStreamPlaybackResampled>` **<** :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
 
 
+Tutorials
+---------
+
+- `https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator <https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator>`_
 
 Methods
 -------
@@ -34,11 +34,6 @@ Methods
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` **(** :ref:`Vector2<class_Vector2>` frame **)**                      |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-Tutorials
----------
-
-- `https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator <https://github.com/godotengine/godot-demo-projects/tree/master/audio/generator>`_
 
 Method Descriptions
 -------------------

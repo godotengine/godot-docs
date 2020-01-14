@@ -11,12 +11,20 @@ EditorSettings
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Object that holds the project-independent editor settings.
+
+Description
+-----------
+
+Object that holds the project-independent editor settings. These settings are generally visible in the **Editor > Editor Settings** menu.
+
+Accessing the settings is done by using the regular :ref:`Object<class_Object>` API, such as:
+
+::
+
+    settings.set(prop,value)
+    settings.get(prop)
+    list_of_settings = settings.get_property_list()
 
 Methods
 -------
@@ -70,19 +78,6 @@ Constants
 .. _class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED:
 
 - **NOTIFICATION_EDITOR_SETTINGS_CHANGED** = **10000** --- Emitted when editor settings change. It used by various editor plugins to update their visuals on theme changes or logic on configuration changes.
-
-Description
------------
-
-Object that holds the project-independent editor settings. These settings are generally visible in the **Editor > Editor Settings** menu.
-
-Accessing the settings is done by using the regular :ref:`Object<class_Object>` API, such as:
-
-::
-
-    settings.set(prop,value)
-    settings.get(prop)
-    list_of_settings = settings.get_property_list()
 
 Method Descriptions
 -------------------

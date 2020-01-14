@@ -11,12 +11,16 @@ ProjectSettings
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Contains global variables accessible from everywhere.
+
+Description
+-----------
+
+Contains global variables accessible from everywhere. Use :ref:`get_setting<class_ProjectSettings_method_get_setting>`, :ref:`set_setting<class_ProjectSettings_method_set_setting>` or :ref:`has_setting<class_ProjectSettings_method_has_setting>` to access them. Variables stored in ``project.godot`` are also loaded into ProjectSettings, making this object very useful for reading custom game configuration options.
+
+When naming a Project Settings property, use the full path to the setting including the category. For example, ``"application/config/name"`` for the project name. Category and property names can be viewed in the Project Settings dialog.
+
+**Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This can also be used in exported projects by placing this file in the same directory as the project binary.
 
 Properties
 ----------
@@ -117,6 +121,8 @@ Properties
 | :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/shadowed_variable<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`                                           | true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/standalone_expression<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`                                   | true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/standalone_ternary<class_ProjectSettings_property_debug/gdscript/warnings/standalone_ternary>`                                         | true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/treat_warnings_as_errors<class_ProjectSettings_property_debug/gdscript/warnings/treat_warnings_as_errors>`                             | false                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -613,15 +619,6 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`set_setting<class_ProjectSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                      |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Contains global variables accessible from everywhere. Use :ref:`get_setting<class_ProjectSettings_method_get_setting>`, :ref:`set_setting<class_ProjectSettings_method_set_setting>` or :ref:`has_setting<class_ProjectSettings_method_has_setting>` to access them. Variables stored in ``project.godot`` are also loaded into ProjectSettings, making this object very useful for reading custom game configuration options.
-
-When naming a Project Settings property, use the full path to the setting including the category. For example, ``"application/config/name"`` for the project name. Category and property names can be viewed in the Project Settings dialog.
-
-**Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This can also be used in exported projects by placing this file in the same directory as the project binary.
 
 Property Descriptions
 ---------------------
@@ -1198,6 +1195,18 @@ If ``true``, enables warnings when calling an expression that has no effect on t
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/standalone_ternary:
+
+- :ref:`bool<class_bool>` **debug/gdscript/warnings/standalone_ternary**
+
++-----------+------+
+| *Default* | true |
++-----------+------+
+
+If ``true``, enables warnings when calling a ternary expression that has no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/treat_warnings_as_errors:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/treat_warnings_as_errors**
@@ -1673,6 +1682,8 @@ If ``true``, enables vertical synchronization. This eliminates tearing that may 
 +-----------+-------+
 
 If ``Use Vsync`` is enabled and this setting is ``true``, enables vertical synchronization via the operating system's window compositor when in windowed mode and the compositor is enabled. This will prevent stutter in certain situations. (Windows only.)
+
+**Note:** This option is experimental and meant to alleviate stutter experienced by some users. However, some users have experienced a Vsync framerate halving (e.g. from 60 FPS to 30 FPS) when using it.
 
 ----
 

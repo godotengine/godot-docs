@@ -11,12 +11,14 @@ RemoteTransform2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 RemoteTransform2D pushes its own :ref:`Transform2D<class_Transform2D>` to another :ref:`CanvasItem<class_CanvasItem>` derived Node in the scene.
+
+Description
+-----------
+
+RemoteTransform2D pushes its own :ref:`Transform2D<class_Transform2D>` to another :ref:`CanvasItem<class_CanvasItem>` derived Node (called the remote node) in the scene.
+
+It can be set to update another Node's position, rotation and/or scale. It can use either global or local coordinates.
 
 Properties
 ----------
@@ -39,13 +41,6 @@ Methods
 +------+------------------------------------------------------------------------------------------+
 | void | :ref:`force_update_cache<class_RemoteTransform2D_method_force_update_cache>` **(** **)** |
 +------+------------------------------------------------------------------------------------------+
-
-Description
------------
-
-RemoteTransform2D pushes its own :ref:`Transform2D<class_Transform2D>` to another :ref:`CanvasItem<class_CanvasItem>` derived Node (called the remote node) in the scene.
-
-It can be set to update another Node's position, rotation and/or scale. It can use either global or local coordinates.
 
 Property Descriptions
 ---------------------

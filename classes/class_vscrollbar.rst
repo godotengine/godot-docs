@@ -11,10 +11,10 @@ VScrollBar
 
 **Inherits:** :ref:`ScrollBar<class_ScrollBar>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Vertical scroll bar.
 
-Brief Description
------------------
+Description
+-----------
 
 Vertical version of :ref:`ScrollBar<class_ScrollBar>`, which goes from top (min) to bottom (max).
 

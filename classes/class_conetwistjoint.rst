@@ -11,12 +11,16 @@ ConeTwistJoint
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A twist joint between two 3D bodies.
+
+Description
+-----------
+
+The joint can rotate the bodies across an axis defined by the local x-axes of the :ref:`Joint<class_Joint>`.
+
+The twist axis is initiated as the X axis of the :ref:`Joint<class_Joint>`.
+
+Once the Bodies swing, the twist axis is calculated as the middle of the x-axes of the Joint in the local space of the two Bodies.
 
 Properties
 ----------
@@ -82,15 +86,6 @@ The higher, the faster.
 - **PARAM_RELAXATION** = **4** --- Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
 
 - **PARAM_MAX** = **5** --- Represents the size of the :ref:`Param<enum_ConeTwistJoint_Param>` enum.
-
-Description
------------
-
-The joint can rotate the bodies across an axis defined by the local x-axes of the :ref:`Joint<class_Joint>`.
-
-The twist axis is initiated as the X axis of the :ref:`Joint<class_Joint>`.
-
-Once the Bodies swing, the twist axis is calculated as the middle of the x-axes of the Joint in the local space of the two Bodies.
 
 Property Descriptions
 ---------------------

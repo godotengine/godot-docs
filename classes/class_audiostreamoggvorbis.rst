@@ -11,10 +11,10 @@ AudioStreamOGGVorbis
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+OGG Vorbis audio stream driver.
 
-Brief Description
------------------
+Description
+-----------
 
 OGG Vorbis audio stream driver.
 
@@ -28,11 +28,6 @@ Properties
 +-------------------------------------------+---------------------------------------------------------------------+-------------------+
 | :ref:`float<class_float>`                 | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` | 0.0               |
 +-------------------------------------------+---------------------------------------------------------------------+-------------------+
-
-Description
------------
-
-OGG Vorbis audio stream driver.
 
 Property Descriptions
 ---------------------
@@ -65,6 +60,8 @@ Contains the audio data in bytes.
 | *Getter*  | has_loop()      |
 +-----------+-----------------+
 
+If ``true``, the stream will automatically loop when it reaches the end.
+
 ----
 
 .. _class_AudioStreamOGGVorbis_property_loop_offset:
@@ -78,4 +75,6 @@ Contains the audio data in bytes.
 +-----------+------------------------+
 | *Getter*  | get_loop_offset()      |
 +-----------+------------------------+
+
+Time in seconds at which the stream starts after being looped.
 

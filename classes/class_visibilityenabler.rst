@@ -11,12 +11,12 @@ VisibilityEnabler
 
 **Inherits:** :ref:`VisibilityNotifier<class_VisibilityNotifier>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Enables certain nodes only when visible.
+
+Description
+-----------
+
+The VisibilityEnabler will disable :ref:`RigidBody<class_RigidBody>` and :ref:`AnimationPlayer<class_AnimationPlayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler itself.
 
 Properties
 ----------
@@ -54,11 +54,6 @@ enum **Enabler**:
 - **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_RigidBody>` nodes.
 
 - **ENABLER_MAX** = **2** --- Represents the size of the :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enum.
-
-Description
------------
-
-The VisibilityEnabler will disable :ref:`RigidBody<class_RigidBody>` and :ref:`AnimationPlayer<class_AnimationPlayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler itself.
 
 Property Descriptions
 ---------------------
@@ -100,9 +95,13 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** const
 
+Returns whether the enabler identified by given :ref:`Enabler<enum_VisibilityEnabler_Enabler>` constant is active.
+
 ----
 
 .. _class_VisibilityEnabler_method_set_enabler:
 
 - void **set_enabler** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)**
+
+Sets active state of the enabler identified by given :ref:`Enabler<enum_VisibilityEnabler_Enabler>` constant.
 

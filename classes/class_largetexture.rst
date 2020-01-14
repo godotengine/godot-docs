@@ -11,12 +11,14 @@ LargeTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+A :ref:`Texture<class_Texture>` capable of storing many smaller textures with offsets.
 
-Brief Description
------------------
+Description
+-----------
 
 A :ref:`Texture<class_Texture>` capable of storing many smaller textures with offsets.
+
+You can dynamically add pieces (:ref:`Texture<class_Texture>`\ s) to this ``LargeTexture`` using different offsets.
 
 Properties
 ----------
@@ -45,13 +47,6 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_size<class_LargeTexture_method_set_size>` **(** :ref:`Vector2<class_Vector2>` size **)**                                                 |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-A :ref:`Texture<class_Texture>` capable of storing many smaller textures with offsets.
-
-You can dynamically add pieces (:ref:`Texture<class_Texture>`\ s) to this ``LargeTexture`` using different offsets.
 
 Method Descriptions
 -------------------

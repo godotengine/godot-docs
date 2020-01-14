@@ -13,12 +13,12 @@ WindowDialog
 
 **Inherited By:** :ref:`AcceptDialog<class_AcceptDialog>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for window dialogs.
+
+Description
+-----------
+
+Windowdialog is the base class for all window-based dialogs. It's a by-default toplevel :ref:`Control<class_Control>` that draws a window decoration and allows motion and resizing.
 
 Properties
 ----------
@@ -58,11 +58,6 @@ Theme Properties
 +---------------------------------+------------------+---------------------+
 | :ref:`int<class_int>`           | title_height     | 20                  |
 +---------------------------------+------------------+---------------------+
-
-Description
------------
-
-Windowdialog is the base class for all window-based dialogs. It's a by-default toplevel :ref:`Control<class_Control>` that draws a window decoration and allows motion and resizing.
 
 Property Descriptions
 ---------------------

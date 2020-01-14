@@ -11,10 +11,10 @@ CapsuleShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
+Capsule shape for 2D collisions.
 
-Brief Description
------------------
+Description
+-----------
 
 Capsule shape for 2D collisions.
 
@@ -26,11 +26,6 @@ Properties
 +---------------------------+-----------------------------------------------------+------+
 | :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape2D_property_radius>` | 10.0 |
 +---------------------------+-----------------------------------------------------+------+
-
-Description
------------
-
-Capsule shape for 2D collisions.
 
 Property Descriptions
 ---------------------

@@ -13,11 +13,6 @@ VisualShaderNodeGroupBase
 
 **Inherited By:** :ref:`VisualShaderNodeExpression<class_VisualShaderNodeExpression>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
 Properties

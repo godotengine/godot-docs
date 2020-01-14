@@ -9,12 +9,19 @@
 Basis
 =====
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 3×3 matrix datatype.
+
+Description
+-----------
+
+3×3 matrix used for 3D rotation and scale. Contains 3 vector fields X, Y and Z as its columns, which can be interpreted as the local basis vectors of a transformation. Can also be accessed as array of 3D vectors. These vectors are orthogonal to each other, but are not necessarily normalized (due to scaling). Almost always used as an orthogonal basis for a :ref:`Transform<class_Transform>`.
+
+For such use, it is composed of a scaling and a rotation matrix, in that order (M = R.S).
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/using_transforms`
 
 Properties
 ----------
@@ -92,18 +99,6 @@ Constants
 - **FLIP_Y** = **Basis( 1, 0, 0, 0, -1, 0, 0, 0, 1 )** --- The basis that will flip something along the Y axis when used in a transformation.
 
 - **FLIP_Z** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, -1 )** --- The basis that will flip something along the Z axis when used in a transformation.
-
-Description
------------
-
-3×3 matrix used for 3D rotation and scale. Contains 3 vector fields X, Y and Z as its columns, which can be interpreted as the local basis vectors of a transformation. Can also be accessed as array of 3D vectors. These vectors are orthogonal to each other, but are not necessarily normalized (due to scaling). Almost always used as an orthogonal basis for a :ref:`Transform<class_Transform>`.
-
-For such use, it is composed of a scaling and a rotation matrix, in that order (M = R.S).
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/using_transforms`
 
 Property Descriptions
 ---------------------

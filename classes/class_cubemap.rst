@@ -11,12 +11,12 @@ CubeMap
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A CubeMap is a 6-sided 3D texture.
+
+Description
+-----------
+
+A 6-sided 3D texture typically used for faking reflections. It can be used to make an object look as if it's reflecting its surroundings. This usually delivers much better performance than other reflection methods.
 
 Properties
 ----------
@@ -112,11 +112,6 @@ enum **Flags**:
 - **FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth zooming in of the texture.
 
 - **FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
-
-Description
------------
-
-A 6-sided 3D texture typically used for faking reflections. It can be used to make an object look as if it's reflecting its surroundings. This usually delivers much better performance than other reflection methods.
 
 Property Descriptions
 ---------------------

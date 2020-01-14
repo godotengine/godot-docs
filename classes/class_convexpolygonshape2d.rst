@@ -11,12 +11,14 @@ ConvexPolygonShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Convex polygon shape for 2D physics.
+
+Description
+-----------
+
+Convex polygon shape for 2D physics. A convex polygon, whatever its shape, is internally decomposed into as many convex polygons as needed to ensure all collision checks against it are always done on convex polygons (which are faster to check).
+
+The main difference between a ``ConvexPolygonShape2D`` and a :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
 
 Properties
 ----------
@@ -31,13 +33,6 @@ Methods
 +------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` point_cloud **)** |
 +------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Convex polygon shape for 2D physics. A convex polygon, whatever its shape, is internally decomposed into as many convex polygons as needed to ensure all collision checks against it are always done on convex polygons (which are faster to check).
-
-The main difference between a ``ConvexPolygonShape2D`` and a :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
 
 Property Descriptions
 ---------------------

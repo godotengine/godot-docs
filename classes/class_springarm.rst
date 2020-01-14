@@ -11,12 +11,18 @@ SpringArm
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A helper node, mostly used in 3rd person cameras.
+
+Description
+-----------
+
+The SpringArm node is a node that casts a ray (or collision shape) along its z axis and moves all its direct children to the collision point, minus a margin.
+
+The most common use case for this is to make a 3rd person camera that reacts to collisions in the environment.
+
+The SpringArm will either cast a ray, or if a shape is given, it will cast the shape in the direction of its z axis.
+
+If you use the SpringArm as a camera controller for your player, you might need to exclude the player's collider from the SpringArm's collision check.
 
 Properties
 ----------
@@ -43,17 +49,6 @@ Methods
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`remove_excluded_object<class_SpringArm_method_remove_excluded_object>` **(** :ref:`RID<class_RID>` RID **)** |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-The SpringArm node is a node that casts a ray (or collision shape) along its z axis and moves all its direct children to the collision point, minus a margin.
-
-The most common use case for this is to make a 3rd person camera that reacts to collisions in the environment.
-
-The SpringArm will either cast a ray, or if a shape is given, it will cast the shape in the direction of its z axis.
-
-If you use the SpringArm as a camera controller for your player, you might need to exclude the player's collider from the SpringArm's collision check.
 
 Property Descriptions
 ---------------------

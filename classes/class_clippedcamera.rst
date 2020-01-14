@@ -11,12 +11,12 @@ ClippedCamera
 
 **Inherits:** :ref:`Camera<class_Camera>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A :ref:`Camera<class_Camera>` that includes collision.
+
+Description
+-----------
+
+This node extends :ref:`Camera<class_Camera>` to add collisions with :ref:`Area<class_Area>` and/or :ref:`PhysicsBody<class_PhysicsBody>` nodes. The camera cannot move through colliding objects.
 
 Properties
 ----------
@@ -68,11 +68,6 @@ enum **ProcessMode**:
 - **CLIP_PROCESS_PHYSICS** = **0** --- The camera updates with the ``_physics_process`` callback.
 
 - **CLIP_PROCESS_IDLE** = **1** --- The camera updates with the ``_process`` callback.
-
-Description
------------
-
-This node extends :ref:`Camera<class_Camera>` to add collisions with :ref:`Area<class_Area>` and/or :ref:`PhysicsBody<class_PhysicsBody>` nodes. The camera cannot move through colliding objects.
 
 Property Descriptions
 ---------------------

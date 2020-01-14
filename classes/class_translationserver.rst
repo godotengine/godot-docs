@@ -11,12 +11,19 @@ TranslationServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Server that manages all translations.
+
+Description
+-----------
+
+Server that manages all translations. Translations can be set to it and removed from it.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/i18n/internationalizing_games`
+
+- :doc:`../tutorials/i18n/locales`
 
 Methods
 -------
@@ -38,18 +45,6 @@ Methods
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`translate<class_TranslationServer_method_translate>` **(** :ref:`String<class_String>` message **)** const                           |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Server that manages all translations. Translations can be set to it and removed from it.
-
-Tutorials
----------
-
-- :doc:`../tutorials/i18n/internationalizing_games`
-
-- :doc:`../tutorials/i18n/locales`
 
 Method Descriptions
 -------------------

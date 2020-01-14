@@ -13,12 +13,12 @@ Popup
 
 **Inherited By:** :ref:`PopupDialog<class_PopupDialog>`, :ref:`PopupMenu<class_PopupMenu>`, :ref:`PopupPanel<class_PopupPanel>`, :ref:`WindowDialog<class_WindowDialog>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base container control for popups and dialogs.
+
+Description
+-----------
+
+Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior. All popup methods ensure correct placement within the viewport.
 
 Properties
 ----------
@@ -73,11 +73,6 @@ Constants
 - **NOTIFICATION_POST_POPUP** = **80** --- Notification sent right after the popup is shown.
 
 - **NOTIFICATION_POPUP_HIDE** = **81** --- Notification sent right after the popup is hidden.
-
-Description
------------
-
-Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior. All popup methods ensure correct placement within the viewport.
 
 Property Descriptions
 ---------------------

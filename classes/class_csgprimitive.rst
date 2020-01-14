@@ -13,11 +13,6 @@ CSGPrimitive
 
 **Inherited By:** :ref:`CSGBox<class_CSGBox>`, :ref:`CSGCylinder<class_CSGCylinder>`, :ref:`CSGMesh<class_CSGMesh>`, :ref:`CSGPolygon<class_CSGPolygon>`, :ref:`CSGSphere<class_CSGSphere>`, :ref:`CSGTorus<class_CSGTorus>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Base class for CSG primitives.
 
 Properties

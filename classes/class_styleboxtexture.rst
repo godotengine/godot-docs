@@ -11,12 +11,12 @@ StyleBoxTexture
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Texture-based nine-patch :ref:`StyleBox<class_StyleBox>`.
+
+Description
+-----------
+
+Texture-based nine-patch :ref:`StyleBox<class_StyleBox>`, in a way similar to :ref:`NinePatchRect<class_NinePatchRect>`. This stylebox performs a 3×3 scaling of a texture, where only the center cell is fully stretched. This makes it possible to design bordered styles regardless of the stylebox's size.
 
 Properties
 ----------
@@ -97,11 +97,6 @@ enum **AxisStretchMode**:
 - **AXIS_STRETCH_MODE_TILE** = **1** --- Repeats the stylebox's texture to match the stylebox's size according to the nine-patch system.
 
 - **AXIS_STRETCH_MODE_TILE_FIT** = **2** --- Repeats the stylebox's texture to match the stylebox's size according to the nine-patch system. Unlike :ref:`AXIS_STRETCH_MODE_TILE<class_StyleBoxTexture_constant_AXIS_STRETCH_MODE_TILE>`, the texture may be slightly stretched to make the nine-patch texture tile seamlessly.
-
-Description
------------
-
-Texture-based nine-patch :ref:`StyleBox<class_StyleBox>`, in a way similar to :ref:`NinePatchRect<class_NinePatchRect>`. This stylebox performs a 3×3 scaling of a texture, where only the center cell is fully stretched. This makes it possible to design bordered styles regardless of the stylebox's size.
 
 Property Descriptions
 ---------------------

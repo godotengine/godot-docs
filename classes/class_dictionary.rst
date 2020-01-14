@@ -9,12 +9,32 @@
 Dictionary
 ==========
 
-**Category:** Built-In Types
-
-Brief Description
------------------
-
 Dictionary type.
+
+Description
+-----------
+
+Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are always passed by reference.
+
+Erasing elements while iterating over them **is not supported**.
+
+Creating a dictionary:
+
+::
+
+    var d = {4: 5, "A key": "A value", 28: [1, 2, 3]}
+
+To add a key to an existing dictionary, access it like an existing key and assign to it:
+
+::
+
+    d[4] = "hello"  # Add integer 4 as a key and assign the String "hello" as its value.
+    d["Godot"] = 3.01  # Add String "Godot" as a key and assign the value 3.01 to it.
+
+Tutorials
+---------
+
+- `#dictionary <../getting_started/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../getting_started/scripting/gdscript/gdscript_basics`
 
 Methods
 -------
@@ -42,31 +62,6 @@ Methods
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`           | :ref:`values<class_Dictionary_method_values>` **(** **)**                                                                         |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-
-Description
------------
-
-Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are always passed by reference.
-
-Erasing elements while iterating over them **is not supported**.
-
-Creating a dictionary:
-
-::
-
-    var d = {4: 5, "A key": "A value", 28: [1, 2, 3]}
-
-To add a key to an existing dictionary, access it like an existing key and assign to it:
-
-::
-
-    d[4] = "hello"  # Add integer 4 as a key and assign the String "hello" as its value.
-    d["Godot"] = 3.01  # Add String "Godot" as a key and assign the value 3.01 to it.
-
-Tutorials
----------
-
-- `#dictionary <../getting_started/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../getting_started/scripting/gdscript/gdscript_basics`
 
 Method Descriptions
 -------------------

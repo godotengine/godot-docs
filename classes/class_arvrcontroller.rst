@@ -11,12 +11,16 @@ ARVRController
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A spatial node representing a spatially-tracked controller.
+
+Description
+-----------
+
+This is a helper spatial node that is linked to the tracking of controllers. It also offers several handy passthroughs to the state of buttons and such on the controllers.
+
+Controllers are linked by their ID. You can create controller nodes before the controllers are available. If your game always uses two controllers (one for each hand), you can predefine the controllers with ID 1 and 2; they will become active as soon as the controllers are identified. If you expect additional controllers to be used, you should react to the signals and add ARVRController nodes to your scene.
+
+The position of the controller node is automatically updated by the :ref:`ARVRServer<class_ARVRServer>`. This makes this node ideal to add child nodes to visualize the controller.
 
 Properties
 ----------
@@ -70,15 +74,6 @@ Emitted when a button on this controller is released.
 - **mesh_updated** **(** :ref:`Mesh<class_Mesh>` mesh **)**
 
 Emitted when the mesh associated with the controller changes or when one becomes available. Generally speaking this will be a static mesh after becoming available.
-
-Description
------------
-
-This is a helper spatial node that is linked to the tracking of controllers. It also offers several handy passthroughs to the state of buttons and such on the controllers.
-
-Controllers are linked by their ID. You can create controller nodes before the controllers are available. If your game always uses two controllers (one for each hand), you can predefine the controllers with ID 1 and 2; they will become active as soon as the controllers are identified. If you expect additional controllers to be used, you should react to the signals and add ARVRController nodes to your scene.
-
-The position of the controller node is automatically updated by the :ref:`ARVRServer<class_ARVRServer>`. This makes this node ideal to add child nodes to visualize the controller.
 
 Property Descriptions
 ---------------------

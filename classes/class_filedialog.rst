@@ -11,12 +11,12 @@ FileDialog
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Dialog for selecting files or directories in the filesystem.
+
+Description
+-----------
+
+FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks.
 
 Properties
 ----------
@@ -146,11 +146,6 @@ enum **Access**:
 - **ACCESS_USERDATA** = **1** --- The dialog only allows accessing files under user data path (``user://``).
 
 - **ACCESS_FILESYSTEM** = **2** --- The dialog allows accessing files on the whole file system.
-
-Description
------------
-
-FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks.
 
 Property Descriptions
 ---------------------

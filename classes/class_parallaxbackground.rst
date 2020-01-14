@@ -11,12 +11,12 @@ ParallaxBackground
 
 **Inherits:** :ref:`CanvasLayer<class_CanvasLayer>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 A node used to create a parallax scrolling background.
+
+Description
+-----------
+
+A ParallaxBackground uses one or more :ref:`ParallaxLayer<class_ParallaxLayer>` child nodes to create a parallax effect. Each :ref:`ParallaxLayer<class_ParallaxLayer>` can move at a different speed using :ref:`ParallaxLayer.motion_offset<class_ParallaxLayer_property_motion_offset>`. This creates an illusion of depth in a 2D game. If not used with a :ref:`Camera2D<class_Camera2D>`, you must manually calculate the :ref:`scroll_offset<class_ParallaxBackground_property_scroll_offset>`.
 
 Properties
 ----------
@@ -36,11 +36,6 @@ Properties
 +-------------------------------+-----------------------------------------------------------------------------------------------+-----------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`scroll_offset<class_ParallaxBackground_property_scroll_offset>`                         | Vector2( 0, 0 ) |
 +-------------------------------+-----------------------------------------------------------------------------------------------+-----------------+
-
-Description
------------
-
-A ParallaxBackground uses one or more :ref:`ParallaxLayer<class_ParallaxLayer>` child nodes to create a parallax effect. Each :ref:`ParallaxLayer<class_ParallaxLayer>` can move at a different speed using :ref:`ParallaxLayer.motion_offset<class_ParallaxLayer_property_motion_offset>`. This creates an illusion of depth in a 2D game. If not used with a :ref:`Camera2D<class_Camera2D>`, you must manually calculate the :ref:`scroll_offset<class_ParallaxBackground_property_scroll_offset>`.
 
 Property Descriptions
 ---------------------

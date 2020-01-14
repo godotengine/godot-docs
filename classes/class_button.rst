@@ -13,12 +13,12 @@ Button
 
 **Inherited By:** :ref:`CheckBox<class_CheckBox>`, :ref:`CheckButton<class_CheckButton>`, :ref:`ColorPickerButton<class_ColorPickerButton>`, :ref:`MenuButton<class_MenuButton>`, :ref:`OptionButton<class_OptionButton>`, :ref:`ToolButton<class_ToolButton>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 Standard themed Button.
+
+Description
+-----------
+
+Button is the standard themed button. It can contain text and an icon, and will display them according to the current :ref:`Theme<class_Theme>`.
 
 Properties
 ----------
@@ -82,11 +82,6 @@ enum **TextAlign**:
 - **ALIGN_CENTER** = **1** --- Align the text to the center.
 
 - **ALIGN_RIGHT** = **2** --- Align the text to the right.
-
-Description
------------
-
-Button is the standard themed button. It can contain text and an icon, and will display them according to the current :ref:`Theme<class_Theme>`.
 
 Property Descriptions
 ---------------------

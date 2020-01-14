@@ -13,10 +13,5 @@ SpatialGizmo
 
 **Inherited By:** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>`
 
-**Category:** Core
-
-Brief Description
------------------
-
 
 
