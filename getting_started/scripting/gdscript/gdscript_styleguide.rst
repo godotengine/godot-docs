@@ -3,20 +3,89 @@
 GDScript style guide
 ====================
 
-Description
------------
-
-This styleguide lists conventions to write elegant GDScript. The goal is
-to encourage writing clean, readable code and promote consistency across
-projects, discussions, and tutorials. Hopefully, this will also
-encourage development of auto-formatting tools.
+This style guide lists conventions to write elegant GDScript. The goal is to
+encourage writing clean, readable code and promote consistency across projects,
+discussions, and tutorials. Hopefully, this will also support the development of
+auto-formatting tools.
 
 Since GDScript is close to Python, this guide is inspired by Python's
 `PEP 8 <https://www.python.org/dev/peps/pep-0008/>`__ programming
-styleguide.
+style guide.
+
+Style guides aren't meant as hard rulebooks. At times, you may not be able to
+apply some of the guidelines below. When that happens, use your best judgment,
+and ask fellow developers for insights.
+
+In general, keeping your code consistent in your projects and within your team is
+more important than following this guide to a tee.
 
 .. note:: Godot's built-in script editor uses a lot of these conventions
           by default. Let it help you.
+
+Here is a complete class example based on these guidelines:
+
+::
+
+    class_name StateMachine
+    extends Node
+    # Hierarchical State machine for the player.
+    # Initializes states and delegates engine callbacks (_physics_process, _unhandled_input) to the state.
+
+
+    signal state_changed(previous, new)
+
+    export var initial_state = NodePath()
+    var is_active = true setget set_is_active
+
+    onready var _state = get_node(initial_state) setget set_state
+    onready var _state_name = _state.name
+
+    func _init():
+        add_to_group("state_machine")
+
+
+    func _ready():
+        connect("state_changed", self, "_on_state_changed")
+        _state.enter()
+
+
+    func _unhandled_input(event):
+        _state.unhandled_input(event)
+
+
+    func _physics_process(delta):
+        _state.physics_process(delta)
+
+
+    func transition_to(target_state_path, msg={}):
+        if not has_node(target_state_path):
+            return
+
+        var target_state = get_node(target_state_path)
+        assert target_state.is_composite == false
+
+        _state.exit()
+        self._state = target_state
+        _state.enter(msg)
+        Events.emit_signal("player_state_changed", _state.name)
+
+
+    func set_is_active(value):
+        is_active = value
+        set_physics_process(value)
+        set_process_unhandled_input(value)
+        set_block_signals(not value)
+
+
+    func set_state(value):
+        _state = value
+        _state_name = _state.name
+
+
+    func _on_state_changed(previous, new):
+        print("state changed")
+        emit_signal("state_changed")
+
 
 Formatting
 ----------
@@ -254,12 +323,14 @@ characters in a given string. See the examples below:
     # Both quote styles would require 2 escapes; prefer double quotes if it's a tie.
     print("'hello' \"world\"")
 
+.. _naming_conventions:
+
 Naming conventions
 ------------------
 
-These naming conventions follow the Godot Engine style. Breaking these
-will make your code clash with the built-in naming conventions, which is
-ugly.
+These naming conventions follow the Godot Engine style. Breaking these will make
+your code clash with the built-in naming conventions, leading to inconsistent
+code.
 
 Classes and nodes
 ~~~~~~~~~~~~~~~~~
@@ -325,6 +396,162 @@ are constants:
         AIR,
         FIRE,
     }
+
+
+Code order
+----------
+
+This first section focuses on code order. For formatting, see
+:ref:`code_formatting`. For naming conventions, see :ref:`naming_conventions`.
+
+We suggest to organize GDScript code this way:
+
+::
+
+    01. tool
+    02. class_name
+    03. extends
+    04. # docstring
+
+    05. signals
+    06. enums
+    07. constants
+    08. exported variables
+    09. public variables
+    10. private variables
+    11. onready variables
+
+    12. optional built-in virtual _init method
+    13. built-in virtual _ready method
+    14. remaining built-in virtual methods
+    15. public methods
+    16. private methods
+
+We optimized the order to make it easy to read the code from top to bottom, to
+help developers reading the code for the first time understand how it works, and
+to avoid errors linked to the order of variable declarations.
+
+This code order follows four rules of thumb:
+
+1. Properties and signals come first, followed by methods.
+2. Public comes before private.
+3. Virtual callbacks come before the class's interface.
+4. The object's construction and initialization functions, ``_init`` and
+   ``_ready``, come before functions that modify the object at runtime.
+
+
+Class declaration
+~~~~~~~~~~~~~~~~~
+
+If the code is meant to run in the editor, place the ``tool`` keyword on the
+first line of the script.
+
+Follow with the `class_name` if necessary. You can turn a GDScript file into a
+global type in your project using this feature. For more information, see
+:ref:`doc_gdscript`.
+
+Then, add the `extends` keyword if the class extends a built-in type.
+
+Following that, you should have the class's optional docstring as comments. You
+can use that to explain the role of your class to your teammates, how it works,
+and how other developers should use it, for example.
+
+::
+
+   class_name MyNode
+   extends Node
+   # A brief description of the class's role and functionality.
+   # Longer description.
+
+Signals and properties
+~~~~~~~~~~~~~~~~~~~~~~
+
+Write signal declarations, followed by properties, that is to say, member
+variables, after the docstring.
+
+Enums should come after signals, as you can use them as export hints for other
+properties.
+
+Then, write constants, exported variables, public, private, and onready
+variables, in that order.
+
+::
+
+   enum Jobs { KNIGHT, WIZARD, ROGUE, HEALER, SHAMAN }
+
+   const MAX_LIVES = 3
+
+   export(Jobs) var job = Jobs.KNIGHT
+   export var max_health = 50
+   export var attack = 5
+
+   var health = max_health setget set_health
+
+   var _speed = 300.0
+
+   onready var sword = get_node("Sword")
+   onready var gun = get_node("Gun")
+
+
+.. note::
+
+   The GDScript compiler evaluates onready variables right before the ``_ready``
+   callback. You can use that to cache node dependencies, that is to say, to get
+   child nodes in the scene that your class relies on. This is what the example
+   above shows.
+
+
+Methods and static functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After the class's properties come the methods.
+
+Start with the ``_init()`` callback method, that the engine will call upon
+creating the object in memory. Follow with the ``_ready()`` callback, that Godot
+calls when it adds a node to the scene tree.
+
+These function should come first because they show how the object is
+initialized.
+
+Other built-in virtual callbacks, like ``_unhandled_input()`` and
+``_physics_process``, should come next. These control the object's main loop and
+interactions with the game engine.
+
+The rest of the class's interface, public and private methods, come after that,
+in that order.
+
+::
+
+    func _init():
+        add_to_group("state_machine")
+
+
+    func _ready():
+        connect("state_changed", self, "_on_state_changed")
+        _state.enter()
+
+
+    func _unhandled_input(event):
+        _state.unhandled_input(event)
+
+
+    func transition_to(target_state_path, msg={}):
+        if not has_node(target_state_path):
+            return
+
+        var target_state = get_node(target_state_path)
+        assert target_state.is_composite == false
+
+        _state.exit()
+        self._state = target_state
+        _state.enter(msg)
+        Events.emit_signal("player_state_changed", _state.name)
+
+
+    func _on_state_changed(previous, new):
+        print("state changed")
+        emit_signal("state_changed")
+
 
 Static typing
 -------------
