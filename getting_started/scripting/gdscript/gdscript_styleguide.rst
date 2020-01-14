@@ -86,6 +86,7 @@ Here is a complete class example based on these guidelines:
         print("state changed")
         emit_signal("state_changed")
 
+.. _formatting:
 
 Formatting
 ----------
@@ -402,7 +403,7 @@ Code order
 ----------
 
 This first section focuses on code order. For formatting, see
-:ref:`code_formatting`. For naming conventions, see :ref:`naming_conventions`.
+:ref:`formatting`. For naming conventions, see :ref:`naming_conventions`.
 
 We suggest to organize GDScript code this way:
 
