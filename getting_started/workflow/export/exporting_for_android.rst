@@ -12,10 +12,14 @@ Download the Android SDK
 Download and install the Android SDK from
 https://developer.android.com/studio/
 
+- You need to run Android Studio once to complete the setup.
+
 Install OpenJDK or Oracle JDK
 -----------------------------
 
 Download and install  `OpenJDK <https://github.com/ojdkbuild/ojdkbuild>`__ or `Oracle JDK <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__. Versions below JDK 8 may not work; some users have reported issues with the jarsigner (used to sign the APKs) in JDK 7.
+
+- If you install OpenJDK, choose ```1.8```. and choose do not choose the ```openjdk-jre``` files as that is only the JRE, not the JDK.
 
 Create a debug.keystore
 -----------------------
@@ -32,12 +36,16 @@ the JDK can be used for this purpose:
 
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999
 
+- this will create a ```debug.keystore-``` file in your current directory.  you should move it to ```%userprofile%/.android/```
+  - see this Q&A for more info on the KeyTool process: https://godotengine.org/qa/21349/jdk-android-file-missing?show=21399#a21399
+
 Make sure you have adb
 ----------------------
 
 Android Debug Bridge (adb) is the command line tool used to communicate with
 Android devices. It's installed with the SDK, but you may need to install one
 (any) of the Android API levels for it to be installed in the SDK directory.
+
 
 Setting it up in Godot
 ----------------------
@@ -55,8 +63,11 @@ Scroll down to the section where the Android settings are located:
 In that screen, the path to 3 files needs to be set:
 
 -  The *adb* executable (adb.exe on Windows)
+  - This will usually be found at ```%appdata%/../local/Android/Sdk/platform-tools/adb.exe```
 -  The *jarsigner* executable (from JDK 6 or 8)
+  - on windows, OpenJDK installs to ```%programfiles%/ojdkbuild\java-1.8.0-openjdk-1.8.0.232-2\bin```
 -  The debug *keystore*
+  - where you put the ```debug.keystore``` file you created above
 
 Once that is configured, everything is ready to export to Android!
 
