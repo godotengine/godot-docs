@@ -1,5 +1,7 @@
 .. _doc_exporting_for_android:
 
+**This page covers the basics** for Android export.  For a more comprehensive walkthrough (*using Godot 3.1*), please [see this excelent tutorial](https://godotlearn.com/godot-3-1-how-to-export-for-android/).
+
 Exporting for Android
 =====================
 
