@@ -54,12 +54,12 @@ The branches on the Git repository are organized as follows:
    occurs. As a development branch, it can be unstable
    and is not meant for use in production. This is where PRs should be done
    in priority.
--  The stable branches are named after their version, e.g. ``3.0`` and ``2.1``.
+-  The stable branches are named after their version, e.g. ``3.1`` and ``2.1``.
    They are used to backport bugfixes and enhancements from the ``master``
-   branch to the currently maintained stable release (e.g. 3.0.2 or 2.1.5).
+   branch to the currently maintained stable release (e.g. 3.1.2 or 2.1.6).
    As a rule of thumb, the last stable branch is maintained until the next
-   major version (e.g. the ``2.0`` branch was maintained until the release of
-   Godot 2.1).
+   major version (e.g. the ``3.0`` branch was maintained until the release of
+   Godot 3.1).
    If you want to make PRs against a maintained stable branch, you will have
    to check if your changes are also relevant for the ``master`` branch.
 -  There might be feature branches at time, usually meant to be merged into
@@ -205,7 +205,7 @@ Therefore, the command that you should (almost) always use is:
     $ git pull --rebase upstream master
 
 
-If you have already pushed the merge commit without using ``rebase``, or 
+If you have already pushed the merge commit without using ``rebase``, or
 have made any other changes that have resulted in undesired history, you may
 use a hard reset to revert to a specific commit and try again:
 
@@ -215,13 +215,13 @@ use a hard reset to revert to a specific commit and try again:
 
 Once you have done this, you may run ``--rebase`` to merge master correctly.
 
-If you have already pushed the wrong commits to your remote branch, 
+If you have already pushed the wrong commits to your remote branch,
 you will have to force push by using ``git push --force``.
 
-.. warning:: ``git reset --hard`` can be a dangerous operation, especially 
-            if you have untracked or uncommitted changes. However, if 
-            you have committed changes that you reset using ``git reset --hard``, 
-            you may still be able to recover them by resetting to a commit ID 
+.. warning:: ``git reset --hard`` can be a dangerous operation, especially
+            if you have untracked or uncommitted changes. However, if
+            you have committed changes that you reset using ``git reset --hard``,
+            you may still be able to recover them by resetting to a commit ID
             found with the ``git reflog`` command.
 
 Making changes
