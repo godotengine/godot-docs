@@ -20,7 +20,6 @@ Development Environment), here are setup instructions for some popular ones:
 
 It is possible to use other IDEs, but their setup is not documented yet.
 
-
 .. _doc_configuring_an_ide_qtcreator:
 
 Qt Creator
@@ -324,13 +323,11 @@ Project setup
 CLion
 -----
 
-CLion needs a CMakeLists.txt file that serves as a project file. There is no CMakeLists.txt in the Godot root folder though. 
-Because CMakeLists.txt is a configure file for CMake build system, having it in the root folder might confuse some users, as Godot can not be built using CMake.
-The file is located in a different folder, so it can be used by CLion.
+`CLion <https://www.jetbrains.com/clion/>`_ is a commercial IDE for C++. It requires a ``CMakeLists.txt`` file as a project file, which is problematic for Godot which uses the SCons buildsystem and not CMake. However, there is a ``CMakeLists.txt`` configuration for :ref:`Android Studio <doc_configuring_an_ide_android_studio>` which can also be used by CLion.
 
 - Choose *File* -> *Open*.
 
-- Find your clonned *godot* folder. Find and select folder *godot/platform/android/java/lib* (The CMakeLists.txt file is located here). Select the folder, not the CMakeLists.txt file. Then click *Ok*.
+- Navigation to your Godot Git clone, and select the folder ``platform/android/java/lib`` (the ``CMakeLists.txt`` file is located there). Select the folder, not the ``CMakeLists.txt file``. Then click *Ok*.
 
 .. image:: img/clion_1_open.png
 
@@ -338,7 +335,7 @@ The file is located in a different folder, so it can be used by CLion.
 
 .. image:: img/clion_2_this_window.png
 
-- Choose *Tools* -> *CMake* -> *Change Project Root* and select the root godot folder.
+- Choose *Tools* -> *CMake* -> *Change Project Root* and select the root Godot folder.
 
 .. image:: img/clion_3_change_project_root.png
 
