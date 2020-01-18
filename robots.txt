@@ -1,0 +1,6 @@
+user-agent: *
+disallow: /*/3.1
+disallow: /*/3.0
+disallow: /*/2.0
+
+sitemap: https://docs.godotengine.org/sitemap.xml
