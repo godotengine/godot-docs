@@ -211,9 +211,11 @@ They can be initialized at the beginning like:
 
       float arr[3] = float[3] (1.0, 0.5, 0.0); // first constructor
 
-      vec2 arr_v2[2] = { vec2(0.0, 0.0), vec2(1.0, 1.0) }; // second constructor
+      float arr_v2[3] = float[] (1.0, 0.5, 0.0); // second constructor
 
-      bool bvec_arr[] = { false, false, true, true }; // third constructor - size is defined automatically from the argument count
+      vec2 arr_v3[2] = { vec2(0.0, 0.0), vec2(1.0, 1.0) }; // third constructor
+
+      bool bvec_arr[] = { false, false, true, true }; // fourth constructor - size is defined automatically from the argument count
 
 You can declare multiple arrays (even with different sizes) in one expression:
 
