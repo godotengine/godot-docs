@@ -8,7 +8,7 @@
  /* Default (light) theme colors */
  :root {
     --body-color: #404040;
-    --content-wrap-background-color: rgba(0, 0, 0, 0.05);
+    --content-wrap-background-color: #efefef;
     --content-background-color: #fcfcfc;
     --logo-opacity: 1.0;
     --navbar-background-color: #333f67;
@@ -234,6 +234,18 @@ footer,
     background-color: var(--content-background-color);
 }
 
+.wy-body-for-nav {
+    background-color: var(--content-wrap-background-color);
+}
+
+@media only screen and (min-width: 768px) {
+    .wy-body-for-nav {
+        /* Center the page on wide displays for better readability */
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
+
 /* Table display tweaks */
 
 .rst-content table.docutils,
@@ -442,6 +454,13 @@ code,
 
 .wy-nav-side {
     background-color: var(--navbar-background-color);
+}
+
+@media only screen and (min-width: 768px) {
+    .wy-nav-side {
+        /* Required to center the page on wide displays */
+        left: inherit;
+    }
 }
 
 .wy-menu-vertical header,
