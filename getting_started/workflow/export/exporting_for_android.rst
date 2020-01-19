@@ -1,6 +1,5 @@
 .. _doc_exporting_for_android:
 
-**This page covers the basics** for Android export.  For a more comprehensive walkthrough (*using Godot 3.1*), please [see this excelent tutorial](https://godotlearn.com/godot-3-1-how-to-export-for-android/).
 
 Exporting for Android
 =====================
@@ -122,3 +121,10 @@ and ARMv8 is usually sufficient to cover most devices in use today.
 You can optimize the size further by compiling an Android export template with
 only the features you need. See :ref:`doc_optimizing_for_size` for more
 information.
+
+Further reading
+---------------
+
+- Article covering the Android export process [at GodotLearn.com](https://godotlearn.com/godot-3-1-how-to-export-for-android/) (*Uses Godot v3.1*).
+
+
