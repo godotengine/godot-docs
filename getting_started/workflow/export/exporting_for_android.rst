@@ -38,7 +38,7 @@ the JDK can be used for this purpose:
 
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999
 
-- This will create a ``debug.keystore`` file in your current directory. You should move it to ``%USERPROFILE%\.android\``.
+- This will create a ``debug.keystore`` file in your current directory. You should move it to a memorable location such as ``%USERPROFILE%\.android\``, because you will need it's location in a later step.
   - see this Q&A for more info on the KeyTool process: https://godotengine.org/qa/21349/jdk-android-file-missing?show=21399#a21399
 
 Make sure you have adb
