@@ -69,7 +69,7 @@ In that screen, the path to 3 files needs to be set:
 -  The *jarsigner* executable (from JDK 6 or 8)
   - on windows, OpenJDK installs to ```%programfiles%/ojdkbuild\java-1.8.0-openjdk-1.8.0.232-2\bin```
 -  The debug *keystore*
-  - where you put the ```debug.keystore``` file you created above
+  - It can be found in the folder where you put the ``debug.keystore`` file you created above.
 
 Once that is configured, everything is ready to export to Android!
 
