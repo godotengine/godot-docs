@@ -65,7 +65,7 @@ Scroll down to the section where the Android settings are located:
 In that screen, the path to 3 files needs to be set:
 
 -  The *adb* executable (adb.exe on Windows)
-  - This will usually be found at ```%appdata%/../local/Android/Sdk/platform-tools/adb.exe```
+  - It can usually be found at ``%LOCALAPPDATA%\Android\Sdk\platform-tools\adb.exe``.
 -  The *jarsigner* executable (from JDK 6 or 8)
   - on windows, OpenJDK installs to ```%programfiles%/ojdkbuild\java-1.8.0-openjdk-1.8.0.232-2\bin```
 -  The debug *keystore*
