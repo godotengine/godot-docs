@@ -559,6 +559,13 @@ code,
     background-color: var(--navbar-current-background-color);
 }
 
+@media only screen and (min-width: 768px) {
+    .rst-versions {
+        /* Required to center the page on wide displays */
+        left: inherit;
+    }
+}
+
 .rst-versions a,
 .rst-versions .rst-current-version,
 .rst-versions .rst-current-version .fa,
