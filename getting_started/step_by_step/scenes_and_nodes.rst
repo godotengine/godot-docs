@@ -73,34 +73,11 @@ Basically, the Godot editor is a **scene editor**. It has plenty of tools for
 editing 2D and 3D scenes as well as user interfaces, but the editor is based on
 the concept of editing a scene and the nodes that compose it.
 
-Creating a new project
-----------------------
-
-Let's make these abstract concepts more concrete with an example. Following a
-long tradition in tutorials, we'll start with a "Hello World" project.
-This will introduce us to using the editor.
-
-If you run the Godot executable outside of a project, the Project Manager
-appears. This helps developers manage their projects.
-
-.. image:: img/project_manager.png
-
-To create a new project, click the "New Project" option. Choose and create a
-path for the project and specify the project name.
-
-You can also select the rendering backend at this stage (OpenGL ES 3.0 or OpenGL
-ES 2.0). The advantages and disadvantages of each are listed to help you choose,
-and you can refer to :ref:`doc_gles2_gles3_differences` for more details. Note
-that you can change the backend from the project settings if you change your mind
-later on. For this tutorial either backend is fine.
-
-.. image:: img/create_new_project.png
-
 Editor
 ------
 
-Once you've created the "New Project", then open it. This will open the Godot
-editor:
+Open the project you made in :ref:`doc_intro_to_the_editor_interface`, or create a new one. This will
+open the Godot editor:
 
 .. image:: img/empty_editor.png
 
