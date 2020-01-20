@@ -21,9 +21,9 @@ This node must be the child of a :ref:`Skeleton<class_Skeleton>` node. You can t
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------+----+
-| :ref:`String<class_String>` | :ref:`bone_name<class_BoneAttachment_property_bone_name>` | "" |
-+-----------------------------+-----------------------------------------------------------+----+
++-----------------------------+-----------------------------------------------------------+--------+
+| :ref:`String<class_String>` | :ref:`bone_name<class_BoneAttachment_property_bone_name>` | ``""`` |
++-----------------------------+-----------------------------------------------------------+--------+
 
 Property Descriptions
 ---------------------
@@ -33,7 +33,7 @@ Property Descriptions
 - :ref:`String<class_String>` **bone_name**
 
 +-----------+----------------------+
-| *Default* | ""                   |
+| *Default* | ``""``               |
 +-----------+----------------------+
 | *Setter*  | set_bone_name(value) |
 +-----------+----------------------+

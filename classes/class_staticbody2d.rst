@@ -23,17 +23,17 @@ Additionally, a constant linear or angular velocity can be set for the static bo
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                     | :ref:`bounce<class_StaticBody2D_property_bounce>`                                       |                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                     | :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>` | 0.0             |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                 | :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>`   | Vector2( 0, 0 ) |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                     | :ref:`friction<class_StaticBody2D_property_friction>`                                   |                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
-| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>` |                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
++-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                     | :ref:`bounce<class_StaticBody2D_property_bounce>`                                       |                     |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                     | :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>` | ``0.0``             |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                 | :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>`   | ``Vector2( 0, 0 )`` |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                     | :ref:`friction<class_StaticBody2D_property_friction>`                                   |                     |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>` |                     |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 
 Property Descriptions
 ---------------------
@@ -59,7 +59,7 @@ Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_boun
 - :ref:`float<class_float>` **constant_angular_velocity**
 
 +-----------+--------------------------------------+
-| *Default* | 0.0                                  |
+| *Default* | ``0.0``                              |
 +-----------+--------------------------------------+
 | *Setter*  | set_constant_angular_velocity(value) |
 +-----------+--------------------------------------+
@@ -75,7 +75,7 @@ The body's constant angular velocity. This does not rotate the body, but affects
 - :ref:`Vector2<class_Vector2>` **constant_linear_velocity**
 
 +-----------+-------------------------------------+
-| *Default* | Vector2( 0, 0 )                     |
+| *Default* | ``Vector2( 0, 0 )``                 |
 +-----------+-------------------------------------+
 | *Setter*  | set_constant_linear_velocity(value) |
 +-----------+-------------------------------------+

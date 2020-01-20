@@ -21,11 +21,11 @@ Renders a given :ref:`Curve<class_Curve>` provided to it. Simplifies the task of
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------+------+
-| :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_property_curve>` |      |
-+---------------------------+-------------------------------------------------+------+
-| :ref:`int<class_int>`     | :ref:`width<class_CurveTexture_property_width>` | 2048 |
-+---------------------------+-------------------------------------------------+------+
++---------------------------+-------------------------------------------------+----------+
+| :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_property_curve>` |          |
++---------------------------+-------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`width<class_CurveTexture_property_width>` | ``2048`` |
++---------------------------+-------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -49,7 +49,7 @@ The ``curve`` rendered onto the texture.
 - :ref:`int<class_int>` **width**
 
 +-----------+------------------+
-| *Default* | 2048             |
+| *Default* | ``2048``         |
 +-----------+------------------+
 | *Setter*  | set_width(value) |
 +-----------+------------------+

@@ -32,11 +32,11 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody2D_property_collision/safe_margin>`   | 0.08  |
-+---------------------------+--------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`motion/sync_to_physics<class_KinematicBody2D_property_motion/sync_to_physics>` | false |
-+---------------------------+--------------------------------------------------------------------------------------+-------+
++---------------------------+--------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody2D_property_collision/safe_margin>`   | ``0.08``  |
++---------------------------+--------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`motion/sync_to_physics<class_KinematicBody2D_property_motion/sync_to_physics>` | ``false`` |
++---------------------------+--------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -73,7 +73,7 @@ Property Descriptions
 - :ref:`float<class_float>` **collision/safe_margin**
 
 +-----------+------------------------+
-| *Default* | 0.08                   |
+| *Default* | ``0.08``               |
 +-----------+------------------------+
 | *Setter*  | set_safe_margin(value) |
 +-----------+------------------------+
@@ -89,7 +89,7 @@ If the body is at least this close to another body, this body will consider them
 - :ref:`bool<class_bool>` **motion/sync_to_physics**
 
 +-----------+------------------------------+
-| *Default* | false                        |
+| *Default* | ``false``                    |
 +-----------+------------------------------+
 | *Setter*  | set_sync_to_physics(value)   |
 +-----------+------------------------------+

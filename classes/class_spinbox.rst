@@ -35,15 +35,15 @@ See :ref:`Range<class_Range>` class for more options over the ``SpinBox``.
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------+------+
-| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`       | 0    |
-+-----------------------------------+--------------------------------------------------+------+
-| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>` | true |
-+-----------------------------------+--------------------------------------------------+------+
-| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`     | ""   |
-+-----------------------------------+--------------------------------------------------+------+
-| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`     | ""   |
-+-----------------------------------+--------------------------------------------------+------+
++-----------------------------------+--------------------------------------------------+----------+
+| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`       | ``0``    |
++-----------------------------------+--------------------------------------------------+----------+
+| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>` | ``true`` |
++-----------------------------------+--------------------------------------------------+----------+
+| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`     | ``""``   |
++-----------------------------------+--------------------------------------------------+----------+
+| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`     | ``""``   |
++-----------------------------------+--------------------------------------------------+----------+
 
 Methods
 -------
@@ -69,7 +69,7 @@ Property Descriptions
 - :ref:`Align<enum_LineEdit_Align>` **align**
 
 +-----------+------------------+
-| *Default* | 0                |
+| *Default* | ``0``            |
 +-----------+------------------+
 | *Setter*  | set_align(value) |
 +-----------+------------------+
@@ -85,7 +85,7 @@ Sets the text alignment of the ``SpinBox``.
 - :ref:`bool<class_bool>` **editable**
 
 +-----------+---------------------+
-| *Default* | true                |
+| *Default* | ``true``            |
 +-----------+---------------------+
 | *Setter*  | set_editable(value) |
 +-----------+---------------------+
@@ -101,7 +101,7 @@ If ``true``, the ``SpinBox`` will be editable. Otherwise, it will be read only.
 - :ref:`String<class_String>` **prefix**
 
 +-----------+-------------------+
-| *Default* | ""                |
+| *Default* | ``""``            |
 +-----------+-------------------+
 | *Setter*  | set_prefix(value) |
 +-----------+-------------------+
@@ -117,7 +117,7 @@ Adds the specified ``prefix`` string before the numerical value of the ``SpinBox
 - :ref:`String<class_String>` **suffix**
 
 +-----------+-------------------+
-| *Default* | ""                |
+| *Default* | ``""``            |
 +-----------+-------------------+
 | *Setter*  | set_suffix(value) |
 +-----------+-------------------+

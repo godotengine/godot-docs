@@ -21,13 +21,13 @@ Allows editing a collision polygon's vertices on a selected plane. Can also set 
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
-| :ref:`float<class_float>`                       | :ref:`depth<class_CollisionPolygon_property_depth>`       | 1.0                  |
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_property_disabled>` | false                |
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_property_polygon>`   | PoolVector2Array(  ) |
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
++-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+| :ref:`float<class_float>`                       | :ref:`depth<class_CollisionPolygon_property_depth>`       | ``1.0``                  |
++-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_property_disabled>` | ``false``                |
++-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_property_polygon>`   | ``PoolVector2Array(  )`` |
++-------------------------------------------------+-----------------------------------------------------------+--------------------------+
 
 Property Descriptions
 ---------------------
@@ -37,7 +37,7 @@ Property Descriptions
 - :ref:`float<class_float>` **depth**
 
 +-----------+------------------+
-| *Default* | 1.0              |
+| *Default* | ``1.0``          |
 +-----------+------------------+
 | *Setter*  | set_depth(value) |
 +-----------+------------------+
@@ -53,7 +53,7 @@ Length that the resulting collision extends in either direction perpendicular to
 - :ref:`bool<class_bool>` **disabled**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_disabled(value) |
 +-----------+---------------------+
@@ -68,13 +68,13 @@ If ``true``, no collision will be produced.
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 
-+-----------+----------------------+
-| *Default* | PoolVector2Array(  ) |
-+-----------+----------------------+
-| *Setter*  | set_polygon(value)   |
-+-----------+----------------------+
-| *Getter*  | get_polygon()        |
-+-----------+----------------------+
++-----------+--------------------------+
+| *Default* | ``PoolVector2Array(  )`` |
++-----------+--------------------------+
+| *Setter*  | set_polygon(value)       |
++-----------+--------------------------+
+| *Getter*  | get_polygon()            |
++-----------+--------------------------+
 
 Array of vertices which define the polygon.
 

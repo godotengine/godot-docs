@@ -21,63 +21,63 @@ TextEdit is meant for editing large, multiline text. It also has facilities for 
 Properties
 ----------
 
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`breakpoint_gutter<class_TextEdit_property_breakpoint_gutter>`                       | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`caret_blink<class_TextEdit_property_caret_blink>`                                   | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                    | :ref:`caret_blink_speed<class_TextEdit_property_caret_blink_speed>`                       | 0.65     |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`caret_block_mode<class_TextEdit_property_caret_block_mode>`                         | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`caret_moving_by_right_click<class_TextEdit_property_caret_moving_by_right_click>`   | true     |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`context_menu_enabled<class_TextEdit_property_context_menu_enabled>`                 | true     |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`draw_spaces<class_TextEdit_property_draw_spaces>`                                   | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`draw_tabs<class_TextEdit_property_draw_tabs>`                                       | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`FocusMode<enum_Control_FocusMode>`     | focus_mode                                                                                | **O:** 2 |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`fold_gutter<class_TextEdit_property_fold_gutter>`                                   | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`hiding_enabled<class_TextEdit_property_hiding_enabled>`                             | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`highlight_all_occurrences<class_TextEdit_property_highlight_all_occurrences>`       | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`highlight_current_line<class_TextEdit_property_highlight_current_line>`             | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`minimap_draw<class_TextEdit_property_minimap_draw>`                                 | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                        | :ref:`minimap_width<class_TextEdit_property_minimap_width>`                               | 80       |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`CursorShape<enum_Control_CursorShape>` | mouse_default_cursor_shape                                                                | **O:** 1 |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>` | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`readonly<class_TextEdit_property_readonly>`                                         | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                        | :ref:`scroll_horizontal<class_TextEdit_property_scroll_horizontal>`                       | 0        |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                    | :ref:`scroll_vertical<class_TextEdit_property_scroll_vertical>`                           | 0.0      |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`selecting_enabled<class_TextEdit_property_selecting_enabled>`                       | true     |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`shortcut_keys_enabled<class_TextEdit_property_shortcut_keys_enabled>`               | true     |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`show_line_numbers<class_TextEdit_property_show_line_numbers>`                       | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`smooth_scrolling<class_TextEdit_property_smooth_scrolling>`                         | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`syntax_highlighting<class_TextEdit_property_syntax_highlighting>`                   | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`String<class_String>`                  | :ref:`text<class_TextEdit_property_text>`                                                 | ""       |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                    | :ref:`v_scroll_speed<class_TextEdit_property_v_scroll_speed>`                             | 80.0     |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`wrap_enabled<class_TextEdit_property_wrap_enabled>`                                 | false    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------+----------+
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`breakpoint_gutter<class_TextEdit_property_breakpoint_gutter>`                       | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`caret_blink<class_TextEdit_property_caret_blink>`                                   | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`                    | :ref:`caret_blink_speed<class_TextEdit_property_caret_blink_speed>`                       | ``0.65``     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`caret_block_mode<class_TextEdit_property_caret_block_mode>`                         | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`caret_moving_by_right_click<class_TextEdit_property_caret_moving_by_right_click>`   | ``true``     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`context_menu_enabled<class_TextEdit_property_context_menu_enabled>`                 | ``true``     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`draw_spaces<class_TextEdit_property_draw_spaces>`                                   | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`draw_tabs<class_TextEdit_property_draw_tabs>`                                       | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`     | focus_mode                                                                                | **O:** ``2`` |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`fold_gutter<class_TextEdit_property_fold_gutter>`                                   | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`hiding_enabled<class_TextEdit_property_hiding_enabled>`                             | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`highlight_all_occurrences<class_TextEdit_property_highlight_all_occurrences>`       | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`highlight_current_line<class_TextEdit_property_highlight_current_line>`             | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`minimap_draw<class_TextEdit_property_minimap_draw>`                                 | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`                        | :ref:`minimap_width<class_TextEdit_property_minimap_width>`                               | ``80``       |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`CursorShape<enum_Control_CursorShape>` | mouse_default_cursor_shape                                                                | **O:** ``1`` |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>` | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`readonly<class_TextEdit_property_readonly>`                                         | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`                        | :ref:`scroll_horizontal<class_TextEdit_property_scroll_horizontal>`                       | ``0``        |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`                    | :ref:`scroll_vertical<class_TextEdit_property_scroll_vertical>`                           | ``0.0``      |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`selecting_enabled<class_TextEdit_property_selecting_enabled>`                       | ``true``     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`shortcut_keys_enabled<class_TextEdit_property_shortcut_keys_enabled>`               | ``true``     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`show_line_numbers<class_TextEdit_property_show_line_numbers>`                       | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`smooth_scrolling<class_TextEdit_property_smooth_scrolling>`                         | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`syntax_highlighting<class_TextEdit_property_syntax_highlighting>`                   | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`String<class_String>`                  | :ref:`text<class_TextEdit_property_text>`                                                 | ``""``       |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`                    | :ref:`v_scroll_speed<class_TextEdit_property_v_scroll_speed>`                             | ``80.0``     |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                      | :ref:`wrap_enabled<class_TextEdit_property_wrap_enabled>`                                 | ``false``    |
++----------------------------------------------+-------------------------------------------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -377,7 +377,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **breakpoint_gutter**
 
 +-----------+--------------------------------------+
-| *Default* | false                                |
+| *Default* | ``false``                            |
 +-----------+--------------------------------------+
 | *Setter*  | set_breakpoint_gutter_enabled(value) |
 +-----------+--------------------------------------+
@@ -393,7 +393,7 @@ If ``true``, the breakpoint gutter is visible.
 - :ref:`bool<class_bool>` **caret_blink**
 
 +-----------+---------------------------------+
-| *Default* | false                           |
+| *Default* | ``false``                       |
 +-----------+---------------------------------+
 | *Setter*  | cursor_set_blink_enabled(value) |
 +-----------+---------------------------------+
@@ -409,7 +409,7 @@ If ``true``, the caret (visual cursor) blinks.
 - :ref:`float<class_float>` **caret_blink_speed**
 
 +-----------+-------------------------------+
-| *Default* | 0.65                          |
+| *Default* | ``0.65``                      |
 +-----------+-------------------------------+
 | *Setter*  | cursor_set_blink_speed(value) |
 +-----------+-------------------------------+
@@ -425,7 +425,7 @@ Duration (in seconds) of a caret's blinking cycle.
 - :ref:`bool<class_bool>` **caret_block_mode**
 
 +-----------+------------------------------+
-| *Default* | false                        |
+| *Default* | ``false``                    |
 +-----------+------------------------------+
 | *Setter*  | cursor_set_block_mode(value) |
 +-----------+------------------------------+
@@ -443,7 +443,7 @@ If ``false``, the caret displays as a bar.
 - :ref:`bool<class_bool>` **caret_moving_by_right_click**
 
 +-----------+------------------------------------+
-| *Default* | true                               |
+| *Default* | ``true``                           |
 +-----------+------------------------------------+
 | *Setter*  | set_right_click_moves_caret(value) |
 +-----------+------------------------------------+
@@ -461,7 +461,7 @@ If ``false``, the context menu disregards mouse location.
 - :ref:`bool<class_bool>` **context_menu_enabled**
 
 +-----------+---------------------------------+
-| *Default* | true                            |
+| *Default* | ``true``                        |
 +-----------+---------------------------------+
 | *Setter*  | set_context_menu_enabled(value) |
 +-----------+---------------------------------+
@@ -477,7 +477,7 @@ If ``true``, a right-click displays the context menu.
 - :ref:`bool<class_bool>` **draw_spaces**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_draw_spaces(value) |
 +-----------+------------------------+
@@ -493,7 +493,7 @@ If ``true``, the "space" character will have a visible representation.
 - :ref:`bool<class_bool>` **draw_tabs**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_draw_tabs(value) |
 +-----------+----------------------+
@@ -509,7 +509,7 @@ If ``true``, the "tab" character will have a visible representation.
 - :ref:`bool<class_bool>` **fold_gutter**
 
 +-----------+-----------------------------+
-| *Default* | false                       |
+| *Default* | ``false``                   |
 +-----------+-----------------------------+
 | *Setter*  | set_draw_fold_gutter(value) |
 +-----------+-----------------------------+
@@ -525,7 +525,7 @@ If ``true``, the fold gutter is visible. This enables folding groups of indented
 - :ref:`bool<class_bool>` **hiding_enabled**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_hiding_enabled(value) |
 +-----------+---------------------------+
@@ -541,7 +541,7 @@ If ``true``, all lines that have been set to hidden by :ref:`set_line_as_hidden<
 - :ref:`bool<class_bool>` **highlight_all_occurrences**
 
 +-----------+----------------------------------------+
-| *Default* | false                                  |
+| *Default* | ``false``                              |
 +-----------+----------------------------------------+
 | *Setter*  | set_highlight_all_occurrences(value)   |
 +-----------+----------------------------------------+
@@ -557,7 +557,7 @@ If ``true``, all occurrences of the selected text will be highlighted.
 - :ref:`bool<class_bool>` **highlight_current_line**
 
 +-----------+-------------------------------------+
-| *Default* | false                               |
+| *Default* | ``false``                           |
 +-----------+-------------------------------------+
 | *Setter*  | set_highlight_current_line(value)   |
 +-----------+-------------------------------------+
@@ -573,7 +573,7 @@ If ``true``, the line containing the cursor is highlighted.
 - :ref:`bool<class_bool>` **minimap_draw**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | draw_minimap(value)  |
 +-----------+----------------------+
@@ -587,7 +587,7 @@ If ``true``, the line containing the cursor is highlighted.
 - :ref:`int<class_int>` **minimap_width**
 
 +-----------+--------------------------+
-| *Default* | 80                       |
+| *Default* | ``80``                   |
 +-----------+--------------------------+
 | *Setter*  | set_minimap_width(value) |
 +-----------+--------------------------+
@@ -601,7 +601,7 @@ If ``true``, the line containing the cursor is highlighted.
 - :ref:`bool<class_bool>` **override_selected_font_color**
 
 +-----------+-----------------------------------------+
-| *Default* | false                                   |
+| *Default* | ``false``                               |
 +-----------+-----------------------------------------+
 | *Setter*  | set_override_selected_font_color(value) |
 +-----------+-----------------------------------------+
@@ -615,7 +615,7 @@ If ``true``, the line containing the cursor is highlighted.
 - :ref:`bool<class_bool>` **readonly**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_readonly(value) |
 +-----------+---------------------+
@@ -631,7 +631,7 @@ If ``true``, read-only mode is enabled. Existing text cannot be modified and new
 - :ref:`int<class_int>` **scroll_horizontal**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_h_scroll(value) |
 +-----------+---------------------+
@@ -647,7 +647,7 @@ The current horizontal scroll value.
 - :ref:`float<class_float>` **scroll_vertical**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_v_scroll(value) |
 +-----------+---------------------+
@@ -663,7 +663,7 @@ The current vertical scroll value.
 - :ref:`bool<class_bool>` **selecting_enabled**
 
 +-----------+------------------------------+
-| *Default* | true                         |
+| *Default* | ``true``                     |
 +-----------+------------------------------+
 | *Setter*  | set_selecting_enabled(value) |
 +-----------+------------------------------+
@@ -677,7 +677,7 @@ The current vertical scroll value.
 - :ref:`bool<class_bool>` **shortcut_keys_enabled**
 
 +-----------+----------------------------------+
-| *Default* | true                             |
+| *Default* | ``true``                         |
 +-----------+----------------------------------+
 | *Setter*  | set_shortcut_keys_enabled(value) |
 +-----------+----------------------------------+
@@ -691,7 +691,7 @@ The current vertical scroll value.
 - :ref:`bool<class_bool>` **show_line_numbers**
 
 +-----------+--------------------------------+
-| *Default* | false                          |
+| *Default* | ``false``                      |
 +-----------+--------------------------------+
 | *Setter*  | set_show_line_numbers(value)   |
 +-----------+--------------------------------+
@@ -707,7 +707,7 @@ If ``true``, line numbers are displayed to the left of the text.
 - :ref:`bool<class_bool>` **smooth_scrolling**
 
 +-----------+---------------------------------+
-| *Default* | false                           |
+| *Default* | ``false``                       |
 +-----------+---------------------------------+
 | *Setter*  | set_smooth_scroll_enable(value) |
 +-----------+---------------------------------+
@@ -723,7 +723,7 @@ If ``true``, sets the ``step`` of the scrollbars to ``0.25`` which results in sm
 - :ref:`bool<class_bool>` **syntax_highlighting**
 
 +-----------+------------------------------+
-| *Default* | false                        |
+| *Default* | ``false``                    |
 +-----------+------------------------------+
 | *Setter*  | set_syntax_coloring(value)   |
 +-----------+------------------------------+
@@ -739,7 +739,7 @@ If ``true``, any custom color properties that have been set for this ``TextEdit`
 - :ref:`String<class_String>` **text**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_text(value) |
 +-----------+-----------------+
@@ -755,7 +755,7 @@ String value of the ``TextEdit``.
 - :ref:`float<class_float>` **v_scroll_speed**
 
 +-----------+---------------------------+
-| *Default* | 80.0                      |
+| *Default* | ``80.0``                  |
 +-----------+---------------------------+
 | *Setter*  | set_v_scroll_speed(value) |
 +-----------+---------------------------+
@@ -771,7 +771,7 @@ Vertical scroll sensitivity.
 - :ref:`bool<class_bool>` **wrap_enabled**
 
 +-----------+-------------------------+
-| *Default* | false                   |
+| *Default* | ``false``               |
 +-----------+-------------------------+
 | *Setter*  | set_wrap_enabled(value) |
 +-----------+-------------------------+

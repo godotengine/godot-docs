@@ -27,15 +27,15 @@ If you use the SpringArm as a camera controller for your player, you might need 
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+------+
-| :ref:`int<class_int>`     | :ref:`collision_mask<class_SpringArm_property_collision_mask>` | 1    |
-+---------------------------+----------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`margin<class_SpringArm_property_margin>`                 | 0.01 |
-+---------------------------+----------------------------------------------------------------+------+
-| :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_property_shape>`                   |      |
-+---------------------------+----------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`spring_length<class_SpringArm_property_spring_length>`   | 1.0  |
-+---------------------------+----------------------------------------------------------------+------+
++---------------------------+----------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`collision_mask<class_SpringArm_property_collision_mask>` | ``1``    |
++---------------------------+----------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`margin<class_SpringArm_property_margin>`                 | ``0.01`` |
++---------------------------+----------------------------------------------------------------+----------+
+| :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_property_shape>`                   |          |
++---------------------------+----------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`spring_length<class_SpringArm_property_spring_length>`   | ``1.0``  |
++---------------------------+----------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -58,7 +58,7 @@ Property Descriptions
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+
@@ -74,7 +74,7 @@ The layers against which the collision check shall be done.
 - :ref:`float<class_float>` **margin**
 
 +-----------+-------------------+
-| *Default* | 0.01              |
+| *Default* | ``0.01``          |
 +-----------+-------------------+
 | *Setter*  | set_margin(value) |
 +-----------+-------------------+
@@ -110,7 +110,7 @@ When the shape is set, the SpringArm will cast the :ref:`Shape<class_Shape>` on 
 - :ref:`float<class_float>` **spring_length**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_length(value) |
 +-----------+-------------------+

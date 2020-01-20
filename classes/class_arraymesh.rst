@@ -44,11 +44,11 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------------------------+--------------------------------------------------------------------+--------------------------+
-| :ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>` | :ref:`blend_shape_mode<class_ArrayMesh_property_blend_shape_mode>` | 1                        |
-+-------------------------------------------------+--------------------------------------------------------------------+--------------------------+
-| :ref:`AABB<class_AABB>`                         | :ref:`custom_aabb<class_ArrayMesh_property_custom_aabb>`           | AABB( 0, 0, 0, 0, 0, 0 ) |
-+-------------------------------------------------+--------------------------------------------------------------------+--------------------------+
++-------------------------------------------------+--------------------------------------------------------------------+------------------------------+
+| :ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>` | :ref:`blend_shape_mode<class_ArrayMesh_property_blend_shape_mode>` | ``1``                        |
++-------------------------------------------------+--------------------------------------------------------------------+------------------------------+
+| :ref:`AABB<class_AABB>`                         | :ref:`custom_aabb<class_ArrayMesh_property_custom_aabb>`           | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
++-------------------------------------------------+--------------------------------------------------------------------+------------------------------+
 
 Methods
 -------
@@ -197,7 +197,7 @@ Property Descriptions
 - :ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>` **blend_shape_mode**
 
 +-----------+-----------------------------+
-| *Default* | 1                           |
+| *Default* | ``1``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_blend_shape_mode(value) |
 +-----------+-----------------------------+
@@ -212,13 +212,13 @@ Sets the blend shape mode to one of :ref:`BlendShapeMode<enum_Mesh_BlendShapeMod
 
 - :ref:`AABB<class_AABB>` **custom_aabb**
 
-+-----------+--------------------------+
-| *Default* | AABB( 0, 0, 0, 0, 0, 0 ) |
-+-----------+--------------------------+
-| *Setter*  | set_custom_aabb(value)   |
-+-----------+--------------------------+
-| *Getter*  | get_custom_aabb()        |
-+-----------+--------------------------+
++-----------+------------------------------+
+| *Default* | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
++-----------+------------------------------+
+| *Setter*  | set_custom_aabb(value)       |
++-----------+------------------------------+
+| *Getter*  | get_custom_aabb()            |
++-----------+------------------------------+
 
 Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unexpected culling when using a shader to offset vertices.
 

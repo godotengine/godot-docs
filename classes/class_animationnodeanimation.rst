@@ -21,9 +21,9 @@ A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTre
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------+----+
-| :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | "" |
-+-----------------------------+-------------------------------------------------------------------+----+
++-----------------------------+-------------------------------------------------------------------+--------+
+| :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``""`` |
++-----------------------------+-------------------------------------------------------------------+--------+
 
 Property Descriptions
 ---------------------
@@ -33,7 +33,7 @@ Property Descriptions
 - :ref:`String<class_String>` **animation**
 
 +-----------+----------------------+
-| *Default* | ""                   |
+| *Default* | ``""``               |
 +-----------+----------------------+
 | *Setter*  | set_animation(value) |
 +-----------+----------------------+

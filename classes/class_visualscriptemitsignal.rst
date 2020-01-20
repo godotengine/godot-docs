@@ -29,9 +29,9 @@ Emits a specified signal when it is executed.
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------+----+
-| :ref:`String<class_String>` | :ref:`signal<class_VisualScriptEmitSignal_property_signal>` | "" |
-+-----------------------------+-------------------------------------------------------------+----+
++-----------------------------+-------------------------------------------------------------+--------+
+| :ref:`String<class_String>` | :ref:`signal<class_VisualScriptEmitSignal_property_signal>` | ``""`` |
++-----------------------------+-------------------------------------------------------------+--------+
 
 Property Descriptions
 ---------------------
@@ -41,7 +41,7 @@ Property Descriptions
 - :ref:`String<class_String>` **signal**
 
 +-----------+-------------------+
-| *Default* | ""                |
+| *Default* | ``""``            |
 +-----------+-------------------+
 | *Setter*  | set_signal(value) |
 +-----------+-------------------+

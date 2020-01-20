@@ -16,11 +16,11 @@ VisualScriptInputAction
 Properties
 ----------
 
-+------------------------------------------------+--------------------------------------------------------------+----+
-| :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_property_action>` | "" |
-+------------------------------------------------+--------------------------------------------------------------+----+
-| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_property_mode>`     | 0  |
-+------------------------------------------------+--------------------------------------------------------------+----+
++------------------------------------------------+--------------------------------------------------------------+--------+
+| :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_property_action>` | ``""`` |
++------------------------------------------------+--------------------------------------------------------------+--------+
+| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_property_mode>`     | ``0``  |
++------------------------------------------------+--------------------------------------------------------------+--------+
 
 Enumerations
 ------------
@@ -53,7 +53,7 @@ Property Descriptions
 - :ref:`String<class_String>` **action**
 
 +-----------+------------------------+
-| *Default* | ""                     |
+| *Default* | ``""``                 |
 +-----------+------------------------+
 | *Setter*  | set_action_name(value) |
 +-----------+------------------------+
@@ -67,7 +67,7 @@ Property Descriptions
 - :ref:`Mode<enum_VisualScriptInputAction_Mode>` **mode**
 
 +-----------+------------------------+
-| *Default* | 0                      |
+| *Default* | ``0``                  |
 +-----------+------------------------+
 | *Setter*  | set_action_mode(value) |
 +-----------+------------------------+

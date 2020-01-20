@@ -28,13 +28,13 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` | false |
-+-----------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                     | ""    |
-+-----------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                     | ""    |
-+-----------------------------+---------------------------------------------------------------------------------+-------+
++-----------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` | ``false`` |
++-----------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                     | ``""``    |
++-----------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                     | ``""``    |
++-----------------------------+---------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -70,7 +70,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **resource_local_to_scene**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_local_to_scene(value) |
 +-----------+---------------------------+
@@ -86,7 +86,7 @@ If ``true``, the resource will be made unique in each instance of its local scen
 - :ref:`String<class_String>` **resource_name**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_name(value) |
 +-----------+-----------------+
@@ -102,7 +102,7 @@ The name of the resource. This is an optional identifier.
 - :ref:`String<class_String>` **resource_path**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_path(value) |
 +-----------+-----------------+

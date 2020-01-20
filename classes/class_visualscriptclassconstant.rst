@@ -29,11 +29,11 @@ none
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------------------+----------+
-| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptClassConstant_property_base_type>` | "Object" |
-+-----------------------------+----------------------------------------------------------------------+----------+
-| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptClassConstant_property_constant>`   | ""       |
-+-----------------------------+----------------------------------------------------------------------+----------+
++-----------------------------+----------------------------------------------------------------------+--------------+
+| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptClassConstant_property_base_type>` | ``"Object"`` |
++-----------------------------+----------------------------------------------------------------------+--------------+
+| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptClassConstant_property_constant>`   | ``""``       |
++-----------------------------+----------------------------------------------------------------------+--------------+
 
 Property Descriptions
 ---------------------
@@ -43,7 +43,7 @@ Property Descriptions
 - :ref:`String<class_String>` **base_type**
 
 +-----------+----------------------+
-| *Default* | "Object"             |
+| *Default* | ``"Object"``         |
 +-----------+----------------------+
 | *Setter*  | set_base_type(value) |
 +-----------+----------------------+
@@ -59,7 +59,7 @@ The constant's parent class.
 - :ref:`String<class_String>` **constant**
 
 +-----------+---------------------------+
-| *Default* | ""                        |
+| *Default* | ``""``                    |
 +-----------+---------------------------+
 | *Setter*  | set_class_constant(value) |
 +-----------+---------------------------+

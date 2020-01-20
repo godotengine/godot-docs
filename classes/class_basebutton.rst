@@ -23,29 +23,29 @@ BaseButton is the abstract base class for buttons, so it shouldn't be used direc
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`ActionMode<enum_BaseButton_ActionMode>` | :ref:`action_mode<class_BaseButton_property_action_mode>`                   | 1        |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                         | :ref:`button_mask<class_BaseButton_property_button_mask>`                   | 1        |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                       | :ref:`disabled<class_BaseButton_property_disabled>`                         | false    |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`FocusMode<enum_Control_FocusMode>`      | :ref:`enabled_focus_mode<class_BaseButton_property_enabled_focus_mode>`     | 2        |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                                  | **O:** 2 |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`ButtonGroup<class_ButtonGroup>`         | :ref:`group<class_BaseButton_property_group>`                               |          |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                       | :ref:`keep_pressed_outside<class_BaseButton_property_keep_pressed_outside>` | false    |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                       | :ref:`pressed<class_BaseButton_property_pressed>`                           | false    |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`ShortCut<class_ShortCut>`               | :ref:`shortcut<class_BaseButton_property_shortcut>`                         |          |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                       | :ref:`shortcut_in_tooltip<class_BaseButton_property_shortcut_in_tooltip>`   | true     |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                       | :ref:`toggle_mode<class_BaseButton_property_toggle_mode>`                   | false    |
-+-----------------------------------------------+-----------------------------------------------------------------------------+----------+
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`ActionMode<enum_BaseButton_ActionMode>` | :ref:`action_mode<class_BaseButton_property_action_mode>`                   | ``1``        |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`                         | :ref:`button_mask<class_BaseButton_property_button_mask>`                   | ``1``        |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                       | :ref:`disabled<class_BaseButton_property_disabled>`                         | ``false``    |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`      | :ref:`enabled_focus_mode<class_BaseButton_property_enabled_focus_mode>`     | ``2``        |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                                  | **O:** ``2`` |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`ButtonGroup<class_ButtonGroup>`         | :ref:`group<class_BaseButton_property_group>`                               |              |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                       | :ref:`keep_pressed_outside<class_BaseButton_property_keep_pressed_outside>` | ``false``    |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                       | :ref:`pressed<class_BaseButton_property_pressed>`                           | ``false``    |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`ShortCut<class_ShortCut>`               | :ref:`shortcut<class_BaseButton_property_shortcut>`                         |              |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                       | :ref:`shortcut_in_tooltip<class_BaseButton_property_shortcut_in_tooltip>`   | ``true``     |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                       | :ref:`toggle_mode<class_BaseButton_property_toggle_mode>`                   | ``false``    |
++-----------------------------------------------+-----------------------------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -142,7 +142,7 @@ Property Descriptions
 - :ref:`ActionMode<enum_BaseButton_ActionMode>` **action_mode**
 
 +-----------+------------------------+
-| *Default* | 1                      |
+| *Default* | ``1``                  |
 +-----------+------------------------+
 | *Setter*  | set_action_mode(value) |
 +-----------+------------------------+
@@ -158,7 +158,7 @@ Determines when the button is considered clicked, one of the :ref:`ActionMode<en
 - :ref:`int<class_int>` **button_mask**
 
 +-----------+------------------------+
-| *Default* | 1                      |
+| *Default* | ``1``                  |
 +-----------+------------------------+
 | *Setter*  | set_button_mask(value) |
 +-----------+------------------------+
@@ -176,7 +176,7 @@ To allow both left-click and right-click, use ``BUTTON_MASK_LEFT | BUTTON_MASK_R
 - :ref:`bool<class_bool>` **disabled**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_disabled(value) |
 +-----------+---------------------+
@@ -192,7 +192,7 @@ If ``true``, the button is in disabled state and can't be clicked or toggled.
 - :ref:`FocusMode<enum_Control_FocusMode>` **enabled_focus_mode**
 
 +-----------+-------------------------------+
-| *Default* | 2                             |
+| *Default* | ``2``                         |
 +-----------+-------------------------------+
 | *Setter*  | set_enabled_focus_mode(value) |
 +-----------+-------------------------------+
@@ -222,7 +222,7 @@ Focus access mode to use when switching between enabled/disabled (see :ref:`Cont
 - :ref:`bool<class_bool>` **keep_pressed_outside**
 
 +-----------+---------------------------------+
-| *Default* | false                           |
+| *Default* | ``false``                       |
 +-----------+---------------------------------+
 | *Setter*  | set_keep_pressed_outside(value) |
 +-----------+---------------------------------+
@@ -238,7 +238,7 @@ If ``true``, the button stays pressed when moving the cursor outside the button 
 - :ref:`bool<class_bool>` **pressed**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_pressed(value) |
 +-----------+--------------------+
@@ -268,7 +268,7 @@ If ``true``, the button's state is pressed. Means the button is pressed down or 
 - :ref:`bool<class_bool>` **shortcut_in_tooltip**
 
 +-----------+----------------------------------+
-| *Default* | true                             |
+| *Default* | ``true``                         |
 +-----------+----------------------------------+
 | *Setter*  | set_shortcut_in_tooltip(value)   |
 +-----------+----------------------------------+
@@ -284,7 +284,7 @@ If ``true``, the button will add information about its shortcut in the tooltip.
 - :ref:`bool<class_bool>` **toggle_mode**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_toggle_mode(value) |
 +-----------+------------------------+

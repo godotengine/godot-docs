@@ -21,17 +21,17 @@ This node extends :ref:`Camera<class_Camera>` to add collisions with :ref:`Area<
 Properties
 ----------
 
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                            | :ref:`clip_to_areas<class_ClippedCamera_property_clip_to_areas>`   | false |
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                            | :ref:`clip_to_bodies<class_ClippedCamera_property_clip_to_bodies>` | true  |
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                              | :ref:`collision_mask<class_ClippedCamera_property_collision_mask>` | 1     |
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                          | :ref:`margin<class_ClippedCamera_property_margin>`                 | 0.0   |
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` | :ref:`process_mode<class_ClippedCamera_property_process_mode>`     | 0     |
-+----------------------------------------------------+--------------------------------------------------------------------+-------+
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`clip_to_areas<class_ClippedCamera_property_clip_to_areas>`   | ``false`` |
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`clip_to_bodies<class_ClippedCamera_property_clip_to_bodies>` | ``true``  |
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                              | :ref:`collision_mask<class_ClippedCamera_property_collision_mask>` | ``1``     |
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                          | :ref:`margin<class_ClippedCamera_property_margin>`                 | ``0.0``   |
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` | :ref:`process_mode<class_ClippedCamera_property_process_mode>`     | ``0``     |
++----------------------------------------------------+--------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -77,7 +77,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **clip_to_areas**
 
 +-----------+----------------------------+
-| *Default* | false                      |
+| *Default* | ``false``                  |
 +-----------+----------------------------+
 | *Setter*  | set_clip_to_areas(value)   |
 +-----------+----------------------------+
@@ -93,7 +93,7 @@ If ``true``, the camera stops on contact with :ref:`Area<class_Area>`\ s.
 - :ref:`bool<class_bool>` **clip_to_bodies**
 
 +-----------+-----------------------------+
-| *Default* | true                        |
+| *Default* | ``true``                    |
 +-----------+-----------------------------+
 | *Setter*  | set_clip_to_bodies(value)   |
 +-----------+-----------------------------+
@@ -109,7 +109,7 @@ If ``true``, the camera stops on contact with :ref:`PhysicsBody<class_PhysicsBod
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+
@@ -125,7 +125,7 @@ The camera's collision mask. Only objects in at least one collision layer matchi
 - :ref:`float<class_float>` **margin**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_margin(value) |
 +-----------+-------------------+
@@ -141,7 +141,7 @@ The camera's collision margin. The camera can't get closer than this distance to
 - :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` **process_mode**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_process_mode(value) |
 +-----------+-------------------------+

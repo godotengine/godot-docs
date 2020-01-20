@@ -23,9 +23,9 @@ The main difference between a ``ConvexPolygonShape2D`` and a :ref:`ConcavePolygo
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` | PoolVector2Array(  ) |
-+-------------------------------------------------+-----------------------------------------------------------+----------------------+
++-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` | ``PoolVector2Array(  )`` |
++-------------------------------------------------+-----------------------------------------------------------+--------------------------+
 
 Methods
 -------
@@ -41,13 +41,13 @@ Property Descriptions
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
 
-+-----------+----------------------+
-| *Default* | PoolVector2Array(  ) |
-+-----------+----------------------+
-| *Setter*  | set_points(value)    |
-+-----------+----------------------+
-| *Getter*  | get_points()         |
-+-----------+----------------------+
++-----------+--------------------------+
+| *Default* | ``PoolVector2Array(  )`` |
++-----------+--------------------------+
+| *Setter*  | set_points(value)        |
++-----------+--------------------------+
+| *Getter*  | get_points()             |
++-----------+--------------------------+
 
 The polygon's list of vertices. Can be in either clockwise or counterclockwise order.
 

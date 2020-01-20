@@ -21,45 +21,45 @@ Operating System functions. OS wraps the most common functionality to communicat
 Properties
 ----------
 
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`String<class_String>`                         | :ref:`clipboard<class_OS_property_clipboard>`                                                         | ""              |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                               | :ref:`current_screen<class_OS_property_current_screen>`                                               | 0               |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                               | :ref:`exit_code<class_OS_property_exit_code>`                                                         | 0               |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`keep_screen_on<class_OS_property_keep_screen_on>`                                               | true            |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`                           | false           |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                               | :ref:`low_processor_usage_mode_sleep_usec<class_OS_property_low_processor_usage_mode_sleep_usec>`     | 6900            |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                       | :ref:`max_window_size<class_OS_property_max_window_size>`                                             | Vector2( 0, 0 ) |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                       | :ref:`min_window_size<class_OS_property_min_window_size>`                                             | Vector2( 0, 0 ) |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`ScreenOrientation<enum_OS_ScreenOrientation>` | :ref:`screen_orientation<class_OS_property_screen_orientation>`                                       | 0               |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`vsync_enabled<class_OS_property_vsync_enabled>`                                                 | true            |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`vsync_via_compositor<class_OS_property_vsync_via_compositor>`                                   | false           |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`window_borderless<class_OS_property_window_borderless>`                                         | false           |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`window_fullscreen<class_OS_property_window_fullscreen>`                                         | false           |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`window_maximized<class_OS_property_window_maximized>`                                           | false           |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`window_minimized<class_OS_property_window_minimized>`                                           | false           |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`window_per_pixel_transparency_enabled<class_OS_property_window_per_pixel_transparency_enabled>` | false           |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                       | :ref:`window_position<class_OS_property_window_position>`                                             | Vector2( 0, 0 ) |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                             | :ref:`window_resizable<class_OS_property_window_resizable>`                                           | true            |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                       | :ref:`window_size<class_OS_property_window_size>`                                                     | Vector2( 0, 0 ) |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------+
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>`                         | :ref:`clipboard<class_OS_property_clipboard>`                                                         | ``""``              |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                               | :ref:`current_screen<class_OS_property_current_screen>`                                               | ``0``               |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                               | :ref:`exit_code<class_OS_property_exit_code>`                                                         | ``0``               |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`keep_screen_on<class_OS_property_keep_screen_on>`                                               | ``true``            |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`                           | ``false``           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                               | :ref:`low_processor_usage_mode_sleep_usec<class_OS_property_low_processor_usage_mode_sleep_usec>`     | ``6900``            |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`max_window_size<class_OS_property_max_window_size>`                                             | ``Vector2( 0, 0 )`` |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`min_window_size<class_OS_property_min_window_size>`                                             | ``Vector2( 0, 0 )`` |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`ScreenOrientation<enum_OS_ScreenOrientation>` | :ref:`screen_orientation<class_OS_property_screen_orientation>`                                       | ``0``               |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`vsync_enabled<class_OS_property_vsync_enabled>`                                                 | ``true``            |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`vsync_via_compositor<class_OS_property_vsync_via_compositor>`                                   | ``false``           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`window_borderless<class_OS_property_window_borderless>`                                         | ``false``           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`window_fullscreen<class_OS_property_window_fullscreen>`                                         | ``false``           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`window_maximized<class_OS_property_window_maximized>`                                           | ``false``           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`window_minimized<class_OS_property_window_minimized>`                                           | ``false``           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`window_per_pixel_transparency_enabled<class_OS_property_window_per_pixel_transparency_enabled>` | ``false``           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`window_position<class_OS_property_window_position>`                                             | ``Vector2( 0, 0 )`` |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                             | :ref:`window_resizable<class_OS_property_window_resizable>`                                           | ``true``            |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`window_size<class_OS_property_window_size>`                                                     | ``Vector2( 0, 0 )`` |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -473,7 +473,7 @@ Property Descriptions
 - :ref:`String<class_String>` **clipboard**
 
 +-----------+----------------------+
-| *Default* | ""                   |
+| *Default* | ``""``               |
 +-----------+----------------------+
 | *Setter*  | set_clipboard(value) |
 +-----------+----------------------+
@@ -489,7 +489,7 @@ The clipboard from the host OS. Might be unavailable on some platforms.
 - :ref:`int<class_int>` **current_screen**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_current_screen(value) |
 +-----------+---------------------------+
@@ -505,7 +505,7 @@ The current screen index (starting from 0).
 - :ref:`int<class_int>` **exit_code**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_exit_code(value) |
 +-----------+----------------------+
@@ -523,7 +523,7 @@ The exit code passed to the OS when the main loop exits. By convention, an exit 
 - :ref:`bool<class_bool>` **keep_screen_on**
 
 +-----------+---------------------------+
-| *Default* | true                      |
+| *Default* | ``true``                  |
 +-----------+---------------------------+
 | *Setter*  | set_keep_screen_on(value) |
 +-----------+---------------------------+
@@ -539,7 +539,7 @@ If ``true``, the engine tries to keep the screen on while the game is running. U
 - :ref:`bool<class_bool>` **low_processor_usage_mode**
 
 +-----------+-------------------------------------+
-| *Default* | false                               |
+| *Default* | ``false``                           |
 +-----------+-------------------------------------+
 | *Setter*  | set_low_processor_usage_mode(value) |
 +-----------+-------------------------------------+
@@ -555,7 +555,7 @@ If ``true``, the engine optimizes for low processor usage by only refreshing the
 - :ref:`int<class_int>` **low_processor_usage_mode_sleep_usec**
 
 +-----------+------------------------------------------------+
-| *Default* | 6900                                           |
+| *Default* | ``6900``                                       |
 +-----------+------------------------------------------------+
 | *Setter*  | set_low_processor_usage_mode_sleep_usec(value) |
 +-----------+------------------------------------------------+
@@ -571,7 +571,7 @@ The amount of sleeping between frames when the low-processor usage mode is enabl
 - :ref:`Vector2<class_Vector2>` **max_window_size**
 
 +-----------+----------------------------+
-| *Default* | Vector2( 0, 0 )            |
+| *Default* | ``Vector2( 0, 0 )``        |
 +-----------+----------------------------+
 | *Setter*  | set_max_window_size(value) |
 +-----------+----------------------------+
@@ -587,7 +587,7 @@ The maximum size of the window (without counting window manager decorations). Do
 - :ref:`Vector2<class_Vector2>` **min_window_size**
 
 +-----------+----------------------------+
-| *Default* | Vector2( 0, 0 )            |
+| *Default* | ``Vector2( 0, 0 )``        |
 +-----------+----------------------------+
 | *Setter*  | set_min_window_size(value) |
 +-----------+----------------------------+
@@ -603,7 +603,7 @@ The minimum size of the window (without counting window manager decorations). Do
 - :ref:`ScreenOrientation<enum_OS_ScreenOrientation>` **screen_orientation**
 
 +-----------+-------------------------------+
-| *Default* | 0                             |
+| *Default* | ``0``                         |
 +-----------+-------------------------------+
 | *Setter*  | set_screen_orientation(value) |
 +-----------+-------------------------------+
@@ -619,7 +619,7 @@ The current screen orientation.
 - :ref:`bool<class_bool>` **vsync_enabled**
 
 +-----------+----------------------+
-| *Default* | true                 |
+| *Default* | ``true``             |
 +-----------+----------------------+
 | *Setter*  | set_use_vsync(value) |
 +-----------+----------------------+
@@ -635,7 +635,7 @@ If ``true``, vertical synchronization (Vsync) is enabled.
 - :ref:`bool<class_bool>` **vsync_via_compositor**
 
 +-----------+-----------------------------------+
-| *Default* | false                             |
+| *Default* | ``false``                         |
 +-----------+-----------------------------------+
 | *Setter*  | set_vsync_via_compositor(value)   |
 +-----------+-----------------------------------+
@@ -655,7 +655,7 @@ If ``true`` and ``vsync_enabled`` is true, the operating system's window composi
 - :ref:`bool<class_bool>` **window_borderless**
 
 +-----------+------------------------------+
-| *Default* | false                        |
+| *Default* | ``false``                    |
 +-----------+------------------------------+
 | *Setter*  | set_borderless_window(value) |
 +-----------+------------------------------+
@@ -673,7 +673,7 @@ If ``true``, removes the window frame.
 - :ref:`bool<class_bool>` **window_fullscreen**
 
 +-----------+------------------------------+
-| *Default* | false                        |
+| *Default* | ``false``                    |
 +-----------+------------------------------+
 | *Setter*  | set_window_fullscreen(value) |
 +-----------+------------------------------+
@@ -689,7 +689,7 @@ If ``true``, the window is fullscreen.
 - :ref:`bool<class_bool>` **window_maximized**
 
 +-----------+-----------------------------+
-| *Default* | false                       |
+| *Default* | ``false``                   |
 +-----------+-----------------------------+
 | *Setter*  | set_window_maximized(value) |
 +-----------+-----------------------------+
@@ -705,7 +705,7 @@ If ``true``, the window is maximized.
 - :ref:`bool<class_bool>` **window_minimized**
 
 +-----------+-----------------------------+
-| *Default* | false                       |
+| *Default* | ``false``                   |
 +-----------+-----------------------------+
 | *Setter*  | set_window_minimized(value) |
 +-----------+-----------------------------+
@@ -721,7 +721,7 @@ If ``true``, the window is minimized.
 - :ref:`bool<class_bool>` **window_per_pixel_transparency_enabled**
 
 +-----------+--------------------------------------------------+
-| *Default* | false                                            |
+| *Default* | ``false``                                        |
 +-----------+--------------------------------------------------+
 | *Setter*  | set_window_per_pixel_transparency_enabled(value) |
 +-----------+--------------------------------------------------+
@@ -743,7 +743,7 @@ Use ``get_tree().get_root().set_transparent_background(true)`` to disable main v
 - :ref:`Vector2<class_Vector2>` **window_position**
 
 +-----------+----------------------------+
-| *Default* | Vector2( 0, 0 )            |
+| *Default* | ``Vector2( 0, 0 )``        |
 +-----------+----------------------------+
 | *Setter*  | set_window_position(value) |
 +-----------+----------------------------+
@@ -759,7 +759,7 @@ The window position relative to the screen, the origin is the top left corner, +
 - :ref:`bool<class_bool>` **window_resizable**
 
 +-----------+-----------------------------+
-| *Default* | true                        |
+| *Default* | ``true``                    |
 +-----------+-----------------------------+
 | *Setter*  | set_window_resizable(value) |
 +-----------+-----------------------------+
@@ -775,7 +775,7 @@ If ``true``, the window is resizable by the user.
 - :ref:`Vector2<class_Vector2>` **window_size**
 
 +-----------+------------------------+
-| *Default* | Vector2( 0, 0 )        |
+| *Default* | ``Vector2( 0, 0 )``    |
 +-----------+------------------------+
 | *Setter*  | set_window_size(value) |
 +-----------+------------------------+

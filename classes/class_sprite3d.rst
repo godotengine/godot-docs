@@ -21,21 +21,21 @@ A node that displays a 2D texture in a 3D environment. The texture displayed can
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`frame<class_Sprite3D_property_frame>`                   | 0                   |
-+-------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`frame_coords<class_Sprite3D_property_frame_coords>`     | Vector2( 0, 0 )     |
-+-------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`hframes<class_Sprite3D_property_hframes>`               | 1                   |
-+-------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`       | :ref:`region_enabled<class_Sprite3D_property_region_enabled>` | false               |
-+-------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite3D_property_region_rect>`       | Rect2( 0, 0, 0, 0 ) |
-+-------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite3D_property_texture>`               |                     |
-+-------------------------------+---------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`vframes<class_Sprite3D_property_vframes>`               | 1                   |
-+-------------------------------+---------------------------------------------------------------+---------------------+
++-------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`         | :ref:`frame<class_Sprite3D_property_frame>`                   | ``0``                   |
++-------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`frame_coords<class_Sprite3D_property_frame_coords>`     | ``Vector2( 0, 0 )``     |
++-------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`         | :ref:`hframes<class_Sprite3D_property_hframes>`               | ``1``                   |
++-------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`       | :ref:`region_enabled<class_Sprite3D_property_region_enabled>` | ``false``               |
++-------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite3D_property_region_rect>`       | ``Rect2( 0, 0, 0, 0 )`` |
++-------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite3D_property_texture>`               |                         |
++-------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`         | :ref:`vframes<class_Sprite3D_property_vframes>`               | ``1``                   |
++-------------------------------+---------------------------------------------------------------+-------------------------+
 
 Signals
 -------
@@ -54,7 +54,7 @@ Property Descriptions
 - :ref:`int<class_int>` **frame**
 
 +-----------+------------------+
-| *Default* | 0                |
+| *Default* | ``0``            |
 +-----------+------------------+
 | *Setter*  | set_frame(value) |
 +-----------+------------------+
@@ -70,7 +70,7 @@ Current frame to display from sprite sheet. :ref:`vframes<class_Sprite3D_propert
 - :ref:`Vector2<class_Vector2>` **frame_coords**
 
 +-----------+-------------------------+
-| *Default* | Vector2( 0, 0 )         |
+| *Default* | ``Vector2( 0, 0 )``     |
 +-----------+-------------------------+
 | *Setter*  | set_frame_coords(value) |
 +-----------+-------------------------+
@@ -86,7 +86,7 @@ Coordinates of the frame to display from sprite sheet. This is as an alias for t
 - :ref:`int<class_int>` **hframes**
 
 +-----------+--------------------+
-| *Default* | 1                  |
+| *Default* | ``1``              |
 +-----------+--------------------+
 | *Setter*  | set_hframes(value) |
 +-----------+--------------------+
@@ -102,7 +102,7 @@ The number of columns in the sprite sheet.
 - :ref:`bool<class_bool>` **region_enabled**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_region(value) |
 +-----------+-------------------+
@@ -117,13 +117,13 @@ If ``true``, texture will be cut from a larger atlas texture. See :ref:`region_r
 
 - :ref:`Rect2<class_Rect2>` **region_rect**
 
-+-----------+------------------------+
-| *Default* | Rect2( 0, 0, 0, 0 )    |
-+-----------+------------------------+
-| *Setter*  | set_region_rect(value) |
-+-----------+------------------------+
-| *Getter*  | get_region_rect()      |
-+-----------+------------------------+
++-----------+-------------------------+
+| *Default* | ``Rect2( 0, 0, 0, 0 )`` |
++-----------+-------------------------+
+| *Setter*  | set_region_rect(value)  |
++-----------+-------------------------+
+| *Getter*  | get_region_rect()       |
++-----------+-------------------------+
 
 The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_property_region_enabled>` must be ``true``.
 
@@ -148,7 +148,7 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 - :ref:`int<class_int>` **vframes**
 
 +-----------+--------------------+
-| *Default* | 1                  |
+| *Default* | ``1``              |
 +-----------+--------------------+
 | *Setter*  | set_vframes(value) |
 +-----------+--------------------+

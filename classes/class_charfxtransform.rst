@@ -28,23 +28,23 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------------+----------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`               | :ref:`absolute_index<class_CharFXTransform_property_absolute_index>` | 0                   |
-+-------------------------------------+----------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`               | :ref:`character<class_CharFXTransform_property_character>`           | 0                   |
-+-------------------------------------+----------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`           | :ref:`color<class_CharFXTransform_property_color>`                   | Color( 0, 0, 0, 1 ) |
-+-------------------------------------+----------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`           | :ref:`elapsed_time<class_CharFXTransform_property_elapsed_time>`     | 0.0                 |
-+-------------------------------------+----------------------------------------------------------------------+---------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`env<class_CharFXTransform_property_env>`                       | {}                  |
-+-------------------------------------+----------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`offset<class_CharFXTransform_property_offset>`                 | Vector2( 0, 0 )     |
-+-------------------------------------+----------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`               | :ref:`relative_index<class_CharFXTransform_property_relative_index>` | 0                   |
-+-------------------------------------+----------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`             | :ref:`visible<class_CharFXTransform_property_visible>`               | true                |
-+-------------------------------------+----------------------------------------------------------------------+---------------------+
++-------------------------------------+----------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`               | :ref:`absolute_index<class_CharFXTransform_property_absolute_index>` | ``0``                   |
++-------------------------------------+----------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`               | :ref:`character<class_CharFXTransform_property_character>`           | ``0``                   |
++-------------------------------------+----------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`           | :ref:`color<class_CharFXTransform_property_color>`                   | ``Color( 0, 0, 0, 1 )`` |
++-------------------------------------+----------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`           | :ref:`elapsed_time<class_CharFXTransform_property_elapsed_time>`     | ``0.0``                 |
++-------------------------------------+----------------------------------------------------------------------+-------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`env<class_CharFXTransform_property_env>`                       | ``{}``                  |
++-------------------------------------+----------------------------------------------------------------------+-------------------------+
+| :ref:`Vector2<class_Vector2>`       | :ref:`offset<class_CharFXTransform_property_offset>`                 | ``Vector2( 0, 0 )``     |
++-------------------------------------+----------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`               | :ref:`relative_index<class_CharFXTransform_property_relative_index>` | ``0``                   |
++-------------------------------------+----------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`             | :ref:`visible<class_CharFXTransform_property_visible>`               | ``true``                |
++-------------------------------------+----------------------------------------------------------------------+-------------------------+
 
 Property Descriptions
 ---------------------
@@ -54,7 +54,7 @@ Property Descriptions
 - :ref:`int<class_int>` **absolute_index**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_absolute_index(value) |
 +-----------+---------------------------+
@@ -70,7 +70,7 @@ The index of the current character (starting from 0). Setting this property won'
 - :ref:`int<class_int>` **character**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_character(value) |
 +-----------+----------------------+
@@ -91,13 +91,13 @@ The Unicode codepoint the character will use. This only affects non-whitespace c
 
 - :ref:`Color<class_Color>` **color**
 
-+-----------+---------------------+
-| *Default* | Color( 0, 0, 0, 1 ) |
-+-----------+---------------------+
-| *Setter*  | set_color(value)    |
-+-----------+---------------------+
-| *Getter*  | get_color()         |
-+-----------+---------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 0, 0, 0, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_color(value)        |
++-----------+-------------------------+
+| *Getter*  | get_color()             |
++-----------+-------------------------+
 
 The color the character will be drawn with.
 
@@ -108,7 +108,7 @@ The color the character will be drawn with.
 - :ref:`float<class_float>` **elapsed_time**
 
 +-----------+-------------------------+
-| *Default* | 0.0                     |
+| *Default* | ``0.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_elapsed_time(value) |
 +-----------+-------------------------+
@@ -126,7 +126,7 @@ The time elapsed since the :ref:`RichTextLabel<class_RichTextLabel>` was added t
 - :ref:`Dictionary<class_Dictionary>` **env**
 
 +-----------+------------------------+
-| *Default* | {}                     |
+| *Default* | ``{}``                 |
 +-----------+------------------------+
 | *Setter*  | set_environment(value) |
 +-----------+------------------------+
@@ -147,13 +147,13 @@ For example, the opening BBCode tag ``[example foo=hello bar=true baz=42 color=#
 
 - :ref:`Vector2<class_Vector2>` **offset**
 
-+-----------+-------------------+
-| *Default* | Vector2( 0, 0 )   |
-+-----------+-------------------+
-| *Setter*  | set_offset(value) |
-+-----------+-------------------+
-| *Getter*  | get_offset()      |
-+-----------+-------------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
+| *Setter*  | set_offset(value)   |
++-----------+---------------------+
+| *Getter*  | get_offset()        |
++-----------+---------------------+
 
 The position offset the character will be drawn with (in pixels).
 
@@ -164,7 +164,7 @@ The position offset the character will be drawn with (in pixels).
 - :ref:`int<class_int>` **relative_index**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_relative_index(value) |
 +-----------+---------------------------+
@@ -180,7 +180,7 @@ The index of the current character (starting from 0). Setting this property won'
 - :ref:`bool<class_bool>` **visible**
 
 +-----------+-----------------------+
-| *Default* | true                  |
+| *Default* | ``true``              |
 +-----------+-----------------------+
 | *Setter*  | set_visibility(value) |
 +-----------+-----------------------+

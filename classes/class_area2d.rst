@@ -26,35 +26,35 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                       | :ref:`angular_damp<class_Area2D_property_angular_damp>`                     | 1.0             |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`String<class_String>`                     | :ref:`audio_bus_name<class_Area2D_property_audio_bus_name>`                 | "Master"        |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                         | :ref:`audio_bus_override<class_Area2D_property_audio_bus_override>`         | false           |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                           | :ref:`collision_layer<class_Area2D_property_collision_layer>`               | 1               |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                           | :ref:`collision_mask<class_Area2D_property_collision_mask>`                 | 1               |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                       | :ref:`gravity<class_Area2D_property_gravity>`                               | 98.0            |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                       | :ref:`gravity_distance_scale<class_Area2D_property_gravity_distance_scale>` | 0.0             |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                         | :ref:`gravity_point<class_Area2D_property_gravity_point>`                   | false           |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`gravity_vec<class_Area2D_property_gravity_vec>`                       | Vector2( 0, 1 ) |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                       | :ref:`linear_damp<class_Area2D_property_linear_damp>`                       | 0.1             |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                         | :ref:`monitorable<class_Area2D_property_monitorable>`                       | true            |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area2D_property_monitoring>`                         | true            |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                       | :ref:`priority<class_Area2D_property_priority>`                             | 0.0             |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
-| :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` | :ref:`space_override<class_Area2D_property_space_override>`                 | 0               |
-+-------------------------------------------------+-----------------------------------------------------------------------------+-----------------+
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                       | :ref:`angular_damp<class_Area2D_property_angular_damp>`                     | ``1.0``             |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>`                     | :ref:`audio_bus_name<class_Area2D_property_audio_bus_name>`                 | ``"Master"``        |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                         | :ref:`audio_bus_override<class_Area2D_property_audio_bus_override>`         | ``false``           |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                           | :ref:`collision_layer<class_Area2D_property_collision_layer>`               | ``1``               |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                           | :ref:`collision_mask<class_Area2D_property_collision_mask>`                 | ``1``               |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                       | :ref:`gravity<class_Area2D_property_gravity>`                               | ``98.0``            |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                       | :ref:`gravity_distance_scale<class_Area2D_property_gravity_distance_scale>` | ``0.0``             |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                         | :ref:`gravity_point<class_Area2D_property_gravity_point>`                   | ``false``           |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                   | :ref:`gravity_vec<class_Area2D_property_gravity_vec>`                       | ``Vector2( 0, 1 )`` |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                       | :ref:`linear_damp<class_Area2D_property_linear_damp>`                       | ``0.1``             |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                         | :ref:`monitorable<class_Area2D_property_monitorable>`                       | ``true``            |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area2D_property_monitoring>`                         | ``true``            |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                       | :ref:`priority<class_Area2D_property_priority>`                             | ``0.0``             |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
+| :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` | :ref:`space_override<class_Area2D_property_space_override>`                 | ``0``               |
++-------------------------------------------------+-----------------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -185,7 +185,7 @@ Property Descriptions
 - :ref:`float<class_float>` **angular_damp**
 
 +-----------+-------------------------+
-| *Default* | 1.0                     |
+| *Default* | ``1.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_angular_damp(value) |
 +-----------+-------------------------+
@@ -201,7 +201,7 @@ The rate at which objects stop spinning in this area. Represents the angular vel
 - :ref:`String<class_String>` **audio_bus_name**
 
 +-----------+---------------------------+
-| *Default* | "Master"                  |
+| *Default* | ``"Master"``              |
 +-----------+---------------------------+
 | *Setter*  | set_audio_bus_name(value) |
 +-----------+---------------------------+
@@ -217,7 +217,7 @@ The name of the area's audio bus.
 - :ref:`bool<class_bool>` **audio_bus_override**
 
 +-----------+-------------------------------+
-| *Default* | false                         |
+| *Default* | ``false``                     |
 +-----------+-------------------------------+
 | *Setter*  | set_audio_bus_override(value) |
 +-----------+-------------------------------+
@@ -233,7 +233,7 @@ If ``true``, the area's audio bus overrides the default audio bus.
 - :ref:`int<class_int>` **collision_layer**
 
 +-----------+----------------------------+
-| *Default* | 1                          |
+| *Default* | ``1``                      |
 +-----------+----------------------------+
 | *Setter*  | set_collision_layer(value) |
 +-----------+----------------------------+
@@ -249,7 +249,7 @@ The area's physics layer(s). Collidable objects can exist in any of 32 different
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+
@@ -265,7 +265,7 @@ The physics layers this area scans to determine collision detection.
 - :ref:`float<class_float>` **gravity**
 
 +-----------+--------------------+
-| *Default* | 98.0               |
+| *Default* | ``98.0``           |
 +-----------+--------------------+
 | *Setter*  | set_gravity(value) |
 +-----------+--------------------+
@@ -281,7 +281,7 @@ The area's gravity intensity (ranges from -1024 to 1024). This value multiplies 
 - :ref:`float<class_float>` **gravity_distance_scale**
 
 +-----------+-----------------------------------+
-| *Default* | 0.0                               |
+| *Default* | ``0.0``                           |
 +-----------+-----------------------------------+
 | *Setter*  | set_gravity_distance_scale(value) |
 +-----------+-----------------------------------+
@@ -297,7 +297,7 @@ The falloff factor for point gravity. The greater the value, the faster gravity 
 - :ref:`bool<class_bool>` **gravity_point**
 
 +-----------+-----------------------------+
-| *Default* | false                       |
+| *Default* | ``false``                   |
 +-----------+-----------------------------+
 | *Setter*  | set_gravity_is_point(value) |
 +-----------+-----------------------------+
@@ -313,7 +313,7 @@ If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class
 - :ref:`Vector2<class_Vector2>` **gravity_vec**
 
 +-----------+---------------------------+
-| *Default* | Vector2( 0, 1 )           |
+| *Default* | ``Vector2( 0, 1 )``       |
 +-----------+---------------------------+
 | *Setter*  | set_gravity_vector(value) |
 +-----------+---------------------------+
@@ -329,7 +329,7 @@ The area's gravity vector (not normalized). If gravity is a point (see :ref:`gra
 - :ref:`float<class_float>` **linear_damp**
 
 +-----------+------------------------+
-| *Default* | 0.1                    |
+| *Default* | ``0.1``                |
 +-----------+------------------------+
 | *Setter*  | set_linear_damp(value) |
 +-----------+------------------------+
@@ -345,7 +345,7 @@ The rate at which objects stop moving in this area. Represents the linear veloci
 - :ref:`bool<class_bool>` **monitorable**
 
 +-----------+------------------------+
-| *Default* | true                   |
+| *Default* | ``true``               |
 +-----------+------------------------+
 | *Setter*  | set_monitorable(value) |
 +-----------+------------------------+
@@ -361,7 +361,7 @@ If ``true``, other monitoring areas can detect this area.
 - :ref:`bool<class_bool>` **monitoring**
 
 +-----------+-----------------------+
-| *Default* | true                  |
+| *Default* | ``true``              |
 +-----------+-----------------------+
 | *Setter*  | set_monitoring(value) |
 +-----------+-----------------------+
@@ -377,7 +377,7 @@ If ``true``, the area detects bodies or areas entering and exiting it.
 - :ref:`float<class_float>` **priority**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_priority(value) |
 +-----------+---------------------+
@@ -393,7 +393,7 @@ The area's priority. Higher priority areas are processed first.
 - :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` **space_override**
 
 +-----------+--------------------------------+
-| *Default* | 0                              |
+| *Default* | ``0``                          |
 +-----------+--------------------------------+
 | *Setter*  | set_space_override_mode(value) |
 +-----------+--------------------------------+

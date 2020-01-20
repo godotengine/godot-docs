@@ -25,9 +25,9 @@ The :ref:`ARVRController<class_ARVRController>` and :ref:`ARVRAnchor<class_ARVRA
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`rumble<class_ARVRPositionalTracker_property_rumble>` | 0.0 |
-+---------------------------+------------------------------------------------------------+-----+
++---------------------------+------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`rumble<class_ARVRPositionalTracker_property_rumble>` | ``0.0`` |
++---------------------------+------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -81,7 +81,7 @@ Property Descriptions
 - :ref:`float<class_float>` **rumble**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_rumble(value) |
 +-----------+-------------------+

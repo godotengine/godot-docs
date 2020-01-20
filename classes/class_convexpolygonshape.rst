@@ -21,9 +21,9 @@ Convex polygon shape resource, which can be added to a :ref:`PhysicsBody<class_P
 Properties
 ----------
 
-+-------------------------------------------------+---------------------------------------------------------+----------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`points<class_ConvexPolygonShape_property_points>` | PoolVector3Array(  ) |
-+-------------------------------------------------+---------------------------------------------------------+----------------------+
++-------------------------------------------------+---------------------------------------------------------+--------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`points<class_ConvexPolygonShape_property_points>` | ``PoolVector3Array(  )`` |
++-------------------------------------------------+---------------------------------------------------------+--------------------------+
 
 Property Descriptions
 ---------------------
@@ -32,13 +32,13 @@ Property Descriptions
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **points**
 
-+-----------+----------------------+
-| *Default* | PoolVector3Array(  ) |
-+-----------+----------------------+
-| *Setter*  | set_points(value)    |
-+-----------+----------------------+
-| *Getter*  | get_points()         |
-+-----------+----------------------+
++-----------+--------------------------+
+| *Default* | ``PoolVector3Array(  )`` |
++-----------+--------------------------+
+| *Setter*  | set_points(value)        |
++-----------+--------------------------+
+| *Getter*  | get_points()             |
++-----------+--------------------------+
 
 The list of 3D points forming the convex polygon shape.
 

@@ -28,13 +28,13 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+----------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenTouch_property_index>`       | 0               |
-+-------------------------------+----------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenTouch_property_position>` | Vector2( 0, 0 ) |
-+-------------------------------+----------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`       | :ref:`pressed<class_InputEventScreenTouch_property_pressed>`   | false           |
-+-------------------------------+----------------------------------------------------------------+-----------------+
++-------------------------------+----------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenTouch_property_index>`       | ``0``               |
++-------------------------------+----------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenTouch_property_position>` | ``Vector2( 0, 0 )`` |
++-------------------------------+----------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`       | :ref:`pressed<class_InputEventScreenTouch_property_pressed>`   | ``false``           |
++-------------------------------+----------------------------------------------------------------+---------------------+
 
 Property Descriptions
 ---------------------
@@ -44,7 +44,7 @@ Property Descriptions
 - :ref:`int<class_int>` **index**
 
 +-----------+------------------+
-| *Default* | 0                |
+| *Default* | ``0``            |
 +-----------+------------------+
 | *Setter*  | set_index(value) |
 +-----------+------------------+
@@ -60,7 +60,7 @@ The touch index in the case of a multi-touch event. One index = one finger.
 - :ref:`Vector2<class_Vector2>` **position**
 
 +-----------+---------------------+
-| *Default* | Vector2( 0, 0 )     |
+| *Default* | ``Vector2( 0, 0 )`` |
 +-----------+---------------------+
 | *Setter*  | set_position(value) |
 +-----------+---------------------+
@@ -76,7 +76,7 @@ The touch position.
 - :ref:`bool<class_bool>` **pressed**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_pressed(value) |
 +-----------+--------------------+

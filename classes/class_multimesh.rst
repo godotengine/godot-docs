@@ -34,19 +34,19 @@ Tutorials
 Properties
 ----------
 
-+----------------------------------------------------------+--------------------------------------------------------------------------------+----+
-| :ref:`ColorFormat<enum_MultiMesh_ColorFormat>`           | :ref:`color_format<class_MultiMesh_property_color_format>`                     | 0  |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+----+
-| :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` | :ref:`custom_data_format<class_MultiMesh_property_custom_data_format>`         | 0  |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+----+
-| :ref:`int<class_int>`                                    | :ref:`instance_count<class_MultiMesh_property_instance_count>`                 | 0  |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+----+
-| :ref:`Mesh<class_Mesh>`                                  | :ref:`mesh<class_MultiMesh_property_mesh>`                                     |    |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+----+
-| :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`   | :ref:`transform_format<class_MultiMesh_property_transform_format>`             | 0  |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+----+
-| :ref:`int<class_int>`                                    | :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>` | -1 |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+----+
++----------------------------------------------------------+--------------------------------------------------------------------------------+--------+
+| :ref:`ColorFormat<enum_MultiMesh_ColorFormat>`           | :ref:`color_format<class_MultiMesh_property_color_format>`                     | ``0``  |
++----------------------------------------------------------+--------------------------------------------------------------------------------+--------+
+| :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` | :ref:`custom_data_format<class_MultiMesh_property_custom_data_format>`         | ``0``  |
++----------------------------------------------------------+--------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`                                    | :ref:`instance_count<class_MultiMesh_property_instance_count>`                 | ``0``  |
++----------------------------------------------------------+--------------------------------------------------------------------------------+--------+
+| :ref:`Mesh<class_Mesh>`                                  | :ref:`mesh<class_MultiMesh_property_mesh>`                                     |        |
++----------------------------------------------------------+--------------------------------------------------------------------------------+--------+
+| :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`   | :ref:`transform_format<class_MultiMesh_property_transform_format>`             | ``0``  |
++----------------------------------------------------------+--------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`                                    | :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>` | ``-1`` |
++----------------------------------------------------------+--------------------------------------------------------------------------------+--------+
 
 Methods
 -------
@@ -132,7 +132,7 @@ Property Descriptions
 - :ref:`ColorFormat<enum_MultiMesh_ColorFormat>` **color_format**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_color_format(value) |
 +-----------+-------------------------+
@@ -148,7 +148,7 @@ Format of colors in color array that gets passed to shader.
 - :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` **custom_data_format**
 
 +-----------+-------------------------------+
-| *Default* | 0                             |
+| *Default* | ``0``                         |
 +-----------+-------------------------------+
 | *Setter*  | set_custom_data_format(value) |
 +-----------+-------------------------------+
@@ -164,7 +164,7 @@ Format of custom data in custom data array that gets passed to shader.
 - :ref:`int<class_int>` **instance_count**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_instance_count(value) |
 +-----------+---------------------------+
@@ -194,7 +194,7 @@ Mesh to be drawn.
 - :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **transform_format**
 
 +-----------+-----------------------------+
-| *Default* | 0                           |
+| *Default* | ``0``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_transform_format(value) |
 +-----------+-----------------------------+
@@ -210,7 +210,7 @@ Format of transform used to transform mesh, either 2D or 3D.
 - :ref:`int<class_int>` **visible_instance_count**
 
 +-----------+-----------------------------------+
-| *Default* | -1                                |
+| *Default* | ``-1``                            |
 +-----------+-----------------------------------+
 | *Setter*  | set_visible_instance_count(value) |
 +-----------+-----------------------------------+

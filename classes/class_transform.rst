@@ -26,11 +26,11 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------+------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`basis<class_Transform_property_basis>`   | Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 ) |
-+-------------------------------+------------------------------------------------+------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`origin<class_Transform_property_origin>` | Vector3( 0, 0, 0 )                 |
-+-------------------------------+------------------------------------------------+------------------------------------+
++-------------------------------+------------------------------------------------+----------------------------------------+
+| :ref:`Basis<class_Basis>`     | :ref:`basis<class_Transform_property_basis>`   | ``Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )`` |
++-------------------------------+------------------------------------------------+----------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`origin<class_Transform_property_origin>` | ``Vector3( 0, 0, 0 )``                 |
++-------------------------------+------------------------------------------------+----------------------------------------+
 
 Methods
 -------
@@ -95,9 +95,9 @@ Property Descriptions
 
 - :ref:`Basis<class_Basis>` **basis**
 
-+-----------+------------------------------------+
-| *Default* | Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 ) |
-+-----------+------------------------------------+
++-----------+----------------------------------------+
+| *Default* | ``Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )`` |
++-----------+----------------------------------------+
 
 The basis is a matrix containing 3 :ref:`Vector3<class_Vector3>` as its columns: X axis, Y axis, and Z axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 
@@ -107,9 +107,9 @@ The basis is a matrix containing 3 :ref:`Vector3<class_Vector3>` as its columns:
 
 - :ref:`Vector3<class_Vector3>` **origin**
 
-+-----------+--------------------+
-| *Default* | Vector3( 0, 0, 0 ) |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 0, 0, 0 )`` |
++-----------+------------------------+
 
 The translation offset of the transform.
 

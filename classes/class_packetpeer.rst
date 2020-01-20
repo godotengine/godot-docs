@@ -23,11 +23,11 @@ PacketPeer is an abstraction and base class for packet-based protocols (such as 
 Properties
 ----------
 
-+-------------------------+---------------------------------------------------------------------------------+---------+
-| :ref:`bool<class_bool>` | :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`   | false   |
-+-------------------------+---------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`   | :ref:`encode_buffer_max_size<class_PacketPeer_property_encode_buffer_max_size>` | 8388608 |
-+-------------------------+---------------------------------------------------------------------------------+---------+
++-------------------------+---------------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>` | :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`   | ``false``   |
++-------------------------+---------------------------------------------------------------------------------+-------------+
+| :ref:`int<class_int>`   | :ref:`encode_buffer_max_size<class_PacketPeer_property_encode_buffer_max_size>` | ``8388608`` |
++-------------------------+---------------------------------------------------------------------------------+-------------+
 
 Methods
 -------
@@ -54,7 +54,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **allow_object_decoding**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_allow_object_decoding(value) |
 +-----------+----------------------------------+
@@ -74,7 +74,7 @@ If ``true``, the PacketPeer will allow encoding and decoding of object via :ref:
 - :ref:`int<class_int>` **encode_buffer_max_size**
 
 +-----------+-----------------------------------+
-| *Default* | 8388608                           |
+| *Default* | ``8388608``                       |
 +-----------+-----------------------------------+
 | *Setter*  | set_encode_buffer_max_size(value) |
 +-----------+-----------------------------------+

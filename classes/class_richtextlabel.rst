@@ -28,33 +28,33 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`     | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                             | false       |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`String<class_String>` | :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`                                   | ""          |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`Array<class_Array>`   | :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`                             | [  ]        |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                           | true        |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>` | false       |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>`   | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                           | 1.0         |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`     | rect_clip_content                                                                              | **O:** true |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                               | true        |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`     | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                         | false       |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`     | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                       | false       |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`int<class_int>`       | :ref:`tab_size<class_RichTextLabel_property_tab_size>`                                         | 4           |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`String<class_String>` | :ref:`text<class_RichTextLabel_property_text>`                                                 | ""          |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
-| :ref:`int<class_int>`       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                     | -1          |
-+-----------------------------+------------------------------------------------------------------------------------------------+-------------+
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`     | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                             | ``false``       |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`String<class_String>` | :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`                                   | ``""``          |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`Array<class_Array>`   | :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`                             | ``[  ]``        |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                           | ``true``        |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>` | ``false``       |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`float<class_float>`   | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                           | ``1.0``         |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`     | rect_clip_content                                                                              | **O:** ``true`` |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                               | ``true``        |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`     | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                         | ``false``       |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`     | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                       | ``false``       |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`       | :ref:`tab_size<class_RichTextLabel_property_tab_size>`                                         | ``4``           |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`String<class_String>` | :ref:`text<class_RichTextLabel_property_text>`                                                 | ``""``          |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                     | ``-1``          |
++-----------------------------+------------------------------------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -320,7 +320,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **bbcode_enabled**
 
 +-----------+-----------------------+
-| *Default* | false                 |
+| *Default* | ``false``             |
 +-----------+-----------------------+
 | *Setter*  | set_use_bbcode(value) |
 +-----------+-----------------------+
@@ -336,7 +336,7 @@ If ``true``, the label uses BBCode formatting.
 - :ref:`String<class_String>` **bbcode_text**
 
 +-----------+-------------------+
-| *Default* | ""                |
+| *Default* | ``""``            |
 +-----------+-------------------+
 | *Setter*  | set_bbcode(value) |
 +-----------+-------------------+
@@ -354,7 +354,7 @@ The label's text in BBCode format. Is not representative of manual modifications
 - :ref:`Array<class_Array>` **custom_effects**
 
 +-----------+--------------------+
-| *Default* | [  ]               |
+| *Default* | ``[  ]``           |
 +-----------+--------------------+
 | *Setter*  | set_effects(value) |
 +-----------+--------------------+
@@ -372,7 +372,7 @@ To add a custom effect, it's more convenient to use :ref:`install_effect<class_R
 - :ref:`bool<class_bool>` **meta_underlined**
 
 +-----------+---------------------------+
-| *Default* | true                      |
+| *Default* | ``true``                  |
 +-----------+---------------------------+
 | *Setter*  | set_meta_underline(value) |
 +-----------+---------------------------+
@@ -388,7 +388,7 @@ If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``.
 - :ref:`bool<class_bool>` **override_selected_font_color**
 
 +-----------+-----------------------------------------+
-| *Default* | false                                   |
+| *Default* | ``false``                               |
 +-----------+-----------------------------------------+
 | *Setter*  | set_override_selected_font_color(value) |
 +-----------+-----------------------------------------+
@@ -404,7 +404,7 @@ If ``true``, the label uses the custom font color.
 - :ref:`float<class_float>` **percent_visible**
 
 +-----------+----------------------------+
-| *Default* | 1.0                        |
+| *Default* | ``1.0``                    |
 +-----------+----------------------------+
 | *Setter*  | set_percent_visible(value) |
 +-----------+----------------------------+
@@ -422,7 +422,7 @@ The range of characters to display, as a :ref:`float<class_float>` between 0.0 a
 - :ref:`bool<class_bool>` **scroll_active**
 
 +-----------+--------------------------+
-| *Default* | true                     |
+| *Default* | ``true``                 |
 +-----------+--------------------------+
 | *Setter*  | set_scroll_active(value) |
 +-----------+--------------------------+
@@ -438,7 +438,7 @@ If ``true``, the scrollbar is visible. Setting this to ``false`` does not block 
 - :ref:`bool<class_bool>` **scroll_following**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_scroll_follow(value) |
 +-----------+--------------------------+
@@ -454,7 +454,7 @@ If ``true``, the window scrolls down to display new content automatically.
 - :ref:`bool<class_bool>` **selection_enabled**
 
 +-----------+------------------------------+
-| *Default* | false                        |
+| *Default* | ``false``                    |
 +-----------+------------------------------+
 | *Setter*  | set_selection_enabled(value) |
 +-----------+------------------------------+
@@ -470,7 +470,7 @@ If ``true``, the label allows text selection.
 - :ref:`int<class_int>` **tab_size**
 
 +-----------+---------------------+
-| *Default* | 4                   |
+| *Default* | ``4``               |
 +-----------+---------------------+
 | *Setter*  | set_tab_size(value) |
 +-----------+---------------------+
@@ -486,7 +486,7 @@ The number of spaces associated with a single tab length. Does not affect ``\t``
 - :ref:`String<class_String>` **text**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_text(value) |
 +-----------+-----------------+
@@ -504,7 +504,7 @@ When set, clears the tag stack and adds a raw text tag to the top of it. Does no
 - :ref:`int<class_int>` **visible_characters**
 
 +-----------+-------------------------------+
-| *Default* | -1                            |
+| *Default* | ``-1``                        |
 +-----------+-------------------------------+
 | *Setter*  | set_visible_characters(value) |
 +-----------+-------------------------------+

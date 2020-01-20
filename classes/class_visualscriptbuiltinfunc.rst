@@ -23,9 +23,9 @@ See also :ref:`@GDScript<class_@GDScript>`, for the same functions in the GDScri
 Properties
 ----------
 
-+--------------------------------------------------------------+------------------------------------------------------------------+---+
-| :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_property_function>` | 0 |
-+--------------------------------------------------------------+------------------------------------------------------------------+---+
++--------------------------------------------------------------+------------------------------------------------------------------+-------+
+| :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_property_function>` | ``0`` |
++--------------------------------------------------------------+------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -325,7 +325,7 @@ Property Descriptions
 - :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **function**
 
 +-----------+-----------------+
-| *Default* | 0               |
+| *Default* | ``0``           |
 +-----------+-----------------+
 | *Setter*  | set_func(value) |
 +-----------+-----------------+

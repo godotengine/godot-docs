@@ -23,15 +23,15 @@ Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_proper
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------+--------+
-| :ref:`float<class_float>`                        | :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` | 2000.0 |
-+--------------------------------------------------+--------------------------------------------------------------+--------+
-| :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` | :ref:`db<class_AudioEffectFilter_property_db>`               | 0      |
-+--------------------------------------------------+--------------------------------------------------------------+--------+
-| :ref:`float<class_float>`                        | :ref:`gain<class_AudioEffectFilter_property_gain>`           | 1.0    |
-+--------------------------------------------------+--------------------------------------------------------------+--------+
-| :ref:`float<class_float>`                        | :ref:`resonance<class_AudioEffectFilter_property_resonance>` | 0.5    |
-+--------------------------------------------------+--------------------------------------------------------------+--------+
++--------------------------------------------------+--------------------------------------------------------------+------------+
+| :ref:`float<class_float>`                        | :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` | ``2000.0`` |
++--------------------------------------------------+--------------------------------------------------------------+------------+
+| :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` | :ref:`db<class_AudioEffectFilter_property_db>`               | ``0``      |
++--------------------------------------------------+--------------------------------------------------------------+------------+
+| :ref:`float<class_float>`                        | :ref:`gain<class_AudioEffectFilter_property_gain>`           | ``1.0``    |
++--------------------------------------------------+--------------------------------------------------------------+------------+
+| :ref:`float<class_float>`                        | :ref:`resonance<class_AudioEffectFilter_property_resonance>` | ``0.5``    |
++--------------------------------------------------+--------------------------------------------------------------+------------+
 
 Enumerations
 ------------
@@ -64,7 +64,7 @@ Property Descriptions
 - :ref:`float<class_float>` **cutoff_hz**
 
 +-----------+-------------------+
-| *Default* | 2000.0            |
+| *Default* | ``2000.0``        |
 +-----------+-------------------+
 | *Setter*  | set_cutoff(value) |
 +-----------+-------------------+
@@ -80,7 +80,7 @@ Threshold frequency for the filter, in Hz.
 - :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db**
 
 +-----------+---------------+
-| *Default* | 0             |
+| *Default* | ``0``         |
 +-----------+---------------+
 | *Setter*  | set_db(value) |
 +-----------+---------------+
@@ -94,7 +94,7 @@ Threshold frequency for the filter, in Hz.
 - :ref:`float<class_float>` **gain**
 
 +-----------+-----------------+
-| *Default* | 1.0             |
+| *Default* | ``1.0``         |
 +-----------+-----------------+
 | *Setter*  | set_gain(value) |
 +-----------+-----------------+
@@ -110,7 +110,7 @@ Gain amount of the frequencies after the filter.
 - :ref:`float<class_float>` **resonance**
 
 +-----------+----------------------+
-| *Default* | 0.5                  |
+| *Default* | ``0.5``              |
 +-----------+----------------------+
 | *Setter*  | set_resonance(value) |
 +-----------+----------------------+

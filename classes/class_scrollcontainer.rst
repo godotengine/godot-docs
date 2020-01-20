@@ -23,21 +23,21 @@ A ScrollContainer node meant to contain a :ref:`Control<class_Control>` child. S
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>` | :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`                           | false       |
-+-------------------------+--------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>` | rect_clip_content                                                                          | **O:** true |
-+-------------------------+--------------------------------------------------------------------------------------------+-------------+
-| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | 0           |
-+-------------------------+--------------------------------------------------------------------------------------------+-------------+
-| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | 0           |
-+-------------------------+--------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | true        |
-+-------------------------+--------------------------------------------------------------------------------------------+-------------+
-| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | 0           |
-+-------------------------+--------------------------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | true        |
-+-------------------------+--------------------------------------------------------------------------------------------+-------------+
++-------------------------+--------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>` | :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`                           | ``false``       |
++-------------------------+--------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>` | rect_clip_content                                                                          | **O:** ``true`` |
++-------------------------+--------------------------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | ``0``           |
++-------------------------+--------------------------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | ``0``           |
++-------------------------+--------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | ``true``        |
++-------------------------+--------------------------------------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | ``0``           |
++-------------------------+--------------------------------------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | ``true``        |
++-------------------------+--------------------------------------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -80,7 +80,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **follow_focus**
 
 +-----------+-------------------------+
-| *Default* | false                   |
+| *Default* | ``false``               |
 +-----------+-------------------------+
 | *Setter*  | set_follow_focus(value) |
 +-----------+-------------------------+
@@ -96,7 +96,7 @@ If ``true``, the ScrollContainer will automatically scroll to focused children (
 - :ref:`int<class_int>` **scroll_deadzone**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_deadzone(value) |
 +-----------+---------------------+
@@ -110,7 +110,7 @@ If ``true``, the ScrollContainer will automatically scroll to focused children (
 - :ref:`int<class_int>` **scroll_horizontal**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_h_scroll(value) |
 +-----------+---------------------+
@@ -126,7 +126,7 @@ The current horizontal scroll value.
 - :ref:`bool<class_bool>` **scroll_horizontal_enabled**
 
 +-----------+----------------------------+
-| *Default* | true                       |
+| *Default* | ``true``                   |
 +-----------+----------------------------+
 | *Setter*  | set_enable_h_scroll(value) |
 +-----------+----------------------------+
@@ -142,7 +142,7 @@ If ``true``, enables horizontal scrolling.
 - :ref:`int<class_int>` **scroll_vertical**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_v_scroll(value) |
 +-----------+---------------------+
@@ -158,7 +158,7 @@ The current vertical scroll value.
 - :ref:`bool<class_bool>` **scroll_vertical_enabled**
 
 +-----------+----------------------------+
-| *Default* | true                       |
+| *Default* | ``true``                   |
 +-----------+----------------------------+
 | *Setter*  | set_enable_v_scroll(value) |
 +-----------+----------------------------+

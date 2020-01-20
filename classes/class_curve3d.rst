@@ -23,11 +23,11 @@ It keeps a cache of precalculated points along the curve, to speed up further ca
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`bake_interval<class_Curve3D_property_bake_interval>`         | 0.2  |
-+---------------------------+--------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`   | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` | true |
-+---------------------------+--------------------------------------------------------------------+------+
++---------------------------+--------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`bake_interval<class_Curve3D_property_bake_interval>`         | ``0.2``  |
++---------------------------+--------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` | ``true`` |
++---------------------------+--------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -88,7 +88,7 @@ Property Descriptions
 - :ref:`float<class_float>` **bake_interval**
 
 +-----------+--------------------------+
-| *Default* | 0.2                      |
+| *Default* | ``0.2``                  |
 +-----------+--------------------------+
 | *Setter*  | set_bake_interval(value) |
 +-----------+--------------------------+
@@ -104,7 +104,7 @@ The distance in meters between two adjacent cached points. Changing it forces th
 - :ref:`bool<class_bool>` **up_vector_enabled**
 
 +-----------+------------------------------+
-| *Default* | true                         |
+| *Default* | ``true``                     |
 +-----------+------------------------------+
 | *Setter*  | set_up_vector_enabled(value) |
 +-----------+------------------------------+

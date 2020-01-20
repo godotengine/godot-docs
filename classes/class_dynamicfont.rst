@@ -30,27 +30,27 @@ DynamicFont uses the `FreeType <https://www.freetype.org/>`_ library for rasteri
 Properties
 ----------
 
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                         | :ref:`extra_spacing_bottom<class_DynamicFont_property_extra_spacing_bottom>` | 0                   |
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                         | :ref:`extra_spacing_char<class_DynamicFont_property_extra_spacing_char>`     | 0                   |
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                         | :ref:`extra_spacing_space<class_DynamicFont_property_extra_spacing_space>`   | 0                   |
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                         | :ref:`extra_spacing_top<class_DynamicFont_property_extra_spacing_top>`       | 0                   |
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`DynamicFontData<class_DynamicFontData>` | :ref:`font_data<class_DynamicFont_property_font_data>`                       |                     |
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`                     | :ref:`outline_color<class_DynamicFont_property_outline_color>`               | Color( 1, 1, 1, 1 ) |
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                         | :ref:`outline_size<class_DynamicFont_property_outline_size>`                 | 0                   |
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                         | :ref:`size<class_DynamicFont_property_size>`                                 | 16                  |
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                       | :ref:`use_filter<class_DynamicFont_property_use_filter>`                     | false               |
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                       | :ref:`use_mipmaps<class_DynamicFont_property_use_mipmaps>`                   | false               |
-+-----------------------------------------------+------------------------------------------------------------------------------+---------------------+
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                         | :ref:`extra_spacing_bottom<class_DynamicFont_property_extra_spacing_bottom>` | ``0``                   |
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                         | :ref:`extra_spacing_char<class_DynamicFont_property_extra_spacing_char>`     | ``0``                   |
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                         | :ref:`extra_spacing_space<class_DynamicFont_property_extra_spacing_space>`   | ``0``                   |
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                         | :ref:`extra_spacing_top<class_DynamicFont_property_extra_spacing_top>`       | ``0``                   |
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
+| :ref:`DynamicFontData<class_DynamicFontData>` | :ref:`font_data<class_DynamicFont_property_font_data>`                       |                         |
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`                     | :ref:`outline_color<class_DynamicFont_property_outline_color>`               | ``Color( 1, 1, 1, 1 )`` |
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                         | :ref:`outline_size<class_DynamicFont_property_outline_size>`                 | ``0``                   |
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                         | :ref:`size<class_DynamicFont_property_size>`                                 | ``16``                  |
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`use_filter<class_DynamicFont_property_use_filter>`                     | ``false``               |
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`use_mipmaps<class_DynamicFont_property_use_mipmaps>`                   | ``false``               |
++-----------------------------------------------+------------------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -102,7 +102,7 @@ Property Descriptions
 - :ref:`int<class_int>` **extra_spacing_bottom**
 
 +-----------+--------------------+
-| *Default* | 0                  |
+| *Default* | ``0``              |
 +-----------+--------------------+
 | *Setter*  | set_spacing(value) |
 +-----------+--------------------+
@@ -118,7 +118,7 @@ Extra spacing at the bottom in pixels.
 - :ref:`int<class_int>` **extra_spacing_char**
 
 +-----------+--------------------+
-| *Default* | 0                  |
+| *Default* | ``0``              |
 +-----------+--------------------+
 | *Setter*  | set_spacing(value) |
 +-----------+--------------------+
@@ -134,7 +134,7 @@ Extra character spacing in pixels.
 - :ref:`int<class_int>` **extra_spacing_space**
 
 +-----------+--------------------+
-| *Default* | 0                  |
+| *Default* | ``0``              |
 +-----------+--------------------+
 | *Setter*  | set_spacing(value) |
 +-----------+--------------------+
@@ -150,7 +150,7 @@ Extra space spacing in pixels.
 - :ref:`int<class_int>` **extra_spacing_top**
 
 +-----------+--------------------+
-| *Default* | 0                  |
+| *Default* | ``0``              |
 +-----------+--------------------+
 | *Setter*  | set_spacing(value) |
 +-----------+--------------------+
@@ -180,7 +180,7 @@ The font data.
 - :ref:`Color<class_Color>` **outline_color**
 
 +-----------+--------------------------+
-| *Default* | Color( 1, 1, 1, 1 )      |
+| *Default* | ``Color( 1, 1, 1, 1 )``  |
 +-----------+--------------------------+
 | *Setter*  | set_outline_color(value) |
 +-----------+--------------------------+
@@ -198,7 +198,7 @@ The font outline's color.
 - :ref:`int<class_int>` **outline_size**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_outline_size(value) |
 +-----------+-------------------------+
@@ -214,7 +214,7 @@ The font outline's thickness in pixels (not relative to the font size).
 - :ref:`int<class_int>` **size**
 
 +-----------+-----------------+
-| *Default* | 16              |
+| *Default* | ``16``          |
 +-----------+-----------------+
 | *Setter*  | set_size(value) |
 +-----------+-----------------+
@@ -230,7 +230,7 @@ The font size in pixels.
 - :ref:`bool<class_bool>` **use_filter**
 
 +-----------+-----------------------+
-| *Default* | false                 |
+| *Default* | ``false``             |
 +-----------+-----------------------+
 | *Setter*  | set_use_filter(value) |
 +-----------+-----------------------+
@@ -246,7 +246,7 @@ If ``true``, filtering is used. This makes the font blurry instead of pixelated 
 - :ref:`bool<class_bool>` **use_mipmaps**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_use_mipmaps(value) |
 +-----------+------------------------+

@@ -29,9 +29,9 @@ none
 Properties
 ----------
 
-+-----------------------------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` | 0 |
-+-----------------------------------------------------------------+-------------------------------------------------------------------+---+
++-----------------------------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` | ``0`` |
++-----------------------------------------------------------------+-------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -84,7 +84,7 @@ Property Descriptions
 - :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant**
 
 +-----------+--------------------------+
-| *Default* | 0                        |
+| *Default* | ``0``                    |
 +-----------+--------------------------+
 | *Setter*  | set_math_constant(value) |
 +-----------+--------------------------+

@@ -23,15 +23,15 @@ It takes :ref:`Animation<class_Animation>`\ s from an :ref:`AnimationPlayer<clas
 Properties
 ----------
 
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
-| :ref:`bool<class_bool>`                                                    | :ref:`active<class_AnimationTreePlayer_property_active>`                               | false          |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
-| :ref:`NodePath<class_NodePath>`                                            | :ref:`base_path<class_AnimationTreePlayer_property_base_path>`                         | NodePath("..") |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
-| :ref:`NodePath<class_NodePath>`                                            | :ref:`master_player<class_AnimationTreePlayer_property_master_player>`                 | NodePath("")   |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
-| :ref:`AnimationProcessMode<enum_AnimationTreePlayer_AnimationProcessMode>` | :ref:`playback_process_mode<class_AnimationTreePlayer_property_playback_process_mode>` | 1              |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+----------------+
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`                                                    | :ref:`active<class_AnimationTreePlayer_property_active>`                               | ``false``          |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------+
+| :ref:`NodePath<class_NodePath>`                                            | :ref:`base_path<class_AnimationTreePlayer_property_base_path>`                         | ``NodePath("..")`` |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------+
+| :ref:`NodePath<class_NodePath>`                                            | :ref:`master_player<class_AnimationTreePlayer_property_master_player>`                 | ``NodePath("")``   |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------+
+| :ref:`AnimationProcessMode<enum_AnimationTreePlayer_AnimationProcessMode>` | :ref:`playback_process_mode<class_AnimationTreePlayer_property_playback_process_mode>` | ``1``              |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------------+
 
 Methods
 -------
@@ -221,7 +221,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **active**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_active(value) |
 +-----------+-------------------+
@@ -237,7 +237,7 @@ If ``true``, the ``AnimationTreePlayer`` is able to play animations.
 - :ref:`NodePath<class_NodePath>` **base_path**
 
 +-----------+----------------------+
-| *Default* | NodePath("..")       |
+| *Default* | ``NodePath("..")``   |
 +-----------+----------------------+
 | *Setter*  | set_base_path(value) |
 +-----------+----------------------+
@@ -255,7 +255,7 @@ It accesses the Bones, so it should point to the same Node the AnimationPlayer w
 - :ref:`NodePath<class_NodePath>` **master_player**
 
 +-----------+--------------------------+
-| *Default* | NodePath("")             |
+| *Default* | ``NodePath("")``         |
 +-----------+--------------------------+
 | *Setter*  | set_master_player(value) |
 +-----------+--------------------------+
@@ -273,7 +273,7 @@ Once set, Animation nodes can be added to the AnimationTreePlayer.
 - :ref:`AnimationProcessMode<enum_AnimationTreePlayer_AnimationProcessMode>` **playback_process_mode**
 
 +-----------+-----------------------------------+
-| *Default* | 1                                 |
+| *Default* | ``1``                             |
 +-----------+-----------------------------------+
 | *Setter*  | set_animation_process_mode(value) |
 +-----------+-----------------------------------+

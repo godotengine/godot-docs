@@ -23,15 +23,15 @@ This dialog is useful for small notifications to the user about an event. It can
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     | false           |
-+-----------------------------+-------------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` | true            |
-+-----------------------------+-------------------------------------------------------------------------+-----------------+
-| :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             | ""              |
-+-----------------------------+-------------------------------------------------------------------------+-----------------+
-| :ref:`String<class_String>` | window_title                                                            | **O:** "Alert!" |
-+-----------------------------+-------------------------------------------------------------------------+-----------------+
++-----------------------------+-------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     | ``false``           |
++-----------------------------+-------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` | ``true``            |
++-----------------------------+-------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             | ``""``              |
++-----------------------------+-------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>` | window_title                                                            | **O:** ``"Alert!"`` |
++-----------------------------+-------------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -73,7 +73,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **dialog_autowrap**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_autowrap(value) |
 +-----------+---------------------+
@@ -89,7 +89,7 @@ Sets autowrapping for the text in the dialog.
 - :ref:`bool<class_bool>` **dialog_hide_on_ok**
 
 +-----------+-----------------------+
-| *Default* | true                  |
+| *Default* | ``true``              |
 +-----------+-----------------------+
 | *Setter*  | set_hide_on_ok(value) |
 +-----------+-----------------------+
@@ -107,7 +107,7 @@ If ``true``, the dialog is hidden when the OK button is pressed. You can set it 
 - :ref:`String<class_String>` **dialog_text**
 
 +-----------+-----------------+
-| *Default* | ""              |
+| *Default* | ``""``          |
 +-----------+-----------------+
 | *Setter*  | set_text(value) |
 +-----------+-----------------+

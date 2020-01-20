@@ -33,9 +33,9 @@ Chooses between two input values based on a Boolean condition.
 Properties
 ----------
 
-+-----------------------------------------------------+-----------------------------------------------------+---+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptSelect_property_type>` | 0 |
-+-----------------------------------------------------+-----------------------------------------------------+---+
++-----------------------------------------------------+-----------------------------------------------------+-------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptSelect_property_type>` | ``0`` |
++-----------------------------------------------------+-----------------------------------------------------+-------+
 
 Property Descriptions
 ---------------------
@@ -45,7 +45,7 @@ Property Descriptions
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
 +-----------+------------------+
-| *Default* | 0                |
+| *Default* | ``0``            |
 +-----------+------------------+
 | *Setter*  | set_typed(value) |
 +-----------+------------------+

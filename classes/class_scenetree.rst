@@ -32,29 +32,29 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`Node<class_Node>`                                         | :ref:`current_scene<class_SceneTree_property_current_scene>`                                   |       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>`                   | false |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>`                   | false |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`Node<class_Node>`                                         | :ref:`edited_scene_root<class_SceneTree_property_edited_scene_root>`                           |       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>`                     | :ref:`multiplayer<class_SceneTree_property_multiplayer>`                                       |       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`multiplayer_poll<class_SceneTree_property_multiplayer_poll>`                             | true  |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_SceneTree_property_network_peer>`                                     |       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`paused<class_SceneTree_property_paused>`                                                 | false |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_SceneTree_property_refuse_new_network_connections>` | false |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`Viewport<class_Viewport>`                                 | :ref:`root<class_SceneTree_property_root>`                                                     |       |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`use_font_oversampling<class_SceneTree_property_use_font_oversampling>`                   | false |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`Node<class_Node>`                                         | :ref:`current_scene<class_SceneTree_property_current_scene>`                                   |           |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>`                   | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>`                   | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`Node<class_Node>`                                         | :ref:`edited_scene_root<class_SceneTree_property_edited_scene_root>`                           |           |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`MultiplayerAPI<class_MultiplayerAPI>`                     | :ref:`multiplayer<class_SceneTree_property_multiplayer>`                                       |           |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`multiplayer_poll<class_SceneTree_property_multiplayer_poll>`                             | ``true``  |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_SceneTree_property_network_peer>`                                     |           |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`paused<class_SceneTree_property_paused>`                                                 | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_SceneTree_property_refuse_new_network_connections>` | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`Viewport<class_Viewport>`                                 | :ref:`root<class_SceneTree_property_root>`                                                     |           |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`use_font_oversampling<class_SceneTree_property_use_font_oversampling>`                   | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -323,7 +323,7 @@ The current scene.
 - :ref:`bool<class_bool>` **debug_collisions_hint**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_debug_collisions_hint(value) |
 +-----------+----------------------------------+
@@ -339,7 +339,7 @@ If ``true``, collision shapes will be visible when running the game from the edi
 - :ref:`bool<class_bool>` **debug_navigation_hint**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_debug_navigation_hint(value) |
 +-----------+----------------------------------+
@@ -383,7 +383,7 @@ The default :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance for this ``Scen
 - :ref:`bool<class_bool>` **multiplayer_poll**
 
 +-----------+-------------------------------------+
-| *Default* | true                                |
+| *Default* | ``true``                            |
 +-----------+-------------------------------------+
 | *Setter*  | set_multiplayer_poll_enabled(value) |
 +-----------+-------------------------------------+
@@ -415,7 +415,7 @@ The peer object to handle the RPC system (effectively enabling networking when s
 - :ref:`bool<class_bool>` **paused**
 
 +-----------+------------------+
-| *Default* | false            |
+| *Default* | ``false``        |
 +-----------+------------------+
 | *Setter*  | set_pause(value) |
 +-----------+------------------+
@@ -435,7 +435,7 @@ If ``true``, the ``SceneTree`` is paused. Doing so will have the following behav
 - :ref:`bool<class_bool>` **refuse_new_network_connections**
 
 +-----------+-------------------------------------------+
-| *Default* | false                                     |
+| *Default* | ``false``                                 |
 +-----------+-------------------------------------------+
 | *Setter*  | set_refuse_new_network_connections(value) |
 +-----------+-------------------------------------------+
@@ -463,7 +463,7 @@ The ``SceneTree``'s root :ref:`Viewport<class_Viewport>`.
 - :ref:`bool<class_bool>` **use_font_oversampling**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_use_font_oversampling(value) |
 +-----------+----------------------------------+

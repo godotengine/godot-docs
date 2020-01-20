@@ -27,9 +27,9 @@ For example, if your character is driving a car, the ARVROrigin node should be a
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`world_scale<class_ARVROrigin_property_world_scale>` | 1.0 |
-+---------------------------+-----------------------------------------------------------+-----+
++---------------------------+-----------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`world_scale<class_ARVROrigin_property_world_scale>` | ``1.0`` |
++---------------------------+-----------------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
@@ -39,7 +39,7 @@ Property Descriptions
 - :ref:`float<class_float>` **world_scale**
 
 +-----------+------------------------+
-| *Default* | 1.0                    |
+| *Default* | ``1.0``                |
 +-----------+------------------------+
 | *Setter*  | set_world_scale(value) |
 +-----------+------------------------+

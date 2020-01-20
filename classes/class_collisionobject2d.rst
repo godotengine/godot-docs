@@ -23,9 +23,9 @@ CollisionObject2D is the base class for 2D physics objects. It can hold any numb
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>` | :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` | true |
-+-------------------------+------------------------------------------------------------------------+------+
++-------------------------+------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>` | :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` | ``true`` |
++-------------------------+------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -107,7 +107,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **input_pickable**
 
 +-----------+---------------------+
-| *Default* | true                |
+| *Default* | ``true``            |
 +-----------+---------------------+
 | *Setter*  | set_pickable(value) |
 +-----------+---------------------+

@@ -28,11 +28,11 @@ Tutorials
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`collision_layer<class_PhysicsBody_property_collision_layer>` | 1 |
-+-----------------------+--------------------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`collision_mask<class_PhysicsBody_property_collision_mask>`   | 1 |
-+-----------------------+--------------------------------------------------------------------+---+
++-----------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`collision_layer<class_PhysicsBody_property_collision_layer>` | ``1`` |
++-----------------------+--------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`collision_mask<class_PhysicsBody_property_collision_mask>`   | ``1`` |
++-----------------------+--------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -61,7 +61,7 @@ Property Descriptions
 - :ref:`int<class_int>` **collision_layer**
 
 +-----------+----------------------------+
-| *Default* | 1                          |
+| *Default* | ``1``                      |
 +-----------+----------------------------+
 | *Setter*  | set_collision_layer(value) |
 +-----------+----------------------------+
@@ -81,7 +81,7 @@ A contact is detected if object A is in any of the layers that object B scans, o
 - :ref:`int<class_int>` **collision_mask**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_collision_mask(value) |
 +-----------+---------------------------+

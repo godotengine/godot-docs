@@ -28,21 +28,21 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                               | :ref:`always_ordered<class_NetworkedMultiplayerENet_property_always_ordered>`     | false        |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                                                 | :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>`       | 3            |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` | 0            |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                               | refuse_new_connections                                                            | **O:** false |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                               | :ref:`server_relay<class_NetworkedMultiplayerENet_property_server_relay>`         | true         |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | -1           |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>`       | transfer_mode                                                                     | **O:** 2     |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`always_ordered<class_NetworkedMultiplayerENet_property_always_ordered>`     | ``false``        |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`int<class_int>`                                                 | :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>`       | ``3``            |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` | ``0``            |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                                               | refuse_new_connections                                                            | **O:** ``false`` |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`server_relay<class_NetworkedMultiplayerENet_property_server_relay>`         | ``true``         |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | ``-1``           |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>`       | transfer_mode                                                                     | **O:** ``2``     |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
 
 Methods
 -------
@@ -102,7 +102,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **always_ordered**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_always_ordered(value) |
 +-----------+---------------------------+
@@ -118,7 +118,7 @@ Enforce ordered packets when using :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_
 - :ref:`int<class_int>` **channel_count**
 
 +-----------+--------------------------+
-| *Default* | 3                        |
+| *Default* | ``3``                    |
 +-----------+--------------------------+
 | *Setter*  | set_channel_count(value) |
 +-----------+--------------------------+
@@ -134,7 +134,7 @@ The number of channels to be used by ENet. Channels are used to separate differe
 - :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **compression_mode**
 
 +-----------+-----------------------------+
-| *Default* | 0                           |
+| *Default* | ``0``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_compression_mode(value) |
 +-----------+-----------------------------+
@@ -150,7 +150,7 @@ The compression method used for network packets. These have different tradeoffs 
 - :ref:`bool<class_bool>` **server_relay**
 
 +-----------+---------------------------------+
-| *Default* | true                            |
+| *Default* | ``true``                        |
 +-----------+---------------------------------+
 | *Setter*  | set_server_relay_enabled(value) |
 +-----------+---------------------------------+
@@ -166,7 +166,7 @@ Enable or disable the server feature that notifies clients of other peers' conne
 - :ref:`int<class_int>` **transfer_channel**
 
 +-----------+-----------------------------+
-| *Default* | -1                          |
+| *Default* | ``-1``                      |
 +-----------+-----------------------------+
 | *Setter*  | set_transfer_channel(value) |
 +-----------+-----------------------------+

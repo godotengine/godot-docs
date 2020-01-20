@@ -21,25 +21,25 @@ Button for touch screen devices. You can set it to be visible on all screens, or
 Properties
 ----------
 
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>`                                  | :ref:`action<class_TouchScreenButton_property_action>`                   | ""    |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`BitMap<class_BitMap>`                                  | :ref:`bitmask<class_TouchScreenButton_property_bitmask>`                 |       |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                                | :ref:`normal<class_TouchScreenButton_property_normal>`                   |       |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                      | :ref:`passby_press<class_TouchScreenButton_property_passby_press>`       | false |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                                | :ref:`pressed<class_TouchScreenButton_property_pressed>`                 |       |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`Shape2D<class_Shape2D>`                                | :ref:`shape<class_TouchScreenButton_property_shape>`                     |       |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                      | :ref:`shape_centered<class_TouchScreenButton_property_shape_centered>`   | true  |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                      | :ref:`shape_visible<class_TouchScreenButton_property_shape_visible>`     | true  |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` | :ref:`visibility_mode<class_TouchScreenButton_property_visibility_mode>` | 0     |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`                                  | :ref:`action<class_TouchScreenButton_property_action>`                   | ``""``    |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`BitMap<class_BitMap>`                                  | :ref:`bitmask<class_TouchScreenButton_property_bitmask>`                 |           |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                                | :ref:`normal<class_TouchScreenButton_property_normal>`                   |           |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                      | :ref:`passby_press<class_TouchScreenButton_property_passby_press>`       | ``false`` |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                                | :ref:`pressed<class_TouchScreenButton_property_pressed>`                 |           |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`Shape2D<class_Shape2D>`                                | :ref:`shape<class_TouchScreenButton_property_shape>`                     |           |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                      | :ref:`shape_centered<class_TouchScreenButton_property_shape_centered>`   | ``true``  |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                      | :ref:`shape_visible<class_TouchScreenButton_property_shape_visible>`     | ``true``  |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` | :ref:`visibility_mode<class_TouchScreenButton_property_visibility_mode>` | ``0``     |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -88,7 +88,7 @@ Property Descriptions
 - :ref:`String<class_String>` **action**
 
 +-----------+-------------------+
-| *Default* | ""                |
+| *Default* | ``""``            |
 +-----------+-------------------+
 | *Setter*  | set_action(value) |
 +-----------+-------------------+
@@ -132,7 +132,7 @@ The button's texture for the normal state.
 - :ref:`bool<class_bool>` **passby_press**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_passby_press(value)   |
 +-----------+---------------------------+
@@ -176,7 +176,7 @@ The button's shape.
 - :ref:`bool<class_bool>` **shape_centered**
 
 +-----------+---------------------------+
-| *Default* | true                      |
+| *Default* | ``true``                  |
 +-----------+---------------------------+
 | *Setter*  | set_shape_centered(value) |
 +-----------+---------------------------+
@@ -192,7 +192,7 @@ If ``true``, the button's shape is centered in the provided texture. If no textu
 - :ref:`bool<class_bool>` **shape_visible**
 
 +-----------+--------------------------+
-| *Default* | true                     |
+| *Default* | ``true``                 |
 +-----------+--------------------------+
 | *Setter*  | set_shape_visible(value) |
 +-----------+--------------------------+
@@ -208,7 +208,7 @@ If ``true``, the button's shape is visible.
 - :ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` **visibility_mode**
 
 +-----------+----------------------------+
-| *Default* | 0                          |
+| *Default* | ``0``                      |
 +-----------+----------------------------+
 | *Setter*  | set_visibility_mode(value) |
 +-----------+----------------------------+

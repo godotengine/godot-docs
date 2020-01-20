@@ -21,9 +21,9 @@ A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTre
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeAdd2_property_sync>` | false |
-+-------------------------+----------------------------------------------------+-------+
++-------------------------+----------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeAdd2_property_sync>` | ``false`` |
++-------------------------+----------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -33,7 +33,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **sync**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_use_sync(value) |
 +-----------+---------------------+

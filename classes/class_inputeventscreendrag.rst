@@ -26,15 +26,15 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_property_index>`       | 0               |
-+-------------------------------+---------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_property_position>` | Vector2( 0, 0 ) |
-+-------------------------------+---------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_property_relative>` | Vector2( 0, 0 ) |
-+-------------------------------+---------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventScreenDrag_property_speed>`       | Vector2( 0, 0 ) |
-+-------------------------------+---------------------------------------------------------------+-----------------+
++-------------------------------+---------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_property_index>`       | ``0``               |
++-------------------------------+---------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_property_position>` | ``Vector2( 0, 0 )`` |
++-------------------------------+---------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_property_relative>` | ``Vector2( 0, 0 )`` |
++-------------------------------+---------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventScreenDrag_property_speed>`       | ``Vector2( 0, 0 )`` |
++-------------------------------+---------------------------------------------------------------+---------------------+
 
 Property Descriptions
 ---------------------
@@ -44,7 +44,7 @@ Property Descriptions
 - :ref:`int<class_int>` **index**
 
 +-----------+------------------+
-| *Default* | 0                |
+| *Default* | ``0``            |
 +-----------+------------------+
 | *Setter*  | set_index(value) |
 +-----------+------------------+
@@ -60,7 +60,7 @@ The drag event index in the case of a multi-drag event.
 - :ref:`Vector2<class_Vector2>` **position**
 
 +-----------+---------------------+
-| *Default* | Vector2( 0, 0 )     |
+| *Default* | ``Vector2( 0, 0 )`` |
 +-----------+---------------------+
 | *Setter*  | set_position(value) |
 +-----------+---------------------+
@@ -76,7 +76,7 @@ The drag position.
 - :ref:`Vector2<class_Vector2>` **relative**
 
 +-----------+---------------------+
-| *Default* | Vector2( 0, 0 )     |
+| *Default* | ``Vector2( 0, 0 )`` |
 +-----------+---------------------+
 | *Setter*  | set_relative(value) |
 +-----------+---------------------+
@@ -91,13 +91,13 @@ The drag position relative to its start position.
 
 - :ref:`Vector2<class_Vector2>` **speed**
 
-+-----------+------------------+
-| *Default* | Vector2( 0, 0 )  |
-+-----------+------------------+
-| *Setter*  | set_speed(value) |
-+-----------+------------------+
-| *Getter*  | get_speed()      |
-+-----------+------------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
+| *Setter*  | set_speed(value)    |
++-----------+---------------------+
+| *Getter*  | get_speed()         |
++-----------+---------------------+
 
 The drag speed.
 

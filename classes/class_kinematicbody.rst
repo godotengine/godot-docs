@@ -30,15 +30,15 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody_property_collision/safe_margin>` | 0.001 |
-+---------------------------+----------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_x<class_KinematicBody_property_move_lock_x>`                     | false |
-+---------------------------+----------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_y<class_KinematicBody_property_move_lock_y>`                     | false |
-+---------------------------+----------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_z<class_KinematicBody_property_move_lock_z>`                     | false |
-+---------------------------+----------------------------------------------------------------------------------+-------+
++---------------------------+----------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody_property_collision/safe_margin>` | ``0.001`` |
++---------------------------+----------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`move_lock_x<class_KinematicBody_property_move_lock_x>`                     | ``false`` |
++---------------------------+----------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`move_lock_y<class_KinematicBody_property_move_lock_y>`                     | ``false`` |
++---------------------------+----------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`move_lock_z<class_KinematicBody_property_move_lock_z>`                     | ``false`` |
++---------------------------+----------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -79,7 +79,7 @@ Property Descriptions
 - :ref:`float<class_float>` **collision/safe_margin**
 
 +-----------+------------------------+
-| *Default* | 0.001                  |
+| *Default* | ``0.001``              |
 +-----------+------------------------+
 | *Setter*  | set_safe_margin(value) |
 +-----------+------------------------+
@@ -95,7 +95,7 @@ If the body is at least this close to another body, this body will consider them
 - :ref:`bool<class_bool>` **move_lock_x**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_axis_lock(value) |
 +-----------+----------------------+
@@ -111,7 +111,7 @@ Lock the body's X axis movement.
 - :ref:`bool<class_bool>` **move_lock_y**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_axis_lock(value) |
 +-----------+----------------------+
@@ -127,7 +127,7 @@ Lock the body's Y axis movement.
 - :ref:`bool<class_bool>` **move_lock_z**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_axis_lock(value) |
 +-----------+----------------------+

@@ -16,9 +16,9 @@ VisualShaderNodeVectorDerivativeFunc
 Properties
 ----------
 
-+---------------------------------------------------------------------+-------------------------------------------------------------------------------+---+
-| :ref:`Function<enum_VisualShaderNodeVectorDerivativeFunc_Function>` | :ref:`function<class_VisualShaderNodeVectorDerivativeFunc_property_function>` | 0 |
-+---------------------------------------------------------------------+-------------------------------------------------------------------------------+---+
++---------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
+| :ref:`Function<enum_VisualShaderNodeVectorDerivativeFunc_Function>` | :ref:`function<class_VisualShaderNodeVectorDerivativeFunc_property_function>` | ``0`` |
++---------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -47,7 +47,7 @@ Property Descriptions
 - :ref:`Function<enum_VisualShaderNodeVectorDerivativeFunc_Function>` **function**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_function(value) |
 +-----------+---------------------+

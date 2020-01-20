@@ -21,15 +21,15 @@ Returned by :ref:`JSON.parse<class_JSON_method_parse>`, ``JSONParseResult`` cont
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------------+----+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`error<class_JSONParseResult_property_error>`               |    |
-+---------------------------------------+------------------------------------------------------------------+----+
-| :ref:`int<class_int>`                 | :ref:`error_line<class_JSONParseResult_property_error_line>`     | -1 |
-+---------------------------------------+------------------------------------------------------------------+----+
-| :ref:`String<class_String>`           | :ref:`error_string<class_JSONParseResult_property_error_string>` | "" |
-+---------------------------------------+------------------------------------------------------------------+----+
-| :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_property_result>`             |    |
-+---------------------------------------+------------------------------------------------------------------+----+
++---------------------------------------+------------------------------------------------------------------+--------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`error<class_JSONParseResult_property_error>`               |        |
++---------------------------------------+------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`                 | :ref:`error_line<class_JSONParseResult_property_error_line>`     | ``-1`` |
++---------------------------------------+------------------------------------------------------------------+--------+
+| :ref:`String<class_String>`           | :ref:`error_string<class_JSONParseResult_property_error_string>` | ``""`` |
++---------------------------------------+------------------------------------------------------------------+--------+
+| :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_property_result>`             |        |
++---------------------------------------+------------------------------------------------------------------+--------+
 
 Property Descriptions
 ---------------------
@@ -53,7 +53,7 @@ The error type if the JSON source was not successfully parsed. See the :ref:`Err
 - :ref:`int<class_int>` **error_line**
 
 +-----------+-----------------------+
-| *Default* | -1                    |
+| *Default* | ``-1``                |
 +-----------+-----------------------+
 | *Setter*  | set_error_line(value) |
 +-----------+-----------------------+
@@ -69,7 +69,7 @@ The line number where the error occurred if JSON source was not successfully par
 - :ref:`String<class_String>` **error_string**
 
 +-----------+-------------------------+
-| *Default* | ""                      |
+| *Default* | ``""``                  |
 +-----------+-------------------------+
 | *Setter*  | set_error_string(value) |
 +-----------+-------------------------+

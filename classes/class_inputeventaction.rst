@@ -26,13 +26,13 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_property_action>`     | ""    |
-+-----------------------------+-----------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_property_pressed>`   | false |
-+-----------------------------+-----------------------------------------------------------+-------+
-| :ref:`float<class_float>`   | :ref:`strength<class_InputEventAction_property_strength>` | 1.0   |
-+-----------------------------+-----------------------------------------------------------+-------+
++-----------------------------+-----------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_property_action>`     | ``""``    |
++-----------------------------+-----------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_property_pressed>`   | ``false`` |
++-----------------------------+-----------------------------------------------------------+-----------+
+| :ref:`float<class_float>`   | :ref:`strength<class_InputEventAction_property_strength>` | ``1.0``   |
++-----------------------------+-----------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -42,7 +42,7 @@ Property Descriptions
 - :ref:`String<class_String>` **action**
 
 +-----------+-------------------+
-| *Default* | ""                |
+| *Default* | ``""``            |
 +-----------+-------------------+
 | *Setter*  | set_action(value) |
 +-----------+-------------------+
@@ -58,7 +58,7 @@ The action's name. Actions are accessed via this :ref:`String<class_String>`.
 - :ref:`bool<class_bool>` **pressed**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_pressed(value) |
 +-----------+--------------------+
@@ -74,7 +74,7 @@ If ``true``, the action's state is pressed. If ``false``, the action's state is 
 - :ref:`float<class_float>` **strength**
 
 +-----------+---------------------+
-| *Default* | 1.0                 |
+| *Default* | ``1.0``             |
 +-----------+---------------------+
 | *Setter*  | set_strength(value) |
 +-----------+---------------------+

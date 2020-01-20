@@ -21,11 +21,11 @@ The VisibilityEnabler will disable :ref:`RigidBody<class_RigidBody>` and :ref:`A
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler_property_freeze_bodies>`       | true |
-+-------------------------+----------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_property_pause_animations>` | true |
-+-------------------------+----------------------------------------------------------------------------+------+
++-------------------------+----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler_property_freeze_bodies>`       | ``true`` |
++-------------------------+----------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_property_pause_animations>` | ``true`` |
++-------------------------+----------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -63,7 +63,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **freeze_bodies**
 
 +-----------+----------------------+
-| *Default* | true                 |
+| *Default* | ``true``             |
 +-----------+----------------------+
 | *Setter*  | set_enabler(value)   |
 +-----------+----------------------+
@@ -79,7 +79,7 @@ If ``true``, :ref:`RigidBody<class_RigidBody>` nodes will be paused.
 - :ref:`bool<class_bool>` **pause_animations**
 
 +-----------+----------------------+
-| *Default* | true                 |
+| *Default* | ``true``             |
 +-----------+----------------------+
 | *Setter*  | set_enabler(value)   |
 +-----------+----------------------+

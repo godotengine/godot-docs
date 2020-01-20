@@ -21,13 +21,13 @@ A 6-sided 3D texture typically used for faking reflections. It can be used to ma
 Properties
 ----------
 
-+--------------------------------------+----------------------------------------------------------------------------+-----+
-| :ref:`int<class_int>`                | :ref:`flags<class_CubeMap_property_flags>`                                 | 7   |
-+--------------------------------------+----------------------------------------------------------------------------+-----+
-| :ref:`float<class_float>`            | :ref:`lossy_storage_quality<class_CubeMap_property_lossy_storage_quality>` | 0.7 |
-+--------------------------------------+----------------------------------------------------------------------------+-----+
-| :ref:`Storage<enum_CubeMap_Storage>` | :ref:`storage_mode<class_CubeMap_property_storage_mode>`                   | 0   |
-+--------------------------------------+----------------------------------------------------------------------------+-----+
++--------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`                | :ref:`flags<class_CubeMap_property_flags>`                                 | ``7``   |
++--------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`            | :ref:`lossy_storage_quality<class_CubeMap_property_lossy_storage_quality>` | ``0.7`` |
++--------------------------------------+----------------------------------------------------------------------------+---------+
+| :ref:`Storage<enum_CubeMap_Storage>` | :ref:`storage_mode<class_CubeMap_property_storage_mode>`                   | ``0``   |
++--------------------------------------+----------------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -121,7 +121,7 @@ Property Descriptions
 - :ref:`int<class_int>` **flags**
 
 +-----------+------------------+
-| *Default* | 7                |
+| *Default* | ``7``            |
 +-----------+------------------+
 | *Setter*  | set_flags(value) |
 +-----------+------------------+
@@ -137,7 +137,7 @@ The render flags for the ``CubeMap``. See the :ref:`Flags<enum_CubeMap_Flags>` c
 - :ref:`float<class_float>` **lossy_storage_quality**
 
 +-----------+----------------------------------+
-| *Default* | 0.7                              |
+| *Default* | ``0.7``                          |
 +-----------+----------------------------------+
 | *Setter*  | set_lossy_storage_quality(value) |
 +-----------+----------------------------------+
@@ -153,7 +153,7 @@ The lossy storage quality of the ``CubeMap`` if the storage mode is set to :ref:
 - :ref:`Storage<enum_CubeMap_Storage>` **storage_mode**
 
 +-----------+--------------------+
-| *Default* | 0                  |
+| *Default* | ``0``              |
 +-----------+--------------------+
 | *Setter*  | set_storage(value) |
 +-----------+--------------------+

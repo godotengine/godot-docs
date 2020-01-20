@@ -37,17 +37,17 @@ This resource allows you to configure and sample a fractal noise space. Here is 
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`lacunarity<class_OpenSimplexNoise_property_lacunarity>`   | 2.0  |
-+---------------------------+-----------------------------------------------------------------+------+
-| :ref:`int<class_int>`     | :ref:`octaves<class_OpenSimplexNoise_property_octaves>`         | 3    |
-+---------------------------+-----------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`period<class_OpenSimplexNoise_property_period>`           | 64.0 |
-+---------------------------+-----------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`persistence<class_OpenSimplexNoise_property_persistence>` | 0.5  |
-+---------------------------+-----------------------------------------------------------------+------+
-| :ref:`int<class_int>`     | :ref:`seed<class_OpenSimplexNoise_property_seed>`               | 0    |
-+---------------------------+-----------------------------------------------------------------+------+
++---------------------------+-----------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`lacunarity<class_OpenSimplexNoise_property_lacunarity>`   | ``2.0``  |
++---------------------------+-----------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`octaves<class_OpenSimplexNoise_property_octaves>`         | ``3``    |
++---------------------------+-----------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`period<class_OpenSimplexNoise_property_period>`           | ``64.0`` |
++---------------------------+-----------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`persistence<class_OpenSimplexNoise_property_persistence>` | ``0.5``  |
++---------------------------+-----------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`seed<class_OpenSimplexNoise_property_seed>`               | ``0``    |
++---------------------------+-----------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -78,7 +78,7 @@ Property Descriptions
 - :ref:`float<class_float>` **lacunarity**
 
 +-----------+-----------------------+
-| *Default* | 2.0                   |
+| *Default* | ``2.0``               |
 +-----------+-----------------------+
 | *Setter*  | set_lacunarity(value) |
 +-----------+-----------------------+
@@ -94,7 +94,7 @@ Difference in period between :ref:`octaves<class_OpenSimplexNoise_property_octav
 - :ref:`int<class_int>` **octaves**
 
 +-----------+--------------------+
-| *Default* | 3                  |
+| *Default* | ``3``              |
 +-----------+--------------------+
 | *Setter*  | set_octaves(value) |
 +-----------+--------------------+
@@ -110,7 +110,7 @@ Number of OpenSimplex noise layers that are sampled to get the fractal noise.
 - :ref:`float<class_float>` **period**
 
 +-----------+-------------------+
-| *Default* | 64.0              |
+| *Default* | ``64.0``          |
 +-----------+-------------------+
 | *Setter*  | set_period(value) |
 +-----------+-------------------+
@@ -126,7 +126,7 @@ Period of the base octave. A lower period results in a higher-frequency noise (m
 - :ref:`float<class_float>` **persistence**
 
 +-----------+------------------------+
-| *Default* | 0.5                    |
+| *Default* | ``0.5``                |
 +-----------+------------------------+
 | *Setter*  | set_persistence(value) |
 +-----------+------------------------+
@@ -142,7 +142,7 @@ Contribution factor of the different octaves. A ``persistence`` value of 1 means
 - :ref:`int<class_int>` **seed**
 
 +-----------+-----------------+
-| *Default* | 0               |
+| *Default* | ``0``           |
 +-----------+-----------------+
 | *Setter*  | set_seed(value) |
 +-----------+-----------------+

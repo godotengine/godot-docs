@@ -21,13 +21,13 @@ General-purpose proximity detection node.
 Properties
 ----------
 
-+-------------------------------------------------------+-------------------------------------------------------------------+--------------------+
-| :ref:`DispatchMode<enum_ProximityGroup_DispatchMode>` | :ref:`dispatch_mode<class_ProximityGroup_property_dispatch_mode>` | 0                  |
-+-------------------------------------------------------+-------------------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>`                         | :ref:`grid_radius<class_ProximityGroup_property_grid_radius>`     | Vector3( 1, 1, 1 ) |
-+-------------------------------------------------------+-------------------------------------------------------------------+--------------------+
-| :ref:`String<class_String>`                           | :ref:`group_name<class_ProximityGroup_property_group_name>`       | ""                 |
-+-------------------------------------------------------+-------------------------------------------------------------------+--------------------+
++-------------------------------------------------------+-------------------------------------------------------------------+------------------------+
+| :ref:`DispatchMode<enum_ProximityGroup_DispatchMode>` | :ref:`dispatch_mode<class_ProximityGroup_property_dispatch_mode>` | ``0``                  |
++-------------------------------------------------------+-------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>`                         | :ref:`grid_radius<class_ProximityGroup_property_grid_radius>`     | ``Vector3( 1, 1, 1 )`` |
++-------------------------------------------------------+-------------------------------------------------------------------+------------------------+
+| :ref:`String<class_String>`                           | :ref:`group_name<class_ProximityGroup_property_group_name>`       | ``""``                 |
++-------------------------------------------------------+-------------------------------------------------------------------+------------------------+
 
 Methods
 -------
@@ -66,7 +66,7 @@ Property Descriptions
 - :ref:`DispatchMode<enum_ProximityGroup_DispatchMode>` **dispatch_mode**
 
 +-----------+--------------------------+
-| *Default* | 0                        |
+| *Default* | ``0``                    |
 +-----------+--------------------------+
 | *Setter*  | set_dispatch_mode(value) |
 +-----------+--------------------------+
@@ -80,7 +80,7 @@ Property Descriptions
 - :ref:`Vector3<class_Vector3>` **grid_radius**
 
 +-----------+------------------------+
-| *Default* | Vector3( 1, 1, 1 )     |
+| *Default* | ``Vector3( 1, 1, 1 )`` |
 +-----------+------------------------+
 | *Setter*  | set_grid_radius(value) |
 +-----------+------------------------+
@@ -94,7 +94,7 @@ Property Descriptions
 - :ref:`String<class_String>` **group_name**
 
 +-----------+-----------------------+
-| *Default* | ""                    |
+| *Default* | ``""``                |
 +-----------+-----------------------+
 | *Setter*  | set_group_name(value) |
 +-----------+-----------------------+

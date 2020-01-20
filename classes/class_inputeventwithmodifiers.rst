@@ -28,17 +28,17 @@ Tutorials
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`alt<class_InputEventWithModifiers_property_alt>`         | false |
-+-------------------------+----------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`command<class_InputEventWithModifiers_property_command>` | false |
-+-------------------------+----------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`control<class_InputEventWithModifiers_property_control>` | false |
-+-------------------------+----------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`meta<class_InputEventWithModifiers_property_meta>`       | false |
-+-------------------------+----------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`shift<class_InputEventWithModifiers_property_shift>`     | false |
-+-------------------------+----------------------------------------------------------------+-------+
++-------------------------+----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`alt<class_InputEventWithModifiers_property_alt>`         | ``false`` |
++-------------------------+----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`command<class_InputEventWithModifiers_property_command>` | ``false`` |
++-------------------------+----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`control<class_InputEventWithModifiers_property_control>` | ``false`` |
++-------------------------+----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`meta<class_InputEventWithModifiers_property_meta>`       | ``false`` |
++-------------------------+----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`shift<class_InputEventWithModifiers_property_shift>`     | ``false`` |
++-------------------------+----------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -48,7 +48,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **alt**
 
 +-----------+----------------+
-| *Default* | false          |
+| *Default* | ``false``      |
 +-----------+----------------+
 | *Setter*  | set_alt(value) |
 +-----------+----------------+
@@ -64,7 +64,7 @@ State of the ``Alt`` modifier.
 - :ref:`bool<class_bool>` **command**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_command(value) |
 +-----------+--------------------+
@@ -80,7 +80,7 @@ State of the ``Command`` modifier.
 - :ref:`bool<class_bool>` **control**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_control(value) |
 +-----------+--------------------+
@@ -96,7 +96,7 @@ State of the ``Ctrl`` modifier.
 - :ref:`bool<class_bool>` **meta**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_metakey(value) |
 +-----------+--------------------+
@@ -112,7 +112,7 @@ State of the ``Meta`` modifier.
 - :ref:`bool<class_bool>` **shift**
 
 +-----------+------------------+
-| *Default* | false            |
+| *Default* | ``false``        |
 +-----------+------------------+
 | *Setter*  | set_shift(value) |
 +-----------+------------------+

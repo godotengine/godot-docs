@@ -23,9 +23,9 @@ Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-bas
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` | Vector2( 0, 0 ) |
-+-------------------------------+-------------------------------------------------------------------+-----------------+
++-------------------------------+-------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` | ``Vector2( 0, 0 )`` |
++-------------------------------+-------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -251,7 +251,7 @@ Property Descriptions
 - :ref:`Vector2<class_Vector2>` **lightmap_size_hint**
 
 +-----------+-------------------------------+
-| *Default* | Vector2( 0, 0 )               |
+| *Default* | ``Vector2( 0, 0 )``           |
 +-----------+-------------------------------+
 | *Setter*  | set_lightmap_size_hint(value) |
 +-----------+-------------------------------+

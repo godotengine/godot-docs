@@ -21,27 +21,27 @@ Also known as 9-slice panels, NinePatchRect produces clean panels of any size, b
 Properties
 ----------
 
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` | :ref:`axis_stretch_horizontal<class_NinePatchRect_property_axis_stretch_horizontal>` | 0                   |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` | :ref:`axis_stretch_vertical<class_NinePatchRect_property_axis_stretch_vertical>`     | 0                   |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`draw_center<class_NinePatchRect_property_draw_center>`                         | true                |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>`               | mouse_filter                                                                         | **O:** 2            |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                                      | :ref:`patch_margin_bottom<class_NinePatchRect_property_patch_margin_bottom>`         | 0                   |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                                      | :ref:`patch_margin_left<class_NinePatchRect_property_patch_margin_left>`             | 0                   |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                                      | :ref:`patch_margin_right<class_NinePatchRect_property_patch_margin_right>`           | 0                   |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                                      | :ref:`patch_margin_top<class_NinePatchRect_property_patch_margin_top>`               | 0                   |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`Rect2<class_Rect2>`                                  | :ref:`region_rect<class_NinePatchRect_property_region_rect>`                         | Rect2( 0, 0, 0, 0 ) |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`texture<class_NinePatchRect_property_texture>`                                 |                     |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------+
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
+| :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` | :ref:`axis_stretch_horizontal<class_NinePatchRect_property_axis_stretch_horizontal>` | ``0``                   |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
+| :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` | :ref:`axis_stretch_vertical<class_NinePatchRect_property_axis_stretch_vertical>`     | ``0``                   |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`draw_center<class_NinePatchRect_property_draw_center>`                         | ``true``                |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>`               | mouse_filter                                                                         | **O:** ``2``            |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                                      | :ref:`patch_margin_bottom<class_NinePatchRect_property_patch_margin_bottom>`         | ``0``                   |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                                      | :ref:`patch_margin_left<class_NinePatchRect_property_patch_margin_left>`             | ``0``                   |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                                      | :ref:`patch_margin_right<class_NinePatchRect_property_patch_margin_right>`           | ``0``                   |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                                      | :ref:`patch_margin_top<class_NinePatchRect_property_patch_margin_top>`               | ``0``                   |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Rect2<class_Rect2>`                                  | :ref:`region_rect<class_NinePatchRect_property_region_rect>`                         | ``Rect2( 0, 0, 0, 0 )`` |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`texture<class_NinePatchRect_property_texture>`                                 |                         |
++------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -88,7 +88,7 @@ Property Descriptions
 - :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **axis_stretch_horizontal**
 
 +-----------+--------------------------------+
-| *Default* | 0                              |
+| *Default* | ``0``                          |
 +-----------+--------------------------------+
 | *Setter*  | set_h_axis_stretch_mode(value) |
 +-----------+--------------------------------+
@@ -104,7 +104,7 @@ Doesn't do anything at the time of writing.
 - :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **axis_stretch_vertical**
 
 +-----------+--------------------------------+
-| *Default* | 0                              |
+| *Default* | ``0``                          |
 +-----------+--------------------------------+
 | *Setter*  | set_v_axis_stretch_mode(value) |
 +-----------+--------------------------------+
@@ -120,7 +120,7 @@ Doesn't do anything at the time of writing.
 - :ref:`bool<class_bool>` **draw_center**
 
 +-----------+--------------------------+
-| *Default* | true                     |
+| *Default* | ``true``                 |
 +-----------+--------------------------+
 | *Setter*  | set_draw_center(value)   |
 +-----------+--------------------------+
@@ -136,7 +136,7 @@ If ``true``, draw the panel's center. Else, only draw the 9-slice's borders.
 - :ref:`int<class_int>` **patch_margin_bottom**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_patch_margin(value) |
 +-----------+-------------------------+
@@ -152,7 +152,7 @@ The height of the 9-slice's bottom row. A margin of 16 means the 9-slice's botto
 - :ref:`int<class_int>` **patch_margin_left**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_patch_margin(value) |
 +-----------+-------------------------+
@@ -168,7 +168,7 @@ The height of the 9-slice's left column.
 - :ref:`int<class_int>` **patch_margin_right**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_patch_margin(value) |
 +-----------+-------------------------+
@@ -184,7 +184,7 @@ The height of the 9-slice's right column.
 - :ref:`int<class_int>` **patch_margin_top**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_patch_margin(value) |
 +-----------+-------------------------+
@@ -199,13 +199,13 @@ The height of the 9-slice's top row.
 
 - :ref:`Rect2<class_Rect2>` **region_rect**
 
-+-----------+------------------------+
-| *Default* | Rect2( 0, 0, 0, 0 )    |
-+-----------+------------------------+
-| *Setter*  | set_region_rect(value) |
-+-----------+------------------------+
-| *Getter*  | get_region_rect()      |
-+-----------+------------------------+
++-----------+-------------------------+
+| *Default* | ``Rect2( 0, 0, 0, 0 )`` |
++-----------+-------------------------+
+| *Setter*  | set_region_rect(value)  |
++-----------+-------------------------+
+| *Getter*  | get_region_rect()       |
++-----------+-------------------------+
 
 Rectangular region of the texture to sample from. If you're working with an atlas, use this property to define the area the 9-slice should use. All other properties are relative to this one. If the rect is empty, NinePatchRect will use the whole texture.
 

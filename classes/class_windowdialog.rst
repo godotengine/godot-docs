@@ -23,11 +23,11 @@ Windowdialog is the base class for all window-based dialogs. It's a by-default t
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`resizable<class_WindowDialog_property_resizable>`       | false |
-+-----------------------------+---------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`window_title<class_WindowDialog_property_window_title>` | ""    |
-+-----------------------------+---------------------------------------------------------------+-------+
++-----------------------------+---------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`resizable<class_WindowDialog_property_resizable>`       | ``false`` |
++-----------------------------+---------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`window_title<class_WindowDialog_property_window_title>` | ``""``    |
++-----------------------------+---------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -67,7 +67,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **resizable**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_resizable(value) |
 +-----------+----------------------+
@@ -83,7 +83,7 @@ If ``true``, the user can resize the window.
 - :ref:`String<class_String>` **window_title**
 
 +-----------+------------------+
-| *Default* | ""               |
+| *Default* | ``""``           |
 +-----------+------------------+
 | *Setter*  | set_title(value) |
 +-----------+------------------+

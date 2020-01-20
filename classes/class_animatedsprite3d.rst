@@ -21,15 +21,15 @@ Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource,
 Properties
 ----------
 
-+-----------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`             | :ref:`animation<class_AnimatedSprite3D_property_animation>` | "default" |
-+-----------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`         | 0         |
-+-----------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_property_frames>`       |           |
-+-----------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_property_playing>`     | false     |
-+-----------------------------------------+-------------------------------------------------------------+-----------+
++-----------------------------------------+-------------------------------------------------------------+---------------+
+| :ref:`String<class_String>`             | :ref:`animation<class_AnimatedSprite3D_property_animation>` | ``"default"`` |
++-----------------------------------------+-------------------------------------------------------------+---------------+
+| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`         | ``0``         |
++-----------------------------------------+-------------------------------------------------------------+---------------+
+| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_property_frames>`       |               |
++-----------------------------------------+-------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_property_playing>`     | ``false``     |
++-----------------------------------------+-------------------------------------------------------------+---------------+
 
 Methods
 -------
@@ -59,7 +59,7 @@ Property Descriptions
 - :ref:`String<class_String>` **animation**
 
 +-----------+----------------------+
-| *Default* | "default"            |
+| *Default* | ``"default"``        |
 +-----------+----------------------+
 | *Setter*  | set_animation(value) |
 +-----------+----------------------+
@@ -75,7 +75,7 @@ The current animation from the ``frames`` resource. If this value changes, the `
 - :ref:`int<class_int>` **frame**
 
 +-----------+------------------+
-| *Default* | 0                |
+| *Default* | ``0``            |
 +-----------+------------------+
 | *Setter*  | set_frame(value) |
 +-----------+------------------+
@@ -104,9 +104,9 @@ The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s)
 
 - :ref:`bool<class_bool>` **playing**
 
-+-----------+-------+
-| *Default* | false |
-+-----------+-------+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
 
 If ``true``, the :ref:`animation<class_AnimatedSprite3D_property_animation>` is currently playing.
 

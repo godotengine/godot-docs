@@ -23,9 +23,9 @@ Increases or decreases the volume being routed through the audio bus.
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`volume_db<class_AudioEffectAmplify_property_volume_db>` | 0.0 |
-+---------------------------+---------------------------------------------------------------+-----+
++---------------------------+---------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`volume_db<class_AudioEffectAmplify_property_volume_db>` | ``0.0`` |
++---------------------------+---------------------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +35,7 @@ Property Descriptions
 - :ref:`float<class_float>` **volume_db**
 
 +-----------+----------------------+
-| *Default* | 0.0                  |
+| *Default* | ``0.0``              |
 +-----------+----------------------+
 | *Setter*  | set_volume_db(value) |
 +-----------+----------------------+

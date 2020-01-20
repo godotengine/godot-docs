@@ -23,15 +23,15 @@ Soft clipping starts to reduce the peaks a little below the threshold level and 
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`ceiling_db<class_AudioEffectLimiter_property_ceiling_db>`           | -0.1 |
-+---------------------------+---------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`soft_clip_db<class_AudioEffectLimiter_property_soft_clip_db>`       | 2.0  |
-+---------------------------+---------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`soft_clip_ratio<class_AudioEffectLimiter_property_soft_clip_ratio>` | 10.0 |
-+---------------------------+---------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`threshold_db<class_AudioEffectLimiter_property_threshold_db>`       | 0.0  |
-+---------------------------+---------------------------------------------------------------------------+------+
++---------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`ceiling_db<class_AudioEffectLimiter_property_ceiling_db>`           | ``-0.1`` |
++---------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`soft_clip_db<class_AudioEffectLimiter_property_soft_clip_db>`       | ``2.0``  |
++---------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`soft_clip_ratio<class_AudioEffectLimiter_property_soft_clip_ratio>` | ``10.0`` |
++---------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`threshold_db<class_AudioEffectLimiter_property_threshold_db>`       | ``0.0``  |
++---------------------------+---------------------------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -41,7 +41,7 @@ Property Descriptions
 - :ref:`float<class_float>` **ceiling_db**
 
 +-----------+-----------------------+
-| *Default* | -0.1                  |
+| *Default* | ``-0.1``              |
 +-----------+-----------------------+
 | *Setter*  | set_ceiling_db(value) |
 +-----------+-----------------------+
@@ -57,7 +57,7 @@ The waveform's maximum allowed value, in decibels. Value can range from -20 to -
 - :ref:`float<class_float>` **soft_clip_db**
 
 +-----------+-------------------------+
-| *Default* | 2.0                     |
+| *Default* | ``2.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_soft_clip_db(value) |
 +-----------+-------------------------+
@@ -73,7 +73,7 @@ Applies a gain to the limited waves, in decibels. Value can range from 0 to 6.
 - :ref:`float<class_float>` **soft_clip_ratio**
 
 +-----------+----------------------------+
-| *Default* | 10.0                       |
+| *Default* | ``10.0``                   |
 +-----------+----------------------------+
 | *Setter*  | set_soft_clip_ratio(value) |
 +-----------+----------------------------+
@@ -87,7 +87,7 @@ Applies a gain to the limited waves, in decibels. Value can range from 0 to 6.
 - :ref:`float<class_float>` **threshold_db**
 
 +-----------+-------------------------+
-| *Default* | 0.0                     |
+| *Default* | ``0.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_threshold_db(value) |
 +-----------+-------------------------+

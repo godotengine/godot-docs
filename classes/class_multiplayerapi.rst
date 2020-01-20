@@ -25,13 +25,13 @@ It is possible to override the MultiplayerAPI instance used by specific Nodes by
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`                   | false |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
-| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`                                     |       |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_MultiplayerAPI_property_refuse_new_network_connections>` | false |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`                   | ``false`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`                                     |           |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_MultiplayerAPI_property_refuse_new_network_connections>` | ``false`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -156,7 +156,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **allow_object_decoding**
 
 +-----------+----------------------------------+
-| *Default* | false                            |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_allow_object_decoding(value) |
 +-----------+----------------------------------+
@@ -188,7 +188,7 @@ The peer object to handle the RPC system (effectively enabling networking when s
 - :ref:`bool<class_bool>` **refuse_new_network_connections**
 
 +-----------+-------------------------------------------+
-| *Default* | false                                     |
+| *Default* | ``false``                                 |
 +-----------+-------------------------------------------+
 | *Setter*  | set_refuse_new_network_connections(value) |
 +-----------+-------------------------------------------+

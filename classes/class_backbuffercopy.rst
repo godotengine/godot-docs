@@ -21,11 +21,11 @@ Node for back-buffering the currently-displayed screen. The region defined in th
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------+-------------------------------+
-| :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` | :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` | 1                             |
-+-----------------------------------------------+-----------------------------------------------------------+-------------------------------+
-| :ref:`Rect2<class_Rect2>`                     | :ref:`rect<class_BackBufferCopy_property_rect>`           | Rect2( -100, -100, 200, 200 ) |
-+-----------------------------------------------+-----------------------------------------------------------+-------------------------------+
++-----------------------------------------------+-----------------------------------------------------------+-----------------------------------+
+| :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` | :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` | ``1``                             |
++-----------------------------------------------+-----------------------------------------------------------+-----------------------------------+
+| :ref:`Rect2<class_Rect2>`                     | :ref:`rect<class_BackBufferCopy_property_rect>`           | ``Rect2( -100, -100, 200, 200 )`` |
++-----------------------------------------------+-----------------------------------------------------------+-----------------------------------+
 
 Enumerations
 ------------
@@ -54,7 +54,7 @@ Property Descriptions
 - :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_copy_mode(value) |
 +-----------+----------------------+
@@ -69,13 +69,13 @@ Buffer mode. See :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` constants.
 
 - :ref:`Rect2<class_Rect2>` **rect**
 
-+-----------+-------------------------------+
-| *Default* | Rect2( -100, -100, 200, 200 ) |
-+-----------+-------------------------------+
-| *Setter*  | set_rect(value)               |
-+-----------+-------------------------------+
-| *Getter*  | get_rect()                    |
-+-----------+-------------------------------+
++-----------+-----------------------------------+
+| *Default* | ``Rect2( -100, -100, 200, 200 )`` |
++-----------+-----------------------------------+
+| *Setter*  | set_rect(value)                   |
++-----------+-----------------------------------+
+| *Getter*  | get_rect()                        |
++-----------+-----------------------------------+
 
 The area covered by the BackBufferCopy. Only used if :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` is :ref:`COPY_MODE_RECT<class_BackBufferCopy_constant_COPY_MODE_RECT>`.
 

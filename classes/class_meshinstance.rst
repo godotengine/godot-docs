@@ -23,13 +23,13 @@ MeshInstance is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------+----------------+
-| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`         |                |
-+---------------------------------+-------------------------------------------------------+----------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>` | NodePath("..") |
-+---------------------------------+-------------------------------------------------------+----------------+
-| :ref:`Skin<class_Skin>`         | :ref:`skin<class_MeshInstance_property_skin>`         |                |
-+---------------------------------+-------------------------------------------------------+----------------+
++---------------------------------+-------------------------------------------------------+--------------------+
+| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`         |                    |
++---------------------------------+-------------------------------------------------------+--------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>` | ``NodePath("..")`` |
++---------------------------------+-------------------------------------------------------+--------------------+
+| :ref:`Skin<class_Skin>`         | :ref:`skin<class_MeshInstance_property_skin>`         |                    |
++---------------------------------+-------------------------------------------------------+--------------------+
 
 Methods
 -------
@@ -70,7 +70,7 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 - :ref:`NodePath<class_NodePath>` **skeleton**
 
 +-----------+--------------------------+
-| *Default* | NodePath("..")           |
+| *Default* | ``NodePath("..")``       |
 +-----------+--------------------------+
 | *Setter*  | set_skeleton_path(value) |
 +-----------+--------------------------+

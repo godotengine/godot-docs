@@ -25,9 +25,9 @@ Textures are often created by loading them from a file. See :ref:`@GDScript.load
 Properties
 ----------
 
-+-----------------------+--------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`flags<class_Texture_property_flags>` | 4 |
-+-----------------------+--------------------------------------------+---+
++-----------------------+--------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`flags<class_Texture_property_flags>` | ``4`` |
++-----------------------+--------------------------------------------+-------+
 
 Methods
 -------
@@ -99,7 +99,7 @@ Property Descriptions
 - :ref:`int<class_int>` **flags**
 
 +-----------+------------------+
-| *Default* | 4                |
+| *Default* | ``4``            |
 +-----------+------------------+
 | *Setter*  | set_flags(value) |
 +-----------+------------------+

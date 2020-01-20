@@ -21,15 +21,15 @@ This node allows you to create a box for use with the CSG system.
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------+-----+
-| :ref:`float<class_float>`       | :ref:`depth<class_CSGBox_property_depth>`       | 2.0 |
-+---------------------------------+-------------------------------------------------+-----+
-| :ref:`float<class_float>`       | :ref:`height<class_CSGBox_property_height>`     | 2.0 |
-+---------------------------------+-------------------------------------------------+-----+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGBox_property_material>` |     |
-+---------------------------------+-------------------------------------------------+-----+
-| :ref:`float<class_float>`       | :ref:`width<class_CSGBox_property_width>`       | 2.0 |
-+---------------------------------+-------------------------------------------------+-----+
++---------------------------------+-------------------------------------------------+---------+
+| :ref:`float<class_float>`       | :ref:`depth<class_CSGBox_property_depth>`       | ``2.0`` |
++---------------------------------+-------------------------------------------------+---------+
+| :ref:`float<class_float>`       | :ref:`height<class_CSGBox_property_height>`     | ``2.0`` |
++---------------------------------+-------------------------------------------------+---------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGBox_property_material>` |         |
++---------------------------------+-------------------------------------------------+---------+
+| :ref:`float<class_float>`       | :ref:`width<class_CSGBox_property_width>`       | ``2.0`` |
++---------------------------------+-------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
@@ -39,7 +39,7 @@ Property Descriptions
 - :ref:`float<class_float>` **depth**
 
 +-----------+------------------+
-| *Default* | 2.0              |
+| *Default* | ``2.0``          |
 +-----------+------------------+
 | *Setter*  | set_depth(value) |
 +-----------+------------------+
@@ -55,7 +55,7 @@ Depth of the box measured from the center of the box.
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | 2.0               |
+| *Default* | ``2.0``           |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -85,7 +85,7 @@ The material used to render the box.
 - :ref:`float<class_float>` **width**
 
 +-----------+------------------+
-| *Default* | 2.0              |
+| *Default* | ``2.0``          |
 +-----------+------------------+
 | *Setter*  | set_width(value) |
 +-----------+------------------+

@@ -21,11 +21,11 @@ A Visual Script node representing a constant from base types, such as :ref:`Vect
 Properties
 ----------
 
-+-----------------------------------------------------+----------------------------------------------------------------------------+---+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`basic_type<class_VisualScriptBasicTypeConstant_property_basic_type>` | 0 |
-+-----------------------------------------------------+----------------------------------------------------------------------------+---+
-| :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |   |
-+-----------------------------------------------------+----------------------------------------------------------------------------+---+
++-----------------------------------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`basic_type<class_VisualScriptBasicTypeConstant_property_basic_type>` | ``0`` |
++-----------------------------------------------------+----------------------------------------------------------------------------+-------+
+| :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |       |
++-----------------------------------------------------+----------------------------------------------------------------------------+-------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +35,7 @@ Property Descriptions
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_basic_type(value) |
 +-----------+-----------------------+

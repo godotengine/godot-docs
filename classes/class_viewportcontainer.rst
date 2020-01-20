@@ -21,11 +21,11 @@ A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewp
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`stretch<class_ViewportContainer_property_stretch>`               | false |
-+-------------------------+------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` | 1     |
-+-------------------------+------------------------------------------------------------------------+-------+
++-------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`stretch<class_ViewportContainer_property_stretch>`               | ``false`` |
++-------------------------+------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` | ``1``     |
++-------------------------+------------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +35,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **stretch**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_stretch(value)   |
 +-----------+----------------------+
@@ -51,7 +51,7 @@ If ``true``, the viewport will be scaled to the control's size.
 - :ref:`int<class_int>` **stretch_shrink**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_stretch_shrink(value) |
 +-----------+---------------------------+

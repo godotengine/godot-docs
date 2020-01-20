@@ -23,15 +23,15 @@ Renders text using ``*.fnt`` fonts containing texture atlases. Supports distance
 Properties
 ----------
 
-+-------------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`float<class_float>`           | :ref:`ascent<class_BitmapFont_property_ascent>`                 | 0.0   |
-+-------------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`             | :ref:`distance_field<class_BitmapFont_property_distance_field>` | false |
-+-------------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`BitmapFont<class_BitmapFont>` | :ref:`fallback<class_BitmapFont_property_fallback>`             |       |
-+-------------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`float<class_float>`           | :ref:`height<class_BitmapFont_property_height>`                 | 1.0   |
-+-------------------------------------+-----------------------------------------------------------------+-------+
++-------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`ascent<class_BitmapFont_property_ascent>`                 | ``0.0``   |
++-------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`             | :ref:`distance_field<class_BitmapFont_property_distance_field>` | ``false`` |
++-------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`BitmapFont<class_BitmapFont>` | :ref:`fallback<class_BitmapFont_property_fallback>`             |           |
++-------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`height<class_BitmapFont_property_height>`                 | ``1.0``   |
++-------------------------------------+-----------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -64,7 +64,7 @@ Property Descriptions
 - :ref:`float<class_float>` **ascent**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_ascent(value) |
 +-----------+-------------------+
@@ -80,7 +80,7 @@ Ascent (number of pixels above the baseline).
 - :ref:`bool<class_bool>` **distance_field**
 
 +-----------+--------------------------------+
-| *Default* | false                          |
+| *Default* | ``false``                      |
 +-----------+--------------------------------+
 | *Setter*  | set_distance_field_hint(value) |
 +-----------+--------------------------------+
@@ -110,7 +110,7 @@ The fallback font.
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+

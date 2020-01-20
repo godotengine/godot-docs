@@ -21,11 +21,11 @@ Ray shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_Phy
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`length<class_RayShape_property_length>`                 | 1.0   |
-+---------------------------+---------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape_property_slips_on_slope>` | false |
-+---------------------------+---------------------------------------------------------------+-------+
++---------------------------+---------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`length<class_RayShape_property_length>`                 | ``1.0``   |
++---------------------------+---------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape_property_slips_on_slope>` | ``false`` |
++---------------------------+---------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +35,7 @@ Property Descriptions
 - :ref:`float<class_float>` **length**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_length(value) |
 +-----------+-------------------+
@@ -51,7 +51,7 @@ The ray's length.
 - :ref:`bool<class_bool>` **slips_on_slope**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_slips_on_slope(value) |
 +-----------+---------------------------+

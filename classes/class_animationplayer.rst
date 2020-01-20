@@ -30,29 +30,29 @@ Tutorials
 Properties
 ----------
 
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`String<class_String>`                                                  | :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`                   |                |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`String<class_String>`                                                  | :ref:`autoplay<class_AnimationPlayer_property_autoplay>`                                       | ""             |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`String<class_String>`                                                  | :ref:`current_animation<class_AnimationPlayer_property_current_animation>`                     | ""             |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`float<class_float>`                                                    | :ref:`current_animation_length<class_AnimationPlayer_property_current_animation_length>`       |                |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`float<class_float>`                                                    | :ref:`current_animation_position<class_AnimationPlayer_property_current_animation_position>`   |                |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`AnimationMethodCallMode<enum_AnimationPlayer_AnimationMethodCallMode>` | :ref:`method_call_mode<class_AnimationPlayer_property_method_call_mode>`                       | 0              |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`bool<class_bool>`                                                      | :ref:`playback_active<class_AnimationPlayer_property_playback_active>`                         |                |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`float<class_float>`                                                    | :ref:`playback_default_blend_time<class_AnimationPlayer_property_playback_default_blend_time>` | 0.0            |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`AnimationProcessMode<enum_AnimationPlayer_AnimationProcessMode>`       | :ref:`playback_process_mode<class_AnimationPlayer_property_playback_process_mode>`             | 1              |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`float<class_float>`                                                    | :ref:`playback_speed<class_AnimationPlayer_property_playback_speed>`                           | 1.0            |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
-| :ref:`NodePath<class_NodePath>`                                              | :ref:`root_node<class_AnimationPlayer_property_root_node>`                                     | NodePath("..") |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+----------------+
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`String<class_String>`                                                  | :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`                   |                    |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`String<class_String>`                                                  | :ref:`autoplay<class_AnimationPlayer_property_autoplay>`                                       | ``""``             |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`String<class_String>`                                                  | :ref:`current_animation<class_AnimationPlayer_property_current_animation>`                     | ``""``             |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`float<class_float>`                                                    | :ref:`current_animation_length<class_AnimationPlayer_property_current_animation_length>`       |                    |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`float<class_float>`                                                    | :ref:`current_animation_position<class_AnimationPlayer_property_current_animation_position>`   |                    |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`AnimationMethodCallMode<enum_AnimationPlayer_AnimationMethodCallMode>` | :ref:`method_call_mode<class_AnimationPlayer_property_method_call_mode>`                       | ``0``              |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`                                                      | :ref:`playback_active<class_AnimationPlayer_property_playback_active>`                         |                    |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`float<class_float>`                                                    | :ref:`playback_default_blend_time<class_AnimationPlayer_property_playback_default_blend_time>` | ``0.0``            |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`AnimationProcessMode<enum_AnimationPlayer_AnimationProcessMode>`       | :ref:`playback_process_mode<class_AnimationPlayer_property_playback_process_mode>`             | ``1``              |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`float<class_float>`                                                    | :ref:`playback_speed<class_AnimationPlayer_property_playback_speed>`                           | ``1.0``            |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`NodePath<class_NodePath>`                                              | :ref:`root_node<class_AnimationPlayer_property_root_node>`                                     | ``NodePath("..")`` |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
 
 Methods
 -------
@@ -191,7 +191,7 @@ If playing, the current animation; otherwise, the animation last played. When se
 - :ref:`String<class_String>` **autoplay**
 
 +-----------+---------------------+
-| *Default* | ""                  |
+| *Default* | ``""``              |
 +-----------+---------------------+
 | *Setter*  | set_autoplay(value) |
 +-----------+---------------------+
@@ -207,7 +207,7 @@ The name of the animation to play when the scene loads.
 - :ref:`String<class_String>` **current_animation**
 
 +-----------+------------------------------+
-| *Default* | ""                           |
+| *Default* | ``""``                       |
 +-----------+------------------------------+
 | *Setter*  | set_current_animation(value) |
 +-----------+------------------------------+
@@ -247,7 +247,7 @@ The position (in seconds) of the currently playing animation.
 - :ref:`AnimationMethodCallMode<enum_AnimationPlayer_AnimationMethodCallMode>` **method_call_mode**
 
 +-----------+-----------------------------+
-| *Default* | 0                           |
+| *Default* | ``0``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_method_call_mode(value) |
 +-----------+-----------------------------+
@@ -277,7 +277,7 @@ If ``true``, updates animations in response to process-related notifications.
 - :ref:`float<class_float>` **playback_default_blend_time**
 
 +-----------+-------------------------------+
-| *Default* | 0.0                           |
+| *Default* | ``0.0``                       |
 +-----------+-------------------------------+
 | *Setter*  | set_default_blend_time(value) |
 +-----------+-------------------------------+
@@ -293,7 +293,7 @@ The default time in which to blend animations. Ranges from 0 to 4096 with 0.01 p
 - :ref:`AnimationProcessMode<enum_AnimationPlayer_AnimationProcessMode>` **playback_process_mode**
 
 +-----------+-----------------------------------+
-| *Default* | 1                                 |
+| *Default* | ``1``                             |
 +-----------+-----------------------------------+
 | *Setter*  | set_animation_process_mode(value) |
 +-----------+-----------------------------------+
@@ -309,7 +309,7 @@ The process notification in which to update animations.
 - :ref:`float<class_float>` **playback_speed**
 
 +-----------+------------------------+
-| *Default* | 1.0                    |
+| *Default* | ``1.0``                |
 +-----------+------------------------+
 | *Setter*  | set_speed_scale(value) |
 +-----------+------------------------+
@@ -324,13 +324,13 @@ The speed scaling ratio. For instance, if this value is 1, then the animation pl
 
 - :ref:`NodePath<class_NodePath>` **root_node**
 
-+-----------+-----------------+
-| *Default* | NodePath("..")  |
-+-----------+-----------------+
-| *Setter*  | set_root(value) |
-+-----------+-----------------+
-| *Getter*  | get_root()      |
-+-----------+-----------------+
++-----------+--------------------+
+| *Default* | ``NodePath("..")`` |
++-----------+--------------------+
+| *Setter*  | set_root(value)    |
++-----------+--------------------+
+| *Getter*  | get_root()         |
++-----------+--------------------+
 
 The node from which node path references will travel.
 

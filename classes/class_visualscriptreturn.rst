@@ -31,11 +31,11 @@ none
 Properties
 ----------
 
-+-----------------------------------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                             | :ref:`return_enabled<class_VisualScriptReturn_property_return_enabled>` | false |
-+-----------------------------------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`return_type<class_VisualScriptReturn_property_return_type>`       | 0     |
-+-----------------------------------------------------+-------------------------------------------------------------------------+-------+
++-----------------------------------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                             | :ref:`return_enabled<class_VisualScriptReturn_property_return_enabled>` | ``false`` |
++-----------------------------------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`return_type<class_VisualScriptReturn_property_return_type>`       | ``0``     |
++-----------------------------------------------------+-------------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -45,7 +45,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **return_enabled**
 
 +-----------+--------------------------------+
-| *Default* | false                          |
+| *Default* | ``false``                      |
 +-----------+--------------------------------+
 | *Setter*  | set_enable_return_value(value) |
 +-----------+--------------------------------+
@@ -61,7 +61,7 @@ If ``true``, the ``return`` input port is available.
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **return_type**
 
 +-----------+------------------------+
-| *Default* | 0                      |
+| *Default* | ``0``                  |
 +-----------+------------------------+
 | *Setter*  | set_return_type(value) |
 +-----------+------------------------+

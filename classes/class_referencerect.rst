@@ -21,11 +21,11 @@ A rectangle box that displays only a :ref:`border_color<class_ReferenceRect_prop
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>` | :ref:`border_color<class_ReferenceRect_property_border_color>` | Color( 1, 0, 0, 1 ) |
-+---------------------------+----------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`   | :ref:`editor_only<class_ReferenceRect_property_editor_only>`   | true                |
-+---------------------------+----------------------------------------------------------------+---------------------+
++---------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>` | :ref:`border_color<class_ReferenceRect_property_border_color>` | ``Color( 1, 0, 0, 1 )`` |
++---------------------------+----------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`   | :ref:`editor_only<class_ReferenceRect_property_editor_only>`   | ``true``                |
++---------------------------+----------------------------------------------------------------+-------------------------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +35,7 @@ Property Descriptions
 - :ref:`Color<class_Color>` **border_color**
 
 +-----------+-------------------------+
-| *Default* | Color( 1, 0, 0, 1 )     |
+| *Default* | ``Color( 1, 0, 0, 1 )`` |
 +-----------+-------------------------+
 | *Setter*  | set_border_color(value) |
 +-----------+-------------------------+
@@ -51,7 +51,7 @@ Sets the border :ref:`Color<class_Color>` of the ``ReferenceRect``.
 - :ref:`bool<class_bool>` **editor_only**
 
 +-----------+------------------------+
-| *Default* | true                   |
+| *Default* | ``true``               |
 +-----------+------------------------+
 | *Setter*  | set_editor_only(value) |
 +-----------+------------------------+

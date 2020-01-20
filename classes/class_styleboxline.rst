@@ -21,17 +21,17 @@ Description
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_StyleBoxLine_property_color>`           | Color( 0, 0, 0, 1 ) |
-+---------------------------+-----------------------------------------------------------+---------------------+
-| :ref:`float<class_float>` | :ref:`grow_begin<class_StyleBoxLine_property_grow_begin>` | 1.0                 |
-+---------------------------+-----------------------------------------------------------+---------------------+
-| :ref:`float<class_float>` | :ref:`grow_end<class_StyleBoxLine_property_grow_end>`     | 1.0                 |
-+---------------------------+-----------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`     | :ref:`thickness<class_StyleBoxLine_property_thickness>`   | 1                   |
-+---------------------------+-----------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`   | :ref:`vertical<class_StyleBoxLine_property_vertical>`     | false               |
-+---------------------------+-----------------------------------------------------------+---------------------+
++---------------------------+-----------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_StyleBoxLine_property_color>`           | ``Color( 0, 0, 0, 1 )`` |
++---------------------------+-----------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>` | :ref:`grow_begin<class_StyleBoxLine_property_grow_begin>` | ``1.0``                 |
++---------------------------+-----------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>` | :ref:`grow_end<class_StyleBoxLine_property_grow_end>`     | ``1.0``                 |
++---------------------------+-----------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`     | :ref:`thickness<class_StyleBoxLine_property_thickness>`   | ``1``                   |
++---------------------------+-----------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`   | :ref:`vertical<class_StyleBoxLine_property_vertical>`     | ``false``               |
++---------------------------+-----------------------------------------------------------+-------------------------+
 
 Property Descriptions
 ---------------------
@@ -40,13 +40,13 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **color**
 
-+-----------+---------------------+
-| *Default* | Color( 0, 0, 0, 1 ) |
-+-----------+---------------------+
-| *Setter*  | set_color(value)    |
-+-----------+---------------------+
-| *Getter*  | get_color()         |
-+-----------+---------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 0, 0, 0, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_color(value)        |
++-----------+-------------------------+
+| *Getter*  | get_color()             |
++-----------+-------------------------+
 
 The line's color.
 
@@ -57,7 +57,7 @@ The line's color.
 - :ref:`float<class_float>` **grow_begin**
 
 +-----------+-----------------------+
-| *Default* | 1.0                   |
+| *Default* | ``1.0``               |
 +-----------+-----------------------+
 | *Setter*  | set_grow_begin(value) |
 +-----------+-----------------------+
@@ -73,7 +73,7 @@ The number of pixels the line will extend before the ``StyleBoxLine``'s bounds. 
 - :ref:`float<class_float>` **grow_end**
 
 +-----------+---------------------+
-| *Default* | 1.0                 |
+| *Default* | ``1.0``             |
 +-----------+---------------------+
 | *Setter*  | set_grow_end(value) |
 +-----------+---------------------+
@@ -89,7 +89,7 @@ The number of pixels the line will extend past the ``StyleBoxLine``'s bounds. If
 - :ref:`int<class_int>` **thickness**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_thickness(value) |
 +-----------+----------------------+
@@ -105,7 +105,7 @@ The line's thickness in pixels.
 - :ref:`bool<class_bool>` **vertical**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_vertical(value) |
 +-----------+---------------------+

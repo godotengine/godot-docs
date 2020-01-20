@@ -25,15 +25,15 @@ After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), 
 Properties
 ----------
 
-+-----------------------------------------------+------------------------------------------------------------------------+------+
-| :ref:`String<class_String>`                   | :ref:`bind_ip<class_WebSocketServer_property_bind_ip>`                 | "\*" |
-+-----------------------------------------------+------------------------------------------------------------------------+------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`               |      |
-+-----------------------------------------------+------------------------------------------------------------------------+------+
-| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`         |      |
-+-----------------------------------------------+------------------------------------------------------------------------+------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>` |      |
-+-----------------------------------------------+------------------------------------------------------------------------+------+
++-----------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`String<class_String>`                   | :ref:`bind_ip<class_WebSocketServer_property_bind_ip>`                 | ``"*"`` |
++-----------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`               |         |
++-----------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`         |         |
++-----------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>` |         |
++-----------------------------------------------+------------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -97,7 +97,7 @@ Property Descriptions
 - :ref:`String<class_String>` **bind_ip**
 
 +-----------+--------------------+
-| *Default* | "\*"               |
+| *Default* | ``"*"``            |
 +-----------+--------------------+
 | *Setter*  | set_bind_ip(value) |
 +-----------+--------------------+

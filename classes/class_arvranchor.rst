@@ -25,9 +25,9 @@ Keep in mind that, as long as plane detection is enabled, the size, placing and 
 Properties
 ----------
 
-+-----------------------+-------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`anchor_id<class_ARVRAnchor_property_anchor_id>` | 1 |
-+-----------------------+-------------------------------------------------------+---+
++-----------------------+-------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`anchor_id<class_ARVRAnchor_property_anchor_id>` | ``1`` |
++-----------------------+-------------------------------------------------------+-------+
 
 Methods
 -------
@@ -61,7 +61,7 @@ Property Descriptions
 - :ref:`int<class_int>` **anchor_id**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_anchor_id(value) |
 +-----------+----------------------+

@@ -23,17 +23,17 @@ It can be set to update another Node's position, rotation and/or scale. It can u
 Properties
 ----------
 
-+---------------------------------+----------------------------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`remote_path<class_RemoteTransform2D_property_remote_path>`                       | NodePath("") |
-+---------------------------------+----------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`         | :ref:`update_position<class_RemoteTransform2D_property_update_position>`               | true         |
-+---------------------------------+----------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`         | :ref:`update_rotation<class_RemoteTransform2D_property_update_rotation>`               | true         |
-+---------------------------------+----------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`         | :ref:`update_scale<class_RemoteTransform2D_property_update_scale>`                     | true         |
-+---------------------------------+----------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`         | :ref:`use_global_coordinates<class_RemoteTransform2D_property_use_global_coordinates>` | true         |
-+---------------------------------+----------------------------------------------------------------------------------------+--------------+
++---------------------------------+----------------------------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`remote_path<class_RemoteTransform2D_property_remote_path>`                       | ``NodePath("")`` |
++---------------------------------+----------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`update_position<class_RemoteTransform2D_property_update_position>`               | ``true``         |
++---------------------------------+----------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`update_rotation<class_RemoteTransform2D_property_update_rotation>`               | ``true``         |
++---------------------------------+----------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`update_scale<class_RemoteTransform2D_property_update_scale>`                     | ``true``         |
++---------------------------------+----------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`use_global_coordinates<class_RemoteTransform2D_property_use_global_coordinates>` | ``true``         |
++---------------------------------+----------------------------------------------------------------------------------------+------------------+
 
 Methods
 -------
@@ -50,7 +50,7 @@ Property Descriptions
 - :ref:`NodePath<class_NodePath>` **remote_path**
 
 +-----------+------------------------+
-| *Default* | NodePath("")           |
+| *Default* | ``NodePath("")``       |
 +-----------+------------------------+
 | *Setter*  | set_remote_node(value) |
 +-----------+------------------------+
@@ -66,7 +66,7 @@ The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTr
 - :ref:`bool<class_bool>` **update_position**
 
 +-----------+----------------------------+
-| *Default* | true                       |
+| *Default* | ``true``                   |
 +-----------+----------------------------+
 | *Setter*  | set_update_position(value) |
 +-----------+----------------------------+
@@ -82,7 +82,7 @@ If ``true``, the remote node's position is updated.
 - :ref:`bool<class_bool>` **update_rotation**
 
 +-----------+----------------------------+
-| *Default* | true                       |
+| *Default* | ``true``                   |
 +-----------+----------------------------+
 | *Setter*  | set_update_rotation(value) |
 +-----------+----------------------------+
@@ -98,7 +98,7 @@ If ``true``, the remote node's rotation is updated.
 - :ref:`bool<class_bool>` **update_scale**
 
 +-----------+-------------------------+
-| *Default* | true                    |
+| *Default* | ``true``                |
 +-----------+-------------------------+
 | *Setter*  | set_update_scale(value) |
 +-----------+-------------------------+
@@ -114,7 +114,7 @@ If ``true``, the remote node's scale is updated.
 - :ref:`bool<class_bool>` **use_global_coordinates**
 
 +-----------+-----------------------------------+
-| *Default* | true                              |
+| *Default* | ``true``                          |
 +-----------+-----------------------------------+
 | *Setter*  | set_use_global_coordinates(value) |
 +-----------+-----------------------------------+

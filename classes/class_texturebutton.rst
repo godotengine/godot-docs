@@ -23,23 +23,23 @@ The "normal" state must contain a texture (:ref:`texture_normal<class_TextureBut
 Properties
 ----------
 
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                            | :ref:`expand<class_TextureButton_property_expand>`                         | false |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`StretchMode<enum_TextureButton_StretchMode>` | :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`             | 0     |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`BitMap<class_BitMap>`                        | :ref:`texture_click_mask<class_TextureButton_property_texture_click_mask>` |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_disabled<class_TextureButton_property_texture_disabled>`     |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_focused<class_TextureButton_property_texture_focused>`       |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_hover<class_TextureButton_property_texture_hover>`           |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_normal<class_TextureButton_property_texture_normal>`         |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_pressed<class_TextureButton_property_texture_pressed>`       |       |
-+----------------------------------------------------+----------------------------------------------------------------------------+-------+
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`expand<class_TextureButton_property_expand>`                         | ``false`` |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`StretchMode<enum_TextureButton_StretchMode>` | :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`             | ``0``     |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`BitMap<class_BitMap>`                        | :ref:`texture_click_mask<class_TextureButton_property_texture_click_mask>` |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_disabled<class_TextureButton_property_texture_disabled>`     |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_focused<class_TextureButton_property_texture_focused>`       |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_hover<class_TextureButton_property_texture_hover>`           |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_normal<class_TextureButton_property_texture_normal>`         |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_pressed<class_TextureButton_property_texture_pressed>`       |           |
++----------------------------------------------------+----------------------------------------------------------------------------+-----------+
 
 Enumerations
 ------------
@@ -84,7 +84,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **expand**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_expand(value) |
 +-----------+-------------------+
@@ -100,7 +100,7 @@ If ``true``, the texture stretches to the edges of the node's bounding rectangle
 - :ref:`StretchMode<enum_TextureButton_StretchMode>` **stretch_mode**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_stretch_mode(value) |
 +-----------+-------------------------+

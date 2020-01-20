@@ -21,17 +21,17 @@ Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is o
 Properties
 ----------
 
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                                               | :ref:`current_tab<class_Tabs_property_current_tab>`                             | 0     |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                             | :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>` | false |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                             | :ref:`scrolling_enabled<class_Tabs_property_scrolling_enabled>`                 | true  |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`TabAlign<enum_Tabs_TabAlign>`                                 | :ref:`tab_align<class_Tabs_property_tab_align>`                                 | 1     |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
-| :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` | :ref:`tab_close_display_policy<class_Tabs_property_tab_close_display_policy>`   | 0     |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-------+
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                                               | :ref:`current_tab<class_Tabs_property_current_tab>`                             | ``0``     |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                             | :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>` | ``false`` |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                             | :ref:`scrolling_enabled<class_Tabs_property_scrolling_enabled>`                 | ``true``  |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`TabAlign<enum_Tabs_TabAlign>`                                 | :ref:`tab_align<class_Tabs_property_tab_align>`                                 | ``1``     |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` | :ref:`tab_close_display_policy<class_Tabs_property_tab_close_display_policy>`   | ``0``     |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -219,7 +219,7 @@ Property Descriptions
 - :ref:`int<class_int>` **current_tab**
 
 +-----------+------------------------+
-| *Default* | 0                      |
+| *Default* | ``0``                  |
 +-----------+------------------------+
 | *Setter*  | set_current_tab(value) |
 +-----------+------------------------+
@@ -235,7 +235,7 @@ Select tab at index ``tab_idx``.
 - :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
 
 +-----------+--------------------------------------+
-| *Default* | false                                |
+| *Default* | ``false``                            |
 +-----------+--------------------------------------+
 | *Setter*  | set_drag_to_rearrange_enabled(value) |
 +-----------+--------------------------------------+
@@ -251,7 +251,7 @@ If ``true``, tabs can be rearranged with mouse drag.
 - :ref:`bool<class_bool>` **scrolling_enabled**
 
 +-----------+------------------------------+
-| *Default* | true                         |
+| *Default* | ``true``                     |
 +-----------+------------------------------+
 | *Setter*  | set_scrolling_enabled(value) |
 +-----------+------------------------------+
@@ -267,7 +267,7 @@ if ``true``, the mouse's scroll wheel cab be used to navigate the scroll view.
 - :ref:`TabAlign<enum_Tabs_TabAlign>` **tab_align**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_tab_align(value) |
 +-----------+----------------------+
@@ -283,7 +283,7 @@ The alignment of all tabs. See :ref:`TabAlign<enum_Tabs_TabAlign>` for details.
 - :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` **tab_close_display_policy**
 
 +-----------+-------------------------------------+
-| *Default* | 0                                   |
+| *Default* | ``0``                               |
 +-----------+-------------------------------------+
 | *Setter*  | set_tab_close_display_policy(value) |
 +-----------+-------------------------------------+

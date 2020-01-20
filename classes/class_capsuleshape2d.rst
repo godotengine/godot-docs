@@ -21,11 +21,11 @@ Capsule shape for 2D collisions.
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape2D_property_height>` | 20.0 |
-+---------------------------+-----------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape2D_property_radius>` | 10.0 |
-+---------------------------+-----------------------------------------------------+------+
++---------------------------+-----------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape2D_property_height>` | ``20.0`` |
++---------------------------+-----------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape2D_property_radius>` | ``10.0`` |
++---------------------------+-----------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +35,7 @@ Property Descriptions
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | 20.0              |
+| *Default* | ``20.0``          |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -51,7 +51,7 @@ The capsule's height.
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | 10.0              |
+| *Default* | ``10.0``          |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+

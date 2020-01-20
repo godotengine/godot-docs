@@ -21,11 +21,11 @@ GradientTexture uses a :ref:`Gradient<class_Gradient>` to fill the texture data.
 Properties
 ----------
 
-+---------------------------------+----------------------------------------------------------+------+
-| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` |      |
-+---------------------------------+----------------------------------------------------------+------+
-| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       | 2048 |
-+---------------------------------+----------------------------------------------------------+------+
++---------------------------------+----------------------------------------------------------+----------+
+| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` |          |
++---------------------------------+----------------------------------------------------------+----------+
+| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       | ``2048`` |
++---------------------------------+----------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -49,7 +49,7 @@ The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 - :ref:`int<class_int>` **width**
 
 +-----------+------------------+
-| *Default* | 2048             |
+| *Default* | ``2048``         |
 +-----------+------------------+
 | *Setter*  | set_width(value) |
 +-----------+------------------+

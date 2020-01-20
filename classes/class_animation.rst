@@ -38,13 +38,13 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`length<class_Animation_property_length>` | 1.0   |
-+---------------------------+------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`loop<class_Animation_property_loop>`     | false |
-+---------------------------+------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`step<class_Animation_property_step>`     | 0.1   |
-+---------------------------+------------------------------------------------+-------+
++---------------------------+------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`length<class_Animation_property_length>` | ``1.0``   |
++---------------------------+------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`loop<class_Animation_property_loop>`     | ``false`` |
++---------------------------+------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`step<class_Animation_property_step>`     | ``0.1``   |
++---------------------------+------------------------------------------------+-----------+
 
 Methods
 -------
@@ -253,7 +253,7 @@ Property Descriptions
 - :ref:`float<class_float>` **length**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_length(value) |
 +-----------+-------------------+
@@ -271,7 +271,7 @@ The total length of the animation (in seconds).
 - :ref:`bool<class_bool>` **loop**
 
 +-----------+-----------------+
-| *Default* | false           |
+| *Default* | ``false``       |
 +-----------+-----------------+
 | *Setter*  | set_loop(value) |
 +-----------+-----------------+
@@ -287,7 +287,7 @@ A flag indicating that the animation must loop. This is uses for correct interpo
 - :ref:`float<class_float>` **step**
 
 +-----------+-----------------+
-| *Default* | 0.1             |
+| *Default* | ``0.1``         |
 +-----------+-----------------+
 | *Setter*  | set_step(value) |
 +-----------+-----------------+

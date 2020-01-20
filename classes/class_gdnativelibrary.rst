@@ -28,17 +28,17 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`ConfigFile<class_ConfigFile>` | :ref:`config_file<class_GDNativeLibrary_property_config_file>`     |           |
-+-------------------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`             | :ref:`load_once<class_GDNativeLibrary_property_load_once>`         | true      |
-+-------------------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`             | :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`       | true      |
-+-------------------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`             | :ref:`singleton<class_GDNativeLibrary_property_singleton>`         | false     |
-+-------------------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`         | :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>` | "godot\_" |
-+-------------------------------------+--------------------------------------------------------------------+-----------+
++-------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`ConfigFile<class_ConfigFile>` | :ref:`config_file<class_GDNativeLibrary_property_config_file>`     |              |
++-------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`             | :ref:`load_once<class_GDNativeLibrary_property_load_once>`         | ``true``     |
++-------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`             | :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`       | ``true``     |
++-------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`             | :ref:`singleton<class_GDNativeLibrary_property_singleton>`         | ``false``    |
++-------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`String<class_String>`         | :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>` | ``"godot_"`` |
++-------------------------------------+--------------------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -71,7 +71,7 @@ This resource in INI-style :ref:`ConfigFile<class_ConfigFile>` format, as in ``.
 - :ref:`bool<class_bool>` **load_once**
 
 +-----------+----------------------+
-| *Default* | true                 |
+| *Default* | ``true``             |
 +-----------+----------------------+
 | *Setter*  | set_load_once(value) |
 +-----------+----------------------+
@@ -89,7 +89,7 @@ If ``false``, Godot loads a separate copy of the library into memory for each sc
 - :ref:`bool<class_bool>` **reloadable**
 
 +-----------+-----------------------+
-| *Default* | true                  |
+| *Default* | ``true``              |
 +-----------+-----------------------+
 | *Setter*  | set_reloadable(value) |
 +-----------+-----------------------+
@@ -107,7 +107,7 @@ If ``true``, the editor will temporarily unload the library whenever the user sw
 - :ref:`bool<class_bool>` **singleton**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_singleton(value) |
 +-----------+----------------------+
@@ -125,7 +125,7 @@ If ``true``, Godot loads the library at startup rather than the first time a scr
 - :ref:`String<class_String>` **symbol_prefix**
 
 +-----------+--------------------------+
-| *Default* | "godot\_"                |
+| *Default* | ``"godot_"``             |
 +-----------+--------------------------+
 | *Setter*  | set_symbol_prefix(value) |
 +-----------+--------------------------+

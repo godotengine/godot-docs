@@ -38,23 +38,23 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`           | :ref:`light_mask<class_CanvasItem_property_light_mask>`                   | 1                   |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CanvasItem_property_material>`                       |                     |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | :ref:`modulate<class_CanvasItem_property_modulate>`                       | Color( 1, 1, 1, 1 ) |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`       | :ref:`self_modulate<class_CanvasItem_property_self_modulate>`             | Color( 1, 1, 1, 1 ) |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`         | :ref:`show_behind_parent<class_CanvasItem_property_show_behind_parent>`   | false               |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`         | :ref:`show_on_top<class_CanvasItem_property_show_on_top>`                 |                     |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`         | :ref:`use_parent_material<class_CanvasItem_property_use_parent_material>` | false               |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`         | :ref:`visible<class_CanvasItem_property_visible>`                         | true                |
-+---------------------------------+---------------------------------------------------------------------------+---------------------+
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`           | :ref:`light_mask<class_CanvasItem_property_light_mask>`                   | ``1``                   |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CanvasItem_property_material>`                       |                         |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`       | :ref:`modulate<class_CanvasItem_property_modulate>`                       | ``Color( 1, 1, 1, 1 )`` |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`       | :ref:`self_modulate<class_CanvasItem_property_self_modulate>`             | ``Color( 1, 1, 1, 1 )`` |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`         | :ref:`show_behind_parent<class_CanvasItem_property_show_behind_parent>`   | ``false``               |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`         | :ref:`show_on_top<class_CanvasItem_property_show_on_top>`                 |                         |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`         | :ref:`use_parent_material<class_CanvasItem_property_use_parent_material>` | ``false``               |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`         | :ref:`visible<class_CanvasItem_property_visible>`                         | ``true``                |
++---------------------------------+---------------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -248,7 +248,7 @@ Property Descriptions
 - :ref:`int<class_int>` **light_mask**
 
 +-----------+-----------------------+
-| *Default* | 1                     |
+| *Default* | ``1``                 |
 +-----------+-----------------------+
 | *Setter*  | set_light_mask(value) |
 +-----------+-----------------------+
@@ -277,13 +277,13 @@ The material applied to textures on this ``CanvasItem``.
 
 - :ref:`Color<class_Color>` **modulate**
 
-+-----------+---------------------+
-| *Default* | Color( 1, 1, 1, 1 ) |
-+-----------+---------------------+
-| *Setter*  | set_modulate(value) |
-+-----------+---------------------+
-| *Getter*  | get_modulate()      |
-+-----------+---------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 1, 1, 1, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_modulate(value)     |
++-----------+-------------------------+
+| *Getter*  | get_modulate()          |
++-----------+-------------------------+
 
 The color applied to textures on this ``CanvasItem``.
 
@@ -294,7 +294,7 @@ The color applied to textures on this ``CanvasItem``.
 - :ref:`Color<class_Color>` **self_modulate**
 
 +-----------+--------------------------+
-| *Default* | Color( 1, 1, 1, 1 )      |
+| *Default* | ``Color( 1, 1, 1, 1 )``  |
 +-----------+--------------------------+
 | *Setter*  | set_self_modulate(value) |
 +-----------+--------------------------+
@@ -310,7 +310,7 @@ The color applied to textures on this ``CanvasItem``. This is not inherited by c
 - :ref:`bool<class_bool>` **show_behind_parent**
 
 +-----------+---------------------------------+
-| *Default* | false                           |
+| *Default* | ``false``                       |
 +-----------+---------------------------------+
 | *Setter*  | set_draw_behind_parent(value)   |
 +-----------+---------------------------------+
@@ -334,7 +334,7 @@ If ``true``, the object draws on top of its parent.
 - :ref:`bool<class_bool>` **use_parent_material**
 
 +-----------+--------------------------------+
-| *Default* | false                          |
+| *Default* | ``false``                      |
 +-----------+--------------------------------+
 | *Setter*  | set_use_parent_material(value) |
 +-----------+--------------------------------+
@@ -350,7 +350,7 @@ If ``true``, the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_propert
 - :ref:`bool<class_bool>` **visible**
 
 +-----------+--------------------+
-| *Default* | true               |
+| *Default* | ``true``           |
 +-----------+--------------------+
 | *Setter*  | set_visible(value) |
 +-----------+--------------------+

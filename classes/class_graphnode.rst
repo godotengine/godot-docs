@@ -25,21 +25,21 @@ In the Inspector you can enable (show) or disable (hide) slots. By default all s
 Properties
 ----------
 
-+----------------------------------------+--------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                | :ref:`comment<class_GraphNode_property_comment>`       | false           |
-+----------------------------------------+--------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`          | :ref:`offset<class_GraphNode_property_offset>`         | Vector2( 0, 0 ) |
-+----------------------------------------+--------------------------------------------------------+-----------------+
-| :ref:`Overlay<enum_GraphNode_Overlay>` | :ref:`overlay<class_GraphNode_property_overlay>`       | 0               |
-+----------------------------------------+--------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                | :ref:`resizable<class_GraphNode_property_resizable>`   | false           |
-+----------------------------------------+--------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                | :ref:`selected<class_GraphNode_property_selected>`     | false           |
-+----------------------------------------+--------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                | :ref:`show_close<class_GraphNode_property_show_close>` | false           |
-+----------------------------------------+--------------------------------------------------------+-----------------+
-| :ref:`String<class_String>`            | :ref:`title<class_GraphNode_property_title>`           | ""              |
-+----------------------------------------+--------------------------------------------------------+-----------------+
++----------------------------------------+--------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                | :ref:`comment<class_GraphNode_property_comment>`       | ``false``           |
++----------------------------------------+--------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`          | :ref:`offset<class_GraphNode_property_offset>`         | ``Vector2( 0, 0 )`` |
++----------------------------------------+--------------------------------------------------------+---------------------+
+| :ref:`Overlay<enum_GraphNode_Overlay>` | :ref:`overlay<class_GraphNode_property_overlay>`       | ``0``               |
++----------------------------------------+--------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                | :ref:`resizable<class_GraphNode_property_resizable>`   | ``false``           |
++----------------------------------------+--------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                | :ref:`selected<class_GraphNode_property_selected>`     | ``false``           |
++----------------------------------------+--------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                | :ref:`show_close<class_GraphNode_property_show_close>` | ``false``           |
++----------------------------------------+--------------------------------------------------------+---------------------+
+| :ref:`String<class_String>`            | :ref:`title<class_GraphNode_property_title>`           | ``""``              |
++----------------------------------------+--------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -191,7 +191,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **comment**
 
 +-----------+--------------------+
-| *Default* | false              |
+| *Default* | ``false``          |
 +-----------+--------------------+
 | *Setter*  | set_comment(value) |
 +-----------+--------------------+
@@ -206,13 +206,13 @@ If ``true``, the GraphNode is a comment node.
 
 - :ref:`Vector2<class_Vector2>` **offset**
 
-+-----------+-------------------+
-| *Default* | Vector2( 0, 0 )   |
-+-----------+-------------------+
-| *Setter*  | set_offset(value) |
-+-----------+-------------------+
-| *Getter*  | get_offset()      |
-+-----------+-------------------+
++-----------+---------------------+
+| *Default* | ``Vector2( 0, 0 )`` |
++-----------+---------------------+
+| *Setter*  | set_offset(value)   |
++-----------+---------------------+
+| *Getter*  | get_offset()        |
++-----------+---------------------+
 
 The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdit<class_GraphEdit>`.
 
@@ -225,7 +225,7 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 - :ref:`Overlay<enum_GraphNode_Overlay>` **overlay**
 
 +-----------+--------------------+
-| *Default* | 0                  |
+| *Default* | ``0``              |
 +-----------+--------------------+
 | *Setter*  | set_overlay(value) |
 +-----------+--------------------+
@@ -241,7 +241,7 @@ Sets the overlay shown above the GraphNode. See :ref:`Overlay<enum_GraphNode_Ove
 - :ref:`bool<class_bool>` **resizable**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_resizable(value) |
 +-----------+----------------------+
@@ -259,7 +259,7 @@ If ``true``, the user can resize the GraphNode.
 - :ref:`bool<class_bool>` **selected**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_selected(value) |
 +-----------+---------------------+
@@ -275,7 +275,7 @@ If ``true``, the GraphNode is selected.
 - :ref:`bool<class_bool>` **show_close**
 
 +-----------+------------------------------+
-| *Default* | false                        |
+| *Default* | ``false``                    |
 +-----------+------------------------------+
 | *Setter*  | set_show_close_button(value) |
 +-----------+------------------------------+
@@ -293,7 +293,7 @@ If ``true``, the close button will be visible.
 - :ref:`String<class_String>` **title**
 
 +-----------+------------------+
-| *Default* | ""               |
+| *Default* | ``""``           |
 +-----------+------------------+
 | *Setter*  | set_title(value) |
 +-----------+------------------+

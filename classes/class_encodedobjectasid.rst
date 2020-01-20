@@ -23,9 +23,9 @@ This class is used internally by the editor inspector and script debugger, but c
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`object_id<class_EncodedObjectAsID_property_object_id>` | 0 |
-+-----------------------+--------------------------------------------------------------+---+
++-----------------------+--------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`object_id<class_EncodedObjectAsID_property_object_id>` | ``0`` |
++-----------------------+--------------------------------------------------------------+-------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +35,7 @@ Property Descriptions
 - :ref:`int<class_int>` **object_id**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_object_id(value) |
 +-----------+----------------------+

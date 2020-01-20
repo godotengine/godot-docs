@@ -23,9 +23,9 @@ The VisualInstance is used to connect a resource to a visual representation. All
 Properties
 ----------
 
-+-----------------------+-----------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`layers<class_VisualInstance_property_layers>` | 1 |
-+-----------------------+-----------------------------------------------------+---+
++-----------------------+-----------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`layers<class_VisualInstance_property_layers>` | ``1`` |
++-----------------------+-----------------------------------------------------+-------+
 
 Methods
 -------
@@ -54,7 +54,7 @@ Property Descriptions
 - :ref:`int<class_int>` **layers**
 
 +-----------+-----------------------+
-| *Default* | 1                     |
+| *Default* | ``1``                 |
 +-----------+-----------------------+
 | *Setter*  | set_layer_mask(value) |
 +-----------+-----------------------+

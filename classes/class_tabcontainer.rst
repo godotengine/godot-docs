@@ -27,17 +27,17 @@ To hide only a tab's content, nest the content inside a child :ref:`Control<clas
 Properties
 ----------
 
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                       | :ref:`current_tab<class_TabContainer_property_current_tab>`                                   | 0     |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                     | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`       | false |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`TabAlign<enum_TabContainer_TabAlign>` | :ref:`tab_align<class_TabContainer_property_tab_align>`                                       | 1     |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                     | :ref:`tabs_visible<class_TabContainer_property_tabs_visible>`                                 | true  |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                     | :ref:`use_hidden_tabs_for_min_size<class_TabContainer_property_use_hidden_tabs_for_min_size>` | false |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-------+
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                       | :ref:`current_tab<class_TabContainer_property_current_tab>`                                   | ``0``     |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                     | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`       | ``false`` |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`TabAlign<enum_TabContainer_TabAlign>` | :ref:`tab_align<class_TabContainer_property_tab_align>`                                       | ``1``     |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                     | :ref:`tabs_visible<class_TabContainer_property_tabs_visible>`                                 | ``true``  |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                     | :ref:`use_hidden_tabs_for_min_size<class_TabContainer_property_use_hidden_tabs_for_min_size>` | ``false`` |
++---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -167,7 +167,7 @@ Property Descriptions
 - :ref:`int<class_int>` **current_tab**
 
 +-----------+------------------------+
-| *Default* | 0                      |
+| *Default* | ``0``                  |
 +-----------+------------------------+
 | *Setter*  | set_current_tab(value) |
 +-----------+------------------------+
@@ -183,7 +183,7 @@ The current tab index. When set, this index's :ref:`Control<class_Control>` node
 - :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
 
 +-----------+--------------------------------------+
-| *Default* | false                                |
+| *Default* | ``false``                            |
 +-----------+--------------------------------------+
 | *Setter*  | set_drag_to_rearrange_enabled(value) |
 +-----------+--------------------------------------+
@@ -199,7 +199,7 @@ If ``true``, tabs can be rearranged with mouse drag.
 - :ref:`TabAlign<enum_TabContainer_TabAlign>` **tab_align**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_tab_align(value) |
 +-----------+----------------------+
@@ -215,7 +215,7 @@ The alignment of all tabs in the tab container. See the :ref:`TabAlign<enum_TabC
 - :ref:`bool<class_bool>` **tabs_visible**
 
 +-----------+-------------------------+
-| *Default* | true                    |
+| *Default* | ``true``                |
 +-----------+-------------------------+
 | *Setter*  | set_tabs_visible(value) |
 +-----------+-------------------------+
@@ -231,7 +231,7 @@ If ``true``, tabs are visible. If ``false``, tabs' content and titles are hidden
 - :ref:`bool<class_bool>` **use_hidden_tabs_for_min_size**
 
 +-----------+-----------------------------------------+
-| *Default* | false                                   |
+| *Default* | ``false``                               |
 +-----------+-----------------------------------------+
 | *Setter*  | set_use_hidden_tabs_for_min_size(value) |
 +-----------+-----------------------------------------+

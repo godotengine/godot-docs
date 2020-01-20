@@ -21,39 +21,39 @@ TextureProgress works like :ref:`ProgressBar<class_ProgressBar>`, but uses up to
 Properties
 ----------
 
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                        | :ref:`fill_mode<class_TextureProgress_property_fill_mode>`                         | 0                   |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                                       | **O:** 1            |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                      | :ref:`nine_patch_stretch<class_TextureProgress_property_nine_patch_stretch>`       | false               |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>`                | :ref:`radial_center_offset<class_TextureProgress_property_radial_center_offset>`   | Vector2( 0, 0 )     |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                    | :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>`     | 360.0               |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                    | :ref:`radial_initial_angle<class_TextureProgress_property_radial_initial_angle>`   | 0.0                 |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                        | :ref:`stretch_margin_bottom<class_TextureProgress_property_stretch_margin_bottom>` | 0                   |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                        | :ref:`stretch_margin_left<class_TextureProgress_property_stretch_margin_left>`     | 0                   |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                        | :ref:`stretch_margin_right<class_TextureProgress_property_stretch_margin_right>`   | 0                   |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                        | :ref:`stretch_margin_top<class_TextureProgress_property_stretch_margin_top>`       | 0                   |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`texture_over<class_TextureProgress_property_texture_over>`                   |                     |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`texture_progress<class_TextureProgress_property_texture_progress>`           |                     |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`texture_under<class_TextureProgress_property_texture_under>`                 |                     |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`                    | :ref:`tint_over<class_TextureProgress_property_tint_over>`                         | Color( 1, 1, 1, 1 ) |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`                    | :ref:`tint_progress<class_TextureProgress_property_tint_progress>`                 | Color( 1, 1, 1, 1 ) |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
-| :ref:`Color<class_Color>`                    | :ref:`tint_under<class_TextureProgress_property_tint_under>`                       | Color( 1, 1, 1, 1 ) |
-+----------------------------------------------+------------------------------------------------------------------------------------+---------------------+
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                        | :ref:`fill_mode<class_TextureProgress_property_fill_mode>`                         | ``0``                   |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                                       | **O:** ``1``            |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`nine_patch_stretch<class_TextureProgress_property_nine_patch_stretch>`       | ``false``               |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Vector2<class_Vector2>`                | :ref:`radial_center_offset<class_TextureProgress_property_radial_center_offset>`   | ``Vector2( 0, 0 )``     |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                    | :ref:`radial_fill_degrees<class_TextureProgress_property_radial_fill_degrees>`     | ``360.0``               |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                    | :ref:`radial_initial_angle<class_TextureProgress_property_radial_initial_angle>`   | ``0.0``                 |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                        | :ref:`stretch_margin_bottom<class_TextureProgress_property_stretch_margin_bottom>` | ``0``                   |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                        | :ref:`stretch_margin_left<class_TextureProgress_property_stretch_margin_left>`     | ``0``                   |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                        | :ref:`stretch_margin_right<class_TextureProgress_property_stretch_margin_right>`   | ``0``                   |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`                        | :ref:`stretch_margin_top<class_TextureProgress_property_stretch_margin_top>`       | ``0``                   |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture<class_Texture>`                | :ref:`texture_over<class_TextureProgress_property_texture_over>`                   |                         |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture<class_Texture>`                | :ref:`texture_progress<class_TextureProgress_property_texture_progress>`           |                         |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture<class_Texture>`                | :ref:`texture_under<class_TextureProgress_property_texture_under>`                 |                         |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`                    | :ref:`tint_over<class_TextureProgress_property_tint_over>`                         | ``Color( 1, 1, 1, 1 )`` |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`                    | :ref:`tint_progress<class_TextureProgress_property_tint_progress>`                 | ``Color( 1, 1, 1, 1 )`` |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>`                    | :ref:`tint_under<class_TextureProgress_property_tint_under>`                       | ``Color( 1, 1, 1, 1 )`` |
++----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -115,7 +115,7 @@ Property Descriptions
 - :ref:`int<class_int>` **fill_mode**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_fill_mode(value) |
 +-----------+----------------------+
@@ -131,7 +131,7 @@ The fill direction. See :ref:`FillMode<enum_TextureProgress_FillMode>` for possi
 - :ref:`bool<class_bool>` **nine_patch_stretch**
 
 +-----------+-------------------------------+
-| *Default* | false                         |
+| *Default* | ``false``                     |
 +-----------+-------------------------------+
 | *Setter*  | set_nine_patch_stretch(value) |
 +-----------+-------------------------------+
@@ -147,7 +147,7 @@ If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_N
 - :ref:`Vector2<class_Vector2>` **radial_center_offset**
 
 +-----------+---------------------------------+
-| *Default* | Vector2( 0, 0 )                 |
+| *Default* | ``Vector2( 0, 0 )``             |
 +-----------+---------------------------------+
 | *Setter*  | set_radial_center_offset(value) |
 +-----------+---------------------------------+
@@ -163,7 +163,7 @@ Offsets :ref:`texture_progress<class_TextureProgress_property_texture_progress>`
 - :ref:`float<class_float>` **radial_fill_degrees**
 
 +-----------+-------------------------+
-| *Default* | 360.0                   |
+| *Default* | ``360.0``               |
 +-----------+-------------------------+
 | *Setter*  | set_fill_degrees(value) |
 +-----------+-------------------------+
@@ -181,7 +181,7 @@ See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_
 - :ref:`float<class_float>` **radial_initial_angle**
 
 +-----------+---------------------------------+
-| *Default* | 0.0                             |
+| *Default* | ``0.0``                         |
 +-----------+---------------------------------+
 | *Setter*  | set_radial_initial_angle(value) |
 +-----------+---------------------------------+
@@ -197,7 +197,7 @@ Starting angle for the fill of :ref:`texture_progress<class_TextureProgress_prop
 - :ref:`int<class_int>` **stretch_margin_bottom**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_stretch_margin(value) |
 +-----------+---------------------------+
@@ -213,7 +213,7 @@ The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's botto
 - :ref:`int<class_int>` **stretch_margin_left**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_stretch_margin(value) |
 +-----------+---------------------------+
@@ -229,7 +229,7 @@ The width of the 9-patch's left column.
 - :ref:`int<class_int>` **stretch_margin_right**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_stretch_margin(value) |
 +-----------+---------------------------+
@@ -245,7 +245,7 @@ The width of the 9-patch's right column.
 - :ref:`int<class_int>` **stretch_margin_top**
 
 +-----------+---------------------------+
-| *Default* | 0                         |
+| *Default* | ``0``                     |
 +-----------+---------------------------+
 | *Setter*  | set_stretch_margin(value) |
 +-----------+---------------------------+
@@ -304,13 +304,13 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 
 - :ref:`Color<class_Color>` **tint_over**
 
-+-----------+----------------------+
-| *Default* | Color( 1, 1, 1, 1 )  |
-+-----------+----------------------+
-| *Setter*  | set_tint_over(value) |
-+-----------+----------------------+
-| *Getter*  | get_tint_over()      |
-+-----------+----------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 1, 1, 1, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_tint_over(value)    |
++-----------+-------------------------+
+| *Getter*  | get_tint_over()         |
++-----------+-------------------------+
 
 Multiplies the color of the bar's ``texture_over`` texture. The effect is similar to :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`, except it only affects this specific texture instead of the entire node.
 
@@ -321,7 +321,7 @@ Multiplies the color of the bar's ``texture_over`` texture. The effect is simila
 - :ref:`Color<class_Color>` **tint_progress**
 
 +-----------+--------------------------+
-| *Default* | Color( 1, 1, 1, 1 )      |
+| *Default* | ``Color( 1, 1, 1, 1 )``  |
 +-----------+--------------------------+
 | *Setter*  | set_tint_progress(value) |
 +-----------+--------------------------+
@@ -336,13 +336,13 @@ Multiplies the color of the bar's ``texture_progress`` texture.
 
 - :ref:`Color<class_Color>` **tint_under**
 
-+-----------+-----------------------+
-| *Default* | Color( 1, 1, 1, 1 )   |
-+-----------+-----------------------+
-| *Setter*  | set_tint_under(value) |
-+-----------+-----------------------+
-| *Getter*  | get_tint_under()      |
-+-----------+-----------------------+
++-----------+-------------------------+
+| *Default* | ``Color( 1, 1, 1, 1 )`` |
++-----------+-------------------------+
+| *Setter*  | set_tint_under(value)   |
++-----------+-------------------------+
+| *Getter*  | get_tint_under()        |
++-----------+-------------------------+
 
 Multiplies the color of the bar's ``texture_under`` texture.
 

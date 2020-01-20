@@ -36,13 +36,13 @@ To close a specific port (e.g. after you have finished using it):
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`discover_ipv6<class_UPNP_property_discover_ipv6>`                 | false |
-+-----------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`discover_local_port<class_UPNP_property_discover_local_port>`     | 0     |
-+-----------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`discover_multicast_if<class_UPNP_property_discover_multicast_if>` | ""    |
-+-----------------------------+-------------------------------------------------------------------------+-------+
++-----------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`discover_ipv6<class_UPNP_property_discover_ipv6>`                 | ``false`` |
++-----------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`discover_local_port<class_UPNP_property_discover_local_port>`     | ``0``     |
++-----------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`discover_multicast_if<class_UPNP_property_discover_multicast_if>` | ``""``    |
++-----------------------------+-------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -202,7 +202,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **discover_ipv6**
 
 +-----------+--------------------------+
-| *Default* | false                    |
+| *Default* | ``false``                |
 +-----------+--------------------------+
 | *Setter*  | set_discover_ipv6(value) |
 +-----------+--------------------------+
@@ -218,7 +218,7 @@ If ``true``, IPv6 is used for :ref:`UPNPDevice<class_UPNPDevice>` discovery.
 - :ref:`int<class_int>` **discover_local_port**
 
 +-----------+--------------------------------+
-| *Default* | 0                              |
+| *Default* | ``0``                          |
 +-----------+--------------------------------+
 | *Setter*  | set_discover_local_port(value) |
 +-----------+--------------------------------+
@@ -234,7 +234,7 @@ If ``0``, the local port to use for discovery is chosen automatically by the sys
 - :ref:`String<class_String>` **discover_multicast_if**
 
 +-----------+----------------------------------+
-| *Default* | ""                               |
+| *Default* | ``""``                           |
 +-----------+----------------------------------+
 | *Setter*  | set_discover_multicast_if(value) |
 +-----------+----------------------------------+

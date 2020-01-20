@@ -23,11 +23,11 @@ Arranges child controls vertically or horizontally, and rearranges the controls 
 Properties
 ----------
 
-+-----------------------------------------------+---------------------------------------------------------+----------+
-| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | 0        |
-+-----------------------------------------------+---------------------------------------------------------+----------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>`  | mouse_filter                                            | **O:** 1 |
-+-----------------------------------------------+---------------------------------------------------------+----------+
++-----------------------------------------------+---------------------------------------------------------+--------------+
+| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | ``0``        |
++-----------------------------------------------+---------------------------------------------------------+--------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>`  | mouse_filter                                            | **O:** ``1`` |
++-----------------------------------------------+---------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -63,7 +63,7 @@ Property Descriptions
 - :ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_alignment(value) |
 +-----------+----------------------+

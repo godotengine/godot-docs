@@ -21,27 +21,27 @@ Control node for playing video streams. Supported formats are `WebM <https://www
 Properties
 ----------
 
-+---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                 | :ref:`audio_track<class_VideoPlayer_property_audio_track>`         | 0        |
-+---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`               | :ref:`autoplay<class_VideoPlayer_property_autoplay>`               | false    |
-+---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                 | :ref:`buffering_msec<class_VideoPlayer_property_buffering_msec>`   | 500      |
-+---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`String<class_String>`           | :ref:`bus<class_VideoPlayer_property_bus>`                         | "Master" |
-+---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`               | :ref:`expand<class_VideoPlayer_property_expand>`                   | true     |
-+---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`               | :ref:`paused<class_VideoPlayer_property_paused>`                   | false    |
-+---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`VideoStream<class_VideoStream>` | :ref:`stream<class_VideoPlayer_property_stream>`                   |          |
-+---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`             | :ref:`stream_position<class_VideoPlayer_property_stream_position>` |          |
-+---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`             | :ref:`volume<class_VideoPlayer_property_volume>`                   |          |
-+---------------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`             | :ref:`volume_db<class_VideoPlayer_property_volume_db>`             | 0.0      |
-+---------------------------------------+--------------------------------------------------------------------+----------+
++---------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`                 | :ref:`audio_track<class_VideoPlayer_property_audio_track>`         | ``0``        |
++---------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`               | :ref:`autoplay<class_VideoPlayer_property_autoplay>`               | ``false``    |
++---------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`int<class_int>`                 | :ref:`buffering_msec<class_VideoPlayer_property_buffering_msec>`   | ``500``      |
++---------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`String<class_String>`           | :ref:`bus<class_VideoPlayer_property_bus>`                         | ``"Master"`` |
++---------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`               | :ref:`expand<class_VideoPlayer_property_expand>`                   | ``true``     |
++---------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`               | :ref:`paused<class_VideoPlayer_property_paused>`                   | ``false``    |
++---------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`VideoStream<class_VideoStream>` | :ref:`stream<class_VideoPlayer_property_stream>`                   |              |
++---------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`             | :ref:`stream_position<class_VideoPlayer_property_stream_position>` |              |
++---------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`             | :ref:`volume<class_VideoPlayer_property_volume>`                   |              |
++---------------------------------------+--------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`             | :ref:`volume_db<class_VideoPlayer_property_volume_db>`             | ``0.0``      |
++---------------------------------------+--------------------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -75,7 +75,7 @@ Property Descriptions
 - :ref:`int<class_int>` **audio_track**
 
 +-----------+------------------------+
-| *Default* | 0                      |
+| *Default* | ``0``                  |
 +-----------+------------------------+
 | *Setter*  | set_audio_track(value) |
 +-----------+------------------------+
@@ -91,7 +91,7 @@ The embedded audio track to play.
 - :ref:`bool<class_bool>` **autoplay**
 
 +-----------+---------------------+
-| *Default* | false               |
+| *Default* | ``false``           |
 +-----------+---------------------+
 | *Setter*  | set_autoplay(value) |
 +-----------+---------------------+
@@ -107,7 +107,7 @@ If ``true``, playback starts when the scene loads.
 - :ref:`int<class_int>` **buffering_msec**
 
 +-----------+---------------------------+
-| *Default* | 500                       |
+| *Default* | ``500``                   |
 +-----------+---------------------------+
 | *Setter*  | set_buffering_msec(value) |
 +-----------+---------------------------+
@@ -123,7 +123,7 @@ Amount of time in milliseconds to store in buffer while playing.
 - :ref:`String<class_String>` **bus**
 
 +-----------+----------------+
-| *Default* | "Master"       |
+| *Default* | ``"Master"``   |
 +-----------+----------------+
 | *Setter*  | set_bus(value) |
 +-----------+----------------+
@@ -139,7 +139,7 @@ Audio bus to use for sound playback.
 - :ref:`bool<class_bool>` **expand**
 
 +-----------+-------------------+
-| *Default* | true              |
+| *Default* | ``true``          |
 +-----------+-------------------+
 | *Setter*  | set_expand(value) |
 +-----------+-------------------+
@@ -155,7 +155,7 @@ If ``true``, the video scales to the control size.
 - :ref:`bool<class_bool>` **paused**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_paused(value) |
 +-----------+-------------------+
@@ -213,7 +213,7 @@ Audio volume as a linear value.
 - :ref:`float<class_float>` **volume_db**
 
 +-----------+----------------------+
-| *Default* | 0.0                  |
+| *Default* | ``0.0``              |
 +-----------+----------------------+
 | *Setter*  | set_volume_db(value) |
 +-----------+----------------------+

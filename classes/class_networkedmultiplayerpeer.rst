@@ -28,11 +28,11 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | true |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | 0    |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | ``true`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | ``0``    |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -146,7 +146,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **refuse_new_connections**
 
 +-----------+-----------------------------------+
-| *Default* | true                              |
+| *Default* | ``true``                          |
 +-----------+-----------------------------------+
 | *Setter*  | set_refuse_new_connections(value) |
 +-----------+-----------------------------------+
@@ -162,7 +162,7 @@ If ``true``, this ``NetworkedMultiplayerPeer`` refuses new connections.
 - :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode**
 
 +-----------+--------------------------+
-| *Default* | 0                        |
+| *Default* | ``0``                    |
 +-----------+--------------------------+
 | *Setter*  | set_transfer_mode(value) |
 +-----------+--------------------------+

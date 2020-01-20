@@ -23,23 +23,23 @@ Simulates rooms of different sizes. Its parameters can be adjusted to simulate t
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`damping<class_AudioEffectReverb_property_damping>`                     | 0.5   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`dry<class_AudioEffectReverb_property_dry>`                             | 1.0   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`hipass<class_AudioEffectReverb_property_hipass>`                       | 0.0   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`predelay_feedback<class_AudioEffectReverb_property_predelay_feedback>` | 0.4   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`predelay_msec<class_AudioEffectReverb_property_predelay_msec>`         | 150.0 |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`room_size<class_AudioEffectReverb_property_room_size>`                 | 0.8   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`spread<class_AudioEffectReverb_property_spread>`                       | 1.0   |
-+---------------------------+------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`wet<class_AudioEffectReverb_property_wet>`                             | 0.5   |
-+---------------------------+------------------------------------------------------------------------------+-------+
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`damping<class_AudioEffectReverb_property_damping>`                     | ``0.5``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`dry<class_AudioEffectReverb_property_dry>`                             | ``1.0``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`hipass<class_AudioEffectReverb_property_hipass>`                       | ``0.0``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`predelay_feedback<class_AudioEffectReverb_property_predelay_feedback>` | ``0.4``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`predelay_msec<class_AudioEffectReverb_property_predelay_msec>`         | ``150.0`` |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`room_size<class_AudioEffectReverb_property_room_size>`                 | ``0.8``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`spread<class_AudioEffectReverb_property_spread>`                       | ``1.0``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`wet<class_AudioEffectReverb_property_wet>`                             | ``0.5``   |
++---------------------------+------------------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -49,7 +49,7 @@ Property Descriptions
 - :ref:`float<class_float>` **damping**
 
 +-----------+--------------------+
-| *Default* | 0.5                |
+| *Default* | ``0.5``            |
 +-----------+--------------------+
 | *Setter*  | set_damping(value) |
 +-----------+--------------------+
@@ -65,7 +65,7 @@ Defines how reflective the imaginary room's walls are. Value can range from 0 to
 - :ref:`float<class_float>` **dry**
 
 +-----------+----------------+
-| *Default* | 1.0            |
+| *Default* | ``1.0``        |
 +-----------+----------------+
 | *Setter*  | set_dry(value) |
 +-----------+----------------+
@@ -81,7 +81,7 @@ Output percent of original sound. At 0, only modified sound is outputted. Value 
 - :ref:`float<class_float>` **hipass**
 
 +-----------+----------------+
-| *Default* | 0.0            |
+| *Default* | ``0.0``        |
 +-----------+----------------+
 | *Setter*  | set_hpf(value) |
 +-----------+----------------+
@@ -97,7 +97,7 @@ High-pass filter passes signals with a frequency higher than a certain cutoff fr
 - :ref:`float<class_float>` **predelay_feedback**
 
 +-----------+------------------------------+
-| *Default* | 0.4                          |
+| *Default* | ``0.4``                      |
 +-----------+------------------------------+
 | *Setter*  | set_predelay_feedback(value) |
 +-----------+------------------------------+
@@ -113,7 +113,7 @@ Output percent of predelay. Value can range from 0 to 1.
 - :ref:`float<class_float>` **predelay_msec**
 
 +-----------+--------------------------+
-| *Default* | 150.0                    |
+| *Default* | ``150.0``                |
 +-----------+--------------------------+
 | *Setter*  | set_predelay_msec(value) |
 +-----------+--------------------------+
@@ -129,7 +129,7 @@ Time between the original signal and the early reflections of the reverb signal,
 - :ref:`float<class_float>` **room_size**
 
 +-----------+----------------------+
-| *Default* | 0.8                  |
+| *Default* | ``0.8``              |
 +-----------+----------------------+
 | *Setter*  | set_room_size(value) |
 +-----------+----------------------+
@@ -145,7 +145,7 @@ Dimensions of simulated room. Bigger means more echoes. Value can range from 0 t
 - :ref:`float<class_float>` **spread**
 
 +-----------+-------------------+
-| *Default* | 1.0               |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_spread(value) |
 +-----------+-------------------+
@@ -161,7 +161,7 @@ Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Val
 - :ref:`float<class_float>` **wet**
 
 +-----------+----------------+
-| *Default* | 0.5            |
+| *Default* | ``0.5``        |
 +-----------+----------------+
 | *Setter*  | set_wet(value) |
 +-----------+----------------+

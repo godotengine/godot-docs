@@ -21,9 +21,9 @@ Pin Joint for 2D rigid bodies. It pins two bodies (rigid or static) together.
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>` | 0.0 |
-+---------------------------+-----------------------------------------------------+-----+
++---------------------------+-----------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>` | ``0.0`` |
++---------------------------+-----------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
@@ -33,7 +33,7 @@ Property Descriptions
 - :ref:`float<class_float>` **softness**
 
 +-----------+---------------------+
-| *Default* | 0.0                 |
+| *Default* | ``0.0``             |
 +-----------+---------------------+
 | *Setter*  | set_softness(value) |
 +-----------+---------------------+

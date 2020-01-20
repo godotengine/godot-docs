@@ -21,19 +21,19 @@ Description
 Properties
 ----------
 
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                  | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | false    |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                                         | **O:** 2 |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | true     |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | true     |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | false    |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | 0.3      |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+----------+
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                  | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | ``false``    |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                                         | **O:** ``2`` |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | ``true``     |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | ``true``     |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | ``false``    |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`                | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.3``      |
++------------------------------------------+----------------------------------------------------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -218,7 +218,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **allow_search**
 
 +-----------+-------------------------+
-| *Default* | false                   |
+| *Default* | ``false``               |
 +-----------+-------------------------+
 | *Setter*  | set_allow_search(value) |
 +-----------+-------------------------+
@@ -234,7 +234,7 @@ If ``true``, allows to navigate ``PopupMenu`` with letter keys.
 - :ref:`bool<class_bool>` **hide_on_checkable_item_selection**
 
 +-----------+---------------------------------------------+
-| *Default* | true                                        |
+| *Default* | ``true``                                    |
 +-----------+---------------------------------------------+
 | *Setter*  | set_hide_on_checkable_item_selection(value) |
 +-----------+---------------------------------------------+
@@ -250,7 +250,7 @@ If ``true``, hides the ``PopupMenu`` when a checkbox or radio button is selected
 - :ref:`bool<class_bool>` **hide_on_item_selection**
 
 +-----------+-----------------------------------+
-| *Default* | true                              |
+| *Default* | ``true``                          |
 +-----------+-----------------------------------+
 | *Setter*  | set_hide_on_item_selection(value) |
 +-----------+-----------------------------------+
@@ -266,7 +266,7 @@ If ``true``, hides the ``PopupMenu`` when an item is selected.
 - :ref:`bool<class_bool>` **hide_on_state_item_selection**
 
 +-----------+-----------------------------------------+
-| *Default* | false                                   |
+| *Default* | ``false``                               |
 +-----------+-----------------------------------------+
 | *Setter*  | set_hide_on_state_item_selection(value) |
 +-----------+-----------------------------------------+
@@ -282,7 +282,7 @@ If ``true``, hides the ``PopupMenu`` when a state item is selected.
 - :ref:`float<class_float>` **submenu_popup_delay**
 
 +-----------+--------------------------------+
-| *Default* | 0.3                            |
+| *Default* | ``0.3``                        |
 +-----------+--------------------------------+
 | *Setter*  | set_submenu_popup_delay(value) |
 +-----------+--------------------------------+

@@ -21,9 +21,9 @@ A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@Global
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------------------+----+
-| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptEngineSingleton_property_constant>` | "" |
-+-----------------------------+----------------------------------------------------------------------+----+
++-----------------------------+----------------------------------------------------------------------+--------+
+| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptEngineSingleton_property_constant>` | ``""`` |
++-----------------------------+----------------------------------------------------------------------+--------+
 
 Property Descriptions
 ---------------------
@@ -33,7 +33,7 @@ Property Descriptions
 - :ref:`String<class_String>` **constant**
 
 +-----------+----------------------+
-| *Default* | ""                   |
+| *Default* | ``""``               |
 +-----------+----------------------+
 | *Setter*  | set_singleton(value) |
 +-----------+----------------------+

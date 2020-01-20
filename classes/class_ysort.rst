@@ -23,9 +23,9 @@ Nesting of YSort nodes is possible. Children YSort nodes will be sorted in the s
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------+------+
-| :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_property_sort_enabled>` | true |
-+-------------------------+--------------------------------------------------------+------+
++-------------------------+--------------------------------------------------------+----------+
+| :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_property_sort_enabled>` | ``true`` |
++-------------------------+--------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -35,7 +35,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **sort_enabled**
 
 +-----------+-------------------------+
-| *Default* | true                    |
+| *Default* | ``true``                |
 +-----------+-------------------------+
 | *Setter*  | set_sort_enabled(value) |
 +-----------+-------------------------+

@@ -25,13 +25,13 @@ Interfaces should be written in such a way that simply enabling them will give u
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_property_ar_is_anchor_detection_enabled>` | false |
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_property_interface_is_initialized>`             | false |
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_property_interface_is_primary>`                     | false |
-+-------------------------+----------------------------------------------------------------------------------------------------+-------+
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_property_ar_is_anchor_detection_enabled>` | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_property_interface_is_initialized>`             | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_property_interface_is_primary>`                     | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -133,7 +133,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled**
 
 +-----------+----------------------------------------+
-| *Default* | false                                  |
+| *Default* | ``false``                              |
 +-----------+----------------------------------------+
 | *Setter*  | set_anchor_detection_is_enabled(value) |
 +-----------+----------------------------------------+
@@ -149,7 +149,7 @@ On an AR interface, ``true`` if anchor detection is enabled.
 - :ref:`bool<class_bool>` **interface_is_initialized**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_is_initialized(value) |
 +-----------+---------------------------+
@@ -165,7 +165,7 @@ On an AR interface, ``true`` if anchor detection is enabled.
 - :ref:`bool<class_bool>` **interface_is_primary**
 
 +-----------+-----------------------+
-| *Default* | false                 |
+| *Default* | ``false``             |
 +-----------+-----------------------+
 | *Setter*  | set_is_primary(value) |
 +-----------+-----------------------+

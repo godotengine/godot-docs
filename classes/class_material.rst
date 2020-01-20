@@ -23,11 +23,11 @@ Material is a base :ref:`Resource<class_Resource>` used for coloring and shading
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------------+---+
-| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |   |
-+---------------------------------+-----------------------------------------------------------------+---+
-| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` | 0 |
-+---------------------------------+-----------------------------------------------------------------+---+
++---------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |       |
++---------------------------------+-----------------------------------------------------------------+-------+
+| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` | ``0`` |
++---------------------------------+-----------------------------------------------------------------+-------+
 
 Constants
 ---------
@@ -60,7 +60,7 @@ Property Descriptions
 - :ref:`int<class_int>` **render_priority**
 
 +-----------+----------------------------+
-| *Default* | 0                          |
+| *Default* | ``0``                      |
 +-----------+----------------------------+
 | *Setter*  | set_render_priority(value) |
 +-----------+----------------------------+

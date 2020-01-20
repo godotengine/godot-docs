@@ -28,15 +28,15 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+---------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`w<class_Quat_property_w>` | 1.0 |
-+---------------------------+---------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`x<class_Quat_property_x>` | 0.0 |
-+---------------------------+---------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`y<class_Quat_property_y>` | 0.0 |
-+---------------------------+---------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`z<class_Quat_property_z>` | 0.0 |
-+---------------------------+---------------------------------+-----+
++---------------------------+---------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`w<class_Quat_property_w>` | ``1.0`` |
++---------------------------+---------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`x<class_Quat_property_x>` | ``0.0`` |
++---------------------------+---------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`y<class_Quat_property_y>` | ``0.0`` |
++---------------------------+---------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`z<class_Quat_property_z>` | ``0.0`` |
++---------------------------+---------------------------------+---------+
 
 Methods
 -------
@@ -93,9 +93,9 @@ Property Descriptions
 
 - :ref:`float<class_float>` **w**
 
-+-----------+-----+
-| *Default* | 1.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``1.0`` |
++-----------+---------+
 
 W component of the quaternion.
 
@@ -105,9 +105,9 @@ W component of the quaternion.
 
 - :ref:`float<class_float>` **x**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 X component of the quaternion.
 
@@ -117,9 +117,9 @@ X component of the quaternion.
 
 - :ref:`float<class_float>` **y**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 Y component of the quaternion.
 
@@ -129,9 +129,9 @@ Y component of the quaternion.
 
 - :ref:`float<class_float>` **z**
 
-+-----------+-----+
-| *Default* | 0.0 |
-+-----------+-----+
++-----------+---------+
+| *Default* | ``0.0`` |
++-----------+---------+
 
 Z component of the quaternion.
 

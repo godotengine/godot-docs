@@ -21,11 +21,11 @@ Given a set of colors, this resource will interpolate them in order. This means 
 Properties
 ----------
 
-+---------------------------------------------+-------------------------------------------------+------------------------------------------+
-| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`colors<class_Gradient_property_colors>`   | PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 ) |
-+---------------------------------------------+-------------------------------------------------+------------------------------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>`   | :ref:`offsets<class_Gradient_property_offsets>` | PoolRealArray( 0, 1 )                    |
-+---------------------------------------------+-------------------------------------------------+------------------------------------------+
++---------------------------------------------+-------------------------------------------------+----------------------------------------------+
+| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`colors<class_Gradient_property_colors>`   | ``PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
++---------------------------------------------+-------------------------------------------------+----------------------------------------------+
+| :ref:`PoolRealArray<class_PoolRealArray>`   | :ref:`offsets<class_Gradient_property_offsets>` | ``PoolRealArray( 0, 1 )``                    |
++---------------------------------------------+-------------------------------------------------+----------------------------------------------+
 
 Methods
 -------
@@ -55,13 +55,13 @@ Property Descriptions
 
 - :ref:`PoolColorArray<class_PoolColorArray>` **colors**
 
-+-----------+------------------------------------------+
-| *Default* | PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 ) |
-+-----------+------------------------------------------+
-| *Setter*  | set_colors(value)                        |
-+-----------+------------------------------------------+
-| *Getter*  | get_colors()                             |
-+-----------+------------------------------------------+
++-----------+----------------------------------------------+
+| *Default* | ``PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
++-----------+----------------------------------------------+
+| *Setter*  | set_colors(value)                            |
++-----------+----------------------------------------------+
+| *Getter*  | get_colors()                                 |
++-----------+----------------------------------------------+
 
 Gradient's colors returned as a :ref:`PoolColorArray<class_PoolColorArray>`.
 
@@ -71,13 +71,13 @@ Gradient's colors returned as a :ref:`PoolColorArray<class_PoolColorArray>`.
 
 - :ref:`PoolRealArray<class_PoolRealArray>` **offsets**
 
-+-----------+-----------------------+
-| *Default* | PoolRealArray( 0, 1 ) |
-+-----------+-----------------------+
-| *Setter*  | set_offsets(value)    |
-+-----------+-----------------------+
-| *Getter*  | get_offsets()         |
-+-----------+-----------------------+
++-----------+---------------------------+
+| *Default* | ``PoolRealArray( 0, 1 )`` |
++-----------+---------------------------+
+| *Setter*  | set_offsets(value)        |
++-----------+---------------------------+
+| *Getter*  | get_offsets()             |
++-----------+---------------------------+
 
 Gradient's offsets returned as a :ref:`PoolRealArray<class_PoolRealArray>`.
 

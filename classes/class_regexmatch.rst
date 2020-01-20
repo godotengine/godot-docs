@@ -21,13 +21,13 @@ Contains the results of a single :ref:`RegEx<class_RegEx>` match returned by :re
 Properties
 ----------
 
-+-------------------------------------+---------------------------------------------------+------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     | {}   |
-+-------------------------------------+---------------------------------------------------+------+
-| :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_property_strings>` | [  ] |
-+-------------------------------------+---------------------------------------------------+------+
-| :ref:`String<class_String>`         | :ref:`subject<class_RegExMatch_property_subject>` | ""   |
-+-------------------------------------+---------------------------------------------------+------+
++-------------------------------------+---------------------------------------------------+----------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     | ``{}``   |
++-------------------------------------+---------------------------------------------------+----------+
+| :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_property_strings>` | ``[  ]`` |
++-------------------------------------+---------------------------------------------------+----------+
+| :ref:`String<class_String>`         | :ref:`subject<class_RegExMatch_property_subject>` | ``""``   |
++-------------------------------------+---------------------------------------------------+----------+
 
 Methods
 -------
@@ -50,7 +50,7 @@ Property Descriptions
 - :ref:`Dictionary<class_Dictionary>` **names**
 
 +-----------+-------------+
-| *Default* | {}          |
+| *Default* | ``{}``      |
 +-----------+-------------+
 | *Getter*  | get_names() |
 +-----------+-------------+
@@ -64,7 +64,7 @@ A dictionary of named groups and its corresponding group number. Only groups wit
 - :ref:`Array<class_Array>` **strings**
 
 +-----------+---------------+
-| *Default* | [  ]          |
+| *Default* | ``[  ]``      |
 +-----------+---------------+
 | *Getter*  | get_strings() |
 +-----------+---------------+
@@ -78,7 +78,7 @@ An :ref:`Array<class_Array>` of the match and its capturing groups.
 - :ref:`String<class_String>` **subject**
 
 +-----------+---------------+
-| *Default* | ""            |
+| *Default* | ``""``        |
 +-----------+---------------+
 | *Getter*  | get_subject() |
 +-----------+---------------+

@@ -35,13 +35,13 @@ Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts a
 Properties
 ----------
 
-+------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` | :ref:`playback_process_mode<class_Tween_property_playback_process_mode>` | 1     |
-+------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                            | :ref:`playback_speed<class_Tween_property_playback_speed>`               | 1.0   |
-+------------------------------------------------------+--------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                              | :ref:`repeat<class_Tween_property_repeat>`                               | false |
-+------------------------------------------------------+--------------------------------------------------------------------------+-------+
++------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` | :ref:`playback_process_mode<class_Tween_property_playback_process_mode>` | ``1``     |
++------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                            | :ref:`playback_speed<class_Tween_property_playback_speed>`               | ``1.0``   |
++------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                              | :ref:`repeat<class_Tween_property_repeat>`                               | ``false`` |
++------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -220,7 +220,7 @@ Property Descriptions
 - :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **playback_process_mode**
 
 +-----------+-------------------------------+
-| *Default* | 1                             |
+| *Default* | ``1``                         |
 +-----------+-------------------------------+
 | *Setter*  | set_tween_process_mode(value) |
 +-----------+-------------------------------+
@@ -236,7 +236,7 @@ The tween's animation process thread. See :ref:`TweenProcessMode<enum_Tween_Twee
 - :ref:`float<class_float>` **playback_speed**
 
 +-----------+------------------------+
-| *Default* | 1.0                    |
+| *Default* | ``1.0``                |
 +-----------+------------------------+
 | *Setter*  | set_speed_scale(value) |
 +-----------+------------------------+
@@ -252,7 +252,7 @@ The tween's speed multiplier. For example, set it to ``1.0`` for normal speed, `
 - :ref:`bool<class_bool>` **repeat**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_repeat(value) |
 +-----------+-------------------+

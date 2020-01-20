@@ -48,21 +48,21 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`custom_multiplayer<class_Node_property_custom_multiplayer>` |   |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`String<class_String>`                 | :ref:`filename<class_Node_property_filename>`                     |   |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`multiplayer<class_Node_property_multiplayer>`               |   |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`String<class_String>`                 | :ref:`name<class_Node_property_name>`                             |   |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`Node<class_Node>`                     | :ref:`owner<class_Node_property_owner>`                           |   |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`PauseMode<enum_Node_PauseMode>`       | :ref:`pause_mode<class_Node_property_pause_mode>`                 | 0 |
-+---------------------------------------------+-------------------------------------------------------------------+---+
-| :ref:`int<class_int>`                       | :ref:`process_priority<class_Node_property_process_priority>`     | 0 |
-+---------------------------------------------+-------------------------------------------------------------------+---+
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`custom_multiplayer<class_Node_property_custom_multiplayer>` |       |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`String<class_String>`                 | :ref:`filename<class_Node_property_filename>`                     |       |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`multiplayer<class_Node_property_multiplayer>`               |       |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`String<class_String>`                 | :ref:`name<class_Node_property_name>`                             |       |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`Node<class_Node>`                     | :ref:`owner<class_Node_property_owner>`                           |       |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`PauseMode<enum_Node_PauseMode>`       | :ref:`pause_mode<class_Node_property_pause_mode>`                 | ``0`` |
++---------------------------------------------+-------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`                       | :ref:`process_priority<class_Node_property_process_priority>`     | ``0`` |
++---------------------------------------------+-------------------------------------------------------------------+-------+
 
 Methods
 -------
@@ -546,7 +546,7 @@ The node owner. A node can have any other node as owner (as long as it is a vali
 - :ref:`PauseMode<enum_Node_PauseMode>` **pause_mode**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_pause_mode(value) |
 +-----------+-----------------------+
@@ -562,7 +562,7 @@ Pause mode. How the node will behave if the :ref:`SceneTree<class_SceneTree>` is
 - :ref:`int<class_int>` **process_priority**
 
 +-----------+-----------------------------+
-| *Default* | 0                           |
+| *Default* | ``0``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_process_priority(value) |
 +-----------+-----------------------------+

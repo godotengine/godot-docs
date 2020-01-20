@@ -23,13 +23,13 @@ Container for splitting two :ref:`Control<class_Control>`\ s vertically or horiz
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_property_collapsed>`                   | false |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_property_dragger_visibility>` | 0     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             | 0     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_property_collapsed>`                   | ``false`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_property_dragger_visibility>` | ``0``     |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             | ``0``     |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -74,7 +74,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **collapsed**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_collapsed(value) |
 +-----------+----------------------+
@@ -90,7 +90,7 @@ If ``true``, the area of the first :ref:`Control<class_Control>` will be collaps
 - :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility**
 
 +-----------+-------------------------------+
-| *Default* | 0                             |
+| *Default* | ``0``                         |
 +-----------+-------------------------------+
 | *Setter*  | set_dragger_visibility(value) |
 +-----------+-------------------------------+
@@ -106,7 +106,7 @@ Determines the dragger's visibility. See :ref:`DraggerVisibility<enum_SplitConta
 - :ref:`int<class_int>` **split_offset**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_split_offset(value) |
 +-----------+-------------------------+

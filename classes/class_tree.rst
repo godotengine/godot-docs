@@ -36,25 +36,25 @@ To iterate over all the :ref:`TreeItem<class_TreeItem>` objects in a ``Tree`` ob
 Properties
 ----------
 
-+------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`                  | :ref:`allow_reselect<class_Tree_property_allow_reselect>`     | false       |
-+------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`                  | :ref:`allow_rmb_select<class_Tree_property_allow_rmb_select>` | false       |
-+------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`int<class_int>`                    | :ref:`columns<class_Tree_property_columns>`                   | 1           |
-+------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`int<class_int>`                    | :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>`   | 0           |
-+------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                    | **O:** 2    |
-+------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_folding<class_Tree_property_hide_folding>`         | false       |
-+------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_root<class_Tree_property_hide_root>`               | false       |
-+------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`                  | rect_clip_content                                             | **O:** true |
-+------------------------------------------+---------------------------------------------------------------+-------------+
-| :ref:`SelectMode<enum_Tree_SelectMode>`  | :ref:`select_mode<class_Tree_property_select_mode>`           | 0           |
-+------------------------------------------+---------------------------------------------------------------+-------------+
++------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                  | :ref:`allow_reselect<class_Tree_property_allow_reselect>`     | ``false``       |
++------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                  | :ref:`allow_rmb_select<class_Tree_property_allow_rmb_select>` | ``false``       |
++------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                    | :ref:`columns<class_Tree_property_columns>`                   | ``1``           |
++------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`int<class_int>`                    | :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>`   | ``0``           |
++------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                    | **O:** ``2``    |
++------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_folding<class_Tree_property_hide_folding>`         | ``false``       |
++------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_root<class_Tree_property_hide_root>`               | ``false``       |
++------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`bool<class_bool>`                  | rect_clip_content                                             | **O:** ``true`` |
++------------------------------------------+---------------------------------------------------------------+-----------------+
+| :ref:`SelectMode<enum_Tree_SelectMode>`  | :ref:`select_mode<class_Tree_property_select_mode>`           | ``0``           |
++------------------------------------------+---------------------------------------------------------------+-----------------+
 
 Methods
 -------
@@ -372,7 +372,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **allow_reselect**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_allow_reselect(value) |
 +-----------+---------------------------+
@@ -388,7 +388,7 @@ If ``true``, the currently selected cell may be selected again.
 - :ref:`bool<class_bool>` **allow_rmb_select**
 
 +-----------+-----------------------------+
-| *Default* | false                       |
+| *Default* | ``false``                   |
 +-----------+-----------------------------+
 | *Setter*  | set_allow_rmb_select(value) |
 +-----------+-----------------------------+
@@ -404,7 +404,7 @@ If ``true``, a right mouse button click can select items.
 - :ref:`int<class_int>` **columns**
 
 +-----------+--------------------+
-| *Default* | 1                  |
+| *Default* | ``1``              |
 +-----------+--------------------+
 | *Setter*  | set_columns(value) |
 +-----------+--------------------+
@@ -420,7 +420,7 @@ The number of columns.
 - :ref:`int<class_int>` **drop_mode_flags**
 
 +-----------+----------------------------+
-| *Default* | 0                          |
+| *Default* | ``0``                      |
 +-----------+----------------------------+
 | *Setter*  | set_drop_mode_flags(value) |
 +-----------+----------------------------+
@@ -438,7 +438,7 @@ This controls the drop sections, i.e. the decision and drawing of possible drop 
 - :ref:`bool<class_bool>` **hide_folding**
 
 +-----------+-------------------------+
-| *Default* | false                   |
+| *Default* | ``false``               |
 +-----------+-------------------------+
 | *Setter*  | set_hide_folding(value) |
 +-----------+-------------------------+
@@ -454,7 +454,7 @@ If ``true``, the folding arrow is hidden.
 - :ref:`bool<class_bool>` **hide_root**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_hide_root(value) |
 +-----------+----------------------+
@@ -470,7 +470,7 @@ If ``true``, the tree's root is hidden.
 - :ref:`SelectMode<enum_Tree_SelectMode>` **select_mode**
 
 +-----------+------------------------+
-| *Default* | 0                      |
+| *Default* | ``0``                  |
 +-----------+------------------------+
 | *Setter*  | set_select_mode(value) |
 +-----------+------------------------+

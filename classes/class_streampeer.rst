@@ -23,9 +23,9 @@ StreamPeer is an abstraction and base class for stream-based protocols (such as 
 Properties
 ----------
 
-+-------------------------+---------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`big_endian<class_StreamPeer_property_big_endian>` | false |
-+-------------------------+---------------------------------------------------------+-------+
++-------------------------+---------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`big_endian<class_StreamPeer_property_big_endian>` | ``false`` |
++-------------------------+---------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -102,7 +102,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **big_endian**
 
 +-----------+-------------------------+
-| *Default* | false                   |
+| *Default* | ``false``               |
 +-----------+-------------------------+
 | *Setter*  | set_big_endian(value)   |
 +-----------+-------------------------+

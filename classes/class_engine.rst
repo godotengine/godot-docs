@@ -21,17 +21,17 @@ The ``Engine`` class allows you to query and modify the project's run-time param
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`   | :ref:`editor_hint<class_Engine_property_editor_hint>`                     | true |
-+---------------------------+---------------------------------------------------------------------------+------+
-| :ref:`int<class_int>`     | :ref:`iterations_per_second<class_Engine_property_iterations_per_second>` | 60   |
-+---------------------------+---------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>`       | 0.5  |
-+---------------------------+---------------------------------------------------------------------------+------+
-| :ref:`int<class_int>`     | :ref:`target_fps<class_Engine_property_target_fps>`                       | 0    |
-+---------------------------+---------------------------------------------------------------------------+------+
-| :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                       | 1.0  |
-+---------------------------+---------------------------------------------------------------------------+------+
++---------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`editor_hint<class_Engine_property_editor_hint>`                     | ``true`` |
++---------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`iterations_per_second<class_Engine_property_iterations_per_second>` | ``60``   |
++---------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>`       | ``0.5``  |
++---------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`target_fps<class_Engine_property_target_fps>`                       | ``0``    |
++---------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                       | ``1.0``  |
++---------------------------+---------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -76,7 +76,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **editor_hint**
 
 +-----------+------------------------+
-| *Default* | true                   |
+| *Default* | ``true``               |
 +-----------+------------------------+
 | *Setter*  | set_editor_hint(value) |
 +-----------+------------------------+
@@ -92,7 +92,7 @@ If ``true``, it is running inside the editor. Useful for tool scripts.
 - :ref:`int<class_int>` **iterations_per_second**
 
 +-----------+----------------------------------+
-| *Default* | 60                               |
+| *Default* | ``60``                           |
 +-----------+----------------------------------+
 | *Setter*  | set_iterations_per_second(value) |
 +-----------+----------------------------------+
@@ -108,7 +108,7 @@ The number of fixed iterations per second (for fixed process and physics).
 - :ref:`float<class_float>` **physics_jitter_fix**
 
 +-----------+-------------------------------+
-| *Default* | 0.5                           |
+| *Default* | ``0.5``                       |
 +-----------+-------------------------------+
 | *Setter*  | set_physics_jitter_fix(value) |
 +-----------+-------------------------------+
@@ -124,7 +124,7 @@ Controls how much physic ticks are synchronized  with real time. For 0 or less, 
 - :ref:`int<class_int>` **target_fps**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_target_fps(value) |
 +-----------+-----------------------+
@@ -140,7 +140,7 @@ The desired frames per second. If the hardware cannot keep up, this setting may 
 - :ref:`float<class_float>` **time_scale**
 
 +-----------+-----------------------+
-| *Default* | 1.0                   |
+| *Default* | ``1.0``               |
 +-----------+-----------------------+
 | *Setter*  | set_time_scale(value) |
 +-----------+-----------------------+

@@ -25,33 +25,33 @@ Item text only supports single-line strings, newline characters (e.g. ``\n``) in
 Properties
 ----------
 
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                     | :ref:`allow_reselect<class_ItemList_property_allow_reselect>`         | false           |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                     | :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>`     | false           |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                     | :ref:`auto_height<class_ItemList_property_auto_height>`               | false           |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                       | :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` | 0               |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`Vector2<class_Vector2>`               | :ref:`fixed_icon_size<class_ItemList_property_fixed_icon_size>`       | Vector2( 0, 0 ) |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`    | focus_mode                                                            | **O:** 2        |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`IconMode<enum_ItemList_IconMode>`     | :ref:`icon_mode<class_ItemList_property_icon_mode>`                   | 1               |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`float<class_float>`                   | :ref:`icon_scale<class_ItemList_property_icon_scale>`                 | 1.0             |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                       | :ref:`max_columns<class_ItemList_property_max_columns>`               | 1               |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`int<class_int>`                       | :ref:`max_text_lines<class_ItemList_property_max_text_lines>`         | 1               |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                     | rect_clip_content                                                     | **O:** true     |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`bool<class_bool>`                     | :ref:`same_column_width<class_ItemList_property_same_column_width>`   | false           |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
-| :ref:`SelectMode<enum_ItemList_SelectMode>` | :ref:`select_mode<class_ItemList_property_select_mode>`               | 0               |
-+---------------------------------------------+-----------------------------------------------------------------------+-----------------+
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                     | :ref:`allow_reselect<class_ItemList_property_allow_reselect>`         | ``false``           |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                     | :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>`     | ``false``           |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                     | :ref:`auto_height<class_ItemList_property_auto_height>`               | ``false``           |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                       | :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` | ``0``               |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`               | :ref:`fixed_icon_size<class_ItemList_property_fixed_icon_size>`       | ``Vector2( 0, 0 )`` |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`    | focus_mode                                                            | **O:** ``2``        |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`IconMode<enum_ItemList_IconMode>`     | :ref:`icon_mode<class_ItemList_property_icon_mode>`                   | ``1``               |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`                   | :ref:`icon_scale<class_ItemList_property_icon_scale>`                 | ``1.0``             |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                       | :ref:`max_columns<class_ItemList_property_max_columns>`               | ``1``               |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                       | :ref:`max_text_lines<class_ItemList_property_max_text_lines>`         | ``1``               |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                     | rect_clip_content                                                     | **O:** ``true``     |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                     | :ref:`same_column_width<class_ItemList_property_same_column_width>`   | ``false``           |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
+| :ref:`SelectMode<enum_ItemList_SelectMode>` | :ref:`select_mode<class_ItemList_property_select_mode>`               | ``0``               |
++---------------------------------------------+-----------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -265,7 +265,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **allow_reselect**
 
 +-----------+---------------------------+
-| *Default* | false                     |
+| *Default* | ``false``                 |
 +-----------+---------------------------+
 | *Setter*  | set_allow_reselect(value) |
 +-----------+---------------------------+
@@ -281,7 +281,7 @@ If ``true``, the currently selected item can be selected again.
 - :ref:`bool<class_bool>` **allow_rmb_select**
 
 +-----------+-----------------------------+
-| *Default* | false                       |
+| *Default* | ``false``                   |
 +-----------+-----------------------------+
 | *Setter*  | set_allow_rmb_select(value) |
 +-----------+-----------------------------+
@@ -297,7 +297,7 @@ If ``true``, right mouse button click can select items.
 - :ref:`bool<class_bool>` **auto_height**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_auto_height(value) |
 +-----------+------------------------+
@@ -313,7 +313,7 @@ If ``true``, the control will automatically resize the height to fit its content
 - :ref:`int<class_int>` **fixed_column_width**
 
 +-----------+-------------------------------+
-| *Default* | 0                             |
+| *Default* | ``0``                         |
 +-----------+-------------------------------+
 | *Setter*  | set_fixed_column_width(value) |
 +-----------+-------------------------------+
@@ -331,7 +331,7 @@ A value of zero disables the adjustment, each item will have a width equal to th
 - :ref:`Vector2<class_Vector2>` **fixed_icon_size**
 
 +-----------+----------------------------+
-| *Default* | Vector2( 0, 0 )            |
+| *Default* | ``Vector2( 0, 0 )``        |
 +-----------+----------------------------+
 | *Setter*  | set_fixed_icon_size(value) |
 +-----------+----------------------------+
@@ -349,7 +349,7 @@ If either X or Y component is not greater than zero, icon size won't be affected
 - :ref:`IconMode<enum_ItemList_IconMode>` **icon_mode**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_icon_mode(value) |
 +-----------+----------------------+
@@ -365,7 +365,7 @@ The icon position, whether above or to the left of the text. See the :ref:`IconM
 - :ref:`float<class_float>` **icon_scale**
 
 +-----------+-----------------------+
-| *Default* | 1.0                   |
+| *Default* | ``1.0``               |
 +-----------+-----------------------+
 | *Setter*  | set_icon_scale(value) |
 +-----------+-----------------------+
@@ -381,7 +381,7 @@ The scale of icon applied after :ref:`fixed_icon_size<class_ItemList_property_fi
 - :ref:`int<class_int>` **max_columns**
 
 +-----------+------------------------+
-| *Default* | 1                      |
+| *Default* | ``1``                  |
 +-----------+------------------------+
 | *Setter*  | set_max_columns(value) |
 +-----------+------------------------+
@@ -401,7 +401,7 @@ A value of zero means unlimited columns, i.e. all items will be put in the same 
 - :ref:`int<class_int>` **max_text_lines**
 
 +-----------+---------------------------+
-| *Default* | 1                         |
+| *Default* | ``1``                     |
 +-----------+---------------------------+
 | *Setter*  | set_max_text_lines(value) |
 +-----------+---------------------------+
@@ -419,7 +419,7 @@ Maximum lines of text allowed in each item. Space will be reserved even when the
 - :ref:`bool<class_bool>` **same_column_width**
 
 +-----------+------------------------------+
-| *Default* | false                        |
+| *Default* | ``false``                    |
 +-----------+------------------------------+
 | *Setter*  | set_same_column_width(value) |
 +-----------+------------------------------+
@@ -437,7 +437,7 @@ If ``true``, the width is equal to the largest column width of all columns.
 - :ref:`SelectMode<enum_ItemList_SelectMode>` **select_mode**
 
 +-----------+------------------------+
-| *Default* | 0                      |
+| *Default* | ``0``                  |
 +-----------+------------------------+
 | *Setter*  | set_select_mode(value) |
 +-----------+------------------------+

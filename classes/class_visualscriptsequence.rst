@@ -33,9 +33,9 @@ Steps through a series of one or more output Sequence ports. The ``current`` dat
 Properties
 ----------
 
-+-----------------------+---------------------------------------------------------+---+
-| :ref:`int<class_int>` | :ref:`steps<class_VisualScriptSequence_property_steps>` | 1 |
-+-----------------------+---------------------------------------------------------+---+
++-----------------------+---------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`steps<class_VisualScriptSequence_property_steps>` | ``1`` |
++-----------------------+---------------------------------------------------------+-------+
 
 Property Descriptions
 ---------------------
@@ -45,7 +45,7 @@ Property Descriptions
 - :ref:`int<class_int>` **steps**
 
 +-----------+------------------+
-| *Default* | 1                |
+| *Default* | ``1``            |
 +-----------+------------------+
 | *Setter*  | set_steps(value) |
 +-----------+------------------+

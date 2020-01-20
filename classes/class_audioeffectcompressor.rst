@@ -33,21 +33,21 @@ Compressor has many uses in the mix:
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`   | :ref:`attack_us<class_AudioEffectCompressor_property_attack_us>`   | 20.0  |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`   | :ref:`gain<class_AudioEffectCompressor_property_gain>`             | 0.0   |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`   | :ref:`mix<class_AudioEffectCompressor_property_mix>`               | 1.0   |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`   | :ref:`ratio<class_AudioEffectCompressor_property_ratio>`           | 4.0   |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`   | :ref:`release_ms<class_AudioEffectCompressor_property_release_ms>` | 250.0 |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`sidechain<class_AudioEffectCompressor_property_sidechain>`   | ""    |
-+-----------------------------+--------------------------------------------------------------------+-------+
-| :ref:`float<class_float>`   | :ref:`threshold<class_AudioEffectCompressor_property_threshold>`   | 0.0   |
-+-----------------------------+--------------------------------------------------------------------+-------+
++-----------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`   | :ref:`attack_us<class_AudioEffectCompressor_property_attack_us>`   | ``20.0``  |
++-----------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`   | :ref:`gain<class_AudioEffectCompressor_property_gain>`             | ``0.0``   |
++-----------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`   | :ref:`mix<class_AudioEffectCompressor_property_mix>`               | ``1.0``   |
++-----------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`   | :ref:`ratio<class_AudioEffectCompressor_property_ratio>`           | ``4.0``   |
++-----------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`   | :ref:`release_ms<class_AudioEffectCompressor_property_release_ms>` | ``250.0`` |
++-----------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`sidechain<class_AudioEffectCompressor_property_sidechain>`   | ``""``    |
++-----------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`   | :ref:`threshold<class_AudioEffectCompressor_property_threshold>`   | ``0.0``   |
++-----------------------------+--------------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
@@ -57,7 +57,7 @@ Property Descriptions
 - :ref:`float<class_float>` **attack_us**
 
 +-----------+----------------------+
-| *Default* | 20.0                 |
+| *Default* | ``20.0``             |
 +-----------+----------------------+
 | *Setter*  | set_attack_us(value) |
 +-----------+----------------------+
@@ -73,7 +73,7 @@ Compressor's reaction time when the signal exceeds the threshold, in microsecond
 - :ref:`float<class_float>` **gain**
 
 +-----------+-----------------+
-| *Default* | 0.0             |
+| *Default* | ``0.0``         |
 +-----------+-----------------+
 | *Setter*  | set_gain(value) |
 +-----------+-----------------+
@@ -89,7 +89,7 @@ Gain applied to the output signal.
 - :ref:`float<class_float>` **mix**
 
 +-----------+----------------+
-| *Default* | 1.0            |
+| *Default* | ``1.0``        |
 +-----------+----------------+
 | *Setter*  | set_mix(value) |
 +-----------+----------------+
@@ -105,7 +105,7 @@ Balance between original signal and effect signal. Value can range from 0 (total
 - :ref:`float<class_float>` **ratio**
 
 +-----------+------------------+
-| *Default* | 4.0              |
+| *Default* | ``4.0``          |
 +-----------+------------------+
 | *Setter*  | set_ratio(value) |
 +-----------+------------------+
@@ -121,7 +121,7 @@ Amount of compression applied to the audio once it passes the threshold level. T
 - :ref:`float<class_float>` **release_ms**
 
 +-----------+-----------------------+
-| *Default* | 250.0                 |
+| *Default* | ``250.0``             |
 +-----------+-----------------------+
 | *Setter*  | set_release_ms(value) |
 +-----------+-----------------------+
@@ -137,7 +137,7 @@ Compressor's delay time to stop reducing the signal after the signal level falls
 - :ref:`String<class_String>` **sidechain**
 
 +-----------+----------------------+
-| *Default* | ""                   |
+| *Default* | ``""``               |
 +-----------+----------------------+
 | *Setter*  | set_sidechain(value) |
 +-----------+----------------------+
@@ -153,7 +153,7 @@ Reduce the sound level using another audio bus for threshold detection.
 - :ref:`float<class_float>` **threshold**
 
 +-----------+----------------------+
-| *Default* | 0.0                  |
+| *Default* | ``0.0``              |
 +-----------+----------------------+
 | *Setter*  | set_threshold(value) |
 +-----------+----------------------+

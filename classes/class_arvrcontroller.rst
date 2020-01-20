@@ -25,11 +25,11 @@ The position of the controller node is automatically updated by the :ref:`ARVRSe
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------+-----+
-| :ref:`int<class_int>`     | :ref:`controller_id<class_ARVRController_property_controller_id>` | 1   |
-+---------------------------+-------------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`rumble<class_ARVRController_property_rumble>`               | 0.0 |
-+---------------------------+-------------------------------------------------------------------+-----+
++---------------------------+-------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`controller_id<class_ARVRController_property_controller_id>` | ``1``   |
++---------------------------+-------------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`rumble<class_ARVRController_property_rumble>`               | ``0.0`` |
++---------------------------+-------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -83,7 +83,7 @@ Property Descriptions
 - :ref:`int<class_int>` **controller_id**
 
 +-----------+--------------------------+
-| *Default* | 1                        |
+| *Default* | ``1``                    |
 +-----------+--------------------------+
 | *Setter*  | set_controller_id(value) |
 +-----------+--------------------------+
@@ -105,7 +105,7 @@ When a controller is turned off, its slot is freed. This ensures controllers wil
 - :ref:`float<class_float>` **rumble**
 
 +-----------+-------------------+
-| *Default* | 0.0               |
+| *Default* | ``0.0``           |
 +-----------+-------------------+
 | *Setter*  | set_rumble(value) |
 +-----------+-------------------+

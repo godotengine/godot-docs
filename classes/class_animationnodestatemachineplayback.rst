@@ -28,9 +28,9 @@ Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines creat
 Properties
 ----------
 
-+-------------------------+-------------------------+-------------+
-| :ref:`bool<class_bool>` | resource_local_to_scene | **O:** true |
-+-------------------------+-------------------------+-------------+
++-------------------------+-------------------------+-----------------+
+| :ref:`bool<class_bool>` | resource_local_to_scene | **O:** ``true`` |
++-------------------------+-------------------------+-----------------+
 
 Methods
 -------

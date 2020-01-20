@@ -23,13 +23,13 @@ Allows modulation of pitch independently of tempo. All frequencies can be increa
 Properties
 ----------
 
-+------------------------------------------------------+------------------------------------------------------------------------+-----+
-| :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` | :ref:`fft_size<class_AudioEffectPitchShift_property_fft_size>`         | 3   |
-+------------------------------------------------------+------------------------------------------------------------------------+-----+
-| :ref:`int<class_int>`                                | :ref:`oversampling<class_AudioEffectPitchShift_property_oversampling>` | 4   |
-+------------------------------------------------------+------------------------------------------------------------------------+-----+
-| :ref:`float<class_float>`                            | :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>`   | 1.0 |
-+------------------------------------------------------+------------------------------------------------------------------------+-----+
++------------------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` | :ref:`fft_size<class_AudioEffectPitchShift_property_fft_size>`         | ``3``   |
++------------------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`                                | :ref:`oversampling<class_AudioEffectPitchShift_property_oversampling>` | ``4``   |
++------------------------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                            | :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>`   | ``1.0`` |
++------------------------------------------------------+------------------------------------------------------------------------+---------+
 
 Enumerations
 ------------
@@ -70,7 +70,7 @@ Property Descriptions
 - :ref:`FFT_Size<enum_AudioEffectPitchShift_FFT_Size>` **fft_size**
 
 +-----------+---------------------+
-| *Default* | 3                   |
+| *Default* | ``3``               |
 +-----------+---------------------+
 | *Setter*  | set_fft_size(value) |
 +-----------+---------------------+
@@ -84,7 +84,7 @@ Property Descriptions
 - :ref:`int<class_int>` **oversampling**
 
 +-----------+-------------------------+
-| *Default* | 4                       |
+| *Default* | ``4``                   |
 +-----------+-------------------------+
 | *Setter*  | set_oversampling(value) |
 +-----------+-------------------------+
@@ -98,7 +98,7 @@ Property Descriptions
 - :ref:`float<class_float>` **pitch_scale**
 
 +-----------+------------------------+
-| *Default* | 1.0                    |
+| *Default* | ``1.0``                |
 +-----------+------------------------+
 | *Setter*  | set_pitch_scale(value) |
 +-----------+------------------------+

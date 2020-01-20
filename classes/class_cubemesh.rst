@@ -23,15 +23,15 @@ The cube's UV layout is arranged in a 3×2 layout that allows texturing each fac
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------+--------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_CubeMesh_property_size>`                         | Vector3( 2, 2, 2 ) |
-+-------------------------------+-------------------------------------------------------------------+--------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_CubeMesh_property_subdivide_depth>`   | 0                  |
-+-------------------------------+-------------------------------------------------------------------+--------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_height<class_CubeMesh_property_subdivide_height>` | 0                  |
-+-------------------------------+-------------------------------------------------------------------+--------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_CubeMesh_property_subdivide_width>`   | 0                  |
-+-------------------------------+-------------------------------------------------------------------+--------------------+
++-------------------------------+-------------------------------------------------------------------+------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`size<class_CubeMesh_property_size>`                         | ``Vector3( 2, 2, 2 )`` |
++-------------------------------+-------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_CubeMesh_property_subdivide_depth>`   | ``0``                  |
++-------------------------------+-------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_height<class_CubeMesh_property_subdivide_height>` | ``0``                  |
++-------------------------------+-------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_width<class_CubeMesh_property_subdivide_width>`   | ``0``                  |
++-------------------------------+-------------------------------------------------------------------+------------------------+
 
 Property Descriptions
 ---------------------
@@ -40,13 +40,13 @@ Property Descriptions
 
 - :ref:`Vector3<class_Vector3>` **size**
 
-+-----------+--------------------+
-| *Default* | Vector3( 2, 2, 2 ) |
-+-----------+--------------------+
-| *Setter*  | set_size(value)    |
-+-----------+--------------------+
-| *Getter*  | get_size()         |
-+-----------+--------------------+
++-----------+------------------------+
+| *Default* | ``Vector3( 2, 2, 2 )`` |
++-----------+------------------------+
+| *Setter*  | set_size(value)        |
++-----------+------------------------+
+| *Getter*  | get_size()             |
++-----------+------------------------+
 
 Size of the cuboid mesh.
 
@@ -57,7 +57,7 @@ Size of the cuboid mesh.
 - :ref:`int<class_int>` **subdivide_depth**
 
 +-----------+----------------------------+
-| *Default* | 0                          |
+| *Default* | ``0``                      |
 +-----------+----------------------------+
 | *Setter*  | set_subdivide_depth(value) |
 +-----------+----------------------------+
@@ -73,7 +73,7 @@ Number of extra edge loops inserted along the Z axis.
 - :ref:`int<class_int>` **subdivide_height**
 
 +-----------+-----------------------------+
-| *Default* | 0                           |
+| *Default* | ``0``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_subdivide_height(value) |
 +-----------+-----------------------------+
@@ -89,7 +89,7 @@ Number of extra edge loops inserted along the Y axis.
 - :ref:`int<class_int>` **subdivide_width**
 
 +-----------+----------------------------+
-| *Default* | 0                          |
+| *Default* | ``0``                      |
 +-----------+----------------------------+
 | *Setter*  | set_subdivide_width(value) |
 +-----------+----------------------------+

@@ -21,9 +21,9 @@ Determines how much of an audio signal is sent to the left and right buses.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`pan<class_AudioEffectPanner_property_pan>` | 0.0 |
-+---------------------------+--------------------------------------------------+-----+
++---------------------------+--------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`pan<class_AudioEffectPanner_property_pan>` | ``0.0`` |
++---------------------------+--------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
@@ -33,7 +33,7 @@ Property Descriptions
 - :ref:`float<class_float>` **pan**
 
 +-----------+----------------+
-| *Default* | 0.0            |
+| *Default* | ``0.0``        |
 +-----------+----------------+
 | *Setter*  | set_pan(value) |
 +-----------+----------------+

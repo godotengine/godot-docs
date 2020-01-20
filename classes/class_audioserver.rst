@@ -26,15 +26,15 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`       | :ref:`bus_count<class_AudioServer_property_bus_count>`                 | 1         |
-+-----------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>` | :ref:`capture_device<class_AudioServer_property_capture_device>`       | ""        |
-+-----------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>` | :ref:`device<class_AudioServer_property_device>`                       | "Default" |
-+-----------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`   | :ref:`global_rate_scale<class_AudioServer_property_global_rate_scale>` | 1.0       |
-+-----------------------------+------------------------------------------------------------------------+-----------+
++-----------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`int<class_int>`       | :ref:`bus_count<class_AudioServer_property_bus_count>`                 | ``1``         |
++-----------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`String<class_String>` | :ref:`capture_device<class_AudioServer_property_capture_device>`       | ``""``        |
++-----------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`String<class_String>` | :ref:`device<class_AudioServer_property_device>`                       | ``"Default"`` |
++-----------------------------+------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`   | :ref:`global_rate_scale<class_AudioServer_property_global_rate_scale>` | ``1.0``       |
++-----------------------------+------------------------------------------------------------------------+---------------+
 
 Methods
 -------
@@ -179,7 +179,7 @@ Property Descriptions
 - :ref:`int<class_int>` **bus_count**
 
 +-----------+----------------------+
-| *Default* | 1                    |
+| *Default* | ``1``                |
 +-----------+----------------------+
 | *Setter*  | set_bus_count(value) |
 +-----------+----------------------+
@@ -195,7 +195,7 @@ Number of available audio buses.
 - :ref:`String<class_String>` **capture_device**
 
 +-----------+---------------------------+
-| *Default* | ""                        |
+| *Default* | ``""``                    |
 +-----------+---------------------------+
 | *Setter*  | capture_set_device(value) |
 +-----------+---------------------------+
@@ -211,7 +211,7 @@ Name of the current device for audio input (see :ref:`capture_get_device_list<cl
 - :ref:`String<class_String>` **device**
 
 +-----------+-------------------+
-| *Default* | "Default"         |
+| *Default* | ``"Default"``     |
 +-----------+-------------------+
 | *Setter*  | set_device(value) |
 +-----------+-------------------+
@@ -227,7 +227,7 @@ Name of the current device for audio output (see :ref:`get_device_list<class_Aud
 - :ref:`float<class_float>` **global_rate_scale**
 
 +-----------+------------------------------+
-| *Default* | 1.0                          |
+| *Default* | ``1.0``                      |
 +-----------+------------------------------+
 | *Setter*  | set_global_rate_scale(value) |
 +-----------+------------------------------+

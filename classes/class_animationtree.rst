@@ -23,17 +23,17 @@ Tutorials
 Properties
 ----------
 
-+----------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                              | :ref:`active<class_AnimationTree_property_active>`                       | false        |
-+----------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>`                                      | :ref:`anim_player<class_AnimationTree_property_anim_player>`             | NodePath("") |
-+----------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+
-| :ref:`AnimationProcessMode<enum_AnimationTree_AnimationProcessMode>` | :ref:`process_mode<class_AnimationTree_property_process_mode>`           | 1            |
-+----------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>`                                      | :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` | NodePath("") |
-+----------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+
-| :ref:`AnimationNode<class_AnimationNode>`                            | :ref:`tree_root<class_AnimationTree_property_tree_root>`                 |              |
-+----------------------------------------------------------------------+--------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                                              | :ref:`active<class_AnimationTree_property_active>`                       | ``false``        |
++----------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>`                                      | :ref:`anim_player<class_AnimationTree_property_anim_player>`             | ``NodePath("")`` |
++----------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+| :ref:`AnimationProcessMode<enum_AnimationTree_AnimationProcessMode>` | :ref:`process_mode<class_AnimationTree_property_process_mode>`           | ``1``            |
++----------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>`                                      | :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` | ``NodePath("")`` |
++----------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+| :ref:`AnimationNode<class_AnimationNode>`                            | :ref:`tree_root<class_AnimationTree_property_tree_root>`                 |                  |
++----------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
 
 Methods
 -------
@@ -73,7 +73,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **active**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_active(value) |
 +-----------+-------------------+
@@ -87,7 +87,7 @@ Property Descriptions
 - :ref:`NodePath<class_NodePath>` **anim_player**
 
 +-----------+-----------------------------+
-| *Default* | NodePath("")                |
+| *Default* | ``NodePath("")``            |
 +-----------+-----------------------------+
 | *Setter*  | set_animation_player(value) |
 +-----------+-----------------------------+
@@ -101,7 +101,7 @@ Property Descriptions
 - :ref:`AnimationProcessMode<enum_AnimationTree_AnimationProcessMode>` **process_mode**
 
 +-----------+-------------------------+
-| *Default* | 1                       |
+| *Default* | ``1``                   |
 +-----------+-------------------------+
 | *Setter*  | set_process_mode(value) |
 +-----------+-------------------------+
@@ -115,7 +115,7 @@ Property Descriptions
 - :ref:`NodePath<class_NodePath>` **root_motion_track**
 
 +-----------+------------------------------+
-| *Default* | NodePath("")                 |
+| *Default* | ``NodePath("")``             |
 +-----------+------------------------------+
 | *Setter*  | set_root_motion_track(value) |
 +-----------+------------------------------+

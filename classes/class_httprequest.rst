@@ -84,19 +84,19 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>`         | -1    |
-+-----------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`download_chunk_size<class_HTTPRequest_property_download_chunk_size>` | 4096  |
-+-----------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_property_download_file>`             | ""    |
-+-----------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`             | 8     |
-+-----------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                         | 0     |
-+-----------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`                 | false |
-+-----------------------------+----------------------------------------------------------------------------+-------+
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>`         | ``-1``    |
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`download_chunk_size<class_HTTPRequest_property_download_chunk_size>` | ``4096``  |
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_property_download_file>`             | ``""``    |
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`             | ``8``     |
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                         | ``0``     |
++-----------------------------+----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`                 | ``false`` |
++-----------------------------+----------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -189,7 +189,7 @@ Property Descriptions
 - :ref:`int<class_int>` **body_size_limit**
 
 +-----------+----------------------------+
-| *Default* | -1                         |
+| *Default* | ``-1``                     |
 +-----------+----------------------------+
 | *Setter*  | set_body_size_limit(value) |
 +-----------+----------------------------+
@@ -205,7 +205,7 @@ Maximum allowed size for response bodies.
 - :ref:`int<class_int>` **download_chunk_size**
 
 +-----------+--------------------------------+
-| *Default* | 4096                           |
+| *Default* | ``4096``                       |
 +-----------+--------------------------------+
 | *Setter*  | set_download_chunk_size(value) |
 +-----------+--------------------------------+
@@ -223,7 +223,7 @@ Set this to a higher value (e.g. 65536 for 64 KiB) when downloading large files 
 - :ref:`String<class_String>` **download_file**
 
 +-----------+--------------------------+
-| *Default* | ""                       |
+| *Default* | ``""``                   |
 +-----------+--------------------------+
 | *Setter*  | set_download_file(value) |
 +-----------+--------------------------+
@@ -239,7 +239,7 @@ The file to download into. Will output any received file into it.
 - :ref:`int<class_int>` **max_redirects**
 
 +-----------+--------------------------+
-| *Default* | 8                        |
+| *Default* | ``8``                    |
 +-----------+--------------------------+
 | *Setter*  | set_max_redirects(value) |
 +-----------+--------------------------+
@@ -255,7 +255,7 @@ Maximum number of allowed redirects.
 - :ref:`int<class_int>` **timeout**
 
 +-----------+--------------------+
-| *Default* | 0                  |
+| *Default* | ``0``              |
 +-----------+--------------------+
 | *Setter*  | set_timeout(value) |
 +-----------+--------------------+
@@ -269,7 +269,7 @@ Maximum number of allowed redirects.
 - :ref:`bool<class_bool>` **use_threads**
 
 +-----------+------------------------+
-| *Default* | false                  |
+| *Default* | ``false``              |
 +-----------+------------------------+
 | *Setter*  | set_use_threads(value) |
 +-----------+------------------------+

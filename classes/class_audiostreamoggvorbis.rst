@@ -21,13 +21,13 @@ OGG Vorbis audio stream driver.
 Properties
 ----------
 
-+-------------------------------------------+---------------------------------------------------------------------+-------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data<class_AudioStreamOGGVorbis_property_data>`               | PoolByteArray(  ) |
-+-------------------------------------------+---------------------------------------------------------------------+-------------------+
-| :ref:`bool<class_bool>`                   | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`               | false             |
-+-------------------------------------------+---------------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`                 | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` | 0.0               |
-+-------------------------------------------+---------------------------------------------------------------------+-------------------+
++-------------------------------------------+---------------------------------------------------------------------+-----------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data<class_AudioStreamOGGVorbis_property_data>`               | ``PoolByteArray(  )`` |
++-------------------------------------------+---------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                   | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`               | ``false``             |
++-------------------------------------------+---------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                 | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` | ``0.0``               |
++-------------------------------------------+---------------------------------------------------------------------+-----------------------+
 
 Property Descriptions
 ---------------------
@@ -36,13 +36,13 @@ Property Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **data**
 
-+-----------+-------------------+
-| *Default* | PoolByteArray(  ) |
-+-----------+-------------------+
-| *Setter*  | set_data(value)   |
-+-----------+-------------------+
-| *Getter*  | get_data()        |
-+-----------+-------------------+
++-----------+-----------------------+
+| *Default* | ``PoolByteArray(  )`` |
++-----------+-----------------------+
+| *Setter*  | set_data(value)       |
++-----------+-----------------------+
+| *Getter*  | get_data()            |
++-----------+-----------------------+
 
 Contains the audio data in bytes.
 
@@ -53,7 +53,7 @@ Contains the audio data in bytes.
 - :ref:`bool<class_bool>` **loop**
 
 +-----------+-----------------+
-| *Default* | false           |
+| *Default* | ``false``       |
 +-----------+-----------------+
 | *Setter*  | set_loop(value) |
 +-----------+-----------------+
@@ -69,7 +69,7 @@ If ``true``, the stream will automatically loop when it reaches the end.
 - :ref:`float<class_float>` **loop_offset**
 
 +-----------+------------------------+
-| *Default* | 0.0                    |
+| *Default* | ``0.0``                |
 +-----------+------------------------+
 | *Setter*  | set_loop_offset(value) |
 +-----------+------------------------+

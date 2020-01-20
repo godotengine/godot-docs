@@ -21,19 +21,19 @@ The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler2D_property_freeze_bodies>`                   | true  |
-+-------------------------+------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`pause_animated_sprites<class_VisibilityEnabler2D_property_pause_animated_sprites>` | true  |
-+-------------------------+------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler2D_property_pause_animations>`             | true  |
-+-------------------------+------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`pause_particles<class_VisibilityEnabler2D_property_pause_particles>`               | true  |
-+-------------------------+------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`physics_process_parent<class_VisibilityEnabler2D_property_physics_process_parent>` | false |
-+-------------------------+------------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`process_parent<class_VisibilityEnabler2D_property_process_parent>`                 | false |
-+-------------------------+------------------------------------------------------------------------------------------+-------+
++-------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler2D_property_freeze_bodies>`                   | ``true``  |
++-------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`pause_animated_sprites<class_VisibilityEnabler2D_property_pause_animated_sprites>` | ``true``  |
++-------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler2D_property_pause_animations>`             | ``true``  |
++-------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`pause_particles<class_VisibilityEnabler2D_property_pause_particles>`               | ``true``  |
++-------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`physics_process_parent<class_VisibilityEnabler2D_property_physics_process_parent>` | ``false`` |
++-------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`process_parent<class_VisibilityEnabler2D_property_process_parent>`                 | ``false`` |
++-------------------------+------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -87,7 +87,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **freeze_bodies**
 
 +-----------+----------------------+
-| *Default* | true                 |
+| *Default* | ``true``             |
 +-----------+----------------------+
 | *Setter*  | set_enabler(value)   |
 +-----------+----------------------+
@@ -103,7 +103,7 @@ If ``true``, :ref:`RigidBody2D<class_RigidBody2D>` nodes will be paused.
 - :ref:`bool<class_bool>` **pause_animated_sprites**
 
 +-----------+----------------------+
-| *Default* | true                 |
+| *Default* | ``true``             |
 +-----------+----------------------+
 | *Setter*  | set_enabler(value)   |
 +-----------+----------------------+
@@ -119,7 +119,7 @@ If ``true``, :ref:`AnimatedSprite<class_AnimatedSprite>` nodes will be paused.
 - :ref:`bool<class_bool>` **pause_animations**
 
 +-----------+----------------------+
-| *Default* | true                 |
+| *Default* | ``true``             |
 +-----------+----------------------+
 | *Setter*  | set_enabler(value)   |
 +-----------+----------------------+
@@ -135,7 +135,7 @@ If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 - :ref:`bool<class_bool>` **pause_particles**
 
 +-----------+----------------------+
-| *Default* | true                 |
+| *Default* | ``true``             |
 +-----------+----------------------+
 | *Setter*  | set_enabler(value)   |
 +-----------+----------------------+
@@ -151,7 +151,7 @@ If ``true``, :ref:`Particles2D<class_Particles2D>` nodes will be paused.
 - :ref:`bool<class_bool>` **physics_process_parent**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_enabler(value)   |
 +-----------+----------------------+
@@ -167,7 +167,7 @@ If ``true``, the parent's :ref:`Node._physics_process<class_Node_method__physics
 - :ref:`bool<class_bool>` **process_parent**
 
 +-----------+----------------------+
-| *Default* | false                |
+| *Default* | ``false``            |
 +-----------+----------------------+
 | *Setter*  | set_enabler(value)   |
 +-----------+----------------------+

@@ -21,13 +21,13 @@ A curve that can be saved and re-used for other objects. By default, it ranges b
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`int<class_int>`     | :ref:`bake_resolution<class_Curve_property_bake_resolution>` | 100 |
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`max_value<class_Curve_property_max_value>`             | 1.0 |
-+---------------------------+--------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`min_value<class_Curve_property_min_value>`             | 0.0 |
-+---------------------------+--------------------------------------------------------------+-----+
++---------------------------+--------------------------------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`bake_resolution<class_Curve_property_bake_resolution>` | ``100`` |
++---------------------------+--------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`max_value<class_Curve_property_max_value>`             | ``1.0`` |
++---------------------------+--------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`min_value<class_Curve_property_min_value>`             | ``0.0`` |
++---------------------------+--------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -108,7 +108,7 @@ Property Descriptions
 - :ref:`int<class_int>` **bake_resolution**
 
 +-----------+----------------------------+
-| *Default* | 100                        |
+| *Default* | ``100``                    |
 +-----------+----------------------------+
 | *Setter*  | set_bake_resolution(value) |
 +-----------+----------------------------+
@@ -124,7 +124,7 @@ The number of points to include in the baked (i.e. cached) curve data.
 - :ref:`float<class_float>` **max_value**
 
 +-----------+----------------------+
-| *Default* | 1.0                  |
+| *Default* | ``1.0``              |
 +-----------+----------------------+
 | *Setter*  | set_max_value(value) |
 +-----------+----------------------+
@@ -140,7 +140,7 @@ The maximum value the curve can reach.
 - :ref:`float<class_float>` **min_value**
 
 +-----------+----------------------+
-| *Default* | 0.0                  |
+| *Default* | ``0.0``              |
 +-----------+----------------------+
 | *Setter*  | set_min_value(value) |
 +-----------+----------------------+

@@ -18,11 +18,11 @@ VisualShaderNodeTextureUniform
 Properties
 ----------
 
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---+
-| :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` | :ref:`color_default<class_VisualShaderNodeTextureUniform_property_color_default>` | 0 |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---+
-| :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>`   | :ref:`texture_type<class_VisualShaderNodeTextureUniform_property_texture_type>`   | 0 |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---+
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+| :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` | :ref:`color_default<class_VisualShaderNodeTextureUniform_property_color_default>` | ``0`` |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+| :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>`   | :ref:`texture_type<class_VisualShaderNodeTextureUniform_property_texture_type>`   | ``0`` |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -69,7 +69,7 @@ Property Descriptions
 - :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` **color_default**
 
 +-----------+--------------------------+
-| *Default* | 0                        |
+| *Default* | ``0``                    |
 +-----------+--------------------------+
 | *Setter*  | set_color_default(value) |
 +-----------+--------------------------+
@@ -83,7 +83,7 @@ Property Descriptions
 - :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` **texture_type**
 
 +-----------+-------------------------+
-| *Default* | 0                       |
+| *Default* | ``0``                   |
 +-----------+-------------------------+
 | *Setter*  | set_texture_type(value) |
 +-----------+-------------------------+

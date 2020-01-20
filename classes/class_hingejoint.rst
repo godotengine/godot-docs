@@ -21,27 +21,27 @@ A HingeJoint normally uses the Z axis of body A as the hinge axis, another axis 
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`angular_limit/bias<class_HingeJoint_property_angular_limit/bias>`             | 0.3   |
-+---------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>`         | false |
-+---------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`angular_limit/lower<class_HingeJoint_property_angular_limit/lower>`           | -90.0 |
-+---------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`angular_limit/relaxation<class_HingeJoint_property_angular_limit/relaxation>` | 1.0   |
-+---------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`angular_limit/softness<class_HingeJoint_property_angular_limit/softness>`     | 0.9   |
-+---------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`angular_limit/upper<class_HingeJoint_property_angular_limit/upper>`           | 90.0  |
-+---------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>`   | :ref:`motor/enable<class_HingeJoint_property_motor/enable>`                         | false |
-+---------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`motor/max_impulse<class_HingeJoint_property_motor/max_impulse>`               | 1.0   |
-+---------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`motor/target_velocity<class_HingeJoint_property_motor/target_velocity>`       | 1.0   |
-+---------------------------+-------------------------------------------------------------------------------------+-------+
-| :ref:`float<class_float>` | :ref:`params/bias<class_HingeJoint_property_params/bias>`                           | 0.3   |
-+---------------------------+-------------------------------------------------------------------------------------+-------+
++---------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`angular_limit/bias<class_HingeJoint_property_angular_limit/bias>`             | ``0.3``   |
++---------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>`         | ``false`` |
++---------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`angular_limit/lower<class_HingeJoint_property_angular_limit/lower>`           | ``-90.0`` |
++---------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`angular_limit/relaxation<class_HingeJoint_property_angular_limit/relaxation>` | ``1.0``   |
++---------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`angular_limit/softness<class_HingeJoint_property_angular_limit/softness>`     | ``0.9``   |
++---------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`angular_limit/upper<class_HingeJoint_property_angular_limit/upper>`           | ``90.0``  |
++---------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`motor/enable<class_HingeJoint_property_motor/enable>`                         | ``false`` |
++---------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`motor/max_impulse<class_HingeJoint_property_motor/max_impulse>`               | ``1.0``   |
++---------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`motor/target_velocity<class_HingeJoint_property_motor/target_velocity>`       | ``1.0``   |
++---------------------------+-------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`params/bias<class_HingeJoint_property_params/bias>`                           | ``0.3``   |
++---------------------------+-------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -125,7 +125,7 @@ Property Descriptions
 - :ref:`float<class_float>` **angular_limit/bias**
 
 +-----------+------------------+
-| *Default* | 0.3              |
+| *Default* | ``0.3``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -141,7 +141,7 @@ The speed with which the rotation across the axis perpendicular to the hinge get
 - :ref:`bool<class_bool>` **angular_limit/enable**
 
 +-----------+-----------------+
-| *Default* | false           |
+| *Default* | ``false``       |
 +-----------+-----------------+
 | *Setter*  | set_flag(value) |
 +-----------+-----------------+
@@ -156,9 +156,9 @@ If ``true``, the hinges maximum and minimum rotation, defined by :ref:`angular_l
 
 - :ref:`float<class_float>` **angular_limit/lower**
 
-+-----------+-------+
-| *Default* | -90.0 |
-+-----------+-------+
++-----------+-----------+
+| *Default* | ``-90.0`` |
++-----------+-----------+
 
 The minimum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>` is ``true``.
 
@@ -169,7 +169,7 @@ The minimum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint
 - :ref:`float<class_float>` **angular_limit/relaxation**
 
 +-----------+------------------+
-| *Default* | 1.0              |
+| *Default* | ``1.0``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -185,7 +185,7 @@ The lower this value, the more the rotation gets slowed down.
 - :ref:`float<class_float>` **angular_limit/softness**
 
 +-----------+------------------+
-| *Default* | 0.9              |
+| *Default* | ``0.9``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -198,9 +198,9 @@ The lower this value, the more the rotation gets slowed down.
 
 - :ref:`float<class_float>` **angular_limit/upper**
 
-+-----------+------+
-| *Default* | 90.0 |
-+-----------+------+
++-----------+----------+
+| *Default* | ``90.0`` |
++-----------+----------+
 
 The maximum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint_property_angular_limit/enable>` is ``true``.
 
@@ -211,7 +211,7 @@ The maximum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint
 - :ref:`bool<class_bool>` **motor/enable**
 
 +-----------+-----------------+
-| *Default* | false           |
+| *Default* | ``false``       |
 +-----------+-----------------+
 | *Setter*  | set_flag(value) |
 +-----------+-----------------+
@@ -227,7 +227,7 @@ When activated, a motor turns the hinge.
 - :ref:`float<class_float>` **motor/max_impulse**
 
 +-----------+------------------+
-| *Default* | 1.0              |
+| *Default* | ``1.0``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -243,7 +243,7 @@ Maximum acceleration for the motor.
 - :ref:`float<class_float>` **motor/target_velocity**
 
 +-----------+------------------+
-| *Default* | 1.0              |
+| *Default* | ``1.0``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+
@@ -259,7 +259,7 @@ Target speed for the motor.
 - :ref:`float<class_float>` **params/bias**
 
 +-----------+------------------+
-| *Default* | 0.3              |
+| *Default* | ``0.3``          |
 +-----------+------------------+
 | *Setter*  | set_param(value) |
 +-----------+------------------+

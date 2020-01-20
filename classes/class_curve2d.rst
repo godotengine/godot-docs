@@ -23,9 +23,9 @@ It keeps a cache of precalculated points along the curve, to speed up further ca
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------+-----+
-| :ref:`float<class_float>` | :ref:`bake_interval<class_Curve2D_property_bake_interval>` | 5.0 |
-+---------------------------+------------------------------------------------------------+-----+
++---------------------------+------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`bake_interval<class_Curve2D_property_bake_interval>` | ``5.0`` |
++---------------------------+------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -76,7 +76,7 @@ Property Descriptions
 - :ref:`float<class_float>` **bake_interval**
 
 +-----------+--------------------------+
-| *Default* | 5.0                      |
+| *Default* | ``5.0``                  |
 +-----------+--------------------------+
 | *Setter*  | set_bake_interval(value) |
 +-----------+--------------------------+

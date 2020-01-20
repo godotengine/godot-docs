@@ -23,21 +23,21 @@ This class can also be used to store dynamically-generated PCM audio data.
 Properties
 ----------
 
-+--------------------------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>`        | :ref:`data<class_AudioStreamSample_property_data>`             | PoolByteArray(  ) |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`Format<enum_AudioStreamSample_Format>`     | :ref:`format<class_AudioStreamSample_property_format>`         | 0                 |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`int<class_int>`                            | :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` | 0                 |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`int<class_int>`                            | :ref:`loop_end<class_AudioStreamSample_property_loop_end>`     | 0                 |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` | :ref:`loop_mode<class_AudioStreamSample_property_loop_mode>`   | 0                 |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`int<class_int>`                            | :ref:`mix_rate<class_AudioStreamSample_property_mix_rate>`     | 44100             |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`bool<class_bool>`                          | :ref:`stereo<class_AudioStreamSample_property_stereo>`         | false             |
-+--------------------------------------------------+----------------------------------------------------------------+-------------------+
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>`        | :ref:`data<class_AudioStreamSample_property_data>`             | ``PoolByteArray(  )`` |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`Format<enum_AudioStreamSample_Format>`     | :ref:`format<class_AudioStreamSample_property_format>`         | ``0``                 |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`                            | :ref:`loop_begin<class_AudioStreamSample_property_loop_begin>` | ``0``                 |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`                            | :ref:`loop_end<class_AudioStreamSample_property_loop_end>`     | ``0``                 |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` | :ref:`loop_mode<class_AudioStreamSample_property_loop_mode>`   | ``0``                 |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`                            | :ref:`mix_rate<class_AudioStreamSample_property_mix_rate>`     | ``44100``             |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                          | :ref:`stereo<class_AudioStreamSample_property_stereo>`         | ``false``             |
++--------------------------------------------------+----------------------------------------------------------------+-----------------------+
 
 Methods
 -------
@@ -94,13 +94,13 @@ Property Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **data**
 
-+-----------+-------------------+
-| *Default* | PoolByteArray(  ) |
-+-----------+-------------------+
-| *Setter*  | set_data(value)   |
-+-----------+-------------------+
-| *Getter*  | get_data()        |
-+-----------+-------------------+
++-----------+-----------------------+
+| *Default* | ``PoolByteArray(  )`` |
++-----------+-----------------------+
+| *Setter*  | set_data(value)       |
++-----------+-----------------------+
+| *Getter*  | get_data()            |
++-----------+-----------------------+
 
 Contains the audio data in bytes.
 
@@ -113,7 +113,7 @@ Contains the audio data in bytes.
 - :ref:`Format<enum_AudioStreamSample_Format>` **format**
 
 +-----------+-------------------+
-| *Default* | 0                 |
+| *Default* | ``0``             |
 +-----------+-------------------+
 | *Setter*  | set_format(value) |
 +-----------+-------------------+
@@ -129,7 +129,7 @@ Audio format. See :ref:`Format<enum_AudioStreamSample_Format>` constants for val
 - :ref:`int<class_int>` **loop_begin**
 
 +-----------+-----------------------+
-| *Default* | 0                     |
+| *Default* | ``0``                 |
 +-----------+-----------------------+
 | *Setter*  | set_loop_begin(value) |
 +-----------+-----------------------+
@@ -145,7 +145,7 @@ Loop start in bytes.
 - :ref:`int<class_int>` **loop_end**
 
 +-----------+---------------------+
-| *Default* | 0                   |
+| *Default* | ``0``               |
 +-----------+---------------------+
 | *Setter*  | set_loop_end(value) |
 +-----------+---------------------+
@@ -161,7 +161,7 @@ Loop end in bytes.
 - :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` **loop_mode**
 
 +-----------+----------------------+
-| *Default* | 0                    |
+| *Default* | ``0``                |
 +-----------+----------------------+
 | *Setter*  | set_loop_mode(value) |
 +-----------+----------------------+
@@ -177,7 +177,7 @@ Loop mode. See :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` constants for va
 - :ref:`int<class_int>` **mix_rate**
 
 +-----------+---------------------+
-| *Default* | 44100               |
+| *Default* | ``44100``           |
 +-----------+---------------------+
 | *Setter*  | set_mix_rate(value) |
 +-----------+---------------------+
@@ -193,7 +193,7 @@ The sample rate for mixing this audio.
 - :ref:`bool<class_bool>` **stereo**
 
 +-----------+-------------------+
-| *Default* | false             |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_stereo(value) |
 +-----------+-------------------+

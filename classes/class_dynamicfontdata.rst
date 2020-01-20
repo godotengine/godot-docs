@@ -21,13 +21,13 @@ Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a ve
 Properties
 ----------
 
-+----------------------------------------------+----------------------------------------------------------------+------+
-| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>` | true |
-+----------------------------------------------+----------------------------------------------------------------+------+
-| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`     | ""   |
-+----------------------------------------------+----------------------------------------------------------------+------+
-| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`         | 2    |
-+----------------------------------------------+----------------------------------------------------------------+------+
++----------------------------------------------+----------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>` | ``true`` |
++----------------------------------------------+----------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`     | ``""``   |
++----------------------------------------------+----------------------------------------------------------------+----------+
+| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`         | ``2``    |
++----------------------------------------------+----------------------------------------------------------------+----------+
 
 Enumerations
 ------------
@@ -56,7 +56,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **antialiased**
 
 +-----------+------------------------+
-| *Default* | true                   |
+| *Default* | ``true``               |
 +-----------+------------------------+
 | *Setter*  | set_antialiased(value) |
 +-----------+------------------------+
@@ -72,7 +72,7 @@ If ``true``, the font is rendered with anti-aliasing.
 - :ref:`String<class_String>` **font_path**
 
 +-----------+----------------------+
-| *Default* | ""                   |
+| *Default* | ``""``               |
 +-----------+----------------------+
 | *Setter*  | set_font_path(value) |
 +-----------+----------------------+
@@ -88,7 +88,7 @@ The path to the vector font file.
 - :ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting**
 
 +-----------+--------------------+
-| *Default* | 2                  |
+| *Default* | ``2``              |
 +-----------+--------------------+
 | *Setter*  | set_hinting(value) |
 +-----------+--------------------+

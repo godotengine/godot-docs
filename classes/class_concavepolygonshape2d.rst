@@ -23,9 +23,9 @@ The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShap
 Properties
 ----------
 
-+-------------------------------------------------+----------------------------------------------------------------+----------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | PoolVector2Array(  ) |
-+-------------------------------------------------+----------------------------------------------------------------+----------------------+
++-------------------------------------------------+----------------------------------------------------------------+--------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | ``PoolVector2Array(  )`` |
++-------------------------------------------------+----------------------------------------------------------------+--------------------------+
 
 Property Descriptions
 ---------------------
@@ -34,13 +34,13 @@ Property Descriptions
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **segments**
 
-+-----------+----------------------+
-| *Default* | PoolVector2Array(  ) |
-+-----------+----------------------+
-| *Setter*  | set_segments(value)  |
-+-----------+----------------------+
-| *Getter*  | get_segments()       |
-+-----------+----------------------+
++-----------+--------------------------+
+| *Default* | ``PoolVector2Array(  )`` |
++-----------+--------------------------+
+| *Setter*  | set_segments(value)      |
++-----------+--------------------------+
+| *Getter*  | get_segments()           |
++-----------+--------------------------+
 
 The array of points that make up the ``ConcavePolygonShape2D``'s line segments.
 
