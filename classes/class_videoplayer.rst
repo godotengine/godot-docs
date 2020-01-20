@@ -229,7 +229,7 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_stream_name** **(** **)** const
 
-Returns the video stream's name.
+Returns the video stream's name, or ``"<No Stream>"`` if no video stream is assigned.
 
 ----
 
@@ -247,13 +247,15 @@ Returns the current frame as a :ref:`Texture<class_Texture>`.
 
 Returns ``true`` if the video is playing.
 
+**Note:** The video is still considered playing if paused during playback.
+
 ----
 
 .. _class_VideoPlayer_method_play:
 
 - void **play** **(** **)**
 
-Starts the video playback.
+Starts the video playback from the beginning. If the video is paused, this will not unpause the video.
 
 ----
 
@@ -261,5 +263,7 @@ Starts the video playback.
 
 - void **stop** **(** **)**
 
-Stops the video playback.
+Stops the video playback and sets the stream position to 0.
+
+**Note:** Although the stream position will be set to 0, the first frame of the video stream won't become the current frame.
 

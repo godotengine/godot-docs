@@ -61,9 +61,9 @@ enum **ShadowMode**:
 
 enum **ShadowDetail**:
 
-- **SHADOW_DETAIL_VERTICAL** = **0**
+- **SHADOW_DETAIL_VERTICAL** = **0** --- Use more detail vertically when computing the shadow.
 
-- **SHADOW_DETAIL_HORIZONTAL** = **1**
+- **SHADOW_DETAIL_HORIZONTAL** = **1** --- Use more detail horizontally when computing the shadow.
 
 Property Descriptions
 ---------------------

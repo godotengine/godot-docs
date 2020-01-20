@@ -27,6 +27,8 @@ Tutorials
 
 - :doc:`../tutorials/3d/using_multi_mesh_instance`
 
+- :doc:`../tutorials/optimization/using_multimesh`
+
 Properties
 ----------
 

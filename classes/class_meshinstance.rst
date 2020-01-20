@@ -91,6 +91,8 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 | *Getter* | get_skin()      |
 +----------+-----------------+
 
+Sets the skin to be used by this instance.
+
 Method Descriptions
 -------------------
 

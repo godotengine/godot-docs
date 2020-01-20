@@ -13,7 +13,12 @@ VisualInstance
 
 **Inherited By:** :ref:`BakedLightmap<class_BakedLightmap>`, :ref:`GIProbe<class_GIProbe>`, :ref:`GeometryInstance<class_GeometryInstance>`, :ref:`Light<class_Light>`, :ref:`ReflectionProbe<class_ReflectionProbe>`, :ref:`RootMotionView<class_RootMotionView>`
 
+Parent of all visual 3D nodes.
 
+Description
+-----------
+
+The VisualInstance is used to connect a resource to a visual representation. All visual 3D nodes inherit from the VisualInstance. In general, you should not access the VisualInstance properties directly as they are accessed and managed by the nodes that inherit from VisualInstance. VisualInstance is the node representation of the :ref:`VisualServer<class_VisualServer>` instance.
 
 Properties
 ----------
@@ -75,17 +80,23 @@ Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this Vi
 
 - :ref:`RID<class_RID>` **get_base** **(** **)** const
 
+Returns the RID of the resource associated with this VisualInstance. For example, if the Node is a :ref:`MeshInstance<class_MeshInstance>`, this will return the RID of the associated :ref:`Mesh<class_Mesh>`.
+
 ----
 
 .. _class_VisualInstance_method_get_instance:
 
 - :ref:`RID<class_RID>` **get_instance** **(** **)** const
 
+Returns the RID of this instance. This RID is the same as the RID returned by :ref:`VisualServer.instance_create<class_VisualServer_method_instance_create>`. This RID is needed if you want to call :ref:`VisualServer<class_VisualServer>` functions directly on this VisualInstance.
+
 ----
 
 .. _class_VisualInstance_method_get_layer_mask_bit:
 
 - :ref:`bool<class_bool>` **get_layer_mask_bit** **(** :ref:`int<class_int>` layer **)** const
+
+Returns ``true`` when the specified layer is enabled in :ref:`layers<class_VisualInstance_property_layers>` and ``false`` otherwise.
 
 ----
 
@@ -103,13 +114,13 @@ Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, ro
 
 - void **set_base** **(** :ref:`RID<class_RID>` base **)**
 
-Sets the base of the VisualInstance, which changes how the engine handles the VisualInstance under the hood.
-
-It is recommended to only use :ref:`set_base<class_VisualInstance_method_set_base>` if you know what you're doing.
+Sets the resource that is instantiated by this VisualInstance, which changes how the engine handles the VisualInstance under the hood. Equivalent to :ref:`VisualServer.instance_set_base<class_VisualServer_method_instance_set_base>`.
 
 ----
 
 .. _class_VisualInstance_method_set_layer_mask_bit:
 
 - void **set_layer_mask_bit** **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enabled **)**
+
+Enables a particular layer in :ref:`layers<class_VisualInstance_property_layers>`.
 

@@ -36,6 +36,11 @@ The ``ArrayMesh`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying t
 
 The ``MeshInstance`` is ready to be added to the SceneTree to be shown.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/content/procedural_geometry/arraymesh`
+
 Properties
 ----------
 
@@ -198,6 +203,8 @@ Property Descriptions
 +-----------+-----------------------------+
 | *Getter*  | get_blend_shape_mode()      |
 +-----------+-----------------------------+
+
+Sets the blend shape mode to one of :ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>`.
 
 ----
 

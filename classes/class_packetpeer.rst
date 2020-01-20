@@ -23,9 +23,11 @@ PacketPeer is an abstraction and base class for packet-based protocols (such as 
 Properties
 ----------
 
-+-------------------------+-------------------------------------------------------------------------------+-------+
-| :ref:`bool<class_bool>` | :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` | false |
-+-------------------------+-------------------------------------------------------------------------------+-------+
++-------------------------+---------------------------------------------------------------------------------+---------+
+| :ref:`bool<class_bool>` | :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`   | false   |
++-------------------------+---------------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`   | :ref:`encode_buffer_max_size<class_PacketPeer_property_encode_buffer_max_size>` | 8388608 |
++-------------------------+---------------------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -64,6 +66,24 @@ Property Descriptions
 If ``true``, the PacketPeer will allow encoding and decoding of object via :ref:`get_var<class_PacketPeer_method_get_var>` and :ref:`put_var<class_PacketPeer_method_put_var>`.
 
 **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+
+----
+
+.. _class_PacketPeer_property_encode_buffer_max_size:
+
+- :ref:`int<class_int>` **encode_buffer_max_size**
+
++-----------+-----------------------------------+
+| *Default* | 8388608                           |
++-----------+-----------------------------------+
+| *Setter*  | set_encode_buffer_max_size(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_encode_buffer_max_size()      |
++-----------+-----------------------------------+
+
+Maximum buffer size allowed when encoding :ref:`Variant<class_Variant>`\ s. Raise this value to support heavier memory allocations.
+
+The :ref:`put_var<class_PacketPeer_method_put_var>` method allocates memory on the stack, and the buffer used will grow automatically to the closest power of two to match the size of the :ref:`Variant<class_Variant>`. If the :ref:`Variant<class_Variant>` is bigger than ``encode_buffer_max_size``, the method will error out with :ref:`@GlobalScope.ERR_OUT_OF_MEMORY<class_@GlobalScope_constant_ERR_OUT_OF_MEMORY>`.
 
 Method Descriptions
 -------------------

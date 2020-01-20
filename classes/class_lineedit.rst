@@ -16,7 +16,7 @@ Control that provides single-line string editing.
 Description
 -----------
 
-LineEdit provides a single-line string editor, used for text fields. It features many built-in shortcuts which will always be available:
+LineEdit provides a single-line string editor, used for text fields. It features many built-in shortcuts which will always be available: (the Ctrl here maps to Command on macOS)
 
 - Ctrl + C: Copy
 
@@ -35,6 +35,24 @@ LineEdit provides a single-line string editor, used for text fields. It features
 - Ctrl + A: Select all text
 
 - Up/Down arrow: Move the cursor to the beginning/end of the line
+
+On macOS, some extra keyboard shortcuts are available:
+
+- Ctrl + F: Like the right arrow key, move the cursor one character right
+
+- Ctrl + B: Like the left arrow key, move the cursor one character left
+
+- Ctrl + P: Like the up arrow key, move the cursor to the previous line
+
+- Ctrl + N: Like the down arrow key, move the cursor to the next line
+
+- Ctrl + D: Like the Delete key, delete the character on the right side of cursor
+
+- Ctrl + H: Like the Backspace key, delete the character on the left side of the cursor
+
+- Command + Left arrow: Like the Home key, move the cursor to the beginning of the line
+
+- Command + Right arrow: Like the End key, move the cursor to the end of the line
 
 Properties
 ----------
@@ -487,6 +505,8 @@ If ``false``, using shortcuts will be disabled.
 +-----------+-----------------+
 
 String value of the ``LineEdit``.
+
+**Note:** Changing text using this property won't emit the :ref:`text_changed<class_LineEdit_signal_text_changed>` signal.
 
 Method Descriptions
 -------------------

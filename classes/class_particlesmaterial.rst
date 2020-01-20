@@ -253,6 +253,8 @@ enum **Flags**:
 
 .. _class_ParticlesMaterial_constant_EMISSION_SHAPE_DIRECTED_POINTS:
 
+.. _class_ParticlesMaterial_constant_EMISSION_SHAPE_MAX:
+
 enum **EmissionShape**:
 
 - **EMISSION_SHAPE_POINT** = **0** --- All particles will be emitted from a single point.
@@ -264,6 +266,8 @@ enum **EmissionShape**:
 - **EMISSION_SHAPE_POINTS** = **3** --- Particles will be emitted at a position determined by sampling a random point on the :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`. Particle color will be modulated by :ref:`emission_color_texture<class_ParticlesMaterial_property_emission_color_texture>`.
 
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4** --- Particles will be emitted at a position determined by sampling a random point on the :ref:`emission_point_texture<class_ParticlesMaterial_property_emission_point_texture>`. Particle velocity and rotation will be set based on :ref:`emission_normal_texture<class_ParticlesMaterial_property_emission_normal_texture>`. Particle color will be modulated by :ref:`emission_color_texture<class_ParticlesMaterial_property_emission_color_texture>`.
+
+- **EMISSION_SHAPE_MAX** = **5** --- Represents the size of the :ref:`EmissionShape<enum_ParticlesMaterial_EmissionShape>` enum.
 
 Property Descriptions
 ---------------------

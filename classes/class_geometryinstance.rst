@@ -243,6 +243,8 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** const
 
+Returns the :ref:`Flags<enum_GeometryInstance_Flags>` that have been set for this object.
+
 ----
 
 .. _class_GeometryInstance_method_set_custom_aabb:
@@ -256,4 +258,6 @@ Overrides the bounding box of this node with a custom one. To remove it, set an 
 .. _class_GeometryInstance_method_set_flag:
 
 - void **set_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag, :ref:`bool<class_bool>` value **)**
+
+Sets the :ref:`Flags<enum_GeometryInstance_Flags>` specified. See :ref:`Flags<enum_GeometryInstance_Flags>` for options.
 

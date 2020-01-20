@@ -87,6 +87,8 @@ Property Descriptions
 
 If ``true``, the timer will automatically start when entering the scene tree.
 
+**Note:** This property is automatically set to ``false`` after the timer enters the scene tree and starts.
+
 ----
 
 .. _class_Timer_property_one_shot:

@@ -44,6 +44,8 @@ The following example shows how to parse an INI-style file from the system, read
 
 Keep in mind that section and property names can't contain spaces. Anything after a space will be ignored on save and on load.
 
+ConfigFiles can also contain manually written comment lines starting with a semicolon (``;``). Those lines will be ignored when parsing the file. Note that comments will be lost when saving the ConfigFile. This can still be useful for dedicated server configuration files, which are typically never overwritten without explicit user action.
+
 Methods
 -------
 

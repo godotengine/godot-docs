@@ -42,6 +42,8 @@ Properties
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`JSON<class_JSON>`                                                   | :ref:`JSON<class_@GlobalScope_property_JSON>`                                       |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`JavaClassWrapper<class_JavaClassWrapper>`                           | :ref:`JavaClassWrapper<class_@GlobalScope_property_JavaClassWrapper>`               |
++---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`JavaScript<class_JavaScript>`                                       | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                           |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`Reference<class_Reference>`                                         | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
@@ -2287,11 +2289,23 @@ The :ref:`JSON<class_JSON>` singleton.
 
 ----
 
+.. _class_@GlobalScope_property_JavaClassWrapper:
+
+- :ref:`JavaClassWrapper<class_JavaClassWrapper>` **JavaClassWrapper**
+
+The :ref:`JavaClassWrapper<class_JavaClassWrapper>` singleton.
+
+**Note:** Only implemented on Android.
+
+----
+
 .. _class_@GlobalScope_property_JavaScript:
 
 - :ref:`JavaScript<class_JavaScript>` **JavaScript**
 
 The :ref:`JavaScript<class_JavaScript>` singleton.
+
+**Note:** Only implemented on HTML5.
 
 ----
 

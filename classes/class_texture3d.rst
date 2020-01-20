@@ -11,7 +11,12 @@ Texture3D
 
 **Inherits:** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Texture with 3 dimensions.
 
+Description
+-----------
+
+Texture3D is a 3-dimensional texture that has a width, height, and depth.
 
 Properties
 ----------

@@ -104,35 +104,35 @@ Enumerations
 
 enum **Param**:
 
-- **PARAM_ENERGY** = **0**
+- **PARAM_ENERGY** = **0** --- Constant for accessing :ref:`light_energy<class_Light_property_light_energy>`.
 
-- **PARAM_INDIRECT_ENERGY** = **1**
+- **PARAM_INDIRECT_ENERGY** = **1** --- Constant for accessing :ref:`light_indirect_energy<class_Light_property_light_indirect_energy>`.
 
-- **PARAM_SPECULAR** = **2**
+- **PARAM_SPECULAR** = **2** --- Constant for accessing :ref:`light_specular<class_Light_property_light_specular>`.
 
-- **PARAM_RANGE** = **3**
+- **PARAM_RANGE** = **3** --- Constant for accessing :ref:`OmniLight.omni_range<class_OmniLight_property_omni_range>` or :ref:`SpotLight.spot_range<class_SpotLight_property_spot_range>`.
 
-- **PARAM_ATTENUATION** = **4**
+- **PARAM_ATTENUATION** = **4** --- Constant for accessing :ref:`OmniLight.omni_attenuation<class_OmniLight_property_omni_attenuation>` or :ref:`SpotLight.spot_attenuation<class_SpotLight_property_spot_attenuation>`.
 
-- **PARAM_SPOT_ANGLE** = **5**
+- **PARAM_SPOT_ANGLE** = **5** --- Constant for accessing :ref:`SpotLight.spot_angle<class_SpotLight_property_spot_angle>`.
 
-- **PARAM_SPOT_ATTENUATION** = **6**
+- **PARAM_SPOT_ATTENUATION** = **6** --- Constant for accessing :ref:`SpotLight.spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>`.
 
-- **PARAM_CONTACT_SHADOW_SIZE** = **7**
+- **PARAM_CONTACT_SHADOW_SIZE** = **7** --- Constant for accessing :ref:`shadow_contact<class_Light_property_shadow_contact>`.
 
-- **PARAM_SHADOW_MAX_DISTANCE** = **8**
+- **PARAM_SHADOW_MAX_DISTANCE** = **8** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`.
 
-- **PARAM_SHADOW_SPLIT_1_OFFSET** = **9**
+- **PARAM_SHADOW_SPLIT_1_OFFSET** = **9** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_1<class_DirectionalLight_property_directional_shadow_split_1>`.
 
-- **PARAM_SHADOW_SPLIT_2_OFFSET** = **10**
+- **PARAM_SHADOW_SPLIT_2_OFFSET** = **10** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_2<class_DirectionalLight_property_directional_shadow_split_2>`.
 
-- **PARAM_SHADOW_SPLIT_3_OFFSET** = **11**
+- **PARAM_SHADOW_SPLIT_3_OFFSET** = **11** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_3<class_DirectionalLight_property_directional_shadow_split_3>`.
 
-- **PARAM_SHADOW_NORMAL_BIAS** = **12**
+- **PARAM_SHADOW_NORMAL_BIAS** = **12** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_normal_bias<class_DirectionalLight_property_directional_shadow_normal_bias>`.
 
-- **PARAM_SHADOW_BIAS** = **13**
+- **PARAM_SHADOW_BIAS** = **13** --- Constant for accessing :ref:`shadow_bias<class_Light_property_shadow_bias>`.
 
-- **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14**
+- **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_bias_split_scale<class_DirectionalLight_property_directional_shadow_bias_split_scale>`.
 
 - **PARAM_MAX** = **15** --- Represents the size of the :ref:`Param<enum_Light_Param>` enum.
 
@@ -365,6 +365,8 @@ If ``true``, the light will cast shadows.
 | *Getter*  | get_shadow_reverse_cull_face()      |
 +-----------+-------------------------------------+
 
+If ``true``, reverses the backface culling of the mesh. This can be useful when you have a flat mesh that has a light behind it. If you need to cast a shadow on both sides of the mesh, set the mesh to use double-sided shadows with :ref:`GeometryInstance.SHADOW_CASTING_SETTING_DOUBLE_SIDED<class_GeometryInstance_constant_SHADOW_CASTING_SETTING_DOUBLE_SIDED>`.
+
 Method Descriptions
 -------------------
 
@@ -372,9 +374,13 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light_Param>` param **)** const
 
+Returns the value of the specified :ref:`Param<enum_Light_Param>` parameter.
+
 ----
 
 .. _class_Light_method_set_param:
 
 - void **set_param** **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)**
+
+Sets the value of the specified :ref:`Param<enum_Light_Param>` parameter.
 

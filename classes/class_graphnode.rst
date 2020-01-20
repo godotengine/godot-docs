@@ -11,14 +11,16 @@ GraphNode
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A GraphNode is a container with several input and output slots allowing connections between GraphNodes. Slots can have different, incompatible types.
+A GraphNode is a container with potentially several input and output slots allowing connections between GraphNodes. Slots can have different, incompatible types.
 
 Description
 -----------
 
-A GraphNode is a container defined by a title. It can have one or more input and output slots, which can be enabled (shown) or disabled (not shown) and have different (incompatible) types. Colors can also be assigned to slots. A tuple of input and output slots is defined for each GUI element included in the GraphNode. Input and output connections are left and right slots, but only enabled slots are counted as connections.
+A GraphNode is a container. Each GraphNode can have several input and output slots, sometimes refered to as ports, allowing connections between GraphNodes. To add a slot to GraphNode, add any :ref:`Control<class_Control>`-derived child node to it. 
 
-To add a slot to GraphNode, add any :ref:`Control<class_Control>`-derived child node to it.
+After adding at least one child to GraphNode new sections will be automatically created in the Inspector called 'Slot'. When 'Slot' is expanded you will see list with index number for each slot. You can click on each of them to expand further.  
+
+In the Inspector you can enable (show) or disable (hide) slots. By default all slots are disabled so you may not see any slots on your GraphNode initially. You can assign a type to each slot. Only slots of the same type will be able to connect to each other. You can also assign colors to slots. A tuple of input and output slots is defined for each GUI element included in the GraphNode. Input connections are on the left and output connections are on the right side of GraphNode. Only enabled slots are counted as connections.
 
 Properties
 ----------
@@ -248,7 +250,7 @@ Sets the overlay shown above the GraphNode. See :ref:`Overlay<enum_GraphNode_Ove
 
 If ``true``, the user can resize the GraphNode.
 
-**Note:** Dragging the handle will only trigger the :ref:`resize_request<class_GraphNode_signal_resize_request>` signal, the GraphNode needs to be resized manually.
+**Note:** Dragging the handle will only emit the :ref:`resize_request<class_GraphNode_signal_resize_request>` signal, the GraphNode needs to be resized manually.
 
 ----
 
@@ -282,7 +284,7 @@ If ``true``, the GraphNode is selected.
 
 If ``true``, the close button will be visible.
 
-**Note:** Pressing it will only trigger the :ref:`close_request<class_GraphNode_signal_close_request>` signal, the GraphNode needs to be removed manually.
+**Note:** Pressing it will only emit the :ref:`close_request<class_GraphNode_signal_close_request>` signal, the GraphNode needs to be removed manually.
 
 ----
 

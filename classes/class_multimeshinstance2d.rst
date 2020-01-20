@@ -38,6 +38,8 @@ Signals
 
 - **texture_changed** **(** **)**
 
+Emitted when the :ref:`texture<class_MultiMeshInstance2D_property_texture>` is changed.
+
 Property Descriptions
 ---------------------
 

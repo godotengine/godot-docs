@@ -164,7 +164,7 @@ The colliding body's shape's normal at the point of collision.
 | *Getter*  | get_position()     |
 +-----------+--------------------+
 
-The point of collision.
+The point of collision, in global coordinates.
 
 ----
 

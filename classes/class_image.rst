@@ -215,9 +215,9 @@ Enumerations
 
 enum **Format**:
 
-- **FORMAT_L8** = **0**
+- **FORMAT_L8** = **0** --- Texture format with a single 8-bit depth representing luminance.
 
-- **FORMAT_LA8** = **1**
+- **FORMAT_LA8** = **1** --- OpenGL texture format with two values, luminance and alpha each stored with 8 bits.
 
 - **FORMAT_R8** = **2** --- OpenGL texture format ``RED`` with a single component and a bitdepth of 8.
 
@@ -357,11 +357,11 @@ On the other hand, if the image already has mipmaps, they will be used, and a ne
 
 enum **AlphaMode**:
 
-- **ALPHA_NONE** = **0**
+- **ALPHA_NONE** = **0** --- Image does not have alpha.
 
-- **ALPHA_BIT** = **1**
+- **ALPHA_BIT** = **1** --- Image stores alpha in a single bit.
 
-- **ALPHA_BLEND** = **2**
+- **ALPHA_BLEND** = **2** --- Image uses alpha.
 
 ----
 
@@ -379,15 +379,15 @@ enum **AlphaMode**:
 
 enum **CompressMode**:
 
-- **COMPRESS_S3TC** = **0**
+- **COMPRESS_S3TC** = **0** --- Use S3TC compression.
 
-- **COMPRESS_PVRTC2** = **1**
+- **COMPRESS_PVRTC2** = **1** --- Use PVRTC2 compression.
 
-- **COMPRESS_PVRTC4** = **2**
+- **COMPRESS_PVRTC4** = **2** --- Use PVRTC4 compression.
 
-- **COMPRESS_ETC** = **3**
+- **COMPRESS_ETC** = **3** --- Use ETC compression.
 
-- **COMPRESS_ETC2** = **4**
+- **COMPRESS_ETC2** = **4** --- Use ETC2 compression.
 
 ----
 
@@ -401,11 +401,11 @@ enum **CompressMode**:
 
 enum **CompressSource**:
 
-- **COMPRESS_SOURCE_GENERIC** = **0**
+- **COMPRESS_SOURCE_GENERIC** = **0** --- Source texture (before compression) is a regular texture. Default for all textures.
 
-- **COMPRESS_SOURCE_SRGB** = **1**
+- **COMPRESS_SOURCE_SRGB** = **1** --- Source texture (before compression) is in sRGB space.
 
-- **COMPRESS_SOURCE_NORMAL** = **2**
+- **COMPRESS_SOURCE_NORMAL** = **2** --- Source texture (before compression) is a normal texture (e.g. it can be compressed into two channels).
 
 Constants
 ---------
@@ -469,6 +469,8 @@ Blits ``src_rect`` area from ``src`` image to this image at the coordinates give
 .. _class_Image_method_bumpmap_to_normalmap:
 
 - void **bumpmap_to_normalmap** **(** :ref:`float<class_float>` bump_scale=1.0 **)**
+
+Converts a bumpmap to a normalmap. A bumpmap provides a height offset per-pixel, while a normalmap provides a normal direction per pixel.
 
 ----
 
@@ -540,7 +542,7 @@ Decompresses the image if it is compressed. Returns an error if decompress funct
 
 - :ref:`AlphaMode<enum_Image_AlphaMode>` **detect_alpha** **(** **)** const
 
-Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has data for alpha values. Returns :ref:`ALPHA_BIT<class_Image_constant_ALPHA_BIT>` if all the alpha values are below a certain threshold or the maximum value. Returns :ref:`ALPHA_NONE<class_Image_constant_ALPHA_NONE>` if no data for alpha values is found.
+Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has data for alpha values. Returns :ref:`ALPHA_BIT<class_Image_constant_ALPHA_BIT>` if all the alpha values are stored in a single bit. Returns :ref:`ALPHA_NONE<class_Image_constant_ALPHA_NONE>` if no data for alpha values is found.
 
 ----
 
@@ -779,6 +781,8 @@ Resizes the image to the nearest power of 2 for the width and height. If ``squar
 .. _class_Image_method_rgbe_to_srgb:
 
 - :ref:`Image<class_Image>` **rgbe_to_srgb** **(** **)**
+
+Converts a standard RGBE (Red Green Blue Exponent) image to an sRGB image.
 
 ----
 
