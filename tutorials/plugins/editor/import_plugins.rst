@@ -279,7 +279,7 @@ value, you can add the logic in this method.
 The ``import`` method
 ---------------------
 
-The heavy part of the process, responsible for the converting the files into
+The heavy part of the process, responsible for converting the files into
 resources, is covered by the :ref:`import() <class_EditorImportPlugin_method_import>`
 method. Our sample code is a bit long, so let's split in a few parts:
 
