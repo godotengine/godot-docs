@@ -19,13 +19,7 @@ This tutorial will show you how to create a simple import plugin to load a
 custom text file as a material resource. This text file will contain three
 numeric values separated by comma, which represents the three channels of a
 color, and the resulting color will be used as the albedo (main color) of the
-imported material.
-
-.. note:: This tutorial assumes you already know how to make generic plugins. If
-          in doubt, refer to the :ref:`doc_making_plugins` page. This also
-          assumes you are acquainted with Godot's import system.
-
-The sample file to import contains only a line representing the pure blue color
+imported material. In this example it will contain the pure blue color
 (zero red, zero green, and full blue):
 
 .. code-block:: none
