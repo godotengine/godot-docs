@@ -372,12 +372,14 @@ code,
 }
 
 .rst-content .admonition.attention,
+.rst-content .admonition.caution,
 .rst-content .admonition.warning {
     background-color: var(--admonition-attention-background-color);
     color: var(--admonition-attention-color);
 }
 
 .rst-content .admonition.attention .admonition-title,
+.rst-content .admonition.caution .admonition-title,
 .rst-content .admonition.warning .admonition-title {
     background-color: var(--admonition-attention-title-background-color);
     color: var(--admonition-attention-title-color);
