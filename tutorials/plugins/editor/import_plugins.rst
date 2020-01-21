@@ -70,8 +70,8 @@ later when removing it. The
 called when the plugin is deactivated to clean up the memory and let the editor
 know the import plugin isn't available anymore.
 
-Note that the import plugin is a reference type  so it doesn't need to be
-explicitly released from the memory with the ``free()`` function. It will be
+Note that the import plugin is a reference type, so it doesn't need to be
+explicitly released from memory with the ``free()`` function. It will be
 released automatically by the engine when it goes out of scope.
 
 The EditorImportPlugin class
