@@ -70,16 +70,16 @@ later when removing it. The
 called when the plugin is deactivated to clean up the memory and let the editor
 know the import plugin isn't available anymore.
 
-Note that the import plugin is a reference type  so it doesn't need to be
-explicitly released from the memory with the ``free()`` function. It will be
+Note that the import plugin is a reference type, so it doesn't need to be
+explicitly released from memory with the ``free()`` function. It will be
 released automatically by the engine when it goes out of scope.
 
 The EditorImportPlugin class
 ----------------------------
 
 The main character of the show is the
-:ref:`EditorImportPlugin class <class_EditorImportPlugin>`. It is responsible to
-implement the methods that are called by Godot when it needs to know how to deal
+:ref:`EditorImportPlugin class <class_EditorImportPlugin>`. It is responsible for
+implementing the methods that are called by Godot when it needs to know how to deal
 with files.
 
 Let's begin to code our plugin, one method at time:
