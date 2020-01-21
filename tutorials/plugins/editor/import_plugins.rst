@@ -19,9 +19,7 @@ This tutorial will show you how to create a simple import plugin to load a
 custom text file as a material resource. This text file will contain three
 numeric values separated by comma, which represents the three channels of a
 color, and the resulting color will be used as the albedo (main color) of the
-imported material.
-
-The sample file to import contains only a line representing the pure blue color
+imported material. In this example it will contain the pure blue color
 (zero red, zero green, and full blue):
 
 .. code-block:: none
