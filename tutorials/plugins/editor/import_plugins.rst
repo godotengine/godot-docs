@@ -136,7 +136,7 @@ the user can select which one to use when importing the files.
 The imported files are saved in the ``.import`` folder at the project's root.
 Their extension should match the type of resource you are importing, but since
 Godot can't tell what you'll use (because there might be multiple valid
-extensions for the same resource), you need to inform what will be the used in
+extensions for the same resource), you need to declare what will be used in
 the import.
 
 Since we're importing a Material, we'll use the special extension for such
