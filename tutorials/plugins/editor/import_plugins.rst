@@ -95,7 +95,7 @@ Let's begin to code our plugin, one method at time:
 
 The first method is the
 :ref:`get_importer_name()<class_EditorImportPlugin_method_get_importer_name>`. This is a
-unique name to your plugin that is used by Godot to know which import was used
+unique name for your plugin that is used by Godot to know which import was used
 in a certain file. When the files needs to be reimported, the editor will know
 which plugin to call.
 
