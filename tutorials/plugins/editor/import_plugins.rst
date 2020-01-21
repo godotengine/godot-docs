@@ -105,7 +105,7 @@ which plugin to call.
         return "Silly Material"
 
 The :ref:`get_visible_name()<class_EditorImportPlugin_method_get_visible_name>` method is
-responsible to inform the name of the type it imports and will be shown to the
+responsible for returning the name of the type it imports and it will be shown to the
 user in the Import dock.
 
 You should choose this name as a continuation to "Import as". Eg. *"Import as
