@@ -191,7 +191,7 @@ Arrays
 ------
 
 Arrays are containers for multiple variables of a similar type.
-Note: As of Godot 3.2, only local arrays have been implemented.
+Note: As of Godot 3.2, only local and varying arrays have been implemented.
 
 Local arrays
 ~~~~~~~~~~~~
@@ -423,6 +423,22 @@ pixel in the fragment processor.
 
     void fragment() {
         ALBEDO = some_color;
+    }
+
+Varying can also be an array:
+
+.. code-block:: glsl
+
+    shader_type spatial;
+
+    varying float var_arr[3];
+    void vertex() {
+        var_arr[0] = 1.0;
+        var_arr[1] = 0.0;
+    }
+
+    void fragment() {
+        ALBEDO = vec3(var_arr[0], var_arr[1], var_arr[2]); // red color
     }
 
 Interpolation qualifiers
