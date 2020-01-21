@@ -100,6 +100,8 @@ The speed with which the swing or twist will take place.
 
 The higher, the faster.
 
+----
+
 .. _class_ConeTwistJoint_property_relaxation:
 
 - :ref:`float<class_float>` **relaxation**
@@ -111,6 +113,8 @@ The higher, the faster.
 +----------+------------------+
 
 Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
+
+----
 
 .. _class_ConeTwistJoint_property_softness:
 
@@ -124,6 +128,8 @@ Defines, how fast the swing- and twist-speed-difference on both sides gets synce
 
 The ease with which the joint starts to twist. If it's too low, it takes more force to start twisting the joint.
 
+----
+
 .. _class_ConeTwistJoint_property_swing_span:
 
 - :ref:`float<class_float>` **swing_span**
@@ -135,6 +141,8 @@ The swing span defines, how much rotation will not get corrected along the swing
 Could be defined as looseness in the ``ConeTwistJoint``.
 
 If below 0.05, this behavior is locked. Default value: ``PI/4``.
+
+----
 
 .. _class_ConeTwistJoint_property_twist_span:
 

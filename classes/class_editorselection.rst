@@ -56,11 +56,15 @@ Method Descriptions
 
 Add a node to the selection.
 
+----
+
 .. _class_EditorSelection_method_clear:
 
 - void **clear** **(** **)**
 
 Clear the selection.
+
+----
 
 .. _class_EditorSelection_method_get_selected_nodes:
 
@@ -68,11 +72,15 @@ Clear the selection.
 
 Get the list of selected nodes.
 
+----
+
 .. _class_EditorSelection_method_get_transformable_selected_nodes:
 
 - :ref:`Array<class_Array>` **get_transformable_selected_nodes** **(** **)**
 
 Get the list of selected nodes, optimized for transform operations (ie, moving them, rotating, etc). This list avoids situations where a node is selected and also chid/grandchild.
+
+----
 
 .. _class_EditorSelection_method_remove_node:
 

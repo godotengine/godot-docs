@@ -52,6 +52,8 @@ Property Descriptions
 | *Getter* | get_channel()      |
 +----------+--------------------+
 
+----
+
 .. _class_InputEventMIDI_property_controller_number:
 
 - :ref:`int<class_int>` **controller_number**
@@ -61,6 +63,8 @@ Property Descriptions
 +----------+------------------------------+
 | *Getter* | get_controller_number()      |
 +----------+------------------------------+
+
+----
 
 .. _class_InputEventMIDI_property_controller_value:
 
@@ -72,6 +76,8 @@ Property Descriptions
 | *Getter* | get_controller_value()      |
 +----------+-----------------------------+
 
+----
+
 .. _class_InputEventMIDI_property_instrument:
 
 - :ref:`int<class_int>` **instrument**
@@ -81,6 +87,8 @@ Property Descriptions
 +----------+-----------------------+
 | *Getter* | get_instrument()      |
 +----------+-----------------------+
+
+----
 
 .. _class_InputEventMIDI_property_message:
 
@@ -92,6 +100,8 @@ Property Descriptions
 | *Getter* | get_message()      |
 +----------+--------------------+
 
+----
+
 .. _class_InputEventMIDI_property_pitch:
 
 - :ref:`int<class_int>` **pitch**
@@ -102,6 +112,8 @@ Property Descriptions
 | *Getter* | get_pitch()      |
 +----------+------------------+
 
+----
+
 .. _class_InputEventMIDI_property_pressure:
 
 - :ref:`int<class_int>` **pressure**
@@ -111,6 +123,8 @@ Property Descriptions
 +----------+---------------------+
 | *Getter* | get_pressure()      |
 +----------+---------------------+
+
+----
 
 .. _class_InputEventMIDI_property_velocity:
 

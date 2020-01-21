@@ -76,11 +76,15 @@ Signals
 
 Emitted when the color is changed.
 
+----
+
 .. _class_ColorPicker_signal_preset_added:
 
 - **preset_added** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when a preset is added.
+
+----
 
 .. _class_ColorPicker_signal_preset_removed:
 
@@ -108,6 +112,8 @@ Property Descriptions
 
 The currently selected color.
 
+----
+
 .. _class_ColorPicker_property_deferred_mode:
 
 - :ref:`bool<class_bool>` **deferred_mode**
@@ -120,6 +126,8 @@ The currently selected color.
 
 If ``true``, the color will apply only after the user releases the mouse button, otherwise it will apply immediately even in mouse motion event (which can cause performance issues).
 
+----
+
 .. _class_ColorPicker_property_edit_alpha:
 
 - :ref:`bool<class_bool>` **edit_alpha**
@@ -131,6 +139,8 @@ If ``true``, the color will apply only after the user releases the mouse button,
 +----------+-----------------------+
 
 If ``true``, shows an alpha channel slider (transparency).
+
+----
 
 .. _class_ColorPicker_property_raw_mode:
 
@@ -153,11 +163,15 @@ Method Descriptions
 
 Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them. Note: the presets list is only for *this* color picker.
 
+----
+
 .. _class_ColorPicker_method_erase_preset:
 
 - void **erase_preset** **(** :ref:`Color<class_Color>` color **)**
 
 Remove the given color from the list of color presets of this color picker.
+
+----
 
 .. _class_ColorPicker_method_get_presets:
 

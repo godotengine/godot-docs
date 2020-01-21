@@ -53,6 +53,8 @@ Property Descriptions
 
 Size of the cuboid mesh. Defaults to (2, 2, 2).
 
+----
+
 .. _class_CubeMesh_property_subdivide_depth:
 
 - :ref:`int<class_int>` **subdivide_depth**
@@ -65,6 +67,8 @@ Size of the cuboid mesh. Defaults to (2, 2, 2).
 
 Number of extra edge loops inserted along the z-axis. Defaults to 0.
 
+----
+
 .. _class_CubeMesh_property_subdivide_height:
 
 - :ref:`int<class_int>` **subdivide_height**
@@ -76,6 +80,8 @@ Number of extra edge loops inserted along the z-axis. Defaults to 0.
 +----------+-----------------------------+
 
 Number of extra edge loops inserted along the y-axis. Defaults to 0.
+
+----
 
 .. _class_CubeMesh_property_subdivide_width:
 

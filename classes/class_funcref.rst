@@ -45,11 +45,15 @@ Method Descriptions
 
 Calls the referenced function previously set by :ref:`set_function<class_FuncRef_method_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`.
 
+----
+
 .. _class_FuncRef_method_set_function:
 
 - void **set_function** **(** :ref:`String<class_String>` name **)**
 
 The name of the referenced function to call on the object, without parentheses or any parameters.
+
+----
 
 .. _class_FuncRef_method_set_instance:
 

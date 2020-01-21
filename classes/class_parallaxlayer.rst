@@ -53,6 +53,8 @@ Property Descriptions
 
 The ParallaxLayer's :ref:`Texture<class_Texture>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0`` the :ref:`Texture<class_Texture>` will not be mirrored. Default value: ``(0, 0)``.
 
+----
+
 .. _class_ParallaxLayer_property_motion_offset:
 
 - :ref:`Vector2<class_Vector2>` **motion_offset**
@@ -64,6 +66,8 @@ The ParallaxLayer's :ref:`Texture<class_Texture>` mirroring. Useful for creating
 +----------+--------------------------+
 
 The ParallaxLayer's offset relative to the parent ParallaxBackground's :ref:`ParallaxBackground.scroll_offset<class_ParallaxBackground_property_scroll_offset>`.
+
+----
 
 .. _class_ParallaxLayer_property_motion_scale:
 

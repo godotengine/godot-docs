@@ -55,6 +55,8 @@ Property Descriptions
 
 The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTransform's position in the scene.
 
+----
+
 .. _class_RemoteTransform_property_update_position:
 
 - :ref:`bool<class_bool>` **update_position**
@@ -66,6 +68,8 @@ The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTr
 +----------+----------------------------+
 
 If ``true``, the remote node's position is updated. Default value: ``true``.
+
+----
 
 .. _class_RemoteTransform_property_update_rotation:
 
@@ -79,6 +83,8 @@ If ``true``, the remote node's position is updated. Default value: ``true``.
 
 If ``true``, the remote node's rotation is updated. Default value: ``true``.
 
+----
+
 .. _class_RemoteTransform_property_update_scale:
 
 - :ref:`bool<class_bool>` **update_scale**
@@ -90,6 +96,8 @@ If ``true``, the remote node's rotation is updated. Default value: ``true``.
 +----------+-------------------------+
 
 If ``true``, the remote node's scale is updated. Default value: ``true``.
+
+----
 
 .. _class_RemoteTransform_property_use_global_coordinates:
 

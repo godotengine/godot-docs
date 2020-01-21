@@ -69,6 +69,8 @@ Property Descriptions
 | *Getter* | get_interpolation()      |
 +----------+--------------------------+
 
+----
+
 .. _class_SkeletonIK_property_magnet:
 
 - :ref:`Vector3<class_Vector3>` **magnet**
@@ -78,6 +80,8 @@ Property Descriptions
 +----------+----------------------------+
 | *Getter* | get_magnet_position()      |
 +----------+----------------------------+
+
+----
 
 .. _class_SkeletonIK_property_max_iterations:
 
@@ -89,6 +93,8 @@ Property Descriptions
 | *Getter* | get_max_iterations()      |
 +----------+---------------------------+
 
+----
+
 .. _class_SkeletonIK_property_min_distance:
 
 - :ref:`float<class_float>` **min_distance**
@@ -98,6 +104,8 @@ Property Descriptions
 +----------+-------------------------+
 | *Getter* | get_min_distance()      |
 +----------+-------------------------+
+
+----
 
 .. _class_SkeletonIK_property_override_tip_basis:
 
@@ -109,6 +117,8 @@ Property Descriptions
 | *Getter* | is_override_tip_basis()       |
 +----------+-------------------------------+
 
+----
+
 .. _class_SkeletonIK_property_root_bone:
 
 - :ref:`String<class_String>` **root_bone**
@@ -118,6 +128,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_root_bone()      |
 +----------+----------------------+
+
+----
 
 .. _class_SkeletonIK_property_target:
 
@@ -129,6 +141,8 @@ Property Descriptions
 | *Getter* | get_target_transform()      |
 +----------+-----------------------------+
 
+----
+
 .. _class_SkeletonIK_property_target_node:
 
 - :ref:`NodePath<class_NodePath>` **target_node**
@@ -139,6 +153,8 @@ Property Descriptions
 | *Getter* | get_target_node()      |
 +----------+------------------------+
 
+----
+
 .. _class_SkeletonIK_property_tip_bone:
 
 - :ref:`String<class_String>` **tip_bone**
@@ -148,6 +164,8 @@ Property Descriptions
 +----------+---------------------+
 | *Getter* | get_tip_bone()      |
 +----------+---------------------+
+
+----
 
 .. _class_SkeletonIK_property_use_magnet:
 
@@ -166,13 +184,19 @@ Method Descriptions
 
 - :ref:`Skeleton<class_Skeleton>` **get_parent_skeleton** **(** **)** const
 
+----
+
 .. _class_SkeletonIK_method_is_running:
 
 - :ref:`bool<class_bool>` **is_running** **(** **)**
 
+----
+
 .. _class_SkeletonIK_method_start:
 
 - void **start** **(** :ref:`bool<class_bool>` one_time=false **)**
+
+----
 
 .. _class_SkeletonIK_method_stop:
 

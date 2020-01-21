@@ -81,11 +81,15 @@ Method Descriptions
 
 Deletes the specified section along with all the key-value pairs inside.
 
+----
+
 .. _class_ConfigFile_method_get_section_keys:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_section_keys** **(** :ref:`String<class_String>` section **)** const
 
 Returns an array of all defined key identifiers in the specified section.
+
+----
 
 .. _class_ConfigFile_method_get_sections:
 
@@ -93,11 +97,15 @@ Returns an array of all defined key identifiers in the specified section.
 
 Returns an array of all defined section identifiers.
 
+----
+
 .. _class_ConfigFile_method_get_value:
 
 - :ref:`Variant<class_Variant>` **get_value** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const
 
 Returns the current value for the specified section and key. If the section and/or the key do not exist, the method returns the value of the optional ``default`` argument, or ``null`` if it is omitted.
+
+----
 
 .. _class_ConfigFile_method_has_section:
 
@@ -105,11 +113,15 @@ Returns the current value for the specified section and key. If the section and/
 
 Returns ``true`` if the specified section exists.
 
+----
+
 .. _class_ConfigFile_method_has_section_key:
 
 - :ref:`bool<class_bool>` **has_section_key** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)** const
 
 Returns ``true`` if the specified section-key pair exists.
+
+----
 
 .. _class_ConfigFile_method_load:
 
@@ -117,11 +129,15 @@ Returns ``true`` if the specified section-key pair exists.
 
 Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on. Returns one of the :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
 
+----
+
 .. _class_ConfigFile_method_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**
 
 Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure. Returns one of the :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
+
+----
 
 .. _class_ConfigFile_method_set_value:
 

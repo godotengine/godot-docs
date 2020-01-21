@@ -51,11 +51,15 @@ Method Descriptions
 
 Adds a resource to the preloader with the given ``name``. If a resource with the given ``name`` already exists, the new resource will be renamed to "``name`` N" where N is an incrementing number starting from 2.
 
+----
+
 .. _class_ResourcePreloader_method_get_resource:
 
 - :ref:`Resource<class_Resource>` **get_resource** **(** :ref:`String<class_String>` name **)** const
 
 Returns the resource associated to ``name``.
+
+----
 
 .. _class_ResourcePreloader_method_get_resource_list:
 
@@ -63,17 +67,23 @@ Returns the resource associated to ``name``.
 
 Returns the list of resources inside the preloader.
 
+----
+
 .. _class_ResourcePreloader_method_has_resource:
 
 - :ref:`bool<class_bool>` **has_resource** **(** :ref:`String<class_String>` name **)** const
 
 Returns ``true`` if the preloader contains a resource associated to ``name``.
 
+----
+
 .. _class_ResourcePreloader_method_remove_resource:
 
 - void **remove_resource** **(** :ref:`String<class_String>` name **)**
 
 Removes the resource associated to ``name`` from the preloader.
+
+----
 
 .. _class_ResourcePreloader_method_rename_resource:
 

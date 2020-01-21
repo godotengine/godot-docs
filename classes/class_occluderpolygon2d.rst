@@ -68,6 +68,8 @@ Property Descriptions
 
 If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value: ``true``.
 
+----
+
 .. _class_OccluderPolygon2D_property_cull_mode:
 
 - :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode**
@@ -79,6 +81,8 @@ If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light c
 +----------+----------------------+
 
 Set the direction of the occlusion culling or disable it. Default value: :ref:`CULL_DISABLED<class_OccluderPolygon2D_constant_CULL_DISABLED>`.
+
+----
 
 .. _class_OccluderPolygon2D_property_polygon:
 

@@ -68,6 +68,8 @@ enum **Mode**:
 
 - **MODE_PATH** = **2** --- Shape is extruded along a path set by a :ref:`Shape<class_Shape>` set in :ref:`path_node<class_CSGPolygon_property_path_node>`.
 
+----
+
 .. _enum_CSGPolygon_PathRotation:
 
 .. _class_CSGPolygon_constant_PATH_ROTATION_POLYGON:
@@ -104,6 +106,8 @@ Property Descriptions
 
 Extrusion depth when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_DEPTH<class_CSGPolygon_constant_MODE_DEPTH>`.
 
+----
+
 .. _class_CSGPolygon_property_material:
 
 - :ref:`Material<class_Material>` **material**
@@ -115,6 +119,8 @@ Extrusion depth when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_D
 +----------+---------------------+
 
 Material to use for the resulting mesh.
+
+----
 
 .. _class_CSGPolygon_property_mode:
 
@@ -128,6 +134,8 @@ Material to use for the resulting mesh.
 
 Extrusion mode.
 
+----
+
 .. _class_CSGPolygon_property_path_continuous_u:
 
 - :ref:`bool<class_bool>` **path_continuous_u**
@@ -139,6 +147,8 @@ Extrusion mode.
 +----------+------------------------------+
 
 If ``true`` the u component of our uv will continuously increase in unison with the distance traveled along our path when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
+
+----
 
 .. _class_CSGPolygon_property_path_interval:
 
@@ -152,6 +162,8 @@ If ``true`` the u component of our uv will continuously increase in unison with 
 
 Interval at which a new extrusion slice is added along the path when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
 
+----
+
 .. _class_CSGPolygon_property_path_joined:
 
 - :ref:`bool<class_bool>` **path_joined**
@@ -163,6 +175,8 @@ Interval at which a new extrusion slice is added along the path when :ref:`mode<
 +----------+------------------------+
 
 If ``true`` the start and end of our path are joined together ensuring there is no seam when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
+
+----
 
 .. _class_CSGPolygon_property_path_local:
 
@@ -176,6 +190,8 @@ If ``true`` the start and end of our path are joined together ensuring there is 
 
 If ``false`` we extrude centered on our path, if ``true`` we extrude in relation to the position of our CSGPolygon when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
 
+----
+
 .. _class_CSGPolygon_property_path_node:
 
 - :ref:`NodePath<class_NodePath>` **path_node**
@@ -187,6 +203,8 @@ If ``false`` we extrude centered on our path, if ``true`` we extrude in relation
 +----------+----------------------+
 
 The :ref:`Shape<class_Shape>` object containing the path along which we extrude when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
+
+----
 
 .. _class_CSGPolygon_property_path_rotation:
 
@@ -200,6 +218,8 @@ The :ref:`Shape<class_Shape>` object containing the path along which we extrude 
 
 The method by which each slice is rotated along the path when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon_constant_MODE_PATH>`.
 
+----
+
 .. _class_CSGPolygon_property_polygon:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
@@ -211,6 +231,8 @@ The method by which each slice is rotated along the path when :ref:`mode<class_C
 +----------+--------------------+
 
 Point array that defines the shape that we'll extrude.
+
+----
 
 .. _class_CSGPolygon_property_smooth_faces:
 
@@ -224,6 +246,8 @@ Point array that defines the shape that we'll extrude.
 
 Generates smooth normals so smooth shading is applied to our mesh.
 
+----
+
 .. _class_CSGPolygon_property_spin_degrees:
 
 - :ref:`float<class_float>` **spin_degrees**
@@ -235,6 +259,8 @@ Generates smooth normals so smooth shading is applied to our mesh.
 +----------+-------------------------+
 
 Degrees to rotate our extrusion for each slice when :ref:`mode<class_CSGPolygon_property_mode>` is :ref:`MODE_SPIN<class_CSGPolygon_constant_MODE_SPIN>`.
+
+----
 
 .. _class_CSGPolygon_property_spin_sides:
 

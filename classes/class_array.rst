@@ -118,29 +118,43 @@ Method Descriptions
 
 Constructs an array from a :ref:`PoolColorArray<class_PoolColorArray>`.
 
+----
+
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` from **)**
 
 Constructs an array from a :ref:`PoolVector3Array<class_PoolVector3Array>`.
+
+----
 
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` from **)**
 
 Constructs an array from a :ref:`PoolVector2Array<class_PoolVector2Array>`.
 
+----
+
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolStringArray<class_PoolStringArray>` from **)**
 
 Constructs an array from a :ref:`PoolStringArray<class_PoolStringArray>`.
+
+----
 
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolRealArray<class_PoolRealArray>` from **)**
 
 Constructs an array from a :ref:`PoolRealArray<class_PoolRealArray>`.
 
+----
+
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolIntArray<class_PoolIntArray>` from **)**
 
 Constructs an array from a :ref:`PoolIntArray<class_PoolIntArray>`.
 
+----
+
 - :ref:`Array<class_Array>` **Array** **(** :ref:`PoolByteArray<class_PoolByteArray>` from **)**
 
 Constructs an array from a :ref:`PoolByteArray<class_PoolByteArray>`.
+
+----
 
 .. _class_Array_method_append:
 
@@ -148,11 +162,15 @@ Constructs an array from a :ref:`PoolByteArray<class_PoolByteArray>`.
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_Array_method_push_back>`).
 
+----
+
 .. _class_Array_method_back:
 
 - :ref:`Variant<class_Variant>` **back** **(** **)**
 
 Returns the last element of the array if the array is not empty.
+
+----
 
 .. _class_Array_method_bsearch:
 
@@ -160,11 +178,15 @@ Returns the last element of the array if the array is not empty.
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. Note that calling bsearch on an unsorted array results in unexpected behavior.
 
+----
+
 .. _class_Array_method_bsearch_custom:
 
 - :ref:`int<class_int>` **bsearch_custom** **(** :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func, :ref:`bool<class_bool>` before=True **)**
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a before specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise. Note that calling bsearch on an unsorted array results in unexpected behavior.
+
+----
 
 .. _class_Array_method_clear:
 
@@ -172,11 +194,15 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 Clears the array (resizes to 0).
 
+----
+
 .. _class_Array_method_count:
 
 - :ref:`int<class_int>` **count** **(** :ref:`Variant<class_Variant>` value **)**
 
 Returns the number of times an element is in the array.
+
+----
 
 .. _class_Array_method_duplicate:
 
@@ -186,11 +212,15 @@ Returns a copy of the array.
 
 If ``deep`` is ``true``, a deep copy is performed: all nested arrays and dictionaries are duplicated and will not be shared with the original array. If ``false``, a shallow copy is made and references to the original nested arrays and dictionaries are kept, so that modifying a sub-array or dictionary in the copy will also impact those referenced in the source array.
 
+----
+
 .. _class_Array_method_empty:
 
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
 Returns ``true`` if the array is empty.
+
+----
 
 .. _class_Array_method_erase:
 
@@ -198,11 +228,15 @@ Returns ``true`` if the array is empty.
 
 Removes the first occurrence of a value from the array.
 
+----
+
 .. _class_Array_method_find:
 
 - :ref:`int<class_int>` **find** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=0 **)**
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
+
+----
 
 .. _class_Array_method_find_last:
 
@@ -210,11 +244,15 @@ Searches the array for a value and returns its index or -1 if not found. Optiona
 
 Searches the array in reverse order for a value and returns its index or -1 if not found.
 
+----
+
 .. _class_Array_method_front:
 
 - :ref:`Variant<class_Variant>` **front** **(** **)**
 
 Returns the first element of the array if the array is not empty.
+
+----
 
 .. _class_Array_method_has:
 
@@ -229,11 +267,15 @@ Returns ``true`` if the array contains the given value.
     ["inside", 7].has(7) == true
     ["inside", 7].has("7") == false
 
+----
+
 .. _class_Array_method_hash:
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
 Returns a hashed integer value representing the array contents.
+
+----
 
 .. _class_Array_method_insert:
 
@@ -241,11 +283,15 @@ Returns a hashed integer value representing the array contents.
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``pos == size()``).
 
+----
+
 .. _class_Array_method_invert:
 
 - void **invert** **(** **)**
 
 Reverses the order of the elements in the array.
+
+----
 
 .. _class_Array_method_max:
 
@@ -253,11 +299,15 @@ Reverses the order of the elements in the array.
 
 Returns the maximum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
 
+----
+
 .. _class_Array_method_min:
 
 - :ref:`Variant<class_Variant>` **min** **(** **)**
 
 Returns the minimum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
+
+----
 
 .. _class_Array_method_pop_back:
 
@@ -265,11 +315,15 @@ Returns the minimum value contained in the array if all elements are of comparab
 
 Removes the last element of the array.
 
+----
+
 .. _class_Array_method_pop_front:
 
 - :ref:`Variant<class_Variant>` **pop_front** **(** **)**
 
 Removes the first element of the array.
+
+----
 
 .. _class_Array_method_push_back:
 
@@ -277,11 +331,15 @@ Removes the first element of the array.
 
 Appends an element at the end of the array.
 
+----
+
 .. _class_Array_method_push_front:
 
 - void **push_front** **(** :ref:`Variant<class_Variant>` value **)**
 
 Adds an element at the beginning of the array.
+
+----
 
 .. _class_Array_method_remove:
 
@@ -289,11 +347,15 @@ Adds an element at the beginning of the array.
 
 Removes an element from the array by index.
 
+----
+
 .. _class_Array_method_resize:
 
 - void **resize** **(** :ref:`int<class_int>` size **)**
 
 Resizes the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are Null.
+
+----
 
 .. _class_Array_method_rfind:
 
@@ -301,11 +363,15 @@ Resizes the array to contain a different number of elements. If the array size i
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
+----
+
 .. _class_Array_method_shuffle:
 
 - void **shuffle** **(** **)**
 
 Shuffles the array such that the items will have a random order. This method uses the global random number generator common to methods such as :ref:`@GDScript.randi<class_@GDScript_method_randi>`. Call :ref:`@GDScript.randomize<class_@GDScript_method_randomize>` to ensure that a new seed will be used each time if you want non-reproducible shuffling.
+
+----
 
 .. _class_Array_method_size:
 
@@ -313,11 +379,15 @@ Shuffles the array such that the items will have a random order. This method use
 
 Returns the number of elements in the array.
 
+----
+
 .. _class_Array_method_sort:
 
 - void **sort** **(** **)**
 
 Sorts the array. Note: strings are sorted in alphabetical, not natural order.
+
+----
 
 .. _class_Array_method_sort_custom:
 

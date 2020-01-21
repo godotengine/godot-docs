@@ -83,11 +83,15 @@ Method Descriptions
 
 Called when computing the cost between two connected points.
 
+----
+
 .. _class_AStar_method__estimate_cost:
 
 - :ref:`float<class_float>` **_estimate_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual
 
 Called when estimating the cost between a point and the path's ending point.
+
+----
 
 .. _class_AStar_method_add_point:
 
@@ -102,17 +106,23 @@ Adds a new point at the given position with the given identifier. The algorithm 
 
 If there already exists a point for the given id, its position and weight scale are updated to the given values.
 
+----
+
 .. _class_AStar_method_are_points_connected:
 
 - :ref:`bool<class_bool>` **are_points_connected** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)** const
 
 Returns whether there is a connection/segment between the given points.
 
+----
+
 .. _class_AStar_method_clear:
 
 - void **clear** **(** **)**
 
 Clears all the points and segments.
+
+----
 
 .. _class_AStar_method_connect_points:
 
@@ -127,11 +137,15 @@ Creates a segment between the given points. If ``bidirectional`` is ``false``, o
     astar.add_point(2, Vector3(0, 5, 0))
     astar.connect_points(1, 2, false)
 
+----
+
 .. _class_AStar_method_disconnect_points:
 
 - void **disconnect_points** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)**
 
 Deletes the segment between the given points.
+
+----
 
 .. _class_AStar_method_get_available_point_id:
 
@@ -139,11 +153,15 @@ Deletes the segment between the given points.
 
 Returns the next available point id with no point associated to it.
 
+----
+
 .. _class_AStar_method_get_closest_point:
 
 - :ref:`int<class_int>` **get_closest_point** **(** :ref:`Vector3<class_Vector3>` to_position **)** const
 
 Returns the id of the closest point to ``to_position``. Returns -1 if there are no points in the points pool.
+
+----
 
 .. _class_AStar_method_get_closest_position_in_segment:
 
@@ -160,6 +178,8 @@ Returns the closest position to ``to_position`` that resides inside a segment be
     var res = astar.get_closest_position_in_segment(Vector3(3, 3, 0)) # Returns (0, 3, 0)
 
 The result is in the segment that goes from ``y = 0`` to ``y = 5``. It's the closest position in the segment to the given point.
+
+----
 
 .. _class_AStar_method_get_id_path:
 
@@ -184,6 +204,8 @@ Returns an array with the ids of the points that form the path found by AStar be
 
 If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]`` instead, because now even though the distance is longer, it's "easier" to get through point 4 than through point 2.
 
+----
+
 .. _class_AStar_method_get_point_connections:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_point_connections** **(** :ref:`int<class_int>` id **)**
@@ -203,11 +225,15 @@ Returns an array with the ids of the points that form the connect with the given
     
     var neighbors = astar.get_point_connections(1) # Returns [2, 3]
 
+----
+
 .. _class_AStar_method_get_point_path:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_point_path** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**
 
 Returns an array with the points that are in the path found by AStar between the given points. The array is ordered from the starting point to the ending point of the path.
+
+----
 
 .. _class_AStar_method_get_point_position:
 
@@ -215,11 +241,15 @@ Returns an array with the points that are in the path found by AStar between the
 
 Returns the position of the point associated with the given id.
 
+----
+
 .. _class_AStar_method_get_point_weight_scale:
 
 - :ref:`float<class_float>` **get_point_weight_scale** **(** :ref:`int<class_int>` id **)** const
 
 Returns the weight scale of the point associated with the given id.
+
+----
 
 .. _class_AStar_method_get_points:
 
@@ -227,11 +257,15 @@ Returns the weight scale of the point associated with the given id.
 
 Returns an array of all points.
 
+----
+
 .. _class_AStar_method_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`int<class_int>` id **)** const
 
 Returns whether a point associated with the given id exists.
+
+----
 
 .. _class_AStar_method_is_point_disabled:
 
@@ -239,11 +273,15 @@ Returns whether a point associated with the given id exists.
 
 Returns whether a point is disabled or not for pathfinding. By default, all points are enabled.
 
+----
+
 .. _class_AStar_method_remove_point:
 
 - void **remove_point** **(** :ref:`int<class_int>` id **)**
 
 Removes the point associated with the given id from the points pool.
+
+----
 
 .. _class_AStar_method_set_point_disabled:
 
@@ -251,11 +289,15 @@ Removes the point associated with the given id from the points pool.
 
 Disables or enables the specified point for pathfinding. Useful for making a temporary obstacle.
 
+----
+
 .. _class_AStar_method_set_point_position:
 
 - void **set_point_position** **(** :ref:`int<class_int>` id, :ref:`Vector3<class_Vector3>` position **)**
 
 Sets the position for the point with the given id.
+
+----
 
 .. _class_AStar_method_set_point_weight_scale:
 

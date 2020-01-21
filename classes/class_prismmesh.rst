@@ -53,6 +53,8 @@ Property Descriptions
 
 Displacement of the upper edge along the X axis. 0.0 positions edge straight above the bottom-left edge. Defaults to 0.5 (positioned on the midpoint).
 
+----
+
 .. _class_PrismMesh_property_size:
 
 - :ref:`Vector3<class_Vector3>` **size**
@@ -64,6 +66,8 @@ Displacement of the upper edge along the X axis. 0.0 positions edge straight abo
 +----------+-----------------+
 
 Size of the prism. Defaults to (2.0, 2.0, 2.0).
+
+----
 
 .. _class_PrismMesh_property_subdivide_depth:
 
@@ -77,6 +81,8 @@ Size of the prism. Defaults to (2.0, 2.0, 2.0).
 
 Number of added edge loops along the Z axis. Defaults to 0.
 
+----
+
 .. _class_PrismMesh_property_subdivide_height:
 
 - :ref:`int<class_int>` **subdivide_height**
@@ -88,6 +94,8 @@ Number of added edge loops along the Z axis. Defaults to 0.
 +----------+-----------------------------+
 
 Number of added edge loops along the Y axis. Defaults to 0.
+
+----
 
 .. _class_PrismMesh_property_subdivide_width:
 

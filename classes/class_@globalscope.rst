@@ -86,6 +86,8 @@ enum **Margin**:
 
 - **MARGIN_BOTTOM** = **3** --- Bottom margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
 
+----
+
 .. _enum_@GlobalScope_Corner:
 
 .. _class_@GlobalScope_constant_CORNER_TOP_LEFT:
@@ -106,6 +108,8 @@ enum **Corner**:
 
 - **CORNER_BOTTOM_LEFT** = **3**
 
+----
+
 .. _enum_@GlobalScope_Orientation:
 
 .. _class_@GlobalScope_constant_VERTICAL:
@@ -117,6 +121,8 @@ enum **Orientation**:
 - **VERTICAL** = **1** --- General vertical alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
 
 - **HORIZONTAL** = **0** --- General horizontal alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
+
+----
 
 .. _enum_@GlobalScope_HAlign:
 
@@ -134,6 +140,8 @@ enum **HAlign**:
 
 - **HALIGN_RIGHT** = **2** --- Horizontal right alignment, usually for text-derived classes.
 
+----
+
 .. _enum_@GlobalScope_VAlign:
 
 .. _class_@GlobalScope_constant_VALIGN_TOP:
@@ -149,6 +157,8 @@ enum **VAlign**:
 - **VALIGN_CENTER** = **1** --- Vertical center alignment, usually for text-derived classes.
 
 - **VALIGN_BOTTOM** = **2** --- Vertical bottom alignment, usually for text-derived classes.
+
+----
 
 .. _enum_@GlobalScope_KeyList:
 
@@ -1122,6 +1132,8 @@ enum **KeyList**:
 
 - **KEY_YDIAERESIS** = **255** --- ÿ key
 
+----
+
 .. _enum_@GlobalScope_KeyModifierMask:
 
 .. _class_@GlobalScope_constant_KEY_CODE_MASK:
@@ -1161,6 +1173,8 @@ enum **KeyModifierMask**:
 - **KEY_MASK_KPAD** = **536870912** --- Keypad Key Mask
 
 - **KEY_MASK_GROUP_SWITCH** = **1073741824** --- Group Switch Key Mask
+
+----
 
 .. _enum_@GlobalScope_ButtonList:
 
@@ -1221,6 +1235,8 @@ enum **ButtonList**:
 - **BUTTON_MASK_XBUTTON1** = **128** --- Extra Mouse Button 1 Mask
 
 - **BUTTON_MASK_XBUTTON2** = **256** --- Extra Mouse Button 2 Mask
+
+----
 
 .. _enum_@GlobalScope_JoystickList:
 
@@ -1458,6 +1474,8 @@ enum **JoystickList**:
 
 - **JOY_ANALOG_R2** = **7** --- Joypad Right Analog Trigger
 
+----
+
 .. _enum_@GlobalScope_MidiMessageList:
 
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF:
@@ -1489,6 +1507,8 @@ enum **MidiMessageList**:
 - **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13** --- MIDI channel pressure message.
 
 - **MIDI_MESSAGE_PITCH_BEND** = **14** --- MIDI pitch bend message.
+
+----
 
 .. _enum_@GlobalScope_Error:
 
@@ -1701,6 +1721,8 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 - **ERR_PRINTER_ON_FIRE** = **48** --- Printer on fire error. (This is an easter egg, no engine methods return this error code.)
 
+----
+
 .. _enum_@GlobalScope_PropertyHint:
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_NONE:
@@ -1751,9 +1773,9 @@ enum **PropertyHint**:
 
 - **PROPERTY_HINT_NONE** = **0** --- No hint for edited property.
 
-- **PROPERTY_HINT_RANGE** = **1** --- Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"allow_greater"`` and/or ``"allow_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,allow_greater,allow_lesser"``.
+- **PROPERTY_HINT_RANGE** = **1** --- Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,or_greater,or_lesser"``.
 
-- **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that an integer or float property should be within an exponential range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"allow_greater"`` and/or ``"allow_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"0.01,100,0.01,allow_greater"``.
+- **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that an integer or float property should be within an exponential range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"0.01,100,0.01,or_greater"``.
 
 - **PROPERTY_HINT_ENUM** = **3** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
 
@@ -1792,6 +1814,8 @@ enum **PropertyHint**:
 - **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **21** --- Hints that an image is compressed using lossy compression.
 
 - **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **22** --- Hints that an image is compressed using lossless compression.
+
+----
 
 .. _enum_@GlobalScope_PropertyUsageFlags:
 
@@ -1857,6 +1881,8 @@ enum **PropertyUsageFlags**:
 
 - **PROPERTY_USAGE_NOEDITOR** = **5** --- Default usage but without showing the property in the editor (storage, network).
 
+----
+
 .. _enum_@GlobalScope_MethodFlags:
 
 .. _class_@GlobalScope_constant_METHOD_FLAG_NORMAL:
@@ -1892,6 +1918,8 @@ enum **MethodFlags**:
 - **METHOD_FLAG_FROM_SCRIPT** = **64** --- Deprecated method flag, unused.
 
 - **METHOD_FLAGS_DEFAULT** = **1** --- Default method flags
+
+----
 
 .. _enum_@GlobalScope_Variant.Type:
 
@@ -2008,6 +2036,8 @@ enum **Variant.Type**:
 - **TYPE_COLOR_ARRAY** = **26** --- Variable is of type :ref:`PoolColorArray<class_PoolColorArray>`.
 
 - **TYPE_MAX** = **27** --- Represents the size of the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` enum.
+
+----
 
 .. _enum_@GlobalScope_Variant.Operator:
 
@@ -2140,11 +2170,15 @@ Property Descriptions
 
 :ref:`ARVRServer<class_ARVRServer>` singleton
 
+----
+
 .. _class_@GlobalScope_property_AudioServer:
 
 - :ref:`AudioServer<class_AudioServer>` **AudioServer**
 
 :ref:`AudioServer<class_AudioServer>` singleton
+
+----
 
 .. _class_@GlobalScope_property_ClassDB:
 
@@ -2152,11 +2186,15 @@ Property Descriptions
 
 :ref:`ClassDB<class_ClassDB>` singleton
 
+----
+
 .. _class_@GlobalScope_property_Engine:
 
 - :ref:`Engine<class_Engine>` **Engine**
 
 :ref:`Engine<class_Engine>` singleton
+
+----
 
 .. _class_@GlobalScope_property_Geometry:
 
@@ -2164,11 +2202,15 @@ Property Descriptions
 
 :ref:`Geometry<class_Geometry>` singleton
 
+----
+
 .. _class_@GlobalScope_property_IP:
 
 - :ref:`IP<class_IP>` **IP**
 
 :ref:`IP<class_IP>` singleton
+
+----
 
 .. _class_@GlobalScope_property_Input:
 
@@ -2176,11 +2218,15 @@ Property Descriptions
 
 :ref:`Input<class_Input>` singleton
 
+----
+
 .. _class_@GlobalScope_property_InputMap:
 
 - :ref:`InputMap<class_InputMap>` **InputMap**
 
 :ref:`InputMap<class_InputMap>` singleton
+
+----
 
 .. _class_@GlobalScope_property_JSON:
 
@@ -2188,11 +2234,15 @@ Property Descriptions
 
 :ref:`JSON<class_JSON>` singleton
 
+----
+
 .. _class_@GlobalScope_property_JavaScript:
 
 - :ref:`JavaScript<class_JavaScript>` **JavaScript**
 
 :ref:`JavaScript<class_JavaScript>` singleton
+
+----
 
 .. _class_@GlobalScope_property_Marshalls:
 
@@ -2200,11 +2250,15 @@ Property Descriptions
 
 :ref:`Marshalls<class_Marshalls>` singleton
 
+----
+
 .. _class_@GlobalScope_property_OS:
 
 - :ref:`OS<class_OS>` **OS**
 
 :ref:`OS<class_OS>` singleton
+
+----
 
 .. _class_@GlobalScope_property_Performance:
 
@@ -2212,11 +2266,15 @@ Property Descriptions
 
 :ref:`Performance<class_Performance>` singleton
 
+----
+
 .. _class_@GlobalScope_property_Physics2DServer:
 
 - :ref:`Physics2DServer<class_Physics2DServer>` **Physics2DServer**
 
 :ref:`Physics2DServer<class_Physics2DServer>` singleton
+
+----
 
 .. _class_@GlobalScope_property_PhysicsServer:
 
@@ -2224,11 +2282,15 @@ Property Descriptions
 
 :ref:`PhysicsServer<class_PhysicsServer>` singleton
 
+----
+
 .. _class_@GlobalScope_property_ProjectSettings:
 
 - :ref:`ProjectSettings<class_ProjectSettings>` **ProjectSettings**
 
 :ref:`ProjectSettings<class_ProjectSettings>` singleton
+
+----
 
 .. _class_@GlobalScope_property_ResourceLoader:
 
@@ -2236,11 +2298,15 @@ Property Descriptions
 
 :ref:`ResourceLoader<class_ResourceLoader>` singleton
 
+----
+
 .. _class_@GlobalScope_property_ResourceSaver:
 
 - :ref:`ResourceSaver<class_ResourceSaver>` **ResourceSaver**
 
 :ref:`ResourceSaver<class_ResourceSaver>` singleton
+
+----
 
 .. _class_@GlobalScope_property_TranslationServer:
 
@@ -2248,11 +2314,15 @@ Property Descriptions
 
 :ref:`TranslationServer<class_TranslationServer>` singleton
 
+----
+
 .. _class_@GlobalScope_property_VisualScriptEditor:
 
 - :ref:`VisualScriptEditor<class_VisualScriptEditor>` **VisualScriptEditor**
 
 :ref:`VisualScriptEditor<class_VisualScriptEditor>` singleton
+
+----
 
 .. _class_@GlobalScope_property_VisualServer:
 

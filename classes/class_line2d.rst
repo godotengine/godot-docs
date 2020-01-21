@@ -81,6 +81,8 @@ enum **LineJointMode**:
 
 - **LINE_JOINT_ROUND** = **2** --- The line's joints will be rounded.
 
+----
+
 .. _enum_Line2D_LineCapMode:
 
 .. _class_Line2D_constant_LINE_CAP_NONE:
@@ -96,6 +98,8 @@ enum **LineCapMode**:
 - **LINE_CAP_BOX** = **1** --- Draws the line cap as a box.
 
 - **LINE_CAP_ROUND** = **2** --- Draws the line cap as a circle.
+
+----
 
 .. _enum_Line2D_LineTextureMode:
 
@@ -133,6 +137,8 @@ Property Descriptions
 
 Controls the style of the line's first point. Use ``LINE_CAP_*`` constants. Default value: :ref:`LINE_CAP_NONE<class_Line2D_constant_LINE_CAP_NONE>`.
 
+----
+
 .. _class_Line2D_property_default_color:
 
 - :ref:`Color<class_Color>` **default_color**
@@ -144,6 +150,8 @@ Controls the style of the line's first point. Use ``LINE_CAP_*`` constants. Defa
 +----------+--------------------------+
 
 The line's color. Will not be used if a gradient is set.
+
+----
 
 .. _class_Line2D_property_end_cap_mode:
 
@@ -157,6 +165,8 @@ The line's color. Will not be used if a gradient is set.
 
 Controls the style of the line's last point. Use ``LINE_CAP_*`` constants. Default value: :ref:`LINE_CAP_NONE<class_Line2D_constant_LINE_CAP_NONE>`.
 
+----
+
 .. _class_Line2D_property_gradient:
 
 - :ref:`Gradient<class_Gradient>` **gradient**
@@ -168,6 +178,8 @@ Controls the style of the line's last point. Use ``LINE_CAP_*`` constants. Defau
 +----------+---------------------+
 
 The gradient is drawn through the whole line from start to finish. The default color will not be used if a gradient is set.
+
+----
 
 .. _class_Line2D_property_joint_mode:
 
@@ -181,6 +193,8 @@ The gradient is drawn through the whole line from start to finish. The default c
 
 The style for the points between the start and the end.
 
+----
+
 .. _class_Line2D_property_points:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
@@ -192,6 +206,8 @@ The style for the points between the start and the end.
 +----------+-------------------+
 
 The points that form the lines. The line is drawn between every point set in this array.
+
+----
 
 .. _class_Line2D_property_round_precision:
 
@@ -205,6 +221,8 @@ The points that form the lines. The line is drawn between every point set in thi
 
 The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.
 
+----
+
 .. _class_Line2D_property_sharp_limit:
 
 - :ref:`float<class_float>` **sharp_limit**
@@ -216,6 +234,8 @@ The smoothness of the rounded joints and caps. This is only used if a cap or joi
 +----------+------------------------+
 
 The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`.
+
+----
 
 .. _class_Line2D_property_texture:
 
@@ -229,6 +249,8 @@ The direction difference in radians between vector points. This value is only us
 
 The texture used for the line's texture. Uses ``texture_mode`` for drawing style.
 
+----
+
 .. _class_Line2D_property_texture_mode:
 
 - :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **texture_mode**
@@ -240,6 +262,8 @@ The texture used for the line's texture. Uses ``texture_mode`` for drawing style
 +----------+-------------------------+
 
 The style to render the ``texture`` on the line. Use ``LINE_TEXTURE_*`` constants. Default value: :ref:`LINE_TEXTURE_NONE<class_Line2D_constant_LINE_TEXTURE_NONE>`.
+
+----
 
 .. _class_Line2D_property_width:
 
@@ -262,11 +286,15 @@ Method Descriptions
 
 Add a point at the ``position``. Appends the point at the end of the line.
 
+----
+
 .. _class_Line2D_method_clear_points:
 
 - void **clear_points** **(** **)**
 
 Removes all points from the line.
+
+----
 
 .. _class_Line2D_method_get_point_count:
 
@@ -274,17 +302,23 @@ Removes all points from the line.
 
 Returns the Line2D's amount of points.
 
+----
+
 .. _class_Line2D_method_get_point_position:
 
 - :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` i **)** const
 
 Returns point ``i``'s position.
 
+----
+
 .. _class_Line2D_method_remove_point:
 
 - void **remove_point** **(** :ref:`int<class_int>` i **)**
 
 Remove the point at index ``i`` from the line.
+
+----
 
 .. _class_Line2D_method_set_point_position:
 

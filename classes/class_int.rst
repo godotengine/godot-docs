@@ -58,9 +58,13 @@ Method Descriptions
 
 Cast a :ref:`bool<class_bool>` value to an integer value, ``int(true)`` will be equals to 1 and ``int(false)`` will be equals to 0.
 
+----
+
 - :ref:`int<class_int>` **int** **(** :ref:`float<class_float>` from **)**
 
 Cast a float value to an integer value, this method simply removes the number fractions, so for example ``int(2.7)`` will be equals to 2, ``int(.1)`` will be equals to 0 and ``int(-2.7)`` will be equals to -2.
+
+----
 
 - :ref:`int<class_int>` **int** **(** :ref:`String<class_String>` from **)**
 

@@ -87,17 +87,23 @@ Signals
 
 Emitted when all processes in a tween end.
 
+----
+
 .. _class_Tween_signal_tween_completed:
 
 - **tween_completed** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` key **)**
 
 Emitted when a tween ends.
 
+----
+
 .. _class_Tween_signal_tween_started:
 
 - **tween_started** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` key **)**
 
 Emitted when a tween starts.
+
+----
 
 .. _class_Tween_signal_tween_step:
 
@@ -119,6 +125,8 @@ enum **TweenProcessMode**:
 - **TWEEN_PROCESS_PHYSICS** = **0** --- The tween updates with the ``_physics_process`` callback.
 
 - **TWEEN_PROCESS_IDLE** = **1** --- The tween updates with the ``_process`` callback.
+
+----
 
 .. _enum_Tween_TransitionType:
 
@@ -167,6 +175,8 @@ enum **TransitionType**:
 - **TRANS_BOUNCE** = **9** --- The animation is interpolated by bouncing at the end.
 
 - **TRANS_BACK** = **10** --- The animation is interpolated backing out at ends.
+
+----
 
 .. _enum_Tween_EaseType:
 
@@ -222,6 +232,8 @@ Property Descriptions
 
 The tween's animation process thread. See :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`. Default value: :ref:`TWEEN_PROCESS_IDLE<class_Tween_constant_TWEEN_PROCESS_IDLE>`.
 
+----
+
 .. _class_Tween_property_playback_speed:
 
 - :ref:`float<class_float>` **playback_speed**
@@ -233,6 +245,8 @@ The tween's animation process thread. See :ref:`TweenProcessMode<enum_Tween_Twee
 +----------+------------------------+
 
 The tween's speed multiplier. For example, set it to ``1.0`` for normal speed, ``2.0`` for two times normal speed, or ``0.5`` for half of the normal speed. A value of ``0`` pauses the animation, but see also :ref:`set_active<class_Tween_method_set_active>` or :ref:`stop_all<class_Tween_method_stop_all>` for this.
+
+----
 
 .. _class_Tween_property_repeat:
 
@@ -257,6 +271,8 @@ Follows ``method`` of ``object`` and applies the returned value on ``target_meth
 
 Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
+----
+
 .. _class_Tween_method_follow_property:
 
 - :ref:`bool<class_bool>` **follow_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` initial_val, :ref:`Object<class_Object>` target, :ref:`NodePath<class_NodePath>` target_property, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**
@@ -265,11 +281,15 @@ Follows ``property`` of ``object`` and applies it on ``target_property`` of ``ta
 
 Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
+----
+
 .. _class_Tween_method_get_runtime:
 
 - :ref:`float<class_float>` **get_runtime** **(** **)** const
 
 Returns the total time needed for all tweens to end. If you have two tweens, one lasting 10 seconds and the other 20 seconds, it would return 20 seconds, as by that time all tweens would have finished.
+
+----
 
 .. _class_Tween_method_interpolate_callback:
 
@@ -277,11 +297,15 @@ Returns the total time needed for all tweens to end. If you have two tweens, one
 
 Calls ``callback`` of ``object`` after ``duration``. ``arg1``-``arg5`` are arguments to be passed to the callback.
 
+----
+
 .. _class_Tween_method_interpolate_deferred_callback:
 
 - :ref:`bool<class_bool>` **interpolate_deferred_callback** **(** :ref:`Object<class_Object>` object, :ref:`float<class_float>` duration, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` arg1=null, :ref:`Variant<class_Variant>` arg2=null, :ref:`Variant<class_Variant>` arg3=null, :ref:`Variant<class_Variant>` arg4=null, :ref:`Variant<class_Variant>` arg5=null **)**
 
 Calls ``callback`` of ``object`` after ``duration`` on the main thread (similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>`). ``arg1``-``arg5`` are arguments to be passed to the callback.
+
+----
 
 .. _class_Tween_method_interpolate_method:
 
@@ -291,6 +315,8 @@ Animates ``method`` of ``object`` from ``initial_val`` to ``final_val`` for ``du
 
 Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
+----
+
 .. _class_Tween_method_interpolate_property:
 
 - :ref:`bool<class_bool>` **interpolate_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` initial_val, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**
@@ -299,11 +325,15 @@ Animates ``property`` of ``object`` from ``initial_val`` to ``final_val`` for ``
 
 Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
+----
+
 .. _class_Tween_method_is_active:
 
 - :ref:`bool<class_bool>` **is_active** **(** **)** const
 
 Returns ``true`` if any tweens are currently running. Note that this method doesn't consider tweens that have ended.
+
+----
 
 .. _class_Tween_method_remove:
 
@@ -311,11 +341,15 @@ Returns ``true`` if any tweens are currently running. Note that this method does
 
 Stops animation and removes a tween, given its object and property/method pair. By default, all tweens are removed, unless ``key`` is specified.
 
+----
+
 .. _class_Tween_method_remove_all:
 
 - :ref:`bool<class_bool>` **remove_all** **(** **)**
 
 Stops animation and removes all tweens.
+
+----
 
 .. _class_Tween_method_reset:
 
@@ -323,11 +357,15 @@ Stops animation and removes all tweens.
 
 Resets a tween to its initial value (the one given, not the one before the tween), given its object and property/method pair. By default, all tweens are removed, unless ``key`` is specified.
 
+----
+
 .. _class_Tween_method_reset_all:
 
 - :ref:`bool<class_bool>` **reset_all** **(** **)**
 
 Resets all tweens to their initial values (the ones given, not those before the tween).
+
+----
 
 .. _class_Tween_method_resume:
 
@@ -335,11 +373,15 @@ Resets all tweens to their initial values (the ones given, not those before the 
 
 Continues animating a stopped tween, given its object and property/method pair. By default, all tweens are resumed, unless ``key`` is specified.
 
+----
+
 .. _class_Tween_method_resume_all:
 
 - :ref:`bool<class_bool>` **resume_all** **(** **)**
 
 Continues animating all stopped tweens.
+
+----
 
 .. _class_Tween_method_seek:
 
@@ -347,11 +389,15 @@ Continues animating all stopped tweens.
 
 Sets the interpolation to the given ``time`` in seconds.
 
+----
+
 .. _class_Tween_method_set_active:
 
 - void **set_active** **(** :ref:`bool<class_bool>` active **)**
 
 Activates/deactivates the tween. See also :ref:`stop_all<class_Tween_method_stop_all>` and :ref:`resume_all<class_Tween_method_resume_all>`.
+
+----
 
 .. _class_Tween_method_start:
 
@@ -359,17 +405,23 @@ Activates/deactivates the tween. See also :ref:`stop_all<class_Tween_method_stop
 
 Starts the tween. You can define animations both before and after this.
 
+----
+
 .. _class_Tween_method_stop:
 
 - :ref:`bool<class_bool>` **stop** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` key="" **)**
 
 Stops a tween, given its object and property/method pair. By default, all tweens are stopped, unless ``key`` is specified.
 
+----
+
 .. _class_Tween_method_stop_all:
 
 - :ref:`bool<class_bool>` **stop_all** **(** **)**
 
 Stops animating all tweens.
+
+----
 
 .. _class_Tween_method_targeting_method:
 
@@ -379,6 +431,8 @@ Animates ``method`` of ``object`` from the value returned by ``initial_method`` 
 
 Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
+----
+
 .. _class_Tween_method_targeting_property:
 
 - :ref:`bool<class_bool>` **targeting_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Object<class_Object>` initial, :ref:`NodePath<class_NodePath>` initial_val, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**
@@ -386,6 +440,8 @@ Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref
 Animates ``property`` of ``object`` from the current value of the ``initial_val`` property of ``initial`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later.
 
 Use :ref:`TransitionType<enum_Tween_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_Tween_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+
+----
 
 .. _class_Tween_method_tell:
 

@@ -55,6 +55,8 @@ Property Descriptions
 
 Base position offset of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 
+----
+
 .. _class_ParallaxBackground_property_scroll_base_scale:
 
 - :ref:`Vector2<class_Vector2>` **scroll_base_scale**
@@ -66,6 +68,8 @@ Base position offset of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 +----------+------------------------------+
 
 Base motion scale of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
+
+----
 
 .. _class_ParallaxBackground_property_scroll_ignore_camera_zoom:
 
@@ -79,6 +83,8 @@ Base motion scale of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 
 If ``true``, elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't affected by the zoom level of the camera.
 
+----
+
 .. _class_ParallaxBackground_property_scroll_limit_begin:
 
 - :ref:`Vector2<class_Vector2>` **scroll_limit_begin**
@@ -91,6 +97,8 @@ If ``true``, elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't 
 
 Top left limits for scrolling to begin. If the camera is outside of this limit the background will stop scrolling. Must be lower than :ref:`scroll_limit_end<class_ParallaxBackground_property_scroll_limit_end>` to work.
 
+----
+
 .. _class_ParallaxBackground_property_scroll_limit_end:
 
 - :ref:`Vector2<class_Vector2>` **scroll_limit_end**
@@ -102,6 +110,8 @@ Top left limits for scrolling to begin. If the camera is outside of this limit t
 +----------+----------------------+
 
 Right bottom limits for scrolling to end. If the camera is outside of this limit the background will stop scrolling. Must be higher than :ref:`scroll_limit_begin<class_ParallaxBackground_property_scroll_limit_begin>` to work.
+
+----
 
 .. _class_ParallaxBackground_property_scroll_offset:
 

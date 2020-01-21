@@ -59,6 +59,8 @@ Property Descriptions
 | *Getter* | get_yield_mode()      |
 +----------+-----------------------+
 
+----
+
 .. _class_VisualScriptYield_property_wait_time:
 
 - :ref:`float<class_float>` **wait_time**

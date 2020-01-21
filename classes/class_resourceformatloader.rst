@@ -55,11 +55,15 @@ Method Descriptions
 
 If implemented, gets the dependencies of a given resource. If ``add_types`` is ``true``, paths should be appended ``::TypeName``, where ``TypeName`` is the class name of the dependency. Note that custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``"Resource"`` for them.
 
+----
+
 .. _class_ResourceFormatLoader_method_get_recognized_extensions:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** **)** virtual
 
 Gets the list of extensions for files this loader is able to read.
+
+----
 
 .. _class_ResourceFormatLoader_method_get_resource_type:
 
@@ -67,17 +71,23 @@ Gets the list of extensions for files this loader is able to read.
 
 Gets the class name of the resource associated with the given path. If the loader cannot handle it, it should return ``""``. Note that custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``"Resource"`` for them.
 
+----
+
 .. _class_ResourceFormatLoader_method_handles_type:
 
 - :ref:`bool<class_bool>` **handles_type** **(** :ref:`String<class_String>` typename **)** virtual
 
 Tells which resource class this loader can load. Note that custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just handle ``"Resource"`` for them.
 
+----
+
 .. _class_ResourceFormatLoader_method_load:
 
 - :ref:`Variant<class_Variant>` **load** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` original_path **)** virtual
 
 Loads a resource when the engine finds this loader to be compatible. If the loaded resource is the result of an import, ``original_path`` will target the source file. Returns a :ref:`Resource<class_Resource>` object on success, or an :ref:`Error<enum_@GlobalScope_Error>` constant in case of failure.
+
+----
 
 .. _class_ResourceFormatLoader_method_rename_dependencies:
 

@@ -65,6 +65,8 @@ Signals
 
 Emitted when the :ref:`frame<class_Sprite_property_frame>` changes.
 
+----
+
 .. _class_Sprite_signal_texture_changed:
 
 - **texture_changed** **(** **)**
@@ -91,6 +93,8 @@ Property Descriptions
 
 If ``true``, texture is centered. Default value: ``true``.
 
+----
+
 .. _class_Sprite_property_flip_h:
 
 - :ref:`bool<class_bool>` **flip_h**
@@ -102,6 +106,8 @@ If ``true``, texture is centered. Default value: ``true``.
 +----------+-------------------+
 
 If ``true``, texture is flipped horizontally. Default value: ``false``.
+
+----
 
 .. _class_Sprite_property_flip_v:
 
@@ -115,6 +121,8 @@ If ``true``, texture is flipped horizontally. Default value: ``false``.
 
 If ``true``, texture is flipped vertically. Default value: ``false``.
 
+----
+
 .. _class_Sprite_property_frame:
 
 - :ref:`int<class_int>` **frame**
@@ -126,6 +134,8 @@ If ``true``, texture is flipped vertically. Default value: ``false``.
 +----------+------------------+
 
 Current frame to display from sprite sheet. :ref:`vframes<class_Sprite_property_vframes>` or :ref:`hframes<class_Sprite_property_hframes>` must be greater than 1.
+
+----
 
 .. _class_Sprite_property_hframes:
 
@@ -139,6 +149,8 @@ Current frame to display from sprite sheet. :ref:`vframes<class_Sprite_property_
 
 The number of columns in the sprite sheet.
 
+----
+
 .. _class_Sprite_property_normal_map:
 
 - :ref:`Texture<class_Texture>` **normal_map**
@@ -150,6 +162,8 @@ The number of columns in the sprite sheet.
 +----------+-----------------------+
 
 The normal map gives depth to the Sprite.
+
+----
 
 .. _class_Sprite_property_offset:
 
@@ -163,6 +177,8 @@ The normal map gives depth to the Sprite.
 
 The texture's drawing offset.
 
+----
+
 .. _class_Sprite_property_region_enabled:
 
 - :ref:`bool<class_bool>` **region_enabled**
@@ -174,6 +190,8 @@ The texture's drawing offset.
 +----------+-------------------+
 
 If ``true``, texture is cut from a larger atlas texture. See :ref:`region_rect<class_Sprite_property_region_rect>`. Default value: ``false``.
+
+----
 
 .. _class_Sprite_property_region_filter_clip:
 
@@ -187,6 +205,8 @@ If ``true``, texture is cut from a larger atlas texture. See :ref:`region_rect<c
 
 If ``true``, the outermost pixels get blurred out.
 
+----
+
 .. _class_Sprite_property_region_rect:
 
 - :ref:`Rect2<class_Rect2>` **region_rect**
@@ -199,6 +219,8 @@ If ``true``, the outermost pixels get blurred out.
 
 The region of the atlas texture to display. :ref:`region_enabled<class_Sprite_property_region_enabled>` must be ``true``.
 
+----
+
 .. _class_Sprite_property_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
@@ -210,6 +232,8 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite_pr
 +----------+--------------------+
 
 :ref:`Texture<class_Texture>` object to draw.
+
+----
 
 .. _class_Sprite_property_vframes:
 
@@ -238,6 +262,8 @@ Returns a :ref:`Rect2<class_Rect2>` representing the Sprite's boundary in local 
         if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
             if get_rect().has_point(to_local(event.position)):
                 print("A click!")
+
+----
 
 .. _class_Sprite_method_is_pixel_opaque:
 

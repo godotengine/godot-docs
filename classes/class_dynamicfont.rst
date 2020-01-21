@@ -108,6 +108,8 @@ Property Descriptions
 
 Extra spacing at the bottom in pixels.
 
+----
+
 .. _class_DynamicFont_property_extra_spacing_char:
 
 - :ref:`int<class_int>` **extra_spacing_char**
@@ -119,6 +121,8 @@ Extra spacing at the bottom in pixels.
 +----------+--------------------+
 
 Extra character spacing in pixels.
+
+----
 
 .. _class_DynamicFont_property_extra_spacing_space:
 
@@ -132,6 +136,8 @@ Extra character spacing in pixels.
 
 Extra space spacing in pixels.
 
+----
+
 .. _class_DynamicFont_property_extra_spacing_top:
 
 - :ref:`int<class_int>` **extra_spacing_top**
@@ -143,6 +149,8 @@ Extra space spacing in pixels.
 +----------+--------------------+
 
 Extra spacing at the top in pixels.
+
+----
 
 .. _class_DynamicFont_property_font_data:
 
@@ -156,6 +164,8 @@ Extra spacing at the top in pixels.
 
 The font data.
 
+----
+
 .. _class_DynamicFont_property_outline_color:
 
 - :ref:`Color<class_Color>` **outline_color**
@@ -166,6 +176,8 @@ The font data.
 | *Getter* | get_outline_color()      |
 +----------+--------------------------+
 
+----
+
 .. _class_DynamicFont_property_outline_size:
 
 - :ref:`int<class_int>` **outline_size**
@@ -175,6 +187,8 @@ The font data.
 +----------+-------------------------+
 | *Getter* | get_outline_size()      |
 +----------+-------------------------+
+
+----
 
 .. _class_DynamicFont_property_size:
 
@@ -188,6 +202,8 @@ The font data.
 
 The font size.
 
+----
+
 .. _class_DynamicFont_property_use_filter:
 
 - :ref:`bool<class_bool>` **use_filter**
@@ -199,6 +215,8 @@ The font size.
 +----------+-----------------------+
 
 If ``true``, filtering is used.
+
+----
 
 .. _class_DynamicFont_property_use_mipmaps:
 
@@ -221,11 +239,15 @@ Method Descriptions
 
 Adds a fallback font.
 
+----
+
 .. _class_DynamicFont_method_get_fallback:
 
 - :ref:`DynamicFontData<class_DynamicFontData>` **get_fallback** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the fallback font at index ``idx``.
+
+----
 
 .. _class_DynamicFont_method_get_fallback_count:
 
@@ -233,11 +255,15 @@ Returns the fallback font at index ``idx``.
 
 Returns the number of fallback fonts.
 
+----
+
 .. _class_DynamicFont_method_remove_fallback:
 
 - void **remove_fallback** **(** :ref:`int<class_int>` idx **)**
 
 Removes the fallback font at index ``idx``.
+
+----
 
 .. _class_DynamicFont_method_set_fallback:
 

@@ -96,6 +96,8 @@ Property Descriptions
 | *Getter* | get_body_offset()      |
 +----------+------------------------+
 
+----
+
 .. _class_PhysicalBone_property_bounce:
 
 - :ref:`float<class_float>` **bounce**
@@ -105,6 +107,8 @@ Property Descriptions
 +----------+-------------------+
 | *Getter* | get_bounce()      |
 +----------+-------------------+
+
+----
 
 .. _class_PhysicalBone_property_friction:
 
@@ -116,6 +120,8 @@ Property Descriptions
 | *Getter* | get_friction()      |
 +----------+---------------------+
 
+----
+
 .. _class_PhysicalBone_property_gravity_scale:
 
 - :ref:`float<class_float>` **gravity_scale**
@@ -125,6 +131,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_gravity_scale()      |
 +----------+--------------------------+
+
+----
 
 .. _class_PhysicalBone_property_joint_offset:
 
@@ -136,6 +144,8 @@ Property Descriptions
 | *Getter* | get_joint_offset()      |
 +----------+-------------------------+
 
+----
+
 .. _class_PhysicalBone_property_joint_type:
 
 - :ref:`JointType<enum_PhysicalBone_JointType>` **joint_type**
@@ -146,6 +156,8 @@ Property Descriptions
 | *Getter* | get_joint_type()      |
 +----------+-----------------------+
 
+----
+
 .. _class_PhysicalBone_property_mass:
 
 - :ref:`float<class_float>` **mass**
@@ -155,6 +167,8 @@ Property Descriptions
 +----------+-----------------+
 | *Getter* | get_mass()      |
 +----------+-----------------+
+
+----
 
 .. _class_PhysicalBone_property_weight:
 
@@ -173,13 +187,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_bone_id** **(** **)** const
 
+----
+
 .. _class_PhysicalBone_method_get_simulate_physics:
 
 - :ref:`bool<class_bool>` **get_simulate_physics** **(** **)**
 
+----
+
 .. _class_PhysicalBone_method_is_simulating_physics:
 
 - :ref:`bool<class_bool>` **is_simulating_physics** **(** **)**
+
+----
 
 .. _class_PhysicalBone_method_is_static_body:
 

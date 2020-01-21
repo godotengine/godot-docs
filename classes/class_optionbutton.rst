@@ -112,6 +112,8 @@ Signals
 
 This signal is emitted when user navigated to an item using ``ui_up`` or ``ui_down`` action. ID of the item selected is passed as argument.
 
+----
+
 .. _class_OptionButton_signal_item_selected:
 
 - **item_selected** **(** :ref:`int<class_int>` ID **)**
@@ -143,11 +145,15 @@ Method Descriptions
 
 Add an item, with a "texture" icon, text "label" and (optionally) id. If no "id" is passed, "id" becomes the item index. New items are appended at the end.
 
+----
+
 .. _class_OptionButton_method_add_item:
 
 - void **add_item** **(** :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1 **)**
 
 Add an item, with text "label" and (optionally) id. If no "id" is passed, "id" becomes the item index. New items are appended at the end.
+
+----
 
 .. _class_OptionButton_method_add_separator:
 
@@ -155,11 +161,15 @@ Add an item, with text "label" and (optionally) id. If no "id" is passed, "id" b
 
 Add a separator to the list of items. Separators help to group items. Separator also takes up an index and is appended at the end.
 
+----
+
 .. _class_OptionButton_method_clear:
 
 - void **clear** **(** **)**
 
 Clear all the items in the ``OptionButton``.
+
+----
 
 .. _class_OptionButton_method_get_item_count:
 
@@ -167,11 +177,15 @@ Clear all the items in the ``OptionButton``.
 
 Returns the amount of items in the OptionButton.
 
+----
+
 .. _class_OptionButton_method_get_item_icon:
 
 - :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the icon of the item at index "idx".
+
+----
 
 .. _class_OptionButton_method_get_item_id:
 
@@ -179,15 +193,21 @@ Returns the icon of the item at index "idx".
 
 Returns the ID of the item at index ``idx``.
 
+----
+
 .. _class_OptionButton_method_get_item_index:
 
 - :ref:`int<class_int>` **get_item_index** **(** :ref:`int<class_int>` id **)** const
 
 Returns the index of the item with the given ``id``.
 
+----
+
 .. _class_OptionButton_method_get_item_metadata:
 
 - :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
+
+----
 
 .. _class_OptionButton_method_get_item_text:
 
@@ -195,27 +215,39 @@ Returns the index of the item with the given ``id``.
 
 Returns the text of the item at index "idx".
 
+----
+
 .. _class_OptionButton_method_get_popup:
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
+----
+
 .. _class_OptionButton_method_get_selected_id:
 
 - :ref:`int<class_int>` **get_selected_id** **(** **)** const
+
+----
 
 .. _class_OptionButton_method_get_selected_metadata:
 
 - :ref:`Variant<class_Variant>` **get_selected_metadata** **(** **)** const
 
+----
+
 .. _class_OptionButton_method_is_item_disabled:
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
 
+----
+
 .. _class_OptionButton_method_remove_item:
 
 - void **remove_item** **(** :ref:`int<class_int>` idx **)**
+
+----
 
 .. _class_OptionButton_method_select:
 
@@ -223,9 +255,13 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 Select an item by index and make it the current item.
 
+----
+
 .. _class_OptionButton_method_set_item_disabled:
 
 - void **set_item_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
+
+----
 
 .. _class_OptionButton_method_set_item_icon:
 
@@ -233,15 +269,21 @@ Select an item by index and make it the current item.
 
 Set the icon of an item at index "idx".
 
+----
+
 .. _class_OptionButton_method_set_item_id:
 
 - void **set_item_id** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` id **)**
 
 Set the ID of an item at index "idx".
 
+----
+
 .. _class_OptionButton_method_set_item_metadata:
 
 - void **set_item_metadata** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**
+
+----
 
 .. _class_OptionButton_method_set_item_text:
 

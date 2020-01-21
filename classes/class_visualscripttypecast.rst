@@ -40,6 +40,8 @@ Property Descriptions
 | *Getter* | get_base_script()      |
 +----------+------------------------+
 
+----
+
 .. _class_VisualScriptTypeCast_property_base_type:
 
 - :ref:`String<class_String>` **base_type**

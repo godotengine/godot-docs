@@ -47,6 +47,8 @@ Returning an empty texture is an OK way to fail and let another generator take c
 
 Care must be taken because this function is always called from a thread (not the main thread).
 
+----
+
 .. _class_EditorResourcePreviewGenerator_method_generate_from_path:
 
 - :ref:`Texture<class_Texture>` **generate_from_path** **(** :ref:`String<class_String>` path, :ref:`Vector2<class_Vector2>` size **)** virtual
@@ -56,6 +58,8 @@ Generate a preview directly from a path with the specified size. Implementing th
 Returning an empty texture is an OK way to fail and let another generator take care.
 
 Care must be taken because this function is always called from a thread (not the main thread).
+
+----
 
 .. _class_EditorResourcePreviewGenerator_method_handles:
 

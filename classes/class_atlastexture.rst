@@ -53,6 +53,8 @@ Property Descriptions
 
 The texture that contains the atlas. Can be any :ref:`Texture<class_Texture>` subtype.
 
+----
+
 .. _class_AtlasTexture_property_filter_clip:
 
 - :ref:`bool<class_bool>` **filter_clip**
@@ -65,6 +67,8 @@ The texture that contains the atlas. Can be any :ref:`Texture<class_Texture>` su
 
 If ``true``, clips the area outside of the region to avoid bleeding of the surrounding texture pixels.
 
+----
+
 .. _class_AtlasTexture_property_margin:
 
 - :ref:`Rect2<class_Rect2>` **margin**
@@ -76,6 +80,8 @@ If ``true``, clips the area outside of the region to avoid bleeding of the surro
 +----------+-------------------+
 
 The margin around the region. The :ref:`Rect2<class_Rect2>`'s 'size' parameter ('w' and 'h' in the editor) resizes the texture so it fits within the margin.
+
+----
 
 .. _class_AtlasTexture_property_region:
 

@@ -43,11 +43,15 @@ Method Descriptions
 
 Lock this ``Mutex``, blocks until it is unlocked by the current owner.
 
+----
+
 .. _class_Mutex_method_try_lock:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **try_lock** **(** **)**
 
 Try locking this ``Mutex``, does not block. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
+
+----
 
 .. _class_Mutex_method_unlock:
 

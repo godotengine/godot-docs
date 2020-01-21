@@ -124,21 +124,31 @@ Signals
 
 - **reposition_active_tab_request** **(** :ref:`int<class_int>` idx_to **)**
 
+----
+
 .. _class_Tabs_signal_right_button_pressed:
 
 - **right_button_pressed** **(** :ref:`int<class_int>` tab **)**
+
+----
 
 .. _class_Tabs_signal_tab_changed:
 
 - **tab_changed** **(** :ref:`int<class_int>` tab **)**
 
+----
+
 .. _class_Tabs_signal_tab_clicked:
 
 - **tab_clicked** **(** :ref:`int<class_int>` tab **)**
 
+----
+
 .. _class_Tabs_signal_tab_close:
 
 - **tab_close** **(** :ref:`int<class_int>` tab **)**
+
+----
 
 .. _class_Tabs_signal_tab_hover:
 
@@ -166,6 +176,8 @@ enum **TabAlign**:
 - **ALIGN_RIGHT** = **2** --- Align the tabs to the right.
 
 - **ALIGN_MAX** = **3** --- Represents the size of the :ref:`TabAlign<enum_Tabs_TabAlign>` enum.
+
+----
 
 .. _enum_Tabs_CloseButtonDisplayPolicy:
 
@@ -207,6 +219,8 @@ Property Descriptions
 
 Select tab at index ``tab_idx``.
 
+----
+
 .. _class_Tabs_property_drag_to_rearrange_enabled:
 
 - :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
@@ -219,6 +233,8 @@ Select tab at index ``tab_idx``.
 
 If ``true``, tabs can be rearranged with mouse drag.
 
+----
+
 .. _class_Tabs_property_scrolling_enabled:
 
 - :ref:`bool<class_bool>` **scrolling_enabled**
@@ -228,6 +244,8 @@ If ``true``, tabs can be rearranged with mouse drag.
 +----------+------------------------------+
 | *Getter* | get_scrolling_enabled()      |
 +----------+------------------------------+
+
+----
 
 .. _class_Tabs_property_tab_align:
 
@@ -240,6 +258,8 @@ If ``true``, tabs can be rearranged with mouse drag.
 +----------+----------------------+
 
 The alignment of all tabs. See enum ``TabAlign`` constants for details.
+
+----
 
 .. _class_Tabs_property_tab_close_display_policy:
 
@@ -260,15 +280,21 @@ Method Descriptions
 
 Adds a new tab.
 
+----
+
 .. _class_Tabs_method_ensure_tab_visible:
 
 - void **ensure_tab_visible** **(** :ref:`int<class_int>` idx **)**
 
 Moves the Scroll view to make the tab visible.
 
+----
+
 .. _class_Tabs_method_get_offset_buttons_visible:
 
 - :ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** const
+
+----
 
 .. _class_Tabs_method_get_select_with_rmb:
 
@@ -276,11 +302,15 @@ Moves the Scroll view to make the tab visible.
 
 Returns ``true`` if select with right mouse button is enabled.
 
+----
+
 .. _class_Tabs_method_get_tab_count:
 
 - :ref:`int<class_int>` **get_tab_count** **(** **)** const
 
 Returns the number of tabs.
+
+----
 
 .. _class_Tabs_method_get_tab_disabled:
 
@@ -288,15 +318,21 @@ Returns the number of tabs.
 
 Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
+----
+
 .. _class_Tabs_method_get_tab_icon:
 
 - :ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** const
 
 Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or null if the tab has no :ref:`Texture<class_Texture>`.
 
+----
+
 .. _class_Tabs_method_get_tab_offset:
 
 - :ref:`int<class_int>` **get_tab_offset** **(** **)** const
+
+----
 
 .. _class_Tabs_method_get_tab_rect:
 
@@ -304,11 +340,15 @@ Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or nu
 
 Returns tab :ref:`Rect2<class_Rect2>` with local position and size.
 
+----
+
 .. _class_Tabs_method_get_tab_title:
 
 - :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** const
 
 Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_Tabs_method_set_tab_title>`.
+
+----
 
 .. _class_Tabs_method_get_tabs_rearrange_group:
 
@@ -316,11 +356,15 @@ Returns the title of the tab at index ``tab_idx``. Tab titles default to the nam
 
 Returns the ``Tabs`` rearrange group id.
 
+----
+
 .. _class_Tabs_method_move_tab:
 
 - void **move_tab** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
 
 Rearrange tab.
+
+----
 
 .. _class_Tabs_method_remove_tab:
 
@@ -328,11 +372,15 @@ Rearrange tab.
 
 Removes tab at index ``tab_idx``
 
+----
+
 .. _class_Tabs_method_set_select_with_rmb:
 
 - void **set_select_with_rmb** **(** :ref:`bool<class_bool>` enabled **)**
 
 If ``true``, enables selecting a tab with right mouse button.
+
+----
 
 .. _class_Tabs_method_set_tab_disabled:
 
@@ -340,17 +388,23 @@ If ``true``, enables selecting a tab with right mouse button.
 
 If ``disabled`` is ``false``, hides the tab at index ``tab_idx``. Note that its title text will remain, unless also removed with :ref:`set_tab_title<class_Tabs_method_set_tab_title>`.
 
+----
+
 .. _class_Tabs_method_set_tab_icon:
 
 - void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**
 
 Sets an icon for the tab at index ``tab_idx``.
 
+----
+
 .. _class_Tabs_method_set_tab_title:
 
 - void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**
 
 Sets a title for the tab at index ``tab_idx``.
+
+----
 
 .. _class_Tabs_method_set_tabs_rearrange_group:
 

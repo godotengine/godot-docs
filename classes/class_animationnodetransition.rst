@@ -168,6 +168,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_0/name:
 
 - :ref:`String<class_String>` **input_0/name**
@@ -177,6 +179,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_1/auto_advance:
 
@@ -188,6 +192,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_1/name:
 
 - :ref:`String<class_String>` **input_1/name**
@@ -197,6 +203,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_10/auto_advance:
 
@@ -208,6 +216,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_10/name:
 
 - :ref:`String<class_String>` **input_10/name**
@@ -217,6 +227,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_11/auto_advance:
 
@@ -228,6 +240,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_11/name:
 
 - :ref:`String<class_String>` **input_11/name**
@@ -237,6 +251,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_12/auto_advance:
 
@@ -248,6 +264,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_12/name:
 
 - :ref:`String<class_String>` **input_12/name**
@@ -257,6 +275,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_13/auto_advance:
 
@@ -268,6 +288,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_13/name:
 
 - :ref:`String<class_String>` **input_13/name**
@@ -277,6 +299,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_14/auto_advance:
 
@@ -288,6 +312,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_14/name:
 
 - :ref:`String<class_String>` **input_14/name**
@@ -297,6 +323,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_15/auto_advance:
 
@@ -308,6 +336,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_15/name:
 
 - :ref:`String<class_String>` **input_15/name**
@@ -317,6 +347,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_16/auto_advance:
 
@@ -328,6 +360,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_16/name:
 
 - :ref:`String<class_String>` **input_16/name**
@@ -337,6 +371,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_17/auto_advance:
 
@@ -348,6 +384,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_17/name:
 
 - :ref:`String<class_String>` **input_17/name**
@@ -357,6 +395,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_18/auto_advance:
 
@@ -368,6 +408,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_18/name:
 
 - :ref:`String<class_String>` **input_18/name**
@@ -377,6 +419,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_19/auto_advance:
 
@@ -388,6 +432,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_19/name:
 
 - :ref:`String<class_String>` **input_19/name**
@@ -397,6 +443,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_2/auto_advance:
 
@@ -408,6 +456,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_2/name:
 
 - :ref:`String<class_String>` **input_2/name**
@@ -417,6 +467,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_20/auto_advance:
 
@@ -428,6 +480,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_20/name:
 
 - :ref:`String<class_String>` **input_20/name**
@@ -437,6 +491,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_21/auto_advance:
 
@@ -448,6 +504,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_21/name:
 
 - :ref:`String<class_String>` **input_21/name**
@@ -457,6 +515,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_22/auto_advance:
 
@@ -468,6 +528,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_22/name:
 
 - :ref:`String<class_String>` **input_22/name**
@@ -477,6 +539,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_23/auto_advance:
 
@@ -488,6 +552,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_23/name:
 
 - :ref:`String<class_String>` **input_23/name**
@@ -497,6 +563,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_24/auto_advance:
 
@@ -508,6 +576,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_24/name:
 
 - :ref:`String<class_String>` **input_24/name**
@@ -517,6 +587,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_25/auto_advance:
 
@@ -528,6 +600,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_25/name:
 
 - :ref:`String<class_String>` **input_25/name**
@@ -537,6 +611,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_26/auto_advance:
 
@@ -548,6 +624,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_26/name:
 
 - :ref:`String<class_String>` **input_26/name**
@@ -557,6 +635,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_27/auto_advance:
 
@@ -568,6 +648,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_27/name:
 
 - :ref:`String<class_String>` **input_27/name**
@@ -577,6 +659,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_28/auto_advance:
 
@@ -588,6 +672,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_28/name:
 
 - :ref:`String<class_String>` **input_28/name**
@@ -597,6 +683,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_29/auto_advance:
 
@@ -608,6 +696,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_29/name:
 
 - :ref:`String<class_String>` **input_29/name**
@@ -617,6 +707,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_3/auto_advance:
 
@@ -628,6 +720,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_3/name:
 
 - :ref:`String<class_String>` **input_3/name**
@@ -637,6 +731,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_30/auto_advance:
 
@@ -648,6 +744,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_30/name:
 
 - :ref:`String<class_String>` **input_30/name**
@@ -657,6 +755,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_31/auto_advance:
 
@@ -668,6 +768,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_31/name:
 
 - :ref:`String<class_String>` **input_31/name**
@@ -677,6 +779,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_4/auto_advance:
 
@@ -688,6 +792,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_4/name:
 
 - :ref:`String<class_String>` **input_4/name**
@@ -697,6 +803,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_5/auto_advance:
 
@@ -708,6 +816,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_5/name:
 
 - :ref:`String<class_String>` **input_5/name**
@@ -717,6 +827,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_6/auto_advance:
 
@@ -728,6 +840,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_6/name:
 
 - :ref:`String<class_String>` **input_6/name**
@@ -737,6 +851,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_7/auto_advance:
 
@@ -748,6 +864,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_7/name:
 
 - :ref:`String<class_String>` **input_7/name**
@@ -757,6 +875,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_8/auto_advance:
 
@@ -768,6 +888,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_8/name:
 
 - :ref:`String<class_String>` **input_8/name**
@@ -777,6 +899,8 @@ Property Descriptions
 +----------+--------------------------+
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_input_9/auto_advance:
 
@@ -788,6 +912,8 @@ Property Descriptions
 | *Getter* | is_input_set_as_auto_advance()   |
 +----------+----------------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_9/name:
 
 - :ref:`String<class_String>` **input_9/name**
@@ -798,6 +924,8 @@ Property Descriptions
 | *Getter* | get_input_caption()      |
 +----------+--------------------------+
 
+----
+
 .. _class_AnimationNodeTransition_property_input_count:
 
 - :ref:`int<class_int>` **input_count**
@@ -807,6 +935,8 @@ Property Descriptions
 +----------+---------------------------+
 | *Getter* | get_enabled_inputs()      |
 +----------+---------------------------+
+
+----
 
 .. _class_AnimationNodeTransition_property_xfade_time:
 

@@ -44,7 +44,11 @@ Methods
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold integer values (:ref:`int<class_int>`). Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold integer values (:ref:`int<class_int>`). Optimized for memory usage, does not fragment the memory.
+
+**Note:** This type is passed by value and not by reference.
+
+**Note:** This type is limited to signed 32-bit integers, which means it can only take values in the interval ``[-2^31, 2^31 - 1]``, i.e. ``[-2147483648, 2147483647]``. Exceeding those bounds will wrap around. In comparison, :ref:`int<class_int>` uses signed 64-bit integers which can hold much larger values.
 
 Method Descriptions
 -------------------
@@ -55,11 +59,15 @@ Method Descriptions
 
 Construct a new ``PoolIntArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
+----
+
 .. _class_PoolIntArray_method_append:
 
 - void **append** **(** :ref:`int<class_int>` integer **)**
 
 Append an element at the end of the array (alias of :ref:`push_back<class_PoolIntArray_method_push_back>`).
+
+----
 
 .. _class_PoolIntArray_method_append_array:
 
@@ -67,11 +75,15 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolIn
 
 Append a ``PoolIntArray`` at the end of this array.
 
+----
+
 .. _class_PoolIntArray_method_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**
 
 Insert a new int at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+
+----
 
 .. _class_PoolIntArray_method_invert:
 
@@ -79,11 +91,15 @@ Insert a new int at a given position in the array. The position must be valid, o
 
 Reverse the order of the elements in the array.
 
+----
+
 .. _class_PoolIntArray_method_push_back:
 
 - void **push_back** **(** :ref:`int<class_int>` integer **)**
 
 Append a value to the array.
+
+----
 
 .. _class_PoolIntArray_method_remove:
 
@@ -91,17 +107,23 @@ Append a value to the array.
 
 Remove an element from the array by index.
 
+----
+
 .. _class_PoolIntArray_method_resize:
 
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Set the size of the array. If the array is grown reserve elements at the end of the array. If the array is shrunk truncate the array to the new size.
 
+----
+
 .. _class_PoolIntArray_method_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**
 
 Change the int at the given index.
+
+----
 
 .. _class_PoolIntArray_method_size:
 

@@ -685,11 +685,15 @@ Property Descriptions
 
 Alpha value (range 0 to 1).
 
+----
+
 .. _class_Color_property_a8:
 
 - :ref:`int<class_int>` **a8**
 
 Alpha value (range 0 to 255).
+
+----
 
 .. _class_Color_property_b:
 
@@ -697,11 +701,15 @@ Alpha value (range 0 to 255).
 
 Blue value (range 0 to 1).
 
+----
+
 .. _class_Color_property_b8:
 
 - :ref:`int<class_int>` **b8**
 
 Blue value (range 0 to 255).
+
+----
 
 .. _class_Color_property_g:
 
@@ -709,11 +717,15 @@ Blue value (range 0 to 255).
 
 Green value (range 0 to 1).
 
+----
+
 .. _class_Color_property_g8:
 
 - :ref:`int<class_int>` **g8**
 
 Green value (range 0 to 255).
+
+----
 
 .. _class_Color_property_h:
 
@@ -721,11 +733,15 @@ Green value (range 0 to 255).
 
 HSV hue value (range 0 to 1).
 
+----
+
 .. _class_Color_property_r:
 
 - :ref:`float<class_float>` **r**
 
 Red value (range 0 to 1).
+
+----
 
 .. _class_Color_property_r8:
 
@@ -733,11 +749,15 @@ Red value (range 0 to 1).
 
 Red value (range 0 to 255).
 
+----
+
 .. _class_Color_property_s:
 
 - :ref:`float<class_float>` **s**
 
 HSV saturation value (range 0 to 1).
+
+----
 
 .. _class_Color_property_v:
 
@@ -762,6 +782,8 @@ Constructs a color from an HTML hexadecimal color string in ARGB or RGB format. 
     var c3 = Color("#b2d90a")   # RGB format with '#'
     var c4 = Color("b2d90a")    # RGB format
 
+----
+
 - :ref:`Color<class_Color>` **Color** **(** :ref:`int<class_int>` from **)**
 
 Constructs a color from a 32-bit integer (each byte represents a component of the RGBA profile).
@@ -769,6 +791,8 @@ Constructs a color from a 32-bit integer (each byte represents a component of th
 ::
 
     var c = Color(274) # Equivalent to RGBA(0, 0, 1, 18)
+
+----
 
 - :ref:`Color<class_Color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b **)**
 
@@ -778,6 +802,8 @@ Constructs a color from an RGB profile using values between 0 and 1. Alpha will 
 
     var c = Color(0.2, 1.0, 0.7) # Equivalent to RGBA(51, 255, 178, 255)
 
+----
+
 - :ref:`Color<class_Color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a **)**
 
 Constructs a color from an RGBA profile using values between 0 and 1.
@@ -785,6 +811,8 @@ Constructs a color from an RGBA profile using values between 0 and 1.
 ::
 
     var c = Color(0.2, 1.0, 0.7, 0.8) # Equivalent to RGBA(51, 255, 178, 204)
+
+----
 
 .. _class_Color_method_blend:
 
@@ -798,6 +826,8 @@ Returns a new color resulting from blending this color over another. If the colo
     var fg = Color(1.0, 0.0, 0.0, 0.5) # Red with alpha of 50%
     var blended_color = bg.blend(fg) # Brown with alpha of 75%
 
+----
+
 .. _class_Color_method_contrasted:
 
 - :ref:`Color<class_Color>` **contrasted** **(** **)**
@@ -808,6 +838,8 @@ Returns the most contrasting color.
 
     var c = Color(0.3, 0.4, 0.9)
     var contrasted_color = c.contrasted() # Equivalent to RGBA(204, 229, 102, 255)
+
+----
 
 .. _class_Color_method_darkened:
 
@@ -820,6 +852,8 @@ Returns a new color resulting from making this color darker by the specified per
     var green = Color(0.0, 1.0, 0.0)
     var darkgreen = green.darkened(0.2) # 20% darker than regular green
 
+----
+
 .. _class_Color_method_from_hsv:
 
 - :ref:`Color<class_Color>` **from_hsv** **(** :ref:`float<class_float>` h, :ref:`float<class_float>` s, :ref:`float<class_float>` v, :ref:`float<class_float>` a=1 **)**
@@ -829,6 +863,8 @@ Constructs a color from an HSV profile. ``h``, ``s``, and ``v`` are values betwe
 ::
 
     var c = Color.from_hsv(0.58, 0.5, 0.79, 0.8) # Equivalent to HSV(210, 50, 79, 0.8) or Color8(100, 151, 201, 0.8)
+
+----
 
 .. _class_Color_method_gray:
 
@@ -843,6 +879,8 @@ The gray value is calculated as ``(r + g + b) / 3``.
     var c = Color(0.2, 0.45, 0.82)
     var gray = c.gray() # a value of 0.466667
 
+----
+
 .. _class_Color_method_inverted:
 
 - :ref:`Color<class_Color>` **inverted** **(** **)**
@@ -854,6 +892,8 @@ Returns the inverted color ``(1 - r, 1 - g, 1 - b, a)``.
     var c = Color(0.3, 0.4, 0.9)
     var inverted_color = c.inverted() # a color of an RGBA(178, 153, 26, 255)
 
+----
+
 .. _class_Color_method_lightened:
 
 - :ref:`Color<class_Color>` **lightened** **(** :ref:`float<class_float>` amount **)**
@@ -864,6 +904,8 @@ Returns a new color resulting from making this color lighter by the specified pe
 
     var green = Color(0.0, 1.0, 0.0)
     var lightgreen = green.lightened(0.2) # 20% lighter than regular green
+
+----
 
 .. _class_Color_method_linear_interpolate:
 
@@ -877,6 +919,8 @@ Returns the linear interpolation with another color. The interpolation factor ``
     var c2 = Color(0.0, 1.0, 0.0)
     var li_c = c1.linear_interpolate(c2, 0.5) # a color of an RGBA(128, 128, 0, 255)
 
+----
+
 .. _class_Color_method_to_abgr32:
 
 - :ref:`int<class_int>` **to_abgr32** **(** **)**
@@ -887,6 +931,8 @@ Returns the color's 32-bit integer in ABGR format (each byte represents a compon
 
     var c = Color(1, 0.5, 0.2)
     print(c.to_abgr32()) # Prints 4281565439
+
+----
 
 .. _class_Color_method_to_abgr64:
 
@@ -899,6 +945,8 @@ Returns the color's 64-bit integer in ABGR format (each word represents a compon
     var c = Color(1, 0.5, 0.2)
     print(c.to_abgr64()) # Prints -225178692812801
 
+----
+
 .. _class_Color_method_to_argb32:
 
 - :ref:`int<class_int>` **to_argb32** **(** **)**
@@ -910,6 +958,8 @@ Returns the color's 32-bit integer in ARGB format (each byte represents a compon
     var c = Color(1, 0.5, 0.2)
     print(c.to_argb32()) # Prints 4294934323
 
+----
+
 .. _class_Color_method_to_argb64:
 
 - :ref:`int<class_int>` **to_argb64** **(** **)**
@@ -920,6 +970,8 @@ Returns the color's 64-bit integer in ARGB format (each word represents a compon
 
     var c = Color(1, 0.5, 0.2)
     print(c.to_argb64()) # Prints -2147470541
+
+----
 
 .. _class_Color_method_to_html:
 
@@ -935,6 +987,8 @@ Setting ``with_alpha`` to ``false`` excludes alpha from the hexadecimal string.
     var s1 = c.to_html() # Results "7fffffff"
     var s2 = c.to_html(false) # Results 'ffffff'
 
+----
+
 .. _class_Color_method_to_rgba32:
 
 - :ref:`int<class_int>` **to_rgba32** **(** **)**
@@ -945,6 +999,8 @@ Returns the color's 32-bit integer in RGBA format (each byte represents a compon
 
     var c = Color(1, 0.5, 0.2)
     print(c.to_rgba32()) # Prints 4286526463
+
+----
 
 .. _class_Color_method_to_rgba64:
 

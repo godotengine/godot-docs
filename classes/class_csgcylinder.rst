@@ -55,6 +55,8 @@ Property Descriptions
 
 If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder_property_radius>` will only apply to one side.
 
+----
+
 .. _class_CSGCylinder_property_height:
 
 - :ref:`float<class_float>` **height**
@@ -66,6 +68,8 @@ If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder_property_radiu
 +----------+-------------------+
 
 The height of the cylinder.
+
+----
 
 .. _class_CSGCylinder_property_material:
 
@@ -79,6 +83,8 @@ The height of the cylinder.
 
 The material used to render the cylinder.
 
+----
+
 .. _class_CSGCylinder_property_radius:
 
 - :ref:`float<class_float>` **radius**
@@ -91,6 +97,8 @@ The material used to render the cylinder.
 
 The radius of the cylinder.
 
+----
+
 .. _class_CSGCylinder_property_sides:
 
 - :ref:`int<class_int>` **sides**
@@ -102,6 +110,8 @@ The radius of the cylinder.
 +----------+------------------+
 
 The number of sides of the cylinder, the higher this number the more detail there will be in the cylinder.
+
+----
 
 .. _class_CSGCylinder_property_smooth_faces:
 

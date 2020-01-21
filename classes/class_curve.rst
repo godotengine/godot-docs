@@ -120,6 +120,8 @@ Property Descriptions
 
 The number of points to include in the baked (i.e. cached) curve data.
 
+----
+
 .. _class_Curve_property_max_value:
 
 - :ref:`float<class_float>` **max_value**
@@ -131,6 +133,8 @@ The number of points to include in the baked (i.e. cached) curve data.
 +----------+----------------------+
 
 The maximum value the curve can reach. Default value: ``1``.
+
+----
 
 .. _class_Curve_property_min_value:
 
@@ -153,11 +157,15 @@ Method Descriptions
 
 Adds a point to the curve. For each side, if the ``*_mode`` is :ref:`TANGENT_LINEAR<class_Curve_constant_TANGENT_LINEAR>`, the ``*_tangent`` angle (in degrees) uses the slope of the curve halfway to the adjacent point. Allows custom assignments to the ``*_tangent`` angle if ``*_mode`` is set to :ref:`TANGENT_FREE<class_Curve_constant_TANGENT_FREE>`.
 
+----
+
 .. _class_Curve_method_bake:
 
 - void **bake** **(** **)**
 
 Recomputes the baked cache of points for the curve.
+
+----
 
 .. _class_Curve_method_clean_dupes:
 
@@ -165,11 +173,15 @@ Recomputes the baked cache of points for the curve.
 
 Removes points that are closer than ``CMP_EPSILON`` (0.00001) units to their neighbor on the curve.
 
+----
+
 .. _class_Curve_method_clear_points:
 
 - void **clear_points** **(** **)**
 
 Removes all points from the curve.
+
+----
 
 .. _class_Curve_method_get_point_count:
 
@@ -177,11 +189,15 @@ Removes all points from the curve.
 
 Returns the number of points describing the curve.
 
+----
+
 .. _class_Curve_method_get_point_left_mode:
 
 - :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_left_mode** **(** :ref:`int<class_int>` index **)** const
 
 Returns the left ``TangentMode`` for the point at ``index``.
+
+----
 
 .. _class_Curve_method_get_point_left_tangent:
 
@@ -189,11 +205,15 @@ Returns the left ``TangentMode`` for the point at ``index``.
 
 Returns the left tangent angle (in degrees) for the point at ``index``.
 
+----
+
 .. _class_Curve_method_get_point_position:
 
 - :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` index **)** const
 
 Returns the curve coordinates for the point at ``index``.
+
+----
 
 .. _class_Curve_method_get_point_right_mode:
 
@@ -201,11 +221,15 @@ Returns the curve coordinates for the point at ``index``.
 
 Returns the right ``TangentMode`` for the point at ``index``.
 
+----
+
 .. _class_Curve_method_get_point_right_tangent:
 
 - :ref:`float<class_float>` **get_point_right_tangent** **(** :ref:`int<class_int>` index **)** const
 
 Returns the right tangent angle (in degrees) for the point at ``index``.
+
+----
 
 .. _class_Curve_method_interpolate:
 
@@ -213,11 +237,15 @@ Returns the right tangent angle (in degrees) for the point at ``index``.
 
 Returns the y value for the point that would exist at x-position ``offset`` along the curve.
 
+----
+
 .. _class_Curve_method_interpolate_baked:
 
 - :ref:`float<class_float>` **interpolate_baked** **(** :ref:`float<class_float>` offset **)**
 
 Returns the y value for the point that would exist at x-position ``offset`` along the curve using the baked cache. Bakes the curve's points if not already baked.
+
+----
 
 .. _class_Curve_method_remove_point:
 
@@ -225,11 +253,15 @@ Returns the y value for the point that would exist at x-position ``offset`` alon
 
 Removes the point at ``index`` from the curve.
 
+----
+
 .. _class_Curve_method_set_point_left_mode:
 
 - void **set_point_left_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**
 
 Sets the left ``TangentMode`` for the point at ``index`` to ``mode``.
+
+----
 
 .. _class_Curve_method_set_point_left_tangent:
 
@@ -237,11 +269,15 @@ Sets the left ``TangentMode`` for the point at ``index`` to ``mode``.
 
 Sets the left tangent angle for the point at ``index`` to ``tangent``.
 
+----
+
 .. _class_Curve_method_set_point_offset:
 
 - :ref:`int<class_int>` **set_point_offset** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` offset **)**
 
 Sets the offset from ``0.5``
+
+----
 
 .. _class_Curve_method_set_point_right_mode:
 
@@ -249,11 +285,15 @@ Sets the offset from ``0.5``
 
 Sets the right ``TangentMode`` for the point at ``index`` to ``mode``.
 
+----
+
 .. _class_Curve_method_set_point_right_tangent:
 
 - void **set_point_right_tangent** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` tangent **)**
 
 Sets the right tangent angle for the point at ``index`` to ``tangent``.
+
+----
 
 .. _class_Curve_method_set_point_value:
 

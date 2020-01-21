@@ -80,6 +80,8 @@ Property Descriptions
 | *Getter* | is_clip_to_areas_enabled() |
 +----------+----------------------------+
 
+----
+
 .. _class_ClippedCamera_property_clip_to_bodies:
 
 - :ref:`bool<class_bool>` **clip_to_bodies**
@@ -89,6 +91,8 @@ Property Descriptions
 +----------+-----------------------------+
 | *Getter* | is_clip_to_bodies_enabled() |
 +----------+-----------------------------+
+
+----
 
 .. _class_ClippedCamera_property_collision_mask:
 
@@ -100,6 +104,8 @@ Property Descriptions
 | *Getter* | get_collision_mask()      |
 +----------+---------------------------+
 
+----
+
 .. _class_ClippedCamera_property_margin:
 
 - :ref:`float<class_float>` **margin**
@@ -109,6 +115,8 @@ Property Descriptions
 +----------+-------------------+
 | *Getter* | get_margin()      |
 +----------+-------------------+
+
+----
 
 .. _class_ClippedCamera_property_process_mode:
 
@@ -127,25 +135,37 @@ Method Descriptions
 
 - void **add_exception** **(** :ref:`Object<class_Object>` node **)**
 
+----
+
 .. _class_ClippedCamera_method_add_exception_rid:
 
 - void **add_exception_rid** **(** :ref:`RID<class_RID>` rid **)**
+
+----
 
 .. _class_ClippedCamera_method_clear_exceptions:
 
 - void **clear_exceptions** **(** **)**
 
+----
+
 .. _class_ClippedCamera_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+
+----
 
 .. _class_ClippedCamera_method_remove_exception:
 
 - void **remove_exception** **(** :ref:`Object<class_Object>` node **)**
 
+----
+
 .. _class_ClippedCamera_method_remove_exception_rid:
 
 - void **remove_exception_rid** **(** :ref:`RID<class_RID>` rid **)**
+
+----
 
 .. _class_ClippedCamera_method_set_collision_mask_bit:
 

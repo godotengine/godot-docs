@@ -156,23 +156,33 @@ Method Descriptions
 
 Adds a bus at ``at_position``.
 
+----
+
 .. _class_AudioServer_method_add_bus_effect:
 
 - void **add_bus_effect** **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_AudioEffect>` effect, :ref:`int<class_int>` at_position=-1 **)**
 
 Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at ``at_position``.
 
+----
+
 .. _class_AudioServer_method_capture_get_device:
 
 - :ref:`String<class_String>` **capture_get_device** **(** **)**
+
+----
 
 .. _class_AudioServer_method_capture_get_device_list:
 
 - :ref:`Array<class_Array>` **capture_get_device_list** **(** **)**
 
+----
+
 .. _class_AudioServer_method_capture_set_device:
 
 - void **capture_set_device** **(** :ref:`String<class_String>` name **)**
+
+----
 
 .. _class_AudioServer_method_generate_bus_layout:
 
@@ -180,11 +190,15 @@ Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at `
 
 Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available buses and effects.
 
+----
+
 .. _class_AudioServer_method_get_bus_channels:
 
 - :ref:`int<class_int>` **get_bus_channels** **(** :ref:`int<class_int>` bus_idx **)** const
 
 Returns the amount of channels of the bus at index ``bus_idx``.
+
+----
 
 .. _class_AudioServer_method_get_bus_count:
 
@@ -192,11 +206,15 @@ Returns the amount of channels of the bus at index ``bus_idx``.
 
 Returns the number of available buses.
 
+----
+
 .. _class_AudioServer_method_get_bus_effect:
 
 - :ref:`AudioEffect<class_AudioEffect>` **get_bus_effect** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)**
 
 Returns the :ref:`AudioEffect<class_AudioEffect>` at position ``effect_idx`` in bus ``bus_idx``.
+
+----
 
 .. _class_AudioServer_method_get_bus_effect_count:
 
@@ -204,9 +222,13 @@ Returns the :ref:`AudioEffect<class_AudioEffect>` at position ``effect_idx`` in 
 
 Returns the number of effects on the bus at ``bus_idx``.
 
+----
+
 .. _class_AudioServer_method_get_bus_effect_instance:
 
 - :ref:`AudioEffectInstance<class_AudioEffectInstance>` **get_bus_effect_instance** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` channel=0 **)**
+
+----
 
 .. _class_AudioServer_method_get_bus_index:
 
@@ -214,11 +236,15 @@ Returns the number of effects on the bus at ``bus_idx``.
 
 Returns the index of the bus with the name ``bus_name``.
 
+----
+
 .. _class_AudioServer_method_get_bus_name:
 
 - :ref:`String<class_String>` **get_bus_name** **(** :ref:`int<class_int>` bus_idx **)** const
 
 Returns the name of the bus with the index ``bus_idx``.
+
+----
 
 .. _class_AudioServer_method_get_bus_peak_volume_left_db:
 
@@ -226,11 +252,15 @@ Returns the name of the bus with the index ``bus_idx``.
 
 Returns the peak volume of the left speaker at bus index ``bus_idx`` and channel index ``channel``.
 
+----
+
 .. _class_AudioServer_method_get_bus_peak_volume_right_db:
 
 - :ref:`float<class_float>` **get_bus_peak_volume_right_db** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** const
 
 Returns the peak volume of the right speaker at bus index ``bus_idx`` and channel index ``channel``.
+
+----
 
 .. _class_AudioServer_method_get_bus_send:
 
@@ -238,19 +268,27 @@ Returns the peak volume of the right speaker at bus index ``bus_idx`` and channe
 
 Returns the name of the bus that the bus at index ``bus_idx`` sends to.
 
+----
+
 .. _class_AudioServer_method_get_bus_volume_db:
 
 - :ref:`float<class_float>` **get_bus_volume_db** **(** :ref:`int<class_int>` bus_idx **)** const
 
 Returns the volume of the bus at index ``bus_idx`` in dB.
 
+----
+
 .. _class_AudioServer_method_get_device:
 
 - :ref:`String<class_String>` **get_device** **(** **)**
 
+----
+
 .. _class_AudioServer_method_get_device_list:
 
 - :ref:`Array<class_Array>` **get_device_list** **(** **)**
+
+----
 
 .. _class_AudioServer_method_get_mix_rate:
 
@@ -258,11 +296,15 @@ Returns the volume of the bus at index ``bus_idx`` in dB.
 
 Returns the sample rate at the output of the audioserver.
 
+----
+
 .. _class_AudioServer_method_get_speaker_mode:
 
 - :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **get_speaker_mode** **(** **)** const
 
 Returns the speaker configuration.
+
+----
 
 .. _class_AudioServer_method_is_bus_bypassing_effects:
 
@@ -270,11 +312,15 @@ Returns the speaker configuration.
 
 If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
+----
+
 .. _class_AudioServer_method_is_bus_effect_enabled:
 
 - :ref:`bool<class_bool>` **is_bus_effect_enabled** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)** const
 
 If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
+
+----
 
 .. _class_AudioServer_method_is_bus_mute:
 
@@ -282,11 +328,15 @@ If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` 
 
 If ``true``, the bus at index ``bus_idx`` is muted.
 
+----
+
 .. _class_AudioServer_method_is_bus_solo:
 
 - :ref:`bool<class_bool>` **is_bus_solo** **(** :ref:`int<class_int>` bus_idx **)** const
 
 If ``true``, the bus at index ``bus_idx`` is in solo mode.
+
+----
 
 .. _class_AudioServer_method_lock:
 
@@ -294,11 +344,15 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 Locks the audio drivers mainloop. Remember to unlock it afterwards.
 
+----
+
 .. _class_AudioServer_method_move_bus:
 
 - void **move_bus** **(** :ref:`int<class_int>` index, :ref:`int<class_int>` to_index **)**
 
 Moves the bus from index ``index`` to index ``to_index``.
+
+----
 
 .. _class_AudioServer_method_remove_bus:
 
@@ -306,11 +360,15 @@ Moves the bus from index ``index`` to index ``to_index``.
 
 Removes the bus at index ``index``.
 
+----
+
 .. _class_AudioServer_method_remove_bus_effect:
 
 - void **remove_bus_effect** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)**
 
 Removes the effect at index ``effect_idx`` from the bus at index ``bus_idx``.
+
+----
 
 .. _class_AudioServer_method_set_bus_bypass_effects:
 
@@ -318,11 +376,15 @@ Removes the effect at index ``effect_idx`` from the bus at index ``bus_idx``.
 
 If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
+----
+
 .. _class_AudioServer_method_set_bus_count:
 
 - void **set_bus_count** **(** :ref:`int<class_int>` amount **)**
 
 Adds and removes buses to make the number of buses match ``amount``.
+
+----
 
 .. _class_AudioServer_method_set_bus_effect_enabled:
 
@@ -330,11 +392,15 @@ Adds and removes buses to make the number of buses match ``amount``.
 
 If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
 
+----
+
 .. _class_AudioServer_method_set_bus_layout:
 
 - void **set_bus_layout** **(** :ref:`AudioBusLayout<class_AudioBusLayout>` bus_layout **)**
 
 Overwrites the currently used :ref:`AudioBusLayout<class_AudioBusLayout>`.
+
+----
 
 .. _class_AudioServer_method_set_bus_mute:
 
@@ -342,11 +408,15 @@ Overwrites the currently used :ref:`AudioBusLayout<class_AudioBusLayout>`.
 
 If ``true``, the bus at index ``bus_idx`` is muted.
 
+----
+
 .. _class_AudioServer_method_set_bus_name:
 
 - void **set_bus_name** **(** :ref:`int<class_int>` bus_idx, :ref:`String<class_String>` name **)**
 
 Sets the name of the bus at index ``bus_idx`` to ``name``.
+
+----
 
 .. _class_AudioServer_method_set_bus_send:
 
@@ -354,11 +424,15 @@ Sets the name of the bus at index ``bus_idx`` to ``name``.
 
 Connects the output of the bus at ``bus_idx`` to the bus named ``send``.
 
+----
+
 .. _class_AudioServer_method_set_bus_solo:
 
 - void **set_bus_solo** **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**
 
 If ``true``, the bus at index ``bus_idx`` is in solo mode.
+
+----
 
 .. _class_AudioServer_method_set_bus_volume_db:
 
@@ -366,15 +440,21 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
 
+----
+
 .. _class_AudioServer_method_set_device:
 
 - void **set_device** **(** :ref:`String<class_String>` device **)**
+
+----
 
 .. _class_AudioServer_method_swap_bus_effects:
 
 - void **swap_bus_effects** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` by_effect_idx **)**
 
 Swaps the position of two effects in bus ``bus_idx``.
+
+----
 
 .. _class_AudioServer_method_unlock:
 

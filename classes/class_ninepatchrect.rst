@@ -89,6 +89,8 @@ Property Descriptions
 
 Doesn't do anything at the time of writing.
 
+----
+
 .. _class_NinePatchRect_property_axis_stretch_vertical:
 
 - :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **axis_stretch_vertical**
@@ -100,6 +102,8 @@ Doesn't do anything at the time of writing.
 +----------+--------------------------------+
 
 Doesn't do anything at the time of writing.
+
+----
 
 .. _class_NinePatchRect_property_draw_center:
 
@@ -113,6 +117,8 @@ Doesn't do anything at the time of writing.
 
 If ``true``, draw the panel's center. Else, only draw the 9-slice's borders. Default value: ``true``
 
+----
+
 .. _class_NinePatchRect_property_patch_margin_bottom:
 
 - :ref:`int<class_int>` **patch_margin_bottom**
@@ -124,6 +130,8 @@ If ``true``, draw the panel's center. Else, only draw the 9-slice's borders. Def
 +----------+-------------------------+
 
 The height of the 9-slice's bottom row. A margin of 16 means the 9-slice's bottom corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.
+
+----
 
 .. _class_NinePatchRect_property_patch_margin_left:
 
@@ -137,6 +145,8 @@ The height of the 9-slice's bottom row. A margin of 16 means the 9-slice's botto
 
 The height of the 9-slice's left column.
 
+----
+
 .. _class_NinePatchRect_property_patch_margin_right:
 
 - :ref:`int<class_int>` **patch_margin_right**
@@ -148,6 +158,8 @@ The height of the 9-slice's left column.
 +----------+-------------------------+
 
 The height of the 9-slice's right column.
+
+----
 
 .. _class_NinePatchRect_property_patch_margin_top:
 
@@ -161,6 +173,8 @@ The height of the 9-slice's right column.
 
 The height of the 9-slice's top row.
 
+----
+
 .. _class_NinePatchRect_property_region_rect:
 
 - :ref:`Rect2<class_Rect2>` **region_rect**
@@ -172,6 +186,8 @@ The height of the 9-slice's top row.
 +----------+------------------------+
 
 Rectangular region of the texture to sample from. If you're working with an atlas, use this property to define the area the 9-slice should use. All other properties are relative to this one.
+
+----
 
 .. _class_NinePatchRect_property_texture:
 

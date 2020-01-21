@@ -98,9 +98,13 @@ Property Descriptions
 
 If ``true``, polygon edges will be anti-aliased. Default value: ``false``.
 
+----
+
 .. _class_Polygon2D_property_bones:
 
 - :ref:`Array<class_Array>` **bones**
+
+----
 
 .. _class_Polygon2D_property_color:
 
@@ -114,6 +118,8 @@ If ``true``, polygon edges will be anti-aliased. Default value: ``false``.
 
 The polygon's fill color. If ``texture`` is defined, it will be multiplied by this color. It will also be the default color for vertices not set in ``vertex_colors``.
 
+----
+
 .. _class_Polygon2D_property_internal_vertex_count:
 
 - :ref:`int<class_int>` **internal_vertex_count**
@@ -123,6 +129,8 @@ The polygon's fill color. If ``texture`` is defined, it will be multiplied by th
 +----------+----------------------------------+
 | *Getter* | get_internal_vertex_count()      |
 +----------+----------------------------------+
+
+----
 
 .. _class_Polygon2D_property_invert_border:
 
@@ -136,6 +144,8 @@ The polygon's fill color. If ``texture`` is defined, it will be multiplied by th
 
 Added padding applied to the bounding box when using ``invert``. Setting this value too small may result in a "Bad Polygon" error. Default value: ``100``.
 
+----
+
 .. _class_Polygon2D_property_invert_enable:
 
 - :ref:`bool<class_bool>` **invert_enable**
@@ -147,6 +157,8 @@ Added padding applied to the bounding box when using ``invert``. Setting this va
 +----------+-------------------+
 
 If ``true``, polygon will be inverted, containing the area outside the defined points and extending to the ``invert_border``. Default value: ``false``.
+
+----
 
 .. _class_Polygon2D_property_offset:
 
@@ -160,6 +172,8 @@ If ``true``, polygon will be inverted, containing the area outside the defined p
 
 The offset applied to each vertex.
 
+----
+
 .. _class_Polygon2D_property_polygon:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
@@ -172,6 +186,8 @@ The offset applied to each vertex.
 
 The polygon's list of vertices. The final point will be connected to the first. Note that this returns a copy of the :ref:`PoolVector2Array<class_PoolVector2Array>` rather than a reference.
 
+----
+
 .. _class_Polygon2D_property_polygons:
 
 - :ref:`Array<class_Array>` **polygons**
@@ -182,6 +198,8 @@ The polygon's list of vertices. The final point will be connected to the first. 
 | *Getter* | get_polygons()      |
 +----------+---------------------+
 
+----
+
 .. _class_Polygon2D_property_skeleton:
 
 - :ref:`NodePath<class_NodePath>` **skeleton**
@@ -191,6 +209,8 @@ The polygon's list of vertices. The final point will be connected to the first. 
 +----------+---------------------+
 | *Getter* | get_skeleton()      |
 +----------+---------------------+
+
+----
 
 .. _class_Polygon2D_property_texture:
 
@@ -204,6 +224,8 @@ The polygon's list of vertices. The final point will be connected to the first. 
 
 The polygon's fill texture. Use ``uv`` to set texture coordinates.
 
+----
+
 .. _class_Polygon2D_property_texture_offset:
 
 - :ref:`Vector2<class_Vector2>` **texture_offset**
@@ -215,6 +237,8 @@ The polygon's fill texture. Use ``uv`` to set texture coordinates.
 +----------+---------------------------+
 
 Amount to offset the polygon's ``texture``. If ``(0, 0)`` the texture's origin (its top-left corner) will be placed at the polygon's ``position``.
+
+----
 
 .. _class_Polygon2D_property_texture_rotation:
 
@@ -228,6 +252,8 @@ Amount to offset the polygon's ``texture``. If ``(0, 0)`` the texture's origin (
 
 The texture's rotation in radians.
 
+----
+
 .. _class_Polygon2D_property_texture_rotation_degrees:
 
 - :ref:`float<class_float>` **texture_rotation_degrees**
@@ -239,6 +265,8 @@ The texture's rotation in radians.
 +----------+-------------------------------------+
 
 The texture's rotation in degrees.
+
+----
 
 .. _class_Polygon2D_property_texture_scale:
 
@@ -252,6 +280,8 @@ The texture's rotation in degrees.
 
 Amount to multiply the ``uv`` coordinates when using a ``texture``. Larger values make the texture smaller, and vice versa.
 
+----
+
 .. _class_Polygon2D_property_uv:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **uv**
@@ -263,6 +293,8 @@ Amount to multiply the ``uv`` coordinates when using a ``texture``. Larger value
 +----------+---------------+
 
 Texture coordinates for each vertex of the polygon. There should be one ``uv`` per polygon vertex. If there are fewer, undefined vertices will use ``(0, 0)``.
+
+----
 
 .. _class_Polygon2D_property_vertex_colors:
 
@@ -283,29 +315,43 @@ Method Descriptions
 
 - void **add_bone** **(** :ref:`NodePath<class_NodePath>` path, :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
 
+----
+
 .. _class_Polygon2D_method_clear_bones:
 
 - void **clear_bones** **(** **)**
+
+----
 
 .. _class_Polygon2D_method_erase_bone:
 
 - void **erase_bone** **(** :ref:`int<class_int>` index **)**
 
+----
+
 .. _class_Polygon2D_method_get_bone_count:
 
 - :ref:`int<class_int>` **get_bone_count** **(** **)** const
+
+----
 
 .. _class_Polygon2D_method_get_bone_path:
 
 - :ref:`NodePath<class_NodePath>` **get_bone_path** **(** :ref:`int<class_int>` index **)** const
 
+----
+
 .. _class_Polygon2D_method_get_bone_weights:
 
 - :ref:`PoolRealArray<class_PoolRealArray>` **get_bone_weights** **(** :ref:`int<class_int>` index **)** const
 
+----
+
 .. _class_Polygon2D_method_set_bone_path:
 
 - void **set_bone_path** **(** :ref:`int<class_int>` index, :ref:`NodePath<class_NodePath>` path **)**
+
+----
 
 .. _class_Polygon2D_method_set_bone_weights:
 

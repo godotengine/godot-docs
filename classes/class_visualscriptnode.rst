@@ -56,17 +56,23 @@ Method Descriptions
 
 Returns the default value of a given port. The default value is used when nothing is connected to the port.
 
+----
+
 .. _class_VisualScriptNode_method_get_visual_script:
 
 - :ref:`VisualScript<class_VisualScript>` **get_visual_script** **(** **)** const
 
 Returns the :ref:`VisualScript<class_VisualScript>` instance the node is bound to.
 
+----
+
 .. _class_VisualScriptNode_method_ports_changed_notify:
 
 - void **ports_changed_notify** **(** **)**
 
 Notify that the node's ports have changed. Usually used in conjunction with :ref:`VisualScriptCustomNode<class_VisualScriptCustomNode>` .
+
+----
 
 .. _class_VisualScriptNode_method_set_default_input_value:
 

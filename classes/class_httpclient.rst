@@ -109,6 +109,8 @@ enum **Method**:
 
 - **METHOD_MAX** = **9** --- Represents the size of the :ref:`Method<enum_HTTPClient_Method>` enum.
 
+----
+
 .. _enum_HTTPClient_Status:
 
 .. _class_HTTPClient_constant_STATUS_DISCONNECTED:
@@ -152,6 +154,8 @@ enum **Status**:
 - **STATUS_CONNECTION_ERROR** = **8** --- Status: Error in HTTP connection.
 
 - **STATUS_SSL_HANDSHAKE_ERROR** = **9** --- Status: Error in SSL handshake.
+
+----
 
 .. _enum_HTTPClient_ResponseCode:
 
@@ -434,6 +438,8 @@ Property Descriptions
 
 If ``true``, execution will block until all data is read from the response.
 
+----
+
 .. _class_HTTPClient_property_connection:
 
 - :ref:`StreamPeer<class_StreamPeer>` **connection**
@@ -455,6 +461,8 @@ Method Descriptions
 
 Closes the current connection, allowing reuse of this ``HTTPClient``.
 
+----
+
 .. _class_HTTPClient_method_connect_to_host:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**
@@ -467,11 +475,15 @@ If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 f
 
 ``verify_host`` will check the SSL identity of the host if set to ``true``.
 
+----
+
 .. _class_HTTPClient_method_get_response_body_length:
 
 - :ref:`int<class_int>` **get_response_body_length** **(** **)** const
 
 Returns the response's body length.
+
+----
 
 .. _class_HTTPClient_method_get_response_code:
 
@@ -479,11 +491,15 @@ Returns the response's body length.
 
 Returns the response's HTTP status code.
 
+----
+
 .. _class_HTTPClient_method_get_response_headers:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_response_headers** **(** **)**
 
 Returns the response headers.
+
+----
 
 .. _class_HTTPClient_method_get_response_headers_as_dictionary:
 
@@ -495,11 +511,15 @@ Structure: ("key":"value1; value2")
 
 Example: (content-length:12), (Content-Type:application/json; charset=UTF-8)
 
+----
+
 .. _class_HTTPClient_method_get_status:
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_status** **(** **)** const
 
 Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_method_poll>` in order to get status updates.
+
+----
 
 .. _class_HTTPClient_method_has_response:
 
@@ -507,17 +527,23 @@ Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_met
 
 If ``true``, this ``HTTPClient`` has a response available.
 
+----
+
 .. _class_HTTPClient_method_is_response_chunked:
 
 - :ref:`bool<class_bool>` **is_response_chunked** **(** **)** const
 
 If ``true``, this ``HTTPClient`` has a response that is chunked.
 
+----
+
 .. _class_HTTPClient_method_poll:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
 This needs to be called in order to have any request processed. Check results with :ref:`get_status<class_HTTPClient_method_get_status>`
+
+----
 
 .. _class_HTTPClient_method_query_string_from_dict:
 
@@ -539,11 +565,15 @@ Furthermore, if a key has a null value, only the key itself is added, without eq
     String query_string = http_client.query_string_from_dict(fields)
     # returns: "single=123&not_valued&multiple=22&multiple=33&multiple=44"
 
+----
+
 .. _class_HTTPClient_method_read_response_body_chunk:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **read_response_body_chunk** **(** **)**
 
 Reads one chunk from the response.
+
+----
 
 .. _class_HTTPClient_method_request:
 
@@ -562,6 +592,8 @@ To create a POST request with query strings to push to the server, do:
     var headers = ["Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(query_string.length())]
     var result = http_client.request(http_client.METHOD_POST, "index.php", headers, query_string)
 
+----
+
 .. _class_HTTPClient_method_request_raw:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **request_raw** **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)**
@@ -571,6 +603,8 @@ Sends a raw request to the connected host. The URL parameter is just the part af
 Headers are HTTP request headers. For available HTTP methods, see ``METHOD_*``.
 
 Sends the body data raw, as a byte array and does not encode it in any way.
+
+----
 
 .. _class_HTTPClient_method_set_read_chunk_size:
 

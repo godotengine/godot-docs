@@ -34,6 +34,8 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_file** **(** **)**
 
+----
+
 .. _class_VideoStreamWebm_method_set_file:
 
 - void **set_file** **(** :ref:`String<class_String>` file **)**

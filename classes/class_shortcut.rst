@@ -69,11 +69,15 @@ Method Descriptions
 
 Returns the shortcut's :ref:`InputEvent<class_InputEvent>` as a :ref:`String<class_String>`.
 
+----
+
 .. _class_ShortCut_method_is_shortcut:
 
 - :ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
 Returns ``true`` if the shortcut's :ref:`InputEvent<class_InputEvent>` equals ``event``.
+
+----
 
 .. _class_ShortCut_method_is_valid:
 

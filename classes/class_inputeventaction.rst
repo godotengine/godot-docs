@@ -52,6 +52,8 @@ Property Descriptions
 
 The action's name. Actions are accessed via this :ref:`String<class_String>`.
 
+----
+
 .. _class_InputEventAction_property_pressed:
 
 - :ref:`bool<class_bool>` **pressed**

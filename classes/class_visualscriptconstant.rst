@@ -55,6 +55,8 @@ Property Descriptions
 
 The constant's type.
 
+----
+
 .. _class_VisualScriptConstant_property_value:
 
 - :ref:`Variant<class_Variant>` **value**

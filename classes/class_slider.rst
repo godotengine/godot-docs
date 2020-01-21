@@ -55,6 +55,8 @@ Property Descriptions
 
 If ``true``, the slider can be interacted with. If ``false``, the value can be changed only by code.
 
+----
+
 .. _class_Slider_property_focus_mode:
 
 - :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
@@ -64,6 +66,8 @@ If ``true``, the slider can be interacted with. If ``false``, the value can be c
 +----------+-----------------------+
 | *Getter* | get_focus_mode()      |
 +----------+-----------------------+
+
+----
 
 .. _class_Slider_property_scrollable:
 
@@ -77,6 +81,8 @@ If ``true``, the slider can be interacted with. If ``false``, the value can be c
 
 If ``true``, the value can be changed using the mouse wheel.
 
+----
+
 .. _class_Slider_property_tick_count:
 
 - :ref:`int<class_int>` **tick_count**
@@ -88,6 +94,8 @@ If ``true``, the value can be changed using the mouse wheel.
 +----------+------------------+
 
 Number of ticks displayed on the slider, including border ticks. Ticks are uniformly-distributed value markers.
+
+----
 
 .. _class_Slider_property_ticks_on_borders:
 

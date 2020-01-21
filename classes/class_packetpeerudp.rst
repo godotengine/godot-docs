@@ -51,11 +51,15 @@ Method Descriptions
 
 Close the UDP socket the ``PacketPeerUDP`` is currently listening on.
 
+----
+
 .. _class_PacketPeerUDP_method_get_packet_ip:
 
 - :ref:`String<class_String>` **get_packet_ip** **(** **)** const
 
 Returns the IP of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
+
+----
 
 .. _class_PacketPeerUDP_method_get_packet_port:
 
@@ -63,11 +67,15 @@ Returns the IP of the remote peer that sent the last packet(that was received wi
 
 Returns the port of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
 
+----
+
 .. _class_PacketPeerUDP_method_is_listening:
 
 - :ref:`bool<class_bool>` **is_listening** **(** **)** const
 
 Returns whether this ``PacketPeerUDP`` is listening.
+
+----
 
 .. _class_PacketPeerUDP_method_listen:
 
@@ -81,11 +89,15 @@ If "bind_address" is set as "0.0.0.0" (for IPv4) or "::" (for IPv6), the peer wi
 
 If "bind_address" is set to any valid address (e.g. "192.168.1.101", "::1", etc), the peer will only listen on the interface with that addresses (or fail if no interface with the given address exists).
 
+----
+
 .. _class_PacketPeerUDP_method_set_dest_address:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **set_dest_address** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
 
 Set the destination address and port for sending packets and variables, a hostname will be resolved using if valid.
+
+----
 
 .. _class_PacketPeerUDP_method_wait:
 

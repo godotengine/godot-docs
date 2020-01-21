@@ -39,6 +39,8 @@ Method Descriptions
 
 Creates a new RID instance with the ID of a given resource. When not handed a valid resource, silently stores the unused ID 0.
 
+----
+
 .. _class_RID_method_get_id:
 
 - :ref:`int<class_int>` **get_id** **(** **)**

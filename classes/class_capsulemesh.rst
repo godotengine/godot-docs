@@ -51,6 +51,8 @@ Property Descriptions
 
 Height of the capsule mesh from the center point. Defaults to 1.0.
 
+----
+
 .. _class_CapsuleMesh_property_radial_segments:
 
 - :ref:`int<class_int>` **radial_segments**
@@ -63,6 +65,8 @@ Height of the capsule mesh from the center point. Defaults to 1.0.
 
 Number of radial segments on the capsule mesh. Defaults to 64.
 
+----
+
 .. _class_CapsuleMesh_property_radius:
 
 - :ref:`float<class_float>` **radius**
@@ -74,6 +78,8 @@ Number of radial segments on the capsule mesh. Defaults to 64.
 +----------+-------------------+
 
 Radius of the capsule mesh. Defaults to 1.0.
+
+----
 
 .. _class_CapsuleMesh_property_rings:
 

@@ -72,11 +72,15 @@ Note: To achieve a clean close, you will need to keep polling until either :ref:
 
 Note: HTML5 export might not support all status codes. Please refer to browsers-specific documentation for more details.
 
+----
+
 .. _class_WebSocketPeer_method_get_connected_host:
 
 - :ref:`String<class_String>` **get_connected_host** **(** **)** const
 
 Returns the IP Address of the connected peer. (Not available in HTML5 export)
+
+----
 
 .. _class_WebSocketPeer_method_get_connected_port:
 
@@ -84,11 +88,15 @@ Returns the IP Address of the connected peer. (Not available in HTML5 export)
 
 Returns the remote port of the connected peer. (Not available in HTML5 export)
 
+----
+
 .. _class_WebSocketPeer_method_get_write_mode:
 
 - :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` **get_write_mode** **(** **)** const
 
 Get the current selected write mode. See :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
+
+----
 
 .. _class_WebSocketPeer_method_is_connected_to_host:
 
@@ -96,11 +104,15 @@ Get the current selected write mode. See :ref:`WriteMode<enum_WebSocketPeer_Writ
 
 Returns ``true`` if this peer is currently connected.
 
+----
+
 .. _class_WebSocketPeer_method_set_write_mode:
 
 - void **set_write_mode** **(** :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` mode **)**
 
 Sets the socket to use the given :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
+
+----
 
 .. _class_WebSocketPeer_method_was_string_packet:
 

@@ -70,6 +70,8 @@ enum **CallMode**:
 
 - **CALL_MODE_SINGLETON** = **4**
 
+----
+
 .. _enum_VisualScriptFunctionCall_RPCCallMode:
 
 .. _class_VisualScriptFunctionCall_constant_RPC_DISABLED:
@@ -107,6 +109,8 @@ Property Descriptions
 | *Getter* | get_base_script()      |
 +----------+------------------------+
 
+----
+
 .. _class_VisualScriptFunctionCall_property_base_type:
 
 - :ref:`String<class_String>` **base_type**
@@ -116,6 +120,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_base_type()      |
 +----------+----------------------+
+
+----
 
 .. _class_VisualScriptFunctionCall_property_basic_type:
 
@@ -127,6 +133,8 @@ Property Descriptions
 | *Getter* | get_basic_type()      |
 +----------+-----------------------+
 
+----
+
 .. _class_VisualScriptFunctionCall_property_call_mode:
 
 - :ref:`CallMode<enum_VisualScriptFunctionCall_CallMode>` **call_mode**
@@ -136,6 +144,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_call_mode()      |
 +----------+----------------------+
+
+----
 
 .. _class_VisualScriptFunctionCall_property_function:
 
@@ -147,6 +157,8 @@ Property Descriptions
 | *Getter* | get_function()      |
 +----------+---------------------+
 
+----
+
 .. _class_VisualScriptFunctionCall_property_node_path:
 
 - :ref:`NodePath<class_NodePath>` **node_path**
@@ -156,6 +168,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_base_path()      |
 +----------+----------------------+
+
+----
 
 .. _class_VisualScriptFunctionCall_property_rpc_call_mode:
 
@@ -167,6 +181,8 @@ Property Descriptions
 | *Getter* | get_rpc_call_mode()      |
 +----------+--------------------------+
 
+----
+
 .. _class_VisualScriptFunctionCall_property_singleton:
 
 - :ref:`String<class_String>` **singleton**
@@ -177,6 +193,8 @@ Property Descriptions
 | *Getter* | get_singleton()      |
 +----------+----------------------+
 
+----
+
 .. _class_VisualScriptFunctionCall_property_use_default_args:
 
 - :ref:`int<class_int>` **use_default_args**
@@ -186,6 +204,8 @@ Property Descriptions
 +----------+-----------------------------+
 | *Getter* | get_use_default_args()      |
 +----------+-----------------------------+
+
+----
 
 .. _class_VisualScriptFunctionCall_property_validate:
 

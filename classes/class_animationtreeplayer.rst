@@ -197,6 +197,8 @@ enum **NodeType**:
 
 - **NODE_TRANSITION** = **9** --- Transition node.
 
+----
+
 .. _enum_AnimationTreePlayer_AnimationProcessMode:
 
 .. _class_AnimationTreePlayer_constant_ANIMATION_PROCESS_PHYSICS:
@@ -231,6 +233,8 @@ Property Descriptions
 
 If ``true``, the ``AnimationTreePlayer`` is able to play animations. Default value: ``false``.
 
+----
+
 .. _class_AnimationTreePlayer_property_base_path:
 
 - :ref:`NodePath<class_NodePath>` **base_path**
@@ -245,6 +249,8 @@ The node from which to relatively access other nodes. Default value: ``".."``.
 
 It accesses the Bones, so it should point to the same Node the AnimationPlayer would point its Root Node at.
 
+----
+
 .. _class_AnimationTreePlayer_property_master_player:
 
 - :ref:`NodePath<class_NodePath>` **master_player**
@@ -258,6 +264,8 @@ It accesses the Bones, so it should point to the same Node the AnimationPlayer w
 The path to the :ref:`AnimationPlayer<class_AnimationPlayer>` from which this ``AnimationTreePlayer`` binds animations to animation nodes.
 
 Once set, Animation nodes can be added to the AnimationTreePlayer.
+
+----
 
 .. _class_AnimationTreePlayer_property_playback_process_mode:
 
@@ -280,11 +288,15 @@ Method Descriptions
 
 Adds a ``type`` node to the graph with name ``id``.
 
+----
+
 .. _class_AnimationTreePlayer_method_advance:
 
 - void **advance** **(** :ref:`float<class_float>` delta **)**
 
 Shifts position in the animation timeline. Delta is the time in seconds to shift. Events between the current frame and ``delta`` are handled.
+
+----
 
 .. _class_AnimationTreePlayer_method_animation_node_get_animation:
 
@@ -292,15 +304,21 @@ Shifts position in the animation timeline. Delta is the time in seconds to shift
 
 Returns the :ref:`AnimationPlayer<class_AnimationPlayer>`'s :ref:`Animation<class_Animation>` bound to the ``AnimationTreePlayer``'s animation node with name ``id``.
 
+----
+
 .. _class_AnimationTreePlayer_method_animation_node_get_master_animation:
 
 - :ref:`String<class_String>` **animation_node_get_master_animation** **(** :ref:`String<class_String>` id **)** const
 
 Returns the name of the :ref:`master_player<class_AnimationTreePlayer_property_master_player>`'s :ref:`Animation<class_Animation>` bound to this animation node.
 
+----
+
 .. _class_AnimationTreePlayer_method_animation_node_get_position:
 
 - :ref:`float<class_float>` **animation_node_get_position** **(** :ref:`String<class_String>` id **)** const
+
+----
 
 .. _class_AnimationTreePlayer_method_animation_node_set_animation:
 
@@ -308,11 +326,15 @@ Returns the name of the :ref:`master_player<class_AnimationTreePlayer_property_m
 
 Binds a new :ref:`Animation<class_Animation>` from the :ref:`master_player<class_AnimationTreePlayer_property_master_player>` to the ``AnimationTreePlayer``'s animation node with name ``id``.
 
+----
+
 .. _class_AnimationTreePlayer_method_animation_node_set_filter_path:
 
 - void **animation_node_set_filter_path** **(** :ref:`String<class_String>` id, :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**
 
 If ``enable`` is ``true``, the animation node with ID ``id`` turns off the track modifying the property at ``path``. The modified node's children continue to animate.
+
+----
 
 .. _class_AnimationTreePlayer_method_animation_node_set_master_animation:
 
@@ -320,17 +342,23 @@ If ``enable`` is ``true``, the animation node with ID ``id`` turns off the track
 
 Binds the :ref:`Animation<class_Animation>` named ``source`` from :ref:`master_player<class_AnimationTreePlayer_property_master_player>` to the animation node ``id``. Recalculates caches.
 
+----
+
 .. _class_AnimationTreePlayer_method_are_nodes_connected:
 
 - :ref:`bool<class_bool>` **are_nodes_connected** **(** :ref:`String<class_String>` id, :ref:`String<class_String>` dst_id, :ref:`int<class_int>` dst_input_idx **)** const
 
 Returns whether node ``id`` and ``dst_id`` are connected at the specified slot.
 
+----
+
 .. _class_AnimationTreePlayer_method_blend2_node_get_amount:
 
 - :ref:`float<class_float>` **blend2_node_get_amount** **(** :ref:`String<class_String>` id **)** const
 
 Returns the blend amount of a Blend2 node given its name.
+
+----
 
 .. _class_AnimationTreePlayer_method_blend2_node_set_amount:
 
@@ -346,17 +374,23 @@ Towards 1, the influence of a gets lessened, the influence of b gets raised.
 
 At 1, Output is input b.
 
+----
+
 .. _class_AnimationTreePlayer_method_blend2_node_set_filter_path:
 
 - void **blend2_node_set_filter_path** **(** :ref:`String<class_String>` id, :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**
 
 If ``enable`` is ``true``, the blend2 node with ID ``id`` turns off the track modifying the property at ``path``. The modified node's children continue to animate.
 
+----
+
 .. _class_AnimationTreePlayer_method_blend3_node_get_amount:
 
 - :ref:`float<class_float>` **blend3_node_get_amount** **(** :ref:`String<class_String>` id **)** const
 
 Returns the blend amount of a Blend3 node given its name.
+
+----
 
 .. _class_AnimationTreePlayer_method_blend3_node_set_amount:
 
@@ -376,11 +410,15 @@ From 0 to 1, the influence of a gets lessened, the influence of b+ gets raised a
 
 At 1, Output is input b+.
 
+----
+
 .. _class_AnimationTreePlayer_method_blend4_node_get_amount:
 
 - :ref:`Vector2<class_Vector2>` **blend4_node_get_amount** **(** :ref:`String<class_String>` id **)** const
 
 Returns the blend amount of a Blend4 node given its name.
+
+----
 
 .. _class_AnimationTreePlayer_method_blend4_node_set_amount:
 
@@ -392,11 +430,15 @@ A Blend4 Node blends two pairs of animations.
 
 The two pairs are blended like blend2 and then added together.
 
+----
+
 .. _class_AnimationTreePlayer_method_connect_nodes:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_nodes** **(** :ref:`String<class_String>` id, :ref:`String<class_String>` dst_id, :ref:`int<class_int>` dst_input_idx **)**
 
 Connects node ``id`` to ``dst_id`` at the specified input slot.
+
+----
 
 .. _class_AnimationTreePlayer_method_disconnect_nodes:
 
@@ -404,17 +446,23 @@ Connects node ``id`` to ``dst_id`` at the specified input slot.
 
 Disconnects nodes connected to ``id`` at the specified input slot.
 
+----
+
 .. _class_AnimationTreePlayer_method_get_node_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_node_list** **(** **)**
 
 Returns a :ref:`PoolStringArray<class_PoolStringArray>` containing the name of all nodes.
 
+----
+
 .. _class_AnimationTreePlayer_method_mix_node_get_amount:
 
 - :ref:`float<class_float>` **mix_node_get_amount** **(** :ref:`String<class_String>` id **)** const
 
 Returns mix amount of a Mix node given its name.
+
+----
 
 .. _class_AnimationTreePlayer_method_mix_node_set_amount:
 
@@ -424,11 +472,15 @@ Sets mix amount of a Mix node given its name and value.
 
 A Mix node adds input b to input a by a the amount given by ratio.
 
+----
+
 .. _class_AnimationTreePlayer_method_node_exists:
 
 - :ref:`bool<class_bool>` **node_exists** **(** :ref:`String<class_String>` node **)** const
 
 Check if a node exists (by name).
+
+----
 
 .. _class_AnimationTreePlayer_method_node_get_input_count:
 
@@ -436,11 +488,15 @@ Check if a node exists (by name).
 
 Returns the input count for a given node. Different types of nodes have different amount of inputs.
 
+----
+
 .. _class_AnimationTreePlayer_method_node_get_input_source:
 
 - :ref:`String<class_String>` **node_get_input_source** **(** :ref:`String<class_String>` id, :ref:`int<class_int>` idx **)** const
 
 Returns the input source for a given node input.
+
+----
 
 .. _class_AnimationTreePlayer_method_node_get_position:
 
@@ -448,11 +504,15 @@ Returns the input source for a given node input.
 
 Returns position of a node in the graph given its name.
 
+----
+
 .. _class_AnimationTreePlayer_method_node_get_type:
 
 - :ref:`NodeType<enum_AnimationTreePlayer_NodeType>` **node_get_type** **(** :ref:`String<class_String>` id **)** const
 
 Get the node type, will return from NODE\_\* enum.
+
+----
 
 .. _class_AnimationTreePlayer_method_node_rename:
 
@@ -460,11 +520,15 @@ Get the node type, will return from NODE\_\* enum.
 
 Rename a node in the graph.
 
+----
+
 .. _class_AnimationTreePlayer_method_node_set_position:
 
 - void **node_set_position** **(** :ref:`String<class_String>` id, :ref:`Vector2<class_Vector2>` screen_position **)**
 
 Sets position of a node in the graph given its name and position.
+
+----
 
 .. _class_AnimationTreePlayer_method_oneshot_node_get_autorestart_delay:
 
@@ -472,11 +536,15 @@ Sets position of a node in the graph given its name and position.
 
 Returns autostart delay of a OneShot node given its name.
 
+----
+
 .. _class_AnimationTreePlayer_method_oneshot_node_get_autorestart_random_delay:
 
 - :ref:`float<class_float>` **oneshot_node_get_autorestart_random_delay** **(** :ref:`String<class_String>` id **)** const
 
 Returns autostart random delay of a OneShot node given its name.
+
+----
 
 .. _class_AnimationTreePlayer_method_oneshot_node_get_fadein_time:
 
@@ -484,11 +552,15 @@ Returns autostart random delay of a OneShot node given its name.
 
 Returns fade in time of a OneShot node given its name.
 
+----
+
 .. _class_AnimationTreePlayer_method_oneshot_node_get_fadeout_time:
 
 - :ref:`float<class_float>` **oneshot_node_get_fadeout_time** **(** :ref:`String<class_String>` id **)** const
 
 Returns fade out time of a OneShot node given its name.
+
+----
 
 .. _class_AnimationTreePlayer_method_oneshot_node_has_autorestart:
 
@@ -496,11 +568,15 @@ Returns fade out time of a OneShot node given its name.
 
 Returns whether a OneShot node will auto restart given its name.
 
+----
+
 .. _class_AnimationTreePlayer_method_oneshot_node_is_active:
 
 - :ref:`bool<class_bool>` **oneshot_node_is_active** **(** :ref:`String<class_String>` id **)** const
 
 Returns whether a OneShot node is active given its name.
+
+----
 
 .. _class_AnimationTreePlayer_method_oneshot_node_set_autorestart:
 
@@ -508,11 +584,15 @@ Returns whether a OneShot node is active given its name.
 
 Sets autorestart property of a OneShot node given its name and value.
 
+----
+
 .. _class_AnimationTreePlayer_method_oneshot_node_set_autorestart_delay:
 
 - void **oneshot_node_set_autorestart_delay** **(** :ref:`String<class_String>` id, :ref:`float<class_float>` delay_sec **)**
 
 Sets autorestart delay of a OneShot node given its name and value in seconds.
+
+----
 
 .. _class_AnimationTreePlayer_method_oneshot_node_set_autorestart_random_delay:
 
@@ -520,11 +600,15 @@ Sets autorestart delay of a OneShot node given its name and value in seconds.
 
 Sets autorestart random delay of a OneShot node given its name and value in seconds.
 
+----
+
 .. _class_AnimationTreePlayer_method_oneshot_node_set_fadein_time:
 
 - void **oneshot_node_set_fadein_time** **(** :ref:`String<class_String>` id, :ref:`float<class_float>` time_sec **)**
 
 Sets fade in time of a OneShot node given its name and value in seconds.
+
+----
 
 .. _class_AnimationTreePlayer_method_oneshot_node_set_fadeout_time:
 
@@ -532,11 +616,15 @@ Sets fade in time of a OneShot node given its name and value in seconds.
 
 Sets fade out time of a OneShot node given its name and value in seconds.
 
+----
+
 .. _class_AnimationTreePlayer_method_oneshot_node_set_filter_path:
 
 - void **oneshot_node_set_filter_path** **(** :ref:`String<class_String>` id, :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**
 
 If ``enable`` is ``true``, the oneshot node with ID ``id`` turns off the track modifying the property at ``path``. The modified node's children continue to animate.
+
+----
 
 .. _class_AnimationTreePlayer_method_oneshot_node_start:
 
@@ -544,11 +632,15 @@ If ``enable`` is ``true``, the oneshot node with ID ``id`` turns off the track m
 
 Starts a OneShot node given its name.
 
+----
+
 .. _class_AnimationTreePlayer_method_oneshot_node_stop:
 
 - void **oneshot_node_stop** **(** :ref:`String<class_String>` id **)**
 
 Stops the OneShot node with name ``id``.
+
+----
 
 .. _class_AnimationTreePlayer_method_recompute_caches:
 
@@ -556,11 +648,15 @@ Stops the OneShot node with name ``id``.
 
 Manually recalculates the cache of track information generated from animation nodes. Needed when external sources modify the animation nodes' state.
 
+----
+
 .. _class_AnimationTreePlayer_method_remove_node:
 
 - void **remove_node** **(** :ref:`String<class_String>` id **)**
 
 Removes the animation node with name ``id``.
+
+----
 
 .. _class_AnimationTreePlayer_method_reset:
 
@@ -568,11 +664,15 @@ Removes the animation node with name ``id``.
 
 Resets this ``AnimationTreePlayer``.
 
+----
+
 .. _class_AnimationTreePlayer_method_timescale_node_get_scale:
 
 - :ref:`float<class_float>` **timescale_node_get_scale** **(** :ref:`String<class_String>` id **)** const
 
 Returns time scale value of the TimeScale node with name ``id``.
+
+----
 
 .. _class_AnimationTreePlayer_method_timescale_node_set_scale:
 
@@ -584,6 +684,8 @@ The timescale node is used to speed :ref:`Animation<class_Animation>`\ s up if t
 
 If applied after a blend or mix, affects all input animations to that blend or mix.
 
+----
+
 .. _class_AnimationTreePlayer_method_timeseek_node_seek:
 
 - void **timeseek_node_seek** **(** :ref:`String<class_String>` id, :ref:`float<class_float>` seconds **)**
@@ -592,11 +694,15 @@ Sets the time seek value of the TimeSeek node with name ``id`` to ``seconds``
 
 This functions as a seek in the :ref:`Animation<class_Animation>` or the blend or mix of :ref:`Animation<class_Animation>`\ s input in it.
 
+----
+
 .. _class_AnimationTreePlayer_method_transition_node_delete_input:
 
 - void **transition_node_delete_input** **(** :ref:`String<class_String>` id, :ref:`int<class_int>` input_idx **)**
 
 Deletes the input at ``input_idx`` for the transition node with name ``id``.
+
+----
 
 .. _class_AnimationTreePlayer_method_transition_node_get_current:
 
@@ -604,11 +710,15 @@ Deletes the input at ``input_idx`` for the transition node with name ``id``.
 
 Returns the index of the currently evaluated input for the transition node with name ``id``.
 
+----
+
 .. _class_AnimationTreePlayer_method_transition_node_get_input_count:
 
 - :ref:`int<class_int>` **transition_node_get_input_count** **(** :ref:`String<class_String>` id **)** const
 
 Returns the number of inputs for the transition node with name ``id``. You can add inputs by rightclicking on the transition node.
+
+----
 
 .. _class_AnimationTreePlayer_method_transition_node_get_xfade_time:
 
@@ -616,11 +726,15 @@ Returns the number of inputs for the transition node with name ``id``. You can a
 
 Returns the cross fade time for the transition node with name ``id``.
 
+----
+
 .. _class_AnimationTreePlayer_method_transition_node_has_input_auto_advance:
 
 - :ref:`bool<class_bool>` **transition_node_has_input_auto_advance** **(** :ref:`String<class_String>` id, :ref:`int<class_int>` input_idx **)** const
 
 Returns ``true`` if the input at ``input_idx`` on transition node with name ``id`` is set to automatically advance to the next input upon completion.
+
+----
 
 .. _class_AnimationTreePlayer_method_transition_node_set_current:
 
@@ -628,17 +742,23 @@ Returns ``true`` if the input at ``input_idx`` on transition node with name ``id
 
 The transition node with name ``id`` sets its current input at ``input_idx``.
 
+----
+
 .. _class_AnimationTreePlayer_method_transition_node_set_input_auto_advance:
 
 - void **transition_node_set_input_auto_advance** **(** :ref:`String<class_String>` id, :ref:`int<class_int>` input_idx, :ref:`bool<class_bool>` enable **)**
 
 The transition node with name ``id`` advances to its next input automatically when the input at ``input_idx`` completes.
 
+----
+
 .. _class_AnimationTreePlayer_method_transition_node_set_input_count:
 
 - void **transition_node_set_input_count** **(** :ref:`String<class_String>` id, :ref:`int<class_int>` count **)**
 
 Resizes the number of inputs available for the transition node with name ``id``.
+
+----
 
 .. _class_AnimationTreePlayer_method_transition_node_set_xfade_time:
 

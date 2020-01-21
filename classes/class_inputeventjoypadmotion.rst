@@ -52,6 +52,8 @@ Property Descriptions
 
 Axis identifier. Use one of the ``JOY_AXIS_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
+----
+
 .. _class_InputEventJoypadMotion_property_axis_value:
 
 - :ref:`float<class_float>` **axis_value**

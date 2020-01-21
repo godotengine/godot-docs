@@ -86,11 +86,15 @@ Method Descriptions
 
 Appends a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains the vertices of an outline to the internal array that contains all the outlines. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` in order for this array to be converted to polygons that the engine will use.
 
+----
+
 .. _class_NavigationPolygon_method_add_outline_at_index:
 
 - void **add_outline_at_index** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` outline, :ref:`int<class_int>` index **)**
 
 Adds a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains the vertices of an outline to the internal array that contains all the outlines at a fixed position. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` in order for this array to be converted to polygons that the engine will use.
+
+----
 
 .. _class_NavigationPolygon_method_add_polygon:
 
@@ -98,11 +102,15 @@ Adds a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains the vertice
 
 Adds a polygon using the indices of the vertices you get when calling :ref:`get_vertices<class_NavigationPolygon_method_get_vertices>`.
 
+----
+
 .. _class_NavigationPolygon_method_clear_outlines:
 
 - void **clear_outlines** **(** **)**
 
 Clears the array of the outlines, but it doesn't clear the vertices and the polygons that were created by them.
+
+----
 
 .. _class_NavigationPolygon_method_clear_polygons:
 
@@ -110,11 +118,15 @@ Clears the array of the outlines, but it doesn't clear the vertices and the poly
 
 Clears the array of polygons, but it doesn't clear the array of outlines and vertices.
 
+----
+
 .. _class_NavigationPolygon_method_get_outline:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **get_outline** **(** :ref:`int<class_int>` idx **)** const
 
 Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` containing the vertices of an outline that was created in the editor or by script.
+
+----
 
 .. _class_NavigationPolygon_method_get_outline_count:
 
@@ -122,11 +134,15 @@ Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` containing the vertice
 
 Returns the number of outlines that were created in the editor or by script.
 
+----
+
 .. _class_NavigationPolygon_method_get_polygon:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_polygon** **(** :ref:`int<class_int>` idx **)**
 
 Returns a :ref:`PoolIntArray<class_PoolIntArray>` containing the indices of the vertices of a created polygon.
+
+----
 
 .. _class_NavigationPolygon_method_get_polygon_count:
 
@@ -134,11 +150,15 @@ Returns a :ref:`PoolIntArray<class_PoolIntArray>` containing the indices of the 
 
 Returns the count of all polygons.
 
+----
+
 .. _class_NavigationPolygon_method_get_vertices:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **get_vertices** **(** **)** const
 
 Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` containing all the vertices being used to create the polygons.
+
+----
 
 .. _class_NavigationPolygon_method_make_polygons_from_outlines:
 
@@ -146,17 +166,23 @@ Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` containing all the ver
 
 Creates polygons from the outlines added in the editor or by script.
 
+----
+
 .. _class_NavigationPolygon_method_remove_outline:
 
 - void **remove_outline** **(** :ref:`int<class_int>` idx **)**
 
 Removes an outline created in the editor or by script. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` for the polygons to update.
 
+----
+
 .. _class_NavigationPolygon_method_set_outline:
 
 - void **set_outline** **(** :ref:`int<class_int>` idx, :ref:`PoolVector2Array<class_PoolVector2Array>` outline **)**
 
 Changes an outline created in the editor or by script. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` for the polygons to update.
+
+----
 
 .. _class_NavigationPolygon_method_set_vertices:
 

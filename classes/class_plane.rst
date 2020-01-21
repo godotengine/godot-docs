@@ -94,17 +94,25 @@ Property Descriptions
 
 - :ref:`float<class_float>` **d**
 
+----
+
 .. _class_Plane_property_normal:
 
 - :ref:`Vector3<class_Vector3>` **normal**
+
+----
 
 .. _class_Plane_property_x:
 
 - :ref:`float<class_float>` **x**
 
+----
+
 .. _class_Plane_property_y:
 
 - :ref:`float<class_float>` **y**
+
+----
 
 .. _class_Plane_property_z:
 
@@ -119,13 +127,19 @@ Method Descriptions
 
 Creates a plane from the four parameters "a", "b", "c" and "d".
 
+----
+
 - :ref:`Plane<class_Plane>` **Plane** **(** :ref:`Vector3<class_Vector3>` v1, :ref:`Vector3<class_Vector3>` v2, :ref:`Vector3<class_Vector3>` v3 **)**
 
 Creates a plane from three points.
 
+----
+
 - :ref:`Plane<class_Plane>` **Plane** **(** :ref:`Vector3<class_Vector3>` normal, :ref:`float<class_float>` d **)**
 
 Creates a plane from the normal and the plane's distance to the origin.
+
+----
 
 .. _class_Plane_method_center:
 
@@ -133,11 +147,15 @@ Creates a plane from the normal and the plane's distance to the origin.
 
 Returns the center of the plane.
 
+----
+
 .. _class_Plane_method_distance_to:
 
 - :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_Vector3>` point **)**
 
 Returns the shortest distance from the plane to the position "point".
+
+----
 
 .. _class_Plane_method_get_any_point:
 
@@ -145,11 +163,15 @@ Returns the shortest distance from the plane to the position "point".
 
 Returns a point on the plane.
 
+----
+
 .. _class_Plane_method_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=0.00001 **)**
 
 Returns ``true`` if "point" is inside the plane (by a very minimum threshold).
+
+----
 
 .. _class_Plane_method_intersect_3:
 
@@ -157,11 +179,15 @@ Returns ``true`` if "point" is inside the plane (by a very minimum threshold).
 
 Returns the intersection point of the three planes "b", "c" and this plane. If no intersection is found null is returned.
 
+----
+
 .. _class_Plane_method_intersects_ray:
 
 - :ref:`Vector3<class_Vector3>` **intersects_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)**
 
 Returns the intersection point of a ray consisting of the position "from" and the direction normal "dir" with this plane. If no intersection is found null is returned.
+
+----
 
 .. _class_Plane_method_intersects_segment:
 
@@ -169,17 +195,23 @@ Returns the intersection point of a ray consisting of the position "from" and th
 
 Returns the intersection point of a segment from position "begin" to position "end" with this plane. If no intersection is found null is returned.
 
+----
+
 .. _class_Plane_method_is_point_over:
 
 - :ref:`bool<class_bool>` **is_point_over** **(** :ref:`Vector3<class_Vector3>` point **)**
 
 Returns ``true`` if "point" is located above the plane.
 
+----
+
 .. _class_Plane_method_normalized:
 
 - :ref:`Plane<class_Plane>` **normalized** **(** **)**
 
 Returns a copy of the plane, normalized.
+
+----
 
 .. _class_Plane_method_project:
 

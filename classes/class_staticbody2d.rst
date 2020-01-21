@@ -55,6 +55,8 @@ Property Descriptions
 
 The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
 
+----
+
 .. _class_StaticBody2D_property_constant_angular_velocity:
 
 - :ref:`float<class_float>` **constant_angular_velocity**
@@ -66,6 +68,8 @@ The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounci
 +----------+--------------------------------------+
 
 Constant angular velocity for the body. This does not rotate the body, but affects colliding bodies, as if it were rotating.
+
+----
 
 .. _class_StaticBody2D_property_constant_linear_velocity:
 
@@ -79,6 +83,8 @@ Constant angular velocity for the body. This does not rotate the body, but affec
 
 Constant linear velocity for the body. This does not move the body, but affects colliding bodies, as if it were moving.
 
+----
+
 .. _class_StaticBody2D_property_friction:
 
 - :ref:`float<class_float>` **friction**
@@ -90,6 +96,8 @@ Constant linear velocity for the body. This does not move the body, but affects 
 +----------+---------------------+
 
 The body's friction. Values range from ``0`` (no friction) to ``1`` (full friction).
+
+----
 
 .. _class_StaticBody2D_property_physics_material_override:
 

@@ -83,11 +83,15 @@ Signals
 
 Emitted when an input event occurs. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one ``collision_layer`` bit to be set. See :ref:`_input_event<class_CollisionObject2D_method__input_event>` for details.
 
+----
+
 .. _class_CollisionObject2D_signal_mouse_entered:
 
 - **mouse_entered** **(** **)**
 
 Emitted when the mouse pointer enters any of this object's shapes. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one ``collision_layer`` bit to be set.
+
+----
 
 .. _class_CollisionObject2D_signal_mouse_exited:
 
@@ -124,11 +128,15 @@ Method Descriptions
 
 Accepts unhandled :ref:`InputEvent<class_InputEvent>`\ s. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true``. ``shape_idx`` is the child index of the clicked :ref:`Shape2D<class_Shape2D>`. Connect to the ``input_event`` signal to easily pick up these events.
 
+----
+
 .. _class_CollisionObject2D_method_create_shape_owner:
 
 - :ref:`int<class_int>` **create_shape_owner** **(** :ref:`Object<class_Object>` owner **)**
 
 Creates a new shape owner for the given object. Returns ``owner_id`` of the new owner for future reference.
+
+----
 
 .. _class_CollisionObject2D_method_get_rid:
 
@@ -136,9 +144,13 @@ Creates a new shape owner for the given object. Returns ``owner_id`` of the new 
 
 Returns the object's :ref:`RID<class_RID>`.
 
+----
+
 .. _class_CollisionObject2D_method_get_shape_owner_one_way_collision_margin:
 
 - :ref:`float<class_float>` **get_shape_owner_one_way_collision_margin** **(** :ref:`int<class_int>` owner_id **)** const
+
+----
 
 .. _class_CollisionObject2D_method_get_shape_owners:
 
@@ -146,11 +158,15 @@ Returns the object's :ref:`RID<class_RID>`.
 
 Returns an :ref:`Array<class_Array>` of ``owner_id`` identifiers. You can use these ids in other methods that take ``owner_id`` as an argument.
 
+----
+
 .. _class_CollisionObject2D_method_is_shape_owner_disabled:
 
 - :ref:`bool<class_bool>` **is_shape_owner_disabled** **(** :ref:`int<class_int>` owner_id **)** const
 
 If ``true``, the shape owner and its shapes are disabled.
+
+----
 
 .. _class_CollisionObject2D_method_is_shape_owner_one_way_collision_enabled:
 
@@ -158,11 +174,15 @@ If ``true``, the shape owner and its shapes are disabled.
 
 Returns ``true`` if collisions for the shape owner originating from this ``CollisionObject2D`` will not be reported to collided with ``CollisionObject2D``\ s.
 
+----
+
 .. _class_CollisionObject2D_method_remove_shape_owner:
 
 - void **remove_shape_owner** **(** :ref:`int<class_int>` owner_id **)**
 
 Removes the given shape owner.
+
+----
 
 .. _class_CollisionObject2D_method_shape_find_owner:
 
@@ -170,11 +190,15 @@ Removes the given shape owner.
 
 Returns the ``owner_id`` of the given shape.
 
+----
+
 .. _class_CollisionObject2D_method_shape_owner_add_shape:
 
 - void **shape_owner_add_shape** **(** :ref:`int<class_int>` owner_id, :ref:`Shape2D<class_Shape2D>` shape **)**
 
 Adds a :ref:`Shape2D<class_Shape2D>` to the shape owner.
+
+----
 
 .. _class_CollisionObject2D_method_shape_owner_clear_shapes:
 
@@ -182,11 +206,15 @@ Adds a :ref:`Shape2D<class_Shape2D>` to the shape owner.
 
 Removes all shapes from the shape owner.
 
+----
+
 .. _class_CollisionObject2D_method_shape_owner_get_owner:
 
 - :ref:`Object<class_Object>` **shape_owner_get_owner** **(** :ref:`int<class_int>` owner_id **)** const
 
 Returns the parent object of the given shape owner.
+
+----
 
 .. _class_CollisionObject2D_method_shape_owner_get_shape:
 
@@ -194,11 +222,15 @@ Returns the parent object of the given shape owner.
 
 Returns the :ref:`Shape2D<class_Shape2D>` with the given id from the given shape owner.
 
+----
+
 .. _class_CollisionObject2D_method_shape_owner_get_shape_count:
 
 - :ref:`int<class_int>` **shape_owner_get_shape_count** **(** :ref:`int<class_int>` owner_id **)** const
 
 Returns the number of shapes the given shape owner contains.
+
+----
 
 .. _class_CollisionObject2D_method_shape_owner_get_shape_index:
 
@@ -206,11 +238,15 @@ Returns the number of shapes the given shape owner contains.
 
 Returns the child index of the :ref:`Shape2D<class_Shape2D>` with the given id from the given shape owner.
 
+----
+
 .. _class_CollisionObject2D_method_shape_owner_get_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **shape_owner_get_transform** **(** :ref:`int<class_int>` owner_id **)** const
 
 Returns the shape owner's :ref:`Transform2D<class_Transform2D>`.
+
+----
 
 .. _class_CollisionObject2D_method_shape_owner_remove_shape:
 
@@ -218,11 +254,15 @@ Returns the shape owner's :ref:`Transform2D<class_Transform2D>`.
 
 Removes a shape from the given shape owner.
 
+----
+
 .. _class_CollisionObject2D_method_shape_owner_set_disabled:
 
 - void **shape_owner_set_disabled** **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled **)**
 
 If ``true``, disables the given shape owner.
+
+----
 
 .. _class_CollisionObject2D_method_shape_owner_set_one_way_collision:
 
@@ -230,9 +270,13 @@ If ``true``, disables the given shape owner.
 
 If ``enable`` is ``true``, collisions for the shape owner originating from this ``CollisionObject2D`` will not be reported to collided with ``CollisionObject2D``\ s.
 
+----
+
 .. _class_CollisionObject2D_method_shape_owner_set_one_way_collision_margin:
 
 - void **shape_owner_set_one_way_collision_margin** **(** :ref:`int<class_int>` owner_id, :ref:`float<class_float>` margin **)**
+
+----
 
 .. _class_CollisionObject2D_method_shape_owner_set_transform:
 

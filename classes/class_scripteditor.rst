@@ -44,6 +44,8 @@ Signals
 
 Emitted when user changed active script. Argument is a freshly activated :ref:`Script<class_Script>`.
 
+----
+
 .. _class_ScriptEditor_signal_script_close:
 
 - **script_close** **(** :ref:`Script<class_Script>` script **)**
@@ -57,9 +59,13 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** const
 
+----
+
 .. _class_ScriptEditor_method_drop_data_fw:
 
 - void **drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**
+
+----
 
 .. _class_ScriptEditor_method_get_current_script:
 
@@ -67,15 +73,21 @@ Method Descriptions
 
 Returns a :ref:`Script<class_Script>` that is currently active in editor.
 
+----
+
 .. _class_ScriptEditor_method_get_drag_data_fw:
 
 - :ref:`Variant<class_Variant>` **get_drag_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**
+
+----
 
 .. _class_ScriptEditor_method_get_open_scripts:
 
 - :ref:`Array<class_Array>` **get_open_scripts** **(** **)** const
 
 Returns an array with all :ref:`Script<class_Script>` objects which are currently open in editor.
+
+----
 
 .. _class_ScriptEditor_method_open_script_create_dialog:
 

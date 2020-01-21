@@ -69,15 +69,21 @@ Method Descriptions
 
 Clear the library.
 
+----
+
 .. _class_MeshLibrary_method_create_item:
 
 - void **create_item** **(** :ref:`int<class_int>` id **)**
 
 Create a new item in the library, supplied an id.
 
+----
+
 .. _class_MeshLibrary_method_find_item_by_name:
 
 - :ref:`int<class_int>` **find_item_by_name** **(** :ref:`String<class_String>` name **)** const
+
+----
 
 .. _class_MeshLibrary_method_get_item_list:
 
@@ -85,11 +91,15 @@ Create a new item in the library, supplied an id.
 
 Returns the list of items.
 
+----
+
 .. _class_MeshLibrary_method_get_item_mesh:
 
 - :ref:`Mesh<class_Mesh>` **get_item_mesh** **(** :ref:`int<class_int>` id **)** const
 
 Returns the mesh of the item.
+
+----
 
 .. _class_MeshLibrary_method_get_item_name:
 
@@ -97,17 +107,25 @@ Returns the mesh of the item.
 
 Returns the name of the item.
 
+----
+
 .. _class_MeshLibrary_method_get_item_navmesh:
 
 - :ref:`NavigationMesh<class_NavigationMesh>` **get_item_navmesh** **(** :ref:`int<class_int>` id **)** const
+
+----
 
 .. _class_MeshLibrary_method_get_item_preview:
 
 - :ref:`Texture<class_Texture>` **get_item_preview** **(** :ref:`int<class_int>` id **)** const
 
+----
+
 .. _class_MeshLibrary_method_get_item_shapes:
 
 - :ref:`Array<class_Array>` **get_item_shapes** **(** :ref:`int<class_int>` id **)** const
+
+----
 
 .. _class_MeshLibrary_method_get_last_unused_item_id:
 
@@ -115,11 +133,15 @@ Returns the name of the item.
 
 Get an unused id for a new item.
 
+----
+
 .. _class_MeshLibrary_method_remove_item:
 
 - void **remove_item** **(** :ref:`int<class_int>` id **)**
 
 Remove the item.
+
+----
 
 .. _class_MeshLibrary_method_set_item_mesh:
 
@@ -127,19 +149,27 @@ Remove the item.
 
 Set the mesh of the item.
 
+----
+
 .. _class_MeshLibrary_method_set_item_name:
 
 - void **set_item_name** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**
 
 Set the name of the item.
 
+----
+
 .. _class_MeshLibrary_method_set_item_navmesh:
 
 - void **set_item_navmesh** **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_NavigationMesh>` navmesh **)**
 
+----
+
 .. _class_MeshLibrary_method_set_item_preview:
 
 - void **set_item_preview** **(** :ref:`int<class_int>` id, :ref:`Texture<class_Texture>` texture **)**
+
+----
 
 .. _class_MeshLibrary_method_set_item_shapes:
 

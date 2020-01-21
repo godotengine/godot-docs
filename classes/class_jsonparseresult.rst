@@ -51,6 +51,8 @@ Property Descriptions
 
 The error type if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
 
+----
+
 .. _class_JSONParseResult_property_error_line:
 
 - :ref:`int<class_int>` **error_line**
@@ -63,6 +65,8 @@ The error type if JSON source was not successfully parsed. See :ref:`@GlobalScop
 
 The line number where the error occurred if JSON source was not successfully parsed.
 
+----
+
 .. _class_JSONParseResult_property_error_string:
 
 - :ref:`String<class_String>` **error_string**
@@ -74,6 +78,8 @@ The line number where the error occurred if JSON source was not successfully par
 +----------+-------------------------+
 
 The error message if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
+
+----
 
 .. _class_JSONParseResult_property_result:
 

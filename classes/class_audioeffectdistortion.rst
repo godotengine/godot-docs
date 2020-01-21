@@ -84,6 +84,8 @@ Property Descriptions
 
 Distortion power. Value can range from 0 to 1. Default value: ``0``.
 
+----
+
 .. _class_AudioEffectDistortion_property_keep_hf_hz:
 
 - :ref:`float<class_float>` **keep_hf_hz**
@@ -95,6 +97,8 @@ Distortion power. Value can range from 0 to 1. Default value: ``0``.
 +----------+-----------------------+
 
 High-pass filter. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000. Default value: ``16000``.
+
+----
 
 .. _class_AudioEffectDistortion_property_mode:
 
@@ -108,6 +112,8 @@ High-pass filter. Frequencies higher than this value will not be affected by the
 
 Distortion type. Default value: :ref:`MODE_CLIP<class_AudioEffectDistortion_constant_MODE_CLIP>`.
 
+----
+
 .. _class_AudioEffectDistortion_property_post_gain:
 
 - :ref:`float<class_float>` **post_gain**
@@ -119,6 +125,8 @@ Distortion type. Default value: :ref:`MODE_CLIP<class_AudioEffectDistortion_cons
 +----------+----------------------+
 
 Increases or decreases the volume after the effect. Value can range from -80 to 24. Default value: ``0``.
+
+----
 
 .. _class_AudioEffectDistortion_property_pre_gain:
 

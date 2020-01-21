@@ -60,6 +60,8 @@ Signals
 
 Emitted whenever scrolling stops.
 
+----
+
 .. _class_ScrollContainer_signal_scroll_started:
 
 - **scroll_started** **(** **)**
@@ -84,6 +86,8 @@ Property Descriptions
 | *Getter* | get_deadzone()      |
 +----------+---------------------+
 
+----
+
 .. _class_ScrollContainer_property_scroll_horizontal:
 
 - :ref:`int<class_int>` **scroll_horizontal**
@@ -95,6 +99,8 @@ Property Descriptions
 +----------+---------------------+
 
 The current horizontal scroll value.
+
+----
 
 .. _class_ScrollContainer_property_scroll_horizontal_enabled:
 
@@ -108,6 +114,8 @@ The current horizontal scroll value.
 
 If ``true``, enables horizontal scrolling.
 
+----
+
 .. _class_ScrollContainer_property_scroll_vertical:
 
 - :ref:`int<class_int>` **scroll_vertical**
@@ -119,6 +127,8 @@ If ``true``, enables horizontal scrolling.
 +----------+---------------------+
 
 The current vertical scroll value.
+
+----
 
 .. _class_ScrollContainer_property_scroll_vertical_enabled:
 
@@ -138,6 +148,8 @@ Method Descriptions
 .. _class_ScrollContainer_method_get_h_scrollbar:
 
 - :ref:`HScrollBar<class_HScrollBar>` **get_h_scrollbar** **(** **)**
+
+----
 
 .. _class_ScrollContainer_method_get_v_scrollbar:
 

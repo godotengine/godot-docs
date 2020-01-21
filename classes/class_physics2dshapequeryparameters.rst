@@ -64,6 +64,8 @@ Property Descriptions
 | *Getter* | is_collide_with_areas_enabled() |
 +----------+---------------------------------+
 
+----
+
 .. _class_Physics2DShapeQueryParameters_property_collide_with_bodies:
 
 - :ref:`bool<class_bool>` **collide_with_bodies**
@@ -73,6 +75,8 @@ Property Descriptions
 +----------+----------------------------------+
 | *Getter* | is_collide_with_bodies_enabled() |
 +----------+----------------------------------+
+
+----
 
 .. _class_Physics2DShapeQueryParameters_property_collision_layer:
 
@@ -86,6 +90,8 @@ Property Descriptions
 
 The physics layer the query should be made on.
 
+----
+
 .. _class_Physics2DShapeQueryParameters_property_exclude:
 
 - :ref:`Array<class_Array>` **exclude**
@@ -97,6 +103,8 @@ The physics layer the query should be made on.
 +----------+--------------------+
 
 The list of objects or object :ref:`RID<class_RID>`\ s, that will be excluded from collisions.
+
+----
 
 .. _class_Physics2DShapeQueryParameters_property_margin:
 
@@ -110,6 +118,8 @@ The list of objects or object :ref:`RID<class_RID>`\ s, that will be excluded fr
 
 The collision margin for the shape.
 
+----
+
 .. _class_Physics2DShapeQueryParameters_property_motion:
 
 - :ref:`Vector2<class_Vector2>` **motion**
@@ -122,6 +132,8 @@ The collision margin for the shape.
 
 The motion of the shape being queried for.
 
+----
+
 .. _class_Physics2DShapeQueryParameters_property_shape_rid:
 
 - :ref:`RID<class_RID>` **shape_rid**
@@ -133,6 +145,8 @@ The motion of the shape being queried for.
 +----------+----------------------+
 
 The :ref:`RID<class_RID>` of the queried shape. See :ref:`set_shape<class_Physics2DShapeQueryParameters_method_set_shape>` also.
+
+----
 
 .. _class_Physics2DShapeQueryParameters_property_transform:
 

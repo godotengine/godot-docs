@@ -97,6 +97,8 @@ enum **Projection**:
 
 - **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are; also known as orthographic projection).
 
+----
+
 .. _enum_Camera_KeepAspect:
 
 .. _class_Camera_constant_KEEP_WIDTH:
@@ -108,6 +110,8 @@ enum **KeepAspect**:
 - **KEEP_WIDTH** = **0** --- Preserves the horizontal aspect ratio.
 
 - **KEEP_HEIGHT** = **1** --- Preserves the vertical aspect ratio.
+
+----
 
 .. _enum_Camera_DopplerTracking:
 
@@ -145,6 +149,8 @@ Property Descriptions
 
 The culling mask that describes which 3D render layers are rendered by this camera.
 
+----
+
 .. _class_Camera_property_current:
 
 - :ref:`bool<class_bool>` **current**
@@ -156,6 +162,8 @@ The culling mask that describes which 3D render layers are rendered by this came
 +----------+--------------------+
 
 If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using this Camera. Default value: ``false``.
+
+----
 
 .. _class_Camera_property_doppler_tracking:
 
@@ -169,6 +177,8 @@ If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using thi
 
 If not :ref:`DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>` this Camera will simulate the Doppler effect for objects changed in particular ``_process`` methods. Default value: :ref:`DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>`.
 
+----
+
 .. _class_Camera_property_environment:
 
 - :ref:`Environment<class_Environment>` **environment**
@@ -180,6 +190,8 @@ If not :ref:`DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DI
 +----------+------------------------+
 
 The :ref:`Environment<class_Environment>` to use for this Camera.
+
+----
 
 .. _class_Camera_property_far:
 
@@ -193,6 +205,8 @@ The :ref:`Environment<class_Environment>` to use for this Camera.
 
 The distance to the far culling boundary for this Camera relative to its local z-axis.
 
+----
+
 .. _class_Camera_property_fov:
 
 - :ref:`float<class_float>` **fov**
@@ -204,6 +218,8 @@ The distance to the far culling boundary for this Camera relative to its local z
 +----------+----------------+
 
 The camera's field of view angle (in degrees). Only applicable in perspective mode. Since :ref:`keep_aspect<class_Camera_property_keep_aspect>` locks one axis, ``fov`` sets the other axis' field of view angle.
+
+----
 
 .. _class_Camera_property_h_offset:
 
@@ -217,6 +233,8 @@ The camera's field of view angle (in degrees). Only applicable in perspective mo
 
 The horizontal (X) offset of the Camera viewport.
 
+----
+
 .. _class_Camera_property_keep_aspect:
 
 - :ref:`KeepAspect<enum_Camera_KeepAspect>` **keep_aspect**
@@ -228,6 +246,8 @@ The horizontal (X) offset of the Camera viewport.
 +----------+-----------------------------+
 
 The axis to lock during :ref:`fov<class_Camera_property_fov>`/:ref:`size<class_Camera_property_size>` adjustments. Can be either :ref:`KEEP_WIDTH<class_Camera_constant_KEEP_WIDTH>` or :ref:`KEEP_HEIGHT<class_Camera_constant_KEEP_HEIGHT>`.
+
+----
 
 .. _class_Camera_property_near:
 
@@ -241,6 +261,8 @@ The axis to lock during :ref:`fov<class_Camera_property_fov>`/:ref:`size<class_C
 
 The distance to the near culling boundary for this Camera relative to its local z-axis.
 
+----
+
 .. _class_Camera_property_projection:
 
 - :ref:`Projection<enum_Camera_Projection>` **projection**
@@ -253,6 +275,8 @@ The distance to the near culling boundary for this Camera relative to its local 
 
 The camera's projection mode. In :ref:`PROJECTION_PERSPECTIVE<class_Camera_constant_PROJECTION_PERSPECTIVE>` mode, objects' z-distance from the camera's local space scales their perceived size.
 
+----
+
 .. _class_Camera_property_size:
 
 - :ref:`float<class_float>` **size**
@@ -264,6 +288,8 @@ The camera's projection mode. In :ref:`PROJECTION_PERSPECTIVE<class_Camera_const
 +----------+-----------------+
 
 The camera's size measured as 1/2 the width or height. Only applicable in orthogonal mode. Since :ref:`keep_aspect<class_Camera_property_keep_aspect>` locks on axis, ``size`` sets the other axis' size length.
+
+----
 
 .. _class_Camera_property_v_offset:
 
@@ -286,19 +312,27 @@ Method Descriptions
 
 If this is the current Camera, remove it from being current. If ``enable_next`` is ``true``, request to make the next Camera current, if any.
 
+----
+
 .. _class_Camera_method_get_camera_transform:
 
 - :ref:`Transform<class_Transform>` **get_camera_transform** **(** **)** const
 
 Gets the camera transform. Subclassed cameras (such as CharacterCamera) may provide different transforms than the :ref:`Node<class_Node>` transform.
 
+----
+
 .. _class_Camera_method_get_cull_mask_bit:
 
 - :ref:`bool<class_bool>` **get_cull_mask_bit** **(** :ref:`int<class_int>` layer **)** const
 
+----
+
 .. _class_Camera_method_get_frustum:
 
 - :ref:`Array<class_Array>` **get_frustum** **(** **)** const
+
+----
 
 .. _class_Camera_method_is_position_behind:
 
@@ -306,11 +340,15 @@ Gets the camera transform. Subclassed cameras (such as CharacterCamera) may prov
 
 Returns ``true`` if the given position is behind the Camera. Note that a position which returns ``false`` may still be outside the Camera's field of view.
 
+----
+
 .. _class_Camera_method_make_current:
 
 - void **make_current** **(** **)**
 
 Makes this camera the current Camera for the :ref:`Viewport<class_Viewport>` (see class description). If the Camera Node is outside the scene tree, it will attempt to become current once it's added.
+
+----
 
 .. _class_Camera_method_project_local_ray_normal:
 
@@ -318,11 +356,15 @@ Makes this camera the current Camera for the :ref:`Viewport<class_Viewport>` (se
 
 Returns a normal vector from the screen point location directed along the camera. Orthogonal cameras are normalized. Perspective cameras account for perspective, screen width/height, etc.
 
+----
+
 .. _class_Camera_method_project_position:
 
 - :ref:`Vector3<class_Vector3>` **project_position** **(** :ref:`Vector2<class_Vector2>` screen_point **)** const
 
 Returns the 3D point in worldspace that maps to the given 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle.
+
+----
 
 .. _class_Camera_method_project_ray_normal:
 
@@ -330,15 +372,21 @@ Returns the 3D point in worldspace that maps to the given 2D coordinate in the :
 
 Returns a normal vector in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
 
+----
+
 .. _class_Camera_method_project_ray_origin:
 
 - :ref:`Vector3<class_Vector3>` **project_ray_origin** **(** :ref:`Vector2<class_Vector2>` screen_point **)** const
 
 Returns a 3D position in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
 
+----
+
 .. _class_Camera_method_set_cull_mask_bit:
 
 - void **set_cull_mask_bit** **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enable **)**
+
+----
 
 .. _class_Camera_method_set_orthogonal:
 
@@ -346,11 +394,15 @@ Returns a 3D position in worldspace, that is the result of projecting a point on
 
 Sets the camera projection to orthogonal mode, by specifying a width and the *near* and *far* clip planes in worldspace units. (As a hint, 2D games often use this projection, with values specified in pixels)
 
+----
+
 .. _class_Camera_method_set_perspective:
 
 - void **set_perspective** **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
 Sets the camera projection to perspective mode, by specifying a *FOV* Y angle in degrees (FOV means Field of View), and the *near* and *far* clip planes in worldspace units.
+
+----
 
 .. _class_Camera_method_unproject_position:
 

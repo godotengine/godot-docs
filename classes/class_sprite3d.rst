@@ -64,6 +64,8 @@ Property Descriptions
 
 Current frame to display from sprite sheet. :ref:`vframes<class_Sprite3D_property_vframes>` or :ref:`hframes<class_Sprite3D_property_hframes>` must be greater than 1.
 
+----
+
 .. _class_Sprite3D_property_hframes:
 
 - :ref:`int<class_int>` **hframes**
@@ -75,6 +77,8 @@ Current frame to display from sprite sheet. :ref:`vframes<class_Sprite3D_propert
 +----------+--------------------+
 
 The number of columns in the sprite sheet.
+
+----
 
 .. _class_Sprite3D_property_region_enabled:
 
@@ -88,6 +92,8 @@ The number of columns in the sprite sheet.
 
 If ``true``, texture will be cut from a larger atlas texture. See :ref:`region_rect<class_Sprite3D_property_region_rect>`. Default value: ``false``.
 
+----
+
 .. _class_Sprite3D_property_region_rect:
 
 - :ref:`Rect2<class_Rect2>` **region_rect**
@@ -100,6 +106,8 @@ If ``true``, texture will be cut from a larger atlas texture. See :ref:`region_r
 
 The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_property_region_enabled>` must be ``true``.
 
+----
+
 .. _class_Sprite3D_property_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
@@ -111,6 +119,8 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 +----------+--------------------+
 
 :ref:`Texture<class_Texture>` object to draw.
+
+----
 
 .. _class_Sprite3D_property_vframes:
 

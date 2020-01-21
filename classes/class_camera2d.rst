@@ -107,6 +107,8 @@ enum **AnchorMode**:
 
 - **ANCHOR_MODE_DRAG_CENTER** = **1** --- The camera's position takes into account vertical/horizontal offsets and the screen size.
 
+----
+
 .. _enum_Camera2D_Camera2DProcessMode:
 
 .. _class_Camera2D_constant_CAMERA2D_PROCESS_PHYSICS:
@@ -141,6 +143,8 @@ Property Descriptions
 
 The Camera2D's anchor point. See ``ANCHOR_MODE_*`` constants.
 
+----
+
 .. _class_Camera2D_property_current:
 
 - :ref:`bool<class_bool>` **current**
@@ -150,6 +154,8 @@ The Camera2D's anchor point. See ``ANCHOR_MODE_*`` constants.
 +----------+--------------+
 
 If ``true``, the camera is the active camera for the current scene. Only one camera can be current, so setting a different camera ``current`` will disable this one.
+
+----
 
 .. _class_Camera2D_property_custom_viewport:
 
@@ -163,6 +169,8 @@ If ``true``, the camera is the active camera for the current scene. Only one cam
 
 The custom :ref:`Viewport<class_Viewport>` node attached to the ``Camera2D``. If null or not a :ref:`Viewport<class_Viewport>`, uses the default viewport instead.
 
+----
+
 .. _class_Camera2D_property_drag_margin_bottom:
 
 - :ref:`float<class_float>` **drag_margin_bottom**
@@ -174,6 +182,8 @@ The custom :ref:`Viewport<class_Viewport>` node attached to the ``Camera2D``. If
 +----------+------------------------+
 
 Bottom margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+
+----
 
 .. _class_Camera2D_property_drag_margin_h_enabled:
 
@@ -187,6 +197,8 @@ Bottom margin needed to drag the camera. A value of ``1`` makes the camera move 
 
 If ``true``, the camera only moves when reaching the horizontal drag margins. If ``false``, the camera moves horizontally regardless of margins. Default value: ``true``.
 
+----
+
 .. _class_Camera2D_property_drag_margin_left:
 
 - :ref:`float<class_float>` **drag_margin_left**
@@ -198,6 +210,8 @@ If ``true``, the camera only moves when reaching the horizontal drag margins. If
 +----------+------------------------+
 
 Left margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+
+----
 
 .. _class_Camera2D_property_drag_margin_right:
 
@@ -211,6 +225,8 @@ Left margin needed to drag the camera. A value of ``1`` makes the camera move on
 
 Right margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
 
+----
+
 .. _class_Camera2D_property_drag_margin_top:
 
 - :ref:`float<class_float>` **drag_margin_top**
@@ -222,6 +238,8 @@ Right margin needed to drag the camera. A value of ``1`` makes the camera move o
 +----------+------------------------+
 
 Top margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+
+----
 
 .. _class_Camera2D_property_drag_margin_v_enabled:
 
@@ -235,6 +253,8 @@ Top margin needed to drag the camera. A value of ``1`` makes the camera move onl
 
 If ``true``, the camera only moves when reaching the vertical drag margins. If ``false``, the camera moves vertically regardless of margins. Default value: ``true``.
 
+----
+
 .. _class_Camera2D_property_editor_draw_drag_margin:
 
 - :ref:`bool<class_bool>` **editor_draw_drag_margin**
@@ -246,6 +266,8 @@ If ``true``, the camera only moves when reaching the vertical drag margins. If `
 +----------+-----------------------------------+
 
 If ``true``, draws the camera's drag margin rectangle in the editor. Default value: ``false``
+
+----
 
 .. _class_Camera2D_property_editor_draw_limits:
 
@@ -259,6 +281,8 @@ If ``true``, draws the camera's drag margin rectangle in the editor. Default val
 
 If ``true``, draws the camera's limits rectangle in the editor. Default value: ``true``
 
+----
+
 .. _class_Camera2D_property_editor_draw_screen:
 
 - :ref:`bool<class_bool>` **editor_draw_screen**
@@ -270,6 +294,8 @@ If ``true``, draws the camera's limits rectangle in the editor. Default value: `
 +----------+-----------------------------------+
 
 If ``true``, draws the camera's screen rectangle in the editor. Default value: ``false``
+
+----
 
 .. _class_Camera2D_property_limit_bottom:
 
@@ -283,6 +309,8 @@ If ``true``, draws the camera's screen rectangle in the editor. Default value: `
 
 Bottom scroll limit in pixels. The camera stops moving when reaching this value.
 
+----
+
 .. _class_Camera2D_property_limit_left:
 
 - :ref:`int<class_int>` **limit_left**
@@ -294,6 +322,8 @@ Bottom scroll limit in pixels. The camera stops moving when reaching this value.
 +----------+------------------+
 
 Left scroll limit in pixels. The camera stops moving when reaching this value.
+
+----
 
 .. _class_Camera2D_property_limit_right:
 
@@ -307,6 +337,8 @@ Left scroll limit in pixels. The camera stops moving when reaching this value.
 
 Right scroll limit in pixels. The camera stops moving when reaching this value.
 
+----
+
 .. _class_Camera2D_property_limit_smoothed:
 
 - :ref:`bool<class_bool>` **limit_smoothed**
@@ -318,6 +350,8 @@ Right scroll limit in pixels. The camera stops moving when reaching this value.
 +----------+------------------------------------+
 
 If ``true``, the camera smoothly stops when reaches its limits. Default value: ``false``
+
+----
 
 .. _class_Camera2D_property_limit_top:
 
@@ -331,6 +365,8 @@ If ``true``, the camera smoothly stops when reaches its limits. Default value: `
 
 Top scroll limit in pixels. The camera stops moving when reaching this value.
 
+----
+
 .. _class_Camera2D_property_offset:
 
 - :ref:`Vector2<class_Vector2>` **offset**
@@ -342,6 +378,8 @@ Top scroll limit in pixels. The camera stops moving when reaching this value.
 +----------+-------------------+
 
 The camera's offset, useful for looking around or camera shake animations.
+
+----
 
 .. _class_Camera2D_property_offset_h:
 
@@ -355,6 +393,8 @@ The camera's offset, useful for looking around or camera shake animations.
 
 The horizontal offset of the camera, relative to the drag margins. Default value: ``0``
 
+----
+
 .. _class_Camera2D_property_offset_v:
 
 - :ref:`float<class_float>` **offset_v**
@@ -367,6 +407,8 @@ The horizontal offset of the camera, relative to the drag margins. Default value
 
 The vertical offset of the camera, relative to the drag margins. Default value: ``0``
 
+----
+
 .. _class_Camera2D_property_process_mode:
 
 - :ref:`Camera2DProcessMode<enum_Camera2D_Camera2DProcessMode>` **process_mode**
@@ -376,6 +418,8 @@ The vertical offset of the camera, relative to the drag margins. Default value: 
 +----------+-------------------------+
 | *Getter* | get_process_mode()      |
 +----------+-------------------------+
+
+----
 
 .. _class_Camera2D_property_rotating:
 
@@ -389,6 +433,8 @@ The vertical offset of the camera, relative to the drag margins. Default value: 
 
 If ``true``, the camera rotates with the target. Default value: ``false``
 
+----
+
 .. _class_Camera2D_property_smoothing_enabled:
 
 - :ref:`bool<class_bool>` **smoothing_enabled**
@@ -401,6 +447,8 @@ If ``true``, the camera rotates with the target. Default value: ``false``
 
 If ``true``, the camera smoothly moves towards the target at :ref:`smoothing_speed<class_Camera2D_property_smoothing_speed>`. Default value: ``false``
 
+----
+
 .. _class_Camera2D_property_smoothing_speed:
 
 - :ref:`float<class_float>` **smoothing_speed**
@@ -412,6 +460,8 @@ If ``true``, the camera smoothly moves towards the target at :ref:`smoothing_spe
 +----------+-----------------------------+
 
 Speed in pixels per second of the camera's smoothing effect when :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``true``
+
+----
 
 .. _class_Camera2D_property_zoom:
 
@@ -434,11 +484,15 @@ Method Descriptions
 
 Align the camera to the tracked node
 
+----
+
 .. _class_Camera2D_method_clear_current:
 
 - void **clear_current** **(** **)**
 
 Removes any ``Camera2D`` from the ancestor :ref:`Viewport<class_Viewport>`'s internal currently-assigned camera.
+
+----
 
 .. _class_Camera2D_method_force_update_scroll:
 
@@ -446,11 +500,15 @@ Removes any ``Camera2D`` from the ancestor :ref:`Viewport<class_Viewport>`'s int
 
 Force the camera to update scroll immediately.
 
+----
+
 .. _class_Camera2D_method_get_camera_position:
 
 - :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** const
 
 Returns the camera position.
+
+----
 
 .. _class_Camera2D_method_get_camera_screen_center:
 
@@ -458,11 +516,15 @@ Returns the camera position.
 
 Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
 
+----
+
 .. _class_Camera2D_method_make_current:
 
 - void **make_current** **(** **)**
 
 Make this the current 2D camera for the scene (viewport and layer), in case there's many cameras in the scene.
+
+----
 
 .. _class_Camera2D_method_reset_smoothing:
 

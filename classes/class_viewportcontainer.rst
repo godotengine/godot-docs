@@ -47,6 +47,8 @@ Property Descriptions
 
 If ``true``, the viewport will be scaled to the control's size. Default value:``false``.
 
+----
+
 .. _class_ViewportContainer_property_stretch_shrink:
 
 - :ref:`int<class_int>` **stretch_shrink**

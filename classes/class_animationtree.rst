@@ -83,6 +83,8 @@ Property Descriptions
 | *Getter* | is_active()       |
 +----------+-------------------+
 
+----
+
 .. _class_AnimationTree_property_anim_player:
 
 - :ref:`NodePath<class_NodePath>` **anim_player**
@@ -92,6 +94,8 @@ Property Descriptions
 +----------+-----------------------------+
 | *Getter* | get_animation_player()      |
 +----------+-----------------------------+
+
+----
 
 .. _class_AnimationTree_property_process_mode:
 
@@ -103,6 +107,8 @@ Property Descriptions
 | *Getter* | get_process_mode()      |
 +----------+-------------------------+
 
+----
+
 .. _class_AnimationTree_property_root_motion_track:
 
 - :ref:`NodePath<class_NodePath>` **root_motion_track**
@@ -112,6 +118,8 @@ Property Descriptions
 +----------+------------------------------+
 | *Getter* | get_root_motion_track()      |
 +----------+------------------------------+
+
+----
 
 .. _class_AnimationTree_property_tree_root:
 
@@ -130,9 +138,13 @@ Method Descriptions
 
 - void **advance** **(** :ref:`float<class_float>` delta **)**
 
+----
+
 .. _class_AnimationTree_method_get_root_motion_transform:
 
 - :ref:`Transform<class_Transform>` **get_root_motion_transform** **(** **)** const
+
+----
 
 .. _class_AnimationTree_method_rename_parameter:
 

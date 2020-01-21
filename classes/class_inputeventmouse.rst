@@ -56,6 +56,8 @@ Property Descriptions
 
 Mouse button mask identifier, one of or a bitwise combination of the BUTTON_MASK\_\* constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
+----
+
 .. _class_InputEventMouse_property_global_position:
 
 - :ref:`Vector2<class_Vector2>` **global_position**
@@ -67,6 +69,8 @@ Mouse button mask identifier, one of or a bitwise combination of the BUTTON_MASK
 +----------+----------------------------+
 
 Mouse position relative to the current :ref:`Viewport<class_Viewport>` when used in :ref:`Control._gui_input<class_Control_method__gui_input>`, otherwise is at 0,0.
+
+----
 
 .. _class_InputEventMouse_property_position:
 

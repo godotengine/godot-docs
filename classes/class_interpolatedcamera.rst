@@ -58,6 +58,8 @@ Property Descriptions
 
 If ``true``, and a target is set, the camera will move automatically.
 
+----
+
 .. _class_InterpolatedCamera_property_speed:
 
 - :ref:`float<class_float>` **speed**
@@ -69,6 +71,8 @@ If ``true``, and a target is set, the camera will move automatically.
 +----------+------------------+
 
 How quickly the camera moves toward its target. Higher values will result in tighter camera motion.
+
+----
 
 .. _class_InterpolatedCamera_property_target:
 

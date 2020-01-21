@@ -59,6 +59,8 @@ Property Descriptions
 | *Getter* | get_cube_map()      |
 +----------+---------------------+
 
+----
+
 .. _class_VisualShaderNodeCubeMap_property_texture_type:
 
 - :ref:`TextureType<enum_VisualShaderNodeCubeMap_TextureType>` **texture_type**

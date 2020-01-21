@@ -54,6 +54,8 @@ Property Descriptions
 
 The :ref:`Mesh<class_Mesh>` that will be drawn by the :ref:`MeshInstance2D<class_MeshInstance2D>`.
 
+----
+
 .. _class_MeshInstance2D_property_normal_map:
 
 - :ref:`Texture<class_Texture>` **normal_map**
@@ -65,6 +67,8 @@ The :ref:`Mesh<class_Mesh>` that will be drawn by the :ref:`MeshInstance2D<class
 +----------+-----------------------+
 
 The normal map that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`.
+
+----
 
 .. _class_MeshInstance2D_property_texture:
 

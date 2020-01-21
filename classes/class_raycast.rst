@@ -94,6 +94,8 @@ Property Descriptions
 
 The ray's destination point, relative to the RayCast's ``position``.
 
+----
+
 .. _class_RayCast_property_collide_with_areas:
 
 - :ref:`bool<class_bool>` **collide_with_areas**
@@ -105,6 +107,8 @@ The ray's destination point, relative to the RayCast's ``position``.
 +----------+---------------------------------+
 
 If ``true``, collision with :ref:`Area<class_Area>`\ s will be reported. Default value: ``false``.
+
+----
 
 .. _class_RayCast_property_collide_with_bodies:
 
@@ -118,6 +122,8 @@ If ``true``, collision with :ref:`Area<class_Area>`\ s will be reported. Default
 
 If ``true``, collision with :ref:`PhysicsBody<class_PhysicsBody>`\ s will be reported. Default value: ``true``.
 
+----
+
 .. _class_RayCast_property_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
@@ -130,6 +136,8 @@ If ``true``, collision with :ref:`PhysicsBody<class_PhysicsBody>`\ s will be rep
 
 The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected.
 
+----
+
 .. _class_RayCast_property_enabled:
 
 - :ref:`bool<class_bool>` **enabled**
@@ -141,6 +149,8 @@ The ray's collision mask. Only objects in at least one collision layer enabled i
 +----------+--------------------+
 
 If ``true``, collisions will be reported. Default value: ``false``.
+
+----
 
 .. _class_RayCast_property_exclude_parent:
 
@@ -163,17 +173,23 @@ Method Descriptions
 
 Adds a collision exception so the ray does not report collisions with the specified node.
 
+----
+
 .. _class_RayCast_method_add_exception_rid:
 
 - void **add_exception_rid** **(** :ref:`RID<class_RID>` rid **)**
 
 Adds a collision exception so the ray does not report collisions with the specified :ref:`RID<class_RID>`.
 
+----
+
 .. _class_RayCast_method_clear_exceptions:
 
 - void **clear_exceptions** **(** **)**
 
 Removes all collision exceptions for this ray.
+
+----
 
 .. _class_RayCast_method_force_raycast_update:
 
@@ -183,11 +199,15 @@ Updates the collision information for the ray.
 
 Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state. Note: ``enabled == true`` is not required for this to work.
 
+----
+
 .. _class_RayCast_method_get_collider:
 
 - :ref:`Object<class_Object>` **get_collider** **(** **)** const
 
 Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast_method_is_colliding>` returns ``false``).
+
+----
 
 .. _class_RayCast_method_get_collider_shape:
 
@@ -195,11 +215,15 @@ Returns the first object that the ray intersects, or ``null`` if no object is in
 
 Returns the shape ID of the first object that the ray intersects, or ``0`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast_method_is_colliding>` returns ``false``).
 
+----
+
 .. _class_RayCast_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns ``true`` if the bit index passed is turned on. Note that bit indexes range from 0-19.
+
+----
 
 .. _class_RayCast_method_get_collision_normal:
 
@@ -207,11 +231,15 @@ Returns ``true`` if the bit index passed is turned on. Note that bit indexes ran
 
 Returns the normal of the intersecting object's shape at the collision point.
 
+----
+
 .. _class_RayCast_method_get_collision_point:
 
 - :ref:`Vector3<class_Vector3>` **get_collision_point** **(** **)** const
 
 Returns the collision point at which the ray intersects the closest object. Note: this point is in the **global** coordinate system.
+
+----
 
 .. _class_RayCast_method_is_colliding:
 
@@ -219,17 +247,23 @@ Returns the collision point at which the ray intersects the closest object. Note
 
 Returns whether any object is intersecting with the ray's vector (considering the vector length).
 
+----
+
 .. _class_RayCast_method_remove_exception:
 
 - void **remove_exception** **(** :ref:`Object<class_Object>` node **)**
 
 Removes a collision exception so the ray does report collisions with the specified node.
 
+----
+
 .. _class_RayCast_method_remove_exception_rid:
 
 - void **remove_exception_rid** **(** :ref:`RID<class_RID>` rid **)**
 
 Removes a collision exception so the ray does report collisions with the specified :ref:`RID<class_RID>`.
+
+----
 
 .. _class_RayCast_method_set_collision_mask_bit:
 

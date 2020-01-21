@@ -79,6 +79,8 @@ Property Descriptions
 
 If ``true``, the user can resize the window. Default value: ``false``.
 
+----
+
 .. _class_WindowDialog_property_window_title:
 
 - :ref:`String<class_String>` **window_title**

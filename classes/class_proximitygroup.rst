@@ -76,6 +76,8 @@ Property Descriptions
 | *Getter* | get_dispatch_mode()      |
 +----------+--------------------------+
 
+----
+
 .. _class_ProximityGroup_property_grid_radius:
 
 - :ref:`Vector3<class_Vector3>` **grid_radius**
@@ -85,6 +87,8 @@ Property Descriptions
 +----------+------------------------+
 | *Getter* | get_grid_radius()      |
 +----------+------------------------+
+
+----
 
 .. _class_ProximityGroup_property_group_name:
 

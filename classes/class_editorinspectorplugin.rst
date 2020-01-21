@@ -46,29 +46,43 @@ Method Descriptions
 
 - void **add_custom_control** **(** :ref:`Control<class_Control>` control **)**
 
+----
+
 .. _class_EditorInspectorPlugin_method_add_property_editor:
 
 - void **add_property_editor** **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor **)**
+
+----
 
 .. _class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties:
 
 - void **add_property_editor_for_multiple_properties** **(** :ref:`String<class_String>` label, :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Control<class_Control>` editor **)**
 
+----
+
 .. _class_EditorInspectorPlugin_method_can_handle:
 
 - :ref:`bool<class_bool>` **can_handle** **(** :ref:`Object<class_Object>` object **)** virtual
+
+----
 
 .. _class_EditorInspectorPlugin_method_parse_begin:
 
 - void **parse_begin** **(** :ref:`Object<class_Object>` object **)** virtual
 
+----
+
 .. _class_EditorInspectorPlugin_method_parse_category:
 
 - void **parse_category** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` category **)** virtual
 
+----
+
 .. _class_EditorInspectorPlugin_method_parse_end:
 
 - void **parse_end** **(** **)** virtual
+
+----
 
 .. _class_EditorInspectorPlugin_method_parse_property:
 

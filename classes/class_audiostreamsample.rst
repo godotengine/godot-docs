@@ -63,6 +63,8 @@ enum **Format**:
 
 - **FORMAT_IMA_ADPCM** = **2** --- Audio codec IMA ADPCM.
 
+----
+
 .. _enum_AudioStreamSample_LoopMode:
 
 .. _class_AudioStreamSample_constant_LOOP_DISABLED:
@@ -105,6 +107,8 @@ Property Descriptions
 
 Contains the audio data in bytes.
 
+----
+
 .. _class_AudioStreamSample_property_format:
 
 - :ref:`Format<enum_AudioStreamSample_Format>` **format**
@@ -116,6 +120,8 @@ Contains the audio data in bytes.
 +----------+-------------------+
 
 Audio format. See FORMAT\_\* constants for values.
+
+----
 
 .. _class_AudioStreamSample_property_loop_begin:
 
@@ -129,6 +135,8 @@ Audio format. See FORMAT\_\* constants for values.
 
 Loop start in bytes.
 
+----
+
 .. _class_AudioStreamSample_property_loop_end:
 
 - :ref:`int<class_int>` **loop_end**
@@ -140,6 +148,8 @@ Loop start in bytes.
 +----------+---------------------+
 
 Loop end in bytes.
+
+----
 
 .. _class_AudioStreamSample_property_loop_mode:
 
@@ -153,6 +163,8 @@ Loop end in bytes.
 
 Loop mode. See LOOP\_\* constants for values.
 
+----
+
 .. _class_AudioStreamSample_property_mix_rate:
 
 - :ref:`int<class_int>` **mix_rate**
@@ -164,6 +176,8 @@ Loop mode. See LOOP\_\* constants for values.
 +----------+---------------------+
 
 The sample rate for mixing this audio.
+
+----
 
 .. _class_AudioStreamSample_property_stereo:
 

@@ -93,11 +93,15 @@ Method Descriptions
 
 Add an array of bones for the next Vertex to use. Array must contain 4 integers.
 
+----
+
 .. _class_SurfaceTool_method_add_color:
 
 - void **add_color** **(** :ref:`Color<class_Color>` color **)**
 
 Specify a :ref:`Color<class_Color>` for the next Vertex to use.
+
+----
 
 .. _class_SurfaceTool_method_add_index:
 
@@ -105,11 +109,15 @@ Specify a :ref:`Color<class_Color>` for the next Vertex to use.
 
 Adds an index to index array if you are using indexed Vertices. Does not need to be called before adding Vertex.
 
+----
+
 .. _class_SurfaceTool_method_add_normal:
 
 - void **add_normal** **(** :ref:`Vector3<class_Vector3>` normal **)**
 
 Specify a normal for the next Vertex to use.
+
+----
 
 .. _class_SurfaceTool_method_add_smooth_group:
 
@@ -117,11 +125,15 @@ Specify a normal for the next Vertex to use.
 
 Specify whether current Vertex (if using only Vertex arrays) or current index (if also using index arrays) should utilize smooth normals for normal calculation.
 
+----
+
 .. _class_SurfaceTool_method_add_tangent:
 
 - void **add_tangent** **(** :ref:`Plane<class_Plane>` tangent **)**
 
 Specify a Tangent for the next Vertex to use.
+
+----
 
 .. _class_SurfaceTool_method_add_triangle_fan:
 
@@ -131,11 +143,15 @@ Insert a triangle fan made of array data into :ref:`Mesh<class_Mesh>` being cons
 
 Requires primitive type be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
+----
+
 .. _class_SurfaceTool_method_add_uv:
 
 - void **add_uv** **(** :ref:`Vector2<class_Vector2>` uv **)**
 
 Specify UV Coordinate for next Vertex to use.
+
+----
 
 .. _class_SurfaceTool_method_add_uv2:
 
@@ -143,11 +159,15 @@ Specify UV Coordinate for next Vertex to use.
 
 Specify an optional second set of UV coordinates for next Vertex to use.
 
+----
+
 .. _class_SurfaceTool_method_add_vertex:
 
 - void **add_vertex** **(** :ref:`Vector3<class_Vector3>` vertex **)**
 
 Specify position of current Vertex. Should be called after specifying other vertex properties (e.g. Color, UV).
+
+----
 
 .. _class_SurfaceTool_method_add_weights:
 
@@ -155,11 +175,15 @@ Specify position of current Vertex. Should be called after specifying other vert
 
 Specify weight values for next Vertex to use. Array must contain 4 values.
 
+----
+
 .. _class_SurfaceTool_method_append_from:
 
 - void **append_from** **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface, :ref:`Transform<class_Transform>` transform **)**
 
 Append vertices from a given :ref:`Mesh<class_Mesh>` surface onto the current vertex array with specified :ref:`Transform<class_Transform>`.
+
+----
 
 .. _class_SurfaceTool_method_begin:
 
@@ -167,11 +191,15 @@ Append vertices from a given :ref:`Mesh<class_Mesh>` surface onto the current ve
 
 Called before adding any Vertices. Takes the primitive type as an argument (e.g. :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`).
 
+----
+
 .. _class_SurfaceTool_method_clear:
 
 - void **clear** **(** **)**
 
 Clear all information passed into the surface tool so far.
+
+----
 
 .. _class_SurfaceTool_method_commit:
 
@@ -179,17 +207,23 @@ Clear all information passed into the surface tool so far.
 
 Returns a constructed :ref:`ArrayMesh<class_ArrayMesh>` from current information passed in. If an existing :ref:`ArrayMesh<class_ArrayMesh>` is passed in as an argument, will add an extra surface to the existing :ref:`ArrayMesh<class_ArrayMesh>`.
 
+----
+
 .. _class_SurfaceTool_method_create_from:
 
 - void **create_from** **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface **)**
 
 Creates a vertex array from an existing :ref:`Mesh<class_Mesh>`.
 
+----
+
 .. _class_SurfaceTool_method_deindex:
 
 - void **deindex** **(** **)**
 
 Removes index array by expanding Vertex array.
+
+----
 
 .. _class_SurfaceTool_method_generate_normals:
 
@@ -201,6 +235,8 @@ Setting ``flip`` to ``true`` inverts the resulting normals.
 
 Requires primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
+----
+
 .. _class_SurfaceTool_method_generate_tangents:
 
 - void **generate_tangents** **(** **)**
@@ -209,11 +245,15 @@ Generates a tangent vector for each vertex.
 
 Requires that each vertex have UVs and normals set already.
 
+----
+
 .. _class_SurfaceTool_method_index:
 
 - void **index** **(** **)**
 
 Shrinks Vertex array by creating an index array. Avoids reusing Vertices.
+
+----
 
 .. _class_SurfaceTool_method_set_material:
 

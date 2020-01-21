@@ -87,6 +87,8 @@ Property Descriptions
 
 The embedded audio track to play.
 
+----
+
 .. _class_VideoPlayer_property_autoplay:
 
 - :ref:`bool<class_bool>` **autoplay**
@@ -98,6 +100,8 @@ The embedded audio track to play.
 +----------+---------------------+
 
 If ``true``, playback starts when the scene loads. Default value: ``false``.
+
+----
 
 .. _class_VideoPlayer_property_buffering_msec:
 
@@ -111,6 +115,8 @@ If ``true``, playback starts when the scene loads. Default value: ``false``.
 
 Amount of time in milliseconds to store in buffer while playing.
 
+----
+
 .. _class_VideoPlayer_property_bus:
 
 - :ref:`String<class_String>` **bus**
@@ -122,6 +128,8 @@ Amount of time in milliseconds to store in buffer while playing.
 +----------+----------------+
 
 Audio bus to use for sound playback.
+
+----
 
 .. _class_VideoPlayer_property_expand:
 
@@ -135,6 +143,8 @@ Audio bus to use for sound playback.
 
 If ``true``, the video scales to the control size. Default value: ``true``.
 
+----
+
 .. _class_VideoPlayer_property_paused:
 
 - :ref:`bool<class_bool>` **paused**
@@ -147,6 +157,8 @@ If ``true``, the video scales to the control size. Default value: ``true``.
 
 If ``true``, the video is paused.
 
+----
+
 .. _class_VideoPlayer_property_stream:
 
 - :ref:`VideoStream<class_VideoStream>` **stream**
@@ -156,6 +168,8 @@ If ``true``, the video is paused.
 +----------+-------------------+
 | *Getter* | get_stream()      |
 +----------+-------------------+
+
+----
 
 .. _class_VideoPlayer_property_stream_position:
 
@@ -169,6 +183,8 @@ If ``true``, the video is paused.
 
 The current position of the stream, in seconds.
 
+----
+
 .. _class_VideoPlayer_property_volume:
 
 - :ref:`float<class_float>` **volume**
@@ -180,6 +196,8 @@ The current position of the stream, in seconds.
 +----------+-------------------+
 
 Audio volume as a linear value.
+
+----
 
 .. _class_VideoPlayer_property_volume_db:
 
@@ -202,11 +220,15 @@ Method Descriptions
 
 Returns the video stream's name.
 
+----
+
 .. _class_VideoPlayer_method_get_video_texture:
 
 - :ref:`Texture<class_Texture>` **get_video_texture** **(** **)**
 
 Returns the current frame as a :ref:`Texture<class_Texture>`.
+
+----
 
 .. _class_VideoPlayer_method_is_playing:
 
@@ -214,11 +236,15 @@ Returns the current frame as a :ref:`Texture<class_Texture>`.
 
 Returns ``true`` if the video is playing.
 
+----
+
 .. _class_VideoPlayer_method_play:
 
 - void **play** **(** **)**
 
 Starts the video playback.
+
+----
 
 .. _class_VideoPlayer_method_stop:
 

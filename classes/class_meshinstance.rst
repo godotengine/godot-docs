@@ -66,6 +66,8 @@ Property Descriptions
 
 The :ref:`Mesh<class_Mesh>` resource for the instance.
 
+----
+
 .. _class_MeshInstance_property_skeleton:
 
 - :ref:`NodePath<class_NodePath>` **skeleton**
@@ -87,11 +89,15 @@ Method Descriptions
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
+----
+
 .. _class_MeshInstance_method_create_debug_tangents:
 
 - void **create_debug_tangents** **(** **)**
 
 This helper creates a :ref:`MeshInstance<class_MeshInstance>` child node with gizmos at every vertex calculated from the mesh geometry. It's mainly used for testing.
+
+----
 
 .. _class_MeshInstance_method_create_trimesh_collision:
 
@@ -99,17 +105,23 @@ This helper creates a :ref:`MeshInstance<class_MeshInstance>` child node with gi
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
+----
+
 .. _class_MeshInstance_method_get_surface_material:
 
 - :ref:`Material<class_Material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** const
 
 Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
 
+----
+
 .. _class_MeshInstance_method_get_surface_material_count:
 
 - :ref:`int<class_int>` **get_surface_material_count** **(** **)** const
 
 Returns the number of surface materials.
+
+----
 
 .. _class_MeshInstance_method_set_surface_material:
 

@@ -56,9 +56,13 @@ Method Descriptions
 
 - :ref:`Variant<class_Variant>` **call_native** **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)**
 
+----
+
 .. _class_GDNative_method_initialize:
 
 - :ref:`bool<class_bool>` **initialize** **(** **)**
+
+----
 
 .. _class_GDNative_method_terminate:
 

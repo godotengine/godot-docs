@@ -172,6 +172,8 @@ Signals
 
 Triggered when specified list item is activated via double click or Enter.
 
+----
+
 .. _class_ItemList_signal_item_rmb_selected:
 
 - **item_rmb_selected** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` at_position **)**
@@ -184,6 +186,8 @@ at the correct location.
 
 :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>` must be enabled.
 
+----
+
 .. _class_ItemList_signal_item_selected:
 
 - **item_selected** **(** :ref:`int<class_int>` index **)**
@@ -192,17 +196,23 @@ Triggered when specified item has been selected.
 
 :ref:`allow_reselect<class_ItemList_property_allow_reselect>` must be enabled to reselect an item.
 
+----
+
 .. _class_ItemList_signal_multi_selected:
 
 - **multi_selected** **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` selected **)**
 
 Triggered when a multiple selection is altered on a list allowing multiple selection.
 
+----
+
 .. _class_ItemList_signal_nothing_selected:
 
 - **nothing_selected** **(** **)**
 
 Triggered when a left mouse click is issued within the rect of the list but on empty space.
+
+----
 
 .. _class_ItemList_signal_rmb_clicked:
 
@@ -226,6 +236,8 @@ enum **IconMode**:
 - **ICON_MODE_TOP** = **0**
 
 - **ICON_MODE_LEFT** = **1**
+
+----
 
 .. _enum_ItemList_SelectMode:
 
@@ -261,6 +273,8 @@ Property Descriptions
 
 If ``true``, the currently selected item can be selected again.
 
+----
+
 .. _class_ItemList_property_allow_rmb_select:
 
 - :ref:`bool<class_bool>` **allow_rmb_select**
@@ -273,6 +287,8 @@ If ``true``, the currently selected item can be selected again.
 
 If ``true``, right mouse button click can select items.
 
+----
+
 .. _class_ItemList_property_auto_height:
 
 - :ref:`bool<class_bool>` **auto_height**
@@ -284,6 +300,8 @@ If ``true``, right mouse button click can select items.
 +----------+------------------------+
 
 If ``true``, the control will automatically resize the height to fit its content.
+
+----
 
 .. _class_ItemList_property_fixed_column_width:
 
@@ -299,6 +317,8 @@ Sets the default column width in pixels.
 
 If left to default value, each item will have a width equal to the width of its content and the columns will have an uneven width.
 
+----
+
 .. _class_ItemList_property_fixed_icon_size:
 
 - :ref:`Vector2<class_Vector2>` **fixed_icon_size**
@@ -310,6 +330,8 @@ If left to default value, each item will have a width equal to the width of its 
 +----------+----------------------------+
 
 Sets the default icon size in pixels.
+
+----
 
 .. _class_ItemList_property_icon_mode:
 
@@ -323,6 +345,8 @@ Sets the default icon size in pixels.
 
 Sets the default position of the icon to either :ref:`ICON_MODE_LEFT<class_ItemList_constant_ICON_MODE_LEFT>` or :ref:`ICON_MODE_TOP<class_ItemList_constant_ICON_MODE_TOP>`.
 
+----
+
 .. _class_ItemList_property_icon_scale:
 
 - :ref:`float<class_float>` **icon_scale**
@@ -334,6 +358,8 @@ Sets the default position of the icon to either :ref:`ICON_MODE_LEFT<class_ItemL
 +----------+-----------------------+
 
 Sets the icon size to its initial size multiplied by the specified scale. Default value is 1.0.
+
+----
 
 .. _class_ItemList_property_max_columns:
 
@@ -349,6 +375,8 @@ Sets the maximum columns the list will have.
 
 If set to anything other than the default, the content will be split among the specified columns.
 
+----
+
 .. _class_ItemList_property_max_text_lines:
 
 - :ref:`int<class_int>` **max_text_lines**
@@ -358,6 +386,8 @@ If set to anything other than the default, the content will be split among the s
 +----------+---------------------------+
 | *Getter* | get_max_text_lines()      |
 +----------+---------------------------+
+
+----
 
 .. _class_ItemList_property_same_column_width:
 
@@ -370,6 +400,8 @@ If set to anything other than the default, the content will be split among the s
 +----------+------------------------------+
 
 If set to ``true``, all columns will have the same width specified by :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>`.
+
+----
 
 .. _class_ItemList_property_select_mode:
 
@@ -392,6 +424,8 @@ Method Descriptions
 
 Adds an item to the item list with no text, only an icon.
 
+----
+
 .. _class_ItemList_method_add_item:
 
 - void **add_item** **(** :ref:`String<class_String>` text, :ref:`Texture<class_Texture>` icon=null, :ref:`bool<class_bool>` selectable=true **)**
@@ -400,11 +434,15 @@ Adds an item to the item list with specified text. Specify an icon of null for a
 
 If selectable is ``true`` the list item will be selectable.
 
+----
+
 .. _class_ItemList_method_clear:
 
 - void **clear** **(** **)**
 
 Remove all items from the list.
+
+----
 
 .. _class_ItemList_method_ensure_current_is_visible:
 
@@ -412,11 +450,15 @@ Remove all items from the list.
 
 Ensure current selection is visible, adjusting the scroll position as necessary.
 
+----
+
 .. _class_ItemList_method_get_item_at_position:
 
 - :ref:`int<class_int>` **get_item_at_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` exact=false **)** const
 
 Given a position within the control return the item (if any) at that point.
+
+----
 
 .. _class_ItemList_method_get_item_count:
 
@@ -424,11 +466,15 @@ Given a position within the control return the item (if any) at that point.
 
 Returns the number of items currently in the list.
 
+----
+
 .. _class_ItemList_method_get_item_custom_bg_color:
 
 - :ref:`Color<class_Color>` **get_item_custom_bg_color** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the :ref:`Color<class_Color>` set by :ref:`set_item_custom_bg_color<class_ItemList_method_set_item_custom_bg_color>`. Default value is ``Color(0, 0, 0, 0)``.
+
+----
 
 .. _class_ItemList_method_get_item_custom_fg_color:
 
@@ -436,11 +482,15 @@ Returns the :ref:`Color<class_Color>` set by :ref:`set_item_custom_bg_color<clas
 
 Returns the :ref:`Color<class_Color>` set by :ref:`set_item_custom_fg_color<class_ItemList_method_set_item_custom_fg_color>`. Default value is ``Color(0, 0, 0, 0)``.
 
+----
+
 .. _class_ItemList_method_get_item_icon:
 
 - :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the icon associated with the specified index. Default value is ``null``.
+
+----
 
 .. _class_ItemList_method_get_item_icon_modulate:
 
@@ -448,9 +498,13 @@ Returns the icon associated with the specified index. Default value is ``null``.
 
 Returns a :ref:`Color<class_Color>` modulating item's icon at the specified index.
 
+----
+
 .. _class_ItemList_method_get_item_icon_region:
 
 - :ref:`Rect2<class_Rect2>` **get_item_icon_region** **(** :ref:`int<class_int>` idx **)** const
+
+----
 
 .. _class_ItemList_method_get_item_metadata:
 
@@ -458,11 +512,15 @@ Returns a :ref:`Color<class_Color>` modulating item's icon at the specified inde
 
 Returns the metadata value of the specified index set by :ref:`set_item_metadata<class_ItemList_method_set_item_metadata>`.
 
+----
+
 .. _class_ItemList_method_get_item_text:
 
 - :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the text associated with the specified index.
+
+----
 
 .. _class_ItemList_method_get_item_tooltip:
 
@@ -470,11 +528,15 @@ Returns the text associated with the specified index.
 
 Returns the tooltip hint associated with the specified index.
 
+----
+
 .. _class_ItemList_method_get_selected_items:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_selected_items** **(** **)**
 
 Returns an array with the indexes of the selected items.
+
+----
 
 .. _class_ItemList_method_get_v_scroll:
 
@@ -482,11 +544,15 @@ Returns an array with the indexes of the selected items.
 
 Returns the :ref:`Object<class_Object>` ID associated with the list.
 
+----
+
 .. _class_ItemList_method_is_anything_selected:
 
 - :ref:`bool<class_bool>` **is_anything_selected** **(** **)**
 
 Returns ``true`` if one or more items are selected.
+
+----
 
 .. _class_ItemList_method_is_item_disabled:
 
@@ -494,9 +560,13 @@ Returns ``true`` if one or more items are selected.
 
 Returns whether or not the item at the specified index is disabled.
 
+----
+
 .. _class_ItemList_method_is_item_icon_transposed:
 
 - :ref:`bool<class_bool>` **is_item_icon_transposed** **(** :ref:`int<class_int>` idx **)** const
+
+----
 
 .. _class_ItemList_method_is_item_selectable:
 
@@ -504,11 +574,15 @@ Returns whether or not the item at the specified index is disabled.
 
 Returns whether or not the item at the specified index is selectable.
 
+----
+
 .. _class_ItemList_method_is_item_tooltip_enabled:
 
 - :ref:`bool<class_bool>` **is_item_tooltip_enabled** **(** :ref:`int<class_int>` idx **)** const
 
 Returns whether the tooltip is enabled for specified item index.
+
+----
 
 .. _class_ItemList_method_is_selected:
 
@@ -516,17 +590,23 @@ Returns whether the tooltip is enabled for specified item index.
 
 Returns whether or not item at the specified index is currently selected.
 
+----
+
 .. _class_ItemList_method_move_item:
 
 - void **move_item** **(** :ref:`int<class_int>` from_idx, :ref:`int<class_int>` to_idx **)**
 
 Moves item from index ``from_idx`` to ``to_idx``.
 
+----
+
 .. _class_ItemList_method_remove_item:
 
 - void **remove_item** **(** :ref:`int<class_int>` idx **)**
 
 Removes the item specified by ``idx`` index from the list.
+
+----
 
 .. _class_ItemList_method_select:
 
@@ -535,6 +615,8 @@ Removes the item specified by ``idx`` index from the list.
 Select the item at the specified index.
 
 Note: This method does not trigger the item selection signal.
+
+----
 
 .. _class_ItemList_method_set_item_custom_bg_color:
 
@@ -547,6 +629,8 @@ Sets the background color of the item specified by ``idx`` index to the specifie
     var some_string = "Some text"
     some_string.set_item_custom_bg_color(0,Color(1, 0, 0, 1) # This will set the background color of the first item of the control to red.
 
+----
+
 .. _class_ItemList_method_set_item_custom_fg_color:
 
 - void **set_item_custom_fg_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` custom_fg_color **)**
@@ -558,6 +642,8 @@ Sets the foreground color of the item specified by ``idx`` index to the specifie
     var some_string = "Some text"
     some_string.set_item_custom_fg_color(0,Color(1, 0, 0, 1) # This will set the foreground color of the first item of the control to red.
 
+----
+
 .. _class_ItemList_method_set_item_disabled:
 
 - void **set_item_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
@@ -566,11 +652,15 @@ Disable (or enable) item at the specified index.
 
 Disabled items are not be selectable and do not trigger activation (Enter or double-click) signals.
 
+----
+
 .. _class_ItemList_method_set_item_icon:
 
 - void **set_item_icon** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` icon **)**
 
 Set (or replace) the icon's :ref:`Texture<class_Texture>` associated with the specified index.
+
+----
 
 .. _class_ItemList_method_set_item_icon_modulate:
 
@@ -578,13 +668,19 @@ Set (or replace) the icon's :ref:`Texture<class_Texture>` associated with the sp
 
 Sets a modulating :ref:`Color<class_Color>` of the item associated with the specified index.
 
+----
+
 .. _class_ItemList_method_set_item_icon_region:
 
 - void **set_item_icon_region** **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_Rect2>` rect **)**
 
+----
+
 .. _class_ItemList_method_set_item_icon_transposed:
 
 - void **set_item_icon_transposed** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` rect **)**
+
+----
 
 .. _class_ItemList_method_set_item_metadata:
 
@@ -592,11 +688,15 @@ Sets a modulating :ref:`Color<class_Color>` of the item associated with the spec
 
 Sets a value (of any type) to be stored with the item associated with the specified index.
 
+----
+
 .. _class_ItemList_method_set_item_selectable:
 
 - void **set_item_selectable** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` selectable **)**
 
 Allow or disallow selection of the item associated with the specified index.
+
+----
 
 .. _class_ItemList_method_set_item_text:
 
@@ -604,11 +704,15 @@ Allow or disallow selection of the item associated with the specified index.
 
 Sets text of the item associated with the specified index.
 
+----
+
 .. _class_ItemList_method_set_item_tooltip:
 
 - void **set_item_tooltip** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**
 
 Sets tooltip hint for the item associated with the specified index.
+
+----
 
 .. _class_ItemList_method_set_item_tooltip_enabled:
 
@@ -616,17 +720,23 @@ Sets tooltip hint for the item associated with the specified index.
 
 Sets whether the tooltip hint is enabled for specified item index.
 
+----
+
 .. _class_ItemList_method_sort_items_by_text:
 
 - void **sort_items_by_text** **(** **)**
 
 Sorts items in the list by their text.
 
+----
+
 .. _class_ItemList_method_unselect:
 
 - void **unselect** **(** :ref:`int<class_int>` idx **)**
 
 Ensure the item associated with the specified index is not selected.
+
+----
 
 .. _class_ItemList_method_unselect_all:
 

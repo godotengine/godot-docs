@@ -60,6 +60,8 @@ enum **ShadowMode**:
 
 - **SHADOW_PARALLEL_4_SPLITS** = **2** --- Splits the view frustum in 4 areas, each with its own shadow map.
 
+----
+
 .. _enum_DirectionalLight_ShadowDepthRange:
 
 .. _class_DirectionalLight_constant_SHADOW_DEPTH_RANGE_STABLE:
@@ -97,6 +99,8 @@ Property Descriptions
 
 Amount of extra bias for shadow splits that are far away. If self shadowing occurs only on the splits far away, this value can fix them.
 
+----
+
 .. _class_DirectionalLight_property_directional_shadow_blend_splits:
 
 - :ref:`bool<class_bool>` **directional_shadow_blend_splits**
@@ -108,6 +112,8 @@ Amount of extra bias for shadow splits that are far away. If self shadowing occu
 +----------+---------------------------+
 
 If ``true``, shadow detail is sacrificed in exchange for smoother transitions between splits. Default value:``false``.
+
+----
 
 .. _class_DirectionalLight_property_directional_shadow_depth_range:
 
@@ -121,6 +127,8 @@ If ``true``, shadow detail is sacrificed in exchange for smoother transitions be
 
 Optimizes shadow rendering for detail versus movement. See :ref:`ShadowDepthRange<enum_DirectionalLight_ShadowDepthRange>`.
 
+----
+
 .. _class_DirectionalLight_property_directional_shadow_max_distance:
 
 - :ref:`float<class_float>` **directional_shadow_max_distance**
@@ -132,6 +140,8 @@ Optimizes shadow rendering for detail versus movement. See :ref:`ShadowDepthRang
 +----------+------------------+
 
 The maximum distance for shadow splits.
+
+----
 
 .. _class_DirectionalLight_property_directional_shadow_mode:
 
@@ -145,6 +155,8 @@ The maximum distance for shadow splits.
 
 The light's shadow rendering algorithm. See :ref:`ShadowMode<enum_DirectionalLight_ShadowMode>`.
 
+----
+
 .. _class_DirectionalLight_property_directional_shadow_normal_bias:
 
 - :ref:`float<class_float>` **directional_shadow_normal_bias**
@@ -156,6 +168,8 @@ The light's shadow rendering algorithm. See :ref:`ShadowMode<enum_DirectionalLig
 +----------+------------------+
 
 Can be used to fix special cases of self shadowing when objects are perpendicular to the light.
+
+----
 
 .. _class_DirectionalLight_property_directional_shadow_split_1:
 
@@ -169,6 +183,8 @@ Can be used to fix special cases of self shadowing when objects are perpendicula
 
 The distance from camera to shadow split 1. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used when :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>` is one of the ``SHADOW_PARALLEL_*_SPLITS`` constants.
 
+----
+
 .. _class_DirectionalLight_property_directional_shadow_split_2:
 
 - :ref:`float<class_float>` **directional_shadow_split_2**
@@ -180,6 +196,8 @@ The distance from camera to shadow split 1. Relative to :ref:`directional_shadow
 +----------+------------------+
 
 The distance from shadow split 1 to split 2. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`. Only used when :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>` is ``SHADOW_PARALLEL_3_SPLITS`` or ``SHADOW_PARALLEL_4_SPLITS``.
+
+----
 
 .. _class_DirectionalLight_property_directional_shadow_split_3:
 

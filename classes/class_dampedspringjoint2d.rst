@@ -51,6 +51,8 @@ Property Descriptions
 
 The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high ``damping`` value forces the attached bodies to align faster. Default value: ``1``
 
+----
+
 .. _class_DampedSpringJoint2D_property_length:
 
 - :ref:`float<class_float>` **length**
@@ -63,6 +65,8 @@ The spring joint's damping ratio. A value between ``0`` and ``1``. When the two 
 
 The spring joint's maximum length. The two attached bodies cannot stretch it past this value. Default value: ``50``
 
+----
+
 .. _class_DampedSpringJoint2D_property_rest_length:
 
 - :ref:`float<class_float>` **rest_length**
@@ -74,6 +78,8 @@ The spring joint's maximum length. The two attached bodies cannot stretch it pas
 +----------+------------------------+
 
 When the bodies attached to the spring joint move they stretch or squash it. The joint always tries to resize towards this length. Default value: ``0``
+
+----
 
 .. _class_DampedSpringJoint2D_property_stiffness:
 

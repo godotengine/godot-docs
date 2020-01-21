@@ -47,6 +47,8 @@ Property Descriptions
 
 The ``curve`` rendered onto the texture.
 
+----
+
 .. _class_CurveTexture_property_width:
 
 - :ref:`int<class_int>` **width**

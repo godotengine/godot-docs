@@ -58,6 +58,8 @@ Property Descriptions
 | *Getter* | get_next_pass()      |
 +----------+----------------------+
 
+----
+
 .. _class_Material_property_render_priority:
 
 - :ref:`int<class_int>` **render_priority**

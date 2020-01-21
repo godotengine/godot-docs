@@ -115,6 +115,8 @@ Property Descriptions
 
 URL to the device description.
 
+----
+
 .. _class_UPNPDevice_property_igd_control_url:
 
 - :ref:`String<class_String>` **igd_control_url**
@@ -126,6 +128,8 @@ URL to the device description.
 +----------+----------------------------+
 
 IDG control URL.
+
+----
 
 .. _class_UPNPDevice_property_igd_our_addr:
 
@@ -139,6 +143,8 @@ IDG control URL.
 
 Address of the local machine in the network connecting it to this :ref:`UPNPDevice<class_UPNPDevice>`.
 
+----
+
 .. _class_UPNPDevice_property_igd_service_type:
 
 - :ref:`String<class_String>` **igd_service_type**
@@ -151,6 +157,8 @@ Address of the local machine in the network connecting it to this :ref:`UPNPDevi
 
 IGD service type.
 
+----
+
 .. _class_UPNPDevice_property_igd_status:
 
 - :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **igd_status**
@@ -162,6 +170,8 @@ IGD service type.
 +----------+-----------------------+
 
 IGD status. See :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>`.
+
+----
 
 .. _class_UPNPDevice_property_service_type:
 
@@ -184,17 +194,23 @@ Method Descriptions
 
 Adds a port mapping to forward the given external port on this :ref:`UPNPDevice<class_UPNPDevice>` for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_method_add_port_mapping>`.
 
+----
+
 .. _class_UPNPDevice_method_delete_port_mapping:
 
 - :ref:`int<class_int>` **delete_port_mapping** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const
 
 Deletes the port mapping identified by the given port and protocol combination on this device. See :ref:`UPNP.delete_port_mapping<class_UPNP_method_delete_port_mapping>`.
 
+----
+
 .. _class_UPNPDevice_method_is_valid_gateway:
 
 - :ref:`bool<class_bool>` **is_valid_gateway** **(** **)** const
 
 Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentially supports port forwarding.
+
+----
 
 .. _class_UPNPDevice_method_query_external_address:
 

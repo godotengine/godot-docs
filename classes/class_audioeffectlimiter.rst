@@ -53,6 +53,8 @@ Property Descriptions
 
 The waveform's maximum allowed value. Value can range from -20 to -0.1. Default value: ``-0.1dB``.
 
+----
+
 .. _class_AudioEffectLimiter_property_soft_clip_db:
 
 - :ref:`float<class_float>` **soft_clip_db**
@@ -65,6 +67,8 @@ The waveform's maximum allowed value. Value can range from -20 to -0.1. Default 
 
 Applies a gain to the limited waves. Value can range from 0 to 6. Default value: ``2dB``.
 
+----
+
 .. _class_AudioEffectLimiter_property_soft_clip_ratio:
 
 - :ref:`float<class_float>` **soft_clip_ratio**
@@ -74,6 +78,8 @@ Applies a gain to the limited waves. Value can range from 0 to 6. Default value:
 +----------+----------------------------+
 | *Getter* | get_soft_clip_ratio()      |
 +----------+----------------------------+
+
+----
 
 .. _class_AudioEffectLimiter_property_threshold_db:
 

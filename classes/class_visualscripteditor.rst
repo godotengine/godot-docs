@@ -45,6 +45,8 @@ Method Descriptions
 
 Add a custom Visual Script node to the editor. It'll be placed under "Custom Nodes" with the ``category`` as the parameter.
 
+----
+
 .. _class_VisualScriptEditor_method_remove_custom_node:
 
 - void **remove_custom_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category **)**

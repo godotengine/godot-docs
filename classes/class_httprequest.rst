@@ -137,6 +137,8 @@ Property Descriptions
 
 Maximum allowed size for response bodies.
 
+----
+
 .. _class_HTTPRequest_property_download_file:
 
 - :ref:`String<class_String>` **download_file**
@@ -149,6 +151,8 @@ Maximum allowed size for response bodies.
 
 The file to download into. Will output any received file into it.
 
+----
+
 .. _class_HTTPRequest_property_max_redirects:
 
 - :ref:`int<class_int>` **max_redirects**
@@ -160,6 +164,8 @@ The file to download into. Will output any received file into it.
 +----------+--------------------------+
 
 Maximum number of allowed redirects.
+
+----
 
 .. _class_HTTPRequest_property_use_threads:
 
@@ -182,11 +188,15 @@ Method Descriptions
 
 Cancels the current request.
 
+----
+
 .. _class_HTTPRequest_method_get_body_size:
 
 - :ref:`int<class_int>` **get_body_size** **(** **)** const
 
 Returns the response body length.
+
+----
 
 .. _class_HTTPRequest_method_get_downloaded_bytes:
 
@@ -194,11 +204,15 @@ Returns the response body length.
 
 Returns the amount of bytes this HTTPRequest downloaded.
 
+----
+
 .. _class_HTTPRequest_method_get_http_client_status:
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_http_client_status** **(** **)** const
 
 Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See ``STATUS_*`` enum on :ref:`HTTPClient<class_HTTPClient>`.
+
+----
 
 .. _class_HTTPRequest_method_request:
 

@@ -55,6 +55,8 @@ Property Descriptions
 
 The inner radius of the torus.
 
+----
+
 .. _class_CSGTorus_property_material:
 
 - :ref:`Material<class_Material>` **material**
@@ -66,6 +68,8 @@ The inner radius of the torus.
 +----------+---------------------+
 
 The material used to render the torus.
+
+----
 
 .. _class_CSGTorus_property_outer_radius:
 
@@ -79,6 +83,8 @@ The material used to render the torus.
 
 The outer radius of the torus.
 
+----
+
 .. _class_CSGTorus_property_ring_sides:
 
 - :ref:`int<class_int>` **ring_sides**
@@ -91,6 +97,8 @@ The outer radius of the torus.
 
 The number of edges each ring of the torus is constructed of.
 
+----
+
 .. _class_CSGTorus_property_sides:
 
 - :ref:`int<class_int>` **sides**
@@ -102,6 +110,8 @@ The number of edges each ring of the torus is constructed of.
 +----------+------------------+
 
 The number of slices the torus is constructed of.
+
+----
 
 .. _class_CSGTorus_property_smooth_faces:
 

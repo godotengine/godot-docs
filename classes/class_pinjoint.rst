@@ -74,6 +74,8 @@ The force with which the pinned objects stay in positional relation to each othe
 
 The higher, the stronger.
 
+----
+
 .. _class_PinJoint_property_params/damping:
 
 - :ref:`float<class_float>` **params/damping**
@@ -87,6 +89,8 @@ The higher, the stronger.
 The force with which the pinned objects stay in velocity relation to each other.
 
 The higher, the stronger.
+
+----
 
 .. _class_PinJoint_property_params/impulse_clamp:
 

@@ -40,6 +40,8 @@ Property Descriptions
 | *Getter* | is_enabled()       |
 +----------+--------------------+
 
+----
+
 .. _class_NavigationMeshInstance_property_navmesh:
 
 - :ref:`NavigationMesh<class_NavigationMesh>` **navmesh**

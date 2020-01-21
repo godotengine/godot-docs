@@ -64,11 +64,15 @@ Method Descriptions
 
 Returns the current ``Thread``\ s id, uniquely identifying it among all threads.
 
+----
+
 .. _class_Thread_method_is_active:
 
 - :ref:`bool<class_bool>` **is_active** **(** **)** const
 
 Returns ``true`` if this ``Thread`` is currently active. An active ``Thread`` cannot start work on a new method but can be joined with :ref:`wait_to_finish<class_Thread_method_wait_to_finish>`.
+
+----
 
 .. _class_Thread_method_start:
 
@@ -77,6 +81,8 @@ Returns ``true`` if this ``Thread`` is currently active. An active ``Thread`` ca
 Starts a new ``Thread`` that runs "method" on object "instance" with "userdata" passed as an argument. The "priority" of the ``Thread`` can be changed by passing a PRIORITY\_\* enum.
 
 Returns OK on success, or ERR_CANT_CREATE on failure.
+
+----
 
 .. _class_Thread_method_wait_to_finish:
 

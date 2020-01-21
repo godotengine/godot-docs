@@ -49,6 +49,8 @@ Property Descriptions
 | *Getter* | is_absorbent()       |
 +----------+----------------------+
 
+----
+
 .. _class_PhysicsMaterial_property_bounce:
 
 - :ref:`float<class_float>` **bounce**
@@ -61,6 +63,8 @@ Property Descriptions
 
 The body's bounciness. Default value: ``0``.
 
+----
+
 .. _class_PhysicsMaterial_property_friction:
 
 - :ref:`float<class_float>` **friction**
@@ -72,6 +76,8 @@ The body's bounciness. Default value: ``0``.
 +----------+---------------------+
 
 The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction). Default value: ``1``.
+
+----
 
 .. _class_PhysicsMaterial_property_rough:
 

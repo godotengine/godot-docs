@@ -46,6 +46,8 @@ enum **ShadowMode**:
 
 - **SHADOW_CUBE** = **1**
 
+----
+
 .. _enum_OmniLight_ShadowDetail:
 
 .. _class_OmniLight_constant_SHADOW_DETAIL_VERTICAL:
@@ -83,6 +85,8 @@ Property Descriptions
 
 The light's attenuation (drop-off) curve. A number of presets are available in the Inspector.
 
+----
+
 .. _class_OmniLight_property_omni_range:
 
 - :ref:`float<class_float>` **omni_range**
@@ -95,6 +99,8 @@ The light's attenuation (drop-off) curve. A number of presets are available in t
 
 Maximum distance the light affects.
 
+----
+
 .. _class_OmniLight_property_omni_shadow_detail:
 
 - :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **omni_shadow_detail**
@@ -106,6 +112,8 @@ Maximum distance the light affects.
 +----------+--------------------------+
 
 See :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>`.
+
+----
 
 .. _class_OmniLight_property_omni_shadow_mode:
 

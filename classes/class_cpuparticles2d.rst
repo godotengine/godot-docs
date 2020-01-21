@@ -163,6 +163,8 @@ enum **DrawOrder**:
 
 - **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
 
+----
+
 .. _enum_CPUParticles2D_Parameter:
 
 .. _class_CPUParticles2D_constant_PARAM_INITIAL_LINEAR_VELOCITY:
@@ -219,6 +221,8 @@ enum **Parameter**:
 
 - **PARAM_MAX** = **12** --- Represents the size of the :ref:`Parameter<enum_CPUParticles2D_Parameter>` enum.
 
+----
+
 .. _enum_CPUParticles2D_Flags:
 
 .. _class_CPUParticles2D_constant_FLAG_ALIGN_Y_TO_VELOCITY:
@@ -230,6 +234,8 @@ enum **Flags**:
 - **FLAG_ALIGN_Y_TO_VELOCITY** = **0** --- Use with :ref:`set_flag<class_CPUParticles2D_method_set_flag>` to set :ref:`flag_align_y<class_CPUParticles2D_property_flag_align_y>`.
 
 - **FLAG_MAX** = **1**
+
+----
 
 .. _enum_CPUParticles2D_EmissionShape:
 
@@ -282,6 +288,8 @@ Property Descriptions
 
 Number of particles emitted in one emission cycle.
 
+----
+
 .. _class_CPUParticles2D_property_angle:
 
 - :ref:`float<class_float>` **angle**
@@ -293,6 +301,8 @@ Number of particles emitted in one emission cycle.
 +----------+------------------+
 
 Initial rotation applied to each particle, in degrees.
+
+----
 
 .. _class_CPUParticles2D_property_angle_curve:
 
@@ -306,6 +316,8 @@ Initial rotation applied to each particle, in degrees.
 
 Each particle's rotation will be animated along this :ref:`Curve<class_Curve>`.
 
+----
+
 .. _class_CPUParticles2D_property_angle_random:
 
 - :ref:`float<class_float>` **angle_random**
@@ -317,6 +329,8 @@ Each particle's rotation will be animated along this :ref:`Curve<class_Curve>`.
 +----------+-----------------------------+
 
 Rotation randomness ratio. Default value: ``0``.
+
+----
 
 .. _class_CPUParticles2D_property_angular_velocity:
 
@@ -330,6 +344,8 @@ Rotation randomness ratio. Default value: ``0``.
 
 Initial angular velocity applied to each particle. Sets the speed of rotation of the particle.
 
+----
+
 .. _class_CPUParticles2D_property_angular_velocity_curve:
 
 - :ref:`Curve<class_Curve>` **angular_velocity_curve**
@@ -341,6 +357,8 @@ Initial angular velocity applied to each particle. Sets the speed of rotation of
 +----------+------------------------+
 
 Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`.
+
+----
 
 .. _class_CPUParticles2D_property_angular_velocity_random:
 
@@ -354,6 +372,8 @@ Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`.
 
 Angular velocity randomness ratio. Default value: ``0``.
 
+----
+
 .. _class_CPUParticles2D_property_anim_offset:
 
 - :ref:`float<class_float>` **anim_offset**
@@ -365,6 +385,8 @@ Angular velocity randomness ratio. Default value: ``0``.
 +----------+------------------+
 
 Particle animation offset.
+
+----
 
 .. _class_CPUParticles2D_property_anim_offset_curve:
 
@@ -378,6 +400,8 @@ Particle animation offset.
 
 Each particle's animation offset will vary along this :ref:`Curve<class_Curve>`.
 
+----
+
 .. _class_CPUParticles2D_property_anim_offset_random:
 
 - :ref:`float<class_float>` **anim_offset_random**
@@ -389,6 +413,8 @@ Each particle's animation offset will vary along this :ref:`Curve<class_Curve>`.
 +----------+-----------------------------+
 
 Animation offset randomness ratio. Default value: ``0``.
+
+----
 
 .. _class_CPUParticles2D_property_anim_speed:
 
@@ -402,6 +428,8 @@ Animation offset randomness ratio. Default value: ``0``.
 
 Particle animation speed.
 
+----
+
 .. _class_CPUParticles2D_property_anim_speed_curve:
 
 - :ref:`Curve<class_Curve>` **anim_speed_curve**
@@ -413,6 +441,8 @@ Particle animation speed.
 +----------+------------------------+
 
 Each particle's animation speed will vary along this :ref:`Curve<class_Curve>`.
+
+----
 
 .. _class_CPUParticles2D_property_anim_speed_random:
 
@@ -426,6 +456,8 @@ Each particle's animation speed will vary along this :ref:`Curve<class_Curve>`.
 
 Animation speed randomness ratio. Default value: ``0``.
 
+----
+
 .. _class_CPUParticles2D_property_color:
 
 - :ref:`Color<class_Color>` **color**
@@ -437,6 +469,8 @@ Animation speed randomness ratio. Default value: ``0``.
 +----------+------------------+
 
 Each particle's initial color. If :ref:`texture<class_CPUParticles2D_property_texture>` is defined, it will be multiplied by this color.
+
+----
 
 .. _class_CPUParticles2D_property_color_ramp:
 
@@ -450,6 +484,8 @@ Each particle's initial color. If :ref:`texture<class_CPUParticles2D_property_te
 
 Each particle's color will vary along this :ref:`Gradient<class_Gradient>`.
 
+----
+
 .. _class_CPUParticles2D_property_damping:
 
 - :ref:`float<class_float>` **damping**
@@ -461,6 +497,8 @@ Each particle's color will vary along this :ref:`Gradient<class_Gradient>`.
 +----------+------------------+
 
 The rate at which particles lose velocity.
+
+----
 
 .. _class_CPUParticles2D_property_damping_curve:
 
@@ -474,6 +512,8 @@ The rate at which particles lose velocity.
 
 Damping will vary along this :ref:`Curve<class_Curve>`.
 
+----
+
 .. _class_CPUParticles2D_property_damping_random:
 
 - :ref:`float<class_float>` **damping_random**
@@ -485,6 +525,8 @@ Damping will vary along this :ref:`Curve<class_Curve>`.
 +----------+-----------------------------+
 
 Damping randomness ratio. Default value: ``0``.
+
+----
 
 .. _class_CPUParticles2D_property_draw_order:
 
@@ -498,6 +540,8 @@ Damping randomness ratio. Default value: ``0``.
 
 Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values. Default value: :ref:`DRAW_ORDER_INDEX<class_CPUParticles2D_constant_DRAW_ORDER_INDEX>`.
 
+----
+
 .. _class_CPUParticles2D_property_emission_colors:
 
 - :ref:`PoolColorArray<class_PoolColorArray>` **emission_colors**
@@ -507,6 +551,8 @@ Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values
 +----------+----------------------------+
 | *Getter* | get_emission_colors()      |
 +----------+----------------------------+
+
+----
 
 .. _class_CPUParticles2D_property_emission_normals:
 
@@ -518,6 +564,8 @@ Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values
 | *Getter* | get_emission_normals()      |
 +----------+-----------------------------+
 
+----
+
 .. _class_CPUParticles2D_property_emission_points:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **emission_points**
@@ -527,6 +575,8 @@ Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values
 +----------+----------------------------+
 | *Getter* | get_emission_points()      |
 +----------+----------------------------+
+
+----
 
 .. _class_CPUParticles2D_property_emission_rect_extents:
 
@@ -540,6 +590,8 @@ Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values
 
 The rectangle's extents if :ref:`emission_shape<class_CPUParticles2D_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_RECTANGLE<class_CPUParticles2D_constant_EMISSION_SHAPE_RECTANGLE>`.
 
+----
+
 .. _class_CPUParticles2D_property_emission_shape:
 
 - :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` **emission_shape**
@@ -551,6 +603,8 @@ The rectangle's extents if :ref:`emission_shape<class_CPUParticles2D_property_em
 +----------+---------------------------+
 
 Particles will be emitted inside this region. Use :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` for values. Default value: :ref:`EMISSION_SHAPE_POINT<class_CPUParticles2D_constant_EMISSION_SHAPE_POINT>`.
+
+----
 
 .. _class_CPUParticles2D_property_emission_sphere_radius:
 
@@ -564,6 +618,8 @@ Particles will be emitted inside this region. Use :ref:`EmissionShape<enum_CPUPa
 
 The circle's radius if :ref:`emission_shape<class_CPUParticles2D_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_CIRCLE<class_CPUParticles2D_constant_EMISSION_SHAPE_CIRCLE>`.
 
+----
+
 .. _class_CPUParticles2D_property_emitting:
 
 - :ref:`bool<class_bool>` **emitting**
@@ -575,6 +631,8 @@ The circle's radius if :ref:`emission_shape<class_CPUParticles2D_property_emissi
 +----------+---------------------+
 
 If ``true``, particles are being emitted. Default value: ``true``.
+
+----
 
 .. _class_CPUParticles2D_property_explosiveness:
 
@@ -588,6 +646,8 @@ If ``true``, particles are being emitted. Default value: ``true``.
 
 How rapidly particles in an emission cycle are emitted. If greater than ``0``, there will be a gap in emissions before the next cycle begins. Default value: ``0``.
 
+----
+
 .. _class_CPUParticles2D_property_fixed_fps:
 
 - :ref:`int<class_int>` **fixed_fps**
@@ -599,6 +659,8 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 +----------+----------------------+
 
 The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
+
+----
 
 .. _class_CPUParticles2D_property_flag_align_y:
 
@@ -612,6 +674,8 @@ The particle system's frame rate is fixed to a value. For instance, changing the
 
 Align y-axis of particle with the direction of its velocity.
 
+----
+
 .. _class_CPUParticles2D_property_flatness:
 
 - :ref:`float<class_float>` **flatness**
@@ -621,6 +685,8 @@ Align y-axis of particle with the direction of its velocity.
 +----------+---------------------+
 | *Getter* | get_flatness()      |
 +----------+---------------------+
+
+----
 
 .. _class_CPUParticles2D_property_fract_delta:
 
@@ -634,6 +700,8 @@ Align y-axis of particle with the direction of its velocity.
 
 If ``true``, results in fractional delta calculation which has a smoother particles display effect. Default value: ``true``
 
+----
+
 .. _class_CPUParticles2D_property_gravity:
 
 - :ref:`Vector2<class_Vector2>` **gravity**
@@ -645,6 +713,8 @@ If ``true``, results in fractional delta calculation which has a smoother partic
 +----------+--------------------+
 
 Gravity applied to every particle. Default value: ``(0, 98)``.
+
+----
 
 .. _class_CPUParticles2D_property_hue_variation:
 
@@ -658,6 +728,8 @@ Gravity applied to every particle. Default value: ``(0, 98)``.
 
 Initial hue variation applied to each particle.
 
+----
+
 .. _class_CPUParticles2D_property_hue_variation_curve:
 
 - :ref:`Curve<class_Curve>` **hue_variation_curve**
@@ -669,6 +741,8 @@ Initial hue variation applied to each particle.
 +----------+------------------------+
 
 Each particle's hue will vary along this :ref:`Curve<class_Curve>`.
+
+----
 
 .. _class_CPUParticles2D_property_hue_variation_random:
 
@@ -682,6 +756,8 @@ Each particle's hue will vary along this :ref:`Curve<class_Curve>`.
 
 Hue variation randomness ratio. Default value: ``0``.
 
+----
+
 .. _class_CPUParticles2D_property_initial_velocity:
 
 - :ref:`float<class_float>` **initial_velocity**
@@ -693,6 +769,8 @@ Hue variation randomness ratio. Default value: ``0``.
 +----------+------------------+
 
 Initial velocity magnitude for each particle. Direction comes from :ref:`spread<class_CPUParticles2D_property_spread>` and the node's orientation.
+
+----
 
 .. _class_CPUParticles2D_property_initial_velocity_random:
 
@@ -706,6 +784,8 @@ Initial velocity magnitude for each particle. Direction comes from :ref:`spread<
 
 Initial velocity randomness ratio. Default value: ``0``.
 
+----
+
 .. _class_CPUParticles2D_property_lifetime:
 
 - :ref:`float<class_float>` **lifetime**
@@ -717,6 +797,8 @@ Initial velocity randomness ratio. Default value: ``0``.
 +----------+---------------------+
 
 Amount of time each particle will exist. Default value: ``1``.
+
+----
 
 .. _class_CPUParticles2D_property_linear_accel:
 
@@ -730,6 +812,8 @@ Amount of time each particle will exist. Default value: ``1``.
 
 Linear acceleration applied to each particle in the direction of motion.
 
+----
+
 .. _class_CPUParticles2D_property_linear_accel_curve:
 
 - :ref:`Curve<class_Curve>` **linear_accel_curve**
@@ -741,6 +825,8 @@ Linear acceleration applied to each particle in the direction of motion.
 +----------+------------------------+
 
 Each particle's linear acceleration will vary along this :ref:`Curve<class_Curve>`.
+
+----
 
 .. _class_CPUParticles2D_property_linear_accel_random:
 
@@ -754,6 +840,8 @@ Each particle's linear acceleration will vary along this :ref:`Curve<class_Curve
 
 Linear acceleration randomness ratio. Default value: ``0``.
 
+----
+
 .. _class_CPUParticles2D_property_local_coords:
 
 - :ref:`bool<class_bool>` **local_coords**
@@ -765,6 +853,8 @@ Linear acceleration randomness ratio. Default value: ``0``.
 +----------+----------------------------------+
 
 If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates. Default value: ``true``.
+
+----
 
 .. _class_CPUParticles2D_property_normalmap:
 
@@ -778,6 +868,8 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 
 Normal map to be used for the :ref:`texture<class_CPUParticles2D_property_texture>` property.
 
+----
+
 .. _class_CPUParticles2D_property_one_shot:
 
 - :ref:`bool<class_bool>` **one_shot**
@@ -789,6 +881,8 @@ Normal map to be used for the :ref:`texture<class_CPUParticles2D_property_textur
 +----------+---------------------+
 
 If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emission will stop at the cycle's end. Default value: ``false``.
+
+----
 
 .. _class_CPUParticles2D_property_preprocess:
 
@@ -802,6 +896,8 @@ If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emi
 
 Particle system starts as if it had already run for this many seconds.
 
+----
+
 .. _class_CPUParticles2D_property_radial_accel:
 
 - :ref:`float<class_float>` **radial_accel**
@@ -813,6 +909,8 @@ Particle system starts as if it had already run for this many seconds.
 +----------+------------------+
 
 Radial acceleration applied to each particle. Makes particle accelerate away from origin.
+
+----
 
 .. _class_CPUParticles2D_property_radial_accel_curve:
 
@@ -826,6 +924,8 @@ Radial acceleration applied to each particle. Makes particle accelerate away fro
 
 Each particle's radial acceleration will vary along this :ref:`Curve<class_Curve>`.
 
+----
+
 .. _class_CPUParticles2D_property_radial_accel_random:
 
 - :ref:`float<class_float>` **radial_accel_random**
@@ -837,6 +937,8 @@ Each particle's radial acceleration will vary along this :ref:`Curve<class_Curve
 +----------+-----------------------------+
 
 Radial acceleration randomness ratio. Default value: ``0``.
+
+----
 
 .. _class_CPUParticles2D_property_randomness:
 
@@ -850,6 +952,8 @@ Radial acceleration randomness ratio. Default value: ``0``.
 
 Emission lifetime randomness ratio. Default value: ``0``.
 
+----
+
 .. _class_CPUParticles2D_property_scale_amount:
 
 - :ref:`float<class_float>` **scale_amount**
@@ -861,6 +965,8 @@ Emission lifetime randomness ratio. Default value: ``0``.
 +----------+------------------+
 
 Initial scale applied to each particle.
+
+----
 
 .. _class_CPUParticles2D_property_scale_amount_curve:
 
@@ -874,6 +980,8 @@ Initial scale applied to each particle.
 
 Each particle's scale will vary along this :ref:`Curve<class_Curve>`.
 
+----
+
 .. _class_CPUParticles2D_property_scale_amount_random:
 
 - :ref:`float<class_float>` **scale_amount_random**
@@ -885,6 +993,8 @@ Each particle's scale will vary along this :ref:`Curve<class_Curve>`.
 +----------+-----------------------------+
 
 Scale randomness ratio. Default value: ``0``.
+
+----
 
 .. _class_CPUParticles2D_property_speed_scale:
 
@@ -898,6 +1008,8 @@ Scale randomness ratio. Default value: ``0``.
 
 Particle system's running speed scaling ratio. Default value: ``1``. A value of ``0`` can be used to pause the particles.
 
+----
+
 .. _class_CPUParticles2D_property_spread:
 
 - :ref:`float<class_float>` **spread**
@@ -909,6 +1021,8 @@ Particle system's running speed scaling ratio. Default value: ``1``. A value of 
 +----------+-------------------+
 
 Each particle's initial direction range from ``+spread`` to ``-spread`` degrees. Default value: ``45``.
+
+----
 
 .. _class_CPUParticles2D_property_tangential_accel:
 
@@ -922,6 +1036,8 @@ Each particle's initial direction range from ``+spread`` to ``-spread`` degrees.
 
 Tangential acceleration applied to each particle. Tangential acceleration is perpendicular to the particle's velocity giving the particles a swirling motion.
 
+----
+
 .. _class_CPUParticles2D_property_tangential_accel_curve:
 
 - :ref:`Curve<class_Curve>` **tangential_accel_curve**
@@ -934,6 +1050,8 @@ Tangential acceleration applied to each particle. Tangential acceleration is per
 
 Each particle's tangential acceleration will vary along this :ref:`Curve<class_Curve>`.
 
+----
+
 .. _class_CPUParticles2D_property_tangential_accel_random:
 
 - :ref:`float<class_float>` **tangential_accel_random**
@@ -945,6 +1063,8 @@ Each particle's tangential acceleration will vary along this :ref:`Curve<class_C
 +----------+-----------------------------+
 
 Tangential acceleration randomness ratio. Default value: ``0``.
+
+----
 
 .. _class_CPUParticles2D_property_texture:
 
@@ -966,6 +1086,8 @@ Method Descriptions
 - void **convert_from_particles** **(** :ref:`Node<class_Node>` particles **)**
 
 Sets this node's properties to match a given :ref:`Particles2D<class_Particles2D>` node with an assigned :ref:`ParticlesMaterial<class_ParticlesMaterial>`.
+
+----
 
 .. _class_CPUParticles2D_method_restart:
 

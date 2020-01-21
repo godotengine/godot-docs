@@ -255,6 +255,8 @@ enum **VideoDriver**:
 
 - **VIDEO_DRIVER_GLES3** = **0** --- The GLES3 rendering backend. It uses OpenGL ES 3.0 on mobile devices, OpenGL 3.3 on desktop platforms and WebGL 2.0 on the web.
 
+----
+
 .. _enum_OS_Weekday:
 
 .. _class_OS_constant_DAY_SUNDAY:
@@ -286,6 +288,8 @@ enum **Weekday**:
 - **DAY_FRIDAY** = **5** --- Friday.
 
 - **DAY_SATURDAY** = **6** --- Saturday.
+
+----
 
 .. _enum_OS_Month:
 
@@ -339,6 +343,8 @@ enum **Month**:
 
 - **MONTH_DECEMBER** = **12** --- December.
 
+----
+
 .. _enum_OS_ScreenOrientation:
 
 .. _class_OS_constant_SCREEN_ORIENTATION_LANDSCAPE:
@@ -370,6 +376,8 @@ enum **ScreenOrientation**:
 - **SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5** --- Uses portrait or reverse portrait based on the hardware sensor.
 
 - **SCREEN_ORIENTATION_SENSOR** = **6** --- Uses most suitable orientation based on the hardware sensor.
+
+----
 
 .. _enum_OS_SystemDir:
 
@@ -406,6 +414,8 @@ enum **SystemDir**:
 - **SYSTEM_DIR_PICTURES** = **6** --- Pictures directory path.
 
 - **SYSTEM_DIR_RINGTONES** = **7** --- Ringtones directory path.
+
+----
 
 .. _enum_OS_PowerState:
 
@@ -451,6 +461,8 @@ Property Descriptions
 
 The clipboard from the host OS. Might be unavailable on some platforms.
 
+----
+
 .. _class_OS_property_current_screen:
 
 - :ref:`int<class_int>` **current_screen**
@@ -462,6 +474,8 @@ The clipboard from the host OS. Might be unavailable on some platforms.
 +----------+---------------------------+
 
 The current screen index (starting from 0).
+
+----
 
 .. _class_OS_property_exit_code:
 
@@ -475,6 +489,8 @@ The current screen index (starting from 0).
 
 The exit code passed to the OS when the main loop exits.
 
+----
+
 .. _class_OS_property_keep_screen_on:
 
 - :ref:`bool<class_bool>` **keep_screen_on**
@@ -486,6 +502,8 @@ The exit code passed to the OS when the main loop exits.
 +----------+---------------------------+
 
 If ``true``, the engine tries to keep the screen on while the game is running. Useful on mobile.
+
+----
 
 .. _class_OS_property_low_processor_usage_mode:
 
@@ -499,6 +517,8 @@ If ``true``, the engine tries to keep the screen on while the game is running. U
 
 If ``true``, the engine optimizes for low processor usage by only refreshing the screen if needed. Can improve battery consumption on mobile.
 
+----
+
 .. _class_OS_property_screen_orientation:
 
 - _OS.ScreenOrientation **screen_orientation**
@@ -510,6 +530,8 @@ If ``true``, the engine optimizes for low processor usage by only refreshing the
 +----------+-------------------------------+
 
 The current screen orientation.
+
+----
 
 .. _class_OS_property_vsync_enabled:
 
@@ -523,6 +545,8 @@ The current screen orientation.
 
 If ``true``, vertical synchronization (Vsync) is enabled.
 
+----
+
 .. _class_OS_property_window_borderless:
 
 - :ref:`bool<class_bool>` **window_borderless**
@@ -534,6 +558,8 @@ If ``true``, vertical synchronization (Vsync) is enabled.
 +----------+------------------------------+
 
 If ``true``, removes the window frame.
+
+----
 
 .. _class_OS_property_window_fullscreen:
 
@@ -547,6 +573,8 @@ If ``true``, removes the window frame.
 
 If ``true``, the window is fullscreen.
 
+----
+
 .. _class_OS_property_window_maximized:
 
 - :ref:`bool<class_bool>` **window_maximized**
@@ -558,6 +586,8 @@ If ``true``, the window is fullscreen.
 +----------+-----------------------------+
 
 If ``true``, the window is maximized.
+
+----
 
 .. _class_OS_property_window_minimized:
 
@@ -571,6 +601,8 @@ If ``true``, the window is maximized.
 
 If ``true``, the window is minimized.
 
+----
+
 .. _class_OS_property_window_per_pixel_transparency_enabled:
 
 - :ref:`bool<class_bool>` **window_per_pixel_transparency_enabled**
@@ -580,6 +612,8 @@ If ``true``, the window is minimized.
 +----------+--------------------------------------------------+
 | *Getter* | get_window_per_pixel_transparency_enabled()      |
 +----------+--------------------------------------------------+
+
+----
 
 .. _class_OS_property_window_position:
 
@@ -593,6 +627,8 @@ If ``true``, the window is minimized.
 
 The window position relative to the screen, the origin is the top left corner, +Y axis goes to the bottom and +X axis goes to the right.
 
+----
+
 .. _class_OS_property_window_resizable:
 
 - :ref:`bool<class_bool>` **window_resizable**
@@ -604,6 +640,8 @@ The window position relative to the screen, the origin is the top left corner, +
 +----------+-----------------------------+
 
 If ``true``, the window is resizable by the user.
+
+----
 
 .. _class_OS_property_window_size:
 
@@ -626,11 +664,15 @@ Method Descriptions
 
 Displays a modal dialog box utilizing the host OS.
 
+----
+
 .. _class_OS_method_can_draw:
 
 - :ref:`bool<class_bool>` **can_draw** **(** **)** const
 
 Returns ``true`` if the host OS allows drawing.
+
+----
 
 .. _class_OS_method_can_use_threads:
 
@@ -638,15 +680,21 @@ Returns ``true`` if the host OS allows drawing.
 
 Returns ``true`` if the current host platform is using multiple threads.
 
+----
+
 .. _class_OS_method_center_window:
 
 - void **center_window** **(** **)**
 
 Centers the window on the screen if in windowed mode.
 
+----
+
 .. _class_OS_method_close_midi_inputs:
 
 - void **close_midi_inputs** **(** **)**
+
+----
 
 .. _class_OS_method_delay_msec:
 
@@ -654,11 +702,15 @@ Centers the window on the screen if in windowed mode.
 
 Delay execution of the current thread by given milliseconds.
 
+----
+
 .. _class_OS_method_delay_usec:
 
 - void **delay_usec** **(** :ref:`int<class_int>` usec **)** const
 
 Delay execution of the current thread by given microseconds.
+
+----
 
 .. _class_OS_method_dump_memory_to_file:
 
@@ -667,6 +719,8 @@ Delay execution of the current thread by given microseconds.
 Dumps the memory allocation ringlist to a file (only works in debug).
 
 Entry format per line: "Address - Size - Description".
+
+----
 
 .. _class_OS_method_dump_resources_to_file:
 
@@ -677,6 +731,8 @@ Dumps all used resources to file (only works in debug).
 Entry format per line: "Resource Type : Resource Location".
 
 At the end of the file is a statistic of all used Resource Types.
+
+----
 
 .. _class_OS_method_execute:
 
@@ -713,11 +769,15 @@ If you wish to access a shell built-in or perform a composite command, a platfor
 
     OS.execute('CMD.exe', ['/C', 'cd %TEMP% && dir'], true, output)
 
+----
+
 .. _class_OS_method_find_scancode_from_string:
 
 - :ref:`int<class_int>` **find_scancode_from_string** **(** :ref:`String<class_String>` string **)** const
 
 Returns the scancode of the given string (e.g. "Escape")
+
+----
 
 .. _class_OS_method_get_audio_driver_count:
 
@@ -725,11 +785,15 @@ Returns the scancode of the given string (e.g. "Escape")
 
 Returns the total number of available audio drivers.
 
+----
+
 .. _class_OS_method_get_audio_driver_name:
 
 - :ref:`String<class_String>` **get_audio_driver_name** **(** :ref:`int<class_int>` driver **)** const
 
 Returns the audio driver name for the given index.
+
+----
 
 .. _class_OS_method_get_cmdline_args:
 
@@ -737,9 +801,13 @@ Returns the audio driver name for the given index.
 
 Returns the command line arguments passed to the engine.
 
+----
+
 .. _class_OS_method_get_connected_midi_inputs:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_connected_midi_inputs** **(** **)**
+
+----
 
 .. _class_OS_method_get_current_video_driver:
 
@@ -747,17 +815,23 @@ Returns the command line arguments passed to the engine.
 
 Returns the currently used video driver, using one of the values from :ref:`VideoDriver<enum_OS_VideoDriver>`.
 
+----
+
 .. _class_OS_method_get_date:
 
 - :ref:`Dictionary<class_Dictionary>` **get_date** **(** :ref:`bool<class_bool>` utc=false **)** const
 
 Returns current date as a dictionary of keys: year, month, day, weekday, dst (daylight savings time).
 
+----
+
 .. _class_OS_method_get_datetime:
 
 - :ref:`Dictionary<class_Dictionary>` **get_datetime** **(** :ref:`bool<class_bool>` utc=false **)** const
 
 Returns current datetime as a dictionary of keys: year, month, day, weekday, dst (daylight savings time), hour, minute, second.
+
+----
 
 .. _class_OS_method_get_datetime_from_unix_time:
 
@@ -767,11 +841,15 @@ Get a dictionary of time values when given epoch time.
 
 Dictionary Time values will be a union of values from :ref:`get_time<class_OS_method_get_time>` and :ref:`get_date<class_OS_method_get_date>` dictionaries (with the exception of dst = day light standard time, as it cannot be determined from epoch).
 
+----
+
 .. _class_OS_method_get_dynamic_memory_usage:
 
 - :ref:`int<class_int>` **get_dynamic_memory_usage** **(** **)** const
 
 Returns the total amount of dynamic memory used (only works in debug).
+
+----
 
 .. _class_OS_method_get_environment:
 
@@ -779,11 +857,15 @@ Returns the total amount of dynamic memory used (only works in debug).
 
 Returns an environment variable.
 
+----
+
 .. _class_OS_method_get_executable_path:
 
 - :ref:`String<class_String>` **get_executable_path** **(** **)** const
 
 Returns the path to the current engine executable.
+
+----
 
 .. _class_OS_method_get_ime_selection:
 
@@ -793,6 +875,8 @@ Returns IME cursor position (currently edited portion of the string) relative to
 
 :ref:`MainLoop.NOTIFICATION_OS_IME_UPDATE<class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE>` is sent to the application to notify it of changes to the IME cursor position.
 
+----
+
 .. _class_OS_method_get_ime_text:
 
 - :ref:`String<class_String>` **get_ime_text** **(** **)** const
@@ -800,6 +884,8 @@ Returns IME cursor position (currently edited portion of the string) relative to
 Returns IME intermediate composition string.
 
 :ref:`MainLoop.NOTIFICATION_OS_IME_UPDATE<class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE>` is sent to the application to notify it of changes to the IME composition string.
+
+----
 
 .. _class_OS_method_get_latin_keyboard_variant:
 
@@ -809,11 +895,15 @@ Returns the current latin keyboard variant as a String.
 
 Possible return values are: "QWERTY", "AZERTY", "QZERTY", "DVORAK", "NEO", "COLEMAK" or "ERROR".
 
+----
+
 .. _class_OS_method_get_locale:
 
 - :ref:`String<class_String>` **get_locale** **(** **)** const
 
 Returns the host OS locale.
+
+----
 
 .. _class_OS_method_get_model_name:
 
@@ -821,11 +911,15 @@ Returns the host OS locale.
 
 Returns the model name of the current device.
 
+----
+
 .. _class_OS_method_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
 Returns the name of the host OS. Possible values are: "Android", "Haiku", "iOS", "HTML5", "OSX", "Server", "Windows", "UWP", "X11".
+
+----
 
 .. _class_OS_method_get_power_percent_left:
 
@@ -833,11 +927,15 @@ Returns the name of the host OS. Possible values are: "Android", "Haiku", "iOS",
 
 Returns the amount of battery left in the device as a percentage.
 
+----
+
 .. _class_OS_method_get_power_seconds_left:
 
 - :ref:`int<class_int>` **get_power_seconds_left** **(** **)**
 
 Returns the time in seconds before the device runs out of battery.
+
+----
 
 .. _class_OS_method_get_power_state:
 
@@ -845,11 +943,15 @@ Returns the time in seconds before the device runs out of battery.
 
 Returns the current state of the device regarding battery and power. See :ref:`PowerState<enum_OS_PowerState>` constants.
 
+----
+
 .. _class_OS_method_get_process_id:
 
 - :ref:`int<class_int>` **get_process_id** **(** **)** const
 
 Returns the game process ID
+
+----
 
 .. _class_OS_method_get_processor_count:
 
@@ -857,11 +959,15 @@ Returns the game process ID
 
 Returns the number of cores available in the host machine.
 
+----
+
 .. _class_OS_method_get_real_window_size:
 
 - :ref:`Vector2<class_Vector2>` **get_real_window_size** **(** **)** const
 
 Returns the window size including decorations like window borders.
+
+----
 
 .. _class_OS_method_get_scancode_string:
 
@@ -869,11 +975,15 @@ Returns the window size including decorations like window borders.
 
 Returns the given scancode as a string (e.g. Return values: "Escape", "Shift+Escape").
 
+----
+
 .. _class_OS_method_get_screen_count:
 
 - :ref:`int<class_int>` **get_screen_count** **(** **)** const
 
 Returns the number of displays attached to the host machine.
+
+----
 
 .. _class_OS_method_get_screen_dpi:
 
@@ -895,11 +1005,15 @@ xxhdpi  - 480 dpi
 
 xxxhdpi - 640 dpi
 
+----
+
 .. _class_OS_method_get_screen_position:
 
 - :ref:`Vector2<class_Vector2>` **get_screen_position** **(** :ref:`int<class_int>` screen=-1 **)** const
 
 Returns the position of the specified screen by index. If no screen index is provided, the current screen will be used.
+
+----
 
 .. _class_OS_method_get_screen_size:
 
@@ -907,11 +1021,15 @@ Returns the position of the specified screen by index. If no screen index is pro
 
 Returns the dimensions in pixels of the specified screen.
 
+----
+
 .. _class_OS_method_get_splash_tick_msec:
 
 - :ref:`int<class_int>` **get_splash_tick_msec** **(** **)** const
 
 Returns the amount of time in milliseconds it took for the boot logo to appear.
+
+----
 
 .. _class_OS_method_get_static_memory_peak_usage:
 
@@ -919,11 +1037,15 @@ Returns the amount of time in milliseconds it took for the boot logo to appear.
 
 Returns the max amount of static memory used (only works in debug).
 
+----
+
 .. _class_OS_method_get_static_memory_usage:
 
 - :ref:`int<class_int>` **get_static_memory_usage** **(** **)** const
 
 Returns the amount of static memory being used by the program in bytes.
+
+----
 
 .. _class_OS_method_get_system_dir:
 
@@ -931,11 +1053,15 @@ Returns the amount of static memory being used by the program in bytes.
 
 Returns the actual path to commonly used folders across different platforms. Available locations are specified in :ref:`SystemDir<enum_OS_SystemDir>`.
 
+----
+
 .. _class_OS_method_get_system_time_msecs:
 
 - :ref:`int<class_int>` **get_system_time_msecs** **(** **)** const
 
 Returns the epoch time of the operating system in milliseconds.
+
+----
 
 .. _class_OS_method_get_system_time_secs:
 
@@ -943,11 +1069,15 @@ Returns the epoch time of the operating system in milliseconds.
 
 Returns the epoch time of the operating system in seconds.
 
+----
+
 .. _class_OS_method_get_ticks_msec:
 
 - :ref:`int<class_int>` **get_ticks_msec** **(** **)** const
 
 Returns the amount of time passed in milliseconds since the engine started.
+
+----
 
 .. _class_OS_method_get_ticks_usec:
 
@@ -955,17 +1085,23 @@ Returns the amount of time passed in milliseconds since the engine started.
 
 Returns the amount of time passed in microseconds since the engine started.
 
+----
+
 .. _class_OS_method_get_time:
 
 - :ref:`Dictionary<class_Dictionary>` **get_time** **(** :ref:`bool<class_bool>` utc=false **)** const
 
 Returns current time as a dictionary of keys: hour, minute, second.
 
+----
+
 .. _class_OS_method_get_time_zone_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_time_zone_info** **(** **)** const
 
 Returns the current time zone as a dictionary with the keys: bias and name.
+
+----
 
 .. _class_OS_method_get_unique_id:
 
@@ -975,11 +1111,15 @@ Returns a string that is unique to the device.
 
 Returns empty string on HTML5 and UWP which are not supported yet.
 
+----
+
 .. _class_OS_method_get_unix_time:
 
 - :ref:`int<class_int>` **get_unix_time** **(** **)** const
 
 Returns the current unix epoch timestamp.
+
+----
 
 .. _class_OS_method_get_unix_time_from_datetime:
 
@@ -990,6 +1130,8 @@ Get an epoch time value from a dictionary of time values.
 ``datetime`` must be populated with the following keys: year, month, day, hour, minute, second.
 
 You can pass the output from :ref:`get_datetime_from_unix_time<class_OS_method_get_datetime_from_unix_time>` directly into this function. Daylight savings time (dst), if present, is ignored.
+
+----
 
 .. _class_OS_method_get_user_data_dir:
 
@@ -1005,11 +1147,15 @@ On Windows, this is ``%APPDATA%\Godot\app_userdata\[project_name]``, or ``%APPDA
 
 If the project name is empty, ``user://`` falls back to ``res://``.
 
+----
+
 .. _class_OS_method_get_video_driver_count:
 
 - :ref:`int<class_int>` **get_video_driver_count** **(** **)** const
 
 Returns the number of video drivers supported on the current platform.
+
+----
 
 .. _class_OS_method_get_video_driver_name:
 
@@ -1017,11 +1163,15 @@ Returns the number of video drivers supported on the current platform.
 
 Returns the name of the video driver matching the given ``driver`` index. This index is a value from :ref:`VideoDriver<enum_OS_VideoDriver>`, and you can use :ref:`get_current_video_driver<class_OS_method_get_current_video_driver>` to get the current backend's index.
 
+----
+
 .. _class_OS_method_get_virtual_keyboard_height:
 
 - :ref:`int<class_int>` **get_virtual_keyboard_height** **(** **)**
 
 Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyboard or it is currently hidden.
+
+----
 
 .. _class_OS_method_get_window_safe_area:
 
@@ -1029,11 +1179,15 @@ Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyb
 
 Returns unobscured area of the window where interactive controls should be rendered.
 
+----
+
 .. _class_OS_method_has_environment:
 
 - :ref:`bool<class_bool>` **has_environment** **(** :ref:`String<class_String>` environment **)** const
 
 Returns ``true`` if an environment variable exists.
+
+----
 
 .. _class_OS_method_has_feature:
 
@@ -1043,11 +1197,15 @@ Returns ``true`` if the feature for the given feature tag is supported in the cu
 
 Note that tag names are case-sensitive.
 
+----
+
 .. _class_OS_method_has_touchscreen_ui_hint:
 
 - :ref:`bool<class_bool>` **has_touchscreen_ui_hint** **(** **)** const
 
 Returns ``true`` if the device has a touchscreen or emulates one.
+
+----
 
 .. _class_OS_method_has_virtual_keyboard:
 
@@ -1055,11 +1213,15 @@ Returns ``true`` if the device has a touchscreen or emulates one.
 
 Returns ``true`` if the platform has a virtual keyboard, ``false`` otherwise.
 
+----
+
 .. _class_OS_method_hide_virtual_keyboard:
 
 - void **hide_virtual_keyboard** **(** **)**
 
 Hides the virtual keyboard if it is shown, does nothing otherwise.
+
+----
 
 .. _class_OS_method_is_debug_build:
 
@@ -1071,11 +1233,15 @@ Returns ``true`` when running in the editor.
 
 Returns ``false`` if the build is a release build.
 
+----
+
 .. _class_OS_method_is_ok_left_and_cancel_right:
 
 - :ref:`bool<class_bool>` **is_ok_left_and_cancel_right** **(** **)** const
 
 Returns ``true`` if the "Okay" button should appear on the left and "Cancel" on the right.
+
+----
 
 .. _class_OS_method_is_scancode_unicode:
 
@@ -1083,11 +1249,15 @@ Returns ``true`` if the "Okay" button should appear on the left and "Cancel" on 
 
 Returns ``true`` if the input code has a unicode character.
 
+----
+
 .. _class_OS_method_is_stdout_verbose:
 
 - :ref:`bool<class_bool>` **is_stdout_verbose** **(** **)** const
 
 Returns ``true`` if the engine was executed with -v (verbose stdout).
+
+----
 
 .. _class_OS_method_is_userfs_persistent:
 
@@ -1095,11 +1265,15 @@ Returns ``true`` if the engine was executed with -v (verbose stdout).
 
 If ``true``, the ``user://`` file system is persistent, so that its state is the same after a player quits and starts the game again. Relevant to the HTML5 platform, where this persistence may be unavailable.
 
+----
+
 .. _class_OS_method_is_window_always_on_top:
 
 - :ref:`bool<class_bool>` **is_window_always_on_top** **(** **)** const
 
 Returns ``true`` if the window should always be on top of other windows.
+
+----
 
 .. _class_OS_method_kill:
 
@@ -1109,11 +1283,15 @@ Kill (terminate) the process identified by the given process ID (``pid``), e.g. 
 
 Note that this method can also be used to kill processes that were not spawned by the game.
 
+----
+
 .. _class_OS_method_move_window_to_foreground:
 
 - void **move_window_to_foreground** **(** **)**
 
 Moves the window to the front.
+
+----
 
 .. _class_OS_method_native_video_is_playing:
 
@@ -1121,11 +1299,15 @@ Moves the window to the front.
 
 Returns ``true`` if native video is playing.
 
+----
+
 .. _class_OS_method_native_video_pause:
 
 - void **native_video_pause** **(** **)**
 
 Pauses native video playback.
+
+----
 
 .. _class_OS_method_native_video_play:
 
@@ -1135,11 +1317,15 @@ Plays native video from the specified path, at the given volume and with audio a
 
 Note: This method is only implemented on Android and iOS, and the current Android implementation does not support the ``volume``, ``audio_track`` and ``subtitle_track`` options.
 
+----
+
 .. _class_OS_method_native_video_stop:
 
 - void **native_video_stop** **(** **)**
 
 Stops native video playback.
+
+----
 
 .. _class_OS_method_native_video_unpause:
 
@@ -1147,9 +1333,13 @@ Stops native video playback.
 
 Resumes native video playback.
 
+----
+
 .. _class_OS_method_open_midi_inputs:
 
 - void **open_midi_inputs** **(** **)**
+
+----
 
 .. _class_OS_method_print_all_resources:
 
@@ -1157,11 +1347,15 @@ Resumes native video playback.
 
 Shows all resources in the game. Optionally the list can be written to a file.
 
+----
+
 .. _class_OS_method_print_all_textures_by_size:
 
 - void **print_all_textures_by_size** **(** **)**
 
 Shows the list of loaded textures sorted by size in memory.
+
+----
 
 .. _class_OS_method_print_resources_by_type:
 
@@ -1169,11 +1363,15 @@ Shows the list of loaded textures sorted by size in memory.
 
 Shows the number of resources loaded by the game of the given types.
 
+----
+
 .. _class_OS_method_print_resources_in_use:
 
 - void **print_resources_in_use** **(** :ref:`bool<class_bool>` short=false **)**
 
 Shows all resources currently used by the game.
+
+----
 
 .. _class_OS_method_request_attention:
 
@@ -1181,11 +1379,15 @@ Shows all resources currently used by the game.
 
 Request the user attention to the window. It'll flash the taskbar button on Windows or bounce the dock icon on OSX.
 
+----
+
 .. _class_OS_method_request_permission:
 
 - :ref:`bool<class_bool>` **request_permission** **(** :ref:`String<class_String>` name **)**
 
 At the moment this function is only used by ``AudioDriverOpenSL`` to request permission for ``RECORD_AUDIO`` on Android.
+
+----
 
 .. _class_OS_method_set_icon:
 
@@ -1193,11 +1395,15 @@ At the moment this function is only used by ``AudioDriverOpenSL`` to request per
 
 Sets the game's icon.
 
+----
+
 .. _class_OS_method_set_ime_active:
 
 - void **set_ime_active** **(** :ref:`bool<class_bool>` active **)**
 
 Sets whether IME input mode should be enabled.
+
+----
 
 .. _class_OS_method_set_ime_position:
 
@@ -1205,11 +1411,15 @@ Sets whether IME input mode should be enabled.
 
 Sets position of IME suggestion list popup (in window coordinates).
 
+----
+
 .. _class_OS_method_set_thread_name:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **set_thread_name** **(** :ref:`String<class_String>` name **)**
 
 Sets the name of the current thread.
+
+----
 
 .. _class_OS_method_set_use_file_access_save_and_swap:
 
@@ -1217,17 +1427,23 @@ Sets the name of the current thread.
 
 Enables backup saves if ``enabled`` is ``true``.
 
+----
+
 .. _class_OS_method_set_window_always_on_top:
 
 - void **set_window_always_on_top** **(** :ref:`bool<class_bool>` enabled **)**
 
 Sets whether the window should always be on top.
 
+----
+
 .. _class_OS_method_set_window_title:
 
 - void **set_window_title** **(** :ref:`String<class_String>` title **)**
 
 Sets the window title to the specified string.
+
+----
 
 .. _class_OS_method_shell_open:
 
@@ -1238,6 +1454,8 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 ``OS.shell_open("C:\\Users\name\Downloads")`` on Windows opens the file explorer at the downloads folders of the user.
 
 ``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
+
+----
 
 .. _class_OS_method_show_virtual_keyboard:
 

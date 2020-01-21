@@ -40,6 +40,8 @@ Property Descriptions
 | *Getter* | is_enabled()       |
 +----------+--------------------+
 
+----
+
 .. _class_NavigationPolygonInstance_property_navpoly:
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` **navpoly**

@@ -47,17 +47,23 @@ Method Descriptions
 
 Returns the loaded resource if the load operation completed successfully, ``null`` otherwise.
 
+----
+
 .. _class_ResourceInteractiveLoader_method_get_stage:
 
 - :ref:`int<class_int>` **get_stage** **(** **)** const
 
 Returns the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>`.
 
+----
+
 .. _class_ResourceInteractiveLoader_method_get_stage_count:
 
 - :ref:`int<class_int>` **get_stage_count** **(** **)** const
 
 Returns the total amount of stages (calls to :ref:`poll<class_ResourceInteractiveLoader_method_poll>`) needed to completely load this resource.
+
+----
 
 .. _class_ResourceInteractiveLoader_method_poll:
 
@@ -70,6 +76,8 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the poll is su
 Returns :ref:`@GlobalScope.ERR_FILE_EOF<class_@GlobalScope_constant_ERR_FILE_EOF>` if the load operation has completed successfully. The loaded resource can be obtained by calling :ref:`get_resource<class_ResourceInteractiveLoader_method_get_resource>`.
 
 Returns another :ref:`Error<enum_@GlobalScope_Error>` code if the poll has failed.
+
+----
 
 .. _class_ResourceInteractiveLoader_method_wait:
 

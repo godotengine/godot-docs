@@ -71,6 +71,8 @@ Property Descriptions
 
 The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
 
+----
+
 .. _class_AnimatedSprite3D_property_frame:
 
 - :ref:`int<class_int>` **frame**
@@ -83,6 +85,8 @@ The current animation from the ``frames`` resource. If this value changes, the `
 
 The displayed animation frame's index.
 
+----
+
 .. _class_AnimatedSprite3D_property_frames:
 
 - :ref:`SpriteFrames<class_SpriteFrames>` **frames**
@@ -94,6 +98,8 @@ The displayed animation frame's index.
 +----------+--------------------------+
 
 The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
+
+----
 
 .. _class_AnimatedSprite3D_property_playing:
 
@@ -110,11 +116,15 @@ Method Descriptions
 
 Returns ``true`` if an animation if currently being played.
 
+----
+
 .. _class_AnimatedSprite3D_method_play:
 
 - void **play** **(** :ref:`String<class_String>` anim="" **)**
 
 Play the animation set in parameter. If no parameter is provided, the current animation is played.
+
+----
 
 .. _class_AnimatedSprite3D_method_stop:
 

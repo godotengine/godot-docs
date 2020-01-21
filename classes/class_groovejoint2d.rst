@@ -47,6 +47,8 @@ Property Descriptions
 
 The body B's initial anchor position defined by the joint's origin and a local offset :ref:`initial_offset<class_GrooveJoint2D_property_initial_offset>` along the joint's y axis (along the groove). Default value: ``25``
 
+----
+
 .. _class_GrooveJoint2D_property_length:
 
 - :ref:`float<class_float>` **length**

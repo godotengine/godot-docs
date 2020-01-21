@@ -81,6 +81,8 @@ enum **DrawFlags**:
 
 - **FLAG_MAX** = **3** --- Represents the size of the :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` enum.
 
+----
+
 .. _enum_SpriteBase3D_AlphaCutMode:
 
 .. _class_SpriteBase3D_constant_ALPHA_CUT_DISABLED:
@@ -115,6 +117,8 @@ Property Descriptions
 | *Getter* | get_alpha_cut_mode()      |
 +----------+---------------------------+
 
+----
+
 .. _class_SpriteBase3D_property_axis:
 
 - Vector3.Axis **axis**
@@ -126,6 +130,8 @@ Property Descriptions
 +----------+-----------------+
 
 The direction in which the front of the texture faces.
+
+----
 
 .. _class_SpriteBase3D_property_centered:
 
@@ -139,6 +145,8 @@ The direction in which the front of the texture faces.
 
 If ``true``, texture will be centered. Default value: ``true``.
 
+----
+
 .. _class_SpriteBase3D_property_double_sided:
 
 - :ref:`bool<class_bool>` **double_sided**
@@ -150,6 +158,8 @@ If ``true``, texture will be centered. Default value: ``true``.
 +----------+----------------------+
 
 If ``true``, texture can be seen from the back as well, if ``false``, it is invisible when looking at it from behind. Default value: ``true``.
+
+----
 
 .. _class_SpriteBase3D_property_flip_h:
 
@@ -163,6 +173,8 @@ If ``true``, texture can be seen from the back as well, if ``false``, it is invi
 
 If ``true``, texture is flipped horizontally. Default value: ``false``.
 
+----
+
 .. _class_SpriteBase3D_property_flip_v:
 
 - :ref:`bool<class_bool>` **flip_v**
@@ -174,6 +186,8 @@ If ``true``, texture is flipped horizontally. Default value: ``false``.
 +----------+-------------------+
 
 If ``true``, texture is flipped vertically. Default value: ``false``.
+
+----
 
 .. _class_SpriteBase3D_property_modulate:
 
@@ -187,6 +201,8 @@ If ``true``, texture is flipped vertically. Default value: ``false``.
 
 A color value that gets multiplied on, could be used for mood-coloring or to simulate the color of light.
 
+----
+
 .. _class_SpriteBase3D_property_offset:
 
 - :ref:`Vector2<class_Vector2>` **offset**
@@ -198,6 +214,8 @@ A color value that gets multiplied on, could be used for mood-coloring or to sim
 +----------+-------------------+
 
 The texture's drawing offset.
+
+----
 
 .. _class_SpriteBase3D_property_opacity:
 
@@ -211,6 +229,8 @@ The texture's drawing offset.
 
 The objects visibility on a scale from ``0`` fully invisible to ``1`` fully visible.
 
+----
+
 .. _class_SpriteBase3D_property_pixel_size:
 
 - :ref:`float<class_float>` **pixel_size**
@@ -223,6 +243,8 @@ The objects visibility on a scale from ``0`` fully invisible to ``1`` fully visi
 
 The size of one pixel's width on the Sprite to scale it in 3D.
 
+----
+
 .. _class_SpriteBase3D_property_shaded:
 
 - :ref:`bool<class_bool>` **shaded**
@@ -234,6 +256,8 @@ The size of one pixel's width on the Sprite to scale it in 3D.
 +----------+----------------------+
 
 If ``true``, the :ref:`Light<class_Light>` in the :ref:`Environment<class_Environment>` has effects on the Sprite. Default value: ``false``.
+
+----
 
 .. _class_SpriteBase3D_property_transparent:
 
@@ -253,6 +277,8 @@ Method Descriptions
 .. _class_SpriteBase3D_method_generate_triangle_mesh:
 
 - :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** const
+
+----
 
 .. _class_SpriteBase3D_method_get_item_rect:
 

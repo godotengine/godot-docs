@@ -73,6 +73,8 @@ Property Descriptions
 
 The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``. If null, uses the default viewport instead.
 
+----
+
 .. _class_CanvasLayer_property_layer:
 
 - :ref:`int<class_int>` **layer**
@@ -84,6 +86,8 @@ The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``.
 +----------+------------------+
 
 Layer index for draw order. Lower values are drawn first. Default value: ``1``.
+
+----
 
 .. _class_CanvasLayer_property_offset:
 
@@ -97,6 +101,8 @@ Layer index for draw order. Lower values are drawn first. Default value: ``1``.
 
 The layer's base offset.
 
+----
+
 .. _class_CanvasLayer_property_rotation:
 
 - :ref:`float<class_float>` **rotation**
@@ -108,6 +114,8 @@ The layer's base offset.
 +----------+---------------------+
 
 The layer's rotation in radians.
+
+----
 
 .. _class_CanvasLayer_property_rotation_degrees:
 
@@ -121,6 +129,8 @@ The layer's rotation in radians.
 
 The layer's rotation in degrees.
 
+----
+
 .. _class_CanvasLayer_property_scale:
 
 - :ref:`Vector2<class_Vector2>` **scale**
@@ -132,6 +142,8 @@ The layer's rotation in degrees.
 +----------+------------------+
 
 The layer's scale.
+
+----
 
 .. _class_CanvasLayer_property_transform:
 

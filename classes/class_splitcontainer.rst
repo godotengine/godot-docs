@@ -84,6 +84,8 @@ Property Descriptions
 | *Getter* | is_collapsed()       |
 +----------+----------------------+
 
+----
+
 .. _class_SplitContainer_property_dragger_visibility:
 
 - :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility**
@@ -95,6 +97,8 @@ Property Descriptions
 +----------+-------------------------------+
 
 Determines whether the dragger is visible.
+
+----
 
 .. _class_SplitContainer_property_split_offset:
 

@@ -71,17 +71,23 @@ Method Descriptions
 
 Returns the name given to this anchor.
 
+----
+
 .. _class_ARVRAnchor_method_get_is_active:
 
 - :ref:`bool<class_bool>` **get_is_active** **(** **)** const
 
 Returns ``true`` if the anchor is being tracked and ``false`` if no anchor with this id is currently known.
 
+----
+
 .. _class_ARVRAnchor_method_get_plane:
 
 - :ref:`Plane<class_Plane>` **get_plane** **(** **)** const
 
 Returns a plane aligned with our anchor; handy for intersection testing.
+
+----
 
 .. _class_ARVRAnchor_method_get_size:
 

@@ -65,6 +65,8 @@ Property Descriptions
 
 The colliding body.
 
+----
+
 .. _class_KinematicCollision_property_collider_id:
 
 - :ref:`int<class_int>` **collider_id**
@@ -74,6 +76,8 @@ The colliding body.
 +----------+-------------------+
 
 The colliding body's unique :ref:`RID<class_RID>`.
+
+----
 
 .. _class_KinematicCollision_property_collider_metadata:
 
@@ -85,6 +89,8 @@ The colliding body's unique :ref:`RID<class_RID>`.
 
 The colliding body's metadata. See :ref:`Object<class_Object>`.
 
+----
+
 .. _class_KinematicCollision_property_collider_shape:
 
 - :ref:`Object<class_Object>` **collider_shape**
@@ -94,6 +100,8 @@ The colliding body's metadata. See :ref:`Object<class_Object>`.
 +----------+----------------------+
 
 The colliding body's shape.
+
+----
 
 .. _class_KinematicCollision_property_collider_shape_index:
 
@@ -105,6 +113,8 @@ The colliding body's shape.
 
 The colliding shape's index. See :ref:`CollisionObject<class_CollisionObject>`.
 
+----
+
 .. _class_KinematicCollision_property_collider_velocity:
 
 - :ref:`Vector3<class_Vector3>` **collider_velocity**
@@ -114,6 +124,8 @@ The colliding shape's index. See :ref:`CollisionObject<class_CollisionObject>`.
 +----------+-------------------------+
 
 The colliding object's velocity.
+
+----
 
 .. _class_KinematicCollision_property_local_shape:
 
@@ -125,6 +137,8 @@ The colliding object's velocity.
 
 The moving object's colliding shape.
 
+----
+
 .. _class_KinematicCollision_property_normal:
 
 - :ref:`Vector3<class_Vector3>` **normal**
@@ -134,6 +148,8 @@ The moving object's colliding shape.
 +----------+--------------+
 
 The colliding body's shape's normal at the point of collision.
+
+----
 
 .. _class_KinematicCollision_property_position:
 
@@ -145,6 +161,8 @@ The colliding body's shape's normal at the point of collision.
 
 The point of collision.
 
+----
+
 .. _class_KinematicCollision_property_remainder:
 
 - :ref:`Vector3<class_Vector3>` **remainder**
@@ -154,6 +172,8 @@ The point of collision.
 +----------+-----------------+
 
 The moving object's remaining movement vector.
+
+----
 
 .. _class_KinematicCollision_property_travel:
 

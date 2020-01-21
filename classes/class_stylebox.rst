@@ -78,6 +78,8 @@ It is up to the code using this style box to decide what these contents are: for
 
 :ref:`get_margin<class_StyleBox_method_get_margin>` should be used to fetch this value as consumer instead of reading these properties directly. This is because it correctly respects negative values and the fallback mentioned above.
 
+----
+
 .. _class_StyleBox_property_content_margin_left:
 
 - :ref:`float<class_float>` **content_margin_left**
@@ -92,6 +94,8 @@ The left margin for the contents of this style box.	Increasing this value reduce
 
 Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` for extra considerations.
 
+----
+
 .. _class_StyleBox_property_content_margin_right:
 
 - :ref:`float<class_float>` **content_margin_right**
@@ -105,6 +109,8 @@ Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bott
 The right margin for the contents of this style box. Increasing this value reduces the space available to the contents from the right.
 
 Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` for extra considerations.
+
+----
 
 .. _class_StyleBox_property_content_margin_top:
 
@@ -127,13 +133,19 @@ Method Descriptions
 
 - void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect **)** const
 
+----
+
 .. _class_StyleBox_method_get_center_size:
 
 - :ref:`Vector2<class_Vector2>` **get_center_size** **(** **)** const
 
+----
+
 .. _class_StyleBox_method_get_current_item_drawn:
 
 - :ref:`CanvasItem<class_CanvasItem>` **get_current_item_drawn** **(** **)** const
+
+----
 
 .. _class_StyleBox_method_get_margin:
 
@@ -143,17 +155,23 @@ Returns the content margin offset for the specified margin
 
 Positive values reduce size inwards, unlike :ref:`Control<class_Control>`'s margin values.
 
+----
+
 .. _class_StyleBox_method_get_minimum_size:
 
 - :ref:`Vector2<class_Vector2>` **get_minimum_size** **(** **)** const
 
 Returns the minimum size that this stylebox can be shrunk to.
 
+----
+
 .. _class_StyleBox_method_get_offset:
 
 - :ref:`Vector2<class_Vector2>` **get_offset** **(** **)** const
 
 Returns the "offset" of a stylebox, this is a helper function, like writing ``Vector2(style.get_margin(MARGIN_LEFT), style.get_margin(MARGIN_TOP))``.
+
+----
 
 .. _class_StyleBox_method_test_mask:
 

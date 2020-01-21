@@ -52,6 +52,8 @@ Property Descriptions
 
 - :ref:`Array<class_Array>` **default_input_values**
 
+----
+
 .. _class_VisualShaderNode_property_output_port_for_preview:
 
 - :ref:`int<class_int>` **output_port_for_preview**
@@ -68,6 +70,8 @@ Method Descriptions
 .. _class_VisualShaderNode_method_get_input_port_default_value:
 
 - :ref:`Variant<class_Variant>` **get_input_port_default_value** **(** :ref:`int<class_int>` port **)** const
+
+----
 
 .. _class_VisualShaderNode_method_set_input_port_default_value:
 

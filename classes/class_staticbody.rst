@@ -57,6 +57,8 @@ Property Descriptions
 
 The body bounciness.
 
+----
+
 .. _class_StaticBody_property_constant_angular_velocity:
 
 - :ref:`Vector3<class_Vector3>` **constant_angular_velocity**
@@ -68,6 +70,8 @@ The body bounciness.
 +----------+--------------------------------------+
 
 The constant angular velocity for the body. This does not rotate the body, but affects other bodies that touch it, as if it was in a state of rotation.
+
+----
 
 .. _class_StaticBody_property_constant_linear_velocity:
 
@@ -81,6 +85,8 @@ The constant angular velocity for the body. This does not rotate the body, but a
 
 The constant linear velocity for the body. This does not move the body, but affects other bodies that touch it, as if it was in a state of movement.
 
+----
+
 .. _class_StaticBody_property_friction:
 
 - :ref:`float<class_float>` **friction**
@@ -92,6 +98,8 @@ The constant linear velocity for the body. This does not move the body, but affe
 +----------+---------------------+
 
 The body friction, from 0 (frictionless) to 1 (full friction).
+
+----
 
 .. _class_StaticBody_property_physics_material_override:
 

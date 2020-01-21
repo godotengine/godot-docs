@@ -66,6 +66,8 @@ Property Descriptions
 
 If ``true``, :ref:`RigidBody<class_RigidBody>` nodes will be paused.
 
+----
+
 .. _class_VisibilityEnabler_property_pause_animations:
 
 - :ref:`bool<class_bool>` **pause_animations**

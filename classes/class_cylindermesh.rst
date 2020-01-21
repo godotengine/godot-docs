@@ -53,6 +53,8 @@ Property Descriptions
 
 Bottom radius of the cylinder. Defaults to 1.0.
 
+----
+
 .. _class_CylinderMesh_property_height:
 
 - :ref:`float<class_float>` **height**
@@ -64,6 +66,8 @@ Bottom radius of the cylinder. Defaults to 1.0.
 +----------+-------------------+
 
 Full height of the cylinder. Defaults to 2.0.
+
+----
 
 .. _class_CylinderMesh_property_radial_segments:
 
@@ -77,6 +81,8 @@ Full height of the cylinder. Defaults to 2.0.
 
 Number of radial segments on the cylinder. Defaults to 64.
 
+----
+
 .. _class_CylinderMesh_property_rings:
 
 - :ref:`int<class_int>` **rings**
@@ -88,6 +94,8 @@ Number of radial segments on the cylinder. Defaults to 64.
 +----------+------------------+
 
 Number of edge rings along the height of the cylinder. Defaults to 4.
+
+----
 
 .. _class_CylinderMesh_property_top_radius:
 

@@ -43,11 +43,15 @@ Signals
 
 Emitted when the connection to the server is closed. ``was_clean_close`` will be ``true`` if the connection was shutdown cleanly.
 
+----
+
 .. _class_WebSocketClient_signal_connection_error:
 
 - **connection_error** **(** **)**
 
 Emitted when the connection to the server fails.
+
+----
 
 .. _class_WebSocketClient_signal_connection_established:
 
@@ -55,11 +59,15 @@ Emitted when the connection to the server fails.
 
 Emitted when a connection with the server is established, ``protocol`` will contain the sub-protocol agreed with the server.
 
+----
+
 .. _class_WebSocketClient_signal_data_received:
 
 - **data_received** **(** **)**
 
 Emitted when a WebSocket message is received. Note: This signal is NOT emitted when used as high level multiplayer peer.
+
+----
 
 .. _class_WebSocketClient_signal_server_close_request:
 
@@ -105,6 +113,8 @@ Connect to the given URL requesting one of the given ``protocols`` as sub-protoc
 If ``true`` is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections to non Godot servers will not work, and :ref:`data_received<class_WebSocketClient_signal_data_received>` will not be emitted.
 
 If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.) on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(1)`` and not on this object directly (e.g. ``get_peer(1).put_packet(data)``).
+
+----
 
 .. _class_WebSocketClient_method_disconnect_from_host:
 

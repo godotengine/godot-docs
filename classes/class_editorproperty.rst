@@ -57,29 +57,43 @@ Signals
 
 - **multiple_properties_changed** **(** :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Array<class_Array>` value **)**
 
+----
+
 .. _class_EditorProperty_signal_object_id_selected:
 
 - **object_id_selected** **(** :ref:`String<class_String>` property, :ref:`int<class_int>` id **)**
+
+----
 
 .. _class_EditorProperty_signal_property_changed:
 
 - **property_changed** **(** :ref:`String<class_String>` property, :ref:`Nil<class_Nil>` value **)**
 
+----
+
 .. _class_EditorProperty_signal_property_checked:
 
 - **property_checked** **(** :ref:`String<class_String>` property, :ref:`String<class_String>` bool **)**
+
+----
 
 .. _class_EditorProperty_signal_property_keyed:
 
 - **property_keyed** **(** :ref:`String<class_String>` property **)**
 
+----
+
 .. _class_EditorProperty_signal_property_keyed_with_value:
 
 - **property_keyed_with_value** **(** :ref:`String<class_String>` property, :ref:`Nil<class_Nil>` value **)**
 
+----
+
 .. _class_EditorProperty_signal_resource_selected:
 
 - **resource_selected** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource **)**
+
+----
 
 .. _class_EditorProperty_signal_selected:
 
@@ -98,6 +112,8 @@ Property Descriptions
 | *Getter* | is_checkable()       |
 +----------+----------------------+
 
+----
+
 .. _class_EditorProperty_property_checked:
 
 - :ref:`bool<class_bool>` **checked**
@@ -107,6 +123,8 @@ Property Descriptions
 +----------+--------------------+
 | *Getter* | is_checked()       |
 +----------+--------------------+
+
+----
 
 .. _class_EditorProperty_property_draw_red:
 
@@ -118,6 +136,8 @@ Property Descriptions
 | *Getter* | is_draw_red()       |
 +----------+---------------------+
 
+----
+
 .. _class_EditorProperty_property_keying:
 
 - :ref:`bool<class_bool>` **keying**
@@ -128,6 +148,8 @@ Property Descriptions
 | *Getter* | is_keying()       |
 +----------+-------------------+
 
+----
+
 .. _class_EditorProperty_property_label:
 
 - :ref:`String<class_String>` **label**
@@ -137,6 +159,8 @@ Property Descriptions
 +----------+------------------+
 | *Getter* | get_label()      |
 +----------+------------------+
+
+----
 
 .. _class_EditorProperty_property_read_only:
 
@@ -155,17 +179,25 @@ Method Descriptions
 
 - void **emit_changed** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` field="", :ref:`bool<class_bool>` changing=false **)**
 
+----
+
 .. _class_EditorProperty_method_get_edited_object:
 
 - :ref:`Object<class_Object>` **get_edited_object** **(** **)**
+
+----
 
 .. _class_EditorProperty_method_get_edited_property:
 
 - :ref:`String<class_String>` **get_edited_property** **(** **)**
 
+----
+
 .. _class_EditorProperty_method_get_tooltip_text:
 
 - :ref:`String<class_String>` **get_tooltip_text** **(** **)** const
+
+----
 
 .. _class_EditorProperty_method_update_property:
 

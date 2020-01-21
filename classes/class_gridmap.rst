@@ -122,6 +122,8 @@ Property Descriptions
 
 If ``true``, grid items are centered on the X axis.
 
+----
+
 .. _class_GridMap_property_cell_center_y:
 
 - :ref:`bool<class_bool>` **cell_center_y**
@@ -133,6 +135,8 @@ If ``true``, grid items are centered on the X axis.
 +----------+---------------------+
 
 If ``true``, grid items are centered on the Y axis.
+
+----
 
 .. _class_GridMap_property_cell_center_z:
 
@@ -146,6 +150,8 @@ If ``true``, grid items are centered on the Y axis.
 
 If ``true``, grid items are centered on the Z axis.
 
+----
+
 .. _class_GridMap_property_cell_octant_size:
 
 - :ref:`int<class_int>` **cell_octant_size**
@@ -158,6 +164,8 @@ If ``true``, grid items are centered on the Z axis.
 
 The size of each octant measured in number of cells. This applies to all three axis.
 
+----
+
 .. _class_GridMap_property_cell_scale:
 
 - :ref:`float<class_float>` **cell_scale**
@@ -167,6 +175,8 @@ The size of each octant measured in number of cells. This applies to all three a
 +----------+-----------------------+
 | *Getter* | get_cell_scale()      |
 +----------+-----------------------+
+
+----
 
 .. _class_GridMap_property_cell_size:
 
@@ -180,6 +190,8 @@ The size of each octant measured in number of cells. This applies to all three a
 
 The dimensions of the grid's cells.
 
+----
+
 .. _class_GridMap_property_collision_layer:
 
 - :ref:`int<class_int>` **collision_layer**
@@ -190,6 +202,8 @@ The dimensions of the grid's cells.
 | *Getter* | get_collision_layer()      |
 +----------+----------------------------+
 
+----
+
 .. _class_GridMap_property_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
@@ -199,6 +213,8 @@ The dimensions of the grid's cells.
 +----------+---------------------------+
 | *Getter* | get_collision_mask()      |
 +----------+---------------------------+
+
+----
 
 .. _class_GridMap_property_mesh_library:
 
@@ -211,6 +227,8 @@ The dimensions of the grid's cells.
 +----------+-------------------------+
 
 The assigned :ref:`MeshLibrary<class_MeshLibrary>`.
+
+----
 
 .. _class_GridMap_property_theme:
 
@@ -233,17 +251,25 @@ Method Descriptions
 
 Clear all cells.
 
+----
+
 .. _class_GridMap_method_clear_baked_meshes:
 
 - void **clear_baked_meshes** **(** **)**
+
+----
 
 .. _class_GridMap_method_get_bake_mesh_instance:
 
 - :ref:`RID<class_RID>` **get_bake_mesh_instance** **(** :ref:`int<class_int>` idx **)**
 
+----
+
 .. _class_GridMap_method_get_bake_meshes:
 
 - :ref:`Array<class_Array>` **get_bake_meshes** **(** **)**
+
+----
 
 .. _class_GridMap_method_get_cell_item:
 
@@ -251,19 +277,27 @@ Clear all cells.
 
 The :ref:`MeshLibrary<class_MeshLibrary>` item index located at the grid-based X, Y and Z coordinates. If the cell is empty, :ref:`INVALID_CELL_ITEM<class_GridMap_constant_INVALID_CELL_ITEM>` will be returned.
 
+----
+
 .. _class_GridMap_method_get_cell_item_orientation:
 
 - :ref:`int<class_int>` **get_cell_item_orientation** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const
 
 The orientation of the cell at the grid-based X, Y and Z coordinates. -1 is returned if the cell is empty.
 
+----
+
 .. _class_GridMap_method_get_collision_layer_bit:
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
+----
+
 .. _class_GridMap_method_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+
+----
 
 .. _class_GridMap_method_get_meshes:
 
@@ -271,23 +305,33 @@ The orientation of the cell at the grid-based X, Y and Z coordinates. -1 is retu
 
 Array of :ref:`Transform<class_Transform>` and :ref:`Mesh<class_Mesh>` references corresponding to the non empty cells in the grid. The transforms are specified in world space.
 
+----
+
 .. _class_GridMap_method_get_used_cells:
 
 - :ref:`Array<class_Array>` **get_used_cells** **(** **)** const
 
 Array of :ref:`Vector3<class_Vector3>` with the non empty cell coordinates in the grid map.
 
+----
+
 .. _class_GridMap_method_make_baked_meshes:
 
 - void **make_baked_meshes** **(** :ref:`bool<class_bool>` gen_lightmap_uv=false, :ref:`float<class_float>` lightmap_uv_texel_size=0.1 **)**
+
+----
 
 .. _class_GridMap_method_map_to_world:
 
 - :ref:`Vector3<class_Vector3>` **map_to_world** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const
 
+----
+
 .. _class_GridMap_method_resource_changed:
 
 - void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
+
+----
 
 .. _class_GridMap_method_set_cell_item:
 
@@ -299,17 +343,25 @@ A negative item index will clear the cell.
 
 Optionally, the item's orientation can be passed.
 
+----
+
 .. _class_GridMap_method_set_clip:
 
 - void **set_clip** **(** :ref:`bool<class_bool>` enabled, :ref:`bool<class_bool>` clipabove=true, :ref:`int<class_int>` floor=0, Vector3.Axis axis=0 **)**
+
+----
 
 .. _class_GridMap_method_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
+----
+
 .. _class_GridMap_method_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+
+----
 
 .. _class_GridMap_method_world_to_map:
 

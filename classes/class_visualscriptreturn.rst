@@ -57,6 +57,8 @@ Property Descriptions
 
 If ``true``, the ``return`` input port is available.
 
+----
+
 .. _class_VisualScriptReturn_property_return_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **return_type**

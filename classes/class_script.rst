@@ -84,11 +84,15 @@ Method Descriptions
 
 Returns ``true`` if the script can be instanced.
 
+----
+
 .. _class_Script_method_get_base_script:
 
 - :ref:`Script<class_Script>` **get_base_script** **(** **)** const
 
 Returns the script directly inherited by this script.
+
+----
 
 .. _class_Script_method_get_instance_base_type:
 
@@ -96,11 +100,15 @@ Returns the script directly inherited by this script.
 
 Returns the script's base type.
 
+----
+
 .. _class_Script_method_has_script_signal:
 
 - :ref:`bool<class_bool>` **has_script_signal** **(** :ref:`String<class_String>` signal_name **)** const
 
 Returns ``true`` if the script, or a base class, defines a signal with the given name.
+
+----
 
 .. _class_Script_method_has_source_code:
 
@@ -108,17 +116,23 @@ Returns ``true`` if the script, or a base class, defines a signal with the given
 
 Returns ``true`` if the script contains non-empty source code.
 
+----
+
 .. _class_Script_method_instance_has:
 
 - :ref:`bool<class_bool>` **instance_has** **(** :ref:`Object<class_Object>` base_object **)** const
 
 Returns ``true`` if ``base_object`` is an instance of this script.
 
+----
+
 .. _class_Script_method_is_tool:
 
 - :ref:`bool<class_bool>` **is_tool** **(** **)** const
 
 Returns ``true`` if the script is a tool script. A tool script can run in the editor.
+
+----
 
 .. _class_Script_method_reload:
 

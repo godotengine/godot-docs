@@ -49,6 +49,8 @@ Property Descriptions
 
 Size of the generated plane. Defaults to (2.0, 2.0).
 
+----
+
 .. _class_PlaneMesh_property_subdivide_depth:
 
 - :ref:`int<class_int>` **subdivide_depth**
@@ -60,6 +62,8 @@ Size of the generated plane. Defaults to (2.0, 2.0).
 +----------+----------------------------+
 
 Number of subdivision along the Z axis. Defaults to 0.
+
+----
 
 .. _class_PlaneMesh_property_subdivide_width:
 

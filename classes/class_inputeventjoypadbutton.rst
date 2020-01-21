@@ -54,6 +54,8 @@ Property Descriptions
 
 Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope<class_@GlobalScope>`.
 
+----
+
 .. _class_InputEventJoypadButton_property_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
@@ -65,6 +67,8 @@ Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope
 +----------+--------------------+
 
 If ``true``, the button's state is pressed. If ``false``, the button's state is released.
+
+----
 
 .. _class_InputEventJoypadButton_property_pressure:
 

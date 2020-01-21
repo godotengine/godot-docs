@@ -52,6 +52,8 @@ enum **Source**:
 
 - **SOURCE_2D_NORMAL** = **3**
 
+----
+
 .. _enum_VisualShaderNodeTexture_TextureType:
 
 .. _class_VisualShaderNodeTexture_constant_TYPE_DATA:
@@ -81,6 +83,8 @@ Property Descriptions
 | *Getter* | get_source()      |
 +----------+-------------------+
 
+----
+
 .. _class_VisualShaderNodeTexture_property_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
@@ -90,6 +94,8 @@ Property Descriptions
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+----
 
 .. _class_VisualShaderNodeTexture_property_texture_type:
 

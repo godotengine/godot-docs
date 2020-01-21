@@ -54,6 +54,8 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
+----
+
 .. _class_SpotLight_property_spot_angle_attenuation:
 
 - :ref:`float<class_float>` **spot_angle_attenuation**
@@ -64,6 +66,8 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
+----
+
 .. _class_SpotLight_property_spot_attenuation:
 
 - :ref:`float<class_float>` **spot_attenuation**
@@ -73,6 +77,8 @@ Property Descriptions
 +----------+------------------+
 | *Getter* | get_param()      |
 +----------+------------------+
+
+----
 
 .. _class_SpotLight_property_spot_range:
 

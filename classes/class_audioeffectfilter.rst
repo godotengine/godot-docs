@@ -76,6 +76,8 @@ Property Descriptions
 
 Threshold frequency for the filter.
 
+----
+
 .. _class_AudioEffectFilter_property_db:
 
 - :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db**
@@ -85,6 +87,8 @@ Threshold frequency for the filter.
 +----------+---------------+
 | *Getter* | get_db()      |
 +----------+---------------+
+
+----
 
 .. _class_AudioEffectFilter_property_gain:
 
@@ -97,6 +101,8 @@ Threshold frequency for the filter.
 +----------+-----------------+
 
 Gain amount of the frequencies after the filter.
+
+----
 
 .. _class_AudioEffectFilter_property_resonance:
 

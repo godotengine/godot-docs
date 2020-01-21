@@ -85,6 +85,8 @@ enum **PrimitiveType**:
 
 - **PRIMITIVE_TRIANGLE_FAN** = **6** --- Render array as triangle fans.
 
+----
+
 .. _enum_Mesh_BlendShapeMode:
 
 .. _class_Mesh_constant_BLEND_SHAPE_MODE_NORMALIZED:
@@ -96,6 +98,8 @@ enum **BlendShapeMode**:
 - **BLEND_SHAPE_MODE_NORMALIZED** = **0**
 
 - **BLEND_SHAPE_MODE_RELATIVE** = **1**
+
+----
 
 .. _enum_Mesh_ArrayFormat:
 
@@ -189,6 +193,8 @@ enum **ArrayFormat**:
 
 - **ARRAY_COMPRESS_DEFAULT** = **97280**
 
+----
+
 .. _enum_Mesh_ArrayType:
 
 .. _class_Mesh_constant_ARRAY_VERTEX:
@@ -260,11 +266,15 @@ Method Descriptions
 
 Calculate a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` from the mesh.
 
+----
+
 .. _class_Mesh_method_create_outline:
 
 - :ref:`Mesh<class_Mesh>` **create_outline** **(** :ref:`float<class_float>` margin **)** const
 
 Calculate an outline mesh at a defined offset (margin) from the original mesh. Note: Typically returns the vertices in reverse order (e.g. clockwise to anti-clockwise).
+
+----
 
 .. _class_Mesh_method_create_trimesh_shape:
 
@@ -272,11 +282,15 @@ Calculate an outline mesh at a defined offset (margin) from the original mesh. N
 
 Calculate a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` from the mesh.
 
+----
+
 .. _class_Mesh_method_generate_triangle_mesh:
 
 - :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** const
 
 Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh.
+
+----
 
 .. _class_Mesh_method_get_faces:
 
@@ -284,11 +298,15 @@ Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh.
 
 Returns all the vertices that make up the faces of the mesh. Each three vertices represent one triangle.
 
+----
+
 .. _class_Mesh_method_get_surface_count:
 
 - :ref:`int<class_int>` **get_surface_count** **(** **)** const
 
 Returns the amount of surfaces that the ``Mesh`` holds.
+
+----
 
 .. _class_Mesh_method_surface_get_arrays:
 
@@ -296,11 +314,15 @@ Returns the amount of surfaces that the ``Mesh`` holds.
 
 Returns the arrays for the vertices, normals, uvs, etc. that make up the requested surface (see :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
 
+----
+
 .. _class_Mesh_method_surface_get_blend_shape_arrays:
 
 - :ref:`Array<class_Array>` **surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` surf_idx **)** const
 
 Returns the blend shape arrays for the requested surface.
+
+----
 
 .. _class_Mesh_method_surface_get_material:
 

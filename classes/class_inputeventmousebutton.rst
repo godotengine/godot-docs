@@ -56,6 +56,8 @@ Property Descriptions
 
 Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
+----
+
 .. _class_InputEventMouseButton_property_doubleclick:
 
 - :ref:`bool<class_bool>` **doubleclick**
@@ -68,6 +70,8 @@ Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in 
 
 If ``true``, the mouse button's state is a double-click.
 
+----
+
 .. _class_InputEventMouseButton_property_factor:
 
 - :ref:`float<class_float>` **factor**
@@ -79,6 +83,8 @@ If ``true``, the mouse button's state is a double-click.
 +----------+-------------------+
 
 Magnitude. Amount (or delta) of the event. Used for scroll events, indicates scroll amount (vertically or horizontally). Only supported on some platforms, sensitivity varies by platform. May be 0 if not supported.
+
+----
 
 .. _class_InputEventMouseButton_property_pressed:
 
