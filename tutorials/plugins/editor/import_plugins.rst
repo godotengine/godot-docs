@@ -78,8 +78,8 @@ The EditorImportPlugin class
 ----------------------------
 
 The main character of the show is the
-:ref:`EditorImportPlugin class <class_EditorImportPlugin>`. It is responsible to
-implement the methods that are called by Godot when it needs to know how to deal
+:ref:`EditorImportPlugin class <class_EditorImportPlugin>`. It is responsible for
+implementing the methods that are called by Godot when it needs to know how to deal
 with files.
 
 Let's begin to code our plugin, one method at time:
