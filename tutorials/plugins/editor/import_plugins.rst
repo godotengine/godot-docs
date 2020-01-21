@@ -3,6 +3,10 @@
 Import plugins
 ==============
 
+.. note:: This tutorial assumes you already know how to make generic plugins. If
+          in doubt, refer to the :ref:`doc_making_plugins` page. This also
+          assumes you are acquainted with Godot's import system.
+
 Introduction
 ------------
 
