@@ -283,4 +283,4 @@ Configure VS2019 for Debugging
   - Set the ```Mono Debug Port``` to the port in Godot --> Project --> Project Settings --> Mono --> Debugger Agent
     - Also select ```Wait for Debugger``` in the Godot Mono options.  `This Godot Addon <https://godotengine.org/asset-library/asset/435>`_ may be helpful.
 5. Run the game in Godot.  It should hang at the Godot splash screen while it waits for your debugger to attach.
-6. In VS2019, open your project and choose Extensions -->Mono --> Attach to mono Debugger.
+6. In VS2019, open your project and choose Extensions -->Mono --> Attach to Mono Debugger.
