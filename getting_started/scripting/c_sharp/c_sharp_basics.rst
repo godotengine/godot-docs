@@ -273,6 +273,7 @@ Profiling your C# code
 
 Configure VS2019 for Debugging
 -------------------------------
+
 1. Install VS2019 with ```.NET desktop development``` and ```Desktop development with C++``` workloads installed.
 2.  **Ensure that you do not have ```Xamarin``` installed** (do not choose ```Mobile development with .NET``` workload.  Xamarin changes the DLLs used by MonoDebugger, which breaks debugging.
 3. Install the `VSMonoDebugger extension <https://marketplace.visualstudio.com/items?itemName=GordianDotNet.VSMonoDebugger0d62>`_
@@ -283,4 +284,3 @@ Configure VS2019 for Debugging
     - Also select ```Wait for Debugger``` in the Godot Mono options.  `This Godot Addon <https://godotengine.org/asset-library/asset/435>`_ may be helpful.
 5. Run the game in Godot.  It should hang at the Godot splash screen while it waits for your debugger to attach.
 6. In VS2019, open your project and choose Extensions -->Mono --> Attach to mono Debugger.
-
