@@ -363,7 +363,7 @@ To import a platform variant, you need to save it with the feature tag before
 the extension, and then push the tag to the ``r_platform_variants`` array so the
 editor can know that you did.
 
-For an example, let's say we save a different material for mobile platform. We
+For example, let's say we save a different material for mobile platform. We
 would need to do something like the following:
 
 ::
