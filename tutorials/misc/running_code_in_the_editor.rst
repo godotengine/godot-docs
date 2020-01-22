@@ -14,6 +14,16 @@ You can use it for doing many things, but it is mostly useful in level design fo
 - If you have jumppads with varying jump heights, you can draw the maximum jump height a player would reach if it jumped on one, also making level design easier.
 - If your player doesn't use a sprite, but draws itself using code, you can make that drawing code execute in the editor to see your player.
 
+.. DANGER::
+
+    ``tool`` scripts run inside the editor, and let you access the scene tree
+    of the currently edited scene. This is a powerful feature which also comes
+    with caveats, as the editor does not include protections for potential
+    misuse of ``tool`` scripts.
+    Be **extremely** cautious when manipulating the scene tree, especially via
+    :ref:`Node.queue_free<class_Node_method_queue_free>`, as it can cause
+    crashes if you free a node while the editor runs logic involving it.
+
 How to use it
 -------------
 
