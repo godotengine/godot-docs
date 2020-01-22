@@ -81,8 +81,8 @@ piece.
 When you duplicate nodes and the next piece has a similar shape, you can edit
 the previous polygon instead of drawing a new one.
 
-After moving the polygon, remember to update the UV by selecting Edit -> Polygon
--> UV” in the Polygon 2D UV Editor.
+After moving the polygon, remember to update the UV by selecting Edit -> "Polygon
+-> UV" in the Polygon 2D UV Editor.
 
 .. image:: img/skel2d5.png
 
@@ -228,7 +228,7 @@ fine-grained control over where triangles go. Experiment by yourself until you
 get the results you like.
 
 **Note:** Don't forget that your newly added internal vertices also need weight
- painting! Go to the *Bones* section again to assign them to the right bones.
+painting! Go to the *Bones* section again to assign them to the right bones.
 
 Once you are all set, you will get much better results:
 
