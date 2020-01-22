@@ -361,8 +361,8 @@ On Linux:
 
 .. code-block:: none
 
-    gcc -std=c11 -fPIC -c -I../../godot_headers simple.c -o simple.os
-    gcc -shared simple.os -o ../bin/libsimple.so
+    gcc -std=c11 -fPIC -c -I../../godot_headers simple.c -o simple.o
+    gcc -rdynamic -shared simple.o -o ../bin/libsimple.so
 
 On macOS:
 
