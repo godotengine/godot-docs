@@ -53,6 +53,10 @@ Property Descriptions
 | *Getter* | get_next_pass()      |
 +----------+----------------------+
 
+Sets the ``Material`` to be used for the next pass. This renders the object again using a different material.
+
+**Note:** only applies to :ref:`SpatialMaterial<class_SpatialMaterial>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
+
 ----
 
 .. _class_Material_property_render_priority:
@@ -66,4 +70,8 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | get_render_priority()      |
 +-----------+----------------------------+
+
+Sets the render priority for transparent objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects.
+
+**Note:** this only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are sorted based on depth, while transparent objects are sorted from back to front (subject to priority).
 

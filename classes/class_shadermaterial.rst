@@ -89,5 +89,5 @@ Returns the default value of the material property with given ``name``.
 
 - void **set_shader_param** **(** :ref:`String<class_String>` param, :ref:`Variant<class_Variant>` value **)**
 
-Changes the value set for this material of a uniform in the shader.
+Changes the value set for this material of a uniform in the shader. **Note:** ``param`` must match the name of the uniform in the code exactly.
 

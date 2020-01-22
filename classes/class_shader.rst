@@ -18,12 +18,14 @@ A custom shader program.
 Description
 -----------
 
-This class allows you to define a custom shader program that can be used for various materials to render objects.
+This class allows you to define a custom shader program that can be used by a :ref:`ShaderMaterial<class_ShaderMaterial>`. Shaders allow you to write your own custom behavior for rendering objects or updating particle information. For a detailed explanation and usage, please see the tutorials linked below.
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/shading/index`
+
+- :doc:`../tutorials/shading/your_first_shader/what_are_shaders`
 
 Properties
 ----------
@@ -58,11 +60,11 @@ Enumerations
 
 enum **Mode**:
 
-- **MODE_SPATIAL** = **0**
+- **MODE_SPATIAL** = **0** --- Mode used to draw all 3D objects.
 
-- **MODE_CANVAS_ITEM** = **1**
+- **MODE_CANVAS_ITEM** = **1** --- Mode used to draw all 2D objects.
 
-- **MODE_PARTICLES** = **2**
+- **MODE_PARTICLES** = **2** --- Mode used to calculate particle information on a per-particle basis. Not used for drawing.
 
 Property Descriptions
 ---------------------
@@ -79,12 +81,18 @@ Property Descriptions
 | *Getter*  | get_code()      |
 +-----------+-----------------+
 
+Returns the shader's code as the user has written it, not the full generated code used internally.
+
 Method Descriptions
 -------------------
 
 .. _class_Shader_method_get_default_texture_param:
 
 - :ref:`Texture<class_Texture>` **get_default_texture_param** **(** :ref:`String<class_String>` param **)** const
+
+Returns the texture that is set as default for the specified parameter.
+
+**Note:** ``param`` must match the name of the uniform in the code exactly.
 
 ----
 
@@ -100,9 +108,17 @@ Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shad
 
 - :ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_String>` name **)** const
 
+Returns ``true`` if the shader has this param defined as a uniform in its code.
+
+**Note:** ``param`` must match the name of the uniform in the code exactly.
+
 ----
 
 .. _class_Shader_method_set_default_texture_param:
 
 - void **set_default_texture_param** **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)**
+
+Sets the default texture to be used with a texture uniform. The default is used if a texture is not set in the :ref:`ShaderMaterial<class_ShaderMaterial>`.
+
+**Note:** ``param`` must match the name of the uniform in the code exactly.
 

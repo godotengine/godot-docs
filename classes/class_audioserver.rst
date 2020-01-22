@@ -29,8 +29,6 @@ Properties
 +-----------------------------+------------------------------------------------------------------------+---------------+
 | :ref:`int<class_int>`       | :ref:`bus_count<class_AudioServer_property_bus_count>`                 | ``1``         |
 +-----------------------------+------------------------------------------------------------------------+---------------+
-| :ref:`String<class_String>` | :ref:`capture_device<class_AudioServer_property_capture_device>`       | ``""``        |
-+-----------------------------+------------------------------------------------------------------------+---------------+
 | :ref:`String<class_String>` | :ref:`device<class_AudioServer_property_device>`                       | ``"Default"`` |
 +-----------------------------+------------------------------------------------------------------------+---------------+
 | :ref:`float<class_float>`   | :ref:`global_rate_scale<class_AudioServer_property_global_rate_scale>` | ``1.0``       |
@@ -44,11 +42,11 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`add_bus_effect<class_AudioServer_method_add_bus_effect>` **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_AudioEffect>` effect, :ref:`int<class_int>` at_position=-1 **)**  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                           | :ref:`capture_get_device<class_AudioServer_method_capture_get_device>` **(** **)**                                                                                                            |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                             | :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>` **(** **)**                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`                 | :ref:`capture_start<class_AudioServer_method_capture_start>` **(** **)**                                                                                                                      |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`                 | :ref:`capture_stop<class_AudioServer_method_capture_stop>` **(** **)**                                                                                                                        |
+| void                                                  | :ref:`capture_set_device<class_AudioServer_method_capture_set_device>` **(** :ref:`String<class_String>` name **)**                                                                           |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioBusLayout<class_AudioBusLayout>`           | :ref:`generate_bus_layout<class_AudioServer_method_generate_bus_layout>` **(** **)** const                                                                                                    |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,12 +69,6 @@ Methods
 | :ref:`String<class_String>`                           | :ref:`get_bus_send<class_AudioServer_method_get_bus_send>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                                    |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                             | :ref:`get_bus_volume_db<class_AudioServer_method_get_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                          |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`               | :ref:`get_capture_buffer<class_AudioServer_method_get_capture_buffer>` **(** **)**                                                                                                            |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                 | :ref:`get_capture_position<class_AudioServer_method_get_capture_position>` **(** **)**                                                                                                        |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                 | :ref:`get_capture_size<class_AudioServer_method_get_capture_size>` **(** **)**                                                                                                                |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                             | :ref:`get_device_list<class_AudioServer_method_get_device_list>` **(** **)**                                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -130,18 +122,6 @@ Methods
 Signals
 -------
 
-.. _class_AudioServer_signal_audio_mix_callback:
-
-- **audio_mix_callback** **(** **)**
-
-----
-
-.. _class_AudioServer_signal_audio_update_callback:
-
-- **audio_update_callback** **(** **)**
-
-----
-
 .. _class_AudioServer_signal_bus_layout_changed:
 
 - **bus_layout_changed** **(** **)**
@@ -187,22 +167,6 @@ Property Descriptions
 +-----------+----------------------+
 
 Number of available audio buses.
-
-----
-
-.. _class_AudioServer_property_capture_device:
-
-- :ref:`String<class_String>` **capture_device**
-
-+-----------+---------------------------+
-| *Default* | ``""``                    |
-+-----------+---------------------------+
-| *Setter*  | capture_set_device(value) |
-+-----------+---------------------------+
-| *Getter*  | capture_get_device()      |
-+-----------+---------------------------+
-
-Name of the current device for audio input (see :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>`).
 
 ----
 
@@ -255,6 +219,14 @@ Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at `
 
 ----
 
+.. _class_AudioServer_method_capture_get_device:
+
+- :ref:`String<class_String>` **capture_get_device** **(** **)**
+
+Name of the current device for audio input (see :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>`).
+
+----
+
 .. _class_AudioServer_method_capture_get_device_list:
 
 - :ref:`Array<class_Array>` **capture_get_device_list** **(** **)**
@@ -263,19 +235,9 @@ Returns the names of all audio input devices detected on the system.
 
 ----
 
-.. _class_AudioServer_method_capture_start:
+.. _class_AudioServer_method_capture_set_device:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **capture_start** **(** **)**
-
-Attempts to start recording from the audio driver's capture device. On success, the return value is :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
-
-----
-
-.. _class_AudioServer_method_capture_stop:
-
-- :ref:`Error<enum_@GlobalScope_Error>` **capture_stop** **(** **)**
-
-Attempts to stop recording from the audio driver's capture device. On success, the return value is :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
+- void **capture_set_device** **(** :ref:`String<class_String>` name **)**
 
 ----
 
@@ -365,35 +327,11 @@ Returns the volume of the bus at index ``bus_idx`` in dB.
 
 ----
 
-.. _class_AudioServer_method_get_capture_buffer:
-
-- :ref:`PoolIntArray<class_PoolIntArray>` **get_capture_buffer** **(** **)**
-
-Returns an :ref:`PoolIntArray<class_PoolIntArray>` containing audio frames from the capture device.
-
-----
-
-.. _class_AudioServer_method_get_capture_position:
-
-- :ref:`int<class_int>` **get_capture_position** **(** **)**
-
-Returns the write position of the capture device buffer.
-
-----
-
-.. _class_AudioServer_method_get_capture_size:
-
-- :ref:`int<class_int>` **get_capture_size** **(** **)**
-
-Returns the size of the capture device buffer.
-
-----
-
 .. _class_AudioServer_method_get_device_list:
 
 - :ref:`Array<class_Array>` **get_device_list** **(** **)**
 
-Returns the names of all audio output devices detected on the system.
+Returns the names of all audio devices detected on the system.
 
 ----
 

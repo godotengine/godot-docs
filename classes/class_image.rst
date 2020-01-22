@@ -662,7 +662,7 @@ Returns the image's size (width and height).
 
 - :ref:`Rect2<class_Rect2>` **get_used_rect** **(** **)** const
 
-Returns a :ref:`Rect2<class_Rect2>` enclosing the visible portion of the image.
+Returns a :ref:`Rect2<class_Rect2>` enclosing the visible portion of the image, considering each pixel with a non-zero alpha channel as visible.
 
 ----
 
