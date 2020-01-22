@@ -140,6 +140,96 @@ regular code blocks.
         sprite.get_scale(), Vector2(2.0, 2.0), 0.3,
         Tween.TRANS_QUAD, Tween.EASE_OUT)
 
+Exceptions to this rule are arrays, dictionaries, and enums. Use a single
+indentation level to distinguish continuation lines:
+
+**Good**:
+
+::
+
+    var party = [
+        "Godot",
+        "Godette",
+        "Steve",
+    ]
+
+    var character_dir = {
+        "Name": "Bob",
+        "Age": 27,
+        "Job": "Mechanic",
+    }
+
+    enum Tiles {
+        TILE_BRICK,
+        TILE_FLOOR,
+        TILE_SPIKE,
+        TILE_TELEPORT,
+    }
+
+**Bad**:
+
+::
+
+    var party = [
+            "Godot",
+            "Godette",
+            "Steve",
+    ]
+
+    var character_dir = {
+            "Name": "Bob",
+            "Age": 27,
+            "Job": "Mechanic",
+    }
+
+    enum Tiles {
+            TILE_BRICK,
+            TILE_FLOOR,
+            TILE_SPIKE,
+            TILE_TELEPORT,
+    }
+
+Trailing comma
+~~~~~~~~~~~~~~
+
+Use a trailing comma on the last line in arrays, dictionaries, and enums. This
+results in easier refactoring and better diffs in version control as the last
+line doesn't need to be modified when adding new elements.
+
+**Good**:
+
+::
+
+    enum Tiles {
+        TILE_BRICK,
+        TILE_FLOOR,
+        TILE_SPIKE,
+        TILE_TELEPORT,
+    }
+
+**Bad**:
+
+::
+
+    enum Tiles {
+        TILE_BRICK,
+        TILE_FLOOR,
+        TILE_SPIKE,
+        TILE_TELEPORT
+    }
+
+Trailing commas are unnecessary in single-line lists, so don't add them in this case.
+
+**Good**:
+
+::
+    enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
+
+**Bad**:
+
+::
+    enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT,}
+
 Blank lines
 ~~~~~~~~~~~
 
