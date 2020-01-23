@@ -223,11 +223,13 @@ Trailing commas are unnecessary in single-line lists, so don't add them in this 
 **Good**:
 
 ::
+
     enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
 
 **Bad**:
 
 ::
+
     enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT,}
 
 Blank lines
