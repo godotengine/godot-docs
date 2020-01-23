@@ -188,12 +188,12 @@ Then you can use it like this:
         var p2 = Chat.new()
         add_child(p1)
         add_child(p2)
-        get_tree().create_timer(1), "timeout")
-        p1.send_message("Hi from %s" % p1.path())
+        yield(get_tree().create_timer(1), "timeout")
+        p1.send_message("Hi from %s" % p1.get_path())
 
         # Wait a second and send message from P2
         yield(get_tree().create_timer(1), "timeout")
-        p2.send_message("Hi from %s" % p2.path())
+        p2.send_message("Hi from %s" % p2.get_path())
 
 This will print something similar to this:
 
