@@ -93,7 +93,7 @@ Override this method to commit gizmo handles. Called for this plugin's active gi
 
 - :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` **create_gizmo** **(** :ref:`Spatial<class_Spatial>` spatial **)** virtual
 
-Override this method to return a custom :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` for the spatial nodes of your choice, return ``null`` for the rest of nodes. (See also :ref:`has_gizmo<class_EditorSpatialGizmoPlugin_method_has_gizmo>`)
+Override this method to return a custom :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` for the spatial nodes of your choice, return ``null`` for the rest of nodes. See also :ref:`has_gizmo<class_EditorSpatialGizmoPlugin_method_has_gizmo>`.
 
 ----
 

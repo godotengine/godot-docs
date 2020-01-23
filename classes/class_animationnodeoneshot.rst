@@ -13,6 +13,11 @@ AnimationNodeOneShot
 
 
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
+
 Properties
 ----------
 

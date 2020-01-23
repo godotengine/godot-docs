@@ -16,7 +16,7 @@ An anchor point in AR space.
 Description
 -----------
 
-The ARVR Anchor point is a spatial node that maps a real world location identified by the AR platform to a position within the game world. For example, as long as plane detection in ARKit is on, ARKit will identify and update the position of planes (tables, floors, etc) and create anchors for them.
+The ``ARVRAnchor`` point is a spatial node that maps a real world location identified by the AR platform to a position within the game world. For example, as long as plane detection in ARKit is on, ARKit will identify and update the position of planes (tables, floors, etc) and create anchors for them.
 
 This node is mapped to one of the anchors through its unique ID. When you receive a signal that a new anchor is available, you should add this node to your scene for that anchor. You can predefine nodes and set the ID; the nodes will simply remain on 0,0,0 until a plane is recognized.
 
@@ -93,7 +93,7 @@ Returns ``true`` if the anchor is being tracked and ``false`` if no anchor with 
 
 - :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** const
 
-If provided by the ARVR Interface, this returns a mesh object for the anchor. For an anchor, this can be a shape related to the object being tracked or it can be a mesh that provides topology related to the anchor and can be used to create shadows/reflections on surfaces or for generating collision shapes.
+If provided by the :ref:`ARVRInterface<class_ARVRInterface>`, this returns a mesh object for the anchor. For an anchor, this can be a shape related to the object being tracked or it can be a mesh that provides topology related to the anchor and can be used to create shadows/reflections on surfaces or for generating collision shapes.
 
 ----
 

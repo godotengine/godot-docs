@@ -614,7 +614,9 @@ enum **BillboardMode**:
 
 - **BILLBOARD_FIXED_Y** = **2** --- The object's X axis will always face the camera.
 
-- **BILLBOARD_PARTICLES** = **3** --- Used for particle systems. Enables particle animation options.
+- **BILLBOARD_PARTICLES** = **3** --- Used for particle systems when assigned to :ref:`Particles<class_Particles>` and :ref:`CPUParticles<class_CPUParticles>` nodes. Enables ``particles_anim_*`` properties.
+
+The :ref:`ParticlesMaterial.anim_speed<class_ParticlesMaterial_property_anim_speed>` or :ref:`CPUParticles.anim_speed<class_CPUParticles_property_anim_speed>` should also be set to a positive value for the animation to play.
 
 ----
 
@@ -853,7 +855,7 @@ Sets the strength of the clearcoat effect. Setting to ``0`` looks the same as di
 | *Getter*  | get_feature()      |
 +-----------+--------------------+
 
-If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass to the lighting calculation resulting in an added specular blob. This makes materials appear as if they have a clear layer on them that can either by glossy or rough.
+If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass to the lighting calculation resulting in an added specular blob. This makes materials appear as if they have a clear layer on them that can be either glossy or rough.
 
 ----
 

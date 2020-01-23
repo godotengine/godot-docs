@@ -156,6 +156,8 @@ The operation that is performed on this shape. This is ignored for the first CSG
 | *Getter*  | get_snap()      |
 +-----------+-----------------+
 
+Snap makes the mesh snap to a given distance so that the faces of two meshes can be perfectly aligned. A lower value results in greater precision but may be harder to adjust.
+
 ----
 
 .. _class_CSGShape_property_use_collision:
@@ -194,6 +196,8 @@ Returns an individual bit on the collision mask.
 .. _class_CSGShape_method_get_meshes:
 
 - :ref:`Array<class_Array>` **get_meshes** **(** **)** const
+
+Returns an :ref:`Array<class_Array>` with two elements, the first is the :ref:`Transform<class_Transform>` of this node and the second is the root :ref:`Mesh<class_Mesh>` of this node. Only works when this node is the root shape.
 
 ----
 

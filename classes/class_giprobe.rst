@@ -11,7 +11,14 @@ GIProbe
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+Real-time global illumination (GI) probe.
 
+Description
+-----------
+
+``GIProbe``\ s are used to provide high-quality real-time indirect light to scenes. They precompute the effect of objects that emit light and the effect of static geometry to simulate the behavior of complex light in real-time. ``GIProbe``\ s need to be baked before using, however, once baked, dynamic objects will receive light from them. Further, lights can be fully dynamic or baked.
+
+Having ``GIProbe``\ s in a scene can be expensive, the quality of the probe can be turned down in exchange for better performance in the :ref:`ProjectSettings<class_ProjectSettings>` using :ref:`ProjectSettings.rendering/quality/voxel_cone_tracing/high_quality<class_ProjectSettings_property_rendering/quality/voxel_cone_tracing/high_quality>`.
 
 Tutorials
 ---------
@@ -69,13 +76,13 @@ Enumerations
 
 enum **Subdiv**:
 
-- **SUBDIV_64** = **0**
+- **SUBDIV_64** = **0** --- Use 64 subdivisions. This is the lowest quality setting, but the fastest. Use it if you can, but especially use it on lower-end hardware.
 
-- **SUBDIV_128** = **1**
+- **SUBDIV_128** = **1** --- Use 128 subdivisions. This is the default quality setting.
 
-- **SUBDIV_256** = **2**
+- **SUBDIV_256** = **2** --- Use 256 subdivisions.
 
-- **SUBDIV_512** = **3**
+- **SUBDIV_512** = **3** --- Use 512 subdivisions. This is the highest quality setting, but the slowest. On lower-end hardware this could cause the GPU to stall.
 
 - **SUBDIV_MAX** = **4** --- Represents the size of the :ref:`Subdiv<enum_GIProbe_Subdiv>` enum.
 
@@ -94,6 +101,10 @@ Property Descriptions
 | *Getter*  | get_bias()      |
 +-----------+-----------------+
 
+Offsets the lookup of the light contribution from the ``GIProbe``. This can be used to avoid self-shadowing, but may introduce light leaking at higher values. This and :ref:`normal_bias<class_GIProbe_property_normal_bias>` should be played around with to minimize self-shadowing and light leaking.
+
+**Note:** ``bias`` should usually be above 1.0 as that is the size of the voxels.
+
 ----
 
 .. _class_GIProbe_property_compress:
@@ -108,6 +119,8 @@ Property Descriptions
 | *Getter*  | is_compressed()     |
 +-----------+---------------------+
 
+If ``true``, the data for this ``GIProbe`` will be compressed. Compression saves space, but results in far worse visual quality.
+
 ----
 
 .. _class_GIProbe_property_data:
@@ -119,6 +132,8 @@ Property Descriptions
 +----------+-----------------------+
 | *Getter* | get_probe_data()      |
 +----------+-----------------------+
+
+The :ref:`GIProbeData<class_GIProbeData>` resource that holds the data for this ``GIProbe``.
 
 ----
 
@@ -134,6 +149,8 @@ Property Descriptions
 | *Getter*  | get_dynamic_range()      |
 +-----------+--------------------------+
 
+The maximum brightness that the ``GIProbe`` will recognize. Brightness will be scaled within this range.
+
 ----
 
 .. _class_GIProbe_property_energy:
@@ -147,6 +164,8 @@ Property Descriptions
 +-----------+-------------------+
 | *Getter*  | get_energy()      |
 +-----------+-------------------+
+
+Energy multiplier. Makes the lighting contribution from the ``GIProbe`` brighter.
 
 ----
 
@@ -162,6 +181,8 @@ Property Descriptions
 | *Getter*  | get_extents()             |
 +-----------+---------------------------+
 
+The size of the area covered by the ``GIProbe``. If you make the extents larger without increasing the subdivisions with :ref:`subdiv<class_GIProbe_property_subdiv>`, the size of each cell will increase and result in lower detailed lighting.
+
 ----
 
 .. _class_GIProbe_property_interior:
@@ -175,6 +196,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | is_interior()       |
 +-----------+---------------------+
+
+If ``true``, ignores the sky contribution when calculating lighting.
 
 ----
 
@@ -190,6 +213,8 @@ Property Descriptions
 | *Getter*  | get_normal_bias()      |
 +-----------+------------------------+
 
+Offsets the lookup into the ``GIProbe`` based on the object's normal direction. Can be used to reduce some self-shadowing artifacts.
+
 ----
 
 .. _class_GIProbe_property_propagation:
@@ -203,6 +228,8 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_propagation()      |
 +-----------+------------------------+
+
+How much light propagates through the probe internally. A higher value allows light to spread further.
 
 ----
 
@@ -218,6 +245,8 @@ Property Descriptions
 | *Getter*  | get_subdiv()      |
 +-----------+-------------------+
 
+Number of times to subdivide the grid that the ``GIProbe`` operates on. A higher number results in finer detail and thus higher visual quality, while lower numbers result in better performance.
+
 Method Descriptions
 -------------------
 
@@ -225,9 +254,13 @@ Method Descriptions
 
 - void **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
+Bakes the effect from all :ref:`GeometryInstance<class_GeometryInstance>`\ s marked with :ref:`GeometryInstance.use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` and :ref:`Light<class_Light>`\ s marked with either :ref:`Light.BAKE_INDIRECT<class_Light_constant_BAKE_INDIRECT>` or :ref:`Light.BAKE_ALL<class_Light_constant_BAKE_ALL>`. If ``create_visual_debug`` is ``true``, after baking the light, this will generate a :ref:`MultiMesh<class_MultiMesh>` that has a cube representing each solid cell with each cube colored to the cell's albedo color. This can be used to visualize the ``GIProbe``'s data and debug any issues that may be occurring.
+
 ----
 
 .. _class_GIProbe_method_debug_bake:
 
 - void **debug_bake** **(** **)**
+
+Calls :ref:`bake<class_GIProbe_method_bake>` with ``create_visual_debug`` enabled.
 

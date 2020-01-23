@@ -18,17 +18,19 @@ VisualShaderNode
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`Array<class_Array>` | :ref:`default_input_values<class_VisualShaderNode_property_default_input_values>`       | ``[ 0, Vector3( 0, 0, 0 ) ]`` |
-+---------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`int<class_int>`     | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>` | ``-1``                        |
-+---------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
++-----------------------+-----------------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>` | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>` | ``-1`` |
++-----------------------+-----------------------------------------------------------------------------------------+--------+
 
 Methods
 -------
 
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`     | :ref:`get_default_input_values<class_VisualShaderNode_method_get_default_input_values>` **(** **)** const                                                                   |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** const                                |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_default_input_values<class_VisualShaderNode_method_set_default_input_values>` **(** :ref:`Array<class_Array>` values **)**                                        |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_input_port_default_value<class_VisualShaderNode_method_set_input_port_default_value>` **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value **)** |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -39,6 +41,8 @@ Signals
 .. _class_VisualShaderNode_signal_editor_refresh_request:
 
 - **editor_refresh_request** **(** **)**
+
+Emitted when the node requests an editor refresh. Currently called only in setter of :ref:`VisualShaderNodeTexture.source<class_VisualShaderNodeTexture_property_source>`, :ref:`VisualShaderNodeTexture<class_VisualShaderNodeTexture>`, and :ref:`VisualShaderNodeCubeMap<class_VisualShaderNodeCubeMap>` (and their derivatives).
 
 Enumerations
 ------------
@@ -74,16 +78,6 @@ enum **PortType**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNode_property_default_input_values:
-
-- :ref:`Array<class_Array>` **default_input_values**
-
-+-----------+-------------------------------+
-| *Default* | ``[ 0, Vector3( 0, 0, 0 ) ]`` |
-+-----------+-------------------------------+
-
-----
-
 .. _class_VisualShaderNode_property_output_port_for_preview:
 
 - :ref:`int<class_int>` **output_port_for_preview**
@@ -96,16 +90,38 @@ Property Descriptions
 | *Getter*  | get_output_port_for_preview()      |
 +-----------+------------------------------------+
 
+Sets the output port index which will be showed for preview. If set to ``-1`` no port will be open for preview.
+
 Method Descriptions
 -------------------
+
+.. _class_VisualShaderNode_method_get_default_input_values:
+
+- :ref:`Array<class_Array>` **get_default_input_values** **(** **)** const
+
+Returns an :ref:`Array<class_Array>` containing default values for all of the input ports of the node in the form ``[index0, value0, index1, value1, ...]``.
+
+----
 
 .. _class_VisualShaderNode_method_get_input_port_default_value:
 
 - :ref:`Variant<class_Variant>` **get_input_port_default_value** **(** :ref:`int<class_int>` port **)** const
+
+Returns the default value of the input ``port``.
+
+----
+
+.. _class_VisualShaderNode_method_set_default_input_values:
+
+- void **set_default_input_values** **(** :ref:`Array<class_Array>` values **)**
+
+Sets the default input ports values using an :ref:`Array<class_Array>` of the form ``[index0, value0, index1, value1, ...]``. For example: ``[0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0)]``.
 
 ----
 
 .. _class_VisualShaderNode_method_set_input_port_default_value:
 
 - void **set_input_port_default_value** **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value **)**
+
+Sets the default value for the selected input ``port``.
 

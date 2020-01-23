@@ -125,6 +125,10 @@ The manner in which material reacts to lighting.
 | *Getter* | get_particles_anim_h_frames()      |
 +----------+------------------------------------+
 
+The number of columns in the spritesheet assigned as :ref:`Texture<class_Texture>` for a :ref:`Particles2D<class_Particles2D>` or :ref:`CPUParticles2D<class_CPUParticles2D>`.
+
+**Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
+
 ----
 
 .. _class_CanvasItemMaterial_property_particles_anim_loop:
@@ -137,6 +141,10 @@ The manner in which material reacts to lighting.
 | *Getter* | get_particles_anim_loop()      |
 +----------+--------------------------------+
 
+If ``true``, the particles animation will loop.
+
+**Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
+
 ----
 
 .. _class_CanvasItemMaterial_property_particles_anim_v_frames:
@@ -148,6 +156,10 @@ The manner in which material reacts to lighting.
 +----------+------------------------------------+
 | *Getter* | get_particles_anim_v_frames()      |
 +----------+------------------------------------+
+
+The number of rows in the spritesheet assigned as :ref:`Texture<class_Texture>` for a :ref:`Particles2D<class_Particles2D>` or :ref:`CPUParticles2D<class_CPUParticles2D>`.
+
+**Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
 
 ----
 
@@ -162,4 +174,8 @@ The manner in which material reacts to lighting.
 +-----------+--------------------------------+
 | *Getter*  | get_particles_animation()      |
 +-----------+--------------------------------+
+
+If ``true``, enable spritesheet-based animation features when assigned to :ref:`Particles2D<class_Particles2D>` and :ref:`CPUParticles2D<class_CPUParticles2D>` nodes. The :ref:`ParticlesMaterial.anim_speed<class_ParticlesMaterial_property_anim_speed>` or :ref:`CPUParticles2D.anim_speed<class_CPUParticles2D_property_anim_speed>` should also be set to a positive value for the animation to play.
+
+This property (and other ``particles_anim_*`` properties that depend on it) has no effect on other types of nodes.
 

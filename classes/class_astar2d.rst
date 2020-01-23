@@ -11,7 +11,7 @@ AStar2D
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-AStar class representation that uses 2d-vectors as edges.
+AStar class representation that uses 2D vectors as edges.
 
 Description
 -----------

@@ -11,5 +11,10 @@ VisualShaderNodeColorUniform
 
 **Inherits:** :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A :ref:`Color<class_Color>` uniform to be used within the visual shader graph.
 
+Description
+-----------
+
+Translated to ``uniform vec4`` in the shader language.
 

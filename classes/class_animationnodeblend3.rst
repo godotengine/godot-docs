@@ -26,6 +26,11 @@ This node has three inputs:
 
 - A +blend animation to blend with when the blend amount is in the ``[0.0, 1.0]`` range
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
+
 Properties
 ----------
 

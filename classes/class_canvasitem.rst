@@ -18,13 +18,13 @@ Base class of anything 2D.
 Description
 -----------
 
-Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. CanvasItem is extended by :ref:`Control<class_Control>` for anything GUI-related, and by :ref:`Node2D<class_Node2D>` for anything related to the 2D engine.
+Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. ``CanvasItem`` is extended by :ref:`Control<class_Control>` for anything GUI-related, and by :ref:`Node2D<class_Node2D>` for anything related to the 2D engine.
 
-Any CanvasItem can draw. For this, :ref:`update<class_CanvasItem_method_update>` must be called, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the CanvasItem are provided (see ``draw_*`` functions). However, they can only be used inside the :ref:`Object._notification<class_Object_method__notification>`, signal or :ref:`_draw<class_CanvasItem_method__draw>` virtual functions.
+Any ``CanvasItem`` can draw. For this, :ref:`update<class_CanvasItem_method_update>` must be called, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the ``CanvasItem`` are provided (see ``draw_*`` functions). However, they can only be used inside the :ref:`Object._notification<class_Object_method__notification>`, signal or :ref:`_draw<class_CanvasItem_method__draw>` virtual functions.
 
-Canvas items are drawn in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything. This behavior can be changed on a per-item basis.
+Canvas items are drawn in tree order. By default, children are on top of their parents so a root ``CanvasItem`` will be drawn behind everything. This behavior can be changed on a per-item basis.
 
-A CanvasItem can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode.
+A ``CanvasItem`` can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode.
 
 Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
 
@@ -160,7 +160,7 @@ Signals
 
 - **draw** **(** **)**
 
-Emitted when the CanvasItem must redraw. This can only be connected realtime, as deferred will not allow drawing.
+Emitted when the ``CanvasItem`` must redraw. This can only be connected realtime, as deferred will not allow drawing.
 
 ----
 
@@ -230,15 +230,15 @@ Constants
 
 .. _class_CanvasItem_constant_NOTIFICATION_EXIT_CANVAS:
 
-- **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- The CanvasItem's transform has changed. This notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>` or :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
+- **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- The ``CanvasItem``'s transform has changed. This notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>` or :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
 
-- **NOTIFICATION_DRAW** = **30** --- The CanvasItem is requested to draw.
+- **NOTIFICATION_DRAW** = **30** --- The ``CanvasItem`` is requested to draw.
 
-- **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- The CanvasItem's visibility has changed.
+- **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- The ``CanvasItem``'s visibility has changed.
 
-- **NOTIFICATION_ENTER_CANVAS** = **32** --- The CanvasItem has entered the canvas.
+- **NOTIFICATION_ENTER_CANVAS** = **32** --- The ``CanvasItem`` has entered the canvas.
 
-- **NOTIFICATION_EXIT_CANVAS** = **33** --- The CanvasItem has exited the canvas.
+- **NOTIFICATION_EXIT_CANVAS** = **33** --- The ``CanvasItem`` has exited the canvas.
 
 Property Descriptions
 ---------------------
@@ -366,7 +366,7 @@ Method Descriptions
 
 - void **_draw** **(** **)** virtual
 
-Called (if exists) to draw the canvas item.
+Overridable function called by the engine (if defined) to draw the canvas item.
 
 ----
 
@@ -414,6 +414,8 @@ Draws a line from a 2D point to another, with a given color and width. It can be
 
 - void **draw_mesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null, :ref:`Transform2D<class_Transform2D>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ), :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**
 
+Draws a :ref:`Mesh<class_Mesh>` in 2D, using the provided texture. See :ref:`MeshInstance2D<class_MeshInstance2D>` for related documentation.
+
 ----
 
 .. _class_CanvasItem_method_draw_multiline:
@@ -435,6 +437,8 @@ Draws multiple, parallel lines with a uniform ``width``, segment-by-segment colo
 .. _class_CanvasItem_method_draw_multimesh:
 
 - void **draw_multimesh** **(** :ref:`MultiMesh<class_MultiMesh>` multimesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**
+
+Draws a :ref:`MultiMesh<class_MultiMesh>` in 2D with the provided texture. See :ref:`MultiMeshInstance2D<class_MultiMeshInstance2D>` for related documentation.
 
 ----
 
@@ -564,7 +568,7 @@ Returns the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for 
 
 - :ref:`Transform2D<class_Transform2D>` **get_canvas_transform** **(** **)** const
 
-Gets the transform matrix of this item's canvas.
+Returns the transform matrix of this item's canvas.
 
 ----
 
@@ -572,7 +576,7 @@ Gets the transform matrix of this item's canvas.
 
 - :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** const
 
-Gets the global position of the mouse.
+Returns the global position of the mouse.
 
 ----
 
@@ -580,7 +584,7 @@ Gets the global position of the mouse.
 
 - :ref:`Transform2D<class_Transform2D>` **get_global_transform** **(** **)** const
 
-Gets the global transform matrix of this item.
+Returns the global transform matrix of this item.
 
 ----
 
@@ -588,7 +592,7 @@ Gets the global transform matrix of this item.
 
 - :ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas** **(** **)** const
 
-Gets the global transform matrix of this item in relation to the canvas.
+Returns the global transform matrix of this item in relation to the canvas.
 
 ----
 
@@ -596,7 +600,7 @@ Gets the global transform matrix of this item in relation to the canvas.
 
 - :ref:`Vector2<class_Vector2>` **get_local_mouse_position** **(** **)** const
 
-Gets the mouse position relative to this item's position.
+Returns the mouse position relative to this item's position.
 
 ----
 
@@ -604,7 +608,7 @@ Gets the mouse position relative to this item's position.
 
 - :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)** const
 
-Gets the transform matrix of this item.
+Returns the transform matrix of this item.
 
 ----
 
@@ -612,7 +616,7 @@ Gets the transform matrix of this item.
 
 - :ref:`Rect2<class_Rect2>` **get_viewport_rect** **(** **)** const
 
-Gets the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
+Returns the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
 ----
 
@@ -620,7 +624,7 @@ Gets the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
 - :ref:`Transform2D<class_Transform2D>` **get_viewport_transform** **(** **)** const
 
-Gets this item's transform in relation to the viewport.
+Returns this item's transform in relation to the viewport.
 
 ----
 
@@ -628,7 +632,7 @@ Gets this item's transform in relation to the viewport.
 
 - :ref:`World2D<class_World2D>` **get_world_2d** **(** **)** const
 
-Gets the :ref:`World2D<class_World2D>` where this item is in.
+Returns the :ref:`World2D<class_World2D>` where this item is in.
 
 ----
 
@@ -636,7 +640,7 @@ Gets the :ref:`World2D<class_World2D>` where this item is in.
 
 - void **hide** **(** **)**
 
-Hide the CanvasItem if it's currently visible.
+Hide the ``CanvasItem`` if it's currently visible.
 
 ----
 
@@ -716,7 +720,7 @@ If ``enable`` is ``true``, children will be updated with global transform data.
 
 - void **show** **(** **)**
 
-Show the CanvasItem if it's currently hidden. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
+Show the ``CanvasItem`` if it's currently hidden. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
 ----
 
@@ -724,5 +728,5 @@ Show the CanvasItem if it's currently hidden. For controls that inherit :ref:`Po
 
 - void **update** **(** **)**
 
-Queue the CanvasItem for update. :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be called on idle time to request redraw.
+Queue the ``CanvasItem`` for update. :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be called on idle time to request redraw.
 

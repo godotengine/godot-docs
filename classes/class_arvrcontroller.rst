@@ -22,6 +22,11 @@ Controllers are linked by their ID. You can create controller nodes before the c
 
 The position of the controller node is automatically updated by the :ref:`ARVRServer<class_ARVRServer>`. This makes this node ideal to add child nodes to visualize the controller.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/vr/index`
+
 Properties
 ----------
 

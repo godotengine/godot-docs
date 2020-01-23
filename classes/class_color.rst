@@ -821,11 +821,11 @@ Constructs a color from an HTML hexadecimal color string in ARGB or RGB format. 
 
 ::
 
-    # Each of the following creates the same color RGBA(178, 217, 10, 255)
-    var c1 = Color("#ffb2d90a") # ARGB format with "#"
-    var c2 = Color("ffb2d90a")  # ARGB format
-    var c3 = Color("#b2d90a")   # RGB format with "#"
-    var c4 = Color("b2d90a")    # RGB format
+    # Each of the following creates the same color RGBA(178, 217, 10, 255).
+    var c1 = Color("#ffb2d90a") # ARGB format with "#".
+    var c2 = Color("ffb2d90a") # ARGB format.
+    var c3 = Color("#b2d90a") # RGB format with "#".
+    var c4 = Color("b2d90a") # RGB format.
 
 ----
 

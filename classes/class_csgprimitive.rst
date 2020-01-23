@@ -15,6 +15,11 @@ CSGPrimitive
 
 Base class for CSG primitives.
 
+Description
+-----------
+
+Parent class for various CSG primitives. It contains code and functionality that is common between them. It cannot be used directly. Instead use one of the various classes that inherit from it.
+
 Properties
 ----------
 

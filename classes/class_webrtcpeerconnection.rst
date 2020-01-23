@@ -62,7 +62,7 @@ Signals
 
 Emitted when a new in-band channel is received, i.e. when the channel was created with ``negotiated: false`` (default).
 
-The object will be an instance of :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`. You must keep a reference of it or it will be closed automatically. See :ref:`create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>`
+The object will be an instance of :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`. You must keep a reference of it or it will be closed automatically. See :ref:`create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>`.
 
 ----
 

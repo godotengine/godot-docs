@@ -16,9 +16,9 @@ Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
 Description
 -----------
 
-Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. 
+Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
 
-New items can be created inside this :ref:`PopupMenu<class_PopupMenu>` using ``get_popup().add_item("My Item Name")``. You can also create them directly from the editor. To do so, select the MenuButton node, then in the toolbar at the top of the 2D editor, click **Items** then click **Add** in the popup. You will be able to give each items new properties.
+New items can be created inside this :ref:`PopupMenu<class_PopupMenu>` using ``get_popup().add_item("My Item Name")``. You can also create them directly from the editor. To do so, select the ``MenuButton`` node, then in the toolbar at the top of the 2D editor, click **Items** then click **Add** in the popup. You will be able to give each items new properties.
 
 Properties
 ----------
@@ -97,7 +97,7 @@ Property Descriptions
 | *Getter*  | is_switch_on_hover()       |
 +-----------+----------------------------+
 
-If ``true``, when the cursor hovers above another MenuButton within the same parent which also has ``switch_on_hover`` enabled, it will close the current MenuButton and open the other one.
+If ``true``, when the cursor hovers above another ``MenuButton`` within the same parent which also has ``switch_on_hover`` enabled, it will close the current ``MenuButton`` and open the other one.
 
 Method Descriptions
 -------------------
@@ -113,4 +113,6 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 .. _class_MenuButton_method_set_disable_shortcuts:
 
 - void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
+
+If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 

@@ -18,6 +18,8 @@ Description
 
 Capture its surroundings as a dual parabolid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
 
+The ``ReflectionProbe`` is used to create high-quality reflections at the cost of performance. It can be combined with :ref:`GIProbe<class_GIProbe>`\ s and Screen Space Reflections to achieve high quality reflections. ``ReflectionProbe``\ s render all objects within their :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`, so updating them can be quite expensive. It is best to update them once with the important static objects and then leave them.
+
 Tutorials
 ---------
 
@@ -63,9 +65,9 @@ Enumerations
 
 enum **UpdateMode**:
 
-- **UPDATE_ONCE** = **0**
+- **UPDATE_ONCE** = **0** --- Update the probe once on the next frame.
 
-- **UPDATE_ALWAYS** = **1**
+- **UPDATE_ALWAYS** = **1** --- Update the probe every frame. This is needed when you want to capture dynamic objects. However, it results in an increased render time. Use :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>` whenever possible.
 
 Property Descriptions
 ---------------------
@@ -98,6 +100,8 @@ If ``true``, enables box projection. This makes reflections look more correct in
 | *Getter*  | get_cull_mask()      |
 +-----------+----------------------+
 
+Sets the cull mask which determines what objects are drawn by this probe. Every :ref:`VisualInstance<class_VisualInstance>` with a layer included in this cull mask will be rendered by the probe. It is best to only include large objects which are likely to take up a lot of space in the reflection in order to save on rendering cost.
+
 ----
 
 .. _class_ReflectionProbe_property_enable_shadows:
@@ -128,6 +132,8 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 | *Getter*  | get_extents()          |
 +-----------+------------------------+
 
+The size of the reflection probe. The larger the extents the more space covered by the probe which will lower the perceived resolution. It is best to keep the extents only as large as you need them.
+
 ----
 
 .. _class_ReflectionProbe_property_intensity:
@@ -142,7 +148,7 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 | *Getter*  | get_intensity()      |
 +-----------+----------------------+
 
-Defines the reflection intensity.
+Defines the reflection intensity. Intensity modulates the strength of the reflection.
 
 ----
 
@@ -158,6 +164,8 @@ Defines the reflection intensity.
 | *Getter*  | get_interior_ambient()      |
 +-----------+-----------------------------+
 
+Sets the ambient light color to be used when this probe is set to :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`.
+
 ----
 
 .. _class_ReflectionProbe_property_interior_ambient_contrib:
@@ -171,6 +179,8 @@ Defines the reflection intensity.
 +-----------+------------------------------------------------+
 | *Getter*  | get_interior_ambient_probe_contribution()      |
 +-----------+------------------------------------------------+
+
+Sets the contribution value for how much the reflection affects the ambient light for this reflection probe when set to :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`. Useful so that ambient light matches the color of the room.
 
 ----
 
@@ -186,6 +196,8 @@ Defines the reflection intensity.
 | *Getter*  | get_interior_ambient_energy()      |
 +-----------+------------------------------------+
 
+Sets the energy multiplier for this reflection probe's ambient light contribution when set to :ref:`interior_enable<class_ReflectionProbe_property_interior_enable>`.
+
 ----
 
 .. _class_ReflectionProbe_property_interior_enable:
@@ -199,6 +211,8 @@ Defines the reflection intensity.
 +-----------+------------------------+
 | *Getter*  | is_set_as_interior()   |
 +-----------+------------------------+
+
+If ``true``, reflections will ignore sky contribution. Ambient lighting is then controlled by the ``interior_ambient_*`` properties.
 
 ----
 
@@ -214,6 +228,8 @@ Defines the reflection intensity.
 | *Getter*  | get_max_distance()      |
 +-----------+-------------------------+
 
+Sets the max distance away from the probe an object can be before it is culled.
+
 ----
 
 .. _class_ReflectionProbe_property_origin_offset:
@@ -228,6 +244,8 @@ Defines the reflection intensity.
 | *Getter*  | get_origin_offset()      |
 +-----------+--------------------------+
 
+Sets the origin offset to be used when this reflection probe is in box project mode.
+
 ----
 
 .. _class_ReflectionProbe_property_update_mode:
@@ -241,4 +259,6 @@ Defines the reflection intensity.
 +-----------+------------------------+
 | *Getter*  | get_update_mode()      |
 +-----------+------------------------+
+
+Sets how frequently the probe is updated. Can be :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>` or :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>`.
 

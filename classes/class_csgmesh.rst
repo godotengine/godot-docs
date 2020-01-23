@@ -40,6 +40,8 @@ Property Descriptions
 | *Getter* | get_material()      |
 +----------+---------------------+
 
+The :ref:`Material<class_Material>` used in drawing the CSG shape.
+
 ----
 
 .. _class_CSGMesh_property_mesh:
@@ -52,5 +54,5 @@ Property Descriptions
 | *Getter* | get_mesh()      |
 +----------+-----------------+
 
-The mesh resource to use as a CSG shape.
+The :ref:`Mesh<class_Mesh>` resource to use as a CSG shape.
 

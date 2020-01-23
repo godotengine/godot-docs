@@ -22,6 +22,11 @@ This class needs to be implemented to make an AR or VR platform available to God
 
 Interfaces should be written in such a way that simply enabling them will give us a working setup. You can query the available interfaces through :ref:`ARVRServer<class_ARVRServer>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/vr/index`
+
 Properties
 ----------
 
@@ -123,7 +128,7 @@ enum **Tracking_status**:
 
 - **ARVR_UNKNOWN_TRACKING** = **3** --- We don't know the status of the tracking or this interface does not provide feedback.
 
-- **ARVR_NOT_TRACKING** = **4** --- Tracking is not functional (camera not plugged in or obscured, lighthouses turned off, etc.)
+- **ARVR_NOT_TRACKING** = **4** --- Tracking is not functional (camera not plugged in or obscured, lighthouses turned off, etc.).
 
 Property Descriptions
 ---------------------

@@ -561,7 +561,7 @@ If ``true``, this ``HTTPClient`` has a response that is chunked.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
-This needs to be called in order to have any request processed. Check results with :ref:`get_status<class_HTTPClient_method_get_status>`
+This needs to be called in order to have any request processed. Check results with :ref:`get_status<class_HTTPClient_method_get_status>`.
 
 ----
 

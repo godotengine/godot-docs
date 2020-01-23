@@ -16,7 +16,9 @@ Control that provides single-line string editing.
 Description
 -----------
 
-LineEdit provides a single-line string editor, used for text fields. It features many built-in shortcuts which will always be available: (the Ctrl here maps to Command on macOS)
+LineEdit provides a single-line string editor, used for text fields.
+
+It features many built-in shortcuts which will always be available (``Ctrl`` here maps to ``Command`` on macOS):
 
 - Ctrl + C: Copy
 
@@ -560,9 +562,9 @@ Selects characters inside ``LineEdit`` between ``from`` and ``to``. By default, 
 ::
 
     text = "Welcome"
-    select()     # Will select "Welcome"
-    select(4)    # Will select "ome"
-    select(2, 5) # Will select "lco"
+    select() # Will select "Welcome".
+    select(4) # Will select "ome".
+    select(2, 5) # Will select "lco".
 
 ----
 

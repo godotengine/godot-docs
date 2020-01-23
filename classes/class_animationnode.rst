@@ -22,6 +22,11 @@ Base resource for :ref:`AnimationTree<class_AnimationTree>` nodes. In general, i
 
 Inherit this when creating nodes mainly for use in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`, otherwise :ref:`AnimationRootNode<class_AnimationRootNode>` should be used instead.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
+
 Properties
 ----------
 
@@ -132,7 +137,7 @@ Method Descriptions
 
 - void **add_input** **(** :ref:`String<class_String>` name **)**
 
-Adds an input to the node. This is only useful for nodes created for use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`
+Adds an input to the node. This is only useful for nodes created for use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
 ----
 
@@ -140,7 +145,7 @@ Adds an input to the node. This is only useful for nodes created for use in an :
 
 - void **blend_animation** **(** :ref:`String<class_String>` animation, :ref:`float<class_float>` time, :ref:`float<class_float>` delta, :ref:`bool<class_bool>` seeked, :ref:`float<class_float>` blend **)**
 
-Blend an animation by "blend" amount (name must be valid in the linked :ref:`AnimationPlayer<class_AnimationPlayer>`). A time and delta mas be passed, as well as whether seek happened.
+Blend an animation by ``blend`` amount (name must be valid in the linked :ref:`AnimationPlayer<class_AnimationPlayer>`). A ``time`` and ``delta`` may be passed, as well as whether ``seek`` happened.
 
 ----
 
@@ -148,7 +153,7 @@ Blend an animation by "blend" amount (name must be valid in the linked :ref:`Ani
 
 - :ref:`float<class_float>` **blend_input** **(** :ref:`int<class_int>` input_index, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` optimize=true **)**
 
-Blend an input. This is only useful for nodes created for an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Time is a delta, unless "seek" is ``true``, in which case it is absolute. A filter mode may be optionally passed.
+Blend an input. This is only useful for nodes created for an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute. A filter mode may be optionally passed (see :ref:`FilterAction<enum_AnimationNode_FilterAction>` for options).
 
 ----
 
@@ -244,13 +249,11 @@ Returns ``true`` whether a given path is filtered.
 
 - void **process** **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek **)** virtual
 
-Called when a custom node is processed. The argument "time" is relative, unless "seek" is ``true`` (in which case it is absolute).
+User-defined callback called when a custom node is processed. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute.
 
-Here, call the :ref:`blend_input<class_AnimationNode_method_blend_input>`, :ref:`blend_node<class_AnimationNode_method_blend_node>` or :ref:`blend_animation<class_AnimationNode_method_blend_animation>` functions.
+Here, call the :ref:`blend_input<class_AnimationNode_method_blend_input>`, :ref:`blend_node<class_AnimationNode_method_blend_node>` or :ref:`blend_animation<class_AnimationNode_method_blend_animation>` functions. You can also use :ref:`get_parameter<class_AnimationNode_method_get_parameter>` and :ref:`set_parameter<class_AnimationNode_method_set_parameter>` to modify local memory.
 
-You can also use :ref:`get_parameter<class_AnimationNode_method_get_parameter>` and :ref:`set_parameter<class_AnimationNode_method_set_parameter>` to modify local memory.
-
-This function returns the time left for the current animation to finish (if unsure, just pass  the value from the main blend being called).
+This function should return the time left for the current animation to finish (if unsure, pass the value from the main blend being called).
 
 ----
 

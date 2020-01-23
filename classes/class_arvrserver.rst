@@ -11,12 +11,17 @@ ARVRServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-The AR/VR server.
+Server for AR and VR features.
 
 Description
 -----------
 
-The AR/VR server is the heart of our AR/VR solution and handles all the processing.
+The AR/VR server is the heart of our Advanced and Virtual Reality solution and handles all the processing.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/vr/index`
 
 Properties
 ----------
@@ -151,6 +156,8 @@ Property Descriptions
 | *Getter* | get_primary_interface()      |
 +----------+------------------------------+
 
+The primary :ref:`ARVRInterface<class_ARVRInterface>` currently bound to the ``ARVRServer``.
+
 ----
 
 .. _class_ARVRServer_property_world_scale:
@@ -208,7 +215,7 @@ Returns the primary interface's transformation.
 
 - :ref:`ARVRInterface<class_ARVRInterface>` **get_interface** **(** :ref:`int<class_int>` idx **)** const
 
-Gets the interface registered at a given index in our list of interfaces.
+Returns the interface registered at a given index in our list of interfaces.
 
 ----
 
@@ -216,7 +223,7 @@ Gets the interface registered at a given index in our list of interfaces.
 
 - :ref:`int<class_int>` **get_interface_count** **(** **)** const
 
-Gets the number of interfaces currently registered with the AR/VR server. If your project supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try to initialize each interface and use the first one that returns ``true``.
+Returns the number of interfaces currently registered with the AR/VR server. If your project supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try to initialize each interface and use the first one that returns ``true``.
 
 ----
 
@@ -232,11 +239,15 @@ Returns a list of available interfaces the ID and name of each interface.
 
 - :ref:`int<class_int>` **get_last_commit_usec** **(** **)**
 
+Returns the absolute timestamp (in μs) of the last ``ARVRServer`` commit of the AR/VR eyes to :ref:`VisualServer<class_VisualServer>`. The value comes from an internal call to :ref:`OS.get_ticks_usec<class_OS_method_get_ticks_usec>`.
+
 ----
 
 .. _class_ARVRServer_method_get_last_frame_usec:
 
 - :ref:`int<class_int>` **get_last_frame_usec** **(** **)**
+
+Returns the duration (in μs) of the last frame. This is computed as the difference between :ref:`get_last_commit_usec<class_ARVRServer_method_get_last_commit_usec>` and :ref:`get_last_process_usec<class_ARVRServer_method_get_last_process_usec>` when committing.
 
 ----
 
@@ -244,13 +255,15 @@ Returns a list of available interfaces the ID and name of each interface.
 
 - :ref:`int<class_int>` **get_last_process_usec** **(** **)**
 
+Returns the absolute timestamp (in μs) of the last ``ARVRServer`` process callback. The value comes from an internal call to :ref:`OS.get_ticks_usec<class_OS_method_get_ticks_usec>`.
+
 ----
 
 .. _class_ARVRServer_method_get_reference_frame:
 
 - :ref:`Transform<class_Transform>` **get_reference_frame** **(** **)** const
 
-Gets the reference frame transform. Mostly used internally and exposed for GDNative build interfaces.
+Returns the reference frame transform. Mostly used internally and exposed for GDNative build interfaces.
 
 ----
 
@@ -258,7 +271,7 @@ Gets the reference frame transform. Mostly used internally and exposed for GDNat
 
 - :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` **get_tracker** **(** :ref:`int<class_int>` idx **)** const
 
-Gets the positional tracker at the given ID.
+Returns the positional tracker at the given ID.
 
 ----
 
@@ -266,5 +279,5 @@ Gets the positional tracker at the given ID.
 
 - :ref:`int<class_int>` **get_tracker_count** **(** **)** const
 
-Gets the number of trackers currently registered.
+Returns the number of trackers currently registered.
 

@@ -20,9 +20,14 @@ A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTre
 
 This is a virtual axis on which you can add any type of :ref:`AnimationNode<class_AnimationNode>` using :ref:`add_blend_point<class_AnimationNodeBlendSpace1D_method_add_blend_point>`.
 
-Outputs the linear blend of the two ``AnimationNode`` closest to the node's current ``value``.
+Outputs the linear blend of the two :ref:`AnimationNode<class_AnimationNode>`\ s closest to the node's current value.
 
 You can set the extents of the axis using the :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>` and :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
 
 Properties
 ----------
@@ -128,7 +133,7 @@ Method Descriptions
 
 - void **add_blend_point** **(** :ref:`AnimationRootNode<class_AnimationRootNode>` node, :ref:`float<class_float>` pos, :ref:`int<class_int>` at_index=-1 **)**
 
-Adds a new point that represents a ``node`` on the virtual axis at a given position set by ``pos``. You can insert it at a specific index using the ``at_index`` argument. If you use the default value for ``at_index`` , the point is inserted at the end of the blend points array.
+Adds a new point that represents a ``node`` on the virtual axis at a given position set by ``pos``. You can insert it at a specific index using the ``at_index`` argument. If you use the default value for ``at_index``, the point is inserted at the end of the blend points array.
 
 ----
 
@@ -144,7 +149,7 @@ Returns the number of points on the blend axis.
 
 - :ref:`AnimationRootNode<class_AnimationRootNode>` **get_blend_point_node** **(** :ref:`int<class_int>` point **)** const
 
-Returns the ``AnimationNode`` referenced by the point at index ``point``.
+Returns the :ref:`AnimationNode<class_AnimationNode>` referenced by the point at index ``point``.
 
 ----
 
@@ -168,7 +173,7 @@ Removes the point at index ``point`` from the blend axis.
 
 - void **set_blend_point_node** **(** :ref:`int<class_int>` point, :ref:`AnimationRootNode<class_AnimationRootNode>` node **)**
 
-Changes the AnimationNode referenced by the point at index ``point``.
+Changes the :ref:`AnimationNode<class_AnimationNode>` referenced by the point at index ``point``.
 
 ----
 

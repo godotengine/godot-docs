@@ -11,6 +11,11 @@ CameraTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Texture provided by a :ref:`CameraFeed<class_CameraFeed>`.
+
+Description
+-----------
+
 This texture gives access to the camera texture provided by a :ref:`CameraFeed<class_CameraFeed>`.
 
 **Note:** Many cameras supply YCbCr images which need to be converted in a shader.

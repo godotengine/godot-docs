@@ -16,7 +16,7 @@ State machine for control of animations.
 Description
 -----------
 
-Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the AnimationNodeStateMachinePlayback object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
+Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>` object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
 
 **Example:**
 
@@ -24,6 +24,11 @@ Contains multiple nodes representing animation states, connected in a graph. Nod
 
     var state_machine = $AnimationTree.get("parameters/playback")
     state_machine.travel("some_state")
+
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
 
 Methods
 -------
@@ -201,7 +206,7 @@ Deletes the given node from the graph.
 
 - void **remove_transition** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
 
-Deletes the given transition.
+Deletes the transition between the two specified nodes.
 
 ----
 
@@ -209,7 +214,7 @@ Deletes the given transition.
 
 - void **remove_transition_by_index** **(** :ref:`int<class_int>` idx **)**
 
-Deletes the given transition.
+Deletes the given transition by index.
 
 ----
 

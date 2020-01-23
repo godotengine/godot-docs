@@ -22,6 +22,11 @@ As controllers are turned on and the AR/VR interface detects them, instances of 
 
 The :ref:`ARVRController<class_ARVRController>` and :ref:`ARVRAnchor<class_ARVRAnchor>` both consume objects of this type and should be used in your project. The positional trackers are just under-the-hood objects that make this all work. These are mostly exposed so that GDNative-based interfaces can interact with them.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/vr/index`
+
 Properties
 ----------
 

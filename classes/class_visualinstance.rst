@@ -18,7 +18,7 @@ Parent of all visual 3D nodes.
 Description
 -----------
 
-The VisualInstance is used to connect a resource to a visual representation. All visual 3D nodes inherit from the VisualInstance. In general, you should not access the VisualInstance properties directly as they are accessed and managed by the nodes that inherit from VisualInstance. VisualInstance is the node representation of the :ref:`VisualServer<class_VisualServer>` instance.
+The ``VisualInstance`` is used to connect a resource to a visual representation. All visual 3D nodes inherit from the ``VisualInstance``. In general, you should not access the ``VisualInstance`` properties directly as they are accessed and managed by the nodes that inherit from ``VisualInstance``. ``VisualInstance`` is the node representation of the :ref:`VisualServer<class_VisualServer>` instance.
 
 Properties
 ----------
@@ -61,9 +61,9 @@ Property Descriptions
 | *Getter*  | get_layer_mask()      |
 +-----------+-----------------------+
 
-The render layer(s) this VisualInstance is drawn on.
+The render layer(s) this ``VisualInstance`` is drawn on.
 
-This object will only be visible for :ref:`Camera<class_Camera>`\ s whose cull mask includes the render object this VisualInstance is set to.
+This object will only be visible for :ref:`Camera<class_Camera>`\ s whose cull mask includes the render object this ``VisualInstance`` is set to.
 
 Method Descriptions
 -------------------
@@ -72,7 +72,7 @@ Method Descriptions
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
 
-Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this VisualInstance.
+Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance``.
 
 ----
 
@@ -80,7 +80,7 @@ Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this Vi
 
 - :ref:`RID<class_RID>` **get_base** **(** **)** const
 
-Returns the RID of the resource associated with this VisualInstance. For example, if the Node is a :ref:`MeshInstance<class_MeshInstance>`, this will return the RID of the associated :ref:`Mesh<class_Mesh>`.
+Returns the RID of the resource associated with this ``VisualInstance``. For example, if the Node is a :ref:`MeshInstance<class_MeshInstance>`, this will return the RID of the associated :ref:`Mesh<class_Mesh>`.
 
 ----
 
@@ -88,7 +88,7 @@ Returns the RID of the resource associated with this VisualInstance. For example
 
 - :ref:`RID<class_RID>` **get_instance** **(** **)** const
 
-Returns the RID of this instance. This RID is the same as the RID returned by :ref:`VisualServer.instance_create<class_VisualServer_method_instance_create>`. This RID is needed if you want to call :ref:`VisualServer<class_VisualServer>` functions directly on this VisualInstance.
+Returns the RID of this instance. This RID is the same as the RID returned by :ref:`VisualServer.instance_create<class_VisualServer_method_instance_create>`. This RID is needed if you want to call :ref:`VisualServer<class_VisualServer>` functions directly on this ``VisualInstance``.
 
 ----
 
@@ -104,9 +104,9 @@ Returns ``true`` when the specified layer is enabled in :ref:`layers<class_Visua
 
 - :ref:`AABB<class_AABB>` **get_transformed_aabb** **(** **)** const
 
-Returns the transformed :ref:`AABB<class_AABB>` (also known as the bounding box) for this VisualInstance.
+Returns the transformed :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance``.
 
-Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, rotation, and scale of the :ref:`Spatial<class_Spatial>`\ s :ref:`Transform<class_Transform>`
+Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, rotation, and scale of the :ref:`Spatial<class_Spatial>`'s :ref:`Transform<class_Transform>`.
 
 ----
 
@@ -114,7 +114,7 @@ Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, ro
 
 - void **set_base** **(** :ref:`RID<class_RID>` base **)**
 
-Sets the resource that is instantiated by this VisualInstance, which changes how the engine handles the VisualInstance under the hood. Equivalent to :ref:`VisualServer.instance_set_base<class_VisualServer_method_instance_set_base>`.
+Sets the resource that is instantiated by this ``VisualInstance``, which changes how the engine handles the ``VisualInstance`` under the hood. Equivalent to :ref:`VisualServer.instance_set_base<class_VisualServer_method_instance_set_base>`.
 
 ----
 

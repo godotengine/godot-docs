@@ -102,7 +102,7 @@ The following integer values are being used to signify that the detected file is
 
 - :ref:`String<class_String>` **get_project_name** **(** **)**
 
-Return the project name of the VCS working directory
+Returns the project name of the VCS working directory.
 
 ----
 
@@ -110,7 +110,7 @@ Return the project name of the VCS working directory
 
 - :ref:`String<class_String>` **get_vcs_name** **(** **)**
 
-Return the name of the VCS if the VCS has been initialized, else return an empty string.
+Returns the name of the VCS if the VCS has been initialized, else return an empty string.
 
 ----
 
@@ -118,7 +118,7 @@ Return the name of the VCS if the VCS has been initialized, else return an empty
 
 - :ref:`bool<class_bool>` **initialize** **(** :ref:`String<class_String>` project_root_path **)**
 
-Initialize the VCS addon if not already. Uses the argument value as the path to the working directory of the project. Creates the initial commit if required. Returns ``true`` if no failure occurs, else returns ``false``.
+Initializes the VCS addon if not already. Uses the argument value as the path to the working directory of the project. Creates the initial commit if required. Returns ``true`` if no failure occurs, else returns ``false``.
 
 ----
 
@@ -150,7 +150,7 @@ Shuts down the VCS addon to allow cleanup code to run on call. Returns ``true`` 
 
 - void **stage_file** **(** :ref:`String<class_String>` file_path **)**
 
-Stage the file which should be committed when :ref:`commit<class_EditorVCSInterface_method_commit>` is called. Argument should contain the absolute path.
+Stages the file which should be committed when :ref:`commit<class_EditorVCSInterface_method_commit>` is called. Argument should contain the absolute path.
 
 ----
 
@@ -158,5 +158,5 @@ Stage the file which should be committed when :ref:`commit<class_EditorVCSInterf
 
 - void **unstage_file** **(** :ref:`String<class_String>` file_path **)**
 
-Unstage the file which was staged previously to be committed, so that it is no longer committed when :ref:`commit<class_EditorVCSInterface_method_commit>` is called. Argument should contain the absolute path.
+Unstages the file which was staged previously to be committed, so that it is no longer committed when :ref:`commit<class_EditorVCSInterface_method_commit>` is called. Argument should contain the absolute path.
 

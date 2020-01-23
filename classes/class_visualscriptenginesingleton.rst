@@ -11,12 +11,12 @@ VisualScriptEngineSingleton
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@GlobalScope>`
+A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@GlobalScope>`.
 
 Description
 -----------
 
-A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@GlobalScope>`
+A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@GlobalScope>`.
 
 Properties
 ----------

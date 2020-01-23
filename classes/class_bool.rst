@@ -14,7 +14,7 @@ Boolean built-in type.
 Description
 -----------
 
-Boolean is a built-in type. It can represent any data type that is either a true or false value. You can think of it as an switch with on or off (1 or 0) setting . It's often used as part of programming logic in condition statements like ``if`` statements.
+Boolean is a built-in type. It can represent any data type that is either a true or false value. You can think of it as an switch with on or off (1 or 0) setting. It's often used as part of programming logic in condition statements like ``if`` statements.
 
 **Note:** In a code below ``if can_shoot`` is equivalent of ``if can_shoot == true``. It is good practice to follow the natural spoken language structure when possible. Use ``if can_shoot`` rather than ``if can_shoot == true`` and use ``if not can_shoot`` rather than ``if can_shoot == false``.
 

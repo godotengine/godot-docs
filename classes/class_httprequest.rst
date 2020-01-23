@@ -171,7 +171,7 @@ enum **Result**:
 
 - **RESULT_BODY_SIZE_LIMIT_EXCEEDED** = **7** --- Request exceeded its maximum size limit, see :ref:`body_size_limit<class_HTTPRequest_property_body_size_limit>`.
 
-- **RESULT_REQUEST_FAILED** = **8** --- Request failed. (Unused)
+- **RESULT_REQUEST_FAILED** = **8** --- Request failed (currently unused).
 
 - **RESULT_DOWNLOAD_FILE_CANT_OPEN** = **9** --- HTTPRequest couldn't open the download file.
 

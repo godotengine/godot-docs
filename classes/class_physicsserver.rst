@@ -350,7 +350,7 @@ enum **HingeJointFlag**:
 
 - **HINGE_JOINT_FLAG_USE_LIMIT** = **0** --- If ``true``, the Hinge has a maximum and a minimum rotation.
 
-- **HINGE_JOINT_FLAG_ENABLE_MOTOR** = **1** --- If ``true``, a motor turns the Hinge
+- **HINGE_JOINT_FLAG_ENABLE_MOTOR** = **1** --- If ``true``, a motor turns the Hinge.
 
 ----
 

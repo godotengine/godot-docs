@@ -214,7 +214,7 @@ Disconnect the given peer. If "now" is set to ``true``, the connection will be c
 
 - :ref:`int<class_int>` **get_last_packet_channel** **(** **)** const
 
-Returns the channel of the last packet fetched via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`
+Returns the channel of the last packet fetched via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`.
 
 ----
 
@@ -222,7 +222,7 @@ Returns the channel of the last packet fetched via :ref:`PacketPeer.get_packet<c
 
 - :ref:`int<class_int>` **get_packet_channel** **(** **)** const
 
-Returns the channel of the next packet that will be retrieved via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`
+Returns the channel of the next packet that will be retrieved via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`.
 
 ----
 

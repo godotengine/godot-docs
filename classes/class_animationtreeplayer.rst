@@ -11,7 +11,7 @@ AnimationTreePlayer
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Animation Player that uses a node graph for blending Animations.
+Animation player that uses a node graph for blending animations.
 
 Description
 -----------
@@ -19,6 +19,11 @@ Description
 A node graph tool for blending multiple animations bound to an :ref:`AnimationPlayer<class_AnimationPlayer>`. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose.
 
 It takes :ref:`Animation<class_Animation>`\ s from an :ref:`AnimationPlayer<class_AnimationPlayer>` node and mixes them depending on the graph.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
 
 Properties
 ----------
@@ -246,7 +251,7 @@ If ``true``, the ``AnimationTreePlayer`` is able to play animations.
 
 The node from which to relatively access other nodes.
 
-It accesses the Bones, so it should point to the same Node the AnimationPlayer would point its Root Node at.
+It accesses the bones, so it should point to the same node the :ref:`AnimationPlayer<class_AnimationPlayer>` would point its Root Node at.
 
 ----
 
@@ -264,7 +269,7 @@ It accesses the Bones, so it should point to the same Node the AnimationPlayer w
 
 The path to the :ref:`AnimationPlayer<class_AnimationPlayer>` from which this ``AnimationTreePlayer`` binds animations to animation nodes.
 
-Once set, Animation nodes can be added to the AnimationTreePlayer.
+Once set, :ref:`Animation<class_Animation>` nodes can be added to the ``AnimationTreePlayer``.
 
 ----
 
@@ -297,7 +302,7 @@ Adds a ``type`` node to the graph with name ``id``.
 
 - void **advance** **(** :ref:`float<class_float>` delta **)**
 
-Shifts position in the animation timeline. Delta is the time in seconds to shift. Events between the current frame and ``delta`` are handled.
+Shifts position in the animation timeline. ``delta`` is the time in seconds to shift. Events between the current frame and ``delta`` are handled.
 
 ----
 
@@ -320,6 +325,8 @@ Returns the name of the :ref:`master_player<class_AnimationTreePlayer_property_m
 .. _class_AnimationTreePlayer_method_animation_node_get_position:
 
 - :ref:`float<class_float>` **animation_node_get_position** **(** :ref:`String<class_String>` id **)** const
+
+Returns the absolute playback timestamp of the animation node with name ``id``.
 
 ----
 
@@ -369,13 +376,9 @@ Returns the blend amount of a Blend2 node given its name.
 
 Sets the blend amount of a Blend2 node given its name and value.
 
-A Blend2 Node blends two animations with the amount between 0 and 1.
+A Blend2 node blends two animations (A and B) with the amount between 0 and 1.
 
-At 0, Output is input a.
-
-Towards 1, the influence of a gets lessened, the influence of b gets raised.
-
-At 1, Output is input b.
+At 0, output is input A. Towards 1, the influence of A gets lessened, the influence of B gets raised. At 1, output is input B.
 
 ----
 
@@ -383,7 +386,7 @@ At 1, Output is input b.
 
 - void **blend2_node_set_filter_path** **(** :ref:`String<class_String>` id, :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**
 
-If ``enable`` is ``true``, the blend2 node with ID ``id`` turns off the track modifying the property at ``path``. The modified node's children continue to animate.
+If ``enable`` is ``true``, the Blend2 node with name ``id`` turns off the track modifying the property at ``path``. The modified node's children continue to animate.
 
 ----
 
@@ -401,17 +404,9 @@ Returns the blend amount of a Blend3 node given its name.
 
 Sets the blend amount of a Blend3 node given its name and value.
 
-A Blend3 Node blends three animations with the amount between -1 and 1.
+A Blend3 Node blends three animations (A, B-, B+) with the amount between -1 and 1.
 
-At -1, Output is input b-.
-
-From -1 to 0, the influence of b- gets lessened, the influence of a gets raised and the influence of b+ is 0.
-
-At 0, Output is input a.
-
-From 0 to 1, the influence of a gets lessened, the influence of b+ gets raised and the influence of b+ is 0.
-
-At 1, Output is input b+.
+At -1, output is input B-. From -1 to 0, the influence of B- gets lessened, the influence of A gets raised and the influence of B+ is 0. At 0, output is input A. From 0 to 1, the influence of A gets lessened, the influence of B+ gets raised and the influence of B+ is 0. At 1, output is input B+.
 
 ----
 
@@ -431,7 +426,7 @@ Sets the blend amount of a Blend4 node given its name and value.
 
 A Blend4 Node blends two pairs of animations.
 
-The two pairs are blended like blend2 and then added together.
+The two pairs are blended like Blend2 and then added together.
 
 ----
 
@@ -463,7 +458,7 @@ Returns a :ref:`PoolStringArray<class_PoolStringArray>` containing the name of a
 
 - :ref:`float<class_float>` **mix_node_get_amount** **(** :ref:`String<class_String>` id **)** const
 
-Returns mix amount of a Mix node given its name.
+Returns the mix amount of a Mix node given its name.
 
 ----
 
@@ -471,7 +466,7 @@ Returns mix amount of a Mix node given its name.
 
 - void **mix_node_set_amount** **(** :ref:`String<class_String>` id, :ref:`float<class_float>` ratio **)**
 
-Sets mix amount of a Mix node given its name and value.
+Sets the mix amount of a Mix node given its name and value.
 
 A Mix node adds input b to input a by the amount given by ratio.
 
@@ -521,7 +516,7 @@ Gets the node type, will return from :ref:`NodeType<enum_AnimationTreePlayer_Nod
 
 - :ref:`Error<enum_@GlobalScope_Error>` **node_rename** **(** :ref:`String<class_String>` node, :ref:`String<class_String>` new_name **)**
 
-Rename a node in the graph.
+Renames a node in the graph.
 
 ----
 
@@ -529,7 +524,7 @@ Rename a node in the graph.
 
 - void **node_set_position** **(** :ref:`String<class_String>` id, :ref:`Vector2<class_Vector2>` screen_position **)**
 
-Sets position of a node in the graph given its name and position.
+Sets the position of a node in the graph given its name and position.
 
 ----
 
@@ -537,7 +532,7 @@ Sets position of a node in the graph given its name and position.
 
 - :ref:`float<class_float>` **oneshot_node_get_autorestart_delay** **(** :ref:`String<class_String>` id **)** const
 
-Returns autostart delay of a OneShot node given its name.
+Returns the autostart delay of a OneShot node given its name.
 
 ----
 
@@ -545,7 +540,7 @@ Returns autostart delay of a OneShot node given its name.
 
 - :ref:`float<class_float>` **oneshot_node_get_autorestart_random_delay** **(** :ref:`String<class_String>` id **)** const
 
-Returns autostart random delay of a OneShot node given its name.
+Returns the autostart random delay of a OneShot node given its name.
 
 ----
 
@@ -553,7 +548,7 @@ Returns autostart random delay of a OneShot node given its name.
 
 - :ref:`float<class_float>` **oneshot_node_get_fadein_time** **(** :ref:`String<class_String>` id **)** const
 
-Returns fade in time of a OneShot node given its name.
+Returns the fade in time of a OneShot node given its name.
 
 ----
 
@@ -561,7 +556,7 @@ Returns fade in time of a OneShot node given its name.
 
 - :ref:`float<class_float>` **oneshot_node_get_fadeout_time** **(** :ref:`String<class_String>` id **)** const
 
-Returns fade out time of a OneShot node given its name.
+Returns the fade out time of a OneShot node given its name.
 
 ----
 
@@ -585,7 +580,7 @@ Returns whether a OneShot node is active given its name.
 
 - void **oneshot_node_set_autorestart** **(** :ref:`String<class_String>` id, :ref:`bool<class_bool>` enable **)**
 
-Sets autorestart property of a OneShot node given its name and value.
+Sets the autorestart property of a OneShot node given its name and value.
 
 ----
 
@@ -593,7 +588,7 @@ Sets autorestart property of a OneShot node given its name and value.
 
 - void **oneshot_node_set_autorestart_delay** **(** :ref:`String<class_String>` id, :ref:`float<class_float>` delay_sec **)**
 
-Sets autorestart delay of a OneShot node given its name and value in seconds.
+Sets the autorestart delay of a OneShot node given its name and value in seconds.
 
 ----
 
@@ -601,7 +596,7 @@ Sets autorestart delay of a OneShot node given its name and value in seconds.
 
 - void **oneshot_node_set_autorestart_random_delay** **(** :ref:`String<class_String>` id, :ref:`float<class_float>` rand_sec **)**
 
-Sets autorestart random delay of a OneShot node given its name and value in seconds.
+Sets the autorestart random delay of a OneShot node given its name and value in seconds.
 
 ----
 
@@ -609,7 +604,7 @@ Sets autorestart random delay of a OneShot node given its name and value in seco
 
 - void **oneshot_node_set_fadein_time** **(** :ref:`String<class_String>` id, :ref:`float<class_float>` time_sec **)**
 
-Sets fade in time of a OneShot node given its name and value in seconds.
+Sets the fade in time of a OneShot node given its name and value in seconds.
 
 ----
 
@@ -617,7 +612,7 @@ Sets fade in time of a OneShot node given its name and value in seconds.
 
 - void **oneshot_node_set_fadeout_time** **(** :ref:`String<class_String>` id, :ref:`float<class_float>` time_sec **)**
 
-Sets fade out time of a OneShot node given its name and value in seconds.
+Sets the fade out time of a OneShot node given its name and value in seconds.
 
 ----
 
@@ -625,7 +620,7 @@ Sets fade out time of a OneShot node given its name and value in seconds.
 
 - void **oneshot_node_set_filter_path** **(** :ref:`String<class_String>` id, :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**
 
-If ``enable`` is ``true``, the oneshot node with ID ``id`` turns off the track modifying the property at ``path``. The modified node's children continue to animate.
+If ``enable`` is ``true``, the OneShot node with ID ``id`` turns off the track modifying the property at ``path``. The modified node's children continue to animate.
 
 ----
 
@@ -673,7 +668,7 @@ Resets this ``AnimationTreePlayer``.
 
 - :ref:`float<class_float>` **timescale_node_get_scale** **(** :ref:`String<class_String>` id **)** const
 
-Returns time scale value of the TimeScale node with name ``id``.
+Returns the time scale value of the TimeScale node with name ``id``.
 
 ----
 
@@ -683,7 +678,7 @@ Returns time scale value of the TimeScale node with name ``id``.
 
 Sets the time scale of the TimeScale node with name ``id`` to ``scale``.
 
-The timescale node is used to speed :ref:`Animation<class_Animation>`\ s up if the scale is above 1 or slow them down if it is below 1.
+The TimeScale node is used to speed :ref:`Animation<class_Animation>`\ s up if the scale is above 1 or slow them down if it is below 1.
 
 If applied after a blend or mix, affects all input animations to that blend or mix.
 
@@ -719,7 +714,7 @@ Returns the index of the currently evaluated input for the transition node with 
 
 - :ref:`int<class_int>` **transition_node_get_input_count** **(** :ref:`String<class_String>` id **)** const
 
-Returns the number of inputs for the transition node with name ``id``. You can add inputs by rightclicking on the transition node.
+Returns the number of inputs for the transition node with name ``id``. You can add inputs by right-clicking on the transition node.
 
 ----
 
@@ -735,7 +730,7 @@ Returns the cross fade time for the transition node with name ``id``.
 
 - :ref:`bool<class_bool>` **transition_node_has_input_auto_advance** **(** :ref:`String<class_String>` id, :ref:`int<class_int>` input_idx **)** const
 
-Returns ``true`` if the input at ``input_idx`` on transition node with name ``id`` is set to automatically advance to the next input upon completion.
+Returns ``true`` if the input at ``input_idx`` on the transition node with name ``id`` is set to automatically advance to the next input upon completion.
 
 ----
 

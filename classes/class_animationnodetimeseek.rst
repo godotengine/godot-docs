@@ -13,3 +13,8 @@ AnimationNodeTimeSeek
 
 
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
+

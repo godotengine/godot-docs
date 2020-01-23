@@ -1307,11 +1307,15 @@ Sets this node's properties to match a given :ref:`Particles<class_Particles>` n
 
 - :ref:`float<class_float>` **get_param** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** const
 
+Returns the base value of the parameter specified by :ref:`Parameter<enum_CPUParticles_Parameter>`.
+
 ----
 
 .. _class_CPUParticles_method_get_param_curve:
 
 - :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** const
+
+Returns the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter<enum_CPUParticles_Parameter>`.
 
 ----
 
@@ -1319,11 +1323,15 @@ Sets this node's properties to match a given :ref:`Particles<class_Particles>` n
 
 - :ref:`float<class_float>` **get_param_randomness** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param **)** const
 
+Returns the randomness factor of the parameter specified by :ref:`Parameter<enum_CPUParticles_Parameter>`.
+
 ----
 
 .. _class_CPUParticles_method_get_particle_flag:
 
 - :ref:`bool<class_bool>` **get_particle_flag** **(** :ref:`Flags<enum_CPUParticles_Flags>` flag **)** const
+
+Returns the enabled state of the given flag (see :ref:`Flags<enum_CPUParticles_Flags>` for options).
 
 ----
 
@@ -1339,11 +1347,15 @@ Restarts the particle emitter.
 
 - void **set_param** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param, :ref:`float<class_float>` value **)**
 
+Sets the base value of the parameter specified by :ref:`Parameter<enum_CPUParticles_Parameter>`.
+
 ----
 
 .. _class_CPUParticles_method_set_param_curve:
 
 - void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
+
+Sets the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter<enum_CPUParticles_Parameter>`.
 
 ----
 
@@ -1351,9 +1363,13 @@ Restarts the particle emitter.
 
 - void **set_param_randomness** **(** :ref:`Parameter<enum_CPUParticles_Parameter>` param, :ref:`float<class_float>` randomness **)**
 
+Sets the randomness factor of the parameter specified by :ref:`Parameter<enum_CPUParticles_Parameter>`.
+
 ----
 
 .. _class_CPUParticles_method_set_particle_flag:
 
 - void **set_particle_flag** **(** :ref:`Flags<enum_CPUParticles_Flags>` flag, :ref:`bool<class_bool>` enable **)**
+
+Enables or disables the given flag (see :ref:`Flags<enum_CPUParticles_Flags>` for options).
 

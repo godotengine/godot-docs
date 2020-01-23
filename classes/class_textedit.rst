@@ -1079,7 +1079,7 @@ Returns an empty ``PoolIntArray`` if no result was found. Otherwise, the result 
 
     var result = search(key, flags, line, column)
     if result.size() > 0:
-        # result found
+        # Result found.
         var res_line = result[TextEdit.SEARCH_RESULT_LINE]
         var res_column = result[TextEdit.SEARCH_RESULT_COLUMN]
 

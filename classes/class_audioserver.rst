@@ -16,7 +16,7 @@ Server interface for low-level audio access.
 Description
 -----------
 
-AudioServer is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
+``AudioServer`` is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
 
 Tutorials
 ---------
@@ -147,9 +147,9 @@ enum **SpeakerMode**:
 
 - **SPEAKER_SURROUND_31** = **1** --- A 3.1 channel surround setup was detected.
 
-- **SPEAKER_SURROUND_51** = **2** --- A 5.1 channel surround setup was  detected.
+- **SPEAKER_SURROUND_51** = **2** --- A 5.1 channel surround setup was detected.
 
-- **SPEAKER_SURROUND_71** = **3** --- A 7.1 channel surround setup was  detected.
+- **SPEAKER_SURROUND_71** = **3** --- A 7.1 channel surround setup was detected.
 
 Property Descriptions
 ---------------------
@@ -239,6 +239,8 @@ Returns the names of all audio input devices detected on the system.
 
 - void **capture_set_device** **(** :ref:`String<class_String>` name **)**
 
+Sets which audio input device is used for audio capture.
+
 ----
 
 .. _class_AudioServer_method_generate_bus_layout:
@@ -276,6 +278,8 @@ Returns the number of effects on the bus at ``bus_idx``.
 .. _class_AudioServer_method_get_bus_effect_instance:
 
 - :ref:`AudioEffectInstance<class_AudioEffectInstance>` **get_bus_effect_instance** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` channel=0 **)**
+
+Returns the :ref:`AudioEffectInstance<class_AudioEffectInstance>` assigned to the given bus and effect indices (and optionally channel).
 
 ----
 
@@ -363,11 +367,15 @@ Returns the speaker configuration.
 
 - :ref:`float<class_float>` **get_time_since_last_mix** **(** **)** const
 
+Returns the relative time since the last mix occurred.
+
 ----
 
 .. _class_AudioServer_method_get_time_to_next_mix:
 
 - :ref:`float<class_float>` **get_time_to_next_mix** **(** **)** const
+
+Returns the relative time until the next mix occurs.
 
 ----
 
@@ -407,7 +415,9 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 - void **lock** **(** **)**
 
-Locks the audio driver's main loop. Remember to unlock it afterwards.
+Locks the audio driver's main loop.
+
+**Note:** Remember to unlock it afterwards.
 
 ----
 

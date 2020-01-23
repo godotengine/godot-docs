@@ -11,7 +11,7 @@ AnimationNodeStateMachinePlayback
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-Playback control for AnimationNodeStateMachine.
+Playback control for :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`.
 
 Description
 -----------
@@ -24,6 +24,11 @@ Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines creat
 
     var state_machine = $AnimationTree.get("parameters/playback")
     state_machine.travel("some_state")
+
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
 
 Properties
 ----------
@@ -63,6 +68,8 @@ Returns the currently playing animation state.
 .. _class_AnimationNodeStateMachinePlayback_method_get_travel_path:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_travel_path** **(** **)** const
+
+Returns the current travel path as computed internally by the A\* algorithm.
 
 ----
 

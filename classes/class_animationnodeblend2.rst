@@ -18,6 +18,11 @@ Description
 
 A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations linearly based on an amount value in the ``[0.0, 1.0]`` range.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
+
 Properties
 ----------
 

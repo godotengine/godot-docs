@@ -89,8 +89,6 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`flag_align_y<class_CPUParticles2D_property_flag_align_y>`                       | ``false``               |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                               | :ref:`flatness<class_CPUParticles2D_property_flatness>`                               | ``0.0``                 |
-+---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`fract_delta<class_CPUParticles2D_property_fract_delta>`                         | ``true``                |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Vector2<class_Vector2>`                           | :ref:`gravity<class_CPUParticles2D_property_gravity>`                                 | ``Vector2( 0, 98 )``    |
@@ -761,20 +759,6 @@ Align Y axis of particle with the direction of its velocity.
 
 ----
 
-.. _class_CPUParticles2D_property_flatness:
-
-- :ref:`float<class_float>` **flatness**
-
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_flatness(value) |
-+-----------+---------------------+
-| *Getter*  | get_flatness()      |
-+-----------+---------------------+
-
-----
-
 .. _class_CPUParticles2D_property_fract_delta:
 
 - :ref:`bool<class_bool>` **fract_delta**
@@ -1284,11 +1268,15 @@ Sets this node's properties to match a given :ref:`Particles2D<class_Particles2D
 
 - :ref:`float<class_float>` **get_param** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** const
 
+Returns the base value of the parameter specified by :ref:`Parameter<enum_CPUParticles2D_Parameter>`.
+
 ----
 
 .. _class_CPUParticles2D_method_get_param_curve:
 
 - :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** const
+
+Returns the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter<enum_CPUParticles2D_Parameter>`.
 
 ----
 
@@ -1296,11 +1284,15 @@ Sets this node's properties to match a given :ref:`Particles2D<class_Particles2D
 
 - :ref:`float<class_float>` **get_param_randomness** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** const
 
+Returns the randomness factor of the parameter specified by :ref:`Parameter<enum_CPUParticles2D_Parameter>`.
+
 ----
 
 .. _class_CPUParticles2D_method_get_particle_flag:
 
 - :ref:`bool<class_bool>` **get_particle_flag** **(** :ref:`Flags<enum_CPUParticles2D_Flags>` flag **)** const
+
+Returns the enabled state of the given flag (see :ref:`Flags<enum_CPUParticles2D_Flags>` for options).
 
 ----
 
@@ -1316,11 +1308,15 @@ Restarts the particle emitter.
 
 - void **set_param** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
 
+Sets the base value of the parameter specified by :ref:`Parameter<enum_CPUParticles2D_Parameter>`.
+
 ----
 
 .. _class_CPUParticles2D_method_set_param_curve:
 
 - void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
+
+Sets the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter<enum_CPUParticles2D_Parameter>`.
 
 ----
 
@@ -1328,9 +1324,13 @@ Restarts the particle emitter.
 
 - void **set_param_randomness** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` randomness **)**
 
+Sets the randomness factor of the parameter specified by :ref:`Parameter<enum_CPUParticles2D_Parameter>`.
+
 ----
 
 .. _class_CPUParticles2D_method_set_particle_flag:
 
 - void **set_particle_flag** **(** :ref:`Flags<enum_CPUParticles2D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
+
+Enables or disables the given flag (see :ref:`Flags<enum_CPUParticles2D_Flags>` for options).
 

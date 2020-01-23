@@ -235,7 +235,7 @@ The operation may result in an outer polygon (boundary) and inner polygon (hole)
 
 - :ref:`Vector3<class_Vector3>` **get_closest_point_to_segment** **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**
 
-Returns the 3d point on the 3d segment (``s1``, ``s2``) that is closest to ``point``. The returned point will always be inside the specified segment.
+Returns the 3D point on the 3D segment (``s1``, ``s2``) that is closest to ``point``. The returned point will always be inside the specified segment.
 
 ----
 
@@ -243,7 +243,7 @@ Returns the 3d point on the 3d segment (``s1``, ``s2``) that is closest to ``poi
 
 - :ref:`Vector2<class_Vector2>` **get_closest_point_to_segment_2d** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**
 
-Returns the 2d point on the 2d segment (``s1``, ``s2``) that is closest to ``point``. The returned point will always be inside the specified segment.
+Returns the 2D point on the 2D segment (``s1``, ``s2``) that is closest to ``point``. The returned point will always be inside the specified segment.
 
 ----
 
@@ -251,7 +251,7 @@ Returns the 2d point on the 2d segment (``s1``, ``s2``) that is closest to ``poi
 
 - :ref:`Vector3<class_Vector3>` **get_closest_point_to_segment_uncapped** **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**
 
-Returns the 3d point on the 3d line defined by (``s1``, ``s2``) that is closest to ``point``. The returned point can be inside the segment (``s1``, ``s2``) or outside of it, i.e. somewhere on the line extending from the segment.
+Returns the 3D point on the 3D line defined by (``s1``, ``s2``) that is closest to ``point``. The returned point can be inside the segment (``s1``, ``s2``) or outside of it, i.e. somewhere on the line extending from the segment.
 
 ----
 
@@ -259,7 +259,7 @@ Returns the 3d point on the 3d line defined by (``s1``, ``s2``) that is closest 
 
 - :ref:`Vector2<class_Vector2>` **get_closest_point_to_segment_uncapped_2d** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**
 
-Returns the 2d point on the 2d line defined by (``s1``, ``s2``) that is closest to ``point``. The returned point can be inside the segment (``s1``, ``s2``) or outside of it, i.e. somewhere on the line extending from the segment.
+Returns the 2D point on the 2D line defined by (``s1``, ``s2``) that is closest to ``point``. The returned point can be inside the segment (``s1``, ``s2``) or outside of it, i.e. somewhere on the line extending from the segment.
 
 ----
 
@@ -267,7 +267,7 @@ Returns the 2d point on the 2d line defined by (``s1``, ``s2``) that is closest 
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_closest_points_between_segments** **(** :ref:`Vector3<class_Vector3>` p1, :ref:`Vector3<class_Vector3>` p2, :ref:`Vector3<class_Vector3>` q1, :ref:`Vector3<class_Vector3>` q2 **)**
 
-Given the two 3d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PoolVector3Array<class_PoolVector3Array>` that contains this point on (``p1``, ``p2``) as well the accompanying point on (``q1``, ``q2``).
+Given the two 3D segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PoolVector3Array<class_PoolVector3Array>` that contains this point on (``p1``, ``p2``) as well the accompanying point on (``q1``, ``q2``).
 
 ----
 
@@ -275,7 +275,7 @@ Given the two 3d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **get_closest_points_between_segments_2d** **(** :ref:`Vector2<class_Vector2>` p1, :ref:`Vector2<class_Vector2>` q1, :ref:`Vector2<class_Vector2>` p2, :ref:`Vector2<class_Vector2>` q2 **)**
 
-Given the two 2d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains this point on (``p1``, ``p2``) as well the accompanying point on (``q1``, ``q2``).
+Given the two 2D segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains this point on (``p1``, ``p2``) as well the accompanying point on (``q1``, ``q2``).
 
 ----
 
@@ -393,7 +393,7 @@ Returns if ``point`` is inside the triangle specified by ``a``, ``b`` and ``c``.
 
 - :ref:`Variant<class_Variant>` **ray_intersects_triangle** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**
 
-Tests if the 3d ray starting at ``from`` with the direction of ``dir`` intersects the triangle specified by ``a``, ``b`` and ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, an empty :ref:`Variant<class_Variant>` is returned.
+Tests if the 3D ray starting at ``from`` with the direction of ``dir`` intersects the triangle specified by ``a``, ``b`` and ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, an empty :ref:`Variant<class_Variant>` is returned.
 
 ----
 
@@ -401,7 +401,7 @@ Tests if the 3d ray starting at ``from`` with the direction of ``dir`` intersect
 
 - :ref:`float<class_float>` **segment_intersects_circle** **(** :ref:`Vector2<class_Vector2>` segment_from, :ref:`Vector2<class_Vector2>` segment_to, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**
 
-Given the 2d segment (``segment_from``, ``segment_to``), returns the position on the segment (as a number between 0 and 1) at which the segment hits the circle that is located at position ``circle_position`` and has radius ``circle_radius``. If the segment does not intersect the circle, -1 is returned (this is also the case if the line extending the segment would intersect the circle, but the segment does not).
+Given the 2D segment (``segment_from``, ``segment_to``), returns the position on the segment (as a number between 0 and 1) at which the segment hits the circle that is located at position ``circle_position`` and has radius ``circle_radius``. If the segment does not intersect the circle, -1 is returned (this is also the case if the line extending the segment would intersect the circle, but the segment does not).
 
 ----
 

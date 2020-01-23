@@ -11,7 +11,7 @@ AnimationNodeBlendSpace2D
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-Blends linearly between three :ref:`AnimationNode<class_AnimationNode>` of any type placed in a 2d space.
+Blends linearly between three :ref:`AnimationNode<class_AnimationNode>` of any type placed in a 2D space.
 
 Description
 -----------
@@ -21,6 +21,11 @@ A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTre
 This node allows you to blend linearly between three animations using a :ref:`Vector2<class_Vector2>` weight.
 
 You can add vertices to the blend space with :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>` and automatically triangulate it by setting :ref:`auto_triangles<class_AnimationNodeBlendSpace2D_property_auto_triangles>` to ``true``. Otherwise, use :ref:`add_triangle<class_AnimationNodeBlendSpace2D_method_add_triangle>` and :ref:`remove_triangle<class_AnimationNodeBlendSpace2D_method_remove_triangle>` to create up the blend space by hand.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
 
 Properties
 ----------
@@ -216,7 +221,7 @@ Method Descriptions
 
 - void **add_blend_point** **(** :ref:`AnimationRootNode<class_AnimationRootNode>` node, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` at_index=-1 **)**
 
-Adds a new point that represents a ``node`` at the position set by ``pos``. You can insert it at a specific index using the ``at_index`` argument. If you use the default value for ``at_index`` , the point is inserted at the end of the blend points array.
+Adds a new point that represents a ``node`` at the position set by ``pos``. You can insert it at a specific index using the ``at_index`` argument. If you use the default value for ``at_index``, the point is inserted at the end of the blend points array.
 
 ----
 
@@ -224,7 +229,7 @@ Adds a new point that represents a ``node`` at the position set by ``pos``. You 
 
 - void **add_triangle** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` at_index=-1 **)**
 
-Creates a new triangle using three points ``x``, ``y``, and ``z``. Triangles can overlap. You can insert the triangle at a specific index using the ``at_index`` argument. If you use the default value for ``at_index`` , the point is inserted at the end of the blend points array.
+Creates a new triangle using three points ``x``, ``y``, and ``z``. Triangles can overlap. You can insert the triangle at a specific index using the ``at_index`` argument. If you use the default value for ``at_index``, the point is inserted at the end of the blend points array.
 
 ----
 
@@ -240,7 +245,7 @@ Returns the number of points in the blend space.
 
 - :ref:`AnimationRootNode<class_AnimationRootNode>` **get_blend_point_node** **(** :ref:`int<class_int>` point **)** const
 
-Returns the ``AnimationRootNode`` referenced by the point at index ``point``.
+Returns the :ref:`AnimationRootNode<class_AnimationRootNode>` referenced by the point at index ``point``.
 
 ----
 
@@ -288,7 +293,7 @@ Removes the triangle at index ``triangle`` from the blend space.
 
 - void **set_blend_point_node** **(** :ref:`int<class_int>` point, :ref:`AnimationRootNode<class_AnimationRootNode>` node **)**
 
-Changes the AnimationNode referenced by the point at index ``point``.
+Changes the :ref:`AnimationNode<class_AnimationNode>` referenced by the point at index ``point``.
 
 ----
 

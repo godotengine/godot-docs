@@ -24,6 +24,11 @@ It is the position of this node that you update when your character needs to mov
 
 For example, if your character is driving a car, the ARVROrigin node should be a child node of this car. Or, if you're implementing a teleport system to move your character, you should change the position of this node.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/vr/index`
+
 Properties
 ----------
 

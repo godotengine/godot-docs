@@ -21,11 +21,11 @@ Generic array which can contain several elements of any type, accessible by a nu
 ::
 
     var array = ["One", 2, 3, "Four"]
-    print(array[0])   # One
-    print(array[2])   # 3
-    print(array[-1])  # Four
+    print(array[0]) # One.
+    print(array[2]) # 3.
+    print(array[-1]) # Four.
     array[2] = "Three"
-    print(array[-2])  # Three
+    print(array[-2]) # Three.
 
 Arrays are always passed by reference.
 
@@ -420,5 +420,5 @@ Sorts the array using a custom method. The arguments are an object that holds th
     
     var my_items = [[5, "Potato"], [9, "Rice"], [4, "Tomato"]]
     my_items.sort_custom(MyCustomSorter, "sort_ascending")
-    print(my_items) # Prints [[4, Tomato], [5, Potato], [9, Rice]]
+    print(my_items) # Prints [[4, Tomato], [5, Potato], [9, Rice]].
 

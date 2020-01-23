@@ -16,7 +16,9 @@ ArrayMesh
 Description
 -----------
 
-The ``ArrayMesh`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying the attributes as arrays. The most basic example is the creation of a single triangle
+The ``ArrayMesh`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying the attributes as arrays.
+
+The most basic example is the creation of a single triangle:
 
 ::
 
@@ -34,7 +36,7 @@ The ``ArrayMesh`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying t
     var m = MeshInstance.new()
     m.mesh = arr_mesh
 
-The ``MeshInstance`` is ready to be added to the SceneTree to be shown.
+The :ref:`MeshInstance<class_MeshInstance>` is ready to be added to the :ref:`SceneTree<class_SceneTree>` to be shown.
 
 Tutorials
 ---------
@@ -162,9 +164,9 @@ enum **ArrayFormat**:
 
 - **ARRAY_FORMAT_VERTEX** = **1** --- Array format will include vertices (mandatory).
 
-- **ARRAY_FORMAT_NORMAL** = **2** --- Array format will include normals
+- **ARRAY_FORMAT_NORMAL** = **2** --- Array format will include normals.
 
-- **ARRAY_FORMAT_TANGENT** = **4** --- Array format will include tangents
+- **ARRAY_FORMAT_TANGENT** = **4** --- Array format will include tangents.
 
 - **ARRAY_FORMAT_COLOR** = **8** --- Array format will include a color array.
 

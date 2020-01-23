@@ -18,6 +18,11 @@ Description
 
 A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Only features one output set using the :ref:`animation<class_AnimationNodeAnimation_property_animation>` property. Use it as an input for :ref:`AnimationNode<class_AnimationNode>` that blend animations together.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/animation/animation_tree`
+
 Properties
 ----------
 

@@ -13,7 +13,7 @@ BitmapFont
 
 Renders text using fonts under the `BMFont <https://www.angelcode.com/products/bmfont/>`_ format.
 
-Handles files with the ``.fnt`` extension
+Handles files with the ``.fnt`` extension.
 
 Description
 -----------

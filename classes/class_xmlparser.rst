@@ -78,19 +78,19 @@ Enumerations
 
 enum **NodeType**:
 
-- **NODE_NONE** = **0** --- There's no node (no file or buffer opened)
+- **NODE_NONE** = **0** --- There's no node (no file or buffer opened).
 
-- **NODE_ELEMENT** = **1** --- Element (tag)
+- **NODE_ELEMENT** = **1** --- Element (tag).
 
-- **NODE_ELEMENT_END** = **2** --- End of element
+- **NODE_ELEMENT_END** = **2** --- End of element.
 
-- **NODE_TEXT** = **3** --- Text node
+- **NODE_TEXT** = **3** --- Text node.
 
-- **NODE_COMMENT** = **4** --- Comment node
+- **NODE_COMMENT** = **4** --- Comment node.
 
-- **NODE_CDATA** = **5** --- CDATA content
+- **NODE_CDATA** = **5** --- CDATA content.
 
-- **NODE_UNKNOWN** = **6** --- Unknown node
+- **NODE_UNKNOWN** = **6** --- Unknown node.
 
 Method Descriptions
 -------------------

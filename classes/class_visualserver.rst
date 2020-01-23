@@ -1936,7 +1936,7 @@ Once finished with your RID, you will want to free the RID using the VisualServe
 
 - void **camera_set_cull_mask** **(** :ref:`RID<class_RID>` camera, :ref:`int<class_int>` layers **)**
 
-Sets the cull mask associated with this camera. The cull mask describes which 3d layers are rendered by this camera. Equivalent to :ref:`Camera.cull_mask<class_Camera_property_cull_mask>`.
+Sets the cull mask associated with this camera. The cull mask describes which 3D layers are rendered by this camera. Equivalent to :ref:`Camera.cull_mask<class_Camera_property_cull_mask>`.
 
 ----
 
@@ -3012,7 +3012,7 @@ Not yet implemented. Always returns ``false``.
 
 - :ref:`bool<class_bool>` **has_os_feature** **(** :ref:`String<class_String>` feature **)** const
 
-Returns ``true`` if the OS supports a certain feature. Features might be s3tc, etc, etc2 and pvrtc,
+Returns ``true`` if the OS supports a certain feature. Features might be ``s3tc``, ``etc``, ``etc2`` and ``pvrtc``.
 
 ----
 
@@ -4034,7 +4034,7 @@ Add particle system to list of particle systems that need to be updated. Update 
 
 - void **particles_restart** **(** :ref:`RID<class_RID>` particles **)**
 
-Reset the particles on the next update. Equivalent to :ref:`Particles.restart<class_Particles_method_restart>`
+Reset the particles on the next update. Equivalent to :ref:`Particles.restart<class_Particles_method_restart>`.
 
 ----
 

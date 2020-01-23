@@ -83,7 +83,7 @@ Return a dictionary representation of the peer with given ``peer_id`` with three
 
 - :ref:`Dictionary<class_Dictionary>` **get_peers** **(** **)**
 
-Returns a dictionary which keys are the peer ids and values the peer representation as in :ref:`get_peer<class_WebRTCMultiplayer_method_get_peer>`
+Returns a dictionary which keys are the peer ids and values the peer representation as in :ref:`get_peer<class_WebRTCMultiplayer_method_get_peer>`.
 
 ----
 

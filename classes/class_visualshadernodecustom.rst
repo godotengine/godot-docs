@@ -31,13 +31,6 @@ Tutorials
 
 - :doc:`../tutorials/plugins/editor/visual_shader_plugins`
 
-Properties
-----------
-
-+---------------------------+----------------------+-----------------+
-| :ref:`Array<class_Array>` | default_input_values | **O:** ``[  ]`` |
-+---------------------------+----------------------+-----------------+
-
 Methods
 -------
 

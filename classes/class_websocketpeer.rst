@@ -117,5 +117,5 @@ Sets the socket to use the given :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
 
 - :ref:`bool<class_bool>` **was_string_packet** **(** **)** const
 
-Returns ``true`` if the last received packet was sent as a text payload. See :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`
+Returns ``true`` if the last received packet was sent as a text payload. See :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`.
 

@@ -1671,10 +1671,10 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 ::
 
     var err = method_that_returns_error()
-    if (err != OK):
+    if err != OK:
         print("Failure!)
     # Or, equivalent:
-    if (err):
+    if err:
         print("Still failing!)
 
 - **FAILED** = **1** --- Generic error.
