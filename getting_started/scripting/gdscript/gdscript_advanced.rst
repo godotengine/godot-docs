@@ -155,7 +155,7 @@ too. Some Examples:
 
 ::
 
-    func use_class(instance); # Does not care about class type
+    func use_class(instance): # Does not care about class type
         instance.use() # Will work with any class that has a ".use()" method.
 
     func do_something():
