@@ -423,11 +423,6 @@ code,
 }
 
 @media only screen and (min-width: 768px) {
-    .wy-side-nav-search {
-        /* Keep the search field visible when scrolling down */
-        position: fixed;
-    }
-
     /* Simulate a drop shadow that only affects the bottom edge */
     /* This is used to indicate the search bar is fixed */
     .wy-side-nav-search::after {
@@ -512,14 +507,6 @@ code,
 .wy-menu-vertical {
     /* Account for the increased `toctree-expand` button margins */
     width: 308px;
-}
-
-@media only screen and (min-width: 768px) {
-    .wy-menu-vertical {
-        /* Account for the fixed logo and search form */
-        /* (prevents the navbar from being hidden behind it) */
-        margin-top: 330px;
-    }
 }
 
 .wy-menu-vertical a {
