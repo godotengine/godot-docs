@@ -99,6 +99,10 @@ html_css_files = [
     'css/custom.css',
 ]
 
+html_js_files = [
+    'js/custom.js',
+]
+
 # Output file base name for HTML help builder
 htmlhelp_basename = 'GodotEnginedoc'
 
