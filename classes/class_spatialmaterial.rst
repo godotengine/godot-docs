@@ -1127,7 +1127,7 @@ Distance at which the object starts to fade. If the object is less than this dis
 | *Getter*  | get_distance_fade()      |
 +-----------+--------------------------+
 
-Specifies which type of fade to use. Can be any of the :ref:`DistanceFadeMode<enum_SpatialMaterial_DistanceFadeMode>`s.
+Specifies which type of fade to use. Can be any of the :ref:`DistanceFadeMode<enum_SpatialMaterial_DistanceFadeMode>`\ s.
 
 ----
 
