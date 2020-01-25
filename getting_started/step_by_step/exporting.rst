@@ -60,7 +60,6 @@ changed:
     signal hit
 
     export var speed = 400
-    var velocity = Vector2()
     var screen_size
     # Add this variable to hold the clicked position.
     var target = Vector2()
@@ -82,6 +81,7 @@ changed:
             target = event.position
 
     func _process(delta):
+        var velocity = Vector2()
         # Move towards the target and stop when close.
         if position.distance_to(target) > 10:
             velocity = (target - position).normalized() * speed
