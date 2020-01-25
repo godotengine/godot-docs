@@ -11,3 +11,4 @@ GDScript
    gdscript_styleguide
    static_typing
    gdscript_format_string
+   gdscript_grammar
