@@ -129,7 +129,7 @@ Place the resulting ``api.json`` file in the project folder and add
 below.
 
 To generate and compile the bindings, use this command (replacing ``<platform>``
-with ``windows``, ``x11`` or ``osx`` depending on your OS):
+with ``windows``, ``linux`` or ``osx`` depending on your OS):
 
 .. code-block:: none
 
