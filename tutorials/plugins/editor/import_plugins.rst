@@ -111,8 +111,8 @@ responsible to inform the name of the type it imports and will be shown to the
 user in the Import dock.
 
 You should choose this name as a continuation to "Import as". Eg. *"Import as
-Silly Material"*. Yes, this one is a bit silly, but you certainly can come up
-with a descriptive name for your plugin.
+Silly Material"*. Yes, this one is a bit silly, you can name it whatever you want but we recommend a
+descriptive name for your plugin.
 
 ::
 
