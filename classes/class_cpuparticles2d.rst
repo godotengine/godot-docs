@@ -625,6 +625,8 @@ Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values
 | *Getter* | get_emission_colors()      |
 +----------+----------------------------+
 
+Sets the :ref:`Color<class_Color>`\ s to modulate particles by when using :ref:`EMISSION_SHAPE_POINTS<class_CPUParticles2D_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles2D_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
+
 ----
 
 .. _class_CPUParticles2D_property_emission_normals:
@@ -637,6 +639,8 @@ Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values
 | *Getter* | get_emission_normals()      |
 +----------+-----------------------------+
 
+Sets the direction the particles will be emitted in when using :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles2D_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
+
 ----
 
 .. _class_CPUParticles2D_property_emission_points:
@@ -648,6 +652,8 @@ Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values
 +----------+----------------------------+
 | *Getter* | get_emission_points()      |
 +----------+----------------------------+
+
+Sets the initial positions to spawn particles when using :ref:`EMISSION_SHAPE_POINTS<class_CPUParticles2D_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles2D_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
 
 ----
 

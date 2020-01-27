@@ -214,6 +214,8 @@ Default flag is :ref:`Mesh.ARRAY_COMPRESS_DEFAULT<class_Mesh_constant_ARRAY_COMP
 
 - :ref:`Array<class_Array>` **commit_to_arrays** **(** **)**
 
+Commits the data to the same format used by :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`. This way you can further process the mesh data using the :ref:`ArrayMesh<class_ArrayMesh>` API.
+
 ----
 
 .. _class_SurfaceTool_method_create_from:
@@ -227,6 +229,8 @@ Creates a vertex array from an existing :ref:`Mesh<class_Mesh>`.
 .. _class_SurfaceTool_method_create_from_blend_shape:
 
 - void **create_from_blend_shape** **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface, :ref:`String<class_String>` blend_shape **)**
+
+Creates a vertex array from the specified blend shape of an existing :ref:`Mesh<class_Mesh>`. This can be used to extract a specific pose from a blend shape.
 
 ----
 

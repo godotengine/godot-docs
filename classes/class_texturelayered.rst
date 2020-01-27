@@ -13,7 +13,12 @@ TextureLayered
 
 **Inherited By:** :ref:`Texture3D<class_Texture3D>`, :ref:`TextureArray<class_TextureArray>`
 
+Base class for 3D texture types.
 
+Description
+-----------
+
+Base class for :ref:`Texture3D<class_Texture3D>` and :ref:`TextureArray<class_TextureArray>`. Cannot be used directly.
 
 Properties
 ----------

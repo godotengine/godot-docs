@@ -4696,7 +4696,7 @@ Sets a viewport's canvas.
 
 - void **viewport_attach_to_screen** **(** :ref:`RID<class_RID>` viewport, :ref:`Rect2<class_Rect2>` rect=Rect2( 0, 0, 0, 0 ), :ref:`int<class_int>` screen=0 **)**
 
-Copies viewport to a region of the screen specified by ``rect``. If Viewport.:ref:`Viewport.render_direct_to_screen<class_Viewport_property_render_direct_to_screen>` is ``true``, then viewport does not use a framebuffer and the contents of the viewport are rendered directly to screen. However, note that the root viewport is drawn last, therefore it will draw over the screen. Accordingly, you must set the root viewport to an area that does not cover the area that you have attached this viewport to.
+Copies viewport to a region of the screen specified by ``rect``. If :ref:`Viewport.render_direct_to_screen<class_Viewport_property_render_direct_to_screen>` is ``true``, then viewport does not use a framebuffer and the contents of the viewport are rendered directly to screen. However, note that the root viewport is drawn last, therefore it will draw over the screen. Accordingly, you must set the root viewport to an area that does not cover the area that you have attached this viewport to.
 
 For example, you can set the root viewport to not render at all with the following code:
 

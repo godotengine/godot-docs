@@ -142,7 +142,7 @@ Emitted when files are dragged from the OS file manager and dropped in the game 
 
 .. _class_SceneTree_signal_global_menu_action:
 
-- **global_menu_action** **(** :ref:`Nil<class_Nil>` id, :ref:`Nil<class_Nil>` meta **)**
+- **global_menu_action** **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)**
 
 Emitted whenever global menu item is clicked.
 

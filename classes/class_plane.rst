@@ -78,11 +78,11 @@ Constants
 
 .. _class_Plane_constant_PLANE_XY:
 
-- **PLANE_YZ** = **Plane( 1, 0, 0, 0 )**
+- **PLANE_YZ** = **Plane( 1, 0, 0, 0 )** --- A plane that extends in the Y and Z axes.
 
-- **PLANE_XZ** = **Plane( 0, 1, 0, 0 )**
+- **PLANE_XZ** = **Plane( 0, 1, 0, 0 )** --- A plane that extends in the X and Z axes.
 
-- **PLANE_XY** = **Plane( 0, 0, 1, 0 )**
+- **PLANE_XY** = **Plane( 0, 0, 1, 0 )** --- A plane that extends in the X and Y axes.
 
 Property Descriptions
 ---------------------

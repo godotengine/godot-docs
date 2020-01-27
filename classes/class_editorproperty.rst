@@ -75,7 +75,7 @@ Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
 .. _class_EditorProperty_signal_property_changed:
 
-- **property_changed** **(** :ref:`String<class_String>` property, :ref:`Nil<class_Nil>` value **)**
+- **property_changed** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_method_emit_changed>` method instead.
 
@@ -99,7 +99,7 @@ Emit it if you want to add this value as an animation key (check for keying bein
 
 .. _class_EditorProperty_signal_property_keyed_with_value:
 
-- **property_keyed_with_value** **(** :ref:`String<class_String>` property, :ref:`Nil<class_Nil>` value **)**
+- **property_keyed_with_value** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Emit it if you want to key a property with a single value.
 

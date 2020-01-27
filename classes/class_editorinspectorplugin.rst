@@ -114,5 +114,5 @@ Called to allow adding controls at the end of the list.
 
 - :ref:`bool<class_bool>` **parse_property** **(** :ref:`Object<class_Object>` object, :ref:`int<class_int>` type, :ref:`String<class_String>` path, :ref:`int<class_int>` hint, :ref:`String<class_String>` hint_text, :ref:`int<class_int>` usage **)** virtual
 
-Called to allow adding property specific editors to the inspector. Usually these inherit :ref:`EditorProperty<class_EditorProperty>`.
+Called to allow adding property specific editors to the inspector. Usually these inherit :ref:`EditorProperty<class_EditorProperty>`. Returning ``true`` removes the built-in editor for this property, otherwise allows to insert a custom editor before the built-in one.
 

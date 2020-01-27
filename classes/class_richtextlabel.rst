@@ -169,7 +169,7 @@ Signals
 
 .. _class_RichTextLabel_signal_meta_clicked:
 
-- **meta_clicked** **(** :ref:`Nil<class_Nil>` meta **)**
+- **meta_clicked** **(** :ref:`Variant<class_Variant>` meta **)**
 
 Triggered when the user clicks on content between meta tags. If the meta is defined in text, e.g. ``[url={"data"="hi"}]hi[/url]``, then the parameter for this signal will be a :ref:`String<class_String>` type. If a particular type or an object is desired, the :ref:`push_meta<class_RichTextLabel_method_push_meta>` method must be used to manually insert the data into the tag stack.
 
@@ -177,7 +177,7 @@ Triggered when the user clicks on content between meta tags. If the meta is defi
 
 .. _class_RichTextLabel_signal_meta_hover_ended:
 
-- **meta_hover_ended** **(** :ref:`Nil<class_Nil>` meta **)**
+- **meta_hover_ended** **(** :ref:`Variant<class_Variant>` meta **)**
 
 Triggers when the mouse exits a meta tag.
 
@@ -185,7 +185,7 @@ Triggers when the mouse exits a meta tag.
 
 .. _class_RichTextLabel_signal_meta_hover_started:
 
-- **meta_hover_started** **(** :ref:`Nil<class_Nil>` meta **)**
+- **meta_hover_started** **(** :ref:`Variant<class_Variant>` meta **)**
 
 Triggers when the mouse enters a meta tag.
 

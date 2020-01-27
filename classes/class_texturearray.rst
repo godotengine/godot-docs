@@ -11,5 +11,10 @@ TextureArray
 
 **Inherits:** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Array of textures stored in a single primitive.
 
+Description
+-----------
+
+``TextureArray``\ s store an array of images in a single :ref:`Texture<class_Texture>` primitive. Each layer of the texture array has its own mipmap chain. This makes it is a good alternative to texture atlases.
 

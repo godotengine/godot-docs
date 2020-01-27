@@ -280,7 +280,9 @@ Border width for the top border.
 
 This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value, you should take the corner radius (:ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>`) into account.
 
-For corner radii smaller than 10, 4-5 should be enough. For corner radii smaller than 30, 8-12 should be enough.
+For corner radii smaller than 10, ``4`` or ``5`` should be enough. For corner radii smaller than 30, values between ``8`` and ``12`` should be enough.
+
+A corner detail of ``1`` will result in chamfered corners instead of rounded corners, which is useful for some artistic effects.
 
 ----
 

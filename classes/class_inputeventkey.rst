@@ -90,7 +90,9 @@ If ``true``, the key's state is pressed. If ``false``, the key's state is releas
 | *Getter*  | get_scancode()      |
 +-----------+---------------------+
 
-Key scancode, one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
+The key scancode, which corresponds to one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
+
+To get a human-readable representation of the ``InputEventKey``, use ``OS.get_scancode_string(event.scancode)`` where ``event`` is the ``InputEventKey``.
 
 ----
 
@@ -106,7 +108,7 @@ Key scancode, one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants.
 | *Getter*  | get_unicode()      |
 +-----------+--------------------+
 
-Key Unicode identifier when relevant. Unicode identifiers for the composite characters and complex scripts may not be available unless IME input mode is active. See :ref:`OS.set_ime_active<class_OS_method_set_ime_active>` for more information.
+The key Unicode identifier (when relevant). Unicode identifiers for the composite characters and complex scripts may not be available unless IME input mode is active. See :ref:`OS.set_ime_active<class_OS_method_set_ime_active>` for more information.
 
 Method Descriptions
 -------------------
@@ -116,4 +118,6 @@ Method Descriptions
 - :ref:`int<class_int>` **get_scancode_with_modifiers** **(** **)** const
 
 Returns the scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
+
+To get a human-readable representation of the ``InputEventKey`` with modifiers, use ``OS.get_scancode_string(event.get_scancode_with_modifiers())`` where ``event`` is the ``InputEventKey``.
 

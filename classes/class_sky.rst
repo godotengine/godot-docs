@@ -85,3 +85,5 @@ The ``Sky``'s radiance map size. The higher the radiance map size, the more deta
 
 See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 
+**Note:** Some hardware will have trouble with higher radiance sizes, especially :ref:`RADIANCE_SIZE_512<class_Sky_constant_RADIANCE_SIZE_512>` and above. Only use such high values on high-end hardware.
+

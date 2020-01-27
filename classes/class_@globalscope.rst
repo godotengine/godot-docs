@@ -2033,7 +2033,7 @@ enum **MethodFlags**:
 
 enum **Variant.Type**:
 
-- **TYPE_NIL** = **0** --- Variable is of type :ref:`Nil<class_Nil>` (only applied for ``null``).
+- **TYPE_NIL** = **0** --- Variable is ``null``.
 
 - **TYPE_BOOL** = **1** --- Variable is of type :ref:`bool<class_bool>`.
 

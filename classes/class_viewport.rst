@@ -217,19 +217,19 @@ enum **UpdateMode**:
 
 enum **ShadowAtlasQuadrantSubdiv**:
 
-- **SHADOW_ATLAS_QUADRANT_SUBDIV_DISABLED** = **0**
+- **SHADOW_ATLAS_QUADRANT_SUBDIV_DISABLED** = **0** --- This quadrant will not be used.
 
-- **SHADOW_ATLAS_QUADRANT_SUBDIV_1** = **1**
+- **SHADOW_ATLAS_QUADRANT_SUBDIV_1** = **1** --- This quadrant will only be used by one shadow map.
 
-- **SHADOW_ATLAS_QUADRANT_SUBDIV_4** = **2**
+- **SHADOW_ATLAS_QUADRANT_SUBDIV_4** = **2** --- This quadrant will be split in 4 and used by up to 4 shadow maps.
 
-- **SHADOW_ATLAS_QUADRANT_SUBDIV_16** = **3**
+- **SHADOW_ATLAS_QUADRANT_SUBDIV_16** = **3** --- This quadrant will be split 16 ways and used by up to 16 shadow maps.
 
-- **SHADOW_ATLAS_QUADRANT_SUBDIV_64** = **4**
+- **SHADOW_ATLAS_QUADRANT_SUBDIV_64** = **4** --- This quadrant will be split 64 ways and used by up to 64 shadow maps.
 
-- **SHADOW_ATLAS_QUADRANT_SUBDIV_256** = **5**
+- **SHADOW_ATLAS_QUADRANT_SUBDIV_256** = **5** --- This quadrant will be split 256 ways and used by up to 256 shadow maps. Unless the :ref:`shadow_atlas_size<class_Viewport_property_shadow_atlas_size>` is very high, the shadows in this quadrant will be very low resolution.
 
-- **SHADOW_ATLAS_QUADRANT_SUBDIV_1024** = **6**
+- **SHADOW_ATLAS_QUADRANT_SUBDIV_1024** = **6** --- This quadrant will be split 1024 ways and used by up to 1024 shadow maps. Unless the :ref:`shadow_atlas_size<class_Viewport_property_shadow_atlas_size>` is very high, the shadows in this quadrant will be very low resolution.
 
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_MAX** = **7** --- Represents the size of the :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` enum.
 
@@ -307,13 +307,13 @@ enum **MSAA**:
 
 - **MSAA_DISABLED** = **0** --- Multisample anti-aliasing mode disabled. This is the default value.
 
-- **MSAA_2X** = **1**
+- **MSAA_2X** = **1** --- Use 2x Multisample Antialiasing.
 
-- **MSAA_4X** = **2**
+- **MSAA_4X** = **2** --- Use 4x Multisample Antialiasing.
 
-- **MSAA_8X** = **3**
+- **MSAA_8X** = **3** --- Use 8x Multisample Antialiasing. Likely unsupported on low-end and older hardware.
 
-- **MSAA_16X** = **4**
+- **MSAA_16X** = **4** --- Use 16x Multisample Antialiasing. Likely unsupported on medium and low-end hardware.
 
 ----
 
@@ -329,13 +329,13 @@ enum **MSAA**:
 
 enum **Usage**:
 
-- **USAGE_2D** = **0**
+- **USAGE_2D** = **0** --- Allocates all buffers needed for drawing 2D scenes. This takes less VRAM than the 3D usage modes.
 
-- **USAGE_2D_NO_SAMPLING** = **1**
+- **USAGE_2D_NO_SAMPLING** = **1** --- Allocates buffers needed for 2D scenes without allocating a buffer for screen copy. Accordingly, you cannot read from the screen. Of the :ref:`Usage<enum_Viewport_Usage>` types, this requires the least VRAM.
 
-- **USAGE_3D** = **2**
+- **USAGE_3D** = **2** --- Allocates full buffers for drawing 3D scenes and all 3D effects including buffers needed for 2D scenes and effects.
 
-- **USAGE_3D_NO_EFFECTS** = **3**
+- **USAGE_3D_NO_EFFECTS** = **3** --- Allocates buffers needed for drawing 3D scenes. But does not allocate buffers needed for reading from the screen and post-processing effects. Saves some VRAM.
 
 ----
 
@@ -524,7 +524,7 @@ If ``true``, the GUI controls on the viewport will lay pixel perfectly.
 | *Getter*  | get_hdr()      |
 +-----------+----------------+
 
-If ``true``, the viewport rendering will receive benefits from High Dynamic Range algorithm.
+If ``true``, the viewport rendering will receive benefits from High Dynamic Range algorithm. High Dynamic Range allows the viewport to receive values that are outside the 0-1 range. In Godot HDR uses 16 bits, meaning it does not store the full range of a floating point number.
 
 ----
 
@@ -556,7 +556,7 @@ If ``true``, the result after 3D rendering will not have a linear to sRGB color 
 | *Getter*  | get_msaa()      |
 +-----------+-----------------+
 
-The multisample anti-aliasing mode.
+The multisample anti-aliasing mode. A higher number results in smoother edges at the cost of significantly worse performance. A value of 4 is best unless targetting very high-end systems.
 
 ----
 
@@ -668,7 +668,7 @@ If ``true``, the result of rendering will be flipped vertically.
 | *Getter*  | get_shadow_atlas_quadrant_subdiv()      |
 +-----------+-----------------------------------------+
 
-The subdivision amount of first quadrant on shadow atlas.
+The subdivision amount of the first quadrant on the shadow atlas.
 
 ----
 
@@ -684,7 +684,7 @@ The subdivision amount of first quadrant on shadow atlas.
 | *Getter*  | get_shadow_atlas_quadrant_subdiv()      |
 +-----------+-----------------------------------------+
 
-The subdivision amount of second quadrant on shadow atlas.
+The subdivision amount of the second quadrant on the shadow atlas.
 
 ----
 
@@ -700,7 +700,7 @@ The subdivision amount of second quadrant on shadow atlas.
 | *Getter*  | get_shadow_atlas_quadrant_subdiv()      |
 +-----------+-----------------------------------------+
 
-The subdivision amount of third quadrant on shadow atlas.
+The subdivision amount of the third quadrant on the shadow atlas.
 
 ----
 
@@ -716,7 +716,7 @@ The subdivision amount of third quadrant on shadow atlas.
 | *Getter*  | get_shadow_atlas_quadrant_subdiv()      |
 +-----------+-----------------------------------------+
 
-The subdivision amount of fourth quadrant on shadow atlas.
+The subdivision amount of the fourth quadrant on the shadow atlas.
 
 ----
 
@@ -891,6 +891,8 @@ Returns information about the viewport from the rendering pipeline.
 
 - :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` **get_shadow_atlas_quadrant_subdiv** **(** :ref:`int<class_int>` quadrant **)** const
 
+Returns the :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` of the specified quadrant.
+
 ----
 
 .. _class_Viewport_method_get_size_override:
@@ -980,17 +982,23 @@ Returns ``true`` if the size override is enabled. See :ref:`set_size_override<cl
 
 - void **set_attach_to_screen_rect** **(** :ref:`Rect2<class_Rect2>` rect **)**
 
+Attaches this ``Viewport`` to the root ``Viewport`` with the specified rectangle. This bypasses the need for another node to display this ``Viewport`` but makes you responsible for updating the position of this ``Viewport`` manually.
+
 ----
 
 .. _class_Viewport_method_set_input_as_handled:
 
 - void **set_input_as_handled** **(** **)**
 
+Stops the input from propagating further down the :ref:`SceneTree<class_SceneTree>`.
+
 ----
 
 .. _class_Viewport_method_set_shadow_atlas_quadrant_subdiv:
 
 - void **set_shadow_atlas_quadrant_subdiv** **(** :ref:`int<class_int>` quadrant, :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` subdiv **)**
+
+Sets the number of subdivisions to use in the specified quadrant. A higher number of subdivisions allows you to have more shadows in the scene at once, but reduces the quality of the shadows. A good practice is to have quadrants with a varying number of subdivisions and to have as few subdivisions as possible.
 
 ----
 

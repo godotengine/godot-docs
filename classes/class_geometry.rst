@@ -283,6 +283,8 @@ Given the two 2D segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two
 
 - :ref:`int<class_int>` **get_uv84_normal_bit** **(** :ref:`Vector3<class_Vector3>` normal **)**
 
+Used internally by the engine.
+
 ----
 
 .. _class_Geometry_method_intersect_polygons_2d:

@@ -84,7 +84,7 @@ Constants
 
 .. _class_Quat_constant_IDENTITY:
 
-- **IDENTITY** = **Quat( 0, 0, 0, 1 )**
+- **IDENTITY** = **Quat( 0, 0, 0, 1 )** --- The identity rotation. Equivalent to an identity matrix. If a vector is transformed by an identity quaternion, it will not change.
 
 Property Descriptions
 ---------------------

@@ -20,6 +20,14 @@ Uses an :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` to fill the texture data
 
 NoiseTexture can also generate normalmap textures.
 
+The class uses :ref:`Thread<class_Thread>`\ s to generate the texture data internally, so :ref:`Texture.get_data<class_Texture_method_get_data>` may return ``null`` if the generation process has not completed yet. In that case, you need to wait for the texture to be generated before accessing the data:
+
+::
+
+    var texture = preload("res://noise.tres")
+    yield(texture, "changed")
+    var image = texture.get_data()
+
 Properties
 ----------
 
@@ -69,6 +77,8 @@ If ``true``, the resulting texture contains a normal map created from the origin
 +-----------+--------------------------+
 | *Getter*  | get_bump_strength()      |
 +-----------+--------------------------+
+
+Strength of the bump maps used in this texture. A higher value will make the bump maps appear larger while a lower value will make them appear softer.
 
 ----
 

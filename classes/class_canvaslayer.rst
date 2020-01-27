@@ -86,6 +86,8 @@ The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``.
 | *Getter*  | is_following_viewport()    |
 +-----------+----------------------------+
 
+Sets the layer to follow the viewport in order to simulate a pseudo 3D effect.
+
 ----
 
 .. _class_CanvasLayer_property_follow_viewport_scale:
@@ -99,6 +101,8 @@ The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``.
 +-----------+----------------------------------+
 | *Getter*  | get_follow_viewport_scale()      |
 +-----------+----------------------------------+
+
+Scales the layer when using :ref:`follow_viewport_enable<class_CanvasLayer_property_follow_viewport_enable>`. Layers moving into the foreground should have increasing scales, while layers moving into the background should have decreasing scales.
 
 ----
 

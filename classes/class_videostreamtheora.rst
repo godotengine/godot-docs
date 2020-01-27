@@ -11,7 +11,12 @@ VideoStreamTheora
 
 **Inherits:** :ref:`VideoStream<class_VideoStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+:ref:`VideoStream<class_VideoStream>` resource for Ogg Theora videos.
 
+Description
+-----------
+
+:ref:`VideoStream<class_VideoStream>` resource handling the `Ogg Theora <https://www.theora.org/>`_ video format with ``.ogv`` extension.
 
 Methods
 -------
@@ -29,9 +34,13 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_file** **(** **)**
 
+Returns the Ogg Theora video file handled by this ``VideoStreamTheora``.
+
 ----
 
 .. _class_VideoStreamTheora_method_set_file:
 
 - void **set_file** **(** :ref:`String<class_String>` file **)**
+
+Sets the Ogg Theora video file that this ``VideoStreamTheora`` resource handles. The ``file`` name should have the ``.o`` extension.
 

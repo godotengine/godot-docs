@@ -525,7 +525,7 @@ Transforms ``global_point`` from world space to this node's local space.
 
 - void **translate** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
-Changes the node's position by given offset :ref:`Vector3<class_Vector3>`.
+Changes the node's position by the given offset :ref:`Vector3<class_Vector3>`.
 
 Note that the translation ``offset`` is affected by the node's scale, so if scaled by e.g. ``(10, 1, 1)``, a translation by an offset of ``(2, 0, 0)`` would actually add 20 (``2 * 10``) to the X coordinate.
 
@@ -534,6 +534,8 @@ Note that the translation ``offset`` is affected by the node's scale, so if scal
 .. _class_Spatial_method_translate_object_local:
 
 - void **translate_object_local** **(** :ref:`Vector3<class_Vector3>` offset **)**
+
+Changes the node's position by the given offset :ref:`Vector3<class_Vector3>` in local space.
 
 ----
 

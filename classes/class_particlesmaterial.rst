@@ -1119,11 +1119,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_ParticlesMaterial_Flags>` flag **)** const
 
+Returns ``true`` if the specified flag is enabled.
+
 ----
 
 .. _class_ParticlesMaterial_method_get_param:
 
 - :ref:`float<class_float>` **get_param** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** const
+
+Returns the value of the specified parameter.
 
 ----
 
@@ -1131,11 +1135,15 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_param_randomness** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** const
 
+Returns the randomness ratio associated with the specified parameter.
+
 ----
 
 .. _class_ParticlesMaterial_method_get_param_texture:
 
 - :ref:`Texture<class_Texture>` **get_param_texture** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** const
+
+Returns the :ref:`Texture<class_Texture>` used by the specified parameter.
 
 ----
 
@@ -1143,11 +1151,15 @@ Method Descriptions
 
 - void **set_flag** **(** :ref:`Flags<enum_ParticlesMaterial_Flags>` flag, :ref:`bool<class_bool>` enable **)**
 
+If ``true``, enables the specified flag. See :ref:`Flags<enum_ParticlesMaterial_Flags>` for options.
+
 ----
 
 .. _class_ParticlesMaterial_method_set_param:
 
 - void **set_param** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param, :ref:`float<class_float>` value **)**
+
+Sets the specified :ref:`Parameter<enum_ParticlesMaterial_Parameter>`.
 
 ----
 
@@ -1155,9 +1167,13 @@ Method Descriptions
 
 - void **set_param_randomness** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param, :ref:`float<class_float>` randomness **)**
 
+Sets the randomness ratio for the specified :ref:`Parameter<enum_ParticlesMaterial_Parameter>`.
+
 ----
 
 .. _class_ParticlesMaterial_method_set_param_texture:
 
 - void **set_param_texture** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param, :ref:`Texture<class_Texture>` texture **)**
+
+Sets the :ref:`Texture<class_Texture>` for the specified :ref:`Parameter<enum_ParticlesMaterial_Parameter>`.
 

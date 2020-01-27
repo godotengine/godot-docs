@@ -32,7 +32,7 @@ Signals
 
 .. _class_GDScriptFunctionState_signal_completed:
 
-- **completed** **(** :ref:`Nil<class_Nil>` result **)**
+- **completed** **(** :ref:`Variant<class_Variant>` result **)**
 
 Method Descriptions
 -------------------

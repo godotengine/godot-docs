@@ -22,6 +22,8 @@ A texture works by registering an image in the video hardware, which then can be
 
 Textures are often created by loading them from a file. See :ref:`@GDScript.load<class_@GDScript_method_load>`.
 
+``Texture`` is a base for other resources. It cannot be used directly.
+
 Properties
 ----------
 
@@ -106,7 +108,7 @@ Property Descriptions
 | *Getter*  | get_flags()      |
 +-----------+------------------+
 
-The texture's flags.
+The texture's :ref:`Flags<enum_Texture_Flags>`. :ref:`Flags<enum_Texture_Flags>` are used to set various properties of the ``Texture``.
 
 Method Descriptions
 -------------------
@@ -115,11 +117,15 @@ Method Descriptions
 
 - void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** const
 
+Draws the texture using a :ref:`CanvasItem<class_CanvasItem>` with the :ref:`VisualServer<class_VisualServer>` API at the specified ``position``. Equivalent to :ref:`VisualServer.canvas_item_add_texture_rect<class_VisualServer_method_canvas_item_add_texture_rect>` with a rect at ``position`` and the size of this ``Texture``.
+
 ----
 
 .. _class_Texture_method_draw_rect:
 
 - void **draw_rect** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** const
+
+Draws the texture using a :ref:`CanvasItem<class_CanvasItem>` with the :ref:`VisualServer<class_VisualServer>` API. Equivalent to :ref:`VisualServer.canvas_item_add_texture_rect<class_VisualServer_method_canvas_item_add_texture_rect>`.
 
 ----
 
@@ -127,11 +133,15 @@ Method Descriptions
 
 - void **draw_rect_region** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** const
 
+Draws a part of the texture using a :ref:`CanvasItem<class_CanvasItem>` with the :ref:`VisualServer<class_VisualServer>` API. Equivalent to :ref:`VisualServer.canvas_item_add_texture_rect_region<class_VisualServer_method_canvas_item_add_texture_rect_region>`.
+
 ----
 
 .. _class_Texture_method_get_data:
 
 - :ref:`Image<class_Image>` **get_data** **(** **)** const
+
+Returns an :ref:`Image<class_Image>` with the data from this ``Texture``. :ref:`Image<class_Image>`\ s can be accessed and manipulated directly.
 
 ----
 
@@ -162,4 +172,6 @@ Returns the texture width.
 .. _class_Texture_method_has_alpha:
 
 - :ref:`bool<class_bool>` **has_alpha** **(** **)** const
+
+Returns ``true`` if this ``Texture`` has an alpha channel.
 

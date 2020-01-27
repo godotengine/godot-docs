@@ -644,6 +644,8 @@ The rectangle's extents if :ref:`emission_shape<class_CPUParticles_property_emis
 | *Getter*  | get_emission_colors()      |
 +-----------+----------------------------+
 
+Sets the :ref:`Color<class_Color>`\ s to modulate particles by when using :ref:`EMISSION_SHAPE_POINTS<class_CPUParticles_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
+
 ----
 
 .. _class_CPUParticles_property_emission_normals:
@@ -655,6 +657,8 @@ The rectangle's extents if :ref:`emission_shape<class_CPUParticles_property_emis
 +----------+-----------------------------+
 | *Getter* | get_emission_normals()      |
 +----------+-----------------------------+
+
+Sets the direction the particles will be emitted in when using :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
 
 ----
 
@@ -669,6 +673,8 @@ The rectangle's extents if :ref:`emission_shape<class_CPUParticles_property_emis
 +-----------+----------------------------+
 | *Getter*  | get_emission_points()      |
 +-----------+----------------------------+
+
+Sets the initial positions to spawn particles when using :ref:`EMISSION_SHAPE_POINTS<class_CPUParticles_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
 
 ----
 

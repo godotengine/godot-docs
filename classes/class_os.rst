@@ -1142,6 +1142,8 @@ Returns the window size including decorations like window borders.
 
 Returns the given scancode as a string (e.g. Return values: ``"Escape"``, ``"Shift+Escape"``).
 
+See also :ref:`InputEventKey.scancode<class_InputEventKey_property_scancode>` and :ref:`InputEventKey.get_scancode_with_modifiers<class_InputEventKey_method_get_scancode_with_modifiers>`.
+
 ----
 
 .. _class_OS_method_get_screen_count:

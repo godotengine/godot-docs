@@ -463,6 +463,10 @@ Returns ``true`` if you are pressing the mouse button specified with :ref:`Butto
 
 - void **joy_connection_changed** **(** :ref:`int<class_int>` device, :ref:`bool<class_bool>` connected, :ref:`String<class_String>` name, :ref:`String<class_String>` guid **)**
 
+Notifies the ``Input`` singleton that a connection has changed, to update the state for the ``device`` index.
+
+This is used internally and should not have to be called from user scripts. See :ref:`joy_connection_changed<class_Input_signal_joy_connection_changed>` for the signal emitted when this is triggered internally.
+
 ----
 
 .. _class_Input_method_parse_input_event:

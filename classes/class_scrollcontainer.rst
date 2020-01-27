@@ -174,9 +174,13 @@ Method Descriptions
 
 - :ref:`HScrollBar<class_HScrollBar>` **get_h_scrollbar** **(** **)**
 
+Returns the horizontal scrollbar :ref:`HScrollBar<class_HScrollBar>` of this ``ScrollContainer``.
+
 ----
 
 .. _class_ScrollContainer_method_get_v_scrollbar:
 
 - :ref:`VScrollBar<class_VScrollBar>` **get_v_scrollbar** **(** **)**
+
+Returns the vertical scrollbar :ref:`VScrollBar<class_VScrollBar>` of this ``ScrollContainer``.
 

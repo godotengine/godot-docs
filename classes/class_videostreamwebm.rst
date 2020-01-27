@@ -11,7 +11,12 @@ VideoStreamWebm
 
 **Inherits:** :ref:`VideoStream<class_VideoStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+:ref:`VideoStream<class_VideoStream>` resource for WebM videos.
 
+Description
+-----------
+
+:ref:`VideoStream<class_VideoStream>` resource handling the `WebM <https://www.webmproject.org/>`_ video format with ``.webm`` extension.
 
 Methods
 -------
@@ -29,9 +34,13 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_file** **(** **)**
 
+Returns the WebM video file handled by this ``VideoStreamWebm``.
+
 ----
 
 .. _class_VideoStreamWebm_method_set_file:
 
 - void **set_file** **(** :ref:`String<class_String>` file **)**
+
+Sets the WebM video file that this ``VideoStreamWebm`` resource handles. The ``file`` name should have the ``.webm`` extension.
 

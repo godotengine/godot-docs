@@ -76,15 +76,15 @@ Enumerations
 
 enum **TextureSize**:
 
-- **TEXTURE_SIZE_256** = **0**
+- **TEXTURE_SIZE_256** = **0** --- Sky texture will be 256x128.
 
-- **TEXTURE_SIZE_512** = **1**
+- **TEXTURE_SIZE_512** = **1** --- Sky texture will be 512x256.
 
-- **TEXTURE_SIZE_1024** = **2**
+- **TEXTURE_SIZE_1024** = **2** --- Sky texture will be 1024x512. This is the default size.
 
-- **TEXTURE_SIZE_2048** = **3**
+- **TEXTURE_SIZE_2048** = **3** --- Sky texture will be 2048x1024.
 
-- **TEXTURE_SIZE_4096** = **4**
+- **TEXTURE_SIZE_4096** = **4** --- Sky texture will be 4096x2048.
 
 - **TEXTURE_SIZE_MAX** = **5** --- Represents the size of the :ref:`TextureSize<enum_ProceduralSky_TextureSize>` enum.
 

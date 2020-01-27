@@ -578,6 +578,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/reflections/high_quality_ggx.mobile<class_ProjectSettings_property_rendering/quality/reflections/high_quality_ggx.mobile>`                   | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/quality/reflections/irradiance_max_size<class_ProjectSettings_property_rendering/quality/reflections/irradiance_max_size>`                           | ``128``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/reflections/texture_array_reflections<class_ProjectSettings_property_rendering/quality/reflections/texture_array_reflections>`               | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/reflections/texture_array_reflections.mobile<class_ProjectSettings_property_rendering/quality/reflections/texture_array_reflections.mobile>` | ``false``                                                                                       |
@@ -777,6 +779,8 @@ Icon used for the project, set when project loads. Exporters will also use this 
 | *Default* | ``""`` |
 +-----------+--------+
 
+Icon set in ``.icns`` format used on macOS to set the game's icon. This is done automatically on start by calling :ref:`OS.set_native_icon<class_OS_method_set_native_icon>`.
+
 ----
 
 .. _class_ProjectSettings_property_application/config/name:
@@ -824,6 +828,8 @@ If ``true``, the project will save user data to its own user directory (see :ref
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Icon set in ``.ico`` format used on Windows to set the game's icon. This is done automatically on start by calling :ref:`OS.set_native_icon<class_OS_method_set_native_icon>`.
 
 ----
 
@@ -930,6 +936,8 @@ Audio buses will disable automatically when sound goes below a given dB threshol
 +-----------+-------------------------------------+
 | *Default* | ``"res://default_bus_layout.tres"`` |
 +-----------+-------------------------------------+
+
+Default :ref:`AudioBusLayout<class_AudioBusLayout>` resource file to use in the project, unless overridden by the scene.
 
 ----
 
@@ -1048,6 +1056,8 @@ Enables long-distance matching in Zstandard.
 +-----------+--------+
 | *Default* | ``27`` |
 +-----------+--------+
+
+Largest size limit (in power of 2) allowed when compressing using long-distance matching with Zstandard.
 
 ----
 
@@ -1443,6 +1453,12 @@ Message to be displayed before the backtrace when the engine crashes.
 | *Default* | ``0`` |
 +-----------+-------+
 
+Maximum number of frames per second allowed. The actual number of frames per second may still be below this value if the game is lagging.
+
+If :ref:`display/window/vsync/use_vsync<class_ProjectSettings_property_display/window/vsync/use_vsync>` is enabled, it takes precedence and the forced FPS number cannot exceed the monitor's refresh rate.
+
+This setting is therefore mostly relevant for lowering the maximum FPS below VSync, e.g. to perform non real-time rendering of static frames, or test the project under lag conditions.
+
 ----
 
 .. _class_ProjectSettings_property_debug/settings/gdscript/max_call_stack:
@@ -1513,6 +1529,8 @@ Maximum call stack in visual scripting, to avoid infinite recursion.
 | *Default* | ``Color( 1, 0.2, 0.1, 0.8 )`` |
 +-----------+-------------------------------+
 
+Color of the contact points between collision shapes, visible when "Visible Collision Shapes" is enabled in the Debug menu.
+
 ----
 
 .. _class_ProjectSettings_property_debug/shapes/collision/max_contacts_displayed:
@@ -1522,6 +1540,8 @@ Maximum call stack in visual scripting, to avoid infinite recursion.
 +-----------+-----------+
 | *Default* | ``10000`` |
 +-----------+-----------+
+
+Maximum number of contact points between collision shapes to display when "Visible Collision Shapes" is enabled in the Debug menu.
 
 ----
 
@@ -1533,6 +1553,8 @@ Maximum call stack in visual scripting, to avoid infinite recursion.
 | *Default* | ``Color( 0, 0.6, 0.7, 0.5 )`` |
 +-----------+-------------------------------+
 
+Color of the collision shapes, visible when "Visible Collision Shapes" is enabled in the Debug menu.
+
 ----
 
 .. _class_ProjectSettings_property_debug/shapes/navigation/disabled_geometry_color:
@@ -1543,6 +1565,8 @@ Maximum call stack in visual scripting, to avoid infinite recursion.
 | *Default* | ``Color( 1, 0.7, 0.1, 0.4 )`` |
 +-----------+-------------------------------+
 
+Color of the disabled navigation geometry, visible when "Visible Navigation" is enabled in the Debug menu.
+
 ----
 
 .. _class_ProjectSettings_property_debug/shapes/navigation/geometry_color:
@@ -1552,6 +1576,8 @@ Maximum call stack in visual scripting, to avoid infinite recursion.
 +-----------+-------------------------------+
 | *Default* | ``Color( 0.1, 1, 0.7, 0.4 )`` |
 +-----------+-------------------------------+
+
+Color of the navigation geometry, visible when "Visible Navigation" is enabled in the Debug menu.
 
 ----
 
@@ -1793,6 +1819,8 @@ If ``Use Vsync`` is enabled and this setting is ``true``, enables vertical synch
 | *Default* | ``"res://script_templates"`` |
 +-----------+------------------------------+
 
+Search path for project-specific script templates. Script templates will be search both in the editor-specific path and in this project-specific path.
+
 ----
 
 .. _class_ProjectSettings_property_editor/search_in_file_extensions:
@@ -1803,6 +1831,8 @@ If ``Use Vsync`` is enabled and this setting is ``true``, enables vertical synch
 | *Default* | ``PoolStringArray( "gd", "shader" )`` |
 +-----------+---------------------------------------+
 
+Text-based file extensions to include in the script editor's "Find in Files" feature. You can add e.g. ``tscn`` if you wish to also parse your scene files, especially if you use built-in scripts which are serialized in the scene files.
+
 ----
 
 .. _class_ProjectSettings_property_gui/common/default_scroll_deadzone:
@@ -1812,6 +1842,8 @@ If ``Use Vsync`` is enabled and this setting is ``true``, enables vertical synch
 +-----------+-------+
 | *Default* | ``0`` |
 +-----------+-------+
+
+Default value for :ref:`ScrollContainer.scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`, which will be used for all :ref:`ScrollContainer<class_ScrollContainer>`\ s unless overridden.
 
 ----
 
@@ -1835,7 +1867,7 @@ If ``true``, swaps OK and Cancel buttons in dialogs on Windows and UWP to follow
 | *Default* | ``""`` |
 +-----------+--------+
 
-Use a custom theme resource, set a path to it here.
+Path to a custom :ref:`Theme<class_Theme>` resource file to use for the project (``theme`` or generic ``tres``/``res`` extension).
 
 ----
 
@@ -1847,7 +1879,7 @@ Use a custom theme resource, set a path to it here.
 | *Default* | ``""`` |
 +-----------+--------+
 
-Use a custom default font resource, set a path to it here.
+Path to a custom :ref:`Font<class_Font>` resource to use as default for all GUI elements of the project.
 
 ----
 
@@ -1871,7 +1903,7 @@ If ``true``, makes sure the theme used works with HiDPI.
 | *Default* | ``2000`` |
 +-----------+----------+
 
-Timer setting for incremental search in Tree, IntemList, etc. controls (in milliseconds).
+Timer setting for incremental search in :ref:`Tree<class_Tree>`, :ref:`ItemList<class_ItemList>`, etc. controls (in milliseconds).
 
 ----
 
@@ -1883,7 +1915,7 @@ Timer setting for incremental search in Tree, IntemList, etc. controls (in milli
 | *Default* | ``3`` |
 +-----------+-------+
 
-Timer for detecting idle in the editor (in seconds).
+Timer for detecting idle in :ref:`TextEdit<class_TextEdit>` (in seconds).
 
 ----
 
@@ -1895,11 +1927,17 @@ Timer for detecting idle in the editor (in seconds).
 | *Default* | ``0.5`` |
 +-----------+---------+
 
+Default delay for tooltips (in seconds).
+
 ----
 
 .. _class_ProjectSettings_property_input/ui_accept:
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_accept**
+
+Default :ref:`InputEventAction<class_InputEventAction>` to confirm a focused button, menu or list item, or validate input.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -1907,11 +1945,19 @@ Timer for detecting idle in the editor (in seconds).
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_cancel**
 
+Default :ref:`InputEventAction<class_InputEventAction>` to discard a modal or pending input.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
 ----
 
 .. _class_ProjectSettings_property_input/ui_down:
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_down**
+
+Default :ref:`InputEventAction<class_InputEventAction>` to move down in the UI.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -1919,11 +1965,19 @@ Timer for detecting idle in the editor (in seconds).
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_end**
 
+Default :ref:`InputEventAction<class_InputEventAction>` to go to the end position of a :ref:`Control<class_Control>` (e.g. last item in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_END<class_@GlobalScope_constant_KEY_END>` on typical desktop UI systems.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
 ----
 
 .. _class_ProjectSettings_property_input/ui_focus_next:
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_focus_next**
+
+Default :ref:`InputEventAction<class_InputEventAction>` to focus the next :ref:`Control<class_Control>` in the scene. The focus behavior can be configured via :ref:`Control.focus_next<class_Control_property_focus_next>`.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -1931,11 +1985,19 @@ Timer for detecting idle in the editor (in seconds).
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_focus_prev**
 
+Default :ref:`InputEventAction<class_InputEventAction>` to focus the previous :ref:`Control<class_Control>` in the scene. The focus behavior can be configured via :ref:`Control.focus_previous<class_Control_property_focus_previous>`.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
 ----
 
 .. _class_ProjectSettings_property_input/ui_home:
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_home**
+
+Default :ref:`InputEventAction<class_InputEventAction>` to go to the start position of a :ref:`Control<class_Control>` (e.g. first item in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_HOME<class_@GlobalScope_constant_KEY_HOME>` on typical desktop UI systems.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -1943,11 +2005,19 @@ Timer for detecting idle in the editor (in seconds).
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_left**
 
+Default :ref:`InputEventAction<class_InputEventAction>` to move left in the UI.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
 ----
 
 .. _class_ProjectSettings_property_input/ui_page_down:
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_page_down**
+
+Default :ref:`InputEventAction<class_InputEventAction>` to go down a page in a :ref:`Control<class_Control>` (e.g. in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_PAGEDOWN<class_@GlobalScope_constant_KEY_PAGEDOWN>` on typical desktop UI systems.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -1955,11 +2025,19 @@ Timer for detecting idle in the editor (in seconds).
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_page_up**
 
+Default :ref:`InputEventAction<class_InputEventAction>` to go up a page in a :ref:`Control<class_Control>` (e.g. in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_PAGEUP<class_@GlobalScope_constant_KEY_PAGEUP>` on typical desktop UI systems.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
 ----
 
 .. _class_ProjectSettings_property_input/ui_right:
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_right**
+
+Default :ref:`InputEventAction<class_InputEventAction>` to move right in the UI.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -1967,11 +2045,19 @@ Timer for detecting idle in the editor (in seconds).
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_select**
 
+Default :ref:`InputEventAction<class_InputEventAction>` to select an item in a :ref:`Control<class_Control>` (e.g. in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`).
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
 ----
 
 .. _class_ProjectSettings_property_input/ui_up:
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_up**
+
+Default :ref:`InputEventAction<class_InputEventAction>` to move up in the UI.
+
+**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2007,6 +2093,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D physics layer 1.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_10:
@@ -2016,6 +2104,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D physics layer 10.
 
 ----
 
@@ -2027,6 +2117,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D physics layer 11.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_12:
@@ -2036,6 +2128,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D physics layer 12.
 
 ----
 
@@ -2047,6 +2141,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D physics layer 13.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_14:
@@ -2056,6 +2152,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D physics layer 14.
 
 ----
 
@@ -2067,6 +2165,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D physics layer 15.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_16:
@@ -2076,6 +2176,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D physics layer 16.
 
 ----
 
@@ -2087,6 +2189,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D physics layer 17.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_18:
@@ -2096,6 +2200,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D physics layer 18.
 
 ----
 
@@ -2107,6 +2213,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D physics layer 19.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_2:
@@ -2116,6 +2224,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D physics layer 2.
 
 ----
 
@@ -2127,6 +2237,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D physics layer 20.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_3:
@@ -2136,6 +2248,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D physics layer 3.
 
 ----
 
@@ -2147,6 +2261,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D physics layer 4.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_5:
@@ -2156,6 +2272,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D physics layer 5.
 
 ----
 
@@ -2167,6 +2285,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D physics layer 6.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_7:
@@ -2176,6 +2296,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D physics layer 7.
 
 ----
 
@@ -2187,6 +2309,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D physics layer 8.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_physics/layer_9:
@@ -2196,6 +2320,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D physics layer 9.
 
 ----
 
@@ -2207,6 +2333,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D render layer 1.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_render/layer_10:
@@ -2216,6 +2344,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D render layer 10.
 
 ----
 
@@ -2227,6 +2357,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D render layer 11.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_render/layer_12:
@@ -2236,6 +2368,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D render layer 12.
 
 ----
 
@@ -2247,6 +2381,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D render layer 13.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_render/layer_14:
@@ -2256,6 +2392,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D render layer 14.
 
 ----
 
@@ -2267,6 +2405,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D render layer 15.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_render/layer_16:
@@ -2276,6 +2416,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D render layer 16.
 
 ----
 
@@ -2287,6 +2429,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D render layer 17.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_render/layer_18:
@@ -2296,6 +2440,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D render layer 18.
 
 ----
 
@@ -2307,6 +2453,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D render layer 19.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_render/layer_2:
@@ -2316,6 +2464,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D render layer 2.
 
 ----
 
@@ -2327,6 +2477,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D render layer 20.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_render/layer_3:
@@ -2336,6 +2488,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D render layer 3.
 
 ----
 
@@ -2347,6 +2501,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D render layer 4.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_render/layer_5:
@@ -2356,6 +2512,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D render layer 5.
 
 ----
 
@@ -2367,6 +2525,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D render layer 6.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_render/layer_7:
@@ -2376,6 +2536,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D render layer 7.
 
 ----
 
@@ -2387,6 +2549,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 2D render layer 8.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/2d_render/layer_9:
@@ -2396,6 +2560,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 2D render layer 9.
 
 ----
 
@@ -2407,6 +2573,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D physics layer 1.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_10:
@@ -2416,6 +2584,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D physics layer 10.
 
 ----
 
@@ -2427,6 +2597,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D physics layer 11.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_12:
@@ -2436,6 +2608,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D physics layer 12.
 
 ----
 
@@ -2447,6 +2621,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D physics layer 13.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_14:
@@ -2456,6 +2632,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D physics layer 14.
 
 ----
 
@@ -2467,6 +2645,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D physics layer 15.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_16:
@@ -2476,6 +2656,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D physics layer 16.
 
 ----
 
@@ -2487,6 +2669,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D physics layer 17.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_18:
@@ -2496,6 +2680,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D physics layer 18.
 
 ----
 
@@ -2507,6 +2693,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D physics layer 19.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_2:
@@ -2516,6 +2704,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D physics layer 2.
 
 ----
 
@@ -2527,6 +2717,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D physics layer 20.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_3:
@@ -2536,6 +2728,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D physics layer 3.
 
 ----
 
@@ -2547,6 +2741,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D physics layer 4.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_5:
@@ -2556,6 +2752,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D physics layer 5.
 
 ----
 
@@ -2567,6 +2765,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D physics layer 6.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_7:
@@ -2576,6 +2776,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D physics layer 7.
 
 ----
 
@@ -2587,6 +2789,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D physics layer 8.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_physics/layer_9:
@@ -2596,6 +2800,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D physics layer 9.
 
 ----
 
@@ -2607,6 +2813,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D render layer 1.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_render/layer_10:
@@ -2616,6 +2824,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D render layer 10.
 
 ----
 
@@ -2627,6 +2837,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D render layer 11.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_render/layer_12:
@@ -2636,6 +2848,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D render layer 12.
 
 ----
 
@@ -2647,6 +2861,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D render layer 13.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_render/layer_14:
@@ -2656,6 +2872,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D render layer 14
 
 ----
 
@@ -2667,6 +2885,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D render layer 15.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_render/layer_16:
@@ -2676,6 +2896,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D render layer 16.
 
 ----
 
@@ -2687,6 +2909,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D render layer 17.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_render/layer_18:
@@ -2696,6 +2920,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D render layer 18.
 
 ----
 
@@ -2707,6 +2933,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D render layer 19.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_render/layer_2:
@@ -2716,6 +2944,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D render layer 2.
 
 ----
 
@@ -2727,6 +2957,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D render layer 20.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_render/layer_3:
@@ -2736,6 +2968,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D render layer 3.
 
 ----
 
@@ -2747,6 +2981,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D render layer 4.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_render/layer_5:
@@ -2756,6 +2992,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D render layer 5.
 
 ----
 
@@ -2767,6 +3005,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D render layer 6.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_render/layer_7:
@@ -2776,6 +3016,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D render layer 7.
 
 ----
 
@@ -2787,6 +3029,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 | *Default* | ``""`` |
 +-----------+--------+
 
+Optional name for the 3D render layer 8.
+
 ----
 
 .. _class_ProjectSettings_property_layer_names/3d_render/layer_9:
@@ -2796,6 +3040,8 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 +-----------+--------+
 | *Default* | ``""`` |
 +-----------+--------+
+
+Optional name for the 3D render layer 9.
 
 ----
 
@@ -2951,6 +3197,8 @@ Default size of packet peer stream for deserializing Godot data. Over this size,
 | *Default* | ``30`` |
 +-----------+--------+
 
+Timeout (in seconds) for connection attempts using TCP.
+
 ----
 
 .. _class_ProjectSettings_property_network/limits/webrtc/max_channel_in_buffer_kb:
@@ -2960,6 +3208,8 @@ Default size of packet peer stream for deserializing Godot data. Over this size,
 +-----------+--------+
 | *Default* | ``64`` |
 +-----------+--------+
+
+Maximum size (in kiB) for the :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` input buffer.
 
 ----
 
@@ -2971,6 +3221,8 @@ Default size of packet peer stream for deserializing Godot data. Over this size,
 | *Default* | ``64`` |
 +-----------+--------+
 
+Maximum size (in kiB) for the :ref:`WebSocketClient<class_WebSocketClient>` input buffer.
+
 ----
 
 .. _class_ProjectSettings_property_network/limits/websocket_client/max_in_packets:
@@ -2980,6 +3232,8 @@ Default size of packet peer stream for deserializing Godot data. Over this size,
 +-----------+----------+
 | *Default* | ``1024`` |
 +-----------+----------+
+
+Maximum number of concurrent input packets for :ref:`WebSocketClient<class_WebSocketClient>`.
 
 ----
 
@@ -2991,6 +3245,8 @@ Default size of packet peer stream for deserializing Godot data. Over this size,
 | *Default* | ``64`` |
 +-----------+--------+
 
+Maximum size (in kiB) for the :ref:`WebSocketClient<class_WebSocketClient>` output buffer.
+
 ----
 
 .. _class_ProjectSettings_property_network/limits/websocket_client/max_out_packets:
@@ -3000,6 +3256,8 @@ Default size of packet peer stream for deserializing Godot data. Over this size,
 +-----------+----------+
 | *Default* | ``1024`` |
 +-----------+----------+
+
+Maximum number of concurrent output packets for :ref:`WebSocketClient<class_WebSocketClient>`.
 
 ----
 
@@ -3011,6 +3269,8 @@ Default size of packet peer stream for deserializing Godot data. Over this size,
 | *Default* | ``64`` |
 +-----------+--------+
 
+Maximum size (in kiB) for the :ref:`WebSocketServer<class_WebSocketServer>` input buffer.
+
 ----
 
 .. _class_ProjectSettings_property_network/limits/websocket_server/max_in_packets:
@@ -3020,6 +3280,8 @@ Default size of packet peer stream for deserializing Godot data. Over this size,
 +-----------+----------+
 | *Default* | ``1024`` |
 +-----------+----------+
+
+Maximum number of concurrent input packets for :ref:`WebSocketServer<class_WebSocketServer>`.
 
 ----
 
@@ -3031,6 +3293,8 @@ Default size of packet peer stream for deserializing Godot data. Over this size,
 | *Default* | ``64`` |
 +-----------+--------+
 
+Maximum size (in kiB) for the :ref:`WebSocketServer<class_WebSocketServer>` output buffer.
+
 ----
 
 .. _class_ProjectSettings_property_network/limits/websocket_server/max_out_packets:
@@ -3040,6 +3304,8 @@ Default size of packet peer stream for deserializing Godot data. Over this size,
 +-----------+----------+
 | *Default* | ``1024`` |
 +-----------+----------+
+
+Maximum number of concurrent output packets for :ref:`WebSocketServer<class_WebSocketServer>`.
 
 ----
 
@@ -3075,6 +3341,8 @@ Page size used by remote filesystem (in bytes).
 | *Default* | ``""`` |
 +-----------+--------+
 
+CA certificates bundle to use for SSL connections. If not defined, Godot's internal CA certificates are used.
+
 ----
 
 .. _class_ProjectSettings_property_node/name_casing:
@@ -3109,6 +3377,8 @@ What to use to separate node name from number. This is mostly an editor setting.
 | *Default* | ``4096`` |
 +-----------+----------+
 
+Size of the hash table used for the broad-phase 2D hash grid algorithm.
+
 ----
 
 .. _class_ProjectSettings_property_physics/2d/cell_size:
@@ -3118,6 +3388,8 @@ What to use to separate node name from number. This is mostly an editor setting.
 +-----------+---------+
 | *Default* | ``128`` |
 +-----------+---------+
+
+Cell size used for the broad-phase 2D hash grid algorithm.
 
 ----
 
@@ -3129,6 +3401,8 @@ What to use to separate node name from number. This is mostly an editor setting.
 | *Default* | ``1.0`` |
 +-----------+---------+
 
+The default angular damp in 2D.
+
 ----
 
 .. _class_ProjectSettings_property_physics/2d/default_gravity:
@@ -3138,6 +3412,15 @@ What to use to separate node name from number. This is mostly an editor setting.
 +-----------+--------+
 | *Default* | ``98`` |
 +-----------+--------+
+
+The default gravity strength in 2D.
+
+**Note:** This property is only read when the project starts. To change the default gravity at runtime, use the following code sample:
+
+::
+
+    # Set the default gravity strength to 98.
+    Physics2DServer.area_set_param(get_viewport().find_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY, 98)
 
 ----
 
@@ -3149,6 +3432,15 @@ What to use to separate node name from number. This is mostly an editor setting.
 | *Default* | ``Vector2( 0, 1 )`` |
 +-----------+---------------------+
 
+The default gravity direction in 2D.
+
+**Note:** This property is only read when the project starts. To change the default gravity vector at runtime, use the following code sample:
+
+::
+
+    # Set the default gravity direction to `Vector2(0, 1)`.
+    Physics2DServer.area_set_param(get_viewport().find_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2(0, 1))
+
 ----
 
 .. _class_ProjectSettings_property_physics/2d/default_linear_damp:
@@ -3158,6 +3450,8 @@ What to use to separate node name from number. This is mostly an editor setting.
 +-----------+---------+
 | *Default* | ``0.1`` |
 +-----------+---------+
+
+The default linear damp in 2D.
 
 ----
 
@@ -3169,6 +3463,8 @@ What to use to separate node name from number. This is mostly an editor setting.
 | *Default* | ``512`` |
 +-----------+---------+
 
+Threshold defining the surface size that constitutes a large object with regard to cells in the broad-phase 2D hash grid algorithm.
+
 ----
 
 .. _class_ProjectSettings_property_physics/2d/physics_engine:
@@ -3178,6 +3474,10 @@ What to use to separate node name from number. This is mostly an editor setting.
 +-----------+---------------+
 | *Default* | ``"DEFAULT"`` |
 +-----------+---------------+
+
+Sets which physics engine to use for 2D physics.
+
+"DEFAULT" and "GodotPhysics" are the same, as there is currently no alternative 2D physics server implemented.
 
 ----
 
@@ -3189,6 +3489,8 @@ What to use to separate node name from number. This is mostly an editor setting.
 | *Default* | ``0.139626`` |
 +-----------+--------------+
 
+Threshold angular velocity under which a 2D physics body will be considered inactive. See :ref:`Physics2DServer.SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD<class_Physics2DServer_constant_SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD>`.
+
 ----
 
 .. _class_ProjectSettings_property_physics/2d/sleep_threshold_linear:
@@ -3198,6 +3500,8 @@ What to use to separate node name from number. This is mostly an editor setting.
 +-----------+---------+
 | *Default* | ``2.0`` |
 +-----------+---------+
+
+Threshold linear velocity under which a 2D physics body will be considered inactive. See :ref:`Physics2DServer.SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD<class_Physics2DServer_constant_SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD>`.
 
 ----
 
@@ -3211,6 +3515,8 @@ What to use to separate node name from number. This is mostly an editor setting.
 
 Sets whether physics is run on the main thread or a separate one. Running the server on a thread increases performance, but restricts API access to only physics process.
 
+**Warning:** As of Godot 3.2, there are mixed reports about the use of a Multi-Threaded thread model for physics. Be sure to assess whether it does give you extra performance and no regressions when using it.
+
 ----
 
 .. _class_ProjectSettings_property_physics/2d/time_before_sleep:
@@ -3220,6 +3526,8 @@ Sets whether physics is run on the main thread or a separate one. Running the se
 +-----------+---------+
 | *Default* | ``0.5`` |
 +-----------+---------+
+
+Time (in seconds) of inactivity before which a 2D physics body will put to sleep. See :ref:`Physics2DServer.SPACE_PARAM_BODY_TIME_TO_SLEEP<class_Physics2DServer_constant_SPACE_PARAM_BODY_TIME_TO_SLEEP>`.
 
 ----
 
@@ -3231,6 +3539,8 @@ Sets whether physics is run on the main thread or a separate one. Running the se
 | *Default* | ``true`` |
 +-----------+----------+
 
+Sets whether the 3D physics world will be created with support for :ref:`SoftBody<class_SoftBody>` physics. Only applies to the Bullet physics engine.
+
 ----
 
 .. _class_ProjectSettings_property_physics/3d/default_angular_damp:
@@ -3240,6 +3550,8 @@ Sets whether physics is run on the main thread or a separate one. Running the se
 +-----------+---------+
 | *Default* | ``0.1`` |
 +-----------+---------+
+
+The default angular damp in 3D.
 
 ----
 
@@ -3251,6 +3563,15 @@ Sets whether physics is run on the main thread or a separate one. Running the se
 | *Default* | ``9.8`` |
 +-----------+---------+
 
+The default gravity strength in 3D.
+
+**Note:** This property is only read when the project starts. To change the default gravity at runtime, use the following code sample:
+
+::
+
+    # Set the default gravity strength to 9.8.
+    PhysicsServer.area_set_param(get_viewport().find_world().get_space(), PhysicsServer.AREA_PARAM_GRAVITY, 9.8)
+
 ----
 
 .. _class_ProjectSettings_property_physics/3d/default_gravity_vector:
@@ -3260,6 +3581,15 @@ Sets whether physics is run on the main thread or a separate one. Running the se
 +-----------+-------------------------+
 | *Default* | ``Vector3( 0, -1, 0 )`` |
 +-----------+-------------------------+
+
+The default gravity direction in 3D.
+
+**Note:** This property is only read when the project starts. To change the default gravity vector at runtime, use the following code sample:
+
+::
+
+    # Set the default gravity direction to `Vector3(0, -1, 0)`.
+    PhysicsServer.area_set_param(get_viewport().find_world().get_space(), PhysicsServer.AREA_PARAM_GRAVITY_VECTOR, Vector3(0, -1, 0))
 
 ----
 
@@ -3271,6 +3601,8 @@ Sets whether physics is run on the main thread or a separate one. Running the se
 | *Default* | ``0.1`` |
 +-----------+---------+
 
+The default linear damp in 3D.
+
 ----
 
 .. _class_ProjectSettings_property_physics/3d/physics_engine:
@@ -3281,7 +3613,9 @@ Sets whether physics is run on the main thread or a separate one. Running the se
 | *Default* | ``"DEFAULT"`` |
 +-----------+---------------+
 
-Sets which physics engine to use.
+Sets which physics engine to use for 3D physics.
+
+"DEFAULT" is currently the `Bullet <https://bulletphysics.org>`_ physics engine. The "GodotPhysics" engine is still supported as an alternative.
 
 ----
 
@@ -3292,6 +3626,8 @@ Sets which physics engine to use.
 +-----------+----------+
 | *Default* | ``true`` |
 +-----------+----------+
+
+Enables :ref:`Viewport.physics_object_picking<class_Viewport_property_physics_object_picking>` on the root viewport.
 
 ----
 
@@ -3487,6 +3823,8 @@ If ``true``, allocates the main framebuffer with high dynamic range. High dynami
 | *Default* | ``false`` |
 +-----------+-----------+
 
+Lower-end override for :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` on mobile devices, due to performance concerns or driver support.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/quality/depth_prepass/disable_for_vendors:
@@ -3532,6 +3870,8 @@ The directional shadow's size in pixels. Higher values will result in sharper sh
 +-----------+----------+
 | *Default* | ``2048`` |
 +-----------+----------+
+
+Lower-end override for :ref:`rendering/quality/directional_shadow/size<class_ProjectSettings_property_rendering/quality/directional_shadow/size>` on mobile devices, due to performance concerns or driver support.
 
 ----
 
@@ -3621,7 +3961,7 @@ Strategy used for framebuffer allocation. The simpler it is, the less resources 
 | *Default* | ``3`` |
 +-----------+-------+
 
-Same as :ref:`rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>` but for mobile defaults to "3D Without Effects". If effects are desired, set to "3D".
+Lower-end override for :ref:`rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>` on mobile devices, due to performance concerns or driver support.
 
 ----
 
@@ -3669,6 +4009,22 @@ If ``true``, uses a high amount of samples to create blurred variants of reflect
 | *Default* | ``false`` |
 +-----------+-----------+
 
+Lower-end override for :ref:`rendering/quality/reflections/high_quality_ggx<class_ProjectSettings_property_rendering/quality/reflections/high_quality_ggx>` on mobile devices, due to performance concerns or driver support.
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/reflections/irradiance_max_size:
+
+- :ref:`int<class_int>` **rendering/quality/reflections/irradiance_max_size**
+
++-----------+---------+
+| *Default* | ``128`` |
++-----------+---------+
+
+Limits the size of the irradiance map which is normally determined by :ref:`Sky.radiance_size<class_Sky_property_radiance_size>`. A higher size results in a higher quality irradiance map similarly to :ref:`rendering/quality/reflections/high_quality_ggx<class_ProjectSettings_property_rendering/quality/reflections/high_quality_ggx>`. Use a higher value when using high-frequency HDRI maps, otherwise keep this as low as possible.
+
+**Note:** Low and mid range hardware do not support complex irradiance maps well and may crash if this is set too high.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/quality/reflections/texture_array_reflections:
@@ -3690,6 +4046,8 @@ If ``true``, uses texture arrays instead of mipmaps for reflection probes and pa
 +-----------+-----------+
 | *Default* | ``false`` |
 +-----------+-----------+
+
+Lower-end override for :ref:`rendering/quality/reflections/texture_array_reflections<class_ProjectSettings_property_rendering/quality/reflections/texture_array_reflections>` on mobile devices, due to performance concerns or driver support.
 
 ----
 
@@ -3713,6 +4071,8 @@ If ``true``, uses faster but lower-quality Blinn model to generate blurred refle
 | *Default* | ``true`` |
 +-----------+----------+
 
+Lower-end override for :ref:`rendering/quality/shading/force_blinn_over_ggx<class_ProjectSettings_property_rendering/quality/shading/force_blinn_over_ggx>` on mobile devices, due to performance concerns or driver support.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/quality/shading/force_lambert_over_burley:
@@ -3735,6 +4095,8 @@ If ``true``, uses faster but lower-quality Lambert material lighting model inste
 | *Default* | ``true`` |
 +-----------+----------+
 
+Lower-end override for :ref:`rendering/quality/shading/force_lambert_over_burley<class_ProjectSettings_property_rendering/quality/shading/force_lambert_over_burley>` on mobile devices, due to performance concerns or driver support.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading:
@@ -3756,6 +4118,8 @@ If ``true``, forces vertex shading for all rendering. This can increase performa
 +-----------+----------+
 | *Default* | ``true`` |
 +-----------+----------+
+
+Lower-end override for :ref:`rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>` on mobile devices, due to performance concerns or driver support.
 
 ----
 
@@ -3827,6 +4191,8 @@ Size for shadow atlas (used for OmniLights and SpotLights). See documentation.
 | *Default* | ``2048`` |
 +-----------+----------+
 
+Lower-end override for :ref:`rendering/quality/shadow_atlas/size<class_ProjectSettings_property_rendering/quality/shadow_atlas/size>` on mobile devices, due to performance concerns or driver support.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/quality/shadows/filter_mode:
@@ -3848,6 +4214,8 @@ Shadow filter mode. Higher-quality settings result in smoother shadows that flic
 +-----------+-------+
 | *Default* | ``0`` |
 +-----------+-------+
+
+Lower-end override for :ref:`rendering/quality/shadows/filter_mode<class_ProjectSettings_property_rendering/quality/shadows/filter_mode>` on mobile devices, due to performance concerns or driver support.
 
 ----
 
@@ -3871,7 +4239,7 @@ Improves quality of subsurface scattering, but cost significantly increases.
 | *Default* | ``1`` |
 +-----------+-------+
 
-Quality setting for subsurface scaterring (samples taken).
+Quality setting for subsurface scattering (samples taken).
 
 ----
 
@@ -3882,6 +4250,8 @@ Quality setting for subsurface scaterring (samples taken).
 +-----------+---------+
 | *Default* | ``1.0`` |
 +-----------+---------+
+
+Max radius used for subsurface scattering samples.
 
 ----
 
