@@ -3,6 +3,10 @@
 Import plugins
 ==============
 
+.. note:: This tutorial assumes you already know how to make generic plugins. If
+          in doubt, refer to the :ref:`doc_making_plugins` page. This also
+          assumes you are acquainted with Godot's import system.
+
 Introduction
 ------------
 
@@ -15,13 +19,7 @@ This tutorial will show you how to create a simple import plugin to load a
 custom text file as a material resource. This text file will contain three
 numeric values separated by comma, which represents the three channels of a
 color, and the resulting color will be used as the albedo (main color) of the
-imported material.
-
-.. note:: This tutorial assumes you already know how to make generic plugins. If
-          in doubt, refer to the :ref:`doc_making_plugins` page. This also
-          assumes you are acquainted with Godot's import system.
-
-The sample file to import contains only a line representing the pure blue color
+imported material. In this example it will contain the pure blue color
 (zero red, zero green, and full blue):
 
 .. code-block:: none
@@ -72,16 +70,16 @@ later when removing it. The
 called when the plugin is deactivated to clean up the memory and let the editor
 know the import plugin isn't available anymore.
 
-Note that the import plugin is a reference type  so it doesn't need to be
-explicitly released from the memory with the ``free()`` function. It will be
+Note that the import plugin is a reference type, so it doesn't need to be
+explicitly released from memory with the ``free()`` function. It will be
 released automatically by the engine when it goes out of scope.
 
 The EditorImportPlugin class
 ----------------------------
 
 The main character of the show is the
-:ref:`EditorImportPlugin class <class_EditorImportPlugin>`. It is responsible to
-implement the methods that are called by Godot when it needs to know how to deal
+:ref:`EditorImportPlugin class <class_EditorImportPlugin>`. It is responsible for
+implementing the methods that are called by Godot when it needs to know how to deal
 with files.
 
 Let's begin to code our plugin, one method at time:
@@ -97,7 +95,7 @@ Let's begin to code our plugin, one method at time:
 
 The first method is the
 :ref:`get_importer_name()<class_EditorImportPlugin_method_get_importer_name>`. This is a
-unique name to your plugin that is used by Godot to know which import was used
+unique name for your plugin that is used by Godot to know which import was used
 in a certain file. When the files needs to be reimported, the editor will know
 which plugin to call.
 
@@ -107,12 +105,12 @@ which plugin to call.
         return "Silly Material"
 
 The :ref:`get_visible_name()<class_EditorImportPlugin_method_get_visible_name>` method is
-responsible to inform the name of the type it imports and will be shown to the
+responsible for returning the name of the type it imports and it will be shown to the
 user in the Import dock.
 
-You should choose this name as a continuation to "Import as". Eg. *"Import as
-Silly Material"*. Yes, this one is a bit silly, but you certainly can come up
-with a descriptive name for your plugin.
+You should choose this name as a continuation to "Import as", e.g. *"Import as
+Silly Material"*. You can name it whatever you want but we recommend a
+descriptive name for your plugin.
 
 ::
 
@@ -138,7 +136,7 @@ the user can select which one to use when importing the files.
 The imported files are saved in the ``.import`` folder at the project's root.
 Their extension should match the type of resource you are importing, but since
 Godot can't tell what you'll use (because there might be multiple valid
-extensions for the same resource), you need to inform what will be the used in
+extensions for the same resource), you need to declare what will be used in
 the import.
 
 Since we're importing a Material, we'll use the special extension for such
@@ -281,7 +279,7 @@ value, you can add the logic in this method.
 The ``import`` method
 ---------------------
 
-The heavy part of the process, responsible for the converting the files into
+The heavy part of the process, responsible for converting the files into
 resources, is covered by the :ref:`import() <class_EditorImportPlugin_method_import>`
 method. Our sample code is a bit long, so let's split in a few parts:
 
@@ -365,7 +363,7 @@ To import a platform variant, you need to save it with the feature tag before
 the extension, and then push the tag to the ``r_platform_variants`` array so the
 editor can know that you did.
 
-For an example, let's say we save a different material for mobile platform. We
+For example, let's say we save a different material for a mobile platform. We
 would need to do something like the following:
 
 ::
