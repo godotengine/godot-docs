@@ -19,7 +19,7 @@ To bind to an external library, set up a module directory similar to the Summato
 
 Next, you will create a header file with a simple TTS class:
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* tts.h */
 
@@ -44,7 +44,7 @@ Next, you will create a header file with a simple TTS class:
 
 And then you'll add the cpp file.
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* tts.cpp */
 
@@ -77,7 +77,7 @@ need to be created:
 
 With the following contents:
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* register_types.h */
 
@@ -85,7 +85,7 @@ With the following contents:
     void unregister_tts_types();
     /* yes, the word in the middle must be the same as the module folder name */
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* register_types.cpp */
 
@@ -105,7 +105,7 @@ With the following contents:
 Next, you need to create a ``SCsub`` file so the build system compiles
 this module:
 
-.. code:: python
+.. code-block:: python
 
     # SCsub
 
@@ -157,7 +157,7 @@ can link to them instead by adding them as submodules (from within the modules/t
 To add include directories for the compiler to look at you can append it to the
 environment's paths:
 
-.. code:: python
+.. code-block:: python
 
     env_tts.Append(CPPPATH=["speech_tools/include", "festival/src/include"]) # this is a path relative to /modules/tts/
     # http://www.cstr.ed.ac.uk/projects/festival/manual/festival_28.html#SEC132 <-- Festival library documentation
@@ -169,7 +169,7 @@ If you want to add custom compiler flags when building your module, you need to 
 `env` first, so it won't add those flags to whole Godot build (which can cause errors).
 Example `SCsub` with custom flags:
 
-.. code:: python
+.. code-block:: python
 
     # SCsub
 

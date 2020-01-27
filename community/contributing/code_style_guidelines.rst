@@ -149,7 +149,7 @@ ones, the following rules should be followed:
 
 Example:
 
-.. code:: cpp
+.. code-block:: cpp
 
     /*************************************************************************/
     /*  my_new_file.h                                                        */
@@ -194,7 +194,7 @@ Example:
 
     #endif // MY_NEW_FILE_H
 
-.. code:: cpp
+.. code-block:: cpp
 
     /*************************************************************************/
     /*  my_new_file.cpp                                                      */

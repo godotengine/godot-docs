@@ -182,7 +182,7 @@ Write in a clear and simple language. Always follow the :ref:`writing guidelines
 
 Here's how a class looks like in XML:
 
-.. code:: xml
+.. code-block:: xml
 
     <class name="Node2D" inherits="CanvasItem" category="Core">
         <brief_description>
@@ -255,7 +255,7 @@ Godot's class reference supports BBcode-like tags. They add nice formatting to t
 
 Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use **four spaces** for indentation (the parser will delete tabs). Example:
 
-.. code:: xml
+.. code-block:: xml
 
     [codeblock]
     func _ready():

@@ -65,7 +65,7 @@ Android directories
 
 Inside your plugin folder, you can use the standard folders as if they were from an Android Gradle project. Examples of this are:
 
-::
+.. code-block:: none
 
    src/ - For Java source code, same as in your Android project
    res/ - For resources
@@ -91,19 +91,19 @@ AndroidManifest.conf
 
 This file allows to insert bits of chunk into *AndroidManifest.xml*, the following are supported tags and are entirely optional:
 
-::
+.. code-block:: none
 
    [user_permissions]
 
 Any bit of text below this tag is inserted inside the <manifest> tag of the file. This is often used for permission tags.
 
-::
+.. code-block:: none
 
    [application]
 
 Any bit of text below this tag inside the <application> tag of the file. Many SDKs require this.
 
-::
+.. code-block:: none
 
    [application_attribs]
 
@@ -114,7 +114,7 @@ gradle.conf
 
 This file allows to insert bits of chunk into *build.gradle*, the following are supported and are entirely optional:
 
-::
+.. code-block:: none
 
    [buildscript_repositories]
 
@@ -122,21 +122,21 @@ This file allows to insert bits of chunk into *build.gradle*, the following are 
 Any bit of text below this tag is inserted inside the buildscript.repositories section of the build file.
 
 
-::
+.. code-block:: none
 
    [buildscript_dependencies]
 
 
 Any bit of text below this tag is inserted inside the buildscript.dependencies section of the build file.
 
-::
+.. code-block:: none
 
    [allprojects_repositories]
 
 
 Any bit of text below this tag is inserted inside the allprojects.repositories section of the build file.
 
-::
+.. code-block:: none
 
    [dependencies]
 
@@ -144,14 +144,14 @@ Any bit of text below this tag is inserted inside the allprojects.repositories s
 Any bit of text below this tag is inserted inside the dependencies section of the build file.
 
 
-::
+.. code-block:: none
 
    [android_defaultconfig]
 
 
 Any bit of text below this tag is inserted inside the android.defaultconfig section of the build file.
 
-::
+.. code-block:: none
 
    [global]
 
@@ -168,7 +168,7 @@ any additional resources you have provided for the module will be in the
 
 A singleton object template follows:
 
-.. code:: java
+.. code-block:: java
 
     package org.godotengine.godot;
 
@@ -246,7 +246,7 @@ passed to Java.
 From Java, use the ``calldeferred`` function to communicate back with Godot.
 Java will most likely run in a separate thread, so calls are deferred:
 
-.. code:: java
+.. code-block:: java
 
     GodotLib.calldeferred(<instanceid>, "<function>", new Object[]{param1, param2, etc});
 
@@ -264,7 +264,7 @@ The module should include the full Java path. For our example: ``org/godotengine
 
 Then, from your script:
 
-.. code::
+::
 
     if Engine.has_singleton("MySingleton"):
         var singleton = Engine.get_singleton("MySingleton")
@@ -290,7 +290,7 @@ entire Java API from GDScript.
 
 It's simple to use and it's used like this:
 
-::
+.. code-block:: none
 
     class = JavaClassWrapper.wrap(<javaclass as text>)
 

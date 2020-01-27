@@ -45,7 +45,7 @@ ResourceLoader. ResourceLoader loads once and references the same
 object regardless how many times ``load`` is called on a specific resource.
 Therefore, playback state must be self contained in AudioStreamPlayback.
 
-.. code:: cpp
+.. code-block:: cpp
 
 	/* audiostream_mytone.h */
 
@@ -76,7 +76,7 @@ Therefore, playback state must be self contained in AudioStreamPlayback.
 		static void _bind_methods();
 	};
 
-.. code:: cpp
+.. code-block:: cpp
 
 	/* audiostream_mytone.cpp */
 
@@ -126,7 +126,7 @@ AudioStreamPlayer uses ``mix`` callback to obtain PCM data. The callback must ma
 
 Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic memory allocation are forbidden.
 
-.. code:: cpp
+.. code-block:: cpp
 
 	/*  audiostreamplayer_mytone.h */
 
@@ -164,7 +164,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
 		~AudioStreamPlaybackMyTone();
 	};
 
-.. code:: cpp
+.. code-block:: cpp
 
 	/* audiostreamplayer_mytone.cpp */
 
@@ -238,7 +238,7 @@ Godot provides cubic interpolation for audio resampling.
 Instead of overloading ``mix``, AudioStreamPlaybackResampled uses ``_mix_internal`` to
 query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
 
-.. code:: cpp
+.. code-block:: cpp
 
 	#include "core/reference.h"
 	#include "core/resource.h"
@@ -279,7 +279,7 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
 		~AudioStreamPlaybackResampledMyTone();
 	};
 
-.. code:: cpp
+.. code-block:: cpp
 
 	#include "mytone_audiostream_resampled.h"
 

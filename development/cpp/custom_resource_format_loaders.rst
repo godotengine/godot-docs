@@ -55,7 +55,7 @@ resources with the ``load`` function. To load a resource, ``load`` must
 read and handle data serialization.
 
 
-.. code:: cpp
+.. code-block:: cpp
 
 	#ifndef MY_JSON_LOADER_H
 	#define MY_JSON_LOADER_H
@@ -74,7 +74,7 @@ read and handle data serialization.
 	};
 	#endif // MY_JSON_LOADER_H
 
-.. code:: cpp
+.. code-block:: cpp
 
 	#include "my_json_loader.h"
 	#include "my_json.h"
@@ -115,7 +115,7 @@ understand additional binary formats such as machine learning models.
 
 Here is an example of how to create a custom datatype
 
-.. code:: cpp
+.. code-block:: cpp
 
 	#ifndef MY_JSON_H
 	#define MY_JSON_H
@@ -179,7 +179,7 @@ Therefore, Godot call translations are required.
 For example, here is the code for translating ``FileAccess``
 calls into ``std::istream``.
 
-.. code:: cpp
+.. code-block:: cpp
 
 	#include <istream>
 	#include <streambuf>
@@ -223,7 +223,7 @@ Godot registers ``ResourcesFormatLoader`` with a ``ResourceLoader``
 handler. The handler selects the proper loader automatically
 when ``load`` is called.
 
-.. code:: cpp
+.. code-block:: cpp
 
 	/* register_types.cpp */
 	#include "register_types.h"
@@ -251,8 +251,7 @@ References
 Loading it on GDScript
 ----------------------
 
-
-.. code::
+.. code-block:: json
 
     {
       "savefilename" : "demo.mjson",
@@ -265,7 +264,7 @@ Loading it on GDScript
       ]
     }
 
-.. code::
+::
 
     extends Node
 

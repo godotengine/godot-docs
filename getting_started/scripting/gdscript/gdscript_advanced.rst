@@ -57,7 +57,7 @@ assignment. Example:
 
 Static:
 
-.. code:: cpp
+.. code-block:: cpp
 
     int a; // Value uninitialized
     a = 5; // This is valid
@@ -79,7 +79,7 @@ different arguments, for example:
 
 Static:
 
-.. code:: cpp
+.. code-block:: cpp
 
     void print_value(int value) {
 
@@ -119,7 +119,7 @@ too. Some Examples:
 
 -  C++:
 
-.. code:: cpp
+.. code-block:: cpp
 
     void use_class(SomeClass *instance) {
 
@@ -135,7 +135,7 @@ too. Some Examples:
 
 -  Java:
 
-.. code:: java
+.. code-block:: java
 
     @Override
     public final void use_class(SomeClass instance) {
@@ -177,7 +177,7 @@ Arrays in dynamically typed languages can contain many different mixed
 datatypes inside and are always dynamic (can be resized at any time).
 Compare for example arrays in statically typed languages:
 
-.. code:: cpp
+.. code-block:: cpp
 
     int *array = new int[4]; // Create array
     array[0] = 10; // Initialize manually
@@ -319,7 +319,7 @@ For & while
 
 Iterating in some statically typed languages can be quite complex:
 
-.. code:: cpp
+.. code-block:: cpp
 
     const char* strings = new const char*[50];
 
@@ -370,7 +370,7 @@ The range() function can take 3 arguments:
 
 Some statically typed programming language examples:
 
-.. code:: cpp
+.. code-block:: cpp
 
     for (int i = 0; i < 10; i++) {}
 
@@ -474,7 +474,7 @@ As an example, imagine a situation where a big rock is falling down a
 tunnel, smashing everything on its way. The code for the rock, in a
 statically typed language would be something like:
 
-.. code:: cpp
+.. code-block:: cpp
 
     void BigRollingRock::on_object_hit(Smashable *entity) {
 
