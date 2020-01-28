@@ -34,6 +34,8 @@ Methods
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_connected_to_host<class_WebSocketPeer_method_is_connected_to_host>` **(** **)** const                                    |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_no_delay<class_WebSocketPeer_method_set_no_delay>` **(** :ref:`bool<class_bool>` enabled **)**                          |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_write_mode<class_WebSocketPeer_method_set_write_mode>` **(** :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` mode **)**  |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`was_string_packet<class_WebSocketPeer_method_was_string_packet>` **(** **)** const                                          |
@@ -102,6 +104,16 @@ Gets the current selected write mode. See :ref:`WriteMode<enum_WebSocketPeer_Wri
 - :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
 
 Returns ``true`` if this peer is currently connected.
+
+----
+
+.. _class_WebSocketPeer_method_set_no_delay:
+
+- void **set_no_delay** **(** :ref:`bool<class_bool>` enabled **)**
+
+Disable Nagle's algorithm on the underling TCP socket (default). See :ref:`StreamPeerTCP.set_no_delay<class_StreamPeerTCP_method_set_no_delay>` for more information.
+
+**Note:** Not available in the HTML5 export.
 
 ----
 

@@ -2212,7 +2212,7 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_SpatialMaterial_Feature>` feature **)** const
 
-Returns ``true``, if the specifed :ref:`Feature<enum_SpatialMaterial_Feature>` is enabled.
+Returns ``true``, if the specified :ref:`Feature<enum_SpatialMaterial_Feature>` is enabled.
 
 ----
 

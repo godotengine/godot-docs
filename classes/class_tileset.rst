@@ -192,6 +192,8 @@ enum **BitmaskMode**:
 
 .. _class_TileSet_constant_BIND_LEFT:
 
+.. _class_TileSet_constant_BIND_CENTER:
+
 .. _class_TileSet_constant_BIND_RIGHT:
 
 .. _class_TileSet_constant_BIND_BOTTOMLEFT:
@@ -209,6 +211,8 @@ enum **AutotileBindings**:
 - **BIND_TOPRIGHT** = **4**
 
 - **BIND_LEFT** = **8**
+
+- **BIND_CENTER** = **16**
 
 - **BIND_RIGHT** = **32**
 

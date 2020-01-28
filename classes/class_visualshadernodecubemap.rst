@@ -11,7 +11,12 @@ VisualShaderNodeCubeMap
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A :ref:`CubeMap<class_CubeMap>` sampling node to be used within the visual shader graph.
 
+Description
+-----------
+
+Translated to ``texture(cubemap, vec3)`` in the shader language. Returns a color vector and alpha channel as scalar.
 
 Properties
 ----------
@@ -35,9 +40,9 @@ Enumerations
 
 enum **Source**:
 
-- **SOURCE_TEXTURE** = **0**
+- **SOURCE_TEXTURE** = **0** --- Use the :ref:`CubeMap<class_CubeMap>` set via :ref:`cube_map<class_VisualShaderNodeCubeMap_property_cube_map>`. If this is set to :ref:`source<class_VisualShaderNodeCubeMap_property_source>`, the ``samplerCube`` port is ignored.
 
-- **SOURCE_PORT** = **1**
+- **SOURCE_PORT** = **1** --- Use the :ref:`CubeMap<class_CubeMap>` sampler reference passed via the ``samplerCube`` port. If this is set to :ref:`source<class_VisualShaderNodeCubeMap_property_source>`, the :ref:`cube_map<class_VisualShaderNodeCubeMap_property_cube_map>` texture is ignored.
 
 ----
 
@@ -51,11 +56,11 @@ enum **Source**:
 
 enum **TextureType**:
 
-- **TYPE_DATA** = **0**
+- **TYPE_DATA** = **0** --- No hints are added to the uniform declaration.
 
-- **TYPE_COLOR** = **1**
+- **TYPE_COLOR** = **1** --- Adds ``hint_albedo`` as hint to the uniform declaration for proper sRGB to linear conversion.
 
-- **TYPE_NORMALMAP** = **2**
+- **TYPE_NORMALMAP** = **2** --- Adds ``hint_normal`` as hint to the uniform declaration, which internally converts the texture for proper usage as normal map.
 
 Property Descriptions
 ---------------------
@@ -69,6 +74,8 @@ Property Descriptions
 +----------+---------------------+
 | *Getter* | get_cube_map()      |
 +----------+---------------------+
+
+The :ref:`CubeMap<class_CubeMap>` texture to sample when using :ref:`SOURCE_TEXTURE<class_VisualShaderNodeCubeMap_constant_SOURCE_TEXTURE>` as :ref:`source<class_VisualShaderNodeCubeMap_property_source>`.
 
 ----
 
@@ -84,6 +91,8 @@ Property Descriptions
 | *Getter*  | get_source()      |
 +-----------+-------------------+
 
+Defines which source should be used for the sampling. See :ref:`Source<enum_VisualShaderNodeCubeMap_Source>` for options.
+
 ----
 
 .. _class_VisualShaderNodeCubeMap_property_texture_type:
@@ -97,4 +106,6 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_texture_type()      |
 +-----------+-------------------------+
+
+Defines the type of data provided by the source texture. See :ref:`TextureType<enum_VisualShaderNodeCubeMap_TextureType>` for options.
 

@@ -11,5 +11,10 @@ VisualShaderNodeCubeMapUniform
 
 **Inherits:** :ref:`VisualShaderNodeTextureUniform<class_VisualShaderNodeTextureUniform>` **<** :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+A :ref:`CubeMap<class_CubeMap>` uniform node to be used within the visual shader graph.
 
+Description
+-----------
+
+Translated to ``uniform samplerCube`` in the shader language. The output value can be used as port for :ref:`VisualShaderNodeCubeMap<class_VisualShaderNodeCubeMap>`.
 

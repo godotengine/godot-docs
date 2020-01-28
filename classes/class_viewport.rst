@@ -556,7 +556,7 @@ If ``true``, the result after 3D rendering will not have a linear to sRGB color 
 | *Getter*  | get_msaa()      |
 +-----------+-----------------+
 
-The multisample anti-aliasing mode. A higher number results in smoother edges at the cost of significantly worse performance. A value of 4 is best unless targetting very high-end systems.
+The multisample anti-aliasing mode. A higher number results in smoother edges at the cost of significantly worse performance. A value of 4 is best unless targeting very high-end systems.
 
 ----
 

@@ -15,6 +15,11 @@ VisualShaderNode
 
 
 
+Tutorials
+---------
+
+- :doc:`../tutorials/shading/visual_shaders`
+
 Properties
 ----------
 
