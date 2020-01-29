@@ -148,15 +148,12 @@ What type of 3D model formats does Godot support?
 -------------------------------------------------
 
 Godot supports Collada via the `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`_ exporter (Maya, 3DSMax).
-
 If you are using Blender, take a look at our own `Better Collada Exporter <https://godotengine.org/download>`_.
 
 As of Godot 3.0, glTF is supported.
 
-FBX SDK has a `restrictive license <https://www.blender.org/bf/Autodesk_FBX_License.rtf>`_,
-that is incompatible with the `open license <https://opensource.org/licenses/MIT>`_
-provided by Godot. That being said, FBX support could still be provided by third parties
-as a plugin. (See Plugins question below.)
+FBX is supported via the Open Asset Import library. However, FBX is proprietary
+so we recommend using other formats listed above, if suitable for your workflow.
 
 Will [insert closed SDK such as FMOD, GameWorks, etc.] be supported in Godot?
 -----------------------------------------------------------------------------
