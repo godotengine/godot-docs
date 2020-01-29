@@ -25,11 +25,11 @@ function registerOnScrollEvent(mediaQuery) {
     $navbar.scroll(function() {
       if ($(this).scrollTop() >= scrollTopPixels) {
         $logo.hide();
-        $search.css('position', 'fixed');
+        $search.addClass('fixed');
         $menu.css('margin-top', menuTopMargin);
       } else {
         $logo.show();
-        $search.css('position', 'static');
+        $search.removeClass('fixed');
         $menu.css('margin-top', 0);
       }
     });

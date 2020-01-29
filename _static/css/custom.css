@@ -422,10 +422,14 @@ code,
     background-color: var(--navbar-background-color);
 }
 
+.wy-side-nav-search.fixed {
+    position: fixed;
+}
+
 @media only screen and (min-width: 768px) {
     /* Simulate a drop shadow that only affects the bottom edge */
     /* This is used to indicate the search bar is fixed */
-    .wy-side-nav-search::after {
+    .wy-side-nav-search.fixed::after {
         content: '';
         position: absolute;
         left: 0;
