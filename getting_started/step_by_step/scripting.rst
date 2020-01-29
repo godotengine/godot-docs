@@ -252,7 +252,7 @@ Next, write a function which will be called when the button is pressed:
         GetNode<Label>("Label").Text = "HELLO!";
     }
 
-Finally, connect the button's "pressed" signal to ``_ready()`` by
+Finally, connect the button's "pressed" signal to ``_on_Button_pressed()`` by
 using :ref:`Object.connect() <class_Object_method_connect>`.
 
 .. tabs::
