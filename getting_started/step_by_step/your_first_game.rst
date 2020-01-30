@@ -206,7 +206,7 @@ which is a good time to find the size of the game window:
 
     public override void _Ready()
     {
-        _screenSize = GetViewport().GetSize();
+        _screenSize = GetViewport().Size;
     }
 
 Now we can use the ``_process()`` function to define what the player will do.
@@ -373,9 +373,9 @@ Let's place this code at the end of our ``_process()`` function:
         if (velocity.x != 0)
         {
             animatedSprite.Animation = "right";
+            animatedSprite.FlipV = false;
             // See the note below about boolean assignment
             animatedSprite.FlipH = velocity.x < 0;
-            animatedSprite.FlipV = false;
         }
         else if(velocity.y != 0)
         {
