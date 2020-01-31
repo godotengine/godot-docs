@@ -39,21 +39,28 @@ Godot offers several compression methods, depending on the use case.
 Compress Mode
 ~~~~~~~~~~~~~
 
-* VRAM Compression: This is the most common compression mode for 3D assets. File on disk is reduced and
-  video memory usage is also reduced considerably. For 3D, it may present unwanted artifacts, though.
-* Lossless Compression: This is the most common compression for 2D assets. It shows assets without any
-  kind of artifacting, and disk compression is decent. It will use considerably more amount of video memory than VRAM, though.
-* Lossy Compression: For games with lots of large 2D assets, lossy compression can be a great choice. It has some artifacting,
-  but less than VRAM and the file size is almost a tenth of Lossless.
-* Uncompressed: Only useful for formats that can't be compressed (like, raw float).
+- **VRAM Compression:** This is the most common compression mode for 3D assets.
+  Size on disk is reduced and video memory usage is also decreased considerably
+  (usually by a factor between 4 and 6). This mode should be avoided for 2D as it
+  exhibits noticeable artifacts.
+- **Lossless Compression:** This is the most common compression mode for 2D assets.
+  It shows assets without any kind of artifacting, and disk compression is
+  decent. It will use considerably more amount of video memory than
+  VRAM Compression, though. This is also the recommended setting for pixel art.
+- **Lossy Compression:** This is a good choice for large 2D assets. It has some
+  artifacts, but less than VRAM and the file size is several times lower
+  compared to Lossless or Uncompressed. Video memory usage isn't decreased by
+  this mode; it's the same as with Lossless Compression or Uncompressed.
+- **Uncompressed:** Only useful for formats that can't be compressed (such as
+  raw float images).
 
 In this table, each of the four options are described together with their
-advantages and disadvantages ( |good| = Best, |bad| =Worst ):
+advantages and disadvantages (|good| = best, |bad| = worst):
 
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
 |                | Uncompressed           | Compress Lossless (PNG)   | Compress Lossy (WebP)   | Compress VRAM                                        |
 +================+========================+===========================+=========================+======================================================+
-| Description    | Stored as raw pixels   | Stored as PNG             | Stored as WebP          | Stored as S3TC/BC,PVRTC/ETC, depending on platform   |
+| Description    | Stored as raw pixels   | Stored as PNG             | Stored as WebP          | Stored as S3TC/BC or PVRTC/ETC depending on platform |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
 | Size on Disk   | |bad| Large            | |regular| Small           | |good| Very Small       | |regular| Small                                      |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
