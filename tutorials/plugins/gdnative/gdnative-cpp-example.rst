@@ -28,7 +28,24 @@ Setting up the project
 ----------------------
 
 There are a few prerequisites you'll need:
+.. note::
+Names of Visual Studio's Components are translated using Google Translate, so they may be different from the ones you can find in Visual Studio
 
+- on Windows - Visual Studio with these installed components (you can easily download them from Visual Studio Instaler):
+- - Profile Tools for C++,
+- - Basic C++ Functions,
+- - Clang C++ Compiler for Windows (9.0.0),
+- - C ++ modules for build tools version 142 (x64 / x86 - experimental),
+- - Spectre Migrated Libraries (MSVC version 142 - VS 2019 - C ++ (Version 14.20)for x64/x86 architecture),
+- - MSVC version 142 - VS 2019 - C ++ compilation tools (version 14.20) for x64 / x86 architecture,
+- - C ++ / CLI support for build tools version 142 (14.20),
+- - MSM packages of the C ++ 2019 redistributable package,
+- - C ++ Clang-cl for build tools version 142 (x64 / x86),
+- - C ++ (version 14.20) ATL for build tools version 142 (x86 and x64),
+- - ATL version 142 - VS 2019 - C ++ compilation tools (version 14.20) for x64 / x86 architecture,
+- - MFC version 142 - VS 2019 - C ++ compilation tools (version 14.20) for x64 / x86 architecture,
+- - C ++ (version 14.20) ATL for build tools version 142 (x86 and x64),
+- - C ++ (version 14.20) MFC for build tools version 142 (x86 and x64),
 - a Godot 3.x executable,
 - a C++ compiler,
 - SCons as a build tool,
@@ -381,6 +398,10 @@ build files in a subsequent tutorial.
     This ``SConstruct`` file was written to be used with the latest ``godot-cpp``
     master, you may need to make small changes using it with older versions or
     refer to the ``SConstruct`` file in the Godot 3.0 documentation.
+.. note::
+
+    Remember to run this command in x64 (or x86_64) Native Tools Command Prompt for Your version of Visual Studio,
+    because only that command prompt can compile Dynalic Libraries on Windows.
 
 Once you've downloaded the ``SConstruct`` file, place it in your GDNative module
 folder besides ``godot-cpp``, ``godot_headers`` and ``demo``, then run:
