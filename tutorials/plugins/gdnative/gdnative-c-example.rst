@@ -52,6 +52,18 @@ Before we start you'll need a few things:
 2) A C compiler. On Linux, install ``gcc`` or ``clang`` from your package
    manager. On macOS, you can install Xcode from the Mac App Store. On Windows,
    you can use Visual Studio 2015 or later, or MinGW-w64.
+   
+   ``Install these Visual Studio Components on Windows:
+   - C# and Visual Basic,
+   
+   - IncrediBuild - OPTIONAL for speeding up compilation,
+   
+   - C# and Visual Basic Roslyn compilers,
+   
+   - MSBuild,
+   
+   The names of the components are translated by a Google translator, so their names may different from the real ones.``
+   
 3) A Git clone of the `godot_headers
    repository <https://github.com/GodotNativeTools/godot_headers>`_: these are
    the C headers for Godot's public API exposed to GDNative.
@@ -372,7 +384,10 @@ On macOS:
     clang -dynamiclib simple.os -o ../bin/libsimple.dylib
 
 On Windows:
-
+.. note::
+    If you want to compile it using Visual Studio's Components - 
+    Remember to run this command in x64 (or x86_64) Native Tools Command Prompt for Your version of Visual Studio,
+    because only that command prompt can compile Dynamic Libraries on Windows.
 .. code-block:: none
 
     cl /Fosimple.obj /c simple.c /nologo -EHsc -DNDEBUG /MD /I. /I..\..\godot_headers
