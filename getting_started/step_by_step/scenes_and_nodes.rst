@@ -6,6 +6,11 @@ Scenes and nodes
 Introduction
 ------------
 
+In this chapter we're going to handle two main concepts: Scenes and Nodes.
+These are fundamental basic concepts and it's absolutely necessary to
+understand what these concepts are when working in Godot. A node is any
+object (for example a spaceship) that you want to create and a scene
+is a collection of nodes.
 
 
 Nodes
