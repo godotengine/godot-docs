@@ -25,12 +25,19 @@ refrigerator full of fresh ingredients with which to cook.
 There are many types of nodes. Some show images, others play sound,
 other nodes display 3D models, etc. There are dozens of them.
 
+In this chapter we're going to handle two main concepts: Scenes and Nodes.
+These are fundamental basic concepts and it's absolutely necessary to
+understand what these concepts are when working in Godot. A node is any
+object that you want to create (for example a spaceship) and a scene
+is a collection of nodes (a spaceship, its sprite and a sound).
+
 Nodes
 -----
+A node is the most fundamental building block for creating a game in Godot.
+There are many types of nodes. Some show images, others play sound,
+other nodes display 3D models, etc. There are dozens of them.
 
-But let's start with the basics. Nodes are fundamental building blocks for
-creating a game. As mentioned above, a node can perform a variety of specialized
-functions. However, any given node always has the following attributes:
+Each node has the following attributes:
 
 -  It has a name.
 -  It has editable properties.
@@ -38,10 +45,21 @@ functions. However, any given node always has the following attributes:
 -  It can be extended (to have more functions).
 -  It can be added to another node as a child.
 
-.. image:: img/tree.png
+Let's start by putting this into perspective. Think first of a spaceship.
+Our spaceship is an object. To create this object in Godot we create a
+node called spaceship. Our spaceship is the node. Each node can require
+several different parts to function. For example, our spaceship can have
+a sprite. This sprite is also a node. The same goes for the sound of our
+spaceship. This is what it looks like in the Godot Editor:
 
-The last one is important. Nodes can have other nodes as
-children. When arranged in this way, the nodes become a **tree**.
+.. image:: img/spaceship.png
+
+Our spaceship therefore consists of 3 nodes. The spaceship itself, the sprite
+and the sound. Any node that is a part of another node is called a child node.
+In our example the sprite and sound nodes are parts (children) of the spaceship node.
+When arranged in this way, the nodes become a **tree**, illustrated like this:
+
+.. image:: img/tree.png
 
 In Godot, the ability to arrange nodes in this way creates a powerful
 tool for organizing projects. Since different nodes have different
@@ -49,10 +67,14 @@ functions, combining them allows for the creation of more complex functions.
 
 Don't worry if this doesn't click yet. We will continue to explore this over
 the next few sections. The most important fact to remember for now is that
-nodes exist and can be arranged this way.
+nodes exist and can be arranged in this way.
+
+When all of the nodes we've previously mentioned are combined, we call it a Scene.
 
 Scenes
 ------
+A scene always starts with one main node. In our case the spaceship was
+the main node.
 
 .. image:: img/scene_tree_example.png
 
