@@ -6,24 +6,7 @@ Scenes and nodes
 Introduction
 ------------
 
-.. image:: img/chef.png
 
-Imagine for a second that you are not a game developer anymore. Instead,
-you're a chef! Change your hipster outfit for a toque and a double
-breasted jacket. Now, instead of making games, you create new and
-delicious recipes for your guests.
-
-So, how does a chef create a recipe? Recipes are divided into two
-sections: the first is the ingredients and the second is the
-instructions to prepare it. This way, anyone can follow the recipe and
-savor your magnificent creation.
-
-Making games in Godot feels pretty much the same way. Using the engine
-feels like being in a kitchen. In this kitchen, *nodes* are like a
-refrigerator full of fresh ingredients with which to cook.
-
-There are many types of nodes. Some show images, others play sound,
-other nodes display 3D models, etc. There are dozens of them.
 
 Nodes
 -----
