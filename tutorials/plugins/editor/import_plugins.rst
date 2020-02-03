@@ -108,7 +108,7 @@ The :ref:`get_visible_name()<class_EditorImportPlugin_method_get_visible_name>` 
 responsible for returning the name of the type it imports and it will be shown to the
 user in the Import dock.
 
-You should choose this name as a continuation to "Import as". Eg. *"Import as
+You should choose this name as a continuation to "Import as", e.g. *"Import as
 Silly Material"*. You can name it whatever you want but we recommend a
 descriptive name for your plugin.
 
