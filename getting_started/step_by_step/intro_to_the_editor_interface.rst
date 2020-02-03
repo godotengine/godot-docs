@@ -146,7 +146,7 @@ Modify the interface
 
 Godot’s interface lives in a single window. You cannot split it across
 multiple screens although you can work with an external code editor like
-Atom or Visual Studio for instance.
+Atom or Visual Studio Code for instance.
 
 Move and resize docks
 ~~~~~~~~~~~~~~~~~~~~~
