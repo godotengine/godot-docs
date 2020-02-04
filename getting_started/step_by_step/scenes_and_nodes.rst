@@ -77,8 +77,9 @@ the concept of editing a scene and the nodes that compose it.
 Editor
 ------
 
-Open the project you made in :ref:`doc_intro_to_the_editor_interface`, or
-create a new one. This will open the Godot editor:
+Let's put these two concepts into practice. Open the project you made in
+:ref:`doc_intro_to_the_editor_interface`, or create a new one. This will open
+the Godot editor:
 
 .. image:: img/empty_editor.png
 
