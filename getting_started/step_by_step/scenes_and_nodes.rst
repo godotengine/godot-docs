@@ -59,9 +59,6 @@ the main node.
 
 .. image:: img/scene_tree_example.png
 
-Now that the concept of nodes has been defined, the next logical
-step is to explain what a Scene is.
-
 A scene is composed of a group of nodes organized hierarchically (in
 tree fashion). Furthermore, a scene:
 
