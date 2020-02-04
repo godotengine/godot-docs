@@ -50,7 +50,7 @@ Don't worry if this doesn't click yet. We will continue to explore this over
 the next few sections. The most important fact to remember for now is that
 nodes exist and can be arranged in this way.
 
-When all of the nodes we've previously mentioned are combined, we call it a Scene.
+All of the nodes we've previously mentioned, when combined, are called a Scene.
 
 Scenes
 ------
