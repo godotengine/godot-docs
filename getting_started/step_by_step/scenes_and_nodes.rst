@@ -215,5 +215,5 @@ To be continued...
 ------------------
 
 This tutorial talked about "scenes and nodes", but so far there has been
-only *one* scene! Don't worry, the next tutorial will
+only *one* scene with several nodes! Don't worry, the next tutorial will
 expand on that...
