@@ -54,15 +54,14 @@ When all of the nodes we've previously mentioned are combined, we call it a Scen
 
 Scenes
 ------
-A scene always starts with one main node. In our case the spaceship was
-the main node.
+A scene is composed of a group of nodes organized hierarchically (in
+a tree fashion).
 
 .. image:: img/scene_tree_example.png
 
-A scene is composed of a group of nodes organized hierarchically (in
-tree fashion). Furthermore, a scene:
+ Furthermore, a scene:
 
--  always has one root node.
+-  always has one root node (In our node example the spaceship was the main node).
 -  can be saved to disk and loaded back.
 -  can be *instanced* (more on that later).
 
