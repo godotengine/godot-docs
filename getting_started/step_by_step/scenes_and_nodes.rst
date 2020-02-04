@@ -172,7 +172,7 @@ And finally, create the Label! A lot happens when Create is pressed:
 First of all, the scene changes to the 2D editor (because Label is a 2D Node
 type), and the Label appears, selected, at the top left corner of the viewport.
 
-The node appears in the scene tree editor (box in the top right
+The node appears in the scene tree editor (the box in the top right
 corner), and the label properties appear in the Inspector (box in the
 bottom right corner).
 
