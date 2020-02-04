@@ -80,7 +80,7 @@ a tree fashion).
 
  Furthermore, a scene:
 
--  always has one root node (In our node example the spaceship was the main node).
+-  always has one root node (In our node example the spaceship was the root node).
 -  can be saved to disk and loaded back.
 -  can be *instanced* (more on that later).
 
