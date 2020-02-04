@@ -129,10 +129,10 @@ Let's add some new nodes to the project. We'll begin with a "Hello World"
 message that we'll put on the screen.
 
 To do this we need to add a Label node. Press the "Add Child Node" button
-at the top left of the scene dock (the icon represents a plus symbol).
-This button is the main way to add new nodes to a scene, and will always
-add the chosen node as a child of the currently selected node (or, in an
-empty scene, as the "root" node).
+at the top left of the scene dock (press the plus symbol icon).
+This button is the main way to add new nodes to a scene. It will always
+add the chosen node as a child of the currently selected node. If there is
+no currently selected node (if the scene is empty), it will create a root node.
 
 .. note::
 
