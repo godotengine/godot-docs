@@ -181,34 +181,34 @@ change it to "Hello World":
 
 .. image:: img/hw.png
 
-Ok, everything's ready to run the scene! Press the PLAY SCENE Button on
-the top bar (or hit F6):
-
-.. image:: img/playscene.png
-
-Aaaand... Oops.
-
-.. image:: img/neversaved.png
-
-Scenes need to be saved to be run, so save the scene to something like
+Scenes need to be saved to be run. We'll name and save ours as
 Hello.tscn in Scene -> Save:
 
 .. image:: img/save_scene.png
 
-And here's when something funny happens. The file dialog is a special
-file dialog, and only allows you to save inside the project. The project
+When saved Press the PLAY SCENE Button on
+the top bar (or hit F6):
+
+.. image:: img/playscene.png
+
+If you forget to save, the editor will prompt you like this:
+
+.. image:: img/neversaved.png
+
+After saving and pressing run scene, the "Hello World"
+demo should execute:
+
+.. image:: img/helloworld.png
+
+Success!
+
+It's important to note, that when you save, The File Dialog is a special
+file dialog. It will only allow you to save inside the project. The project
 root is ``res://`` which means "resource path". This means that files can
 only be saved inside the project. For the future, when doing file
 operations in Godot, remember that ``res://`` is the resource path, and no
 matter the platform or install location, it is the way to locate where
 resource files are from inside the game.
-
-After saving the scene and pressing run scene again, the "Hello World"
-demo should finally execute:
-
-.. image:: img/helloworld.png
-
-Success!
 
 .. note::
 
