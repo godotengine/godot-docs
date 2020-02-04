@@ -94,10 +94,10 @@ no currently selected node (if the scene is empty), it will create a root node.
 
 .. note::
 
-    In an empty scene (without root node), the scene dock shows several
+    In an empty scene (a scene without a root node), the scene dock shows several
     options to quickly add a root node to the scene. "2D Scene" adds a
     Node2D node, "3D Scene" adds a Spatial node, "User Interface" adds a
-    Control node, and "Custom Node" which lets you select any node (so it
+    Control node, and "Custom Node" lets you select any node (so it
     is equivalent to pressing the "Add Child Node" button). You can also
     press the star-shaped icon to toggle the display of your favorited
     nodes.
