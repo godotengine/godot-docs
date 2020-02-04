@@ -77,15 +77,13 @@ the concept of editing a scene and the nodes that compose it.
 Editor
 ------
 
-Open the project you made in :ref:`doc_intro_to_the_editor_interface`, or create a new one. This will
-open the Godot editor:
+Open the project you made in :ref:`doc_intro_to_the_editor_interface`, or
+create a new one. This will open the Godot editor:
 
 .. image:: img/empty_editor.png
 
-As mentioned before, making games in Godot feels like being in a
-kitchen, so let's open the refrigerator and add some fresh nodes to the
-project. We'll begin with a "Hello World" message that we'll put on the
-screen.
+Let's add some new nodes to the project. We'll begin with a "Hello World"
+message that we'll put on the screen.
 
 To do this we need to add a Label node. Press the "Add Child Node" button
 at the top left of the scene dock (the icon represents a plus symbol).
