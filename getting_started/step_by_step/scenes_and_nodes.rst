@@ -200,6 +200,15 @@ demo should execute:
 
 .. image:: img/helloworld.png
 
+.. note::
+
+    If this doesn't immediately work and you have a hiDPI display on
+    at least one of your monitors, go to
+    **Project → Project Settings → Display → Window** then enable
+    **Allow Hidpi** under **Dpi**.
+
+.. _doc_scenes_and_nodes-configuring_the_project:
+
 Success!
 
 It's important to note, that when you save, The File Dialog is a special
@@ -209,15 +218,6 @@ only be saved inside the project. For the future, when doing file
 operations in Godot, remember that ``res://`` is the resource path, and no
 matter the platform or install location, it is the way to locate where
 resource files are from inside the game.
-
-.. note::
-
-    If this doesn't immediately work and you have a hiDPI display on
-    at least one of your monitors, go to
-    **Project → Project Settings → Display → Window** then enable
-    **Allow Hidpi** under **Dpi**.
-
-.. _doc_scenes_and_nodes-configuring_the_project:
 
 Configuring the project
 -----------------------
