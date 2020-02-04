@@ -14,6 +14,7 @@ is a collection of nodes (a spaceship, its sprite and a sound).
 
 Nodes
 -----
+
 A node is the most fundamental building block for creating a game in Godot.
 There are many types of nodes. Some show images, others play sound,
 other nodes display 3D models, etc. There are dozens of them.
@@ -54,6 +55,7 @@ All of the nodes we've previously mentioned, when combined, are called a Scene.
 
 Scenes
 ------
+
 A scene is composed of a group of nodes organized hierarchically (in
 a tree fashion).
 
