@@ -6,31 +6,20 @@ Scenes and nodes
 Introduction
 ------------
 
-.. image:: img/chef.png
-
-Imagine for a second that you are not a game developer anymore. Instead,
-you're a chef! Change your hipster outfit for a toque and a double
-breasted jacket. Now, instead of making games, you create new and
-delicious recipes for your guests.
-
-So, how does a chef create a recipe? Recipes are divided into two
-sections: the first is the ingredients and the second is the
-instructions to prepare it. This way, anyone can follow the recipe and
-savor your magnificent creation.
-
-Making games in Godot feels pretty much the same way. Using the engine
-feels like being in a kitchen. In this kitchen, *nodes* are like a
-refrigerator full of fresh ingredients with which to cook.
-
-There are many types of nodes. Some show images, others play sound,
-other nodes display 3D models, etc. There are dozens of them.
+In this chapter we're going to handle two main concepts: Scenes and Nodes.
+These are fundamental basic concepts and it's absolutely necessary to
+understand what these concepts are when working in Godot. A node is any
+object that you want to create (for example a spaceship) and a scene
+is a collection of nodes (a spaceship, its sprite and a sound).
 
 Nodes
 -----
 
-But let's start with the basics. Nodes are fundamental building blocks for
-creating a game. As mentioned above, a node can perform a variety of specialized
-functions. However, any given node always has the following attributes:
+A node is the most fundamental building block for creating a game in Godot.
+There are many types of nodes. Some show images, others play sound,
+other nodes display 3D models, etc. There are dozens of them.
+
+Each node has the following attributes:
 
 -  It has a name.
 -  It has editable properties.
@@ -38,10 +27,21 @@ functions. However, any given node always has the following attributes:
 -  It can be extended (to have more functions).
 -  It can be added to another node as a child.
 
-.. image:: img/tree.png
+Let's start by putting this into perspective. Think first of a spaceship.
+Our spaceship is an object. To create this object in Godot we create a
+node called spaceship. Our spaceship is the node. Each node can require
+several different parts to function. For example, our spaceship can have
+a sprite. This sprite is also a node. The same goes for the sound of our
+spaceship. This is what it looks like in the Godot Editor:
 
-The last one is important. Nodes can have other nodes as
-children. When arranged in this way, the nodes become a **tree**.
+.. image:: img/spaceship.png
+
+Our spaceship therefore consists of 3 nodes. The spaceship itself, the sprite
+and the sound. Any node that is a part of another node is called a child node.
+In our example the sprite and sound nodes are parts (children) of the spaceship node.
+When arranged in this way, the nodes become a **tree**, illustrated like this:
+
+.. image:: img/tree.png
 
 In Godot, the ability to arrange nodes in this way creates a powerful
 tool for organizing projects. Since different nodes have different
@@ -49,20 +49,21 @@ functions, combining them allows for the creation of more complex functions.
 
 Don't worry if this doesn't click yet. We will continue to explore this over
 the next few sections. The most important fact to remember for now is that
-nodes exist and can be arranged this way.
+nodes exist and can be arranged in this way.
+
+All of the nodes we've previously mentioned, when combined, are called a Scene.
 
 Scenes
 ------
 
+A scene is composed of a group of nodes organized hierarchically (in
+a tree fashion).
+
 .. image:: img/scene_tree_example.png
 
-Now that the concept of nodes has been defined, the next logical
-step is to explain what a Scene is.
+ Furthermore, a scene:
 
-A scene is composed of a group of nodes organized hierarchically (in
-tree fashion). Furthermore, a scene:
-
--  always has one root node.
+-  always has one root node (In our node example the spaceship was the root node).
 -  can be saved to disk and loaded back.
 -  can be *instanced* (more on that later).
 
@@ -76,28 +77,27 @@ the concept of editing a scene and the nodes that compose it.
 Editor
 ------
 
-Open the project you made in :ref:`doc_intro_to_the_editor_interface`, or create a new one. This will
-open the Godot editor:
+Let's put these two concepts into practice. Open the project you made in
+:ref:`doc_intro_to_the_editor_interface`, or create a new one. This will open
+the Godot editor:
 
 .. image:: img/empty_editor.png
 
-As mentioned before, making games in Godot feels like being in a
-kitchen, so let's open the refrigerator and add some fresh nodes to the
-project. We'll begin with a "Hello World" message that we'll put on the
-screen.
+Let's add some new nodes to the project. We'll begin with a "Hello World"
+message that we'll put on the screen.
 
 To do this we need to add a Label node. Press the "Add Child Node" button
-at the top left of the scene dock (the icon represents a plus symbol).
-This button is the main way to add new nodes to a scene, and will always
-add the chosen node as a child of the currently selected node (or, in an
-empty scene, as the "root" node).
+at the top left of the scene dock (press the plus symbol icon).
+This button is the main way to add new nodes to a scene. It will always
+add the chosen node as a child of the currently selected node. If there is
+no currently selected node (if the scene is empty), it will create a root node.
 
 .. note::
 
-    In an empty scene (without root node), the scene dock shows several
+    In an empty scene (a scene without a root node), the scene dock shows several
     options to quickly add a root node to the scene. "2D Scene" adds a
     Node2D node, "3D Scene" adds a Spatial node, "User Interface" adds a
-    Control node, and "Custom Node" which lets you select any node (so it
+    Control node, and "Custom Node" lets you select any node (so it
     is equivalent to pressing the "Add Child Node" button). You can also
     press the star-shaped icon to toggle the display of your favorited
     nodes.
@@ -130,7 +130,7 @@ And finally, create the Label! A lot happens when Create is pressed:
 First of all, the scene changes to the 2D editor (because Label is a 2D Node
 type), and the Label appears, selected, at the top left corner of the viewport.
 
-The node appears in the scene tree editor (box in the top right
+The node appears in the scene tree editor (the box in the top right
 corner), and the label properties appear in the Inspector (box in the
 bottom right corner).
 
@@ -139,34 +139,24 @@ change it to "Hello World":
 
 .. image:: img/hw.png
 
-Ok, everything's ready to run the scene! Press the PLAY SCENE Button on
-the top bar (or hit F6):
-
-.. image:: img/playscene.png
-
-Aaaand... Oops.
-
-.. image:: img/neversaved.png
-
-Scenes need to be saved to be run, so save the scene to something like
+Scenes need to be saved to be run. We'll name and save ours as
 Hello.tscn in Scene -> Save:
 
 .. image:: img/save_scene.png
 
-And here's when something funny happens. The file dialog is a special
-file dialog, and only allows you to save inside the project. The project
-root is ``res://`` which means "resource path". This means that files can
-only be saved inside the project. For the future, when doing file
-operations in Godot, remember that ``res://`` is the resource path, and no
-matter the platform or install location, it is the way to locate where
-resource files are from inside the game.
+When saved Press the PLAY SCENE Button on
+the top bar (or hit F6):
 
-After saving the scene and pressing run scene again, the "Hello World"
-demo should finally execute:
+.. image:: img/playscene.png
+
+If you forget to save, the editor will prompt you like this:
+
+.. image:: img/neversaved.png
+
+After saving and pressing run scene, the "Hello World"
+demo should execute:
 
 .. image:: img/helloworld.png
-
-Success!
 
 .. note::
 
@@ -177,21 +167,31 @@ Success!
 
 .. _doc_scenes_and_nodes-configuring_the_project:
 
+Success!
+
+It's important to note, that when you save, The File Dialog is a special
+file dialog. It will only allow you to save inside the project. The project
+root is ``res://`` which means "resource path". This means that files can
+only be saved inside the project. For the future, when doing file
+operations in Godot, remember that ``res://`` is the resource path, and no
+matter the platform or install location, it is the way to locate where
+resource files are from inside the game.
+
 Configuring the project
 -----------------------
 
-Ok, it's time to configure the project. Right now, the only way to run
-something is to execute the current scene. Projects, however, may have several
-scenes, so one of them must be set as the main scene. This is the scene that
-will be loaded any time the project is run.
+The only way to run something is to execute the current scene. Projects,
+however, may have several scenes, so one of them must be set as the main
+scene. This is the scene that will be loaded any time the project is run.
+Let's set it up.
 
-These settings are all stored in a project.godot file, which is a plaintext
+The project settings are all stored in a project.godot file, which is a plaintext
 file in win.ini format (for easy editing). There are dozens of settings that
 you can change in this file to alter how a project executes. To simplify this
 process, Godot provides a project settings dialog, which acts as a sort of
 frontend to editing a project.godot file.
 
-To access that dialog, select Project -> Project Settings. Try it now.
+To access this dialog, select Project -> Project Settings. Try it now.
 
 Once the window opens, let's select a main scene. Locate the
 `Application/Run/Main Scene` property and click on it to select 'Hello.tscn'.
@@ -206,12 +206,14 @@ project.godot file and shows their default values. If you change a value, a
 tick is marked to the left of its name. This means that the property will be
 saved to the project.godot file and remembered.
 
-As a side note, it is also possible to add custom configuration options and
-read them in at run-time using the :ref:`ProjectSettings <class_ProjectSettings>` singleton.
+.. note::
+
+    It is also possible to add custom configuration options and
+    read them in at run-time using the :ref:`ProjectSettings <class_ProjectSettings>` singleton.
 
 To be continued...
 ------------------
 
 This tutorial talked about "scenes and nodes", but so far there has been
-only *one* scene and *one* node! Don't worry, the next tutorial will
+only *one* scene with several nodes! Don't worry, the next tutorial will
 expand on that...
