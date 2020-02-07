@@ -32,8 +32,9 @@ Nodes
 -----
 
 A node is the most fundamental building block for creating a game in Godot.
-There are many types of nodes. Some show images, others play sound,
-other nodes display 3D models, etc. There are dozens of them.
+Every individual object and each object property that you want to add to
+your game will be added as a node. There are many types of nodes. Some show images, 
+others play sound, other nodes display 3D models, etc. There are dozens of them.
 
 Each node has the following attributes:
 
