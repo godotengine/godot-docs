@@ -38,7 +38,7 @@ The most common servers are:
 * :ref:`Physics2DServer <class_Physics2DServer>`: handles everything related to 2D physics.
 * :ref:`AudioServer <class_AudioServer>`: handles everything related to audio.
 
-Just explore their APIs and you will realize that the all functions provided are low-level
+Just explore their APIs and you will realize that all the functions provided are low-level
 implementations of everything Godot allows you to do.
 
 RIDs
