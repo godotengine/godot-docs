@@ -46,8 +46,9 @@ difficulties in implementation, which are:
 - shader nodes except ``PrincipledBSDF``, ``Diffuse``, ``Glossy``, ``Glass``, ``add shader`` and ``mix shader``
 
 .. warning::
-  If possible try to use PrincipledBSDF node with GGX distribution as the output shader
-  node, it is the only one guaranteed to be exactly correct. Others are just based on approximation.
+
+    If possible, try to use PrincipledBSDF node with GGX distribution as the output shader
+    node, it is the only one guaranteed to be exactly correct. Others are just based on approximation.
 
 Sometimes materials may not be valid for exporting (e.g. has some unsupported node) or it
 is using Blender Internal Engine, only the diffuse color and a few flags (e.g. unshaded) are
