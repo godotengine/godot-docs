@@ -30,6 +30,36 @@ Detect 3D
 This option makes Godot be aware of when a texture (which is imported for 2D as default) is used in 3D. If this happens, setting are changed so the texture flags
 are friendlier to 3D (mipmaps, filter and repeat become enabled and compression is changed to VRAM). Texture is also reimported automatically.
 
+Supported image formats
+-----------------------
+
+Godot can import the following image formats:
+
+- BMP (``.bmp``)
+- DirectDraw Surface (``.dds``)
+  - If mipmaps are present in the texture, they will be loaded directly.
+  This can be used to achieve effects using custom mipmaps.
+- OpenEXR (``.exr``)
+  - Supports HDR (highly recommended for panorama skies).
+- Radiance HDR (``.hdr``)
+  - Supports HDR (highly recommended for panorama skies).
+- JPEG (``.jpg``, ``.jpeg``)
+  - Doesn't support transparency per the format's limitations.
+- PNG (``.png``)
+  - Precision is limited to 8 bits per channel upon importing (no HDR images).
+- Truevision Targa (``.tga``)
+- SVG (``.svg``, ``.svgz``)
+  - SVGs are rasterized using `NanoSVG <https://github.com/memononen/nanosvg>`__
+  when importing them. Support is limited; complex vectors may not render correctly.
+  For complex vectors, rendering them to PNGs using Inkscape is often a better solution.
+  This can be automated thanks to its `command-line interface <https://wiki.inkscape.org/wiki/index.php/Using_the_Command_Line#Export_files>`__.
+- WebP (``.webp``)
+
+.. note::
+
+    If you've compiled the Godot editor from source with specific modules disabled,
+    some formats may not be available.
+
 Compression
 -----------
 
