@@ -39,7 +39,7 @@ editor that we'll later define.
         # We will handle properties of type integer.
         if type == TYPE_INT:
             # Register *an instance* of the custom property editor that we'll define next.
-            add_custom_property_editor(path, MyIntEditor.new())
+            add_property_editor(path, MyIntEditor.new())
             # We return `true` to notify the inspector that we'll be handling
             # this integer property, so it doesn't need to parse other plugins
             # (including built-in ones) for an appropriate editor.
