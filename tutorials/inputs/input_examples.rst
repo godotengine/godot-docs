@@ -44,7 +44,7 @@ Examples:
 
  .. code-tab:: csharp
 
-    // Input event - runs when the input happens
+    // Input event - runs when the input happens.
     public override void _Input(InputEvent inputEvent)
     {
         if (inputEvent.IsActionPressed("jump"))
@@ -53,7 +53,7 @@ Examples:
         }
     }
 
-    // polling - runs every frame
+    // Polling - runs every frame.
     public override void _PhysicsProcess(float delta)
     {
         if (Input.IsActionPressed("move_right"))
