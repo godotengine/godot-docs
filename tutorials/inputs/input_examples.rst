@@ -136,8 +136,7 @@ avoid this, make sure to test the event type first:
     // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
-        var mouseEvent = inputEvent as InputEventMouseButton;
-        if (mouseEvent != null)
+        if (inputEvent is InputEventMouseButton mouseEvent)
         {
             GD.Print($"mouse button event at {mouseEvent.Position}");
         }
@@ -201,8 +200,7 @@ the "T" key:
     // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
-        var keyEvent = inputEvent as InputEventKey;
-        if (keyEvent != null && keyEvent.Pressed)
+        if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
         {
             if (keyEvent.Scancode == (uint)Godot.KeyList.T)
             {
@@ -239,8 +237,7 @@ different when it's "Shift+T":
     // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
-        var keyEvent = inputEvent as InputEventKey;
-        if (keyEvent != null && keyEvent.Pressed)
+        if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
         {
             switch ((Godot.KeyList)keyEvent.Scancode)
             {
@@ -286,8 +283,7 @@ also counts as a button - two buttons, to be precise, with both
     // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
-        var mouseEvent = inputEvent as InputEventMouseButton;
-        if (mouseEvent != null && mouseEvent.Pressed)
+        if (inputEvent as InputEventMouseButton mouseEvent && mouseEvent.Pressed)
         {
             switch ((Godot.ButtonList)mouseEvent.ButtonIndex)
             {
@@ -338,14 +334,12 @@ node:
     // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
-        var sprite = GetNode("Sprite") as Sprite;
+        var sprite = GetNodeOrNull<Sprite>("Sprite");
         if (sprite == null)
             return;//no suitable node was found
 
-        var mouseEvent = inputEvent as InputEventMouseButton;
-        if (mouseEvent != null && ((ButtonList)mouseEvent.ButtonIndex) == ButtonList.Left)
+        if (inputEvent is InputEventMouseButton mouseEvent && ((ButtonList)mouseEvent.ButtonIndex) == ButtonList.Left)
         {
-
             if ((mouseEvent.Position - sprite.Position).Length() < clickRadius)
             {
                 // Start dragging if the click is on the sprite.
@@ -360,8 +354,7 @@ node:
         }
         else
         {
-            var motionEvent = inputEvent as InputEventMouseMotion;
-            if (motionEvent != null)
+            if (inputEvent is InputEventMouseMotion motionEvent)
             {
                 // While dragging, move the sprite with the mouse.
                 sprite.Position = motionEvent.Position;
