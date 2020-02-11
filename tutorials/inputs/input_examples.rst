@@ -45,15 +45,19 @@ Examples:
  .. code-tab:: csharp
 
     // input event - runs when the input happens
-    public override void _Input (InputEvent evt) {
-        if (evt.IsActionPressed ("jump")) {
-            Jump ();
+    public override void _Input(InputEvent inputEvent)
+    {
+        if (inputEvent.IsActionPressed("jump"))
+        {
+            Jump();
         }
     }
-    
+
     // polling - runs every frame
-    public override void _PhysicsProcess (float delta) {
-        if (Input.IsActionPressed ("move_right")) {
+    public override void _PhysicsProcess(float delta)
+    {
+        if (Input.IsActionPressed("move_right"))
+        {
             // move as long as the key/button is pressed
             position.x += speed * delta;
         }
@@ -84,8 +88,9 @@ attach the following script:
  .. code-tab:: csharp
 
     // input event - runs when the input happens
-    public override void _Input (InputEvent evt) {
-        GD.Print (evt.AsText ());
+    public override void _Input(InputEvent inputEvent)
+    {
+        GD.Print(inputEvent.AsText());
     }
 
 As you press keys, move the mouse, and perform other inputs, you'll see each
@@ -129,10 +134,12 @@ avoid this, make sure to test the event type first:
  .. code-tab:: csharp
 
     // input event - runs when the input happens
-    public override void _Input (InputEvent evt) {
-        var mouseEvt = evt as InputEventMouseButton;
-        if (mouseEvt != null) {
-            GD.Print ($"mouse button event at {mouseEvt.Position}");
+    public override void _Input(InputEvent inputEvent)
+    {
+        var mouseEvent = inputEvent as InputEventMouseButton;
+        if (mouseEvent != null)
+        {
+            GD.Print($"mouse button event at {mouseEvent.Position}");
         }
     }
 
@@ -165,9 +172,11 @@ the action you're looking for:
  .. code-tab:: csharp
 
     // input event - runs when the input happens
-    public override void _Input (InputEvent evt) {
-        if (evt.IsActionPressed ("my_action")) {
-            GD.Print ("my_action occurred!");
+    public override void _Input(InputEvent inputEvent)
+    {
+        if (inputEvent.IsActionPressed("my_action"))
+        {
+            GD.Print("my_action occurred!");
         }
     }
 
@@ -190,11 +199,14 @@ the "T" key:
  .. code-tab:: csharp
 
     // input event - runs when the input happens
-    public override void _Input (InputEvent evt) {
-        var keyEvt = evt as InputEventKey;
-        if (keyEvt != null && keyEvt.Pressed) {
-            if (keyEvt.Scancode == (uint) Godot.KeyList.T) {
-                GD.Print ("T was pressed");
+    public override void _Input(InputEvent inputEvent)
+    {
+        var keyEvent = inputEvent as InputEventKey;
+        if (keyEvent != null && keyEvent.Pressed)
+        {
+            if (keyEvent.Scancode == (uint)Godot.KeyList.T)
+            {
+                GD.Print("T was pressed");
             }
         }
     }
@@ -225,12 +237,15 @@ different when it's "Shift+T":
  .. code-tab:: csharp
 
     // input event - runs when the input happens
-    public override void _Input (InputEvent evt) {
-        var keyEvt = evt as InputEventKey;
-        if (keyEvt != null && keyEvt.Pressed) {
-            switch ((Godot.KeyList) keyEvt.Scancode) {
+    public override void _Input(InputEvent inputEvent)
+    {
+        var keyEvent = inputEvent as InputEventKey;
+        if (keyEvent != null && keyEvent.Pressed)
+        {
+            switch ((Godot.KeyList)keyEvent.Scancode)
+            {
                 case KeyList.T:
-                    GD.Print (keyEvt.Shift ? "Shift+T was pressed" : "T was pressed");
+                    GD.Print(keyEvent.Shift ? "Shift+T was pressed" : "T was pressed");
                     break;
             }
         }
@@ -269,15 +284,18 @@ also counts as a button - two buttons, to be precise, with both
  .. code-tab:: csharp
 
     // input event - runs when the input happens
-    public override void _Input (InputEvent evt) {
-        var mouseEvt = evt as InputEventMouseButton;
-        if (mouseEvt != null && mouseEvt.Pressed) {
-            switch ((Godot.ButtonList) mouseEvt.ButtonIndex) {
+    public override void _Input(InputEvent inputEvent)
+    {
+        var mouseEvent = inputEvent as InputEventMouseButton;
+        if (mouseEvent != null && mouseEvent.Pressed)
+        {
+            switch ((Godot.ButtonList)mouseEvent.ButtonIndex)
+            {
                 case ButtonList.Left:
-                    GD.Print ($"Left button was clicked at {mouseEvt.Position}");
+                    GD.Print($"Left button was clicked at {mouseEvent.Position}");
                     break;
                 case ButtonList.WheelUp:
-                    GD.Print ("Wheel up");
+                    GD.Print("Wheel up");
                     break;
             }
         }
@@ -318,28 +336,35 @@ node:
  .. code-tab:: csharp
 
     // input event - runs when the input happens
-    public override void _Input (InputEvent evt) {
-        var sprite = GetNode ("Sprite") as Sprite;
+    public override void _Input(InputEvent inputEvent)
+    {
+        var sprite = GetNode("Sprite") as Sprite;
         if (sprite == null)
             return;//no suitable node was found
 
-        var mouseEvt = evt as InputEventMouseButton;
-        if (mouseEvt != null && ((ButtonList) mouseEvt.ButtonIndex) == ButtonList.Left) {
+        var mouseEvent = inputEvent as InputEventMouseButton;
+        if (mouseEvent != null && ((ButtonList)mouseEvent.ButtonIndex) == ButtonList.Left)
+        {
 
-            if ((mouseEvt.Position - sprite.Position).Length () < clickRadius) {
+            if ((mouseEvent.Position - sprite.Position).Length() < clickRadius)
+            {
                 // Start dragging if the click is on the sprite.
-                if (!dragging && mouseEvt.Pressed)
+                if (!dragging && mouseEvent.Pressed)
                     dragging = !dragging;
             }
             // Stop dragging if the button is released.
-            if (dragging && !mouseEvt.Pressed) {
+            if (dragging && !mouseEvent.Pressed)
+            {
                 dragging = false;
             }
-        } else {
-            var motionEvt = evt as InputEventMouseMotion;
-            if (motionEvt != null) {
+        }
+        else
+        {
+            var motionEvent = inputEvent as InputEventMouseMotion;
+            if (motionEvent != null)
+            {
                 // While dragging, move the sprite with the mouse.
-                sprite.Position = motionEvt.Position;
+                sprite.Position = motionEvent.Position;
             }
         }
     }
