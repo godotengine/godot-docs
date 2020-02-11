@@ -44,7 +44,7 @@ Examples:
 
  .. code-tab:: csharp
 
-    // input event - runs when the input happens
+    // Input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
         if (inputEvent.IsActionPressed("jump"))
@@ -87,7 +87,6 @@ attach the following script:
 
  .. code-tab:: csharp
 
-    // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
         GD.Print(inputEvent.AsText());
@@ -133,7 +132,6 @@ avoid this, make sure to test the event type first:
 
  .. code-tab:: csharp
 
-    // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
         if (inputEvent is InputEventMouseButton mouseEvent)
@@ -170,7 +168,6 @@ the action you're looking for:
 
  .. code-tab:: csharp
 
-    // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
         if (inputEvent.IsActionPressed("my_action"))
@@ -197,12 +194,11 @@ the "T" key:
 
  .. code-tab:: csharp
 
-    // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
         if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
         {
-            if (keyEvent.Scancode == (uint)Godot.KeyList.T)
+            if ((Keylist)keyEvent.Scancode == KeyList.T)
             {
                 GD.Print("T was pressed");
             }
@@ -234,12 +230,11 @@ different when it's "Shift+T":
 
  .. code-tab:: csharp
 
-    // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
         if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
         {
-            switch ((Godot.KeyList)keyEvent.Scancode)
+            switch ((KeyList)keyEvent.Scancode)
             {
                 case KeyList.T:
                     GD.Print(keyEvent.Shift ? "Shift+T was pressed" : "T was pressed");
@@ -280,12 +275,11 @@ also counts as a button - two buttons, to be precise, with both
 
  .. code-tab:: csharp
 
-    // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
         if (inputEvent as InputEventMouseButton mouseEvent && mouseEvent.Pressed)
         {
-            switch ((Godot.ButtonList)mouseEvent.ButtonIndex)
+            switch ((ButtonList)mouseEvent.ButtonIndex)
             {
                 case ButtonList.Left:
                     GD.Print($"Left button was clicked at {mouseEvent.Position}");
@@ -331,14 +325,13 @@ node:
 
  .. code-tab:: csharp
 
-    // input event - runs when the input happens
     public override void _Input(InputEvent inputEvent)
     {
         var sprite = GetNodeOrNull<Sprite>("Sprite");
         if (sprite == null)
             return;//no suitable node was found
 
-        if (inputEvent is InputEventMouseButton mouseEvent && ((ButtonList)mouseEvent.ButtonIndex) == ButtonList.Left)
+        if (inputEvent is InputEventMouseButton mouseEvent && (ButtonList)mouseEvent.ButtonIndex == ButtonList.Left)
         {
             if ((mouseEvent.Position - sprite.Position).Length() < clickRadius)
             {
