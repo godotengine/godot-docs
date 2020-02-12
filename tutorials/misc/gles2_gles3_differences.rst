@@ -46,7 +46,7 @@ statement check and see if the output is in sRGB, using ``OUTPUT_IS_SRGB``. ``OU
 HDR
 ---
 
-GLES is not capable of using High Dynamic Range (HDR) rendering features. If HDR is set for your
+GLES2 is not capable of using High Dynamic Range (HDR) rendering features. If HDR is set for your
 project, or for a given viewport, Godot will still user Low Dynamic Range (LDR) which limits
 viewport values to the ``0-1`` range.
 
