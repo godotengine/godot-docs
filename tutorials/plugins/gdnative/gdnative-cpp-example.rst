@@ -131,10 +131,12 @@ below.
 To generate and compile the bindings, use this command (replacing ``<platform>``
 with ``windows``, ``linux`` or ``osx`` depending on your OS):
 
+If your cpu have more that 4 threads, you should replace -j4 with -j<number of threads>.
+ 
 .. code-block:: none
 
     cd godot-cpp
-    scons platform=<platform> generate_bindings=yes
+    scons platform=<platform> generate_bindings=yes -j4
     cd ..
 
 This step will take a while. When it is completed, you should have static
