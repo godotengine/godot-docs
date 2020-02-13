@@ -118,12 +118,12 @@ Managing connections
 --------------------
 
 Some games accept connections at any time, others during the lobby phase. Godot can be requested to no longer accept
-connections at any point (see `set_refuse_new_network_connections(bool)` and related methods on :ref:`SceneTree <class_SceneTree>`). To manage who connects, Godot provides the following signals in SceneTree:
+connections at any point (see ``set_refuse_new_network_connections(bool)`` and related methods on :ref:`SceneTree <class_SceneTree>`). To manage who connects, Godot provides the following signals in SceneTree:
 
 Server and Clients:
 
-- `network_peer_connected(int id)`
-- `network_peer_disconnected(int id)`
+- ``network_peer_connected(int id)``
+- ``network_peer_disconnected(int id)``
 
 The above signals are called on every peer connected to the server (including on the server) when a new peer connects or disconnects.
 Clients will connect with a unique ID greater than 1, while network peer ID 1 is always the server.
@@ -133,9 +133,9 @@ These IDs will be useful mostly for lobby management and should generally be sto
 
 Clients:
 
-- `connected_to_server`
-- `connection_failed`
-- `server_disconnected`
+- ``connected_to_server``
+- ``connection_failed``
+- ``server_disconnected``
 
 Again, all these functions are mainly useful for lobby management or for adding/removing players on the fly.
 For these tasks, the server clearly has to work as a server and you have to perform tasks manually such as sending a newly connected
@@ -150,17 +150,17 @@ RPC
 To communicate between peers, the easiest way is to use RPCs (remote procedure calls). This is implemented as a set of functions
 in :ref:`Node <class_Node>`:
 
-- `rpc("function_name", <optional_args>)`
-- `rpc_id(<peer_id>,"function_name", <optional_args>)`
-- `rpc_unreliable("function_name", <optional_args>)`
-- `rpc_unreliable_id(<peer_id>, "function_name", <optional_args>)`
+- ``rpc("function_name", <optional_args>)``
+- ``rpc_id(<peer_id>,"function_name", <optional_args>)``
+- ``rpc_unreliable("function_name", <optional_args>)``
+- ``rpc_unreliable_id(<peer_id>, "function_name", <optional_args>)``
 
 Synchronizing member variables is also possible:
 
-- `rset("variable", value)`
-- `rset_id(<peer_id>, "variable", value)`
-- `rset_unreliable("variable", value)`
-- `rset_unreliable_id(<peer_id>, "variable", value)`
+- ``rset("variable", value)``
+- ``rset_id(<peer_id>, "variable", value)``
+- ``rset_unreliable("variable", value)``
+- ``rset_unreliable_id(<peer_id>, "variable", value)``
 
 Functions can be called in two fashions:
 
@@ -170,7 +170,7 @@ Functions can be called in two fashions:
 In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly,
 and if a packet is lost, it's not that bad because a new one will eventually arrive and it would likely be outdated because the object moved further in the meantime, even if it was resent reliably).
 
-There is also the `get_rpc_sender_id` function in `SceneTree`, which can be used to check which peer (or peer ID) sent an RPC.
+There is also the ``get_rpc_sender_id`` function in ``SceneTree``, which can be used to check which peer (or peer ID) sent an RPC.
 
 Back to lobby
 -------------
@@ -221,7 +221,7 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
 
         # Call function to update lobby UI here
 
-You might have already noticed something different, which is the usage of the `remote` keyword on the `register_player` function:
+You might have already noticed something different, which is the usage of the ``remote`` keyword on the ``register_player`` function:
 
 ::
 
@@ -233,17 +233,17 @@ to delete a file on another client's system).
 
 The second use is to specify how the function will be called via RPC. There are four different keywords:
 
-- `remote`
-- `remotesync`
-- `master`
-- `puppet`
+- ``remote``
+- ``remotesync``
+- ``master``
+- ``puppet``
 
-The `remote` keyword means that the `rpc()` call will go via network and execute remotely.
+The ``remote`` keyword means that the ``rpc()`` call will go via network and execute remotely.
 
-The `remotesync` keyword means that the `rpc()` call will go via network and execute remotely, but will also execute locally (do a normal function call).
+The ``remotesync`` keyword means that the ``rpc()`` call will go via network and execute remotely, but will also execute locally (do a normal function call).
 
 The others will be explained further down.
-Note that you could also use the `get_rpc_sender_id` function on `SceneTree` to check which peer actually made the RPC call to `register_player`.
+Note that you could also use the ``get_rpc_sender_id`` function on ``SceneTree`` to check which peer actually made the RPC call to ``register_player``.
 
 With this, lobby management should be more or less explained. Once you have your game going, you will most likely want to add some
 extra security to make sure clients don't do anything funny (just validate the info they send from time to time, or before
@@ -379,8 +379,8 @@ Master and puppet keywords
 
 .. FIXME: Clarify the equivalents to the GDScript keywords in C# and Visual Script.
 
-The real advantage of this model is when used with the `master`/`puppet` keywords in GDScript (or their equivalent in C# and Visual Script).
-Similarly to the `remote` keyword, functions can also be tagged with them:
+The real advantage of this model is when used with the ``master``/``puppet`` keywords in GDScript (or their equivalent in C# and Visual Script).
+Similarly to the ``remote`` keyword, functions can also be tagged with them:
 
 Example bomb code:
 
@@ -405,12 +405,12 @@ Example player code:
         stun() # Stun myself, could have used remotesync keyword too.
 
 In the above example, a bomb explodes somewhere (likely managed by whoever is master). The bomb knows the bodies in the area, so it checks them
-and checks that they contain an `exploded` function.
+and checks that they contain an ``exploded`` function.
 
-If they do, the bomb calls `exploded` on it. However, the `exploded` method in the player has a `master` keyword. This means that only the player
+If they do, the bomb calls ``exploded`` on it. However, the ``exploded`` method in the player has a ``master`` keyword. This means that only the player
 who is master for that instance will actually get the function.
 
-This instance, then, calls the `stun` method in the same instances of that same player (but in different peers), and only those which are set as puppet,
+This instance, then, calls the ``stun`` method in the same instances of that same player (but in different peers), and only those which are set as puppet,
 making the player look stunned in all the peers (as well as the current, master one).
 
 Note that you could also send the ``stun()`` message only to a specific player by using ``rpc_id(<id>, "exploded", bomb_owner)``.
