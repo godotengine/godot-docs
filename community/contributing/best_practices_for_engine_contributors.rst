@@ -32,7 +32,7 @@ These are usually called *Solutions in search of a problem*. In an ideal world, 
 #2: The problem has to exist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is a variation of the previous practice. I believe most developers agree that adding anything unnecessary is not a good idea, but what constitutes what is necessary and what doesn't?
+This is a variation of the previous practice. I believe most developers agree that adding anything unnecessary is not a good idea, but what constitutes what is necessary and what isn't?
 
 .. image:: img/best_practices2.png
 
