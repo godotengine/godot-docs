@@ -166,7 +166,7 @@ is another vector type (or scalar). This is easier shown than explained:
     vec3 b = a.xyz; // Also rgba, xyzw are equivalent.
     vec3 b = a.stp; // And stpq (for texture coordinates).
     float c = b.w; // Invalid, because "w" is not present in vec3 b.
-    float c = b.xrt; // Invalid, mixing different styles is forbidden.
+    vec3 c = b.xrt; // Invalid, mixing different styles is forbidden.
     b.rrr = a.rgb; // Invalid, assignment with duplication.
     b.bgr = a.rgb; // Valid assignment.
 
