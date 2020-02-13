@@ -413,7 +413,7 @@ who is master for that instance will actually get the function.
 This instance, then, calls the `stun` method in the same instances of that same player (but in different peers), and only those which are set as puppet,
 making the player look stunned in all the peers (as well as the current, master one).
 
-Note that you could also send the stun() message only to a specific player by using rpc_id(<id>, "exploded", bomb_owner).
+Note that you could also send the ``stun()`` message only to a specific player by using ``rpc_id(<id>, "exploded", bomb_owner)``.
 This may not make much sense for an area-of-effect case like the bomb, but in other cases, like single target damage.
 
 ::
