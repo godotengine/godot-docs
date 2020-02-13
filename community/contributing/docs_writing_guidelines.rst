@@ -32,8 +32,8 @@ There are 3 rules to describe classes:
     the smallest and clearest sentences possible. These guidelines will help
     you work towards that goal.
 
-7 rules for a clear english
----------------------------
+7 rules for clear English
+-------------------------
 
 Use the direct voice
 ~~~~~~~~~~~~~~~~~~~~
