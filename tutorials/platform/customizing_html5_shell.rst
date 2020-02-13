@@ -185,20 +185,20 @@ then the ``engine`` instance must be initialized and finally started.
 
     :returns: Promise that resolves once the engine started.
 
-.. js:function:: engine.startGame(mainPack)
+.. js:function:: engine.startGame(execName, mainPack)
 
-    Initializes the engine if not yet initialized and starts the game with the
-    main pack loaded from the passed URL.
+    Initializes the engine if not yet initialized, loads the executable, 
+    and starts the game with the main pack loaded from the passed URL.
 
-    If the engine isn't loaded yet, the base path of the passed URL will be
-    used to load the engine.
+    If the engine isn't loaded yet, the base path of the passed executable name 
+    will be used to load the engine.
 
-    This function ignores overrides of filenames and their extensions to start
-    only the main pack passed as argument.
+    :param string execName:
+        Executable's name (URL) to start. Also used as base path to load the
+        engine if not loaded already. Should not contain the file's extension.
 
     :param string mainPack:
-        Path to the main pack to start. Also used as base path to load the
-        engine if not loaded already.
+        Path (URL) to the main pack to start.
 
     :returns: Promise that resolves once the game started.
 
