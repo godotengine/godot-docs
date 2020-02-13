@@ -164,7 +164,11 @@ is another vector type (or scalar). This is easier shown than explained:
     vec3 b = a.ggg; // Also valid; creates a vec3 and fills it with a single vec4 component.
     vec3 b = a.bgr; // Order does not matter.
     vec3 b = a.xyz; // Also rgba, xyzw are equivalent.
+    vec3 b = a.stp; // And stpq (for texture coordinates).
     float c = b.w; // Invalid, because "w" is not present in vec3 b.
+    float c = b.xrt; // Invalid, mixing different styles is forbidden.
+    b.rrr = a.rgb; // Invalid, assignment with duplication.
+    b.bgr = a.rgb; // Valid assignment.
 
 Precision
 ~~~~~~~~~
