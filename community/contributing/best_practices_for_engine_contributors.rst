@@ -32,7 +32,7 @@ These are usually called *Solutions in search of a problem*. In an ideal world, 
 #2: The problem has to exist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is a variation of the previous practice. I believe most developers agree that adding anything necessary is not a good idea, but what constitutes what is necessary and what doesn't?
+This is a variation of the previous practice. I believe most developers agree that adding anything unnecessary is not a good idea, but what constitutes what is necessary and what doesn't?
 
 .. image:: img/best_practices2.png
 
@@ -40,8 +40,8 @@ The answer to this question is that the problem needs to *exist*. It must not be
 
 Believing that problems may arise in the future and that the software needs to be ready to solve them by the time they appear is called *"Future proofing"* and its characterized by lines of thought such as: 
 
-- I think it would be useful for users to..
-- I think users will eventually need to..
+- I think it would be useful for users to...
+- I think users will eventually need to...
 
 This is generally considered a bad habit, because trying to solve problems that *don't actually exist* in the present will very often lead to code that will be written but never used, or to code that is considerably more complex to use and maintain than it needs to be.
 
@@ -76,7 +76,7 @@ For developers, the perspective is different. They may find the user's problem t
 
 In any case, before attempting a contribution, it is important to discuss the actual problems with the other developers or contributors, so a better agreement on implementation can be reached. 
 
-The only exception, in this case, is when an area of code code has a clear owner (agreed by the other contributors), who talks to users directly and has the most knowledge to implement a solution directly.
+The only exception, in this case, is when an area of code has a clear owner (agreed by the other contributors), who talks to users directly and has the most knowledge to implement a solution directly.
 
 #5: To each problem, its own solution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +100,7 @@ This is a continuation of the previous point, which further explains why this wa
 
 As mentioned before (in point #2), it is very difficult for us (as human beings who design software) to actually understand all future user needs. Trying to write very flexible structures that cater to many use cases at once is often a mistake. 
 
-We may come up with something we believe is brilliant, but when it's actually used, we will find that users will never even use half or it, or that they will require features that don't quite accommodate our original design, forcing us to either throw it away or make it even more complex.
+We may come up with something we believe is brilliant, but when it's actually used, we will find that users will never even use half of it, or that they will require features that don't quite accommodate our original design, forcing us to either throw it away or make it even more complex.
 
 The question is then, how to design software that gives users what *we know they need*, but that is flexible enough to allow them to do *what we don't know they might need* in the future?
 
@@ -108,14 +108,14 @@ The question is then, how to design software that gives users what *we know they
 
 The answer to this question is that, to ensure users still can do what they want to do, we need to give them access to a *low level API* that they can use to achieve what they want, even if it's more work for them because it means reimplementing some of the logic that already exists.
 
-In real-life scenarios, these use cases will be at most rare and uncommon anyway, so it makes sense a custom solution needs to be written. This is why it's important to still provide the basic building blocks to users to do it.
+In real-life scenarios, these use cases will be at most rare and uncommon anyway, so it makes sense a custom solution needs to be written. This is why it's important to still provide users the basic building blocks to do it.
 
 #7: Solutions must be local
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When looking for a solution to a problem, be it implementing a new feature or fixing a bug, sometimes the easiest path is to add data or a new function in the core layers of code.
 
-The main problem with this is that, adding something to the core layers that will only be used from a single location far away will not only make the code more difficult to follow (split in two), but also make the core API larger, more complex, more difficult to understand in general. 
+The main problem here is, adding something to the core layers that will only be used from a single location far away will not only make the code more difficult to follow (split in two), but also make the core API larger, more complex, more difficult to understand in general. 
 
 This is bad, because readability and cleanness of core APIs is always of extreme importance given how much code relies from it, and because it's key for new contributors as a starting point to learning the codebase.
 
