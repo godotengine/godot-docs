@@ -64,6 +64,9 @@ make SPHINXBUILD=~/.local/bin/sphinx-build html
 ```
 
 The compilation might take some time as the `classes/` folder contains many files to parse.
+
+In case of a `MemoryError` or `EOFError`, you can remove the `classes/` folder and run `make` again. This will drop the class references from the final HTML documentation but will keep the rest intact. Make sure to avoid using `git add .` in this case when working on a pull request, or the whole `classes/` folder will be removed when you make a commit. See [#3157](https://github.com/godotengine/godot-docs/issues/3157) for more details.
+
 You can then test the changes live by opening `_build/html/index.html` in your favorite browser.
 
 ### Building with Sphinx on Windows
