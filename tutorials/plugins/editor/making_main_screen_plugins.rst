@@ -79,7 +79,7 @@ UI element instantiation, and it will also manage the communication between them
 
 As a matter of fact, we wish to design each UI element in their own scene.
 Different scenes are not aware of each other unless they are both children of a
-parent scene, yet they will then require ``get_node("../brother")`` accessors.
+parent scene, yet they will then require ``get_node("../sibling")`` accessors.
 Such practice is more likely to produce errors at runtime, especially if these
 scenes do not share the same parent node. This is why, they should only be
 allowed to access their children.
@@ -92,7 +92,7 @@ be instanced by ``main_screen_plugin.gd`` script, this one script will also
 connect each of them to the required signals.
 
 .. note:: If the ``main_screen_plugin.gd`` instantiates the UI scenes, won't
-          they be brothers nodes then?
+          they be sibling nodes then?
 
 Not necessarily: this script may add all UI scenes as children of the same node
 of the editor's scene tree - but maybe it won't. And the ``main_screen_plugin.gd``
