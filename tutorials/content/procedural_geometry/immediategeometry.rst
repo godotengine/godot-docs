@@ -10,7 +10,7 @@ API like the SurfaceTool, but it's actually designed to create content on the fl
 Generating complex geometry (several thousand vertices) with this node is inefficient, even if it's
 done only once. Instead, it is designed to generate simple geometry that changes every frame.
 
-Before starting, you should clear the clear the geometry by calling ``clear()``. This ensures that
+Before starting, you should clear the geometry by calling ``clear()``. This ensures that
 you are not building upon the geometry from the previous frame. If you want to keep geometry between frames, do
 not call ``clear()``.
 
