@@ -349,7 +349,8 @@ code,
     color: var(--highlight-type2-color);
 }
 
-.highlight .nf {
+.highlight .nf,
+.highlight .nt {
     color: var(--highlight-function-color);
 }
 
