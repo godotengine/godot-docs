@@ -31,20 +31,17 @@ Examples:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # input event - runs when the input happens
     func _input(event):
         if event.is_action_pressed("jump"):
             jump()
 
-    # polling - runs every frame
     func _physics_process(delta):
         if Input.is_action_pressed("move_right"):
-            # move as long as the key/button is pressed
+            # Move as long as the key/button is pressed.
             position.x += speed * delta
 
  .. code-tab:: csharp
 
-    // Input event - runs when the input happens.
     public override void _Input(InputEvent inputEvent)
     {
         if (inputEvent.IsActionPressed("jump"))
@@ -53,12 +50,11 @@ Examples:
         }
     }
 
-    // Polling - runs every frame.
     public override void _PhysicsProcess(float delta)
     {
         if (Input.IsActionPressed("move_right"))
         {
-            // move as long as the key/button is pressed
+            // Move as long as the key/button is pressed.
             position.x += speed * delta;
         }
     }
@@ -329,7 +325,7 @@ node:
     {
         var sprite = GetNodeOrNull<Sprite>("Sprite");
         if (sprite == null)
-            return;//no suitable node was found
+            return;// No suitable node was found.
 
         if (inputEvent is InputEventMouseButton mouseEvent && (ButtonList)mouseEvent.ButtonIndex == ButtonList.Left)
         {
