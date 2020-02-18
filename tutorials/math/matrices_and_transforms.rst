@@ -74,6 +74,7 @@ To do this in code, we can simply multiply each of the vectors:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     var t = Transform2D()
     # Scale
     t.x *= 2
@@ -81,7 +82,8 @@ To do this in code, we can simply multiply each of the vectors:
     transform = t # Change the node's transform to what we just calculated.
 
  .. code-tab:: csharp
-    Transform2D t = new Transform2D();
+
+    Transform2D t = Transform2D.Identity;
     // Scale
     t.x *= 2;
     t.y *= 2;
@@ -155,8 +157,9 @@ Here's how that would be done in code (place the script on a Node2D):
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    var t = Transform2D()
+
     var rot = 0.5 # The rotation to apply.
+    var t = Transform2D()
     t.x.x = cos(rot)
     t.y.y = cos(rot)
     t.x.y = sin(rot)
@@ -164,8 +167,9 @@ Here's how that would be done in code (place the script on a Node2D):
     transform = t # Change the node's transform to what we just calculated.
 
  .. code-tab:: csharp
+
     float rot = 0.5f; // The rotation to apply.
-    Transform2D t = new Transform2D();
+    Transform2D t = Transform2D.Identity;
     t.x.x = t.y.y = Mathf.Cos(rot);
     t.x.y = t.y.x = Mathf.Sin(rot);
     t.y.x *= -1;
@@ -242,6 +246,7 @@ you to try and reproduce the screenshot without looking at the code!
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     var t = Transform2D()
     # Translation
     t.origin = Vector2(350, 150)
@@ -257,7 +262,8 @@ you to try and reproduce the screenshot without looking at the code!
     transform = t # Change the node's transform to what we just calculated.
 
  .. code-tab:: csharp
-    Transform2D t = new Transform2D();
+
+    Transform2D t = Transform2D.Identity;
     // Translation
     t.origin = new Vector2(350, 150);
     // Rotation
@@ -306,13 +312,15 @@ As an example, let's set Y to (1, 1):
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     var t = Transform2D()
     # Shear by setting Y to (1, 1)
     t.y = Vector2.ONE
     transform = t # Change the node's transform to what we just calculated.
 
  .. code-tab:: csharp
-    Transform2D t = new Transform2D();
+
+    Transform2D t = Transform2D.Identity;
     // Shear by setting Y to (1, 1)
     t.y = Vector2.One;
     Transform = t; // Change the node's transform to what we just calculated.
@@ -377,10 +385,12 @@ world space as using the "xform" method:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     # World space vector 100 units below the player.
     print(transform.xform(Vector2(0, 100)))
 
  .. code-tab:: csharp
+
     // World space vector 100 units below the player.
     GD.Print(Transform.Xform(new Vector2(0, 100)));
 
@@ -389,10 +399,12 @@ would be if it was instead defined relative to the player:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     # Where is (0, 100) relative to the player?
     print(transform.xform_inv(Vector2(0, 100)))
 
  .. code-tab:: csharp
+
     // Where is (0, 100) relative to the player?
     GD.Print(Transform.XformInv(new Vector2(0, 100)));
 
@@ -415,9 +427,11 @@ This code moves an object 100 units to its own right:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     transform.origin += transform.x * 100
 
  .. code-tab:: csharp
+
     Transform2D t = Transform;
     t.origin += t.x * 100;
     Transform = t;
@@ -460,6 +474,7 @@ the code we would use:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     # Set up transforms just like in the image, except make positions be 100 times bigger.
     var parent = Transform2D(2, 0, 0, 1, 100, 200)
     var child = Transform2D(0.5, 0, 0, 0.5, 100, 100)
@@ -476,6 +491,7 @@ the code we would use:
     transform = Transform2D(basis_x, basis_y, origin)
 
  .. code-tab:: csharp
+
     // Set up transforms just like in the image, except make positions be 100 times bigger.
     Transform2D parent = new Transform2D(2, 0, 0, 1, 100, 200);
     Transform2D child = new Transform2D(0.5f, 0, 0, 0.5f, 100, 100);
@@ -496,6 +512,7 @@ applying one transform onto another using the `*` operator:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     # Set up transforms just like in the image, except make positions be 100 times bigger.
     var parent = Transform2D(Vector2(2, 0), Vector2(0, 1), Vector2(100, 200))
     var child = Transform2D(Vector2(0.5, 0), Vector2(0, 0.5), Vector2(100, 100))
@@ -504,6 +521,7 @@ applying one transform onto another using the `*` operator:
     transform = parent * child
 
  .. code-tab:: csharp
+
     // Set up transforms just like in the image, except make positions be 100 times bigger.
     Transform2D parent = new Transform2D(2, 0, 0, 1, 100, 200);
     Transform2D child = new Transform2D(0.5f, 0, 0, 0.5f, 100, 100);
@@ -531,11 +549,13 @@ transformations:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     var ti = transform.affine_inverse()
     var t = ti * transform
     # The transform is the identity transform.
 
  .. code-tab:: csharp
+
     Transform2D ti = Transform.AffineInverse();
     Transform2D t = ti * Transform;
     // The transform is the identity transform.
@@ -545,12 +565,14 @@ same position (same for "xform_inv"):
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     var ti = transform.affine_inverse()
-    position = transform.xform(pos)
-    position = ti.xform(pos)
+    position = transform.xform(position)
+    position = ti.xform(position)
     # The position is the same as before.
 
  .. code-tab:: csharp
+
     Transform2D ti = Transform.AffineInverse();
     Position = Transform.Xform(Position);
     Position = ti.Xform(Position);
