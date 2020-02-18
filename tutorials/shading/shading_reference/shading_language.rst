@@ -297,6 +297,7 @@ Structs
 Structs are compound types which can be used for better abstaction of shader code. You can declare them at the global scope like:
 
 .. code-block:: glsl
+
     struct PointLight {
         vec3 position;
         vec3 color;
@@ -306,6 +307,7 @@ Structs are compound types which can be used for better abstaction of shader cod
 After declaration, you can instantiate and initialize them like:
 
 .. code-block:: glsl
+
     void fragment()
     {
         PointLight light;
@@ -317,11 +319,13 @@ After declaration, you can instantiate and initialize them like:
 Or use struct constructor for same purpose:
 
 .. code-block:: glsl
+
     PointLight light = PointLight(vec3(0.0), vec3(1.0, 0.0, 0.0), 0.5);
 
 Structs may contain other struct or array, you can also instance them as global constant:
 
 .. code-block:: glsl
+
     shader_type spatial;
 
     ...
@@ -340,6 +344,7 @@ Structs may contain other struct or array, you can also instance them as global 
 You can also pass them to functions:
 
 .. code-block:: glsl
+
     shader_type canvas_item;
 
     ...
