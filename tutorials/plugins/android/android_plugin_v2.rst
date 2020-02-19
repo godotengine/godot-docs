@@ -103,19 +103,19 @@ From your script:
 **When exporting the project**, you need to add the plugin's name to the ``Custom Template`` -> ``V2 Plugins`` section.
 If trying to add multiple plugins, separate their names by a comma (``,``).
 
-Bundling gdnative resources
+Bundling GDNative resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A v2 Android plugin can define and provide C/C++ gdnative resources, either to provide and/or access functionality from the game logic.
-The gdnative resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
+A v2 Android plugin can define and provide C/C++ GDNative resources, either to provide and/or access functionality from the game logic.
+The GDNative resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
 
-    -   The shared libraries (``.so``) for the defined gdnative libraries will be automatically bundled by the ``aar`` build system. 
+    -   The shared libraries (``.so``) for the defined GDNative libraries will be automatically bundled by the ``aar`` build system. 
 
     -   Godot ``*.gdnlib`` and ``*.gdns`` resource files must be manually defined in the plugin ``assets`` directory. 
         The recommended path for these resources relative to the ``assets`` directory should be: ``godot/plugin/v2/[PluginName]/``.
 
-For gdnative libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method, 
-and return the paths to the bundled gdnative libraries config files (``*.gdnlib``). The paths must be relative to the ``assets`` directory.
-At runtime, the plugin will provide these paths to Godot core which will use them to load and initialize the bundled gdnative libraries.
+For GDNative libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method, 
+and return the paths to the bundled GDNative libraries config files (``*.gdnlib``). The paths must be relative to the ``assets`` directory.
+At runtime, the plugin will provide these paths to Godot core which will use them to load and initialize the bundled GDNative libraries.
 
 Reference implementations
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,4 +135,4 @@ Godot crashes upon load
 Check ``adb logcat`` for possible problems, then:
 
 -  Check that the methods used in the Java singleton only use simple
-   Java datatypes, more complex ones are not supported.
+   Java datatypes. More complex datatypes are not supported.
