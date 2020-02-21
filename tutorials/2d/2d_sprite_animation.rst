@@ -159,9 +159,9 @@ released.
     extends KinematicBody2D
 
     func _process(delta):
-        if Input.is_action_pressed("ui_right"):
+        if Input.is_action_just_pressed("ui_right"):
             $AnimationPlayer.play("walk")
-        else:
+        elif Input.is_action_just_released("ui_right"):
             $AnimationPlayer.stop()
 
 
