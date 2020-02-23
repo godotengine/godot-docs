@@ -333,7 +333,7 @@ Applies a rotation to the node, in radians, starting from its current rotation.
 
 - :ref:`Vector2<class_Vector2>` **to_global** **(** :ref:`Vector2<class_Vector2>` local_point **)** const
 
-Converts a local point's coordinates to global coordinates.
+Transforms the provided local position into a position in global coordinate space. The input must be local relative to the :ref:`Node2D<class_Node2D>` it is called on. i.e. Applying this method to the positions of child nodes will correctly transform their positions into the global coordinate space, but applying it to a node's own position will give an incorrect result, as it will incorporate the node's own transformation into its global position.
 
 ----
 
@@ -341,7 +341,7 @@ Converts a local point's coordinates to global coordinates.
 
 - :ref:`Vector2<class_Vector2>` **to_local** **(** :ref:`Vector2<class_Vector2>` global_point **)** const
 
-Converts a global point's coordinates to local coordinates.
+Transforms the provided global position into a position in local coordinate space. The output will be local relative to the :ref:`Node2D<class_Node2D>` it is called on. i.e. It is appropriate for determining the positions of child nodes, but it is not appropriate for determining its own position.
 
 ----
 
