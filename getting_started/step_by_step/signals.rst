@@ -79,7 +79,7 @@ Click "Connect" and you'll see that the function has been created in the script:
 
     public class TimerExample : Node2D
     {
-        private void _on_Timer_timeout()
+        public void _on_Timer_timeout()
         {
             // Replace with function body.
         }
