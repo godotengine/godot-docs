@@ -1,6 +1,6 @@
 .. _doc_android_plugin:
 
-Creating Android plugins v2 (Godot 4.0+)
+Creating Android plugins (Godot 4.0+)
 =========================================
 
 Introduction
@@ -32,25 +32,25 @@ and capabilities that don't belong to the core feature set of a game engine:
 Making modifications to the Android export template is another use-case since using a plugin for that task allows the project
 to remain compatible with newer Godot versions.
 
-Android plugin v2
+Android plugin
 -----------------
 
-**Version 2** of the Android plugin is supported starting with Godot 4.0. This is a breaking, backward-incompatible update 
-which deprecates **version 1** of the Android plugin in Godot 4.0.
+While introduced in Godot 3.2.0, the Android plugin system got a significant architecture update starting with Godot 3.2.2. In Godot 4.0, the new architecture became
+the default, rendering plugins for Godot 3.2.0 incompatible with Godot 4.0.
 
 As a prerequisite, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
 
-At its core, a *v2* Godot Android plugin is a `Android archive library <https://developer.android.com/studio/projects/android-library#aar-contents>`_ (*aar* archive file) 
+At its core, a Godot Android plugin is a `Android archive library <https://developer.android.com/studio/projects/android-library#aar-contents>`_ (*aar* archive file) 
 with the following caveats:
 
 -  The library must have a dependency on the Godot engine library (``godot-lib.x.y.aar``). A stable version is made available for each Godot release.
 
 -  The library must include a specifically configured ``<meta-data>`` tag in its manifest file.
 
-Building a v2 Android plugin
+Building a Android plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Prerequisite:** `Android Studio <https://developer.android.com/studio>`_ is strongly recommended as the IDE to use to create *v2* Android plugins. 
+**Prerequisite:** `Android Studio <https://developer.android.com/studio>`_ is strongly recommended as the IDE to use to create Android plugins. 
 The instructions below assumes that you're using Android Studio.
 
 1.  Follow `these instructions <https://developer.android.com/studio/projects/android-library>`_ to create an Android library module for your plugin.
@@ -76,7 +76,7 @@ The instructions below assumes that you're using Android Studio.
     -   In the ``<application>`` tag, add a ``<meta-data>`` tag setup as follow::
         
             <meta-data 
-                android:name="org.godotengine.plugin.v2.[PluginName]" 
+                android:name="org.godotengine.plugin.v1.[PluginName]" 
                 android:value="[plugin.init.ClassFullName]" />
 
         Where ``PluginName`` is the name of the plugin, and ``plugin.init.ClassFullName`` is the full name (package + class name) of the plugin loading class.
@@ -84,9 +84,9 @@ The instructions below assumes that you're using Android Studio.
 5.  Add the remaining logic for your plugin and run the ``gradle :build`` command to generate the plugin's ``aar`` file.
 
 **Note:** The plugin's ``aar`` filename must match the following pattern: ``[PluginName]*.aar`` 
-where ``PluginName`` is the name of the plugin in camel case (e.g: ``GodotPaymentV3.release.aar``).
+where ``PluginName`` is the name of the plugin in camel case (e.g: ``GodotPayment.release.aar``).
 
-Loading and using a v2 Android plugin
+Loading and using a Android plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you have access to the plugin ``aar`` file, move it to the Godot project ``res://android/build/libs/plugins`` 
@@ -100,18 +100,18 @@ From your script:
         var singleton = Engine.get_singleton("MyPlugin")
         print(singleton.myPluginFunction("World"))
 
-**When exporting the project**, you need to add the plugin's name to the ``Custom Template`` -> ``V2 Plugins`` section.
+**When exporting the project**, you need to add the plugin's name to the ``Custom Template`` -> ``Plugins`` section.
 If trying to add multiple plugins, separate their names by a comma (``,``).
 
 Bundling GDNative resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A v2 Android plugin can define and provide C/C++ GDNative resources, either to provide and/or access functionality from the game logic.
+A Android plugin can define and provide C/C++ GDNative resources, either to provide and/or access functionality from the game logic.
 The GDNative resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
 
     -   The shared libraries (``.so``) for the defined GDNative libraries will be automatically bundled by the ``aar`` build system. 
 
     -   Godot ``*.gdnlib`` and ``*.gdns`` resource files must be manually defined in the plugin ``assets`` directory. 
-        The recommended path for these resources relative to the ``assets`` directory should be: ``godot/plugin/v2/[PluginName]/``.
+        The recommended path for these resources relative to the ``assets`` directory should be: ``godot/plugin/v1/[PluginName]/``.
 
 For GDNative libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method, 
 and return the paths to the bundled GDNative libraries config files (``*.gdnlib``). The paths must be relative to the ``assets`` directory.
@@ -123,7 +123,7 @@ Reference implementations
 
     -   `Bundled gdnative resources <https://github.com/m4gr3d/godot_oculus_mobile/tree/2.0/plugin/src/main/assets/addons/godot_ovrmobile>`_
 
--   `Godot Payment V3 plugin <https://github.com/m4gr3d/godot/tree/rearch_godot_android_plugin/platform/android/java/plugins/godotpaymentv3>`_
+-   `Godot Payment plugin <https://github.com/m4gr3d/godot/tree/rearch_godot_android_plugin/platform/android/java/plugins/godotpayment>`_
 
 
 Troubleshooting
