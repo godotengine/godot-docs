@@ -22,7 +22,7 @@ Differences
 +===================+====================================================================================+================================================================================================================+
 | License           | Proprietary, closed, free license with revenue caps and usage restrictions         | MIT license, free and fully open source without any restriction                                                |
 +-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| OS (editor)       | Windows, macOS, Linux | Windows, macOS, X11 (Linux, \*BSD)                                                                             |
+| OS (editor)       | Windows, macOS, Linux                                                              | Windows, macOS, X11 (Linux, \*BSD)                                                                             |
 +-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | OS (export)       | * **Desktop:** Windows, macOS, Linux                                               | * **Desktop:** Windows, macOS, X11                                                                             |
 |                   | * **Mobile:** Android, iOS, Windows Phone, Tizen                                   | * **Mobile:** Android, iOS                                                                                     |
