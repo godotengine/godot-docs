@@ -101,7 +101,7 @@ TextureButton
 one for each of the button's states. Most of the time, you'll use the
 Normal, Pressed, and Hover textures. Focused is useful if your interface
 listens to the keyboard's input. The sixth image slot, the Click Mask,
-lets you define the clickable area using a 2-bit, pure black and white
+lets you define the clickable area using a 1-bit, pure black and white
 image.
 
 In the Base Button section, you'll find a few checkboxes that change how
