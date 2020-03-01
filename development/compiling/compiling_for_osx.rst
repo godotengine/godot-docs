@@ -8,8 +8,7 @@ Compiling for macOS
 Requirements
 ------------
 
-For compiling under Linux or other Unix variants, the following is
-required:
+For compiling under macOS, the following is required:
 
 -  Python 2.7+ or Python 3.5+
 -  SCons build system
