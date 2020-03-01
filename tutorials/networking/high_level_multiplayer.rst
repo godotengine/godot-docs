@@ -57,14 +57,15 @@ Mid level abstraction
 Before going into how we would like to synchronize a game across the network, it can be helpful to understand how the base network API for synchronization works.
 
 Godot uses a mid-level object :ref:`NetworkedMultiplayerPeer <class_NetworkedMultiplayerPeer>`.
-This object is not meant to be created directly, but is designed so that several implementations can provide it:
-
-.. image:: img/nmpeer.png
+This object is not meant to be created directly, but is designed so that several implementations can provide it.
 
 This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it inherits all the useful methods for serializing, sending and receiving data. On top of that, it adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know when peers connect or disconnect.
 
 This class interface can abstract most types of network layers, topologies and libraries. By default, Godot
-provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <class_NetworkedMultiplayerENet>`), but this could be used to implement mobile APIs (for adhoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
+provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <class_NetworkedMultiplayerENet>`),
+one based on WebRTC (:ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>`), and one based on WebSocket
+(:ref:`WebSocketMultiplayerPeer <class_WebSocketMultiplayerPeer>`), but this could be used to implement
+mobile APIs (for adhoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
 
 For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities.
 Yet it is made available in case a game has specific needs for a lower level API.
