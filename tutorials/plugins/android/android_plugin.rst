@@ -90,8 +90,7 @@ where ``PluginName`` is the name of the plugin in camel case (e.g: ``GodotPaymen
 Loading and using a Android plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once you have access to the plugin ``aar`` file, move it to the Godot project ``res://android/build/libs/plugins`` 
-directory.
+Once you have access to the plugin ``aar`` file, move it to the Godot project ``res://android/plugins`` directory.
 
 From your script:
 
