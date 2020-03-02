@@ -81,7 +81,8 @@ The instructions below assumes that you're using Android Studio.
 
         Where ``PluginName`` is the name of the plugin, and ``plugin.init.ClassFullName`` is the full name (package + class name) of the plugin loading class.
 
-5.  Add the remaining logic for your plugin and run the ``gradle :build`` command to generate the plugin's ``aar`` file.
+5.  Add the remaining logic for your plugin and run the ``gradlew build`` command to generate the plugin's ``aar`` file. 
+    The build will likely generate both a ``debug`` and ``release`` ``aar`` files. Depending on your need, pick only one version (usually the ``release`` one) which to provide your users with.
 
 **Note:** The plugin's ``aar`` filename must match the following pattern: ``[PluginName]*.aar`` 
 where ``PluginName`` is the name of the plugin in camel case (e.g: ``GodotPayment.release.aar``).
