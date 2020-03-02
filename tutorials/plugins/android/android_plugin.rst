@@ -1,7 +1,7 @@
 .. _doc_android_plugin:
 
 Creating Android plugins (Godot 4.0+)
-=========================================
+=====================================
 
 Introduction
 ------------
@@ -33,7 +33,7 @@ Making modifications to the Android export template is another use-case since us
 to remain compatible with newer Godot versions.
 
 Android plugin
------------------
+--------------
 
 While introduced in Godot 3.2.0, the Android plugin system got a significant architecture update starting with Godot 3.2.2. In Godot 4.0, the new architecture became
 the default, rendering plugins for Godot 3.2.0 incompatible with Godot 4.0.
@@ -48,7 +48,7 @@ with the following caveats:
 -  The library must include a specifically configured ``<meta-data>`` tag in its manifest file.
 
 Building a Android plugin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Prerequisite:** `Android Studio <https://developer.android.com/studio>`_ is strongly recommended as the IDE to use to create Android plugins. 
 The instructions below assumes that you're using Android Studio.
@@ -87,7 +87,7 @@ The instructions below assumes that you're using Android Studio.
 where ``PluginName`` is the name of the plugin in camel case (e.g: ``GodotPayment.release.aar``).
 
 Loading and using a Android plugin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you have access to the plugin ``aar`` file, move it to the Godot project ``res://android/build/libs/plugins`` 
 directory.
