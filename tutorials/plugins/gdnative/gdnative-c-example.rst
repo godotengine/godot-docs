@@ -375,7 +375,7 @@ On Windows:
 .. code-block:: none
 
     cl /Fosimple.obj /c simple.c /nologo -EHsc -DNDEBUG /MD /I. /I..\godot_headers
-    link /nologo /dll /out:..\bin\libsimple.dll /implib:..\simple\bin\libsimple.lib simple.obj
+    link /nologo /dll /out:..\simple\bin\libsimple.dll /implib:..\simple\bin\libsimple.lib simple.obj
 
 .. note::
 
