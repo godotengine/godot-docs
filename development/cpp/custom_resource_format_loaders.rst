@@ -106,7 +106,7 @@ read and handle data serialization.
 Creating a ResourceFormatSaver
 ------------------------------
 
-I you like to be able to edit and save a resource, you can implement a ResourceFormatSaver:
+If you'd like to be able to edit and save a resource, you can implement a ResourceFormatSaver:
 
 
 .. code:: cpp
