@@ -32,15 +32,7 @@ This delay can't be avoided but it can be estimated by calling :ref:`AudioServer
 
 The output latency (what happens after the mix) can also be estimated by calling :ref:`AudioServer.get_output_latency()<class_AudioServer_method_get_output_latency>`.
 
-Add these two and it's possible to guess almost exactly when sound or music will begin playing in the speakers:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    var actual_play_time = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
-    $Song.play()
-
-This way, obtaining the actual playback position during *_process()* is possible:
+Add these two and it's possible to guess almost exactly when sound or music will begin playing in the speakers during *_process()*:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
