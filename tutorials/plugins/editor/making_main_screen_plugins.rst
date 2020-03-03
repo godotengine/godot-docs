@@ -53,17 +53,25 @@ file. In our example, ``main_screen_plugin.gd``.
     func _enter_tree():
        pass
 
+
     func _exit_tree():
        pass
+
 
     func has_main_screen():
        return true
 
+
     func make_visible(visible):
        pass
 
+
     func get_plugin_name():
        return "Main Screen Plugin"
+
+
+    func get_plugin_icon():
+       return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
 
 The important part in this script is the ``has_main_screen()`` function, which is
 overloaded so it returns ``true``. This function is automatically called by the
@@ -172,6 +180,7 @@ Here is the script's full content:
     func _on_Button_pressed():
        emit_signal("side_button_pressed", "Hello from side panel!")
 
+
     func _on_main_button_pressed(text_to_show):
        $Label.text = text_to_show
 
@@ -207,16 +216,20 @@ Here is the full ``main.gd``:
        # Hide the main panel
        make_visible(false)
 
+
     func _exit_tree():
        main_panel_instance.queue_free()
        side_panel_instance.queue_free()
+
 
     func _ready():
        main_panel_instance.connect("main_button_pressed", side_panel_instance, "_on_main_button_pressed")
        side_panel_instance.connect("side_button_pressed", main_panel_instance, "_on_side_button_pressed")
 
+
     func has_main_screen():
        return true
+
 
     func make_visible(visible):
        if visible:
@@ -224,8 +237,14 @@ Here is the full ``main.gd``:
        else:
           main_panel_instance.hide()
 
+
     func get_plugin_name():
        return "Main Screen Plugin"
+
+
+    func get_plugin_icon():
+       # Must return some kind of Texture for the icon.
+       return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
 
 A couple of specific lines were added. First, we defined the constants that
 contain our 2 GUI packed scenes (``MainPanel`` and ``SidePanel``). We will use
@@ -262,3 +281,7 @@ Activate the plugin in the Project Settings. You'll observe a new button next to
 2D, 3D, Script above the main viewport. You'll also notice a new tab in the left
 dock. Try to click the buttons in both side and main panels: events are emitted
 and caught by the corresponding target scene to change the Label caption inside it.
+
+If you would like to see a more complete example of what main screen plugins
+are capable of, check out the 2.5D demo projects here:
+https://github.com/godotengine/godot-demo-projects/tree/master/misc/2.5d
