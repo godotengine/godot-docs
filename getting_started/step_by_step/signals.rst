@@ -251,7 +251,7 @@ To pass values, add them as the second argument to the ``emit_signal`` function:
 
         public override void _Ready()
         {
-            EmitSignal(nameof(MySignal));
+            EmitSignal(nameof(MySignal), true, 42);
         }
     }
 
