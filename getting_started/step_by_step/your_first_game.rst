@@ -739,7 +739,7 @@ Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the
 
 Next, click on the Player and connect the ``hit`` signal. We want to make a
 new function named ``game_over``, which will handle what needs to happen when a
-game ends. Type "game_over" in the "Method In Node" box at the bottom of the
+game ends. Type "game_over" in the "Receiver Method" box at the bottom of the
 "Connecting Signal" window. Add the following code, as well as a ``new_game``
 function to set everything up for a new game:
 
