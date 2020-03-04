@@ -63,6 +63,16 @@ or:
 make SPHINXBUILD=~/.local/bin/sphinx-build html
 ```
 
+Building the documentation requires at least 8 GB of RAM to be done without swapping. If you have at least 16 GB of RAM, you can speed up compilation by using:
+
+```bash
+# On Linux/macOS
+make html SPHINXOPTS=-j2
+
+# On Windows
+set SPHINXOPTS=-j2 && make html
+```
+
 The compilation might take some time as the `classes/` folder contains many files to parse.
 
 In case of a `MemoryError` or `EOFError`, you can remove the `classes/` folder and run `make` again. This will drop the class references from the final HTML documentation but will keep the rest intact. Make sure to avoid using `git add .` in this case when working on a pull request, or the whole `classes/` folder will be removed when you make a commit. See [#3157](https://github.com/godotengine/godot-docs/issues/3157) for more details.
