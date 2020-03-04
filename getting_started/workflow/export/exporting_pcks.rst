@@ -120,6 +120,11 @@ file in the directory of the games executable. The PCK file contains a
     subfolder). However, it is also a way of creating patches for one's own game. A
     PCK file of this kind can fix the content of a previously loaded PCK.
 
+.. note::
+    For a C# project, you need to build the DLL and place it in the project directory first.
+    Then, before loading the resource pack, you need to load its DLL as follows:
+    ``Assembly.LoadFile("mod.dll")``
+
 Summary
 -------
 
