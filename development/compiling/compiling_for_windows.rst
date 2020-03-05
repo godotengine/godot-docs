@@ -14,7 +14,7 @@ For compiling under Windows, the following is required:
   version 2017 or later. VS 2019 is recommended.
   **Make sure to read "Installing Visual Studio caveats" below or you
   will have to run/download the installer again.**
-- `MinGW-w64 <http://mingw-w64.org/>`_ with GCC can be used as an alternative to
+- `MinGW-w64 <http://mingw-w64.org/>`__ with GCC can be used as an alternative to
   Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
 - `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
 - `SCons 3.0 <https://www.scons.org>`_ build system. If using Visual Studio 2019,
@@ -160,7 +160,7 @@ Cross-compiling for Windows from other operating systems
 --------------------------------------------------------
 
 If you are a Linux or macOS user, you need to install
-`MinGW-w64 <https://mingw-w64.org/doku.php>`_, which typically comes in 32-bit
+`MinGW-w64 <https://mingw-w64.org/doku.php>`__, which typically comes in 32-bit
 and 64-bit variants. The package names may differ based on your distribution,
 here are some known ones:
 
