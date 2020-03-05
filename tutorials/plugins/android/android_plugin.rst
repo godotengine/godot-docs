@@ -1,16 +1,16 @@
 .. _doc_android_plugin:
 
-Creating Android plugins
-========================
+Creating Android plugins (Godot 4.0+)
+=====================================
 
 Introduction
 ------------
 
-Making video games portable is all fine and dandy, until mobile
-gaming monetization shows up.
+Android plugins are powerful tools to extend the capabilities of the Godot engine 
+by tapping into the functionality provided by the Android platform and ecosystem. 
 
-This area is complex, usually a mobile game that monetizes needs
-special connections to a server for things like:
+Mobile gaming monetization is one such example since it requires features 
+and capabilities that don't belong to the core feature set of a game engine:
 
 -  Analytics
 -  In-app purchases
@@ -29,246 +29,102 @@ special connections to a server for things like:
 -  Posting to Facebook, Twitter, etc.
 -  Push notifications
 
-On iOS, you can write a C++ module and take advantage of the C++/ObjC
-intercommunication. Even using GDNative is possible to make it a plug-in.
-
-On Android, interfacing with C++ through JNI (Java Native Interface) isn't as flexible, so writing plugins
-is considerably more work.
-
-It is also possible that you just want to do modifications to the Android export template, and by using a plugin your project
-can remain compatible with newer Godot versions (as the android source template will get updated on each release).
-
-Maybe REST
-----------
-
-Most of these APIs allow communication via REST/JSON APIs. If the API is relatively simple and does not require
-complex authentication, this may be a better idea than writing a specific Android plugin.
-
-Godot has great support for HTTP, HTTPS and JSON, so an API implemented this way
-will work on every platform, too. 
-
-Of course, in most of the cases, it's easier to just write an Android plugin, so keep reading.
+Making modifications to the Android export template is another use-case since using a plugin for that task allows the project
+to remain compatible with newer Godot versions.
 
 Android plugin
 --------------
 
-Writing an Android plugin is now possible, beginning with Godot 3.2. It's also pretty easy! Re-compiling the engine is no longer needed.
+While introduced in Godot 3.2.0, the Android plugin system got a significant architecture update starting with Godot 3.2.2. In Godot 4.0, the new architecture became
+the default, rendering plugins for Godot 3.2.0 incompatible with Godot 4.0.
 
-Before anything, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
+As a prerequisite, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
 
-Your plugin needs to be in a folder other than *"build/"* inside the *"res://android"* directory (which was created by following the link above). Any name is fine, so name it according to the SDK you will implement (or just your plugin name).
+At its core, a Godot Android plugin is a `Android archive library <https://developer.android.com/studio/projects/android-library#aar-contents>`_ (*aar* archive file) 
+with the following caveats:
 
-Once created, there are certain rules to follow, but they are simple.
+-  The library must have a dependency on the Godot engine library (``godot-lib.x.y.aar``). A stable version is made available for each Godot release.
 
-Android directories
-^^^^^^^^^^^^^^^^^^^
+-  The library must include a specifically configured ``<meta-data>`` tag in its manifest file.
 
-Inside your plugin folder, you can use the standard folders as if they were from an Android Gradle project. Examples of this are:
+Building a Android plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: none
+**Prerequisite:** `Android Studio <https://developer.android.com/studio>`_ is strongly recommended as the IDE to use to create Android plugins. 
+The instructions below assumes that you're using Android Studio.
 
-   src/ - For Java source code, same as in your Android project
-   res/ - For resources
-   aidl/ - For interfaces
-   assets/ - For assets that will be included as-is on export
-   libs/debug - For debug JNI libraries
-   libs/release - For release JNI libraries
+1.  Follow `these instructions <https://developer.android.com/studio/projects/android-library>`_ to create an Android library module for your plugin.
 
-Gradle will treat them as part of the project automatically when building, same as the default project files.
+2.  Add the Godot engine library as a dependency to your plugin module:
 
-"Chunk" files
-^^^^^^^^^^^^^
+    -  Download the Godot engine library (godot-lib.x.y.aar)
 
-It is now possible to modify *"AndroidManifest.xml"* and *build.gradle* in *"res://android/build"* directly and Godot will keep your
-changes when building. The problem, however, is that if you update Godot, you will also need to update the *build/* folder and your
-changes will be lost.
+    -   Follow `these instructions <https://developer.android.com/studio/projects/android-library#AddDependency>`_ to add 
+        the Godot engine library as a dependency for your plugin.
 
-To overcome this, the Godot Android Plugin system lets you create *chunk* files, where you can specify little bits that can be
-inserted in both *"AndroidManifest.xml"* and *build.gradle*. They are inserted every time Godot builds the project for export or deploy.
+    -  In the plugin module's ``build.gradle`` file, replace ``implementation`` with ``compileOnly`` for the dependency line for the Godot engine library.
 
-AndroidManifest.conf
-~~~~~~~~~~~~~~~~~~~~
+3.  Create a new class in the plugin module and make sure it extends ``org.godotengine.godot.plugin.GodotPlugin``.
+    At runtime, it will be used to instantiate a singleton object that will be used by the Godot engine to load, initialize and run the plugin.
 
-This file allows to insert bits of chunk into *AndroidManifest.xml*, the following are supported tags and are entirely optional:
+4.  Update the plugin ``AndroidManifest.xml`` file:
 
-.. code-block:: none
+    -   Open the plugin ``AndroidManifest.xml`` file.
 
-   [user_permissions]
+    -   Add the ``<application></application>`` tag if it's missing.
 
-Any bit of text below this tag is inserted inside the <manifest> tag of the file. This is often used for permission tags.
+    -   In the ``<application>`` tag, add a ``<meta-data>`` tag setup as follow::
+        
+            <meta-data 
+                android:name="org.godotengine.plugin.v1.[PluginName]" 
+                android:value="[plugin.init.ClassFullName]" />
 
-.. code-block:: none
+        Where ``PluginName`` is the name of the plugin, and ``plugin.init.ClassFullName`` is the full name (package + class name) of the plugin loading class.
 
-   [application]
+5.  Add the remaining logic for your plugin and run the ``gradlew build`` command to generate the plugin's ``aar`` file. 
+    The build will likely generate both a ``debug`` and ``release`` ``aar`` files. Depending on your need, pick only one version (usually the ``release`` one) which to provide your users with.
 
-Any bit of text below this tag inside the <application> tag of the file. Many SDKs require this.
+**Note:** The plugin's ``aar`` filename must match the following pattern: ``[PluginName]*.aar`` 
+where ``PluginName`` is the name of the plugin in camel case (e.g: ``GodotPayment.release.aar``).
 
-.. code-block:: none
+Loading and using a Android plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   [application_attribs]
+Once you have access to the plugin ``aar`` file, move it to the Godot project ``res://android/plugins`` directory.
 
-These are attributes you can add at the end of the <application> tag. Some SDKs require this.
+From your script:
 
-gradle.conf
-~~~~~~~~~~~
+.. code::
 
-This file allows to insert bits of chunk into *build.gradle*, the following are supported and are entirely optional:
+    if Engine.has_singleton("MyPlugin"):
+        var singleton = Engine.get_singleton("MyPlugin")
+        print(singleton.myPluginFunction("World"))
 
-.. code-block:: none
+**When exporting the project**, you need to add the plugin's name to the ``Custom Template`` -> ``Plugins`` section.
+If trying to add multiple plugins, separate their names by a comma (``,``).
 
-   [buildscript_repositories]
+Bundling GDNative resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A Android plugin can define and provide C/C++ GDNative resources, either to provide and/or access functionality from the game logic.
+The GDNative resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
 
+    -   The shared libraries (``.so``) for the defined GDNative libraries will be automatically bundled by the ``aar`` build system. 
 
-Any bit of text below this tag is inserted inside the buildscript.repositories section of the build file.
+    -   Godot ``*.gdnlib`` and ``*.gdns`` resource files must be manually defined in the plugin ``assets`` directory. 
+        The recommended path for these resources relative to the ``assets`` directory should be: ``godot/plugin/v1/[PluginName]/``.
 
+For GDNative libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method, 
+and return the paths to the bundled GDNative libraries config files (``*.gdnlib``). The paths must be relative to the ``assets`` directory.
+At runtime, the plugin will provide these paths to Godot core which will use them to load and initialize the bundled GDNative libraries.
 
-.. code-block:: none
+Reference implementations
+^^^^^^^^^^^^^^^^^^^^^^^^^
+-   `Godot Oculus Mobile plugin <https://github.com/m4gr3d/godot_oculus_mobile/tree/2.0>`_
 
-   [buildscript_dependencies]
+    -   `Bundled gdnative resources <https://github.com/m4gr3d/godot_oculus_mobile/tree/2.0/plugin/src/main/assets/addons/godot_ovrmobile>`_
 
+-   `Godot Payment plugin <https://github.com/m4gr3d/godot/tree/rearch_godot_android_plugin/platform/android/java/plugins/godotpayment>`_
 
-Any bit of text below this tag is inserted inside the buildscript.dependencies section of the build file.
-
-.. code-block:: none
-
-   [allprojects_repositories]
-
-
-Any bit of text below this tag is inserted inside the allprojects.repositories section of the build file.
-
-.. code-block:: none
-
-   [dependencies]
-
-
-Any bit of text below this tag is inserted inside the dependencies section of the build file.
-
-
-.. code-block:: none
-
-   [android_defaultconfig]
-
-
-Any bit of text below this tag is inserted inside the android.defaultconfig section of the build file.
-
-.. code-block:: none
-
-   [global]
-
-
-Any bit of text below this tag is inserted inside the global scope of the build file.
-
-Java singleton
---------------
-
-An Android plugin will usually have a singleton class that will load it,
-this class inherits from ``Godot.SingletonBase``. Resource identifiers for
-any additional resources you have provided for the module will be in the
-``com.godot.game.R`` class, so you'll likely want to import it.
-
-A singleton object template follows:
-
-.. code-block:: java
-
-    package org.godotengine.godot;
-
-    import android.app.Activity;
-    import android.content.Intent;
-    import android.content.Context;
-    import com.godot.game.R;
-    import javax.microedition.khronos.opengles.GL10;
-
-    public class MySingleton extends Godot.SingletonBase {
-
-        protected Activity appActivity;
-        protected Context appContext;
-        private Godot activity = null;
-        private int instanceId = 0;
-
-        public String myFunction(String p_str) {
-            // A function to bind.
-            return "Hello " + p_str;
-        }
-
-        public void getInstanceId(int pInstanceId) {
-            // You will need to call this method from Godot and pass in the get_instance_id().
-            instanceId = pInstanceId;
-        }
-
-        static public Godot.SingletonBase initialize(Activity p_activity) {
-            return new MySingleton(p_activity);
-        }
-
-        public MySingleton(Activity p_activity) {
-            // Register class name and functions to bind.
-            registerClass("MySingleton", new String[]
-                {
-                    "myFunction",
-                    "getInstanceId"
-                });
-            this.appActivity = p_activity;
-            this.appContext = appActivity.getApplicationContext();
-            // You might want to try initializing your singleton here, but android
-            // threads are weird and this runs in another thread, so to interact with Godot you usually have to do.
-            this.activity = (Godot)p_activity;
-            this.activity.runOnUiThread(new Runnable() {
-                    public void run() {
-                        // Useful way to get config info from "project.godot".
-                        String key = GodotLib.getGlobal("plugin/api_key");
-                        // SDK.initializeHere();
-                    }
-            });
-
-        }
-
-        // Forwarded callbacks you can reimplement, as SDKs often need them.
-
-        protected void onMainActivityResult(int requestCode, int resultCode, Intent data) {}
-        protected void onMainRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {}
-
-        protected void onMainPause() {}
-        protected void onMainResume() {}
-        protected void onMainDestroy() {}
-
-        protected void onGLDrawFrame(GL10 gl) {}
-        protected void onGLSurfaceChanged(GL10 gl, int width, int height) {} // Singletons will always miss first 'onGLSurfaceChanged' call.
-
-    }
-
-Calling back to Godot
-^^^^^^^^^^^^^^^^^^^^^
-
-Calling back to Godot from Java is a little more difficult. The instance
-ID of the script must be known first, this is obtained by calling
-``get_instance_ID()`` on the script. This returns an integer that can be
-passed to Java.
-
-From Java, use the ``calldeferred`` function to communicate back with Godot.
-Java will most likely run in a separate thread, so calls are deferred:
-
-.. code-block:: java
-
-    GodotLib.calldeferred(<instanceid>, "<function>", new Object[]{param1, param2, etc});
-
-
-Godot will detect this singleton and initialize it at the proper time.
-
-Using it from GDScript
-^^^^^^^^^^^^^^^^^^^^^^
-
-First you will need to add your singleton into the android modules to be loaded. Go to "Project > Project Settings".
-Then on the tab "General" go to the "Android" section, and fill the Modules part with your module name. 
-The module should include the full Java path. For our example: ``org/godotengine/godot/MySingleton``.
-
-.. image:: img/android_modules.png
-
-Then, from your script:
-
-::
-
-    if Engine.has_singleton("MySingleton"):
-        var singleton = Engine.get_singleton("MySingleton")
-        print(singleton.myFunction("World"))
 
 Troubleshooting
 ---------------
@@ -278,21 +134,5 @@ Godot crashes upon load
 
 Check ``adb logcat`` for possible problems, then:
 
--  Make sure libgodot_android.so is in the ``libs/armeabi`` folder
 -  Check that the methods used in the Java singleton only use simple
-   Java datatypes, more complex ones are not supported.
-
-Future
-------
-
-Godot has an experimental Java API Wrapper that allows to use the
-entire Java API from GDScript.
-
-It's simple to use and it's used like this:
-
-.. code-block:: none
-
-    class = JavaClassWrapper.wrap(<javaclass as text>)
-
-This is most likely not functional yet, if you want to test it and help
-us make it work, contact us on irc.freenode.org:#godotengine-devel.
+   Java datatypes. More complex datatypes are not supported.
