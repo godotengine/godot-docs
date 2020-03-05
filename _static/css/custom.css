@@ -21,7 +21,6 @@
     --navbar-level-2-color: #b8d6f0;
     --navbar-level-3-color: #a3c4e1;
     --navbar-heading-color: #ff7381;
-    --navbar-scrollbar-background: #131e2b;
 
     --link-color: #2980b9;
     --link-color-hover: #3091d1;
@@ -88,7 +87,6 @@
         --navbar-level-2-color: #ccc;
         --navbar-level-3-color: #bbb;
         --navbar-heading-color: #ee7381;
-        --navbar-scrollbar-background: #1c1e21;
 
         --link-color: #8cf;
         --link-color-hover: #9df;
@@ -650,36 +648,4 @@ code,
     background-color: transparent;
     font-weight: inherit;
     padding: 0;
-}
-
-/* allows the navbar's scrollbar to be shown */
-nav.wy-nav-side, .wy-side-scroll, .rst-versions {
-    overflow-x: unset;
-    overflow-y: unset;
-    width: 308px;
-}
-nav.wy-nav-side {
-    overflow-x: hidden;
-    min-height: calc(100% - 43px);
-    margin-bottom: 50rem;
-    padding-bottom: unset;
-}
-.wy-side-nav-search {
-    width: unset;
-}
-.rst-versions {
-    height: 43px;
-}
-/* navbar scrollbar styling */
-nav.wy-nav-side {
-    scrollbar-color: var(--navbar-heading-color) var(--navbar-scrollbar-background);
-}
-nav.wy-nav-side::-webkit-scrollbar {
-    width: .75rem;
-}
-nav.wy-nav-side::-webkit-scrollbar-track {
-    background-color: var(--navbar-scrollbar-background);
-}
-nav.wy-nav-side::-webkit-scrollbar-thumb {
-    background-color: var(--navbar-heading-color);
 }
