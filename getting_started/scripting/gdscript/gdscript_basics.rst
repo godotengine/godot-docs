@@ -1482,14 +1482,13 @@ Will print::
     world
     cheers!
 
-Remember to save the new function state, when using multiple ``yield``s:
+Remember to save the new function state, when using multiple ``yield``\s::
 
-::
     func co_func():
         for i in range(1, 5):
             print("Turn %d" % i)
             yield();
-    
+
     func _ready():
         var co = co_func();
         while co is GDScriptFunction && co.is_valid():
