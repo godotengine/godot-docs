@@ -60,6 +60,10 @@ node.
 .. warning:: The target node *must* have a script attached or you'll receive
              an error message.
 
+On the right side, you can bind an arbitrary number of arguments of (possibly) different
+types. This can be useful when you have more than one signal connected to the same method,
+as each signal propagation will result in different values for those extra call arguments.
+
 On the bottom of the window is a field labeled "Receiver Method". This is the name
 of the function in the target node's script that you want to use. By default,
 Godot will create this function using the naming convention ``_on_<node_name>_<signal_name>``
