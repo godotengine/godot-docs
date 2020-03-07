@@ -5,7 +5,7 @@ Tutorials and resources
 
 This is a list of third-party tutorials and resources created by the Godot community. For resources, remember that there is the official `Godot Asset Library <https://godotengine.org/asset-library/asset>`_ full of official and community resources too! Also have a look at this `huge list over at Reddit <https://www.reddit.com/r/godot/comments/an0iq5/godot_tutorials_list_of_video_and_written/>`_.
 
-Think there is something missing here? Feel free to submit a `Pull Request <https://github.com/godotengine/godot-docs/blob/master/community/resources.rst>`_ as always.
+Think there is something missing here? Feel free to submit a `Pull Request <https://github.com/godotengine/godot-docs/blob/master/community/tutorials.rst>`_ as always.
 
 Where to start
 --------------
@@ -31,6 +31,7 @@ Video tutorials
 - `P1X / Krzysztof Jankowski <https://www.youtube.com/playlist?list=PLvDk7UKhld4xGPovdB4IFtAHYMYjx_-3K>`_ (3D).
 - `Pigdev <https://www.youtube.com/playlist?list=PLPMN4vCRFdordS3E-3zi0Hdh7pAsbWQ6a>`_ (2D, GDScript).
 - `Steincodes <https://www.youtube.com/c/steincodes/playlists>`__ (2D, GDScript and VisualScript).
+- `TheBuffED <https://www.youtube.com/watch?v=ygGaN1EOQEA&list=PLvN5Z3tTxXEDfQkt4Frg6ALirespSwZd7>`_ (2D, GDScript).
 - `Code with Tom <https://www.youtube.com/playlist?list=PLiUQR4U_J9ec0k91iHPme_qtfS1nrWF3W>`_ (2D and 3D, GDScript).
 - `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ>`_ (3D, GDScript).
 

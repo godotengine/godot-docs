@@ -79,21 +79,21 @@ When the folder path is correct, you'll see a green checkmark.
 Your first look at Godot’s editor
 ---------------------------------
 
-Welcome to Godot! With your project open, you should see the editor’s
-interface with empty docks on the right side.
+Welcome to Godot! With your project open, you should see the editor’s interface
+with menus along the top of the interface and docks along the far extremes of
+the interface on either side of the viewport.
 
 .. image:: img/editor_ui_intro_editor_interface_overview.png
 
 At the top, from left to right, you can see the **main menus**, the
 **workspaces**, and the **playtest buttons**.
 
-On the bottom left side, you have the **FileSystem dock**, where you’ll
-manage your project files and assets.
+The **FileSystem dock** is where you’ll manage your project files and assets.
 
 .. image:: img/editor_ui_intro_dock_filesystem.png
 
-On the right side, you’ll find the **Scene dock**, which lists the active
-scene’s content and the **Inspector** in the bottom right corner.
+The **Scene dock** lists the active scene’s content and the **Inspector**
+allows for the management of the properties of a scene's content.
 
 .. image:: img/editor_ui_intro_dock_inspector.png
 

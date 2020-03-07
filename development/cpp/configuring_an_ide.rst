@@ -305,7 +305,7 @@ To create them:
 Android Studio
 --------------
 
-`Android Studio <https://developer.android.com/studio>`_ is a `Jetbrain <https://www.jetbrains.com/>`_ IDE for Android development. It has a feature-rich editor which supports Java and C/C++, so it can be used for development of the Godot core engine, and Android platform codebases.
+`Android Studio <https://developer.android.com/studio>`_ is a `JetBrains <https://www.jetbrains.com/>`_ IDE for Android development. It has a feature-rich editor which supports Java and C/C++, so it can be used for development of the Godot core engine, and Android platform codebases.
 
 Project setup
 ^^^^^^^^^^^^^

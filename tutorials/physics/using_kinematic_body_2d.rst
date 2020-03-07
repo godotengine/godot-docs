@@ -397,13 +397,13 @@ And the code for the Bullet:
 
         public override void _PhysicsProcess(float delta)
         {
-            var collsion = MoveAndCollide(_velocity * delta);
-            if (collsion != null)
+            var collision = MoveAndCollide(_velocity * delta);
+            if (collision != null)
             {
-                _velocity = _velocity.Bounce(collsion.Normal);
-                if (collsion.Collider.HasMethod("Hit"))
+                _velocity = _velocity.Bounce(collision.Normal);
+                if (collision.Collider.HasMethod("Hit"))
                 {
-                    collsion.Collider.Hit();
+                    collision.Collider.Call("Hit");
                 }
             }
         }

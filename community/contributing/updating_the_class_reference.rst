@@ -186,17 +186,17 @@ Here's how a class looks like in XML:
 
     <class name="Node2D" inherits="CanvasItem" category="Core">
         <brief_description>
-        Base node for 2D system.
+            Base node for 2D system.
         </brief_description>
         <description>
-        Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierarchies for animation and positioning.
+            Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierarchies for animation and positioning.
         </description>
         <methods>
             <method name="set_pos">
                 <argument index="0" name="pos" type="Vector2">
                 </argument>
                 <description>
-                Set the position of the 2d node.
+                    Sets the position of the 2D node.
                 </description>
             </method>
             [...]

@@ -354,7 +354,7 @@ its own collision code. In this method we create/spawn a bullet object in the di
 it travels forward.
 
 There are several advantages to this method. The first being we do not have to store the bullets in our player. We can simply create the bullet
-and then move on, and the bullet itself with handle checking for collisions, sending the proper signal(s) to the object it collides with, and destroying itself.
+and then move on, and the bullet itself will handle checking for collisions, sending the proper signal(s) to the object it collides with, and destroying itself.
 
 Another advantage is we can have more complex bullet movement. If we want to make the bullet fall ever so slightly as time goes on, we can make the bullet
 controlling script slowly push the bullet towards the ground. Using an object also makes the bullet take time to reach its target, it doesn't instantly
