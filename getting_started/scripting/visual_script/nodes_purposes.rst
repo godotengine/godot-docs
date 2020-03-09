@@ -119,7 +119,7 @@ This is the most common way to edit *Scene Nodes* in Visual Scripting. Select a 
 
 The result is that this value can be changed from your script by writing to a *Data Port*.
 
-If instead reading this value is desired, drag the node again but hold the *Control* key (or Command on Mac). This will create a getter:
+If instead reading this value is desired, drag the node again but hold :kbd:`Ctrl` (or :kbd:`Cmd` on macOS). This will create a getter:
 
 .. image:: img/visual_script22.png
 
@@ -155,7 +155,7 @@ To use the variable in the script, simply drag it to the canvas to create a gett
 .. image:: img/visual_script26.png
 
 
-Likewise, hold *Control* (*Command* on Mac) to drop a setter:
+Likewise, hold :kbd:`Ctrl` (or :kbd:`Cmd` on macOS) to drop a setter:
 
 .. image:: img/visual_script27.png
 
@@ -195,7 +195,7 @@ Below the member panel, exists the list of all available node types:
 .. image:: img/visual_script33.png
 
 
-Ctrl-F (Command-F on Mac) allows you to search the list.
+Pressing :kbd:`Ctrl + F` (or :kbd:`Cmd + F` on macOS) allows you to search the list.
 
 Any of them can be dragged to the scene. Unlike nodes (e.g. dragging a property
 from the Inspector sets the context to the node being edited automatically), these are added without any "contextual" information, so this has to be done manually.

@@ -82,7 +82,7 @@ are not selectable."
 
 .. image:: img/lock_children.png
 
-Save the scene. Click Scene -> Save, or press ``Ctrl+S`` on Windows/Linux or ``Command+S`` on Mac.
+Save the scene. Click Scene -> Save, or press :kbd:`Ctrl + S` on Windows/Linux or :kbd:`Cmd + S` on macOS.
 
 .. note:: For this project, we will be following the Godot naming conventions.
 
@@ -1227,7 +1227,7 @@ This is the default input event associated with the spacebar.
 
 .. image:: img/start_button_shortcut.png
 
-Now when the start button appears, you can either click it or press the spacebar
+Now when the start button appears, you can either click it or press :kbd:`Space`
 to start the game.
 
 Project files

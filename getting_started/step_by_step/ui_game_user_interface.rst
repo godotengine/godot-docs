@@ -163,7 +163,7 @@ parent ``MarginContainer``.
 As they have a container as their direct parent, we cannot move them
 freely: the ``Count`` node will always reset their anchors, their size
 and position. Try to move and resize the nodes in the viewport. Then,
-select any of the three textures and press Ctrl Up or Ctrl Down to
+select any of the three textures and press :kbd:`Ctrl + Up` or :kbd:`Ctrl + Down` to
 reorder them in the Scene dock. They'll snap back to their previous size
 and position.
 
@@ -256,7 +256,7 @@ Design the bomb and emerald counters
 The bomb and emerald counters are like the bar's ``Count`` node. So we'll
 duplicate it and use it as a template.
 
-Under the ``Bar`` node, select ``Count`` and press Ctrl D to duplicate
+Under the ``Bar`` node, select ``Count`` and press :kbd:`Ctrl + D` to duplicate
 it. Drag and drop the new node under the ``Counters`` ``HBoxContainer``
 at the bottom of the scene tree. You should see it resize automatically.
 Don't worry about this for now, we'll fix the size soon.
@@ -408,7 +408,7 @@ Inherit the Bar Scene to build the LifeBar
 Go to ``Scene -> New Inherited Scene`` to create a new type of ``Bar``.
 Select the Bar scene and open it. You should see a new [unsaved] tab,
 that's like your ``Bar``, but with all nodes except the root in grey.
-Press ``Meta+S`` to save the new inherited scene and name it
+Press :kbd:`Meta + S` to save the new inherited scene and name it
 ``LifeBar``.
 
 .. figure:: img/ui_gui_step_tutorial_inherited_scene_parent.png
@@ -474,7 +474,7 @@ all the resources this node uses and create unique copies for us.
 .. tip::
 
     When you duplicate a node from the Scene tree, with
-    ``Meta+D``, it shares its resources with the original node. You
+    :kbd:`Meta + D`, it shares its resources with the original node. You
     need to use ``Make Sub-Resources Unique`` before you can tweak the
     resources without affecting the source node.
 
