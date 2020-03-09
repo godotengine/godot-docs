@@ -107,7 +107,7 @@ input. Key events are even printed as their key symbols. For example, let's cons
 It inherits from the following classes:
 
 - :ref:`InputEvent <class_InputEvent>` - the base class for all input events
-- :ref:`InputEventWithModifiers <class_InputEventWithModifiers>` - adds the ability to check if modifiers are pressed, such as ``Shift`` or ``Alt``.
+- :ref:`InputEventWithModifiers <class_InputEventWithModifiers>` - adds the ability to check if modifiers are pressed, such as :kbd:`Shift` or :kbd:`Alt`.
 - :ref:`InputEventMouse <class_InputEventMouse>` - adds mouse event properties, such as ``position``
 - :ref:`InputEventMouseButton <class_InputEventMouseButton>` - contains the index of the button that was pressed, whether it was a double-click, etc.
 
@@ -178,7 +178,7 @@ Keyboard events
 Keyboard events are captured in :ref:`InputEventKey <class_InputEventKey>`.
 While it's recommended to use input actions instead, there may be cases where
 you want to specifically look at key events. For this example, let's check for
-the "T" key:
+the :kbd:`T`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -210,8 +210,8 @@ Keyboard modifiers
 Modifier properties are inherited from
 :ref:`InputEventWithModifiers <class_InputEventWithModifiers>`. This  allows
 you to check for modifier combinations using boolean properties. Let's imagine
-you want one thing to happen when the "T" key is pressed, but something
-different when it's "Shift+T":
+you want one thing to happen when the :kbd:`T` is pressed, but something
+different when it's :kbd:`Shift + T`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -116,12 +116,13 @@ You can see four workspace buttons at the top: 2D, 3D, Script and
 AssetLib.
 
 You’ll use the **2D workspace** for all types of games. In addition to 2D games,
-the 2D workspace is where you'll build your interfaces. Press F1 to access it.
+the 2D workspace is where you'll build your interfaces. Press :kbd:`F1` 
+(or :kbd:`Alt + 1` on macOS) to access it.
 
 .. image:: img/editor_ui_intro_editor_04_2d_workspace.png
 
 In the **3D workspace**, you can work with meshes, lights, and design
-levels for 3D games. Press F2 to access it.
+levels for 3D games. Press :kbd:`F2` (or :kbd:`Alt + 2` on macOS) to access it.
 
 .. image:: img/editor_ui_intro_editor_05_3d_workspace.png
 
@@ -133,8 +134,8 @@ related to the 3D viewport.
 .. note:: Read :ref:`doc_introduction_to_3d` for more detail about **3D workspace**.
 
 The **Script** workspace is a complete code editor with a debugger, rich
-auto-completion, and built-in code reference. Press F3 to access it, and
-F4 to search the reference.
+auto-completion, and built-in code reference. Press :kbd:`F3` (or :kbd:`Alt + 3` on macOS) 
+to access it, and :kbd:`F4` to search the reference.
 
 .. image:: img/editor_ui_intro_editor_06_script_workspace_expanded.png
 

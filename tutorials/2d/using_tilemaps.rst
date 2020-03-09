@@ -159,7 +159,7 @@ Tips and tricks
 
 - You can flip and rotate tiles using the icons at the top right of the editor.
 
-- To draw straight lines, hold <Shift> while clicking and dragging a tile.
+- To draw straight lines, hold :kbd:`Shift` while clicking and dragging a tile.
 
 - Tools such as copy, paste, and bucket fill, can be found in the "TileMap"
   menu in the upper-right.

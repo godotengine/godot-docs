@@ -60,7 +60,7 @@ to the same path, especially if you are using custom Android modules,
 since some Gradle plugins rely on the NDK and use this variable to
 determine its location.
 
-To set those environment variables on Windows, press **Windows + R**, type
+To set those environment variables on Windows, press :kbd:`Windows + R`, type
 "control system", then click on **Advanced system settings** in the left
 pane, then click on **Environment variables** on the window that
 appears.

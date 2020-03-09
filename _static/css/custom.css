@@ -64,6 +64,11 @@
     --admonition-tip-title-background-color: #1abc9c;
     --admonition-tip-title-color: #fff;
 
+    --kbd-background-color: #fafbfc;
+    --kbd-outline-color: #d1d5da;
+    --kbd-shadow-color: #b0b7bf;
+    --kbd-text-color: #444d56;
+
     --btn-neutral-background-color: #f3f6f6;
     --btn-neutral-hover-background-color: #e5ebeb;
     --footer-color: #808080;
@@ -130,6 +135,11 @@
         --admonition-tip-color: #dfd;
         --admonition-tip-title-background-color: #336648;
         --admonition-tip-title-color: #dfd;
+
+        --kbd-background-color: #595b5d;
+        --kbd-outline-color: #3d4144;
+        --kbd-shadow-color: #1e2023;
+        --kbd-text-color: #e2f2ff;
 
         --btn-neutral-background-color: #404040;
         --btn-neutral-hover-background-color: #505050;
@@ -414,6 +424,20 @@ code,
 .rst-content .admonition.important .admonition-title {
     background-color: var(--admonition-tip-title-background-color);
     color: var(--admonition-tip-title-color);
+}
+
+/* Keyboard shortcuts tweaks */
+kbd, .kbd {
+    background-color: var(--kbd-background-color);
+    border: 1px solid var(--kbd-outline-color);
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 var(--kbd-shadow-color);
+    color: var(--kbd-text-color);
+    display: inline-block;
+    font-size: 12px;
+    line-height: 11px;
+    padding: 4px 5px;
+    vertical-align: middle;
 }
 
 /* Buttons */

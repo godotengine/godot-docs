@@ -114,7 +114,7 @@ In there, run ``sdkmanager --licenses``:
 
 .. image:: img/custom_build_sdkmanager.png
 
-This will ask you to accept several licenses, just write ``y`` and press Enter
+This will ask you to accept several licenses, just write ``y`` and press :kbd:`Enter`
 on every of them until it's done.
 
 Afterwards, install the platform tools (this is required to install ``adb``):

@@ -566,7 +566,7 @@ Here is what the :ref:`Spatial <class_Spatial>` gizmo shows when you are using l
 Notice how the arrows follow the rotation of the object on the left, which looks exactly
 the same as the 3D example for local space.
 
-.. note:: You can change between local and world space modes by pressing T or the little cube button
+.. note:: You can change between local and world space modes by pressing :kbd:`T` or the little cube button
           when you have a :ref:`Spatial <class_Spatial>` based node selected.
 
 .. image:: img/LocalSpaceExampleGizmo.png
@@ -680,8 +680,8 @@ _________
 To test the code, open up the scene named ``Testing_Area.tscn``, if it's not already opened up. We will be using
 this scene as we go through the next few tutorial parts, so be sure to keep it open in one of your scene tabs.
 
-Go ahead and test your code either by pressing ``F6`` with ``Testing_Area.tscn`` as the open tab, by pressing the
-play button in the top right corner, or by pressing ``F5``.
+Go ahead and test your code either by pressing :kbd:`F6` with ``Testing_Area.tscn`` as the open tab, by pressing the
+play button in the top right corner, or by pressing :kbd:`F5`.
 You should now be able to walk around, jump in the air, and look around using the mouse.
 
 
@@ -829,7 +829,7 @@ Now, when the player is sprinting, we'll use ``SPRINT_ACCEL`` instead of ``ACCEL
 
 _________
 
-You should now be able to sprint if you press the ``shift`` button, and can toggle the flash light on and off by pressing the ``F`` button!
+You should now be able to sprint if you press :kbd:`Shift`, and can toggle the flash light on and off by pressing :kbd:`F`!
 
 Go try it out! You can change the sprint-related class variables to make the player faster or slower when sprinting!
 

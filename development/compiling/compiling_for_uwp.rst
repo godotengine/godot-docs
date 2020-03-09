@@ -139,6 +139,6 @@ to build it at least once to generate some needed files, you can do so by
 right-clicking the project (*not* the solution) in the "Solution Explorer" and
 selecting "Build".
 
-Now you can just run the project and your app should open. You can use also
-the "Start Without Debugging" from the "Debug" menu (Ctrl+F5) to make it
+Now you can just run the project and your app should open. You can also use
+the "Start Without Debugging" option from the "Debug" menu (or press :kbd:`Ctrl + F5`) to make it
 launch faster.

@@ -104,7 +104,7 @@ than a few minutes to get an overview of the concepts.
 Scene setup
 ~~~~~~~~~~~
 
-Use the "Add Child Node" dialogue accessed from the Scene tab (or by pressing ``Ctrl+A``) to create a hierarchy with the following
+Use the "Add Child Node" dialogue accessed from the Scene tab (or by pressing :kbd:`Ctrl + A`) to create a hierarchy with the following
 nodes:
 
 - Panel

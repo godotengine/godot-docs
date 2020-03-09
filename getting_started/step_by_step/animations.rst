@@ -70,7 +70,7 @@ keyframes with different values, the animation happens.
 
 .. image:: img/robisplash_anim_editor_keyframe_2.png
 
-Pressing "Play selected animation from start. (Shift-D)" on the animation panel
+Pressing "Play selected animation from start" button on the animation panel (or :kbd:`Shift + D` on keyboard)
 will make the logo descend.
 
 .. image:: img/robisplash_anim_editor_play_start.png

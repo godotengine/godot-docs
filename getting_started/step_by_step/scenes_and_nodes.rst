@@ -139,7 +139,7 @@ change it to "Hello World":
 .. image:: img/hw.png
 
 Ok, everything's ready to run the scene! Press the PLAY SCENE Button on
-the top bar (or hit F6):
+the top bar (or hit :kbd:`F6`):
 
 .. image:: img/playscene.png
 
