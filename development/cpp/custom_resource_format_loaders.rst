@@ -126,7 +126,7 @@ If you'd like to be able to edit and save a resource, you can implement a Resour
     	virtual void get_recognized_extensions(const RES &p_resource, List<String> *p_extensions) const;
     };
     #endif // RESOURCE_SAVER_JSON_H
-    
+
 .. code:: cpp
 
     /* resource_saver_json.cpp */
@@ -150,7 +150,7 @@ If you'd like to be able to edit and save a resource, you can implement a Resour
     	if (Object::cast_to<JsonResource>(*p_resource))
     		p_extensions->push_back("json");
     }
-    
+
 Creating custom data types
 --------------------------
 
@@ -158,7 +158,7 @@ Godot may not have a proper substitute within its :ref:`doc_core_types`
 or managed resources. Godot needs a new registered data type to
 understand additional binary formats such as machine learning models.
 
-Here is an example of how to create a custom datatype
+Here is an example of creating a custom datatype:
 
 .. code-block:: cpp
 
@@ -352,11 +352,13 @@ References
 Loading it on GDScript
 ----------------------
 
+Save a file called ``demo.json`` with the following contents and place it in the
+project's root folder:
+
 .. code-block:: json
 
-    /* example .json file */
     {
-      "savefilename" : "demo.json",
+      "savefilename": "demo.json",
       "demo": [
         "welcome",
         "to",
@@ -366,7 +368,7 @@ Loading it on GDScript
       ]
     }
 
-::
+Then attach the following script to any node::
 
     extends Node
 
