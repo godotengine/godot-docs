@@ -160,8 +160,8 @@ The data directory is a dependency for Godot binaries built with the Mono module
 enabled. It contains important files for the correct functioning of Godot. It
 must be distributed together with the Godot executable.
 
-.. note:: The information below doesn't apply to Android, as there is
-          no data directory for that platform.
+.. note:: The information below doesn't apply for Android, iOS and WASM,
+          as there is no data directory for these platforms.
 
 Export templates
 ^^^^^^^^^^^^^^^^
@@ -219,6 +219,19 @@ when building the editor in order to create this folder and its contents.
 The ``Tools`` subdirectory contains tools required by the editor, like the
 ``GodotTools`` assemblies and its dependencies.
 
+Building the Mono runtime
+-------------------------
+
+When building Godot for the desktop, you will likely use the pre-built Mono runtime
+that is installed on your system. This likely won't be the case when targeting other
+platforms like Android, iOS and WebAssembly. For those platforms you will have to
+build the Mono runtime yourself.
+
+We recommend using these `build scripts <https://github.com/godotengine/godot-mono-builds>`_.
+They simplify this process but also include some patches needed
+for proper functioning with Godot. See the README on the link above
+for instructions on how to use the scripts.
+
 Targeting Android
 -----------------
 
@@ -228,20 +241,116 @@ There is no need to worry about run-time dependencies like a data directory or
 the shared library (when dynamically linking) as those are automatically added
 to the Gradle project.
 
-Before building Godot, you need to cross compile the Mono runtime for the target
-architectures. We recommend using these
-`build scripts <https://github.com/godotengine/godot-mono-builds>`_.
-They simplify this process but also include some patches needed
-for proper functioning with Godot. See the README on the link above
-for instructions on how to use the scripts.
+Once you've built Mono, you can proceed to build Godot with the instructions
+described in this page and the
+:ref:`Compiling for Android<doc_compiling_for_android>` page.
+Make sure to let SCons know about the location of the Mono runtime you've just built, e.g.:
+``scons [...] mono_prefix="$HOME/mono-installs/android-armeabi-v7a-release"``
+(This path may be different on your system).
+
+Targeting iOS
+-------------
 
 Once you've built Mono, you can proceed to build Godot with the instructions
 described in this page and the
-:ref:`Compiling for Android<doc_compiling_for_android>` page. Make sure
-to let SCons know about the location of the Mono runtime you've just built:
-``scons [...] mono_prefix="$HOME/mono-installs/android-armeabi-v7a-release"``
-(This path may be different on your system, depending on the options you used
-to build Mono).
+:ref:`Compiling for iOS<doc_compiling_for_ios>` page.
+Make sure to let SCons know about the location of the Mono runtime you've just built, e.g.:
+``scons [...] mono_prefix="$HOME/mono-installs/ios-arm64-release"``
+(This path may be different on your system).
+
+After building Godot for each architecture, you will notice SCons has
+copied the Mono libraries for each of them to the output directory:
+
+::
+
+    #bin/libmono-native.iphone.<arch>.a
+    #bin/libmonosgen-2.0.iphone.<arch>.a
+    #bin/libmonoprofiler-log.iphone.<arch>.a
+
+    #bin/libmono-ilgen.iphone.<arch>.a
+    #bin/libmono-ee-interp.iphone.<arch>.a
+    #bin/libmono-icall-table.iphone.<arch>.a
+
+The last three are only for iOS devices and are not available for the iOS simulator.
+
+These libraries must be put in universal (multi-architecture) "fat"
+files to be distributed with the export templates.
+
+The following bash script will create the "fat" libraries in the directory ``#bin/ios/iphone-mono-libs``:
+
+::
+
+    mkdir -p bin/ios
+    mkdir -p bin/ios/iphone-mono-libs
+
+    lipo -create bin/libmonosgen-2.0.iphone.arm64.a bin/libmonosgen-2.0.iphone.x86_64.a -output bin/ios/iphone-mono-libs/libmonosgen-2.0.iphone.fat.a
+    lipo -create bin/libmono-native.iphone.arm64.a bin/libmono-native.iphone.x86_64.a -output bin/ios/iphone-mono-libs/libmono-native.iphone.fat.a
+    lipo -create bin/libmono-profiler-log.iphone.arm64.a bin/libmono-profiler-log.iphone.x86_64.a -output bin/ios/iphone-mono-libs/libmono-profiler-log.iphone.fat.a
+
+    # The Mono libraries for the interpreter are not available for simulator builds
+    lipo -create bin/libmono-ee-interp.iphone.arm64.a -output bin/ios/iphone-mono-libs/libmono-ee-interp.iphone.fat.a
+    lipo -create bin/libmono-icall-table.iphone.arm64.a -output bin/ios/iphone-mono-libs/libmono-icall-table.iphone.fat.a
+    lipo -create bin/libmono-ilgen.iphone.arm64.a -output bin/ios/iphone-mono-libs/libmono-ilgen.iphone.fat.a
+
+The ``iphone-mono-libs`` folder must be distributed with the export templates.
+The Godot editor will look for the libraries in ``<templates>/iphone-mono-libs/lib<name>.iphone.fat.a``.
+
+Targeting WebAssembly
+---------------------
+
+As of now, building for WebAssembly is the same both when the mono module is enabled and when it is disabled.
+
+Once you've built Mono, you can proceed to build Godot with the instructions
+described in this page and the
+:ref:`Compiling for the Web<doc_compiling_for_web>` page.
+Make sure to let SCons know about the location of the Mono runtime you've just built, e.g.:
+``scons [...] mono_prefix="$HOME/mono-installs/wasm-runtime-release"``
+(This path may be different on your system).
+
+Base Class Library
+------------------
+
+The export templates must also include the BCL (Base Class Library) for each target platform.
+Godot looks for the BCL folder at ``<templates>/bcl/<target_platform>``,
+where ``<target_platform>`` is the same name passed to the SCons ``platform`` option,
+e.g.: ``<templates>/bcl/windows``, ``<templates>/bcl/javascript``.
+
+Alternatively, Godot will look for them in the following locations:
+
++-------------------+---------------------------------+
+|      Android      |  ``<templates>/bcl/monodroid``  |
++-------------------+---------------------------------+
+|        iOS        |  ``<templates>/bcl/monotouch``  |
++-------------------+---------------------------------+
+|    WebAssembly    |    ``<templates>/bcl/wasm``     |
++-------------------+---------------------------------+
+|  Linux and macOS  |   ``<templates>/bcl/net_4_x``   |
++-------------------+---------------------------------+
+|      Windows      | ``<templates>/bcl/net_4_x_win`` |
++-------------------+---------------------------------+
+
+As of now, we're assuming the same BCL profile can be used for both Linux and macOS,
+but this may change in the future as they're not guaranteed to be the same
+(as is the case with the Windows BCL).
+
+If the target platform is the same as the platform of the Godot editor,
+then the editor will use the BCL it's running on (``<data_folder>/Mono/lib/mono/4.5``)
+if it cannot find the BCL in the export templates.
+
+AOT cross-compilers
+-------------------
+
+In order to do Ahead Of Time (AOT) compilation for other platforms, Godot needs to have
+access to the Mono cross-compilers for that platform and architecture.
+
+Godot will look for the cross-compiler executable in the AOT compilers folder.
+The location of this folder is ``<data_folder>/Tools/aot-compilers/``.
+
+In order to build the cross-compilers we recommend using these
+`build scripts <https://github.com/godotengine/godot-mono-builds>`_.
+
+After building them, copy the executable to the Godot AOT compilers directory. The
+executable name is ``<triple>-mono-sgen``, e.g.: ``aarch64-apple-darwin-mono-sgen``.
 
 Command-line options
 --------------------
@@ -249,20 +358,29 @@ Command-line options
 The following is the list of command-line options available when building with
 the Mono module:
 
-- **module_mono_enabled**: Build Godot with the Mono module enabled
-  (yes | **no**)
+- **module_mono_enabled**\ =yes | **no**
 
-- **mono_glue**: Whether to include the glue source files in the build
-  and define ``MONO_GLUE_DISABLED`` as a preprocessor macro (**yes** | no)
+  - Build Godot with the Mono module enabled.
 
-- **mono_prefix**: Path to the Mono installation directory
-  for the target platform and architecture
+- **mono_glue**\ =\ **yes** | no
 
-- **xbuild_fallback**: Whether to fallback to xbuild if MSBuild is not available
-  (yes | **no**)
+  - Whether to include the glue source files in the build
+    and define ``MONO_GLUE_DISABLED`` as a preprocessor macro.
 
-- **mono_static**: Whether to link the Mono runtime statically
-  (yes | **no**)
+- **mono_prefix**\ =path
 
-- **copy_mono_root**: Whether to copy the Mono framework assemblies
-  and configuration files required by the Godot editor (yes | **no**)
+  - Path to the Mono installation directory for the target platform and architecture.
+
+- **xbuild_fallback**\ =yes | **no**
+
+  - Whether to fallback to xbuild if MSBuild is not available.
+
+- **mono_static**\ =yes | no
+
+  - Whether to link the Mono runtime statically.
+  - The default is **yes** for iOS and WASM, and **no** for other platforms.
+
+- **copy_mono_root**\ =yes | **no**
+
+  - Whether to copy the Mono framework assemblies
+    and configuration files required by the Godot editor.
