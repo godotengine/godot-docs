@@ -94,7 +94,7 @@ Once you have access to the plugin ``aar`` file, move it to the Godot project ``
 
 From your script:
 
-.. code::
+.. code-block::
 
     if Engine.has_singleton("MyPlugin"):
         var singleton = Engine.get_singleton("MyPlugin")

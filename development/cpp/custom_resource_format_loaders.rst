@@ -18,7 +18,7 @@ References
 ~~~~~~~~~~
 
 - :ref:`ResourceLoader<class_resourceloader>`
-- `core/io/resource_loader.cpp <https://github.com/godotengine/godot/blob/master/core/io/resource_loader.cpp#L258>`__
+- `core/io/resource_loader.cpp <https://github.com/godotengine/godot/blob/master/core/io/resource_loader.cpp>`_
 
 What for?
 ---------
@@ -38,7 +38,7 @@ ImageFormatLoader should be used to load images.
 References
 ~~~~~~~~~~
 
-- `core/io/image_loader.h <https://github.com/godotengine/godot/blob/master/core/io/image_loader.h>`__
+- `core/io/image_loader.h <https://github.com/godotengine/godot/blob/master/core/io/image_loader.h>`_
 
 
 Creating a ResourceFormatLoader
@@ -65,12 +65,12 @@ read and handle data serialization.
     #include "core/io/resource_loader.h"
 
     class ResourceFormatLoaderJson : public ResourceFormatLoader {
-        GDCLASS(ResourceFormatLoaderJson, ResourceFormatLoader)
+    	GDCLASS(ResourceFormatLoaderJson, ResourceFormatLoader);
     public:
-        virtual RES load(const String &p_path, const String &p_original_path, Error *r_error = NULL);
-        virtual void get_recognized_extensions(List<String> *p_extensions) const;
-        virtual bool handles_type(const String &p_type) const;
-        virtual String get_resource_type(const String &p_path) const;
+    	virtual RES load(const String &p_path, const String &p_original_path, Error *r_error = NULL);
+    	virtual void get_recognized_extensions(List<String> *r_extensions) const;
+    	virtual bool handles_type(const String &p_type) const;
+    	virtual String get_resource_type(const String &p_path) const;
     };
     #endif // RESOURCE_LOADER_JSON_H
 
@@ -79,20 +79,22 @@ read and handle data serialization.
     /* resource_loader_json.cpp */
 
     #include "resource_loader_json.h"
-    #include "resource_json.h"
 
+    #include "resource_json.h"
 
     RES ResourceFormatLoaderJson::load(const String &p_path, const String &p_original_path, Error *r_error) {
     Ref<JsonResource> json = memnew(JsonResource);
-    	if (r_error)
+    	if (r_error) {
     		*r_error = OK;
+    	}
     	Error err = json->load_file(p_path);
     	return json;
     }
 
-    void ResourceFormatLoaderJson::get_recognized_extensions(List<String> *p_extensions) const {
-    	if (!p_extensions->find("json"))
-    		p_extensions->push_back("json");
+    void ResourceFormatLoaderJson::get_recognized_extensions(List<String> *r_extensions) const {
+    	if (!r_extensions->find("json")) {
+    		r_extensions->push_back("json");
+    	}
     }
 
     String ResourceFormatLoaderJson::get_resource_type(const String &p_path) const {
@@ -100,16 +102,16 @@ read and handle data serialization.
     }
 
     bool ResourceFormatLoaderJson::handles_type(const String &p_type) const {
-    	return (ClassDB::is_parent_class(p_type, "Resource"));
+    	return ClassDB::is_parent_class(p_type, "Resource");
     }
 
 Creating a ResourceFormatSaver
 ------------------------------
 
-If you'd like to be able to edit and save a resource, you can implement a ResourceFormatSaver:
+If you'd like to be able to edit and save a resource, you can implement a
+``ResourceFormatSaver``:
 
-
-.. code:: cpp
+.. code-block:: cpp
 
     /* resource_saver_json.h */
 
@@ -119,22 +121,22 @@ If you'd like to be able to edit and save a resource, you can implement a Resour
     #include "core/io/resource_saver.h"
 
     class ResourceFormatSaverJson : public ResourceFormatSaver {
-    	GDCLASS(ResourceFormatSaverJson, ResourceFormatSaver)
+    	GDCLASS(ResourceFormatSaverJson, ResourceFormatSaver);
     public:
     	virtual Error save(const String &p_path, const RES &p_resource, uint32_t p_flags = 0);
     	virtual bool recognize(const RES &p_resource) const;
-    	virtual void get_recognized_extensions(const RES &p_resource, List<String> *p_extensions) const;
+    	virtual void get_recognized_extensions(const RES &p_resource, List<String> *r_extensions) const;
     };
     #endif // RESOURCE_SAVER_JSON_H
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* resource_saver_json.cpp */
 
     #include "resource_saver_json.h"
-    #include "resource_json.h"
-    #include "scene\resources\resource_format_text.h"
 
+    #include "resource_json.h"
+    #include "scene/resources/resource_format_text.h"
 
     Error ResourceFormatSaverJson::save(const String &p_path, const RES &p_resource, uint32_t p_flags) {
     	Ref<JsonResource> json = memnew(JsonResource);
@@ -146,9 +148,10 @@ If you'd like to be able to edit and save a resource, you can implement a Resour
     	return Object::cast_to<JsonResource>(*p_resource) != NULL;
     }
 
-    void ResourceFormatSaverJson::get_recognized_extensions(const RES &p_resource, List<String> *p_extensions) const {
-    	if (Object::cast_to<JsonResource>(*p_resource))
-    		p_extensions->push_back("json");
+    void ResourceFormatSaverJson::get_recognized_extensions(const RES &p_resource, List<String> *r_extensions) const {
+    	if (Object::cast_to<JsonResource>(*p_resource)) {
+    		r_extensions->push_back("json");
+    	}
     }
 
 Creating custom data types
@@ -178,7 +181,7 @@ Here is an example of creating a custom datatype:
     		ClassDB::bind_method(D_METHOD("set_dict", "dict"), &JsonResource::set_dict);
     		ClassDB::bind_method(D_METHOD("get_dict"), &JsonResource::get_dict);
 
-    		ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "content", PROPERTY_HINT_NONE, ""), "set_dict", "get_dict");
+    		ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "content"), "set_dict", "get_dict");
     	}
 
     private:
@@ -193,7 +196,7 @@ Here is an example of creating a custom datatype:
     };
     #endif // RESOURCE_JSON_H
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* resource_json.cpp */
 
@@ -202,15 +205,17 @@ Here is an example of creating a custom datatype:
     Error JsonResource::load_file(const String &p_path) {
     	Error error;
     	FileAccess *file = FileAccess::open(p_path, FileAccess::READ, &error);
-    	if (!error == OK) {
-    		if (file)
+    	if (error != OK) {
+    		if (file) {
     			file->close();
+    		}
     		return error;
     	}
 
     	String json_string = String("");
-    	while (!file->eof_reached())
+    	while (!file->eof_reached()) {
     		json_string += file->get_line();
+    	}
     	file->close();
 
     	String error_string;
@@ -218,7 +223,7 @@ Here is an example of creating a custom datatype:
     	JSON json;
     	Variant result;
     	error = json.parse(json_string, result, error_string, error_line);
-    	if (!error == OK) {
+    	if (error != OK) {
     		file->close();
     		return error;
     	}
@@ -230,9 +235,10 @@ Here is an example of creating a custom datatype:
     Error JsonResource::save_file(const String &p_path, const RES &p_resource) {
     	Error error;
     	FileAccess *file = FileAccess::open(p_path, FileAccess::WRITE, &error);
-    	if (!error == OK) {
-    		if (file)
+    	if (error != OK) {
+    		if (file) {
     			file->close();
+    		}
     		return error;
     	}
 
@@ -241,7 +247,7 @@ Here is an example of creating a custom datatype:
 
     	file->store_string(json.print(json_ref->get_dict(), "    "));
     	file->close();
-    	return Error::OK;
+    	return OK;
     }
 
     void JsonResource::set_dict(const Dictionary &p_dict) {
@@ -263,6 +269,8 @@ calls into ``std::istream``.
 
 .. code-block:: cpp
 
+    #include "core/os/file_access.h"
+
     #include <istream>
     #include <streambuf>
 
@@ -278,7 +286,7 @@ calls into ``std::istream``.
     		} else {
     			size_t pos = _file->get_position();
     			uint8_t ret = _file->get_8();
-    			_file->seek(pos); // required since get_8() advances the read head
+    			_file->seek(pos); // Required since get_8() advances the read head.
     			return ret;
     		}
     	}
@@ -294,9 +302,9 @@ calls into ``std::istream``.
 References
 ~~~~~~~~~~
 
-- `istream <http://www.cplusplus.com/reference/istream/istream/>`__
-- `streambuf <http://www.cplusplus.com/reference/streambuf/streambuf/?kw=streambuf>`__
-- `core/io/fileaccess.h <https://github.com/godotengine/godot/blob/master/core/os/file_access.h>`__
+- `istream <http://www.cplusplus.com/reference/istream/istream/>`_
+- `streambuf <http://www.cplusplus.com/reference/streambuf/streambuf/?kw=streambuf>`_
+- `core/io/fileaccess.h <https://github.com/godotengine/godot/blob/master/core/os/file_access.h>`_
 
 Registering the new file format
 -------------------------------
@@ -312,13 +320,13 @@ when ``load`` is called.
     void register_json_types();
     void unregister_json_types();
 
-.. code:: cpp
+.. code-block:: cpp
 
     /* register_types.cpp */
 
     #include "register_types.h"
-    #include "core/class_db.h"
 
+    #include "core/class_db.h"
     #include "resource_loader_json.h"
     #include "resource_saver_json.h"
     #include "resource_json.h"
@@ -347,7 +355,7 @@ when ``load`` is called.
 References
 ~~~~~~~~~~
 
-- `core/io/resource_loader.cpp <https://github.com/godotengine/godot/blob/master/core/io/resource_loader.cpp#L280>`__
+- `core/io/resource_loader.cpp <https://github.com/godotengine/godot/blob/master/core/io/resource_loader.cpp>`_
 
 Loading it on GDScript
 ----------------------
@@ -375,4 +383,4 @@ Then attach the following script to any node::
     onready var json_resource = load("res://demo.json")
 
     func _ready():
-    	print(json_resource.get_dict())
+        print(json_resource.get_dict())
