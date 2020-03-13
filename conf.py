@@ -5,8 +5,6 @@
 import sphinx_rtd_theme
 import sys
 import os
-from gdscript import GDScriptLexer
-from sphinx.highlighting import lexers
 
 # -- General configuration ------------------------------------------------
 
@@ -51,8 +49,15 @@ is_i18n = tags.has("i18n")  # noqa: F821
 
 exclude_patterns = ["_build"]
 
+# fmt: off
+# These imports should *not* be moved to the start of the file,
+# they depend on the sys.path.append call registering "extensions".
 # GDScript syntax highlighting
+from gdscript import GDScriptLexer
+from sphinx.highlighting import lexers
+
 lexers["gdscript"] = GDScriptLexer()
+# fmt: on
 
 # Pygments (syntax highlighting) style to use
 pygments_style = "sphinx"
