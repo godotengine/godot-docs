@@ -92,9 +92,7 @@ Loading and using a Android plugin
 
 Once you have access to the plugin ``aar`` file, move it to the Godot project ``res://android/plugins`` directory.
 
-From your script:
-
-.. code-block::
+From your script::
 
     if Engine.has_singleton("MyPlugin"):
         var singleton = Engine.get_singleton("MyPlugin")
