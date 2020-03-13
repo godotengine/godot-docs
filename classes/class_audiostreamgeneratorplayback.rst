@@ -21,19 +21,19 @@ Tutorials
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`can_push_buffer<class_AudioStreamGeneratorPlayback_method_can_push_buffer>` **(** :ref:`int<class_int>` amount **)** const             |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`clear_buffer<class_AudioStreamGeneratorPlayback_method_clear_buffer>` **(** **)**                                                      |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_frames_available<class_AudioStreamGeneratorPlayback_method_get_frames_available>` **(** **)** const                                |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_skips<class_AudioStreamGeneratorPlayback_method_get_skips>` **(** **)** const                                                      |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` frames **)** |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` **(** :ref:`Vector2<class_Vector2>` frame **)**                      |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`can_push_buffer<class_AudioStreamGeneratorPlayback_method_can_push_buffer>` **(** :ref:`int<class_int>` amount **)** const                 |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`clear_buffer<class_AudioStreamGeneratorPlayback_method_clear_buffer>` **(** **)**                                                          |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`get_frames_available<class_AudioStreamGeneratorPlayback_method_get_frames_available>` **(** **)** const                                    |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`get_skips<class_AudioStreamGeneratorPlayback_method_get_skips>` **(** **)** const                                                          |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` frames **)** |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` **(** :ref:`Vector2<class_Vector2>` frame **)**                          |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -64,7 +64,7 @@ Method Descriptions
 
 .. _class_AudioStreamGeneratorPlayback_method_push_buffer:
 
-- :ref:`bool<class_bool>` **push_buffer** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` frames **)**
+- :ref:`bool<class_bool>` **push_buffer** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` frames **)**
 
 ----
 

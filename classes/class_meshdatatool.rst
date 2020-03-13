@@ -36,83 +36,83 @@ Below is an example of how MeshDataTool may be used.
 Methods
 -------
 
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`clear<class_MeshDataTool_method_clear>` **(** **)**                                                                                                        |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`commit_to_surface<class_MeshDataTool_method_commit_to_surface>` **(** :ref:`ArrayMesh<class_ArrayMesh>` mesh **)**                                         |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_from_surface<class_MeshDataTool_method_create_from_surface>` **(** :ref:`ArrayMesh<class_ArrayMesh>` mesh, :ref:`int<class_int>` surface **)**      |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_edge_count<class_MeshDataTool_method_get_edge_count>` **(** **)** const                                                                                |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`   | :ref:`get_edge_faces<class_MeshDataTool_method_get_edge_faces>` **(** :ref:`int<class_int>` idx **)** const                                                      |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`get_edge_meta<class_MeshDataTool_method_get_edge_meta>` **(** :ref:`int<class_int>` idx **)** const                                                        |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_edge_vertex<class_MeshDataTool_method_get_edge_vertex>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` vertex **)** const                      |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_face_count<class_MeshDataTool_method_get_face_count>` **(** **)** const                                                                                |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_face_edge<class_MeshDataTool_method_get_face_edge>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` edge **)** const                            |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`get_face_meta<class_MeshDataTool_method_get_face_meta>` **(** :ref:`int<class_int>` idx **)** const                                                        |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`             | :ref:`get_face_normal<class_MeshDataTool_method_get_face_normal>` **(** :ref:`int<class_int>` idx **)** const                                                    |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_face_vertex<class_MeshDataTool_method_get_face_vertex>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` vertex **)** const                      |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_format<class_MeshDataTool_method_get_format>` **(** **)** const                                                                                        |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>`           | :ref:`get_material<class_MeshDataTool_method_get_material>` **(** **)** const                                                                                    |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`             | :ref:`get_vertex<class_MeshDataTool_method_get_vertex>` **(** :ref:`int<class_int>` idx **)** const                                                              |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`   | :ref:`get_vertex_bones<class_MeshDataTool_method_get_vertex_bones>` **(** :ref:`int<class_int>` idx **)** const                                                  |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`                 | :ref:`get_vertex_color<class_MeshDataTool_method_get_vertex_color>` **(** :ref:`int<class_int>` idx **)** const                                                  |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_vertex_count<class_MeshDataTool_method_get_vertex_count>` **(** **)** const                                                                            |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`   | :ref:`get_vertex_edges<class_MeshDataTool_method_get_vertex_edges>` **(** :ref:`int<class_int>` idx **)** const                                                  |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`   | :ref:`get_vertex_faces<class_MeshDataTool_method_get_vertex_faces>` **(** :ref:`int<class_int>` idx **)** const                                                  |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`get_vertex_meta<class_MeshDataTool_method_get_vertex_meta>` **(** :ref:`int<class_int>` idx **)** const                                                    |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`             | :ref:`get_vertex_normal<class_MeshDataTool_method_get_vertex_normal>` **(** :ref:`int<class_int>` idx **)** const                                                |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_Plane>`                 | :ref:`get_vertex_tangent<class_MeshDataTool_method_get_vertex_tangent>` **(** :ref:`int<class_int>` idx **)** const                                              |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`             | :ref:`get_vertex_uv<class_MeshDataTool_method_get_vertex_uv>` **(** :ref:`int<class_int>` idx **)** const                                                        |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`             | :ref:`get_vertex_uv2<class_MeshDataTool_method_get_vertex_uv2>` **(** :ref:`int<class_int>` idx **)** const                                                      |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`get_vertex_weights<class_MeshDataTool_method_get_vertex_weights>` **(** :ref:`int<class_int>` idx **)** const                                              |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_edge_meta<class_MeshDataTool_method_set_edge_meta>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` meta **)**                          |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_face_meta<class_MeshDataTool_method_set_face_meta>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` meta **)**                          |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_material<class_MeshDataTool_method_set_material>` **(** :ref:`Material<class_Material>` material **)**                                                 |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_vertex<class_MeshDataTool_method_set_vertex>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` vertex **)**                              |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_vertex_bones<class_MeshDataTool_method_set_vertex_bones>` **(** :ref:`int<class_int>` idx, :ref:`PoolIntArray<class_PoolIntArray>` bones **)**         |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_vertex_color<class_MeshDataTool_method_set_vertex_color>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**                       |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_vertex_meta<class_MeshDataTool_method_set_vertex_meta>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` meta **)**                      |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_vertex_normal<class_MeshDataTool_method_set_vertex_normal>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` normal **)**                |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_vertex_tangent<class_MeshDataTool_method_set_vertex_tangent>` **(** :ref:`int<class_int>` idx, :ref:`Plane<class_Plane>` tangent **)**                 |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_vertex_uv<class_MeshDataTool_method_set_vertex_uv>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` uv **)**                            |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_vertex_uv2<class_MeshDataTool_method_set_vertex_uv2>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` uv2 **)**                         |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_vertex_weights<class_MeshDataTool_method_set_vertex_weights>` **(** :ref:`int<class_int>` idx, :ref:`PoolRealArray<class_PoolRealArray>` weights **)** |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`clear<class_MeshDataTool_method_clear>` **(** **)**                                                                                                                  |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`               | :ref:`commit_to_surface<class_MeshDataTool_method_commit_to_surface>` **(** :ref:`ArrayMesh<class_ArrayMesh>` mesh **)**                                                   |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`               | :ref:`create_from_surface<class_MeshDataTool_method_create_from_surface>` **(** :ref:`ArrayMesh<class_ArrayMesh>` mesh, :ref:`int<class_int>` surface **)**                |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_edge_count<class_MeshDataTool_method_get_edge_count>` **(** **)** const                                                                                          |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_edge_faces<class_MeshDataTool_method_get_edge_faces>` **(** :ref:`int<class_int>` idx **)** const                                                                |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                       | :ref:`get_edge_meta<class_MeshDataTool_method_get_edge_meta>` **(** :ref:`int<class_int>` idx **)** const                                                                  |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_edge_vertex<class_MeshDataTool_method_get_edge_vertex>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` vertex **)** const                                |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_face_count<class_MeshDataTool_method_get_face_count>` **(** **)** const                                                                                          |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_face_edge<class_MeshDataTool_method_get_face_edge>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` edge **)** const                                      |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                       | :ref:`get_face_meta<class_MeshDataTool_method_get_face_meta>` **(** :ref:`int<class_int>` idx **)** const                                                                  |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`get_face_normal<class_MeshDataTool_method_get_face_normal>` **(** :ref:`int<class_int>` idx **)** const                                                              |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_face_vertex<class_MeshDataTool_method_get_face_vertex>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` vertex **)** const                                |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_format<class_MeshDataTool_method_get_format>` **(** **)** const                                                                                                  |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_Material>`                     | :ref:`get_material<class_MeshDataTool_method_get_material>` **(** **)** const                                                                                              |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`get_vertex<class_MeshDataTool_method_get_vertex>` **(** :ref:`int<class_int>` idx **)** const                                                                        |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_vertex_bones<class_MeshDataTool_method_get_vertex_bones>` **(** :ref:`int<class_int>` idx **)** const                                                            |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                           | :ref:`get_vertex_color<class_MeshDataTool_method_get_vertex_color>` **(** :ref:`int<class_int>` idx **)** const                                                            |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_vertex_count<class_MeshDataTool_method_get_vertex_count>` **(** **)** const                                                                                      |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_vertex_edges<class_MeshDataTool_method_get_vertex_edges>` **(** :ref:`int<class_int>` idx **)** const                                                            |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_vertex_faces<class_MeshDataTool_method_get_vertex_faces>` **(** :ref:`int<class_int>` idx **)** const                                                            |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                       | :ref:`get_vertex_meta<class_MeshDataTool_method_get_vertex_meta>` **(** :ref:`int<class_int>` idx **)** const                                                              |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                       | :ref:`get_vertex_normal<class_MeshDataTool_method_get_vertex_normal>` **(** :ref:`int<class_int>` idx **)** const                                                          |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Plane<class_Plane>`                           | :ref:`get_vertex_tangent<class_MeshDataTool_method_get_vertex_tangent>` **(** :ref:`int<class_int>` idx **)** const                                                        |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`get_vertex_uv<class_MeshDataTool_method_get_vertex_uv>` **(** :ref:`int<class_int>` idx **)** const                                                                  |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`get_vertex_uv2<class_MeshDataTool_method_get_vertex_uv2>` **(** :ref:`int<class_int>` idx **)** const                                                                |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`get_vertex_weights<class_MeshDataTool_method_get_vertex_weights>` **(** :ref:`int<class_int>` idx **)** const                                                        |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_edge_meta<class_MeshDataTool_method_set_edge_meta>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` meta **)**                                    |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_face_meta<class_MeshDataTool_method_set_face_meta>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` meta **)**                                    |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_material<class_MeshDataTool_method_set_material>` **(** :ref:`Material<class_Material>` material **)**                                                           |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_vertex<class_MeshDataTool_method_set_vertex>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` vertex **)**                                        |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_vertex_bones<class_MeshDataTool_method_set_vertex_bones>` **(** :ref:`int<class_int>` idx, :ref:`PackedInt32Array<class_PackedInt32Array>` bones **)**           |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_vertex_color<class_MeshDataTool_method_set_vertex_color>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**                                 |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_vertex_meta<class_MeshDataTool_method_set_vertex_meta>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` meta **)**                                |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_vertex_normal<class_MeshDataTool_method_set_vertex_normal>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` normal **)**                          |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_vertex_tangent<class_MeshDataTool_method_set_vertex_tangent>` **(** :ref:`int<class_int>` idx, :ref:`Plane<class_Plane>` tangent **)**                           |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_vertex_uv<class_MeshDataTool_method_set_vertex_uv>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` uv **)**                                      |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_vertex_uv2<class_MeshDataTool_method_set_vertex_uv2>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` uv2 **)**                                   |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_vertex_weights<class_MeshDataTool_method_set_vertex_weights>` **(** :ref:`int<class_int>` idx, :ref:`PackedFloat32Array<class_PackedFloat32Array>` weights **)** |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -153,7 +153,7 @@ Returns the number of edges in this :ref:`Mesh<class_Mesh>`.
 
 .. _class_MeshDataTool_method_get_edge_faces:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **get_edge_faces** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_edge_faces** **(** :ref:`int<class_int>` idx **)** const
 
 Returns array of faces that touch given edge.
 
@@ -249,7 +249,7 @@ Returns the vertex at given index.
 
 .. _class_MeshDataTool_method_get_vertex_bones:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **get_vertex_bones** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_vertex_bones** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the bones of the given vertex.
 
@@ -273,7 +273,7 @@ Returns the total number of vertices in :ref:`Mesh<class_Mesh>`.
 
 .. _class_MeshDataTool_method_get_vertex_edges:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **get_vertex_edges** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_vertex_edges** **(** :ref:`int<class_int>` idx **)** const
 
 Returns an array of edges that share the given vertex.
 
@@ -281,7 +281,7 @@ Returns an array of edges that share the given vertex.
 
 .. _class_MeshDataTool_method_get_vertex_faces:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **get_vertex_faces** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_vertex_faces** **(** :ref:`int<class_int>` idx **)** const
 
 Returns an array of faces that share the given vertex.
 
@@ -329,7 +329,7 @@ Returns the UV2 of the given vertex.
 
 .. _class_MeshDataTool_method_get_vertex_weights:
 
-- :ref:`PoolRealArray<class_PoolRealArray>` **get_vertex_weights** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_vertex_weights** **(** :ref:`int<class_int>` idx **)** const
 
 Returns bone weights of the given vertex.
 
@@ -369,7 +369,7 @@ Sets the position of the given vertex.
 
 .. _class_MeshDataTool_method_set_vertex_bones:
 
-- void **set_vertex_bones** **(** :ref:`int<class_int>` idx, :ref:`PoolIntArray<class_PoolIntArray>` bones **)**
+- void **set_vertex_bones** **(** :ref:`int<class_int>` idx, :ref:`PackedInt32Array<class_PackedInt32Array>` bones **)**
 
 Sets the bones of the given vertex.
 
@@ -425,7 +425,7 @@ Sets the UV2 of the given vertex.
 
 .. _class_MeshDataTool_method_set_vertex_weights:
 
-- void **set_vertex_weights** **(** :ref:`int<class_int>` idx, :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
+- void **set_vertex_weights** **(** :ref:`int<class_int>` idx, :ref:`PackedFloat32Array<class_PackedFloat32Array>` weights **)**
 
 Sets the bone weights of the given vertex.
 

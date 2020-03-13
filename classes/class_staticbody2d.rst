@@ -24,35 +24,15 @@ Properties
 ----------
 
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                     | :ref:`bounce<class_StaticBody2D_property_bounce>`                                       |                     |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                     | :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>` | ``0.0``             |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 | :ref:`Vector2<class_Vector2>`                 | :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>`   | ``Vector2( 0, 0 )`` |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                     | :ref:`friction<class_StaticBody2D_property_friction>`                                   |                     |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 | :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>` |                     |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 
 Property Descriptions
 ---------------------
-
-.. _class_StaticBody2D_property_bounce:
-
-- :ref:`float<class_float>` **bounce**
-
-+----------+-------------------+
-| *Setter* | set_bounce(value) |
-+----------+-------------------+
-| *Getter* | get_bounce()      |
-+----------+-------------------+
-
-The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
-
-Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_bounce>` instead via :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>`.
-
-----
 
 .. _class_StaticBody2D_property_constant_angular_velocity:
 
@@ -83,22 +63,6 @@ The body's constant angular velocity. This does not rotate the body, but affects
 +-----------+-------------------------------------+
 
 The body's constant linear velocity. This does not move the body, but affects colliding bodies, as if it were moving.
-
-----
-
-.. _class_StaticBody2D_property_friction:
-
-- :ref:`float<class_float>` **friction**
-
-+----------+---------------------+
-| *Setter* | set_friction(value) |
-+----------+---------------------+
-| *Getter* | get_friction()      |
-+----------+---------------------+
-
-The body's friction. Values range from ``0`` (no friction) to ``1`` (full friction).
-
-Deprecated, use :ref:`PhysicsMaterial.friction<class_PhysicsMaterial_property_friction>` instead via :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>`.
 
 ----
 

@@ -27,6 +27,8 @@ Properties
 ----------
 
 +---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`CameraEffects<class_CameraEffects>`                     | :ref:`camera_effects<class_World_property_camera_effects>`             |
++---------------------------------------------------------------+------------------------------------------------------------------------+
 | :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` | :ref:`direct_space_state<class_World_property_direct_space_state>`     |
 +---------------------------------------------------------------+------------------------------------------------------------------------+
 | :ref:`Environment<class_Environment>`                         | :ref:`environment<class_World_property_environment>`                   |
@@ -40,6 +42,18 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_World_property_camera_effects:
+
+- :ref:`CameraEffects<class_CameraEffects>` **camera_effects**
+
++----------+---------------------------+
+| *Setter* | set_camera_effects(value) |
++----------+---------------------------+
+| *Getter* | get_camera_effects()      |
++----------+---------------------------+
+
+----
 
 .. _class_World_property_direct_space_state:
 

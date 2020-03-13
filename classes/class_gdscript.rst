@@ -28,18 +28,18 @@ Tutorials
 Methods
 -------
 
-+-------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** const |
-+-------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`new<class_GDScript_method_new>` **(** ... **)** vararg                      |
-+-------------------------------------------+-----------------------------------------------------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** const |
++-----------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                 | :ref:`new<class_GDScript_method_new>` **(** ... **)** vararg                      |
++-----------------------------------------------+-----------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_GDScript_method_get_as_byte_code:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **get_as_byte_code** **(** **)** const
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_as_byte_code** **(** **)** const
 
 Returns byte code for the script source code.
 

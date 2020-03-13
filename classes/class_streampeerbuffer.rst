@@ -16,9 +16,9 @@ StreamPeerBuffer
 Properties
 ----------
 
-+-------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data_array<class_StreamPeerBuffer_property_data_array>` | ``PoolByteArray(  )`` |
-+-------------------------------------------+---------------------------------------------------------------+-----------------------+
++-----------------------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`data_array<class_StreamPeerBuffer_property_data_array>` | ``PackedByteArray(  )`` |
++-----------------------------------------------+---------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -42,15 +42,15 @@ Property Descriptions
 
 .. _class_StreamPeerBuffer_property_data_array:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **data_array**
+- :ref:`PackedByteArray<class_PackedByteArray>` **data_array**
 
-+-----------+-----------------------+
-| *Default* | ``PoolByteArray(  )`` |
-+-----------+-----------------------+
-| *Setter*  | set_data_array(value) |
-+-----------+-----------------------+
-| *Getter*  | get_data_array()      |
-+-----------+-----------------------+
++-----------+-------------------------+
+| *Default* | ``PackedByteArray(  )`` |
++-----------+-------------------------+
+| *Setter*  | set_data_array(value)   |
++-----------+-------------------------+
+| *Getter*  | get_data_array()        |
++-----------+-------------------------+
 
 Method Descriptions
 -------------------

@@ -22,7 +22,7 @@ Properties
 ----------
 
 +------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`                                            | :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` | ``""``    |
+| :ref:`StringName<class_StringName>`                                    | :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` | ``@""``   |
 +------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                | :ref:`auto_advance<class_AnimationNodeStateMachineTransition_property_auto_advance>`           | ``false`` |
 +------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
@@ -68,10 +68,10 @@ Property Descriptions
 
 .. _class_AnimationNodeStateMachineTransition_property_advance_condition:
 
-- :ref:`String<class_String>` **advance_condition**
+- :ref:`StringName<class_StringName>` **advance_condition**
 
 +-----------+------------------------------+
-| *Default* | ``""``                       |
+| *Default* | ``@""``                      |
 +-----------+------------------------------+
 | *Setter*  | set_advance_condition(value) |
 +-----------+------------------------------+

@@ -40,7 +40,7 @@ Properties
 +------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Rect2<class_Rect2>`                                  | :ref:`region_rect<class_NinePatchRect_property_region_rect>`                         | ``Rect2( 0, 0, 0, 0 )`` |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`                              | :ref:`texture<class_NinePatchRect_property_texture>`                                 |                         |
+| :ref:`Texture2D<class_Texture2D>`                          | :ref:`texture<class_NinePatchRect_property_texture>`                                 |                         |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------+-------------------------+
 
 Methods
@@ -213,7 +213,7 @@ Rectangular region of the texture to sample from. If you're working with an atla
 
 .. _class_NinePatchRect_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+- :ref:`Texture2D<class_Texture2D>` **texture**
 
 +----------+--------------------+
 | *Setter* | set_texture(value) |

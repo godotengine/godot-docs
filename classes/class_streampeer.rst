@@ -71,13 +71,13 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`put_8<class_StreamPeer_method_put_8>` **(** :ref:`int<class_int>` value **)**                                                         |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`put_data<class_StreamPeer_method_put_data>` **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**                                |
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`put_data<class_StreamPeer_method_put_data>` **(** :ref:`PackedByteArray<class_PackedByteArray>` data **)**                            |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`put_double<class_StreamPeer_method_put_double>` **(** :ref:`float<class_float>` value **)**                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`put_float<class_StreamPeer_method_put_float>` **(** :ref:`float<class_float>` value **)**                                             |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`put_partial_data<class_StreamPeer_method_put_partial_data>` **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**                |
+| :ref:`Array<class_Array>`             | :ref:`put_partial_data<class_StreamPeer_method_put_partial_data>` **(** :ref:`PackedByteArray<class_PackedByteArray>` data **)**            |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`put_string<class_StreamPeer_method_put_string>` **(** :ref:`String<class_String>` value **)**                                         |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -278,7 +278,7 @@ Puts a signed byte into the stream.
 
 .. _class_StreamPeer_method_put_data:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **put_data** **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **put_data** **(** :ref:`PackedByteArray<class_PackedByteArray>` data **)**
 
 Sends a chunk of data through the connection, blocking if necessary until the data is done sending. This function returns an :ref:`Error<enum_@GlobalScope_Error>` code.
 
@@ -302,7 +302,7 @@ Puts a single-precision float into the stream.
 
 .. _class_StreamPeer_method_put_partial_data:
 
-- :ref:`Array<class_Array>` **put_partial_data** **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**
+- :ref:`Array<class_Array>` **put_partial_data** **(** :ref:`PackedByteArray<class_PackedByteArray>` data **)**
 
 Sends a chunk of data through the connection. If all the data could not be sent at once, only part of it will. This function returns two values, an :ref:`Error<enum_@GlobalScope_Error>` code and an integer, describing how much data was actually sent.
 

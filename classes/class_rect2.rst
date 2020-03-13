@@ -9,12 +9,14 @@
 Rect2
 =====
 
-2D axis-aligned bounding box.
+2D axis-aligned bounding box using floating point coordinates.
 
 Description
 -----------
 
-Rect2 consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+``Rect2`` consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+
+It uses floating point coordinates.
 
 Tutorials
 ---------
@@ -40,6 +42,8 @@ Methods
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_method_Rect2>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**                           |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_method_Rect2>` **(** :ref:`Rect2i<class_Rect2i>` from **)**                                                                                                                      |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>` | :ref:`abs<class_Rect2_method_abs>` **(** **)**                                                                                                                                                           |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>` | :ref:`clip<class_Rect2_method_clip>` **(** :ref:`Rect2<class_Rect2>` b **)**                                                                                                                             |
@@ -60,7 +64,7 @@ Methods
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`has_point<class_Rect2_method_has_point>` **(** :ref:`Vector2<class_Vector2>` point **)**                                                                                                           |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`intersects<class_Rect2_method_intersects>` **(** :ref:`Rect2<class_Rect2>` b **)**                                                                                                                 |
+| :ref:`bool<class_bool>`   | :ref:`intersects<class_Rect2_method_intersects>` **(** :ref:`Rect2<class_Rect2>` b, :ref:`bool<class_bool>` include_borders=false **)**                                                                  |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` **(** :ref:`Rect2<class_Rect2>` rect **)**                                                                                                    |
 +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -118,6 +122,12 @@ Constructs a ``Rect2`` by position and size.
 - :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**
 
 Constructs a ``Rect2`` by x, y, width, and height.
+
+----
+
+- :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`Rect2i<class_Rect2i>` from **)**
+
+Constructs a ``Rect2`` from a :ref:`Rect2i<class_Rect2i>`.
 
 ----
 
@@ -203,9 +213,11 @@ Returns ``true`` if the ``Rect2`` contains a point.
 
 .. _class_Rect2_method_intersects:
 
-- :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2<class_Rect2>` b **)**
+- :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2<class_Rect2>` b, :ref:`bool<class_bool>` include_borders=false **)**
 
-Returns ``true`` if the ``Rect2`` overlaps with another.
+Returns ``true`` if the ``Rect2`` overlaps with ``b`` (i.e. they have at least one point in common).
+
+If ``include_borders`` is ``true``, they will also be considered overlapping if their borders touch, even without intersection.
 
 ----
 

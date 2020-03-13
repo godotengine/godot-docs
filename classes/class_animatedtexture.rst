@@ -9,14 +9,14 @@
 AnimatedTexture
 ===============
 
-**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 Proxy texture for simple frame-based animations.
 
 Description
 -----------
 
-``AnimatedTexture`` is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite<class_AnimatedSprite>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture<class_Texture>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
+``AnimatedTexture`` is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite<class_AnimatedSprite>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture2D<class_Texture2D>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
 
 The playback of the animation is controlled by the :ref:`fps<class_AnimatedTexture_property_fps>` property as well as each frame's optional delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
 
@@ -25,26 +25,24 @@ The playback of the animation is controlled by the :ref:`fps<class_AnimatedTextu
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------+--------------+
-| :ref:`int<class_int>`     | flags                                                | **O:** ``0`` |
-+---------------------------+------------------------------------------------------+--------------+
-| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`       | ``4.0``      |
-+---------------------------+------------------------------------------------------+--------------+
-| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>` | ``1``        |
-+---------------------------+------------------------------------------------------+--------------+
++---------------------------+------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`       | ``4.0`` |
++---------------------------+------------------------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>` | ``1``   |
++---------------------------+------------------------------------------------------+---------+
 
 Methods
 -------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`get_frame_delay<class_AnimatedTexture_method_get_frame_delay>` **(** :ref:`int<class_int>` frame **)** const                                      |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_frame_texture<class_AnimatedTexture_method_get_frame_texture>` **(** :ref:`int<class_int>` frame **)** const                                  |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>` **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` delay **)**           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>` **(** :ref:`int<class_int>` frame, :ref:`Texture<class_Texture>` texture **)** |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`         | :ref:`get_frame_delay<class_AnimatedTexture_method_get_frame_delay>` **(** :ref:`int<class_int>` frame **)** const                                          |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`get_frame_texture<class_AnimatedTexture_method_get_frame_texture>` **(** :ref:`int<class_int>` frame **)** const                                      |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>` **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` delay **)**               |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>` **(** :ref:`int<class_int>` frame, :ref:`Texture2D<class_Texture2D>` texture **)** |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
@@ -101,9 +99,9 @@ Returns the given frame's delay value.
 
 .. _class_AnimatedTexture_method_get_frame_texture:
 
-- :ref:`Texture<class_Texture>` **get_frame_texture** **(** :ref:`int<class_int>` frame **)** const
+- :ref:`Texture2D<class_Texture2D>` **get_frame_texture** **(** :ref:`int<class_int>` frame **)** const
 
-Returns the given frame's :ref:`Texture<class_Texture>`.
+Returns the given frame's :ref:`Texture2D<class_Texture2D>`.
 
 ----
 
@@ -126,9 +124,9 @@ For example, for an animation with 3 frames, 2 FPS and a frame delay on the seco
 
 .. _class_AnimatedTexture_method_set_frame_texture:
 
-- void **set_frame_texture** **(** :ref:`int<class_int>` frame, :ref:`Texture<class_Texture>` texture **)**
+- void **set_frame_texture** **(** :ref:`int<class_int>` frame, :ref:`Texture2D<class_Texture2D>` texture **)**
 
-Assigns a :ref:`Texture<class_Texture>` to the given frame. Frame IDs start at 0, so the first frame has ID 0, and the last frame of the animation has ID :ref:`frames<class_AnimatedTexture_property_frames>` - 1.
+Assigns a :ref:`Texture2D<class_Texture2D>` to the given frame. Frame IDs start at 0, so the first frame has ID 0, and the last frame of the animation has ID :ref:`frames<class_AnimatedTexture_property_frames>` - 1.
 
 You can define any number of textures up to :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`, but keep in mind that only frames from 0 to :ref:`frames<class_AnimatedTexture_property_frames>` - 1 will be part of the animation.
 

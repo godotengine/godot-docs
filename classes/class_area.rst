@@ -24,7 +24,7 @@ Properties
 +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
 | :ref:`float<class_float>`                     | :ref:`angular_damp<class_Area_property_angular_damp>`                     | ``0.1``                 |
 +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>`                   | :ref:`audio_bus_name<class_Area_property_audio_bus_name>`                 | ``"Master"``            |
+| :ref:`StringName<class_StringName>`           | :ref:`audio_bus_name<class_Area_property_audio_bus_name>`                 | ``@"Master"``           |
 +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`audio_bus_override<class_Area_property_audio_bus_override>`         | ``false``               |
 +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
@@ -52,7 +52,7 @@ Properties
 +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`reverb_bus_enable<class_Area_property_reverb_bus_enable>`           | ``false``               |
 +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>`                   | :ref:`reverb_bus_name<class_Area_property_reverb_bus_name>`               | ``"Master"``            |
+| :ref:`StringName<class_StringName>`           | :ref:`reverb_bus_name<class_Area_property_reverb_bus_name>`               | ``@"Master"``           |
 +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
 | :ref:`float<class_float>`                     | :ref:`reverb_bus_uniformity<class_Area_property_reverb_bus_uniformity>`   | ``0.0``                 |
 +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
@@ -201,10 +201,10 @@ The rate at which objects stop spinning in this area. Represents the angular vel
 
 .. _class_Area_property_audio_bus_name:
 
-- :ref:`String<class_String>` **audio_bus_name**
+- :ref:`StringName<class_StringName>` **audio_bus_name**
 
 +-----------+----------------------+
-| *Default* | ``"Master"``         |
+| *Default* | ``@"Master"``        |
 +-----------+----------------------+
 | *Setter*  | set_audio_bus(value) |
 +-----------+----------------------+
@@ -425,10 +425,10 @@ If ``true``, the area applies reverb to its associated audio.
 
 .. _class_Area_property_reverb_bus_name:
 
-- :ref:`String<class_String>` **reverb_bus_name**
+- :ref:`StringName<class_StringName>` **reverb_bus_name**
 
 +-----------+-----------------------+
-| *Default* | ``"Master"``          |
+| *Default* | ``@"Master"``         |
 +-----------+-----------------------+
 | *Setter*  | set_reverb_bus(value) |
 +-----------+-----------------------+

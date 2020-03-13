@@ -23,26 +23,26 @@ GDScript has a simplified :ref:`@GDScript.preload<class_@GDScript_method_preload
 Methods
 -------
 
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`add_resource<class_ResourcePreloader_method_add_resource>` **(** :ref:`String<class_String>` name, :ref:`Resource<class_Resource>` resource **)**  |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>`               | :ref:`get_resource<class_ResourcePreloader_method_get_resource>` **(** :ref:`String<class_String>` name **)** const                                      |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_resource_list<class_ResourcePreloader_method_get_resource_list>` **(** **)** const                                                             |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_resource<class_ResourcePreloader_method_has_resource>` **(** :ref:`String<class_String>` name **)** const                                      |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`remove_resource<class_ResourcePreloader_method_remove_resource>` **(** :ref:`String<class_String>` name **)**                                      |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`rename_resource<class_ResourcePreloader_method_rename_resource>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)** |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`add_resource<class_ResourcePreloader_method_add_resource>` **(** :ref:`StringName<class_StringName>` name, :ref:`Resource<class_Resource>` resource **)**          |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>`                   | :ref:`get_resource<class_ResourcePreloader_method_get_resource>` **(** :ref:`StringName<class_StringName>` name **)** const                                              |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_resource_list<class_ResourcePreloader_method_get_resource_list>` **(** **)** const                                                                             |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`has_resource<class_ResourcePreloader_method_has_resource>` **(** :ref:`StringName<class_StringName>` name **)** const                                              |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`remove_resource<class_ResourcePreloader_method_remove_resource>` **(** :ref:`StringName<class_StringName>` name **)**                                              |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`rename_resource<class_ResourcePreloader_method_rename_resource>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)** |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_ResourcePreloader_method_add_resource:
 
-- void **add_resource** **(** :ref:`String<class_String>` name, :ref:`Resource<class_Resource>` resource **)**
+- void **add_resource** **(** :ref:`StringName<class_StringName>` name, :ref:`Resource<class_Resource>` resource **)**
 
 Adds a resource to the preloader with the given ``name``. If a resource with the given ``name`` already exists, the new resource will be renamed to "``name`` N" where N is an incrementing number starting from 2.
 
@@ -50,7 +50,7 @@ Adds a resource to the preloader with the given ``name``. If a resource with the
 
 .. _class_ResourcePreloader_method_get_resource:
 
-- :ref:`Resource<class_Resource>` **get_resource** **(** :ref:`String<class_String>` name **)** const
+- :ref:`Resource<class_Resource>` **get_resource** **(** :ref:`StringName<class_StringName>` name **)** const
 
 Returns the resource associated to ``name``.
 
@@ -58,7 +58,7 @@ Returns the resource associated to ``name``.
 
 .. _class_ResourcePreloader_method_get_resource_list:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_resource_list** **(** **)** const
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_resource_list** **(** **)** const
 
 Returns the list of resources inside the preloader.
 
@@ -66,7 +66,7 @@ Returns the list of resources inside the preloader.
 
 .. _class_ResourcePreloader_method_has_resource:
 
-- :ref:`bool<class_bool>` **has_resource** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_resource** **(** :ref:`StringName<class_StringName>` name **)** const
 
 Returns ``true`` if the preloader contains a resource associated to ``name``.
 
@@ -74,7 +74,7 @@ Returns ``true`` if the preloader contains a resource associated to ``name``.
 
 .. _class_ResourcePreloader_method_remove_resource:
 
-- void **remove_resource** **(** :ref:`String<class_String>` name **)**
+- void **remove_resource** **(** :ref:`StringName<class_StringName>` name **)**
 
 Removes the resource associated to ``name`` from the preloader.
 
@@ -82,7 +82,7 @@ Removes the resource associated to ``name`` from the preloader.
 
 .. _class_ResourcePreloader_method_rename_resource:
 
-- void **rename_resource** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)**
+- void **rename_resource** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)**
 
 Renames a resource inside the preloader from ``name`` to ``newname``.
 

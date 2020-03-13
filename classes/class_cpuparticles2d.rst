@@ -69,11 +69,11 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 | :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>`         | :ref:`draw_order<class_CPUParticles2D_property_draw_order>`                           | ``0``                   |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
-| :ref:`PoolColorArray<class_PoolColorArray>`             | :ref:`emission_colors<class_CPUParticles2D_property_emission_colors>`                 |                         |
+| :ref:`PackedColorArray<class_PackedColorArray>`         | :ref:`emission_colors<class_CPUParticles2D_property_emission_colors>`                 |                         |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`         | :ref:`emission_normals<class_CPUParticles2D_property_emission_normals>`               |                         |
+| :ref:`PackedVector2Array<class_PackedVector2Array>`     | :ref:`emission_normals<class_CPUParticles2D_property_emission_normals>`               |                         |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`         | :ref:`emission_points<class_CPUParticles2D_property_emission_points>`                 |                         |
+| :ref:`PackedVector2Array<class_PackedVector2Array>`     | :ref:`emission_points<class_CPUParticles2D_property_emission_points>`                 |                         |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Vector2<class_Vector2>`                           | :ref:`emission_rect_extents<class_CPUParticles2D_property_emission_rect_extents>`     |                         |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
@@ -115,7 +115,7 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`local_coords<class_CPUParticles2D_property_local_coords>`                       | ``true``                |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`                           | :ref:`normalmap<class_CPUParticles2D_property_normalmap>`                             |                         |
+| :ref:`Texture2D<class_Texture2D>`                       | :ref:`normalmap<class_CPUParticles2D_property_normalmap>`                             |                         |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`one_shot<class_CPUParticles2D_property_one_shot>`                               | ``false``               |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
@@ -151,7 +151,7 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 | :ref:`float<class_float>`                               | :ref:`tangential_accel_random<class_CPUParticles2D_property_tangential_accel_random>` | ``0.0``                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`                           | :ref:`texture<class_CPUParticles2D_property_texture>`                                 |                         |
+| :ref:`Texture2D<class_Texture2D>`                       | :ref:`texture<class_CPUParticles2D_property_texture>`                                 |                         |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 
 Methods
@@ -617,7 +617,7 @@ Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values
 
 .. _class_CPUParticles2D_property_emission_colors:
 
-- :ref:`PoolColorArray<class_PoolColorArray>` **emission_colors**
+- :ref:`PackedColorArray<class_PackedColorArray>` **emission_colors**
 
 +----------+----------------------------+
 | *Setter* | set_emission_colors(value) |
@@ -631,7 +631,7 @@ Sets the :ref:`Color<class_Color>`\ s to modulate particles by when using :ref:`
 
 .. _class_CPUParticles2D_property_emission_normals:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **emission_normals**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **emission_normals**
 
 +----------+-----------------------------+
 | *Setter* | set_emission_normals(value) |
@@ -645,7 +645,7 @@ Sets the direction the particles will be emitted in when using :ref:`EMISSION_SH
 
 .. _class_CPUParticles2D_property_emission_points:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **emission_points**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **emission_points**
 
 +----------+----------------------------+
 | *Setter* | set_emission_points(value) |
@@ -971,7 +971,7 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 
 .. _class_CPUParticles2D_property_normalmap:
 
-- :ref:`Texture<class_Texture>` **normalmap**
+- :ref:`Texture2D<class_Texture2D>` **normalmap**
 
 +----------+----------------------+
 | *Setter* | set_normalmap(value) |
@@ -1249,7 +1249,7 @@ Tangential acceleration randomness ratio.
 
 .. _class_CPUParticles2D_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+- :ref:`Texture2D<class_Texture2D>` **texture**
 
 +----------+--------------------+
 | *Setter* | set_texture(value) |

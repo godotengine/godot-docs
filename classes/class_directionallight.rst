@@ -33,6 +33,8 @@ Properties
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+----------------+
 | :ref:`ShadowDepthRange<enum_DirectionalLight_ShadowDepthRange>` | :ref:`directional_shadow_depth_range<class_DirectionalLight_property_directional_shadow_depth_range>`           | ``0``          |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+----------------+
+| :ref:`float<class_float>`                                       | :ref:`directional_shadow_fade_start<class_DirectionalLight_property_directional_shadow_fade_start>`             | ``0.8``        |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+----------------+
 | :ref:`float<class_float>`                                       | :ref:`directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`         | ``100.0``      |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+----------------+
 | :ref:`ShadowMode<enum_DirectionalLight_ShadowMode>`             | :ref:`directional_shadow_mode<class_DirectionalLight_property_directional_shadow_mode>`                         | ``2``          |
@@ -129,6 +131,20 @@ If ``true``, shadow detail is sacrificed in exchange for smoother transitions be
 +-----------+-------------------------------+
 
 Optimizes shadow rendering for detail versus movement. See :ref:`ShadowDepthRange<enum_DirectionalLight_ShadowDepthRange>`.
+
+----
+
+.. _class_DirectionalLight_property_directional_shadow_fade_start:
+
+- :ref:`float<class_float>` **directional_shadow_fade_start**
+
++-----------+------------------+
+| *Default* | ``0.8``          |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 ----
 

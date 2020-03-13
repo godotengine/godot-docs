@@ -42,11 +42,7 @@ Enumerations
 
 .. _class_Performance_constant_MEMORY_STATIC:
 
-.. _class_Performance_constant_MEMORY_DYNAMIC:
-
 .. _class_Performance_constant_MEMORY_STATIC_MAX:
-
-.. _class_Performance_constant_MEMORY_DYNAMIC_MAX:
 
 .. _class_Performance_constant_MEMORY_MESSAGE_BUFFER_MAX:
 
@@ -104,57 +100,53 @@ enum **Monitor**:
 
 - **MEMORY_STATIC** = **3** --- Static memory currently used, in bytes. Not available in release builds.
 
-- **MEMORY_DYNAMIC** = **4** --- Dynamic memory currently used, in bytes. Not available in release builds.
+- **MEMORY_STATIC_MAX** = **4** --- Available static memory. Not available in release builds.
 
-- **MEMORY_STATIC_MAX** = **5** --- Available static memory. Not available in release builds.
+- **MEMORY_MESSAGE_BUFFER_MAX** = **5** --- Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications.
 
-- **MEMORY_DYNAMIC_MAX** = **6** --- Available dynamic memory. Not available in release builds.
+- **OBJECT_COUNT** = **6** --- Number of objects currently instanced (including nodes).
 
-- **MEMORY_MESSAGE_BUFFER_MAX** = **7** --- Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications.
+- **OBJECT_RESOURCE_COUNT** = **7** --- Number of resources currently used.
 
-- **OBJECT_COUNT** = **8** --- Number of objects currently instanced (including nodes).
+- **OBJECT_NODE_COUNT** = **8** --- Number of nodes currently instanced in the scene tree. This also includes the root node.
 
-- **OBJECT_RESOURCE_COUNT** = **9** --- Number of resources currently used.
+- **OBJECT_ORPHAN_NODE_COUNT** = **9** --- Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree.
 
-- **OBJECT_NODE_COUNT** = **10** --- Number of nodes currently instanced in the scene tree. This also includes the root node.
+- **RENDER_OBJECTS_IN_FRAME** = **10** --- 3D objects drawn per frame.
 
-- **OBJECT_ORPHAN_NODE_COUNT** = **11** --- Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree.
+- **RENDER_VERTICES_IN_FRAME** = **11** --- Vertices drawn per frame. 3D only.
 
-- **RENDER_OBJECTS_IN_FRAME** = **12** --- 3D objects drawn per frame.
+- **RENDER_MATERIAL_CHANGES_IN_FRAME** = **12** --- Material changes per frame. 3D only.
 
-- **RENDER_VERTICES_IN_FRAME** = **13** --- Vertices drawn per frame. 3D only.
+- **RENDER_SHADER_CHANGES_IN_FRAME** = **13** --- Shader changes per frame. 3D only.
 
-- **RENDER_MATERIAL_CHANGES_IN_FRAME** = **14** --- Material changes per frame. 3D only.
+- **RENDER_SURFACE_CHANGES_IN_FRAME** = **14** --- Render surface changes per frame. 3D only.
 
-- **RENDER_SHADER_CHANGES_IN_FRAME** = **15** --- Shader changes per frame. 3D only.
+- **RENDER_DRAW_CALLS_IN_FRAME** = **15** --- Draw calls per frame. 3D only.
 
-- **RENDER_SURFACE_CHANGES_IN_FRAME** = **16** --- Render surface changes per frame. 3D only.
+- **RENDER_VIDEO_MEM_USED** = **16** --- The amount of video memory used, i.e. texture and vertex memory combined.
 
-- **RENDER_DRAW_CALLS_IN_FRAME** = **17** --- Draw calls per frame. 3D only.
+- **RENDER_TEXTURE_MEM_USED** = **17** --- The amount of texture memory used.
 
-- **RENDER_VIDEO_MEM_USED** = **18** --- The amount of video memory used, i.e. texture and vertex memory combined.
+- **RENDER_VERTEX_MEM_USED** = **18** --- The amount of vertex memory used.
 
-- **RENDER_TEXTURE_MEM_USED** = **19** --- The amount of texture memory used.
+- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **19** --- Unimplemented in the GLES2 rendering backend, always returns 0.
 
-- **RENDER_VERTEX_MEM_USED** = **20** --- The amount of vertex memory used.
+- **PHYSICS_2D_ACTIVE_OBJECTS** = **20** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
 
-- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **21** --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
+- **PHYSICS_2D_COLLISION_PAIRS** = **21** --- Number of collision pairs in the 2D physics engine.
 
-- **PHYSICS_2D_ACTIVE_OBJECTS** = **22** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
+- **PHYSICS_2D_ISLAND_COUNT** = **22** --- Number of islands in the 2D physics engine.
 
-- **PHYSICS_2D_COLLISION_PAIRS** = **23** --- Number of collision pairs in the 2D physics engine.
+- **PHYSICS_3D_ACTIVE_OBJECTS** = **23** --- Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
 
-- **PHYSICS_2D_ISLAND_COUNT** = **24** --- Number of islands in the 2D physics engine.
+- **PHYSICS_3D_COLLISION_PAIRS** = **24** --- Number of collision pairs in the 3D physics engine.
 
-- **PHYSICS_3D_ACTIVE_OBJECTS** = **25** --- Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
+- **PHYSICS_3D_ISLAND_COUNT** = **25** --- Number of islands in the 3D physics engine.
 
-- **PHYSICS_3D_COLLISION_PAIRS** = **26** --- Number of collision pairs in the 3D physics engine.
+- **AUDIO_OUTPUT_LATENCY** = **26** --- Output latency of the :ref:`AudioServer<class_AudioServer>`.
 
-- **PHYSICS_3D_ISLAND_COUNT** = **27** --- Number of islands in the 3D physics engine.
-
-- **AUDIO_OUTPUT_LATENCY** = **28** --- Output latency of the :ref:`AudioServer<class_AudioServer>`.
-
-- **MONITOR_MAX** = **29** --- Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
+- **MONITOR_MAX** = **27** --- Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
 
 Method Descriptions
 -------------------

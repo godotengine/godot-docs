@@ -26,23 +26,23 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------+-----------+
-| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_property_action>`     | ``""``    |
-+-----------------------------+-----------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_property_pressed>`   | ``false`` |
-+-----------------------------+-----------------------------------------------------------+-----------+
-| :ref:`float<class_float>`   | :ref:`strength<class_InputEventAction_property_strength>` | ``1.0``   |
-+-----------------------------+-----------------------------------------------------------+-----------+
++-------------------------------------+-----------------------------------------------------------+-----------+
+| :ref:`StringName<class_StringName>` | :ref:`action<class_InputEventAction_property_action>`     | ``@""``   |
++-------------------------------------+-----------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`             | :ref:`pressed<class_InputEventAction_property_pressed>`   | ``false`` |
++-------------------------------------+-----------------------------------------------------------+-----------+
+| :ref:`float<class_float>`           | :ref:`strength<class_InputEventAction_property_strength>` | ``1.0``   |
++-------------------------------------+-----------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventAction_property_action:
 
-- :ref:`String<class_String>` **action**
+- :ref:`StringName<class_StringName>` **action**
 
 +-----------+-------------------+
-| *Default* | ``""``            |
+| *Default* | ``@""``           |
 +-----------+-------------------+
 | *Setter*  | set_action(value) |
 +-----------+-------------------+

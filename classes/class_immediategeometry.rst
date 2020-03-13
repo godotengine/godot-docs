@@ -26,7 +26,7 @@ Methods
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`add_vertex<class_ImmediateGeometry_method_add_vertex>` **(** :ref:`Vector3<class_Vector3>` position **)**                                                                                        |
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`begin<class_ImmediateGeometry_method_begin>` **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Texture<class_Texture>` texture=null **)**                                     |
+| void | :ref:`begin<class_ImmediateGeometry_method_begin>` **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Texture2D<class_Texture2D>` texture=null **)**                                 |
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`clear<class_ImmediateGeometry_method_clear>` **(** **)**                                                                                                                                         |
 +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -64,7 +64,7 @@ Adds a vertex in local coordinate space with the currently set color/uv/etc.
 
 .. _class_ImmediateGeometry_method_begin:
 
-- void **begin** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Texture<class_Texture>` texture=null **)**
+- void **begin** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Texture2D<class_Texture2D>` texture=null **)**
 
 Begin drawing (and optionally pass a texture override). When done call :ref:`end<class_ImmediateGeometry_method_end>`. For more information on how this works, search for ``glBegin()`` and ``glEnd()`` references.
 

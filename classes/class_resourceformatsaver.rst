@@ -25,20 +25,20 @@ By default, Godot saves resources as ``.tres`` (text-based), ``.res`` (binary) o
 Methods
 -------
 
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recognized_extensions<class_ResourceFormatSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` resource **)** virtual                      |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`recognize<class_ResourceFormatSaver_method_recognize>` **(** :ref:`Resource<class_Resource>` resource **)** virtual                                                      |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`save<class_ResourceFormatSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** virtual |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceFormatSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` resource **)** virtual                      |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`recognize<class_ResourceFormatSaver_method_recognize>` **(** :ref:`Resource<class_Resource>` resource **)** virtual                                                      |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`save<class_ResourceFormatSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** virtual |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_ResourceFormatSaver_method_get_recognized_extensions:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` resource **)** virtual
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` resource **)** virtual
 
 Returns the list of extensions available for saving the resource object, provided it is recognized (see :ref:`recognize<class_ResourceFormatSaver_method_recognize>`).
 

@@ -94,6 +94,8 @@ Enumerations
 
 .. _class_Light_constant_PARAM_SHADOW_SPLIT_3_OFFSET:
 
+.. _class_Light_constant_PARAM_SHADOW_FADE_START:
+
 .. _class_Light_constant_PARAM_SHADOW_NORMAL_BIAS:
 
 .. _class_Light_constant_PARAM_SHADOW_BIAS:
@@ -128,13 +130,15 @@ enum **Param**:
 
 - **PARAM_SHADOW_SPLIT_3_OFFSET** = **11** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_3<class_DirectionalLight_property_directional_shadow_split_3>`.
 
-- **PARAM_SHADOW_NORMAL_BIAS** = **12** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_normal_bias<class_DirectionalLight_property_directional_shadow_normal_bias>`.
+- **PARAM_SHADOW_FADE_START** = **12**
 
-- **PARAM_SHADOW_BIAS** = **13** --- Constant for accessing :ref:`shadow_bias<class_Light_property_shadow_bias>`.
+- **PARAM_SHADOW_NORMAL_BIAS** = **13** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_normal_bias<class_DirectionalLight_property_directional_shadow_normal_bias>`.
 
-- **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_bias_split_scale<class_DirectionalLight_property_directional_shadow_bias_split_scale>`.
+- **PARAM_SHADOW_BIAS** = **14** --- Constant for accessing :ref:`shadow_bias<class_Light_property_shadow_bias>`.
 
-- **PARAM_MAX** = **15** --- Represents the size of the :ref:`Param<enum_Light_Param>` enum.
+- **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **15** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_bias_split_scale<class_DirectionalLight_property_directional_shadow_bias_split_scale>`.
+
+- **PARAM_MAX** = **16** --- Represents the size of the :ref:`Param<enum_Light_Param>` enum.
 
 ----
 
@@ -253,7 +257,7 @@ The light's strength multiplier.
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
-Secondary multiplier used with indirect light (light bounces). This works on both :ref:`BakedLightmap<class_BakedLightmap>` and :ref:`GIProbe<class_GIProbe>`.
+Secondary multiplier used with indirect light (light bounces). Used with :ref:`GIProbe<class_GIProbe>`.
 
 ----
 

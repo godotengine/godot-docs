@@ -48,7 +48,7 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`has_execute_failed<class_Expression_method_has_execute_failed>` **(** **)** const                                                                                                    |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_Expression_method_parse>` **(** :ref:`String<class_String>` expression, :ref:`PoolStringArray<class_PoolStringArray>` input_names=PoolStringArray(  ) **)**              |
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_Expression_method_parse>` **(** :ref:`String<class_String>` expression, :ref:`PackedStringArray<class_PackedStringArray>` input_names=PackedStringArray(  ) **)**        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
@@ -82,7 +82,7 @@ Returns ``true`` if :ref:`execute<class_Expression_method_execute>` has failed.
 
 .. _class_Expression_method_parse:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` expression, :ref:`PoolStringArray<class_PoolStringArray>` input_names=PoolStringArray(  ) **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` expression, :ref:`PackedStringArray<class_PackedStringArray>` input_names=PackedStringArray(  ) **)**
 
 Parses the expression and returns an :ref:`Error<enum_@GlobalScope_Error>` code.
 

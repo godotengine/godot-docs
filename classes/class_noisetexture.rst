@@ -9,7 +9,7 @@
 NoiseTexture
 ============
 
-**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` filled texture.
 
@@ -20,7 +20,7 @@ Uses an :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` to fill the texture data
 
 NoiseTexture can also generate normalmap textures.
 
-The class uses :ref:`Thread<class_Thread>`\ s to generate the texture data internally, so :ref:`Texture.get_data<class_Texture_method_get_data>` may return ``null`` if the generation process has not completed yet. In that case, you need to wait for the texture to be generated before accessing the data:
+The class uses :ref:`Thread<class_Thread>`\ s to generate the texture data internally, so :ref:`Texture2D.get_data<class_Texture2D_method_get_data>` may return ``null`` if the generation process has not completed yet. In that case, you need to wait for the texture to be generated before accessing the data:
 
 ::
 
@@ -31,21 +31,19 @@ The class uses :ref:`Thread<class_Thread>`\ s to generate the texture data inter
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>`   | ``false``    |
-+-------------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                       | :ref:`bump_strength<class_NoiseTexture_property_bump_strength>` | ``8.0``      |
-+-------------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                           | flags                                                           | **O:** ``7`` |
-+-------------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`               | ``512``      |
-+-------------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 |              |
-+-------------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           | ``false``    |
-+-------------------------------------------------+-----------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 | ``512``      |
-+-------------------------------------------------+-----------------------------------------------------------------+--------------+
++-------------------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>`   | ``false`` |
++-------------------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                       | :ref:`bump_strength<class_NoiseTexture_property_bump_strength>` | ``8.0``   |
++-------------------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`               | ``512``   |
++-------------------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 |           |
++-------------------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           | ``false`` |
++-------------------------------------------------+-----------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 | ``512``   |
++-------------------------------------------------+-----------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------

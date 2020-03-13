@@ -18,19 +18,23 @@ Description
 
 A resource referenced in an :ref:`Environment<class_Environment>` that is used to draw a background. The Panorama sky functions similar to skyboxes in other engines, except it uses an equirectangular sky map instead of a cube map.
 
+Using an HDR panorama is strongly recommended for accurate, high-quality reflections. Godot supports the Radiance HDR (``.hdr``) and OpenEXR (``.exr``) image formats for this purpose.
+
+You can use `this tool <https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html>`_ to convert a cube map to an equirectangular sky map.
+
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`panorama<class_PanoramaSky_property_panorama>` |
-+-------------------------------+------------------------------------------------------+
++-----------------------------------+------------------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`panorama<class_PanoramaSky_property_panorama>` |
++-----------------------------------+------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
 .. _class_PanoramaSky_property_panorama:
 
-- :ref:`Texture<class_Texture>` **panorama**
+- :ref:`Texture2D<class_Texture2D>` **panorama**
 
 +----------+---------------------+
 | *Setter* | set_panorama(value) |
@@ -38,5 +42,5 @@ Property Descriptions
 | *Getter* | get_panorama()      |
 +----------+---------------------+
 
-:ref:`Texture<class_Texture>` to be applied to the PanoramaSky.
+:ref:`Texture2D<class_Texture2D>` to be applied to the PanoramaSky.
 

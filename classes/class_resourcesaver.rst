@@ -23,11 +23,11 @@ It uses the many :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` classes r
 Methods
 -------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                                                       |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)** |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                                                       |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)** |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -69,7 +69,7 @@ Method Descriptions
 
 .. _class_ResourceSaver_method_get_recognized_extensions:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
 
 Returns the list of extensions available for saving a resource of a given type.
 

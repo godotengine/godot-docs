@@ -9,22 +9,20 @@
 ViewportTexture
 ===============
 
-**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 Texture which displays the content of a :ref:`Viewport<class_Viewport>`.
 
 Description
 -----------
 
-Displays the content of a :ref:`Viewport<class_Viewport>` node as a dynamic :ref:`Texture<class_Texture>`. This can be used to mix controls, 2D, and 3D elements in the same scene.
+Displays the content of a :ref:`Viewport<class_Viewport>` node as a dynamic :ref:`Texture2D<class_Texture2D>`. This can be used to mix controls, 2D, and 3D elements in the same scene.
 
 To create a ViewportTexture in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
 
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`           | flags                                                              | **O:** ``0``     |
 +---------------------------------+--------------------------------------------------------------------+------------------+
 | :ref:`bool<class_bool>`         | resource_local_to_scene                                            | **O:** ``true``  |
 +---------------------------------+--------------------------------------------------------------------+------------------+

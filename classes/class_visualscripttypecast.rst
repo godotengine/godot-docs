@@ -16,11 +16,11 @@ VisualScriptTypeCast
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>` | :ref:`base_script<class_VisualScriptTypeCast_property_base_script>` | ``""``       |
-+-----------------------------+---------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptTypeCast_property_base_type>`     | ``"Object"`` |
-+-----------------------------+---------------------------------------------------------------------+--------------+
++-------------------------------------+---------------------------------------------------------------------+---------------+
+| :ref:`String<class_String>`         | :ref:`base_script<class_VisualScriptTypeCast_property_base_script>` | ``""``        |
++-------------------------------------+---------------------------------------------------------------------+---------------+
+| :ref:`StringName<class_StringName>` | :ref:`base_type<class_VisualScriptTypeCast_property_base_type>`     | ``@"Object"`` |
++-------------------------------------+---------------------------------------------------------------------+---------------+
 
 Property Descriptions
 ---------------------
@@ -41,10 +41,10 @@ Property Descriptions
 
 .. _class_VisualScriptTypeCast_property_base_type:
 
-- :ref:`String<class_String>` **base_type**
+- :ref:`StringName<class_StringName>` **base_type**
 
 +-----------+----------------------+
-| *Default* | ``"Object"``         |
+| *Default* | ``@"Object"``        |
 +-----------+----------------------+
 | *Setter*  | set_base_type(value) |
 +-----------+----------------------+

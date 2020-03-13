@@ -343,5 +343,5 @@ The direction of the sun using polar coordinates.
 | *Getter*  | get_texture_size()      |
 +-----------+-------------------------+
 
-Size of :ref:`Texture<class_Texture>` that the ProceduralSky will generate. The size is set using :ref:`TextureSize<enum_ProceduralSky_TextureSize>`.
+Size of :ref:`Texture2D<class_Texture2D>` that the ProceduralSky will generate. The size is set using :ref:`TextureSize<enum_ProceduralSky_TextureSize>`.
 

@@ -71,7 +71,7 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 
 If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn.
 
-This gives the same result as using :ref:`SpatialMaterial.CULL_BACK<class_SpatialMaterial_constant_CULL_BACK>` in :ref:`SpatialMaterial.params_cull_mode<class_SpatialMaterial_property_params_cull_mode>`.
+This gives the same result as using :ref:`BaseMaterial3D.CULL_BACK<class_BaseMaterial3D_constant_CULL_BACK>` in :ref:`BaseMaterial3D.cull_mode<class_BaseMaterial3D_property_cull_mode>`.
 
 ----
 

@@ -23,17 +23,17 @@ However, by creating a ``FuncRef`` using the :ref:`@GDScript.funcref<class_@GDSc
 Methods
 -------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`call_func<class_FuncRef_method_call_func>` **(** ... **)** vararg                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`call_funcv<class_FuncRef_method_call_funcv>` **(** :ref:`Array<class_Array>` arg_array **)**      |
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_valid<class_FuncRef_method_is_valid>` **(** **)** const                                        |
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_function<class_FuncRef_method_set_function>` **(** :ref:`String<class_String>` name **)**     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_instance<class_FuncRef_method_set_instance>` **(** :ref:`Object<class_Object>` instance **)** |
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`call_func<class_FuncRef_method_call_func>` **(** ... **)** vararg                                     |
++-------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`call_funcv<class_FuncRef_method_call_funcv>` **(** :ref:`Array<class_Array>` arg_array **)**          |
++-------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_valid<class_FuncRef_method_is_valid>` **(** **)** const                                            |
++-------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_function<class_FuncRef_method_set_function>` **(** :ref:`StringName<class_StringName>` name **)** |
++-------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_instance<class_FuncRef_method_set_instance>` **(** :ref:`Object<class_Object>` instance **)**     |
++-------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -64,7 +64,7 @@ Returns whether the object still exists and has the function assigned.
 
 .. _class_FuncRef_method_set_function:
 
-- void **set_function** **(** :ref:`String<class_String>` name **)**
+- void **set_function** **(** :ref:`StringName<class_StringName>` name **)**
 
 The name of the referenced function to call on the object, without parentheses or any parameters.
 

@@ -21,17 +21,17 @@ This object is used to generate previews for resources of files.
 Methods
 -------
 
-+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`add_preview_generator<class_EditorResourcePreview_method_add_preview_generator>` **(** :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>` generator **)**                                                                                             |
-+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`check_for_invalidation<class_EditorResourcePreview_method_check_for_invalidation>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                |
-+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`queue_edited_resource_preview<class_EditorResourcePreview_method_queue_edited_resource_preview>` **(** :ref:`Resource<class_Resource>` resource, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)** |
-+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`queue_resource_preview<class_EditorResourcePreview_method_queue_resource_preview>` **(** :ref:`String<class_String>` path, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**                       |
-+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`remove_preview_generator<class_EditorResourcePreview_method_remove_preview_generator>` **(** :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>` generator **)**                                                                                       |
-+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`add_preview_generator<class_EditorResourcePreview_method_add_preview_generator>` **(** :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>` generator **)**                                                                                                     |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`check_for_invalidation<class_EditorResourcePreview_method_check_for_invalidation>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                        |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`queue_edited_resource_preview<class_EditorResourcePreview_method_queue_edited_resource_preview>` **(** :ref:`Resource<class_Resource>` resource, :ref:`Object<class_Object>` receiver, :ref:`StringName<class_StringName>` receiver_func, :ref:`Variant<class_Variant>` userdata **)** |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`queue_resource_preview<class_EditorResourcePreview_method_queue_resource_preview>` **(** :ref:`String<class_String>` path, :ref:`Object<class_Object>` receiver, :ref:`StringName<class_StringName>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**                       |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`remove_preview_generator<class_EditorResourcePreview_method_remove_preview_generator>` **(** :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>` generator **)**                                                                                               |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -63,7 +63,7 @@ Check if the resource changed, if so, it will be invalidated and the correspondi
 
 .. _class_EditorResourcePreview_method_queue_edited_resource_preview:
 
-- void **queue_edited_resource_preview** **(** :ref:`Resource<class_Resource>` resource, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**
+- void **queue_edited_resource_preview** **(** :ref:`Resource<class_Resource>` resource, :ref:`Object<class_Object>` receiver, :ref:`StringName<class_StringName>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**
 
 Queue a resource being edited for preview (using an instance). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texture (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
 
@@ -71,7 +71,7 @@ Queue a resource being edited for preview (using an instance). Once the preview 
 
 .. _class_EditorResourcePreview_method_queue_resource_preview:
 
-- void **queue_resource_preview** **(** :ref:`String<class_String>` path, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**
+- void **queue_resource_preview** **(** :ref:`String<class_String>` path, :ref:`Object<class_Object>` receiver, :ref:`StringName<class_StringName>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**
 
 Queue a resource file for preview (using a path). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texture (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
 

@@ -28,6 +28,8 @@ Properties
 +-------------------------------+---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`graph_offset<class_VisualShader_property_graph_offset>` | ``Vector2( 0, 0 )``                                                                                                 |
 +-------------------------------+---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`version<class_VisualShader_property_version>`           | ``""``                                                                                                              |
++-------------------------------+---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -47,7 +49,7 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                       | :ref:`get_node_connections<class_VisualShader_method_get_node_connections>` **(** :ref:`Type<enum_VisualShader_Type>` type **)** const                                                                                                                             |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_node_list<class_VisualShader_method_get_node_list>` **(** :ref:`Type<enum_VisualShader_Type>` type **)** const                                                                                                                                           |
+| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_node_list<class_VisualShader_method_get_node_list>` **(** :ref:`Type<enum_VisualShader_Type>` type **)** const                                                                                                                                           |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                   | :ref:`get_node_position<class_VisualShader_method_get_node_position>` **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` id **)** const                                                                                                         |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -77,11 +79,11 @@ Enumerations
 
 enum **Type**:
 
-- **TYPE_VERTEX** = **0**
+- **TYPE_VERTEX** = **0** --- A vertex shader, operating on vertices.
 
-- **TYPE_FRAGMENT** = **1**
+- **TYPE_FRAGMENT** = **1** --- A fragment shader, operating on fragments (pixels).
 
-- **TYPE_LIGHT** = **2**
+- **TYPE_LIGHT** = **2** --- A shader for light calculations.
 
 - **TYPE_MAX** = **3** --- Represents the size of the :ref:`Type<enum_VisualShader_Type>` enum.
 
@@ -111,6 +113,22 @@ Property Descriptions
 | *Getter*  | get_graph_offset()      |
 +-----------+-------------------------+
 
+The offset vector of the whole graph.
+
+----
+
+.. _class_VisualShader_property_version:
+
+- :ref:`String<class_String>` **version**
+
++-----------+--------------------+
+| *Default* | ``""``             |
++-----------+--------------------+
+| *Setter*  | set_version(value) |
++-----------+--------------------+
+| *Getter*  | get_version()      |
++-----------+--------------------+
+
 Method Descriptions
 -------------------
 
@@ -118,11 +136,15 @@ Method Descriptions
 
 - void **add_node** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`VisualShaderNode<class_VisualShaderNode>` node, :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` id **)**
 
+Adds the specified node to the shader.
+
 ----
 
 .. _class_VisualShader_method_can_connect_nodes:
 
 - :ref:`bool<class_bool>` **can_connect_nodes** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)** const
+
+Returns ``true`` if the specified nodes and ports can be connected together.
 
 ----
 
@@ -130,11 +152,15 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_nodes** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)**
 
+Connects the specified nodes and ports.
+
 ----
 
 .. _class_VisualShader_method_connect_nodes_forced:
 
 - void **connect_nodes_forced** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)**
+
+Connects the specified nodes and ports, even if they can't be connected. Such connection is invalid and will not function properly.
 
 ----
 
@@ -142,11 +168,15 @@ Method Descriptions
 
 - void **disconnect_nodes** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)**
 
+Connects the specified nodes and ports.
+
 ----
 
 .. _class_VisualShader_method_get_node:
 
 - :ref:`VisualShaderNode<class_VisualShaderNode>` **get_node** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` id **)** const
+
+Returns the shader node instance with specified ``type`` and ``id``.
 
 ----
 
@@ -154,17 +184,23 @@ Method Descriptions
 
 - :ref:`Array<class_Array>` **get_node_connections** **(** :ref:`Type<enum_VisualShader_Type>` type **)** const
 
+Returns the list of connected nodes with the specified type.
+
 ----
 
 .. _class_VisualShader_method_get_node_list:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **get_node_list** **(** :ref:`Type<enum_VisualShader_Type>` type **)** const
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_node_list** **(** :ref:`Type<enum_VisualShader_Type>` type **)** const
+
+Returns the list of all nodes in the shader with the specified type.
 
 ----
 
 .. _class_VisualShader_method_get_node_position:
 
 - :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` id **)** const
+
+Returns the position of the specified node within the shader graph.
 
 ----
 
@@ -178,11 +214,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_node_connection** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` from_node, :ref:`int<class_int>` from_port, :ref:`int<class_int>` to_node, :ref:`int<class_int>` to_port **)** const
 
+Returns ``true`` if the specified node and port connection exist.
+
 ----
 
 .. _class_VisualShader_method_remove_node:
 
 - void **remove_node** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` id **)**
+
+Removes the specified node from the shader.
 
 ----
 
@@ -190,9 +230,13 @@ Method Descriptions
 
 - void **set_mode** **(** :ref:`Mode<enum_Shader_Mode>` mode **)**
 
+Sets the mode of this shader.
+
 ----
 
 .. _class_VisualShader_method_set_node_position:
 
 - void **set_node_position** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` position **)**
+
+Sets the position of the specified node.
 

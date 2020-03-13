@@ -48,7 +48,7 @@ Methods
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`open<class_XMLParser_method_open>` **(** :ref:`String<class_String>` file **)**                                                           |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`open_buffer<class_XMLParser_method_open_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                             |
+| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`open_buffer<class_XMLParser_method_open_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                         |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`read<class_XMLParser_method_read>` **(** **)**                                                                                            |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -201,7 +201,7 @@ Opens an XML file for parsing. This returns an error code.
 
 .. _class_XMLParser_method_open_buffer:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **open_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **open_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**
 
 Opens an XML raw buffer for parsing. This returns an error code.
 

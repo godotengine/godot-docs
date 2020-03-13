@@ -122,17 +122,17 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`accept_event<class_Control_method_accept_event>` **(** **)**                                                                                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`add_color_override<class_Control_method_add_color_override>` **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color **)**                                                                                                                   |
+| void                                         | :ref:`add_color_override<class_Control_method_add_color_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Color<class_Color>` color **)**                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`add_constant_override<class_Control_method_add_constant_override>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` constant **)**                                                                                                              |
+| void                                         | :ref:`add_constant_override<class_Control_method_add_constant_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` constant **)**                                                                                                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`add_font_override<class_Control_method_add_font_override>` **(** :ref:`String<class_String>` name, :ref:`Font<class_Font>` font **)**                                                                                                                        |
+| void                                         | :ref:`add_font_override<class_Control_method_add_font_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Font<class_Font>` font **)**                                                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`add_icon_override<class_Control_method_add_icon_override>` **(** :ref:`String<class_String>` name, :ref:`Texture<class_Texture>` texture **)**                                                                                                               |
+| void                                         | :ref:`add_icon_override<class_Control_method_add_icon_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Texture2D<class_Texture2D>` texture **)**                                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`add_shader_override<class_Control_method_add_shader_override>` **(** :ref:`String<class_String>` name, :ref:`Shader<class_Shader>` shader **)**                                                                                                              |
+| void                                         | :ref:`add_shader_override<class_Control_method_add_shader_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Shader<class_Shader>` shader **)**                                                                                                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`add_stylebox_override<class_Control_method_add_stylebox_override>` **(** :ref:`String<class_String>` name, :ref:`StyleBox<class_StyleBox>` stylebox **)**                                                                                                    |
+| void                                         | :ref:`add_stylebox_override<class_Control_method_add_stylebox_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`StyleBox<class_StyleBox>` stylebox **)**                                                                                            |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`can_drop_data<class_Control_method_can_drop_data>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Variant<class_Variant>` data **)** virtual                                                                                                            |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -144,11 +144,11 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                | :ref:`get_begin<class_Control_method_get_begin>` **(** **)** const                                                                                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`                    | :ref:`get_color<class_Control_method_get_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                           |
+| :ref:`Color<class_Color>`                    | :ref:`get_color<class_Control_method_get_color>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                | :ref:`get_combined_minimum_size<class_Control_method_get_combined_minimum_size>` **(** **)** const                                                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`get_constant<class_Control_method_get_constant>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                     |
+| :ref:`int<class_int>`                        | :ref:`get_constant<class_Control_method_get_constant>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`CursorShape<enum_Control_CursorShape>` | :ref:`get_cursor_shape<class_Control_method_get_cursor_shape>` **(** :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)** const                                                                                                                            |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -160,11 +160,11 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_Control>`                | :ref:`get_focus_owner<class_Control_method_get_focus_owner>` **(** **)** const                                                                                                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Font<class_Font>`                      | :ref:`get_font<class_Control_method_get_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                             |
+| :ref:`Font<class_Font>`                      | :ref:`get_font<class_Control_method_get_font>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const                                                                                                             |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>`                    | :ref:`get_global_rect<class_Control_method_get_global_rect>` **(** **)** const                                                                                                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`get_icon<class_Control_method_get_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                             |
+| :ref:`Texture2D<class_Texture2D>`            | :ref:`get_icon<class_Control_method_get_icon>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const                                                                                                             |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                    | :ref:`get_margin<class_Control_method_get_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                                                                                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -178,7 +178,7 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                    | :ref:`get_rotation<class_Control_method_get_rotation>` **(** **)** const                                                                                                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`              | :ref:`get_stylebox<class_Control_method_get_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                     |
+| :ref:`StyleBox<class_StyleBox>`              | :ref:`get_stylebox<class_Control_method_get_stylebox>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                  | :ref:`get_tooltip<class_Control_method_get_tooltip>` **(** :ref:`Vector2<class_Vector2>` at_position=Vector2( 0, 0 ) **)** const                                                                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -186,31 +186,31 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`grab_focus<class_Control_method_grab_focus>` **(** **)**                                                                                                                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_color<class_Control_method_has_color>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                           |
+| :ref:`bool<class_bool>`                      | :ref:`has_color<class_Control_method_has_color>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_color_override<class_Control_method_has_color_override>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                              |
+| :ref:`bool<class_bool>`                      | :ref:`has_color_override<class_Control_method_has_color_override>` **(** :ref:`StringName<class_StringName>` name **)** const                                                                                                                                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_constant<class_Control_method_has_constant>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                     |
+| :ref:`bool<class_bool>`                      | :ref:`has_constant<class_Control_method_has_constant>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_constant_override<class_Control_method_has_constant_override>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                        |
+| :ref:`bool<class_bool>`                      | :ref:`has_constant_override<class_Control_method_has_constant_override>` **(** :ref:`StringName<class_StringName>` name **)** const                                                                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_focus<class_Control_method_has_focus>` **(** **)** const                                                                                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_font<class_Control_method_has_font>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                             |
+| :ref:`bool<class_bool>`                      | :ref:`has_font<class_Control_method_has_font>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const                                                                                                             |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_font_override<class_Control_method_has_font_override>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                                |
+| :ref:`bool<class_bool>`                      | :ref:`has_font_override<class_Control_method_has_font_override>` **(** :ref:`StringName<class_StringName>` name **)** const                                                                                                                                        |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_icon<class_Control_method_has_icon>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                             |
+| :ref:`bool<class_bool>`                      | :ref:`has_icon<class_Control_method_has_icon>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const                                                                                                             |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_icon_override<class_Control_method_has_icon_override>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                                |
+| :ref:`bool<class_bool>`                      | :ref:`has_icon_override<class_Control_method_has_icon_override>` **(** :ref:`StringName<class_StringName>` name **)** const                                                                                                                                        |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_point<class_Control_method_has_point>` **(** :ref:`Vector2<class_Vector2>` point **)** virtual                                                                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_shader_override<class_Control_method_has_shader_override>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                            |
+| :ref:`bool<class_bool>`                      | :ref:`has_shader_override<class_Control_method_has_shader_override>` **(** :ref:`StringName<class_StringName>` name **)** const                                                                                                                                    |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_stylebox<class_Control_method_has_stylebox>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const                                                                                                                     |
+| :ref:`bool<class_bool>`                      | :ref:`has_stylebox<class_Control_method_has_stylebox>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_stylebox_override<class_Control_method_has_stylebox_override>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                        |
+| :ref:`bool<class_bool>`                      | :ref:`has_stylebox_override<class_Control_method_has_stylebox_override>` **(** :ref:`StringName<class_StringName>` name **)** const                                                                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`minimum_size_changed<class_Control_method_minimum_size_changed>` **(** **)**                                                                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1223,7 +1223,7 @@ Marks an input event as handled. Once you accept an input event, it stops propag
 
 .. _class_Control_method_add_color_override:
 
-- void **add_color_override** **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color **)**
+- void **add_color_override** **(** :ref:`StringName<class_StringName>` name, :ref:`Color<class_Color>` color **)**
 
 Overrides the :ref:`Color<class_Color>` with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If the ``color`` is empty or invalid, the override is cleared and the color from assigned :ref:`Theme<class_Theme>` is used.
 
@@ -1231,7 +1231,7 @@ Overrides the :ref:`Color<class_Color>` with given ``name`` in the :ref:`theme<c
 
 .. _class_Control_method_add_constant_override:
 
-- void **add_constant_override** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` constant **)**
+- void **add_constant_override** **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` constant **)**
 
 Overrides an integer constant with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If the ``constant`` is empty or invalid, the override is cleared and the constant from assigned :ref:`Theme<class_Theme>` is used.
 
@@ -1239,7 +1239,7 @@ Overrides an integer constant with given ``name`` in the :ref:`theme<class_Contr
 
 .. _class_Control_method_add_font_override:
 
-- void **add_font_override** **(** :ref:`String<class_String>` name, :ref:`Font<class_Font>` font **)**
+- void **add_font_override** **(** :ref:`StringName<class_StringName>` name, :ref:`Font<class_Font>` font **)**
 
 Overrides the font with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If ``font`` is empty or invalid, the override is cleared and the font from assigned :ref:`Theme<class_Theme>` is used.
 
@@ -1247,7 +1247,7 @@ Overrides the font with given ``name`` in the :ref:`theme<class_Control_property
 
 .. _class_Control_method_add_icon_override:
 
-- void **add_icon_override** **(** :ref:`String<class_String>` name, :ref:`Texture<class_Texture>` texture **)**
+- void **add_icon_override** **(** :ref:`StringName<class_StringName>` name, :ref:`Texture2D<class_Texture2D>` texture **)**
 
 Overrides the icon with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If ``icon`` is empty or invalid, the override is cleared and the icon from assigned :ref:`Theme<class_Theme>` is used.
 
@@ -1255,7 +1255,7 @@ Overrides the icon with given ``name`` in the :ref:`theme<class_Control_property
 
 .. _class_Control_method_add_shader_override:
 
-- void **add_shader_override** **(** :ref:`String<class_String>` name, :ref:`Shader<class_Shader>` shader **)**
+- void **add_shader_override** **(** :ref:`StringName<class_StringName>` name, :ref:`Shader<class_Shader>` shader **)**
 
 Overrides the :ref:`Shader<class_Shader>` with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If ``shader`` is empty or invalid, the override is cleared and the shader from assigned :ref:`Theme<class_Theme>` is used.
 
@@ -1263,7 +1263,7 @@ Overrides the :ref:`Shader<class_Shader>` with given ``name`` in the :ref:`theme
 
 .. _class_Control_method_add_stylebox_override:
 
-- void **add_stylebox_override** **(** :ref:`String<class_String>` name, :ref:`StyleBox<class_StyleBox>` stylebox **)**
+- void **add_stylebox_override** **(** :ref:`StringName<class_StringName>` name, :ref:`StyleBox<class_StyleBox>` stylebox **)**
 
 Overrides the :ref:`StyleBox<class_StyleBox>` with given ``name`` in the :ref:`theme<class_Control_property_theme>` resource the control uses. If ``stylebox`` is empty or invalid, the override is cleared and the :ref:`StyleBox<class_StyleBox>` from assigned :ref:`Theme<class_Theme>` is used.
 
@@ -1330,7 +1330,7 @@ Returns :ref:`margin_left<class_Control_property_margin_left>` and :ref:`margin_
 
 .. _class_Control_method_get_color:
 
-- :ref:`Color<class_Color>` **get_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+- :ref:`Color<class_Color>` **get_color** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const
 
 Returns a color from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
@@ -1351,7 +1351,7 @@ Returns combined minimum size from :ref:`rect_min_size<class_Control_property_re
 
 .. _class_Control_method_get_constant:
 
-- :ref:`int<class_int>` **get_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+- :ref:`int<class_int>` **get_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const
 
 Returns a constant from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
@@ -1408,7 +1408,7 @@ Returns the control that has the keyboard focus or ``null`` if none.
 
 .. _class_Control_method_get_font:
 
-- :ref:`Font<class_Font>` **get_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+- :ref:`Font<class_Font>` **get_font** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const
 
 Returns a font from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
@@ -1424,7 +1424,7 @@ Returns the position and size of the control relative to the top-left corner of 
 
 .. _class_Control_method_get_icon:
 
-- :ref:`Texture<class_Texture>` **get_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+- :ref:`Texture2D<class_Texture2D>` **get_icon** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const
 
 Returns an icon from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
@@ -1480,7 +1480,7 @@ Returns the rotation (in radians).
 
 .. _class_Control_method_get_stylebox:
 
-- :ref:`StyleBox<class_StyleBox>` **get_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+- :ref:`StyleBox<class_StyleBox>` **get_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const
 
 Returns a :ref:`StyleBox<class_StyleBox>` from assigned :ref:`Theme<class_Theme>` with given ``name`` and associated with ``Control`` of given ``type``.
 
@@ -1517,7 +1517,7 @@ Steal the focus from another control and become the focused control (see :ref:`f
 
 .. _class_Control_method_has_color:
 
-- :ref:`bool<class_bool>` **has_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+- :ref:`bool<class_bool>` **has_color** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const
 
 Returns ``true`` if :ref:`Color<class_Color>` with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
 
@@ -1525,7 +1525,7 @@ Returns ``true`` if :ref:`Color<class_Color>` with given ``name`` and associated
 
 .. _class_Control_method_has_color_override:
 
-- :ref:`bool<class_bool>` **has_color_override** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_color_override** **(** :ref:`StringName<class_StringName>` name **)** const
 
 Returns ``true`` if :ref:`Color<class_Color>` with given ``name`` has a valid override in this ``Control`` node.
 
@@ -1533,7 +1533,7 @@ Returns ``true`` if :ref:`Color<class_Color>` with given ``name`` has a valid ov
 
 .. _class_Control_method_has_constant:
 
-- :ref:`bool<class_bool>` **has_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+- :ref:`bool<class_bool>` **has_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const
 
 Returns ``true`` if constant with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
 
@@ -1541,7 +1541,7 @@ Returns ``true`` if constant with given ``name`` and associated with ``Control``
 
 .. _class_Control_method_has_constant_override:
 
-- :ref:`bool<class_bool>` **has_constant_override** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_constant_override** **(** :ref:`StringName<class_StringName>` name **)** const
 
 Returns ``true`` if constant with given ``name`` has a valid override in this ``Control`` node.
 
@@ -1557,7 +1557,7 @@ Returns ``true`` if this is the current focused control. See :ref:`focus_mode<cl
 
 .. _class_Control_method_has_font:
 
-- :ref:`bool<class_bool>` **has_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+- :ref:`bool<class_bool>` **has_font** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const
 
 Returns ``true`` if font with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
 
@@ -1565,7 +1565,7 @@ Returns ``true`` if font with given ``name`` and associated with ``Control`` of 
 
 .. _class_Control_method_has_font_override:
 
-- :ref:`bool<class_bool>` **has_font_override** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_font_override** **(** :ref:`StringName<class_StringName>` name **)** const
 
 Returns ``true`` if font with given ``name`` has a valid override in this ``Control`` node.
 
@@ -1573,7 +1573,7 @@ Returns ``true`` if font with given ``name`` has a valid override in this ``Cont
 
 .. _class_Control_method_has_icon:
 
-- :ref:`bool<class_bool>` **has_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+- :ref:`bool<class_bool>` **has_icon** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const
 
 Returns ``true`` if icon with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
 
@@ -1581,7 +1581,7 @@ Returns ``true`` if icon with given ``name`` and associated with ``Control`` of 
 
 .. _class_Control_method_has_icon_override:
 
-- :ref:`bool<class_bool>` **has_icon_override** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_icon_override** **(** :ref:`StringName<class_StringName>` name **)** const
 
 Returns ``true`` if icon with given ``name`` has a valid override in this ``Control`` node.
 
@@ -1601,7 +1601,7 @@ If not overridden, default behavior is checking if the point is within control's
 
 .. _class_Control_method_has_shader_override:
 
-- :ref:`bool<class_bool>` **has_shader_override** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_shader_override** **(** :ref:`StringName<class_StringName>` name **)** const
 
 Returns ``true`` if :ref:`Shader<class_Shader>` with given ``name`` has a valid override in this ``Control`` node.
 
@@ -1609,7 +1609,7 @@ Returns ``true`` if :ref:`Shader<class_Shader>` with given ``name`` has a valid 
 
 .. _class_Control_method_has_stylebox:
 
-- :ref:`bool<class_bool>` **has_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` type="" **)** const
+- :ref:`bool<class_bool>` **has_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` type="" **)** const
 
 Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with given ``name`` and associated with ``Control`` of given ``type`` exists in assigned :ref:`Theme<class_Theme>`.
 
@@ -1617,7 +1617,7 @@ Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with given ``name`` and asso
 
 .. _class_Control_method_has_stylebox_override:
 
-- :ref:`bool<class_bool>` **has_stylebox_override** **(** :ref:`String<class_String>` name **)** const
+- :ref:`bool<class_bool>` **has_stylebox_override** **(** :ref:`StringName<class_StringName>` name **)** const
 
 Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with given ``name`` has a valid override in this ``Control`` node.
 

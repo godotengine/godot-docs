@@ -30,6 +30,8 @@ Properties
 +-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
 | :ref:`DopplerTracking<enum_Camera_DopplerTracking>` | :ref:`doppler_tracking<class_Camera_property_doppler_tracking>` | ``0``               |
 +-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
+| :ref:`CameraEffects<class_CameraEffects>`           | :ref:`effects<class_Camera_property_effects>`                   |                     |
++-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
 | :ref:`Environment<class_Environment>`               | :ref:`environment<class_Camera_property_environment>`           |                     |
 +-----------------------------------------------------+-----------------------------------------------------------------+---------------------+
 | :ref:`float<class_float>`                           | :ref:`far<class_Camera_property_far>`                           | ``100.0``           |
@@ -187,6 +189,18 @@ If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using thi
 +-----------+-----------------------------+
 
 If not :ref:`DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>`, this camera will simulate the `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`_ for objects changed in particular ``_process`` methods. See :ref:`DopplerTracking<enum_Camera_DopplerTracking>` for possible values.
+
+----
+
+.. _class_Camera_property_effects:
+
+- :ref:`CameraEffects<class_CameraEffects>` **effects**
+
++----------+--------------------+
+| *Setter* | set_effects(value) |
++----------+--------------------+
+| *Getter* | get_effects()      |
++----------+--------------------+
 
 ----
 

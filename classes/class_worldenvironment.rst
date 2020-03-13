@@ -30,12 +30,26 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------+-----------------------------------------------------------------+
-| :ref:`Environment<class_Environment>` | :ref:`environment<class_WorldEnvironment_property_environment>` |
-+---------------------------------------+-----------------------------------------------------------------+
++-------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`CameraEffects<class_CameraEffects>` | :ref:`camera_effects<class_WorldEnvironment_property_camera_effects>` |
++-------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`Environment<class_Environment>`     | :ref:`environment<class_WorldEnvironment_property_environment>`       |
++-------------------------------------------+-----------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
+
+.. _class_WorldEnvironment_property_camera_effects:
+
+- :ref:`CameraEffects<class_CameraEffects>` **camera_effects**
+
++----------+---------------------------+
+| *Setter* | set_camera_effects(value) |
++----------+---------------------------+
+| *Getter* | get_camera_effects()      |
++----------+---------------------------+
+
+----
 
 .. _class_WorldEnvironment_property_environment:
 

@@ -32,7 +32,7 @@ Properties
 +-----------------------------------------+-------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                 | :ref:`flat<class_Button_property_flat>`               | ``false`` |
 +-----------------------------------------+-------------------------------------------------------+-----------+
-| :ref:`Texture<class_Texture>`           | :ref:`icon<class_Button_property_icon>`               |           |
+| :ref:`Texture2D<class_Texture2D>`       | :ref:`icon<class_Button_property_icon>`               |           |
 +-----------------------------------------+-------------------------------------------------------+-----------+
 | :ref:`String<class_String>`             | :ref:`text<class_Button_property_text>`               | ``""``    |
 +-----------------------------------------+-------------------------------------------------------+-----------+
@@ -152,7 +152,7 @@ Flat buttons don't display decoration.
 
 .. _class_Button_property_icon:
 
-- :ref:`Texture<class_Texture>` **icon**
+- :ref:`Texture2D<class_Texture2D>` **icon**
 
 +----------+------------------------+
 | *Setter* | set_button_icon(value) |

@@ -61,7 +61,7 @@ Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
 .. _class_AcceptDialog_signal_custom_action:
 
-- **custom_action** **(** :ref:`String<class_String>` action **)**
+- **custom_action** **(** :ref:`StringName<class_StringName>` action **)**
 
 Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog_method_add_button>`.
 

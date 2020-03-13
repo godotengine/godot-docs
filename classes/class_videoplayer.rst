@@ -23,42 +23,42 @@ Supported video formats are `WebM <https://www.webmproject.org/>`_ (:ref:`VideoS
 Properties
 ----------
 
-+---------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                 | :ref:`audio_track<class_VideoPlayer_property_audio_track>`         | ``0``        |
-+---------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`               | :ref:`autoplay<class_VideoPlayer_property_autoplay>`               | ``false``    |
-+---------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                 | :ref:`buffering_msec<class_VideoPlayer_property_buffering_msec>`   | ``500``      |
-+---------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`           | :ref:`bus<class_VideoPlayer_property_bus>`                         | ``"Master"`` |
-+---------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`               | :ref:`expand<class_VideoPlayer_property_expand>`                   | ``true``     |
-+---------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`               | :ref:`paused<class_VideoPlayer_property_paused>`                   | ``false``    |
-+---------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`VideoStream<class_VideoStream>` | :ref:`stream<class_VideoPlayer_property_stream>`                   |              |
-+---------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`             | :ref:`stream_position<class_VideoPlayer_property_stream_position>` |              |
-+---------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`             | :ref:`volume<class_VideoPlayer_property_volume>`                   |              |
-+---------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`             | :ref:`volume_db<class_VideoPlayer_property_volume_db>`             | ``0.0``      |
-+---------------------------------------+--------------------------------------------------------------------+--------------+
++---------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`int<class_int>`                 | :ref:`audio_track<class_VideoPlayer_property_audio_track>`         | ``0``         |
++---------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`               | :ref:`autoplay<class_VideoPlayer_property_autoplay>`               | ``false``     |
++---------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`int<class_int>`                 | :ref:`buffering_msec<class_VideoPlayer_property_buffering_msec>`   | ``500``       |
++---------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`StringName<class_StringName>`   | :ref:`bus<class_VideoPlayer_property_bus>`                         | ``@"Master"`` |
++---------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`               | :ref:`expand<class_VideoPlayer_property_expand>`                   | ``true``      |
++---------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`bool<class_bool>`               | :ref:`paused<class_VideoPlayer_property_paused>`                   | ``false``     |
++---------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`VideoStream<class_VideoStream>` | :ref:`stream<class_VideoPlayer_property_stream>`                   |               |
++---------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`             | :ref:`stream_position<class_VideoPlayer_property_stream_position>` |               |
++---------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`             | :ref:`volume<class_VideoPlayer_property_volume>`                   |               |
++---------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`             | :ref:`volume_db<class_VideoPlayer_property_volume_db>`             | ``0.0``       |
++---------------------------------------+--------------------------------------------------------------------+---------------+
 
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_stream_name<class_VideoPlayer_method_get_stream_name>` **(** **)** const     |
-+-------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_video_texture<class_VideoPlayer_method_get_video_texture>` **(** **)** const |
-+-------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_playing<class_VideoPlayer_method_is_playing>` **(** **)** const               |
-+-------------------------------+----------------------------------------------------------------------------------------+
-| void                          | :ref:`play<class_VideoPlayer_method_play>` **(** **)**                                 |
-+-------------------------------+----------------------------------------------------------------------------------------+
-| void                          | :ref:`stop<class_VideoPlayer_method_stop>` **(** **)**                                 |
-+-------------------------------+----------------------------------------------------------------------------------------+
++-----------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`       | :ref:`get_stream_name<class_VideoPlayer_method_get_stream_name>` **(** **)** const     |
++-----------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`get_video_texture<class_VideoPlayer_method_get_video_texture>` **(** **)** const |
++-----------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`is_playing<class_VideoPlayer_method_is_playing>` **(** **)** const               |
++-----------------------------------+----------------------------------------------------------------------------------------+
+| void                              | :ref:`play<class_VideoPlayer_method_play>` **(** **)**                                 |
++-----------------------------------+----------------------------------------------------------------------------------------+
+| void                              | :ref:`stop<class_VideoPlayer_method_stop>` **(** **)**                                 |
++-----------------------------------+----------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -122,10 +122,10 @@ Amount of time in milliseconds to store in buffer while playing.
 
 .. _class_VideoPlayer_property_bus:
 
-- :ref:`String<class_String>` **bus**
+- :ref:`StringName<class_StringName>` **bus**
 
 +-----------+----------------+
-| *Default* | ``"Master"``   |
+| *Default* | ``@"Master"``  |
 +-----------+----------------+
 | *Setter*  | set_bus(value) |
 +-----------+----------------+
@@ -237,9 +237,9 @@ Returns the video stream's name, or ``"<No Stream>"`` if no video stream is assi
 
 .. _class_VideoPlayer_method_get_video_texture:
 
-- :ref:`Texture<class_Texture>` **get_video_texture** **(** **)** const
+- :ref:`Texture2D<class_Texture2D>` **get_video_texture** **(** **)** const
 
-Returns the current frame as a :ref:`Texture<class_Texture>`.
+Returns the current frame as a :ref:`Texture2D<class_Texture2D>`.
 
 ----
 

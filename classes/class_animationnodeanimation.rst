@@ -26,19 +26,19 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``""`` |
-+-----------------------------+-------------------------------------------------------------------+--------+
++-------------------------------------+-------------------------------------------------------------------+---------+
+| :ref:`StringName<class_StringName>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``@""`` |
++-------------------------------------+-------------------------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimationNodeAnimation_property_animation:
 
-- :ref:`String<class_String>` **animation**
+- :ref:`StringName<class_StringName>` **animation**
 
 +-----------+----------------------+
-| *Default* | ``""``               |
+| *Default* | ``@""``              |
 +-----------+----------------------+
 | *Setter*  | set_animation(value) |
 +-----------+----------------------+

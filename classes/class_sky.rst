@@ -24,6 +24,8 @@ Properties
 ----------
 
 +--------------------------------------------+--------------------------------------------------------+-------+
+| :ref:`ProcessMode<enum_Sky_ProcessMode>`   | :ref:`process_mode<class_Sky_property_process_mode>`   | ``0`` |
++--------------------------------------------+--------------------------------------------------------+-------+
 | :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` | ``2`` |
 +--------------------------------------------+--------------------------------------------------------+-------+
 
@@ -66,8 +68,40 @@ enum **RadianceSize**:
 
 - **RADIANCE_SIZE_MAX** = **7** --- Represents the size of the :ref:`RadianceSize<enum_Sky_RadianceSize>` enum.
 
+----
+
+.. _enum_Sky_ProcessMode:
+
+.. _class_Sky_constant_PROCESS_MODE_QUALITY:
+
+.. _class_Sky_constant_PROCESS_MODE_REALTIME:
+
+enum **ProcessMode**:
+
+- **PROCESS_MODE_QUALITY** = **0** --- Uses high quality importance sampling to process the radiance map. In general, this results in much higher quality than :ref:`PROCESS_MODE_REALTIME<class_Sky_constant_PROCESS_MODE_REALTIME>` but takes much longer to generate. This should not be used if you plan on changing the sky at runtime.
+
+- **PROCESS_MODE_REALTIME** = **1** --- Uses the fast filtering algorithm to process the radiance map. In general this results in lower quality, but substantially faster run times.
+
+**Note:** The fast filtering algorithm is limited to 128x128 cubemaps, so :ref:`radiance_size<class_Sky_property_radiance_size>` must be set to :ref:`RADIANCE_SIZE_128<class_Sky_constant_RADIANCE_SIZE_128>`.
+
 Property Descriptions
 ---------------------
+
+.. _class_Sky_property_process_mode:
+
+- :ref:`ProcessMode<enum_Sky_ProcessMode>` **process_mode**
+
++-----------+-------------------------+
+| *Default* | ``0``                   |
++-----------+-------------------------+
+| *Setter*  | set_process_mode(value) |
++-----------+-------------------------+
+| *Getter*  | get_process_mode()      |
++-----------+-------------------------+
+
+Sets the method for generating the radiance map from the sky. The radiance map is a cubemap with increasingly blurry versions of the sky corresponding to different levels of roughness. Radiance maps can be expensive to calculate. See :ref:`ProcessMode<enum_Sky_ProcessMode>` for options.
+
+----
 
 .. _class_Sky_property_radiance_size:
 

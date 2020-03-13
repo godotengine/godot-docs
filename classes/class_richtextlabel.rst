@@ -60,7 +60,7 @@ Methods
 -------
 
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`add_image<class_RichTextLabel_method_add_image>` **(** :ref:`Texture<class_Texture>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0 **)**                    |
+| void                                  | :ref:`add_image<class_RichTextLabel_method_add_image>` **(** :ref:`Texture2D<class_Texture2D>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0 **)**                |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`add_text<class_RichTextLabel_method_add_text>` **(** :ref:`String<class_String>` text **)**                                                                                        |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -84,7 +84,7 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse_bbcode<class_RichTextLabel_method_parse_bbcode>` **(** :ref:`String<class_String>` bbcode **)**                                                                              |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`   | :ref:`parse_expressions_for_values<class_RichTextLabel_method_parse_expressions_for_values>` **(** :ref:`PoolStringArray<class_PoolStringArray>` expressions **)**                       |
+| :ref:`Dictionary<class_Dictionary>`   | :ref:`parse_expressions_for_values<class_RichTextLabel_method_parse_expressions_for_values>` **(** :ref:`PackedStringArray<class_PackedStringArray>` expressions **)**                   |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`pop<class_RichTextLabel_method_pop>` **(** **)**                                                                                                                                   |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -518,7 +518,7 @@ Method Descriptions
 
 .. _class_RichTextLabel_method_add_image:
 
-- void **add_image** **(** :ref:`Texture<class_Texture>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0 **)**
+- void **add_image** **(** :ref:`Texture2D<class_Texture2D>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0 **)**
 
 Adds an image's opening and closing tags to the tag stack, optionally providing a ``width`` and ``height`` to resize the image.
 
@@ -616,7 +616,7 @@ The assignment version of :ref:`append_bbcode<class_RichTextLabel_method_append_
 
 .. _class_RichTextLabel_method_parse_expressions_for_values:
 
-- :ref:`Dictionary<class_Dictionary>` **parse_expressions_for_values** **(** :ref:`PoolStringArray<class_PoolStringArray>` expressions **)**
+- :ref:`Dictionary<class_Dictionary>` **parse_expressions_for_values** **(** :ref:`PackedStringArray<class_PackedStringArray>` expressions **)**
 
 Parses BBCode parameter ``expressions`` into a dictionary.
 

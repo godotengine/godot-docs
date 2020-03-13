@@ -113,9 +113,13 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_PinJoint_Param>` param **)** const
 
+Returns the value of the specified parameter.
+
 ----
 
 .. _class_PinJoint_method_set_param:
 
 - void **set_param** **(** :ref:`Param<enum_PinJoint_Param>` param, :ref:`float<class_float>` value **)**
+
+Sets the value of the specified parameter.
 

@@ -29,17 +29,17 @@ Properties
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_class_documentation<class_NativeScript_method_get_class_documentation>` **(** **)** const                                           |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_method_documentation<class_NativeScript_method_get_method_documentation>` **(** :ref:`String<class_String>` method **)** const      |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_property_documentation<class_NativeScript_method_get_property_documentation>` **(** :ref:`String<class_String>` path **)** const    |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_signal_documentation<class_NativeScript_method_get_signal_documentation>` **(** :ref:`String<class_String>` signal_name **)** const |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`new<class_NativeScript_method_new>` **(** ... **)** vararg                                                                              |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_class_documentation<class_NativeScript_method_get_class_documentation>` **(** **)** const                                                   |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_method_documentation<class_NativeScript_method_get_method_documentation>` **(** :ref:`StringName<class_StringName>` method **)** const      |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_property_documentation<class_NativeScript_method_get_property_documentation>` **(** :ref:`StringName<class_StringName>` path **)** const    |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_signal_documentation<class_NativeScript_method_get_signal_documentation>` **(** :ref:`StringName<class_StringName>` signal_name **)** const |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`new<class_NativeScript_method_new>` **(** ... **)** vararg                                                                                      |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -109,7 +109,7 @@ Returns the documentation string that was previously set with ``godot_nativescri
 
 .. _class_NativeScript_method_get_method_documentation:
 
-- :ref:`String<class_String>` **get_method_documentation** **(** :ref:`String<class_String>` method **)** const
+- :ref:`String<class_String>` **get_method_documentation** **(** :ref:`StringName<class_StringName>` method **)** const
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_method_documentation``.
 
@@ -117,7 +117,7 @@ Returns the documentation string that was previously set with ``godot_nativescri
 
 .. _class_NativeScript_method_get_property_documentation:
 
-- :ref:`String<class_String>` **get_property_documentation** **(** :ref:`String<class_String>` path **)** const
+- :ref:`String<class_String>` **get_property_documentation** **(** :ref:`StringName<class_StringName>` path **)** const
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_property_documentation``.
 
@@ -125,7 +125,7 @@ Returns the documentation string that was previously set with ``godot_nativescri
 
 .. _class_NativeScript_method_get_signal_documentation:
 
-- :ref:`String<class_String>` **get_signal_documentation** **(** :ref:`String<class_String>` signal_name **)** const
+- :ref:`String<class_String>` **get_signal_documentation** **(** :ref:`StringName<class_StringName>` signal_name **)** const
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_signal_documentation``.
 

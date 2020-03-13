@@ -18,24 +18,26 @@ Description
 
 A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
+**Note:** There are `known performance issues <https://github.com/godotengine/godot/issues/20855>`_ when using ``Sprite3D``. Consider using a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`QuadMesh<class_QuadMesh>` as the mesh instead. You can still have billboarding by enabling billboard properties in the QuadMesh's :ref:`StandardMaterial3D<class_StandardMaterial3D>`.
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`         | :ref:`frame<class_Sprite3D_property_frame>`                   | ``0``                   |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`frame_coords<class_Sprite3D_property_frame_coords>`     | ``Vector2( 0, 0 )``     |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`         | :ref:`hframes<class_Sprite3D_property_hframes>`               | ``1``                   |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`region_enabled<class_Sprite3D_property_region_enabled>` | ``false``               |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite3D_property_region_rect>`       | ``Rect2( 0, 0, 0, 0 )`` |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite3D_property_texture>`               |                         |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`         | :ref:`vframes<class_Sprite3D_property_vframes>`               | ``1``                   |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
++-----------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`             | :ref:`frame<class_Sprite3D_property_frame>`                   | ``0``                   |
++-----------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Vector2<class_Vector2>`     | :ref:`frame_coords<class_Sprite3D_property_frame_coords>`     | ``Vector2( 0, 0 )``     |
++-----------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`             | :ref:`hframes<class_Sprite3D_property_hframes>`               | ``1``                   |
++-----------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`           | :ref:`region_enabled<class_Sprite3D_property_region_enabled>` | ``false``               |
++-----------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Rect2<class_Rect2>`         | :ref:`region_rect<class_Sprite3D_property_region_rect>`       | ``Rect2( 0, 0, 0, 0 )`` |
++-----------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`texture<class_Sprite3D_property_texture>`               |                         |
++-----------------------------------+---------------------------------------------------------------+-------------------------+
+| :ref:`int<class_int>`             | :ref:`vframes<class_Sprite3D_property_vframes>`               | ``1``                   |
++-----------------------------------+---------------------------------------------------------------+-------------------------+
 
 Signals
 -------
@@ -131,7 +133,7 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 
 .. _class_Sprite3D_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+- :ref:`Texture2D<class_Texture2D>` **texture**
 
 +----------+--------------------+
 | *Setter* | set_texture(value) |
@@ -139,7 +141,7 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-:ref:`Texture<class_Texture>` object to draw.
+:ref:`Texture2D<class_Texture2D>` object to draw.
 
 ----
 

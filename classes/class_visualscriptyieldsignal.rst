@@ -16,15 +16,15 @@ VisualScriptYieldSignal
 Properties
 ----------
 
-+--------------------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptYieldSignal_property_base_type>` | ``"Object"`` |
-+--------------------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` | :ref:`call_mode<class_VisualScriptYieldSignal_property_call_mode>` | ``0``        |
-+--------------------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptYieldSignal_property_node_path>` |              |
-+--------------------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                            | :ref:`signal<class_VisualScriptYieldSignal_property_signal>`       | ``""``       |
-+--------------------------------------------------------+--------------------------------------------------------------------+--------------+
++--------------------------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`StringName<class_StringName>`                    | :ref:`base_type<class_VisualScriptYieldSignal_property_base_type>` | ``@"Object"`` |
++--------------------------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` | :ref:`call_mode<class_VisualScriptYieldSignal_property_call_mode>` | ``0``         |
++--------------------------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptYieldSignal_property_node_path>` |               |
++--------------------------------------------------------+--------------------------------------------------------------------+---------------+
+| :ref:`StringName<class_StringName>`                    | :ref:`signal<class_VisualScriptYieldSignal_property_signal>`       | ``@""``       |
++--------------------------------------------------------+--------------------------------------------------------------------+---------------+
 
 Enumerations
 ------------
@@ -50,10 +50,10 @@ Property Descriptions
 
 .. _class_VisualScriptYieldSignal_property_base_type:
 
-- :ref:`String<class_String>` **base_type**
+- :ref:`StringName<class_StringName>` **base_type**
 
 +-----------+----------------------+
-| *Default* | ``"Object"``         |
+| *Default* | ``@"Object"``        |
 +-----------+----------------------+
 | *Setter*  | set_base_type(value) |
 +-----------+----------------------+
@@ -90,10 +90,10 @@ Property Descriptions
 
 .. _class_VisualScriptYieldSignal_property_signal:
 
-- :ref:`String<class_String>` **signal**
+- :ref:`StringName<class_StringName>` **signal**
 
 +-----------+-------------------+
-| *Default* | ``""``            |
+| *Default* | ``@""``           |
 +-----------+-------------------+
 | *Setter*  | set_signal(value) |
 +-----------+-------------------+

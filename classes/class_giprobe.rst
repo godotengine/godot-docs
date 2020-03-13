@@ -18,7 +18,7 @@ Description
 
 ``GIProbe``\ s are used to provide high-quality real-time indirect light to scenes. They precompute the effect of objects that emit light and the effect of static geometry to simulate the behavior of complex light in real-time. ``GIProbe``\ s need to be baked before using, however, once baked, dynamic objects will receive light from them. Further, lights can be fully dynamic or baked.
 
-Having ``GIProbe``\ s in a scene can be expensive, the quality of the probe can be turned down in exchange for better performance in the :ref:`ProjectSettings<class_ProjectSettings>` using :ref:`ProjectSettings.rendering/quality/voxel_cone_tracing/high_quality<class_ProjectSettings_property_rendering/quality/voxel_cone_tracing/high_quality>`.
+Having ``GIProbe``\ s in a scene can be expensive, the quality of the probe can be turned down in exchange for better performance in the :ref:`ProjectSettings<class_ProjectSettings>` using :ref:`ProjectSettings.rendering/quality/gi_probes/quality<class_ProjectSettings_property_rendering/quality/gi_probes/quality>`.
 
 Tutorials
 ---------
@@ -28,27 +28,13 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`             | :ref:`bias<class_GIProbe_property_bias>`                   | ``1.5``                   |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`               | :ref:`compress<class_GIProbe_property_compress>`           | ``false``                 |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`GIProbeData<class_GIProbeData>` | :ref:`data<class_GIProbe_property_data>`                   |                           |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                 | :ref:`dynamic_range<class_GIProbe_property_dynamic_range>` | ``4``                     |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`             | :ref:`energy<class_GIProbe_property_energy>`               | ``1.0``                   |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`extents<class_GIProbe_property_extents>`             | ``Vector3( 10, 10, 10 )`` |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`               | :ref:`interior<class_GIProbe_property_interior>`           | ``false``                 |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`             | :ref:`normal_bias<class_GIProbe_property_normal_bias>`     | ``0.0``                   |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`             | :ref:`propagation<class_GIProbe_property_propagation>`     | ``0.7``                   |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`Subdiv<enum_GIProbe_Subdiv>`    | :ref:`subdiv<class_GIProbe_property_subdiv>`               | ``1``                     |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
++---------------------------------------+------------------------------------------------+---------------------------+
+| :ref:`GIProbeData<class_GIProbeData>` | :ref:`data<class_GIProbe_property_data>`       |                           |
++---------------------------------------+------------------------------------------------+---------------------------+
+| :ref:`Vector3<class_Vector3>`         | :ref:`extents<class_GIProbe_property_extents>` | ``Vector3( 10, 10, 10 )`` |
++---------------------------------------+------------------------------------------------+---------------------------+
+| :ref:`Subdiv<enum_GIProbe_Subdiv>`    | :ref:`subdiv<class_GIProbe_property_subdiv>`   | ``1``                     |
++---------------------------------------+------------------------------------------------+---------------------------+
 
 Methods
 -------
@@ -89,40 +75,6 @@ enum **Subdiv**:
 Property Descriptions
 ---------------------
 
-.. _class_GIProbe_property_bias:
-
-- :ref:`float<class_float>` **bias**
-
-+-----------+-----------------+
-| *Default* | ``1.5``         |
-+-----------+-----------------+
-| *Setter*  | set_bias(value) |
-+-----------+-----------------+
-| *Getter*  | get_bias()      |
-+-----------+-----------------+
-
-Offsets the lookup of the light contribution from the ``GIProbe``. This can be used to avoid self-shadowing, but may introduce light leaking at higher values. This and :ref:`normal_bias<class_GIProbe_property_normal_bias>` should be played around with to minimize self-shadowing and light leaking.
-
-**Note:** ``bias`` should usually be above 1.0 as that is the size of the voxels.
-
-----
-
-.. _class_GIProbe_property_compress:
-
-- :ref:`bool<class_bool>` **compress**
-
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_compress(value) |
-+-----------+---------------------+
-| *Getter*  | is_compressed()     |
-+-----------+---------------------+
-
-If ``true``, the data for this ``GIProbe`` will be compressed. Compression saves space, but results in far worse visual quality.
-
-----
-
 .. _class_GIProbe_property_data:
 
 - :ref:`GIProbeData<class_GIProbeData>` **data**
@@ -134,38 +86,6 @@ If ``true``, the data for this ``GIProbe`` will be compressed. Compression saves
 +----------+-----------------------+
 
 The :ref:`GIProbeData<class_GIProbeData>` resource that holds the data for this ``GIProbe``.
-
-----
-
-.. _class_GIProbe_property_dynamic_range:
-
-- :ref:`int<class_int>` **dynamic_range**
-
-+-----------+--------------------------+
-| *Default* | ``4``                    |
-+-----------+--------------------------+
-| *Setter*  | set_dynamic_range(value) |
-+-----------+--------------------------+
-| *Getter*  | get_dynamic_range()      |
-+-----------+--------------------------+
-
-The maximum brightness that the ``GIProbe`` will recognize. Brightness will be scaled within this range.
-
-----
-
-.. _class_GIProbe_property_energy:
-
-- :ref:`float<class_float>` **energy**
-
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_energy(value) |
-+-----------+-------------------+
-| *Getter*  | get_energy()      |
-+-----------+-------------------+
-
-Energy multiplier. Makes the lighting contribution from the ``GIProbe`` brighter.
 
 ----
 
@@ -182,54 +102,6 @@ Energy multiplier. Makes the lighting contribution from the ``GIProbe`` brighter
 +-----------+---------------------------+
 
 The size of the area covered by the ``GIProbe``. If you make the extents larger without increasing the subdivisions with :ref:`subdiv<class_GIProbe_property_subdiv>`, the size of each cell will increase and result in lower detailed lighting.
-
-----
-
-.. _class_GIProbe_property_interior:
-
-- :ref:`bool<class_bool>` **interior**
-
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_interior(value) |
-+-----------+---------------------+
-| *Getter*  | is_interior()       |
-+-----------+---------------------+
-
-If ``true``, ignores the sky contribution when calculating lighting.
-
-----
-
-.. _class_GIProbe_property_normal_bias:
-
-- :ref:`float<class_float>` **normal_bias**
-
-+-----------+------------------------+
-| *Default* | ``0.0``                |
-+-----------+------------------------+
-| *Setter*  | set_normal_bias(value) |
-+-----------+------------------------+
-| *Getter*  | get_normal_bias()      |
-+-----------+------------------------+
-
-Offsets the lookup into the ``GIProbe`` based on the object's normal direction. Can be used to reduce some self-shadowing artifacts.
-
-----
-
-.. _class_GIProbe_property_propagation:
-
-- :ref:`float<class_float>` **propagation**
-
-+-----------+------------------------+
-| *Default* | ``0.7``                |
-+-----------+------------------------+
-| *Setter*  | set_propagation(value) |
-+-----------+------------------------+
-| *Getter*  | get_propagation()      |
-+-----------+------------------------+
-
-How much light propagates through the probe internally. A higher value allows light to spread further.
 
 ----
 

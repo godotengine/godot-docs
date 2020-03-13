@@ -21,13 +21,13 @@ Editor facility that helps you draw a 2D polygon used as resource for :ref:`Ligh
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`closed<class_OccluderPolygon2D_property_closed>`       | ``true``                 |
-+--------------------------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` | ``0``                    |
-+--------------------------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`  | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     | ``PoolVector2Array(  )`` |
-+--------------------------------------------------+--------------------------------------------------------------+--------------------------+
++-----------------------------------------------------+--------------------------------------------------------------+----------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`closed<class_OccluderPolygon2D_property_closed>`       | ``true``                   |
++-----------------------------------------------------+--------------------------------------------------------------+----------------------------+
+| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>`    | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` | ``0``                      |
++-----------------------------------------------------+--------------------------------------------------------------+----------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     | ``PackedVector2Array(  )`` |
++-----------------------------------------------------+--------------------------------------------------------------+----------------------------+
 
 Enumerations
 ------------
@@ -85,15 +85,15 @@ The culling mode to use.
 
 .. _class_OccluderPolygon2D_property_polygon:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **polygon**
 
-+-----------+--------------------------+
-| *Default* | ``PoolVector2Array(  )`` |
-+-----------+--------------------------+
-| *Setter*  | set_polygon(value)       |
-+-----------+--------------------------+
-| *Getter*  | get_polygon()            |
-+-----------+--------------------------+
++-----------+----------------------------+
+| *Default* | ``PackedVector2Array(  )`` |
++-----------+----------------------------+
+| *Setter*  | set_polygon(value)         |
++-----------+----------------------------+
+| *Getter*  | get_polygon()              |
++-----------+----------------------------+
 
 A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
 

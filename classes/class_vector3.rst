@@ -9,12 +9,14 @@
 Vector3
 =======
 
-Vector used for 3D math.
+Vector used for 3D math using floating point coordinates.
 
 Description
 -----------
 
 3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
+
+It uses floating point coordinates.
 
 Tutorials
 ---------
@@ -35,6 +37,8 @@ Properties
 Methods
 -------
 
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`Vector3<class_Vector3_method_Vector3>` **(** :ref:`Vector3i<class_Vector3i>` from **)**                                                                                                                        |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`Vector3<class_Vector3_method_Vector3>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -198,9 +202,15 @@ Method Descriptions
 
 .. _class_Vector3_method_Vector3:
 
+- :ref:`Vector3<class_Vector3>` **Vector3** **(** :ref:`Vector3i<class_Vector3i>` from **)**
+
+Constructs a new ``Vector3`` from :ref:`Vector3i<class_Vector3i>`.
+
+----
+
 - :ref:`Vector3<class_Vector3>` **Vector3** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**
 
-Returns a Vector3 with the given components.
+Returns a ``Vector3`` with the given components.
 
 ----
 

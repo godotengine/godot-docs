@@ -21,11 +21,11 @@ Given a set of colors, this resource will interpolate them in order. This means 
 Properties
 ----------
 
-+---------------------------------------------+-------------------------------------------------+----------------------------------------------+
-| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`colors<class_Gradient_property_colors>`   | ``PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
-+---------------------------------------------+-------------------------------------------------+----------------------------------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>`   | :ref:`offsets<class_Gradient_property_offsets>` | ``PoolRealArray( 0, 1 )``                    |
-+---------------------------------------------+-------------------------------------------------+----------------------------------------------+
++-----------------------------------------------------+-------------------------------------------------+------------------------------------------------+
+| :ref:`PackedColorArray<class_PackedColorArray>`     | :ref:`colors<class_Gradient_property_colors>`   | ``PackedColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
++-----------------------------------------------------+-------------------------------------------------+------------------------------------------------+
+| :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`offsets<class_Gradient_property_offsets>` | ``PackedFloat32Array( 0, 1 )``                 |
++-----------------------------------------------------+-------------------------------------------------+------------------------------------------------+
 
 Methods
 -------
@@ -53,33 +53,33 @@ Property Descriptions
 
 .. _class_Gradient_property_colors:
 
-- :ref:`PoolColorArray<class_PoolColorArray>` **colors**
+- :ref:`PackedColorArray<class_PackedColorArray>` **colors**
 
-+-----------+----------------------------------------------+
-| *Default* | ``PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
-+-----------+----------------------------------------------+
-| *Setter*  | set_colors(value)                            |
-+-----------+----------------------------------------------+
-| *Getter*  | get_colors()                                 |
-+-----------+----------------------------------------------+
++-----------+------------------------------------------------+
+| *Default* | ``PackedColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
++-----------+------------------------------------------------+
+| *Setter*  | set_colors(value)                              |
++-----------+------------------------------------------------+
+| *Getter*  | get_colors()                                   |
++-----------+------------------------------------------------+
 
-Gradient's colors returned as a :ref:`PoolColorArray<class_PoolColorArray>`.
+Gradient's colors returned as a :ref:`PackedColorArray<class_PackedColorArray>`.
 
 ----
 
 .. _class_Gradient_property_offsets:
 
-- :ref:`PoolRealArray<class_PoolRealArray>` **offsets**
+- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **offsets**
 
-+-----------+---------------------------+
-| *Default* | ``PoolRealArray( 0, 1 )`` |
-+-----------+---------------------------+
-| *Setter*  | set_offsets(value)        |
-+-----------+---------------------------+
-| *Getter*  | get_offsets()             |
-+-----------+---------------------------+
++-----------+--------------------------------+
+| *Default* | ``PackedFloat32Array( 0, 1 )`` |
++-----------+--------------------------------+
+| *Setter*  | set_offsets(value)             |
++-----------+--------------------------------+
+| *Getter*  | get_offsets()                  |
++-----------+--------------------------------+
 
-Gradient's offsets returned as a :ref:`PoolRealArray<class_PoolRealArray>`.
+Gradient's offsets returned as a :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
 
 Method Descriptions
 -------------------

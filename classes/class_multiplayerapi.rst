@@ -36,25 +36,25 @@ Properties
 Methods
 -------
 
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`clear<class_MultiplayerAPI_method_clear>` **(** **)**                                                                                                                                                               |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`get_network_connected_peers<class_MultiplayerAPI_method_get_network_connected_peers>` **(** **)** const                                                                                                             |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_network_unique_id<class_MultiplayerAPI_method_get_network_unique_id>` **(** **)** const                                                                                                                         |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_rpc_sender_id<class_MultiplayerAPI_method_get_rpc_sender_id>` **(** **)** const                                                                                                                                 |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`has_network_peer<class_MultiplayerAPI_method_has_network_peer>` **(** **)** const                                                                                                                                   |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>` **(** **)** const                                                                                                                                 |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`poll<class_MultiplayerAPI_method_poll>` **(** **)**                                                                                                                                                                 |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`   | :ref:`send_bytes<class_MultiplayerAPI_method_send_bytes>` **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)** |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`set_root_node<class_MultiplayerAPI_method_set_root_node>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                  |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear<class_MultiplayerAPI_method_clear>` **(** **)**                                                                                                                                                                   |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_network_connected_peers<class_MultiplayerAPI_method_get_network_connected_peers>` **(** **)** const                                                                                                                 |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_network_unique_id<class_MultiplayerAPI_method_get_network_unique_id>` **(** **)** const                                                                                                                             |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_rpc_sender_id<class_MultiplayerAPI_method_get_rpc_sender_id>` **(** **)** const                                                                                                                                     |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`has_network_peer<class_MultiplayerAPI_method_has_network_peer>` **(** **)** const                                                                                                                                       |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>` **(** **)** const                                                                                                                                     |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`poll<class_MultiplayerAPI_method_poll>` **(** **)**                                                                                                                                                                     |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`send_bytes<class_MultiplayerAPI_method_send_bytes>` **(** :ref:`PackedByteArray<class_PackedByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)** |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_root_node<class_MultiplayerAPI_method_set_root_node>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                      |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -93,7 +93,7 @@ Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_prope
 
 .. _class_MultiplayerAPI_signal_network_peer_packet:
 
-- **network_peer_packet** **(** :ref:`int<class_int>` id, :ref:`PoolByteArray<class_PoolByteArray>` packet **)**
+- **network_peer_packet** **(** :ref:`int<class_int>` id, :ref:`PackedByteArray<class_PackedByteArray>` packet **)**
 
 Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` receive a ``packet`` with custom data (see :ref:`send_bytes<class_MultiplayerAPI_method_send_bytes>`). ID is the peer ID of the peer that sent the packet.
 
@@ -118,11 +118,7 @@ Enumerations
 
 .. _class_MultiplayerAPI_constant_RPC_MODE_PUPPET:
 
-.. _class_MultiplayerAPI_constant_RPC_MODE_SLAVE:
-
 .. _class_MultiplayerAPI_constant_RPC_MODE_REMOTESYNC:
-
-.. _class_MultiplayerAPI_constant_RPC_MODE_SYNC:
 
 .. _class_MultiplayerAPI_constant_RPC_MODE_MASTERSYNC:
 
@@ -138,11 +134,7 @@ enum **RPCMode**:
 
 - **RPC_MODE_PUPPET** = **3** --- Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` or :ref:`Node.rset_config<class_Node_method_rset_config>` to set a method to be called or a property to be changed only on puppets for this node. Analogous to the ``puppet`` keyword. Only accepts calls or property changes from the node's network master, see :ref:`Node.set_network_master<class_Node_method_set_network_master>`.
 
-- **RPC_MODE_SLAVE** = **3** --- *Deprecated.* Use :ref:`RPC_MODE_PUPPET<class_MultiplayerAPI_constant_RPC_MODE_PUPPET>` instead. Analogous to the ``slave`` keyword.
-
 - **RPC_MODE_REMOTESYNC** = **4** --- Behave like :ref:`RPC_MODE_REMOTE<class_MultiplayerAPI_constant_RPC_MODE_REMOTE>` but also make the call or property change locally. Analogous to the ``remotesync`` keyword.
-
-- **RPC_MODE_SYNC** = **4** --- *Deprecated.* Use :ref:`RPC_MODE_REMOTESYNC<class_MultiplayerAPI_constant_RPC_MODE_REMOTESYNC>` instead. Analogous to the ``sync`` keyword.
 
 - **RPC_MODE_MASTERSYNC** = **5** --- Behave like :ref:`RPC_MODE_MASTER<class_MultiplayerAPI_constant_RPC_MODE_MASTER>` but also make the call or property change locally. Analogous to the ``mastersync`` keyword.
 
@@ -163,7 +155,7 @@ Property Descriptions
 | *Getter*  | is_object_decoding_allowed()     |
 +-----------+----------------------------------+
 
-If ``true`` (or if the :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` has :ref:`PacketPeer.allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` set to ``true``), the MultiplayerAPI will allow encoding and decoding of object during RPCs/RSETs.
+If ``true``, the MultiplayerAPI will allow encoding and decoding of object during RPCs/RSETs.
 
 **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
@@ -210,7 +202,7 @@ Clears the current MultiplayerAPI network state (you shouldn't call this unless 
 
 .. _class_MultiplayerAPI_method_get_network_connected_peers:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **get_network_connected_peers** **(** **)** const
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_network_connected_peers** **(** **)** const
 
 Returns the peer IDs of all connected peers of this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`.
 
@@ -262,7 +254,7 @@ Method used for polling the MultiplayerAPI. You only need to worry about this if
 
 .. _class_MultiplayerAPI_method_send_bytes:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **send_bytes** **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **send_bytes** **(** :ref:`PackedByteArray<class_PackedByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)**
 
 Sends the given raw ``bytes`` to a specific peer identified by ``id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Default ID is ``0``, i.e. broadcast to all peers.
 

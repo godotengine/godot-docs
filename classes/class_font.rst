@@ -100,6 +100,8 @@ Returns the size of a string, taking kerning and advance into account.
 
 - :ref:`Vector2<class_Vector2>` **get_wordwrap_string_size** **(** :ref:`String<class_String>` string, :ref:`float<class_float>` width **)** const
 
+Returns the size that the string would have with word wrapping enabled with a fixed ``width``.
+
 ----
 
 .. _class_Font_method_has_outline:

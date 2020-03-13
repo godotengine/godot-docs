@@ -21,17 +21,17 @@ Horizontal slider. See :ref:`Slider<class_Slider>`. This one goes from left (min
 Theme Properties
 ----------------
 
-+---------------------------------+-------------------+
-| :ref:`Texture<class_Texture>`   | grabber           |
-+---------------------------------+-------------------+
-| :ref:`StyleBox<class_StyleBox>` | grabber_area      |
-+---------------------------------+-------------------+
-| :ref:`Texture<class_Texture>`   | grabber_disabled  |
-+---------------------------------+-------------------+
-| :ref:`Texture<class_Texture>`   | grabber_highlight |
-+---------------------------------+-------------------+
-| :ref:`StyleBox<class_StyleBox>` | slider            |
-+---------------------------------+-------------------+
-| :ref:`Texture<class_Texture>`   | tick              |
-+---------------------------------+-------------------+
++-----------------------------------+-------------------+
+| :ref:`Texture2D<class_Texture2D>` | grabber           |
++-----------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>`   | grabber_area      |
++-----------------------------------+-------------------+
+| :ref:`Texture2D<class_Texture2D>` | grabber_disabled  |
++-----------------------------------+-------------------+
+| :ref:`Texture2D<class_Texture2D>` | grabber_highlight |
++-----------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>`   | slider            |
++-----------------------------------+-------------------+
+| :ref:`Texture2D<class_Texture2D>` | tick              |
++-----------------------------------+-------------------+
 

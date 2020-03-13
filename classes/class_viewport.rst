@@ -38,67 +38,61 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`arvr<class_Viewport_property_arvr>`                                               | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`audio_listener_enable_2d<class_Viewport_property_audio_listener_enable_2d>`       | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`audio_listener_enable_3d<class_Viewport_property_audio_listener_enable_3d>`       | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`Transform2D<class_Transform2D>`                                     | :ref:`canvas_transform<class_Viewport_property_canvas_transform>`                       |                     |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`DebugDraw<enum_Viewport_DebugDraw>`                                 | :ref:`debug_draw<class_Viewport_property_debug_draw>`                                   | ``0``               |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`disable_3d<class_Viewport_property_disable_3d>`                                   | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`Transform2D<class_Transform2D>`                                     | :ref:`global_canvas_transform<class_Viewport_property_global_canvas_transform>`         |                     |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`gui_disable_input<class_Viewport_property_gui_disable_input>`                     | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`gui_snap_controls_to_pixels<class_Viewport_property_gui_snap_controls_to_pixels>` | ``true``            |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`handle_input_locally<class_Viewport_property_handle_input_locally>`               | ``true``            |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`hdr<class_Viewport_property_hdr>`                                                 | ``true``            |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`keep_3d_linear<class_Viewport_property_keep_3d_linear>`                           | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`MSAA<enum_Viewport_MSAA>`                                           | :ref:`msaa<class_Viewport_property_msaa>`                                               | ``0``               |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`own_world<class_Viewport_property_own_world>`                                     | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>`           | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`render_direct_to_screen<class_Viewport_property_render_direct_to_screen>`         | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`ClearMode<enum_Viewport_ClearMode>`                                 | :ref:`render_target_clear_mode<class_Viewport_property_render_target_clear_mode>`       | ``0``               |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`UpdateMode<enum_Viewport_UpdateMode>`                               | :ref:`render_target_update_mode<class_Viewport_property_render_target_update_mode>`     | ``2``               |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`render_target_v_flip<class_Viewport_property_render_target_v_flip>`               | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` | :ref:`shadow_atlas_quad_0<class_Viewport_property_shadow_atlas_quad_0>`                 | ``2``               |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` | :ref:`shadow_atlas_quad_1<class_Viewport_property_shadow_atlas_quad_1>`                 | ``2``               |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` | :ref:`shadow_atlas_quad_2<class_Viewport_property_shadow_atlas_quad_2>`                 | ``3``               |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` | :ref:`shadow_atlas_quad_3<class_Viewport_property_shadow_atlas_quad_3>`                 | ``4``               |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`                                                     | :ref:`shadow_atlas_size<class_Viewport_property_shadow_atlas_size>`                     | ``0``               |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>`                                             | :ref:`size<class_Viewport_property_size>`                                               | ``Vector2( 0, 0 )`` |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`size_override_stretch<class_Viewport_property_size_override_stretch>`             | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`transparent_bg<class_Viewport_property_transparent_bg>`                           | ``false``           |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`Usage<enum_Viewport_Usage>`                                         | :ref:`usage<class_Viewport_property_usage>`                                             | ``2``               |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`World<class_World>`                                                 | :ref:`world<class_Viewport_property_world>`                                             |                     |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`World2D<class_World2D>`                                             | :ref:`world_2d<class_Viewport_property_world_2d>`                                       |                     |
-+---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`arvr<class_Viewport_property_arvr>`                                                             | ``false``           |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`audio_listener_enable_2d<class_Viewport_property_audio_listener_enable_2d>`                     | ``false``           |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`audio_listener_enable_3d<class_Viewport_property_audio_listener_enable_3d>`                     | ``false``           |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` | :ref:`canvas_item_default_texture_filter<class_Viewport_property_canvas_item_default_texture_filter>` | ``1``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` | :ref:`canvas_item_default_texture_repeat<class_Viewport_property_canvas_item_default_texture_repeat>` | ``0``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Transform2D<class_Transform2D>`                                               | :ref:`canvas_transform<class_Viewport_property_canvas_transform>`                                     |                     |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`DebugDraw<enum_Viewport_DebugDraw>`                                           | :ref:`debug_draw<class_Viewport_property_debug_draw>`                                                 | ``0``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Transform2D<class_Transform2D>`                                               | :ref:`global_canvas_transform<class_Viewport_property_global_canvas_transform>`                       |                     |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`gui_disable_input<class_Viewport_property_gui_disable_input>`                                   | ``false``           |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`gui_snap_controls_to_pixels<class_Viewport_property_gui_snap_controls_to_pixels>`               | ``true``            |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`handle_input_locally<class_Viewport_property_handle_input_locally>`                             | ``true``            |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`MSAA<enum_Viewport_MSAA>`                                                     | :ref:`msaa<class_Viewport_property_msaa>`                                                             | ``0``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`own_world<class_Viewport_property_own_world>`                                                   | ``false``           |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>`                         | ``false``           |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`render_direct_to_screen<class_Viewport_property_render_direct_to_screen>`                       | ``false``           |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`ClearMode<enum_Viewport_ClearMode>`                                           | :ref:`render_target_clear_mode<class_Viewport_property_render_target_clear_mode>`                     | ``0``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`UpdateMode<enum_Viewport_UpdateMode>`                                         | :ref:`render_target_update_mode<class_Viewport_property_render_target_update_mode>`                   | ``2``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>`           | :ref:`shadow_atlas_quad_0<class_Viewport_property_shadow_atlas_quad_0>`                               | ``2``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>`           | :ref:`shadow_atlas_quad_1<class_Viewport_property_shadow_atlas_quad_1>`                               | ``2``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>`           | :ref:`shadow_atlas_quad_2<class_Viewport_property_shadow_atlas_quad_2>`                               | ``3``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>`           | :ref:`shadow_atlas_quad_3<class_Viewport_property_shadow_atlas_quad_3>`                               | ``4``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`int<class_int>`                                                               | :ref:`shadow_atlas_size<class_Viewport_property_shadow_atlas_size>`                                   | ``0``               |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>`                                                       | :ref:`size<class_Viewport_property_size>`                                                             | ``Vector2( 0, 0 )`` |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`size_override_stretch<class_Viewport_property_size_override_stretch>`                           | ``false``           |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                             | :ref:`transparent_bg<class_Viewport_property_transparent_bg>`                                         | ``false``           |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`World<class_World>`                                                           | :ref:`world<class_Viewport_property_world>`                                                           |                     |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`World2D<class_World2D>`                                                       | :ref:`world_2d<class_Viewport_property_world_2d>`                                                     |                     |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------------------+
 
 Methods
 -------
@@ -279,15 +273,43 @@ enum **RenderInfo**:
 
 .. _class_Viewport_constant_DEBUG_DRAW_WIREFRAME:
 
+.. _class_Viewport_constant_DEBUG_DRAW_GI_PROBE_ALBEDO:
+
+.. _class_Viewport_constant_DEBUG_DRAW_GI_PROBE_LIGHTING:
+
+.. _class_Viewport_constant_DEBUG_DRAW_GI_PROBE_EMISSION:
+
+.. _class_Viewport_constant_DEBUG_DRAW_SHADOW_ATLAS:
+
+.. _class_Viewport_constant_DEBUG_DRAW_DIRECTIONAL_SHADOW_ATLAS:
+
+.. _class_Viewport_constant_DEBUG_DRAW_SCENE_LUMINANCE:
+
+.. _class_Viewport_constant_DEBUG_DRAW_SSAO:
+
 enum **DebugDraw**:
 
 - **DEBUG_DRAW_DISABLED** = **0** --- Objects are displayed normally.
 
 - **DEBUG_DRAW_UNSHADED** = **1** --- Objects are displayed without light information.
 
-- **DEBUG_DRAW_OVERDRAW** = **2** --- Objected are displayed semi-transparent with additive blending so you can see where they intersect.
+- **DEBUG_DRAW_OVERDRAW** = **3** --- Objected are displayed semi-transparent with additive blending so you can see where they intersect.
 
-- **DEBUG_DRAW_WIREFRAME** = **3** --- Objects are displayed in wireframe style.
+- **DEBUG_DRAW_WIREFRAME** = **4** --- Objects are displayed in wireframe style.
+
+- **DEBUG_DRAW_GI_PROBE_ALBEDO** = **6**
+
+- **DEBUG_DRAW_GI_PROBE_LIGHTING** = **7**
+
+- **DEBUG_DRAW_GI_PROBE_EMISSION** = **8**
+
+- **DEBUG_DRAW_SHADOW_ATLAS** = **9**
+
+- **DEBUG_DRAW_DIRECTIONAL_SHADOW_ATLAS** = **10**
+
+- **DEBUG_DRAW_SCENE_LUMINANCE** = **11**
+
+- **DEBUG_DRAW_SSAO** = **12**
 
 ----
 
@@ -317,28 +339,6 @@ enum **MSAA**:
 
 ----
 
-.. _enum_Viewport_Usage:
-
-.. _class_Viewport_constant_USAGE_2D:
-
-.. _class_Viewport_constant_USAGE_2D_NO_SAMPLING:
-
-.. _class_Viewport_constant_USAGE_3D:
-
-.. _class_Viewport_constant_USAGE_3D_NO_EFFECTS:
-
-enum **Usage**:
-
-- **USAGE_2D** = **0** --- Allocates all buffers needed for drawing 2D scenes. This takes less VRAM than the 3D usage modes.
-
-- **USAGE_2D_NO_SAMPLING** = **1** --- Allocates buffers needed for 2D scenes without allocating a buffer for screen copy. Accordingly, you cannot read from the screen. Of the :ref:`Usage<enum_Viewport_Usage>` types, this requires the least VRAM.
-
-- **USAGE_3D** = **2** --- Allocates full buffers for drawing 3D scenes and all 3D effects including buffers needed for 2D scenes and effects.
-
-- **USAGE_3D_NO_EFFECTS** = **3** --- Allocates buffers needed for drawing 3D scenes. But does not allocate buffers needed for reading from the screen and post-processing effects. Saves some VRAM.
-
-----
-
 .. _enum_Viewport_ClearMode:
 
 .. _class_Viewport_constant_CLEAR_MODE_ALWAYS:
@@ -354,6 +354,54 @@ enum **ClearMode**:
 - **CLEAR_MODE_NEVER** = **1** --- Never clear the render target.
 
 - **CLEAR_MODE_ONLY_NEXT_FRAME** = **2** --- Clear the render target next frame, then switch to :ref:`CLEAR_MODE_NEVER<class_Viewport_constant_CLEAR_MODE_NEVER>`.
+
+----
+
+.. _enum_Viewport_DefaultCanvasItemTextureFilter:
+
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST:
+
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_LINEAR:
+
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS:
+
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS:
+
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX:
+
+enum **DefaultCanvasItemTextureFilter**:
+
+- **DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST** = **0**
+
+- **DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_LINEAR** = **1**
+
+- **DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS** = **2**
+
+- **DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS** = **3**
+
+- **DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX** = **4**
+
+----
+
+.. _enum_Viewport_DefaultCanvasItemTextureRepeat:
+
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_DISABLED:
+
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_ENABLED:
+
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MIRROR:
+
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MAX:
+
+enum **DefaultCanvasItemTextureRepeat**:
+
+- **DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_DISABLED** = **0**
+
+- **DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_ENABLED** = **1**
+
+- **DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MIRROR** = **2**
+
+- **DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MAX** = **3**
 
 Property Descriptions
 ---------------------
@@ -406,6 +454,34 @@ If ``true``, the viewport will process 3D audio streams.
 
 ----
 
+.. _class_Viewport_property_canvas_item_default_texture_filter:
+
+- :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` **canvas_item_default_texture_filter**
+
++-----------+-----------------------------------------------+
+| *Default* | ``1``                                         |
++-----------+-----------------------------------------------+
+| *Setter*  | set_default_canvas_item_texture_filter(value) |
++-----------+-----------------------------------------------+
+| *Getter*  | get_default_canvas_item_texture_filter()      |
++-----------+-----------------------------------------------+
+
+----
+
+.. _class_Viewport_property_canvas_item_default_texture_repeat:
+
+- :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` **canvas_item_default_texture_repeat**
+
++-----------+-----------------------------------------------+
+| *Default* | ``0``                                         |
++-----------+-----------------------------------------------+
+| *Setter*  | set_default_canvas_item_texture_repeat(value) |
++-----------+-----------------------------------------------+
+| *Getter*  | get_default_canvas_item_texture_repeat()      |
++-----------+-----------------------------------------------+
+
+----
+
 .. _class_Viewport_property_canvas_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **canvas_transform**
@@ -433,22 +509,6 @@ The canvas transform of the viewport, useful for changing the on-screen position
 +-----------+-----------------------+
 
 The overlay mode for test rendered geometry in debug purposes.
-
-----
-
-.. _class_Viewport_property_disable_3d:
-
-- :ref:`bool<class_bool>` **disable_3d**
-
-+-----------+-----------------------+
-| *Default* | ``false``             |
-+-----------+-----------------------+
-| *Setter*  | set_disable_3d(value) |
-+-----------+-----------------------+
-| *Getter*  | is_3d_disabled()      |
-+-----------+-----------------------+
-
-If ``true``, the viewport will disable 3D rendering. For actual disabling use ``usage``.
 
 ----
 
@@ -509,38 +569,6 @@ If ``true``, the GUI controls on the viewport will lay pixel perfectly.
 +-----------+---------------------------------+
 | *Getter*  | is_handling_input_locally()     |
 +-----------+---------------------------------+
-
-----
-
-.. _class_Viewport_property_hdr:
-
-- :ref:`bool<class_bool>` **hdr**
-
-+-----------+----------------+
-| *Default* | ``true``       |
-+-----------+----------------+
-| *Setter*  | set_hdr(value) |
-+-----------+----------------+
-| *Getter*  | get_hdr()      |
-+-----------+----------------+
-
-If ``true``, the viewport rendering will receive benefits from High Dynamic Range algorithm. High Dynamic Range allows the viewport to receive values that are outside the 0-1 range. In Godot HDR uses 16 bits, meaning it does not store the full range of a floating point number.
-
-----
-
-.. _class_Viewport_property_keep_3d_linear:
-
-- :ref:`bool<class_bool>` **keep_3d_linear**
-
-+-----------+---------------------------+
-| *Default* | ``false``                 |
-+-----------+---------------------------+
-| *Setter*  | set_keep_3d_linear(value) |
-+-----------+---------------------------+
-| *Getter*  | get_keep_3d_linear()      |
-+-----------+---------------------------+
-
-If ``true``, the result after 3D rendering will not have a linear to sRGB color conversion applied. This is important when the viewport is used as a render target where the result is used as a texture on a 3D object rendered in another viewport. It is also important if the viewport is used to create data that is not color based (noise, heightmaps, pickmaps, etc.). Do not enable this when the viewport is used as a texture on a 2D object or if the viewport is your final output.
 
 ----
 
@@ -637,22 +665,6 @@ The clear mode when viewport used as a render target.
 +-----------+------------------------+
 
 The update mode when viewport used as a render target.
-
-----
-
-.. _class_Viewport_property_render_target_v_flip:
-
-- :ref:`bool<class_bool>` **render_target_v_flip**
-
-+-----------+------------------+
-| *Default* | ``false``        |
-+-----------+------------------+
-| *Setter*  | set_vflip(value) |
-+-----------+------------------+
-| *Getter*  | get_vflip()      |
-+-----------+------------------+
-
-If ``true``, the result of rendering will be flipped vertically.
 
 ----
 
@@ -786,22 +798,6 @@ If ``true``, the viewport should render its background as transparent.
 
 ----
 
-.. _class_Viewport_property_usage:
-
-- :ref:`Usage<enum_Viewport_Usage>` **usage**
-
-+-----------+------------------+
-| *Default* | ``2``            |
-+-----------+------------------+
-| *Setter*  | set_usage(value) |
-+-----------+------------------+
-| *Getter*  | get_usage()      |
-+-----------+------------------+
-
-The rendering mode of viewport.
-
-----
-
 .. _class_Viewport_property_world:
 
 - :ref:`World<class_World>` **world**
@@ -909,7 +905,7 @@ Returns the size override set with :ref:`set_size_override<class_Viewport_method
 
 Returns the viewport's texture.
 
-**Note:** Due to the way OpenGL works, the resulting :ref:`ViewportTexture<class_ViewportTexture>` is flipped vertically. You can use :ref:`Image.flip_y<class_Image_method_flip_y>` on the result of :ref:`Texture.get_data<class_Texture_method_get_data>` to flip it back, for example:
+**Note:** Due to the way OpenGL works, the resulting :ref:`ViewportTexture<class_ViewportTexture>` is flipped vertically. You can use :ref:`Image.flip_y<class_Image_method_flip_y>` on the result of :ref:`Texture2D.get_data<class_Texture2D_method_get_data>` to flip it back, for example:
 
 ::
 

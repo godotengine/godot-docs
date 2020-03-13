@@ -43,11 +43,11 @@ Properties
 Methods
 -------
 
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_current_dependencies<class_GDNativeLibrary_method_get_current_dependencies>` **(** **)** const |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_current_library_path<class_GDNativeLibrary_method_get_current_library_path>` **(** **)** const |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_current_dependencies<class_GDNativeLibrary_method_get_current_dependencies>` **(** **)** const |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_current_library_path<class_GDNativeLibrary_method_get_current_library_path>` **(** **)** const |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -141,7 +141,7 @@ Method Descriptions
 
 .. _class_GDNativeLibrary_method_get_current_dependencies:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_current_dependencies** **(** **)** const
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_current_dependencies** **(** **)** const
 
 Returns paths to all dependency libraries for the current platform and architecture.
 

@@ -21,28 +21,28 @@ OGG Vorbis audio stream driver.
 Properties
 ----------
 
-+-------------------------------------------+---------------------------------------------------------------------+-----------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data<class_AudioStreamOGGVorbis_property_data>`               | ``PoolByteArray(  )`` |
-+-------------------------------------------+---------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                   | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`               | ``false``             |
-+-------------------------------------------+---------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                 | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` | ``0.0``               |
-+-------------------------------------------+---------------------------------------------------------------------+-----------------------+
++-----------------------------------------------+---------------------------------------------------------------------+-------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`data<class_AudioStreamOGGVorbis_property_data>`               | ``PackedByteArray(  )`` |
++-----------------------------------------------+---------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`               | ``false``               |
++-----------------------------------------------+---------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                     | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` | ``0.0``                 |
++-----------------------------------------------+---------------------------------------------------------------------+-------------------------+
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioStreamOGGVorbis_property_data:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **data**
+- :ref:`PackedByteArray<class_PackedByteArray>` **data**
 
-+-----------+-----------------------+
-| *Default* | ``PoolByteArray(  )`` |
-+-----------+-----------------------+
-| *Setter*  | set_data(value)       |
-+-----------+-----------------------+
-| *Getter*  | get_data()            |
-+-----------+-----------------------+
++-----------+-------------------------+
+| *Default* | ``PackedByteArray(  )`` |
++-----------+-------------------------+
+| *Setter*  | set_data(value)         |
++-----------+-------------------------+
+| *Getter*  | get_data()              |
++-----------+-------------------------+
 
 Contains the audio data in bytes.
 

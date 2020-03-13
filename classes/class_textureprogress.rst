@@ -42,11 +42,11 @@ Properties
 +----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
 | :ref:`int<class_int>`                        | :ref:`stretch_margin_top<class_TextureProgress_property_stretch_margin_top>`       | ``0``                   |
 +----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`texture_over<class_TextureProgress_property_texture_over>`                   |                         |
+| :ref:`Texture2D<class_Texture2D>`            | :ref:`texture_over<class_TextureProgress_property_texture_over>`                   |                         |
 +----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`texture_progress<class_TextureProgress_property_texture_progress>`           |                         |
+| :ref:`Texture2D<class_Texture2D>`            | :ref:`texture_progress<class_TextureProgress_property_texture_progress>`           |                         |
 +----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`texture_under<class_TextureProgress_property_texture_under>`                 |                         |
+| :ref:`Texture2D<class_Texture2D>`            | :ref:`texture_under<class_TextureProgress_property_texture_under>`                 |                         |
 +----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`                    | :ref:`tint_over<class_TextureProgress_property_tint_over>`                         | ``Color( 1, 1, 1, 1 )`` |
 +----------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
@@ -258,7 +258,7 @@ The height of the 9-patch's top row.
 
 .. _class_TextureProgress_property_texture_over:
 
-- :ref:`Texture<class_Texture>` **texture_over**
+- :ref:`Texture2D<class_Texture2D>` **texture_over**
 
 +----------+-------------------------+
 | *Setter* | set_over_texture(value) |
@@ -266,13 +266,13 @@ The height of the 9-patch's top row.
 | *Getter* | get_over_texture()      |
 +----------+-------------------------+
 
-:ref:`Texture<class_Texture>` that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of :ref:`texture_progress<class_TextureProgress_property_texture_progress>`.
+:ref:`Texture2D<class_Texture2D>` that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of :ref:`texture_progress<class_TextureProgress_property_texture_progress>`.
 
 ----
 
 .. _class_TextureProgress_property_texture_progress:
 
-- :ref:`Texture<class_Texture>` **texture_progress**
+- :ref:`Texture2D<class_Texture2D>` **texture_progress**
 
 +----------+-----------------------------+
 | *Setter* | set_progress_texture(value) |
@@ -280,7 +280,7 @@ The height of the 9-patch's top row.
 | *Getter* | get_progress_texture()      |
 +----------+-----------------------------+
 
-:ref:`Texture<class_Texture>` that clips based on the node's ``value`` and :ref:`fill_mode<class_TextureProgress_property_fill_mode>`. As ``value`` increased, the texture fills up. It shows entirely when ``value`` reaches ``max_value``. It doesn't show at all if ``value`` is equal to ``min_value``.
+:ref:`Texture2D<class_Texture2D>` that clips based on the node's ``value`` and :ref:`fill_mode<class_TextureProgress_property_fill_mode>`. As ``value`` increased, the texture fills up. It shows entirely when ``value`` reaches ``max_value``. It doesn't show at all if ``value`` is equal to ``min_value``.
 
 The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.min_value<class_Range_property_min_value>`, :ref:`Range.max_value<class_Range_property_max_value>`.
 
@@ -288,7 +288,7 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 
 .. _class_TextureProgress_property_texture_under:
 
-- :ref:`Texture<class_Texture>` **texture_under**
+- :ref:`Texture2D<class_Texture2D>` **texture_under**
 
 +----------+--------------------------+
 | *Setter* | set_under_texture(value) |
@@ -296,7 +296,7 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 | *Getter* | get_under_texture()      |
 +----------+--------------------------+
 
-:ref:`Texture<class_Texture>` that draws under the progress bar. The bar's background.
+:ref:`Texture2D<class_Texture2D>` that draws under the progress bar. The bar's background.
 
 ----
 

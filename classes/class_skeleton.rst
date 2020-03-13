@@ -22,6 +22,13 @@ The overall transform of a bone with respect to the skeleton is determined by th
 
 Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it not the actual global/world transform of the bone.
 
+Properties
+----------
+
++-------------------------+-------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>` | :ref:`animate_physical_bones<class_Skeleton_property_animate_physical_bones>` | ``true`` |
++-------------------------+-------------------------------------------------------------------------------+----------+
+
 Methods
 -------
 
@@ -87,6 +94,21 @@ Constants
 .. _class_Skeleton_constant_NOTIFICATION_UPDATE_SKELETON:
 
 - **NOTIFICATION_UPDATE_SKELETON** = **50**
+
+Property Descriptions
+---------------------
+
+.. _class_Skeleton_property_animate_physical_bones:
+
+- :ref:`bool<class_bool>` **animate_physical_bones**
+
++-----------+-----------------------------------+
+| *Default* | ``true``                          |
++-----------+-----------------------------------+
+| *Setter*  | set_animate_physical_bones(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_animate_physical_bones()      |
++-----------+-----------------------------------+
 
 Method Descriptions
 -------------------

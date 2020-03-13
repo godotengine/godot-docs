@@ -23,31 +23,31 @@ The main difference between a ``ConvexPolygonShape2D`` and a :ref:`ConcavePolygo
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------+--------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` | ``PoolVector2Array(  )`` |
-+-------------------------------------------------+-----------------------------------------------------------+--------------------------+
++-----------------------------------------------------+-----------------------------------------------------------+----------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` | ``PackedVector2Array(  )`` |
++-----------------------------------------------------+-----------------------------------------------------------+----------------------------+
 
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` point_cloud **)** |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)** |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
 .. _class_ConvexPolygonShape2D_property_points:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **points**
 
-+-----------+--------------------------+
-| *Default* | ``PoolVector2Array(  )`` |
-+-----------+--------------------------+
-| *Setter*  | set_points(value)        |
-+-----------+--------------------------+
-| *Getter*  | get_points()             |
-+-----------+--------------------------+
++-----------+----------------------------+
+| *Default* | ``PackedVector2Array(  )`` |
++-----------+----------------------------+
+| *Setter*  | set_points(value)          |
++-----------+----------------------------+
+| *Getter*  | get_points()               |
++-----------+----------------------------+
 
 The polygon's list of vertices. Can be in either clockwise or counterclockwise order.
 
@@ -56,7 +56,7 @@ Method Descriptions
 
 .. _class_ConvexPolygonShape2D_method_set_point_cloud:
 
-- void **set_point_cloud** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` point_cloud **)**
+- void **set_point_cloud** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)**
 
 Based on the set of points provided, this creates and assigns the :ref:`points<class_ConvexPolygonShape2D_property_points>` property using the convex hull algorithm. Removing all unneeded points. See :ref:`Geometry.convex_hull_2d<class_Geometry_method_convex_hull_2d>` for details.
 
