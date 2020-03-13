@@ -98,13 +98,13 @@ Methods
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`clear<class_Dictionary_method_clear>` **(** **)**                                                                           |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>` **(** :ref:`bool<class_bool>` deep=False **)**                                |
+| :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>` **(** :ref:`bool<class_bool>` deep=false **)**                                |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`empty<class_Dictionary_method_empty>` **(** **)**                                                                           |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`erase<class_Dictionary_method_erase>` **(** :ref:`Variant<class_Variant>` key **)**                                         |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=Null **)** |
+| :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)** |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>` **(** :ref:`Variant<class_Variant>` key **)**                                             |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -132,7 +132,7 @@ Clear the dictionary, removing all key/value pairs.
 
 .. _class_Dictionary_method_duplicate:
 
-- :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=False **)**
+- :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=false **)**
 
 Creates a copy of the dictionary, and returns it.
 
@@ -156,7 +156,7 @@ Erase a dictionary key/value pair by key. Returns ``true`` if the given key was 
 
 .. _class_Dictionary_method_get:
 
-- :ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=Null **)**
+- :ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)**
 
 Returns the current value for the specified key in the ``Dictionary``. If the key does not exist, the method returns the value of the optional default argument, or ``null`` if it is omitted.
 

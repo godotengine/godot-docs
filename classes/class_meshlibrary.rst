@@ -132,9 +132,7 @@ Returns the transform applied to the item's navigation mesh.
 
 - :ref:`Texture<class_Texture>` **get_item_preview** **(** :ref:`int<class_int>` id **)** const
 
-Returns a generated item preview (a 3D rendering in isometric perspective).
-
-**Note:** Since item previews are only generated in an editor context, this function will return an empty :ref:`Texture<class_Texture>` in a running project.
+When running in the editor, returns a generated item preview (a 3D rendering in isometric perspective). When used in a running project, returns the manually-defined item preview which can be set using :ref:`set_item_preview<class_MeshLibrary_method_set_item_preview>`. Returns an empty :ref:`Texture<class_Texture>` if no preview was manually set in a running project.
 
 ----
 

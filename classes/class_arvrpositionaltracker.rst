@@ -50,6 +50,8 @@ Methods
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                              | :ref:`get_position<class_ARVRPositionalTracker_method_get_position>` **(** **)** const                                                     |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`get_tracker_id<class_ARVRPositionalTracker_method_get_tracker_id>` **(** **)** const                                                 |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`get_tracks_orientation<class_ARVRPositionalTracker_method_get_tracks_orientation>` **(** **)** const                                 |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`get_tracks_position<class_ARVRPositionalTracker_method_get_tracks_position>` **(** **)** const                                       |
@@ -143,6 +145,14 @@ Returns the controller's orientation matrix.
 - :ref:`Vector3<class_Vector3>` **get_position** **(** **)** const
 
 Returns the world-space controller position.
+
+----
+
+.. _class_ARVRPositionalTracker_method_get_tracker_id:
+
+- :ref:`int<class_int>` **get_tracker_id** **(** **)** const
+
+Returns the internal tracker ID. This uniquely identifies the tracker per tracker type and matches the ID you need to specify for nodes such as the :ref:`ARVRController<class_ARVRController>` and :ref:`ARVRAnchor<class_ARVRAnchor>` nodes.
 
 ----
 

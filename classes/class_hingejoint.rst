@@ -275,11 +275,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flag<enum_HingeJoint_Flag>` flag **)** const
 
+Returns the value of the specified flag.
+
 ----
 
 .. _class_HingeJoint_method_get_param:
 
 - :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint_Param>` param **)** const
+
+Returns the value of the specified parameter.
 
 ----
 
@@ -287,9 +291,13 @@ Method Descriptions
 
 - void **set_flag** **(** :ref:`Flag<enum_HingeJoint_Flag>` flag, :ref:`bool<class_bool>` enabled **)**
 
+If ``true``, enables the specified flag.
+
 ----
 
 .. _class_HingeJoint_method_set_param:
 
 - void **set_param** **(** :ref:`Param<enum_HingeJoint_Param>` param, :ref:`float<class_float>` value **)**
+
+Sets the value of the specified parameter.
 

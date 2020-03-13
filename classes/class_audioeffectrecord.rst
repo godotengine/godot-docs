@@ -11,7 +11,12 @@ AudioEffectRecord
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Audio effect used for recording sound from a microphone.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/audio/recording_with_microphone`
 
 Properties
 ----------
@@ -46,6 +51,8 @@ Property Descriptions
 | *Getter*  | get_format()      |
 +-----------+-------------------+
 
+Specifies the format in which the sample will be recorded. See :ref:`Format<enum_AudioStreamSample_Format>` for available formats.
+
 Method Descriptions
 -------------------
 
@@ -53,15 +60,21 @@ Method Descriptions
 
 - :ref:`AudioStreamSample<class_AudioStreamSample>` **get_recording** **(** **)** const
 
+Returns the recorded sample.
+
 ----
 
 .. _class_AudioEffectRecord_method_is_recording_active:
 
 - :ref:`bool<class_bool>` **is_recording_active** **(** **)** const
 
+Returns whether the recording is active or not.
+
 ----
 
 .. _class_AudioEffectRecord_method_set_recording_active:
 
 - void **set_recording_active** **(** :ref:`bool<class_bool>` record **)**
+
+If ``true``, the sound will be recorded. Note that restarting the recording will remove the previously recorded sample.
 

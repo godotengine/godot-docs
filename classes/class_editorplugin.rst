@@ -75,7 +75,7 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorInterface<class_EditorInterface>`       | :ref:`get_editor_interface<class_EditorPlugin_method_get_editor_interface>` **(** **)**                                                                                                                                                |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                         | :ref:`get_plugin_icon<class_EditorPlugin_method_get_plugin_icon>` **(** **)** virtual                                                                                                                                                  |
+| :ref:`Texture<class_Texture>`                       | :ref:`get_plugin_icon<class_EditorPlugin_method_get_plugin_icon>` **(** **)** virtual                                                                                                                                                  |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`get_plugin_name<class_EditorPlugin_method_get_plugin_name>` **(** **)** virtual                                                                                                                                                  |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -495,13 +495,31 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` object that gives you 
 
 .. _class_EditorPlugin_method_get_plugin_icon:
 
-- :ref:`Object<class_Object>` **get_plugin_icon** **(** **)** virtual
+- :ref:`Texture<class_Texture>` **get_plugin_icon** **(** **)** virtual
+
+Override this method in your plugin to return a :ref:`Texture<class_Texture>` in order to give it an icon.
+
+For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.
+
+Ideally, the plugin icon should be white with a transparent background and 16x16 pixels in size.
+
+::
+
+    func get_plugin_icon():
+        # You can use a custom icon:
+        return preload("res://addons/my_plugin/my_plugin_icon.svg")
+        # Or use a built-in icon:
+        return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
 
 ----
 
 .. _class_EditorPlugin_method_get_plugin_name:
 
 - :ref:`String<class_String>` **get_plugin_name** **(** **)** virtual
+
+Override this method in your plugin to provide the name of the plugin when displayed in the Godot editor.
+
+For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.
 
 ----
 

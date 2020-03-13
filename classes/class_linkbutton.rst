@@ -84,6 +84,8 @@ Property Descriptions
 | *Getter*  | get_text()      |
 +-----------+-----------------+
 
+The button's text that will be displayed inside the button's area.
+
 ----
 
 .. _class_LinkButton_property_underline:
@@ -97,4 +99,6 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_underline_mode()      |
 +-----------+---------------------------+
+
+Determines when to show the underline. See :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` for options.
 

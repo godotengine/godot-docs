@@ -127,8 +127,6 @@ Theme Properties
 +---------------------------------+------------------------------+------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | cursor                       |                              |
 +---------------------------------+------------------------------+------------------------------+
-| :ref:`Color<class_Color>`       | cursor_color                 | Color( 0, 0, 0, 1 )          |
-+---------------------------------+------------------------------+------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | cursor_unfocused             |                              |
 +---------------------------------+------------------------------+------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | custom_button                |                              |
@@ -168,8 +166,6 @@ Theme Properties
 | :ref:`StyleBox<class_StyleBox>` | selected                     |                              |
 +---------------------------------+------------------------------+------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | selected_focus               |                              |
-+---------------------------------+------------------------------+------------------------------+
-| :ref:`Color<class_Color>`       | selection_color              | Color( 0.1, 0.1, 1, 0.8 )    |
 +---------------------------------+------------------------------+------------------------------+
 | :ref:`Color<class_Color>`       | title_button_color           | Color( 0.88, 0.88, 0.88, 1 ) |
 +---------------------------------+------------------------------+------------------------------+
@@ -258,6 +254,8 @@ Emitted when an item is collapsed by a click on the folding arrow.
 .. _class_Tree_signal_item_custom_button_pressed:
 
 - **item_custom_button_pressed** **(** **)**
+
+Emitted when a custom button is pressed (i.e. in a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell).
 
 ----
 

@@ -13,7 +13,7 @@ InputEventGesture
 
 **Inherited By:** :ref:`InputEventMagnifyGesture<class_InputEventMagnifyGesture>`, :ref:`InputEventPanGesture<class_InputEventPanGesture>`
 
-
+Base class for touch control gestures.
 
 Properties
 ----------
@@ -36,4 +36,6 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_position()      |
 +-----------+---------------------+
+
+The local gesture position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` that received this gesture.
 

@@ -9,7 +9,7 @@
 Marshalls
 =========
 
-**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Object<class_Object>`
 
 Data transformation (marshalling) and encoding helpers.
 

@@ -46,7 +46,7 @@ Properties
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`JavaScript<class_JavaScript>`                                       | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                           |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Reference<class_Reference>`                                         | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
+| :ref:`Marshalls<class_Marshalls>`                                         | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>` | :ref:`NavigationMeshGenerator<class_@GlobalScope_property_NavigationMeshGenerator>` |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -2311,7 +2311,7 @@ The :ref:`JavaScript<class_JavaScript>` singleton.
 
 .. _class_@GlobalScope_property_Marshalls:
 
-- :ref:`Reference<class_Reference>` **Marshalls**
+- :ref:`Marshalls<class_Marshalls>` **Marshalls**
 
 The :ref:`Marshalls<class_Marshalls>` singleton.
 

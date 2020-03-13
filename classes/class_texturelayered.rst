@@ -18,7 +18,7 @@ Base class for 3D texture types.
 Description
 -----------
 
-Base class for :ref:`Texture3D<class_Texture3D>` and :ref:`TextureArray<class_TextureArray>`. Cannot be used directly.
+Base class for :ref:`Texture3D<class_Texture3D>` and :ref:`TextureArray<class_TextureArray>`. Cannot be used directly, but contains all the functions necessary for accessing and using :ref:`Texture3D<class_Texture3D>` and :ref:`TextureArray<class_TextureArray>`. Data is set on a per-layer basis. For :ref:`Texture3D<class_Texture3D>`\ s, the layer sepcifies the depth or Z-index, they can be treated as a bunch of 2D slices. Similarly, for :ref:`TextureArray<class_TextureArray>`\ s, the layer specifies the array layer.
 
 Properties
 ----------
@@ -65,13 +65,13 @@ Enumerations
 
 enum **Flags**:
 
-- **FLAG_MIPMAPS** = **1**
+- **FLAG_MIPMAPS** = **1** --- Texture will generate mipmaps on creation.
 
-- **FLAG_REPEAT** = **2**
+- **FLAG_REPEAT** = **2** --- Texture will repeat when UV used is outside the 0-1 range.
 
-- **FLAG_FILTER** = **4**
+- **FLAG_FILTER** = **4** --- Use filtering when reading from texture. Filtering smooths out pixels. Turning filtering off is slightly faster and more appropriate when you need access to individual pixels.
 
-- **FLAGS_DEFAULT** = **4**
+- **FLAGS_DEFAULT** = **4** --- Equivalent to :ref:`FLAG_FILTER<class_TextureLayered_constant_FLAG_FILTER>`.
 
 Property Descriptions
 ---------------------
@@ -83,6 +83,8 @@ Property Descriptions
 +-----------+--------------------------------------------------------------------------------+
 | *Default* | ``{"depth": 0,"flags": 4,"format": 37,"height": 0,"layers": [  ],"width": 0}`` |
 +-----------+--------------------------------------------------------------------------------+
+
+Returns a dictionary with all the data used by this texture.
 
 ----
 
@@ -98,6 +100,8 @@ Property Descriptions
 | *Getter*  | get_flags()      |
 +-----------+------------------+
 
+Specifies which :ref:`Flags<enum_TextureLayered_Flags>` apply to this texture.
+
 Method Descriptions
 -------------------
 
@@ -105,11 +109,15 @@ Method Descriptions
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=4 **)**
 
+Creates the :ref:`Texture3D<class_Texture3D>` or :ref:`TextureArray<class_TextureArray>` with specified ``width``, ``height``, and ``depth``. See :ref:`Format<enum_Image_Format>` for ``format`` options. See :ref:`Flags<enum_TextureLayered_Flags>` enumerator for ``flags`` options.
+
 ----
 
 .. _class_TextureLayered_method_get_depth:
 
 - :ref:`int<class_int>` **get_depth** **(** **)** const
+
+Returns the depth of the texture. Depth is the 3rd dimension (typically Z-axis).
 
 ----
 
@@ -117,11 +125,15 @@ Method Descriptions
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
+Returns the current format being used by this texture. See :ref:`Format<enum_Image_Format>` for details.
+
 ----
 
 .. _class_TextureLayered_method_get_height:
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
+
+Returns the height of the texture. Height is typically represented by the Y-axis.
 
 ----
 
@@ -129,11 +141,15 @@ Method Descriptions
 
 - :ref:`Image<class_Image>` **get_layer_data** **(** :ref:`int<class_int>` layer **)** const
 
+Returns an :ref:`Image<class_Image>` resource with the data from specified ``layer``.
+
 ----
 
 .. _class_TextureLayered_method_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
+
+Returns the width of the texture. Width is typically represented by the X-axis.
 
 ----
 
@@ -141,9 +157,13 @@ Method Descriptions
 
 - void **set_data_partial** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` x_offset, :ref:`int<class_int>` y_offset, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap=0 **)**
 
+Partially sets the data for a specified ``layer`` by overwriting using the data of the specified ``image``. ``x_offset`` and ``y_offset`` determine where the :ref:`Image<class_Image>` is "stamped" over the texture. The ``image`` must fit within the texture.
+
 ----
 
 .. _class_TextureLayered_method_set_layer_data:
 
 - void **set_layer_data** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**
+
+Sets the data for the specified layer. Data takes the form of a 2-dimensional :ref:`Image<class_Image>` resource.
 

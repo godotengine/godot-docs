@@ -323,15 +323,21 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** const
 
+Returns the value of the specified flag.
+
 ----
 
 .. _class_SpriteBase3D_method_get_item_rect:
 
 - :ref:`Rect2<class_Rect2>` **get_item_rect** **(** **)** const
 
+Returns the rectangle representing this sprite.
+
 ----
 
 .. _class_SpriteBase3D_method_set_draw_flag:
 
 - void **set_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
+
+If ``true``, the specified flag will be enabled.
 

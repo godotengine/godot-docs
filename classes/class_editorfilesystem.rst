@@ -143,3 +143,5 @@ Update a file information. Call this if an external program (not Godot) modified
 
 - void **update_script_classes** **(** **)**
 
+Scans the script files and updates the list of custom class names.
+

@@ -18,6 +18,8 @@ Description
 
 An animation player is used for general-purpose playback of :ref:`Animation<class_Animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.
 
+``AnimationPlayer`` is more suited than :ref:`Tween<class_Tween>` for animations where you know the final values in advance. For example, fading a screen in and out is more easily done with an ``AnimationPlayer`` node thanks to the animation tools provided by the editor. That particular example can also be implemented with a :ref:`Tween<class_Tween>` node, but it requires doing everything by code.
+
 Updating the target properties of animations occurs at process time.
 
 Tutorials

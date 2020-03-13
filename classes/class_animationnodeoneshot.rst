@@ -11,7 +11,12 @@ AnimationNodeOneShot
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Plays an animation once in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
+Description
+-----------
+
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. This node will execute a sub-animation and return once it finishes. Blend times for fading in and out can be customized, as well as filters.
 
 Tutorials
 ---------
@@ -74,6 +79,8 @@ Property Descriptions
 | *Getter*  | has_autorestart()      |
 +-----------+------------------------+
 
+If ``true``, the sub-animation will restart automatically after finishing.
+
 ----
 
 .. _class_AnimationNodeOneShot_property_autorestart_delay:
@@ -88,6 +95,8 @@ Property Descriptions
 | *Getter*  | get_autorestart_delay()      |
 +-----------+------------------------------+
 
+The delay after which the automatic restart is triggered, in seconds.
+
 ----
 
 .. _class_AnimationNodeOneShot_property_autorestart_random_delay:
@@ -101,6 +110,8 @@ Property Descriptions
 +-----------+-------------------------------------+
 | *Getter*  | get_autorestart_random_delay()      |
 +-----------+-------------------------------------+
+
+If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true``, a random additional delay (in seconds) between 0 and this value will be added to :ref:`autorestart_delay<class_AnimationNodeOneShot_property_autorestart_delay>`.
 
 ----
 

@@ -111,11 +111,15 @@ Returns the script's base type.
 
 - :ref:`Variant<class_Variant>` **get_property_default_value** **(** :ref:`String<class_String>` property **)**
 
+Returns the default value of the specified property.
+
 ----
 
 .. _class_Script_method_get_script_constant_map:
 
 - :ref:`Dictionary<class_Dictionary>` **get_script_constant_map** **(** **)**
+
+Returns a dictionary containing constant names and their values.
 
 ----
 
@@ -123,17 +127,23 @@ Returns the script's base type.
 
 - :ref:`Array<class_Array>` **get_script_method_list** **(** **)**
 
+Returns the list of methods in this ``Script``.
+
 ----
 
 .. _class_Script_method_get_script_property_list:
 
 - :ref:`Array<class_Array>` **get_script_property_list** **(** **)**
 
+Returns the list of properties in this ``Script``.
+
 ----
 
 .. _class_Script_method_get_script_signal_list:
 
 - :ref:`Array<class_Array>` **get_script_signal_list** **(** **)**
+
+Returns the list of user signals defined in this ``Script``.
 
 ----
 

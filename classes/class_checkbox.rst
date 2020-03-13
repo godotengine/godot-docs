@@ -11,12 +11,12 @@ CheckBox
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Binary choice user interface widget.
+Binary choice user interface widget. See also :ref:`CheckButton<class_CheckButton>`.
 
 Description
 -----------
 
-A checkbox allows the user to make a binary choice (choosing only one of two possible options).
+A checkbox allows the user to make a binary choice (choosing only one of two possible options). It's similar to :ref:`CheckButton<class_CheckButton>` in functionality, but it has a different apperance. To follow established UX patterns, it's recommended to use CheckBox when toggling it has **no** immediate effect on something. For instance, it should be used when toggling it will only do something once a confirmation button is pressed.
 
 Properties
 ----------

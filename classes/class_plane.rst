@@ -52,7 +52,7 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`get_any_point<class_Plane_method_get_any_point>` **(** **)**                                                                                                    |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_point<class_Plane_method_has_point>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=0.00001 **)**                             |
+| :ref:`bool<class_bool>`       | :ref:`has_point<class_Plane_method_has_point>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=1e-05 **)**                               |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`intersect_3<class_Plane_method_intersect_3>` **(** :ref:`Plane<class_Plane>` b, :ref:`Plane<class_Plane>` c **)**                                               |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -194,7 +194,7 @@ Returns a point on the plane.
 
 .. _class_Plane_method_has_point:
 
-- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=0.00001 **)**
+- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=1e-05 **)**
 
 Returns ``true`` if ``point`` is inside the plane (by a very minimum ``epsilon`` threshold).
 

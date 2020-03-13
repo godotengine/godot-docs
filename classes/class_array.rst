@@ -27,6 +27,14 @@ Generic array which can contain several elements of any type, accessible by a nu
     array[2] = "Three"
     print(array[-2]) # Three.
 
+Arrays can be concatenated using the ``+`` operator:
+
+::
+
+    var array1 = ["One", 2]
+    var array2 = [3, "Four"]
+    print(array1 + array2) # ["One", 2, 3, "Four"]
+
 Arrays are always passed by reference.
 
 Methods
@@ -51,15 +59,15 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>` | :ref:`back<class_Array_method_back>` **(** **)**                                                                                                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`bsearch<class_Array_method_bsearch>` **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=True **)**                                                                                  |
+| :ref:`int<class_int>`         | :ref:`bsearch<class_Array_method_bsearch>` **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=true **)**                                                                                  |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`bsearch_custom<class_Array_method_bsearch_custom>` **(** :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func, :ref:`bool<class_bool>` before=True **)** |
+| :ref:`int<class_int>`         | :ref:`bsearch_custom<class_Array_method_bsearch_custom>` **(** :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func, :ref:`bool<class_bool>` before=true **)** |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`clear<class_Array_method_clear>` **(** **)**                                                                                                                                                               |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`count<class_Array_method_count>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                                           |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`duplicate<class_Array_method_duplicate>` **(** :ref:`bool<class_bool>` deep=False **)**                                                                                                                    |
+| :ref:`Array<class_Array>`     | :ref:`duplicate<class_Array_method_duplicate>` **(** :ref:`bool<class_bool>` deep=false **)**                                                                                                                    |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`empty<class_Array_method_empty>` **(** **)**                                                                                                                                                               |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -101,7 +109,7 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`size<class_Array_method_size>` **(** **)**                                                                                                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`slice<class_Array_method_slice>` **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=False **)**                                      |
+| :ref:`Array<class_Array>`     | :ref:`slice<class_Array_method_slice>` **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=false **)**                                      |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`sort<class_Array_method_sort>` **(** **)**                                                                                                                                                                 |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -173,7 +181,7 @@ Returns the last element of the array, or ``null`` if the array is empty.
 
 .. _class_Array_method_bsearch:
 
-- :ref:`int<class_int>` **bsearch** **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=True **)**
+- :ref:`int<class_int>` **bsearch** **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=true **)**
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
@@ -183,7 +191,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 .. _class_Array_method_bsearch_custom:
 
-- :ref:`int<class_int>` **bsearch_custom** **(** :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func, :ref:`bool<class_bool>` before=True **)**
+- :ref:`int<class_int>` **bsearch_custom** **(** :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func, :ref:`bool<class_bool>` before=true **)**
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise.
 
@@ -209,7 +217,7 @@ Returns the number of times an element is in the array.
 
 .. _class_Array_method_duplicate:
 
-- :ref:`Array<class_Array>` **duplicate** **(** :ref:`bool<class_bool>` deep=False **)**
+- :ref:`Array<class_Array>` **duplicate** **(** :ref:`bool<class_bool>` deep=false **)**
 
 Returns a copy of the array.
 
@@ -386,7 +394,7 @@ Returns the number of elements in the array.
 
 .. _class_Array_method_slice:
 
-- :ref:`Array<class_Array>` **slice** **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=False **)**
+- :ref:`Array<class_Array>` **slice** **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end, :ref:`int<class_int>` step=1, :ref:`bool<class_bool>` deep=false **)**
 
 Duplicates the subset described in the function and returns it in an array, deeply copying the array if ``deep`` is ``true``. Lower and upper index are inclusive, with the ``step`` describing the change between indices while slicing.
 
@@ -398,7 +406,13 @@ Duplicates the subset described in the function and returns it in an array, deep
 
 Sorts the array.
 
-**Note:** strings are sorted in alphabetical, not natural order.
+**Note:** Strings are sorted in alphabetical order (as opposed to natural order). This may lead to unexpected behavior when sorting an array of strings ending with a sequence of numbers. Consider the following example:
+
+::
+
+    var strings = ["string1", "string2", "string10", "string11"]
+    strings.sort()
+    print(strings) # Prints [string1, string10, string11, string2]
 
 ----
 

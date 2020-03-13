@@ -108,15 +108,15 @@ enum **BakeMode**:
 
 enum **BakeError**:
 
-- **BAKE_ERROR_OK** = **0**
+- **BAKE_ERROR_OK** = **0** --- Baking was successful.
 
-- **BAKE_ERROR_NO_SAVE_PATH** = **1**
+- **BAKE_ERROR_NO_SAVE_PATH** = **1** --- Returns if no viable save path is found. This can happen where an :ref:`image_path<class_BakedLightmap_property_image_path>` is not specified or when the save location is invalid.
 
-- **BAKE_ERROR_NO_MESHES** = **2**
+- **BAKE_ERROR_NO_MESHES** = **2** --- Currently unused.
 
-- **BAKE_ERROR_CANT_CREATE_IMAGE** = **3**
+- **BAKE_ERROR_CANT_CREATE_IMAGE** = **3** --- Returns when the baker cannot save per-mesh textures to file.
 
-- **BAKE_ERROR_USER_ABORTED** = **4**
+- **BAKE_ERROR_USER_ABORTED** = **4** --- Returns if user cancels baking.
 
 Property Descriptions
 ---------------------
@@ -300,7 +300,7 @@ Method Descriptions
 
 - :ref:`BakeError<enum_BakedLightmap_BakeError>` **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
-Bakes the lightmaps within the currently edited scene.
+Bakes the lightmaps within the currently edited scene. Returns a :ref:`BakeError<enum_BakedLightmap_BakeError>` to signify if the bake was successful, or if unsuccessful, how the bake failed.
 
 ----
 

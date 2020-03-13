@@ -346,11 +346,15 @@ Method Descriptions
 
 - void **add_bone** **(** :ref:`NodePath<class_NodePath>` path, :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
 
+Adds a bone with the specified ``path`` and ``weights``.
+
 ----
 
 .. _class_Polygon2D_method_clear_bones:
 
 - void **clear_bones** **(** **)**
+
+Removes all bones from this ``Polygon2D``.
 
 ----
 
@@ -358,11 +362,15 @@ Method Descriptions
 
 - void **erase_bone** **(** :ref:`int<class_int>` index **)**
 
+Removes the specified bone from this ``Polygon2D``.
+
 ----
 
 .. _class_Polygon2D_method_get_bone_count:
 
 - :ref:`int<class_int>` **get_bone_count** **(** **)** const
+
+Returns the number of bones in this ``Polygon2D``.
 
 ----
 
@@ -370,11 +378,15 @@ Method Descriptions
 
 - :ref:`NodePath<class_NodePath>` **get_bone_path** **(** :ref:`int<class_int>` index **)** const
 
+Returns the path to the node associated with the specified bone.
+
 ----
 
 .. _class_Polygon2D_method_get_bone_weights:
 
 - :ref:`PoolRealArray<class_PoolRealArray>` **get_bone_weights** **(** :ref:`int<class_int>` index **)** const
+
+Returns the height values of the specified bone.
 
 ----
 
@@ -382,9 +394,13 @@ Method Descriptions
 
 - void **set_bone_path** **(** :ref:`int<class_int>` index, :ref:`NodePath<class_NodePath>` path **)**
 
+Sets the path to the node associated with the specified bone.
+
 ----
 
 .. _class_Polygon2D_method_set_bone_weights:
 
 - void **set_bone_weights** **(** :ref:`int<class_int>` index, :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
+
+Sets the weight values for the specified bone.
 

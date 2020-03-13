@@ -111,6 +111,8 @@ If ``true``, only edges that face up, relative to ``CollisionPolygon2D``'s rotat
 | *Getter*  | get_one_way_collision_margin()      |
 +-----------+-------------------------------------+
 
+The margin used for one-way collision (in pixels). Higher values will make the shape thicker, and work better for colliders that enter the polygon at a high velocity.
+
 ----
 
 .. _class_CollisionPolygon2D_property_polygon:

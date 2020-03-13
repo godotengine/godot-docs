@@ -734,7 +734,7 @@ Use ``get_tree().get_root().set_transparent_background(true)`` to disable main v
 
 **Note:** This property has no effect if **Project > Project Settings > Display > Window > Per-pixel transparency > Allowed** setting is disabled.
 
-**Note:** This property is implemented on Linux, macOS and Windows.
+**Note:** This property is implemented on HTML5, Linux, macOS and Windows.
 
 ----
 

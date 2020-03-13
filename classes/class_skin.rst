@@ -25,11 +25,15 @@ Methods
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_bind_count<class_Skin_method_get_bind_count>` **(** **)** const                                                                  |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`       | :ref:`get_bind_name<class_Skin_method_get_bind_name>` **(** :ref:`int<class_int>` bind_index **)** const                                   |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>` | :ref:`get_bind_pose<class_Skin_method_get_bind_pose>` **(** :ref:`int<class_int>` bind_index **)** const                                   |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_bind_bone<class_Skin_method_set_bind_bone>` **(** :ref:`int<class_int>` bind_index, :ref:`int<class_int>` bone **)**             |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_bind_count<class_Skin_method_set_bind_count>` **(** :ref:`int<class_int>` bind_count **)**                                       |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_bind_name<class_Skin_method_set_bind_name>` **(** :ref:`int<class_int>` bind_index, :ref:`String<class_String>` name **)**       |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_bind_pose<class_Skin_method_set_bind_pose>` **(** :ref:`int<class_int>` bind_index, :ref:`Transform<class_Transform>` pose **)** |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -61,6 +65,12 @@ Method Descriptions
 
 ----
 
+.. _class_Skin_method_get_bind_name:
+
+- :ref:`String<class_String>` **get_bind_name** **(** :ref:`int<class_int>` bind_index **)** const
+
+----
+
 .. _class_Skin_method_get_bind_pose:
 
 - :ref:`Transform<class_Transform>` **get_bind_pose** **(** :ref:`int<class_int>` bind_index **)** const
@@ -76,6 +86,12 @@ Method Descriptions
 .. _class_Skin_method_set_bind_count:
 
 - void **set_bind_count** **(** :ref:`int<class_int>` bind_count **)**
+
+----
+
+.. _class_Skin_method_set_bind_name:
+
+- void **set_bind_name** **(** :ref:`int<class_int>` bind_index, :ref:`String<class_String>` name **)**
 
 ----
 

@@ -18,6 +18,8 @@ Description
 
 Concave polygon shape resource, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or area. This shape is created by feeding a list of triangles.
 
+Note: when used for collision, ``ConcavePolygonShape`` is intended to work with static :ref:`PhysicsBody<class_PhysicsBody>` nodes like :ref:`StaticBody<class_StaticBody>` and will not work with :ref:`KinematicBody<class_KinematicBody>` or :ref:`RigidBody<class_RigidBody>` with a mode other than Static.
+
 Methods
 -------
 

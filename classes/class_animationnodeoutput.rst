@@ -11,7 +11,7 @@ AnimationNodeOutput
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+Generic output node to be added to :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
 Tutorials
 ---------

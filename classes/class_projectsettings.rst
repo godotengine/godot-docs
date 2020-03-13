@@ -3639,7 +3639,9 @@ Enables :ref:`Viewport.physics_object_picking<class_Viewport_property_physics_ob
 | *Default* | ``60`` |
 +-----------+--------+
 
-Frames per second used in the physics. Physics always needs a fixed amount of frames per second.
+The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run.
+
+**Note:** This property is only read when the project starts. To change the physics FPS at runtime, set :ref:`Engine.iterations_per_second<class_Engine_property_iterations_per_second>` instead.
 
 ----
 
@@ -3652,6 +3654,8 @@ Frames per second used in the physics. Physics always needs a fixed amount of fr
 +-----------+---------+
 
 Fix to improve physics jitter, specially on monitors where refresh rate is different than the physics FPS.
+
+**Note:** This property is only read when the project starts. To change the physics FPS at runtime, set :ref:`Engine.physics_jitter_fix<class_Engine_property_physics_jitter_fix>` instead.
 
 ----
 

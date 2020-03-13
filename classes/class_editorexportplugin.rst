@@ -11,7 +11,7 @@ EditorExportPlugin
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+A script that is executed when exporting projects.
 
 Methods
 -------
@@ -47,11 +47,15 @@ Method Descriptions
 
 - void **_export_begin** **(** :ref:`PoolStringArray<class_PoolStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** virtual
 
+Virtual method to be overridden by the user. It is called when the export starts and provides all information about the export.
+
 ----
 
 .. _class_EditorExportPlugin_method__export_end:
 
 - void **_export_end** **(** **)** virtual
+
+Virtual method to be overridden by the user. Called when the export is finished.
 
 ----
 

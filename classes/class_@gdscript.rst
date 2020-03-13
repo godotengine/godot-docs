@@ -688,11 +688,15 @@ Returns the Object that corresponds to ``instance_id``. All Objects have a uniqu
 
 - :ref:`float<class_float>` **inverse_lerp** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
 
-Returns a normalized value considering the given range.
+Returns a normalized value considering the given range. This is the opposite of :ref:`lerp<class_@GDScript_method_lerp>`.
 
 ::
 
-    inverse_lerp(3, 5, 4) # Returns 0.5
+    var middle = lerp(20, 30, 0.75)
+    # `middle` is now 27.5.
+    # Now, we pretend to have forgotten the original ratio and want to get it back.
+    var ratio = inverse_lerp(20, 30, 27.5)
+    # `ratio` is now 0.75.
 
 ----
 
@@ -755,7 +759,7 @@ Returns length of Variant ``var``. Length is the character count of String, elem
 
 - :ref:`Variant<class_Variant>` **lerp** **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` weight **)**
 
-Linearly interpolates between two values by a normalized value.
+Linearly interpolates between two values by a normalized value. This is the opposite of :ref:`inverse_lerp<class_@GDScript_method_inverse_lerp>`.
 
 If the ``from`` and ``to`` arguments are of type :ref:`int<class_int>` or :ref:`float<class_float>`, the return value is a :ref:`float<class_float>`.
 
@@ -774,7 +778,7 @@ If both are of the same vector type (:ref:`Vector2<class_Vector2>`, :ref:`Vector
 
 Linearly interpolates between two angles (in radians) by a normalized value.
 
-Similar to :ref:`lerp<class_@GDScript_method_lerp>` but interpolate correctly when the angles wrap around :ref:`TAU<class_@GDScript_constant_TAU>`.
+Similar to :ref:`lerp<class_@GDScript_method_lerp>`, but interpolates correctly when the angles wrap around :ref:`TAU<class_@GDScript_constant_TAU>`.
 
 ::
 
@@ -792,7 +796,14 @@ Similar to :ref:`lerp<class_@GDScript_method_lerp>` but interpolate correctly wh
 
 - :ref:`float<class_float>` **linear2db** **(** :ref:`float<class_float>` nrg **)**
 
-Converts from linear energy to decibels (audio).
+Converts from linear energy to decibels (audio). This can be used to implement volume sliders that behave as expected (since volume isn't linear). Example:
+
+::
+
+    # "Slider" refers to a node that inherits Range such as HSlider or VSlider.
+    # Its range must be configured to go from 0 to 1.
+    # Change the bus name if you'd like to change the volume of a specific bus only.
+    AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear2db($Slider.value))
 
 ----
 

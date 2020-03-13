@@ -28,7 +28,7 @@ An Animation resource contains data used to animate everything in the engine. An
     animation.track_insert_key(track_index, 0.0, 0)
     animation.track_insert_key(track_index, 0.5, 100)
 
-Animations are just data containers, and must be added to nodes such as an :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimationTreePlayer<class_AnimationTreePlayer>` to be played back.
+Animations are just data containers, and must be added to nodes such as an :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimationTreePlayer<class_AnimationTreePlayer>` to be played back. Animation tracks have different types, each with its own set of dedicated methods. Check :ref:`TrackType<enum_Animation_TrackType>` to see available types.
 
 Tutorials
 ---------
@@ -174,6 +174,8 @@ Signals
 
 - **tracks_changed** **(** **)**
 
+Emitted when there's a change in the list of tracks, e.g. tracks are added, moved or have changed paths.
+
 Enumerations
 ------------
 
@@ -199,11 +201,11 @@ enum **TrackType**:
 
 - **TYPE_METHOD** = **2** --- Method tracks call functions with given arguments per key.
 
-- **TYPE_BEZIER** = **3**
+- **TYPE_BEZIER** = **3** --- Bezier tracks are used to interpolate a value using custom curves. They can also be used to animate sub-properties of vectors and colors (e.g. alpha value of a :ref:`Color<class_Color>`).
 
-- **TYPE_AUDIO** = **4**
+- **TYPE_AUDIO** = **4** --- Audio tracks are used to play an audio stream with either type of :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`. The stream can be trimmed and previewed in the animation.
 
-- **TYPE_ANIMATION** = **5**
+- **TYPE_ANIMATION** = **5** --- Animation tracks play animations in other :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
 
 ----
 
@@ -243,7 +245,7 @@ enum **UpdateMode**:
 
 - **UPDATE_TRIGGER** = **2** --- Update at the keyframes.
 
-- **UPDATE_CAPTURE** = **3**
+- **UPDATE_CAPTURE** = **3** --- Same as linear interpolation, but also interpolates from the current value (i.e. dynamically at runtime) if the first key isn't at 0 seconds.
 
 Property Descriptions
 ---------------------
@@ -311,11 +313,15 @@ Adds a track to the Animation.
 
 - :ref:`String<class_String>` **animation_track_get_key_animation** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx **)** const
 
+Returns the animation name at the key identified by ``key_idx``. The ``track_idx`` must be the index of an Animation Track.
+
 ----
 
 .. _class_Animation_method_animation_track_insert_key:
 
 - :ref:`int<class_int>` **animation_track_insert_key** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`String<class_String>` animation **)**
+
+Inserts a key with value ``animation`` at the given ``time`` (in seconds). The ``track_idx`` must be the index of an Animation Track.
 
 ----
 
@@ -323,11 +329,17 @@ Adds a track to the Animation.
 
 - void **animation_track_set_key_animation** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`String<class_String>` animation **)**
 
+Sets the key identified by ``key_idx`` to value ``animation``. The ``track_idx`` must be the index of an Animation Track.
+
 ----
 
 .. _class_Animation_method_audio_track_get_key_end_offset:
 
 - :ref:`float<class_float>` **audio_track_get_key_end_offset** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx **)** const
+
+Returns the end offset of the key identified by ``key_idx``. The ``track_idx`` must be the index of an Audio Track.
+
+End offset is the number of seconds cut off at the ending of the audio stream.
 
 ----
 
@@ -335,11 +347,17 @@ Adds a track to the Animation.
 
 - :ref:`float<class_float>` **audio_track_get_key_start_offset** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx **)** const
 
+Returns the start offset of the key identified by ``key_idx``. The ``track_idx`` must be the index of an Audio Track.
+
+Start offset is the number of seconds cut off at the beginning of the audio stream.
+
 ----
 
 .. _class_Animation_method_audio_track_get_key_stream:
 
 - :ref:`Resource<class_Resource>` **audio_track_get_key_stream** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx **)** const
+
+Returns the audio stream of the key identified by ``key_idx``. The ``track_idx`` must be the index of an Audio Track.
 
 ----
 
@@ -347,11 +365,17 @@ Adds a track to the Animation.
 
 - :ref:`int<class_int>` **audio_track_insert_key** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`Resource<class_Resource>` stream, :ref:`float<class_float>` start_offset=0, :ref:`float<class_float>` end_offset=0 **)**
 
+Inserts an Audio Track key at the given ``time`` in seconds. The ``track_idx`` must be the index of an Audio Track.
+
+``stream`` is the :ref:`AudioStream<class_AudioStream>` resource to play. ``start_offset`` is the number of seconds cut off at the beginning of the audio stream, while ``end_offset`` is at the ending.
+
 ----
 
 .. _class_Animation_method_audio_track_set_key_end_offset:
 
 - void **audio_track_set_key_end_offset** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` offset **)**
+
+Sets the end offset of the key identified by ``key_idx`` to value ``offset``. The ``track_idx`` must be the index of an Audio Track.
 
 ----
 
@@ -359,11 +383,15 @@ Adds a track to the Animation.
 
 - void **audio_track_set_key_start_offset** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` offset **)**
 
+Sets the start offset of the key identified by ``key_idx`` to value ``offset``. The ``track_idx`` must be the index of an Audio Track.
+
 ----
 
 .. _class_Animation_method_audio_track_set_key_stream:
 
 - void **audio_track_set_key_stream** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`Resource<class_Resource>` stream **)**
+
+Sets the stream of the key identified by ``key_idx`` to value ``offset``. The ``track_idx`` must be the index of an Audio Track.
 
 ----
 
@@ -371,11 +399,15 @@ Adds a track to the Animation.
 
 - :ref:`Vector2<class_Vector2>` **bezier_track_get_key_in_handle** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx **)** const
 
+Returns the in handle of the key identified by ``key_idx``. The ``track_idx`` must be the index of a Bezier Track.
+
 ----
 
 .. _class_Animation_method_bezier_track_get_key_out_handle:
 
 - :ref:`Vector2<class_Vector2>` **bezier_track_get_key_out_handle** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx **)** const
+
+Returns the out handle of the key identified by ``key_idx``. The ``track_idx`` must be the index of a Bezier Track.
 
 ----
 
@@ -383,11 +415,17 @@ Adds a track to the Animation.
 
 - :ref:`float<class_float>` **bezier_track_get_key_value** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx **)** const
 
+Returns the value of the key identified by ``key_idx``. The ``track_idx`` must be the index of a Bezier Track.
+
 ----
 
 .. _class_Animation_method_bezier_track_insert_key:
 
 - :ref:`int<class_int>` **bezier_track_insert_key** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`float<class_float>` value, :ref:`Vector2<class_Vector2>` in_handle=Vector2( 0, 0 ), :ref:`Vector2<class_Vector2>` out_handle=Vector2( 0, 0 ) **)**
+
+Inserts a Bezier Track key at the given ``time`` in seconds. The ``track_idx`` must be the index of a Bezier Track.
+
+``in_handle`` is the left-side weight of the added Bezier curve point, ``out_handle`` is the right-side one, while ``value`` is the actual value at this point.
 
 ----
 
@@ -395,11 +433,15 @@ Adds a track to the Animation.
 
 - :ref:`float<class_float>` **bezier_track_interpolate** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time **)** const
 
+Returns the interpolated value at the given ``time`` (in seconds). The ``track_idx`` must be the index of a Bezier Track.
+
 ----
 
 .. _class_Animation_method_bezier_track_set_key_in_handle:
 
 - void **bezier_track_set_key_in_handle** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`Vector2<class_Vector2>` in_handle **)**
+
+Sets the in handle of the key identified by ``key_idx`` to value ``in_handle``. The ``track_idx`` must be the index of a Bezier Track.
 
 ----
 
@@ -407,11 +449,15 @@ Adds a track to the Animation.
 
 - void **bezier_track_set_key_out_handle** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`Vector2<class_Vector2>` out_handle **)**
 
+Sets the out handle of the key identified by ``key_idx`` to value ``out_handle``. The ``track_idx`` must be the index of a Bezier Track.
+
 ----
 
 .. _class_Animation_method_bezier_track_set_key_value:
 
 - void **bezier_track_set_key_value** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` value **)**
+
+Sets the value of the key identified by ``key_idx`` to the given value. The ``track_idx`` must be the index of a Bezier Track.
 
 ----
 

@@ -11,7 +11,12 @@ AnimationNodeBlendTree
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+:ref:`AnimationTree<class_AnimationTree>` node resource that contains many blend type nodes.
 
+Description
+-----------
+
+This node may contain a sub-tree of any other blend type nodes, such as mix, blend2, blend3, one shot, etc. This is one of the most commonly used roots.
 
 Tutorials
 ---------
@@ -63,17 +68,17 @@ Constants
 
 .. _class_AnimationNodeBlendTree_constant_CONNECTION_ERROR_CONNECTION_EXISTS:
 
-- **CONNECTION_OK** = **0**
+- **CONNECTION_OK** = **0** --- The connection was successful.
 
-- **CONNECTION_ERROR_NO_INPUT** = **1**
+- **CONNECTION_ERROR_NO_INPUT** = **1** --- The input node is ``null``.
 
-- **CONNECTION_ERROR_NO_INPUT_INDEX** = **2**
+- **CONNECTION_ERROR_NO_INPUT_INDEX** = **2** --- The specified input port is out of range.
 
-- **CONNECTION_ERROR_NO_OUTPUT** = **3**
+- **CONNECTION_ERROR_NO_OUTPUT** = **3** --- The output node is ``null``.
 
-- **CONNECTION_ERROR_SAME_NODE** = **4**
+- **CONNECTION_ERROR_SAME_NODE** = **4** --- Input and output nodes are the same.
 
-- **CONNECTION_ERROR_CONNECTION_EXISTS** = **5**
+- **CONNECTION_ERROR_CONNECTION_EXISTS** = **5** --- The specified connection already exists.
 
 Property Descriptions
 ---------------------
@@ -90,6 +95,8 @@ Property Descriptions
 | *Getter*  | get_graph_offset()      |
 +-----------+-------------------------+
 
+The global offset of all sub-nodes.
+
 Method Descriptions
 -------------------
 
@@ -97,11 +104,15 @@ Method Descriptions
 
 - void **add_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)**
 
+Adds an :ref:`AnimationNode<class_AnimationNode>` at the given ``position``. The ``name`` is used to identify the created sub-node later.
+
 ----
 
 .. _class_AnimationNodeBlendTree_method_connect_node:
 
 - void **connect_node** **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index, :ref:`String<class_String>` output_node **)**
+
+Connects the output of an :ref:`AnimationNode<class_AnimationNode>` as input for another :ref:`AnimationNode<class_AnimationNode>`, at the input port specified by ``input_index``.
 
 ----
 
@@ -109,11 +120,15 @@ Method Descriptions
 
 - void **disconnect_node** **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index **)**
 
+Disconnects the node connected to the specified input.
+
 ----
 
 .. _class_AnimationNodeBlendTree_method_get_node:
 
 - :ref:`AnimationNode<class_AnimationNode>` **get_node** **(** :ref:`String<class_String>` name **)** const
+
+Returns the sub-node with the specified ``name``.
 
 ----
 
@@ -121,11 +136,15 @@ Method Descriptions
 
 - :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` name **)** const
 
+Returns the position of the sub-node with the specified ``name``.
+
 ----
 
 .. _class_AnimationNodeBlendTree_method_has_node:
 
 - :ref:`bool<class_bool>` **has_node** **(** :ref:`String<class_String>` name **)** const
+
+Returns ``true`` if a sub-node with specified ``name`` exists.
 
 ----
 
@@ -133,15 +152,21 @@ Method Descriptions
 
 - void **remove_node** **(** :ref:`String<class_String>` name **)**
 
+Removes a sub-node.
+
 ----
 
 .. _class_AnimationNodeBlendTree_method_rename_node:
 
 - void **rename_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**
 
+Changes the name of a sub-node.
+
 ----
 
 .. _class_AnimationNodeBlendTree_method_set_node_position:
 
 - void **set_node_position** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**
+
+Modifies the position of a sub-node.
 

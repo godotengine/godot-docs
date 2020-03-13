@@ -904,7 +904,7 @@ Returns the relative :ref:`NodePath<class_NodePath>` from this node to the speci
 
 - :ref:`float<class_float>` **get_physics_process_delta_time** **(** **)** const
 
-Returns the time elapsed since the last physics-bound frame (see :ref:`_physics_process<class_Node_method__physics_process>`). This is always a constant value in physics processing unless the frames per second is changed via :ref:`Engine.target_fps<class_Engine_property_target_fps>`.
+Returns the time elapsed since the last physics-bound frame (see :ref:`_physics_process<class_Node_method__physics_process>`). This is always a constant value in physics processing unless the frames per second is changed via :ref:`Engine.iterations_per_second<class_Engine_property_iterations_per_second>`.
 
 ----
 
@@ -1296,7 +1296,7 @@ Sets the node's network master to the peer with the given peer ID. The network m
 
 - void **set_physics_process** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables or disables physics (i.e. fixed framerate) processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` at a fixed (usually 60 FPS, see :ref:`Engine.target_fps<class_Engine_property_target_fps>` to change) interval (and the :ref:`_physics_process<class_Node_method__physics_process>` callback will be called if exists). Enabled automatically if :ref:`_physics_process<class_Node_method__physics_process>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
+Enables or disables physics (i.e. fixed framerate) processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` at a fixed (usually 60 FPS, see :ref:`Engine.iterations_per_second<class_Engine_property_iterations_per_second>` to change) interval (and the :ref:`_physics_process<class_Node_method__physics_process>` callback will be called if exists). Enabled automatically if :ref:`_physics_process<class_Node_method__physics_process>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
 
 ----
 

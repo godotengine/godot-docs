@@ -1423,7 +1423,7 @@ If ``true``, triplanar mapping is calculated in world space rather than object l
 | *Getter*  | get_metallic()      |
 +-----------+---------------------+
 
-The reflectivity of the object's surface. The higher the value, the more light is reflected.
+A high value makes the material appear more like a metal. Non-metals use their albedo as the diffuse color and add diffuse to the specular reflection. With non-metals, the reflection appears on top of the albedo color. Metals use their albedo as a multiplier to the specular reflection and set the diffuse color to black resulting in a tinted reflection. Materials work better when fully metal or fully non-metal, values between ``0`` and ``1`` should only be used for blending between metal and non-metal sections. To alter the amount of reflection use :ref:`roughness<class_SpatialMaterial_property_roughness>`.
 
 ----
 

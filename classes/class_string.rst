@@ -103,7 +103,7 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`findn<class_String_method_findn>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)**                                                      |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`format<class_String_method_format>` **(** :ref:`Variant<class_Variant>` values, :ref:`String<class_String>` placeholder={_} **)**                                 |
+| :ref:`String<class_String>`                   | :ref:`format<class_String_method_format>` **(** :ref:`Variant<class_Variant>` values, :ref:`String<class_String>` placeholder="{_}" **)**                               |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_base_dir<class_String_method_get_base_dir>` **(** **)**                                                                                                       |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -137,7 +137,7 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_valid_float<class_String_method_is_valid_float>` **(** **)**                                                                                                   |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`is_valid_hex_number<class_String_method_is_valid_hex_number>` **(** :ref:`bool<class_bool>` with_prefix=False **)**                                               |
+| :ref:`bool<class_bool>`                       | :ref:`is_valid_hex_number<class_String_method_is_valid_hex_number>` **(** :ref:`bool<class_bool>` with_prefix=false **)**                                               |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_valid_html_color<class_String_method_is_valid_html_color>` **(** **)**                                                                                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -189,7 +189,7 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`right<class_String_method_right>` **(** :ref:`int<class_int>` position **)**                                                                                      |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`rsplit<class_String_method_rsplit>` **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)** |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`rsplit<class_String_method_rsplit>` **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=true, :ref:`int<class_int>` maxsplit=0 **)** |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`rstrip<class_String_method_rstrip>` **(** :ref:`String<class_String>` chars **)**                                                                                 |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -203,11 +203,11 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`similarity<class_String_method_similarity>` **(** :ref:`String<class_String>` text **)**                                                                          |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`split<class_String_method_split>` **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**   |
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`split<class_String_method_split>` **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=true, :ref:`int<class_int>` maxsplit=0 **)**   |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>`     | :ref:`split_floats<class_String_method_split_floats>` **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=True **)**                       |
+| :ref:`PoolRealArray<class_PoolRealArray>`     | :ref:`split_floats<class_String_method_split_floats>` **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=true **)**                       |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`strip_edges<class_String_method_strip_edges>` **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**                                   |
+| :ref:`String<class_String>`                   | :ref:`strip_edges<class_String_method_strip_edges>` **(** :ref:`bool<class_bool>` left=true, :ref:`bool<class_bool>` right=true **)**                                   |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`strip_escapes<class_String_method_strip_escapes>` **(** **)**                                                                                                     |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -505,7 +505,7 @@ Finds the first occurrence of a substring, ignoring case. Returns the starting p
 
 .. _class_String_method_format:
 
-- :ref:`String<class_String>` **format** **(** :ref:`Variant<class_Variant>` values, :ref:`String<class_String>` placeholder={_} **)**
+- :ref:`String<class_String>` **format** **(** :ref:`Variant<class_Variant>` values, :ref:`String<class_String>` placeholder="{_}" **)**
 
 Formats the string by replacing all occurrences of ``placeholder`` with ``values``.
 
@@ -661,7 +661,7 @@ Returns ``true`` if this string contains a valid float.
 
 .. _class_String_method_is_valid_hex_number:
 
-- :ref:`bool<class_bool>` **is_valid_hex_number** **(** :ref:`bool<class_bool>` with_prefix=False **)**
+- :ref:`bool<class_bool>` **is_valid_hex_number** **(** :ref:`bool<class_bool>` with_prefix=false **)**
 
 Returns ``true`` if this string contains a valid hexadecimal number. If ``with_prefix`` is ``true``, then a validity of the hexadecimal number is determined by ``0x`` prefix, for instance: ``0xDEADC0DE``.
 
@@ -869,7 +869,7 @@ Returns the right side of the string from a given position.
 
 .. _class_String_method_rsplit:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **rsplit** **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**
+- :ref:`PoolStringArray<class_PoolStringArray>` **rsplit** **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=true, :ref:`int<class_int>` maxsplit=0 **)**
 
 Splits the string by a ``delimiter`` string and returns an array of the substrings, starting from right.
 
@@ -939,7 +939,7 @@ Returns the similarity index of the text compared to this string. 1 means totall
 
 .. _class_String_method_split:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **split** **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**
+- :ref:`PoolStringArray<class_PoolStringArray>` **split** **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=true, :ref:`int<class_int>` maxsplit=0 **)**
 
 Splits the string by a ``delimiter`` string and returns an array of the substrings.
 
@@ -959,7 +959,7 @@ Example:
 
 .. _class_String_method_split_floats:
 
-- :ref:`PoolRealArray<class_PoolRealArray>` **split_floats** **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=True **)**
+- :ref:`PoolRealArray<class_PoolRealArray>` **split_floats** **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=true **)**
 
 Splits the string in floats by using a delimiter string and returns an array of the substrings.
 
@@ -969,7 +969,7 @@ For example, ``"1,2.5,3"`` will return ``[1,2.5,3]`` if split by ``","``.
 
 .. _class_String_method_strip_edges:
 
-- :ref:`String<class_String>` **strip_edges** **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**
+- :ref:`String<class_String>` **strip_edges** **(** :ref:`bool<class_bool>` left=true, :ref:`bool<class_bool>` right=true **)**
 
 Returns a copy of the string stripped of any non-printable character (including tabulations, spaces and line breaks) at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.
 

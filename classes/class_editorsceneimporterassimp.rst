@@ -11,12 +11,12 @@ EditorSceneImporterAssimp
 
 **Inherits:** :ref:`EditorSceneImporter<class_EditorSceneImporter>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-Multi-format 3D asset importer based on `Assimp <http://assimp.org/>`_.
+FBX 3D asset importer based on `Assimp <http://assimp.org/>`_.
 
 Description
 -----------
 
-This is a multi-format 3D asset importer based on `Assimp <http://assimp.org/>`_. See `this page <https://assimp-docs.readthedocs.io/en/latest/about/intoduction.html#installation>`_ for a full list of supported formats.
+This is an FBX 3D asset importer based on `Assimp <http://assimp.org/>`_. It currently has many known limitations and works best with static meshes. Most animated meshes won't import correctly.
 
 If exporting a FBX scene from Autodesk Maya, use these FBX export settings:
 

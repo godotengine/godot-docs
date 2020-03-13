@@ -58,3 +58,5 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
+Loads the texture from the given path.
+
