@@ -256,7 +256,7 @@ footer,
     background-color: var(--content-wrap-background-color);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .wy-body-for-nav {
         /* Center the page on wide displays for better readability */
         max-width: 1100px;
@@ -469,7 +469,7 @@ kbd, .kbd {
     position: fixed;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     /* Simulate a drop shadow that only affects the bottom edge */
     /* This is used to indicate the search bar is fixed */
     .wy-side-nav-search.fixed::after {
@@ -520,7 +520,7 @@ kbd, .kbd {
     background-color: var(--navbar-background-color);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .wy-nav-side {
         /* Required to center the page on wide displays */
         left: inherit;
@@ -629,7 +629,7 @@ kbd, .kbd {
     background-color: var(--navbar-current-background-color);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .rst-versions {
         /* Required to center the page on wide displays */
         left: inherit;

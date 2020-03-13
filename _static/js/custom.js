@@ -42,7 +42,7 @@ function registerOnScrollEvent(mediaQuery) {
 }
 
 $(document).ready(() => {
-  const mediaQuery = window.matchMedia('only screen and (min-width: 768px)');
+  const mediaQuery = window.matchMedia('only screen and (min-width: 769px)');
   registerOnScrollEvent(mediaQuery);
   mediaQuery.addListener(registerOnScrollEvent);
 });
