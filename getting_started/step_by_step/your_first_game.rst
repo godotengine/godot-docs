@@ -82,7 +82,7 @@ are not selectable."
 
 .. image:: img/lock_children.png
 
-Save the scene. Click Scene -> Save, or press ``Ctrl+S`` on Windows/Linux or ``Command+S`` on Mac.
+Save the scene. Click Scene -> Save, or press :kbd:`Ctrl + S` on Windows/Linux or :kbd:`Cmd + S` on macOS.
 
 .. note:: For this project, we will be following the Godot naming conventions.
 
@@ -206,7 +206,7 @@ which is a good time to find the size of the game window:
 
     public override void _Ready()
     {
-        _screenSize = GetViewport().GetSize();
+        _screenSize = GetViewport().Size;
     }
 
 Now we can use the ``_process()`` function to define what the player will do.
@@ -373,9 +373,9 @@ Let's place this code at the end of our ``_process()`` function:
         if (velocity.x != 0)
         {
             animatedSprite.Animation = "right";
+            animatedSprite.FlipV = false;
             // See the note below about boolean assignment
             animatedSprite.FlipH = velocity.x < 0;
-            animatedSprite.FlipV = false;
         }
         else if(velocity.y != 0)
         {
@@ -674,10 +674,9 @@ you will see some new buttons at the top of the editor:
 .. image:: img/path2d_buttons.png
 
 Select the middle one ("Add Point") and draw the path by clicking to add
-the points at the corners shown. To have the points snap to the grid, make sure "Snap to
-Grid" is checked. This option can be found under the "Snapping options"
-button to the left of the "Lock" button, appearing as a series of three
-vertical dots.
+the points at the corners shown. To have the points snap to the grid, make
+sure "Use Grid Snap" is selected. This option can be found to the left of
+the "Lock" button, appearing as a magnet next to some intersecting lines.
 
 .. image:: img/draw_path2d.gif
 
@@ -740,7 +739,7 @@ Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the
 
 Next, click on the Player and connect the ``hit`` signal. We want to make a
 new function named ``game_over``, which will handle what needs to happen when a
-game ends. Type "game_over" in the "Method In Node" box at the bottom of the
+game ends. Type "game_over" in the "Receiver Method" box at the bottom of the
 "Connecting Signal" window. Add the following code, as well as a ``new_game``
 function to set everything up for a new game:
 
@@ -816,7 +815,7 @@ Note that a new instance must be added to the scene using
 
     func _on_MobTimer_timeout():
         # Choose a random location on Path2D.
-        $MobPath/MobSpawnLocation.set_offset(randi())
+        $MobPath/MobSpawnLocation.offset = randi()
         # Create a Mob instance and add it to the scene.
         var mob = Mob.instance()
         add_child(mob)
@@ -1228,7 +1227,7 @@ This is the default input event associated with the spacebar.
 
 .. image:: img/start_button_shortcut.png
 
-Now when the start button appears, you can either click it or press the spacebar
+Now when the start button appears, you can either click it or press :kbd:`Space`
 to start the game.
 
 Project files

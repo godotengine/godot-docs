@@ -225,5 +225,5 @@ defaulting to ``false`` to prevent polluting the global namespace::
 
     func my_func4():
         # execute in global execution context,
-        # thus adding a new JavaScript global variable `MyGlobal`
+        # thus adding a new JavaScript global variable `SomeGlobal`
         JavaScript.eval("var SomeGlobal = {};", true)

@@ -80,8 +80,8 @@ create a child sprite and load the torso texture, later accommodate it properly:
 .. image:: img/tuto_cutout3.png
 
 This looks good. Let's see if our hierarchy works as a skeleton by
-rotating the torso. We can do this be pressing ``E`` to enter rotate mode,
-and dragging with the left mouse button. To exit rotate mode hit ``ESC``.
+rotating the torso. We can do this be pressing :kbd:`E` to enter rotate mode,
+and dragging with the left mouse button. To exit rotate mode hit :kbd:`ESC`.
 
 .. image:: img/tutovec_torso1.gif
 
@@ -101,7 +101,7 @@ Sprite:
 .. image:: img/tuto_cutout5.png
 
 The pivot can also be adjusted *visually*. While hovering over the
-desired pivot point,  press the "v" key to move the pivot there for the
+desired pivot point,  press :kbd:`V` to move the pivot there for the
 selected Sprite. There is also a tool in the tool bar that has a
 similar function.
 

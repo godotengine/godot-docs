@@ -55,10 +55,19 @@
     --admonition-attention-color: #404040;
     --admonition-attention-title-background-color: #f0b37e;
     --admonition-attention-title-color: #fff;
+    --admonition-danger-background-color: #fcf3f2;
+    --admonition-danger-color: #404040;
+    --admonition-danger-title-background-color: #e9a499;
+    --admonition-danger-title-color: #fff;
     --admonition-tip-background-color: #dbfaf4;
     --admonition-tip-color: #404040;
     --admonition-tip-title-background-color: #1abc9c;
     --admonition-tip-title-color: #fff;
+
+    --kbd-background-color: #fafbfc;
+    --kbd-outline-color: #d1d5da;
+    --kbd-shadow-color: #b0b7bf;
+    --kbd-text-color: #444d56;
 
     --btn-neutral-background-color: #f3f6f6;
     --btn-neutral-hover-background-color: #e5ebeb;
@@ -118,10 +127,19 @@
         --admonition-attention-color: #ffeeaf;
         --admonition-attention-title-background-color: #665022;
         --admonition-attention-title-color: #ffeeaf;
+        --admonition-danger-background-color: #433;
+        --admonition-danger-color: #fcc;
+        --admonition-danger-title-background-color: #633;
+        --admonition-danger-title-color: #fcc;
         --admonition-tip-background-color: #28382d;
         --admonition-tip-color: #dfd;
         --admonition-tip-title-background-color: #336648;
         --admonition-tip-title-color: #dfd;
+
+        --kbd-background-color: #595b5d;
+        --kbd-outline-color: #3d4144;
+        --kbd-shadow-color: #1e2023;
+        --kbd-text-color: #e2f2ff;
 
         --btn-neutral-background-color: #404040;
         --btn-neutral-hover-background-color: #505050;
@@ -238,7 +256,7 @@ footer,
     background-color: var(--content-wrap-background-color);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .wy-body-for-nav {
         /* Center the page on wide displays for better readability */
         max-width: 1100px;
@@ -341,7 +359,8 @@ code,
     color: var(--highlight-type2-color);
 }
 
-.highlight .nf {
+.highlight .nf,
+.highlight .nt {
     color: var(--highlight-function-color);
 }
 
@@ -385,6 +404,16 @@ code,
     color: var(--admonition-attention-title-color);
 }
 
+.rst-content .admonition.danger {
+    background-color: var(--admonition-danger-background-color);
+    color: var(--admonition-danger-color);
+}
+
+.rst-content .admonition.danger .admonition-title {
+    background-color: var(--admonition-danger-title-background-color);
+    color: var(--admonition-danger-title-color);
+}
+
 .rst-content .admonition.tip,
 .rst-content .admonition.important {
     background-color: var(--admonition-tip-background-color);
@@ -395,6 +424,20 @@ code,
 .rst-content .admonition.important .admonition-title {
     background-color: var(--admonition-tip-title-background-color);
     color: var(--admonition-tip-title-color);
+}
+
+/* Keyboard shortcuts tweaks */
+kbd, .kbd {
+    background-color: var(--kbd-background-color);
+    border: 1px solid var(--kbd-outline-color);
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 var(--kbd-shadow-color);
+    color: var(--kbd-text-color);
+    display: inline-block;
+    font-size: 12px;
+    line-height: 11px;
+    padding: 4px 5px;
+    vertical-align: middle;
 }
 
 /* Buttons */
@@ -426,7 +469,7 @@ code,
     position: fixed;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     /* Simulate a drop shadow that only affects the bottom edge */
     /* This is used to indicate the search bar is fixed */
     .wy-side-nav-search.fixed::after {
@@ -477,7 +520,7 @@ code,
     background-color: var(--navbar-background-color);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .wy-nav-side {
         /* Required to center the page on wide displays */
         left: inherit;
@@ -586,7 +629,7 @@ code,
     background-color: var(--navbar-current-background-color);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .rst-versions {
         /* Required to center the page on wide displays */
         left: inherit;

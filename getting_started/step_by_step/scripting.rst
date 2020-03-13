@@ -104,7 +104,7 @@ than a few minutes to get an overview of the concepts.
 Scene setup
 ~~~~~~~~~~~
 
-Use the "Add Child Node" dialogue accessed from the Scene tab (or by pressing ``Ctrl+A``) to create a hierarchy with the following
+Use the "Add Child Node" dialogue accessed from the Scene tab (or by pressing :kbd:`Ctrl + A`) to create a hierarchy with the following
 nodes:
 
 - Panel
@@ -252,7 +252,7 @@ Next, write a function which will be called when the button is pressed:
         GetNode<Label>("Label").Text = "HELLO!";
     }
 
-Finally, connect the button's "pressed" signal to ``_ready()`` by
+Finally, connect the button's "pressed" signal to ``_on_Button_pressed()`` by
 using :ref:`Object.connect() <class_Object_method_connect>`.
 
 .. tabs::

@@ -29,7 +29,8 @@ Here is a complete class example based on these guidelines:
     class_name StateMachine
     extends Node
     # Hierarchical State machine for the player.
-    # Initializes states and delegates engine callbacks (_physics_process, _unhandled_input) to the state.
+    # Initializes states and delegates engine callbacks
+    # (_physics_process, _unhandled_input) to the state.
 
 
     signal state_changed(previous, new)
@@ -39,6 +40,7 @@ Here is a complete class example based on these guidelines:
 
     onready var _state = get_node(initial_state) setget set_state
     onready var _state_name = _state.name
+
 
     func _init():
         add_to_group("state_machine")
@@ -359,7 +361,7 @@ This helps differentiate text comments from disabled code.
 .. note::
 
    In the script editor, to toggle the selected code commented, press
-   <kbd>Ctrl</kbd> <kbd>K</kbd>. This feature adds a single # sign at the start
+   :kbd:`Ctrl + K`. This feature adds a single # sign at the start
    of the selected lines.
 
 Whitespace
@@ -570,7 +572,7 @@ variables, in that order.
 
 ::
 
-   enum Jobs { KNIGHT, WIZARD, ROGUE, HEALER, SHAMAN }
+   enum Jobs {KNIGHT, WIZARD, ROGUE, HEALER, SHAMAN}
 
    const MAX_LIVES = 3
 
@@ -663,21 +665,21 @@ GDScript compiler infer the variable's type when possible.
 
    onready var health_bar: ProgressBar = get_node("UI/LifeBar")
 
-   var health := 0 # The compiler will use the int type
+   var health := 0 # The compiler will use the int type.
 
 **Bad**:
 
 ::
 
    # The compiler can't infer the exact type and will use Node
-   # instead of ProgressBar
+   # instead of ProgressBar.
    onready var health_bar := get_node("UI/LifeBar")
 
 When you let the compiler infer the type hint, write the colon and equal signs together: ``:=``.
 
 ::
 
-   var health := 0 # The compiler will use the int type
+   var health := 0 # The compiler will use the int type.
 
 Add a space on either sides of the return type arrow when defining functions.
 

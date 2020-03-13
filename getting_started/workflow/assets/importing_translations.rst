@@ -38,11 +38,21 @@ Translation format
 ------------------
 
 To complete the picture and allow efficient support for translations,
-Godot has a special importer that can read CSV files. All spreadsheet
-editors (be it Libreoffice, Microsoft Office, Google Docs, etc.) can
-export to this format, so the only requirement is that the files have
-a special arrangement. The CSV files must be saved in UTF-8 encoding
-and be formatted as follows:
+Godot has a special importer that can read CSV files. Most spreadsheet
+editors can export to this format, so the only requirement is that the files
+have a special arrangement. The CSV files **must** be saved with UTF-8 encoding
+without a `byte order mark <https://en.wikipedia.org/wiki/Byte_order_mark>`__.
+
+.. warning::
+
+    By default, Microsoft Excel will always save CSV files with ANSI encoding
+    rather than UTF-8. There is no built-in way to do this, but there are
+    workarounds as described
+    `here <https://stackoverflow.com/questions/4221176/excel-to-csv-with-utf8-encoding>`__.
+
+    We recommend using `LibreOffice <https://www.libreoffice.org/>`__ or Google Sheets instead.
+
+CSV files must be formatted as follows:
 
 +--------+----------+----------+----------+
 | keys   | <lang1>  | <lang2>  | <langN>  |
@@ -77,11 +87,11 @@ Here's an example:
 
 The same example is shown below as a comma-separated plain text file,
 which should be the result of editing the above in a spreadsheet.
-When editing the plain text version, be sure to enclose with double 
+When editing the plain text version, be sure to enclose with double
 quotes any message that contains commas, line breaks or double quotes,
 so that commas are not parsed as delimiters, line breaks don't create new
 entries and double quotes are not parsed as enclosing characters. Be sure
-to escape any double quotes a message may contain by preceding them with 
+to escape any double quotes a message may contain by preceding them with
 another double quote. Alternatively, you can select another delimiter than
 comma in the import options.
 
@@ -104,10 +114,10 @@ translations to load when the game runs, specified in project.godot (or the
 project settings). Godot allows loading and removing translations at
 runtime as well.
 
-Select the ``.csv`` file and access the "Import" dock to define import
+Select the ``.csv`` file and access the **Import** dock to define import
 options. You can toggle the compression of the imported translations, and
 select the delimiter to use when parsing the CSV file.
 
 .. image:: img/import_csv.png
 
-Be sure to click "Reimport" after any change to these options.
+Be sure to click **Reimport** after any change to these options.

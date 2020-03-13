@@ -300,13 +300,13 @@ reach the point where the muzzle starts to flash.
           light that escapes the muzzle when a bullet is fired. The muzzle is also sometimes referred to as the
           barrel of the gun.
 
-.. tip:: For finer control when scrubbing the timeline, press ``control`` and scroll forward with the mouse wheel to zoom in.
+.. tip:: For finer control when scrubbing the timeline, press :kbd:`Ctrl` and scroll forward with the mouse wheel to zoom in.
          Scrolling backwards will zoom out.
 
          You can also change how the timeline scrubbing snaps by changing the value in ``Step (s)`` to a lower/higher value.
 
-Once you get to a point you like, right click on the row for "Animation Player" and press insert key.
-In the empty name field, enter ``animation_callback`` and press ``enter``.
+Once you get to a point you like, right click on the row for "Animation Player" and press ``Insert Key``.
+In the empty name field, enter ``animation_callback`` and press :kbd:`Enter`.
 
 .. image:: img/AnimationPlayerInsertKey.png
 
@@ -324,7 +324,7 @@ Go to the "Rifle_fire" animation from the animation drop down. Add the call meth
 animation track list by clicking the "Add Track" button above the list. Find the point where the muzzle starts
 to flash and right click and press ``Insert Key`` to add a call method track point at that position on the track.
 
-Type "animation_callback" into the name field of the pop up which opened and press ``enter``.
+Type "animation_callback" into the name field of the pop up which opened and press :kbd:`Enter`.
 
 Now we need to apply the callback method track to the knife animation. Select the "Knife_fire" animation and scroll to the bottom of the
 animation tracks. Click the "Add Track" button above the list and add a method track.
@@ -334,7 +334,7 @@ Next find a point around the first third of the animation to place the animation
          For this tutorial we are reusing the gun firing logic for our knife, so the animation has been named in a style that
          is consistent with the other animations.
 
-From there right click on the timeline and click "Insert Key". Put "animation_callback" into the name field and press ``enter``.
+From there right click on the timeline and click "Insert Key". Put "animation_callback" into the name field and press :kbd:`Enter`.
 
 .. tip:: Be sure to save your work!
 
@@ -354,7 +354,7 @@ its own collision code. In this method we create/spawn a bullet object in the di
 it travels forward.
 
 There are several advantages to this method. The first being we do not have to store the bullets in our player. We can simply create the bullet
-and then move on, and the bullet itself with handle checking for collisions, sending the proper signal(s) to the object it collides with, and destroying itself.
+and then move on, and the bullet itself will handle checking for collisions, sending the proper signal(s) to the object it collides with, and destroying itself.
 
 Another advantage is we can have more complex bullet movement. If we want to make the bullet fall ever so slightly as time goes on, we can make the bullet
 controlling script slowly push the bullet towards the ground. Using an object also makes the bullet take time to reach its target, it doesn't instantly
@@ -1216,7 +1216,7 @@ Now we need to attach this script to all of the :ref:`RigidBody <class_RigidBody
 
 Open up ``Testing_Area.tscn`` and select all the cubes parented to the ``Cubes`` node.
 
-.. tip:: If you select the top cube, and then hold down ``shift`` and select the last cube, Godot will
+.. tip:: If you select the top cube, and then hold down :kbd:`Shift` and select the last cube, Godot will
          select all the cubes in-between!
 
 Once you have all the cubes selected, scroll down in the inspector until you get to

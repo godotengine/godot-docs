@@ -270,12 +270,12 @@ Visual Studio Code
 
 - Ensure that C/C++ extension is installed. You can find instructions in `docs <https://code.visualstudio.com/docs/languages/cpp>`_.
 
-- Now open cloned godot folder in VS Code (File > Open Folder...)
+- Open cloned godot folder in VS Code with ``File > Open Folder...``
 
-In order to build the project, we need two configuration files: *launch.json* and *tasks.json*.
+In order to build the project, you need two configuration files: *launch.json* and *tasks.json*.
 To create them:
 
-- Open Debug view (Ctrl + Shift + D) and select cogwheel with an orange dot:
+- Open *Debug* view by pressing :kbd:`Ctrl + Shift + D` and select cogwheel with an orange dot:
 
 .. image:: img/vscode_1_create_launch.json.png
 
@@ -287,7 +287,7 @@ To create them:
 
 (Note that *godot.x11.tools.64* in "program" value might be named differently on macOS or Windows)
 
-- Create *tasks.json* by starting the Debug process (F5). VS Code will show a dialog with a *Configure Task* button. Tap it and select *Create tasks.json file from template*, then select *Others*
+- Create *tasks.json* by starting the Debug process with :kbd:`F5`. VS Code will show a dialog with a *Configure Task* button. Tap it and select *Create tasks.json file from template*, then select *Others*
 
 - Update *tasks.json* to match:
 
@@ -305,7 +305,7 @@ To create them:
 Android Studio
 --------------
 
-`Android Studio <https://developer.android.com/studio>`_ is a `Jetbrain <https://www.jetbrains.com/>`_ IDE for Android development. It has a feature-rich editor which supports Java and C/C++, so it can be used for development of the Godot core engine, and Android platform codebases.
+`Android Studio <https://developer.android.com/studio>`_ is a `JetBrains <https://www.jetbrains.com/>`_ IDE for Android development. It has a feature-rich editor which supports Java and C/C++, so it can be used for development of the Godot core engine, and Android platform codebases.
 
 Project setup
 ^^^^^^^^^^^^^

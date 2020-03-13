@@ -33,16 +33,17 @@ who work with your code should always pass an ``Item`` to the
 
 ::
 
-    # In Item.gd
+    # In 'Item.gd'.
     class_name Item
-
-    # In Inventory.gd
+    # In 'Inventory.gd'.
     class_name Inventory
+
 
     func add(reference: Item, amount: int = 1):
         var item = find_item(reference)
         if not item:
             item = _instance_item_from_db(reference)
+
         item.amount += amount
 
 Another significant advantage of typed GDScript is the new **warning
@@ -122,7 +123,7 @@ script you want to use as a type in a constant:
 
 ::
 
-    const Rifle = preload('res://player/weapons/Rifle.gd')
+    const Rifle = preload("res://player/weapons/Rifle.gd")
     var my_rifle: Rifle
 
 The second method is to use the ``class_name`` keyword when you create.
@@ -165,6 +166,7 @@ to use this type. This forces the variable to stick to the
         var player := body as PlayerController
         if not player:
             return
+
         player.damage()
 
 As we’re dealing with a custom type, if the ``body`` doesn’t extend
@@ -238,6 +240,7 @@ You can also use your own nodes as return types:
         var item: Item = find_item(reference)
         if not item:
             item = ItemDatabase.get_instance(reference)
+            
         item.amount += amount
         return item
 
@@ -257,20 +260,28 @@ dynamic style:
 ::
 
     extends Node
-        func _ready():
-            pass
-        func _process(delta):
-            pass
+
+
+    func _ready():
+        pass
+
+
+    func _process(delta):
+        pass
 
 And with static typing:
 
 ::
 
     extends Node
-        func _ready() -> void:
-            pass
-        func _process(delta: float) -> void:
-            pass
+
+
+    func _ready() -> void:
+        pass
+
+
+    func _process(delta: float) -> void:
+        pass
 
 As you can see, you can also use types with the engine’s virtual
 methods. Signal callbacks, like any methods, can also use types. Here’s
@@ -296,6 +307,7 @@ to cast parameters automatically:
     func _on_area_entered(bullet: Bullet) -> void:
         if not bullet:
             return
+
         take_damage(bullet.damage)
 
 The ``bullet`` variable could hold any ``CollisionObject2D`` here, but
@@ -378,7 +390,7 @@ element the ``for`` keyword loops over already has a different type. So you
 
 ::
 
-    var names = ['John', 'Marta', 'Samantha', 'Jimmy']
+    var names = ["John", "Marta", "Samantha", "Jimmy"]
     for name: String in names:
         pass
 
@@ -387,16 +399,20 @@ Two scripts can’t depend on each other in a cyclic fashion:
 ::
 
     # Player.gd
+
     extends Area2D
     class_name Player
+
 
     var rifle: Rifle
 
 ::
 
     # Rifle.gd
+
     extends Area2D
     class_name Rifle
+
 
     var player: Player
 

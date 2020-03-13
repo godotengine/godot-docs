@@ -2,109 +2,114 @@
 #
 # Godot Engine documentation build configuration file
 
+import sphinx_rtd_theme
 import sys
 import os
 
 # -- General configuration ------------------------------------------------
 
-needs_sphinx = '1.3'
+needs_sphinx = "1.3"
 
 # Sphinx extension module names and templates location
-sys.path.append(os.path.abspath('extensions'))
-extensions = ['gdscript', 'sphinx_tabs.tabs', 'sphinx.ext.imgmath']
+sys.path.append(os.path.abspath("extensions"))
+extensions = ["gdscript", "sphinx_tabs.tabs", "sphinx.ext.imgmath"]
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # You can specify multiple suffix as a list of string: ['.rst', '.md']
-source_suffix = '.rst'
-source_encoding = 'utf-8-sig'
+source_suffix = ".rst"
+source_encoding = "utf-8-sig"
 
 # The master toctree document
-master_doc = 'index'
+master_doc = "index"
 
 # General information about the project
-project = 'Godot Engine'
-copyright = '2014-2020, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)'
-author = 'Juan Linietsky, Ariel Manzur and the Godot community'
+project = "Godot Engine"
+copyright = (
+    "2014-2020, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)"
+)
+author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
 # Version info for the project, acts as replacement for |version| and |release|
 # The short X.Y version
-version = 'latest'
+version = "latest"
 # The full version, including alpha/beta/rc tags
-release = 'latest'
+release = "latest"
 
 # Parse Sphinx tags passed from RTD via environment
-env_tags = os.getenv('SPHINX_TAGS')
-if env_tags != None:
-   for tag in env_tags.split(','):
-       print("Adding Sphinx tag: %s" % tag.strip())
-       tags.add(tag.strip())
+env_tags = os.getenv("SPHINX_TAGS")
+if env_tags is not None:
+    for tag in env_tags.split(","):
+        print("Adding Sphinx tag: %s" % tag.strip())
+        tags.add(tag.strip())  # noqa: F821
 
 # Language / i18n
-language = os.getenv('READTHEDOCS_LANGUAGE', 'en')
-is_i18n = tags.has('i18n')
+language = os.getenv("READTHEDOCS_LANGUAGE", "en")
+is_i18n = tags.has("i18n")  # noqa: F821
 
-exclude_patterns = ['_build']
+exclude_patterns = ["_build"]
 
+# fmt: off
+# These imports should *not* be moved to the start of the file,
+# they depend on the sys.path.append call registering "extensions".
 # GDScript syntax highlighting
 from gdscript import GDScriptLexer
 from sphinx.highlighting import lexers
-lexers['gdscript'] = GDScriptLexer()
+
+lexers["gdscript"] = GDScriptLexer()
+# fmt: on
 
 # Pygments (syntax highlighting) style to use
-pygments_style = 'sphinx'
-highlight_language = 'gdscript'
+pygments_style = "sphinx"
+highlight_language = "gdscript"
 
 # -- Options for HTML output ----------------------------------------------
 
 # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 
-import sphinx_rtd_theme
-html_theme = 'sphinx_rtd_theme'
+
+html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 if on_rtd:
     using_rtd_theme = True
 
 # Theme options
 html_theme_options = {
-    # 'typekit_id': 'hiw1hhg',
-    # 'analytics_id': '',
-    # 'sticky_navigation': True  # Set to False to disable the sticky nav while scrolling.
-    'logo_only': True,  # if we have a html_logo below, this shows /only/ the logo with no title text
-    'collapse_navigation': False,  # Collapse navigation (False makes it tree-like)
-    # 'display_version': True,  # Display the docs version
-    # 'navigation_depth': 4,  # Depth of the headers shown in the navigation bar
+    # if we have a html_logo below, this shows /only/ the logo with no title text
+    "logo_only": True,
+    # Collapse navigation (False makes it tree-like)
+    "collapse_navigation": False,
 }
 
 # VCS options: https://docs.readthedocs.io/en/latest/vcs.html#github
 html_context = {
-    "display_github": not is_i18n, # Integrate GitHub
-    "github_user": "godotengine", # Username
-    "github_repo": "godot-docs", # Repo name
-    "github_version": "master", # Version
-    "conf_py_path": "/", # Path in the checkout to the docs root
+    "display_github": not is_i18n,  # Integrate GitHub
+    "github_user": "godotengine",  # Username
+    "github_repo": "godot-docs",  # Repo name
+    "github_version": "master",  # Version
+    "conf_py_path": "/",  # Path in the checkout to the docs root
 }
 
-html_logo = 'img/docs_logo.png'
+html_logo = "img/docs_logo.png"
 
 # These folders are copied to the documentation's HTML output
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
-html_extra_path = ['robots.txt']
+html_extra_path = ["robots.txt"]
 
 # These paths are either relative to html_static_path
 # or fully qualified paths (eg. https://...)
 html_css_files = [
-    'css/custom.css',
+    "css/custom.css",
 ]
 
 html_js_files = [
-    'js/custom.js',
+    "js/custom.js",
 ]
 
 # Output file base name for HTML help builder
-htmlhelp_basename = 'GodotEnginedoc'
+htmlhelp_basename = "GodotEnginedoc"
 
 # -- Options for reStructuredText parser ----------------------------------
 
@@ -117,8 +122,13 @@ file_insertion_enabled = False
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'GodotEngine.tex', 'Godot Engine Documentation',
-   'Juan Linietsky, Ariel Manzur and the Godot community', 'manual'),
+    (
+        master_doc,
+        "GodotEngine.tex",
+        "Godot Engine Documentation",
+        "Juan Linietsky, Ariel Manzur and the Godot community",
+        "manual",
+    ),
 ]
 
 # -- Options for linkcheck builder ----------------------------------------
@@ -130,7 +140,7 @@ linkcheck_timeout = 10
 
 # -- I18n settings --------------------------------------------------------
 
-locale_dirs = ['../sphinx/po/']
+locale_dirs = ["../sphinx/po/"]
 gettext_compact = False
 
 # Couldn't find a way to retrieve variables nor do advanced string
@@ -142,10 +152,10 @@ rst_epilog = """
     :alt: Translation status
     :target: https://hosted.weblate.org/engage/godot-engine{target_locale}/?utm_source=widget
 """.format(
-    image_locale='-' if language == 'en' else language,
-    target_locale='' if language == 'en' else '/' + language
+    image_locale="-" if language == "en" else language,
+    target_locale="" if language == "en" else "/" + language,
 )
 
 # Exclude class reference when marked with tag i18n.
 if is_i18n:
-    exclude_patterns = ['classes']
+    exclude_patterns = ["classes"]

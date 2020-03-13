@@ -159,9 +159,9 @@ Vector3,Color,etc.).
 
 Some useful keybindings:
 
--  To snap placement or rotation, press the "Ctrl" key while moving, scaling
+-  To snap placement or rotation, press :kbd:`Ctrl` while moving, scaling
    or rotating.
--  To center the view on the selected object, press the "f" key.
+-  To center the view on the selected object, press :kbd:`F`.
 
 View menu
 ---------
