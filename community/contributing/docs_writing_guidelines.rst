@@ -438,11 +438,14 @@ Also surround boolean values, variable names and methods with ``[code][/code]``.
 Use ``[code]`` around arguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the class reference, always surround arguments with ``[code][/code]``. In the documentation and in Godot, it will display like ``this``. When you edit XML files in the Godot repository, replace existing arguments written like 'this' or \`this\` with ``[code]this[/code]``.
+In the class reference, always surround arguments with ``[code][/code]``. In the
+documentation and in Godot, it will display like ``this``. When you edit XML
+files in the Godot repository, replace existing arguments written like 'this' or
+\`this\` with ``[code]this[/code]``.
 
 
-Common vocabulary to use in godot's docs
-----------------------------------------
+Common vocabulary to use in Godot's documentation
+-------------------------------------------------
 
 The developers chose some specific words to refer to areas of the
 interface. They're used in the sources, in the documentation, and you
@@ -475,23 +478,46 @@ class names, which you can't fold, are ``Classes`` e.g. the
 ``properties``. E.g. ``position`` or ``modulate color`` are both
 ``properties``.
 
+Keyboard shortcut guidelines
+----------------------------
+
+Keyboard and mouse shortcuts should make use of the ``:kbd:`` tag, which allows
+shortcuts to stand out from the rest of the text and inline code. Use the
+compact form for modifier keys (:kbd:`Ctrl`/:kbd:`Cmd`) instead of their spelled
+out form (:kbd:`Control`/:kbd:`Command`). For combinations, use the ``+`` symbol
+with a space on either side of the symbol.
+
+Make sure to mention shortcuts that differ on macOS compared to other platforms.
+On macOS, ``Cmd`` often replaces ``Ctrl`` in keyboard shortcuts.
+
+Try to integrate the shortcut into sentences the best you can. Here are some
+examples with the ``:kbd:`` tag left as-is for better visibility:
+
+- Press ``:kbd:`Ctrl + Alt + T``` to toggle the panel (``:kbd:`Cmd + Alt + T``` on macOS).
+- Press ``:kbd:`Space``` and hold the left mouse button to pan in the 2D editor.
+- Press ``:kbd:`Shift + Up Arrow``` to move the node upwards by 8 pixels.
+
 Image contribution guidelines
 -----------------------------
 
-A significant part of the documentation is images, and there are several important
-guidelines to follow.
+A significant part of the documentation is images, and there are several
+important guidelines to follow.
 
-First, you should always be using the default editor theme and text when taking screenshots.
+First, you should always be using the default editor theme and text when taking
+screenshots.
 
-For 3D screenshots use 4xMSAA, enable anisotropic filtering on the projects textures,
-and set the anisotropic filter quality to 16x in Project Settings
+To improve the apperance of 3D screenshots, use 4× MSAA, enable anisotropic
+filtering on the project's textures, and set the anisotropic filter quality to
+16× in Project Settings.
 
-Screenshot size should not exceed 1920x1080.
+Screenshot sizes should not exceed 1920×1080 to ensure fast loading on slower
+connections.
 
 When you need to highlight an area of the editor to show something, like a
 button or option, use a 2 pixel thick outline without a bevel.
 
-Before you add or replace any images in the documentation, they should be run through
-a png compressor to save size. The built in lossless compressor in programs like Krita
-or Photoshop should be done. However you should also use a lossy one, such as `pngquant <https://pngquant.org/>`_
-where almost no image quality is lost during compression.
+Before you add or replace any images in the documentation, they should be run
+through a PNG compressor to save size. The built in lossless compressor in
+programs like Krita or Photoshop should be enough. For heavier images, also look
+into using a lossy compressor, such as `pngquant <https://pngquant.org/>`_ where
+almost no image quality is lost during compression.
