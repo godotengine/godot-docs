@@ -12,7 +12,7 @@ For compiling under Linux or other Unix variants, the following is
 required:
 
 -  GCC or Clang
--  Python 3 or 2.7+
+-  Python 3.5+
 -  SCons build system (3.0 or later for Python 3)
 -  pkg-config (used to detect the dependencies below)
 -  X11, Xcursor, Xinerama, Xi and XRandR development libraries

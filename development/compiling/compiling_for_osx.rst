@@ -10,7 +10,7 @@ Requirements
 
 For compiling under macOS, the following is required:
 
-- Python 3.5+ (recommended) or Python 2.7+.
+- `Python 3.5+ <https://www.python.org>`_
 - `SCons <https://www.scons.org>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_
   (or the more lightweight Command Line Tools for Xcode).
