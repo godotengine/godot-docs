@@ -8,9 +8,9 @@ Oh, beautiful GUI!
 
 This tutorial is about advanced skinning of an user interface. Most
 games generally don't need this, as they end up just relying on
-:ref:`Label <class_Label>`, :ref:`TextureRect <class_TextureRect>`,
-:ref:`TextureButton <class_TextureButton>` and
-:ref:`TextureProgress <class_TextureProgress>`.
+:ref:`Label <api:class_Label>`, :ref:`TextureRect <api:class_TextureRect>`,
+:ref:`TextureButton <api:class_TextureButton>` and
+:ref:`TextureProgress <api:class_TextureProgress>`.
 
 However, many types of games often need complex user interfaces, like
 MMOs, traditional RPGs, Simulators, Strategy, etc. These kinds of
@@ -24,7 +24,7 @@ interface.
 Theme
 -----
 
-The GUI is skinned through the :ref:`Theme <class_Theme>`
+The GUI is skinned through the :ref:`Theme <api:class_Theme>`
 resource. Theme contains all the information required to change the
 entire visual styling of all controls. Theme options are named, so it's
 not obvious which name changes what (especially from code), but several
@@ -90,7 +90,7 @@ children and grandchildren labels) will use that color.
 
 It is possible to override those options without using the theme
 directly, and only for a specific control, by using the override API in
-:ref:`Control.add_color_override() <class_Control_method_add_color_override>`:
+:ref:`Control.add_color_override() <api:class_Control_method_add_color_override>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -104,7 +104,7 @@ directly, and only for a specific control, by using the override API in
     l.AddColorOverride("fontColor", new Color(1.0f, 1.0f, 1.0f));
 
 In the inline help of Godot (in the script tab) you can check which theme options
-are overridable, or check the :ref:`Control <class_Control>` class reference.
+are overridable, or check the :ref:`Control <api:class_Control>` class reference.
 
 Customizing a control
 ---------------------

@@ -7,9 +7,9 @@ Introduction
 ------------
 
 A tilemap is a grid of tiles used to create a game's layout. There are several
-benefits to using :ref:`TileMap <class_TileMap>` nodes to design your levels.
+benefits to using :ref:`TileMap <api:class_TileMap>` nodes to design your levels.
 First, they make it possible to draw the layout by "painting' the tiles onto a
-grid, which is much faster than placing individual :ref:`Sprite <class_Sprite>`
+grid, which is much faster than placing individual :ref:`Sprite <api:class_Sprite>`
 nodes one by one. Second, they allow for much larger levels because they are
 optimized for drawing large numbers of tiles. Finally, you can add collision,
 occlusion, and navigation shapes to tiles, adding additional functionality to
@@ -36,7 +36,7 @@ off ``Filter`` and click "Reimport". See :ref:`doc_import_images` for details.
 TileMap node
 ------------
 
-Add a new :ref:`TileMap <class_TileMap>` node to the scene. By default, a TileMap
+Add a new :ref:`TileMap <api:class_TileMap>` node to the scene. By default, a TileMap
 uses a square grid of tiles. You can also use a perspective-based "Isometric" mode
 or define your own custom tile shape.
 
@@ -71,8 +71,8 @@ Creating a TileSet
 ------------------
 
 Once you've configured your tilemap, it's time to add a
-:ref:`TileSet <class_TileSet>`. A TileSet is a
-:ref:`Resource <class_Resource>` that contains the data about your
+:ref:`TileSet <api:class_TileSet>`. A TileSet is a
+:ref:`Resource <api:class_Resource>` that contains the data about your
 tiles - their   textures, collision shapes, and other properties. When the game
 runs, the TileMap combines the individual tiles into a single object.
 
@@ -153,7 +153,7 @@ similar tiles together when you're working with a large number of tiles.
 Tips and tricks
 ---------------
 
-- If you're using a :ref:`Camera2D <class_Camera2D>` to scroll your level, you
+- If you're using a :ref:`Camera2D <api:class_Camera2D>` to scroll your level, you
   may notice lines appearing between your tiles. To fix this, open Project
   Settings and enable "Use Pixel Snap" in the "Rendering/Quality" section.
 

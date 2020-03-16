@@ -21,12 +21,12 @@ necessary for specific effects.
 Creating a VisualShader
 -----------------------
 
-VisualShaders can be created in any :ref:`class_ShaderMaterial`. To begin using
+VisualShaders can be created in any :ref:`api:class_ShaderMaterial`. To begin using
 VisualShaders, create a new ``ShaderMaterial`` in an object of your choice.
 
 .. image:: img/shader_material_create_mesh.png
 
-Then assign a :ref:`class_VisualShader` resource to the ``Shader`` property.
+Then assign a :ref:`api:class_VisualShader` resource to the ``Shader`` property.
 
 .. image:: img/visual_shader_create.png
 

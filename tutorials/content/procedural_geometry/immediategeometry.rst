@@ -3,7 +3,7 @@
 Using ImmediateGeometry
 =======================
 
-Unlike the SurfaceTool or ArrayMesh, :ref:`ImmediateGeometry <class_ImmediateGeometry>` is an actual
+Unlike the SurfaceTool or ArrayMesh, :ref:`ImmediateGeometry <api:class_ImmediateGeometry>` is an actual
 node. Being an node makes it quick to add to a scene and get visual output. It uses an "OpenGL 1.x" style
 API like the SurfaceTool, but it's actually designed to create content on the fly.
 
@@ -17,7 +17,7 @@ not call ``clear()``.
 To begin generating geometry you must call ``begin()``. ``begin()`` takes a ``PrimitiveType`` as an argument.
 ``PrimitiveType`` is an OpenGL concept that instructs the GPU how to arrange the primitive based on the
 vertices given whether it is triangles, lines, points, etc. A complete list can be found under
-the :ref:`Mesh <class_mesh>` class reference page.
+the :ref:`Mesh <api:class_mesh>` class reference page.
 
 Once you have called ``begin()`` you are ready to start adding vertices. You add vertices one at a time.
 First you add vertex specific attributes such as normals or UVs using ``set_****()`` (e.g. ``set_normal()``).

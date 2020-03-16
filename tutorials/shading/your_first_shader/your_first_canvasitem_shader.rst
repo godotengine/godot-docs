@@ -23,13 +23,13 @@ Setup
 :ref:`CanvasItem <doc_canvas_item_shader>` shaders are used to draw all 2D objects in Godot, 
 while :ref:`Spatial <doc_spatial_shader>` shaders are used to draw all 3D objects.
 
-In order to use a shader it must be attached inside a :ref:`Material <class_material>` 
+In order to use a shader it must be attached inside a :ref:`Material <api:class_material>` 
 which must be attached to an object. Materials are a type of :ref:`Resource <doc_resources>`.
 To draw multiple objects with the same material, the material must be attached to each object.
 
-All objects derived from a :ref:`CanvasItem <class_canvasitem>` have a material property.
-This includes all :ref:`GUI elements <class_Control>`, :ref:`Sprites <class_sprite>`, :ref:`TileMaps <class_tilemap>`,
-:ref:`MeshInstance2Ds <class_meshinstance2d>` etc.
+All objects derived from a :ref:`CanvasItem <api:class_canvasitem>` have a material property.
+This includes all :ref:`GUI elements <api:class_Control>`, :ref:`Sprites <api:class_sprite>`, :ref:`TileMaps <api:class_tilemap>`,
+:ref:`MeshInstance2Ds <api:class_meshinstance2d>` etc.
 They also have an option to inherit their parent's material. This can be useful if you have
 a large number of nodes that you want to use the same material.
 

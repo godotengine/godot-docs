@@ -397,7 +397,7 @@ input and return an output. They are almost never sequenced.
 Built-In
 ^^^^^^^^
 
-There is a list of built-in helpers. The list is almost identical to the one from :ref:`GDScript<class_@GDScript>`. Most of them are mathematical functions, but others can be useful helpers. Make sure to take a look at the list
+There is a list of built-in helpers. The list is almost identical to the one from :ref:`GDScript<api:class_@GDScript>`. Most of them are mathematical functions, but others can be useful helpers. Make sure to take a look at the list
 at some point.
 
 By Type

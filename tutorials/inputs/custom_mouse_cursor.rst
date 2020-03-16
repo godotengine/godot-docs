@@ -61,7 +61,7 @@ Create a Node and attach the following script.
     }
 
 .. note::
-    Check :ref:`Input.set_custom_mouse_cursor() <class_Input_method_set_custom_mouse_cursor>`.
+    Check :ref:`Input.set_custom_mouse_cursor() <api:class_Input_method_set_custom_mouse_cursor>`.
 
 
 Demo project
@@ -73,4 +73,4 @@ https://github.com/guilhermefelipecgs/custom_hardware_cursor
 Cursor list
 -----------
 
-As documented in the :ref:`Input <class_Input>` class (see the **CursorShape** enum), there are multiple mouse cursors you can define. Which ones you want to use depends on your use case.
+As documented in the :ref:`Input <api:class_Input>` class (see the **CursorShape** enum), there are multiple mouse cursors you can define. Which ones you want to use depends on your use case.

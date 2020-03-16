@@ -148,7 +148,7 @@ It is possible to bind values when establishing a connection by passing an objec
         minusButton.Connect("pressed", this, "ModifyValue", new object[] { -1 });
     }
 
-Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <class_Object>`.
+Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <api:class_Object>`.
 Consequently, any ``Node`` or ``Reference`` will be compatible automatically, but custom data objects will need to extend from `Godot.Object` or one of its subclasses.
 
 .. code-block:: csharp
@@ -224,7 +224,7 @@ Full list of defines
 
 * One of ``GODOT_X11``, ``GODOT_WINDOWS``, ``GODOT_OSX``, ``GODOT_ANDROID``, ``GODOT_HTML5``,
   or ``GODOT_SERVER`` depending on the OS. These names may change in the future.
-  These are created from the ``get_name()`` method of the :ref:``OS <class_OS>`` singleton,
+  These are created from the ``get_name()`` method of the :ref:``OS <api:class_OS>`` singleton,
   but not every possible OS the method returns is an OS that Godot with Mono runs on.
 
 When **exporting**, the following may also be defined depending on the export features:

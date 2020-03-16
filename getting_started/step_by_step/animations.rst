@@ -15,7 +15,7 @@ just in case: :download:`robisplash.zip <files/robisplash.zip>`.
 Add an animation player
 -----------------------
 
-First of all, add an :ref:`AnimationPlayer <class_AnimationPlayer>`
+First of all, add an :ref:`AnimationPlayer <api:class_AnimationPlayer>`
 node to the scene as a child of "background" (the root node):
 
 .. image:: img/robisplash_anim_inspector.png

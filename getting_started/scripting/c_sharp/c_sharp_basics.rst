@@ -182,7 +182,7 @@ As you can see, functions normally in global scope in GDScript like Godot's
 ``print`` function are available in the ``GD`` class which is part of
 the ``Godot`` namespace. For a list of methods in the ``GD`` class, see the
 class reference pages for
-:ref:`@GDScript <class_@gdscript>` and :ref:`@GlobalScope <class_@globalscope>`.
+:ref:`@GDScript <api:class_@gdscript>` and :ref:`@GlobalScope <api:class_@globalscope>`.
 
 .. note::
     Keep in mind that the class you wish to attach to your node should have the same

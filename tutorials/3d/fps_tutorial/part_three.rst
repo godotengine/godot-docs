@@ -33,7 +33,7 @@ or :kbd:`F6` on keyboard, and give each a try.
 .. warning:: ``Space_Level.tscn`` is more graphically demanding of the GPU than ``Ruins_Level.tscn``. If your computer is struggling to render
           ``Space_Level.tscn``, try using ``Ruins_Level.tscn`` instead.
 
-You might have noticed there are several :ref:`RigidBody <class_RigidBody>` nodes placed throughout the level.
+You might have noticed there are several :ref:`RigidBody <api:class_RigidBody>` nodes placed throughout the level.
 We can place ``RigidBody_hit_test.gd`` on them and then they will react to being hit with bullets, so let's do that!
 
 Follow the instructions below for either (or both) of the scenes you want to use
@@ -464,20 +464,20 @@ Finally, let's add some sounds that accompany the player firing, reloading and c
          https://gamesounds.xyz/ is a collection of **"royalty free or public domain music and sounds suitable for games"**.
          I used Gamemaster's Gun Sound Pack, which can be found in the Sonniss.com GDC 2017 Game Audio Bundle.
 
-Open up ``Simple_Audio_Player.tscn``. It is simply a :ref:`Spatial <class_Spatial>` with an :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` as its child.
+Open up ``Simple_Audio_Player.tscn``. It is simply a :ref:`Spatial <api:class_Spatial>` with an :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>` as its child.
 
 .. note:: The reason this is called a 'simple' audio player is because we are not taking performance into account
           and because the code is designed to provide sound in the simplest way possible.
 
 If you want to use 3D audio, so it sounds like it's coming from a location in 3D space, right click
-the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` and select "Change type".
+the :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>` and select "Change type".
 
-This will open the node browser. Navigate to :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` and select "change".
-In the source for this tutorial, we will be using :ref:`AudioStreamPlayer <class_AudioStreamPlayer>`, but you can optionally
-use :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` if you desire, and the code provided below will work regardless of which
+This will open the node browser. Navigate to :ref:`AudioStreamPlayer3D <api:class_AudioStreamPlayer3D>` and select "change".
+In the source for this tutorial, we will be using :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>`, but you can optionally
+use :ref:`AudioStreamPlayer3D <api:class_AudioStreamPlayer3D>` if you desire, and the code provided below will work regardless of which
 one you chose.
 
-Create a new script and call it ``Simple_Audio_Player.gd``. Attach it to the :ref:`Spatial <class_Spatial>` in ``Simple_Audio_Player.tscn``
+Create a new script and call it ``Simple_Audio_Player.gd``. Attach it to the :ref:`Spatial <api:class_Spatial>` in ``Simple_Audio_Player.tscn``
 and insert the following code:
 
 ::
@@ -536,26 +536,26 @@ Let's go over what's happening here:
 
 _________
 
-In ``_ready``, we get the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` and connect its ``finished`` signal to the ``destroy_self`` function.
-It doesn't matter if it's an :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` or :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node,
-as they both have the finished signal. To make sure it is not playing any sounds, we call ``stop`` on the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>`.
+In ``_ready``, we get the :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>` and connect its ``finished`` signal to the ``destroy_self`` function.
+It doesn't matter if it's an :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>` or :ref:`AudioStreamPlayer3D <api:class_AudioStreamPlayer3D>` node,
+as they both have the finished signal. To make sure it is not playing any sounds, we call ``stop`` on the :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>`.
 
 .. warning:: Make sure your sound files are **not** set to loop! If it is set to loop,
              the sounds will continue to play infinitely and the script will not work!
 
 The ``play_sound`` function is what we will be calling from ``Player.gd``. We check if the sound
-is one of the three possible sounds, and if it is one of the three sounds we set the audio stream in :ref:`AudioStreamPlayer <class_AudioStreamPlayer>`
+is one of the three possible sounds, and if it is one of the three sounds we set the audio stream in :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>`
 to the correct sound.
 
 If it is an unknown sound, we print an error message to the console and free the audio player.
 
-If you are using an :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>`, remove the ``#`` to set the position of
+If you are using an :ref:`AudioStreamPlayer3D <api:class_AudioStreamPlayer3D>`, remove the ``#`` to set the position of
 the audio player node so it plays at the correct position.
 
-Finally, we tell the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` to play.
+Finally, we tell the :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>` to play.
 
-When the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` is finished playing the sound, it will call ``destroy_self`` because
-we connected the ``finished`` signal in ``_ready``. We stop the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` and free the audio player
+When the :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>` is finished playing the sound, it will call ``destroy_self`` because
+we connected the ``finished`` signal in ``_ready``. We stop the :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>` and free the audio player
 to save on resources.
 
 .. note:: This system is extremely simple and has some major flaws:
@@ -603,9 +603,9 @@ named ``audio_clone``.
 
 The second line gets the scene root, and this has a large (though safe) assumption.
 
-We first get this node's :ref:`SceneTree <class_SceneTree>`,
-and then access the root node, which in this case is the :ref:`Viewport <class_Viewport>` this entire game is running under.
-Then we get the first child of the :ref:`Viewport <class_Viewport>`, which in our case happens to be the root node in
+We first get this node's :ref:`SceneTree <api:class_SceneTree>`,
+and then access the root node, which in this case is the :ref:`Viewport <api:class_Viewport>` this entire game is running under.
+Then we get the first child of the :ref:`Viewport <api:class_Viewport>`, which in our case happens to be the root node in
 ``Test_Area.tscn`` or any of the other provided levels. **We are making a huge assumption that the first child of the root node
 is the root scene that the player is under, which may not always be the case**.
 
@@ -675,7 +675,7 @@ At this point, we have all the basics of an FPS game working.
 There are still a few things that would be nice to add, and we're going to add them in the next three parts!
 
 For example, right now we have no way to add ammo to our spares, so we'll eventually run out. Also, we don't
-have anything to shoot at outside of the :ref:`RigidBody <class_RigidBody>` nodes.
+have anything to shoot at outside of the :ref:`RigidBody <api:class_RigidBody>` nodes.
 
 In :ref:`doc_fps_tutorial_part_four` we'll add some targets to shoot at, along with some health and ammo pick ups!
 We're also going to add joypad support, so we can play with wired Xbox 360 controllers!

@@ -13,7 +13,7 @@ result. Light can come from several types of sources in a scene:
    it does not affect nearby objects unless baked).
 -  Light Nodes: Directional, Omni and Spot.
 -  Ambient Light in the
-   :ref:`Environment <class_Environment>`.
+   :ref:`Environment <api:class_Environment>`.
 -  Baked Light (read :ref:`doc_baked_lightmaps`).
 
 The emission color is a material property. You can read more about it

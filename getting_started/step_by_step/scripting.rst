@@ -213,7 +213,7 @@ is a scripting tutorial, so for the sake of learning, let's dive into the
 manual process!
 
 To accomplish this, we will introduce a function that is probably the most used
-by Godot programmers: :ref:`Node.get_node() <class_Node_method_get_node>`.
+by Godot programmers: :ref:`Node.get_node() <api:class_Node_method_get_node>`.
 This function uses paths to fetch nodes anywhere in the scene, relative to the
 node that owns the script.
 
@@ -253,7 +253,7 @@ Next, write a function which will be called when the button is pressed:
     }
 
 Finally, connect the button's "pressed" signal to ``_on_Button_pressed()`` by
-using :ref:`Object.connect() <class_Object_method_connect>`.
+using :ref:`Object.connect() <api:class_Object_method_connect>`.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -11,8 +11,8 @@ In particular, it will explain how to write a post-processing shader that
 uses the depth buffer. You should already be familiar with post-processing 
 generally and, in particular, with the methods outlined in the :ref:`custom post-processing tutorial <doc_custom_postprocessing>`.
 
-In the previous post-processing tutorial, we rendered the scene to a :ref:`Viewport <class_Viewport>` 
-and then rendered the Viewport in a :ref:`ViewportContainer <class_ViewportContainer>` 
+In the previous post-processing tutorial, we rendered the scene to a :ref:`Viewport <api:class_Viewport>` 
+and then rendered the Viewport in a :ref:`ViewportContainer <api:class_ViewportContainer>` 
 to the main scene. One limitation of this method is that we could not access the 
 depth buffer because the depth buffer is only available in spatial shaders and 
 Viewports do not maintain depth information.
@@ -27,8 +27,8 @@ two main drawbacks of using a Viewport:
 1. The depth buffer cannot be accessed
 2. The effect of the post-processing shader is not visible in the editor
 
-To get around the limitation on using the depth buffer, use a :ref:`MeshInstance <class_MeshInstance>` 
-with a :ref:`QuadMesh <class_QuadMesh>` primitive. This allows us to use a spatial 
+To get around the limitation on using the depth buffer, use a :ref:`MeshInstance <api:class_MeshInstance>` 
+with a :ref:`QuadMesh <api:class_QuadMesh>` primitive. This allows us to use a spatial 
 shader and to access the depth texture of the scene. Next, use a vertex shader 
 to make the quad cover the screen at all times so that the post-processing 
 effect will be applied at all times, including in the editor.
@@ -150,7 +150,7 @@ screen quad. The reason for this is explained `here <https://michaldrobot.com/20
 However, the benefit is quite small and only beneficial when running especially 
 complex fragment shaders. 
 
-Set the Mesh in the MeshInstance to an :ref:`ArrayMesh <class_ArrayMesh>`. An 
+Set the Mesh in the MeshInstance to an :ref:`ArrayMesh <api:class_ArrayMesh>`. An 
 ArrayMesh is a tool that allows you to easily construct a Mesh from Arrays for
 vertices, normals, colors, etc.
 

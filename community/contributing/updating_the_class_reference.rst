@@ -230,19 +230,19 @@ Godot's class reference supports BBcode-like tags. They add nice formatting to t
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 | Tag                       | Effect                         | Usage                             | Result                                            |
 +===========================+================================+===================================+===================================================+
-| [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.                     |
+| [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`api:class_sprite`.                     |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [method methodname]       | Link to a method in this class | Call [method hide].               | See :ref:`hide <class_spatial_method_hide>`.      |
+| [method methodname]       | Link to a method in this class | Call [method hide].               | See :ref:`hide <api:class_spatial_method_hide>`.      |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [method Class.methodname] | Link to another class's method | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_method_hide>`.      |
+| [method Class.methodname] | Link to another class's method | Call [method Spatial.hide].       | See :ref:`hide <api:class_spatial_method_hide>`.      |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_node2d_property_scale>`.   |
+| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <api:class_node2d_property_scale>`.   |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_property_scale>`.   |
+| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <api:class_node2d_property_scale>`.   |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
+| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <api:class_node_signal_renamed>`.  |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
+| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <api:class_node_signal_renamed>`.  |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 | [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                               |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+

@@ -539,10 +539,10 @@ Remember to:
 But this is not all, depending what you do, you will be greeted with
 some (hopefully positive) surprises.
 
--  If you inherit from :ref:`class_Node` (or any derived node type, such as
+-  If you inherit from :ref:`api:class_Node` (or any derived node type, such as
    Sprite), your new class will appear in the editor, in the inheritance
    tree in the "Add Node" dialog.
--  If you inherit from :ref:`class_Resource`, it will appear in the resource
+-  If you inherit from :ref:`api:class_Resource`, it will appear in the resource
    list, and all the exposed properties can be serialized when
    saved/loaded.
 -  By this same logic, you can extend the Editor and almost any area of

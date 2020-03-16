@@ -63,10 +63,10 @@ when needed:
 
 When this plugin is activated, it will create a new instance of the import
 plugin (which we'll soon make) and add it to the editor using the
-:ref:`add_import_plugin() <class_EditorPlugin_method_add_import_plugin>` method. We store
+:ref:`add_import_plugin() <api:class_EditorPlugin_method_add_import_plugin>` method. We store
 a reference to it in a class member ``import_plugin`` so we can refer to it
 later when removing it. The
-:ref:`remove_import_plugin() <class_EditorPlugin_method_remove_import_plugin>` method is
+:ref:`remove_import_plugin() <api:class_EditorPlugin_method_remove_import_plugin>` method is
 called when the plugin is deactivated to clean up the memory and let the editor
 know the import plugin isn't available anymore.
 
@@ -78,7 +78,7 @@ The EditorImportPlugin class
 ----------------------------
 
 The main character of the show is the
-:ref:`EditorImportPlugin class <class_EditorImportPlugin>`. It is responsible for
+:ref:`EditorImportPlugin class <api:class_EditorImportPlugin>`. It is responsible for
 implementing the methods that are called by Godot when it needs to know how to deal
 with files.
 
@@ -94,7 +94,7 @@ Let's begin to code our plugin, one method at time:
         return "demos.sillymaterial"
 
 The first method is the
-:ref:`get_importer_name()<class_EditorImportPlugin_method_get_importer_name>`. This is a
+:ref:`get_importer_name()<api:class_EditorImportPlugin_method_get_importer_name>`. This is a
 unique name for your plugin that is used by Godot to know which import was used
 in a certain file. When the files needs to be reimported, the editor will know
 which plugin to call.
@@ -104,7 +104,7 @@ which plugin to call.
     func get_visible_name():
         return "Silly Material"
 
-The :ref:`get_visible_name()<class_EditorImportPlugin_method_get_visible_name>` method is
+The :ref:`get_visible_name()<api:class_EditorImportPlugin_method_get_visible_name>` method is
 responsible for returning the name of the type it imports and it will be shown to the
 user in the Import dock.
 
@@ -118,7 +118,7 @@ descriptive name for your plugin.
         return ["mtxt"]
 
 Godot's import system detects file types by their extension. In the
-:ref:`get_recognized_extensions()<class_EditorImportPlugin_method_get_recognized_extensions>`
+:ref:`get_recognized_extensions()<api:class_EditorImportPlugin_method_get_recognized_extensions>`
 method you return an array of strings to represent each extension that this
 plugin can understand. If an extension is recognized by more than one plugin,
 the user can select which one to use when importing the files.
@@ -153,7 +153,7 @@ The imported resource has a specific type, so the editor can know which property
 slot it belongs to. This allows drag and drop from the FileSystem dock to a
 property in the Inspector.
 
-In our case it's a :ref:`class_SpatialMaterial`, which can be applied to 3D
+In our case it's a :ref:`api:class_SpatialMaterial`, which can be applied to 3D
 objects.
 
 .. note:: If you need to import different types from the same extension, you
@@ -190,7 +190,7 @@ plugin:
     func get_preset_count():
         return Presets.size()
 
-The :ref:`get_preset_count() <class_EditorImportPlugin_method_get_preset_count>` method
+The :ref:`get_preset_count() <api:class_EditorImportPlugin_method_get_preset_count>` method
 returns the amount of presets that this plugins defines. We only have one preset
 now, but we can make this method future-proof by returning the size of our
 ``Presets`` enumeration.
@@ -206,7 +206,7 @@ now, but we can make this method future-proof by returning the size of our
 
 
 Here we have the
-:ref:`get_preset_name() <class_EditorImportPlugin_method_get_preset_name>` method, which
+:ref:`get_preset_name() <api:class_EditorImportPlugin_method_get_preset_name>` method, which
 gives names to the presets as they will be presented to the user, so be sure to
 use short and clear names.
 
@@ -231,7 +231,7 @@ you do this you have to be careful when you add more presets.
                 return []
 
 This is the method which defines the available options.
-:ref:`get_import_options() <class_EditorImportPlugin_method_get_import_options>` returns
+:ref:`get_import_options() <api:class_EditorImportPlugin_method_get_import_options>` returns
 an array of dictionaries, and each dictionary contains a few keys that are
 checked to customize the option as its shown to the user. The following table
 shows the possible keys:
@@ -269,7 +269,7 @@ of options first and then change it based on the preset.
         return true
 
 For the
-:ref:`get_option_visibility() <class_EditorImportPlugin_method_get_option_visibility>`
+:ref:`get_option_visibility() <api:class_EditorImportPlugin_method_get_option_visibility>`
 method, we simply return ``true`` because all of our options (i.e. the single
 one we defined) are visible all the time.
 
@@ -280,7 +280,7 @@ The ``import`` method
 ---------------------
 
 The heavy part of the process, responsible for converting the files into
-resources, is covered by the :ref:`import() <class_EditorImportPlugin_method_import>`
+resources, is covered by the :ref:`import() <api:class_EditorImportPlugin_method_import>`
 method. Our sample code is a bit long, so let's split in a few parts:
 
 ::
@@ -296,7 +296,7 @@ method. Our sample code is a bit long, so let's split in a few parts:
         file.close()
 
 The first part of our import method opens and reads the source file. We use the
-:ref:`File <class_File>` class to do that, passing the ``source_file``
+:ref:`File <api:class_File>` class to do that, passing the ``source_file``
 parameter which is provided by the editor.
 
 If there's an error when opening the file, we return it to let the editor know
@@ -318,7 +318,7 @@ This code takes the line of the file it read before and splits it in pieces
 that are separated by a comma. If there are more or less than the three values,
 it considers the file invalid and reports an error.
 
-Then it creates a new :ref:`Color <class_Color>` variable and sets its values
+Then it creates a new :ref:`Color <api:class_Color>` variable and sets its values
 according to the input file. If the ``use_red_anyway`` option is enabled, then
 it sets the color as a pure red instead.
 
@@ -327,7 +327,7 @@ it sets the color as a pure red instead.
     var material = SpatialMaterial.new()
     material.albedo_color = color
 
-This part makes a new :ref:`SpatialMaterial <class_SpatialMaterial>` that is the
+This part makes a new :ref:`SpatialMaterial <api:class_SpatialMaterial>` that is the
 imported resource. We create a new instance of it and then set its albedo color
 as the value we got before.
 
@@ -343,7 +343,7 @@ this we call the ``get_save_extension`` method that we defined earlier, so we
 can be sure that they won't get out of sync.
 
 We also return the result from the
-:ref:`ResourceSaver.save() <class_ResourceSaver_method_save>` method, so if there's an
+:ref:`ResourceSaver.save() <api:class_ResourceSaver_method_save>` method, so if there's an
 error in this step, the editor will know about it.
 
 Platform variants and generated files

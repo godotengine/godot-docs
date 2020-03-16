@@ -3,14 +3,14 @@
 Using the ArrayMesh
 ===================
 
-This tutorial will present the basics of using an :ref:`ArrayMesh <class_arraymesh>`
+This tutorial will present the basics of using an :ref:`ArrayMesh <api:class_arraymesh>`
 
-To do so, we will use the function :ref:`add_surface_from_arrays() <class_ArrayMesh_method_add_surface_from_arrays>`,
+To do so, we will use the function :ref:`add_surface_from_arrays() <api:class_ArrayMesh_method_add_surface_from_arrays>`,
 which takes up to four parameters. The first two are required, while the second two are optional.
 
 The first is the ``PrimitiveType``, this is an OpenGL concept that instructs the GPU
 how to arrange the primitive based on the vertices given whether it is triangles,
-lines, points, etc. A complete list can be found under the :ref:`Mesh <class_mesh>` 
+lines, points, etc. A complete list can be found under the :ref:`Mesh <api:class_mesh>` 
 class reference page.
 
 The second is the actual Array that stores the mesh information. The array is a normal Godot array that
@@ -40,14 +40,14 @@ The third parameter is an array of blendshapes for the Mesh to use. While this t
 using blendshapes, it is possible to specify them when creating a surface from arrays.
 
 The last parameter is the compress flags which specifies which arrays to store with half as many bits. The
-values can be found in the classref for :ref:`VisualServer <class_visualserver>` under :ref:`ArrayFormat <enum_visualserver_arrayformat>`.
+values can be found in the classref for :ref:`VisualServer <api:class_visualserver>` under :ref:`ArrayFormat <enum_visualserver_arrayformat>`.
 
 For normal usage you will find it is best to leave the last two parameters empty.
 
 ArrayMesh
 ---------
 
-Add an :ref:`ArrayMesh <class_arraymesh>` to a MeshInstance. Normally, adding an ArrayMesh in
+Add an :ref:`ArrayMesh <api:class_arraymesh>` to a MeshInstance. Normally, adding an ArrayMesh in
 the editor is not useful, but in this case it allows as to access the ArrayMesh from code
 without creating one.
 
@@ -208,7 +208,7 @@ in each array and then you can follow tutorials for any language/engine and conv
 Saving
 ------
 
-Finally, Godot provides a single method to save ArrayMeshes using the :ref:`ResourceSaver <class_resourcesaver>`
+Finally, Godot provides a single method to save ArrayMeshes using the :ref:`ResourceSaver <api:class_resourcesaver>`
 class. This is useful when you want to generate a mesh and then use it later without having to re-generate.
 
 .. tabs::

@@ -271,7 +271,7 @@ configuring the behavior:
     By default, the base name of the loaded engine files is used.
     This method allows specifying another name.
 
-    This affects the output of :ref:`OS.get_executable_path() <class_OS_method_get_executable_path>`
+    This affects the output of :ref:`OS.get_executable_path() <api:class_OS_method_get_executable_path>`
     and the automatically started main pack, :file:`{ExecutableName}.pck`.
 
     :param string execName: Executable name.

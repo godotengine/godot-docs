@@ -217,7 +217,7 @@ Let's go over what's happening:
 
 Firstly, we check the mouse mode. If the mouse mode is not ``MOUSE_MODE_CAPTURED``, we want to return, which will skip the code below.
 
-Next, we define a new :ref:`Vector2 <class_Vector2>` called ``joypad_vec``. This will hold the right joystick position. Based on the OS, we set its values so
+Next, we define a new :ref:`Vector2 <api:class_Vector2>` called ``joypad_vec``. This will hold the right joystick position. Based on the OS, we set its values so
 it is mapped to the proper axes for the right joystick.
 
 .. warning:: As stated above, I do not (currently) have access to a Mac computer, so the joystick axes may need changing. If they do,
@@ -225,7 +225,7 @@ it is mapped to the proper axes for the right joystick.
 
 We then account for the joypad's dead zone, exactly like in ``process_input``.
 
-Then, we rotate ``rotation_helper`` and the player's :ref:`KinematicBody <class_KinematicBody>` using ``joypad_vec``.
+Then, we rotate ``rotation_helper`` and the player's :ref:`KinematicBody <api:class_KinematicBody>` using ``joypad_vec``.
 
 Notice how the code that handles rotating the player and ``rotation_helper`` is exactly the same as the
 code in ``_input``. All we've done is change the values to use ``joypad_vec`` and ``JOYPAD_SENSITIVITY``.
@@ -335,13 +335,13 @@ Open up ``Health_Pickup.tscn``.
 Expand ``Holder`` if it's not already expanded. Notice how we have two Spatial nodes, one called ``Health_Kit`` and another called ``Health_Kit_Small``.
 
 This is because we're actually going to be making two sizes of health pickups, one small and one large/normal. ``Health_Kit`` and ``Health_Kit_Small`` only
-have a single :ref:`MeshInstance <class_MeshInstance>` as their children.
+have a single :ref:`MeshInstance <api:class_MeshInstance>` as their children.
 
-Next expand ``Health_Pickup_Trigger``. This is an :ref:`Area <class_Area>` node we're going to use to check if the player has walked close enough to pick up
+Next expand ``Health_Pickup_Trigger``. This is an :ref:`Area <api:class_Area>` node we're going to use to check if the player has walked close enough to pick up
 the health kit. If you expand it, you'll find two collision shapes, one for each size. We will be using a different collision shape size based on the size of the
 health pickup, so the smaller health pickup has a trigger collision shape closer to its size.
 
-The last thing to note is how we have an :ref:`AnimationPlayer <class_AnimationPlayer>` node so the health kit bobs and spins around slowly.
+The last thing to note is how we have an :ref:`AnimationPlayer <api:class_AnimationPlayer>` node so the health kit bobs and spins around slowly.
 
 Select ``Health_Pickup`` and add a new script called ``Health_Pickup.gd``. Add the following:
 
@@ -424,7 +424,7 @@ ______
 Let's look at ``_ready``:
 
 Firstly, we connect the ``body_entered`` signal from the ``Health_Pickup_Trigger`` to the ``trigger_body_entered`` function. This makes it so any
-body that enters the :ref:`Area <class_Area>` triggers the ``trigger_body_entered`` function.
+body that enters the :ref:`Area <api:class_Area>` triggers the ``trigger_body_entered`` function.
 
 Next, we set ``is_ready`` to ``true`` so we can use the ``setget`` function.
 
@@ -455,10 +455,10 @@ The first thing we do is check to see which size was passed in. Based on which s
 We get the collision shape for the node corresponding to ``size`` and disable it based on the ``enabled`` passed in argument/variable.
 
 .. note:: Why are we using ``!enable`` instead of ``enable``? This is so when we say we want to enable the node, we can pass in ``true``, but since
-          :ref:`CollisionShape <class_CollisionShape>` uses disabled instead of enabled, we need to flip it. By flipping it, we can enable the collision shape
+          :ref:`CollisionShape <api:class_CollisionShape>` uses disabled instead of enabled, we need to flip it. By flipping it, we can enable the collision shape
           and make the mesh visible when ``true`` is passed in.
 
-We then get the correct :ref:`Spatial <class_Spatial>` node holding the mesh and set its visibility to ``enable``.
+We then get the correct :ref:`Spatial <api:class_Spatial>` node holding the mesh and set its visibility to ``enable``.
 
 This function may be a little confusing; try to think of it like this: We're enabling/disabling the proper nodes for ``size`` using ``enabled``. This is so we cannot pick up
 health for a size that is not visible, and so only the mesh for the proper size will be visible.
@@ -616,23 +616,23 @@ Before we end this part, let's add some targets.
 
 Open up ``Target.tscn`` and take a look at the scenes in the scene tree.
 
-Firstly, notice how we're not using a :ref:`RigidBody <class_RigidBody>` node, but a :ref:`StaticBody <class_StaticBody>` one.
-The reason behind this is our non-broken targets will not be moving anywhere; using a :ref:`RigidBody <class_RigidBody>` would be more hassle than
+Firstly, notice how we're not using a :ref:`RigidBody <api:class_RigidBody>` node, but a :ref:`StaticBody <api:class_StaticBody>` one.
+The reason behind this is our non-broken targets will not be moving anywhere; using a :ref:`RigidBody <api:class_RigidBody>` would be more hassle than
 it's worth since all it has to do is stay still.
 
-.. tip:: We also save a tiny bit of performance using a :ref:`StaticBody <class_StaticBody>` over a :ref:`RigidBody <class_RigidBody>`.
+.. tip:: We also save a tiny bit of performance using a :ref:`StaticBody <api:class_StaticBody>` over a :ref:`RigidBody <api:class_RigidBody>`.
 
 The other thing to note is we have a node called ``Broken_Target_Holder``. This node is going to hold a spawned/instanced scene called
 ``Broken_Target.tscn``. Open up ``Broken_Target.tscn``.
 
-Notice how the target is broken up into five pieces, each a :ref:`RigidBody <class_RigidBody>` node. We're going to spawn/instance this scene when the target takes too much damage
+Notice how the target is broken up into five pieces, each a :ref:`RigidBody <api:class_RigidBody>` node. We're going to spawn/instance this scene when the target takes too much damage
 and needs to be destroyed. Then, we're going to hide the non-broken target, so it looks like the target shattered rather than a shattered target was
 spawned/instanced.
 
-While you still have ``Broken_Target.tscn`` open, attach ``RigidBody_hit_test.gd`` to all of the :ref:`RigidBody <class_RigidBody>` nodes. This will make
+While you still have ``Broken_Target.tscn`` open, attach ``RigidBody_hit_test.gd`` to all of the :ref:`RigidBody <api:class_RigidBody>` nodes. This will make
 it so the player can shoot at the broken pieces and they will react to the bullets.
 
-Alright, now switch back to ``Target.tscn``, select the ``Target`` :ref:`StaticBody <class_StaticBody>` node and create a new script called ``Target.gd``.
+Alright, now switch back to ``Target.tscn``, select the ``Target`` :ref:`StaticBody <api:class_StaticBody>` node and create a new script called ``Target.gd``.
 
 Add the following code to ``Target.gd``:
 
@@ -697,12 +697,12 @@ Let's go over what this script does, starting with the class variables:
 * ``TARGET_HEALTH``: The amount of damage needed to break a fully healed target.
 * ``current_health``: The amount of health this target currently has.
 * ``broken_target_holder``: A variable to hold the ``Broken_Target_Holder`` node so we can use it easily.
-* ``target_collision_shape``: A variable to hold the :ref:`CollisionShape <class_CollisionShape>` for the non-broken target.
+* ``target_collision_shape``: A variable to hold the :ref:`CollisionShape <api:class_CollisionShape>` for the non-broken target.
 * ``TARGET_RESPAWN_TIME``: The length of time, in seconds, it takes for a target to respawn.
 * ``target_respawn_timer``: A variable to track how long a target has been broken.
-* ``destroyed_target``: A :ref:`PackedScene <class_PackedScene>` to hold the broken target scene.
+* ``destroyed_target``: A :ref:`PackedScene <api:class_PackedScene>` to hold the broken target scene.
 
-Notice how we're using an exported variable (a :ref:`PackedScene <class_PackedScene>`) to get the broken target scene instead of
+Notice how we're using an exported variable (a :ref:`PackedScene <api:class_PackedScene>`) to get the broken target scene instead of
 using ``preload``. By using an exported variable, we can choose the scene from the editor, and if we need to use a different scene,
 it's as easy as selecting a different scene in the editor; we don't need to go to the code to change the scene we're using.
 
@@ -755,7 +755,7 @@ Next we add the ``clone`` as a child of the broken target holder.
 
 For bonus effect, we want to make all the target pieces explode outwards. To do this, we iterate over all the children in ``clone``.
 
-For each child, we first check to see if it's a :ref:`RigidBody <class_RigidBody>` node. If it is, we then calculate the center position of the target relative
+For each child, we first check to see if it's a :ref:`RigidBody <api:class_RigidBody>` node. If it is, we then calculate the center position of the target relative
 to the child node. Then we figure out which direction the child node is relative to the center. Using those calculated variables, we push the child from the calculated center,
 in the direction away from the center, using the damage of the bullet as the force.
 

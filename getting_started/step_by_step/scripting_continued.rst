@@ -13,9 +13,9 @@ However, it is still common to need a script to be processed on every
 frame. There are two types of processing: idle processing and physics
 processing.
 
-Idle processing is activated when the method :ref:`Node._process() <class_Node_method__process>`
+Idle processing is activated when the method :ref:`Node._process() <api:class_Node_method__process>`
 is found in a script. It can be turned off and on with the
-:ref:`Node.set_process() <class_Node_method_set_process>` function.
+:ref:`Node.set_process() <api:class_Node_method_set_process>` function.
 
 This method will be called every time a frame is drawn:
 
@@ -114,7 +114,7 @@ node to the ``enemies`` group as soon as it appeared in the scene tree.
 
 This way, if the player is discovered sneaking into a secret base,
 all enemies can be notified about its alarm sounding by using
-:ref:`SceneTree.call_group() <class_SceneTree_method_call_group>`:
+:ref:`SceneTree.call_group() <api:class_SceneTree_method_call_group>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -134,7 +134,7 @@ member of the group ``enemies``.
 
 It is also possible to get the full list of ``enemies`` nodes by
 calling
-:ref:`SceneTree.get_nodes_in_group() <class_SceneTree_method_get_nodes_in_group>`:
+:ref:`SceneTree.get_nodes_in_group() <api:class_SceneTree_method_get_nodes_in_group>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -145,7 +145,7 @@ calling
 
     var enemies = GetTree().GetNodesInGroup("enemies");
 
-The :ref:`SceneTree <class_SceneTree>` class provides many useful methods,
+The :ref:`SceneTree <api:class_SceneTree>` class provides many useful methods,
 like interacting with scenes, their node hierarchy and groups of nodes.
 It allows you to easily switch scenes or reload them,
 to quit the game or pause and unpause it.
@@ -159,7 +159,7 @@ Godot has a system of notifications. These are usually not needed for
 scripting, as it's too low-level and virtual functions are provided for
 most of them. It's just good to know they exist. For example,
 you may add an
-:ref:`Object._notification() <class_Object_method__notification>`
+:ref:`Object._notification() <api:class_Object_method__notification>`
 function in your script:
 
 .. tabs::
@@ -325,7 +325,7 @@ function. This will crash the game. Running Godot
 with the debugger will often catch this case and warn you about it.
 
 The safest way to delete a node is by using
-:ref:`Node.queue_free() <class_Node_method_queue_free>`.
+:ref:`Node.queue_free() <api:class_Node_method_queue_free>`.
 This erases the node safely during idle.
 
 .. tabs::
@@ -366,9 +366,9 @@ time (GDScript only):
     var scene = preload("res://myscene.tscn") # Will load when parsing the script.
 
 But ``scene`` is not yet a node. It's packed in a
-special resource called :ref:`PackedScene <class_PackedScene>`.
+special resource called :ref:`PackedScene <api:class_PackedScene>`.
 To create the actual node, the function
-:ref:`PackedScene.instance() <class_PackedScene_method_instance>`
+:ref:`PackedScene.instance() <api:class_PackedScene_method_instance>`
 must be called. This will return the tree of nodes that can be added to
 the active scene:
 

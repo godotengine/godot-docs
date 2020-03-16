@@ -6,10 +6,10 @@ Using gridmaps
 Introduction
 ------------
 
-:ref:`Gridmaps <class_GridMap>` are a tool for creating 3D
+:ref:`Gridmaps <api:class_GridMap>` are a tool for creating 3D
 game levels, similar to the way :ref:`TileMap <doc_using_tilemaps>`
 works in 2D. You start with a predefined collection of 3D meshes (a
-:ref:`class_MeshLibrary`) that can be placed on a grid,
+:ref:`api:class_MeshLibrary`) that can be placed on a grid,
 as if you were building a level with an unlimited amount of Lego blocks.
 
 Collisions and navigation can also be added to the meshes, just like you
@@ -27,14 +27,14 @@ button.
 Creating a MeshLibrary
 ----------------------
 
-To begin, you need a :ref:`class_MeshLibrary`, which is a collection
+To begin, you need a :ref:`api:class_MeshLibrary`, which is a collection
 of individual meshes that can be used in the gridmap. Open the "MeshLibrary_Source.tscn"
 scene to see an example of how to set up the mesh library.
 
 .. image:: img/gridmap_meshlibrary1.png
 
-As you can see, this scene has a :ref:`class_Spatial` node as its root, and
-a number of :ref:`class_MeshInstance` node children.
+As you can see, this scene has a :ref:`api:class_Spatial` node as its root, and
+a number of :ref:`api:class_MeshInstance` node children.
 
 If you don't need any physics in your scene, then you're done. However, in most
 cases you'll want to assign collision bodies to the meshes.
@@ -42,8 +42,8 @@ cases you'll want to assign collision bodies to the meshes.
 Collisions
 ----------
 
-You can manually assign a :ref:`class_StaticBody` and
-:ref:`class_CollisionShape` to each mesh. Alternatively, you can use the "Mesh" menu
+You can manually assign a :ref:`api:class_StaticBody` and
+:ref:`api:class_CollisionShape` to each mesh. Alternatively, you can use the "Mesh" menu
 to automatically create the collision body based on the mesh data.
 
 .. image:: img/gridmap_create_body.png
@@ -107,4 +107,4 @@ the drawing plane higher or lower on its axis.
 Using GridMap in code
 ---------------------
 
-See :ref:`class_GridMap` for details on the node's methods and member variables.
+See :ref:`api:class_GridMap` for details on the node's methods and member variables.

@@ -7,16 +7,16 @@ What is a rigid body?
 ---------------------
 
 A rigid body is one that is directly controlled by the physics engine in order to simulate the behavior of physical objects.
-In order to define the shape of the body, it must have one or more :ref:`Shape <class_Shape>` objects assigned. Note that setting the position of these shapes will affect the body's center of mass.
+In order to define the shape of the body, it must have one or more :ref:`Shape <api:class_Shape>` objects assigned. Note that setting the position of these shapes will affect the body's center of mass.
 
 How to control a rigid body
 ---------------------------
 
-A rigid body's behavior can be altered by setting its properties, such as friction, mass, bounce, etc. These properties can be set in the Inspector or via code. See :ref:`RigidBody <class_RigidBody>` for the full list of properties and their effects.
+A rigid body's behavior can be altered by setting its properties, such as friction, mass, bounce, etc. These properties can be set in the Inspector or via code. See :ref:`RigidBody <api:class_RigidBody>` for the full list of properties and their effects.
 
 There are several ways to control a rigid body's movement, depending on your desired application.
 
-If you only need to place a rigid body once, for example to set its initial location, you can use the methods provided by the :ref:`Spatial <class_Spatial>` node, such as ``set_global_transform()`` or ``look_at()``. However, these methods cannot be called every frame or the physics engine will not be able to correctly simulate the body's state.
+If you only need to place a rigid body once, for example to set its initial location, you can use the methods provided by the :ref:`Spatial <api:class_Spatial>` node, such as ``set_global_transform()`` or ``look_at()``. However, these methods cannot be called every frame or the physics engine will not be able to correctly simulate the body's state.
 As an example, consider a rigid body that you want to rotate so that it points towards another object. A common mistake when implementing this kind of behavior is to use ``look_at()`` every frame, which breaks the physics simulation. Below, we'll demonstrate how to implement this correctly.
 
 The fact that you can't use ``set_global_transform()`` or ``look_at()`` methods doesn't mean that you can't have full control of a rigid body. Instead, you can control it by using the ``_integrate_forces()`` callback. In this method, you can add *forces*, apply *impulses*, or set the *velocity* in order to achieve any movement you desire.

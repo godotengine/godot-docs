@@ -24,18 +24,18 @@ Set the display resolution to 800x450 in Project Settings, and set up a new scen
 
 .. image:: img/robisplash_scene.png
 
-The nodes "background" and "logo" are of :ref:`TextureRect <class_TextureRect>`
+The nodes "background" and "logo" are of :ref:`TextureRect <api:class_TextureRect>`
 type. To display an image, drag the corresponding asset to the texture property.
 
 .. image:: img/robisplash_background_inspector.png
 
-The node "start" is a :ref:`TextureButton <class_TextureButton>`.
+The node "start" is a :ref:`TextureButton <api:class_TextureButton>`.
 It takes several images for different states, but only the normal and
 pressed will be supplied in this example:
 
 .. image:: img/robisplash_button_inspector.png
 
-Finally, the node "copyright" is a :ref:`Label <class_Label>`.
+Finally, the node "copyright" is a :ref:`Label <api:class_Label>`.
 
 Your final scene should look something like this.
 

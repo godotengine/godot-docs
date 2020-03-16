@@ -14,10 +14,10 @@ of bugs. There may be differences that are unintentional, but they should be rep
 Particles
 ---------
 
-GLES2 cannot use the :ref:`Particles <class_Particles>` or :ref:`Particles2D <class_Particles2D>` nodes
-as they require advanced GPU features. Instead, use :ref:`CPUParticles <class_CPUParticles>` or
-:ref:`CPUParticles2D <class_CPUParticles2D>`, which provides a similar interface to a
-:ref:`ParticlesMaterial <class_ParticlesMaterial>`.
+GLES2 cannot use the :ref:`Particles <api:class_Particles>` or :ref:`Particles2D <api:class_Particles2D>` nodes
+as they require advanced GPU features. Instead, use :ref:`CPUParticles <api:class_CPUParticles>` or
+:ref:`CPUParticles2D <api:class_CPUParticles2D>`, which provides a similar interface to a
+:ref:`ParticlesMaterial <api:class_ParticlesMaterial>`.
 
 .. tip:: Particles and Particles2D can be converted to their CPU equivalent node with the "Convert to
          CPUParticles" option in the editor.
@@ -25,7 +25,7 @@ as they require advanced GPU features. Instead, use :ref:`CPUParticles <class_CP
 ``SCREEN_TEXTURE`` mip-maps
 ---------------------------
 
-In GLES2, ``SCREEN_TEXTURE`` (accessed via a :ref:`ShaderMaterial <class_ShaderMaterial>`) does not have
+In GLES2, ``SCREEN_TEXTURE`` (accessed via a :ref:`ShaderMaterial <api:class_ShaderMaterial>`) does not have
 computed mip-maps. So when accessing at a different LOD, the texture will not appear blurry.
 
 ``DEPTH_TEXTURE``
@@ -53,7 +53,7 @@ viewport values to the ``0-1`` range.
 SpatialMaterial features
 ------------------------
 
-In GLES2, the following advanced rendering features in the :ref:`SpatialMaterial <class_SpatialMaterial>` are missing:
+In GLES2, the following advanced rendering features in the :ref:`SpatialMaterial <api:class_SpatialMaterial>` are missing:
 
 - Refraction
 - Subsurface scattering
@@ -63,14 +63,14 @@ In GLES2, the following advanced rendering features in the :ref:`SpatialMaterial
 
 When using SpatialMaterials they will not even appear in the editor.
 
-In custom :ref:`ShaderMaterials <class_ShaderMaterial>`, you can set values for these features but they
+In custom :ref:`ShaderMaterials <api:class_ShaderMaterial>`, you can set values for these features but they
 will be non-functional. For example, you will still be able to set the ``SSS`` built-in (which normally adds
 subsurface scattering) in your shader, but nothing will happen.
 
 Environment features
 --------------------
 
-In GLES2, the following features in the :ref:`Environment <class_Environment>` are missing:
+In GLES2, the following features in the :ref:`Environment <api:class_Environment>` are missing:
 
 - Auto exposure
 - Tonemapping
@@ -89,13 +89,13 @@ That means that in GLES2 environments you can only set:
 GIProbes
 --------
 
-:ref:`GIProbes <class_GIProbe>` do not work in GLES2. Instead use :ref:`Baked Lightmaps <class_BakedLightmap>`.
+:ref:`GIProbes <api:class_GIProbe>` do not work in GLES2. Instead use :ref:`Baked Lightmaps <api:class_BakedLightmap>`.
 For a description of how baked lightmaps work see the :ref:`Baked Lightmaps tutorial <doc_baked_lightmaps>`.
 
 Contact shadows
 ---------------
 
-The ``shadow_contact`` property of :ref:`Lights <class_Light>` is not supported in GLES2 and so does nothing.
+The ``shadow_contact`` property of :ref:`Lights <api:class_Light>` is not supported in GLES2 and so does nothing.
 
 Light performance
 -----------------

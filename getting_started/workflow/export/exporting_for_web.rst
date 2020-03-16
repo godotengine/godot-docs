@@ -63,7 +63,7 @@ Browsers do not allow arbitrarily **entering full screen**. The same goes for
 **capturing the cursor**. Instead, these actions have to occur as a response to
 a JavaScript input event. In Godot, this means entering full screen from within
 a pressed input event callback such as ``_input`` or ``_unhandled_input``.
-Querying the :ref:`class_Input` singleton is not sufficient, the relevant
+Querying the :ref:`api:class_Input` singleton is not sufficient, the relevant
 input event must currently be active.
 
 For the same reason, the full screen project setting doesn't work unless the
@@ -79,7 +79,7 @@ player to click or tap or press a key to enable audio.
 .. seealso:: Google offers additional information about their `Web Audio autoplay
              policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
 
-:ref:`class_HTTPClient` and :ref:`class_HTTPRequest`
+:ref:`api:class_HTTPClient` and :ref:`api:class_HTTPRequest`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The HTTP classes have several restrictions on the HTML5 platform:
@@ -113,7 +113,7 @@ The following functionality is currently unavailable on the HTML5 platform:
  -  GDNative
  -  C#
  -  Clipboard synchronisation between engine and operating system
- -  Networking other than :ref:`class_HTTPClient` and :ref:`class_WebSocketClient`
+ -  Networking other than :ref:`api:class_HTTPClient` and :ref:`api:class_WebSocketClient`
 
 .. tip:: Check the `list of open HTML5 issues on Github
          <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`__
@@ -189,11 +189,11 @@ languages integrated into Godot.
 The value of the last JavaScript statement is converted to a GDScript value and
 returned by ``eval()`` under certain circumstances:
 
- * JavaScript ``number`` is returned as GDScript :ref:`class_float`
- * JavaScript ``boolean`` is returned as GDScript :ref:`class_bool`
- * JavaScript ``string`` is returned as GDScript :ref:`class_String`
+ * JavaScript ``number`` is returned as GDScript :ref:`api:class_float`
+ * JavaScript ``boolean`` is returned as GDScript :ref:`api:class_bool`
+ * JavaScript ``string`` is returned as GDScript :ref:`api:class_String`
  * JavaScript ``ArrayBuffer``, ``TypedArray`` and ``DataView`` are returned as
-   GDScript :ref:`class_PoolByteArray`
+   GDScript :ref:`api:class_PoolByteArray`
 
 ::
 

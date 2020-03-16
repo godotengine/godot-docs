@@ -30,10 +30,10 @@ There are other types of interpolations, which will not be covered here. A recom
 Vector interpolation
 --------------------
 
-Vector types (:ref:`Vector2 <class_Vector2>` and :ref:`Vector3 <class_Vector3>`) can also be interpolated, they come with handy functions to do it
-:ref:`Vector2.linear_interpolate() <class_Vector2_method_linear_interpolate>` and :ref:`Vector3.linear_interpolate() <class_Vector3_method_linear_interpolate>`.
+Vector types (:ref:`Vector2 <api:class_Vector2>` and :ref:`Vector3 <api:class_Vector3>`) can also be interpolated, they come with handy functions to do it
+:ref:`Vector2.linear_interpolate() <api:class_Vector2_method_linear_interpolate>` and :ref:`Vector3.linear_interpolate() <api:class_Vector3_method_linear_interpolate>`.
 
-For cubic interpolation, there are also :ref:`Vector2.cubic_interpolate() <class_Vector2_method_linear_interpolate>` and :ref:`Vector3.cubic_interpolate() <class_Vector3_method_linear_interpolate>`, which do a :ref:`Bezier <doc_beziers_and_curves>` style interpolation.
+For cubic interpolation, there are also :ref:`Vector2.cubic_interpolate() <api:class_Vector2_method_linear_interpolate>` and :ref:`Vector3.cubic_interpolate() <api:class_Vector3_method_linear_interpolate>`, which do a :ref:`Bezier <doc_beziers_and_curves>` style interpolation.
 
 Here is simple pseudo-code for going from point A to B using interpolation:
 
@@ -53,7 +53,7 @@ Transform interpolation
 -----------------------
 
 It is also possible to interpolate whole transforms (make sure they have either uniform scale or, at least, the same non-uniform scale).
-For this, the function :ref:`Transform.interpolate_with() <class_Transform_method_interpolate_with>` can be used.
+For this, the function :ref:`Transform.interpolate_with() <api:class_Transform_method_interpolate_with>` can be used.
 
 Here is an example of transforming a monkey from Position1 to Position2:
 

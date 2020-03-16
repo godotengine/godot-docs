@@ -39,7 +39,7 @@ Godot provides tools for working with cutout rigs, and is ideal for the workflow
    selectively for complex parts such as hands, feet, changing facial expressions,
    etc.
 -  **Custom Shaped Elements**: Custom shapes can be created with
-   :ref:`Polygon2D <class_Polygon2D>`
+   :ref:`Polygon2D <api:class_Polygon2D>`
    allowing UV animation, deformations, etc.
 -  **Particle Systems**: A cutout animation rig can be combined with particle
    systems. This can useful for magic effects, jetpacks, etc.
@@ -87,7 +87,7 @@ and dragging with the left mouse button. To exit rotate mode hit :kbd:`ESC`.
 
 The rotation pivot is wrong and needs to be adjusted.
 
-This small cross in the middle of the :ref:`Sprite <class_Sprite>` is
+This small cross in the middle of the :ref:`Sprite <api:class_Sprite>` is
 the rotation pivot:
 
 .. image:: img/tuto_cutout4.png
@@ -130,7 +130,7 @@ of the torso. We'll fix this problem with ``RemoteTransform2D`` nodes.
 RemoteTransform2D node
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The :ref:`RemoteTransform2D <class_RemoteTransform2D>` node transforms nodes
+The :ref:`RemoteTransform2D <api:class_RemoteTransform2D>` node transforms nodes
 somewhere else in the hierarchy. This node applies its own transform (including
 any transformation it inherits from its parents) to the remote node it targets.
 
@@ -193,7 +193,7 @@ node with its parent. And there's currently no child of the hand node.
 With this knowledge let's try again.
 
 The first step is creating an endpoint node. Any kind of node will do,
-but :ref:`Position2D <class_Position2D>` is preferred because it's
+but :ref:`Position2D <api:class_Position2D>` is preferred because it's
 visible in the editor. The endpoint node will ensure that the last bone
 has orientation.
 

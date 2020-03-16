@@ -46,9 +46,9 @@ can find inside it. After doing this, the new project will appear on the list
 of projects. Edit the project by pressing the 'Edit' button.
 
 This project contains two scenes: "Ball.tscn" and "Main.tscn". The ball
-scene uses a :ref:`RigidBody2D <class_RigidBody2D>` to provide physics
+scene uses a :ref:`RigidBody2D <api:class_RigidBody2D>` to provide physics
 behavior while the main scene has a set of obstacles for the ball to
-collide with (using :ref:`StaticBody2D <class_StaticBody2D>`).
+collide with (using :ref:`StaticBody2D <api:class_StaticBody2D>`).
 
 .. image:: img/instancing_ballscene.png
 

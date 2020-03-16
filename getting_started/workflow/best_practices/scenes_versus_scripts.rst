@@ -110,7 +110,7 @@ There are two systems for registering types...
 
    - Works for all scripting languages because it deals with Script resources in abstract.
 
-   - Set up using :ref:`EditorPlugin.add_custom_type <class_EditorPlugin_method_add_custom_type>`.
+   - Set up using :ref:`EditorPlugin.add_custom_type <api:class_EditorPlugin_method_add_custom_type>`.
 
 - :ref:`Script Classes <doc_scripting_continued_class_name>`
 

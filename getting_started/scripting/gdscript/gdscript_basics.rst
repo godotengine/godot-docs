@@ -316,7 +316,7 @@ Literals
 +--------------------------+----------------------------------------+
 | ``"""Hello"""``          | Multiline string                       |
 +--------------------------+----------------------------------------+
-| ``@"Node/Label"``        | :ref:`class_NodePath` or StringName    |
+| ``@"Node/Label"``        | :ref:`api:class_NodePath` or StringName    |
 +--------------------------+----------------------------------------+
 | ``$NodePath``            | Shorthand for ``get_node("NodePath")`` |
 +--------------------------+----------------------------------------+
@@ -353,18 +353,18 @@ null
 ``null`` is an empty data type that contains no information and can not
 be assigned any other value.
 
-:ref:`bool <class_bool>`
+:ref:`bool <api:class_bool>`
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Short for "boolean", it can only contain ``true`` or ``false``.
 
-:ref:`int <class_int>`
+:ref:`int <api:class_int>`
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Short for "integer", it stores whole numbers (positive and negative).
 It is stored as a 64-bit value, equivalent to "int64_t" in C++.
 
-:ref:`float <class_float>`
+:ref:`float <api:class_float>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Stores real numbers, including decimals, using floating-point values.
@@ -372,7 +372,7 @@ It is stored as a 64-bit value, equivalent to "double" in C++.
 Note: Currently, data structures such as Vector2, Vector3, and
 PoolRealArray store 32-bit single-precision "float" values.
 
-:ref:`String <class_String>`
+:ref:`String <api:class_String>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
@@ -383,56 +383,56 @@ GDScript also supports :ref:`doc_gdscript_printf`.
 Vector built-in types
 ~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Vector2 <class_Vector2>`
+:ref:`Vector2 <api:class_Vector2>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D vector type containing ``x`` and ``y`` fields. Can also be
 accessed as an array.
 
-:ref:`Rect2 <class_Rect2>`
+:ref:`Rect2 <api:class_Rect2>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D Rectangle type containing two vectors fields: ``position`` and ``size``.
 Also contains an ``end`` field which is ``position + size``.
 
-:ref:`Vector3 <class_Vector3>`
+:ref:`Vector3 <api:class_Vector3>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D vector type containing ``x``, ``y`` and ``z`` fields. This can also
 be accessed as an array.
 
-:ref:`Transform2D <class_Transform2D>`
+:ref:`Transform2D <api:class_Transform2D>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3×2 matrix used for 2D transforms.
 
-:ref:`Plane <class_Plane>`
+:ref:`Plane <api:class_Plane>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Plane type in normalized form that contains a ``normal`` vector field
 and a ``d`` scalar distance.
 
-:ref:`Quat <class_Quat>`
+:ref:`Quat <api:class_Quat>`
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Quaternion is a datatype used for representing a 3D rotation. It's
 useful for interpolating rotations.
 
-:ref:`AABB <class_AABB>`
+:ref:`AABB <api:class_AABB>`
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Axis-aligned bounding box (or 3D box) contains 2 vectors fields: ``position``
 and ``size``. Also contains an ``end`` field which is
 ``position + size``.
 
-:ref:`Basis <class_Basis>`
+:ref:`Basis <api:class_Basis>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x3 matrix used for 3D rotation and scale. It contains 3 vector fields
 (``x``, ``y`` and ``z``) and can also be accessed as an array of 3D
 vectors.
 
-:ref:`Transform <class_Transform>`
+:ref:`Transform <api:class_Transform>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Transform contains a Basis field ``basis`` and a Vector3 field
@@ -441,24 +441,24 @@ vectors.
 Engine built-in types
 ~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Color <class_Color>`
+:ref:`Color <api:class_Color>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Color data type contains ``r``, ``g``, ``b``, and ``a`` fields. It can
 also be accessed as ``h``, ``s``, and ``v`` for hue/saturation/value.
 
-:ref:`NodePath <class_NodePath>`
+:ref:`NodePath <api:class_NodePath>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Compiled path to a node used mainly in the scene system. It can be
 easily assigned to, and from, a String.
 
-:ref:`RID <class_RID>`
+:ref:`RID <api:class_RID>`
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Resource ID (RID). Servers use generic RIDs to reference opaque data.
 
-:ref:`Object <class_Object>`
+:ref:`Object <api:class_Object>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Base class for anything that is not a built-in type.
@@ -466,7 +466,7 @@ Base class for anything that is not a built-in type.
 Container built-in types
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Array <class_Array>`
+:ref:`Array <api:class_Array>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Generic sequence of arbitrary object types, including other arrays or dictionaries (see below).
@@ -490,15 +490,15 @@ arrays are available. These only accept a single data type. They avoid memory
 fragmentation and use less memory, but are atomic and tend to run slower than generic
 arrays. They are therefore only recommended to use for large data sets:
 
-- :ref:`PoolByteArray <class_PoolByteArray>`: An array of bytes (integers from 0 to 255).
-- :ref:`PoolIntArray <class_PoolIntArray>`: An array of integers.
-- :ref:`PoolRealArray <class_PoolRealArray>`: An array of floats.
-- :ref:`PoolStringArray <class_PoolStringArray>`: An array of strings.
-- :ref:`PoolVector2Array <class_PoolVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
-- :ref:`PoolVector3Array <class_PoolVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
-- :ref:`PoolColorArray <class_PoolColorArray>`: An array of :ref:`Color <class_Color>` objects.
+- :ref:`PoolByteArray <api:class_PoolByteArray>`: An array of bytes (integers from 0 to 255).
+- :ref:`PoolIntArray <api:class_PoolIntArray>`: An array of integers.
+- :ref:`PoolRealArray <api:class_PoolRealArray>`: An array of floats.
+- :ref:`PoolStringArray <api:class_PoolStringArray>`: An array of strings.
+- :ref:`PoolVector2Array <api:class_PoolVector2Array>`: An array of :ref:`Vector2 <api:class_Vector2>` objects.
+- :ref:`PoolVector3Array <api:class_PoolVector3Array>`: An array of :ref:`Vector3 <api:class_Vector3>` objects.
+- :ref:`PoolColorArray <api:class_PoolColorArray>`: An array of :ref:`Color <api:class_Color>` objects.
 
-:ref:`Dictionary <class_Dictionary>`
+:ref:`Dictionary <api:class_Dictionary>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Associative container which contains values referenced by unique keys.
@@ -1173,7 +1173,7 @@ function.
 Classes as resources
 ^^^^^^^^^^^^^^^^^^^^
 
-Classes stored as files are treated as :ref:`resources <class_GDScript>`. They
+Classes stored as files are treated as :ref:`resources <api:class_GDScript>`. They
 must be loaded from disk to access them in other classes. This is done using
 either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
 class resource is done by calling the ``new`` function on the class object::
@@ -1274,11 +1274,11 @@ See :ref:`doc_running_code_in_the_editor` for more information.
 Memory management
 ~~~~~~~~~~~~~~~~~
 
-If a class inherits from :ref:`class_Reference`, then instances will be
+If a class inherits from :ref:`api:class_Reference`, then instances will be
 freed when no longer in use. No garbage collector exists, just
 reference counting. By default, all classes that don't define
 inheritance extend **Reference**. If this is not desired, then a class
-must inherit :ref:`class_Object` manually and must call instance.free(). To
+must inherit :ref:`api:class_Object` manually and must call instance.free(). To
 avoid reference cycles that can't be freed, a ``weakref`` function is
 provided for creating weak references.
 
@@ -1311,7 +1311,7 @@ to. To create custom signals for a class, use the ``signal`` keyword.
    Game Programming Patterns ebook.
 
 You can connect these signals to methods the same way you connect built-in
-signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody`.
+signals of nodes like :ref:`api:class_Button` or :ref:`api:class_RigidBody`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
@@ -1333,9 +1333,9 @@ to react to health changes with an animation, but we want to keep the user
 interface separate from the player in our scene tree.
 
 In our ``Character.gd`` script, we define a ``health_changed`` signal and emit
-it with :ref:`Object.emit_signal() <class_Object_method_emit_signal>`, and from
+it with :ref:`Object.emit_signal() <api:class_Object_method_emit_signal>`, and from
 a ``Game`` node higher up our scene tree, we connect it to the ``Lifebar`` using
-the :ref:`Object.connect() <class_Object_method_connect>` method::
+the :ref:`Object.connect() <api:class_Object_method_connect>` method::
 
     # Character.gd
 
@@ -1443,7 +1443,7 @@ Coroutines with yield
 ~~~~~~~~~~~~~~~~~~~~~
 
 GDScript offers support for `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
-via the :ref:`yield<class_@GDScript_method_yield>` built-in function. Calling ``yield()`` will
+via the :ref:`yield<api:class_@GDScript_method_yield>` built-in function. Calling ``yield()`` will
 immediately return from the current function, with the current frozen
 state of the same function as the return value. Calling ``resume()`` on
 this resulting object will continue execution and return whatever the

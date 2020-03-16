@@ -6,21 +6,21 @@ Canvas layers
 Viewport and Canvas items
 -------------------------
 
-Regular 2D nodes, such as :ref:`Node2D <class_Node2D>` or
-:ref:`Control <class_Control>` both inherit from
-:ref:`CanvasItem <class_CanvasItem>`, which is the base for all 2D
+Regular 2D nodes, such as :ref:`Node2D <api:class_Node2D>` or
+:ref:`Control <api:class_Control>` both inherit from
+:ref:`CanvasItem <api:class_CanvasItem>`, which is the base for all 2D
 nodes. CanvasItems can be arranged in trees. Each item will inherit
 its parent's transform. This means that when the parent is moved, the children
 will move too.
 
 CanvasItem nodes, and nodes inheriting from them, are direct or indirect children of a
-:ref:`Viewport <class_Viewport>`, and will be displayed through it.
+:ref:`Viewport <api:class_Viewport>`, and will be displayed through it.
 
 A Viewport has the property
-:ref:`Viewport.canvas_transform <class_Viewport_property_canvas_transform>`,
+:ref:`Viewport.canvas_transform <api:class_Viewport_property_canvas_transform>`,
 which allows applying a custom
-:ref:`Transform2D <class_Transform2D>` transform to the CanvasItem hierarchy it contains. Nodes such as
-:ref:`Camera2D <class_Camera2D>` work by changing that transform.
+:ref:`Transform2D <api:class_Transform2D>` transform to the CanvasItem hierarchy it contains. Nodes such as
+:ref:`Camera2D <api:class_Camera2D>` work by changing that transform.
 
 Effects like scrolling are best achieved by manipulating the canvas transform property. This approach is more
 efficient than moving the root canvas item (and hence the whole scene).
@@ -38,7 +38,7 @@ How can these problems be solved in a single scene tree?
 CanvasLayers
 ------------
 
-The answer is :ref:`CanvasLayer <class_CanvasLayer>`,
+The answer is :ref:`CanvasLayer <api:class_CanvasLayer>`,
 which is a node that adds a separate 2D rendering layer for all its
 children and grand-children. Viewport children will draw by default at
 layer "0", while a CanvasLayer will draw at any numeric layer. Layers
@@ -62,4 +62,4 @@ their layer number, so they can be instantiated when needed.
             The standard way to ensuring that a node is  correctly drawn 'in front' or 'behind' others is to manipulate the  
             order of the nodes in the scene panel. Perhaps counterintuitively, the topmost nodes in the scene panel are drawn
             on *behind* lower ones in the viewport. 2d nodes also have a property for controlling their drawing order
-            (see :ref:`Node2D.z_index <class_Node2D_property_z_index>`).
+            (see :ref:`Node2D.z_index <api:class_Node2D_property_z_index>`).

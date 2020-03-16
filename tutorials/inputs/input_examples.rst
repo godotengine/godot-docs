@@ -6,7 +6,7 @@ Input examples
 Introduction
 ------------
 
-In this tutorial, you'll learn how to use Godot's :ref:`InputEvent <class_InputEvent>`
+In this tutorial, you'll learn how to use Godot's :ref:`InputEvent <api:class_InputEvent>`
 system to capture player input. There are many different types of input your
 game may use - keyboard, gamepad, mouse, etc. - and many different ways to
 turn those inputs into actions in your game. This document will show you some
@@ -23,7 +23,7 @@ Sometimes you want your game to respond to a certain input event - pressing
 the "jump" button, for example. For other situations, you might want something
 to happen as long as a key is pressed, such as movement. In the first case,
 you can use the ``_input()`` function, which will be called whenever an input
-event occurs. In the second case, Godot provides the :ref:`Input <class_Input>`
+event occurs. In the second case, Godot provides the :ref:`Input <api:class_Input>`
 singleton, which you can use to query the state of an input.
 
 Examples:
@@ -68,7 +68,7 @@ events in ``_input()``.
 Input events
 ------------
 
-Input events are objects that inherit from :ref:`InputEvent <class_InputEvent>`.
+Input events are objects that inherit from :ref:`InputEvent <api:class_InputEvent>`.
 Depending on the event type, the object will contain specific properties
 related to that event. To see what events actually look like, add a Node and
 attach the following script:
@@ -103,13 +103,13 @@ event scroll by in the output window. Here's an example of the output:
     InputEventMouseMotion : button_mask=0, position=(542, 338), relative=(-4, 0), speed=(0, 0)
 
 As you can see, the results are very different for the different types of
-input. Key events are even printed as their key symbols. For example, let's consider :ref:`InputEventMouseButton <class_InputEventMouseButton>`.
+input. Key events are even printed as their key symbols. For example, let's consider :ref:`InputEventMouseButton <api:class_InputEventMouseButton>`.
 It inherits from the following classes:
 
-- :ref:`InputEvent <class_InputEvent>` - the base class for all input events
-- :ref:`InputEventWithModifiers <class_InputEventWithModifiers>` - adds the ability to check if modifiers are pressed, such as :kbd:`Shift` or :kbd:`Alt`.
-- :ref:`InputEventMouse <class_InputEventMouse>` - adds mouse event properties, such as ``position``
-- :ref:`InputEventMouseButton <class_InputEventMouseButton>` - contains the index of the button that was pressed, whether it was a double-click, etc.
+- :ref:`InputEvent <api:class_InputEvent>` - the base class for all input events
+- :ref:`InputEventWithModifiers <api:class_InputEventWithModifiers>` - adds the ability to check if modifiers are pressed, such as :kbd:`Shift` or :kbd:`Alt`.
+- :ref:`InputEventMouse <api:class_InputEventMouse>` - adds mouse event properties, such as ``position``
+- :ref:`InputEventMouseButton <api:class_InputEventMouseButton>` - contains the index of the button that was pressed, whether it was a double-click, etc.
 
 .. tip:: It's a good idea to keep the class reference open while you're working
         with events so you can check the event type's available properties and
@@ -139,7 +139,7 @@ avoid this, make sure to test the event type first:
 InputMap
 --------
 
-The :ref:`InputMap <class_InputMap>` is the most flexible way to handle a
+The :ref:`InputMap <api:class_InputMap>` is the most flexible way to handle a
 variety of inputs. You use this by creating named input *actions*, to which
 you can assign any number of input events, such as keypresses or mouse clicks.
 A new Godot project includes a number of default actions already defined. To
@@ -175,7 +175,7 @@ the action you're looking for:
 Keyboard events
 ---------------
 
-Keyboard events are captured in :ref:`InputEventKey <class_InputEventKey>`.
+Keyboard events are captured in :ref:`InputEventKey <api:class_InputEventKey>`.
 While it's recommended to use input actions instead, there may be cases where
 you want to specifically look at key events. For this example, let's check for
 the :kbd:`T`:
@@ -208,7 +208,7 @@ Keyboard modifiers
 ~~~~~~~~~~~~~~~~~~
 
 Modifier properties are inherited from
-:ref:`InputEventWithModifiers <class_InputEventWithModifiers>`. This  allows
+:ref:`InputEventWithModifiers <api:class_InputEventWithModifiers>`. This  allows
 you to check for modifier combinations using boolean properties. Let's imagine
 you want one thing to happen when the :kbd:`T` is pressed, but something
 different when it's :kbd:`Shift + T`:
@@ -245,9 +245,9 @@ different when it's :kbd:`Shift + T`:
 Mouse events
 ------------
 
-Mouse events stem from the :ref:`InputEventMouse <class_InputEventMouse>` class, and
-are separated into two types: :ref:`InputEventMouseButton <class_InputEventMouseButton>`
-and :ref:`InputEventMouseMotion <class_InputEventMouseMotion>`. Note that this
+Mouse events stem from the :ref:`InputEventMouse <api:class_InputEventMouse>` class, and
+are separated into two types: :ref:`InputEventMouseButton <api:class_InputEventMouseButton>`
+and :ref:`InputEventMouseMotion <api:class_InputEventMouseMotion>`. Note that this
 means that all mouse events will contain a ``position`` property.
 
 Mouse buttons
@@ -290,11 +290,11 @@ also counts as a button - two buttons, to be precise, with both
 Mouse motion
 ~~~~~~~~~~~~
 
-:ref:`InputEventMouseMotion <class_InputEventMouseMotion>` events occur whenever
+:ref:`InputEventMouseMotion <api:class_InputEventMouseMotion>` events occur whenever
 the mouse moves. You can find the move's distance with the ``relative``
 property.
 
-Here's an example using mouse events to drag-and-drop a :ref:`Sprite <class_Sprite>`
+Here's an example using mouse events to drag-and-drop a :ref:`Sprite <api:class_Sprite>`
 node:
 
 .. tabs::
@@ -355,8 +355,8 @@ Touch events
 ------------
 
 If you are using a touchscreen device, you can generate touch events.
-:ref:`InputEventScreenTouch <class_InputEventScreenTouch>` is equivalent to
-a mouse click event, and :ref:`InputEventScreenDrag <class_InputEventScreenDrag>`
+:ref:`InputEventScreenTouch <api:class_InputEventScreenTouch>` is equivalent to
+a mouse click event, and :ref:`InputEventScreenDrag <api:class_InputEventScreenDrag>`
 works much the same as mouse motion.
 
 .. tip:: To test your touch events on a non-touchscreen device, open Project

@@ -20,7 +20,7 @@ How pausing works
 -----------------
 
 To set pause mode, the pause state must be set. This is done by assigning
-``true`` to the :ref:`SceneTree.paused <class_SceneTree_property_paused>` property:
+``true`` to the :ref:`SceneTree.paused <api:class_SceneTree_property_paused>` property:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

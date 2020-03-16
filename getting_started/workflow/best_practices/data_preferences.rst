@@ -42,8 +42,8 @@ Array vs. Dictionary vs. Object
 Godot stores all variables in the scripting API in the
 `Variant <https://docs.godotengine.org/en/latest/development/cpp/variant_class.html>`_
 class. Variants can store Variant-compatible data structures such as
-:ref:`Array <class_Array>` and :ref:`Dictionary <class_Dictionary>` as well as
-:ref:`Object <class_Object>` s.
+:ref:`Array <api:class_Array>` and :ref:`Dictionary <api:class_Dictionary>` as well as
+:ref:`Object <api:class_Object>` s.
 
 Godot implements Array as a ``Vector<Variant>``. The engine stores the Array
 contents in a contiguous section of memory, i.e. they are in a row adjacent
@@ -54,7 +54,7 @@ to each other.
   array object in traditional C++ libraries. It is a "templated"
   type, meaning that its records can only contain a particular type (denoted
   by angled brackets). So, for example, a
-  :ref:`PoolStringArray <class_PoolStringArray>` would be something like
+  :ref:`PoolStringArray <api:class_PoolStringArray>` would be something like
   a ``Vector<String>``.
 
 Contiguous memory stores imply the following operation performance:
@@ -165,7 +165,7 @@ aren't. An overview of their operational details is as follows:
 Godot implements Objects as stupid, but dynamic containers of data content.
 Objects query data sources when posed questions. For example, to answer
 the question, "do you have a property called, 'position'?", it might ask
-its :ref:`script <class_Script>` or the :ref:`ClassDB <class_ClassDB>`.
+its :ref:`script <api:class_Script>` or the :ref:`ClassDB <api:class_ClassDB>`.
 One can find more information about what objects are and how they work in
 the :ref:`doc_what_are_godot_classes` article.
 
@@ -303,7 +303,7 @@ AnimatedTexture vs. AnimatedSprite vs. AnimationPlayer vs. AnimationTree
 Under what circumstances should one use each of Godot's animation classes?
 The answer may not be immediately clear to new Godot users.
 
-:ref:`AnimatedTexture <class_AnimatedTexture>` is a texture that
+:ref:`AnimatedTexture <api:class_AnimatedTexture>` is a texture that
 the engine draws as an animated loop rather than a static image.
 Users can manipulate...
 
@@ -311,21 +311,21 @@ Users can manipulate...
 
 2. the number of regions contained within the texture (frames).
 
-Godot's :ref:`VisualServer <class_VisualServer>` then draws
+Godot's :ref:`VisualServer <api:class_VisualServer>` then draws
 the regions in sequence at the prescribed rate. The good news is that this
 involves no extra logic on the part of the engine. The bad news is
 that users have very little control.
 
-Also note that AnimatedTexture is a :ref:`Resource <class_Resource>` unlike
-the other :ref:`Node <class_Node>` objects discussed here. One might create
-a :ref:`Sprite <class_Sprite>` node that uses AnimatedTexture as its texture.
+Also note that AnimatedTexture is a :ref:`Resource <api:class_Resource>` unlike
+the other :ref:`Node <api:class_Node>` objects discussed here. One might create
+a :ref:`Sprite <api:class_Sprite>` node that uses AnimatedTexture as its texture.
 Or (something the others can't do) one could add AnimatedTextures as tiles
-in a :ref:`TileSet <class_TileSet>` and integrate it with a
-:ref:`TileMap <class_TileMap>` for many auto-animating backgrounds that
+in a :ref:`TileSet <api:class_TileSet>` and integrate it with a
+:ref:`TileMap <api:class_TileMap>` for many auto-animating backgrounds that
 all render in a single batched draw call.
 
 The AnimatedSprite node, in combination with the
-:ref:`SpriteFrames <class_SpriteFrames>` resource, allows one to create a
+:ref:`SpriteFrames <api:class_SpriteFrames>` resource, allows one to create a
 variety of animation sequences through spritesheets, flip between animations,
 and control their speed, regional offset, and orientation. This makes them
 well-suited to controlling 2D frame-based animations.
@@ -333,7 +333,7 @@ well-suited to controlling 2D frame-based animations.
 If one needs trigger other effects in relation to animation changes (for
 example, create particle effects, call functions, or manipulate other
 peripheral elements besides the frame-based animation), then will need to use
-an :ref:`AnimationPlayer <class_AnimationPlayer>` node in conjunction with
+an :ref:`AnimationPlayer <api:class_AnimationPlayer>` node in conjunction with
 the AnimatedSprite.
 
 AnimationPlayers are also the tool one will need to use if they wish to design
@@ -352,6 +352,6 @@ While one needs an AnimationPlayer to design each of the individual
 animation sequences for a game, it can also be useful to combine animations
 for blending, i.e. enabling smooth transitions between these animations. There
 may also be a hierarchical structure between animations that one plans out for
-their object. These are the cases where the :ref:`AnimationTree <class_AnimationTree>`
+their object. These are the cases where the :ref:`AnimationTree <api:class_AnimationTree>`
 shines. One can find an in-depth guide on using the AnimationTree
 :ref:`here <doc_animation_tree>`.

@@ -5,7 +5,7 @@ Inspector plugins
 
 The inspector dock supports custom plugins to create your own widgets for
 editing properties. This tutorial explains how to use the
-:ref:`class_EditorInspectorPlugin` and :ref:`class_EditorProperty` classes to
+:ref:`api:class_EditorInspectorPlugin` and :ref:`api:class_EditorProperty` classes to
 write such plugins with the example of creating a custom value editor.
 
 Setup
@@ -13,7 +13,7 @@ Setup
 
 Just like :ref:`doc_making_plugins`, we start out by making a new plugin,
 getting a ``plugin.cfg`` file created, and start with our
-:ref:`class_EditorPlugin`.  However, instead of using
+:ref:`api:class_EditorPlugin`.  However, instead of using
 ``add_custom_node`` or ``add_control_to_dock`` we'll use
 ``add_inspector_plugin``.
 
@@ -37,16 +37,16 @@ EditorInspectorPlugin
 ---------------------
 
 To actually connect into the Inspector, we create a
-:ref:`class_EditorInspectorPlugin` class. This script provides the "hooks" to
+:ref:`api:class_EditorInspectorPlugin` class. This script provides the "hooks" to
 the inspector. Thanks to this class, the editor will call the functions within
 the EditorInspectorPlugin while it goes through the process of building the UI
 for the inspector. The script is used to check if we should enable ourselves for
-any :ref:`class_Object` that is currently in the inspector (including any
-:ref:`class_Resource` that is embedded!).
+any :ref:`api:class_Object` that is currently in the inspector (including any
+:ref:`api:class_Resource` that is embedded!).
 
 Once enabled, EditorInspectorPlugin has methods that allow for adding
-:ref:`class_EditorProperty` nodes or just custom :ref:`class_Control` nodes to
-the beginning and end of the inspector for that :ref:`class_Object`, or for
+:ref:`api:class_EditorProperty` nodes or just custom :ref:`api:class_Control` nodes to
+the beginning and end of the inspector for that :ref:`api:class_Object`, or for
 overriding or changing existing property editors.
 
 .. tabs::
@@ -79,8 +79,8 @@ overriding or changing existing property editors.
 EditorProperty
 --------------
 
-Next, we define the actual :ref:`class_EditorProperty` custom value editor that
-we want instantiated to edit integers. This is a custom :ref:`class_Control` and
+Next, we define the actual :ref:`api:class_EditorProperty` custom value editor that
+we want instantiated to edit integers. This is a custom :ref:`api:class_Control` and
 we can add any kinds of additional nodes to make advanced widgets to embed in
 the inspector.
 

@@ -126,9 +126,9 @@ Most of the code here relates to making UIs, which is outside of the purpose of 
 
 Let's look at the class variables first.
 
-* ``start_menu``: A variable to hold the ``Start_Menu`` :ref:`Panel <class_Panel>`.
-* ``level_select_menu``: A variable to hold the ``Level_Select_Menu`` :ref:`Panel <class_Panel>`.
-* ``options_menu``: A variable to hold the ``Options_Menu`` :ref:`Panel <class_Panel>`.
+* ``start_menu``: A variable to hold the ``Start_Menu`` :ref:`Panel <api:class_Panel>`.
+* ``level_select_menu``: A variable to hold the ``Level_Select_Menu`` :ref:`Panel <api:class_Panel>`.
+* ``options_menu``: A variable to hold the ``Options_Menu`` :ref:`Panel <api:class_Panel>`.
 * ``testing_area_scene``: The path to the ``Testing_Area.tscn`` file, so we can change to it from this scene.
 * ``space_level_scene``: The path to the ``Space_Level.tscn`` file, so we can change to it from this scene.
 * ``ruins_level_scene``: The path to the ``Ruins_Level.tscn`` file, so we can change to it from this scene.
@@ -139,13 +139,13 @@ ______
 
 Now let's go over ``_ready``
 
-Firstly, we get all the :ref:`Panel <class_Panel>` nodes and assign them to the proper variables.
+Firstly, we get all the :ref:`Panel <api:class_Panel>` nodes and assign them to the proper variables.
 
 Next, we connect all the buttons ``pressed`` signals to their respective ``[panel_name_here]_button_pressed`` functions.
 
 We then set the mouse mode to ``MOUSE_MODE_VISIBLE`` to ensure whenever the player returns to this scene, the mouse will be visible.
 
-Then we get a singleton, called ``Globals``. We then set the values for the :ref:`HSlider <class_HSlider>` nodes so their values line up with the mouse and joypad sensitivity
+Then we get a singleton, called ``Globals``. We then set the values for the :ref:`HSlider <api:class_HSlider>` nodes so their values line up with the mouse and joypad sensitivity
 in the singleton.
 
 .. note:: We have not made the ``Globals`` singleton yet, so don't worry! We're going to make it soon!
@@ -163,7 +163,7 @@ In ``level_select_menu_button_pressed``, we check to see which button is pressed
 If the ``back`` button has been pressed, we change the currently visible panels to return to the main menu.
 
 If one of the scene changing buttons is pressed, we fist call ``set_mouse_and_joypad_sensitivity`` so the singleton (``Globals.gd``) has the values from the :ref:`HSlider
-<class_HSlider>` nodes.
+<api:class_HSlider>` nodes.
 Then, we tell the singleton to change nodes using its ``load_new_scene`` function, passing in the file path of the scene the player has selected.
 
 .. note:: Don't worry about the singleton, we'll get there soon!
@@ -174,9 +174,9 @@ In ``options_menu_button_pressed``, we check to see which button is pressed.
 
 If the ``back`` button has been pressed, we change the currently visible panels to return to the main menu.
 
-If the ``fullscreen`` button is pressed, we toggle the :ref:`OS <class_OS>`'s full screen mode by setting it to the flipped version of its current value.
+If the ``fullscreen`` button is pressed, we toggle the :ref:`OS <api:class_OS>`'s full screen mode by setting it to the flipped version of its current value.
 
-If the ``vsync`` button is pressed, we set the :ref:`OS <class_OS>`'s Vsync based on the state of the Vsync check button.
+If the ``vsync`` button is pressed, we set the :ref:`OS <api:class_OS>`'s Vsync based on the state of the Vsync check button.
 
 ______
 
@@ -184,7 +184,7 @@ Finally, lets take a look at ``set_mouse_and_joypad_sensitivity``.
 
 Firstly, we get the ``Globals`` singleton and assign it to a local variable.
 
-We then set the ``mouse_sensitivity`` and ``joypad_sensitivity`` variables to the values in their respective :ref:`HSlider <class_HSlider>` node counterparts.
+We then set the ``mouse_sensitivity`` and ``joypad_sensitivity`` variables to the values in their respective :ref:`HSlider <api:class_HSlider>` node counterparts.
 
 Making the ``Globals`` singleton
 --------------------------------
@@ -217,7 +217,7 @@ keep adding more complex logic to ``Globals.gd``, but for now, all it is doing i
 Right now, all we will be using ``Globals.gd`` for is a way to carry variables across scenes. Because the sensitivities of our mouse and joypad are
 stored in ``Globals.gd``, any changes we make in one scene (like in ``Options_Menu``) will affect the sensitivity for the player.
 
-All we're doing in ``load_new_scene`` is calling :ref:`SceneTree <class_SceneTree>`'s ``change_scene`` function, passing in the scene path given in ``load_new_scene``.
+All we're doing in ``load_new_scene`` is calling :ref:`SceneTree <api:class_SceneTree>`'s ``change_scene`` function, passing in the scene path given in ``load_new_scene``.
 
 That's all the code needed for ``Globals.gd`` right now! Before we can test the main menu, we first need to set ``Globals.gd`` as an autoload script.
 
@@ -246,10 +246,10 @@ Adding the debug menu
 
 Now, let's add a simple debugging scene so we can track things like FPS (Frames Per Second) in-game. Open up ``Debug_Display.tscn``.
 
-You can see it's a :ref:`Panel <class_Panel>` positioned in the top right corner of the screen. It has three :ref:`Labels <class_Label>`,
+You can see it's a :ref:`Panel <api:class_Panel>` positioned in the top right corner of the screen. It has three :ref:`Labels <api:class_Label>`,
 one for displaying the FPS at which the game is running, one for showing on what OS the game is running, and a label for showing with which Godot version the game is running.
 
-Let's add the code needed to fill these :ref:`Labels <class_Label>`. Select ``Debug_Display`` and create a new script called ``Debug_Display.gd``. Add the following:
+Let's add the code needed to fill these :ref:`Labels <api:class_Label>`. Select ``Debug_Display`` and create a new script called ``Debug_Display.gd``. Add the following:
 
 ::
 
@@ -266,16 +266,16 @@ Let's go over what this script does.
 
 ______
 
-In ``_ready``, we set the ``OS_Label``'s text to the name provided by :ref:`OS <class_OS>` using the ``get_name`` function. This will return the
+In ``_ready``, we set the ``OS_Label``'s text to the name provided by :ref:`OS <api:class_OS>` using the ``get_name`` function. This will return the
 name of the OS (or Operating System) for which Godot was compiled. For example, when you are running Windows, it will return ``Windows``, while when you
 are running Linux, it will return ``X11``.
 
 Then, we set the ``Engine_Label``'s text to the version info provided by ``Engine.get_version_info``. ``Engine.get_version_info`` returns a dictionary full
 of useful information about the version of Godot which is currently running. We only care about the string version, for this label at least, so we get the string
-and assign that as the ``text`` in ``Engine_Label``. See :ref:`Engine <class_Engine>` for more information on the values ``get_version_info`` returns.
+and assign that as the ``text`` in ``Engine_Label``. See :ref:`Engine <api:class_Engine>` for more information on the values ``get_version_info`` returns.
 
 In ``_process``, we set the text of the ``FPS_Label`` to ``Engine.get_frames_per_second``, but because ``get_frames_per_second`` returns an integer, we have to cast
-it to a string using ``str`` before we can add it to the :ref:`Label <class_Label>`.
+it to a string using ``str`` before we can add it to the :ref:`Label <api:class_Label>`.
 
 ______
 
@@ -325,10 +325,10 @@ Change ``_ready`` to the following:
         add_child(canvas_layer)
 
 Now in ``_ready``, we create a new canvas layer, assign it to ``canvas_layer`` and add it as a child.
-Because ``Globals.gd`` is an autoload/singleton, Godot will make a :ref:`Node <class_Node>` when the game is launched, and it will have ``Globals.gd`` attached to it.
-Since Godot makes a :ref:`Node <class_Node>`, we can treat ``Globals.gd`` like any other node with regard to adding/removing children nodes.
+Because ``Globals.gd`` is an autoload/singleton, Godot will make a :ref:`Node <api:class_Node>` when the game is launched, and it will have ``Globals.gd`` attached to it.
+Since Godot makes a :ref:`Node <api:class_Node>`, we can treat ``Globals.gd`` like any other node with regard to adding/removing children nodes.
 
-The reason we're adding a :ref:`CanvasLayer <class_CanvasLayer>` is so all our GUI and UI nodes we instance/spawn in ``Globals.gd``
+The reason we're adding a :ref:`CanvasLayer <api:class_CanvasLayer>` is so all our GUI and UI nodes we instance/spawn in ``Globals.gd``
 are always drawn on top of everything else.
 
 When adding nodes to a singleton/autoload, you have to be careful not to lose reference to any of the child nodes.
@@ -364,7 +364,7 @@ If ``debug_display`` is ``null``, we instance a new ``DEBUG_DISPLAY_SCENE``, and
 
 ______
 
-With that done, we can now toggle the debug display on and off by switching the :ref:`CheckButton <class_CheckButton>` in the ``Options_Menu`` panel. Go give it a try!
+With that done, we can now toggle the debug display on and off by switching the :ref:`CheckButton <api:class_CheckButton>` in the ``Options_Menu`` panel. Go give it a try!
 
 Notice how the debug display stays even when you change scenes from the ``Main_Menu.tscn`` to another scene (like ``Testing_Area.tscn``). This is the beauty of
 instancing/spawning nodes in a singleton/autoload and adding them as children to the singleton/autoload. Any of the nodes added as children of the singleton/autoload will
@@ -377,8 +377,8 @@ Let's add a pause menu so we can return to the main menu when we press the ``ui_
 
 Open up ``Pause_Popup.tscn``.
 
-Notice how the root node in ``Pause_Popup`` is a :ref:`WindowDialog <class_WindowDialog>`; :ref:`WindowDialog <class_WindowDialog>` inherits from
-:ref:`Popup <class_Popup>`, which means :ref:`WindowDialog <class_WindowDialog>` can act like a popup.
+Notice how the root node in ``Pause_Popup`` is a :ref:`WindowDialog <api:class_WindowDialog>`; :ref:`WindowDialog <api:class_WindowDialog>` inherits from
+:ref:`Popup <api:class_Popup>`, which means :ref:`WindowDialog <api:class_WindowDialog>` can act like a popup.
 
 Select ``Pause_Popup`` and scroll down all the way till you get to the ``Pause`` menu in the inspector. Notice how the pause mode is set to
 ``process`` instead of ``inherit`` like it is normally set by default. This makes it so it will continue to process even when the game is paused,
@@ -432,7 +432,7 @@ If ``Globals.gd`` do not have a pop-up open, we instance ``POPUP_SCENE`` and ass
 
 We then get the quit button and assign its ``pressed`` signal to ``popup_quit``, which we will be adding shortly.
 
-Next, we assign both the ``popup_hide`` signal from the :ref:`WindowDialog <class_WindowDialog>` and the ``pressed`` signal from the resume button
+Next, we assign both the ``popup_hide`` signal from the :ref:`WindowDialog <api:class_WindowDialog>` and the ``pressed`` signal from the resume button
 to ``popup_closed``, which we will be adding shortly.
 
 Then, we add ``popup`` as a child of ``canvas_layer`` so it's drawn on top. We then tell ``popup`` to pop up at the center of the screen using ``popup_centered``.
@@ -440,7 +440,7 @@ Then, we add ``popup`` as a child of ``canvas_layer`` so it's drawn on top. We t
 Next, we make sure the mouse mode is ``MOUSE_MODE_VISIBLE`` so the player can interact with the pop-up. If we did not do this, the player would not be able to
 interact with the pop up in any scene where the mouse mode is ``MOUSE_MODE_CAPTURED``.
 
-Finally, we pause the entire :ref:`SceneTree <class_SceneTree>`.
+Finally, we pause the entire :ref:`SceneTree <api:class_SceneTree>`.
 
 .. note:: For more information on pausing in Godot, see :ref:`doc_pausing_games`
 
@@ -520,7 +520,7 @@ Starting the respawn system
 
 Since the player can lose all their health, it would be ideal if the player died and respawned too, so let's add that next!
 
-Firstly, open up ``Player.tscn`` and expand ``HUD``. Notice how there is a :ref:`ColorRect <class_ColorRect>` called ``Death_Screen``.
+Firstly, open up ``Player.tscn`` and expand ``HUD``. Notice how there is a :ref:`ColorRect <api:class_ColorRect>` called ``Death_Screen``.
 When the player dies, we're going to make ``Death_Screen`` visible, and show them how long they have to wait before the player is able to respawn.
 
 Open up ``Player.gd`` and add the following class variables:
@@ -549,7 +549,7 @@ We now need to add a couple lines to ``_ready``, so we can use ``Globals.gd`` in
 
 
 Now we're getting the ``Globals.gd`` singleton and assigning it to ``globals``. We also set the player's global position
-by setting the origin in the player's global :ref:`Transform <class_Transform>` to the position returned by ``globals.get_respawn_position``.
+by setting the origin in the player's global :ref:`Transform <api:class_Transform>` to the position returned by ``globals.get_respawn_position``.
 
 .. note:: Don't worry, we will be adding ``get_respawn_position`` further below!
 
@@ -651,7 +651,7 @@ If the player has just died, we disable the collision shapes for the player. We 
 Next, we set ``changing_weapon`` to ``true`` and set ``changing_weapon_name`` to ``UNARMED``. This is so, if the player is using a weapon, it is put away
 when they dies.
 
-We then make the ``Death_Screen`` :ref:`ColorRect <class_ColorRect>` visible so the player gets a nice grey overlay over everything when they have died.
+We then make the ``Death_Screen`` :ref:`ColorRect <api:class_ColorRect>` visible so the player gets a nice grey overlay over everything when they have died.
 We then make the rest of the UI, the ``Panel`` and ``Crosshair`` nodes, invisible.
 
 Next, we set ``dead_time`` to ``RESPAWN_TIME`` so we can start counting down how long the player has been dead. We also set ``is_dead`` to ``true`` so we know the player has died.
@@ -668,7 +668,7 @@ Then we check whether the player is dead. If so, we then remove ``delta`` from `
 We then make a new variable called ``dead_time_pretty``, where we convert ``dead_time`` to a string, using only the first three characters starting from the left. This gives
 the player a nice looking string showing how much time the player has left to wait before the player can respawn.
 
-We then change the :ref:`Label <class_Label>` in ``Death_Screen`` to show how much time the player has left.
+We then change the :ref:`Label <api:class_Label>` in ``Death_Screen`` to show how much time the player has left.
 
 Next we check to see if the player has waited long enough and can respawn. We do this by checking to see if ``dead_time`` is ``0`` or less.
 
@@ -762,12 +762,12 @@ ______
 
 Firstly, we check if ``Globals.gd`` has any ``respawn_points`` by checking whether ``respawn_points`` is ``null`` or not.
 
-If ``respawn_points`` is ``null``, we return a position of empty :ref:`Vector 3 <class_Vector3>` with the position ``(0, 0, 0)``.
+If ``respawn_points`` is ``null``, we return a position of empty :ref:`Vector 3 <api:class_Vector3>` with the position ``(0, 0, 0)``.
 
 If ``respawn_points`` is not ``null``, we then get a random number between ``0`` and the number of elements we have in ``respawn_points``, minus ``1`` since
 most programming languages, including ``GDScript``, start counting from ``0`` when you are accessing elements in a list.
 
-We then return the position of the :ref:`Spatial <class_Spatial>` node at ``respawn_point`` position in ``respawn_points``.
+We then return the position of the :ref:`Spatial <api:class_Spatial>` node at ``respawn_point`` position in ``respawn_points``.
 
 ______
 
@@ -797,7 +797,7 @@ Now, when a node with ``Respawn_Point_Setter.gd`` has its ``_ready`` function ca
 nodes of the node with ``Respawn_Point_Setter.gd``, ``Spawn_Points`` in the case of ``Ruins_Level.tscn``, will be added
 to ``respawn_points`` in ``Globals.gd``.
 
-.. warning:: Any node with ``Respawn_Point_Setter.gd`` has to be above the player in the :ref:`SceneTree <class_SceneTree>` so the respawn points are set
+.. warning:: Any node with ``Respawn_Point_Setter.gd`` has to be above the player in the :ref:`SceneTree <api:class_SceneTree>` so the respawn points are set
              before the player needs them in the player's ``_ready`` function.
 
 ______

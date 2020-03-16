@@ -116,7 +116,7 @@ You can then run pybabel like so:
     pybabel extract -F babelrc -k text -k LineEdit/placeholder_text -k tr -o godot-l10n.pot .
 
 Use the ``-k`` option to specify what needs to be extracted. In this case,
-arguments to :ref:`tr() <class_Object_method_tr>` will be translated, as well
+arguments to :ref:`tr() <api:class_Object_method_tr>` will be translated, as well
 as properties named "text" (commonly used by Control nodes) and LineEdit's
 "placeholder_text" property.
 

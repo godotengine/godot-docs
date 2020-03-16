@@ -17,17 +17,17 @@ As mentioned in the previous tutorial, :ref:`doc_canvas_layers`, every
 CanvasItem node (remember that Node2D and Control based nodes use
 CanvasItem as their common root) will reside in a *Canvas Layer*. Every
 canvas layer has a transform (translation, rotation, scale, etc.) that
-can be accessed as a :ref:`Transform2D <class_Transform2D>`.
+can be accessed as a :ref:`Transform2D <api:class_Transform2D>`.
 
 Also covered in the previous tutorial, nodes are drawn by default in Layer 0,
 in the built-in canvas. To put nodes in a different layer, a :ref:`CanvasLayer
-<class_CanvasLayer>` node can be used.
+<api:class_CanvasLayer>` node can be used.
 
 Global canvas transform
 -----------------------
 
 Viewports also have a Global Canvas transform (also a
-:ref:`Transform2D <class_Transform2D>`). This is the master transform and
+:ref:`Transform2D <api:class_Transform2D>`). This is the master transform and
 affects all individual *Canvas Layer* transforms. Generally, this
 transform is not of much use, but is used in the CanvasItem Editor
 in Godot's editor.
@@ -40,10 +40,10 @@ resizing or stretching the screen. This transform is used internally (as
 described in :ref:`doc_multiple_resolutions`), but can also be manually set
 on each viewport.
 
-Input events received in the :ref:`MainLoop._input_event() <class_MainLoop_method__input_event>`
+Input events received in the :ref:`MainLoop._input_event() <api:class_MainLoop_method__input_event>`
 callback are multiplied by this transform but lack the ones above. To
 convert InputEvent coordinates to local CanvasItem coordinates, the
-:ref:`CanvasItem.make_input_local() <class_CanvasItem_method_make_input_local>`
+:ref:`CanvasItem.make_input_local() <api:class_CanvasItem_method_make_input_local>`
 function was added for convenience.
 
 Transform order
@@ -62,11 +62,11 @@ Obtaining each transform can be achieved with the following functions:
 +----------------------------------+---------------------------------------------------------------------------------------------+
 | Type                             | Transform                                                                                   |
 +==================================+=============================================================================================+
-| CanvasItem                       | :ref:`CanvasItem.get_global_transform() <class_CanvasItem_method_get_global_transform>`     |
+| CanvasItem                       | :ref:`CanvasItem.get_global_transform() <api:class_CanvasItem_method_get_global_transform>`     |
 +----------------------------------+---------------------------------------------------------------------------------------------+
-| CanvasLayer                      | :ref:`CanvasItem.get_canvas_transform() <class_CanvasItem_method_get_canvas_transform>`     |
+| CanvasLayer                      | :ref:`CanvasItem.get_canvas_transform() <api:class_CanvasItem_method_get_canvas_transform>`     |
 +----------------------------------+---------------------------------------------------------------------------------------------+
-| CanvasLayer+GlobalCanvas+Stretch | :ref:`CanvasItem.get_viewport_transform() <class_CanvasItem_method_get_viewport_transform>` |
+| CanvasLayer+GlobalCanvas+Stretch | :ref:`CanvasItem.get_viewport_transform() <api:class_CanvasItem_method_get_viewport_transform>` |
 +----------------------------------+---------------------------------------------------------------------------------------------+
 
 Finally, then, to convert a CanvasItem local coordinates to screen

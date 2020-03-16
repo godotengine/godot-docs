@@ -232,9 +232,9 @@ will not change it makes sense to call this new script ``persistent_state.gd``.
 Project setup
 -------------
 
-This tutorial made an assumption that the node it would be attached to contained a child node which is an :ref:`AnimatedSprite <class_AnimatedSprite>`. 
-There is also the assumption that this :ref:`AnimatedSprite <class_AnimatedSprite>` has at least two animations,
-the idle and run animations. Also, the top-level node is assumed to be a :ref:`KinematicBody2D <class_KinematicBody2D>`.
+This tutorial made an assumption that the node it would be attached to contained a child node which is an :ref:`AnimatedSprite <api:class_AnimatedSprite>`. 
+There is also the assumption that this :ref:`AnimatedSprite <api:class_AnimatedSprite>` has at least two animations,
+the idle and run animations. Also, the top-level node is assumed to be a :ref:`KinematicBody2D <api:class_KinematicBody2D>`.
 
 .. image:: img/llama_run.gif
 
@@ -245,7 +245,7 @@ the idle and run animations. Also, the top-level node is assumed to be a :ref:`K
     There is also a good tutorial for sprite animation already. See :ref:`2D Sprite Animation <doc_2d_sprite_animation>`.
 
 So, the only script that must be attached is ``persistent_state.gd``, which  should be attached to the top node of the
-player, which is a :ref:`KinematicBody2D <class_KinematicBody2D>`.
+player, which is a :ref:`KinematicBody2D <api:class_KinematicBody2D>`.
 
 .. image:: img/state_design_node_setup.png
 

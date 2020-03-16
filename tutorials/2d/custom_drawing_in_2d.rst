@@ -10,7 +10,7 @@ Godot has nodes to draw sprites, polygons, particles, and all sorts of
 stuff. For most cases, this is enough; but not always. Before crying in fear,
 angst, and rage because a node to draw that specific *something* does not exist...
 it would be good to know that it is possible to easily make any 2D node (be it
-:ref:`Control <class_Control>` or :ref:`Node2D <class_Node2D>`
+:ref:`Control <api:class_Control>` or :ref:`Node2D <api:class_Node2D>`
 based) draw custom commands. It is *really* easy to do it, too.
 
 But...
@@ -34,9 +34,9 @@ examples why:
 OK, how?
 --------
 
-Add a script to any :ref:`CanvasItem <class_CanvasItem>`
-derived node, like :ref:`Control <class_Control>` or
-:ref:`Node2D <class_Node2D>`. Then override the ``_draw()`` function.
+Add a script to any :ref:`CanvasItem <api:class_CanvasItem>`
+derived node, like :ref:`Control <api:class_Control>` or
+:ref:`Node2D <api:class_Node2D>`. Then override the ``_draw()`` function.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -54,7 +54,7 @@ derived node, like :ref:`Control <class_Control>` or
         // Your draw commands here
     }
 
-Draw commands are described in the :ref:`CanvasItem <class_CanvasItem>`
+Draw commands are described in the :ref:`CanvasItem <api:class_CanvasItem>`
 class reference. There are plenty of them.
 
 Updating
@@ -64,7 +64,7 @@ The ``_draw()`` function is only called once, and then the draw commands
 are cached and remembered, so further calls are unnecessary.
 
 If re-drawing is required because a state or something else changed,
-simply call :ref:`CanvasItem.update() <class_CanvasItem_method_update>`
+simply call :ref:`CanvasItem.update() <api:class_CanvasItem_method_update>`
 in that same node and a new ``_draw()`` call will happen.
 
 Here is a little more complex example, a texture variable that will be

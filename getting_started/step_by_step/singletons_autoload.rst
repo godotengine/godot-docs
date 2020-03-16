@@ -39,7 +39,7 @@ AutoLoad
 --------
 
 You can use AutoLoad to load a scene or a script that inherits from
-:ref:`Node <class_Node>`. Note: when autoloading a script, a Node will be
+:ref:`Node <api:class_Node>`. Note: when autoloading a script, a Node will be
 created and the script will be attached to it. This node will be added to the
 root viewport before any other scenes are loaded.
 
@@ -94,7 +94,7 @@ Custom scene switcher
 
 This tutorial will demonstrate building a scene switcher using autoload. For
 basic scene switching, you can use the
-:ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>`
+:ref:`SceneTree.change_scene() <api:class_SceneTree_method_change_scene>`
 method (see :ref:`doc_scene_tree` for details). However, if you need more
 complex behavior when changing scenes, this method provides more functionality.
 
@@ -224,7 +224,7 @@ current scene and replace it with the requested one.
         GetTree().SetCurrentScene(CurrentScene);
     }
 
-Using :ref:`Object.call_deferred() <class_Object_method_call_deferred>`,
+Using :ref:`Object.call_deferred() <api:class_Object_method_call_deferred>`,
 the second function will only run once all code from the current scene has
 completed. Thus, the current scene will not be removed while it is
 still being used (i.e. its code is still running).

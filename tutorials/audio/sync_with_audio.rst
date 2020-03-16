@@ -26,11 +26,11 @@ The problem, in the end, is not this slight delay but synchronizing graphics and
 Using the system clock to sync
 ------------------------------
 
-As mentioned before, If you call :ref:`AudioStreamPlayer.play()<class_AudioStreamPlayer_method_play>`, sound will not begin immediately, but when the audio thread processes the next chunk.
+As mentioned before, If you call :ref:`AudioStreamPlayer.play()<api:class_AudioStreamPlayer_method_play>`, sound will not begin immediately, but when the audio thread processes the next chunk.
 
-This delay can't be avoided but it can be estimated by calling :ref:`AudioServer.get_time_to_next_mix()<class_AudioServer_method_get_time_to_next_mix>`.
+This delay can't be avoided but it can be estimated by calling :ref:`AudioServer.get_time_to_next_mix()<api:class_AudioServer_method_get_time_to_next_mix>`.
 
-The output latency (what happens after the mix) can also be estimated by calling :ref:`AudioServer.get_output_latency()<class_AudioServer_method_get_output_latency>`.
+The output latency (what happens after the mix) can also be estimated by calling :ref:`AudioServer.get_output_latency()<api:class_AudioServer_method_get_output_latency>`.
 
 Add these two and it's possible to guess almost exactly when sound or music will begin playing in the speakers during *_process()*:
 
@@ -62,9 +62,9 @@ For a rhythm game where a song begins and ends after a few minutes, this approac
 Using the sound hardware clock to sync
 --------------------------------------
 
-Using :ref:`AudioStreamPlayer.get_playback_position()<class_AudioStreamPlayer_method_get_playback_position>` to obtain the current position for the song sounds ideal, but it's not that useful as-is. This value will increment in chunks (every time the audio callback mixed a block of sound), so many calls can return the same value. Added to this, the value will be out of sync with the speakers too because of the previously mentioned reasons.
+Using :ref:`AudioStreamPlayer.get_playback_position()<api:class_AudioStreamPlayer_method_get_playback_position>` to obtain the current position for the song sounds ideal, but it's not that useful as-is. This value will increment in chunks (every time the audio callback mixed a block of sound), so many calls can return the same value. Added to this, the value will be out of sync with the speakers too because of the previously mentioned reasons.
 
-To compensate for the "chunked" output, there is a function that can help: :ref:`AudioServer.get_time_since_last_mix()<class_AudioServer_method_get_time_since_last_mix>`.
+To compensate for the "chunked" output, there is a function that can help: :ref:`AudioServer.get_time_since_last_mix()<api:class_AudioServer_method_get_time_since_last_mix>`.
 
 
 Adding the return value from this function to *get_playback_position()* increases precision:

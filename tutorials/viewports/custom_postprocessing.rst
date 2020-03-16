@@ -10,8 +10,8 @@ Godot provides many post-processing effects out of the box, including Bloom, DOF
 want to write your own custom effect. Here's how you can do so.
 
 Post-processing effects are shaders applied to a frame after Godot rendered it. You first want to render
-your scene into a :ref:`Viewport <class_Viewport>`, then render the ``Viewport``
-inside a :ref:`ViewportTexture <class_ViewportTexture>` and show it on the screen.
+your scene into a :ref:`Viewport <api:class_Viewport>`, then render the ``Viewport``
+inside a :ref:`ViewportTexture <api:class_ViewportTexture>` and show it on the screen.
 
 The easiest way to implement a custom post-processing shader is to use Godot's built-in ability to read from
 the screen texture. If you're not familiar with this, you should read the :ref:`Screen Reading Shaders
@@ -28,8 +28,8 @@ Single pass post-processing
 
 You will need a ``Viewport`` to render your scene to, and a scene to render your
 ``Viewport`` on the screen. You can use a :ref:`ViewportContainer
-<class_ViewportContainer>` to display your ``Viewport`` on the entire screen or inside
-another :ref:`Control <class_Control>` node.
+<api:class_ViewportContainer>` to display your ``Viewport`` on the entire screen or inside
+another :ref:`Control <api:class_Control>` node.
 
 .. note::
 
@@ -37,7 +37,7 @@ another :ref:`Control <class_Control>` node.
     how the scene render, including the framerate, and you can use the
     ``ViewportContainer`` to render 3D objects in a 2D scene.
 
-For this demo, we will use a :ref:`Node2D <class_Node2D>` with a ``ViewportContainer`` and finally a
+For this demo, we will use a :ref:`Node2D <api:class_Node2D>` with a ``ViewportContainer`` and finally a
 ``Viewport``. Your **Scene** tab should look like this:
 
 .. image:: img/post_hierarchy1.png
@@ -47,7 +47,7 @@ your main scene. For this tutorial, we will use a field of random boxes:
 
 .. image:: img/post_boxes.png
 
-Add a new :ref:`ShaderMaterial <class_ShaderMaterial>` to the ``ViewportContainer``, and assign a new
+Add a new :ref:`ShaderMaterial <api:class_ShaderMaterial>` to the ``ViewportContainer``, and assign a new
 shader resource to it. You can access your rendered ``Viewport`` with the built-in ``TEXTURE`` uniform.
 
 .. note::
@@ -126,7 +126,7 @@ the tree.
 Apart from the node structure, the steps are the same as with the single-pass post-processing shader.
 
 As an example, you could write a full screen Gaussian blur effect by attaching the following pieces of code
-to each of the :ref:`ViewportContainers <class_ViewportContainer>`. The order in which you apply the shaders
+to each of the :ref:`ViewportContainers <api:class_ViewportContainer>`. The order in which you apply the shaders
 does not matter:
 
 ::

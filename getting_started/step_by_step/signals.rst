@@ -23,8 +23,8 @@ Below you can see some examples of how you can use signals in your own projects.
 Timer example
 -------------
 
-To see how signals work, let's try using a :ref:`Timer <class_Timer>` node. Create
-a new scene with a Node2D and two children: a Timer and a :ref:`Sprite <class_Sprite>`.
+To see how signals work, let's try using a :ref:`Timer <api:class_Timer>` node. Create
+a new scene with a Node2D and two children: a Timer and a :ref:`Sprite <api:class_Sprite>`.
 In the Scene dock, rename Node2D to TimerExample.
 
 For the Sprite's texture, you can use the Godot icon, or any other image you
@@ -263,7 +263,7 @@ Conclusion
 ----------
 
 Many of Godot's built-in node types provide signals you can use to detect
-events. For example, an :ref:`Area2D <class_Area2D>` representing a coin emits
+events. For example, an :ref:`Area2D <api:class_Area2D>` representing a coin emits
 a ``body_entered`` signal whenever the player's physics body enters its collision
 shape, allowing you to know when the player collected it.
 

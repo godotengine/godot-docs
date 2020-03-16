@@ -368,22 +368,22 @@ However, it is often the case that the visual geometry is too complex or
 too un-smooth for collisions, which ends up not working well.
 
 To solve this, the "-colonly" modifier exists, which will remove the mesh upon
-import and create a :ref:`class_staticbody` collision instead.
+import and create a :ref:`api:class_staticbody` collision instead.
 This helps the visual mesh and actual collision to be separated.
 
-Option "-convcolonly" will create a :ref:`class_convexpolygonshape` instead of a :ref:`class_concavepolygonshape`.
+Option "-convcolonly" will create a :ref:`api:class_convexpolygonshape` instead of a :ref:`api:class_concavepolygonshape`.
 
 Option "-colonly" can also be used with Blender's empty objects.
-On import, it will create a :ref:`class_staticbody` with
+On import, it will create a :ref:`api:class_staticbody` with
 a collision node as a child. The collision node will have one of a number of predefined shapes,
 depending on Blender's empty draw type:
 
 .. image:: img/3dimp_BlenderEmptyDrawTypes.png
 
--  Single arrow will create a :ref:`class_rayshape`
--  Cube will create a :ref:`class_boxshape`
--  Image will create a :ref:`class_planeshape`
--  Sphere (and the others not listed) will create a :ref:`class_sphereshape`
+-  Single arrow will create a :ref:`api:class_rayshape`
+-  Cube will create a :ref:`api:class_boxshape`
+-  Image will create a :ref:`api:class_planeshape`
+-  Sphere (and the others not listed) will create a :ref:`api:class_sphereshape`
 
 For better visibility in Blender's editor, the user can set "X-Ray" option on collision
 empties and set some distinct color for them in User Preferences / Themes / 3D View / Empty.
@@ -397,12 +397,12 @@ removed.
 Create a VehicleBody (-vehicle)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A mesh node with this suffix will be imported as a child to a :ref:`VehicleBody <class_VehicleBody>` node.
+A mesh node with this suffix will be imported as a child to a :ref:`VehicleBody <api:class_VehicleBody>` node.
 
 Create a VehicleWheel (-wheel)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A mesh node with this suffix will be imported as a child to a :ref:`VehicleWheel <class_VehicleWheel>` node.
+A mesh node with this suffix will be imported as a child to a :ref:`VehicleWheel <api:class_VehicleWheel>` node.
 
 Rigid Body (-rigid)
 ~~~~~~~~~~~~~~~~~~~

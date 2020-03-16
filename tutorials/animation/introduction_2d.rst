@@ -6,7 +6,7 @@ Introduction to the 2D animation features
 Overview
 --------
 
-The :ref:`class_AnimationPlayer` node allows you to create anything
+The :ref:`api:class_AnimationPlayer` node allows you to create anything
 from simple to complex animations.
 
 In this guide you learn to:
@@ -25,7 +25,7 @@ Create an AnimationPlayer node
 ------------------------------
 
 To use the animation tools we first have to create an
-:ref:`class_AnimationPlayer` node.
+:ref:`api:class_AnimationPlayer` node.
 
 The AnimationPlayer node type is the data container for your animations.
 One AnimationPlayer node can hold multiple animations, that can
@@ -321,7 +321,7 @@ comfortable with Godot's scripting language
 know that each node type is a class and has a bunch of callable
 methods.
 
-For example, the :ref:`class_AudioStreamPlayer` node type has a
+For example, the :ref:`api:class_AudioStreamPlayer` node type has a
 method to play an audio stream.
 
 Wouldn't it be great to use a method at a specific keyframe in an
@@ -334,7 +334,7 @@ To demonstrate, we're going to use a call method track to play audio at a
 specific keyframe. Normally to play audio you should use an audio track,
 but for the sake of demonstrating methods we're going to do it this way.
 
-Add a :ref:`class_AudioStreamPlayer` to the Scene Tree and setup a
+Add a :ref:`api:class_AudioStreamPlayer` to the Scene Tree and setup a
 stream using an audio file you put in your project.
 
 Click on "Add track" (|Add track|) on the animation panel's track
@@ -347,7 +347,7 @@ Select "Add Call Method Track" from the list of possible track types.
 
    Add Call Method Track
 
-Select the :ref:`class_AudioStreamPlayer` node in the selection
+Select the :ref:`api:class_AudioStreamPlayer` node in the selection
 window. Godot adds the track with the reference to the node.
 
 .. figure:: img/animation_select_audiostreamplayer.png
@@ -363,7 +363,7 @@ one.
 .. image:: img/animation_method_options.png
 
 When Godot reaches the keyframe, Godot calls the
-:ref:`class_AudioStreamPlayer` node's "play" function and the stream
+:ref:`api:class_AudioStreamPlayer` node's "play" function and the stream
 plays.
 
 You can change its position by dragging it on the timeline, you can also

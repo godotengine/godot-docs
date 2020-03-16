@@ -22,10 +22,10 @@ Let's get started!
 Making a system to handle animations
 ------------------------------------
 
-First we need a way to handle changing animations. Open up ``Player.tscn`` and select the :ref:`AnimationPlayer <class_AnimationPlayer>`
+First we need a way to handle changing animations. Open up ``Player.tscn`` and select the :ref:`AnimationPlayer <api:class_AnimationPlayer>`
 Node (``Player`` -> ``Rotation_Helper`` -> ``Model`` -> ``Animation_Player``).
 
-Create a new script called ``AnimationPlayer_Manager.gd`` and attach that to the :ref:`AnimationPlayer <class_AnimationPlayer>`.
+Create a new script called ``AnimationPlayer_Manager.gd`` and attach that to the :ref:`AnimationPlayer <api:class_AnimationPlayer>`.
 
 Add the following code to ``AnimationPlayer_Manager.gd``:
 
@@ -187,8 +187,8 @@ and in an effort to make everything look smooth, we need to play them at faster 
 
 ``current_state`` will hold the name of the animation state we are currently in.
 
-Finally, ``callback_function`` will be a :ref:`FuncRef <class_FuncRef>` passed in by the player for spawning bullets
-at the proper frame of animation. A :ref:`FuncRef <class_FuncRef>` allows us to pass in a function as an argument,
+Finally, ``callback_function`` will be a :ref:`FuncRef <api:class_FuncRef>` passed in by the player for spawning bullets
+at the proper frame of animation. A :ref:`FuncRef <api:class_FuncRef>` allows us to pass in a function as an argument,
 effectively allowing us to call a function from another script, which is how we will use it later.
 
 _________
@@ -212,11 +212,11 @@ has the passed in animation state name in ``states``, then we will change to tha
 Firstly, we check if the passed in animation name is the same name as the animation currently playing.
 If they are the same, then we write a warning to the console and return ``true``.
 
-Secondly, we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the animation with the name ``animation_name`` using ``has_animation``.
+Secondly, we see if :ref:`AnimationPlayer <api:class_AnimationPlayer>` has the animation with the name ``animation_name`` using ``has_animation``.
 If it does not, we return ``false``.
 
 Thirdly, we check whether ``current_state`` is set. If ``current_state`` is *not* currently set, then we
-set ``current_state`` to the passed in animation name and tell :ref:`AnimationPlayer <class_AnimationPlayer>` to start playing the animation with
+set ``current_state`` to the passed in animation name and tell :ref:`AnimationPlayer <api:class_AnimationPlayer>` to start playing the animation with
 a blend time of ``-1`` at the speed set in ``animation_speeds`` and then we return ``true``.
 
 .. note:: Blend time is how long to blend/mix the two animations together.
@@ -232,14 +232,14 @@ a blend time of ``-1`` at the speed set in ``animation_speeds`` and then we retu
 If we have a state in ``current_state``, then we get all the possible states we can transition to.
 
 If the animation name is in the list of possible transitions, we set ``current_state`` to the passed
-in animation (``animation_name``), tell :ref:`AnimationPlayer <class_AnimationPlayer>` to play the animation with a blend time of ``-1`` at the speed set in
+in animation (``animation_name``), tell :ref:`AnimationPlayer <api:class_AnimationPlayer>` to play the animation with a blend time of ``-1`` at the speed set in
 ``animation_speeds`` and return ``true``.
 
 _________
 
 Now lets look at ``animation_ended``.
 
-``animation_ended`` is the function that will be called by :ref:`AnimationPlayer <class_AnimationPlayer>` when it's done playing an animation.
+``animation_ended`` is the function that will be called by :ref:`AnimationPlayer <api:class_AnimationPlayer>` when it's done playing an animation.
 
 
 For certain animation states, we may need to transition into another state when it's finished. To handle this, we
@@ -256,8 +256,8 @@ check for every possible animation state. If we need to, we will transition into
 _________
 
 Finally, there is ``animation_callback``. This function will be called by a call method track in our animations.
-If we have a :ref:`FuncRef <class_FuncRef>` assigned to ``callback_function``, then we call that passed in function. If we do not
-have a :ref:`FuncRef <class_FuncRef>` assigned to ``callback_function``, we print out a warning to the console.
+If we have a :ref:`FuncRef <api:class_FuncRef>` assigned to ``callback_function``, then we call that passed in function. If we do not
+have a :ref:`FuncRef <api:class_FuncRef>` assigned to ``callback_function``, we print out a warning to the console.
 
 .. tip:: Try running ``Testing_Area.tscn`` to make sure there are no runtime issues. If the game runs but nothing
          seems to have changed, then everything is working correctly.
@@ -268,7 +268,7 @@ Getting the animations ready
 Now that we have a working animation manager, we need to call it from our player script.
 Before that, though, we need to set some animation callback tracks in our firing animations.
 
-Open up ``Player.tscn`` if you don't have it open and navigate to the :ref:`AnimationPlayer <class_AnimationPlayer>` node
+Open up ``Player.tscn`` if you don't have it open and navigate to the :ref:`AnimationPlayer <api:class_AnimationPlayer>` node
 (``Player`` -> ``Rotation_Helper`` -> ``Model`` -> ``Animation_Player``).
 
 We need to attach a call method track to three of our animations: The firing animation for the pistol, rifle, and knife.
@@ -281,7 +281,7 @@ Now scroll down to the bottom of the list of animation tracks. The final item in
 
 This will bring up a window with a few choices. We want to add a call method track, so click the
 option that reads "Call Method Track". This will open a window showing the entire node tree. Navigate to the
-:ref:`AnimationPlayer <class_AnimationPlayer>` node, select it, and press OK.
+:ref:`AnimationPlayer <api:class_AnimationPlayer>` node, select it, and press OK.
 
 .. image:: img/AnimationPlayerCallFuncTrack.png
 
@@ -420,19 +420,19 @@ _________
 Let's get the bullet object set up. This is what our pistol will create when the "Pistol_fire" animation callback function is called.
 
 
-Open up ``Bullet_Scene.tscn``. The scene contains :ref:`Spatial <class_Spatial>` node called bullet, with a :ref:`MeshInstance <class_MeshInstance>`
-and an :ref:`Area <class_Area>` with a :ref:`CollisionShape <class_CollisionShape>` children to it.
+Open up ``Bullet_Scene.tscn``. The scene contains :ref:`Spatial <api:class_Spatial>` node called bullet, with a :ref:`MeshInstance <api:class_MeshInstance>`
+and an :ref:`Area <api:class_Area>` with a :ref:`CollisionShape <api:class_CollisionShape>` children to it.
 
 
-Create a new script called ``Bullet_script.gd`` and attach it to the ``Bullet`` :ref:`Spatial <class_Spatial>`.
+Create a new script called ``Bullet_script.gd`` and attach it to the ``Bullet`` :ref:`Spatial <api:class_Spatial>`.
 
-We are going to move the entire bullet object at the root (``Bullet``). We will be using the :ref:`Area <class_Area>` to check whether or not we've collided with something
+We are going to move the entire bullet object at the root (``Bullet``). We will be using the :ref:`Area <api:class_Area>` to check whether or not we've collided with something
 
-.. note:: Why are we using an :ref:`Area <class_Area>` and not a :ref:`RigidBody <class_RigidBody>`? The main reason we're not using a :ref:`RigidBody <class_RigidBody>`
-          is because we do not want the bullet to interact with other :ref:`RigidBody <class_RigidBody>` nodes.
-          By using an :ref:`Area <class_Area>` we are ensuring that none of the other :ref:`RigidBody <class_RigidBody>` nodes, including other bullets, will be effected.
+.. note:: Why are we using an :ref:`Area <api:class_Area>` and not a :ref:`RigidBody <api:class_RigidBody>`? The main reason we're not using a :ref:`RigidBody <api:class_RigidBody>`
+          is because we do not want the bullet to interact with other :ref:`RigidBody <api:class_RigidBody>` nodes.
+          By using an :ref:`Area <api:class_Area>` we are ensuring that none of the other :ref:`RigidBody <api:class_RigidBody>` nodes, including other bullets, will be effected.
 
-          Another reason is simply because it is easier to detect collisions with an :ref:`Area <class_Area>`!
+          Another reason is simply because it is easier to detect collisions with an :ref:`Area <api:class_Area>`!
 
 Here's the script that will control our bullet:
 
@@ -513,13 +513,13 @@ _________
 
 In ``collided`` we check whether we've hit something yet.
 
-Remember that ``collided`` is only called when a body has entered the :ref:`Area <class_Area>` node.
+Remember that ``collided`` is only called when a body has entered the :ref:`Area <api:class_Area>` node.
 If the bullet has not already collided with something, we then proceed to check if the body the bullet has collided
 with has a function/method called ``bullet_hit``. If it does, we call it and pass in the bullet's damage and the bullet's global transform
 so we can get the bullet's rotation and position.
 
-.. note:: in ``collided``, the passed in body can be a :ref:`StaticBody <class_StaticBody>`,
-          :ref:`RigidBody <class_RigidBody>`, or :ref:`KinematicBody <class_KinematicBody>`
+.. note:: in ``collided``, the passed in body can be a :ref:`StaticBody <api:class_StaticBody>`,
+          :ref:`RigidBody <api:class_RigidBody>`, or :ref:`KinematicBody <api:class_KinematicBody>`
 
 We set the Bullet's ``hit_something`` variable to ``true`` because regardless of whether or not the body that
 the bullet collided with has the ``bullet_hit`` function/method, it has hit something and so we need to make sure the bullet does not hit anything else.
@@ -551,14 +551,14 @@ with as it goes along.
 .. note:: There is a invisible mesh instance for debugging purposes. The mesh is
           a small sphere that visually shows at which target the bullets will be aiming.
 
-Open up ``Gun_Fire_Points`` and you'll find three more :ref:`Spatial <class_Spatial>` nodes, one for each
+Open up ``Gun_Fire_Points`` and you'll find three more :ref:`Spatial <api:class_Spatial>` nodes, one for each
 weapon.
 
-Open up ``Rifle_Point`` and you'll find a :ref:`Raycast <class_Raycast>` node. This is where
+Open up ``Rifle_Point`` and you'll find a :ref:`Raycast <api:class_Raycast>` node. This is where
 we will be sending the raycasts for our rifle's bullets.
 The length of the raycast will dictate how far our bullets will travel.
 
-We are using a :ref:`Raycast <class_Raycast>` node to handle the rifle's bullet because
+We are using a :ref:`Raycast <api:class_Raycast>` node to handle the rifle's bullet because
 we want to fire lots of bullets quickly. If we use bullet objects, it is quite possible
 we could run into performance issues on older machines.
 
@@ -568,7 +568,7 @@ we could run into performance issues on older machines.
           and scrubbing through the timeline. The point for each weapon should mostly line
           up with the end of each weapon.
 
-Open up ``Knife_Point`` and you'll find an :ref:`Area <class_Area>` node. We are using an :ref:`Area <class_Area>` for the knife
+Open up ``Knife_Point`` and you'll find an :ref:`Area <api:class_Area>` node. We are using an :ref:`Area <api:class_Area>` for the knife
 because we only care for all the bodies close to us, and because our knife does
 not fire into space. If we were making a throwing knife, we would likely spawn a bullet
 object that looks like a knife.
@@ -581,7 +581,7 @@ Now that we've seen how we will handle our other weapons, and where we will spaw
 let's start working on making them work.
 
 .. note:: You can also look at the HUD nodes if you want. There is nothing fancy there and other
-         than using a single :ref:`Label <class_Label>`, we will not be touching any of those nodes.
+         than using a single :ref:`Label <api:class_Label>`, we will not be touching any of those nodes.
          Check :ref:`doc_design_interfaces_with_the_control_nodes` for a tutorial on using GUI nodes.
 
 
@@ -696,7 +696,7 @@ If the currently loaded/open scene is ``Testing_Area.tscn``, we'd be adding our 
 
 Next we set the global transform of the clone to the ``Pistol_Aim_Point``'s global transform. The reason we do this is so the bullet is spawned at the end of the pistol.
 
-You can see that ``Pistol_Aim_Point`` is positioned right at the end of the pistol by clicking the :ref:`AnimationPlayer <class_AnimationPlayer>` and
+You can see that ``Pistol_Aim_Point`` is positioned right at the end of the pistol by clicking the :ref:`AnimationPlayer <api:class_AnimationPlayer>` and
 scrolling through ``Pistol_fire``. You'll find the position is more or less at the end of the pistol when it fires.
 
 Next we scale it up by a factor of ``4`` because the bullet scene is a little too small by default.
@@ -800,20 +800,20 @@ then add the following:
 
 Most of this is exactly the same as ``Weapon_Pistol.gd``, so we're only going to look at what's changed: ``fire_weapon``.
 
-The first thing we do is get the :ref:`Raycast <class_Raycast>` node, which is a child of ``Rifle_Point``.
+The first thing we do is get the :ref:`Raycast <api:class_Raycast>` node, which is a child of ``Rifle_Point``.
 
-Next we force the :ref:`Raycast <class_Raycast>` to update using ``force_raycast_update``. This will force the :ref:`Raycast <class_Raycast>` to detect collisions when we call it, meaning
+Next we force the :ref:`Raycast <api:class_Raycast>` to update using ``force_raycast_update``. This will force the :ref:`Raycast <api:class_Raycast>` to detect collisions when we call it, meaning
 we get a frame perfect collision check with the 3D physics world.
 
-Then we check to see if the :ref:`Raycast <class_Raycast>` collided with something.
+Then we check to see if the :ref:`Raycast <api:class_Raycast>` collided with something.
 
-If the :ref:`Raycast <class_Raycast>` has collided with something, we first get the collision body it collided with. This can be a :ref:`StaticBody <class_StaticBody>`,
-:ref:`RigidBody <class_RigidBody>`, or a :ref:`KinematicBody <class_KinematicBody>`.
+If the :ref:`Raycast <api:class_Raycast>` has collided with something, we first get the collision body it collided with. This can be a :ref:`StaticBody <api:class_StaticBody>`,
+:ref:`RigidBody <api:class_RigidBody>`, or a :ref:`KinematicBody <api:class_KinematicBody>`.
 
 Next we want to make sure the body we've collided with is not the player, since we (probably) do not want to give the player the ability to shoot themselves in the foot.
 
 If the body is not the player, we then check to see if it has a function/method called ``bullet_hit``. If it does, we call it and pass in the amount of
-damage this bullet does (``DAMAGE``), and the global transform of the :ref:`Raycast <class_Raycast>` so we can tell from which direction the bullet came.
+damage this bullet does (``DAMAGE``), and the global transform of the :ref:`Raycast <api:class_Raycast>` so we can tell from which direction the bullet came.
 
 _________
 
@@ -872,10 +872,10 @@ then add the following:
 
 As with ``Weapon_Rifle.gd``, the only differences are in ``fire_weapon``, so let's look at that:
 
-The first thing we do is get the :ref:`Area <class_Area>` child node of ``Knife_Point``.
+The first thing we do is get the :ref:`Area <api:class_Area>` child node of ``Knife_Point``.
 
-Next we want to get all the collision bodies inside the :ref:`Area <class_Area>` using ``get_overlapping_bodies``. This will return a
-list of every body that touches the :ref:`Area <class_Area>`.
+Next we want to get all the collision bodies inside the :ref:`Area <api:class_Area>` using ``get_overlapping_bodies``. This will return a
+list of every body that touches the :ref:`Area <api:class_Area>`.
 
 We next want to go through each of those bodies.
 
@@ -883,10 +883,10 @@ First we check to make sure the body is not the player, because we do not want t
 we use ``continue`` so we jump and look at the next body in ``bodies``.
 
 If we have not jumped to the next body, we then check to see if the body has the ``bullet_hit`` function/method. If it does,
-we call it, passing in the amount of damage a single knife swipe does (``DAMAGE``) and the global transform of the :ref:`Area <class_Area>`.
+we call it, passing in the amount of damage a single knife swipe does (``DAMAGE``) and the global transform of the :ref:`Area <api:class_Area>`.
 
 .. note:: While we could attempt to calculate a rough location for where the knife hit exactly, we
-          are not going to because using the :ref:`Area <class_Area>`'s position works well enough and the extra time
+          are not going to because using the :ref:`Area <api:class_Area>`'s position works well enough and the extra time
           needed to calculate a rough position for each body is not worth the effort.
 
 Making the weapons work
@@ -914,7 +914,7 @@ First let's start by adding some class variables we'll need for the weapons:
 
 Let's go over what these new variables will do:
 
-- ``animation_manager``: This will hold the :ref:`AnimationPlayer <class_AnimationPlayer>` node and its script, which we wrote previously.
+- ``animation_manager``: This will hold the :ref:`AnimationPlayer <api:class_AnimationPlayer>` node and its script, which we wrote previously.
 - ``current_weapon_name``: The name of the weapon we are currently using. It has four possible values: ``UNARMED``, ``KNIFE``, ``PISTOL``, and ``RIFLE``.
 - ``weapons``: A dictionary that will hold all the weapon nodes.
 - ``WEAPON_NUMBER_TO_NAME``: A dictionary allowing us to convert from a weapon's number to its name. We'll use this for changing weapons.
@@ -960,8 +960,8 @@ Next we need to add a few things in ``_ready``. Here's the new ``_ready`` functi
 
 Let's go over what's changed.
 
-First we get the :ref:`AnimationPlayer <class_AnimationPlayer>` node and assign it to the ``animation_manager`` variable. Then we set the callback function
-to a :ref:`FuncRef <class_FuncRef>` that will call the player's ``fire_bullet`` function. Right now we haven't written the ``fire_bullet`` function,
+First we get the :ref:`AnimationPlayer <api:class_AnimationPlayer>` node and assign it to the ``animation_manager`` variable. Then we set the callback function
+to a :ref:`FuncRef <api:class_FuncRef>` that will call the player's ``fire_bullet`` function. Right now we haven't written the ``fire_bullet`` function,
 but we'll get there soon.
 
 Next we get all the weapon nodes and assign them to ``weapons``. This will allow us to access the weapon nodes only with their name
@@ -979,7 +979,7 @@ Then we have it look at ``gun_aim_point_pos`` using the ``look_at`` function, an
 
 Then we set ``current_weapon_name`` and ``changing_weapon_name`` to ``UNARMED``.
 
-Finally, we get the UI :ref:`Label <class_Label>` from our HUD.
+Finally, we get the UI :ref:`Label <api:class_Label>` from our HUD.
 
 _________
 
@@ -1136,8 +1136,8 @@ _________
 
 Now, we need to add one more function to the player, and then the player is ready to start firing the weapons!
 
-We need to add ``fire_bullet``, which will be called by the :ref:`AnimationPlayer <class_AnimationPlayer>` at those
-points we set earlier in the :ref:`AnimationPlayer <class_AnimationPlayer>` function track:
+We need to add ``fire_bullet``, which will be called by the :ref:`AnimationPlayer <api:class_AnimationPlayer>` at those
+points we set earlier in the :ref:`AnimationPlayer <api:class_AnimationPlayer>` function track:
 
 ::
 
@@ -1170,7 +1170,7 @@ Creating some test subjects
 ---------------------------
 
 Create a new script by going to the scripting window, clicking "file", and selecting new.
-Name this script ``RigidBody_hit_test`` and make sure it extends :ref:`RigidBody <class_RigidBody>`.
+Name this script ``RigidBody_hit_test`` and make sure it extends :ref:`RigidBody <api:class_RigidBody>`.
 
 Now we need to add this code:
 
@@ -1192,27 +1192,27 @@ Now we need to add this code:
 Let's go over how ``bullet_hit`` works:
 
 
-First we get the bullet's forward directional vector. This is so we can tell from which direction the bullet will hit the :ref:`RigidBody <class_RigidBody>`.
-We will use this to push the :ref:`RigidBody <class_RigidBody>` in the same direction as the bullet.
+First we get the bullet's forward directional vector. This is so we can tell from which direction the bullet will hit the :ref:`RigidBody <api:class_RigidBody>`.
+We will use this to push the :ref:`RigidBody <api:class_RigidBody>` in the same direction as the bullet.
 
 .. note:: We need to boost the directional vector by ``BASE_BULLET_BOOST`` so the bullets pack a bit more of a punch
-          and move the :ref:`RigidBody <class_RigidBody>` nodes in a visible way. You can just set ``BASE_BULLET_BOOST`` to lower or higher values if you want
-          less or more of a reaction when the bullets collide with the :ref:`RigidBody <class_RigidBody>`.
+          and move the :ref:`RigidBody <api:class_RigidBody>` nodes in a visible way. You can just set ``BASE_BULLET_BOOST`` to lower or higher values if you want
+          less or more of a reaction when the bullets collide with the :ref:`RigidBody <api:class_RigidBody>`.
 
 Then we apply an impulse using ``apply_impulse``.
 
 First, we need to calculate the position for the impulse.
-Because ``apply_impulse`` takes a vector relative to the :ref:`RigidBody <class_RigidBody>`, we need to calculate the distance from
-the :ref:`RigidBody <class_RigidBody>` to the bullet. We do this by subtracting the :ref:`RigidBody <class_RigidBody>`'s global origin/position from the bullet's global origin/position.
-This gets us the distance from the :ref:`RigidBody <class_RigidBody>` to the bullet. We normalize this vector so the size of the collider does not effect how much
-the bullets move the :ref:`RigidBody <class_RigidBody>`.
+Because ``apply_impulse`` takes a vector relative to the :ref:`RigidBody <api:class_RigidBody>`, we need to calculate the distance from
+the :ref:`RigidBody <api:class_RigidBody>` to the bullet. We do this by subtracting the :ref:`RigidBody <api:class_RigidBody>`'s global origin/position from the bullet's global origin/position.
+This gets us the distance from the :ref:`RigidBody <api:class_RigidBody>` to the bullet. We normalize this vector so the size of the collider does not effect how much
+the bullets move the :ref:`RigidBody <api:class_RigidBody>`.
 
 Finally, we need to calculate the force for the impulse. For this, we use the direction the bullet is facing and multiply it by the bullet's damage.
 This gives a nice result and for stronger bullets, we get a stronger result.
 
 _______
 
-Now we need to attach this script to all of the :ref:`RigidBody <class_RigidBody>` nodes we want to affect.
+Now we need to attach this script to all of the :ref:`RigidBody <api:class_RigidBody>` nodes we want to affect.
 
 Open up ``Testing_Area.tscn`` and select all the cubes parented to the ``Cubes`` node.
 

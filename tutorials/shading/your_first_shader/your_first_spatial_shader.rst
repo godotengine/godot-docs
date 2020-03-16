@@ -5,7 +5,7 @@ Your first Spatial shader
 
 You have decided to start writing your own custom Spatial shader. Maybe you saw a cool trick 
 online that was done with shaders, or you have found that the 
-:ref:`SpatialMaterial <class_SpatialMaterial>` isn't quite meeting your needs. Either way, 
+:ref:`SpatialMaterial <api:class_SpatialMaterial>` isn't quite meeting your needs. Either way, 
 you have decided to write your own and now you need figure out where to start.
 
 This tutorial will explain how to write a Spatial shader and will cover more topics than the
@@ -29,15 +29,15 @@ in a fragment shader by writing an ocean water shader.
 Where to assign my material
 ---------------------------
 
-In 3D, objects are drawn using :ref:`Meshes <class_Mesh>`. Meshes are a resource type that store geometry
+In 3D, objects are drawn using :ref:`Meshes <api:class_Mesh>`. Meshes are a resource type that store geometry
 (the shape of your object) and materials (the color and how the object reacts to light) in units called
 "surfaces". A Mesh can have multiple surfaces, or just one. Typically, you would
-import a mesh from another program (e.g. Blender). But Godot also has a few :ref:`PrimitiveMeshes <class_primitivemesh>`
+import a mesh from another program (e.g. Blender). But Godot also has a few :ref:`PrimitiveMeshes <api:class_primitivemesh>`
 that allow you to add basic geometry to a scene without importing Meshes. 
 
-There are multiple node types that you can use to draw a mesh. The main one is :ref:`MeshInstance <class_meshinstance>`,
-but you can also use :ref:`Particles <class_particles>`, :ref:`MultiMeshes <class_MultiMesh>` (with a
-:ref:`MultiMeshInstance <class_multimeshinstance>`), or others.
+There are multiple node types that you can use to draw a mesh. The main one is :ref:`MeshInstance <api:class_meshinstance>`,
+but you can also use :ref:`Particles <api:class_particles>`, :ref:`MultiMeshes <api:class_MultiMesh>` (with a
+:ref:`MultiMeshInstance <api:class_multimeshinstance>`), or others.
 
 Typically, a material is associated with a given surface in a mesh, but some nodes, like MeshInstance, allow
 you to override the material for a specific surface, or for all surfaces. 
@@ -52,12 +52,12 @@ ability to override materials.
 Setting up
 ----------
 
-Add a new :ref:`MeshInstance <class_meshinstance>` node to your scene. 
+Add a new :ref:`MeshInstance <api:class_meshinstance>` node to your scene. 
 
 In the inspector tab beside "Mesh" click "[empty]" and select "New PlaneMesh".
 Then click on the image of a plane that appears.
 
-This adds a :ref:`PlaneMesh <class_planemesh>` to our scene.
+This adds a :ref:`PlaneMesh <api:class_planemesh>` to our scene.
 
 Then, in the viewport, click in the upper left corner on the button that says "Perspective".
 A menu will appear. In the middle of the menu are options for how to display the scene.
@@ -71,12 +71,12 @@ Now set ``Subdivide Width`` and ``Subdivide Depth`` to ``32``.
 
 .. image:: img/plane-sub-set.png
 
-You can see that there are now many more triangles in the :ref:`Mesh<class_MeshInstance>`. This will give
+You can see that there are now many more triangles in the :ref:`Mesh<api:class_MeshInstance>`. This will give
 us more vertices to work with and thus allow us to add more detail.
 
 .. image:: img/plane-sub.png
 
-:ref:`PrimitiveMeshes <class_primitivemesh>`, like PlaneMesh, only have one surface, so instead of 
+:ref:`PrimitiveMeshes <api:class_primitivemesh>`, like PlaneMesh, only have one surface, so instead of 
 an array of materials there is only one. Click beside "Material" where it says "[empty]" and 
 select "New ShaderMaterial". Then click the sphere that appears. 
 
@@ -98,7 +98,7 @@ We set the variable ``shader_type`` to ``spatial`` because this is a spatial sha
   shader_type spatial;
 
 Next we will define the ``vertex()`` function. The ``vertex()`` function determines where 
-the vertices of your :ref:`Mesh<class_MeshInstance>` appear in the final scene. We will be 
+the vertices of your :ref:`Mesh<api:class_MeshInstance>` appear in the final scene. We will be 
 using it to offset the height of each vertex and make our flat plane appear like a little terrain.
 
 We define the vertex shader like so:
@@ -145,7 +145,7 @@ Noise heightmap
 Noise is a very popular tool for faking the look of terrain. Think of it as similar to the cosine function
 where you have repeating hills except, with noise, each hill has a different height.
 
-Godot provides the :ref:`NoiseTexture <class_noisetexture>` resource for generating a noise texture
+Godot provides the :ref:`NoiseTexture <api:class_noisetexture>` resource for generating a noise texture
 that can be accessed from a shader.
 
 To access a texture in a shader add the following code near the top of your shader, outside the
@@ -161,7 +161,7 @@ You should see a section called "Shader Params". If you open it up you will see 
 Click beside it where it says "[empty]" and select "New NoiseTexture". Then in your NoiseTexture click beside
 where it says "Noise" and select "New OpenSimplexNoise".
 
-:ref:`OpenSimplexNoise <class_opensimplexnoise>` is used by the NoiseTexture to generate a heightmap.
+:ref:`OpenSimplexNoise <api:class_opensimplexnoise>` is used by the NoiseTexture to generate a heightmap.
 
 Once you set it up and should look like this.
 
@@ -194,7 +194,7 @@ Uniforms
 Uniform variables allow you to pass data from the game into the shader. They are
 very useful for controlling shader effects. Uniforms can be almost any
 datatype that can be used in the shader. To use a uniform, you declare it in
-your :ref:`Shader<class_Shader>` using the keyword ``uniform``.
+your :ref:`Shader<api:class_Shader>` using the keyword ``uniform``.
 
 Let's make a uniform that changes the height of the terrain.
 
@@ -220,8 +220,8 @@ precedence over the value used to initialize it in the shader.
           ``material_override``.
 
 Remember that the string passed into ``set_shader_param()`` must match the name
-of the uniform variable in the :ref:`Shader<class_Shader>`. You can use the uniform variable anywhere
-inside your :ref:`Shader<class_Shader>`. Here, we will use it to set the height value instead
+of the uniform variable in the :ref:`Shader<api:class_Shader>`. You can use the uniform variable anywhere
+inside your :ref:`Shader<api:class_Shader>`. Here, we will use it to set the height value instead
 of arbitrarily multiplying by ``0.5``.
 
 .. code-block:: glsl
@@ -233,7 +233,7 @@ Now it looks  much better.
 .. image:: img/noise-low.png
 
 Using uniforms, we can even change the value every frame to animate the height of the terrain.
-Combined with :ref:`Tweens <class_Tween>`, this can be especially useful for simple animations.
+Combined with :ref:`Tweens <api:class_Tween>`, this can be especially useful for simple animations.
 
 Interacting with light
 ----------------------
@@ -245,13 +245,13 @@ First, turn wireframe off. To do so, click in the upper-left of the Viewport aga
 
 Note how the mesh color goes flat. This is because the lighting on it is flat. Let's add a light!
 
-First, we will add an :ref:`OmniLight<class_OmniLight>` to the scene.
+First, we will add an :ref:`OmniLight<api:class_OmniLight>` to the scene.
 
 .. image:: img/light.png
 
 You can see the light affecting the terrain, but it looks odd. The problem is the light
 is affecting the terrain as if it were a flat plane. This is because the light shader uses 
-the normals from the :ref:`Mesh <class_mesh>` to calculate light. 
+the normals from the :ref:`Mesh <api:class_mesh>` to calculate light. 
 
 The normals are stored in the Mesh, but we are changing the shape of the Mesh in the 
 shader, so the normals are no longer correct. To fix this, we can recalculate the normals 

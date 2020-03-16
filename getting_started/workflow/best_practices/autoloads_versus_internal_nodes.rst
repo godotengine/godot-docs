@@ -6,7 +6,7 @@ Autoloads versus regular nodes
 Godot offers a feature to automatically load nodes at the root of your project,
 allowing you to access them globally, that can fulfill the role of a Singleton:
 :ref:`doc_singletons_autoload`. These auto-loaded nodes are not freed when you
-change the scene from code with :ref:`SceneTree.change_scene <class_SceneTree_method_change_scene>`.
+change the scene from code with :ref:`SceneTree.change_scene <api:class_SceneTree_method_change_scene>`.
 
 In this guide, you will learn when to use the Autoload feature, and techniques
 you can use to avoid it.
@@ -20,7 +20,7 @@ many ways to avoid global state thanks to the node tree and signals.
 
 For example, let's say we are building a platformer and want to collect coins
 that play a sound effect. There's a node for that: the :ref:`AudioStreamPlayer
-<class_AudioStreamPlayer>`. But if we call the ``AudioStreamPlayer`` while it is
+<api:class_AudioStreamPlayer>`. But if we call the ``AudioStreamPlayer`` while it is
 already playing a sound, the new sound interrupts the first.
 
 A solution is to code a global, auto-loaded sound manager class. It generates a
@@ -72,7 +72,7 @@ that feature for an individual scene using the :ref:`class_name
 
 When it comes to data, you can either:
 
-1. Create a new type of :ref:`Resource <class_Resource>` to share the data.
+1. Create a new type of :ref:`Resource <api:class_Resource>` to share the data.
 
 2. Store the data in an object to which each node has access, for example using
    the ``owner`` property to access the scene's root node.

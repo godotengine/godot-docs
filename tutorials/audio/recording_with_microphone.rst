@@ -37,11 +37,11 @@ An ``AudioStreamPlayer`` named ``AudioStreamRecord`` is used for recording.
 	# as an "AudioEffectRecord" resource.
         effect = AudioServer.get_bus_effect(idx, 0)
 
-The audio recording is handled by the :ref:`class_AudioEffectRecord` resource
+The audio recording is handled by the :ref:`api:class_AudioEffectRecord` resource
 which has three methods:
-:ref:`get_recording() <class_AudioEffectRecord_method_get_recording>`,
-:ref:`is_recording_active() <class_AudioEffectRecord_method_is_recording_active>`,
-and :ref:`set_recording_active() <class_AudioEffectRecord_method_set_recording_active>`.
+:ref:`get_recording() <api:class_AudioEffectRecord_method_get_recording>`,
+:ref:`is_recording_active() <api:class_AudioEffectRecord_method_is_recording_active>`,
+and :ref:`set_recording_active() <api:class_AudioEffectRecord_method_set_recording_active>`.
         
 .. tabs::
   .. code-tab:: gdscript GDScript

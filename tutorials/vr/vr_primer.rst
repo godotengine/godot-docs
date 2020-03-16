@@ -13,7 +13,7 @@ AR/VR server
 
 When Godot starts, each available interface will make itself known to the AR/VR server. GDNative interfaces are setup as singletons; as long as they are added to the list of GDNative singletons in your project, they will make themselves known to the server.
 
-You can use the function :ref:`get_interfaces() <class_ARVRServer_method_get_interfaces>` to return a list of available interfaces, but for this tutorial, we're going to use the :ref:`native mobile VR interface <class_MobileVRInterface>` in our examples. This interface is a straightforward implementation that uses the 3DOF sensors on your phone for orientation and outputs a stereoscopic image to the screen. It is also available in the Godot core and outputs to screen on desktop, which makes it ideal for prototyping or a tutorial such as this one.
+You can use the function :ref:`get_interfaces() <api:class_ARVRServer_method_get_interfaces>` to return a list of available interfaces, but for this tutorial, we're going to use the :ref:`native mobile VR interface <api:class_MobileVRInterface>` in our examples. This interface is a straightforward implementation that uses the 3DOF sensors on your phone for orientation and outputs a stereoscopic image to the screen. It is also available in the Godot core and outputs to screen on desktop, which makes it ideal for prototyping or a tutorial such as this one.
 
 To enable an interface, you execute the following code:
 
@@ -34,28 +34,28 @@ To enable an interface, you execute the following code:
 
 This code finds the interface we wish to use, initializes it and, if that is successful, binds the main viewport to the interface. This last step gives some control over the viewport to the interface, which automatically enables things like stereoscopic rendering on the viewport.
 
-For our mobile VR interface, and any interface where the main input is directly displayed on screen, the main viewport needs to be the viewport where :ref:`arvr<class_Viewport_property_arvr>` is set to ``true``. But for interfaces that render on an externally attached device, you can use a secondary viewport. In the latter case, a viewport that shows its output on screen will show an undistorted version of the left eye, while showing the fully processed stereoscopic output on the device.
+For our mobile VR interface, and any interface where the main input is directly displayed on screen, the main viewport needs to be the viewport where :ref:`arvr<api:class_Viewport_property_arvr>` is set to ``true``. But for interfaces that render on an externally attached device, you can use a secondary viewport. In the latter case, a viewport that shows its output on screen will show an undistorted version of the left eye, while showing the fully processed stereoscopic output on the device.
 
-Finally, you should only initialize an interface once; switching scenes and reinitializing interfaces will just introduce a lot of overhead. If you want to turn the headset off temporarily, just disable the viewport or set :ref:`arvr<class_Viewport_property_arvr>` to ``false`` on the viewport. In most scenarios though, you wouldn't disable the headset once you're in VR, this can be disconcerting to the gamer.
+Finally, you should only initialize an interface once; switching scenes and reinitializing interfaces will just introduce a lot of overhead. If you want to turn the headset off temporarily, just disable the viewport or set :ref:`arvr<api:class_Viewport_property_arvr>` to ``false`` on the viewport. In most scenarios though, you wouldn't disable the headset once you're in VR, this can be disconcerting to the gamer.
 
 New AR/VR nodes
 ---------------
 
 Three new node types have been added for supporting AR and VR in Godot and one additional node type especially for AR. These are:
 
-* :ref:`ARVROrigin <class_ARVROrigin>` - our origin point in the world
-* :ref:`ARVRCamera <class_ARVRCamera>` - a special subclass of the camera, which is positionally tracked
-* :ref:`ARVRController <class_ARVRController>` - a new spatial class, which tracks the location of a controller
-* :ref:`ARVRAnchor <class_ARVRAnchor>` - an anchor point for an AR implementation mapping a real world location into your virtual world
+* :ref:`ARVROrigin <api:class_ARVROrigin>` - our origin point in the world
+* :ref:`ARVRCamera <api:class_ARVRCamera>` - a special subclass of the camera, which is positionally tracked
+* :ref:`ARVRController <api:class_ARVRController>` - a new spatial class, which tracks the location of a controller
+* :ref:`ARVRAnchor <api:class_ARVRAnchor>` - an anchor point for an AR implementation mapping a real world location into your virtual world
 
 The first two must exist in your scene for AR/VR to work and this tutorial focuses purely on them.
 
-:ref:`ARVROrigin <class_ARVROrigin>` is an important node, you must have one and only one of these somewhere in your scene. This node maps the center of your real world tracking space to a location in your virtual world. Everything else is positionally tracked in relation to this point. Where this point lies exactly differs from one implementation to another, but the best example to understand how this node works is to take a look at a room scale location. While we have functions to adjust the point to center it on the player by default, the origin point will be the center location of the room you are in. As you physically walk around the room, the location of the HMD is tracked in relation to this center position and the tracking is mirror in the virtual world.
+:ref:`ARVROrigin <api:class_ARVROrigin>` is an important node, you must have one and only one of these somewhere in your scene. This node maps the center of your real world tracking space to a location in your virtual world. Everything else is positionally tracked in relation to this point. Where this point lies exactly differs from one implementation to another, but the best example to understand how this node works is to take a look at a room scale location. While we have functions to adjust the point to center it on the player by default, the origin point will be the center location of the room you are in. As you physically walk around the room, the location of the HMD is tracked in relation to this center position and the tracking is mirror in the virtual world.
 
 To keep things simple, when you physically move around your room, the ARVR Origin point stays where it is, the position of the camera and controllers will be adjusted according to your movements.
 When you move through the virtual world, either through controller input or when you implement a teleport system, it is the position of the origin point which you will have to adjust.
 
-:ref:`ARVRCamera <class_ARVRCamera>` is the second node that must always be a part of your scene and it must always be a child node of your origin node. It is a subclass of Godot's normal camera. However, its position is automatically updated each frame based on the physical orientation and position of the HMD. Also due to the precision required for rendering to an HMD or rendering an AR overlay over a real world camera, most of the standard camera properties are ignored. The only properties of the camera that are used are the near and far plane settings. The FOV, aspect ratio and projection mode are all ignored.
+:ref:`ARVRCamera <api:class_ARVRCamera>` is the second node that must always be a part of your scene and it must always be a child node of your origin node. It is a subclass of Godot's normal camera. However, its position is automatically updated each frame based on the physical orientation and position of the HMD. Also due to the precision required for rendering to an HMD or rendering an AR overlay over a real world camera, most of the standard camera properties are ignored. The only properties of the camera that are used are the near and far plane settings. The FOV, aspect ratio and projection mode are all ignored.
 
 Note that, for our native mobile VR implementation, there is no positional tracking, only the orientation of the phone and by extension, the HMD is tracked. This implementation artificially places the camera at a height (Y) of 1.85.
 

@@ -237,12 +237,12 @@ Unity can handle script serialization in two ways:
 
 Godot also has a built-in script serialization system, but it works only explicitly.
 You can serialize any serializable type (:ref:`built-in and various engine types <doc_binary_serialization_api>`,
-including :ref:`class_Array` and :ref:`class_Dictionary`) using the ``export`` keyword.
+including :ref:`api:class_Array` and :ref:`api:class_Dictionary`) using the ``export`` keyword.
 See the :ref:`exports documentation <doc_gdscript_exports>` for details.
 
 Unity also has a data type called ``ScriptableObject`` used to serialize custom asset objects.
-Its equivalent in Godot is the base class for all resources: :ref:`class_Resource`.
-Creating a script that inherits :ref:`class_Resource` will allow you to create custom serializable objects. More information about resources can be found :ref:`here <doc_resources>`.
+Its equivalent in Godot is the base class for all resources: :ref:`api:class_Resource`.
+Creating a script that inherits :ref:`api:class_Resource` will allow you to create custom serializable objects. More information about resources can be found :ref:`here <doc_resources>`.
 
 Using Godot in C++
 ------------------

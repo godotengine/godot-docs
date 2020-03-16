@@ -9,7 +9,7 @@ This can for example be used to simulate cloth or to create more realistic chara
 Basic set-up
 ~~~~~~~~~~~~
 
-A :ref:`SoftBody <class_SoftBody>` node is used for soft body simulations.
+A :ref:`SoftBody <api:class_SoftBody>` node is used for soft body simulations.
 
 We will create a bouncy cube to demonstrate the setup of a soft body.
 
@@ -42,7 +42,7 @@ Open the ``PlaneMesh`` properties and set the size(x: 0.5 y: 1) then set ``Subdi
 
 .. tip:: Subdivision generates a more tessellated mesh for better simulations.
 
-Add a :ref:`BoneAttachment <class_BoneAttachment>` node under the skeleton node and select the Neck bone to attach the cloak to the character skeleton.
+Add a :ref:`BoneAttachment <api:class_BoneAttachment>` node under the skeleton node and select the Neck bone to attach the cloak to the character skeleton.
 
 .. note:: ``BoneAttachment`` node is to attach objects to a bone of a armature. The attached object will follow the bone's movement, weapon of a character can be attached this way.
 

@@ -19,13 +19,13 @@ understand where some of this series' best practices come from.
 Making sense of classes in Godot
 --------------------------------
 
-Godot Engine provides built-in classes like :ref:`Node <class_Node>`.
+Godot Engine provides built-in classes like :ref:`Node <api:class_Node>`.
 User-created types are not technically classes. Instead, they are resources that
 tell the engine a sequence of initializations to perform on one of the engine's
 built-in classes.
 
 Godot's internal classes have methods that register a class's data with a
-:ref:`ClassDB <class_ClassDB>`. This database provides runtime access to class
+:ref:`ClassDB <api:class_ClassDB>`. This database provides runtime access to class
 information. ``ClassDB`` contains information about classes like:
 
 - properties
@@ -41,7 +41,7 @@ the operation.
 On the engine's side, every class defines a static ``_bind_methods()`` function
 that describes what C++ content it registers to the database and how. When you
 use the engine, you can extend the methods, properties, and signals available from
-the ``ClassDB`` by attaching a :ref:`Script <class_Script>` to your node.
+the ``ClassDB`` by attaching a :ref:`Script <api:class_Script>` to your node.
 
 Objects check their attached script before the database. This is why scripts can
 override built-in methods. If a script defines a ``_get_property_list()`` method,
@@ -50,13 +50,13 @@ ClassDB. The same is true for other declarative code.
 
 Even scripts that don't inherit from a built-in type, i.e. scripts that don't
 start with the ``extends`` keyword, implicitly inherit from the engine's base
-:ref:`Reference <class_Reference>` class. This allows the Object to defer
+:ref:`Reference <api:class_Reference>` class. This allows the Object to defer
 to the script's content where the engine logic deems appropriate.
 
 .. note::
 
    As a result, you can instance scripts without the ``extends`` keyword
-   from code, but you cannot attach them to a :ref:`Node <class_Node>`
+   from code, but you cannot attach them to a :ref:`Node <api:class_Node>`
 
 
 Scripting performances and PackedScene
@@ -111,7 +111,7 @@ makes a separate call to the scripting API which leads to many "look-ups" on the
 back-end to find the logic to execute.
 
 Scenes help to avoid this performance issue. :ref:`PackedScene
-<class_PackedScene>`, the base type that scenes inherit from, are resources that
+<api:class_PackedScene>`, the base type that scenes inherit from, are resources that
 use serialized data to create objects. The engine can process scenes in batches
 on the back-end and provide much better performance than scripts.
 

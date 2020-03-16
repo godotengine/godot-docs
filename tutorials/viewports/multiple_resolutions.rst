@@ -73,7 +73,7 @@ Resizing
 There are several types of devices, with several types of screens, which
 in turn have different pixel density and resolutions. Handling all of
 them can be a lot of work, so Godot tries to make the developer's life a
-little easier. The :ref:`Viewport <class_Viewport>`
+little easier. The :ref:`Viewport <api:class_Viewport>`
 node has several functions to handle resizing, and the root node of the
 scene tree is always a viewport (scenes loaded are instanced as a child
 of it, and it can always be accessed by calling
@@ -103,7 +103,7 @@ the resolution of the window or screen.
 The animations below use a "base size" of just 16×9 pixels to
 demonstrate the effect of different stretch modes. A single sprite, also
 16×9 pixels in size, covers the entire viewport, and a diagonal
-:ref:`Line2D <class_Line2D>` is added on top of it:
+:ref:`Line2D <api:class_Line2D>` is added on top of it:
 
 .. image:: img/stretch_demo_scene.png
 
@@ -135,7 +135,7 @@ demonstrate the effect of different stretch modes. A single sprite, also
    .. image:: img/stretch_2d_expand.gif
 
 -  **Stretch Mode = Viewport**: Viewport scaling means that the size of
-   the root :ref:`Viewport <class_Viewport>` is set precisely to the
+   the root :ref:`Viewport <api:class_Viewport>` is set precisely to the
    base size specified in the Project Settings' **Display** section.
    The scene is rendered to this viewport first. Finally, this viewport
    is scaled to fit the screen (taking the **Stretch Aspect** setting into
@@ -233,7 +233,7 @@ From scripts
 
 To configure stretching at runtime from a script, use the
 ``get_tree().set_screen_stretch()`` function (see
-:ref:`SceneTree.set_screen_stretch() <class_SceneTree_method_set_screen_stretch>`).
+:ref:`SceneTree.set_screen_stretch() <api:class_SceneTree_method_set_screen_stretch>`).
 
 Reducing aliasing on downsampling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

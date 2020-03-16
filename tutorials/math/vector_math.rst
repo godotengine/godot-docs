@@ -73,8 +73,8 @@ corner of the screen, so to place a 2D node named ``Node2D`` 400 pixels to the r
     var node2D = (Node2D) GetNode("Node2D");
     node2D.Position = new Vector2(400, 300);
 
-Godot supports both :ref:`Vector2 <class_Vector2>` and
-:ref:`Vector3 <class_Vector3>` for 2D and 3D usage, respectively. The same
+Godot supports both :ref:`Vector2 <api:class_Vector2>` and
+:ref:`Vector3 <api:class_Vector3>` for 2D and 3D usage, respectively. The same
 mathematical rules discussed in this article apply to both types.
 
 Member access
@@ -238,9 +238,9 @@ wall or other object:
 The surface normal has a value of ``(0, -1)`` because this is a horizontal
 surface. When the ball collides, we take its remaining motion (the amount
 left over when it hits the surface) and reflect it using the normal. In
-Godot, the :ref:`Vector2 <class_Vector2>` class has a ``bounce()`` method
+Godot, the :ref:`Vector2 <api:class_Vector2>` class has a ``bounce()`` method
 to handle this. Here is a GDScript example of the diagram above using a
-:ref:`KinematicBody2D <class_KinematicBody2D>`:
+:ref:`KinematicBody2D <api:class_KinematicBody2D>`:
 
 
 .. tabs::

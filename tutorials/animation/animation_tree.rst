@@ -6,13 +6,13 @@ AnimationTree
 Introduction
 ------------
 
-With :ref:`AnimationPlayer <class_AnimationPlayer>`, Godot has one of the most flexible animation systems that you can find in any game engine.
+With :ref:`AnimationPlayer <api:class_AnimationPlayer>`, Godot has one of the most flexible animation systems that you can find in any game engine.
 The ability to animate pretty much any property in any node or resource, as well as having dedicated transform, bezier,
 function calling, audio and sub-animation tracks, is pretty much unique.
 
 However, the support for blending those animations via ``AnimationPlayer`` is relatively limited, as only a fixed cross-fade transition time can be set.
 
-:ref:`AnimationTree <class_AnimationTree>` is a new node introduced in Godot 3.1 to deal with advanced transitions.
+:ref:`AnimationTree <api:class_AnimationTree>` is a new node introduced in Godot 3.1 to deal with advanced transitions.
 It supersedes the ancient ``AnimationTreePlayer``, while adding a huge amount of features and flexibility.
 
 Creating an AnimationTree
@@ -177,7 +177,7 @@ transformation visually (the animation will stay in place).
 
 .. image:: img/animtree14.png
 
-Afterwards, the actual motion can be retrieved via the :ref:`AnimationTree <class_AnimationTree>` API as a transform:
+Afterwards, the actual motion can be retrieved via the :ref:`AnimationTree <api:class_AnimationTree>` API as a transform:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -188,7 +188,7 @@ Afterwards, the actual motion can be retrieved via the :ref:`AnimationTree <clas
 
     animTree.GetRootMotionTransform();
 
-This can be fed to functions such as :ref:`KinematicBody.move_and_slide <class_KinematicBody_method_move_and_slide>` to control the character movement.
+This can be fed to functions such as :ref:`KinematicBody.move_and_slide <api:class_KinematicBody_method_move_and_slide>` to control the character movement.
 
 There is also a tool node, ``RootMotionView``, that can be placed in a scene and will act as a custom floor for your
 character and animations (this node is normally disabled during the game).
@@ -238,7 +238,7 @@ State machine travel
 One of the nice features in Godot's ``StateMachine`` implementation is the ability to travel. The graph can be instructed to go from the
 current state to another one, while visiting all the intermediate ones. This is done via the A\* algorithm.
 
-To use the travel ability, you should first retrieve the :ref:`AnimationNodeStateMachinePlayback <class_AnimationNodeStateMachinePlayback>`
+To use the travel ability, you should first retrieve the :ref:`AnimationNodeStateMachinePlayback <api:class_AnimationNodeStateMachinePlayback>`
 object from the ``AnimationTree`` node (it is exported as a property).
 
 

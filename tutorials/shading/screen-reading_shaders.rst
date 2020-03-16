@@ -87,7 +87,7 @@ source for SCREEN_TEXTURE as the first one below, so the first one
 In 3D, this is unavoidable because copying happens when opaque rendering
 completes.
 
-In 2D, this can be corrected via the :ref:`BackBufferCopy <class_BackBufferCopy>`
+In 2D, this can be corrected via the :ref:`BackBufferCopy <api:class_BackBufferCopy>`
 node, which can be instantiated between both spheres. BackBufferCopy can work by
 either specifying a screen region or the whole screen:
 

@@ -122,7 +122,7 @@ is usually:
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 
-Certain Nodes (for example, :ref:`Sprites <class_Sprite>`) display a texture by default. However, 
+Certain Nodes (for example, :ref:`Sprites <api:class_Sprite>`) display a texture by default. However, 
 when a custom fragment function is attached to these nodes, the texture lookup needs to be done 
 manually. Godot does not provide the texture color in the ``COLOR`` built-in variable; to read 
 the texture color for such nodes, use:

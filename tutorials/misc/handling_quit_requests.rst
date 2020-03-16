@@ -14,7 +14,7 @@ to go back otherwise).
 Handling the notification
 -------------------------
 
-On desktop platforms, the :ref:`MainLoop <class_MainLoop>`
+On desktop platforms, the :ref:`MainLoop <api:class_MainLoop>`
 has a special ``MainLoop.NOTIFICATION_WM_QUIT_REQUEST`` notification that is
 sent to all nodes when quitting is requested.
 

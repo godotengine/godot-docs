@@ -21,7 +21,7 @@ You can use it for doing many things, but it is mostly useful in level design fo
     with caveats, as the editor does not include protections for potential
     misuse of ``tool`` scripts.
     Be **extremely** cautious when manipulating the scene tree, especially via
-    :ref:`Node.queue_free<class_Node_method_queue_free>`, as it can cause
+    :ref:`Node.queue_free<api:class_Node_method_queue_free>`, as it can cause
     crashes if you free a node while the editor runs logic involving it.
 
 How to use it

@@ -19,7 +19,7 @@ You will learn:
 
 -  How to **connect** a character to a GUI with signals
 -  How to **control** a GUI with GDscript
--  How to **animate** a life bar with the :ref:`Tween <class_Tween>` node
+-  How to **animate** a life bar with the :ref:`Tween <api:class_Tween>` node
 
 
 If you want to learn how to set up the interface instead, check out the

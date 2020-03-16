@@ -23,9 +23,9 @@ by an array of positions called "vertices". In Godot, geometry is represented by
 What is a Mesh?
 ---------------
 
-Many things in Godot have mesh in their name: the :ref:`Mesh <class_Mesh>`, the :ref:`ArrayMesh <class_ArrayMesh>`, 
-the :ref:`MeshInstance <class_MeshInstance>`, the :ref:`MultiMesh <class_MultiMesh>`, and 
-the :ref:`MultiMeshInstance <class_MultiMeshInstance>`. While they are all related, they have slightly different uses. 
+Many things in Godot have mesh in their name: the :ref:`Mesh <api:class_Mesh>`, the :ref:`ArrayMesh <api:class_ArrayMesh>`, 
+the :ref:`MeshInstance <api:class_MeshInstance>`, the :ref:`MultiMesh <api:class_MultiMesh>`, and 
+the :ref:`MultiMeshInstance <api:class_MultiMeshInstance>`. While they are all related, they have slightly different uses. 
 
 Meshes and ArrayMeshes are resources that are drawn using a MeshInstance node. Resources like 
 Meshes and ArrayMeshes cannot be added to the scene directly. A MeshInstance represents one 
@@ -45,7 +45,7 @@ What a Mesh is
 
 A Mesh is composed of one or more surfaces. A surface is an array composed of multiple sub-arrays
 containing vertices, normals, UVs, etc. Normally the process of constructing surfaces and meshes is
-hidden from the user in the :ref:`VisualServer <class_VisualServer>`, but with ArrayMeshes, the user can construct a Mesh
+hidden from the user in the :ref:`VisualServer <api:class_VisualServer>`, but with ArrayMeshes, the user can construct a Mesh
 manually by passing in an array containing the surface information.
 
 Surfaces
@@ -59,7 +59,7 @@ Surface array
 
 The surface array is an array of length ``ArrayMesh.ARRAY_MAX``. Each position in the array is
 filled with a sub-array containing per-vertex information. For example, the array located at 
-``ArrayMesh.ARRAY_NORMAL`` is a :ref:`PoolVector3Array <class_PoolVector3Array>` of vertex normals. 
+``ArrayMesh.ARRAY_NORMAL`` is a :ref:`PoolVector3Array <api:class_PoolVector3Array>` of vertex normals. 
 
 The surface array can be indexed or non-indexed. Creating a non-indexed array is as easy as not assigning
 an array at the index ``ArrayMesh.ARRAY_INDEX``. A non-indexed array stores unique vertex information for

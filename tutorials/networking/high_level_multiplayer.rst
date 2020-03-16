@@ -23,7 +23,7 @@ This is due to the inherent limitations of the low-level protocols:
 In general, TCP can be thought of as reliable, ordered, and slow; UDP as unreliable, unordered and fast.
 Because of the large difference in performance, it often makes sense to re-build the parts of TCP wanted for games (optional reliability and packet order), while avoiding the unwanted parts (congestion/traffic control features, Nagle's algorithm, etc). Due to this, most game engines come with such an implementation, and Godot is no exception.
 
-In summary, you can use the low-level networking API for maximum control and implement everything on top of bare network protocols or use the high-level API based on :ref:`SceneTree <class_SceneTree>` that does most of the heavy lifting behind the scenes in a generally optimized way.
+In summary, you can use the low-level networking API for maximum control and implement everything on top of bare network protocols or use the high-level API based on :ref:`SceneTree <api:class_SceneTree>` that does most of the heavy lifting behind the scenes in a generally optimized way.
 
 .. note:: Most of Godot's supported platforms offer all or most of the mentioned high- and low-level networking
           features. As networking is always largely hardware and operating system dependent, however,
@@ -56,15 +56,15 @@ Mid level abstraction
 
 Before going into how we would like to synchronize a game across the network, it can be helpful to understand how the base network API for synchronization works.
 
-Godot uses a mid-level object :ref:`NetworkedMultiplayerPeer <class_NetworkedMultiplayerPeer>`.
+Godot uses a mid-level object :ref:`NetworkedMultiplayerPeer <api:class_NetworkedMultiplayerPeer>`.
 This object is not meant to be created directly, but is designed so that several implementations can provide it.
 
-This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it inherits all the useful methods for serializing, sending and receiving data. On top of that, it adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know when peers connect or disconnect.
+This object extends from :ref:`PacketPeer <api:class_PacketPeer>`, so it inherits all the useful methods for serializing, sending and receiving data. On top of that, it adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know when peers connect or disconnect.
 
 This class interface can abstract most types of network layers, topologies and libraries. By default, Godot
-provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <class_NetworkedMultiplayerENet>`),
-one based on WebRTC (:ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>`), and one based on WebSocket
-(:ref:`WebSocketMultiplayerPeer <class_WebSocketMultiplayerPeer>`), but this could be used to implement
+provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <api:class_NetworkedMultiplayerENet>`),
+one based on WebRTC (:ref:`WebRTCMultiplayer <api:class_WebRTCMultiplayer>`), and one based on WebSocket
+(:ref:`WebSocketMultiplayerPeer <api:class_WebSocketMultiplayerPeer>`), but this could be used to implement
 mobile APIs (for adhoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
 
 For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities.
@@ -73,7 +73,7 @@ Yet it is made available in case a game has specific needs for a lower level API
 Initializing the network
 ------------------------
 
-The object that controls networking in Godot is the same one that controls everything tree-related: :ref:`SceneTree <class_SceneTree>`.
+The object that controls networking in Godot is the same one that controls everything tree-related: :ref:`SceneTree <api:class_SceneTree>`.
 
 To initialize high level networking, the SceneTree must be provided a NetworkedMultiplayerPeer object.
 
@@ -119,7 +119,7 @@ Managing connections
 --------------------
 
 Some games accept connections at any time, others during the lobby phase. Godot can be requested to no longer accept
-connections at any point (see ``set_refuse_new_network_connections(bool)`` and related methods on :ref:`SceneTree <class_SceneTree>`). To manage who connects, Godot provides the following signals in SceneTree:
+connections at any point (see ``set_refuse_new_network_connections(bool)`` and related methods on :ref:`SceneTree <api:class_SceneTree>`). To manage who connects, Godot provides the following signals in SceneTree:
 
 Server and Clients:
 
@@ -129,7 +129,7 @@ Server and Clients:
 The above signals are called on every peer connected to the server (including on the server) when a new peer connects or disconnects.
 Clients will connect with a unique ID greater than 1, while network peer ID 1 is always the server.
 Anything below 1 should be handled as invalid.
-You can retrieve the ID for the local system via :ref:`SceneTree.get_network_unique_id() <class_SceneTree_method_get_network_unique_id>`.
+You can retrieve the ID for the local system via :ref:`SceneTree.get_network_unique_id() <api:class_SceneTree_method_get_network_unique_id>`.
 These IDs will be useful mostly for lobby management and should generally be stored, as they identify connected peers and thus players. You can also use IDs to send messages only to certain peers.
 
 Clients:
@@ -149,7 +149,7 @@ RPC
 ---
 
 To communicate between peers, the easiest way is to use RPCs (remote procedure calls). This is implemented as a set of functions
-in :ref:`Node <class_Node>`:
+in :ref:`Node <api:class_Node>`:
 
 - ``rpc("function_name", <optional_args>)``
 - ``rpc_id(<peer_id>,"function_name", <optional_args>)``
@@ -343,9 +343,9 @@ The network master of a node is the peer that has the ultimate authority over it
 When not explicitly set, the network master is inherited from the parent node, which if not changed, is always going to be the server (ID 1). Thus the server has authority over all nodes by default.
 
 The network master can be set
-with the function :ref:`Node.set_network_master(id, recursive) <class_Node_method_set_network_master>` (recursive is ``true`` by default and means the network master is recursively set on all child nodes of the node as well).
+with the function :ref:`Node.set_network_master(id, recursive) <api:class_Node_method_set_network_master>` (recursive is ``true`` by default and means the network master is recursively set on all child nodes of the node as well).
 
-Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling :ref:`Node.is_network_master() <class_Node_method_is_network_master>`. This will return ``true`` when executed on the server and ``false`` on all client peers.
+Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling :ref:`Node.is_network_master() <api:class_Node_method_is_network_master>`. This will return ``true`` when executed on the server and ``false`` on all client peers.
 
 If you have paid attention to the previous example, it's possible you noticed that each peer was set to have network master authority for their own player (Node) instead of the server:
 

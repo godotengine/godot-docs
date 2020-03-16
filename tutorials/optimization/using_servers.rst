@@ -33,10 +33,10 @@ At the core, Godot uses the concept of Servers. They are very low level APIs to 
 rendering, physics, sound, etc. The scene system is built on top of them and uses them directly.
 The most common servers are:
 
-* :ref:`VisualServer <class_VisualServer>`: handles everything related to graphics.
-* :ref:`PhysicsServer <class_PhysicsServer>`: handles everything related to 3D physics.
-* :ref:`Physics2DServer <class_Physics2DServer>`: handles everything related to 2D physics.
-* :ref:`AudioServer <class_AudioServer>`: handles everything related to audio.
+* :ref:`VisualServer <api:class_VisualServer>`: handles everything related to graphics.
+* :ref:`PhysicsServer <api:class_PhysicsServer>`: handles everything related to 3D physics.
+* :ref:`Physics2DServer <api:class_Physics2DServer>`: handles everything related to 2D physics.
+* :ref:`AudioServer <api:class_AudioServer>`: handles everything related to audio.
 
 Just explore their APIs and you will realize that the all functions provided are low-level
 implementations of everything Godot allows you to do.
@@ -44,12 +44,12 @@ implementations of everything Godot allows you to do.
 RIDs
 ----
 
-The key to using servers is understanding Resource ID (:ref:`RID <class_RID>`) objects. These are opaque
+The key to using servers is understanding Resource ID (:ref:`RID <api:class_RID>`) objects. These are opaque
 handles to the server implementation. They are allocated and freed manually. Almost every
 function in the servers requires RIDs to access the actual resource.
 
 Most Godot nodes and resources contain these RIDs from the servers internally, and they can
-be obtained with different functions. In fact, anything that inherits :ref:`Resource <class_Resource>`
+be obtained with different functions. In fact, anything that inherits :ref:`Resource <api:class_Resource>`
 can be directly casted to an RID (not all resources contain an RID, though, in such cases
 the RID will be empty). In fact, resources can be passed to server APIs as RIDs. Just make
 sure to keep references to the resources outside the server, because if the resource is erased,
@@ -57,23 +57,23 @@ the internal RID is erased too.
 
 For nodes, there are many functions available:
 
-* For CanvasItem, the :ref:`CanvasItem.get_canvas_item() <class_CanvasItem_method_get_canvas_item>`
+* For CanvasItem, the :ref:`CanvasItem.get_canvas_item() <api:class_CanvasItem_method_get_canvas_item>`
   method will return the canvas item RID in the server.
-* For CanvasLayer, the :ref:`CanvasLayer.get_canvas() <class_CanvasLayer_method_get_canvas>`
+* For CanvasLayer, the :ref:`CanvasLayer.get_canvas() <api:class_CanvasLayer_method_get_canvas>`
   method will return the canvas RID in the server.
-* For Viewport, the :ref:`Viewport.get_viewport_rid() <class_Viewport_method_get_viewport_rid>`
+* For Viewport, the :ref:`Viewport.get_viewport_rid() <api:class_Viewport_method_get_viewport_rid>`
   method will return the viewport RID in the server.
-* For 3D, the :ref:`World <class_World>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
-  and :ref:`Spatial <class_Spatial>` nodes)
+* For 3D, the :ref:`World <api:class_World>` resource (obtainable in the :ref:`Viewport <api:class_Viewport>`
+  and :ref:`Spatial <api:class_Spatial>` nodes)
   contains functions to get the *VisualServer Scenario*, and the *PhysicsServer Space*. This
   allows creating 3D objects directly with the server API and using them.
-* For 2D, the :ref:`World2D <class_World2D>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
-  and :ref:`CanvasItem <class_CanvasItem>` nodes)
+* For 2D, the :ref:`World2D <api:class_World2D>` resource (obtainable in the :ref:`Viewport <api:class_Viewport>`
+  and :ref:`CanvasItem <api:class_CanvasItem>` nodes)
   contains functions to get the *VisualServer Canvas*, and the *Physics2DServer Space*. This
   allows creating 2D objects directly with the server API and using them.
-* The :ref:`VisualInstance<class_VisualInstance>` class, allows getting the scenario *instance* and
-  *instance base* via the :ref:`VisualInstance.get_instance() <class_VisualInstance_method_get_instance>`
-  and :ref:`VisualInstance.get_base() <class_VisualInstance_method_get_base>` respectively.
+* The :ref:`VisualInstance<api:class_VisualInstance>` class, allows getting the scenario *instance* and
+  *instance base* via the :ref:`VisualInstance.get_instance() <api:class_VisualInstance_method_get_instance>`
+  and :ref:`VisualInstance.get_base() <api:class_VisualInstance_method_get_base>` respectively.
 
 Just explore the nodes and resources you are familiar with and find the functions to obtain the server *RIDs*.
 
@@ -84,7 +84,7 @@ Creating a sprite
 -----------------
 
 This is a simple example of how to create a sprite from code and move it using the low-level
-:ref:`CanvasItem <class_CanvasItem>` API.
+:ref:`CanvasItem <api:class_CanvasItem>` API.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -151,8 +151,8 @@ The 3D APIs are different than the 2D ones, so the instantiation API must be use
 Creating a 2D RigidBody and moving a sprite with it
 ---------------------------------------------------
 
-This creates a :ref:`RigidBody2D <class_RigidBody2D>` using the :ref:`Physics2DServer <class_Physics2DServer>` API,
-and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
+This creates a :ref:`RigidBody2D <api:class_RigidBody2D>` using the :ref:`Physics2DServer <api:class_Physics2DServer>` API,
+and moves a :ref:`CanvasItem <api:class_CanvasItem>` when the body moves.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -184,7 +184,7 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
         Physics2DServer.body_set_force_integration_callback(body, self, "_body_moved", 0)
 
 The 3D version should be very similar, as 2D and 3D physics servers are identical (using
-:ref:`RigidBody <class_RigidBody>` and :ref:`PhysicsServer <class_PhysicsServer>` respectively).
+:ref:`RigidBody <api:class_RigidBody>` and :ref:`PhysicsServer <api:class_PhysicsServer>` respectively).
 
 Getting data from the servers
 -----------------------------

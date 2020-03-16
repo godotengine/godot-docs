@@ -19,11 +19,11 @@ This example project also contains a SConstruct file that makes compiling a
 little easier, but in this tutorial we'll be doing things by hand to
 understand the process.
 
-:ref:`GDNative <class_GDNative>` can be used to create several types of
+:ref:`GDNative <api:class_GDNative>` can be used to create several types of
 additions to Godot, using interfaces such as
-:ref:`PluginScript <class_PluginScript>` or
-:ref:`ARVRInterfaceGDNative <class_ARVRInterfaceGDNative>`. In this tutorial we
-are going to look at creating a :ref:`NativeScript <class_NativeScript>`
+:ref:`PluginScript <api:class_PluginScript>` or
+:ref:`ARVRInterfaceGDNative <api:class_ARVRInterfaceGDNative>`. In this tutorial we
+are going to look at creating a :ref:`NativeScript <api:class_NativeScript>`
 module. NativeScript allows you to write logic in C or C++ in a similar fashion
 as you would write a GDScript file. We'll be creating the C equivalent of this
 GDScript:
@@ -388,7 +388,7 @@ Creating the GDNativeLibrary (``.gdnlib``) file
 -----------------------------------------------
 
 With our module compiled, we now need to create a corresponding
-:ref:`GDNativeLibrary <class_GDNativeLibrary>` resource with ``.gdnlib``
+:ref:`GDNativeLibrary <api:class_GDNativeLibrary>` resource with ``.gdnlib``
 extension which we place alongside our dynamic libraries. This file tells Godot
 what dynamic libraries are part of our module and need to be loaded per
 platform.
@@ -496,7 +496,7 @@ Creating the NativeScript (``.gdns``) file
 
 With our ``.gdnlib`` file we've told Godot how to load our library, now we need
 to tell it about our "Simple" object class. We do this by creating a
-:ref:`NativeScript <class_NativeScript>` resource file with ``.gdns`` extension.
+:ref:`NativeScript <api:class_NativeScript>` resource file with ``.gdns`` extension.
 
 Like done for the GDNativeLibrary resource, click the button to create a new
 resource in the Inspector and select ``NativeScript``:

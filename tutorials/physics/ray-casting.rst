@@ -14,7 +14,7 @@ do this in 2D and 3D.
 Godot stores all the low level game information in servers, while the
 scene is just a frontend. As such, ray casting is generally a
 lower-level task. For simple raycasts, node such as
-:ref:`RayCast <class_RayCast>` and :ref:`RayCast2D <class_RayCast2D>`
+:ref:`RayCast <api:class_RayCast>` and :ref:`RayCast2D <api:class_RayCast2D>`
 will work, as they will return every frame what the result of a raycast
 is.
 
@@ -27,12 +27,12 @@ Space
 In the physics world, Godot stores all the low level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
 can be obtained by accessing
-:ref:`CanvasItem.get_world_2d().space <class_CanvasItem_method_get_world_2d>`.
-For 3D, it's :ref:`Spatial.get_world().space <class_Spatial_method_get_world>`.
+:ref:`CanvasItem.get_world_2d().space <api:class_CanvasItem_method_get_world_2d>`.
+For 3D, it's :ref:`Spatial.get_world().space <api:class_Spatial_method_get_world>`.
 
-The resulting space :ref:`RID <class_RID>` can be used in
-:ref:`PhysicsServer <class_PhysicsServer>` and
-:ref:`Physics2DServer <class_Physics2DServer>` respectively for 3D and 2D.
+The resulting space :ref:`RID <api:class_RID>` can be used in
+:ref:`PhysicsServer <api:class_PhysicsServer>` and
+:ref:`Physics2DServer <api:class_Physics2DServer>` respectively for 3D and 2D.
 
 Accessing space
 ---------------
@@ -40,13 +40,13 @@ Accessing space
 Godot physics runs by default in the same thread as game logic, but may
 be set to run on a separate thread to work more efficiently. Due to
 this, the only time accessing space is safe is during the
-:ref:`Node._physics_process() <class_Node_method__physics_process>`
+:ref:`Node._physics_process() <api:class_Node_method__physics_process>`
 callback. Accessing it from outside this function may result in an error
 due to space being *locked*.
 
 To perform queries into physics space, the
-:ref:`Physics2DDirectSpaceState <class_Physics2DDirectSpaceState>`
-and :ref:`PhysicsDirectSpaceState <class_PhysicsDirectSpaceState>`
+:ref:`Physics2DDirectSpaceState <api:class_Physics2DDirectSpaceState>`
+and :ref:`PhysicsDirectSpaceState <api:class_PhysicsDirectSpaceState>`
 must be used.
 
 Use the following code in 2D:
@@ -100,7 +100,7 @@ Raycast query
 -------------
 
 For performing a 2D raycast query, the method
-:ref:`Physics2DDirectSpaceState.intersect_ray() <class_Physics2DDirectSpaceState_method_intersect_ray>`
+:ref:`Physics2DDirectSpaceState.intersect_ray() <api:class_Physics2DDirectSpaceState_method_intersect_ray>`
 may be used. For example:
 
 .. tabs::
@@ -227,11 +227,11 @@ member variable:
 
 Casting a ray from screen to 3D physics space is useful for object
 picking. There is not much need to do this because
-:ref:`CollisionObject <class_CollisionObject>`
+:ref:`CollisionObject <api:class_CollisionObject>`
 has an "input_event" signal that will let you know when it was clicked,
 but in case there is any desire to do it manually, here's how.
 
-To cast a ray from the screen, you need a :ref:`Camera <class_Camera>`
+To cast a ray from the screen, you need a :ref:`Camera <api:class_Camera>`
 node. A ``Camera`` can be in two projection modes: perspective and
 orthogonal. Because of this, both the ray origin and direction must be
 obtained. This is because ``origin`` changes in orthogonal mode, while

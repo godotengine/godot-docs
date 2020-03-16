@@ -13,15 +13,15 @@ Godot provides more lightweight objects for creating APIs which nodes use.
 Be sure to keep these in mind as options when designing how you wish to build
 your project's features.
 
-1. :ref:`Object <class_Object>`: The ultimate lightweight object, the original
+1. :ref:`Object <api:class_Object>`: The ultimate lightweight object, the original
    Object must use manual memory management. With that said, it isn't too
    difficult to create one's own custom data structures, even node structures,
-   that are also lighter than the :ref:`Node <class_Node>` class.
+   that are also lighter than the :ref:`Node <api:class_Node>` class.
 
-   - **Example:** See the :ref:`Tree <class_Tree>` node. It supports a high level
+   - **Example:** See the :ref:`Tree <api:class_Tree>` node. It supports a high level
      of customization for a table of content with an arbitrary number of
      rows and columns. The data that it uses to generate its visualization
-     though is actually a tree of :ref:`TreeItem <class_TreeItem>` Objects.
+     though is actually a tree of :ref:`TreeItem <api:class_TreeItem>` Objects.
 
    - **Advantages:** Simplifying one's API to smaller scoped objects helps improve
      its accessibility improve iteration time. Rather than working with the
@@ -33,27 +33,27 @@ your project's features.
      For example, if the object's creator decides to delete it out of nowhere,
      this would trigger an error state when one next accesses it.
 
-2. :ref:`Reference <class_Reference>`: Only a little more complex than Object.
+2. :ref:`Reference <api:class_Reference>`: Only a little more complex than Object.
    They track references to themselves, only deleting loaded memory when no
    further references to themselves exist. These are useful in the majority of
    cases where one needs data in a custom class.
 
-   - **Example:** See the :ref:`File <class_File>` object. It functions
+   - **Example:** See the :ref:`File <api:class_File>` object. It functions
      just like a regular Object except that one need not delete it themselves.
 
    - **Advantages:** same as the Object.
 
-3. :ref:`Resource <class_Resource>`: Only slightly more complex than Reference.
+3. :ref:`Resource <api:class_Resource>`: Only slightly more complex than Reference.
    They have the innate ability to serialize/deserialize (i.e. save and load)
    their object properties to/from Godot resource files.
 
    - **Example:** Scripts, PackedScene (for scene files), and other types like
-     each of the :ref:`AudioEffect <class_AudioEffect>` classes. Each of these
+     each of the :ref:`AudioEffect <api:class_AudioEffect>` classes. Each of these
      can be save and loaded, therefore they extend from Resource.
 
    - **Advantages:** Much has
      :ref:`already been said <doc_resources>`
-     on :ref:`Resource <class_Resource>`'s advantages over traditional data
+     on :ref:`Resource <api:class_Resource>`'s advantages over traditional data
      storage methods. In the context of using Resources over Nodes though,
      their main advantage is in Inspector-compatibility. While nearly as
      lightweight as Object/Reference, they can still display and export

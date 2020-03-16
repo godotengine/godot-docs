@@ -51,7 +51,7 @@ Some games have a special menu (often in the settings) to display licenses.
 Output log
 ^^^^^^^^^^
 
-Just printing the licensing text using a :ref:`print() <class_@GDScript_method_print>` function may be enough on platforms where a global output log is readable (as an example, mobile devices).
+Just printing the licensing text using a :ref:`print() <api:class_@GDScript_method_print>` function may be enough on platforms where a global output log is readable (as an example, mobile devices).
 
 Accompanying file
 ^^^^^^^^^^^^^^^^^

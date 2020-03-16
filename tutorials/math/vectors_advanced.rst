@@ -70,7 +70,7 @@ by N and D. For example:
 
 .. image:: img/tutovec12.png
 
-For 3D math, Godot provides a :ref:`Plane <class_Plane>`
+For 3D math, Godot provides a :ref:`Plane <api:class_Plane>`
 built-in type that handles this.
 
 Basically, N and D can represent any plane in space, be it for 2D or 3D
@@ -130,7 +130,7 @@ inverted negative and positive half spaces:
     N = -N;
     D = -D;
 
-Of course, Godot also implements this operator in :ref:`Plane <class_Plane>`,
+Of course, Godot also implements this operator in :ref:`Plane <api:class_Plane>`,
 so doing:
 
 .. tabs::

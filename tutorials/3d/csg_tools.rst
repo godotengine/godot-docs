@@ -19,13 +19,13 @@ Introduction to CSG nodes
 Like other features of Godot, CSG is supported in the form of nodes. These are
 the CSG nodes:
 
-- :ref:`CSGBox <class_CSGBox>`
-- :ref:`CSGCylinder <class_CSGCylinder>` (also supports cone)
-- :ref:`CSGSphere <class_CSGSphere>`
-- :ref:`CSGTorus <class_CSGTorus>`
-- :ref:`CSGPolygon <class_CSGPolygon>`
-- :ref:`CSGMesh <class_CSGMesh>`
-- :ref:`CSGCombiner <class_CSGcombiner>`
+- :ref:`CSGBox <api:class_CSGBox>`
+- :ref:`CSGCylinder <api:class_CSGCylinder>` (also supports cone)
+- :ref:`CSGSphere <api:class_CSGSphere>`
+- :ref:`CSGTorus <api:class_CSGTorus>`
+- :ref:`CSGPolygon <api:class_CSGPolygon>`
+- :ref:`CSGMesh <api:class_CSGMesh>`
+- :ref:`CSGCombiner <api:class_CSGcombiner>`
 
 .. image:: img/csg_nodes.png
 
@@ -49,7 +49,7 @@ Every CSG node supports 3 kinds of boolean operations:
 CSGPolygon
 ~~~~~~~~~~
 
-The :ref:`CSGPolygon <class_CSGPolygon>` node extrude along a Polygon drawn in
+The :ref:`CSGPolygon <api:class_CSGPolygon>` node extrude along a Polygon drawn in
 2D (in X,Y coordinates) in the following ways:
 
 - **Depth:** Extruded back a given amount.
@@ -61,7 +61,7 @@ The :ref:`CSGPolygon <class_CSGPolygon>` node extrude along a Polygon drawn in
 
 .. image:: img/csg_poly.png
 
-.. note:: The **Path** mode must be provided with a :ref:`Path <class_Path>`
+.. note:: The **Path** mode must be provided with a :ref:`Path <api:class_Path>`
           node to work. In the Path node, draw the path and the polygon in
           CSGPolygon will extrude along the given path.
 
@@ -69,7 +69,7 @@ The :ref:`CSGPolygon <class_CSGPolygon>` node extrude along a Polygon drawn in
 Custom meshes
 ~~~~~~~~~~~~~
 
-Any mesh can be used for :ref:`CSGMesh <class_CSGMesh>`; the mesh can be
+Any mesh can be used for :ref:`CSGMesh <api:class_CSGMesh>`; the mesh can be
 modelled in other software and imported into Godot. Multiple materials are
 supported. There are some restrictions for geometry:
 
@@ -83,7 +83,7 @@ supported. There are some restrictions for geometry:
 CSGCombiner
 ~~~~~~~~~~~
 
-The :ref:`CSGCombiner <class_CSGCombiner>` node is an empty shape used for
+The :ref:`CSGCombiner <api:class_CSGCombiner>` node is an empty shape used for
 organization. It will only combine children nodes.
 
 Processing order

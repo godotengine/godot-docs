@@ -20,7 +20,7 @@ The EditorSpatialGizmoPlugin
 ----------------------------
 
 Regardless of the approach we choose, we will need to create a new 
-:ref:`EditorSpatialGizmoPlugin <class_EditorSpatialGizmoPlugin>`. This will allow
+:ref:`EditorSpatialGizmoPlugin <api:class_EditorSpatialGizmoPlugin>`. This will allow
 us to set a name for the new gizmo type and define other behaviors such as whether 
 the gizmo can be hidden or not.
 
@@ -54,7 +54,7 @@ This would be a basic setup:
         remove_spatial_gizmo_plugin(gizmo_plugin)
 
 
-For simple gizmos, just inheriting :ref:`EditorSpatialGizmoPlugin <class_EditorSpatialGizmoPlugin>` 
+For simple gizmos, just inheriting :ref:`EditorSpatialGizmoPlugin <api:class_EditorSpatialGizmoPlugin>` 
 is enough. If you want to store some per-gizmo data or you are porting a Godot 3.0 gizmo 
 to 3.1+, you should go with the second approach.
 
@@ -62,7 +62,7 @@ to 3.1+, you should go with the second approach.
 Simple approach
 ---------------
 
-The first step is to, in our custom gizmo plugin, override the :ref:`has_gizmo()<class_EditorSpatialGizmoPlugin_method_has_gizmo>`
+The first step is to, in our custom gizmo plugin, override the :ref:`has_gizmo()<api:class_EditorSpatialGizmoPlugin_method_has_gizmo>`
 method so that it returns ``true`` when the spatial parameter is of our target type.
 
 ::
@@ -73,7 +73,7 @@ method so that it returns ``true`` when the spatial parameter is of our target t
         return spatial is MyCustomSpatial
     # ...
 
-Then we can override methods like :ref:`redraw()<class_EditorSpatialGizmoPlugin_method_redraw>`
+Then we can override methods like :ref:`redraw()<api:class_EditorSpatialGizmoPlugin_method_redraw>`
 or all the handle related ones.
 
 ::
@@ -105,7 +105,7 @@ or all the handle related ones.
     # ...
 
 Note that we created a material in the `_init` method, and retrieved it in the `redraw`
-method using :ref:`get_material()<class_EditorSpatialGizmoPlugin_method_get_material>`. This 
+method using :ref:`get_material()<api:class_EditorSpatialGizmoPlugin_method_get_material>`. This 
 method retrieves one of the material's variants depending on the state of the gizmo 
 (selected and/or editable).
 
@@ -146,18 +146,18 @@ So the final plugin would look somewhat like this:
     # (get_handle_name(), get_handle_value(), commit_handle()...)
 
 Note that we just added some handles in the redraw method, but we still need to implement
-the rest of handle-related callbacks in :ref:`EditorSpatialGizmoPlugin <class_EditorSpatialGizmoPlugin>`
+the rest of handle-related callbacks in :ref:`EditorSpatialGizmoPlugin <api:class_EditorSpatialGizmoPlugin>`
 to get properly working handles.
 
 Alternative approach
 --------------------
 
-In some cases we want to provide our own implementation of :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>`,
+In some cases we want to provide our own implementation of :ref:`EditorSpatialGizmo<api:class_EditorSpatialGizmo>`,
 maybe because we want to have some state stored in each gizmo or because we are porting 
 an old gizmo plugin and we don't want to go through the rewriting process.
 
 In these cases all we need to do is, in our new gizmo plugin, override 
-:ref:`create_gizmo()<class_EditorSpatialGizmoPlugin_method_create_gizmo>`, so it returns our custom gizmo implementation
+:ref:`create_gizmo()<api:class_EditorSpatialGizmoPlugin_method_create_gizmo>`, so it returns our custom gizmo implementation
 for the Spatial nodes we want to target.
 
 ::
@@ -179,7 +179,7 @@ for the Spatial nodes we want to target.
             return null
 
 This way all the gizmo logic and drawing methods can be implemented in a new clas extending
-:ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>`, like so:
+:ref:`EditorSpatialGizmo<api:class_EditorSpatialGizmo>`, like so:
 
 ::
 
@@ -215,5 +215,5 @@ This way all the gizmo logic and drawing methods can be implemented in a new cla
     # (get_handle_name(), get_handle_value(), commit_handle()...)
 
 Note that we just added some handles in the redraw method, but we still need to implement
-the rest of handle-related callbacks in :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>`
+the rest of handle-related callbacks in :ref:`EditorSpatialGizmo<api:class_EditorSpatialGizmo>`
 to get properly working handles.

@@ -4,7 +4,7 @@ Using the SurfaceTool
 =====================
 
 The :ref:`SurfaceTool <doc_surfacetool>` provides a useful interface for constructing geometry.
-The interface is similar to the :ref:`ImmediateGeometry <class_immediategeometry>` node. You
+The interface is similar to the :ref:`ImmediateGeometry <api:class_immediategeometry>` node. You
 set each per-vertex attribute (e.g. normal, uv, color) and then when you add a vertex it
 captures the attributes.
 
@@ -21,8 +21,8 @@ Attributes are added before each vertex is added:
     st.add_vertex() # Captures normal and color above.
     st.add_normal() # Normal never added to a vertex.
 
-When finished generating your geometry with the :ref:`SurfaceTool <class_surfacetool>`
-call ``commit()`` to finished generating the mesh. If an :ref:`ArrayMesh <class_ArrayMesh>` is passed
+When finished generating your geometry with the :ref:`SurfaceTool <api:class_surfacetool>`
+call ``commit()`` to finished generating the mesh. If an :ref:`ArrayMesh <api:class_ArrayMesh>` is passed
 to ``commit()`` then it appends a new surface to the end of the ArrayMesh. While if nothing is passed
 in, ``commit()`` returns an ArrayMesh.
 

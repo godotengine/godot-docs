@@ -19,9 +19,9 @@ to develop 3D games efficiently.
 Spatial node
 ~~~~~~~~~~~~
 
-:ref:`Node2D <class_Node2D>` is the base node for 2D.
-:ref:`Control <class_Control>` is the base node for everything GUI.
-Following this reasoning, the 3D engine uses the :ref:`Spatial <class_Spatial>`
+:ref:`Node2D <api:class_Node2D>` is the base node for 2D.
+:ref:`Control <api:class_Control>` is the base node for everything GUI.
+Following this reasoning, the 3D engine uses the :ref:`Spatial <api:class_Spatial>`
 node for everything 3D.
 
 .. image:: img/tuto_3d1.png
@@ -29,7 +29,7 @@ node for everything 3D.
 Spatial nodes have a local transform, which is relative to the parent
 node (as long as the parent node is also of **or inherits from** the type
 Spatial). This transform can be accessed as a 4x3
-:ref:`Transform <class_Transform>`, or as 3 :ref:`Vector3 <class_Vector3>`
+:ref:`Transform <api:class_Transform>`, or as 3 :ref:`Vector3 <api:class_Vector3>`
 members representing location, Euler rotation (x,y and z angles) and
 scale.
 
@@ -56,16 +56,16 @@ entire scenes (just as they look in the DCC), including animation,
 skeletal rigs, blend shapes, etc.
 
 The second pipeline is by importing simple .OBJ files as mesh resources,
-which can be then put inside a :ref:`MeshInstance <class_MeshInstance>`
+which can be then put inside a :ref:`MeshInstance <api:class_MeshInstance>`
 node for display.
 
 Generated geometry
 ------------------
 
 It is possible to create custom geometry by using the
-:ref:`ArrayMesh <class_ArrayMesh>` resource directly. Simply create your arrays
-and use the :ref:`ArrayMesh.add_surface_from_arrays() <class_ArrayMesh_method_add_surface_from_arrays>`
-function. A helper class is also available, :ref:`SurfaceTool <class_SurfaceTool>`,
+:ref:`ArrayMesh <api:class_ArrayMesh>` resource directly. Simply create your arrays
+and use the :ref:`ArrayMesh.add_surface_from_arrays() <api:class_ArrayMesh_method_add_surface_from_arrays>`
+function. A helper class is also available, :ref:`SurfaceTool <api:class_SurfaceTool>`,
 which provides a more straightforward API and helpers for indexing,
 generating normals, tangents, etc.
 
@@ -78,7 +78,7 @@ Immediate geometry
 
 If, instead, there is a requirement to generate simple geometry that
 will be updated often, Godot provides a special node,
-:ref:`ImmediateGeometry <class_ImmediateGeometry>`,
+:ref:`ImmediateGeometry <api:class_ImmediateGeometry>`,
 which provides an OpenGL 1.x style immediate-mode API to create points,
 lines, triangles, etc.
 
@@ -88,8 +88,8 @@ lines, triangles, etc.
 While Godot packs a powerful 2D engine, many types of games use 2D in a
 3D environment. By using a fixed camera (either orthogonal or
 perspective) that does not rotate, nodes such as
-:ref:`Sprite3D <class_Sprite3D>` and
-:ref:`AnimatedSprite3D <class_AnimatedSprite3D>`
+:ref:`Sprite3D <api:class_Sprite3D>` and
+:ref:`AnimatedSprite3D <api:class_AnimatedSprite3D>`
 can be used to create 2D games that take advantage of mixing with 3D
 backgrounds, more realistic parallax, lighting/shadow effects, etc.
 
@@ -101,7 +101,7 @@ Environment
 ~~~~~~~~~~~
 
 Besides editing a scene, it is often common to edit the environment.
-Godot provides a :ref:`WorldEnvironment <class_WorldEnvironment>`
+Godot provides a :ref:`WorldEnvironment <api:class_WorldEnvironment>`
 node that allows changing the background color, mode (as in, put a
 skybox), and applying several types of built-in post-processing effects.
 Environments can also be overridden in the Camera.
@@ -193,7 +193,7 @@ Cameras
 -------
 
 No matter how many objects are placed in the 3D space, nothing will be
-displayed unless a :ref:`Camera <class_Camera>` is
+displayed unless a :ref:`Camera <api:class_Camera>` is
 also added to the scene. Cameras can work in either orthogonal or
 perspective projections:
 

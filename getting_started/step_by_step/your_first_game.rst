@@ -62,7 +62,7 @@ before we've created other parts of the game.
 Node structure
 ~~~~~~~~~~~~~~
 
-To begin, click the "Add/Create a New Node" button and add an :ref:`Area2D <class_Area2D>`
+To begin, click the "Add/Create a New Node" button and add an :ref:`Area2D <api:class_Area2D>`
 node to the scene.
 
 .. image:: img/add_node.png
@@ -99,10 +99,10 @@ Save the scene. Click Scene -> Save, or press :kbd:`Ctrl + S` on Windows/Linux o
 Sprite animation
 ~~~~~~~~~~~~~~~~
 
-Click on the ``Player`` node and add an :ref:`AnimatedSprite <class_AnimatedSprite>` node as a
+Click on the ``Player`` node and add an :ref:`AnimatedSprite <api:class_AnimatedSprite>` node as a
 child. The ``AnimatedSprite`` will handle the appearance and animations
 for our player. Notice that there is a warning symbol next to the node.
-An ``AnimatedSprite`` requires a :ref:`SpriteFrames <class_SpriteFrames>` resource, which is a
+An ``AnimatedSprite`` requires a :ref:`SpriteFrames <api:class_SpriteFrames>` resource, which is a
 list of the animations it can display. To create one, find the
 ``Frames`` property in the Inspector and click "[empty]" ->
 "New SpriteFrames". This should automatically open the SpriteFrames panel.
@@ -124,7 +124,7 @@ property to ``(0.5, 0.5)``. You can find it in the Inspector under the
 
 .. image:: img/player_scale.png
 
-Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child
+Finally, add a :ref:`CollisionShape2D <api:class_CollisionShape2D>` as a child
 of ``Player``. This will determine the player's "hitbox", or the
 bounds of its collision area. For this character, a ``CapsuleShape2D``
 node gives the best fit, so next to "Shape" in the Inspector, click
@@ -523,23 +523,23 @@ Click Scene -> New Scene and we'll create the Mob.
 
 The Mob scene will use the following nodes:
 
--  :ref:`RigidBody2D <class_RigidBody2D>` (named ``Mob``)
+-  :ref:`RigidBody2D <api:class_RigidBody2D>` (named ``Mob``)
 
-   -  :ref:`AnimatedSprite <class_AnimatedSprite>`
-   -  :ref:`CollisionShape2D <class_CollisionShape2D>`
-   -  :ref:`VisibilityNotifier2D <class_VisibilityNotifier2D>` (named ``Visibility``)
+   -  :ref:`AnimatedSprite <api:class_AnimatedSprite>`
+   -  :ref:`CollisionShape2D <api:class_CollisionShape2D>`
+   -  :ref:`VisibilityNotifier2D <api:class_VisibilityNotifier2D>` (named ``Visibility``)
 
 Don't forget to set the children so they can't be selected, like you did with the
 Player scene.
 
-In the :ref:`RigidBody2D <class_RigidBody2D>` properties, set ``Gravity Scale`` to ``0``, so
+In the :ref:`RigidBody2D <api:class_RigidBody2D>` properties, set ``Gravity Scale`` to ``0``, so
 the mob will not fall downward. In addition, under the
 ``PhysicsBody2D`` section, click the ``Mask`` property and
 uncheck the first box. This will ensure the mobs do not collide with each other.
 
 .. image:: img/set_collision_mask.png
 
-Set up the :ref:`AnimatedSprite <class_AnimatedSprite>` like you did for the player.
+Set up the :ref:`AnimatedSprite <api:class_AnimatedSprite>` like you did for the player.
 This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. Set the ``Playing``
 property in the Inspector to "On" and adjust the "Speed (FPS)" setting as shown below.
 We'll select one of these animations randomly so that the mobs will have some variety.
@@ -638,7 +638,7 @@ Main scene
 ----------
 
 Now it's time to bring it all together. Create a new scene and add a
-:ref:`Node <class_Node>` named ``Main``. Click the "Instance" button and select your
+:ref:`Node <api:class_Node>` named ``Main``. Click the "Instance" button and select your
 saved ``Player.tscn``.
 
 .. image:: img/instance_scene.png
@@ -648,10 +648,10 @@ saved ``Player.tscn``.
 Now, add the following nodes as children of ``Main``, and name them as
 shown (values are in seconds):
 
--  :ref:`Timer <class_Timer>` (named ``MobTimer``) - to control how often mobs spawn
--  :ref:`Timer <class_Timer>` (named ``ScoreTimer``) - to increment the score every second
--  :ref:`Timer <class_Timer>` (named ``StartTimer``) - to give a delay before starting
--  :ref:`Position2D <class_Position2D>` (named ``StartPosition``) - to indicate the player's start position
+-  :ref:`Timer <api:class_Timer>` (named ``MobTimer``) - to control how often mobs spawn
+-  :ref:`Timer <api:class_Timer>` (named ``ScoreTimer``) - to increment the score every second
+-  :ref:`Timer <api:class_Timer>` (named ``StartTimer``) - to give a delay before starting
+-  :ref:`Position2D <api:class_Position2D>` (named ``StartPosition``) - to indicate the player's start position
 
 Set the ``Wait Time`` property of each of the ``Timer`` nodes as
 follows:
@@ -667,7 +667,7 @@ Spawning mobs
 ~~~~~~~~~~~~~
 
 The Main node will be spawning new mobs, and we want them to appear at a
-random location on the edge of the screen. Add a :ref:`Path2D <class_Path2D>` node named
+random location on the edge of the screen. Add a :ref:`Path2D <api:class_Path2D>` node named
 ``MobPath`` as a child of ``Main``. When you select ``Path2D``,
 you will see some new buttons at the top of the editor:
 
@@ -686,7 +686,7 @@ the "Lock" button, appearing as a magnet next to some intersecting lines.
 After placing point ``4`` in the image, click the "Close Curve" button and
 your curve will be complete.
 
-Now that the path is defined, add a :ref:`PathFollow2D <class_PathFollow2D>`
+Now that the path is defined, add a :ref:`PathFollow2D <api:class_PathFollow2D>`
 node as a child of ``MobPath`` and name it ``MobSpawnLocation``. This node will
 automatically rotate and follow the path as it moves, so we can use it
 to select a random position and direction along the path.
@@ -866,11 +866,11 @@ HUD
 
 The final piece our game needs is a UI: an interface to display things
 like score, a "game over" message, and a restart button. Create a new
-scene, and add a :ref:`CanvasLayer <class_CanvasLayer>` node named ``HUD``. "HUD" stands for
+scene, and add a :ref:`CanvasLayer <api:class_CanvasLayer>` node named ``HUD``. "HUD" stands for
 "heads-up display", an informational display that appears as an
 overlay on top of the game view.
 
-The :ref:`CanvasLayer <class_CanvasLayer>` node lets us draw our UI elements on
+The :ref:`CanvasLayer <api:class_CanvasLayer>` node lets us draw our UI elements on
 a layer above the rest of the game, so that the information it displays isn't
 covered up by any game elements like the player or mobs.
 
@@ -880,16 +880,16 @@ The HUD displays the following information:
 -  A message, such as "Game Over" or "Get Ready!"
 -  A "Start" button to begin the game.
 
-The basic node for UI elements is :ref:`Control <class_Control>`. To create our UI,
-we'll use two types of :ref:`Control <class_Control>` nodes: :ref:`Label <class_Label>`
-and :ref:`Button <class_Button>`.
+The basic node for UI elements is :ref:`Control <api:class_Control>`. To create our UI,
+we'll use two types of :ref:`Control <api:class_Control>` nodes: :ref:`Label <api:class_Label>`
+and :ref:`Button <api:class_Button>`.
 
 Create the following as children of the ``HUD`` node:
 
--  :ref:`Label <class_Label>` named ``ScoreLabel``.
--  :ref:`Label <class_Label>` named ``MessageLabel``.
--  :ref:`Button <class_Button>` named ``StartButton``.
--  :ref:`Timer <class_Timer>` named ``MessageTimer``.
+-  :ref:`Label <api:class_Label>` named ``ScoreLabel``.
+-  :ref:`Label <api:class_Label>` named ``MessageLabel``.
+-  :ref:`Button <api:class_Button>` named ``StartButton``.
+-  :ref:`Timer <api:class_Timer>` named ``MessageTimer``.
 
 Click on the ``ScoreLabel`` and type a number into the *Text* field in the
 Inspector. The default font for ``Control`` nodes is small and doesn't scale
@@ -1185,7 +1185,7 @@ Background
 ~~~~~~~~~~
 
 The default gray background is not very appealing, so let's change its
-color. One way to do this is to use a :ref:`ColorRect <class_ColorRect>` node.
+color. One way to do this is to use a :ref:`ColorRect <api:class_ColorRect>` node.
 Make it the first node under ``Main`` so that it will be drawn behind the other
 nodes. ``ColorRect`` only has one property: ``Color``. Choose a color
 you like and drag the size of the ``ColorRect`` so that it covers the
@@ -1202,7 +1202,7 @@ the game experience. In your game assets folder, you have two sound
 files: "House In a Forest Loop.ogg" for background music, and
 "gameover.wav" for when the player loses.
 
-Add two :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` nodes as children of ``Main``. Name one of
+Add two :ref:`AudioStreamPlayer <api:class_AudioStreamPlayer>` nodes as children of ``Main``. Name one of
 them ``Music`` and the other ``DeathSound``. On each one, click on the
 ``Stream`` property, select "Load", and choose the corresponding audio
 file.

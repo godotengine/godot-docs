@@ -32,7 +32,7 @@ encrypt savegames and protect the world order.
 How?
 ----
 
-The class :ref:`File <class_File>` can open a file at a
+The class :ref:`File <api:class_File>` can open a file at a
 location and read/write data (integers, strings and variants).
 It also supports encryption.
 To create an encrypted file, a passphrase must be provided, like this:

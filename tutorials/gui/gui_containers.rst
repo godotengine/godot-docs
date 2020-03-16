@@ -12,7 +12,7 @@ This is often the case of games, such as RPGs, online chats, tycoons or simulati
 common case where more advanced layout features may be required is in-game tools (or simply just tools). 
 
 All these situations require a more capable OS-like user interface, with advanced layout and formatting.
-For that, :ref:`Containers <class_container>` are more useful.
+For that, :ref:`Containers <api:class_container>` are more useful.
 
 Container layout
 ----------------
@@ -21,7 +21,7 @@ Containers provide a huge amount of layout power (as an example, the Godot edito
 
    .. image:: img/godot_containers.png
 
-When a :ref:`Container <class_Container>`-derived node is used, all children :ref:`Control <class_Control>` nodes give up their
+When a :ref:`Container <api:class_Container>`-derived node is used, all children :ref:`Control <api:class_Control>` nodes give up their
 own positioning ability. This means the *Container* will control their positioning and any attempt to manually alter these
 nodes will be either ignored or invalidated the next time their parent is resized.
 
@@ -64,8 +64,8 @@ Godot provides several container types out of the box as they serve different pu
 Box Containers
 ^^^^^^^^^^^^^^
 
-Arrange child controls vertically or horizontally (via :ref:`HBoxContainer <class_HBoxContainer>` and
-:ref:`VBoxContainer <class_VBoxContainer>`). In the opposite of the designated direction
+Arrange child controls vertically or horizontally (via :ref:`HBoxContainer <api:class_HBoxContainer>` and
+:ref:`VBoxContainer <api:class_VBoxContainer>`). In the opposite of the designated direction
 (as in, vertical for an horizontal container), it just expands the children.
 
    .. image:: img/containers_box.png
@@ -75,7 +75,7 @@ These containers make use of the *Ratio* property for children with the *Expand*
 Grid Container
 ^^^^^^^^^^^^^^
 
-Arranges child controls in a grid layout (via :ref:`GridContainer <class_GridContainer>`, amount 
+Arranges child controls in a grid layout (via :ref:`GridContainer <api:class_GridContainer>`, amount 
 of columns must be specified). Uses both the vertical and horizontal expand flags.
 
    .. image:: img/containers_grid.png
@@ -84,7 +84,7 @@ Margin Container
 ^^^^^^^^^^^^^^^^
 
 Child controls are expanded towards the bounds of this control (via 
-:ref:`MarginContainer <class_MarginContainer>`). Padding will be added on the margins 
+:ref:`MarginContainer <api:class_MarginContainer>`). Padding will be added on the margins 
 depending on the theme configuration.
 
    .. image:: img/containers_margin.png
@@ -98,7 +98,7 @@ Tab Container
 ^^^^^^^^^^^^^
 
 Allows you to place several child controls stacked on top of each other (via 
-:ref:`TabContainer <class_TabContainer>`), with only the *current* one visible. 
+:ref:`TabContainer <api:class_TabContainer>`), with only the *current* one visible. 
 
    .. image:: img/containers_tab.png
 
@@ -114,7 +114,7 @@ Split Container
 ^^^^^^^^^^^^^^^
 
 Accepts only one or two children controls, then places them side to side with a divisor 
-(via :ref:`HSplitContainer <class_HSplitContainer>` and :ref:`VSplitContainer <class_VSplitContainer>`). 
+(via :ref:`HSplitContainer <api:class_HSplitContainer>` and :ref:`VSplitContainer <api:class_VSplitContainer>`). 
 Respects both horizontal and vertical flags, as well as *Ratio*.
 
    .. image:: img/containers_split.png
@@ -128,7 +128,7 @@ PanelContainer
 ^^^^^^^^^^^^^^
 
 Simple container that draws a *StyleBox*, then expands children to cover its whole area 
-(via :ref:`PanelContainer <class_PanelContainer>`, respecting the *StyleBox* margins). 
+(via :ref:`PanelContainer <api:class_PanelContainer>`, respecting the *StyleBox* margins). 
 It respects both the horizontal and vertical size flags.
 
    .. image:: img/containers_panel.png
@@ -139,7 +139,7 @@ ScrollContainer
 ^^^^^^^^^^^^^^^
 
 Accepts a single child node. If this node is bigger than the container, scrollbars will be added 
-to allow panning the node around (via :ref:`ScrollContainer <class_ScrollContainer>`). Both 
+to allow panning the node around (via :ref:`ScrollContainer <api:class_ScrollContainer>`). Both 
 vertical and horizontal size flags are respected, and the behavior can be turned on or off 
 per axis in the properties.
 
@@ -156,7 +156,7 @@ ViewportContainer
 ^^^^^^^^^^^^^^^^^
 
 This is a special control that will only accept a single *Viewport* node as child, and it will display 
-it as if it was an image (via :ref:`ViewportContainer <class_ViewportContainer>`).
+it as if it was an image (via :ref:`ViewportContainer <api:class_ViewportContainer>`).
 
 Creating custom Containers
 --------------------------

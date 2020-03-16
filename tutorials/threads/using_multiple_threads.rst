@@ -44,7 +44,7 @@ Creating a thread is very simple, just use the following code:
 
 Your function will, then, run in a separate thread until it returns.
 Even if the function has returned already, the thread must collect it, so call
-:ref:`Thread.wait_to_finish()<class_Thread_method_wait_to_finish>`, which will
+:ref:`Thread.wait_to_finish()<api:class_Thread_method_wait_to_finish>`, which will
 wait until the thread is done (if not done yet), then properly dispose of it.
 
 Mutexes
@@ -57,13 +57,13 @@ to understand which engine APIs support multiple thread access.
 When processing your own data or calling your own functions, as a rule, try to
 avoid accessing the same data directly from different threads. You may run into
 synchronization problems, as the data is not always updated between CPU cores
-when modified. Always use a :ref:`Mutex<class_Mutex>` when accessing
+when modified. Always use a :ref:`Mutex<api:class_Mutex>` when accessing
 a piece of data from different threads.
 
-When calling :ref:`Mutex.lock()<class_Mutex_method_lock>`, a thread ensures that
+When calling :ref:`Mutex.lock()<api:class_Mutex_method_lock>`, a thread ensures that
 all other threads will be blocked (put on suspended state) if they try to *lock*
 the same mutex. When the mutex is unlocked by calling
-:ref:`Mutex.unlock()<class_Mutex_method_unlock>`, the other threads will be
+:ref:`Mutex.unlock()<api:class_Mutex_method_unlock>`, the other threads will be
 allowed to proceed with the lock (but only one at a time).
 
 Here is an example of using a Mutex:
@@ -102,12 +102,12 @@ Semaphores
 
 Sometimes you want your thread to work *"on demand"*. In other words, tell it
 when to work and let it suspend when it isn't doing anything.
-For this, :ref:`Semaphores<class_Semaphore>` are used. The function
-:ref:`Semaphore.wait()<class_Semaphore_method_wait>` is used in the thread to
+For this, :ref:`Semaphores<api:class_Semaphore>` are used. The function
+:ref:`Semaphore.wait()<api:class_Semaphore_method_wait>` is used in the thread to
 suspend it until some data arrives.
 
 The main thread, instead, uses
-:ref:`Semaphore.post()<class_Semaphore_method_post>` to signal that data is
+:ref:`Semaphore.post()<api:class_Semaphore_method_post>` to signal that data is
 ready to be processed:
 
 .. tabs::

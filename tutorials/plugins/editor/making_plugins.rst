@@ -70,7 +70,7 @@ The script file
 Upon creation of the plugin, the dialog will automatically open the
 EditorPlugin script for you. The script has two requirements that you cannot
 change: it must be a ``tool`` script, or else it will not load properly in the
-editor, and it must inherit from :ref:`class_EditorPlugin`.
+editor, and it must inherit from :ref:`api:class_EditorPlugin`.
 
 .. warning::
     In addition to the EditorPlugin script, any other GDScript that your plugin uses
@@ -79,8 +79,8 @@ editor, and it must inherit from :ref:`class_EditorPlugin`.
 
 It's important to deal with initialization and clean-up of resources.
 A good practice is to use the virtual function
-:ref:`_enter_tree() <class_Node_method__enter_tree>` to initialize your plugin and
-:ref:`_exit_tree() <class_Node_method__exit_tree>` to clean it up. Thankfully,
+:ref:`_enter_tree() <api:class_Node_method__enter_tree>` to initialize your plugin and
+:ref:`_exit_tree() <api:class_Node_method__exit_tree>` to clean it up. Thankfully,
 the dialog generates these callbacks for you. Your script should look something
 like this:
 
@@ -139,16 +139,16 @@ custom behavior.
   are writing GDScript or NativeScript, we recommend using them instead.
 
 To create a new node type, you can use the function
-:ref:`add_custom_type() <class_EditorPlugin_method_add_custom_type>` from the
-:ref:`class_EditorPlugin` class. This function can add new types to the editor
+:ref:`add_custom_type() <api:class_EditorPlugin_method_add_custom_type>` from the
+:ref:`api:class_EditorPlugin` class. This function can add new types to the editor
 (nodes or resources). However, before you can create the type, you need a script
 that will act as the logic for the type. While that script doesn't have to use
 the ``tool`` keyword, it can be added so the script runs in the editor.
 
 For this tutorial, we'll create a simple button that prints a message when
 clicked. For that, we'll need a simple script that extends from
-:ref:`class_Button`. It could also extend
-:ref:`class_BaseButton` if you prefer:
+:ref:`api:class_Button`. It could also extend
+:ref:`api:class_BaseButton` if you prefer:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -288,7 +288,7 @@ Since we're trying to add a new custom dock, we need to create the contents of
 the dock. This is nothing more than a standard Godot scene: just create
 a new scene in the editor then edit it.
 
-For an editor dock, the root node **must** be a :ref:`Control <class_Control>`
+For an editor dock, the root node **must** be a :ref:`Control <api:class_Control>`
 or one of its child classes. For this tutorial, you can create a single button.
 The name of the root node will also be the name that appears on the dock tab,
 so be sure to give it a short and descriptive name.
@@ -298,8 +298,8 @@ Also, don't forget to add some text to your button.
 
 Save this scene as ``my_dock.tscn``. Now, we need to grab the scene we created
 then add it as a dock in the editor. For this, you can rely on the function
-:ref:`add_control_to_dock() <class_EditorPlugin_method_add_control_to_dock>` from the
-:ref:`EditorPlugin <class_EditorPlugin>` class.
+:ref:`add_control_to_dock() <api:class_EditorPlugin_method_add_control_to_dock>` from the
+:ref:`EditorPlugin <api:class_EditorPlugin>` class.
 
 You need to select a dock position and define the control to add
 (which is the scene you just created). Don't forget to

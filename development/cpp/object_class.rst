@@ -6,7 +6,7 @@ Object class
 General definition
 ------------------
 
-:ref:`Object <class_object>` is the base class for almost everything. Most classes in Godot
+:ref:`Object <api:class_object>` is the base class for almost everything. Most classes in Godot
 inherit directly or indirectly from it. Objects provide reflection and
 editable properties, and declaring them is a matter of using a single
 macro like this.
@@ -232,7 +232,7 @@ Adding signals to a class is done in ``_bind_methods``, using the
 References
 ----------
 
-:ref:`Reference <class_reference>` inherits from Object and holds a
+:ref:`Reference <api:class_reference>` inherits from Object and holds a
 reference count. It is the base for reference counted object types.
 Declaring them must be done using Ref<> template. For example:
 
@@ -255,7 +255,7 @@ References:
 Resources:
 ----------
 
-:ref:`Resource <class_resource>` inherits from Reference, so all resources
+:ref:`Resource <api:class_resource>` inherits from Reference, so all resources
 are reference counted. Resources can optionally contain a path, which
 reference a file on disk. This can be set with ``resource.set_path(path)``.
 This is normally done by the resource loader though. No two different

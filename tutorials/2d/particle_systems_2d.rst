@@ -20,13 +20,13 @@ parameters and then adding randomness to them.
 Particle nodes
 ~~~~~~~~~~~~~~
 
-Godot provides two different nodes for 2D particles, :ref:`class_Particles2D` and
-:ref:`class_CPUParticles2D`.
+Godot provides two different nodes for 2D particles, :ref:`api:class_Particles2D` and
+:ref:`api:class_CPUParticles2D`.
 Particles2D is more advanced and uses the GPU to process particle effects, but that limits
 it to higher end graphics API, and in our case to the GLES3 renderer. For projects using
 the GLES2 backend, CPUParticles2D is a CPU-driven option with near feature parity with
 Particles2D, but lesser performance. While Particles2D is configured via a
-:ref:`class_ParticlesMaterial` (and optionally with a custom shader), the matching options
+:ref:`api:class_ParticlesMaterial` (and optionally with a custom shader), the matching options
 are provided via node properties in CPUParticles2D (with the exception of the trail settings).
 You can convert a Particles2D node into a CPUParticles2D node by clicking on the node in the
 inspector, and selecting "Convert to CPUParticles2D" in the "Particles" menu of the toolbar.

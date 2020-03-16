@@ -15,19 +15,19 @@ Throughout the course of this tutorial series, we will cover how:
 - To make a first person character that can move, sprint, and jump.
 - To make a simple animation state machine for handling animation transitions.
 - To add three weapons to the first person character, each using a different way to handle bullet collisions:
-- - A knife (using an :ref:`Area <class_Area>`)
+- - A knife (using an :ref:`Area <api:class_Area>`)
 - - A pistol (Bullet scenes)
-- - A rifle (using a :ref:`Raycast <class_Raycast>`)
+- - A rifle (using a :ref:`Raycast <api:class_Raycast>`)
 - To add two different types of grenades to the first person character:
 - - A normal grenade
 - - A sticky grenade
-- To add the ability to grab and throw :ref:`RigidBody <class_RigidBody>` nodes
+- To add the ability to grab and throw :ref:`RigidBody <api:class_RigidBody>` nodes
 - To add joypad input for the player
 - To add ammo and reloading for all weapons that consume ammo.
 - To add ammo and health pick ups
 - - In two sizes: big and small
 - To add an automatic turret
-- - That can fire using bullet objects or a :ref:`Raycast <class_Raycast>`
+- - That can fire using bullet objects or a :ref:`Raycast <api:class_Raycast>`
 - To add targets that break when they've taken enough damage
 - To add sounds that play when the guns fire.
 - To add a simple main menu:
@@ -393,14 +393,14 @@ First, we define some class variables to dictate how our player will move about 
 Let's go through each of the class variables:
 
 - ``GRAVITY``: How strong gravity pulls us down.
-- ``vel``: Our :ref:`KinematicBody <class_KinematicBody>`'s velocity.
+- ``vel``: Our :ref:`KinematicBody <api:class_KinematicBody>`'s velocity.
 - ``MAX_SPEED``: The fastest speed we can reach. Once we hit this speed, we will not go any faster.
 - ``JUMP_SPEED``: How high we can jump.
 - ``ACCEL``: How quickly we accelerate. The higher the value, the sooner we get to max speed.
 - ``DEACCEL``: How quickly we are going to decelerate. The higher the value, the sooner we will come to a complete stop.
-- ``MAX_SLOPE_ANGLE``: The steepest angle our :ref:`KinematicBody <class_KinematicBody>` will consider as a 'floor'.
-- ``camera``: The :ref:`Camera <class_Camera>` node.
-- ``rotation_helper``: A :ref:`Spatial <class_Spatial>` node holding everything we want to rotate on the X axis (up and down).
+- ``MAX_SLOPE_ANGLE``: The steepest angle our :ref:`KinematicBody <api:class_KinematicBody>` will consider as a 'floor'.
+- ``camera``: The :ref:`Camera <api:class_Camera>` node.
+- ``rotation_helper``: A :ref:`Spatial <api:class_Spatial>` node holding everything we want to rotate on the X axis (up and down).
 - ``MOUSE_SENSITIVITY``: How sensitive the mouse is. I find a value of ``0.05`` works well for my mouse, but you may need to change it based on how sensitive your mouse is.
 
 You can tweak many of these variables to get different results. For example, by lowering ``GRAVITY`` and/or
@@ -427,7 +427,7 @@ The second reason is because we do not want the cursor to leave the game window.
 the game window there could be instances where the player clicks outside the window, and then the game
 would lose focus. To assure neither of these issues happens, we capture the mouse cursor.
 
-.. note:: See :ref:`Input documentation <class_Input>` for the various mouse modes. We will only be using
+.. note:: See :ref:`Input documentation <api:class_Input>` for the various mouse modes. We will only be using
           ``MOUSE_MODE_CAPTURED`` and ``MOUSE_MODE_VISIBLE`` in this tutorial series.
 
 _________
@@ -439,14 +439,14 @@ All we're doing in ``_physics_process`` is calling two functions: ``process_inpu
 ``process_input`` will be where we store all the code relating to player input. We want to call it first, before
 anything else, so we have fresh player input to work with.
 
-``process_movement`` is where we'll send all the data necessary to the :ref:`KinematicBody <class_KinematicBody>`
+``process_movement`` is where we'll send all the data necessary to the :ref:`KinematicBody <api:class_KinematicBody>`
 so it can move through the game world.
 
 _________
 
 Let's look at ``process_input`` next:
 
-First we set ``dir`` to an empty :ref:`Vector3 <class_Vector3>`.
+First we set ``dir`` to an empty :ref:`Vector3 <api:class_Vector3>`.
 
 ``dir`` will be used for storing the direction the player intends to move towards. Because we do not
 want the player's previous input to effect the player beyond a single ``process_movement`` call, we reset ``dir``.
@@ -466,7 +466,7 @@ can be measured by a single, known, fixed point called the origin.
 
 In Godot, the origin is at position ``(0, 0, 0)`` with a rotation of ``(0, 0, 0)`` and a scale of ``(1, 1, 1)``.
 
-.. note:: When you open up the Godot editor and select a :ref:`Spatial <class_Spatial>` based node, a gizmo pops up.
+.. note:: When you open up the Godot editor and select a :ref:`Spatial <api:class_Spatial>` based node, a gizmo pops up.
           Each of the arrows points using world space directions by default.
 
 If you want to move using the world space directional vectors, you'd do something like this:
@@ -495,7 +495,7 @@ If you want to move using the world space directional vectors, you'd do somethin
         node.Translate(new Vector3(-1, 0, 0));
 
 .. note:: Notice how we do not need to do any calculations to get world space directional vectors.
-          We can define a few :ref:`Vector3 <class_Vector3>` variables and input the values pointing in each direction.
+          We can define a few :ref:`Vector3 <api:class_Vector3>` variables and input the values pointing in each direction.
 
 Here is what world space looks like in 2D:
 
@@ -523,13 +523,13 @@ with the position of the origin.
           https://gamedev.stackexchange.com/questions/65783/what-are-world-space-and-eye-space-in-game-development
           (Local space and eye space are essentially the same thing in this context)
 
-To get a :ref:`Spatial <class_Spatial>` node's local space, we need to get its :ref:`Transform <class_Transform>`, so then we
-can get the :ref:`Basis <class_Basis>` from the :ref:`Transform <class_Transform>`.
+To get a :ref:`Spatial <api:class_Spatial>` node's local space, we need to get its :ref:`Transform <api:class_Transform>`, so then we
+can get the :ref:`Basis <api:class_Basis>` from the :ref:`Transform <api:class_Transform>`.
 
-Each :ref:`Basis <class_Basis>` has three vectors: ``X``, ``Y``, and ``Z``.
+Each :ref:`Basis <api:class_Basis>` has three vectors: ``X``, ``Y``, and ``Z``.
 Each of those vectors point towards each of the local space vectors coming from that object.
 
-To use the :ref:`Spatial <class_Spatial>` node's local directional vectors, we use this code:
+To use the :ref:`Spatial <api:class_Spatial>` node's local directional vectors, we use this code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -562,12 +562,12 @@ And here is what it looks like for 3D:
 
 .. image:: img/LocalSpaceExample_3D.png
 
-Here is what the :ref:`Spatial <class_Spatial>` gizmo shows when you are using local space mode.
+Here is what the :ref:`Spatial <api:class_Spatial>` gizmo shows when you are using local space mode.
 Notice how the arrows follow the rotation of the object on the left, which looks exactly
 the same as the 3D example for local space.
 
 .. note:: You can change between local and world space modes by pressing :kbd:`T` or the little cube button
-          when you have a :ref:`Spatial <class_Spatial>` based node selected.
+          when you have a :ref:`Spatial <api:class_Spatial>` based node selected.
 
 .. image:: img/LocalSpaceExampleGizmo.png
 
@@ -579,7 +579,7 @@ _________
 
 Okay, back to ``process_input``:
 
-Next we make a new variable called ``input_movement_vector`` and assign it to an empty :ref:`Vector2 <class_Vector2>`.
+Next we make a new variable called ``input_movement_vector`` and assign it to an empty :ref:`Vector2 <api:class_Vector2>`.
 We will use this to make a virtual axis of sorts, to map the player's input to movement.
 
 .. note:: This may seem overkill for just the keyboard, but this will make sense later when we add joypad input.
@@ -600,7 +600,7 @@ local ``Z`` axis so the player moves forward or backwards in relation to the cam
 We do the same thing for the camera's local ``X`` vector, and instead of using ``input_movement_vector.y`` we instead use ``input_movement_vector.x``.
 This makes it where the player moves left/right in relation to the camera when the player presses left/right.
 
-Next we check if the player is on the floor using :ref:`KinematicBody <class_KinematicBody>`'s ``is_on_floor`` function. If it is, then we
+Next we check if the player is on the floor using :ref:`KinematicBody <api:class_KinematicBody>`'s ``is_on_floor`` function. If it is, then we
 check to see if the "movement_jump" action has just been pressed. If it has, then we set the player's ``Y`` velocity to
 ``JUMP_SPEED``.
 
@@ -640,7 +640,7 @@ If the player is moving according to ``hvel``, then we set ``accel`` to the ``AC
 our ``DEACCEL`` constant so the player will decelerate.
 
 Then we interpolate the horizontal velocity, set the player's ``X`` and ``Z`` velocity to the interpolated horizontal velocity,
-and call ``move_and_slide`` to let the :ref:`KinematicBody <class_KinematicBody>` handle moving the player through the physics world.
+and call ``move_and_slide`` to let the :ref:`KinematicBody <api:class_KinematicBody>` handle moving the player through the physics world.
 
 .. tip:: All of the code in ``process_movement`` is exactly the same as the movement code from the Kinematic Character demo!
 
@@ -648,21 +648,21 @@ _________
 
 The final function we have is the ``_input`` function, and thankfully it's fairly short:
 
-First we make sure that the event we are dealing with is an :ref:`InputEventMouseMotion <class_InputEventMouseMotion>` event.
+First we make sure that the event we are dealing with is an :ref:`InputEventMouseMotion <api:class_InputEventMouseMotion>` event.
 We also want to check if the cursor is captured, as we do not want to rotate if it is not.
 
 .. note:: See :ref:`Mouse and input coordinates <doc_mouse_and_input_coordinates>` for a list of
          possible input events.
 
 If the event is indeed a mouse motion event and the cursor is captured, we rotate
-based on the relative mouse motion provided by :ref:`InputEventMouseMotion <class_InputEventMouseMotion>`.
+based on the relative mouse motion provided by :ref:`InputEventMouseMotion <api:class_InputEventMouseMotion>`.
 
 First we rotate the ``rotation_helper`` node on the ``X`` axis, using the relative mouse motion's
-``Y`` value, provided by :ref:`InputEventMouseMotion <class_InputEventMouseMotion>`.
+``Y`` value, provided by :ref:`InputEventMouseMotion <api:class_InputEventMouseMotion>`.
 
-Then we rotate the entire :ref:`KinematicBody <class_KinematicBody>` on the ``Y`` axis by the relative mouse motion's ``X`` value.
+Then we rotate the entire :ref:`KinematicBody <api:class_KinematicBody>` on the ``Y`` axis by the relative mouse motion's ``X`` value.
 
-.. tip:: Godot converts relative mouse motion into a :ref:`Vector2 <class_Vector2>` where mouse movement going
+.. tip:: Godot converts relative mouse motion into a :ref:`Vector2 <api:class_Vector2>` where mouse movement going
          up and down is ``1`` and ``-1`` respectively. Right and Left movement is
          ``1`` and ``-1`` respectively.
 

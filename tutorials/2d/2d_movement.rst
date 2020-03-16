@@ -10,7 +10,7 @@ Every beginner has been there: "How do I move my character?" Depending on the
 style of game you're making, you may have special requirements, but in general
 the movement in most 2D games is based on a small number of designs.
 
-We'll use :ref:`KinematicBody2D <class_KinematicBody2D>` for these examples,
+We'll use :ref:`KinematicBody2D <api:class_KinematicBody2D>` for these examples,
 but the principles will apply to other node types (Area2D, RigidBody2D) as well.
 
 Setup
@@ -258,7 +258,7 @@ is set by the mouse position instead of the keyboard. The character will always
         }
     }
 
-Here we're using the :ref:`Node2D <class_Node2D>` ``look_at()`` method to
+Here we're using the :ref:`Node2D <api:class_Node2D>` ``look_at()`` method to
 point the player towards a given position. Without this function, you
 could get the same effect by setting the angle like this:
 

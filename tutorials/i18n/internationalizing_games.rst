@@ -51,12 +51,12 @@ locale.
 Converting keys to text
 -----------------------
 
-Some controls, such as :ref:`Button <class_Button>` and :ref:`Label <class_Label>`,
+Some controls, such as :ref:`Button <api:class_Button>` and :ref:`Label <api:class_Label>`,
 will automatically fetch a translation if their text matches a translation key.
 For example, if a label's text is "MAIN_SCREEN_GREETING1" and that key exists
 in the current translation, then the text will automatically be translated.
 
-In code, the :ref:`Object.tr() <class_Object_method_tr>`
+In code, the :ref:`Object.tr() <api:class_Object_method_tr>`
 function can be used. This will just look up the text in the
 translations and convert it if found:
 
@@ -71,14 +71,14 @@ Making controls resizable
 The same text in different languages can vary greatly in length. For
 this, make sure to read the tutorial on :ref:`doc_size_and_anchors`, as
 dynamically adjusting control sizes may help.
-:ref:`Container <class_Container>` can be useful, as well as the text wrapping
-options available in :ref:`Label <class_Label>`.
+:ref:`Container <api:class_Container>` can be useful, as well as the text wrapping
+options available in :ref:`Label <api:class_Label>`.
 
 TranslationServer
 -----------------
 
 Godot has a server handling low-level translation management
-called the :ref:`TranslationServer <class_TranslationServer>`.
+called the :ref:`TranslationServer <api:class_TranslationServer>`.
 Translations can be added or removed during run-time;
 the current language can also be changed at run-time.
 
