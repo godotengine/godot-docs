@@ -16,6 +16,7 @@ extensions = [
     "gdscript",
     "sphinx_tabs.tabs",
     "sphinx.ext.imgmath",
+    "sphinx.ext.intersphinx",
 ]
 
 templates_path = ["_templates"]
@@ -159,6 +160,9 @@ rst_epilog = """
     image_locale="-" if language == "en" else language,
     target_locale="" if language == "en" else "/" + language,
 )
+
+# Intersphinx for classref links in localized docs.
+intersphinx_mapping = {"api": ("https://docs.godotengine.org/en/{}".format(version), None)}
 
 # Exclude class reference when marked with tag i18n.
 if is_i18n:
