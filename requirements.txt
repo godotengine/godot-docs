@@ -1,2 +1,5 @@
 # Code tabs for GDScript/C#
 sphinx-tabs
+
+# Full-page search UI for RTD: https://readthedocs-sphinx-search.readthedocs.io
+git+https://github.com/readthedocs/readthedocs-sphinx-search@master
