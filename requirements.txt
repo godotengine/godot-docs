@@ -1,0 +1,2 @@
+# Code tabs for GDScript/C#
+sphinx-tabs
