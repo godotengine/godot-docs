@@ -11,8 +11,12 @@ import os
 needs_sphinx = "1.3"
 
 # Sphinx extension module names and templates location
-sys.path.append(os.path.abspath("extensions"))
-extensions = ["gdscript", "sphinx_tabs.tabs", "sphinx.ext.imgmath"]
+sys.path.append(os.path.abspath("_extensions"))
+extensions = [
+    "gdscript",
+    "sphinx_tabs.tabs",
+    "sphinx.ext.imgmath",
+]
 
 templates_path = ["_templates"]
 
@@ -51,7 +55,7 @@ exclude_patterns = ["_build"]
 
 # fmt: off
 # These imports should *not* be moved to the start of the file,
-# they depend on the sys.path.append call registering "extensions".
+# they depend on the sys.path.append call registering "_extensions".
 # GDScript syntax highlighting
 from gdscript import GDScriptLexer
 from sphinx.highlighting import lexers
