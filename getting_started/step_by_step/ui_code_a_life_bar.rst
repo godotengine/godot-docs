@@ -440,7 +440,7 @@ duration in seconds.
 
 ::
 
-    ...  0.6, tween.TRANS_LINEAR, Tween.EASE_IN)
+    ...  0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
 The last two arguments are constants from the ``Tween`` class.
 ``TRANS_LINEAR`` means the animation should be linear. ``EASE_IN``

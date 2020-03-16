@@ -21,7 +21,7 @@ Requirements
 
 For compiling under Windows, Linux or macOS, the following is required:
 
--  `Python 2.7+ or Python 3.5+ <https://www.python.org/downloads/>`_
+-  `Python 3.5+ <https://www.python.org/downloads/>`_
 -  `SCons <https://scons.org/pages/download.html>`_ build system
 -  `Android SDK <https://developer.android.com/studio/#command-tools>`_ (command-line tools are sufficient)
 
@@ -116,15 +116,17 @@ The resulting APK will be located at ``bin/android_debug.apk``.
 Adding support for x86 devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you also want to include support for x86 devices, run the SCons command
-a third time with the ``android_arch=x86`` argument before building the APK
-with Gradle. For example, for the release template:
+If you also want to include support for x86 and x86-64 devices, run the SCons
+command a third and fourth time with the ``android_arch=x86``, and
+``android_arch=x86_64`` arguments before building the APK with Gradle. For
+example, for the release template:
 
 ::
 
     scons platform=android target=release android_arch=armv7
     scons platform=android target=release android_arch=arm64v8
     scons platform=android target=release android_arch=x86
+    scons platform=android target=release android_arch=x86_64
     cd platform/android/java
     # On Windows
     .\gradlew generateGodotTemplates
