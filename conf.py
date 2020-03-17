@@ -160,7 +160,3 @@ rst_epilog = """
     image_locale="-" if language == "en" else language,
     target_locale="" if language == "en" else "/" + language,
 )
-
-# Exclude class reference when marked with tag i18n.
-if is_i18n:
-    exclude_patterns = ["classes"]
