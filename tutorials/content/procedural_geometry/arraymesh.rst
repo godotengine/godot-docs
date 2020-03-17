@@ -14,19 +14,19 @@ lines, points, etc. A complete list can be found under the :ref:`Mesh <class_mes
 class reference page.
 
 The second is the actual Array that stores the mesh information. The array is a normal Godot array that
-is constructed with empty brackets ``[]``. It stores a ``Pool**Array`` (e.g. PoolVector3Array,
-PoolIntArray, etc.) for each type of information.
+is constructed with empty brackets ``[]``. It stores a ``Packed**Array`` (e.g. PackedVector3Array,
+PackedInt32Array, etc.) for each type of information.
 
-- ``ARRAY_VERTEX`` = 0 | PoolVector3Array or PoolVector2Array
-- ``ARRAY_NORMAL`` = 1 | PoolVector3Array
-- ``ARRAY_TANGENT`` = 2 | PoolRealArray of groups of 4 floats. first 3 floats determine the tangent, and
+- ``ARRAY_VERTEX`` = 0 | PackedVector3Array or PackedVector2Array
+- ``ARRAY_NORMAL`` = 1 | PackedVector3Array
+- ``ARRAY_TANGENT`` = 2 | PackedFloat32Array of groups of 4 floats. first 3 floats determine the tangent, and
   the last the binormal direction as -1 or 1.
-- ``ARRAY_COLOR`` = 3 | PoolColorArray
-- ``ARRAY_TEX_UV`` = 4 | PoolVector2Array or PoolVector3Array
-- ``ARRAY_TEX_UV2`` = 5 | PoolVector2Array or PoolVector3Array
-- ``ARRAY_BONES`` = 6 | PoolRealArray of groups of 4 floats or PoolIntArray of groups of 4 ints
-- ``ARRAY_WEIGHTS`` = 7 | PoolRealArray of groups of 4 floats
-- ``ARRAY_INDEX`` = 8 | PoolIntArray
+- ``ARRAY_COLOR`` = 3 | PackedColorArray
+- ``ARRAY_TEX_UV`` = 4 | PackedVector2Array or PackedVector3Array
+- ``ARRAY_TEX_UV2`` = 5 | PackedVector2Array or PackedVector3Array
+- ``ARRAY_BONES`` = 6 | PackedFloat32Array of groups of 4 floats or PackedInt32Array of groups of 4 ints
+- ``ARRAY_WEIGHTS`` = 7 | PackedFloat32Array of groups of 4 floats
+- ``ARRAY_INDEX`` = 8 | PackedInt32Array
 
 The Array of vertices is always required. All the others are optional and will only be used if included.
 
@@ -75,10 +75,10 @@ Next create the arrays for each data type you will use.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var verts = PoolVector3Array()
-    var uvs = PoolVector2Array()
-    var normals = PoolVector3Array()
-    var indices = PoolIntArray()
+    var verts = PackedVector3Array()
+    var uvs = PackedVector2Array()
+    var normals = PackedVector3Array()
+    var indices = PackedInt32Array()
 
 Once you have filled your data arrays with your geometry you can create a mesh
 by adding each array to ``surface_array`` and then committing to the mesh.
@@ -107,11 +107,11 @@ Put together the full code looks like:
         var arr = []
         arr.resize(Mesh.ARRAY_MAX)
 
-        # PoolVectorXXArrays for mesh construction.
-        var verts = PoolVector3Array()
-        var uvs = PoolVector2Array()
-        var normals = PoolVector3Array()
-        var indices = PoolIntArray()
+        # PackedVectorXArrays for mesh construction.
+        var verts = PackedVector3Array()
+        var uvs = PackedVector2Array()
+        var normals = PackedVector3Array()
+        var indices = PackedInt32Array()
 
         #######################################
         ## Insert code here to generate mesh ##
@@ -152,7 +152,7 @@ that you find online.
 
     func _ready():
 
-        # Set up the PoolVectorXArrays.
+        # Set up the PackedVectorXArrays.
 
         # Vertex indices.
         var thisrow = 0

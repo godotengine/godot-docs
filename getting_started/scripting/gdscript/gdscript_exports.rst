@@ -173,8 +173,8 @@ initializers, but they must be constant expressions.
 
     # Typed arrays also work, only initialized empty:
 
-    export var vector3s = PoolVector3Array()
-    export var strings = PoolStringArray()
+    export var vector3s = PackedVector3Array()
+    export var strings = PackedStringArray()
 
     # Regular array, created local for every instance.
     # Default value can include run-time values, but can't

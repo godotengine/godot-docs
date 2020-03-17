@@ -266,20 +266,22 @@ GDScript               C#
 Array
 -----
 
-*This is temporary. PoolArrays will need their own types to be used the way they are meant to.*
+*This is temporary. PackedArrays will need their own types to be used the way they are meant to.*
 
-=====================  ==============================================================
-GDScript               C#
-=====================  ==============================================================
-``Array``              ``Godot.Collections.Array``
-``PoolIntArray``       ``int[]``
-``PoolByteArray``      ``byte[]``
-``PoolFloatArray``     ``float[]``
-``PoolStringArray``    ``String[]``
-``PoolColorArray``     ``Color[]``
-``PoolVector2Array``   ``Vector2[]``
-``PoolVector3Array``   ``Vector3[]``
-=====================  ==============================================================
+======================  ==============================================================
+GDScript                C#
+======================  ==============================================================
+``Array``                ``Godot.Collections.Array``
+``PackedInt32Array``     ``int[]``
+``PackedInt64Array``     ``long[]``
+``PackedByteArray``      ``byte[]``
+``PackedFloat32Array``   ``float[]``
+``PackedFloat64Array``   ``double[]``
+``PackedStringArray``    ``String[]``
+``PackedColorArray``     ``Color[]``
+``PackedVector2Array``   ``Vector2[]``
+``PackedVector3Array``   ``Vector3[]``
+======================  ==============================================================
 
 ``Godot.Collections.Array<T>`` is a type-safe wrapper around ``Godot.Collections.Array``.
 Use the ``Godot.Collections.Array<T>(Godot.Collections.Array)`` constructor to create one.

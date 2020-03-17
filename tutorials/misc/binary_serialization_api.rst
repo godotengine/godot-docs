@@ -64,19 +64,23 @@ integer, specifying the type of data:
 +--------+--------------------------+
 | 20     | raw array                |
 +--------+--------------------------+
-| 21     | int array                |
+| 21     | int32 array              |
 +--------+--------------------------+
-| 22     | real array               |
+| 22     | int64 array              |
 +--------+--------------------------+
-| 23     | string array             |
+| 23     | float32 array            |
 +--------+--------------------------+
-| 24     | vector2 array            |
+| 24     | float64 array            |
 +--------+--------------------------+
-| 25     | vector3 array            |
+| 25     | string array             |
 +--------+--------------------------+
-| 26     | color array              |
+| 26     | vector2 array            |
 +--------+--------------------------+
-| 27     | max                      |
+| 27     | vector3 array            |
++--------+--------------------------+
+| 28     | color array              |
++--------+--------------------------+
+| 29     | max                      |
 +--------+--------------------------+
 
 Following this is the actual packet contents, which varies for each type
@@ -109,7 +113,7 @@ of packet:
 +----------+-------+---------+-------------------------+
 | Offset   | Len   | Type    | Description             |
 +==========+=======+=========+=========================+
-| 4        | 4     | Float   | IEE 754 32-Bits Float   |
+| 4        | 4     | Float   | IEEE 754 32-Bits Float  |
 +----------+-------+---------+-------------------------+
 
 4: :ref:`String<class_string>`
@@ -376,8 +380,8 @@ one after the other, using this same format.
 Then what follows is, for amount of "elements", values one after the
 other, using this same format.
 
-20: :ref:`PoolByteArray<class_poolbytearray>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20: :ref:`PackedByteArray<class_PackedByteArray>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------+-------+-----------+------------------------+
 | Offset        | Len   | Type      | Description            |
@@ -389,8 +393,8 @@ other, using this same format.
 
 The array data is padded to 4 bytes.
 
-21: :ref:`PoolIntArray<class_poolintarray>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+21: :ref:`PackedInt32Array<class_PackedInt32Array>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------+-------+-----------+---------------------------+
 | Offset           | Len   | Type      | Description               |
@@ -400,19 +404,41 @@ The array data is padded to 4 bytes.
 | 8..8+length\*4   | 4     | Integer   | 32 Bits Signed Integer    |
 +------------------+-------+-----------+---------------------------+
 
-22: :ref:`PoolRealArray<class_poolrealarray>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+22: :ref:`PackedInt64Array<class_PackedInt64Array>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------+-------+-----------+---------------------------+
 | Offset           | Len   | Type      | Description               |
 +==================+=======+===========+===========================+
-| 4                | 4     |Integer    | Array Length (Floats)     |
+| 4                | 8     | Integer   | Array Length (Integers)   |
 +------------------+-------+-----------+---------------------------+
-| 8..8+length\*4   | 4     |Integer    | 32 Bits IEE 754 Float     |
+| 8..8+length\*8   | 8     | Integer   | 64 Bits Signed Integer    |
 +------------------+-------+-----------+---------------------------+
 
-23: :ref:`PoolStringArray<class_poolstringarray>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+23: :ref:`PackedFloat32Array<class_PackedFloat32Array>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------+-------+-----------+---------------------------+
+| Offset           | Len   | Type      | Description               |
++==================+=======+===========+===========================+
+| 4                | 4     | Integer   | Array Length (Floats)     |
++------------------+-------+-----------+---------------------------+
+| 8..8+length\*4   | 4     | Integer   | 32 Bits IEEE 754 Float    |
++------------------+-------+-----------+---------------------------+
+
+24: :ref:`PackedFloat64Array<class_PackedFloat64Array>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------+-------+-----------+---------------------------+
+| Offset           | Len   | Type      | Description               |
++==================+=======+===========+===========================+
+| 4                | 4     | Integer   | Array Length (Floats)     |
++------------------+-------+-----------+---------------------------+
+| 8..8+length\*8   | 8     | Integer   | 64 Bits IEEE 754 Float    |
++------------------+-------+-----------+---------------------------+
+
+25: :ref:`PackedStringArray<class_PackedStringArray>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+-----------+--------------------------+
 | Offset   | Len   | Type      | Description              |
@@ -432,8 +458,8 @@ For each String:
 
 Every string is padded to 4 bytes.
 
-24: :ref:`PoolVector2Array<class_poolvector2array>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+26: :ref:`PackedVector2Array<class_PackedVector2Array>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------+-------+-----------+----------------+
 | Offset            | Len   | Type      | Description    |
@@ -445,8 +471,8 @@ Every string is padded to 4 bytes.
 | 8..12+length\*8   | 4     | Float     | Y Coordinate   |
 +-------------------+-------+-----------+----------------+
 
-25: :ref:`PoolVector3Array<class_poolvector3array>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+27: :ref:`PackedVector3Array<class_PackedVector3Array>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------+-------+-----------+----------------+
 | Offset             | Len   | Type      | Description    |
@@ -460,8 +486,8 @@ Every string is padded to 4 bytes.
 | 8..16+length\*12   | 4     | Float     | Z Coordinate   |
 +--------------------+-------+-----------+----------------+
 
-26: :ref:`PoolColorArray<class_poolcolorarray>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+28: :ref:`PackedColorArray<class_PackedColorArray>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------+-------+-----------+----------------+
 | Offset             | Len   | Type      | Description    |

@@ -339,7 +339,7 @@ Built-in types
 Built-in types are stack-allocated. They are passed as values. This means a copy
 is created on each assignment or when passing them as arguments to functions.
 The only exceptions are ``Array``\ s and ``Dictionaries``, which are passed by
-reference so they are shared. (Pooled arrays such as ``PoolByteArray`` are still
+reference so they are shared. (Pooled arrays such as ``PackedByteArray`` are still
 passed as values.)
 
 Basic built-in types
@@ -370,7 +370,7 @@ It is stored as a 64-bit value, equivalent to "int64_t" in C++.
 Stores real numbers, including decimals, using floating-point values.
 It is stored as a 64-bit value, equivalent to "double" in C++.
 Note: Currently, data structures such as Vector2, Vector3, and
-PoolRealArray store 32-bit single-precision "float" values.
+PackedFloat32Array store 32-bit single-precision "float" values.
 
 :ref:`String <class_String>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -490,13 +490,15 @@ arrays are available. These only accept a single data type. They avoid memory
 fragmentation and use less memory, but are atomic and tend to run slower than generic
 arrays. They are therefore only recommended to use for large data sets:
 
-- :ref:`PoolByteArray <class_PoolByteArray>`: An array of bytes (integers from 0 to 255).
-- :ref:`PoolIntArray <class_PoolIntArray>`: An array of integers.
-- :ref:`PoolRealArray <class_PoolRealArray>`: An array of floats.
-- :ref:`PoolStringArray <class_PoolStringArray>`: An array of strings.
-- :ref:`PoolVector2Array <class_PoolVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
-- :ref:`PoolVector3Array <class_PoolVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
-- :ref:`PoolColorArray <class_PoolColorArray>`: An array of :ref:`Color <class_Color>` objects.
+- :ref:`PackedByteArray <class_PackedByteArray>`: An array of bytes (integers from 0 to 255).
+- :ref:`PackedInt32Array <class_PackedInt32Array>`: An array of 32-bit integers.
+- :ref:`PackedInt64Array <class_PackedInt64Array>`: An array of 64-bit integers.
+- :ref:`PackedFloat32Array <class_PackedFloat32Array>`: An array of 32-bit floats.
+- :ref:`PackedFloat64Array <class_PackedFloat64Array>`: An array of 64-bit floats.
+- :ref:`PackedStringArray <class_PackedStringArray>`: An array of strings.
+- :ref:`PackedVector2Array <class_PackedVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
+- :ref:`PackedVector3Array <class_PackedVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
+- :ref:`PackedColorArray <class_PackedColorArray>`: An array of :ref:`Color <class_Color>` objects.
 
 :ref:`Dictionary <class_Dictionary>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

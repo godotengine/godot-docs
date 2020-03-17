@@ -408,7 +408,7 @@ Each track is described by a list of key-value pairs in the format
     - 1 (linear)
     - 2 (cubic)
 
-4. The ``keys`` correspond to the keyframes. It appears as a ``PoolRealArray()``,
+4. The ``keys`` correspond to the keyframes. It appears as a ``PackedFloat32Array()``,
    but may have a different structure for tracks with different types.
 
     - A Transform track uses every 12 real numbers in the ``keys`` to describe
@@ -430,11 +430,11 @@ Each track is described by a list of key-value pairs in the format
     tracks/0/loop_wrap = true
     tracks/0/imported = true
     tracks/0/enabled = true
-    tracks/0/keys = PoolRealArray( 0, 1, -0.0358698, -0.829927, 0.444204, 0, 0, 0, 1, 0.815074, 0.815074, 0.815074, 4.95833, 1, -0.0358698, -0.829927, 0.444204, 0, 0, 0, 1, 0.815074, 0.815074, 0.815074 )
+    tracks/0/keys = PackedFloat32Array( 0, 1, -0.0358698, -0.829927, 0.444204, 0, 0, 0, 1, 0.815074, 0.815074, 0.815074, 4.95833, 1, -0.0358698, -0.829927, 0.444204, 0, 0, 0, 1, 0.815074, 0.815074, 0.815074 )
     tracks/1/type = "transform"
     tracks/1/path = NodePath("Armature001/Skeleton:Bone.001")
     tracks/1/interp = 1
     tracks/1/loop_wrap = true
     tracks/1/imported = true
     tracks/1/enabled = false
-    tracks/1/keys = PoolRealArray( 0, 1, 0, 5.96046e-08, 0, 0, 0, 0, 1, 1, 1, 1, 4.95833, 1, 0, 5.96046e-08, 0, 0, 0, 0, 1, 1, 1, 1 )
+    tracks/1/keys = PackedFloat32Array( 0, 1, 0, 5.96046e-08, 0, 0, 0, 0, 1, 1, 1, 1, 4.95833, 1, 0, 5.96046e-08, 0, 0, 0, 0, 1, 1, 1, 1 )

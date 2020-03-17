@@ -59,7 +59,7 @@ Surface array
 
 The surface array is an array of length ``ArrayMesh.ARRAY_MAX``. Each position in the array is
 filled with a sub-array containing per-vertex information. For example, the array located at 
-``ArrayMesh.ARRAY_NORMAL`` is a :ref:`PoolVector3Array <class_PoolVector3Array>` of vertex normals. 
+``ArrayMesh.ARRAY_NORMAL`` is a :ref:`PackedVector3Array <class_PackedVector3Array>` of vertex normals. 
 
 The surface array can be indexed or non-indexed. Creating a non-indexed array is as easy as not assigning
 an array at the index ``ArrayMesh.ARRAY_INDEX``. A non-indexed array stores unique vertex information for
